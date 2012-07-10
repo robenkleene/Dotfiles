@@ -11,6 +11,7 @@ export AWS_SECRET_ACCESS_KEY="PmMCMYlzwWCx2Vs8gk9p1AVSp/5sS9sPx5cXzrMi"
 
 # Paths
 export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$PATH:~/Scripts/bin"
 
 
 # Set the prompt
