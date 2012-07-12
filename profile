@@ -3,7 +3,8 @@ export CLICOLOR=1
 
 # Editors
 # export SVN_EDITOR=pico
-export GIT_EDITOR="mate -wl1"
+# export GIT_EDITOR="mate -wl1"
+export EDITOR="vim"
 
 # Amazon Web Services
 export AWS_ACCESS_KEY_ID="0ECYTZJYJETJTWS1F8R2"
@@ -13,6 +14,9 @@ export AWS_SECRET_ACCESS_KEY="PmMCMYlzwWCx2Vs8gk9p1AVSp/5sS9sPx5cXzrMi"
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/usr/local/bin:$PATH:~/Scripts/bin"
 
+
+# My Environment Variables
+export TEXT_INBOX="~/Dropbox/Text/Inbox"
 
 # Set the prompt
 
