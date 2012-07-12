@@ -15,8 +15,10 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/usr/local/bin:$PATH:~/Scripts/bin"
 
 
-# My Environment Variables
+# Text Syste
+export TEXT_ROOT="~/Dropbox/Text"
 export TEXT_INBOX="~/Dropbox/Text/Inbox"
+alias gtext="cd $TEXT_ROOT"
 
 # Set the prompt
 
