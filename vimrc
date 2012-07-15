@@ -16,3 +16,4 @@ colorscheme solarized
 
 " Macros
 nmap <leader>m :set filetype=markdown<CR>
+nmap <leader>w :set nowrap!<CR>

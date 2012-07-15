@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -46,3 +46,18 @@ alias gtext="cd $TEXT_ROOT"
 
 # Fixing colors in terminal Emacs
 export TERM=xterm-256color
+
+# Create an alias to less.sh in Vim, which makes Vim to act as a pager
+VLESS=$(find /usr/share/vim -name 'less.sh')
+if [ ! -z $VLESS ]; then
+	alias vless=$VLESS
+fi
+
+
+# Prompt
+PROMPT='%{$fg_bold[cyan]%}%~ %{$fg[green]%}$ %{$reset_color%}'
+RPROMPT='$(git_prompt_info)'
+# PROMPT='%{$fg[green]%}%$%{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%} '
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
