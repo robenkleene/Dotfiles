@@ -35,3 +35,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/Scripts/bin
+
+# Editor
+export EDITOR="vim"
+
+# Text System
+export TEXT_ROOT="~/Dropbox/Text"
+export TEXT_INBOX="~/Dropbox/Text/Inbox"
+alias gtext="cd $TEXT_ROOT"

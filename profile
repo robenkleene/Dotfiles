@@ -15,7 +15,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/usr/local/bin:$PATH:~/Scripts/bin"
 
 
-# Text Syste
+# Text System
 export TEXT_ROOT="~/Dropbox/Text"
 export TEXT_INBOX="~/Dropbox/Text/Inbox"
 alias gtext="cd $TEXT_ROOT"
