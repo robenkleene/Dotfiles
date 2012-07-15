@@ -19,7 +19,6 @@ function MakeSymlink {
 	if [ -f $DESTINATION ] || [ -d $DESTINATION ]; then
 		echo "$DESTINATION skipped because it already exists."
 	else
-#  		echo "$DIRECTORY/$thisFILE $DESTINATION"
 		ln -s $DIRECTORY/$thisFILE $DESTINATION
 	fi	
 }
