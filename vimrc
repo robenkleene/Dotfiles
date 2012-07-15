@@ -9,6 +9,10 @@ let mapleader = ','
 " Makes the OS X clipboard work
 set clipboard=unnamed
 
+" Solarized
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Macros
 nmap <leader>m :set filetype=markdown
