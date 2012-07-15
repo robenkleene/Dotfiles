@@ -43,3 +43,6 @@ export EDITOR="vim"
 export TEXT_ROOT="~/Dropbox/Text"
 export TEXT_INBOX="~/Dropbox/Text/Inbox"
 alias gtext="cd $TEXT_ROOT"
+
+# Fixing colors in terminal Emacs
+export TERM=xterm-256color

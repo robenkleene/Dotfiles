@@ -15,4 +15,4 @@ set background=dark
 colorscheme solarized
 
 " Macros
-nmap <leader>m :set filetype=markdown
+nmap <leader>m :set filetype=markdown<CR>
