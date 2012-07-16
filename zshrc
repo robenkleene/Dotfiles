@@ -45,7 +45,7 @@ export TEXT_INBOX="~/Dropbox/Text/Inbox"
 alias gtext="cd $TEXT_ROOT"
 
 # Fixing colors in terminal Emacs
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # Create an alias to less.sh in Vim, which makes Vim to act as a pager
 VLESS=$(find /usr/share/vim -name 'less.sh')
