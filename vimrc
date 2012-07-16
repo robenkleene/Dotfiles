@@ -3,7 +3,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 set nocompatible
-set nowrap
+" set nowrap
 let mapleader = ','
 
 " Makes the OS X clipboard work
