@@ -9,6 +9,9 @@ let mapleader = ','
 " Makes the OS X clipboard work
 set clipboard=unnamed
 
+" Alternative Solution to increment number while in tmux
+nmap <leader>a <C-a>
+
 " Solarized
 syntax enable
 set background=dark
