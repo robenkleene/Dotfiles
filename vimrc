@@ -9,6 +9,9 @@ let mapleader = ','
 " Makes the OS X clipboard work
 set clipboard=unnamed
 
+" Line breaks only happen on words
+set linebreak
+
 " Alternative Solution to increment number while in tmux
 nmap <leader>a <C-a>
 
