@@ -12,6 +12,9 @@ set clipboard=unnamed
 " Line breaks only happen on words
 set linebreak
 
+" Show line numbers
+set number
+
 " Alternative Solution to increment number while in tmux
 nmap <leader>a <C-a>
 
