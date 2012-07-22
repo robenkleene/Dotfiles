@@ -4,6 +4,5 @@ command! MarkdownPreview !mdprev -m "%:p"
 nmap <silent> <leader>p :MarkdownPreview<CR>\|:redraw!<CR>
 
 " OS X Shortcut Special Characters
-command! InsertShortcutSymbols :normal i ⇧⌃⌥⌘<ESC>
+command! InsertShortcutSymbols :normal i⇧⌃⌥⌘<ESC>
 nmap <leader>s :InsertShortcutSymbols<CR>
-
