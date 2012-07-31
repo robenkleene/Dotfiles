@@ -1,0 +1,6 @@
+# Mac Temporary Files
+.DS_Store*
+
+# Vim Temporary Files
+.*.sw?
+
