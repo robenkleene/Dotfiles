@@ -7,3 +7,6 @@ set guioptions-=T
 " Set font
 set guifont=Menlo\ Regular:h14
 
+" Screen Rows & Columns
+set lines=48
+set columns=120
