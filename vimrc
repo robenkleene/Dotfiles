@@ -26,5 +26,7 @@ colorscheme solarized
 " Macros
 nmap <leader>m :set filetype=markdown<CR>
 nmap <leader>w :set nowrap!<CR>
+" Open folder of current file
 nmap <leader>f :!open .<CR>\|:redraw!<CR>
+" Copy contents of whole file
 nmap <leader>c :%y+<CR>
