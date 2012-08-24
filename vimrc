@@ -15,9 +15,6 @@ set linebreak
 " Show line numbers
 set number
 
-" Alternative Solution to increment number while in tmux
-nmap <leader>a <C-a>
-
 " Solarized
 syntax enable
 set background=dark
@@ -30,3 +27,7 @@ nmap <leader>w :set nowrap!<CR>
 nmap <leader>f :!open .<CR>\|:redraw!<CR>
 " Copy contents of whole file
 nmap <leader>c :%y+<CR>
+" Alternative Solution to increment number while in tmux
+nmap <leader>a <C-a>
+" Open next URL in file
+map <leader>u :.,$w !openurl<CR>    
