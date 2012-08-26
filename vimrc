@@ -36,3 +36,5 @@ nmap <leader>c :%y+<CR>
 nmap <leader>a <C-a>
 " Open next URL in file
 map <leader>u :.,$w !openurl<CR>    
+" Detect File type
+map <leader>d :filetype detect<CR>
