@@ -20,6 +20,11 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" Search Behavior
+set ignorecase
+set smartcase
+set incsearch
+
 " Macros
 nmap <leader>m :set filetype=markdown<CR>
 nmap <leader>w :set nowrap!<CR>
