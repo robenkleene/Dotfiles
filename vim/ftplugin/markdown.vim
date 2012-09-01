@@ -9,4 +9,8 @@ nmap <leader>s :InsertShortcutSymbols<CR>
 
 " Create list item from clipboard
 :command ListItemFromClipboard :normal o<esc>pI- <ESC>
-nmap <leader>l :ListItemFromClipboard<CR>
+nmap <leader>v :ListItemFromClipboard<CR>
+
+" Line to list item
+:command LineToListItem :normal I- <ESC>
+nmap <leader>l :LineToListItem<CR>
