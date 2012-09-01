@@ -26,15 +26,24 @@ set smartcase
 set incsearch
 
 " Macros
+
+" Make Markdown Filetype
 nmap <leader>m :set filetype=markdown<CR>
+
+" Toggle No Wrap
 nmap <leader>w :set nowrap!<CR>
+
 " Open folder of current file
 nmap <leader>f :!open .<CR>\|:redraw!<CR>
+
 " Copy contents of whole file
 nmap <leader>c :%y+<CR>
+
 " Alternative Solution to increment number while in tmux
 nmap <leader>a <C-a>
+
 " Open next URL in file
 map <leader>u :.,$w !openurl<CR>    
+
 " Detect File type
 map <leader>d :filetype detect<CR>
