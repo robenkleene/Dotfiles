@@ -20,6 +20,11 @@ nmap <leader>v :ListItemFromClipboard<CR>
 nmap <leader>l :LineToListItem<CR>
 
 
+" Quoting Lines
+:command LineToQuote :normal I> <ESC>
+nmap <leader>q :LineToQuote<CR>
+
+
 " Creating Headers
 :command Header1 :normal O<esc>O# <esc>
 nmap <leader>1 :Header1<CR>:startinsert!<CR>
