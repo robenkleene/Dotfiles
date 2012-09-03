@@ -1,3 +1,5 @@
+; -*-Emacs-Lisp-*-
+
 ;; Marmalade
 
 (require 'package)
