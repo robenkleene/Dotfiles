@@ -38,6 +38,9 @@ source $ZSH/oh-my-zsh.sh
 # Editor
 export EDITOR="vim"
 
+# Alias
+alias ec='emacsclient -c -n'
+
 # Text System
 export TEXT_ROOT="~/Dropbox/Text"
 export TEXT_INBOX="~/Dropbox/Text/Inbox"

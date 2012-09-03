@@ -24,5 +24,17 @@
      (setq auto-mode-alist
         (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
+
+;; Look & Feel
 ;; Load Zenburn
 (load-theme 'zenburn t)
+;; Window Size
+(if (window-system)
+   (set-frame-height (selected-frame) 48)
+   (set-frame-width (selected-frame) 120)
+   (set-face-attribute 'default nil :family "Menlo" :height 140 :weight 'normal))
+
+;; Start the emacs server if it isn't already running
+(require 'server)
+(unless (server-running-p)
+  (server-start))
