@@ -1,7 +1,6 @@
 ; -*-Emacs-Lisp-*-
 
 ;; Marmalade
-
 (require 'package)
 (add-to-list 'package-archives 
     '("marmalade" .
@@ -31,10 +30,26 @@
 ;; Load Zenburn
 (load-theme 'zenburn t)
 ;; Window Size
+
+(defun set-frame-size ()
+                  (add-to-list 'default-frame-alist '(left   . 65))
+                  (add-to-list 'default-frame-alist '(top    . 0))
+                  (add-to-list 'default-frame-alist '(height . 60))
+                  (add-to-list 'default-frame-alist '(width  . 80))
+)
+
+(set-frame-size)
+
 (if (window-system)
-   (set-frame-height (selected-frame) 48)
-   (set-frame-width (selected-frame) 120)
-   (set-face-attribute 'default nil :family "Menlo" :height 140 :weight 'normal))
+    (add-hook 'before-make-frame-hook
+              #'(lambda ()
+                  (set-frame-size)
+"                  (add-to-list 'default-frame-alist '(left   . 0))
+"                  (add-to-list 'default-frame-alist '(top    . 0))
+"                  (add-to-list 'default-frame-alist '(height . 60))
+"                  (add-to-list 'default-frame-alist '(width  . 80))))
+)
+(set-face-attribute 'default nil :family "Menlo" :height 120 :weight 'normal)
 
 ;; Start the emacs server if it isn't already running
 (require 'server)

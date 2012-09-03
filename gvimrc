@@ -5,11 +5,11 @@ set gcr=a:blinkon0
 set guioptions-=T
 
 " Set font
-set guifont=Menlo\ Regular:h14
+set guifont=Menlo\ Regular:h12
 
 " Screen Rows & Columns
-set lines=48
-set columns=120
+set lines=60
+set columns=80
 
 " Remove Scroll bars
 set guioptions-=r
