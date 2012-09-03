@@ -29,27 +29,18 @@
 ;; Look & Feel
 ;; Load Zenburn
 (load-theme 'zenburn t)
-;; Window Size
-
 (defun set-frame-size ()
                   (add-to-list 'default-frame-alist '(left   . 65))
                   (add-to-list 'default-frame-alist '(top    . 0))
                   (add-to-list 'default-frame-alist '(height . 60))
                   (add-to-list 'default-frame-alist '(width  . 80))
 )
-
-(set-frame-size)
-
-(if (window-system)
+(when window-system
+    (set-face-attribute 'default nil :family "Menlo" :height 120 :weight 'normal)
+    (set-frame-size)
     (add-hook 'before-make-frame-hook
-              #'(lambda ()
-                  (set-frame-size)
-"                  (add-to-list 'default-frame-alist '(left   . 0))
-"                  (add-to-list 'default-frame-alist '(top    . 0))
-"                  (add-to-list 'default-frame-alist '(height . 60))
-"                  (add-to-list 'default-frame-alist '(width  . 80))))
-)
-(set-face-attribute 'default nil :family "Menlo" :height 120 :weight 'normal)
+              #'(lambda () (set-frame-size)))
+    )
 
 ;; Start the emacs server if it isn't already running
 (require 'server)
