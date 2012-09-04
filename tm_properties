@@ -1,1 +1,4 @@
 PATH = "$PATH:~/Development/Scripts/bin"
+
+[ zshrc ] 
+fileType = "source.tm-properties" 
