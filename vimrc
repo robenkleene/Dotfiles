@@ -15,11 +15,6 @@ set linebreak
 " Show line numbers
 set number
 
-" Solarized
-syntax enable
-set background=dark
-colorscheme solarized
-
 " Search Behavior
 set ignorecase
 set smartcase

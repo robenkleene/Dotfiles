@@ -13,3 +13,8 @@ set columns=80
 
 " Remove Scroll bars
 set guioptions-=r
+
+" Solarized
+syntax enable
+set background=dark
+colorscheme solarized
