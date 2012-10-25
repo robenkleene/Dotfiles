@@ -2,3 +2,4 @@ PATH = "$PATH:~/Development/Scripts/bin"
 
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
+
