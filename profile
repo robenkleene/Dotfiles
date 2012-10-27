@@ -14,20 +14,13 @@ export AWS_SECRET_ACCESS_KEY="PmMCMYlzwWCx2Vs8gk9p1AVSp/5sS9sPx5cXzrMi"
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/usr/local/bin:$PATH:~/Scripts/bin"
 
-
-# Text System
-export TEXT_ROOT="~/Dropbox/Text"
-export TEXT_INBOX="~/Dropbox/Text/Inbox"
-alias gtext="cd $TEXT_ROOT"
-
 # Set the prompt
-
+export PS1='\[\e[33;1m\]\w $\[\e[0m\] '
 # export PS1="\u@\h \w:$ " # No color
 # export PS1='\[\e[33;1m\]\u@\h \w:$\[\e[0m\] ' # with username
 # export PS1='\[\e[33;1m\]\w $\[\e[0m\] '
 #			  ^Yellow     ^Path
 #							 ^Prompt
 #							   ^Close Color
-export PS1='\[\e[33;1m\]\w $\[\e[0m\] '
 
 # See .inputrc as well
