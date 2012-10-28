@@ -50,6 +50,16 @@ if [ ! -z $VLESS ]; then
 	alias vless=$VLESS
 fi
 
+# Setup egit
+export EGITREPOS=~/Development/LaunchAgents:~/Dotfiles/:~/Library/Services/:~/Library/Application\ Support/Avian/Bundles/Roben.tmbundle/:~/Library/Scripts/:~/Development/Scripts/:~/Development/Snippets/:~/Development/Bookmarklets/
+egitn() { 
+	EGITNEXT=$(egit -n)
+	if [ ! -z "$EGITNEXT" ]; then
+		cd $EGITNEXT
+		git status
+	fi
+	unset EGITNEXT
+}
 
 # Prompt
 PROMPT='%{$fg_bold[cyan]%}%~ %{$fg[green]%}$ %{$reset_color%}'
