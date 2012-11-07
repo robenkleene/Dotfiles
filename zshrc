@@ -36,7 +36,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # Editor
-export EDITOR="vim"
+# export EDITOR="vim"
+export EDITOR="/usr/local/bin/mate -w"
 
 # Alias
 alias ec='emacsclient -c -n'
