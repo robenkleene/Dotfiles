@@ -29,11 +29,16 @@ ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx) # osx plugin enables new terminal tabs opening in the correct directory
+plugins=(git osx)
+# osx plugin enables new terminal tabs opening in the correct directory
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Adding just the "osx" plugin didn't make opening new terminal tabs in the correct directory all the time, adding these lines did
+precmd () {print -Pn "\e]2; %~/ \a"}
+preexec () {print -Pn "\e]2; %~/ \a"}
 
 # Editor
 # export EDITOR="vim"
