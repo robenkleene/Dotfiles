@@ -25,3 +25,14 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;; Disable Toolbar
+(tool-bar-mode -1)
+
+;; ido mode
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
+;; All the beeping is annoying
+(setq visible-bell 1)
