@@ -36,3 +36,8 @@
 
 ;; All the beeping is annoying
 (setq visible-bell 1)
+
+
+;; Theme
+(load-theme 'wombat)
+(global-hl-line-mode t)
