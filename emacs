@@ -43,3 +43,6 @@
 (load-theme 'wombat)
 (global-hl-line-mode t)
 
+;; Geiser
+(setq geiser-active-implementations '(racket))
+(setq geiser-racket-binary "/usr/local/bin/racket")
