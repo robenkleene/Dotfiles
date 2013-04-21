@@ -3,7 +3,9 @@
 ;; Packages
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives 
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Auto Save Files
@@ -37,7 +39,7 @@
 ;; All the beeping is annoying
 (setq visible-bell 1)
 
-
 ;; Theme
 (load-theme 'wombat)
 (global-hl-line-mode t)
+
