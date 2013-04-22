@@ -41,8 +41,29 @@
 
 ;; Theme
 (load-theme 'wombat)
-(global-hl-line-mode t)
+(global-hl-line-mode t) ;; Highlight current line
+(global-linum-mode 1) ;; Line numbers
+(set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#393939")
+(set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
+
+
+;; Disable underline
+;; Set region background color to 999999
+
 
 ;; Geiser
 (setq geiser-active-implementations '(racket))
 (setq geiser-racket-binary "/usr/local/bin/racket")
+
+;; Parentheses
+;; Built-in
+(show-paren-mode 1) ;; Highlights matching ;; parentheses
+;; (setq show-paren-style 'expression) ;; Highlights whole expression
+;; Parenedit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
