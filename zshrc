@@ -46,6 +46,9 @@ export EDITOR="/usr/local/bin/mate -w"
 
 # Alias
 alias ec='emacsclient -c -n'
+# Magit
+alias ecg='emacsclient -c -n --eval "(rk-magit-status-startup)"'
+
 
 # Fixing colors in terminal Emacs
 # export TERM=xterm-256color

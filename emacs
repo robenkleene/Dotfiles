@@ -75,5 +75,30 @@
 ;; Magit
 (eval-after-load 'magit
   '(progn
-     (set-face-foreground 'magit-diff-add "green4")
-     (set-face-foreground 'magit-diff-del "red3")))
+     (set-face-foreground 'magit-diff-add "MediumSpringGreen")
+     (set-face-foreground 'magit-diff-del "red1")))
+
+(defun rk-magit-status-current-window () 
+  "Magit in current window."
+  (interactive)
+  (progn (call-interactively 'magit-status) 
+	 (delete-other-windows)))
+
+(defun rk-focus ()
+  "Focus on current frame."
+  (select-frame-set-input-focus (selected-frame)))
+
+(defun rk-magit-status-startup ()
+  "Startup magit full frame with focus."
+  (progn (rk-magit-status-current-window) (rk-focus)))
+
+;; Markdown
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Recent Files
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
