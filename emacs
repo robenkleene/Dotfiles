@@ -109,3 +109,6 @@
 
 ;; Keyboard mappings
 (setq mac-command-modifier 'control)
+
+(global-set-key (kbd "C-`") 'other-frame)
+(global-set-key (kbd "C-~") 'previous-multiframe-window)
