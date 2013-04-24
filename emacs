@@ -112,3 +112,8 @@
 
 (global-set-key (kbd "C-`") 'other-frame)
 (global-set-key (kbd "C-~") 'previous-multiframe-window)
+
+(defun rk-big-frame ()
+  "Make the window big."
+  (interactive)
+  (set-frame-size (selected-frame) 80 60))
