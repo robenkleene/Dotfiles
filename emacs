@@ -35,10 +35,14 @@
 ;; Disable Toolbar
 (tool-bar-mode -1)
 
-;; ido mode
+;; ido-mode
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+;; icomplete-mode
+;; ido-mode style completion in describe-varable, etc...
+ (icomplete-mode t)
+
 
 ;; All the beeping is annoying
 (setq visible-bell 1)
@@ -102,3 +106,6 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
+
+;; Keyboard mappings
+(setq mac-command-modifier 'control)
