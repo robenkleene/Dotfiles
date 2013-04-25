@@ -24,6 +24,12 @@
 ;; Quick Settings
 (global-visual-line-mode t) ;; Don't split words when line wrapping
 (setq visible-bell 1) ;; All the beeping is annoying
+(scroll-bar-mode -1) ;; Disable scroolbars, use percentage
+;; (setq scroll-preserve-screen-position t) ;; Cursor stays in same position on window
+;; These two magic lines improve scrolling
+(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+
 
 ;; ido-mode
 (require 'ido)
