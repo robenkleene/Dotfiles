@@ -30,7 +30,6 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 
-
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
@@ -46,9 +45,10 @@
 
 ;; Keyboard mappings
 ;; (setq mac-command-modifier 'control)
-(global-set-key (kbd "C-`") 'other-frame)
-(global-set-key (kbd "C-~") 'previous-multiframe-window)
-
+;; (global-set-key (kbd "C-`") 'other-frame)
+;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
+(global-set-key (kbd "s-/") 'undo)
+(global-set-key (kbd "s-x") ctl-x-map)
 
 ;; Look & Feel
 
