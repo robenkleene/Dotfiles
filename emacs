@@ -49,6 +49,17 @@
 ;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
 (global-set-key (kbd "s-/") 'undo)
 (global-set-key (kbd "s-x") ctl-x-map)
+;; (global-set-key (kbd "?\S- ") 'execute-extended-command)
+;; (global-set-key "?\S- " 'execute-extended-command)
+;; (define-key global-map [(shift space)]
+;;   '(lambda () 
+;;      (interactive)
+;;      (message "hello")
+;;      (sit-for 1)))
+
+
+
+
 
 ;; Look & Feel
 
