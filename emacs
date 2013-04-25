@@ -45,7 +45,7 @@
 (setq recentf-max-menu-items 25)
 
 ;; Keyboard mappings
-(setq mac-command-modifier 'control)
+;; (setq mac-command-modifier 'control)
 (global-set-key (kbd "C-`") 'other-frame)
 (global-set-key (kbd "C-~") 'previous-multiframe-window)
 
