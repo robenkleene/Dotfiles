@@ -14,6 +14,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Packages
 
 ;; Smex
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
@@ -31,11 +32,29 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+(global-visual-line-mode t) ;; Don't split words when line wrapping
+
 
 ;; Disable Toolbar
 (if window-system
     (tool-bar-mode 0))
+;; Window Positioning
+(if window-system
+    (add-to-list 'default-frame-alist '(top . 0))) ;; Re-positions window to the top fo the screen after loading, might become unnecessary if the emacs load sequence gets cleaned up
 
+;; Window Functions
+(defun rk-set-frame-tall ()
+  "Make the frame tall."
+  (interactive)
+  (set-frame-size (selected-frame) 80 60))
+(defun rk-set-frame-tall-and-wide ()
+  "Make the frame tall and wide."
+  (interactive)
+  (set-frame-size (selected-frame) 160 60))
+(defun rk-set-frame-normal ()
+  "Make the frame normal."
+  (interactive)
+  (set-frame-size (selected-frame) 80 35))
 
 ;; ido-mode
 (require 'ido)
@@ -44,7 +63,6 @@
 ;; icomplete-mode
 ;; ido-mode style completion in describe-varable, etc...
  (icomplete-mode t)
-
 
 ;; All the beeping is annoying
 (setq visible-bell 1)
@@ -110,21 +128,6 @@
 
 ;; Keyboard mappings
 (setq mac-command-modifier 'control)
-
 (global-set-key (kbd "C-`") 'other-frame)
 (global-set-key (kbd "C-~") 'previous-multiframe-window)
 
-(defun rk-set-frame-tall ()
-  "Make the frame tall."
-  (interactive)
-  (set-frame-size (selected-frame) 80 60))
-
-(defun rk-set-frame-tall-and-wide ()
-  "Make the frame tall and wide."
-  (interactive)
-  (set-frame-size (selected-frame) 160 60))
-
-(defun rk-set-frame-normal ()
-  "Make the frame normal."
-  (interactive)
-  (set-frame-size (selected-frame) 80 35))
