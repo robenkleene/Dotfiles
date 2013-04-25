@@ -48,18 +48,7 @@
 ;; (global-set-key (kbd "C-`") 'other-frame)
 ;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
 (global-set-key (kbd "s-/") 'undo)
-(global-set-key (kbd "s-x") ctl-x-map)
-;; (global-set-key (kbd "?\S- ") 'execute-extended-command)
-;; (global-set-key "?\S- " 'execute-extended-command)
-;; (define-key global-map [(shift space)]
-;;   '(lambda () 
-;;      (interactive)
-;;      (message "hello")
-;;      (sit-for 1)))
-;;(global-set-key [?\S- ] 'execute-extended-command)
-
-
-
+;; (global-set-key (kbd "s-x") ctl-x-map)
 
 ;; Look & Feel
 
@@ -102,7 +91,15 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
-(global-set-key [?\S- ] 'smex)
+;; (global-set-key (kbd "?\S- ") 'execute-extended-command)
+;; (global-set-key "?\S- " 'execute-extended-command)
+;; (define-key global-map [(shift space)]
+;;   '(lambda () 
+;;      (interactive)
+;;      (message "hello")
+;;      (sit-for 1)))
+;; (global-set-key [?\S- ] 'execute-extended-command)
+;; (global-set-key [C-?\S- ] 'smex)
 
 
 ;; Lisp
