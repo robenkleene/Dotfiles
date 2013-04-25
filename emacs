@@ -33,7 +33,9 @@
   (server-start))
 
 ;; Disable Toolbar
-(tool-bar-mode -1)
+(if window-system
+    (tool-bar-mode 0))
+
 
 ;; ido-mode
 (require 'ido)
@@ -57,7 +59,6 @@
 
 (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
 (set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
-
 
 ;; Geiser
 (setq geiser-active-implementations '(racket))
@@ -113,7 +114,17 @@
 (global-set-key (kbd "C-`") 'other-frame)
 (global-set-key (kbd "C-~") 'previous-multiframe-window)
 
-(defun rk-big-frame ()
-  "Make the window big."
+(defun rk-set-frame-tall ()
+  "Make the frame tall."
   (interactive)
   (set-frame-size (selected-frame) 80 60))
+
+(defun rk-set-frame-tall-and-wide ()
+  "Make the frame tall and wide."
+  (interactive)
+  (set-frame-size (selected-frame) 160 60))
+
+(defun rk-set-frame-normal ()
+  "Make the frame normal."
+  (interactive)
+  (set-frame-size (selected-frame) 80 35))
