@@ -56,7 +56,7 @@
 ;;      (interactive)
 ;;      (message "hello")
 ;;      (sit-for 1)))
-
+;;(global-set-key [?\S- ] 'execute-extended-command)
 
 
 
@@ -102,6 +102,8 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
+(global-set-key [?\S- ] 'smex)
+
 
 ;; Lisp
 ;; SLIME
