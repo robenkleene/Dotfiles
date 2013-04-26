@@ -56,7 +56,9 @@
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 (global-set-key (kbd "<escape>") 'keyboard-quit)
+(define-key minibuffer-local-map (kbd "<escape>") 'abort-recursive-edit) 
 (global-set-key (kbd "s-b") 'ido-switch-buffer)
+
 
 
 
@@ -104,6 +106,7 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-<S-SPC>") 'smex)
+(global-set-key (kbd "s-'") 'smex)
 
 
 ;; Lisp
