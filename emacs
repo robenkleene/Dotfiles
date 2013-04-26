@@ -48,6 +48,18 @@
 ;; (global-set-key (kbd "C-`") 'other-frame)
 ;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
 (global-set-key (kbd "s-/") 'undo)
+(global-set-key (kbd "s-k") 'kill-line) 
+(global-set-key (kbd "s-y") 'yank)
+(global-set-key (kbd "s-<left>") 'beginning-of-visual-line)
+(global-set-key (kbd "s-<right>") 'move-end-of-line)
+(global-set-key (kbd "s-<right>") 'move-end-of-line)
+(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") 'end-of-buffer)
+(global-set-key (kbd "<escape>") 'keyboard-quit)
+(global-set-key (kbd "s-b") 'ido-switch-buffer)
+
+
+
 ;; (global-set-key (kbd "s-x") ctl-x-map)
 
 ;; Look & Feel
@@ -91,15 +103,7 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "?\S- ") 'execute-extended-command)
-;; (global-set-key "?\S- " 'execute-extended-command)
-;; (define-key global-map [(shift space)]
-;;   '(lambda () 
-;;      (interactive)
-;;      (message "hello")
-;;      (sit-for 1)))
-;; (global-set-key [?\S- ] 'execute-extended-command)
-;; (global-set-key [C-?\S- ] 'smex)
+(global-set-key (kbd "C-<S-SPC>") 'smex)
 
 
 ;; Lisp
