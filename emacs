@@ -29,6 +29,7 @@
 ;; These two magic lines improve scrolling
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
+(delete-selection-mode 1)
 
 ;; ido-mode
 (require 'ido)
@@ -37,6 +38,9 @@
 ;; icomplete-mode
 ;; ido-mode style completion in describe-varable, etc...
 (icomplete-mode t)
+
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; Recent Files
 (require 'recentf)
@@ -50,19 +54,23 @@
 (global-set-key (kbd "s-/") 'undo)
 (global-set-key (kbd "s-k") 'kill-line) 
 (global-set-key (kbd "s-y") 'yank)
+;; Movement
 (global-set-key (kbd "s-<left>") 'beginning-of-visual-line)
-(global-set-key (kbd "s-<right>") 'move-end-of-line)
 (global-set-key (kbd "s-<right>") 'move-end-of-line)
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 (global-set-key (kbd "<escape>") 'keyboard-quit)
+;; Abort
 (define-key minibuffer-local-map (kbd "<escape>") 'abort-recursive-edit) 
 (global-set-key (kbd "s-b") 'ido-switch-buffer)
+;; Windows
+(global-set-key (kbd "C-`") 'other-window)
+(global-set-key (kbd "C-~") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "C-'") 'other-window)
+(global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
+(global-set-key (kbd "C-s-w") 'delete-window)
+(global-set-key (kbd "C-S-s-w") 'delete-other-windows)
 
-
-
-
-;; (global-set-key (kbd "s-x") ctl-x-map)
 
 ;; Look & Feel
 
@@ -155,3 +163,7 @@
 (defun rk-magit-status-startup ()
   "Startup magit full frame with focus."
   (progn (rk-magit-status-current-window) (rk-focus)))
+
+;; Multiple Cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
