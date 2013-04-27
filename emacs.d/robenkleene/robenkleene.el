@@ -1,5 +1,3 @@
-; -*-Emacs-Lisp-*-
-
 ;; Settings
 
 ;; Packages Management
