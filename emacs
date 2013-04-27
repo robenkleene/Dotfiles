@@ -36,10 +36,21 @@
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
-(setq ido-enable-flex-matching t)
+(setq ido-enable-flex-matching t) ;; Fuzzy matching
 ;; icomplete-mode
 ;; ido-mode style completion in describe-varable, etc...
 (icomplete-mode t)
+;; ido-ubiquitous
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
+;; With recentf
+(defun rk-recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+(global-set-key (kbd "s-r") 'rk-recentf-ido-find-file)
 
 ;; ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -184,3 +195,7 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+;; Auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
