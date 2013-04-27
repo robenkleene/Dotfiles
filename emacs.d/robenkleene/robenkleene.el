@@ -88,7 +88,8 @@
 (global-set-key (kbd "C-s-w") 'delete-window)
 (global-set-key (kbd "<C-s-268632087>") 'delete-window) ;; For some reason the above key mapping doesn't work and this one does
 (global-set-key (kbd "C-S-s-w") 'delete-other-windows)
-
+(global-set-key (kbd "C-s-e") 'rk-customize-emacs)
+(global-set-key (kbd "<C-s-268632069>") 'rk-customize-emacs)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
 ;; Complex Commands
@@ -115,6 +116,10 @@
 (defun rk-set-frame-wide ()
   (interactive)
   (set-frame-width (selected-frame) 160))
+(defun rk-customize-emacs ()
+  (interactive)
+  (find-file "~/.emacs.d/robenkleene/robenkleene.el"))
+
 
 
 ;; Look & Feel
