@@ -44,11 +44,11 @@ preexec () {print -Pn "\e]2; %~/ \a"}
 # export EDITOR="vim"
 export EDITOR="/usr/local/bin/mate -w"
 
+# Emacs
 # Alias
 alias ec='emacsclient -c -n'
 # Magit
 alias gc='emacsclient -c -n --eval "(rk-magit-status-startup)"'
-
 
 # Fixing colors in terminal Emacs
 # export TERM=xterm-256color

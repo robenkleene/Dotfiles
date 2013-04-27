@@ -30,6 +30,7 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 (delete-selection-mode 1)
+(setq explicit-shell-file-name "/bin/bash") ;; zsh doesn't play nice with shell
 
 ;; ido-mode
 (require 'ido)
@@ -51,7 +52,6 @@
 ;; (setq mac-command-modifier 'control)
 ;; (global-set-key (kbd "C-`") 'other-frame)
 ;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
-(global-set-key (kbd "s-/") 'undo)
 (global-set-key (kbd "s-k") 'kill-line) 
 (global-set-key (kbd "s-y") 'yank)
 ;; Movement
@@ -70,7 +70,16 @@
 (global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
 (global-set-key (kbd "C-s-w") 'delete-window)
 (global-set-key (kbd "C-S-s-w") 'delete-other-windows)
+;; (global-set-key (kbd "s-/") 'comment-region)
 
+(global-set-key (kbd "s-/") 'rk-is-region)
+(defun rk-is-region()
+  (interactive)
+  (if (eq (point) (mark))
+      (message "yes")
+      (message "no")))
+   
+   
 
 ;; Look & Feel
 
@@ -167,3 +176,8 @@
 ;; Multiple Cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+;; exec-path-from-shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
