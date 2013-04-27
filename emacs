@@ -31,6 +31,7 @@
 (setq scroll-conservatively 10000)
 (delete-selection-mode 1)
 (setq explicit-shell-file-name "/bin/bash") ;; zsh doesn't play nice with shell
+(setq inhibit-startup-message t)
 
 ;; ido-mode
 (require 'ido)
@@ -71,12 +72,30 @@
 (global-set-key (kbd "C-s-w") 'delete-window)
 (global-set-key (kbd "C-S-s-w") 'delete-other-windows)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+;; Complex Commands
 (global-set-key (kbd "s-/") 'rk-comment-line-or-region)
 (defun rk-comment-line-or-region ()
   (interactive)
   (if (use-region-p)
       (comment-or-uncomment-region (mark) (point))
       (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+;; Window Functions
+(global-set-key (kbd "C-M-s-<left>") 'rk-set-frame-thin)
+(global-set-key (kbd "C-M-s-<right>") 'rk-set-frame-wide)
+(global-set-key (kbd "C-M-s-<up>") 'rk-set-frame-short)
+(global-set-key (kbd "C-M-s-<down>") 'rk-set-frame-tall)
+(defun rk-set-frame-short ()
+  (interactive)
+  (set-frame-height (selected-frame) 35))
+(defun rk-set-frame-tall ()
+  (interactive)
+  (set-frame-height (selected-frame) 60))
+(defun rk-set-frame-thin ()
+  (interactive)
+  (set-frame-width (selected-frame) 80))
+(defun rk-set-frame-wide ()
+  (interactive)
+  (set-frame-width (selected-frame) 160))
 
 
 ;; Look & Feel
@@ -98,20 +117,6 @@
 ;; Cursor, Selection & Current Line
 (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
 (set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
-
-;; Window Functions
-(defun rk-set-frame-tall ()
-  "Make the frame tall."
-  (interactive)
-  (set-frame-size (selected-frame) 80 60))
-(defun rk-set-frame-tall-and-wide ()
-  "Make the frame tall and wide."
-  (interactive)
-  (set-frame-size (selected-frame) 160 60))
-(defun rk-set-frame-normal ()
-  "Make the frame normal."
-  (interactive)
-  (set-frame-size (selected-frame) 80 35))
 
 
 ;; Packages
