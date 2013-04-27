@@ -70,16 +70,14 @@
 (global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
 (global-set-key (kbd "C-s-w") 'delete-window)
 (global-set-key (kbd "C-S-s-w") 'delete-other-windows)
-;; (global-set-key (kbd "s-/") 'comment-region)
-
-(global-set-key (kbd "s-/") 'rk-is-region)
-(defun rk-is-region()
+(define-key global-map (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "s-/") 'rk-comment-line-or-region)
+(defun rk-comment-line-or-region ()
   (interactive)
-  (if (eq (point) (mark))
-      (message "yes")
-      (message "no")))
-   
-   
+  (if (use-region-p)
+      (comment-or-uncomment-region (mark) (point))
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+
 
 ;; Look & Feel
 
