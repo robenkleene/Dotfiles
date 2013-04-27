@@ -60,7 +60,14 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;; Org-Mode
+;; "s-[" org-metaleft
+;; "s-S-[" org-shiftmetaleft
+
+
+
 ;; Keyboard mappings
+
 ;; (setq mac-command-modifier 'control)
 ;; (global-set-key (kbd "C-`") 'other-frame)
 ;; (global-set-key (kbd "C-~") 'previous-multiframe-window)
@@ -81,7 +88,10 @@
 (global-set-key (kbd "C-'") 'other-window)
 (global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
 (global-set-key (kbd "C-s-w") 'delete-window)
+(global-set-key (kbd "<C-s-268632087>") 'delete-window) ;; For some reason the above key mapping doesn't work and this one does
 (global-set-key (kbd "C-S-s-w") 'delete-other-windows)
+
+
 (define-key global-map (kbd "RET") 'newline-and-indent)
 ;; Complex Commands
 (global-set-key (kbd "s-/") 'rk-comment-line-or-region)
@@ -168,6 +178,10 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+;; Additional Keyboard Bindings
+(add-hook 'paredit-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "s-)") 'mark-sexp)))
 
 ;; Magit
 (eval-after-load 'magit
@@ -199,3 +213,27 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+
+
+
+;; This should only be run in window mode
+;; (require 'assoc)
+;; (defvar rk-frame-position-x-offset 20)
+;; (defvar rk-frame-position-y-offset 20)
+;; (defvar rk-frame-position-taskbar-height 30)
+;; (defun rk-frame-position ()
+;;   (let ((left (+ rk-frame-position-x-offset 
+;;                  (or (frame-parameter nil 'left) 0)))
+;;         (top (+ rk-frame-position-y-offset 
+;;                 (or (frame-parameter nil 'top) 0))))
+;;     (when (or (> (+ (frame-pixel-width) left) 
+;;                  (display-pixel-width))
+;;               (> (+ (frame-pixel-height) top 
+;;                     rk-frame-position-taskbar-height)
+;;                  (display-pixel-height)))
+;;       (setq left 0 top 0))
+;;     (aput 'default-frame-alist 'left left)
+;;     (aput 'default-frame-alist 'top top)))
+
+;; (aput 'default-frame-alist 'user-position t)
+;; (add-hook 'before-make-frame-hook 'rk-frame-position)
