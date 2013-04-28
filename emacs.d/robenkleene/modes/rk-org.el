@@ -10,4 +10,6 @@
     (define-key org-mode-map (kbd "C-s-<down>") 'org-metadown)
     (define-key org-mode-map (kbd "C-s-<left>") 'org-metaleft)
     (define-key org-mode-map (kbd "C-s-<right>") 'org-metaright)
+    (define-key org-mode-map (kbd "s-\[") 'org-metaleft)
+    (define-key org-mode-map (kbd "s-\]") 'org-metaright)
     ))
