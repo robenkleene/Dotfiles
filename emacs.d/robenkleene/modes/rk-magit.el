@@ -5,6 +5,7 @@
   '(progn
      (set-face-foreground 'magit-diff-add "#95E452")
      (set-face-foreground 'magit-diff-del "#E5796A")
+     (setq magit-status-buffer-switch-function 'switch-to-buffer)
      ))
 
 ;; Magit Startup Helpers
@@ -19,3 +20,4 @@
 (defun rk-magit-status-startup ()
   "Startup magit full frame with focus."
   (progn (rk-magit-status-current-window) (rk-focus-selected-frame)))
+
