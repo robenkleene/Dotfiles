@@ -1,5 +1,9 @@
 (provide 'rk-markdown)
 
+(rk-install-package-if-missing 'markdown-mode)
+
+;; Need to disable the option left/right bindings
+
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)

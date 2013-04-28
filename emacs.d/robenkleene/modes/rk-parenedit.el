@@ -1,5 +1,7 @@
 (provide 'rk-parenedit)
 
+(rk-install-package-if-missing 'paredit)
+
 ;; Parenedit
 (show-paren-mode 1) ;; Built-in, highlights matching parentheses
 ;; (setq show-paren-style 'expression) ;; Highlights whole expression

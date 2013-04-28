@@ -13,9 +13,10 @@
 ;; ido-mode style completion in describe-varable, etc...
 (icomplete-mode t)
 ;; Key Bindings
-(global-set-key (kbd "s-b") 'ido-switch-buffer)
+(global-set-key (kbd "s-B") 'ido-switch-buffer)
+(global-set-key (kbd "s-o") 'ido-find-file)
 ;; With recentf
-(global-set-key (kbd "s-r") 'rk-recentf-ido-find-file)
+(global-set-key (kbd "s-R") 'rk-recentf-ido-find-file)
 (defun rk-recentf-ido-find-file ()
   "Find a recent file using ido."
   (interactive)

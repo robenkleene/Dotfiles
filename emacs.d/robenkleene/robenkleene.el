@@ -14,8 +14,10 @@
 ;; Load Basic Settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
 (require 'rk-settings)
+(require 'rk-functions)
 (require 'rk-keybindings)
 (require 'rk-theme)
+
 ;; Load Feature Settings
 (require 'rk-features)
 (require 'rk-features-packages)
@@ -29,4 +31,7 @@
 (require 'rk-magit)
 ;; Lisp
 (require 'rk-geiser)
-(require 'rk-slime) ;; Setup quicklisp instead
+;; Setup quicklisp instead
+;; (require 'rk-slime)
+(require 'rk-emacs-lisp)
+

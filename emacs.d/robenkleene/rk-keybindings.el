@@ -29,11 +29,17 @@
 ;; Custom Functions
 
 ;; Customizing Emacs
-(global-set-key (kbd "C-s-e") 'rk-customize-emacs)
+(global-set-key (kbd "s-E") 'rk-customize-emacs)
 (global-set-key (kbd "<C-s-268632069>") 'rk-customize-emacs)
 (defun rk-customize-emacs ()
   (interactive)
   (find-file "~/.emacs.d/robenkleene/robenkleene.el"))
+
+;; Text Directory
+(global-set-key (kbd "s-T") 'rk-text-directory)
+(defun rk-text-directory ()
+  (interactive)
+  (find-file "~/Dropbox/Text/Scratch.md"))
 
 ;; Comments
 (global-set-key (kbd "s-/") 'rk-comment-line-or-region)

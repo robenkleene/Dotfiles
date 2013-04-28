@@ -1,5 +1,6 @@
 (provide 'rk-magit)
 
+(rk-install-package-if-missing 'magit)
 (eval-after-load 'magit
   '(progn
      (set-face-foreground 'magit-diff-add "#95E452")
