@@ -73,6 +73,7 @@
 
 ;; snpt
 (global-set-key (kbd "C-s-s") 'rk-snpt)
+(global-set-key (kbd "C-s-S") 'rk-open-snpt)
 (global-set-key (kbd "<C-s-268632083>") 'rk-snpt)
 (defun rk-snpt () 
   (interactive)
@@ -90,6 +91,24 @@
      (line-end-position)
      command t t)
     ))
+(defun rk-open-snpt () 
+  (interactive)
+  (let ((command 
+	 (if (string-match "[.]"
+			   (buffer-substring
+			    (line-beginning-position)
+			    (line-end-position)))
+	     "snpt"
+	   (concat "snpt -o -l " (file-name-extension buffer-file-name))
+	   )
+	 ))
+    (shell-command-on-region
+     (line-beginning-position)
+     (line-end-position)
+     command)
+    ))
+
+
 
 
 ;; Window Management
