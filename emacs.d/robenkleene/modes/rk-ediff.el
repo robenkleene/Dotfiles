@@ -1,3 +1,9 @@
 (provide 'rk-ediff)
 
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(eval-after-load 'ediff
+  '(progn
+     (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+   )
+)
+
+

@@ -5,25 +5,26 @@
 (global-set-key (kbd "s-y") 'yank)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; Movement
-(global-set-key (kbd "s-<left>") 'beginning-of-visual-line)
-(global-set-key (kbd "s-<right>") 'move-end-of-line)
-(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
-(global-set-key (kbd "s-<down>") 'end-of-buffer)
+
 (global-set-key (kbd "<escape>") 'keyboard-quit)
 
 ;; Abort
 (define-key minibuffer-local-map (kbd "<escape>") 'abort-recursive-edit) 
+
+;; Windows & Buffers
 
 ;; Windows
 (global-set-key (kbd "C-`") 'other-window)
 (global-set-key (kbd "C-~") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-'") 'other-window)
 (global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
-(global-set-key (kbd "C-s-w") 'delete-window)
-(global-set-key (kbd "<C-s-268632087>") 'delete-window) ;; For some reason the above key mapping doesn't work and this one does
-(global-set-key (kbd "C-S-s-w") 'delete-other-windows)
-
+(global-set-key (kbd "C-w") 'delete-window)
+(global-set-key (kbd "C-S-w") 'delete-other-windows)
+;; Buffers
+(global-set-key (kbd "s-{") 'previous-buffer) ; Tab-switching Style
+(global-set-key (kbd "s-}") 'next-buffer)
+(global-set-key (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
+(global-set-key (kbd "C-s-<right>") 'next-buffer)
 
 
 ;; Custom Functions

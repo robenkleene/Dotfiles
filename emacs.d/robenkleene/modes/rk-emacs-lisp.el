@@ -1,8 +1,15 @@
 (provide 'rk-emacs-lisp)
 
-(add-hook 'emacs-lisp-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "s-r") 'eval-buffer)))
-(add-hook 'lisp-interaction-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "s-r") 'eval-buffer)))
+
+(eval-after-load "lisp-mode"
+  '(progn
+     (define-key emacs-lisp-mode-map (kbd "s-r") 'rk-eval-lisp)
+     (define-key lisp-interaction-mode-map (kbd "s-r") 'rk-eval-lisp)
+  )
+)
+
+(defun rk-eval-lisp ()
+  (interactive)
+  (if (use-region-p)
+      (call-interactively 'eval-region)
+      (eval-buffer)))
