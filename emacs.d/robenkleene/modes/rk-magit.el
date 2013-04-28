@@ -4,7 +4,9 @@
 (eval-after-load 'magit
   '(progn
      (set-face-foreground 'magit-diff-add "#95E452")
-     (set-face-foreground 'magit-diff-del "#E5796A")))
+     (set-face-foreground 'magit-diff-del "#E5796A")
+     ))
+
 ;; Magit Startup Helpers
 (defun rk-magit-status-current-window () 
   "Magit in current window."

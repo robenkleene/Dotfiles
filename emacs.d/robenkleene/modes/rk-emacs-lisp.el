@@ -5,8 +5,9 @@
   '(progn
      (define-key emacs-lisp-mode-map (kbd "s-r") 'rk-eval-lisp)
      (define-key lisp-interaction-mode-map (kbd "s-r") 'rk-eval-lisp)
-  )
-)
+     (define-key emacs-lisp-mode-map (kbd "C-E") 'eval-last-sexp)
+     (define-key lisp-interaction-mode-map (kbd "C-E") 'eval-last-sexp)
+     ))
 
 (defun rk-eval-lisp ()
   (interactive)

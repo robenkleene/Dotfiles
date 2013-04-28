@@ -34,4 +34,3 @@
 ;; Setup quicklisp instead
 ;; (require 'rk-slime)
 (require 'rk-emacs-lisp)
-(require 'rk-osx)

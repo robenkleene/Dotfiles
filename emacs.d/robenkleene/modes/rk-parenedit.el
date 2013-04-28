@@ -14,7 +14,7 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
-;;  Keyboard Bindings
-(add-hook 'paredit-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "s-)") 'mark-sexp)))
+(eval-after-load 'paredit
+  '(progn
+     (define-key paredit-mode-map (kbd "s-)") 'mark-sexp)
+     ))

@@ -1,31 +1,49 @@
 (provide 'rk-keybindings)
 
+;; OS X Style
+(defvar rk-osx-minor-mode-map (make-keymap) "rk-osx-minor-mode map keymap.")
+(define-key rk-osx-minor-mode-map (kbd "s-<left>") 'beginning-of-visual-line)
+(define-key rk-osx-minor-mode-map (kbd "s-<right>") 'move-end-of-line)
+(define-key rk-osx-minor-mode-map (kbd "s-<up>") 'beginning-of-buffer)
+(define-key rk-osx-minor-mode-map (kbd "s-<down>") 'end-of-buffer)
+(define-key rk-osx-minor-mode-map (kbd "M-<left>") 'left-word)
+(define-key rk-osx-minor-mode-map (kbd "M-<right>") 'right-word)
+(define-key rk-osx-minor-mode-map (kbd "M-S-<left>") nil)
+(define-key rk-osx-minor-mode-map (kbd "M-S-<right>") nil)
+(define-minor-mode rk-osx-minor-mode
+  "Behave like OS X."
+  :global t)
+(rk-osx-minor-mode 1)
+
+;; Windows & Buffers
+(defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
+(define-key rk-wm-minor-mode-map (kbd "C-`") 'other-window)
+(define-key rk-wm-minor-mode-map (kbd "C-~") (lambda () (interactive) (other-window -1)))
+(define-key rk-wm-minor-mode-map (kbd "C-'") 'other-window)
+(define-key rk-wm-minor-mode-map (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
+(define-key rk-wm-minor-mode-map (kbd "C-w") 'delete-window)
+(define-key rk-wm-minor-mode-map (kbd "C-S-w") 'delete-other-windows)
+(define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
+(define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
+(define-key rk-wm-minor-mode-map (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
+(define-key rk-wm-minor-mode-map (kbd "C-s-<right>") 'next-buffer)
+(define-minor-mode rk-wm-minor-mode
+  "Window management minor mode."
+  :global t)
+(rk-wm-minor-mode 1)
+
+
 ;; Editing
 (global-set-key (kbd "s-k") 'kill-line) 
 (global-set-key (kbd "s-y") 'yank)
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "s-]") 'indent-for-tab-command)
+(global-set-key (kbd "s-[") 'indent-for-tab-command)
 
 (global-set-key (kbd "<escape>") 'keyboard-quit)
 
 ;; Abort
 (define-key minibuffer-local-map (kbd "<escape>") 'abort-recursive-edit) 
-
-;; Windows & Buffers
-
-;; Windows
-(global-set-key (kbd "C-`") 'other-window)
-(global-set-key (kbd "C-~") (lambda () (interactive) (other-window -1)))
-(global-set-key (kbd "C-'") 'other-window)
-(global-set-key (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
-(global-set-key (kbd "C-w") 'delete-window)
-(global-set-key (kbd "C-S-w") 'delete-other-windows)
-;; Buffers
-(global-set-key (kbd "s-{") 'previous-buffer) ; Tab-switching Style
-(global-set-key (kbd "s-}") 'next-buffer)
-(global-set-key (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
-(global-set-key (kbd "C-s-<right>") 'next-buffer)
-
 
 ;; Custom Functions
 
@@ -47,8 +65,32 @@
 (defun rk-comment-line-or-region ()
   (interactive)
   (if (use-region-p)
-      (comment-or-uncomment-region (mark) (point))
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+      (if (< (point) (mark))
+	  (comment-or-uncomment-region (point) (mark))
+	(comment-or-uncomment-region (mark) (point)))
+    (comment-or-uncomment-region (line-beginning-position)
+				 (line-end-position))))
+
+;; snpt
+(global-set-key (kbd "C-s-s") 'rk-snpt)
+(global-set-key (kbd "<C-s-268632083>") 'rk-snpt)
+(defun rk-snpt () 
+  (interactive)
+  (let ((command 
+	 (if (string-match "[.]"
+			   (buffer-substring
+			    (line-beginning-position)
+			    (line-end-position)))
+	     "snpt"
+	   (concat "snpt -l " (file-name-extension buffer-file-name))
+	   )
+	 ))
+    (shell-command-on-region
+     (line-beginning-position)
+     (line-end-position)
+     command t t)
+    ))
+
 
 ;; Window Management
 (global-set-key (kbd "C-M-s-<left>") 'rk-set-frame-thin)
