@@ -1,11 +1,11 @@
-(provide 'rk-parenedit)
+(provide 'rk-paredit)
 
 (rk-install-package-if-missing 'paredit)
 
-;; Parenedit
+;; Paredit
 (show-paren-mode 1) ;; Built-in, highlights matching parentheses
 ;; (setq show-paren-style 'expression) ;; Highlights whole expression
-;; Load Parenedit
+;; Load Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)

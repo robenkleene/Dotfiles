@@ -107,9 +107,16 @@
      (line-end-position)
      command)
     ))
-
-
-
+;; Print Variable
+(global-set-key (kbd "M-p") 'rk-print-variable)
+(defun rk-print-variable () 
+  (interactive)
+   (shell-command-on-region
+     (line-beginning-position)
+     (line-end-position)
+     (concat "printvariable -l " (file-name-extension buffer-file-name))
+     t t
+     ))
 
 ;; Window Management
 (global-set-key (kbd "C-M-s-<left>") 'rk-set-frame-thin)

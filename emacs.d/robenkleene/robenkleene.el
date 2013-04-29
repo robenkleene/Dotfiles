@@ -27,7 +27,7 @@
 (require 'rk-ediff)
 (require 'rk-org)
 (require 'rk-markdown)
-(require 'rk-parenedit)
+(require 'rk-paredit)
 (require 'rk-magit)
 ;; Lisp
 (require 'rk-geiser)
