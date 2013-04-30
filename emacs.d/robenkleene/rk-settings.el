@@ -17,5 +17,8 @@
 (setq explicit-shell-file-name "/bin/bash") ;; zsh doesn't play nice with shell
 (setq inhibit-startup-message t) ;; Go straight to scratch
 ;; These two magic lines improve scrolling
-(setq scroll-step 1)
-(setq scroll-conservatively 10000)
+;; (setq scroll-step 1)
+;; (setq scroll-conservatively 10000)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
+
