@@ -12,6 +12,7 @@
 
 ;; Theme
 (load-theme 'wombat)
+(set-background-color "#191919")
 (set-cursor-color "#E57969")
 (global-hl-line-mode t) ;; Highlight current line
 ;; (global-linum-mode 1) ;; Line numbers
