@@ -140,12 +140,16 @@
 (global-set-key (kbd "C-s-r") 'split-window-right)
 (global-set-key (kbd "<C-s-268632082>") 'split-window-right)
 
+;; rgrep
 (global-set-key (kbd "s-F") 'rk-rgrep-project)
 (defun rk-rgrep-project (regexp)
   "Search project for regexp"
-  (interactive (list (read-regexp
-		   (concat "rgrep " (format "%s: " (rk-project-directory))) 
-		   )))
+  (interactive
+   (progn
+     (grep-compute-defaults)
+     (list (read-regexp
+	    (concat "rgrep " (format "%s: " (rk-project-directory))) 
+	    ))))
   (rgrep regexp "*" (rk-project-directory)))
 ;; Hide rgrep header
 (defun rk-delete-grep-header ()

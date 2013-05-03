@@ -8,6 +8,7 @@
   (interactive)
   (dired "~/Development/Scratch"))
 
+(require 'find-file-in-project)
 (defun rk-project-directory ()
   (ffip-project-root))
 

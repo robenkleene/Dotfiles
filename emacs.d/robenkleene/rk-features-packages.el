@@ -31,8 +31,6 @@
 (setq ac-auto-show-menu nil)
 (setq ac-use-quick-help nil)
 
-
-
 ;; find-file-in-project
 (rk-install-package-if-missing 'find-file-in-project)
 (global-set-key (kbd "s-O") 'find-file-in-project)
