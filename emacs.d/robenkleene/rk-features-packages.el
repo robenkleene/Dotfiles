@@ -28,6 +28,10 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(setq ac-auto-show-menu nil)
+(setq ac-use-quick-help nil)
+
+
 
 ;; find-file-in-project
 (rk-install-package-if-missing 'find-file-in-project)

@@ -140,25 +140,18 @@
 (global-set-key (kbd "C-s-r") 'split-window-right)
 (global-set-key (kbd "<C-s-268632082>") 'split-window-right)
 
-
-;; This should only be run in window mode
-;; (require 'assoc)
-;; (defvar rk-frame-position-x-offset 20)
-;; (defvar rk-frame-position-y-offset 20)
-;; (defvar rk-frame-position-taskbar-height 30)
-;; (defun rk-frame-position ()
-;;   (let ((left (+ rk-frame-position-x-offset 
-;;                  (or (frame-parameter nil 'left) 0)))
-;;         (top (+ rk-frame-position-y-offset 
-;;                 (or (frame-parameter nil 'top) 0))))
-;;     (when (or (> (+ (frame-pixel-width) left) 
-;;                  (display-pixel-width))
-;;               (> (+ (frame-pixel-height) top 
-;;                     rk-frame-position-taskbar-height)
-;;                  (display-pixel-height)))
-;;       (setq left 0 top 0))
-;;     (aput 'default-frame-alist 'left left)
-;;     (aput 'default-frame-alist 'top top)))
-
-;; (aput 'default-frame-alist 'user-position t)
-;; (add-hook 'before-make-frame-hook 'rk-frame-position)
+(global-set-key (kbd "s-F") 'rk-rgrep-project)
+(defun rk-rgrep-project (regexp)
+  "Search project for regexp"
+  (interactive (list (read-regexp
+		   (concat "rgrep " (format "%s: " (rk-project-directory))) 
+		   )))
+  (rgrep regexp "*" (rk-project-directory)))
+;; Hide rgrep header
+(defun rk-delete-grep-header ()
+  (save-excursion
+    (with-current-buffer grep-last-buffer
+      (goto-line 5)
+      (narrow-to-region (point) (point-max)))))
+(defadvice rgrep (after rk-delete-grep-header activate)
+  (rk-delete-grep-header))

@@ -7,3 +7,8 @@
 (defun rk-bookmark-scratch ()
   (interactive)
   (dired "~/Development/Scratch"))
+
+(defun rk-project-directory ()
+  (ffip-project-root))
+
+
