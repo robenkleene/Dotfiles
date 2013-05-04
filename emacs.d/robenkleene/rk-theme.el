@@ -2,17 +2,21 @@
 
 ;; Look & Feel
 
-;; Disable Toolbar
-(if window-system
-    (tool-bar-mode 0))
-;; Window Positioning
-(if window-system
-    (add-to-list 'default-frame-alist '(top . 0))) ;; Re-positions window to the top fo the screen after loading, might become unnecessary if the emacs load sequence gets cleaned up
-(scroll-bar-mode -1) ;; Disable scroolbars, use percentage
+;; Frames
+(when window-system
+  (scroll-bar-mode -1)
+  (tool-bar-mode 0)
+  (add-to-list 'default-frame-alist '(top . 0))
+  (add-to-list 'default-frame-alist '(height . 60))
+  )
 
 ;; Theme
 (load-theme 'wombat)
-(set-background-color "#191919")
+(custom-theme-set-faces
+ 'wombat
+ '(default ((t (:background "#191919")))))
+
+;; Misc
 (set-cursor-color "#E57969")
 (global-hl-line-mode t) ;; Highlight current line
 ;; (global-linum-mode 1) ;; Line numbers
