@@ -31,9 +31,22 @@
 (setq ac-auto-show-menu nil)
 (setq ac-use-quick-help nil)
 
+
 ;; find-file-in-project
 (rk-install-package-if-missing 'find-file-in-project)
 (global-set-key (kbd "s-O") 'find-file-in-project)
 
 ;; Rainbow Mode
 (rk-install-package-if-missing 'rainbow-mode)
+
+;; Paredit
+(rk-install-package-if-missing 'paredit)
+(show-paren-mode 1) ;; Built-in, highlights matching parentheses
+;; (setq show-paren-style 'expression) ;; Highlights whole expression
+;; Load Paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(eval-after-load 'paredit
+  '(progn
+     (define-key paredit-mode-map (kbd "s-)") 'mark-sexp)
+     ))

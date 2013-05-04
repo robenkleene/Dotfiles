@@ -1,5 +1,3 @@
-(provide 'rk-org)
-
 (setq org-support-shift-select 'always)
 
 (eval-after-load "org"
@@ -13,3 +11,6 @@
     (define-key org-mode-map (kbd "s-\[") 'org-metaleft)
     (define-key org-mode-map (kbd "s-\]") 'org-metaright)
     ))
+
+
+(provide 'rk-org)

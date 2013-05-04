@@ -1,8 +1,7 @@
-(provide 'rk-nrepl)
-
 (rk-install-package-if-missing 'nrepl)
 
-(add-hook 'nrepl-mode          #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+(add-hook 'nrepl-mode  #'enable-paredit-mode)
 
 (eval-after-load 'clojure-mode
   '(progn
@@ -17,5 +16,19 @@
       (call-interactively 'nrepl-eval-region)
     (nrepl-load-current-buffer)))
 
-
+;; (nrepl-quit)
 ;; (nrepl-backward-input) Jump backwards in input history
+
+(eval-after-load 'nrepl-mode
+  '(progn
+     (define-key nrepl-mode-map (kbd "C-n") 'nrepl-forward-input)
+     (define-key nrepl-mode-map (kbd "C-p") 'nrepl-backward-input)
+     ))
+
+;; (defun rk-clojure ()
+;;   (interactive)
+;;   (nrepl-jack-in)
+;;   (rk-window-resize-for-shell)
+;;   )
+
+(provide 'rk-clojure)

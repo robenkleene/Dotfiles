@@ -1,5 +1,3 @@
-(provide 'rk-slime)
-
 ;; Setup quicklisp instead
 
 ;; SLIME
@@ -10,3 +8,6 @@
 (require 'slime)
 ;; (slime-setup)
 (slime-setup '(slime-fancy))
+
+
+(provide 'rk-slime)

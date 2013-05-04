@@ -23,15 +23,13 @@
 (require 'rk-features-packages)
 
 ;; Load Mode Settings
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
-(require 'rk-ediff)
-(require 'rk-org)
-(require 'rk-markdown)
-(require 'rk-paredit)
-(require 'rk-magit)
-;; Lisp
-(require 'rk-geiser)
-;; Setup quicklisp instead
-;; (require 'rk-slime)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'rk-emacs-lisp)
-(require 'rk-nrepl)
+(require 'rk-scheme)
+(require 'rk-git)
+(require 'rk-markdown)
+(require 'rk-clojure)
+(require 'rk-org)
+;; (require 'rk-common-lisp)
+
+

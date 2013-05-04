@@ -1,5 +1,4 @@
-(provide 'rk-magit)
-
+;; magit
 (rk-install-package-if-missing 'magit)
 (eval-after-load 'magit
   '(progn
@@ -21,3 +20,11 @@
   "Startup magit full frame with focus."
   (progn (rk-magit-status-current-window) (rk-focus-selected-frame)))
 
+;; ediff
+(eval-after-load 'ediff
+  '(progn
+     (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+     ))
+
+
+(provide 'rk-git)

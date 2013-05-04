@@ -1,5 +1,3 @@
-(provide 'rk-markdown)
-
 (rk-install-package-if-missing 'markdown-mode)
 
 ;; Need to disable the option left/right bindings
@@ -10,3 +8,5 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+
+(provide 'rk-markdown)
