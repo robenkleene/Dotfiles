@@ -12,4 +12,9 @@
 (defun rk-project-directory ()
   (ffip-project-root))
 
-
+(defun rk-window-resize-for-shell ()
+  "Resize current window for three fourths"
+  (interactive)
+  (let ((size (- (truncate (* .75 (frame-height))) (window-height))))
+    (if (> size 0)
+        (enlarge-window size))))
