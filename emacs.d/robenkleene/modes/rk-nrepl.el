@@ -4,8 +4,8 @@
 
 (eval-after-load "clojure-mode"
   '(progn
-     (define-key geiser-mode-map (kbd "s-r") 'rk-nrepl-eval-buffer-or-region)
-     (define-key geiser-mode-map (kbd "C-E") 'nrepl-eval-last-expression)
+     (define-key clojure-mode-map (kbd "s-r") 'rk-nrepl-eval-buffer-or-region)
+     (define-key clojure-mode-map (kbd "C-E") 'nrepl-eval-last-expression)
      ))
 
 (defun rk-nrepl-eval-buffer-or-region ()
