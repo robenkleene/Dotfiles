@@ -39,7 +39,7 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "s-]") 'indent-for-tab-command)
 (global-set-key (kbd "s-[") 'indent-for-tab-command)
-
+(global-set-key (kbd "s-%") 'query-replace)
 (global-set-key (kbd "<escape>") 'keyboard-quit)
 
 ;; Abort
