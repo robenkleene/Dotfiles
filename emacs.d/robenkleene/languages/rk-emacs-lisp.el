@@ -9,8 +9,8 @@
   '(progn
      (define-key emacs-lisp-mode-map (kbd "s-r") 'rk-emacs-lisp-eval-buffer-or-region)
      (define-key lisp-interaction-mode-map (kbd "s-r") 'rk-emacs-lisp-eval-buffer-or-region)
-     (define-key emacs-lisp-mode-map (kbd "C-E") 'eval-last-sexp)
-     (define-key lisp-interaction-mode-map (kbd "C-E") 'eval-last-sexp)
+     (define-key emacs-lisp-mode-map (kbd "C-S-e") 'eval-last-sexp)
+     (define-key lisp-interaction-mode-map (kbd "C-S-e") 'eval-last-sexp)
      ))
 
 (defun rk-emacs-lisp-eval-buffer-or-region ()

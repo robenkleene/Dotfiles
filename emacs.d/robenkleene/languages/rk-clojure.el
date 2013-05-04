@@ -1,12 +1,12 @@
 (rk-install-package-if-missing 'nrepl)
 
 (add-hook 'clojure-mode-hook #'enable-paredit-mode)
-(add-hook 'nrepl-mode  'paredit-mode)
+(add-hook 'nrepl-mode-hook  'paredit-mode)
 
 (eval-after-load 'clojure-mode
   '(progn
      (define-key clojure-mode-map (kbd "s-r") 'rk-nrepl-eval-buffer-or-region)
-     (define-key clojure-mode-map (kbd "C-E") 'nrepl-eval-last-expression)
+     (define-key clojure-mode-map (kbd "C-S-e") 'nrepl-eval-last-expression)
      ))
 
 

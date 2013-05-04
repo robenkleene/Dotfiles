@@ -12,7 +12,7 @@
 (eval-after-load "geiser-mode"
   '(progn
      (define-key geiser-mode-map (kbd "s-r") 'geiser-eval-region)
-     (define-key geiser-mode-map (kbd "C-E") 'geiser-eval-last-sexp)
+     (define-key geiser-mode-map (kbd "C-S-e") 'geiser-eval-last-sexp)
      ))
 
 
