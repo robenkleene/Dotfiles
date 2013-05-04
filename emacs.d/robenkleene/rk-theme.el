@@ -7,7 +7,7 @@
   (scroll-bar-mode -1)
   (tool-bar-mode 0)
   (add-to-list 'default-frame-alist '(top . 0))
-  (add-to-list 'default-frame-alist '(height . 60))
+  ;; (add-to-list 'default-frame-alist '(height . 60))
   )
 
 ;; Theme
