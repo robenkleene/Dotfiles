@@ -14,7 +14,7 @@
 (load-theme 'wombat)
 (custom-theme-set-faces
  'wombat
- '(default ((t (:background "#191919")))))
+ '(default ((t (:background "#191919" :foreground "#f6f3e8")))))
 
 ;; Misc
 (set-cursor-color "#E57969")
