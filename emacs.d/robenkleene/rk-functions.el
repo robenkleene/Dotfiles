@@ -15,6 +15,6 @@
 (defun rk-window-resize-for-shell ()
   "Resize current window for three fourths"
   (interactive)
-  (let ((size (- (truncate (* .75 (frame-height))) (window-height))))
-    (if (> size 0)
-        (enlarge-window size))))
+  (let ((size (truncate (* .25 (frame-height)))))
+    (if (< size (window-height))
+        (window-resize nil (- size (window-height))))))
