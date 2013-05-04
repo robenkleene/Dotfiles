@@ -135,10 +135,9 @@
 (defun rk-set-frame-wide ()
   (interactive)
   (set-frame-width (selected-frame) 160))
-(global-set-key (kbd "C-s-b") 'split-window-below)
-(global-set-key (kbd "<C-s-268632066>") 'split-window-below)
-(global-set-key (kbd "C-s-r") 'split-window-right)
-(global-set-key (kbd "<C-s-268632082>") 'split-window-right)
+(global-set-key (kbd "M-s-<down>") 'split-window-below)
+(global-set-key (kbd "M-s-<right>") 'split-window-right)
+
 
 ;; rgrep
 (global-set-key (kbd "s-F") 'rk-rgrep-project)
