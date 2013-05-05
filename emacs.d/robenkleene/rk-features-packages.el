@@ -30,6 +30,8 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (setq ac-auto-show-menu nil)
 (setq ac-use-quick-help nil)
+(global-set-key (kbd "C-/") 'auto-complete)
+
 
 
 ;; find-file-in-project
