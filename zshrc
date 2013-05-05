@@ -71,7 +71,7 @@ egitn() {
 }
 
 # Prompt
-PROMPT='%{$fg_bold[cyan]%}%~ %{$fg[green]%}$ %{$reset_color%}'
+PROMPT='%{$fg[cyan]%}%~ %{$fg[green]%}$ %{$reset_color%}'
 RPROMPT='$(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"

@@ -25,7 +25,4 @@
       (find-file file))))
 
 ;; Gnus
-
-(setq gnus-select-method
-      '(nntp "news.gmane.org"    ; fill in your server!  (see below)
-	     (nntp-port-number 119)))
+(setq gnus-select-method '(nntp "news.gmane.org"))

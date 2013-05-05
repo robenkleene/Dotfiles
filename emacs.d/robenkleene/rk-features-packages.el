@@ -56,3 +56,8 @@
   '(progn
      (define-key paredit-mode-map (kbd "s-)") 'mark-sexp)
      ))
+
+;; expand-region
+(rk-install-package-if-missing 'expand-region)
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
