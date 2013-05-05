@@ -32,5 +32,3 @@
 (require 'rk-org)
 (require 'rk-ruby)
 ;; (require 'rk-common-lisp)
-
-

@@ -6,7 +6,7 @@
      (define-key ruby-mode-map (kbd "<C-s-268632082>") 'rk-ruby-toggle-irb)
      (define-key ruby-mode-map (kbd "s-r") 'rk-ruby-run-buffer-or-region)
      ;; (define-key ruby-mode-map (kbd "C-S-e") 'ruby-send-block)
-     (define-key ruby-mode-map (kbd "C-S-e") 'ruby-send-block)
+     (define-key ruby-mode-map (kbd "C-S-e") 'rk-ruby-send-line)
      ))
 
 (eval-after-load 'inf-ruby
@@ -35,5 +35,9 @@
 (defun rk-ruby-send-buffer ()
   (interactive)
   (ruby-send-region (point-min) (point-max)))
+
+(defun rk-ruby-send-line ()
+  (interactive)
+  (ruby-send-region (line-beginning-position) (line-end-position)))
 
 (provide 'rk-ruby)

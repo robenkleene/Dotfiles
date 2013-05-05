@@ -23,3 +23,9 @@
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file
       (find-file file))))
+
+;; Gnus
+
+(setq gnus-select-method
+      '(nntp "news.gmane.org"    ; fill in your server!  (see below)
+	     (nntp-port-number 119)))
