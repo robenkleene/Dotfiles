@@ -6,7 +6,7 @@
      (define-key ruby-mode-map (kbd "<C-s-268632082>") 'rk-ruby-toggle-irb)
      (define-key ruby-mode-map (kbd "s-r") 'rk-ruby-run-buffer-or-region)
      ;; (define-key ruby-mode-map (kbd "C-S-e") 'ruby-send-block)
-     (define-key ruby-mode-map (kbd "C-S-e") 'ruby-send-last-sexp)
+     (define-key ruby-mode-map (kbd "C-S-e") 'ruby-send-block)
      ))
 
 (eval-after-load 'inf-ruby

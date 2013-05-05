@@ -32,6 +32,10 @@
 (setq ac-use-quick-help nil)
 (global-set-key (kbd "C-/") 'auto-complete)
 
+;; Autopair
+(rk-install-package-if-missing 'autopair)
+(require 'autopair)
+(autopair-global-mode)
 
 
 ;; find-file-in-project
