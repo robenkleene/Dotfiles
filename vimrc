@@ -3,6 +3,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 set nocompatible
+
 " set nowrap
 let mapleader = ','
 
@@ -45,3 +46,12 @@ map <leader>d :filetype detect<CR>
 
 " Get rid of the default yellow search highlighting
 hi Search ctermbg=DarkGray
+
+
+
+
+
+
+
+
+

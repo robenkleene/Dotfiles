@@ -8,7 +8,7 @@ set guioptions-=T
 set guifont=Menlo\ Regular:h12
 
 " Screen Rows & Columns
-set lines=60
+set lines=48
 set columns=80
 
 " Remove Scroll bars
@@ -16,5 +16,6 @@ set guioptions-=r
 
 " Solarized
 syntax enable
-set background=dark
+" set background=dark
+set background=light
 colorscheme solarized
