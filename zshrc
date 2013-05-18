@@ -60,7 +60,9 @@ if [ ! -z $VLESS ]; then
 fi
 
 # Setup egit
-export EGITREPOS=~/Development/Environment/LaunchAgents:~/Dotfiles/:~/Library/Services/:~/Library/Application\ Support/Avian/Bundles/Roben.tmbundle/:~/Library/Scripts/:~/Development/Scripts/:~/Development/Snippets/:~/Development/Environment/Bookmarklets/:~/Development/Environment/Settings/
+# EGITREPOS is now in egit.sh
+# export EGITREPOS=~/Development/Environment/LaunchAgents:~/Dotfiles/:~/Library/Services/:~/Library/Application\ Support/Avian/Bundles/Roben.tmbundle/:~/Library/Scripts/:~/Development/Scripts/:~/Development/Snippets/:~/Development/Environment/Bookmarklets/:~/Development/Environment/Settings/
+
 egitn() { 
 	EGITNEXT=$(egit -n)
 	if [ ! -z "$EGITNEXT" ]; then
