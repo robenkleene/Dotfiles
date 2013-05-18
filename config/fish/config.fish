@@ -17,8 +17,10 @@ function fish_right_prompt
 end
 
 function egitn
-    set EGITNEXT (egit -n)
+    set --local EGITNEXT (egit -n)
 	if test -n $EGITNEXT
+		echo $EGITNEXT
+		echo "test"
 		cd $EGITNEXT
 		git status
 	end
