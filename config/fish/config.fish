@@ -18,7 +18,7 @@ end
 
 function egitn
     set --local EGITNEXT (egit -n)
-	if test -n $EGITNEXT
+	if test -n "$EGITNEXT"
 		echo $EGITNEXT
 		echo "test"
 		cd $EGITNEXT
