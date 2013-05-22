@@ -1,4 +1,4 @@
-set PATH ~/Development/Scripts/bin $PATH
+set PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
@@ -23,6 +23,18 @@ function egitn
 		git status
 	end
 end
+
+# Emacs Client
+function ec
+	emacsclient -c -n
+end
+
+# Magit
+function gc
+	emacsclient -c -n --eval "(rk-magit-status-startup)"
+end
+
+
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH

@@ -1,4 +1,6 @@
 PATH = "$PATH:~/Development/Scripts/bin"
+TM_RUBY = "$HOME/.rbenv/shims/ruby"
+PATH = "$HOME/.rbenv/bin:$PATH"
 
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
