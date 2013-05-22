@@ -29,12 +29,10 @@ function ec
 	emacsclient -c -n
 end
 
-# Magit
+# Emacs Magit
 function gc
 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 end
-
-
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
