@@ -20,8 +20,10 @@
 
 ;; exec-path-from-shell
 (rk-install-package-if-missing 'exec-path-from-shell)
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+;; This gives my path to emacs shell, it was causing an error on startup so temporarily disabled.
+;;(when (memq window-system '(mac ns))
+;;  (exec-path-from-shell-initialize))
+
 
 ;; Auto-complete
 (rk-install-package-if-missing 'auto-complete)
