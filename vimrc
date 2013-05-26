@@ -4,6 +4,15 @@ syntax on
 filetype plugin indent on
 set nocompatible
 
+" Temp files
+set directory=/tmp
+
+" colorscheme
+colorscheme desert
+
+" Get rid of the default yellow search highlighting
+hi Search ctermbg=DarkGray
+
 " set nowrap
 let mapleader = ','
 
@@ -43,8 +52,3 @@ map <leader>u :.,$w !openurl<CR>
 
 " Detect File type
 map <leader>d :filetype detect<CR>
-
-" Get rid of the default yellow search highlighting
-hi Search ctermbg=DarkGray
-
-
