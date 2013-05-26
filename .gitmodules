@@ -17,3 +17,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
+[submodule "/Users/robenkleene/Dotfiles/vim/bundle/delimitMate"]
+	path = /Users/robenkleene/Dotfiles/vim/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git

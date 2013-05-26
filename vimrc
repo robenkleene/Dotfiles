@@ -48,10 +48,3 @@ map <leader>d :filetype detect<CR>
 hi Search ctermbg=DarkGray
 
 
-
-
-
-
-
-
-
