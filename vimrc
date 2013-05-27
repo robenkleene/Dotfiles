@@ -7,6 +7,9 @@ set nocompatible
 " Temp files
 set directory=/tmp
 
+" Explicitly 
+set shell=bash
+
 " colorscheme
 colorscheme desert
 
@@ -52,3 +55,4 @@ map <leader>u :.,$w !openurl<CR>
 
 " Detect File type
 map <leader>d :filetype detect<CR>
+
