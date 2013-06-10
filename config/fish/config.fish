@@ -38,3 +38,7 @@ end
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
+
+# Node
+set NODE_PATH /usr/local/lib/node_modules
+set PATH /usr/local/share/npm/bin $PATH
