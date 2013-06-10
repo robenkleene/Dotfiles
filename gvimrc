@@ -5,7 +5,7 @@ set gcr=a:blinkon0
 set guioptions-=T
 
 " Set font
-set guifont=Menlo\ Regular:h12
+set guifont=Menlo\ Regular:h13
 
 " Screen Rows & Columns
 set lines=48
