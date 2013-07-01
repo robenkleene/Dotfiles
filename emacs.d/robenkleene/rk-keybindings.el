@@ -21,7 +21,7 @@
 (define-key rk-wm-minor-mode-map (kbd "C-~") (lambda () (interactive) (other-window -1)))
 (define-key rk-wm-minor-mode-map (kbd "C-'") 'other-window)
 (define-key rk-wm-minor-mode-map (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
-(define-key rk-wm-minor-mode-map (kbd "C-w") 'delete-window)
+;; (define-key rk-wm-minor-mode-map (kbd "C-w") 'delete-window)
 (define-key rk-wm-minor-mode-map (kbd "C-S-w") 'delete-other-windows)
 (define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
 (define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
