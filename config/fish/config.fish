@@ -24,6 +24,9 @@ function egitn
 	end
 end
 
+# Editor
+set EDITOR mate
+
 # Emacs Client
 function ec
 	emacsclient -c -n

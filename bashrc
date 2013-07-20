@@ -9,3 +9,5 @@ export PS1='\[\e[33;1m\]\w $\[\e[0m\] '
 #			  ^Yellow     ^Path
 #							 ^Prompt
 #							   ^Close Color
+
+export EDITOR='mate'
