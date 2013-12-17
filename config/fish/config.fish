@@ -37,6 +37,11 @@ function gc
 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 end
 
+# wcsearch
+function sea
+	wcsearch $argv
+end
+
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
