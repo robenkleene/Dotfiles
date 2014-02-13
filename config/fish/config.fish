@@ -5,7 +5,12 @@ set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'yes'
 set __fish_git_prompt_color_branch yellow
 
+set fish_color_comment 3a3a3a
+
 function fish_prompt
+	set_color $fish_color_comment
+	echo -n (date "+%I:%M %p")
+	echo -n ' '
 	set_color $fish_color_cwd
 	echo -n (prompt_pwd)
 	set_color normal
