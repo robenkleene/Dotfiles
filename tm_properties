@@ -9,3 +9,6 @@ NODE_PATH = "/usr/local/share/npm/lib/node_modules:/usr/local/lib/node_modules:$
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
 
+[ *.coffee ]
+tabSize = 2  
+softTabs = true
