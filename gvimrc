@@ -13,9 +13,13 @@ set columns=80
 
 " Remove Scroll bars
 set guioptions-=r
+set transparency=1
+
+" No anti-aliasing looks better on retina
+set noantialias
 
 " Solarized
 syntax enable
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 colorscheme solarized
