@@ -52,6 +52,9 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
+# Atom
+set -x ATOM_PATH $HOME/Applications/Atom.app
+
 # Node
 set -x NODE_PATH /usr/local/share/npm/lib/node_modules /usr/local/lib/node_modules
 set PATH /usr/local/share/npm/bin $PATH
