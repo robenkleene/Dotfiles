@@ -31,7 +31,6 @@ set number
 " Search Behavior
 set ignorecase
 set smartcase
-set incsearch
 
 " Macros
 

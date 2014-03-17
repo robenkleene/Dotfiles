@@ -20,3 +20,6 @@
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/vim-sensible"]
+	path = vim/bundle/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git
