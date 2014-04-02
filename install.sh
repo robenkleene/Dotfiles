@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # First initialize & update submodules
-git submodule init
-git submodule update
+# git submodule init
+# git submodule update
 
 INSTALL_DIRECTORY_NAME="Dotfiles" # The name of the directory to install from.
 
