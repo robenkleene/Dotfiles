@@ -42,6 +42,10 @@ function gc
 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 end
 
+function magit
+	emacs --eval "(rk-magit-status-startup)"
+end
+
 # BBFind
 function bbf
   bbfind "$argv[1]" --gui .
