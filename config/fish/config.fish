@@ -61,6 +61,12 @@ function sea
   bbfind "$argv[1]" --gui .
 end
 
+# Files
+function fnd
+  ack -ig "$argv[1]"
+end
+
+
 
 
 function cleanopenwith
