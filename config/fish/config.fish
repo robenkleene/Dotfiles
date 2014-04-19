@@ -61,6 +61,12 @@ function sea
   bbfind "$argv[1]"  --grep --gui --case-sensitive .
 end
 
+# Files
+function fnd
+  ack -ig "$argv[1]"
+end
+
+
 
 
 function cleanopenwith
