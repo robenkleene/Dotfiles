@@ -58,7 +58,7 @@ end
 
 # BBFind
 function sea
-  bbfind "$argv[1]" --gui .
+  bbfind "$argv[1]"  --grep --gui --case-sensitive .
 end
 
 
