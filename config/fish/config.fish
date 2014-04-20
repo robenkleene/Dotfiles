@@ -58,8 +58,14 @@ end
 
 # BBFind
 function sea
-  bbfind "$argv[1]"  --grep --gui --case-sensitive .
+  bbfind --grep --gui --case-sensitive "$argv[1]" .
 end
+
+# BBFind in files
+function seaf
+  bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
+end
+
 
 # Files
 function fnd
