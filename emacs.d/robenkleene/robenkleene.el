@@ -6,6 +6,9 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+(when (not package-archive-contents) 
+	(package-refresh-contents))
+
 ;; Start the emacs server if it isn't already running
 (require 'server)
 (unless (server-running-p)

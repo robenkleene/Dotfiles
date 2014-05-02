@@ -5,6 +5,10 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+; (require 'find-file-in-project)
+; (defun rk-project-directory ()
+;   (ffip-project-root))
+
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
