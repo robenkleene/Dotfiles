@@ -100,7 +100,11 @@ function gd
 end
 
 function ga
-	git add :/
+	git add $argv
+end
+
+function gaa
+	git add --all
 end
 
 function gc
