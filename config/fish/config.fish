@@ -95,12 +95,17 @@ end
 function gs
 	git status
 end
+
 function gd
 	git diff $argv
 end
 
 function ga
 	git add $argv
+end
+
+function gb
+	git branch
 end
 
 function gaa
@@ -111,7 +116,19 @@ function gc
 	git commit
 end
 
+function gp
+	git push
+end
+
 function gl
+	git pull
+end
+
+function gco
+	git checkout $argv
+end
+
+function glo
 	git log
 end
 
