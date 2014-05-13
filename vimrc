@@ -56,3 +56,6 @@ map <leader>u :.,$w !openurl<CR>
 " Detect File type
 map <leader>d :filetype detect<CR>
 
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
