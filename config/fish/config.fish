@@ -143,3 +143,11 @@ end
 function gcam
 	git commit --amend -m $argv[1]
 end
+
+function gsi
+	git submodule init
+end
+
+function gsu
+	git submodule update
+end
