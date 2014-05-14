@@ -12,7 +12,7 @@ set directory=/tmp
 set shell=bash
 
 " colorscheme
-colorscheme desert
+colorscheme ir_black
 
 " Get rid of the default yellow search highlighting
 hi Search ctermbg=DarkGray
