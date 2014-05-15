@@ -100,6 +100,10 @@ function gd
 	git diff $argv
 end
 
+function gdt
+	git difftool $argv
+end
+
 function ga
 	git add $argv
 end
