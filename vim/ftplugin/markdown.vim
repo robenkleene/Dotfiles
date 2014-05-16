@@ -1,5 +1,7 @@
 " General
 
+let g:markdown_folding = 1
+
 " Markdown Preview
 command! MarkdownPreview :execute '!mdprev '.shellescape(expand('%:p'), 1)
 nmap <silent> <leader>p :MarkdownPreview<CR>\|:redraw!<CR>
