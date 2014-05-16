@@ -5,7 +5,7 @@ set gcr=a:blinkon0
 set guioptions-=T
 
 " Set font
-set guifont=Menlo\ Regular:h13
+set guifont=Menlo\ Regular:h12
 
 " Screen Rows & Columns
 set lines=48
@@ -16,10 +16,10 @@ set guioptions-=r
 set transparency=1
 
 " No anti-aliasing looks better on retina
-set noantialias
+" set noantialias
 
 " Solarized
 syntax enable
-set background=dark
+" set background=dark
 " set background=light
-colorscheme solarized
+" colorscheme solarized

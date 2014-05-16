@@ -9,19 +9,19 @@ set nocompatible
 set directory=/tmp
 
 " Explicitly 
-set shell=bash
+" Shouldn't need this with vim-sensible
+" set shell=bash
 
 " colorscheme
 colorscheme ir_black
-
 " Get rid of the default yellow search highlighting
-hi Search ctermbg=DarkGray
+" hi Search ctermbg=DarkGray
 
 " set nowrap
 let mapleader = ','
 
 " Makes the OS X clipboard work
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " Line breaks only happen on words
 set linebreak
@@ -30,8 +30,8 @@ set linebreak
 set number
 
 " Search Behavior
-set ignorecase
-set smartcase
+" set ignorecase
+" set smartcase
 
 " Macros
 
