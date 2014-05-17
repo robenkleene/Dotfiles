@@ -2,17 +2,20 @@
 " Disable Plugins {{{
 " let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'vim-sensible')
+
 " }}}
 " Pathogen {{{
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
 " }}}
 " Basic {{{
 set nocompatible
 set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 let mapleader = ','
+
 " }}}
 " Look & Feel {{{
 colorscheme ir_black
@@ -22,6 +25,7 @@ set number " Show line numbers
 set hlsearch " Highlight search results
 " set ignorecase " Ignore case in search results
 " set smartcase " Override `ignorecase`
+
 " }}}
 " Leader Commands {{{
 " Make Markdown Filetype
@@ -38,4 +42,5 @@ set hlsearch " Highlight search results
 " map <leader>u :.,$w !openurl<CR>    
 " Detect File type
 " map <leader>d :filetype detect<CR>
+
 " }}}
