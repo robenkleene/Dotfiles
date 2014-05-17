@@ -1,4 +1,8 @@
-" Config
+" Disable Plugins
+" let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'vim-sensible')
+
+" Start Pathogen
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -30,6 +34,7 @@ set linebreak
 set number
 
 " Search Behavior
+set hlsearch
 " set ignorecase
 " set smartcase
 
