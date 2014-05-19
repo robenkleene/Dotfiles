@@ -3,6 +3,7 @@ set gcr=a:blinkon0
 
 " Disable Toolbar
 set guioptions-=T
+set go-=L " Disable left scroll bar with vertical splits
 
 " Set font
 set guifont=Menlo\ Regular:h12
