@@ -1,4 +1,7 @@
 " vim:fdm=marker
+" General {{{1
+:set macmeta
+
 " Window {{{1
 set guioptions-=T " Disable toolbar
 set guioptions-=L " Disable left scroll bar with vertical splits
