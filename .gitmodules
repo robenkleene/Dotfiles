@@ -23,3 +23,6 @@
 [submodule "vim/bundle/vim-sensible"]
 	path = vim/bundle/vim-sensible
 	url = http://github.com/tpope/vim-sensible.git
+[submodule "vim/bundle/vim-rsi"]
+	path = vim/bundle/vim-rsi
+	url = git@github.com:tpope/vim-rsi.git

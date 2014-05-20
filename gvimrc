@@ -1,26 +1,19 @@
-" Disable Cursor blinking
-set gcr=a:blinkon0
+" vim:fdm=marker
+" Window {{{1
+set guioptions-=T " Disable toolbar
+set guioptions-=L " Disable left scroll bar with vertical splits
+set guioptions-=r " Disable right scrollbar
+" Size {{{2
+set lines=48 " Rows
+set columns=80 " Columns
 
-" Disable Toolbar
-set guioptions-=T
-set go-=L " Disable left scroll bar with vertical splits
-
-" Set font
-set guifont=Menlo\ Regular:h12
-
-" Screen Rows & Columns
-set lines=48
-set columns=80
-
-" Remove Scroll bars
-set guioptions-=r
-set transparency=1
-
-" No anti-aliasing looks better on retina
-" set noantialias
-
-" Solarized
-syntax enable
+" Look & Feel {{{1
+set guifont=Menlo\ Regular:h12 " Set font
+set gcr=a:blinkon0 " Disable Cursor blinking
+" set transparency=1 
+" set noantialias " No anti-aliasing sometimes looks better
+" syntax enable
+" Solarized {{{2
 " set background=dark
 " set background=light
 " colorscheme solarized
