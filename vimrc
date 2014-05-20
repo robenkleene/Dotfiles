@@ -15,7 +15,7 @@ set directory=/tmp " Temp files
 let mapleader = ','
 
 " Look & Feel {{{1
-colorscheme ir_black
+colorscheme ir_black_edited
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
 set number " Show line numbers

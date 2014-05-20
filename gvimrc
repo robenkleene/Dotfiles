@@ -13,7 +13,9 @@ set columns=80 " Columns
 " Look & Feel {{{1
 set guifont=Menlo\ Regular:h12 " Set font
 set gcr=a:blinkon0 " Disable Cursor blinking
-" set transparency=1 
+set transparency=5
+" highlight Normal guibg=#1b212c
+
 " set noantialias " No anti-aliasing sometimes looks better
 " syntax enable
 " Solarized {{{2
