@@ -11,7 +11,8 @@ set lines=48 " Rows
 set columns=80 " Columns
 
 " Look & Feel {{{1
-set guifont=Menlo\ Regular:h12 " Set font
+colorscheme ir_black_edited
+set guifont=Menlo\ Regular:h13 " Set font
 set gcr=a:blinkon0 " Disable Cursor blinking
 set transparency=5
 " highlight Normal guibg=#1b212c
