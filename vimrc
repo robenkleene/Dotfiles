@@ -1,23 +1,20 @@
 " vim:fdm=marker
-" Disable Plugins {{{
+" Disable Plugins {{{1
 " let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'vim-sensible')
 
-" }}}
-" Pathogen {{{
+" Pathogen {{{1
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" }}}
-" Basic {{{
+" Basic {{{1
 set nocompatible
 set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 let mapleader = ','
 
-" }}}
-" Look & Feel {{{
+" Look & Feel {{{1
 colorscheme ir_black
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
@@ -26,8 +23,7 @@ set hlsearch " Highlight search results
 " set ignorecase " Ignore case in search results
 " set smartcase " Override `ignorecase`
 
-" }}}
-" Leader Commands {{{
+" Leader Commands {{{1
 " Make Markdown Filetype
 " nmap <leader>m :set filetype=markdown<CR>
 " Toggle No Wrap
@@ -42,5 +38,3 @@ set hlsearch " Highlight search results
 " map <leader>u :.,$w !openurl<CR>    
 " Detect File type
 " map <leader>d :filetype detect<CR>
-
-" }}}
