@@ -31,7 +31,7 @@ set hlsearch " Highlight search results
 " Open folder of current file
 nmap <leader>f :!open .<CR>\|:redraw!<CR>
 " Copy contents of whole file
-" nmap <leader>c :%y+<CR>
+nmap <leader>c :%y+<CR>
 " Alternative Solution to increment number while in tmux
 " nmap <leader>a <C-a>
 " Open next URL in file
