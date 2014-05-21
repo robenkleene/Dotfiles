@@ -14,7 +14,7 @@ set columns=80 " Columns
 colorscheme ir_black_edited
 set guifont=Menlo\ Regular:h13 " Set font
 set gcr=a:blinkon0 " Disable Cursor blinking
-set transparency=5
+" set transparency=5
 " highlight Normal guibg=#1b212c
 
 " set noantialias " No anti-aliasing sometimes looks better
