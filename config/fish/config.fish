@@ -124,8 +124,12 @@ function gp
 	git push
 end
 
-function gl
+function gpl
 	git pull
+end
+
+function gl
+	git log $argv
 end
 
 function gco
