@@ -1,0 +1,18 @@
+'release-notes':
+  'viewedVersion': '0.94.0'
+'welcome':
+  'showOnStartup': false
+'editor':
+  'fontSize': 14
+'core':
+  'disabledPackages': [
+    'vim-mode'
+    'autocomplete-plus'
+    'exception-reporting'
+    'metrics'
+  ]
+'tree-view':
+  'hideIgnoredNames': true
+'markdown-preview': {}
+'autocomplete':
+  'includeCompletionsFromAllBuffers': true
