@@ -7,9 +7,10 @@
 # An example hack to make opened Markdown files always be soft wrapped:
 #
 
-path = require 'path'
+
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()
+  path = require 'path'
   if path.extname(editor.getPath()) is '.md'
     editor.setSoftWrap(true)
 
@@ -19,7 +20,6 @@ atom.workspaceView.command 'roben-kleene:copy-markdown-link-to-file', ->
   title = editor.getTitle()
   console.log "copy-markdown-link-to-file\nselection = #{selection}\ntitle = #{title}"
 
-exec = require('child_process').exec
 atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
   editor = atom.workspace.activePaneItem
   filepath = editor.getBuffer().getPath()
