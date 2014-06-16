@@ -23,9 +23,6 @@
  'alt-V': 'core:select-to-top'
  'ctrl-v': 'core:page-down'
  'ctrl-V': 'core:select-to-bottom'
- 'alt-{': 'block-travel:move-up'
- 'alt-}': 'block-travel:move-down'
- 'ctrl-cmd-l': 'roben-kleene:copy-markdown-link-to-file'
  'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
 
 '.tree-view':
