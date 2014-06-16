@@ -6,3 +6,7 @@
 !/config.cson
 !/init.coffee
 !/keymap.cson
+
+# Packages in Development
+# Can be deleted after these are published
+!/atom/packages/ruby-playground
