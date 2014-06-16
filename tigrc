@@ -1,0 +1,5 @@
+set vertical-split = no
+
+# @ suppresses output
+bind status T !@git difftool 
+bind status D !@sh -c "git diff %(file) | mate"
