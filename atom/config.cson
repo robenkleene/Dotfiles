@@ -2,8 +2,7 @@
   'viewedVersion': '0.94.0'
 'welcome':
   'showOnStartup': false
-'editor':
-  'fontSize': 14
+'editor': {}
 'core':
   'disabledPackages': [
     'vim-mode'
