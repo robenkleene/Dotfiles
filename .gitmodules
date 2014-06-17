@@ -28,4 +28,4 @@
 	url = http://github.com/tpope/vim-rsi.git
 [submodule "atom/packages/ruby-playground"]
 	path = atom/packages/ruby-playground
-	url = git@github.com:robenkleene/ruby-playground.git
+	url = http://github.com/robenkleene/ruby-playground.git
