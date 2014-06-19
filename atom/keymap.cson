@@ -18,12 +18,18 @@
 #
 
 '.editor':
- 'ctrl-w': 'editor:backspace-to-beginning-of-word'
- 'alt-v': 'core:page-up'
- 'alt-V': 'core:select-to-top'
- 'ctrl-v': 'core:page-down'
- 'ctrl-V': 'core:select-to-bottom'
- 'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
+  'ctrl-w': 'editor:backspace-to-beginning-of-word'
+  'alt-v': 'core:page-up'
+  'alt-V': 'core:select-to-top'
+  'ctrl-v': 'core:page-down'
+  'ctrl-V': 'core:select-to-bottom'
+  'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
+  'cmd-k e': 'roben-kleene:toggle-emmet'
 
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'
+
+# Emmet
+# '.editor:not(.mini)':
+#   'ctrl-alt-right': 'emmet:next-edit-point'
+#   'ctrl-alt-left': 'emmet:prev-edit-point'

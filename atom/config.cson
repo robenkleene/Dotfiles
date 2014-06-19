@@ -8,6 +8,7 @@
     'vim-mode'
     'exception-reporting'
     'metrics'
+    'emmet'
   ]
 'tree-view':
   'hideIgnoredNames': true

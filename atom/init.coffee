@@ -9,6 +9,8 @@
 
 process.env.PATH = ["/usr/local/bin:~/Development/Scripts/bin", process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
+# process.env.ATOM_REPOS_HOME = "~/Development/Projects/Atom"
+
 
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()
@@ -23,3 +25,12 @@ atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
   exec "open #{filepath}"
 
 console.log "Hello from init.coffee!"
+
+# Emmet
+# if !atom.packages.isPackageDisabled('emmet')
+#   atom.packages.disablePackage('emmet') # Disable on startup
+# atom.workspaceView.command 'roben-kleene:toggle-emmet', ->
+#   if atom.packages.isPackageDisabled('emmet')
+#     atom.packages.enablePackage('emmet')
+#   else
+#     atom.packages.disablePackage('emmet')
