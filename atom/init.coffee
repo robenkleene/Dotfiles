@@ -15,7 +15,9 @@ process.env.PATH = ["/usr/local/bin:~/Development/Scripts/bin", process.env.PATH
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()
   path = require 'path'
-  if path.extname(editor.getPath()) is '.md'
+  MARKDOWN_EXTENSIONS = ['.md', '.markdown']
+  extension = path.extname(editor.getPath())
+  if MARKDOWN_EXTENSIONS.indexOf(extension) isnt -1
     editor.setSoftWrap(true)
 
 atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
