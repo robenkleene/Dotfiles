@@ -24,7 +24,8 @@
   'ctrl-v': 'core:page-down'
   'ctrl-V': 'core:select-to-bottom'
   'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
-  'cmd-k e': 'roben-kleene:toggle-emmet'
+  # 'cmd-k e': 'roben-kleene:toggle-emmet'
+  'ctrl-alt-f': 'roben-kleene:reveal-in-finder'
 
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'

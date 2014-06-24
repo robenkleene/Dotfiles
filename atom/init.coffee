@@ -24,6 +24,12 @@ atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
   exec = require('child_process').exec
   exec "open #{filepath}"
 
+atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
+  editor = atom.workspace.activePaneItem
+  filepath = editor.getBuffer().getPath()
+  exec = require('child_process').exec
+  exec "open -R #{filepath}"
+
 console.log "Hello from init.coffee!"
 
 # Emmet
