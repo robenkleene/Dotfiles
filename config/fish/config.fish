@@ -105,6 +105,10 @@ function gdt
 	git difftool $argv
 end
 
+function gdm
+	git diff | mate
+end
+
 function ga
 	git add $argv
 end
