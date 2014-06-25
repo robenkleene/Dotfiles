@@ -26,6 +26,14 @@ atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
   exec = require('child_process').exec
   exec "open #{filepath}"
 
+atom.workspaceView.command 'roben-kleene:open-in-terminal', ->
+  editor = atom.workspace.activePaneItem
+  filepath = editor.getBuffer().getPath()
+  path = require('path')
+  dirpath = path.dirname(filepath)
+  exec = require('child_process').exec
+  exec "open -a Terminal #{dirpath}"
+
 atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
   editor = atom.workspace.activePaneItem
   filepath = editor.getBuffer().getPath()
