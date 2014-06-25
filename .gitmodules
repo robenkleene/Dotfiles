@@ -26,6 +26,3 @@
 [submodule "vim/bundle/vim-rsi"]
 	path = vim/bundle/vim-rsi
 	url = http://github.com/tpope/vim-rsi.git
-[submodule "atom/packages/ruby-playground"]
-	path = atom/packages/ruby-playground
-	url = http://github.com/robenkleene/ruby-playground.git

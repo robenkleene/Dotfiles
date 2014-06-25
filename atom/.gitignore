@@ -6,12 +6,3 @@
 !/config.cson
 !/init.coffee
 !/keymap.cson
-
-# Packages
-# This exposes the packages directory to git while ignoring the contents
-!/packages
-/packages/*
-# Packages in Development
-# Now individual packages can be unignored here until they are published
-!/packages/ruby-playground
-!/packages/ruby-playground/*
