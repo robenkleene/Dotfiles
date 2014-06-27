@@ -3,7 +3,7 @@ set vertical-split = no
 # @ suppresses output
 bind status T !@git difftool 
 bind main T !@git difftool %(commit)^!
-bind status D !@sh -c "git diff $(git rev-parse --show-toplevel)/%(file) | mate"
+bind status D !@sh -c "git diff $(git rev-parse --show-toplevel)/%(file) | mate --async"
 
 # bind status Z !sh -c "echo %(file)"
 
