@@ -17,8 +17,8 @@
 #   'ctrl-p': 'core:move-down'
 #
 
-'.editor':
-  'ctrl-w': 'editor:backspace-to-beginning-of-word'
+'.workspace .editor':
+  'ctrl-w': 'editor:delete-to-beginning-of-word'
   'alt-v': 'core:page-up'
   'alt-V': 'core:select-to-top'
   'ctrl-v': 'core:page-down'
