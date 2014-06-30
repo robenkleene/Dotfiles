@@ -9,7 +9,13 @@
     'exception-reporting'
     'metrics'
     'emmet'
+    'minimap'
   ]
+  'themes': [
+    'atom-light-ui'
+    'atom-light-syntax'
+  ]
+  'useReactEditor': true
 'tree-view':
   'hideIgnoredNames': true
 'markdown-preview': {}
