@@ -40,6 +40,10 @@ atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
   exec = require('child_process').exec
   exec "open -R #{filepath}"
 
+if not atom.packages.isPackageDisabled "vim-mode"
+  atom.workspaceView.eachEditorView (editorView) ->
+    editorView.trigger "vim-mode:activate-insert-mode"
+
 console.log "Hello from init.coffee!"
 
 # Emmet
