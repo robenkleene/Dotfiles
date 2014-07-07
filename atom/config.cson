@@ -5,11 +5,10 @@
 'editor': {}
 'core':
   'disabledPackages': [
-    'vim-mode'
     'exception-reporting'
     'metrics'
-    'emmet'
     'minimap'
+    'emmet'
   ]
   'themes': [
     'atom-light-ui'
@@ -21,3 +20,10 @@
 'markdown-preview': {}
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
+'find-and-replace':
+  'openProjectFindResultsInRightPane': true
+  'focusEditorAfterSearch': true
+'toggle-packages':
+  'togglePackages': [
+    'emmet'
+  ]
