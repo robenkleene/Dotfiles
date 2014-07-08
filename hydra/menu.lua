@@ -38,7 +38,7 @@ function show_menu()
       }
   end)
 end
-show_menu()
+
 
 
 -- show available updates
