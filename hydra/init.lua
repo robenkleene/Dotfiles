@@ -41,6 +41,10 @@ local mash = {"alt"}
 
 ext.grid.GRIDWIDTH = 6
 ext.grid.GRIDHEIGHT = 3
+ext.grid.MARGINX = 0
+ext.grid.MARGINY = 0
+
+
 
 mash = {"alt"}
 hotkey.bind(mash, 'J', ext.grid.pushwindow_down)
@@ -61,15 +65,12 @@ hotkey.bind(mash, 'l', function() window.focusedwindow():focuswindow_east() end)
 hotkey.bind(mash, 'k', function() window.focusedwindow():focuswindow_north() end)
 hotkey.bind(mash, 'j', function() window.focusedwindow():focuswindow_south() end)
 
+mash = {"alt"}
+hotkey.bind(mash, 'n', ext.grid.pushwindow_nextscreen)
+hotkey.bind(mash, 'p', ext.grid.pushwindow_prevscreen)
 
 
 -- hotkey.new(mash2, "h", movewindow_lefthalf):enable()
 -- hotkey.new(mash2, "l", movewindow_righthalf):enable()
 
 -- mash = {"alt"}
--- hotkey.bind(mash, 'l', ext.grid.pushwindow_nextscreen)
--- hotkey.bind(mash, 'h', ext.grid.pushwindow_prevscreen)
-
-
-
-
