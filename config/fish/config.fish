@@ -134,6 +134,10 @@ function gp
 	git push
 end
 
+function gu
+	git pull
+end
+	
 function gpl
 	git pull
 end
