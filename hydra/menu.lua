@@ -4,23 +4,25 @@ function checkforupdates()
   settings.set('lastcheckedupdates', os.time())
 end
 
+function close_hydra_windows()
+  local hydra_app = fnutils.find(application.applicationsforbundleid("org.degutis.Hydra"), function(app) return app:title() == "Hydra" end)
+  fnutils.each(hydra_app:allwindows(), function(window) window:close() end)
+end
 
--- menu.show(function()
---     local updatetitles = {[true] = "Install Update", [false] = "Check for Update..."}
---     local updatefns = {[true] = updates.install, [false] = checkforupdates}
---     local hasupdate = (updates.newversion ~= nil)
---
---     return {
---       {title = "Reload Config", fn = hydra.reload},
---       {title = "Open REPL", fn = repl.open},
---       {title = "-"},
---       {title = "About", fn = hydra.showabout},
---       {title = updatetitles[hasupdate], fn = updatefns[hasupdate]},
---       {title = "Quit Hydra", fn = os.exit},
---     }
--- end)
+function open_hydra_windows()
+  repl.open()
+  logger.show()
+end
 
-
+function toggle_repl()
+  if hydra.indock() then
+    close_hydra_windows()
+    hydra.putindock(false)
+  else
+    hydra.putindock(true)
+    open_hydra_windows()
+  end
+end
 
 function show_menu()
   menu.show(function()
@@ -30,7 +32,7 @@ function show_menu()
 
       return {
         {title = "Reload Config", fn = hydra.reload},
-        {title = "Open REPL", fn = repl.open},
+        {title = "Toggle REPL", fn = toggle_repl},
         {title = "-"},
         {title = "About", fn = hydra.showabout},
         {title = updatetitles[hasupdate], fn = updatefns[hasupdate]},
@@ -40,6 +42,7 @@ function show_menu()
 end
 
 
+-- From Default
 
 -- show available updates
 local function showupdate()
