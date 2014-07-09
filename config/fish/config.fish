@@ -87,6 +87,11 @@ function cleanopenwith
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
+# gitsh
+function g
+	gitsh
+end
+
 # tig
 function ts
 	tig status
@@ -139,10 +144,6 @@ end
 
 function gco
 	git checkout $argv
-end
-
-function glo
-	git log
 end
 
 function gca
