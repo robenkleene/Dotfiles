@@ -1,8 +1,11 @@
 -- require "grid"
 dofile(package.searchpath("grid", package.path))
+-- require "grid_additions"
+dofile(package.searchpath("grid_additions", package.path))
 -- require "menu"
-
 dofile(package.searchpath("menu", package.path))
+
+
 
 dofile(package.searchpath("test", package.path))
 
@@ -39,11 +42,23 @@ ext.grid.MARGINY = 0
 
 local mash = {"alt"}
 
+mash = {"ctrl"}
+hotkey.bind(mash, 'h', function() window.focusedwindow():focuswindow_west() end)
+hotkey.bind(mash, 'l', function() window.focusedwindow():focuswindow_east() end)
+hotkey.bind(mash, 'k', function() window.focusedwindow():focuswindow_north() end)
+hotkey.bind(mash, 'j', function() window.focusedwindow():focuswindow_south() end)
+
 mash = {"alt"}
 hotkey.bind(mash, 'J', ext.grid.pushwindow_down)
 hotkey.bind(mash, 'K', ext.grid.pushwindow_up)
 hotkey.bind(mash, 'H', ext.grid.pushwindow_left)
 hotkey.bind(mash, 'L', ext.grid.pushwindow_right)
+
+mash = {"alt", "shift"}
+hotkey.bind(mash, 'J', ext.grid_additions.pushwindow_hard_down)
+hotkey.bind(mash, 'K', ext.grid_additions.pushwindow_hard_up)
+hotkey.bind(mash, 'H', ext.grid_additions.pushwindow_hard_left)
+hotkey.bind(mash, 'L', ext.grid_additions.pushwindow_hard_right)
 
 
 mash = {"alt", "ctrl"}
@@ -52,11 +67,15 @@ hotkey.bind(mash, 'l', ext.grid.resizewindow_wider)
 hotkey.bind(mash, 'h', ext.grid.resizewindow_thinner)
 hotkey.bind(mash, 'j', ext.grid.resizewindow_shorter)
 
-mash = {"ctrl"}
-hotkey.bind(mash, 'h', function() window.focusedwindow():focuswindow_west() end)
-hotkey.bind(mash, 'l', function() window.focusedwindow():focuswindow_east() end)
-hotkey.bind(mash, 'k', function() window.focusedwindow():focuswindow_north() end)
-hotkey.bind(mash, 'j', function() window.focusedwindow():focuswindow_south() end)
+mash = {"alt", "ctrl", "shift"}
+hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_hard_taller)
+hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_hard_wider)
+hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_hard_thinner)
+hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_hard_shorter)
+
+
+
+
 
 mash = {"alt"}
 hotkey.bind(mash, 'n', ext.grid.pushwindow_nextscreen)
