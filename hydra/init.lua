@@ -40,7 +40,7 @@ ext.grid.MARGINY = 0
 
 local mash = {"alt"}
 
-mash = {"ctrl"}
+mash = {"alt"}
 hotkey.bind(mash, 'a', function() window.focusedwindow():focuswindow_west() end)
 hotkey.bind(mash, 'd', function() window.focusedwindow():focuswindow_east() end)
 hotkey.bind(mash, 'w', function() window.focusedwindow():focuswindow_north() end)
