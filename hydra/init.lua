@@ -43,10 +43,10 @@ ext.grid.MARGINY = 0
 local mash = {"alt"}
 
 mash = {"ctrl"}
-hotkey.bind(mash, 'h', function() window.focusedwindow():focuswindow_west() end)
-hotkey.bind(mash, 'l', function() window.focusedwindow():focuswindow_east() end)
-hotkey.bind(mash, 'k', function() window.focusedwindow():focuswindow_north() end)
-hotkey.bind(mash, 'j', function() window.focusedwindow():focuswindow_south() end)
+hotkey.bind(mash, 'a', function() window.focusedwindow():focuswindow_west() end)
+hotkey.bind(mash, 'd', function() window.focusedwindow():focuswindow_east() end)
+hotkey.bind(mash, 'w', function() window.focusedwindow():focuswindow_north() end)
+hotkey.bind(mash, 's', function() window.focusedwindow():focuswindow_south() end)
 
 mash = {"alt"}
 hotkey.bind(mash, 'J', ext.grid.pushwindow_down)
@@ -60,14 +60,20 @@ hotkey.bind(mash, 'K', ext.grid_additions.pushwindow_hard_up)
 hotkey.bind(mash, 'H', ext.grid_additions.pushwindow_hard_left)
 hotkey.bind(mash, 'L', ext.grid_additions.pushwindow_hard_right)
 
-
-mash = {"alt", "ctrl"}
+mash = {"ctrl", "alt"}
 hotkey.bind(mash, 'k', ext.grid.resizewindow_taller)
 hotkey.bind(mash, 'l', ext.grid.resizewindow_wider)
 hotkey.bind(mash, 'h', ext.grid.resizewindow_thinner)
 hotkey.bind(mash, 'j', ext.grid.resizewindow_shorter)
 
-mash = {"alt", "ctrl", "shift"}
+-- mash = {"ctrl"}
+-- hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_inverse_shorter)
+-- hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_inverse_thinner)
+-- hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_inverse_wider)
+-- hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_inverse_taller)
+
+
+mash = {"ctrl", "alt", "shift"}
 hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_hard_taller)
 hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_hard_wider)
 hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_hard_thinner)
