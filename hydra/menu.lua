@@ -32,7 +32,7 @@ function show_menu()
 
       return {
         {title = "Reload Config", fn = hydra.reload},
-        {title = "Toggle REPL", fn = toggle_repl},
+        {title = "Toggle Dev Tools", fn = toggle_repl},
         {title = "-"},
         {title = "About", fn = hydra.showabout},
         {title = updatetitles[hasupdate], fn = updatefns[hasupdate]},
