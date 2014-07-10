@@ -1,7 +1,10 @@
+-- grid.lua v2014.07.07
+
 ext.grid = {}
 
 ext.grid.MARGINX = 5
 ext.grid.MARGINY = 5
+ext.grid.GRIDHEIGHT = 3
 ext.grid.GRIDWIDTH = 3
 
 local function round(num, idp)
@@ -13,7 +16,7 @@ function ext.grid.get(win)
   local winframe = win:frame()
   local screenrect = win:screen():frame_without_dock_or_menu()
   local thirdscreenwidth = screenrect.w / ext.grid.GRIDWIDTH
-  local halfscreenheight = screenrect.h / 2
+  local halfscreenheight = screenrect.h / ext.grid.GRIDHEIGHT
   return {
     x = round((winframe.x - screenrect.x) / thirdscreenwidth),
     y = round((winframe.y - screenrect.y) / halfscreenheight),
@@ -25,7 +28,7 @@ end
 function ext.grid.set(win, grid, screen)
   local screenrect = screen:frame_without_dock_or_menu()
   local thirdscreenwidth = screenrect.w / ext.grid.GRIDWIDTH
-  local halfscreenheight = screenrect.h / 2
+  local halfscreenheight = screenrect.h / ext.grid.GRIDHEIGHT
   local newframe = {
     x = (grid.x * thirdscreenwidth) + screenrect.x,
     y = (grid.y * halfscreenheight) + screenrect.y,
@@ -47,6 +50,12 @@ function ext.grid.snap(win)
   end
 end
 
+function ext.grid.adjustheight(by)
+  ext.grid.GRIDHEIGHT = math.max(1, ext.grid.GRIDHEIGHT + by)
+  hydra.alert("grid is now " .. tostring(ext.grid.GRIDHEIGHT) .. " tiles high", 1)
+  fnutils.map(window.visiblewindows(), ext.grid.snap)
+end
+
 function ext.grid.adjustwidth(by)
   ext.grid.GRIDWIDTH = math.max(1, ext.grid.GRIDWIDTH + by)
   hydra.alert("grid is now " .. tostring(ext.grid.GRIDWIDTH) .. " tiles wide", 1)
@@ -62,7 +71,7 @@ end
 
 function ext.grid.maximize_window()
   local win = window.focusedwindow()
-  local f = {x = 0, y = 0, w = ext.grid.GRIDWIDTH, h = 2}
+  local f = {x = 0, y = 0, w = ext.grid.GRIDWIDTH, h = ext.grid.GRIDHEIGHT}
   ext.grid.set(win, f, win:screen())
 end
 
@@ -93,13 +102,17 @@ function ext.grid.resizewindow_thinner()
 end
 
 function ext.grid.pushwindow_down()
-  ext.grid.adjust_focused_window(function(f) f.y = 1; f.h = 1 end)
+  ext.grid.adjust_focused_window(function(f) f.y = math.min(f.y + 1, ext.grid.GRIDHEIGHT - f.h) end)
 end
 
 function ext.grid.pushwindow_up()
-  ext.grid.adjust_focused_window(function(f) f.y = 0; f.h = 1 end)
+  ext.grid.adjust_focused_window(function(f) f.y = math.max(f.y - 1, 0) end)
+end
+
+function ext.grid.resizewindow_shorter()
+  ext.grid.adjust_focused_window(function(f) f.y = f.y - 0; f.h = math.max(f.h - 1, 1) end)
 end
 
 function ext.grid.resizewindow_taller()
-  ext.grid.adjust_focused_window(function(f) f.y = 0; f.h = 2 end)
+  ext.grid.adjust_focused_window(function(f) f.y = f.y - 0; f.h = math.min(f.h + 1, ext.grid.GRIDHEIGHT - f.y) end)
 end

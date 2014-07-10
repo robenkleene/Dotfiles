@@ -1,5 +1,7 @@
-require "grid"
+-- require "grid"
+dofile(package.searchpath("grid", package.path))
 -- require "menu"
+
 dofile(package.searchpath("menu", package.path))
 
 dofile(package.searchpath("test", package.path))
@@ -47,8 +49,8 @@ hotkey.bind(mash, 'L', ext.grid.pushwindow_right)
 mash = {"alt", "ctrl"}
 hotkey.bind(mash, 'k', ext.grid.resizewindow_taller)
 hotkey.bind(mash, 'l', ext.grid.resizewindow_wider)
-hotkey.bind(mash, 'h', ext.grid.resizewindow_thinner) -- TODO This should be extend the window to the left
-hotkey.bind(mash, 'j', ext.grid.pushwindow_up)
+hotkey.bind(mash, 'h', ext.grid.resizewindow_thinner)
+hotkey.bind(mash, 'j', ext.grid.resizewindow_shorter)
 
 mash = {"ctrl"}
 hotkey.bind(mash, 'h', function() window.focusedwindow():focuswindow_west() end)
