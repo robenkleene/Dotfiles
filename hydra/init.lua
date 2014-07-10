@@ -1,13 +1,11 @@
--- require "grid"
-dofile(package.searchpath("grid", package.path))
--- require "grid_additions"
-dofile(package.searchpath("grid_additions", package.path))
--- require "menu"
-dofile(package.searchpath("menu", package.path))
+require "grid"
+-- dofile(package.searchpath("grid", package.path))
+require "grid_additions"
+-- dofile(package.searchpath("grid_additions", package.path))
+require "menu"
+-- dofile(package.searchpath("menu", package.path))
 
-
-
-dofile(package.searchpath("test", package.path))
+-- dofile(package.searchpath("test", package.path))
 
 show_menu()
 
