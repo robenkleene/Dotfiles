@@ -24,6 +24,14 @@ function toggle_repl()
   end
 end
 
+function snap_to_grid()
+  fnutils.map(window.visiblewindows(), ext.grid.snap)
+end
+
+function snap_window_to_grid()
+  ext.grid.snap(window.focusedwindow())
+end
+
 function show_menu()
   menu.show(function()
       local updatetitles = {[true] = "Install Update", [false] = "Check for Update..."}
@@ -31,11 +39,15 @@ function show_menu()
       local hasupdate = (updates.newversion ~= nil)
 
       return {
+        {title = "About", fn = hydra.showabout},
+        {title = updatetitles[hasupdate], fn = updatefns[hasupdate]},
+        {title = "-"},
+        {title = "Snap to Grid", fn = snap_to_grid},
+        {title = "Snap Window to Grid", fn = snap_window_to_grid},
+        {title = "-"},
         {title = "Reload Config", fn = hydra.reload},
         {title = "Toggle Dev Tools", fn = toggle_repl},
         {title = "-"},
-        {title = "About", fn = hydra.showabout},
-        {title = updatetitles[hasupdate], fn = updatefns[hasupdate]},
         {title = "Quit Hydra", fn = os.exit},
       }
   end)

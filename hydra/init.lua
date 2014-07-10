@@ -1,6 +1,7 @@
 require "grid"
-require "menu"
--- dofile(package.searchpath("menu", package.path))
+-- require "menu"
+dofile(package.searchpath("menu", package.path))
+
 dofile(package.searchpath("test", package.path))
 
 show_menu()
@@ -59,7 +60,7 @@ mash = {"alt"}
 hotkey.bind(mash, 'n', ext.grid.pushwindow_nextscreen)
 hotkey.bind(mash, 'p', ext.grid.pushwindow_prevscreen)
 
-hotkey.bind({"alt", "shift"}, "s", function() fnutils.map(window.visiblewindows(), ext.grid.snap) end)
+hotkey.bind({"alt", "shift"}, "s", function() snap_to_grid() end)
 hotkey.bind({"alt"}, "s", function() ext.grid.snap(window.focusedwindow()) end)
 
 -- hotkey.new(mash2, "h", movewindow_lefthalf):enable()
