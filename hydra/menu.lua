@@ -66,7 +66,7 @@ function updates.available(available)
   if available then
     notify.show("Hydra update available", "", "Click here to see the changelog and maybe even install it", "showupdate")
   else
-    hydra.alert("No update available.")
+    notify.show("No update available", "", "", "")
   end
 end
 
