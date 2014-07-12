@@ -24,7 +24,7 @@ atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
   editor = atom.workspace.activePaneItem
   filepath = editor.getBuffer().getPath()
   exec = require('child_process').exec
-  exec "open #{filepath}"
+  exec "open \"#{filepath}\""
 
 atom.workspaceView.command 'roben-kleene:open-in-terminal', ->
   editor = atom.workspace.activePaneItem
@@ -32,13 +32,13 @@ atom.workspaceView.command 'roben-kleene:open-in-terminal', ->
   path = require('path')
   dirpath = path.dirname(filepath)
   exec = require('child_process').exec
-  exec "open -a Terminal #{dirpath}"
+  exec "open -a Terminal \"#{dirpath}\""
 
 atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
   editor = atom.workspace.activePaneItem
   filepath = editor.getBuffer().getPath()
   exec = require('child_process').exec
-  exec "open -R #{filepath}"
+  exec "open -R \"#{filepath}\""
 
 if not atom.packages.isPackageDisabled "vim-mode"
   atom.workspaceView.eachEditorView (editorView) ->
