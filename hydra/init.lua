@@ -77,8 +77,8 @@ hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_hard_wider)
 hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_hard_thinner)
 hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_hard_shorter)
 
-
-
+mash = {"ctrl", "alt", "shift"}
+hotkey.bind(mash, 'z', ext.grid.maximize_window)
 
 
 mash = {"alt"}
