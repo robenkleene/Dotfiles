@@ -40,6 +40,12 @@ atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
   exec = require('child_process').exec
   exec "open -R \"#{filepath}\""
 
+atom.workspaceView.command 'roben-kleene:send-to-launchbar', ->
+  editor = atom.workspace.activePaneItem
+  filepath = editor.getBuffer().getPath()
+  exec = require('child_process').exec
+  exec "osascript -e 'tell application \"LaunchBar\" to open \"#{filepath}\"'"
+
 if not atom.packages.isPackageDisabled "vim-mode"
   atom.workspaceView.eachEditorView (editorView) ->
     editorView.trigger "vim-mode:activate-insert-mode"

@@ -26,7 +26,8 @@
   'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
   # 'cmd-k e': 'roben-kleene:toggle-emmet'
   'ctrl-alt-f': 'roben-kleene:reveal-in-finder'
-  'ctrl-T': 'roben-kleene:open-in-terminal'
+  'ctrl-alt-t': 'roben-kleene:open-in-terminal'
+  'shift-cmd-space': 'roben-kleene:send-to-launchbar'
 
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'

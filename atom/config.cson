@@ -9,6 +9,7 @@
     'metrics'
     'minimap'
     'emmet'
+    'linter-coffeelint'
   ]
   'themes': [
     'atom-light-ui'
@@ -26,4 +27,5 @@
 'toggle-packages':
   'togglePackages': [
     'emmet'
+    'linter-coffeelint'
   ]
