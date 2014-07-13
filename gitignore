@@ -6,3 +6,7 @@
 
 # Emacs file locks
 .#*
+
+# Ctags
+tags
+!tags/
