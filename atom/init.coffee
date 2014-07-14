@@ -10,7 +10,7 @@
 process.env.PATH = ["/usr/local/bin:~/Development/Scripts/bin", process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
 # process.env.ATOM_REPOS_HOME = "~/Development/Projects/Atom"
-
+process.env.COFFEELINT_CONFIG = process.env.HOME + "/.coffeelint.json"
 
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()
