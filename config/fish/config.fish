@@ -96,10 +96,22 @@ function cleanopenwith
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
-# gitsh
-function g
-	gitsh
-end
+# # gitsh
+# function g
+# 	gitsh
+# end
+
+# function make_completion --argument alias command
+#     complete -c $alias -xa "(
+#         set -l cmd (commandline -pc | sed -e 's/^ *\S\+ *//' );
+#         complete -C\"$command \$cmd\";
+#     )"
+# end
+# function g
+# 	git $argv
+# end
+# make_completion g 'git'
+
 
 # tig
 function ts
