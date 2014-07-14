@@ -111,82 +111,102 @@ end
 # 	git $argv
 # end
 # make_completion g 'git'
+set -U fish_user_abbreviations 'g=git'
+set fish_user_abbreviations $fish_user_abbreviations 'ts=tig status'
+set fish_user_abbreviations $fish_user_abbreviations 'gs=git status'
+set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
+set fish_user_abbreviations $fish_user_abbreviations 'gdt=git difftool'
+set fish_user_abbreviations $fish_user_abbreviations 'gdm=git diff | mate'
+set fish_user_abbreviations $fish_user_abbreviations 'ga=git add'
+set fish_user_abbreviations $fish_user_abbreviations 'gb=git branch'
+set fish_user_abbreviations $fish_user_abbreviations 'gaa=git add --all'
+set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit'
+set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
+set fish_user_abbreviations $fish_user_abbreviations 'gu=git pull'
+set fish_user_abbreviations $fish_user_abbreviations 'gpl=git pull'
+set fish_user_abbreviations $fish_user_abbreviations 'gl=git log'
+set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
+set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit --am'
+set fish_user_abbreviations $fish_user_abbreviations 'gcm=git commit -m'
+set fish_user_abbreviations $fish_user_abbreviations 'gcam=git commit --am -m'
+set fish_user_abbreviations $fish_user_abbreviations 'gsi=git submodule init'
+set fish_user_abbreviations $fish_user_abbreviations 'gsu=git submodule update'
 
 
-# tig
-function ts
-	tig status
-end
-
-# Git
-function gs
-	git status
-end
-
-function gd
-	git diff $argv
-end
-
-function gdt
-	git difftool $argv
-end
-
-function gdm
-	git diff | mate
-end
-
-function ga
-	git add $argv
-end
-
-function gb
-	git branch
-end
-
-function gaa
-	git add --all
-end
-
-function gc
-	git commit
-end
-
-function gp
-	git push
-end
-
-function gu
-	git pull
-end
-	
-function gpl
-	git pull
-end
-
-function gl
-	git log $argv
-end
-
-function gco
-	git checkout $argv
-end
-
-function gca
-	git commit --amend
-end
-
-function gcm
-	git commit -m $argv[1]
-end
-
-function gcam
-	git commit --amend -m $argv[1]
-end
-
-function gsi
-	git submodule init
-end
-
-function gsu
-	git submodule update
-end
+# # tig
+# function ts
+# 	tig status
+# end
+#
+# # Git
+# function gs
+# 	git status
+# end
+#
+# function gd
+# 	git diff $argv
+# end
+#
+# function gdt
+# 	git difftool $argv
+# end
+#
+# function gdm
+# 	git diff | mate
+# end
+#
+# function ga
+# 	git add $argv
+# end
+#
+# function gb
+# 	git branch
+# end
+#
+# function gaa
+# 	git add --all
+# end
+#
+# function gc
+# 	git commit
+# end
+#
+# function gp
+# 	git push
+# end
+#
+# function gu
+# 	git pull
+# end
+#
+# function gpl
+# 	git pull
+# end
+#
+# function gl
+# 	git log $argv
+# end
+#
+# function gco
+# 	git checkout $argv
+# end
+#
+# function gca
+# 	git commit --amend
+# end
+#
+# function gcm
+# 	git commit -m $argv[1]
+# end
+#
+# function gcam
+# 	git commit --amend -m $argv[1]
+# end
+#
+# function gsi
+# 	git submodule init
+# end
+#
+# function gsu
+# 	git submodule update
+# end
