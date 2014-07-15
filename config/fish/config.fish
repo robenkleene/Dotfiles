@@ -112,7 +112,7 @@ end
 # end
 # make_completion g 'git'
 set -U fish_user_abbreviations 'g=git'
-set fish_user_abbreviations $fish_user_abbreviations 'ts=tig status'
+# Git
 set fish_user_abbreviations $fish_user_abbreviations 'gs=git status'
 set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
 set fish_user_abbreviations $fish_user_abbreviations 'gdt=git difftool'
@@ -132,6 +132,10 @@ set fish_user_abbreviations $fish_user_abbreviations 'gcam=git commit --am -m'
 set fish_user_abbreviations $fish_user_abbreviations 'gsi=git submodule init'
 set fish_user_abbreviations $fish_user_abbreviations 'gsu=git submodule update'
 set fish_user_abbreviations $fish_user_abbreviations 'gur=git pull --rebase'
+# Tig
+set fish_user_abbreviations $fish_user_abbreviations 'ts=tig status'
+# Hub
+set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
 
 # # tig
 # function ts
