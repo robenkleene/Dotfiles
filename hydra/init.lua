@@ -52,11 +52,11 @@ hotkey.bind(mash, 'K', ext.grid.pushwindow_up)
 hotkey.bind(mash, 'H', ext.grid.pushwindow_left)
 hotkey.bind(mash, 'L', ext.grid.pushwindow_right)
 
-mash = {"alt", "shift"}
-hotkey.bind(mash, 'J', ext.grid_additions.pushwindow_hard_down)
-hotkey.bind(mash, 'K', ext.grid_additions.pushwindow_hard_up)
-hotkey.bind(mash, 'H', ext.grid_additions.pushwindow_hard_left)
-hotkey.bind(mash, 'L', ext.grid_additions.pushwindow_hard_right)
+-- mash = {"alt", "shift"}
+-- hotkey.bind(mash, 'J', ext.grid_additions.pushwindow_hard_down)
+-- hotkey.bind(mash, 'K', ext.grid_additions.pushwindow_hard_up)
+-- hotkey.bind(mash, 'H', ext.grid_additions.pushwindow_hard_left)
+-- hotkey.bind(mash, 'L', ext.grid_additions.pushwindow_hard_right)
 
 mash = {"ctrl", "alt"}
 hotkey.bind(mash, 'k', ext.grid.resizewindow_taller)
@@ -71,22 +71,22 @@ hotkey.bind(mash, 'j', ext.grid.resizewindow_shorter)
 -- hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_inverse_taller)
 
 
-mash = {"ctrl", "alt", "shift"}
-hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_hard_taller)
-hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_hard_wider)
-hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_hard_thinner)
-hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_hard_shorter)
+-- mash = {"ctrl", "alt", "shift"}
+-- hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_hard_taller)
+-- hotkey.bind(mash, 'l', ext.grid_additions.resizewindow_hard_wider)
+-- hotkey.bind(mash, 'h', ext.grid_additions.resizewindow_hard_thinner)
+-- hotkey.bind(mash, 'j', ext.grid_additions.resizewindow_hard_shorter)
 
-mash = {"ctrl", "alt", "shift"}
-hotkey.bind(mash, 'z', ext.grid.maximize_window)
+-- mash = {"ctrl", "alt", "shift"}
+-- hotkey.bind(mash, 'z', ext.grid.maximize_window)
 
 
 mash = {"alt"}
 hotkey.bind(mash, 'n', ext.grid.pushwindow_nextscreen)
 hotkey.bind(mash, 'p', ext.grid.pushwindow_prevscreen)
 
-hotkey.bind({"alt", "shift"}, "s", function() snap_to_grid() end)
-hotkey.bind({"alt"}, "s", function() ext.grid.snap(window.focusedwindow()) end)
+-- hotkey.bind({"alt", "shift"}, "s", function() snap_to_grid() end)
+-- hotkey.bind({"alt"}, "s", function() ext.grid.snap(window.focusedwindow()) end)
 
 -- hotkey.new(mash2, "h", movewindow_lefthalf):enable()
 -- hotkey.new(mash2, "l", movewindow_righthalf):enable()
