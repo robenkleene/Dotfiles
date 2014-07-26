@@ -7,7 +7,7 @@ require "menu"
 
 -- dofile(package.searchpath("test", package.path))
 
-show_menu()
+hydra.menu.show()
 
 notify.show("Config Loaded", "Hydra is here.", "", "")
 

@@ -4,7 +4,10 @@ set vertical-split = no
 bind status T !@git difftool 
 bind main T !@git difftool %(commit)^!
 bind status D !@sh -c "git diff $(git rev-parse --show-toplevel)/%(file) | mate --async"
+# bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
+bind status A !@atom %(file)
 
-# bind status Z !sh -c "echo %(file)"
+# bind status Z !sh -c "echo $(pwd)/%(file)"
+bind status Z !sh -c "echo $(pwd)/%(file)"
 
 bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
