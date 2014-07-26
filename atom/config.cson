@@ -26,5 +26,10 @@
 'toggle-packages':
   'togglePackages': [
     'emmet'
-    'linter-coffeelint'
   ]
+'coffee-refactor':
+  'highlightReference': false
+'package-generator':
+  'createInDevMode': true
+'refactor':
+  'highlightReference': false
