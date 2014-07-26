@@ -8,10 +8,10 @@ function open_hydra_windows()
   logger.show()
 end
 
-function toggle_repl()
-  if hydra.indock() then
+function toggle_dev_tools()
+  if hydra.dockicon.visible() then
     close_hydra_windows()
-	hydra.dockicon.hide()
+    hydra.dockicon.hide()
   else
     hydra.dockicon.show()
     open_hydra_windows()
