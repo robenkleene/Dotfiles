@@ -31,5 +31,4 @@
   'highlightReference': false
 'package-generator':
   'createInDevMode': true
-'refactor':
-  'highlightReference': false
+'refactor': {}
