@@ -26,3 +26,7 @@
 [submodule "vim/bundle/vim-rsi"]
 	path = vim/bundle/vim-rsi
 	url = http://github.com/tpope/vim-rsi.git
+[submodule "nvm-fish"]
+	path = nvm-fish
+	url = https://github.com/Alex7Kom/nvm-fish.git
+	ignore = dirty
