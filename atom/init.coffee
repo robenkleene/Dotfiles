@@ -15,6 +15,7 @@ process.env.PATH = [nodepath, npmpath, localbinpath, process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
 # process.env.ATOM_REPOS_HOME = process.env.HOME + "/Development/Projects/Atom"
 process.env.COFFEELINT_CONFIG = process.env.HOME + "/.coffeelint.json"
+# console.log process.env
 
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()

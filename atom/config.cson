@@ -10,11 +10,11 @@
     'minimap'
     'emmet'
   ]
+  'useReactEditor': true
   'themes': [
     'atom-light-ui'
     'atom-light-syntax'
   ]
-  'useReactEditor': true
 'tree-view':
   'hideIgnoredNames': true
 'markdown-preview': {}
@@ -32,3 +32,5 @@
 'package-generator':
   'createInDevMode': true
 'refactor': {}
+'preview':
+  '_analyticsUserId': ' '
