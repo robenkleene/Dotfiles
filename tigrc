@@ -1,14 +1,31 @@
 set vertical-split = no
 
-# @ suppresses output
+# Key
+# @ : Suppresses output
+# sh : Pipes aren't supported without a subshell
+# Note: Can't seem to escape double quotes, you can escape single quotes, but they behave unpredictably. Tig tokens (e.g., "%(file)") evaluate even in single quotes.
+
 bind status T !@git difftool 
 bind main T !@git difftool %(commit)^!
-bind status D !@sh -c "git diff $(git rev-parse --show-toplevel)/%(file) | mate --async"
+
+# Diff
+# Below will work even if tig is opened from a subfolder, but it fails if the path has a space
+# bind status D !@sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\' | mate --async"
+bind status D !@sh -c "git diff '%(file)' | mate --async"
+
+# Editing
 bind status E !@open %(file)
-# bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
 bind status A !@atom %(file)
 
-# bind status Z !sh -c "echo $(pwd)/%(file)"
-bind status Z !sh -c "echo $(pwd)/%(file)"
+# Launchbar
+# bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
 
+# Copying Hashes
 bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
+
+
+# Debugging
+# bind status Z !sh -c "echo \'test\'"
+bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
+
+
