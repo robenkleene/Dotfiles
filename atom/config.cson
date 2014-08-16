@@ -34,3 +34,5 @@
 'refactor': {}
 'preview':
   '_analyticsUserId': ' '
+'coffee-eval':
+  'showOutputPane': false
