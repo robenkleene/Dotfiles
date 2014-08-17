@@ -51,6 +51,15 @@ atom.workspaceView.command 'roben-kleene:send-to-launchbar', ->
   exec = require('child_process').exec
   exec "osascript -e 'tell application \"LaunchBar\" to open \"#{filepath}\"'"
 
+atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
+  scratchpath = process.env.HOME + "/Development/Scratch/Atom/"
+  editor = atom.workspace.activePaneItem
+  scope = editor.getGrammar()?.scopeName
+  if scope
+    filepath = scratchpath + scope
+    exec = require('child_process').exec
+    exec "atom \"#{filepath}\""
+
 if not atom.packages.isPackageDisabled "vim-mode"
   atom.workspaceView.eachEditorView (editorView) ->
     editorView.trigger "vim-mode:activate-insert-mode"
