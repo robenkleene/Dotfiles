@@ -60,9 +60,9 @@ atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
     exec = require('child_process').exec
     exec "atom \"#{filepath}\""
 
-if not atom.packages.isPackageDisabled "vim-mode"
-  atom.workspaceView.eachEditorView (editorView) ->
-    editorView.trigger "vim-mode:activate-insert-mode"
+# if not atom.packages.isPackageDisabled "vim-mode"
+#   atom.workspaceView.eachEditorView (editorView) ->
+#     editorView.trigger "vim-mode:activate-insert-mode"
 
 console.log "Hello from init.coffee!"
 

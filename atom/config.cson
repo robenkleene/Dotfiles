@@ -9,6 +9,7 @@
     'metrics'
     'minimap'
     'emmet'
+    'vim-mode'
   ]
   'useReactEditor': true
   'themes': [
@@ -34,5 +35,9 @@
 'refactor': {}
 'preview':
   '_analyticsUserId': ' '
+  'updateOnTabChange': false
 'coffee-eval':
   'showOutputPane': false
+'coffee-compile':
+  'focusEditorAfterCompile': true
+'run-in-atom': {}
