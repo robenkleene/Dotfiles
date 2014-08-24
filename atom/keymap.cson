@@ -28,10 +28,15 @@
   'ctrl-alt-f': 'roben-kleene:reveal-in-finder'
   'ctrl-alt-t': 'roben-kleene:open-in-terminal'
   'shift-cmd-space': 'roben-kleene:send-to-launchbar'
-
+  'alt-s': 'roben-kleene:open-scratch-for-scope'
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'
   'ctrl-T': 'roben-kleene:open-in-terminal'
+
+# Autocomplete Plus
+# ".autocomplete-plus input.hidden-input":
+#   "enter": "autocomplete-plus:confirm"
+#   'tab': 'unset!'
 
 # Emmet
 # '.editor:not(.mini)':

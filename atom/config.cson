@@ -32,12 +32,12 @@
   'highlightReference': false
 'package-generator':
   'createInDevMode': true
-'refactor': {}
+'refactor':
+  'highlightReference': false
+  'highlightError': false
 'preview':
   '_analyticsUserId': ' '
   'updateOnTabChange': false
-'coffee-eval':
-  'showOutputPane': false
 'coffee-compile':
   'focusEditorAfterCompile': true
 'run-in-atom': {}
