@@ -55,9 +55,14 @@ function egitn
 end
 
 # Emacs Client
+# Creates a new window
+# function ec
+#   emacsclient --create-frame --no-wait $argv
+# end
 function ec
-	emacsclient -c -n
+	emacsclient --no-wait $argv
 end
+
 
 # Emacs Client Magit
 # function gc
