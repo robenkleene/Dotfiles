@@ -12,10 +12,6 @@
     'vim-mode'
   ]
   'useReactEditor': true
-  'themes': [
-    'atom-light-ui'
-    'atom-light-syntax'
-  ]
 'tree-view':
   'hideIgnoredNames': true
 'markdown-preview': {}
@@ -41,3 +37,4 @@
 'coffee-compile':
   'focusEditorAfterCompile': true
 'run-in-atom': {}
+'linter': {}
