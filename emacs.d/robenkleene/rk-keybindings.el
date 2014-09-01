@@ -16,33 +16,33 @@
 (rk-osx-minor-mode 1)
 
 ;; Windows & Buffers
-(defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
-(define-key rk-wm-minor-mode-map (kbd "C-`") 'other-window)
-(define-key rk-wm-minor-mode-map (kbd "C-~") (lambda () (interactive) (other-window -1)))
-(define-key rk-wm-minor-mode-map (kbd "C-'") 'other-window)
-(define-key rk-wm-minor-mode-map (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
+;; (defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
+;; (define-key rk-wm-minor-mode-map (kbd "C-`") 'other-window)
+;; (define-key rk-wm-minor-mode-map (kbd "C-~") (lambda () (interactive) (other-window -1)))
+;; (define-key rk-wm-minor-mode-map (kbd "C-'") 'other-window)
+;; (define-key rk-wm-minor-mode-map (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
 ;; (define-key rk-wm-minor-mode-map (kbd "C-w") 'delete-window)
-(define-key rk-wm-minor-mode-map (kbd "C-S-w") 'delete-other-windows)
-(define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
-(define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
-(define-key rk-wm-minor-mode-map (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
-(define-key rk-wm-minor-mode-map (kbd "C-s-<right>") 'next-buffer)
-(define-minor-mode rk-wm-minor-mode
-  "Window management minor mode."
-  :global t)
-(rk-wm-minor-mode 1)
+;; (define-key rk-wm-minor-mode-map (kbd "C-S-w") 'delete-other-windows)
+;; (define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
+;; (define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
+;; (define-key rk-wm-minor-mode-map (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
+;; (define-key rk-wm-minor-mode-map (kbd "C-s-<right>") 'next-buffer)
+;; (define-minor-mode rk-wm-minor-mode
+;;   "Window management minor mode."
+;;   :global t)
+;; (rk-wm-minor-mode 1)
 
 
 ;; Editing
-(global-set-key (kbd "s-k") 'kill-line) 
-(global-set-key (kbd "s-y") 'yank)
+;; (global-set-key (kbd "s-k") 'kill-line) 
+;; (global-set-key (kbd "s-y") 'yank)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "s-]") 'indent-for-tab-command)
 (global-set-key (kbd "s-[") 'indent-for-tab-command)
-(global-set-key (kbd "s-%") 'query-replace)
+;; (global-set-key (kbd "s-%") 'query-replace)
 (global-set-key (kbd "<escape>") 'keyboard-quit)
-(global-set-key (kbd "M-s-w") 'toggle-truncate-lines)
-(global-set-key (kbd "M-s-Σ") 'toggle-truncate-lines) ;; This isn't working
+;; (global-set-key (kbd "M-s-w") 'toggle-truncate-lines)
+;; (global-set-key (kbd "M-s-Σ") 'toggle-truncate-lines) ;; This isn't working
 
 ;; Abort
 (define-key minibuffer-local-map (kbd "<escape>") 'abort-recursive-edit) 
