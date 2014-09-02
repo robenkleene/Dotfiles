@@ -60,7 +60,7 @@ atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
   if scope
     filepath = scratchpath + scope
     exec = require('child_process').exec
-    exec "atom \"#{filepath}\""
+    exec "atom --new-window \"#{filepath}\""
 
 # if not atom.packages.isPackageDisabled "vim-mode"
 #   atom.workspaceView.eachEditorView (editorView) ->
