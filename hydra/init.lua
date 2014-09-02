@@ -7,8 +7,6 @@ require "menu"
 
 -- dofile(package.searchpath("test", package.path))
 
-hydra.menu.show()
-
 notify.show("Config Loaded", "Hydra is here.", "", "")
 
 -- Uncomment this if you want Hydra to make sure it launches at login
@@ -59,10 +57,10 @@ hotkey.bind(mash, 'L', ext.grid.pushwindow_right)
 -- hotkey.bind(mash, 'L', ext.grid_additions.pushwindow_hard_right)
 
 mash = {"ctrl", "alt"}
-hotkey.bind(mash, 'k', ext.grid.resizewindow_taller)
+hotkey.bind(mash, 'k', ext.grid.resizewindow_shorter)
 hotkey.bind(mash, 'l', ext.grid.resizewindow_wider)
 hotkey.bind(mash, 'h', ext.grid.resizewindow_thinner)
-hotkey.bind(mash, 'j', ext.grid.resizewindow_shorter)
+hotkey.bind(mash, 'j', ext.grid.resizewindow_taller)
 
 -- mash = {"ctrl"}
 -- hotkey.bind(mash, 'k', ext.grid_additions.resizewindow_inverse_shorter)
