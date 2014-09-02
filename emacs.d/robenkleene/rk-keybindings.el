@@ -10,6 +10,7 @@
 (define-key rk-osx-minor-mode-map (kbd "M-<right>") 'right-word)
 (define-key rk-osx-minor-mode-map (kbd "M-S-<left>") nil)
 (define-key rk-osx-minor-mode-map (kbd "M-S-<right>") nil)
+(define-key rk-osx-minor-mode-map (kbd "C-w") 'backward-kill-word)
 (define-minor-mode rk-osx-minor-mode
   "Behave like OS X."
   :global t)
