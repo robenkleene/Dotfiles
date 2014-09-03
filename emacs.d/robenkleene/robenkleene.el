@@ -1,4 +1,5 @@
 ;; Startup
+(setq exec-path '("/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin"))
 
 ;; Package Providers
 (require 'package)

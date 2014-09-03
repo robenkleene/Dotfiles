@@ -17,21 +17,21 @@
 (rk-osx-minor-mode 1)
 
 ;; Windows & Buffers
-;; (defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
+(defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
 ;; (define-key rk-wm-minor-mode-map (kbd "C-`") 'other-window)
 ;; (define-key rk-wm-minor-mode-map (kbd "C-~") (lambda () (interactive) (other-window -1)))
 ;; (define-key rk-wm-minor-mode-map (kbd "C-'") 'other-window)
 ;; (define-key rk-wm-minor-mode-map (kbd "C-\"") (lambda () (interactive) (other-window -1))) 
 ;; (define-key rk-wm-minor-mode-map (kbd "C-w") 'delete-window)
 ;; (define-key rk-wm-minor-mode-map (kbd "C-S-w") 'delete-other-windows)
-;; (define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
-;; (define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
-;; (define-key rk-wm-minor-mode-map (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
-;; (define-key rk-wm-minor-mode-map (kbd "C-s-<right>") 'next-buffer)
-;; (define-minor-mode rk-wm-minor-mode
-;;   "Window management minor mode."
-;;   :global t)
-;; (rk-wm-minor-mode 1)
+(define-key rk-wm-minor-mode-map (kbd "s-{") 'previous-buffer) ; Tab-switching Style
+(define-key rk-wm-minor-mode-map (kbd "s-}") 'next-buffer)
+(define-key rk-wm-minor-mode-map (kbd "C-s-<left>") 'previous-buffer) ;; Xcode Style
+(define-key rk-wm-minor-mode-map (kbd "C-s-<right>") 'next-buffer)
+(define-minor-mode rk-wm-minor-mode
+  "Window management minor mode."
+  :global t)
+(rk-wm-minor-mode 1)
 
 
 ;; Editing

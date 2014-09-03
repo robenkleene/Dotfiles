@@ -3,6 +3,9 @@
 ;; Paredit
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
+;; Don't autoload geiser so MIT-Scheme can be used by selecting "run scheme"
+(setq geiser-mode-auto-p nil)
+
 ;; Scheme
 (eval-after-load 'geiser
   '(progn

@@ -18,13 +18,6 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
-;; exec-path-from-shell
-(rk-install-package-if-missing 'exec-path-from-shell)
-;; This gives my path to emacs shell, it was causing an error on startup so temporarily disabled.
-;;(when (memq window-system '(mac ns))
-;;  (exec-path-from-shell-initialize))
-
-
 ;; Auto-complete
 (rk-install-package-if-missing 'auto-complete)
 (require 'auto-complete-config)
@@ -38,7 +31,6 @@
 (rk-install-package-if-missing 'autopair)
 (require 'autopair)
 (autopair-global-mode)
-
 
 ;; find-file-in-project
 (rk-install-package-if-missing 'find-file-in-project)
