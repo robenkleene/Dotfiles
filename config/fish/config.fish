@@ -2,7 +2,7 @@
 set PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
-set EDITOR mate
+set -x EDITOR vim
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
@@ -89,6 +89,21 @@ function bbf
   end
 end
 
+# Ranger
+function ranger-cd
+  set tempfile '/tmp/chosendir'
+  ranger --choosedir=$tempfile (pwd)
+  if test -f $tempfile
+      if [ (cat $tempfile) != (pwd) ]
+        cd (cat $tempfile)
+      end
+  end
+  rm -f $tempfile
+end
+function fish_user_key_bindings                                                  
+    bind \co 'ranger-cd ; fish_prompt'                                           
+end
+
 # BBFind in files
 function bbff
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
@@ -148,6 +163,8 @@ set fish_user_abbreviations $fish_user_abbreviations 'ts=tig status'
 set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
 # Git Tower
 set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
+# Ranger
+set fish_user_abbreviations $fish_user_abbreviations 'rc=ranger-cd'
 
 # # tig
 # function ts

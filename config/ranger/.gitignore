@@ -3,5 +3,4 @@
 
 # Except
 !.gitignore
-!/fish/
-!/ranger/
+!rc.conf
