@@ -14,6 +14,10 @@ set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 let mapleader = ','
 
+" Normalizing Key Commands
+" Kill line
+noremap! <C-k> <C-O>d$
+
 " Look & Feel {{{1
 colorscheme ir_black
 " hi Search ctermbg=DarkGray " Search highlight color
