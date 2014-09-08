@@ -1,5 +1,25 @@
 (provide 'rk-features-packages)
 
+;; Evil-Mode
+(rk-install-package-if-missing 'evil)
+(require 'evil)
+(evil-mode 1)
+(setq evil-default-cursor t)
+(blink-cursor-mode 0)
+;; Disable insert mode key map
+(setcdr evil-insert-state-map nil)
+;; Re-enable esc
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+;; Undefine Some Keys in Insert Mode
+;; (defun evil-undefine ()
+;;  (interactive)
+;;  (let (evil-mode-map-alist)
+;;    (call-interactively (key-binding (this-command-keys)))))
+;; (define-key evil-insert-state-map (kbd "C-k") 'evil-undefine)
+
+
+
 ;; ido-ubiquitous
 (rk-install-package-if-missing 'ido-ubiquitous)
 (require 'ido-ubiquitous)

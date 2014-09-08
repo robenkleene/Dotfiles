@@ -18,7 +18,7 @@
 
 ;; Misc
 (set-cursor-color "#E57969")
-(global-hl-line-mode t) ;; Highlight current line
+;;(global-hl-line-mode t) ;; Highlight current line
 ;; (global-linum-mode 1) ;; Line numbers
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")

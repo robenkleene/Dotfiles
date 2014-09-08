@@ -41,7 +41,7 @@
 (global-set-key (kbd "s-]") 'indent-for-tab-command)
 (global-set-key (kbd "s-[") 'indent-for-tab-command)
 ;; (global-set-key (kbd "s-%") 'query-replace)
-(global-set-key (kbd "<escape>") 'keyboard-quit)
+;; (global-set-key (kbd "<escape>") 'keyboard-quit)
 ;; (global-set-key (kbd "M-s-w") 'toggle-truncate-lines)
 ;; (global-set-key (kbd "M-s-Σ") 'toggle-truncate-lines) ;; This isn't working
 
