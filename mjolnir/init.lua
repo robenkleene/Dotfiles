@@ -23,8 +23,8 @@ hotkey.bind(mash, 'l', grid.resizewindow_wider)
 hotkey.bind(mash, 'h', grid.resizewindow_thinner)
 hotkey.bind(mash, 'j', grid.resizewindow_taller)
 
-mash = {"alt"}
-hotkey.bind(mash, 'n', grid.pushwindow_nextscreen)
-hotkey.bind(mash, 'p', grid.pushwindow_prevscreen)
+mash = {"shift", "alt"}
+hotkey.bind(mash, 'l', grid.pushwindow_nextscreen)
+hotkey.bind(mash, 'h', grid.pushwindow_prevscreen)
 
 
