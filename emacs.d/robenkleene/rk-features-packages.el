@@ -18,7 +18,9 @@
 ;;    (call-interactively (key-binding (this-command-keys)))))
 ;; (define-key evil-insert-state-map (kbd "C-k") 'evil-undefine)
 
-
+(rk-install-package-if-missing 'rainbow-delimiters)
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
 
 ;; ido-ubiquitous
 (rk-install-package-if-missing 'ido-ubiquitous)
