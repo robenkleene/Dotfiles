@@ -1,8 +1,10 @@
 (provide 'rk-functions)
 
-(defun rk-install-package-if-missing (p)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(defun rk-install-package-if-missing  (package)
+  (unless (assq package package-alist)
+    (package-refresh-contents))
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (defun rk-bookmark-scratch ()
   (interactive)
