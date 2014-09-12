@@ -1,9 +1,9 @@
 " vim:fdm=marker
-" General {{{1
+" General
 let g:markdown_folding = 1
 set foldlevel=1
 
-" Commands {{{1
+" Commands
 
 " Markdown Preview
 " command! MarkdownPreview :execute '!mdprev '.shellescape(expand('%:p'), 1)
@@ -17,7 +17,7 @@ set foldlevel=1
 " :command! LineToQuote :normal I> <ESC>
 " nmap <leader>q :LineToQuote<CR>
 
-" Creating List Items {{{2
+" Creating List Items
 " Create list item from clipboard
 " :command! ListItemFromClipboard :normal o<esc>pI- <ESC>
 " nmap <leader>v :ListItemFromClipboard<CR>
@@ -25,7 +25,7 @@ set foldlevel=1
 " :command! LineToListItem :normal I- <ESC>
 " nmap <leader>l :LineToListItem<CR>
 
-" Creating Headers {{{2
+" Creating Headers
 " :command! Header1 :normal O<esc>O# <esc>
 " nmap <leader>1 :Header1<CR>:startinsert!<CR>
 " :command! Header2 :normal O<esc>O## <esc>
