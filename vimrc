@@ -1,8 +1,6 @@
 " vim:fdm=marker
 " Disable Plugins
-" let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'vim-sensible')
-call add(g:pathogen_disabled, 'vim-rsi') " Readline bindings seem to work better with this disabled?
+" let g:pathogen_disabled = ["vim-rsi"]
 
 " Pathogen
 execute pathogen#infect()
