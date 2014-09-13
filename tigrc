@@ -23,9 +23,12 @@ bind status A !@atom %(file)
 # Copying Hashes
 bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
 
+# Vim
+bind generic <Ctrl-B> move-page-up
+bind generic <Ctrl-F> move-page-down
 
 # Debugging
-# bind status Z !sh -c "echo \'test\'"
-bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
+# bind status Z !sh -c 'cat %(file)'
+# bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
 
 
