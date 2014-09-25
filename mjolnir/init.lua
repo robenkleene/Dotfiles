@@ -1,15 +1,10 @@
 local hotkey = require "mjolnir.hotkey"
-local grid = require "mjolnir.sd.grid"
+local grid = require "mjolnir.bg.grid"
 
-grid.GRIDWIDTH = 6
+grid.GRIDWIDTH = 4
 grid.GRIDHEIGHT = 3
 grid.MARGINX = 0
 grid.MARGINY = 0
-
--- Version 0.1-1 of `mjolnir.sd.grid` didn't support "shorter" but a future version should
-function grid.resizewindow_shorter()
-  grid.adjust_focused_window(function(f) f.y = f.y - 0; f.h = math.max(f.h - 1, 1) end)
-end
 
 mash = {"alt"}
 hotkey.bind(mash, 'J', grid.pushwindow_down)
@@ -26,5 +21,3 @@ hotkey.bind(mash, 'j', grid.resizewindow_taller)
 mash = {"shift", "alt"}
 hotkey.bind(mash, 'l', grid.pushwindow_nextscreen)
 hotkey.bind(mash, 'h', grid.pushwindow_prevscreen)
-
-
