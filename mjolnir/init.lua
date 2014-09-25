@@ -1,7 +1,7 @@
 local hotkey = require "mjolnir.hotkey"
 local grid = require "mjolnir.bg.grid"
 
-grid.GRIDWIDTH = 4
+grid.GRIDWIDTH = 6
 grid.GRIDHEIGHT = 3
 grid.MARGINX = 0
 grid.MARGINY = 0
