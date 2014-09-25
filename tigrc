@@ -27,8 +27,9 @@ bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down
 
+# Emacs
+bind generic <Ctrl-V> move-page-down
+
 # Debugging
 # bind status Z !sh -c 'cat %(file)'
 # bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
-
-
