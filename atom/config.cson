@@ -8,8 +8,8 @@
     'exception-reporting'
     'metrics'
     'minimap'
-    'emmet'
     'vim-mode'
+    'emmet'
   ]
   'useReactEditor': true
 'tree-view':
