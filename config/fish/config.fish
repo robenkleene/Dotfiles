@@ -169,7 +169,10 @@ set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
 # Ranger
 set fish_user_abbreviations $fish_user_abbreviations 'rc=ranger-cd'
 # Open
+set fish_user_abbreviations $fish_user_abbreviations 're=open -R .'
 set fish_user_abbreviations $fish_user_abbreviations 'o=open .'
+
+
 # set fish_user_abbreviations $fish_user_abbreviations 'o=open'
 # set fish_user_abbreviations $fish_user_abbreviations 'of=open .'
 
