@@ -23,7 +23,6 @@ set PATH /usr/local/share/npm/bin $PATH
 # Coffeelint
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
 
-
 # Prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
@@ -46,96 +45,8 @@ function fish_right_prompt
 	echo -n (__fish_git_prompt)
 end
 
-function egitn
-    set --local EGITNEXT (egit -n)
-	if test -n "$EGITNEXT"
-		cd $EGITNEXT
-		git status
-	end
-end
-
-# Emacs Client
-# Creates a new window
-# function ec
-#   emacsclient --create-frame --no-wait $argv
-# end
-function ec
-	emacsclient --no-wait $argv
-end
-
-
-# Emacs Client Magit
-# function gc
-# 	emacsclient -c -n --eval "(rk-magit-status-startup)"
-# end
-
-# Emacs Magit
-function magit
-	emacs --eval "(rk-magit-status-startup)"
-end
-
-# wcsearch
-# function sea
-#   wcsearch $argv
-# end
-
-# BBFind
-function bbf
-  switch (count $argv)
-      case 1
-          bbfind --grep --gui --case-sensitive "$argv[1]" .
-      case '*'
-          bbfind --grep --gui --case-sensitive $argv
-  end
-end
-
-# Ranger
-function ranger-cd
-  set tempfile '/tmp/chosendir'
-  ranger --choosedir=$tempfile (pwd)
-  if test -f $tempfile
-      if [ (cat $tempfile) != (pwd) ]
-        cd (cat $tempfile)
-      end
-  end
-  rm -f $tempfile
-end
-function fish_user_key_bindings                                                  
-    bind \co 'ranger-cd ; fish_prompt'                                           
-end
-
-# BBFind in files
-function bbff
-  bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
-end
-
-# Files
-function ackf
-  ack -ig "$argv[1]"
-end
-
-# Misc
-function cleanopenwith
-	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-end
-
-# # gitsh
-# function g
-# 	gitsh
-# end
-
-# function make_completion --argument alias command
-#     complete -c $alias -xa "(
-#         set -l cmd (commandline -pc | sed -e 's/^ *\S\+ *//' );
-#         complete -C\"$command \$cmd\";
-#     )"
-# end
-# function g
-# 	git $argv
-# end
-# make_completion g 'git'
-set -U fish_user_abbreviations 'g=git'
 # Git
+set -U fish_user_abbreviations 'g=git'
 set fish_user_abbreviations $fish_user_abbreviations 'gs=git status'
 set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
 set fish_user_abbreviations $fish_user_abbreviations 'gdt=git difftool'
@@ -159,97 +70,102 @@ set fish_user_abbreviations $fish_user_abbreviations 'gsi=git submodule init'
 set fish_user_abbreviations $fish_user_abbreviations 'gsu=git submodule update'
 set fish_user_abbreviations $fish_user_abbreviations 'gur=git pull --rebase'
 set fish_user_abbreviations $fish_user_abbreviations 'gpbo=git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+
+# egit
+function egitn
+    set --local EGITNEXT (egit -n)
+	if test -n "$EGITNEXT"
+		cd $EGITNEXT
+		git status
+	end
+end
+
 # Tig
-set fish_user_abbreviations $fish_user_abbreviations 'ts=tig status +3'
+function ts
+  tig status +3
+end
+
 # Hub
 set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
-set fish_user_abbreviations $fish_user_abbreviations 'hbc=hub browse -- commits'
+function hbc
+  hub browse -- commits
+end
+
 # Git Tower
-set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
+# set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
+
+# Navigation
+function o
+  open .
+end
+function re
+  open -R .
+end
+function -
+  cd -
+end
+
 # Ranger
-set fish_user_abbreviations $fish_user_abbreviations 'rc=ranger-cd'
-# Open
-set fish_user_abbreviations $fish_user_abbreviations 're=open -R .'
-set fish_user_abbreviations $fish_user_abbreviations 'o=open .'
+function ranger-cd
+  set tempfile '/tmp/chosendir'
+  ranger --choosedir=$tempfile (pwd)
+  if test -f $tempfile
+      if [ (cat $tempfile) != (pwd) ]
+        cd (cat $tempfile)
+      end
+  end
+  rm -f $tempfile
+end
+function fish_user_key_bindings                                                  
+    bind \co 'ranger-cd ; fish_prompt'                                           
+end
+function rc
+  ranger-cd
+end
+
+# Misc
+function cleanopenwith
+	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+end
 
 
-# set fish_user_abbreviations $fish_user_abbreviations 'o=open'
-# set fish_user_abbreviations $fish_user_abbreviations 'of=open .'
+# Ack
+function ackf
+  ack -ig "$argv[1]"
+end
 
-# # tig
-# function ts
-# 	tig status
+# BBFind
+function bbf
+  switch (count $argv)
+      case 1
+          bbfind --grep --gui --case-sensitive "$argv[1]" .
+      case '*'
+          bbfind --grep --gui --case-sensitive $argv
+  end
+end
+# BBFind Files
+function bbff
+  bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
+end
+
+# Emacs Client
+# Creates a new window
+# function ec
+#   emacsclient --create-frame --no-wait $argv
 # end
-#
-# # Git
-# function gs
-# 	git status
-# end
-#
-# function gd
-# 	git diff $argv
-# end
-#
-# function gdt
-# 	git difftool $argv
-# end
-#
-# function gdm
-# 	git diff | mate
-# end
-#
-# function ga
-# 	git add $argv
-# end
-#
-# function gb
-# 	git branch
-# end
-#
-# function gaa
-# 	git add --all
-# end
-#
+function ec
+	emacsclient --no-wait $argv
+end
+# Emacs Client Magit
 # function gc
-# 	git commit
+# 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 # end
-#
-# function gp
-# 	git push
-# end
-#
-# function gu
-# 	git pull
-# end
-#
-# function gpl
-# 	git pull
-# end
-#
-# function gl
-# 	git log $argv
-# end
-#
-# function gco
-# 	git checkout $argv
-# end
-#
-# function gca
-# 	git commit --amend
-# end
-#
-# function gcm
-# 	git commit -m $argv[1]
-# end
-#
-# function gcam
-# 	git commit --amend -m $argv[1]
-# end
-#
-# function gsi
-# 	git submodule init
-# end
-#
-# function gsu
-# 	git submodule update
+# Emacs Magit
+function magit
+	emacs --eval "(rk-magit-status-startup)"
+end
+
+# wcsearch
+# function sea
+#   wcsearch $argv
 # end
