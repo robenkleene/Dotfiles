@@ -11,7 +11,7 @@ filetype plugin indent on
 set nocompatible
 set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
-let mapleader = ','
+" let mapleader = ','
 
 " Tabs
 set tabstop=4
