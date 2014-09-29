@@ -169,3 +169,6 @@ end
 # function sea
 #   wcsearch $argv
 # end
+
+# VIM
+set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
