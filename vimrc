@@ -13,6 +13,14 @@ set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 let mapleader = ','
 
+" Tabs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+" Look & Feel
+set nowrap
+
 " Normalizing Key Commands
 " Kill line
 noremap <C-k> <C-O>d$
