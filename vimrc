@@ -21,6 +21,13 @@ set expandtab
 " Look & Feel
 set nowrap
 
+" Leader
+let mapleader=" "
+
+" vimrc
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " Normalizing Key Commands
 " Kill line
 noremap <C-k> <C-O>d$
@@ -48,11 +55,13 @@ set hlsearch " Highlight search results
 " Make Markdown Filetype
 " nmap <leader>m :set filetype=markdown<CR>
 " Toggle No Wrap
-" nmap <leader>w :set nowrap!<CR>
+nnoremap <leader>w :set wrap!<CR>
+" Reveal Current File
+nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
-nmap <leader>f :!open .<CR>\|:redraw!<CR>
+nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
 " Copy contents of whole file
-nmap <leader>c :%y+<CR>
+" nmap <leader>c :%y+<CR>
 " Alternative Solution to increment number while in tmux
 " nmap <leader>a <C-a>
 " Open next URL in file

@@ -1,7 +1,9 @@
 " vim:fdm=marker
 " General
 let g:markdown_folding = 1
-set foldlevel=1
+set nofoldenable
+setlocal spell
+" set foldlevel=1
 
 " Commands
 
