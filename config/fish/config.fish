@@ -3,6 +3,8 @@ set PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
 set -x EDITOR vim
+function EDITOR; vim $argv; end
+
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
@@ -177,3 +179,6 @@ set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
 function hl
   highlight -O ansi "$argv[1]"
 end
+
+# Edit Dotfiles
+set fish_user_abbreviations $fish_user_abbreviations 'edf=EDITOR ~/Dotfiles/config/fish/config.fish'
