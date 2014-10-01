@@ -2,6 +2,10 @@
 " Disable Plugins
 " let g:pathogen_disabled = ["vim-rsi"]
 
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " Pathogen
 execute pathogen#infect()
 syntax on
