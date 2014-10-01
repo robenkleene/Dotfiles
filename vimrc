@@ -18,7 +18,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-" Look & Feel
+" Text
 set nowrap
 
 " Leader
@@ -43,7 +43,20 @@ function! <SID>KillLine()
 endfunction
 
 " Look & Feel
-colorscheme ir_black
+" colorscheme ir_black
+colorscheme jellybeans
+if !has('gui_running')
+    function TransparentBackground()
+        highlight Normal ctermbg=NONE
+        highlight LineNr ctermbg=NONE
+        highlight SpecialKey ctermbg=NONE
+        highlight NonText ctermbg=NONE
+        highlight VertSplit ctermbg=NONE
+        highlight FoldColumn ctermbg=NONE
+        highlight SignColumn ctermbg=NONE
+    endfunction
+    call TransparentBackground()
+endif
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
 set number " Show line numbers
