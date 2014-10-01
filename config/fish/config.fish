@@ -172,3 +172,8 @@ end
 
 # VIM
 set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
+
+# Highlight
+function hl
+  highlight -O ansi "$argv[1]"
+end
