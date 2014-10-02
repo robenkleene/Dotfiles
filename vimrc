@@ -50,24 +50,30 @@ endfunction
 " colorscheme ir_black
 colorscheme jellybeans
 if !has('gui_running')
-    function TransparentBackground()
-        highlight Normal ctermbg=NONE
-        highlight LineNr ctermbg=NONE
-        highlight SpecialKey ctermbg=NONE
-        highlight NonText ctermbg=NONE
-        highlight VertSplit ctermbg=NONE
-        highlight FoldColumn ctermbg=NONE
-        highlight SignColumn ctermbg=NONE
-    endfunction
-    call TransparentBackground()
+	highlight Normal ctermbg=NONE
+	highlight LineNr ctermbg=NONE
+	highlight SpecialKey ctermbg=NONE
+	highlight NonText ctermbg=NONE
+	highlight VertSplit ctermbg=NONE
+	highlight FoldColumn ctermbg=NONE
+	highlight SignColumn ctermbg=NONE
 endif
+highlight CursorColumn ctermbg=NONE
+highlight CursorLine ctermbg=NONE
+highlight ColorColumn ctermbg=NONE
+set cursorline
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
 set number " Show line numbers
 set hlsearch " Highlight search results
 " set ignorecase " Ignore case in search results
 " set smartcase " Override `ignorecase`
-
+augroup run_once
+    autocmd!
+    " highlight line number in insert mode
+"    autocmd InsertEnter * set cul
+"    autocmd InsertLeave * set nocul
+augroup END
 " Leader Commands
 " Make Markdown Filetype
 " nmap <leader>m :set filetype=markdown<CR>
