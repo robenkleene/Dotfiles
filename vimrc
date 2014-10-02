@@ -80,9 +80,11 @@ augroup END
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 " Reveal Current File
-nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
+" nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
 nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
+
+nnoremap <leader>r :!%<CR>
 " Copy contents of whole file
 " nmap <leader>c :%y+<CR>
 " Alternative Solution to increment number while in tmux
