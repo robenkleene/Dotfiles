@@ -58,9 +58,9 @@ if !has('gui_running')
 	highlight FoldColumn ctermbg=NONE
 	highlight SignColumn ctermbg=NONE
 endif
-highlight CursorColumn ctermbg=NONE
-highlight CursorLine ctermbg=NONE
-highlight ColorColumn ctermbg=NONE
+highlight CursorColumn guibg=NONE ctermbg=NONE
+highlight CursorLine guibg=NONE ctermbg=NONE
+highlight ColorColumn guibg=NONE ctermbg=NONE
 set cursorline
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
@@ -83,8 +83,10 @@ nnoremap <leader>w :set wrap!<CR>
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
 nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
-
+" Run
 nnoremap <leader>r :!%<CR>
+" Copy Current File
+nnoremap <leader>c :%w !pbcopy<CR>\|:redraw!<CR>
 " Copy contents of whole file
 " nmap <leader>c :%y+<CR>
 " Alternative Solution to increment number while in tmux
