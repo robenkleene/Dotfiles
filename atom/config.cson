@@ -35,4 +35,6 @@
   'focusEditorAfterCompile': true
 'vim-mode':
   'commandModeInputViewFontSize': 16
-'editor': {}
+'editor':
+  'invisibles': {}
+  'tabLength': 4
