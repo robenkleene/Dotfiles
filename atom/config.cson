@@ -2,19 +2,16 @@
   'viewedVersion': '0.94.0'
 'welcome':
   'showOnStartup': false
-'editor': {}
 'core':
   'disabledPackages': [
     'exception-reporting'
     'metrics'
     'minimap'
-    'vim-mode'
     'emmet'
   ]
   'useReactEditor': true
 'tree-view':
   'hideIgnoredNames': true
-'markdown-preview': {}
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
 'find-and-replace':
@@ -36,5 +33,6 @@
   'updateOnTabChange': false
 'coffee-compile':
   'focusEditorAfterCompile': true
-'run-in-atom': {}
-'linter': {}
+'vim-mode':
+  'commandModeInputViewFontSize': 16
+'editor': {}
