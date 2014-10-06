@@ -18,10 +18,11 @@ set directory=/tmp " Temp files
 " let mapleader = ','
 
 " Tabs
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" Set with `.editorconfig`
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
+" set expandtab
 " Text
 set nowrap
 
