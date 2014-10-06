@@ -7,7 +7,6 @@
 # An example hack to make opened Markdown files always be soft wrapped:
 #
 
-
 nodepath = process.env.HOME + "/Dotfiles/nvm-fish/v0.11.10/bin"
 npmpath = "/usr/local/share/npm/bin"
 localbinpath = "/usr/local/bin"
@@ -73,23 +72,23 @@ atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
 #     atom.packages.disablePackage('emmet')
 
 # Language Specific Settings
-setupGrammarForEditor = (editor) ->
-  scope = editor.getGrammar()?.scopeName
-  switch scope
-    when 'source.coffee'
-      editor.setTabLength(2)
-    when 'source.gfm'
-      editor.setSoftWrap(true)
-    else
-      editor.setTabLength(4)
-# Call on Startup
-atom.workspaceView.eachEditorView (editorView) ->
-  editor = editorView.getEditor()
-  setupGrammarForEditor(editor)
-# Call when a grammar changes
-atom.workspace.observeTextEditors (editor) ->
-  grammarChangedHandler = ->
-    setupGrammarForEditor(editor)
-  editor.onDidChangeGrammar(grammarChangedHandler)
-
+# setupGrammarForEditor = (editor) ->
+#   scope = editor.getGrammar()?.scopeName
+#   switch scope
+#     when 'source.coffee'
+#       editor.setTabLength(2)
+#     when 'source.gfm'
+#       editor.setSoftWrap(true)
+#     else
+#       editor.setTabLength(4)
+# # Call on Startup
+# atom.workspaceView.eachEditorView (editorView) ->
+#   editor = editorView.getEditor()
+#   setupGrammarForEditor(editor)
+# # Call when a grammar changes
+# atom.workspace.observeTextEditors (editor) ->
+#   grammarChangedHandler = ->
+#     setupGrammarForEditor(editor)
+#   editor.onDidChangeGrammar(grammarChangedHandler)
+#
 console.log "Hello from init.coffee!"
