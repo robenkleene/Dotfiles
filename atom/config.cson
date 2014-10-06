@@ -36,5 +36,4 @@
 'vim-mode':
   'commandModeInputViewFontSize': 16
 'editor':
-  'invisibles': {}
   'tabLength': 4

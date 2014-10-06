@@ -59,12 +59,9 @@ atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
     exec = require('child_process').exec
     exec "atom --new-window \"#{filepath}\""
 
-
 # if not atom.packages.isPackageDisabled "vim-mode"
 #   atom.workspaceView.eachEditorView (editorView) ->
 #     editorView.trigger "vim-mode:activate-insert-mode"
-
-console.log "Hello from init.coffee!"
 
 # Emmet
 # if !atom.packages.isPackageDisabled('emmet')
@@ -76,13 +73,23 @@ console.log "Hello from init.coffee!"
 #     atom.packages.disablePackage('emmet')
 
 # Language Specific Settings
-# TODO What's the callback for a grammar change?
-
-# Markdown
+setupGrammarForEditor = (editor) ->
+  scope = editor.getGrammar()?.scopeName
+  switch scope
+    when 'source.coffee'
+      editor.setTabLength(2)
+    when 'source.gfm'
+      editor.setSoftWrap(true)
+    else
+      editor.setTabLength(4)
+# Call on Startup
 atom.workspaceView.eachEditorView (editorView) ->
   editor = editorView.getEditor()
-  path = require 'path'
-  MARKDOWN_EXTENSIONS = ['.md', '.markdown']
-  extension = path.extname(editor.getPath())
-  if MARKDOWN_EXTENSIONS.indexOf(extension) isnt -1
-    editor.setSoftWrap(true)
+  setupGrammarForEditor(editor)
+# Call when a grammar changes
+atom.workspace.observeTextEditors (editor) ->
+  grammarChangedHandler = ->
+    setupGrammarForEditor(editor)
+  editor.onDidChangeGrammar(grammarChangedHandler)
+
+console.log "Hello from init.coffee!"
