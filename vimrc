@@ -16,6 +16,8 @@ set nocompatible
 set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 " let mapleader = ','
+" Allow hidden buffers
+set hidden
 
 " Tabs
 " Set with `.editorconfig`
