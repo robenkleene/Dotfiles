@@ -87,6 +87,8 @@ nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
 nnoremap <leader>r :!%<CR>
 " Copy Current File
 nnoremap <leader>c :%w !pbcopy<CR>\|:redraw!<CR>
+vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
+
 " Copy contents of whole file
 " nmap <leader>c :%y+<CR>
 " Alternative Solution to increment number while in tmux
