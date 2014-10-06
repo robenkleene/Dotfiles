@@ -72,6 +72,7 @@ atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
 #     atom.packages.disablePackage('emmet')
 
 # Language Specific Settings
+# Set with `.editorconfig`
 # setupGrammarForEditor = (editor) ->
 #   scope = editor.getGrammar()?.scopeName
 #   switch scope
