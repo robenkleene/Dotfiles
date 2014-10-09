@@ -48,16 +48,12 @@ function! <SID>KillLine()
 endfunction
 
 " Look & Feel
-" colorscheme ir_black
-" colorscheme jellybeans
-" Dark
-" Light
-" colorscheme hemisu 
-" set background=light
-
-colorscheme jellybeans
 if !has('gui_running')
-	highlight Normal ctermbg=NONE
+    " Colorscheme
+    set background=dark
+    colorscheme jellybeans
+    " Blank Background
+    highlight Normal ctermbg=NONE
 	highlight LineNr ctermbg=NONE
 	highlight SpecialKey ctermbg=NONE
 	highlight NonText ctermbg=NONE
@@ -67,27 +63,26 @@ if !has('gui_running')
     highlight CursorColumn ctermbg=NONE
     highlight CursorLine ctermbg=NONE
     highlight ColorColumn ctermbg=NONE
+    " Diff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
     highlight DiffChange ctermbg=darkcyan
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
     " highlight Search ctermfg=brown
 endif
-" set background=dark
 
 set cursorline
-" hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
 set number " Show line numbers
 set hlsearch " Highlight search results
 " set ignorecase " Ignore case in search results
 " set smartcase " Override `ignorecase`
-augroup run_once
-    autocmd!
-    " highlight line number in insert mode
-"    autocmd InsertEnter * set cul
-"    autocmd InsertLeave * set nocul
-augroup END
+" augroup run_once
+"     autocmd!
+"     " highlight line number in insert mode
+"     autocmd InsertEnter * set cul
+"     autocmd InsertLeave * set nocul
+" augroup END
 " Leader Commands
 " Make Markdown Filetype
 " nmap <leader>m :set filetype=markdown<CR>
