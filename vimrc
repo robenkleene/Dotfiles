@@ -16,6 +16,7 @@ set nocompatible
 set directory=/tmp " Temp files
 " set clipboard=unnamed " Make the OS X clipboard work
 " let mapleader = ','
+" let mapleader=" "
 " Allow hidden buffers
 set hidden
 
@@ -27,9 +28,6 @@ set hidden
 " set expandtab
 " Text
 set nowrap
-
-" Leader
-let mapleader=" "
 
 " vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -51,7 +49,14 @@ endfunction
 
 " Look & Feel
 " colorscheme ir_black
+" colorscheme jellybeans
+" Dark
 colorscheme jellybeans
+set background=dark
+" Light
+" colorscheme hemisu 
+" set background=light
+
 if !has('gui_running')
 	highlight Normal ctermbg=NONE
 	highlight LineNr ctermbg=NONE
@@ -60,10 +65,16 @@ if !has('gui_running')
 	highlight VertSplit ctermbg=NONE
 	highlight FoldColumn ctermbg=NONE
 	highlight SignColumn ctermbg=NONE
+    highlight CursorColumn ctermbg=NONE
+    highlight CursorLine ctermbg=NONE
+    highlight ColorColumn ctermbg=NONE
+    highlight DiffAdd ctermfg=green ctermbg=darkgreen
+    highlight DiffDelete ctermfg=red ctermbg=darkred
+    highlight DiffChange ctermbg=darkcyan
+    highlight DiffText ctermfg=lightblue ctermbg=darkblue
+    " highlight Search ctermfg=brown
 endif
-highlight CursorColumn guibg=NONE ctermbg=NONE
-highlight CursorLine guibg=NONE ctermbg=NONE
-highlight ColorColumn guibg=NONE ctermbg=NONE
+
 set cursorline
 " hi Search ctermbg=DarkGray " Search highlight color
 set linebreak " Line breaks only happen on words
