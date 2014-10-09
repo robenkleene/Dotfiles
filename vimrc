@@ -18,6 +18,7 @@ set directory=/tmp " Temp files
 " let mapleader = ','
 " Allow hidden buffers
 set hidden
+set list
 
 " Tabs
 " Set with `.editorconfig`
@@ -29,7 +30,7 @@ set hidden
 set nowrap
 
 " Leader
-let mapleader=" "
+" let mapleader=" "
 
 " vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
