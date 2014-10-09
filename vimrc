@@ -51,12 +51,11 @@ endfunction
 " colorscheme ir_black
 " colorscheme jellybeans
 " Dark
-colorscheme jellybeans
-set background=dark
 " Light
 " colorscheme hemisu 
 " set background=light
 
+colorscheme jellybeans
 if !has('gui_running')
 	highlight Normal ctermbg=NONE
 	highlight LineNr ctermbg=NONE
@@ -74,6 +73,7 @@ if !has('gui_running')
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
     " highlight Search ctermfg=brown
 endif
+" set background=dark
 
 set cursorline
 " hi Search ctermbg=DarkGray " Search highlight color
@@ -111,3 +111,4 @@ vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
 " map <leader>u :.,$w !openurl<CR>    
 " Detect File type
 " map <leader>d :filetype detect<CR>
+"
