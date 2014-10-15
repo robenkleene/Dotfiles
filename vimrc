@@ -19,7 +19,7 @@ set directory=/tmp " Temp files
 " let mapleader=" "
 " Allow hidden buffers
 set hidden
-set list
+" set list
 
 " Tabs
 " Set with `.editorconfig`
