@@ -7,7 +7,8 @@ set guioptions-=T " Disable toolbar
 set guioptions-=L " Disable left scroll bar with vertical splits
 set guioptions-=r " Disable right scrollbar
 " Size
-set lines=48 " Rows
+" set lines=48 " Rows
+set lines=24 " Rows
 set columns=80 " Columns
 
 " Look & Feel

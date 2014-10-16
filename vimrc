@@ -76,6 +76,8 @@ set cursorline
 set linebreak " Line breaks only happen on words
 set number " Show line numbers
 set hlsearch " Highlight search results
+set foldmethod=indent
+set nofoldenable
 " set ignorecase " Ignore case in search results
 " set smartcase " Override `ignorecase`
 " augroup run_once
