@@ -45,3 +45,6 @@
 [submodule "vim/bundle/vim-fish"]
 	path = vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule "vim/bundle/ack-vim"]
+	path = vim/bundle/ack-vim
+	url = https://github.com/mileszs/ack.vim.git
