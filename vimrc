@@ -112,4 +112,15 @@ vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
 " map <leader>u :.,$w !openurl<CR>    
 " Detect File type
 " map <leader>d :filetype detect<CR>
-"
+
+function! MakeShebangFilesExecutable()
+    if match(getline(1), '^\#!') == 0
+        if match(getfperm(expand('%:p')), 'x') == -1
+            :!chmod +x %
+        endif
+    endif
+endfunction
+augroup executablefiles
+    autocmd!
+    autocmd BufWritePost *.sh :call MakeShebangFilesExecutable()
+augroup END
