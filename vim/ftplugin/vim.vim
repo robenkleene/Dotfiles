@@ -3,3 +3,7 @@
 " command! RunVimscript :silent exe '%y"'|:@"<CR>
 command! RunVimscript :update | :source %
 nnoremap <leader>r :RunVimscript<CR>
+
+" Just yanking the text and running `:@` is an easy way to do this
+command! RunVimscriptVisual :yank a | @a
+vnoremap <leader>r :<C-u>RunVimscriptVisual<CR>

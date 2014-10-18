@@ -97,9 +97,7 @@ nnoremap <leader>w :set wrap!<CR>
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
-nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
-" Run
-nnoremap <leader>r :!%<CR>
+" nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
 " Copy Current File
 nnoremap <leader>c :%w !pbcopy<CR>\|:redraw!<CR>
 vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
