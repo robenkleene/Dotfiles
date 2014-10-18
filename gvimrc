@@ -40,7 +40,7 @@ highlight SignColumn guibg=NONE
 highlight SpecialKey guibg=NONE
 highlight VertSplit guibg=NONE
 " ColorColumn
-highlight ColorColumn guibg=gray10
+highlight ColorColumn guibg=gray15
 
 " StatusLine
 highlight StatusLine guibg=darkgray guifg=black
