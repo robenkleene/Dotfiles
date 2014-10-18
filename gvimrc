@@ -29,19 +29,15 @@ set gcr=a:blinkon0 " Disable Cursor blinking
 " colorscheme solarized
 
 " Remove backgrounds
-highlight LineNr guibg=NONE
-highlight SpecialKey guibg=NONE
-highlight NonText guibg=NONE
-highlight VertSplit guibg=NONE
+highlight ColorColumn guibg=NONE
+highlight CursorColumn guibg=NONE
+highlight CursorLine guibg=NONE
 highlight FoldColumn guibg=NONE
+highlight LineNr guibg=NONE
+highlight NonText guibg=NONE
 highlight SignColumn guibg=NONE
-highlight SignColumn guibg=NONE
-highlight CursorColumn guibg=NONE
-highlight CursorLine guibg=NONE
-highlight ColorColumn guibg=NONE
-highlight CursorColumn guibg=NONE
-highlight CursorLine guibg=NONE
-highlight ColorColumn guibg=NONE
+highlight SpecialKey guibg=NONE
+highlight VertSplit guibg=NONE
 
 " StatusLine
 highlight StatusLine guibg=darkgray guifg=black

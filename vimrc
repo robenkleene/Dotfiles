@@ -54,21 +54,22 @@ if !has('gui_running')
     set background=dark
     colorscheme jellybeans
     " Blank Background
-    highlight Normal ctermbg=NONE
-	highlight LineNr ctermbg=NONE
-	highlight SpecialKey ctermbg=NONE
-	highlight NonText ctermbg=NONE
-	highlight VertSplit ctermbg=NONE
 	highlight FoldColumn ctermbg=NONE
+	highlight LineNr ctermbg=NONE
+	highlight NonText ctermbg=NONE
 	highlight SignColumn ctermbg=NONE
+	highlight SpecialKey ctermbg=NONE
+	highlight VertSplit ctermbg=NONE
+    highlight ColorColumn ctermbg=NONE
     highlight CursorColumn ctermbg=NONE
     highlight CursorLine ctermbg=NONE
-    highlight ColorColumn ctermbg=NONE
+    highlight Normal ctermbg=NONE
     " Diff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
     highlight DiffChange ctermbg=darkcyan
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
+    " Search
     " highlight Search ctermfg=brown
 endif
 
