@@ -116,7 +116,7 @@ vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
 function! MakeShebangFilesExecutable()
     if match(getline(1), '^\#!') == 0
         if match(getfperm(expand('%:p')), 'x') == -1
-            :!chmod +x %
+            !chmod +x %
         endif
     endif
 endfunction
