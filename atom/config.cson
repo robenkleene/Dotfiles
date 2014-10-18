@@ -1,40 +1,41 @@
-'release-notes':
-  'viewedVersion': '0.94.0'
-'welcome':
-  'showOnStartup': false
-'core':
-  'disabledPackages': [
-    'exception-reporting'
-    'metrics'
-    'minimap'
-    'emmet'
-  ]
-  'useReactEditor': true
-'tree-view':
-  'hideIgnoredNames': true
-'autocomplete':
-  'includeCompletionsFromAllBuffers': true
-'find-and-replace':
-  'openProjectFindResultsInRightPane': true
-  'focusEditorAfterSearch': true
-'toggle-packages':
-  'togglePackages': [
-    'emmet'
-  ]
-'coffee-refactor':
-  'highlightReference': false
-'package-generator':
-  'createInDevMode': true
-'refactor':
-  'highlightReference': false
-  'highlightError': false
-'preview':
-  '_analyticsUserId': ' '
-  'updateOnTabChange': false
-'coffee-compile':
-  'focusEditorAfterCompile': true
-'vim-mode':
-  'commandModeInputViewFontSize': 16
-'editor':
-  'tabLength': 4
-  'invisibles': {}
+'global':
+  'release-notes':
+    'viewedVersion': '0.94.0'
+  'welcome':
+    'showOnStartup': false
+  'core':
+    'disabledPackages': [
+      'exception-reporting'
+      'metrics'
+      'minimap'
+      'emmet'
+    ]
+    'useReactEditor': true
+  'tree-view':
+    'hideIgnoredNames': true
+  'autocomplete':
+    'includeCompletionsFromAllBuffers': true
+  'find-and-replace':
+    'openProjectFindResultsInRightPane': true
+    'focusEditorAfterSearch': true
+  'toggle-packages':
+    'togglePackages': [
+      'emmet'
+    ]
+  'coffee-refactor':
+    'highlightReference': false
+  'package-generator':
+    'createInDevMode': true
+  'refactor':
+    'highlightReference': false
+    'highlightError': false
+  'preview':
+    '_analyticsUserId': ' '
+    'updateOnTabChange': false
+  'coffee-compile':
+    'focusEditorAfterCompile': true
+  'vim-mode':
+    'commandModeInputViewFontSize': 16
+  'editor':
+    'tabLength': 4
+    'invisibles': {}
