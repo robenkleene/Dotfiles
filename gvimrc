@@ -30,15 +30,16 @@ nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
 " set background=light
 " colorscheme solarized
 
-" Remove backgrounds
-highlight CursorColumn guibg=NONE
-highlight CursorLine guibg=NONE
-highlight FoldColumn guibg=NONE
-highlight LineNr guibg=NONE
-highlight NonText guibg=NONE
-highlight SignColumn guibg=NONE
-highlight SpecialKey guibg=NONE
-highlight VertSplit guibg=NONE
+" Custom Colors
+
+" Background
+let bgcolor='gray12'
+let backgroundgroups = ['CursorColumn', 'CursorLine', 'FoldColumn', 
+            \ 'LineNr', 'NonText', 'SignColumn', 'SpecialKey', 'VertSplit',
+            \ 'Normal'] 
+for group in backgroundgroups
+    exe 'highlight ' . group . ' guibg=' . bgcolor
+endfor
 " ColorColumn
 highlight ColorColumn guibg=gray15
 
