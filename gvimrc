@@ -7,8 +7,8 @@ set guioptions-=T " Disable toolbar
 set guioptions-=L " Disable left scroll bar with vertical splits
 set guioptions-=r " Disable right scrollbar
 " Size
-" set lines=48 " Rows
-set lines=24 " Rows
+set lines=48 " Rows
+" set lines=24 " Rows
 set columns=80 " Columns
 
 " Look & Feel
@@ -21,6 +21,8 @@ set gcr=a:blinkon0 " Disable Cursor blinking
 " set transparency=5
 " highlight Normal guibg=#1b212c
 
+nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
+
 " set noantialias " No anti-aliasing sometimes looks better
 " syntax enable
 " Solarized
@@ -29,7 +31,6 @@ set gcr=a:blinkon0 " Disable Cursor blinking
 " colorscheme solarized
 
 " Remove backgrounds
-highlight ColorColumn guibg=NONE
 highlight CursorColumn guibg=NONE
 highlight CursorLine guibg=NONE
 highlight FoldColumn guibg=NONE
@@ -38,6 +39,8 @@ highlight NonText guibg=NONE
 highlight SignColumn guibg=NONE
 highlight SpecialKey guibg=NONE
 highlight VertSplit guibg=NONE
+" ColorColumn
+highlight ColorColumn guibg=gray10
 
 " StatusLine
 highlight StatusLine guibg=darkgray guifg=black

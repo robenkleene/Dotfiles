@@ -1,2 +1,2 @@
 command! ProcessTestfile :!./"%" testfile
-nmap <leader>p :update<CR>:ProcessTestfile<CR>
+nnoremap <leader>p :update<CR>:ProcessTestfile<CR>

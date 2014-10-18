@@ -60,10 +60,11 @@ if !has('gui_running')
 	highlight SignColumn ctermbg=NONE
 	highlight SpecialKey ctermbg=NONE
 	highlight VertSplit ctermbg=NONE
-    highlight ColorColumn ctermbg=NONE
     highlight CursorColumn ctermbg=NONE
     highlight CursorLine ctermbg=NONE
     highlight Normal ctermbg=NONE
+    " ColorColumn
+    highlight ColorColumn ctermbg=darkgray
     " Diff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
@@ -73,7 +74,8 @@ if !has('gui_running')
     " highlight Search ctermfg=brown
 endif
 
-set cursorline
+set cursorline " Highlight cursor line
+set colorcolumn=80 " Show 80 character bar
 set linebreak " Line breaks only happen on words
 set number " Show line numbers
 set hlsearch " Highlight search results

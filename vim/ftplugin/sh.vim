@@ -1,2 +1,2 @@
 command! RunScript :!./"%"
-nmap <leader>r :update<CR>:RunScript<CR>
+nnoremap <leader>r :update<CR>:RunScript<CR>
