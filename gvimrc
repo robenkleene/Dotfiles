@@ -36,12 +36,12 @@ highlight VertSplit guibg=NONE
 highlight FoldColumn guibg=NONE
 highlight SignColumn guibg=NONE
 highlight SignColumn guibg=NONE
-highlight CursorColumn guibg=NONE ctermbg=NONE
-highlight CursorLine guibg=NONE ctermbg=NONE
-highlight ColorColumn guibg=NONE ctermbg=NONE
-highlight CursorColumn guibg=NONE ctermbg=NONE
-highlight CursorLine guibg=NONE ctermbg=NONE
-highlight ColorColumn guibg=NONE ctermbg=NONE
+highlight CursorColumn guibg=NONE
+highlight CursorLine guibg=NONE
+highlight ColorColumn guibg=NONE
+highlight CursorColumn guibg=NONE
+highlight CursorLine guibg=NONE
+highlight ColorColumn guibg=NONE
 
 " StatusLine
 highlight StatusLine guibg=darkgray guifg=black
