@@ -47,7 +47,7 @@ highlight StatusLineNC guibg=gray30 guifg=DarkGray
 " Tildes
 highlight  NonText guifg=DarkGray
 " ColorColumn
-highlight ColorColumn guibg=gray15" Search
+highlight ColorColumn guibg=gray15
 " Search
 highlight Search guifg=lightmagenta
 " Diff 

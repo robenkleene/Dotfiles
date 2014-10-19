@@ -53,16 +53,26 @@ if !has('gui_running')
     " Colorscheme
     set background=dark
     colorscheme jellybeans
-    " Blank Background
-	highlight FoldColumn ctermbg=NONE
-	highlight LineNr ctermbg=NONE
-	highlight NonText ctermbg=NONE
-	highlight SignColumn ctermbg=NONE
-	highlight SpecialKey ctermbg=NONE
-	highlight VertSplit ctermbg=NONE
-    highlight CursorColumn ctermbg=NONE
-    highlight CursorLine ctermbg=NONE
-    highlight Normal ctermbg=NONE
+    " Background
+    let bgcolor='NONE'
+    let backgroundgroups = ['CursorColumn', 'CursorLine', 
+                \ 'NonText', 'SpecialKey', 'VertSplit',
+                \ 'Normal'] 
+    for group in backgroundgroups
+        exe 'highlight ' . group . ' ctermbg=' . bgcolor
+    endfor
+    " Line Numbers
+    let guttercolor='darkgray'
+    let guttergroups = ['LineNr', 'SignColumn', 'FoldColumn', 'CursorLineNr']
+    for group in guttergroups
+        exe 'highlight ' . group . ' ctermbg=' . guttercolor
+    endfor
+    highlight LineNr ctermfg=lightgray
+    " StatusLine
+    highlight StatusLine ctermbg=lightgray ctermfg=black
+    highlight StatusLineNC ctermbg=darkgray ctermfg=lightgray
+    " Tildes
+    highlight  NonText ctermfg=darkgray
     " ColorColumn
     highlight ColorColumn ctermbg=darkgray
     " Diff Colors
@@ -70,8 +80,6 @@ if !has('gui_running')
     highlight DiffDelete ctermfg=red ctermbg=darkred
     highlight DiffChange ctermbg=darkcyan
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
-    " Search
-    " highlight Search ctermfg=brown
 endif
 
 set cursorline " Highlight cursor line
