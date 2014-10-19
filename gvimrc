@@ -18,17 +18,11 @@ set background=dark
 
 set guifont=Menlo\ Regular:h12 " Set font
 set gcr=a:blinkon0 " Disable Cursor blinking
+" set noantialias " No anti-aliasing sometimes looks better
 " set transparency=5
 " highlight Normal guibg=#1b212c
 
 nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
-
-" set noantialias " No anti-aliasing sometimes looks better
-" syntax enable
-" Solarized
-" set background=dark
-" set background=light
-" colorscheme solarized
 
 " Custom Colors
 
@@ -61,4 +55,3 @@ highlight DiffAdd guifg=green guibg=darkgreen
 highlight DiffDelete guifg=red guibg=darkred
 highlight DiffChange guibg=darkcyan
 highlight DiffText guifg=lightblue guibg=darkblue
-
