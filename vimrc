@@ -149,12 +149,17 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
-" Copy to System Clipboard
+" Copy to system clipboard
 nnoremap <leader>c :%y+<CR>
 vnoremap <leader>c "+y
-" Paste from System Clipboard
+" Paste from system clipboard
 nnoremap <leader>v "+p
 vnoremap <leader>v "+p
+" Copy line to system clipboard
+nnoremap <leader>yy "+yy
+" Open Working Directory in Terminal
+nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>
+
 
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
