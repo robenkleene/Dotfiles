@@ -146,8 +146,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 " Copy to System Clipboard
-nnoremap <leader>c :%w !pbcopy<CR>\|:redraw!<CR>
-vnoremap <leader>c :w !pbcopy<CR>\|:redraw!<CR>
+nnoremap <leader>c :%y+<CR>
+vnoremap <leader>c "+y
 " Paste from System Clipboard
 nnoremap <leader>v "+p
 vnoremap <leader>v "+p
