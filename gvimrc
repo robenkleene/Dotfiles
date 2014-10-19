@@ -1,6 +1,10 @@
-" vim:fdm=marker
-" General
-:set macmeta
+" vim:foldmethod=marker
+
+" General {{{1
+set macmeta
+
+
+" Look & Feel {{{1
 
 " Window
 set guioptions-=T " Disable toolbar
@@ -8,24 +12,19 @@ set guioptions-=L " Disable left scroll bar with vertical splits
 set guioptions-=r " Disable right scrollbar
 " Size
 set lines=48 " Rows
-" set lines=24 " Rows
 set columns=80 " Columns
-
-" Look & Feel
-" colorscheme ir_black_edited
-colorscheme ir_black
-set background=dark
-
+" Fonts
 set guifont=Menlo\ Regular:h12 " Set font
 set gcr=a:blinkon0 " Disable Cursor blinking
 " set noantialias " No anti-aliasing sometimes looks better
 " set transparency=5
-" highlight Normal guibg=#1b212c
 
-nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
 
-" Custom Colors
+" Colors {{{1
 
+" Color Scheme
+colorscheme ir_black
+set background=dark
 " Background
 let bgcolor='gray12'
 let backgroundgroups = ['CursorColumn', 'CursorLine', 
@@ -55,3 +54,6 @@ highlight DiffAdd guifg=green guibg=darkgreen
 highlight DiffDelete guifg=red guibg=darkred
 highlight DiffChange guibg=darkcyan
 highlight DiffText guifg=lightblue guibg=darkblue
+
+" Key Commands {{{1
+nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>

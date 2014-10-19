@@ -1,19 +1,23 @@
-" vim:fdm=marker
-" Disable Plugins
-" let g:pathogen_disabled = ["vim-rsi"]
+" vim:foldmethod=marker
+
+" Startup {{{1
 
 if &shell =~# 'fish$'
     set shell=sh
 endif
 
 
+" Plugins {{{1
+
 " Pathogen
+" Disable Plugins
+" let g:pathogen_disabled = ["vim-rsi"]
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
 
-" Basic
+" Basic {{{1
 
 set nocompatible
 set directory=/tmp " Temp files
@@ -42,7 +46,7 @@ set nofoldenable
 " set smartcase " Override `ignorecase`
 
 
-" Normalizing Key Commands
+" Normalizing Movement Key Commands {{{1
 
 " Kill line
 noremap <C-k> <C-O>d$
@@ -58,7 +62,7 @@ function! <SID>KillLine()
 endfunction
 
 
-" Autocmd
+" Autocmd {{{1
 
 " Make Shebang Files Executable
 function! MakeShebangFilesExecutable()
@@ -74,7 +78,7 @@ augroup executablefiles
 augroup END
 
 
-" Look & Feel
+" Look & Feel {{{1
 
 if !has('gui_running')
     " Colorscheme
@@ -110,7 +114,7 @@ if !has('gui_running')
 endif
 
 
-" Status Line
+" Status Line {{{1
 
 " Space Buffer
 set statusline=\ 
@@ -138,7 +142,7 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ 
 
 
-" Key Commands
+" Key Commands {{{1
 
 " vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
