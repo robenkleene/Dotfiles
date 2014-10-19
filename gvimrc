@@ -34,22 +34,29 @@ nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
 
 " Background
 let bgcolor='gray12'
-let backgroundgroups = ['CursorColumn', 'CursorLine', 'FoldColumn', 
-            \ 'LineNr', 'NonText', 'SignColumn', 'SpecialKey', 'VertSplit',
+let backgroundgroups = ['CursorColumn', 'CursorLine', 
+            \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal'] 
 for group in backgroundgroups
     exe 'highlight ' . group . ' guibg=' . bgcolor
 endfor
-" ColorColumn
-highlight ColorColumn guibg=gray15
-
+" Line Numbers
+let guttercolor='gray20'
+let guttergroups = ['LineNr', 'SignColumn', 'FoldColumn', 'CursorLineNr']
+for group in guttergroups
+    exe 'highlight ' . group . ' guibg=' . guttercolor
+endfor
+highlight LineNr guifg=DarkGray
 " StatusLine
-highlight StatusLine guibg=darkgray guifg=black
-
+highlight StatusLine guibg=Gray guifg=black
+highlight StatusLineNC guibg=gray30 guifg=DarkGray
+" Tildes
+highlight  NonText guifg=DarkGray
+" ColorColumn
+highlight ColorColumn guibg=gray15" Search
 " Search
 highlight Search guifg=lightmagenta
-
-" Diff Colors
+" Diff 
 highlight DiffAdd guifg=green guibg=darkgreen
 highlight DiffDelete guifg=red guibg=darkred
 highlight DiffChange guibg=darkcyan
