@@ -51,7 +51,7 @@ set nofoldenable
 " Kill line
 noremap <C-k> <C-O>d$
 cnoremap <C-K> <C-\>e<SID>KillLine()<CR>
-function! <SID>KillLine()
+function! s:KillLine()
     let l:cmd = getcmdline()
     let l:rem = strpart(l:cmd, getcmdpos() - 1)
     if ('' != l:rem)
@@ -65,7 +65,7 @@ endfunction
 " Autocmd {{{1
 
 " Make Shebang Files Executable
-function! MakeShebangFilesExecutable()
+function! s:MakeShebangFilesExecutable()
     if match(getline(1), '^\#!') == 0
         if match(getfperm(expand('%:p')), 'x') == -1
             !chmod +x %
@@ -74,7 +74,7 @@ function! MakeShebangFilesExecutable()
 endfunction
 augroup executablefiles
     autocmd!
-    autocmd BufWritePost *.sh :call MakeShebangFilesExecutable()
+    autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
 augroup END
 
 
@@ -85,18 +85,21 @@ if !has('gui_running')
     set background=dark
     colorscheme jellybeans
     " Background
-    let bgcolor='NONE'
-    let backgroundgroups = ['CursorColumn', 'CursorLine', 
+    let s:bgcolor='NONE'
+    " Built-in
+    let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
                 \ 'NonText', 'SpecialKey', 'VertSplit',
-                \ 'Normal'] 
-    for group in backgroundgroups
-        exe 'highlight ' . group . ' ctermbg=' . bgcolor
+                \ 'Normal', 'SignColumn', 'FoldColumn']
+    " Set Background Colors
+    for group in s:backgroundgroups
+        exe 'highlight ' . group . ' ctermbg=' . s:bgcolor
     endfor
     " Line Numbers
-    let guttercolor='darkgray'
-    let guttergroups = ['LineNr', 'SignColumn', 'FoldColumn', 'CursorLineNr']
-    for group in guttergroups
-        exe 'highlight ' . group . ' ctermbg=' . guttercolor
+    let s:guttercolor='darkgray'
+    let s:guttergroups = ['LineNr', 'CursorLineNr']
+    " Set Gutter Colors
+    for group in s:guttergroups
+        exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
     endfor
     highlight LineNr ctermfg=lightgray
     " StatusLine
@@ -106,11 +109,15 @@ if !has('gui_running')
     highlight  NonText ctermfg=darkgray
     " ColorColumn
     highlight ColorColumn ctermbg=darkgray
-    " Diff Colors
+    " Vimdiff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
-    highlight DiffChange ctermbg=darkcyan
+    highlight DiffChange ctermfg=brown ctermbg=yellow
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
+    " Git Gutter Colors
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterDelete ctermfg=red
 endif
 
 
