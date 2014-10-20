@@ -168,8 +168,15 @@ nnoremap <leader>w :set wrap!<CR>
 " Open Working Directory in Terminal
 nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>
 " Copy Contents of File and Close Without Saving
-nnoremap <leader>Q :%w !pbcopy<CR>:q!<CR>
-
+" nnoremap <leader>Q :%w !pbcopy<CR>:q!<CR>
+function! s:CopyToSystemClipboardAndClean()
+    if line('$') == 1
+        execute '%w !tr -d "\n" | pbcopy' 
+    else
+        execute '%w !pbcopy'
+    endif
+endfunction
+nnoremap <leader>Q :call <SID>CopyToSystemClipboardAndClean()<CR>:q!<CR>
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
