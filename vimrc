@@ -43,8 +43,10 @@ set number " Show line numbers
 set hlsearch " Highlight search results
 set foldmethod=syntax
 set nofoldenable
-" set ignorecase " Ignore case in search results
-" set smartcase " Override `ignorecase`
+" Ignore case in search results
+set ignorecase
+" Override `ignorecase`
+set smartcase
 
 
 " Normalizing Movement Key Commands {{{1
