@@ -26,18 +26,23 @@ set gcr=a:blinkon0 " Disable Cursor blinking
 colorscheme ir_black
 set background=dark
 " Background
-let bgcolor='gray12'
-let backgroundgroups = ['CursorColumn', 'CursorLine', 
+let s:bgcolor='gray12'
+" Built-in
+let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
             \ 'NonText', 'SpecialKey', 'VertSplit',
-            \ 'Normal'] 
-for group in backgroundgroups
-    exe 'highlight ' . group . ' guibg=' . bgcolor
+            \ 'Normal', 'FoldColumn', 'SignColumn'] 
+" Set Background Colors
+for group in s:backgroundgroups
+    exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
 " Line Numbers
-let guttercolor='gray20'
-let guttergroups = ['LineNr', 'SignColumn', 'FoldColumn', 'CursorLineNr']
-for group in guttergroups
-    exe 'highlight ' . group . ' guibg=' . guttercolor
+let s:guttercolor='gray20'
+" Built-in
+let s:guttergroups = ['LineNr', 'CursorLineNr']
+" Git Gutter
+" let guttergroups += ['GitGutterAdd', 'GitGutterChange', 'GitGutterDelete']
+for group in s:guttergroups
+    exe 'highlight ' . group . ' guibg=' . s:guttercolor
 endfor
 highlight LineNr guifg=DarkGray
 " StatusLine
@@ -50,10 +55,16 @@ highlight ColorColumn guibg=gray15
 " Search
 highlight Search guifg=lightmagenta
 " Diff 
-highlight DiffAdd guifg=green guibg=darkgreen
-highlight DiffDelete guifg=red guibg=darkred
-highlight DiffChange guibg=darkcyan
-highlight DiffText guifg=lightblue guibg=darkblue
+highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
+highlight DiffDelete gui=NONE guifg=red guibg=darkred
+highlight DiffChange gui=NONE guifg=NONE guibg=NONE
+highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
+" highlight DiffChange gui=NONE guifg=brown guibg=yellow
+" highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
+" Git Gutter Colors
+highlight GitGutterAdd guifg=green
+highlight GitGutterChange guifg=lightblue
+highlight GitGutterDelete guifg=red
 
 " Key Commands {{{1
 nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
