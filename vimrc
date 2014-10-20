@@ -112,11 +112,11 @@ if !has('gui_running')
     " Vimdiff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
-    highlight DiffChange ctermfg=brown ctermbg=yellow
+    highlight DiffChange ctermfg=NONE ctermbg=NONE
     highlight DiffText ctermfg=lightblue ctermbg=darkblue
     " Git Gutter Colors
     highlight GitGutterAdd ctermfg=green
-    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterChange ctermfg=lightblue
     highlight GitGutterDelete ctermfg=red
 endif
 
