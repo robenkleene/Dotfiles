@@ -21,7 +21,8 @@ filetype plugin indent on
 
 set nocompatible
 set directory=/tmp " Temp files
-" set clipboard=unnamed " Make the OS X clipboard work
+" Use system clipboard by default
+set clipboard=unnamed 
 " let mapleader = ','
 " let mapleader=" "
 " Allow hidden buffers
@@ -157,13 +158,13 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 " Copy to system clipboard
-nnoremap <leader>c :%y+<CR>
-vnoremap <leader>c "+y
+" nnoremap <leader>c :%y+<CR>
+" vnoremap <leader>c "+y
 " Paste from system clipboard
-nnoremap <leader>v "+p
-vnoremap <leader>v "+p
+" nnoremap <leader>v "+p
+" vnoremap <leader>v "+p
 " Copy line to system clipboard
-nnoremap <leader>yy "+yy
+" nnoremap <leader>yy "+yy
 " Open Working Directory in Terminal
 nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>
 " Copy Contents of File and Close Without Saving
