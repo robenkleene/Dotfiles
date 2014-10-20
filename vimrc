@@ -172,6 +172,9 @@ nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>
 " Copy Contents of File and Close Without Saving
 " nnoremap <leader>Q :%w !pbcopy<CR>:q!<CR>
 function! s:CopyToSystemClipboardAndClean()
+    " Delete blank lines at end of file
+    execute 'silent! v/\_s*\S/d'
+    nohlsearch
     if line('$') == 1
         execute '%w !tr -d "\n" | pbcopy' 
     else
@@ -179,6 +182,7 @@ function! s:CopyToSystemClipboardAndClean()
     endif
 endfunction
 nnoremap <leader>Q :call <SID>CopyToSystemClipboardAndClean()<CR>:q!<CR>
+nnoremap <leader>c :silent call <SID>CopyToSystemClipboardAndClean()<CR>
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
