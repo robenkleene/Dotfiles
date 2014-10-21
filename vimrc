@@ -87,7 +87,7 @@ if !has('gui_running')
     set background=dark
     colorscheme jellybeans
     " Background
-    let s:bgcolor='NONE'
+    let s:bgcolor = 'NONE'
     " Built-in
     let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
                 \ 'NonText', 'SpecialKey', 'VertSplit',
@@ -97,7 +97,7 @@ if !has('gui_running')
         exe 'highlight ' . group . ' ctermbg=' . s:bgcolor
     endfor
     " Line Numbers
-    let s:guttercolor='NONE'
+    let s:guttercolor = 'NONE'
     let s:guttergroups = ['LineNr', 'CursorLineNr']
     " Set Gutter Colors
     for group in s:guttergroups
