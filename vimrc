@@ -121,6 +121,12 @@ if !has('gui_running')
     highlight GitGutterAdd ctermfg=green
     highlight GitGutterChange ctermfg=lightblue
     highlight GitGutterDelete ctermfg=red
+    highlight GitGutterAddDefault ctermbg=NONE ctermfg=green
+    highlight GitGutterChangeDefault ctermbg=NONE ctermfg=lightblue
+    highlight GitGutterDeleteDefault ctermbg=NONE ctermfg=red
+    highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
+    highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
+    highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 endif
 
 

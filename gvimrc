@@ -26,32 +26,38 @@ set gcr=a:blinkon0 " Disable Cursor blinking
 colorscheme ir_black
 set background=dark
 " Background
-let s:bgcolor='gray12'
-" Built-in
+let s:bgcolor = 'gray12'
 let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
-" Set Background Colors
 for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
 " Line Numbers
-let s:guttercolor='gray20'
-" Built-in
-let s:guttergroups = ['LineNr', 'CursorLineNr', 'StatusLineNC', 'ColorColumn']
-" Git Gutter
-for group in s:guttergroups
-    exe 'highlight ' . group . ' guibg=' . s:guttercolor
+let s:gutterbgcolor = 'gray20'
+let s:gutterfgcolor = 'DarkGray'
+let s:gutterfgbggroups = ['LineNr', 'StatusLineNC']
+let s:gutterbggroups = ['CursorLineNr', 'ColorColumn']
+for group in s:gutterfgbggroups
+    exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
+                \ s:gutterfgcolor
 endfor
-highlight LineNr guifg=DarkGray
+for group in s:gutterbggroups
+    exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
+endfor
+" Selection
+" let s:selectionbgcolor= lightblue'
+
+" Search
+highlight Search guifg=black guibg=lightblue
+" Wildmenu
+highlight Wildmenu guifg=lightmagenta guibg=NONE
 " StatusLine
 highlight StatusLine guibg=Gray guifg=black
 " NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=DarkGray
 " Tildes
-highlight  NonText guifg=DarkGray
-" Search
-highlight Search guifg=lightmagenta
+highlight NonText guifg=DarkGray
 " Diff 
 highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
 highlight DiffDelete gui=NONE guifg=red guibg=darkred
@@ -63,6 +69,12 @@ highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
 highlight GitGutterAdd guifg=green
 highlight GitGutterChange guifg=lightblue
 highlight GitGutterDelete guifg=red
+highlight GitGutterAddDefault guibg=NONE guifg=green
+highlight GitGutterChangeDefault guibg=NONE guifg=lightblue
+highlight GitGutterDeleteDefault guibg=NONE guifg=red
+highlight GitGutterAddInvisible guibg=NONE guifg=green
+highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
+highlight GitGutterDeleteInvisible guibg=NONE guifg=red
 
 " Key Commands {{{1
 nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
