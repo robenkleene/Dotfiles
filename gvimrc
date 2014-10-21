@@ -46,12 +46,15 @@ for group in s:gutterbggroups
     exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
 endfor
 " Selection
-" let s:selectionbgcolor= lightblue'
-
-" Search
-highlight Search guifg=black guibg=lightblue
-" Wildmenu
-highlight Wildmenu guifg=lightmagenta guibg=NONE
+let s:selectionbgcolor = 'lightblue'
+let s:selectionfgcolor = 'black'
+let s:selectiongroups = ['Search', 'Wildmenu']
+for group in s:selectiongroups
+    exe 'highlight ' . group . ' guibg=' . s:selectionbgcolor  . ' guifg=' .  
+                \ s:selectionfgcolor
+endfor
+highlight Visual guifg=white guibg=darkcyan
+highlight IncSearch guifg=darkcyan guibg=white
 " StatusLine
 highlight StatusLine guibg=Gray guifg=black
 " NC StatusLine bg is gutter color
