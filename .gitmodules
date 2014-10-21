@@ -57,3 +57,6 @@
 [submodule "vim/bundle/vim-vinegar"]
 	path = vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/bundle/xterm-color-table-vim"]
+	path = vim/bundle/xterm-color-table-vim
+	url = https://github.com/guns/xterm-color-table.vim.git
