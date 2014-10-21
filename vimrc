@@ -88,7 +88,6 @@ if !has('gui_running')
     colorscheme jellybeans
     " Background
     let s:bgcolor = 'NONE'
-    " Built-in
     let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
                 \ 'NonText', 'SpecialKey', 'VertSplit',
                 \ 'Normal', 'SignColumn', 'FoldColumn']
@@ -99,11 +98,20 @@ if !has('gui_running')
     " Line Numbers
     let s:guttercolor = 'NONE'
     let s:guttergroups = ['LineNr', 'CursorLineNr']
-    " Set Gutter Colors
     for group in s:guttergroups
         exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
     endfor
     highlight LineNr ctermfg=darkgray
+    " Selection
+    let s:selectionbgcolor = 'lightblue'
+    let s:selectionfgcolor = 'black'
+    let s:selectiongroups = ['Search', 'Wildmenu']
+    for group in s:selectiongroups
+        exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
+                    \ s:selectionfgcolor
+    endfor
+    highlight Visual ctermfg=white ctermbg=darkcyan
+    highlight IncSearch ctermfg=darkcyan ctermbg=white
     " StatusLine
     highlight StatusLine ctermbg=lightgray ctermfg=black
     " NC StatusLine bg is gutter color
