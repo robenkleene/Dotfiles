@@ -38,7 +38,7 @@ endfor
 " Line Numbers
 let s:guttercolor='gray20'
 " Built-in
-let s:guttergroups = ['LineNr', 'CursorLineNr']
+let s:guttergroups = ['LineNr', 'CursorLineNr', 'StatusLineNC']
 " Git Gutter
 " let guttergroups += ['GitGutterAdd', 'GitGutterChange', 'GitGutterDelete']
 for group in s:guttergroups
@@ -47,7 +47,8 @@ endfor
 highlight LineNr guifg=DarkGray
 " StatusLine
 highlight StatusLine guibg=Gray guifg=black
-highlight StatusLineNC guibg=gray30 guifg=DarkGray
+" NC StatusLine bg is gutter color
+highlight StatusLineNC guifg=DarkGray
 " Tildes
 highlight  NonText guifg=DarkGray
 " ColorColumn

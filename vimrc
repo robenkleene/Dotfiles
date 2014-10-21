@@ -48,7 +48,6 @@ set ignorecase
 " Override `ignorecase`
 set smartcase
 
-
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
@@ -99,7 +98,7 @@ if !has('gui_running')
     endfor
     " Line Numbers
     let s:guttercolor='darkgray'
-    let s:guttergroups = ['LineNr', 'CursorLineNr']
+    let s:guttergroups = ['LineNr', 'CursorLineNr', 'StatusLineNC']
     " Set Gutter Colors
     for group in s:guttergroups
         exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
@@ -107,7 +106,8 @@ if !has('gui_running')
     highlight LineNr ctermfg=lightgray
     " StatusLine
     highlight StatusLine ctermbg=lightgray ctermfg=black
-    highlight StatusLineNC ctermbg=darkgray ctermfg=lightgray
+    " NC StatusLine bg is gutter color
+    highlight StatusLineNC ctermfg=lightgray
     " Tildes
     highlight  NonText ctermfg=darkgray
     " ColorColumn
