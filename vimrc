@@ -98,7 +98,7 @@ if !has('gui_running')
     endfor
     " Line Numbers
     let s:guttercolor='darkgray'
-    let s:guttergroups = ['LineNr', 'CursorLineNr', 'StatusLineNC']
+    let s:guttergroups = ['LineNr', 'CursorLineNr', 'StatusLineNC', 'ColorColumn']
     " Set Gutter Colors
     for group in s:guttergroups
         exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
@@ -110,8 +110,6 @@ if !has('gui_running')
     highlight StatusLineNC ctermfg=lightgray
     " Tildes
     highlight  NonText ctermfg=darkgray
-    " ColorColumn
-    highlight ColorColumn ctermbg=darkgray
     " Vimdiff Colors
     highlight DiffAdd ctermfg=green ctermbg=darkgreen
     highlight DiffDelete ctermfg=red ctermbg=darkred
