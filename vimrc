@@ -176,26 +176,15 @@ set statusline+=\
 
 
 " Commands {{{1
-" Show Syntax Higlighting
-function! s:SyntaxGroups()
-    return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
-endfunc
-function! s:EchoSyntaxGroups()
-    if !exists("*synstack")
-        return
-    endif
-    echo s:SyntaxGroups()
-endfunc
-command! EchoSyntaxGroups :call <SID>EchoSyntaxGroups() 
-" Yank Syntax Group
-function! s:YankSyntaxGroups()
-    if !exists("*synstack")
-        return
-    endif
-    let @" = s:SyntaxGroups()
-    echo @"
-endfunc
-command! YankSyntaxGroups :call <SID>YankSyntaxGroups() 
+if exists("*synstack")
+    function! s:SyntaxGroups()
+        return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
+    endfunc
+    " Echo Syntax Group
+    command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
+    " Yank Syntax Group
+    command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:echo @"
+endif
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
