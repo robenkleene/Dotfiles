@@ -177,28 +177,31 @@ set statusline+=\
 
 " Commands {{{1
 " Show Syntax Higlighting
-function! s:EchoSynStack()
+function! s:EchoSyntaxGroups()
     if !exists("*synstack")
         return
     endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+    echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
 endfunc
-command! SynStack :call <SID>EchoSynStack() 
+command! EchoSyntaxGroups :call <SID>EchoSyntaxGroups() 
 " Yank Syntax Group
-function! s:YankSynStack()
+function! s:YankSyntaxGroups()
     if !exists("*synstack")
         return
     endif
-    let @" = map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+    let @" = join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
+    echo @"
 endfunc
-command! SynStackYank :call <SID>YankSynStack() 
+command! YankSyntaxGroups :call <SID>YankSyntaxGroups() 
+command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
+command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
 
 " Key Commands {{{1
 
 " vimrc
-nnoremap <leader>ev :split $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 " Copy to system clipboard

@@ -83,4 +83,4 @@ highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
 highlight GitGutterDeleteInvisible guibg=NONE guifg=red
 
 " Key Commands {{{1
-nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>:echo "Sourced"<CR>
