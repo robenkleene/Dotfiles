@@ -29,24 +29,33 @@ set clipboard=unnamed
 set hidden
 " set list
 " Tabs
-" Set with `.editorconfig`
+" Now set with `.editorconfig`
 " set tabstop=4
 " set shiftwidth=4
 " set softtabstop=4
 " set expandtab
 " Text
 set nowrap
-set cursorline " Highlight cursor line
-set colorcolumn=80 " Show 80 character bar
-set linebreak " Line breaks only happen on words
-set number " Show line numbers
-set hlsearch " Highlight search results
+" Highlight cursor line
+set cursorline 
+" Show 80 character bar
+set colorcolumn=80 
+" Line breaks only happen on words
+set linebreak 
+" Show line numbers
+set number 
+" Highlight search results
+set hlsearch 
+" Fold Method
 set foldmethod=syntax
+" Don't Start Folded
 set nofoldenable
 " Ignore case in search results
 set ignorecase
 " Override `ignorecase`
 set smartcase
+" Don't display search highlight on startup
+nohlsearch
 
 " Normalizing Movement Key Commands {{{1
 
@@ -137,7 +146,7 @@ if !has('gui_running')
     highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 endif
 
-
+ 
 " Status Line {{{1
 
 " Space Buffer
@@ -164,6 +173,25 @@ set statusline+=\ %P
 set statusline+=\ %{fugitive#statusline()}
 " Space Buffer
 set statusline+=\ 
+
+
+" Commands {{{1
+" Show Syntax Higlighting
+function! s:EchoSynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+command! SynStack :call <SID>EchoSynStack() 
+" Yank Syntax Group
+function! s:YankSynStack()
+    if !exists("*synstack")
+        return
+    endif
+    let @" = map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+command! SynStackYank :call <SID>YankSynStack() 
 
 
 " Key Commands {{{1

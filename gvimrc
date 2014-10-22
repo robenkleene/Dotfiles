@@ -7,17 +7,20 @@ set macmeta
 " Look & Feel {{{1
 
 " Window
-set guioptions-=T " Disable toolbar
-set guioptions-=L " Disable left scroll bar with vertical splits
-set guioptions-=r " Disable right scrollbar
-" Size
-set lines=48 " Rows
-set columns=80 " Columns
-" Fonts
-set guifont=Menlo\ Regular:h12 " Set font
-set gcr=a:blinkon0 " Disable Cursor blinking
-" set noantialias " No anti-aliasing sometimes looks better
-" set transparency=5
+if !exists("s:deja_vu") 
+    set guioptions-=T " Disable toolbar
+    set guioptions-=L " Disable left scroll bar with vertical splits
+    set guioptions-=r " Disable right scrollbar
+    " Size
+    set lines=48 " Rows
+    set columns=80 " Columns
+    " Fonts
+    set guifont=Menlo\ Regular:h12 " Set font
+    set gcr=a:blinkon0 " Disable Cursor blinking
+    " set noantialias " No anti-aliasing sometimes looks better
+    " set transparency=5
+endif 
+let s:deja_vu = 1
 
 
 " Colors {{{1
