@@ -185,7 +185,7 @@ if exists("*synstack")
     " Echo Syntax Group
     command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
     " Yank Syntax Group
-    command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:echo @"
+    command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
 
     " Syntax Colors
     function! s:SyntaxColors()
