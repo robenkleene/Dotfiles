@@ -46,6 +46,8 @@ set linebreak
 set number 
 " Highlight search results
 set hlsearch 
+" Don't display search highlight on startup
+nohlsearch
 " Fold Method
 set foldmethod=syntax
 " Don't Start Folded
@@ -54,9 +56,8 @@ set nofoldenable
 set ignorecase
 " Override `ignorecase`
 set smartcase
-" Don't display search highlight on startup
-nohlsearch
-
+" Don't let smartase affect autocomplete
+set infercase
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
@@ -89,7 +90,7 @@ augroup executablefiles
 augroup END
 
 
-" Look & Feel {{{1
+" Colors {{{1
 
 if !has('gui_running')
     " Colorscheme
@@ -177,6 +178,7 @@ set statusline+=\
 
 " Commands {{{1
 if exists("*synstack")
+    " Syntax Groups
     function! s:SyntaxGroups()
         return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
     endfunc
@@ -184,6 +186,19 @@ if exists("*synstack")
     command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
     " Yank Syntax Group
     command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:echo @"
+
+    " Syntax Colors
+    function! s:SyntaxColors()
+        let syntaxcolors = 'FG:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg")
+        let syntaxcolors .= ' FG#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
+        let syntaxcolors .= ' BG:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg")
+        let syntaxcolors .= ' BG#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")
+        let syntaxcolors .= ' SP:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp")
+        let syntaxcolors .= ' SP#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp#")
+        return syntaxcolors
+    endfunc
+    " Echo Syntax Colors
+    command! EchoSyntaxColors :echo <SID>SyntaxColors()
 endif
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
