@@ -34,3 +34,16 @@ setlocal spell
 " nnoremap <leader>2 :Header2<CR>:startinsert!<CR>
 " :command! Header3 :normal O<esc>O### <esc>
 " nnoremap <leader>3 :Header3<CR>:startinsert!<CR>
+
+" Custom Syntax
+
+" markdownBlockquote
+
+" highlight markdownLinkText gui=underline guifg=lightblue
+highlight markdownLinkText gui=underline guifg=lightblue
+highlight link markdownBlockquote Comment
+highlight link markdownHeadingDelimiter Comment
+highlight link markdownListMarker Comment
+highlight link markdownCodeDelimiter Comment
+highlight link markdownLinkTextDelimiter Comment
+highlight link markdownLinkDelimiter Comment
