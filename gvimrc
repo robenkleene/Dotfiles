@@ -30,12 +30,13 @@ colorscheme ir_black
 set background=dark
 " Background
 let s:bgcolor = 'gray12'
-let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
+let s:backgroundgroups = ['CursorColumn', 
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
 for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
+highlight CursorLine guibg=NONE
 " Line Numbers
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
@@ -62,6 +63,8 @@ highlight IncSearch guifg=darkcyan guibg=white
 highlight StatusLine guibg=Gray guifg=black
 " NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=DarkGray
+" Cursorline
+highlight Cursorline ctermbg=NONE
 " Tildes
 highlight NonText guifg=DarkGray
 " Diff 

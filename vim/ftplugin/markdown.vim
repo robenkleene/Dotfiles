@@ -36,14 +36,28 @@ setlocal spell
 " nnoremap <leader>3 :Header3<CR>:startinsert!<CR>
 
 " Custom Syntax
+" Colors
+highlight markdownLinkText cterm=underline gui=underline
+highlight markdownLinkText guifg=lightblue
+highlight markdownLinkText ctermfg=lightblue
+highlight markdownCode guibg=gray20 guifg=DarkGray
+highlight markdownCode ctermfg=lightgray ctermbg=darkgray
+highlight markdownCodeBlock guibg=gray20 guifg=DarkGray
+highlight markdownCodeBlock ctermfg=lightgray ctermbg=darkgray
+highlight markdownItalic ctermbg=NONE cterm=italic ctermfg=NONE term=italic
 
-" markdownBlockquote
-
-" highlight markdownLinkText gui=underline guifg=lightblue
-highlight markdownLinkText gui=underline guifg=lightblue
+" Groups
+highlight link markdownLinkText Keyword
 highlight link markdownBlockquote Comment
 highlight link markdownHeadingDelimiter Comment
 highlight link markdownListMarker Comment
 highlight link markdownCodeDelimiter Comment
 highlight link markdownLinkTextDelimiter Comment
 highlight link markdownLinkDelimiter Comment
+highlight link markdownUrl Comment
+highlight link markdownH1 String
+highlight link markdownH2 String
+highlight link markdownH3 String
+highlight link markdownH4 String
+highlight link markdownH5 String
+highlight link markdownH6 String

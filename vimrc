@@ -98,7 +98,7 @@ if !has('gui_running')
     colorscheme jellybeans
     " Background
     let s:bgcolor = 'NONE'
-    let s:backgroundgroups = ['CursorColumn', 'CursorLine', 
+    let s:backgroundgroups = ['CursorColumn', 
                 \ 'NonText', 'SpecialKey', 'VertSplit',
                 \ 'Normal', 'SignColumn', 'FoldColumn']
     " Set Background Colors
@@ -126,6 +126,8 @@ if !has('gui_running')
     highlight StatusLine ctermbg=lightgray ctermfg=black
     " NC StatusLine bg is gutter color
     highlight StatusLineNC ctermfg=lightgray ctermbg=darkgray
+    " Cursorline
+    highlight Cursorline ctermbg=NONE
     " ColorColumn
     highlight ColorColumn ctermbg=black
     " Tildes
