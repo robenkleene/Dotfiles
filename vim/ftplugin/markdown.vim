@@ -44,9 +44,13 @@ highlight markdownCode guibg=gray20 guifg=DarkGray
 highlight markdownCode ctermfg=lightgray ctermbg=darkgray
 highlight markdownCodeBlock guibg=gray20 guifg=DarkGray
 highlight markdownCodeBlock ctermfg=lightgray ctermbg=darkgray
-highlight markdownItalic ctermbg=NONE cterm=italic ctermfg=NONE term=italic
-
+" No idea why setting the background and foreground colors here is necessary,
+" but if I don't it ends being highlighted
+highlight markdownItalic ctermbg=white cterm=italic ctermfg=black term=italic
+highlight markdownItalic gui=italic
 " Groups
+highlight link markdownItalicDelimiter Comment
+highlight link markdownBoldDelimiter Comment
 highlight link markdownLinkText Keyword
 highlight link markdownBlockquote Comment
 highlight link markdownHeadingDelimiter Comment
