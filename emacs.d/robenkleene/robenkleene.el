@@ -11,9 +11,9 @@
 	(package-refresh-contents))
 
 ;; Start the emacs server if it isn't already running
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(if (and (fboundp 'server-running-p) 
+         (not (server-running-p)))
+   (server-start))(require 'server)
 
 ;; Load Basic Settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))

@@ -20,7 +20,6 @@
 
 (rk-install-package-if-missing 'rainbow-delimiters)
 (require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
 
 ;; ido-ubiquitous
 (rk-install-package-if-missing 'ido-ubiquitous)
