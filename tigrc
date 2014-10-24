@@ -14,7 +14,7 @@ bind main T !@git difftool %(commit)^!
 bind status D !@sh -c "git diff '%(file)' | mate --async"
 
 # Editing
-bind status E !@open %(file)
+bind status O !@open %(file)
 bind status A !@atom %(file)
 
 # Launchbar
