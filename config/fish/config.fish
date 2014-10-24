@@ -89,9 +89,10 @@ end
 
 # Hub
 set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
-function hbc
-  hub browse -- commits
-end
+set fish_user_abbreviations $fish_user_abbreviations 'hbc=hub browse -- commits'
+# function hbc
+#   hub browse -- commits
+# end
 
 # Git Tower
 # set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
