@@ -1,5 +1,5 @@
 # Environment Variables
-set PATH /usr/local/bin ~/Development/Scripts/bin $PATH
+set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
 set -x EDITOR vim
@@ -175,6 +175,9 @@ end
 
 # VIM
 set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
+function pvim
+    sh -c "cat | vim -g - > /dev/null 2>&1"
+end
 
 # Highlight
 function hl
