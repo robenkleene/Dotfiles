@@ -12,7 +12,7 @@ endif
 " Pathogen
 " Disable Plugins
 " let g:pathogen_disabled = ["vim-rsi"]
-execute pathogen#infect()
+execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
 
