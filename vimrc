@@ -191,12 +191,18 @@ if exists("*synstack")
 
     " Syntax Colors
     function! s:SyntaxColors()
-        let syntaxcolors = 'FG:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg")
-        let syntaxcolors .= ' FG#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
-        let syntaxcolors .= ' BG:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg")
-        let syntaxcolors .= ' BG#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")
-        let syntaxcolors .= ' SP:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp")
-        let syntaxcolors .= ' SP#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp#")
+        let syntaxcolors = 'fg:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg")
+        let syntaxcolors .= ' fg#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
+        let syntaxcolors .= ' bg:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg")
+        let syntaxcolors .= ' bg#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")
+        let syntaxcolors .= ' sp:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp")
+        let syntaxcolors .= ' sp#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp#")
+        let syntaxcolors .= ' italic:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"italic")
+        let syntaxcolors .= ' reverse:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"reverse")
+        let syntaxcolors .= ' inverse:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"inverse")
+        let syntaxcolors .= ' standout:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"standout")
+        let syntaxcolors .= ' underline:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"underline")
+        let syntaxcolors .= ' undercurl:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"undercurl")
         return syntaxcolors
     endfunc
     " Echo Syntax Colors
