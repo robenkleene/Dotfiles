@@ -60,7 +60,7 @@ endfor
 highlight Visual guifg=white guibg=darkcyan
 highlight IncSearch guifg=darkcyan guibg=white
 " StatusLine
-highlight StatusLine guibg=Gray guifg=black
+highlight StatusLine guibg=Gray guifg=black gui=NONE
 " NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=DarkGray
 " Cursorline
