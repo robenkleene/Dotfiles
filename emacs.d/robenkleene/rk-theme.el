@@ -15,10 +15,12 @@
 (custom-theme-set-faces
  'wombat
  '(default ((t (:background "#191919" :foreground "#f6f3e8")))))
-(defun on-after-init ()
+
+(defun rk-transparent-background-in-terminal ()
   (unless (display-graphic-p (selected-frame))
     (set-face-background 'default "unspecified-bg" (selected-frame))))
-(add-hook 'window-setup-hook 'on-after-init)
+(add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
+
 ;; Misc
 (set-cursor-color "#E57969")
 ;;(global-hl-line-mode t) ;; Highlight current line

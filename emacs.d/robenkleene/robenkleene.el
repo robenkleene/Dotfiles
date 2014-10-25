@@ -10,10 +10,13 @@
 (when (not package-archive-contents) 
 	(package-refresh-contents))
 
-;; Start the emacs server if it isn't already running
-(if (and (fboundp 'server-running-p) 
-         (not (server-running-p)))
-   (server-start))(require 'server)
+;; Start the emacs server if it isn't already running and we're running in window mode
+
+(require 'server)
+(if (display-graphic-p (selected-frame))
+  (if (and (fboundp 'server-running-p) 
+           (not (server-running-p)))
+    (server-start))) 
 
 ;; Load Basic Settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
