@@ -55,8 +55,9 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-<S-SPC>") 'smex)
-(global-set-key (kbd "s-'") 'smex)
+(global-set-key (kbd "s-P") 'smex)
+;; (global-set-key (kbd "C-<S-SPC>") 'smex)
+;; (global-set-key (kbd "s-'") 'smex)
 
 ;; Auto-complete
 (rk-install-package-if-missing 'auto-complete)
