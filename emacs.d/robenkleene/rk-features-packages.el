@@ -10,6 +10,21 @@
 (setcdr evil-insert-state-map nil)
 ;; Re-enable esc
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+;; Evil Leader
+(rk-install-package-if-missing 'evil-leader)
+(require 'evil-leader)
+(global-evil-leader-mode)
+;; Evil Nerd Commenter
+(rk-install-package-if-missing 'evil-nerd-commenter)
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+  "\\" 'evilnc-comment-operator)
 
 ;; Undefine Some Keys in Insert Mode
 ;; (defun evil-undefine ()
@@ -34,11 +49,6 @@
 (global-set-key (kbd "C-<S-SPC>") 'smex)
 (global-set-key (kbd "s-'") 'smex)
 
-;; multiple-cursors
-(rk-install-package-if-missing 'multiple-cursors)
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
 ;; Auto-complete
 (rk-install-package-if-missing 'auto-complete)
 (require 'auto-complete-config)
@@ -46,7 +56,7 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (setq ac-auto-show-menu nil)
 (setq ac-use-quick-help nil)
-(global-set-key (kbd "C-/") 'auto-complete)
+;; (global-set-key (kbd "C-/") 'auto-complete)
 
 ;; Autopair
 (rk-install-package-if-missing 'autopair)
