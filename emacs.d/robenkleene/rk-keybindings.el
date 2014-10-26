@@ -1,20 +1,49 @@
-(provide 'rk-keybindings)
 
-;; OS X Style
-(defvar rk-osx-minor-mode-map (make-keymap) "rk-osx-minor-mode map keymap.")
-(define-key rk-osx-minor-mode-map (kbd "s-<left>") 'beginning-of-visual-line)
-(define-key rk-osx-minor-mode-map (kbd "s-<right>") 'move-end-of-line)
-(define-key rk-osx-minor-mode-map (kbd "s-<up>") 'beginning-of-buffer)
-(define-key rk-osx-minor-mode-map (kbd "s-<down>") 'end-of-buffer)
-(define-key rk-osx-minor-mode-map (kbd "M-<left>") 'left-word)
-(define-key rk-osx-minor-mode-map (kbd "M-<right>") 'right-word)
-(define-key rk-osx-minor-mode-map (kbd "M-S-<left>") nil)
-(define-key rk-osx-minor-mode-map (kbd "M-S-<right>") nil)
-(define-key rk-osx-minor-mode-map (kbd "C-w") 'backward-kill-word)
-(define-minor-mode rk-osx-minor-mode
-  "Behave like OS X."
-  :global t)
-(rk-osx-minor-mode 1)
+;; Basic
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+
+;; OS X Window Management
+(defvar rk-osx-window-minor-mode-map (make-keymap) "rk-osx-window-minor-mode-map.")
+(define-key rk-osx-window-minor-mode-map (kbd "s-q") 'save-buffers-kill-terminal)
+(define-key rk-osx-window-minor-mode-map (kbd "s-n") 'make-frame-command)
+(define-key rk-osx-window-minor-mode-map (kbd "s-w") 'delete-frame)
+(define-minor-mode rk-osx-window-minor-mode
+  "Window management like OS X."
+  t
+  nil
+  'rk-osx-window-minor-mode-map)
+(rk-osx-window-minor-mode 1)
+
+;; OS X Cut and Paste
+(define-key rk-osx-window-minor-mode-map (kbd "s-v") 'yank)
+(define-key rk-osx-window-minor-mode-map (kbd "s-c") 'kill-ring-save)
+(define-key rk-osx-window-minor-mode-map (kbd "s-x") 'kill-region)
+(defvar rk-osx-cutpaste-minor-mode-map (make-keymap) "rk-osx-cutpaste-minor-mode-map.")
+(define-minor-mode rk-osx-cutpaste-minor-mode
+  "Cut & paste like OS X."
+  t
+  nil
+  'rk-osx-cutpaste-minor-mode-map)
+(rk-osx-cutpaste-minor-mode 1)
+
+;; OS X Navigation 
+(defvar rk-osx-navigation-minor-mode-map (make-keymap) "rk-osx-navigation-minor-mode map keymap.")
+(define-key rk-osx-navigation-minor-mode-map (kbd "s-<left>") 'beginning-of-visual-line)
+(define-key rk-osx-navigation-minor-mode-map (kbd "s-<right>") 'move-end-of-line)
+(define-key rk-osx-navigation-minor-mode-map (kbd "s-<up>") 'beginning-of-buffer)
+(define-key rk-osx-navigation-minor-mode-map (kbd "s-<down>") 'end-of-buffer)
+(define-key rk-osx-navigation-minor-mode-map (kbd "M-<left>") 'left-word)
+(define-key rk-osx-navigation-minor-mode-map (kbd "M-<right>") 'right-word)
+(define-key rk-osx-navigation-minor-mode-map (kbd "M-S-<left>") nil)
+(define-key rk-osx-navigation-minor-mode-map (kbd "M-S-<right>") nil)
+(define-key rk-osx-navigation-minor-mode-map (kbd "C-w") 'backward-kill-word)
+(define-minor-mode rk-osx-navigation-minor-mode
+  "Navigation like OS X."
+  t
+  nil
+  'rk-osx-navigation-minor-mode)
+(rk-osx-navigation-minor-mode 1)
 
 ;; Windows & Buffers
 ;; (defvar rk-wm-minor-mode-map (make-keymap) "rk-wm-minor-mode map keymap.")
@@ -162,3 +191,6 @@
 ;;       (narrow-to-region (point) (point-max)))))
 ;; (defadvice rgrep (after rk-delete-grep-header activate)
 ;;   (rk-delete-grep-header))
+
+
+(provide 'rk-keybindings)

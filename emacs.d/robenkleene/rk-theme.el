@@ -6,7 +6,7 @@
 (when window-system
   (scroll-bar-mode -1)
   (tool-bar-mode 0)
-  (add-to-list 'default-frame-alist '(top . 0))
+  ;; (add-to-list 'default-frame-alist '(Top . 0))
   ;; (add-to-list 'default-frame-alist '(height . 60))
   )
 
