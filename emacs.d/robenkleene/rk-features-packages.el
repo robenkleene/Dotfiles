@@ -28,7 +28,8 @@
 ;; Evil Custom Bindings
 (evil-leader/set-key
   "w" 'toggle-truncate-lines)
-;; (define-key evil-normal-state-map "cow" 'toggle-truncate-lines)
+(require 'dired-x)
+(define-key evil-normal-state-map "-" 'dired-jump)
 (rk-install-package-if-missing 'key-chord)
 (require 'key-chord)
 (key-chord-mode 1)
