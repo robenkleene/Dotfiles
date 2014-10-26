@@ -16,6 +16,8 @@ execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
 
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 " Basic {{{1
 
