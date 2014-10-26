@@ -8,6 +8,7 @@
 (define-key rk-osx-window-minor-mode-map (kbd "s-q") 'save-buffers-kill-terminal)
 (define-key rk-osx-window-minor-mode-map (kbd "s-n") 'make-frame-command)
 (define-key rk-osx-window-minor-mode-map (kbd "s-w") 'delete-frame)
+(define-key rk-osx-window-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-minor-mode rk-osx-window-minor-mode
   "Window management like OS X."
   t
