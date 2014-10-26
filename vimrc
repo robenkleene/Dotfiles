@@ -265,6 +265,8 @@ nnoremap <leader>Q :call <SID>CopyToSystemClipboardAndClean()<CR>:q!<CR>
 nnoremap <leader>C :silent call <SID>CopyToSystemClipboardAndClean()<CR>
 nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
+" Alternative <ESC>
+inoremap jk <ESC>
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file

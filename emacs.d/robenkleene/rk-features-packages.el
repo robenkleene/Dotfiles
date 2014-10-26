@@ -29,6 +29,10 @@
 (evil-leader/set-key
   "w" 'toggle-truncate-lines)
 ;; (define-key evil-normal-state-map "cow" 'toggle-truncate-lines)
+(rk-install-package-if-missing 'key-chord)
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
 ;; Undefine Some Keys in Insert Mode
 ;; (defun evil-undefine ()
