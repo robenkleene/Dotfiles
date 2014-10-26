@@ -25,6 +25,10 @@
   "cr" 'comment-or-uncomment-region
   "cv" 'evilnc-toggle-invert-comment-line-by-line
   "\\" 'evilnc-comment-operator)
+;; Evil Custom Bindings
+(evil-leader/set-key
+  "w" 'toggle-truncate-lines)
+;; (define-key evil-normal-state-map "cow" 'toggle-truncate-lines)
 
 ;; Undefine Some Keys in Insert Mode
 ;; (defun evil-undefine ()

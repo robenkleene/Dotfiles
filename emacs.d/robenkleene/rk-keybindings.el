@@ -38,6 +38,7 @@
 (define-key rk-osx-navigation-minor-mode-map (kbd "M-S-<left>") nil)
 (define-key rk-osx-navigation-minor-mode-map (kbd "M-S-<right>") nil)
 (define-key rk-osx-navigation-minor-mode-map (kbd "C-w") 'backward-kill-word)
+(define-key rk-osx-navigation-minor-mode-map (kbd "M-s-w") 'toggle-truncate-lines)
 (define-minor-mode rk-osx-navigation-minor-mode
   "Navigation like OS X."
   t
