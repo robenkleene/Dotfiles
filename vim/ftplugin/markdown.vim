@@ -11,6 +11,10 @@ setlocal spell
 " command! MarkdownPreview :execute '!mdprev '.shellescape(expand('%:p'), 1)
 " nnoremap <silent> <leader>p :MarkdownPreview<CR>\|:redraw!<CR>
 
+"command! Preview :!open -a "Marked.app" '.shellescape(expand('%:p'), 1)
+nnoremap <leader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+"nnoremap <leader>p :!open -a "Marked 2.app" "%:p"
+
 " OS X Shortcut Special Characters
 " command! InsertShortcutSymbols :normal i⇧⌃⌥⌘<ESC>
 " nnoremap <leader>s :InsertShortcutSymbols<CR>
