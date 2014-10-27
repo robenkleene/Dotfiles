@@ -83,7 +83,8 @@ set ignorecase
 set smartcase
 " Don't let smartase affect autocomplete
 set infercase
-
+" Indented Line-breaks
+set breakindent
 
 " Normalizing Movement Key Commands {{{1
 
