@@ -41,7 +41,7 @@ highlight CursorLine guibg=NONE
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
 let s:gutterfgbggroups = ['LineNr', 'StatusLineNC']
-let s:gutterbggroups = ['CursorLineNr', 'ColorColumn']
+let s:gutterbggroups = ['CursorLineNr', 'ColorColumn', 'Cursorline']
 for group in s:gutterfgbggroups
     exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
                 \ s:gutterfgcolor
@@ -63,8 +63,6 @@ highlight IncSearch guifg=darkcyan guibg=white
 highlight StatusLine guibg=Gray guifg=black gui=NONE
 " NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=DarkGray
-" Cursorline
-highlight Cursorline ctermbg=NONE
 " Tildes
 highlight NonText guifg=DarkGray
 " Diff 
