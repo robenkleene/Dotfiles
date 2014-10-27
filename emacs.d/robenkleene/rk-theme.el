@@ -21,6 +21,8 @@
     (set-face-background 'default "unspecified-bg" (selected-frame))))
 (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
 
+(set-frame-font (font-spec :family "Menlo" :size 11))
+
 ;; Misc
 (set-cursor-color "#E57969")
 ;;(global-hl-line-mode t) ;; Highlight current line
