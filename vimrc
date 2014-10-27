@@ -11,7 +11,8 @@ endif
 
 " Pathogen
 " Disable Plugins
-let g:pathogen_disabled = ["vim-commentary"]
+"let g:pathogen_disabled = ["vim-commentary"]
+let g:pathogen_disabled = ["nerdcommenter"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
@@ -89,7 +90,8 @@ set breakindent
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
-noremap <C-k> <C-O>d$
+inoremap <C-k> <C-O>d$
+nnoremap <C-k> <C-O>d$
 cnoremap <C-K> <C-\>e<SID>KillLine()<CR>
 function! s:KillLine()
     let l:cmd = getcmdline()
@@ -289,3 +291,7 @@ inoremap jk <ESC>
 " map <leader>d :filetype detect<CR>
 " Make Markdown Filetype
 " nmap <leader>m :set filetype=markdown<CR>
+" Copy to system clipboard
+" nnoremap <leader>\B :%y+<CR>
+" vnoremap <leader>c "+y
+inoremap <C-[> <NOP>
