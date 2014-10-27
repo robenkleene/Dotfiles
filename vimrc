@@ -36,6 +36,8 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Use CursorHoldI to delay popup by miliseconds
 let g:neocomplete#enable_cursor_hold_i = 1
 let g:neocomplete#cursor_hold_i_time   = 200
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
 
 " Basic {{{1
 
