@@ -44,10 +44,14 @@ let g:neocomplete#enable_auto_select = 1
 " CtrlP
 command! Re :CtrlPMRU
 command! Bu :CtrlPBuffer
+command! Sy :CtrlPBufTag
 
 " Restore View
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
+
+" Tagbar
+nnoremap <leader>tt :TagbarToggle<CR>
 
 " Temporary Directories {{{1
 " Swap File directory
