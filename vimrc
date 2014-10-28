@@ -12,7 +12,8 @@ endif
 " Pathogen
 " Disable Plugins
 "let g:pathogen_disabled = ["vim-commentary"]
-let g:pathogen_disabled = ["nerdcommenter"]
+" colorizer causes help files to open slowly
+let g:pathogen_disabled = ["nerdcommenter", "colorizer"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
@@ -41,12 +42,31 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 let g:neocomplete#enable_auto_select = 1
 
 " CtrlP
-nnoremap <leader>o :CtrlPMRU<CR>
+command! Re :CtrlPMRU
+command! Bu :CtrlPBuffer
+
+" Restore View
+set viewoptions=cursor,folds,slash,unix
+" let g:skipview_files = ['*\.vim']
+
+" Temporary Directories {{{1
+" Swap File directory
+" Double-slash prevents name collusions
+let s:temporary_directory = "/tmp/vim.robenkleene/"
+let s:swap_file_directory = s:temporary_directory . "swap"
+let s:viewdir_directory = s:temporary_directory . "view"
+if !isdirectory(s:swap_file_directory)
+    call mkdir(s:swap_file_directory, 'p')
+endif
+if !isdirectory(s:viewdir_directory)
+    call mkdir(s:viewdir_directory, 'p')
+endif
+let &directory=s:swap_file_directory . "//"
+let &viewdir=s:viewdir_directory
+
 
 " Basic {{{1
-
 set nocompatible
-set directory=/tmp " Temp files
 " Use system clipboard by default
 set clipboard=unnamed 
 " let mapleader = ','
