@@ -315,3 +315,5 @@ inoremap jk <ESC>
 " nnoremap <leader>\B :%y+<CR>
 " vnoremap <leader>c "+y
 inoremap <C-[> <NOP>
+nnoremap <C-f> <NOP>
+nnoremap <C-b> <NOP>
