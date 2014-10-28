@@ -295,8 +295,6 @@ nnoremap <leader>Q :call <SID>CopyToSystemClipboardAndClean()<CR>:q!<CR>
 nnoremap <leader>C :silent call <SID>CopyToSystemClipboardAndClean()<CR>
 nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
-" Alternative <ESC>
-inoremap jk <ESC>
 " Reveal Current File
 " nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
@@ -314,6 +312,11 @@ inoremap jk <ESC>
 " Copy to system clipboard
 " nnoremap <leader>\B :%y+<CR>
 " vnoremap <leader>c "+y
-inoremap <C-[> <NOP>
-nnoremap <C-f> <NOP>
-nnoremap <C-b> <NOP>
+
+" Ergonomic Bindings {{{1
+" Block hard keys
+" inoremap <C-[> <NOP>
+" nnoremap <C-f> <NOP>
+" nnoremap <C-b> <NOP>
+" Alternative <ESC>
+inoremap jk <ESC>
