@@ -45,6 +45,13 @@ let g:neocomplete#enable_auto_select = 1
 command! Re :CtrlPMRU
 command! Bu :CtrlPBuffer
 command! Sy :CtrlPBufTag
+" Ctrl-N/P for moving up and down
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
+    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
+    \ 'PrtHistory(-1)':       ['<down>'],
+    \ 'PrtHistory(1)':        ['<up>'],
+    \ }
 
 " Restore View
 set viewoptions=cursor,folds,slash,unix
@@ -181,7 +188,7 @@ if !has('gui_running')
     " NC StatusLine bg is gutter color
     highlight StatusLineNC ctermfg=lightgray ctermbg=darkgray
     " Cursorline
-    highlight Cursorline ctermbg=NONE
+    highlight Cursorline ctermbg=black
     " ColorColumn
     highlight ColorColumn ctermbg=black
     " Tildes
@@ -273,6 +280,8 @@ nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
+" Spacebar
+nnoremap <space> <PageDown>
 " Copy to system clipboard
 " nnoremap <leader>c :%y+<CR>
 " vnoremap <leader>c "+y
