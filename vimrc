@@ -13,10 +13,14 @@ endif
 " Disable Plugins
 "let g:pathogen_disabled = ["vim-commentary"]
 " colorizer causes help files to open slowly
-let g:pathogen_disabled = ["nerdcommenter", "colorizer"]
+let g:pathogen_disabled = ["nerdcommenter"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
+
+" colorizer
+" Disable on startup because it slows down Vim
+let g:colorizer_startup = 0
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1

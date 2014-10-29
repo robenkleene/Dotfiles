@@ -11,6 +11,7 @@ if !exists("s:deja_vu")
     set guioptions-=T " Disable toolbar
     set guioptions-=L " Disable left scroll bar with vertical splits
     set guioptions-=r " Disable right scrollbar
+    set guioptions-=e " Disable visual tabs
     " Size
     set lines=48 " Rows
     set columns=80 " Columns
