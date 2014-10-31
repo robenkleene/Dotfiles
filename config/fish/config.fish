@@ -180,6 +180,11 @@ function pvim
     sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 
+# This doesn't work, might have hung
+# function tpvim
+#     tee /dev/tty | sh -c "cat | vim -g - > /dev/null 2>&1"
+# end
+
 # Highlight
 function hl
   highlight -O ansi "$argv[1]"

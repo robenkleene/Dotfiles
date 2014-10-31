@@ -15,6 +15,10 @@ setlocal spell
 nnoremap <leader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 "nnoremap <leader>p :!open -a "Marked 2.app" "%:p"
 
+" Almost there number lines command
+" command! NumberLines :!nl -ba
+
+
 " OS X Shortcut Special Characters
 " command! InsertShortcutSymbols :normal i⇧⌃⌥⌘<ESC>
 " nnoremap <leader>s :InsertShortcutSymbols<CR>

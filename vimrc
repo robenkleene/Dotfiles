@@ -262,6 +262,10 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ 
 
 
+" Languages {{{1
+" Doesn't work in ftplugin
+let g:xml_syntax_folding=1
+
 " Commands {{{1
 if exists("*synstack")
     " Syntax Groups
@@ -304,7 +308,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 " Spacebar
-nnoremap <space> <PageDown>
+" nnoremap <space> <PageDown>
 " Copy to system clipboard
 " nnoremap <leader>c :%y+<CR>
 " vnoremap <leader>c "+y
