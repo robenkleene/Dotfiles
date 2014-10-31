@@ -53,9 +53,20 @@ command! Sy :CtrlPBufTag
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
     \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
-    \ 'PrtHistory(-1)':       ['<down>'],
-    \ 'PrtHistory(1)':        ['<up>'],
+    \ 'PrtHistory(-1)':       [''],
+    \ 'PrtHistory(1)':        [''],
     \ }
+    " 'PrtHistory(-1)':       ['<down>'],
+    " 'PrtHistory(1)':        ['<up>'],
+" let g:ctrlp_buffer_func = {
+"     \ 'enter': 'EnterCtrlP',
+"     \ 'exit':  'ExitCtrlP',
+"     \ }
+" function EnterCtrlP()
+"     match Search /.*\%#.*/
+" endfunction
+" function ExitCtrlP()
+" endfunction
 
 " Restore View
 set viewoptions=cursor,folds,slash,unix
