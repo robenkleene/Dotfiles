@@ -97,10 +97,16 @@ set hidden
 " set expandtab
 " Text
 set nowrap
-" Highlight cursor line
-set cursorline 
 " Show 80 character bar
 set colorcolumn=80 
+" Highlight cursor line
+set cursorline 
+augroup quickfixcolors
+    autocmd!
+    " These interfere with quickfix highlighting
+    autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
+    autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
+augroup END
 " Line breaks only happen on words
 set linebreak 
 " Show line numbers
@@ -172,7 +178,7 @@ if !has('gui_running')
     endfor
     " Line Numbers
     let s:guttercolor = 'NONE'
-    let s:guttergroups = ['LineNr', 'CursorLineNr']
+    let s:guttergroups = ['LineNr']
     for group in s:guttergroups
         exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
     endfor
@@ -187,12 +193,14 @@ if !has('gui_running')
     endfor
     highlight Visual ctermfg=white ctermbg=darkcyan
     highlight IncSearch ctermfg=darkcyan ctermbg=white
+    highlight Search cterm=NONE
     " StatusLine
     highlight StatusLine ctermbg=lightgray ctermfg=black
     " NC StatusLine bg is gutter color
     highlight StatusLineNC ctermfg=lightgray ctermbg=darkgray
     " Cursorline
     highlight Cursorline ctermbg=black
+    highlight CursorLineNr ctermbg=black
     " ColorColumn
     highlight ColorColumn ctermbg=black
     " Tildes

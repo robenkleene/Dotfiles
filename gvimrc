@@ -60,6 +60,7 @@ for group in s:selectiongroups
 endfor
 highlight Visual guifg=white guibg=darkcyan
 highlight IncSearch guifg=darkcyan guibg=white
+highlight Search gui=NONE
 " StatusLine
 highlight StatusLine guibg=Gray guifg=black gui=NONE
 " NC StatusLine bg is gutter color
