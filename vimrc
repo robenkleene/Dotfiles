@@ -138,7 +138,8 @@ set smartcase
 set infercase
 " Indented Line-breaks
 set breakindent
-
+" netrw split
+let g:netrw_preview = 1
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
