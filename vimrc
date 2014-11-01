@@ -33,7 +33,8 @@ function! s:my_cr_function()
   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? neocomplete#close_popup() : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -67,7 +68,13 @@ let g:ctrlp_prompt_mappings = {
 " endfunction
 " function ExitCtrlP()
 " endfunction
-
+if executable('ag')
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
+"
 " Restore View
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
@@ -140,6 +147,11 @@ set infercase
 set breakindent
 " netrw split
 let g:netrw_preview = 1
+" `ag` as grep when available
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
