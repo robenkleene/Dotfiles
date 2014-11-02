@@ -84,6 +84,13 @@ highlight GitGutterDeleteDefault guibg=NONE guifg=red
 highlight GitGutterAddInvisible guibg=NONE guifg=green
 highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
 highlight GitGutterDeleteInvisible guibg=NONE guifg=red
+" Syntastic Colors
+highlight SyntasticErrorSign guifg=red
+highlight SyntasticWarningSign guifg=yellow
+highlight SyntasticStyleWarningSign guifg=yellow
+" highlight SyntasticErrorLine guibg=red
+" Warning Message
+highlight WarningMsg guifg=white guibg=red gui=bold
 
 " Key Commands {{{1
 nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>:echo "Sourced"<CR>

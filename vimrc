@@ -25,6 +25,7 @@ source ~/.vim/source/ctrlp.vim
 source ~/.vim/source/restore_view.vim
 source ~/.vim/source/tabbar.vim
 " source ~/.vim/source/airline.vim
+source ~/.vim/source/syntastic.vim
 
 " Temporary Directories {{{1
 " Swap File directory
@@ -188,6 +189,13 @@ if !has('gui_running')
     highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
     highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
     highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
+    " Syntastic Colors
+    highlight SyntasticErrorSign ctermfg=red
+    highlight SyntasticWarningSign ctermfg=yellow
+    highlight SyntasticStyleWarningSign ctermfg=yellow
+    " highlight SyntasticErrorLine ctermbg=red
+    " Warning Message
+    highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
 endif
 
  
@@ -206,9 +214,11 @@ set statusline+=%m
 " Filetype
 set statusline+=\ %y
 " Syntastic
+set statusline+=\ 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=\ 
 " Switch to right
 set statusline+=%=
 " Line
