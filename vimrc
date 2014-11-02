@@ -9,20 +9,22 @@ endif
 
 " Plugins {{{1
 
-" Pathogen
+" Pathogen {{{2
 " Disable Plugins
 "let g:pathogen_disabled = ["vim-commentary"]
 " colorizer causes help files to open slowly
-let g:pathogen_disabled = ["nerdcommenter"]
+let g:pathogen_disabled = []
+let g:pathogen_disabled += ["nerdcommenter"]
+let g:pathogen_disabled += ["vim-airline"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
 
-" colorizer
+" colorizer {{{2
 " Disable on startup because it slows down Vim
 let g:colorizer_startup = 0
 
-" neocomplete
+" neocomplete {{{2
 let g:neocomplete#enable_at_startup = 1
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -46,7 +48,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " AutoComplPop like behavior.
 let g:neocomplete#enable_auto_select = 1
 
-" CtrlP
+" CtrlP {{{2
 command! Re :CtrlPMRU
 command! Bu :CtrlPBuffer
 command! Sy :CtrlPBufTag
@@ -76,13 +78,18 @@ if executable('ag')
     nnoremap K :Ag <cword><cr>
 endif
 "
-" Restore View
+" Restore View {{{2
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
 
-" Tagbar
+" Tagbar {{{2
 nnoremap <leader>tt :TagbarToggle<CR>
 
+" Airline {{{2
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 " Temporary Directories {{{1
 " Swap File directory
 " Double-slash prevents name collusions
@@ -373,4 +380,4 @@ nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
 " nnoremap <C-f> <NOP>
 " nnoremap <C-b> <NOP>
 " Alternative <ESC>
-inoremap jk <ESC>
+" inoremap jk <ESC>

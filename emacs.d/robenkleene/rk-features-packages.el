@@ -33,7 +33,7 @@
 (rk-install-package-if-missing 'key-chord)
 (require 'key-chord)
 (key-chord-mode 1)
-(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
+; (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
 ;; Undefine Some Keys in Insert Mode
 ;; (defun evil-undefine ()
