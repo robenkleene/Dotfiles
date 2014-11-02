@@ -3,6 +3,7 @@
 let g:markdown_folding = 1
 set nofoldenable
 setlocal spell
+set wrap
 " set foldlevel=1
 
 " Commands
