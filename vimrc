@@ -9,7 +9,7 @@ endif
 
 " Plugins {{{1
 
-" Pathogen {{{2
+" Pathogen
 " Disable Plugins
 "let g:pathogen_disabled = ["vim-commentary"]
 " colorizer causes help files to open slowly
@@ -20,76 +20,13 @@ execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
 
-" colorizer {{{2
-" Disable on startup because it slows down Vim
-let g:colorizer_startup = 0
+source ~/.vim/source/colorizer.vim
+source ~/.vim/source/neocomplete.vim
+source ~/.vim/source/ctrlp.vim
+source ~/.vim/source/restore_view.vim
+source ~/.vim/source/tabbar.vim
+source ~/.vim/source/airline.vim
 
-" neocomplete {{{2
-let g:neocomplete#enable_at_startup = 1
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  " return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? neocomplete#close_popup() : "\<TAB>"
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Use CursorHoldI to delay popup by miliseconds
-"let g:neocomplete#enable_cursor_hold_i = 1
-"let g:neocomplete#cursor_hold_i_time   = 200
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
-
-" CtrlP {{{2
-command! Re :CtrlPMRU
-command! Bu :CtrlPBuffer
-command! Sy :CtrlPBufTag
-" Ctrl-N/P for moving up and down
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
-    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
-    \ 'PrtHistory(-1)':       [''],
-    \ 'PrtHistory(1)':        [''],
-    \ }
-    " 'PrtHistory(-1)':       ['<down>'],
-    " 'PrtHistory(1)':        ['<up>'],
-" let g:ctrlp_buffer_func = {
-"     \ 'enter': 'EnterCtrlP',
-"     \ 'exit':  'ExitCtrlP',
-"     \ }
-" function EnterCtrlP()
-"     match Search /.*\%#.*/
-" endfunction
-" function ExitCtrlP()
-" endfunction
-if executable('ag')
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-    nnoremap K :Ag <cword><cr>
-endif
-"
-" Restore View {{{2
-set viewoptions=cursor,folds,slash,unix
-" let g:skipview_files = ['*\.vim']
-
-" Tagbar {{{2
-nnoremap <leader>tt :TagbarToggle<CR>
-
-" Airline {{{2
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 " Temporary Directories {{{1
 " Swap File directory
 " Double-slash prevents name collusions
