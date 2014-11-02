@@ -6,7 +6,6 @@ if &shell =~# 'fish$'
     set shell=sh
 endif
 
-
 " Plugins {{{1
 
 " Pathogen
@@ -25,7 +24,7 @@ source ~/.vim/source/neocomplete.vim
 source ~/.vim/source/ctrlp.vim
 source ~/.vim/source/restore_view.vim
 source ~/.vim/source/tabbar.vim
-source ~/.vim/source/airline.vim
+" source ~/.vim/source/airline.vim
 
 " Temporary Directories {{{1
 " Swap File directory
