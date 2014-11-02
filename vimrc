@@ -205,6 +205,10 @@ set statusline+=%-.30f
 set statusline+=%m 
 " Filetype
 set statusline+=\ %y
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 " Switch to right
 set statusline+=%=
 " Line
