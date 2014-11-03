@@ -97,6 +97,10 @@ if executable('ag')
     " Use Ag over Grep
     set grepprg=ag\ --nogroup\ --nocolor
 endif
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
