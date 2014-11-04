@@ -87,3 +87,9 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vimshell.vim"]
+	path = vim/bundle/vimshell.vim
+	url = https://github.com/Shougo/vimshell.vim.git
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
