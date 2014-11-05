@@ -332,6 +332,9 @@ nnoremap <leader>f :silent !open -R "%:p"<CR>
 " vnoremap <leader>c "+y
 " Use normal mode C-L in insert mode
 inoremap <silent> <C-L> <C-O>:nohlsearch<CR><C-O><C-L>
+" Sanity
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
 
 " Ergonomic Bindings {{{1
 " Block hard keys
