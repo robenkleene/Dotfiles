@@ -28,7 +28,7 @@ source ~/.vim/source/restore_view.vim
 source ~/.vim/source/tabbar.vim
 " source ~/.vim/source/airline.vim
 source ~/.vim/source/syntastic.vim
-
+source ~/.vim/source/quickrun.vim
 
 " Temporary Directories {{{1
 " Swap File directory
