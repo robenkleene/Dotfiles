@@ -102,3 +102,9 @@
 [submodule "vim/bundle/vim-quickrun"]
 	path = vim/bundle/vim-quickrun
 	url = https://github.com/thinca/vim-quickrun.git
+[submodule "vim/bundle/vim-eunuch"]
+	path = vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git

@@ -1,0 +1,22 @@
+snippet getopts_2
+usage () {
+    echo "Usage: program_name -o <OPTION_WITH_ARGUMENTS> -a <OPTION_WITHOUT_ARGUMENTS>"
+}
+
+while getopts oa:h option
+do
+    case "$option"
+    in
+        o)  OPTION_WITHOUT_ARGUMENTS=true
+            ;;
+        a)  OPTION_WITH_ARGUMENTS=$OPTARG
+            ;;
+        :)  usage
+            exit 1
+            ;;
+        \?) usage
+            exit 1
+            ;;
+    esac
+done
+endsnippet
