@@ -93,3 +93,9 @@
 [submodule "vim/bundle/vimproc.vim"]
 	path = vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
