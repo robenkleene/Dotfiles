@@ -13,6 +13,7 @@ endif
 "let g:pathogen_disabled = ["vim-commentary"]
 " colorizer causes help files to open slowly
 let g:pathogen_disabled = []
+" let g:pathogen_disabled += ["ultisnips"]
 let g:pathogen_disabled += ["nerdcommenter"]
 let g:pathogen_disabled += ["vim-airline"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
@@ -21,11 +22,13 @@ filetype plugin indent on
 
 source ~/.vim/source/colorizer.vim
 source ~/.vim/source/neocomplete.vim
+source ~/.vim/source/ultisnips.vim
 source ~/.vim/source/ctrlp.vim
 source ~/.vim/source/restore_view.vim
 source ~/.vim/source/tabbar.vim
 " source ~/.vim/source/airline.vim
 source ~/.vim/source/syntastic.vim
+source ~/.vim/source/quickrun.vim
 
 " Temporary Directories {{{1
 " Swap File directory
@@ -98,8 +101,8 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif
 " Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 
 " Normalizing Movement Key Commands {{{1
 
@@ -327,6 +330,8 @@ nnoremap <leader>f :silent !open -R "%:p"<CR>
 " Copy to system clipboard
 " nnoremap <leader>\B :%y+<CR>
 " vnoremap <leader>c "+y
+" Use normal mode C-L in insert mode
+inoremap <silent> <C-L> <C-O>:nohlsearch<CR><C-O><C-L>
 
 " Ergonomic Bindings {{{1
 " Block hard keys

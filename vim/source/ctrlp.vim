@@ -26,3 +26,7 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
     nnoremap K :Ag <cword><cr>
 endif
+" Use the working directory, no magic with finding `.git` directories
+let g:ctrlp_working_path_mode = '0'
+" Open new files in horizontal splits
+let g:ctrlp_open_new_file = 'h'

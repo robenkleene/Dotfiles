@@ -1,2 +1,2 @@
-command! RunShellScript :update | :!./%
-nnoremap <leader>r :RunShellScript<CR>
+" command! RunShellScript :update | :!./%
+" nnoremap <leader>r :RunShellScript<CR>
