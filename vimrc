@@ -3,7 +3,7 @@
 " Startup {{{1
 
 if &shell =~# 'fish$'
-    set shell=sh
+    set shell=bash
 endif
 
 " Plugins {{{1
@@ -311,7 +311,7 @@ nnoremap <leader>C :silent call <SID>CopyToSystemClipboardAndClean()<CR>
 nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 " Reveal Current File
-" nnoremap <leader>re :!open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap <leader>f :silent !open -R "%:p"<CR>
 " Open folder of current file
 " nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
 " Copy contents of whole file
