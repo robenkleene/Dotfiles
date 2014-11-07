@@ -179,7 +179,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
 function pvim
     sh -c "cat | vim -g - > /dev/null 2>&1"
 end
-function vimc
+function vc
     vim -c "set ft=fish" 
 end
 # This doesn't work, might have hung
