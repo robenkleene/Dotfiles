@@ -1,8 +1,10 @@
 " default value, just set once
 " let g:ulti_expand_res = 0 
 
+
 function! s:complete_expand()
     return neocomplete#close_popup() . <SID>expand_snippet_discard_result()
+    " return neocomplete#close_popup() . UltiSnips#ExpandSnippet()
 endfunction
 
 function! s:expand_snippet_discard_result()
@@ -24,3 +26,5 @@ endfunction
 
 inoremap <silent> <TAB> <C-r>=<SID>tab_complete()<CR>
 inoremap <silent> <CR> <C-r>=<SID>return_complete()<CR>
+" inoremap <expr> <TAB> <SID>tab_complete()
+" inoremap <expr> <CR> <SID>return_complete()
