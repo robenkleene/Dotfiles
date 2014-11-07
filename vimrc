@@ -14,6 +14,7 @@ endif
 " colorizer causes help files to open slowly
 let g:pathogen_disabled = []
 " let g:pathogen_disabled += ["ultisnips"]
+" let g:pathogen_disabled += ["neocomplete"]
 let g:pathogen_disabled += ["nerdcommenter"]
 let g:pathogen_disabled += ["vim-airline"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
@@ -21,14 +22,15 @@ syntax on
 filetype plugin indent on
 
 source ~/.vim/source/colorizer.vim
-source ~/.vim/source/neocomplete.vim
-source ~/.vim/source/ultisnips.vim
 source ~/.vim/source/ctrlp.vim
 source ~/.vim/source/restore_view.vim
 source ~/.vim/source/tabbar.vim
 " source ~/.vim/source/airline.vim
 source ~/.vim/source/syntastic.vim
 source ~/.vim/source/quickrun.vim
+source ~/.vim/source/neocomplete.vim
+source ~/.vim/source/ultisnips.vim
+source ~/.vim/source/neocomplete_ultisnips.vim
 
 " Temporary Directories {{{1
 " Swap File directory
