@@ -7,7 +7,6 @@ set wrap
 " set foldlevel=1
 
 " Commands
-
 " Markdown Preview
 " command! MarkdownPreview :execute '!mdprev '.shellescape(expand('%:p'), 1)
 " nnoremap <silent> <leader>p :MarkdownPreview<CR>\|:redraw!<CR>

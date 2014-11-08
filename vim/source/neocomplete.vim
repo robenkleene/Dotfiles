@@ -9,4 +9,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " AutoComplPop like behavior.
 let g:neocomplete#enable_auto_select = 1
-
+augroup neocompletebuffers
+    autocmd!
+    autocmd FileType markdown NeoCompleteLock
+augroup END
