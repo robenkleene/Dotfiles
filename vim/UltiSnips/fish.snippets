@@ -1,14 +1,15 @@
-snippet vimplugin
+snippet vimaddplugin
 cd $HOME/Dotfiles; git submodule add ${VISUAL/\n//} vim/bundle/${VISUAL/.*\/(.*)\.git/$1/}
 endsnippet
 
-snippet gpbo
-git push -u origin [branch name]
+snippet gitpushbranchorigin
+git push -u origin ${VISUAL/\n//}
 endsnippet
 
-snippet gcorb
-git checkout -b [branch name] origin/[branch name]
+snippet gitcheckoutoriginbranch
+git checkout -b ${VISUAL/\n//} origin/${VISUAL/\n//}
 endsnippet
 
-snippet gbd
+snippet gitpushdeleteoriginbranch
+git push origin --delete ${VISUAL/\n//}
 endsnippet

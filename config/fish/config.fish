@@ -182,6 +182,12 @@ end
 function vc
     vim -c "set ft=fish" 
 end
+function vcc
+    pbpaste | vim - -c "set ft=fish" 
+end
+function vcgb
+    git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish" 
+end
 # This doesn't work, might have hung
 # function tpvim
 #     tee /dev/tty | sh -c "cat | vim -g - > /dev/null 2>&1"
