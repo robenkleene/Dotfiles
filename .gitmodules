@@ -102,6 +102,7 @@
 [submodule "vim/bundle/vim-quickrun"]
 	path = vim/bundle/vim-quickrun
 	url = https://github.com/thinca/vim-quickrun.git
+	ignore = dirty
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
