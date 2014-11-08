@@ -105,7 +105,11 @@ endif
 " Open new split panes to right and bottom, which feels more natural
 " set splitbelow
 " set splitright
-
+" Open help splits in their own window
+augroup enteringhelp
+    autocmd!
+    autocmd FileType help wincmd o
+augroup END
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
