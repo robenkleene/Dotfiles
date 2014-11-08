@@ -3,6 +3,9 @@
 
 
 function! s:complete_expand()
+    " Can't find a way to reliably expand the snippet after dismissing the
+    " autocomplete box, instead just dismiss the box and then expand the
+    " snippet with another <TAB> 
     return neocomplete#close_popup() . <SID>expand_snippet_discard_result()
     " return neocomplete#close_popup() . UltiSnips#ExpandSnippet()
 endfunction

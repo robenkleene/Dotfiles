@@ -30,7 +30,7 @@ source ~/.vim/source/syntastic.vim
 source ~/.vim/source/quickrun.vim
 source ~/.vim/source/neocomplete.vim
 source ~/.vim/source/ultisnips.vim
-source ~/.vim/source/neocomplete_ultisnips.vim
+" source ~/.vim/source/neocomplete_ultisnips.vim
 
 " Temporary Directories {{{1
 " Swap File directory

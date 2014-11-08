@@ -1,7 +1,7 @@
 let g:neocomplete#enable_at_startup = 1
 
 " inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
-" inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
+inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
