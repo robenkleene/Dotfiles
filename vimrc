@@ -341,7 +341,8 @@ inoremap <silent> <C-L> <C-O>:nohlsearch<CR><C-O><C-L>
 " Sanity
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-
+noremap <Up> gk
+noremap <Down> gj
 " Ergonomic Bindings {{{1
 " Block hard keys
 " inoremap <C-[> <NOP>
