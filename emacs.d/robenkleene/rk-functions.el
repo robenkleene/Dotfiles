@@ -10,6 +10,10 @@
   (interactive)
   (dired "~/Development/Scratch"))
 
+(defun rk-bookmark-emacs ()
+  (interactive)
+  (dired "~/Dotfiles/emacs.d"))
+
 (defun rk-window-resize-for-shell ()
   "Resize current window for three fourths"
   (interactive)
