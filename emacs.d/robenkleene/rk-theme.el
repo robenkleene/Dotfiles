@@ -1,11 +1,12 @@
 (provide 'rk-theme)
 
 ;; Look & Feel
+(menu-bar-mode -1)
 
 ;; Frames
 (when window-system
-  (scroll-bar-mode -1)
   (tool-bar-mode 0)
+  (scroll-bar-mode -1)
   ;; (add-to-list 'default-frame-alist '(Top . 0))
   ;; (add-to-list 'default-frame-alist '(height . 60))
   )
