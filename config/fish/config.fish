@@ -56,7 +56,6 @@ set fish_user_abbreviations $fish_user_abbreviations 'gdn=git diff --name-only'
 set fish_user_abbreviations $fish_user_abbreviations 'gdm=git diff | mate'
 set fish_user_abbreviations $fish_user_abbreviations 'ga=git add'
 set fish_user_abbreviations $fish_user_abbreviations 'gb=git branch'
-set fish_user_abbreviations $fish_user_abbreviations 'gcb=git checkout -b'
 set fish_user_abbreviations $fish_user_abbreviations 'gm=git merge'
 set fish_user_abbreviations $fish_user_abbreviations 'gaa=git add --all :/'
 set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit'
@@ -65,6 +64,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gu=git pull'
 set fish_user_abbreviations $fish_user_abbreviations 'gpl=git pull'
 set fish_user_abbreviations $fish_user_abbreviations 'gl=git log'
 set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
+set fish_user_abbreviations $fish_user_abbreviations 'gcob=git checkout -b'
 set fish_user_abbreviations $fish_user_abbreviations 'gcl=git clone'
 set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit --amend'
 set fish_user_abbreviations $fish_user_abbreviations 'gcm=git commit -m'
@@ -73,6 +73,10 @@ set fish_user_abbreviations $fish_user_abbreviations 'gsi=git submodule init'
 set fish_user_abbreviations $fish_user_abbreviations 'gsu=git submodule update'
 set fish_user_abbreviations $fish_user_abbreviations 'gur=git pull --rebase'
 set fish_user_abbreviations $fish_user_abbreviations 'gpbo=git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+
+function git-push-branch-origin
+	git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
+end
 
 # egit
 function egitn
