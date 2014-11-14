@@ -78,6 +78,10 @@ function git-push-branch-origin
 	git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
 
+function git-diff-files-added-since-commit
+	git diff --name-only HEAD $argv[1]
+end
+
 # egit
 function egitn
     set --local EGITNEXT (egit -n)
@@ -137,10 +141,15 @@ function cleanopenwith
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
-
 # Ack
-function ackf
-  ack -ig "$argv[1]"
+# Note Ack only ever searches source code files, to search all files use find
+function ack-match-filename
+  ack -g $argv
+end
+
+# Find
+function find-filename
+	find . -not -path '*.git*' -name "$argv[1]"
 end
 
 # BBFind
