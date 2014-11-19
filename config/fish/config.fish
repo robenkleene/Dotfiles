@@ -82,6 +82,10 @@ function git-diff-files-added-since-commit
 	git diff --name-only HEAD $argv[1]
 end
 
+function git-log-name-only
+	git log --name-only
+end
+
 # egit
 function egitn
     set --local EGITNEXT (egit -n)
