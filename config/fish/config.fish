@@ -86,6 +86,10 @@ function git-log-name-only
 	git log --name-only
 end
 
+function git-checkout-branch-origin
+	git checkout -b $argv[1] origin/$argv[1]
+end
+
 # egit
 function egitn
     set --local EGITNEXT (egit -n)
