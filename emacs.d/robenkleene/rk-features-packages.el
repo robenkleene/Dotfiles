@@ -33,6 +33,16 @@
 (rk-install-package-if-missing 'key-chord)
 (require 'key-chord)
 (key-chord-mode 1)
+;; Evil Global Bindings
+(defvar rk-evil-global-minor-mode-map (make-keymap) "rk-evil-global-minor-mode map keymap.")
+(define-key rk-evil-global-minor-mode-map (kbd "C-w C-w") 'evil-window-next)
+(define-minor-mode rk-evil-global-minor-mode
+  "Global Evil bindings."
+  t
+  nil
+  'rk-evil-global-minor-mode)
+(rk-evil-global-minor-mode 1)
+
 ; (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
 ;; Undefine Some Keys in Insert Mode

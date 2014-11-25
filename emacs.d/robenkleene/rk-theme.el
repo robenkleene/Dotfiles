@@ -33,3 +33,6 @@
 ;; Cursor, Selection & Current Line
 (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
 (set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
+(global-hl-line-mode 1)
+(set-face-foreground 'highlight nil)
+(set-face-background 'hl-line "#222222")

@@ -4,6 +4,7 @@
   '(progn
      (set-face-foreground 'magit-diff-add "#95E452")
      (set-face-foreground 'magit-diff-del "#E5796A")
+     (set-face-background 'magit-item-highlight "#222222")
      (setq magit-status-buffer-switch-function 'switch-to-buffer)
      ))
 
