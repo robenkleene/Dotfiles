@@ -287,7 +287,7 @@ command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 " Key Commands {{{1
 
 " vimrc
-nnoremap <leader>ev :split $MYVIMRC<CR>
+" nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
@@ -320,7 +320,9 @@ nnoremap <leader>C :silent call <SID>CopyToSystemClipboardAndClean()<CR>
 nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 " Reveal Current File
-nnoremap <leader>f :silent !open -R "%:p"<CR>
+nnoremap <leader>f :silent !open -R "%:p"<CR>\|:redraw!<CR>
+" Open File in TextMate
+nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 " Open folder of current file
 " nnoremap <leader>o :!open .<CR>\|:redraw!<CR>
 " Copy contents of whole file
