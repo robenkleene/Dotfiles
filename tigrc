@@ -12,7 +12,9 @@ bind main T !@git difftool %(commit)^!
 # Below will work even if tig is opened from a subfolder, but it fails if the path has a space
 # bind status D !@sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\' | mate --async"
 bind status D !@sh -c "git diff '%(file)' | mate --async"
-bind status E !@sh -c "vim -g '%(file)'"
+# bind status E !@sh -c "vim -g '%(file)'"
+bind status E !@sh -c "mate --async '%(file)'"
+# bind status E !@mate %(file)
 
 # Editing
 bind status O !@open %(file)
