@@ -56,6 +56,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gdn=git diff --name-only'
 set fish_user_abbreviations $fish_user_abbreviations 'gdm=git diff | mate'
 set fish_user_abbreviations $fish_user_abbreviations 'ga=git add'
 set fish_user_abbreviations $fish_user_abbreviations 'gb=git branch'
+set fish_user_abbreviations $fish_user_abbreviations 'gbd=git branch -d'
 set fish_user_abbreviations $fish_user_abbreviations 'gm=git merge'
 set fish_user_abbreviations $fish_user_abbreviations 'gaa=git add --all :/'
 set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit'
@@ -89,6 +90,11 @@ end
 function git-checkout-branch-origin
 	git checkout -b $argv[1] origin/$argv[1]
 end
+
+function git-push-origin-delete
+  git push origin --delete $argv[1]
+end
+
 
 # egit
 function egitn
