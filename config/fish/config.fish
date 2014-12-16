@@ -95,6 +95,9 @@ function git-push-origin-delete
   git push origin --delete $argv[1]
 end
 
+function git-difftool-commit-minus-one
+	git difftool $argv[1] $argv[1]~1
+end
 
 # egit
 function egitn
