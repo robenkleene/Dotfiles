@@ -155,6 +155,12 @@ function cleanopenwith
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
+function cbp
+  pbpaste | less
+end
+
+
+
 # Ack
 # Note Ack only ever searches source code files, to search all files use find
 function ack-match-filename
