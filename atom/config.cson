@@ -9,6 +9,7 @@
       'metrics'
       'minimap'
       'emmet'
+      'vim-mode'
     ]
     'useReactEditor': true
   'tree-view':
@@ -38,4 +39,4 @@
     'commandModeInputViewFontSize': 16
   'editor':
     'tabLength': 4
-    'invisibles': {}
+  'linter': {}
