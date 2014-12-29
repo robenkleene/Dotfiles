@@ -99,6 +99,10 @@ function git-difftool-commit-minus-one
 	git difftool $argv[1] $argv[1]~1
 end
 
+function git-diff-binary-as-text
+	git diff --text $argv
+end
+
 # egit
 function egitn
     set --local EGITNEXT (egit -n)
