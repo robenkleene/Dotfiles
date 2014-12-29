@@ -99,6 +99,14 @@ function git-difftool-commit-minus-one
 	git difftool $argv[1] $argv[1]~1
 end
 
+function git-remote-remove-origin
+	git remote rm origin
+end
+
+function git-remote-add-origin
+	git remote add origin $argv
+end
+
 function git-diff-binary-as-text
 	git diff --text $argv
 end
