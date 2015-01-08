@@ -111,6 +111,10 @@ function git-diff-binary-as-text
 	git diff --text $argv
 end
 
+function git-log-unpushed-commits
+	git log @\{u\}..
+end
+
 # egit
 function egitn
     set --local EGITNEXT (egit -n)
