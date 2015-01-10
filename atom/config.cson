@@ -1,4 +1,4 @@
-'global':
+'*':
   'release-notes':
     'viewedVersion': '0.94.0'
   'welcome':
@@ -7,11 +7,10 @@
     'disabledPackages': [
       'exception-reporting'
       'metrics'
-      'minimap'
-      'emmet'
       'vim-mode'
+      'wrap-guide'
+      'emmet'
     ]
-    'useReactEditor': true
   'tree-view':
     'hideIgnoredNames': true
   'autocomplete':
@@ -39,4 +38,5 @@
     'commandModeInputViewFontSize': 16
   'editor':
     'tabLength': 4
+    'invisibles': {}
   'linter': {}
