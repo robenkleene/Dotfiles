@@ -19,6 +19,7 @@ bind status E !@sh -c "mate --async '%(file)'"
 # Editing
 bind status O !@open %(file)
 bind status A !@atom %(file)
+bind status F !@open --reveal %(file)
 
 # Launchbar
 # bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
