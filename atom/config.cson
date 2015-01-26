@@ -44,6 +44,14 @@
     showOnStartup: false
   metrics:
     userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
-  core: {}
+  core:
+    disabledPackages: [
+      "vim-mode"
+    ]
+    themes: [
+      "one-dark-ui"
+      "one-dark-syntax"
+    ]
   editor:
     invisibles: {}
+  linter: {}
