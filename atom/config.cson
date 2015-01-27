@@ -55,3 +55,7 @@
   editor:
     invisibles: {}
   linter: {}
+  "toggle-packages":
+    togglePackages: [
+      "wrap-guide"
+    ]
