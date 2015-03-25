@@ -1,5 +1,10 @@
 local hotkey = require "mjolnir.hotkey"
+
 local grid = require "mjolnir.bg.grid"
+
+-- package.path = '/Users/robenkleene/Development/Projects/Automation/mjolnir-edited/?.lua;'
+-- local grid = require "bg.grid"
+
 
 grid.GRIDWIDTH = 6
 grid.GRIDHEIGHT = 3
