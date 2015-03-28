@@ -2,7 +2,8 @@ local hotkey = require "mjolnir.hotkey"
 
 local grid = require "mjolnir.bg.grid"
 
--- package.path = '/Users/robenkleene/Development/Projects/Automation/mjolnir-edited/?.lua;'
+-- Debug
+-- package.path = '/Users/robenkleene/Development/Projects/Automation/window-manager-prototypes/mjolnir-edited/?.lua;'
 -- local grid = require "bg.grid"
 
 
