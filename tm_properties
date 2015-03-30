@@ -6,6 +6,9 @@ PATH = "$HOME/.rbenv/bin:$PATH"
 PATH = "/usr/local/share/npm/bin:$PATH"
 NODE_PATH = "/usr/local/share/npm/lib/node_modules:/usr/local/lib/node_modules:$NODE_PATH"
 
+# Exclude from Project Folder
+excludeDirectories = "{$excludeDirectories,node_modules}"
+
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
 
