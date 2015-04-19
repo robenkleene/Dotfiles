@@ -15,3 +15,7 @@ fileType = "source.tm-properties"
 [ *.coffee ]
 tabSize = 2  
 softTabs = true
+
+[ *.js ]
+tabSize = 2  
+softTabs = true
