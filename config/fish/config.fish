@@ -11,8 +11,9 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
-# nvm-fish
-source ~/.nvm-fish/nvm.fish
+# nvm-fish-wrapper
+set -x NVM_DIR ~/.nvm
+source ~/.config/fish/nvm-wrapper/nvm.fish
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
