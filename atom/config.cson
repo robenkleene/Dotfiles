@@ -47,6 +47,10 @@
   core:
     disabledPackages: [
       "vim-mode"
+      "coffee-refactor"
+      "js-refactor"
+      "refactor"
+      "script"
     ]
     themes: [
       "one-dark-ui"

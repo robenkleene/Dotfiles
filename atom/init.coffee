@@ -19,15 +19,15 @@ process.env.ATOM_PATH = process.env.HOME + "/Applications/"
 # console.log process.env
 
 # Open in Default Application
-atom.workspaceView.command 'roben-kleene:open-in-default-application', ->
-  editor = atom.workspace.activePaneItem
+atom.commands.add 'atom-text-editor', 'roben-kleene:open-in-default-application', ->
+  editor = atom.workspace.getActiveTextEditor()
   filepath = editor.getBuffer().getPath()
   exec = require('child_process').exec
   exec "open \"#{filepath}\""
 
 # Open in Terminal
-atom.workspaceView.command 'roben-kleene:open-in-terminal', ->
-  editor = atom.workspace.activePaneItem
+atom.commands.add 'atom-text-editor', 'roben-kleene:open-in-terminal', ->
+  editor = atom.workspace.getActiveTextEditor()
   filepath = editor.getBuffer().getPath()
   path = require('path')
   dirpath = path.dirname(filepath)
@@ -35,23 +35,23 @@ atom.workspaceView.command 'roben-kleene:open-in-terminal', ->
   exec "open -a Terminal \"#{dirpath}\""
 
 # Reveal in Finder
-atom.workspaceView.command 'roben-kleene:reveal-in-finder', ->
-  editor = atom.workspace.activePaneItem
+atom.commands.add 'atom-text-editor', 'roben-kleene:reveal-in-finder', ->
+  editor = atom.workspace.getActiveTextEditor()
   filepath = editor.getBuffer().getPath()
   exec = require('child_process').exec
   exec "open -R \"#{filepath}\""
 
 # Send to LaunchBar
-atom.workspaceView.command 'roben-kleene:send-to-launchbar', ->
-  editor = atom.workspace.activePaneItem
+atom.commands.add 'atom-text-editor', 'roben-kleene:send-to-launchbar', ->
+  editor = atom.workspace.getActiveTextEditor()
   filepath = editor.getBuffer().getPath()
   exec = require('child_process').exec
   exec "osascript -e 'tell application \"LaunchBar\" to open \"#{filepath}\"'"
 
 # Open Scratch For Scope
-atom.workspaceView.command 'roben-kleene:open-scratch-for-scope', ->
+atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
   scratchpath = process.env.HOME + "/Development/Scratch/Atom/"
-  editor = atom.workspace.activePaneItem
+  editor = atom.workspace.getActiveTextEditor()
   scope = editor.getGrammar()?.scopeName
   if scope
     filepath = scratchpath + scope
