@@ -1,9 +1,14 @@
 # top-most EditorConfig file
 root = true
 
-[*]
-indent_style = space
-indent_size = 4
+# All Files
+# [*]
+# indent_size = 4
 
 [*.coffee]
+indent_style = space
+indent_size = 2
+
+[*.js]
+indent_style = space
 indent_size = 2
