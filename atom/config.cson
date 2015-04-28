@@ -50,11 +50,12 @@
       "js-refactor"
       "refactor"
       "script"
-      "vim-mode"
       "emmet"
+      "vim-mode"
     ]
   editor:
     invisibles: {}
+    fontSize: 13
   linter: {}
   "toggle-packages":
     togglePackages: [
