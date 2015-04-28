@@ -51,6 +51,7 @@
       "refactor"
       "script"
       "vim-mode"
+      "emmet"
     ]
   editor:
     invisibles: {}
@@ -58,6 +59,8 @@
   "toggle-packages":
     togglePackages: [
       "vim-mode"
+      "emmet"
     ]
   "tree-view":
     hideIgnoredNames: true
+  Zen: {}
