@@ -7,3 +7,4 @@
 !/init.coffee
 !/keymap.cson
 !/styles.less
+!/snippets.cson

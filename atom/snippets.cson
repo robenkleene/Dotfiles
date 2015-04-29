@@ -1,0 +1,9 @@
+'.source.coffee':
+  'Print Variable':
+    'prefix': 'pv'
+    'body': 'console.log "$1 = " + $1'
+
+'.source.js':
+  'Print Variable':
+    'prefix': 'pv'
+    'body': 'console.log("$1 = " + $1);'
