@@ -7,12 +7,17 @@
 # An example hack to make opened Markdown files always be soft wrapped:
 #
 
-nodepath = process.env.HOME + "/Dotfiles/nvm-fish/v0.11.10/bin"
-npmpath = "/usr/local/share/npm/bin"
+nodepath = process.env.HOME + "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin"
 localbinpath = "/usr/local/bin"
-process.env.PATH = [nodepath, npmpath, localbinpath, process.env.PATH].join(':')
+process.env.PATH = [nodepath, localbinpath, process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
 # process.env.ATOM_REPOS_HOME = process.env.HOME + "/Development/Projects/Atom"
+
+# The `linter-coffeelint` package no longer supports the `COFFEELINT_CONFIG`
+# environment variable because internally it uses `configfinder.coffee` to find
+# a config rather than the command line program, which is the only place where
+# `COFFEELINT_CONFIG` is supported. This is left in in case it starts working
+# in the future.
 process.env.COFFEELINT_CONFIG = process.env.HOME + "/.coffeelint.json"
 process.env.ATOM_PATH = process.env.HOME + "/Applications/"
 
