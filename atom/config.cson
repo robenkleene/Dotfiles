@@ -65,3 +65,5 @@
   "tree-view":
     hideIgnoredNames: true
   Zen: {}
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
