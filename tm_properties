@@ -8,6 +8,7 @@ NODE_PATH = "/usr/local/share/npm/lib/node_modules:/usr/local/lib/node_modules:$
 
 # Exclude from Project Folder
 excludeDirectories = "{$excludeDirectories,node_modules}"
+exclude = "{$exclude,tags}"
 
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
