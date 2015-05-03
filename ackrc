@@ -1,1 +1,2 @@
 --type-set=maxpat=.maxpat
+--ignore-file=match:tags
