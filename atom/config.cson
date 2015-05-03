@@ -67,3 +67,4 @@
   Zen: {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
