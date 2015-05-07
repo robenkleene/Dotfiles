@@ -2,8 +2,10 @@
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
-set -x EDITOR vim
-function EDITOR; vim $argv; end
+set -x EDITOR mate
+
+# set -x EDITOR vim
+# function EDITOR; vim $argv; end
 
 
 # rbenv
