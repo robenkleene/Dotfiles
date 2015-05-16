@@ -17,7 +17,7 @@
 #   'ctrl-p': 'core:move-down'
 #
 
-'.workspace .editor':
+'atom-text-editor':
   'ctrl-w': 'editor:delete-to-beginning-of-word'
   'alt-v': 'core:page-up'
   'alt-V': 'core:select-to-top'
