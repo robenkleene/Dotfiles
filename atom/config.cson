@@ -51,13 +51,17 @@
       "refactor"
       "script"
       "emmet"
-      "vim-mode"
       "metrics"
+      "vim-mode"
     ]
   editor:
-    invisibles: {}
+    invisibles:
+      {}
     fontSize: 13
-  linter: {}
+  linter:
+    subtleLinterErrors: [
+      "jshint"
+    ]
   "toggle-packages":
     togglePackages: [
       "vim-mode"
@@ -65,7 +69,11 @@
     ]
   "tree-view":
     hideIgnoredNames: true
-  Zen: {}
+    hideVcsIgnoredFiles: true
+  Zen:
+    {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
+  "linter-jshint":
+    {}
