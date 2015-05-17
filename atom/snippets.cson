@@ -7,3 +7,10 @@
   'Print Variable':
     'prefix': 'pv'
     'body': 'console.log("$1 = " + $1);'
+  'Iterate Node List':
+    'prefix': 'inl'
+    "body": """
+    for (var i = nodeList.length - 1; i >= 0; --i) {
+    \tvar element = nodeList[i];
+    }
+    """
