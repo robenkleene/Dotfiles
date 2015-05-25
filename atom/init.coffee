@@ -23,6 +23,11 @@ process.env.ATOM_PATH = process.env.HOME + "/Applications/"
 
 # console.log process.env
 
+# Hide Tree View
+workspaceView = atom.views.getView(atom.workspace)
+if (workspaceView.querySelector('.tree-view'))
+  atom.commands.dispatch(workspaceView, 'tree-view:toggle')
+
 # Open in Default Application
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-in-default-application', ->
   editor = atom.workspace.getActiveTextEditor()

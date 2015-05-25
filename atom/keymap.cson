@@ -19,6 +19,7 @@
 
 'atom-text-editor':
   'ctrl-w': 'editor:delete-to-beginning-of-word'
+  'cmd-alt-w': 'editor:toggle-soft-wrap'
   'alt-v': 'core:page-up'
   'alt-V': 'core:select-to-top'
   'ctrl-v': 'core:page-down'
