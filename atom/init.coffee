@@ -6,8 +6,8 @@
 #
 # An example hack to make opened Markdown files always be soft wrapped:
 #
-
-nodepath = process.env.HOME + "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin"
+path = require 'path'
+nodepath = path.join(process.env.HOME, ".nvm/versions/node/v0.12.2/bin")
 localbinpath = "/usr/local/bin"
 process.env.PATH = [nodepath, localbinpath, process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
