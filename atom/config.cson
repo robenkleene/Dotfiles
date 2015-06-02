@@ -1,43 +1,4 @@
 "*":
-  "*":
-    "release-notes":
-      viewedVersion: "0.94.0"
-    welcome:
-      showOnStartup: false
-    core:
-      disabledPackages: [
-        "exception-reporting"
-        "metrics"
-        "vim-mode"
-        "emmet"
-      ]
-    "tree-view":
-      hideIgnoredNames: true
-    autocomplete:
-      includeCompletionsFromAllBuffers: true
-    "find-and-replace":
-      openProjectFindResultsInRightPane: true
-      focusEditorAfterSearch: true
-    "toggle-packages":
-      togglePackages: [
-        "emmet"
-      ]
-    "coffee-refactor":
-      highlightReference: false
-    "package-generator":
-      createInDevMode: true
-    refactor:
-      highlightReference: false
-      highlightError: false
-    preview:
-      _analyticsUserId: " "
-      updateOnTabChange: false
-    "coffee-compile":
-      focusEditorAfterCompile: true
-    "vim-mode":
-      commandModeInputViewFontSize: 16
-    editor:
-      tabLength: 4
   "exception-reporting":
     userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
   welcome:
@@ -46,10 +7,9 @@
     userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
   core:
     disabledPackages: [
-      "js-refactor"
       "emmet"
       "metrics"
-      "vim-mode"
+      "exception-reporting"
     ]
   editor:
     invisibles:
@@ -74,5 +34,5 @@
     useSmartcaseForSearch: true
   "linter-jshint":
     {}
-  "coffee-refactor":
+  "autocomplete-plus":
     {}
