@@ -19,6 +19,7 @@
   linter:
     subtleLinterErrors: [
       "jshint"
+      "scss-lint"
     ]
   "toggle-packages":
     togglePackages: [
