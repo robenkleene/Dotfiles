@@ -196,12 +196,7 @@ end
 
 # BBFind
 function bbf
-  switch (count $argv)
-      case 1
-          bbfind --grep --gui --case-sensitive "$argv[1]" .
-      case '*'
-          bbfind --grep --gui --case-sensitive $argv
-  end
+	bbfind --grep --gui $argv .
 end
 # BBFind Files
 function bbff
