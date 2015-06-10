@@ -71,7 +71,7 @@ set smartcase
 " Don't let smartase affect autocomplete
 set infercase
 " Indented Line-breaks
-set breakindent
+" set breakindent
 " netrw split
 let g:netrw_preview = 1
 " Open help splits in their own window
