@@ -10,27 +10,11 @@ endif
 
 " Pathogen
 " Disable Plugins
-"let g:pathogen_disabled = ["vim-commentary"]
-" colorizer causes help files to open slowly
 let g:pathogen_disabled = []
-" let g:pathogen_disabled += ["ultisnips"]
-" let g:pathogen_disabled += ["neocomplete"]
-let g:pathogen_disabled += ["nerdcommenter"]
-let g:pathogen_disabled += ["vim-airline"]
+"let g:pathogen_disabled = ["vim-commentary"]
 execute pathogen#infect('bundle/{}', 'plugin/{}')
 syntax on
 filetype plugin indent on
-
-source ~/.vim/source/colorizer.vim
-source ~/.vim/source/ctrlp.vim
-source ~/.vim/source/restore_view.vim
-source ~/.vim/source/tabbar.vim
-" source ~/.vim/source/airline.vim
-source ~/.vim/source/syntastic.vim
-source ~/.vim/source/quickrun.vim
-source ~/.vim/source/neocomplete.vim
-source ~/.vim/source/ultisnips.vim
-" source ~/.vim/source/neocomplete_ultisnips.vim
 
 " Temporary Directories {{{1
 " Swap File directory
@@ -56,13 +40,6 @@ set clipboard=unnamed
 " let mapleader=" "
 " Allow hidden buffers
 set hidden
-" set list
-" Tabs
-" Now set with `.editorconfig`
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
-" set expandtab
 " Text
 set nowrap
 " Show 80 character bar
@@ -97,19 +74,12 @@ set infercase
 set breakindent
 " netrw split
 let g:netrw_preview = 1
-" `ag` as grep when available
-if executable('ag')
-    " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-endif
-" Open new split panes to right and bottom, which feels more natural
-" set splitbelow
-" set splitright
 " Open help splits in their own window
-augroup enteringhelp
-    autocmd!
-    autocmd FileType help wincmd o
-augroup END
+" augroup enteringhelp
+"     autocmd!
+"     autocmd FileType help wincmd o
+" augroup END
+
 " Normalizing Movement Key Commands {{{1
 
 " Kill line
