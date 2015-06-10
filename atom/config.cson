@@ -10,7 +10,6 @@
       "emmet"
       "metrics"
       "exception-reporting"
-      "vim-mode"
     ]
   editor:
     invisibles:
