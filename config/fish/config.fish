@@ -16,14 +16,21 @@ rbenv rehash >/dev/null ^&1
 # nvm-fish-wrapper
 set -x NVM_DIR ~/.nvm
 source ~/.config/fish/nvm-wrapper/nvm.fish
+# This is a hack to get the default nvm alias working for new shells
+# it causes a window to load slowly, all that xargs stuff when creating
+# a new window is caused by this. I can try removing it when there's a new
+# version of `nvm-wrapper`
+if status --is-login
+	if test -f ~/.config/fish/nvm-wrapper/nvm.fish
+		if test (nvm current) = none -a -n (nvm alias default)
+			nvm use default 2>&1 >/dev/null
+		end
+	end
+end
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
 set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
-
-# Node
-# set -x NODE_PATH /usr/local/share/npm/lib/node_modules /usr/local/lib/node_modules
-# set PATH /usr/local/share/npm/bin $PATH
 
 # Coffeelint
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
@@ -164,8 +171,8 @@ function ranger-cd
   end
   rm -f $tempfile
 end
-function fish_user_key_bindings                                                  
-    bind \co 'ranger-cd ; fish_prompt'                                           
+function fish_user_key_bindings
+    bind \co 'ranger-cd ; fish_prompt'
 end
 function rc
   ranger-cd
@@ -231,13 +238,13 @@ function pvim
     sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 function vc
-    vim -c "set ft=fish" 
+    vim -c "set ft=fish"
 end
 function vcc
-    pbpaste | vim - -c "set ft=fish" 
+    pbpaste | vim - -c "set ft=fish"
 end
 function vcgb
-    git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish" 
+    git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish"
 end
 # This doesn't work, might have hung
 # function tpvim
