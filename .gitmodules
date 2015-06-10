@@ -46,3 +46,6 @@
 [submodule "config/fish/nvm-wrapper"]
 	path = config/fish/nvm-wrapper
 	url = git://github.com/passcod/nvm-fish-wrapper.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
