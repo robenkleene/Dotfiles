@@ -212,11 +212,14 @@ set statusline+=%m
 " Filetype
 set statusline+=\ %y
 " Syntastic
-set statusline+=\ 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=\ 
+if exists(':SyntasticStatuslineFlag')
+  set statusline+=\ 
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  set statusline+=\ 
+endif
+
 " Switch to right
 set statusline+=%=
 " Line
@@ -226,7 +229,9 @@ set statusline+=\ C%c
 " Location
 set statusline+=\ %P
 " Git status
-set statusline+=\ %{fugitive#statusline()}
+if exists(':fugitive')
+  set statusline+=\ %{fugitive#statusline()}
+endif
 " Space Buffer
 set statusline+=\ 
 
