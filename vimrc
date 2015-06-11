@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'dag/vim-fish.git'
+call vundle#end()
 filetype plugin indent on
 
 
