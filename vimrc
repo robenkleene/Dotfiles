@@ -7,14 +7,29 @@ if &shell =~# 'fish$'
 endif
 
 " Plugins {{{1
-
-" Pathogen
-" Disable Plugins
-let g:pathogen_disabled = []
-"let g:pathogen_disabled = ["vim-commentary"]
-execute pathogen#infect('bundle/{}', 'plugin/{}')
-syntax on
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'airblade/vim-gitgutter'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
 filetype plugin indent on
+
 
 " Temporary Directories {{{1
 " Swap File directory
@@ -33,7 +48,7 @@ let &viewdir=s:viewdir_directory
 
 
 " Basic {{{1
-set nocompatible
+syntax on
 " Use system clipboard by default
 set clipboard=unnamed 
 " let mapleader = ','
