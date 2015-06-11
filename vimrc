@@ -28,6 +28,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
+Plugin 'dag/vim-fish.git'
 filetype plugin indent on
 
 
@@ -198,7 +199,7 @@ endif
 
  
 " Status Line {{{1
-
+set laststatus=2
 " Space Buffer
 set statusline=\ 
 " Working Directory
