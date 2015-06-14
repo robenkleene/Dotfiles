@@ -10,10 +10,12 @@
       "emmet"
       "metrics"
       "exception-reporting"
+      "vim-mode"
     ]
   editor:
     invisibles: {}
-    fontSize: 13
+    fontSize: 14
+    lineHeight: 1.2
   linter:
     subtleLinterErrors: [
       "jshint"
