@@ -2,11 +2,14 @@
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
-set -x EDITOR mate
-
-# set -x EDITOR vim
+set -x EDITOR vim
 # function EDITOR; vim $argv; end
+# set -x EDITOR mate
 
+# Facebook Path Picker
+# Don't let `fpp` open files in splits
+# Ugh, this breaks opening with line numbers
+# set -x FPP_EDITOR "vim "
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
