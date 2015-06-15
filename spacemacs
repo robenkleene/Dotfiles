@@ -45,6 +45,7 @@
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
+
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -67,8 +68,8 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(tsdh-dark
-   			 solarized-dark
-   			 solarized-light
+                         solarized-dark
+                         solarized-light
                          leuven
                          monokai
                          zenburn)
@@ -154,6 +155,8 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  ;; Disable powerline separator because it isn't included with default fonts
+  (setq powerline-default-separator 'nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
