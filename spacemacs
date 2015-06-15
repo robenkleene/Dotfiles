@@ -77,11 +77,17 @@ before layers configuration."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   ;; dotspacemacs-default-font '("Source Code Pro"
+                               ;; :size 13
+                               ;; :weight normal
+                               ;; :width normal
+                               ;; :powerline-scale 1.1)
+   dotspacemacs-default-font '("Menlo"
                                :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
+
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -128,7 +134,8 @@ before layers configuration."
    ;; Transparency can be toggled through `toggle-transparency'.
    dotspacemacs-inactive-transparency 90
    ;; If non nil unicode symbols are displayed in the mode line.
-   dotspacemacs-mode-line-unicode-symbols t
+   ;; dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen.
@@ -149,7 +156,11 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  )
+  (defun rk-transparent-background-in-terminal ()
+    (unless (display-graphic-p (selected-frame))
+      (set-face-background 'default "unspecified-bg" (selected-frame))))
+  (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
+)
 
 (defun dotspacemacs/config ()
   "Configuration function.
@@ -157,6 +168,7 @@ before layers configuration."
 layers configuration."
   ;; Disable powerline separator because it isn't included with default fonts
   (setq powerline-default-separator 'nil)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
