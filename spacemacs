@@ -9,7 +9,7 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -28,6 +28,8 @@
      ;; org
      ;; shell
      ;; syntax-checking
+     robenkleene
+     evil-commentary
      )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -156,10 +158,10 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  (defun rk-transparent-background-in-terminal ()
-    (unless (display-graphic-p (selected-frame))
-      (set-face-background 'default "unspecified-bg" (selected-frame))))
-  (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
+  ;; (defun rk-transparent-background-in-terminal ()
+  ;;   (unless (display-graphic-p (selected-frame))
+  ;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
+  ;; (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
 )
 
 (defun dotspacemacs/config ()
