@@ -218,14 +218,18 @@ end
 # function ec
 #   emacsclient --create-frame --no-wait $argv
 # end
-function ec
-	emacsclient --no-wait $argv
-end
+# function ec
+#   emacsclient --no-wait $argv
+# end
 # Emacs Client Magit
 # function gc
 # 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 # end
 # Emacs Magit
+function ec
+	emacsclient -t $argv
+end
+
 function magit
 	emacs --eval "(rk-magit-status-startup)"
 end
