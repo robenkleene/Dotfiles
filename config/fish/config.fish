@@ -23,13 +23,13 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 # it causes a window to load slowly, all that xargs stuff when creating
 # a new window is caused by this. I can try removing it when there's a new
 # version of `nvm-wrapper`
-if status --is-login
-	if test -f ~/.config/fish/nvm-wrapper/nvm.fish
-		if test (nvm current) = none -a -n (nvm alias default)
-			nvm use default 2>&1 >/dev/null
-		end
-	end
-end
+# if status --is-login
+# 	if test -f ~/.config/fish/nvm-wrapper/nvm.fish
+# 		if test (nvm current) = none -a -n (nvm alias default)
+# 			nvm use default 2>&1 >/dev/null
+# 		end
+# 	end
+# end
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
