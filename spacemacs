@@ -31,6 +31,9 @@
      robenkleene
      evil-commentary
      markdown
+     shell
+     (shell :variables
+            shell-default-shell 'eshell)
      git
      (git :variables
           git-magit-status-fullscreen t)
