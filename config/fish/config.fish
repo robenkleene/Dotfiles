@@ -37,7 +37,7 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 function nvm-use-default
   nvm use default
 end
-set fish_user_abbreviations $fish_user_abbreviations 'nud=node use default'
+set fish_user_abbreviations $fish_user_abbreviations 'nud=nvm use default'
 
 # Emacs
 # Start the server in the background if it isn't running
