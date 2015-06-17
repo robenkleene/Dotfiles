@@ -31,12 +31,42 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 # 	end
 # end
 
+# Emacs
+# Start the server in the background if it isn't running
+set -x ALTERNATE_EDITOR ""
+function ec
+	emacsclient -t $argv
+end
+function is_emacs_server_running
+    ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
+    return test $status -eq 0
+end
+if is_emacs_server_running
+  set fish_greeting "Emacs server is running"
+else
+  set fish_greeting
+end
+# Magit
+# function magit
+# 	emacs --eval "(rk-magit-status-startup)"
+# end
+# function gc
+# 	emacsclient -c -n --eval "(rk-magit-status-startup)"
+# end
+function emacs-stop-server
+    emacsclient -e '(kill-emacs)'
+end
+
 # Atom
 set -x ATOM_PATH $HOME/Applications/
 set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
 
 # Coffeelint
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
+
+# Edit Dotfiles
+set -x FISH_CONFIG_PATH $HOME/Dotfiles/config/fish/config.fish
+set fish_user_abbreviations $fish_user_abbreviations 'edf=EDITOR $FISH_CONFIG_PATH'
 
 # Prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -145,19 +175,10 @@ end
 # Hub
 set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
 set fish_user_abbreviations $fish_user_abbreviations 'hbc=hub browse -- commits'
-# function hbc
-#   hub browse -- commits
-# end
-
-# Git Tower
-# set fish_user_abbreviations $fish_user_abbreviations 'gt=gittower .'
 
 # Navigation
 function o
   open .
-end
-function re
-  open -R .
 end
 function -
   cd -
@@ -191,8 +212,6 @@ function cbp
   pbpaste | less
 end
 
-
-
 # Ack
 # Note Ack only ever searches source code files, to search all files use find
 function ack-match-filename
@@ -204,35 +223,15 @@ function find-filename
 	find . -not -path '*.git*' -name "$argv[1]"
 end
 
-# BBFind
+# BBEdit
 function bbf
 	bbfind --grep --gui $argv .
 end
-# BBFind Files
+
 function bbff
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
 end
 
-# Emacs Client
-# Creates a new window
-# function ec
-#   emacsclient --create-frame --no-wait $argv
-# end
-# function ec
-#   emacsclient --no-wait $argv
-# end
-# Emacs Client Magit
-# function gc
-# 	emacsclient -c -n --eval "(rk-magit-status-startup)"
-# end
-# Emacs Magit
-function ec
-	emacsclient -t $argv
-end
-
-function magit
-	emacs --eval "(rk-magit-status-startup)"
-end
 
 # wcsearch
 # function sea
@@ -263,5 +262,3 @@ function hl
   highlight -O ansi "$argv[1]"
 end
 
-# Edit Dotfiles
-set fish_user_abbreviations $fish_user_abbreviations 'edf=EDITOR ~/Dotfiles/config/fish/config.fish'
