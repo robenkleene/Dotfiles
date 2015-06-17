@@ -188,11 +188,18 @@ layers configuration."
   (require 'helm-swoop)
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
 
+  (custom-set-faces
+   '(diff-added ((t (:foreground "#95E452" :background nil :inherit nil))))
+   '(diff-removed ((t (:foreground "#E5796A" :background nil :inherit nil)))))
+
   (eval-after-load 'magit
-    '(progn
-       (set-face-foreground 'magit-diff-add "#95E452")
-       (set-face-foreground 'magit-diff-del "#E5796A")
-       (set-face-background 'magit-item-highlight "#444444")
+     '(progn
+  ;;      (set-face-foreground 'magit-diff-add "#95E452")
+  ;;      ;; (set-face-background 'magit-diff-add "unspecified-bg") ;; How to specify transparent
+  ;;      (set-face-background 'magit-diff-add "#333333")
+  ;;      (set-face-foreground 'magit-diff-del "#E5796A")
+  ;;      (set-face-background 'magit-diff-del "#333333")
+        (set-face-background 'magit-item-highlight "#333333")
        ))
   ;; Line Numbers interfere with git gutter
   ;; (global-linum-mode t)

@@ -1,3 +1,6 @@
+# Start abbrevations here so they can be added to later
+set -U fish_user_abbreviations 'g=git'
+
 # Environment Variables
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
@@ -30,6 +33,11 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 # 		end
 # 	end
 # end
+# Temporary solution for above
+function nvm-use-default
+  nvm use default
+end
+set fish_user_abbreviations $fish_user_abbreviations 'nud=node use default'
 
 # Emacs
 # Start the server in the background if it isn't running
@@ -37,10 +45,10 @@ set -x ALTERNATE_EDITOR ""
 function ec
 	emacsclient -t $argv
 end
-function is_emacs_server_running
+function is-emacs-server-running
     ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
 end
-if is_emacs_server_running
+if is-emacs-server-running
   set fish_greeting "Emacs server is running"
 else
   set fish_greeting
@@ -90,7 +98,6 @@ function fish_right_prompt
 end
 
 # Git
-set -U fish_user_abbreviations 'g=git'
 set fish_user_abbreviations $fish_user_abbreviations 'gs=git status'
 set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
 set fish_user_abbreviations $fish_user_abbreviations 'gdt=git difftool'
