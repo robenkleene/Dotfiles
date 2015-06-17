@@ -188,6 +188,12 @@ layers configuration."
   (require 'helm-swoop)
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
 
+  (eval-after-load 'magit
+    '(progn
+       (set-face-foreground 'magit-diff-add "#95E452")
+       (set-face-foreground 'magit-diff-del "#E5796A")
+       (set-face-background 'magit-item-highlight "#222222")
+       ))
   ;; Line Numbers interfere with git gutter
   ;; (global-linum-mode t)
 
