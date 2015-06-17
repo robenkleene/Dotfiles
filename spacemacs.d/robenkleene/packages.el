@@ -22,6 +22,10 @@
                                       powerline
                                       ))
 
+;; Like tpope vinegar
+(define-key evil-normal-state-map "-" 'dired-jump)
+(define-key dired-mode-map (kbd "-") 'dired-up-directory) 
+
 ;; For each package, define a function robenkleene/init-<package-robenkleene>
 ;;
 ;; (defun robenkleene/init-my-package ()
