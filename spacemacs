@@ -176,7 +176,29 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   ;; Disable powerline separator because it isn't included with default fonts
-  (setq powerline-default-separator 'nil)
+  ;; (setq powerline-default-separator 'nil)
+
+
+  ;; Like tpope vinegar
+  ;; (define-key evil-normal-state-map "-" 'dired-jump)
+  ;; (define-key dired-mode-map (kbd "-") 'dired-up-directory) 
+  ;; (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
+
+  ;; Line Numbers interfere with git gutter
+  ;; (global-linum-mode t)
+
+  ;; Misc
+  ;; (set-cursor-color "#E57969")
+  ;;(global-hl-line-mode t) ;; Highlight current line
+  ;; (global-linum-mode 1) ;; Line numbers
+  ;; Offset the number by two spaces to work around some weird fringe glitch
+  ;; (setq linum-format "  %d ")
+  ;; Cursor, Selection & Current Line
+  ;; (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
+  ;; (set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
+  ;; (global-hl-line-mode 1)
+  ;; (set-face-foreground 'highlight nil)
+  ;; (set-face-background 'hl-line "#333333")
 
 )
 
