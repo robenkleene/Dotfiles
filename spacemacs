@@ -192,7 +192,7 @@ layers configuration."
     '(progn
        (set-face-foreground 'magit-diff-add "#95E452")
        (set-face-foreground 'magit-diff-del "#E5796A")
-       (set-face-background 'magit-item-highlight "#222222")
+       (set-face-background 'magit-item-highlight "#444444")
        ))
   ;; Line Numbers interfere with git gutter
   ;; (global-linum-mode t)
