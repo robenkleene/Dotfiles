@@ -25,6 +25,8 @@
 ;; Like tpope vinegar
 (define-key evil-normal-state-map "-" 'dired-jump)
 (define-key dired-mode-map (kbd "-") 'dired-up-directory) 
+(define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
+
 
 ;; For each package, define a function robenkleene/init-<package-robenkleene>
 ;;
