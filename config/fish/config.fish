@@ -39,7 +39,6 @@ function ec
 end
 function is_emacs_server_running
     ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
-    return test $status -eq 0
 end
 if is_emacs_server_running
   set fish_greeting "Emacs server is running"
