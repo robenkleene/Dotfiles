@@ -192,8 +192,8 @@ layers configuration."
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
 
   (custom-set-faces
-   '(diff-added ((t (:foreground "#95E452" :background nil :inherit nil))))
-   '(diff-removed ((t (:foreground "#E5796A" :background nil :inherit nil)))))
+   '(diff-added ((t (:foreground "#45CA34" :background nil :inherit nil))))
+   '(diff-removed ((t (:foreground "#DA4D31" :background nil :inherit nil)))))
 
   (eval-after-load 'magit
      '(progn
