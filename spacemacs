@@ -28,6 +28,7 @@
      ;; org
      ;; shell
      ;; syntax-checking
+     auto-completion
      robenkleene
      evil-commentary
      markdown
@@ -45,7 +46,9 @@
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    magit-gitflow
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
@@ -55,6 +58,7 @@
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
+
 
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
@@ -168,10 +172,6 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  ;; (defun rk-transparent-background-in-terminal ()
-  ;;   (unless (display-graphic-p (selected-frame))
-  ;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
-  ;; (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
 )
 
 (defun dotspacemacs/config ()
@@ -181,45 +181,42 @@ layers configuration."
   ;; Disable powerline separator because it isn't included with default fonts
   ;; (setq powerline-default-separator 'nil)
 
+  ;; Theme
+  (defun rk-transparent-background-in-terminal ()
+    (unless (display-graphic-p (selected-frame))
+      (set-face-background 'default "unspecified-bg" (selected-frame))
+      )
+    )
+  (add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
+  (add-hook 'server-visit-hook 'rk-transparent-background-in-terminal)
+  ;; Line Numbers interfere with git gutter
+  ;; (global-linum-mode t)
+  ;; Cursor
+  (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
+  (set-face-foreground 'highlight nil)
+  (set-face-background 'hl-line "#444444")
 
-  ;; Like tpope vinegar
+  ;; Dired
   (require 'dired)
   (define-key evil-normal-state-map "-" 'dired-jump)
   (define-key dired-mode-map (kbd "-") 'dired-up-directory) 
 
-
+  ;; Helm
   (require 'helm-swoop)
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
 
+  ;; Diff
   (custom-set-faces
    '(diff-added ((t (:foreground "#45CA34" :background nil :inherit nil))))
    '(diff-removed ((t (:foreground "#DA4D31" :background nil :inherit nil)))))
 
+  ;; Magit
   (eval-after-load 'magit
      '(progn
-  ;;      (set-face-foreground 'magit-diff-add "#95E452")
-  ;;      ;; (set-face-background 'magit-diff-add "unspecified-bg") ;; How to specify transparent
-  ;;      (set-face-background 'magit-diff-add "#333333")
-  ;;      (set-face-foreground 'magit-diff-del "#E5796A")
-  ;;      (set-face-background 'magit-diff-del "#333333")
         (set-face-background 'magit-item-highlight "#333333")
+        (define-key magit-status-mode-map (kbd "C-b") 'evil-scroll-page-up)
+        (define-key magit-status-mode-map (kbd "C-f") 'evil-scroll-page-down)
        ))
-  ;; Line Numbers interfere with git gutter
-  ;; (global-linum-mode t)
-
-  ;; Misc
-  ;; (set-cursor-color "#E57969")
-  ;;(global-hl-line-mode t) ;; Highlight current line
-  ;; (global-linum-mode 1) ;; Line numbers
-  ;; Offset the number by two spaces to work around some weird fringe glitch
-  ;; (setq linum-format "  %d ")
-  ;; Cursor, Selection & Current Line
-  (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
-  ;; (set-face-attribute 'region nil :foreground "#ADD8E6" :background "#555555")
-  ;; (global-hl-line-mode 1)
-  (set-face-foreground 'highlight nil)
-  (set-face-background 'hl-line "#444444")
-
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
