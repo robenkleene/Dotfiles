@@ -36,6 +36,7 @@
      shell
      (shell :variables
             shell-default-shell 'eshell)
+     shell-scripts
      git
      (git :variables
           git-magit-status-fullscreen t)
@@ -186,6 +187,7 @@ layers configuration."
 
   ;; Theme
   (defconst robenkleene/highlight-background-color "#000000")
+  (defconst robenkleene/selection-background-color "#444444")
   (defun rk-transparent-background-in-terminal ()
     (unless (display-graphic-p (selected-frame))
       (set-face-background 'default "unspecified-bg" (selected-frame))
@@ -210,7 +212,7 @@ layers configuration."
   (require 'helm-swoop)
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
   (set-face-attribute 'helm-selection nil
-                      :background "#00A6B2"
+                      :background robenkleene/selection-background-color
                       :foreground 'unspecified)
   ;; Diff
   (custom-set-faces
