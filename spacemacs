@@ -185,6 +185,7 @@ layers configuration."
   ;; (setq powerline-default-separator 'nil)
 
   ;; Theme
+  (defconst robenkleene/highlight-background-color "#000000")
   (defun rk-transparent-background-in-terminal ()
     (unless (display-graphic-p (selected-frame))
       (set-face-background 'default "unspecified-bg" (selected-frame))
@@ -199,8 +200,7 @@ layers configuration."
   (set-face-foreground 'hl-line nil)
   (set-face-underline 'hl-line nil)
   (set-face-foreground 'highlight 'unspecified)
-  (set-face-background 'hl-line "#000000")
-
+  (set-face-background 'hl-line robenkleene/highlight-background-color)
   ;; Dired
   (require 'dired)
   (define-key evil-normal-state-map "-" 'dired-jump)
@@ -220,7 +220,7 @@ layers configuration."
   ;; Magit
   (eval-after-load 'magit
      '(progn
-        (set-face-background 'magit-item-highlight "#000000")
+        (set-face-background 'magit-item-highlight robenkleene/highlight-background-color)
         (define-key magit-status-mode-map (kbd "C-b") 'evil-scroll-page-up)
         (define-key magit-status-mode-map (kbd "C-f") 'evil-scroll-page-down)
        ))
