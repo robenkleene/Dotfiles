@@ -200,6 +200,7 @@ layers configuration."
   (set-face-underline 'hl-line nil)
   (set-face-foreground 'highlight 'unspecified)
   (set-face-background 'hl-line "#000000")
+
   ;; Dired
   (require 'dired)
   (define-key evil-normal-state-map "-" 'dired-jump)
@@ -208,7 +209,9 @@ layers configuration."
   ;; Helm
   (require 'helm-swoop)
   (define-key helm-swoop-map (kbd "C-w") 'backward-kill-word)
-
+  (set-face-attribute 'helm-selection nil
+                      :background "#00A6B2"
+                      :foreground 'unspecified)
   ;; Diff
   (custom-set-faces
    '(diff-added ((t (:foreground "#45CA34" :background nil :inherit nil))))
