@@ -15,7 +15,7 @@
 (setq robenkleene-packages
     '(
       ;; package robenkleenes go here
-      ir-black-theme
+      ;; ir-black-theme
       ))
 
 ;; List of packages to exclude.
