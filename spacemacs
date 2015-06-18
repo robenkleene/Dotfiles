@@ -28,6 +28,7 @@
      ;; org
      ;; shell
      ;; syntax-checking
+     ;; themes-megapack
      auto-completion
      robenkleene
      evil-commentary
@@ -47,6 +48,7 @@
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
+                                    powerline
                                     magit-gitflow
                                     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -81,8 +83,9 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(wombat
-                         cyberpunk
+   dotspacemacs-themes '(
+                         ;; ir-black
+                         wombat
                          solarized-dark
                          tsdh-dark
                          solarized-light
@@ -192,10 +195,11 @@ layers configuration."
   ;; Line Numbers interfere with git gutter
   ;; (global-linum-mode t)
   ;; Cursor
-  (set-face-attribute 'highlight nil :foreground 'unspecified :underline 'unspecified :background "#2F2F2F")
-  (set-face-foreground 'highlight nil)
-  (set-face-background 'hl-line "#444444")
-
+  ;; (set-face-attribute 'highlight nil :foreground 'unspecified :underline nil :background "#000000")
+  (set-face-foreground 'hl-line nil)
+  (set-face-underline 'hl-line nil)
+  (set-face-foreground 'highlight 'unspecified)
+  (set-face-background 'hl-line "#000000")
   ;; Dired
   (require 'dired)
   (define-key evil-normal-state-map "-" 'dired-jump)
@@ -213,7 +217,7 @@ layers configuration."
   ;; Magit
   (eval-after-load 'magit
      '(progn
-        (set-face-background 'magit-item-highlight "#333333")
+        (set-face-background 'magit-item-highlight "#000000")
         (define-key magit-status-mode-map (kbd "C-b") 'evil-scroll-page-up)
         (define-key magit-status-mode-map (kbd "C-f") 'evil-scroll-page-down)
        ))
