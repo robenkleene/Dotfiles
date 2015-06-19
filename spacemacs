@@ -30,6 +30,7 @@
      ;; syntax-checking
      ;; themes-megapack
      auto-completion
+     osx
      robenkleene
      evil-commentary
      markdown
@@ -184,11 +185,27 @@ before layers configuration."
 layers configuration."
 
   ;; Evil
+  (define-key evil-evilified-state-map "\C-w" 'evil-window-map)
+  (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
+  (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
+  (define-key evil-evilified-state-map "-" 'dired-jump)
+  (evilify magit-diff-mode magit-diff-mode-map)
   ;; Disable insert mode key map
   (setcdr evil-insert-state-map nil)
   ;; Re-enable esc
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
-  (evilify magit-diff-mode magit-diff-mode-map)
+  ;; Insert Mode Keys
+  ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+ 
+  (defvar robenkleene-rsi-minor-mode-map (make-keymap))
+  (define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'backward-kill-word)
+  (define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
+  (define-minor-mode robenkleene-rsi-minor-mode
+  "Navigation like OS X."
+    t
+    nil
+    'robenkleene-rsi-minor-mode-map)
+  (robenkleene-rsi-minor-mode 1)
 
   ;; Disable powerline separator because it isn't included with default fonts
   ;; (setq powerline-default-separator 'nil)
@@ -244,10 +261,6 @@ layers configuration."
                       :foreground 'unspecified)
 
   ;; Magit
-  (define-key evil-evilified-state-map "\C-w" 'evil-window-map)
-  (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
-  (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
-  (define-key evil-evilified-state-map "-" 'dired-jump)
   ;; (eval-after-load 'magit
   ;;    '(progn
   ;;       (set-face-background 'magit-item-highlight robenkleene/highlight-background-color)

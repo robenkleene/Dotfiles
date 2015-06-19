@@ -44,7 +44,7 @@
   "Navigation like OS X."
   t
   nil
-  'rk-osx-navigation-minor-mode)
+  'rk-osx-navigation-minor-mode-map)
 (rk-osx-navigation-minor-mode 1)
 
 ;; Windows & Buffers
