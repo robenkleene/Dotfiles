@@ -196,7 +196,10 @@ layers configuration."
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
   ;; Insert Mode Keys
   ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
- 
+
+  ;; TODO: A function that defines the `C-w` binding in all of these modes (i.e., "rsify"):
+  ;; minibuffer-local-map, helm-map, helm-etags-map,helm-moccur-map, helm-generic-files-map, helm-grep-map, helm-pdfgrep-map, now-map 
+
   (defvar robenkleene-rsi-minor-mode-map (make-keymap))
   (define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'backward-kill-word)
   (define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
