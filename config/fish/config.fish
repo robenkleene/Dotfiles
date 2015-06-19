@@ -12,7 +12,7 @@ set -x EDITOR vim
 # Facebook Path Picker
 # Don't let `fpp` open files in splits
 # Ugh, this breaks opening with line numbers
-# set -x FPP_EDITOR "vim "
+set -x FPP_EDITOR "vim "
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
