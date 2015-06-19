@@ -190,6 +190,11 @@ layers configuration."
   ;; Disable powerline separator because it isn't included with default fonts
   ;; (setq powerline-default-separator 'nil)
 
+  ;; Spacemacs sets the default mode for the scratch buffer to text
+  ;; If I want to revert this setting, it's easy to dynamically change the scratch buffers mode
+  ;; by doing `SPC :` followed by `emacs-lisp-mode`'
+  (setq initial-major-mode 'emacs-lisp-mode)
+
   ;; Theme
   (defconst robenkleene/highlight-background-color "#000000")
   (defconst robenkleene/selection-background-color "#444444")
@@ -220,7 +225,8 @@ layers configuration."
    ;; '(diff-file-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
    ;; '(diff-hunk-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
    '(diff-added ((t (:foreground "#45CA34" :background nil :inherit nil))))
-   '(diff-removed ((t (:foreground "#DA4D31" :background nil :inherit nil)))))
+   '(diff-removed ((t (:foreground "#DA4D31" :background nil :inherit nil))))
+   )
   
   ;; Dired
   (require 'dired)
