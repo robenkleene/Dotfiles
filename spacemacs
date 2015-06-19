@@ -183,9 +183,12 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
-  ;; ;; Don't not use evil anywhere
-  ;; (setq evil-emacs-state-modes nil)
-  ;; ;; Except places arlready setup for evil
+  ;; Evil
+  ;; Disable insert mode key map
+  (setcdr evil-insert-state-map nil)
+  ;; Re-enable esc
+  (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (evilify magit-diff-mode magit-diff-mode-map)
 
   ;; Disable powerline separator because it isn't included with default fonts
   ;; (setq powerline-default-separator 'nil)
