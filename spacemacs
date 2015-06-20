@@ -9,7 +9,7 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -183,17 +183,20 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (load (expand-file-name (concat user-emacs-directory "../.spacemacs.d/robenkleene.el")))
 
   ;; Evil
   (define-key evil-evilified-state-map "\C-w" 'evil-window-map)
   (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
   (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
+  (define-key evil-evilified-state-map "?" 'evil-search-backward)
   (define-key evil-evilified-state-map "-" 'dired-jump)
   (evilify magit-diff-mode magit-diff-mode-map)
   ;; Disable insert mode key map
   (setcdr evil-insert-state-map nil)
   ;; Re-enable esc
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (define-key evil-normal-state-map "-" 'dired-jump)
   ;; Insert Mode Keys
   ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
 
@@ -253,7 +256,7 @@ layers configuration."
   
   ;; Dired
   (require 'dired)
-  (define-key evil-normal-state-map "-" 'dired-jump)
+  (define-key dired-mode-map (kbd "?") 'evil-search-backward)
   (define-key dired-mode-map (kbd "-") 'dired-up-directory) 
 
   ;; Helm
