@@ -4,7 +4,7 @@
 (defconst robenkleene/error-foreground-color "#DA4D31")
 (defconst robenkleene/success-foreground-color "#45CA34")
 ;; TODO: Make helm headers use these
-;; (defconst robenkleene/header-background-color "#AFD7FE")
+(defconst robenkleene/header-background-color "#444444")
 ;; (defconst robenkleene/header-foreground-color "#000000")
 
 ;; Transparent background
@@ -29,14 +29,13 @@
 (set-face-background 'secondary-selection robenkleene/highlight-background-color)
 
 ;; Diff
-;; (set-face-background 'diff-hunk-header robenkleene/header-background-color)
-;; (set-face-foreground 'diff-hunk-header robenkleene/header-foreground-color)
-(custom-set-faces
- ;; '(diff-file-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
- ;; '(diff-hunk-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
- '(diff-added ((t (:foreground robenkleene/success-foreground-color :background nil :inherit nil))))
- '(diff-removed ((t (:foreground robenkleene/error-foreground-color :background nil :inherit nil))))
- )
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-attribute 'diff-file-header nil :background robenkleene/header-background-color :foreground 'unspecified :inherit nil)
+     (set-face-attribute 'diff-hunk-header nil :background robenkleene/header-background-color :foreground 'unspecified :inherit nil)
+     (set-face-attribute 'diff-added-face nil :background 'unspecified :foreground robenkleene/success-foreground-color :inherit nil)
+     (set-face-attribute 'diff-removed-face nil :background 'unspecified :foreground robenkleene/error-foreground-color :inherit nil)
+   ))
 
 ;; Evil
 (set-face-foreground 'evil-search-highlight-persist-highlight-face "#000000")
@@ -44,13 +43,15 @@
 
 ;; Parens
 (set-face-attribute 'show-paren-match nil :weight 'bold :foreground 'unspecified :background 'unspecified :underline t :overline nil :slant 'normal)
-(set-face-attribute 'show-paren-mismatch nil :weight 'bold :foreground robenkleene/error-foreground-color :background 'unspecified :underline t :overline nil :slant 'normal)
+(set-face-attribute 'show-paren-mismatch nil :weight 'bold :foreground robenkleene/error-foreground-color :background 'unspecified :underline nil :overline nil :slant 'normal)
+
+(setq debug-on-error t)
 
 ;; smartparens
 (eval-after-load 'smartparens
    '(progn
-      (set-face-attribute 'sp-show-pair-match-face nil :background 'unspecified :inherit 'show-paren-match)
-      (set-face-attribute 'sp-show-pair-mismatch-face nil :background 'unspecified :inherit 'show-paren-mismatch)
+      (set-face-attribute 'sp-show-pair-match-face nil :background 'unspecified :foreground 'unspecified :inherit 'show-paren-match)
+      (set-face-attribute 'sp-show-pair-mismatch-face nil :background 'unspecified :foreground 'unspecified :inherit 'show-paren-mismatch)
       ))
 
 (provide 'robenkleene-theme)
