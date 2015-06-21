@@ -6,6 +6,7 @@
 ;; Evilify
 (evilify magit-diff-mode magit-diff-mode-map)
 (evilify Custom-mode custom-mode-map)
+(evilify debugger-mode debugger-mode-map)
 ;; Disable insert mode key map
 (setcdr evil-insert-state-map nil)
 ;; Re-enable esc
