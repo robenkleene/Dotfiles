@@ -43,6 +43,11 @@
 
 ;; Matches
 ;; TODO: Why isn't this working?
+;; Probably underline would look nicer
 ;; (set-face-background 'show-paren-match "#000000")
+;; (set-face-attribute 'show-paren-match nil :background "#444444")
 
+;; (set-face-background 'show-paren-match "#aaaaaa")
+;; (set-face-attribute 'show-paren-match nil 
+;;                     :weight 'normal :underline t :overline nil :slant 'normal)
 (provide 'robenkleene-theme)

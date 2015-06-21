@@ -3,7 +3,9 @@
 (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
 (define-key evil-evilified-state-map "?" 'evil-search-backward)
 (define-key evil-evilified-state-map "-" 'dired-jump)
+;; Evilify
 (evilify magit-diff-mode magit-diff-mode-map)
+(evilify Custom-mode custom-mode-map)
 ;; Disable insert mode key map
 (setcdr evil-insert-state-map nil)
 ;; Re-enable esc
