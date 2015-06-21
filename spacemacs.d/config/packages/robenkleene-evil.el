@@ -13,6 +13,11 @@
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map "-" 'dired-jump)
 (define-key evil-motion-state-map "-" 'dired-jump)
+
+;; Evil Leader
+(evil-leader/set-key
+  "ow" 'toggle-truncate-lines)
+
 ;; Insert Mode Keys
 ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
 (provide 'robenkleene-evil)
