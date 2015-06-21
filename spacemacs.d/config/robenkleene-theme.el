@@ -54,4 +54,11 @@
       (set-face-attribute 'sp-show-pair-mismatch-face nil :background 'unspecified :foreground 'unspecified :inherit 'show-paren-mismatch)
       ))
 
+(eval-after-load 'helm
+  '(progn
+     (set-face-attribute 'helm-selection nil
+                         :background robenkleene/selection-background-color
+                         :foreground 'unspecified)
+     )
+    )
 (provide 'robenkleene-theme)
