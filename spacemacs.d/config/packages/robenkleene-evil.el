@@ -11,6 +11,7 @@
 ;; Re-enable esc
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-normal-state-map "-" 'dired-jump)
+(define-key evil-motion-state-map "-" 'dired-jump)
 ;; Insert Mode Keys
 ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
 (provide 'robenkleene-evil)
