@@ -1,6 +1,8 @@
 ;; Colors
 (defconst robenkleene/highlight-background-color "#000000")
 (defconst robenkleene/selection-background-color "#444444")
+(defconst robenkleene/error-foreground-color "#DA4D31")
+(defconst robenkleene/success-foreground-color "#45CA34")
 ;; TODO: Make helm headers use these
 ;; (defconst robenkleene/header-background-color "#AFD7FE")
 ;; (defconst robenkleene/header-foreground-color "#000000")
@@ -32,22 +34,23 @@
 (custom-set-faces
  ;; '(diff-file-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
  ;; '(diff-hunk-header ((t (:foreground robenkleene/header-foreground-color :background robenkleene/header-background-color :inherit nil))))
- '(diff-added ((t (:foreground "#45CA34" :background nil :inherit nil))))
- '(diff-removed ((t (:foreground "#DA4D31" :background nil :inherit nil))))
+ '(diff-added ((t (:foreground robenkleene/success-foreground-color :background nil :inherit nil))))
+ '(diff-removed ((t (:foreground robenkleene/error-foreground-color :background nil :inherit nil))))
  )
 
 ;; Evil
 (set-face-foreground 'evil-search-highlight-persist-highlight-face "#000000")
 (set-face-background 'evil-search-highlight-persist-highlight-face "#5FD6FF")
 
+;; Parens
+(set-face-attribute 'show-paren-match nil :weight 'bold :foreground 'unspecified :background 'unspecified :underline t :overline nil :slant 'normal)
+(set-face-attribute 'show-paren-mismatch nil :weight 'bold :foreground robenkleene/error-foreground-color :background 'unspecified :underline t :overline nil :slant 'normal)
 
-;; Matches
-;; TODO: Why isn't this working?
-;; Probably underline would look nicer
-;; (set-face-background 'show-paren-match "#000000")
-;; (set-face-attribute 'show-paren-match nil :background "#444444")
+;; smartparens
+(eval-after-load 'smartparens
+   '(progn
+      (set-face-attribute 'sp-show-pair-match-face nil :background 'unspecified :inherit 'show-paren-match)
+      (set-face-attribute 'sp-show-pair-mismatch-face nil :background 'unspecified :inherit 'show-paren-mismatch)
+      ))
 
-;; (set-face-background 'show-paren-match "#aaaaaa")
-;; (set-face-attribute 'show-paren-match nil 
-;;                     :weight 'normal :underline t :overline nil :slant 'normal)
 (provide 'robenkleene-theme)
