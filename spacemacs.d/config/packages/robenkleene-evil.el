@@ -18,6 +18,13 @@
 (evil-leader/set-key
   "ow" 'toggle-truncate-lines)
 
+
+(defvar robenkleene-leader-map (make-keymap))
+(define-key robenkleene-leader-map (kbd "w") 'toggle-truncate-lines)
+
+(define-key evil-normal-state-map (kbd "\\") robenkleene-leader-map)
+
+
 ;; Insert Mode Keys
 ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
 (provide 'robenkleene-evil)
