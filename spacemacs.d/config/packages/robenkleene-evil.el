@@ -18,11 +18,12 @@
 (evil-leader/set-key
   "ow" 'toggle-truncate-lines)
 
-
+;; Other Leader
 (defvar robenkleene-leader-map (make-keymap))
 (define-key robenkleene-leader-map (kbd "w") 'toggle-truncate-lines)
 
 (define-key evil-normal-state-map (kbd "\\") robenkleene-leader-map)
+(define-key evil-motion-state-map (kbd "\\") robenkleene-leader-map)
 
 
 ;; Insert Mode Keys
