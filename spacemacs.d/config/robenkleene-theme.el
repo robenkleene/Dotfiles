@@ -45,7 +45,7 @@
 (set-face-attribute 'show-paren-match nil :weight 'bold :foreground 'unspecified :background 'unspecified :underline t :overline nil :slant 'normal)
 (set-face-attribute 'show-paren-mismatch nil :weight 'bold :foreground robenkleene/error-foreground-color :background 'unspecified :underline nil :overline nil :slant 'normal)
 
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 ;; smartparens
 (eval-after-load 'smartparens
