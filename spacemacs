@@ -9,7 +9,7 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers")
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -86,14 +86,9 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         ;; ir-black
+                         ir-black
                          wombat
-                         solarized-dark
-                         tsdh-dark
-                         solarized-light
-                         leuven
-                         monokai
-                         zenburn)
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line

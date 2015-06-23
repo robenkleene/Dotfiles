@@ -12,24 +12,23 @@
 
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
+
 (setq robenkleene-packages
     '(
       ;; package robenkleenes go here
-      ;; ir-black-theme
+      ir-black-theme
+      ;; moe-theme
+      ;; purple-haze-theme
       ))
 
-;; List of packages to exclude.
-(setq robenkleene-excluded-packages '(
-                                      powerline
-                                      ))
+(defun robenkleene/init-ir-black-theme ()
+  nil
+  )
 
-
-;; For each package, define a function robenkleene/init-<package-robenkleene>
-;;
-;; (defun robenkleene/init-my-package ()
-;;   "Initialize my package"
+;; (defun robenkleene/init-moe-theme ()
+;;   nil
 ;;   )
-;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package
+
+;; (defun robenkleene/init-purple-haze-theme ()
+;;   nil
+;;   )
