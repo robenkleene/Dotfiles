@@ -13,6 +13,22 @@
 (robenkleene-rsify 'helm helm-map)
 (robenkleene-rsify 'helm-grep helm-grep-map)
 
+(defun robenkleene/isearch-delete-word ()
+  "Delete word in the `isearch-string'.
+
+Splitting strings by whitespace, dashes, underscores and camelcase."
+  (interactive)
+  (let* ((isearch-regexp )
+         (str (s-with (s-trim-right isearch-string)
+                (s-chop-suffixes '("-" "-" "_" "*" "+" "."))))
+         (trm (- (length str)
+                 (length (car (last (s-split-words str))))))
+         (string (substring str 0 trm)))
+    (setq isearch-string nil
+          isearch-message nil)
+    (isearch-yank-string string)))
+(define-key isearch-mode-map (kbd "C-w") 'robenkleene/isearch-delete-word)
+
 (defvar robenkleene-rsi-minor-mode-map (make-keymap))
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'backward-kill-word)
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
