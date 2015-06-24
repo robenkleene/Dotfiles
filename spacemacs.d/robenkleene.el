@@ -2,12 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-
-;; (setq flycheck-emacs-lisp-package-user-dir "~/.emacs.d/elpa")
-(add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config"))
-
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
+(add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config"))
 (require 'robenkleene-config)
 (require 'robenkleene-keybindings)
 (require 'robenkleene-theme)
@@ -19,3 +16,5 @@
 
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/languages"))
 (require 'robenkleene-emacs-lisp)
+
+;;; robenkleene.el ends here

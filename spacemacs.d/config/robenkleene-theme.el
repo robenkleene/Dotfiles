@@ -1,3 +1,8 @@
+;;; robenkleene-theme.el --- robenkleene-theme
+;;; Commentary:
+;;; Code:
+
+
 ;; Colors
 (defconst robenkleene/highlight-background-color "#000000")
 (defconst robenkleene/selection-background-color "#444444")
@@ -8,13 +13,14 @@
 ;; (defconst robenkleene/header-foreground-color "#000000")
 
 ;; Transparent background
-(defun rk-transparent-background-in-terminal ()
+(defun robenkleene-transparent-background-in-terminal ()
+  "Transparent background in terminal."
   (unless (display-graphic-p (selected-frame))
     (set-face-background 'default "unspecified-bg" (selected-frame))
     )
   )
-(add-hook 'window-setup-hook 'rk-transparent-background-in-terminal)
-(add-hook 'server-visit-hook 'rk-transparent-background-in-terminal)
+(add-hook 'window-setup-hook 'robenkleene-transparent-background-in-terminal)
+(add-hook 'server-visit-hook 'robenkleene-transparent-background-in-terminal)
 
 ;; Line Numbers interfere with git gutter
 ;; (global-linum-mode t)
@@ -22,6 +28,7 @@
 ;; (set-face-attribute 'highlight nil :foreground 'unspecified :underline nil :background "#000000")
 
 ;; Highlight Line
+(require 'hl-line)
 (set-face-foreground 'hl-line nil)
 (set-face-underline 'hl-line nil)
 (set-face-foreground 'highlight 'unspecified)
@@ -38,9 +45,11 @@
    ))
 
 ;; Evil
-(set-face-foreground 'evil-search-highlight-persist-highlight-face "#000000")
-(set-face-background 'evil-search-highlight-persist-highlight-face "#5FD6FF")
-
+(eval-after-load 'evil-mode
+  '(progn
+     (set-face-foreground 'evil-search-highlight-persist-highlight-face "#000000")
+     (set-face-background 'evil-search-highlight-persist-highlight-face "#5FD6FF")
+     ))
 ;; Parens
 (set-face-attribute 'show-paren-match nil :weight 'bold :foreground 'unspecified :background 'unspecified :underline t :overline nil :slant 'normal)
 (set-face-attribute 'show-paren-mismatch nil :weight 'bold :foreground robenkleene/error-foreground-color :background 'unspecified :underline nil :overline nil :slant 'normal)
@@ -61,4 +70,7 @@
                          :foreground 'unspecified)
      )
     )
+
 (provide 'robenkleene-theme)
+
+;;; robenkleene-theme.el ends here
