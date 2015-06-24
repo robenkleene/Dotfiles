@@ -1,6 +1,9 @@
+;;; robenkleene-keybinding.el --- robenkleene-keybinding
+;;; Commentary:
+;;; Code:
 
-;; minibuffer-local-map, helm-map, helm-etags-map,helm-moccur-map, helm-generic-files-map, helm-grep-map, helm-pdfgrep-map, now-map 
 (defmacro robenkleene-rsify (mode map)
+  "Hurt your hands in MODE and MAP."
   `(eval-after-load ,mode
     '(progn
        (define-key ,map (kbd "C-w") 'backward-kill-word)
@@ -29,9 +32,9 @@
 ;; (isearch-update)))
 
 
-;; (require 's)
+(require 's)
 (defun robenkleene/isearch-delete-word ()
-  "Delete word in the `isearch-string'. Splitting strings by whitespace, dashes, underscores and camelcase."
+  "Delete word in the `isearch-string'.  Splitting strings by whitespace, dashes, underscores and camelcase."
   (interactive)
   (let* ((isearch-regexp )
          (str (s-with (s-trim-right isearch-string)
@@ -55,4 +58,5 @@
   'robenkleene-rsi-minor-mode-map)
 (robenkleene-rsi-minor-mode 1)
 (provide 'robenkleene-keybindings)
+
 ;;; robenkleene-keybindings.el ends here
