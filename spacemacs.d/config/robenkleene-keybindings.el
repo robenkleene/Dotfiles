@@ -1,5 +1,4 @@
 
-;; Potential maps to override
 ;; minibuffer-local-map, helm-map, helm-etags-map,helm-moccur-map, helm-generic-files-map, helm-grep-map, helm-pdfgrep-map, now-map 
 (defmacro robenkleene-rsify (mode map)
   `(eval-after-load ,mode
@@ -9,6 +8,9 @@
        )
     )
   )
+(defvar helm-swoop-map)
+(defvar helm-map)
+(defvar helm-grep-map)
 (robenkleene-rsify 'helm-swoop helm-swoop-map)
 (robenkleene-rsify 'helm helm-map)
 (robenkleene-rsify 'helm-grep helm-grep-map)
@@ -25,6 +27,9 @@
 ;; (isearch-search)
 ;; (isearch-push-state)
 ;; (isearch-update)))
+
+
+;; (require 's)
 (defun robenkleene/isearch-delete-word ()
   "Delete word in the `isearch-string'. Splitting strings by whitespace, dashes, underscores and camelcase."
   (interactive)
@@ -50,3 +55,4 @@
   'robenkleene-rsi-minor-mode-map)
 (robenkleene-rsi-minor-mode 1)
 (provide 'robenkleene-keybindings)
+;;; robenkleene-keybindings.el ends here

@@ -34,6 +34,8 @@
      robenkleene
      evil-commentary
      markdown
+     org
+     syntax-checking
      shell
      (shell :variables
             shell-default-shell 'eshell)
