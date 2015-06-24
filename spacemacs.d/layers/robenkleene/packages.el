@@ -17,18 +17,18 @@
     '(
       ;; package robenkleenes go here
       ir-black-theme
-      ;; moe-theme
-      ;; purple-haze-theme
+      moe-theme
+      purple-haze-theme
       ))
 
 (defun robenkleene/init-ir-black-theme ()
   nil
   )
 
-;; (defun robenkleene/init-moe-theme ()
-;;   nil
-;;   )
+(defun robenkleene/init-moe-theme ()
+  nil
+  )
 
-;; (defun robenkleene/init-purple-haze-theme ()
-;;   nil
-;;   )
+(defun robenkleene/init-purple-haze-theme ()
+  nil
+  )
