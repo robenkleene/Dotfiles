@@ -16,3 +16,6 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-dired)
 (require 'robenkleene-evil)
+
+(add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/languages"))
+(require 'robenkleene-emacs-lisp)
