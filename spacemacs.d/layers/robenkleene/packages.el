@@ -17,6 +17,7 @@
     '(
       ;; package robenkleenes go here
       ir-black-theme
+      ;; tron-theme
       moe-theme
       purple-haze-theme
       ))
@@ -32,3 +33,7 @@
 (defun robenkleene/init-purple-haze-theme ()
   nil
   )
+
+;; (defun robenkleene/init-tron-theme ()
+;;   nil
+;;   )
