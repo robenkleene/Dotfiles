@@ -19,46 +19,18 @@
 (robenkleene-rsify 'helm-grep helm-grep-map)
 
 ;; Define C-u & C-w in isearch
-;; (defun robenkleene/isearch-delete-line ()
-;;   "Delete line."
-;;   (interactive "p")
-;;   (if (= 0 (length isearch-string))
-;;       (ding)
-;;     (setq isearch-string "")
-;;           isearch-message (mapconcat 'isearch-text-char-description
-;;                                      isearch-string ""))
-;;   (if isearch-other-end (goto-char isearch-other-end))
-;;   (isearch-search)
-;;   (isearch-push-state)
-;;   (isearch-update))
 (defun robenkleene/isearch-delete-line (&optional arg)
-  "Delete character from end of search string and search again.
-Unlike `isearch-delete-char', it only deletes the last character,
-but doesn't cancel the effect of other isearch command.
-If search string is empty, just beep."
+  "Delete line, ARG is ignored."
   (interactive "p")
   (if (= 0 (length isearch-string))
       (ding)
     (setq isearch-string ""
-          ;; (substring isearch-string 0
-				  ;;   (- (min (or arg 1)
-					;;     (length isearch-string))))
           isearch-message (mapconcat 'isearch-text-char-description
                                      isearch-string "")))
-  ;; Use the isearch-other-end as new starting point to be able
-  ;; to find the remaining part of the search string again.
-  ;; This is like what `isearch-search-and-update' does,
-  ;; but currently it doesn't support deletion of characters
-  ;; for the case where unsuccessful search may become successful
-  ;; by deletion of characters.
   (if isearch-other-end (goto-char isearch-other-end))
   (isearch-search)
   (isearch-push-state)
   (isearch-update))
-
-
-
-
 (require 's)
 (defun robenkleene/isearch-delete-word ()
   "Delete word in the `isearch-string'.  Splitting strings by whitespace, dashes, underscores and camelcase."
