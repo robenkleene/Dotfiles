@@ -20,6 +20,8 @@
       ;; tron-theme
       moe-theme
       purple-haze-theme
+      ;; swift-mode
+      ;; flycheck
       ))
 
 (defun robenkleene/init-ir-black-theme ()
@@ -33,6 +35,17 @@
 (defun robenkleene/init-purple-haze-theme ()
   nil
   )
+
+;; Can't get this mode working try again later
+;; (defun robenkleene/init-swift-mode ()
+;;   (use-package swift-mode
+;;     :defer t))
+
+;; (defun robenkleene/post-init-flycheck ()
+;;   (add-to-list 'flycheck-checkers 'swift)
+;;   (add-hook 'swift-mode 'flycheck-mode)
+;;   )
+
 
 ;; (defun robenkleene/init-tron-theme ()
 ;;   nil

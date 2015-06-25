@@ -56,6 +56,6 @@
   nil
   'robenkleene-rsi-minor-mode-map)
 (robenkleene-rsi-minor-mode 1)
-(provide 'robenkleene-keybindings)
 
+(provide 'robenkleene-keybindings)
 ;;; robenkleene-keybindings.el ends here

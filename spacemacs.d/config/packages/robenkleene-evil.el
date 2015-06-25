@@ -22,6 +22,9 @@
      (evilify magit-diff-mode magit-diff-mode-map)
      (evilify Custom-mode custom-mode-map)
      (evilify debugger-mode debugger-mode-map)
+     (defvar dired-mode)
+     (defvar dired-mode-map)
+     (evilify dired-mode dired-mode-map)
      )
   )
 
