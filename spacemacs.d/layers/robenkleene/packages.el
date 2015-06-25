@@ -39,7 +39,6 @@
   nil
   )
 
-<<<<<<< HEAD
 (defun robenkleene/init-material-theme ()
   nil
   )
