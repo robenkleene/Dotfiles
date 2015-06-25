@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar robenkleene-leader-map (make-keymap))
+(define-key robenkleene-leader-map (kbd "w") 'toggle-truncate-lines)
+(define-key robenkleene-leader-map (kbd "t") 'robenkleene/open-terminal-window)
+(define-key robenkleene-leader-map (kbd "f") 'robenkleene/open-finder-window)
+
 (eval-after-load 'evil-evilified-state
   '(progn
      (defvar evil-evilified-state-map)
@@ -10,6 +15,7 @@
      (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
      (define-key evil-evilified-state-map "-" 'dired-jump)
+     (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
      ;; Evilify
      (defvar agit-diff-mode)
      (defvar magit-diff-mode)
@@ -40,9 +46,6 @@
      (define-key evil-normal-state-map "-" 'dired-jump)
      (define-key evil-motion-state-map "-" 'dired-jump)
      ;; Other Leader
-     (defvar robenkleene-leader-map (make-keymap))
-     (define-key robenkleene-leader-map (kbd "w") 'toggle-truncate-lines)
-
      (define-key evil-normal-state-map (kbd "\\") robenkleene-leader-map)
      (define-key evil-motion-state-map (kbd "\\") robenkleene-leader-map)
      )

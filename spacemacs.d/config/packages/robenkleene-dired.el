@@ -9,6 +9,7 @@
       (setq dired-hide-details-hide-symlink-targets nil)
       (defvar dired-mode-map)
       (define-key dired-mode-map (kbd "-") 'dired-up-directory)
+
       ;; Using Evilify these bindings aren't necessary
       ;; (define-key dired-mode-map (kbd "?") 'evil-search-backward)
       ;; (define-key dired-mode-map (kbd "n")'evil-search-next)

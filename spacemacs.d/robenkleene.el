@@ -9,6 +9,7 @@
 (require 'robenkleene-keybindings)
 ;; (require 'robenkleene-theme)
 (require 'robenkleene-ui)
+(require 'robenkleene-functions)
 
 
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/packages"))
