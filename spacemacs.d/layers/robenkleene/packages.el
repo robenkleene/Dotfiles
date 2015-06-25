@@ -22,6 +22,7 @@
       moe-theme
       purple-haze-theme
       material-theme
+      evil-smartparens
       ;; swift-mode
       ;; flycheck
       ))
@@ -38,6 +39,7 @@
   nil
   )
 
+<<<<<<< HEAD
 (defun robenkleene/init-material-theme ()
   nil
   )
@@ -45,6 +47,14 @@
 (defun robenkleene/init-noctilux-theme ()
   nil
   )
+
+(defun robenkleene/init-evil-smartparens ()
+  (use-package evil-smartparens
+    :defer t
+    :init (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+    )
+  )
+  
 ;; Can't get this mode working try again later
 ;; (defun robenkleene/init-swift-mode ()
 ;;   (use-package swift-mode
@@ -54,7 +64,6 @@
 ;;   (add-to-list 'flycheck-checkers 'swift)
 ;;   (add-hook 'swift-mode 'flycheck-mode)
 ;;   )
-
 
 ;; (defun robenkleene/init-tron-theme ()
 ;;   nil
