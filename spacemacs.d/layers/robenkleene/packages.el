@@ -18,8 +18,10 @@
       ;; package robenkleenes go here
       ir-black-theme
       ;; tron-theme
+      noctilux-theme
       moe-theme
       purple-haze-theme
+      material-theme
       ;; swift-mode
       ;; flycheck
       ))
@@ -36,6 +38,13 @@
   nil
   )
 
+(defun robenkleene/init-material-theme ()
+  nil
+  )
+
+(defun robenkleene/init-noctilux-theme ()
+  nil
+  )
 ;; Can't get this mode working try again later
 ;; (defun robenkleene/init-swift-mode ()
 ;;   (use-package swift-mode
