@@ -33,16 +33,12 @@ Moe, moe, kyun!")
       )
 
 
+
+
   (custom-theme-set-faces
    'robenkleene-moe-dark
    ;; Ensure sufficient contrast on low-color terminals.
-   `(default ((((class color) (min-colors 4096))
-	       (:foreground ,white-1 :background ,black-5))
-	      (((class color) (min-colors 256))
-         ;; (:foreground ,white-1 :background ,black-5))
-	       (:foreground ,white-1 :background "unspecified-bg"))
-	      (,class
-	       (:foreground ,white-1 :background ,black-5))))
+   `(default ((,class (:foreground ,white-1 :background "unspecified-bg"))))
    `(cursor ((,class (:background ,white-1))))
 
    ;; Highlighting faces
