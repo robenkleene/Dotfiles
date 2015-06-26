@@ -9,6 +9,7 @@
   "Face colors for 256 colors terminal (dark background).
 Moe, moe, kyun!")
 
+(defvar robenkleene-theme-selection-color "#afd702")
 (let ((class '((class color) (min-colors 89)))
       (transparent-background "unspecified-bg")
       (solid-background "#3a3a3a")
@@ -17,7 +18,7 @@ Moe, moe, kyun!")
       (yellow-1 "#fce94f") (yellow-2 "#ffd700") (yellow-3 "#c4a000") (yellow-4 "#875f00")
       (orange-1 "#ffaf5f") (orange-2 "#ff8700") (orange-3 "#ff5d17") (orange-4 "#d75f00") (orange-5 "#af5f00")
       (magenta-1 "#ff7bbb") (magenta-2 "#ff4ea3") (magenta-3 "#ff1f8b")
-      (green-1 "#afff00") (green-2 "#a1db00") (green-3 "#5faf00") (green-4 "#008700") (green-5 "#005f00")
+      (green-1 robenkleene-theme-selection-color) (green-2 robenkleene-theme-selection-color) (green-3 "#5faf00") (green-4 "#008700") (green-5 "#005f00")
       (blue-1 "#5fafd7") (blue-2 "#1f5bff") (blue-3 "#005f87") (blue-4 "#005faf") (blue-5 "#0000af") (blue-6 "#00005f")
       (cyan-1 "#87ffff") (cyan-2 "#87d7af") (cyan-3 "#00d7af") (cyan-4 "#00ac8a") (cyan-5 "#5faf87") (cyan-6 "#005f5f") (cyan-7 "#005f87")
       (purple-1 "#d18aff") (purple-2 "#af5fff") (purple-3 "#9a08ff") (purple-4 "#6c0099")
@@ -25,7 +26,7 @@ Moe, moe, kyun!")
       (white-1 "#c6c6c6") (white-2 "#c6c6c6") (white-3 "#b2b2b2") (black-1 "#a8a8a8") (black-2 "#8a8a8a")
       (black-2-5 "#6c6c6c") (black-3 "#4e4e4e") (black-4 "#3a3a3a") (black-5 "#303030") (black-6 "#000000")
       (LIGHT_BG "#fdfde7") (white-0 "#ffffff")
-      (green-02 "#5fd700") (green-01 "#d7ff00") (green-0 "#d7ff5f") (green-00 "#d7ff87")
+      (green-02 "#5fd700") (green-01 robenkleene-theme-selection-color) (green-0 robenkleene-theme-selection-color) (green-00 robenkleene-theme-selection-color)
       (blue-01 "#c3c9f8") (blue-0 "#afd7ff") (blue-00 "#d7d7ff")
       (yellow-0 "#ffff87") (yellow-00 "#ffffaf")
       (purple-0 "#af87ff") (purple-00 "#e6a8df")
@@ -34,7 +35,6 @@ Moe, moe, kyun!")
       (orange-0 "#ffaf87") (orange-00 "#ffd787") (orange-000 "#ffd7af")
       (linum-dark "#87875f") (linum-light "#d7d7af")
       )
-
 
 
 
