@@ -22,7 +22,7 @@
       moe-theme
       purple-haze-theme
       material-theme
-      evil-smartparens
+      ;; evil-smartparens
       ;; swift-mode
       ;; flycheck
       ))
@@ -47,12 +47,13 @@
   nil
   )
 
-(defun robenkleene/init-evil-smartparens ()
-  (use-package evil-smartparens
-    :defer t
-    :init (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-    )
-  )
+;; Disable `evil-smartparens', this interferes with `yyp'
+;; (defun robenkleene/init-evil-smartparens ()
+;;   (use-package evil-smartparens
+;;     :defer t
+;;     :init (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+;;     )
+;;   )
   
 ;; Can't get this mode working try again later
 ;; (defun robenkleene/init-swift-mode ()

@@ -35,6 +35,7 @@
      evil-commentary
      markdown
      org
+     colors
      syntax-checking
      shell
      (shell :variables
@@ -66,7 +67,7 @@ This function is called at the very startup of Spacemacs initialization
 before layers configuration."
 
   ;; Load my themes path
-  ;; (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes/")
+  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes/")
   
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
@@ -90,7 +91,8 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         moe-dark
+                         robenkleene-moe-dark
+                         ;; moe-dark
                          noctilux
                          material
                          purple-haze
