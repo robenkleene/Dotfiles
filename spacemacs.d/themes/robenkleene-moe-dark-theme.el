@@ -49,6 +49,16 @@ Moe, moe, kyun!")
    `(git-gutter:deleted ((,class (:foreground "brightred" :background ,transparent-background :bold t))))
    `(git-gutter:modified ((,class (:foreground "brightcyan" :background ,transparent-background :bold t))))
 
+   ;; Magit
+   `(magit-diff-add ((,class (:foreground "brightgreen" :background nil :bold t))))
+   `(magit-diff-del ((,class (:foreground "brightred" :background nil :bold t))))
+
+
+
+
+
+
+
    ;; Highlighting faces
    `(linum-highlight-face ((,class (:background ,green-0 :foreground ,black-4))))
    `(highlight ((,class (:background ,black-3))))
@@ -387,8 +397,6 @@ Moe, moe, kyun!")
 
    ;; Magit
    `(magit-branch ((,class (:foreground ,green-4 :background ,green-01 :bold t :underline t))))
-   `(magit-diff-add ((,class (:foreground ,green-0 :background nil :bold t))))
-   `(magit-diff-del ((,class (:foreground ,red-0 :background nil :bold t))))
    `(magit-diff-file-header ((,class (:foreground ,white-0 :background ,black-2 :bold t))))
    `(magit-diff-hunk-header ((,class (:foreground ,white-2 :background ,black-2-5 :bold t))))
    `(magit-diff-merge-current ((,class (:foreground ,purple-1))))
