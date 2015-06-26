@@ -10,6 +10,7 @@
 Moe, moe, kyun!")
 
 (let ((class '((class color) (min-colors 89)))
+      (transparent-background "unspecified-bg")
       ;; Palette colors.
       (yellow-1 "#fce94f") (yellow-2 "#ffd700") (yellow-3 "#c4a000") (yellow-4 "#875f00")
       (orange-1 "#ffaf5f") (orange-2 "#ff8700") (orange-3 "#ff5d17") (orange-4 "#d75f00") (orange-5 "#af5f00")
@@ -38,11 +39,11 @@ Moe, moe, kyun!")
   (custom-theme-set-faces
    'robenkleene-moe-dark
    ;; Ensure sufficient contrast on low-color terminals.
-   `(default ((,class (:foreground ,white-1 :background "unspecified-bg"))))
+   `(default ((,class (:foreground ,white-1 :background ,transparent-background))))
    `(cursor ((,class (:background ,white-1))))
 
    ;; Highlighting faces
-   `(fringe ((,class (:foreground ,black-1 :background ,black-3))))
+   `(fringe ((,class (:foreground ,black-1 :background ,transparent-background))))
    `(linum ((,class (:foreground ,white-3 :background ,black-3))))
    `(linum-highlight-face ((,class (:background ,green-0 :foreground ,black-4))))
    `(highlight ((,class (:background ,black-3))))
