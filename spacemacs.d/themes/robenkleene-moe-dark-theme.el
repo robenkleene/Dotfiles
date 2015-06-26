@@ -11,6 +11,8 @@ Moe, moe, kyun!")
 
 (let ((class '((class color) (min-colors 89)))
       (transparent-background "unspecified-bg")
+      (solid-background "#3a3a3a")
+      ;; (solid-background "#00005f")
       ;; Palette colors.
       (yellow-1 "#fce94f") (yellow-2 "#ffd700") (yellow-3 "#c4a000") (yellow-4 "#875f00")
       (orange-1 "#ffaf5f") (orange-2 "#ff8700") (orange-3 "#ff5d17") (orange-4 "#d75f00") (orange-5 "#af5f00")
@@ -38,13 +40,16 @@ Moe, moe, kyun!")
 
   (custom-theme-set-faces
    'robenkleene-moe-dark
-   ;; Ensure sufficient contrast on low-color terminals.
+   ;; Customized
    `(default ((,class (:foreground ,white-1 :background ,transparent-background))))
-   `(cursor ((,class (:background ,white-1))))
+   `(fringe ((,class (:foreground ,black-1 :background ,transparent-background))))
+   `(linum ((,class (:foreground ,white-3 :background ,solid-background))))
+   ;; git-gutter (&-fringe)
+   `(git-gutter:added ((,class (:foreground "brightgreen" :background ,transparent-background :bold t))))
+   `(git-gutter:deleted ((,class (:foreground "brightred" :background ,transparent-background :bold t))))
+   `(git-gutter:modified ((,class (:foreground "brightcyan" :background ,transparent-background :bold t))))
 
    ;; Highlighting faces
-   `(fringe ((,class (:foreground ,black-1 :background ,transparent-background))))
-   `(linum ((,class (:foreground ,white-3 :background ,black-3))))
    `(linum-highlight-face ((,class (:background ,green-0 :foreground ,black-4))))
    `(highlight ((,class (:background ,black-3))))
    `(hl-line ((,class (:background ,black-3))))
@@ -680,10 +685,6 @@ Moe, moe, kyun!")
    `(ido-subdir ((,class (:foreground ,blue-1 :bold t))))
    `(ido-virtual ((,class (:foreground ,magenta-3))))
 
-   ;; git-gutter (&-fringe)
-   `(git-gutter:added ((,class (:foreground ,green-4 :background ,green-0 :bold t))))
-   `(git-gutter:deleted ((,class (:foreground ,red-3 :background ,red-00 :bold t))))
-   `(git-gutter:modified ((,class (:foreground ,yellow-4 :background ,yellow-0 :bold t))))
 
    ;; cfw: Calendar Framework
    ;;   `(cfw:face-annotation ((,class (:foreground , :background ,))))
