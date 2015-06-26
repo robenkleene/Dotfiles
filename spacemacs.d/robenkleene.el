@@ -6,11 +6,12 @@
 
 ;; Config
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config"))
+(require 'robenkleene-functions)
 (require 'robenkleene-config)
 (require 'robenkleene-keybindings)
 ;; (require 'robenkleene-theme)
 (require 'robenkleene-ui)
-(require 'robenkleene-functions)
+
 
 ;; Packages
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/packages"))

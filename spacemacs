@@ -65,7 +65,9 @@
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
 
-
+  ;; Load my themes path
+  ;; (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes/")
+  
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default

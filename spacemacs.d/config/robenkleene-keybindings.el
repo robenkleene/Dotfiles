@@ -2,60 +2,31 @@
 ;;; Commentary:
 ;;; Code:
 
-(defmacro robenkleene-rsify (mode map)
-  "Hurt your hands in MODE and MAP."
-  `(eval-after-load ,mode
-     '(progn
-        (define-key ,map (kbd "C-w") 'backward-kill-word)
-        (define-key ,map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
-        )
-     )
-  )
+;;; RSI
+;; Helm
+(require 'robenkleene-functions)
 (defvar helm-swoop-map)
 (defvar helm-map)
 (defvar helm-grep-map)
-(robenkleene-rsify 'helm-swoop helm-swoop-map)
-(robenkleene-rsify 'helm helm-map)
-(robenkleene-rsify 'helm-grep helm-grep-map)
-
-;; Define C-u & C-w in isearch
-(defun robenkleene/isearch-delete-line (&optional arg)
-  "Delete line, ARG is ignored."
-  (interactive "p")
-  (if (= 0 (length isearch-string))
-      (ding)
-    (setq isearch-string ""
-          isearch-message (mapconcat 'isearch-text-char-description
-                                     isearch-string "")))
-  (if isearch-other-end (goto-char isearch-other-end))
-  (isearch-search)
-  (isearch-push-state)
-  (isearch-update))
-(require 's)
-(defun robenkleene/isearch-delete-word ()
-  "Delete word in the `isearch-string'.  Splitting strings by whitespace, dashes, underscores and camelcase."
-  (interactive)
-  (let* ((isearch-regexp )
-         (str (s-with (s-trim-right isearch-string)
-                (s-chop-suffixes '("-" "-" "_" "*" "+" "."))))
-         (trm (- (length str)
-                 (length (car (last (s-split-words str))))))
-         (string (substring str 0 trm)))
-    (setq isearch-string nil
-          isearch-message nil)
-    (isearch-yank-string string)))
+(robenkleene/rsify 'helm-swoop helm-swoop-map)
+(robenkleene/rsify 'helm helm-map)
+(robenkleene/rsify 'helm-grep helm-grep-map)
+;; isearch
 (define-key isearch-mode-map (kbd "C-u") 'robenkleene/isearch-delete-line)
 (define-key isearch-mode-map (kbd "C-w") 'robenkleene/isearch-delete-word)
-
+;; Everything else
 (defvar robenkleene-rsi-minor-mode-map (make-keymap))
-(define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'backward-kill-word)
+(define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
 (define-minor-mode robenkleene-rsi-minor-mode
-  "Navigation like OS X."
+  "Get rsi."
   t
   nil
   'robenkleene-rsi-minor-mode-map)
 (robenkleene-rsi-minor-mode 1)
+
+;; Use Hippie Expand over Dabbrev `M-/'
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (provide 'robenkleene-keybindings)
 ;;; robenkleene-keybindings.el ends here
