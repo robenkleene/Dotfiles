@@ -52,7 +52,6 @@ Moe, moe, kyun!")
 	  (white-3 "#b2b2b2")
 	  (black-1 "#a8a8a8")
 	  (black-2 "#8a8a8a")
-      (black-2-5 "#6c6c6c")
 	  (black-3 "#4e4e4e")
 	  (black-4 "#3a3a3a")
 	  (black-5 "#303030")
@@ -64,8 +63,6 @@ Moe, moe, kyun!")
       (red-0 "#ff4b4b")
       (magenta-0 "#ffafd7")
       (orange-0 "#ffaf87")
-      (linum-dark "#87875f")
-	  (linum-light "#d7d7af")
       )
 
 
@@ -107,7 +104,7 @@ Moe, moe, kyun!")
 
    ;; Mode line & frames' faces
    `(mode-line ((,class (:box nil :background ,blue-0 :foreground ,blue-3))))
-   `(mode-line-inactive ((,class (:box nil :background ,black-2-5 :foreground ,white-1))))
+   `(mode-line-inactive ((,class (:box nil :background "#6c6c6c" :foreground ,white-1))))
    `(mode-line-buffer-id ((,class (:box nil :foreground ,black-5 :background nil :bold t))))
    `(vertical-border ((,class (:foreground ,black-3 :background ,black-3))))
 
@@ -120,8 +117,8 @@ Moe, moe, kyun!")
 
    ;; Font lock faces
    `(font-lock-builtin-face ((,class (:foreground ,purple-1))))
-   `(font-lock-comment-delimiter-face ((,class (:foreground ,black-2-5 :slant italic))))
-   `(font-lock-comment-face ((,class (:foreground ,black-2-5 :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground "#6c6c6c" :slant italic))))
+   `(font-lock-comment-face ((,class (:foreground "#6c6c6c" :slant italic))))
    `(font-lock-constant-face ((,class (:foreground ,blue-1))))
    `(font-lock-doc-face ((,class (:foreground ,red-0))))
    `(font-lock-doc-string-face ((,class (:foreground "#c4a000"))))
@@ -139,7 +136,7 @@ Moe, moe, kyun!")
    ;; org-mode
    `(org-document-title ((,class (:foreground ,blue-0 :background ,black-5 :weight bold))))
    `(org-document-info ((,class (:foreground ,blue-1 :background ,black-5 :weight bold))))
-   `(org-document-info-keyword ((,class (:foreground ,orange-1 :background ,black-2-5))))
+   `(org-document-info-keyword ((,class (:foreground ,orange-1 :background "#6c6c6c"))))
    `(org-archived ((,class (:slant italic))))
    `(org-checkbox ((,class (:background ,white-2 :foreground ,black-3
 					:box (:line-width 1 :style released-button)))))
@@ -180,7 +177,7 @@ Moe, moe, kyun!")
    `(org-agenda-clocking ((,class (:foreground ,blue-3 :background ,blue-0 :bold t))))
    `(org-agenda-date ((,class (:foreground ,blue-1 :background ,black-5 :underline nil))))
    `(org-agenda-date-weekend ((,class (:foreground ,purple-1 :underline nil :bold nil))))
-   `(org-agenda-date-today ((,class (:foreground ,blue-0 :background ,black-2-5 :slant italic :weight bold))))
+   `(org-agenda-date-today ((,class (:foreground ,blue-0 :background "#6c6c6c" :slant italic :weight bold))))
    `(org-agenda-column-dateline ((,class (:foreground ,white-0 :background ,black-3 :underline t))))
    `(org-agenda-todo ((,class (:foreground ,white-0 :background ,red-2))))
    `(org-agenda-done ((,class (:foreground ,selection-color :background nil))))
@@ -268,7 +265,7 @@ Moe, moe, kyun!")
    `(popup-scroll-bar-background-face ((,class (:background ,black-3 :foreground ,black-3))))
    `(popup-scroll-bar-foreground-face ((,class (:background ,black-2 :foreground ,white-3))))
    `(popup-summary-face ((,class (:background ,black-3 :foreground ,blue-1))))
-   `(popup-tip-face ((,class (:background ,black-2-5 :foreground ,white-1))))
+   `(popup-tip-face ((,class (:background "#6c6c6c" :foreground ,white-1))))
 
    ;; company
    `(company-echo ((,class (:background nil :foreground ,white-1))))
@@ -281,7 +278,7 @@ Moe, moe, kyun!")
    `(company-template-field ((,class (:background "#ffffaf" :foreground ,black-4))))
    `(company-tooltip ((,class (:background ,black-3 :foreground ,blue-1))))
    `(company-tooltip-annotation ((,class (:background ,black-4 :foreground ,red-1))))
-   `(company-tooltip-common ((,class (:background ,black-2-5 :foreground ,blue-0))))
+   `(company-tooltip-common ((,class (:background "#6c6c6c" :foreground ,blue-0))))
    `(company-tooltip-common-selection ((,class (:background ,blue-3 :foreground ,blue-0 :bold t))))
    `(company-tooltip-mouse ((,class (:background ,selection-color :foreground ,black-5))))
    `(company-tooltip-selection ((,class (:background ,blue-3 :foreground ,blue-0))))
@@ -390,7 +387,7 @@ Moe, moe, kyun!")
    `(helm-match ((,class (:foreground ,selection-color :background ,black-5 :bold t))))
    `(helm-selection ((,class (:foreground nil :background ,blue-3))))
    `(helm-selection-line ((,class (:foreground nil :background "#875f00"))))
-   `(helm-source-header ((,class (:foreground ,white-0 :background ,black-2-5 :bold t))))
+   `(helm-source-header ((,class (:foreground ,white-0 :background "#6c6c6c" :bold t))))
 
    ;; Dired/Dired+
    `(dired-directory ((,class (:foreground ,blue-1 :bold t))))
@@ -430,7 +427,7 @@ Moe, moe, kyun!")
    ;; Magit
    `(magit-branch ((,class (:foreground ,green-4 :background ,selection-color :bold t :underline t))))
    `(magit-diff-file-header ((,class (:foreground ,white-0 :background ,black-2 :bold t))))
-   `(magit-diff-hunk-header ((,class (:foreground ,white-2 :background ,black-2-5 :bold t))))
+   `(magit-diff-hunk-header ((,class (:foreground ,white-2 :background "#6c6c6c" :bold t))))
    `(magit-diff-merge-current ((,class (:foreground ,purple-1))))
    `(magit-diff-merge-diff3-separator ((,class (:foreground ,purple-1))))
    `(magit-diff-merge-proposed ((,class (:foreground ,purple-1))))
@@ -500,7 +497,7 @@ Moe, moe, kyun!")
    `(message-header-to ((,class (:foreground ,blue-1 :underline t :bold t))))
    `(message-header-xheader ((,class (:foreground ,black-1))))
    `(message-mml ((,class (:foreground ,orange-2))))
-   `(message-separator ((,class (:foreground ,black-2-5))))
+   `(message-separator ((,class (:foreground "#6c6c6c"))))
 
    ;; Grep
    `(grep-context-face ((,class (:foreground ,red-2))))
@@ -511,7 +508,7 @@ Moe, moe, kyun!")
    ;; Diff
    `(diff-added ((,class (:foreground ,selection-color :background ,black-4 :bold t))))
    `(diff-changed ((,class (:foreground "#ffd700" :background ,black-4 :bold t))))
-   `(diff-context ((,class (:foreground ,black-2-5))))
+   `(diff-context ((,class (:foreground "#6c6c6c"))))
    `(diff-file-header ((,class (:foreground ,black-5 :background ,blue-0 :bold t))))
    `(diff-function ((,class (:foreground ,black-4 :background ,white-2))))
    `(diff-header ((,class (:foreground ,blue-3 :background ,blue-0))))
@@ -568,7 +565,7 @@ Moe, moe, kyun!")
    `(cua-rectangle ((,class (:background ,magenta-3 :foreground ,white-1))))
 
    ;; Ace-jump
-   `(ace-jump-face-background ((,class (:background nil :foreground ,black-2-5))))
+   `(ace-jump-face-background ((,class (:background nil :foreground "#6c6c6c"))))
    `(ace-jump-face-foreground ((,class (:foreground ,orange-2 :bold t))))
 
    ;; Rainbow-delimiters
@@ -595,10 +592,10 @@ Moe, moe, kyun!")
    `(eshell-ls-special ((,class (:foreground "#fce94f"))))
    `(eshell-ls-symlink  ((,class (:foreground ,magenta-2))))
    `(eshell-ls-unreadable ((,class (:foreground ,black-2))))
-   `(eshell-prompt ((,class (:foreground ,white-0 :background ,black-2-5 :bold t))))
+   `(eshell-prompt ((,class (:foreground ,white-0 :background "#6c6c6c" :bold t))))
 
    ;; Comint prompt
-   `(comint-highlight-prompt ((,class (:foreground ,white-0 :background ,black-2-5 :bold t))))
+   `(comint-highlight-prompt ((,class (:foreground ,white-0 :background "#6c6c6c" :bold t))))
 
    ;; which-function-mode
    `(which-func ((,class (:foreground ,white-0 :background ,orange-2))))
@@ -668,7 +665,7 @@ Moe, moe, kyun!")
    `(erc-nick-msg-face ((,class (:weight normal :foreground ,orange-2))))
    `(erc-notice-face ((,class (:foreground ,black-2))))
    `(erc-pal-face ((,class (:foreground ,purple-1))))
-   `(erc-prompt-face ((,class (:bold t :foreground ,selection-color :background ,black-2-5))))
+   `(erc-prompt-face ((,class (:bold t :foreground ,selection-color :background "#6c6c6c"))))
    `(erc-timestamp-face ((,class (:foreground ,orange-2))))
 
    ;; ReStructuredText
@@ -695,9 +692,9 @@ Moe, moe, kyun!")
    `(rst-transition ((,class (:foreground ,selection-color :background ,black-4 :bold t))))
 
    ;; yalinum
-   `(yalinum-bar-face ((,class (:foreground ,black-2-5 :background ,white-1))))
+   `(yalinum-bar-face ((,class (:foreground "#6c6c6c" :background ,white-1))))
    `(yalinum-face ((,class (:foreground ,white-1 :background ,black-2))))
-   `(yalinum-track-face ((,class (:foreground ,white-1 :background ,black-2-5))))
+   `(yalinum-track-face ((,class (:foreground ,white-1 :background "#6c6c6c"))))
 
    ;; Ruby
    `(enh-ruby-heredoc-delimiter-face ((,class (:foreground ,purple-2))))
@@ -747,7 +744,7 @@ Moe, moe, kyun!")
    `(cfw:face-toolbar-button-on ((,class (:foreground ,red-1 :background ,white-0))))
 
    ;; Column marker
-   `(column-marker-1 ((,class (:background ,black-2-5))))
+   `(column-marker-1 ((,class (:background "#6c6c6c"))))
    `(column-marker-2 ((,class (:background "#875f00"))))
    `(column-marker-3 ((,class (:background ,red-3))))
 
@@ -755,10 +752,10 @@ Moe, moe, kyun!")
    `(swoop-face-header-format-line ((,class (:foreground ,black-6 :background nil :underline nil))))
    `(swoop-face-line-buffer-name ((,class (:foreground ,green-4 :background ,selection-color))))
    `(swoop-face-line-number ((,class (:foreground "#87875f" :background "#d7d7af"))))
-   `(swoop-face-target-line ((,class (:foreground "#fce94f" :background ,black-2-5))))
-   `(swoop-face-target-words ((,class (:foreground ,magenta-1 :background ,black-2-5 :bold t))))
+   `(swoop-face-target-line ((,class (:foreground "#fce94f" :background "#6c6c6c"))))
+   `(swoop-face-target-words ((,class (:foreground ,magenta-1 :background "#6c6c6c" :bold t))))
    `(helm-swoop-target-line-block-face ((,class (:foreground "#fce94f" :background ,black-3))))
-   `(helm-swoop-target-line-face ((,class (:foreground "#fce94f" :background ,black-2-5))))
+   `(helm-swoop-target-line-face ((,class (:foreground "#fce94f" :background "#6c6c6c"))))
    `(helm-swoop-target-word-face ((,class (:foreground ,magenta-3 :background ,magenta-0 :bold t))))
 
    ;; widget
@@ -788,7 +785,7 @@ Moe, moe, kyun!")
    `(neo-root-dir-face ((,class (:foreground ,magenta-1))))
    `(neo-button-face ((,class (:foreground ,blue-1 :bold t))))
    `(neo-dir-link-face ((,class (:foreground ,blue-2 :bold t))))
-   `(neo-expand-btn-face ((,class (:foreground ,blue-1 :background ,black-2-5))))
+   `(neo-expand-btn-face ((,class (:foreground ,blue-1 :background "#6c6c6c"))))
    `(neo-file-link-face ((,class (:foreground ,white-1))))
 
    ;; info
@@ -822,12 +819,12 @@ Moe, moe, kyun!")
    `(haskell-interactive-face-compile-error ((,class (:foreground ,red-0 :background nil :bold t))))
    `(haskell-interactive-face-compile-warning ((,class (:foreground ,orange-2 :background nil :bold t))))
    `(haskell-interactive-face-garbage ((,class (:foreground ,black-2))))
-   `(haskell-interactive-face-prompt ((,class (:foreground ,selection-color :background ,black-2-5 :bold t))))
+   `(haskell-interactive-face-prompt ((,class (:foreground ,selection-color :background "#6c6c6c" :bold t))))
    `(haskell-interactive-face-result ((,class (:foreground ,blue-1))))
 
    ;; tty-menu
    `(menu ((,class (:foreground ,black-1 :background ,black-3))))
-   `(tty-menu-disabled-face ((,class (:foreground ,black-2-5 :background ,black-3))))
+   `(tty-menu-disabled-face ((,class (:foreground "#6c6c6c" :background ,black-3))))
    `(tty-menu-enabled-face ((,class (:foreground ,white-0 :background ,black-3 :bold t))))
    `(tty-menu-selected-face ((,class (:background ,blue-3))))
 
