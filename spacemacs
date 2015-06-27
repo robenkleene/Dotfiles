@@ -42,8 +42,8 @@
             shell-default-shell 'eshell)
      shell-scripts
      git
-     (git :variables
-          git-magit-status-fullscreen t)
+     ;; (git :variables
+     ;;      git-magit-status-fullscreen t)
 
      )
    ;; List of additional packages that will be installed wihout being
