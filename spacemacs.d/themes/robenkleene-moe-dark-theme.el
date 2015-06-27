@@ -46,12 +46,14 @@ Moe, moe, kyun!")
    ;; Highlight
    `(hl-line ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
 
+   ;; Region
+   `(region ((,class (:foreground "brightwhite" :background "#4e4e4e"))))
+
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,selection-color-background :foreground "#3a3a3a"))))
    ;; `(highlight ((,class (:background "#4e4e4e"))))
    ;; `(hl-line ((,class (:background "#4e4e4e"))))
    ;; `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
-   `(region ((,class (:foreground "#4e4e4e" :background ,selection-color-background))))
    `(secondary-selection ((,class (:background "#005f87" :foreground "#ffffff"))))
    `(isearch ((,class (:foreground "#c6c6c6" :background "#ff5d17"))))
    `(lazy-highlight ((,class (:background "#ff1f8b" :foreground "#c6c6c6"))))
