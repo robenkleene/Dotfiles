@@ -2,7 +2,7 @@
 
 ;; Author: kuanyui<azazabc123@gmail.com>
 ;; Based on "tango-dark-theme"
-
+;;; Commentary:
 ;;; Code:
 
 (deftheme robenkleene-moe-dark
