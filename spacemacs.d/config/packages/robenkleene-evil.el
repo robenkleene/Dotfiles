@@ -60,8 +60,6 @@
      )
   )
 
-;; Insert Mode Keys
-;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
 
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here

@@ -25,6 +25,10 @@
   'robenkleene-rsi-minor-mode-map)
 (robenkleene-rsi-minor-mode 1)
 
+;; Insert Mode Keys
+;; TODO: Figure out how to not clobber clipboard when specifying paths for helm search
+;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+
 ;; Use Hippie Expand over Dabbrev `M-/'
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
