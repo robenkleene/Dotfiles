@@ -14,9 +14,9 @@ Moe, moe, kyun!")
       (transparent-background "unspecified-bg")
       (solid-background "#3a3a3a")
 	  (selection-color-background "#afd702")
-	  (diff-add-foreground "brightgreen")
-	  (diff-remove-foreground "brightred")
-	  (diff-change-foreground "brightcyan")
+	  (diff-added-foreground "brightgreen")
+	  (diff-removed-foreground "brightred")
+	  (diff-changed-foreground "brightcyan")
       )
 
   (custom-theme-set-faces
@@ -25,15 +25,11 @@ Moe, moe, kyun!")
    `(default ((,class (:foreground "#c6c6c6" :background ,transparent-background))))
    `(fringe ((,class (:foreground "#a8a8a8" :background ,transparent-background))))
    `(linum ((,class (:foreground "#b2b2b2" :background ,solid-background))))
-   ;; git-gutter (&-fringe)
-   `(git-gutter:added ((,class (:foreground ,diff-add-foreground :background ,transparent-background :bold t))))
-   `(git-gutter:deleted ((,class (:foreground ,diff-remove-foreground :background ,transparent-background :bold t))))
-   `(git-gutter:modified ((,class (:foreground ,diff-change-foreground :background ,transparent-background :bold t))))
 
-   ;; Magit
-   `(magit-diff-add ((,class (:foreground ,diff-add-foreground :background nil :bold t))))
-   `(magit-diff-del ((,class (:foreground ,diff-remove-foreground :background nil :bold t))))
-
+   ;; Diff, Magit and Git Gutter inheret
+   `(diff-added ((,class (:foreground ,diff-added-foreground :background nil :bold nil))))
+   `(diff-changed ((,class (:foreground ,diff-changed-foreground :background nil :bold nil))))
+   `(diff-removed ((,class (:foreground ,diff-removed-foreground :background nil :bold nil))))
 
 
 
@@ -458,8 +454,6 @@ Moe, moe, kyun!")
    `(grep-match-face ((,class (:foreground nil :background nil :inherit match))))
 
    ;; Diff
-   `(diff-added ((,class (:foreground ,selection-color-background :background "#3a3a3a" :bold t))))
-   `(diff-changed ((,class (:foreground "#ffd700" :background "#3a3a3a" :bold t))))
    `(diff-context ((,class (:foreground "#6c6c6c"))))
    `(diff-file-header ((,class (:foreground "#303030" :background "#afd7ff" :bold t))))
    `(diff-function ((,class (:foreground "#3a3a3a" :background "#c6c6c6"))))
@@ -473,7 +467,6 @@ Moe, moe, kyun!")
    `(diff-refine-added ((,class (:foreground "#ffffff" :background "#008700" :bold t))))
    `(diff-refine-change ((,class (:foreground "#ffffff" :background "#875f00" :bold t))))
    `(diff-refine-removed ((,class (:foreground "#ffffff" :background "#a40000" :bold t))))
-   `(diff-removed ((,class (:foreground "#ff4b4b" :background "#3a3a3a" :bold t))))
 
    ;; Ediff
    `(ediff-current-diff-A ((,class (:background "#875f00"))))
