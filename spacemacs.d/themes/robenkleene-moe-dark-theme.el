@@ -47,7 +47,7 @@ Moe, moe, kyun!")
    `(hl-line ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
 
    ;; Region
-   `(region ((,class (:foreground "brightwhite" :background "#4e4e4e"))))
+   `(region ((,class (:foreground "brightwhite" :background "#585858"))))
 
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,selection-color-background :foreground "#3a3a3a"))))
