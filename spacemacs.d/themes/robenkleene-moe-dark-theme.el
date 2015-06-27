@@ -11,37 +11,44 @@ Moe, moe, kyun!")
 
 (let ((class '((class color) (min-colors 89)))
 
+      ;; Background
       (transparent-background "unspecified-bg")
       (solid-background "#3a3a3a")
-	  (selection-color-background "#afd702")
-	  (diff-added-foreground "brightgreen")
-	  (diff-removed-foreground "brightred")
-	  (diff-changed-foreground "brightcyan")
+
+      ;; Foreground
+      (light-text-foreground "#b2b2b2")
+
+      ;; Selection
+      (selection-color-background "#afd702")
+
+      ;; Diff
+      (diff-added-foreground "brightgreen")
+      (diff-removed-foreground "brightred")
+      (diff-changed-foreground "brightcyan")
       )
 
   (custom-theme-set-faces
    'robenkleene-moe-dark
-   ;; Customized
-   `(default ((,class (:foreground "#c6c6c6" :background ,transparent-background))))
-   `(fringe ((,class (:foreground "#a8a8a8" :background ,transparent-background))))
-   `(linum ((,class (:foreground "#b2b2b2" :background ,solid-background))))
+   ;; Geeneral
+   `(default ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
+   `(fringe ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
+   `(linum ((,class (:foreground ,light-text-foreground :background ,solid-background))))
 
-   ;; Diff, Magit and Git Gutter inheret
+   ;; Diff: Magit and Git Gutter inheret
    `(diff-added ((,class (:foreground ,diff-added-foreground :background nil :bold nil))))
    `(diff-changed ((,class (:foreground ,diff-changed-foreground :background nil :bold nil))))
    `(diff-removed ((,class (:foreground ,diff-removed-foreground :background nil :bold nil))))
 
+   ;; Highlight
 
-
-
-
+;; #005F87
 
    ;; Highlighting faces
-   `(linum-highlight-face ((,class (:background ,selection-color-background :foreground "#3a3a3a"))))
+   ;; `(linum-highlight-face ((,class (:background ,selection-color-background :foreground "#3a3a3a"))))
    `(highlight ((,class (:background "#4e4e4e"))))
    `(hl-line ((,class (:background "#4e4e4e"))))
-   `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
-	`(region ((,class (:foreground "#4e4e4e" :background ,selection-color-background))))
+   ;; `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
+   `(region ((,class (:foreground "#4e4e4e" :background ,selection-color-background))))
    `(secondary-selection ((,class (:background "#005f87" :foreground "#ffffff"))))
    `(isearch ((,class (:foreground "#c6c6c6" :background "#ff5d17"))))
    `(lazy-highlight ((,class (:background "#ff1f8b" :foreground "#c6c6c6"))))
