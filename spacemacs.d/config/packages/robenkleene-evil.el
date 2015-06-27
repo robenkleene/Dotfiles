@@ -7,6 +7,13 @@
 (define-key robenkleene-leader-map (kbd "t") 'robenkleene/open-terminal-window)
 (define-key robenkleene-leader-map (kbd "f") 'robenkleene/open-finder-window)
 
+;; Only use highlight in motion and normal modes
+(global-hl-line-mode)
+(make-variable-buffer-local 'global-hl-line-mode)
+(add-hook 'evil-normal-state-entry-hook (lambda () (setq global-hl-line-mode t)))
+(add-hook 'evil-motion-state-entry-hook (lambda () (setq global-hl-line-mode t)))
+(add-hook 'evil-insert-state-entry-hook (lambda () (setq global-hl-line-mode nil)))
+
 (eval-after-load 'evil-evilified-state
   '(progn
      (defvar evil-evilified-state-map)
@@ -18,19 +25,18 @@
      (define-key evil-evilified-state-map "-" 'dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
      ;; Evilify
-     (defvar agit-diff-mode)
      (defvar magit-diff-mode)
      (defvar magit-diff-mode-map)
      (defvar Custom-mode)
      (defvar custom-mode-map)
      (defvar debugger-mode)
      (defvar debugger-mode-map)
+     (defvar dired-mode)
+     (defvar dired-mode-map)
      (declare-function evilify "ext:evil-evilified-state.el")
      (evilify magit-diff-mode magit-diff-mode-map)
      (evilify Custom-mode custom-mode-map)
      (evilify debugger-mode debugger-mode-map)
-     (defvar dired-mode)
-     (defvar dired-mode-map)
      (evilify dired-mode dired-mode-map)
      )
   )
@@ -53,10 +59,6 @@
      (define-key evil-motion-state-map (kbd "\\") robenkleene-leader-map)
      )
   )
-
-;; Evil Leader
-;; (evil-leader/set-key
-;;   "ow" 'toggle-truncate-lines)
 
 ;; Insert Mode Keys
 ;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
