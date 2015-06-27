@@ -332,7 +332,7 @@ nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 " nnoremap <leader>\B :%y+<CR>
 " vnoremap <leader>c "+y
 " Use normal mode C-L in insert mode
-inoremap <silent> <C-L> <C-O>:nohlsearch<CR><C-O><C-L>
+" inoremap <silent> <C-L> <C-O>:nohlsearch<CR><C-O><C-L>
 " Sanity
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj

@@ -13,6 +13,7 @@
      (define-key evil-evilified-state-map "\C-w" 'evil-window-map)
      (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
      (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
+     (define-key evil-evilified-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
      (define-key evil-evilified-state-map "-" 'dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
@@ -43,6 +44,8 @@
      (setcdr evil-insert-state-map nil)
      ;; Re-enable esc
      (define-key evil-insert-state-map [escape] 'evil-normal-state)
+     (define-key evil-normal-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
+     (define-key evil-motion-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
      (define-key evil-normal-state-map "-" 'dired-jump)
      (define-key evil-motion-state-map "-" 'dired-jump)
      ;; Other Leader
