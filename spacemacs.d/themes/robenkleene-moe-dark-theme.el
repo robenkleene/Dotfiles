@@ -21,6 +21,10 @@ Moe, moe, kyun!")
       ;; Selection
       (selection-color-background "#afd702")
 
+      ;; Highlight
+      (highlight-background "#005f87")
+      (highlight-foreground "brightwhite")
+
       ;; Diff
       (diff-added-foreground "brightgreen")
       (diff-removed-foreground "brightred")
@@ -40,13 +44,12 @@ Moe, moe, kyun!")
    `(diff-removed ((,class (:foreground ,diff-removed-foreground :background nil :bold nil))))
 
    ;; Highlight
-
-;; #005F87
+   `(hl-line ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
 
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,selection-color-background :foreground "#3a3a3a"))))
-   `(highlight ((,class (:background "#4e4e4e"))))
-   `(hl-line ((,class (:background "#4e4e4e"))))
+   ;; `(highlight ((,class (:background "#4e4e4e"))))
+   ;; `(hl-line ((,class (:background "#4e4e4e"))))
    ;; `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
    `(region ((,class (:foreground "#4e4e4e" :background ,selection-color-background))))
    `(secondary-selection ((,class (:background "#005f87" :foreground "#ffffff"))))
