@@ -18,6 +18,7 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-dired)
 (require 'robenkleene-evil)
+(require 'robenkleene-smartparens)
 
 ;; Languages
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/languages"))

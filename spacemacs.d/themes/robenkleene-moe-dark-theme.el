@@ -53,6 +53,9 @@ Moe, moe, kyun!")
    ;; Region
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
 
+   ;; Paren Match
+   `(show-paren-match ((,class (:underline t))))
+
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,prompt-background :foreground "#3a3a3a"))))
    ;; `(highlight ((,class (:background "#4e4e4e"))))
@@ -62,7 +65,6 @@ Moe, moe, kyun!")
    `(isearch ((,class (:foreground "#c6c6c6" :background "#ff5d17"))))
    `(lazy-highlight ((,class (:background "#ff1f8b" :foreground "#c6c6c6"))))
    `(trailing-whitespace ((,class (:background "#a40000"))))
-   `(show-paren-match ((,class (:background "#005f87" :foreground nil))))
    `(header-line ((,class (:background "#005f87" :foreground "#ffffff"))))
    `(help-argument-name ((,class (:foreground "#ff7bbb" :italic t))))
 

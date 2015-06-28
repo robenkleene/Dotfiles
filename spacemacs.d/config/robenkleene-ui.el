@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Line Numbers interfere with git gutter
 (global-linum-mode t)
 (add-hook 'dired-mode-hook
           (lambda ()
