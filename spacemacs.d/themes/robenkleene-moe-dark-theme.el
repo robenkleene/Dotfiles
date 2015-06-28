@@ -13,7 +13,7 @@ Moe, moe, kyun!")
 
       ;; Background
       (transparent-background "unspecified-bg")
-      (solid-background "#3a3a3a")
+      (solid-background "#444444")
 
       ;; Foreground
       (light-text-foreground "#b2b2b2")
@@ -42,17 +42,11 @@ Moe, moe, kyun!")
       ;; Modeline & Windows
       (modeline-active-background "#B0D8FD")
       (modeline-active-foreground "#0B6085")
+      ;; (modeline-active-foreground dark-text-foreground)
       (modeline-inactive-background solid-background)
+      (modeline-inactive-foreground light-text-foreground)
 
 )
-
-
-      ;;       ;; Modeline & Windows
-      ;;       (modeline-active-background "#B0D8FD")
-      ;;       (modeline-active-foreground "#0B6085")
-      ;;       ;; (modeline-inactive-background "")
-      ;;       ))
-
 
   (custom-theme-set-faces
    'robenkleene-moe-dark
@@ -82,10 +76,10 @@ Moe, moe, kyun!")
 
 
    ;; Mode line & frames' faces
-   `(mode-line ((,class (:box nil :background "#afd7ff" :foreground "#005f87"))))
-   `(mode-line-inactive ((,class (:box nil :background "#6c6c6c" :foreground "#c6c6c6"))))
-   `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
-   `(vertical-border ((,class (:foreground "#4e4e4e" :background "#4e4e4e"))))
+   `(mode-line ((,class (:box nil :background ,modeline-active-background :foreground ,modeline-active-foreground))))
+   `(mode-line-inactive ((,class (:box nil :background ,modeline-inactive-background :foreground ,modeline-inactive-foreground))))
+   ;; `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
+   `(vertical-border ((,class (:foreground ,solid-background :background ,solid-background))))
 
    ;; TODO: Magit
 
