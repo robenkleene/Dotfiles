@@ -93,12 +93,12 @@ before layers configuration."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          robenkleene-moe-dark
-                         ;; moe-dark
                          noctilux
                          material
-                         purple-haze
-                         ir-black
                          wombat
+                         ir-black
+                         purple-haze
+                         ;; moe-dark
                          )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t

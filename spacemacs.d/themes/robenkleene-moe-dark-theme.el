@@ -11,13 +11,14 @@ Moe, moe, kyun!")
 
 (let* ((class '((class color) (min-colors 89)))
 
-      ;; Background
+      ;; Basic
       (transparent-background "unspecified-bg")
       (solid-background "#444444")
-
-      ;; Foreground
       (light-text-foreground "#b2b2b2")
       (dark-text-foreground solid-background)
+
+      (error-background "brightred")
+      (error-text-foreground solid-background)
 
       ;; Prompt
       (prompt-background "#afd702")
@@ -41,11 +42,9 @@ Moe, moe, kyun!")
 
       ;; Modeline & Windows
       (modeline-active-background "#B0D8FD")
-      (modeline-active-foreground "#0B6085")
-      ;; (modeline-active-foreground dark-text-foreground)
+      (modeline-active-foreground dark-text-foreground)
       (modeline-inactive-background solid-background)
       (modeline-inactive-foreground light-text-foreground)
-
 )
 
   (custom-theme-set-faces
@@ -67,29 +66,57 @@ Moe, moe, kyun!")
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
 
    ;; Paren Match
-   `(show-paren-match ((,class (:underline t))))
+   `(show-paren-match ((,class (:underline t :foreground ,region-foreground :background ,region-background))))
+   ;; Does `rainbow-delimiter-mismatched-face' and `rainbow-delimiters-unmatched-face' interfere with this?
+   `(show-paren-mismatch ((,class (:background ,error-background :foreground ,error-text-foreground))))
 
    ;; Search
    `(isearch ((,class (:foreground ,search-foreground :background ,search-background))))
    ;; Matches other then the current one
    `(lazy-highlight ((,class (:foreground ,search-foreground :background ,search-background))))
 
-
-   ;; Mode line & frames' faces
+   ;; Mode line & Windows
    `(mode-line ((,class (:box nil :background ,modeline-active-background :foreground ,modeline-active-foreground))))
    `(mode-line-inactive ((,class (:box nil :background ,modeline-inactive-background :foreground ,modeline-inactive-foreground))))
-   ;; `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
    `(vertical-border ((,class (:foreground ,solid-background :background ,solid-background))))
+
+   ;; TODO: Syntax Highlighting
+   `(font-lock-builtin-face ((,class (:foreground "#d18aff"))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground "#6c6c6c" :slant italic))))
+   `(font-lock-comment-face ((,class (:foreground "#6c6c6c" :slant italic))))
+   `(font-lock-constant-face ((,class (:foreground "#5fafd7"))))
+   `(font-lock-doc-face ((,class (:foreground "#ff4b4b"))))
+   `(font-lock-doc-string-face ((,class (:foreground "#c4a000"))))
+   `(font-lock-function-name-face ((,class (:foreground "#ffd700"))))
+   `(font-lock-keyword-face ((,class (:foreground ,prompt-background))))
+   `(font-lock-negation-char-face ((,class (:foreground "#ff4b4b"))))
+   `(font-lock-preprocessor-face ((,class (:foreground "#d18aff"))))
+   `(font-lock-regexp-grouping-backslash ((,class (:foreground "#fce94f"))))
+   `(font-lock-regexp-grouping-construct ((,class (:foreground "#d18aff"))))
+   `(font-lock-string-face ((,class (:foreground "#ff4ea3"))))
+   `(font-lock-type-face ((,class (:foreground "#00d7af"))))
+   `(font-lock-variable-name-face ((,class (:foreground "#ff8700"))))
+   `(font-lock-warning-face ((,class (:weight bold :foreground "#dd0000"))))
+
+   ;; Rainbow Delimiters
+   `(rainbow-delimiters-depth-1-face ((,class (:bold t :foreground "#AFD7D7"))))
+   `(rainbow-delimiters-depth-2-face ((,class (:bold t :foreground "#01A6B2"))))
+   `(rainbow-delimiters-depth-3-face ((,class (:bold t :foreground "#B0FFD7"))))
+   `(rainbow-delimiters-depth-4-face ((,class (:bold t :foreground "#D7AFFF"))))
+   `(rainbow-delimiters-depth-5-face ((,class (:bold t :foreground "#00D900"))))
+   `(rainbow-delimiters-depth-6-face ((,class (:bold t :foreground "#D0D0D0"))))
+   `(rainbow-delimiters-depth-7-face ((,class (:bold t :foreground "#999900"))))
+   `(rainbow-delimiters-depth-8-face ((,class (:bold t :foreground "#AFD7FF"))))
+   `(rainbow-delimiters-depth-9-face ((,class (:bold t :foreground "#01A6B2"))))
+
+
+
 
    ;; TODO: Magit
 
    ;; TODO: Helm
 
-   ;; TODO: Rainbow Delimiters
-
-   ;; TODO: Syntax Highlighting
-
-
+   ;; TODO: Flycheck Syntax Errors
 
 
    ;;; Uncustomized
@@ -113,23 +140,6 @@ Moe, moe, kyun!")
    `(warning ((,class (:foreground "#ffaf5f"))))
    `(success ((,class (:foreground ,prompt-background))))
 
-   ;; Font lock faces
-   `(font-lock-builtin-face ((,class (:foreground "#d18aff"))))
-   `(font-lock-comment-delimiter-face ((,class (:foreground "#6c6c6c" :slant italic))))
-   `(font-lock-comment-face ((,class (:foreground "#6c6c6c" :slant italic))))
-   `(font-lock-constant-face ((,class (:foreground "#5fafd7"))))
-   `(font-lock-doc-face ((,class (:foreground "#ff4b4b"))))
-   `(font-lock-doc-string-face ((,class (:foreground "#c4a000"))))
-   `(font-lock-function-name-face ((,class (:foreground "#ffd700"))))
-   `(font-lock-keyword-face ((,class (:foreground ,prompt-background))))
-   `(font-lock-negation-char-face ((,class (:foreground "#ff4b4b"))))
-   `(font-lock-preprocessor-face ((,class (:foreground "#d18aff"))))
-   `(font-lock-regexp-grouping-backslash ((,class (:foreground "#fce94f"))))
-   `(font-lock-regexp-grouping-construct ((,class (:foreground "#d18aff"))))
-   `(font-lock-string-face ((,class (:foreground "#ff4ea3"))))
-   `(font-lock-type-face ((,class (:foreground "#00d7af"))))
-   `(font-lock-variable-name-face ((,class (:foreground "#ff8700"))))
-   `(font-lock-warning-face ((,class (:weight bold :foreground "#dd0000"))))
 
    ;; org-mode
    `(org-document-title ((,class (:foreground "#afd7ff" :background "#303030" :weight bold))))
@@ -563,17 +573,6 @@ Moe, moe, kyun!")
    `(ace-jump-face-background ((,class (:background nil :foreground "#6c6c6c"))))
    `(ace-jump-face-foreground ((,class (:foreground "#ff8700" :bold t))))
 
-   ;; Rainbow-delimiters
-   `(rainbow-delimiters-depth-1-face ((,class (:bold t :foreground "#dd0000"))))
-   `(rainbow-delimiters-depth-2-face ((,class (:bold t :foreground "#5fafd7"))))
-   `(rainbow-delimiters-depth-3-face ((,class (:bold t :foreground ,prompt-background))))
-   `(rainbow-delimiters-depth-4-face ((,class (:bold t :foreground "#ff4ea3"))))
-   `(rainbow-delimiters-depth-5-face ((,class (:bold t :foreground "#00d7af"))))
-   `(rainbow-delimiters-depth-6-face ((,class (:bold t :foreground "#ff8700"))))
-   `(rainbow-delimiters-depth-7-face ((,class (:bold t :foreground "#af5fff"))))
-   `(rainbow-delimiters-depth-8-face ((,class (:bold t :foreground "#c6c6c6"))))
-   `(rainbow-delimiters-depth-9-face ((,class (:bold t :foreground "#ffd700"))))
-   `(rainbow-delimiters-unmatched-face ((,class (:foreground "#ffffff" :background "#a40000" :bold t))))
 
    ;; EShell
    `(eshell-ls-archive ((,class (:foreground "#af5fff"))))
