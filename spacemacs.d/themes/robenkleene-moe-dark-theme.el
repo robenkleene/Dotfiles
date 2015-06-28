@@ -9,7 +9,7 @@
   "Face colors for 256 colors terminal (dark background).
 Moe, moe, kyun!")
 
-(let ((class '((class color) (min-colors 89)))
+(let* ((class '((class color) (min-colors 89)))
 
       ;; Background
       (transparent-background "unspecified-bg")
@@ -17,7 +17,7 @@ Moe, moe, kyun!")
 
       ;; Foreground
       (light-text-foreground "#b2b2b2")
-      (dark-text-foreground "#303030")
+      (dark-text-foreground solid-background)
 
       ;; Prompt
       (prompt-background "#afd702")
@@ -36,30 +36,15 @@ Moe, moe, kyun!")
       (diff-changed-foreground "brightcyan")
 
       ;; Search
-      ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
-      (search-background "#585858")
-      (search-foreground "brightwhite")
+      (search-background region-background)
+      (search-foreground region-foreground)
 
-
-      ;; (let (
-
-
-      ;;       ;; Modeline & Windows
-      ;;       (modeline-active-background "#B0D8FD")
-      ;;       (modeline-active-foreground "#0B6085")
-      ;;       ;; (modeline-inactive-background "")
-      ;;       ))
+      ;; Modeline & Windows
+      (modeline-active-background "#B0D8FD")
+      (modeline-active-foreground "#0B6085")
+      (modeline-inactive-background solid-background)
 
 )
-      ;; (let (
-      ;;       ;; Search
-      ;;       ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
-      ;;       (search-background region-background)
-      ;;       (search-foreground region-foreground)
-      ;;       ;; (search-background "#585858")
-      ;;       ;; (search-foreground "brightwhite")
-      ;;       ;; (search-background "cyan")
-      ;;       ;; (search-foreground "brightwhite")
 
 
       ;;       ;; Modeline & Windows
@@ -101,6 +86,16 @@ Moe, moe, kyun!")
    `(mode-line-inactive ((,class (:box nil :background "#6c6c6c" :foreground "#c6c6c6"))))
    `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
    `(vertical-border ((,class (:foreground "#4e4e4e" :background "#4e4e4e"))))
+
+   ;; TODO: Magit
+
+   ;; TODO: Helm
+
+   ;; TODO: Rainbow Delimiters
+
+   ;; TODO: Syntax Highlighting
+
+
 
 
    ;;; Uncustomized
