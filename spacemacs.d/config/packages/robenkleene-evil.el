@@ -21,6 +21,8 @@
      (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
      (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
      (define-key evil-evilified-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
+     (define-key evil-evilified-state-map "{" 'evil-backward-paragraph)
+     (define-key evil-evilified-state-map "}" 'evil-forward-paragraph)
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
      (define-key evil-evilified-state-map "-" 'robenkleene/dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
@@ -38,6 +40,10 @@
      (evilify Custom-mode custom-mode-map)
      (evilify debugger-mode debugger-mode-map)
      (evilify dired-mode dired-mode-map)
+     (evilify magit-status-mode magit-status-mode-map
+              "}" 'magit-goto-next-section
+              "{" 'magit-goto-previous-section
+              )
      )
   )
 
