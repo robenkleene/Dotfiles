@@ -37,15 +37,16 @@
      org
      colors
      syntax-checking
+     git
+     ;; (git :variables
+     ;;      git-magit-status-fullscreen t
+     ;;      git-gutter-use-fringe t
+     ;;      )
      shell
      (shell :variables
             shell-default-shell 'eshell)
      shell-scripts
-     git
-     ;; (git :variables
-     ;;      git-magit-status-fullscreen t)
-
-     )
+   )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
