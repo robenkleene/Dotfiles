@@ -17,6 +17,7 @@
 ;; Everything else
 (defvar robenkleene-rsi-minor-mode-map (make-keymap))
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
+;; TODO: Figure out how to prevent `C-u' from clobbering the keyboard
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
 (define-minor-mode robenkleene-rsi-minor-mode
   "Get rsi."
@@ -27,7 +28,7 @@
 
 ;; Insert Mode Keys
 ;; TODO: Figure out how to not clobber clipboard when specifying paths for helm search
-;; (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+;; (define-key minibuffer-local-map (kbd "C-w") 'robenkleene/backward-delete-word)
 
 ;; Use Hippie Expand over Dabbrev `M-/'
 (global-set-key [remap dabbrev-expand] 'hippie-expand)

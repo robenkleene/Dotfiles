@@ -9,12 +9,18 @@
   (dired-jump)
   )
 
+(defun robenkleene/backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+With argument ARG, do this that many times."
+  (interactive "p")
+  (delete-region (point) (progn (backward-word arg) (point))))
+
 (defun robenkleene/kill-region-or-backward-word ()
   "If the region is active and non-empty, call `kill-region'.
 Otherwise, call `backward-kill-word'."
   (interactive)
   (call-interactively
-   (if (use-region-p) 'kill-region 'backward-kill-word)))
+   (if (use-region-p) 'kill-region 'robenkleene/backward-delete-word)))
 
 (defun robenkleene/open-terminal-window ()
   "Open a new Terminal window at the current path."
