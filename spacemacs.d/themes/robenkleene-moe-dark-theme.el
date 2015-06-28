@@ -17,6 +17,7 @@ Moe, moe, kyun!")
 
       ;; Foreground
       (light-text-foreground "#b2b2b2")
+      (dark-text-foreground "#303030")
 
       ;; Prompt
       (prompt-background "#afd702")
@@ -29,18 +30,44 @@ Moe, moe, kyun!")
       (highlight-background "#005f87")
       (highlight-foreground "brightwhite")
 
-      ;; Search
-      ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
-      (search-background "#585858")
-      (search-foreground "brightwhite")
-      ;; (search-background "cyan")
-      ;; (search-foreground "brightwhite")
-
       ;; Diff
       (diff-added-foreground "brightgreen")
       (diff-removed-foreground "brightred")
       (diff-changed-foreground "brightcyan")
-      )
+
+      ;; Search
+      ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
+      (search-background "#585858")
+      (search-foreground "brightwhite")
+
+
+      ;; (let (
+
+
+      ;;       ;; Modeline & Windows
+      ;;       (modeline-active-background "#B0D8FD")
+      ;;       (modeline-active-foreground "#0B6085")
+      ;;       ;; (modeline-inactive-background "")
+      ;;       ))
+
+)
+      ;; (let (
+      ;;       ;; Search
+      ;;       ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
+      ;;       (search-background region-background)
+      ;;       (search-foreground region-foreground)
+      ;;       ;; (search-background "#585858")
+      ;;       ;; (search-foreground "brightwhite")
+      ;;       ;; (search-background "cyan")
+      ;;       ;; (search-foreground "brightwhite")
+
+
+      ;;       ;; Modeline & Windows
+      ;;       (modeline-active-background "#B0D8FD")
+      ;;       (modeline-active-foreground "#0B6085")
+      ;;       ;; (modeline-inactive-background "")
+      ;;       ))
+
 
   (custom-theme-set-faces
    'robenkleene-moe-dark
@@ -68,6 +95,16 @@ Moe, moe, kyun!")
    ;; Matches other then the current one
    `(lazy-highlight ((,class (:foreground ,search-foreground :background ,search-background))))
 
+
+   ;; Mode line & frames' faces
+   `(mode-line ((,class (:box nil :background "#afd7ff" :foreground "#005f87"))))
+   `(mode-line-inactive ((,class (:box nil :background "#6c6c6c" :foreground "#c6c6c6"))))
+   `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
+   `(vertical-border ((,class (:foreground "#4e4e4e" :background "#4e4e4e"))))
+
+
+   ;;; Uncustomized
+
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,prompt-background :foreground "#3a3a3a"))))
    ;; `(highlight ((,class (:background "#4e4e4e"))))
@@ -79,11 +116,6 @@ Moe, moe, kyun!")
    `(header-line ((,class (:background "#005f87" :foreground "#ffffff"))))
    `(help-argument-name ((,class (:foreground "#ff7bbb" :italic t))))
 
-   ;; Mode line & frames' faces
-   `(mode-line ((,class (:box nil :background "#afd7ff" :foreground "#005f87"))))
-   `(mode-line-inactive ((,class (:box nil :background "#6c6c6c" :foreground "#c6c6c6"))))
-   `(mode-line-buffer-id ((,class (:box nil :foreground "#303030" :background nil :bold t))))
-   `(vertical-border ((,class (:foreground "#4e4e4e" :background "#4e4e4e"))))
 
    ;; Escape and prompt faces
    `(minibuffer-prompt ((,class (:foreground "#4e4e4e" :background ,prompt-background))))
