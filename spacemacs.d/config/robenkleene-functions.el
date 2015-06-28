@@ -2,6 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun robenkleene/dired-jump ()
+  "Require dired and jump."
+  (interactive)
+  (require 'dired)
+  (dired-jump)
+  )
+
 (defun robenkleene/kill-region-or-backward-word ()
   "If the region is active and non-empty, call `kill-region'.
 Otherwise, call `backward-kill-word'."

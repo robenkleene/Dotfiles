@@ -22,7 +22,7 @@
      (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
      (define-key evil-evilified-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
-     (define-key evil-evilified-state-map "-" 'dired-jump)
+     (define-key evil-evilified-state-map "-" 'robenkleene/dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
      ;; Evilify
      (defvar magit-diff-mode)
@@ -52,8 +52,8 @@
      (define-key evil-insert-state-map [escape] 'evil-normal-state)
      (define-key evil-normal-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
      (define-key evil-motion-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
-     (define-key evil-normal-state-map "-" 'dired-jump)
-     (define-key evil-motion-state-map "-" 'dired-jump)
+     (define-key evil-normal-state-map "-" 'robenkleene/dired-jump)
+     (define-key evil-motion-state-map "-" 'robenkleene/dired-jump)
      ;; Other Leader
      (define-key evil-normal-state-map (kbd "\\") robenkleene-leader-map)
      (define-key evil-motion-state-map (kbd "\\") robenkleene-leader-map)

@@ -37,7 +37,7 @@ Moe, moe, kyun!")
 
   (custom-theme-set-faces
    'robenkleene-moe-dark
-   ;; Geeneral
+   ;; General
    `(default ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
    `(fringe ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
    `(linum ((,class (:foreground ,light-text-foreground :background ,solid-background))))
