@@ -67,5 +67,11 @@
   )
 
 
+
+(custom-set-faces
+ ;; Persist search inherits from region
+ `(evil-search-highlight-persist-highlight-face ((t (:background nil))))
+ )
+
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here

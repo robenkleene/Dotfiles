@@ -29,6 +29,13 @@ Moe, moe, kyun!")
       (highlight-background "#005f87")
       (highlight-foreground "brightwhite")
 
+      ;; Search
+      ;; TODO: This is the same as region, but there isn't a way of matching the values without doing a nested let
+      (search-background "#585858")
+      (search-foreground "brightwhite")
+      ;; (search-background "cyan")
+      ;; (search-foreground "brightwhite")
+
       ;; Diff
       (diff-added-foreground "brightgreen")
       (diff-removed-foreground "brightred")
@@ -56,13 +63,17 @@ Moe, moe, kyun!")
    ;; Paren Match
    `(show-paren-match ((,class (:underline t))))
 
+   ;; Search
+   `(isearch ((,class (:foreground ,search-foreground :background ,search-background))))
+   ;; Matches other then the current one
+   `(lazy-highlight ((,class (:foreground ,search-foreground :background ,search-background))))
+
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,prompt-background :foreground "#3a3a3a"))))
    ;; `(highlight ((,class (:background "#4e4e4e"))))
    ;; `(hl-line ((,class (:background "#4e4e4e"))))
    ;; `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
    `(secondary-selection ((,class (:background "#005f87" :foreground "#ffffff"))))
-   `(isearch ((,class (:foreground "#c6c6c6" :background "#ff5d17"))))
    `(lazy-highlight ((,class (:background "#ff1f8b" :foreground "#c6c6c6"))))
    `(trailing-whitespace ((,class (:background "#a40000"))))
    `(header-line ((,class (:background "#005f87" :foreground "#ffffff"))))
