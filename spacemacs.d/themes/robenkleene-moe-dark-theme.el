@@ -121,7 +121,8 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
    ;; TODO: Magit
-   `(magit-item-highlight ((,class (:background ,subtle-highlight-background :foreground ,highlight-foreground))))
+   ;; `(magit-item-highlight ((,class (:background ,subtle-highlight-background :foreground ,highlight-foreground))))
+   `(magit-item-highlight ((,class (:background nil :foreground nil))))
    `(magit-section-title ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
    `(magit-log-sha1 ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
    `(magit-branch ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
