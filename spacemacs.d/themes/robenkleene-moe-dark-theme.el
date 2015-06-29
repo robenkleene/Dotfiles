@@ -582,7 +582,7 @@ Moe, moe, kyun!")
    `(eshell-ls-special ((,class (:foreground "#fce94f"))))
    `(eshell-ls-symlink  ((,class (:foreground "#ff4ea3"))))
    `(eshell-ls-unreadable ((,class (:foreground "#8a8a8a"))))
-   `(eshell-prompt ((,class (:foreground "#ffffff" :background "#6c6c6c" :bold t))))
+   `(eshell-prompt ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
 
    ;; Comint prompt
    `(comint-highlight-prompt ((,class (:foreground "#ffffff" :background "#6c6c6c" :bold t))))
