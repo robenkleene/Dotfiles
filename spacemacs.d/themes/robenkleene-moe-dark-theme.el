@@ -32,6 +32,9 @@ Moe, moe, kyun!")
       (highlight-background "#005f87")
       (highlight-foreground "brightwhite")
 
+      ;; Headers
+      (header-text "#B0D8FD")
+
       ;; Diff
       (diff-added-foreground "brightgreen")
       (diff-removed-foreground "brightred")
@@ -42,12 +45,11 @@ Moe, moe, kyun!")
       (search-foreground region-foreground)
 
       ;; Modeline & Windows
-      (modeline-active-background "#B0D8FD")
+      (modeline-active-background header-text)
       (modeline-active-foreground dark-text-foreground)
       (modeline-inactive-background solid-background)
       (modeline-inactive-foreground light-text-foreground)
 
-      ;; 
 )
 
   (custom-theme-set-faces
@@ -83,7 +85,7 @@ Moe, moe, kyun!")
    `(mode-line-inactive ((,class (:box nil :background ,modeline-inactive-background :foreground ,modeline-inactive-foreground))))
    `(vertical-border ((,class (:foreground ,solid-background :background ,solid-background))))
 
-   ;; TODO: Syntax Highlighting
+   ;; Syntax Highlighting
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
    `(font-lock-comment-delimiter-face ((t (:foreground, "#7C7C7C"))))
    `(font-lock-comment-face ((t (:foreground, "#7C7C7C"))))
@@ -115,8 +117,12 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
    ;; TODO: Magit
-   `(magit-section-title ((,class (:foreground "#ff8700" :background "#303030" :underline t :bold ,t))))
+   ;; `(magit-item-highlight ((,class (:background "#444444" :foreground "#ffffff"))))
+   `(magit-item-highlight ((,class (:background "#1c1c1c" :foreground ,highlight-foreground))))
+   `(magit-section-title ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
+   `(magit-log-sha1 ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
    `(magit-branch ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
+   ;; Unchanged
    `(magit-diff-file-header ((,class (:foreground "#ffffff" :background "#8a8a8a" :bold t))))
    `(magit-diff-hunk-header ((,class (:foreground "#c6c6c6" :background "#6c6c6c" :bold t))))
    `(magit-diff-merge-current ((,class (:foreground "#d18aff"))))
@@ -125,7 +131,6 @@ Moe, moe, kyun!")
    `(magit-diff-merge-separator ((,class (:foreground "#d18aff"))))
    `(magit-diff-none ((,class (:foreground "#8a8a8a"))))
    `(magit-header ((,class (:foreground "#1f5bff" :background "#ffffff" :underline "#1f5bff"))))
-   `(magit-item-highlight ((,class (:background "#444444" :foreground "#ffffff"))))
    `(magit-item-mark ((,class (:foreground "#ffffff" :background "#005f87"))))
    `(magit-log-author ((,class (:foreground ,prompt-background :background "#3a3a3a"))))
    `(magit-log-author-date-cutoff ((,class (:foreground "#ef2929" :bold t))))
@@ -151,7 +156,6 @@ Moe, moe, kyun!")
    `(magit-log-reflog-label-rebase ((,class (:foreground "#005f5f" :background "#87d7af"))))
    `(magit-log-reflog-label-remote ((,class (:foreground "#005faf" :background "#afd7ff"))))
    `(magit-log-reflog-label-reset ((,class (:foreground "#a40000" :background "#ffafaf"))))
-   `(magit-log-sha1 ((,class (:foreground "#ff8700" :background "#3a3a3a"))))
    `(magit-process-ng ((,class (:foreground "#a40000" :background "#ffafaf" :underline t :bold t))))
    `(magit-process-ok ((,class (:foreground ,prompt-foreground :background ,prompt-background :underline t :bold t))))
    `(magit-signature-bad ((,class (:foreground "#ef2929"))))
@@ -161,6 +165,7 @@ Moe, moe, kyun!")
    `(magit-tag ((,class (:foreground "#005f87" :background "#afd7ff"))))
    `(magit-valid-signature ((,class (:foreground "#00d7af" :background "#303030" :bold t))))
    `(magit-whitespace-warning-face ((,class (:foreground "#ffffff" :background "#a40000" :bold t))))
+
 
    ;; TODO: Helm
 
@@ -480,20 +485,6 @@ Moe, moe, kyun!")
    `(diredp-write-priv ((,class (:foreground "#0000af" :background "#afd7ff"))))
    `(diredp-exec-priv ((,class (:foreground "#a40000" :background "#ffaf87"))))
 
-   ;; git-commit-mode
-   `(git-commit-branch-face ((,class (:foreground "#005faf" :background "#ffffff" :bold t :underline t))))
-   `(git-commit-comment-action-face ((,class (:foreground "#ff8700" :background "#303030" :underline t))))
-   `(git-commit-comment-file-face ((,class (:foreground "#ff4ea3"))))
-   `(git-commit-comment-heading-face ((,class (:foreground ,prompt-background :background "#4e4e4e" :bold t))))
-   `(git-commit-known-pseudo-header-face ((,class (:foreground ,prompt-background))))
-   `(git-commit-no-branch-face ((,class (:foreground "#ff5d17"))))
-   `(git-commit-nonempty-second-line-face ((,class (:foreground "#dd0000"))))
-   `(git-commit-note-face ((,class (:foreground "#00d7af"))))
-   `(git-commit-overlong-summary-face ((,class (:foreground "#dd0000"))))
-   `(git-commit-pseudo-header-face ((,class (:foreground "#ff1f8b"))))
-   `(git-commit-summary-face ((,class (:foreground "#5fafd7"))))
-   `(git-rebase-description-face ((,class (:foreground "#4e4e4e"))))
-   `(git-rebase-killed-action-face ((,class (:foreground "#4e4e4e"))))
 
    ;; Message faces
    `(message-cited-text ((,class (:foreground ,prompt-background))))
