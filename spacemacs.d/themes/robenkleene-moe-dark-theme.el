@@ -111,7 +111,6 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-8-face ((,class (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
-
    ;; TODO: Magit
 
    ;; TODO: Helm
