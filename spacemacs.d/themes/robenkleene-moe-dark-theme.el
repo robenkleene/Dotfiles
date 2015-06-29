@@ -32,6 +32,9 @@ Moe, moe, kyun!")
       (highlight-background "#005f87")
       (highlight-foreground "brightwhite")
 
+      ;; Highlight with foreground syntax
+      (subtle-highlight-background "#1c1c1c")
+
       ;; Headers
       (header-text "#B0D8FD")
 
@@ -117,14 +120,16 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
    ;; TODO: Magit
-   ;; `(magit-item-highlight ((,class (:background "#444444" :foreground "#ffffff"))))
-   `(magit-item-highlight ((,class (:background "#1c1c1c" :foreground ,highlight-foreground))))
+   `(magit-item-highlight ((,class (:background ,subtle-highlight-background :foreground ,highlight-foreground))))
    `(magit-section-title ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
-   `(magit-log-sha1 ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
+   `(magit-log-sha1 ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
    `(magit-branch ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
+   ;; `(magit-diff-file-header ((,class (:foreground "#ffffff" :background "#8a8a8a" :bold t))))
+   ;; `(magit-diff-hunk-header ((,class (:foreground "#c6c6c6" :background "#6c6c6c" :bold t))))
+   `(magit-diff-file-header ((,class (:foreground ,highlight-foreground :background nil :underline t :bold t))))
+   `(magit-diff-hunk-header ((,class (:foreground ,light-text-foreground :background ,solid-background :bold t))))
+
    ;; Unchanged
-   `(magit-diff-file-header ((,class (:foreground "#ffffff" :background "#8a8a8a" :bold t))))
-   `(magit-diff-hunk-header ((,class (:foreground "#c6c6c6" :background "#6c6c6c" :bold t))))
    `(magit-diff-merge-current ((,class (:foreground "#d18aff"))))
    `(magit-diff-merge-diff3-separator ((,class (:foreground "#d18aff"))))
    `(magit-diff-merge-proposed ((,class (:foreground "#d18aff"))))
