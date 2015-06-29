@@ -10,7 +10,6 @@
 (require 'robenkleene-config)
 (require 'robenkleene-keybindings)
 (require 'robenkleene-spacemacs)
-;; (require 'robenkleene-theme)
 (require 'robenkleene-ui)
 
 
