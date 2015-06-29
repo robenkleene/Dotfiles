@@ -29,6 +29,8 @@
      ;; Evilify
      (defvar magit-diff-mode)
      (defvar magit-diff-mode-map)
+     (defvar magit-status-mode)
+     (defvar magit-status-mode-map)
      (defvar Custom-mode)
      (defvar custom-mode-map)
      (defvar debugger-mode)
