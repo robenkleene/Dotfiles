@@ -9,7 +9,8 @@
   "Face colors for 256 colors terminal (dark background).
 Moe, moe, kyun!")
 
-(let* ((class '((class color) (min-colors 89)))
+(let* (
+       (class '((class color) (min-colors 89)))
 
       ;; Basic
       (transparent-background "unspecified-bg")
@@ -171,13 +172,14 @@ Moe, moe, kyun!")
    `(magit-valid-signature ((,class (:foreground "#00d7af" :background "#303030" :bold t))))
    `(magit-whitespace-warning-face ((,class (:foreground "#ffffff" :background "#a40000" :bold t))))
 
-
    ;; TODO: Helm
-
-   ;; TODO: Flycheck Syntax Errors
 
 
    ;;; Uncustomized
+
+   ;; Flycheck
+   `(flycheck-error ((,class (:background "#dd0000" :foreground "#ffffff" :bold t))))
+   `(flycheck-warnline ((,class (:background "#ff8700" :foreground "#ffffff" :bold t))))
 
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,prompt-background :foreground "#3a3a3a"))))
@@ -205,7 +207,7 @@ Moe, moe, kyun!")
    `(org-document-info-keyword ((,class (:foreground "#ffaf5f" :background "#6c6c6c"))))
    `(org-archived ((,class (:slant italic))))
    `(org-checkbox ((,class (:background "#c6c6c6" :foreground "#4e4e4e"
-					:box (:line-width 1 :style released-button)))))
+                                        :box (:line-width 1 :style released-button)))))
    `(org-date ((,class (:foreground "#afd7ff" :underline t))))
    `(org-done ((,class (:bold t :weight bold :foreground ,prompt-foreground :background ,prompt-background
                               :box (:line-width 1 :style none)))))
@@ -594,9 +596,6 @@ Moe, moe, kyun!")
    `(flymake-warnline ((,class (:underline "#ff8700"))))
    `(flymake-errline ((,class (:underline "#dd0000"))))
 
-   ;; Flycheck
-   `(flycheck-error ((,class (:background "#dd0000" :foreground "#ffffff" :bold t))))
-   `(flycheck-warnline ((,class (:background "#ff8700" :foreground "#ffffff" :bold t))))
 
    ;; Malabar
    `(malabar-error-face ((,class (:underline "#dd0000"))))
@@ -827,29 +826,31 @@ Moe, moe, kyun!")
 
    ;; Custom
    `(custom-button ((,class (:background "#afd7ff" :foreground "#005f87"
-					 :box (:line-width 1 :style released-button)))))
+                                         :box (:line-width 1 :style released-button)))))
    `(custom-button-mouse ((,class (:background "#d7d7ff" :foreground "#4e4e4e"
-					       :box (:line-width 1 :style released-button)))))
+                                               :box (:line-width 1 :style released-button)))))
    `(custom-button-pressed ((,class (:foreground "#4e4e4e" :background "#c6c6c6"
-						 :box (:line-width 1 :style pressed-button)))))
+                                                 :box (:line-width 1 :style pressed-button)))))
 
    ;; Hydra
    `(hydra-face-red ((,class (:foreground "#ff4b4b"))))
    `(hydra-face-blue ((,class (:foreground "#5fafd7"))))
-   `(hydra-face-amaranth ((,class (:foreground "#ff4ea3")))))
+   `(hydra-face-amaranth ((,class (:foreground "#ff4ea3"))))
+   )
 
   (custom-theme-set-variables
    'robenkleene-moe-dark
    `(ansi-color-names-vector ["#303030" "#ff4b4b" ,prompt-background "#fce94f"
-                                       "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"])))
+                              "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"]))
+  )
 
 ;; fix wrong default face under GUI version Emacs
-(if window-system
-    (progn
-      (set-background-color "#303030")
-      (set-foreground-color "#c6c6c6")))
+;; (if window-system
+;;     (progn
+;;       (set-background-color "#303030")
+;;       (set-foreground-color "#c6c6c6")))
 
-(setq moe-theme-which-enabled 'dark)
+;; (setq moe-theme-which-enabled 'dark)
 
 (provide-theme 'robenkleene-moe-dark)
 
