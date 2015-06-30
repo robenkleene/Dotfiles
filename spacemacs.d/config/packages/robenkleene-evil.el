@@ -27,21 +27,28 @@
      (define-key evil-evilified-state-map "-" 'robenkleene/dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
      ;; Evilify
+     (declare-function evilify "ext:evil-evilified-state.el")
+     ;; Custom
+     (defvar Custom-mode)
+     (defvar custom-mode-map)
+     (evilify Custom-mode custom-mode-map)
+     ;; Debugger
+     (defvar debugger-mode)
+     (defvar debugger-mode-map)
+     (evilify debugger-mode debugger-mode-map)
+     ;; Dired
+     (defvar dired-mode)
+     (defvar dired-mode-map)
+     (evilify dired-mode dired-mode-map)
+     (defvar helm-ag-mode)
+     (defvar helm-ag-mode-map)
+     (evilify helm-ag-mode helm-ag-mode-map)
+     ;; Magit
      (defvar magit-diff-mode)
      (defvar magit-diff-mode-map)
      (defvar magit-status-mode)
      (defvar magit-status-mode-map)
-     (defvar Custom-mode)
-     (defvar custom-mode-map)
-     (defvar debugger-mode)
-     (defvar debugger-mode-map)
-     (defvar dired-mode)
-     (defvar dired-mode-map)
-     (declare-function evilify "ext:evil-evilified-state.el")
      (evilify magit-diff-mode magit-diff-mode-map)
-     (evilify Custom-mode custom-mode-map)
-     (evilify debugger-mode debugger-mode-map)
-     (evilify dired-mode dired-mode-map)
      (evilify magit-status-mode magit-status-mode-map
               "}" 'magit-goto-next-section
               "{" 'magit-goto-previous-section

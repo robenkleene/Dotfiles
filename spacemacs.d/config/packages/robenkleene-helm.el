@@ -22,6 +22,9 @@
  `(helm-moccur-buffer ((t (:inherit button))))
  )
 
+(add-hook 'helm-ag-mode-hook (lambda ()
+                                  (grep-mode)
+                                  ))
 
 (provide 'robenkleene-helm)
 
