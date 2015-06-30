@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+;; TODO: Enable compilation mode after performing a helm-ag search
+
 (eval-after-load 'helm
   '(progn
      ;; Truncate long lines
