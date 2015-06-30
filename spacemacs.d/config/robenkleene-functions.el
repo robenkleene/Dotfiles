@@ -9,6 +9,11 @@
   (dired-jump)
   )
 
+(defun robenkleene/backward-delete-line (arg)
+  "Delete the line without clobbering the clipboard.  ARG is discarded."
+  (interactive "p")
+  (delete-region (point) (progn (move-beginning-of-line arg) (point))))
+
 (defun robenkleene/backward-delete-word (arg)
   "Delete characters backward until encountering the beginning of a word.
 With argument ARG, do this that many times."
@@ -64,8 +69,8 @@ Otherwise, call `backward-kill-word'."
   "Hurt your hands in MODE and MAP."
   `(eval-after-load ,mode
      '(progn
-        (define-key ,map (kbd "C-w") 'backward-kill-word)
-        (define-key ,map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
+        (define-key ,map (kbd "C-w") 'robenkleene/backward-delete-word)
+        (define-key ,map (kbd "C-u") 'robenkleene/backward-delete-line)
         )
      )
   )

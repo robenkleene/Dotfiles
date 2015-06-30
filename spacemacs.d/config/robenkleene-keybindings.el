@@ -19,8 +19,7 @@
 ;; Everything else
 (defvar robenkleene-rsi-minor-mode-map (make-keymap))
 (define-key robenkleene-rsi-minor-mode-map (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
-;; TODO: Figure out how to prevent `C-u' from clobbering the keyboard
-(define-key robenkleene-rsi-minor-mode-map (kbd "C-u") '(lambda () (interactive) (kill-line 0)))
+(define-key robenkleene-rsi-minor-mode-map (kbd "C-u") 'robenkleene/backward-delete-line)
 (define-minor-mode robenkleene-rsi-minor-mode
   "Get rsi."
   t
