@@ -21,7 +21,7 @@ Moe, moe, kyun!")
 
       (error-background "brightred")
       (error-text-foreground solid-background)
-      (error-text "red")
+      (error-text "brightred")
 
       ;; Highlight
       (highlight-background "#005f87")
