@@ -1,11 +1,11 @@
-;;; robenkleene-moe-dark-theme.el --- An eye-candy theme for Emacser
+;;; robenkleene-dark-theme.el --- An eye-candy theme for Emacser
 
 ;; Author: kuanyui<azazabc123@gmail.com>
 ;; Based on "tango-dark-theme"
 ;;; Commentary:
 ;;; Code:
 
-(deftheme robenkleene-moe-dark
+(deftheme robenkleene-dark
   "Face colors for 256 colors terminal (dark background).
 Moe, moe, kyun!")
 
@@ -65,7 +65,7 @@ Moe, moe, kyun!")
       (line-number "#ff8700")
 )
   (custom-theme-set-faces
-   'robenkleene-moe-dark
+   'robenkleene-dark
    ;; General
    `(default ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
    `(fringe ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
@@ -852,23 +852,16 @@ Moe, moe, kyun!")
    )
 
   (custom-theme-set-variables
-   'robenkleene-moe-dark
+   'robenkleene-dark
    `(ansi-color-names-vector ["#303030" "#ff4b4b" ,prompt-background "#fce94f"
                               ,link-text "#d18aff" "#afd7ff" "#c6c6c6"]))
   )
 
-;; fix wrong default face under GUI version Emacs
-;; (if window-system
-;;     (progn
-;;       (set-background-color "#303030")
-;;       (set-foreground-color "#c6c6c6")))
 
-;; (setq moe-theme-which-enabled 'dark)
-
-(provide-theme 'robenkleene-moe-dark)
+(provide-theme 'robenkleene-dark)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; robenkleene-moe-dark-theme.el ends here
+;;; robenkleene-dark-theme.el ends here
