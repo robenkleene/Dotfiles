@@ -7,6 +7,11 @@
 (define-key robenkleene-leader-map (kbd "t") 'robenkleene/open-terminal-window)
 (define-key robenkleene-leader-map (kbd "f") 'robenkleene/open-finder-window)
 
+(defvar robenkleene-unimpaired-next-map (make-keymap))
+(define-key robenkleene-unimpaired-next-map (kbd "q") 'next-error)
+(defvar robenkleene-unimpaired-previous-map (make-keymap))
+(define-key robenkleene-unimpaired-previous-map (kbd "q") 'previous-error)
+
 ;; Only use highlight in motion and normal modes
 (global-hl-line-mode)
 (make-variable-buffer-local 'global-hl-line-mode)
@@ -26,6 +31,8 @@
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
      (define-key evil-evilified-state-map "-" 'robenkleene/dired-jump)
      (define-key evil-evilified-state-map (kbd "\\") robenkleene-leader-map)
+     (define-key evil-evilified-state-map (kbd "[") robenkleene-unimpaired-previous-map)
+     (define-key evil-evilified-state-map (kbd "]") robenkleene-unimpaired-next-map)
      ;; Evilify
      (declare-function evilify "ext:evil-evilified-state.el")
      ;; Custom
@@ -72,6 +79,11 @@
      ;; Other Leader
      (define-key evil-normal-state-map (kbd "\\") robenkleene-leader-map)
      (define-key evil-motion-state-map (kbd "\\") robenkleene-leader-map)
+     ;; Unimpaired
+     (define-key evil-normal-state-map (kbd "[") robenkleene-unimpaired-previous-map)
+     (define-key evil-normal-state-map (kbd "]") robenkleene-unimpaired-next-map)
+     (define-key evil-motion-state-map (kbd "[") robenkleene-unimpaired-previous-map)
+     (define-key evil-motion-state-map (kbd "]") robenkleene-unimpaired-next-map)
      )
   )
 
