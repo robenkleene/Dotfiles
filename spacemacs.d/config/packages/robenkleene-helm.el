@@ -26,6 +26,13 @@
                                   (grep-mode)
                                   ))
 
+(eval-after-load 'helm-swoop
+  '(progn
+     (defvar helm-swoop-pre-input-function)
+     (setq helm-swoop-pre-input-function (lambda () nil))
+     )
+  )
+
 (provide 'robenkleene-helm)
 
 ;;; robenkleene-helm.el ends here
