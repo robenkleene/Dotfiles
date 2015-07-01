@@ -82,6 +82,9 @@ Moe, moe, kyun!")
    ;; Region
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
 
+   ;; Evil
+   `(evil-ex-substitute-replacement ((,class (:foreground ,diff-changed-foreground :background nil :underline nil))))
+
    ;; Paren Match
    `(show-paren-match ((,class (:underline t :foreground ,region-foreground :background ,region-background))))
    ;; Does `rainbow-delimiter-mismatched-face' and `rainbow-delimiters-unmatched-face' interfere with this?
