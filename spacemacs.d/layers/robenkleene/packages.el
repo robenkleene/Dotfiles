@@ -15,37 +15,38 @@
 
 (setq robenkleene-packages
     '(
-      ;; package robenkleenes go here
-      ir-black-theme
+      ;;; Themes
       ;; tron-theme
-      noctilux-theme
-      moe-theme
-      purple-haze-theme
-      material-theme
+      ;; ir-black-theme
+      ;; noctilux-theme
+      ;; moe-theme
+      ;; purple-haze-theme
+      ;; material-theme
+      ;;; Packages
       ;; evil-smartparens
       ;; swift-mode
       ;; flycheck
       ))
 
-(defun robenkleene/init-ir-black-theme ()
-  nil
-  )
+;; (defun robenkleene/init-ir-black-theme ()
+;;   nil
+;;   )
 
-(defun robenkleene/init-moe-theme ()
-  nil
-  )
+;; (defun robenkleene/init-moe-theme ()
+;;   nil
+;;   )
 
-(defun robenkleene/init-purple-haze-theme ()
-  nil
-  )
+;; (defun robenkleene/init-purple-haze-theme ()
+;;   nil
+;;   )
 
-(defun robenkleene/init-material-theme ()
-  nil
-  )
+;; (defun robenkleene/init-material-theme ()
+;;   nil
+;;   )
 
-(defun robenkleene/init-noctilux-theme ()
-  nil
-  )
+;; (defun robenkleene/init-noctilux-theme ()
+;;   nil
+;;   )
 
 ;; Disable `evil-smartparens', this interferes with `yyp'
 ;; (defun robenkleene/init-evil-smartparens ()
