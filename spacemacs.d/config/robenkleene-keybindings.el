@@ -5,20 +5,28 @@
 ;;; RSI
 ;; Helm
 (require 'robenkleene-functions)
+
+;; Helm
 (defvar helm-swoop-map)
-(defvar helm-map)
-(defvar helm-grep-map)
-(defvar helm-generic-files-map)
 (robenkleene/rsify 'helm-swoop helm-swoop-map
                    (define-key helm-swoop-map (kbd "M-w") 'helm-swoop-yank-thing-at-point)
                    )
+(defvar helm-map)
 (robenkleene/rsify 'helm helm-map
                    (define-key helm-map (kbd "M-w") 'helm-yank-text-at-point)
                    )
+(defvar helm-grep-map)
 (robenkleene/rsify 'helm-grep helm-grep-map
                    (define-key helm-grep-map (kbd "M-w") 'helm-yank-text-at-point)
                    )
+(defvar helm-generic-files-map)
 (robenkleene/rsify 'helm helm-generic-files-map)
+;; Company
+(defvar company-active-map)
+(robenkleene/rsify 'company company-active-map
+                   (define-key company-active-map (kbd "M-w") 'company-show-location)
+                   )
+
 ;; isearch
 (define-key isearch-mode-map (kbd "C-u") 'robenkleene/isearch-delete-line)
 (define-key isearch-mode-map (kbd "C-w") 'robenkleene/isearch-delete-word)
