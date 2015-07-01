@@ -9,9 +9,15 @@
 (defvar helm-map)
 (defvar helm-grep-map)
 (defvar helm-generic-files-map)
-(robenkleene/rsify 'helm-swoop helm-swoop-map)
-(robenkleene/rsify 'helm helm-map)
-(robenkleene/rsify 'helm-grep helm-grep-map)
+(robenkleene/rsify 'helm-swoop helm-swoop-map
+                   (define-key helm-swoop-map (kbd "M-w") 'helm-swoop-yank-thing-at-point)
+                   )
+(robenkleene/rsify 'helm helm-map
+                   (define-key helm-map (kbd "M-w") 'helm-yank-text-at-point)
+                   )
+(robenkleene/rsify 'helm-grep helm-grep-map
+                   (define-key helm-grep-map (kbd "M-w") 'helm-yank-text-at-point)
+                   )
 (robenkleene/rsify 'helm helm-generic-files-map)
 ;; isearch
 (define-key isearch-mode-map (kbd "C-u") 'robenkleene/isearch-delete-line)

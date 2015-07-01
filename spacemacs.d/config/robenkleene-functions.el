@@ -65,12 +65,14 @@ Otherwise, call `backward-kill-word'."
   (isearch-push-state)
   (isearch-update))
 
-(defmacro robenkleene/rsify (mode map)
-  "Hurt your hands in MODE and MAP."
+(defmacro robenkleene/rsify (mode map &rest body)
+  "Hurt your hands in MODE and MAP, BODY is executed as a `eval-after-load'."
   `(eval-after-load ,mode
      '(progn
         (define-key ,map (kbd "C-w") 'robenkleene/backward-delete-word)
         (define-key ,map (kbd "C-u") 'robenkleene/backward-delete-line)
+        (unless ,(null body)
+          ,@body)
         )
      )
   )
