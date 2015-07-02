@@ -26,7 +26,13 @@
       ;; evil-smartparens
       ;; swift-mode
       ;; flycheck
+      jade-mode
       ))
+
+
+(defun robenkleene/init-jade-mode ()
+  (use-package jade-mode
+    :defer t))
 
 ;; (defun robenkleene/init-ir-black-theme ()
 ;;   nil
