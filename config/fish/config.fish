@@ -204,7 +204,7 @@ end
 function fish_user_key_bindings
     bind \co 'ranger-cd ; fish_prompt'
 end
-function rc
+function r
   ranger-cd
 end
 

@@ -12,46 +12,44 @@
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers
-   '(
+   dotspacemacs-configuration-layers '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
      ;; better-defaults
+     ;;; Languages
      emacs-lisp
-     ;; (git :variables
-     ;;      git-gutter-use-fringe t)
-     ;; markdown
-     ;; org
-     ;; shell
-     ;; syntax-checking
-     ;; themes-megapack
-     auto-completion
-     osx
-     robenkleene
-     evil-commentary
+     shell-scripts
      markdown
-     org
+     javascript
+     ruby
+     ;;; Features
+     auto-completion
+     evil-commentary
      colors
      syntax-checking
+     robenkleene
+     osx
+     ;;; Emacs
      git
      ;; (git :variables
      ;;      git-magit-status-fullscreen t
      ;;      git-gutter-use-fringe t
      ;;      )
+     org
      shell
      (shell :variables
             shell-default-shell 'eshell)
-     shell-scripts
    )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      editorconfig
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
                                     powerline
