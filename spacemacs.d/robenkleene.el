@@ -20,6 +20,7 @@
 (require 'robenkleene-dired)
 (require 'robenkleene-evil)
 (require 'robenkleene-smartparens)
+(require 'robenkleene-evil-jumper)
 
 ;; Languages
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/languages"))

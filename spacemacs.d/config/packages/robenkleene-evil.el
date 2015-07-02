@@ -19,6 +19,7 @@
 (add-hook 'evil-motion-state-entry-hook (lambda () (setq global-hl-line-mode t)))
 (add-hook 'evil-insert-state-entry-hook (lambda () (setq global-hl-line-mode nil)))
 
+
 (eval-after-load 'evil-evilified-state
   '(progn
      (defvar evil-evilified-state-map)
@@ -26,6 +27,8 @@
      (define-key evil-evilified-state-map "\C-b" 'evil-scroll-page-up)
      (define-key evil-evilified-state-map "\C-f" 'evil-scroll-page-down)
      (define-key evil-evilified-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
+     (define-key evil-evilified-state-map (kbd "C-o") 'evil-jumper/backward)
+     (define-key evil-evilified-state-map (kbd "C-i") 'evil-jumper/forward)
      (define-key evil-evilified-state-map "{" 'evil-backward-paragraph)
      (define-key evil-evilified-state-map "}" 'evil-forward-paragraph)
      (define-key evil-evilified-state-map "?" 'evil-search-backward)
@@ -59,6 +62,7 @@
      (evilify magit-status-mode magit-status-mode-map
               "}" 'magit-goto-next-section
               "{" 'magit-goto-previous-section
+              (kbd "C-i") 'magit-toggle-section
               )
      )
   )
