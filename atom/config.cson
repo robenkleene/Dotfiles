@@ -14,7 +14,6 @@
     ]
   editor:
     invisibles: {}
-    fontSize: 14
     lineHeight: 1.2
   linter:
     subtleLinterErrors: [
