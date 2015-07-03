@@ -49,7 +49,9 @@
      ;; Dired
      (defvar dired-mode)
      (defvar dired-mode-map)
-     (evilify dired-mode dired-mode-map)
+     (evilify dired-mode dired-mode-map
+              "K" 'dired-do-kill-lines
+              )
      (defvar helm-ag-mode)
      (defvar helm-ag-mode-map)
      (evilify helm-ag-mode helm-ag-mode-map)
