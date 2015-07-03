@@ -598,11 +598,11 @@ Moe, moe, kyun!")
    `(eshell-ls-special ((,class (:foreground "#fce94f"))))
    `(eshell-ls-symlink  ((,class (:foreground "#ff4ea3"))))
    `(eshell-ls-unreadable ((,class (:foreground "#8a8a8a"))))
-   `(eshell-prompt ((,class (:foreground ,prompt-background :background nil :bold t))))
+   `(eshell-prompt ((,class (:foreground ,prompt-background :background ,transparent-background :bold t))))
 
    ;; Comint prompt (Shell)
-   `(comint-highlight-input ((,class (:foreground ,highlight-foreground :bold nil))))
-   `(comint-highlight-prompt ((,class (:foreground ,prompt-background :background nil :bold t))))
+   `(comint-highlight-input ((,class (:foreground ,highlight-foreground :bold t))))
+   `(comint-highlight-prompt ((,class (:foreground ,prompt-background :background ,transparent-background :bold t))))
 
    ;; which-function-mode
    `(which-func ((,class (:foreground "#ffffff" :background ,line-number))))
