@@ -78,6 +78,7 @@ Moe, moe, kyun!")
 
    ;; Highlight
    `(hl-line ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
+   `(highlight ((,class (:inherit region))))
 
    ;; Region
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
@@ -221,7 +222,6 @@ Moe, moe, kyun!")
 
    ;; Highlighting faces
    ;; `(linum-highlight-face ((,class (:background ,prompt-background :foreground "#3a3a3a"))))
-   ;; `(highlight ((,class (:background "#4e4e4e"))))
    ;; `(hl-line ((,class (:background "#4e4e4e"))))
    ;; `(highlight-symbol-face ((,class (:background "#4e4e4e"))))
    `(secondary-selection ((,class (:background ,highlight-background :foreground "#ffffff"))))
