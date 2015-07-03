@@ -12,13 +12,15 @@ Moe, moe, kyun!")
 (let* (
        (class '((class color) (min-colors 89)))
 
-      ;; Basic
+      ;;; Basic
       (transparent-background "unspecified-bg")
       (solid-background "#444444")
+      ;; Text Colors
       (light-text-foreground "#b2b2b2")
       (dark-text-foreground solid-background)
       (inactive-text "#303030")
-
+      (metadata-text "#ff8700")
+      ;; Errors
       (error-background "brightred")
       (error-text-foreground solid-background)
       (error-text "brightred")
@@ -62,7 +64,7 @@ Moe, moe, kyun!")
       ;; File lists
       (directory-text link-text)
       (file-text light-text-foreground)
-      (line-number "#ff8700")
+      (line-number metadata-text)
 )
   (custom-theme-set-faces
    'robenkleene-dark
@@ -383,7 +385,7 @@ Moe, moe, kyun!")
    `(company-scrollbar-fg ((,class (:background ,light-text-foreground))))
    `(company-template-field ((,class (:background "#ffffaf" :foreground "#3a3a3a"))))
    `(company-tooltip ((,class (:background ,solid-background :foreground ,light-text-foreground))))
-   `(company-tooltip-annotation ((,class (:background "#3a3a3a" :foreground "#ef2929"))))
+   `(company-tooltip-annotation ((,class (:background ,solid-background :foreground ,metadata-text))))
    `(company-tooltip-common ((,class (:background nil :foreground ,highlight-foreground))))
    `(company-tooltip-common-selection ((,class (:background ,highlight-background :foreground nil :bold t))))
    `(company-tooltip-mouse ((,class (:background ,prompt-background :foreground "#303030"))))
