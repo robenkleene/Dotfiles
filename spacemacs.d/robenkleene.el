@@ -21,6 +21,7 @@
 (require 'robenkleene-evil)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-evil-jumper)
+(require 'robenkleene-shell)
 
 ;; Languages
 (add-to-list 'load-path (expand-file-name "~/.spacemacs.d/config/languages"))
