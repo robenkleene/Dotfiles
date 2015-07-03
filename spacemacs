@@ -41,7 +41,7 @@
      org
      shell
      (shell :variables
-            shell-default-shell 'eshell)
+            shell-default-shell 'shell)
    )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these

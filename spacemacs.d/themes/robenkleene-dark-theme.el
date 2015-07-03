@@ -600,8 +600,8 @@ Moe, moe, kyun!")
    `(eshell-ls-unreadable ((,class (:foreground "#8a8a8a"))))
    `(eshell-prompt ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
 
-   ;; Comint prompt
-   `(comint-highlight-prompt ((,class (:foreground "#ffffff" :background "#6c6c6c" :bold t))))
+   ;; Comint prompt (Shell)
+   `(eshell-prompt ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
 
    ;; which-function-mode
    `(which-func ((,class (:foreground "#ffffff" :background ,line-number))))

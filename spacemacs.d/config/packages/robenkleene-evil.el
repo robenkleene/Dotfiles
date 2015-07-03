@@ -18,6 +18,7 @@
 (add-hook 'evil-normal-state-entry-hook (lambda () (setq global-hl-line-mode t)))
 (add-hook 'evil-motion-state-entry-hook (lambda () (setq global-hl-line-mode t)))
 (add-hook 'evil-insert-state-entry-hook (lambda () (setq global-hl-line-mode nil)))
+(add-hook 'evil-visual-state-entry-hook (lambda () (setq global-hl-line-mode nil)))
 
 
 (eval-after-load 'evil-evilified-state
