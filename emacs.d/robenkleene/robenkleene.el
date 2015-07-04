@@ -5,3 +5,4 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-helm)
+(require 'robenkleene-helm-swoop)

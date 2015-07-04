@@ -1,7 +1,12 @@
 (source melpa)
 
 (depends-on "better-defaults")
+(depends-on "editorconfig")
 (depends-on "helm")
+(depends-on "helm-ag")
 (depends-on "helm-swoop")
+(depends-on "magit")
 (depends-on "pallet")
+(depends-on "projectile")
+(depends-on "smartparens")
 (depends-on "use-package")
