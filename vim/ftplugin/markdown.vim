@@ -9,11 +9,11 @@ set wrap
 " Commands
 " Markdown Preview
 " command! MarkdownPreview :execute '!mdprev '.shellescape(expand('%:p'), 1)
-" nnoremap <silent> <leader>p :MarkdownPreview<CR>\|:redraw!<CR>
+" nnoremap <silent> <localleader>p :MarkdownPreview<CR>\|:redraw!<CR>
 
 "command! Preview :!open -a "Marked.app" '.shellescape(expand('%:p'), 1)
-nnoremap <leader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
-"nnoremap <leader>p :!open -a "Marked 2.app" "%:p"
+nnoremap <localleader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+"nnoremap <localleader>p :!open -a "Marked 2.app" "%:p"
 
 " Almost there number lines command
 " command! NumberLines :!nl -ba
@@ -21,27 +21,27 @@ nnoremap <leader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 
 " OS X Shortcut Special Characters
 " command! InsertShortcutSymbols :normal i⇧⌃⌥⌘<ESC>
-" nnoremap <leader>s :InsertShortcutSymbols<CR>
+" nnoremap <localleader>s :InsertShortcutSymbols<CR>
 
 " Quoting Lines
 " :command! LineToQuote :normal I> <ESC>
-" nnoremap <leader>q :LineToQuote<CR>
+" nnoremap <localleader>q :LineToQuote<CR>
 
 " Creating List Items
 " Create list item from clipboard
 " :command! ListItemFromClipboard :normal o<esc>pI- <ESC>
-" nnoremap <leader>v :ListItemFromClipboard<CR>
+" nnoremap <localleader>v :ListItemFromClipboard<CR>
 " Line to list item
 " :command! LineToListItem :normal I- <ESC>
-" nnoremap <leader>l :LineToListItem<CR>
+" nnoremap <localleader>l :LineToListItem<CR>
 
 " Creating Headers
 " :command! Header1 :normal O<esc>O# <esc>
-" nnoremap <leader>1 :Header1<CR>:startinsert!<CR>
+" nnoremap <localleader>1 :Header1<CR>:startinsert!<CR>
 " :command! Header2 :normal O<esc>O## <esc>
-" nnoremap <leader>2 :Header2<CR>:startinsert!<CR>
+" nnoremap <localleader>2 :Header2<CR>:startinsert!<CR>
 " :command! Header3 :normal O<esc>O### <esc>
-" nnoremap <leader>3 :Header3<CR>:startinsert!<CR>
+" nnoremap <localleader>3 :Header3<CR>:startinsert!<CR>
 
 " Custom Syntax
 " Colors

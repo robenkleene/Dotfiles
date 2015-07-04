@@ -54,6 +54,7 @@ let &viewdir=s:viewdir_directory
 syntax on
 " Use system clipboard by default
 set clipboard=unnamed 
+let maplocalleader = ","
 " let mapleader = ','
 " let mapleader=" "
 " Allow hidden buffers
