@@ -2,10 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'pbcopy)
 
-(use-package pbcopy
-  :if (and (robenkleene/system-is-mac) (not (display-graphic-p)))
-      :init (turn-on-pbcopy))
+(require 'robenkleene-functions)
+(if (and (robenkleene/system-is-mac) (not (display-graphic-p)))
+    (turn-on-pbcopy)
+    )
 
 (provide 'robenkleene-pbcopy)
 ;;; robenkleene-pbcopy.el ends here
