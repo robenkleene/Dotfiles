@@ -8,5 +8,6 @@
  `(ahs-face ((t (:inherit isearch))))
  `(ahs-definition-face ((t (:inherit isearch))))
  )
+
 (provide 'robenkleene-spacemacs)
 ;;; robenkleene-spacemacs.el ends here

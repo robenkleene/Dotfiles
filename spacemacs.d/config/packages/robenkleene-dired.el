@@ -17,8 +17,12 @@
       ;; (define-key dired-mode-map "N" 'evil-search-previous)
      ))
 
+;; Suppress error message
+(defvar dired-use-ls-dired)
+(setq dired-use-ls-dired nil)
+
+;; Hide details (show them with "\("
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
 (provide 'robenkleene-dired)
-
 ;;; robenkleene-dired.el ends here

@@ -72,6 +72,7 @@ Moe, moe, kyun!")
    `(default ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
    `(fringe ((,class (:foreground ,light-text-foreground :background ,transparent-background))))
    `(linum ((,class (:foreground ,light-text-foreground :background ,solid-background))))
+   `(cursor ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
 
    ;; Diff: Magit and Git Gutter inheret
    `(diff-added ((,class (:foreground ,diff-added-foreground :background nil :bold nil))))
@@ -189,6 +190,8 @@ Moe, moe, kyun!")
 
    ;; Helm
    `(helm-source-header ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
+   `(helm-header-line-left-margin ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
+   `(helm-header ((,class (:foreground ,highlight-background :background "#afd7ff"))))
    ;; Uncustomized
    ;; `(helm-bookmark-directory ((,class (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-bookmark-file ((,class (:foreground "#875f00" :background "#ffff87"))))
@@ -209,7 +212,6 @@ Moe, moe, kyun!")
    `(helm-grep-lineno ((,class (:foreground ,line-number))))
    `(helm-grep-match ((,class (:background "#3a3a3a" :foreground "#fce94f" :bold t))))
    `(helm-grep-running ((,class (:foreground "#ff4b4b" :background nil))))
-   `(helm-header ((,class (:foreground ,highlight-background :background "#afd7ff"))))
    `(helm-lisp-show-completion ((,class (:foreground "#4e4e4e" :background ,prompt-background))))
    ;; `(helm-match ((,class (:foreground ,prompt-background :background "#303030" :bold t))))
    `(helm-selection ((,class (:foreground nil :background ,highlight-background))))
