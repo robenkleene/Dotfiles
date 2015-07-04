@@ -59,6 +59,7 @@
     (define-key robenkleene/leader-map (kbd "f") 'robenkleene/open-finder-window)
     (define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
+    (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
 
     ;; Leader Key
     (define-key evil-normal-state-map (kbd "\\") robenkleene/leader-map)

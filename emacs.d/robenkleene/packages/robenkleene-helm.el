@@ -2,10 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Use helm M-x
-
-
-;; Use helm everywhere
+(defvar helm)
 (use-package helm
 	     :defer t
 	     :init

@@ -2,6 +2,5 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (provide 'robenkleene-helm-ag)
 ;;; robenkleene-helm-ag.el ends here

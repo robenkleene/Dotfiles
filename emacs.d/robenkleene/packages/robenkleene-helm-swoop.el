@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar helm-swoop)
 (use-package helm-swoop
 	     :defer t
 	     :init
