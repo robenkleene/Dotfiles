@@ -3,5 +3,4 @@
 (require 'pallet)
 (pallet-mode t)
 
-;;(require 'package)
-;;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(load (concat user-emacs-directory "robenkleene/robenkleene.el"))
