@@ -1,4 +1,7 @@
 (source melpa)
 
 (depends-on "better-defaults")
+(depends-on "helm")
+(depends-on "helm-swoop")
 (depends-on "pallet")
+(depends-on "use-package")
