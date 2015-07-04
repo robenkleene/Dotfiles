@@ -20,6 +20,7 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-pbcopy)
+(require 'robenkleene-magit)
 
 ;;; robenkleene.el ends here
 
