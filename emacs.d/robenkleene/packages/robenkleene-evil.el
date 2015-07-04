@@ -21,18 +21,6 @@
 (define-key evil-normal-state-map (kbd "RET") nil)
 (define-key evil-motion-state-map (kbd "RET") nil)
 
-;;; Leader
-
-;; Leader Map
-(defvar robenkleene/leader-map (make-keymap))
-(define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-(define-key robenkleene/leader-map (kbd "t") 'robenkleene/open-terminal-window)
-(define-key robenkleene/leader-map (kbd "f") 'robenkleene/open-finder-window)
-(define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
-
-;; Leader Key
-(define-key evil-normal-state-map (kbd "\\") robenkleene/leader-map)
-(define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
 
 ;;; Unimpaired
 
@@ -50,6 +38,27 @@
 (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)
 (define-key evil-motion-state-map (kbd "]") robenkleene/unimpaired-next-map)
 
+
+;;; Open
+
+;; Open Map
+(defvar robenkleene/open-map (make-keymap))
+(define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
+
+
+;;; Leader
+
+;; Leader Map
+(defvar robenkleene/leader-map (make-keymap))
+(define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
+(define-key robenkleene/leader-map (kbd "t") 'robenkleene/open-terminal-window)
+(define-key robenkleene/leader-map (kbd "f") 'robenkleene/open-finder-window)
+(define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
+(define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
+
+;; Leader Key
+(define-key evil-normal-state-map (kbd "\\") robenkleene/leader-map)
+(define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
 
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here
