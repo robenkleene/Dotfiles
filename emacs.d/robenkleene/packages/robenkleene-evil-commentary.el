@@ -2,8 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'evil-commentary)
-(evil-commentary-mode)
+(require 'use-package)
+(defvar evil-commentary)
+(use-package evil-commentary
+  :init
+  (evil-commentary-mode)
+  )
 
 (provide 'robenkleene-evil-commentary)
 ;;; robenkleene-evil-commentary.el ends here
