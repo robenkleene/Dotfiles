@@ -15,6 +15,7 @@
 (require 'robenkleene-dired)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+(require 'robenkleene-evil)
 (require 'robenkleene-flycheck)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-helm)

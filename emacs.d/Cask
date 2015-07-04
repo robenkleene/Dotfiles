@@ -4,6 +4,7 @@
 
 (depends-on "better-defaults")
 (depends-on "editorconfig")
+(depends-on "evil")
 (depends-on "flycheck")
 (depends-on "helm")
 (depends-on "helm-ag")
