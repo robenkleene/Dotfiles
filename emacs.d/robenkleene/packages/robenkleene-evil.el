@@ -7,11 +7,6 @@
 (require 'use-package)
 (defvar evil-commentary)
 (use-package evil-commentary
-  :init
-  (progn
-
-
-    )
   :config
   (progn
     (evil-mode 1)
