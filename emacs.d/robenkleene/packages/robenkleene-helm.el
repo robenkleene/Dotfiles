@@ -10,7 +10,8 @@
 	     :defer t
 	     :init
 		 (progn
-			 (global-set-key (kbd "M-x") 'helm-M-x)
+  			 (global-set-key (kbd "M-x") 'helm-M-x)
+  			 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 			 (helm-mode 1)
 			(custom-set-faces
 			 `(helm-match ((t (:foreground nil :background nil :bold nil :inherit isearch))))

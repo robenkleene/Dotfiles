@@ -5,7 +5,10 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-emacs)
+(require 'robenkleene-functions)
+(require 'robenkleene-dired)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-helm)
 (require 'robenkleene-helm-swoop)
+(require 'robenkleene-pbcopy)
