@@ -12,9 +12,6 @@
          )
   :config
   (progn
-    ;; TODO: Temporary solution for handling Magit buffers until
-    ;; I can figure out a better way to make them work with evil
-    (define-key magit-status-mode-map (kbd "C-g") 'kill-buffer-and-window)
     (custom-set-faces
      ;; Diff
      `(magit-diff-added ((t (:inherit diff-added))))
