@@ -16,12 +16,10 @@
   :init
   (progn
     (bind-key "M-i" 'helm-swoop-from-isearch isearch-mode-map)
-
     (custom-set-faces
      `(helm-swoop-target-word-face ((t (:foreground nil :background nil :bold nil :inherit isearch))))
      `(helm-swoop-target-line-face ((t (:foreground nil :background nil :inherit hl-line))))
      )
-    
     )
   :config
   (progn
