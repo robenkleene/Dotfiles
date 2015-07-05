@@ -16,6 +16,7 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-better-defaults)
+(require 'robenkleene-editorconfig)
 (require 'robenkleene-evil)
 (require 'robenkleene-evil-commentary)
 (require 'robenkleene-flycheck)
@@ -23,6 +24,8 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-helm-ag)
 (require 'robenkleene-helm-swoop)
+(require 'robenkleene-projectile)
+(require 'robenkleene-company)
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-magit)
 (require 'robenkleene-rainbow-mode)

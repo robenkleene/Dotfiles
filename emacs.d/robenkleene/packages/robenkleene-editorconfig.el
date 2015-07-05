@@ -1,0 +1,12 @@
+;;; robenkleene-editorconfig.el --- robenkleene-editorconfig
+;;; Commentary:
+;;; Code:
+
+(require 'use-package)
+(defvar editorconfig)
+(use-package editorconfig
+  :ensure t
+  )
+
+(provide 'robenkleene-editorconfig)
+;;; robenkleene-editorconfig.el ends here

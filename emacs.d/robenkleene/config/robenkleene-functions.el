@@ -18,6 +18,19 @@
   (shell-command "open .")
   )
 
+(defun robenkleene/external-editor ()
+  "Open a region or file in external editor."
+  (interactive)
+  (if (mark)
+      (shell-command-on-region (point-min) (point-max) "mate -a")
+    (if (buffer-file-name)
+        (shell-command (concat "mate -a "
+                               (shell-quote-argument buffer-file-name))
+                       )
+      )
+    )
+  )
+
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here

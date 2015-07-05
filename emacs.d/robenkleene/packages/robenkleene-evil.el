@@ -116,6 +116,7 @@
     (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
     (define-key robenkleene/leader-map (kbd "t") 'robenkleene/open-terminal-window)
     (define-key robenkleene/leader-map (kbd "f") 'robenkleene/open-finder-window)
+    (define-key robenkleene/leader-map (kbd "e") 'robenkleene/external-editor)
     (define-key robenkleene/leader-map (kbd "F") 'helm-find-files)
     (define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
