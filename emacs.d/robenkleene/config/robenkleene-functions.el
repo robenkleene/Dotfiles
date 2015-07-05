@@ -12,10 +12,15 @@
   (shell-command "open -a Terminal .")
   )
 
-(defun robenkleene/open-finder-window ()
+(defun robenkleene/reveal-in-finder ()
   "Open a new Finder window at the current path."
   (interactive)
-  (shell-command "open .")
+  (if (buffer-file-name)
+      (shell-command (concat "open -R "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    (shell-command "open .")
+    )
   )
 
 (defun robenkleene/external-editor ()
