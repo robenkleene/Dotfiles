@@ -342,20 +342,21 @@ Moe, moe, kyun!")
    `(popup-tip-face ((,class (:background "#6c6c6c" :foreground "#c6c6c6"))))
 
    ;; company
+   `(company-scrollbar-bg ((,class (:background ,solid-background))))
+   `(company-scrollbar-fg ((,class (:background ,light-text-foreground))))
+   `(company-tooltip ((,class (:background ,solid-background :foreground ,light-text-foreground))))
+   `(company-tooltip-annotation ((,class (:background ,solid-background :foreground ,metadata-text))))
+   `(company-tooltip-common ((,class (:background ,solid-background :foreground ,highlight-foreground :bold t))))
+   `(company-tooltip-common-selection ((,class (:background ,highlight-background :inherit company-tooltip-common))))
+   `(company-tooltip-selection ((,class (:background ,highlight-background :foreground ,highlight-foreground))))
+   ;; Uncustomized
    `(company-echo ((,class (:background nil :foreground "#c6c6c6"))))
    `(company-echo-common ((,class (:background "#4e4e4e" :foreground "#ef2929"))))
    `(company-preview ((,class (:background "#303030" :foreground "#ff4ea3"))))
    `(company-preview-common ((,class (:background "#303030" :foreground "#ff4ea3"))))
    `(company-preview-search ((,class (:background "#3a3a3a" :foreground "#ff4ea3" :bold t))))
-   `(company-scrollbar-bg ((,class (:background ,solid-background))))
-   `(company-scrollbar-fg ((,class (:background ,light-text-foreground))))
    `(company-template-field ((,class (:background "#ffffaf" :foreground "#3a3a3a"))))
-   `(company-tooltip ((,class (:background ,solid-background :foreground ,light-text-foreground))))
-   `(company-tooltip-annotation ((,class (:background ,solid-background :foreground ,metadata-text))))
-   `(company-tooltip-common ((,class (:background ,solid-background :foreground ,highlight-foreground :bold t))))
-   `(company-tooltip-common-selection ((,class (:background ,highlight-background :inherit company-tooltip-common))))
    `(company-tooltip-mouse ((,class (:background ,prompt-background :foreground "#303030"))))
-   `(company-tooltip-selection ((,class (:background ,highlight-background :foreground ,highlight-foreground))))
 
    ;; Button and link faces
    `(link ((,class (:underline t :foreground ,link-text))))
