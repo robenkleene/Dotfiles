@@ -13,59 +13,59 @@ Moe, moe, kyun!")
        (class '((class color) (min-colors 89)))
 
       ;;; Basic
-      (transparent-background "unspecified-bg")
-      (solid-background "#444444")
-      ;; Text Colors
-      (light-text-foreground "#b2b2b2")
-      (dark-text-foreground solid-background)
-      (inactive-text "#303030")
-      (metadata-text "#ff8700")
-      ;; Errors
-      (error-background "brightred")
-      (error-text-foreground solid-background)
-      (error-text "brightred")
+       (transparent-background "unspecified-bg")
+       (solid-background "#444444")
+       ;; Text Colors
+       (light-text-foreground "#b2b2b2")
+       (dark-text-foreground solid-background)
+       (inactive-text "#303030")
+       (metadata-text "#ff8700")
+       ;; Errors
+       (error-background "brightred")
+       (error-text-foreground solid-background)
+       (error-text "brightred")
 
-      ;; Highlight
-      (highlight-background "#005f87")
-      (highlight-foreground "brightwhite")
+       ;; Highlight
+       (highlight-background "#005f87")
+       (highlight-foreground "brightwhite")
 
-      ;; Prompt
-      (prompt-background "#87d787")
-      (prompt-foreground "#303030")
+       ;; Prompt
+       (prompt-background "#87d787")
+       (prompt-foreground "#303030")
 
-      ;; Selection or Region
-      (region-background "#585858")
-      (region-foreground "brightwhite")
+       ;; Selection or Region
+       (region-background "#585858")
+       (region-foreground "brightwhite")
 
-      ;; Highlight with foreground syntax
-      (subtle-highlight-background "#1c1c1c")
+       ;; Highlight with foreground syntax
+       (subtle-highlight-background "#1c1c1c")
 
-      ;; Headers
-      (header-text "#B0D8FD")
+       ;; Headers
+       (header-text "#B0D8FD")
 
-      ;; Diff
-      (diff-added-foreground "brightgreen")
-      (diff-removed-foreground "brightred")
-      (diff-changed-foreground "brightcyan")
+       ;; Diff
+       (diff-added-foreground "brightgreen")
+       (diff-removed-foreground "brightred")
+       (diff-changed-foreground "brightcyan")
 
-      ;; Search
-      (search-background region-background)
-      (search-foreground region-foreground)
+       ;; Search
+       (search-background region-background)
+       (search-foreground region-foreground)
 
-      ;; Modeline & Windows
-      (modeline-active-background header-text)
-      (modeline-active-foreground dark-text-foreground)
-      (modeline-inactive-background solid-background)
-      (modeline-inactive-foreground light-text-foreground)
+       ;; Modeline & Windows
+       (modeline-active-background header-text)
+       (modeline-active-foreground dark-text-foreground)
+       (modeline-inactive-background solid-background)
+       (modeline-inactive-foreground light-text-foreground)
 
-      ;; Link Text
-      (link-text "#5EAFD7")
+       ;; Link Text
+       (link-text "#5EAFD7")
 
-      ;; File lists
-      (directory-text link-text)
-      (file-text light-text-foreground)
-      (line-number metadata-text)
-)
+       ;; File lists
+       (directory-text link-text)
+       (file-text light-text-foreground)
+       (line-number metadata-text)
+       )
   (custom-theme-set-faces
    'robenkleene-dark
    ;; General
@@ -136,58 +136,22 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-8-face ((,class (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
-   ;; TODO: Magit
-   ;; `(magit-item-highlight ((,class (:background ,subtle-highlight-background :foreground ,highlight-foreground))))
-   `(magit-item-highlight ((,class (:background nil :foreground nil))))
-   `(magit-section-title ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
-   `(magit-log-sha1 ((,class (:foreground ,highlight-foreground :background nil :bold t))))
-   `(magit-branch ((,class (:foreground ,header-text :background nil :bold t))))
-   ;; `(magit-diff-file-header ((,class (:foreground "#ffffff" :background "#8a8a8a" :bold t))))
-   ;; `(magit-diff-hunk-header ((,class (:foreground "#c6c6c6" :background "#6c6c6c" :bold t))))
-   `(magit-diff-file-header ((,class (:foreground ,highlight-foreground :background nil :underline t :bold t))))
-   `(magit-diff-hunk-header ((,class (:foreground ,light-text-foreground :background nil :bold t))))
-   `(magit-diff-none ((,class (:foreground ,inactive-text))))
-   ;; Unchanged
-   `(magit-diff-merge-current ((,class (:foreground "#d18aff"))))
-   `(magit-diff-merge-diff3-separator ((,class (:foreground "#d18aff"))))
-   `(magit-diff-merge-proposed ((,class (:foreground "#d18aff"))))
-   `(magit-diff-merge-separator ((,class (:foreground "#d18aff"))))
-   `(magit-header ((,class (:foreground "#1f5bff" :background "#ffffff" :underline "#1f5bff"))))
-   `(magit-item-mark ((,class (:foreground "#ffffff" :background ,highlight-background))))
-   `(magit-log-author ((,class (:foreground ,prompt-background :background "#3a3a3a"))))
-   `(magit-log-author-date-cutoff ((,class (:foreground "#ef2929" :bold t))))
-   `(magit-log-date ((,class (:foreground "#c6c6c6" :background "#3a3a3a"))))
-   `(magit-log-graph ((,class (:foreground "#c6c6c6" :background "#3a3a3a"))))
-   `(magit-log-head-label-bisect-bad ((,class (:foreground "#a40000" :background "#ffafaf"))))
-   `(magit-log-head-label-bisect-good ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
-   `(magit-log-head-label-bisect-skip ((,class (:foreground "#c4a000" :background "#ffd787"))))
-   `(magit-log-head-label-default ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
-   `(magit-log-head-label-head ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
-   `(magit-log-head-label-local ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t :underline t))))
-   `(magit-log-head-label-patches ((,class (:foreground "#d75f00" :background "#ffaf87" :bold t :underline t))))
-   `(magit-log-head-label-remote ((,class (:foreground "#005faf" :background "#afd7ff" :bold t :underline t))))
-   `(magit-log-head-label-tags ((,class (:foreground "#875f00" :background "#ffffaf" :bold t :underline t))))
-   `(magit-log-head-label-wip ((,class (:foreground "#c6c6c6" :background "#8a8a8a"))))
-   `(magit-log-message ((,class (:foreground "#c6c6c6" :background nil))))
-   `(magit-log-reflog-label-amend ((,class (:foreground "#ff1f8b" :background "#ffafd7"))))
-   `(magit-log-reflog-label-checkout ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
-   `(magit-log-reflog-label-cherry-pick ((,class (:foreground "#d75f00" :background "#ffd787"))))
-   `(magit-log-reflog-label-commit ((,class (:foreground "#875f00" :background "#ffff87"))))
-   `(magit-log-reflog-label-merge ((,class (:foreground "#6c0099" :background "#af87ff"))))
-   `(magit-log-reflog-label-other ((,class (:foreground "#ffffff" :background "#4e4e4e"))))
-   `(magit-log-reflog-label-rebase ((,class (:foreground "#005f5f" :background "#87d7af"))))
-   `(magit-log-reflog-label-remote ((,class (:foreground "#005faf" :background "#afd7ff"))))
-   `(magit-log-reflog-label-reset ((,class (:foreground "#a40000" :background "#ffafaf"))))
-   `(magit-process-ng ((,class (:foreground "#a40000" :background "#ffafaf" :underline t :bold t))))
-   `(magit-process-ok ((,class (:foreground ,prompt-foreground :background ,prompt-background :underline t :bold t))))
-   `(magit-signature-bad ((,class (:foreground "#ef2929"))))
-   `(magit-signature-good ((,class (:foreground ,prompt-background))))
-   `(magit-signature-none ((,class (:foreground "#c6c6c6"))))
-   `(magit-signature-untrusted ((,class (:foreground "#00d7af"))))
-   `(magit-tag ((,class (:foreground ,highlight-background :background "#afd7ff"))))
-   `(magit-valid-signature ((,class (:foreground "#00d7af" :background "#303030" :bold t))))
-   `(magit-whitespace-warning-face ((,class (:foreground "#ffffff" :background "#a40000" :bold t))))
-
+   ;; Magit
+   `(magit-diff-file-heading ((,class (:foreground ,highlight-foreground :background nil :underline nil :bold t))))
+   `(magit-diff-file-heading-highlight ((,class (:inherit magit-diff-file-heading))))
+   `(magit-diff-file-heading-selection ((,class (:inherit magit-diff-file-heading))))
+   `(magit-section-heading ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
+   `(magit-section-heading-selection ((,class (:inherit magit-section-heading))))
+   `(magit-section-highlight ((,class (:background nil :foreground nil))))
+   `(magit-diff-hunk-heading ((,class (:foreground ,light-text-foreground :background nil :bold t))))
+   `(magit-diff-hunk-heading-highlight ((,class (:inherit magit-diff-hunk-heading))))
+   `(magit-diff-hunk-heading-selection ((,class (:inherit magit-diff-hunk-heading))))
+   `(magit-diff-context ((,class (:foreground ,inactive-text))))
+   `(magit-diff-context-highlight ((,class (:inherit magit-diff-context))))
+   `(magit-branch-current ((,class (:foreground ,header-text :background nil :bold t))))
+   `(magit-branch-local ((,class (:inherit magit-branch-current))))
+   `(magit-branch-remote ((,class (:inherit magit-branch-current))))
+   
    ;; Helm
    `(helm-source-header ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header-line-left-margin ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))

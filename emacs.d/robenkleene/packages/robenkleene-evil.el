@@ -24,13 +24,7 @@
     (setcdr evil-insert-state-map nil)
     ;; Re-enable esc
     (define-key evil-insert-state-map [escape] 'evil-normal-state)
-
-    ;; Curate list of `evil-motion-state-modes'
-    (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
-    (add-to-list 'evil-motion-state-modes 'package-menu-mode)
-    (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
-    (add-to-list 'evil-motion-state-modes 'magit-status-mode)
-
+    
     ;; hl-line-mode matches evil mode
     (add-hook 'evil-normal-state-entry-hook (lambda () (setq global-hl-line-mode t)))
     (add-hook 'evil-motion-state-entry-hook (lambda () (setq global-hl-line-mode t)))
@@ -38,16 +32,59 @@
     (add-hook 'evil-visual-state-entry-hook (lambda () (setq global-hl-line-mode nil)))
 
 
+    ;;; Mode Special Treatment
+
+    ;; Curate list of `evil-motion-state-modes'
+    (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
+    (add-to-list 'evil-motion-state-modes 'package-menu-mode)
+
+    ;; Magit
+    ;; (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
+    ;; (add-to-list 'evil-motion-state-modes 'magit-status-mode)
+    ;; TODO: Write a macro that evilifies a list of keymaps, this should make all the
+    ;; maps have their bindings replaced by an evil mode map
+    ;; To get magit working again, I need to prevent these maps from overriding evil:
+      ;; (spacemacs|evilify-map magit-tag-section-map)
+      ;; (spacemacs|evilify-map magit-untracked-section-map)
+      ;; (spacemacs|evilify-map magit-branch-section-map)
+      ;; (spacemacs|evilify-map magit-remote-section-map)
+      ;; (spacemacs|evilify-map magit-file-section-map)
+      ;; (spacemacs|evilify-map magit-hunk-section-map)
+      ;; (spacemacs|evilify-map magit-unstaged-section-map)
+      ;; (spacemacs|evilify-map magit-staged-section-map)
+      ;; (spacemacs|evilify-map magit-commit-section-map)
+      ;; (spacemacs|evilify-map magit-module-commit-section-map)
+      ;; (spacemacs|evilify-map magit-unpulled-section-map)
+      ;; (spacemacs|evilify-map magit-unpushed-section-map)
+      ;; (spacemacs|evilify-map magit-stashes-section-map)
+      ;; (spacemacs|evilify-map magit-stash-section-map)
+;; (evil-set-initial-state 'magit-mode 'normal)
+;; (evil-set-initial-state 'magit-status-mode 'normal)
+;; (evil-set-initial-state 'magit-diff-mode 'normal)
+;; (evil-set-initial-state 'magit-log-mode 'normal)
+;; (evil-define-key 'normal magit-mode-map
+;;     "j" 'magit-goto-next-section
+;;     "k" 'magit-goto-previous-section)
+;; (evil-define-key 'normal magit-log-mode-map
+;;     "j" 'magit-goto-next-section
+;;     "k" 'magit-goto-previous-section)
+;; (evil-define-key 'normal magit-diff-mode-map
+;;     "j" 'magit-goto-next-section
+;;     "k" 'magit-goto-previous-section)
+
+    
     ;;; Bindings
+
+    ;; Let default bindings for mode poke through
+    (define-key evil-motion-state-map (kbd "RET") nil)
+    (define-key evil-motion-state-map (kbd "TAB") nil)
 
     ;; Dired
     (define-key evil-motion-state-map "-" 'dired-jump)
 
-    ;; Let default bindings for mode poke through
-    (define-key evil-motion-state-map (kbd "RET") nil)
+    ;; ;; Helm Swoop
+    ;; (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
 
-    ;; Helm Swoop
-    (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
 
     ;;; Unimpaired
 
@@ -84,6 +121,7 @@
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
     (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
+    (define-key robenkleene/leader-map (kbd "h") 'helm-apropos)
 
     ;; Leader Key
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
