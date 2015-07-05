@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar helm)
 (use-package helm
   :ensure t
   :bind (

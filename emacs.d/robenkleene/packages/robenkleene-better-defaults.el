@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar better-defaults)
 (use-package better-defaults
   :ensure t)
 

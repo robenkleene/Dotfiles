@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar evil-commentary)
 (use-package evil-commentary
   :ensure t
   :init

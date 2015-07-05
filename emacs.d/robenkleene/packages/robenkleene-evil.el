@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar evil)
 (use-package evil
   :ensure t
   :init
@@ -33,7 +32,8 @@
 
 
     ;;; Mode Special Treatment
-
+    (evil-set-initial-state 'git-commit-mode 'insert)
+    
     ;; Curate list of `evil-motion-state-modes'
     (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
     (add-to-list 'evil-motion-state-modes 'package-menu-mode)

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar rainbow-mode)
 (use-package rainbow-mode
   :ensure t
   :commands rainbow-mode

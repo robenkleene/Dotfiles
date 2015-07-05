@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar editorconfig)
 (use-package editorconfig
   :ensure t
   )

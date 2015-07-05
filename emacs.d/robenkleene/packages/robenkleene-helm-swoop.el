@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar helm-swoop)
 (use-package helm-swoop
   :ensure t
   :bind (

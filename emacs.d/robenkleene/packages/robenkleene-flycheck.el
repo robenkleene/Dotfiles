@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar flycheck)
 (use-package flycheck
   :ensure t
   :init

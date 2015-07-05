@@ -17,6 +17,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-better-defaults)
 (require 'robenkleene-editorconfig)
+(require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-evil)
 (require 'robenkleene-evil-commentary)
 (require 'robenkleene-flycheck)

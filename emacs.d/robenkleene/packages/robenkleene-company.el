@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar company)
 (use-package company
   :ensure t
   :init

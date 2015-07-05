@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar magit)
 (use-package magit
   :ensure t
   :bind (

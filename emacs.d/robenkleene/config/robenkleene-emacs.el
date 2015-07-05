@@ -10,5 +10,8 @@
 (global-hl-line-mode)
 (make-variable-buffer-local 'global-hl-line-mode)
 
+;; Show trailing white space
+(setq-default show-trailing-whitespace t)
+
 (provide 'robenkleene-emacs)
 ;;; robenkleene-emacs.el ends here

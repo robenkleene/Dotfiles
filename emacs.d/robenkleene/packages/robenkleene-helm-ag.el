@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar helm-ag)
 (use-package helm-ag
   :ensure t
   :commands helm-do-ag

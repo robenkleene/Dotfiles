@@ -5,7 +5,6 @@
 (require 'robenkleene-functions)
 
 (require 'use-package)
-(defvar pbcopy)
 (use-package pbcopy
   :ensure t
   :if (and (robenkleene/system-is-mac) (not (display-graphic-p)))

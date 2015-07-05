@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'use-package)
-(defvar smartparens)
 (use-package smartparens
   :ensure t
   :init
