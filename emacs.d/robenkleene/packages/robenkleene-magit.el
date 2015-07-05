@@ -5,6 +5,7 @@
 (require 'use-package)
 (defvar magit)
 (use-package magit
+  :ensure t
   :init
   (progn
     (global-set-key (kbd "C-x g") 'magit-status)

@@ -5,6 +5,7 @@
 (require 'use-package)
 (defvar helm-swoop)
 (use-package helm-swoop
+  :ensure t
   :bind (
          ("M-i" . helm-swoop)
          ("M-I" . helm-swoop-back-to-last-point)

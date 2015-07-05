@@ -5,6 +5,7 @@
 (require 'use-package)
 (defvar helm)
 (use-package helm
+  :ensure t
   :bind (
          ("M-x" . helm-M-x)
          ("C-x C-b" . helm-buffers-list)

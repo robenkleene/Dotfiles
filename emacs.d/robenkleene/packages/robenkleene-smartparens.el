@@ -5,6 +5,7 @@
 (require 'use-package)
 (defvar smartparens)
 (use-package smartparens
+  :ensure t
   :init
   (custom-set-faces
    `(sp-show-pair-match-face ((t (:inherit show-paren-match))))

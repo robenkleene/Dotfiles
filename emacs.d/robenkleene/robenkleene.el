@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(defvar use-package-verbose t)
 
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
@@ -15,6 +15,7 @@
 (require 'robenkleene-dired)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+(require 'robenkleene-better-defaults)
 (require 'robenkleene-evil)
 (require 'robenkleene-evil-commentary)
 (require 'robenkleene-flycheck)

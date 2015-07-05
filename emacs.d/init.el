@@ -2,14 +2,20 @@
 ;;; Commentary:
 ;;; Code:
 
-;; (setq package-enable-at-startup nil)
+(require 'package)
+(setq package-enable-at-startup nil)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
 
-(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
-(cask-initialize)
-(require 'pallet)
-(pallet-mode t)
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (load (concat user-emacs-directory "robenkleene/robenkleene.el"))
+
 ;;; init.el ends here
 
 

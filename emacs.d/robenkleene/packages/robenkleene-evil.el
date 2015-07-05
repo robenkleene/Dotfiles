@@ -5,6 +5,7 @@
 (require 'use-package)
 (defvar evil)
 (use-package evil
+  :ensure t
   :init
   (progn
     (evil-mode 1)
@@ -68,7 +69,7 @@
     ;; Open Map
     (defvar robenkleene/open-map (make-keymap))
     (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
-    (define-key robenkleene/open-map (kbd "p") (lambda() (interactive) (find-file "~/.emacs.d/.cask/24.5.1/elpa/")))
+    (define-key robenkleene/open-map (kbd "p") (lambda() (interactive) (find-file "~/.emacs.d/elpa/")))
 
 
     ;;; Leader
