@@ -118,11 +118,14 @@
     (define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
     (define-key robenkleene/leader-map (kbd "e") 'robenkleene/external-editor)
     (define-key robenkleene/leader-map (kbd "F") 'helm-find-files)
-    (define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
+    (define-key robenkleene/leader-map (kbd "f") 'robenkleene/best-find-file)
+    (define-key robenkleene/leader-map (kbd "a") 'robenkleene/best-ag)
+    (define-key robenkleene/leader-map (kbd "A") 'helm-do-ag)
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
     (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
-    (define-key robenkleene/leader-map (kbd "h") 'helm-apropos)
+    (define-key robenkleene/leader-map (kbd "H") 'helm-apropos)
+    (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
 
     ;; Leader Key
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)

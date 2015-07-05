@@ -7,7 +7,7 @@
 (defvar helm-projectile)
 (use-package helm-projectile
   :ensure t
-  :commands (helm-projectile-find-file helm-projectile-ag)
+  :commands (helm-projectile-find-file helm-projectile-ag projectile-project-p)
   :config
   (progn
     (helm-projectile-on)

@@ -36,8 +36,22 @@
     )
   )
 
+(declare-function projectile-project-p "projectile")
+(defun robenkleene/best-ag ()
+  "Best ag search."
+  (interactive)
+  (if (projectile-project-p)
+      (call-interactively 'helm-projectile-ag)
+    (call-interactively 'helm-do-ag))
+  )
+
+(defun robenkleene/best-find-file ()
+  "Best find file."
+  (interactive)
+  (if (projectile-project-p)
+      (call-interactively 'helm-projectile-find-file)
+    (call-interactively 'helm-find-files))
+  )
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
-
-
