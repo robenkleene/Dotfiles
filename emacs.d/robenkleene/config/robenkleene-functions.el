@@ -53,5 +53,12 @@
     (call-interactively 'helm-find-files))
   )
 
+
+(defun robenkleene/other-window-shell ()
+  "Open shell in other window."
+  (interactive)
+  (switch-to-buffer-other-window "*shell*")
+  (shell))
+
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here

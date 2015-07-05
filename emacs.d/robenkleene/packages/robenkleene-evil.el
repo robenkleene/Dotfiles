@@ -126,6 +126,7 @@
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
     (define-key robenkleene/leader-map (kbd "H") 'helm-apropos)
     (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
+    (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
 
     ;; Leader Key
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)

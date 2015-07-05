@@ -136,22 +136,40 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-8-face ((,class (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
-   ;; Magit
-   `(magit-diff-file-heading ((,class (:foreground ,highlight-foreground :background nil :underline nil :bold t))))
-   `(magit-diff-file-heading-highlight ((,class (:inherit magit-diff-file-heading))))
-   `(magit-diff-file-heading-selection ((,class (:inherit magit-diff-file-heading))))
-   `(magit-section-heading ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
-   `(magit-section-heading-selection ((,class (:inherit magit-section-heading))))
-   `(magit-section-highlight ((,class (:background nil :foreground nil))))
-   `(magit-diff-hunk-heading ((,class (:foreground ,light-text-foreground :background nil :bold t))))
-   `(magit-diff-hunk-heading-highlight ((,class (:inherit magit-diff-hunk-heading))))
-   `(magit-diff-hunk-heading-selection ((,class (:inherit magit-diff-hunk-heading))))
-   `(magit-diff-context ((,class (:foreground ,inactive-text))))
-   `(magit-diff-context-highlight ((,class (:inherit magit-diff-context))))
+   ;;; Magit
+   ;; Normal
    `(magit-branch-current ((,class (:foreground ,header-text :background nil :bold t))))
    `(magit-branch-local ((,class (:inherit magit-branch-current))))
    `(magit-branch-remote ((,class (:inherit magit-branch-current))))
-   
+   `(magit-section-heading ((,class (:foreground ,header-text :background nil :underline t :bold ,t))))
+   `(magit-diff-file-heading ((,class (:foreground ,highlight-foreground :background nil :underline nil :bold t))))
+   `(magit-diff-hunk-heading ((,class (:foreground ,light-text-foreground :background nil :bold t))))
+   `(magit-diff-added ((,class (:inherit diff-added))))
+   `(magit-diff-removed ((,class (:inherit diff-removed))))
+   `(magit-diff-context ((,class (:foreground ,inactive-text))))
+   `(magit-diff-lines-heading ((,class (:inherit region))))
+
+   ;; Selection
+   ;; Not sure what this is yet
+   ;; `(magit-diff-file-heading-selection ((,class (:inherit magit-diff-file-heading))))
+   ;; `(magit-section-heading-selection ((,class (:inherit magit-section-heading))))
+   ;; `(magit-diff-hunk-heading-selection ((,class (:inherit magit-diff-hunk-heading))))
+   ;; `(magit-diff-file-heading-selection ((,class (:inherit magit-diff-file-heading))))
+   `(magit-diff-file-heading-selection ((,class (:background "brightmagenta"))))
+   `(magit-section-heading-selection ((,class (:background "brightmagenta"))))
+   `(magit-diff-hunk-heading-selection ((,class (:background "brightmagenta"))))
+   `(magit-diff-file-heading-selection ((,class (:background "brightmagenta"))))
+
+   ;; Highlight
+   ;; This is the currently active section
+   `(magit-section-highlight ((,class (:background nil :foreground nil))))
+   `(magit-diff-file-heading-highlight ((,class (:inherit magit-diff-file-heading))))
+   `(magit-diff-hunk-heading-highlight ((,class (:inherit magit-diff-hunk-heading))))
+   `(magit-diff-added-highlight ((,class (:inherit diff-added))))
+   `(magit-diff-removed-highlight ((,class (:inherit diff-removed))))
+   `(magit-diff-context-highlight ((,class (:inherit magit-diff-context))))
+
+
    ;; Helm
    `(helm-source-header ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header-line-left-margin ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))

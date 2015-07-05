@@ -10,19 +10,6 @@
          ("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup)
          )
-  :config
-  (progn
-    (custom-set-faces
-     ;; Diff
-     `(magit-diff-added ((t (:inherit diff-added))))
-     `(magit-diff-added-highlight ((t (:inherit diff-added))))
-     `(magit-diff-removed ((t (:inherit diff-removed))))
-     `(magit-diff-removed-highlight ((t (:inherit diff-removed))))
-     ;;
-     `(magit-diff-file-heading ((t (:inherit diff-removed))))
-     `(magit-diff-removed-highlight ((t (:inherit diff-removed))))
-     )
-    )
   )
 
 (provide 'robenkleene-magit)
