@@ -7,10 +7,17 @@
 (use-package smartparens
   :ensure t
   :init
-  (custom-set-faces
-   `(sp-show-pair-match-face ((t (:inherit show-paren-match))))
-   `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
-   )
+  (progn
+    ;; Enable smartparens-mode in `eval-expression'
+    (add-hook 'minibuffer-setup-hook (lambda ()
+                                       (if (eq this-command 'eval-expression)
+                                           (smartparens-mode)))
+              )
+    (custom-set-faces
+     `(sp-show-pair-match-face ((t (:inherit show-paren-match))))
+     `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
+     )
+    )
   :config
   (progn
     (require 'smartparens-config)
