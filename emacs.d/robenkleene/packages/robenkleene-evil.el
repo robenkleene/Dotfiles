@@ -5,7 +5,7 @@
 (require 'use-package)
 (use-package evil
   :ensure t
-  :init
+  :config
   (progn
     (evil-mode 1)
     ;; Disable Evil's integrations
@@ -18,12 +18,12 @@
 
 
     ;;; Basic
-    
+
     ;; Disable insert mode key map
     (setcdr evil-insert-state-map nil)
     ;; Re-enable esc
     (define-key evil-insert-state-map [escape] 'evil-normal-state)
-    
+
     ;; hl-line-mode matches evil mode
     (add-hook 'evil-normal-state-entry-hook (lambda () (setq global-hl-line-mode t)))
     (add-hook 'evil-motion-state-entry-hook (lambda () (setq global-hl-line-mode t)))
@@ -32,8 +32,11 @@
 
 
     ;;; Mode Special Treatment
-    (evil-set-initial-state 'git-commit-mode 'insert)
-    
+    ;; No idea why this doesn't work
+    ;; (evil-set-initial-state 'git-commit-mode 'insert)
+    ;; But this does
+    (add-hook 'git-commit-mode-hook 'evil-insert-state)
+
     ;; Curate list of `evil-motion-state-modes'
     (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
     (add-to-list 'evil-motion-state-modes 'package-menu-mode)
@@ -72,7 +75,7 @@
 ;;     "j" 'magit-goto-next-section
 ;;     "k" 'magit-goto-previous-section)
 
-    
+
     ;;; Bindings
 
     ;; Let default bindings for mode poke through
