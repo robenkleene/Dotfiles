@@ -53,12 +53,19 @@
     (call-interactively 'helm-find-files))
   )
 
-
 (defun robenkleene/other-window-shell ()
   "Open shell in other window."
   (interactive)
   (switch-to-buffer-other-window "*shell*")
   (shell))
+
+(defun robenkleene/highlight-keywords ()
+  "Highlight keywords."
+  (interactive)
+  (font-lock-add-keywords
+   nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
+          1 font-lock-warning-face t)))
+  )
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here

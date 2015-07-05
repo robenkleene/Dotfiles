@@ -31,6 +31,10 @@
 (require 'robenkleene-magit)
 (require 'robenkleene-rainbow-mode)
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+(require 'robenkleene-jade)
+(require 'robenkleene-emacs-lisp)
+
 ;;; robenkleene.el ends here
 
 

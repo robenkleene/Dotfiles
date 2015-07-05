@@ -13,5 +13,8 @@
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
 
+;; Highlight Keywords
+(add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
+
 (provide 'robenkleene-emacs)
 ;;; robenkleene-emacs.el ends here
