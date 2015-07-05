@@ -5,7 +5,8 @@
 ;; Hide details (show them with "\("
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
-(add-hook 'dired-mode-hook '(lambda () (setq global-hl-line-mode t)))
+;; Evil Mode is managing hl-line state
+;; (add-hook 'dired-mode-hook '(lambda () (setq global-hl-line-mode t)))
 
 ;; Suppress error message
 (defvar dired-use-ls-dired)

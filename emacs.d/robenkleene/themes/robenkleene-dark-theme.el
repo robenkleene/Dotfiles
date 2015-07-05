@@ -1,4 +1,4 @@
-;;; robenkleene-dark-theme.el --- An eye-candy theme for Emacser
+;;; robenkleene-dark-theme.el --- Kleene Dark
 
 ;; Author: kuanyui<azazabc123@gmail.com>
 ;; Based on "tango-dark-theme"

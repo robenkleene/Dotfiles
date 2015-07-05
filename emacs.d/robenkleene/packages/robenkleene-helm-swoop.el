@@ -26,7 +26,7 @@
 			
 		 )
 		 :config
-		 (progn 
+		 (progn
 			;; From helm-swoop to helm-multi-swoop-all
 			(define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 
