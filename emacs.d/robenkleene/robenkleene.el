@@ -25,6 +25,7 @@
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-magit)
+(require 'robenkleene-rainbow-mode)
 
 ;;; robenkleene.el ends here
 
