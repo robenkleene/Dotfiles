@@ -27,6 +27,8 @@
     (define-key evil-insert-state-map [escape] 'evil-normal-state)
 
     ;; Curate list of `evil-motion-state-modes'
+    (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
+    (add-to-list 'evil-motion-state-modes 'package-menu-mode)
     (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
     (add-to-list 'evil-motion-state-modes 'magit-status-mode)
 
