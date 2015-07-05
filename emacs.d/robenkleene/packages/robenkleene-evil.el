@@ -2,12 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-
-
 (require 'use-package)
-(defvar evil-commentary)
-(use-package evil-commentary
-  :config
+(defvar evil)
+(use-package evil
+  :init
   (progn
     (evil-mode 1)
     ;; Disable Evil's integrations
@@ -41,18 +39,14 @@
 
     ;;; Bindings
 
-    ;; Clear search term
-    (define-key evil-normal-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
-    (define-key evil-motion-state-map "\C-l" 'evil-search-highlight-persist-remove-all)
-
     ;; Dired
-    (define-key evil-normal-state-map "-" 'dired-jump)
     (define-key evil-motion-state-map "-" 'dired-jump)
 
     ;; Let default bindings for mode poke through
-    (define-key evil-normal-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "RET") nil)
 
+    ;; Helm Swoop
+    (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
 
     ;;; Unimpaired
 
@@ -65,8 +59,6 @@
     (define-key robenkleene/unimpaired-previous-map (kbd "b") 'previous-buffer)
 
     ;; Unimpaired Key
-    (define-key evil-normal-state-map (kbd "[") robenkleene/unimpaired-previous-map)
-    (define-key evil-normal-state-map (kbd "]") robenkleene/unimpaired-next-map)
     (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)
     (define-key evil-motion-state-map (kbd "]") robenkleene/unimpaired-next-map)
 
@@ -93,14 +85,10 @@
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
 
     ;; Leader Key
-    (define-key evil-normal-state-map (kbd "\\") robenkleene/leader-map)
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
 
     )
   )
-
-
-
 
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here

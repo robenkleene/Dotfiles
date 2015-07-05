@@ -5,7 +5,7 @@
 (require 'use-package)
 (defvar helm-ag)
 (use-package helm-ag
-  :defer t
+  :commands helm-do-ag
   :config
   (progn
     ;; Enable grep mode after saving `helm-ag' results

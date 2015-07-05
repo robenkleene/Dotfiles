@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (require 'use-package)
 (defvar flycheck)
 (use-package flycheck
