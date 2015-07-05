@@ -34,7 +34,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-jade)
 (require 'robenkleene-emacs-lisp)
+(require 'robenkleene-javascript)
 
 ;;; robenkleene.el ends here
-
-
