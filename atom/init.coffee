@@ -61,7 +61,7 @@ atom.commands.add 'atom-text-editor', 'roben-kleene:send-to-launchbar', ->
 
 # Open Scratch For Scope
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
-  scratchpath = process.env.HOME + "/Development/Scratch/Atom/"
+  scratchpath = process.env.HOME + "/Development/Scratch/Temp/"
   editor = atom.workspace.getActiveTextEditor()
   scope = editor.getGrammar()?.scopeName
   if scope

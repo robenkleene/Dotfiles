@@ -67,5 +67,17 @@
           1 font-lock-warning-face t)))
   )
 
+(defun robenkleene/scratch-for-buffer ()
+  "Open scratch file for current buffer."
+  (interactive)
+  (let ((extension (file-name-extension (buffer-file-name))))
+    (message "extension %s" extension)
+    (if extension
+        (message "extension is not nil")
+      )
+    )
+  )
+
+
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here

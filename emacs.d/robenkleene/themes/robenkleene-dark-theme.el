@@ -174,6 +174,7 @@ Moe, moe, kyun!")
    `(helm-source-header ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header-line-left-margin ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header ((,class (:foreground ,highlight-background :background "#afd7ff"))))
+   `(helm-visible-mark ((,class (:inherit region))))
    ;; Uncustomized
    ;; `(helm-bookmark-directory ((,class (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-bookmark-file ((,class (:foreground "#875f00" :background "#ffff87"))))
