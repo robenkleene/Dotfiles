@@ -2,18 +2,25 @@
 ;;; Commentary:
 ;;; Code:
 
-;; ;; enh-ruby-mode
-;; ;; robe
-;; (require 'use-package)
-;; (use-package js2-mode
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (progn
-;;     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-;;     )
-;;   )
-;; ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
+(require 'use-package)
+(use-package enh-ruby-mode
+  :ensure t
+  :mode "\\.rb$"
+  :interpreter "ruby"
+  :config
+  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  )
+
+(use-package robe
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'enh-ruby-mode-hook 'robe-mode)
+    (eval-after-load 'company
+      '(push 'company-robe company-backends))
+    )
+  )
 
 (provide 'robenkleene-ruby)
 ;;; robenkleene-ruby.el ends here

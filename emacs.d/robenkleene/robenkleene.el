@@ -35,5 +35,6 @@
 (require 'robenkleene-jade)
 (require 'robenkleene-emacs-lisp)
 (require 'robenkleene-javascript)
+(require 'robenkleene-ruby)
 
 ;;; robenkleene.el ends here
