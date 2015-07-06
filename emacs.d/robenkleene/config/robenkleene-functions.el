@@ -67,17 +67,26 @@
           1 font-lock-warning-face t)))
   )
 
+(defvar robenkleene/scratch-directory-path "~/Development/Scratch/Temp/")
+(defvar robenkleene/scratch-file-name "source")
 (defun robenkleene/scratch-for-buffer ()
   "Open scratch file for current buffer."
   (interactive)
   (let ((extension (file-name-extension (buffer-file-name))))
-    (message "extension %s" extension)
     (if extension
-        (message "extension is not nil")
+        (let ((scratch-file-name
+               (format "%s%s.%s"
+                       robenkleene/scratch-directory-path
+                       robenkleene/scratch-file-name
+                       extension
+                       )
+               )
+              )
+          (find-file-other-window scratch-file-name)
+          )
       )
     )
   )
-
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
