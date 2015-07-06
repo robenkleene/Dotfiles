@@ -26,7 +26,7 @@
   'ctrl-V': 'core:select-to-bottom'
   'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
   # 'cmd-k e': 'roben-kleene:toggle-emmet'
-  'ctrl-alt-f': 'roben-kleene:reveal-in-finder'
+  'ctrl-alt-r': 'roben-kleene:reveal-in-finder'
   'ctrl-alt-t': 'roben-kleene:open-in-terminal'
   'shift-cmd-space': 'roben-kleene:send-to-launchbar'
   'alt-s': 'roben-kleene:open-scratch-for-scope'
