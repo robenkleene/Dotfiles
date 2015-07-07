@@ -47,33 +47,33 @@
     ;; TODO: Write a macro that evilifies a list of keymaps, this should make all the
     ;; maps have their bindings replaced by an evil mode map
     ;; To get magit working again, I need to prevent these maps from overriding evil:
-      ;; (spacemacs|evilify-map magit-tag-section-map)
-      ;; (spacemacs|evilify-map magit-untracked-section-map)
-      ;; (spacemacs|evilify-map magit-branch-section-map)
-      ;; (spacemacs|evilify-map magit-remote-section-map)
-      ;; (spacemacs|evilify-map magit-file-section-map)
-      ;; (spacemacs|evilify-map magit-hunk-section-map)
-      ;; (spacemacs|evilify-map magit-unstaged-section-map)
-      ;; (spacemacs|evilify-map magit-staged-section-map)
-      ;; (spacemacs|evilify-map magit-commit-section-map)
-      ;; (spacemacs|evilify-map magit-module-commit-section-map)
-      ;; (spacemacs|evilify-map magit-unpulled-section-map)
-      ;; (spacemacs|evilify-map magit-unpushed-section-map)
-      ;; (spacemacs|evilify-map magit-stashes-section-map)
-      ;; (spacemacs|evilify-map magit-stash-section-map)
-;; (evil-set-initial-state 'magit-mode 'normal)
-;; (evil-set-initial-state 'magit-status-mode 'normal)
-;; (evil-set-initial-state 'magit-diff-mode 'normal)
-;; (evil-set-initial-state 'magit-log-mode 'normal)
-;; (evil-define-key 'normal magit-mode-map
-;;     "j" 'magit-goto-next-section
-;;     "k" 'magit-goto-previous-section)
-;; (evil-define-key 'normal magit-log-mode-map
-;;     "j" 'magit-goto-next-section
-;;     "k" 'magit-goto-previous-section)
-;; (evil-define-key 'normal magit-diff-mode-map
-;;     "j" 'magit-goto-next-section
-;;     "k" 'magit-goto-previous-section)
+    ;; (spacemacs|evilify-map magit-tag-section-map)
+    ;; (spacemacs|evilify-map magit-untracked-section-map)
+    ;; (spacemacs|evilify-map magit-branch-section-map)
+    ;; (spacemacs|evilify-map magit-remote-section-map)
+    ;; (spacemacs|evilify-map magit-file-section-map)
+    ;; (spacemacs|evilify-map magit-hunk-section-map)
+    ;; (spacemacs|evilify-map magit-unstaged-section-map)
+    ;; (spacemacs|evilify-map magit-staged-section-map)
+    ;; (spacemacs|evilify-map magit-commit-section-map)
+    ;; (spacemacs|evilify-map magit-module-commit-section-map)
+    ;; (spacemacs|evilify-map magit-unpulled-section-map)
+    ;; (spacemacs|evilify-map magit-unpushed-section-map)
+    ;; (spacemacs|evilify-map magit-stashes-section-map)
+    ;; (spacemacs|evilify-map magit-stash-section-map)
+    ;; (evil-set-initial-state 'magit-mode 'normal)
+    ;; (evil-set-initial-state 'magit-status-mode 'normal)
+    ;; (evil-set-initial-state 'magit-diff-mode 'normal)
+    ;; (evil-set-initial-state 'magit-log-mode 'normal)
+    ;; (evil-define-key 'normal magit-mode-map
+    ;;     "j" 'magit-goto-next-section
+    ;;     "k" 'magit-goto-previous-section)
+    ;; (evil-define-key 'normal magit-log-mode-map
+    ;;     "j" 'magit-goto-next-section
+    ;;     "k" 'magit-goto-previous-section)
+    ;; (evil-define-key 'normal magit-diff-mode-map
+    ;;     "j" 'magit-goto-next-section
+    ;;     "k" 'magit-goto-previous-section)
 
 
     ;;; Bindings
@@ -126,17 +126,37 @@
     (define-key robenkleene/leader-map (kbd "a") 'robenkleene/best-ag)
     (define-key robenkleene/leader-map (kbd "A") 'helm-do-ag)
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
+    (define-key robenkleene/leader-map (kbd "\\") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
     (define-key robenkleene/leader-map (kbd "H") 'helm-apropos)
     (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
-    (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
+    (define-key robenkleene/leader-map (kbd "c") 'robenkleene/other-window-shell)
+    (define-key robenkleene/leader-map (kbd "s") 'helm-semantic-or-imenu)
 
     ;; Leader Key
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
 
+
+    ;; ;; Tabs
+    ;; (evil-define-command robenkleene/evil-tab-edit (file)
+    ;;   (interactive "<f>")
+    ;;   (make-frame)
+    ;;   (find-file file)
+    ;;   )
+    ;; (evil-define-command robenkleene/evil-tab-new ()
+    ;;   (interactive)
+    ;;   (make-frame)
+    ;;   )
+    ;; (evil-ex-define-cmd "tabe[dit]" 'robenkleene/evil-tab-edit)
+    ;; (evil-ex-define-cmd "tabnew" 'robenkleene/evil-tab-new)
+    ;; (evil-define-key 'normal evil-tabs-mode-map
+    ;;   "gt" 'other-frame
+    ;;   "gT" 'elscreen-previous
+    ;;   "gt" 'evil-tabs-goto-tab
+    ;;   )
+
     )
   )
-
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here
