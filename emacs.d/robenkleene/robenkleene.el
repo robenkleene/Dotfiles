@@ -30,6 +30,7 @@
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-magit)
 (require 'robenkleene-rainbow-mode)
+(require 'robenkleene-fill-column-indicator)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-jade)
