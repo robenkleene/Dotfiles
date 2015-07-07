@@ -42,7 +42,7 @@
     (add-to-list 'evil-motion-state-modes 'package-menu-mode)
 
     ;; Magit
-    ;; (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
+    (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
     ;; (add-to-list 'evil-motion-state-modes 'magit-status-mode)
     ;; TODO: Write a macro that evilifies a list of keymaps, this should make all the
     ;; maps have their bindings replaced by an evil mode map
