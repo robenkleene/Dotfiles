@@ -6,6 +6,7 @@
 (use-package helm
   :ensure t
   :bind (
+         ("C-h a" . helm-apropos)
          ("M-x" . helm-M-x)
          ("C-x C-b" . helm-buffers-list)
          )

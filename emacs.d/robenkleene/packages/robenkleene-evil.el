@@ -19,6 +19,20 @@
 
     ;;; Basic
 
+    ;; TODO: Exit to normal mode when switching buffers
+    ;; buffer-list-update-hook
+
+    ;; (defadvice windmove-do-window-select
+    ;;     (after robenkleene/windowmove-change-to-normal-mode
+    ;;            (args) activate)
+    ;;   (message "got here")
+    ;;   (evil-change-to-initial-state)
+    ;;   )
+    ;; (defadvice windmove-do-window-select (after windowmove-change-to-normal-mode)
+    ;;   "Ensure we reset to Evil's normal mode when switching windows."
+    ;;   (evil-change-to-initial-state))
+    ;; (ad-activate 'windmove-do-window-select)
+
     ;; Disable insert mode key map
     (setcdr evil-insert-state-map nil)
     ;; Re-enable esc
@@ -132,7 +146,6 @@
     (define-key robenkleene/leader-map (kbd "\\") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
-    (define-key robenkleene/leader-map (kbd "H") 'helm-apropos)
     (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
     (define-key robenkleene/leader-map (kbd "c") 'robenkleene/other-window-shell)
 
