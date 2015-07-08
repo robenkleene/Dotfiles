@@ -132,29 +132,9 @@
     (define-key robenkleene/leader-map (kbd "H") 'helm-apropos)
     (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
     (define-key robenkleene/leader-map (kbd "c") 'robenkleene/other-window-shell)
-    (define-key robenkleene/leader-map (kbd "s") 'helm-semantic-or-imenu)
 
     ;; Leader Key
     (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
-
-
-    ;; ;; Tabs
-    ;; (evil-define-command robenkleene/evil-tab-edit (file)
-    ;;   (interactive "<f>")
-    ;;   (make-frame)
-    ;;   (find-file file)
-    ;;   )
-    ;; (evil-define-command robenkleene/evil-tab-new ()
-    ;;   (interactive)
-    ;;   (make-frame)
-    ;;   )
-    ;; (evil-ex-define-cmd "tabe[dit]" 'robenkleene/evil-tab-edit)
-    ;; (evil-ex-define-cmd "tabnew" 'robenkleene/evil-tab-new)
-    ;; (evil-define-key 'normal evil-tabs-mode-map
-    ;;   "gt" 'other-frame
-    ;;   "gT" 'elscreen-previous
-    ;;   "gt" 'evil-tabs-goto-tab
-    ;;   )
 
     )
   )
