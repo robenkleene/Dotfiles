@@ -12,7 +12,7 @@
     )
   :config
   (progn
-    (setq fci-rule-color "#303030")
+    (setq fci-rule-color "#262626")
     (setq fci-rule-column 80)
     )
   )
