@@ -19,13 +19,17 @@
 
     ;;; Basic
 
-    ;; Restore initial evil state when switching to a window
-    ;; TODO: This might be another good approach to this `buffer-list-update-hook'
-    ;; (defadvice other-window (after robenkleene/switch-buffer-restore-evil-state activate)
-    ;;   "Restore evil state when switching buffers."
-    ;;   (evil-change-to-initial-state)
-    ;;   )
-
+    ;; Always switch to initial evil state when switching to a buffer
+    (defvar previous-buffer)
+    (defvar next-buffer)
+    (defvar other-window)
+    (defvar select-window)
+    (defvar switch-to-buffer)
+    (robenkleene/advice-after-evil-initial-state previous-buffer)
+    (robenkleene/advice-after-evil-initial-state next-buffer)
+    (robenkleene/advice-after-evil-initial-state other-window)
+    (robenkleene/advice-after-evil-initial-state select-window)
+    (robenkleene/advice-after-evil-initial-state switch-to-buffer)
 
     ;; Disable insert mode key map
     (setcdr evil-insert-state-map nil)
