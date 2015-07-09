@@ -19,19 +19,13 @@
 
     ;;; Basic
 
-    ;; TODO: Exit to normal mode when switching buffers
-    ;; buffer-list-update-hook
-
-    ;; (defadvice windmove-do-window-select
-    ;;     (after robenkleene/windowmove-change-to-normal-mode
-    ;;            (args) activate)
-    ;;   (message "got here")
+    ;; Restore initial evil state when switching to a window
+    ;; TODO: This might be another good approach to this `buffer-list-update-hook'
+    ;; (defadvice other-window (after robenkleene/switch-buffer-restore-evil-state activate)
+    ;;   "Restore evil state when switching buffers."
     ;;   (evil-change-to-initial-state)
     ;;   )
-    ;; (defadvice windmove-do-window-select (after windowmove-change-to-normal-mode)
-    ;;   "Ensure we reset to Evil's normal mode when switching windows."
-    ;;   (evil-change-to-initial-state))
-    ;; (ad-activate 'windmove-do-window-select)
+
 
     ;; Disable insert mode key map
     (setcdr evil-insert-state-map nil)
@@ -46,14 +40,16 @@
 
 
     ;;; Mode Special Treatment
-    ;; No idea why this doesn't work
-    ;; (evil-set-initial-state 'git-commit-mode 'insert)
-    ;; But this does
-    (add-hook 'git-commit-mode-hook 'evil-insert-state)
+    ;; Set insert mode when entering evil mode
+    ;; (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
-    ;; Curate list of `evil-motion-state-modes'
+    ;;; Curate list of `evil-motion-state-modes'
+    ;; Motion State Modes
     (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
     (add-to-list 'evil-motion-state-modes 'package-menu-mode)
+
+    (setq evil-insert-state-modes (remove 'shell-mode evil-insert-state-modes))
+    (setq evil-insert-state-modes (remove 'eshell-mode evil-insert-state-modes))
 
     ;;; Bindings
 
