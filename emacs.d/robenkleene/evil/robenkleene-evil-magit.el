@@ -18,6 +18,7 @@
      
      (defvar magit-mode-map)
      (evil-declare-key 'normal magit-mode-map (kbd "s") 'magit-stage)
+     (evil-declare-key 'normal magit-mode-map (kbd "S") 'magit-stage-modified)
      (evil-declare-key 'normal magit-mode-map (kbd "u") 'magit-unstage)
      (evil-declare-key 'normal magit-mode-map (kbd "q") 'magit-mode-bury-buffer)
      (evil-declare-key 'normal magit-mode-map (kbd "c") 'magit-commit-popup)
