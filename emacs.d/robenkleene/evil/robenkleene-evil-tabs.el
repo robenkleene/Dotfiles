@@ -9,18 +9,17 @@
 (evil-define-command robenkleene/evil-tab-edit (file)
   :repeat nil
   (interactive "<f>")
-  (make-frame)
-  (delete-other-windows)
+  (make-frame-command)
   (evil-edit file)
-  ;; (find-file file)
   )
+
 (evil-define-command robenkleene/evil-tab-new ()
   :repeat nil
   (interactive)
-  (make-frame)
-  (delete-other-windows)
+  (make-frame-command)
   (switch-to-buffer (get-buffer-create "*scratch*"))
   )
+
 (evil-ex-define-cmd "tabe[dit]" 'robenkleene/evil-tab-edit)
 (evil-ex-define-cmd "tabnew" 'robenkleene/evil-tab-new)
 
