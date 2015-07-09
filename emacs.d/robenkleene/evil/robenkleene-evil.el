@@ -49,15 +49,18 @@
     ;; (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 
-    ;;; Curate list of `evil-motion-state-modes'
-    ;; Motion State Modes
-    (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
-    (add-to-list 'evil-motion-state-modes 'package-menu-mode)
-    ;; Insert State Modes
-    (setq evil-emacs-state-modes (remove 'git-commit-mode evil-emacs-state-modes))
-    (setq evil-insert-state-modes (remove 'shell-mode evil-insert-state-modes))
-    (setq evil-insert-state-modes (remove 'eshell-mode evil-insert-state-modes))
+    ;; ;;; Curate list of `evil-motion-state-modes'
+    ;; ;; Motion State Modes
+    ;; (setq evil-emacs-state-modes (remove 'package-menu-mode evil-emacs-state-modes))
+    ;; (add-to-list 'evil-motion-state-modes 'package-menu-mode)
+    ;; ;; Insert State Modes
+    ;; (setq evil-emacs-state-modes (remove 'git-commit-mode evil-emacs-state-modes))
+    ;; (setq evil-insert-state-modes (remove 'shell-mode evil-insert-state-modes))
+    ;; (setq evil-insert-state-modes (remove 'eshell-mode evil-insert-state-modes))
 
+    ;; Try just disabling `evil-emacs-state-modes' and white listing some modes
+    (setq evil-emacs-state-modes ())
+    
     ;;; Bindings
 
     ;; Let default bindings for mode poke through

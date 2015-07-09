@@ -8,12 +8,14 @@
 
      ;; Don't start in Emacs State
      
-     (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
-     (setq evil-emacs-state-modes (remove 'magit-diff-mode evil-emacs-state-modes))
-     (setq evil-emacs-state-modes (remove 'magit-revision-mode evil-emacs-state-modes))
-     (setq evil-emacs-state-modes (remove 'magit-stash-mode evil-emacs-state-modes))
-     (setq evil-emacs-state-modes (remove 'magit-stashes-mode evil-emacs-state-modes))
-
+     ;; (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
+     ;; (setq evil-emacs-state-modes (remove 'magit-diff-mode evil-emacs-state-modes))
+     ;; (setq evil-emacs-state-modes (remove 'magit-revision-mode evil-emacs-state-modes))
+     ;; (setq evil-emacs-state-modes (remove 'magit-stash-mode evil-emacs-state-modes))
+     ;; (setq evil-emacs-state-modes (remove 'magit-stashes-mode evil-emacs-state-modes))
+     ;; Switch to white list approach
+     (setq evil-emacs-state-modes (append '(magit-popup-mode) evil-emacs-state-modes))
+     
      ;;; Override Bindings
      
      (defvar magit-mode-map)
