@@ -9,7 +9,9 @@
      (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-diff-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-revision-mode evil-emacs-state-modes))
-
+     (setq evil-emacs-state-modes (remove 'magit-stash-mode evil-emacs-state-modes))
+     (setq evil-emacs-state-modes (remove 'magit-stashes-mode evil-emacs-state-modes))
+    
      (defvar magit-mode-map)
      (evil-declare-key 'normal magit-mode-map (kbd "s") 'magit-stage)
      (evil-declare-key 'normal magit-mode-map (kbd "u") 'magit-unstage)
