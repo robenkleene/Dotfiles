@@ -28,7 +28,8 @@
     (robenkleene/advice-after-evil-initial-state previous-buffer)
     (robenkleene/advice-after-evil-initial-state next-buffer)
     (robenkleene/advice-after-evil-initial-state other-window)
-    (robenkleene/advice-after-evil-initial-state select-window)
+    ;; This inteferes with shells, reverts them to normal state after each command
+    ;; (robenkleene/advice-after-evil-initial-state select-window)
     (robenkleene/advice-after-evil-initial-state switch-to-buffer)
 
     ;; Disable insert mode key map
