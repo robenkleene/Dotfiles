@@ -15,7 +15,7 @@
      (evil-declare-key 'normal magit-mode-map (kbd "u") 'magit-unstage)
      (evil-declare-key 'normal magit-mode-map (kbd "q") 'magit-mode-bury-buffer)
      (evil-declare-key 'normal magit-mode-map (kbd "C") 'magit-commit)
-     (evil-declare-key 'normal magit-mode-map (kbd "P") 'magit-push)
+     (evil-declare-key 'normal magit-mode-map (kbd "P") 'magit-push-current)
 
      ;; TODO: A better key for this would be `R' from Vim or `g' from Tig.
      ;; But both of those have complications, `r' overrides the rebase menu
