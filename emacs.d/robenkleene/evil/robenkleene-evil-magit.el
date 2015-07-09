@@ -6,12 +6,16 @@
 (eval-after-load "magit"
   '(progn
 
+     ;; Don't start in Emacs State
+     
      (setq evil-emacs-state-modes (remove 'magit-status-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-diff-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-revision-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-stash-mode evil-emacs-state-modes))
      (setq evil-emacs-state-modes (remove 'magit-stashes-mode evil-emacs-state-modes))
-    
+
+     ;;; Override Bindings
+     
      (defvar magit-mode-map)
      (evil-declare-key 'normal magit-mode-map (kbd "s") 'magit-stage)
      (evil-declare-key 'normal magit-mode-map (kbd "u") 'magit-unstage)
@@ -57,6 +61,16 @@
      (define-key magit-remote-section-map "k" nil)
      (define-key magit-tag-section-map "k" nil)
      (define-key magit-tag-section-map "K" 'magit-tag-delete)
+
+
+     ;; Major Mode Local Leader Map
+     (defvar robenkleene/magit-leader-map (make-keymap))
+     (define-key robenkleene/magit-leader-map (kbd "h") (lambda ()
+                                                          (interactive)
+                                                          (shell-command "hub browse -- commits")
+                                                          )
+       )
+     (evil-declare-key 'normal magit-mode-map (kbd ",") robenkleene/magit-leader-map)
      )
   )
 
