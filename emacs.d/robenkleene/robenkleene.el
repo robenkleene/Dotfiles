@@ -34,6 +34,7 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
 (require 'robenkleene-evil-tabs)
+(require 'robenkleene-evil-magit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-jade)

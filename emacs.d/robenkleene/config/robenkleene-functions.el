@@ -23,11 +23,11 @@
     )
   )
 
-(defun robenkleene/external-editor ()
-  "Open a region or file in external editor."
-  (interactive)
-  (if (mark)
-      (shell-command-on-region (point-min) (point-max) "mate -a")
+(defun robenkleene/external-editor (begin end)
+  "Open a region or file in external editor.  BEGIN and END are the region."
+  (interactive "r")
+  (if (and begin mark-active)
+      (shell-command-on-region begin end "mate -a")
     (if (buffer-file-name)
         (shell-command (concat "mate -a "
                                (shell-quote-argument buffer-file-name))
