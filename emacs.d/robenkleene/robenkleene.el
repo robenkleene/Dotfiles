@@ -18,8 +18,6 @@
 (require 'robenkleene-better-defaults)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-rainbow-delimiters)
-(require 'robenkleene-evil)
-(require 'robenkleene-evil-commentary)
 (require 'robenkleene-flycheck)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-helm)
@@ -33,6 +31,9 @@
 (require 'robenkleene-fill-column-indicator)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
+(require 'robenkleene-evil-functions)
+(require 'robenkleene-evil)
+(require 'robenkleene-evil-commentary)
 (require 'robenkleene-evil-tabs)
 (require 'robenkleene-evil-magit)
 
