@@ -14,6 +14,13 @@
 (require 'robenkleene-functions)
 (require 'robenkleene-dired)
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
+(require 'robenkleene-evil-functions)
+(require 'robenkleene-evil)
+(require 'robenkleene-evil-commentary)
+(require 'robenkleene-evil-tabs)
+(require 'robenkleene-evil-magit)
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-better-defaults)
 (require 'robenkleene-editorconfig)
@@ -29,13 +36,6 @@
 (require 'robenkleene-magit)
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-fill-column-indicator)
-
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
-(require 'robenkleene-evil-functions)
-(require 'robenkleene-evil)
-(require 'robenkleene-evil-commentary)
-(require 'robenkleene-evil-tabs)
-(require 'robenkleene-evil-magit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-jade)

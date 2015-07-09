@@ -65,8 +65,9 @@
 
     ;; Dired
     (define-key evil-motion-state-map "-" 'dired-jump)
-    (defvar dired-mode-map)
-    (define-key dired-mode-map (kbd "-") 'dired-up-directory)
+    ;; This is unnecessary when the above is added to the evil-motion-state-map
+    ;; (defvar dired-mode-map)
+    ;; (define-key dired-mode-map (kbd "-") 'dired-up-directory)
 
     ;; ;; Helm Swoop
     ;; (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
