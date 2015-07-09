@@ -28,6 +28,8 @@
 (require 'robenkleene-flycheck)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-helm)
+;; Evil Dired has to be loaded after helm for some reason
+(require 'robenkleene-evil-dired)
 (require 'robenkleene-helm-ag)
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-projectile)

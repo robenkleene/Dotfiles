@@ -66,8 +66,7 @@
 
     ;; Dired
     (define-key evil-motion-state-map "-" 'dired-jump)
-    (defvar dired-mode-map)
-    (evil-declare-key 'normal dired-mode-map (kbd "r") 'revert-buffer)
+    ;; (defvar dired-mode-map)
     ;; This is unnecessary when the above is added to the evil-motion-state-map
     ;; (define-key dired-mode-map (kbd "-") 'dired-up-directory)
 
