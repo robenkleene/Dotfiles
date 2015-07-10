@@ -34,7 +34,6 @@
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-projectile)
 (require 'robenkleene-company)
-;; (require 'robenkleene-diff-hl)
 (require 'robenkleene-git-gutter)
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-magit)
