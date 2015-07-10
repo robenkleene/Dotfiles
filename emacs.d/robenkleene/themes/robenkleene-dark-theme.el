@@ -93,7 +93,7 @@ Moe, moe, kyun!")
    ;; Paren Match
    `(show-paren-match ((,class (:underline t :foreground ,region-foreground :background ,region-background))))
    ;; Does `rainbow-delimiter-mismatched-face' and `rainbow-delimiters-unmatched-face' interfere with this?
-   `(show-paren-mismatch ((,class (:background ,error-background :foreground ,error-text-foreground))))
+   `(show-paren-mismatch ((,class (:foreground ,error-text))))
 
    ;; Search
    `(isearch ((,class (:foreground ,search-foreground :background ,search-background))))
@@ -180,6 +180,7 @@ Moe, moe, kyun!")
    ;; `(helm-bookmark-directory ((,class (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-bookmark-file ((,class (:foreground "#875f00" :background "#ffff87"))))
    `(helm-bookmark-info ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
+   `(helm-buffer-file ((,class (:foreground ,file-text))))
    `(helm-buffer-directory ((,class (:foreground ,link-text :bold t))))
    `(helm-buffer-process ((,class (:foreground "#ff4ea3"))))
    `(helm-buffer-saved-out ((,class (:foreground "#dd0000" :background "#303030"))))

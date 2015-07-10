@@ -22,6 +22,7 @@
 
 (evil-ex-define-cmd "tabe[dit]" 'robenkleene/evil-tab-edit)
 (evil-ex-define-cmd "tabnew" 'robenkleene/evil-tab-new)
+(evil-ex-define-cmd "tabc[lose]" 'delete-frame)
 
 (define-key evil-motion-state-map (kbd "gt") 'other-frame)
 (define-key evil-motion-state-map (kbd "gT") (lambda ()
