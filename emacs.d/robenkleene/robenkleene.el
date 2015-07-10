@@ -28,9 +28,9 @@
 (require 'robenkleene-flycheck)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-helm)
-;; Evil Dired has to be loaded after helm for some reason
-(require 'robenkleene-evil-dired)
+(require 'robenkleene-evil-dired) ;; Evil Dired has to be loaded after helm for some reason
 (require 'robenkleene-helm-ag)
+
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-projectile)
 (require 'robenkleene-company)
@@ -38,7 +38,7 @@
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-magit)
 (require 'robenkleene-rainbow-mode)
-(require 'robenkleene-fill-column-indicator)
+(require 'robenkleene-fill-column-indicator) ;; Font lock errors on startup are from this
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-jade)
