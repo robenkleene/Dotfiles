@@ -109,7 +109,7 @@ Moe, moe, kyun!")
 
    ;; Syntax Highlighting
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
-   `(font-lock-comment-delimiter-face ((t (:foreground, comment-text))))
+   `(font-lock-comment-delimiter-face ((t (:foreground, "#666666"))))
    `(font-lock-comment-face ((t (:foreground, "#7C7C7C"))))
    `(font-lock-constant-face ((t (:foreground, "#99CC99"))))
    `(font-lock-doc-face ((t (:foreground, "#A8FF60"))))
