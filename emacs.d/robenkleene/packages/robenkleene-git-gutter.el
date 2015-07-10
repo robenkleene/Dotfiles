@@ -7,7 +7,12 @@
 (use-package git-gutter
   :ensure t
   :config
-  (global-git-gutter-mode +1)
+  (progn
+    (global-git-gutter-mode +1)
+    (custom-set-faces
+     `(git-gutter:modified ((t (:inherit diff-changed))))
+     )
+    )
   )
 
 (provide 'robenkleene-git-gutter)
