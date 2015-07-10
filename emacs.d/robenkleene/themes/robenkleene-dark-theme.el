@@ -21,6 +21,7 @@ Moe, moe, kyun!")
        (inactive-text "#303030")
        (metadata-text "#ff8700")
        (completion-text "brightcyan")
+       (comment-text "#666666")
        ;; Errors
        (error-background "brightred")
        (error-text-foreground solid-background)
@@ -108,7 +109,7 @@ Moe, moe, kyun!")
 
    ;; Syntax Highlighting
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
-   `(font-lock-comment-delimiter-face ((t (:foreground, "#7C7C7C"))))
+   `(font-lock-comment-delimiter-face ((t (:foreground, comment-text))))
    `(font-lock-comment-face ((t (:foreground, "#7C7C7C"))))
    `(font-lock-constant-face ((t (:foreground, "#99CC99"))))
    `(font-lock-doc-face ((t (:foreground, "#A8FF60"))))
@@ -127,7 +128,8 @@ Moe, moe, kyun!")
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
    ;; Rainbow Delimiters
-   `(rainbow-delimiters-depth-1-face ((,class (:bold nil :foreground "#AFD7D7"))))
+   `(rainbow-delimiters-depth-1-face ((,class (:bold nil :foreground "#808080"))))
+   ;; `(rainbow-delimiters-depth-1-face ((,class (:bold nil :foreground "#AFD7D7"))))
    `(rainbow-delimiters-depth-2-face ((,class (:bold nil :foreground "#01A6B2"))))
    `(rainbow-delimiters-depth-3-face ((,class (:bold nil :foreground "#B0FFD7"))))
    `(rainbow-delimiters-depth-4-face ((,class (:bold nil :foreground "#D7AFFF"))))
@@ -206,7 +208,7 @@ Moe, moe, kyun!")
    ;;; Uncustomized
 
    ;; Flycheck
-   `(flycheck-error ((,class (:background "#dd0000" :foreground "#ffffff" :bold t))))
+   `(flycheck-error ((,class (:foreground ,error-text :bold t))))
    `(flycheck-warnline ((,class (:background ,line-number :foreground "#ffffff" :bold t))))
 
    ;; Highlighting faces
@@ -223,7 +225,7 @@ Moe, moe, kyun!")
    ;; Escape and prompt faces
    `(minibuffer-prompt ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(escape-glyph ((,class (:foreground "#c4a000"))))
-   `(error ((,class (:foreground "#ff4b4b"))))
+   `(error ((,class (:foreground ,error-text))))
    `(warning ((,class (:foreground "#ffaf5f"))))
    `(success ((,class (:foreground ,prompt-background))))
 
@@ -624,7 +626,7 @@ Moe, moe, kyun!")
    ;; Javascript
    `(js2-function-param-face ((,class (:foreground "#5faf00"))))
    `(js2-external-variable ((,class (:foreground ,line-number :underline t))))
-   `(js2-error ((,class (:foreground "#dd0000" :underline t :bold t))))
+   `(js2-error ((,class (:foreground ,error-text))))
    `(js2-warning ((,class (:foreground nil :underline t :bold t))))
 
    ;; rcirc
@@ -766,7 +768,7 @@ Moe, moe, kyun!")
    `(compilation-info ((,class (:foreground ,link-text))))
    ;; Uncustomized
    `(compilation-column-number ((,class (:foreground ,prompt-background))))
-   `(compilation-error ((,class (:foreground "#a40000" :background "#ff4b4b" :bold t))))
+   `(compilation-error ((,class (:foreground ,error-text))))
    `(compilation-mode-line-exit ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(compilation-mode-line-fail ((,class (:foreground "#a40000" :background "#ffafaf" :bold t))))
    `(compilation-mode-line-run ((,class (:foreground "#d75f00" :background "#ffd787" :bold t))))
