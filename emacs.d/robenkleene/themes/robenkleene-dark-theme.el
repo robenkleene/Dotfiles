@@ -20,6 +20,7 @@ Moe, moe, kyun!")
        (dark-text-foreground solid-background)
        (inactive-text "#303030")
        (metadata-text "#ff8700")
+       (completion-text "brightcyan")
        ;; Errors
        (error-background "brightred")
        (error-text-foreground solid-background)
@@ -87,7 +88,7 @@ Moe, moe, kyun!")
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
 
    ;; Evil
-   `(evil-ex-substitute-replacement ((,class (:foreground ,diff-changed-foreground :background nil :underline nil))))
+   `(evil-ex-substitute-replacement ((,class (:foreground ,completion-text :background nil :underline nil))))
 
    ;; Paren Match
    `(show-paren-match ((,class (:underline t :foreground ,region-foreground :background ,region-background))))
@@ -370,9 +371,9 @@ Moe, moe, kyun!")
    `(company-tooltip-selection ((,class (:background ,highlight-background :foreground ,highlight-foreground))))
    ;; Uncustomized
    `(company-echo ((,class (:background nil :foreground "#c6c6c6"))))
-   `(company-echo-common ((,class (:background "#4e4e4e" :foreground "#ef2929"))))
-   `(company-preview ((,class (:background "#303030" :foreground "#ff4ea3"))))
-   `(company-preview-common ((,class (:background "#303030" :foreground "#ff4ea3"))))
+   `(company-echo-common ((,class (:foreground ,completion-text))))
+   `(company-preview ((,class (:foreground ,completion-text))))
+   `(company-preview-common ((,class (:foreground ,completion-text))))
    `(company-preview-search ((,class (:background "#3a3a3a" :foreground "#ff4ea3" :bold t))))
    `(company-template-field ((,class (:background "#ffffaf" :foreground "#3a3a3a"))))
    `(company-tooltip-mouse ((,class (:background ,prompt-background :foreground "#303030"))))
