@@ -130,6 +130,9 @@ Moe, moe, kyun!")
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
    ;; Rainbow Delimiters
+   `(rainbow-delimiters-mismatched-face ((,class (:inherit show-paren-mismatch))))
+   `(rainbow-delimiters-unmatched-face ((,class (:inherit show-paren-mismatch))))
+
    `(rainbow-delimiters-depth-1-face ((,class (:bold nil :foreground "#808080"))))
    ;; `(rainbow-delimiters-depth-1-face ((,class (:bold nil :foreground "#AFD7D7"))))
    `(rainbow-delimiters-depth-2-face ((,class (:bold nil :foreground "#01A6B2"))))
@@ -141,6 +144,11 @@ Moe, moe, kyun!")
    `(rainbow-delimiters-depth-8-face ((,class (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((,class (:bold nil :foreground "#01A6B2"))))
 
+
+   ;; Smartparens
+   `(sp-show-pair-match-face ((,class (:inherit show-paren-match))))
+   `(sp-show-pair-mismatch-face ((,class (:inherit show-paren-mismatch))))
+   
    ;;; Magit
    ;; Normal
    `(magit-branch-current ((,class (:foreground ,header-text :background nil :bold t))))
@@ -176,6 +184,11 @@ Moe, moe, kyun!")
 
 
    ;; Helm
+   `(helm-match ((,class (:foreground nil :background nil :bold nil :inherit isearch))))
+   `(helm-ff-directory ((,class (:inherit dired-directory))))
+   `(helm-ff-dotted-directory ((,class (:inherit dired-directory))))
+   `(helm-ff-file ((,class (:inherit diredp-file-name))))
+   `(helm-moccur-buffer ((,class (:inherit button))))
    `(helm-source-header ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header-line-left-margin ((,class (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header ((,class (:foreground ,highlight-background :background "#afd7ff"))))
@@ -206,7 +219,9 @@ Moe, moe, kyun!")
    `(helm-selection ((,class (:foreground nil :background ,highlight-background))))
    `(helm-selection-line ((,class (:foreground nil :background "#875f00"))))
 
+   
 
+   
    ;;; Uncustomized
 
    ;; Flycheck
@@ -745,14 +760,15 @@ Moe, moe, kyun!")
    `(column-marker-3 ((,class (:background "#a40000"))))
 
    ;; Swoop
+   `(helm-swoop-target-word-face ((,class (:foreground nil :background nil :bold nil :inherit isearch))))
+   `(helm-swoop-target-line-face ((,class (:foreground nil :background nil :inherit hl-line))))
+   ;; Uncustomized
    `(swoop-face-header-format-line ((,class (:foreground "#000000" :background nil :underline nil))))
    `(swoop-face-line-buffer-name ((,class (:foreground ,prompt-foreground :background ,prompt-background))))
    `(swoop-face-line-number ((,class (:foreground "#87875f" :background "#d7d7af"))))
    `(swoop-face-target-line ((,class (:foreground "#fce94f" :background "#6c6c6c"))))
    `(swoop-face-target-words ((,class (:foreground "#ff7bbb" :background "#6c6c6c" :bold t))))
    `(helm-swoop-target-line-block-face ((,class (:foreground "#fce94f" :background "#4e4e4e"))))
-   `(helm-swoop-target-line-face ((,class (:foreground "#fce94f" :background "#6c6c6c"))))
-   `(helm-swoop-target-word-face ((,class (:foreground "#ff1f8b" :background "#ffafd7" :bold t))))
 
    ;; widget
    `(widget-button ((,class (:foreground ,link-text :underline t :bold t))))

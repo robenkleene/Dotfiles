@@ -12,10 +12,6 @@
                                        (if (eq this-command 'eval-expression)
                                            (smartparens-mode)))
               )
-    (custom-set-faces
-     `(sp-show-pair-match-face ((t (:inherit show-paren-match))))
-     `(sp-show-pair-mismatch-face ((t (:inherit show-paren-mismatch))))
-     )
     )
   :config
   (progn
