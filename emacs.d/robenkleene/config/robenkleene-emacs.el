@@ -16,5 +16,8 @@
 ;; Highlight Keywords
 (add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
 
+;; Enable Folding for Programming Modes
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+
 (provide 'robenkleene-emacs)
 ;;; robenkleene-emacs.el ends here
