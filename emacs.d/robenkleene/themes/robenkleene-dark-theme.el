@@ -80,6 +80,8 @@ Moe, moe, kyun!")
    `(diff-added ((,class (:foreground ,diff-added-foreground :background nil :bold nil))))
    `(diff-changed ((,class (:foreground ,diff-changed-foreground :background nil :bold nil))))
    `(diff-removed ((,class (:foreground ,diff-removed-foreground :background nil :bold nil))))
+   ;; Git Gutter
+   `(git-gutter:modified ((,class (:foreground ,diff-changed-foreground :background nil :bold nil))))
 
    ;; Highlight
    `(hl-line ((,class (:foreground ,highlight-foreground :background ,highlight-background))))
