@@ -21,7 +21,9 @@
         (message "Buffer '%s' is not visiting a file!" name)
         (progn
           (rename-file name new-filename bang)
-          (kill-buffer new-filename)
+          (if (get-buffer new-filename)
+              (kill-buffer new-filename)
+              )
           (rename-buffer new-filename)
           (set-visited-file-name new-filename)
           (set-buffer-modified-p nil)
