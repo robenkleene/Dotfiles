@@ -38,9 +38,6 @@
     ;; Highlight with foreground syntax
     ("subtle-highlight-background" . "#1c1c1c")
 
-    ;; Headers
-    ("header-text" . "#afd7ff")
-
     ;; Diff
     ("diff-added-foreground" . "brightgreen")
     ("diff-removed-foreground" . "brightred")
@@ -51,7 +48,7 @@
     ("search-foreground" . region-foreground)
 
     ;; Modeline & Windows
-    ("modeline-active-background" . header-text)
+    ("modeline-active-background" . "#afd7ff")
     ("modeline-active-foreground" . dark-text-foreground)
     ("modeline-inactive-background" . solid-background)
     ("modeline-inactive-foreground" . light-text-foreground)
@@ -160,12 +157,12 @@
    
    ;;; Magit
    ;; Normal
-   `(magit-branch-current ((t (:foreground ,header-text :background nil :bold t))))
+   `(magit-branch-current ((t (:foreground ,highlight-foreground :background nil :bold t))))
    `(magit-branch-local ((t (:inherit magit-branch-current))))
    `(magit-branch-remote ((t (:inherit magit-branch-current))))
-   `(magit-section-heading ((t (:foreground ,header-text :background nil :underline t :bold ,t))))
-   `(magit-diff-file-heading ((t (:foreground ,highlight-foreground :background nil :underline nil :bold t))))
-   `(magit-diff-hunk-heading ((t (:foreground ,light-text-foreground :background nil :bold t))))
+   `(magit-section-heading ((t (:foreground ,highlight-foreground :background nil :underline t :bold t))))
+   `(magit-diff-file-heading ((t (:foreground ,file-text :background nil :underline nil ))))
+   `(magit-diff-hunk-heading ((t (:foreground ,highlight-foreground :background nil))))
    `(magit-diff-added ((t (:inherit diff-added))))
    `(magit-diff-removed ((t (:inherit diff-removed))))
    `(magit-diff-context ((t (:foreground ,inactive-text))))
@@ -196,7 +193,7 @@
    `(helm-match ((t (:foreground nil :background nil :bold nil :inherit isearch))))
    `(helm-buffer-file ((t (:foreground ,file-text))))
    `(helm-buffer-directory ((t (:foreground ,directory-text :bold t))))
-   `(helm-buffer-process ((t (:foreground ,link-text))))
+   `(helm-buffer-process ((t (:foreground ,file-text))))
    `(helm-ff-directory ((t (:foreground ,directory-text :bold t))))
    `(helm-ff-dotted-directory ((t (:foreground ,directory-text :bold t))))
    `(helm-ff-file ((t (:foreground ,file-text))))
