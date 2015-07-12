@@ -7,7 +7,7 @@
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
-(load-theme 'robenkleene-dark t)
+(load-theme 'kleene-dark t)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-emacs)
