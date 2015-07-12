@@ -39,7 +39,7 @@
     ("subtle-highlight-background" . "#1c1c1c")
 
     ;; Headers
-    ("header-text" . "#B0D8FD")
+    ("header-text" . "#afd7ff")
 
     ;; Diff
     ("diff-added-foreground" . "brightgreen")
@@ -194,27 +194,26 @@
 
    ;; Helm
    `(helm-match ((t (:foreground nil :background nil :bold nil :inherit isearch))))
-   `(helm-ff-directory ((t (:inherit dired-directory))))
-   `(helm-ff-dotted-directory ((t (:inherit dired-directory))))
-   `(helm-ff-file ((t (:inherit diredp-file-name))))
-   `(helm-moccur-buffer ((t (:inherit button))))
+   `(helm-buffer-file ((t (:foreground ,file-text))))
+   `(helm-buffer-directory ((t (:foreground ,directory-text :bold t))))
+   `(helm-buffer-process ((t (:foreground ,link-text))))
+   `(helm-ff-directory ((t (:foreground ,directory-text :bold t))))
+   `(helm-ff-dotted-directory ((t (:foreground ,directory-text :bold t))))
+   `(helm-ff-file ((t (:foreground ,file-text))))
+   `(helm-moccur-buffer ((t (:underline t :foreground ,link-text))))
    `(helm-source-header ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header-line-left-margin ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
-   `(helm-header ((t (:foreground ,highlight-background :background "#afd7ff"))))
+   `(helm-header ((t (:foreground ,modeline-active-foreground :background ,modeline-active-background))))
    `(helm-visible-mark ((t (:inherit region))))
    ;; Uncustomized
    ;; `(helm-bookmark-directory ((t (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-bookmark-file ((t (:foreground "#875f00" :background "#ffff87"))))
    `(helm-bookmark-info ((t (:foreground ,prompt-foreground :background ,prompt-background))))
-   `(helm-buffer-file ((t (:foreground ,file-text))))
-   `(helm-buffer-directory ((t (:foreground ,link-text :bold t))))
-   `(helm-buffer-process ((t (:foreground ,link-text))))
    `(helm-buffer-saved-out ((t (:foreground "#dd0000" :background "#303030"))))
    `(helm-buffer-size ((t (:foreground ,line-number))))
    `(helm-candidate-number ((t (:foreground ,highlight-background :background "#ffffff"))))
    ;; `(helm-ff-directory ((t (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-ff-excutable ((t (:foreground ,prompt-background :background "#303030" :bold t))))
-   `(helm-ff-file ((t (:foreground "#c6c6c6" :background "#303030"))))
    `(helm-ff-invalid-symlink ((t (:foreground "#c6c6c6" :background "#dd0000"))))
    `(helm-ff-prefix ((t (:foreground "#c6c6c6" :background ,line-number))))
    `(helm-grep-cmd-line ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
