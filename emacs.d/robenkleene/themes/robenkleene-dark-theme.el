@@ -91,7 +91,7 @@ Moe, moe, kyun!")
    `(region ((,class (:foreground ,region-foreground :background ,region-background))))
 
    ;; Evil
-   `(evil-ex-substitute-replacement ((,class (:foreground ,completion-text :background nil :underline nil))))
+   `(evil-ex-substitute-replacement ((,class (:foreground ,completion-text :background ,region-background :underline nil))))
 
    ;; Paren Match
    `(show-paren-match ((,class (:underline t :foreground ,region-foreground :background ,region-background))))
