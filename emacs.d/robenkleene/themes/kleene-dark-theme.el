@@ -36,7 +36,7 @@
 
     ;; Prompt
     ("prompt-background" . "#87d787")
-    ("prompt-foreground" . "#303030")
+    ("prompt-foreground" . solid-background)
 
     ;; Link Text
     ("link-text" . "#5EAFD7")
