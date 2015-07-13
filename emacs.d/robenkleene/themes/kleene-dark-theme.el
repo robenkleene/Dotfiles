@@ -25,7 +25,7 @@
     ("completion-text" . diff-added-foreground)
     ("comment-text" . solid-background)
 
-    ;; Errors
+    ;; Errors & Warnings
     ("error-background" . diff-removed-foreground)
     ("error-text-foreground" . solid-background)
     ("error-text" . diff-removed-foreground)
@@ -207,16 +207,16 @@
    `(helm-bookmark-file ((t (:foreground "#875f00" :background "#ffff87"))))
    `(helm-bookmark-info ((t (:foreground ,prompt-foreground :background ,prompt-background))))
    `(helm-buffer-saved-out ((t (:foreground "#dd0000" :background "#303030"))))
-   `(helm-buffer-size ((t (:foreground ,line-number))))
+   `(helm-buffer-size ((t (:foreground ,metadata-text))))
    `(helm-candidate-number ((t (:foreground ,highlight-background :background "#ffffff"))))
    ;; `(helm-ff-directory ((t (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-ff-excutable ((t (:foreground ,prompt-background :background "#303030" :bold t))))
    `(helm-ff-invalid-symlink ((t (:foreground "#c6c6c6" :background "#dd0000"))))
-   `(helm-ff-prefix ((t (:foreground "#c6c6c6" :background ,line-number))))
+   `(helm-ff-prefix ((t (:foreground "#c6c6c6" :background "#ff8700"))))
    `(helm-grep-cmd-line ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-grep-file ((t (:foreground "#d18aff"))))
    `(helm-grep-finish ((t (:foreground ,prompt-background))))
-   `(helm-grep-lineno ((t (:foreground ,line-number))))
+   `(helm-grep-lineno ((t (:foreground ,metadata-text))))
    `(helm-grep-match ((t (:background "#3a3a3a" :foreground "#fce94f" :bold t))))
    `(helm-grep-running ((t (:foreground "#ff4b4b" :background nil))))
    `(helm-lisp-show-completion ((t (:foreground "#4e4e4e" :background ,prompt-background))))
@@ -231,7 +231,7 @@
 
    ;; Flycheck
    `(flycheck-error ((t (:foreground ,error-text :bold t))))
-   `(flycheck-warnline ((t (:background ,line-number :foreground "#ffffff" :bold t))))
+   `(flycheck-warnline ((t (:background "#ff8700" :foreground "#ffffff" :bold t))))
 
    ;; Highlighting faces
    ;; `(linum-highlight-face ((t (:background ,prompt-background :foreground "#3a3a3a"))))
@@ -266,7 +266,7 @@
                               :box (:line-width 1 :style none)))))
    `(org-level-1 ((t (:foreground ,link-text))))
    `(org-level-2 ((t (:foreground ,prompt-background))))
-   `(org-level-3 ((t (:foreground ,line-number))))
+   `(org-level-3 ((t (:foreground "#ff8700"))))
    `(org-level-4 ((t (:foreground "#00d7af"))))
    `(org-level-5 ((t (:foreground "#ef2929"))))
    `(org-level-6 ((t (:foreground "#af5fff"))))
@@ -314,7 +314,7 @@
    ;; outline
    `(outline-1 ((t (:foreground ,link-text))))
    `(outline-2 ((t (:foreground ,prompt-background))))
-   `(outline-3 ((t (:foreground ,line-number))))
+   `(outline-3 ((t (:foreground "#ff8700"))))
    `(outline-4 ((t (:foreground "#00d7af"))))
    `(outline-5 ((t (:foreground "#ef2929"))))
    `(outline-6 ((t (:foreground "#af5fff"))))
@@ -328,7 +328,7 @@
    `(undo-tree-visualizer-register-face ((t (:foreground "#ffd700"))))
 
    ;; Markdown-mode
-   `(markdown-blockquote-face ((t (:foreground ,line-number :background "#4e4e4e" :italic t))))
+   `(markdown-blockquote-face ((t (:foreground "#ff8700" :background "#4e4e4e" :italic t))))
    `(markdown-bold-face ((t (:foreground "#c6c6c6" :bold t))))
    `(markdown-comment-face ((t (:foreground "#8a8a8a" :italic t))))
    `(markdown-header-delimiter-face ((t (:foreground "#5faf00" :bold t))))
@@ -347,7 +347,7 @@
    `(markdown-math-face ((t (:foreground "#ff7bbb"))))
    `(markdown-missing-link-face ((t (:foreground "#ef2929" :bold t))))
    `(markdown-pre-face ((t (:foreground ,link-text))))
-   `(markdown-reference-face ((t (:foreground ,line-number :italic t))))
+   `(markdown-reference-face ((t (:foreground "#ff8700" :italic t))))
    `(markdown-url-face ((t (:foreground "#ff1f8b" :underline "#ff1f8b"))))
 
    ;; Twittering-mode
@@ -360,13 +360,13 @@
    `(jabber-activity-face ((t (:foreground "#ff4ea3"))))
    `(jabber-activity-personal-face ((t (:foreground "#00d7af"))))
    `(jabber-chat-error ((t (:foreground "#ffafaf" :background "#dd0000"))))
-   `(jabber-chat-prompt-foreign ((t (:foreground ,line-number))))
+   `(jabber-chat-prompt-foreign ((t (:foreground "#ff8700"))))
    `(jabber-chat-prompt-local ((t (:foreground ,link-text))))
    `(jabber-chat-prompt-system ((t (:foreground "#ffd700" :weight bold))))
    `(jabber-chat-text-foreign ((t (:foreground "#ffffff"))))
    `(jabber-chat-text-local ((t (:foreground "#b2b2b2"))))
    `(jabber-rare-time-face ((t (:foreground "#a8a8a8"))))
-   `(jabber-roster-user-away ((t (:foreground ,line-number))))
+   `(jabber-roster-user-away ((t (:foreground "#ff8700"))))
    `(jabber-roster-user-chatty ((t (:foreground "#d18aff"))))
    `(jabber-roster-user-dnd ((t (:foreground "#ef2929"))))
    `(jabber-roster-user-error ((t (:foreground "#ffafaf" :background "#a40000"))))
@@ -417,14 +417,14 @@
    `(gnus-cite-4 ((t (:foreground "#00d7af" :background "#3a3a3a" :slant italic))))
    `(gnus-cite-5 ((t (:foreground "#ff4b4b" :background "#3a3a3a" :slant italic))))
    `(gnus-cite-6 ((t (:foreground "#d18aff" :background "#3a3a3a" :slant italic))))
-   `(gnus-cite-7 ((t (:foreground ,line-number :background "#3a3a3a" :slant italic))))
+   `(gnus-cite-7 ((t (:foreground "#ff8700" :background "#3a3a3a" :slant italic))))
    `(gnus-cite-8 ((t (:foreground ,link-text :background "#3a3a3a" :slant italic))))
    `(gnus-cite-9 ((t (:foreground ,prompt-background :background "#3a3a3a" :slant italic))))
    `(gnus-emphasis-highlight-words ((t (:foreground "#a40000" :background "#ffafaf" :bold t))))
    `(gnus-group-mail-1 ((t (:foreground ,link-text))))
    `(gnus-group-mail-1-empty ((t (:foreground "#8a8a8a"))))
    `(gnus-group-mail-1-low ((t (:foreground "#1f5bff"))))
-   `(gnus-group-mail-2 ((t (:foreground ,line-number))))
+   `(gnus-group-mail-2 ((t (:foreground "#ff8700"))))
    `(gnus-group-mail-2-empty ((t (:foreground "#8a8a8a"))))
    `(gnus-group-mail-2-low ((t (:foreground "#ff5d17"))))
    `(gnus-group-mail-3 ((t (:foreground "#ff4ea3"))))
@@ -435,7 +435,7 @@
    `(gnus-group-news-1 ((t (:foreground ,link-text))))
    `(gnus-group-news-1-empty ((t (:foreground "#8a8a8a"))))
    `(gnus-group-news-1-low ((t (:foreground "#1f5bff"))))
-   `(gnus-group-news-2 ((t (:foreground ,line-number))))
+   `(gnus-group-news-2 ((t (:foreground "#ff8700"))))
    `(gnus-group-news-2-empty ((t (:foreground "#8a8a8a"))))
    `(gnus-group-news-2-low ((t (:foreground "#ff5d17"))))
    `(gnus-group-news-3 ((t (:foreground "#ff4ea3"))))
@@ -500,9 +500,9 @@
    `(diredp-deletion-file-name ((t (:foreground "#dd0000"))))
    `(diredp-dir-heading ((t (:foreground "#303030" :background ,prompt-background))))
    `(diredp-dir-priv ((t (:foreground ,link-text :background "#303030" :bold t))))
-   `(diredp-display-msg ((t (:foreground ,line-number))))
+   `(diredp-display-msg ((t (:foreground "#ff8700"))))
    `(diredp-executable-tag ((t (:foreground ,prompt-background))))
-   `(diredp-file-suffix ((t (:foreground ,line-number))))
+   `(diredp-file-suffix ((t (:foreground "#ff8700"))))
    `(diredp-flag-mark ((t (:foreground "#c6c6c6" :background "#ff1f8b" :bold t))))
    `(diredp-flag-mark-line ((t (:foreground "#303030" :background "#ff7bbb"))))
    `(diredp-ignored-file-name ((t (:foreground "#8a8a8a"))))
@@ -528,7 +528,7 @@
    `(message-header-subject ((t (:foreground "#ffffff" :bold t))))
    `(message-header-to ((t (:foreground ,link-text :underline t :bold t))))
    `(message-header-xheader ((t (:foreground "#a8a8a8"))))
-   `(message-mml ((t (:foreground ,line-number))))
+   `(message-mml ((t (:foreground "#ff8700"))))
    `(message-separator ((t (:foreground "#6c6c6c"))))
 
    ;; Grep
@@ -595,7 +595,7 @@
 
    ;; Ace-jump
    `(ace-jump-face-background ((t (:background nil :foreground "#6c6c6c"))))
-   `(ace-jump-face-foreground ((t (:foreground ,line-number :bold t))))
+   `(ace-jump-face-foreground ((t (:foreground "#ff8700" :bold t))))
 
 
    ;; EShell
@@ -617,16 +617,16 @@
    `(comint-highlight-prompt ((t (:foreground ,prompt-background :background ,transparent-background :bold t))))
 
    ;; which-function-mode
-   `(which-func ((t (:foreground "#ffffff" :background ,line-number))))
+   `(which-func ((t (:foreground "#ffffff" :background "#ff8700"))))
 
    ;; Flymake
-   `(flymake-warnline ((t (:underline ,line-number))))
+   `(flymake-warnline ((t (:underline "#ff8700"))))
    `(flymake-errline ((t (:underline "#dd0000"))))
 
 
    ;; Malabar
    `(malabar-error-face ((t (:underline "#dd0000"))))
-   `(malabar-warning-face ((t (:underline ,line-number))))
+   `(malabar-warning-face ((t (:underline "#ff8700"))))
    `(malabar-info-face ((t (:underline "#1f5bff"))))
 
    ;; MMM-Mode
@@ -641,13 +641,13 @@
    `(mmm-special-submode-face ((t (:background ,prompt-background))))
 
    ;; Clojure
-   `(clojure-test-failure-face ((t (:underline ,line-number))))
+   `(clojure-test-failure-face ((t (:underline "#ff8700"))))
    `(clojure-test-error-face ((t (:underline "#dd0000"))))
    `(clojure-test-success-face ((t (:underline "#5faf00"))))
 
    ;; Javascript
    `(js2-function-param-face ((t (:foreground "#5faf00"))))
-   `(js2-external-variable ((t (:foreground ,line-number :underline t))))
+   `(js2-external-variable ((t (:foreground "#ff8700" :underline t))))
    `(js2-error ((t (:foreground ,error-text))))
    `(js2-warning ((t (:foreground nil :underline t :bold t))))
 
@@ -662,7 +662,7 @@
    `(rcirc-prompt ((t (:foreground "#4e4e4e" :background ,prompt-background :bold t))))
    `(rcirc-server ((t (:foreground "#a8a8a8"))))
    `(rcirc-server-prefix ((t (:foreground "#a8a8a8"))))
-   `(rcirc-timestamp ((t (:foreground ,line-number))))
+   `(rcirc-timestamp ((t (:foreground "#ff8700"))))
    `(rcirc-track-keyword ((t (:foreground "#ff4ea3"))))
    `(rcirc-track-nick ((t (:foreground ,link-text))))
    `(rcirc-url ((t (:foreground ,link-text :bold nil :underline "#1f5bff"))))
@@ -671,33 +671,33 @@
    `(erc-button ((t (:foreground ,link-text :underline ,link-text :bold nil))))
    `(erc-current-nick-face ((t (:foreground ,prompt-background))))
    `(erc-dangerous-hosts ((t (:foreground "#dd0000" :bold t))))
-   `(erc-direct-msg-face ((t (:foreground ,line-number))))
+   `(erc-direct-msg-face ((t (:foreground "#ff8700"))))
    `(erc-error-face ((t (:foreground "#dd0000"))))
    `(erc-header-face ((t (:background ,link-text))))
    `(erc-input-face ((t (:foreground "#ffffff"))))
    `(erc-keyword-face ((t (:foreground "#ff4ea3" :bold t))))
    `(erc-my-nick-face ((t (:foreground ,prompt-background :bold t))))
    `(erc-nick-default-face ((t (:bold t :foreground ,link-text))))
-   `(erc-nick-msg-face ((t (:weight normal :foreground ,line-number))))
+   `(erc-nick-msg-face ((t (:weight normal :foreground "#ff8700"))))
    `(erc-notice-face ((t (:foreground "#8a8a8a"))))
    `(erc-pal-face ((t (:foreground "#d18aff"))))
    `(erc-prompt-face ((t (:bold t :foreground ,prompt-background :background "#6c6c6c"))))
-   `(erc-timestamp-face ((t (:foreground ,line-number))))
+   `(erc-timestamp-face ((t (:foreground "#ff8700"))))
 
    ;; ReStructuredText
-   `(rst-level-1-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-2-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-3-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-4-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-5-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-6-face ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-1 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-2 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-3 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-4 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-5 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-level-6 ((t (:foreground ,line-number :background "#303030" :bold t))))
-   `(rst-adornment ((t (:foreground ,line-number :background "#303030" :bold t))))
+   `(rst-level-1-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-2-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-3-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-4-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-5-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-6-face ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-1 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-2 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-3 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-4 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-5 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-level-6 ((t (:foreground "#ff8700" :background "#303030" :bold t))))
+   `(rst-adornment ((t (:foreground "#ff8700" :background "#303030" :bold t))))
    `(rst-block ((t (:foreground ,prompt-background :background "#4e4e4e" :bold t))))
    `(rst-comment ((t (:foreground "#ff4b4b" :background "#a40000" :bold t))))
    `(rst-literal ((t (:foreground ,prompt-background :background "#4e4e4e"))))
@@ -728,10 +728,10 @@
    `(term-color-magenta ((t (:background "#ff1f8b" :foreground "#ff1f8b"))))
    `(term-color-red ((t (:background "#ef2929" :foreground "#ef2929"))))
    `(term-color-white ((t (:background "#ffffff" :foreground "#ffffff"))))
-   `(term-color-yellow ((t (:background ,line-number :foreground "#ff8700"))))
+   `(term-color-yellow ((t (:background "#ff8700" :foreground "#ff8700"))))
 
    ;; ido-mode
-   `(ido-first-match ((t (:foreground ,line-number :bold t))))
+   `(ido-first-match ((t (:foreground "#ff8700" :bold t))))
    `(ido-incomplete-regexp ((t (:foreground "#ff4b4b" :bold t))))
    `(ido-indicator ((t (:foreground "#875f00" :background "#ffd787"))))
    `(ido-only-match ((t (:foreground ,prompt-background :background nil))))
@@ -753,8 +753,8 @@
    `(cfw:face-select ((t (:foreground "#303030" :background ,link-text))))
    `(cfw:face-sunday ((t (:foreground "#ffafaf" :background "#a40000" :bold t))))
    ;;   `(cfw:face-title ((t (:foreground , :background ,))))
-   `(cfw:face-today ((t (:foreground ,line-number :background "#4e4e4e"))))
-   `(cfw:face-today-title ((t (:foreground "#ffffff" :background ,line-number))))
+   `(cfw:face-today ((t (:foreground "#ff8700" :background "#4e4e4e"))))
+   `(cfw:face-today-title ((t (:foreground "#ffffff" :background "#ff8700"))))
    `(cfw:face-toolbar ((t (:foreground "#c6c6c6" :background "#4e4e4e"))))
    `(cfw:face-toolbar-button-off ((t (:foreground "#5faf87":background "#4e4e4e"))))
    `(cfw:face-toolbar-button-on ((t (:foreground "#ef2929" :background "#ffffff"))))
@@ -787,7 +787,7 @@
    `(table-cell ((t (:foreground "#ffffff" :background "#4e4e4e"))))
 
    ;; compilation
-   `(compilation-line-number ((t (:foreground ,line-number))))
+   `(compilation-line-number ((t (:foreground ,metadata-text))))
    `(compilation-info ((t (:foreground ,link-text))))
    ;; Uncustomized
    `(compilation-column-number ((t (:foreground ,prompt-background))))
@@ -815,7 +815,7 @@
    `(info-node ((t (:foreground "#a40000"))))
    `(info-title-1 ((t (:foreground ,link-text :bold t))))
    `(info-title-2 ((t (:foreground ,prompt-background :bold t))))
-   `(info-title-3 ((t (:foreground ,line-number :bold t))))
+   `(info-title-3 ((t (:foreground "#ff8700" :bold t))))
    `(info-title-4 ((t (:foreground "#ff4ea3" :bold t))))
    `(info-xref ((t (:foreground ,link-text :underline t))))
    `(info-xref-visited ((t (:foreground "#d18aff" :underline t))))
@@ -835,7 +835,7 @@
 
    ;; Haskell
    `(haskell-interactive-face-compile-error ((t (:foreground "#ff4b4b" :background nil :bold t))))
-   `(haskell-interactive-face-compile-warning ((t (:foreground ,line-number :background nil :bold t))))
+   `(haskell-interactive-face-compile-warning ((t (:foreground "#ff8700" :background nil :bold t))))
    `(haskell-interactive-face-garbage ((t (:foreground "#8a8a8a"))))
    `(haskell-interactive-face-prompt ((t (:foreground ,prompt-background :background "#6c6c6c" :bold t))))
    `(haskell-interactive-face-result ((t (:foreground ,link-text))))
