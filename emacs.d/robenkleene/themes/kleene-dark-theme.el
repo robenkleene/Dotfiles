@@ -29,6 +29,8 @@
     ("error-background" . diff-removed-foreground)
     ("error-text-foreground" . solid-background)
     ("error-text" . diff-removed-foreground)
+    ("warning-background" . nil)
+    ("warning-foreground" . "brightyellow")
 
     ;; Highlight
     ("highlight-background" . "#005f87")
@@ -82,6 +84,12 @@
    `(linum ((t (:foreground ,light-text-foreground :background ,solid-background))))
    `(cursor ((t (:foreground ,highlight-foreground :background ,highlight-background))))
 
+   ;; Error & Warnings
+   `(error ((t (:foreground ,error-text))))
+   `(warning ((t (:foreground ,warning-foreground :background ,warning-background :underline t))))
+   `(success ((t (:foreground ,diff-added-foreground))))
+
+
    ;; Diff: Magit and Git Gutter inheret
    `(diff-added ((t (:foreground ,diff-added-foreground :background nil :bold nil))))
    `(diff-changed ((t (:foreground ,diff-changed-foreground :background nil :bold nil))))
@@ -96,7 +104,9 @@
    ;; Region
    `(region ((t (:foreground ,region-foreground :background ,region-background))))
 
-
+   ;; Prompt
+   `(minibuffer-prompt ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
+   
    ;; Paren Match
    `(show-paren-match ((t (:underline t :foreground ,region-foreground :background ,region-background))))
    ;; Does `rainbow-delimiter-mismatched-face' and `rainbow-delimiters-unmatched-face' interfere with this?
@@ -225,8 +235,6 @@
    `(helm-selection-line ((t (:foreground nil :background "#875f00"))))
 
    
-
-   
    ;;; Uncustomized
 
    ;; Flycheck
@@ -234,23 +242,11 @@
    `(flycheck-warnline ((t (:background "#ff8700" :foreground "#ffffff" :bold t))))
 
    ;; Highlighting faces
-   ;; `(linum-highlight-face ((t (:background ,prompt-background :foreground "#3a3a3a"))))
-   ;; `(hl-line ((t (:background "#4e4e4e"))))
-   ;; `(highlight-symbol-face ((t (:background "#4e4e4e"))))
    `(secondary-selection ((t (:background ,highlight-background :foreground "#ffffff"))))
    `(lazy-highlight ((t (:background "#ff1f8b" :foreground "#c6c6c6"))))
-   `(trailing-whitespace ((t (:background "#a40000"))))
+   `(trailing-whitespace ((t (:inherit warning))))
    `(header-line ((t (:background ,highlight-background :foreground "#ffffff"))))
    `(help-argument-name ((t (:foreground "#ff7bbb" :italic t))))
-
-
-   ;; Escape and prompt faces
-   `(minibuffer-prompt ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
-   `(escape-glyph ((t (:foreground "#c4a000"))))
-   `(error ((t (:foreground ,error-text))))
-   `(warning ((t (:foreground "#ffaf5f"))))
-   `(success ((t (:foreground ,prompt-background))))
-
 
    ;; org-mode
    `(org-document-title ((t (:foreground "#afd7ff" :background "#303030" :weight bold))))
@@ -355,6 +351,9 @@
    `(twittering-uri-face ((t (:foreground ,link-text :underline t))))
    `(twittering-timeline-footer-face ((t (:foreground "#b2b2b2"))))
    `(twittering-timeline-header-face ((t (:foreground "#b2b2b2"))))
+
+   ;; Escape and prompt faces
+   `(escape-glyph ((t (:foreground "#c4a000"))))
 
    ;; Jabber
    `(jabber-activity-face ((t (:foreground "#ff4ea3"))))
@@ -647,7 +646,7 @@
 
    ;; Javascript
    `(js2-function-param-face ((t (:foreground "#5faf00"))))
-   `(js2-external-variable ((t (:foreground "#ff8700" :underline t))))
+   `(js2-external-variable ((t (:inherit warning))))
    `(js2-error ((t (:foreground ,error-text))))
    `(js2-warning ((t (:foreground nil :underline t :bold t))))
 
