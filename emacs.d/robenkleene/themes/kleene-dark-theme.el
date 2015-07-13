@@ -22,7 +22,7 @@
     ("dark-text-foreground" . solid-background)
     ("inactive-text" . solid-background)
     ("metadata-text" . "#ff8700")
-    ("completion-text" . diff-added-foreground)
+    ("completion-text" . diff-changed-foreground)
     ("comment-text" . solid-background)
 
     ;; Errors & Warnings
@@ -54,7 +54,7 @@
     ;; Search
     ("search-background" . region-background)
     ("search-foreground" . highlight-foreground)
-    ("search-replacement" . diff-added-foreground)
+    ("search-replacement" . completion-text)
 
     ;; File lists
     ("directory-text" . link-text)
