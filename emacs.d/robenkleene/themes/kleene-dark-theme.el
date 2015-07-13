@@ -212,11 +212,12 @@
    `(helm-header-line-left-margin ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    `(helm-header ((t (:foreground ,modeline-active-foreground :background ,modeline-active-background))))
    `(helm-visible-mark ((t (:inherit region))))
+   `(helm-buffer-saved-out ((t (:foreground ,error-text))))
+   `(helm-buffer-not-saved ((t (:foreground ,warning-foreground))))
    ;; Uncustomized
    ;; `(helm-bookmark-directory ((t (:foreground ,link-text :background "#303030" :bold t))))
    `(helm-bookmark-file ((t (:foreground "#875f00" :background "#ffff87"))))
    `(helm-bookmark-info ((t (:foreground ,prompt-foreground :background ,prompt-background))))
-   `(helm-buffer-saved-out ((t (:foreground "#dd0000" :background "#303030"))))
    `(helm-buffer-size ((t (:foreground ,metadata-text))))
    `(helm-candidate-number ((t (:foreground ,highlight-background :background "#ffffff"))))
    ;; `(helm-ff-directory ((t (:foreground ,link-text :background "#303030" :bold t))))
