@@ -11,17 +11,24 @@
       ;;; Basic
     ("transparent-background" . "unspecified-bg")
     ("solid-background" . "#444444")
+
+    ;; Diff
+    ("diff-added-foreground" . "brightgreen")
+    ("diff-removed-foreground" . "brightred")
+    ("diff-changed-foreground" . "brightcyan")
+
     ;; Text Colors
     ("light-text-foreground" . "#b2b2b2")
     ("dark-text-foreground" . solid-background)
-    ("inactive-text" . "#303030")
+    ("inactive-text" . solid-background)
     ("metadata-text" . "#ff8700")
-    ("completion-text" . "brightcyan")
-    ("comment-text" . "#666666")
+    ("completion-text" . diff-added-foreground)
+    ("comment-text" . solid-background)
+
     ;; Errors
-    ("error-background" . "brightred")
+    ("error-background" . diff-removed-foreground)
     ("error-text-foreground" . solid-background)
-    ("error-text" . "brightred")
+    ("error-text" . diff-removed-foreground)
 
     ;; Highlight
     ("highlight-background" . "#005f87")
@@ -31,21 +38,8 @@
     ("prompt-background" . "#87d787")
     ("prompt-foreground" . "#303030")
 
-    ;; Selection or Region
-    ("region-background" . "#585858")
-    ("region-foreground" . "brightwhite")
-
-    ;; Highlight with foreground syntax
-    ("subtle-highlight-background" . "#1c1c1c")
-
-    ;; Diff
-    ("diff-added-foreground" . "brightgreen")
-    ("diff-removed-foreground" . "brightred")
-    ("diff-changed-foreground" . "brightcyan")
-
-    ;; Search
-    ("search-background" . region-background)
-    ("search-foreground" . region-foreground)
+    ;; Link Text
+    ("link-text" . "#5EAFD7")
 
     ;; Modeline & Windows
     ("modeline-active-background" . "#afd7ff")
@@ -53,8 +47,14 @@
     ("modeline-inactive-background" . solid-background)
     ("modeline-inactive-foreground" . light-text-foreground)
 
-    ;; Link Text
-    ("link-text" . "#5EAFD7")
+    ;; Selection or Region
+    ("region-background" . "#585858")
+    ("region-foreground" . light-text-foreground)
+
+    ;; Search
+    ("search-background" . region-background)
+    ("search-foreground" . highlight-foreground)
+    ("search-replacement" . diff-added-foreground)
 
     ;; File lists
     ("directory-text" . link-text)
@@ -96,8 +96,6 @@
    ;; Region
    `(region ((t (:foreground ,region-foreground :background ,region-background))))
 
-   ;; Evil
-   `(evil-ex-substitute-replacement ((t (:foreground ,completion-text :background ,region-background :underline nil))))
 
    ;; Paren Match
    `(show-paren-match ((t (:underline t :foreground ,region-foreground :background ,region-background))))
@@ -109,6 +107,8 @@
    `(isearch-fail ((t (:foreground ,error-text :background nil))))
    ;; Matches other then the current one
    `(lazy-highlight ((t (:foreground ,search-foreground :background ,search-background))))
+   ;; Evil
+   `(evil-ex-substitute-replacement ((t (:foreground ,search-replacement :background ,search-background :underline nil))))
 
    ;; Mode line & Windows
    `(mode-line ((t (:box nil :background ,modeline-active-background :foreground ,modeline-active-foreground))))
@@ -117,8 +117,8 @@
 
    ;; Syntax Highlighting
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
-   `(font-lock-comment-delimiter-face ((t (:foreground, "#666666"))))
-   `(font-lock-comment-face ((t (:foreground, "#7C7C7C"))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,comment-text))))
+   `(font-lock-comment-face ((t (:foreground ,comment-text))))
    `(font-lock-constant-face ((t (:foreground, "#99CC99"))))
    `(font-lock-doc-face ((t (:foreground, "#A8FF60"))))
    `(font-lock-doc-string-face ((t (:foreground, "#A8FF60"))))
