@@ -6,28 +6,36 @@
 
 
 " UI {{{1
+
 " Show 80 character bar
 set colorcolumn=80 
+
 " Highlight cursor line
 set cursorline 
+" Disable Cursor Line in Insert Mode
 augroup disablecursorline
     autocmd!
     autocmd InsertEnter * set cursorline!
     autocmd InsertLeave * set cursorline
 augroup END
 
+" Fix quickfix colors
 augroup quickfixcolors
     autocmd!
     " These interfere with quickfix highlighting
     autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
     autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
+
 " Show line numbers
 set number 
+
 " Highlight search results
 set hlsearch 
+
 " Don't display search highlight on startup
 nohlsearch
+
 
 " Colors {{{1
 
@@ -112,6 +120,7 @@ endif
 
  
 " Status Line {{{1
+
 set laststatus=2
 " Space Buffer
 set statusline=\ 
@@ -148,7 +157,3 @@ if exists(':fugitive')
 endif
 " Space Buffer
 set statusline+=\ 
-
-
-
-

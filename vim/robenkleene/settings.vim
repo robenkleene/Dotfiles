@@ -16,37 +16,42 @@ let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
 
 " Basic {{{1
+" Syntax highlighting
 syntax on
+
 " Use system clipboard by default
 set clipboard=unnamed 
+
+" Leader
 let maplocalleader = ","
-" let mapleader = ','
-" let mapleader=" "
+
 " Allow hidden buffers
 set hidden
+
 " Text
 set nowrap
+
 " Line breaks only happen on words
 set linebreak 
+
 " Fold Method
 set foldmethod=syntax
+
 " Don't Start Folded
 set nofoldenable
+
 " Ignore case in search results
 set ignorecase
+
 " Override `ignorecase`
 set smartcase
+
 " Don't let smartase affect autocomplete
 set infercase
-" Indented Line-breaks
-" set breakindent
-" netrw split
+
+" open previews vertically
 let g:netrw_preview = 1
-" Open help splits in their own window
-" augroup enteringhelp
-"     autocmd!
-"     autocmd FileType help wincmd o
-" augroup END
+
 
 " Autocmd {{{1
 
@@ -63,6 +68,8 @@ augroup executablefiles
     autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
 augroup END
 
+
 " Languages {{{1
+
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
