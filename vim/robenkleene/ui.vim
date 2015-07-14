@@ -61,19 +61,26 @@ if !has('gui_running')
     " FG: #444444
     highlight LineNr ctermfg=238
     
-    " Selection {{{2
+    " Highlight {{{2
     " BG: #005f87 
-    let s:selectionbgcolor = '24'
-    let s:selectionfgcolor = 'white'
-    let s:selectiongroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
+    let s:highlightbgcolor = '24'
+    let s:highlightfgcolor = 'white'
+    let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
+    for group in s:highlightgroups
+        exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
+                    \ s:highlightfgcolor
+    endfor
+
+    " Selection {{{2
+    " BG: #b2b2b2 FG: #585858
+    let s:selectionbgcolor = '240'
+    let s:selectionfgcolor = '249'
+    let s:selectiongroups = ['Visual', 'MatchParen']
     for group in s:selectiongroups
         exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
                     \ s:selectionfgcolor
     endfor
-
-    " Search {{{2
-    " BG: #b2b2b2 FG: #585858
-    highlight Visual ctermfg=249 ctermbg=240
+    " Search {{{3
     highlight IncSearch ctermfg=240 ctermbg=white
     highlight Search cterm=NONE ctermfg=white ctermbg=240
     
@@ -83,10 +90,6 @@ if !has('gui_running')
     " NC StatusLine bg is gutter color
     highlight StatusLineNC ctermfg=lightgray ctermbg=238
 
-    " Cursorline {{{2
-    " BG: #005f87 
-    " highlight Cursorline ctermbg=24 ctermfg=white
-    " highlight CursorLineNr ctermbg=24 ctermfg=white
 
     " ColorColumn {{{2
     highlight ColorColumn ctermbg=238
