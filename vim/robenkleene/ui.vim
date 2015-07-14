@@ -10,7 +10,7 @@ set cursorline
 " Disable Cursor Line in Insert Mode
 augroup disablecursorline
     autocmd!
-    autocmd InsertEnter * set cursorline!
+    autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
 augroup END
 
