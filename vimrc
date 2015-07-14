@@ -31,6 +31,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'dag/vim-fish'
 Plugin 'guns/xterm-color-table.vim'
+" Plugin 'Shougo/unite.vim'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
 end
