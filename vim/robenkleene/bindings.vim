@@ -10,6 +10,10 @@ vnoremap <C-g> <Esc>
 " rsi plugin handles this
 " cnoremap <C-g> <Esc>
 
+" `C-y` paste like in Emacs
+cnoremap <C-y> <C-r>*
+inoremap <C-y> <C-r>*
+
 " vimrc
 nnoremap <leader>oi :edit $MYVIMRC<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
