@@ -3,7 +3,7 @@
 " Key Commands {{{1
 
 " vimrc
-" nnoremap <leader>oi :split $MYVIMRC<CR>
+nnoremap <leader>oi :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
