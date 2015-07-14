@@ -35,9 +35,11 @@ call vundle#end()
 filetype plugin indent on
 
 " Source {{{1
-
 source ~/.vim/robenkleene/settings.vim
 source ~/.vim/robenkleene/ui.vim
 source ~/.vim/robenkleene/movement.vim
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
+
+" Source Plugins {{{1
+source ~/.vim/robenkleene/plugins/surround.vim

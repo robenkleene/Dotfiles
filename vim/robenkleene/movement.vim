@@ -4,7 +4,6 @@
 
 " Kill line
 inoremap <C-k> <C-O>d$
-" nnoremap <C-k> <C-O>d$
 cnoremap <C-K> <C-\>e<SID>KillLine()<CR>
 function! s:KillLine()
     let l:cmd = getcmdline()
