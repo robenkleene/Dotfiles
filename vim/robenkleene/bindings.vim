@@ -18,7 +18,7 @@ nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 nnoremap <leader>w :set wrap!<CR>
 
 " Open Working Directory in Terminal
-nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>
+nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 
 " Reveal Current File
 nnoremap <leader>r :silent !open -R "%:p"<CR>\|:redraw!<CR>

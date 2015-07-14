@@ -31,6 +31,9 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'dag/vim-fish'
 Plugin 'guns/xterm-color-table.vim'
+if has('lua')
+  Plugin 'Shougo/neocomplete.vim'
+end
 call vundle#end()
 filetype plugin indent on
 
@@ -43,3 +46,4 @@ source ~/.vim/robenkleene/bindings.vim
 
 " Source Plugins {{{1
 source ~/.vim/robenkleene/plugins/surround.vim
+source ~/.vim/robenkleene/plugins/neocomplete.vim
