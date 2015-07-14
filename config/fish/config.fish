@@ -8,7 +8,7 @@ set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 set -x EDITOR vim
 
 # Git Editor
-set -x GIT_EDITOR "vim +startinsert"
+# set -x GIT_EDITOR "vim +startinsert"
 
 # Facebook Path Picker
 # Don't let `fpp` open files in splits
