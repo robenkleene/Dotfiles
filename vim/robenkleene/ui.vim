@@ -6,7 +6,13 @@
 set colorcolumn=80 
 
 " Highlight cursor line
-set cursorline 
+" set cursorline 
+" Show cursorline in active window
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 " Disable Cursor Line in Insert Mode
 augroup disablecursorline
     autocmd!
