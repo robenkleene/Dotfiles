@@ -24,13 +24,13 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-better-defaults)
 (require 'robenkleene-editorconfig)
+(require 'robenkleene-aggressive-indent)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-flycheck)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-helm)
 (require 'robenkleene-evil-dired) ;; Evil Dired has to be loaded after helm for some reason
 (require 'robenkleene-helm-ag)
-
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-projectile)
 (require 'robenkleene-company)
