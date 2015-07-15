@@ -44,10 +44,10 @@ set fish_user_abbreviations $fish_user_abbreviations 'nud=nvm use default'
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
 function ec
-	emacsclient -t $argv
+  emacsclient -t $argv
 end
 function is-emacs-server-running
-    ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
+  ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
 end
 if is-emacs-server-running
   set fish_greeting "Emacs server is running"
@@ -62,7 +62,7 @@ end
 # 	emacsclient -c -n --eval "(rk-magit-status-startup)"
 # end
 function emacs-stop-server
-    emacsclient -e '(kill-emacs)'
+  emacsclient -e '(kill-emacs)'
 end
 
 # Atom
@@ -85,17 +85,17 @@ set __fish_git_prompt_color_branch yellow
 set fish_color_comment 3a3a3a
 
 function fish_prompt
-	set_color $fish_color_comment
-	echo -n (date "+%I:%M %p")
-	echo -n ' '
-	set_color $fish_color_cwd
-	echo -n (prompt_pwd)
-	set_color normal
-	echo -n '> '
+  set_color $fish_color_comment
+  echo -n (date "+%I:%M %p")
+  echo -n ' '
+  set_color $fish_color_cwd
+  echo -n (prompt_pwd)
+  set_color normal
+  echo -n '> '
 end
 
 function fish_right_prompt
-	echo -n (__fish_git_prompt)
+  echo -n (__fish_git_prompt)
 end
 
 # Git
@@ -126,19 +126,19 @@ set fish_user_abbreviations $fish_user_abbreviations 'gur=git pull --rebase'
 set fish_user_abbreviations $fish_user_abbreviations 'gpbo=git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
 
 function git-push-branch-origin
-	git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
+  git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
 
 function git-diff-files-added-since-commit
-	git diff --name-only HEAD $argv[1]
+  git diff --name-only HEAD $argv[1]
 end
 
 function git-log-name-only
-	git log --name-only
+  git log --name-only
 end
 
 function git-checkout-branch-origin
-	git checkout -b $argv[1] origin/$argv[1]
+  git checkout -b $argv[1] origin/$argv[1]
 end
 
 function git-push-origin-delete
@@ -146,32 +146,32 @@ function git-push-origin-delete
 end
 
 function git-difftool-commit-minus-one
-	git difftool $argv[1] $argv[1]~1
+  git difftool $argv[1] $argv[1]~1
 end
 
 function git-remote-remove-origin
-	git remote rm origin
+  git remote rm origin
 end
 
 function git-remote-add-origin
-	git remote add origin $argv
+  git remote add origin $argv
 end
 
 function git-diff-binary-as-text
-	git diff --text $argv
+  git diff --text $argv
 end
 
 function git-log-unpushed-commits
-	git log @\{u\}..
+  git log @\{u\}..
 end
 
 # egit
 function egitn
-    set --local EGITNEXT (egit -n)
-	if test -n "$EGITNEXT"
-		cd $EGITNEXT
-		git status
-	end
+  set --local EGITNEXT (egit -n)
+  if test -n "$EGITNEXT"
+    cd $EGITNEXT
+    git status
+end
 end
 
 # Tig
@@ -196,14 +196,14 @@ function ranger-cd
   set tempfile '/tmp/chosendir'
   ranger --choosedir=$tempfile (pwd)
   if test -f $tempfile
-      if [ (cat $tempfile) != (pwd) ]
-        cd (cat $tempfile)
-      end
-  end
-  rm -f $tempfile
+    if [ (cat $tempfile) != (pwd) ]
+      cd (cat $tempfile)
+    end
+end
+rm -f $tempfile
 end
 function fish_user_key_bindings
-    bind \co 'ranger-cd ; fish_prompt'
+  bind \co 'ranger-cd ; fish_prompt'
 end
 function r
   ranger-cd
@@ -212,7 +212,7 @@ end
 
 # Misc
 function cleanopenwith
-	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
 function cbp
@@ -227,12 +227,12 @@ end
 
 # Find
 function find-filename
-	find . -not -path '*.git*' -name "$argv[1]"
+  find . -not -path '*.git*' -name "$argv[1]"
 end
 
 # BBEdit
 function bbf
-	bbfind --grep --gui $argv .
+  bbfind --grep --gui $argv .
 end
 
 function bbff
@@ -248,16 +248,16 @@ end
 # VIM
 set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
 function pvim
-    sh -c "cat | vim -g - > /dev/null 2>&1"
+  sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 function vc
-    vim -c "set ft=fish"
+  vim -c "set ft=fish"
 end
 function vcc
-    pbpaste | vim - -c "set ft=fish"
+  pbpaste | vim - -c "set ft=fish"
 end
 function vcgb
-    git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish"
+  git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish"
 end
 # fzf
 function fzfv
