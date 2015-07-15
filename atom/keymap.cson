@@ -26,13 +26,12 @@
   'ctrl-V': 'core:select-to-bottom'
   'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
   # 'cmd-k e': 'roben-kleene:toggle-emmet'
-  'ctrl-alt-r': 'roben-kleene:reveal-in-finder'
-  'ctrl-alt-t': 'roben-kleene:open-in-terminal'
+  'alt-r': 'roben-kleene:reveal-in-finder'
+  'alt-t': 'roben-kleene:open-in-terminal'
   'shift-cmd-space': 'roben-kleene:send-to-launchbar'
   'alt-s': 'roben-kleene:open-scratch-for-scope'
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'
-  'ctrl-T': 'roben-kleene:open-in-terminal'
 
 # Autocomplete Plus
 # ".autocomplete-plus input.hidden-input":
