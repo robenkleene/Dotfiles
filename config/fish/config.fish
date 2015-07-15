@@ -259,6 +259,10 @@ end
 function vcgb
     git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish"
 end
+# fzf
+function fzfv
+  sh -c "vim \$(/usr/local/bin/fzf)"
+end
 # This doesn't work, might have hung
 # function tpvim
 #     tee /dev/tty | sh -c "cat | vim -g - > /dev/null 2>&1"
