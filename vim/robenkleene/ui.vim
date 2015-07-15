@@ -8,20 +8,20 @@ set colorcolumn=80
 " Highlight cursor line
 " set cursorline 
 " Show cursorline in active window
-augroup CursorLineOnlyInActiveWindow
+augroup cursor_line_active_window
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 " Disable Cursor Line in Insert Mode
-augroup disablecursorline
+augroup disable_cursor_line
     autocmd!
     autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
 augroup END
 
 " Fix quickfix colors
-augroup quickfixcolors
+augroup quickfix_colors
     autocmd!
     " These interfere with quickfix highlighting
     autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif

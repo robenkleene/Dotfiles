@@ -32,7 +32,10 @@ set hidden
 set nowrap
 
 " Automatically change the working directory
-set autochdir
+" This interferes with `ag`
+" set autochdir
+" Just autoset the directory for netrw
+let g:netrw_keepdir = 0
 
 " Line breaks only happen on words
 set linebreak 
@@ -66,7 +69,7 @@ function! s:MakeShebangFilesExecutable()
         endif
     endif
 endfunction
-augroup executablefiles
+augroup executable_files
     autocmd!
     autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
 augroup END

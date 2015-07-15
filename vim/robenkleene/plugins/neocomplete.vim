@@ -10,7 +10,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 let g:neocomplete#enable_auto_select = 1
 
 " Disable for some filetypes
-augroup neocompletebuffers
+augroup neocomplete_buffers
 	autocmd!
 	autocmd FileType markdown NeoCompleteLock
 augroup END

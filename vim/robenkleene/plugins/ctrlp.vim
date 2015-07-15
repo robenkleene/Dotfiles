@@ -2,6 +2,12 @@ nnoremap <leader><leader> :CtrlPBuffer<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>s :CtrlPBufTag<CR>
 
+" Can't use `<C-p>` because that inteferes with Emacs style down
+let g:ctrlp_map = '<leader>f'
+
+" Search buffers, files, and recently used
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 " Ctrl-N/P for moving up and down
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
