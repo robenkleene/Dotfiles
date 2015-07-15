@@ -31,6 +31,9 @@ set hidden
 " Text
 set nowrap
 
+" Automatically change the working directory
+set autochdir
+
 " Line breaks only happen on words
 set linebreak 
 

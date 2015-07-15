@@ -18,6 +18,10 @@ inoremap <C-y> <C-r>*
 nnoremap <leader>oi :edit $MYVIMRC<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
+" Bookmarks
+nnoremap <leader>op :edit ~/Dotfiles/vim/bundle/<CR>
+nnoremap <leader>os :edit ~/Development/Scratch/Temp/<CR>
+
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
 

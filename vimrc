@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
@@ -47,5 +47,8 @@ source ~/.vim/robenkleene/bindings.vim
 
 " Source Plugins {{{1
 source ~/.vim/robenkleene/plugins/surround.vim
-source ~/.vim/robenkleene/plugins/neocomplete.vim
+if has('lua')
+  source ~/.vim/robenkleene/plugins/neocomplete.vim
+end
 source ~/.vim/robenkleene/plugins/ctrlp.vim
+source ~/.vim/robenkleene/plugins/ag.vim
