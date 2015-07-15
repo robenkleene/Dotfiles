@@ -14,6 +14,9 @@ vnoremap <C-g> <Esc>
 cnoremap <C-y> <C-r>*
 inoremap <C-y> <C-r>*
 
+" `C-w` insert word at point like Emacs
+cnoremap <C-w> <C-R><C-W>
+
 " vimrc
 nnoremap <leader>oi :edit ~/Dotfiles/vimrc<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
