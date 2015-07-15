@@ -10,19 +10,19 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Ctrl-N/P for moving up and down
 let g:ctrlp_prompt_mappings = {
-    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
-    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
-    \ 'PrtHistory(-1)':       [''],
-    \ 'PrtHistory(1)':        [''],
-    \ }
+      \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>'],
+      \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>'],
+      \ 'PrtHistory(-1)':       [''],
+      \ 'PrtHistory(1)':        [''],
+      \ }
 
 " Use `ag` if available
 if executable('ag')
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-    " nnoremap K :Ag <cword><cr>
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+  " nnoremap K :Ag <cword><cr>
 endif
 
 " " Use the working directory, no magic with finding `.git` directories

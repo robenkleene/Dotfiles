@@ -15,17 +15,17 @@ augroup cursor_line_active_window
 augroup END
 " Disable Cursor Line in Insert Mode
 augroup disable_cursor_line
-    autocmd!
-    autocmd InsertEnter * set nocursorline
-    autocmd InsertLeave * set cursorline
+  autocmd!
+  autocmd InsertEnter * set nocursorline
+  autocmd InsertLeave * set cursorline
 augroup END
 
 " Fix quickfix colors
 augroup quickfix_colors
-    autocmd!
-    " These interfere with quickfix highlighting
-    autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
-    autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
+  autocmd!
+  " These interfere with quickfix highlighting
+  autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
+  autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
 
 " Show line numbers
@@ -44,92 +44,92 @@ nohlsearch
 " `XtermColorTable` displays the hex colors a terminal equivalents
 " `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
 if !has('gui_running')
-    " Colorscheme
-    set background=dark
-    colorscheme jellybeans
+  " Colorscheme
+  set background=dark
+  colorscheme jellybeans
 
-    " Background {{{2
-    let s:bgcolor = 'NONE'
-    let s:backgroundgroups = ['CursorColumn', 
-                \ 'NonText', 'SpecialKey', 'VertSplit',
-                \ 'Normal', 'SignColumn', 'FoldColumn']
-    " Set Background Colors
-    for group in s:backgroundgroups
-        exe 'highlight ' . group . ' ctermbg=' . s:bgcolor
-    endfor
+  " Background {{{2
+  let s:bgcolor = 'NONE'
+  let s:backgroundgroups = ['CursorColumn', 
+        \ 'NonText', 'SpecialKey', 'VertSplit',
+        \ 'Normal', 'SignColumn', 'FoldColumn']
+  " Set Background Colors
+  for group in s:backgroundgroups
+    exe 'highlight ' . group . ' ctermbg=' . s:bgcolor
+  endfor
 
-    " Line Numbers {{{2
-    let s:guttercolor = 'NONE'
-    let s:guttergroups = ['LineNr']
-    for group in s:guttergroups
-        exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
-    endfor
-    " FG: #444444
-    highlight LineNr ctermfg=238
-    
-    " Highlight {{{2
-    " BG: #005f87 
-    let s:highlightbgcolor = '24'
-    let s:highlightfgcolor = 'white'
-    let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
-    for group in s:highlightgroups
-        exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
-                    \ s:highlightfgcolor
-    endfor
+  " Line Numbers {{{2
+  let s:guttercolor = 'NONE'
+  let s:guttergroups = ['LineNr']
+  for group in s:guttergroups
+    exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
+  endfor
+  " FG: #444444
+  highlight LineNr ctermfg=238
 
-    " Selection {{{2
-    " BG: #b2b2b2 FG: #585858
-    let s:selectionbgcolor = '240'
-    let s:selectionfgcolor = '249'
-    let s:selectiongroups = ['Visual', 'MatchParen']
-    for group in s:selectiongroups
-        exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
-                    \ s:selectionfgcolor
-    endfor
-    " Search {{{3
-    highlight IncSearch ctermfg=240 ctermbg=white
-    highlight Search cterm=NONE ctermfg=white ctermbg=240
-    
-    " StatusLine {{{2
-    " BG: #afdfff
-    highlight StatusLine ctermbg=153 ctermfg=black
-    " NC StatusLine bg is gutter color
-    highlight StatusLineNC ctermfg=lightgray ctermbg=238
+  " Highlight {{{2
+  " BG: #005f87 
+  let s:highlightbgcolor = '24'
+  let s:highlightfgcolor = 'white'
+  let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
+  for group in s:highlightgroups
+    exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
+          \ s:highlightfgcolor
+  endfor
+
+  " Selection {{{2
+  " BG: #b2b2b2 FG: #585858
+  let s:selectionbgcolor = '240'
+  let s:selectionfgcolor = '249'
+  let s:selectiongroups = ['Visual', 'MatchParen']
+  for group in s:selectiongroups
+    exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
+          \ s:selectionfgcolor
+  endfor
+  " Search {{{3
+  highlight IncSearch ctermfg=240 ctermbg=white
+  highlight Search cterm=NONE ctermfg=white ctermbg=240
+
+  " StatusLine {{{2
+  " BG: #afdfff
+  highlight StatusLine ctermbg=153 ctermfg=black
+  " NC StatusLine bg is gutter color
+  highlight StatusLineNC ctermfg=lightgray ctermbg=238
 
 
-    " ColorColumn {{{2
-    highlight ColorColumn ctermbg=238
-    " Tildes
-    highlight NonText ctermfg=darkgray
+  " ColorColumn {{{2
+  highlight ColorColumn ctermbg=238
+  " Tildes
+  highlight NonText ctermfg=darkgray
 
-    " Vimdiff Colors {{{2
-    highlight DiffAdd ctermfg=green ctermbg=darkgreen
-    highlight DiffDelete ctermfg=red ctermbg=darkred
-    highlight DiffChange ctermfg=NONE ctermbg=NONE
-    highlight DiffText ctermfg=lightblue ctermbg=darkblue
+  " Vimdiff Colors {{{2
+  highlight DiffAdd ctermfg=green ctermbg=darkgreen
+  highlight DiffDelete ctermfg=red ctermbg=darkred
+  highlight DiffChange ctermfg=NONE ctermbg=NONE
+  highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
-    " Git Gutter Colors {{{2
-    highlight GitGutterAdd ctermfg=green
-    highlight GitGutterChange ctermfg=lightblue
-    highlight GitGutterDelete ctermfg=red
-    highlight GitGutterAddDefault ctermbg=NONE ctermfg=green
-    highlight GitGutterChangeDefault ctermbg=NONE ctermfg=lightblue
-    highlight GitGutterDeleteDefault ctermbg=NONE ctermfg=red
-    highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
-    highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
-    highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
-   
-    " Syntastic Colors {{{2
-    highlight SyntasticErrorSign ctermfg=red
-    highlight SyntasticWarningSign ctermfg=yellow
-    highlight SyntasticStyleWarningSign ctermfg=yellow
-    " highlight SyntasticErrorLine ctermbg=red
+  " Git Gutter Colors {{{2
+  highlight GitGutterAdd ctermfg=green
+  highlight GitGutterChange ctermfg=lightblue
+  highlight GitGutterDelete ctermfg=red
+  highlight GitGutterAddDefault ctermbg=NONE ctermfg=green
+  highlight GitGutterChangeDefault ctermbg=NONE ctermfg=lightblue
+  highlight GitGutterDeleteDefault ctermbg=NONE ctermfg=red
+  highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
+  highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
+  highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 
-    " Warning Message {{{2
-    highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
+  " Syntastic Colors {{{2
+  highlight SyntasticErrorSign ctermfg=red
+  highlight SyntasticWarningSign ctermfg=yellow
+  highlight SyntasticStyleWarningSign ctermfg=yellow
+  " highlight SyntasticErrorLine ctermbg=red
+
+  " Warning Message {{{2
+  highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
 endif
 
- 
+
 " Status Line {{{1
 
 set laststatus=2

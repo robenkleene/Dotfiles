@@ -11,6 +11,6 @@ let g:neocomplete#enable_auto_select = 1
 
 " Disable for some filetypes
 augroup neocomplete_buffers
-	autocmd!
-	autocmd FileType markdown NeoCompleteLock
+  autocmd!
+  autocmd FileType markdown NeoCompleteLock
 augroup END

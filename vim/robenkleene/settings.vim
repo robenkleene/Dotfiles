@@ -7,10 +7,10 @@ let s:temporary_directory = "/tmp/vim.robenkleene/"
 let s:swap_file_directory = s:temporary_directory . "swap"
 let s:viewdir_directory = s:temporary_directory . "view"
 if !isdirectory(s:swap_file_directory)
-    call mkdir(s:swap_file_directory, 'p')
+  call mkdir(s:swap_file_directory, 'p')
 endif
 if !isdirectory(s:viewdir_directory)
-    call mkdir(s:viewdir_directory, 'p')
+  call mkdir(s:viewdir_directory, 'p')
 endif
 let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
@@ -63,15 +63,15 @@ let g:netrw_preview = 1
 
 " Make Shebang Files Executable
 function! s:MakeShebangFilesExecutable()
-    if match(getline(1), '^\#!') == 0
-        if match(getfperm(expand('%:p')), 'x') == -1
-            !chmod +x %
-        endif
+  if match(getline(1), '^\#!') == 0
+    if match(getfperm(expand('%:p')), 'x') == -1
+      !chmod +x %
     endif
+  endif
 endfunction
 augroup executable_files
-    autocmd!
-    autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
+  autocmd!
+  autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
 augroup END
 
 

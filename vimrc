@@ -3,7 +3,7 @@
 " Startup {{{1
 
 if &shell =~# 'fish$'
-    set shell=bash
+  set shell=bash
 endif
 
 " Plugins {{{1
