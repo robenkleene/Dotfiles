@@ -15,7 +15,7 @@ cnoremap <C-y> <C-r>*
 inoremap <C-y> <C-r>*
 
 " vimrc
-nnoremap <leader>oi :edit $MYVIMRC<CR>
+nnoremap <leader>oi :edit ~/Dotfiles/vimrc<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
 " Bookmarks
