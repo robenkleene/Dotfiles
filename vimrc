@@ -29,9 +29,9 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
+Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'guns/xterm-color-table.vim'
-" Plugin 'Shougo/unite.vim'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
 end
@@ -48,3 +48,4 @@ source ~/.vim/robenkleene/bindings.vim
 " Source Plugins {{{1
 source ~/.vim/robenkleene/plugins/surround.vim
 source ~/.vim/robenkleene/plugins/neocomplete.vim
+source ~/.vim/robenkleene/plugins/ctrlp.vim
