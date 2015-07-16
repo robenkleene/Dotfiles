@@ -4,7 +4,10 @@
 
 ;; Save temporary files to tmp directory
 (setq auto-save-file-name-transforms
-                `((".*" ,temporary-file-directory t)))
+      `((".*" ,temporary-file-directory t)))
+
+;; Automatically revert unmodified buffers
+(global-auto-revert-mode t)
 
 ;; Only use hl-line-mode in specific modes
 (global-hl-line-mode)
