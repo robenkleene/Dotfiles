@@ -263,6 +263,11 @@ end
 function fzfv
   sh -c "vim \$(/usr/local/bin/fzf)"
 end
+# Open unmerged files in Vim
+function vim-open-unmerged
+  sh -c "vim \$(git diff --name-only --diff-filter=U)"
+end
+
 # This doesn't work, might have hung
 # function tpvim
 #     tee /dev/tty | sh -c "cat | vim -g - > /dev/null 2>&1"
