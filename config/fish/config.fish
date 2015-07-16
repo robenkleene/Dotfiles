@@ -43,17 +43,41 @@ set fish_user_abbreviations $fish_user_abbreviations 'nud=nvm use default'
 # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
+# Open Emacsclient
 function ec
   emacsclient -t $argv
 end
+# Test if server is running
 function is-emacs-server-running
   ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
 end
+# Display a greeting message if the server is running
 if is-emacs-server-running
   set fish_greeting "Emacs server is running"
 else
   set fish_greeting
 end
+# Choose file to open with fzf
+function ec-fzf
+  sh -c "emacsclient -t \$(/usr/local/bin/fzf)"
+end
+
+# Vim
+set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
+function gvim-pipe
+  sh -c "cat | vim -g - > /dev/null 2>&1"
+end
+# Choose file to open with fzf
+function vim-fzf
+  sh -c "vim \$(/usr/local/bin/fzf)"
+end
+# Open unmerged files
+function vim-open-unmerged
+  sh -c "vim \$(git diff --name-only --diff-filter=U)"
+end
+
+
+
 # Magit
 # function magit
 # 	emacs --eval "(rk-magit-status-startup)"
@@ -244,29 +268,6 @@ end
 # function sea
 #   wcsearch $argv
 # end
-
-# VIM
-set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
-function pvim
-  sh -c "cat | vim -g - > /dev/null 2>&1"
-end
-function vc
-  vim -c "set ft=fish"
-end
-function vcc
-  pbpaste | vim - -c "set ft=fish"
-end
-function vcgb
-  git rev-parse --abbrev-ref HEAD | vim - -c "set ft=fish"
-end
-# fzf
-function fzfv
-  sh -c "vim \$(/usr/local/bin/fzf)"
-end
-# Open unmerged files in Vim
-function vim-open-unmerged
-  sh -c "vim \$(git diff --name-only --diff-filter=U)"
-end
 
 # This doesn't work, might have hung
 # function tpvim
