@@ -72,8 +72,11 @@ function vim-fzf
   sh -c "vim \$(/usr/local/bin/fzf)"
 end
 # Open unmerged files
-function vim-open-unmerged
+function vim-git-unmerged
   sh -c "vim \$(git diff --name-only --diff-filter=U)"
+end
+function vim-pipe-grep
+  vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
 end
 
 # fzf
