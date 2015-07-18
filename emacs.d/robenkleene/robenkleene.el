@@ -50,5 +50,6 @@
 (require 'robenkleene-javascript)
 (require 'robenkleene-ruby)
 (require 'robenkleene-objective-c)
+(require 'robenkleene-swift)
 
 ;;; robenkleene.el ends here
