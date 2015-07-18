@@ -33,9 +33,6 @@
       :commands nodejs-repl
       :config
       (progn
-        (defvar nodejs-repl-command)
-        (setq nodejs-repl-command "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/node")
-
         ;; Define function to evaluate region
         (defun robenkleene/nodejs-repl-eval-region (start end)
           "Evaluate the region specified by `START' and `END'."
