@@ -15,6 +15,9 @@ endif
 let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
 
+
+let $PATH='/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/:' . $PATH
+
 " Basic {{{1
 " Syntax highlighting
 syntax on
