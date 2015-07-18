@@ -40,7 +40,7 @@ nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
 " and removes the last new line
-nnoremap <silent> <leader>cc :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
+nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
 " Detect File type

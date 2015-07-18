@@ -10,11 +10,6 @@ set -x EDITOR vim
 # Git Editor
 # set -x GIT_EDITOR "vim +startinsert"
 
-# Facebook Path Picker
-# Don't let `fpp` open files in splits
-# Ugh, this breaks opening with line numbers
-set -x FPP_EDITOR "vim "
-
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
@@ -291,3 +286,12 @@ function hl
   highlight -O ansi "$argv[1]"
 end
 
+# tmux
+# Reload tmux config
+function tmux-source
+  tmux source-file ~/.tmux.conf
+end
+# Start tmux on startup
+if which -s tmux
+ test $TERM != "screen"; and not test $TMUX; and exec tmux
+end
