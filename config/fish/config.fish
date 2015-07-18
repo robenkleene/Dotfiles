@@ -292,6 +292,11 @@ function tmux-source
   tmux source-file ~/.tmux.conf
 end
 # Start tmux on startup
-if which -s tmux
- test $TERM != "screen"; and not test $TMUX; and exec tmux
-end
+# This doesn't really work because it starts a new tmux session for every window
+# if which -s tmux
+#  test $TERM != "screen"; and not test $TMUX; and exec tmux
+# end
+# Exit tmux session when fish closes
+# function on_exit --on-process %self
+#   exit
+# end
