@@ -77,14 +77,22 @@ end
 
 # fzf
 function cd-fzf
-  # sh -c "cd \$(find * -type d | fzf)"
-  # set dest (sh -c "find * -type d | fzf")
   find * -type d | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
   and cd (cat $TMPDIR/fzf.result)
   commandline -f repaint
   rm -f $TMPDIR/fzf.result
 end
+# cd to bookmark
+set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/Scratch/ ~/Development/Scratch/Temp/
+function cd-fzf-bookmark
+  printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
+  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
+  and cd (cat $TMPDIR/fzf.result)
+  commandline -f repaint
+  rm -f $TMPDIR/fzf.result
+end
+set fish_user_abbreviations $fish_user_abbreviations 'bm=cd-fzf-bookmark'
 
 # Magit
 # function magit

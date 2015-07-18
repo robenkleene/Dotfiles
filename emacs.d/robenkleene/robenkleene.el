@@ -12,6 +12,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-emacs)
 (require 'robenkleene-functions)
+(require 'robenkleene-bindings)
 (require 'robenkleene-dired)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))

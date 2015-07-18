@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'robenkleene-evil-functions)
 (require 'use-package)
 (use-package js2-mode
   :ensure t
@@ -13,9 +14,14 @@
     (defvar robenkleene/javascript-repl-leader-map (make-keymap))
     (define-key robenkleene/javascript-repl-leader-map (kbd "o") 'nodejs-repl)
 
+    ;; JavaScript Leader Map
     (defvar robenkleene/javascript-leader-map (make-keymap))
     (define-key robenkleene/javascript-leader-map (kbd "l") robenkleene/javascript-repl-leader-map)
     (define-key robenkleene/javascript-leader-map (kbd "s") 'helm-semantic-or-imenu)
+    (define-key robenkleene/javascript-leader-map (kbd "r")
+      (lambda () (interactive)
+        (robenkleene/evil-execute-command "!node %")
+        ))
     
     ;; Add Map to mode
     (declare-function evil-declare-key "evil")

@@ -4,6 +4,14 @@
 
 (require 'evil-commands)
 
+(defun robenkleene/evil-execute-command (command)
+  "Execute COMMAND as ex command."
+  (let ((evil-ex-current-buffer (current-buffer))
+        result)
+    (evil-ex-execute command)
+    )
+  )
+
 (defmacro robenkleene/advice-after-evil-initial-state (func)
   "Takes a FUNC, set the buffer to evil initial state after."
   `(defadvice ,func (after robenkleene/after-evil-initial-state activate)
