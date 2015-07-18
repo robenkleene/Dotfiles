@@ -49,5 +49,6 @@
 (require 'robenkleene-emacs-lisp)
 (require 'robenkleene-javascript)
 (require 'robenkleene-ruby)
+(require 'robenkleene-objective-c)
 
 ;;; robenkleene.el ends here

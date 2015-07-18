@@ -39,6 +39,16 @@
     )
   )
 
+(defun robenkleene/open-in-xcode ()
+  "Open file in Xcode."
+  (interactive)
+  (if (buffer-file-name)
+      (shell-command (concat "open -a \"Xcode\" "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    )
+  )
+
 (declare-function projectile-project-p "projectile")
 (defun robenkleene/best-ag ()
   "Best ag search."

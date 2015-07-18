@@ -22,5 +22,10 @@
 ;; Enable Folding for Programming Modes
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
+;; Save recent file list
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+
 (provide 'robenkleene-emacs)
 ;;; robenkleene-emacs.el ends here
