@@ -8,6 +8,7 @@ set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 set -x EDITOR vim
 
 # Git Editor
+# Start in insert mode
 # set -x GIT_EDITOR "vim +startinsert"
 
 # rbenv
@@ -285,18 +286,3 @@ end
 function hl
   highlight -O ansi "$argv[1]"
 end
-
-# tmux
-# Reload tmux config
-function tmux-source
-  tmux source-file ~/.tmux.conf
-end
-# Start tmux on startup
-# This doesn't really work because it starts a new tmux session for every window
-# if which -s tmux
-#  test $TERM != "screen"; and not test $TMUX; and exec tmux
-# end
-# Exit tmux session when fish closes
-# function on_exit --on-process %self
-#   exit
-# end
