@@ -20,6 +20,8 @@
 (require 'robenkleene-evil-commentary)
 (require 'robenkleene-evil-tabs)
 (require 'robenkleene-evil-magit)
+(require 'robenkleene-evil-visualstar)
+
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-better-defaults)
