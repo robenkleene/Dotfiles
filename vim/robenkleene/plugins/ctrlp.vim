@@ -1,6 +1,8 @@
-nnoremap <leader><leader> :CtrlPBuffer<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>s :CtrlPBufTag<CR>
+
+" Use CtrlPMRU for old files
+cabbrev ol <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'CtrlPMRU' : 'ol')<CR>
+cabbrev ls <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'CtrlPBuffer' : 'ls')<CR>
 
 " Can't use `<C-p>` because that inteferes with Emacs style down
 let g:ctrlp_map = '<leader>f'

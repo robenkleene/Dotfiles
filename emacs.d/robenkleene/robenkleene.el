@@ -21,6 +21,7 @@
 (require 'robenkleene-evil-tabs)
 (require 'robenkleene-evil-magit)
 (require 'robenkleene-evil-visualstar)
+(require 'robenkleene-evil-helm)
 
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))

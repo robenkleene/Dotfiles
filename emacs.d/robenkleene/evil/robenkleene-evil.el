@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'robenkleene-evil-functions)
 (require 'use-package)
 (use-package evil
   :ensure t
@@ -114,8 +115,6 @@
     (define-key robenkleene/leader-map (kbd "a") 'robenkleene/best-ag)
     (define-key robenkleene/leader-map (kbd "A") 'helm-do-ag)
     (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
-    (define-key robenkleene/leader-map (kbd "\\") 'helm-buffers-list)
-    (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
     (define-key robenkleene/leader-map (kbd "g") 'magit-status)
     (define-key robenkleene/leader-map (kbd "h") 'helm-resume)
     (define-key robenkleene/leader-map (kbd "c") 'robenkleene/other-window-shell)

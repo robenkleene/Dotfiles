@@ -5,6 +5,7 @@
 (require 'use-package)
 (use-package helm
   :ensure t
+  :commands helm-recentf
   :bind (
          ("C-h a" . helm-apropos)
          ("M-x" . helm-M-x)
