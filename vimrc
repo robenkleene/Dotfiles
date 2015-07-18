@@ -30,11 +30,13 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
-Plugin 'dag/vim-fish'
 Plugin 'guns/xterm-color-table.vim'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
 end
+" Languages
+Plugin 'dag/vim-fish'
+Plugin 'keith/swift.vim'
 call vundle#end()
 filetype plugin indent on
 
