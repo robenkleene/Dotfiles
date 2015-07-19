@@ -23,12 +23,12 @@
     )
   )
 
-(defun robenkleene/external-editor (begin end)
+(defun robenkleene/external-editor ()
   "Open a region or file in external editor.  BEGIN and END are the region."
-  (interactive "r")
-  (if (and begin mark-active)
+  (interactive)
+  (if (use-region-p)
       (progn
-        (shell-command-on-region begin end "mate -a")
+        (shell-command-on-region (region-beginning) (region-end) "mate -a")
         (deactivate-mark)
         )
     (if (buffer-file-name)

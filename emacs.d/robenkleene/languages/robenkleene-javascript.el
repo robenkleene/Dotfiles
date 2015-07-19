@@ -15,22 +15,24 @@
     (define-key robenkleene/javascript-repl-leader-map (kbd "o") 'nodejs-repl)
 
 
-    ;; Run Map
-    (defvar robenkleene/javascript-run-leader-map (make-keymap))
-    (define-key robenkleene/javascript-run-leader-map (kbd "b")
-      (lambda () (interactive)
-        (robenkleene/evil-execute-command "!node %")
-        ))
-    (define-key robenkleene/javascript-run-leader-map (kbd "r")
-      (lambda () (interactive)
-        (robenkleene/evil-execute-command "'<,'>w !node")
-        ))
+    (defun robenkleene/run-javascript-region-or-buffer ()
+      "Open a region or file in external editor.  BEGIN and END are the region."
+      (interactive)
+      (if (use-region-p)
+          (progn
+            (robenkleene/evil-execute-command "'<,'>w !node")
+            )
+        (if (buffer-file-name)
+            (robenkleene/evil-execute-command "!node %")
+          )
+        )
+      )
 
     ;; JavaScript Leader Map
     (defvar robenkleene/javascript-leader-map (make-keymap))
     (define-key robenkleene/javascript-leader-map (kbd "l") robenkleene/javascript-repl-leader-map)
     (define-key robenkleene/javascript-leader-map (kbd "s") 'helm-semantic-or-imenu)
-    (define-key robenkleene/javascript-leader-map (kbd "r") robenkleene/javascript-run-leader-map)
+    (define-key robenkleene/javascript-leader-map (kbd "r") 'robenkleene/run-javascript-region-or-buffer)
 
     ;; Add Map to mode
     (declare-function evil-declare-key "evil")

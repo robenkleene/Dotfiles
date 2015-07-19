@@ -83,7 +83,7 @@ function cd-fzf
   rm -f $TMPDIR/fzf.result
 end
 # cd to bookmark
-set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/Scratch/ ~/Development/Scratch/Temp/
+set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/
 function cd-fzf-bookmark
   printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
