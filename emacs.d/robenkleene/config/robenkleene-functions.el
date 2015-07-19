@@ -24,7 +24,7 @@
   )
 
 (defun robenkleene/external-editor ()
-  "Open a region or file in external editor.  BEGIN and END are the region."
+  "Open a region or buffer in external editor."
   (interactive)
   (if (use-region-p)
       (progn
@@ -97,6 +97,21 @@
               )
           (find-file-other-window scratch-file-name)
           )
+      )
+    )
+  )
+
+(defun robenkleene/print-variable ()
+  "Replace the current line with a variable print statement."
+  (interactive)
+  (let ((extension (file-name-extension (buffer-file-name))))
+    (if extension
+        (shell-command-on-region
+         (line-beginning-position)
+         (line-end-position)
+         (format "printvariable -l %s" extension)
+         nil
+         t)
       )
     )
   )

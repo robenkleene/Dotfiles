@@ -34,7 +34,7 @@
      (define-key robenkleene/emacs-lisp-leader-map (kbd "e") robenkleene/emacs-lisp-eval-leader-map)
      (define-key robenkleene/emacs-lisp-leader-map (kbd "s") 'helm-semantic-or-imenu)
      (define-key robenkleene/emacs-lisp-leader-map (kbd "l") robenkleene/emacs-lisp-linter-leader-map)
-
+     (define-key robenkleene/emacs-lisp-leader-map (kbd "p") 'robenkleene/print-variable)
 
      ;; Add map to mode
      (declare-function evil-declare-key "evil")
