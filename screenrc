@@ -1,3 +1,6 @@
 shell "/usr/local/bin/fish"
 term screen-256color
 escape ^qq
+startup_message off
+
+rendition so kg
