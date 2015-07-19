@@ -1,5 +1,4 @@
 # Start abbrevations here so they can be added to later
-set -U fish_user_abbreviations 'g=git'
 
 # Environment Variables
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
@@ -34,7 +33,7 @@ source ~/.config/fish/nvm-wrapper/nvm.fish
 function nvm-use-default
   nvm use default
 end
-set fish_user_abbreviations $fish_user_abbreviations 'nud=nvm use default'
+abbr -a nud='nvm use default'
 
 # Emacs
 # Start the server in the background if it isn't running
@@ -59,7 +58,7 @@ function ec-fzf
 end
 
 # Vim
-set fish_user_abbreviations $fish_user_abbreviations 'vp=vimpager'
+abbr -a vp='vimpager'
 function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
 end
@@ -92,7 +91,7 @@ function cd-fzf-bookmark
   commandline -f repaint
   rm -f $TMPDIR/fzf.result
 end
-set fish_user_abbreviations $fish_user_abbreviations 'bm=cd-fzf-bookmark'
+abbr -a bm='cd-fzf-bookmark'
 
 # Magit
 # function magit
@@ -114,7 +113,7 @@ set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
 
 # Edit Dotfiles
 set -x FISH_CONFIG_PATH $HOME/Dotfiles/config/fish/config.fish
-set fish_user_abbreviations $fish_user_abbreviations 'edf=EDITOR $FISH_CONFIG_PATH'
+abbr -a edf='EDITOR $FISH_CONFIG_PATH'
 
 # Prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -139,31 +138,32 @@ function fish_right_prompt
 end
 
 # Git
-set fish_user_abbreviations $fish_user_abbreviations 'gs=git status'
-set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
-set fish_user_abbreviations $fish_user_abbreviations 'gdt=git difftool'
-set fish_user_abbreviations $fish_user_abbreviations 'gdn=git diff --name-only'
-set fish_user_abbreviations $fish_user_abbreviations 'gdm=git diff | mate'
-set fish_user_abbreviations $fish_user_abbreviations 'ga=git add'
-set fish_user_abbreviations $fish_user_abbreviations 'gb=git branch'
-set fish_user_abbreviations $fish_user_abbreviations 'gbd=git branch -d'
-set fish_user_abbreviations $fish_user_abbreviations 'gm=git merge'
-set fish_user_abbreviations $fish_user_abbreviations 'gaa=git add --all :/'
-set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit'
-set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
-set fish_user_abbreviations $fish_user_abbreviations 'gu=git pull'
-set fish_user_abbreviations $fish_user_abbreviations 'gpl=git pull'
-set fish_user_abbreviations $fish_user_abbreviations 'gl=git log'
-set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
-set fish_user_abbreviations $fish_user_abbreviations 'gcob=git checkout -b'
-set fish_user_abbreviations $fish_user_abbreviations 'gcl=git clone'
-set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit --amend'
-set fish_user_abbreviations $fish_user_abbreviations 'gcm=git commit -m'
-set fish_user_abbreviations $fish_user_abbreviations 'gcam=git commit --amend -m'
-set fish_user_abbreviations $fish_user_abbreviations 'gsi=git submodule init'
-set fish_user_abbreviations $fish_user_abbreviations 'gsu=git submodule update'
-set fish_user_abbreviations $fish_user_abbreviations 'gur=git pull --rebase'
-set fish_user_abbreviations $fish_user_abbreviations 'gpbo=git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a g='git'
+abbr -a gs='git status'
+abbr -a gd='git diff'
+abbr -a gdt='git difftool'
+abbr -a gdn='git diff --name-only'
+abbr -a gdm='git diff | mate'
+abbr -a ga='git add'
+abbr -a gb='git branch'
+abbr -a gbd='git branch -d'
+abbr -a gm='git merge'
+abbr -a gaa='git add --all :/'
+abbr -a gc='git commit'
+abbr -a gp='git push'
+abbr -a gu='git pull'
+abbr -a gpl='git pull'
+abbr -a gl='git log'
+abbr -a gco='git checkout'
+abbr -a gcob='git checkout -b'
+abbr -a gcl='git clone'
+abbr -a gca='git commit --amend'
+abbr -a gcm='git commit -m'
+abbr -a gcam='git commit --amend -m'
+abbr -a gsi='git submodule init'
+abbr -a gsu='git submodule update'
+abbr -a gur='git pull --rebase'
+abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
 
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
@@ -220,8 +220,8 @@ function ts
 end
 
 # Hub
-set fish_user_abbreviations $fish_user_abbreviations 'hb=hub browse'
-set fish_user_abbreviations $fish_user_abbreviations 'hbc=hub browse -- commits'
+abbr -a hb='hub browse'
+abbr -a hbc='hub browse -- commits'
 
 # Navigation
 function o
