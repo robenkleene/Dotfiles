@@ -1,2 +1,3 @@
 shell "/usr/local/bin/fish"
 term screen-256color
+escape ^qq
