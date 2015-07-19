@@ -34,6 +34,8 @@
     (define-key robenkleene/javascript-leader-map (kbd "s") 'helm-semantic-or-imenu)
     (define-key robenkleene/javascript-leader-map (kbd "r") 'robenkleene/run-javascript-region-or-buffer)
     (define-key robenkleene/javascript-leader-map (kbd "p") 'robenkleene/print-variable)
+    (define-key robenkleene/javascript-leader-map (kbd "C") 'compile)
+    (define-key robenkleene/javascript-leader-map (kbd "c") 'recompile)
 
     ;; Add Map to mode
     (declare-function evil-declare-key "evil")
