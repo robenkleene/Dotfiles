@@ -14,15 +14,24 @@
     (defvar robenkleene/javascript-repl-leader-map (make-keymap))
     (define-key robenkleene/javascript-repl-leader-map (kbd "o") 'nodejs-repl)
 
+
+    ;; Run Map
+    (defvar robenkleene/javascript-run-leader-map (make-keymap))
+    (define-key robenkleene/javascript-run-leader-map (kbd "b")
+      (lambda () (interactive)
+        (robenkleene/evil-execute-command "!node %")
+        ))
+    (define-key robenkleene/javascript-run-leader-map (kbd "r")
+      (lambda () (interactive)
+        (robenkleene/evil-execute-command "'<,'>w !node")
+        ))
+
     ;; JavaScript Leader Map
     (defvar robenkleene/javascript-leader-map (make-keymap))
     (define-key robenkleene/javascript-leader-map (kbd "l") robenkleene/javascript-repl-leader-map)
     (define-key robenkleene/javascript-leader-map (kbd "s") 'helm-semantic-or-imenu)
-    (define-key robenkleene/javascript-leader-map (kbd "r")
-      (lambda () (interactive)
-        (robenkleene/evil-execute-command "!node %")
-        ))
-    
+    (define-key robenkleene/javascript-leader-map (kbd "r") robenkleene/javascript-run-leader-map)
+
     ;; Add Map to mode
     (declare-function evil-declare-key "evil")
     (evil-declare-key 'motion js2-mode-map (kbd ",") robenkleene/javascript-leader-map)
