@@ -100,6 +100,7 @@
     (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
     (define-key robenkleene/open-map (kbd "p") (lambda() (interactive) (find-file "~/.emacs.d/elpa/")))
     (define-key robenkleene/open-map (kbd "s") (lambda() (interactive) (find-file "~/Development/Scratch/Temp/")))
+    (define-key robenkleene/open-map (kbd "d") (lambda() (interactive) (find-file "~/Development/")))
 
 
     ;;; Leader

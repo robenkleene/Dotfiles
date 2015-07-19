@@ -57,14 +57,20 @@
             (with-current-buffer buffer
               (robenkleene/nodejs-repl-eval-region (point-min) (point-max)))))
 
-        ;; Map function to evaluate region
-        (define-key robenkleene/javascript-repl-leader-map (kbd "r") (lambda (begin end)
-                                                                       (interactive "r")
-                                                                       (robenkleene/nodejs-repl-eval-region begin end)
-                                                                       (deactivate-mark)
-                                                                       ))
-        (define-key robenkleene/javascript-repl-leader-map (kbd "b") 'robenkleene/nodejs-repl-eval-buffer)
+        (defun robenkleene/nodejs-repl-eval-region-or-buffer ()
+          "Evaluate the region if it's active, otherwise the buffer."
+          (interactive)
+          (if (region-active-p)
+              (progn
+                (robenkleene/nodejs-repl-eval-region (region-beginning) (region-end))
+                (deactivate-mark)
+                )
+            (robenkleene/nodejs-repl-eval-buffer)
+            )
+          )
         
+        ;; Map function to evaluate region
+        (define-key robenkleene/javascript-repl-leader-map (kbd "r") 'robenkleene/nodejs-repl-eval-region-or-buffer)
         )
       )
     )
