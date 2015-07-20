@@ -23,7 +23,7 @@ nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
 " Bookmarks
 nnoremap <leader>op :edit ~/Dotfiles/vim/bundle/<CR>
-nnoremap <leader>os :edit ~/Development/Scratch/Temp/<CR>
+nnoremap <leader>ob :CtrlPDirectoryBookmarks<CR>
 
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>

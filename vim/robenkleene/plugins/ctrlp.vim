@@ -31,3 +31,14 @@ endif
 " let g:ctrlp_working_path_mode = '0'
 " " Open new files in horizontal splits
 " let g:ctrlp_open_new_file = 'h'
+
+
+" Setup my bookmark system
+let g:ctrlp_extensions = ['ctrlp_directory_bookmarks']
+let g:ctrlp_directory_bookmarks_list = [
+      \ '~/Dotfiles/',
+      \ '~/Development',
+      \ '~/Development/Scratch',
+      \ '~/Development/Scratch/Temp',
+      \ '~/Development/Projects/',
+      \ ]
