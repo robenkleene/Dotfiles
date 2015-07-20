@@ -52,19 +52,14 @@ if is-emacs-server-running
 else
   set fish_greeting
 end
-# Choose file to open with fzf
-function ec-fzf
-  sh -c "emacsclient -t \$(/usr/local/bin/fzf)"
+function emacs-stop-server
+  emacsclient -e '(kill-emacs)'
 end
 
 # Vim
 abbr -a vp='vimpager'
 function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
-end
-# Choose file to open with fzf
-function vim-fzf
-  sh -c "vim \$(/usr/local/bin/fzf)"
 end
 # Open unmerged files
 function vim-git-unmerged
@@ -73,9 +68,10 @@ end
 function vim-pipe-grep
   vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
 end
+abbr -a vpg='vim-pipe-grep'
 
 # fzf
-function cd-fzf
+function fzf-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
   and cd (cat $TMPDIR/fzf.result)
@@ -84,25 +80,27 @@ function cd-fzf
 end
 # cd to bookmark
 set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/
-function cd-fzf-bookmark
+function fzf-cd-bookmark
   printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
   and cd (cat $TMPDIR/fzf.result)
   commandline -f repaint
   rm -f $TMPDIR/fzf.result
 end
-abbr -a ob='cd-fzf-bookmark'
-
-# Magit
-# function magit
-# 	emacs --eval "(rk-magit-status-startup)"
-# end
-# function gc
-# 	emacsclient -c -n --eval "(rk-magit-status-startup)"
-# end
-function emacs-stop-server
-  emacsclient -e '(kill-emacs)'
+abbr -a ob='fzf-cd-bookmark'
+# Choose file to open with fzf
+function fzf-ec
+  sh -c "emacsclient -t \$(/usr/local/bin/fzf)"
 end
+# Choose file to open with fzf
+function fzf-vim
+  sh -c "vim \$(/usr/local/bin/fzf)"
+end
+# fzf reveal
+function fzf-reveal
+  sh -c "open -R \$(/usr/local/bin/fzf)"
+end
+
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
