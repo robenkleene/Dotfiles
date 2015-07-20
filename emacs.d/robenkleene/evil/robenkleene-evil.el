@@ -87,6 +87,8 @@
     (define-key robenkleene/unimpaired-previous-map (kbd "q") 'previous-error)
     (define-key robenkleene/unimpaired-next-map (kbd "b") 'next-buffer)
     (define-key robenkleene/unimpaired-previous-map (kbd "b") 'previous-buffer)
+    (define-key robenkleene/unimpaired-next-map (kbd "c") 'git-gutter:next-hunk)
+    (define-key robenkleene/unimpaired-previous-map (kbd "c") 'git-gutter:previous-hunk)
 
     ;; Unimpaired Key
     (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)

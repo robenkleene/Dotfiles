@@ -18,8 +18,9 @@
   (helm-mode 1)
   :config
   (progn
-    ;; (setq helm-split-window-default-side 'other)
-    (setq helm-split-window-default-side 'same)
+    (setq helm-split-window-default-side 'other)
+    ;; (setq helm-split-window-default-side 'same)
+
     ;; (helm-mode 1)
     (defvar helm-trnucate-lines)
     (setq helm-truncate-lines t)
