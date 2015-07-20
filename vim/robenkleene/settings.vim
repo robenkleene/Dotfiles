@@ -26,6 +26,7 @@ syntax on
 set clipboard=unnamed 
 
 " Leader
+let mapleader=" "
 let maplocalleader = ","
 
 " Allow hidden buffers
