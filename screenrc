@@ -3,4 +3,8 @@ term screen-256color
 escape ^qq
 startup_message off
 
+# Black on Green
 rendition so kg
+
+# Use terminals scrollbar
+termcapinfo xterm* ti@:te@
