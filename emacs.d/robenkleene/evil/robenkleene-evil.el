@@ -99,9 +99,7 @@
     (defvar robenkleene/open-map (make-keymap))
     (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
     (define-key robenkleene/open-map (kbd "p") (lambda() (interactive) (find-file "~/.emacs.d/elpa/")))
-    (define-key robenkleene/open-map (kbd "s") (lambda() (interactive) (find-file "~/Development/Scratch/Temp/")))
-    (define-key robenkleene/open-map (kbd "d") (lambda() (interactive) (find-file "~/Development/")))
-
+    (define-key robenkleene/open-map (kbd "b") 'robenkleene/helm-directory-bookmarks)
 
     ;;; Leader
 
@@ -121,7 +119,8 @@
     (define-key robenkleene/leader-map (kbd "c") 'robenkleene/other-window-shell)
 
     ;; Leader Key
-    (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
+    ;; (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
+    (define-key evil-motion-state-map (kbd "SPC") robenkleene/leader-map)
 
     )
   )

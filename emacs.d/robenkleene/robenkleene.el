@@ -14,6 +14,7 @@
 (require 'robenkleene-functions)
 (require 'robenkleene-bindings)
 (require 'robenkleene-dired)
+(require 'robenkleene-helm-directory-bookmarks)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
 (require 'robenkleene-evil-functions)
