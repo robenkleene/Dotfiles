@@ -100,7 +100,9 @@ end
 function fzf-reveal
   sh -c "open -R \$(/usr/local/bin/fzf)"
 end
-
+function fzf-git-reveal-diff
+  git diff --name-only | fzf | xargs open -R
+end
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
@@ -162,6 +164,10 @@ abbr -a gsi='git submodule init'
 abbr -a gsu='git submodule update'
 abbr -a gur='git pull --rebase'
 abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+
+function git-reveal-diff
+  git diff --name-only | xargs open -R
+end
 
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
