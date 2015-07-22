@@ -1,0 +1,45 @@
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = simple
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[alias]
+	s = status
+	d = diff
+	dt = difftool
+	a = add
+	b = branch
+	aa = add --all
+	co = checkout
+	cl = clone
+	ts = !tig status
+	tig = !tig
+	c = commit
+	p = push
+	pl = pull
+	u = pull
+	l = log
+	si = submodule init
+	su = submodule update
+	f = !open .
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[include]
+    path = .gitconfig_local
