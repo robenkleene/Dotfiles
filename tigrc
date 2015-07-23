@@ -37,3 +37,36 @@ bind generic <Ctrl-V> move-page-down
 # Debugging
 # bind status Z !sh -c 'cat %(file)'
 # bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
+
+# Vim
+
+
+bind generic b none
+bind generic f move-page-down
+bind generic b move-page-up
+bind generic h scroll-left
+bind generic j move-down
+bind generic k move-up
+bind generic l scroll-right
+
+bind generic g  none
+bind generic gg move-first-line
+
+bind main    G  none
+bind generic G  move-last-line
+
+bind generic gh view-help
+
+bind generic v  none
+bind generic gm view-main
+bind generic gd view-diff
+bind generic gl view-log
+bind generic gt view-tree
+bind generic gb view-blob
+bind generic gx view-blame
+bind generic gr view-refs
+bind generic gs view-status
+bind generic gu view-stage
+bind generic gy view-stash
+bind generic gg view-grep
+bind generic gp view-pager
