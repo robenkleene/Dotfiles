@@ -43,8 +43,9 @@ nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
-" Copy Contents of File and Close Without Saving
-nnoremap <leader>QQ :%w !pbcopy<CR>:q!<CR>
+" Made this into a commmand instead
+" " Copy Contents of File and Close Without Saving
+" nnoremap <leader>QQ :%w !pbcopy<CR>:q!<CR>
 
 " Detect File type
 " map <leader>d :filetype detect<CR>

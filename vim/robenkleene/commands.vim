@@ -33,3 +33,11 @@ endif
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
+command! -bang Q
+      \ execute "%w !pbcopy" |
+      \ if <bang>1 |
+      \   execute "q" |
+      \ else |
+      \   execute "q<bang>" |
+      \ endif
+
