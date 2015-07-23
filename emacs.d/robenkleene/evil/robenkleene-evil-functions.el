@@ -27,20 +27,33 @@
         (old-filename (buffer-file-name)))
     (if (not old-filename)
         (message "Buffer '%s' is not visiting a file!" name)
-        (progn
-          (rename-file name new-filename bang)
-          (if (get-buffer new-filename)
-              (kill-buffer new-filename)
-              )
-          (rename-buffer new-filename)
-          (set-visited-file-name new-filename)
-          (set-buffer-modified-p nil)
+      (progn
+        (rename-file name new-filename bang)
+        (if (get-buffer new-filename)
+            (kill-buffer new-filename)
           )
+        (rename-buffer new-filename)
+        (set-visited-file-name new-filename)
+        (set-buffer-modified-p nil)
         )
       )
     )
+  )
+
+(evil-define-command robenkleene/evil-remove ()
+  "Kill the current buffer and deletes the file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (vc-backend filename)
+          (vc-delete-file filename)
+        (progn
+          (delete-file filename)
+          (message "Deleted file %s" filename)
+          (kill-buffer))))))
 
 (evil-ex-define-cmd "Rename" 'robenkleene/evil-rename)
+(evil-ex-define-cmd "Remove" 'robenkleene/evil-remove)
 
 (provide 'robenkleene-evil-functions)
 ;;; robenkleene-evil-functions.el ends here
