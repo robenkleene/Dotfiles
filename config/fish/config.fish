@@ -69,6 +69,8 @@ function vim-pipe-grep
   vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
 end
 abbr -a vpg='vim-pipe-grep'
+# pbpaste Vim
+abbr -a ppv='pbpaste | vim -'
 
 # fzf
 function fzf-cd
