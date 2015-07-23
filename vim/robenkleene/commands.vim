@@ -30,6 +30,7 @@ if exists("*synstack")
   " Echo Syntax Colors
   command! EchoSyntaxColors :echo <SID>SyntaxColors()
 endif
+" Also remember `:XtermColorTable`
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
