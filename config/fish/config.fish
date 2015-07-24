@@ -92,18 +92,18 @@ end
 abbr -a ob='fzf-cd-bookmark'
 # Choose file to open with fzf
 function fzf-ec
-  sh -c "emacsclient -t \$(/usr/local/bin/fzf)"
+  sh -c "emacsclient -t \"\$(/usr/local/bin/fzf)\""
 end
 # Choose file to open with fzf
 function fzf-vim
-  sh -c "vim \$(/usr/local/bin/fzf)"
+  sh -c "vim \"\$(/usr/local/bin/fzf)\""
 end
 # fzf reveal
 function fzf-reveal
-  sh -c "open -R \$(/usr/local/bin/fzf)"
+  sh -c "open -R \"\$(/usr/local/bin/fzf)\""
 end
 function fzf-open
-  sh -c "open \$(/usr/local/bin/fzf)"
+  sh -c "open \"\$(/usr/local/bin/fzf)\""
 end
 # fzf git
 function fzf-git-reveal-diff
