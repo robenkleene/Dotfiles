@@ -81,7 +81,7 @@ function fzf-cd
   rm -f $TMPDIR/fzf.result
 end
 # cd to bookmark
-set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/
+set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/ ~/Dropbox/Text/
 function fzf-cd-bookmark
   printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
@@ -102,6 +102,10 @@ end
 function fzf-reveal
   sh -c "open -R \$(/usr/local/bin/fzf)"
 end
+function fzf-open
+  sh -c "open \$(/usr/local/bin/fzf)"
+end
+# fzf git
 function fzf-git-reveal-diff
   git diff --name-only | fzf | xargs open -R
 end
