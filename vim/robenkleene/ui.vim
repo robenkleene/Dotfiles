@@ -43,10 +43,12 @@ nohlsearch
 " Notes for working with colors:
 " `XtermColorTable` displays the hex colors a terminal equivalents
 " `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
+" Or use my command `:RunColorTest`
 if !has('gui_running')
   " Colorscheme
   set background=dark
-  colorscheme jellybeans
+  " colorscheme jellybeans
+  colorscheme tir_black
 
   " Background {{{2
   let s:bgcolor = 'NONE'
@@ -69,8 +71,11 @@ if !has('gui_running')
 
   " Highlight {{{2
   " BG: #005f87 
-  let s:highlightbgcolor = '24'
-  let s:highlightfgcolor = 'white'
+  " let s:highlightbgcolor = '24'
+  " let s:highlightfgcolor = 'white'
+  let s:highlightbgcolor = '236'
+  let s:highlightfgcolor = 'NONE'
+
   let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
   for group in s:highlightgroups
     exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
@@ -87,18 +92,22 @@ if !has('gui_running')
           \ s:selectionfgcolor
   endfor
   " Search {{{3
-  highlight IncSearch ctermfg=240 ctermbg=white
-  highlight Search cterm=NONE ctermfg=white ctermbg=240
+  " highlight IncSearch ctermfg=240 ctermbg=white
+  " highlight Search cterm=NONE ctermfg=white ctermbg=240
+  highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
+  highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
   " StatusLine {{{2
   " BG: #afdfff
-  highlight StatusLine ctermbg=153 ctermfg=black
-  " NC StatusLine bg is gutter color
-  highlight StatusLineNC ctermfg=lightgray ctermbg=238
+  " highlight StatusLine ctermbg=153 ctermfg=black
+  " highlight StatusLineNC ctermfg=lightgray ctermbg=238
+  highlight StatusLine ctermbg=white ctermfg=darkgrey
+  highlight StatusLineNC ctermfg=236 ctermbg=lightgray
 
 
   " ColorColumn {{{2
-  highlight ColorColumn ctermbg=238
+  " highlight ColorColumn ctermbg=238
+  highlight ColorColumn ctermbg=236
   " Tildes
   highlight NonText ctermfg=darkgray
 
