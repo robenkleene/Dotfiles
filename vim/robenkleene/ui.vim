@@ -73,7 +73,7 @@ if !has('gui_running')
   " BG: #005f87 
   " let s:highlightbgcolor = '24'
   " let s:highlightfgcolor = 'white'
-  let s:highlightbgcolor = '236'
+  let s:highlightbgcolor = '237'
   let s:highlightfgcolor = 'NONE'
 
   let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
@@ -102,12 +102,12 @@ if !has('gui_running')
   " highlight StatusLine ctermbg=153 ctermfg=black
   " highlight StatusLineNC ctermfg=lightgray ctermbg=238
   highlight StatusLine ctermbg=white ctermfg=darkgrey
-  highlight StatusLineNC ctermfg=236 ctermbg=lightgray
+  highlight StatusLineNC ctermfg=237 ctermbg=lightgray
 
 
   " ColorColumn {{{2
   " highlight ColorColumn ctermbg=238
-  highlight ColorColumn ctermbg=236
+  highlight ColorColumn ctermbg=237
   " Tildes
   highlight NonText ctermfg=darkgray
 
