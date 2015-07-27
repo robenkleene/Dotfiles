@@ -7,6 +7,7 @@ set vertical-split = no
 
 bind status T !@git difftool 
 bind main T !@git difftool %(commit)^!
+bind generic r refresh
 
 # Diff
 # Below will work even if tig is opened from a subfolder, but it fails if the path has a space
@@ -27,10 +28,6 @@ bind status F !@open --reveal %(file)
 # Copying Hashes
 bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
 
-# Vim
-bind generic <Ctrl-B> move-page-up
-bind generic <Ctrl-F> move-page-down
-
 # Emacs
 bind generic <Ctrl-V> move-page-down
 
@@ -39,8 +36,8 @@ bind generic <Ctrl-V> move-page-down
 # bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
 
 # Vim
-
-
+bind generic <Ctrl-B> move-page-up
+bind generic <Ctrl-F> move-page-down
 bind generic b none
 bind generic f move-page-down
 bind generic b move-page-up
@@ -55,9 +52,8 @@ bind generic gg move-first-line
 bind main    G  none
 bind generic G  move-last-line
 
-bind generic gh view-help
-
 bind generic v  none
+bind generic gh view-help
 bind generic gm view-main
 bind generic gd view-diff
 bind generic gl view-log
@@ -70,3 +66,8 @@ bind generic gu view-stage
 bind generic gy view-stash
 bind generic gg view-grep
 bind generic gp view-pager
+
+# Colors
+# Make the focused split clearer
+color title-focus black white bold
+
