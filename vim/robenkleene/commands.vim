@@ -1,6 +1,6 @@
 " vim:foldmethod=marker
 
-" Commands {{{1
+" Colors
 if exists("*synstack")
   " Syntax Groups
   function! s:SyntaxGroups()
@@ -34,6 +34,7 @@ endif
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
+" Quit and save contents of buffer to the clipboard
 command! -bang Q
       \ execute "%w !pbcopy" |
       \ if <bang>1 |
@@ -42,3 +43,19 @@ command! -bang Q
       \   execute "q<bang>" |
       \ endif
 
+" Populate the args list from the quickfix list
+" Note that a patch was submitted that might make this feature
+" command unnecessary in a future version of Vim
+" Source
+" http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim
+" Patch
+" https://groups.google.com/forum/#!msg/vim_dev/dfyt-G6SMec/_6h8pDUpeZMJ
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
