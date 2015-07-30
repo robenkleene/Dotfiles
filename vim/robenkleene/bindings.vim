@@ -4,7 +4,6 @@
 
 " `C-G` to `<Esc>` like Emacs
 nnoremap <C-g> <Esc>
-let g:surround_no_insert_mappings = 1
 inoremap <C-g> <Esc>
 vnoremap <C-g> <Esc>
 " rsi plugin handles this
