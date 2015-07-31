@@ -44,6 +44,8 @@ bind generic b move-page-up
 bind generic h scroll-left
 bind generic j move-down
 bind generic k move-up
+bind generic <Down> move-down
+bind generic <Up> move-up
 bind generic l scroll-right
 
 bind generic g  none
