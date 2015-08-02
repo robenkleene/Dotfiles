@@ -178,6 +178,7 @@ end
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
+abbr -a gpbo='git-push-branch-origin'
 
 function git-diff-files-added-since-commit
   git diff --name-only HEAD $argv[1]
