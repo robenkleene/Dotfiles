@@ -7,7 +7,7 @@ set colorcolumn=80
 
 " Highlight cursor line
 " set cursorline 
-" Show cursorline in active window
+" Show cursorline only in active window
 augroup cursor_line_active_window
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
