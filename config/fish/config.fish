@@ -70,7 +70,7 @@ function vim-pipe-grep
 end
 abbr -a vpg='vim-pipe-grep'
 # pbpaste Vim
-abbr -a ppv='pbpaste | vim -'
+abbr -a pbv='pbpaste | vim -'
 
 # fzf
 function fzf-cd
