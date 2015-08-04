@@ -62,8 +62,8 @@ function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 # Open unmerged files
-function vim-git-unmerged
-  sh -c "vim \$(git diff --name-only --diff-filter=U)"
+function vim-git-dirty
+  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
 end
 function vim-pipe-grep
   vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
@@ -180,14 +180,6 @@ function git-push-branch-origin
 end
 abbr -a gpbo='git-push-branch-origin'
 
-function git-diff-files-added-since-commit
-  git diff --name-only HEAD $argv[1]
-end
-
-function git-log-name-only
-  git log --name-only
-end
-
 function git-checkout-branch-origin
   git checkout -b $argv[1] origin/$argv[1]
 end
@@ -200,22 +192,13 @@ function git-difftool-commit-minus-one
   git difftool $argv[1] $argv[1]~1
 end
 
-function git-remote-remove-origin
-  git remote rm origin
-end
-
-function git-remote-add-origin
-  git remote add origin $argv
-end
-
-function git-diff-binary-as-text
-  git diff --text $argv
-end
-
 function git-log-unpushed-commits
   git log @\{u\}..
 end
 
+function git-diff-dirty
+  git diff --name-only --diff-filter=UM
+end
 # egit
 function egitn
   set --local EGITNEXT (egit -n)
