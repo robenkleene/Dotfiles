@@ -23,7 +23,7 @@ let $PATH='/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/:' . $PATH
 syntax on
 
 " Use system clipboard by default
-set clipboard=unnamed 
+" set clipboard=unnamed 
 
 " Leader
 let mapleader=" "
