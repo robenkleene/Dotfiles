@@ -3,8 +3,8 @@
 ;;; Code:
 
 ;; Use bash for external scripts
-(setq shell-file-name "bash")
-(setq shell-command-switch "-ic")
+(setq shell-file-name "sh")
+(setq shell-command-switch "-c")
 
 ;; Save temporary files to tmp directory
 (setq auto-save-file-name-transforms
