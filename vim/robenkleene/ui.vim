@@ -101,8 +101,8 @@ if !has('gui_running')
   " BG: #afdfff
   " highlight StatusLine ctermbg=153 ctermfg=black
   " highlight StatusLineNC ctermfg=lightgray ctermbg=238
-  highlight StatusLine ctermbg=white ctermfg=darkgrey
-  highlight StatusLineNC ctermfg=237 ctermbg=lightgray
+  highlight StatusLine ctermbg=white ctermfg=242
+  highlight StatusLineNC ctermfg=237 ctermbg=249
 
 
   " ColorColumn {{{2
