@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+;; This allows `C-z' to suspend
+(defvar evil-toggle-key)
+(setq evil-toggle-key "")
+
 (require 'robenkleene-evil-functions)
 (require 'use-package)
 (use-package evil

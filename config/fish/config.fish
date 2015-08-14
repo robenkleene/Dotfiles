@@ -1,4 +1,4 @@
-# Start abbrevations here so they can be added to later
+set --erase fish_greeting
 
 # Environment Variables
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
@@ -38,7 +38,7 @@ abbr -a nud='nvm use default'
 # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
-# Open Emacsclient
+# Emacsclient
 function ec
   emacsclient -t $argv
 end
@@ -48,13 +48,20 @@ function is-emacs-server-running
 end
 # Display a greeting message if the server is running
 if is-emacs-server-running
-  set fish_greeting "Emacs server is running"
+  echo Emacs server is running
 else
-  set fish_greeting
 end
 function emacs-stop-server
   emacsclient -e '(kill-emacs)'
 end
+
+# tmux
+# Echo running sessions if there are any
+if tmux ls >/dev/null 2>/dev/null
+  echo tmux sessions
+  tmux ls
+end
+
 
 # Vim
 abbr -a vp='vimpager'

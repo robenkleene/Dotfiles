@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Use bash for external scripts
+(setq shell-file-name "sh")
+(setq shell-command-switch "-c")
+
 ;; Save temporary files to tmp directory
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))

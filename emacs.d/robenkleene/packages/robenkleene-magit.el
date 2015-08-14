@@ -3,6 +3,8 @@
 ;;; Code:
 
 (require 'use-package)
+;; A bit of a hack to load this here, but many things fail with undefined `magit-blame-mode' without this
+(require 'magit-blame)
 
 (use-package magit
   :ensure t
@@ -10,6 +12,10 @@
          ("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup)
          )
+  :config
+  (progn
+    (setq magit-push-always-verify nil)
+    )
   )
 
 (provide 'robenkleene-magit)

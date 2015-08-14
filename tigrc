@@ -60,7 +60,6 @@ bind generic G  move-last-line
 
 bind generic v  none
 bind generic H view-help
-bind generic gh view-help
 bind generic gm view-main
 bind generic gd view-diff
 bind generic gl view-log

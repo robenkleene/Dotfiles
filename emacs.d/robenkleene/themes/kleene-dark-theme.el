@@ -10,7 +10,7 @@
   '(
       ;;; Basic
     ("transparent-background" . "unspecified-bg")
-    ("solid-background" . "#444444")
+    ("solid-background" . "color-237")
 
     ;; Diff
     ("diff-added-foreground" . "brightgreen")
@@ -18,12 +18,13 @@
     ("diff-changed-foreground" . "brightcyan")
 
     ;; Text Colors
-    ("light-text-foreground" . "#b2b2b2")
+    ("light-text-foreground" . "color-249")
     ("dark-text-foreground" . solid-background)
-    ("inactive-text" . solid-background)
+    ("inactive-text" . "color-241")
+    ("header-text" . "brightwhite")
     ("metadata-text" . "#ff8700")
     ("completion-text" . diff-changed-foreground)
-    ("comment-text" . solid-background)
+    ("comment-text" . inactive-text)
 
     ;; Errors & Warnings
     ("error-background" . diff-removed-foreground)
@@ -33,8 +34,8 @@
     ("warning-foreground" . "brightyellow")
 
     ;; Highlight
-    ("highlight-background" . "#005f87")
-    ("highlight-foreground" . "brightwhite")
+    ("highlight-background" . "color-237")
+    ("highlight-foreground" . nil)
 
     ;; Prompt
     ("prompt-background" . "#87d787")
@@ -44,18 +45,18 @@
     ("link-text" . "#5EAFD7")
 
     ;; Modeline & Windows
-    ("modeline-active-background" . "#afd7ff")
-    ("modeline-active-foreground" . dark-text-foreground)
+    ("modeline-active-background" . "color-242")
+    ("modeline-active-foreground" . header-text)
     ("modeline-inactive-background" . solid-background)
     ("modeline-inactive-foreground" . light-text-foreground)
 
     ;; Selection or Region
-    ("region-background" . "#585858")
+    ("region-background" . "color-240")
     ("region-foreground" . light-text-foreground)
 
     ;; Search
-    ("search-background" . region-background)
-    ("search-foreground" . highlight-foreground)
+    ("search-background" . nil)
+    ("search-foreground" . header-text)
     ("search-replacement" . completion-text)
 
     ;; File lists
@@ -113,10 +114,10 @@
    `(show-paren-mismatch ((t (:foreground ,error-text))))
 
    ;; Search
-   `(isearch ((t (:foreground ,search-foreground :background ,search-background))))
+   `(isearch ((t (:foreground ,search-foreground :background ,search-background :underline t))))
    `(isearch-fail ((t (:foreground ,error-text :background nil))))
    ;; Matches other then the current one
-   `(lazy-highlight ((t (:foreground ,search-foreground :background ,search-background))))
+   `(lazy-highlight ((t (:foreground ,search-foreground :background ,search-background :underline t))))
    ;; Evil
    `(evil-ex-substitute-replacement ((t (:foreground ,search-replacement :background ,search-background :underline nil))))
 
@@ -167,12 +168,12 @@
    
    ;;; Magit
    ;; Normal
-   `(magit-branch-current ((t (:foreground ,highlight-foreground :background nil :bold t))))
+   `(magit-branch-current ((t (:foreground ,header-text :background nil :bold t))))
    `(magit-branch-local ((t (:inherit magit-branch-current))))
    `(magit-branch-remote ((t (:inherit magit-branch-current))))
-   `(magit-section-heading ((t (:foreground ,highlight-foreground :background nil :underline t :bold t))))
+   `(magit-section-heading ((t (:foreground ,header-text :background nil :underline t :bold t))))
    `(magit-diff-file-heading ((t (:foreground ,file-text :background nil :underline nil ))))
-   `(magit-diff-hunk-heading ((t (:foreground ,highlight-foreground :background nil))))
+   `(magit-diff-hunk-heading ((t (:foreground ,header-text :background nil))))
    `(magit-diff-added ((t (:inherit diff-added))))
    `(magit-diff-removed ((t (:inherit diff-removed))))
    `(magit-diff-context ((t (:foreground ,inactive-text))))
@@ -255,12 +256,12 @@
    `(org-document-info-keyword ((t (:foreground "#ffaf5f" :background "#6c6c6c"))))
    `(org-archived ((t (:slant italic))))
    `(org-checkbox ((t (:background "#c6c6c6" :foreground "#4e4e4e"
-                                        :box (:line-width 1 :style released-button)))))
+                                   :box (:line-width 1 :style released-button)))))
    `(org-date ((t (:foreground "#afd7ff" :underline t))))
    `(org-done ((t (:bold t :weight bold :foreground ,prompt-foreground :background ,prompt-background
-                              :box (:line-width 1 :style none)))))
+                         :box (:line-width 1 :style none)))))
    `(org-todo ((t (:bold t :weight bold :foreground "#a40000" :background "#ffaf87"
-                              :box (:line-width 1 :style none)))))
+                         :box (:line-width 1 :style none)))))
    `(org-level-1 ((t (:foreground ,link-text))))
    `(org-level-2 ((t (:foreground ,prompt-background))))
    `(org-level-3 ((t (:foreground "#ff8700"))))
@@ -391,9 +392,9 @@
    `(company-scrollbar-fg ((t (:background ,light-text-foreground))))
    `(company-tooltip ((t (:background ,solid-background :foreground ,light-text-foreground))))
    `(company-tooltip-annotation ((t (:background ,solid-background :foreground ,metadata-text))))
-   `(company-tooltip-common ((t (:background ,solid-background :foreground ,highlight-foreground :bold t))))
+   `(company-tooltip-common ((t (:background ,solid-background :foreground ,header-text :bold t))))
    `(company-tooltip-common-selection ((t (:background ,highlight-background :inherit company-tooltip-common))))
-   `(company-tooltip-selection ((t (:background ,highlight-background :foreground ,highlight-foreground))))
+   `(company-tooltip-selection ((t (:background ,highlight-background :foreground ,header-text))))
    ;; Uncustomized
    `(company-echo ((t (:background nil :foreground "#c6c6c6"))))
    `(company-echo-common ((t (:foreground ,completion-text))))
@@ -613,7 +614,7 @@
    `(eshell-prompt ((t (:foreground ,prompt-background :background ,transparent-background :bold t))))
 
    ;; Comint prompt (Shell)
-   `(comint-highlight-input ((t (:foreground ,highlight-foreground :bold t))))
+   `(comint-highlight-input ((t (:foreground ,header-text :bold t))))
    `(comint-highlight-prompt ((t (:foreground ,prompt-background :background ,transparent-background :bold t))))
 
    ;; which-function-mode
@@ -855,11 +856,11 @@
 
    ;; Custom
    `(custom-button ((t (:background "#afd7ff" :foreground ,highlight-background
-                                         :box (:line-width 1 :style released-button)))))
+                                    :box (:line-width 1 :style released-button)))))
    `(custom-button-mouse ((t (:background "#d7d7ff" :foreground "#4e4e4e"
-                                               :box (:line-width 1 :style released-button)))))
+                                          :box (:line-width 1 :style released-button)))))
    `(custom-button-pressed ((t (:foreground "#4e4e4e" :background "#c6c6c6"
-                                                 :box (:line-width 1 :style pressed-button)))))
+                                            :box (:line-width 1 :style pressed-button)))))
 
    ;; Hydra
    `(hydra-face-red ((t (:foreground "#ff4b4b"))))
