@@ -12,6 +12,10 @@
          ("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup)
          )
+  :config
+  (progn
+    (setq magit-push-always-verify nil)
+    )
   )
 
 (provide 'robenkleene-magit)
