@@ -179,7 +179,7 @@ abbr -a gur='git pull --rebase'
 abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
 
 function git-reveal-diff
-  git diff --name-only | xargs open -R
+  git diff --name-only -z | xargs -0 open -R
 end
 
 function git-push-branch-origin
