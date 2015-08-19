@@ -59,3 +59,7 @@ function! QuickfixFilenames()
   endfor
   return join(values(buffer_numbers))
 endfunction
+
+" Save and Restore Session State
+command! SaveState :mksession! ~/.vim/vim_session
+command! RestoreState :source ~/.vim/vim_session
