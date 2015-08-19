@@ -66,13 +66,9 @@ if !has('gui_running')
   for group in s:guttergroups
     exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
   endfor
-  " FG: #444444
   highlight LineNr ctermfg=238
 
   " Highlight {{{2
-  " BG: #005f87 
-  " let s:highlightbgcolor = '24'
-  " let s:highlightfgcolor = 'white'
   let s:highlightbgcolor = '237'
   let s:highlightfgcolor = 'NONE'
 
@@ -92,21 +88,16 @@ if !has('gui_running')
           \ s:selectionfgcolor
   endfor
   " Search {{{3
-  " highlight IncSearch ctermfg=240 ctermbg=white
-  " highlight Search cterm=NONE ctermfg=white ctermbg=240
   highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
   highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
   " StatusLine {{{2
-  " BG: #afdfff
-  " highlight StatusLine ctermbg=153 ctermfg=black
-  " highlight StatusLineNC ctermfg=lightgray ctermbg=238
   highlight StatusLine ctermbg=white ctermfg=242
   highlight StatusLineNC ctermfg=237 ctermbg=249
-
+  highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
+  highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
   " ColorColumn {{{2
-  " highlight ColorColumn ctermbg=238
   highlight ColorColumn ctermbg=237
   " Tildes
   highlight NonText ctermfg=darkgray
