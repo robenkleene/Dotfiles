@@ -75,9 +75,8 @@ function! s:MakeShebangFilesExecutable()
 endfunction
 augroup executable_files
   autocmd!
-  autocmd BufWritePost *.sh :call <SID>MakeShebangFilesExecutable()
+  autocmd BufWritePost *.sh,*.rb :call <SID>MakeShebangFilesExecutable()
 augroup END
-
 
 " Languages {{{1
 
