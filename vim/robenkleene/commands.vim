@@ -61,5 +61,5 @@ function! QuickfixFilenames()
 endfunction
 
 " Save and Restore Session State
-command! SaveState :mksession! ~/.vim/vim_session
-command! RestoreState :source ~/.vim/vim_session
+command! SaveSession :mksession! ~/.vim/vim_session
+command! RestoreSession :source ~/.vim/vim_session
