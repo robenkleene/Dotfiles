@@ -23,7 +23,6 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-sensible'
@@ -31,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
+" Colors
 Plugin 'guns/xterm-color-table.vim'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
@@ -38,6 +38,8 @@ end
 " Languages
 Plugin 'dag/vim-fish'
 Plugin 'keith/swift.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
 
