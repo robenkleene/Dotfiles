@@ -68,10 +68,6 @@ abbr -a vp='vimpager'
 function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
 end
-# Open unmerged files
-function vim-git-dirty
-  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
-end
 function vim-pipe-grep
   vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
 end
@@ -206,6 +202,12 @@ end
 function git-diff-dirty
   git diff --name-only --diff-filter=UM
 end
+
+# Open unmerged files in Vim
+function git-vim-dirty
+  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
+end
+
 # egit
 function egitn
   set --local EGITNEXT (egit -n)
