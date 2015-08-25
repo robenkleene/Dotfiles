@@ -8,6 +8,8 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
+(if window-system
+    (load-theme 'wombat))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-emacs)
