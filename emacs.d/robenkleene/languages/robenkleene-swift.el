@@ -15,7 +15,7 @@
     ;; Add map to mode
     (defvar swift-mode-map)
     (declare-function evil-declare-key "evil")
-    (evil-declare-key 'motion swift-mode-map (kbd ",") robenkleene/swift-leader-map)
+    (evil-declare-key 'motion swift-mode-map (kbd "\\") robenkleene/swift-leader-map)
     )
 
   )

@@ -39,7 +39,7 @@
 
     ;; Add Map to mode
     (declare-function evil-declare-key "evil")
-    (evil-declare-key 'motion js2-mode-map (kbd ",") robenkleene/javascript-leader-map)
+    (evil-declare-key 'motion js2-mode-map (kbd "\\") robenkleene/javascript-leader-map)
 
     ;; Node REPL
     (use-package nodejs-repl

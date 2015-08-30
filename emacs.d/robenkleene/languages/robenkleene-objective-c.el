@@ -12,7 +12,7 @@
      ;; Add map to mode
      (defvar objc-mode-map)
      (declare-function evil-declare-key "evil")
-     (evil-declare-key 'motion objc-mode-map (kbd ",") robenkleene/objc-leader-map)
+     (evil-declare-key 'motion objc-mode-map (kbd "\\") robenkleene/objc-leader-map)
      )
   )
 

@@ -38,8 +38,8 @@
 
      ;; Add map to mode
      (declare-function evil-declare-key "evil")
-     (evil-declare-key 'motion emacs-lisp-mode-map (kbd ",") robenkleene/emacs-lisp-leader-map)
-     (evil-declare-key 'motion lisp-interaction-mode-map (kbd ",") robenkleene/emacs-lisp-leader-map)
+     (evil-declare-key 'motion emacs-lisp-mode-map (kbd "\\") robenkleene/emacs-lisp-leader-map)
+     (evil-declare-key 'motion lisp-interaction-mode-map (kbd "\\") robenkleene/emacs-lisp-leader-map)
      )
   )
 
