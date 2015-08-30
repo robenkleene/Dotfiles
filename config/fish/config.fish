@@ -93,13 +93,17 @@ function fzf-cd-bookmark
   rm -f $TMPDIR/fzf.result
 end
 abbr -a ob='fzf-cd-bookmark'
-# Choose file to open with fzf
+# fzf emacs
 function fzf-ec
   sh -c "emacsclient -t \"\$(/usr/local/bin/fzf)\""
 end
-# Choose file to open with fzf
+# fzf vim
 function fzf-vim
   sh -c "vim \"\$(/usr/local/bin/fzf)\""
+end
+# fzf mate
+function fzf-mate
+  sh -c "mate \"\$(/usr/local/bin/fzf)\""
 end
 # fzf reveal
 function fzf-reveal
