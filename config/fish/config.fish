@@ -242,6 +242,9 @@ end
 function -
   cd -
 end
+function n
+  new-terminal-here
+end
 
 # Ranger
 function ranger-cd
