@@ -120,6 +120,7 @@ end
 function fzf-xcode
   find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | xargs open
 end
+abbr -a ox='fzf-xcode'
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
