@@ -116,6 +116,10 @@ end
 function fzf-git-reveal-diff
   git diff --name-only | fzf | xargs open -R
 end
+# fzf Xcode
+function fzf-xcode
+  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | xargs open
+end
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
