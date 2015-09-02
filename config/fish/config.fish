@@ -114,11 +114,11 @@ function fzf-open
 end
 # fzf git
 function fzf-git-reveal-diff
-  git diff --name-only | fzf | xargs open -R
+  git diff --name-only | fzf | tr '\n' '\0' | xargs -0 open -R
 end
 # fzf Xcode
 function fzf-xcode
-  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | xargs open
+  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | tr '\n' '\0' | xargs -0 open
 end
 abbr -a ox='fzf-xcode'
 
