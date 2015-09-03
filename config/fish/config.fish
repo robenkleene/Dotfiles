@@ -250,6 +250,9 @@ end
 function n
   new-terminal-here
 end
+function x
+  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | head -n 1 | tr '\n' '\0' | xargs -0 open
+end
 
 # Ranger
 function ranger-cd
