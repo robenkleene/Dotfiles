@@ -105,6 +105,7 @@ end
 function fzf-mate
   sh -c "mate \"\$(/usr/local/bin/fzf)\""
 end
+abbr -a om='fzf-mate'
 # fzf reveal
 function fzf-reveal
   sh -c "open -R \"\$(/usr/local/bin/fzf)\""
