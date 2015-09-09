@@ -83,6 +83,7 @@ function fzf-cd
   commandline -f repaint
   rm -f $TMPDIR/fzf.result
 end
+abbr -a fcd='fzf-cd'
 # cd to bookmark
 set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/ ~/Dropbox/Text/
 function fzf-cd-bookmark
