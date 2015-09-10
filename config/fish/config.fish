@@ -111,6 +111,7 @@ abbr -a om='fzf-mate'
 function fzf-reveal
   sh -c "open -R \"\$(/usr/local/bin/fzf)\""
 end
+abbr -a fr='fzf-reveal'
 function fzf-open
   sh -c "open \"\$(/usr/local/bin/fzf)\""
 end
