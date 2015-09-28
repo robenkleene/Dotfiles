@@ -93,7 +93,7 @@ function fzf-cd-bookmark
   commandline -f repaint
   rm -f $TMPDIR/fzf.result
 end
-abbr -a ob='fzf-cd-bookmark'
+abbr -a fcd='fzf-cd-bookmark'
 # fzf emacs
 function fzf-ec
   sh -c "emacsclient -t \"\$(/usr/local/bin/fzf)\""
@@ -106,7 +106,7 @@ end
 function fzf-mate
   sh -c "mate \"\$(/usr/local/bin/fzf)\""
 end
-abbr -a om='fzf-mate'
+abbr -a fm='fzf-mate'
 # fzf reveal
 function fzf-reveal
   sh -c "open -R \"\$(/usr/local/bin/fzf)\""
@@ -123,7 +123,7 @@ end
 function fzf-xcode
   find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | tr '\n' '\0' | xargs -0 open
 end
-abbr -a ox='fzf-xcode'
+abbr -a fx='fzf-xcode'
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
