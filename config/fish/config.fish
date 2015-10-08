@@ -298,7 +298,7 @@ end
 
 # BBEdit
 function bbf
-  bbfind --grep --gui $argv .
+  bbfind --grep --gui --case-sensitive $argv .
 end
 
 function bbff
