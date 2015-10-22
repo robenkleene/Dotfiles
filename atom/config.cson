@@ -9,6 +9,7 @@
     disabledPackages: [
       "metrics"
       "exception-reporting"
+      "vim-mode"
       "emmet"
     ]
   editor:
