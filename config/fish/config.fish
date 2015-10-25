@@ -301,6 +301,10 @@ function bbf
   bbfind --grep --gui --case-sensitive $argv .
 end
 
+function bbfi
+  bbfind --grep --gui $argv .
+end
+
 function bbff
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
 end
