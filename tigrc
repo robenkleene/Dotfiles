@@ -20,6 +20,7 @@ bind status E !@sh -c "mate --async '%(file)'"
 # Editing
 bind status O !@open %(file)
 bind status A !@atom %(file)
+bind status X !@open -a Xcode %(file)
 bind status F !@open --reveal %(file)
 
 # Launchbar
