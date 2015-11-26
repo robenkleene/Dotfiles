@@ -1,2 +1,3 @@
 --type-set=maxpat=.maxpat
 --ignore-file=match:tags
+--ignore-dir=bundle
