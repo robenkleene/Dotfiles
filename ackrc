@@ -1,3 +1,4 @@
 --type-set=maxpat=.maxpat
+--type-set=swift=.swift
 --ignore-file=match:tags
 --ignore-dir=bundle
