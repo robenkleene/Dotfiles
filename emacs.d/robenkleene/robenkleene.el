@@ -56,5 +56,6 @@
 (require 'robenkleene-ruby)
 (require 'robenkleene-objective-c)
 (require 'robenkleene-swift)
+(require 'robenkleene-common-lisp)
 
 ;;; robenkleene.el ends here
