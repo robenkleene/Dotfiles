@@ -115,6 +115,7 @@ abbr -a fr='fzf-reveal'
 function fzf-open
   sh -c "open \"\$(/usr/local/bin/fzf)\""
 end
+abbr -a fo='fzf-open'
 # fzf git
 function fzf-git-reveal-diff
   git diff --name-only | fzf | tr '\n' '\0' | xargs -0 open -R
