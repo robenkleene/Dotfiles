@@ -1,10 +1,6 @@
 "*":
-  "exception-reporting":
-    userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
-  welcome:
-    showOnStartup: false
-  metrics:
-    userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
+  Zen: {}
+  "autocomplete-plus": {}
   core:
     disabledPackages: [
       "metrics"
@@ -15,11 +11,16 @@
   editor:
     invisibles: {}
     lineHeight: 1.2
+  "exception-reporting":
+    userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
   linter:
     subtleLinterErrors: [
       "jshint"
       "scss-lint"
     ]
+  "linter-jshint": {}
+  metrics:
+    userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
   "toggle-packages":
     togglePackages: [
       "vim-mode"
@@ -28,9 +29,8 @@
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-  Zen: {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
-  "linter-jshint": {}
-  "autocomplete-plus": {}
+  welcome:
+    showOnStartup: false
