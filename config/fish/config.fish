@@ -188,6 +188,9 @@ abbr -a gsi='git submodule init'
 abbr -a gsu='git submodule update'
 abbr -a gur='git pull --rebase'
 abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a gtl='git stash list'
+abbr -a gta='git stash apply'
+abbr -a gtp='git stash pop'
 
 function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
