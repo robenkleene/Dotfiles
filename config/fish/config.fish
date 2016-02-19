@@ -126,6 +126,9 @@ function fzf-xcode
 end
 abbr -a fx='fzf-xcode'
 
+# Find
+abbr -a fn='find . -name'
+
 # Atom
 set -x ATOM_PATH $HOME/Applications/
 set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
