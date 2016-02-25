@@ -203,6 +203,7 @@ abbr -a gpbo='git-push-branch-origin'
 function git-checkout-branch-origin
   git checkout -b $argv[1] origin/$argv[1]
 end
+abbr -a gcobo='git-checkout-branch-origin'
 
 function git-push-origin-delete
   git push origin --delete $argv[1]
