@@ -235,6 +235,10 @@ function git-vim-dirty
   sh -c "vim \$(git diff --name-only --diff-filter=UM)"
 end
 
+function git-difftool-commit-minus-one
+  git difftool $argv[1] $argv[1]~1
+end
+
 # egit
 function egitn
   set --local EGITNEXT (egit -n)
