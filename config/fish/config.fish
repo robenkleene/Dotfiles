@@ -219,8 +219,9 @@ function git-remote-prune-origin
 end
 
 function git-difftool-commit-minus-one
-  git difftool $argv[1] $argv[1]~1
+  git difftool $argv[1]~1 $argv[1]
 end
+abbr -a gdtcmo='git-difftool-commit-minus-one'
 
 function git-log-unpushed-commits
   git log @\{u\}..
