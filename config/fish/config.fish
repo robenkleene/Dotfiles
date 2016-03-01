@@ -324,6 +324,10 @@ function bbff
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
 end
 
+# Gem
+function gem-update-no-doc
+  gem update --no-ri --no-rdoc 
+end
 
 # wcsearch
 # function sea
