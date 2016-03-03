@@ -35,6 +35,8 @@ bind generic <Ctrl-V> move-page-down
 # Magit
 bind status s status-update
 bind stage <Enter> edit
+bind stage } :/^@@
+bind stage { :?^@@
 
 # Debugging
 # bind status Z !sh -c 'cat %(file)'
