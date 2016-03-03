@@ -240,6 +240,11 @@ function git-stash-apply
 end
 abbr -a gta='git-stash-apply'
 
+function git-stash-show
+  git stash show stash@\{$argv[1]\} $argv[2..-1]
+end
+abbr -a gts='git-stash-show'
+
 # Open unmerged files in Vim
 function git-vim-dirty
   sh -c "vim \$(git diff --name-only --diff-filter=UM)"
