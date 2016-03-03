@@ -230,18 +230,29 @@ function git-diff-dirty
 end
 
 # Git Stash
+function git-stash-command
+  set cmd[1] "git stash $argv[1]"
+  set -e argv[1]
+  if [ $argv[1] ]
+    set cmd $cmd stash@\\\{$argv[1]\\\}
+    set -e argv[1]
+    set cmd $cmd $argv
+  end
+  eval $cmd
+end
+
 function git-stash-pop
-  git stash pop stash@\{$argv[1]\}
+  git-stash-command "pop" $argv
 end
 abbr -a gtp='git-stash-pop'
 
 function git-stash-apply
-  git stash apply stash@\{$argv[1]\}
+  git-stash-command "apply" $argv
 end
 abbr -a gta='git-stash-apply'
 
 function git-stash-show
-  git stash show stash@\{$argv[1]\} $argv[2..-1]
+  git-stash-command "show" $argv
 end
 abbr -a gts='git-stash-show'
 
