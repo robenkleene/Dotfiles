@@ -188,8 +188,6 @@ abbr -a gsu='git submodule update'
 abbr -a gur='git pull --rebase'
 abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
 abbr -a gtl='git stash list'
-abbr -a gta='git stash apply'
-abbr -a gtp='git stash pop'
 
 function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
@@ -230,6 +228,17 @@ end
 function git-diff-dirty
   git diff --name-only --diff-filter=UM
 end
+
+# Git Stash
+function git-stash-pop
+  git stash pop stash@\{$argv[1]\}
+end
+abbr -a gtp='git-stash-pop'
+
+function git-stash-apply
+  git stash apply stash@\{$argv[1]\}
+end
+abbr -a gta='git-stash-apply'
 
 # Open unmerged files in Vim
 function git-vim-dirty
@@ -280,11 +289,8 @@ function ranger-cd
     if [ (cat $tempfile) != (pwd) ]
       cd (cat $tempfile)
     end
-end
-rm -f $tempfile
-end
-function fish_user_key_bindings
-  bind \co 'ranger-cd ; fish_prompt'
+  end
+  rm -f $tempfile
 end
 function r
   ranger-cd
