@@ -13,6 +13,9 @@ exclude = "{$exclude,tags}"
 [ "{zshrc,vimrc}" ] 
 fileType = "source.tm-properties" 
 
+[ Fastlane ] 
+fileType = "source.ruby" 
+
 [ *.coffee ]
 tabSize = 2  
 softTabs = true
