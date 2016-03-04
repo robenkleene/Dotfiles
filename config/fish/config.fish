@@ -256,6 +256,11 @@ function git-stash-show
 end
 abbr -a gts='git-stash-show'
 
+function git-stash-drop
+  git-stash-command "drop" $argv
+end
+abbr -a gtd='git-stash-drop'
+
 # Open unmerged files in Vim
 function git-vim-dirty
   sh -c "vim \$(git diff --name-only --diff-filter=UM)"
