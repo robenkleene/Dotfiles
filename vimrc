@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
+Plugin 'justinmk/vim-sneak'
 " Colors
 Plugin 'guns/xterm-color-table.vim'
 if has('lua')
@@ -51,6 +52,7 @@ source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
 
 " Source Plugins {{{1
+source ~/.vim/robenkleene/plugins/sneak.vim
 source ~/.vim/robenkleene/plugins/surround.vim
 if has('lua')
   source ~/.vim/robenkleene/plugins/neocomplete.vim
