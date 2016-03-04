@@ -41,8 +41,8 @@ bind stage } :/^@@
 bind stage { :?^@@
 bind stage ] none
 bind stage [ none
-bind stage ]c :/^[+|-]
-bind stage [c :?^[+|-]
+bind stage ]c :/^[+|-][^+-]
+bind stage [c :?^[+|-][^+-]
 
 # Debugging
 # bind status Z !sh -c 'cat %(file)'
