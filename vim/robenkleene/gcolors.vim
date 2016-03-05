@@ -3,17 +3,20 @@ colorscheme ir_black
 set background=dark
 " Background
 let s:bgcolor = 'gray12'
-let s:backgroundgroups = ['CursorColumn', 
+let s:backgroundgroups = ['CursorColumn', 'LineNr',
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
 for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
+" Set line numbers to comment color
+highlight LineNr guifg=#7c7c7c
+
 highlight CursorLine guibg=NONE
-" Line Numbers
+
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
-let s:gutterfgbggroups = ['LineNr', 'StatusLineNC']
+let s:gutterfgbggroups = ['StatusLineNC']
 let s:gutterbggroups = ['CursorLineNr', 'ColorColumn', 'Cursorline']
 for group in s:gutterfgbggroups
     exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
