@@ -1,5 +1,3 @@
-" vim:foldmethod=marker
-
 " Startup {{{1
 
 if &shell =~# 'fish$'

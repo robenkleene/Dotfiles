@@ -1,5 +1,7 @@
 " Colors {{{1
 
+" Colorscheme {{{2
+
 " Notes for working with colors:
 " `XtermColorTable` displays the hex colors a terminal equivalents
 " `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
@@ -7,7 +9,6 @@
 " Colorscheme
 set background=dark
 colorscheme tir_black
-
 " tir_black bug fixes
 " For some reason "blue" display weird in console vim when it overlaps with the
 " highlighted cursorline (test this by running `RunColorTest` and then going
@@ -15,7 +16,6 @@ colorscheme tir_black
 " this)
 hi rubyControl ctermfg=lightblue
 hi rubyInterpolationDelimiter ctermfg=lightblue
-
 
 " Background {{{2
 let s:bgcolor = 'NONE'
@@ -69,13 +69,18 @@ highlight ColorColumn ctermbg=237
 " Tildes
 highlight NonText ctermfg=darkgray
 
+" Warning Message {{{2
+highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
+
 " Vimdiff Colors {{{2
 highlight DiffAdd ctermfg=green ctermbg=darkgreen
 highlight DiffDelete ctermfg=red ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
 highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
-" Git Gutter Colors {{{2
+" Plugins {{{2
+
+" Git Gutter Colors {{{3
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=lightblue
 highlight GitGutterDelete ctermfg=red
@@ -86,11 +91,8 @@ highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
 highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
 highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 
-" Syntastic Colors {{{2
+" Syntastic Colors {{{3
 highlight SyntasticErrorSign ctermfg=red
 highlight SyntasticWarningSign ctermfg=yellow
 highlight SyntasticStyleWarningSign ctermfg=yellow
 " highlight SyntasticErrorLine ctermbg=red
-
-" Warning Message {{{2
-highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
