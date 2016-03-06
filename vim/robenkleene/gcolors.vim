@@ -12,18 +12,18 @@ endfor
 " Set line numbers to comment color
 highlight LineNr guifg=#7c7c7c
 
-highlight CursorLine guibg=NONE
-
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
 let s:gutterfgbggroups = ['StatusLineNC']
-let s:gutterbggroups = ['CursorLineNr', 'ColorColumn', 'Cursorline']
+let s:gutterbggroups = ['ColorColumn', 'CursorLine']
 for group in s:gutterfgbggroups
-    exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
-                \ s:gutterfgcolor
+  exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
+        \ s:gutterfgcolor
 endfor
+highlight CursorLineNr guifg=NONE guibg=gray20
+
 for group in s:gutterbggroups
-    exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
+  exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
 endfor
 " Selection
 let s:selectionbgcolor = 'lightblue'
@@ -66,3 +66,6 @@ highlight SyntasticStyleWarningSign guifg=yellow
 " highlight SyntasticErrorLine guibg=red
 " Warning Message
 highlight WarningMsg guifg=white guibg=red gui=bold
+
+
+
