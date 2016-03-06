@@ -1,11 +1,12 @@
-" Color Scheme
+" Graphic Color {{{1
+
 colorscheme ir_black
 set background=dark
-" Background
+
+" Background {{{2
 " let s:bgcolor = 'gray15'
 " let s:bgcolor = '#232323'
-let s:bgcolor = '#0B0225'
-
+let s:bgcolor = '#0E032B'
 let s:backgroundgroups = ['CursorColumn', 'LineNr',
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
