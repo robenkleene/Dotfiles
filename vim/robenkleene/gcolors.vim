@@ -49,21 +49,21 @@ highlight Search gui=NONE
 
 " StatusLine {{{2
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
-" NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=#7c7c7c
 
+" Column Guide {{{2
+" highlight ColorColumn guibg=gray20
 " Tildes {{{2
 highlight NonText guifg=DarkGray
+
+" Warning Message {{{2
+highlight WarningMsg guifg=white guibg=red gui=bold
+
 " Diff {{{2
 highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
 highlight DiffDelete gui=NONE guifg=red guibg=darkred
 highlight DiffChange gui=NONE guifg=NONE guibg=NONE
 highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
-" highlight DiffChange gui=NONE guifg=brown guibg=yellow
-" highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
-
-" Warning Message {{{2
-highlight WarningMsg guifg=white guibg=red gui=bold
 
 " Plugins {{{2
 

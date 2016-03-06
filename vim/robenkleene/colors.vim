@@ -62,6 +62,8 @@ highlight Search cterm=underline ctermfg=white ctermbg=NONE
 " Status Line {{{2
 highlight StatusLine ctermbg=white ctermfg=242
 highlight StatusLineNC ctermfg=237 ctermbg=249
+
+" Tabs {{{2
 highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
