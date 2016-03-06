@@ -67,7 +67,8 @@ highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
 " Column Guide {{{2
 highlight ColorColumn ctermbg=237
-" Tildes
+
+" Tildes {{{2
 highlight NonText ctermfg=darkgray
 
 " Warnings {{{2

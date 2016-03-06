@@ -1,5 +1,6 @@
-" Graphic Color {{{1
+" Graphic Colors {{{1
 
+" Color Scheme {{{2
 colorscheme ir_black
 set background=dark
 
@@ -13,9 +14,11 @@ let s:backgroundgroups = ['CursorColumn', 'LineNr',
 for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
-" Set line numbers to comment color
+
+" Line Numbers {{{2
 highlight LineNr guifg=#7c7c7c
 
+" Column Guide & Cursor Line {{{2
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
 let s:gutterfgbggroups = ['StatusLineNC']
@@ -29,7 +32,8 @@ highlight CursorLineNr guifg=NONE guibg=gray20
 for group in s:gutterbggroups
   exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
 endfor
-" Selection
+
+" Visual Selection {{{2
 let s:selectionbgcolor = 'lightblue'
 let s:selectionfgcolor = 'black'
 let s:selectiongroups = ['Search', 'Wildmenu']
@@ -38,22 +42,32 @@ for group in s:selectiongroups
                 \ s:selectionfgcolor
 endfor
 highlight Visual guifg=white guibg=darkcyan
+
+" Search {{{2
 highlight IncSearch guifg=darkcyan guibg=white
 highlight Search gui=NONE
-" StatusLine
+
+" StatusLine {{{2
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
 " NC StatusLine bg is gutter color
 highlight StatusLineNC guifg=#7c7c7c
-" Tildes
+
+" Tildes {{{2
 highlight NonText guifg=DarkGray
-" Diff 
+" Diff {{{2
 highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
 highlight DiffDelete gui=NONE guifg=red guibg=darkred
 highlight DiffChange gui=NONE guifg=NONE guibg=NONE
 highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
 " highlight DiffChange gui=NONE guifg=brown guibg=yellow
 " highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
-" Git Gutter Colors
+
+" Warning Message {{{2
+highlight WarningMsg guifg=white guibg=red gui=bold
+
+" Plugins {{{2
+
+" Git Gutter {{{3
 highlight GitGutterAdd guifg=green
 highlight GitGutterChange guifg=lightblue
 highlight GitGutterDelete guifg=red
@@ -63,13 +77,9 @@ highlight GitGutterDeleteDefault guibg=NONE guifg=red
 highlight GitGutterAddInvisible guibg=NONE guifg=green
 highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
 highlight GitGutterDeleteInvisible guibg=NONE guifg=red
-" Syntastic Colors
+
+" Syntastic Colors {{{3
 highlight SyntasticErrorSign guifg=red
 highlight SyntasticWarningSign guifg=yellow
 highlight SyntasticStyleWarningSign guifg=yellow
 " highlight SyntasticErrorLine guibg=red
-" Warning Message
-highlight WarningMsg guifg=white guibg=red gui=bold
-
-
-
