@@ -27,7 +27,7 @@ bind status F !@open --reveal %(file)
 # bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
 
 # Copying Hashes
-bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
+# bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
 
 # Emacs
 bind generic <Ctrl-V> move-page-down
@@ -49,6 +49,8 @@ bind stage [c :?^[+|-][^+-]
 # bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
 
 # Vim
+# Below doesn't work, looking for where of canceling out of command line prompt
+# bind generic <Ctrl-G> prompt
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down
 bind generic b none
