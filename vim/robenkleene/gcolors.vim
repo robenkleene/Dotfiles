@@ -2,7 +2,10 @@
 colorscheme ir_black
 set background=dark
 " Background
-let s:bgcolor = 'gray12'
+" let s:bgcolor = 'gray15'
+" let s:bgcolor = '#232323'
+let s:bgcolor = '#0B0225'
+
 let s:backgroundgroups = ['CursorColumn', 'LineNr',
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
