@@ -79,6 +79,9 @@ highlight DiffDelete ctermfg=red ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
 highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
+" Folding {{{2
+highlight Folded ctermfg=249 ctermbg=237
+
 " Plugins {{{2
 
 " Git Gutter {{{3
