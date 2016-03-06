@@ -50,6 +50,10 @@ highlight Search gui=underline guifg=white guibg=NONE
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
 highlight StatusLineNC guifg=#7c7c7c guibg=#333333
 
+" Tabs {{{2
+highlight TabLine gui=NONE guifg=#7c7c7c guibg=#333333
+highlight TabLineFill gui=NONE guifg=#7c7c7c guibg=#333333
+
 " Column Guide {{{2
 highlight ColorColumn guibg=gray20
 " Tildes {{{2
