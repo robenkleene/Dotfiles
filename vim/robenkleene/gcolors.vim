@@ -22,7 +22,7 @@ highlight LineNr guifg=#7c7c7c
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
 let s:gutterfgbggroups = ['StatusLineNC']
-let s:gutterbggroups = ['ColorColumn', 'CursorLine']
+let s:gutterbggroups = ['CursorLine']
 for group in s:gutterfgbggroups
   exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
         \ s:gutterfgcolor
@@ -52,7 +52,7 @@ highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
 highlight StatusLineNC guifg=#7c7c7c
 
 " Column Guide {{{2
-" highlight ColorColumn guibg=gray20
+highlight ColorColumn guibg=gray20
 " Tildes {{{2
 highlight NonText guifg=DarkGray
 
