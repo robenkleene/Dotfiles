@@ -83,6 +83,7 @@ highlight DiffChange ctermfg=NONE ctermbg=NONE
 highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
 " Folding {{{2
+" Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
 
 " Plugins {{{2

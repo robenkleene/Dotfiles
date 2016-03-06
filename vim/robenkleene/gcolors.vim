@@ -48,7 +48,7 @@ highlight Search gui=underline guifg=white guibg=NONE
 
 " StatusLine {{{2
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
-highlight StatusLineNC guifg=#7c7c7c
+highlight StatusLineNC guifg=#7c7c7c guibg=#333333
 
 " Column Guide {{{2
 highlight ColorColumn guibg=gray20
@@ -63,6 +63,10 @@ highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
 highlight DiffDelete gui=NONE guifg=red guibg=darkred
 highlight DiffChange gui=NONE guifg=NONE guibg=NONE
 highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
+
+" Folding {{{2
+" Same as inactive status line
+highlight Folded guifg=#7c7c7c guibg=#333333
 
 " Plugins {{{2
 
