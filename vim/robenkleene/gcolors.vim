@@ -18,7 +18,7 @@ endfor
 " Line Numbers {{{2
 highlight LineNr guifg=#7c7c7c
 
-" Column Guide & Cursor Line {{{2
+" Cursor Line {{{2
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
 let s:gutterfgbggroups = ['StatusLineNC']
@@ -28,7 +28,6 @@ for group in s:gutterfgbggroups
         \ s:gutterfgcolor
 endfor
 highlight CursorLineNr guifg=NONE guibg=gray20
-
 for group in s:gutterbggroups
   exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
 endfor
@@ -44,8 +43,8 @@ endfor
 highlight Visual guifg=white guibg=darkcyan
 
 " Search {{{2
-highlight IncSearch guifg=darkcyan guibg=white
-highlight Search gui=NONE
+highlight IncSearch gui=underline guifg=white guibg=NONE
+highlight Search gui=underline guifg=white guibg=NONE
 
 " StatusLine {{{2
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
