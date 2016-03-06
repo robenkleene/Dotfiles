@@ -6,8 +6,8 @@ set background=dark
 
 " Background {{{2
 " let s:bgcolor = 'gray15'
-" let s:bgcolor = '#232323'
-let s:bgcolor = '#0E032B'
+let s:bgcolor = '#232323'
+" let s:bgcolor = '#0E032B'
 let s:backgroundgroups = ['CursorColumn', 'LineNr',
             \ 'NonText', 'SpecialKey', 'VertSplit',
             \ 'Normal', 'FoldColumn', 'SignColumn'] 
