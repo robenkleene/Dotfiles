@@ -8,6 +8,15 @@
 set background=dark
 colorscheme tir_black
 
+" tir_black bug fixes
+" For some reason "blue" display weird in console vim when it overlaps with the
+" highlighted cursorline (test this by running `RunColorTest` and then going
+" to the `blue` or `darkblue` lines. Changes these colors to another fixes
+" this)
+hi rubyControl ctermfg=lightblue
+hi rubyInterpolationDelimiter ctermfg=lightblue
+
+
 " Background {{{2
 let s:bgcolor = 'NONE'
 let s:backgroundgroups = ['CursorColumn', 
