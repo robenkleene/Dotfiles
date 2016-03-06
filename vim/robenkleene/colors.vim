@@ -1,6 +1,6 @@
 " Colors {{{1
 
-" Colorscheme {{{2
+" Color Scheme {{{2
 
 " Notes for working with colors:
 " `XtermColorTable` displays the hex colors a terminal equivalents
@@ -35,7 +35,7 @@ for group in s:guttergroups
 endfor
 highlight LineNr ctermfg=238
 
-" Highlight {{{2
+" Cursor Line & Wild Menu {{{2
 let s:highlightbgcolor = '237'
 let s:highlightfgcolor = 'NONE'
 
@@ -45,7 +45,7 @@ for group in s:highlightgroups
         \ s:highlightfgcolor
 endfor
 
-" Selection {{{2
+" Visual Selection {{{2
 " BG: #b2b2b2 FG: #585858
 let s:selectionbgcolor = '240'
 let s:selectionfgcolor = '249'
@@ -54,25 +54,26 @@ for group in s:selectiongroups
   exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
         \ s:selectionfgcolor
 endfor
-" Search {{{3
+
+" Search {{{2
 highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
 highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
-" StatusLine {{{2
+" Status Line {{{2
 highlight StatusLine ctermbg=white ctermfg=242
 highlight StatusLineNC ctermfg=237 ctermbg=249
 highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
-" ColorColumn {{{2
+" Column Guide {{{2
 highlight ColorColumn ctermbg=237
 " Tildes
 highlight NonText ctermfg=darkgray
 
-" Warning Message {{{2
+" Warnings {{{2
 highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
 
-" Vimdiff Colors {{{2
+" Diff {{{2
 highlight DiffAdd ctermfg=green ctermbg=darkgreen
 highlight DiffDelete ctermfg=red ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
@@ -80,7 +81,7 @@ highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
 " Plugins {{{2
 
-" Git Gutter Colors {{{3
+" Git Gutter {{{3
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=lightblue
 highlight GitGutterDelete ctermfg=red
@@ -91,7 +92,7 @@ highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
 highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
 highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 
-" Syntastic Colors {{{3
+" Syntastic {{{3
 highlight SyntasticErrorSign ctermfg=red
 highlight SyntasticWarningSign ctermfg=yellow
 highlight SyntasticStyleWarningSign ctermfg=yellow
