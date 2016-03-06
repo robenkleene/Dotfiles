@@ -39,7 +39,7 @@ highlight Search gui=NONE
 " StatusLine
 highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
 " NC StatusLine bg is gutter color
-highlight StatusLineNC guifg=DarkGray
+highlight StatusLineNC guifg=#7c7c7c
 " Tildes
 highlight NonText guifg=DarkGray
 " Diff 
