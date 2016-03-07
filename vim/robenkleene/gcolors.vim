@@ -18,6 +18,9 @@ endfor
 " Line Numbers {{{2
 highlight LineNr guifg=#7c7c7c
 
+" Wild Menu {{{2
+highlight Wildmenu guibg=lightcyan guifg=black
+
 " Cursor Line {{{2
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'

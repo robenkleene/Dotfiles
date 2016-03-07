@@ -35,15 +35,18 @@ for group in s:guttergroups
 endfor
 highlight LineNr ctermfg=238
 
-" Cursor Line & Wild Menu {{{2
+" Cursor Line {{{2
 let s:highlightbgcolor = '237'
 let s:highlightfgcolor = 'NONE'
 
-let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'Wildmenu']
+let s:highlightgroups = ['CursorLine', 'CursorLineNr']
 for group in s:highlightgroups
   exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
         \ s:highlightfgcolor
 endfor
+
+" Wild Menu {{{2
+highlight Wildmenu ctermbg=lightcyan ctermfg=black
 
 " Visual Selection {{{2
 " BG: #b2b2b2 FG: #585858
