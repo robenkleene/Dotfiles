@@ -69,7 +69,7 @@ function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 function vim-pipe-grep
-  vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -
+  vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw" -
 end
 abbr -a vpg='vim-pipe-grep'
 # pbpaste Vim
