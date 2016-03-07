@@ -54,8 +54,8 @@ highlight PmenuSel ctermfg=black ctermbg=lightcyan
 
 " Visual Selection {{{2
 " BG: #b2b2b2 FG: #585858
-let s:selectionbgcolor = '240'
-let s:selectionfgcolor = '249'
+let s:selectionbgcolor = '242'
+let s:selectionfgcolor = 'white'
 let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
   exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  

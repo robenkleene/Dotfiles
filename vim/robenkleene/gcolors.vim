@@ -21,6 +21,10 @@ highlight LineNr guifg=#7c7c7c
 " Wild Menu {{{2
 highlight Wildmenu guibg=lightcyan guifg=black
 
+" Autocomplete {{{2
+highlight Pmenu guifg=white guibg=#7c7c7c
+highlight PmenuSel guifg=black guibg=lightcyan
+
 " Cursor Line {{{2
 let s:gutterbgcolor = 'gray20'
 let s:gutterfgcolor = 'DarkGray'
@@ -36,14 +40,13 @@ for group in s:gutterbggroups
 endfor
 
 " Visual Selection {{{2
-let s:selectionbgcolor = 'lightblue'
-let s:selectionfgcolor = 'black'
-let s:selectiongroups = ['Search', 'Wildmenu']
+let s:selectionbgcolor = '#7c7c7c'
+let s:selectionfgcolor = 'white'
+let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
     exe 'highlight ' . group . ' guibg=' . s:selectionbgcolor  . ' guifg=' .  
                 \ s:selectionfgcolor
 endfor
-highlight Visual guifg=white guibg=darkcyan
 
 " Search {{{2
 highlight IncSearch gui=underline guifg=white guibg=NONE
