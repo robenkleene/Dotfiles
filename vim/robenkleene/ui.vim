@@ -13,6 +13,7 @@ augroup cursor_line_active_window
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
+
 " Disable Cursor Line in Insert Mode
 augroup disable_cursor_line
   autocmd!
@@ -24,8 +25,8 @@ augroup END
 augroup quickfix_colors
   autocmd!
   " These interfere with quickfix highlighting
-  autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
-  autocmd BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
+  autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
+  autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
 
 " Show line numbers
