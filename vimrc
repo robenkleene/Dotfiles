@@ -31,6 +31,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'justinmk/vim-sneak'
 " Colors
 Plugin 'guns/xterm-color-table.vim'
+Plugin 'ap/vim-css-color'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
 end
