@@ -48,6 +48,10 @@ endfor
 " Wild Menu {{{2
 highlight Wildmenu ctermbg=lightcyan ctermfg=black
 
+" Autocomplete {{{2
+highlight Pmenu ctermfg=white ctermbg=242
+highlight PmenuSel ctermfg=black ctermbg=lightcyan
+
 " Visual Selection {{{2
 " BG: #b2b2b2 FG: #585858
 let s:selectionbgcolor = '240'
