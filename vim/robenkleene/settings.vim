@@ -1,6 +1,8 @@
 " vim:foldmethod=marker
 
+
 " Temporary Directories {{{1
+
 " Swap File directory
 " Double-slash prevents name collusions
 let s:temporary_directory = "/tmp/vim.robenkleene/"
@@ -16,9 +18,11 @@ let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
 
 
+" Basic {{{1
+
+" Path
 let $PATH='/Users/robenkleene/.nvm/versions/node/v0.12.2/bin:' . $PATH
 
-" Basic {{{1
 " Syntax highlighting
 syntax on
 
@@ -39,7 +43,7 @@ set nowrap
 " This interferes with `ag`
 " set autochdir
 " Just autoset the directory for netrw
-let g:netrw_keepdir = 0
+" let g:netrw_keepdir = 0
 
 " Line breaks only happen on words
 set linebreak 
