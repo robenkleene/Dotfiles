@@ -61,3 +61,4 @@ if has('lua')
 end
 source ~/.vim/robenkleene/plugins/ctrlp.vim
 source ~/.vim/robenkleene/plugins/ag.vim
+source ~/.vim/robenkleene/plugins/fugitive.vim
