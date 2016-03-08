@@ -1,5 +1,3 @@
-" vim:foldmethod=marker
-
 " Colors
 if exists("*synstack")
   " Syntax Groups
