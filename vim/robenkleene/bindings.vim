@@ -3,9 +3,9 @@
 " Key Commands {{{1
 
 " `C-G` to `<Esc>` like Emacs
-nnoremap <C-g> <Esc>
-inoremap <C-g> <Esc>
-vnoremap <C-g> <Esc>
+nnoremap <C-g> <Esc>:f<CR>
+inoremap <C-g> <Esc>:f<CR>
+vnoremap <C-g> <Esc>:f<CR>
 " rsi plugin handles this
 " cnoremap <C-g> <Esc>
 
