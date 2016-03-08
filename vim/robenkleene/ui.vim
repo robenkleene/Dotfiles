@@ -44,11 +44,11 @@ set laststatus=2
 " Space Buffer
 set statusline=\ 
 " Working Directory
-set statusline+=%{fnamemodify(getcwd(),':t')}\ 
+set statusline+=%.20{fnamemodify(getcwd(),':~')}\ 
 " Truncate Marker
 set statusline+=%<
 " Filename
-set statusline+=%-.30f
+set statusline+=%.30t
 " Modified
 set statusline+=%m 
 " Filetype
