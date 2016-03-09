@@ -64,6 +64,9 @@ source ~/.vim/robenkleene/bindings.vim
 " Source Plugins {{{1
 source ~/.vim/robenkleene/plugins/sneak.vim
 source ~/.vim/robenkleene/plugins/surround.vim
+if !has('gui_running')
+  source ~/.vim/robenkleene/plugins/fzf.vim
+end
 if has('lua')
   source ~/.vim/robenkleene/plugins/neocomplete.vim
 end

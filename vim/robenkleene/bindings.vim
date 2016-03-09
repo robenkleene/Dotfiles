@@ -43,5 +43,5 @@ nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
 " Markdown link
-nnoremap <leader>l :!mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
-vnoremap <leader>l :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
+" nnoremap <leader>l :!mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
+" vnoremap <leader>l :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
