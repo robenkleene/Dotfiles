@@ -16,7 +16,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
@@ -29,12 +28,12 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'justinmk/vim-sneak'
-" Colors
-Plugin 'guns/xterm-color-table.vim'
-Plugin 'ap/vim-css-color'
 if has('lua')
   Plugin 'Shougo/neocomplete.vim'
 end
+" Colors
+Plugin 'guns/xterm-color-table.vim'
+Plugin 'ap/vim-css-color'
 " Languages
 Plugin 'dag/vim-fish'
 Plugin 'keith/swift.vim'
@@ -60,5 +59,4 @@ if has('lua')
   source ~/.vim/robenkleene/plugins/neocomplete.vim
 end
 source ~/.vim/robenkleene/plugins/ctrlp.vim
-source ~/.vim/robenkleene/plugins/ag.vim
 source ~/.vim/robenkleene/plugins/fugitive.vim
