@@ -48,7 +48,7 @@ set nowrap
 " Line breaks only happen on words
 set linebreak 
 
-" Fold Method
+" Default Fold Method
 set foldmethod=syntax
 
 " Don't Start Folded
@@ -64,7 +64,7 @@ set smartcase
 set infercase
 
 " open previews vertically
-let g:netrw_preview = 1
+" let g:netrw_preview = 1
 
 
 " Autocmd {{{1
