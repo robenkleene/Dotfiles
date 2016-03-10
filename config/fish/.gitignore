@@ -4,4 +4,3 @@
 # Except
 !.gitignore
 !config.fish
-!/nvm-wrapper
