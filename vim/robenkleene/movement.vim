@@ -1,5 +1,3 @@
-" vim:foldmethod=marker
-
 " Normalizing Movement Key Commands {{{1
 
 " Kill line

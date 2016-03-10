@@ -1,5 +1,3 @@
-" vim:foldmethod=marker
-
 " Key Commands {{{1
 
 " `C-G` to `<Esc>` like Emacs
