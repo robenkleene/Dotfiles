@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
@@ -24,7 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 " Colors {{{2
-Plug 'guns/xterm-color-table.vim'
+Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color'
 " Editing {{{2
 Plug 'justinmk/vim-sneak'
@@ -36,6 +35,7 @@ if has('lua')
 end
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 " Search {{{2
 if !has('gui_running')
   Plug 'junegunn/fzf'
