@@ -4,52 +4,50 @@ if &shell =~# 'fish$'
   set shell=bash
 endif
 
-
 " Plugins {{{1
 
-" Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+" Install Vim-Plug if it is missing
+if empty(glob("~/.vim/autoload/plug.vim"))
+  execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
 " Tim Pope {{{2
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 " Colors {{{2
-Plugin 'guns/xterm-color-table.vim'
-Plugin 'ap/vim-css-color'
+Plug 'guns/xterm-color-table.vim'
+Plug 'ap/vim-css-color'
 " Editing {{{2
-Plugin 'justinmk/vim-sneak'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
+Plug 'justinmk/vim-sneak'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/syntastic'
 if has('lua')
-  Plugin 'Shougo/neocomplete.vim'
+  Plug 'Shougo/neocomplete.vim'
 end
 " Git {{{2
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Search {{{2
 if !has('gui_running')
-  Plugin 'junegunn/fzf'
-  Plugin 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
 end
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 " Languages {{{2
-Plugin 'dag/vim-fish'
-Plugin 'keith/swift.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'vim-ruby/vim-ruby'
-call vundle#end()
-filetype plugin indent on
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+call plug#end()
 
 " Source {{{1
 source ~/.vim/robenkleene/settings.vim
