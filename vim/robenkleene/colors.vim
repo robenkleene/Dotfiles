@@ -1,6 +1,4 @@
-" Colors {{{1
-
-" Color Scheme {{{2
+" Color Scheme {{{1
 
 " Notes for working with colors:
 " `XtermColorTable` displays the hex colors a terminal equivalents
@@ -17,7 +15,7 @@ colorscheme tir_black
 hi rubyControl ctermfg=lightblue
 hi rubyInterpolationDelimiter ctermfg=lightblue
 
-" Background {{{2
+" Background {{{1
 let s:bgcolor = 'NONE'
 let s:backgroundgroups = ['CursorColumn', 
       \ 'NonText', 'SpecialKey', 'VertSplit',
@@ -27,7 +25,7 @@ for group in s:backgroundgroups
   exe 'highlight ' . group . ' ctermbg=' . s:bgcolor
 endfor
 
-" Line Numbers {{{2
+" Line Numbers {{{1
 let s:guttercolor = 'NONE'
 let s:guttergroups = ['LineNr']
 for group in s:guttergroups
@@ -35,7 +33,7 @@ for group in s:guttergroups
 endfor
 highlight LineNr ctermfg=238
 
-" Cursor Line {{{2
+" Cursor Line {{{1
 let s:highlightbgcolor = '237'
 let s:highlightfgcolor = 'NONE'
 
@@ -45,14 +43,14 @@ for group in s:highlightgroups
         \ s:highlightfgcolor
 endfor
 
-" Wild Menu {{{2
+" Wild Menu {{{1
 highlight Wildmenu ctermbg=lightcyan ctermfg=black
 
-" Autocomplete {{{2
+" Autocomplete {{{1
 highlight Pmenu ctermfg=white ctermbg=242
 highlight PmenuSel ctermfg=black ctermbg=lightcyan
 
-" Visual Selection {{{2
+" Visual Selection {{{1
 " BG: #b2b2b2 FG: #585858
 let s:selectionbgcolor = '242'
 let s:selectionfgcolor = 'white'
@@ -62,40 +60,40 @@ for group in s:selectiongroups
         \ s:selectionfgcolor
 endfor
 
-" Search {{{2
+" Search {{{1
 highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
 highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
-" Status Line {{{2
+" Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=242
 highlight StatusLineNC ctermfg=237 ctermbg=249
 
-" Tabs {{{2
+" Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
-" Column Guide {{{2
+" Column Guide {{{1
 highlight ColorColumn ctermbg=237
 
-" Tildes {{{2
+" Tildes {{{1
 highlight NonText ctermfg=darkgray
 
-" Warnings {{{2
+" Warnings {{{1
 highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
 
-" Diff {{{2
+" Diff {{{1
 highlight DiffAdd ctermfg=green ctermbg=darkgreen
 highlight DiffDelete ctermfg=red ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
 highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
-" Folding {{{2
+" Folding {{{1
 " Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
 
-" Plugins {{{2
+" Plugins {{{1
 
-" Git Gutter {{{3
+" Git Gutter {{{2
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=lightblue
 highlight GitGutterDelete ctermfg=red
@@ -106,7 +104,7 @@ highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
 highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
 highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 
-" Syntastic {{{3
+" Syntastic {{{2
 highlight SyntasticErrorSign ctermfg=red
 highlight SyntasticWarningSign ctermfg=yellow
 highlight SyntasticStyleWarningSign ctermfg=yellow
