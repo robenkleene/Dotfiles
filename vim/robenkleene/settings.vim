@@ -1,6 +1,3 @@
-" vim:foldmethod=marker
-
-
 " Temporary Directories {{{1
 
 " Swap File directory
@@ -81,6 +78,7 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.sh,*.rb :call <SID>MakeShebangFilesExecutable()
 augroup END
+
 
 " Languages {{{1
 

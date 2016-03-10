@@ -1,5 +1,3 @@
-" vim:foldmethod=marker
-
 " UI {{{1
 
 " Show 80 character bar
