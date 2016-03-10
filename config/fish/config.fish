@@ -180,6 +180,9 @@ abbr -a gl='git log'
 abbr -a gm='git merge'
 abbr -a gp='git push'
 abbr -a gpbo='git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a gpod='git push origin --delete'
+abbr -a grp='git rev-parse'
+abbr -a grph='git rev-parse HEAD'
 abbr -a gs='git status'
 abbr -a gsmi='git submodule init'
 abbr -a gsmu='git submodule update'
@@ -195,15 +198,6 @@ function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
 abbr -a gpbo='git-push-branch-origin'
-
-function git-checkout-branch-origin
-  git checkout -b $argv[1] origin/$argv[1]
-end
-abbr -a gcobo='git-checkout-branch-origin'
-
-function git-push-origin-delete
-  git push origin --delete $argv[1]
-end
 
 function git-remote-add-origin
   git remote rm origin
