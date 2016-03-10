@@ -79,7 +79,9 @@ highlight ColorColumn ctermbg=237
 highlight NonText ctermfg=darkgray
 
 " Warnings {{{1
-highlight WarningMsg ctermfg=white ctermbg=red cterm=bold
+highlight WarningMsg ctermfg=white ctermbg=darkmagenta cterm=bold
+highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
+highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 
 " Diff {{{1
 highlight DiffAdd ctermfg=green ctermbg=darkgreen
