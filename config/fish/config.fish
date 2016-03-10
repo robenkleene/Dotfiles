@@ -1,3 +1,9 @@
+# Fisherman
+set fisher_home ~/.local/share/fisherman
+set fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
+
+# Clear Greating
 set --erase fish_greeting
 
 # Environment Variables
@@ -15,21 +21,11 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
-# nvm-fish-wrapper
-set -x NVM_DIR ~/.nvm
-source ~/.config/fish/nvm-wrapper/nvm.fish
-# This is a hack to get the default nvm alias working for new shells
-# it causes a window to load slowly, all that xargs stuff when creating
-# a new window is caused by this. I can try removing it when there's a new
-# version of `nvm-wrapper`
-# if status --is-login
-# 	if test -f ~/.config/fish/nvm-wrapper/nvm.fish
-# 		if test (nvm current) = none -a -n (nvm alias default)
-# 			nvm use default 2>&1 >/dev/null
-# 		end
-# 	end
-# end
-# Temporary solution for above
+# nvm
+# Relies on `bass` as a dependency
+function nvm
+  bass source ~/.nvm/nvm.sh ';' nvm $argv
+end
 function nvm-use-default
   nvm use default
 end
@@ -370,3 +366,4 @@ end
 function hl
   highlight -O ansi "$argv[1]"
 end
+
