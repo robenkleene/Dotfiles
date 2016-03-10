@@ -1,4 +1,8 @@
-/autoload
 /.netrwhist
 /vim_session
+
+# Vim Plug
+/autoload
+/plugged
+
 
