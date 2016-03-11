@@ -141,12 +141,8 @@ set __fish_git_prompt_color_branch yellow
 
 set fish_color_comment 3a3a3a
 
-# z
-. ~/.config/fish/z.fish
-
 # Prompt
 function fish_prompt
-  z --add "$PWD"
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
   echo -n ' '
