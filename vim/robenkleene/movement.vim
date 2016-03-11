@@ -1,7 +1,16 @@
 " Normalizing Movement Key Commands {{{1
 
-" Kill line
-inoremap <C-k> <C-O>d$
+" Kill Line
+" Breaks dot command
+inoremap <silent> <C-k> <C-r>=<SID>InsertKillLine()<CR>
+function! s:InsertKillLine()
+  if col('.') > strlen(getline('.'))
+    return "\<Del>"
+  else
+    return "\<C-o>d$"
+  endif
+endfunction
+
 cnoremap <C-K> <C-\>e<SID>KillLine()<CR>
 function! s:KillLine()
   let l:cmd = getcmdline()
