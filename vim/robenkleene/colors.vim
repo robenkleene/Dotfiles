@@ -89,6 +89,42 @@ highlight DiffDelete ctermfg=red ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
 highlight DiffText ctermfg=lightblue ctermbg=darkblue
 
+" Markdown {{{1
+
+" Custom Syntax
+" Colors
+highlight markdownLinkText cterm=underline gui=underline
+highlight markdownLinkText ctermfg=110
+" highlight markdownCode ctermfg=lightgray ctermbg=237
+" highlight markdownCodeBlock ctermfg=lightgray ctermbg=237
+highlight markdownCode ctermfg=darkgray ctermbg=NONE
+highlight markdownCodeBlock ctermfg=darkgray ctermbg=NONE
+highlight markdownItalic ctermbg=white cterm=italic ctermfg=black term=italic
+highlight markdownH1 ctermfg=229
+highlight markdownH2 ctermfg=229
+highlight markdownH3 ctermfg=229
+highlight markdownH4 ctermfg=229
+highlight markdownH5 ctermfg=229
+highlight markdownH6 ctermfg=229
+
+" Groups
+highlight link markdownItalicDelimiter Comment
+highlight link markdownBoldDelimiter Comment
+highlight link markdownLinkText Keyword
+highlight link markdownBlockquote Comment
+highlight link markdownHeadingDelimiter Comment
+highlight link markdownListMarker Comment
+highlight link markdownCodeDelimiter Comment
+highlight link markdownLinkTextDelimiter Comment
+highlight link markdownLinkDelimiter Comment
+highlight link markdownUrl Comment
+highlight link markdownH1 String
+highlight link markdownH2 String
+highlight link markdownH3 String
+highlight link markdownH4 String
+highlight link markdownH5 String
+highlight link markdownH6 String
+
 " Folding {{{1
 " Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
