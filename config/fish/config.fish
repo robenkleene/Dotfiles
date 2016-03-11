@@ -102,11 +102,12 @@ end
 function fzf-vim
   sh -c "vim \"\$(/usr/local/bin/fzf)\""
 end
-function fzf-vim-lines
+function fzf-lines-vim
   ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
   cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
   rm -f $TMPDIR/fzf.result
 end
+abbr -a flv='fzf-lines-vim'
 
 # fzf mate
 function fzf-mate
