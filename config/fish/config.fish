@@ -178,7 +178,7 @@ function git-remote-prune-origin
 end
 
 function git-difftool-commit-minus-one
-  git difftool $argv[1]~1 $argv[1]
+  git difftool $argv[1]^!
 end
 
 function git-log-unpushed-commits
