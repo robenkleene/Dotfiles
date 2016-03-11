@@ -67,7 +67,9 @@ function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
 end
 function vim-pipe-grep
-  vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw" -
+  # A more portable solution:
+  # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
+  vim -c "GrepBuffer" -
 end
 abbr -a vpg='vim-pipe-grep'
 # pbpaste Vim
@@ -100,6 +102,12 @@ end
 function fzf-vim
   sh -c "vim \"\$(/usr/local/bin/fzf)\""
 end
+function fzf-vim-lines
+  ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
+  cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
+  rm -f $TMPDIR/fzf.result
+end
+
 # fzf mate
 function fzf-mate
   sh -c "mate \"\$(/usr/local/bin/fzf)\""

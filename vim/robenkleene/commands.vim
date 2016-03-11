@@ -41,6 +41,18 @@ command! -bang Q
       \   execute "q<bang>" |
       \ endif
 
+" Make the current buffer a grep buffer
+command! GrepBuffer :call <SID>GrepBuffer()
+function s:GrepBuffer()
+  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  if line('$') == 1
+    " Don't show the quickfix list if there's exactly one match
+    execute "cbuffer"
+  else
+    execute "cbuffer | cw"
+  endif
+endfunction
+
 " Populate the args list from the quickfix list
 " Note that a patch was submitted that might make this feature
 " command unnecessary in a future version of Vim
