@@ -4,3 +4,4 @@
 # Except
 !.gitignore
 !config.fish
+!abbreviations.fish
