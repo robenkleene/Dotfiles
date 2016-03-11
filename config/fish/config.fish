@@ -59,7 +59,6 @@ if tmux ls >/dev/null 2>/dev/null
   tmux ls
 end
 
-
 # Vim
 function gvim-pipe
   sh -c "cat | vim -g - > /dev/null 2>&1"
@@ -142,7 +141,12 @@ set __fish_git_prompt_color_branch yellow
 
 set fish_color_comment 3a3a3a
 
+# z
+. ~/.config/fish/z.fish
+
+# Prompt
 function fish_prompt
+  z --add "$PWD"
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
   echo -n ' '
@@ -151,13 +155,11 @@ function fish_prompt
   set_color normal
   echo -n '> '
 end
-
 function fish_right_prompt
   echo -n (__fish_git_prompt)
 end
 
 # Git
-
 function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
 end
