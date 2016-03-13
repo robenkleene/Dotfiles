@@ -98,7 +98,9 @@ function fzf-vim
 end
 function fzf-lines-vim
   ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
-  cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
+  if [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
+    cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
+  end
   rm -f $TMPDIR/fzf.result
 end
 
