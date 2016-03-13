@@ -99,7 +99,9 @@ highlight markdownLinkText ctermfg=110
 " highlight markdownCodeBlock ctermfg=lightgray ctermbg=237
 highlight markdownCode ctermfg=darkgray ctermbg=NONE
 highlight markdownCodeBlock ctermfg=darkgray ctermbg=NONE
-highlight markdownItalic ctermbg=white cterm=italic ctermfg=black term=italic
+highlight markdownItalic ctermfg=lightgreen
+highlight markdownBold ctermfg=lightgreen
+
 highlight markdownH1 ctermfg=229
 highlight markdownH2 ctermfg=229
 highlight markdownH3 ctermfg=229
