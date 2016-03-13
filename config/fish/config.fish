@@ -241,7 +241,7 @@ end
 
 # Navigation
 function o
-  open .
+  new-finder-window-here
 end
 function -
   cd -
