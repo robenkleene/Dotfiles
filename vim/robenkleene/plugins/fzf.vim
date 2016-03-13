@@ -1,4 +1,4 @@
-" nnoremap <leader>l <plug>(fzf-complete-buffer-line)
 nnoremap <leader>l :BLines<CR> 
+nnoremap <leader>f :Files<CR> 
 
 set rtp+=/usr/local/opt/fzf
