@@ -43,7 +43,7 @@ command! -bang Q
 
 " Make the current buffer a grep buffer
 command! GrepBuffer :call <SID>GrepBuffer()
-function s:GrepBuffer()
+function! s:GrepBuffer()
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if line('$') == 1
     " Don't show the quickfix list if there's exactly one match
