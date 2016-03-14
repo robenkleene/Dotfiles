@@ -84,10 +84,10 @@ highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 
 " Diff {{{1
-highlight DiffAdd ctermfg=green ctermbg=darkgreen
-highlight DiffDelete ctermfg=red ctermbg=darkred
+highlight DiffAdd ctermfg=NONE ctermbg=darkgreen
+highlight DiffDelete ctermfg=NONE ctermbg=darkred
 highlight DiffChange ctermfg=NONE ctermbg=NONE
-highlight DiffText ctermfg=lightblue ctermbg=darkblue
+highlight DiffText ctermfg=NONE ctermbg=darkblue
 
 " Markdown {{{1
 
