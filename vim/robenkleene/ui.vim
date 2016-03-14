@@ -9,7 +9,9 @@ set colorcolumn=80
 augroup cursor_line_active_window
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
+  " Don't leave disable nocursorline, otherwise the current line won't be 
+  " highlighted when using the `quickfix` list
+  " autocmd WinLeave * setlocal nocursorline
 augroup END
 
 " Disable Cursor Line in Insert Mode
