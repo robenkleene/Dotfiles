@@ -18,7 +18,8 @@ let &viewdir=s:viewdir_directory
 " Basic {{{1
 
 " Path
-let $PATH='/Users/robenkleene/.rbenv/shims:/Users/robenkleene/.rbenv/bin:/usr/local/bin:/Users/robenkleene/Development/Scripts/bin:' . $PATH
+" Setting path this way doesn't appear to do anything
+" let $PATH='~/.nvm/versions/node/v0.12.2/bin/node:~/.rbenv/shims:~/.rbenv/bin:/usr/local/bin:~/Development/Scripts/bin:' . $PATH
 
 " Syntax highlighting
 syntax on
