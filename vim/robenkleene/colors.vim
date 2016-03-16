@@ -34,7 +34,7 @@ endfor
 highlight LineNr ctermfg=238
 
 " Cursor Line {{{1
-let s:highlightbgcolor = '237'
+let s:highlightbgcolor = '236'
 let s:highlightfgcolor = 'NONE'
 
 let s:highlightgroups = ['CursorLine', 'CursorLineNr']
@@ -73,7 +73,7 @@ highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
 " Column Guide {{{1
-highlight ColorColumn ctermbg=237
+highlight ColorColumn ctermbg=236
 
 " Tildes {{{1
 highlight NonText ctermfg=darkgray
