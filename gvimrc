@@ -5,6 +5,9 @@ set macmeta
 
 " User Interface {{{1
 
+" Disable gui menus
+set guioptions+=c
+
 " Window
 if !exists("s:deja_vu") 
     set guioptions-=T " Disable toolbar
