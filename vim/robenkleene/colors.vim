@@ -26,12 +26,7 @@ for group in s:backgroundgroups
 endfor
 
 " Line Numbers {{{1
-let s:guttercolor = 'NONE'
-let s:guttergroups = ['LineNr']
-for group in s:guttergroups
-  exe 'highlight ' . group . ' ctermbg=' . s:guttercolor
-endfor
-highlight LineNr ctermfg=238
+highlight LineNr ctermbg=NONE ctermfg=236
 
 " Cursor Line {{{1
 let s:highlightbgcolor = '236'
@@ -79,7 +74,7 @@ highlight ColorColumn ctermbg=236
 highlight NonText ctermfg=darkgray
 
 " Warnings {{{1
-highlight WarningMsg ctermfg=white ctermbg=darkmagenta cterm=bold
+highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
 highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 
@@ -129,6 +124,10 @@ highlight link markdownH4 String
 highlight link markdownH5 String
 highlight link markdownH6 String
 
+" Comments {{{1
+
+highlight comment ctermfg=236
+highlight SpecialKey ctermfg=236
 " Folding {{{1
 " Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
