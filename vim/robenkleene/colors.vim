@@ -84,8 +84,8 @@ highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 
 " Diff {{{1
-highlight DiffAdd ctermfg=green ctermbg=NONE cterm=bold
-highlight DiffAdded ctermfg=green ctermbg=NONE cterm=bold
+highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
+highlight DiffAdded ctermfg=darkgreen ctermbg=NONE cterm=bold
 highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
 highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
 highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
