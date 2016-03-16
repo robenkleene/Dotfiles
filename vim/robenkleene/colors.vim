@@ -84,12 +84,12 @@ highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 
 " Diff {{{1
-highlight DiffAdd ctermfg=lightgreen ctermbg=darkgreen
-highlight DiffAdded ctermfg=lightgreen ctermbg=darkgreen
-highlight DiffDelete ctermfg=red ctermbg=darkred
-highlight DiffRemoved ctermfg=red ctermbg=darkred
-highlight DiffChange ctermfg=NONE ctermbg=NONE
-highlight DiffText ctermfg=lightblue ctermbg=darkblue
+highlight DiffAdd ctermfg=green ctermbg=NONE cterm=bold
+highlight DiffAdded ctermfg=green ctermbg=NONE cterm=bold
+highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
+highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
+highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
+highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
 
 " Markdown {{{1
 
