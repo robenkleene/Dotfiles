@@ -9,6 +9,9 @@ abbr -a nud='nvm use default'
 abbr -a vpg='vim-pipe-grep'
 abbr -a pbv='pbpaste | vim -'
 
+# Vim
+abbr -a vgm='vim-git-modified'
+
 # fzf
 abbr -a fcd='fzf-cd'
 abbr -a fcd='fzf-cd-bookmark'

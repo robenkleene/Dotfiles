@@ -69,6 +69,9 @@ function vim-pipe-grep
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   vim -c "GrepBuffer" -
 end
+function vim-git-modified
+  vim (git ls-files -m)
+end
 # pbpaste Vim
 
 # fzf
