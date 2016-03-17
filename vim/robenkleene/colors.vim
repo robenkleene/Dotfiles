@@ -100,8 +100,8 @@ highlight NonText ctermfg=237
 " Colors
 highlight markdownLinkText cterm=underline gui=underline
 highlight markdownLinkText ctermfg=110
-highlight markdownCode ctermfg=darkgray ctermbg=NONE
-highlight markdownCodeBlock ctermfg=darkgray ctermbg=NONE
+highlight markdownCode ctermfg=grey ctermbg=NONE
+highlight markdownCodeBlock ctermfg=grey ctermbg=NONE
 highlight markdownItalic cterm=bold
 highlight markdownBold cterm=bold
 
