@@ -1,4 +1,3 @@
-" vim:fdm=marker
 " General
 let g:markdown_folding = 1
 set nofoldenable

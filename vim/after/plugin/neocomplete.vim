@@ -11,7 +11,7 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Disable for some filetypes
-" augroup neocomplete_buffers
-"   autocmd!
-"   autocmd FileType markdown NeoCompleteLock
-" augroup END
+augroup neocomplete_buffers
+  autocmd!
+  autocmd FileType markdown NeoCompleteLock
+augroup END
