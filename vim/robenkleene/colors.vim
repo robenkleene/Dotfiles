@@ -63,6 +63,9 @@ highlight Search cterm=underline ctermfg=white ctermbg=NONE
 highlight StatusLine ctermbg=white ctermfg=243
 highlight StatusLineNC ctermfg=239 ctermbg=250
 
+" Mode Message {{{1
+
+highlight ModeMsg ctermfg=white ctermbg=darkmagenta cterm=bold
 " Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
