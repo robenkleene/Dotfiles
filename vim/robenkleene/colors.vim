@@ -102,6 +102,7 @@ highlight markdownLinkText cterm=underline gui=underline
 highlight markdownLinkText ctermfg=110
 highlight markdownCode ctermfg=grey ctermbg=NONE
 highlight markdownCodeBlock ctermfg=grey ctermbg=NONE
+highlight markdownListMarker ctermfg=grey
 highlight markdownItalic cterm=bold
 highlight markdownBold cterm=bold
 
@@ -118,7 +119,6 @@ highlight link markdownBoldDelimiter Comment
 highlight link markdownLinkText Keyword
 highlight link markdownBlockquote Comment
 highlight link markdownHeadingDelimiter Comment
-highlight link markdownListMarker Comment
 highlight link markdownCodeDelimiter Comment
 highlight link markdownLinkTextDelimiter Comment
 highlight link markdownLinkDelimiter Comment
