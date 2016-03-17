@@ -29,7 +29,7 @@ endfor
 highlight LineNr ctermbg=NONE ctermfg=236
 
 " Cursor Line {{{1
-let s:highlightbgcolor = '236'
+let s:highlightbgcolor = '235'
 let s:highlightfgcolor = 'NONE'
 
 let s:highlightgroups = ['CursorLine', 'CursorLineNr']
@@ -68,10 +68,7 @@ highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
 
 " Column Guide {{{1
-highlight ColorColumn ctermbg=236
-
-" Tildes {{{1
-highlight NonText ctermfg=darkgray
+highlight ColorColumn ctermbg=235
 
 " Warnings {{{1
 highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
@@ -85,6 +82,13 @@ highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
 highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
 highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
 highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
+
+" Comments & Tildes {{{1
+
+highlight comment ctermfg=darkgray
+highlight SpecialKey ctermfg=236
+highlight NonText ctermfg=236
+
 
 " Markdown {{{1
 
@@ -124,10 +128,6 @@ highlight link markdownH4 String
 highlight link markdownH5 String
 highlight link markdownH6 String
 
-" Comments {{{1
-
-highlight comment ctermfg=236
-highlight SpecialKey ctermfg=236
 " Folding {{{1
 " Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
