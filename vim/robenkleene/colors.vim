@@ -70,10 +70,11 @@ highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
 " Column Guide {{{1
 highlight ColorColumn ctermbg=236
 
-" Warnings {{{1
+" Warnings & Errors {{{1
 highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
 highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
+highlight SpellCap ctermfg=red ctermbg=NONE cterm=underline
 
 " Diff {{{1
 highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
@@ -98,8 +99,8 @@ highlight markdownLinkText cterm=underline gui=underline
 highlight markdownLinkText ctermfg=110
 highlight markdownCode ctermfg=darkgray ctermbg=NONE
 highlight markdownCodeBlock ctermfg=darkgray ctermbg=NONE
-highlight markdownItalic ctermfg=lightgreen
-highlight markdownBold ctermfg=lightgreen
+highlight markdownItalic cterm=bold
+highlight markdownBold cterm=bold
 
 highlight markdownH1 ctermfg=229
 highlight markdownH2 ctermfg=229
