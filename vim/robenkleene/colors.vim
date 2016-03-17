@@ -106,12 +106,12 @@ highlight markdownListMarker ctermfg=grey
 highlight markdownItalic cterm=bold
 highlight markdownBold cterm=bold
 
-highlight markdownH1 ctermfg=229
-highlight markdownH2 ctermfg=229
-highlight markdownH3 ctermfg=229
-highlight markdownH4 ctermfg=229
-highlight markdownH5 ctermfg=229
-highlight markdownH6 ctermfg=229
+highlight markdownH1 ctermfg=white cterm=bold
+highlight markdownH2 ctermfg=white cterm=bold
+highlight markdownH3 ctermfg=white cterm=bold
+highlight markdownH4 ctermfg=white cterm=bold
+highlight markdownH5 ctermfg=white cterm=bold
+highlight markdownH6 ctermfg=white cterm=bold
 
 " Groups
 highlight link markdownItalicDelimiter Comment
