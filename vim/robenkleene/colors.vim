@@ -29,7 +29,7 @@ endfor
 highlight LineNr ctermbg=NONE ctermfg=236
 
 " Cursor Line {{{1
-let s:highlightbgcolor = '235'
+let s:highlightbgcolor = '236'
 let s:highlightfgcolor = 'NONE'
 
 let s:highlightgroups = ['CursorLine', 'CursorLineNr']
@@ -61,14 +61,14 @@ highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=242
-highlight StatusLineNC ctermfg=237 ctermbg=249
+highlight StatusLineNC ctermfg=238 ctermbg=249
 
 " Tabs {{{1
-highlight TabLine cterm=NONE ctermbg=237 ctermfg=249
-highlight TabLineFill cterm=NONE ctermbg=237 ctermfg=249
+highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
+highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
 
 " Column Guide {{{1
-highlight ColorColumn ctermbg=235
+highlight ColorColumn ctermbg=236
 
 " Warnings {{{1
 highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
@@ -96,8 +96,6 @@ highlight NonText ctermfg=236
 " Colors
 highlight markdownLinkText cterm=underline gui=underline
 highlight markdownLinkText ctermfg=110
-" highlight markdownCode ctermfg=lightgray ctermbg=237
-" highlight markdownCodeBlock ctermfg=lightgray ctermbg=237
 highlight markdownCode ctermfg=darkgray ctermbg=NONE
 highlight markdownCodeBlock ctermfg=darkgray ctermbg=NONE
 highlight markdownItalic ctermfg=lightgreen
@@ -130,7 +128,7 @@ highlight link markdownH6 String
 
 " Folding {{{1
 " Same as inactive status line
-highlight Folded ctermfg=249 ctermbg=237
+highlight Folded ctermfg=249 ctermbg=238
 
 " Plugins {{{1
 
