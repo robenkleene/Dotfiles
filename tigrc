@@ -22,7 +22,7 @@ bind status O !@open %(file)
 bind status A !@atom %(file)
 bind status X !@open -a Xcode %(file)
 bind status F !@open --reveal %(file)
-
+bind status - status-update
 # Launchbar
 # bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
 
