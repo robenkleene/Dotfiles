@@ -4,4 +4,4 @@ augroup git_commands
   autocmd FileType gitcommit nnoremap <buffer> <localleader>gd :Git diff<CR>
 augroup END
 
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :tabedit %<CR>:Gstatus<CR>
