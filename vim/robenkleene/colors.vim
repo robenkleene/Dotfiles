@@ -65,7 +65,7 @@ highlight StatusLineNC ctermfg=239 ctermbg=250
 
 " Mode Message {{{1
 
-highlight ModeMsg ctermfg=white ctermbg=darkmagenta cterm=bold
+highlight ModeMsg ctermfg=black ctermbg=darkcyan cterm=bold
 " Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
