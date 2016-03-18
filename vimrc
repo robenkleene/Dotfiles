@@ -49,6 +49,8 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Tmux
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Source {{{1
