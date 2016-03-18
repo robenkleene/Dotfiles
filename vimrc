@@ -33,6 +33,7 @@ Plug 'scrooloose/syntastic'
 if has('lua')
   Plug 'Shougo/neocomplete.vim'
 end
+Plug 'Konfekt/FastFold'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
