@@ -26,7 +26,7 @@ for group in s:backgroundgroups
 endfor
 
 " Line Numbers {{{1
-highlight LineNr ctermbg=NONE ctermfg=237
+highlight LineNr ctermbg=NONE ctermfg=236
 
 " Cursor Line {{{1
 let s:highlightbgcolor = '237'
@@ -90,8 +90,8 @@ highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
 " Comments & Tildes {{{1
 
 highlight comment ctermfg=darkgray
-highlight SpecialKey ctermfg=237
-highlight NonText ctermfg=237
+highlight SpecialKey ctermfg=236
+highlight NonText ctermfg=236
 
 
 " Markdown {{{1
