@@ -7,6 +7,9 @@ vnoremap <C-g> <Esc>:f<CR>
 " rsi plugin handles this
 " cnoremap <C-g> <Esc>
 
+" Fix Y
+nnoremap Y y$
+
 " `C-y` paste like in Emacs
 cnoremap <C-y> <C-r>*
 inoremap <C-y> <C-r>*
