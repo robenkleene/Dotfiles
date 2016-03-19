@@ -118,6 +118,7 @@ highlight link markdownItalicDelimiter Comment
 highlight link markdownBoldDelimiter Comment
 highlight link markdownLinkText Keyword
 highlight link markdownFootnote Comment
+highlight link markdownFootnoteDefinition Comment
 highlight link markdownBlockquote Comment
 highlight link markdownHeadingDelimiter Comment
 highlight link markdownCodeDelimiter Comment
