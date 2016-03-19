@@ -48,7 +48,7 @@ set statusline+=%.20{fnamemodify(getcwd(),':~')}\
 " Truncate Marker
 set statusline+=%<
 " Filename
-set statusline+=%.30t
+set statusline+=%.40f
 " Modified
 set statusline+=%m 
 " Filetype
