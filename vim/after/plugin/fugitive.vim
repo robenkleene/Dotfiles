@@ -5,3 +5,4 @@ augroup git_commands
 augroup END
 
 nnoremap <leader>gs :tabedit %<CR>:Gstatus<CR>
+cnoreabbrev Gs Gstatus
