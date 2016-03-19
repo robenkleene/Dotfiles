@@ -14,11 +14,6 @@ inoremap <C-y> <C-r>*
 " `C-w` insert word at point like Emacs
 cnoremap <C-w> <C-R><C-W>
 
-" This is set by `sensible.vim` to `<C-L>` but that gets overriden by
-" `tmux-vim-navigator`
-" This results in <M-r>
-nnoremap <silent> <Esc>r :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-
 " vimrc
 nnoremap <leader>oi :edit ~/Dotfiles/vimrc<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
