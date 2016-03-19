@@ -312,6 +312,14 @@ function gem-update-no-doc
   gem update --no-ri --no-rdoc 
 end
 
+# Jekyll
+function jekyll-serve-drafts
+  bundle exec jekyll serve --drafts
+end
+function jekyll-build-watch-drafts
+  bundle exec jekyll build --watch --drafts
+end
+
 # wcsearch
 # function sea
 #   wcsearch $argv
