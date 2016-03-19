@@ -64,6 +64,9 @@ set infercase
 " open previews vertically
 " let g:netrw_preview = 1
 
+" Open splits in bottom right
+set splitbelow
+set splitright
 
 " Autocmd {{{1
 
@@ -79,7 +82,6 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.sh,*.rb :call <SID>MakeShebangFilesExecutable()
 augroup END
-
 
 " Languages {{{1
 
