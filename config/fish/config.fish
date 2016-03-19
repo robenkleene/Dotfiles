@@ -319,6 +319,12 @@ end
 function jekyll-build-watch-drafts
   bundle exec jekyll build --watch --drafts
 end
+function jekyll-serve
+  bundle exec jekyll serve
+end
+function jekyll-build-watch
+  bundle exec jekyll build --watch
+end
 
 # wcsearch
 # function sea
