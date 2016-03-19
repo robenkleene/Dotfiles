@@ -26,7 +26,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color'
 " Editing {{{2
-Plug 'justinmk/vim-sneak'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
@@ -65,6 +64,5 @@ source ~/.vim/robenkleene/abbreviations.vim
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/fzf.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
-source ~/.vim/robenkleene/plugin/sneak.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
