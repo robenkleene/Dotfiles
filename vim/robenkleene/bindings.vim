@@ -10,6 +10,9 @@ vnoremap <C-g> <Esc>:f<CR>
 " Fix Y
 nnoremap Y y$
 
+" Alternative exit insert mode
+inoremap jk <esc>
+
 " `C-y` paste like in Emacs
 cnoremap <C-y> <C-r>*
 inoremap <C-y> <C-r>*
