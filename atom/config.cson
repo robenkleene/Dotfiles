@@ -9,10 +9,14 @@
       "emmet"
     ]
   editor:
+    fontSize: 13
     invisibles: {}
     lineHeight: 1.2
   "exception-reporting":
     userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
+  "find-and-replace":
+    openProjectFindResultsInRightPane: true
+    scrollToResultOnLiveSearch: true
   linter:
     subtleLinterErrors: [
       "jshint"
