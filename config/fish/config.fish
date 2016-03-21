@@ -32,6 +32,7 @@ end
 function nvm-use-default
   nvm use default
 end
+set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 
 # Emacs
 # Start the server in the background if it isn't running
@@ -313,7 +314,7 @@ end
 
 # Gem
 function gem-update-no-doc
-  gem update --no-ri --no-rdoc 
+  gem update --no-ri --no-rdoc
 end
 
 # Jekyll
@@ -344,4 +345,3 @@ end
 function hl
   highlight -O ansi "$argv[1]"
 end
-
