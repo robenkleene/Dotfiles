@@ -215,6 +215,10 @@ function git-stash-show
   git-stash-command "show" $argv
 end
 
+function git-stash-diff
+  git-stash-command "show --patch" $argv
+end
+
 function git-stash-drop
   git-stash-command "drop" $argv
 end

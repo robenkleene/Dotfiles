@@ -57,7 +57,8 @@ abbr -a gdtcmo='git-difftool-commit-minus-one'
 abbr -a gtp='git-stash-pop'
 abbr -a gta='git-stash-apply'
 abbr -a gts='git-stash-show'
-abbr -a gtd='git-stash-drop'
+abbr -a gts='git-stash-show'
+abbr -a gtd='git-stash-diff'
 
 # hub
 abbr -a hb='hub browse'
