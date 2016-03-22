@@ -33,6 +33,12 @@
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'
 
+'.fuzzy-finder atom-text-editor[mini]':
+  'cmd-k up': 'pane:split-up'
+  'cmd-k down': 'pane:split-down'
+  'cmd-k left': 'pane:split-left'
+  'cmd-k right': 'pane:split-right'
+
 # Autocomplete Plus
 # ".autocomplete-plus input.hidden-input":
 #   "enter": "autocomplete-plus:confirm"
