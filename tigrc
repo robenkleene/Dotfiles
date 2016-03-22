@@ -5,25 +5,24 @@ set vertical-split = no
 # sh : Pipes aren't supported without a subshell
 # Note: Can't seem to escape double quotes, you can escape single quotes, but they behave unpredictably. Tig tokens (e.g., "%(file)") evaluate even in single quotes.
 
-bind status T !@git difftool 
-bind main T !@git difftool %(commit)^!
+# Basic
 bind generic r refresh
 
-# Diff
+# External
+bind generic O !@open %(file)
+bind generic A !@atom %(file)
+bind generic X !@open -a Xcode %(file)
+bind generic R !@open --reveal %(file)
+bind generic E !@sh -c "mate --async '%(file)'"
+bind generic D !@sh -c "git diff '%(file)' | mate --async"
+
+# Diff Tool
+bind generic T !@git difftool
+bind main T !@git difftool %(commit)^!
 # Below will work even if tig is opened from a subfolder, but it fails if the path has a space
 # bind status D !@sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\' | mate --async"
-bind status D !@sh -c "git diff '%(file)' | mate --async"
-# bind status E !@sh -c "vim -g '%(file)'"
-bind status E !@sh -c "mate --async '%(file)'"
-# bind status E !@mate %(file)
 
-# Editing
-bind status O !@open %(file)
-bind status A !@atom %(file)
-bind status X !@open -a Xcode %(file)
-bind status F !@open --reveal %(file)
-bind status - status-update
-# Launchbar
+# LaunchBar
 # bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
 
 # Copying Hashes
@@ -85,7 +84,9 @@ bind generic gy view-stash
 bind generic gg view-grep
 bind generic gp view-pager
 
+# Fugitive
+bind status - status-update
+
 # Colors
 # Make the focused split clearer
 color title-focus black white bold
-
