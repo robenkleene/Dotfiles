@@ -32,14 +32,18 @@
   "linter-jshint": {}
   metrics:
     userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
+  tabs:
+    enableVcsColoring: true
   "toggle-packages":
     togglePackages: [
       "vim-mode"
       "emmet"
     ]
   "tree-view":
+    autoReveal: true
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
+    showOnRightSide: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
