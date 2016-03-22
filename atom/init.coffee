@@ -24,83 +24,57 @@ process.env.ATOM_PATH = process.env.HOME + "/Applications/"
 
 # console.log process.env
 
-# Hide Tree View
-workspaceView = atom.views.getView(atom.workspace)
-if (workspaceView.querySelector('.tree-view'))
-  atom.commands.dispatch(workspaceView, 'tree-view:toggle')
+# Hide Tree View on Startup
+# This doesn't seem to work anymore
+# workspaceView = atom.views.getView(atom.workspace)
+# if (workspaceView.querySelector('.tree-view'))
+#   atom.commands.dispatch(workspaceView, 'tree-view:toggle')
 
 # Open in Default Application
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-in-default-application', ->
   editor = atom.workspace.getActiveTextEditor()
-  filepath = editor.getBuffer().getPath()
+  filePath = editor.getBuffer().getPath()
   exec = require('child_process').exec
-  exec "open \"#{filepath}\""
+  exec "open \"#{filePath}\""
 
 # Open in Terminal
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-in-terminal', ->
   editor = atom.workspace.getActiveTextEditor()
-  filepath = editor.getBuffer().getPath()
+  filePath = editor.getBuffer().getPath()
   path = require('path')
-  dirpath = path.dirname(filepath)
+  directoryPath = path.dirname(filePath)
   exec = require('child_process').exec
-  exec "open -a Terminal \"#{dirpath}\""
+  exec "open -a Terminal \"#{directoryPath}\""
 
 # Reveal in Finder
 atom.commands.add 'atom-text-editor', 'roben-kleene:reveal-in-finder', ->
   editor = atom.workspace.getActiveTextEditor()
-  filepath = editor.getBuffer().getPath()
+  filePath = editor.getBuffer().getPath()
   exec = require('child_process').exec
-  exec "open -R \"#{filepath}\""
+  exec "open --reveal \"#{filePath}\""
 
 # Send to LaunchBar
-atom.commands.add 'atom-text-editor', 'roben-kleene:send-to-launchbar', ->
-  editor = atom.workspace.getActiveTextEditor()
-  filepath = editor.getBuffer().getPath()
-  exec = require('child_process').exec
-  exec "osascript -e 'tell application \"LaunchBar\" to open \"#{filepath}\"'"
+# atom.commands.add 'atom-text-editor', 'roben-kleene:send-to-launchbar', ->
+#   editor = atom.workspace.getActiveTextEditor()
+#   filePath = editor.getBuffer().getPath()
+#   exec = require('child_process').exec
+#   exec "osascript -e 'tell application \"LaunchBar\" to open \"#{filePath}\"'"
 
 # Open Scratch For Scope
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
-  scratchpath = process.env.HOME + "/Development/Scratch/Temp/"
+  scratchPath = process.env.HOME + "/Development/Scratch/Source/"
   editor = atom.workspace.getActiveTextEditor()
   scope = editor.getGrammar()?.scopeName
   if scope
-    filepath = scratchpath + scope
+    filePath = scratchpath + scope
     exec = require('child_process').exec
-    exec "atom --new-window \"#{filepath}\""
+    exec "atom --new-window \"#{filePath}\""
 
-# if not atom.packages.isPackageDisabled "vim-mode"
-#   atom.workspaceView.eachEditorView (editorView) ->
-#     editorView.trigger "vim-mode:activate-insert-mode"
+atom.commands.add 'atom-text-editor', 'roben-kleene:open-project-in-new-window', ->
+  directoryPaths = atom.project.getPaths()
+  directoryPath = directoryPaths[0]
+  if directoryPath
+    exec = require('child_process').exec
+    exec "atom --new-window \"#{directoryPath}\""
 
-# Emmet
-# if !atom.packages.isPackageDisabled('emmet')
-#   atom.packages.disablePackage('emmet') # Disable on startup
-# atom.workspaceView.command 'roben-kleene:toggle-emmet', ->
-#   if atom.packages.isPackageDisabled('emmet')
-#     atom.packages.enablePackage('emmet')
-#   else
-#     atom.packages.disablePackage('emmet')
-
-# Language Specific Settings
-# Set with `.editorconfig`
-# setupGrammarForEditor = (editor) ->
-#   scope = editor.getGrammar()?.scopeName
-#   switch scope
-#     when 'source.coffee'
-#       editor.setTabLength(2)
-#     when 'source.gfm'
-#       editor.setSoftWrap(true)
-#     else
-#       editor.setTabLength(4)
-# # Call on Startup
-# atom.workspaceView.eachEditorView (editorView) ->
-#   editor = editorView.getEditor()
-#   setupGrammarForEditor(editor)
-# # Call when a grammar changes
-# atom.workspace.observeTextEditors (editor) ->
-#   grammarChangedHandler = ->
-#     setupGrammarForEditor(editor)
-#   editor.onDidChangeGrammar(grammarChangedHandler)
-#
 console.log "Hello from init.coffee!"
