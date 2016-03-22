@@ -9,17 +9,19 @@
     disabledPackages: [
       "metrics"
       "exception-reporting"
-      "vim-mode"
       "emmet"
+      "vim-mode"
     ]
   editor:
     fontSize: 12
     invisibles: {}
     lineHeight: 1.3
+    showInvisibles: true
   "exception-reporting":
     userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
   "find-and-replace":
     scrollToResultOnLiveSearch: true
+  "fuzzy-finder": {}
   linter:
     subtleLinterErrors: [
       "jshint"
