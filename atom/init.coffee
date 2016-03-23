@@ -66,7 +66,7 @@ atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
   editor = atom.workspace.getActiveTextEditor()
   scope = editor.getGrammar()?.scopeName
   if scope
-    filePath = scratchpath + scope
+    filePath = scratchPath + scope
     exec = require('child_process').exec
     exec "atom --new-window \"#{filePath}\""
 
