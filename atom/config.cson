@@ -40,7 +40,6 @@
       "emmet"
     ]
   "tree-view":
-    autoReveal: true
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     showOnRightSide: true
