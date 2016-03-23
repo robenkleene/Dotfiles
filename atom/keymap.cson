@@ -29,6 +29,7 @@
   'alt-r': 'roben-kleene:reveal-in-finder'
   'alt-t': 'roben-kleene:open-in-terminal'
   'shift-cmd-space': 'roben-kleene:send-to-launchbar'
+  'alt-cmd-n': 'roben-kleene:open-project-in-new-window'
   'alt-s': 'roben-kleene:open-scratch-for-scope'
 '.tree-view':
   'ctrl-alt-cmd-f': 'tree-view:show-in-file-manager'
