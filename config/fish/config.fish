@@ -108,6 +108,11 @@ function fzf-lines-vim
   rm -f $TMPDIR/fzf.result
 end
 
+# fzf snippets
+function fzf-snippet
+  sh -c "cat ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf) | tee /dev/tty | pbcopy"
+end
+
 # fzf mate
 function fzf-mate
   sh -c "mate \"\$(/usr/local/bin/fzf)\""
