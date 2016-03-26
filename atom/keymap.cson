@@ -40,6 +40,31 @@
   'cmd-k left': 'pane:split-left'
   'cmd-k right': 'pane:split-right'
 
+'.platform-darwin':
+  # Create an empty split pane
+  'cmd-k left':  'pane:split-left'
+  'cmd-k right': 'pane:split-right'
+  'cmd-k up':    'pane:split-up'
+  'cmd-k down':  'pane:split-down'
+
+  # Create a split pane with the current pane item moved into it
+  'cmd-k m left':  'pane:split-left-and-move-active-item'
+  'cmd-k m right': 'pane:split-right-and-move-active-item'
+  'cmd-k m up':    'pane:split-up-and-move-active-item'
+  'cmd-k m down':  'pane:split-down-and-move-active-item'
+
+  # Create a split pane with the current pane item duplicated
+  'cmd-k d left':  'pane:split-left-and-copy-active-item'
+  'cmd-k d right': 'pane:split-right-and-copy-active-item'
+  'cmd-k d up':    'pane:split-up-and-copy-active-item'
+  'cmd-k d down':  'pane:split-down-and-copy-active-item'
+
+  # Move the current pane item to the target split pane
+  'cmd-ctrl-shift-left':  'window:move-active-item-to-pane-on-left'
+  'cmd-ctrl-shift-right': 'window:move-active-item-to-pane-on-right'
+  'cmd-ctrl-shift-up':    'window:move-active-item-to-pane-above'
+  'cmd-ctrl-shift-down':  'window:move-active-item-to-pane-below'
+
 # Autocomplete Plus
 # ".autocomplete-plus input.hidden-input":
 #   "enter": "autocomplete-plus:confirm"
