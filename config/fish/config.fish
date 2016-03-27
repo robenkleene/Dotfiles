@@ -115,6 +115,13 @@ end
 function fzf-snippet-reveal
   sh -c "open -R ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
 end
+function fzf-snippet-mate
+  sh -c "mate ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+end
+function fzf-snippet-vim
+  sh -c "vim ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+end
+
 
 # fzf mate
 function fzf-mate
