@@ -23,6 +23,7 @@ abbr -a fx='fzf-xcode'
 abbr -a fb='fzf-cd-bookmark'
 abbr -a fv='fzf-vim'
 abbr -a fs='fzf-snippet'
+abbr -a fsr='fzf-snippet-reveal'
 
 # git
 abbr -a g='git'

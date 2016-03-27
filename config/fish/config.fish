@@ -112,6 +112,9 @@ end
 function fzf-snippet
   sh -c "cat ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf) | tee /dev/tty | pbcopy"
 end
+function fzf-snippet-reveal
+  sh -c "open -R ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+end
 
 # fzf mate
 function fzf-mate
