@@ -22,7 +22,6 @@
   "find-and-replace":
     focusEditorAfterSearch: true
     openProjectFindResultsInRightPane: true
-    scrollToResultOnLiveSearch: true
   "fuzzy-finder": {}
   linter:
     subtleLinterErrors: [
