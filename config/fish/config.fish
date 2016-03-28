@@ -248,6 +248,10 @@ function git-difftool-commit-minus-one
   git difftool $argv[1] $argv[1]~1
 end
 
+function git-submodule-update-recursive-init
+  git submodule update --init --recursive
+end
+
 # egit
 function egitn
   set --local EGITNEXT (egit -n)

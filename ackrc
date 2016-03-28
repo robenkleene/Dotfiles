@@ -2,6 +2,7 @@
 --type-set=storyboard=.storyboard
 --type-set=maxpat=.maxpat
 --type-set=swift=.swift
+--type-set=plist=.plist
 
 --ignore-file=match:tags
 --ignore-dir=bundle
