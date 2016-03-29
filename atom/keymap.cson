@@ -42,10 +42,10 @@
 
 '.platform-darwin':
   # Create an empty split pane
-  'cmd-k left':  'pane:split-left'
-  'cmd-k right': 'pane:split-right'
-  'cmd-k up':    'pane:split-up'
-  'cmd-k down':  'pane:split-down'
+  # 'cmd-k left':  'pane:split-left'
+  # 'cmd-k right': 'pane:split-right'
+  # 'cmd-k up':    'pane:split-up'
+  # 'cmd-k down':  'pane:split-down'
 
   # Create a split pane with the current pane item moved into it
   'cmd-k m left':  'pane:split-left-and-move-active-item'
