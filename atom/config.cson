@@ -22,7 +22,8 @@
   "find-and-replace":
     focusEditorAfterSearch: true
     openProjectFindResultsInRightPane: true
-  "fuzzy-finder": {}
+  "fuzzy-finder":
+    preserveLastSearch: true
   linter:
     subtleLinterErrors: [
       "jshint"
