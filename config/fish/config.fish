@@ -248,7 +248,7 @@ function git-difftool-commit-minus-one
   git difftool $argv[1] $argv[1]~1
 end
 
-function git-submodule-update-recursive-init
+function git-submodule-update-init-recursive
   git submodule update --init --recursive
 end
 
