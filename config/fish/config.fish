@@ -71,7 +71,7 @@ function vim-pipe-grep
   vim -c "GrepBuffer" -
 end
 function vim-git-modified
-  vim (git ls-files -m)
+  vim (git ls-files -m | uniq)
 end
 # pbpaste Vim
 
