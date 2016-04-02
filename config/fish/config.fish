@@ -76,6 +76,7 @@ end
 # pbpaste Vim
 
 # fzf
+set -x FZF_DEFAULT_COMMAND 'ag -g ""'
 function fzf-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
