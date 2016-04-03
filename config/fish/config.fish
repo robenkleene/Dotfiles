@@ -338,17 +338,19 @@ function gem-update-no-doc
 end
 
 # Jekyll
-function jekyll-serve-drafts
-  bundle exec jekyll serve --drafts
+function jekyll-build-watch
+  bundle exec jekyll build --watch
 end
 function jekyll-build-watch-drafts
   bundle exec jekyll build --watch --drafts
 end
-function jekyll-serve
-  bundle exec jekyll serve
+function jekyll-serve-watch
+  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
+  bundle exec jekyll serve --watch
 end
-function jekyll-build-watch
-  bundle exec jekyll build --watch
+function jekyll-serve-watch-drafts
+  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
+  bundle exec jekyll serve --watch --drafts
 end
 
 # wcsearch
