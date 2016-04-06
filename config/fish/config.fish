@@ -24,6 +24,10 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
+# ag
+#
+alias ag "ag --path-to-agignore ~/.agignore"
+
 # nvm
 # Relies on `bass` as a dependency
 function nvm

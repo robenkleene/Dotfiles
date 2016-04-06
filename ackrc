@@ -7,3 +7,4 @@
 --ignore-file=match:tags
 --ignore-dir=bundle
 --ignore-dir=Carthage
+--ignore-dir=node_modules
