@@ -1,5 +1,8 @@
 "*":
   Zen: {}
+  "atom-beautify":
+    general:
+      _analyticsUserId: "efe23a25-b9da-42b3-8e43-5c02b7d13b29"
   "autocomplete-plus":
     fileBlacklist: [
       "*.md"
@@ -19,9 +22,7 @@
     showInvisibles: true
   "exception-reporting":
     userId: "82cd7f15-1e6d-e5bc-38b7-7e65f7159532"
-  "find-and-replace":
-    focusEditorAfterSearch: true
-    openProjectFindResultsInRightPane: true
+  "find-and-replace": {}
   "fuzzy-finder":
     preserveLastSearch: true
   linter:
