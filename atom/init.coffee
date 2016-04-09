@@ -68,7 +68,7 @@ atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
   if scope
     filePath = scratchPath + scope
     exec = require('child_process').exec
-    exec "atom --new-window \"#{filePath}\""
+    exec "atom \"#{filePath}\""
 
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-project-in-new-window', ->
   directoryPaths = atom.project.getPaths()
