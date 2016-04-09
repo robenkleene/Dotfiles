@@ -28,7 +28,7 @@
 (global-auto-revert-mode t)
 
 ;; Highlight Cursor Line
-(global-hl-line-mode)
+;; (global-hl-line-mode)
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
