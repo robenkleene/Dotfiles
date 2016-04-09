@@ -32,6 +32,7 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
+(require 'robenkleene-swiper)
 
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
 ;; Font lock errors on startup are from `fill-column-indicator'
