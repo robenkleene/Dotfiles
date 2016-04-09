@@ -39,6 +39,9 @@
 ;; Enable Folding for Programming Modes
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
+;; Go to scratch buffer
+(setq inhibit-startup-message t)
+
 ;; Save recent file list
 (require 'recentf)
 (recentf-mode 1)
