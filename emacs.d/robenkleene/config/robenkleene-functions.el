@@ -2,6 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun robenkleene/edit-init ()
+  "Edit init."
+  (interactive)
+  (find-file "~/.emacs.d/robenkleene/robenkleene.el")
+  )
+
 (defun robenkleene/system-is-mac ()
   "Test if this is a Mac."
   (string-equal system-type "darwin"))
