@@ -5,5 +5,4 @@
 # Except
 !.gitignore
 !init.el
-!Cask
 !/robenkleene/
