@@ -7,5 +7,9 @@
 ;; Auto-refresh on file system change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
+;; Suppress error message
+(defvar dired-use-ls-dired)
+(setq dired-use-ls-dired nil)
+
 (provide 'robenkleene-dired)
 ;;; robenkleene-dired.el ends here
