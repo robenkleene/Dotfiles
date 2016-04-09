@@ -24,12 +24,14 @@
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
 (require 'robenkleene-git-gutter)
+(require 'robenkleene-ido-ubiquitous)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
+(require 'robenkleene-smex)
 
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
 ;; Font lock errors on startup are from `fill-column-indicator'
