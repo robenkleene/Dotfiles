@@ -44,5 +44,14 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;; Ido Mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; ffap
+;; Replace `C-x C-f' with `find-file-at-point' version
+(ffap-bindings)
+
 (provide 'robenkleene-emacs)
 ;;; robenkleene-emacs.el ends here
