@@ -27,9 +27,8 @@
 ;; Automatically revert unmodified buffers
 (global-auto-revert-mode t)
 
-;; Only use hl-line-mode in specific modes
+;; Highlight Cursor Line
 (global-hl-line-mode)
-(make-variable-buffer-local 'global-hl-line-mode)
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)

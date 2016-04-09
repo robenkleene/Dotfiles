@@ -49,23 +49,6 @@
     )
   )
 
-(declare-function projectile-project-p "projectile")
-(defun robenkleene/best-ag ()
-  "Best ag search."
-  (interactive)
-  (if (projectile-project-p)
-      (call-interactively 'helm-projectile-ag)
-    (call-interactively 'helm-do-ag))
-  )
-
-(defun robenkleene/best-find-file ()
-  "Best find file."
-  (interactive)
-  (if (projectile-project-p)
-      (call-interactively 'helm-projectile-find-file)
-    (call-interactively 'helm-find-files))
-  )
-
 (defun robenkleene/other-window-shell ()
   "Open shell in other window."
   (interactive)
@@ -80,7 +63,7 @@
           1 font-lock-warning-face t)))
   )
 
-(defvar robenkleene/scratch-directory-path "~/Development/Scratch/Temp/")
+(defvar robenkleene/scratch-directory-path "~/Development/Scratch/Source/")
 (defvar robenkleene/scratch-file-name "source")
 (defun robenkleene/scratch-for-buffer ()
   "Open scratch file for current buffer."
