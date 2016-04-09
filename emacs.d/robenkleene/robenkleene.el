@@ -6,16 +6,14 @@
 
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
-(load-theme 'kleene-dark t)
-(if window-system
-    (load-theme 'wombat))
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-bindings)
 (require 'robenkleene-emacs)
 (require 'robenkleene-functions)
 (require 'robenkleene-dired)
+(if window-system
+    (require 'robenkleene-gui)
+  (require 'robenkleene-terminal))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-aggressive-indent)

@@ -3,17 +3,17 @@
 ;;; Code:
 
 (require 'use-package)
-(use-package helm-projectile
+
+(use-package projectile
   :ensure t
-  :commands (helm-projectile-find-file helm-projectile-ag projectile-project-p)
-  :config
-  (progn
-    (helm-projectile-on)
-    (use-package projectile
-      :ensure t
-      )
-    )
+  :commands projectile-find-file-in-directory
+  :init
+  (bind-key "C-c f" (lambda () (interactive)
+                      (projectile-find-file-in-directory default-directory)))
+  
   )
+
+
 
 (provide 'robenkleene-projectile)
 ;;; robenkleene-projectile.el ends here
