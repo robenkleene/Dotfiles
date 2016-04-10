@@ -8,6 +8,7 @@
 (load-theme 'kleene-dark t)
 (set-face-background 'default "#232323")
 
+(add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 (setq mac-command-modifier 'control)
 (setq mac-option-modifier 'meta)
 
