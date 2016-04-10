@@ -6,6 +6,7 @@
 
 (use-package swiper
   :ensure t
+  :commands (swiper counsel-ag)
   :bind (
          ("C-c l" . swiper)
          ("C-c a" . counsel-ag)

@@ -25,6 +25,7 @@
 (require 'robenkleene-ido-ubiquitous)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
+(require 'robenkleene-evil)
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
