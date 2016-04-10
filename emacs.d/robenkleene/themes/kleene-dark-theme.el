@@ -10,18 +10,18 @@
   '(
       ;;; Basic
     ("transparent-background" . "unspecified-bg")
-    ("solid-background" . "color-237")
-
+    ("solid-background" . "#3a3a3a")
+    
     ;; Diff
-    ("diff-added-foreground" . "brightgreen")
-    ("diff-removed-foreground" . "brightred")
-    ("diff-changed-foreground" . "brightcyan")
+    ("diff-added-foreground" . "#21D726")
+    ("diff-removed-foreground" . "#E30A17")
+    ("diff-changed-foreground" . "#27E5E4")
 
     ;; Text Colors
-    ("light-text-foreground" . "color-249")
+    ("light-text-foreground" . "#B2B2B2")
     ("dark-text-foreground" . solid-background)
-    ("inactive-text" . "color-241")
-    ("header-text" . "brightwhite")
+    ("inactive-text" . "#626262")
+    ("header-text" . "#E6E5E6")
     ("metadata-text" . "#ff8700")
     ("completion-text" . diff-changed-foreground)
     ("comment-text" . inactive-text)
@@ -31,10 +31,10 @@
     ("error-text-foreground" . solid-background)
     ("error-text" . diff-removed-foreground)
     ("warning-background" . nil)
-    ("warning-foreground" . "brightyellow")
+    ("warning-foreground" . "#E5E431")
 
     ;; Highlight
-    ("highlight-background" . "color-237")
+    ("highlight-background" . "#3A3A3A")
     ("highlight-foreground" . nil)
 
     ;; Prompt
@@ -45,13 +45,13 @@
     ("link-text" . "#5EAFD7")
 
     ;; Modeline & Windows
-    ("modeline-active-background" . "color-242")
+    ("modeline-active-background" . "#6C6C6C")
     ("modeline-active-foreground" . header-text)
     ("modeline-inactive-background" . solid-background)
     ("modeline-inactive-foreground" . light-text-foreground)
 
     ;; Selection or Region
-    ("region-background" . "color-240")
+    ("region-background" . "#585858")
     ("region-foreground" . light-text-foreground)
 
     ;; Search
