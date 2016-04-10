@@ -3,9 +3,13 @@
 ;;; Code:
 
 ;; Jump to source for function
-(global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-c i") 'robenkleene/edit-init)
 (global-set-key (kbd "C-c w") 'toggle-truncate-lines)
+;; This should eventually go to `counsel-imenu' but it's not in the version of
+;; `swiper' I have yet
+(global-set-key (kbd "C-c s") 'imenu)
+(global-set-key (kbd "C-c t") 'robenkleene/open-terminal-window)
+(global-set-key (kbd "C-c r") 'robenkleene/reveal-in-finder)
 
 
 (provide 'robenkleene-bindings)
