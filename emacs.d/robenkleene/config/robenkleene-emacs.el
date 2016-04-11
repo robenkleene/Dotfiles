@@ -30,6 +30,12 @@
 ;; Highlight Cursor Line
 ;; (global-hl-line-mode)
 
+;; Add Line Numbers
+;; Note this is incompatible with git-gutter
+;; (global-linum-mode t)
+;; Offset the number by two spaces to work around some weird fringe glitch
+;; (setq linum-format "  %d ")
+
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
 
@@ -41,6 +47,13 @@
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
+
+;; Use shift arrow keys to switch windows
+;; Note for this to work by default on OS X, these new keys need to be defined
+;; in the Terminal profile:
+;; `shift cursor up: \033[1;2A'
+;; `shift cursor down: \033[1;2B'
+(windmove-default-keybindings)
 
 ;; Save recent file list
 (require 'recentf)

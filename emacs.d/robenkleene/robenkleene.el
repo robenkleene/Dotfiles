@@ -21,7 +21,8 @@
 (require 'robenkleene-company)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
-(require 'robenkleene-git-gutter)
+;; Disabling this for now beacuse I don't like how the window moves to add and remove the frame
+;; (require 'robenkleene-git-gutter)
 (require 'robenkleene-ido-ubiquitous)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
@@ -31,7 +32,10 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
-(require 'robenkleene-swiper)
+;; (require 'robenkleene-swiper)
+(require 'robenkleene-helm-ag)
+(require 'robenkleene-helm-swoop)
+(require 'robenkleene-helm)
 
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
 ;; Font lock errors on startup are from `fill-column-indicator'
