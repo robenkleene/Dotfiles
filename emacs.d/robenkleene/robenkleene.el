@@ -32,6 +32,8 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
+;; Switching back to helm for now because `swiper' doesn't handle long lines in
+;; terminal nicely
 ;; (require 'robenkleene-swiper)
 (require 'robenkleene-helm-ag)
 (require 'robenkleene-helm-swoop)
