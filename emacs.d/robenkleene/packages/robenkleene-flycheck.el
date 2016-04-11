@@ -6,7 +6,8 @@
 (use-package flycheck
   :ensure t
   :init
-  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (global-flycheck-mode)
+  (setq flycheck-display-errors-delay 0.1)
   )
 
 (provide 'robenkleene-flycheck)
