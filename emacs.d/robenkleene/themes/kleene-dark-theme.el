@@ -10,7 +10,7 @@
   '(
       ;;; Basic
     ("transparent-background" . "unspecified-bg")
-    ("solid-background" . "#3a3a3a")
+    ("solid-background" . "#4e4e4e")
     
     ;; Diff
     ("diff-added-foreground" . "#21D726")
@@ -21,7 +21,7 @@
     ("light-text-foreground" . "#B2B2B2")
     ("dark-text-foreground" . solid-background)
     ("inactive-text" . "#626262")
-    ("header-text" . "#E6E5E6")
+    ("header-text" . "#ffffff")
     ("metadata-text" . "#ff8700")
     ("completion-text" . diff-changed-foreground)
     ("comment-text" . inactive-text)
@@ -45,7 +45,7 @@
     ("link-text" . "#5EAFD7")
 
     ;; Modeline & Windows
-    ("modeline-active-background" . "#6C6C6C")
+    ("modeline-active-background" . "#767676")
     ("modeline-active-foreground" . header-text)
     ("modeline-inactive-background" . solid-background)
     ("modeline-inactive-foreground" . light-text-foreground)
@@ -109,7 +109,7 @@
    `(minibuffer-prompt ((t (:foreground ,prompt-foreground :background ,prompt-background :bold t))))
    
    ;; Paren Match
-   `(show-paren-match ((t (:underline t :foreground ,region-foreground :background ,region-background))))
+   `(show-paren-match ((t (:foreground ,region-foreground :background ,region-background))))
    ;; Does `rainbow-delimiter-mismatched-face' and `rainbow-delimiters-unmatched-face' interfere with this?
    `(show-paren-mismatch ((t (:foreground ,error-text))))
 
