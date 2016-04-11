@@ -14,7 +14,6 @@ abbr -a vgm='vim-git-modified'
 
 # fzf
 abbr -a fcd='fzf-cd'
-abbr -a fcd='fzf-cd-bookmark'
 abbr -a flv='fzf-lines-vim'
 abbr -a fm='fzf-mate'
 abbr -a fr='fzf-reveal'
