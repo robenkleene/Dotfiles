@@ -6,6 +6,10 @@ set fisher_home ~/.local/share/fisherman
 set fisher_config ~/.config/fisherman
 source $fisher_home/config.fish
 
+# fzf
+#
+source ~/.config/fish/fzf.fish
+
 # Clear Greating
 set --erase fish_greeting
 
@@ -77,78 +81,6 @@ end
 function vim-git-modified
   vim (git ls-files -m | uniq)
 end
-# pbpaste Vim
-
-# fzf
-set -x FZF_DEFAULT_COMMAND 'ag -g ""'
-function fzf-cd
-  find * -type d | fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and cd (cat $TMPDIR/fzf.result)
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
-end
-# cd to bookmark
-set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/ ~/Dropbox/Text/
-function fzf-cd-bookmark
-  printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and cd (cat $TMPDIR/fzf.result)
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
-end
-# fzf emacs
-function fzf-ec
-  sh -c "emacsclient -t \"\$(/usr/local/bin/fzf)\""
-end
-# fzf vim
-function fzf-vim
-  sh -c "vim \"\$(/usr/local/bin/fzf)\""
-end
-function fzf-lines-vim
-  ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
-  if [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-    cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
-  end
-  rm -f $TMPDIR/fzf.result
-end
-
-# fzf snippets
-function fzf-snippet
-  sh -c "cat ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf) | tee /dev/tty | pbcopy"
-end
-function fzf-snippet-reveal
-  sh -c "open -R ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
-end
-function fzf-snippet-mate
-  sh -c "mate ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
-end
-function fzf-snippet-vim
-  sh -c "vim ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
-end
-
-
-# fzf mate
-function fzf-mate
-  sh -c "mate \"\$(/usr/local/bin/fzf)\""
-end
-# fzf reveal
-function fzf-reveal
-  sh -c "open -R \"\$(/usr/local/bin/fzf)\""
-end
-function fzf-open
-  sh -c "open \"\$(/usr/local/bin/fzf)\""
-end
-# fzf git
-function fzf-git-reveal-diff
-  git diff --name-only | fzf | tr '\n' '\0' | xargs -0 open -R
-end
-# fzf Xcode
-function fzf-xcode
-  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | fzf | tr '\n' '\0' | xargs -0 open
-end
-
-# Find
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
