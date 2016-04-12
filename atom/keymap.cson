@@ -17,7 +17,7 @@
 #   'ctrl-p': 'core:move-down'
 #
 
-'atom-text-editor':
+'atom-text-editor:not(.mini)':
   'ctrl-w': 'editor:delete-to-beginning-of-word'
   'cmd-alt-w': 'editor:toggle-soft-wrap'
   'alt-v': 'core:page-up'
@@ -26,6 +26,8 @@
   'ctrl-V': 'core:select-to-bottom'
   'alt-{': 'editor:move-to-beginning-of-previous-paragraph'
   'alt-}': 'editor:move-to-beginning-of-next-paragraph'
+  'alt-<': 'core:move-to-top'
+  'alt->': 'core:move-to-bottom'
   'ctrl-cmd-O': 'roben-kleene:open-in-default-application'
   'alt-r': 'roben-kleene:reveal-in-finder'
   'alt-t': 'roben-kleene:open-in-terminal'
