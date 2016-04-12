@@ -4,9 +4,11 @@
 
 (require 'package)
 (setq package-enable-at-startup nil)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(
+                         ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")
+                         ))
 (package-initialize)
 
 ;; Bootstrap `use-package'
@@ -17,5 +19,3 @@
 (load (concat user-emacs-directory "robenkleene/robenkleene.el"))
 
 ;;; init.el ends here
-
-

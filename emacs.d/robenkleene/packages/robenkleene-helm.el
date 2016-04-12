@@ -5,6 +5,7 @@
 (require 'use-package)
 (use-package helm
   :ensure t
+  :defer t
   :config
   (progn
     (setq helm-truncate-lines t)
