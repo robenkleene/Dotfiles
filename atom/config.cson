@@ -37,6 +37,7 @@
     userId: "5977601d5d0e2c0fb47882fc311f352130f8bba8"
   tabs:
     enableVcsColoring: true
+  "todo-show": {}
   "toggle-packages":
     togglePackages: [
       "vim-mode"
