@@ -41,7 +41,6 @@ if !has('gui_running')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 end
-Plug 'rking/ag.vim'
 Plug 'bronson/vim-visual-star-search'
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
