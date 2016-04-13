@@ -51,6 +51,16 @@ nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
+" ag
+nnoremap <leader>a :!ag 
+
+" Move frames
+nnoremap <S-Down> <C-w><C-j>
+nnoremap <S-Up> <C-w><C-k>
+nnoremap <S-Right> <C-w><C-l>
+nnoremap <S-Left> <C-w><C-h>
+
+
 " Markdown link
 " nnoremap <leader>l :!mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
 " vnoremap <leader>l :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
