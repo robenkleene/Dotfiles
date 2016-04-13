@@ -119,6 +119,10 @@ function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
 end
 
+function git-cd-root
+  cd (git rev-parse --show-toplevel)
+end
+
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
