@@ -43,6 +43,10 @@ set nowrap
 " Just autoset the directory for netrw
 " let g:netrw_keepdir = 0
 
+" Show commands as they're typed
+set showcmd
+
+
 " Line breaks only happen on words
 set linebreak 
 
