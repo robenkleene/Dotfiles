@@ -52,10 +52,11 @@ nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
 " Move frames
-nnoremap <S-Down> <C-w><C-j>
-nnoremap <S-Up> <C-w><C-k>
-nnoremap <S-Right> <C-w><C-l>
-nnoremap <S-Left> <C-w><C-h>
+" Handled by `vim-tmux-navigator`
+" nnoremap <S-Down> <C-w><C-j>
+" nnoremap <S-Up> <C-w><C-k>
+" nnoremap <S-Right> <C-w><C-l>
+" nnoremap <S-Left> <C-w><C-h>
 
 
 " Markdown link

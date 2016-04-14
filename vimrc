@@ -36,11 +36,12 @@ Plug 'Konfekt/FastFold'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" Search {{{2
+" Navigation {{{2
 if !has('gui_running')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 end
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'bronson/vim-visual-star-search'
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -65,3 +66,4 @@ source ~/.vim/robenkleene/plugin/fzf.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
+source ~/.vim/robenkleene/plugin/vim-tmux-navigator.vim
