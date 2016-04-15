@@ -78,7 +78,7 @@ function vim-pipe-grep
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   vim -c "GrepBuffer" -
 end
-function vim-git-modified
+function git-vim-modified
   vim (git ls-files -m | uniq)
 end
 

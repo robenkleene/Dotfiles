@@ -5,12 +5,8 @@ set --erase fish_user_abbreviations
 # nvm
 abbr -a nud='nvm use default'
 
-# functions
+# vim
 abbr -a vpg='vim-pipe-grep'
-abbr -a pbv='pbpaste | vim -'
-
-# Vim
-abbr -a vgm='vim-git-modified'
 
 # fzf
 abbr -a fbc='fzf-bookmark-cd'
@@ -25,6 +21,7 @@ abbr -a fsc='fzf-snippet-copy'
 abbr -a fsr='fzf-snippet-reveal'
 
 # git
+abbr -a gvm='git-vim-modified'
 abbr -a g='git'
 abbr -a ga='git add'
 abbr -a gaa='git add --all :/'
