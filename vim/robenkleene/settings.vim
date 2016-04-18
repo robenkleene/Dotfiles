@@ -1,5 +1,14 @@
 " Temporary Directories {{{1
 
+" Fix arrow keys
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when xterm-keys is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
 " Swap File directory
 " Double-slash prevents name collusions
 let s:temporary_directory = "/tmp/vim.robenkleene/"
