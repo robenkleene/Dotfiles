@@ -68,6 +68,9 @@ if tmux ls >/dev/null 2>/dev/null
   echo tmux sessions
   tmux ls
 end
+function t
+  tmux $argv  
+end
 
 # Vim
 function gvim-pipe
