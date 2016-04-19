@@ -43,7 +43,7 @@ if !has('gui_running')
   Plug 'junegunn/fzf.vim'
 end
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'bronson/vim-visual-star-search'
+Plug 'nelstrom/vim-visual-star-search'
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
