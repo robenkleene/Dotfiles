@@ -81,7 +81,6 @@ bind generic gr view-refs
 bind generic gs view-status
 bind generic gu view-stage
 bind generic gy view-stash
-bind generic gg view-grep
 bind generic gp view-pager
 
 # Fugitive
