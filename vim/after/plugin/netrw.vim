@@ -15,7 +15,19 @@ endfunction
 autocmd! Network BufReadCmd file://*
 augroup follow_file_links
   autocmd!
-  autocmd BufReadCmd file:///* exe "edit /".substitute(expand("<afile>"),"file:/*","","")
-  " The bd destroys the broken buffer it opened
-  " autocmd BufReadCmd file:///* exe "bd!|edit /".substitute(expand("<afile>"),"file:/*","","")
+  " autocmd BufReadCmd file:///* call s:OpenFileURL()
+  autocmd BufNewFile file:///* call s:OpenFileURL()
 augroup END
+
+
+
+function! s:OpenFileURL()
+  let edit_command = "edit /" . substitute(expand("<afile>"),"file:/*","","")
+  execute edit_command
+  " Delete the `file:///` buffer
+  execute "bd#"
+  
+  " Restore Syntax Highlighting
+  execute "filetype detect"
+endfunction
+
