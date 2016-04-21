@@ -19,8 +19,16 @@ augroup follow_file_links
   autocmd BufNewFile file:///* call s:OpenFileURL()
 augroup END
 
+function! s:url_decode(str)
+  let str = substitute(substitute(substitute(a:str,'%0[Aa]\n$','%0A',''),'%0[Aa]','\n','g'),'+',' ','g')
+  return substitute(str,'%\(\x\x\)','\=nr2char("0x".submatch(1))','g')
+endfunction
+
 function! s:OpenFileURL()
-  let edit_command = "edit /" . substitute(expand("<afile>"),"file:/*","","")
+  let file_path = "/" . substitute(expand("<afile>"),"file:/*","","")
+  " Decode URL
+  let decoded_file_path = s:url_decode(file_path)
+  let edit_command = "edit " . fnameescape(decoded_file_path)
   " Jump back to the file so the jump list is less blocked
   execute "b#"
   " Delete the `file:///` buffer
