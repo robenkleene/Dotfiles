@@ -36,7 +36,7 @@ syntax on
 " Use system clipboard by default
 set clipboard=unnamed 
 
-" Treat `-` as a word boundary
+" Treat `_` and `-` as a word boundary
 set iskeyword-=_
 
 " Leader

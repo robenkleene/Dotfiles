@@ -62,6 +62,10 @@ function! s:GrepBuffer()
   endif
 endfunction
 
+
+" This will be built-in to Vim soon:
+" [patch 7.4.858 · vim/vim@aa23b37](https://github.com/vim/vim/commit/aa23b379421aa214e6543b06c974594a25799b09)
+" Delete this when that version of Vim is live
 " Populate the args list from the quickfix list
 " Note that a patch was submitted that might make this feature
 " command unnecessary in a future version of Vim
