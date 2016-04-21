@@ -73,8 +73,8 @@ function t
 end
 
 # Vim
-function gvim-pipe
-  sh -c "cat | vim -g - > /dev/null 2>&1"
+function vim-restore-session
+  vim -c "RestoreSession"
 end
 function vim-pipe-grep
   # A more portable solution:

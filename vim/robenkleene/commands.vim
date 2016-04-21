@@ -41,6 +41,15 @@ command! -bang Q
       \   execute "q<bang>" |
       \ endif
 
+" Quit and save session
+command! -bang Qs
+      \ execute "SaveSession" |
+      \ if <bang>1 |
+      \   execute "qa!" |
+      \ else |
+      \   execute "qa" |
+      \ endif
+
 " Make the current buffer a grep buffer
 command! GrepBuffer :call <SID>GrepBuffer()
 function! s:GrepBuffer()
