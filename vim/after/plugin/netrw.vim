@@ -25,17 +25,16 @@ function! s:url_decode(str)
 endfunction
 
 function! s:OpenFileURL()
-  let file_path = "/" . substitute(expand("<afile>"),"file:/*","","")
+  let l:file_path = "/" . substitute(expand("<afile>"),"file:/*","","")
   " Decode URL
-  let decoded_file_path = s:url_decode(file_path)
-  let edit_command = "edit " . fnameescape(decoded_file_path)
+  let l:decoded_file_path = s:url_decode(file_path)
+  let l:edit_command = "edit " . fnameescape(decoded_file_path)
   " Jump back to the file so the jump list is less blocked
   execute "b#"
   " Delete the `file:///` buffer
   execute "bd#"
   " Open the correct file
-  execute edit_command
+  execute l:edit_command
   " Restore Syntax Highlighting
   execute "filetype detect"
 endfunction
-
