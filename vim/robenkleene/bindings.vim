@@ -65,3 +65,15 @@ vnoremap <leader>m :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
 
 " Copy Path
 nnoremap <leader>p :let @*=expand("%:p")<CR>
+
+" Visual Star
+" makes * and # work on visual mode too.
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
