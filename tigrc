@@ -36,8 +36,10 @@ bind status s status-update
 bind stage <Enter> edit
 
 # Diff
-bind stage } :/^@@
-bind stage { :?^@@
+# bind stage } :/^@@
+# bind stage { :?^@@
+bind stage ]] :/^@@
+bind stage [[ :?^@@
 bind stage ] none
 bind stage [ none
 bind stage ]c :/^[+|-][^+-]
