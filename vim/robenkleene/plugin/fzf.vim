@@ -36,3 +36,8 @@ command! B :call fzf#run({
 \   'source':  <sid>RobenKleeneBookmarks(),
 \   'sink':    'Explore'
 \ })
+
+command! Modified :call fzf#run({
+\   'source':  "git ls-files -m | uniq",
+\   'sink':    'e'
+\ })
