@@ -15,3 +15,21 @@ function! s:AgVisual()
 endfunction
 
 vnoremap <leader>* :<C-u>call <SID>AgVisual()<CR>
+
+" Bookmarks
+function! s:RobenKleeneBookmarks()
+  redir => l:raw_bookmarks
+  silent echo $ROBENKLEENE_BOOKMARKS
+  redir END
+  let l:bookmarks = split(l:raw_bookmarks, ':')
+  return l:bookmarks
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+command! B :call fzf#run({
+\   'source':  <sid>RobenKleeneBookmarks(),
+\   'sink':    'Explore'
+\ })
