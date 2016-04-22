@@ -10,6 +10,7 @@ abbr -a vpg='vim-pipe-grep'
 abbr -a vrs='vim-restore-session'
 
 # fzf
+abbr -a b='fzf-bookmark-cd'
 abbr -a fbc='fzf-bookmark-cd'
 abbr -a fdc='fzf-directory-cd'
 abbr -a ffm='fzf-file-mate'

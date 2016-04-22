@@ -53,7 +53,12 @@ end
 # Bookmarks
 
 # cd to bookmark
-set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Scratch/Temp/ ~/Development/Projects/ ~/Dropbox/Text/
+# Basic
+set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Dropbox/Text/
+# Vim
+set -x RKBOOKMARKS $RKBOOKMARKS ~/Dotfiles/vim/plugged/ ~/Dotfiles/vim/robenkleene/ ~/Dotfiles/vim/after/
+# Fish
+set -x RKBOOKMARKS $RKBOOKMARKS ~/Dotfiles/config/fish/
 function fzf-bookmark-cd
   printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
   [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
