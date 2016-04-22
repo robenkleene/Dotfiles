@@ -64,6 +64,7 @@ source ~/.vim/robenkleene/abbreviations.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/fzf.vim
+source ~/.vim/robenkleene/plugin/fugitive.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
