@@ -111,9 +111,6 @@ end
 function b
   fzf-bookmark-cd
 end
-function f
-  fzf-file
-end
 function t
   tmux
 end

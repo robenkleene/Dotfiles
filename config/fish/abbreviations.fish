@@ -10,8 +10,12 @@ abbr -a vpg='vim-pipe-grep'
 abbr -a vrs='vim-restore-session'
 
 # fzf
+# Defaults
+abbr -a f='fzf-file-vim'
+abbr -a fd='fzf-directory-cd'
+abbr -a fs='fzf-snippet'
+# Others
 abbr -a fbc='fzf-bookmark-cd'
-abbr -a fd='fzf-directory'
 abbr -a fdc='fzf-directory-cd'
 abbr -a ffm='fzf-file-mate'
 abbr -a ffo='fzf-file-open'
@@ -21,7 +25,6 @@ abbr -a flv='fzf-line-vim'
 abbr -a fpx='fzf-project-xcode'
 abbr -a frc='fzf-result-cd'
 abbr -a frv='fzf-result-vim'
-abbr -a fs='fzf-snippet'
 abbr -a fsc='fzf-snippet-copy'
 abbr -a fsr='fzf-snippet-reveal'
 
