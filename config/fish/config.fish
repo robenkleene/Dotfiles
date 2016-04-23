@@ -91,8 +91,10 @@ end
 # tmux
 # Echo running sessions if there are any
 if tmux ls >/dev/null 2>/dev/null
-  echo tmux sessions
-  tmux ls
+  if test -z "$TMUX"
+    echo tmux sessions
+    tmux ls
+  end
 end
 
 
