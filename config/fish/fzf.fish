@@ -15,6 +15,8 @@ function fzf-process-result
   end
 end
 
+# Store in Variable
+
 # File
 function fzf-file
   fzf > $TMPDIR/fzf.result
@@ -27,12 +29,25 @@ function fzf-directory
   fzf-process-result
 end
 
+# Use from variable
+function fzf-result-vim
+  test -n "$FZFRESULT"
+  and vim "$FZFRESULT"
+end
+function fzf-result-cd
+  test -n "$FZFRESULT"
+  and cd "$FZFRESULT"
+end
+
+# Directories
+
 # cd
 function fzf-directory-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and cd $result
 end
+
 
 # Files
 
