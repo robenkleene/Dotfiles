@@ -17,7 +17,7 @@ hi rubyInterpolationDelimiter ctermfg=lightblue
 
 " Background {{{1
 let s:bgcolor = 'NONE'
-let s:backgroundgroups = ['CursorColumn', 
+let s:backgroundgroups = [
       \ 'NonText', 'SpecialKey', 'VertSplit',
       \ 'Normal', 'SignColumn', 'FoldColumn']
 " Set Background Colors
@@ -32,7 +32,7 @@ highlight LineNr ctermbg=NONE ctermfg=236
 let s:highlightbgcolor = '237'
 let s:highlightfgcolor = 'NONE'
 
-let s:highlightgroups = ['CursorLine', 'CursorLineNr']
+let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
 for group in s:highlightgroups
   exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
         \ s:highlightfgcolor
