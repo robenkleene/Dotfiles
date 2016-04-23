@@ -1,38 +1,37 @@
 # fzf
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
 
-# Directories
+# Helper
+function fzf-process-result
+  if [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
+    set -g FZFRESULT (cat $TMPDIR/fzf.result)
+    and echo $FZFRESULT
+    rm -f $TMPDIR/fzf.result
+    return 0
+  else
+    set -e FZFRESULT
+    rm -f $TMPDIR/fzf.result
+    return 1
+  end
+end
 
 # File
 function fzf-file
-  fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and set -g FZFRESULT (cat $TMPDIR/fzf.result)
-  and echo $FZFRESULT | pbcopy
-  and echo $FZFRESULT
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
+  fzf > $TMPDIR/fzf.result
+  fzf-process-result
 end
-
 
 # Directory
 function fzf-directory
   find * -type d | fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and set -g FZFRESULT (cat $TMPDIR/fzf.result)
-  and echo $FZFRESULT | pbcopy
-  and echo $FZFRESULT
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
+  fzf-process-result
 end
 
 # cd
 function fzf-directory-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and cd (cat $TMPDIR/fzf.result)
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and cd $result
 end
 
 # Files
@@ -67,10 +66,8 @@ end
 # vim
 function fzf-line-vim
   ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
-  if [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-    cat $TMPDIR/fzf.result | vim -c "GrepBuffer" -
-  end
-  rm -f $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and echo $result | vim -c "GrepBuffer" - 
 end
 
 # Bookmarks
@@ -86,10 +83,8 @@ set -x RKBOOKMARKS $RKBOOKMARKS ~/Dotfiles/config/fish/
 set -x ROBENKLEENE_BOOKMARKS (echo -s :$RKBOOKMARKS | cut -b 2-)
 function fzf-bookmark-cd
   printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
-  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-  and cd (cat $TMPDIR/fzf.result)
-  commandline -f repaint
-  rm -f $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and cd $result
 end
 
 # Snippets
