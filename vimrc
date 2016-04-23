@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " Tim Pope {{{2
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
@@ -62,6 +62,7 @@ source ~/.vim/robenkleene/bindings.vim
 source ~/.vim/robenkleene/abbreviations.vim
 
 " Plugins {{{1
+source ~/.vim/robenkleene/plugin/commentary.vim
 source ~/.vim/robenkleene/plugin/fzf.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
