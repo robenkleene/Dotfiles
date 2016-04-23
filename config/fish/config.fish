@@ -110,9 +110,6 @@ end
 function r
   ranger-cd
 end
-function b
-  fzf-bookmark-cd
-end
 function t
   tmux
 end
@@ -124,6 +121,16 @@ function ts
 end
 function ec
   emacsclient -t
+end
+# fzf
+function b
+  fzf-bookmark-cd
+end
+function f
+  fzf-file-vim
+end
+function fd
+  fzf-directory-cd
 end
 
 # Vim

@@ -11,8 +11,6 @@ abbr -a vrs='vim-restore-session'
 
 # fzf
 # Defaults
-abbr -a f='fzf-file-vim'
-abbr -a fd='fzf-directory-cd'
 abbr -a fs='fzf-snippet'
 # Others
 abbr -a fbc='fzf-bookmark-cd'
