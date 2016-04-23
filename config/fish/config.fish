@@ -1,3 +1,5 @@
+# Configuration
+
 # Fisherman
 # To setup, install fisherman and plugins:
 # bass
@@ -7,21 +9,35 @@ set fisher_config ~/.config/fisherman
 source $fisher_home/config.fish
 
 # fzf
-#
 source ~/.config/fish/fzf.fish
 
-# Clear Greating
+# Greeting
 set --erase fish_greeting
 
-# Environment Variables
+# Path
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Editor
 set -x EDITOR vim
 
-# Git Editor
-# Start in insert mode
-# set -x GIT_EDITOR "vim +startinsert"
+# Prompt
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showstashstate 'yes'
+set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_color_branch yellow
+set fish_color_comment 3a3a3a
+function fish_prompt
+  set_color $fish_color_comment
+  echo -n (date "+%I:%M %p")
+  echo -n ' '
+  set_color $fish_color_cwd
+  echo -n (prompt_pwd)
+  set_color normal
+  echo -n '> '
+end
+function fish_right_prompt
+  echo -n (__fish_git_prompt)
+end
 
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
@@ -29,8 +45,17 @@ set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
 # ag
-#
 alias ag "ag --path-to-agignore ~/.agignore"
+
+# Atom
+set -x ATOM_PATH $HOME/Applications/
+set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
+
+# Coffeelint
+set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
+
+# Fish
+set -x FISH_CONFIG_PATH $HOME/Dotfiles/config/fish/config.fish
 
 # nvm
 # Relies on `bass` as a dependency
@@ -45,10 +70,11 @@ set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
-# Emacsclient
-function ec
-  emacsclient -t $argv
-end
+
+
+# Startup
+
+# Emacs
 # Test if server is running
 function is-emacs-server-running
   ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
@@ -68,9 +94,9 @@ if tmux ls >/dev/null 2>/dev/null
   echo tmux sessions
   tmux ls
 end
-function t
-  tmux $argv  
-end
+
+
+# Functions
 
 # Vim
 function vim-restore-session
@@ -84,71 +110,42 @@ end
 function git-vim-modified
   vim (git ls-files -m | uniq)
 end
-
-# Atom
-set -x ATOM_PATH $HOME/Applications/
-set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
-
-# Coffeelint
-set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
-
-# Edit Dotfiles
-set -x FISH_CONFIG_PATH $HOME/Dotfiles/config/fish/config.fish
-
-# Prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-
-set fish_color_comment 3a3a3a
-
-# Prompt
-function fish_prompt
-  set_color $fish_color_comment
-  echo -n (date "+%I:%M %p")
-  echo -n ' '
-  set_color $fish_color_cwd
-  echo -n (prompt_pwd)
-  set_color normal
-  echo -n '> '
-end
-function fish_right_prompt
-  echo -n (__fish_git_prompt)
+function git-submodule-update-init-recursive
+  git submodule update --init --recursive
 end
 
 # Git
 function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
 end
-
 function git-cd-root
   cd (git rev-parse --show-toplevel)
 end
-
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
-
 function git-remote-add-origin
   git remote rm origin
   git remote add origin $argv[1]
 end
-
 function git-remote-prune-origin
   git remote prune origin
 end
-
 function git-difftool-commit-minus-one
   git difftool $argv[1]^!
 end
-
 function git-log-unpushed-commits
   git log @\{u\}..
 end
-
 function git-diff-dirty
   git diff --name-only --diff-filter=UM
+end
+# Open unmerged files in Vim
+function git-vim-dirty
+  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
+end
+function git-difftool-commit-minus-one
+  git difftool $argv[1] $argv[1]~1
 end
 
 # Git Stash
@@ -162,39 +159,23 @@ function git-stash-command
   end
   eval $cmd
 end
-
 function git-stash-pop
   git-stash-command "pop" $argv
 end
-
 function git-stash-apply
   git-stash-command "apply" $argv
 end
-
 function git-stash-show
   git-stash-command "show" $argv
 end
-
 function git-stash-diff
   git-stash-command "show --patch" $argv
 end
-
 function git-stash-drop
   git-stash-command "drop" $argv
 end
 
-# Open unmerged files in Vim
-function git-vim-dirty
-  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
-end
 
-function git-difftool-commit-minus-one
-  git difftool $argv[1] $argv[1]~1
-end
-
-function git-submodule-update-init-recursive
-  git submodule update --init --recursive
-end
 
 # egit
 function egitn
@@ -202,28 +183,7 @@ function egitn
   if test -n "$EGITNEXT"
     cd $EGITNEXT
     git status
-end
-end
-
-# Tig
-function ts
-  tig status +3
-end
-
-# Hub
-
-# Navigation
-function o
-  new-finder-window-here
-end
-function -
-  cd -
-end
-function n
-  new-terminal-here
-end
-function x
-  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | head -n 1 | tr '\n' '\0' | xargs -0 open
+  end
 end
 
 # Ranger
@@ -237,41 +197,20 @@ function ranger-cd
   end
   rm -f $tempfile
 end
-function r
-  ranger-cd
-end
-
 
 # Misc
-function cleanopenwith
+function clean-open-with
   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 end
 
-function cbp
-  pbpaste | less
-end
-
-# Ack
-# Note Ack only ever searches source code files, to search all files use find
-function ack-match-filename
-  ack -g $argv
-end
-
-# Find
-function find-filename
-  find . -not -path '*.git*' -name "$argv[1]"
-end
-
 # BBEdit
-function bbf
+function bbfind-gui-grep-case
   bbfind --grep --gui --case-sensitive $argv .
 end
-
-function bbfi
+function bbfind-gui-grep
   bbfind --grep --gui $argv .
 end
-
-function bbff
+function bbfind-gui-grep-case-name
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
 end
 
@@ -296,17 +235,9 @@ function jekyll-serve-watch-drafts
   bundle exec jekyll serve --watch --drafts
 end
 
+# Web Console
+
 # wcsearch
 # function sea
 #   wcsearch $argv
 # end
-
-# This doesn't work, might have hung
-# function tpvim
-#     tee /dev/tty | sh -c "cat | vim -g - > /dev/null 2>&1"
-# end
-
-# Highlight
-function hl
-  highlight -O ansi "$argv[1]"
-end

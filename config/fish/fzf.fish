@@ -3,6 +3,29 @@ set -x FZF_DEFAULT_COMMAND 'ag -g ""'
 
 # Directories
 
+# File
+function fzf-file
+  fzf  > $TMPDIR/fzf.result
+  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
+  and set -g FZFRESULT (cat $TMPDIR/fzf.result)
+  and echo $FZFRESULT | pbcopy
+  and echo $FZFRESULT
+  commandline -f repaint
+  rm -f $TMPDIR/fzf.result
+end
+
+
+# Directory
+function fzf-directory
+  find * -type d | fzf  > $TMPDIR/fzf.result
+  [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
+  and set -g FZFRESULT (cat $TMPDIR/fzf.result)
+  and echo $FZFRESULT | pbcopy
+  and echo $FZFRESULT
+  commandline -f repaint
+  rm -f $TMPDIR/fzf.result
+end
+
 # cd
 function fzf-directory-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
@@ -72,6 +95,10 @@ end
 # Snippets
 
 # Copy
+function fzf-snippet
+  fzf-snippet-copy
+end
+
 function fzf-snippet-copy
   sh -c "cat ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf) | tee /dev/tty | pbcopy"
 end

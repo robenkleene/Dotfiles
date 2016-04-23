@@ -5,12 +5,26 @@ set --erase fish_user_abbreviations
 # nvm
 abbr -a nud='nvm use default'
 
+# Single Letters
+abbr -a n='new-terminal-here'
+abbr -a o='new-finder-window-here'
+abbr -a r='ranger-cd'
+abbr -a b='fzf-bookmark-cd'
+abbr -a t='tmux'
+abbr -a -='cd -'
+
+# Emacs
+abbr -a ec='emacsclient -t'
+
+# Tig
+abbr -a ts='tig status +3'
+
 # vim
 abbr -a vpg='vim-pipe-grep'
 abbr -a vrs='vim-restore-session'
 
 # fzf
-abbr -a b='fzf-bookmark-cd'
+abbr -a fs='fzf-snippet'
 abbr -a fbc='fzf-bookmark-cd'
 abbr -a fdc='fzf-directory-cd'
 abbr -a ffm='fzf-file-mate'
@@ -24,7 +38,6 @@ abbr -a fsr='fzf-snippet-reveal'
 
 # git
 abbr -a gvm='git-vim-modified'
-abbr -a g='git'
 abbr -a ga='git add'
 abbr -a gaa='git add --all :/'
 abbr -a gb='git branch'
