@@ -98,6 +98,32 @@ end
 
 # Functions
 
+# Quick
+function n
+  new-terminal-here
+end
+function o
+  new-finder-window-here
+end
+function r
+  ranger-cd
+end
+function b
+  fzf-bookmark-cd
+end
+function t
+  tmux
+end
+function -
+  cd -
+end
+function ts
+  tig status +3
+end
+function ec
+  emacsclient -t
+end
+
 # Vim
 function vim-restore-session
   vim -c "RestoreSession"
