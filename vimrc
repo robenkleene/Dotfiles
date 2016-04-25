@@ -31,6 +31,7 @@ Plug 'ap/vim-css-color'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
+Plug 'junegunn/rainbow_parentheses.vim'
 if has('lua')
   Plug 'Shougo/neocomplete.vim'
 end
@@ -70,3 +71,4 @@ source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
 source ~/.vim/robenkleene/plugin/vim-tmux-navigator.vim
+source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
