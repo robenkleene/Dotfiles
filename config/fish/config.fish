@@ -166,9 +166,6 @@ end
 function git-remote-prune-origin
   git remote prune origin
 end
-function git-difftool-commit-minus-one
-  git difftool $argv[1]^!
-end
 function git-log-unpushed-commits
   git log @\{u\}..
 end
@@ -180,7 +177,10 @@ function git-vim-dirty
   sh -c "vim \$(git diff --name-only --diff-filter=UM)"
 end
 function git-difftool-commit-minus-one
-  git difftool $argv[1] $argv[1]~1
+  git difftool $argv[1]^!
+end
+function git-diff-commit-minus-one
+  git diff $argv[1]^!
 end
 
 # Git Stash
