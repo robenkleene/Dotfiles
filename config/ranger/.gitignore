@@ -3,4 +3,4 @@
 
 # Except
 !.gitignore
-!roben.conf
+!rc.conf
