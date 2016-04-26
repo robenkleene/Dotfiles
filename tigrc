@@ -16,7 +16,7 @@ bind generic X !@open -a Xcode %(file)
 bind generic R !@open --reveal %(file)
 bind generic E !@sh -c "mate --async '%(file)'"
 bind generic D !@sh -c "git diff '%(file)' | mate --async"
-bind generic Y !@sh -c "echo %(commit) | pbcopy"
+bind generic Y !@bash -c "echo -n %(commit) | pbcopy"
 
 
 # Diff Tool
