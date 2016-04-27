@@ -12,6 +12,7 @@ abbr -a vrs='vim-restore-session'
 # fzf
 # Defaults
 abbr -a fs='fzf-snippet'
+abbr -a fx='fzf-project-xcode'
 # Others
 abbr -a fbc='fzf-bookmark-cd'
 abbr -a fdc='fzf-directory-cd'
