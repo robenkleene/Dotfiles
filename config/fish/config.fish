@@ -111,7 +111,7 @@ function r
   ranger-cd
 end
 function t
-  tmux
+  tmux $argv
 end
 function -
   cd -
@@ -120,7 +120,7 @@ function ts
   tig status +3
 end
 function ec
-  emacsclient -t
+  emacsclient -t $argv
 end
 # fzf
 function b
