@@ -60,7 +60,7 @@ nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
 
 
 " Markdown link
-nnoremap <leader>m :!mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
+nnoremap <leader>m :!mdlinkforfile "%"  "\#L<C-r>=line('.')<CR>" <BAR> pbcopy<CR>\|:redraw!<CR>
 vnoremap <leader>m :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>
 
 " Copy Path
