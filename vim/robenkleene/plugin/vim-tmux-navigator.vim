@@ -8,12 +8,12 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
-nnoremap <silent> <A-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <A-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <A-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <A-l> :TmuxNavigateRight<cr>
+noremap <silent> <A-h> :TmuxNavigateLeft<cr>
+noremap <silent> <A-j> :TmuxNavigateDown<cr>
+noremap <silent> <A-k> :TmuxNavigateUp<cr>
+noremap <silent> <A-l> :TmuxNavigateRight<cr>
 
-nnoremap <silent> <S-Left> :TmuxNavigateLeft<cr>
-nnoremap <silent> <S-Down> :TmuxNavigateDown<cr>
-nnoremap <silent> <S-Up> :TmuxNavigateUp<cr>
-nnoremap <silent> <S-Right> :TmuxNavigateRight<cr>
+noremap <silent> <S-Left> :TmuxNavigateLeft<cr>
+noremap <silent> <S-Down> :TmuxNavigateDown<cr>
+noremap <silent> <S-Up> :TmuxNavigateUp<cr>
+noremap <silent> <S-Right> :TmuxNavigateRight<cr>
