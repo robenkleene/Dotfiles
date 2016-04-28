@@ -18,6 +18,8 @@ bind generic E !@sh -c "mate --async '%(file)'"
 bind generic D !@sh -c "git diff '%(file)' | mate --async"
 bind generic Y !@bash -c "echo -n %(commit) | pbcopy"
 
+# Main
+bind main c ?git checkout %(commit)
 
 # Diff Tool
 bind generic T !@git difftool
