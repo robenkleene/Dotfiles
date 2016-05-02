@@ -39,11 +39,11 @@ for group in s:highlightgroups
 endfor
 
 " Wild Menu {{{1
-highlight Wildmenu ctermbg=lightcyan ctermfg=black
+highlight Wildmenu ctermbg=cyan ctermfg=black
 
 " Autocomplete {{{1
 highlight Pmenu ctermfg=white ctermbg=242
-highlight PmenuSel ctermfg=black ctermbg=lightcyan
+highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
 " BG: #b2b2b2 FG: #585858
@@ -56,9 +56,9 @@ for group in s:selectiongroups
 endfor
 
 " Search {{{1
-highlight IncSearch cterm=NONE ctermbg=lightcyan ctermfg=black
+highlight IncSearch cterm=NONE ctermbg=lightyellow ctermfg=black
 " highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
-highlight Search cterm=NONE ctermbg=lightyellow ctermfg=black
+highlight Search cterm=NONE ctermbg=cyan ctermfg=black
 " highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
 " Status Line {{{1
@@ -67,7 +67,7 @@ highlight StatusLineNC ctermfg=239 ctermbg=250
 
 " Mode Message {{{1
 
-highlight ModeMsg ctermfg=black ctermbg=lightcyan cterm=bold
+highlight ModeMsg ctermfg=black ctermbg=cyan cterm=bold
 " Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
