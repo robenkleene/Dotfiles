@@ -56,8 +56,10 @@ for group in s:selectiongroups
 endfor
 
 " Search {{{1
-highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
-highlight Search cterm=underline ctermfg=white ctermbg=NONE
+highlight IncSearch cterm=NONE ctermbg=lightcyan ctermfg=black
+" highlight IncSearch cterm=underline ctermbg=NONE ctermfg=white
+highlight Search cterm=NONE ctermbg=lightyellow ctermfg=black
+" highlight Search cterm=underline ctermfg=white ctermbg=NONE
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=243
@@ -65,7 +67,7 @@ highlight StatusLineNC ctermfg=239 ctermbg=250
 
 " Mode Message {{{1
 
-highlight ModeMsg ctermfg=black ctermbg=darkcyan cterm=bold
+highlight ModeMsg ctermfg=black ctermbg=lightcyan cterm=bold
 " Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
