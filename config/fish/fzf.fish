@@ -53,27 +53,27 @@ end
 
 # emacs
 function fzf-file-emacs
-  sh -c "emacs \"\$(/usr/local/bin/fzf)\""
+  fzf | xargs -o emacs
 end
 
 # vim
 function fzf-file-vim
-  sh -c "vim \"\$(/usr/local/bin/fzf)\""
+  fzf | xargs -o vim
 end
 
 # mate
 function fzf-file-mate
-  sh -c "mate \"\$(/usr/local/bin/fzf)\""
+  fzf | xargs mate
 end
 
 # reveal
 function fzf-file-reveal
-  sh -c "open -R \"\$(/usr/local/bin/fzf)\""
+  fzf | xargs open -R
 end
 
 # open
 function fzf-file-open
-  sh -c "open \"\$(/usr/local/bin/fzf)\""
+  fzf | xargs open
 end
 
 # Lines
@@ -110,22 +110,30 @@ function fzf-snippet
 end
 
 function fzf-snippet-copy
-  sh -c "cat ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf) | tee /dev/tty | pbcopy"
+  cd ~/Development/Snippets/
+  find * -type f | fzf | xargs cat | tee /dev/tty | pbcopy
+  cd -
 end
 
 # Reveal
 function fzf-snippet-reveal
-  sh -c "open -R ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+  cd ~/Development/Snippets/
+  find * -type f | fzf | xargs open -R
+  cd -
 end
 
 # TextMate
 function fzf-snippet-mate
-  sh -c "mate ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+  cd ~/Development/Snippets/
+  find * -type f | fzf | xargs mate
+  cd -
 end
 
 # vim
 function fzf-snippet-vim
-  sh -c "vim ~/Development/Snippets/\$(cd ~/Development/Snippets/; find * -type f | /usr/local/bin/fzf)"
+  cd ~/Development/Snippets/
+  find * -type f | fzf | xargs -o vim
+  cd -
 end
 
 # Project
