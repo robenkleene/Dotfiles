@@ -53,27 +53,27 @@ end
 
 # emacs
 function fzf-file-emacs
-  fzf | xargs -o emacs
+  fzf | tr '\n' '\0' | xargs -0 -o emacs
 end
 
 # vim
 function fzf-file-vim
-  fzf | xargs -o vim
+  fzf | tr '\n' '\0' | xargs -0 -0 -o vim
 end
 
 # mate
 function fzf-file-mate
-  fzf | xargs mate
+  fzf | tr '\n' '\0' | xargs -0 mate
 end
 
 # reveal
 function fzf-file-reveal
-  fzf | xargs open -R
+  fzf | tr '\n' '\0' | xargs -0 open -R
 end
 
 # open
 function fzf-file-open
-  fzf | xargs open
+  fzf | tr '\n' '\0' | xargs -0 open
 end
 
 # Lines
@@ -111,28 +111,28 @@ end
 
 function fzf-snippet-copy
   cd ~/Development/Snippets/
-  find * -type f | fzf | xargs cat | tee /dev/tty | pbcopy
+  find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | pbcopy
   cd -
 end
 
 # Reveal
 function fzf-snippet-reveal
   cd ~/Development/Snippets/
-  find * -type f | fzf | xargs open -R
+  find * -type f | fzf | tr '\n' '\0' | xargs -0 open -R
   cd -
 end
 
 # TextMate
 function fzf-snippet-mate
   cd ~/Development/Snippets/
-  find * -type f | fzf | xargs mate
+  find * -type f | fzf | tr '\n' '\0' | xargs -0 mate
   cd -
 end
 
 # vim
 function fzf-snippet-vim
   cd ~/Development/Snippets/
-  find * -type f | fzf | xargs -o vim
+  find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
   cd -
 end
 
