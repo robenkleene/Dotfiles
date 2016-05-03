@@ -77,3 +77,20 @@ endfunction
 
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+
+" Panes
+let c='a'
+while c <= 'z'
+  exec "set <M-".tolower(c).">=\e".c
+  exec "nnoremap \e".c." <M-".tolower(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+noremap <silent> <A-h> <C-w>h
+noremap <silent> <A-j> <C-w>j
+noremap <silent> <A-k> <C-w>k
+noremap <silent> <A-l> <C-w>l
+
+noremap <silent> <S-Left> <C-w>h
+noremap <silent> <S-Down> <C-w>j
+noremap <silent> <S-Up> <C-w>k
+noremap <silent> <S-Right> <C-w>l

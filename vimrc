@@ -44,7 +44,6 @@ if !has('gui_running')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 end
-Plug 'christoomey/vim-tmux-navigator'
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -70,5 +69,4 @@ source ~/.vim/robenkleene/plugin/fugitive.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
-source ~/.vim/robenkleene/plugin/vim-tmux-navigator.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
