@@ -39,8 +39,11 @@ syntax on
 " Use system clipboard by default
 set clipboard=unnamed 
 
-" Treat `_` and `-` as a word boundary
-set iskeyword-=_
+" Don't treat `_` and `-` as a word boundary
+" It's better to not to treat these as word boundaries as it facilitates
+" searching for symbols with the `*` command.
+" set iskeyword-=_
+set iskeyword+=-
 
 " Leader
 let mapleader = "\<space>"
