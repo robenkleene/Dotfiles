@@ -58,7 +58,7 @@ end
 
 # vim
 function fzf-file-vim
-  fzf | tr '\n' '\0' | xargs -0 -0 -o vim
+  fzf | tr '\n' '\0' | xargs -0 -o vim
 end
 
 # mate
