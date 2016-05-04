@@ -6,10 +6,10 @@ set rtp+=/usr/local/opt/fzf
 
 nnoremap <leader>a :Ag 
 nnoremap <leader>* :Ag <C-r><C-w><cr>
-nnoremap <leader>b :Buffers<CR> 
-nnoremap <leader>l :BLines<CR> 
-nnoremap <leader>f :Files<CR> 
-nnoremap <leader>h :History<CR> 
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :BLines<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>h :History<CR>
 
 function! s:AgVisual()
   let temp = @s
