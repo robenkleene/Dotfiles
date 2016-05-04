@@ -92,6 +92,11 @@ set splitright
 " Don't add an extra space when joining two paragraphs
 set nojoinspaces
 
+" Show whitespace
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+
+
 " Autocmd {{{1
 
 " Make Shebang Files Executable
