@@ -79,6 +79,10 @@ xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
 " Panes
+" The problem with tmux vim navigator is that if vim is opened form a subprocess 
+" in a tmux pane (e.g., `tig -> vim`), then moving between vim panes will break,
+" because tmux won't be able to detect that vim is actually running as a child
+" of `tig`.
 let c='a'
 while c <= 'z'
   exec "set <M-".tolower(c).">=\e".c
