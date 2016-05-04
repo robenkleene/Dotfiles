@@ -64,7 +64,6 @@ set nowrap
 " Show commands as they're typed
 set showcmd
 
-
 " Line breaks only happen on words
 set linebreak 
 
@@ -89,6 +88,9 @@ set infercase
 " Open splits in bottom right
 set splitbelow
 set splitright
+
+" Don't add an extra space when joining two paragraphs
+set nojoinspaces
 
 " Autocmd {{{1
 
