@@ -45,7 +45,7 @@ end
 function fzf-directory-cd
   find * -type d | fzf  > $TMPDIR/fzf.result
   set result (fzf-process-result)
-  and cd $result
+  and cd "$result"
 end
 
 
@@ -53,12 +53,20 @@ end
 
 # emacs
 function fzf-file-emacs
-  fzf | tr '\n' '\0' | xargs -0 -o emacs
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # fzf | tr '\n' '\0' | xargs -0 -o emacs
+  fzf > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and emacs "$result"
 end
 
 # vim
 function fzf-file-vim
-  fzf | tr '\n' '\0' | xargs -0 -o vim
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # fzf | tr '\n' '\0' | xargs -0 -o vim
+  fzf > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and vim "$result"
 end
 
 # mate
@@ -97,9 +105,9 @@ set -x RKBOOKMARKS $RKBOOKMARKS ~/Dotfiles/config/fish/
 # Copy with a `:` separator for more portability for other shells
 set -x ROBENKLEENE_BOOKMARKS (echo -s :$RKBOOKMARKS | cut -b 2-)
 function fzf-bookmark-cd
-  printf '%s\n' $RKBOOKMARKS | fzf  > $TMPDIR/fzf.result
+  printf '%s\n' $RKBOOKMARKS | fzf > $TMPDIR/fzf.result
   set result (fzf-process-result)
-  and cd $result
+  and cd "$result"
 end
 
 # Snippets
@@ -132,8 +140,13 @@ end
 # vim
 function fzf-snippet-vim
   cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
+  find * -type f | fzf > $TMPDIR/fzf.result
   cd -
+
+  set result (fzf-process-result)
+  and vim "$HOME/Development/Snippets/$result"
 end
 
 # Project
