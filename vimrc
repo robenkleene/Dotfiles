@@ -70,3 +70,4 @@ source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
+source ~/.vim/robenkleene/plugin/vim-gitgutter.vim
