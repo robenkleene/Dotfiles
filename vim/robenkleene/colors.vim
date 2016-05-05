@@ -59,8 +59,8 @@ endfor
 " The reason to use two colors (instead of an underline) is to have one color
 " for the matches for the last search, and a different color for the current
 " search
-highlight IncSearch cterm=NONE ctermbg=green ctermfg=black
-highlight Search cterm=NONE ctermbg=cyan ctermfg=black
+highlight IncSearch cterm=NONE ctermbg=cyan ctermfg=black
+highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=243
