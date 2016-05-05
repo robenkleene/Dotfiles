@@ -16,6 +16,7 @@ abbr -a fx='fzf-project-xcode'
 # Others
 abbr -a fbc='fzf-bookmark-cd'
 abbr -a fdc='fzf-directory-cd'
+abbr -a ffc='fzf-file-cd'
 abbr -a ffm='fzf-file-mate'
 abbr -a ffo='fzf-file-open'
 abbr -a ffr='fzf-file-reveal'

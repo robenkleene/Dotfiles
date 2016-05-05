@@ -84,6 +84,13 @@ function fzf-file-open
   fzf | tr '\n' '\0' | xargs -0 open
 end
 
+# cd
+function fzf-file-cd
+  fzf > $TMPDIR/fzf.result
+  set result (dirname (fzf-process-result))
+  and cd "$result"
+end
+
 # Lines
 
 # vim
