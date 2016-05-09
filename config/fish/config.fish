@@ -276,3 +276,21 @@ end
 # function sea
 #   wcsearch $argv
 # end
+
+function edit_cmd --description 'Input command in external editor'
+    set -l f (mktemp /tmp/fish.cmd.XXXXXXXX)
+    if test -n "$f"
+        set -l p (commandline -C)
+        commandline -b > $f
+        vim -c 'set ft=fish' $f
+        commandline -r (more $f)
+        commandline -C $p
+        command rm $f
+    end
+end
+
+function fish_user_key_bindings
+  # Better binding but I can't get this to work
+  # bind \cx\ce 'edit_cmd'
+  bind \ee 'edit_cmd'
+end
