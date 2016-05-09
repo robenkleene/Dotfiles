@@ -278,15 +278,16 @@ end
 # end
 
 function edit_cmd --description 'Input command in external editor'
-    set -l f (mktemp /tmp/fish.cmd.XXXXXXXX)
-    if test -n "$f"
-        set -l p (commandline -C)
-        commandline -b > $f
-        vim -c 'set ft=fish' $f
-        commandline -r (more $f)
-        commandline -C $p
-        command rm $f
-    end
+  set -l tempfile (mktemp /tmp/fish.cmd.XXXXXXXX)
+  and test -n "$tempfile"
+  and set -l cursorposition (commandline -C)
+  and commandline -b > $tempfile
+  and vim -c 'set ft=fish' $tempfile
+  and set -l edited (cat $tempfile)
+  and test -n "$edited"
+  and commandline -r $edited
+  and commandline -C $cursorposition
+  and command rm $tempfile
 end
 
 function fish_user_key_bindings
