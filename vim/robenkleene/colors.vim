@@ -47,8 +47,8 @@ highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
 " BG: #b2b2b2 FG: #585858
-let s:selectionbgcolor = '240'
-let s:selectionfgcolor = 'white'
+let s:selectionbgcolor = 'darkcyan'
+let s:selectionfgcolor = 'black'
 let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
   exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
@@ -60,7 +60,7 @@ endfor
 " for the matches for the last search, and a different color for the current
 " search
 highlight IncSearch cterm=NONE ctermbg=cyan ctermfg=black
-highlight Search cterm=NONE ctermbg=240 ctermfg=white
+highlight Search cterm=NONE ctermbg=darkcyan ctermfg=black
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=244
@@ -68,7 +68,7 @@ highlight StatusLineNC ctermfg=238 ctermbg=249
 
 " Mode Message {{{1
 
-highlight ModeMsg ctermfg=black ctermbg=cyan cterm=bold
+highlight ModeMsg ctermfg=black ctermbg=darkcyan cterm=bold
 " Tabs {{{1
 highlight TabLine cterm=NONE ctermbg=238 ctermfg=249
 highlight TabLineFill cterm=NONE ctermbg=238 ctermfg=249
