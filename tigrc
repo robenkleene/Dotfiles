@@ -1,6 +1,6 @@
 set vertical-split = no
 set wrap-lines = yes
-
+set ignore-case = yes
 # Key
 # @ : Suppresses output
 # sh : Pipes aren't supported without a subshell
