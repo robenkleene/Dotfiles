@@ -4,6 +4,9 @@ set nofoldenable
 setlocal spell
 set wrap
 
+" Don't show 80 character guide
+setlocal colorcolumn=""
+
 nnoremap <localleader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 
 " Follow file links
