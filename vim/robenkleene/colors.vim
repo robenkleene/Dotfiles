@@ -42,12 +42,12 @@ endfor
 highlight Wildmenu ctermbg=cyan ctermfg=black
 
 " Autocomplete {{{1
-highlight Pmenu ctermfg=white ctermbg=242
+highlight Pmenu ctermfg=white ctermbg=darkgray
 highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
 " BG: #b2b2b2 FG: #585858
-let s:selectionbgcolor = '242'
+let s:selectionbgcolor = 'darkgray'
 let s:selectionfgcolor = 'white'
 let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
@@ -63,7 +63,7 @@ highlight IncSearch cterm=NONE ctermbg=cyan ctermfg=black
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 
 " Status Line {{{1
-highlight StatusLine ctermbg=white ctermfg=243
+highlight StatusLine ctermbg=white ctermfg=darkgray
 highlight StatusLineNC ctermfg=239 ctermbg=250
 
 " Mode Message {{{1
