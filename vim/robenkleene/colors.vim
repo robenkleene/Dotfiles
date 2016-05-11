@@ -64,7 +64,7 @@ highlight Search cterm=NONE ctermbg=240 ctermfg=white
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=244
-highlight StatusLineNC ctermfg=238 ctermbg=250
+highlight StatusLineNC ctermfg=238 ctermbg=249
 
 " Mode Message {{{1
 
@@ -137,7 +137,7 @@ highlight link markdownH6 String
 
 " Folding {{{1
 " Same as inactive status line
-highlight Folded ctermfg=250 ctermbg=238
+highlight Folded ctermfg=249 ctermbg=237
 
 " Plugins {{{1
 
