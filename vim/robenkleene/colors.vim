@@ -39,7 +39,7 @@ for group in s:highlightgroups
 endfor
 
 " Wild Menu {{{1
-highlight Wildmenu ctermbg=cyan ctermfg=black
+highlight Wildmenu cterm=bold ctermbg=cyan ctermfg=black
 
 " Autocomplete {{{1
 highlight Pmenu ctermfg=white ctermbg=244
