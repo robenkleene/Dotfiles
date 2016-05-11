@@ -42,12 +42,12 @@ endfor
 highlight Wildmenu ctermbg=cyan ctermfg=black
 
 " Autocomplete {{{1
-highlight Pmenu ctermfg=white ctermbg=darkgray
+highlight Pmenu ctermfg=white ctermbg=244
 highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
 " BG: #b2b2b2 FG: #585858
-let s:selectionbgcolor = 'darkgray'
+let s:selectionbgcolor = '240'
 let s:selectionfgcolor = 'white'
 let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
@@ -60,11 +60,11 @@ endfor
 " for the matches for the last search, and a different color for the current
 " search
 highlight IncSearch cterm=NONE ctermbg=cyan ctermfg=black
-highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
+highlight Search cterm=NONE ctermbg=240 ctermfg=white
 
 " Status Line {{{1
-highlight StatusLine ctermbg=white ctermfg=darkgray
-highlight StatusLineNC ctermfg=239 ctermbg=250
+highlight StatusLine ctermbg=white ctermfg=244
+highlight StatusLineNC ctermfg=238 ctermbg=250
 
 " Mode Message {{{1
 
@@ -137,7 +137,7 @@ highlight link markdownH6 String
 
 " Folding {{{1
 " Same as inactive status line
-highlight Folded ctermfg=250 ctermbg=239
+highlight Folded ctermfg=250 ctermbg=238
 
 " Plugins {{{1
 
