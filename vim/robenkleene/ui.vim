@@ -1,10 +1,10 @@
 " UI {{{1
 
 " Show 80 character bar
-set colorcolumn=80 
+set colorcolumn=80
 
 " Highlight cursor line
-" set cursorline 
+" set cursorline
 " Show cursorline only in active window
 augroup cursor_line_active_window
   autocmd!
@@ -30,10 +30,10 @@ augroup quickfix_colors
 augroup END
 
 " Show line numbers
-set number 
+set number
 
 " Highlight search results
-set hlsearch 
+set hlsearch
 
 " Don't display search highlight on startup
 nohlsearch
