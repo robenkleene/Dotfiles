@@ -64,14 +64,14 @@ highlight Search cterm=NONE ctermbg=darkcyan ctermfg=black
 
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=244
-highlight StatusLineNC ctermfg=240 ctermbg=249
+highlight StatusLineNC ctermfg=239 ctermbg=249
 
 " Mode Message {{{1
 
 highlight ModeMsg ctermfg=black ctermbg=darkcyan cterm=bold
 " Tabs {{{1
-highlight TabLine cterm=NONE ctermbg=240 ctermfg=249
-highlight TabLineFill cterm=NONE ctermbg=240 ctermfg=249
+highlight TabLine cterm=NONE ctermbg=239 ctermfg=249
+highlight TabLineFill cterm=NONE ctermbg=239 ctermfg=249
 
 " Column Guide {{{1
 highlight ColorColumn ctermbg=237
