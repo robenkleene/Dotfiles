@@ -122,6 +122,9 @@ end
 function ec
   emacsclient -t $argv
 end
+function v
+  vim .
+end
 # fzf
 function b
   fzf-bookmark-cd
