@@ -11,6 +11,9 @@ source $fisher_home/config.fish
 # fzf
 source ~/.config/fish/fzf.fish
 
+# local fish config
+source ~/.config.fish
+
 # Greeting
 set --erase fish_greeting
 
