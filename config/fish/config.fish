@@ -123,7 +123,11 @@ function ec
   emacsclient -t $argv
 end
 function v
-  vim .
+  if count $argv > /dev/null
+    vim $argv
+  else
+    vim .
+  end
 end
 # fzf
 function b
