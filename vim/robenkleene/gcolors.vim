@@ -3,43 +3,38 @@ colorscheme ir_black
 set background=dark
 
 " Background {{{1
-" let s:bgcolor = 'gray15'
 let s:bgcolor = '#232323'
-" let s:bgcolor = '#0E032B'
 let s:backgroundgroups = ['CursorColumn', 'LineNr',
             \ 'NonText', 'SpecialKey', 'VertSplit',
-            \ 'Normal', 'FoldColumn', 'SignColumn'] 
+            \ 'Normal', 'FoldColumn', 'SignColumn']
+" Set Background Colors
 for group in s:backgroundgroups
-    exe 'highlight ' . group . ' guibg=' . s:bgcolor
+  exe 'highlight ' . group . ' guibg=' . s:bgcolor
 endfor
 
 " Line Numbers {{{1
 highlight LineNr guifg=#7c7c7c
 
+" Cursor Line {{{1
+let s:highlightbgcolor = '#3A3A3A'
+let s:highlightfgcolor = 'NONE'
+
+let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
+for group in s:highlightgroups
+  exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .  
+        \ s:highlightfgcolor
+endfor
+
 " Wild Menu {{{1
-highlight Wildmenu guibg=lightcyan guifg=black
+highlight Wildmenu guibg=cyan guifg=black
 
 " Autocomplete {{{1
-highlight Pmenu guifg=white guibg=#7c7c7c
-highlight PmenuSel guifg=black guibg=lightcyan
-
-" Cursor Line {{{1
-let s:gutterbgcolor = 'gray20'
-let s:gutterfgcolor = 'DarkGray'
-let s:gutterfgbggroups = ['StatusLineNC']
-let s:gutterbggroups = ['CursorLine']
-for group in s:gutterfgbggroups
-  exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor . ' guifg=' .  
-        \ s:gutterfgcolor
-endfor
-highlight CursorLineNr guifg=NONE guibg=gray20
-for group in s:gutterbggroups
-  exe 'highlight ' . group . ' guibg=' . s:gutterbgcolor
-endfor
+highlight Pmenu guifg=white guibg=#666666
+highlight PmenuSel guifg=black guibg=cyan
 
 " Visual Selection {{{1
-let s:selectionbgcolor = '#7c7c7c'
-let s:selectionfgcolor = 'white'
+let s:selectionbgcolor = 'darkcyan'
+let s:selectionfgcolor = 'black'
 let s:selectiongroups = ['Visual', 'MatchParen']
 for group in s:selectiongroups
     exe 'highlight ' . group . ' guibg=' . s:selectionbgcolor  . ' guifg=' .  
@@ -47,50 +42,79 @@ for group in s:selectiongroups
 endfor
 
 " Search {{{1
-highlight IncSearch gui=underline guifg=white guibg=NONE
-highlight Search gui=underline guifg=white guibg=NONE
+highlight IncSearch gui=NONE guifg=black guibg=cyan
+highlight Search gui=NONE guifg=black guibg=darkcyan
 
 " StatusLine {{{1
-highlight StatusLine guibg=#7c7c7c guifg=white gui=NONE
-highlight StatusLineNC guifg=#7c7c7c guibg=#333333
+highlight StatusLine guibg=#666666 guifg=white gui=NONE
+highlight StatusLineNC guifg=#B2B2B2 guibg=#4E4E4E
+
+" Mode Message {{{1
+highlight ModeMsg guifg=black guibg=darkcyan gui=bold
+" Tabs {{{1
+highlight TabLine gui=NONE guibg=#4E4E4E guifg=#B2B2B2
+highlight TabLineFill gui=NONE guibg=#4E4E4E guifg=#B2B2B2
 
 " Tabs {{{1
-highlight TabLine gui=NONE guifg=#7c7c7c guibg=#333333
-highlight TabLineFill gui=NONE guifg=#7c7c7c guibg=#333333
+highlight TabLine gui=NONE guifg=#4E4E4E guibg=#B2B2B2
+highlight TabLineFill gui=NONE guifg=#4E4E4E guibg=#B2B2B2
 
 " Column Guide {{{1
-highlight ColorColumn guibg=gray20
+highlight ColorColumn guibg=#3A3A3A
+
 " Tildes {{{1
 highlight NonText guifg=DarkGray
 
-" Warning Message {{{1
-highlight WarningMsg guifg=white guibg=red gui=bold
+" Comments & Tildes {{{1
+highlight comment guifg=darkgray
+highlight SpecialKey guifg=#303030
+highlight NonText guifg=#303030
+
+" Folding {{{1
+" Same as inactive status line
+highlight Folded guifg=#B2B2B2 guibg=#3A3A3A
+
+" Warnings & Errors {{{1
+highlight WarningMsg guifg=black guibg=yellow gui=bold
+highlight ErrorMsg guifg=white guibg=red gui=bold
+highlight SpellBad guifg=red guibg=NONE gui=underline
+highlight SpellCap guifg=yellow guibg=NONE gui=underline
 
 " Diff {{{1
-highlight DiffAdd gui=NONE guifg=green guibg=darkgreen
-highlight DiffDelete gui=NONE guifg=red guibg=darkred
-highlight DiffChange gui=NONE guifg=NONE guibg=NONE
-highlight DiffText gui=NONE guifg=lightblue guibg=darkblue
+highlight DiffAdd guifg=darkgreen guibg=NONE gui=bold
+highlight DiffAdded guifg=darkgreen guibg=NONE gui=bold
+highlight DiffDelete guifg=red guibg=NONE gui=bold
+highlight DiffRemoved guifg=red guibg=NONE gui=bold
+highlight DiffChange guifg=lightblue guibg=NONE gui=bold
+highlight DiffText guifg=lightblue guibg=NONE gui=bold
 
 " Markdown {{{1
-highlight markdownLinkText gui=underline
-highlight markdownLinkText guifg=lightblue
-highlight markdownCode guibg=NONE guifg=DarkGray
-highlight markdownCodeBlock guibg=NONE guifg=DarkGray
-highlight markdownItalic gui=italic
-highlight markdownH1 guifg=#ffffb6
-highlight markdownH2 guifg=#ffffb6
-highlight markdownH3 guifg=#ffffb6
-highlight markdownH4 guifg=#ffffb6
-highlight markdownH5 guifg=#ffffb6
-highlight markdownH6 guifg=#ffffb6
+
+" Custom Syntax
+" Colors
+highlight markdownLinkText gui=underline gui=underline
+highlight markdownLinkText guifg=#88B0D5
+highlight markdownCode guifg=grey guibg=NONE
+highlight markdownCodeBlock guifg=grey guibg=NONE
+highlight markdownListMarker guifg=grey
+highlight markdownItalic gui=bold
+highlight markdownBold gui=bold
+
+highlight markdownH1 guifg=white gui=bold
+highlight markdownH2 guifg=white gui=bold
+highlight markdownH3 guifg=white gui=bold
+highlight markdownH4 guifg=white gui=bold
+highlight markdownH5 guifg=white gui=bold
+highlight markdownH6 guifg=white gui=bold
+
 " Groups
 highlight link markdownItalicDelimiter Comment
 highlight link markdownBoldDelimiter Comment
 highlight link markdownLinkText Keyword
+highlight link markdownFootnote Comment
+highlight link markdownFootnoteDefinition Comment
 highlight link markdownBlockquote Comment
 highlight link markdownHeadingDelimiter Comment
-highlight link markdownListMarker Comment
 highlight link markdownCodeDelimiter Comment
 highlight link markdownLinkTextDelimiter Comment
 highlight link markdownLinkDelimiter Comment
@@ -102,9 +126,6 @@ highlight link markdownH4 String
 highlight link markdownH5 String
 highlight link markdownH6 String
 
-" Folding {{{1
-" Same as inactive status line
-highlight Folded guifg=#7c7c7c guibg=#333333
 
 " Plugins {{{1
 
@@ -119,8 +140,7 @@ highlight GitGutterAddInvisible guibg=NONE guifg=green
 highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
 highlight GitGutterDeleteInvisible guibg=NONE guifg=red
 
-" Syntastic Colors {{{2
+" Syntastic {{{2
 highlight SyntasticErrorSign guifg=red
 highlight SyntasticWarningSign guifg=yellow
 highlight SyntasticStyleWarningSign guifg=yellow
-" highlight SyntasticErrorLine guibg=red
