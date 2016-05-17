@@ -11,6 +11,8 @@ endif
 " Can't use `<C-p>` because that inteferes with Emacs style down
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlP'
+" No idea why the above doesn't work but setting this manually below does
+nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>h :CtrlPMRU<CR>
 " TODO: Setup a map for symbols
