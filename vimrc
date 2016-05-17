@@ -40,9 +40,13 @@ Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
-if !has('gui_running')
-  Plug 'junegunn/fzf'
-  Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': [] }
+Plug 'junegunn/fzf', { 'on': [] }
+Plug 'junegunn/fzf.vim', { 'on': [] }
+if has('gui_running')
+  call plug#load('ctrlp.vim')
+else
+  call plug#load('fzf', 'fzf.vim')
 end
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -64,7 +68,11 @@ source ~/.vim/robenkleene/abbreviations.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/commentary.vim
-source ~/.vim/robenkleene/plugin/fzf.vim
+if has('gui_running')
+  source ~/.vim/robenkleene/plugin/ctrlp.vim
+else
+  source ~/.vim/robenkleene/plugin/fzf.vim
+end
 source ~/.vim/robenkleene/plugin/fugitive.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
