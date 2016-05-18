@@ -1,5 +1,6 @@
 set vertical-split = no
-set wrap-lines = yes
+# This breaks being able to stage partial commits
+# set wrap-lines = yes
 set ignore-case = yes
 # Key
 # @ : Suppresses output
