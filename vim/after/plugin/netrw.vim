@@ -12,8 +12,9 @@ function! s:NetrwMapping()
 endfunction
 
 " Handle `file:///` URLs
-" Disable netrw's built-in support
-autocmd! Network BufReadCmd file://*
+" Disable netrw's built-in network support
+autocmd! Network
+" Enable my support
 augroup follow_file_links
   autocmd!
   autocmd BufNewFile file:///* call s:OpenFileURL()
