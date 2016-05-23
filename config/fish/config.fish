@@ -143,6 +143,14 @@ function fd
   fzf-directory-cd
 end
 
+# Fish
+function fish-edit-config
+ vim $FISH_CONFIG_PATH
+end
+function fish-sync-abbreviations
+  ~/.config/fish/abbreviations.fish
+end
+
 # Vim
 function vim-restore-session
   vim -c "RestoreSession"
