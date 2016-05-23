@@ -205,6 +205,9 @@ end
 function git-diff-commit-minus-one
   git diff $argv[1]^!
 end
+function git-push-force
+  git push --force-with-lease
+end
 
 # Git Stash
 function git-stash-command
@@ -232,7 +235,6 @@ end
 function git-stash-drop
   git-stash-command "drop" $argv
 end
-
 
 
 # egit
