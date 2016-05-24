@@ -139,7 +139,7 @@ end
 function f
   fzf-file-vim
 end
-function fd
+function fcd
   fzf-directory-cd
 end
 
