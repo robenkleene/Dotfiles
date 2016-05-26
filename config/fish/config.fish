@@ -1,18 +1,12 @@
 # Configuration
 
-# Fisherman
-# To setup, install fisherman and plugins:
-# bass
-# fasd
-set fisher_home ~/.local/share/fisherman
-set fisher_config ~/.config/fisherman
-source $fisher_home/config.fish
-
 # fzf
 source ~/.config/fish/fzf.fish
 
 # local fish config
-source ~/.config.fish
+if test -e ~/.config.fish
+  source ~/.config.fish
+end
 
 # Greeting
 set --erase fish_greeting
