@@ -46,14 +46,8 @@ highlight Pmenu ctermfg=white ctermbg=244
 highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
-" BG: #b2b2b2 FG: #585858
-let s:selectionbgcolor = 'darkcyan'
-let s:selectionfgcolor = 'black'
-let s:selectiongroups = ['Visual', 'MatchParen']
-for group in s:selectiongroups
-  exe 'highlight ' . group . ' ctermbg=' . s:selectionbgcolor  . ' ctermfg=' .  
-        \ s:selectionfgcolor
-endfor
+highlight Visual ctermbg=darkcyan ctermfg=black
+highlight MatchParen ctermfg=white ctermbg=244
 
 " Search {{{1
 " The reason to use two colors (instead of an underline) is to have one color
