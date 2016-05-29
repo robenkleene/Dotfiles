@@ -1,5 +1,8 @@
 " vim:foldmethod=marker
 
+" Path
+let $PATH=$HOME . '/.nvm/versions/node/v0.12.2/bin:' . $HOME . '/.rbenv/shims:'. $HOME . '/.rbenv/bin:/usr/local/bin:' . $HOME . '/Development/Scripts/bin:' . $PATH
+
 " General {{{1
 set macmeta
 

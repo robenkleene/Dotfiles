@@ -29,10 +29,6 @@ set sessionoptions+=localoptions
 
 " Basic {{{1
 
-" Path
-" Setting path this way doesn't appear to do anything
-" let $PATH='~/.nvm/versions/node/v0.12.2/bin:~/.rbenv/shims:~/.rbenv/bin:/usr/local/bin:~/Development/Scripts/bin:' . $PATH
-
 " Syntax highlighting
 syntax on
 
