@@ -48,6 +48,7 @@ highlight PmenuSel ctermfg=black ctermbg=cyan
 " Visual Selection {{{1
 highlight Visual ctermbg=darkcyan ctermfg=black
 highlight MatchParen ctermfg=white ctermbg=244
+highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
 " Search {{{1
 " The reason to use two colors (instead of an underline) is to have one color
