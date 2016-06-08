@@ -94,7 +94,7 @@ noremap <silent> <A-j> <C-w>j
 noremap <silent> <A-k> <C-w>k
 noremap <silent> <A-l> <C-w>l
 
-noremap <silent> <S-Left> <C-w>h
-noremap <silent> <S-Down> <C-w>j
-noremap <silent> <S-Up> <C-w>k
-noremap <silent> <S-Right> <C-w>l
+" noremap <silent> <S-Left> <C-w>h
+" noremap <silent> <S-Down> <C-w>j
+" noremap <silent> <S-Up> <C-w>k
+" noremap <silent> <S-Right> <C-w>l
