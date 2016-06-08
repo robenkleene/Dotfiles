@@ -29,7 +29,7 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color'
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 if has('lua')
