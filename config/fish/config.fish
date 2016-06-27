@@ -169,6 +169,9 @@ end
 function git-reveal-diff
   git diff --name-only -z | xargs -0 open -R
 end
+function git-diff-words
+  git diff --color-words
+end
 function git-cd-root
   cd (git rev-parse --show-toplevel)
 end
