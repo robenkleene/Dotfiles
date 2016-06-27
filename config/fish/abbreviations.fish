@@ -35,6 +35,7 @@ abbr -a fsr='fzf-snippet-reveal'
 # git
 abbr -a gvm='git-vim-modified'
 abbr -a ga='git add'
+abbr -a gdw='git-diff-words'
 abbr -a gaa='git add --all :/'
 abbr -a gb='git branch'
 abbr -a gbd='git branch -d'
