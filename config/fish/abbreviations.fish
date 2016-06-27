@@ -14,6 +14,7 @@ abbr -a fec='fish-edit-config'
 
 # fzf
 # Defaults
+abbr -a snp='fzf-snippet'
 abbr -a fs='fzf-snippet'
 abbr -a fx='fzf-project-xcode'
 # Others
