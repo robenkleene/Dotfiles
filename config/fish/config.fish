@@ -178,6 +178,9 @@ end
 function git-push-branch-origin
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
 end
+function git-push-origin-delete
+  git push origin --delete $argv[1]
+end
 function git-remote-add-origin
   git remote rm origin
   git remote add origin $argv[1]
