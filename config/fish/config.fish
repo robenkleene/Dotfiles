@@ -172,6 +172,9 @@ end
 function git-diff-words
   git diff --color-words
 end
+function git-copy-latest-commit
+  git rev-parse HEAD | pbcopy
+end
 function git-cd-root
   cd (git rev-parse --show-toplevel)
 end
