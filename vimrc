@@ -53,6 +53,7 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 call plug#end()
 
 " Source {{{1
