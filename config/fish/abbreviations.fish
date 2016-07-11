@@ -9,6 +9,9 @@ abbr -a nud='nvm use default'
 abbr -a vpg='vim-pipe-grep'
 abbr -a vrs='vim-restore-session'
 
+# BBEdit
+abbr -a bbr='bbresults'
+
 # fish
 abbr -a fec='fish-edit-config'
 
