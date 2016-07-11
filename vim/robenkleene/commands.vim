@@ -58,7 +58,8 @@ function! s:GrepBuffer()
     " Don't show the quickfix list if there's exactly one match
     execute "cbuffer"
   else
-    execute "cbuffer | cw"
+    " execute "cbuffer | cw"
+    execute "cbuffer | copen 20"
   endif
 endfunction
 
