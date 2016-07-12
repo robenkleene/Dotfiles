@@ -1,6 +1,7 @@
 let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 set rtp+=/usr/local/opt/fzf
 
+nnoremap <leader>A :tabnew<CR>:Ag 
 nnoremap <leader>a :Ag 
 nnoremap <leader>* :Ag <C-r><C-w><cr>
 nnoremap <leader>b :Buffers<CR>
