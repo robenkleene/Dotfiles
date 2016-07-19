@@ -8,6 +8,7 @@ set wrap
 setlocal colorcolumn=""
 
 nnoremap <localleader>p :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <localleader>t :.!mdtitlefromfilename "%"<CR>
 
 " Follow file links
 " Search for `](` go right twice and then `gf`, etc...
