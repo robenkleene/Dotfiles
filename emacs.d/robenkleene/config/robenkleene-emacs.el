@@ -28,7 +28,7 @@
 (global-auto-revert-mode t)
 
 ;; Highlight Cursor Line
-;; (global-hl-line-mode)
+(global-hl-line-mode)
 
 ;; Add Line Numbers
 ;; Note this is incompatible with git-gutter
