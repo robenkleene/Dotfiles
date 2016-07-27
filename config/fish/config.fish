@@ -172,6 +172,9 @@ end
 function git-diff-words
   git diff --color-words
 end
+function git-copy-commit-hash
+  git rev-parse HEAD | tr -d '\n' | pbcopy
+end
 function git-commit-hash
   git rev-parse HEAD | tr -d '\n'
 end
