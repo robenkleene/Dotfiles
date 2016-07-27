@@ -59,7 +59,7 @@ function! s:GrepBuffer()
     execute "cbuffer"
   else
     " execute "cbuffer | cw"
-    execute "cbuffer | copen 20"
+    execute "cbuffer | copen 20 | wincmd k"
   endif
 endfunction
 

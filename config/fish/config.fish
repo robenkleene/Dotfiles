@@ -152,11 +152,11 @@ function vim-pipe-grep
   # A more portable solution:
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
-    ag $argv[1] | vim -c "GrepBuffer" -c "let @/='$argv[1]' | set hlsearch" -
+    ag $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | set hlsearch" -
   else
+    # If there's no argument, assume results are being piped in
     vim -c "GrepBuffer" -
   end
-
 end
 function git-vim-modified
   vim (git ls-files -m | uniq)
@@ -171,6 +171,9 @@ function git-reveal-diff
 end
 function git-diff-words
   git diff --color-words
+end
+function git-copy-commit-hash
+  git rev-parse HEAD | tr -d '\n' | pbcopy
 end
 function git-commit-hash
   git rev-parse HEAD | tr -d '\n'
