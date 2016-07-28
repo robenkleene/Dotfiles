@@ -35,11 +35,13 @@ syntax on
 " Use system clipboard by default
 set clipboard=unnamed 
 
-" Don't treat `_` and `-` as a word boundary
-" It's better to not to treat these as word boundaries as it facilitates
-" searching for symbols with the `*` command.
-" set iskeyword-=_
-set iskeyword+=-
+" Set Word Boundaries
+" For `-` and `_` there are two schools of thought:
+" 1. They should not be in `iskeyword` in order to match the `bash` default
+" 2. They should be in `iskeyword` because it facilitates searching for 
+" symbols with the `*` command.
+set iskeyword-=_
+" set iskeyword+=-
 
 " Leader
 let mapleader = "\<space>"
