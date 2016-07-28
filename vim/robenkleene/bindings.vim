@@ -1,29 +1,29 @@
 " Key Commands {{{1
 
 " `C-G` to `<Esc>` like Emacs
-nnoremap <C-g> <Esc>:f<CR>
-inoremap <C-g> <Esc>:f<CR>
-vnoremap <C-g> <Esc>:f<CR>
-" rsi plugin handles this
+" nnoremap <C-g> <Esc>:f<CR>
+" inoremap <C-g> <Esc>:f<CR>
+" vnoremap <C-g> <Esc>:f<CR>
+" " rsi plugin handles this
 " cnoremap <C-g> <Esc>
 
 " Fix Y
 nnoremap Y y$
 
 " Alternative exit insert mode
-inoremap jk <esc>
+" inoremap jk <esc>
 
 " `C-y` paste like in Emacs
-cnoremap <C-y> <C-r>*
-inoremap <C-y> <C-r>*
+" cnoremap <C-y> <C-r>*
+" inoremap <C-y> <C-r>*
 
 " `C-w` insert word at point like Emacs
-cnoremap <C-w> <C-R><C-W>
+" cnoremap <C-w> <C-R><C-W>
 
 " Tabs
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>te :tabedit %<CR>
+" nnoremap <leader>tn :tabnew<CR>
+" nnoremap <leader>tc :tabclose<CR>
+" nnoremap <leader>te :tabedit %<CR>
 
 " vimrc
 nnoremap <leader>oi :edit ~/Dotfiles/vimrc<CR>
@@ -94,7 +94,7 @@ noremap <silent> <A-j> <C-w>j
 noremap <silent> <A-k> <C-w>k
 noremap <silent> <A-l> <C-w>l
 
-" noremap <silent> <S-Left> <C-w>h
-" noremap <silent> <S-Down> <C-w>j
-" noremap <silent> <S-Up> <C-w>k
-" noremap <silent> <S-Right> <C-w>l
+noremap <silent> <S-Left> <C-w>h
+noremap <silent> <S-Down> <C-w>j
+noremap <silent> <S-Up> <C-w>k
+noremap <silent> <S-Right> <C-w>l

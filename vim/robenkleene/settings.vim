@@ -40,8 +40,8 @@ set clipboard=unnamed
 " 1. They should not be in `iskeyword` in order to match the `bash` default
 " 2. They should be in `iskeyword` because it facilitates searching for 
 " symbols with the `*` command.
-set iskeyword-=_
-" set iskeyword+=-
+" set iskeyword-=_
+set iskeyword+=-
 
 " Leader
 let mapleader = "\<space>"

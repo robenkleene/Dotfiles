@@ -17,7 +17,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rsi'
+" Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -62,7 +62,7 @@ source ~/.vim/robenkleene/ui.vim
 if !has('gui_running')
   source ~/.vim/robenkleene/colors.vim
 endif
-source ~/.vim/robenkleene/movement.vim
+" source ~/.vim/robenkleene/movement.vim
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
 source ~/.vim/robenkleene/abbreviations.vim
