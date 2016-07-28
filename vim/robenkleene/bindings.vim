@@ -6,6 +6,19 @@
 " vnoremap <C-g> <Esc>:f<CR>
 " " rsi plugin handles this
 " cnoremap <C-g> <Esc>
+" rsi plugin implementation
+cmap <script> <C-G> <C-C>
+
+" Backwards delete word
+noremap! <M-BS> <C-W>
+if !has("gui_running") && !has('nvim')
+  silent! exe "set <F34>=\<Esc>\<C-?>"
+  silent! exe "set <F35>=\<Esc>\<C-H>"
+  map! <F34> <M-BS>
+  map! <F35> <M-BS>
+  map <F34> <M-BS>
+  map <F35> <M-BS>
+endif
 
 " Fix Y
 nnoremap Y y$
