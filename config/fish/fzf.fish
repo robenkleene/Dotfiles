@@ -1,5 +1,5 @@
 # fzf
-set -x FZF_DEFAULT_COMMAND 'ag -g ""'
+set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
 
 # Helper
 function fzf-process-result
