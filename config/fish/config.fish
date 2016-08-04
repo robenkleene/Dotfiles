@@ -194,7 +194,7 @@ function git-remote-add-origin
   git remote rm origin
   git remote add origin $argv[1]
 end
-function git-remote-prune-origin
+function git-prune-remote-origin
   git remote prune origin
 end
 function git-log-unpushed-commits
