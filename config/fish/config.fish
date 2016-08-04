@@ -164,6 +164,9 @@ end
 function git-submodule-update-init-recursive
   git submodule update --init --recursive
 end
+function git-submodule-checkout-clean
+  git submodule foreach 'git clean -dff | git checkout -- .'
+end
 
 # Git
 function git-reveal-diff
