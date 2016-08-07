@@ -91,6 +91,11 @@ function fzf-file-cd
   and cd "$result"
 end
 
+# path
+function fzf-file-path
+  fzf | tr -d '\n' | tee /dev/tty | pbcopy
+end
+
 # Lines
 
 # vim
