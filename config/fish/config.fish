@@ -179,7 +179,7 @@ function git-diff-words
   git diff --color-words
 end
 function git-copy-commit-hash
-  git rev-parse HEAD | tr -d '\n' | pbcopy
+  git rev-parse HEAD | tr -d '\n' | tee /dev/tty | pbcopy
 end
 function git-commit-hash
   git rev-parse HEAD | tr -d '\n'
