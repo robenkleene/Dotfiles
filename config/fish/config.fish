@@ -193,6 +193,12 @@ end
 function git-push-origin-delete
   git push origin --delete $argv[1]
 end
+function git-remote-url
+  git remote --verbose
+end
+function git-copy-remote-url
+  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | pbcopy
+end
 function git-remote-add-origin
   git remote rm origin
   git remote add origin $argv[1]
