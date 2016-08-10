@@ -162,13 +162,13 @@ function git-vim-modified
   vim (git ls-files -m | uniq)
 end
 function git-clean-checkout
-  git clean -dff and git checkout -- .
+  git clean -dff; and git checkout -- .
 end
 function git-submodule-update-init-recursive
   git submodule update --init --recursive
 end
 function git-submodule-clean-checkout
-  git submodule foreach 'git clean -dff | git checkout -- .'
+  git submodule foreach 'git clean -dff && git checkout -- .'
 end
 
 # Git
