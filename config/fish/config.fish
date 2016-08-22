@@ -17,6 +17,9 @@ set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 # Editor
 set -x EDITOR vim
 
+# Colors
+set -xg fish_color_search_match black --background=cyan
+
 # Prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
