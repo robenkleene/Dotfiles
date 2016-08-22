@@ -8,6 +8,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>h :History<CR>
+nnoremap <leader>c :Modified<CR>
 
 function! s:AgVisual()
   let temp = @s
