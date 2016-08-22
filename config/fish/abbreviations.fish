@@ -36,6 +36,10 @@ abbr -a frv='fzf-result-vim'
 abbr -a fsc='fzf-snippet-copy'
 abbr -a fsr='fzf-snippet-reveal'
 
+# tmux
+abbr -a tma='tmux attach -t'
+abbr -a tmls='tmux ls'
+
 # git
 abbr -a gvm='git-vim-modified'
 abbr -a ga='git add'
