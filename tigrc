@@ -95,5 +95,10 @@ bind generic gp view-pager
 bind status - status-update
 
 # Colors
-# Make the focused split clearer
-color title-focus black white bold
+# Available Colors
+# white, black, green, magenta, blue, cyan, yellow, red, default
+# And (colortest.pl)
+# color0-color255
+color title-focus color254 color244 bold
+color title-blur color249 color239
+color cursor black cyan
