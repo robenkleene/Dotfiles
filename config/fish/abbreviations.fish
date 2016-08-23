@@ -39,6 +39,7 @@ abbr -a fsr='fzf-snippet-reveal'
 # tmux
 abbr -a tma='tmux attach -t'
 abbr -a tmls='tmux ls'
+abbr -a tmnd='tmux-name-directory'
 
 # git
 abbr -a gvm='git-vim-modified'

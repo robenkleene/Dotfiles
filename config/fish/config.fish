@@ -275,6 +275,9 @@ function tmux-session-test
   tmux select-pane
 end
 
+function tmux-name-directory
+  tmux rename-window (basename (pwd))
+end
 # egit
 function egitn
   set --local EGITNEXT (egit -n)
