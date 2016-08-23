@@ -1,0 +1,5 @@
+# This file needs to be compiled with the `lesskey` command
+
+#line-edit
+
+    ^W      word-backspace

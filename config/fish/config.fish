@@ -14,6 +14,12 @@ set --erase fish_greeting
 # Path
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
+# Manpager
+set -x PAGER "/usr/local/bin/less --squeeze-blank-lines --ignore-case"
+
+# Pager
+set -x PAGER "/usr/local/bin/less --ignore-case"
+
 # Editor
 set -x EDITOR vim
 
