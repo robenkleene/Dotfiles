@@ -1,13 +1,9 @@
 " Key Commands {{{1
 
 " `C-G` to `<Esc>` like Emacs
-" nnoremap <C-g> <Esc>:f<CR>
-" inoremap <C-g> <Esc>:f<CR>
-" " rsi plugin handles this
-" cnoremap <C-g> <Esc>
 " rsi plugin implementation
-cmap <script> <C-G> <C-C>
-vnoremap <C-g> <Esc>:f<CR>
+" cmap <script> <C-G> <C-C>
+" vnoremap <C-g> <Esc>:f<CR>
 
 " Backwards delete word
 " noremap! <M-BS> <C-W>
