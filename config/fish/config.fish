@@ -189,10 +189,12 @@ function git-diff-words
   git diff --color-words
 end
 function git-copy-commit-hash
-  git rev-parse HEAD | tr -d '\n' | tee /dev/tty | pbcopy
+  # Print the '\n' because otherwise `tmux` has issues
+  git rev-parse HEAD | tee /dev/tty | tr -d '\n' |  pbcopy
 end
 function git-commit-hash
-  git rev-parse HEAD | tr -d '\n'
+  # Print the '\n' because otherwise `tmux` has issues
+  git rev-parse HEAD
 end
 function git-cd-root
   cd (git rev-parse --show-toplevel)
