@@ -33,7 +33,7 @@ set sessionoptions+=localoptions
 syntax on
 
 " Use system clipboard by default
-set clipboard=unnamed 
+" set clipboard=unnamed 
 
 " Set Word Boundaries
 " For `-` and `_` there are two schools of thought:
