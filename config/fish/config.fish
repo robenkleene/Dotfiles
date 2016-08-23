@@ -155,7 +155,8 @@ function vim-pipe-grep
   # A more portable solution:
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
-    ag $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | set hlsearch" -
+    # Set the search register and the yank register
+    ag $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
     vim -c "GrepBuffer" -
