@@ -37,19 +37,23 @@ bind main T !@git difftool %(commit)^!
 # Emacs
 bind generic <Ctrl-V> move-page-down
 
-# Magit
-bind status s status-update
+# Stage
+# bind status s status-update
 bind stage <Enter> edit
-
-# Diff
-# bind stage } :/^@@
-# bind stage { :?^@@
 bind stage ]] :/^@@
 bind stage [[ :?^@@
 bind stage ] none
 bind stage [ none
 bind stage ]c :/^[+|-][^+-]
 bind stage [c :?^[+|-][^+-]
+# Diff
+bind diff <Enter> edit
+bind diff ]] :/^@@
+bind diff [[ :?^@@
+bind diff ] none
+bind diff [ none
+bind diff ]c :/^[+|-][^+-]
+bind diff [c :?^[+|-][^+-]
 
 # Debugging
 # bind status Z !sh -c 'cat %(file)'
@@ -101,4 +105,5 @@ bind status - status-update
 # color0-color255
 color title-focus color254 color244 bold
 color title-blur color249 color239
+color search-result black cyan
 color cursor black cyan
