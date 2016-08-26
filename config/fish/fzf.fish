@@ -163,8 +163,7 @@ end
 
 # Project
 
-# fzf Xcode
-
+# Xcode
 function fzf-project-xcode
-  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf | tr '\n' '\0' | xargs -0 open
+  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
 end
