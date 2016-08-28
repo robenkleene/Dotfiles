@@ -284,7 +284,7 @@ end
 function egitn
   set --local EGITNEXT (egit -n)
   if test -n "$EGITNEXT"
-    cd $EGITNEXT
+    cd "$EGITNEXT"
     git status
   end
 end
