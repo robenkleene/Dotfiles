@@ -42,7 +42,7 @@ command! -bang Q
       \ endif
 
 " Quit and save session
-command! -bang Qs
+command! -bang QS
       \ execute "SaveSession" |
       \ if <bang>1 |
       \   execute "qa!" |
@@ -87,4 +87,5 @@ endfunction
 " Save and Restore Session State
 command! SaveSession :mksession! ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_session
-
+cnoreabbrev SS SaveSession
+cnoreabbrev RS RestoreSession
