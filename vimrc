@@ -31,6 +31,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bogado/file-line'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
+Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
+      \ 'TestLast', 'TestVisit'] }
 if has('lua')
   Plug 'Shougo/neocomplete.vim'
 end
@@ -72,6 +74,7 @@ if has('gui_running')
 else
   source ~/.vim/robenkleene/plugin/fzf.vim
 end
+source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
 source ~/.vim/robenkleene/plugin/neocomplete.vim
 source ~/.vim/robenkleene/plugin/surround.vim
