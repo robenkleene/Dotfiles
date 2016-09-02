@@ -36,6 +36,9 @@ abbr -a frv='fzf-result-vim'
 abbr -a fsc='fzf-snippet-copy'
 abbr -a fsr='fzf-snippet-reveal'
 
+# cd
+abbr -a ccp='cd-copy-path'
+
 # tmux
 abbr -a tma='tmux attach -t'
 abbr -a tmls='tmux ls'
