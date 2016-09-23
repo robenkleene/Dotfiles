@@ -209,6 +209,9 @@ end
 function git-push-origin-delete
   git push origin --delete $argv[1]
 end
+function git-branch-delete-origin
+  git push origin --delete $argv[1]
+end
 function git-remote-url
   git remote --verbose
 end
