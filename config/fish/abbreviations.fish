@@ -14,6 +14,7 @@ abbr -a bbr='bbresults'
 
 # fish
 abbr -a fec='fish-edit-config'
+abbr -a fsa='fish-sync-abbreviations'
 
 # fzf
 # Defaults
@@ -64,6 +65,7 @@ abbr -a gdn='git diff --name-only'
 abbr -a gdt='git difftool'
 abbr -a gdtcmo='git-difftool-commit-minus-one'
 abbr -a gdw='git-diff-words'
+abbr -a gf='git fetch'
 abbr -a gh='git-commit-hash'
 abbr -a gl='git log'
 abbr -a gm='git merge'
