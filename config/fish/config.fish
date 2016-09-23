@@ -180,6 +180,10 @@ end
 function git-submodule-clean-checkout
   git submodule foreach --recursive 'git clean -dff && git checkout -- .'
 end
+function git-reset
+  git-clean-checkout
+  git-submodule-reset
+end
 function git-submodule-reset
   git submodule update --init --recursive
   git submodule foreach --recursive 'git clean -dff && git checkout -- .'
