@@ -50,7 +50,7 @@ set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
 # ag
-alias ag "ag --path-to-agignore ~/.agignore"
+alias ag "ag --path-to-ignore ~/.agignore"
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
