@@ -10,7 +10,7 @@ abbr -a vpg='vim-pipe-grep'
 abbr -a vrs='vim-restore-session'
 
 # BBEdit
-abbr -a bbr='bbresults'
+abbr -a bbr='bbedit-pipe-grep'
 
 # fish
 abbr -a fec='fish-edit-config'

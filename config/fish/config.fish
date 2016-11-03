@@ -198,7 +198,7 @@ function git-diff-words
 end
 function git-copy-commit-hash
   # Print the '\n' because otherwise `tmux` has issues
-  git rev-parse HEAD | tee /dev/tty | tr -d '\n' |  pbcopy
+  git rev-parse HEAD | tee /dev/tty | tr -d '\n' | pbcopy
 end
 function git-commit-hash
   # Print the '\n' because otherwise `tmux` has issues
@@ -330,6 +330,15 @@ function bbfind-gui-grep
 end
 function bbfind-gui-grep-case-name
   bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
+end
+function bbedit-pipe-grep
+  if [ $argv[1] ]
+    echo $argv | tr -d '\n' | pbcopy -pboard find
+    ag $argv | bbresults
+  else
+    # If there's no argument, assume results are being piped in
+    bbresults
+  end
 end
 
 # Gem
