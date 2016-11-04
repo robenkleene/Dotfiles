@@ -14,10 +14,10 @@ fi
 function MakeSymlink {
  	DESTINATION=~/.$thisFILE
 	if [ -f $DESTINATION ] || [ -d $DESTINATION ]; then
-		echo "$DESTINATION skipped because it already exists."
+		rm $DESTINATION
 	else
-		ln -s $DIRECTORY/$thisFILE $DESTINATION
-	fi	
+		echo "Skipped $DESTINATION because it does not exist."
+	fi
 }
 
 for thisFILE in *; do 
