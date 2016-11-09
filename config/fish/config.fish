@@ -334,7 +334,9 @@ end
 function bbedit-pipe-grep
   if [ $argv[1] ]
     echo $argv | tr -d '\n' | pbcopy -pboard find
-    ag $argv | bbresults
+    # Insert a space after the line number, this is because `bbresults`
+    # input requires a space there
+    ag $argv | sed -e 's/^\([^:]*\):\([^:]*\):/\1:\2: /' | bbresults
   else
     # If there's no argument, assume results are being piped in
     bbresults
