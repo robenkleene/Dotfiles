@@ -46,6 +46,7 @@ abbr -a tmls='tmux ls'
 abbr -a tmnd='tmux-name-directory'
 
 # git
+abbr -a g='gitup'
 abbr -a ga='git add'
 abbr -a gaa='git add --all :/'
 abbr -a gb='git branch'
