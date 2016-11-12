@@ -74,6 +74,11 @@ function fzf-file-mate
   fzf | tr '\n' '\0' | xargs -0 mate
 end
 
+# bbedit
+function fzf-file-bbedit
+  fzf | tr '\n' '\0' | xargs -0 bbedit
+end
+
 # reveal
 function fzf-file-reveal
   fzf | tr '\n' '\0' | xargs -0 open -R

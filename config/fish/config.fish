@@ -141,6 +141,9 @@ end
 function fcd
   fzf-directory-cd
 end
+function fx
+  fzf-project-xcode
+end
 
 # Fish
 function fish-edit-config
