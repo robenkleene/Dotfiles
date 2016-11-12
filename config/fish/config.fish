@@ -135,9 +135,6 @@ function v
   end
 end
 # fzf
-function b
-  fzf-bookmark-cd
-end
 function f
   fzf-file-vim
 end
