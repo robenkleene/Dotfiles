@@ -155,3 +155,7 @@ end
 function fzf-project-xcode
   find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
 end
+
+function fzf-file-xcode
+  eval $FZF_DEFAULT_COMMAND --swift --objc | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+end
