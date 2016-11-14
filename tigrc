@@ -16,7 +16,8 @@ bind generic A !@atom %(file)
 bind generic X !@open -a Xcode %(file)
 bind generic R !@open --reveal %(file)
 bind generic E !@sh -c "mate --async '%(file)'"
-bind generic D !@sh -c "git diff '%(file)' | mate --async"
+# bind generic D !@sh -c "git diff '%(file)' | mate --async"
+bind generic D !@sh -c "git difftool '%(file)'"
 bind generic Y !@bash -c "echo -n %(commit) | pbcopy"
 bind status d !bash -c "git diff --color-words %(file)"
 bind stage d !bash -c "git diff --color-words %(file)"
