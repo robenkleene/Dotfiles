@@ -17,15 +17,16 @@ abbr -a fec='fish-edit-config'
 abbr -a fsa='fish-sync-abbreviations'
 
 # fzf
+abbr -a fza='fzf-ag-vim'
+abbr -a fzab='fzf-ag-bbedit'
+abbr -a fzam='fzf-ag-mate'
+abbr -a fzb='fzf-file-bbedit'
 abbr -a fzc='fzf-directory-cd'
 abbr -a fzm='fzf-file-mate'
-abbr -a fzb='fzf-file-bbedit'
-abbr -a fzt='fzf-file-mate'
 abbr -a fzo='fzf-file-open'
-abbr -a fzr='fzf-file-reveal'
 abbr -a fzp='fzf-file-path'
+abbr -a fzr='fzf-file-reveal'
 abbr -a fzx='fzf-file-xcode'
-abbr -a fza='fzf-ag-vim'
 
 # cd
 abbr -a ccp='cd-copy-path'

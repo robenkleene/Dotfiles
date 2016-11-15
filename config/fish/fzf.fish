@@ -168,3 +168,17 @@ function fzf-ag-vim
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end
+
+function fzf-ag-bbedit
+  echo $argv | tr -d '\n' | pbcopy -pboard find
+  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
+end
+
+function fzf-ag-mate
+  echo $argv | tr -d '\n' | pbcopy -pboard find
+  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
+end
