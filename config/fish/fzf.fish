@@ -159,3 +159,12 @@ end
 function fzf-file-xcode
   eval $FZF_DEFAULT_COMMAND --swift --objc | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
 end
+
+# ag
+
+function fzf-ag-vim
+  echo $argv | tr -d '\n' | pbcopy -pboard find
+  ag --nocolor --nobreak --noheading $argv . | fzf > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and echo $result | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
+end

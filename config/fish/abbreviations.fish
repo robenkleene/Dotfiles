@@ -25,6 +25,7 @@ abbr -a fzo='fzf-file-open'
 abbr -a fzr='fzf-file-reveal'
 abbr -a fzp='fzf-file-path'
 abbr -a fzx='fzf-file-xcode'
+abbr -a fza='fzf-ag-vim'
 
 # cd
 abbr -a ccp='cd-copy-path'
