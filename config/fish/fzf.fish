@@ -164,7 +164,7 @@ end
 
 function fzf-ag-vim
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ag --nocolor --nobreak --noheading $argv . | fzf > $TMPDIR/fzf.result
+  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end

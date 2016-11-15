@@ -106,6 +106,9 @@ end
 # Functions
 
 # Quick
+function a
+  fzf-ag-vim $argv
+end
 function n
   new-terminal-here
 end
