@@ -18,7 +18,6 @@
     telemetryConsent: "no"
     useCustomTitleBar: true
   editor:
-    fontSize: 13
     invisibles: {}
     lineHeight: 1.3
     showInvisibles: true
