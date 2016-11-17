@@ -35,12 +35,8 @@ nnoremap Y y$
 " nnoremap <leader>te :tabedit %<CR>
 
 " vimrc
-nnoremap <leader>oi :edit ~/Dotfiles/vimrc<CR>
+nnoremap <leader>oi :edit ~/Development/Dotfiles/vimrc<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
-
-" Bookmarks
-nnoremap <leader>op :edit ~/Dotfiles/vim/bundle/<CR>
-nnoremap <leader>ob :CtrlPDirectoryBookmarks<CR>
 
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>

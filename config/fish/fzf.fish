@@ -1,5 +1,18 @@
 # fzf
-set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
+function ack_lines
+  ag --nobreak --noheading $argv
+end
+function ack_lines_color
+  ack_lines --color $argv
+end
+function ack_lines_no_color
+  ack_lines --nocolor $argv
+end
+
+# ag
+# set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
+# rg
+set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 
 # Helper
 function fzf-process-result
@@ -105,7 +118,7 @@ end
 
 # vim
 function fzf-line-vim
-  ag --nocolor --nobreak --noheading "[a-zA-Z0-9]+" . | fzf > $TMPDIR/fzf.result
+  ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" - 
 end
@@ -160,25 +173,25 @@ function fzf-file-xcode
   eval $FZF_DEFAULT_COMMAND --swift --objc | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
 end
 
-# ag
+# ack
 
-function fzf-ag-vim
+function fzf-ack-vim
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end
 
-function fzf-ag-bbedit
+function fzf-ack-bbedit
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
 end
 
-function fzf-ag-mate
+function fzf-ack-mate
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ag --color --nobreak --noheading $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
 end

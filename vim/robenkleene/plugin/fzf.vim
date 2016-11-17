@@ -1,4 +1,8 @@
-let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+" ag
+" let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+" rg
+let $FZF_DEFAULT_COMMAND= 'rg --hidden --files -g ""'
+
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <leader>A :tabnew<CR>:Ag 

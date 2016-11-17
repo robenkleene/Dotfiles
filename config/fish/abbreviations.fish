@@ -17,9 +17,9 @@ abbr -a fec='fish-edit-config'
 abbr -a fsa='fish-sync-abbreviations'
 
 # fzf
-abbr -a fza='fzf-ag-vim'
-abbr -a fzab='fzf-ag-bbedit'
-abbr -a fzam='fzf-ag-mate'
+abbr -a fza='fzf-ack-vim'
+abbr -a fzab='fzf-ack-bbedit'
+abbr -a fzam='fzf-ack-mate'
 abbr -a fzb='fzf-file-bbedit'
 abbr -a fzc='fzf-directory-cd'
 abbr -a fzm='fzf-file-mate'

@@ -50,7 +50,9 @@ set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
 # ag
-alias ag "ag --path-to-ignore ~/.agignore"
+alias ag "ag --path-to-ignore ~/.ignore"
+# rg
+alias rg "rg --smart-case"
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
@@ -107,7 +109,7 @@ end
 
 # Quick
 function a
-  fzf-ag-vim $argv
+  fzf-ack-vim $argv
 end
 function n
   new-terminal-here
@@ -165,7 +167,7 @@ function vim-pipe-grep
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
-    ag $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
+    gr $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
     vim -c "GrepBuffer" -
@@ -339,7 +341,7 @@ function bbedit-pipe-grep
     echo $argv | tr -d '\n' | pbcopy -pboard find
     # Insert a space after the line number, this is because `bbresults`
     # input requires a space there
-    ag --column $argv | bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
+    gr --column $argv | bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
   else
     # If there's no argument, assume results are being piped in
     bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
