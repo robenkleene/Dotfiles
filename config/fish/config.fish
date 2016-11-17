@@ -52,7 +52,7 @@ rbenv rehash >/dev/null ^&1
 # ag
 alias ag "ag --path-to-ignore ~/.ignore"
 # rg
-alias rg "rg --smart-case"
+alias rg "rg --smart-case --line-number"
 
 # Atom
 set -x ATOM_PATH $HOME/Applications/
@@ -167,7 +167,8 @@ function vim-pipe-grep
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
-    gr $argv | vim -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
+    # gr $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+    ag $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
     vim -c "GrepBuffer" -
