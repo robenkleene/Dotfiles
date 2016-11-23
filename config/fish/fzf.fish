@@ -1,27 +1,27 @@
 # fzf
 function ack_lines
   # ag
-  ag --nobreak --noheading $argv
+  # ag --nobreak --noheading $argv
   # rg
-  # rg --line-number --no-heading $argv
+  rg --no-heading $argv
 end
 function ack_lines_color
   # ag
-  ack_lines --color $argv
+  # ack_lines --color $argv
   # rg
-  # ack_lines --color=always $argv
+  ack_lines --color=always $argv
 end
 function ack_lines_no_color
   # ag
-  ack_lines --nocolor $argv
+  # ack_lines --nocolor $argv
   # rg
-  # ack_lines --color=never $argv
+  ack_lines --color=never $argv
 end
 
 # ag
-set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
+# set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
 # rg
-# set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
+set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 
 # Helper
 function fzf-process-result

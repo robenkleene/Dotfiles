@@ -1,7 +1,7 @@
 " ag
-let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+" let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 " rg
-" let $FZF_DEFAULT_COMMAND= 'rg --hidden --files -g ""'
+let $FZF_DEFAULT_COMMAND= 'rg --hidden --files -g ""'
 
 set rtp+=/usr/local/opt/fzf
 
