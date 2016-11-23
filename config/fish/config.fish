@@ -109,6 +109,9 @@ end
 
 # Quick
 function a
+  ag $argv
+end
+function fa
   fzf-ack-vim $argv
 end
 function n
