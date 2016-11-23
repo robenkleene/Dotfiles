@@ -106,7 +106,6 @@ end
 
 
 # Functions
-
 # Quick
 function a
   # ag
@@ -116,6 +115,9 @@ function a
 end
 function fa
   fzf-ack-vim $argv
+end
+function va
+  vim-pipe-grep $argv
 end
 function n
   new-terminal-here
@@ -173,7 +175,7 @@ function vim-pipe-grep
   # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
-    gr $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+    rg $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
     # ag $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
