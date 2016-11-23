@@ -6,13 +6,28 @@ let $FZF_DEFAULT_COMMAND= 'rg --hidden --files -g ""'
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <leader>A :tabnew<CR>:Ag 
-nnoremap <leader>a :Ag 
-nnoremap <leader>* :Ag <C-r><C-w><cr>
+
+" ag
+" nnoremap <leader>a :Ag 
+" nnoremap <leader>* :Ag <C-r><C-w><cr>
+" vnoremap <leader>* :<C-u>call <SID>AgVisual()<CR>
+" rg
+nnoremap <leader>a :Rg 
+nnoremap <leader>* :Rg <C-r><C-w><cr>
+vnoremap <leader>* :<C-u>call <SID>RgVisual()<CR>
+
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>c :Modified<CR>
+
+function! s:RgVisual()
+  let temp = @s
+  norm! gv"sy
+  execute "Rg " . @s
+  let @s = temp
+endfunction
 
 function! s:AgVisual()
   let temp = @s
@@ -21,7 +36,9 @@ function! s:AgVisual()
   let @s = temp
 endfunction
 
-vnoremap <leader>* :<C-u>call <SID>AgVisual()<CR>
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 " Bookmarks
 function! s:RobenKleeneBookmarks()
