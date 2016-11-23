@@ -32,9 +32,9 @@ abbr -a fzx='fzf-file-xcode'
 abbr -a ccp='cd-copy-path'
 
 # tmux
-abbr -a tma='tmux attach -t'
-abbr -a tmls='tmux ls'
-abbr -a tmnd='tmux-name-directory'
+abbr -a ta='tmux attach -t'
+abbr -a tls='tmux ls'
+abbr -a tnd='tmux-name-directory'
 
 # git
 abbr -a g='gitup'
