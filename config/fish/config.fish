@@ -243,6 +243,9 @@ end
 function git-prune-remote-origin
   git remote prune origin
 end
+function git-prune
+  git-prune-remote-origin
+end
 function git-log-unpushed-commits
   git log @\{u\}..
 end
