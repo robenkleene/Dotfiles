@@ -350,7 +350,7 @@ function bbedit-pipe-grep
     echo $argv | tr -d '\n' | pbcopy -pboard find
     # Insert a space after the line number, this is because `bbresults`
     # input requires a space there
-    gr --column $argv | bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
+    rg --column $argv | bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
   else
     # If there's no argument, assume results are being piped in
     bbresults -p "(?P<file>.+?):(?P<line>\d+):((?P<col>\d+):)?\s*(?P<msg>.*)\$" --new-window
