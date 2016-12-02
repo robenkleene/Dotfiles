@@ -44,10 +44,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': [] }
 Plug 'junegunn/fzf', { 'on': [] }
 Plug 'junegunn/fzf.vim', { 'on': [] }
-if has('gui_running')
-  call plug#load('ctrlp.vim')
-else
+if !has('gui_running') || has("gui_vimr")
   call plug#load('fzf', 'fzf.vim')
+else
+  call plug#load('ctrlp.vim')
 end
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -72,10 +72,10 @@ source ~/.vim/robenkleene/abbreviations.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/commentary.vim
-if has('gui_running')
-  source ~/.vim/robenkleene/plugin/ctrlp.vim
-else
+if !has('gui_running') || has('gui_vimr')
   source ~/.vim/robenkleene/plugin/fzf.vim
+else
+  source ~/.vim/robenkleene/plugin/ctrlp.vim
 end
 source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
