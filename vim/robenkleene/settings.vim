@@ -73,6 +73,11 @@ set nofoldenable
 
 " Ignore case in search results
 set ignorecase
+" Live Substitution Preview
+if has('nvim')
+  " set inccommand=nosplit
+  set inccommand=split
+endif
 
 " Override `ignorecase`
 set smartcase
