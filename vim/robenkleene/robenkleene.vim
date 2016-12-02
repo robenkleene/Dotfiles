@@ -63,6 +63,9 @@ source ~/.vim/robenkleene/ui.vim
 if !has('gui_running')
   source ~/.vim/robenkleene/colors.vim
 endif
+if has("gui_vimr")
+  source ~/.gvimrc
+endif
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
 source ~/.vim/robenkleene/abbreviations.vim
