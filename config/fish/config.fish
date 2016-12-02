@@ -21,10 +21,15 @@ set -x PAGER "/usr/local/bin/less --squeeze-blank-lines --ignore-case"
 set -x PAGER "/usr/local/bin/less --ignore-case"
 
 # Editor
-set -x EDITOR vim
-
+# Vim
+# set -x EDITOR vim
+# NeoVim
+set -x EDITOR nvim
 function vim-edit
-  vim $argv
+  # Vim
+  # vim $argv
+  # NeoVim
+  nvim $argv
 end
 
 # Colors
