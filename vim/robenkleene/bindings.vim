@@ -35,7 +35,7 @@ nnoremap Y y$
 " nnoremap <leader>te :tabedit %<CR>
 
 " vimrc
-nnoremap <leader>oi :edit ~/Development/Dotfiles/vimrc<CR>
+nnoremap <leader>oi :edit ~/Development/Dotfiles/vim/robenkleene/robenkleene.vim<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
 " Toggle No Wrap
@@ -88,12 +88,16 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " in a tmux pane (e.g., `tig -> vim`), then moving between vim panes will break,
 " because tmux won't be able to detect that vim is actually running as a child
 " of `tig`.
-let c='a'
-while c <= 'z'
-  exec "set <M-".tolower(c).">=\e".c
-  exec "nnoremap \e".c." <M-".tolower(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
+
+if !has('nvim')
+  let c='a'
+  while c <= 'z'
+    exec "set <M-".tolower(c).">=\e".c
+    exec "nnoremap \e".c." <M-".tolower(c).">"
+    let c = nr2char(1+char2nr(c))
+  endw
+endif
+
 noremap <silent> <A-h> <C-w>h
 noremap <silent> <A-j> <C-w>j
 noremap <silent> <A-k> <C-w>k

@@ -1,2 +1,2 @@
-" Vim Init
+" NeoVim Init
 source ~/.vim/robenkleene/robenkleene.vim
