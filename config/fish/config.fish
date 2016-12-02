@@ -150,11 +150,7 @@ function ec
   emacsclient -t $argv
 end
 function v
-  if count $argv > /dev/null
-    vim-edit $argv
-  else
-    vim-edit .
-  end
+  vim-edit $argv
 end
 # fzf
 function f
