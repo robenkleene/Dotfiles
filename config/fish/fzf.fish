@@ -54,7 +54,7 @@ end
 # Use from variable
 function fzf-result-vim
   test -n "$FZFRESULT"
-  and vim "$FZFRESULT"
+  and vim-edit "$FZFRESULT"
 end
 function fzf-result-cd
   test -n "$FZFRESULT"
@@ -88,7 +88,7 @@ function fzf-file-vim
   # fzf | tr '\n' '\0' | xargs -0 -o vim
   fzf > $TMPDIR/fzf.result
   set result (fzf-process-result)
-  and vim "$result"
+  and vim-edit "$result"
 end
 
 # mate
@@ -168,7 +168,7 @@ function fzf-snippet-vim
   cd -
 
   set result (fzf-process-result)
-  and vim "$HOME/Development/Snippets/$result"
+  and vim-edit "$HOME/Development/Snippets/$result"
 end
 
 # Project

@@ -23,6 +23,10 @@ set -x PAGER "/usr/local/bin/less --ignore-case"
 # Editor
 set -x EDITOR vim
 
+function vim-edit
+  vim $argv
+end
+
 # Colors
 set -xg fish_color_search_match black --background=cyan
 
@@ -62,7 +66,7 @@ set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
 
 # Fish
-set -x FISH_CONFIG_PATH $HOME/Dotfiles/config/fish/config.fish
+set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
 
 # nvm
 # Relies on `bass` as a dependency
@@ -142,9 +146,9 @@ function ec
 end
 function v
   if count $argv > /dev/null
-    vim $argv
+    vim-edit $argv
   else
-    vim .
+    vim-edit .
   end
 end
 # fzf
@@ -160,7 +164,7 @@ end
 
 # Fish
 function fish-edit-config
- vim $FISH_CONFIG_PATH
+ vim-edit $FISH_CONFIG_PATH
 end
 function fish-sync-abbreviations
   ~/.config/fish/abbreviations.fish
@@ -168,22 +172,22 @@ end
 
 # Vim
 function vim-restore-session
-  vim -c "RestoreSession"
+  vim-edit -c "RestoreSession"
 end
 function vim-pipe-grep
   # A more portable solution:
-  # vim -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
+  # vim-edit -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
-    rg $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
-    # ag $argv | vim -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+    rg $argv | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+    # ag $argv | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
-    vim -c "GrepBuffer" -
+    vim-edit -c "GrepBuffer" -
   end
 end
 function git-vim-modified
-  vim (git ls-files -m | uniq)
+  vim-edit (git ls-files -m | uniq)
 end
 function git-clean-checkout
   git clean -dff; and git checkout -- .
@@ -254,7 +258,7 @@ function git-diff-dirty
 end
 # Open unmerged files in Vim
 function git-vim-dirty
-  sh -c "vim \$(git diff --name-only --diff-filter=UM)"
+  sh -c "vim-edit \$(git diff --name-only --diff-filter=UM)"
 end
 function git-difftool-commit-minus-one
   git difftool $argv[1]^!
@@ -393,7 +397,7 @@ function edit_cmd --description 'Input command in external editor'
   and test -n "$tempfile"
   and set -l cursorposition (commandline -C)
   and commandline -b > $tempfile
-  and vim -c 'set ft=fish' $tempfile
+  and vim-edit -c 'set ft=fish' $tempfile
   and set -l edited (cat $tempfile)
   and test -n "$edited"
   and commandline -r $edited
