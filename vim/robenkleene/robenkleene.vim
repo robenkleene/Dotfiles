@@ -11,6 +11,12 @@ if empty(glob("~/.vim/autoload/plug.vim"))
   execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
+" Conditional Helper Function
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 call plug#begin('~/.vim/plugged')
 " Tim Pope {{{2
 Plug 'tpope/vim-abolish'
@@ -41,14 +47,9 @@ end
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
-Plug 'ctrlpvim/ctrlp.vim', { 'on': [] }
-Plug 'junegunn/fzf', { 'on': [] }
-Plug 'junegunn/fzf.vim', { 'on': [] }
-if !has('gui_running') || has("gui_vimr")
-  call plug#load('fzf', 'fzf.vim')
-else
-  call plug#load('ctrlp.vim')
-end
+Plug 'ctrlpvim/ctrlp.vim', Cond(!has('gui_running') && !has('nvim'))
+Plug 'junegunn/fzf', Cond(has('nvim'))
+Plug 'junegunn/fzf.vim', Cond(has('nvim'))
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -79,7 +80,11 @@ else
 end
 source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
-source ~/.vim/robenkleene/plugin/neocomplete.vim
+
+if has('nvim') && has("python3")
+elseif has('lua')
+  source ~/.vim/robenkleene/plugin/neocomplete.vim
+endif
 source ~/.vim/robenkleene/plugin/surround.vim
 source ~/.vim/robenkleene/plugin/syntastic.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim

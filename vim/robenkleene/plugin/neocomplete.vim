@@ -1,7 +1,3 @@
-if !has('lua')
-  finish
-end
-
 let g:neocomplete#enable_at_startup = 1
 
 " Delay Before Popup Displays
