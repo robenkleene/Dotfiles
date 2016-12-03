@@ -40,9 +40,7 @@ Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
       \ 'TestLast', 'TestVisit'] }
 Plug 'Konfekt/FastFold'
-if has('lua')
-  Plug 'Shougo/neocomplete.vim'
-end
+Plug 'Shougo/neocomplete.vim', Cond(has('lua') && !has('nvim'))
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
