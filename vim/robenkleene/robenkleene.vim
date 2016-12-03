@@ -41,6 +41,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
       \ 'TestLast', 'TestVisit'] }
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/neocomplete.vim', Cond(has('lua') && !has('nvim'))
+Plug 'Shougo/deoplete.nvim', Cond(has('nvim') && has('python3'), { 'do': ':UpdateRemotePlugins' })
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -80,6 +81,7 @@ source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
 
 if has('nvim') && has("python3")
+  source ~/.vim/robenkleene/plugin/deoplete.vim
 elseif has('lua')
   source ~/.vim/robenkleene/plugin/neocomplete.vim
 endif

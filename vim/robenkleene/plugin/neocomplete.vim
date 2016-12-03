@@ -4,18 +4,15 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_cursor_hold_i = 1
 let g:neocomplete#cursor_hold_i_time = 100
 
-" Autoselect matches (don't have to use arrows)
+" Autoselect the first match (otherwise down arrow needs to be entered)
 let g:neocomplete#enable_auto_select = 1
 
-
-inoremap <expr><C-g> pumvisible() ? neocomplete#cancel_popup() : "\<ESC>"
+" By default `neocomplete` uses `<CR>` to accept the completion. But this makes
+" it difficult to create a new line with a partial completion. `<TAB>` is a
+" better key to accept the completion, because, in programming, you almost 
+" never need to insert a tab after the start of a line.
 inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 inoremap <expr><CR> neocomplete#smart_close_popup()."\<CR>"
-" inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
-" This doesn't work here because `rsi.vim` overrides this binding
-" inoremap <expr><C-f> pumvisible() ? neocomplete#close_popup() : "\<C-f>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Disable for some filetypes
 augroup neocomplete_buffers
