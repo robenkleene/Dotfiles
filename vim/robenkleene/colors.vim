@@ -60,6 +60,7 @@ highlight Search cterm=NONE ctermbg=darkcyan ctermfg=black
 " Status Line {{{1
 highlight StatusLine ctermbg=white ctermfg=244
 highlight StatusLineNC ctermfg=239 ctermbg=249
+highlight VertSplit ctermfg=239 ctermbg=239
 
 " Mode Message {{{1
 highlight ModeMsg ctermfg=black ctermbg=darkcyan cterm=bold
