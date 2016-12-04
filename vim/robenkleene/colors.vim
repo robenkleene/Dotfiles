@@ -151,3 +151,9 @@ highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
 highlight SyntasticErrorSign ctermfg=red
 highlight SyntasticWarningSign ctermfg=yellow
 highlight SyntasticStyleWarningSign ctermfg=yellow
+
+" Neomake {{{2
+highlight NeomakeErrorSign ctermfg=red
+highlight NeomakeWarningSign ctermfg=yellow
+highlight NeomakeMessageSign ctermfg=darkgray
+highlight NeomakeInfoSign ctermfg=white
