@@ -35,7 +35,8 @@ Plug 'ap/vim-css-color'
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bogado/file-line'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', Cond(!has('nvim'))
+Plug 'neomake/neomake', Cond(has('nvim'))
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
       \ 'TestLast', 'TestVisit'] }
@@ -46,9 +47,10 @@ Plug 'Shougo/deoplete.nvim', Cond(has('nvim') && has('python3'), { 'do': ':Updat
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
-Plug 'ctrlpvim/ctrlp.vim', Cond(!has('gui_running') && !has('nvim'))
-Plug 'junegunn/fzf', Cond(has('nvim'))
-Plug 'junegunn/fzf.vim', Cond(has('nvim'))
+let b:terminalorneovim = !has('gui_running') || has('nvim')
+Plug 'junegunn/fzf', Cond(b:terminalorneovim)
+Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
+Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -86,6 +88,10 @@ elseif has('lua')
   source ~/.vim/robenkleene/plugin/neocomplete.vim
 endif
 source ~/.vim/robenkleene/plugin/surround.vim
-source ~/.vim/robenkleene/plugin/syntastic.vim
+if has('nvim')
+  source ~/.vim/robenkleene/plugin/neomake.vim
+else
+  source ~/.vim/robenkleene/plugin/syntastic.vim
+endif
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
 source ~/.vim/robenkleene/plugin/vim-gitgutter.vim
