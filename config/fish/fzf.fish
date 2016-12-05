@@ -179,7 +179,10 @@ function fzf-project-xcode
 end
 
 function fzf-file-xcode
-  eval $FZF_DEFAULT_COMMAND --swift --objc | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+  # rg
+  # `ag` version isn't written yet
+  set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
+  eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
 end
 
 # ack
