@@ -315,7 +315,7 @@ function tmux-name-directory
 end
 # egit
 function egitn
-  set --local EGITNEXT (egit -n)
+  set EGITNEXT (egit -n)
   if test -n "$EGITNEXT"
     cd "$EGITNEXT"
     git status
@@ -390,12 +390,12 @@ end
 # end
 
 function edit_cmd --description 'Input command in external editor'
-  set -l tempfile (mktemp /tmp/fish.cmd.XXXXXXXX)
+  set tempfile (mktemp /tmp/fish.cmd.XXXXXXXX)
   and test -n "$tempfile"
-  and set -l cursorposition (commandline -C)
+  and set cursorposition (commandline -C)
   and commandline -b > $tempfile
   and vim-edit -c 'set ft=fish' $tempfile
-  and set -l edited (cat $tempfile)
+  and set edited (cat $tempfile)
   and test -n "$edited"
   and commandline -r $edited
   and commandline -C $cursorposition
