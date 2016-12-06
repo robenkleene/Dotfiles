@@ -5,4 +5,5 @@
 # Except
 !.gitignore
 !init.el
+!custom.el
 !/robenkleene/

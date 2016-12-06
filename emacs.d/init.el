@@ -16,6 +16,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(load (concat user-emacs-directory "robenkleene/robenkleene.el"))
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
+(load (concat user-emacs-directory "robenkleene/robenkleene.el"))
 ;;; init.el ends here
