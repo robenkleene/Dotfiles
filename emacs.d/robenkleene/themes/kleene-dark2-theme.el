@@ -14,15 +14,14 @@
                    kleene-dark-colors-alist))
      ,@body))
 
-
 ;;; Colors
 (defvar kleene-dark-colors-alist
   '(
-        ("act1"          . "#121212")
+        ("act1"          . "#767676")
         ("act2"          . "#444444")
-        ("base"          . "#b2b2b2")
+        ("base"          . "#ffffff")
         ("base-dim"      . "#585858")
-        ("bg1"           . "#262626")
+        ("bg1"           . "#4e4e4e")
         ("bg2"           . "#1c1c1c")
         ("bg3"           . "#121212")
         ("bg4"           . "#080808")
@@ -59,6 +58,7 @@
         ("type"          . "#df005f")
         ("var"           . "#8787d7")
         ("war"           . "#dc752f")
+	;; Colors
         ("aqua"          . "#2aa198")
         ("aqua-bg"       . "#262626")
         ("green"         . "#67b11d")
@@ -73,10 +73,7 @@
         ("magenta"       . "#af00df")
         ("yellow"        . "#875f00")
         ("yellow-bg"     . "#262626")
-
     ))
-
-
 
 (kleene-dark-with-color-variables
   (custom-theme-set-faces
@@ -85,7 +82,7 @@
 ;;;;; basics
      `(cursor ((,class (:background ,cursor))))
      `(custom-button ((,class :background ,bg2 :foreground ,base :box (:line-width 2 :style released-button))))
-     `(default ((,class (:background ,bg1 :foreground ,base))))
+     ; `(default ((,class (:background ,bg1 :foreground ,base))))
      `(default-italic ((,class (:italic t))))
      `(error ((,class (:foreground ,err))))
      `(eval-sexp-fu-flash ((,class (:background ,suc :foreground ,bg1))))
