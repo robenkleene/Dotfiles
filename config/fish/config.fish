@@ -60,6 +60,7 @@ rbenv rehash >/dev/null ^&1
 
 # ag
 alias ag "ag --path-to-ignore ~/.ignore"
+
 # rg
 alias rg "rg --smart-case --line-number"
 
@@ -87,7 +88,8 @@ set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
 
-
+# Homebrew
+set -x HOMEBREW_NO_ANALYTICS 1
 # Startup
 
 # Emacs
