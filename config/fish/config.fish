@@ -385,6 +385,14 @@ function jekyll-serve-watch-drafts
   bundle exec jekyll serve --watch --drafts
 end
 
+# Carthage
+function carthage-submodule-bootstrap
+  carthage bootstrap --platform iOS --use-submodules --no-use-binaries
+end
+function carthage-submodule-update
+  carthage update --platform iOS --use-submodules --no-use-binaries
+end
+
 # Web Console
 
 # wcsearch

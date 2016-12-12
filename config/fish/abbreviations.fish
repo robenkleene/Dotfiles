@@ -29,6 +29,10 @@ abbr -a fzr='fzf-file-reveal'
 abbr -a fzx='fzf-file-xcode'
 abbr -a fzs='fzf-snippet'
 
+# carthage
+abbr -a csmu='carthage-submodule-update'
+abbr -a csmb='carthage-submodule-bootstrap'
+
 # cd
 abbr -a ccp='cd-copy-path'
 
