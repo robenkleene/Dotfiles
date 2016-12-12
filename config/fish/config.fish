@@ -387,10 +387,10 @@ end
 
 # Carthage
 function carthage-submodule-bootstrap
-  carthage bootstrap --platform iOS --use-submodules --no-use-binaries
+  carthage bootstrap --platform iOS --use-submodules --no-use-binaries $argv
 end
 function carthage-submodule-update
-  carthage update --platform iOS --use-submodules --no-use-binaries
+  carthage update --platform iOS --use-submodules --no-use-binaries $argv
 end
 
 # Web Console
