@@ -27,6 +27,7 @@ abbr -a fzo='fzf-file-open'
 abbr -a fzp='fzf-file-path'
 abbr -a fzr='fzf-file-reveal'
 abbr -a fzx='fzf-file-xcode'
+abbr -a fzs='fzf-snippet'
 
 # cd
 abbr -a ccp='cd-copy-path'
