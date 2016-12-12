@@ -87,6 +87,7 @@ set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
+alias magit 'emacs -eval "(rk-magit-status-startup)"'
 
 # Homebrew
 set -x HOMEBREW_NO_ANALYTICS 1
