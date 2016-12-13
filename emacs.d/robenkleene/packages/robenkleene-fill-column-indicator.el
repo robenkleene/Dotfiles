@@ -12,7 +12,8 @@
     )
   :config
   (progn
-    (setq fci-rule-color "#262626")
+    ;; This color isn't accurate for some reason
+    (setq fci-rule-color "#222222")
     (setq fci-rule-column 80)
     )
   )
