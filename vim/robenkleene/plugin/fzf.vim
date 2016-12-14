@@ -13,7 +13,6 @@ nnoremap <leader>A :tabnew<CR>:Ag
 " vnoremap <leader>* :<C-u>call <SID>AgVisual()<CR>
 " rg
 nnoremap <leader>a :Rg 
-nnoremap <leader>d :VimDocumentation 
 nnoremap <leader>* :Rg <C-r><C-w><cr>
 vnoremap <leader>* :<C-u>call <SID>RgVisual()<CR>
 
@@ -60,7 +59,7 @@ command! B :call fzf#run({
 \   'sink':    'Explore'
 \ })
 
-command! -bang -nargs=* VimDocumentation
+command! -bang -nargs=* FZFVimDocumentation
   \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).' ~/Documentation/development-references/Vim/ | tr -d "\017"', 1, <bang>0)
 
 " Modified Files
