@@ -13,6 +13,7 @@ nnoremap <leader>A :tabnew<CR>:Ag
 " vnoremap <leader>* :<C-u>call <SID>AgVisual()<CR>
 " rg
 nnoremap <leader>a :Rg 
+nnoremap <leader>d :VimDocumentation 
 nnoremap <leader>* :Rg <C-r><C-w><cr>
 vnoremap <leader>* :<C-u>call <SID>RgVisual()<CR>
 
@@ -36,7 +37,7 @@ function! s:AgVisual()
   let @s = temp
 endfunction
 
-
+" rg
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
@@ -53,11 +54,16 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
+" Bookmarks
 command! B :call fzf#run({
 \   'source':  <sid>RobenKleeneBookmarks(),
 \   'sink':    'Explore'
 \ })
 
+command! -bang -nargs=* VimDocumentation
+  \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).' ~/Documentation/development-references/Vim/ | tr -d "\017"', 1, <bang>0)
+
+" Modified Files
 command! Modified :call fzf#run({
 \   'source':  "git ls-files -m | uniq",
 \   'sink':    'e'
