@@ -19,8 +19,7 @@
       "Magit in current window."
       (interactive)
       (progn (call-interactively 'magit-status)
-             (if (not (server-running-p))
-                 (delete-other-windows)))
+             (delete-other-windows))
       )
     )
   (defun robenkleene/magit-focus-selected-frame ()
