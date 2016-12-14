@@ -90,6 +90,13 @@
     )
   )
 
+(defvar robenkleene/documentation-directory-path "~/Documentation/development-references/Emacs/")
+(defun robenkleene/emacs-documentation ()
+  "Open Emacs documentation directory."
+  (interactive)
+  (find-file-other-window robenkleene/documentation-directory-path)
+  )
+
 (defun robenkleene/print-variable ()
   "Replace the current line with a variable print statement."
   (interactive)

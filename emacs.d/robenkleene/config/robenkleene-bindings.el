@@ -10,7 +10,7 @@
 (global-set-key (kbd "C-c s") 'imenu)
 (global-set-key (kbd "C-c t") 'robenkleene/open-terminal-window)
 (global-set-key (kbd "C-c r") 'robenkleene/reveal-in-finder)
-
+(global-set-key (kbd "C-c d") 'robenkleene/emacs-documentation)
 
 (provide 'robenkleene-bindings)
 ;;; robenkleene-bindings.el ends here

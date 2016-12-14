@@ -87,7 +87,18 @@ set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
-alias magit 'emacs -eval "(rk-magit-status-startup)"'
+# Emacs
+function emacs-edit
+  # Emacs
+  # emacs $argv
+  # Emacsclient
+  emacsclient -t $argv
+end
+alias e 'emacs-edit'
+function magit
+ emacs-edit -eval "(robenkleene/magit-status-startup)"
+end
+alias m 'magit'
 
 # Homebrew
 set -x HOMEBREW_NO_ANALYTICS 1
@@ -103,7 +114,7 @@ if is-emacs-server-running
   echo Emacs server is running
 else
 end
-function emacs-stop-server
+function emacs-kill-server
   emacsclient -e '(kill-emacs)'
 end
 

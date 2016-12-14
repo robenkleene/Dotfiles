@@ -79,7 +79,7 @@ function fzf-file-emacs
   # fzf | tr '\n' '\0' | xargs -0 -o emacs
   fzf > $TMPDIR/fzf.result
   set result (fzf-process-result)
-  and emacs "$result"
+  and emacs-edit "$result"
 end
 
 # vim

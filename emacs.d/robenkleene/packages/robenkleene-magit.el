@@ -6,7 +6,7 @@
 
 (use-package magit
   :ensure t
-  :commands (rk-magit-status-startup)
+  :commands (robenkleene/magit-status-startup)
   :bind (
          ("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup)
@@ -15,18 +15,24 @@
   (progn
     (setq magit-push-always-verify nil)
     ;; Magit Startup Helpers
-    (defun rk-magit-status-current-window ()  "Magit in current window."  (interactive) (progn (call-interactively
-                                                                                                'magit-status) (delete-other-windows)))
-    (defun
-        rk-focus-selected-frame () "Focus on current frame."
-        (select-frame-set-input-focus (selected-frame))
-        )
-    (defun
-        rk-magit-status-startup () "Startup magit full frame with focus."
-        (progn
-          (rk-magit-status-current-window)
-          (rk-magit-focus-selected-frame))
-        )
+    (defun robenkleene/magit-status-current-window ()
+      "Magit in current window."
+      (interactive)
+      (progn (call-interactively 'magit-status)
+             (if (not (server-running-p))
+                 (delete-other-windows)))
+      )
+    )
+  (defun robenkleene/magit-focus-selected-frame ()
+    "Focus on current frame."
+    (select-frame-set-input-focus (selected-frame))
+    )
+  (defun robenkleene/magit-status-startup ()
+    "Startup magit full frame with focus."
+    (interactive)
+    (progn
+      (robenkleene/magit-status-current-window)
+      (robenkleene/magit-focus-selected-frame))
     )
   )
 
