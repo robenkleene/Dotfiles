@@ -38,9 +38,10 @@ abbr -a csmb='carthage-submodule-bootstrap'
 abbr -a ccp='cd-copy-path'
 
 # tmux
-abbr -a ta='tmux attach -t'
-abbr -a tls='tmux ls'
-abbr -a tnd='tmux-name-directory'
+abbr -a tma='tmux attach -t'
+abbr -a tmls='tmux ls'
+abbr -a tmnd='tmux-name-directory'
+abbr -a tmd='tmux-documentation'
 
 # git
 abbr -a g='gitup'

@@ -324,6 +324,9 @@ function tmux-session-test
   tmux select-pane
 end
 
+function tmux-documentation
+  cd ~/Documentation/development-references/Tmux/
+end
 function tmux-name-directory
   tmux rename-window (basename (pwd))
 end
