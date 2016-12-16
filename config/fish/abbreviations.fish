@@ -7,6 +7,7 @@ abbr -a nud='nvm use default'
 
 # vim
 abbr -a vpg='vim-pipe-grep'
+abbr -a vc='vim-clipboard'
 abbr -a vrs='vim-restore-session'
 
 # BBEdit
