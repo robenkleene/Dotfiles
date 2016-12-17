@@ -8,7 +8,7 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-bindings)
-(require 'robenkleene-emacs)
+(require 'robenkleene-config)
 (require 'robenkleene-functions)
 (require 'robenkleene-dired)
 (if window-system

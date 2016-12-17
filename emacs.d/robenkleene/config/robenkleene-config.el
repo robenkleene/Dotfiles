@@ -1,4 +1,4 @@
-;;; robenkleene-emacs.el --- robenkleene-emacs
+;;; robenkleene-config.el --- robenkleene-config
 ;;; Commentary:
 ;;; Code:
 
@@ -55,6 +55,11 @@
 ;; `shift cursor down: \033[1;2B'
 (windmove-default-keybindings)
 
+;; Winner Mode
+;; Allows going to previous and next window configurations with `C-c left/right'
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
 ;; Save recent file list
 (require 'recentf)
 (recentf-mode 1)
@@ -69,5 +74,5 @@
 ;; Replace `C-x C-f' with `find-file-at-point' version
 (ffap-bindings)
 
-(provide 'robenkleene-emacs)
-;;; robenkleene-emacs.el ends here
+(provide 'robenkleene-config)
+;;; robenkleene-config.el ends here
