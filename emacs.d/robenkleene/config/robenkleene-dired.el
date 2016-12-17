@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Load `C-x C-j' command for `dired-jump'
+(require 'dired-x)
+
 ;; Hide details (show them with "\("
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 ;; Auto-refresh on file system change
