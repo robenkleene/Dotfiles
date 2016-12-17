@@ -1,4 +1,4 @@
-;;; robenkleene-aggressive-indent.el --- robenkleene-smartparens
+;;; robenkleene-aggressive-indent.el --- robenkleene-aggressive-indent
 ;;; Commentary:
 ;;; Code:
 
