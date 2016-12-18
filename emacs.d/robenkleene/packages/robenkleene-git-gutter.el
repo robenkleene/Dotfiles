@@ -7,9 +7,7 @@
 (use-package git-gutter
   :ensure t
   :config
-  (progn
-    (global-git-gutter-mode t)
-    )
+  (global-git-gutter-mode t)
   )
 
 (provide 'robenkleene-git-gutter)

@@ -7,9 +7,7 @@
   :ensure t
   :commands rainbow-delimiters-mode
   :init
-  (progn
-    (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-    )
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
 
 (provide 'robenkleene-rainbow-delimiters)

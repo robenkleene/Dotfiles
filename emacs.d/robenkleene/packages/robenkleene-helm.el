@@ -7,9 +7,7 @@
   :ensure t
   :defer t
   :config
-  (progn
-    (setq helm-truncate-lines t)
-    )
+  (setq helm-truncate-lines t)
   )
 
 (provide 'robenkleene-helm)

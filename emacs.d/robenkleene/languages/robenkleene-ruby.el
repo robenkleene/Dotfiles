@@ -15,12 +15,11 @@
   :ensure t
   :defer t
   :init
-  (progn
-    (add-hook 'enh-ruby-mode-hook 'robe-mode)
-    (eval-after-load 'company
-      '(push 'company-robe company-backends))
-    )
+  (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  (eval-after-load 'company
+    '(push 'company-robe company-backends))
   )
+
 
 (provide 'robenkleene-ruby)
 ;;; robenkleene-ruby.el ends here

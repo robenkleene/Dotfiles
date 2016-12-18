@@ -8,8 +8,7 @@
   :ensure t
   :bind (("M-x" . smex))
   :config
-  (progn
-    (smex-initialize)))
+  (smex-initialize))
 
 (provide 'robenkleene-smex)
 ;;; robenkleene-smex.el ends here

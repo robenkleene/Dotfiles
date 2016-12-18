@@ -12,15 +12,13 @@
          ("C-x M-g" . magit-dispatch-popup)
          )
   :config
-  (progn
-    (setq magit-push-always-verify nil)
-    ;; Magit Startup Helpers
-    (defun robenkleene/magit-status-current-window ()
-      "Magit in current window."
-      (interactive)
-      (progn (call-interactively 'magit-status)
-             (delete-other-windows))
-      )
+  (setq magit-push-always-verify nil)
+  ;; Magit Startup Helpers
+  (defun robenkleene/magit-status-current-window ()
+    "Magit in current window."
+    (interactive)
+    (progn (call-interactively 'magit-status)
+           (delete-other-windows))
     )
   (defun robenkleene/magit-focus-selected-frame ()
     "Focus on current frame."

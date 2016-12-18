@@ -11,12 +11,13 @@
   (bind-key "C-c a" (lambda () (interactive)
                       (helm-do-ag default-directory)))
   :config
-  (progn
-    ;; Enable grep mode after saving `helm-ag' results
-    (defadvice helm-ag--save-results (after robenkleene/helm-ag-grep-mode (args) activate)
-      (with-current-buffer (get-buffer-create "*helm ag results*")
-        (grep-mode)
-        )
+  ;; Enable grep mode after saving `helm-ag' results
+  ;; To use: Trigger `C-x C-s' after performing a search to save the results
+  ;; Then use `next-error' to cycle through matches
+  (defadvice helm-ag--save-results
+      (after robenkleene/helm-ag-grep-mode (args) activate)
+    (with-current-buffer (get-buffer-create "*helm ag results*")
+      (grep-mode)
       )
     )
   )
