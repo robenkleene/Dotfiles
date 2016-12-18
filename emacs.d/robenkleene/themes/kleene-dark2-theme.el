@@ -175,13 +175,13 @@
 ;;;;; diff
    `(diff-added             ((,class :background unspecified :foreground ,green)))
    `(diff-changed           ((,class :background unspecified :foreground ,blue)))
-   `(diff-header            ((,class :background ,cblk-ln-bg :foreground ,func)))
-   `(diff-indicator-added   ((,class :background unspecified :foreground ,green)))
-   `(diff-indicator-changed ((,class :background unspecified :foreground ,keyword)))
-   `(diff-indicator-removed ((,class :background unspecified :foreground ,red)))
-   `(diff-refine-added      ((,class :background ,green :foreground ,bg4)))
-   `(diff-refine-changed    ((,class :background ,keyword :foreground ,bg4)))
-   `(diff-refine-removed    ((,class :background ,red :foreground ,bg4)))
+   `(diff-header            ((,class :background unspecified :foreground ,base)))
+   `(diff-indicator-added   ((,class :inherit diff-added)))
+   `(diff-indicator-changed ((,class :inherit diff-changed)))
+   `(diff-indicator-removed ((,class :inherit diff-removed)))
+   `(diff-refine-added      ((,class :inherit diff-added)))
+   `(diff-refine-changed    ((,class :inherit diff-changed)))
+   `(diff-refine-removed    ((,class :inherit diff-removed)))
    `(diff-removed           ((,class :background unspecified :foreground ,red)))
 
 ;;;;; diff-hl
