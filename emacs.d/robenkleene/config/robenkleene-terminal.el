@@ -3,7 +3,7 @@
 ;;; Code:
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
-; (load-theme 'kleene-dark t)
+;; (load-theme 'kleene-dark t)
 (load-theme 'kleene-dark2 t)
 
 (provide 'robenkleene-terminal)
