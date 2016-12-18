@@ -14,6 +14,7 @@
 (global-set-key (kbd "C-c o") 'other-frame)
 (global-set-key (kbd "C-c 0") 'delete-frame)
 (global-set-key (kbd "C-c 2") 'make-frame-command)
+(global-set-key (kbd "C-c H") 'helm-resume)
 
 (provide 'robenkleene-bindings)
 ;;; robenkleene-bindings.el ends here

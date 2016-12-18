@@ -24,6 +24,9 @@
     (add-to-list 'exec-path path-to-prepend))
   )
 
+;; Overwrite region when pasting
+(delete-selection-mode 1)
+
 ;; Automatically revert unmodified buffers
 (global-auto-revert-mode t)
 
