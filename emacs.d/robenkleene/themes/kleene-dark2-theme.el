@@ -478,8 +478,8 @@
 ;;;;; markdown
    `(markdown-header-face-1 ((,class (:inherit bold :foreground ,head1 :background ,bg1))))
    `(markdown-header-face-2 ((,class (:inherit bold :foreground ,head2 :background ,head2-bg))))
-   `(markdown-header-face-3 ((,class (:bold nil :foreground ,head3 :background head3-bg))))
-   `(markdown-header-face-4 ((,class (:bold nil :foreground ,head4 :background head4-bg))))
+   `(markdown-header-face-3 ((,class (:bold nil :foreground ,head3 :background ,head3-bg))))
+   `(markdown-header-face-4 ((,class (:bold nil :foreground ,head4 :background ,head4-bg))))
    `(markdown-header-face-5 ((,class (:bold nil :foreground ,head1))))
    `(markdown-header-face-6 ((,class (:bold nil :foreground ,head2))))
 
