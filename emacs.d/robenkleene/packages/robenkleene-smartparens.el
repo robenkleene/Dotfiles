@@ -23,8 +23,9 @@
     (setq sp-highlight-pair-overlay nil)
     (setq sp-highlight-wrap-overlay nil)
     (setq sp-highlight-wrap-tag-overlay nil)
+    (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
     )
-)
+  )
 
 (provide 'robenkleene-smartparens)
 ;;; robenkleene-smartparens.el ends here
