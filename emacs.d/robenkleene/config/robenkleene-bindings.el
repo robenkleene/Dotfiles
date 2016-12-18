@@ -12,6 +12,8 @@
 (global-set-key (kbd "C-c r") 'robenkleene/reveal-in-finder)
 (global-set-key (kbd "C-c d") 'robenkleene/emacs-documentation)
 (global-set-key (kbd "C-c o") 'other-frame)
+(global-set-key (kbd "C-c 0") 'delete-frame)
+(global-set-key (kbd "C-c 2") 'make-frame-command)
 
 (provide 'robenkleene-bindings)
 ;;; robenkleene-bindings.el ends here
