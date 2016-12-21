@@ -18,29 +18,41 @@
 
 (defvar kleene-dark-colors-alist
   '(
-    ;; Ansi Colors
-    ("green" . "##62D63F")
-    ("cyan" . "#00ffff")
-    ("red" . "#D32D1E")
-    ("blue" . "#0000F5")
-    ("magenta" . "#af00df")
-    ("yellow" . "#E5E64B")
+    ;; Ansi
     ("black" . "#000000")
+    ("blue" . "#0000F5")
+    ("cyan" . "#00ffff")
+    ("green" . "##62D63F")
+    ("magenta" . "#af00df")
+    ("red" . "#D32D1E")
     ("white" . "#ffffff")
+    ("yellow" . "#E5E64B")
 
-    ;; Syntax
-    ("comment" . "#626262")
-
-    ;; Other
+    ;; Palette
+    ("cyan1" . "#23A6B1")
+    ("cyan2" . "#35E5E4")
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
-    ("gray3" . "#808080")
-    ("gray4" . "#b2b2b2")
+    ("gray3" . "#626262")
+    ("gray4" . "#808080")
+    ("gray5" . "#b2b2b2")
 
-    ("cyan1" . "#4AA4B")
-    ("cyan2" . "#68E0D8")
+    ;; Named
+    ("comment" . gray3)
+    ("error" . red)
+    ("diff-add" . green)
+    ("diff-remove" . red)
+    ("diff-change" . blue)
+    ("warning" . yellow)
+    ("modeline-active-fg" . white)
+    ("modeline-active-bg" . gray4)
+    ("modeline-inactive-fg" . gray5)
+    ("modeline-inactive-bg" . gray2)
+    ("search-fg" . black)
+    ("search-bg" . cyan2)
+    ("highlight-line-bg" . gray1)
 
-    
+    ;; Temp
     ("act1" . "#808080")
     ("act2" . "#444444")
     ("base" . white)
@@ -96,8 +108,8 @@
 
 ;;; User-Interface
    `(hl-line ((t (:background ,gray1))))
-   `(isearch ((t (:foreground ,black :background ,cyan2))))
-   `(minibuffer-prompt ((t (:foreground ,black :background ,cyan2 :bold t))))
+   `(isearch ((t (:foreground ,black :background ,cyan1))))
+   `(minibuffer-prompt ((t (:foreground ,black :background ,cyan1 :bold t))))
    `(isearch-fail ((t (:foreground ,red))))
    `(link ((t (:foreground ,cyan :underline t))))
    `(region ((t (:background ,highlight-match :foreground ,black))))
