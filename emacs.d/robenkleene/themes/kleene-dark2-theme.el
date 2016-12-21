@@ -18,7 +18,6 @@
 (defvar kleene-dark-colors-alist
   '(
     ;; Special
-    ("cblk-bg"       . "#262626")
     ;; Colors
     ("aqua"          . "#2aa198")
     ("green"         . "#21D726")
@@ -47,7 +46,6 @@
     ("cblk-ln"       . "#af5faf")
     ("cblk-ln-bg"    . "#333333")
     ("cursor"        . "#d0d0d0")
-    ("comment-bg"    . cblk-bg)
     ("comp"          . const)
     ("header"         . base)
     ("highlight-match"     . "#4AA4B0")
@@ -505,7 +503,7 @@
    `(org-agenda-date-weekend ((,class (:inherit bold :foreground ,var))))
    `(org-agenda-done ((,class (:foreground ,suc))))
    `(org-agenda-structure ((,class (:inherit bold :foreground ,comp))))
-   `(org-block ((,class (:background ,cblk-bg :foreground ,cblk))))
+   `(org-block ((,class (:background unspecified :foreground ,cblk))))
    `(org-block-begin-line ((,class (:background ,cblk-ln-bg :foreground ,cblk-ln))))
    `(org-block-end-line ((,class (:background ,cblk-ln-bg :foreground ,cblk-ln))))
    `(org-clock-overlay ((,class (:foreground ,comp))))
