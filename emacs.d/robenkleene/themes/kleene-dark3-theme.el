@@ -84,6 +84,9 @@
 (kleene-dark-with-color-variables
   (custom-theme-set-faces
    'kleene-dark3
+;;; Styles
+
+   `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
 
 ;;; Syntax
 
@@ -113,8 +116,9 @@
    `(isearch-fail ((t (:foreground ,red))))
    `(link ((t (:foreground ,cyan :underline t))))
    `(region ((t (:background ,highlight-match :foreground ,black))))
-   `(mode-line           ((t (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
-   `(mode-line-inactive  ((t (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
+   `(mode-line-inactive ((t (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
+   `(mode-line ((t (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
+   ;; `(mode-line ((t (:inherit rk-modeline-active))))
    
 ;;; Packages
 
