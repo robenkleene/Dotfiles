@@ -116,7 +116,6 @@
    `(link ((,class (:foreground ,blue :underline t))))
    `(link-visited ((,class (:foreground ,cyan :underline t))))
    `(match ((,class (:background ,highlight-match :foreground ,mat))))
-   `(minibuffer-prompt ((,class (:inherit bold :foreground ,keyword))))
    `(page-break-lines ((,class (:foreground ,act2))))
    `(region ((,class (:background ,highlight-match :foreground ,black))))
    `(secondary-selection ((,class (:background ,bg3))))
