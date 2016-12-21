@@ -39,7 +39,7 @@
     ("base"          . "#ffffff")
     ("base-dim"      . "#B2B2B2")
     ("highlight-line"           . "#3A3A3A")
-    ("bg2"           . "#1c1c1c")
+    ("bg2"           . "#4e4e4e")
     ("bg3"           . "#121212")
     ("bg4"           . "#080808")
     ("border"        . "#111111")
@@ -482,7 +482,7 @@
 
 ;;;;; mode-line
    `(mode-line           ((,class (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
-   `(mode-line-inactive  ((,class (:foreground ,base-dim :background ,highlight-line  :box (:color ,border :line-width 1)))))
+   `(mode-line-inactive  ((,class (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
 
 ;;;;; mu4e
    `(mu4e-cited-1-face ((,class (:foreground ,base))))
