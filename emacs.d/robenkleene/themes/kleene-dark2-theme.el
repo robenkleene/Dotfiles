@@ -49,7 +49,6 @@
     ("cursor"        . "#d0d0d0")
     ("comment-bg"    . cblk-bg)
     ("comp"          . const)
-    ("err"           . "#e0211d")
     ("header"         . base)
     ("highlight-match"     . "#4AA4B0")
     ("highlight-search"    . "#68E0D8")
@@ -99,23 +98,25 @@
    `(rainbow-delimiters-depth-7-face ((t (:bold nil :foreground "#999900"))))
    `(rainbow-delimiters-depth-8-face ((t (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((t (:bold nil :foreground "#01A6B2"))))
-
+   
 ;;;;; basics
+   `(minibuffer-prompt ((,class (:foreground ,black :background ,highlight-match :bold t))))
+   `(highlight ((,class (:foreground ,base :background ,highlight-match))))
+   `(isearch ((,class (:background ,highlight-search :foreground ,black))))
+   `(isearch-fail ((,class (:background unspecified :foreground ,red))))
+   `(error ((,class (:foreground ,red))))
+
    `(cursor ((,class (:background ,cursor))))
    `(custom-button ((,class :background ,bg2 :foreground ,base :box (:line-width 2 :style released-button))))
-                                        ; `(default ((,class (:background ,highlight-line :foreground ,base))))
    `(default-italic ((,class (:italic t))))
-   `(error ((,class (:foreground ,err))))
    `(eval-sexp-fu-flash ((,class (:background ,suc :foreground ,highlight-line))))
-   `(eval-sexp-fu-flash-error ((,class (:background ,err :foreground ,highlight-line))))
+   `(eval-sexp-fu-flash-error ((,class (:background ,red :foreground ,highlight-line))))
    `(fringe ((,class (:background ,highlight-line :foreground ,base))))
    `(header-line ((,class :background ,bg4)))
-   `(highlight ((,class (:foreground ,base :background ,highlight-match))))
    `(hl-line ((,class (:background ,highlight-line))))
-   `(isearch ((,class (:background ,highlight-search :foreground ,black))))
    `(lazy-highlight ((,class (:weight normal))))
-   `(link ((,class (:foreground ,comment :underline t))))
-   `(link-visited ((,class (:foreground ,comp :underline t))))
+   `(link ((,class (:foreground ,blue :underline t))))
+   `(link-visited ((,class (:foreground ,cyan :underline t))))
    `(match ((,class (:background ,highlight-match :foreground ,mat))))
    `(minibuffer-prompt ((,class (:inherit bold :foreground ,keyword))))
    `(page-break-lines ((,class (:foreground ,act2))))
@@ -126,6 +127,8 @@
    `(vertical-border ((,class (:foreground ,highlight-line))))
    `(warning ((,class (:foreground ,war))))
 
+;;;;; Special
+   
 ;;;;; ahs
    `(ahs-face ((,class (:background ,highlight-match))))
    `(ahs-plugin-whole-buffer-face ((,class (:background ,mat :foreground ,highlight-line))))
@@ -148,7 +151,7 @@
    `(cider-instrumented-face ((,class (:background nil :box (:color ,red :line-width -1 :style nil) :foreground ,red))))
    `(cider-result-overlay-face ((,class (:background nil :box (:color ,blue :line-width -1 :style nil) :foreground ,blue))))
    `(cider-test-error-face ((,class (:background ,war :foreground ,highlight-line))))
-   `(cider-test-failure-face ((,class (:background ,err :foreground ,highlight-line))))
+   `(cider-test-failure-face ((,class (:background ,red :foreground ,highlight-line))))
    `(cider-test-success-face ((,class (:background ,suc :foreground ,highlight-line))))
    `(cider-traced-face ((,class :box (:color ,cyan :line-width -1 :style nil))))
 
@@ -186,7 +189,7 @@
    `(diff-hl-insert ((,class :foreground ,green)))
 
 ;;;;; dired
-   `(dired-directory ((,class (:foreground ,blue :background unspecified :inherit bold))))
+   `(dired-directory ((,class (:inherit link :underline nil))))
    `(dired-flagged ((,class (:foreground ,red))))
    `(dired-header ((,class (:background ,highlight-match :foreground ,black :bold t))))
    `(dired-ignored ((,class (:inherit shadow))))
@@ -217,7 +220,7 @@
 ;;;;; ein
    `(ein:cell-input-area((,class (:background ,bg2))))
    `(ein:cell-input-prompt ((,class (:foreground ,suc))))
-   `(ein:cell-output-prompt ((,class (:foreground ,err))))
+   `(ein:cell-output-prompt ((,class (:foreground ,red))))
    `(ein:notification-tab-normal ((,class (:foreground ,keyword))))
    `(ein:notification-tab-selected ((,class (:foreground ,suc :inherit bold))))
 
@@ -263,10 +266,10 @@
 ;;;;; flycheck
    `(flycheck-error
      ((,(append '((supports :underline (:style line))) class)
-       (:underline (:style line :color ,err)))
-      (,class (:foreground ,base :background ,err :inherit bold :underline t))))
+       (:underline (:style line :color ,red)))
+      (,class (:foreground ,base :background ,red :inherit bold :underline t))))
    `(flycheck-error-list-checker-name ((,class (:foreground ,keyword))))
-   `(flycheck-fringe-error ((,class (:foreground ,err :inherit bold))))
+   `(flycheck-fringe-error ((,class (:foreground ,red :inherit bold))))
    `(flycheck-fringe-info ((,class (:foreground ,keyword :inherit bold))))
    `(flycheck-fringe-warning ((,class (:foreground ,war :inherit bold))))
    `(flycheck-info
@@ -291,7 +294,7 @@
    `(jabber-roster-user-away ((,class (:foreground ,yellow))))
    `(jabber-roster-user-chatty ((,class (:inherit bold :foreground ,green))))
    `(jabber-roster-user-dnd ((,class (:foreground ,red))))
-   `(jabber-roster-user-error ((,class (:foreground ,err))))
+   `(jabber-roster-user-error ((,class (:foreground ,red))))
    `(jabber-roster-user-offline ((,class (:foreground ,base))))
    `(jabber-roster-user-online ((,class (:inherit bold :foreground ,green))))
    `(jabber-roster-user-xa ((,class (:foreground ,aqua))))
@@ -528,7 +531,7 @@
    `(org-level-8 ((,class (:bold nil :foreground ,header :background unspecified))))
    `(org-link ((,class (:underline t :foreground ,comment))))
    `(org-meta-line ((,class (:foreground ,meta))))
-   `(org-mode-line-clock-overrun ((,class (:foreground ,err))))
+   `(org-mode-line-clock-overrun ((,class (:foreground ,red))))
    `(org-priority ((,class (:foreground ,war :inherit bold))))
    `(org-quote ((,class (:inherit org-block :slant italic))))
    `(org-scheduled ((,class (:foreground ,comp))))
@@ -540,7 +543,7 @@
    `(org-todo ((,class (:foreground ,war :inherit bold :background))))
    `(org-verbatim ((,class (:foreground ,keyword))))
    `(org-verse ((,class (:inherit org-block :slant italic))))
-   `(org-warning ((,class (:foreground ,err))))
+   `(org-warning ((,class (:foreground ,red))))
 
 ;;;;; perspective
    `(persp-selected-face ((,class (:inherit bold :foreground ,func))))
@@ -572,7 +575,7 @@
 
 ;;;;; spaceline
    `(spaceline-python-venv ((,class (:foreground ,comp))))
-   `(spaceline-flycheck-error  ((,class (:foreground ,err))))
+   `(spaceline-flycheck-error  ((,class (:foreground ,red))))
    `(spaceline-flycheck-info   ((,class (:foreground ,keyword))))
    `(spaceline-flycheck-warning((,class (:foreground ,war))))
 
@@ -637,7 +640,7 @@
    `(whitespace-space-after-tab ((,class (:background nil :foreground ,yellow))))
    `(whitespace-space-before-tab ((,class (:background nil :foreground ,yellow))))
    `(whitespace-tab ((,class (:background nil))))
-   `(whitespace-trailing ((,class (:background ,err :foreground ,war))))
+   `(whitespace-trailing ((,class (:background ,red :foreground ,war))))
 
 ;;;;; other, need more work
    `(ac-completion-face ((,class (:underline t :foreground ,keyword))))
@@ -658,7 +661,7 @@
    `(js3-jsdoc-tag-face ((,class (:foreground ,keyword))))
    `(js3-warning-face ((,class (:underline ,keyword))))
    `(slime-repl-inputed-output-face ((,class (:foreground ,comp))))
-   `(trailing-whitespace ((,class :foreground nil :background ,err)))
+   `(trailing-whitespace ((,class :foreground nil :background ,red)))
    `(undo-tree-visualizer-current-face ((,class :foreground ,keyword)))
    `(undo-tree-visualizer-default-face ((,class :foreground ,base)))
    `(undo-tree-visualizer-register-face ((,class :foreground ,comp)))
