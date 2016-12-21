@@ -1,26 +1,27 @@
-;; kleene-dark3-theme.el --- Kleene Dark 2
+;; kleene-dark3-theme.el --- Kleene Dark 3
 
 ;;; Commentary:
 ;;; Code:
 
-(deftheme kleene-dark3 "Kleene Dark 2")
+(deftheme kleene-dark3 "Kleene Dark 3")
 
 (defmacro kleene-dark-with-color-variables (&rest body)
   "`let*' bind all colors defined in `kleene-dark-colors-alist' around BODY.  Also bind `class' to ((class color) (min-colors 89))."
   (declare (indent 0))
   `(let* ((class '((class color) (min-colors 89)))
-         ,@(mapcar (lambda (cons)
-                     (list (intern (car cons)) (cdr cons)))
-                   kleene-dark-colors-alist))
+          ,@(mapcar (lambda (cons)
+                      (list (intern (car cons)) (cdr cons)))
+                    kleene-dark-colors-alist))
      ,@body))
 
 ;;; Colors
+
 (defvar kleene-dark-colors-alist
   '(
     ;; Ansi Colors
     ("green" . "##62D63F")
     ("cyan" . "#00ffff")
-    ("red" . "##D32D1E")
+    ("red" . "#D32D1E")
     ("blue" . "#0000F5")
     ("magenta" . "#af00df")
     ("yellow" . "#E5E64B")
@@ -31,6 +32,15 @@
     ("comment" . "#626262")
 
     ;; Other
+    ("gray1" . "#3a3a3a")
+    ("gray2" . "#4e4e4e")
+    ("gray3" . "#808080")
+    ("gray4" . "#b2b2b2")
+
+    ("cyan1" . "#4AA4B")
+    ("cyan2" . "#68E0D8")
+
+    
     ("act1" . "#808080")
     ("act2" . "#444444")
     ("base" . white)
@@ -85,13 +95,11 @@
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
 ;;; User-Interface
-
-   `(hl-line ((t (:background ,highlight-line))))
-   `(minibuffer-prompt ((t (:foreground ,black :background ,highlight-match :bold t))))
-   `(isearch ((t (:background ,highlight-search :foreground ,black))))
-   `(isearch-fail ((t (:background unspecified :foreground ,red))))
-   `(link ((t (:foreground ,blue :underline t))))
-   `(-visited ((t (:foreground ,cyan :underline t))))
+   `(hl-line ((t (:background ,gray1))))
+   `(isearch ((t (:foreground ,black :background ,cyan2))))
+   `(minibuffer-prompt ((t (:foreground ,black :background ,cyan2 :bold t))))
+   `(isearch-fail ((t (:foreground ,red))))
+   `(link ((t (:foreground ,cyan :underline t))))
    `(region ((t (:background ,highlight-match :foreground ,black))))
    `(mode-line           ((t (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
    `(mode-line-inactive  ((t (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
