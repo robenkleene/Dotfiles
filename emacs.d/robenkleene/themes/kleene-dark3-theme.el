@@ -22,7 +22,7 @@
     ("black" . "#000000")
     ("blue" . "#0000F5")
     ("cyan" . "#00ffff")
-    ("green" . "##62D63F")
+    ("green" . "#62D63F")
     ("magenta" . "#af00df")
     ("red" . "#D32D1E")
     ("white" . "#ffffff")
