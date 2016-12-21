@@ -17,24 +17,23 @@
 ;;; Colors
 (defvar kleene-dark-colors-alist
   '(
-    ;; Colors
-    ("aqua" . "#2aa198")
-    ("green" . "#21D726")
+    ;; Ansi Colors
+    ("green" . "##62D63F")
     ("cyan" . "#00ffff")
-    ("red" . "#E30A17")
-    ("blue" . "#27E5E4")
+    ("red" . "##D32D1E")
+    ("blue" . "#0000F5")
     ("magenta" . "#af00df")
-    ("yellow" . "#875f00")
+    ("yellow" . "#E5E64B")
     ("black" . "#000000")
+    ("white" . "#ffffff")
+
     ;; Syntax
-    ("keyword" . "#FFFFB6")
     ("comment" . "#626262")
-    ("const" . "#99CC99")
-    ("func" . "#FFD2A7")
+
     ;; Other
     ("act1" . "#808080")
     ("act2" . "#444444")
-    ("base" . "#ffffff")
+    ("base" . white)
     ("base-dim" . "#B2B2B2")
     ("highlight-line" . "#3A3A3A")
     ("bg2" . "#4e4e4e")
@@ -45,7 +44,6 @@
     ("cblk-ln" . "#af5faf")
     ("cblk-ln-bg" . "#333333")
     ("cursor" . "#d0d0d0")
-    ("comp" . const)
     ("header" . base)
     ("highlight-match" . "#4AA4B0")
     ("highlight-search" . "#68E0D8")
@@ -88,13 +86,15 @@
 
 ;;; User-Interface
 
-   `(hl-line ((,class (:background ,highlight-line))))
-   `(minibuffer-prompt ((,class (:foreground ,black :background ,highlight-match :bold t))))
-   `(isearch ((,class (:background ,highlight-search :foreground ,black))))
-   `(isearch-fail ((,class (:background unspecified :foreground ,red))))
-   `(link ((,class (:foreground ,blue :underline t))))
-   `(link-visited ((,class (:foreground ,cyan :underline t))))
-   `(region ((,class (:background ,highlight-match :foreground ,black))))
+   `(hl-line ((t (:background ,highlight-line))))
+   `(minibuffer-prompt ((t (:foreground ,black :background ,highlight-match :bold t))))
+   `(isearch ((t (:background ,highlight-search :foreground ,black))))
+   `(isearch-fail ((t (:background unspecified :foreground ,red))))
+   `(link ((t (:foreground ,blue :underline t))))
+   `(-visited ((t (:foreground ,cyan :underline t))))
+   `(region ((t (:background ,highlight-match :foreground ,black))))
+   `(mode-line           ((t (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
+   `(mode-line-inactive  ((t (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
    
 ;;; Packages
 
@@ -109,126 +109,75 @@
    `(rainbow-delimiters-depth-8-face ((t (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((t (:bold nil :foreground "#01A6B2"))))
 
-;;;;; company
-   `(company-echo-common ((,class (:background ,base :foreground ,highlight-line))))
-   `(company-preview ((,class (:background ,highlight-line :foreground ,ttip))))
-   `(company-preview-common ((,class (:background ,highlight-line :foreground ,base))))
-   `(company-preview-search ((,class (:inherit match))))
-   `(company-scrollbar-bg ((,class (:background ,bg2))))
-   `(company-scrollbar-fg ((,class (:background ,act2))))
-   `(company-template-field ((,class (:inherit region))))
-   `(company-tooltip ((,class (:background ,highlight-line :foreground ,ttip))))
-   `(company-tooltip-annotation ((,class (:foreground ,keyword))))
-   `(company-tooltip-common ((,class (:background ,highlight-line :foreground ,base))))
-   `(company-tooltip-common-selection ((,class (:foreground ,base))))
-   `(company-tooltip-mouse ((,class (:inherit highlight))))
-   `(company-tooltip-search ((,class (:inherit match))))
-   `(company-tooltip-selection ((,class (:background ,ttip-sl :foreground ,base))))
+   ;; diff
+   `(diff-added             ((t :background unspecified :foreground ,green)))
+   `(diff-changed           ((t :background unspecified :foreground ,blue)))
+   `(diff-header            ((t :background unspecified :foreground ,base)))
+   `(diff-indicator-added   ((t :inherit diff-added)))
+   `(diff-indicator-changed ((t :inherit diff-changed)))
+   `(diff-indicator-removed ((t :inherit diff-removed)))
+   `(diff-refine-added      ((t :inherit diff-added)))
+   `(diff-refine-changed    ((t :inherit diff-changed)))
+   `(diff-refine-removed    ((t :inherit diff-removed)))
+   `(diff-removed           ((t :background unspecified :foreground ,red)))
 
-;;;;; diff
-   `(diff-added             ((,class :background unspecified :foreground ,green)))
-   `(diff-changed           ((,class :background unspecified :foreground ,blue)))
-   `(diff-header            ((,class :background unspecified :foreground ,base)))
-   `(diff-indicator-added   ((,class :inherit diff-added)))
-   `(diff-indicator-changed ((,class :inherit diff-changed)))
-   `(diff-indicator-removed ((,class :inherit diff-removed)))
-   `(diff-refine-added      ((,class :inherit diff-added)))
-   `(diff-refine-changed    ((,class :inherit diff-changed)))
-   `(diff-refine-removed    ((,class :inherit diff-removed)))
-   `(diff-removed           ((,class :background unspecified :foreground ,red)))
+   ;; dired
+   `(dired-directory ((t (:inherit link :underline nil))))
+   `(dired-flagged ((t (:foreground ,red))))
+   `(dired-header ((t (:background ,highlight-match :foreground ,black :bold t))))
+   `(dired-ignored ((t (:inherit shadow))))
+   `(dired-mark ((t (:foreground ,blue :inherit bold))))
+   `(dired-marked ((t (:foreground ,magenta :inherit bold))))
+   `(dired-perm-write ((t (:foreground ,base :underline t))))
+   `(dired-symlink ((t (:foreground ,cyan :background unspecified :inherit bold))))
+   `(dired-warning ((t (:foreground ,war))))
 
-;;;;; diff-hl
-   `(diff-hl-change ((,class :foreground ,blue)))
-   `(diff-hl-delete ((,class :foreground ,red)))
-   `(diff-hl-insert ((,class :foreground ,green)))
-
-;;;;; dired
-   `(dired-directory ((,class (:inherit link :underline nil))))
-   `(dired-flagged ((,class (:foreground ,red))))
-   `(dired-header ((,class (:background ,highlight-match :foreground ,black :bold t))))
-   `(dired-ignored ((,class (:inherit shadow))))
-   `(dired-mark ((,class (:foreground ,comp :inherit bold))))
-   `(dired-marked ((,class (:foreground ,magenta :inherit bold))))
-   `(dired-perm-write ((,class (:foreground ,base :underline t))))
-   `(dired-symlink ((,class (:foreground ,cyan :background unspecified :inherit bold))))
-   `(dired-warning ((,class (:foreground ,war))))
-
-;;;;; magit
-   `(magit-blame-culprit ((,class :foreground ,yellow)))
-   `(magit-blame-header  ((,class :foreground ,green)))
-   `(magit-blame-sha1    ((,class :foreground ,func)))
-   `(magit-blame-subject ((,class :foreground ,yellow)))
-   `(magit-blame-time    ((,class :foreground ,green)))
-   `(magit-blame-name    ((,class :foreground ,yellow)))
-   `(magit-blame-heading ((,class :foreground ,green)))
-   `(magit-blame-hash    ((,class :foreground ,func)))
-   `(magit-blame-summary ((,class :foreground ,yellow)))
-   `(magit-blame-date    ((,class :foreground ,green)))
-   `(magit-branch ((,class (:foreground ,const :inherit bold))))
-   `(magit-branch-current ((,class (:foreground ,base :inherit bold :box t))))
+   ;; magit
+   `(magit-branch ((t (:foreground ,white :inherit bold))))
+   `(magit-branch-current ((t (:foreground ,base :inherit bold :box t))))
    `(magit-branch-local ((t (:inherit magit-branch-current))))
    `(magit-branch-remote ((t (:inherit magit-branch-current))))
-   `(magit-diff-context ((,class (:foreground ,comment))))
-   `(magit-diff-context-highlight ((,class (:inherit magit-diff-context :background ,highlight-line))))
-   `(magit-diff-file-header ((,class (:foreground ,comment))))
-   `(magit-diff-file-heading ((,class (:foreground ,base))))
-   `(magit-diff-file-heading-highlight ((,class (:inherit magit-diff-file-heading :background ,highlight-line))))
-   `(magit-diff-hunk-header ((,class (:foreground ,ttip))))
-   `(magit-diff-hunk-heading ((,class (:foreground ,ttip))))
-   `(magit-diff-hunk-heading-highlight ((,class (:background ,highlight-line :foreground ,ttip))))
-   `(magit-hash ((,class (:foreground ,var))))
-   `(magit-hunk-heading           ((,class (:background ,bg3))))
-   `(magit-hunk-heading-highlight ((,class (:background ,highlight-line))))
-   `(magit-item-highlight ((,class :background ,highlight-line :foreground unspecified)))
-   `(magit-log-author ((,class (:foreground ,func))))
-   `(magit-log-head-label-head ((,class (:background ,yellow :foreground ,highlight-line :inherit bold))))
-   `(magit-log-head-label-local ((,class (:background ,keyword :foreground ,highlight-line :inherit bold))))
-   `(magit-log-head-label-remote ((,class (:background ,suc :foreground ,highlight-line :inherit bold))))
-   `(magit-log-head-label-tags ((,class (:background ,magenta :foreground ,highlight-line :inherit bold))))
-   `(magit-log-head-label-wip ((,class (:background ,cyan :foreground ,highlight-line :inherit bold))))
-   `(magit-log-sha1 ((,class (:foreground ,str))))
-   `(magit-process-ng ((,class (:foreground ,war :inherit bold))))
-   `(magit-process-ok ((,class (:foreground ,func :inherit bold))))
-   `(magit-section-heading        ((,class (:foreground ,keyword :inherit bold))))
+   `(magit-diff-context ((t (:foreground ,comment))))
+   `(magit-diff-context-highlight ((t (:inherit magit-diff-context :background ,highlight-line))))
+   `(magit-diff-file-header ((t (:foreground ,comment))))
+   `(magit-diff-file-heading ((t (:foreground ,base))))
+   `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background ,highlight-line))))
+   `(magit-diff-hunk-header ((t (:foreground ,ttip))))
+   `(magit-diff-hunk-heading ((t (:foreground ,ttip))))
+   `(magit-diff-hunk-heading-highlight ((t (:background ,highlight-line :foreground ,ttip))))
+   `(magit-hunk-heading ((t (:background ,bg3))))
+   `(magit-hunk-heading-highlight ((t (:background ,highlight-line))))
+   `(magit-item-highlight ((t :background ,highlight-line :foreground unspecified)))
+   `(magit-section-heading ((t (:foreground ,white :inherit bold))))
    `(magit-section-highlight ((t (:background ,highlight-line :foreground nil))))
-   `(magit-section-title ((,class (:background ,highlight-line :foreground ,keyword :inherit bold))))
+   `(magit-section-title ((t (:background ,highlight-line :foreground ,white :inherit bold))))
    `(magit-diff-added ((t (:inherit diff-added))))
    `(magit-diff-removed ((t (:inherit diff-removed))))
    `(magit-diff-added-highlight ((t (:inherit diff-added :background ,highlight-line))))
    `(magit-diff-removed-highlight ((t (:inherit diff-removed :background ,highlight-line))))
 
-;;;;; markdown
-   `(markdown-header-face-1 ((,class (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-2 ((,class (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-3 ((,class (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-4 ((,class (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-5 ((,class (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-6 ((,class (:inherit bold :foreground ,header :background unspecified))))
+   ;; markdown
+   `(markdown-header-face-1 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-2 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-3 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-4 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-5 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-6 ((t (:inherit bold :foreground ,header :background unspecified))))
 
-;;;;; mode-line
-   `(mode-line           ((,class (:foreground ,base :background ,act1 :box (:color ,border :line-width 1)))))
-   `(mode-line-inactive  ((,class (:foreground ,base-dim :background ,bg2 :box (:color ,border :line-width 1)))))
+   ;; show-paren
+   `(show-paren-match ((t (:background ,act1))))
+   `(show-paren-mismatch ((t (:foreground ,red))))
 
-   ;;;;; show-paren
-   `(show-paren-match ((,class (:background ,act1))))
-   `(show-paren-mismatch ((,class (:foreground ,red))))
-
-
-;;;;; smartparens
-   `(sp-pair-overlay-face ((,class (:background ,highlight-match :foreground nil))))
-   `(sp-show-pair-match-face ((,class (:foreground ,mat :inherit bold :underline t))))
+   ;; smartparens
+   `(sp-pair-overlay-face ((t (:background ,highlight-match :foreground nil))))
+   `(sp-show-pair-match-face ((t (:foreground ,mat :inherit bold :underline t))))
    ))
-
-
-
-
-
 
 ;;; Variables
 (kleene-dark-with-color-variables
   (custom-theme-set-variables
    'kleene-dark3
-   `(ansi-color-names-vector [,bg4 ,red ,green ,yellow ,blue ,magenta ,cyan ,base]))
+   `(ansi-color-names-vector [,black ,red ,green ,yellow ,blue ,magenta ,cyan ,white]))
   )
 
 (provide-theme 'kleene-dark3)
