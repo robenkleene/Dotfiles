@@ -46,7 +46,10 @@ highlight Pmenu ctermfg=white ctermbg=244
 highlight PmenuSel ctermfg=black ctermbg=cyan
 
 " Visual Selection {{{1
-highlight Visual ctermbg=darkcyan ctermfg=black
+" Visual selection is distinguished from `Search` because a match can either
+" be selected or not selected, so this difference in colors distinguishes
+" that.
+highlight Visual ctermbg=cyan ctermfg=black
 highlight MatchParen ctermfg=white ctermbg=244
 highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
