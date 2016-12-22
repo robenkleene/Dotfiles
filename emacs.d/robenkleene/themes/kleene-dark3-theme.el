@@ -149,10 +149,11 @@
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-search))))
+   `(highlight ((t (:inherit rk-search))))
 
    ;;;; Text
    `(link ((t (:inherit rk-link))))
-
+   
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
@@ -234,6 +235,10 @@
    ;; smartparens
    `(sp-pair-overlay-face ((t (:background ,highlight-match :foreground nil))))
    `(sp-show-pair-match-face ((t (:foreground ,mat :inherit bold :underline t))))
+
+   ;; Flycheck
+   `(flycheck-warning ((t (:inherit rk-warning))))
+
    ))
 
 ;;; Variables
