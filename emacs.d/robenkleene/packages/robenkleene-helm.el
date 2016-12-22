@@ -8,6 +8,7 @@
   :defer t
   :config
   (setq helm-truncate-lines t)
+  (setq helm-candidate-number-limit 1000)
   )
 
 (provide 'robenkleene-helm)
