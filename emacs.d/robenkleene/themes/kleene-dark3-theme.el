@@ -148,8 +148,8 @@
    ;;;; User-Interface
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
-   `(region ((t (:inherit rk-search))))
-   `(highlight ((t (:inherit rk-search))))
+   `(region ((t (:inherit rk-match))))
+   `(highlight ((t (:inherit rk-match))))
 
    ;;;; Text
    `(link ((t (:inherit rk-link))))
