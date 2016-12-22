@@ -96,6 +96,7 @@
 (defface rk-match'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
 (defface rk-modeline-inactive '((t)) "Inactive mode-line" :group 'rk-faces)
+(defface rk-prompt'((t)) "Prompt" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
 
@@ -105,23 +106,22 @@
   (custom-theme-set-faces
    'kleene-dark3
 
-;;; Styles
-
+   ;;;; Styles
    `(rk-comment ((t (:foreground ,comment))))
    `(rk-diff-add ((t (:foreground ,diff-add))))
    `(rk-diff-change ((t (:foreground ,diff-change))))
    `(rk-diff-remove ((t (:foreground ,diff-remove))))
    `(rk-error ((t (:foreground ,error))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
-   `(rk-link ((t (:foreground ,link))))
+   `(rk-link ((t (:foreground ,link :underline t))))
    `(rk-match ((t (:foreground ,match-fg :background ,match-bg))))
    `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
    `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
+   `(rk-prompt ((t (:inherit rk-match :bold t))))
    `(rk-search ((t (:foreground ,search-fg :background ,search-bg))))
    `(rk-warning ((t (:foreground ,warning))))
-   
-;;; Syntax
 
+   ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
@@ -141,31 +141,30 @@
    `(font-lock-variable-name-face ((t (:foreground, "#C6C5FE"))))
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
-;;; User-Interface
+   ;;;; User-Interface
    `(hl-line ((t (:inherit rk-highlight-line))))
-   `(minibuffer-prompt ((t (:inherit rk-search))))
+   `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-search))))
 
-;;; Text
+   ;;;; Text
    `(link ((t (:inherit rk-link))))
 
-;;; Mode Line
+   ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
 
-;;; Search
+   ;;;; Search
    `(isearch ((t (:inherit rk-search))))
    `(isearch-fail ((t (:inherit rk-error))))
    `(lazy-highlight ((t (:inherit rk-match))))
    
 ;;; Packages
 
-   ;; Helm
-   `(helm-selection-line ((t (:inherit rk-highlight-line))))
+   ;;;; Helm
    `(helm-selection ((t (:inherit rk-highlight-line))))
    `(helm-match ((t (:inherit rk-match))))
 
-   ;; Rainbow Delimiters
+   ;;;; Rainbow Delimiters
    `(rainbow-delimiters-depth-1-face ((t (:bold nil :foreground "#AFD7D7"))))
    `(rainbow-delimiters-depth-2-face ((t (:bold nil :foreground "#01A6B2"))))
    `(rainbow-delimiters-depth-3-face ((t (:bold nil :foreground "#B0FFD7"))))
@@ -176,28 +175,14 @@
    `(rainbow-delimiters-depth-8-face ((t (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((t (:bold nil :foreground "#01A6B2"))))
 
-   ;; diff
-   `(diff-added             ((t :background unspecified :foreground ,green)))
-   `(diff-changed           ((t :background unspecified :foreground ,blue)))
-   `(diff-header            ((t :background unspecified :foreground ,base)))
-   `(diff-indicator-added   ((t :inherit diff-added)))
-   `(diff-indicator-changed ((t :inherit diff-changed)))
-   `(diff-indicator-removed ((t :inherit diff-removed)))
-   `(diff-refine-added      ((t :inherit diff-added)))
-   `(diff-refine-changed    ((t :inherit diff-changed)))
-   `(diff-refine-removed    ((t :inherit diff-removed)))
-   `(diff-removed           ((t :background unspecified :foreground ,red)))
+   ;;;; diff
+   `(diff-added ((t :inherit rk-diff-add)))
+   `(diff-changed ((t :inherit rk-diff-change)))
+   `(diff-removed ((t :inherit rk-diff-remove)))
 
-   ;; dired
+   ;;;; dired
    `(dired-directory ((t (:inherit link :underline nil))))
-   `(dired-flagged ((t (:foreground ,red))))
-   `(dired-header ((t (:background ,highlight-match :foreground ,black :bold t))))
-   `(dired-ignored ((t (:inherit shadow))))
-   `(dired-mark ((t (:foreground ,blue :inherit bold))))
-   `(dired-marked ((t (:foreground ,magenta :inherit bold))))
-   `(dired-perm-write ((t (:foreground ,base :underline t))))
-   `(dired-symlink ((t (:foreground ,cyan :background unspecified :inherit bold))))
-   `(dired-warning ((t (:foreground ,war))))
+   `(dired-header ((t (:inherit rk-prompt))))
 
    ;; magit
    `(magit-branch ((t (:foreground ,white :inherit bold))))
