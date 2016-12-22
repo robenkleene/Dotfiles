@@ -97,6 +97,14 @@
   (find-file-other-window robenkleene/documentation-directory-path)
   )
 
+(defvar robenkleene/org-directory-path "~/Dropbox/Org")
+(defun robenkleene/emacs-org ()
+  "Open Emacs documentation directory."
+  (interactive)
+  (find-file-other-window robenkleene/org-directory-path)
+  )
+
+
 (defun robenkleene/print-variable ()
   "Replace the current line with a variable print statement."
   (interactive)
