@@ -44,12 +44,15 @@
     ("diff-remove" . red)
     ("error" . red)
     ("highlight-line-bg" . gray1)
+    ("link" . cyan)
     ("modeline-active-bg" . gray4)
     ("modeline-active-fg" . white)
     ("modeline-inactive-bg" . gray2)
     ("modeline-inactive-fg" . gray5)
     ("search-bg" . cyan2)
     ("search-fg" . black)
+    ("match-bg" . cyan1)
+    ("match-fg" . black)
     ("warning" . yellow)
 
     ;; Temp
@@ -82,32 +85,38 @@
     ))
 
 ;;; Custom Faces
+
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
 (defface rk-diff-add '((t)) "Diff add" :group 'rk-faces)
 (defface rk-diff-change'((t)) "Diff change" :group 'rk-faces)
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
+(defface rk-link '((t)) "Warning" :group 'rk-faces)
+(defface rk-match'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
 (defface rk-modeline-inactive '((t)) "Inactive mode-line" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
 
 ;;; Theme
+
 (kleene-dark-with-color-variables
   (custom-theme-set-faces
    'kleene-dark3
 
 ;;; Styles
 
-   `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
-   `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
-   `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-comment ((t (:foreground ,comment))))
-   `(rk-error ((t (:foreground ,error))))
    `(rk-diff-add ((t (:foreground ,diff-add))))
    `(rk-diff-change ((t (:foreground ,diff-change))))
    `(rk-diff-remove ((t (:foreground ,diff-remove))))
+   `(rk-error ((t (:foreground ,error))))
+   `(rk-highlight-line ((t (:background ,highlight-line-bg))))
+   `(rk-link ((t (:foreground ,link))))
+   `(rk-match ((t (:foreground ,match-fg :background ,match-bg))))
+   `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
+   `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
    `(rk-search ((t (:foreground ,search-fg :background ,search-bg))))
    `(rk-warning ((t (:foreground ,warning))))
    
@@ -133,16 +142,28 @@
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
 ;;; User-Interface
-   `(hl-line ((t (:background ,highlight-line-bg))))
-   `(isearch ((t (:foreground ,black :background ,cyan1))))
-   `(minibuffer-prompt ((t (:foreground ,black :background ,cyan1 :bold t))))
-   `(isearch-fail ((t (:foreground ,red))))
-   `(link ((t (:foreground ,cyan :underline t))))
-   `(region ((t (:background ,highlight-match :foreground ,black))))
+   `(hl-line ((t (:inherit rk-highlight-line))))
+   `(minibuffer-prompt ((t (:inherit rk-search))))
+   `(region ((t (:inherit rk-search))))
+
+;;; Text
+   `(link ((t (:inherit rk-link))))
+
+;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
+
+;;; Search
+   `(isearch ((t (:inherit rk-search))))
+   `(isearch-fail ((t (:inherit rk-error))))
+   `(lazy-highlight ((t (:inherit rk-match))))
    
 ;;; Packages
+
+   ;; Helm
+   `(helm-selection-line ((t (:inherit rk-highlight-line))))
+   `(helm-selection ((t (:inherit rk-highlight-line))))
+   `(helm-match ((t (:inherit rk-match))))
 
    ;; Rainbow Delimiters
    `(rainbow-delimiters-depth-1-face ((t (:bold nil :foreground "#AFD7D7"))))
