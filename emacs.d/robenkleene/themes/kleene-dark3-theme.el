@@ -87,10 +87,12 @@
 ;;; Custom Faces
 
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
+(defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-diff-add '((t)) "Diff add" :group 'rk-faces)
 (defface rk-diff-change'((t)) "Diff change" :group 'rk-faces)
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
+(defface rk-header'((t)) "Header" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
 (defface rk-link '((t)) "Warning" :group 'rk-faces)
 (defface rk-match'((t)) "Match" :group 'rk-faces)
@@ -112,6 +114,7 @@
    `(rk-diff-change ((t (:foreground ,diff-change))))
    `(rk-diff-remove ((t (:foreground ,diff-remove))))
    `(rk-error ((t (:foreground ,error))))
+   `(rk-header ((t (:foreground ,white :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
    `(rk-match ((t (:foreground ,match-fg :background ,match-bg))))
@@ -119,6 +122,7 @@
    `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
    `(rk-prompt ((t (:inherit rk-match :bold t))))
    `(rk-search ((t (:foreground ,search-fg :background ,search-bg))))
+   `(rk-text ((t (:foreground ,white))))
    `(rk-warning ((t (:foreground ,warning))))
 
    ;;;; Syntax
@@ -157,6 +161,9 @@
    `(isearch ((t (:inherit rk-search))))
    `(isearch-fail ((t (:inherit rk-error))))
    `(lazy-highlight ((t (:inherit rk-match))))
+
+   ;;;; Ido
+   `(ido-first-match ((t (:inherit rk-search))))
    
 ;;; Packages
 
@@ -184,30 +191,34 @@
    `(dired-directory ((t (:inherit link :underline nil))))
    `(dired-header ((t (:inherit rk-prompt))))
 
-   ;; magit
-   `(magit-branch ((t (:foreground ,white :inherit bold))))
-   `(magit-branch-current ((t (:foreground ,base :inherit bold :box t))))
-   `(magit-branch-local ((t (:inherit magit-branch-current))))
-   `(magit-branch-remote ((t (:inherit magit-branch-current))))
-   `(magit-diff-context ((t (:foreground ,comment))))
-   `(magit-diff-context-highlight ((t (:inherit magit-diff-context :background ,highlight-line))))
-   `(magit-diff-file-header ((t (:foreground ,comment))))
-   `(magit-diff-file-heading ((t (:foreground ,base))))
-   `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background ,highlight-line))))
-   `(magit-diff-hunk-header ((t (:foreground ,ttip))))
-   `(magit-diff-hunk-heading ((t (:foreground ,ttip))))
-   `(magit-diff-hunk-heading-highlight ((t (:background ,highlight-line :foreground ,ttip))))
-   `(magit-hunk-heading ((t (:background ,bg3))))
-   `(magit-hunk-heading-highlight ((t (:background ,highlight-line))))
-   `(magit-item-highlight ((t :background ,highlight-line :foreground unspecified)))
-   `(magit-section-heading ((t (:foreground ,white :inherit bold))))
-   `(magit-section-highlight ((t (:background ,highlight-line :foreground nil))))
-   `(magit-section-title ((t (:background ,highlight-line :foreground ,white :inherit bold))))
-   `(magit-diff-added ((t (:inherit diff-added))))
-   `(magit-diff-removed ((t (:inherit diff-removed))))
-   `(magit-diff-added-highlight ((t (:inherit diff-added :background ,highlight-line))))
-   `(magit-diff-removed-highlight ((t (:inherit diff-removed :background ,highlight-line))))
-
+   ;;;; magit
+   ;;;;; Metadata
+   `(magit-branch ((t (:inherit rk-header))))
+   `(magit-branch-current ((t (:inherit magit-branch))))
+   `(magit-branch-local ((t (:inherit magit-branch))))
+   `(magit-branch-remote ((t (:inherit magit-branch))))
+   ;;;;; Diff
+   `(magit-diff-added ((t (:inherit rk-diff-add))))
+   `(magit-diff-context ((t (:inherit rk-comment))))
+   `(magit-diff-removed ((t (:inherit rk-diff-remove))))
+   ;;;;; Diff Hierarchy
+   `(magit-diff-file-header ((t (:inherit rk-comment))))
+   `(magit-diff-file-heading ((t (:inherit rk-text))))
+   `(magit-diff-hunk-header ((t (:inherit rk-text))))
+   `(magit-diff-hunk-heading ((t (:inherit rk-text))))
+   `(magit-hunk-heading ((t (:inherit rk-header))))
+   `(magit-section-heading ((t (:inherit rk-header))))
+   `(magit-section-title ((t (:inherit rk-header))))
+   ;;;;; Highlight
+   `(magit-diff-added-highlight ((t (:inherit magit-diff-added :background ,highlight-line-bg))))
+   `(magit-diff-context-highlight ((t (:inherit magit-diff-context :background ,highlight-line-bg))))
+   `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background ,highlight-line-bg))))
+   `(magit-diff-hunk-heading-highlight ((t (:inherit magit-diff-hunk-heading :background ,highlight-line-bg))))
+   `(magit-diff-removed-highlight ((t (:inherit magit-diff-removed :background ,highlight-line-bg))))
+   `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background ,highlight-line-bg))))
+   `(magit-item-highlight ((t :inherit magit-item-highlight :background ,highlight-line-bg)))
+   `(magit-section-highlight ((t (:inherit rk-highlight-line))))
+   
    ;; markdown
    `(markdown-header-face-1 ((t (:inherit bold :foreground ,header :background unspecified))))
    `(markdown-header-face-2 ((t (:inherit bold :foreground ,header :background unspecified))))
