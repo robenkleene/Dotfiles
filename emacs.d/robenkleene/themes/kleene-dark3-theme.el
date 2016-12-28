@@ -58,20 +58,7 @@
     ("warning" . yellow)
 
     ;; Temp
-    ("act1" . "#808080")
-    ("act2" . "#444444")
-    ("base" . white)
-    ("base-dim" . "#B2B2B2")
-    ("highlight-line" . "#3A3A3A")
-    ("bg2" . "#4e4e4e")
-    ("bg3" . "#121212")
-    ("bg4" . "#080808")
-    ("border" . "#111111")
-    ("cblk" . "#b2b2b2")
-    ("cblk-ln" . "#af5faf")
-    ("cblk-ln-bg" . "#333333")
-    ("cursor" . "#d0d0d0")
-    ("header" . base)
+    ("header" . "#FFFFFF")
     ("highlight-match" . "#4AA4B0")
     ("highlight-search" . "#68E0D8")
     ("lnum" . "#444444")
@@ -248,15 +235,12 @@
    `(markdown-header-face-6 ((t (:inherit bold :foreground ,header :background unspecified))))
 
    ;; show-paren
-   `(show-paren-match ((t (:background ,act1))))
-   `(show-paren-mismatch ((t (:foreground ,red))))
-
-   ;; smartparens
-   `(sp-pair-overlay-face ((t (:background ,highlight-match :foreground nil))))
-   `(sp-show-pair-match-face ((t (:foreground ,mat :inherit bold :underline t))))
+   `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
+   `(show-paren-mismatch ((t (:inherit rk-error))))
 
    ;; Flycheck
    `(flycheck-warning ((t (:inherit rk-warning))))
+   `(flycheck-error ((t (:inherit rk-error))))
 
    ))
 
