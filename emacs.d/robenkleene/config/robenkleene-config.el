@@ -77,5 +77,11 @@
 ;; Replace `C-x C-f' with `find-file-at-point' version
 (ffap-bindings)
 
+;; Spelling
+(setq ispell-program-name "aspell")
+(setq ispell-dictionary "british")
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 (provide 'robenkleene-config)
 ;;; robenkleene-config.el ends here

@@ -249,6 +249,10 @@
    `(flycheck-warning ((t (:inherit rk-warning))))
    `(flycheck-error ((t (:inherit rk-error))))
 
+   ;; Flycheck
+   `(flyspell-duplicate ((t (:inherit rk-warning))))
+   `(flyspell-incorrect ((t (:inherit rk-error))))
+
    ))
 
 ;;; Variables
