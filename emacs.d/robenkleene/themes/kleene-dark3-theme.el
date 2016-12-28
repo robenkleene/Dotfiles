@@ -29,8 +29,10 @@
     ("yellow" . "#E5E64B")
 
     ;; Palette
-    ("cyan1" . "#23A6B1")
-    ("cyan2" . "#35E5E4")
+    ;; ("cyan1" . "#23A6B1")
+    ;; ("cyan2" . "#35E5E4")
+    ("cyan1" . "#0E6A72")
+    ("cyan2" . "#1C7D85")
     ("gray0" . "#303030")
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
@@ -40,9 +42,8 @@
 
     ;; Named
     ("comment" . gray3)
-    ("diff-add" . green)
-    ("diff-change" . blue)
-    ("diff-remove" . red)
+    ("success" . green)
+    ("change" . blue)
     ("error" . red)
     ("highlight-line-bg" . gray1)
     ("callout-bg" . gray0)
@@ -61,21 +62,23 @@
 
 ;;; Custom Faces
 
+(defface rk-callout '((t)) "Callout block" :group 'rk-faces)
+(defface rk-change '((t)) "Change" :group 'rk-faces)
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
-(defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-diff-add '((t)) "Diff add" :group 'rk-faces)
 (defface rk-diff-change'((t)) "Diff change" :group 'rk-faces)
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
 (defface rk-header'((t)) "Header" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
-(defface rk-callout '((t)) "Callout block" :group 'rk-faces)
 (defface rk-link '((t)) "Warning" :group 'rk-faces)
 (defface rk-match'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
 (defface rk-modeline-inactive '((t)) "Inactive mode-line" :group 'rk-faces)
 (defface rk-prompt'((t)) "Prompt" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
+(defface rk-success '((t)) "Success" :group 'rk-faces)
+(defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
 
 ;;; Theme
@@ -85,20 +88,23 @@
    'kleene-dark3
 
    ;;;; Styles
+   `(rk-callout ((t (:background ,callout-bg))))
+   `(rk-change ((t (:foreground ,change))))
    `(rk-comment ((t (:foreground ,comment))))
-   `(rk-diff-add ((t (:foreground ,diff-add))))
-   `(rk-diff-change ((t (:foreground ,diff-change))))
-   `(rk-diff-remove ((t (:foreground ,diff-remove))))
+   `(rk-diff-add ((t (:inherit rk-success))))
+   `(rk-diff-change ((t (:inherit rk-change))))
+   `(rk-diff-remove ((t (:inherit rk-error))))
+   `(rk-error ((t (:foreground ,error))))
    `(rk-error ((t (:foreground ,error))))
    `(rk-header ((t (:foreground ,white :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
-   `(rk-callout ((t (:background ,callout-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
-   `(rk-match ((t (:foreground ,match-fg :background ,match-bg))))
+   `(rk-match ((t (:background ,match-bg))))
    `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
    `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
-   `(rk-prompt ((t (:inherit rk-match :bold t))))
-   `(rk-search ((t (:foreground ,search-fg :background ,search-bg))))
+   `(rk-prompt ((t (:inherit rk-search :foreground ,white :bold t))))
+   `(rk-search ((t (:background ,search-bg))))
+   `(rk-success ((t (:foreground ,success))))
    `(rk-text ((t (:foreground ,white))))
    `(rk-warning ((t (:foreground ,warning))))
 
@@ -131,6 +137,7 @@
 
    ;;;; Text
    `(link ((t (:inherit rk-link))))
+   `(success ((t (:inherit rk-success))))
    
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
@@ -143,12 +150,16 @@
 
    ;;;; Ido
    `(ido-first-match ((t (:inherit rk-search))))
-   
+
+   ;;;; Compilation (used for grep)
+   `(compilation-line-number ((t (:inherit rk-comment))))
+   `(compilation-info ((t (:inherit rk-success))))
 ;;; Packages
 
    ;;;; Helm
    `(helm-selection ((t (:inherit rk-highlight-line))))
    `(helm-match ((t (:inherit rk-match))))
+   `(helm-grep-lineno ((t (:inherit rk-comment))))
 
    ;;;; Rainbow Delimiters
    `(rainbow-delimiters-depth-1-face ((t (:bold nil :foreground "#AFD7D7"))))
