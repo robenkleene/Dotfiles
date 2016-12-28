@@ -154,6 +154,7 @@
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-match))))
    `(highlight ((t (:inherit rk-match))))
+   `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
 
    ;;;; Text
    `(link ((t (:inherit rk-link))))
