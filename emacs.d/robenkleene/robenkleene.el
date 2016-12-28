@@ -39,6 +39,8 @@
 (require 'robenkleene-helm-swoop)
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)
+(require 'robenkleene-wgrep)
+
 
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
 ;; Font lock errors on startup are from `fill-column-indicator'
