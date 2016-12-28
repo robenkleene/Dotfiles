@@ -57,20 +57,6 @@
     ("match-fg" . black)
     ("warning" . yellow)
 
-    ;; Temp
-    ("header" . "#FFFFFF")
-    ("highlight-match" . "#4AA4B0")
-    ("highlight-search" . "#68E0D8")
-    ("lnum" . "#444444")
-    ("mat" . "#86dc2f")
-    ("meta" . "#af875f")
-    ("str" . "#2aa198")
-    ("suc" . "#86dc2f")
-    ("ttip" . "#888888")
-    ("ttip-sl" . "#333333")
-    ("type" . "#df005f")
-    ("var" . "#8787d7")
-    ("war" . "#dc752f")
     ))
 
 ;;; Custom Faces
@@ -227,12 +213,12 @@
    '(ediff-even-diff-C ((t (:inherit ediff-odd-diff-A))))
    
    ;; markdown
-   `(markdown-header-face-1 ((t (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-2 ((t (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-3 ((t (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-4 ((t (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-5 ((t (:inherit bold :foreground ,header :background unspecified))))
-   `(markdown-header-face-6 ((t (:inherit bold :foreground ,header :background unspecified))))
+   `(markdown-header-face-1 ((t (:inherit rk-header))))
+   `(markdown-header-face-2 ((t (:inherit rk-header))))
+   `(markdown-header-face-3 ((t (:inherit rk-header))))
+   `(markdown-header-face-4 ((t (:inherit rk-header))))
+   `(markdown-header-face-5 ((t (:inherit rk-header))))
+   `(markdown-header-face-6 ((t (:inherit rk-header))))
 
    ;; show-paren
    `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
