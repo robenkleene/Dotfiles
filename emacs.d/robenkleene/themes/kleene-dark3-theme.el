@@ -194,8 +194,9 @@
    ;;;;; Diff Hierarchy
    `(magit-diff-file-header ((t (:inherit rk-comment))))
    `(magit-diff-file-heading ((t (:inherit rk-text))))
-   `(magit-diff-hunk-header ((t (:inherit rk-text))))
-   `(magit-diff-hunk-heading ((t (:inherit rk-text))))
+   `(magit-diff-hunk-header ((t (:inherit rk-header))))
+   `(magit-diff-hunk-heading ((t (:inherit rk-header))))
+   `(magit-diff-lines-heading ((t (:inherit rk-header :background ,callout-bg))))
    `(magit-hunk-heading ((t (:inherit rk-header))))
    `(magit-section-heading ((t (:inherit rk-header))))
    `(magit-section-title ((t (:inherit rk-header))))
@@ -208,6 +209,8 @@
    `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background ,callout-bg))))
    `(magit-item-highlight ((t (:inherit magit-item-highlight :background ,callout-bg))))
    `(magit-section-highlight ((t (:inherit rk-callout))))
+   ;;;;; Region
+   `(magit-diff-hunk-region ((t (:inherit region))))
 
    ;; ediff
    '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
