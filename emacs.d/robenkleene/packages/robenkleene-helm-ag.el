@@ -20,6 +20,9 @@
       (grep-mode)
       )
     )
+  ;; Use ripgrep
+  (custom-set-variables
+   '(helm-ag-base-command "rg --vimgrep --no-heading"))
   )
 
 (provide 'robenkleene-helm-ag)
