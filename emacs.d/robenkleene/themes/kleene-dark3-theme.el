@@ -154,12 +154,19 @@
    ;;;; Compilation (used for grep)
    `(compilation-line-number ((t (:inherit rk-comment))))
    `(compilation-info ((t (:inherit rk-success))))
+
+   ;;;; git
+   `(git-commit-summary ((t (:inherit rk-text))))
+
 ;;; Packages
 
    ;;;; Helm
    `(helm-selection ((t (:inherit rk-highlight-line))))
    `(helm-match ((t (:inherit rk-match))))
    `(helm-grep-lineno ((t (:inherit rk-comment))))
+   `(helm-source-header ((t (:inherit rk-modeline-inactive))))
+   `(helm-candidate-number ((t (:inherit rk-prompt))))
+   `(helm-grep-finish ((t (:inherit rk-prompt))))
 
    ;;;; Rainbow Delimiters
    `(rainbow-delimiters-depth-1-face ((t (:bold nil :foreground "#AFD7D7"))))
