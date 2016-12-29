@@ -21,7 +21,7 @@
     ;; Ansi
     ("black" . "#000000")
     ("blue" . "#005FFF")
-    ("cyan" . "#00ffff")
+    ("cyan" . "#4AA4B0")
     ("green" . "#62D63F")
     ("magenta" . "#af00df")
     ("red" . "#D32D1E")
@@ -71,18 +71,19 @@
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
 (defface rk-header'((t)) "Header" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
-(defface rk-link '((t)) "Warning" :group 'rk-faces)
+(defface rk-link '((t)) "Link" :group 'rk-faces)
 (defface rk-match'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
 (defface rk-modeline-inactive '((t)) "Inactive mode-line" :group 'rk-faces)
+(defface rk-popup '((t)) "Pop-up" :group 'rk-faces)
+(defface rk-popup-match '((t)) "Pop-up match" :group 'rk-faces)
+(defface rk-popup-selection '((t)) "Pop-up selection" :group 'rk-faces)
 (defface rk-prompt'((t)) "Prompt" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
 (defface rk-success '((t)) "Success" :group 'rk-faces)
 (defface rk-text '((t)) "Text" :group 'rk-faces)
+(defface rk-text2 '((t)) "Text 2" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
-(defface rk-popup '((t)) "Pop-up" :group 'rk-faces)
-(defface rk-popup-selection '((t)) "Pop-up selection" :group 'rk-faces)
-(defface rk-popup-match '((t)) "Pop-up match" :group 'rk-faces)
 
 ;;; Theme
 
@@ -105,14 +106,15 @@
    `(rk-match ((t (:background ,match-bg))))
    `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
    `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
+   `(rk-popup ((t (:inherit rk-modeline-active))))
+   `(rk-popup-match ((t (:foreground ,link))))
+   `(rk-popup-selection ((t (:inherit rk-search))))
    `(rk-prompt ((t (:inherit rk-search :foreground ,white :bold t))))
    `(rk-search ((t (:background ,search-bg))))
    `(rk-success ((t (:foreground ,success))))
    `(rk-text ((t (:foreground ,white))))
+   `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning))))
-   `(rk-popup ((t (:inherit rk-modeline-active))))
-   `(rk-popup-selection ((t (:inherit rk-search))))
-   `(rk-popup-match ((t (:foreground ,link))))
    
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
@@ -255,6 +257,10 @@
    `(markdown-header-face-5 ((t (:inherit rk-header))))
    `(markdown-header-face-6 ((t (:inherit rk-header))))
    `(markdown-markup-face ((t (:inherit rk-comment))))
+   `(markdown-link-face ((t (:inherit rk-link))))
+   `(markdown-url-face ((t (:inherit rk-comment))))
+   `(markdown-pre-face ((t (:inherit rk-text2))))
+   `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
    
    ;;;; show-paren
    `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
@@ -272,6 +278,8 @@
    `(company-tooltip-selection ((t (:inherit rk-popup-selection))))
    `(company-scrollbar-bg ((t (:background ,modeline-inactive-bg))))
    `(company-scrollbar-fg ((t (:background ,modeline-inactive-fg))))
+   `(company-preview ((t (:inherit rk-text))))
+   `(company-preview-common ((t (:inherit company-tooltip-common))))
 
    ))
 
