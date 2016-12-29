@@ -1,9 +1,9 @@
-;; kleene-dark3-theme.el --- Kleene Dark 3
+;; kleene-dark-theme.el --- Kleene Dark
 
 ;;; Commentary:
 ;;; Code:
 
-(deftheme kleene-dark3 "Kleene Dark 3")
+(deftheme kleene-dark "Kleene Dark")
 
 (defmacro kleene-dark-with-color-variables (&rest body)
   "`let*' bind all colors defined in `kleene-dark-colors-alist' around BODY.  Also bind `class' to ((class color) (min-colors 89))."
@@ -85,7 +85,7 @@
 
 (kleene-dark-with-color-variables
   (custom-theme-set-faces
-   'kleene-dark3
+   'kleene-dark
 
    ;;;; Styles
    `(rk-callout ((t (:background ,callout-bg))))
@@ -158,6 +158,37 @@
    ;;;; git
    `(git-commit-summary ((t (:inherit rk-text))))
 
+   ;; Flycheck
+   `(flycheck-warning ((t (:inherit rk-warning))))
+   `(flycheck-error ((t (:inherit rk-error))))
+
+   ;; Flyspell
+   `(flyspell-duplicate ((t (:inherit rk-warning))))
+   `(flyspell-incorrect ((t (:inherit rk-error))))
+
+   ;;;; diff
+   `(diff-added ((t :inherit rk-diff-add)))
+   `(diff-changed ((t :inherit rk-diff-change)))
+   `(diff-removed ((t :inherit rk-diff-remove)))
+
+   ;;;; dired
+   `(dired-directory ((t (:inherit link :underline nil))))
+   `(dired-header ((t (:inherit rk-prompt))))
+
+   ;; ediff
+   '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
+   '(ediff-current-diff-B ((t (:inherit ediff-current-diff-A))))
+   '(ediff-current-diff-C ((t (:inherit ediff-current-diff-A))))
+   '(ediff-fine-diff-A ((t (:inherit rk-diff-change))))
+   '(ediff-fine-diff-B ((t (:inherit ediff-fine-diff-A))))
+   '(ediff-fine-diff-C ((t (:inherit ediff-fine-diff-A))))
+   '(ediff-odd-diff-A ((t (:inherit rk-callout))))
+   '(ediff-odd-diff-B ((t (:inherit ediff-odd-diff-A))))
+   '(ediff-odd-diff-C ((t (:inherit ediff-odd-diff-A))))
+   '(ediff-even-diff-A ((t (:inherit ediff-odd-diff-A))))
+   '(ediff-even-diff-B ((t (:inherit ediff-odd-diff-A))))
+   '(ediff-even-diff-C ((t (:inherit ediff-odd-diff-A))))
+
 ;;; Packages
 
    ;;;; Helm
@@ -178,15 +209,6 @@
    `(rainbow-delimiters-depth-7-face ((t (:bold nil :foreground "#999900"))))
    `(rainbow-delimiters-depth-8-face ((t (:bold nil :foreground "#AFD7FF"))))
    `(rainbow-delimiters-depth-9-face ((t (:bold nil :foreground "#01A6B2"))))
-
-   ;;;; diff
-   `(diff-added ((t :inherit rk-diff-add)))
-   `(diff-changed ((t :inherit rk-diff-change)))
-   `(diff-removed ((t :inherit rk-diff-remove)))
-
-   ;;;; dired
-   `(dired-directory ((t (:inherit link :underline nil))))
-   `(dired-header ((t (:inherit rk-prompt))))
 
    ;;;; magit
    ;;;;; Metadata
@@ -218,20 +240,6 @@
    `(magit-section-highlight ((t (:inherit rk-callout))))
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
-
-   ;; ediff
-   '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
-   '(ediff-current-diff-B ((t (:inherit ediff-current-diff-A))))
-   '(ediff-current-diff-C ((t (:inherit ediff-current-diff-A))))
-   '(ediff-fine-diff-A ((t (:inherit rk-diff-change))))
-   '(ediff-fine-diff-B ((t (:inherit ediff-fine-diff-A))))
-   '(ediff-fine-diff-C ((t (:inherit ediff-fine-diff-A))))
-   '(ediff-odd-diff-A ((t (:inherit rk-callout))))
-   '(ediff-odd-diff-B ((t (:inherit ediff-odd-diff-A))))
-   '(ediff-odd-diff-C ((t (:inherit ediff-odd-diff-A))))
-   '(ediff-even-diff-A ((t (:inherit ediff-odd-diff-A))))
-   '(ediff-even-diff-B ((t (:inherit ediff-odd-diff-A))))
-   '(ediff-even-diff-C ((t (:inherit ediff-odd-diff-A))))
    
    ;; markdown
    `(markdown-header-face-1 ((t (:inherit rk-header))))
@@ -245,27 +253,24 @@
    `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
-   ;; Flycheck
-   `(flycheck-warning ((t (:inherit rk-warning))))
-   `(flycheck-error ((t (:inherit rk-error))))
-
-   ;; Flycheck
-   `(flyspell-duplicate ((t (:inherit rk-warning))))
-   `(flyspell-incorrect ((t (:inherit rk-error))))
-
+   ;; wgrep
+   `(wgrep-delete-face ((t (:inherit rk-diff-remove))))
+   `(wgrep-face ((t (:inherit rk-diff-change))))
+   `(wgrep-done-face ((t (:inherit rk-success))))
+   `(wgrep-reject-face ((t (:inherit rk-error))))
    ))
 
 ;;; Variables
 (kleene-dark-with-color-variables
   (custom-theme-set-variables
-   'kleene-dark3
+   'kleene-dark
    `(ansi-color-names-vector [,black ,red ,green ,yellow ,blue ,magenta ,cyan ,white]))
   )
 
-(provide-theme 'kleene-dark3)
+(provide-theme 'kleene-dark)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; kleene-dark3-theme.el ends here
+;;; kleene-dark-theme.el ends here
