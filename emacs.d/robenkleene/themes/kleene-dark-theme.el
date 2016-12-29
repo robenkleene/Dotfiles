@@ -20,7 +20,7 @@
   '(
     ;; Ansi
     ("black" . "#000000")
-    ("blue" . "#005FFF")
+    ("blue" . "#0087ff")    
     ("cyan" . "#4AA4B0")
     ("green" . "#62D63F")
     ("magenta" . "#af00df")
