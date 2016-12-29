@@ -5,9 +5,6 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
- '(custom-safe-themes
-   (quote
-    ("b551d8eddc2fc7e632183410a434112bca3eb75ed9efc1ff13413efce4b4d22c" default)))
  '(helm-ag-base-command "rg --no-heading --color=never")
  '(package-selected-packages
    (quote
