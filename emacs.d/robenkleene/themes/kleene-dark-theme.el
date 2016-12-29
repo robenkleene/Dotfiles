@@ -80,6 +80,9 @@
 (defface rk-success '((t)) "Success" :group 'rk-faces)
 (defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
+(defface rk-popup '((t)) "Pop-up" :group 'rk-faces)
+(defface rk-popup-selection '((t)) "Pop-up selection" :group 'rk-faces)
+(defface rk-popup-match '((t)) "Pop-up match" :group 'rk-faces)
 
 ;;; Theme
 
@@ -107,7 +110,10 @@
    `(rk-success ((t (:foreground ,success))))
    `(rk-text ((t (:foreground ,white))))
    `(rk-warning ((t (:foreground ,warning))))
-
+   `(rk-popup ((t (:inherit rk-modeline-active))))
+   `(rk-popup-selection ((t (:inherit rk-search))))
+   `(rk-popup-match ((t (:foreground ,link))))
+   
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
@@ -158,11 +164,11 @@
    ;;;; git
    `(git-commit-summary ((t (:inherit rk-text))))
 
-   ;; Flycheck
+   ;;;; Flycheck
    `(flycheck-warning ((t (:inherit rk-warning))))
    `(flycheck-error ((t (:inherit rk-error))))
 
-   ;; Flyspell
+   ;;;; Flyspell
    `(flyspell-duplicate ((t (:inherit rk-warning))))
    `(flyspell-incorrect ((t (:inherit rk-error))))
 
@@ -175,7 +181,7 @@
    `(dired-directory ((t (:inherit link :underline nil))))
    `(dired-header ((t (:inherit rk-prompt))))
 
-   ;; ediff
+   ;;;; ediff
    '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
    '(ediff-current-diff-B ((t (:inherit ediff-current-diff-A))))
    '(ediff-current-diff-C ((t (:inherit ediff-current-diff-A))))
@@ -241,23 +247,32 @@
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
    
-   ;; markdown
+   ;;;; markdown
    `(markdown-header-face-1 ((t (:inherit rk-header))))
    `(markdown-header-face-2 ((t (:inherit rk-header))))
    `(markdown-header-face-3 ((t (:inherit rk-header))))
    `(markdown-header-face-4 ((t (:inherit rk-header))))
    `(markdown-header-face-5 ((t (:inherit rk-header))))
    `(markdown-header-face-6 ((t (:inherit rk-header))))
-
-   ;; show-paren
+   `(markdown-markup-face ((t (:inherit rk-comment))))
+   
+   ;;;; show-paren
    `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
-   ;; wgrep
+   ;;;; wgrep
    `(wgrep-delete-face ((t (:inherit rk-diff-remove))))
    `(wgrep-face ((t (:inherit rk-diff-change))))
    `(wgrep-done-face ((t (:inherit rk-success))))
    `(wgrep-reject-face ((t (:inherit rk-error))))
+
+   ;;;; Company
+   `(company-tooltip ((t (:inherit rk-popup))))
+   `(company-tooltip-common ((t (:inherit rk-popup-match))))
+   `(company-tooltip-selection ((t (:inherit rk-popup-selection))))
+   `(company-scrollbar-bg ((t (:background ,modeline-inactive-bg))))
+   `(company-scrollbar-fg ((t (:background ,modeline-inactive-fg))))
+
    ))
 
 ;;; Variables
