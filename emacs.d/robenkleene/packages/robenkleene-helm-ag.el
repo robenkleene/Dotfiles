@@ -22,7 +22,7 @@
     )
   ;; Use ripgrep
   (custom-set-variables
-   '(helm-ag-base-command "rg --vimgrep --no-heading"))
+   '(helm-ag-base-command "rg --no-heading --color=never"))
   )
 
 (provide 'robenkleene-helm-ag)
