@@ -278,8 +278,8 @@
    `(company-tooltip-selection ((t (:inherit rk-popup-selection))))
    `(company-scrollbar-bg ((t (:background ,modeline-inactive-bg))))
    `(company-scrollbar-fg ((t (:background ,modeline-inactive-fg))))
-   `(company-preview ((t (:inherit rk-text))))
-   `(company-preview-common ((t (:inherit company-tooltip-common))))
+   `(company-preview ((t (:inherit rk-comment :background ,highlight-line-bg))))
+   `(company-preview-common ((t (:inherit company-tooltip-common :background ,highlight-line-bg))))
 
    ))
 
