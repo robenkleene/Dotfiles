@@ -228,6 +228,8 @@
    `(magit-branch-current ((t (:inherit magit-branch))))
    `(magit-branch-local ((t (:inherit magit-branch))))
    `(magit-branch-remote ((t (:inherit magit-branch))))
+   `(magit-tag ((t (:inherit rk-text))))
+
    ;;;;; Diff
    `(magit-diff-added ((t (:inherit rk-diff-add))))
    `(magit-diff-context ((t (:inherit rk-comment))))
