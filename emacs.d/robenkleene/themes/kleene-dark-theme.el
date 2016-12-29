@@ -81,6 +81,8 @@
 (defface rk-prompt'((t)) "Prompt" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
 (defface rk-success '((t)) "Success" :group 'rk-faces)
+(defface rk-tag-active '((t)) "Tag" :group 'rk-faces)
+(defface rk-tag-inactive '((t)) "Tag" :group 'rk-faces)
 (defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-text2 '((t)) "Text 2" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
@@ -112,6 +114,8 @@
    `(rk-prompt ((t (:inherit rk-search :foreground ,white :bold t))))
    `(rk-search ((t (:background ,search-bg))))
    `(rk-success ((t (:foreground ,success))))
+   `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
+   `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
    `(rk-text ((t (:foreground ,white))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning))))
@@ -281,6 +285,20 @@
    `(company-preview ((t (:inherit rk-comment :background ,highlight-line-bg))))
    `(company-preview-common ((t (:inherit company-tooltip-common :background ,highlight-line-bg))))
 
+   ;;;; Org
+   `(org-todo ((t (:inherit rk-tag-active))))
+   `(org-done ((t (:inherit rk-tag-inactive))))
+   `(org-code ((t (:inherit rk-text2))))
+   `(org-level-1 ((t (:inherit rk-text))))
+   `(org-level-2 ((t (:inherit org-level-1))))
+   `(org-level-3 ((t (:inherit org-level-1))))
+   `(org-level-4 ((t (:inherit org-level-1))))
+   `(org-level-5 ((t (:inherit org-level-1))))
+   `(org-level-6 ((t (:inherit org-level-1))))
+   `(org-level-7 ((t (:inherit org-level-1))))
+   `(org-level-8 ((t (:inherit org-level-1))))
+   
+   
    ))
 
 ;;; Variables
