@@ -83,5 +83,8 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+;; Org
+(setq org-replace-disputed-keys t)
+
 (provide 'robenkleene-config)
 ;;; robenkleene-config.el ends here
