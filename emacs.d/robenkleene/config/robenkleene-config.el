@@ -85,6 +85,7 @@
 
 ;; Org
 (setq org-replace-disputed-keys t)
+(setq org-todo-keywords '("TODO" "STARTED" "DONE"))
 
 (provide 'robenkleene-config)
 ;;; robenkleene-config.el ends here
