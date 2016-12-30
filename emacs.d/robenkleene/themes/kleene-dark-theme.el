@@ -299,6 +299,8 @@
    `(org-level-6 ((t (:inherit org-level-1))))
    `(org-level-7 ((t (:inherit org-level-1))))
    `(org-level-8 ((t (:inherit org-level-1))))
+   `(org-special-keyword ((t (:inherit rk-comment :bold t))))
+   `(org-property-value ((t (:inherit rk-comment))))
    
    
    ))
