@@ -45,10 +45,10 @@ nnoremap <leader>d :edit ~/Documentation/development-references/Vim/<CR>:cd %<CR
 nnoremap <leader>w :set wrap!<CR>
 
 " Open Working Directory in Terminal
-nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
+nnoremap <leader>T :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 
 " Reveal Current File
-nnoremap <leader>r :silent !open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap <leader>R :silent !open -R "%:p"<CR>\|:redraw!<CR>
 
 " Open File in TextMate
 nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
@@ -110,3 +110,21 @@ noremap <silent> <S-Left> <C-w>h
 noremap <silent> <S-Down> <C-w>j
 noremap <silent> <S-Up> <C-w>k
 noremap <silent> <S-Right> <C-w>l
+
+
+" Neovim Terminal
+if has('nvim')
+  function! s:OpenTerminal()
+    " Only remap `<Esc>` in this buffer so it doesn't interfere
+    " with commands that spawn terminals like `fzf`
+    split
+    terminal fish
+    tnoremap <buffer> <Esc> <C-\><C-n>
+  endfunction
+
+  nnoremap <leader>t :call <SID>OpenTerminal()<CR>
+  tnoremap <A-h> <C-\><C-n><C-w>h
+  tnoremap <A-j> <C-\><C-n><C-w>j
+  tnoremap <A-k> <C-\><C-n><C-w>k
+  tnoremap <A-l> <C-\><C-n><C-w>l
+endif
