@@ -51,7 +51,7 @@ nnoremap <leader>t :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 nnoremap <leader>r :silent !open -R "%:p"<CR>\|:redraw!<CR>
 
 " Open File in TextMate
-nnoremap <leader>e :silent !mate --async "%:p"<CR>\|:redraw!<CR>
+nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
