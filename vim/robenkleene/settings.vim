@@ -35,6 +35,9 @@ syntax on
 " Use system clipboard by default
 " set clipboard=unnamed 
 
+" Disable mouse
+set mouse=
+
 " Set Word Boundaries
 " For `-` and `_` there are two schools of thought:
 " 1. They should not be in `iskeyword` in order to match the `bash` default
