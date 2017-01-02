@@ -4,6 +4,11 @@ if &shell =~# 'fish$'
   set shell=bash
 endif
 
+" Check Status {{{1
+if has('nvim') && !has("python3")
+  echom "Running nvim without python3"
+endif
+
 " Plugins {{{1
 
 " Install Vim-Plug if it is missing
