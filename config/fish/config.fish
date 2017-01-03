@@ -125,6 +125,7 @@ end
 # tmux
 # Echo running sessions if there are any
 if tmux ls >/dev/null 2>/dev/null
+  # Only echo if we aren't already in a tmux session
   if test -z "$TMUX"
     echo tmux sessions
     tmux ls
@@ -332,7 +333,11 @@ function tmux-session-test
 end
 
 function tmux-documentation
-  cd ~/Documentation/development-references/Tmux/
+  if test -n "$TMUX"
+    tmux split-window -c ~/Documentation/development-references/Tmux/
+  else 
+    cd ~/Documentation/development-references/Tmux/
+  end
 end
 function tmux-name-directory
   tmux rename-window (basename (pwd))
