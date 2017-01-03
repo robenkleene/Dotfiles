@@ -29,7 +29,11 @@ function vim-edit
   # Vim
   # vim $argv
   # NeoVim
-  nvim $argv
+  if test -n "$NVIM_LISTEN_ADDRESS"
+    nvimedit $argv
+  else
+    nvim $argv
+  end
 end
 
 # Colors
