@@ -49,6 +49,8 @@ function fish_prompt
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
   echo -n ' '
+  echo -n (whoami)
+  echo -n ' '
   set_color $fish_color_cwd
   echo -n (prompt_pwd)
   set_color normal
