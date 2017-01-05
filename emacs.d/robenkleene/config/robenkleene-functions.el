@@ -97,7 +97,7 @@
   (find-file-other-window robenkleene/documentation-directory-path)
   )
 
-(defvar robenkleene/org-directory-path "~/Dropbox/Org")
+(defvar robenkleene/org-directory-path "~/Development/Scratch/Org")
 (defun robenkleene/emacs-org ()
   "Open Emacs documentation directory."
   (interactive)
