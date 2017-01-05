@@ -177,6 +177,9 @@ end
 function f
   fzf-file-vim
 end
+function d
+  fzf-directory-cd
+end
 function fcd
   fzf-directory-cd
 end
