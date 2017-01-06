@@ -91,12 +91,22 @@ highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 highlight SpellCap ctermfg=yellow ctermbg=NONE cterm=underline
 
 " Diff {{{1
-highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
-highlight DiffAdded ctermfg=darkgreen ctermbg=NONE cterm=bold
-highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
-highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
-highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
-highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
+" highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
+" highlight DiffAdded ctermfg=darkgreen ctermbg=NONE cterm=bold
+" highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
+" highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
+" highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
+" highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
+highlight DiffAdd ctermfg=NONE ctermbg=22 cterm=NONE
+highlight DiffAdded ctermfg=NONE ctermbg=22 cterm=NONE
+" A white line of slashes is used when a section is removed, the `darkgray`
+" here styles the slashes
+highlight DiffDelete ctermfg=darkgray ctermbg=52 cterm=NONE
+highlight DiffRemoved ctermfg=NONE ctermbg=52 cterm=NONE
+highlight DiffChange ctermfg=NONE ctermbg=18 cterm=NONE
+" Inline changed text
+highlight DiffText ctermfg=NONE ctermbg=21 cterm=NONE
+
 
 " Markdown {{{1
 
