@@ -68,8 +68,16 @@ nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
 
 
 " Markdown link
-nnoremap <leader>m :!mdlinkforfile "%"  "\#L<C-r>=line('.')<CR>" <BAR> pbcopy<CR>\|:redraw!<CR>:echo "Markdown link copied"<CR>
-vnoremap <leader>m :w !mdlinkforfile "%" <BAR> pbcopy<CR>\|:redraw!<CR>:echo "Markdown link copied"<CR>
+function! s:MarkdownLinkLines() range
+  let @" = system('echo -e '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/mdlinkforfile '.shellescape(expand('%:p')))
+  echo "Yanked Markdown link"
+endfunction
+function! s:MarkdownLinkFile()
+  let @" = system('~/Development/Scripts/bin/mdlinkforfile '.shellescape(expand('%:p')))
+  echo "Yanked Markdown link"
+endfunction
+vnoremap <leader>L :'<,'>call <SID>MarkdownLinkLines()<CR>
+nnoremap <leader>L :call <SID>MarkdownLinkFile()<CR>
 
 " Copy Path
 nnoremap <leader>p :let @*=expand("%:p")<CR>
