@@ -16,6 +16,7 @@ abbr -a bbr='bbedit-pipe-grep'
 # fish
 abbr -a fec='fish-edit-config'
 abbr -a fsa='fish-sync-abbreviations'
+abbr -a fhm='history merge'
 
 # fzf
 abbr -a fza='fzf-ack-vim'
