@@ -183,12 +183,16 @@ end
 function fcd
   fzf-directory-cd
 end
+function fh
+  fzf-history-cd
+end
 function fx
   fzf-project-xcode
 end
 
 # Fish
 function fish-edit-config
+ cd (dirname $FISH_CONFIG_PATH)
  vim-edit $FISH_CONFIG_PATH
 end
 function fish-sync-abbreviations

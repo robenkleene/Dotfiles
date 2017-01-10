@@ -70,6 +70,12 @@ function fzf-directory-cd
   and cd "$result"
 end
 
+# cd
+function fzf-history-cd
+  fasd -l | fzf  > $TMPDIR/fzf.result
+  set result (fzf-process-result)
+  and cd "$result"
+end
 
 # Files
 
