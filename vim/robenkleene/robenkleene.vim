@@ -28,7 +28,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible', Cond(!has('nvim'))
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
