@@ -219,7 +219,7 @@ function vim-pipe-grep
   end
 end
 function git-vim-modified
-  vim-edit (git ls-files -m | uniq)
+  vim-edit (git diff --name-only --diff-filter=U | uniq)
 end
 function git-clean-checkout
   git clean -dff; and git checkout -- .
