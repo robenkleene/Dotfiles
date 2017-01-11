@@ -331,6 +331,9 @@ end
 function git-stash-drop
   git-stash-command "drop" $argv
 end
+function git-stash-list
+  git stash list
+end
 
 # tmux
 function tmux-session-test
