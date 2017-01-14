@@ -19,6 +19,24 @@ set -x PAGER "/usr/local/bin/less --squeeze-blank-lines --ignore-case"
 
 # Pager
 set -x PAGER "/usr/local/bin/less --ignore-case"
+# Fish
+set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
+
+# chruby
+source /usr/local/share/chruby/chruby.fish
+# Maybe one day the below will work:
+# bass source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.4.0
+
+# nvm
+# Relies on `bass` as a dependency
+function nvm
+  bass source ~/.nvm/nvm.sh ';' nvm $argv
+end
+function nvm-use-default
+  nvm use default
+end
+set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
 
 # Editor
 # Vim
@@ -73,20 +91,7 @@ set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
 # Coffeelint
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
 
-# Fish
-set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
-
-# nvm
-# Relies on `bass` as a dependency
-function nvm
-  bass source ~/.nvm/nvm.sh ';' nvm $argv
-end
-function nvm-use-default
-  nvm use default
-end
-set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
-
-# Emacs
+# # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
 # Emacs
@@ -104,6 +109,7 @@ alias m 'magit'
 
 # Homebrew
 set -x HOMEBREW_NO_ANALYTICS 1
+
 # Startup
 
 # Emacs
@@ -119,6 +125,8 @@ end
 function emacs-kill-server
   emacsclient -e '(kill-emacs)'
 end
+
+
 
 # tmux
 # Echo running sessions if there are any
