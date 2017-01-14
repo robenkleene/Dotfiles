@@ -60,10 +60,6 @@ function fish_right_prompt
   echo -n (__fish_git_prompt)
 end
 
-# rbenv
-set PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
-
 # ag
 alias ag "ag --path-to-ignore ~/.ignore"
 
