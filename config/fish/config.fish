@@ -1,5 +1,7 @@
 # Configuration
 
+# Setup `fisher` (fisherman)
+
 # fzf
 source ~/.config/fish/fzf.fish
 
@@ -439,7 +441,7 @@ end
 
 # ssh
 function ssh-start
-  eval (ssh-agent)
+  eval (ssh-agent -c)
   ssh-add
 end
 
