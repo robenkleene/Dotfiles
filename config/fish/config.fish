@@ -126,8 +126,6 @@ function emacs-kill-server
   emacsclient -e '(kill-emacs)'
 end
 
-
-
 # tmux
 # Echo running sessions if there are any
 if tmux ls >/dev/null 2>/dev/null
@@ -361,6 +359,7 @@ end
 function tmux-name-directory
   tmux rename-window (basename (pwd))
 end
+
 # egit
 function egitn
   set EGITNEXT (egit -n)
@@ -436,6 +435,12 @@ function carthage-submodule-bootstrap
 end
 function carthage-submodule-update
   carthage update --platform iOS --use-submodules --no-use-binaries $argv
+end
+
+# ssh
+function ssh-start
+  eval (ssh-agent)
+  ssh-add
 end
 
 # Web Console
