@@ -17,10 +17,10 @@ set --erase fish_greeting
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 
 # Manpager
-set -x PAGER "/usr/local/bin/less --squeeze-blank-lines --ignore-case"
+set -x PAGER "less --squeeze-blank-lines --ignore-case"
 
 # Pager
-set -x PAGER "/usr/local/bin/less --ignore-case"
+set -x PAGER "less --ignore-case"
 # Fish
 set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
 
