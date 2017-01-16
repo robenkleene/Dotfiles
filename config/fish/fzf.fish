@@ -156,10 +156,12 @@ function fzf-snippet-copy
 end
 
 # Reveal
-function fzf-snippet-reveal
-  cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 open -R
-  cd -
+if test (uname) = Darwin
+  function fzf-snippet-reveal
+    cd ~/Development/Snippets/
+    find * -type f | fzf | tr '\n' '\0' | xargs -0 open -R
+    cd -
+  end
 end
 
 # TextMate
