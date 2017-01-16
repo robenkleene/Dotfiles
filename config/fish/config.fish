@@ -1,6 +1,7 @@
 # Configuration
 
 # Setup `fisher` (fisherman)
+# Install via `brew`, then fun `fisher` in the same directory as the `fishfile`
 
 # fzf
 source ~/.config/fish/fzf.fish

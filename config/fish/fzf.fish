@@ -47,7 +47,7 @@ end
 
 # Directory
 function fzf-directory
-  find * -type d | fzf  > $TMPDIR/fzf.result
+  find * -type d | fzf > $TMPDIR/fzf.result
   fzf-process-result
 end
 
