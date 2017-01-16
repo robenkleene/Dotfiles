@@ -15,7 +15,9 @@ set --erase fish_greeting
 
 # Path
 set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
-
+if not test (uname) = Darwin
+  set -x PATH ~/bin $PATH
+end
 # Manpager
 set -x PAGER "less --squeeze-blank-lines --ignore-case"
 
