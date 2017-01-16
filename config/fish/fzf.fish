@@ -1,4 +1,8 @@
-# fzf
+# `resolvedir` is an array whose first item is either `$TMPDIR` or `/tmp` if
+# that's nil
+set resolvedir $TMPDIR /tmp
+set tmpdir $resolvedir[1]
+
 function ack_lines
   # ag
   # ag --nobreak --noheading $argv
@@ -25,14 +29,14 @@ set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 
 # Helper
 function fzf-process-result
-  if [ (cat $TMPDIR/fzf.result | wc -l) -gt 0 ]
-    set -g FZFRESULT (cat $TMPDIR/fzf.result)
+  if [ (cat $tmpdir/fzf.result | wc -l) -gt 0 ]
+    set -g FZFRESULT (cat $tmpdir/fzf.result)
     and echo $FZFRESULT
-    rm -f $TMPDIR/fzf.result
+    rm -f $tmpdir/fzf.result
     return 0
   else
     set -e FZFRESULT
-    rm -f $TMPDIR/fzf.result
+    rm -f $tmpdir/fzf.result
     return 1
   end
 end
@@ -41,13 +45,13 @@ end
 
 # File
 function fzf-file
-  fzf > $TMPDIR/fzf.result
+  fzf > $tmpdir/fzf.result
   fzf-process-result
 end
 
 # Directory
 function fzf-directory
-  find * -type d | fzf > $TMPDIR/fzf.result
+  find * -type d | fzf > $tmpdir/fzf.result
   fzf-process-result
 end
 
@@ -65,14 +69,14 @@ end
 
 # cd
 function fzf-directory-cd
-  find * -type d | fzf  > $TMPDIR/fzf.result
+  find * -type d | fzf  > $tmpdir/fzf.result
   set result (fzf-process-result)
   and cd "$result"
 end
 
 # cd
 function fzf-history-cd
-  fasd -l | fzf  > $TMPDIR/fzf.result
+  fasd -l | fzf  > $tmpdir/fzf.result
   set result (fzf-process-result)
   and cd "$result"
 end
@@ -83,7 +87,7 @@ end
 function fzf-file-emacs
   # Using `xargs` causes tmux `pane_current_path` to fail
   # fzf | tr '\n' '\0' | xargs -0 -o emacs
-  fzf > $TMPDIR/fzf.result
+  fzf > $tmpdir/fzf.result
   set result (fzf-process-result)
   and emacs-edit "$result"
 end
@@ -92,7 +96,7 @@ end
 function fzf-file-vim
   # Using `xargs` causes tmux `pane_current_path` to fail
   # fzf | tr '\n' '\0' | xargs -0 -o vim
-  fzf > $TMPDIR/fzf.result
+  fzf > $tmpdir/fzf.result
   set result (fzf-process-result)
   and vim-edit "$result"
 end
@@ -119,7 +123,7 @@ end
 
 # cd
 function fzf-file-cd
-  fzf > $TMPDIR/fzf.result
+  fzf > $tmpdir/fzf.result
   set result (dirname (fzf-process-result))
   and cd "$result"
 end
@@ -133,7 +137,7 @@ end
 
 # vim
 function fzf-line-vim
-  ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" - 
 end
@@ -170,7 +174,7 @@ function fzf-snippet-vim
   cd ~/Development/Snippets/
   # Using `xargs` causes tmux `pane_current_path` to fail
   # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
-  find * -type f | fzf > $TMPDIR/fzf.result
+  find * -type f | fzf > $tmpdir/fzf.result
   cd -
 
   set result (fzf-process-result)
@@ -195,21 +199,21 @@ end
 
 function fzf-ack-vim
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end
 
 function fzf-ack-bbedit
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
 end
 
 function fzf-ack-mate
   echo $argv | tr -d '\n' | pbcopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $TMPDIR/fzf.result
+  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
 end
