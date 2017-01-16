@@ -130,7 +130,7 @@ end
 
 # path
 function fzf-file-path
-  fzf | tr -d '\n' | tee /dev/tty | pbcopy
+  fzf | tr -d '\n' | tee /dev/tty | safecopy
 end
 
 # Lines
@@ -151,7 +151,7 @@ end
 
 function fzf-snippet-copy
   cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | pbcopy
+  find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
   cd -
 end
 
@@ -198,21 +198,21 @@ end
 # ack
 
 function fzf-ack-vim
-  echo $argv | tr -d '\n' | pbcopy -pboard find
+  echo $argv | tr -d '\n' | safecopy -pboard find
   ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end
 
 function fzf-ack-bbedit
-  echo $argv | tr -d '\n' | pbcopy -pboard find
+  echo $argv | tr -d '\n' | safecopy -pboard find
   ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
 end
 
 function fzf-ack-mate
-  echo $argv | tr -d '\n' | pbcopy -pboard find
+  echo $argv | tr -d '\n' | safecopy -pboard find
   ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"

@@ -59,6 +59,21 @@ function vim-edit
   end
 end
 
+# Clipboard
+if test (uname) = Darwin
+  # Piping to a function breaks on interactive commands, so use the `safecopy`
+  # script instead. These can be reverted if this bug is resolved.
+  # [Can't read pipe to function · Issue #206 · fish-shell/fish-shell](https://github.com/fish-shell/fish-shell/issues/206)
+  alias paste-command "pbpaste"
+  # alias copy-command "pbcopy"
+  # alias copy-find-command "pbcopy -pboard find"
+else
+  alias paste-command "echo ''"
+  # `true` is no-op in this case
+  # alias copy-command "true"
+  # alias copy-find-command "true"
+end
+
 # Colors
 set -xg fish_color_search_match black --background=cyan
 
@@ -216,7 +231,7 @@ function vim-restore-session
   vim-edit -c "RestoreSession"
 end
 function vim-clipboard
-  pbpaste | vim-edit -
+  paste-command | vim-edit -
 end
 function vim-pipe-grep
   # A more portable solution:
@@ -259,11 +274,11 @@ function git-diff-words
   git diff --color-words
 end
 function git-copy-branch
-  git rev-parse --abbrev-ref HEAD | tee /dev/tty | tr -d '\n' | pbcopy
+  git rev-parse --abbrev-ref HEAD | tee /dev/tty | tr -d '\n' | safecopy
 end
 function git-copy-commit-hash
   # Print the '\n' because otherwise `tmux` has issues
-  git rev-parse HEAD | tee /dev/tty | tr -d '\n' | pbcopy
+  git rev-parse HEAD | tee /dev/tty | tr -d '\n' | safecopy
 end
 function git-commit-hash
   # Print the '\n' because otherwise `tmux` has issues
@@ -285,7 +300,7 @@ function git-remote-url
   git remote --verbose
 end
 function git-copy-remote-url
-  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | pbcopy
+  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
 end
 function git-remote-add-origin
   git remote rm origin
@@ -393,7 +408,7 @@ end
 
 # Misc
 function cd-copy-path
-  pwd | tr -d '\n' | pbcopy
+  pwd | tr -d '\n' | safecopy
 end
 
 # BBEdit
@@ -408,7 +423,7 @@ function bbfind-gui-grep-case-name
 end
 function bbedit-pipe-grep
   if [ $argv[1] ]
-    echo $argv | tr -d '\n' | pbcopy -pboard find
+    echo $argv | tr -d '\n' | safecopy -pboard find
     # Insert a space after the line number, this is because `bbresults`
     # input requires a space there
     rg --column $argv | bbresults --pattern grep --new-window
