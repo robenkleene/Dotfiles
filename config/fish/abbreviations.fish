@@ -2,6 +2,11 @@
 
 set --erase fish_user_abbreviations
 
+# ssh
+if not test (uname) = Darwin
+  abbr -a shs='ssh-start'
+end
+
 # nvm
 abbr -a nud='nvm use default'
 
