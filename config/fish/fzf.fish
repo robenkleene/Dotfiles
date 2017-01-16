@@ -102,23 +102,31 @@ function fzf-file-vim
 end
 
 # mate
-function fzf-file-mate
-  fzf | tr '\n' '\0' | xargs -0 mate
+if test (uname) = Darwin
+  function fzf-file-mate
+    fzf | tr '\n' '\0' | xargs -0 mate
+  end
 end
 
 # bbedit
-function fzf-file-bbedit
-  fzf | tr '\n' '\0' | xargs -0 bbedit
+if test (uname) = Darwin
+  function fzf-file-bbedit
+    fzf | tr '\n' '\0' | xargs -0 bbedit
+  end
 end
 
 # reveal
-function fzf-file-reveal
-  fzf | tr '\n' '\0' | xargs -0 open -R
+if test (uname) = Darwin
+  function fzf-file-reveal
+    fzf | tr '\n' '\0' | xargs -0 open -R
+  end
 end
 
 # open
-function fzf-file-open
-  fzf | tr '\n' '\0' | xargs -0 open
+if test (uname) = Darwin
+  function fzf-file-open
+    fzf | tr '\n' '\0' | xargs -0 open
+  end
 end
 
 # cd
@@ -165,10 +173,12 @@ if test (uname) = Darwin
 end
 
 # TextMate
-function fzf-snippet-mate
-  cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 mate
-  cd -
+if test (uname) = Darwin
+  function fzf-snippet-mate
+    cd ~/Development/Snippets/
+    find * -type f | fzf | tr '\n' '\0' | xargs -0 mate
+    cd -
+  end
 end
 
 # vim
@@ -186,15 +196,19 @@ end
 # Project
 
 # Xcode
-function fzf-project-xcode
-  find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
+if test (uname) = Darwin
+  function fzf-project-xcode
+    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
+  end
 end
 
-function fzf-file-xcode
-  # rg
-  # `ag` version isn't written yet
-  set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
-  eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+if test (uname) = Darwin
+  function fzf-file-xcode
+    # rg
+    # `ag` version isn't written yet
+    set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
+    eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+  end
 end
 
 # ack
@@ -206,16 +220,21 @@ function fzf-ack-vim
   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
 end
 
-function fzf-ack-bbedit
-  echo $argv | tr -d '\n' | safecopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
+
+if test (uname) = Darwin
+  function fzf-ack-bbedit
+    echo $argv | tr -d '\n' | safecopy -pboard find
+    ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
+    set result (fzf-process-result)
+    and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
+  end
 end
 
-function fzf-ack-mate
-  echo $argv | tr -d '\n' | safecopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
+if test (uname) = Darwin
+  function fzf-ack-mate
+    echo $argv | tr -d '\n' | safecopy -pboard find
+    ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
+    set result (fzf-process-result)
+    and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
+  end
 end

@@ -267,8 +267,10 @@ function git-submodule-reset
 end
 
 # Git
-function git-reveal-diff
-  git diff --name-only -z | xargs -0 open -R
+if test (uname) = Darwin
+  function git-reveal-diff
+    git diff --name-only -z | xargs -0 open -R
+  end
 end
 function git-diff-words
   git diff --color-words
@@ -412,24 +414,26 @@ function cd-copy-path
 end
 
 # BBEdit
-function bbfind-gui-grep-case
-  bbfind --grep --gui --case-sensitive $argv .
-end
-function bbfind-gui-grep
-  bbfind --grep --gui $argv .
-end
-function bbfind-gui-grep-case-name
-  bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
-end
-function bbedit-pipe-grep
-  if [ $argv[1] ]
-    echo $argv | tr -d '\n' | safecopy -pboard find
-    # Insert a space after the line number, this is because `bbresults`
-    # input requires a space there
-    rg --column $argv | bbresults --pattern grep --new-window
-  else
-    # If there's no argument, assume results are being piped in
-    bbresults --pattern grep --new-window
+if test (uname) = Darwin
+  function bbfind-gui-grep-case
+    bbfind --grep --gui --case-sensitive $argv .
+  end
+  function bbfind-gui-grep
+    bbfind --grep --gui $argv .
+  end
+  function bbfind-gui-grep-case-name
+    bbfind --grep --gui --case-sensitive --name-pattern "$argv[1]" "$argv[2]" .
+  end
+  function bbedit-pipe-grep
+    if [ $argv[1] ]
+      echo $argv | tr -d '\n' | safecopy -pboard find
+      # Insert a space after the line number, this is because `bbresults`
+      # input requires a space there
+      rg --column $argv | bbresults --pattern grep --new-window
+    else
+      # If there's no argument, assume results are being piped in
+      bbresults --pattern grep --new-window
+    end
   end
 end
 

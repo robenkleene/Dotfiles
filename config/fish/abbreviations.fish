@@ -11,7 +11,9 @@ abbr -a vc='vim-clipboard'
 abbr -a vrs='vim-restore-session'
 
 # BBEdit
-abbr -a bbr='bbedit-pipe-grep'
+if test (uname) = Darwin
+  abbr -a bbr='bbedit-pipe-grep'
+end
 
 # fish
 abbr -a fec='fish-edit-config'
@@ -20,17 +22,19 @@ abbr -a fhm='history merge'
 
 # fzf
 abbr -a fza='fzf-ack-vim'
-abbr -a fzab='fzf-ack-bbedit'
-abbr -a fzam='fzf-ack-mate'
-abbr -a fzb='fzf-file-bbedit'
 abbr -a fzc='fzf-directory-cd'
 abbr -a fze='fzf-file-emacs'
-abbr -a fzm='fzf-file-mate'
-abbr -a fzo='fzf-file-open'
 abbr -a fzp='fzf-file-path'
-abbr -a fzr='fzf-file-reveal'
 abbr -a fzs='fzf-snippet'
-abbr -a fzx='fzf-file-xcode'
+if test (uname) = Darwin
+  abbr -a fzab='fzf-ack-bbedit'
+  abbr -a fzam='fzf-ack-mate'
+  abbr -a fzb='fzf-file-bbedit'
+  abbr -a fzm='fzf-file-mate'
+  abbr -a fzo='fzf-file-open'
+  abbr -a fzr='fzf-file-reveal'
+  abbr -a fzx='fzf-file-xcode'
+end
 
 # carthage
 abbr -a csmu='carthage-submodule-update'
@@ -48,7 +52,6 @@ abbr -a tmnd='tmux-name-directory'
 abbr -a tnd='tmux-name-directory'
 
 # git
-abbr -a g='gitup'
 abbr -a ga='git add'
 abbr -a gaa='git add --all :/'
 abbr -a gb='git branch'
@@ -103,5 +106,7 @@ abbr -a gur='git pull --rebase'
 abbr -a gvm='git-vim-modified'
 
 # hub
-abbr -a hb='hub browse'
-abbr -a hbc='hub browse -- commits'
+if test (uname) = Darwin
+  abbr -a hb='hub browse'
+  abbr -a hbc='hub browse -- commits'
+end
