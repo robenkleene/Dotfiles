@@ -225,6 +225,9 @@ end
 function fish-sync-abbreviations
   ~/.config/fish/abbreviations.fish
 end
+function fish-sync-history
+  history merge
+end
 
 # Vim
 function vim-restore-session
