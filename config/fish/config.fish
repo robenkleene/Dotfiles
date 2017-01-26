@@ -378,7 +378,7 @@ end
 function tmux-session-test
   if test -z "$TMUX"
     echo "tmux is not running"
-    return
+   return
   end
   tmux split-window -l 10
   tmux new-window
@@ -395,6 +395,13 @@ function tmux-documentation
 end
 function tmux-name-directory
   tmux rename-window (basename (pwd))
+end
+function tmux-attach
+  if [ $argv[1] ]
+    tmux attach -t $argv
+  else
+    tmux attach
+  end
 end
 
 # egit
