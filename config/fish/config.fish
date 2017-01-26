@@ -116,6 +116,13 @@ set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
 # Coffeelint
 set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
 
+# mitmproxy
+# Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
+# working with:
+# palette_transparent: true
+# no_mouse: true
+alias mitmproxy "mitmproxy --no-mouse --palette-transparent"
+
 # # Emacs
 # Start the server in the background if it isn't running
 set -x ALTERNATE_EDITOR ""
