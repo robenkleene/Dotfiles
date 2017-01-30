@@ -24,10 +24,6 @@
 --regex-Css=/^[ \t]*(.+)[ \t]*\{/\1/f,function/
 --regex-Css=/^[ \t]*(.+)[ \t]*,[ \t]*$/\1/f,function/
 
---langdef=Html
---langmap=Html:.html
---regex-Html=/^[ \t]*<([a-zA-Z]+)[ \t]*.*>/\1/f,function/
-
 --langdef=Markdown
 --langmap=Markdown:.md
 --langmap=Markdown:+.markdown
@@ -60,4 +56,11 @@
 --regex-Go=/var[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/v,var/
 --regex-Go=/type[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/t,type/
 
+--langmap=objectivec:.m.h
+
 --exclude=*node_modules/*
+--exclude=.git
+
+--recurse=yes
+--tag-relative=yes
+
