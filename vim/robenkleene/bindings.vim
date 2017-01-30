@@ -50,8 +50,11 @@ nnoremap <leader>T :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 " Reveal Current File
 nnoremap <leader>R :silent !open -R "%:p"<CR>\|:redraw!<CR>
 
-" Open File in TextMate
+" TextMate
 nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
+
+" Xcode
+nnoremap <leader>X :silent !open -a Xcode "%:p"<CR>\|:redraw!<CR>
 
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
