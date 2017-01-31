@@ -10,3 +10,6 @@
 # Ctags
 tags
 !tags/
+
+#
+node_modules
