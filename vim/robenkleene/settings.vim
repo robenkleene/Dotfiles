@@ -102,6 +102,8 @@ set nojoinspaces
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
 
+" Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " Autocmd {{{1
 
