@@ -2,6 +2,11 @@
 
 set --erase fish_user_abbreviations
 
+# Destructive, don't abbreviate
+# git-push-force
+# git stash
+# git-reset
+
 # ssh
 if not test (uname) = Darwin
   abbr -a shs='ssh-start'
@@ -99,7 +104,6 @@ abbr -a gsmi='git submodule init'
 abbr -a gsmuir='git-submodule-update-init-recursive'
 abbr -a gsmu='git submodule update'
 abbr -a gsmr='git-submodule-reset'
-abbr -a gst='git stash'
 abbr -a gsta='git-stash-apply'
 abbr -a gstd='git-stash-diff'
 abbr -a gstl='git stash list'
