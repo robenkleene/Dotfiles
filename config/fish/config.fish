@@ -41,7 +41,7 @@ end
 function nvm-use-default
   nvm use default
 end
-set PATH $HOME/.nvm/versions/node/v0.12.2/bin $PATH
+set PATH $HOME/.nvm/versions/node/v7.5.0/bin $PATH
 
 # Editor
 # Vim
