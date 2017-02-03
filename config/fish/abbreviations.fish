@@ -52,6 +52,9 @@ end
 abbr -a csmu='carthage-submodule-update'
 abbr -a csmb='carthage-submodule-bootstrap'
 
+# tig
+abbr -a tst='tig stash'
+
 # cd
 abbr -a ccp='cd-copy-path'
 
