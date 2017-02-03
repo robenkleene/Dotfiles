@@ -37,6 +37,7 @@ abbr -a fzc='fzf-directory-cd'
 abbr -a fze='fzf-file-emacs'
 abbr -a fzp='fzf-file-path'
 abbr -a fzs='fzf-snippet'
+abbr -a fzt='fzf-file-tig'
 if test (uname) = Darwin
   abbr -a fzab='fzf-ack-bbedit'
   abbr -a fzam='fzf-ack-mate'

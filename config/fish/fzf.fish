@@ -101,6 +101,13 @@ function fzf-file-vim
   and vim-edit "$result"
 end
 
+# tig
+function fzf-file-tig
+  fzf > $tmpdir/fzf.result
+  set result (fzf-process-result)
+  and tig "$result"
+end
+
 # mate
 if test (uname) = Darwin
   function fzf-file-mate
