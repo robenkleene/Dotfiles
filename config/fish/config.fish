@@ -229,6 +229,10 @@ function fish-edit-config
  cd (dirname $FISH_CONFIG_PATH)
  vim-edit $FISH_CONFIG_PATH
 end
+function fish-edit-abbreviations
+ cd (dirname $FISH_CONFIG_PATH)
+ vim-edit abbreviations.fish
+end
 function fish-sync-abbreviations
   ~/.config/fish/abbreviations.fish
 end

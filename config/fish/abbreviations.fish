@@ -27,6 +27,7 @@ end
 
 # fish
 abbr -a fec='fish-edit-config'
+abbr -a fea='fish-edit-abbreviations'
 abbr -a fsa='fish-sync-abbreviations'
 abbr -a fsh='fish-sync-history'
 abbr -a fhm='history merge'
