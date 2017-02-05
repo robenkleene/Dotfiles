@@ -74,16 +74,15 @@ function! MyNeomakeStatus()
   endif
   " Count all the errors, warnings
   let total = 0
-  for s:v in values(neomake#statusline#LoclistCounts())
-    let total += s:v
+  for value in values(neomake#statusline#LoclistCounts())
+    let total += value
   endfor
-  for s:v in items(neomake#statusline#QflistCounts())
-    let total += s:v
+  for value in items(neomake#statusline#QflistCounts())
+    let total += value
   endfor
   if total == 0
     return ''
   endif
-  unlet s:v
   return 'E' . total . ' '
 endfunction
 
