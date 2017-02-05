@@ -66,6 +66,27 @@ endif
 " Switch to right
 set statusline+=%=
 
+" Neomake
+set statusline+=%{MyNeomakeStatus()}
+function! MyNeomakeStatus()
+  if !exists('*neomake#statusline#LoclistCounts')
+    return ''
+  endif
+  " Count all the errors, warnings
+  let total = 0
+  for s:v in values(neomake#statusline#LoclistCounts())
+    let total += s:v
+  endfor
+  for s:v in items(neomake#statusline#QflistCounts())
+    let total += s:v
+  endfor
+  if total == 0
+    return ''
+  endif
+  unlet s:v
+  return 'E' . total . ' '
+endfunction
+
 " GitGutter
 set statusline+=%{MyGitGutterStatus()}
 function! MyGitGutterStatus()
@@ -84,6 +105,9 @@ function! MyGitGutterStatus()
       call add(ret, symbols[i] . hunks[i])
     endif
   endfor
+  if len(ret) == 0
+    return ''
+  endif
   return join(ret, ' ') .  ' '
 endfunction
 
