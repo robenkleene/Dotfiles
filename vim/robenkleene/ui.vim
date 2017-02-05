@@ -53,6 +53,7 @@ set statusline+=%.40f
 set statusline+=%m 
 " Filetype
 set statusline+=\ %y
+
 " Syntastic
 if exists(':SyntasticStatuslineFlag')
   set statusline+=\ 
@@ -64,6 +65,28 @@ endif
 
 " Switch to right
 set statusline+=%=
+
+" GitGutter
+set statusline+=%{MyGitGutterStatus()}
+function! MyGitGutterStatus()
+  if !exists('*GitGutterGetHunkSummary')
+    return ''
+  endif
+  let symbols = [
+        \ g:gitgutter_sign_added,
+        \ g:gitgutter_sign_modified,
+        \ g:gitgutter_sign_removed
+        \ ]
+  let hunks = GitGutterGetHunkSummary()
+  let ret = []
+  for i in [0, 1, 2]
+    if hunks[i] > 0
+      call add(ret, symbols[i] . hunks[i])
+    endif
+  endfor
+  return join(ret, ' ') .  ' '
+endfunction
+
 " Line
 set statusline+=L%l
 " Column
