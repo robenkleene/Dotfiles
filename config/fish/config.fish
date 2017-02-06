@@ -195,9 +195,10 @@ end
 function t
   tmux $argv
 end
-function -
-  cd -
-end
+# Disallowed in fish 2.5.0
+# function -
+#   cd -
+# end
 function ts
   tig status +3
 end

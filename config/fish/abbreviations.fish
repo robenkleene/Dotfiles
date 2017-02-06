@@ -7,6 +7,9 @@ set --erase fish_user_abbreviations
 # git stash
 # git-reset
 
+# Basic
+abbr -a -- - 'cd -'
+
 # ssh
 if not test (uname) = Darwin
   abbr -a shs='ssh-start'
