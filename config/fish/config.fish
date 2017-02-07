@@ -177,6 +177,9 @@ function a
   # rg
   rg $argv
 end
+function af
+  rg --files -g $argv
+end
 function fa
   fzf-ack-vim $argv
 end
