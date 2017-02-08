@@ -20,6 +20,8 @@ abbr -a nud='nvm use default'
 
 # vim
 abbr -a vpg='vim-pipe-grep'
+# This command doesn't work yet, try `fzf-ack-vim` instead
+# abbr -a vgc='vim-pipe-grep-clipboard'
 abbr -a vc='vim-clipboard'
 abbr -a vrs='vim-restore-session'
 

@@ -263,6 +263,11 @@ function vim-pipe-grep
     vim-edit -c "GrepBuffer" -
   end
 end
+# This doesn't work because default `ack` output doesn't include filename
+# on the line.
+# function vim-pipe-grep-clipboard
+#   paste-command | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+# end
 function git-vim-modified
   vim-edit (git diff --name-only --diff-filter=U | uniq)
 end
