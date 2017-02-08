@@ -19,7 +19,7 @@ vnoremap <leader>* :<C-u>call <SID>RgVisual()<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>h :History<CR>
+nnoremap <leader>r :History<CR>
 nnoremap <leader>c :Modified<CR>
 
 function! s:RgVisual()
