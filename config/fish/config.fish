@@ -490,10 +490,10 @@ end
 
 # Carthage
 function carthage-submodule-bootstrap
-  carthage bootstrap --platform iOS --use-submodules --no-use-binaries $argv
+  carthage bootstrap --use-submodules --no-use-binaries $argv
 end
 function carthage-submodule-update
-  carthage update --platform iOS --use-submodules --no-use-binaries $argv
+  carthage update --use-submodules --no-use-binaries $argv
 end
 
 # ssh
