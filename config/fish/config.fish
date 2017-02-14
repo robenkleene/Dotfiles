@@ -289,6 +289,11 @@ function git-submodule-reset
   git submodule foreach --recursive 'git clean -dff && git checkout -- .'
 end
 
+# neovim
+function neovim-start-server
+  env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
+end
+
 # Git
 if test (uname) = Darwin
   function git-reveal-diff

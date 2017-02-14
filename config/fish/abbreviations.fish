@@ -71,6 +71,9 @@ abbr -a tmls='tmux ls'
 abbr -a tmnd='tmux-name-directory'
 abbr -a tnd='tmux-name-directory'
 
+# neovim
+abbr -a nvs='neovim-start-server'
+
 # git
 abbr -a ga='git add'
 abbr -a gaa='git add --all :/'
