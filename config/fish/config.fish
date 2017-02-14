@@ -290,8 +290,21 @@ function git-submodule-reset
 end
 
 # neovim
-function neovim-start-server
-  env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
+function vim-server-start
+  if test -z "$TMUX"
+    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
+  else
+    set nvim_session_id (tmux display-message -p '#{session_id}')
+    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim
+  end
+end
+function vim-server-edit
+  if test -z "$TMUX"
+    nvr $argv
+  else
+    set nvim_session_id (tmux display-message -p '#{session_id}')
+    nvr --servername /tmp/nvimsocket$nvim_session_id $argv
+  end
 end
 
 # Git
