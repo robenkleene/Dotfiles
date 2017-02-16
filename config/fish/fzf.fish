@@ -114,6 +114,20 @@ function fzf-file-vim
   set result (fzf-process-result)
   and vim-edit "$result"
 end
+function fzf-file-vim-server-edit
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # fzf | tr '\n' '\0' | xargs -0 -o vim
+  fzf > $tmpdir/fzf.result
+  set result (fzf-process-result)
+  and vim-server-edit "$result"
+end
+function fzf-file-vim-server-start
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # fzf | tr '\n' '\0' | xargs -0 -o vim
+  fzf > $tmpdir/fzf.result
+  set result (fzf-process-result)
+  and vim-server-start "$result"
+end
 
 # tig
 function fzf-file-tig
