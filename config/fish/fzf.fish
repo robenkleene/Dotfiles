@@ -82,8 +82,11 @@ function fzf-history-cd
 end
 
 # Bookmarks
-set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Projects/
+set -x RKBOOKMARKS ~/Dotfiles/ 
+# Documentation
 set -x RKBOOKMARKS $RKBOOKMARKS ~/Documentation/ ~/Documentation/development-references/
+# Development
+set -x RKBOOKMARKS $RKBOOKMARKS ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/
 # Copy with a `:` separator for more portability for other shells
 set -x ROBENKLEENE_BOOKMARKS (echo -s :$RKBOOKMARKS | cut -b 2-)
 function fzf-bookmark-cd
