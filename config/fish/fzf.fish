@@ -74,9 +74,20 @@ function fzf-directory-cd
   and cd "$result"
 end
 
-# cd
+# history
 function fzf-history-cd
   fasd -l | fzf  > $tmpdir/fzf.result
+  set result (fzf-process-result)
+  and cd "$result"
+end
+
+# Bookmarks
+set -x RKBOOKMARKS ~/Dotfiles/ ~/Development/ ~/Development/Scratch/ ~/Development/Projects/
+set -x RKBOOKMARKS $RKBOOKMARKS ~/Documentation/ ~/Documentation/development-references/
+# Copy with a `:` separator for more portability for other shells
+set -x ROBENKLEENE_BOOKMARKS (echo -s :$RKBOOKMARKS | cut -b 2-)
+function fzf-bookmark-cd
+  printf '%s\n' $RKBOOKMARKS | fzf > $TMPDIR/fzf.result
   set result (fzf-process-result)
   and cd "$result"
 end
