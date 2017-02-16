@@ -405,18 +405,6 @@ function git-stash-list
   git stash list
 end
 
-# tmux
-function tmux-session-test
-  if test -z "$TMUX"
-    echo "tmux is not running"
-   return
-  end
-  tmux split-window -l 10
-  tmux new-window
-  tmux next-window
-  tmux select-pane
-end
-
 function tmux-documentation
   if test -n "$TMUX"
     tmux split-window -c ~/Documentation/development-references/Tmux/

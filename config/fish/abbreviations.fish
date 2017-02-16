@@ -71,6 +71,7 @@ abbr -a tmd='tmux-documentation'
 abbr -a tmls='tmux ls'
 abbr -a tmnd='tmux-name-directory'
 abbr -a tnd='tmux-name-directory'
+abbr -a tmsw='tmux swap-window -t'
 
 # neovim
 abbr -a vss='vim-server-start'
