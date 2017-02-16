@@ -292,10 +292,10 @@ end
 # neovim
 function vim-server-start
   if test -z "$TMUX"
-    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
+    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim $argv
   else
     set nvim_session_id (tmux display-message -p '#{session_id}')
-    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim
+    env NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim $argv
   end
 end
 function vim-server-edit
