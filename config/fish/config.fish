@@ -211,6 +211,10 @@ end
 function v
   vim-edit $argv
 end
+function V
+  vim-restore-session
+end
+
 # fzf
 function f
   fzf-file-vim
