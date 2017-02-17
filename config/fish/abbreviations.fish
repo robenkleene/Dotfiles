@@ -45,6 +45,7 @@ abbr -a fzp='fzf-file-path'
 abbr -a fzs='fzf-snippet'
 abbr -a fzt='fzf-file-tig'
 abbr -a fzb='fzf-bookmark-cd'
+abbr -a fzd='fzf-documentation-vim'
 abbr -a fzvse='fzf-file-vim-server-edit'
 abbr -a fzvss='fzf-file-vim-server-start'
 if test (uname) = Darwin

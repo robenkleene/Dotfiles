@@ -176,6 +176,17 @@ function fzf-file-path
   fzf | tr -d '\n' | tee /dev/tty | safecopy
 end
 
+# Documentation
+function fzf-documentation-vim
+  cd ~/Documentation/
+  # Using `xargs` causes tmux `pane_current_path` to fail
+  # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
+  find * -type f -not -path '*/\.*' | fzf > $tmpdir/fzf.result
+  cd -
+  set result (fzf-process-result)
+  and vim-edit "$HOME/Documentation/$result"
+end
+
 # Lines
 
 # vim
