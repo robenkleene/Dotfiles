@@ -79,6 +79,7 @@ abbr -a tmsw='tmux swap-window -t'
 # neovim
 abbr -a vss='vim-server-start'
 abbr -a vse='vim-server-edit'
+abbr -a VSS='vim-server-start -c "RestoreSession"'
 
 # git
 abbr -a ga='git add'
