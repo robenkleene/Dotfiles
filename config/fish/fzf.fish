@@ -90,7 +90,7 @@ set -x RKBOOKMARKS $RKBOOKMARKS ~/Development/ ~/Development/Scratch/ ~/Developm
 # Copy with a `:` separator for more portability for other shells
 set -x ROBENKLEENE_BOOKMARKS (echo -s :$RKBOOKMARKS | cut -b 2-)
 function fzf-bookmark-cd
-  printf '%s\n' $RKBOOKMARKS | fzf > $TMPDIR/fzf.result
+  printf '%s\n' $RKBOOKMARKS | fzf > $tmpdir/fzf.result
   set result (fzf-process-result)
   and cd "$result"
 end
