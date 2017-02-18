@@ -59,22 +59,6 @@ function vim-edit
   end
 end
 
-# Clipboard
-if test (uname) = Darwin
-  # Piping to a function breaks on interactive commands, so use the `safecopy`
-  # script instead. These can be reverted if this bug is resolved.
-  # [Can't read pipe to function · Issue #206 · fish-shell/fish-shell](https://github.com/fish-shell/fish-shell/issues/206)
-  alias paste-command "pbpaste"
-  # alias copy-command "pbcopy"
-  # alias copy-find-command "pbcopy -pboard find"
-else
-  alias paste-command "echo ''"
-  # `true` is no-op in this case
-  # alias copy-command "true"
-  # alias copy-find-command "true"
-end
-
-# Colors
 set -xg fish_color_search_match black --background=cyan
 
 # Prompt
@@ -253,7 +237,7 @@ function vim-restore-session
   vim-edit -c "RestoreSession"
 end
 function vim-clipboard
-  paste-command | vim-edit -
+  safepaste | vim-edit -
 end
 function vim-pipe-grep
   # A more portable solution:
@@ -270,7 +254,7 @@ end
 # This doesn't work because default `ack` output doesn't include filename
 # on the line.
 # function vim-pipe-grep-clipboard
-#   paste-command | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+#   safepaste | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
 # end
 function git-vim-modified
   vim-edit (git diff --name-only --diff-filter=U | uniq)
