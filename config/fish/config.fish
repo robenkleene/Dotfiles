@@ -3,14 +3,6 @@
 # Setup `fisher` (fisherman)
 # Install via `brew`, then fun `fisher` in the same directory as the `fishfile`
 
-# fzf
-source ~/.config/fish/fzf.fish
-
-# local fish config
-if test -e ~/.config.fish
-  source ~/.config.fish
-end
-
 # Greeting
 set --erase fish_greeting
 
@@ -19,202 +11,22 @@ set -x PATH /usr/local/bin ~/Development/Scripts/bin $PATH
 if not test (uname) = Darwin
   set -x PATH ~/bin $PATH
 end
-# Manpager
-set -x PAGER "less --squeeze-blank-lines --ignore-case"
 
-# Pager
-set -x PAGER "less --ignore-case"
-# Fish
-set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
-
-# chruby
-source /usr/local/share/chruby/chruby.fish
-# Maybe one day the below will work:
-# bass source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.4.0
-
-# nvm
-# Relies on `bass` as a dependency
-function nvm
-  bass source ~/.nvm/nvm.sh ';' nvm $argv
-end
-function nvm-use-default
-  nvm use default
-end
-set PATH $HOME/.nvm/versions/node/v7.5.0/bin $PATH
-
-# Editor
-# Vim
-# set -x EDITOR vim
-# NeoVim
-set -x EDITOR nvim
-function vim-edit
-  # Vim
-  # vim $argv
-  # NeoVim
-  if test -n "$NVIM_LISTEN_ADDRESS"
-    nvimedit $argv
-  else
-    nvim $argv
-  end
+# local fish config
+if test -e ~/.config.fish
+  source ~/.config.fish
 end
 
-set -xg fish_color_search_match black --background=cyan
+# Setup
+source ~/.config/fish/variables.fish
+source ~/.config/fish/functions.fish
+source ~/.config/fish/installs.fish
+# Interactive
+source ~/.config/fish/ui.fish
+source ~/.config/fish/fzf.fish
+source ~/.config/fish/alias.fish
+source ~/.config/fish/startup.fish
 
-# Prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-set fish_color_comment 3a3a3a
-function fish_prompt
-  # Note this function will be built-in in fish `2.5`
-  # After upgrading remove it and replace with `prompt_hostname`
-  if not set -q __prompt_hostname
-    set -g __prompt_hostname (hostname|cut -d . -f 1)
-  end
-  set_color $fish_color_comment
-  echo -n (date "+%I:%M %p")
-  echo -n ' '
-  echo -n $USER@$__prompt_hostname
-  echo -n ' '
-  set_color $fish_color_cwd
-  echo -n (prompt_pwd)
-  set_color normal
-  echo -n '> '
-end
-function fish_right_prompt
-  echo -n (__fish_git_prompt)
-end
-
-# ag
-alias ag "ag --path-to-ignore ~/.ignore"
-
-# rg
-alias rg "rg --smart-case --line-number"
-
-# Atom
-set -x ATOM_PATH $HOME/Applications/
-set -x ATOM_REPOS_HOME $HOME/Development/Projects/Atom
-
-# Coffeelint
-set -x COFFEELINT_CONFIG $HOME/.coffeelint.json
-
-# mitmproxy
-# Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
-# working with:
-# palette_transparent: true
-# no_mouse: true
-alias mitmproxy "mitmproxy --no-mouse --palette-transparent"
-
-# # Emacs
-# Start the server in the background if it isn't running
-set -x ALTERNATE_EDITOR ""
-# Emacs
-function emacs-edit
-  # Emacs
-  # emacs $argv
-  # Emacsclient
-  emacsclient -t $argv
-end
-alias e 'emacs-edit'
-function magit
- emacs-edit -eval "(robenkleene/magit-status-startup)"
-end
-alias m 'magit'
-
-# Homebrew
-set -x HOMEBREW_NO_ANALYTICS 1
-
-# Startup
-
-# Emacs
-# Test if server is running
-function is-emacs-server-running
-  ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
-end
-# Display a greeting message if the server is running
-if is-emacs-server-running
-  echo Emacs server is running
-else
-end
-function emacs-kill-server
-  emacsclient -e '(kill-emacs)'
-end
-
-# tmux
-# Echo running sessions if there are any
-if tmux ls >/dev/null 2>/dev/null
-  # Only echo if we aren't already in a tmux session
-  if test -z "$TMUX"
-    echo tmux sessions
-    tmux ls
-  end
-end
-
-
-# Functions
-# Quick
-function a
-  # ag
-  # ag $argv
-  # rg
-  rg $argv
-end
-function af
-  rg --files -g $argv
-end
-function fa
-  fzf-ack-vim $argv
-end
-function va
-  vim-pipe-grep $argv
-end
-function n
-  new-terminal-here
-end
-function o
-  new-finder-window-here
-end
-function r
-  ranger-cd
-end
-function t
-  tmux $argv
-end
-# Disallowed in fish 2.5.0
-# function -
-#   cd -
-# end
-function ts
-  tig status +3
-end
-function ec
-  emacsclient -t $argv
-end
-function v
-  vim-edit $argv
-end
-function V
-  vim-restore-session
-end
-
-# fzf
-function f
-  fzf-file-vim
-end
-function d
-  fzf-directory-cd
-end
-function fcd
-  fzf-directory-cd
-end
-function fh
-  fzf-history-cd
-end
-function fx
-  fzf-project-xcode
-end
 
 # Fish
 function fish-edit-config
