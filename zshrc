@@ -1,4 +1,3 @@
-
 # Enable Completion
 autoload -Uz compinit promptinit
 compinit

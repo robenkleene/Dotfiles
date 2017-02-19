@@ -8,12 +8,9 @@ zstyle ':vcs_info:*' check-for-changes true
 
 # Colors
 comment=238
-# Built-in Color
-# %F{green}%}
-# Reset Color
-# %{%f%}
-# Color From Variable
-# %F{$comment}%}
+# `%F{green}`: Built-in Color
+# `%f`: Reset Color:w
+# `%F{$comment}`: Color From Variable
 
 # vcs
 # Enable vcs integration
@@ -24,12 +21,15 @@ zstyle ':vcs_info:*' disable \
 # Style
 # Rebase & Merge Conflicts
 # Standard
+# `%b`: Branch
+# `%u`: Staged changes
+# `%c`: Unstaged changes
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' formats \
-  '%{%F{green}%}%b%{%f%}%u%c'
+  '%F{green}%b%f%u%c'
 zstyle ':vcs_info:*' actionformats \
-  '%{%F{green}%}%b%{%f%}%u%c%F{$comment}%}|%F{red}%}%a%{%f%}'
+  '%F{green}%b%f%u%c %F{red}(%a)%f'
 
 # Prompt
 precmd () {
