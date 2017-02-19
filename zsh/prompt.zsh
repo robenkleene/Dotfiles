@@ -2,6 +2,8 @@
 
 # Allow substitution in prompts
 setopt PROMPT_SUBST
+# Remove space to the right of `RPROMPT`
+ZLE_RPROMPT_INDENT=-1
 # Track Changed and Staged Files
 # (Enables `%c` and `%u` below)
 zstyle ':vcs_info:*' check-for-changes true
@@ -27,13 +29,13 @@ zstyle ':vcs_info:*' disable \
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' formats \
-  '%F{green}%b%f%u%c'
+  '%F{cyan}%b%f%u%c'
 zstyle ':vcs_info:*' actionformats \
-  '%F{green}%b%f%u%c %F{red}(%a)%f'
+  '%F{cyan}%b%f%u%c %F{red}(%a)%f'
 
 # Prompt
 precmd () {
   vcs_info
 }
-PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ %f%# '
+PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}%3~ %f\$ '
 RPROMPT='${vcs_info_msg_0_}'
