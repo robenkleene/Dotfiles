@@ -2,6 +2,9 @@
 
 # Allow substitution in prompts
 setopt PROMPT_SUBST
+# Track Changed and Staged Files
+# (Enables `%c` and `%u` below)
+zstyle ':vcs_info:*' check-for-changes true
 
 # Colors
 comment=238
@@ -21,11 +24,12 @@ zstyle ':vcs_info:*' disable \
 # Style
 # Rebase & Merge Conflicts
 # Standard
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' formats \
-  '%{%F{green}%}%b%{%f%}'
+  '%{%F{green}%}%b%{%f%}%u%c'
 zstyle ':vcs_info:*' actionformats \
-  '%{%F{green}%}%b%F{$comment}%}|%F{red}%}%a%{%f%}'
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+  '%{%F{green}%}%b%{%f%}%u%c%F{$comment}%}|%F{red}%}%a%{%f%}'
 
 # Prompt
 precmd () {
