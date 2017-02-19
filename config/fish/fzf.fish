@@ -263,7 +263,10 @@ function fzf-ack-vim
   echo $argv | tr -d '\n' | safecopy -pboard find
   ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
-  and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' | let @0=@* | set hlsearch" -
+  if test (uname) = Darwin
+    set setup_system_clipboard "| let @0=@*"
+  end
+  and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
 end
 
 

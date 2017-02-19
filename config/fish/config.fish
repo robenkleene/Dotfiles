@@ -246,7 +246,7 @@ function vim-pipe-grep
     # Set the search register and the yank register
     set setup_system_clipboard ""
     if test (uname) = Darwin
-      set setup_system_clipboard " | let @0=@* "
+      set setup_system_clipboard "| let @0=@*"
     end
     rg $argv --with-filename | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch" -
     # ag $argv | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
