@@ -25,4 +25,3 @@ end
 function fish_right_prompt
   echo -n (__fish_git_prompt)
 end
-
