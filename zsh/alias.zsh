@@ -34,3 +34,5 @@ alias r 'ranger-cd'
 # alias fx 'fzf-project-xcode'
 # alias va 'vim-pipe-grep' 
 # alias fa 'fzf-ack-vim' 
+
+

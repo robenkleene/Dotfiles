@@ -8,3 +8,12 @@ function ranger-cd {
     fi
     rm -f -- "$tempfile"
 }
+
+# egitn
+function egitn {
+  local egitnext=$(egit -n)
+  if [ -n "$egitnext" ]; then
+    cd "$egitnext"
+    git status
+  fi
+}
