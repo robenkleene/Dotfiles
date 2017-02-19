@@ -13,6 +13,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug load
 
 # External
-source ~/.zsh/prompt.zsh
+source ~/.zsh/ui.zsh
 source ~/.zsh/bindings.zsh
 source ~/.zsh/alias.zsh
