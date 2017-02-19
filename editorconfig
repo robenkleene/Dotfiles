@@ -33,6 +33,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[*.zsh]
+indent_style = space
+indent_size = 2
+
 [{*.m,*.h}]
 indent_style = space
 indent_size = 4
