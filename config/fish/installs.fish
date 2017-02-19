@@ -9,7 +9,4 @@ chruby ruby-2.4.0
 function nvm
   bass source ~/.nvm/nvm.sh ';' nvm $argv
 end
-function nvm-use-default
-  nvm use default
-end
 set PATH $HOME/.nvm/versions/node/v7.5.0/bin $PATH
