@@ -22,7 +22,7 @@ alias t 'tmux'
 alias ts 'tig status +3'
 alias ec 'emacsclient -t'
 # # Functions
-# alias r 'ranger-cd'
+alias r 'ranger-cd'
 # alias v 'vim-edit' 
 # alias e 'emacs-edit'
 # alias m 'magit'
