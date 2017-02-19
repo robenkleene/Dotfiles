@@ -1,3 +1,6 @@
+# fasd
+eval "$(fasd --init auto)"
+
 # chruby
 source /usr/local/share/chruby/chruby.sh
 

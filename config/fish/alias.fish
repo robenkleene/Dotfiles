@@ -15,7 +15,6 @@ alias mitmproxy 'mitmproxy --no-mouse --palette-transparent'
 
 # alias a 'ag'
 alias a 'rg'
-alias af 'rg --files -g'
 alias n 'new-terminal-here'
 alias o 'new-finder-window-here'
 alias t 'tmux' 

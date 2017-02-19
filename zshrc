@@ -24,5 +24,3 @@ source ~/.zsh/alias.zsh
 source ~/.zsh/bindings.zsh
 source ~/.zsh/startup.zsh
 
-# This misbehaves when sourced
-eval "$(fasd --init auto)"
