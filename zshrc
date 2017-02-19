@@ -15,7 +15,6 @@ zplug load
 # External
 
 # Setup
-source ~/.zsh/variables.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/installs.zsh
 # Interactive

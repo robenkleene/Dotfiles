@@ -3,12 +3,8 @@
 # set -x EDITOR vim
 # NeoVim
 set -x EDITOR nvim
-
-# Manpager
-set -x PAGER "less --squeeze-blank-lines --ignore-case"
-
-# Pager
 set -x PAGER "less --ignore-case"
+
 # Fish
 set -x FISH_CONFIG_PATH $HOME/.config/fish/config.fish
 
