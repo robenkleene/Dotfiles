@@ -244,7 +244,11 @@ function vim-pipe-grep
   # vim-edit -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
-    rg $argv --with-filename | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
+    set setup_system_clipboard ""
+    if test (uname) = Darwin
+      set setup_system_clipboard " | let @0=@* "
+    end
+    rg $argv --with-filename | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch" -
     # ag $argv | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
