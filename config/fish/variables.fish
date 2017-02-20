@@ -1,3 +1,5 @@
+set -x CURRENT_SHELL "fish"
+
 # Editor
 # Vim
 # set -x EDITOR vim
