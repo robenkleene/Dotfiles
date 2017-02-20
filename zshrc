@@ -8,6 +8,9 @@ export CLICOLOR=1
 # Required for abbreviations
 setopt extendedglob
 
+# Highlight tab match
+zstyle ':completion:*' menu select
+
 # Plugins
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
