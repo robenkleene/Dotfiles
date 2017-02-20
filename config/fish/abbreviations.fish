@@ -2,7 +2,7 @@
 
 set --erase fish_user_abbreviations
 
-# Destructive, don't abbreviate
+# Destructive, don't abbreviate or alias
 # `git-push-force`
 # `git stash`
 # `git-reset`
@@ -11,97 +11,34 @@ set --erase fish_user_abbreviations
 # Basic
 abbr -a -- - 'cd -'
 
-# ssh
-if not test (uname) = Darwin
-  abbr -a shs='ssh-start'
-end
-
-
-# BBEdit
-if test (uname) = Darwin
-  abbr -a bbr='bbedit-pipe-grep'
-end
-
-# fish
-abbr -a fec='fish-edit-config'
-abbr -a fea='fish-edit-abbreviations'
-abbr -a fsa='fish-sync-abbreviations'
-abbr -a fsh='fish-sync-history'
-
-# fzf
-abbr -a fza='fzf-ack-vim'
-abbr -a fzc='fzf-directory-cd'
-abbr -a fze='fzf-file-emacs'
-abbr -a fzp='fzf-file-path'
-abbr -a fzs='fzf-snippet'
-abbr -a fzt='fzf-file-tig'
-abbr -a fzb='fzf-bookmark-cd'
-abbr -a fzd='fzf-documentation-vim'
-abbr -a fzvse='fzf-file-vim-server-edit'
-abbr -a fzvss='fzf-file-vim-server-start'
-if test (uname) = Darwin
-  abbr -a fzab='fzf-ack-bbedit'
-  abbr -a fzam='fzf-ack-mate'
-  abbr -a fzbb='fzf-file-bbedit'
-  abbr -a fzm='fzf-file-mate'
-  abbr -a fzo='fzf-file-open'
-  abbr -a fzr='fzf-file-reveal'
-  abbr -a fzx='fzf-file-xcode'
-end
-
 # tig
 abbr -a tst='tig stash'
 
 # tmux
 abbr -a ta='tmux-attach'
-abbr -a tmd='tmux-documentation'
-abbr -a tmls='tmux ls'
-abbr -a tnd='tmux-name-directory'
 abbr -a tmsw='tmux swap-window -t'
+abbr -a t='tmux' 
 
 # vim
 abbr -a vss='vim-server-start'
 abbr -a vse='vim-server-edit'
-abbr -a VSS='vim-server-start -c "RestoreSession"'
-# This command doesn't work yet, try `fzf-ack-vim` instead
-# abbr -a vgc='vim-pipe-grep-clipboard'
-abbr -a vc='vim-clipboard'
-abbr -a vrs='vim-restore-session'
 
 # git
 abbr -a ga='git add'
-abbr -a gaa='git add --all :/'
 abbr -a gb='git branch'
 abbr -a gbd='git branch --delete'
-abbr -a gbpr='git-prune-remote-origin'
-abbr -a gprb='git-prune-remote-origin'
-abbr -a gbr='git branch --remotes'
 abbr -a gc='git commit'
-abbr -a gca='git commit --amend'
-abbr -a gcd='git-cd-root'
 abbr -a gcam='git commit --amend -m'
-abbr -a gch='git-copy-commit-hash'
 abbr -a gcl='git clone'
 abbr -a gcm='git commit -m'
 abbr -a gco='git checkout'
 abbr -a gcob='git checkout -b'
-abbr -a gcom='git checkout -- .'
 abbr -a gd='git diff'
 abbr -a gdt='git difftool'
-abbr -a gf='git fetch'
 abbr -a gl='git log'
 abbr -a gm='git merge'
-abbr -a gp='git push'
-abbr -a gpbo='git-push-branch-origin'
-abbr -a gpb='git-push-branch-origin'
-abbr -a gpod='git push origin --delete'
-abbr -a gpt='git push --tags'
 abbr -a gr='git rebase'
-abbr -a grc='git rebase --continue'
-abbr -a gs='git status'
 abbr -a gsm='git submodule'
-abbr -a gsmi='git submodule init'
-abbr -a gsmu='git submodule update'
 abbr -a gsta='git-stash-apply'
 abbr -a gstd='git-stash-diff'
 abbr -a gstl='git stash list'
@@ -109,9 +46,24 @@ abbr -a gstp='git-stash-pop'
 abbr -a gsts='git stash save'
 abbr -a gstsh='git-stash-show'
 abbr -a gt='git tag'
-abbr -a gu='git pull'
-abbr -a gur='git pull --rebase'
+# alias
 abbr -a gvm='git-vim-modified'
+abbr -a gur='git pull --rebase'
+abbr -a gu='git pull'
+abbr -a gsmi='git submodule init'
+abbr -a gsmu='git submodule update'
+abbr -a gs='git status'
+abbr -a grc='git rebase --continue'
+abbr -a gpt='git push --tags'
+abbr -a gp='git push'
+abbr -a gf='git fetch'
+abbr -a gcom='git checkout -- .'
+abbr -a gcd='git-cd-root'
+abbr -a gca='git commit --amend'
+abbr -a gbr='git branch --remotes'
+abbr -a gbpr='git-prune-remote-origin'
+abbr -a gprb='git-prune-remote-origin'
+abbr -a gaa='git add --all :/'
 
 # hub
 if test (uname) = Darwin
