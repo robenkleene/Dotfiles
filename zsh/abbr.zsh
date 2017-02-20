@@ -8,8 +8,8 @@ abbreviations=(
 "tmsw" "tmux swap-window -t"
 "t" "tmux" 
 # vim
-# "vss" "vim-server-start"
-# "vse" "vim-server-edit"
+"vss" "vim-server-start"
+"vse" "vim-server-edit"
 # git
 "ga" "git add"
 "gb" "git branch"

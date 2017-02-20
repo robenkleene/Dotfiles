@@ -38,3 +38,23 @@ function zsh-edit-config() {
   cd ~/Development/Dotfiles/
   vim-edit zshrc
 }
+
+
+# neovim
+function vim-server-start() {
+  if [ -z "$TMUX" ]; then
+    NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim $@
+  else
+    nvim_session_id=$(tmux display-message -p '#{session_id}')
+    NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim $@
+  fi
+}
+function vim-server-edit() {
+  if [ -z "$TMUX" ]; then
+    nvr $@
+  else
+    nvim_session_id=$(tmux display-message -p '#{session_id}')
+    nvr --servername /tmp/nvimsocket$nvim_session_id $argv
+  fi
+}
+
