@@ -35,6 +35,12 @@ abbreviations=(
 "gt" "git tag"
 )
 
+# Make alias for each abbreviations, for syntax highlighting, and executing
+# command without parameters
+for abbr in ${(@k)abbreviations}; do
+  alias $abbr="${abbreviations[$abbr]}"
+done
+
 magic-abbrev-expand() {
     local MATCH
     LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
