@@ -1,11 +1,11 @@
-set -xg fish_color_search_match black --background=cyan
+set fish_color_comment 3a3a3a
+set -xg fish_color_search_match black --background=$fish_color_comment
 
 # Prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-set fish_color_comment 3a3a3a
+set __fish_git_prompt_color_branch cyan
 function fish_prompt
   # Note this function will be built-in in fish `2.5`
   # After upgrading remove it and replace with `prompt_hostname`
