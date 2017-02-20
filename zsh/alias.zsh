@@ -22,7 +22,7 @@ alias ts='tig status +3'
 alias ec='emacsclient -t'
 # # Functions
 alias r='ranger-cd'
-# alias v='vim-edit' 
+alias v='vim-edit' 
 # alias e='emacs-edit'
 # alias m='magit'
 # alias V='vim-restore-session'
@@ -36,6 +36,7 @@ alias r='ranger-cd'
 
 # Basic
 alias -- -='cd -'
+alias ..='cd ..'
 
 # ssh
 # if not test (uname) = Darwin
