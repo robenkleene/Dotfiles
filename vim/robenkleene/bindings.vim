@@ -134,8 +134,16 @@ if has('nvim')
     terminal fish
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
+  function! s:OpenVTerminal()
+    " Only remap `<Esc>` in this buffer so it doesn't interfere
+    " with commands that spawn terminals like `fzf`
+    vsplit
+    terminal fish
+    tnoremap <buffer> <Esc> <C-\><C-n>
+  endfunction
 
-  nnoremap <leader>t :call <SID>OpenTerminal()<CR>
+  nnoremap <leader>ts :call <SID>OpenTerminal()<CR>
+  nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
   tnoremap <A-h> <C-\><C-n><C-w>h
   tnoremap <A-j> <C-\><C-n><C-w>j
   tnoremap <A-k> <C-\><C-n><C-w>k
