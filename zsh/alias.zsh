@@ -20,6 +20,7 @@ alias o='new-finder-window-here'
 alias t='tmux' 
 alias ts='tig status +3'
 alias ec='emacsclient -t'
+alias zec='vim-edit ~/.zshrc'
 # # Functions
 alias r='ranger-cd'
 alias v='vim-edit' 
