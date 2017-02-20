@@ -23,4 +23,5 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/bindings.zsh
 source ~/.zsh/startup.zsh
+# source ~/.zsh/abbr.zsh
 
