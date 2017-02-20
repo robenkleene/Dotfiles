@@ -7,6 +7,7 @@
 set --erase fish_greeting
 
 # Path
+# `pip3` can install executables in `~/.local/bin`
 set -x PATH ~/.local/bin /usr/local/bin ~/Development/Scripts/bin $PATH
 if not test (uname) = Darwin
   set -x PATH ~/bin $PATH

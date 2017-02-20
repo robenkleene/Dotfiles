@@ -1,3 +1,4 @@
+# `pip3` can install executables in `~/.local/bin`
 export PATH=~/.local/bin:/usr/local/bin:~/Development/Scripts/bin:$PATH
 if [ "$(uname)" = "Darwin" ]; then
   export PATH=~/bin:$PATH
