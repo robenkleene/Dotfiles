@@ -1,4 +1,4 @@
-set -x CURRENT_SHELL "fish"
+set -x CURRENT_SHELL (which fish)
 
 # Editor
 # Vim
