@@ -58,3 +58,17 @@ function vim-server-edit() {
   fi
 }
 
+# tmux
+function tmux-default-command() {
+  if [ "$(uname)" = "Darwin" ]; then
+    tmux set-option default-command "reattach-to-user-namespace -l $1"
+  else
+    tmux set-option default-shell $1
+  fi
+}
+function tmux-default-fish() {
+  tmux-default-command $(which fish)
+}
+function tmux-default-zsh() {
+  tmux-default-command $(which zsh)
+}
