@@ -25,3 +25,9 @@ function vim-edit() {
     nvim $@
   fi
 }
+
+# ssh
+function ssh-start() {
+  eval `ssh-agent -c`
+  ssh-add
+}
