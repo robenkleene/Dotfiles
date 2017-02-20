@@ -46,27 +46,3 @@ abbr -a gstp='git-stash-pop'
 abbr -a gsts='git stash save'
 abbr -a gstsh='git-stash-show'
 abbr -a gt='git tag'
-# alias
-abbr -a gvm='git-vim-modified'
-abbr -a gur='git pull --rebase'
-abbr -a gu='git pull'
-abbr -a gsmi='git submodule init'
-abbr -a gsmu='git submodule update'
-abbr -a gs='git status'
-abbr -a grc='git rebase --continue'
-abbr -a gpt='git push --tags'
-abbr -a gp='git push'
-abbr -a gf='git fetch'
-abbr -a gcom='git checkout -- .'
-abbr -a gcd='git-cd-root'
-abbr -a gca='git commit --amend'
-abbr -a gbr='git branch --remotes'
-abbr -a gbpr='git-prune-remote-origin'
-abbr -a gprb='git-prune-remote-origin'
-abbr -a gaa='git add --all :/'
-
-# hub
-if test (uname) = Darwin
-  abbr -a hb='hub browse'
-  abbr -a hbc='hub browse -- commits'
-end
