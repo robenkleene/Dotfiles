@@ -63,7 +63,7 @@ alias v='vim-edit'
 # alias fzd='fzf-documentation-vim'
 # alias fzvse='fzf-file-vim-server-edit'
 # alias fzvss='fzf-file-vim-server-start'
-# if test (uname) = Darwin
+if [ "$(uname)" = "Darwin" ]; then
 #   alias fzab='fzf-ack-bbedit'
 #   alias fzam='fzf-ack-mate'
 #   alias fzbb='fzf-file-bbedit'
@@ -71,17 +71,17 @@ alias v='vim-edit'
 #   alias fzo='fzf-file-open'
 #   alias fzr='fzf-file-reveal'
 #   alias fzx='fzf-file-xcode'
-# end
+fi
 
 # ssh
-# if not test (uname) = Darwin
+if [ "$(uname)" = "Darwin" ]; then
 #   alias shs='ssh-start'
-# end
+fi
 
 # BBEdit
-# if test (uname) = Darwin
+if [ "$(uname)" = "Darwin" ]; then
 #   alias bbr='bbedit-pipe-grep'
-# end
+fi
 
 # git
 # alias gvm='git-vim-modified'
@@ -103,7 +103,7 @@ alias gbr='git branch --remotes'
 alias gaa='git add --all :/'
 
 # hub
-# if test (uname) = Darwin
-#   alias hb='hub browse'
-#   alias hbc='hub browse -- commits'
-# end
+if [ "$(uname)" = "Darwin" ]; then
+  alias hb='hub browse'
+  alias hbc='hub browse -- commits'
+fi
