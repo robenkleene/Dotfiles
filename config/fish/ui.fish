@@ -1,4 +1,4 @@
-set fish_color_comment 3a3a3a
+set fish_color_comment 555555
 set -xg fish_color_search_match black --background=$fish_color_comment
 
 # Prompt
