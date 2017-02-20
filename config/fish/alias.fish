@@ -56,8 +56,6 @@ alias fcd 'fzf-directory-cd'
 alias fh 'fzf-history-cd'
 alias fx 'fzf-project-xcode'
 alias fa 'fzf-ack-vim' 
-# fzf
-alias fza 'fzf-ack-vim'
 alias fzc 'fzf-directory-cd'
 alias fze 'fzf-file-emacs'
 alias fzp 'fzf-file-path'
