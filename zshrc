@@ -5,6 +5,9 @@ compinit
 # Color in `ls`
 export CLICOLOR=1
 
+# Required for abbreviations
+setopt extendedglob
+
 # Plugins
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
@@ -23,5 +26,4 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/bindings.zsh
 source ~/.zsh/startup.zsh
-# source ~/.zsh/abbr.zsh
-
+source ~/.zsh/abbr.zsh
