@@ -1,19 +1,38 @@
 typeset -Ag abbreviations
+
 abbreviations=(
-  "Im"    "| more"
-  "Ia"    "| awk"
-  "Ig"    "| grep"
-  "Ieg"   "| egrep"
-  "Iag"   "| agrep"
-  "Igr"   "| groff -s -p -t -e -Tlatin1 -mandoc"
-  "Ip"    "| $PAGER"
-  "Ih"    "| head"
-  "Ik"    "| keep"
-  "It"    "| tail"
-  "Is"    "| sort"
-  "Iv"    "| ${VISUAL:-${EDITOR}}"
-  "Iw"    "| wc"
-  "Ix"    "| xargs"
+# tig
+"tst" "tig stash"
+# tmux
+# "ta" "tmux-attach"
+"tmsw" "tmux swap-window -t"
+"t" "tmux" 
+# vim
+# "vss" "vim-server-start"
+# "vse" "vim-server-edit"
+# git
+"ga" "git add"
+"gb" "git branch"
+"gbd" "git branch --delete"
+"gc" "git commit"
+"gcam" "git commit --amend -m"
+"gcl" "git clone"
+"gcm" "git commit -m"
+"gco" "git checkout"
+"gcob" "git checkout -b"
+"gd" "git diff"
+"gdt" "git difftool"
+"gl" "git log"
+"gm" "git merge"
+"gr" "git rebase"
+"gsm" "git submodule"
+# "gsta" "git-stash-apply"
+# "gstd" "git-stash-diff"
+# "gstl" "git stash list"
+# "gstp" "git-stash-pop"
+# "gsts" "git stash save"
+# "gstsh" "git-stash-show"
+"gt" "git tag"
 )
 
 magic-abbrev-expand() {
