@@ -18,7 +18,7 @@ abbreviations=(
 
 magic-abbrev-expand() {
     local MATCH
-    LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#}
+    LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
     LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
     zle self-insert
 }
