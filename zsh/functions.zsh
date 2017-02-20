@@ -18,6 +18,7 @@ function egitn() {
   fi
 }
 
+# vim
 function vim-edit() {
   if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
     nvimedit $@
@@ -30,4 +31,10 @@ function vim-edit() {
 function ssh-start() {
   eval `ssh-agent -c`
   ssh-add
+}
+
+# zsh
+function zsh-edit-config() {
+  cd ~/Development/Dotfiles/
+  vim-edit zshrc
 }

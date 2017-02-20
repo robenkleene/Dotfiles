@@ -1,14 +1,3 @@
-function vim-edit
-  # Vim
-  # vim $argv
-  # NeoVim
-  if test -n "$NVIM_LISTEN_ADDRESS"
-    nvimedit $argv
-  else
-    nvim $argv
-  end
-end
-
 # Emacs
 function emacs-edit
   # Emacs
@@ -37,6 +26,16 @@ function fish-sync-history
 end
 
 # Vim
+function vim-edit
+  # Vim
+  # vim $argv
+  # NeoVim
+  if test -n "$NVIM_LISTEN_ADDRESS"
+    nvimedit $argv
+  else
+    nvim $argv
+  end
+end
 function vim-restore-session
   vim-edit -c "RestoreSession"
 end
