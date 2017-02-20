@@ -4,7 +4,7 @@
 # Except
 !.gitignore
 !config.fish
-!abbreviations.fish
+!abbr.fish
 !fzf.fish
 !fishfile
 !functions.fish

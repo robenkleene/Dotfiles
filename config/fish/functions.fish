@@ -27,10 +27,10 @@ function fish-edit-config
 end
 function fish-edit-abbreviations
  cd (dirname $FISH_CONFIG_PATH)
- vim-edit abbreviations.fish
+ vim-edit abbr.fish
 end
 function fish-sync-abbreviations
-  ~/.config/fish/abbreviations.fish
+  ~/.config/fish/abbr.fish
 end
 function fish-sync-history
   history merge
