@@ -46,9 +46,9 @@ alias r='ranger-cd'
 
 # vim
 # alias va='vim-pipe-grep' 
-# alias V='vim-restore-session'
+# alias vrs='vim-restore-session'
 alias v='vim-edit' 
-# alias VSS='vim-server-start -c "RestoreSession"'
+# alias vsr='vim-server-start -c "RestoreSession"'
 
 # fzf
 # alias f='fzf-file-vim'
