@@ -17,6 +17,9 @@ alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 
 # Shortcut
 
+# zsh
+alias zec='vim-edit ~/.zshrc'
+
 # scripts
 alias n='new-terminal-here'
 alias o='new-finder-window-here'
