@@ -24,6 +24,9 @@ alias ez='zsh-edit-config'
 alias n='new-terminal-here'
 alias o='new-finder-window-here'
 
+# grep
+alias -g G='| grep'
+
 # ack
 # alias a='ag'
 alias a='rg'

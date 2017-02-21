@@ -29,6 +29,9 @@ abbr -a t='tmux'
 abbr -a vss='vim-server-start'
 abbr -a vse='vim-server-edit'
 
+# grep
+abbr -a G='grep'
+
 # git
 abbr -a ga='git add'
 abbr -a gb='git branch'
