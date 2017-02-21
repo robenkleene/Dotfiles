@@ -12,7 +12,7 @@ set --erase fish_user_abbreviations
 # Workaround because `fasd` always runs a background process and fish warns
 # before quitting if there's a background process. Occassionally try removing
 # this and see if the `fasd` plugin has resolved the problem itself.
-abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit'
+abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
 
 # Basic
 abbr -a -- - 'cd -'
