@@ -24,11 +24,11 @@ end
 function fish-sync-history
   history merge
 end
-function fish-clean-exit
-# Workaround because `fasd` always runs a background process and fish warns
-# before quitting if there's a background process. Occassionally try removing
-# this and see if the `fasd` plugin has resolved the problem itself.
-# abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
+function exiting
+  # Workaround because `fasd` always runs a background process and fish warns
+  # before quitting if there's a background process. Occassionally try removing
+  # this and see if the `fasd` plugin has resolved the problem itself.
+  # abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
   functions --erase __fasd_run; sleep 0.1; and exit;
 end
 

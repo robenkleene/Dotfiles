@@ -9,7 +9,7 @@ set --erase fish_user_abbreviations
 # `git tag --delete`
 
 # Bug
-abbr -a exit='fish-clean-exit'
+abbr -a exit='exiting'
 
 # Basic
 abbr -a -- - 'cd -'
