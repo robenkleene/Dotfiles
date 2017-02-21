@@ -23,6 +23,10 @@ alias fea 'fish-edit-abbreviations'
 alias fsa 'fish-sync-abbreviations'
 alias fsh 'fish-sync-history'
 
+# Cut & Paste
+alias p 'safepaste'
+alias c 'safecopy'
+
 # ack
 # alias a 'ag'
 alias a 'rg'
