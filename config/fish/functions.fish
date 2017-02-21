@@ -31,7 +31,13 @@ function exiting
   # abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
   functions --erase __fasd_run; sleep 0.1; and exit;
 end
-
+function delete-current-history-search
+  if commandline --search-mode
+    echo -e "\n"
+    history --delete (commandline)
+    commandline -f history-search-backward
+  end
+end
 # Vim
 function vim-edit
   # Vim
