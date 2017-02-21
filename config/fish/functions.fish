@@ -125,6 +125,9 @@ end
 function git-vim-modified
   vim-edit (git diff --name-only --diff-filter=U | uniq)
 end
+function git-checkout-modified
+  git checkout -- .
+end
 function git-clean-checkout
   git clean -dff; and git checkout -- .
 end

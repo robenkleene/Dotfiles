@@ -7,6 +7,7 @@ set --erase fish_user_abbreviations
 # `git stash`
 # `git-reset`
 # `git tag --delete`
+# `git checkout -- .`
 
 # Bug
 abbr -a exit='exiting'

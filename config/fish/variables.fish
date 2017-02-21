@@ -1,3 +1,15 @@
+# Greeting
+set --erase fish_greeting
+
+# Path
+# `pip3` can install executables in `~/.local/bin`
+set -x PATH ~/.local/bin /usr/local/bin ~/Development/Scripts/bin $PATH
+if not test (uname) = Darwin
+  set -x PATH ~/bin $PATH
+end
+
+set fish_help_browser w3m
+
 # Editor
 # Vim
 # set -x EDITOR vim
