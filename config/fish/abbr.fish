@@ -9,10 +9,7 @@ set --erase fish_user_abbreviations
 # `git tag --delete`
 
 # Bug
-# Workaround because `fasd` always runs a background process and fish warns
-# before quitting if there's a background process. Occassionally try removing
-# this and see if the `fasd` plugin has resolved the problem itself.
-abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
+abbr -a exit='fish-clean-exit'
 
 # Basic
 abbr -a -- - 'cd -'
