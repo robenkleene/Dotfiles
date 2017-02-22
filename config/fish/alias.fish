@@ -32,7 +32,7 @@ alias c 'safecopy'
 alias a 'rg'
 
 # z
-alias zv 'f -e vim'
+alias zv 'fasd -f -e vim'
 
 # tig
 alias ts 'tig status +3'
@@ -61,7 +61,7 @@ alias f 'fzf-file-vim'
 alias d 'fzf-directory-cd'
 alias fcd 'fzf-directory-cd'
 alias fh 'fzf-history-cd'
-alias fx 'fzf-project-xcode'
+alias ox 'fzf-project-xcode'
 alias fa 'fzf-ack-vim' 
 alias fzc 'fzf-directory-cd'
 alias fze 'fzf-file-emacs'
