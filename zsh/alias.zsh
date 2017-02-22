@@ -18,7 +18,7 @@ alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 # Shortcut
 
 # zsh
-alias ez='zsh-edit-config'
+alias ei='zsh-edit-config'
 
 # scripts
 alias n='new-terminal-here'
