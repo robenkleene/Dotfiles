@@ -29,7 +29,11 @@ function exiting
   # before quitting if there's a background process. Occassionally try removing
   # this and see if the `fasd` plugin has resolved the problem itself.
   # abbr -a exit='functions --erase __fasd_run; sleep 0.1; and exit; and clear'
-  functions --erase __fasd_run; sleep 0.1; and exit;
+  if test (jobs | wc -l) -eq 1; and jobs | grep --silent "fasd --proc"
+    functions --erase __fasd_run; sleep 0.1; and exit;
+  else
+    exit
+  end
 end
 # Vim
 function vim-edit
