@@ -18,7 +18,7 @@ alias n 'new-terminal-here'
 alias o 'new-finder-window-here'
 
 # fish
-alias fec 'fish-edit-config'
+alias ei 'fish-edit-config'
 alias fea 'fish-edit-abbreviations'
 alias fsa 'fish-sync-abbreviations'
 alias fsh 'fish-sync-history'
