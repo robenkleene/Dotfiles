@@ -31,6 +31,9 @@ alias c 'safecopy'
 # alias a 'ag'
 alias a 'rg'
 
+# z
+alias zv 'f -e vim'
+
 # tig
 alias ts 'tig status +3'
 
