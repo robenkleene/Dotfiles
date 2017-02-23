@@ -58,6 +58,7 @@ alias vsr 'vim-server-start -c "RestoreSession"'
 # fzf
 alias f 'fzf-file-vim'
 alias d 'fzf-directory-cd'
+alias s 'fzf-tmux-window'
 alias fcd 'fzf-directory-cd'
 alias fh 'fzf-history-cd'
 alias ox 'fzf-project-xcode'
