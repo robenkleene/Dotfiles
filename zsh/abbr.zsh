@@ -4,7 +4,7 @@ abbreviations=(
 # tig
 "tst" "tig stash"
 # tmux
-# "ta" "tmux-attach"
+"ta" "tmux-attach"
 "tmsw" "tmux swap-window -t"
 "t" "tmux" 
 # vim

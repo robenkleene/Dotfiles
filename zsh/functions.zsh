@@ -75,3 +75,10 @@ function tmux-default-zsh() {
 function tmux-name-directory() {
   tmux rename-window $(basename $(pwd))
 }
+function tmux-attach() {
+  if [ $# -eq 1 ]; then
+    tmux attach -t $argv
+  else
+    tmux attach
+  fi
+}
