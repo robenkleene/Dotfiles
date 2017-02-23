@@ -11,7 +11,8 @@ export CLICOLOR=1
 # Required for abbreviations
 setopt extendedglob
 
-
+# Don't beep on tab
+setopt NO_LIST_BEEP
 # Highlight tab match
 zstyle ':completion:*' menu select
 
