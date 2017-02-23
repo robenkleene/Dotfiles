@@ -26,12 +26,12 @@ abbreviations=(
 "gm" "git merge"
 "gr" "git rebase"
 "gsm" "git submodule"
-# "gsta" "git-stash-apply"
-# "gstd" "git-stash-diff"
-# "gstl" "git stash list"
-# "gstp" "git-stash-pop"
-# "gsts" "git stash save"
-# "gstsh" "git-stash-show"
+"gsta" "git-stash-apply"
+"gstd" "git-stash-diff"
+"gstl" "git stash list"
+"gstp" "git-stash-pop"
+"gsts" "git stash save"
+"gstsh" "git-stash-show"
 "gt" "git tag"
 )
 

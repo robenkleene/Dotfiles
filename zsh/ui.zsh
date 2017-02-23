@@ -3,7 +3,9 @@
 # Allow substitution in prompts
 setopt PROMPT_SUBST
 # Remove space to the right of `RPROMPT`
-ZLE_RPROMPT_INDENT=-1
+# This causes a blank line at the bottom of the terminal when the propmpt is
+# active
+# ZLE_RPROMPT_INDENT=-1
 # Track Changed and Staged Files
 # (Enables `%c` and `%u` below)
 zstyle ':vcs_info:*' check-for-changes true

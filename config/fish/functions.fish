@@ -102,7 +102,7 @@ function tmux-default-zsh
   tmux-default-command (which zsh)
 end
 function tmux-name-directory
-  tmux rename-window (basename (pwd))
+  tmux rename-window (basename $PWD)
 end
 function tmux-attach
   if [ $argv[1] ]
@@ -189,22 +189,6 @@ end
 function git-prune
   git-prune-remote-origin
 end
-function git-log-unpushed-commits
-  git log @\{u\}..
-end
-function git-diff-dirty
-  git diff --name-only --diff-filter=UM
-end
-# Open unmerged files in Vim
-function git-vim-dirty
-  sh -c "vim-edit \$(git diff --name-only --diff-filter=UM)"
-end
-function git-difftool-commit-minus-one
-  git difftool $argv[1]^!
-end
-function git-diff-commit-minus-one
-  git diff $argv[1]^!
-end
 function git-push-force
   git push --force-with-lease
 end
@@ -250,9 +234,9 @@ end
 # Ranger
 function ranger-cd
   set tempfile '/tmp/chosendir'
-  ranger --choosedir=$tempfile (pwd)
+  ranger --choosedir=$tempfile $PWD
   if test -f $tempfile
-    if [ (cat $tempfile) != (pwd) ]
+    if [ (cat $tempfile) != $PWD ]
       cd (cat $tempfile)
     end
   end
