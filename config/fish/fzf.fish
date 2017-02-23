@@ -136,6 +136,16 @@ function fzf-file-tig
   and tig "$result"
 end
 
+# tmux
+function fzf-tmux-window
+  if test -z "$TMUX"
+    return
+  end
+   tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}' > $tmpdir/fzf.result
+  set result (fzf-process-result)
+  and tmux select-window -t ":$result"
+end
+
 # mate
 if test (uname) = Darwin
   function fzf-file-mate

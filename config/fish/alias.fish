@@ -72,6 +72,7 @@ alias fzb 'fzf-bookmark-cd'
 alias fzd 'fzf-documentation-vim'
 alias fzvse 'fzf-file-vim-server-edit'
 alias fzvss 'fzf-file-vim-server-start'
+alias fzw 'fzf-tmux-window'
 if test (uname) = Darwin
   alias fzab 'fzf-ack-bbedit'
   alias fzam 'fzf-ack-mate'
