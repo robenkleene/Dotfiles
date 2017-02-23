@@ -49,9 +49,6 @@ end
 function vim-restore-session
   vim-edit -c "RestoreSession"
 end
-function vim-clipboard
-  safepaste | vim-edit -
-end
 function vim-pipe-grep
   # A more portable solution:
   # vim-edit -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
