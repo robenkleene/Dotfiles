@@ -41,9 +41,17 @@ function vim-edit
   # vim $argv
   # NeoVim
   if test -n "$NVIM_LISTEN_ADDRESS"
-    nvimedit $argv
+    if test (uname) = Darwin
+      nvimedit $argv
+    else
+      eval nvimedit $argv
+    end
   else
-    nvim $argv
+    if test (uname) = Darwin
+      nvim $argv
+    else
+      eval nvim $argv
+    end
   end
 end
 function vim-restore-session
