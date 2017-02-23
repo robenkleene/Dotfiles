@@ -101,13 +101,6 @@ end
 function tmux-default-zsh
   tmux-default-command (which zsh)
 end
-function tmux-documentation
-  if test -n "$TMUX"
-    tmux split-window -c ~/Documentation/development-references/Tmux/
-  else 
-    cd ~/Documentation/development-references/Tmux/
-  end
-end
 function tmux-name-directory
   tmux rename-window (basename (pwd))
 end

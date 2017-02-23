@@ -38,7 +38,6 @@ alias zv 'fasd -f -e vim'
 alias ts 'tig status +3'
 
 # tmux
-alias tmd 'tmux-documentation'
 alias tmls 'tmux ls'
 alias tnd 'tmux-name-directory'
 

@@ -72,3 +72,6 @@ function tmux-default-fish() {
 function tmux-default-zsh() {
   tmux-default-command $(which zsh)
 }
+function tmux-name-directory() {
+  tmux rename-window $(basename $(pwd))
+}

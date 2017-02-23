@@ -35,9 +35,8 @@ alias a='rg'
 alias ts='tig status +3'
 
 # tmux
-# alias tmd='tmux-documentation'
 alias tmls='tmux ls'
-# alias tnd='tmux-name-directory'
+alias tnd='tmux-name-directory'
 
 # emacs
 alias ec='emacsclient -t'
