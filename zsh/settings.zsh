@@ -9,8 +9,13 @@ setopt extendedglob
 setopt autocd
 
 # History
+# Share history between sessions
 setopt share_history
-
+HISTFILE=~/.zsh_history
+# Number of history entries loaded into a session
+HISTSIZE=10000
+# Number of history entries saved to disk
+SAVEHIST=10000
 # Completion
 
 # Enable Completion
