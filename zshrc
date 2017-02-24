@@ -12,10 +12,10 @@ source ~/.zsh/settings.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/installs.zsh
 # Interactive
+source ~/.zsh/fzf.zsh
 source ~/.zsh/ui.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
-source ~/.zsh/fzf.zsh
 source ~/.zsh/bindings.zsh
 source ~/.zsh/startup.zsh
 source ~/.zsh/abbr.zsh

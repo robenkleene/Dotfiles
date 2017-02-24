@@ -8,6 +8,9 @@ end
 function magit
  emacs-edit -eval "(robenkleene/magit-status-startup)"
 end
+function emacs-kill-server
+  emacsclient -e '(kill-emacs)'
+end
 
 # Fish
 function fish-edit-config

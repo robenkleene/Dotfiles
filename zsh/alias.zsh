@@ -71,6 +71,7 @@ alias fzd='fzf-documentation-vim'
 alias fzvse='fzf-file-vim-server-edit'
 alias fzvss='fzf-file-vim-server-start'
 if [ "$(uname)" = "Darwin" ]; then
+  alias ox='fzf-project-xcode'
   alias fzab='fzf-ack-bbedit'
   alias fzam='fzf-ack-mate'
   alias fzbb='fzf-file-bbedit'

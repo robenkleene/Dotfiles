@@ -140,13 +140,14 @@ function fzf-snippet-vim() {
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-project-xcode() {
-    open $(find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1)
+    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
   }
 fi
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-xcode() {
-    set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
-    open -a "Xcode" $(eval $ack_search_xcode | fzf  --select-1)
+    local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
+    eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+    # open -a "Xcode" "$(eval $ack_search_xcode | fzf  --select-1)
   }
 fi
 

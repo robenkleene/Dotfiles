@@ -10,9 +10,6 @@ if is-emacs-server-running
   echo Emacs server is running
 else
 end
-function emacs-kill-server
-  emacsclient -e '(kill-emacs)'
-end
 
 # tmux
 # Echo running sessions if there are any
