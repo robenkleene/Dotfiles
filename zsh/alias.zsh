@@ -38,6 +38,7 @@ alias ts='tig status +3'
 # tmux
 alias tmls='tmux ls'
 alias tnd='tmux-name-directory'
+alias s='fzf-tmux-window'
 
 # emacs
 alias ec='emacsclient -t'
@@ -51,46 +52,36 @@ alias r='ranger-cd'
 alias va='vim-pipe-grep' 
 alias vrs='vim-restore-session'
 alias v='vim-edit' 
-# alias vsr='vim-server-start -c "RestoreSession"'
+alias vsr='vim-server-start -c "RestoreSession"'
 
 # fzf
-# alias f='fzf-file-vim'
-# alias d='fzf-directory-cd'
-# alias fcd='fzf-directory-cd'
-# alias fh='fzf-history-cd'
-# alias fx='fzf-project-xcode'
-# alias fa='fzf-ack-vim' 
-# alias fzc='fzf-directory-cd'
-# alias fze='fzf-file-emacs'
-# alias fzp='fzf-file-path'
-# alias fzs='fzf-snippet'
-# alias fzt='fzf-file-tig'
+alias f='fzf-file-vim'
+alias d='fzf-directory-cd'
+alias fcd='fzf-directory-cd'
+alias fh='fzf-history-cd'
+alias fx='fzf-project-xcode'
+alias fa='fzf-ack-vim' 
+alias fzc='fzf-directory-cd'
+alias fze='fzf-file-emacs'
+alias fzp='fzf-file-path'
+alias fzs='fzf-snippet-copy'
+alias fzt='fzf-file-tig'
 alias fzb='fzf-bookmark-cd'
-# alias fzd='fzf-documentation-vim'
-# alias fzvse='fzf-file-vim-server-edit'
-# alias fzvss='fzf-file-vim-server-start'
+alias fzd='fzf-documentation-vim'
+alias fzvse='fzf-file-vim-server-edit'
+alias fzvss='fzf-file-vim-server-start'
 if [ "$(uname)" = "Darwin" ]; then
-#   alias fzab='fzf-ack-bbedit'
-#   alias fzam='fzf-ack-mate'
-#   alias fzbb='fzf-file-bbedit'
-#   alias fzm='fzf-file-mate'
-#   alias fzo='fzf-file-open'
-#   alias fzr='fzf-file-reveal'
-#   alias fzx='fzf-file-xcode'
-fi
-
-# ssh
-if [ "$(uname)" = "Darwin" ]; then
-#   alias shs='ssh-start'
-fi
-
-# BBEdit
-if [ "$(uname)" = "Darwin" ]; then
-#   alias bbr='bbedit-pipe-grep'
+  alias fzab='fzf-ack-bbedit'
+  alias fzam='fzf-ack-mate'
+  alias fzbb='fzf-file-bbedit'
+  alias fzm='fzf-file-mate'
+  alias fzo='fzf-file-open'
+  alias fzr='fzf-file-reveal'
+  alias fzx='fzf-file-xcode'
 fi
 
 # git
-# alias gvm='git-vim-modified'
+alias gvm='git-vim-modified'
 alias gur='git pull --rebase'
 alias gu='git pull'
 alias gsmi='git submodule init'

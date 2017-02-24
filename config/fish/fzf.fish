@@ -63,7 +63,7 @@ function fzf-bookmark-cd
   # Documentation
   set RKBOOKMARKS $RKBOOKMARKS ~/Documentation/ ~/Documentation/development-references/
   # Development
-  set RKBOOKMARKS $RKBOOKMARKS ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/
+  set RKBOOKMARKS $RKBOOKMARKS ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/
 
   printf '%s\n' $RKBOOKMARKS | fzf > $tmpdir/fzf.result
   set result (fzf-process-result)
@@ -184,32 +184,10 @@ end
 # Snippets
 
 # Copy
-function fzf-snippet
-  fzf-snippet-copy
-end
-
 function fzf-snippet-copy
   cd ~/Development/Snippets/
   find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
   cd -
-end
-
-# Reveal
-if test (uname) = Darwin
-  function fzf-snippet-reveal
-    cd ~/Development/Snippets/
-    find * -type f | fzf | tr '\n' '\0' | xargs -0 open -R
-    cd -
-  end
-end
-
-# TextMate
-if test (uname) = Darwin
-  function fzf-snippet-mate
-    cd ~/Development/Snippets/
-    find * -type f | fzf | tr '\n' '\0' | xargs -0 mate
-    cd -
-  end
 end
 
 # vim

@@ -42,6 +42,14 @@ function vim-pipe-grep() {
   fi
 }
 
+# Emacs
+function emacs-edit() {
+  emacsclient -t $@
+}
+function magit() {
+  emacs-edit -eval "(robenkleene/magit-status-startup)"
+}
+
 # ssh
 function ssh-start() {
   eval `ssh-agent -c`
