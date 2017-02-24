@@ -1,3 +1,7 @@
+# grep
+alias -g G='| grep'
+alias -g L='| less'
+
 # Basic
 alias -- -='cd -'
 alias ..='cd ..'
@@ -24,9 +28,6 @@ alias ei='zsh-edit-config'
 alias n='new-terminal-here'
 alias o='new-finder-window-here'
 
-# grep
-alias -g G='| grep'
-
 # ack
 # alias a='ag'
 alias a='rg'
@@ -47,8 +48,8 @@ alias m='magit'
 alias r='ranger-cd'
 
 # vim
-# alias va='vim-pipe-grep' 
-# alias vrs='vim-restore-session'
+alias va='vim-pipe-grep' 
+alias vrs='vim-restore-session'
 alias v='vim-edit' 
 # alias vsr='vim-server-start -c "RestoreSession"'
 

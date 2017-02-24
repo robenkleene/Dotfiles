@@ -26,6 +26,21 @@ function vim-edit() {
     nvim $@
   fi
 }
+function vim-restore-session() {
+  vim-edit -c "RestoreSession"
+}
+function vim-pipe-grep() {
+  if [ $# -gt 0 ]; then
+    # Set the search register and the yank register
+    local setup_system_clipboard=""
+    if [ "$(uname)" = "Darwin" ]; then
+      setup_system_clipboard="| let @0=@*"
+    fi
+    rg --smart-case --line-number --with-filename $@ | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
+  else
+    vim-edit -c "GrepBuffer" -
+  fi
+}
 
 # ssh
 function ssh-start() {

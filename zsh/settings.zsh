@@ -8,6 +8,9 @@ setopt extendedglob
 # `cd` just by typing name
 setopt autocd
 
+# History
+setopt share_history
+
 # Completion
 
 # Enable Completion
@@ -15,10 +18,8 @@ autoload -Uz compinit
 compinit
 # Automatically select the first option
 # setopt menucomplete
-# Show the menu immediately if ambiguous
-setopt AUTO_LIST
 # Don't beep on tab
-setopt NO_LIST_BEEP
+setopt nolistbeep
 # Highlight tab match
 zstyle ':completion:*' menu select
 # Make completion case and tab insensitive
