@@ -16,8 +16,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 # Number of history entries saved to disk
 SAVEHIST=10000
-# Completion
 
+# Completion
 # Enable Completion
 autoload -Uz compinit
 compinit
