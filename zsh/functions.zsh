@@ -126,7 +126,7 @@ function git-commit-hash() {
   git rev-parse HEAD
 }
 function git-cd-root() {
-  cd (git rev-parse --show-toplevel)
+  cd $(git rev-parse --show-toplevel)
 }
 function git-push-branch-origin() {
   git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
