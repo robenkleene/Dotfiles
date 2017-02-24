@@ -23,11 +23,14 @@ autoload -Uz compinit
 compinit
 # Automatically select the first option
 # setopt menucomplete
+# Use a menu when expanding globs
+# Can't figure out how to make this work with recursive globs
+# setopt globcomplete
 # Don't beep on tab
 setopt nolistbeep
 # Highlight tab match
 zstyle ':completion:*' menu select
-# Make completion case and tab insensitive
+# Make completion case and hyphen insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 # Highlight partial matches
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==$color[cyan]=00}:${(s.:.)LS_COLORS}")';
