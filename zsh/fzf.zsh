@@ -12,3 +12,211 @@ function ack-lines-no-color() {
 }
 
 export FZF_DEFAULT_COMMAND='rg --files -g ""'
+
+
+# Directories
+
+# cd
+function fzf-directory-cd() {
+  cd $(find * -type d | fzf)
+}
+
+# history
+function fzf-history-cd() {
+  cd $(fasd -l | fzf)
+}
+
+function fzf-bookmark-cd() {
+  # Bookmarks
+  local RKBOOKMARKS=~/Dotfiles/ 
+  # Documentation
+  RKBOOKMARKS=$RKBOOKMARKS:~/Documentation/:~/Documentation/development-references/
+  # Development
+  RKBOOKMARKS+=(~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/)
+  cd $(printf '%s\n' $RKBOOKMARKS | fzf)
+}
+
+# # Files
+
+# # emacs
+# function fzf-file-emacs
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # fzf | tr '\n' '\0' | xargs -0 -o emacs
+#   fzf > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and emacs-edit "$result"
+# end
+
+# # vim
+# function fzf-file-vim
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # fzf | tr '\n' '\0' | xargs -0 -o vim
+#   fzf > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and vim-edit "$result"
+# end
+# function fzf-file-vim-server-edit
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # fzf | tr '\n' '\0' | xargs -0 -o vim
+#   fzf > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and vim-server-edit "$result"
+# end
+# function fzf-file-vim-server-start
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # fzf | tr '\n' '\0' | xargs -0 -o vim
+#   fzf > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and vim-server-start "$result"
+# end
+
+# # tig
+# function fzf-file-tig
+#   fzf > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and tig "$result"
+# end
+
+# # tmux
+# function fzf-tmux-window
+#   if test -z "$TMUX"
+#     return
+#   end
+#    tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}' > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and tmux select-window -t ":$result"
+# end
+
+# # mate
+# if test (uname) = Darwin
+#   function fzf-file-mate
+#     fzf | tr '\n' '\0' | xargs -0 mate
+#   end
+# end
+
+# # bbedit
+# if test (uname) = Darwin
+#   function fzf-file-bbedit
+#     fzf | tr '\n' '\0' | xargs -0 bbedit
+#   end
+# end
+
+# # reveal
+# if test (uname) = Darwin
+#   function fzf-file-reveal
+#     fzf | tr '\n' '\0' | xargs -0 open -R
+#   end
+# end
+
+# # open
+# if test (uname) = Darwin
+#   function fzf-file-open
+#     fzf | tr '\n' '\0' | xargs -0 open
+#   end
+# end
+
+# # cd
+# function fzf-file-cd
+#   fzf > $tmpdir/fzf.result
+#   set result (dirname (fzf-process-result))
+#   and cd "$result"
+# end
+
+# # path
+# function fzf-file-path
+#   fzf | tr -d '\n' | tee /dev/tty | safecopy
+# end
+
+# # Documentation
+# function fzf-documentation-vim
+#   cd ~/Documentation/
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
+#   find * -type f -not -path '*/\.*' | fzf > $tmpdir/fzf.result
+#   cd -
+#   set result (fzf-process-result)
+#   and vim-edit "$HOME/Documentation/$result"
+# end
+
+# # Lines
+
+# # vim
+# function fzf-line-vim
+#   ack-lines-no-color "[a-zA-Z0-9]+" . | fzf --ansi > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   and echo $result | vim -c "GrepBuffer" - 
+# end
+
+# # Snippets
+
+# # Copy
+# function fzf-snippet
+#   fzf-snippet-copy
+# end
+
+# function fzf-snippet-copy
+#   cd ~/Development/Snippets/
+#   find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
+#   cd -
+# end
+
+# # Reveal
+# if test (uname) = Darwin
+#   function fzf-snippet-reveal
+#     cd ~/Development/Snippets/
+#     find * -type f | fzf | tr '\n' '\0' | xargs -0 open -R
+#     cd -
+#   end
+# end
+
+# # TextMate
+# if test (uname) = Darwin
+#   function fzf-snippet-mate
+#     cd ~/Development/Snippets/
+#     find * -type f | fzf | tr '\n' '\0' | xargs -0 mate
+#     cd -
+#   end
+# end
+
+# # vim
+# function fzf-snippet-vim
+#   cd ~/Development/Snippets/
+#   # Using `xargs` causes tmux `pane_current_path` to fail
+#   # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
+#   find * -type f | fzf > $tmpdir/fzf.result
+#   cd -
+
+#   set result (fzf-process-result)
+#   and vim-edit "$HOME/Development/Snippets/$result"
+# end
+
+# # Project
+
+# # Xcode
+# if test (uname) = Darwin
+#   function fzf-project-xcode
+#     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
+#   end
+# end
+
+# if test (uname) = Darwin
+#   function fzf-file-xcode
+#     # rg
+#     # `ag` version isn't written yet
+#     set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
+#     eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+#   end
+# end
+
+# # ack
+
+# function fzf-ack-vim
+#   echo $argv | tr -d '\n' | safecopy -pboard find
+#   ack-lines-color $argv . | fzf --ansi > $tmpdir/fzf.result
+#   set result (fzf-process-result)
+#   if test (uname) = Darwin
+#     set setup_system_clipboard "| let @0=@*"
+#   end
+#   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+# end
+
