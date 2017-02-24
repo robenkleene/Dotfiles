@@ -35,7 +35,7 @@ nnoremap Y y$
 " nnoremap <leader>te :tabedit %<CR>
 
 " vimrc
-nnoremap <leader>oi :edit ~/Development/Dotfiles/vim/robenkleene/robenkleene.vim<CR>:cd %:h<CR>:echo ""<CR>
+nnoremap <leader>oi :edit ~/Development/Dotfiles/vim/robenkleene/robenkleene.vim<CR>:lcd %:h<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
 " Documentation
