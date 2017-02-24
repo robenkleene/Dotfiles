@@ -35,6 +35,7 @@ function exiting
     exit
   end
 end
+
 # Vim
 function vim-edit
   # Vim
@@ -50,8 +51,6 @@ function vim-restore-session
   vim-edit -c "RestoreSession"
 end
 function vim-pipe-grep
-  # A more portable solution:
-  # vim-edit -c "setlocal buftype=nofile bufhidden=hide noswapfile" -c "cbuffer" -c "cw"
   if [ $argv[1] ]
     # Set the search register and the yank register
     set setup_system_clipboard ""
