@@ -138,7 +138,7 @@ if has('nvim')
     " Only remap `<Esc>` in this buffer so it doesn't interfere
     " with commands that spawn terminals like `fzf`
     vsplit
-    terminal fish
+    terminal zsh
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
 

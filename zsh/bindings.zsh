@@ -10,3 +10,8 @@ bash-backward-kill-word() {
 }
 zle -N bash-backward-kill-word
 bindkey "^[^?" bash-backward-kill-word
+
+# Edit in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
