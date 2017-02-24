@@ -49,6 +49,9 @@ function emacs-edit() {
 function magit() {
   emacs-edit -eval "(robenkleene/magit-status-startup)"
 }
+function emacs-kill-server() {
+  emacsclient -e '(kill-emacs)'
+}
 
 # ssh
 function ssh-start() {
