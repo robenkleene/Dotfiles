@@ -38,7 +38,8 @@ endfunction
 
 " rg
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
+  \ let @/="<args>"
 
 " Bookmarks
 function! s:RobenKleeneBookmarks()
