@@ -3,23 +3,23 @@
 set resolvedir $TMPDIR /tmp
 set tmpdir $resolvedir[1]
 
-function ack_lines
+function ack-lines
   # ag
   # ag --nobreak --noheading $argv
   # rg
   rg --no-heading $argv
 end
-function ack_lines_color
+function ack-lines-color
   # ag
-  # ack_lines --color $argv
+  # ack-lines --color $argv
   # rg
-  ack_lines --color=always $argv
+  ack-lines --color=always $argv
 end
-function ack_lines_no_color
+function ack-lines-no-color
   # ag
-  # ack_lines --nocolor $argv
+  # ack-lines --nocolor $argv
   # rg
-  ack_lines --color=never $argv
+  ack-lines --color=never $argv
 end
 
 # ag
@@ -201,7 +201,7 @@ end
 
 # vim
 function fzf-line-vim
-  ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi > $tmpdir/fzf.result
+  ack-lines-no-color "[a-zA-Z0-9]+" . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   and echo $result | vim -c "GrepBuffer" - 
 end
@@ -271,7 +271,7 @@ end
 
 function fzf-ack-vim
   echo $argv | tr -d '\n' | safecopy -pboard find
-  ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
+  ack-lines-color $argv . | fzf --ansi > $tmpdir/fzf.result
   set result (fzf-process-result)
   if test (uname) = Darwin
     set setup_system_clipboard "| let @0=@*"
@@ -283,7 +283,7 @@ end
 if test (uname) = Darwin
   function fzf-ack-bbedit
     echo $argv | tr -d '\n' | safecopy -pboard find
-    ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
+    ack-lines-color $argv . | fzf --ansi > $tmpdir/fzf.result
     set result (fzf-process-result)
     and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
   end
@@ -292,7 +292,7 @@ end
 if test (uname) = Darwin
   function fzf-ack-mate
     echo $argv | tr -d '\n' | safecopy -pboard find
-    ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
+    ack-lines-color $argv . | fzf --ansi > $tmpdir/fzf.result
     set result (fzf-process-result)
     and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
   end
