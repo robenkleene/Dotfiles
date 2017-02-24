@@ -41,30 +41,6 @@ function fzf-process-result
   end
 end
 
-# Store in Variable
-
-# File
-function fzf-file
-  fzf > $tmpdir/fzf.result
-  fzf-process-result
-end
-
-# Directory
-function fzf-directory
-  find * -type d | fzf > $tmpdir/fzf.result
-  fzf-process-result
-end
-
-# Use from variable
-function fzf-result-vim
-  test -n "$FZFRESULT"
-  and vim-edit "$FZFRESULT"
-end
-function fzf-result-cd
-  test -n "$FZFRESULT"
-  and cd "$FZFRESULT"
-end
-
 # Directories
 
 # cd
