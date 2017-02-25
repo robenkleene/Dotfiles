@@ -31,3 +31,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 # Highlight partial matches
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==$color[cyan]=00}:${(s.:.)LS_COLORS}")';
+# This will get completion to use `$LS_COLORS` but it overrides highlighting
+# partial matches
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
