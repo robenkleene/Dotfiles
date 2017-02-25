@@ -23,8 +23,7 @@ zle_highlight+=(paste:none)
 # Enable vcs integration
 autoload -Uz vcs_info
 # Disable unused vcs
-zstyle ':vcs_info:*' disable \
-  bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
+zstyle ':vcs_info:*' disable bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
 # Style
 # Rebase & Merge Conflicts
 # Standard
@@ -39,6 +38,11 @@ zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
 # Prompt
 precmd() {
   vcs_info
+  if [ -d .git ]; then
+    prompt_path='.'
+  else
+    prompt_path=%1~
+  fi
 }
-PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}%1~ %f%# '
+PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}${prompt_path} %f%# '
 RPROMPT='${vcs_info_msg_0_}'
