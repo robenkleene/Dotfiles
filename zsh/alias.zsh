@@ -6,6 +6,13 @@ alias -g L='| less'
 alias -- -='cd -'
 alias ..='cd ..'
 
+if [ ! "$(uname)" = "Darwin" ]; then
+  alias ls='ls --color=auto'
+fi
+
+alias p='safepaste'
+alias c='safecopy'
+
 # Override
 
 # ag
