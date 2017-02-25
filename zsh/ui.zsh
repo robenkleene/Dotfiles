@@ -16,6 +16,9 @@ comment=238
 # `%f`: Reset Color:w
 # `%F{$comment}`: Color From Variable
 
+# Disable inverted syntax highlighting for pasted text
+zle_highlight+=(paste:none)
+
 # vcs
 # Enable vcs integration
 autoload -Uz vcs_info
