@@ -55,7 +55,7 @@ function emacs-kill-server() {
 
 # ssh
 function ssh-start() {
-  eval `ssh-agent -c`
+  eval `ssh-agent -s`
   ssh-add
 }
 
