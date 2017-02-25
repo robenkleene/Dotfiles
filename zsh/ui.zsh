@@ -42,5 +42,5 @@ zstyle ':vcs_info:*' actionformats \
 precmd () {
   vcs_info
 }
-PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}%3~ %f%# '
+PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}%1~ %f%# '
 RPROMPT='${vcs_info_msg_0_}'
