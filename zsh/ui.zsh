@@ -33,13 +33,11 @@ zstyle ':vcs_info:*' disable \
 # `%c`: Unstaged changes
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' formats \
-  '%F{cyan}%b%f%u%c'
-zstyle ':vcs_info:*' actionformats \
-  '%F{cyan}%b%f%u%c %F{red}(%a)%f'
+zstyle ':vcs_info:*' formats '%F{cyan}%r %F{green}%b%f%u%c'
+zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
 
 # Prompt
-precmd () {
+precmd() {
   vcs_info
 }
 PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}%1~ %f%# '
