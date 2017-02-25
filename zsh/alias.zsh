@@ -8,6 +8,8 @@ alias ..='cd ..'
 
 if [ ! "$(uname)" = "Darwin" ]; then
   alias ls='ls --color=auto'
+else
+  alias ls='gls --color=auto'
 fi
 
 alias p='safepaste'
