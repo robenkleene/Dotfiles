@@ -3,7 +3,7 @@
 " rg
 let $FZF_DEFAULT_COMMAND= 'rg --hidden --files -g ""'
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 
 nnoremap <leader>A :tabnew<CR>:Ag 
 
