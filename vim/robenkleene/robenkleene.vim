@@ -55,7 +55,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
-Plug 'junegunn/fzf', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
