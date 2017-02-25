@@ -11,14 +11,11 @@ alias rg 'rg --smart-case --line-number'
 # no_mouse: true
 alias mitmproxy 'mitmproxy --no-mouse --palette-transparent'
 
-# This doesn't work because in fish `ls` is a override function. There may be
-# a clean way to override the function but it's dangerous and against the fish
-# way of reduced configuration.
-# if test (uname) = Darwin
-#   alias ls 'ls --color=auto'
-# else
-#   alias ls 'gls --color=auto'
-# end
+if test (uname) = Darwin
+  alias ls 'gls --color=auto'
+else
+  alias ls 'ls --color=auto'
+end
 
 # Shortcut
 
