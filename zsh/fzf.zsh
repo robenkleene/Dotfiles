@@ -10,12 +10,14 @@ function ack-lines-no-color() {
 
 export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
-
 # Directories
 
 # cd
 function fzf-directory-cd() {
-  cd $(find * -type d | fzf)
+  local $directory=$(find * -type d | fzf)
+  if [ -n $filename]; then
+    cd $directory
+  fi
 }
 
 # history
@@ -107,8 +109,11 @@ function fzf-file-path() {
 function fzf-documentation-vim() {
   cd ~/Documentation/
   local filename=$(find * -type f -not -path '*/\.*' | fzf)
-  cd -
-  vim-edit "$HOME/Documentation/$filename"
+  if [ -n $filename]; then
+    cd -
+  else
+    vim-edit "$HOME/Documentation/$filename"
+  fi
 }
 
 # Lines

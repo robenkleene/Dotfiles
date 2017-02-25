@@ -14,6 +14,11 @@ HISTSIZE=10000
 # Number of history entries saved to disk
 SAVEHIST=10000
 
+# Don't beep on failed completion
+setopt nolistbeep
+# Just don't beep period
+# setopt nobeep
+
 # Completion
 # Enable Completion
 autoload -Uz compinit
@@ -23,8 +28,6 @@ compinit
 # Use a menu when expanding globs
 # Can't figure out how to make this work with recursive globs
 # setopt globcomplete
-# Don't beep on tab
-setopt nolistbeep
 # Highlight tab match
 zstyle ':completion:*' menu select
 # Make completion case and hyphen insensitive
