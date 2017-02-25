@@ -18,4 +18,5 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 # Syntax highlighting must be sourced last
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug 'zsh-users/zsh-history-substring-search'
 zplug load

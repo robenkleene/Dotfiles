@@ -1,3 +1,8 @@
+# Don't use `^s` `^q` for freeze and resume
+unsetopt flowcontrol
+
+# Don't exit the shell with `^d`
+setopt ignore_eof
 # Use `emacs` bindings
 bindkey -e
 
