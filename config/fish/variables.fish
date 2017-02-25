@@ -1,3 +1,5 @@
+set CDPATH ~ ~/Development/ ~/Documentation/
+
 # Greeting
 set --erase fish_greeting
 
