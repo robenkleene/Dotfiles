@@ -23,6 +23,8 @@ end
 # `fzf` should be installed at `~/.fzf/`, using the command 
 # `~/.fzf/install --bin`, which avoids installing the completions automatically
 source ~/.fzf/shell/key-bindings.fish
+fzf_key_bindings
+set FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 function fish_user_key_bindings
   # Better binding but I can't get this to work
