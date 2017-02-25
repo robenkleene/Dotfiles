@@ -36,7 +36,7 @@ zstyle ':vcs_info:*' formats '%F{cyan}%r %F{green}%b%f%u%c'
 zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
 
 # Prompt
-precmd() {
+update_prompt() {
   vcs_info
   if [ -d .git ]; then
     prompt_path='.'
@@ -44,5 +44,12 @@ precmd() {
     prompt_path=%1~
   fi
 }
+precmd() {
+  update_prompt
+}
+chpwd() {
+  update_prompt
+}
+
 PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}${prompt_path} %f%# '
 RPROMPT='${vcs_info_msg_0_}'
