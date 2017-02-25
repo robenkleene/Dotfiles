@@ -12,14 +12,6 @@ export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
 # Directories
 
-# cd
-function fzf-directory-cd() {
-  local $directory=$(find * -type d | fzf)
-  if [ -n $filename]; then
-    cd $directory
-  fi
-}
-
 # history
 function fzf-history-cd() {
   cd $(fasd -l | fzf)

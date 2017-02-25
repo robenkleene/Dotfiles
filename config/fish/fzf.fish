@@ -43,13 +43,6 @@ end
 
 # Directories
 
-# cd
-function fzf-directory-cd
-  find * -type d | fzf  > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and cd "$result"
-end
-
 # history
 function fzf-history-cd
   fasd -l | fzf  > $tmpdir/fzf.result

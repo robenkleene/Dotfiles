@@ -65,11 +65,8 @@ alias vsr='vim-server-start -c "RestoreSession"'
 
 # fzf
 alias f='fzf-file-vim'
-alias d='fzf-directory-cd'
-alias fcd='fzf-directory-cd'
 alias fh='fzf-history-cd'
 alias fa='fzf-ack-vim' 
-alias fzc='fzf-directory-cd'
 alias fze='fzf-file-emacs'
 alias fzp='fzf-file-path'
 alias fzs='fzf-snippet-copy'
