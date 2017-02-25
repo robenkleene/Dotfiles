@@ -1,5 +1,3 @@
-cdpath=(~/Development/ ~/Documentation/)
-
 # Color in `ls`
 export CLICOLOR=1
 # Required for abbreviations
