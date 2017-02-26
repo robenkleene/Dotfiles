@@ -34,10 +34,24 @@ function fzf-file-emacs() {
   emacs-edit $(fzf)
 }
 
-# # vim
+# vim
 function fzf-file-vim() {
-  vim-edit $(fzf)
+  local fzf_cmd="$FZF_DEFAULT_COMMAND"
+  setopt localoptions pipefail 2> /dev/null
+  local result="$(eval "$fzf_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  if [[ -z "$result" ]]; then
+    return 0
+  fi
+  local result_cmd="vim-edit \"$result\""
+  eval $result_cmd
+  local ret=$?
+  if [ $? -eq 0 ]; then
+    # Add to history
+    print -s $result_cmd
+  fi
+  return $ret
 }
+
 function fzf-file-vim-server-edit() {
   vim-server-edit $(fzf)
 }
