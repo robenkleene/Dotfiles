@@ -13,6 +13,11 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 # Number of history entries saved to disk
 SAVEHIST=10000
+# Reduce dupes
+# setopt hist_expire_dups_first
+# setopt hist_ignore_dups
+# Above options are no-op with the below
+setopt hist_ignore_all_dups
 
 # Don't beep on failed completion
 setopt nolistbeep
