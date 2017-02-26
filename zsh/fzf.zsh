@@ -101,10 +101,10 @@ function fzf-file-path() {
 function fzf-documentation-vim() {
   cd ~/Documentation/
   local filename=$(find * -type f -not -path '*/\.*' | fzf)
-  if [ -n $filename]; then
-    cd -
-  else
+  if [ -n $filename ]; then
     vim-edit "$HOME/Documentation/$filename"
+  else
+    cd -
   fi
 }
 
