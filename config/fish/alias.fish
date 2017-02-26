@@ -63,7 +63,6 @@ alias vsr 'vim-server-start -c "RestoreSession"'
 
 # fzf
 alias f 'fzf-file-vim'
-alias s 'fzf-tmux-window'
 alias fa 'fzf-ack-vim' 
 alias fzp 'fzf-file-path'
 alias fzs 'fzf-snippet-copy'
@@ -71,7 +70,6 @@ alias fzse 'fzf-snippet-vim'
 alias fzb 'fzf-bookmark-cd'
 alias fzd 'fzf-documentation-vim'
 alias fzrd 'fzf-recent-cd'
-alias fzw 'fzf-tmux-window'
 if test (uname) = Darwin
   alias ox 'fzf-project-xcode'
   alias fzab 'fzf-ack-bbedit'

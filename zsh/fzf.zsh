@@ -54,15 +54,6 @@ function fzf-file-vim() {
   _robenkleene_fzf_inline vim-edit
 }
 
-# tmux
-function fzf-tmux-window() {
-  if [ -z "$TMUX" ]; then
-    return
-  fi
-  local window=$(tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}')
-  tmux select-window -t ":$window"
-} 
-
 # reveal
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-reveal() {

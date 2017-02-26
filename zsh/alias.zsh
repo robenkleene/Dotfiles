@@ -47,7 +47,6 @@ alias ts='tig status +3'
 # tmux
 alias tmls='tmux ls'
 alias tnd='tmux-name-directory'
-alias s='fzf-tmux-window'
 
 # emacs
 alias ec='emacsclient -t'

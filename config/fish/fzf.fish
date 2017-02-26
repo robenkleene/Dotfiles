@@ -75,16 +75,6 @@ function fzf-file-vim
   and vim-edit "$result"
 end
 
-# tmux
-function fzf-tmux-window
-  if test -z "$TMUX"
-    return
-  end
-   tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}' > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and tmux select-window -t ":$result"
-end
-
 
 # reveal
 if test (uname) = Darwin
