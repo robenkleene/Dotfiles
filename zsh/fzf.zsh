@@ -1,5 +1,7 @@
 export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
+# Private
+
 function _robenkleene_ack_lines() {
   rg --no-heading $@
 }
@@ -32,17 +34,17 @@ function _robenkleene_fzf_inline() {
 
 # History
 function fzf-recent-cd() {
-  cd $(fasd -l | fzf)
+  _robenkleene_fzf_inline cd "fasd -ld"
 }
 
 function fzf-bookmark-cd() {
   # Bookmarks
-  local RKBOOKMARKS=(~/Dotfiles/)
+  local bookmarks=(~/Development/Dotfiles/)
   # Documentation
-  RKBOOKMARKS+=(~/Documentation/ ~/Documentation/development-references/)
+  bookmarks+=(~/Documentation/ ~/Documentation/development-references/)
   # Development
-  RKBOOKMARKS+=(~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/)
-  cd $(printf '%s\n' $RKBOOKMARKS | fzf)
+  bookmarks+=(~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/)
+  _robenkleene_fzf_inline cd "printf '%s\n' $bookmarks"
 }
 
 # Files

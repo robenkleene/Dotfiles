@@ -52,13 +52,13 @@ end
 
 function fzf-bookmark-cd
   # Bookmarks
-  set RKBOOKMARKS ~/Dotfiles/ 
+  set -l bookmarks ~/Development/Dotfiles/ 
   # Documentation
-  set RKBOOKMARKS $RKBOOKMARKS ~/Documentation/ ~/Documentation/development-references/
+  set bookmarks $bookmarks ~/Documentation/ ~/Documentation/development-references/
   # Development
-  set RKBOOKMARKS $RKBOOKMARKS ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/
+  set bookmarks $bookmarks ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/
 
-  printf '%s\n' $RKBOOKMARKS | fzf > $tmpdir/fzf.result
+  printf '%s\n' $bookmarks | fzf > $tmpdir/fzf.result
   set result (fzf-process-result)
   and cd "$result"
 end
