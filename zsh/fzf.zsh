@@ -1,13 +1,13 @@
 export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
-function ack-lines() {
+function _robenkleene_ack_lines() {
   rg --no-heading $@
 }
-function ack-lines-color() {
-  ack-lines --color=always $@
+function _robenkleene_ack_lines_color() {
+  _robenkleene_ack_lines --color=always $@
 }
-function ack-lines-no-color() {
-  ack-lines --color=never $@
+function _robenkleene_ack_lines_no_color() {
+  _robenkleene_ack_lines --color=never $@
 }
 
 function _robenkleene_fzf_inline() {
@@ -100,7 +100,7 @@ function fzf-documentation-vim() {
 
 # vim
 function fzf-line-vim() {
-  local line=$(ack-lines-no-color "[a-zA-Z0-9]+" . | fzf --ansi)
+  local line=$(_robenkleene_ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi)
   echo $line | vim -c "GrepBuffer" - 
 }
 
@@ -143,5 +143,5 @@ function fzf-ack-vim() {
   if [ "$(uname)" = "Darwin" ]; then
     setup_system_clipboard="| let @0=@*"
   fi
-  echo $(ack-lines-color $@ | fzf --ansi) | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+  echo $(_robenkleene_ack_lines_color $@ | fzf --ansi) | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
 }
