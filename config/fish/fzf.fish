@@ -44,7 +44,7 @@ end
 # Directories
 
 # history
-function fzf-history-cd
+function fzf-recent-cd
   fasd -l | fzf  > $tmpdir/fzf.result
   set result (fzf-process-result)
   and cd "$result"

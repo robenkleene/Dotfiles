@@ -65,7 +65,6 @@ alias vsr='vim-server-start -c "RestoreSession"'
 
 # fzf
 alias f='fzf-file-vim'
-alias fh='fzf-history-cd'
 alias fa='fzf-ack-vim' 
 alias fze='fzf-file-emacs'
 alias fzp='fzf-file-path'
@@ -73,6 +72,7 @@ alias fzs='fzf-snippet-copy'
 alias fzt='fzf-file-tig'
 alias fzb='fzf-bookmark-cd'
 alias fzd='fzf-documentation-vim'
+alias fzrd='fzf-recent-cd'
 alias fzvse='fzf-file-vim-server-edit'
 alias fzvss='fzf-file-vim-server-start'
 if [ "$(uname)" = "Darwin" ]; then

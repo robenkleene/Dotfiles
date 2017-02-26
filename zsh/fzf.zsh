@@ -12,8 +12,8 @@ export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
 # Directories
 
-# history
-function fzf-history-cd() {
+# History
+function fzf-recent-cd() {
   cd $(fasd -l | fzf)
 }
 
