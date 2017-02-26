@@ -65,14 +65,6 @@ end
 
 # Files
 
-# emacs
-function fzf-file-emacs
-  # Using `xargs` causes tmux `pane_current_path` to fail
-  # fzf | tr '\n' '\0' | xargs -0 -o emacs
-  fzf > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and emacs-edit "$result"
-end
 
 # vim
 function fzf-file-vim
@@ -93,19 +85,6 @@ function fzf-tmux-window
   and tmux select-window -t ":$result"
 end
 
-# mate
-if test (uname) = Darwin
-  function fzf-file-mate
-    fzf | tr '\n' '\0' | xargs -0 mate
-  end
-end
-
-# bbedit
-if test (uname) = Darwin
-  function fzf-file-bbedit
-    fzf | tr '\n' '\0' | xargs -0 bbedit
-  end
-end
 
 # reveal
 if test (uname) = Darwin

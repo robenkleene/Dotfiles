@@ -1,3 +1,5 @@
+export FZF_DEFAULT_COMMAND='rg --files -g ""'
+
 function ack-lines() {
   rg --no-heading $@
 }
@@ -7,8 +9,6 @@ function ack-lines-color() {
 function ack-lines-no-color() {
   ack-lines --color=never $@
 }
-
-export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
 # Directories
 
@@ -28,11 +28,6 @@ function fzf-bookmark-cd() {
 }
 
 # Files
-
-# emacs
-function fzf-file-emacs() {
-  emacs-edit $(fzf)
-}
 
 # vim
 function fzf-file-vim() {
@@ -61,20 +56,6 @@ function fzf-tmux-window() {
   tmux select-window -t ":$window"
 } 
 
-# mate
-if [ "$(uname)" = "Darwin" ]; then
-  function fzf-file-mate() {
-    mate $(fzf)
-  }
-fi
-
-# # bbedit
-if [ "$(uname)" = "Darwin" ]; then
-  function fzf-file-bbedit() {
-    bbedit $(fzf)
-  }
-fi
-
 # reveal
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-reveal() {
@@ -93,7 +74,7 @@ fi
 function fzf-file-cd() {
   cd $(dirname $(fzf))
 }
-  
+
 # path
 function fzf-file-path() {
   fzf | tr -d '\n' | tee /dev/tty | safecopy
