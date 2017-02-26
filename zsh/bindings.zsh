@@ -20,3 +20,8 @@ bindkey "^[^?" bash-backward-kill-word
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# Menu Select
+# Load the `menuselect` map first
+zmodload zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete
