@@ -10,6 +10,24 @@ function ack-lines-no-color() {
   ack-lines --color=never $@
 }
 
+function _robenkleene_fzf_inline() {
+  local result_cmd=$1
+  local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
+  setopt localoptions pipefail 2> /dev/null
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  if [[ -z "$result" ]]; then
+    return 0
+  fi
+  local final_cmd="$result_cmd \"$result\""
+  eval $final_cmd
+  local ret=$?
+  if [ $? -eq 0 ]; then
+    # Add to history
+    print -s $final_cmd
+  fi
+  return $ret
+}
+
 # Directories
 
 # History
@@ -31,20 +49,7 @@ function fzf-bookmark-cd() {
 
 # vim
 function fzf-file-vim() {
-  local fzf_cmd="$FZF_DEFAULT_COMMAND"
-  setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$fzf_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
-  if [[ -z "$result" ]]; then
-    return 0
-  fi
-  local result_cmd="vim-edit \"$result\""
-  eval $result_cmd
-  local ret=$?
-  if [ $? -eq 0 ]; then
-    # Add to history
-    print -s $result_cmd
-  fi
-  return $ret
+  _robenkleene_fzf_inline vim-edit
 }
 
 # tmux
