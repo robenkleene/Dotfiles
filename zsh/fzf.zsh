@@ -107,15 +107,22 @@ function fzf-line-vim() {
 # copy
 function fzf-snippet-copy() {
   cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
+  local result=$(_robenkleene_fzf_inline_result)
+  if [[ -n $result ]]; then
+    echo $result | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
+  fi
   cd -
 }
 
 # vim
 function fzf-snippet-vim() {
   cd ~/Development/Snippets/
-  vim-edit $(find * -type f | fzf)
-  cd -
+  local result=$(_robenkleene_fzf_inline_result)
+  if [[ -n $result ]]; then
+    vim-edit $result
+  else
+    cd -
+  fi
 }
 
 # Project
