@@ -83,13 +83,6 @@ function fzf-file-vim
   and vim-edit "$result"
 end
 
-# tig
-function fzf-file-tig
-  fzf > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and tig "$result"
-end
-
 # tmux
 function fzf-tmux-window
   if test -z "$TMUX"

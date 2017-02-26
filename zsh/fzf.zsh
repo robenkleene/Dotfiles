@@ -52,11 +52,6 @@ function fzf-file-vim() {
   return $ret
 }
 
-# tig
-function fzf-file-tig() {
-  tig $(fzf)
-}
-
 # tmux
 function fzf-tmux-window() {
   if [ -z "$TMUX" ]; then
