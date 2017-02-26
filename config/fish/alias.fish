@@ -73,8 +73,6 @@ alias fzt 'fzf-file-tig'
 alias fzb 'fzf-bookmark-cd'
 alias fzd 'fzf-documentation-vim'
 alias fzrd 'fzf-recent-cd'
-alias fzvse 'fzf-file-vim-server-edit'
-alias fzvss 'fzf-file-vim-server-start'
 alias fzw 'fzf-tmux-window'
 if test (uname) = Darwin
   alias ox 'fzf-project-xcode'

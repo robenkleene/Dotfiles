@@ -52,13 +52,6 @@ function fzf-file-vim() {
   return $ret
 }
 
-function fzf-file-vim-server-edit() {
-  vim-server-edit $(fzf)
-}
-function fzf-file-vim-server-start() {
-  vim-server-start $(result)
-}
-
 # tig
 function fzf-file-tig() {
   tig $(fzf)
