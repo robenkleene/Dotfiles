@@ -36,6 +36,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-rsi'
 " Colors {{{2
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color'
