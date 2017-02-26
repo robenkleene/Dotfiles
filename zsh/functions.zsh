@@ -1,3 +1,17 @@
+# Private
+
+function _robenkleene_ack_lines() {
+  rg --no-heading --smart-case --line-number --with-filename $@
+}
+function _robenkleene_ack_lines_color() {
+  _robenkleene_ack_lines --color=always $@
+}
+function _robenkleene_ack_lines_no_color() {
+  _robenkleene_ack_lines --color=never $@
+}
+
+# Commands
+
 # ranger
 function ranger-cd() {
   local tempfile='/tmp/chosendir'
@@ -36,7 +50,7 @@ function vim-pipe-grep() {
     if [ "$(uname)" = "Darwin" ]; then
       setup_system_clipboard="| let @0=@*"
     fi
-    rg --smart-case --line-number --with-filename $@ | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
+    _robenkleene_ack_lines $@ | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
   else
     vim-edit -c "GrepBuffer" -
   fi

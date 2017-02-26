@@ -2,16 +2,6 @@ export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
 # Private
 
-function _robenkleene_ack_lines() {
-  rg --no-heading $@
-}
-function _robenkleene_ack_lines_color() {
-  _robenkleene_ack_lines --color=always $@
-}
-function _robenkleene_ack_lines_no_color() {
-  _robenkleene_ack_lines --color=never $@
-}
-
 function _robenkleene_fzf_inline() {
   local result_cmd=$1
   local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
@@ -98,8 +88,10 @@ function fzf-documentation-vim() {
 
 # vim
 function fzf-line-vim() {
-  local line=$(_robenkleene_ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi)
-  echo $line | vim -c "GrepBuffer" - 
+  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m )
+  if [[ -n $result ]]; then
+    echo $result | vim-edit -c "GrepBuffer" -
+  fi
 }
 
 # Snippets
@@ -128,6 +120,7 @@ function fzf-snippet-vim() {
 # Project
 
 # Xcode
+# Project
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-project-xcode() {
     setopt localoptions pipefail 2> /dev/null
@@ -138,7 +131,7 @@ if [ "$(uname)" = "Darwin" ]; then
       | xargs -0 open
   }
 fi
-
+# File
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
@@ -156,5 +149,8 @@ function fzf-ack-vim() {
   if [ "$(uname)" = "Darwin" ]; then
     setup_system_clipboard="| let @0=@*"
   fi
-  echo $(_robenkleene_ack_lines_color $@ | fzf --ansi) | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+  local result=$(_robenkleene_ack_lines_color $@ | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m )
+  if [[ -n $result ]]; then
+    echo $result | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
+  fi
 }
