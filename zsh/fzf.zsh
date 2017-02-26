@@ -130,14 +130,22 @@ function fzf-snippet-vim() {
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-project-xcode() {
-    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
+    setopt localoptions pipefail 2> /dev/null
+    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
+      | grep -vE "\/Carthage\/" \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m \
+      | tr '\n' '\0' \
+      | xargs -0 open
   }
 fi
+
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
-    eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
-    # open -a "Xcode" "$(eval $ack_search_xcode | fzf  --select-1)
+    eval $ack_search_xcode \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m \
+      | tr '\n' '\0' \
+      | xargs -0 open -a "Xcode"
   }
 fi
 
