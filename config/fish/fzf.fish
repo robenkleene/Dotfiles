@@ -90,13 +90,6 @@ if test (uname) = Darwin
   end
 end
 
-# cd
-function fzf-file-cd
-  fzf > $tmpdir/fzf.result
-  set result (dirname (fzf-process-result))
-  and cd "$result"
-end
-
 # path
 function fzf-file-path
   fzf | tr -d '\n' | tee /dev/tty | safecopy

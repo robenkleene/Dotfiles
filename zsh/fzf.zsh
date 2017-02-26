@@ -30,6 +30,15 @@ function _robenkleene_fzf_inline() {
   return $ret
 }
 
+function _robenkleene_fzf_inline_result() {
+  local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
+  setopt localoptions pipefail 2> /dev/null
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  local ret=$?
+  echo $result
+  return $ret
+}
+
 # Directories
 
 # History
@@ -57,33 +66,29 @@ function fzf-file-vim() {
 # reveal
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-reveal() {
-    open -R $(fzf)
+    _robenkleene_fzf_inline "open -R"
   }
 fi
 
 # open
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-open() {
-    open $(fzf)
+    _robenkleene_fzf_inline open
   }
 fi
 
-# cd
-function fzf-file-cd() {
-  cd $(dirname $(fzf))
-}
-
 # path
 function fzf-file-path() {
-  fzf | tr -d '\n' | tee /dev/tty | safecopy
+  local result=$(_robenkleene_fzf_inline_result)
+  echo $result | tr -d '\n' | tee /dev/tty | safecopy
 }
 
 # Documentation
 function fzf-documentation-vim() {
   cd ~/Documentation/
-  local filename=$(find * -type f -not -path '*/\.*' | fzf)
-  if [ -n $filename ]; then
-    vim-edit "$HOME/Documentation/$filename"
+  local result=$(_robenkleene_fzf_inline_result)
+  if [[ -n $result ]]; then
+    vim-edit "$result"
   else
     cd -
   fi
