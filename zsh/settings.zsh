@@ -32,6 +32,10 @@ compinit
 zstyle ':completion:*' menu select
 # Make completion case and hyphen insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+# Cache completion by default at `~/.zcompcache`
+# These don't appear to do anything
+# zstyle ':completion::complete:*' use-cache true
+# zstyle ':completion::complete:*' cache-path $HOME/.zcompcache
 # Highlight partial matches
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==$color[cyan]=00}:${(s.:.)LS_COLORS}")';
 # This will get completion to use `$LS_COLORS` but it overrides highlighting
