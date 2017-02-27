@@ -6,23 +6,23 @@ INSTALL_DIRECTORY_NAME="Dotfiles" # The name of the directory to install from.
 DIRECTORY=${PWD}
 DIRECTORY_NAME=${PWD##*/}
 if [ ! $DIRECTORY_NAME == $INSTALL_DIRECTORY_NAME ]; then
-	echo "ERROR: This directory \"$DIRECTORY_NAME\" doesn't match $INSTALL_DIRECTORY_NAME."
-	echo "This script only runs from the $INSTALL_DIRECTORY_NAME directory."
-	exit 1
+  echo "ERROR: This directory \"$DIRECTORY_NAME\" doesn't match $INSTALL_DIRECTORY_NAME."
+  echo "This script only runs from the $INSTALL_DIRECTORY_NAME directory."
+  exit 1
 fi
 
 function MakeSymlink {
- 	DESTINATION=~/.$thisFILE
-	if [ -f $DESTINATION ] || [ -d $DESTINATION ]; then
-		rm $DESTINATION
-	else
-		echo "Skipped $DESTINATION because it does not exist."
-	fi
+  DESTINATION=~/.$thisFILE
+  if [ -f $DESTINATION ] || [ -d $DESTINATION ]; then
+    rm $DESTINATION
+  else
+    echo "Skipped $DESTINATION because it does not exist."
+  fi
 }
 
 for thisFILE in *; do 
-	# Exclude shell scripts
- 	if [[ ! $thisFILE =~ ".sh" ]]; then
-		MakeSymlink $thisFILE
- 	fi
+  # Exclude shell scripts
+  if [[ ! $thisFILE =~ ".sh" ]]; then
+    MakeSymlink $thisFILE
+  fi
 done
