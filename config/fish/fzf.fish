@@ -3,11 +3,6 @@
 # rg
 set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 
-# `resolvedir` is an array whose first item is either `$TMPDIR` or `/tmp` if
-# that's nil
-set resolvedir $TMPDIR /tmp
-set tmpdir $resolvedir[1]
-
 # Private
 
 function _robenkleene_ack_lines
@@ -61,20 +56,6 @@ function _robenkleene_fzf_inline_result
   end
 end
 
-
-
-function fzf-process-result
-  if [ (cat $tmpdir/fzf.result | wc -l) -gt 0 ]
-    set -g FZFRESULT (cat $tmpdir/fzf.result)
-    and echo $FZFRESULT
-    rm -f $tmpdir/fzf.result
-    return 0
-  else
-    set -e FZFRESULT
-    rm -f $tmpdir/fzf.result
-    return 1
-  end
-end
 
 # Directories
 
