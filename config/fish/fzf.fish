@@ -38,7 +38,7 @@ function _robenkleene_fzf_inline
   end
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS"
     eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
     if [ "$result" ]
       set final_cmd $result_cmd $result
@@ -55,7 +55,7 @@ function _robenkleene_fzf_inline_result
   end
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS"
     eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
     echo $result
   end
@@ -117,14 +117,14 @@ end
 
 # path
 function fzf-file-path
-  _robenkleene_fzf_inline_result | read -l result; 
+  _robenkleene_fzf_inline_result | read -l result
   and echo $result | tr -d '\n' | tee /dev/tty | safecopy
 end
 
 # Documentation
 function fzf-documentation-less
   cd ~/Documentation/
-  _robenkleene_fzf_inline_result | read -l result; 
+  _robenkleene_fzf_inline_result | read -l result
   if [ $result ]
     cat "$result" | less
   end
@@ -132,7 +132,7 @@ function fzf-documentation-less
 end
 function fzf-documentation-vim
   cd ~/Documentation/
-  _robenkleene_fzf_inline_result | read -l result; 
+  _robenkleene_fzf_inline_result | read -l result
   if [ $result ]
     vim-edit "$result"
   else
@@ -144,9 +144,14 @@ end
 
 # vim
 function fzf-line-vim
-  _robenkleene_ack_lines_no_color "[a-zA-Z0-9]+" . | fzf --ansi > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and echo $result | vim -c "GrepBuffer" - 
+  set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+  begin
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi --reverse $FZF_DEFAULT_OPTS"
+    eval "_robenkleene_ack_lines_no_color \"[a-zA-Z0-9]+\" . | "(__fzfcmd)" +m" | read -l result
+    if [ "$result" ]
+      echo $result | vim -c "GrepBuffer" -   
+    end
+  end
 end
 
 # Snippets
@@ -200,21 +205,3 @@ function fzf-ack-vim
   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
 end
 
-
-if test (uname) = Darwin
-  function fzf-ack-bbedit
-    echo $argv | tr -d '\n' | safecopy -pboard find
-    _robenkleene_ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
-    set result (fzf-process-result)
-    and echo $result | awk -F  ":" '{ print "+"$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "bbedit {}"
-  end
-end
-
-if test (uname) = Darwin
-  function fzf-ack-mate
-    echo $argv | tr -d '\n' | safecopy -pboard find
-    _robenkleene_ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
-    set result (fzf-process-result)
-    and echo $result | awk -F  ":" '{ print "--line="$2 " " $1 }' | tr '\n' '\0' | xargs -0 -I '{}' sh -c "mate {}"
-  end
-end
