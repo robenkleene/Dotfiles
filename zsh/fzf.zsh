@@ -6,7 +6,7 @@ function _robenkleene_fzf_inline() {
   local result_cmd=$1
   local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   if [[ -z "$result" ]]; then
     return 0
   fi
@@ -23,7 +23,7 @@ function _robenkleene_fzf_inline() {
 function _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   local ret=$?
   echo $result
   return $ret
