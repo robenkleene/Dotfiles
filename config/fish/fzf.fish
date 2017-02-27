@@ -97,10 +97,19 @@ if test (uname) = Darwin
 end
 
 # Path
+function fzf-file-cd
+  _robenkleene_fzf_inline_result | read -l result
+  if [ $result ]
+    cd (dirname $result)
+  end
+end
 function fzf-file-path
   _robenkleene_fzf_inline_result | read -l result
-  and echo $result | tr -d '\n' | tee /dev/tty | safecopy
+  if [ $result ]
+    and echo $result | tr -d '\n' | tee /dev/tty | safecopy
+  end
 end
+
 
 # Documentation
 function fzf-documentation-less

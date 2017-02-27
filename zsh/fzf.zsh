@@ -68,9 +68,17 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # Path
+function fzf-file-cd() {
+  local result=$(_robenkleene_fzf_inline_result)
+  if [[ -n $result ]]; then
+    cd $(dirname $result)
+  fi
+}
 function fzf-file-path() {
   local result=$(_robenkleene_fzf_inline_result)
-  echo $result | tr -d '\n' | tee /dev/tty | safecopy
+  if [[ -n $result ]]; then
+    echo $result | tr -d '\n' | tee /dev/tty | safecopy
+  fi
 }
 
 # Documentation
