@@ -38,7 +38,7 @@ zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
 # Prompt
 update_prompt() {
   vcs_info
-  if [ -d .git ]; then
+  if [[ -a .git ]]; then
     prompt_path='.'
   else
     prompt_path=%1~
