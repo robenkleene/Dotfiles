@@ -1,4 +1,4 @@
-function delete-current-history-search
+function _robenkleene_delete_current_history_search
   if commandline --search-mode
     echo -e "\n"
     history --delete (commandline)
@@ -6,7 +6,7 @@ function delete-current-history-search
   end
 end
 
-function edit_cmd --description 'Input command in external editor'
+function _robenkleeen_edit_command --description 'Input command in external editor'
   set tempfile (mktemp /tmp/fish.cmd.XXXXXXXX)
   and test -n "$tempfile"
   and set cursorposition (commandline -C)
@@ -30,9 +30,9 @@ set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 
 function fish_user_key_bindings
   # Better binding but I can't get this to work
-  bind \cx\ce 'edit_cmd'
-  # bind \ee 'edit_cmd'
-  bind \eD delete-current-history-search
+  bind \cx\ce '_robenkleeen_edit_command'
+  # bind \ee '_robenkleeen_edit_command'
+  bind \eD _robenkleene_delete_current_history_search
   bind \ct fzf-file-widget
   bind \cr fzf-history-widget
   bind \ec fzf-cd-widget

@@ -1,8 +1,5 @@
 # Emacs
 function emacs-edit
-  # Emacs
-  # emacs $argv
-  # Emacsclient
   emacsclient -t $argv
 end
 function magit
@@ -305,11 +302,3 @@ function ssh-start
   eval (ssh-agent -c)
   ssh-add
 end
-
-# Web Console
-
-# wcsearch
-# function sea
-#   wcsearch $argv
-# end
-

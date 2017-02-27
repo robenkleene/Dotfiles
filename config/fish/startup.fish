@@ -2,11 +2,11 @@
 
 # Emacs
 # Test if server is running
-function is-emacs-server-running
+function _robenkleene_is_emacs_server_running
   ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep
 end
 # Display a greeting message if the server is running
-if is-emacs-server-running
+if _robenkleene_is_emacs_server_running
   echo Emacs server is running
 else
 end
