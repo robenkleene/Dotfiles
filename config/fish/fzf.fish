@@ -1,3 +1,8 @@
+# ag
+# set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
+# rg
+set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
+
 # `resolvedir` is an array whose first item is either `$TMPDIR` or `/tmp` if
 # that's nil
 set resolvedir $TMPDIR /tmp
@@ -21,11 +26,6 @@ function _robenkleene_ack_lines_no_color
   # rg
   _robenkleene_ack_lines --color=never $argv
 end
-
-# ag
-# set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore ".git" -g ""'
-# rg
-set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 
 # Helper
 function fzf-process-result
