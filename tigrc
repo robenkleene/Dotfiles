@@ -65,6 +65,8 @@ bind diff [c :?^[+|-][^+-]
 # Vim
 # Below doesn't work, looking for where of canceling out of command line prompt
 # bind generic <Ctrl-G> prompt
+# This is nice but isn't supported anywhere else
+bind generic - none
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down
 bind generic b none
