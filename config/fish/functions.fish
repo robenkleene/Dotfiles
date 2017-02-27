@@ -87,7 +87,7 @@ function vim-server-edit
 end
 
 # tmux
-function tmux-default-command
+function _robenkleene_tmux_default_command
   if test (uname) = Darwin
     tmux set-option default-command "reattach-to-user-namespace -l $argv[1]"
   else
@@ -95,10 +95,10 @@ function tmux-default-command
   end
 end
 function tmux-default-fish
-  tmux-default-command (which fish)
+  _robenkleene_tmux_default_command (which fish)
 end
 function tmux-default-zsh
-  tmux-default-command (which zsh)
+  _robenkleene_tmux_default_command (which zsh)
 end
 function tmux-name-directory
   tmux rename-window (basename $PWD)
@@ -192,7 +192,7 @@ function git-push-force
   git push --force-with-lease
 end
 # Git Stash
-function git-stash-command
+function _robenkleene_git_stash_command
   set cmd[1] "git stash $argv[1]"
   set -e argv[1]
   if [ $argv[1] ]
@@ -203,19 +203,19 @@ function git-stash-command
   eval $cmd
 end
 function git-stash-pop
-  git-stash-command "pop" $argv
+  _robenkleene_git_stash_command "pop" $argv
 end
 function git-stash-apply
-  git-stash-command "apply" $argv
+  _robenkleene_git_stash_command "apply" $argv
 end
 function git-stash-show
-  git-stash-command "show" $argv
+  _robenkleene_git_stash_command "show" $argv
 end
 function git-stash-diff
-  git-stash-command "show --patch" $argv
+  _robenkleene_git_stash_command "show --patch" $argv
 end
 function git-stash-drop
-  git-stash-command "drop" $argv
+  _robenkleene_git_stash_command "drop" $argv
 end
 function git-stash-list
   git stash list

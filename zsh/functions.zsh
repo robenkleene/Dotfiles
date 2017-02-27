@@ -99,7 +99,7 @@ function vim-server-edit() {
 }
 
 # tmux
-function tmux-default-command() {
+function _robenkleene_tmux_default_command() {
   if [ "$(uname)" = "Darwin" ]; then
     tmux set-option default-command "reattach-to-user-namespace -l $1"
   else
@@ -107,10 +107,10 @@ function tmux-default-command() {
   fi
 }
 function tmux-default-fish() {
-  tmux-default-command $(which fish)
+  _robenkleene_tmux_default_command $(which fish)
 }
 function tmux-default-zsh() {
-  tmux-default-command $(which zsh)
+  _robenkleene_tmux_default_command $(which zsh)
 }
 function tmux-name-directory() {
   tmux rename-window $(basename $PWD)
@@ -198,7 +198,7 @@ function git-push-force() {
 }
 
 # Git Stash
-function git-stash-command() {
+function _robenkleene_git_stash_command() {
   local stash_command="git stash $1"
   if [ $# -gt 1 ]; then
     stash_command="$stash_command stash@\{$2\}"
@@ -206,19 +206,19 @@ function git-stash-command() {
   eval $stash_command
 }
 function git-stash-pop() {
-  git-stash-command "pop" $1
+  _robenkleene_git_stash_command "pop" $1
 }
 function git-stash-apply() {
-  git-stash-command "apply" $1
+  _robenkleene_git_stash_command "apply" $1
 }
 function git-stash-show() {
-  git-stash-command "show" $1
+  _robenkleene_git_stash_command "show" $1
 }
 function git-stash-diff() {
-  git-stash-command "show --patch" $1
+  _robenkleene_git_stash_command "show --patch" $1
 }
 function git-stash-drop() {
-  git-stash-command "drop" $1
+  _robenkleene_git_stash_command "drop" $1
 }
 function git-stash-list() {
   git stash list
