@@ -202,10 +202,15 @@ end
 # ack
 function fzf-ack-vim
   echo $argv | tr -d '\n' | safecopy -pboard find
-  _robenkleene_ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
-  set result (fzf-process-result)
   if test (uname) = Darwin
     set setup_system_clipboard "| let @0=@*"
   end
-  and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+  set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+  begin
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi --reverse $FZF_DEFAULT_OPTS"
+    eval "_robenkleene_ack_lines_color $argv . | "(__fzfcmd)" +m" | read -l result
+    if [ "$result" ]
+      echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+    end
+  end
 end
