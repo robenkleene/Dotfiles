@@ -8,6 +8,8 @@ set -x FZF_DEFAULT_COMMAND 'rg --files -g ""'
 set resolvedir $TMPDIR /tmp
 set tmpdir $resolvedir[1]
 
+# Private
+
 function _robenkleene_ack_lines
   # ag
   # ag --nobreak --noheading $argv
@@ -27,7 +29,24 @@ function _robenkleene_ack_lines_no_color
   _robenkleene_ack_lines --color=never $argv
 end
 
-# Helper
+function _robenkleene_fzf_inline
+  set result_cmd $argv[1]
+  if test (count $argv) -gt 1
+    set list_cmd $argv[2]
+  else
+    set list_cmd $FZF_DEFAULT_COMMAND
+  end
+  set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+  begin
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
+    eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
+    if [ "$result" ]
+      set final_cmd $result_cmd $result
+      eval $final_cmd
+    end
+  end
+end
+
 function fzf-process-result
   if [ (cat $tmpdir/fzf.result | wc -l) -gt 0 ]
     set -g FZFRESULT (cat $tmpdir/fzf.result)
@@ -65,16 +84,10 @@ end
 
 # Files
 
-
 # vim
 function fzf-file-vim
-  # Using `xargs` causes tmux `pane_current_path` to fail
-  # fzf | tr '\n' '\0' | xargs -0 -o vim
-  fzf > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and vim-edit "$result"
+  _robenkleene_fzf_inline vim-edit
 end
-
 
 # reveal
 if test (uname) = Darwin
