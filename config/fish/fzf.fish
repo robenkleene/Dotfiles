@@ -62,6 +62,7 @@ function _robenkleene_fzf_inline_result
 end
 
 
+
 function fzf-process-result
   if [ (cat $tmpdir/fzf.result | wc -l) -gt 0 ]
     set -g FZFRESULT (cat $tmpdir/fzf.result)
@@ -121,14 +122,22 @@ function fzf-file-path
 end
 
 # Documentation
+function fzf-documentation-less
+  cd ~/Documentation/
+  _robenkleene_fzf_inline_result | read -l result; 
+  if [ $result ]
+    cat "$result" | less
+  end
+  cd -
+end
 function fzf-documentation-vim
   cd ~/Documentation/
-  # Using `xargs` causes tmux `pane_current_path` to fail
-  # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
-  find * -type f -not -path '*/\.*' | fzf > $tmpdir/fzf.result
-  cd -
-  set result (fzf-process-result)
-  and vim-edit "$HOME/Documentation/$result"
+  _robenkleene_fzf_inline_result | read -l result; 
+  if [ $result ]
+    vim-edit "$result"
+  else
+    cd -
+  end
 end
 
 # Lines

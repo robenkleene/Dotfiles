@@ -74,6 +74,14 @@ function fzf-file-path() {
 }
 
 # Documentation
+function fzf-documentation-less() {
+  cd ~/Documentation/
+  local result=$(_robenkleene_fzf_inline_result)
+  if [[ -n $result ]]; then
+    cat "$result" | less
+  fi
+  cd -
+}
 function fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
