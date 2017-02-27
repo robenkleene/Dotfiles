@@ -78,7 +78,7 @@ end
 
 # Directories
 
-# history
+# History
 function fzf-recent-cd
   _robenkleene_fzf_inline cd "fasd -ld"
 end
@@ -96,26 +96,26 @@ end
 
 # Files
 
-# vim
+# Vim
 function fzf-file-vim
   _robenkleene_fzf_inline vim-edit
 end
 
-# reveal
+# Reveal
 if test (uname) = Darwin
   function fzf-file-reveal
     _robenkleene_fzf_inline "open -R"
   end
 end
 
-# open
+# Open
 if test (uname) = Darwin
   function fzf-file-open
     _robenkleene_fzf_inline open
   end
 end
 
-# path
+# Path
 function fzf-file-path
   _robenkleene_fzf_inline_result | read -l result
   and echo $result | tr -d '\n' | tee /dev/tty | safecopy
@@ -155,46 +155,51 @@ function fzf-line-vim
 end
 
 # Snippets
-
-# Copy
 function fzf-snippet-copy
   cd ~/Development/Snippets/
-  find * -type f | fzf | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
+  _robenkleene_fzf_inline_result | read -l result
+  if [ $result ]
+    cat "$result" | less
+  end
   cd -
 end
-
-# vim
 function fzf-snippet-vim
   cd ~/Development/Snippets/
-  # Using `xargs` causes tmux `pane_current_path` to fail
-  # find * -type f | fzf | tr '\n' '\0' | xargs -0 -o vim
-  find * -type f | fzf > $tmpdir/fzf.result
-  cd -
-
-  set result (fzf-process-result)
-  and vim-edit "$HOME/Development/Snippets/$result"
+  _robenkleene_fzf_inline_result | read -l result
+  if [ $result ]
+    vim-edit "$result"
+  else
+    cd -
+  end
 end
-
-# Project
 
 # Xcode
 if test (uname) = Darwin
   function fzf-project-xcode
-    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE "\/Carthage\/" | fzf  --select-1 | tr '\n' '\0' | xargs -0 open
+    set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+    begin
+      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 --reverse $FZF_DEFAULT_OPTS"
+      eval "find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE \"\/Carthage\/\" | "(__fzfcmd)" +m" | read -l result
+      if [ "$result" ]
+        echo $result | tr '\n' '\0' | xargs -0 open
+      end
+    end
   end
 end
-
 if test (uname) = Darwin
   function fzf-file-xcode
-    # rg
-    # `ag` version isn't written yet
-    set ack_search_xcode $FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\"
-    eval $ack_search_xcode | fzf  --select-1 | tr '\n' '\0' | xargs -0 open -a "Xcode"
+    set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+    begin
+      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 --reverse $FZF_DEFAULT_OPTS"
+      eval "$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\" | "(__fzfcmd)" +m" | read -l result
+      if [ "$result" ]
+        echo $result | tr '\n' '\0' | xargs -0 open -a "Xcode"
+      end
+    end
   end
 end
 
 # ack
-
 function fzf-ack-vim
   echo $argv | tr -d '\n' | safecopy -pboard find
   _robenkleene_ack_lines_color $argv . | fzf --ansi > $tmpdir/fzf.result
@@ -204,4 +209,3 @@ function fzf-ack-vim
   end
   and echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
 end
-

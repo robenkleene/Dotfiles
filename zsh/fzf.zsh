@@ -48,26 +48,26 @@ function fzf-bookmark-cd() {
 
 # Files
 
-# vim
+# Vim
 function fzf-file-vim() {
   _robenkleene_fzf_inline vim-edit
 }
 
-# reveal
+# Reveal
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-reveal() {
     _robenkleene_fzf_inline "open -R"
   }
 fi
 
-# open
+# Open
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-open() {
     _robenkleene_fzf_inline open
   }
 fi
 
-# path
+# Path
 function fzf-file-path() {
   local result=$(_robenkleene_fzf_inline_result)
   echo $result | tr -d '\n' | tee /dev/tty | safecopy
@@ -93,8 +93,6 @@ function fzf-documentation-vim() {
 }
 
 # Lines
-
-# vim
 function fzf-line-vim() {
   local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
@@ -103,8 +101,6 @@ function fzf-line-vim() {
 }
 
 # Snippets
-
-# copy
 function fzf-snippet-copy() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
@@ -113,8 +109,6 @@ function fzf-snippet-copy() {
   fi
   cd -
 }
-
-# vim
 function fzf-snippet-vim() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
@@ -125,10 +119,7 @@ function fzf-snippet-vim() {
   fi
 }
 
-# Project
-
 # Xcode
-# Project
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-project-xcode() {
     setopt localoptions pipefail 2> /dev/null
@@ -139,7 +130,6 @@ if [ "$(uname)" = "Darwin" ]; then
       | xargs -0 open
   }
 fi
-# File
 if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
