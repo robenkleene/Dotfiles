@@ -47,6 +47,21 @@ function _robenkleene_fzf_inline
   end
 end
 
+function _robenkleene_fzf_inline_result
+  if test (count $argv) -gt 0
+    set list_cmd $argv[1]
+  else
+    set list_cmd $FZF_DEFAULT_COMMAND
+  end
+  set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+  begin
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
+    eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
+    echo $result
+  end
+end
+
+
 function fzf-process-result
   if [ (cat $tmpdir/fzf.result | wc -l) -gt 0 ]
     set -g FZFRESULT (cat $tmpdir/fzf.result)
@@ -64,9 +79,7 @@ end
 
 # history
 function fzf-recent-cd
-  fasd -l | fzf  > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and cd "$result"
+  _robenkleene_fzf_inline cd "fasd -ld"
 end
 
 function fzf-bookmark-cd
@@ -77,9 +90,7 @@ function fzf-bookmark-cd
   # Development
   set bookmarks $bookmarks ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/
 
-  printf '%s\n' $bookmarks | fzf > $tmpdir/fzf.result
-  set result (fzf-process-result)
-  and cd "$result"
+  _robenkleene_fzf_inline cd "printf '%s\n' $bookmarks"
 end
 
 # Files
@@ -92,20 +103,21 @@ end
 # reveal
 if test (uname) = Darwin
   function fzf-file-reveal
-    fzf | tr '\n' '\0' | xargs -0 open -R
+    _robenkleene_fzf_inline "open -R"
   end
 end
 
 # open
 if test (uname) = Darwin
   function fzf-file-open
-    fzf | tr '\n' '\0' | xargs -0 open
+    _robenkleene_fzf_inline open
   end
 end
 
 # path
 function fzf-file-path
-  fzf | tr -d '\n' | tee /dev/tty | safecopy
+  _robenkleene_fzf_inline_result | read -l result; 
+  and echo $result | tr -d '\n' | tee /dev/tty | safecopy
 end
 
 # Documentation
