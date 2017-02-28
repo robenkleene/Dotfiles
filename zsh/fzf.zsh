@@ -50,7 +50,7 @@ function fzf-bookmark-cd() {
 
 # Vim
 function fzf-file-vim() {
-  _robenkleene_fzf_inline vim-edit
+  _robenkleene_fzf_inline $VIM_COMMAND
 }
 
 # Reveal
@@ -94,7 +94,7 @@ function fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    vim-edit "$result"
+    $VIM_COMMAND "$result"
   else
     cd -
   fi
@@ -104,7 +104,7 @@ function fzf-documentation-vim() {
 function fzf-line-vim() {
   local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
-    echo $result | vim-edit -c "GrepBuffer" -
+    echo $result | $VIM_COMMAND -c "GrepBuffer" -
   fi
 }
 
@@ -121,7 +121,7 @@ function fzf-snippet-vim() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    vim-edit $result
+    $VIM_COMMAND $result
   else
     cd -
   fi
@@ -157,6 +157,6 @@ function fzf-ack-vim() {
   fi
   local result=$(_robenkleene_ack_lines_color $@ | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
-    echo $result | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
+    echo $result | $VIM_COMMAND -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
   fi
 }

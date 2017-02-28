@@ -33,15 +33,8 @@ function egitn() {
 }
 
 # vim
-function vim-edit() {
-  if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-    nvimedit $@
-  else
-    nvim $@
-  fi
-}
 function vim-restore-session() {
-  vim-edit -c "RestoreSession"
+  $VIM_COMMAND -c "RestoreSession"
 }
 function vim-pipe-grep() {
   if [ $# -gt 0 ]; then
@@ -50,9 +43,9 @@ function vim-pipe-grep() {
     if [ "$(uname)" = "Darwin" ]; then
       setup_system_clipboard="| let @0=@*"
     fi
-    _robenkleene_ack_lines $@ | vim-edit -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
+    _robenkleene_ack_lines $@ | $VIM_COMMAND -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
   else
-    vim-edit -c "GrepBuffer" -
+    $VIM_COMMAND -c "GrepBuffer" -
   fi
 }
 
@@ -76,7 +69,7 @@ function ssh-start() {
 # zsh
 function zsh-edit-config() {
   cd ~/Development/Dotfiles/
-  vim-edit zshrc
+  $VIM_COMMAND zshrc
 }
 
 
@@ -125,7 +118,7 @@ function tmux-attach() {
 
 # git
 function git-vim-modified() {
-  vim-edit $(git diff --name-only --diff-filter=U | uniq)
+  $VIM_COMMAND $(git diff --name-only --diff-filter=U | uniq)
 }
 function git-checkout-modified() {
   git checkout -- .
