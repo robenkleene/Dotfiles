@@ -17,8 +17,6 @@ alias c='safecopy'
 
 # Override
 
-# ag
-alias ag='ag --path-to-ignore ~/.ignore'
 # rg
 alias rg='rg --smart-case --line-number'
 # mitmproxy

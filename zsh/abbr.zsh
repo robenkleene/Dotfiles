@@ -3,6 +3,8 @@ typeset -Ag abbreviations
 abbreviations=(
 # vim
 "v" "$VIM_COMMAND"
+# rg
+"a" "$ACK_COMMAND"
 # tig
 "tst" "tig stash"
 # tmux
