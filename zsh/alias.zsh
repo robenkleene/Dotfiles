@@ -28,16 +28,16 @@ alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 
 # Shortcut
 
+# Parameters
+alias va='vim-pipe-grep' 
+alias fa='fzf-ack-vim' 
+
 # zsh
 alias ei='zsh-edit-config'
 
 # scripts
 alias n='new-terminal-here'
 alias o='new-finder-window-here'
-
-# ack
-# alias a='ag'
-alias a='rg'
 
 # tig
 alias ts='tig status +3'
@@ -55,13 +55,11 @@ alias m='magit'
 alias r='ranger-cd'
 
 # vim
-alias va='vim-pipe-grep' 
 alias vrs='vim-restore-session'
 alias vsr='vim-server-start -c "RestoreSession"'
 
 # fzf
 alias f='fzf-file-vim'
-alias fa='fzf-ack-vim' 
 alias fzp='fzf-file-path'
 alias fzs='fzf-snippet-copy'
 alias fzse='fzf-snippet-vim'
