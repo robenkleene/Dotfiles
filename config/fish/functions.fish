@@ -34,13 +34,6 @@ function exiting
 end
 
 # Vim
-function vim-edit
-  if test -n "$NVIM_LISTEN_ADDRESS"
-    nvimedit $argv
-  else
-    nvim $argv
-  end
-end
 function vim-restore-session
   eval "$VIM_COMMAND -c 'RestoreSession'"
 end
@@ -54,7 +47,8 @@ function ack-vim
     eval "rg $argv --with-filename | $VIM_COMMAND -c \"GrepBuffer\" -c \"let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch\" -"
   else
     # If there's no argument, assume results are being piped in
-    vim-edit -c "GrepBuffer" -
+    # This doesn't work
+    # eval "$VIM_COMMAND -c \"GrepBuffer\" -"
   end
 end
 

@@ -2,7 +2,11 @@
 set -x CDPATH . ~ ~/Development/ ~/Documentation/
 
 # Vim
-set VIM_COMMAND nvim
+if test -n "$NVIM_LISTEN_ADDRESS"
+  set VIM_COMMAND nvimedit
+else
+  set VIM_COMMAND nvim
+end
 set ACK_COMMAND rg
 set EMACS_COMMAND emacsclient -t
 
