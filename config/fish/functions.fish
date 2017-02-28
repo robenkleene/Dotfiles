@@ -50,7 +50,7 @@ end
 function vim-restore-session
   eval "$VIM_COMMAND -c 'RestoreSession'"
 end
-function vim-pipe-grep
+function ack-vim
   if [ $argv[1] ]
     # Set the search register and the yank register
     set setup_system_clipboard ""

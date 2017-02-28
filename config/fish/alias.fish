@@ -47,13 +47,11 @@ alias m 'magit'
 alias r 'ranger-cd'
 
 # vim
-alias va 'vim-pipe-grep' 
 alias vrs 'vim-restore-session'
 alias vsr 'vim-server-start -c "RestoreSession"'
 
 # fzf
 alias f 'fzf-file-vim'
-alias fa 'fzf-ack-vim' 
 alias fzp 'fzf-file-path'
 alias fzs 'fzf-snippet-copy'
 alias fzse 'fzf-snippet-vim'

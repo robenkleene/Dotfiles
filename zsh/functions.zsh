@@ -36,7 +36,7 @@ function egitn() {
 function vim-restore-session() {
   $VIM_COMMAND -c "RestoreSession"
 }
-function vim-pipe-grep() {
+function ack-vim() {
   if [ $# -gt 0 ]; then
     # Set the search register and the yank register
     local setup_system_clipboard=""

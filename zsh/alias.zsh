@@ -28,10 +28,6 @@ alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 
 # Shortcut
 
-# Parameters
-alias va='vim-pipe-grep' 
-alias fa='fzf-ack-vim' 
-
 # zsh
 alias ei='zsh-edit-config'
 

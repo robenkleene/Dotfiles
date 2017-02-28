@@ -5,6 +5,8 @@ abbreviations=(
 "v" "$VIM_COMMAND"
 # rg
 "a" "$ACK_COMMAND"
+"av" "ack-vim"
+"af" "fzf-ack-vim"
 # tig
 "tst" "tig stash"
 # tmux

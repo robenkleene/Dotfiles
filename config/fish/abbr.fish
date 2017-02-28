@@ -16,8 +16,12 @@ abbr -a exit='exiting'
 abbr -a -- - 'cd -'
 
 # vim
-abbr -a a="$ACK_COMMAND"
 abbr -a v="$VIM_COMMAND"
+
+# ack
+abbr -a a="$ACK_COMMAND"
+abbr -a av='ack-vim' 
+abbr -a af='fzf-ack-vim' 
 
 # tig
 abbr -a tst='tig stash'
