@@ -79,7 +79,7 @@ end
 
 # Vim
 function fzf-file-vim
-  _robenkleene_fzf_inline vim-edit
+  _robenkleene_fzf_inline $VIM_COMMAND
 end
 
 # Reveal
@@ -124,7 +124,7 @@ function fzf-documentation-vim
   cd ~/Documentation/
   _robenkleene_fzf_inline_result | read -l result
   if [ $result ]
-    vim-edit "$result"
+    eval "$VIM_COMMAND "$result
   else
     cd -
   end
@@ -157,7 +157,7 @@ function fzf-snippet-vim
   cd ~/Development/Snippets/
   _robenkleene_fzf_inline_result | read -l result
   if [ $result ]
-    vim-edit "$result"
+    eval "$VIM_COMMAND "$result
   else
     cd -
   end

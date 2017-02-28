@@ -12,11 +12,11 @@ end
 # Fish
 function fish-edit-config
  cd (dirname $FISH_CONFIG_PATH)
- vim-edit $FISH_CONFIG_PATH
+ eval "$VIM_COMMAND $FISH_CONFIG_PATH"
 end
 function fish-edit-abbreviations
  cd (dirname $FISH_CONFIG_PATH)
- vim-edit abbr.fish
+ eval "$VIM_COMMAND abbr.fish"
 end
 function fish-sync-abbreviations
   ~/.config/fish/abbr.fish
@@ -48,7 +48,7 @@ function vim-edit
   end
 end
 function vim-restore-session
-  vim-edit -c "RestoreSession"
+  eval "$VIM_COMMAND -c 'RestoreSession'"
 end
 function vim-pipe-grep
   if [ $argv[1] ]
@@ -58,7 +58,6 @@ function vim-pipe-grep
       set setup_system_clipboard "| let @0=@*"
     end
     rg $argv --with-filename | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch" -
-    # ag $argv | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
   else
     # If there's no argument, assume results are being piped in
     vim-edit -c "GrepBuffer" -
@@ -110,13 +109,8 @@ end
 
 # git
 
-# This doesn't work because default `ack` output doesn't include filename
-# on the line.
-# function vim-pipe-grep-clipboard
-#   safepaste | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' | let @0=@* | set hlsearch" -
-# end
 function git-vim-modified
-  vim-edit (git diff --name-only --diff-filter=U | uniq)
+  eval "$VIM_COMMAND (git diff --name-only --diff-filter=U | uniq)"
 end
 function git-checkout-modified
   git checkout -- .

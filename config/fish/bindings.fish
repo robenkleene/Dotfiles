@@ -11,7 +11,7 @@ function _robenkleeen_edit_command --description 'Input command in external edit
   and test -n "$tempfile"
   and set cursorposition (commandline -C)
   and commandline -b > $tempfile
-  and vim-edit -c 'set ft=fish' $tempfile
+  and eval "$VIM_COMMAND -c 'set ft=fish' $tempfile"
   and set edited (cat $tempfile)
   and test -n "$edited"
   and commandline -r $edited
