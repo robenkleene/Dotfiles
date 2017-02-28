@@ -1,4 +1,5 @@
 # CDPATH
+# Exported so `vim` will pick it up
 set -x CDPATH . ~ ~/Development/ ~/Documentation/
 
 # Vim
