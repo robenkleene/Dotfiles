@@ -1,3 +1,4 @@
+# Export `CDPATH` so it's available in `vim`
 export CDPATH=~:~/Development/:~/Documentation/
 
 # `pip3` can install executables in `~/.local/bin`
