@@ -3,7 +3,6 @@
 # zmodload zsh/zprof
 
 # Setup
-
 source ~/.zsh/variables.zsh
 source ~/.zsh/settings.zsh
 source ~/.zsh/functions.zsh

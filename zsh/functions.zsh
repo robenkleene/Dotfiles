@@ -50,11 +50,8 @@ function ack-vim() {
 }
 
 # Emacs
-function emacs-edit() {
-  emacsclient -t $@
-}
 function magit() {
-  emacs-edit -eval "(robenkleene/magit-status-startup)"
+  $EMACS_COMMAND -eval "(robenkleene/magit-status-startup)"
 }
 function emacs-kill-server() {
   emacsclient -e '(kill-emacs)'

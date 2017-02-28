@@ -7,6 +7,9 @@ abbreviations=(
 "a" "$ACK_COMMAND"
 "av" "ack-vim"
 "af" "fzf-ack-vim"
+# emacs
+"e" "$EMACS_COMMAND"
+"ec" "emacsclient -t"
 # tig
 "tst" "tig stash"
 # tmux

@@ -43,8 +43,6 @@ alias tmls='tmux ls'
 alias tnd='tmux-name-directory'
 
 # emacs
-alias ec='emacsclient -t'
-alias e='emacs-edit'
 alias m='magit'
 
 # ranger

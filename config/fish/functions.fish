@@ -1,9 +1,6 @@
 # Emacs
-function emacs-edit
-  emacsclient -t $argv
-end
 function magit
- emacs-edit -eval "(robenkleene/magit-status-startup)"
+ eval "$EMACS_COMMAND -eval '(robenkleene/magit-status-startup)'"
 end
 function emacs-kill-server
   emacsclient -e '(kill-emacs)'

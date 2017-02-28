@@ -3,4 +3,5 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
 else
   VIM_COMMAND=nvim
 fi
+EMACS_COMMAND='emacsclient -t'
 ACK_COMMAND=rg

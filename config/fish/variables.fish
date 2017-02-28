@@ -4,6 +4,7 @@ set -x CDPATH . ~ ~/Development/ ~/Documentation/
 # Vim
 set VIM_COMMAND nvim
 set ACK_COMMAND rg
+set EMACS_COMMAND emacsclient -t
 
 # Greeting
 set --erase fish_greeting

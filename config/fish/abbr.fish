@@ -23,6 +23,10 @@ abbr -a a="$ACK_COMMAND"
 abbr -a av='ack-vim' 
 abbr -a af='fzf-ack-vim' 
 
+# emacs
+abbr -a e="$EMACS_COMMAND"
+abbr -a ec='emacsclient -t' 
+
 # tig
 abbr -a tst='tig stash'
 
