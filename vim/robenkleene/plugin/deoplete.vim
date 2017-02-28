@@ -1,5 +1,8 @@
 let g:deoplete#enable_at_startup = 1
 
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = ['buffer', 'tag', 'file']
+
 " " Delay Before Popup Displays
 " let g:deoplete#enable_cursor_hold_i = 1
 " let g:deoplete#cursor_hold_i_time = 100
