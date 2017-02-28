@@ -1,7 +1,5 @@
 # Override
 
-# ag
-alias ag 'ag --path-to-ignore ~/.ignore'
 # rg
 alias rg 'rg --smart-case --line-number'
 # mitmproxy
@@ -33,13 +31,6 @@ alias fsh 'fish-sync-history'
 alias p 'safepaste'
 alias c 'safecopy'
 
-# ack
-# alias a 'ag'
-alias a 'rg'
-
-# z
-alias zv 'fasd -f -e vim'
-
 # tig
 alias ts 'tig status +3'
 
@@ -56,7 +47,6 @@ alias m 'magit'
 alias r 'ranger-cd'
 
 # vim
-alias v 'vim-edit' 
 alias va 'vim-pipe-grep' 
 alias vrs 'vim-restore-session'
 alias vsr 'vim-server-start -c "RestoreSession"'

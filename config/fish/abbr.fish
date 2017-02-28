@@ -15,6 +15,10 @@ abbr -a exit='exiting'
 # Basic
 abbr -a -- - 'cd -'
 
+# vim
+abbr -a a="$ACK_COMMAND"
+abbr -a v="$VIM_COMMAND"
+
 # tig
 abbr -a tst='tig stash'
 

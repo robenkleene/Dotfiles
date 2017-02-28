@@ -1,4 +1,9 @@
-set CDPATH . ~ ~/Development/ ~/Documentation/
+# CDPATH
+set -x CDPATH . ~ ~/Development/ ~/Documentation/
+
+# Vim
+set VIM_COMMAND nvim
+set ACK_COMMAND rg
 
 # Greeting
 set --erase fish_greeting
