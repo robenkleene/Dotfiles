@@ -33,7 +33,7 @@ function _robenkleene_fzf_inline
   end
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT $FZF_DEFAULT_OPTS"
     eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
     if [ "$result" ]
       set final_cmd $result_cmd $result
@@ -50,7 +50,7 @@ function _robenkleene_fzf_inline_result
   end
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT $FZF_DEFAULT_OPTS"
     eval "$list_cmd | "(__fzfcmd)" +m" | read -l result
     echo $result
   end
@@ -136,7 +136,7 @@ end
 function fzf-line-vim
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi --reverse $FZF_DEFAULT_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi $FZF_DEFAULT_OPTS"
     eval "_robenkleene_ack_lines_no_color \"[a-zA-Z0-9]+\" . | "(__fzfcmd)" +m" | read -l result
     if [ "$result" ]
       echo $result | vim -c "GrepBuffer" -   
@@ -168,7 +168,7 @@ if test (uname) = Darwin
   function fzf-project-xcode
     set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
     begin
-      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 --reverse $FZF_DEFAULT_OPTS"
+      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 $FZF_DEFAULT_OPTS"
       eval "find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' | grep -vE \"\/Carthage\/\" | "(__fzfcmd)" +m" | read -l result
       if [ "$result" ]
         echo $result | tr '\n' '\0' | xargs -0 open
@@ -180,7 +180,7 @@ if test (uname) = Darwin
   function fzf-file-xcode
     set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
     begin
-      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 --reverse $FZF_DEFAULT_OPTS"
+      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --select-1 $FZF_DEFAULT_OPTS"
       eval "$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\" | "(__fzfcmd)" +m" | read -l result
       if [ "$result" ]
         echo $result | tr '\n' '\0' | xargs -0 open -a "Xcode"
@@ -197,7 +197,7 @@ function fzf-ack-vim
   end
   set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi --reverse $FZF_DEFAULT_OPTS"
+    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi $FZF_DEFAULT_OPTS"
     eval "_robenkleene_ack_lines_color $argv . | "(__fzfcmd)" +m" | read -l result
     if [ "$result" ]
       eval "echo \"$result\" | $VIM_COMMAND -c \"GrepBuffer\" -c \"let @/='$argv[-1]' $setup_system_clipboard | set hlsearch\" -"

@@ -6,7 +6,7 @@ function _robenkleene_fzf_inline() {
   local result_cmd=$1
   local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   if [[ -z "$result" ]]; then
     return 0
   fi
@@ -23,7 +23,7 @@ function _robenkleene_fzf_inline() {
 function _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   local ret=$?
   echo $result
   return $ret
@@ -102,7 +102,7 @@ function fzf-documentation-vim() {
 
 # Lines
 function fzf-line-vim() {
-  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
+  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
     echo $result | $VIM_COMMAND -c "GrepBuffer" -
   fi
@@ -133,7 +133,7 @@ if [ "$(uname)" = "Darwin" ]; then
     setopt localoptions pipefail 2> /dev/null
     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
       | grep -vE "\/Carthage\/" \
-      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
       | tr '\n' '\0' \
       | xargs -0 open
   }
@@ -142,7 +142,7 @@ if [ "$(uname)" = "Darwin" ]; then
   function fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
     eval $ack_search_xcode \
-      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
       | tr '\n' '\0' \
       | xargs -0 open -a "Xcode"
   }
@@ -155,7 +155,7 @@ function fzf-ack-vim() {
   if [ "$(uname)" = "Darwin" ]; then
     setup_system_clipboard="| let @0=@*"
   fi
-  local result=$(_robenkleene_ack_lines_color $@ | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
+  local result=$(_robenkleene_ack_lines_color $@ | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
     echo $result | $VIM_COMMAND -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
   fi
