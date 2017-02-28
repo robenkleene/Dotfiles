@@ -200,7 +200,7 @@ function fzf-ack-vim
     set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --ansi --reverse $FZF_DEFAULT_OPTS"
     eval "_robenkleene_ack_lines_color $argv . | "(__fzfcmd)" +m" | read -l result
     if [ "$result" ]
-      echo $result | vim-edit -c "GrepBuffer" -c "let @/='$argv[-1]' $setup_system_clipboard | set hlsearch" -
+      eval "echo \"$result\" | $VIM_COMMAND -c \"GrepBuffer\" -c \"let @/='$argv[-1]' $setup_system_clipboard | set hlsearch\" -"
     end
   end
 end
