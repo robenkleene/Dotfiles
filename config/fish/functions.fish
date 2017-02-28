@@ -51,7 +51,7 @@ function ack-vim
     if test (uname) = Darwin
       set setup_system_clipboard "| let @0=@*"
     end
-    rg $argv --with-filename | vim-edit -c "GrepBuffer" -c "let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch" -
+    eval "rg $argv --with-filename | $VIM_COMMAND -c \"GrepBuffer\" -c \"let @/='\v$argv[-1]' $setup_system_clipboard | set hlsearch\" -"
   else
     # If there's no argument, assume results are being piped in
     vim-edit -c "GrepBuffer" -
