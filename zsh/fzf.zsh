@@ -81,12 +81,25 @@ function fzf-file-path() {
   fi
 }
 
+# Lines
+function fzf-line-vim() {
+  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
+  if [[ -n $result ]]; then
+    echo $result | $VIM_COMMAND -c "GrepBuffer" -
+  fi
+}
+
 # Documentation
 function fzf-documentation-less() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    cat "$result" | less
+    local final_cmd="cat \"$PWD/$result\" | less"
+    eval $final_cmd
+    if [ $? -eq 0 ]; then
+      # Add to history
+      print -s $final_cmd
+    fi
   fi
   cd -
 }
@@ -94,17 +107,14 @@ function fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    $VIM_COMMAND "$result"
+    local final_cmd="$VIM_COMMAND \"$PWD/$result\""
+    eval $final_cmd
+    if [ $? -eq 0 ]; then
+      # Add to history
+      print -s $final_cmd
+    fi
   else
     cd -
-  fi
-}
-
-# Lines
-function fzf-line-vim() {
-  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
-  if [[ -n $result ]]; then
-    echo $result | $VIM_COMMAND -c "GrepBuffer" -
   fi
 }
 
@@ -121,7 +131,12 @@ function fzf-snippet-vim() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    $VIM_COMMAND $result
+    local final_cmd="$VIM_COMMAND \"$PWD/$result\""
+    eval $final_cmd
+    if [ $? -eq 0 ]; then
+      # Add to history
+      print -s $final_cmd
+    fi
   else
     cd -
   fi
