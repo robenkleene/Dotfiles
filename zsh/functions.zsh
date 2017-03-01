@@ -159,7 +159,7 @@ function git-cd-root() {
   cd $(git rev-parse --show-toplevel)
 }
 function git-push-branch-origin() {
-  git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)
+  git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 function git-push-origin-delete() {
   git push origin --delete $1
@@ -242,8 +242,8 @@ function jekyll-serve-watch-drafts() {
 
 # Carthage
 function carthage-submodule-bootstrap() {
-  carthage bootstrap --use-submodules --no-use-binaries $argv
+  carthage bootstrap --use-submodules --no-use-binaries --use-ssh $argv
 }
 function carthage-submodule-update() {
-  carthage update --use-submodules --no-use-binaries $argv
+  carthage update --use-submodules --no-use-binaries --use-ssh $argv
 }

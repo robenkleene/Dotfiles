@@ -43,6 +43,9 @@ abbreviations=(
 "gstsh" "git-stash-show"
 "gt" "git tag"
 "gdw" "git diff --color-words"
+# Carthage
+"csmb" "carthage-submodule-bootstrap"
+"csmu" "carthage-submodule-update"
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
