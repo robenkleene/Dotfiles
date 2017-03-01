@@ -42,6 +42,7 @@ abbreviations=(
 "gsts" "git stash save"
 "gstsh" "git-stash-show"
 "gt" "git tag"
+"gdw" "git diff --color-words"
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing

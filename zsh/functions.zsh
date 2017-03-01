@@ -143,7 +143,7 @@ if [ "$(uname)" = "Darwin" ]; then
   }
 fi
 function git-diff-words() {
-  git diff --color-words
+  git diff --color-words $@
 }
 function git-copy-branch() {
   git rev-parse --abbrev-ref HEAD | tee /dev/tty | tr -d '\n' | safecopy
