@@ -42,7 +42,9 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color'
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
-Plug 'bogado/file-line'
+" `file-line` breaks process substituion by file, e.g.
+" `vimdiff <(echo "test 1") <(echo "test 2")`
+" Plug 'bogado/file-line'
 Plug 'scrooloose/syntastic', Cond(!has('nvim'))
 Plug 'neomake/neomake', Cond(has('nvim'))
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
