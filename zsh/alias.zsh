@@ -26,6 +26,9 @@ alias rg='rg --smart-case --line-number'
 # no_mouse: true
 alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 
+# vimdiff
+alias vimdiff="nvim -d"
+
 # Shortcut
 
 # zsh
