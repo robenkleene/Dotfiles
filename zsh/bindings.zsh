@@ -10,7 +10,7 @@ bindkey -e
 autoload -Uz select-word-style
 bash-backward-kill-word() {
   select-word-style bash
-  WORDCHARS='*?_-[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
+  WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
   select-word-style normal
 }
 zle -N bash-backward-kill-word
