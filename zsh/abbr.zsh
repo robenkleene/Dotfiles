@@ -58,9 +58,22 @@ magic-abbrev-expand() {
     local MATCH
     LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
     LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+}
+
+magic-abbrev-expand-and-insert () {
+    magic-abbrev-expand
     zle self-insert
 }
 
-zle -N magic-abbrev-expand
-bindkey " " magic-abbrev-expand
+magic-abbrev-expand-and-accept () {
+    magic-abbrev-expand
+    zle accept-line
+}
+
+zle -N magic-abbrev-expand-and-insert
+zle -N magic-abbrev-expand-and-accept
+bindkey " "   magic-abbrev-expand-and-insert
+bindkey "\r"  magic-abbrev-expand-and-accept
+# Use original bindings in isearch
 bindkey -M isearch " " self-insert
+bindkey -M isearch "\r" accept-line
