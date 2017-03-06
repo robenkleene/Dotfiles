@@ -38,11 +38,7 @@ alias ei='zsh-edit-config'
 alias n='new-terminal-here'
 alias o='new-finder-window-here'
 
-# tig
-alias ts='tig status +3'
-
 # tmux
-alias tmls='tmux ls'
 alias tnd='tmux-name-directory'
 
 # emacs
@@ -75,22 +71,9 @@ fi
 
 # git
 alias gvm='git-vim-modified'
-alias gur='git pull --rebase'
-alias gu='git pull'
-alias gsmi='git submodule init'
-alias gsmu='git submodule update'
-alias gs='git status'
-alias grc='git rebase --continue'
-alias gpt='git push --tags'
-alias gp='git push'
-alias gf='git fetch'
-alias gcom='git checkout -- .'
 alias gcd='git-cd-root'
-alias gca='git commit --amend'
-alias gbr='git branch --remotes'
 alias gbpr='git-prune-remote-origin'
 alias gprb='git-prune-remote-origin'
-alias gaa='git add --all :/'
 
 # hub
 if [ "$(uname)" = "Darwin" ]; then

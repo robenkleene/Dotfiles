@@ -1,5 +1,8 @@
 typeset -Ag abbreviations
 
+# Abberviations should be used for native commands and functions that take
+# parameters.
+
 abbreviations=(
 # vim
 "v" "$VIM_COMMAND"
@@ -12,10 +15,12 @@ abbreviations=(
 "ec" "emacsclient -t"
 # tig
 "tst" "tig stash"
+"ts" "tig status +3"
 # tmux
 "ta" "tmux-attach"
 "tmsw" "tmux swap-window -t"
 "t" "tmux" 
+"tmls" "tmux ls"
 # vim
 "vss" "vim-server-start"
 "vse" "vim-server-edit"
@@ -35,6 +40,18 @@ abbreviations=(
 "gm" "git merge"
 "gr" "git rebase"
 "gsm" "git submodule"
+"gur" "git pull --rebase"
+"gu" "git pull"
+"gsmi" "git submodule init"
+"gsmu" "git submodule update"
+"gs" "git status"
+"grc" "git rebase --continue"
+"gpt" "git push --tags"
+"gp" "git push"
+"gf" "git fetch"
+"gaa" "git add --all :/"
+"gca" "git commit --amend"
+"gbr" "git branch --remotes"
 "gsta" "git-stash-apply"
 "gstd" "git-stash-diff"
 "gstl" "git stash list"
