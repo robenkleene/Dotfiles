@@ -72,5 +72,3 @@ fi
 # git
 alias gvm='git-vim-modified'
 alias gcd='git-cd-root'
-alias gbpr='git-prune-remote-origin'
-alias gprb='git-prune-remote-origin'
