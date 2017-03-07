@@ -10,12 +10,13 @@ function _robenkleene_fzf_inline() {
   if [[ -z "$result" ]]; then
     return 0
   fi
-  local final_cmd="$result_cmd \"$result\""
+  local parameter=$(printf '%q' "$result")
+  local final_cmd="$result_cmd $parameter"
   eval $final_cmd
   local ret=$?
   if [ $? -eq 0 ]; then
     # Add to history
-    print -s $final_cmd
+    print -sr $final_cmd
   fi
   return $ret
 }
@@ -133,11 +134,12 @@ function fzf-snippet-vim() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    local final_cmd="$VIM_COMMAND \"$PWD/$result\""
+    local parameter=$(printf '%q' "$PWD/$result")
+    local final_cmd="$VIM_COMMAND $parameter"
     eval $final_cmd
     if [ $? -eq 0 ]; then
       # Add to history
-      print -s $final_cmd
+      print -sr $final_cmd
     fi
   else
     cd -
