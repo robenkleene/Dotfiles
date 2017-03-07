@@ -15,6 +15,10 @@ source ~/.zsh/abbr.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
 source ~/.zsh/startup.zsh
+if [[ -f ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi
+
 
 # Plugins
 # Plugins should be sourced last
