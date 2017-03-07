@@ -65,6 +65,14 @@ abbreviations=(
 "csmu" "carthage-submodule-update"
 )
 
+if [ "$(uname)" = "Darwin" ]; then
+abbreviations+=(
+"hb" "hub browse"
+"hbc" "hub browse -- commits"
+)
+fi
+
+
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters
 for abbr in ${(@k)abbreviations}; do

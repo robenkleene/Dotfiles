@@ -74,9 +74,3 @@ alias gvm='git-vim-modified'
 alias gcd='git-cd-root'
 alias gbpr='git-prune-remote-origin'
 alias gprb='git-prune-remote-origin'
-
-# hub
-if [ "$(uname)" = "Darwin" ]; then
-  alias hb='hub browse'
-  alias hbc='hub browse -- commits'
-fi
