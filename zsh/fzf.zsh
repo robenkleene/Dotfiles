@@ -99,7 +99,7 @@ function fzf-documentation-less() {
     eval $final_cmd
     if [ $? -eq 0 ]; then
       # Add to history
-      print -s $final_cmd
+      print -sr $final_cmd
     fi
   fi
   cd -
@@ -108,11 +108,12 @@ function fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    local final_cmd="$VIM_COMMAND \"$PWD/$result\""
+    local parameter=$(printf '%q' "$PWD/$result")
+    local final_cmd="$VIM_COMMAND $parameter"
     eval $final_cmd
     if [ $? -eq 0 ]; then
       # Add to history
-      print -s $final_cmd
+      print -sr $final_cmd
     fi
   else
     cd -
