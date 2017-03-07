@@ -1,6 +1,7 @@
 # grep
 alias -g G='| grep'
 alias -g L='| less'
+alias -g A='| rg'
 
 # Basic
 alias -- -='cd -'
