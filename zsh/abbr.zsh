@@ -5,60 +5,60 @@ typeset -Ag abbreviations
 
 abbreviations=(
 # vim
-"v" "$VIM_COMMAND"
+'v' "$VIM_COMMAND"
 # rg
-"a" "$ACK_COMMAND"
+'a' "$ACK_COMMAND"
 # emacs
-"e" "$EMACS_COMMAND"
-"ec" "emacsclient -t"
+'e' "$EMACS_COMMAND"
+'ec' 'emacsclient -t'
 # tig
-"tst" "tig stash"
-"ts" "tig status +3"
+'tst' 'tig stash'
+'ts' 'tig status +3'
 # tmux
-"tmsw" "tmux swap-window -t"
-"t" "tmux" 
-"tmls" "tmux ls"
+'tmsw' 'tmux swap-window -t'
+'t' 'tmux' 
+'tmls' 'tmux ls'
 # vim
 # git
-"ga" "git add"
-"gb" "git branch"
-"gbd" "git branch --delete"
-"gc" "git commit"
-"gcam" "git commit --amend -m"
-"gcl" "git clone"
-"gcm" "git commit -m"
-"gco" "git checkout"
-"gcob" "git checkout -b"
-"gd" "git diff"
-"gdt" "git difftool"
-"gl" "git log"
-"gm" "git merge"
-"gr" "git rebase"
-"gsm" "git submodule"
-"gur" "git pull --rebase"
-"gu" "git pull"
-"gsmi" "git submodule init"
-"gsmu" "git submodule update"
-"gs" "git status"
-"grc" "git rebase --continue"
-"gpt" "git push --tags"
-"gp" "git push"
-"gf" "git fetch"
-"gaa" "git add --all :/"
-"gca" "git commit --amend"
-"gbr" "git branch --remotes"
-"gsta" "git-stash-apply"
-"gstd" "git-stash-diff"
-"gstl" "git stash list"
-"gstp" "git-stash-pop"
-"gsts" "git stash save"
-"gstsh" "git-stash-show"
-"gt" "git tag"
-"gdw" "git diff --color-words"
-"gbpr" "git remote prune origin"
+'ga' 'git add'
+'gb' 'git branch'
+'gbd' 'git branch --delete'
+'gc' 'git commit'
+'gcam' 'git commit --amend -m'
+'gcl' 'git clone'
+'gcm' 'git commit -m'
+'gco' 'git checkout'
+'gcob' 'git checkout -b'
+'gd' 'git diff'
+'gdt' 'git difftool'
+'gl' 'git log'
+'gm' 'git merge'
+'gr' 'git rebase'
+'gsm' 'git submodule'
+'gur' 'git pull --rebase'
+'gu' 'git pull'
+'gsmi' 'git submodule init'
+'gsmu' 'git submodule update'
+'gs' 'git status'
+'grc' 'git rebase --continue'
+'gpt' 'git push --tags'
+'gp' 'git push'
+'gf' 'git fetch'
+'gaa' 'git add --all :/'
+'gca' 'git commit --amend'
+'gbr' 'git branch --remotes'
+'gsta' 'git-stash-apply'
+'gstd' 'git-stash-diff'
+'gstl' 'git stash list'
+'gstp' 'git-stash-pop'
+'gsts' 'git stash save'
+'gstsh' 'git-stash-show'
+'gt' 'git tag'
+'gdw' 'git diff --color-words'
+'gbpr' 'git remote prune origin'
 # Carthage
-"csmb" "carthage-submodule-bootstrap"
-"csmu" "carthage-submodule-update"
+'csmb' 'carthage-submodule-bootstrap'
+'csmu' 'carthage-submodule-update'
 )
 
 if [ "$(uname)" = "Darwin" ]; then
