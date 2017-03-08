@@ -41,6 +41,7 @@ alias o='new-finder-window-here'
 
 # tmux
 alias tnd='tmux-name-directory'
+alias ta='tmux-attach'
 
 # emacs
 alias m='magit'
@@ -51,6 +52,10 @@ alias r='ranger-cd'
 # vim
 alias vrs='vim-restore-session'
 alias vsr='vim-server-start -c "RestoreSession"'
+alias vss='vim-server-start'
+alias vse='vim-server-edit'
+alias av='ack-vim'
+alias af='fzf-ack-vim'
 
 # fzf
 alias f='fzf-file-vim'

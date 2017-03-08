@@ -8,8 +8,6 @@ abbreviations=(
 "v" "$VIM_COMMAND"
 # rg
 "a" "$ACK_COMMAND"
-"av" "ack-vim"
-"af" "fzf-ack-vim"
 # emacs
 "e" "$EMACS_COMMAND"
 "ec" "emacsclient -t"
@@ -17,13 +15,10 @@ abbreviations=(
 "tst" "tig stash"
 "ts" "tig status +3"
 # tmux
-"ta" "tmux-attach"
 "tmsw" "tmux swap-window -t"
 "t" "tmux" 
 "tmls" "tmux ls"
 # vim
-"vss" "vim-server-start"
-"vse" "vim-server-edit"
 # git
 "ga" "git add"
 "gb" "git branch"
