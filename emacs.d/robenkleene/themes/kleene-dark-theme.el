@@ -141,6 +141,7 @@
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
    ;;;; User-Interface
+   `(default ((t (:foreground ,white))))
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-match))))
