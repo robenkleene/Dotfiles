@@ -57,6 +57,11 @@ alias vse='vim-server-edit'
 alias av='ack-vim'
 alias af='fzf-ack-vim'
 
+# emacs
+if [[ "$(uname)" = "Darwin" ]]; then
+  alias gemacs="open -a emacs"
+fi
+
 # fzf
 alias f='fzf-file-vim'
 alias fzp='fzf-file-path'
