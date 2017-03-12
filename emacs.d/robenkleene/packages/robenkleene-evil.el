@@ -43,7 +43,6 @@
 
   (define-key robenkleene/leader-map (kbd "f") '(lambda () (interactive)
                                                   (projectile-find-file-in-directory default-directory)))
-  (define-key robenkleene/leader-map (kbd "l") 'swiper)
   (define-key robenkleene/leader-map (kbd "a") 'counsel-ag)
 
   ;; Leader Key
