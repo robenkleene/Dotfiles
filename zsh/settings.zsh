@@ -2,6 +2,10 @@
 export CLICOLOR=1
 # Required for abbreviations
 setopt extendedglob
+# Make globs less case sensitive
+# Without this set, `ls **/TAG` will print a match with the file name `tag`
+# as `TAG`
+setopt nocaseglob
 # `cd` just by typing name
 setopt autocd
 
