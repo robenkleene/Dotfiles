@@ -103,7 +103,7 @@ function tmux-default-zsh() {
   _robenkleene_tmux_default_command $(which zsh)
 }
 function tmux-name-directory() {
-  tmux rename-window $(basename $PWD)
+  tmux rename-window "$(basename $PWD)"
 }
 function tmux-attach() {
   if [ $# -eq 1 ]; then
