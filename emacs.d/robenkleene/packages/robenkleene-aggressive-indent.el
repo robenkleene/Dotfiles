@@ -9,6 +9,7 @@
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
   (add-to-list 'aggressive-indent-excluded-modes 'swift-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
   )
 
 (provide 'robenkleene-aggressive-indent)
