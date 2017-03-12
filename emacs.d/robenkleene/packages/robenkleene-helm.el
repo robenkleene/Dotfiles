@@ -6,6 +6,9 @@
 (use-package helm
   :ensure t
   :defer t
+  :bind (
+         ("C-c b" . helm-buffers-list)
+         )
   :config
   (setq helm-truncate-lines t)
   (setq helm-candidate-number-limit 1000)

@@ -4,16 +4,17 @@
 
 (require 'use-package)
 
+
 (use-package projectile
   :ensure t
-  :commands projectile-find-file-in-directory
   :init
-  (bind-key "C-c f" (lambda () (interactive)
-                      (projectile-find-file-in-directory default-directory)))
-  
+  (use-package helm-projectile
+    :ensure t
+    :bind (
+           ("C-c f" . helm-projectile-find-file)
+           )
+    )
   )
-
-
 
 (provide 'robenkleene-projectile)
 ;;; robenkleene-projectile.el ends here
