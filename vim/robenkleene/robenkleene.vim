@@ -61,6 +61,7 @@ let b:terminalorneovim = !has('gui_running') || has('nvim')
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
+Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -91,7 +92,6 @@ else
 end
 source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
-
 if has('nvim') && has("python3")
   source ~/.vim/robenkleene/plugin/deoplete.vim
 elseif has('lua')
@@ -103,5 +103,6 @@ if has('nvim')
 else
   source ~/.vim/robenkleene/plugin/syntastic.vim
 endif
+source ~/.vim/robenkleene/plugin/tagbar.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
 source ~/.vim/robenkleene/plugin/vim-gitgutter.vim
