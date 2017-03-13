@@ -3,6 +3,7 @@ eval "$(fasd --init auto)"
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.4.0
 
 # nvm
 # Official installation is really slow:
