@@ -7,9 +7,11 @@
 (use-package helm-ag
   :ensure t
   :commands helm-do-ag
-  :init
-  (bind-key "C-c a" (lambda () (interactive)
-                      (helm-do-ag default-directory)))
+  :bind (
+         ("C-c a" . helm-do-ag)
+         )
+  ;; (bind-key "C-c a" (lambda () (interactive)
+  ;;                     (helm-do-ag default-directory)))
   :config
   ;; Enable grep mode after saving `helm-ag' results
   ;; To use: Trigger `C-x C-s' after performing a search to save the results
