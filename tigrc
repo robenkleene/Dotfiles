@@ -21,6 +21,8 @@ bind generic D !@sh -c "git difftool '%(file)'"
 bind generic Y !@bash -c "echo -n %(commit) | pbcopy"
 bind status d !bash -c "git diff --color-words %(file)"
 bind stage d !bash -c "git diff --color-words %(file)"
+bind stage v !bash -c "nvim -c 'Gdiff' '%(file)'"
+bind status v !bash -c "nvim -c 'Gdiff' '%(file)'"
 
 # Main
 bind main c ?git checkout %(commit)
