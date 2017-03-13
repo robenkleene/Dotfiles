@@ -2,6 +2,7 @@
 alias -g G='| grep'
 alias -g L='| less'
 alias -g A='| rg'
+alias -g C='| safecopy'
 
 # Basic
 alias -- -='cd -'
