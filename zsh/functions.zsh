@@ -63,6 +63,13 @@ function ssh-start() {
   ssh-add
 }
 
+# Fix slow ssh
+if [ ! "$(uname)" = "Darwin" ]; then
+  function ssh-fix() {
+    sudo systemctl restart systemd-logind 
+  }
+fi
+
 # zsh
 function zsh-edit-config() {
   cd ~/Development/Dotfiles/
