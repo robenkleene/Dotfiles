@@ -39,7 +39,7 @@ nnoremap <leader>oi :edit ~/Development/Dotfiles/vim/robenkleene/robenkleene.vim
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 
 " Documentation
-nnoremap <leader>d :edit ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
+nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
 
 " Toggle No Wrap
 nnoremap <leader>w :set wrap!<CR>
