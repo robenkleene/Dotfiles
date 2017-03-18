@@ -1,5 +1,9 @@
 let g:deoplete#enable_at_startup = 1
 
+" A bug causes completion entries to automatically be selected if this isn't
+" set
+let g:deoplete#auto_complete_delay = 50
+
 let g:deoplete#sources = {}
 let g:deoplete#sources._ = ['buffer', 'tag', 'file', 'ultisnips']
 
@@ -7,7 +11,8 @@ let g:deoplete#sources._ = ['buffer', 'tag', 'file', 'ultisnips']
 " let g:deoplete#enable_cursor_hold_i = 1
 " let g:deoplete#cursor_hold_i_time = 100
 " Autoselect the first match (otherwise down arrow needs to be entered)
-set completeopt+=noinsert
+" Disabling this because it make the interaction with `UltiSnips` nicer
+" set completeopt+=noinsert
 
 " By default `deoplete` uses `<CR>` to accept the completion. But this makes
 " it difficult to create a new line with a partial completion. `<TAB>` is a
