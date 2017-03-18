@@ -53,6 +53,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/neocomplete.vim', Cond(has('lua') && !has('nvim'))
 Plug 'Shougo/deoplete.nvim', Cond(has('nvim') && has('python3'), { 'do': ':UpdateRemotePlugins' })
+Plug 'SirVer/ultisnips'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -104,5 +105,6 @@ else
   source ~/.vim/robenkleene/plugin/syntastic.vim
 endif
 source ~/.vim/robenkleene/plugin/tagbar.vim
+source ~/.vim/robenkleene/plugin/ultisnips.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
 source ~/.vim/robenkleene/plugin/vim-gitgutter.vim

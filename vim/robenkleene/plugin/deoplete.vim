@@ -13,7 +13,7 @@ set completeopt+=noinsert
 " it difficult to create a new line with a partial completion. `<TAB>` is a
 " better key to accept the completion, because, in programming, you almost 
 " never need to insert a tab after the start of a line.
-inoremap <expr><TAB> pumvisible() ? deoplete#close_popup() : "\<TAB>"
+" inoremap <expr><TAB> pumvisible() ? deoplete#close_popup() : "\<TAB>"
 inoremap <expr><CR> deoplete#smart_close_popup()."\<CR>"
 " <C-f> is defined in `./plugin/deoplete.vim`
 
