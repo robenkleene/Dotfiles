@@ -1,0 +1,8 @@
+snippet func "" b
+function! s:${1:Name}()
+  ${2:" Statements}
+endfunction
+endsnippet
+snippet call "" w
+call <SID>${1:Name}()
+endsnippet
