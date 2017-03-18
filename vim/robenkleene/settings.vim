@@ -66,7 +66,7 @@ set nowrap
 set showcmd
 
 " Line breaks only happen on words
-set linebreak 
+set linebreak
 
 " Default Fold Method
 set foldmethod=syntax
