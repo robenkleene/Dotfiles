@@ -1,4 +1,6 @@
 augroup neomake_run
   autocmd!
-  autocmd BufReadPost,BufWritePost * Neomake
+  " Use `YouCompleteMe` for some file types
+  let s:ftToIgnore = ['objc', 'c']
+  autocmd BufReadPost,BufWritePost * if index(s:ftToIgnore, &ft) < 0 | Neomake
 augroup END
