@@ -31,10 +31,14 @@ function! s:AgVisual()
   let @s = temp
 endfunction
 
-" rg
+" `rg`
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep('rg --smart-case  --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
+  \ call fzf#vim#grep('rg --smart-case --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
   \ let @/="<args>"
+
+" Raw `rg` for passing in custom flags
+command! -bang -nargs=* Rrg
+  \ call fzf#vim#grep('rg --smart-case --column --line-number --no-heading --color=always '.<q-args>.'| tr -d "\017"', 1, <bang>0)
 
 " Bookmarks
 function! s:RobenKleeneBookmarks()
