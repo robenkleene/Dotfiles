@@ -104,6 +104,10 @@ set list
 
 " Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" Remove `.h` from suffixes, this prevents header files from being sorted at 
+" the bottom in `netrw`
+set suffixes-=.h
+
 
 " Autocmd {{{1
 
