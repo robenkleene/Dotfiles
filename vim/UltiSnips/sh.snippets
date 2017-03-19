@@ -1,3 +1,3 @@
-snippet loop1 "Loop one-liner" w
-while read i; do echo $i; done
+snippet 1loop "Loop one-liner" w
+while read i; do { ${0:echo $i;} } done
 endsnippet
