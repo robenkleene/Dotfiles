@@ -5,7 +5,9 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 50
 
 let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['buffer', 'tag', 'file', 'ultisnips']
+let g:deoplete#sources._ = ['buffer', 'tag', 'omni', 'file', 'ultisnips']
+
+call deoplete#custom#set('_', 'matchers', ['matcher_head'])
 
 " " Delay Before Popup Displays
 " let g:deoplete#enable_cursor_hold_i = 1
