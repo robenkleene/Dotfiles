@@ -41,6 +41,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[*.swift]
+indent_style = space
+indent_size = 4
+
 [{*.m,*.h}]
 indent_style = space
 indent_size = 4
