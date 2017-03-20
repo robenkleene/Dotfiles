@@ -1,3 +1,13 @@
-snippet 1loop "Loop one-liner" w
+snippet 1while "Loop one-liner" w
 while read i; do { ${0:echo $i;} } done
+endsnippet
+snippet while ""
+while read i; do
+  ${0:echo $i;} 
+done
+endsnippet
+snippet template "Basic template" b
+#!/usr/bin/env bash
+
+
 endsnippet
