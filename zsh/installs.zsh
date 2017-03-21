@@ -2,8 +2,12 @@
 eval "$(fasd --init auto)"
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.4.0
+chruby() {
+  source /usr/local/share/chruby/chruby.sh
+  chruby $@
+}
+# chruby ruby-2.4.0
+export PATH=$HOME/.rubies/ruby-2.4.0/bin:$PATH
 
 # nvm
 # Official installation is really slow:
