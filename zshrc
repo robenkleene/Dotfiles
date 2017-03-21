@@ -21,15 +21,15 @@ fi
 
 # Plugins
 # Plugins should be sourced last
-source ~/.zplug/init.zsh
-zplug "zsh-users/zsh-autosuggestions"
-# Syntax highlighting must be sourced last
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug 'zsh-users/zsh-history-substring-search'
-zplug "lib/termsupport", from:oh-my-zsh
-zplug "lib/functions", from:oh-my-zsh
-zplug load
+# source ~/.zplug/init.zsh
+# zplug "zsh-users/zsh-autosuggestions"
+# # Syntax highlighting must be sourced last
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug 'zsh-users/zsh-history-substring-search'
+# zplug "lib/termsupport", from:oh-my-zsh
+# zplug "lib/functions", from:oh-my-zsh
+# zplug load
 
-source ~/.zsh/plugins.zsh
+# source ~/.zsh/plugins.zsh
 # For some reason the `fzf` key bindings don't stick unless they are last
 source ~/.zsh/fzf.zsh
