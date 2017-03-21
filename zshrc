@@ -5,11 +5,16 @@
 # Setup
 source ~/.zsh/variables.zsh
 source ~/.zsh/settings.zsh
+# Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
+source ~/.zsh/bindings.zsh
+# Functions before aliases so functions don't use aliases
 source ~/.zsh/functions.zsh
+# `fzf` functions before aliases so functions don't use aliases and after 
+# bindings, otherwise `fzf` bindings don't work
+source ~/.zsh/fzf.zsh
 source ~/.zsh/installs.zsh
 # Interactive
 source ~/.zsh/ui.zsh
-source ~/.zsh/bindings.zsh
 source ~/.zsh/abbr.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
@@ -31,5 +36,3 @@ fi
 # zplug load
 
 # source ~/.zsh/plugins.zsh
-# For some reason the `fzf` key bindings don't stick unless they are last
-source ~/.zsh/fzf.zsh
