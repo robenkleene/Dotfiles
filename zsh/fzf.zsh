@@ -1,5 +1,16 @@
 export FZF_DEFAULT_COMMAND='rg --files -g ""'
 
+# fzf
+# Make `fzf` bindings available, since this is being manually imported here
+# `fzf` should be installed at `~/.fzf/`, using the command 
+# `~/.fzf/install --bin`, which avoids installing the completions automatically
+FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+source ~/.fzf/shell/completion.zsh
+source ~/.fzf/shell/key-bindings.zsh
+# Put back default history search
+bindkey '^R' history-incremental-search-backward
+bindkey '^[r' fzf-history-widget
+
 # Private
 
 function _robenkleene_fzf_inline() {
