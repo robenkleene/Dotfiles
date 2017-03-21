@@ -57,9 +57,6 @@ abbreviations=(
 'gt' 'git tag'
 'gdw' 'git diff --color-words'
 'gbpr' 'git remote prune origin'
-# Carthage
-'csmb' 'carthage-submodule-bootstrap'
-'csmu' 'carthage-submodule-update'
 )
 
 if [ "$(uname)" = "Darwin" ]; then

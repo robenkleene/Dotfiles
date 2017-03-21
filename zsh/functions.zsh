@@ -250,10 +250,3 @@ function jekyll-serve-watch-drafts() {
   bundle exec jekyll serve --watch --drafts
 }
 
-# Carthage
-function carthage-submodule-bootstrap() {
-  carthage bootstrap --use-submodules --no-use-binaries --use-ssh $argv
-}
-function carthage-submodule-update() {
-  carthage update --use-submodules --no-use-binaries --use-ssh $argv
-}
