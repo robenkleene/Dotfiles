@@ -162,6 +162,9 @@ function git-copy-commit-hash() {
 function git-commit-hash() {
   git rev-parse HEAD
 }
+function git-root() {
+  git rev-parse --show-toplevel
+}
 function git-cd-root() {
   cd $(git rev-parse --show-toplevel)
 }
