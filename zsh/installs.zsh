@@ -8,6 +8,7 @@ chruby() {
 }
 # chruby ruby-2.4.0
 export PATH=$HOME/.rubies/ruby-2.4.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # nvm
 # Official installation is really slow:
