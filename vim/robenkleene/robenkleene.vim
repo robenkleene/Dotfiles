@@ -39,7 +39,8 @@ Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rsi'
 " Colors {{{2
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': 'css' }
+
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
 " `file-line` breaks process substituion by file, e.g.
