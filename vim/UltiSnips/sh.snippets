@@ -1,3 +1,13 @@
+snippet iffile "Test file" b
+if [ -f ${1:"$file"} ]; then
+  ${0:echo $file;} 
+fi
+endsnippet
+snippet template "Basic template" b
+#!/usr/bin/env bash
+
+
+endsnippet
 snippet 1while "Loop one-liner" w
 while read i; do { ${0:echo $i;} } done
 endsnippet
@@ -5,9 +15,4 @@ snippet while ""
 while read i; do
   ${0:echo $i;} 
 done
-endsnippet
-snippet template "Basic template" b
-#!/usr/bin/env bash
-
-
 endsnippet
