@@ -26,7 +26,7 @@ for group in s:backgroundgroups
 endfor
 
 " Line Numbers {{{1
-highlight LineNr ctermbg=NONE ctermfg=236
+highlight LineNr ctermbg=NONE ctermfg=238
 
 " Cursor Line {{{1
 let s:highlightbgcolor = '237'
@@ -77,8 +77,8 @@ highlight ColorColumn ctermbg=237
 
 " Comments & Tildes {{{1
 highlight comment ctermfg=darkgray
-highlight SpecialKey ctermfg=236
-highlight NonText ctermfg=236
+highlight SpecialKey ctermfg=238
+highlight NonText ctermfg=238
 
 " Folding {{{1
 " Same as inactive status line
