@@ -27,6 +27,7 @@
   "fuzzy-finder":
     preserveLastSearch: true
   linter:
+    showErrorPanel: false
     subtleLinterErrors: [
       "jshint"
       "scss-lint"
