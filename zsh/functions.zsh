@@ -177,9 +177,6 @@ function git-push-origin-delete() {
 function git-branch-delete-origin() {
   git push origin --delete $1
 }
-function git-remote-url() {
-  git remote --verbose
-}
 function git-copy-remote-url() {
   git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
 }
