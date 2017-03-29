@@ -1,10 +1,6 @@
 # top-most EditorConfig file
 root = true
 
-# All Files
-# [*]
-# indent_size = 4
-
 [*.md]
 indent_style = tab
 indent_size = 4
@@ -43,6 +39,10 @@ indent_size = 2
 
 [*.swift]
 indent_style = space
+indent_size = 4
+
+[*.html]
+indent_style = tab
 indent_size = 4
 
 [{*.m,*.h}]
