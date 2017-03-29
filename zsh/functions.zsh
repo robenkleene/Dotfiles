@@ -36,17 +36,8 @@ function egitn() {
 function vim-restore-session() {
   $VIM_COMMAND -c "RestoreSession"
 }
-function ack-vim() {
-  if [ $# -gt 0 ]; then
-    # Set the search register and the yank register
-    local setup_system_clipboard=""
-    if [ "$(uname)" = "Darwin" ]; then
-      setup_system_clipboard="| let @0=@*"
-    fi
-    _robenkleene_ack_lines $@ | $VIM_COMMAND -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
-  else
-    $VIM_COMMAND -c "GrepBuffer" -
-  fi
+function vim-grep() {
+  $VIM_COMMAND -c "GrepBuffer" -
 }
 
 # Emacs

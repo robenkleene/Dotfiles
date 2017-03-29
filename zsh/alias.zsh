@@ -56,8 +56,8 @@ alias vrs='vim-restore-session'
 alias vsr='vim-server-start -c "RestoreSession"'
 alias vss='vim-server-start'
 alias vse='vim-server-edit'
-alias av='ack-vim'
-alias af='fzf-ack-vim'
+alias vg='vim-grep'
+alias vf='fzf-vim-grep'
 
 # emacs
 if [[ "$(uname)" = "Darwin" ]]; then

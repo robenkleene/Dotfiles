@@ -179,14 +179,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # ack
-function fzf-ack-vim() {
-  echo $@ | tr -d '\n' | safecopy -pboard find
-  local setup_system_clipboard=""
-  if [ "$(uname)" = "Darwin" ]; then
-    setup_system_clipboard="| let @0=@*"
-  fi
-  local result=$(_robenkleene_ack_lines_color $@ | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
-  if [[ -n $result ]]; then
-    echo $result | $VIM_COMMAND -c "GrepBuffer" -c "let @/='\v${@: -1}' $setup_system_clipboard | set hlsearch" -
-  fi
+function fzf-vim-grep() {
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
+  echo $result | $VIM_COMMAND -c "GrepBuffer" -
 }
