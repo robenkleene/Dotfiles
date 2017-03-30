@@ -61,6 +61,7 @@ Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
+Plug 'jremmen/vim-ripgrep', { 'on': ['Rg'] }
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
@@ -92,6 +93,7 @@ if !has('gui_running') || has('gui_vimr')
 else
   source ~/.vim/robenkleene/plugin/ctrlp.vim
 end
+source ~/.vim/robenkleene/plugin/rg.vim
 source ~/.vim/robenkleene/plugin/test.vim
 source ~/.vim/robenkleene/plugin/fugitive.vim
 " if has('nvim') && has("python3")
