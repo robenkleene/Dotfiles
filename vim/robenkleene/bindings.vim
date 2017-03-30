@@ -149,3 +149,12 @@ if has('nvim')
   tnoremap <A-k> <C-\><C-n><C-w>k
   tnoremap <A-l> <C-\><C-n><C-w>l
 endif
+
+" function! s:GrepVisual()
+"   let temp = @s
+"   norm! gv"sy
+"   execute "grep " . @s
+"   let @s = temp
+" endfunction
+" nnoremap <leader>* :grep <C-r><C-w><cr>
+" vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
