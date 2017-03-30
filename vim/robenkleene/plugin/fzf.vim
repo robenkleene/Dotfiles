@@ -29,13 +29,13 @@ command! -bang -nargs=* Rrgf
   \ call fzf#vim#grep('rg --smart-case --column --line-number --no-heading --color=always '.<q-args>.'| tr -d "\017"', 1, <bang>0)
 
 " Bookmarks
-function! s:RobenKleeneBookmarks()
-  redir => l:raw_bookmarks
-  silent echo $ROBENKLEENE_BOOKMARKS
-  redir END
-  let l:bookmarks = split(l:raw_bookmarks, ':')
-  return l:bookmarks
-endfunction
+" function! s:RobenKleeneBookmarks()
+"   redir => l:raw_bookmarks
+"   silent echo $ROBENKLEENE_BOOKMARKS
+"   redir END
+"   let l:bookmarks = split(l:raw_bookmarks, ':')
+"   return l:bookmarks
+" endfunction
 
 function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')

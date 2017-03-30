@@ -60,6 +60,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
+" TODO Figure out how to make the conditional work
+" Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim) ? {} : { 'on': ['Buffers', 'Blines', 'Files', 'History', 'Modified', 'Rgf', 'Rrgf' ] }
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'jremmen/vim-ripgrep', { 'on': ['Rg'] }
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
