@@ -150,11 +150,21 @@ if has('nvim')
   tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
-" function! s:GrepVisual()
-"   let temp = @s
-"   norm! gv"sy
-"   execute "grep " . @s
-"   let @s = temp
-" endfunction
-" nnoremap <leader>* :grep <C-r><C-w><cr>
-" vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
+command! -nargs=* Grep :call s:Grep(<q-args>)
+function! s:Grep(terms)
+  silent! execute "grep " . a:terms
+  if len(getqflist())
+    copen
+  endif
+endfunction
+function! s:GrepVisual()
+  let temp = @s
+  norm! gv"sy
+  silent! execute "grep " . @s
+  let @s = temp
+  if len(getqflist())
+    copen
+  endif
+endfunction
+nnoremap <leader>* :Grep <C-r><C-w><cr>
+vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>

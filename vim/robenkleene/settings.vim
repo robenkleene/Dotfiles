@@ -129,8 +129,8 @@ augroup END
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
 
-" if executable("rg")
-"   set grepprg=rg\ --vimgrep\ --no-heading
-"   " set grepprg=rg\ --vimgrep\ --no-heading
-"   " set grepformat=%f:%l:%c:%m,%f:%l:%m
-" endif
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  " set grepprg=rg\ --vimgrep\ --no-heading
+  " set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
