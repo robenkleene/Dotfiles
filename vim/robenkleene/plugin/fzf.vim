@@ -1,7 +1,5 @@
 set rtp+=~/.fzf
 
-nnoremap <leader>A :tabnew<CR>:Ag 
-
 " rg
 " nnoremap <leader>* :Rgf <C-r><C-w><cr>
 " vnoremap <leader>* :<C-u>call <SID>RgfVisual()<CR>
