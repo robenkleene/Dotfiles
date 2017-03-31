@@ -18,6 +18,7 @@ nnoremap <leader>c :Modified<CR>
 " endfunction
 
 " `rg`
+command! -bang -nargs=* Gf Gfzf
 command! -bang -nargs=* Gfzf
   \ call fzf#vim#grep('rg --smart-case --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
   " \ let @/="<args>"

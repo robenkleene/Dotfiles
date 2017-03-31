@@ -155,6 +155,7 @@ function! s:Grep(terms)
   silent! execute "grep " . a:terms
   if len(getqflist())
     copen
+    wincmd k
   endif
 endfunction
 function! s:GrepVisual()
