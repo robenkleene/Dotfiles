@@ -161,11 +161,11 @@ endfunction
 function! s:GrepVisual()
   let temp = @s
   norm! gv"sy
-  silent! execute "grep " . @s
+  silent! execute "grep --fixed-strings '" . @s . "'"
   let @s = temp
   if len(getqflist())
     copen
   endif
 endfunction
-nnoremap <leader>* :Grep <C-r><C-w><cr>
+nnoremap <leader>* :Grep --fixed-strings '<C-r><C-w>'<cr>
 vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
