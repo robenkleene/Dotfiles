@@ -40,6 +40,7 @@ abbreviations=(
 'gu' 'git pull'
 'gsmi' 'git submodule init'
 'gsmu' 'git submodule update'
+'gsmuir' 'git submodule update --init --recursive'
 'gs' 'git status'
 'grc' 'git rebase --continue'
 'gpt' 'git push --tags'
