@@ -50,7 +50,9 @@ highlight PmenuSel ctermfg=black ctermbg=cyan
 " be selected or not selected, so this difference in colors distinguishes
 " that.
 highlight Visual ctermbg=cyan ctermfg=black
-highlight MatchParen ctermfg=white ctermbg=244
+" Original idea, grey background:
+" highlight MatchParen ctermfg=white ctermbg=244
+highlight MatchParen ctermfg=cyan ctermbg=NONE cterm=underline
 highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
 " Search {{{1
