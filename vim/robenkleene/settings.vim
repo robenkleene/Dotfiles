@@ -108,6 +108,15 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " the bottom in `netrw`
 set suffixes-=.h
 
+" Allow autocomplete dictionary
+set dictionary+=/usr/share/dict/words
+
+" Use `rg` if available
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  " set grepprg=rg\ --vimgrep\ --no-heading
+  " set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 
 " Autocmd {{{1
 
@@ -129,8 +138,3 @@ augroup END
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
 
-if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  " set grepprg=rg\ --vimgrep\ --no-heading
-  " set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
