@@ -91,6 +91,7 @@ highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
 highlight ErrorMsg ctermfg=white ctermbg=red cterm=bold
 highlight SpellBad ctermfg=red ctermbg=NONE cterm=underline
 highlight SpellCap ctermfg=yellow ctermbg=NONE cterm=underline
+highlight SpellRare ctermfg=yellow ctermbg=NONE cterm=underline
 
 " Diff {{{1
 " highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
