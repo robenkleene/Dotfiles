@@ -153,10 +153,11 @@ endif
 command! -nargs=* Grep :call <SID>Grep(<q-args>)
 function! s:Grep(terms)
   silent! execute "grep " . a:terms
-  if len(getqflist())
-    copen
-    wincmd k
-  endif
+  " Try not opening the quickfix list automatically
+  " if len(getqflist())
+  "   copen
+  "   wincmd k
+  " endif
 endfunction
 function! s:GrepVisual()
   let temp = @s
