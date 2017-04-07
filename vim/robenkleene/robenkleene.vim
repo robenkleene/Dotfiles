@@ -54,6 +54,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
 Plug 'Konfekt/FastFold'
 Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'Konfekt/vim-alias'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -84,7 +85,6 @@ if has("gui_vimr")
 endif
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
-source ~/.vim/robenkleene/abbreviations.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/commentary.vim
