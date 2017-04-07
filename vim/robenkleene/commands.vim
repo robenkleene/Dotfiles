@@ -84,3 +84,6 @@ if exists(':terminal')
     execute 'terminal rg --smart-case --line-number' args
   endfunction
 endif
+
+" Add `git` hunks to `quickfix`
+command! Ghunks cexpr system('git diff --relative \| dtg')
