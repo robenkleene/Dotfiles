@@ -20,6 +20,7 @@ abbreviations=(
 'tmls' 'tmux ls'
 # vim
 # git
+'g' 'git'
 'ga' 'git add'
 'gb' 'git branch'
 'gbd' 'git branch -d'
