@@ -25,19 +25,15 @@
 	dt = difftool
 	a = add
 	b = branch
-	aa = add --all
+	aa = add -A :/
 	co = checkout
 	cl = clone
-	ts = !tig status
-	tig = !tig
 	c = commit
 	p = push
-	pl = pull
 	u = pull
 	l = log
 	si = submodule init
 	su = submodule update
-	f = !open .
 [filter "media"]
 	required = true
 	clean = git media clean %f
