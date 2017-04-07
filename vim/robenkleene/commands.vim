@@ -90,3 +90,18 @@ command! SaveSession :mksession! ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_session
 cnoreabbrev SS SaveSession
 cnoreabbrev RS RestoreSession
+
+" Rg
+if exists(':terminal')
+  command! -nargs=* Rg call <SID>Rg(<f-args>)
+  function! s:Rg(args) abort
+    " Not sure why this is necessary, copied from `vim-fugitive`
+    let args = matchstr(a:args,'\v\C.{-}%($|\\@<!%(\\\\)*\|)@=')
+    if expand('%') != ''
+      -tabedit %
+    else
+      -tabnew
+    endif
+    execute 'terminal rg --smart-case --line-number' args
+  endfunction
+endif
