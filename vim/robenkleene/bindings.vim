@@ -150,7 +150,7 @@ if has('nvim')
   tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
-command! -nargs=* Grep :call s:Grep(<q-args>)
+command! -nargs=* Grep :call <SID>Grep(<q-args>)
 function! s:Grep(terms)
   silent! execute "grep " . a:terms
   if len(getqflist())
