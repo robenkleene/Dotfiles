@@ -53,6 +53,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
       \ 'TestLast', 'TestVisit'] }
 Plug 'Konfekt/FastFold'
 Plug 'SirVer/ultisnips'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
