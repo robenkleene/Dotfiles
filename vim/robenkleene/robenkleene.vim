@@ -74,6 +74,9 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 call plug#end()
 
+" Aliases (Abbreviations) are at:
+" ~/Development/Dotfiles/vim/after/plugin/alias.vim
+
 " Source {{{1
 source ~/.vim/robenkleene/settings.vim
 source ~/.vim/robenkleene/ui.vim
