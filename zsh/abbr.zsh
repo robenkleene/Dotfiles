@@ -58,7 +58,7 @@ abbreviations=(
 'gt' 'git tag'
 'gdw' 'git diff --color-words'
 'gbpr' 'git remote prune origin'
-'gdv' 'git diff | dtg | vg'
+'gdv' 'git diff --relative | dtg | vg'
 )
 
 if [ "$(uname)" = "Darwin" ]; then
