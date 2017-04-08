@@ -20,20 +20,32 @@
 [mergetool]
 	prompt = false
 [alias]
-	s = status
+	a = add
+	aa = add -A :/
+	b = branch
+	bd = branch -d
+	c = commit
+	cl = clone
+	co = checkout
+	cob = checkout -b
 	d = diff
 	dt = difftool
-	a = add
-	b = branch
-	aa = add -A :/
-	co = checkout
-	cl = clone
-	c = commit
-	p = push
-	u = pull
+	dw = diff --color-words
+	f = fetch
 	l = log
-	si = submodule init
-	su = submodule update
+	m = merge
+	mt = mergetool
+	p = push
+	pt = push --tags
+	r = rebase
+	rc = rebase --continue
+	s = status
+	sm = submodule
+	smi = submodule init
+	smu = submodule update
+	smuir = submodule update --init -recursive
+	t = tag
+	u = pull
 [filter "media"]
 	required = true
 	clean = git media clean %f
