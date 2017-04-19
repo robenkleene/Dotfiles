@@ -16,7 +16,7 @@
       "vim-mode"
     ]
     telemetryConsent: "no"
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     invisibles: {}
     lineHeight: 1.3
@@ -27,7 +27,6 @@
   "fuzzy-finder":
     preserveLastSearch: true
   linter:
-    showErrorPanel: false
     subtleLinterErrors: [
       "jshint"
       "scss-lint"
