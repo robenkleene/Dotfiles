@@ -5,9 +5,9 @@ if exists("*synstack")
     return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
   endfunc
   " Echo Syntax Group
-  command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
+  command! SyntaxEchoGroups :echo <SID>SyntaxGroups()
   " Yank Syntax Group
-  command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
+  command! SyntaxYankGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
 
   " Syntax Colors
   function! s:SyntaxColors()
