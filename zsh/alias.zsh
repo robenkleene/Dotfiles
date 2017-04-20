@@ -91,6 +91,5 @@ alias gvm='git-vim-modified'
 alias gcd='git-cd-root'
 
 # todo
-alias tdl='rg --color=never "([-|*] \[.\]|^#)"'
-alias tds='rg --color=never "[-|*] \[.\] \d" | sort -t: -k3'
-alias tdh='rg --color=never "^#"'
+alias tdls='rg --color=never "([-|*] \[.\]|^#)"'
+alias tdlss='rg --color=never "[-|*] \[.\] \d" | sort -t: -k3'
