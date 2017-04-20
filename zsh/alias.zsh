@@ -92,4 +92,5 @@ alias gcd='git-cd-root'
 
 # todo
 alias tdls='rg --color=never "([-|*] \[.\]|^#)"'
-alias tdlss='rg --color=never "[-|*] \[.\] \d" | sort -t: -k3'
+# alias tdlss='rg --color=never "[-|*] \[.\]" | sort -t: -k3'
+alias tds='rg --color=never "[-|*] \[.\]" | sort -t: -k3'
