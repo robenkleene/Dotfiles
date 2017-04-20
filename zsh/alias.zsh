@@ -88,6 +88,7 @@ fi
 
 # git
 alias gvm='git-vim-modified'
+alias gvh='git-vim-hunks'
 alias gcd='git-cd-root'
 
 # todo
