@@ -11,7 +11,9 @@ setopt autocd
 
 # Help
 autoload -Uz run-help
-unalias run-help
+# This command fails on Linux, so drop its output
+unalias run-help &>/dev/null
+
 alias help=run-help
 autoload -Uz run-help-git
 # autoload -Uz run-help-ip
