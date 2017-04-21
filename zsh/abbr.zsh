@@ -31,6 +31,7 @@ abbreviations=(
 'gco' 'git checkout'
 'gcob' 'git checkout -b'
 'gd' 'git diff'
+'gdr' 'git diff --relative'
 'gdt' 'git difftool'
 'gl' 'git log'
 'gm' 'git merge'
