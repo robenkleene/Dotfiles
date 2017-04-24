@@ -45,7 +45,7 @@ alias o='new-finder-window-here'
 alias tnd='tmux-name-directory'
 alias ta='tmux-attach'
 alias trs='tmux-restore-session'
-alias tsq='tmux-save-quit'
+alias tqs='tmux-save-quit'
 
 # emacs
 alias m='magit'
