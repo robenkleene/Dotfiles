@@ -116,7 +116,7 @@ function git-vim-modified() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=U | uniq)
 }
 function git-vim-hunks() {
-  git diff --relative | dtg | vim-grep
+  git diff --relative $argv | dtg | vim-grep
 }
 function git-checkout-modified() {
   git checkout -- .
