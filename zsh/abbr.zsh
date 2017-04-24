@@ -36,6 +36,7 @@ abbreviations=(
 'gl' 'git log'
 'gm' 'git merge'
 'gr' 'git rebase'
+'grph' 'git rev-parse HEAD'
 'gmt' 'git mergetool'
 'gsm' 'git submodule'
 'gur' 'git pull -r'
