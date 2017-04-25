@@ -58,6 +58,7 @@ Plug 'Konfekt/vim-alias'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
 " TODO Figure out how to make the conditional work
