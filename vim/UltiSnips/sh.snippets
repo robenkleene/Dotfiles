@@ -8,11 +8,14 @@ snippet template "Basic template" b
 
 
 endsnippet
-snippet 1while "Loop one-liner" w
+snippet 1while "While loop one-liner" w
 while read i; do { ${0:echo $i;} } done
 endsnippet
 snippet while ""
 while read i; do
   ${0:echo $i;} 
 done
+endsnippet
+snippet 1for "For loop one-liner" w
+for i in ${1:*}; do { ${0:echo $i;} } done
 endsnippet
