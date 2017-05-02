@@ -60,6 +60,7 @@ alias vss='vim-server-start'
 alias vse='vim-server-edit'
 alias vg='vim-grep'
 alias vf='fzf-vim-grep'
+alias dtv='dtg | vg'
 
 # emacs
 if [[ "$(uname)" = "Darwin" ]]; then
