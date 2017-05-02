@@ -1,5 +1,8 @@
-# Color in `ls`
-export CLICOLOR=1
+# Ad a custom folder for completions to override installed ones `_rg` was just
+# added because path completion is broken with built-in completions. Try
+# removing this occasionally and see if path completions have started working.
+fpath=(~/.zsh/completion $fpath)
+
 # Required for abbreviations
 setopt extendedglob
 # Make globs less case sensitive
