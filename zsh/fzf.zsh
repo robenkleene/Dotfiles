@@ -13,7 +13,7 @@ bindkey '^[r' fzf-history-widget
 
 # Private
 
-function _robenkleene_fzf_inline() {
+_robenkleene_fzf_inline() {
   local result_cmd=$1
   local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
@@ -32,7 +32,7 @@ function _robenkleene_fzf_inline() {
   return $ret
 }
 
-function _robenkleene_fzf_inline_result() {
+_robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
   local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
@@ -44,11 +44,11 @@ function _robenkleene_fzf_inline_result() {
 # Directories
 
 # History
-function fzf-recent-cd() {
+fzf-recent-cd() {
   _robenkleene_fzf_inline cd "fasd -ld"
 }
 
-function fzf-bookmark-cd() {
+fzf-bookmark-cd() {
   # Bookmarks
   local bookmarks=(~/Development/Dotfiles/)
   # Documentation
@@ -61,32 +61,32 @@ function fzf-bookmark-cd() {
 # Files
 
 # Vim
-function fzf-file-vim() {
+fzf-file-vim() {
   _robenkleene_fzf_inline $VIM_COMMAND
 }
 
 # Reveal
 if [ "$(uname)" = "Darwin" ]; then
-  function fzf-file-reveal() {
+  fzf-file-reveal() {
     _robenkleene_fzf_inline "open -R"
   }
 fi
 
 # Open
 if [ "$(uname)" = "Darwin" ]; then
-  function fzf-file-open() {
+  fzf-file-open() {
     _robenkleene_fzf_inline open
   }
 fi
 
 # Path
-function fzf-file-cd() {
+fzf-file-cd() {
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     cd $(dirname $result)
   fi
 }
-function fzf-file-path() {
+fzf-file-path() {
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     echo $result | tr -d '\n' | tee /dev/tty | safecopy
@@ -94,7 +94,7 @@ function fzf-file-path() {
 }
 
 # Lines
-function fzf-line-vim() {
+fzf-line-vim() {
   local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
     echo $result | $VIM_COMMAND -c "GrepBuffer" -
@@ -102,7 +102,7 @@ function fzf-line-vim() {
 }
 
 # Documentation
-function fzf-documentation-less() {
+fzf-documentation-less() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -116,7 +116,7 @@ function fzf-documentation-less() {
   fi
   cd -
 }
-function fzf-documentation-vim() {
+fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -133,7 +133,7 @@ function fzf-documentation-vim() {
 }
 
 # Snippets
-function fzf-snippet-copy() {
+fzf-snippet-copy() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -141,7 +141,7 @@ function fzf-snippet-copy() {
   fi
   cd -
 }
-function fzf-snippet-vim() {
+fzf-snippet-vim() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -159,7 +159,7 @@ function fzf-snippet-vim() {
 
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
-  function fzf-project-xcode() {
+  fzf-project-xcode() {
     setopt localoptions pipefail 2> /dev/null
     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
       | grep -vE "\/Carthage\/" \
@@ -169,7 +169,7 @@ if [ "$(uname)" = "Darwin" ]; then
   }
 fi
 if [ "$(uname)" = "Darwin" ]; then
-  function fzf-file-xcode() {
+  fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
     eval $ack_search_xcode \
       | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
@@ -179,7 +179,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # ack
-function fzf-vim-grep() {
+fzf-vim-grep() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
   echo $result | $VIM_COMMAND -c "GrepBuffer" -
 }
