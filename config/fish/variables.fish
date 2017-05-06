@@ -4,7 +4,7 @@ set -x CDPATH . ~ ~/Development/ ~/Documentation/
 
 # Vim
 if test -n "$NVIM_LISTEN_ADDRESS"
-  set VIM_COMMAND nvimedit
+  set VIM_COMMAND nvim-edit
 else
   set VIM_COMMAND nvim
 end

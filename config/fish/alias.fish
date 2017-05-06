@@ -18,8 +18,8 @@ end
 # Shortcut
 
 # scripts
-alias n 'new-terminal-here'
-alias o 'new-finder-window-here'
+alias n 'terminal-new'
+alias o 'finder-new'
 
 # fish
 alias ei 'fish-edit-config'

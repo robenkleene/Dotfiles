@@ -1,2 +1,2 @@
-nnoremap <localleader>p :.!printvariable -l "rb"<CR>
+nnoremap <localleader>p :.!variable-print -l "rb"<CR>
 nnoremap <localleader>r :!ruby "%"<CR>

@@ -72,12 +72,12 @@ nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:spa
 
 " Markdown link
 function! s:MarkdownLinkLines() range
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/mdlinkforfile '.shellescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
 function! s:MarkdownLinkFile()
-  let @" = system('~/Development/Scripts/bin/mdlinkforfile '.shellescape(expand('%:p')))
+  let @" = system('~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction

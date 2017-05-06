@@ -1,5 +1,5 @@
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  VIM_COMMAND=nvimedit
+  VIM_COMMAND=nvim-edit
 else
   VIM_COMMAND=nvim
 fi

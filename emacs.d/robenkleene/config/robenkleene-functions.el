@@ -113,7 +113,7 @@
         (shell-command-on-region
          (line-beginning-position)
          (line-end-position)
-         (format "printvariable -l %s" extension)
+         (format "variable-print -l %s" extension)
          nil
          t)
       )

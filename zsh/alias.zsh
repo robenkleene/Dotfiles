@@ -38,8 +38,8 @@ alias vimdiff="nvim -d"
 alias ei='zsh-edit-config'
 
 # scripts
-alias n='new-terminal-here'
-alias o='new-finder-window-here'
+alias n='terminal-new'
+alias o='finder-new'
 
 # tmux
 alias tnd='tmux-name-directory'
