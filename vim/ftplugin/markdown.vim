@@ -5,6 +5,7 @@ setlocal spell
 set wrap
 
 " Don't show 80 character guide
+" This is confusing because there's no way to soft wrap to the `colorcolumn`
 setlocal colorcolumn=""
 
 nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
