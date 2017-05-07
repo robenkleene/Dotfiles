@@ -134,6 +134,9 @@ git-reset() {
   git-clean-checkout
   git-submodule-reset
 }
+git-reset-soft() {
+  git reset --soft "HEAD^"
+}
 git-submodule-reset() {
   git submodule update --init --recursive
   git submodule foreach --recursive 'git clean -dff && git checkout -- .'
