@@ -5,7 +5,7 @@ setlocal spell
 set wrap
 
 " Don't show 80 character guide
-" setlocal colorcolumn=""
+setlocal colorcolumn=""
 
 nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 nnoremap <localleader>t :.!markdown-title "%"<CR>
