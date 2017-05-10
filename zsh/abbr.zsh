@@ -23,7 +23,6 @@ abbreviations=(
 'g' 'git'
 'ga' 'git add'
 'gb' 'git branch'
-'gbd' 'git branch -d'
 'gc' 'git commit'
 'gcam' 'git commit --amend -m'
 'gcl' 'git clone'
