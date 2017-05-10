@@ -3,6 +3,8 @@
 
 # Vim Temporary Files
 .*.sw?
+# Vim Local Session
+vim_session
 
 # Emacs file locks
 .#*
@@ -11,5 +13,5 @@
 tags
 !tags/
 
-#
+# Node
 node_modules

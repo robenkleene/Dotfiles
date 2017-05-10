@@ -55,6 +55,7 @@ alias r='ranger-cd'
 
 # vim
 alias vsr='vim-session-restore'
+alias vsrl='vim-session-restore-local'
 alias vsrs='vim-server-start -c "RestoreSession"'
 alias vss='vim-server-start'
 alias vse='vim-server-edit'

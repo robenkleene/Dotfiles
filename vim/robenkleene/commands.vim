@@ -49,6 +49,13 @@ command! -bang QS
       \ else |
       \   execute "qa" |
       \ endif
+command! -bang QSL
+      \ execute "SaveSessionLocal" |
+      \ if <bang>1 |
+      \   execute "qa!" |
+      \ else |
+      \   execute "qa" |
+      \ endif
 
 " Make the current buffer a grep buffer
 command! GrepBuffer :call <SID>GrepBuffer()
@@ -65,6 +72,8 @@ function! s:GrepBuffer()
 endfunction
 
 " Save and Restore Session State
+command! SaveSessionLocal :mksession! vim_session
+command! RestoreSessionLocal :source vim_session
 command! SaveSession :mksession! ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_session
 cnoreabbrev SS SaveSession

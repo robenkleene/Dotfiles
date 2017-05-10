@@ -36,6 +36,9 @@ egitn() {
 vim-session-restore() {
   $VIM_COMMAND -c "RestoreSession"
 }
+vim-session-restore-local() {
+  $VIM_COMMAND -c "RestoreSessionLocal"
+}
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
