@@ -33,7 +33,7 @@ egitn() {
 }
 
 # vim
-vim-restore-session() {
+vim-session-restore() {
   $VIM_COMMAND -c "RestoreSession"
 }
 vim-grep() {

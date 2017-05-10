@@ -44,8 +44,8 @@ alias o='finder-new'
 # tmux
 alias tnd='tmux-name-directory'
 alias ta='tmux-attach'
-alias trs='tmux-restore-session'
-alias tqs='tmux-save-quit'
+alias tsr='tmux-session-restore'
+alias tsq='tmux-session-save-quit'
 
 # emacs
 alias m='magit'
@@ -54,8 +54,8 @@ alias m='magit'
 alias r='ranger-cd'
 
 # vim
-alias vrs='vim-restore-session'
-alias vsr='vim-server-start -c "RestoreSession"'
+alias vsr='vim-session-restore'
+alias vsrs='vim-server-start -c "RestoreSession"'
 alias vss='vim-server-start'
 alias vse='vim-server-edit'
 alias vg='vim-grep'
