@@ -76,8 +76,6 @@ command! SaveSessionLocal :mksession! vim_session
 command! RestoreSessionLocal :source vim_session
 command! SaveSession :mksession! ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_session
-cnoreabbrev SS SaveSession
-cnoreabbrev RS RestoreSession
 
 " Rg
 if exists(':terminal')
