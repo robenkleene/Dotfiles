@@ -55,7 +55,6 @@ Plug 'Konfekt/FastFold'
 Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
