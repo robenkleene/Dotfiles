@@ -87,8 +87,9 @@ endif
 " Override `ignorecase`
 set smartcase
 
-" Don't let smartase affect autocomplete
-set infercase
+" Don't let smartcase affect autocomplete
+" This option was causing autocomplete option with the wrong case to appear
+" set infercase
 
 " open previews vertically
 " let g:netrw_preview = 1
