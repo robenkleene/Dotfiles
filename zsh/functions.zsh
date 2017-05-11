@@ -116,7 +116,7 @@ tmux-attach() {
 
 # git
 git-vim-modified() {
-  $VIM_COMMAND $(git diff --name-only --diff-filter=U | uniq)
+  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
 }
 git-vim-hunks() {
   git diff --relative $argv | dtg | vim-grep
