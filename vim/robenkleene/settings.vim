@@ -77,15 +77,16 @@ set foldmethod=syntax
 set nofoldenable
 
 " Ignore case in search results
-set ignorecase
+" set ignorecase
+
+" Override `ignorecase`
+" set smartcase
+
 " Live Substitution Preview
 if has('nvim')
   " set inccommand=nosplit
   set inccommand=split
 endif
-
-" Override `ignorecase`
-set smartcase
 
 " Don't let smartcase affect autocomplete
 " This option was causing autocomplete option with the wrong case to appear
@@ -116,7 +117,7 @@ set dictionary+=/usr/share/dict/words
 
 " Use `rg` if available
 if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+  set grepprg=rg\ --vimgrep\ --no-heading
   " set grepprg=rg\ --vimgrep\ --no-heading
   " set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
