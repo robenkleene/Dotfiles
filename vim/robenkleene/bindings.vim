@@ -127,6 +127,13 @@ noremap <silent> <S-Right> <C-w>l
 
 " Neovim Terminal
 if has('nvim')
+  function! s:OpenTTerminal()
+    " Only remap `<Esc>` in this buffer so it doesn't interfere
+    " with commands that spawn terminals like `fzf`
+    tabnew
+    terminal zsh
+    tnoremap <buffer> <Esc> <C-\><C-n>
+  endfunction
   function! s:OpenTerminal()
     " Only remap `<Esc>` in this buffer so it doesn't interfere
     " with commands that spawn terminals like `fzf`
@@ -144,6 +151,7 @@ if has('nvim')
 
   nnoremap <leader>ts :call <SID>OpenTerminal()<CR>
   nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
+  nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
   tnoremap <A-h> <C-\><C-n><C-w>h
   tnoremap <A-j> <C-\><C-n><C-w>j
   tnoremap <A-k> <C-\><C-n><C-w>k
