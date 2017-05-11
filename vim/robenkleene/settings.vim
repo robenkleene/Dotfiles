@@ -80,6 +80,10 @@ set nofoldenable
 " set ignorecase
 
 " Override `ignorecase`
+" This has been turned off because the `*` behavior with it on is problematic:
+" It takes the `ignorecase` value but not the `smartcase` value. This makes it
+" hard to use `*` to change a variable name in a specific scope for instance,
+" since with `ignorecase` it's likely to pickup some false positive text.
 " set smartcase
 
 " Live Substitution Preview
