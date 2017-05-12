@@ -24,6 +24,7 @@ if exists(':terminal')
       -tabnew
     endif
     execute 'terminal pandoc -f markdown -t html' args
+    tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
 endif
 nnoremap <localleader>c :ConvertMarkdown %<CR>
