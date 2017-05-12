@@ -26,7 +26,7 @@ if exists("*synstack")
     return syntaxcolors
   endfunc
   " Echo Syntax Colors
-  command! EchoSyntaxColors :echo <SID>SyntaxColors()
+  command! SyntaxEchoColors :echo <SID>SyntaxColors()
 endif
 " Also remember `:XtermColorTable`
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
@@ -79,6 +79,11 @@ command! RestoreSession :source ~/.vim/vim_session
 
 " Rg
 if exists(':terminal')
+  command! Doc call <SID>Doc()
+  function! s:Doc() abort
+    split
+    execute 'terminal doc'
+  endfunction
   command! -nargs=* Rg call <SID>Rg(<f-args>)
   function! s:Rg(args) abort
     " Not sure why this is necessary, copied from `vim-fugitive`
