@@ -8,6 +8,7 @@ abbreviations=(
 'v' "$VIM_COMMAND"
 # rg
 'a' "$ACK_COMMAND"
+'ai' "$ACK_COMMAND -i"
 # emacs
 'e' "$EMACS_COMMAND"
 'ec' 'emacsclient -t'
