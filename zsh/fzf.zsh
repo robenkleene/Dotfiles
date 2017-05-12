@@ -102,20 +102,6 @@ fzf-line-vim() {
 }
 
 # Documentation
-fzf-documentation-less() {
-  cd ~/Documentation/
-  local result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
-    local parameter=$(printf '%q' "$PWD/$result")
-    local final_cmd="cat $parameter | less"
-    eval $final_cmd
-    if [ $? -eq 0 ]; then
-      # Add to history
-      print -sr $final_cmd
-    fi
-  fi
-  cd -
-}
 fzf-documentation-vim() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
