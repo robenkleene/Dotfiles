@@ -3,6 +3,11 @@ if [ -f ${1:"$file"} ]; then
   ${0:echo $file;} 
 fi
 endsnippet
+snippet if "Test" b
+if [ -${1:n} ${2:"$path"} ]; then
+  ${0:echo $path;} 
+fi
+endsnippet
 snippet template "Basic template" b
 #!/usr/bin/env bash
 
