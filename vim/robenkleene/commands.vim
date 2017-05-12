@@ -83,6 +83,7 @@ if exists(':terminal')
   function! s:Doc() abort
     split
     execute 'terminal doc'
+    tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
   command! -nargs=* Rg call <SID>Rg(<f-args>)
   function! s:Rg(args) abort
