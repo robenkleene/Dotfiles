@@ -1,3 +1,11 @@
+snippet interface "Interface" b
+@interface ${1:MyObject} ()
+$0
+@end
+endsnippet
+snippet property "Property" b
+@property (nonatomic, strong, nonnull) ${1:NSString} *${2:identifier};
+endsnippet
 snippet nonnull "Assume nonnull block" b
 NS_ASSUME_NONNULL_BEGIN
 ${VISUAL}
