@@ -6,6 +6,9 @@ endsnippet
 snippet property "Property" b
 @property (nonatomic, strong, nonnull) ${1:NSString} *${2:identifier};
 endsnippet
+snippet propertyd "Delegate property" b
+@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;
+endsnippet
 snippet nonnull "Assume nonnull block" b
 NS_ASSUME_NONNULL_BEGIN
 ${VISUAL}
