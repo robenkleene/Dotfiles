@@ -178,3 +178,25 @@ function! s:GrepVisual()
 endfunction
 nnoremap <leader>* :Grep --fixed-strings '<C-r><C-w>'<cr>
 vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
+
+" Toggle `quickfix`
+function! s:GetBufferList() 
+  redir =>buflist 
+  silent! ls 
+  redir END 
+  return buflist 
+endfunction
+function! s:ToggleQuickfixList()
+  for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
+    if bufwinnr(bufnum) != -1
+      cclose
+      return
+    endif
+  endfor
+  let winnr = winnr()
+  copen
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+nnoremap <script> <silent> <leader>q :call <SID>ToggleQuickfixList()<CR>
