@@ -88,6 +88,7 @@ if has("gui_vimr")
 endif
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
+source ~/.vim/robenkleene/operators.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/commentary.vim
