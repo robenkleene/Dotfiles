@@ -1,5 +1,5 @@
-nnoremap <silent> G :set opfunc=<SID>Google<CR>g@
-vnoremap <silent> G :<C-U>call <SID>Google(visualmode(), 1)<CR>
+nnoremap <silent> <leader>G :set opfunc=<SID>Google<CR>g@
+vnoremap <silent> <leader>G :<C-U>call <SID>Google(visualmode(), 1)<CR>
 
 function! s:Google(type, ...) abort
   let sel_save = &selection
