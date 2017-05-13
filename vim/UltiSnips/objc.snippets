@@ -3,3 +3,13 @@ NS_ASSUME_NONNULL_BEGIN
 ${VISUAL}
 NS_ASSUME_NONNULL_END
 endsnippet
+snippet init "Initialization method" b
+- (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\l$0/}
+{
+    self = [super init];
+    if (self) {
+		_${1/.*/\l$0/} = ${1/.*/\l$0/};
+    }
+    return self;
+}
+endsnippet
