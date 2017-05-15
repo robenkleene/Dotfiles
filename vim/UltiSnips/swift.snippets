@@ -23,3 +23,19 @@ protocol ${1:MyType} {
     $0
 }
 endsnippet
+snippet uiviewcontroller "View Controller" b
+//
+//  `!v expand("%:t")`
+//  `!v expand("%:h")`
+//
+//  Created by Roben Kleene on `date +%-m/%-d/%y`.
+//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.
+//
+
+import UIKit
+
+class `!v expand("%:t:r")`: UIViewController {
+    $0
+}
+endsnippet
+
