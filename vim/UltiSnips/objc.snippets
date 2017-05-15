@@ -1,10 +1,15 @@
+snippet protocol "Protocol" b
+@protocol ${1:MyProtocol} <NSObject>
+$0
+@end
+endsnippet
 snippet interface "Interface" b
 @interface ${1:MyObject} ()
 $0
 @end
 endsnippet
 snippet property "Property" b
-@property (nonatomic, strong, nonnull) ${1:NSString} *${2:identifier};
+@property (nonatomic, strong) ${1:NSString} *${2:identifier};
 endsnippet
 snippet propertyd "Delegate property" b
 @property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;
