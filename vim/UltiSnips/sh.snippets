@@ -24,3 +24,6 @@ endsnippet
 snippet 1for "For loop one-liner" w
 for i in ${1:*}; do { ${0:echo $i;} } done
 endsnippet
+snippet 1rename "Rename files in current directory" b
+for i in *; do { mv $i \`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\` } done
+endsnippet
