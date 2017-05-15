@@ -9,6 +9,14 @@ snippet template "Template" b
 
 $0
 endsnippet
+snippet delegate "Delegate" b
+NS_ASSUME_NONNULL_BEGIN
+@protocol ${1:MyClass}Delegate <NSObject>
+- (void)handleEventFor$1:($1 *)${2:myObject};
+- (${3:id})$2:($1 *)$2 ${4:valueForKey}:(${5:NSString *})${6:key};
+@end
+NS_ASSUME_NONNULL_END
+endsnippet
 snippet protocol "Protocol" b
 @protocol ${1:MyProtocol} <NSObject>
 $0
@@ -20,9 +28,11 @@ $0
 @end
 endsnippet
 snippet interface "Interface" b
+NS_ASSUME_NONNULL_BEGIN
 @interface ${1:MyClass} : NSObject
 $0
 @end
+NS_ASSUME_NONNULL_END
 endsnippet
 snippet extension "Extension" b
 @interface ${1:MyClass} ($2)
