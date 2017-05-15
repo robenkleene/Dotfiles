@@ -1,12 +1,3 @@
-snippet delegate "Delegate" b
-protocol ${1:Object}Delegate {
-    func ${2:handleEvent}(for: $1})
-    func ${1/.*/\l$0/}(_  ${1/.*/\l$0/}: $1, ${3:valueForKey} ${4:key}: ${5:String}) -> ${6:Any}
-}
-endsnippet
-snippet weakself "Weak self, strong self" b
-guard let \`self\` = self else { return }
-endsnippet
 snippet template "Template" b
 //
 //  `!v expand("%:t")`
@@ -17,6 +8,15 @@ snippet template "Template" b
 //
 
 $0
+endsnippet
+snippet delegate "Delegate" b
+protocol ${1:Object}Delegate {
+    func ${2:handleEvent}(for: $1})
+    func ${1/.*/\l$0/}(_  ${1/.*/\l$0/}: $1, ${3:valueForKey} ${4:key}: ${5:String}) -> ${6:Any}
+}
+endsnippet
+snippet weakself "Weak self, strong self" b
+guard let \`self\` = self else { return }
 endsnippet
 snippet protocol "Protocol" b
 protocol ${1:MyType} {
