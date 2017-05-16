@@ -9,7 +9,8 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :History<CR>
 nnoremap <leader>c :Modified<CR>
-nnoremap <localleader>i :BTags<CR>
+nnoremap <leader>i :BTags<CR>
+nnoremap <leader>s :Tags<CR>
 
 " function! s:RgfVisual()
 "   let temp = @s
