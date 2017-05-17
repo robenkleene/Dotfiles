@@ -115,6 +115,9 @@ tmux-attach() {
 }
 
 # git
+git-vim-modified-splits() {
+  $VIM_COMMAND -o $(git diff --name-only --diff-filter=UM | uniq)
+}
 git-vim-modified() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
 }
