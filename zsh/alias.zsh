@@ -21,7 +21,7 @@ alias c='safecopy'
 # Override
 
 # rg
-alias rg='rg --line-number'
+alias rg='rg --smart-case --line-number'
 # mitmproxy
 # Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
 # working with:

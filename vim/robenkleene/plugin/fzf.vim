@@ -22,12 +22,12 @@ nnoremap <leader>s :Tags<CR>
 " `rg`
 command! -bang -nargs=* Gf Gfzf
 command! -bang -nargs=* Gfzf
-  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
+  \ call fzf#vim#grep('rg --column --smart-case --line-number --no-heading --color=always '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0) |
   " \ let @/="<args>"
 
 " Raw `rg` for passing in custom flags
 command! -bang -nargs=* Gfzfr
-  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.<q-args>.'| tr -d "\017"', 1, <bang>0)
+  \ call fzf#vim#grep('rg --column --smart-case --line-number --no-heading --color=always '.<q-args>.'| tr -d "\017"', 1, <bang>0)
 
 " Bookmarks
 " function! s:RobenKleeneBookmarks()
@@ -49,7 +49,7 @@ command! B :call fzf#run({
 \ })
 
 command! -bang -nargs=* FZFVimDocumentation
-  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>).' ~/Documentation/development-references/Vim/ | tr -d "\017"', 1, <bang>0)
+  \ call fzf#vim#grep('rg --column --smart-case --line-number --no-heading --color=always '.shellescape(<q-args>).' ~/Documentation/development-references/Vim/ | tr -d "\017"', 1, <bang>0)
 
 " Modified Files
 command! Modified :call fzf#run({

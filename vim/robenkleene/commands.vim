@@ -94,7 +94,7 @@ if exists(':terminal')
     else
       -tabnew
     endif
-    execute 'terminal rg --line-number' args
+    execute 'terminal rg --smart-case --line-number' args
   endfunction
 endif
 

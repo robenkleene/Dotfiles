@@ -77,14 +77,19 @@ set foldmethod=syntax
 set nofoldenable
 
 " Ignore case in search results
-" set ignorecase
+set ignorecase
 
 " Override `ignorecase`
-" This has been turned off because the `*` behavior with it on is problematic:
-" It takes the `ignorecase` value but not the `smartcase` value. This makes it
-" hard to use `*` to change a variable name in a specific scope for instance,
-" since with `ignorecase` it's likely to pickup some false positive text.
-" set smartcase
+" `smartcase` with `ignorecase` is preferable for two reasons:
+" 1. It facilitates incremental search for jumping to a specific token.
+" 2. Usually a search starts broad and gets more specific, so it makes sense
+" to go from `ignorecase` to `case-sensitive`.
+" This has the downside of making a search with `*`, for a token often times
+" be too board (since `*` uses `ignorecase` but not `smartcase`). But that's
+" the less common case.
+" The fastests way to go from a `*` search to the same search with `smartcase`
+" is to hit `/`, then up, then enter.
+set smartcase
 
 " Live Substitution Preview
 if has('nvim')

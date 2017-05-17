@@ -1,7 +1,7 @@
 # Private
 
 _robenkleene_ack_lines() {
-  rg --no-heading --line-number --with-filename $@
+  rg --no-heading --smart-case --line-number --with-filename $@
 }
 _robenkleene_ack_lines_color() {
   _robenkleene_ack_lines --color=always $@
