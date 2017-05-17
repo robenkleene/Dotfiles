@@ -100,3 +100,12 @@ endif
 
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
+
+" Rg
+command! -nargs=* Rg :call <SID>Rg(<q-args>)
+function! s:Rg(terms)
+  let l:original_grepprg = &grepprg
+  set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
+  execute "grep " . a:terms
+  let &grepprg = l:original_grepprg
+endfunction

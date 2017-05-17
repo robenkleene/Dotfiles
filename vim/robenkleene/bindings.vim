@@ -163,7 +163,8 @@ endif
 
 command! -nargs=* Grep :call <SID>Grep(<q-args>)
 function! s:Grep(terms)
-  silent! execute "grep " . a:terms
+  " silent! execute "grep " . a:terms
+  execute "Rg " . a:terms
   " Try not opening the quickfix list automatically
   " if len(getqflist())
   "   copen
@@ -173,7 +174,8 @@ endfunction
 function! s:GrepVisual()
   let temp = @s
   norm! gv"sy
-  silent! execute "grep --fixed-strings '" . @s . "'"
+  " silent! execute "grep --fixed-strings '" . @s . "'"
+  execute "Rg --fixed-strings '" . @s . "'"
   let @s = temp
   if len(getqflist())
     copen
