@@ -111,10 +111,10 @@ xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
 " Panes
-" The problem with tmux vim navigator is that if vim is opened form a subprocess 
-" in a tmux pane (e.g., `tig -> vim`), then moving between vim panes will break,
-" because tmux won't be able to detect that vim is actually running as a child
-" of `tig`.
+" The problem with `tmux` Vim navigator is that if Vim is opened form a
+" subprocess in a `tmux` pane (e.g., `tig -> Vim`), then moving between Vim
+" panes will break, because `tmux` won't be able to detect that Vim is
+" actually running as a child of `tig`.
 
 if !has('nvim')
   let c='a'
