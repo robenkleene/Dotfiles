@@ -180,7 +180,9 @@ function! s:GrepVisual()
 endfunction
 " With a visual selection, an exact term is searched for
 " With no visual selection, the current word is searched for
-nnoremap <leader>* :Rg '\W<C-r><C-w>\W'<cr>
+" (The `\\|` is not intuitive, this is because `|` separates commands in
+" Vimscript)
+nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
 
 " Toggle `quickfix`
