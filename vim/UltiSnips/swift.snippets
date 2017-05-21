@@ -1,3 +1,8 @@
+snippet template "Template" b
+#!/usr/bin/swift
+
+$0
+endsnippet
 snippet templatex "Template" b
 //
 //  `!v expand("%:t")`
@@ -44,8 +49,8 @@ endsnippet
 snippet logv "Log variable" b
 NSLog("${1:variable} = \($1)")
 endsnippet
-snippet template "Template" b
-#!/usr/bin/swift
-
-$0
+snippet class "Class" b
+class ${1:MyObject} {
+    $0
+}
 endsnippet

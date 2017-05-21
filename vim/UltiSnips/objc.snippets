@@ -34,7 +34,14 @@ $0
 @end
 NS_ASSUME_NONNULL_END
 endsnippet
-snippet extension "Extension" b
+snippet extension "Class Extension" b
+NS_ASSUME_NONNULL_BEGIN
+@interface ${1:MyClass} (${2:MyCategory})
+$0
+@end
+NS_ASSUME_NONNULL_END
+endsnippet
+snippet extensionc "Class Extension" b
 @interface ${1:MyClass} ($2)
 $0
 @end
