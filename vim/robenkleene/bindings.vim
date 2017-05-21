@@ -169,27 +169,18 @@ if has('nvim')
   tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
-command! -nargs=* Grep :call <SID>Grep(<q-args>)
-function! s:Grep(terms)
-  " silent! execute "grep " . a:terms
-  execute "Rg " . a:terms
-  " Try not opening the quickfix list automatically
-  " if len(getqflist())
-  "   copen
-  "   wincmd k
-  " endif
-endfunction
 function! s:GrepVisual()
   let temp = @s
   norm! gv"sy
-  " silent! execute "grep --fixed-strings '" . @s . "'"
   execute "Rg --fixed-strings '" . @s . "'"
   let @s = temp
   if len(getqflist())
     copen
   endif
 endfunction
-nnoremap <leader>* :Grep --fixed-strings '<C-r><C-w>'<cr>
+" With a visual selection, an exact term is searched for
+" With no visual selection, the current word is searched for
+nnoremap <leader>* :Rg '\W<C-r><C-w>\W'<cr>
 vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
 
 " Toggle `quickfix`
