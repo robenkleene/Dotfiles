@@ -5,12 +5,12 @@ set rtp+=~/.fzf
 " vnoremap <leader>* :<C-u>call <SID>RgfVisual()<CR>
 
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>l :BLines<CR>
+nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :History<CR>
 nnoremap <leader>c :Modified<CR>
-nnoremap <leader>i :BTags<CR>
-nnoremap <leader>s :Tags<CR>
+nnoremap <localleader>i :BTags<CR>
+nnoremap <leader>i :Tags<CR>
 
 " function! s:RgfVisual()
 "   let temp = @s

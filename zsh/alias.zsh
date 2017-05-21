@@ -35,7 +35,7 @@ alias vimdiff="nvim -d"
 # Shortcut
 
 # zsh
-alias ei='zsh-edit-config'
+alias oi='zsh-edit-config'
 
 # scripts
 alias n='terminal-new'
@@ -54,14 +54,16 @@ alias m='magit'
 alias r='ranger-cd'
 
 # vim
+alias vf='fzf-vim-grep'
+alias vg='vim-grep'
+alias vgh='vim-git-hunks'
+alias vgm='vim-git-modified'
+alias vgms='vim-git-modified-splits'
+alias vse='vim-server-edit'
 alias vsr='vim-session-restore'
 alias vsrl='vim-session-restore-local'
 alias vsrs='vim-server-start -c "RestoreSession"'
 alias vss='vim-server-start'
-alias vse='vim-server-edit'
-alias vg='vim-grep'
-alias vf='fzf-vim-grep'
-alias dtv='dtg | vg'
 
 # emacs
 if [[ "$(uname)" = "Darwin" ]]; then
@@ -90,10 +92,8 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # git
-alias gvm='git-vim-modified'
-alias gvms='git-vim-modified-splits'
-alias gvh='git-vim-hunks'
 alias gcd='git-cd-root'
+alias dtv='dtg | vg'
 
 # todo
 alias tdls='rg --color=never "([-|*] \[.\]|^#)"'

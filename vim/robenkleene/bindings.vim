@@ -42,7 +42,12 @@ nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkl
 " nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
 
 " Toggle No Wrap
-nnoremap <leader>w :set wrap!<CR>
+" Local to window
+nnoremap <localleader>w :set wrap!<CR>
+
+" Toggle Seplling
+" Local to window
+nnoremap <localleader>s :set spell!<CR>
 
 " Open Working Directory in Terminal
 nnoremap <leader>T :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
@@ -65,8 +70,8 @@ nnoremap <leader>a :Rg
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
 " and removes the last new line
-nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
-            \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
+" nnoremap <silent> <leader>yy :silent .w !sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' 
+"             \ <BAR> tr -d "\n" <BAR> pbcopy<CR>
 
 " Move frames
 " Handled by `vim-tmux-navigator`
@@ -87,8 +92,8 @@ function! s:MarkdownLinkFile()
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
-vnoremap <leader>L :'<,'>call <SID>MarkdownLinkLines()<CR>
-nnoremap <leader>L :call <SID>MarkdownLinkFile()<CR>
+vnoremap <localleader>L :'<,'>call <SID>MarkdownLinkLines()<CR>
+nnoremap <localleader>L :call <SID>MarkdownLinkFile()<CR>
 
 " Copy Path
 nnoremap <leader>p :let @*=expand("%:p")<CR>

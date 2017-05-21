@@ -42,6 +42,15 @@ vim-session-restore-local() {
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
+vim-git-modified-splits() {
+  $VIM_COMMAND -o $(git diff --name-only --diff-filter=UM | uniq)
+}
+vim-git-modified() {
+  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
+}
+vim-git-hunks() {
+  git diff --relative $argv | dtg | vim-grep
+}
 
 # Emacs
 magit() {
@@ -115,15 +124,6 @@ tmux-attach() {
 }
 
 # git
-git-vim-modified-splits() {
-  $VIM_COMMAND -o $(git diff --name-only --diff-filter=UM | uniq)
-}
-git-vim-modified() {
-  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
-}
-git-vim-hunks() {
-  git diff --relative $argv | dtg | vim-grep
-}
 git-checkout-modified() {
   git checkout -- .
 }
