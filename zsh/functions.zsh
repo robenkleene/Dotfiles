@@ -75,8 +75,8 @@ fi
 
 # zsh
 zsh-edit-config() {
-  cd ~/Development/Dotfiles/
-  $VIM_COMMAND zshrc
+  cd ~/Development/Dotfiles/zsh/
+  $VIM_COMMAND ../zshrc
 }
 
 
