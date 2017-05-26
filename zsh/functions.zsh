@@ -39,6 +39,9 @@ vim-session-restore() {
 vim-session-restore-local() {
   $VIM_COMMAND -c "RestoreSessionLocal"
 }
+vim-session-restore-default() {
+  $VIM_COMMAND -c "RestoreSessionDefault"
+}
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }

@@ -1,6 +1,7 @@
 /.netrwhist
 /.netrwbook
 /vim_session
+/vim_auto_session
 
 # Vim Plug
 /autoload

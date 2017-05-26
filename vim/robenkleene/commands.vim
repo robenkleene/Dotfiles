@@ -32,31 +32,6 @@ endif
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
-" Quit and save contents of buffer to the clipboard
-command! -bang Q
-      \ execute "%w !pbcopy" |
-      \ if <bang>1 |
-      \   execute "q" |
-      \ else |
-      \   execute "q<bang>" |
-      \ endif
-
-" Quit and save session
-command! -bang QS
-      \ execute "SaveSession" |
-      \ if <bang>1 |
-      \   execute "qa!" |
-      \ else |
-      \   execute "qa" |
-      \ endif
-command! -bang QSL
-      \ execute "SaveSessionLocal" |
-      \ if <bang>1 |
-      \   execute "qa!" |
-      \ else |
-      \   execute "qa" |
-      \ endif
-
 " Make the current buffer a grep buffer
 command! GrepBuffer :call <SID>GrepBuffer()
 function! s:GrepBuffer()
@@ -73,9 +48,14 @@ endfunction
 
 " Save and Restore Session State
 command! SaveSessionLocal :mksession! vim_session
+command! SaveSessionDefault :mksession! ~/.vim/vim_session
 command! RestoreSessionLocal :source vim_session
-command! SaveSession :mksession! ~/.vim/vim_session
-command! RestoreSession :source ~/.vim/vim_session
+command! RestoreSessionDefault :source ~/.vim/vim_session
+command! RestoreSession :source ~/.vim/vim_auto_session
+augroup save_session
+  autocmd!
+  autocmd VimLeave * mksession! ~/.vim/vim_auto_session
+augroup END
 
 " Rg
 if exists(':terminal')
