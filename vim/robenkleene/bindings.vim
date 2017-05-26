@@ -160,9 +160,9 @@ if has('nvim')
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
 
-  nnoremap <leader>ts :call <SID>OpenTerminal()<CR>
-  nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
-  nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
+  nnoremap <leader>t :call <SID>OpenTerminal()<CR>
+  " nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
+  " nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
   command! Term :call <SID>OpenTerminal()
   command! VTerm :call <SID>OpenVTerminal()
   command! TTerm :call <SID>OpenTTerminal()
