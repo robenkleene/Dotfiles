@@ -163,6 +163,9 @@ if has('nvim')
   nnoremap <leader>ts :call <SID>OpenTerminal()<CR>
   nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
   nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
+  command! Term :call <SID>OpenTerminal()
+  command! VTerm :call <SID>OpenVTerminal()
+  command! TTerm :call <SID>OpenTTerminal()
   tnoremap <A-h> <C-\><C-n><C-w>h
   tnoremap <A-j> <C-\><C-n><C-w>j
   tnoremap <A-k> <C-\><C-n><C-w>k
