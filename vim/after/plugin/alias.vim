@@ -1,4 +1,4 @@
-Alias CX comp\ xcodebuild
+Alias CX compiler\ xcodebuild
 Alias G Git
 Alias A Rg
 Alias DO windo\ diffoff
