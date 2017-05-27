@@ -5,6 +5,7 @@
 .*.sw?
 # Vim Local Session
 vim_session
+vim_settings
 
 # Emacs file locks
 .#*
