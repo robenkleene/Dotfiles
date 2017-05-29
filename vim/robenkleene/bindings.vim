@@ -68,7 +68,7 @@ nnoremap <leader>m :make<CR>
 nnoremap <leader>a :Rg 
 
 " Source
-nnoremap <leader>ss :source vim_settings<CR>
+nnoremap <leader>s :source vim_settings<CR>
 
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
