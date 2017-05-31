@@ -161,10 +161,10 @@ git-diff-words() {
 git-copy-branch() {
   git rev-parse --abbrev-ref HEAD | tee /dev/tty | tr -d '\n' | safecopy
 }
-git-copy-commit-hash() {
-  # Print the '\n' because otherwise `tmux` has issues
-  git rev-parse HEAD | tee /dev/tty | tr -d '\n' | safecopy
-}
+# git-copy-commit-hash() {
+#   # Print the '\n' because otherwise `tmux` has issues
+#   git rev-parse HEAD | tee /dev/tty | tr -d '\n' | safecopy
+# }
 git-commit-hash() {
   git rev-parse HEAD
 }

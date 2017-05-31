@@ -38,6 +38,7 @@ abbreviations=(
 'gm' 'git merge'
 'gr' 'git rebase'
 'grph' 'git rev-parse HEAD'
+'grphc' "git rev-parse HEAD | tr -d '\n' | c"
 'gmt' 'git mergetool'
 'gsm' 'git submodule'
 'gur' 'git pull -r'
