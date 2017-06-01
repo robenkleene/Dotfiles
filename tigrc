@@ -71,8 +71,8 @@ bind diff [c :?^[+|-][^+-]
 bind generic - none
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down
-bind generic b none
 bind generic f move-page-down
+bind generic b none
 bind generic b move-page-up
 bind generic h scroll-left
 bind generic j move-down
@@ -89,7 +89,7 @@ bind main    G  none
 bind generic G  move-last-line
 
 bind generic v  none
-bind generic H view-help
+bind generic B view-help
 bind generic gm view-main
 bind generic gd view-diff
 bind generic gl view-log
