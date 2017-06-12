@@ -16,49 +16,68 @@ abbreviations=(
 'tst' 'tig stash'
 'ts' 'tig status +3'
 # tmux
+# `tm`
 'tmsw' 'tmux swap-window -t'
 't' 'tmux' 
 'tmls' 'tmux ls'
 # vim
 # git
+# `g`: `git`
 'g' 'git'
+# `ga`: `git add`
 'ga' 'git add'
+'gaa' 'git add -A :/'
+# `gb`: `git branch`
 'gb' 'git branch'
+'gbpr' 'git remote prune origin'
 'gbr' 'git branch -r'
+# `gc`: `git commit`
 'gc' 'git commit'
+'gca' 'git commit --amend'
 'gcam' 'git commit --amend -m'
-'gcl' 'git clone'
 'gcm' 'git commit -m'
+# `gcl`: `git clone`
+'gcl' 'git clone'
+# `gco`: `git checkout`
 'gco' 'git checkout'
 'gcob' 'git checkout -b'
+# `gd`: `git diff`
 'gd' 'git diff'
 'gdr' 'git diff --relative'
 'gdt' 'git difftool'
+'gdv' 'git diff --relative | dtg | vg'
+'gdw' 'git diff --color-words'
+# `gf`: `git fetch`
+'gf' 'git fetch'
+# `gl`: `git log`
 'gl' 'git log'
+# `gm`: `git merge`
 'gm' 'git merge'
+'gmt' 'git mergetool'
+# `gp`: `git push`
+'gp' 'git push'
+'gpt' 'git push --tags'
+# `gr`: `git rebase`
 'gr' 'git rebase'
+'grc' 'git rebase --continue'
+# `grp`: `git rev-parse`
 'grph' 'git rev-parse HEAD'
 'grphc' "git rev-parse HEAD | tr -d '\n' | c"
-'gmt' 'git mergetool'
+# `gs`: `git status`
+'gs' 'git status'
+# `gsm`: `git submodule`
 'gsm' 'git submodule'
-'gur' 'git pull -r'
-'gu' 'git pull'
 'gsmi' 'git submodule init'
 'gsmu' 'git submodule update'
 'gsmuir' 'git submodule update --init --recursive'
-'gs' 'git status'
-'grc' 'git rebase --continue'
-'gpt' 'git push --tags'
-'gp' 'git push'
-'gf' 'git fetch'
-'gaa' 'git add -A :/'
-'gca' 'git commit --amend'
+# `gst`: `git stash`
 'gst' 'git stash'
 'gstl' 'git stash list'
+# `gt`: `git tag`
 'gt' 'git tag'
-'gdw' 'git diff --color-words'
-'gbpr' 'git remote prune origin'
-'gdv' 'git diff --relative | dtg | vg'
+# `gu`: `git pull`
+'gu' 'git pull'
+'gur' 'git pull -r'
 )
 
 if [ "$(uname)" = "Darwin" ]; then
