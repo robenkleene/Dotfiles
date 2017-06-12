@@ -6,6 +6,7 @@ set rtp+=~/.fzf
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <localleader>l :BLines<CR>
+nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
