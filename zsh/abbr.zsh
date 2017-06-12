@@ -4,23 +4,28 @@ typeset -Ag abbreviations
 # parameters.
 
 abbreviations=(
+
 # vim
 'v' "$VIM_COMMAND"
+
 # rg
 'a' "$ACK_COMMAND"
 'ai' "$ACK_COMMAND -i"
+
 # emacs
 'e' "$EMACS_COMMAND"
 'ec' 'emacsclient -t'
+
 # tig
 'tst' 'tig stash'
 'ts' 'tig status +3'
+
 # tmux
 # `tm`
 'tmsw' 'tmux swap-window -t'
 't' 'tmux' 
 'tmls' 'tmux ls'
-# vim
+
 # git
 # `g`: `git`
 'g' 'git'
@@ -78,6 +83,7 @@ abbreviations=(
 # `gu`: `git pull`
 'gu' 'git pull'
 'gur' 'git pull -r'
+
 )
 
 if [ "$(uname)" = "Darwin" ]; then
