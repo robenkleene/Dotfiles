@@ -51,7 +51,7 @@ setopt nolistbeep
 autoload -Uz compinit
 compinit
 # Automatically select the first option
-# setopt menucomplete
+setopt menucomplete
 # Use a menu when expanding globs
 # Can't figure out how to make this work with recursive globs
 # setopt globcomplete
