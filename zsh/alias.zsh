@@ -72,7 +72,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 # fzf
-alias f='fzf-file-vim'
 alias fzp='fzf-file-path'
 alias fzs='fzf-snippet-copy'
 alias fzse='fzf-snippet-vim'
