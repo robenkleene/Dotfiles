@@ -11,6 +11,25 @@ source ~/.fzf/shell/key-bindings.zsh
 bindkey '^R' history-incremental-search-backward
 bindkey '^[r' fzf-history-widget
 
+# Custom Bindings
+
+fzf-vim-widget() {
+  local files="$(__fsel)"
+  if [[ -z "$files" ]]; then
+    zle redisplay
+    return 0
+  fi
+  exec </dev/tty
+  setopt localoptions pipefail 2> /dev/null
+  eval $VIM_COMMAND $files
+  local ret=$?
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle -N fzf-vim-widget
+bindkey '\ee' fzf-vim-widget
+
 # Private
 
 _robenkleene_fzf_inline() {
