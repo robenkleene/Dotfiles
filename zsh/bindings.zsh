@@ -28,14 +28,3 @@ bindkey "^U" backward-kill-line
 # Load the `menuselect` map first
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-fzf-vim-widget() {
-  exec </dev/tty
-  _robenkleene_fzf_inline $VIM_COMMAND 
-  local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-zle -N fzf-vim-widget
-bindkey '\ee' fzf-vim-widget
