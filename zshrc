@@ -15,6 +15,12 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/installs.zsh
 # Interactive
 source ~/.zsh/ui.zsh
+# Key for Abbreviations & Aliases
+# `g`: `git`
+# `v`: `vim`
+# `a`: `ack`
+# `t`: `tig`
+# `tm`: `tmux`
 source ~/.zsh/abbr.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh

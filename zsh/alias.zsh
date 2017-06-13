@@ -42,13 +42,13 @@ alias n='terminal-new'
 alias o='finder-new'
 
 # tmux
-alias tnd='tmux-name-directory'
-alias ta='tmux-attach'
-alias tsr='tmux-session-restore'
-alias tsq='tmux-session-save-quit'
+alias tmnd='tmux-name-directory'
+alias tma='tmux-attach'
+alias tmsr='tmux-session-restore'
+alias tmsq='tmux-session-save-quit'
 
 # emacs
-alias m='magit'
+# alias m='magit'
 
 # ranger
 alias r='ranger-cd'
@@ -76,10 +76,6 @@ alias fzp='fzf-file-path'
 alias fzs='fzf-snippet-copy'
 alias fzse='fzf-snippet-vim'
 alias fzb='fzf-bookmark-cd'
-alias snp='fzf-snippet-copy'
-alias snpe='fzf-snippet-vim'
-alias doce='fzf-documentation-vim'
-alias docc='fzf-documentation-cat'
 alias fzd='fzf-documentation-less'
 alias fzde='fzf-documentation-vim'
 alias fzrd='fzf-recent-cd'
@@ -92,12 +88,14 @@ if [ "$(uname)" = "Darwin" ]; then
   alias fzx='fzf-file-xcode'
 fi
 
+# doc & snp
+alias snp='fzf-snippet-copy'
+alias snpe='fzf-snippet-vim'
+alias doce='fzf-documentation-vim'
+alias docc='fzf-documentation-cat'
+
 # git
+alias gyb='git-yank-branch'
+alias gyh='git-yank-hash'
 alias gcd='git-cd-root'
 alias dtv='dtg | vg'
-
-# todo
-alias tdls='rg --color=never "([-|*] \[.\]|^#)"'
-# alias tdlss='rg --color=never "[-|*] \[.\]" | sort -t: -k3'
-alias tds='rg --color=never "[-|*] \[.\]" | sort -t: -k3'
-alias tdp='rg --color=never "[-|*] \[.\] .\." | sort -t: -k3'

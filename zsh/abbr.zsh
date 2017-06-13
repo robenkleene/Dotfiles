@@ -23,7 +23,7 @@ abbreviations=(
 # tmux
 # `tm`
 'tmsw' 'tmux swap-window -t'
-'t' 'tmux' 
+'tm' 'tmux' 
 'tmls' 'tmux ls'
 
 # git
