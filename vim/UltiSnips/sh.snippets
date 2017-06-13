@@ -1,3 +1,6 @@
+snippet echov "Echo variable" b
+echo "${1:HOME} = \$$1"
+endsnippet
 snippet ifd "Test file" b
 if [ -d ${1:"$dir"} ]; then
   ${0:echo $dir;} 
