@@ -18,7 +18,7 @@ bind generic R !@open --reveal %(file)
 bind generic E !@sh -c "mate --async '%(file)'"
 # bind generic D !@sh -c "git diff '%(file)' | mate --async"
 bind generic D !@sh -c "git difftool '%(file)'"
-bind generic Y !@bash -c "echo -n %(commit) | pbcopy"
+bind generic Y !@bash -c "echo -n %(commit) | safecopy"
 bind status d !bash -c "git diff --color-words '%(file)'"
 bind stage d !bash -c "git diff --color-words '%(file)'"
 bind stage v !bash -c "nvim -c 'Gdiff' '%(file)'"
@@ -35,9 +35,6 @@ bind main T !@git difftool %(commit)^!
 
 # LaunchBar
 # bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
-
-# Copying Hashes
-# bind generic <Esc>c !@sh -c "echo %(commit) | pbcopy"
 
 # Emacs
 bind generic <Ctrl-V> move-page-down
