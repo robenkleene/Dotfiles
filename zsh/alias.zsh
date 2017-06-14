@@ -54,7 +54,8 @@ alias tmsq='tmux-session-save-quit'
 alias r='ranger-cd'
 
 # vim
-alias vf='fzf-vim-grep'
+alias vff='fzf-vim-file'
+alias vfg='fzf-vim-grep'
 alias vg='vim-grep'
 alias vgh='vim-git-hunks'
 alias vgm='vim-git-modified'

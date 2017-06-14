@@ -205,3 +205,8 @@ fzf-vim-grep() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
   echo $result | $VIM_COMMAND -c "GrepBuffer" -
 }
+fzf-vim-file() {
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
+  $VIM_COMMAND $result
+}
+
