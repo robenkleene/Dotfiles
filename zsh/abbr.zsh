@@ -34,6 +34,7 @@ abbreviations=(
 'gaa' 'git add -A :/'
 # `gb`: `git branch`
 'gb' 'git branch'
+'gbd' 'git branch -d'
 'gbpr' 'git remote prune origin'
 'gbr' 'git branch -r'
 # `gc`: `git commit`
