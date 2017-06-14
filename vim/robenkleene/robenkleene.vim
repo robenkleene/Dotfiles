@@ -56,6 +56,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
 Plug 'junegunn/goyo.vim'
+Plug 'easymotion/vim-easymotion'
 " Git {{{2
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
