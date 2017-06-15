@@ -19,7 +19,7 @@ function MakeSymlink {
     fi
   else
     ln -s $DIRECTORY/$thisFILE $DESTINATION
-  fi	
+  fi
 }
 
 for thisFILE in *; do 
