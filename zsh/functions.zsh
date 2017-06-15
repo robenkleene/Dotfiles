@@ -165,6 +165,9 @@ git-yank-hash() {
   # Print the '\n' because otherwise `tmux` has issues
   git rev-parse HEAD | tee /dev/tty | tr -d '\n' | safecopy
 }
+git-yank-remote-url() {
+  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
+}
 git-commit-hash() {
   git rev-parse HEAD
 }
@@ -182,9 +185,6 @@ git-push-origin-delete() {
 }
 git-branch-delete-origin() {
   git push origin --delete $1
-}
-git-copy-remote-url() {
-  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
 }
 git-remote-add-origin() {
   git remote rm origin
