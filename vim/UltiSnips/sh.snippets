@@ -1,13 +1,18 @@
 snippet echov "Echo variable" b
 echo "${1:HOME} = \$$1"
 endsnippet
-snippet ifd "Test file" b
+snippet ifd "Test directory" b
 if [ -d ${1:"$dir"} ]; then
   ${0:echo $dir;} 
 fi
 endsnippet
 snippet iff "Test file" b
 if [ -f ${1:"$file"} ]; then
+  ${0:echo $file;} 
+fi
+endsnippet
+snippet ifl "Test link" b
+if [ -L ${1:"$file"} ]; then
   ${0:echo $file;} 
 fi
 endsnippet
