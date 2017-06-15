@@ -44,6 +44,9 @@ abbreviations=(
 'gcm' 'git commit -m'
 # `gcl`: `git clone`
 'gcl' 'git clone'
+# `gcp`: `git cherry-pick`
+'gcp' 'git cherry-pick'
+'gcpc' 'git cherry-pick --continue'
 # `gco`: `git checkout`
 'gco' 'git checkout'
 'gcob' 'git checkout -b'
@@ -53,6 +56,7 @@ abbreviations=(
 'gdt' 'git difftool'
 'gdv' 'git diff --relative | dtg | vg'
 'gdw' 'git diff --color-words'
+'gdfu' 'git diff --name-only --diff-filter=U'
 # `gf`: `git fetch`
 'gf' 'git fetch'
 # `gl`: `git log`
