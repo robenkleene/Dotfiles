@@ -73,6 +73,12 @@ nnoremap <leader>s :source vim_settings<CR>
 " Tab
 nnoremap <leader>c :tabnew<CR>
 
+" Make split resizing five lines instead of one
+nnoremap <C-w>+ 5<C-w>+
+nnoremap <C-w>- 5<C-w>-
+nnoremap <C-w>< 5<C-w><
+nnoremap <C-w>> 5<C-w>>
+
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
 " and removes the last new line
