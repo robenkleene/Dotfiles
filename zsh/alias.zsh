@@ -98,5 +98,6 @@ alias docc='fzf-documentation-cat'
 # git
 alias gyb='git-yank-branch'
 alias gyh='git-yank-hash'
+alias gyr='git-yank-remote-url'
 alias gcd='git-cd-root'
 alias dtv='dtg | vg'
