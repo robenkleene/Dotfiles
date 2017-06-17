@@ -3,7 +3,6 @@
 # zmodload zsh/zprof
 
 # Setup
-source ~/.zsh/variables.zsh
 source ~/.zsh/settings.zsh
 # Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
 source ~/.zsh/bindings.zsh

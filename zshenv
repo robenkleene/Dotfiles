@@ -1,3 +1,12 @@
+# Not Exported
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+  VIM_COMMAND=nvim-edit
+else
+  VIM_COMMAND=nvim
+fi
+EMACS_COMMAND='emacsclient -t'
+ACK_COMMAND=rg
+
 # Export `CDPATH` so it's available in `vim`
 export CDPATH=~:~/Development/:~/Documentation/
 
@@ -10,7 +19,8 @@ if [ ! "$(uname)" = "Darwin" ]; then
   export PATH=~/bin:$PATH
 fi
 
-export EDITOR=nvim
+# export EDITOR=nvim
+export EDITOR=$VIM_COMMAND
 export PAGER="less --ignore-case"
 
 # Atom
