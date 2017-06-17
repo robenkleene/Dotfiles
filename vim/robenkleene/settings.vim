@@ -130,6 +130,8 @@ set dictionary+=/usr/share/dict/words
 "   " set grepformat=%f:%l:%c:%m,%f:%l:%m
 " endif
 
+" Make `find <filename>` find files recursively
+set path+=**
 " Autocmd {{{1
 
 " Make Shebang Files Executable
