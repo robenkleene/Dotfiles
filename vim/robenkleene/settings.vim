@@ -97,9 +97,6 @@ if has('nvim')
   set inccommand=split
 endif
 
-" Don't let smartcase affect autocomplete
-" This option was causing autocomplete option with the wrong case to appear
-" set infercase
 
 " open previews vertically
 " let g:netrw_preview = 1
@@ -123,6 +120,22 @@ set suffixes-=.h
 
 " Allow autocomplete dictionary
 set dictionary+=/usr/share/dict/words
+
+" Don't let `smartcase` affect auto-complete
+" This option was causing auto-complete option with the wrong case to appear
+" set infercase
+
+" Make completion case-sensitive
+" (While still allowing search to be case-insensitive)
+augroup ignore_case_in_insert
+  autocmd!
+  autocmd InsertEnter * setlocal noignorecase
+  autocmd InsertLeave * setlocal ignorecase
+augroup END
+
+" Don't auto-select the first full match
+" This makes it easier to get to one option of many
+set completeopt+=longest
 
 " Use `rg` if available
 " if executable("rg")
