@@ -111,6 +111,7 @@ nnoremap <localleader>L :call <SID>MarkdownLinkFile()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>
+nnoremap <leader>yf :let @*=expand("%:t")<CR>
 
 
 
