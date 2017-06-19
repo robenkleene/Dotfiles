@@ -37,6 +37,9 @@ export ALTERNATE_EDITOR=""
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1
 
+# Custom
+export TODO_DIRECTORY=~/Dropbox/Text/Projects/
+
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS
 # Note that this doesn't work with `ls` built-in to macOS

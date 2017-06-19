@@ -221,3 +221,24 @@ function! s:ToggleQuickfixList()
   endif
 endfunction
 nnoremap <script> <silent> <leader>q :call <SID>ToggleQuickfixList()<CR>
+
+" Todo
+function! s:OpenTodo()
+  if !empty($TODO_FILE)
+    split
+    edit $TODO_FILE
+    return
+  endif
+
+  if !empty($TODO_DIRECTORY)
+    split
+    Explore $TODO_DIRECTORY 
+    return
+  endif
+
+  echom "No TODO_FILE or TODO_DIRECTORY defined."
+  " split
+  " terminal zsh
+  " tnoremap <buffer> <Esc> <C-\><C-n>
+endfunction
+nnoremap <leader>d :call <SID>OpenTodo()<CR>
