@@ -116,9 +116,9 @@ nnoremap <leader>yf :let @*=expand("%:t")<CR>
 " Backup Text
 function! s:ArchiveLines() range
   " Result isn't used
-  let result = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text ')
+  let result = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
   let temp = @s
-  normal! gv"sd
+  silent normal! gv"sd
   let @s = temp
   echo "Backed up text"
 endfunction
