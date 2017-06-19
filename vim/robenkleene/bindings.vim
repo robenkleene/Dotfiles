@@ -72,6 +72,8 @@ nnoremap <leader>s :source vim_settings<CR>
 
 " Tab
 nnoremap <leader>c :tabnew<CR>
+nnoremap <leader>n gt
+nnoremap <leader>p gT
 
 " Make split resizing five lines instead of one
 nnoremap <C-w>+ 5<C-w>+
@@ -108,7 +110,9 @@ vnoremap <localleader>L :'<,'>call <SID>MarkdownLinkLines()<CR>
 nnoremap <localleader>L :call <SID>MarkdownLinkFile()<CR>
 
 " Copy Path
-nnoremap <leader>p :let @*=expand("%:p")<CR>
+nnoremap <leader>yp :let @*=expand("%:p")<CR>
+
+
 
 " Visual Star
 " makes * and # work on visual mode too.
