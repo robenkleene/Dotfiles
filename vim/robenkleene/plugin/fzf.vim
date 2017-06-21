@@ -10,6 +10,7 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>e :Files<CR>
 nnoremap <M-e> :Files<CR>
+nnoremap <M-c> :Cd<CR>
 nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
 nnoremap <localleader>i :BTags<CR>
@@ -51,6 +52,7 @@ command! B :call fzf#run({
 \   'sink':    'Explore'
 \ })
 
+" Documentation
 command! -bang -nargs=* FZFVimDocumentation
   \ call fzf#vim#grep('rg --column --smart-case --line-number --no-heading --color=always '.shellescape(<q-args>).' ~/Documentation/development-references/Vim/ | tr -d "\017"', 1, <bang>0)
 
@@ -58,4 +60,9 @@ command! -bang -nargs=* FZFVimDocumentation
 command! Modified :call fzf#run({
 \   'source':  "git ls-files -m | uniq",
 \   'sink':    'e'
+\ })
+
+command! Cd :call fzf#run({
+\   'source':  "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+\   'sink':    'Explore'
 \ })
