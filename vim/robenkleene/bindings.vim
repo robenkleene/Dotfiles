@@ -115,15 +115,19 @@ nnoremap <leader>yp :let @*=expand("%:p")<CR>
 nnoremap <leader>yf :let @*=expand("%:t")<CR>
 
 " Backup Text
-function! s:ArchiveLines() range
-  " Result isn't used
-  let result = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
-  let temp = @s
-  silent normal! gv"sd
-  let @s = temp
-  echo "Backed up text"
+function! s:ArchiveLines(bang) range
+  let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
+  let text = system('cat '.file_path)
+  echom "Backed up text: ".text
+  if (a:bang == 1)
+    let temp = @s
+    silent normal! gv"sd
+    let @s = temp
+  endif
 endfunction
-vnoremap <localleader>B :'<,'>call <SID>ArchiveLines()<CR>
+command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
+vnoremap <localleader>B :'<,'>BackupText!<CR>
+vnoremap <localleader>D :'<,'>BackupText<CR>
 
 " Visual Star
 " makes * and # work on visual mode too.

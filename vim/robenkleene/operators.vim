@@ -1,3 +1,5 @@
+" 'If your plugin makes character-level changes to the buffer, it probably
+" deserves a map or two.' --Tim Pope
 nnoremap <silent> <localleader>G :set opfunc=<SID>Google<CR>g@
 vnoremap <silent> <localleader>G :<C-U>call <SID>Google(visualmode(), 1)<CR>
 
