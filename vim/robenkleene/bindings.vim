@@ -117,13 +117,20 @@ nnoremap <leader>yf :let @*=expand("%:t")<CR>
 " Backup Text
 function! s:ArchiveLines(bang) range
   let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
-  let text = system('cat '.file_path)
-  echom "Backed up text: ".text
   if (a:bang == 1)
     let temp = @s
     silent normal! gv"sd
     let @s = temp
   endif
+  " Method 1
+  " let text = system('cat '.file_path)
+  " echom "Backed up text: ".text
+  " Method 2
+  " silent execute "!cat " . file_path
+  " Method 3
+  " `.' \| tr -d " "'`
+  let lineCount = system('wc -l < '.file_path)
+  echom "Backed up ".lineCount." lines"
 endfunction
 command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
 vnoremap <localleader>B :'<,'>BackupText!<CR>
