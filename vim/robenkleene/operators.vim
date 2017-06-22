@@ -18,7 +18,7 @@ function! s:Google(type, ...) abort
 
   let escaped=substitute(@@,'[^A-Za-z0-9_.~-]','\="%".printf("%02X",char2nr(submatch(0)))','g')
   let googleurl="http://www.google.com/search?q=" . escaped
-  silent exec "!open '".googleurl."'"
+  silent exec "!open '".shellescape(googleurl, 1)."'"
 
   let &selection = sel_save
   let @@ = reg_save
