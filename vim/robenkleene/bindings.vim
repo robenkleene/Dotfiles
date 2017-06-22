@@ -71,8 +71,8 @@ nnoremap <leader>a :Rg
 nnoremap <leader>s :source vim_settings<CR>
 
 " Tab
-" nnoremap <leader>c :tabnew<CR>
-nnoremap <leader>c <C-w>s<C-w>T
+nnoremap <leader>c :tabnew<CR>
+" nnoremap <leader>c <C-w>s<C-w>T
 nnoremap <leader>n gt
 nnoremap <leader>p gT
 
