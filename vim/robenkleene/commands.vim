@@ -34,7 +34,7 @@ command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
 " Make the current buffer a grep buffer
 command! GrepBuffer :call <SID>GrepBuffer()
-function! s:GrepBuffer()
+function! s:GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if line('$') == 1
     " Don't show the quickfix list if there's exactly one match
@@ -83,7 +83,7 @@ command! Ghunks cexpr system('git diff --relative \| dtg')
 
 " Rg
 command! -nargs=* Rg :call <SID>Rg(<q-args>)
-function! s:Rg(terms)
+function! s:Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
   execute "grep " . a:terms

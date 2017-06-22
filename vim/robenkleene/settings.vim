@@ -148,7 +148,7 @@ set path+=**
 " Autocmd {{{1
 
 " Make Shebang Files Executable
-function! s:MakeShebangFilesExecutable()
+function! s:MakeShebangFilesExecutable() abort
   if match(getline(1), '^\#!') == 0
     if match(getfperm(expand('%:p')), 'x') == -1
       !chmod +x %

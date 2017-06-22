@@ -42,7 +42,7 @@ command! -bang -nargs=* Gfzfr
 "   return l:bookmarks
 " endfunction
 
-function! s:bufopen(e)
+function! s:bufopen(e) abort
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 

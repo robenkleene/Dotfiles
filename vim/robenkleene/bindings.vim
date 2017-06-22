@@ -97,12 +97,12 @@ nnoremap <C-w>> 5<C-w>>
 
 
 " Markdown link
-function! s:MarkdownLinkLines() range
+function! s:MarkdownLinkLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
-function! s:MarkdownLinkFile()
+function! s:MarkdownLinkFile() abort
   let @" = system('~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
@@ -116,7 +116,7 @@ nnoremap <leader>yf :let @*=expand("%:t")<CR>
 nnoremap <leader>yd :let @*=expand('%:p:h:t')<CR>
 
 " Backup Text
-function! s:ArchiveLines(bang) range
+function! s:ArchiveLines(bang) range abort
   let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
   if (a:bang == 1)
     let temp = @s
@@ -139,7 +139,7 @@ vnoremap <localleader>D :'<,'>BackupText<CR>
 
 " Visual Star
 " makes * and # work on visual mode too.
-function! s:VSetSearch(cmdtype)
+function! s:VSetSearch(cmdtype) abort
   let temp = @s
   norm! gv"sy
   let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
@@ -211,7 +211,7 @@ if has('nvim')
   tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
-function! s:GrepVisual()
+function! s:GrepVisual() abort
   let temp = @s
   norm! gv"sy
   execute "Rg --fixed-strings '" . @s . "'"
@@ -228,13 +228,13 @@ nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
 
 " Toggle `quickfix`
-function! s:GetBufferList() 
+function! s:GetBufferList() abort
   redir =>buflist 
   silent! ls 
   redir END 
   return buflist 
 endfunction
-function! s:ToggleQuickfixList()
+function! s:ToggleQuickfixList() abort
   for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
     if bufwinnr(bufnum) != -1
       cclose
@@ -250,7 +250,7 @@ endfunction
 nnoremap <script> <silent> <leader>q :call <SID>ToggleQuickfixList()<CR>
 
 " Todo
-function! s:OpenTodo()
+function! s:OpenTodo() abort
   if !empty($TODO_FILE)
     split
     edit $TODO_FILE

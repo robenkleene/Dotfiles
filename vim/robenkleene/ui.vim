@@ -68,7 +68,7 @@ set statusline+=%=
 
 " Neomake
 set statusline+=%{MyNeomakeStatus()}
-function! MyNeomakeStatus()
+function! MyNeomakeStatus() abort
   if !exists('*neomake#statusline#LoclistCounts')
     return ''
   endif
@@ -88,7 +88,7 @@ endfunction
 
 " GitGutter
 set statusline+=%{MyGitGutterStatus()}
-function! MyGitGutterStatus()
+function! MyGitGutterStatus() abort
   if !exists('*GitGutterGetHunkSummary')
     return ''
   endif
