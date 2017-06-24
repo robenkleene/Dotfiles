@@ -127,19 +127,12 @@ function! s:ArchiveLines(bang) range abort
     silent normal! gv"sd
     let @s = temp
   endif
-  " Method 1
-  " let text = system('cat '.file_path)
-  " echom "Backed up text: ".text
-  " Method 2
-  " silent execute "!cat " . file_path
-  " Method 3
-  " `.' \| tr -d " "'`
-  let lineCount = system('wc -l < '.file_path)
+  let lineCount = system('wc -l < '.shellescape(file_path, 1).' | tr -d " " | tr -d "\n"')
   echom "Backed up ".lineCount." lines"
 endfunction
 command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
-vnoremap <localleader>B :'<,'>BackupText!<CR>
-vnoremap <localleader>D :'<,'>BackupText<CR>
+vnoremap <localleader>B :'<,'>BackupText<CR>
+vnoremap <localleader>D :'<,'>BackupText!<CR>
 
 " Visual Star
 " makes * and # work on visual mode too.
