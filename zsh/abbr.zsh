@@ -74,6 +74,7 @@ abbreviations=(
 # `gr`: `git rebase`
 'gr' 'git rebase'
 'grc' 'git rebase --continue'
+'grs' 'git rebase --skip'
 # `grp`: `git rev-parse`
 'grph' 'git rev-parse HEAD'
 'grphc' "git rev-parse HEAD | tr -d '\n' | c"
