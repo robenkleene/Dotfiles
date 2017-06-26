@@ -27,6 +27,9 @@ abbreviations=(
 'tm' 'tmux' 
 'tmls' 'tmux ls'
 
+# cd
+'cyp' 'cd-yank-path'
+
 # git
 # `g`: `git`
 'g' 'git'

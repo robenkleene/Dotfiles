@@ -228,7 +228,7 @@ git-stash-list() {
 }
 
 # Misc
-cd-copy-path() {
+cd-yank-path() {
   pwd | tr -d '\n' | safecopy
 }
 
