@@ -74,12 +74,6 @@ nnoremap <leader>a :Rg
 " Source
 nnoremap <leader>s :source vim_settings<CR>
 
-" Tab
-nnoremap <leader>c :tabnew<CR>
-" nnoremap <leader>c <C-w>s<C-w>T
-nnoremap <leader>n gt
-nnoremap <leader>p gT
-
 " Make split resizing five lines instead of one
 nnoremap <C-w>+ 5<C-w>+
 nnoremap <C-w>- 5<C-w>-
@@ -161,16 +155,23 @@ if !has('nvim')
   endw
 endif
 
-noremap <silent> <A-h> <C-w>h
-noremap <silent> <A-j> <C-w>j
-noremap <silent> <A-k> <C-w>k
-noremap <silent> <A-l> <C-w>l
+noremap <A-h> <C-w>h
+noremap <A-j> <C-w>j
+noremap <A-k> <C-w>k
+noremap <A-l> <C-w>l
 
-noremap <silent> <S-Left> <C-w>h
-noremap <silent> <S-Down> <C-w>j
-noremap <silent> <S-Up> <C-w>k
-noremap <silent> <S-Right> <C-w>l
+noremap <S-Left> <C-w>h
+noremap <S-Down> <C-w>j
+noremap <S-Up> <C-w>k
+noremap <S-Right> <C-w>l
 
+" Tab
+nnoremap <leader>c :tabnew<CR>
+" nnoremap <leader>c <C-w>s<C-w>T
+" nnoremap <leader>n gt
+" nnoremap <leader>p gT
+nnoremap <A-n> gt
+nnoremap <A-p> gT
 
 " Neovim Terminal
 if has('nvim')
