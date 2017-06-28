@@ -2,7 +2,7 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = vim-command
 [push]
 	default = simple
 [merge]
