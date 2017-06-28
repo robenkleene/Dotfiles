@@ -229,7 +229,7 @@ git-stash-list() {
 
 # Misc
 cd-yank-path() {
-  pwd | tr -d '\n' | safecopy
+  pwd | tr -d '\n' | tee /dev/tty | safecopy
 }
 
 # Gem
