@@ -69,7 +69,7 @@ nnoremap <leader>X :silent !open -a Xcode "%:p"<CR>\|:redraw!<CR>
 nnoremap <leader>m :make<CR>
 
 " Rg
-" nnoremap <leader>a :Rg 
+nnoremap <leader>a :Rg 
 
 " Source
 nnoremap <leader>s :source vim_settings<CR>
