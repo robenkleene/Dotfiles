@@ -9,7 +9,7 @@ set wrap
 setlocal colorcolumn=""
 
 nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
-nnoremap <localleader>t :.!markdown-title "%"<CR>
+" nnoremap <localleader>t :.!markdown-title "%"<CR>
 
 
 " Convert
