@@ -1,9 +1,10 @@
 # grep
-# alias -g G='| grep'
-# alias -g L='| less'
-# alias -g A='| rg'
-# alias -g C='| safecopy'
-# alias -g V="| $VIM_COMMAND -"
+alias -g G='| grep'
+alias -g C='| column'
+alias -g L='| less'
+alias -g A='| rg'
+alias -g Y='| safecopy'
+alias -g V="| $VIM_COMMAND -"
 
 # Basic
 alias -- -='cd -'
