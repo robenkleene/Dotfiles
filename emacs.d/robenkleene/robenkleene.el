@@ -26,7 +26,6 @@
 (require 'robenkleene-ido-ubiquitous)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
-(require 'robenkleene-evil)
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
@@ -37,6 +36,9 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
+(require 'robenkleene-evil)
 
 
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'

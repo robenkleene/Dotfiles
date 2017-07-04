@@ -5,30 +5,23 @@
 (require 'use-package)
 (use-package evil
   :ensure t
-  :bind (("C-c v" . evil-local-mode))
   :config
   ;; Disable insert mode key map
   (setcdr evil-insert-state-map nil)
-  ;; Re-enable esc
+  ;; Re-enable Esc
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+  ;; Window Switching
+  (define-key evil-motion-state-map (kbd "M-h") 'evil-window-left)
+  (define-key evil-motion-state-map (kbd "M-k") 'evil-window-up)
+  (define-key evil-motion-state-map (kbd "M-j") 'evil-window-down)
+  (define-key evil-motion-state-map (kbd "M-l") 'evil-window-right)
+
+  (require 'robenkleene-evil-unimpaired-map)
 
   ;; Dired
   (define-key evil-motion-state-map "-" 'dired-jump)
-
-  ;; Unimpaired Map
-  (defvar robenkleene/unimpaired-next-map (make-keymap))
-  (defvar robenkleene/unimpaired-previous-map (make-keymap))
-  (define-key robenkleene/unimpaired-next-map (kbd "q") 'next-error)
-  (define-key robenkleene/unimpaired-previous-map (kbd "q") 'previous-error)
-  (define-key robenkleene/unimpaired-next-map (kbd "b") 'next-buffer)
-  (define-key robenkleene/unimpaired-previous-map (kbd "b") 'previous-buffer)
-  (define-key robenkleene/unimpaired-next-map (kbd "c") 'git-gutter:next-hunk)
-  (define-key robenkleene/unimpaired-previous-map (kbd "c") 'git-gutter:previous-hunk)
-
-  ;; Unimpaired Key
-  (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)
-  (define-key evil-motion-state-map (kbd "]") robenkleene/unimpaired-next-map)
-
+  
   ;; Open Map
   (defvar robenkleene/open-map (make-keymap))
   (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
@@ -48,7 +41,7 @@
   ;; Leader Key
   ;; (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
   (define-key evil-motion-state-map (kbd "SPC") robenkleene/leader-map)
-
+  (evil-mode 1)
   
   )
 
