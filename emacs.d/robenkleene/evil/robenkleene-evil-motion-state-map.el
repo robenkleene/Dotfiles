@@ -1,0 +1,16 @@
+;;; robenkleene-evil-motion-state-map.el --- robenkleene-bindings
+;;; Commentary:
+;;; Code:
+
+;; Window Switching
+(define-key evil-motion-state-map (kbd "M-h") 'evil-window-left)
+(define-key evil-motion-state-map (kbd "M-k") 'evil-window-up)
+(define-key evil-motion-state-map (kbd "M-j") 'evil-window-down)
+(define-key evil-motion-state-map (kbd "M-l") 'evil-window-right)
+
+;; Dired
+(define-key evil-motion-state-map "-" 'dired-jump)
+
+(provide 'robenkleene-evil-motion-state-map)
+
+;;; robenkleene-evil-motion-state-map.el ends here

@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 ;; Unimpaired Map
 (defvar robenkleene/unimpaired-next-map (make-keymap))
 (defvar robenkleene/unimpaired-previous-map (make-keymap))
