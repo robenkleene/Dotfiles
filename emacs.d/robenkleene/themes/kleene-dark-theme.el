@@ -187,6 +187,7 @@
    ;;;; dired
    `(dired-directory ((t (:inherit link :underline nil))))
    `(dired-header ((t (:inherit rk-prompt))))
+   `(dired-ignored ((t (:inherit rk-comment))))
 
    ;;;; ediff
    '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
