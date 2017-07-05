@@ -14,6 +14,8 @@
   (require 'robenkleene-evil-motion-state-map)
   (require 'robenkleene-evil-unimpaired-map)
   (require 'robenkleene-evil-leader-map)
+  (require 'robenkleene-evil-dired)
+
   (evil-mode 1)
   )
 
