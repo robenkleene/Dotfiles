@@ -271,7 +271,7 @@
    `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
    
    ;;;; show-paren
-   `(show-paren-match ((t (:inherit rk-modeline-active :bold t))))
+   `(show-paren-match ((t (:inherit rk-link :bold t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
    ;;;; wgrep
