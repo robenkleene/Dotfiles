@@ -18,7 +18,8 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-better-defaults)
-(require 'robenkleene-company)
+;; Temporarily removing this because it's annoying
+;; (require 'robenkleene-company)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
 ;; Disabling this for now beacuse I don't like how the window moves to add and remove the frame
