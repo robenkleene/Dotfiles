@@ -9,7 +9,7 @@
 
 (use-package ido-completing-read+
   :ensure t
-  :init
+  :config
   (ido-ubiquitous-mode 1))
 
 (provide 'robenkleene-ido-completing-read)
