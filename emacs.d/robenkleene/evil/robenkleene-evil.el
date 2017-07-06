@@ -11,6 +11,11 @@
   (use-package evil-commentary
     :ensure t
     :config (evil-commentary-mode))
+  (use-package evil-smartparens
+    :ensure t
+    :config
+    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+    )
 
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
   ;; Settings
