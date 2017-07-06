@@ -7,12 +7,15 @@
   :ensure t
   :config
 
+  
   (require 'robenkleene-evil-settings)
   (require 'robenkleene-evil-motion-state-map)
   (require 'robenkleene-evil-unimpaired-map)
   (require 'robenkleene-evil-leader-map)
   (require 'robenkleene-evil-dired)
 
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/languages"))
+  (require 'robenkleene-evil-emacs-lisp)
   (evil-mode 1)
   )
 

@@ -15,7 +15,7 @@
 (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
 (define-key robenkleene/leader-map (kbd "f") '(lambda () (interactive)
                                                 (projectile-find-file-in-directory default-directory)))
-(define-key robenkleene/leader-map (kbd "a") 'counsel-ag)
+(define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
 
 ;; Leader Key
 ;; (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
