@@ -7,6 +7,9 @@
 (define-key evil-motion-state-map (kbd "M-k") 'evil-window-up)
 (define-key evil-motion-state-map (kbd "M-j") 'evil-window-down)
 (define-key evil-motion-state-map (kbd "M-l") 'evil-window-right)
+(define-key evil-motion-state-map (kbd "M-e") '(lambda () (interactive)
+                                                 (projectile-find-file-in-directory default-directory)))
+(define-key evil-motion-state-map (kbd "M-c") 'projectile-find-dir)
 
 ;; Dired
 (define-key evil-motion-state-map "-" 'dired-jump)
