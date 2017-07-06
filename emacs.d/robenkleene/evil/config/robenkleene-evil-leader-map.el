@@ -16,10 +16,11 @@
 (define-key robenkleene/leader-map (kbd "b") 'ido-switch-buffer)
 (define-key robenkleene/leader-map (kbd "f") '(lambda () (interactive)
                                                 (projectile-find-file-in-directory default-directory)))
-(define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
+(define-key robenkleene/leader-map (kbd "c") 'projectile-find-dir)
+(define-key robenkleene/leader-map (kbd "a") '(lambda () (interactive)
+                                                (helm-do-ag default-directory)))
 
 ;; Leader Key
-;; (define-key evil-motion-state-map (kbd "\\") robenkleene/leader-map)
 (define-key evil-motion-state-map (kbd "SPC") robenkleene/leader-map)
 
 (provide 'robenkleene-evil-leader-map)
