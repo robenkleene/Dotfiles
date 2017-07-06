@@ -6,6 +6,12 @@
 (use-package evil
   :ensure t
   :config
+
+  ;; Other Evil Packages
+  (use-package evil-commentary
+    :ensure t
+    :config (evil-commentary-mode))
+
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
   ;; Settings
   (require 'robenkleene-evil-modes)
