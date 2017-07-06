@@ -10,6 +10,7 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>e :Files<CR>
 nnoremap <M-e> :Files<CR>
+nnoremap <leader>c :Cd<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
