@@ -1,4 +1,4 @@
-;;; robenkleene-evil-emacs-lisp.el --- robenkleene-emacs-lisp
+;;; robenkleene-evil-emacs-lisp.el --- robenkleene-evil-emacs-lisp
 ;;; Commentary:
 ;;; Code:
 

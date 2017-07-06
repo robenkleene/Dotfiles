@@ -1,4 +1,4 @@
-;;; robenkleene-evil-leader-map.el --- robenkleene-bindings
+;;; robenkleene-evil-leader-map.el --- robenkleene-evil-leader-map
 ;;; Commentary:
 ;;; Code:
 

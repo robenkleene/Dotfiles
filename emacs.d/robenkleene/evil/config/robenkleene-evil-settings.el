@@ -1,13 +1,7 @@
-;;; robenkleene-evil-settings.el --- robenkleene=evil-dired
+;;; robenkleene-evil-settings.el --- robenkleene-evil-settings
 ;;; Commentary:
 ;;; Code:
 
-;; Disable insert mode key map
-(setcdr evil-insert-state-map nil)
-;; Re-enable Esc
-(define-key evil-insert-state-map [escape] 'evil-normal-state)
-
-(setq-default cursor-type 'bar) 
 ;; Setup highlight line
 (global-hl-line-mode)
 (make-variable-buffer-local 'global-hl-line-mode)

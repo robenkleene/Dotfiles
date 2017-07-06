@@ -1,4 +1,4 @@
-;;; robenkleene-evil-motion-state-map.el --- robenkleene-bindings
+;;; robenkleene-evil-motion-state-map.el --- robenkleene-motion-state-map
 ;;; Commentary:
 ;;; Code:
 

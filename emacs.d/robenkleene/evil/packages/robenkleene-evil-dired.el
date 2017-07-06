@@ -1,4 +1,4 @@
-;;; robenkleene-evil-dired.el --- robenkleene=evil-dired
+;;; robenkleene-evil-dired.el --- robenkleene-evil-dired
 ;;; Commentary:
 ;;; Code:
 
