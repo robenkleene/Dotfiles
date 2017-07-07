@@ -7,9 +7,13 @@
   :ensure t
   :config
   (bind-map robenkleene/leader-map
-            :keys ("C-c")
-            :evil-keys ("SPC")
-            :evil-states (normal motion))
+    :keys ("C-c")
+    :evil-keys ("SPC")
+    :evil-states (normal motion))
+  (bind-map robenkleene/emacs-lisp-leader-map
+    :evil-keys ("\\")
+    :major-modes (emacs-lisp-mode
+                  lisp-interaction-mode))
   ;; Open Map
   (defvar robenkleene/open-map (make-keymap))
   (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
@@ -21,7 +25,7 @@
   (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
   (define-key robenkleene/leader-map (kbd "E") 'robenkleene/external-editor)
   (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
-  (define-key robenkleene/leader-map (kbd "b") 'helm-buffers-list)
+  (define-key robenkleene/leader-map (kbd "b") 'ido-switch-buffer)
   (define-key robenkleene/leader-map (kbd "f") 'projectile-find-file-in-directory)
   ;; (define-key robenkleene/leader-map (kbd "f") '(lambda () (interactive)
   ;;                                                 (projectile-find-file-in-directory default-directory)))
@@ -29,8 +33,6 @@
   (define-key robenkleene/leader-map (kbd "a") 'helm-do-ag)
   ;; (define-key robenkleene/leader-map (kbd "a") '(lambda () (interactive)
   ;;                                                 (helm-do-ag default-directory)))
-
-  ;; Leader Key
   )
 
 (provide 'robenkleene-bind-map)
