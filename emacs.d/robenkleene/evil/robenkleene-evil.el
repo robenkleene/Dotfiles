@@ -16,6 +16,17 @@
     :config
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
     )
+  (use-package evil-visualstar
+    :ensure t
+    :commands (evil-visualstar/begin-search-forward
+               evil-visualstar/begin-search-backward)
+    :init
+    (progn
+      (define-key evil-visual-state-map (kbd "*")
+        'evil-visualstar/begin-search-forward)
+      (define-key evil-visual-state-map (kbd "#")
+        'evil-visualstar/begin-search-backward)))
+
 
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
   ;; Settings
@@ -36,6 +47,7 @@
 
   ;; Activate
   (evil-mode 1)
+
   )
 
 (provide 'robenkleene-evil)
