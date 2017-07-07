@@ -13,7 +13,7 @@
 (define-key evil-motion-state-map (kbd "M-c") 'projectile-find-dir)
 (define-key evil-normal-state-map (kbd "C-w t") 'make-frame-command)
 (define-key evil-motion-state-map (kbd "M-n") 'other-frame)
-(define-key evil-motion-state-map (kbd "M-p") 'previous-multiframe-window)
+(define-key evil-motion-state-map (kbd "M-p") ' (lambda () (interactive) (other-frame -1)))
 (define-key evil-motion-state-map (kbd "C-w q") 'delete-frame)
 
 ;; Dired
