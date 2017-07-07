@@ -7,7 +7,6 @@
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
-(require 'robenkleene-bindings)
 (require 'robenkleene-config)
 (require 'robenkleene-functions)
 (require 'robenkleene-dired)
@@ -20,9 +19,10 @@
 (require 'robenkleene-better-defaults)
 ;; Temporarily removing this because it's annoying
 ;; (require 'robenkleene-company)
+(require 'robenkleene-bind-map)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
-;; Disabling this for now beacuse I don't like how the window moves to add and remove the frame
+;; Disabling this for now because I don't like how the window moves to add and remove the frame
 ;; (require 'robenkleene-git-gutter)
 (require 'robenkleene-ido-completing-read)
 (require 'robenkleene-magit)

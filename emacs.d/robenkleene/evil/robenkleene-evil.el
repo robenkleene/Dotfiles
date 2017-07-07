@@ -35,7 +35,6 @@
   ;; Maps  
   (require 'robenkleene-evil-motion-state-map)
   (require 'robenkleene-evil-unimpaired-map)
-  (require 'robenkleene-evil-leader-map)
 
   ;; Packages
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/packages"))
