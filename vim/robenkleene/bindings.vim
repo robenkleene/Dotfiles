@@ -171,8 +171,10 @@ nnoremap <C-w>t :tabnew<CR>
 " nnoremap <leader>c <C-w>s<C-w>T
 " nnoremap <leader>n gt
 " nnoremap <leader>p gT
-nnoremap <A-n> gt
-nnoremap <A-p> gT
+" nnoremap <A-n> gt
+" nnoremap <A-p> gT
+nnoremap <C-w>n gt
+nnoremap <C-w>p gT
 
 " Neovim Terminal
 if has('nvim')
