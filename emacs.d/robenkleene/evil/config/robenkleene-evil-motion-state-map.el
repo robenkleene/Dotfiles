@@ -10,6 +10,9 @@
 (define-key evil-motion-state-map (kbd "M-e") '(lambda () (interactive)
                                                  (projectile-find-file-in-directory default-directory)))
 (define-key evil-motion-state-map (kbd "M-c") 'projectile-find-dir)
+(define-key evil-normal-state-map (kbd "C-w t") 'make-frame-command)
+(define-key evil-motion-state-map (kbd "M-n") 'other-frame)
+(define-key evil-motion-state-map (kbd "M-p") 'previous-multiframe-window)
 
 ;; Dired
 (define-key evil-motion-state-map "-" 'dired-jump)
