@@ -17,6 +17,10 @@
 
 ;; Don't default any buffers to insert mode
 (setq evil-emacs-state-modes ())
+(setq evil-insert-state-modes ())
+(setq evil-motion-state-modes ())
+
+
 
 (provide 'robenkleene-evil-modes)
 ;;; robenkleene-evil-modes.el ends here
