@@ -33,6 +33,9 @@
 ;; Highlight Cursor Line
 (global-hl-line-mode)
 
+;; Automatically select help windows
+(setq help-window-select t)
+
 ;; Add Line Numbers
 ;; Note this is incompatible with git-gutter
 ;; (global-linum-mode t)
