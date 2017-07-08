@@ -7,7 +7,6 @@
 
 (use-package projectile
   :ensure t
-  ;; :after evil bind-map
   :bind (:map evil-motion-state-map
               ("M-e" . projectile-find-file)
               ("M-c" . projectile-find-dir)
@@ -16,6 +15,15 @@
               ("f" . projectile-find-file)
               ("c" . projectile-find-dir)
               )
+  :bind (:map robenkleene/relative-map
+              ("a" . robenkleene/projectile-find-file-default-directory)
+              )
+  :config
+  (defun robenkleene/projectile-find-file-default-directory ()
+    (interactive)
+    (projectile-find-file-in-directory default-directory)
+    )
+  
   ;; `helm-projectile-ag' should do project level `rg' by default, but it isn't
   ;; compatible with `rg', so instead this is currently done with a function
   ;; using `helm-do-ag' with `projectile-project-root'
@@ -27,14 +35,6 @@
   ;;               )
   ;;   )
   )
-
-
-;; (define-key evil-motion-state-map (kbd "M-e") '(lambda () (interactive)
-;;                                                  (projectile-find-file-in-directory default-directory)))
-;; (define-key robenkleene/leader-map (kbd "f") 'projectile-find-file-in-directory)
-;; (define-key robenkleene/leader-map (kbd "f") '(lambda () (interactive)
-;;                                                 (projectile-find-file-in-directory default-directory)))
-;; (define-key robenkleene/leader-map (kbd "c") 'projectile-find-dir)
 
 (provide 'robenkleene-projectile)
 ;;; robenkleene-projectile.el ends here

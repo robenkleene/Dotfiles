@@ -12,13 +12,12 @@
     :defer t
     ;; :commands helm-do-ag
     :bind (:map robenkleene/relative-map
-                ("a" . helm-do-ag)
+                ("a" . helm-do-ag-best-available)
                 )
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag-projectile-project-root)
+                ("*" . robenkleene/helm-do-ag-best-available-selection)
                 )
-    ;; (bind-key "C-c a" (lambda () (interactive)
-    ;;                     (helm-do-ag default-directory)))
     :config
     (defun robenkleene/helm-do-ag-projectile-project-root ()
       (interactive)
@@ -28,6 +27,25 @@
         (message "You're not in a project")
         )
       )
+    (defun robenkleene/helm-do-ag-best-available (&optional targets)
+      (interactive)
+      (use-package projectile)
+      (if (boundp 'projectile-project-root)
+          (helm-do-ag (projectile-project-root) targets)
+        (helm-do-ag default-directory targets)
+        )
+      )
+    (defun robenkleene/helm-do-ag-best-available-selection (beg end)
+      (interactive (if (use-region-p)
+                       (list (region-beginning) (region-end))
+                     (list (point-min) (point-min))))
+      (let ((selection (buffer-substring-no-properties beg end)))
+        (if (= (length selection) 0)
+            (robenkleene/helm-do-ag-best-available selection)
+          (robenkleene/helm-do-ag-best-available))
+        )
+      )    
+
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
     ;; Then use `next-error' to cycle through matches
@@ -44,7 +62,7 @@
 
   (use-package helm-swoop
     :ensure t
-    :bind (:map robenkleene/leadermap
+    :bind (:map robenkleene/leader-map
                 ("l" . helm-swoop)
                 )
     :init
