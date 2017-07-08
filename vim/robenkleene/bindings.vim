@@ -171,8 +171,8 @@ noremap <S-Right> <C-w>l
 nnoremap <C-w>t <C-w>s<C-w>T
 " nnoremap <leader>n gt
 " nnoremap <leader>p gT
-" nnoremap <A-n> gt
-" nnoremap <A-p> gT
+nnoremap <A-n> gt
+nnoremap <A-p> gT
 nnoremap <C-w>n gt
 nnoremap <C-w>p gT
 
