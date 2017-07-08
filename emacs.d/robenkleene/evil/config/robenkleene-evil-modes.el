@@ -18,7 +18,8 @@
 ;; Don't default any buffers to insert mode
 (setq evil-emacs-state-modes ())
 (setq evil-insert-state-modes ())
-(setq evil-motion-state-modes ())
+;; Add help mode so `q' can quit the help buffer
+(setq evil-motion-state-modes '(help-mode))
 
 
 
