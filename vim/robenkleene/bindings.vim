@@ -167,8 +167,8 @@ noremap <S-Right> <C-w>l
 
 " Tab
 " nnoremap <leader>c :tabnew<CR>
-nnoremap <C-w>t :tabnew<CR>
-" nnoremap <leader>c <C-w>s<C-w>T
+" nnoremap <C-w>t :tabnew<CR>
+nnoremap <C-w>t <C-w>s<C-w>T
 " nnoremap <leader>n gt
 " nnoremap <leader>p gT
 " nnoremap <A-n> gt
