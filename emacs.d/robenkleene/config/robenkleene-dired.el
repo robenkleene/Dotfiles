@@ -10,6 +10,9 @@
 ;; Auto-refresh on file system change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
+;; Hack to allow `SPC' to work as leader in Dired buffers
+(define-key dired-mode-map (kbd "SPC") nil)
+
 ;; Suppress error message
 (defvar dired-use-ls-dired)
 (setq dired-use-ls-dired nil)
