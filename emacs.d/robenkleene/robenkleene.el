@@ -14,12 +14,20 @@
     (require 'robenkleene-gui)
   (require 'robenkleene-terminal))
 
+;; Load `evil' early to other packages can bind to its maps
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
+(require 'robenkleene-evil)
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+;; Dependencies
+;; It's important to load these early
+(require 'robenkleene-bind-map)
+
+;; Packages
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-better-defaults)
 ;; Temporarily removing this because it's annoying
 ;; (require 'robenkleene-company)
-(require 'robenkleene-bind-map)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
 ;; Disabling this for now because I don't like how the window moves to add and remove the frame
@@ -32,16 +40,9 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
-(require 'robenkleene-helm-ag)
-(require 'robenkleene-helm-swoop)
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
-
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
-(require 'robenkleene-evil)
-
-
 ;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
 ;; Font lock errors on startup are from `fill-column-indicator'
 (require 'robenkleene-fill-column-indicator)
