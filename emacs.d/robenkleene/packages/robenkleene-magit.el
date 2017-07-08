@@ -7,10 +7,9 @@
 (use-package magit
   :ensure t
   :commands (robenkleene/magit-status-startup)
-  :bind (
-         ("C-x g" . magit-status)
-         ("C-x M-g" . magit-dispatch-popup)
-         )
+  :bind (:map robenkleene/leader-map
+              ("gs" . magit-status)
+              )
   :config
   (setq magit-push-always-verify nil)
   ;; Refresh magit status after editing a buffer
