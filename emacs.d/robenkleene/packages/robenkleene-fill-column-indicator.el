@@ -10,7 +10,7 @@
   (add-hook 'prog-mode-hook 'fci-mode)
   :config
   ;; This color isn't accurate for some reason
-  (setq fci-rule-color "#333333")
+  (setq fci-rule-color "#444444")
   (setq fci-rule-column 80)
   )
 
