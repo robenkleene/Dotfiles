@@ -9,11 +9,11 @@
   :ensure t
   ;; :after evil bind-map
   :bind (:map evil-motion-state-map
-              ("M-e" . projectile-find-file-dwim)
-              ("M-c" . projectile-find-dir)              
+              ("M-e" . projectile-find-file)
+              ("M-c" . projectile-find-dir)
               )
   :bind (:map robenkleene/leader-map
-              ("f" . projectile-find-file-dwim)
+              ("f" . projectile-find-file)
               ("c" . projectile-find-dir)
               )
   ;; `helm-projectile-ag' should do project level `rg' by default, but it isn't
