@@ -30,9 +30,6 @@
   (define-key robenkleene/leader-map (kbd "r") robenkleene/relative-map)
   (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
   (define-key robenkleene/leader-map (kbd "b") 'ido-switch-buffer)
-  (define-key robenkleene/leader-map (kbd ":") 'smex)
-  ;; (define-key robenkleene/leader-map (kbd "a") '(lambda () (interactive)
-  ;;                                                 (helm-do-ag default-directory)))
   )
 
 (provide 'robenkleene-bind-map)

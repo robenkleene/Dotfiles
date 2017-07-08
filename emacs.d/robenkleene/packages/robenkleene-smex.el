@@ -7,6 +7,9 @@
 (use-package smex
   :ensure t
   :bind (("M-x" . smex))
+  :bind (:map robenkleene/leader-map
+              (":" . smex)
+              )
   :config
   (smex-initialize))
 
