@@ -9,8 +9,7 @@
   :init
   (use-package helm-ag
     :ensure t
-    :defer t
-    ;; :commands helm-do-ag
+    :bind ("M-r" . helm-resume)
     :bind (:map robenkleene/relative-map
                 ("a" . robenkleene/helm-do-ag)
                 )
@@ -85,7 +84,7 @@
     ;; Don't use word at cursor by default
     (setq helm-swoop-pre-input-function (lambda () nil))
     )
-
+  
   :config
   (setq helm-truncate-lines t)
   (setq helm-candidate-number-limit 1000)
