@@ -1,0 +1,9 @@
+# key: universal
+# name: universal
+# --
+(let ((current-prefix-arg nil))
+  (if (equal arg nil)
+      (${1:message "No universal arg"})
+    (${2:message "Universal arg"})
+    )
+  )
