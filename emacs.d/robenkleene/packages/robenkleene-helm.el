@@ -12,13 +12,21 @@
     :defer t
     ;; :commands helm-do-ag
     :bind (:map robenkleene/relative-map
-                ("a" . robenkleene/helm-do-ag-best-available)
+                ("a" . robenkleene/helm-do-ag)
                 )
     :bind (:map robenkleene/leader-map
-                ("a" . robenkleene/helm-do-ag-projectile-project-root)
+                ("a" . robenkleene/helm-do-ag)
                 ("*" . robenkleene/helm-do-ag-best-available-selection)
                 )
     :config
+    (defun robenkleene/helm-do-ag (&optional arg)
+      "Version of `helm-do-ag' that supports the universal argument."
+      (interactive "P")
+      (if (equal arg nil)
+          (robenkleene/helm-do-ag-best-available)
+        (helm-do-ag)
+        )
+      )
     (defun robenkleene/helm-do-ag-projectile-project-root ()
       "Run `helm-do-ag' from the `projectile-project-root'."
       (interactive)
