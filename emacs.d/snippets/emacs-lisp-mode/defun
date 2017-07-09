@@ -1,6 +1,8 @@
-# -*- mode: snippet -*-
-# name: defun
 # key: defun
+# name: defun
 # --
 
-(defun $0)
+(defun ${1:my-function} (${2:&optional arg})
+  "${3:My function description}."
+  $0
+  )
