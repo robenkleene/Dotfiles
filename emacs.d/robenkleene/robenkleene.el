@@ -39,6 +39,7 @@
 ;; Disabling this for now because I don't like how the window moves to add and remove the frame
 ;; (require 'robenkleene-git-gutter)
 (require 'robenkleene-ido-completing-read)
+(require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
 (require 'robenkleene-projectile)
