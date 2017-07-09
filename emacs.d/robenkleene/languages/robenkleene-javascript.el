@@ -5,7 +5,6 @@
 (require 'use-package)
 (use-package js2-mode
   :ensure t
-  :init
   :mode "\\.js\\'"
   :config
   ;; Node REPL
