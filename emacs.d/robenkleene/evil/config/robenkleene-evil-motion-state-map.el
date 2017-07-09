@@ -9,7 +9,7 @@
 (define-key evil-motion-state-map (kbd "M-l") 'evil-window-right)
 (define-key evil-normal-state-map (kbd "C-w t") 'make-frame-command)
 (define-key evil-motion-state-map (kbd "C-w n") 'other-frame)
-(define-key evil-motion-state-map (kbd "C-w p") ' (lambda () (interactive) (other-frame -1)))
+(define-key evil-motion-state-map (kbd "C-w p") '(lambda () (interactive) (other-frame -1)))
 (define-key evil-motion-state-map (kbd "M-n") 'other-frame)
 (define-key evil-motion-state-map (kbd "M-p") ' (lambda () (interactive) (other-frame -1)))
 (define-key evil-motion-state-map (kbd "C-w q") 'delete-frame)

@@ -11,7 +11,6 @@
               ("gs" . magit-status)
               )
   :config
-  (setq magit-push-always-verify nil)
   ;; Refresh magit status after editing a buffer
   (add-hook 'after-save-hook 'magit-after-save-refresh-status)
   ;; Magit Startup Helpers
