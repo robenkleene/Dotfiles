@@ -22,9 +22,9 @@
     (defun robenkleene/helm-do-ag (&optional arg targets)
       "Version of `helm-do-ag' that supports the universal argument."
       (interactive "P")
-      (if (equal arg nil)
-          (robenkleene/helm-do-ag-best-available targets)
-        (let ((current-prefix-arg nil))
+      (let ((current-prefix-arg nil))
+        (if (equal arg nil)
+            (robenkleene/helm-do-ag-best-available targets)
           (helm-do-ag nil targets)
           )
         )
