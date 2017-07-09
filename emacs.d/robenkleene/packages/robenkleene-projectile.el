@@ -8,15 +8,12 @@
 (use-package projectile
   :ensure t
   :bind (:map evil-motion-state-map
-              ("M-e" . projectile-find-file)
+              ("M-e" . robenkleene/find-file-best-available)
               ("M-c" . projectile-find-dir)
               )
   :bind (:map robenkleene/leader-map
-              ("f" . projectile-find-file)
+              ("f" . robenkleene/find-file-best-available)
               ("c" . projectile-find-dir)
-              )
-  :bind (:map robenkleene/relative-map
-              ("a" . robenkleene/projectile-find-file-default-directory)
               )
   :config
   (defun robenkleene/projectile-find-file-default-directory ()
@@ -25,7 +22,20 @@
     (projectile-find-file-in-directory default-directory)
     )
 
-
+  (defun robenkleene/find-file-best-available (&optional arg)
+    "Run best available `find-file'."
+    (interactive "P")
+    (use-package projectile)
+    (if (boundp 'projectile-project-root)
+        (let ((current-prefix-arg nil))
+          (if (equal arg nil)
+              (projectile-find-file)
+            (robenkleene/projectile-find-file-default-directory)
+            )
+          )
+      (ido-find-file)
+      )
+    )
   
   ;; `helm-projectile-ag' should do project level `rg' by default, but it isn't
   ;; compatible with `rg', so instead this is currently done with a function

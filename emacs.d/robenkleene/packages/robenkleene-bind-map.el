@@ -14,8 +14,6 @@
     :evil-keys ("\\")
     :major-modes (emacs-lisp-mode
                   lisp-interaction-mode))
-  ;; Relative Map
-  (defvar robenkleene/relative-map (make-keymap))
 
   ;; Open Map
   (defvar robenkleene/open-map (make-keymap))
@@ -27,7 +25,6 @@
   (define-key robenkleene/leader-map (kbd "t") 'robenkleene/open-terminal-window)
   (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
   (define-key robenkleene/leader-map (kbd "E") 'robenkleene/external-editor)
-  (define-key robenkleene/leader-map (kbd "r") robenkleene/relative-map)
   (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
   (define-key robenkleene/leader-map (kbd "b") 'ido-switch-buffer)
   )

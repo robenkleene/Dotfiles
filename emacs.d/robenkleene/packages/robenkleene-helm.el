@@ -10,9 +10,6 @@
   (use-package helm-ag
     :ensure t
     :bind ("M-r" . helm-resume)
-    :bind (:map robenkleene/relative-map
-                ("a" . robenkleene/helm-do-ag)
-                )
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)
                 ("*" . robenkleene/helm-do-ag-selection)
@@ -38,7 +35,7 @@
         )
       )
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
-      "Run `helm-do-ag' from the `projectile-project-root' if its available, otherwise from the `default-directory'."
+      "Run best available `helm-do-ag'"
       (interactive)
       (use-package projectile)
       (if (boundp 'projectile-project-root)
