@@ -26,6 +26,8 @@
         'evil-visualstar/begin-search-forward)
       (define-key evil-visual-state-map (kbd "#")
         'evil-visualstar/begin-search-backward)))
+  (use-package evil-magit
+    :ensure t)
 
 
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
