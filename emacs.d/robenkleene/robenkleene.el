@@ -43,6 +43,7 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
+(require 'robenkleene-fasd)
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
