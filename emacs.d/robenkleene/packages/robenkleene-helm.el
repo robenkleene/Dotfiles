@@ -12,7 +12,7 @@
     :defer t
     ;; :commands helm-do-ag
     :bind (:map robenkleene/relative-map
-                ("a" . helm-do-ag-best-available)
+                ("a" . robenkleene/helm-do-ag-best-available)
                 )
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag-projectile-project-root)
@@ -20,6 +20,7 @@
                 )
     :config
     (defun robenkleene/helm-do-ag-projectile-project-root ()
+      "Run `helm-do-ag' from the `projectile-project-root'."
       (interactive)
       (use-package projectile)
       (if (boundp 'projectile-project-root)
@@ -28,6 +29,7 @@
         )
       )
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
+      "Run `helm-do-ag' from the `projectile-project-root' if its available, otherwise from the `default-directory'."
       (interactive)
       (use-package projectile)
       (if (boundp 'projectile-project-root)
@@ -36,6 +38,7 @@
         )
       )
     (defun robenkleene/helm-do-ag-best-available-selection (beg end)
+      "Run `helm-do-ag-best-available' on the selection."
       (interactive (if (use-region-p)
                        (list (region-beginning) (region-end))
                      (list (point-min) (point-min))))
