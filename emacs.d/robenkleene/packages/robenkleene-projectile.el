@@ -26,14 +26,17 @@
     "Run best available `find-file'."
     (interactive "P")
     (use-package projectile)
-    (if (and (boundp 'projectile-project-root) projectile-project-root)
+    (let ((project-root (robenkleene/safe-project-root)))
+      (if (equal project-root nil)
+          (ido-find-file)
         (let ((current-prefix-arg nil))
           (if (equal arg nil)
               (projectile-find-file)
             (robenkleene/projectile-find-file-default-directory)
             )
           )
-      (ido-find-file)
+
+        )
       )
     )
   
