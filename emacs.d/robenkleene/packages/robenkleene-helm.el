@@ -26,15 +26,6 @@
           )
         )
       )
-    (defun robenkleene/helm-do-ag-projectile-project-root ()
-      "Run `helm-do-ag' from the `projectile-project-root'."
-      (interactive)
-      (use-package projectile)
-      (if (boundp 'projectile-project-root)
-          (helm-do-ag (projectile-project-root))
-        (message "You're not in a project")
-        )
-      )
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
       "Run best available `helm-do-ag'"
       (interactive)
