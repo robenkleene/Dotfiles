@@ -9,6 +9,7 @@
   :init
   (use-package helm-ag
     :ensure t
+    :commands (robenkleene/documentation doc)
     :bind ("M-r" . helm-resume)
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)
@@ -52,11 +53,13 @@
           (robenkleene/helm-do-ag arg))
         )
       )    
-    (defun robenkleene/doc ()
+    (defun robenkleene/documentation ()
       "`find-file' in documentation"
+      (require 'helm-files)
       (interactive)
       (helm-find-1 "~/Documentation")
       )
+    (defalias 'doc 'robenkleene/documentation)
 
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
