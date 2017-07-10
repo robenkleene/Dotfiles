@@ -16,6 +16,12 @@
               ("c" . projectile-find-dir)
               )
   :config
+  (defun robenkleene/safe-project-root ()
+    "Return project's root, or nil if not in a project."
+    (and (fboundp 'projectile-project-root)
+         (projectile-project-p)
+         (projectile-project-root))
+    )
   (defun robenkleene/projectile-find-file-default-directory ()
     "Run `projectile-find-file' with `default-directory'."
     (interactive)

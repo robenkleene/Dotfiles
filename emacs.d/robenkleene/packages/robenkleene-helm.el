@@ -26,13 +26,6 @@
           )
         )
       )
-    (defun robenkleene/safe-project-root ()
-      "Return project's root, or nil if not in a project."
-      (and (fboundp 'projectile-project-root)
-           (projectile-project-p)
-           (projectile-project-root))
-      )
-
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
       "Run best available `helm-do-ag'"
       (interactive)
