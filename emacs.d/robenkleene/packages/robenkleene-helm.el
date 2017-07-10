@@ -30,7 +30,7 @@
       "Run best available `helm-do-ag'"
       (interactive)
       (use-package projectile)
-      (if (boundp 'projectile-project-root)
+      (if (and (boundp 'projectile-project-root) projectile-project-root)
           (helm-do-ag (projectile-project-root) targets)
         (helm-do-ag default-directory targets)
         )
@@ -80,7 +80,7 @@
     ;; Don't use word at cursor by default
     (setq helm-swoop-pre-input-function (lambda () nil))
     )
-  
+
   :config
   (setq helm-truncate-lines t)
   (setq helm-candidate-number-limit 1000)

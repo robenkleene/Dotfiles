@@ -26,7 +26,7 @@
     "Run best available `find-file'."
     (interactive "P")
     (use-package projectile)
-    (if (boundp 'projectile-project-root)
+    (if (and (boundp 'projectile-project-root) projectile-project-root)
         (let ((current-prefix-arg nil))
           (if (equal arg nil)
               (projectile-find-file)
