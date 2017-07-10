@@ -39,7 +39,9 @@ abbreviations=(
 'gaa' 'git add -A :/'
 # `gb`: `git branch`
 'gb' 'git branch'
-'gbd' 'git branch -d'
+# This is too dangerous, especially because it is easly confused with `git
+# branch diff`
+# 'gbd' 'git branch -d'
 'gbpr' 'git remote prune origin'
 'gbr' 'git branch -r'
 # `gc`: `git commit`
