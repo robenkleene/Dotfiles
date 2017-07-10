@@ -52,6 +52,11 @@
           (robenkleene/helm-do-ag arg))
         )
       )    
+    (defun robenkleene/doc ()
+      "`find-file' in documentation"
+      (interactive)
+      (helm-find-1 "~/Documentation")
+      )
 
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
