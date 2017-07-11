@@ -1,8 +1,8 @@
-Alias CX compiler\ xcodebuild
 Alias G Git
 Alias A Rg
-Alias DO windo\ diffoff
 Alias Af Rg\ -F
+Alias -range Ld Linediff
+Alias Ldr LinediffReset
 
 Alias RS RestoreSession
 Alias SSL SaveSessionLocal
