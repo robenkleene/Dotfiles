@@ -45,11 +45,11 @@ vim-session-restore-default() {
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
-vim-git-modified-splits() {
-  $VIM_COMMAND -o $(git diff --name-only --diff-filter=UM | uniq)
-}
 vim-git-modified() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
+}
+vim-git-conflicts() {
+  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq) -c "vimgrep /======/ ##"
 }
 vim-git-hunks() {
   git diff --relative $argv | dtg | vim-grep
