@@ -64,7 +64,7 @@ abbreviations=(
 'gd' 'git diff'
 'gdr' 'git diff --relative'
 'gdt' 'git difftool'
-'gdv' 'git diff --relative | dtg | vg'
+'gdv' 'git diff --relative | diff-to-grep | vg'
 'gdw' 'git diff --color-words'
 'gdfu' 'git diff --name-only --diff-filter=U'
 # `gf`: `git fetch`

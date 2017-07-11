@@ -51,8 +51,11 @@ vim-git-modified() {
 vim-git-conflicts() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq) -c "vimgrep /======/ ##"
 }
+vim-diff-grep() {
+  diff-to-grep | vim-grep
+}
 vim-git-hunks() {
-  git diff --relative $argv | dtg | vim-grep
+  git diff --relative $argv | vim-diff-grep
 }
 
 # Emacs
