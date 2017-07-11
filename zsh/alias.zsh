@@ -4,6 +4,7 @@ alias -g C='| column'
 alias -g L='| less'
 alias -g A='| rg'
 alias -g Y='| safecopy'
+alias -g Y1='| safecopy1'
 alias -g V="| $VIM_COMMAND -"
 
 # Basic
@@ -18,6 +19,7 @@ fi
 
 alias p='safepaste'
 alias c='safecopy'
+alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 
 # Override
 

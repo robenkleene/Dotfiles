@@ -7,6 +7,7 @@ abbreviations=(
 
 # vim
 'v' "$VIM_COMMAND"
+'vd' "$VIM_COMMAND -d"
 
 # rg
 'a' "$ACK_COMMAND"

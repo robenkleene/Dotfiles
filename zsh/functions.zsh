@@ -159,11 +159,11 @@ git-diff-words() {
   git diff --color-words $@
 }
 git-yank-branch() {
-  git rev-parse --abbrev-ref HEAD | tee /dev/tty | tr -d '\n' | safecopy
+  git rev-parse --abbrev-ref HEAD | tr -d '\n' | tee /dev/tty | safecopy
 }
 git-yank-hash() {
   # Print the '\n' because otherwise `tmux` has issues
-  git rev-parse HEAD | tee /dev/tty | tr -d '\n' | safecopy
+  git rev-parse HEAD | tr -d '\n' | tee /dev/tty | safecopy
 }
 git-yank-remote-url() {
   git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
