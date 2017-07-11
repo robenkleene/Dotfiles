@@ -19,7 +19,7 @@
 (setq evil-emacs-state-modes '(magit-popup-mode))
 (setq evil-insert-state-modes ())
 ;; Add help mode so `q' can quit the help buffer
-(setq evil-motion-state-modes '(help-mode))
+(setq evil-motion-state-modes '(help-mode debugger-mode))
 
 
 

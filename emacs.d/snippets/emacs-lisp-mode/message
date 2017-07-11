@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: message
+# key: message
+# --
+(message "${1:variable} = %${2:s}." $1)
