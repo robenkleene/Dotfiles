@@ -31,6 +31,7 @@ alias rg='rg --smart-case --line-number'
 # palette_transparent: true
 # no_mouse: true
 alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
+alias atm="tmux-paths -0 | xargs -0 rg isFullScreen"
 
 # vimdiff
 alias vimdiff="nvim -d"
