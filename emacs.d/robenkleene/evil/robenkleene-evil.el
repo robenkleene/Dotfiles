@@ -5,8 +5,9 @@
 (require 'use-package)
 (use-package evil
   :ensure t
+  :init
+  (setq evil-toggle-key "")
   :config
-
   ;; Other Evil Packages
   (use-package evil-commentary
     :ensure t
