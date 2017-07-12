@@ -77,6 +77,7 @@ higher precedence. See also `evil-make-intercept-map'."
                                 help-mode
                                 debugger-mode
                                 magit-status-mode
+                                magit-stash-mode
                                 ))
 
 (provide 'robenkleene-evil-modes)
