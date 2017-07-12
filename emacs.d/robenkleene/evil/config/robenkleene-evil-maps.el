@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Disable insert mode key map
+(setcdr evil-insert-state-map nil)
+;; Re-enable `esc'
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
 ;; Open Map
 (defvar robenkleene/open-map (make-keymap))
 (define-key robenkleene/open-map (kbd "i") (lambda() (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
@@ -30,7 +35,7 @@
 (define-key evil-motion-state-map (kbd "M-k") 'evil-window-up)
 (define-key evil-motion-state-map (kbd "M-j") 'evil-window-down)
 (define-key evil-motion-state-map (kbd "M-l") 'evil-window-right)
-(define-key evil-normal-state-map (kbd "C-w t") 'make-frame-command)
+(define-key evil-motion-state-map (kbd "C-w t") 'make-frame-command)
 (define-key evil-motion-state-map (kbd "C-w n") 'other-frame)
 (define-key evil-motion-state-map (kbd "C-w p") '(lambda () (interactive) (other-frame -1)))
 (define-key evil-motion-state-map (kbd "M-n") 'other-frame)
