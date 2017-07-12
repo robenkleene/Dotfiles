@@ -5,7 +5,10 @@
 (require 'use-package)
 (use-package helm
   :ensure t
-  :defer t
+  :commands (helm-semantic-or-imenu)
+  :bind (:map robenkleene/emacs-lisp-leader-map
+              ("i" . helm-semantic-or-imenu)
+              )
   :init
   (use-package helm-ag
     :ensure t
