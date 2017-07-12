@@ -49,6 +49,7 @@ alias tmnd='tmux-name-directory'
 alias tma='tmux-attach'
 alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
+alias tmp='tmux-paths'
 
 # emacs
 # alias m='magit'
