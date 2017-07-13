@@ -18,7 +18,7 @@ else
 fi
 
 alias p='safepaste'
-alias c='safecopy'
+alias y='safecopy'
 alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 
 # Override
