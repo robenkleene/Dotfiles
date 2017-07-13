@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: template
+# key: template
+# --
+;;; ${1:filename}.el --- $1
+;;; Commentary:
+;;; Code:
+
+$0
+
+(provide '$1)
+;;; $1.el ends here
