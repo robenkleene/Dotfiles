@@ -63,6 +63,11 @@ command! Modified :call fzf#run({
 \   'sink':    'e'
 \ })
 
+command! TmuxPaths :call fzf#run({
+\   'source':  "tmux-paths",
+\   'sink':    'e'
+\ })
+
 command! Cd :call fzf#run({
 \   'source':  "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
 \   'sink':    'Explore'
