@@ -13,27 +13,6 @@
   "No-op."
   )
 
-;; (defun robenkleene/evilify (package mode keymap state &rest bindings)
-;;   "After loading a PACKAGE, Evil integration for a MODE.
-;; And a corresponding KEYMAP for a STATE.  Add additional BINDINGS."
-;;   (robenkleene/evilify2 package mode keymap state bindings)
-;;   )
-
-(defmacro robenkleene/evilify (package mode keymap state &rest bindings)
-  "After loading a PACKAGE, Evil integration for a MODE.
-And a corresponding KEYMAP for a STATE.  Add additional BINDINGS."
-  `(eval-after-load ,package
-     '(progn
-        (defvar ,keymap)
-        (robenkleene/evil-make-overriding-map ,keymap ,state)
-        (robenkleene/evil-add-hjkl-bindings ,keymap ,state ,@bindings)
-        (if (equal ,state 'motion)
-            (add-to-list 'evil-motion-state-modes ,mode)
-          )
-        )
-     )
-  )
-
 ;; Create my own versions of these functions
 (defvar evil-motion-state-map)
 (defmacro robenkleene/evil-add-hjkl-bindings (keymap &optional state &rest bindings)
@@ -61,6 +40,18 @@ higher precedence. See also `evil-make-intercept-map'."
         (setq copy (assq-delete-all 'menu-bar (copy-keymap keymap))))
       (define-key copy key (or state 'all))
       (define-key keymap key copy))))
+
+(defmacro robenkleene/evilify (package mode keymap state &rest bindings)
+  "After loading a PACKAGE, Evil integration for a MODE.
+And a corresponding KEYMAP for a STATE.  Add additional BINDINGS."
+  `(eval-after-load ,package
+     '(progn
+        (defvar ,keymap)
+        (robenkleene/evil-make-overriding-map ,keymap ,state)
+        (robenkleene/evil-add-hjkl-bindings ,keymap ,state ,@bindings)
+        )
+     )
+  )
 
 (provide 'robenkleene-evil-integration)
 ;;; robenkleene-evil-integration.el ends here

@@ -27,6 +27,10 @@
         'evil-visualstar/begin-search-forward)
       (define-key evil-visual-state-map (kbd "#")
         'evil-visualstar/begin-search-backward)))
+  (use-package evil-surround
+    :ensure t 
+    :init
+    (global-evil-surround-mode 1))
 
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
   ;; Settings
@@ -50,5 +54,3 @@
 
 (provide 'robenkleene-evil)
 ;;; robenkleene-evil.el ends here
-
-
