@@ -25,9 +25,17 @@
 (add-to-list 'evil-motion-state-modes 'dired-mode)
 
 ;; magit
-(robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
-                     "C-k" 'magit-discard
+;; This doesn't work because `evil-define-key` doesn't work with `magit-file-section-map'
+;; (robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
+;;                      "C-k" 'magit-discard
+;;                      )
+(robenkleene/evilify 'magit 'magit-status-mode magit-status-mode-map 'motion
+                     "TAB" 'magit-toggle-section
                      )
+(with-eval-after-load 'magit
+  (defvar magit-file-section-map)
+  (define-key magit-file-section-map "\C-k" 'magit-discard)
+  )
 (add-to-list 'evil-motion-state-modes 'magit-status-mode)
 
 (provide 'robenkleene-evil-modes)
