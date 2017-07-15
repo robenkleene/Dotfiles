@@ -65,5 +65,6 @@
 (require 'robenkleene-swift)
 (require 'robenkleene-markdown)
 (require 'robenkleene-fish)
+(require 'robenkleene-page-break-lines)
 
 ;;; robenkleene.el ends here
