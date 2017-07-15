@@ -16,7 +16,7 @@
 ;; Create my own versions of these functions
 (defvar evil-motion-state-map)
 (defmacro robenkleene/evil-add-hjkl-bindings (keymap &optional state &rest bindings)
-  "Add \"h\", \"j\", \"k\", \"l\" bindings to KEYMAP in STATE.
+  "Add bindings to KEYMAP in STATE.
 Add additional BINDINGS if specified."
   (declare (indent defun))
   `(evil-define-key ,state ,keymap
@@ -25,6 +25,8 @@ Add additional BINDINGS if specified."
      "k" (lookup-key evil-motion-state-map "k")
      "l" (lookup-key evil-motion-state-map "l")
      ":" (lookup-key evil-motion-state-map ":")
+     " " (lookup-key evil-motion-state-map " ")
+     "\C-w" (lookup-key evil-motion-state-map "\C-w")
      ,@bindings))
 
 (defun robenkleene/evil-make-overriding-map (keymap &optional state copy)

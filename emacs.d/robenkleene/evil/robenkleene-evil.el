@@ -8,6 +8,7 @@
   :init
   (setq evil-toggle-key "")
   :config
+
   ;; Other Evil Packages
   (use-package evil-commentary
     :ensure t
@@ -32,6 +33,19 @@
     :init
     (global-evil-surround-mode 1))
 
+  (unless (display-graphic-p)
+    (use-package evil-terminal-cursor-changer
+      :ensure t
+      :config
+      (evil-terminal-cursor-changer-activate)
+      (setq evil-motion-state-cursor 'box)
+      (setq evil-visual-state-cursor 'box)
+      (setq evil-normal-state-cursor 'box)
+      (setq evil-insert-state-cursor 'bar)
+      (setq evil-emacs-state-cursor  'hbar)
+      )
+    )
+  
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
   ;; Settings
   (require 'robenkleene-evil-modes)

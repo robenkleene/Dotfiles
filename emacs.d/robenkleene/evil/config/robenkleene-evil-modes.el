@@ -29,7 +29,14 @@
 ;; (robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
 ;;                      "C-k" 'magit-discard
 ;;                      )
+
+(defvar robenkleene/magit-unimpaired-next-map (make-keymap))
+(defvar robenkleene/magit-unimpaired-previous-map (make-keymap))
+(define-key robenkleene/magit-unimpaired-next-map (kbd "]") 'magit-section-forward-sibling)
+(define-key robenkleene/magit-unimpaired-previous-map (kbd "[") 'magit-section-backward-sibling)
 (robenkleene/evilify 'magit 'magit-status-mode magit-status-mode-map 'motion
+                     "[" robenkleene/magit-unimpaired-previous-map
+                     "]" robenkleene/magit-unimpaired-next-map
                      "TAB" 'magit-toggle-section
                      )
 (with-eval-after-load 'magit
