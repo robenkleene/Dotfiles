@@ -16,3 +16,6 @@ tags
 
 # Node
 node_modules
+
+# Emacs
+flycheck_*
