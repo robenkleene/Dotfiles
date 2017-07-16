@@ -40,6 +40,7 @@
 (define-key evil-motion-state-map (kbd "C-w p") '(lambda () (interactive) (other-frame -1)))
 (define-key evil-motion-state-map (kbd "M-n") 'other-frame)
 (define-key evil-motion-state-map (kbd "M-p") ' (lambda () (interactive) (other-frame -1)))
+(define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
 (define-key evil-motion-state-map (kbd "C-w q") 'delete-frame)
 (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)
 (define-key evil-motion-state-map (kbd "]") robenkleene/unimpaired-next-map)
