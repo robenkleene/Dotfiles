@@ -47,11 +47,11 @@
     )
   
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/config"))
+  ;; Maps  
+  (require 'robenkleene-evil-maps)
   ;; Settings
   (require 'robenkleene-evil-modes)
   (require 'robenkleene-evil-settings)
-  ;; Maps  
-  (require 'robenkleene-evil-maps)
 
   ;; Packages
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/packages"))

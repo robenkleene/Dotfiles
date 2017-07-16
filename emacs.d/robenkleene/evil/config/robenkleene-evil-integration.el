@@ -15,6 +15,7 @@
 
 ;; Create my own versions of these functions
 (defvar evil-motion-state-map)
+(defvar robenkleene/leader-map)
 (defmacro robenkleene/evil-add-hjkl-bindings (keymap &optional state &rest bindings)
   "Add bindings to KEYMAP in STATE.
 Add additional BINDINGS if specified."
@@ -25,7 +26,10 @@ Add additional BINDINGS if specified."
      "k" (lookup-key evil-motion-state-map "k")
      "l" (lookup-key evil-motion-state-map "l")
      ":" (lookup-key evil-motion-state-map ":")
-     " " (lookup-key evil-motion-state-map " ")
+     " " robenkleene/leader-map
+     "-" (lookup-key evil-motion-state-map "-")
+     "\C-o" (lookup-key evil-motion-state-map "\C-o")
+     "\C-i" (lookup-key evil-motion-state-map "\C-i")
      "\C-w" (lookup-key evil-motion-state-map "\C-w")
      ,@bindings))
 
