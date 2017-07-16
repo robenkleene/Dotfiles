@@ -53,10 +53,6 @@
   (require 'robenkleene-evil-modes)
   (require 'robenkleene-evil-settings)
 
-  ;; Packages
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/packages"))
-  (require 'robenkleene-evil-dired)
-
   ;; Languages
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/languages"))
   (require 'robenkleene-evil-emacs-lisp)
