@@ -33,8 +33,15 @@
      (define-key robenkleene/emacs-lisp-leader-map (kbd "l") robenkleene/emacs-lisp-linter-leader-map)
      (define-key robenkleene/emacs-lisp-leader-map (kbd "p") 'robenkleene/print-variable)
 
+     ;; Make `-' part of words
+     (add-hook 'emacs-lisp-mode-hook (lambda ()
+                                       (let ((table (copy-syntax-table (syntax-table))))
+                                         (modify-syntax-entry ?- "w" table)
+                                         (set-syntax-table table)
+                                         )
+                                       )
+               )
      )
   )
-
 (provide 'robenkleene-evil-emacs-lisp)
 ;;; robenkleene-evil-emacs-lisp.el ends here
