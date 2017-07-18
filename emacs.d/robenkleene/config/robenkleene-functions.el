@@ -120,5 +120,18 @@
     )
   )
 
+(defcustom robenkleene/rg-command "rg --smart-case --vimgrep --no-heading <C> <R>"
+  "Default `rg' command.")
+(defun robenkleene/rg (regexp)
+  "Search for the given regexp using `git grep' in the current directory."
+  (interactive "sRg: ")
+  (unless (boundp 'grep-find-template) (grep-compute-defaults))
+  (let ((old-command grep-find-template))
+    (grep-apply-setting 'grep-find-template robenkleene/rg-command)
+    (rgrep regexp "*" "")
+    (grep-apply-setting 'grep-find-template old-command))
+  )
+(defalias 'rg 'robenkleene/rg)
+
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
