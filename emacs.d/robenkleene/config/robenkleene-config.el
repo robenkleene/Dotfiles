@@ -89,6 +89,9 @@
 ;; Replace `C-x C-f' with `find-file-at-point' version
 (ffap-bindings)
 
+;; Only require `y' or `n'
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; Spelling
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "british")
