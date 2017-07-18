@@ -5,7 +5,9 @@
 (require 'use-package)
 (use-package markdown-mode
   :ensure t
-  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode))
+  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  )
+
 
 
 (provide 'robenkleene-markdown)
