@@ -29,7 +29,8 @@
 ;; (robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
 ;;                      "C-k" 'magit-discard
 ;;                      )
-
+;; Start commits in insert mode
+(add-hook 'with-editor-mode-hook 'evil-insert-state)
 (defvar robenkleene/magit-unimpaired-next-map (make-keymap))
 (defvar robenkleene/magit-unimpaired-previous-map (make-keymap))
 (define-key robenkleene/magit-unimpaired-next-map (kbd "]") 'magit-section-forward-sibling)
