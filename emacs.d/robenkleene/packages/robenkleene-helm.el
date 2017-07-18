@@ -49,14 +49,26 @@
           (robenkleene/helm-do-ag arg))
         )
       )    
-    (defun robenkleene/documentation ()
+    (defun robenkleene/helm-documentation ()
       "`find-file' in documentation"
       (require 'helm-files)
       (interactive)
       (helm-find-1 "~/Documentation")
       )
-    (defalias 'doc 'robenkleene/documentation)
+    (defalias 'doc 'robenkleene/helm-documentation)
 
+    (defun robenkleene/helm-tmux ()
+      "Find file in the current Git repository."
+      (interactive)
+      (let ((cands (split-string
+                    (shell-command-to-string "tmux-paths")
+                    "\n"
+                    t)))
+        (find-file (helm-comp-read "Files:" cands))
+        )
+      )
+    (defalias 'tmp 'robenkleene/helm-tmux)
+    
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
     ;; Then use `next-error' to cycle through matches
