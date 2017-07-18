@@ -10,6 +10,40 @@
               ("i" . helm-semantic-or-imenu)
               )
   :init
+  (use-package helm-swoop
+    :ensure t
+    :bind (:map robenkleene/leader-map
+                ("l" . helm-swoop)
+                )
+    :init
+    (custom-set-faces
+     `(helm-swoop-target-word-face ((t (:foreground nil :background nil :bold nil :inherit isearch))))
+     `(helm-swoop-target-line-face ((t (:foreground nil :background nil :inherit hl-line))))
+     )
+    :config
+    ;; Don't use word at cursor by default
+    (setq helm-swoop-pre-input-function (lambda () nil))
+    )
+  (defun robenkleene/helm-documentation ()
+    "`find-file' in documentation"
+    (require 'helm-files)
+    (interactive)
+    (helm-find-1 "~/Documentation")
+    )
+  (defalias 'doc 'robenkleene/helm-documentation)
+
+  (defun robenkleene/helm-tmux ()
+    "Find file in the current Git repository."
+    (interactive)
+    (let ((cands (split-string
+                  (shell-command-to-string "tmux-paths")
+                  "\n"
+                  t)))
+      (find-file (helm-comp-read "Files:" cands))
+      )
+    )
+  (defalias 'tmp 'robenkleene/helm-tmux)
+
   (use-package helm-ag
     :ensure t
     :commands (robenkleene/documentation doc)
@@ -49,25 +83,6 @@
           (robenkleene/helm-do-ag arg))
         )
       )    
-    (defun robenkleene/helm-documentation ()
-      "`find-file' in documentation"
-      (require 'helm-files)
-      (interactive)
-      (helm-find-1 "~/Documentation")
-      )
-    (defalias 'doc 'robenkleene/helm-documentation)
-
-    (defun robenkleene/helm-tmux ()
-      "Find file in the current Git repository."
-      (interactive)
-      (let ((cands (split-string
-                    (shell-command-to-string "tmux-paths")
-                    "\n"
-                    t)))
-        (find-file (helm-comp-read "Files:" cands))
-        )
-      )
-    (defalias 'tmp 'robenkleene/helm-tmux)
     
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
@@ -83,20 +98,6 @@
      '(helm-ag-base-command "rg --no-heading"))
     )
 
-  (use-package helm-swoop
-    :ensure t
-    :bind (:map robenkleene/leader-map
-                ("l" . helm-swoop)
-                )
-    :init
-    (custom-set-faces
-     `(helm-swoop-target-word-face ((t (:foreground nil :background nil :bold nil :inherit isearch))))
-     `(helm-swoop-target-line-face ((t (:foreground nil :background nil :inherit hl-line))))
-     )
-    :config
-    ;; Don't use word at cursor by default
-    (setq helm-swoop-pre-input-function (lambda () nil))
-    )
 
   :config
   (setq helm-truncate-lines t)
