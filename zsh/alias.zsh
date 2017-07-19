@@ -102,6 +102,7 @@ alias doce='fzf-documentation-vim'
 alias docc='fzf-documentation-cat'
 
 # git
+alias gstm='tmux-git-status'
 alias gyb='git-yank-branch'
 alias gyh='git-yank-hash'
 alias gyr='git-yank-remote-url'
