@@ -52,6 +52,7 @@ alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
 alias tmlp='tmux-paths'
 alias tmpr='tmux-paths-run'
+alias tmrg='tmux-paths-rg'
 
 # emacs
 # alias m='magit'
