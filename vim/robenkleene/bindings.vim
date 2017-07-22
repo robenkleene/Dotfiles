@@ -48,6 +48,7 @@ nnoremap <leader>ws V"wd:bd<CR>
 " Toggle No Wrap
 " Local to window
 nnoremap <localleader>w :set wrap!<CR>
+nnoremap <leader>w :set wrap!<CR>
 
 " Toggle Seplling
 " Local to window
