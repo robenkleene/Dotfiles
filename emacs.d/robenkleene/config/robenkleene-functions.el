@@ -120,17 +120,17 @@
     )
   )
 
-(defun robenkleene/rg-selection (&optional beg end)
+;; Then just make a `projectile' function that calls this?
+
+(defun robenkleene/rg-selection (&optional arg beg end)
   "Run `rg' on the selection."
-  ;; (interactive "r")
-  (interactive
-   (if (use-region-p)
-       (list (region-beginning) (region-end))
-     (let ((bounds (bounds-of-thing-at-point 'word)) )
-       (list (car bounds) (cdr bounds))
-       )
-     )
-   )
+  (interactive (if (use-region-p)
+                   (list current-prefix-arg (region-beginning) (region-end))
+                 (let ((bounds (bounds-of-thing-at-point 'word)) )
+                   (list current-prefix-arg (car bounds) (cdr bounds))
+                   )
+                 )
+               )
   (let ((selection (buffer-substring-no-properties beg end)))
     (if (= (length selection) 0)
         (robenkleene/rg)
@@ -139,17 +139,54 @@
     )
   )
 
-(defcustom robenkleene/rg-command "rg --smart-case --vimgrep --no-heading <C> <R>"
+(defcustom robenkleene/rg-command "rg --smart-case --vimgrep --no-heading <C> --glob <F> <R> <D>"
   "Default `rg' command.")
-(defun robenkleene/rg (regexp)
+(require 'grep)
+(defun robenkleene/rg (regexp &optional files dir)
   "Search for the given regexp using `git grep' in the current directory."
-  (interactive "sRg: ")
-  (unless (boundp 'grep-find-template) (grep-compute-defaults))
-  (let ((old-command grep-find-template))
-    (grep-apply-setting 'grep-find-template robenkleene/rg-command)
-    (rgrep regexp "*" "")
-    (grep-apply-setting 'grep-find-template old-command))
+  (interactive (progn
+                 (if (equal current-prefix-arg nil)
+                     (robenkleene/helm-do-ag-best-available targets)
+                   (if (equal current-prefix-arg nil)
+                       (list (grep-read-regexp) nil nil)
+                     (let* ((regexp (grep-read-regexp))
+                            (files (grep-read-files regexp))
+                            (dir (read-directory-name "Base directory: "
+                                                      nil
+                                                      default-directory
+                                                      t)
+                                 )
+                            )
+                       (list regexp files dir)
+                       )
+                     )
+                   )
+                 )
+               )
+  (let ((command (grep-expand-template
+                  robenkleene/rg-command
+                  regexp
+                  (or files "*")
+                  nil
+                  (and grep-find-ignored-files
+                       (concat " --exclude="
+                               (mapconcat
+                                #'(lambda (ignore)
+                                    (cond ((stringp ignore)
+                                           (shell-quote-argument ignore))
+                                          ((consp ignore)
+                                           (and (funcall (car ignore) dir)
+                                                (shell-quote-argument
+                                                 (cdr ignore))))))
+                                grep-find-ignored-files
+                                " --exclude="))))))
+    (compilation-start command 'grep-mode)
+    )
   )
+
+
+
+
 (defalias 'rg 'robenkleene/rg)
 
 (provide 'robenkleene-functions)
