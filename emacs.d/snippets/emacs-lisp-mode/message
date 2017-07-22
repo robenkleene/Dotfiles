@@ -2,4 +2,4 @@
 # name: message
 # key: message
 # --
-(message "${1:variable} = %${2:s}." $1)
+message "${1:variable} = %${2:s}." $1
