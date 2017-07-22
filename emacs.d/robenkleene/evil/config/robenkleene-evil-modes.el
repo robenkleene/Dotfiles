@@ -24,6 +24,9 @@
 (robenkleene/evilify 'dired 'dired-mode dired-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'dired-mode)
 
+;; grep
+(robenkleene/evilify 'grep 'grep-mode grep-mode-map 'motion)
+(add-to-list 'evil-motion-state-modes 'grep-mode)
 ;; magit
 ;; This doesn't work because `evil-define-key` doesn't work with `magit-file-section-map'
 ;; (robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
