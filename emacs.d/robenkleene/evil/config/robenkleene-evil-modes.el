@@ -9,7 +9,7 @@
 (defvar evil-emacs-state-modes)
 (defvar evil-insert-state-modes)
 (setq evil-motion-state-modes '(magit-revision-mode))
-(setq evil-emacs-state-modes '(magit-popup-mode))
+(setq evil-emacs-state-modes '(magit-popup-mode snippet-mode))
 (setq evil-insert-state-modes nil)
 
 ;; Debug
