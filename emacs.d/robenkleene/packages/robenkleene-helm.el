@@ -50,7 +50,6 @@
     :bind ("M-r" . helm-resume)
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)
-                ("*" . robenkleene/helm-do-ag)
                 )
     :config
 

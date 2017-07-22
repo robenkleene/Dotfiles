@@ -120,6 +120,25 @@
     )
   )
 
+(defun robenkleene/rg-selection (&optional beg end)
+  "Run `rg' on the selection."
+  ;; (interactive "r")
+  (interactive
+   (if (use-region-p)
+       (list (region-beginning) (region-end))
+     (let ((bounds (bounds-of-thing-at-point 'word)) )
+       (list (car bounds) (cdr bounds))
+       )
+     )
+   )
+  (let ((selection (buffer-substring-no-properties beg end)))
+    (if (= (length selection) 0)
+        (robenkleene/rg)
+      (robenkleene/rg selection)
+      )
+    )
+  )
+
 (defcustom robenkleene/rg-command "rg --smart-case --vimgrep --no-heading <C> <R>"
   "Default `rg' command.")
 (defun robenkleene/rg (regexp)
