@@ -144,22 +144,17 @@
 (require 'grep)
 (defun robenkleene/rg (regexp &optional files dir)
   "Search for the given regexp using `git grep' in the current directory."
-  (interactive (progn
-                 (if (equal current-prefix-arg nil)
-                     (robenkleene/helm-do-ag-best-available targets)
-                   (if (equal current-prefix-arg nil)
-                       (list (grep-read-regexp) nil nil)
-                     (let* ((regexp (grep-read-regexp))
-                            (files (grep-read-files regexp))
-                            (dir (read-directory-name "Base directory: "
-                                                      nil
-                                                      default-directory
-                                                      t)
-                                 )
-                            )
-                       (list regexp files dir)
-                       )
-                     )
+  (interactive (if (equal current-prefix-arg nil)
+                   (list (grep-read-regexp) nil nil)
+                 (let* ((regexp (grep-read-regexp))
+                        (files (grep-read-files regexp))
+                        (dir (read-directory-name "Base directory: "
+                                                  nil
+                                                  default-directory
+                                                  t)
+                             )
+                        )
+                   (list regexp files dir)
                    )
                  )
                )
