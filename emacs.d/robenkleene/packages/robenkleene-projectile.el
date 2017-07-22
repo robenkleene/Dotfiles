@@ -31,7 +31,7 @@
   (defun robenkleene/find-file-best-available (&optional arg)
     "Run best available `find-file'."
     (interactive "P")
-    (use-package projectile)
+    (require 'projectile)
     (let ((project-root (robenkleene/safe-project-root)))
       (if (equal project-root nil)
           (ido-find-file)
