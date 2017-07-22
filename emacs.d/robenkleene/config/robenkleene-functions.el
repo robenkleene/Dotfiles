@@ -139,9 +139,8 @@
     )
   )
 
-(defcustom robenkleene/rg-command "rg --smart-case --vimgrep --no-heading <C> --glob <F> <R> <D>"
+(defcustom robenkleene/rg-command "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
   "Default `rg' command.")
-(require 'grep)
 (defun robenkleene/rg (regexp &optional files dir)
   "Search for the given regexp using `git grep' in the current directory."
   (interactive (if (equal current-prefix-arg nil)
@@ -158,23 +157,13 @@
                    )
                  )
                )
+  (require 'grep)
   (let ((command (grep-expand-template
                   robenkleene/rg-command
                   regexp
                   (or files "*")
-                  nil
-                  (and grep-find-ignored-files
-                       (concat " --exclude="
-                               (mapconcat
-                                #'(lambda (ignore)
-                                    (cond ((stringp ignore)
-                                           (shell-quote-argument ignore))
-                                          ((consp ignore)
-                                           (and (funcall (car ignore) dir)
-                                                (shell-quote-argument
-                                                 (cdr ignore))))))
-                                grep-find-ignored-files
-                                " --exclude="))))))
+                  nil))
+        )
     (compilation-start command 'grep-mode)
     )
   )
