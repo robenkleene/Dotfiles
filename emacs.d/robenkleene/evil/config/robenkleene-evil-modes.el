@@ -9,8 +9,10 @@
 (defvar evil-emacs-state-modes)
 (defvar evil-insert-state-modes)
 (setq evil-motion-state-modes '(magit-revision-mode))
-(setq evil-emacs-state-modes '(magit-popup-mode snippet-mode))
+(setq evil-emacs-state-modes '(magit-popup-mode))
 (setq evil-insert-state-modes nil)
+;; Don't do this because it is disorientating when just editing a snippet
+;; (setq evil-insert-state-modes '(snippet-mode))
 
 ;; Debug
 (robenkleene/evilify 'debug 'debugger-mode debugger-mode-map 'motion)
@@ -19,6 +21,10 @@
 ;; help
 (robenkleene/evilify 'help 'help-mode help-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'help-mode)
+
+;; help
+(robenkleene/evilify 'man 'man-mode man-mode-map 'motion)
+(add-to-list 'evil-motion-state-modes 'man-mode)
 
 ;; dired
 (robenkleene/evilify 'dired 'dired-mode dired-mode-map 'motion)

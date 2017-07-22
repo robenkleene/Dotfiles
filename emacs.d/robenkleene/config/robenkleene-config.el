@@ -45,7 +45,9 @@
 (global-hl-line-mode)
 
 ;; Automatically select help windows
-(setq help-window-select t)
+;; Disable this because default emacs behavior is not to auto-select
+;; these types of buffers.
+;; (setq help-window-select t)
 
 ;; Add Line Numbers
 ;; Note this is incompatible with git-gutter
