@@ -50,9 +50,10 @@
     :bind ("M-r" . helm-resume)
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)
-                ("*" . robenkleene/helm-do-ag-selection)
+                ("*" . robenkleene/helm-do-ag)
                 )
     :config
+
     (defun robenkleene/helm-do-ag (&optional arg targets)
       "Version of `helm-do-ag' that supports the universal argument."
       (interactive "P")
@@ -63,10 +64,11 @@
           )
         )
       )
+
+    (use-package projectile)
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
       "Run best available `helm-do-ag'"
       (interactive)
-      (use-package projectile)
       (let ((project-root (robenkleene/safe-project-root)))
         (if (equal project-root nil)
             (helm-do-ag default-directory targets)
@@ -74,15 +76,6 @@
           )
         )
       )
-    (defun robenkleene/helm-do-ag-selection (beg end &optional arg)
-      "Run `helm-do-ag-best-available' on the selection."
-      (interactive "r\nP")
-      (let ((selection (buffer-substring-no-properties beg end)))
-        (if (= (length selection) 0)
-            (robenkleene/helm-do-ag arg selection)
-          (robenkleene/helm-do-ag arg))
-        )
-      )    
     
     ;; Enable grep mode after saving `helm-ag' results
     ;; To use: Trigger `C-x C-s' after performing a search to save the results
