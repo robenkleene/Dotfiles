@@ -19,7 +19,17 @@
 (add-to-list 'evil-motion-state-modes 'debugger-mode)
 
 ;; help
-(robenkleene/evilify 'help 'help-mode help-mode-map 'motion)
+(defvar robenkleene/help-unimpaired-next-map (make-keymap))
+(defvar robenkleene/help-unimpaired-previous-map (make-keymap))
+(define-key robenkleene/help-unimpaired-next-map (kbd "]") 'forward-button)
+(define-key robenkleene/help-unimpaired-previous-map (kbd "[") 'backward-button)
+(robenkleene/evilify 'help 'help-mode help-mode-map 'motion
+                     "[" robenkleene/help-unimpaired-previous-map
+                     "]" robenkleene/help-unimpaired-next-map
+                     "\C-o" 'help-go-back
+                     "\C-i" 'help-go-forward
+                     "\C-i" 'help-go-forward
+                     )
 (add-to-list 'evil-motion-state-modes 'help-mode)
 
 ;; help
