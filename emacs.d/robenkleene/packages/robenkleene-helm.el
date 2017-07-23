@@ -9,6 +9,9 @@
   :bind (:map robenkleene/emacs-lisp-leader-map
               ("i" . helm-semantic-or-imenu)
               )
+  :bind (:map robenkleene/leader-map
+              ("h" . helm-apropos)
+              )
   :init
   (use-package helm-swoop
     :ensure t
@@ -68,7 +71,7 @@
     (defun robenkleene/helm-do-ag-best-available (&optional targets)
       "Run best available `helm-do-ag'"
       (interactive)
-      (let ((project-root (robenkleene/safe-project-root)))
+      (let ((project-root (robenkleene/projectile-safe-project-root)))
         (if (equal project-root nil)
             (helm-do-ag default-directory targets)
           (helm-do-ag project-root targets)

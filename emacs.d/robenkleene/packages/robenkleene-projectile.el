@@ -21,7 +21,7 @@
               )
   :config
 
-  (defun robenkleene/safe-project-root ()
+  (defun robenkleene/projectile-safe-project-root ()
     "Return project's root, or nil if not in a project."
     (and (fboundp 'projectile-project-root)
          (projectile-project-p)
@@ -30,7 +30,7 @@
 
   (defun robenkleene/project-root-or-default-directory ()
     "Return the project's root, or default directory if not in a project."
-    (or (robenkleene/safe-project-root) default-directory)
+    (or (robenkleene/projectile-safe-project-root) default-directory)
     )               ;
   
   (defun robenkleene/projectile-find-file-default-directory ()
@@ -43,7 +43,7 @@
     "Run best available `find-file'."
     (interactive "P")
     (require 'projectile)
-    (let ((project-root (robenkleene/safe-project-root)))
+    (let ((project-root (robenkleene/projectile-safe-project-root)))
       (if (equal project-root nil)
           (ido-find-file)
         (let ((current-prefix-arg nil))

@@ -8,6 +8,7 @@
   :commands wgrep-change-to-wgrep-mode
   :ensure t
   :init
+  (setq wgrep-auto-save-buffer t)
   (with-eval-after-load "grep"
     (define-key grep-mode-map (kbd "C-c C-p") 'wgrep-change-to-wgrep-mode))
   )

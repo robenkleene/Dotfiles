@@ -36,6 +36,14 @@
 ;; Overwrite region when pasting
 (delete-selection-mode 1)
 
+(setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
+
+;; Automatically save and restore session
+;; This isn't restoring window frames, and it prompts a lot when
+;; saving and restoring.
+;; (desktop-save-mode 1)
+;; (setq desktop-dirname "~/.emacs.d/")
+
 ;; Automatically revert unmodified buffers
 ;; This way causing the cursor to jump randomly after saving so it has
 ;; been temporarily disabled.
@@ -43,6 +51,9 @@
 
 ;; Highlight Cursor Line
 (global-hl-line-mode)
+
+;; Re-enable Command
+(put 'narrow-to-region 'disabled nil)
 
 ;; Automatically select help windows
 ;; Disable this because default emacs behavior is not to auto-select
