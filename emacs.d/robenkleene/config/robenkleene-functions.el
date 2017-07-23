@@ -122,41 +122,52 @@
 
 ;; Then just make a `projectile' function that calls this?
 
-(defun robenkleene/rg-selection (&optional arg beg end)
+
+(defun robenkleene/get-grep-parameters (&optional regexp files dir)
+  "Get the parameters for grep.  REGEXP FILES DIR."
+  (require 'grep)
+  (if (equal current-prefix-arg nil)
+      (list (or regexp (grep-read-regexp))
+            nil
+            nil)
+    (let* ((final-regexp (or regexp (grep-read-regexp)))
+           (final-files (or files (grep-read-files final-regexp)))
+           (final-dir (or dir
+                          (read-directory-name "Base directory: "
+                                               nil
+                                               default-directory
+                                               t)
+                          )
+                      )
+           )
+      (list final-regexp final-files final-dir)
+      )
+    )
+  )
+
+(defun robenkleene/rg-selection (&optional beg end)
   "Run `rg' on the selection."
   (interactive (if (use-region-p)
-                   (list current-prefix-arg (region-beginning) (region-end))
+                   (list (region-beginning) (region-end))
                  (let ((bounds (bounds-of-thing-at-point 'word)) )
-                   (list current-prefix-arg (car bounds) (cdr bounds))
+                   (list (car bounds) (cdr bounds))
                    )
                  )
                )
   (let ((selection (buffer-substring-no-properties beg end)))
     (if (= (length selection) 0)
-        (robenkleene/rg)
-      (robenkleene/rg selection)
+        (apply 'robenkleene/rg (robenkleene/get-grep-parameters))
+      (apply 'robenkleene/rg (robenkleene/get-grep-parameters selection))
       )
     )
   )
 
 (defcustom robenkleene/rg-command "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
   "Default `rg' command.")
+
 (defun robenkleene/rg (regexp &optional files dir)
   "Search for the given regexp using `git grep' in the current directory."
-  (interactive (if (equal current-prefix-arg nil)
-                   (list (grep-read-regexp) nil nil)
-                 (let* ((regexp (grep-read-regexp))
-                        (files (grep-read-files regexp))
-                        (dir (read-directory-name "Base directory: "
-                                                  nil
-                                                  default-directory
-                                                  t)
-                             )
-                        )
-                   (list regexp files dir)
-                   )
-                 )
-               )
+  (interactive (robenkleene/get-grep-parameters))
   (require 'grep)
   (let ((command (grep-expand-template
                   robenkleene/rg-command
