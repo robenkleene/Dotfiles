@@ -17,6 +17,7 @@ abbreviations=(
 # emacs
 'e' "$EMACS_COMMAND"
 'ec' 'emacsclient -t'
+'esi' 'emacs --no-desktop'
 
 # tig
 'tst' 'tig stash'
