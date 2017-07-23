@@ -25,14 +25,15 @@
      )
     :config
     ;; Don't use word at cursor by default
-    (setq helm-swoop-pre-input-function (lambda () nil))
-    )
+    (setq helm-swoop-pre-input-function (lambda () nil)))
+
   (defun robenkleene/helm-documentation ()
     "`find-file' in documentation"
     (require 'helm-files)
     (interactive)
     (helm-find-1 "~/Documentation")
     )
+
   (defalias 'doc 'robenkleene/helm-documentation)
 
   (defun robenkleene/helm-tmux ()
