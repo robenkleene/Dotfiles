@@ -7,9 +7,10 @@
 
 (use-package projectile
   :ensure t
-  :commands (robenkleene/rg-best-available)
+  :commands (robenkleene/rg-best-available robenkleene/projectile-go-to-root)
   :init
   (defalias 'rg 'robenkleene/rg-best-available)
+  (defalias 'gcd 'robenkleene/projectile-go-to-root)
   :bind (:map evil-motion-state-map
               ("M-e" . robenkleene/find-file-best-available)
               ("M-c" . projectile-find-dir)
@@ -21,6 +22,17 @@
               )
   :config
 
+  (defun robenkleene/projectile-go-to-root ()
+    "Go to the root of the project in a `dired' buffer."
+    (interactive)
+    (let ((project-root (robenkleene/projectile-safe-project-root)))
+      (if (equal project-root nil)
+          (message "Not in a project.")
+        (dired project-root)
+        )
+      )
+    )
+
   (defun robenkleene/projectile-safe-project-root ()
     "Return project's root, or nil if not in a project."
     (and (fboundp 'projectile-project-root)
@@ -31,7 +43,7 @@
   (defun robenkleene/project-root-or-default-directory ()
     "Return the project's root, or default directory if not in a project."
     (or (robenkleene/projectile-safe-project-root) default-directory)
-    )               ;
+    )
   
   (defun robenkleene/projectile-find-file-default-directory ()
     "Run `projectile-find-file' with `default-directory'."
