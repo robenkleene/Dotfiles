@@ -96,6 +96,13 @@
 ;; Only require `y' or `n'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Don't try to expand whole lines
+;; Without this, extra parentheses can be inserted when performing
+;; `hippie-expand'
+(dolist (f '(try-expand-line try-expand-list))
+  (setq hippie-expand-try-functions-list
+        (remq f hippie-expand-try-functions-list)))
+
 ;; Spelling
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "british")

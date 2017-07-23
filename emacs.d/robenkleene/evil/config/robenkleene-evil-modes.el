@@ -23,7 +23,7 @@
 (add-to-list 'evil-motion-state-modes 'help-mode)
 
 ;; help
-(robenkleene/evilify 'man 'Man-mode man-mode-map 'motion)
+(robenkleene/evilify 'man 'Man-mode Man-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'Man-mode)
 
 ;; dired
