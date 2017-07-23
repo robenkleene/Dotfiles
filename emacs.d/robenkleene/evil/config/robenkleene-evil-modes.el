@@ -43,6 +43,23 @@
 ;; grep
 (robenkleene/evilify 'grep 'grep-mode grep-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'grep-mode)
+(defadvice wgrep-change-to-wgrep-mode
+    (after robenkleene/wgrep-to-motion-state () activate)
+  "Switch to normal mode when entering `wgrep' and widen."
+  (let ((start (wgrep-goto-first-found))
+        (end (wgrep-goto-end-of-found)))
+    (narrow-to-region start end))
+  (evil-normal-state)
+  )
+(defadvice wgrep-to-original-mode
+    (after robenkleene/wgrep-to-normal-state () activate)
+  "Switch to normal mode when entering `wgrep'.
+Also narrow to just the results so find and replace doesn't try to
+edit the read-only parts."
+  (widen)
+  (evil-motion-state)
+  )
+
 ;; magit
 ;; This doesn't work because `evil-define-key` doesn't work with `magit-file-section-map'
 ;; (robenkleene/evilify 'magit 'magit-status-mode magit-file-section-map 'motion
