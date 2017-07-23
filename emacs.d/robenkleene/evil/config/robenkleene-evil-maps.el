@@ -29,7 +29,6 @@
 (define-key robenkleene/leader-map (kbd "E") 'robenkleene/external-editor)
 (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)
 (define-key robenkleene/leader-map (kbd "b") 'ido-switch-buffer)
-(define-key robenkleene/leader-map (kbd "*") 'robenkleene/rg-selection)
 
 ;; `evil-motion-state-map'
 (define-key evil-motion-state-map (kbd "M-h") 'evil-window-left)

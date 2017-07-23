@@ -123,13 +123,13 @@
 ;; Then just make a `projectile' function that calls this?
 
 
-(defun robenkleene/get-grep-parameters (&optional regexp files dir)
+(defun robenkleene/grep-parameters (&optional regexp files dir)
   "Get the parameters for grep.  REGEXP FILES DIR."
   (require 'grep)
   (if (equal current-prefix-arg nil)
       (list (or regexp (grep-read-regexp))
-            nil
-            nil)
+            files
+            dir)
     (let* ((final-regexp (or regexp (grep-read-regexp)))
            (final-files (or files (grep-read-files final-regexp)))
            (final-dir (or dir
@@ -145,44 +145,49 @@
     )
   )
 
-(defun robenkleene/rg-selection (&optional beg end)
-  "Run `rg' on the selection."
-  (interactive (if (use-region-p)
-                   (list (region-beginning) (region-end))
-                 (let ((bounds (bounds-of-thing-at-point 'word)) )
-                   (list (car bounds) (cdr bounds))
-                   )
-                 )
-               )
-  (let ((selection (buffer-substring-no-properties beg end)))
-    (if (= (length selection) 0)
-        (apply 'robenkleene/rg (robenkleene/get-grep-parameters))
-      (apply 'robenkleene/rg (robenkleene/get-grep-parameters selection))
+(defun robenkleene/bounds-of-selection-or-word ()
+  "Get the bounds of the selection or word."
+  (if (use-region-p)
+      (list (region-beginning) (region-end))
+    (let ((bounds (bounds-of-thing-at-point 'word)) )
+      (list (car bounds) (cdr bounds))
       )
     )
   )
 
-(defcustom robenkleene/rg-command "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
+(defun robenkleene/selection-or-word ()
+  "My function description."
+  (let ((selection (apply 'buffer-substring-no-properties
+                          (robenkleene/bounds-of-selection-or-word))))
+    (if (= (length selection) 0) nil selection))
+  )
+
+(defun robenkleene/rg-selection ()
+  "Run `rg' on the selection.  BEG END."
+  (interactive)
+  (apply 'robenkleene/rg
+         (robenkleene/grep-parameters (robenkleene/selection-or-word))
+         )
+  )
+
+(defcustom robenkleene/rg-command-files "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
+  "Default `rg' command.")
+(defcustom robenkleene/rg-command "rg --smart-case --no-heading <R> <D>"
   "Default `rg' command.")
 
 (defun robenkleene/rg (regexp &optional files dir)
-  "Search for the given regexp using `git grep' in the current directory."
-  (interactive (robenkleene/get-grep-parameters))
+  "Search for the given REGEXP using `git grep' in the current directory.  FILES DIR."
+  (interactive (robenkleene/grep-parameters))
   (require 'grep)
   (let ((command (grep-expand-template
-                  robenkleene/rg-command
+                  (if (equal files nil) robenkleene/rg-command robenkleene/rg-command-files)
                   regexp
-                  (or files "*")
-                  nil))
+                  files
+                  dir))
         )
     (compilation-start command 'grep-mode)
     )
   )
-
-
-
-
-(defalias 'rg 'robenkleene/rg)
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
