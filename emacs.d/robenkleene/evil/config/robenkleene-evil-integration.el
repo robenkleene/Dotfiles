@@ -39,6 +39,8 @@ Add additional BINDINGS if specified."
      "C" (lookup-key evil-motion-state-map "C")
      "g" (lookup-key evil-motion-state-map "g")
      "G" (lookup-key evil-motion-state-map "G")
+     "a" (lookup-key evil-motion-state-map "a")
+     "i" (lookup-key evil-motion-state-map "i")
      "\M-p" (lookup-key evil-motion-state-map "\M-p")
      "\M-n" (lookup-key evil-motion-state-map "\M-n")
      " " robenkleene/leader-map

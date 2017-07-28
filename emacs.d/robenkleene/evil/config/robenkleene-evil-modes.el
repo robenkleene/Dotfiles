@@ -79,6 +79,9 @@ edit the read-only parts."
 (with-eval-after-load 'magit
   (defvar magit-file-section-map)
   (define-key magit-file-section-map "\C-k" 'magit-discard)
+  (defvar magit-hunk-section-map)
+  (define-key magit-hunk-section-map "\C-k" 'magit-discard)
+  (define-key magit-hunk-section-map "a" nil)
   )
 (add-to-list 'evil-motion-state-modes 'magit-status-mode)
 
