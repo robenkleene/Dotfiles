@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package fill-column-indicator
   :defer t
   :init

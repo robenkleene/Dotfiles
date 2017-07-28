@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package enh-ruby-mode
   :mode ("\\.rb$" "Fastfile$")
   :interpreter "ruby"

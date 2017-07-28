@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 
 (use-package wgrep
   :commands wgrep-change-to-wgrep-mode

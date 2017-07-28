@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package buffer-move
   :bind (
          ;; We can't use the default shortcuts with control, because "Mission

@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 
 ;; Hack to prevent some compilation errors
 (defvar ido-cur-list nil)

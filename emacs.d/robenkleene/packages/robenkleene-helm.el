@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package helm
   :commands (helm-semantic-or-imenu)
   :bind ("M-r" . helm-resume)

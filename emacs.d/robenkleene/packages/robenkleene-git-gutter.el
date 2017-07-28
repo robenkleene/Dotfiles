@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package git-gutter
   :config
   (global-git-gutter-mode t)

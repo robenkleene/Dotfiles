@@ -4,7 +4,7 @@
 
 (require 'robenkleene-functions)
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package pbcopy
   :if (and (robenkleene/system-is-mac) (not (display-graphic-p)))
   :init (turn-on-pbcopy)

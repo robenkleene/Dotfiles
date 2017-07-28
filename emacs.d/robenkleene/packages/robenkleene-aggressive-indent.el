@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package aggressive-indent
   :init
   (global-aggressive-indent-mode 1)

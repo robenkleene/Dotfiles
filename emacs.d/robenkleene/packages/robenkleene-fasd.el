@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-(require 'use-package)
+(eval-when-compile (require 'use-package))
 (use-package fasd
   :bind (:map robenkleene/leader-map
               ("z" . fasd-find-file)
