@@ -6,7 +6,6 @@
 
 
 (use-package projectile
-  :ensure t
   :commands (robenkleene/rg-best-available robenkleene/projectile-go-to-root)
   :init
   (defalias 'rg 'robenkleene/rg-best-available)
@@ -92,7 +91,6 @@
   ;; using `helm-do-ag' with `projectile-project-root'
   ;; :init
   ;; (use-package helm-projectile
-  ;;   :ensure t
   ;;   :bind (:map robenkleene/leader-map
   ;;               ("a" . helm-projectile-ag)
   ;;               )

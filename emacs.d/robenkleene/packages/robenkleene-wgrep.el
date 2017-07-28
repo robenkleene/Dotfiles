@@ -6,7 +6,6 @@
 
 (use-package wgrep
   :commands wgrep-change-to-wgrep-mode
-  :ensure t
   :init
   (setq wgrep-auto-save-buffer t)
   (with-eval-after-load "grep"

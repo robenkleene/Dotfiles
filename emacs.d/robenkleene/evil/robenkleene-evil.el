@@ -4,22 +4,18 @@
 
 (require 'use-package)
 (use-package evil
-  :ensure t
   :init
   (setq evil-toggle-key "")
   :config
 
   ;; Other Evil Packages
   (use-package evil-commentary
-    :ensure t
     :config (evil-commentary-mode))
   (use-package evil-smartparens
-    :ensure t
     :config
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
     )
   (use-package evil-visualstar
-    :ensure t
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
     :init
@@ -28,13 +24,11 @@
       (define-key evil-visual-state-map (kbd "*") 'evil-visualstar/begin-search-forward)
       (define-key evil-visual-state-map (kbd "#") 'evil-visualstar/begin-search-backward)))
   (use-package evil-surround
-    :ensure t 
     :init
     (global-evil-surround-mode 1))
 
   (unless (display-graphic-p)
     (use-package evil-terminal-cursor-changer
-      :ensure t
       :config
       (evil-terminal-cursor-changer-activate)
       (setq evil-motion-state-cursor 'box)

@@ -5,7 +5,6 @@
 (require 'use-package)
 
 (use-package magit
-  :ensure t
   :commands (robenkleene/magit-status-startup)
   :bind (:map robenkleene/leader-map
               ("gs" . magit-status)

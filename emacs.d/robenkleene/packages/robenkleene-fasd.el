@@ -5,7 +5,6 @@
 
 (require 'use-package)
 (use-package fasd
-  :ensure t
   :bind (:map robenkleene/leader-map
               ("z" . fasd-find-file)
               )

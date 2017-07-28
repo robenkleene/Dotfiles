@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package fish-mode
-  :ensure t
   :mode "\\.fish\\'")
 
 

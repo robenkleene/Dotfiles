@@ -5,7 +5,6 @@
 (require 'use-package)
 
 (use-package slime
-  :ensure t
   :defer t
   :config
   (setq inferior-lisp-program "/usr/local/bin/sbcl")

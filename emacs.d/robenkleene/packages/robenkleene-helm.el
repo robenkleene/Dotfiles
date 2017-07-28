@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package helm
-  :ensure t
   :commands (helm-semantic-or-imenu)
   :bind ("M-r" . helm-resume)
   :bind (:map robenkleene/emacs-lisp-leader-map
@@ -15,7 +14,6 @@
               )
   :init
   (use-package helm-swoop
-    :ensure t
     :bind (:map robenkleene/leader-map
                 ("l" . helm-swoop)
                 )
@@ -50,7 +48,6 @@
   (defalias 'tmp 'robenkleene/helm-tmux)
 
   (use-package helm-ag
-    :ensure t
     :commands (robenkleene/documentation doc)
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)

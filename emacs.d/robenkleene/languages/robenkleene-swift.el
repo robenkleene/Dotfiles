@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package swift-mode
-  :ensure t
   :defer t)
 
 (provide 'robenkleene-swift)

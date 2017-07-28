@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package fill-column-indicator
-  :ensure t
   :defer t
   :init
   (add-hook 'prog-mode-hook 'fci-mode)

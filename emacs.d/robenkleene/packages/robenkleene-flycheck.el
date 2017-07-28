@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package flycheck
-  :ensure t
   :init
   (global-flycheck-mode)
   (setq flycheck-display-errors-delay 0.1)

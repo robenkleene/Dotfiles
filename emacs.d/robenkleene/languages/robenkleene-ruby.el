@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package enh-ruby-mode
-  :ensure t
   :mode ("\\.rb$" "Fastfile$")
   :interpreter "ruby"
   :config
@@ -12,7 +11,6 @@
   )
 
 (use-package robe
-  :ensure t
   :defer t
   :init
   (add-hook 'enh-ruby-mode-hook 'robe-mode)

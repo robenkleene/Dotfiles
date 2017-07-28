@@ -15,6 +15,8 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(setq use-package-always-ensure t)
+;; (defvar use-package-verbose t)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)

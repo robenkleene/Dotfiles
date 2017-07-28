@@ -6,7 +6,6 @@
 
 (require 'use-package)
 (use-package pbcopy
-  :ensure t
   :if (and (robenkleene/system-is-mac) (not (display-graphic-p)))
   :init (turn-on-pbcopy)
   )

@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package rainbow-mode
-  :ensure t
   :commands rainbow-mode
   )
 

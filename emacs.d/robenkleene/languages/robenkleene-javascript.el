@@ -4,12 +4,10 @@
 
 (require 'use-package)
 (use-package js2-mode
-  :ensure t
   :mode "\\.js\\'"
   :config
   ;; Node REPL
   (use-package nodejs-repl
-    :ensure t
     :commands nodejs-repl
     :config
     (defun robenkleene/nodejs-repl-eval-region (start end)

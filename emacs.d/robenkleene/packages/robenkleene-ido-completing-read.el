@@ -8,7 +8,6 @@
 (defvar ido-cur-list nil)
 
 (use-package ido-completing-read+
-  :ensure t
   :config
   (ido-ubiquitous-mode 1))
 

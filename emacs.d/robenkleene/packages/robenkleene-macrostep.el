@@ -5,7 +5,6 @@
 (require 'use-package)
 
 (use-package macrostep
-  :ensure t
   :commands macrostep-expand)
 
 (provide 'robenkleene-macrostep)

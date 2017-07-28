@@ -5,7 +5,6 @@
 
 (require 'use-package)
 (use-package yasnippet
-  :ensure t
   :commands yas-minor-mode
   :init
   (add-hook 'prog-mode-hook #'yas-minor-mode)

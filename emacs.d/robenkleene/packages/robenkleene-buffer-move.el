@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package buffer-move
-  :ensure t
   :bind (
          ;; We can't use the default shortcuts with control, because "Mission
          ;; Control" on OS X eats `C-S-<up>/<down>', so instead we use

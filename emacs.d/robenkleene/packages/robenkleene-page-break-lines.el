@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package page-break-lines
-  :ensure t
   :init
   (global-page-break-lines-mode)
   )

@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package company
-  :ensure t
   :init
   (global-company-mode)
   (setq company-global-modes '(not org-mode markdown-mode))

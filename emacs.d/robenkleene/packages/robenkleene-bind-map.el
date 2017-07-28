@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package bind-map
-  :ensure t
   :config
   (bind-map robenkleene/leader-map
     :keys ("C-c")

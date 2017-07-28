@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package jade-mode
-  :ensure t
   :defer t)
 
 ;; TODO: This doesn't work for some reason

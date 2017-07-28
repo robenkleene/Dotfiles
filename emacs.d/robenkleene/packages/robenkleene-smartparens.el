@@ -4,7 +4,6 @@
 
 (require 'use-package)
 (use-package smartparens
-  :ensure t
   :demand
   :bind (:map smartparens-strict-mode-map
               ("<M-backspace>" . sp-backward-kill-word))
