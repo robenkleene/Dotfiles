@@ -6,6 +6,7 @@
 (use-package helm
   :ensure t
   :commands (helm-semantic-or-imenu)
+  :bind ("M-r" . helm-resume)
   :bind (:map robenkleene/emacs-lisp-leader-map
               ("i" . helm-semantic-or-imenu)
               )
@@ -51,7 +52,6 @@
   (use-package helm-ag
     :ensure t
     :commands (robenkleene/documentation doc)
-    :bind ("M-r" . helm-resume)
     :bind (:map robenkleene/leader-map
                 ("a" . robenkleene/helm-do-ag)
                 )
