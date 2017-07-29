@@ -28,7 +28,7 @@
     (setq helm-swoop-pre-input-function (lambda () nil))
     )
   
-  (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:black' --colors 'match:bg:yellow' --smart-case --no-heading --line-number %s %s %s")
+  (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
 
   (defun robenkleene/helm-documentation ()
     "`find-file' in documentation"
