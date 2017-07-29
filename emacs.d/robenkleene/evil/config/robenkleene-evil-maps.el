@@ -24,7 +24,8 @@
 ;; Leader Map
 (defvar robenkleene/leader-map (make-keymap))
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-(define-key robenkleene/leader-map (kbd "t") 'robenkleene/open-terminal-window)
+(define-key robenkleene/leader-map (kbd "T") 'robenkleene/open-terminal-window)
+(define-key robenkleene/leader-map (kbd "t") 'eshell)
 (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
 (define-key robenkleene/leader-map (kbd "E") 'robenkleene/external-editor)
 (define-key robenkleene/leader-map (kbd "o") robenkleene/open-map)

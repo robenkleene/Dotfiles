@@ -10,7 +10,7 @@
 (defvar evil-insert-state-modes)
 (setq evil-motion-state-modes '(magit-revision-mode))
 (setq evil-emacs-state-modes '(magit-popup-mode))
-(setq evil-insert-state-modes nil)
+(setq evil-insert-state-modes '(eshell-mode))
 ;; Don't do this because it is disorientating when just editing a snippet
 ;; (setq evil-insert-state-modes '(snippet-mode))
 
