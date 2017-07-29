@@ -4,13 +4,12 @@
 
 (eval-when-compile (require 'use-package))
 (use-package helm
-  :commands (helm-semantic-or-imenu)
+  :commands (helm-semantic-or-imenu helm-do-grep-ag)
   :bind ("M-r" . helm-resume)
   :bind (:map robenkleene/emacs-lisp-leader-map
               ("i" . helm-semantic-or-imenu)
               )
   :bind (:map robenkleene/leader-map
-              ("a" . helm-do-grep-ag)
               ("h" . helm-apropos)
               )
   :init
@@ -33,8 +32,8 @@
 
   (defun robenkleene/helm-documentation ()
     "`find-file' in documentation"
-    (require 'helm-files)
     (interactive)
+    (require 'helm-files)
     (helm-find-1 "~/Documentation")
     )
 

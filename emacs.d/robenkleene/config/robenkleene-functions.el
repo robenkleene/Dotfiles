@@ -104,7 +104,6 @@
   (find-file-other-window robenkleene/org-directory-path)
   )
 
-
 (defun robenkleene/print-variable ()
   "Replace the current line with a variable print statement."
   (interactive)

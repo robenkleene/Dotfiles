@@ -18,6 +18,7 @@
               ("*" . robenkleene/rg-selection-best-available)
               ("f" . robenkleene/find-file-best-available)
               ("c" . projectile-find-dir)
+              ("a" . robenkleene/helm-rg-best-available)
               )
   :config
 
@@ -93,15 +94,25 @@
            )
     )
 
-  ;; `helm-projectile-ag' should do project level `rg' by default, but it isn't
-  ;; compatible with `rg', so instead this is currently done with a function
-  ;; using `helm-do-ag' with `projectile-project-root'
-  ;; :init
-  ;; (use-package helm-projectile
-  ;;   :bind (:map robenkleene/leader-map
-  ;;               ("a" . helm-projectile-ag)
-  ;;               )
-  ;;   )
+  (defun robenkleene/helm-rg-best-available (&optional dir)
+    "Use best available helm `rg' at DIR."
+    (require 'grep)
+    (interactive (let ((dir (robenkleene/prefix-project-root-or-default-directory)))
+                   (list (or dir (read-directory-name "Base directory: "
+                                                      nil
+                                                      default-directory
+                                                      t))
+                         )
+                   )
+                 )
+    (if (equal dir nil)
+        (call-interactively 'helm-do-grep-ag)
+      (let ((default-directory dir))
+        (call-interactively 'helm-do-grep-ag)
+        )
+      )
+    )
+
   )
 
 (provide 'robenkleene-projectile)
