@@ -10,6 +10,7 @@
               ("gs" . magit-status)
               )
   :config
+  (setq magit-diff-refine-hunk t)
   ;; Refresh magit status after editing a buffer
   (add-hook 'after-save-hook 'magit-after-save-refresh-status)
   ;; Magit Startup Helpers
