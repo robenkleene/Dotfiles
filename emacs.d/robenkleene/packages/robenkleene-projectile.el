@@ -43,6 +43,13 @@
     "Return the project's root, or default directory if not in a project."
     (or (robenkleene/projectile-safe-project-root) default-directory)
     )
+
+  (defun robenkleene/prefix-project-root-or-default-directory ()
+    "Return the project's root, or default directory if not in a project."
+    (if (equal current-prefix-arg nil)
+        (robenkleene/project-root-or-default-directory) 
+      nil)
+    )
   
   (defun robenkleene/projectile-find-file-default-directory ()
     "Run `projectile-find-file' with `default-directory'."
@@ -73,7 +80,7 @@
     (apply 'robenkleene/rg
            (robenkleene/grep-parameters (robenkleene/selection-or-word)
                                         nil
-                                        (robenkleene/project-root-or-default-directory))
+                                        (robenkleene/prefix-project-root-or-default-directory))
            ))
 
   (defun robenkleene/rg-best-available ()
@@ -82,10 +89,10 @@
     (apply 'robenkleene/rg
            (robenkleene/grep-parameters nil
                                         nil
-                                        (robenkleene/project-root-or-default-directory))
+                                        (robenkleene/prefix-project-root-or-default-directory))
            )
     )
-  
+
   ;; `helm-projectile-ag' should do project level `rg' by default, but it isn't
   ;; compatible with `rg', so instead this is currently done with a function
   ;; using `helm-do-ag' with `projectile-project-root'
