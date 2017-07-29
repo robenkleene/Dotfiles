@@ -184,11 +184,11 @@
   "Search for the given REGEXP using `git grep' in the current directory.  FILES DIR."
   (interactive (robenkleene/grep-parameters))
   (require 'grep)
-  (let ((command (grep-expand-template
+  (let ((default-directory dir)
+        (command (grep-expand-template
                   (if (equal files nil) robenkleene/rg-command robenkleene/rg-command-files)
                   regexp
-                  files
-                  dir))
+                  files))
         )
     (compilation-start command 'grep-mode)
     )
