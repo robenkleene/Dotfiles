@@ -4,6 +4,7 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
 else
   VIM_COMMAND=nvim
 fi
+# `-t` means don't try to open GUI emacs
 EMACS_COMMAND='emacsclient -t'
 ACK_COMMAND=rg
 
