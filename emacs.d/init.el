@@ -18,6 +18,10 @@
 (setq use-package-always-ensure t)
 ;; (defvar use-package-verbose t)
 
+;; Suppresses annoying message:
+;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
+(set 'ad-redefinition-action 'accept)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
