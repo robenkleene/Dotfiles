@@ -120,8 +120,13 @@
     )
   )
 
-;; Then just make a `projectile' function that calls this?
-
+(defun robenkleene/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (cdr (buffer-list (current-buffer)))
+        )
+  )
+(defalias 'kill-other-buffers 'robenkleene/kill-other-buffers)
 
 (defun robenkleene/grep-parameters (&optional regexp files dir)
   "Get the parameters for grep.  REGEXP FILES DIR."
