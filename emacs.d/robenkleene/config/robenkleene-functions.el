@@ -131,6 +131,11 @@
 (defun robenkleene/grep-parameters (&optional regexp files dir)
   "Get the parameters for grep.  REGEXP FILES DIR."
   (require 'grep)
+  ;; `grep-files-aliases' defaults to a version of `all' that's
+  ;; incompatible with `rg'
+  (defvar grep-files-aliases)
+  (add-to-list 'grep-files-aliases
+               '("all" . "*.*"))
   (if (equal current-prefix-arg nil)
       (list (or regexp (grep-read-regexp))
             files
@@ -145,6 +150,7 @@
                           )
                       )
            )
+      (custom-reevaluate-setting 'grep-files-aliases)
       (list final-regexp final-files final-dir)
       )
     )
