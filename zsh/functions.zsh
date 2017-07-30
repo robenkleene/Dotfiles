@@ -60,7 +60,7 @@ vim-git-hunks() {
 
 # Emacs
 magit() {
-  $EMACS_COMMAND -eval "(robenkleene/magit-status-startup)"
+  eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
 emacs-kill-server() {
   emacsclient -e '(kill-emacs)'

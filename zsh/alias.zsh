@@ -55,7 +55,7 @@ alias tmpr='tmux-paths-run'
 alias tmrg='tmux-paths-rg'
 
 # emacs
-# alias m='magit'
+alias m='magit'
 alias e="$EMACS_COMMAND"
 
 # ranger
