@@ -84,10 +84,8 @@ fi
 # fzf
 alias fzp='fzf-file-path'
 alias fzs='fzf-snippet-copy'
-alias fzse='fzf-snippet-vim'
 alias fzb='fzf-bookmark-cd'
 alias fzd='fzf-documentation-less'
-alias fzde='fzf-documentation-vim'
 alias fzrd='fzf-recent-cd'
 if [ "$(uname)" = "Darwin" ]; then
   alias ox='fzf-project-xcode'
@@ -100,8 +98,8 @@ fi
 
 # doc & snp
 alias snp='fzf-snippet-copy'
-alias snpe='fzf-snippet-vim'
-alias doce='fzf-documentation-vim'
+alias snpe='fzf-snippet-editor'
+alias doce='fzf-documentation-editor'
 alias docc='fzf-documentation-cat'
 
 # git

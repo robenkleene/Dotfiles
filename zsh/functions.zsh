@@ -82,7 +82,7 @@ fi
 # zsh
 zsh-edit-config() {
   cd ~/Development/Dotfiles/zsh/
-  $VIM_COMMAND ../zshrc
+  eval $EDITOR ../zshrc
 }
 
 

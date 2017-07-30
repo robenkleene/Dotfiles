@@ -13,7 +13,7 @@ bindkey '^[r' fzf-history-widget
 
 # Custom Bindings
 
-fzf-vim-widget() {
+fzf-editor-widget() {
   local files="$(__fsel)"
   if [[ -z "$files" ]]; then
     zle redisplay
@@ -21,14 +21,14 @@ fzf-vim-widget() {
   fi
   exec </dev/tty
   setopt localoptions pipefail 2> /dev/null
-  eval $VIM_COMMAND $files
+  eval $EDITOR $files
   local ret=$?
   zle reset-prompt
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-vim-widget
-bindkey '\ee' fzf-vim-widget
+zle -N fzf-editor-widget
+bindkey '\ee' fzf-editor-widget
 
 # Private
 
@@ -116,12 +116,12 @@ fzf-line-vim() {
 }
 
 # Documentation
-fzf-documentation-vim() {
+fzf-documentation-editor() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
-    local final_cmd="$VIM_COMMAND $parameter"
+    local final_cmd="$EDITOR $parameter"
     eval $final_cmd
     if [ $? -eq 0 ]; then
       # Add to history
@@ -158,12 +158,12 @@ fzf-snippet-copy() {
   fi
   cd -
 }
-fzf-snippet-vim() {
+fzf-snippet-editor() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
-    local final_cmd="$VIM_COMMAND $parameter"
+    local final_cmd="$EDITOR $parameter"
     eval $final_cmd
     if [ $? -eq 0 ]; then
       # Add to history
