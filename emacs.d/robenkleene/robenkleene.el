@@ -56,6 +56,7 @@
 (require 'robenkleene-fill-column-indicator)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+(require 'robenkleene-languages)
 (require 'robenkleene-common-lisp)
 (require 'robenkleene-emacs-lisp)
 (require 'robenkleene-jade)
