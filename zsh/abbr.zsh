@@ -14,11 +14,6 @@ abbreviations=(
 'ai' "$ACK_COMMAND -i"
 'af' "$ACK_COMMAND -F"
 
-# emacs
-'e' "$EMACS_COMMAND"
-'ec' 'emacsclient -t'
-'esi' 'emacs --no-desktop'
-
 # tig
 'tst' 'tig stash'
 'ts' 'tig status +3'
