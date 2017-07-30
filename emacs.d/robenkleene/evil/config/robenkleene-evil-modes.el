@@ -36,6 +36,10 @@
 (robenkleene/evilify 'man 'Man-mode Man-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'Man-mode)
 
+;; help
+(robenkleene/evilify 'simple 'messages-buffer-mode messages-buffer-mode-map 'motion)
+(add-to-list 'evil-motion-state-modes 'messages-buffer-mode)
+
 ;; dired
 (robenkleene/evilify 'dired 'dired-mode dired-mode-map 'motion)
 (add-to-list 'evil-motion-state-modes 'dired-mode)
