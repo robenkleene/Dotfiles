@@ -2,10 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-after-load "lisp-mode"
-  '(progn
-     )
-  )
+;; (with-eval-after-load "lisp-mode"
+
+;;   )
 
 (provide 'robenkleene-emacs-lisp)
 ;;; robenkleene-emacs-lisp.el ends here

@@ -70,12 +70,10 @@ higher precedence. See also `evil-make-intercept-map'."
 (defmacro robenkleene/evilify (package mode keymap state &rest bindings)
   "After loading a PACKAGE, Evil integration for a MODE.
 And a corresponding KEYMAP for a STATE.  Add additional BINDINGS."
-  `(eval-after-load ,package
-     '(progn
-        (defvar ,keymap)
-        (robenkleene/evil-make-overriding-map ,keymap ,state)
-        (robenkleene/evil-add-hjkl-bindings ,keymap ,state ,@bindings)
-        )
+  `(with-eval-after-load ,package
+     (defvar ,keymap)
+     (robenkleene/evil-make-overriding-map ,keymap ,state)
+     (robenkleene/evil-add-hjkl-bindings ,keymap ,state ,@bindings)
      )
   )
 
