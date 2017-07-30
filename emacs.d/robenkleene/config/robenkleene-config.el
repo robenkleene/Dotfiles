@@ -47,7 +47,7 @@
 ;; Automatically revert unmodified buffers
 ;; This way causing the cursor to jump randomly after saving so it has
 ;; been temporarily disabled.
-;; (global-auto-revert-mode t)
+(global-auto-revert-mode t)
 
 ;; Highlight Cursor Line
 (global-hl-line-mode)
