@@ -14,6 +14,12 @@
   (use-package evil-smartparens
     :config
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+    (defadvice evil-sp--add-bindings
+        (after robenkleene/override-evil-sp-bindings activate)
+      (evil-define-key 'normal evil-smartparens-mode-map
+        (kbd "x") #'evil-delete-char
+        )
+      )
     )
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward

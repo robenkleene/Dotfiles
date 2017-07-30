@@ -44,7 +44,7 @@
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
-;; (require 'robenkleene-smartparens)
+(require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-fasd)
 (require 'robenkleene-macrostep)
