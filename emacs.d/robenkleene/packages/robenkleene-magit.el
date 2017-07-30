@@ -10,6 +10,12 @@
               ("gs" . magit-status)
               )
   :config
+  (use-package magit-filenotify
+    :commands (magit-filenotify-mode)
+    :init
+    (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
+
+  ;; Show word diffs
   (setq magit-diff-refine-hunk t)
   ;; Refresh magit status after editing a buffer
   (add-hook 'after-save-hook 'magit-after-save-refresh-status)
