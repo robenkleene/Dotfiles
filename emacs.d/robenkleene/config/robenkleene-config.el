@@ -48,6 +48,7 @@
 ;; This way causing the cursor to jump randomly after saving so it has
 ;; been temporarily disabled.
 (global-auto-revert-mode t)
+(setq auto-revert-verbose nil)
 
 ;; Highlight Cursor Line
 (global-hl-line-mode)
