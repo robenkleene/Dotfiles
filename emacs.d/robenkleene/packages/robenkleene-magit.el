@@ -10,6 +10,7 @@
               ("gs" . magit-status)
               )
   :config
+  ;; Refresh magit on file system changes
   (use-package magit-filenotify
     :commands (magit-filenotify-mode)
     :init
