@@ -55,6 +55,7 @@
   ;; Languages
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/languages"))
   (require 'robenkleene-evil-emacs-lisp)
+  (require 'robenkleene-evil-shell)
 
   ;; Activate
   (evil-mode 1)
