@@ -79,11 +79,6 @@ fzf-bookmark-cd() {
 
 # Files
 
-# Vim
-fzf-file-vim() {
-  _robenkleene_fzf_inline $VIM_COMMAND
-}
-
 # Reveal
 if [ "$(uname)" = "Darwin" ]; then
   fzf-file-reveal() {
