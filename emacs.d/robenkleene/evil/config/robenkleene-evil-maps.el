@@ -4,6 +4,18 @@
 
 ;; Disable insert mode key map
 (setcdr evil-insert-state-map nil)
+(setcdr evil-ex-completion-map nil)
+(define-key evil-ex-completion-map "\C-g" 'abort-recursive-edit)
+(define-key evil-ex-completion-map "\C-r" 'evil-paste-from-register)
+(define-key evil-ex-completion-map "\C-n" #'next-complete-history-element)
+(define-key evil-ex-completion-map [escape] 'abort-recursive-edit)
+(define-key evil-ex-completion-map [up] 'previous-complete-history-element)
+(define-key evil-ex-completion-map [down] 'next-complete-history-element)
+(define-key evil-ex-completion-map [prior] 'previous-history-element)
+(define-key evil-ex-completion-map [next] 'next-history-element)
+(define-key evil-ex-completion-map [return] 'exit-minibuffer)
+(define-key evil-ex-completion-map (kbd "RET") 'exit-minibuffer)
+
 ;; Re-enable `esc'
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 
