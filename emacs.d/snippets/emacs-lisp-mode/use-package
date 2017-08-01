@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: use-package
+# key: use-package
+# --
+(eval-when-compile (require 'use-package))
+
+(use-package ${1:my-package})

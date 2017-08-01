@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: filename
+# key: filename
+# condition: 'force-in-comment
+# --
+`(file-name-nondirectory buffer-file-name)`
