@@ -89,5 +89,11 @@ edit the read-only parts."
   )
 (add-to-list 'evil-motion-state-modes 'magit-status-mode)
 
+(robenkleene/evilify 'magit 'magit-log-mode magit-log-mode-map 'motion)
+(add-to-list 'evil-motion-state-modes 'magit-log-mode)
+
+(robenkleene/evilify 'magit 'magit-revision-mode magit-revision-mode-map 'motion)
+(add-to-list 'evil-motion-state-modes 'magit-revision-mode)
+
 (provide 'robenkleene-evil-modes)
 ;;; robenkleene-evil-modes.el ends here
