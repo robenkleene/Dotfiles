@@ -30,6 +30,23 @@ fzf-editor-widget() {
 zle -N fzf-editor-widget
 bindkey '\ee' fzf-editor-widget
 
+fzf-open-widget() {
+  local files="$(__fsel)"
+  if [[ -z "$files" ]]; then
+    zle redisplay
+    return 0
+  fi
+  exec </dev/tty
+  setopt localoptions pipefail 2> /dev/null
+  eval open $files
+  local ret=$?
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle -N fzf-open-widget
+bindkey '\eo' fzf-open-widget
+
 # Private
 
 _robenkleene_fzf_inline() {
