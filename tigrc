@@ -107,7 +107,19 @@ bind status - status-update
 # white, black, green, magenta, blue, cyan, yellow, red, default
 # And (colortest.pl)
 # color0-color255
+# UI
 color title-focus color254 color244 bold
 color title-blur color249 color239
 color search-result black cyan
 color cursor black cyan
+# Status
+color stat-unstaged color243 default
+color stat-untracked color243 default
+color stat-staged green default	bold
+color header cyan default
+color section white default bold
+# Diff
+color diff-stat white default bold
+color diff-chunk color243 default
+color diff-index color243 default
+color diff-header color243 default
