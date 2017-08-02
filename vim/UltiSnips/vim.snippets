@@ -6,3 +6,9 @@ endsnippet
 snippet call "" w
 call <SID>${1:Name}()
 endsnippet
+snippet augroup "" b
+augroup ${1:writing_buffer}
+  autocmd!
+  autocmd ${2:BufWrite *} ${3::echom "Writing buffer!"}
+augroup END
+endsnippet
