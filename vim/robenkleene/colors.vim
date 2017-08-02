@@ -4,6 +4,9 @@
 " `XtermColorTable` displays the hex colors a terminal equivalents
 " `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
 " Or use my command `:RunColorTest`
+" `:so $VIMRUNTIME/syntax/hitest.vim` lists all the styled syntax groups
+" Or use my command `:RunHighlightTest`
+
 " Colorscheme
 set background=dark
 colorscheme tir_black
