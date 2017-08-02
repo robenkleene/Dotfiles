@@ -152,16 +152,17 @@ highlight link markdownH6 String
 
 " Plugins {{{1
 
-" Git Gutter {{{2
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=lightblue
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterAddDefault ctermbg=NONE ctermfg=green
-highlight GitGutterChangeDefault ctermbg=NONE ctermfg=lightblue
-highlight GitGutterDeleteDefault ctermbg=NONE ctermfg=red
-highlight GitGutterAddInvisible ctermbg=NONE ctermfg=green
-highlight GitGutterChangeInvisible ctermbg=NONE ctermfg=lightblue
-highlight GitGutterDeleteInvisible ctermbg=NONE ctermfg=red
+" Signify {{{2
+highlight SignifyLineAdd ctermbg=NONE ctermfg=green cterm=bold
+highlight SignifySignAdd ctermbg=NONE ctermfg=green cterm=bold
+highlight SignifyLineChange ctermbg=NONE ctermfg=lightblue cterm=bold
+highlight SignifyLineChangeDelete ctermbg=NONE ctermfg=lightblue cterm=bold
+highlight SignifySignChange ctermbg=NONE ctermfg=lightblue cterm=bold
+highlight SignifySignChangeDelete ctermbg=NONE ctermfg=lightblue cterm=bold
+highlight SignifyLineDelete ctermbg=NONE ctermfg=red cterm=bold
+highlight SignifyLineDeleteFirstLine ctermbg=NONE ctermfg=red cterm=bold
+highlight SignifySignDelete ctermbg=NONE ctermfg=red cterm=bold
+highlight SignifySignDeleteFirstLine ctermbg=NONE ctermfg=red cterm=bold
 
 " Syntastic {{{2
 highlight SyntasticErrorSign ctermfg=red

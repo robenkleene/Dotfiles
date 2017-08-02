@@ -58,7 +58,7 @@ Plug 'Konfekt/vim-alias'
 Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
 " Git {{{2
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
@@ -109,4 +109,4 @@ endif
 source ~/.vim/robenkleene/plugin/tagbar.vim
 source ~/.vim/robenkleene/plugin/ultisnips.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
-source ~/.vim/robenkleene/plugin/vim-gitgutter.vim
+source ~/.vim/robenkleene/plugin/signify.vim
