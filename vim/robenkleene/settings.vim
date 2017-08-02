@@ -165,3 +165,10 @@ augroup END
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
 
+augroup quickfix_height
+  autocmd!
+  autocmd FileType qf call <SID>AdjustWindowHeight(3, 20)
+augroup END
+function! s:AdjustWindowHeight(minheight, maxheight) abort
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
