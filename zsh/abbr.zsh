@@ -24,6 +24,8 @@ abbreviations=(
 'tmwr' 'tmux move-window -r'
 'tm' 'tmux' 
 'tmls' 'tmux ls'
+'tmn' 'tmux new'
+'tmd' 'tmux detach'
 
 # cd
 'cyp' 'cd-yank-path'
