@@ -40,6 +40,7 @@ alias vimdiff="nvim -d"
 
 # zsh
 alias oi='zsh-edit-config'
+alias dh='dirs -v'
 
 # scripts
 alias n='terminal-new'
