@@ -20,8 +20,8 @@ if [ ! "$(uname)" = "Darwin" ]; then
   export PATH=~/bin:$PATH
 fi
 
-# export EDITOR=$VIM_COMMAND
-export EDITOR="$EMACS_COMMAND"
+export EDITOR=$VIM_COMMAND
+# export EDITOR="$EMACS_COMMAND"
 export PAGER="less --ignore-case"
 
 # Atom
