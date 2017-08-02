@@ -28,6 +28,9 @@ abbreviations=(
 # cd
 'cyp' 'cd-yank-path'
 
+# zsh
+'wf' 'whence -f'
+
 # git
 # `g`: `git`
 'g' 'git'
