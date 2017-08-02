@@ -37,10 +37,11 @@ nnoremap Y y$
 " vimrc
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkleene.vim<CR>:echo ""<CR>
 nnoremap <leader>os :source $MYVIMRC<CR>:echo "Sourced"<CR>
-nnoremap <leader>om :new<CR>V"wp
-" For editing macros
-nnoremap <leader>wo :new<CR>:set buftype=nofile<CR>V"wp
-nnoremap <leader>ws V"wd:bd<CR>
+" Macros
+" Open Macro
+nnoremap <leader>ow :new<CR>:set buftype=nofile<CR>V"wp
+" Source Macro
+nnoremap <leader>om V"wd:bd<CR>
 
 " Documentation
 " nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
