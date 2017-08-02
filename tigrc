@@ -123,3 +123,5 @@ color diff-stat white default bold
 color diff-chunk color243 default
 color diff-index color243 default
 color diff-header color243 default
+color "--- " cyan default
+color "+++ " cyan default
