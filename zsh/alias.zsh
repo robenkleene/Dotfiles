@@ -64,6 +64,7 @@ alias e="$EMACS_COMMAND"
 alias r='ranger-cd'
 
 # vim
+alias q='vim-grep'
 alias vff='fzf-vim-file'
 alias vfg='fzf-vim-grep'
 alias vg='vim-grep'
