@@ -117,10 +117,10 @@ color stat-unstaged color243 default
 color stat-untracked color243 default
 color stat-staged green default	bold
 color header cyan default
-color section white default bold
+color section blue default bold
 # Diff
-color diff-stat white default bold
-color diff-chunk color243 default
+color diff-stat blue default bold
+color diff-chunk blue default bold
 color diff-index color243 default
 color diff-header color243 default
 color "--- " color243 default
