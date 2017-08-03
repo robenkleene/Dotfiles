@@ -85,3 +85,12 @@ function! s:Rg(terms) abort
   execute "grep " . a:terms
   let &grepprg = l:original_grepprg
 endfunction
+
+" Atm
+command! -nargs=* Atm :call <SID>Atm(<q-args>)
+function! s:Atm(terms) abort
+  let l:original_grepprg = &grepprg
+  set grepprg=tmux-paths-rg
+  execute "grep " . a:terms
+  let &grepprg = l:original_grepprg
+endfunction
