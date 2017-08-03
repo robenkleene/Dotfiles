@@ -113,7 +113,6 @@ highlight DiffChange ctermfg=NONE ctermbg=18 cterm=NONE
 " Inline changed text
 highlight DiffText ctermfg=NONE ctermbg=21 cterm=NONE
 
-
 " Markdown {{{1
 
 " Custom Syntax
@@ -167,13 +166,8 @@ highlight SignifyLineDeleteFirstLine ctermbg=NONE ctermfg=red
 highlight SignifySignDelete ctermbg=NONE ctermfg=red
 highlight SignifySignDeleteFirstLine ctermbg=NONE ctermfg=red
 
-" Syntastic {{{2
-highlight SyntasticErrorSign ctermfg=red
-highlight SyntasticWarningSign ctermfg=yellow
-highlight SyntasticStyleWarningSign ctermfg=yellow
-
-" Neomake {{{2
-highlight NeomakeErrorSign ctermfg=red
-highlight NeomakeWarningSign ctermfg=yellow
-highlight NeomakeMessageSign ctermfg=darkgray
-highlight NeomakeInfoSign ctermfg=white
+" Ale {{{2
+highlight ALEErrorSign ctermfg=red
+highlight ALEWarningSign ctermfg=yellow
+highlight ALEStyleWarningSign ctermfg=yellow
+highlight ALEStyleErrorSign ctermfg=yellow
