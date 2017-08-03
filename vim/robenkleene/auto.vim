@@ -64,3 +64,18 @@ augroup reload_buffers
   autocmd!
   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 augroup END
+
+augroup setup_netrw
+  autocmd!
+  autocmd FileType netrw call <SID>setup_netrw()
+augroup END
+function! s:fnameescape(file) abort
+  if exists('*fnameescape')
+    return fnameescape(a:file)
+  else
+    return escape(a:file," \t\n*?[{`$\\%#'\"|!<")
+  endif
+endfunction
+function! s:setup_netrw() abort
+  nnoremap <buffer> <silent> cg :exe 'keepjumps cd ' .<SID>fnameescape(b:netrw_curdir)<CR>
+endfunction
