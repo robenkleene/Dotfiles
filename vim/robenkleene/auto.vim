@@ -58,3 +58,9 @@ augroup quickfix_colors
   autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
 
+" Autoreload files edited by other programs
+set autoread
+augroup reload_buffers
+  autocmd!
+  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+augroup END
