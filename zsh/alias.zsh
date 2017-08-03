@@ -6,6 +6,7 @@ alias -g A='| rg'
 alias -g Y='| safecopy'
 alias -g Y1='| safecopy1'
 alias -g V="| $VIM_COMMAND -"
+alias -g Q='| vim-grep'
 
 # Basic
 alias -- -='cd -'
