@@ -77,5 +77,5 @@ function! s:fnameescape(file) abort
   endif
 endfunction
 function! s:setup_netrw() abort
-  nnoremap <buffer> <silent> cg :exe 'keepjumps cd ' .<SID>fnameescape(b:netrw_curdir)<CR>
+  nnoremap <buffer> <silent> gc :exe 'keepjumps cd ' .<SID>fnameescape(b:netrw_curdir)<CR>
 endfunction
