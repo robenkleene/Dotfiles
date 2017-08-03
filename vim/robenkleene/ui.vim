@@ -3,32 +3,6 @@
 " Show 80 character bar
 set colorcolumn=80
 
-" Highlight cursor line
-" set cursorline
-" Show cursorline only in active window
-augroup cursor_line_active_window
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  " Don't leave disable nocursorline, otherwise the current line won't be 
-  " highlighted when using the `quickfix` list
-  " autocmd WinLeave * setlocal nocursorline
-augroup END
-
-" Disable Cursor Line in Insert Mode
-augroup disable_cursor_line
-  autocmd!
-  autocmd InsertEnter * setlocal nocursorline
-  autocmd InsertLeave * setlocal cursorline
-augroup END
-
-" Fix quickfix colors
-augroup quickfix_colors
-  autocmd!
-  " These interfere with quickfix highlighting
-  autocmd VimEnter,WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
-  autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
-augroup END
-
 " Show line numbers
 set number
 

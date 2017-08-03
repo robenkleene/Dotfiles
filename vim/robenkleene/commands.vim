@@ -52,10 +52,6 @@ command! SaveSessionDefault :mksession! ~/.vim/vim_session
 command! RestoreSessionLocal :source vim_session
 command! RestoreSessionDefault :source ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_auto_session
-augroup save_session
-  autocmd!
-  autocmd VimLeave * mksession! ~/.vim/vim_auto_session
-augroup END
 
 " Rg
 if exists(':terminal')

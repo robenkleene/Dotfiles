@@ -90,6 +90,7 @@ endif
 source ~/.vim/robenkleene/commands.vim
 source ~/.vim/robenkleene/bindings.vim
 source ~/.vim/robenkleene/operators.vim
+source ~/.vim/robenkleene/auto.vim
 
 " Plugins {{{1
 source ~/.vim/robenkleene/plugin/commentary.vim

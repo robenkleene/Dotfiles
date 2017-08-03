@@ -125,14 +125,6 @@ set dictionary+=/usr/share/dict/words
 " This option was causing auto-complete option with the wrong case to appear
 " set infercase
 
-" Make completion case-sensitive
-" (While still allowing search to be case-insensitive)
-augroup ignore_case_in_insert
-  autocmd!
-  autocmd InsertEnter * setlocal noignorecase
-  autocmd InsertLeave * setlocal ignorecase
-augroup END
-
 " Don't auto-select the first full match
 " This makes it easier to get to one option of many
 set completeopt+=longest
@@ -147,28 +139,7 @@ set completeopt+=longest
 set path+=**
 " Autocmd {{{1
 
-" Make Shebang Files Executable
-function! s:MakeShebangFilesExecutable() abort
-  if match(getline(1), '^\#!') == 0
-    if match(getfperm(expand('%:p')), 'x') == -1
-      !chmod +x %
-    endif
-  endif
-endfunction
-augroup executable_files
-  autocmd!
-  autocmd BufWritePost *.pl,*.sh,*.rb,*.fish :call <SID>MakeShebangFilesExecutable()
-augroup END
-
 " Languages {{{1
 
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
-
-augroup quickfix_height
-  autocmd!
-  autocmd FileType qf call <SID>AdjustWindowHeight(3, 20)
-augroup END
-function! s:AdjustWindowHeight(minheight, maxheight) abort
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
