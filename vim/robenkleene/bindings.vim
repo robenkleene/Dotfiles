@@ -77,6 +77,9 @@ nnoremap <leader>m :make<CR>
 " Rg
 nnoremap <leader>a :Rg 
 
+" Quit & Save Session
+nnoremap <C-s> :QuitSaveSession<CR> 
+
 " Make split resizing five lines instead of one
 nnoremap <C-w>+ 5<C-w>+
 nnoremap <C-w>- 5<C-w>-
