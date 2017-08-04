@@ -53,24 +53,13 @@ command! RestoreSessionLocal :source vim_session
 command! RestoreSessionDefault :source ~/.vim/vim_session
 command! RestoreSession :source ~/.vim/vim_auto_session
 
-" Rg
+" Terminal Commands
 if exists(':terminal')
   command! Doc call <SID>Doc()
   function! s:Doc() abort
     split
     execute 'terminal doc'
     tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-  command! -nargs=* Rg call <SID>Rg(<f-args>)
-  function! s:Rg(args) abort
-    " Not sure why this is necessary, copied from `vim-fugitive`
-    let args = matchstr(a:args,'\v\C.{-}%($|\\@<!%(\\\\)*\|)@=')
-    if expand('%') != ''
-      -tabedit %
-    else
-      -tabnew
-    endif
-    execute 'terminal rg --smart-case --line-number' args
   endfunction
 endif
 

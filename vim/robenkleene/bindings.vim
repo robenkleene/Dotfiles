@@ -199,10 +199,19 @@ if has('nvim')
     " with commands that spawn terminals like `fzf`
     vsplit
     terminal zsh
+    " Make escape exit insert mode
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
+  command! TigStatus call <SID>TigStatus()
+  function! s:TigStatus() abort
+    tabnew
+    execute 'terminal EDITOR=nvim-edit tig status +3'
+    " Make escape exit insert mode
+    " tnoremap <buffer> <Esc> <C-\><C-n>
+  endfunction
 
-  nnoremap <leader>t :call <SID>OpenTerminal()<CR>
+  nnoremap <leader>tt :call <SID>OpenTerminal()<CR>
+  nnoremap <leader>ts :call <SID>TigStatus()<CR>
   " nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
   " nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
   command! Term :call <SID>OpenTerminal()
