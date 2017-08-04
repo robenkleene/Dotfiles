@@ -36,13 +36,14 @@ command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 command! GrepBuffer :call <SID>GrepBuffer()
 function! s:GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  " `cbuffer`: Convert to `quickfix`
+  " `bprevious`: Go back to grep input
+  " `bdelete`: Delete the grep buffer
   if line('$') == 1
     " Don't show the quickfix list if there's exactly one match
-    execute "cbuffer"
+    execute "cbuffer | bprevious | bdelete"
   else
-    execute "cbuffer | cw | wincmd k"
-    " Bigger version below 
-    " execute "cbuffer | copen 20 | wincmd k"
+    execute "cbuffer | bprevious | bdelete | cw | wincmd k"
   endif
 endfunction
 
