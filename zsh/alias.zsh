@@ -35,7 +35,6 @@ alias rg="rg --smart-case --line-number --colors 'match:fg:black' --colors 'matc
 # palette_transparent: true
 # no_mouse: true
 alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
-alias atm="tmux-paths -0 | xargs -0 rg --smart-case --line-number"
 
 # vimdiff
 alias vimdiff="nvim -d"
@@ -55,9 +54,9 @@ alias tmnd='tmux-name-directory'
 alias tma='tmux-attach'
 alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
-alias tmlp='tmux-paths'
+alias tmp='tmux-paths'
 alias tmpr='tmux-paths-run'
-alias tmrg='tmux-paths-rg'
+alias tmac='tmux-paths-rg'
 
 # emacs
 alias m='magit'
