@@ -1,12 +1,15 @@
 # grep
-alias -g G='| grep'
-alias -g C='| column'
-alias -g L='| less'
-alias -g A='| rg'
-alias -g Y='| safecopy'
-alias -g Y1='| safecopy1'
-alias -g V="| $VIM_COMMAND -"
-alias -g Q='| vim-grep'
+# Disable these, there's something very strange about how global aliases call
+# interactive commads. Starting `vim` results it in having to start twice,
+# which is very slow.
+# alias -g G='| grep'
+# alias -g C='| column'
+# alias -g L='| less'
+# alias -g A='| rg'
+# alias -g Y='| safecopy'
+# alias -g Y1='| safecopy1'
+# alias -g V="| $vim-command -"
+# alias -g Q='| vim-grep'
 
 # Basic
 alias -- -='cd -'
