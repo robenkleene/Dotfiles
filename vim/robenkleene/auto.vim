@@ -77,5 +77,6 @@ function! s:fnameescape(file) abort
   endif
 endfunction
 function! s:setup_netrw() abort
+  " This conflicts with `gcc` for `commentary` so it causes a delay
   nnoremap <buffer> <silent> gc :exe 'keepjumps cd ' .<SID>fnameescape(b:netrw_curdir)<CR>
 endfunction
