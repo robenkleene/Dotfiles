@@ -5,8 +5,9 @@ Alias Af Rg\ -F
 Alias -range Ld Linediff
 Alias Ldr LinediffReset
 
-Alias RS RestoreSession
-Alias SSL SaveSessionLocal
-Alias RSL RestoreSessionLocal
-Alias SSD SaveSessionDefault
-Alias RSD RestoreSessionDefault
+Alias SAR SessionRestoreAuto
+Alias SSL SessionSaveLocal
+Alias SRL SessionRestoreLocal
+Alias SS SessionSave
+Alias SR SessionRestore
+Alias Q QuitSaveSession

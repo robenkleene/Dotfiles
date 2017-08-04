@@ -48,11 +48,16 @@ function! s:GrepBuffer() abort
 endfunction
 
 " Save and Restore Session State
-command! SaveSessionLocal :mksession! vim_session
-command! SaveSessionDefault :mksession! ~/.vim/vim_session
-command! RestoreSessionLocal :source vim_session
-command! RestoreSessionDefault :source ~/.vim/vim_session
-command! RestoreSession :source ~/.vim/vim_auto_session
+command! SessionSaveLocal :mksession! vim_session
+command! SessionSave :mksession! ~/.vim/vim_session
+command! SessionRestoreLocal :source vim_session
+command! SessionRestore :source ~/.vim/vim_session
+command! SessionRestoreAuto :source ~/.vim/vim_auto_session
+command! QuitSaveSession :call <SID>QuitSaveSession()
+function! s:QuitSaveSession() abort
+  SessionSave
+  qa
+endfunction
 
 " Terminal Commands
 if exists(':terminal')

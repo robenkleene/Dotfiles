@@ -34,13 +34,13 @@ egitn() {
 
 # vim
 vim-session-restore() {
-  $VIM_COMMAND -c "RestoreSession"
+  $VIM_COMMAND -c "SessionRestore"
 }
 vim-session-restore-local() {
-  $VIM_COMMAND -c "RestoreSessionLocal"
+  $VIM_COMMAND -c "SessionRestoreLocal"
 }
-vim-session-restore-default() {
-  $VIM_COMMAND -c "RestoreSessionDefault"
+vim-session-restore-auto() {
+  $VIM_COMMAND -c "SessionRestoreAuto"
 }
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -

@@ -78,10 +78,8 @@ alias vgm='vim-git-modified'
 alias vgc='vim-git-conflicts'
 alias vse='vim-server-edit'
 alias vsr='vim-session-restore'
-alias vsrd='vim-session-restore-default'
-alias vsrl='vim-session-restore-local'
-alias vsrs='vim-server-start -c "RestoreSession"'
-alias vss='vim-server-start'
+alias var='vim-session-restore-auto'
+# alias vss='vim-server-start'
 
 # emacs
 if [[ "$(uname)" = "Darwin" ]]; then
