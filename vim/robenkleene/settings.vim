@@ -14,6 +14,9 @@ endif
 let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
 
+" Disable swap files
+set noswapfile
+
 " Restore buffer local options
 set sessionoptions+=localoptions
 
