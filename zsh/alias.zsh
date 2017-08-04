@@ -68,6 +68,7 @@ alias r='ranger-cd'
 
 # vim
 alias q='vim-grep'
+alias f='fzf-vim-grep'
 alias vff='fzf-vim-file'
 alias vfg='fzf-vim-grep'
 alias vg='vim-grep'
