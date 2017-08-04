@@ -34,9 +34,6 @@ function exiting
 end
 
 # Vim
-function vim-restore-session
-  eval "$VIM_COMMAND -c 'RestoreSession'"
-end
 function ack-vim
   if [ $argv[1] ]
     # Set the search register and the yank register

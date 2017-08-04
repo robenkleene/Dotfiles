@@ -45,8 +45,7 @@ alias m 'magit'
 alias r 'ranger-cd'
 
 # vim
-alias vrs 'vim-restore-session'
-alias vsr 'vim-server-start -c "RestoreSession"'
+alias vrs 'vim-session-restore'
 
 # fzf
 alias fzp 'fzf-file-path'
