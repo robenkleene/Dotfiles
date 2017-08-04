@@ -260,7 +260,7 @@ function! s:ToggleQuickfixList() abort
     wincmd p
   endif
 endfunction
-nnoremap <script> <silent> <leader>q :call <SID>ToggleQuickfixList()<CR>
+nnoremap <script> <silent> <leader>e :call <SID>ToggleQuickfixList()<CR>
 
 " Todo
 function! s:OpenTodo() abort

@@ -8,7 +8,6 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>e :Files<CR>
 nnoremap <M-e> :Files<CR>
 nnoremap <leader>c :Cd<CR>
 nnoremap <M-c> :Cd<CR>
