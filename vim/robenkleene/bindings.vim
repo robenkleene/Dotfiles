@@ -36,12 +36,16 @@ nnoremap Y y$
 
 " vimrc
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkleene.vim<CR>:echo ""<CR>
-nnoremap <leader>os :source $MYVIMRC<CR>:echo "Sourced"<CR>
+nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Macros
 " Open Macro
-nnoremap <leader>ow :new<CR>:set buftype=nofile<CR>V"wp
+nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
 " Source Macro
-nnoremap <leader>om V"wd:bd<CR>
+nnoremap <leader>sm V"wd:bd<CR>
+
+" Source
+nnoremap <leader>ss :source vim_settings<CR>
+nnoremap <leader>os :edit vim_settings<CR>
 
 " Documentation
 " nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
@@ -72,9 +76,6 @@ nnoremap <leader>m :make<CR>
 
 " Rg
 nnoremap <leader>a :Rg 
-
-" Source
-nnoremap <leader>s :source vim_settings<CR>
 
 " Make split resizing five lines instead of one
 nnoremap <C-w>+ 5<C-w>+
