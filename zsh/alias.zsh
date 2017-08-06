@@ -86,18 +86,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 # fzf
-alias fzp='fzf-file-path'
-alias fzs='fzf-snippet-copy'
-alias fzb='fzf-bookmark-cd'
-alias fzd='fzf-documentation-less'
-alias fzrd='fzf-recent-cd'
 if [ "$(uname)" = "Darwin" ]; then
   alias ox='fzf-project-xcode'
-  alias fzab='fzf-ack-bbedit'
-  alias fzam='fzf-ack-mate'
-  alias fzo='fzf-file-open'
-  alias fzr='fzf-file-reveal'
-  alias fzx='fzf-file-xcode'
 fi
 
 # doc & snp

@@ -84,16 +84,6 @@ fzf-recent-cd() {
   _robenkleene_fzf_inline cd "fasd -ld"
 }
 
-fzf-bookmark-cd() {
-  # Bookmarks
-  local bookmarks=(~/Development/Dotfiles/)
-  # Documentation
-  bookmarks+=(~/Documentation/ ~/Documentation/development-references/)
-  # Development
-  bookmarks+=(~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/)
-  _robenkleene_fzf_inline cd "printf '%s\n' $bookmarks"
-}
-
 # Files
 
 # Reveal

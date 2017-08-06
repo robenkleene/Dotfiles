@@ -64,17 +64,6 @@ function fzf-recent-cd
   _robenkleene_fzf_inline cd "fasd -ld"
 end
 
-function fzf-bookmark-cd
-  # Bookmarks
-  set -l bookmarks ~/Development/Dotfiles/ 
-  # Documentation
-  set bookmarks $bookmarks ~/Documentation/ ~/Documentation/development-references/
-  # Development
-  set bookmarks $bookmarks ~/Development/ ~/Development/Scratch/ ~/Development/Projects/ ~/Development/Scripts/ ~/Development/Snippets/
-
-  _robenkleene_fzf_inline cd "printf '%s\n' $bookmarks"
-end
-
 # Files
 
 # Vim
