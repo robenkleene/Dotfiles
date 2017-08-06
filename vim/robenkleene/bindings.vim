@@ -29,11 +29,6 @@ nnoremap Y y$
 " `C-w` insert word at point like Emacs
 " cnoremap <C-w> <C-R><C-W>
 
-" Tabs
-" nnoremap <leader>tn :tabnew<CR>
-" nnoremap <leader>tc :tabclose<CR>
-" nnoremap <leader>te :tabedit %<CR>
-
 " vimrc
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkleene.vim<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
@@ -172,11 +167,9 @@ noremap <S-Up> <C-w>k
 noremap <S-Right> <C-w>l
 
 " Tab
-" nnoremap <leader>c :tabnew<CR>
 nnoremap <C-w>t :tabnew<CR>
 " nnoremap <C-w>t <C-w>s<C-w>T
-" nnoremap <leader>n gt
-" nnoremap <leader>p gT
+nnoremap <C-w>q :tabclose<CR>
 nnoremap <A-n> gt
 nnoremap <A-p> gT
 nnoremap <C-w>n gt
