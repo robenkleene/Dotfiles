@@ -72,6 +72,16 @@ endif
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
 
+command! Gcd :call <SID>Gcd()
+function! s:Gcd() abort
+  let l:git_root = system('git rev-parse --show-toplevel')
+  if v:shell_error == 0
+    lcd shellescape(l:git_root)
+  else
+    echo "Not in a git respository."
+  endif
+endfunction
+
 " Rg
 command! -nargs=* Rg :call <SID>Rg(<q-args>)
 function! s:Rg(terms) abort
