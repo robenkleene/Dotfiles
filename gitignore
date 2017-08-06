@@ -7,6 +7,9 @@
 vim_session
 vim_settings
 
+# Build Logs
+build.log
+
 # Emacs file locks
 .#*
 
