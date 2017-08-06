@@ -60,14 +60,14 @@ function! s:QuitSaveSession() abort
 endfunction
 
 " Terminal Commands
-if exists(':terminal')
-  command! Doc call <SID>Doc()
-  function! s:Doc() abort
-    split
-    execute 'terminal doc'
-    tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-endif
+" if exists(':terminal')
+"   command! Doc call <SID>Doc()
+"   function! s:Doc() abort
+"     split
+"     execute 'terminal doc'
+"     tnoremap <buffer> <Esc> <C-\><C-n>
+"   endfunction
+" endif
 
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')

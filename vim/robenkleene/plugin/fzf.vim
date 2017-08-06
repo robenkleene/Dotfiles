@@ -1,9 +1,5 @@
 set rtp+=~/.fzf
 
-" rg
-" nnoremap <leader>* :Rgf <C-r><C-w><cr>
-" vnoremap <leader>* :<C-u>call <SID>RgfVisual()<CR>
-
 nnoremap <leader>b :Buffers<CR>
 nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
@@ -16,14 +12,7 @@ nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 
-command! FZFDocumentation :call <SID>FZFDocumentation()
-function! s:FZFDocumentation() abort
-  lcd ~/Documentation/development-references/
-  call fzf#run({
-        \   'source':  "rg --column --smart-case --line-number --no-heading --color=always",
-        \   'sink':    'e'
-        \ })
-endfunction
+command! -bang -nargs=? FZFDocumentation lcd ~/Documentation/development-references/|call fzf#vim#files(<q-args>, <bang>0)
 
 " Modified Files
 command! Modified :call fzf#run({
