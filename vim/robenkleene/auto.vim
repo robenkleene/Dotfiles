@@ -29,7 +29,8 @@ augroup quickfix_height
   autocmd FileType qf call <SID>AdjustWindowHeight(3, 20)
 augroup END
 function! s:AdjustWindowHeight(minheight, maxheight) abort
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+  execute max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+  execute "normal! \<C-w>="
 endfunction
 
 " Highlight cursor line
