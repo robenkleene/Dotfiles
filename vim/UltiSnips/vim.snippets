@@ -15,10 +15,13 @@ augroup ${1:writing_buffer}
   autocmd ${2:BufWrite *} ${3::echom "Writing buffer!"}
 augroup END
 endsnippet
-snippet xcodebuildtest "" b
+snippet makeprgxcodebuildtest "" b
 setlocal makeprg=xcodebuild\ test
 			\\\ -alltargets
 			\\\ -configuration\ Debug
 			\\\ -scheme\ ${1:Scheme}
 			\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}
+endsnippet
+snippet makeprgtee "" b
+\\\\ \\\\\\|\ tee\ build.log
 endsnippet

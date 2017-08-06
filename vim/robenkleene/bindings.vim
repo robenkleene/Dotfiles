@@ -33,14 +33,13 @@ nnoremap Y y$
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkleene.vim<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Macros
-" Open Macro
 nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
-" Source Macro
 nnoremap <leader>sm V"wd:bd<CR>
-
-" Source
+" Local Settings
 nnoremap <leader>ss :source vim_settings<CR>
 nnoremap <leader>os :edit vim_settings<CR>
+" Build Log
+nnoremap <leader>ob :edit build.log<CR>
 
 " Documentation
 " nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
