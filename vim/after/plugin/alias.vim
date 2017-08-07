@@ -14,3 +14,5 @@ Alias SRL SessionRestoreLocal
 Alias SS SessionSave
 Alias SR SessionRestore
 Alias Q QuitSaveSession
+" Compilers
+Alias CXC compiler\ xcodebuild
