@@ -58,8 +58,8 @@ alias tma='tmux-attach'
 alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
 alias tmp='tmux-paths'
-alias tmpr='tmux-paths-run'
-alias tmac='tmux-paths-rg'
+alias tmc='tmux-paths-run'
+alias atm='tmux-paths-rg'
 
 # emacs
 alias m='magit'
@@ -83,8 +83,9 @@ if [[ "$(uname)" = "Darwin" ]]; then
   alias gemacs="open -a emacs"
 fi
 
-# fzf
+# Xcode
 if [ "$(uname)" = "Darwin" ]; then
+  alias xcb='xcodebuild-debug'
   alias ox='fzf-project-xcode'
 fi
 

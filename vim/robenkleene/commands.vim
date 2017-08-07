@@ -72,6 +72,10 @@ endfunction
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
 
+" Go to directory vim was launched from
+command! Wcd :lcd $PWD
+
+" Go to `git` root
 command! Gcd :call <SID>Gcd()
 function! s:Gcd() abort
   let l:git_root = system('git rev-parse --show-toplevel')
