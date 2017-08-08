@@ -4,7 +4,6 @@ typeset -Ag abbreviations
 # parameters.
 
 abbreviations=(
-
 # vim
 'v' "$VIM_COMMAND"
 'vd' "$VIM_COMMAND -d"
@@ -110,7 +109,6 @@ abbreviations+=(
 )
 fi
 
-
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters
 for abbr in ${(@k)abbreviations}; do
@@ -118,19 +116,19 @@ for abbr in ${(@k)abbreviations}; do
 done
 
 magic-abbrev-expand() {
-    local MATCH
-    LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
-    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+  local MATCH
+  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
+  LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
 }
 
 magic-abbrev-expand-and-insert () {
-    magic-abbrev-expand
-    zle self-insert
+  magic-abbrev-expand
+  zle self-insert
 }
 
 magic-abbrev-expand-and-accept () {
-    magic-abbrev-expand
-    zle accept-line
+  magic-abbrev-expand
+  zle accept-line
 }
 
 zle -N magic-abbrev-expand-and-insert
