@@ -30,7 +30,7 @@ nnoremap Y y$
 " cnoremap <C-w> <C-R><C-W>
 
 " vimrc
-nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/robenkleene/<CR>:edit robenkleene.vim<CR>:echo ""<CR>
+nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/<CR>:edit robenkleene/robenkleene.vim<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Macros
 nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
