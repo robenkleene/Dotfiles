@@ -8,8 +8,9 @@ alias -g Y1='| safecopy1'
 # Disable these, there's something very strange about how global aliases call
 # interactive commads. Starting `vim` results it in having to start twice,
 # which is very slow.
-# alias -g V="| $vim-command -"
+# alias -g V="| $VIM_COMMAND -"
 # alias -g Q='| vim-grep'
+alias -g V="$VIM_COMMAND -"
 alias -g Q='vim-grep'
 alias -g F='fzf-vim-grep'
 alias -g FF='fzf-vim-file'
