@@ -105,3 +105,4 @@ source ~/.vim/robenkleene/plugin/tagbar.vim
 source ~/.vim/robenkleene/plugin/ultisnips.vim
 source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
 source ~/.vim/robenkleene/plugin/signify.vim
+source ~/.vim/robenkleene/plugin/linediff.vim
