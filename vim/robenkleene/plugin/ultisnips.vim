@@ -9,3 +9,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 " is because UltiSnips exits after reaching the last tab stop.
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="context"
+
+" Snippets
+nnoremap <leader>os :UltiSnipsEdit<CR>

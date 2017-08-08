@@ -36,8 +36,8 @@ nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
 nnoremap <leader>sm V"wd:bd<CR>
 " Local Settings
-nnoremap <leader>ss :source vim_settings<CR>
-nnoremap <leader>os :edit vim_settings<CR>
+nnoremap <leader>sl :source vim_settings<CR>
+nnoremap <leader>ol :edit vim_settings<CR>
 " Build Log
 nnoremap <leader>ob :edit build.log<CR>
 
