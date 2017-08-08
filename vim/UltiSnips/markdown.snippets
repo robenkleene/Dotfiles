@@ -1,5 +1,5 @@
 snippet title "Title from filename" b
-`!v system('markdown-title '.shellescape(expand('%')))`
+`!v system('markdown-title '.fnameescape(expand('%')))`
 endsnippet
 snippet cb "Checkbox"
 [ ] 

@@ -96,12 +96,12 @@ nnoremap <C-w>> 5<C-w>>
 
 " Markdown link
 function! s:MarkdownLinkLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
 function! s:MarkdownLinkFile() abort
-  let @" = system('~/Development/Scripts/bin/markdown-link '.shellescape(expand('%:p')))
+  let @" = system('~/Development/Scripts/bin/markdown-link '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
@@ -121,7 +121,7 @@ function! s:ArchiveLines(bang) range abort
     silent normal! gv"sd
     let @s = temp
   endif
-  let lineCount = system('wc -l < '.shellescape(file_path, 1).' | tr -d " " | tr -d "\n"')
+  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
   echom "Backed up ".lineCount." lines"
 endfunction
 command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
