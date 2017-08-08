@@ -78,9 +78,9 @@ command! Wcd :lcd $PWD
 " Go to `git` root
 command! Gcd :call <SID>Gcd()
 function! s:Gcd() abort
-  let l:git_root = system('git rev-parse --show-toplevel')
+  let l:git_root = system('git rev-parse --show-toplevel | tr -d "\n"')
   if v:shell_error == 0
-    lcd shellescape(l:git_root)
+    execute 'lcd '.fnameescape(l:git_root)
   else
     echo "Not in a git respository."
   endif
