@@ -27,7 +27,10 @@ command! TmuxPaths :call fzf#run({
       \ })
 function! s:cd_sink(e) abort
   execute 'Explore' a:e
-  lcd %
+  let l:path = expand('%')
+  if !empty(l:path)
+    lcd %
+  endif
 endfunction
 
 command! Cd :call fzf#run({
