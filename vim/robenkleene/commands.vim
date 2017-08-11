@@ -5,9 +5,9 @@ if exists("*synstack")
     return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
   endfunc
   " Echo Syntax Group
-  command! SyntaxEchoGroups :echo <SID>SyntaxGroups()
+  command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
   " Yank Syntax Group
-  command! SyntaxYankGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
+  command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
 
   " Syntax Colors
   function! s:SyntaxColors()
@@ -103,3 +103,8 @@ function! s:Atm(terms) abort
   execute "grep " . a:terms
   let &grepprg = l:original_grepprg
 endfunction
+
+" Yank
+command! YankFileName :let @" = expand("%")|:let @+ = @"|:echo @"
+command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
+command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
