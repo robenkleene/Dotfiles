@@ -47,6 +47,23 @@ fzf-open-widget() {
 zle -N fzf-open-widget
 bindkey '\eo' fzf-open-widget
 
+fzf-z-widget() {
+  local cmd="fasd -Rdl"
+  setopt localoptions pipefail 2> /dev/null
+  local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  if [[ -z "$dir" ]]; then
+    zle redisplay
+    return 0
+  fi
+  cd "$dir"
+  local ret=$?
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle -N fzf-z-widget
+bindkey '\ez' fzf-z-widget
+
 # Private
 
 _robenkleene_fzf_inline() {
