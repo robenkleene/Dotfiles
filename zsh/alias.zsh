@@ -61,6 +61,7 @@ alias tmsq='tmux-session-save-quit'
 alias tmp='tmux-paths'
 alias tmc='tmux-paths-run'
 alias atm='tmux-paths-rg'
+alias tme='fzf-tmux-vim-file'
 
 # emacs
 alias m='magit'
