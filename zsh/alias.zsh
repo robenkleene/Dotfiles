@@ -63,6 +63,7 @@ alias tmp='tmux-paths'
 alias tmc='tmux-paths-run'
 alias atm='tmux-paths-rg'
 alias tme='fzf-tmux-vim-file'
+alias tmgs='tmux-git-status'
 
 # emacs
 alias m='magit'
@@ -99,7 +100,6 @@ alias doce='fzf-documentation-editor'
 alias docc='fzf-documentation-cat'
 
 # git
-alias gstm='tmux-git-status'
 alias gyb='git-yank-branch'
 alias gyh='git-yank-hash'
 alias gyr='git-yank-remote-url'
