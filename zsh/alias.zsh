@@ -5,6 +5,7 @@ alias -g L='| less'
 alias -g A='| rg'
 alias -g Y='| safecopy'
 alias -g Y1='| safecopy1'
+alias -g B='| bbresults --pattern grep'
 # Disable these, there's something very strange about how global aliases call
 # interactive commads. Starting `vim` results it in having to start twice,
 # which is very slow.
