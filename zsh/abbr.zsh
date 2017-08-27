@@ -22,7 +22,7 @@ abbreviations=(
 'tmwr' 'tmux move-window -r'
 'tm' 'tmux' 
 'tmls' 'tmux ls'
-'tmn' 'tmux new'
+'tmsn' 'tmux new'
 'tmd' 'tmux detach'
 
 # cd
