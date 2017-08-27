@@ -33,7 +33,8 @@ alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 # Override
 
 # rg
-alias rg="rg --smart-case --line-number --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white'"
+# Don't use `--line-number` because that doesn't work well when piping to `rg`
+alias rg="rg --smart-case --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white'"
 # mitmproxy
 # Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
 # working with:
