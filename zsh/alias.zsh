@@ -2,7 +2,7 @@
 alias -g G='| grep'
 alias -g C='| column'
 alias -g L='| less'
-alias -g A='| rg'
+alias -g A='| rg --no-line-number'
 alias -g Y='| safecopy'
 alias -g Y1='| safecopy1'
 alias -g B='| bbresults --pattern grep'
@@ -33,8 +33,10 @@ alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 # Override
 
 # rg
-# Don't use `--line-number` because that doesn't work well when piping to `rg`
-alias rg="rg --smart-case --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white'"
+# Adding `--line-number` interferes with piping to `rg`, but without it piping
+# to `vim` will also not have line numbers, so it needs to be turned on here.
+# To work around this, when piping to it use the `A` global alias.
+alias rg="rg --smart-case --line-number --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white'"
 # mitmproxy
 # Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
 # working with:
