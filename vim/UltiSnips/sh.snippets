@@ -21,6 +21,11 @@ if ((${1:$?} > ${2:0})); then
     ${0:exit 1}
 fi
 endsnippet
+snippet ifz "Test empty variable" b
+if [ -z "${2:$EDITOR}" ]; then
+  ${0:echo "$EDITOR is undefined or the empty string"} 
+fi
+endsnippet
 snippet if "Test" b
 if [ -${1:n} ${2:"$path"} ]; then
   ${0:echo $path;} 
