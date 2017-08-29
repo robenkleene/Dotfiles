@@ -99,7 +99,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # cd
-alias cdt='cd-todo'
+alias cdtd='cd-todo'
 
 # doc & snp
 alias snp='fzf-snippet-copy'
