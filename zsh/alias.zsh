@@ -98,6 +98,9 @@ if [ "$(uname)" = "Darwin" ]; then
   alias ox='fzf-project-xcode'
 fi
 
+# cd
+alias cdt='cd-todo'
+
 # doc & snp
 alias snp='fzf-snippet-copy'
 alias snpe='fzf-snippet-editor'

@@ -234,6 +234,13 @@ git-stash-list() {
 cd-yank-path() {
   pwd | tr -d '\n' | tee /dev/tty | safecopy
 }
+cd-todo() {
+  if [ -n "$TODO_DIRECTORY" ]; then
+    cd $TODO_DIRECTORY
+  else
+    echo '$TODO_DIRECTORY is undefined or empty'
+  fi
+}
 
 # Gem
 gem-update-no-doc() {
