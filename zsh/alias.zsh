@@ -51,6 +51,8 @@ alias vimdiff="nvim -d"
 
 # zsh
 alias oi='zsh-edit-config'
+alias ol="$EDITOR settings.sh"
+alias sl="source settings.sh"
 alias dh='dirs -v'
 
 # scripts
