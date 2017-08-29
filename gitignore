@@ -5,7 +5,7 @@
 .*.sw?
 # Vim Local Session
 vim_session
-vim_settings
+settings.vim
 
 # Build Logs
 build.log

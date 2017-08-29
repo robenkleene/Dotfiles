@@ -36,8 +36,10 @@ nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
 nnoremap <leader>sm V"wd:bd<CR>
 " Local Settings
-nnoremap <leader>sl :source vim_settings<CR>
-nnoremap <leader>ol :edit vim_settings<CR>
+" Can't use `s` because it conflicts with "s" for snippets
+" `l` is for "local"
+nnoremap <leader>sl :source settings.vim<CR>
+nnoremap <leader>ol :edit settings.vim<CR>
 " Build Log
 nnoremap <leader>ob :edit build.log<CR>
 
