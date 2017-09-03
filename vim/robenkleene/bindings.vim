@@ -74,7 +74,7 @@ nnoremap <leader>m :make<CR>
 nnoremap <leader>a :Rg 
 
 " Quit & Save Session
-nnoremap <C-s> :QuitSaveSession<CR> 
+nnoremap <A-s> :QuitSaveSession<CR> 
 " Don't use this `ZZ` only quits the current buffer, which is useless for
 " preserving state
 " nnoremap <silent> ZZ :SessionSave<CR>ZZ
@@ -110,8 +110,8 @@ function! s:MarkdownLinkFile() abort
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
-vnoremap <localleader>L :'<,'>call <SID>MarkdownLinkLines()<CR>
-nnoremap <localleader>L :call <SID>MarkdownLinkFile()<CR>
+vnoremap <localleader>l :'<,'>call <SID>MarkdownLinkLines()<CR>
+nnoremap <localleader>l :call <SID>MarkdownLinkFile()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>

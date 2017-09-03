@@ -57,6 +57,16 @@ vim-diff-grep() {
 vim-git-diff() {
   git diff --relative $argv | vim-diff-grep
 }
+vim-todo() {
+  if [ -n "$TODO_FILE" ]; then
+    $VIM_COMMAND $TODO_FILE
+  elif [ -n "$TODO_DIRECTORY" ]; then
+    eval $VIM_COMMAND $TODO_DIRECTORY
+  else
+    echo '$TODO_DIRECTORY is undefined or empty'
+  fi
+}
+
 
 # Emacs
 magit() {

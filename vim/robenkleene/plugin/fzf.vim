@@ -1,7 +1,7 @@
 set rtp+=~/.fzf
 
 nnoremap <leader>b :Buffers<CR>
-nnoremap <localleader>l :BLines<CR>
+" nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <M-e> :Files<CR>
@@ -22,6 +22,8 @@ command! Modified :call fzf#run(fzf#wrap({
       \   'sink': 'e'
       \ }))
 
+" Note from the `tmux-paths` script: "The front program can change the `pwd`,
+" which might result in paths appearing to be missing."
 command! TmuxPaths :call fzf#run(fzf#wrap({
       \   'source':  "tmux-paths",
       \   'sink': function('<SID>cd_sink')
