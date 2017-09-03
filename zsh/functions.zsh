@@ -54,7 +54,7 @@ vim-git-conflicts() {
 vim-diff-grep() {
   diff-to-grep | vim-grep
 }
-vim-git-hunks() {
+vim-git-diff() {
   git diff --relative $argv | vim-diff-grep
 }
 

@@ -78,7 +78,7 @@ alias e="$EMACS_COMMAND"
 alias r='ranger-cd'
 
 # vim
-alias vgh='vim-git-hunks'
+alias vgd='vim-git-diff'
 alias vdg='vim-diff-grep'
 alias vgm='vim-git-modified'
 alias vgc='vim-git-conflicts'
