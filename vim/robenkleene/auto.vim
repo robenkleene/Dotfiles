@@ -54,7 +54,8 @@ augroup END
 " Fix quickfix colors
 augroup quickfix_colors
   autocmd!
-  " These interfere with quickfix highlighting
+  " These interfere with the selected line being highlighted in quickfix
+  " windows
   autocmd VimEnter,WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
   autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
