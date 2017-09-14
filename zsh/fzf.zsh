@@ -14,6 +14,9 @@ bindkey '^[r' fzf-history-widget
 # Custom Bindings
 
 fzf-editor-widget() {
+  if [[ -n "$LBUFFER" ]]; then
+    return
+  fi
   local files="$(__fsel)"
   if [[ -z "$files" ]]; then
     zle redisplay
@@ -31,6 +34,9 @@ zle -N fzf-editor-widget
 bindkey '\ee' fzf-editor-widget
 
 fzf-open-widget() {
+  if [[ -n "$LBUFFER" ]]; then
+    return
+  fi
   local files="$(__fsel)"
   if [[ -z "$files" ]]; then
     zle redisplay
@@ -48,6 +54,9 @@ zle -N fzf-open-widget
 bindkey '\eo' fzf-open-widget
 
 fzf-z-widget() {
+  if [[ -n "$LBUFFER" ]]; then
+    return
+  fi
   local cmd="fasd -Rdl"
   setopt localoptions pipefail 2> /dev/null
   local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
