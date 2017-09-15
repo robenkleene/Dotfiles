@@ -130,7 +130,9 @@ set dictionary+=/usr/share/dict/words
 
 " Don't auto-select the first full match
 " This makes it easier to get to one option of many
-set completeopt+=longest
+" Trying this off because not auto-selecting the first match is annoying and
+" often always requires an extra keystroke to select.
+" set completeopt+=longest
 
 " Use `rg` if available
 " if executable("rg")
