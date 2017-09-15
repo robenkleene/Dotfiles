@@ -1,0 +1,2 @@
+# This is set in global `.gitignore`
+!settings.vim
