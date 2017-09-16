@@ -76,6 +76,9 @@ set linebreak
 " Default Fold Method
 set foldmethod=syntax
 
+" Show folds in gutter
+set foldcolumn=1
+
 " Don't Start Folded
 set nofoldenable
 

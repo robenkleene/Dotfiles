@@ -88,6 +88,7 @@ highlight NonText ctermfg=238
 " Folding {{{1
 " Same as inactive status line
 highlight Folded ctermfg=249 ctermbg=237
+highlight FoldColumn ctermfg=238
 
 " Warnings & Errors {{{1
 highlight WarningMsg ctermfg=black ctermbg=yellow cterm=bold
