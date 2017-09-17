@@ -42,7 +42,7 @@ nnoremap <leader>sl :source settings.vim<CR>
 nnoremap <leader>ol :edit settings.vim<CR>
 " Build Log
 nnoremap <leader>ob :edit build.log<CR>
-nnoremap <leader>ot:edit test.log<CR>
+nnoremap <leader>ot :edit test.log<CR>
 
 " Documentation
 " nnoremap <leader>d :split ~/Documentation/development-references/Vim/<CR>:cd %<CR>:echo ""<CR>
