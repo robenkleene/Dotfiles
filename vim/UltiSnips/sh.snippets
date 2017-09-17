@@ -3,17 +3,17 @@ echo "${1:HOME} = \$$1"
 endsnippet
 snippet ifd "Test directory" b
 if [ -d ${1:"$dir"} ]; then
-  ${0:echo $dir;} 
+  ${0:echo $dir} 
 fi
 endsnippet
 snippet iff "Test file" b
 if [ -f ${1:"$file"} ]; then
-  ${0:echo $file;} 
+  ${0:echo $file} 
 fi
 endsnippet
 snippet ifl "Test link" b
 if [ -L ${1:"$file"} ]; then
-  ${0:echo $file;} 
+  ${0:echo $file} 
 fi
 endsnippet
 snippet ife "Test exit status" b
@@ -33,7 +33,7 @@ fi
 endsnippet
 snippet if "Test" b
 if [ -${1:n} ${2:"$path"} ]; then
-  ${0:echo $path;} 
+  ${0:echo $path} 
 fi
 endsnippet
 snippet template "Basic template" b
