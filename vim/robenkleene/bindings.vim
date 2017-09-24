@@ -131,8 +131,8 @@ function! s:ArchiveLines(bang) range abort
   echom "Backed up ".lineCount." lines"
 endfunction
 command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
-vnoremap <localleader>B :'<,'>BackupText<CR>
-vnoremap <localleader>D :'<,'>BackupText!<CR>
+vnoremap <localleader>a :'<,'>BackupText<CR>
+vnoremap <localleader>d :'<,'>BackupText!<CR>
 
 " Visual Star
 " makes * and # work on visual mode too.
