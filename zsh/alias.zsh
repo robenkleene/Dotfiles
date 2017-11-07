@@ -87,7 +87,7 @@ alias vgm='vim-git-modified'
 alias vgc='vim-git-conflicts'
 alias vse='vim-server-edit'
 alias vsr='vim-session-restore'
-alias var='vim-session-restore-auto'
+alias vsra='vim-session-restore-auto'
 # alias vss='vim-server-start'
 
 # emacs
