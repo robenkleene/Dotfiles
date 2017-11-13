@@ -66,6 +66,7 @@ let b:terminalorneovim = !has('gui_running') || has('nvim')
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
+Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
