@@ -104,6 +104,9 @@ fi
 # cd
 alias cdtd='cd-todo'
 
+# tags
+alias tg='fzf-tags-vim'
+
 # doc & snp
 alias snp='fzf-snippet-copy'
 alias snpe='fzf-snippet-editor'
