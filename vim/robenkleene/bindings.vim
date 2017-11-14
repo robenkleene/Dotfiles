@@ -177,8 +177,10 @@ nnoremap <C-w>t :tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
 nnoremap <A-n> gt
 nnoremap <A-p> gT
-nnoremap <C-w>n gt
-nnoremap <C-w>p gT
+" Disable these use the above ones, these are too easy to accidently open new
+" splits with `<C-w><C-n>`, also `<C-w>n` is a default new split binding.
+" nnoremap <C-w>n gt
+" nnoremap <C-w>p gT
 
 " Neovim Terminal
 if has('nvim')
