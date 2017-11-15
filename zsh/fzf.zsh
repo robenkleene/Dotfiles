@@ -150,7 +150,7 @@ fzf-line-vim() {
 
 
 fzf-tags-vim() {
-  local result=$(~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
+  local result=$(~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags | FZF_DEFAULT_OPTS="--nth 1..2 -m --tiebreak=begin --prompt \"Tags> \" --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
     echo $result | $VIM_COMMAND -c "TagBuffer" -
   fi
