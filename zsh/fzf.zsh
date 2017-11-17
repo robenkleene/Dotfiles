@@ -73,6 +73,26 @@ fzf-z-widget() {
 zle -N fzf-z-widget
 bindkey '\ez' fzf-z-widget
 
+fzf-tags-widget() {
+  if [[ -n "$LBUFFER" ]]; then
+    return
+  fi
+  local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
+  setopt localoptions pipefail 2> /dev/null
+  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  if [[ -z "$result" ]]; then
+    zle redisplay
+    return 0
+  fi
+  echo $result | $VIM_COMMAND -c "TagBuffer" -
+  local ret=$?
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle -N fzf-tags-widget
+bindkey '\ei' fzf-tags-widget
+
 # Private
 
 _robenkleene_fzf_inline() {
