@@ -66,7 +66,11 @@ _fzf_z() {
 
 fzf-z-widget() {
   if [[ -n "$LBUFFER" ]]; then
-    return
+    LBUFFER="${LBUFFER}$(_fzf_z)"
+    local ret=$?
+    zle redisplay
+    typeset -f zle-line-init >/dev/null && zle zle-line-init
+    return $ret
   fi
   # Can't use `_fzf_z` here because it inserts a space at the end
   local cmd="fasd -Rdl"
@@ -84,16 +88,6 @@ fzf-z-widget() {
 }
 zle -N fzf-z-widget
 bindkey '\ez' fzf-z-widget
-
-fzf-z-argument-widget() {
-  LBUFFER="${LBUFFER}$(_fzf_z)"
-  local ret=$?
-  zle redisplay
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-zle     -N   fzf-z-argument-widget
-bindkey '^Z' fzf-z-argument-widget
 
 fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
