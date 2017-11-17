@@ -53,10 +53,22 @@ fzf-open-widget() {
 zle -N fzf-open-widget
 bindkey '\eo' fzf-open-widget
 
+_fzf_z() {
+  local cmd="fasd -Rdl"
+  setopt localoptions pipefail 2> /dev/null
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" $(__fzfcmd) -m "$@" | while read item; do
+    echo -n "${(q)item} "
+  done
+  local ret=$?
+  echo
+  return $ret
+}
+
 fzf-z-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
   fi
+  # Can't use `_fzf_z` here because it inserts a space at the end
   local cmd="fasd -Rdl"
   setopt localoptions pipefail 2> /dev/null
   local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
@@ -72,6 +84,16 @@ fzf-z-widget() {
 }
 zle -N fzf-z-widget
 bindkey '\ez' fzf-z-widget
+
+fzf-z-argument-widget() {
+  LBUFFER="${LBUFFER}$(_fzf_z)"
+  local ret=$?
+  zle redisplay
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle     -N   fzf-z-argument-widget
+bindkey '^Z' fzf-z-argument-widget
 
 fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
