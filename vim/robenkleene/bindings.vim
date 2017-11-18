@@ -102,12 +102,12 @@ nnoremap <C-w>> 5<C-w>>
 
 " Markdown link
 function! s:MarkdownLinkLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link-github -l '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
 function! s:MarkdownLinkFile() abort
-  let @" = system('~/Development/Scripts/bin/markdown-link '.fnameescape(expand('%:p')))
+  let @" = system('~/Development/Scripts/bin/markdown-link-github '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
