@@ -100,19 +100,28 @@ nnoremap <C-w>> 5<C-w>>
 " nnoremap <S-Left> <C-w><C-h>
 
 
-" Markdown link
-function! s:MarkdownLinkLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/markdown-link-github -l '.line('.').' '.fnameescape(expand('%:p')))
+" Yank Markdown Links
+function! s:LinkMarkdownYank() abort
+  let @" = system('~/Development/Scripts/bin/link-github-markdown '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
-function! s:MarkdownLinkFile() abort
-  let @" = system('~/Development/Scripts/bin/markdown-link-github '.fnameescape(expand('%:p')))
+function! s:LinkMarkdownYankLines() range abort
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked Markdown link"
 endfunction
-vnoremap <localleader>l :'<,'>call <SID>MarkdownLinkLines()<CR>
-nnoremap <localleader>l :call <SID>MarkdownLinkFile()<CR>
+nnoremap <localleader>l :call <SID>LinkMarkdownYank()<CR>
+vnoremap <localleader>l :'<,'>call <SID>LinkMarkdownYankLines()<CR>
+" Open GitHub Links
+function! s:LinkGithubOpen() abort
+  echo system('~/Development/Scripts/bin/link-github-open '.fnameescape(expand('%:p')))
+endfunction
+function! s:LinkGithubOpenLines() range abort
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
+endfunction
+nnoremap <localleader>L :call <SID>LinkGithubOpen()<CR>
+vnoremap <localleader>L :'<,'>call <SID>LinkGithubOpenLines()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>
