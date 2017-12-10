@@ -1,5 +1,5 @@
 setlocal suffixesadd=.swift,.h,.m
-nnoremap <localleader>x :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <localleader>O :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
 " nnoremap <localleader>r :!swift "%"<CR>
 nnoremap <localleader>r :call <SID>RunSwift()<CR>
