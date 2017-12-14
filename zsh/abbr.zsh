@@ -21,6 +21,7 @@ abbreviations=(
 'tmsw' 'tmux swap-window -t'
 'tmwr' 'tmux move-window -r'
 'tm' 'tmux' 
+'tmb' 'tmux-banner'
 'tmls' 'tmux ls'
 'tmsn' 'tmux new'
 'tmd' 'tmux detach'
