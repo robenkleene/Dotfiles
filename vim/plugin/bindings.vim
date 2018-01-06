@@ -104,29 +104,12 @@ nnoremap <C-w>> 5<C-w>>
 " nnoremap <S-Right> <C-w><C-l>
 " nnoremap <S-Left> <C-w><C-h>
 
-
 " Yank Markdown Links
-function! s:LinkMarkdownYank() abort
-  let @" = system('~/Development/Scripts/bin/link-github-markdown '.fnameescape(expand('%:p')))
-  let @* = @"
-  echo "Yanked Markdown link"
-endfunction
-function! s:LinkMarkdownYankLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
-  let @* = @"
-  echo "Yanked Markdown link"
-endfunction
-nnoremap <localleader>l :call <SID>LinkMarkdownYank()<CR>
-vnoremap <localleader>l :'<,'>call <SID>LinkMarkdownYankLines()<CR>
+nnoremap <localleader>l :call bindings#LinkMarkdownYank()<CR>
+vnoremap <localleader>l :'<,'>call bindings#LinkMarkdownYankLines()<CR>
 " Open GitHub Links
-function! s:LinkGithubOpen() abort
-  echo system('~/Development/Scripts/bin/link-github-open '.fnameescape(expand('%:p')))
-endfunction
-function! s:LinkGithubOpenLines() range abort
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
-endfunction
-nnoremap <localleader>L :call <SID>LinkGithubOpen()<CR>
-vnoremap <localleader>L :'<,'>call <SID>LinkGithubOpenLines()<CR>
+nnoremap <localleader>L :call bindings#LinkGithubOpen()<CR>
+vnoremap <localleader>L :'<,'>call bindings#LinkGithubOpenLines()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>
@@ -134,46 +117,27 @@ nnoremap <leader>yf :let @*=expand("%:t")<CR>
 nnoremap <leader>yd :let @*=expand('%:p:h:t')<CR>
 
 " Backup Text
-function! s:ArchiveLines(bang) range abort
-  let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
-  if (a:bang == 1)
-    let temp = @s
-    silent normal! gv"sd
-    let @s = temp
-  endif
-  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
-  echom "Backed up ".lineCount." lines"
-endfunction
-command! -bang -range BackupText <line1>,<line2>call <SID>ArchiveLines(<bang>0)
+command! -bang -range BackupText <line1>,<line2>call bindings#ArchiveLines(<bang>0)
 vnoremap <localleader>a :'<,'>BackupText<CR>
 vnoremap <localleader>d :'<,'>BackupText!<CR>
 
-" Visual Star
+" `grep` Visual Star
 " makes * and # work on visual mode too.
-function! s:VSetSearch(cmdtype) abort
-  let temp = @s
-  norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-  let @s = temp
-endfunction
-
-xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+xnoremap * :<C-u>call bindings#VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call bindings#VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+" `rg` Visual Star
+" With a visual selection, an exact term is searched for
+" With no visual selection, the current word is searched for
+" (The `\\|` is not intuitive, this is because `|` separates commands in
+" Vimscript)
+nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
+vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 
 " Panes
 " The problem with `tmux` Vim navigator is that if Vim is opened form a
 " subprocess in a `tmux` pane (e.g., `tig -> Vim`), then moving between Vim
 " panes will break, because `tmux` won't be able to detect that Vim is
 " actually running as a child of `tig`.
-
-if !has('nvim')
-  let c='a'
-  while c <= 'z'
-    exec "set <M-".tolower(c).">=\e".c
-    exec "nnoremap \e".c." <M-".tolower(c).">"
-    let c = nr2char(1+char2nr(c))
-  endw
-endif
 
 noremap <A-h> <C-w>h
 noremap <A-j> <C-w>j
@@ -199,106 +163,8 @@ nnoremap <C-w>p gT
 " nnoremap <C-w>n gt
 " nnoremap <C-w>p gT
 
-" Neovim Terminal
-if has('nvim')
-  function! s:OpenTTerminal()
-    " Only remap `<Esc>` in this buffer so it doesn't interfere
-    " with commands that spawn terminals like `fzf`
-    tabnew
-    terminal zsh
-    tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-  function! s:OpenTerminal()
-    " Only remap `<Esc>` in this buffer so it doesn't interfere
-    " with commands that spawn terminals like `fzf`
-    split
-    terminal zsh
-    tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-  function! s:OpenVTerminal()
-    " Only remap `<Esc>` in this buffer so it doesn't interfere
-    " with commands that spawn terminals like `fzf`
-    vsplit
-    terminal zsh
-    " Make escape exit insert mode
-    tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-  command! TigStatus call <SID>TigStatus()
-  function! s:TigStatus() abort
-    tabnew
-    execute 'terminal EDITOR=nvim-edit tig status +3'
-    " Make escape exit insert mode
-    " tnoremap <buffer> <Esc> <C-\><C-n>
-  endfunction
-
-  nnoremap <leader>tt :call <SID>OpenTerminal()<CR>
-  nnoremap <leader>ts :call <SID>TigStatus()<CR>
-  " nnoremap <leader>tv :call <SID>OpenVTerminal()<CR>
-  " nnoremap <leader>tt :call <SID>OpenTTerminal()<CR>
-  command! Term :call <SID>OpenTerminal()
-  command! VTerm :call <SID>OpenVTerminal()
-  command! TTerm :call <SID>OpenTTerminal()
-  tnoremap <A-h> <C-\><C-n><C-w>h
-  tnoremap <A-j> <C-\><C-n><C-w>j
-  tnoremap <A-k> <C-\><C-n><C-w>k
-  tnoremap <A-l> <C-\><C-n><C-w>l
-endif
-
-function! s:GrepVisual() abort
-  let temp = @s
-  norm! gv"sy
-  execute "Rg --fixed-strings '" . @s . "'"
-  let @s = temp
-  if len(getqflist())
-    copen
-  endif
-endfunction
-" With a visual selection, an exact term is searched for
-" With no visual selection, the current word is searched for
-" (The `\\|` is not intuitive, this is because `|` separates commands in
-" Vimscript)
-nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
-vnoremap <leader>* :<C-u>call <SID>GrepVisual()<CR>
-
-" Toggle `quickfix`
-function! s:GetBufferList() abort
-  redir =>buflist 
-  silent! ls 
-  redir END 
-  return buflist 
-endfunction
-function! s:ToggleQuickfixList() abort
-  for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
-    if bufwinnr(bufnum) != -1
-      cclose
-      return
-    endif
-  endfor
-  let winnr = winnr()
-  copen
-  if winnr() != winnr
-    wincmd p
-  endif
-endfunction
-nnoremap <script> <silent> <leader>q :call <SID>ToggleQuickfixList()<CR>
+" Quickfix
+nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
 " Todo
-function! s:OpenTodo() abort
-  if !empty($TODO_FILE)
-    split
-    edit $TODO_FILE
-    return
-  endif
-
-  if !empty($TODO_DIRECTORY)
-    split
-    Explore $TODO_DIRECTORY 
-    return
-  endif
-
-  echom "No TODO_FILE or TODO_DIRECTORY defined."
-  " split
-  " terminal zsh
-  " tnoremap <buffer> <Esc> <C-\><C-n>
-endfunction
-nnoremap <leader>d :call <SID>OpenTodo()<CR>
+nnoremap <leader>d :call bindings#OpenTodo()<CR>
