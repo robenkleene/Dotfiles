@@ -29,6 +29,11 @@ nnoremap Y y$
 " `C-w` insert word at point like Emacs
 " cnoremap <C-w> <C-R><C-W>
 
+" Leader
+" Leader seems to nned to be set before leader mappings?
+let mapleader = "\<space>"
+let maplocalleader = "\\"
+
 " vimrc
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/<CR>:edit robenkleene/robenkleene.vim<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>

@@ -76,35 +76,17 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 call plug#end()
 
-" Aliases (Abbreviations) are at:
-" ~/Development/Dotfiles/vim/after/plugin/alias.vim
-
 " Source {{{1
-source ~/.vim/robenkleene/settings.vim
-source ~/.vim/robenkleene/ui.vim
 if !has('gui_running')
   source ~/.vim/robenkleene/colors.vim
 endif
 if has("gui_vimr")
   source ~/.gvimrc
 endif
-source ~/.vim/robenkleene/commands.vim
-source ~/.vim/robenkleene/bindings.vim
-source ~/.vim/robenkleene/operators.vim
-source ~/.vim/robenkleene/auto.vim
 
-" Plugins {{{1
-source ~/.vim/robenkleene/plugin/commentary.vim
+" source ~/.vim/robenkleene/plugin/commentary.vim
 if !has('gui_running') || has('gui_vimr')
-  source ~/.vim/robenkleene/plugin/fzf.vim
+  source ~/.vim/robenkleene/plugins/fzf.vim
 else
-  source ~/.vim/robenkleene/plugin/ctrlp.vim
+  source ~/.vim/robenkleene/plugins/ctrlp.vim
 end
-source ~/.vim/robenkleene/plugin/test.vim
-source ~/.vim/robenkleene/plugin/fugitive.vim
-source ~/.vim/robenkleene/plugin/surround.vim
-source ~/.vim/robenkleene/plugin/tagbar.vim
-source ~/.vim/robenkleene/plugin/ultisnips.vim
-source ~/.vim/robenkleene/plugin/rainbow_parentheses.vim
-source ~/.vim/robenkleene/plugin/signify.vim
-source ~/.vim/robenkleene/plugin/linediff.vim
