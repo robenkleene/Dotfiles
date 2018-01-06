@@ -43,3 +43,13 @@ function! commands#Atm(terms) abort
   execute "grep " . a:terms
   let &grepprg = l:original_grepprg
 endfunction
+
+" Terminal Commands
+" if exists(':terminal')
+"   command! Doc call commands#Doc()
+"   function! s:Doc() abort
+"     split
+"     execute 'terminal doc'
+"     tnoremap <buffer> <Esc> <C-\><C-n>
+"   endfunction
+" endif

@@ -12,15 +12,6 @@ command! SessionRestoreLocal :source vim_session
 command! SessionRestore :source ~/.vim/vim_session
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
 command! QuitSaveSession :call commands#QuitSaveSession()
-" Terminal Commands
-" if exists(':terminal')
-"   command! Doc call commands#Doc()
-"   function! s:Doc() abort
-"     split
-"     execute 'terminal doc'
-"     tnoremap <buffer> <Esc> <C-\><C-n>
-"   endfunction
-" endif
 
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
