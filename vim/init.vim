@@ -3,4 +3,4 @@
 " ln -s ~/.vim ~/.config/nvim
 " and:
 " pip3 install neovim
-source ~/.vim/robenkleene/robenkleene.vim
+source ~/.vim/robenkleene/setup.vim
