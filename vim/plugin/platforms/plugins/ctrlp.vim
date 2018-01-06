@@ -1,3 +1,8 @@
+if !has('gui_running')
+  " Use `fzf` instead
+  finish
+endif
+
 " Use `ag` if available
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore

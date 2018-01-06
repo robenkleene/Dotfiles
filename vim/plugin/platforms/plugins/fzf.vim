@@ -1,3 +1,8 @@
+if has('gui_running')
+  " Use `ctrlp` instead
+  finish
+endif
+
 set rtp+=~/.fzf
 
 nnoremap <leader>b :Buffers<CR>

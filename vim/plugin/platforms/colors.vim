@@ -1,4 +1,8 @@
-" Color Scheme {{{1
+" Terminal Colors
+
+if has('gui_running')
+  finish
+endif
 
 " Notes for working with colors:
 " `XtermColorTable` displays the hex colors a terminal equivalents
@@ -19,11 +23,11 @@ highlight rubyControl ctermfg=lightblue
 highlight rubyInterpolationDelimiter ctermfg=lightblue
 
 augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
+  autocmd!
+  autocmd ColorScheme * call <SID>MyHighlights()
 augroup END
 
-function! MyHighlights() abort
+function! s:MyHighlights() abort
   " Background {{{1
   let s:bgcolor = 'NONE'
   let s:backgroundgroups = [

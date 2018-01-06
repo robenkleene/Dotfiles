@@ -1,2 +1,2 @@
 " Vim Init
-source ~/.vim/robenkleene/setup.vim
+source ~/.vim/init.vim
