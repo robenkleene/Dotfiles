@@ -1,67 +1,20 @@
-" Colors
-if exists("*synstack")
-  " Syntax Groups
-  function! s:SyntaxGroups()
-    return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
-  endfunc
-  " Echo Syntax Group
-  command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
-  " Yank Syntax Group
-  command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
-
-  " Syntax Colors
-  function! s:SyntaxColors()
-    let syntaxcolors = 'fg:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg")
-    let syntaxcolors .= ' fg#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
-    let syntaxcolors .= ' bg:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg")
-    let syntaxcolors .= ' bg#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")
-    let syntaxcolors .= ' sp:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp")
-    let syntaxcolors .= ' sp#:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"sp#")
-    let syntaxcolors .= ' italic:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"italic")
-    let syntaxcolors .= ' reverse:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"reverse")
-    let syntaxcolors .= ' inverse:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"inverse")
-    let syntaxcolors .= ' standout:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"standout")
-    let syntaxcolors .= ' underline:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"underline")
-    let syntaxcolors .= ' undercurl:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"undercurl")
-    return syntaxcolors
-  endfunc
-  " Echo Syntax Colors
-  command! SyntaxEchoColors :echo <SID>SyntaxColors()
-endif
 " Also remember `:XtermColorTable`
 command! RunHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
 " Make the current buffer a grep buffer
-command! GrepBuffer :call <SID>GrepBuffer()
-function! s:GrepBuffer() abort
-  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
-  " `cbuffer`: Convert to `quickfix`
-  " `bprevious`: Go back to grep input
-  " `bdelete`: Delete the grep buffer
-  if line('$') == 1
-    " Don't show the quickfix list if there's exactly one match
-    execute "cbuffer | bprevious | bdelete"
-  else
-    execute "cbuffer | bprevious | bdelete | cw | wincmd k"
-  endif
-endfunction
+command! GrepBuffer :call commands#GrepBuffer()
 
-" Save and Restore Session State
+" Save & Restore Sessions
 command! SessionSaveLocal :mksession! vim_session
 command! SessionSave :mksession! ~/.vim/vim_session
 command! SessionRestoreLocal :source vim_session
 command! SessionRestore :source ~/.vim/vim_session
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
-command! QuitSaveSession :call <SID>QuitSaveSession()
-function! s:QuitSaveSession() abort
-  SessionSave
-  qa
-endfunction
-
+command! QuitSaveSession :call commands#QuitSaveSession()
 " Terminal Commands
 " if exists(':terminal')
-"   command! Doc call <SID>Doc()
+"   command! Doc call commands#Doc()
 "   function! s:Doc() abort
 "     split
 "     execute 'terminal doc'
@@ -76,33 +29,12 @@ command! Ghunks cexpr system('git diff --relative \| dtg')
 command! Wcd :lcd $PWD
 
 " Go to `git` root
-command! Gcd :call <SID>Gcd()
-function! s:Gcd() abort
-  let l:git_root = system('git rev-parse --show-toplevel | tr -d "\n"')
-  if v:shell_error == 0
-    execute 'lcd '.fnameescape(l:git_root)
-  else
-    echo "Not in a git respository."
-  endif
-endfunction
+command! Gcd :call commands#Gcd()
+" `rg`
+command! -nargs=* Rg :call commands#Rg(<q-args>)
 
-" Rg
-command! -nargs=* Rg :call <SID>Rg(<q-args>)
-function! s:Rg(terms) abort
-  let l:original_grepprg = &grepprg
-  set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
-  execute "grep " . a:terms
-  let &grepprg = l:original_grepprg
-endfunction
-
-" Atm
-command! -nargs=* Atm :call <SID>Atm(<q-args>)
-function! s:Atm(terms) abort
-  let l:original_grepprg = &grepprg
-  set grepprg=tmux-paths-rg
-  execute "grep " . a:terms
-  let &grepprg = l:original_grepprg
-endfunction
+" `rg` & `tmux`
+command! -nargs=* Atm :call commands#Atm(<q-args>)
 
 " Yank
 command! YankFileName :let @" = expand("%")|:let @+ = @"|:echo @"
