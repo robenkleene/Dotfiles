@@ -18,6 +18,7 @@ nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
+nnoremap <M-i> :Tags<CR>
 
 command! -bang -nargs=? FZFDocumentation lcd ~/Documentation/development-references/|call fzf#vim#files(<q-args>, <bang>0)
 
