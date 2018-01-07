@@ -73,7 +73,7 @@ let b:terminalorneovim = !has('gui_running') || has('nvim')
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 " Also update `fzf` in external directory, it's a good idea to keep the plugin
 " and `fzf` version in sync
-Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc' })
+Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
