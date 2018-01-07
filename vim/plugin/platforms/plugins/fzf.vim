@@ -3,8 +3,6 @@ if has('gui_running')
   finish
 endif
 
-set rtp+=~/.fzf
-
 nnoremap <leader>b :Buffers<CR>
 " nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
