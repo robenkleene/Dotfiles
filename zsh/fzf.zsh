@@ -56,7 +56,7 @@ bindkey '\eo' fzf-open-widget
 _fzf_z() {
   local cmd="fasd -Rdl"
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" $(__fzfcmd) -m "$@" | while read item; do
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m "$@" | while read item; do
     echo -n "${(q)item} "
   done
   local ret=$?
@@ -95,7 +95,7 @@ fzf-tags-widget() {
   fi
   local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" $(__fzfcmd) -m)"
   if [[ -z "$result" ]]; then
     zle redisplay
     return 0
