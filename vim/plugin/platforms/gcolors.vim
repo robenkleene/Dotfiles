@@ -4,9 +4,7 @@ if !has('gui_running')
   finish
 endif
 
-colorscheme ir_black
-set background=dark
-
+" Set the `augroup` before setting the `colorscheme`
 augroup MyGUIColors
   autocmd!
   autocmd ColorScheme * call <SID>MyGUIHighlights()
@@ -158,3 +156,6 @@ function! s:MyGUIHighlights() abort
   highlight SyntasticStyleWarningSign guifg=yellow
 
 endfunction
+
+colorscheme ir_black
+set background=dark

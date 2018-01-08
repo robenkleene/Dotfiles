@@ -11,17 +11,7 @@ endif
 " `:so $VIMRUNTIME/syntax/hitest.vim` lists all the styled syntax groups
 " Or use my command `:RunHighlightTest`
 
-" Colorscheme
-set background=dark
-colorscheme tir_black
-" tir_black bug fixes
-" For some reason "blue" display weird in console vim when it overlaps with the
-" highlighted cursorline (test this by running `RunColorTest` and then going
-" to the `blue` or `darkblue` lines. Changes these colors to another fixes
-" this)
-highlight rubyControl ctermfg=lightblue
-highlight rubyInterpolationDelimiter ctermfg=lightblue
-
+" Set the `augroup` before setting the color scheme
 augroup MyColors
   autocmd!
   autocmd ColorScheme * call <SID>MyHighlights()
@@ -184,3 +174,14 @@ function! s:MyHighlights() abort
   highlight ALEStyleErrorSign ctermfg=yellow
 
 endfunction
+
+" Colorscheme
+set background=dark
+colorscheme tir_black
+" tir_black bug fixes
+" For some reason "blue" display weird in console vim when it overlaps with the
+" highlighted cursorline (test this by running `RunColorTest` and then going
+" to the `blue` or `darkblue` lines. Changes these colors to another fixes
+" this)
+highlight rubyControl ctermfg=lightblue
+highlight rubyInterpolationDelimiter ctermfg=lightblue
