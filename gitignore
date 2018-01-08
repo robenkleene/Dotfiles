@@ -6,7 +6,9 @@
 # Vim Local Session
 vim_session
 # Vim Local Settings
-settings.vim
+# This filename is too common
+# settings.vim
+vim_settings
 
 # Bash Local Settings
 settings.sh

@@ -43,8 +43,8 @@ nnoremap <leader>sm V"wd:bd<CR>
 " Local Settings
 " Can't use `s` because it conflicts with "s" for snippets
 " `l` is for "local"
-nnoremap <leader>sl :source settings.vim<CR>
-nnoremap <leader>ol :edit settings.vim<CR>
+nnoremap <leader>sl :source vim_settings<CR>
+nnoremap <leader>ol :edit vim_settings<CR>
 " Build Log
 nnoremap <leader>ob :edit build.log<CR>
 nnoremap <leader>ot :edit test.log<CR>
