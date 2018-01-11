@@ -51,10 +51,6 @@ set mouse=
 " set iskeyword-=_
 set iskeyword+=-
 
-" Leader
-let mapleader = "\<space>"
-let maplocalleader = "\\"
-
 " Allow hidden buffers
 set hidden
 
