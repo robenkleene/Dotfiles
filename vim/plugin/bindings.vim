@@ -149,14 +149,20 @@ noremap <S-Down> <C-w>j
 noremap <S-Up> <C-w>k
 noremap <S-Right> <C-w>l
 
-" Tab
+" Open and Close Tab
 nnoremap <C-w>t :tabnew<CR>
-" nnoremap <C-w>t <C-w>s<C-w>T
+vnoremap <C-w>t :<C-u>tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
+vnoremap <C-w>q :<C-u>tabclose<CR>
+" Switching Tabs
 nnoremap <A-n> gt
 nnoremap <A-p> gT
+vnoremap <A-n> gt
+vnoremap <A-p> gT
 nnoremap <C-w>n gt
 nnoremap <C-w>p gT
+vnoremap <C-w>n gt
+vnoremap <C-w>p gT
 
 " Disable these use the above ones, these are too easy to accidently open new
 " splits with `<C-w><C-n>`, also `<C-w>n` is a default new split binding.
