@@ -104,9 +104,12 @@ nnoremap <C-w>> 5<C-w>>
 " nnoremap <S-Right> <C-w><C-l>
 " nnoremap <S-Left> <C-w><C-h>
 
-" Yank Markdown Links
-nnoremap <localleader>l :call bindings#LinkMarkdownYank()<CR>
-vnoremap <localleader>l :'<,'>call bindings#LinkMarkdownYankLines()<CR>
+" Yank GitHub Links
+nnoremap <localleader>l :call bindings#LinkGitHubYank()<CR>
+vnoremap <localleader>l :'<,'>call bindings#LinkGitHubYankLines()<CR>
+" Yank GitHub Markdown Links
+nnoremap <localleader>m :call bindings#LinkGitHubMarkdownYank()<CR>
+vnoremap <localleader>m :'<,'>call bindings#LinkGitHubMarkdownYankLines()<CR>
 " Open GitHub Links
 nnoremap <localleader>L :call bindings#LinkGithubOpen()<CR>
 vnoremap <localleader>L :'<,'>call bindings#LinkGithubOpenLines()<CR>

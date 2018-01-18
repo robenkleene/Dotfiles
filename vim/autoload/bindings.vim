@@ -1,13 +1,23 @@
 " Yank Markdown Links
-function! bindings#LinkMarkdownYank() abort
+function! bindings#LinkGitHubYank() abort
+  let @" = system('~/Development/Scripts/bin/link-github-markdown --url-only '.fnameescape(expand('%:p')))
+  let @* = @"
+  echo "Yanked GitHub link"
+endfunction
+function! bindings#LinkGitHubYankLines() range abort
+  let @" = system('~/Development/Scripts/bin/link-github-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @* = @"
+  echo "Yanked GitHub link"
+endfunction
+function! bindings#LinkGitHubMarkdownYank() abort
   let @" = system('~/Development/Scripts/bin/link-github-markdown '.fnameescape(expand('%:p')))
   let @* = @"
-  echo "Yanked Markdown link"
+  echo "Yanked GitHub Markdown link"
 endfunction
-function! bindings#LinkMarkdownYankLines() range abort
+function! bindings#LinkGitHubMarkdownYankLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
-  echo "Yanked Markdown link"
+  echo "Yanked GitHub Markdown link"
 endfunction
 
 " Open GitHub Links
