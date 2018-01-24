@@ -5,7 +5,7 @@ function! bindings#LinkGitHubYank() abort
   echo "Yanked GitHub link"
 endfunction
 function! bindings#LinkGitHubYankLines() range abort
-  let @" = system('~/Development/Scripts/bin/link-github-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked GitHub link"
 endfunction
