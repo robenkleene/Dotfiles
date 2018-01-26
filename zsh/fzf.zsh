@@ -89,6 +89,33 @@ fzf-z-widget() {
 zle -N fzf-z-widget
 bindkey '\ez' fzf-z-widget
 
+fzf-zvim-widget() {
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER="${LBUFFER}$(_fzf_z)"
+    local ret=$?
+    zle redisplay
+    typeset -f zle-line-init >/dev/null && zle zle-line-init
+    return $ret
+  fi
+  # Can't use `_fzf_z` here because it inserts a space at the end
+  local cmd="fasd -Rfl"
+  setopt localoptions pipefail 2> /dev/null
+  local files="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m)"
+  if [[ -z "$files" ]]; then
+    zle redisplay
+    return 0
+  fi
+  exec </dev/tty
+  setopt localoptions pipefail 2> /dev/null
+  eval $EDITOR $files
+  local ret=$?
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle -N fzf-zvim-widget
+bindkey '\ev' fzf-zvim-widget
+
 fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
