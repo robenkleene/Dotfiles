@@ -12,6 +12,7 @@ nnoremap <leader>c :Cd<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <M-t> :TmuxPaths<CR>
 nnoremap <M-z> :Z<CR>
+nnoremap <M-v> :Zvim<CR>
 nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
 nnoremap <localleader>i :BTags<CR>
@@ -50,6 +51,11 @@ command! Cd :call fzf#run(fzf#wrap({
 command! Z :call fzf#run(fzf#wrap({
       \   'source': "fasd -Rdl",
       \   'sink': function('<SID>cd_sink')
+      \ }))
+
+command! Zvim :call fzf#run(fzf#wrap({
+      \   'source': "fasd -Rfl",
+      \   'sink': 'e'
       \ }))
 
 " Support a `TagBuffer` function that opens the current file contents as a
