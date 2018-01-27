@@ -51,10 +51,12 @@ endfunction
 function! bindings#GrepVisual() abort
   let temp = @s
   norm! gv"sy
+  let @s = escape(@s, '\\/.*$^~[]#%')
   execute "Rg --fixed-strings '" . @s . "'"
   let @s = temp
   if len(getqflist())
     copen
+    wincmd p
   endif
 endfunction
 
