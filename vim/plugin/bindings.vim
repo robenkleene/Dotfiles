@@ -77,7 +77,8 @@ nnoremap <leader>X :silent !open -a Xcode "%:p"<CR>\|:redraw!<CR>
 nnoremap <leader>m :make<CR>
 
 " Rg
-nnoremap <leader>a :Rg
+" Space delibrately left after
+nnoremap <leader>a :Rg 
 
 " Quit & Save Session
 nnoremap <A-s> :QuitSaveSession<CR> 
