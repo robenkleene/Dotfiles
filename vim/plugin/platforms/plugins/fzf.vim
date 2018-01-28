@@ -8,11 +8,11 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <M-e> :Files<CR>
-nnoremap <leader>c :Cd<CR>
+nnoremap <leader>c :Commands<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <M-t> :TmuxPaths<CR>
 nnoremap <M-z> :Z<CR>
-nnoremap <M-v> :Zvim<CR>
+nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
 " nnoremap <leader>c :Modified<CR>
 nnoremap <localleader>i :BTags<CR>

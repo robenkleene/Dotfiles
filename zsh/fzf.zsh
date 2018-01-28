@@ -9,7 +9,7 @@ source ~/.fzf/shell/completion.zsh
 source ~/.fzf/shell/key-bindings.zsh
 # Put back default history search
 bindkey '^R' history-incremental-search-backward
-bindkey '^[r' fzf-history-widget
+# bindkey '^[r' fzf-history-widget
 
 # Custom Bindings
 
@@ -114,7 +114,7 @@ fzf-zvim-widget() {
   return $ret
 }
 zle -N fzf-zvim-widget
-bindkey '\ev' fzf-zvim-widget
+bindkey '\er' fzf-zvim-widget
 
 fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
