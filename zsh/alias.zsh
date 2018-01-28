@@ -114,8 +114,8 @@ alias doce='fzf-documentation-editor'
 alias docc='fzf-documentation-cat'
 
 # git
-alias gyb='git-yank-branch'
-alias gyh='git-yank-hash'
-alias gyr='git-yank-remote-url'
+alias gbp='git-branch-print'
+alias ghp='git-hash-print'
+alias grtp='git-remote-print'
 alias gcd='git-cd-root'
 alias dtv='diff-to-grep | vg'

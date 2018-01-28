@@ -171,16 +171,27 @@ fi
 git-diff-words() {
   git diff --color-words $@
 }
-git-yank-branch() {
+# Branch
+git-branch-print() {
   git rev-parse --abbrev-ref HEAD | tr -d '\n' | tee /dev/tty | safecopy
 }
-git-yank-hash() {
-  # Print the '\n' because otherwise `tmux` has issues
-  git rev-parse HEAD | tr -d '\n' | tee /dev/tty | safecopy
+# git-branch-yank() {
+#   git rev-parse --abbrev-ref HEAD | tr -d '\n'
+# }
+# Hash
+git-hash-print() {
+  git rev-parse HEAD | tr -d '\n'
 }
-git-yank-remote-url() {
-  git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
+# git-hash-yank() {
+#   git rev-parse HEAD | tr -d '\n' | tee /dev/tty | safecopy
+# }
+# Remote
+git-remote-print() {
+  git ls-remote --get-url | tr -d '\n'
 }
+# git-remote-yank() {
+#   git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
+# }
 git-commit-hash() {
   git rev-parse HEAD
 }
