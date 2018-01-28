@@ -115,7 +115,9 @@ alias docc='fzf-documentation-cat'
 
 # git
 alias gbp='git-branch-print'
+alias gh='git-hash-print'
 alias ghp='git-hash-print'
+alias grt='git-remote-print'
 alias grtp='git-remote-print'
 alias gcd='git-cd-root'
 alias dtv='diff-to-grep | vg'
