@@ -60,3 +60,6 @@ endsnippet
 snippet 1rename "Rename files in current directory" b
 for i in *; do { mv $i \`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\` } done
 endsnippet
+snippet exitstatus "Store exit status" b
+status=$?
+endsnippet
