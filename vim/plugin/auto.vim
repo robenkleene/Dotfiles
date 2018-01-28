@@ -46,7 +46,8 @@ augroup quickfix_colors
   " These interfere with the selected line being highlighted in quickfix
   " windows
   autocmd VimEnter,WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal nocursorline | endif
-  autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
+  " This line causes all `BufWinEnter` `autocmd` to fail!?
+  " autocmd WinEnter,BufWinEnter * if &buftype == 'quickfix' | setlocal colorcolumn="" | endif
 augroup END
 
 " Autoreload files edited by other programs
