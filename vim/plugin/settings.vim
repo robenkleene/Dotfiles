@@ -38,7 +38,7 @@ endif
 syntax on
 
 " Use system clipboard by default
-set clipboard=unnamed 
+set clipboard^=unnamed
 
 " Disable mouse
 set mouse=
