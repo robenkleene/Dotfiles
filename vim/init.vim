@@ -76,6 +76,7 @@ Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
+Plug 'machakann/vim-highlightedyank', Cond(has('nvim'))
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
