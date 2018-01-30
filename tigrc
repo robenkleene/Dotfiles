@@ -23,6 +23,8 @@ bind status w !bash -c "git diff --color-words '%(file)'"
 bind stage w !bash -c "git diff --color-words '%(file)'"
 bind stage v !bash -c "nvim -c 'Gdiff' '%(file)'"
 bind status v !bash -c "nvim -c 'Gdiff' '%(file)'"
+bind status ]] move-page-down
+bind status [[ move-page-up
 
 # Main
 bind main c ?git checkout %(commit)
