@@ -36,7 +36,7 @@ let maplocalleader = "\\"
 
 nnoremap gcd :Gcd<CR>
 nnoremap cd :cd %:p:h<CR>
-nnoremap lcd :lcd %:p:h<CR>
+nnoremap cl :lcd %:p:h<CR>
 
 " vimrc
 nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/<CR>:edit init.vim<CR>:echo ""<CR>
