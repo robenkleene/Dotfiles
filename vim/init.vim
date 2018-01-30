@@ -44,6 +44,7 @@ Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-rhubarb'
+"
 " Colors {{{2
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'ap/vim-css-color', { 'for': 'css' }
@@ -66,6 +67,7 @@ Plug 'AndrewRadev/linediff.vim'
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'machakann/vim-highlightedyank', Cond(has('nvim'))
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
 " TODO Figure out how to make the conditional work
@@ -76,7 +78,6 @@ Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
-Plug 'machakann/vim-highlightedyank', Cond(has('nvim'))
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
 " Languages {{{2
 Plug 'dag/vim-fish', { 'for': 'fish' }
