@@ -33,8 +33,8 @@ egitn() {
 }
 
 # vim
-vim-session-restore() {
-  $VIM_COMMAND -c "SessionRestore"
+vim-session-restore-saved() {
+  $VIM_COMMAND -c "SessionRestoreSaved"
 }
 vim-session-restore-local() {
   $VIM_COMMAND -c "SessionRestoreLocal"

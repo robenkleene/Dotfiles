@@ -9,7 +9,7 @@ command! GrepBuffer :call commands#GrepBuffer()
 command! SessionSaveLocal :mksession! vim_session
 command! SessionSave :mksession! ~/.vim/vim_session
 command! SessionRestoreLocal :source vim_session
-command! SessionRestore :source ~/.vim/vim_session
+command! SessionRestoreSaved :source ~/.vim/vim_session
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
 command! QuitSaveSession :call commands#QuitSaveSession()
 
