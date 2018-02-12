@@ -214,11 +214,11 @@ git-remote-add-origin() {
   git remote rm origin
   git remote add origin $1
 }
-git-prune-remote-origin() {
+git-branch-prune() {
   git remote prune origin
 }
-git-prune() {
-  git-prune-remote-origin
+git-branch-list-pruned() {
+  git branch -vv | grep ': gone]' | awk '{print $1}'
 }
 git-push-force() {
   git push --force-with-lease
