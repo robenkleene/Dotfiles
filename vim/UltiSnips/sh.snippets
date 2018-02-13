@@ -1,6 +1,11 @@
 snippet echov "Echo variable" b
 echo "${1:HOME} = \$$1"
 endsnippet
+snippet func "Function" b
+${1:my_echo}() {
+  ${0:echo \$1}
+}
+endsnippet
 snippet ifd "Test directory" b
 if [ -d ${1:"$dir"} ]; then
   ${0:echo $dir} 
