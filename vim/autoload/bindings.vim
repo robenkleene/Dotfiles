@@ -24,7 +24,7 @@ endfunction
 function! bindings#LinkGithubOpen() abort
   echo system('~/Development/Scripts/bin/link-github-open '.fnameescape(expand('%:p')))
 endfunction
-function! bindings#inkGithubOpenLines() range abort
+function! bindings#LinkGithubOpenLines() range abort
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-github-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
 endfunction
 
