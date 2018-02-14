@@ -68,3 +68,8 @@ endsnippet
 snippet exitstatus "Store exit status" b
 status=$?
 endsnippet
+snippet ifs "Change IFS" b
+old_IFS=$IFS
+IFS="${1: }"
+IFS=${old_IFS}
+endsnippet
