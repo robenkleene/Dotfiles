@@ -67,7 +67,6 @@ Plug 'AndrewRadev/linediff.vim'
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'machakann/vim-highlightedyank', Cond(has('nvim'))
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
 " TODO Figure out how to make the conditional work
