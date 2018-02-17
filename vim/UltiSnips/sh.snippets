@@ -23,7 +23,7 @@ fi
 endsnippet
 snippet ife "Test exit status" b
 if ((${1:$?} > ${2:0})); then
-    ${0:exit 1}
+  ${0:exit 1}
 fi
 endsnippet
 snippet ifz "Test empty variable" b
@@ -59,6 +59,11 @@ for i in ${1:*}; do
   ${0:echo $i;}
 done
 endsnippet
+snippet fordir "For loop directories" b
+for dir in */; do 
+  echo $dir;
+done
+endsnippet
 snippet 1for "For loop one-liner" w
 for i in ${1:*}; do { ${0:echo $i;} } done
 endsnippet
@@ -72,4 +77,29 @@ snippet ifs "Change IFS" b
 old_IFS=$IFS
 IFS="${1: }"
 IFS=${old_IFS}
+endsnippet
+snippet getopts "getopts" b
+while getopts ":a:bh" option
+  do case "$option" in
+    a)
+      echo "-a $OPTARG"
+      ;;
+    b)
+      b=true
+      echo "-b $b"
+      ;;
+    h)
+      echo "Usage: command [-hb] [-a <file>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
 endsnippet
