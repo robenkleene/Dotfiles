@@ -6,7 +6,6 @@ Alias Af Rg\ -F
 " Plugins
 Alias -range Ld Linediff
 Alias Ldr LinediffReset
-Alias Doc FZFDocumentation
 " Sessions
 Alias SRS SessionRestoreSaved
 Alias SSL SessionSaveLocal

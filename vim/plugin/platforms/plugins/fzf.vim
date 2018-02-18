@@ -19,7 +19,15 @@ nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
 
-command! -bang -nargs=? FZFDocumentation lcd ~/Documentation/development-references/|call fzf#vim#files(<q-args>, <bang>0)
+" Documentation
+command! Doc lcd ~/Documentation/development-references/|call fzf#run(fzf#wrap({
+      \   'source': $FZF_DEFAULT_COMMAND,
+      \   'sink': 'sview'
+      \ }))
+command! Doce lcd ~/Documentation/development-references/|call fzf#run(fzf#wrap({
+      \   'source': $FZF_DEFAULT_COMMAND,
+      \   'sink': 'split'
+      \ }))
 
 " Modified Files
 command! Modified :call fzf#run(fzf#wrap({
