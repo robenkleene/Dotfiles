@@ -33,8 +33,6 @@ abbreviations=(
 # `zsh`
 'wf' 'whence -f'
 
-# `find`
-'fged' 'find . -name .git -type d -prune -execdir'
 # `git`
 # `g`: `git`
 'g' 'git'
