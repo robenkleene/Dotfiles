@@ -7,7 +7,7 @@ ${1:my_echo}() {
 }
 endsnippet
 snippet ifd "Test directory" b
-if [ -d ${1:"$dir"} ]; then
+if [[ -d ${1:"$dir"} ]]; then
   ${0:echo $dir}
 fi
 endsnippet
@@ -17,12 +17,12 @@ if ${1:$value}; then
 fi
 endsnippet
 snippet iff "Test file" b
-if [ -f ${1:"$file"} ]; then
+if [[ -f ${1:"$file"} ]]; then
   ${0:echo $file}
 fi
 endsnippet
 snippet ifl "Test link" b
-if [ -L ${1:"$file"} ]; then
+if [[ -L ${1:"$file"} ]]; then
   ${0:echo $file}
 fi
 endsnippet
@@ -32,12 +32,12 @@ if ((${1:$?} > ${2:0})); then
 fi
 endsnippet
 snippet ifz "Test empty variable" b
-if [ -z "$${1:EDITOR}" ]; then
+if [[ -z "$${1:EDITOR}" ]]; then
   ${0:echo "$EDITOR is undefined or empty"} 
 fi
 endsnippet
 snippet ifn "Test not empty variable" b
-if [ -n "$${1:EDITOR}" ]; then
+if [[ -n "$${1:EDITOR}" ]]; then
   ${0:echo $EDITOR}
 fi
 endsnippet
