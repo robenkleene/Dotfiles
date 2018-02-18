@@ -8,22 +8,22 @@ ${1:my_echo}() {
 endsnippet
 snippet ifd "Test directory" b
 if [ -d ${1:"$dir"} ]; then
-  ${0:echo $dir} 
+  ${0:echo $dir}
 fi
 endsnippet
 snippet ifb "Test boolean" b
 if ${1:$value}; then
-  ${0:echo true} 
+  ${0:echo true}
 fi
 endsnippet
 snippet iff "Test file" b
 if [ -f ${1:"$file"} ]; then
-  ${0:echo $file} 
+  ${0:echo $file}
 fi
 endsnippet
 snippet ifl "Test link" b
 if [ -L ${1:"$file"} ]; then
-  ${0:echo $file} 
+  ${0:echo $file}
 fi
 endsnippet
 snippet ife "Test exit status" b
@@ -32,18 +32,18 @@ if ((${1:$?} > ${2:0})); then
 fi
 endsnippet
 snippet ifz "Test empty variable" b
-if [ -z "$${2:EDITOR}" ]; then
+if [ -z "$${1:EDITOR}" ]; then
   ${0:echo "$EDITOR is undefined or empty"} 
 fi
 endsnippet
 snippet ifn "Test not empty variable" b
-if [ -n "$${2:EDITOR}" ]; then
-  ${0:echo $EDITOR} 
+if [ -n "$${1:EDITOR}" ]; then
+  ${0:echo $EDITOR}
 fi
 endsnippet
 snippet if "Test" b
-if [ -${1:n} ${2:"$path"} ]; then
-  ${0:echo $path} 
+if ${1:true}; then
+  ${0:echo "true"}
 fi
 endsnippet
 snippet template "Basic template" b
@@ -56,7 +56,7 @@ while read i; do { ${0:echo $i;} } done
 endsnippet
 snippet while ""
 while read i; do
-  ${0:echo $i;} 
+  ${0:echo $i;}
 done
 endsnippet
 snippet for "For loop" b
@@ -65,7 +65,7 @@ for i in ${1:*}; do
 done
 endsnippet
 snippet fordir "For loop directories" b
-for dir in */; do 
+for dir in */; do
   echo $dir;
 done
 endsnippet

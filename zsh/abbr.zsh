@@ -12,11 +12,11 @@ abbreviations=(
 'a' "$ACK_COMMAND"
 'rgf' "$ACK_COMMAND --files -g"
 
-# tig
+# `tig`
 'tst' 'tig stash'
 'ts' 'tig status +3'
 
-# tmux
+# `tmux`
 # `tm`
 'tmsw' 'tmux swap-window -t'
 'tmwr' 'tmux move-window -r'
@@ -27,13 +27,15 @@ abbreviations=(
 'tmsn' 'tmux new'
 'tmd' 'tmux detach'
 
-# cd
+# `cd`
 'cyp' 'cd-yank-path'
 
-# zsh
+# `zsh`
 'wf' 'whence -f'
 
-# git
+# `find`
+'fged' 'find . -name .git -type d -prune -execdir'
+# `git`
 # `g`: `git`
 'g' 'git'
 # `ga`: `git add`
