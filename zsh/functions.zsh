@@ -90,6 +90,9 @@ ssh-start() {
   eval `ssh-agent -s`
   ssh-add
 }
+ssh-stop() {
+  ssh-agent -k
+}
 
 # Fix slow ssh
 if [ ! "$(uname)" = "Darwin" ]; then
