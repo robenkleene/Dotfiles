@@ -20,20 +20,36 @@ nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
 
 " Documentation
-command! Doc lcd ~/Documentation/development-references/|call fzf#run(fzf#wrap({
+command! Doc call fzf#run(fzf#wrap({
       \   'source': $FZF_DEFAULT_COMMAND,
-      \   'sink': 'sview'
+      \   'sink': function('<SID>sview_lcd_sink'),
+      \   'dir': '~/Documentation/development-references/'
       \ }))
-command! Doce lcd ~/Documentation/development-references/|call fzf#run(fzf#wrap({
+command! Doce call fzf#run(fzf#wrap({
       \   'source': $FZF_DEFAULT_COMMAND,
-      \   'sink': 'split'
+      \   'sink': function('<SID>split_lcd_sink'),
+      \   'dir': '~/Documentation/development-references/'
       \ }))
 
-" Modified Files
-command! Modified :call fzf#run(fzf#wrap({
-      \   'source': "git ls-files -m | uniq",
-      \   'sink': 'e'
-      \ }))
+function! s:split_lcd_sink(e) abort
+  execute 'split ' a:e
+
+  " This doesn't work
+  let l:path = expand('%:p:h')
+  if !empty(l:path)
+    lcd %:p:h
+  endif
+endfunction
+
+function! s:sview_lcd_sink(e) abort
+  execute 'sview' a:e
+
+  " This doesn't work
+  let l:path = expand('%:p:h')
+  if !empty(l:path)
+    lcd %:p:h
+  endif
+endfunction
 
 " Note from the `tmux-paths` script: "The front program can change the `pwd`,
 " which might result in paths appearing to be missing."
@@ -47,9 +63,17 @@ function! s:cd_sink(e) abort
   let l:path = expand('%')
   if !empty(l:path)
     " This should be an `lcd` but that doesn't work reliably
-    cd %
+    " cd %
+    lcd %
   endif
 endfunction
+
+" Modified Files
+command! Modified :call fzf#run(fzf#wrap({
+      \   'source': "git ls-files -m | uniq",
+      \   'sink': 'e'
+      \ }))
+
 
 command! Cd :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
