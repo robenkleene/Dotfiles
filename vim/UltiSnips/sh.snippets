@@ -2,13 +2,13 @@ snippet echov "Echo variable" b
 echo "${1:HOME} = \$$1"
 endsnippet
 snippet func "Function" b
-${1:my_echo}() {
+${1:my_function}() {
   ${0:echo \$1}
 }
 endsnippet
-snippet ifd "Test directory" b
-if [[ -d ${1:"$dir"} ]]; then
-  ${0:echo $dir}
+snippet ifd "True if directory" b
+if [[ -d "${1:\$1}" ]]; then
+  ${0:echo "$1 is a directory"}
 fi
 endsnippet
 snippet ifb "Test boolean" b
@@ -16,29 +16,34 @@ if ${1:$value}; then
   ${0:echo true}
 fi
 endsnippet
-snippet iff "Test file" b
-if [[ -f ${1:"$file"} ]]; then
-  ${0:echo $file}
+snippet iff "True if file" b
+if [[ -f "${1:\$1}" ]]; then
+  ${0:echo "$1 is a file"}
 fi
 endsnippet
-snippet ifl "Test link" b
-if [[ -L ${1:"$file"} ]]; then
-  ${0:echo $file}
+snippet ifl "True if symbolic link" b
+if [[ -L "${1:\$1}" ]]; then
+  ${0:echo "$1 is a symbolic link"}
 fi
 endsnippet
-snippet ife "Test exit status" b
-if ((${1:$?} > ${2:0})); then
+snippet ifee "True if error exit status" b
+if [[ ${1:$?} -ne 0 ]]; then
   ${0:exit 1}
 fi
 endsnippet
-snippet ifz "Test empty variable" b
-if [[ -z "$${1:EDITOR}" ]]; then
-  ${0:echo "$EDITOR is undefined or empty"} 
+snippet ife0 "True if zero exit status" b
+if [[ ${1:$?} -eq 0 ]]; then
+  ${0:exit 1}
 fi
 endsnippet
-snippet ifn "Test not empty variable" b
-if [[ -n "$${1:EDITOR}" ]]; then
-  ${0:echo $EDITOR}
+snippet ifz "True if empty variable" b
+if [[ -z "$${1:1}" ]]; then
+  ${0:echo "\$$1 is empty"} 
+fi
+endsnippet
+snippet ifn "True if not empty variable" b
+if [[ -n "$${1:1}" ]]; then
+  ${0:echo \$$1}
 fi
 endsnippet
 snippet if "Test" b
