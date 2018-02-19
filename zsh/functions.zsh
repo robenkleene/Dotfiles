@@ -25,9 +25,18 @@ ranger-cd() {
 
 # egitn
 egitn() {
-  local egitnext=$(egit -n)
-  if [ -n "$egitnext" ]; then
-    cd "$egitnext"
+  local gitnext=$(egit -n)
+  if [[ -n "$gitnext" ]]; then
+    cd "$gitnext"
+    git status
+  fi
+}
+
+# sgit
+sgitn () {
+  local gitnext=$(sgit -n)
+  if [[ -n "$gitnext" ]]; then
+    cd "$gitnext"
     git status
   fi
 }
