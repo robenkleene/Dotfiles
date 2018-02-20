@@ -12,7 +12,7 @@ if [[ -d "${1:\$1}" ]]; then
 fi
 endsnippet
 snippet ifb "Test boolean" b
-if ${1:$value}; then
+if $${1:value}; then
   ${0:echo true}
 fi
 endsnippet
