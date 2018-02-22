@@ -1,6 +1,9 @@
 snippet echov "Echo variable" b
 echo "${1:HOME} = \$$1"
 endsnippet
+snippet echoe "Echo error" b
+echo "${0:Error}" >&2
+endsnippet
 snippet func "Function" b
 ${1:my_function}() {
   ${0:echo \$1}
