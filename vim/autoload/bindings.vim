@@ -1,31 +1,31 @@
 " Yank Markdown Links
 function! bindings#LinkGitYank() abort
-  let @" = system('~/Development/Scripts/bin/link-git-markdown --url-only '.fnameescape(expand('%:p')))
+  let @" = system('~/Development/Scripts/bin/link-source-control-markdown --url-only '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
 function! bindings#LinkGitYankLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-git-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
 function! bindings#LinkGitMarkdownYank() abort
-  let @" = system('~/Development/Scripts/bin/link-git-markdown '.fnameescape(expand('%:p')))
+  let @" = system('~/Development/Scripts/bin/link-source-control-markdown '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 function! bindings#LinkGitMarkdownYankLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-git-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 
 " Open Git Links
 function! bindings#LinkGithubOpen() abort
-  echo system('~/Development/Scripts/bin/link-git-open '.fnameescape(expand('%:p')))
+  echo system('~/Development/Scripts/bin/link-source-control-open '.fnameescape(expand('%:p')))
 endfunction
 function! bindings#LinkGithubOpenLines() range abort
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-git-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
 endfunction
 
 " Backup Text
