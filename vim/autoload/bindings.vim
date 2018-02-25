@@ -1,30 +1,30 @@
 " Yank Markdown Links
-function! bindings#LinkGitYank() abort
+function! bindings#LinkSourceControlYank() abort
   let @" = system('~/Development/Scripts/bin/link-source-control-markdown --url-only '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
-function! bindings#LinkGitYankLines() range abort
+function! bindings#LinkSourceControlYankLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
-function! bindings#LinkGitMarkdownYank() abort
+function! bindings#LinkSourceControlMarkdownYank() abort
   let @" = system('~/Development/Scripts/bin/link-source-control-markdown '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
-function! bindings#LinkGitMarkdownYankLines() range abort
+function! bindings#LinkSourceControlMarkdownYankLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 
 " Open Git Links
-function! bindings#LinkGithubOpen() abort
+function! bindings#LinkSourceControlOpen() abort
   echo system('~/Development/Scripts/bin/link-source-control-open '.fnameescape(expand('%:p')))
 endfunction
-function! bindings#LinkGithubOpenLines() range abort
+function! bindings#LinkSourceControlOpenLines() range abort
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
 endfunction
 

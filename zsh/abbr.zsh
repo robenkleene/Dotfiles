@@ -101,15 +101,14 @@ abbreviations=(
 # `gu`: `git pull`
 'gu' 'git pull'
 'gur' 'git pull -r'
-
+# `gw`: `git web`
+'gw' 'git-web-open'
 )
 
-if [ "$(uname)" = "Darwin" ]; then
-abbreviations+=(
-"hb" "hub browse"
-"hbc" "hub browse -- commits"
-)
-fi
+# if [ "$(uname)" = "Darwin" ]; then
+# abbreviations+=(
+# )
+# fi
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters

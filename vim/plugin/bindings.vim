@@ -111,14 +111,14 @@ nnoremap <C-w>> 5<C-w>>
 " nnoremap <S-Left> <C-w><C-h>
 
 " Yank Git Links
-nnoremap <localleader>l :call bindings#LinkGitYank()<CR>
-vnoremap <localleader>l :'<,'>call bindings#LinkGitYankLines()<CR>
+nnoremap <localleader>l :call bindings#LinkSourceControlYank()<CR>
+vnoremap <localleader>l :'<,'>call bindings#LinkSourceControlYankLines()<CR>
 " Yank Git Markdown Links
-nnoremap <localleader>m :call bindings#LinkGitMarkdownYank()<CR>
-vnoremap <localleader>m :'<,'>call bindings#LinkGitMarkdownYankLines()<CR>
+nnoremap <localleader>m :call bindings#LinkSourceControlMarkdownYank()<CR>
+vnoremap <localleader>m :'<,'>call bindings#LinkSourceControlMarkdownYankLines()<CR>
 " Open Git Links
-nnoremap <localleader>L :call bindings#LinkGithubOpen()<CR>
-vnoremap <localleader>L :'<,'>call bindings#LinkGithubOpenLines()<CR>
+nnoremap <localleader>o :call bindings#LinkSourceControlOpen()<CR>
+vnoremap <localleader>o :'<,'>call bindings#LinkSourceControlOpenLines()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>

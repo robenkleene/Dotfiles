@@ -235,6 +235,9 @@ git-branch-list-pruned() {
 git-push-force() {
   git push --force-with-lease
 }
+git-web-open() {
+  link-source-control . | url-open
+}
 
 # Git Stash
 _robenkleene_git_stash_command() {
