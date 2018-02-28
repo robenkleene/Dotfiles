@@ -1,4 +1,4 @@
-export FZF_DEFAULT_COMMAND='rg --files -g ""'
+export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 
 # fzf
 # Make `fzf` bindings available, since this is being manually imported here
