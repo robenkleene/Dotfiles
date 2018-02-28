@@ -136,6 +136,28 @@ fzf-tags-widget() {
 zle -N fzf-tags-widget
 bindkey '\ei' fzf-tags-widget
 
+__fcmd() {
+  local cmd="print -l ${(ok)functions} | grep -E -v \"^(_|VCS)\""
+  setopt localoptions pipefail 2> /dev/null
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" $(__fzfcmd) -m "$@" | while read item; do
+    echo -n "${(q)item} "
+  done
+  local ret=$?
+  echo
+  return $ret
+}
+
+fzf-command-widget() {
+  LBUFFER="${LBUFFER}$(__fcmd)"
+  local ret=$?
+  zle redisplay
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+zle     -N   fzf-command-widget
+bindkey '^@' fzf-command-widget
+
+
 # Private
 
 _robenkleene_fzf_inline() {
