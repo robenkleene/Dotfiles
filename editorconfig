@@ -48,3 +48,7 @@ indent_size = 4
 [{*.m,*.h}]
 indent_style = space
 indent_size = 4
+
+[*.yml]
+indent_style = space
+indent_size = 4
