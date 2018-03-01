@@ -137,9 +137,13 @@ zle -N fzf-tags-widget
 bindkey '\ei' fzf-tags-widget
 
 __fcmd() {
+  local query=""
+  if [[ -n "$1" ]]; then
+    query="--query=\"$1\" "
+  fi
   local cmd="print -l ${(ok)functions} | grep -E -v \"^(_|VCS)\""
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" $(__fzfcmd) -m "$@" | while read item; do
+  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) | while read item; do
     echo -n "${(q)item} "
   done
   local ret=$?
@@ -148,7 +152,9 @@ __fcmd() {
 }
 
 fzf-command-widget() {
-  LBUFFER="${LBUFFER}$(__fcmd)"
+  local MATCH
+  LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
+  LBUFFER+="$(__fcmd $MATCH)"
   local ret=$?
   zle redisplay
   typeset -f zle-line-init >/dev/null && zle zle-line-init
