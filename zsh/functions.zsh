@@ -229,6 +229,9 @@ git-remote-add-origin() {
 git-branch-prune() {
   git remote prune origin
 }
+git-branch-list-remote() {
+  git branch -r
+}
 git-branch-list-pruned() {
   git branch -vv | grep ': gone]' | awk '{print $1}'
 }
