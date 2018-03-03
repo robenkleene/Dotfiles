@@ -141,7 +141,10 @@ __fcmd() {
   if [[ -n "$1" ]]; then
     query="--query=\"$1\" "
   fi
-  local cmd="print -l ${(ok)functions} | grep -E -v \"^(_|VCS)\""
+  local cmds=( ${(k)functions[@]} ${(k)commands[@]} )
+  # There's a shell command called `g[` that `eval` has trouble parsing
+  cmds=("${(@)cmds:#g\[}")
+  local cmd="print -l \\"$cmds\\" | grep -E -v \"^(_|VCS)\""
   setopt localoptions pipefail 2> /dev/null
   eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) | while read item; do
     echo -n "${(q)item} "
