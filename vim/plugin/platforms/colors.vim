@@ -84,6 +84,7 @@ function! s:MyHighlights() abort
   highlight comment ctermfg=darkgray
   highlight SpecialKey ctermfg=238
   highlight NonText ctermfg=238
+  highlight qfSeparator ctermfg=238
 
   " Folding {{{1
   " Same as inactive status line
