@@ -33,6 +33,9 @@ abbreviations=(
 # `zsh`
 'wf' 'whence -f'
 
+# `safari`
+'sfhs' 'fzf-safari-history-open'
+
 # `git`
 # `g`: `git`
 'g' 'git'

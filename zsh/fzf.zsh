@@ -166,7 +166,6 @@ fzf-command-widget() {
 zle     -N   fzf-command-widget
 bindkey '^@' fzf-command-widget
 
-
 # Private
 
 _robenkleene_fzf_inline() {
@@ -191,62 +190,17 @@ _robenkleene_fzf_inline() {
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   local ret=$?
   echo $result
   return $ret
 }
 
-# Directories
-
-# History
-fzf-recent-cd() {
-  _robenkleene_fzf_inline cd "fasd -ld"
-}
-
-# Files
-
-# Reveal
-if [ "$(uname)" = "Darwin" ]; then
-  fzf-file-reveal() {
-    _robenkleene_fzf_inline "open -R"
-  }
-fi
-
-# Open
-if [ "$(uname)" = "Darwin" ]; then
-  fzf-file-open() {
-    _robenkleene_fzf_inline open
-  }
-fi
-
-# Path
-fzf-file-cd() {
-  local result=$(_robenkleene_fzf_inline_result)
+# Safari
+fzf-safari-history-open() {
+  local result=$(safari-history-dump | FZF_DEFAULT_OPTS="-m --prompt \"Safari History> \" --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
   if [[ -n $result ]]; then
-    cd $(dirname $result)
-  fi
-}
-fzf-file-path() {
-  local result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
-    echo $result | tr -d '\n' | tee /dev/tty | safecopy
-  fi
-}
-
-# Lines
-fzf-line-vim() {
-  local result=$(_robenkleene_ack_lines_color "[a-zA-Z0-9]+" . | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
-  if [[ -n $result ]]; then
-    echo $result | $VIM_COMMAND -c "GrepBuffer" -
-  fi
-}
-
-
-fzf-tags-vim() {
-  local result=$(~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags | FZF_DEFAULT_OPTS="--nth 1..2 -m --tiebreak=begin --prompt \"Tags> \" --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m )
-  if [[ -n $result ]]; then
-    echo $result | $VIM_COMMAND -c "TagBuffer" -
+    echo $reult
   fi
 }
 
@@ -254,7 +208,7 @@ fzf-tags-vim() {
 fzf-documentation-editor() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
+  if [[ -n "$result" ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
     local final_cmd="$EDITOR $parameter"
     eval $final_cmd
@@ -266,23 +220,6 @@ fzf-documentation-editor() {
     cd -
   fi
 }
-fzf-documentation-cat() {
-  cd ~/Documentation/
-  local result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
-    local parameter=$(printf '%q' "$PWD/$result")
-    local final_cmd="cat $parameter"
-    eval $final_cmd
-    if [ $? -eq 0 ]; then
-      # Add to history
-      print -sr $final_cmd
-    fi
-  fi
-  cd -
-}
-
-
-
 
 # Snippets
 fzf-snippet-copy() {

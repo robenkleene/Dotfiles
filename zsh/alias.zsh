@@ -111,7 +111,6 @@ alias i='fzf-tags-vim'
 alias snp='fzf-snippet-copy'
 alias snpe='fzf-snippet-editor'
 alias doce='fzf-documentation-editor'
-alias docc='fzf-documentation-cat'
 
 # git
 alias gbp='git-branch-print'
