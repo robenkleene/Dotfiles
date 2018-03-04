@@ -183,3 +183,8 @@ nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
 " Todo
 nnoremap <leader>d :call bindings#OpenTodo()<CR>
+
+" Lint
+nnoremap <localleader>l :Lint<CR>
+" Run
+nnoremap <localleader>r :Run<CR>

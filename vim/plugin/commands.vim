@@ -31,3 +31,8 @@ command! -nargs=* Atm :call commands#Atm(<q-args>)
 command! YankFileName :let @" = expand("%")|:let @+ = @"|:echo @"
 command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
 command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
+
+" Lint
+command! Lint :call commands#Lint()
+" Run
+command! Run :call commands#Run()

@@ -44,12 +44,31 @@ function! commands#Atm(terms) abort
   let &grepprg = l:original_grepprg
 endfunction
 
-" Terminal Commands
-" if exists(':terminal')
-"   command! Doc call commands#Doc()
-"   function! s:Doc() abort
-"     split
-"     execute 'terminal doc'
-"     tnoremap <buffer> <Esc> <C-\><C-n>
-"   endfunction
-" endif
+" Lint
+function! commands#Lint() abort
+  if !exists('b:LintMakePrg')
+    echo "No b:LintMakePrg defined"
+    return
+  endif
+  let l:original_makeprg = &makeprg
+  let l:original_errorformat = &errorformat
+  let &makeprg = b:LintMakePrg
+  let &errorformat = b:LintErrorFormat
+  make
+  let &makeprg = l:original_makeprg
+  let &errorformat = l:original_errorformat
+endfunction
+
+function! commands#Run() abort
+  if !exists('b:RunMakePrg')
+    echo "No b:RunMakePrg defined"
+    return
+  endif
+  let l:original_makeprg = &makeprg
+  let l:original_errorformat = &errorformat
+  let &makeprg = b:RunMakePrg
+  let &errorformat = b:RunErrorFormat
+  make
+  let &makeprg = l:original_makeprg
+  let &errorformat = l:original_errorformat
+endfunction
