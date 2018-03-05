@@ -27,9 +27,6 @@ abbreviations=(
 'tmsn' 'tmux new'
 'tmd' 'tmux detach'
 
-# `cd`
-'cyp' 'cd-yank-path'
-
 # `zsh`
 'wf' 'whence -f'
 
@@ -119,26 +116,28 @@ for abbr in ${(@k)abbreviations}; do
   alias $abbr="${abbreviations[$abbr]}"
 done
 
-magic-abbrev-expand() {
+_magic-abbrev-expand() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
 }
 
-magic-abbrev-expand-and-insert () {
-  magic-abbrev-expand
+_magic-abbrev-expand-and-insert () {
+  _magic-abbrev-expand
   zle self-insert
 }
 
-magic-abbrev-expand-and-accept () {
-  magic-abbrev-expand
+_magic-abbrev-expand-and-accept () {
+  _magic-abbrev-expand
   zle accept-line
 }
 
-zle -N magic-abbrev-expand-and-insert
-zle -N magic-abbrev-expand-and-accept
-bindkey " "   magic-abbrev-expand-and-insert
-bindkey "\r"  magic-abbrev-expand-and-accept
+
+
+zle -N _magic-abbrev-expand-and-insert
+zle -N _magic-abbrev-expand-and-accept
+bindkey " "   _magic-abbrev-expand-and-insert
+bindkey "\r"  _magic-abbrev-expand-and-accept
 # Use original bindings in isearch
 bindkey -M isearch " " self-insert
 bindkey -M isearch "\r" accept-line

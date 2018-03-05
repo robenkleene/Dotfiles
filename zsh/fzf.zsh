@@ -13,7 +13,7 @@ bindkey '^R' history-incremental-search-backward
 
 # Custom Bindings
 
-fzf-editor-widget() {
+_fzf-editor-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
   fi
@@ -30,10 +30,10 @@ fzf-editor-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-editor-widget
-bindkey '\ee' fzf-editor-widget
+zle -N _fzf-editor-widget
+bindkey '\ee' _fzf-editor-widget
 
-fzf-open-widget() {
+_fzf-open-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
   fi
@@ -50,8 +50,8 @@ fzf-open-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-open-widget
-bindkey '\eo' fzf-open-widget
+zle -N _fzf-open-widget
+bindkey '\eo' _fzf-open-widget
 
 _fzf_z() {
   local cmd="fasd -Rdl"
@@ -64,7 +64,7 @@ _fzf_z() {
   return $ret
 }
 
-fzf-z-widget() {
+_fzf-z-widget() {
   if [[ -n "$LBUFFER" ]]; then
     LBUFFER="${LBUFFER}$(_fzf_z)"
     local ret=$?
@@ -86,10 +86,10 @@ fzf-z-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-z-widget
-bindkey '\ez' fzf-z-widget
+zle -N _fzf-z-widget
+bindkey '\ez' _fzf-z-widget
 
-fzf-zvim-widget() {
+_fzf-zvim-widget() {
   if [[ -n "$LBUFFER" ]]; then
     LBUFFER="${LBUFFER}$(_fzf_z)"
     local ret=$?
@@ -113,10 +113,10 @@ fzf-zvim-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-zvim-widget
-bindkey '\er' fzf-zvim-widget
+zle -N _fzf-zvim-widget
+bindkey '\er' _fzf-zvim-widget
 
-fzf-tags-widget() {
+_fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
   fi
@@ -133,8 +133,8 @@ fzf-tags-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N fzf-tags-widget
-bindkey '\ei' fzf-tags-widget
+zle -N _fzf-tags-widget
+bindkey '\ei' _fzf-tags-widget
 
 __fcmd() {
   local query=""
@@ -154,7 +154,7 @@ __fcmd() {
   return $ret
 }
 
-fzf-command-widget() {
+_fzf-command-widget() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
   LBUFFER+="$(__fcmd $MATCH)"
@@ -163,8 +163,8 @@ fzf-command-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle     -N   fzf-command-widget
-bindkey '^@' fzf-command-widget
+zle     -N   _fzf-command-widget
+bindkey '^@' _fzf-command-widget
 
 # Private
 

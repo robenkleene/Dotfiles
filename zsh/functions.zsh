@@ -152,60 +152,23 @@ tmux-attach() {
 }
 
 # git
-git-checkout-modified() {
-  git checkout -- .
-}
-git-clean-checkout() {
-  git clean -dff && git checkout -- .
-}
-git-submodule-update-init-recursive() {
-  git submodule update --init --recursive
-}
-git-submodule-clean-checkout() {
-  git submodule foreach --recursive 'git clean -dff && git checkout -- .'
-}
-git-reset() {
-  git-clean-checkout
-  git-submodule-reset
-}
-git-reset-soft() {
-  git reset --soft "HEAD^"
-}
-git-submodule-reset() {
-  git submodule update --init --recursive
-  git submodule foreach --recursive 'git clean -dff && git checkout -- .'
-}
 if [ "$(uname)" = "Darwin" ]; then
   git-reveal-diff() {
     git diff --name-only -z | xargs -0 open -R
   }
 fi
-git-diff-words() {
-  git diff --color-words $@
-}
+# To make yank versions of these add `tee /dev/tty | safecopy`
 # Branch
 git-branch-print() {
-  git rev-parse --abbrev-ref HEAD | tr -d '\n' | tee /dev/tty | safecopy
+  git rev-parse --abbrev-ref HEAD | tr -d '\n'
 }
-# git-branch-yank() {
-#   git rev-parse --abbrev-ref HEAD | tr -d '\n'
-# }
 # Hash
 git-hash-print() {
   git rev-parse HEAD | tr -d '\n'
 }
-# git-hash-yank() {
-#   git rev-parse HEAD | tr -d '\n' | tee /dev/tty | safecopy
-# }
 # Remote
 git-remote-print() {
   git ls-remote --get-url | tr -d '\n'
-}
-# git-remote-yank() {
-#   git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
-# }
-git-root() {
-  git rev-parse --show-toplevel
 }
 git-cd-root() {
   cd "$(git rev-parse --show-toplevel)"
@@ -225,9 +188,6 @@ git-remote-add-origin() {
 }
 git-branch-prune() {
   git remote prune origin
-}
-git-branch-list-remote() {
-  git branch -r
 }
 git-branch-list-pruned() {
   git branch -vv | grep ': gone]' | awk '{print $1}'
@@ -267,9 +227,6 @@ git-stash-list() {
 }
 
 # Misc
-cd-yank-path() {
-  pwd | tr -d '\n' | tee /dev/tty | safecopy
-}
 cd-todo() {
   if [ -n "$TODO_DIRECTORY" ]; then
     cd $TODO_DIRECTORY
@@ -298,4 +255,3 @@ jekyll-serve-watch-drafts() {
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch --drafts
 }
-
