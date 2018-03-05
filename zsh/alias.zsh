@@ -49,7 +49,7 @@ alias vimdiff="nvim -d"
 
 # Shortcut
 
-# zsh
+# `zsh`
 alias oi='zsh-edit-config'
 alias ol="$EDITOR settings.sh"
 alias sl="source settings.sh"
@@ -61,7 +61,7 @@ alias dh='dirs -v'
 alias n='terminal-new'
 alias o='finder-new'
 
-# tmux
+# `tmux`
 alias tmnd='tmux-name-directory'
 alias tmsa='tmux-attach'
 alias tmsr='tmux-session-restore'
@@ -72,14 +72,14 @@ alias tma='tmux-paths-rg'
 alias tme='fzf-tmux-vim-file'
 alias tmgs='tmux-git-status'
 
-# emacs
+# `emacs`
 alias m='magit'
 alias e="$EMACS_COMMAND"
 
-# ranger
+# `ranger`
 alias r='ranger-cd'
 
-# vim
+# `vim`
 alias vtd='vim-todo'
 alias vgd='vim-git-diff'
 alias vdg='vim-diff-grep'
@@ -90,7 +90,7 @@ alias vsr='vim-session-restore-auto'
 alias vsra='vim-session-restore-auto'
 alias vsrs='vim-session-restore-saved'
 
-# emacs
+# `emacs`
 if [[ "$(uname)" = "Darwin" ]]; then
   alias gemacs="open -a emacs"
 fi
@@ -101,18 +101,18 @@ if [ "$(uname)" = "Darwin" ]; then
   alias ox='fzf-project-xcode'
 fi
 
-# cd
+# `cd`
 alias cdtd='cd-todo'
 
 # tags
 alias i='fzf-tags-vim'
 
-# doc & snp
+# `doc` & `snp`
 alias snp='fzf-snippet-copy'
 alias snpe='fzf-snippet-editor'
 alias doce='fzf-documentation-editor'
 
-# git
+# `git`
 alias gbp='git-branch-print'
 alias gh='git-hash-print'
 alias ghp='git-hash-print'

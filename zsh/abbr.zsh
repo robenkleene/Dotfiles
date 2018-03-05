@@ -122,17 +122,15 @@ _magic-abbrev-expand() {
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
 }
 
-_magic-abbrev-expand-and-insert () {
+_magic-abbrev-expand-and-insert() {
   _magic-abbrev-expand
   zle self-insert
 }
 
-_magic-abbrev-expand-and-accept () {
+_magic-abbrev-expand-and-accept() {
   _magic-abbrev-expand
   zle accept-line
 }
-
-
 
 zle -N _magic-abbrev-expand-and-insert
 zle -N _magic-abbrev-expand-and-accept
