@@ -1,9 +1,14 @@
 snippet title "Title from filename" b
 `!v system('markdown-title '.fnameescape(expand('%')))`
 endsnippet
-snippet cb "Checkbox"
-[ ] 
+snippet jpost "Jekyll Post" b
+---
+layout: post
+title: "${1:Title}"
+categories: ${2:Tag1}, ${3:Tag2}
+---
+
+$0
 endsnippet
-snippet td "Checkbox"
-- [ ] 
-endsnippet
+
+
