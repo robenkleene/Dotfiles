@@ -114,6 +114,7 @@ alias doce='fzf-documentation-editor'
 
 # `git`
 alias gbp='git-branch-print'
+alias gblpr='git-branch-list-pruned'
 alias gh='git-hash-print'
 alias ghp='git-hash-print'
 alias grt='git-remote-print'
