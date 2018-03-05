@@ -198,7 +198,10 @@ _robenkleene_fzf_inline_result() {
 
 # Safari
 fzf-safari-history-open() {
-  local result=$(safari-history-dump | FZF_DEFAULT_OPTS="-m --reverse --prompt \"Safari History> \" --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | cut -f2 )
+  local result=$(safari-history-dump \
+    | FZF_DEFAULT_OPTS="-m --reverse --prompt \"Safari History> \" \
+    --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+    | cut -f2)
   if [[ -n $result ]]; then
     open "$result"
   fi
