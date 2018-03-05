@@ -204,9 +204,6 @@ git-remote-print() {
 # git-remote-yank() {
 #   git ls-remote --get-url | tr -d '\n' | tee /dev/tty | safecopy
 # }
-git-commit-hash() {
-  git rev-parse HEAD
-}
 git-root() {
   git rev-parse --show-toplevel
 }
