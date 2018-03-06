@@ -190,7 +190,11 @@ git-branch-prune() {
   git remote prune origin
 }
 git-branch-list-pruned() {
-  git branch -vv | grep ': gone]' | awk '{print $1}'
+  if [[ "$1" = "-D" ]]; then
+    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+  else
+    git branch -vv | grep ': gone]' | awk '{print $1}'
+  fi
 }
 git-push-force() {
   git push --force-with-lease
