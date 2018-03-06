@@ -242,16 +242,32 @@ gem-update-no-doc() {
 
 # Jekyll
 jekyll-build-watch() {
+  if [[ ! -f "_config.yml" ]]; then
+    echo "Not a Jekyll site"
+    return 1
+  fi
   bundle exec jekyll build --watch
 }
 jekyll-build-watch-drafts() {
+  if [[ ! -f "_config.yml" ]]; then
+    echo "Not a Jekyll site"
+    return 1
+  fi
   bundle exec jekyll build --watch --drafts
 }
 jekyll-serve-watch() {
+  if [[ ! -f "_config.yml" ]]; then
+    echo "Not a Jekyll site"
+    return 1
+  fi
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch
 }
 jekyll-serve-watch-drafts() {
+  if [[ ! -f "_config.yml" ]]; then
+    echo "Not a Jekyll site"
+    return 1
+  fi
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch --drafts
 }
