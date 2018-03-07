@@ -3,8 +3,8 @@ nnoremap <leader>gaa :Git aa<CR>
 nnoremap <leader>gp :Git p<CR>
 nnoremap <leader>gc :Gco<CR>
 nnoremap <leader>gs :Gstatus<CR>
-vnoremap <localleader>gl :Gbrowse -<CR>
-nnoremap <localleader>gl :Gbrowse -<CR>
+" vnoremap <localleader>gl :Gbrowse -<CR>
+" nnoremap <localleader>gl :Gbrowse -<CR>
 
 " cnoreabbrev Gs Gstatus
 
