@@ -1,3 +1,7 @@
+if !exists(':Alias')
+  finish
+endif
+
 Alias G Git
 Alias A Rg
 Alias Ts TigStatus
