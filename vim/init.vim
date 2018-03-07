@@ -39,7 +39,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible' ", Cond(!has('nvim'))
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rsi'
@@ -71,6 +71,8 @@ let b:terminalorneovim = !has('gui_running') || has('nvim')
 " TODO Figure out how to make the conditional work
 " Plug 'junegunn/fzf.vim', { 'on': ['Buffers', 'BLines', 'Files', 'History', 'Modified', 'Gfzf', 'Gfzfr' ] }
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
+" `, { 'on': 'Dirvish' }` doesn't work for some reason
+Plug 'justinmk/vim-dirvish'
 " Also update `fzf` in external directory, it's a good idea to keep the plugin
 " and `fzf` version in sync
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
