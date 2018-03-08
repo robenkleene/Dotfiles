@@ -50,12 +50,12 @@ alias vimdiff="nvim -d"
 # Shortcut
 
 # `zsh`
-alias oi='zsh-edit-config'
-alias ol="$EDITOR settings.sh"
-alias sl="source settings.sh"
-alias ob="$EDITOR build.log"
-alias ot="$EDITOR test.log"
-alias dh='dirs -v'
+alias zoi='zsh-edit-config'
+# alias ol="$EDITOR settings.sh"
+# alias sl="source settings.sh"
+# alias ob="$EDITOR build.log"
+# alias ot="$EDITOR test.log"
+# alias dh='dirs -v'
 
 # scripts
 alias n='terminal-new'
