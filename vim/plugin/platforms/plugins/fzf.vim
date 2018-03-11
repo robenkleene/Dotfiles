@@ -60,12 +60,21 @@ command! TmuxPaths :call fzf#run(fzf#wrap({
       \ }))
 
 function! s:cd_sink(e) abort
-  execute 'Explore' a:e
+  call s:file_manager(a:e)
+  " execute 'Explore' a:e
   let l:path = expand('%')
   if !empty(l:path)
     " This should be an `lcd` but that doesn't work reliably
     " cd %
     lcd %
+  endif
+endfunction
+
+function! s:file_manager(directory) abort
+  if exists(':Dirvish')
+    execute 'Dirvish' a:directory
+  else
+    execute 'Explore' a:directory
   endif
 endfunction
 
@@ -78,7 +87,7 @@ command! Modified :call fzf#run(fzf#wrap({
 
 command! Cd :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
-      \   'sink':   'Explore'
+      \   'sink':   function('<SID>file_manager')
       \ }))
 
 command! Z :call fzf#run(fzf#wrap({
