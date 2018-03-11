@@ -54,9 +54,6 @@ vim-session-restore-auto() {
 vim-grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
-vim-git-modified() {
-  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
-}
 vim-git-conflicts() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq) -c "vimgrep /======/ ##"
 }
@@ -188,6 +185,9 @@ git-remote-add-origin() {
 }
 git-branch-prune() {
   git remote prune origin
+}
+git-list-modified() {
+  git diff --name-only --diff-filter=UM | uniq
 }
 git-branch-list-pruned() {
   if [[ "$1" = "-D" ]]; then
