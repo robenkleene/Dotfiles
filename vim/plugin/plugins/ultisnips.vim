@@ -14,7 +14,7 @@ let g:UltiSnipsEditSplit="context"
 nnoremap <leader>os :UltiSnipsEdit<CR>
 
 " Use `<A-s>` to complete snippets in templates
-inoremap <silent> <A-s> <c-r>=<sid>ulti_complete()<cr>
+inoremap <silent> <A-s> <c-r>=<SID>ulti_complete()<cr>
 function! s:ulti_complete() abort
     if empty(UltiSnips#SnippetsInCurrentScope(1))
         return ''
