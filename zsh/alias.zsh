@@ -120,3 +120,7 @@ alias grtp='git-remote-print'
 alias grtao='git-remote-add-origin'
 alias gcd='git-cd-root'
 alias dtv='diff-to-grep | vg'
+
+# `jekyll`
+alias jsw='jekyll-serve-watch'
+alias jswd='jekyll-serve-watch-drafts'
