@@ -4,8 +4,8 @@ export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 # Make `fzf` bindings available, since this is being manually imported here
 # `fzf` should be installed at `~/.fzf/`, using the command 
 # `~/.fzf/install --bin`, which avoids installing the completions automatically
-FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-FZF_ALT_C_COMMAND='fd --type directory'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_ALT_C_COMMAND='fd --type directory'
 
 source ~/.fzf/shell/completion.zsh
 source ~/.fzf/shell/key-bindings.zsh
