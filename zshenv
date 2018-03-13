@@ -39,7 +39,7 @@ export ALTERNATE_EDITOR=""
 export HOMEBREW_NO_ANALYTICS=1
 
 # Custom
-export TODO_DIRECTORY=~/Dropbox/Text/Projects/
+export INBOX_DIRECTORY=~/Documents/Text/Inbox
 
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS
