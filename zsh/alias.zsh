@@ -119,7 +119,7 @@ alias ghp='git-hash-print'
 alias grtp='git-remote-print'
 alias grtao='git-remote-add-origin'
 alias gcd='git-cd-root'
-alias dtv='diff-to-grep | vg'
+alias gdg='git-diff-grep'
 
 # `jekyll`
 alias jsw='jekyll-serve-watch'

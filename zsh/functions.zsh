@@ -195,6 +195,9 @@ git-push-force() {
 git-web-open() {
   link-source-control . | url-open
 }
+git-diff-grep() {
+  git diff --relative $argv | diff-to-grep
+}
 
 # Git Stash
 _robenkleene_git_stash_command() {
