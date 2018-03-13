@@ -119,6 +119,8 @@ vnoremap <localleader>gm :'<,'>call bindings#LinkSourceControlMarkdownYankLines(
 " Open Git Links
 nnoremap <localleader>go :call bindings#LinkSourceControlOpen()<CR>
 vnoremap <localleader>go :'<,'>call bindings#LinkSourceControlOpenLines()<CR>
+" Yank quoted portion
+vnoremap <localleader>gq :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>

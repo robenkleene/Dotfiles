@@ -19,6 +19,11 @@ function! bindings#LinkSourceControlMarkdownYankLines() range abort
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
+function! bindings#LinkSourceControlMarkdownYankQuotedLines() range abort
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @* = @"
+  echo "Yanked git Markdown link"
+endfunction
 
 " Open Git Links
 function! bindings#LinkSourceControlOpen() abort
