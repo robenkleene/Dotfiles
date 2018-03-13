@@ -140,13 +140,6 @@ tmux-default-zsh() {
 tmux-name-directory() {
   tmux rename-window "$(basename $PWD)"
 }
-tmux-attach() {
-  if [ $# -eq 1 ]; then
-    tmux attach -t $argv
-  else
-    tmux attach
-  fi
-}
 
 # git
 if [ "$(uname)" = "Darwin" ]; then

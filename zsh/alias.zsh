@@ -62,13 +62,13 @@ alias n='terminal-new'
 alias o='finder-new'
 
 # `tmux`
+alias tma='tmux attach'
 alias tmnd='tmux-name-directory'
-alias tmsa='tmux-attach'
 alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
 alias tmp='tmux-paths'
 alias tmc='tmux-paths-run'
-alias tma='tmux-paths-rg'
+alias tmack='tmux-paths-rg'
 alias tme='fzf-tmux-vim-file'
 alias tmgs='tmux-git-status'
 
