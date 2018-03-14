@@ -55,6 +55,8 @@ _fzf-open-widget() {
 zle -N _fzf-open-widget
 bindkey '\eo' _fzf-open-widget
 
+
+# Generic
 __fzf-cmd() {
   local cmd="$1"
   local term="$2"
@@ -70,11 +72,15 @@ __fzf-cmd() {
 
 __fzf-buffer-match() {
   local cmd="$1"
-  local match
+  local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-  local result=$(__fzf-cmd $cmd $match)
-  local ret=$?
-  LBUFFER+="${(q)result} "
+  local result=$(__fzf-cmd $cmd $MATCH)
+  local ret=$
+  if [[ -n "$result" ]]; then
+    LBUFFER+="${(q)result} "
+  else
+    LBUFFER+=$MATCH
+  fi
   zle redisplay
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
@@ -85,19 +91,23 @@ __fzf-reset-finish() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
 }
 
+# Specific
 _fzf-z-widget() {
   local cmd="fasd -Rdl"
+
   if [[ -n "$LBUFFER" ]]; then
     __fzf-buffer-match "$cmd"
     local ret=$?
     return $ret
   fi
+
   local dir=$(__fzf-cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
     return 0
   fi
   cd "$dir"
+
   local ret=$?
   __fzf-reset-finish
   return $ret
