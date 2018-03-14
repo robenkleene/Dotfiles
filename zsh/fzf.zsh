@@ -8,55 +8,13 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND='fd --type directory'
 
 source ~/.fzf/shell/completion.zsh
-source ~/.fzf/shell/key-bindings.zsh
+# source ~/.fzf/shell/key-bindings.zsh
 # Put back default history search
 bindkey '^R' history-incremental-search-backward
 # bindkey '^[r' fzf-history-widget
 
-# Custom Bindings
+# Library
 
-_fzf-editor-widget() {
-  if [[ -n "$LBUFFER" ]]; then
-    return
-  fi
-  local files="$(__fsel)"
-  if [[ -z "$files" ]]; then
-    zle redisplay
-    return 0
-  fi
-  exec </dev/tty
-  setopt localoptions pipefail 2> /dev/null
-  eval $EDITOR $files
-  local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-zle -N _fzf-editor-widget
-bindkey '\ee' _fzf-editor-widget
-
-_fzf-open-widget() {
-  if [[ -n "$LBUFFER" ]]; then
-    return
-  fi
-  local files="$(__fsel)"
-  if [[ -z "$files" ]]; then
-    zle redisplay
-    return 0
-  fi
-  exec </dev/tty
-  setopt localoptions pipefail 2> /dev/null
-  eval open $files
-  local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-zle -N _fzf-open-widget
-bindkey '\eo' _fzf-open-widget
-
-
-# Generic
 __fzf-cmd() {
   local cmd="$1"
   local term="$2"
@@ -64,7 +22,7 @@ __fzf-cmd() {
     query="--query=\"$term\" "
   fi
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m
+  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf +m
   local ret=$?
   echo
   return $ret
@@ -75,7 +33,7 @@ __fzf-buffer-match() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
   local result=$(__fzf-cmd $cmd $MATCH)
-  local ret=$
+  local ret=$?
   if [[ -n "$result" ]]; then
     LBUFFER+="${(q)result} "
   else
@@ -91,7 +49,54 @@ __fzf-reset-finish() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
 }
 
-# Specific
+# Widgets
+
+_fzf-cd-widget() {
+  local cmd=$FZF_ALT_C_COMMAND
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf-buffer-match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local dir=$(__fzf-cmd "$cmd") 
+  if [[ ! -d "$dir" ]]; then
+    zle redisplay
+    return 1
+  fi
+  cd "$dir"
+
+  local ret=$?
+  __fzf-reset-finish
+  return $ret
+}
+zle -N _fzf-cd-widget
+bindkey '\ec' _fzf-cd-widget
+
+_fzf-editor-widget() {
+  local cmd=$FZF_CTRL_T_COMMAND
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf-buffer-match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf-cmd "$cmd") 
+  if [[ ! -f "$file" ]]; then
+    zle redisplay
+    return 1
+  fi
+  eval $EDITOR $file
+
+  local ret=$?
+  __fzf-reset-finish
+  return $ret
+}
+zle -N _fzf-editor-widget
+bindkey '^t' _fzf-editor-widget
+
 _fzf-z-widget() {
   local cmd="fasd -Rdl"
 
@@ -138,6 +143,10 @@ _fzf-zvim-widget() {
 zle -N _fzf-zvim-widget
 bindkey '\er' _fzf-zvim-widget
 
+
+# Special
+
+# Tags uses a special `fzf` command
 _fzf-tags-widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
@@ -158,6 +167,7 @@ _fzf-tags-widget() {
 zle -N _fzf-tags-widget
 bindkey '\ei' _fzf-tags-widget
 
+# Commands does extra work with the `commands` and `functions` variables
 __fcmd() {
   local query=""
   if [[ -n "$1" ]]; then
@@ -175,7 +185,6 @@ __fcmd() {
   echo
   return $ret
 }
-
 _fzf-command-widget() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
@@ -187,25 +196,6 @@ _fzf-command-widget() {
 }
 zle     -N   _fzf-command-widget
 bindkey '^@' _fzf-command-widget
-
-_robenkleene_fzf_inline() {
-  local result_cmd=$1
-  local list_cmd=${2-$FZF_DEFAULT_COMMAND} 
-  setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
-  if [[ -z "$result" ]]; then
-    return 0
-  fi
-  local parameter=$(printf '%q' "$result")
-  local final_cmd="$result_cmd $parameter"
-  eval $final_cmd
-  local ret=$?
-  if [ $? -eq 0 ]; then
-    # Add to history
-    print -sr $final_cmd
-  fi
-  return $ret
-}
 
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
