@@ -104,7 +104,7 @@ _fzf-z-widget() {
   local dir=$(__fzf-cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
-    return 0
+    return 1
   fi
   cd "$dir"
 
@@ -117,25 +117,22 @@ bindkey '\ez' _fzf-z-widget
 
 _fzf-zvim-widget() {
   local cmd="fasd -Rfl"
-  local file=$(_fzf_z $cmd)
+
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER="${LBUFFER}${(q)file} "
+    __fzf-buffer-match "$cmd"
     local ret=$?
-    zle redisplay
-    typeset -f zle-line-init >/dev/null && zle zle-line-init
     return $ret
   fi
-  setopt localoptions pipefail 2> /dev/null
+
+  local file=$(__fzf-cmd "$cmd") 
   if [[ ! -f "$file" ]]; then
     zle redisplay
-    return 0
+    return 1
   fi
-  exec </dev/tty
-  setopt localoptions pipefail 2> /dev/null
   eval $EDITOR "\"$file\""
+
   local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  __fzf-reset-finish
   return $ret
 }
 zle -N _fzf-zvim-widget
