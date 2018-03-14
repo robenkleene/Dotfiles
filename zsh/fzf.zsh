@@ -68,13 +68,17 @@ _fzf-z-widget() {
   local cmd="fasd -Rdl"
   local dir=$(_fzf_z $cmd)
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER="${LBUFFER}$(echo -n ${(q)dir}) "
+    LBUFFER="${LBUFFER}${(q)dir} "
     local ret=$?
     zle redisplay
     typeset -f zle-line-init >/dev/null && zle zle-line-init
     return $ret
   fi
   setopt localoptions pipefail 2> /dev/null
+  if [[ ! -d "$dir" ]]; then
+    zle redisplay
+    return 0
+  fi
   cd "$dir"
   local ret=$?
   zle reset-prompt
@@ -85,18 +89,17 @@ zle -N _fzf-z-widget
 bindkey '\ez' _fzf-z-widget
 
 _fzf-zvim-widget() {
+  local cmd="fasd -Rfl"
+  local file=$(_fzf_z $cmd)
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER="${LBUFFER}$(_fzf_z)"
+    LBUFFER="${LBUFFER}${(q)file} "
     local ret=$?
     zle redisplay
     typeset -f zle-line-init >/dev/null && zle zle-line-init
     return $ret
   fi
-  # Can't use `_fzf_z` here because it inserts a space at the end
-  local cmd="fasd -Rfl"
   setopt localoptions pipefail 2> /dev/null
-  local file="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m)"
-  if [[ -z "$file" ]]; then
+  if [[ ! -f "$file" ]]; then
     zle redisplay
     return 0
   fi
