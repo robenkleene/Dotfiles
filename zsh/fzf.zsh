@@ -40,13 +40,13 @@ __fzf-buffer-match() {
     LBUFFER+=$MATCH
   fi
   zle redisplay
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  # typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
 
 __fzf-reset-finish() {
   zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  # typeset -f zle-line-init >/dev/null && zle zle-line-init
 }
 
 # Widgets
