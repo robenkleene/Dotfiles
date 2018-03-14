@@ -56,32 +56,25 @@ zle -N _fzf-open-widget
 bindkey '\eo' _fzf-open-widget
 
 _fzf_z() {
-  local cmd="fasd -Rdl"
+  local cmd="$1"
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m "$@" | while read item; do
-    echo -n "${(q)item} "
-  done
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m
   local ret=$?
   echo
   return $ret
 }
 
 _fzf-z-widget() {
+  local cmd="fasd -Rdl"
+  local dir=$(_fzf_z $cmd)
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER="${LBUFFER}$(_fzf_z)"
+    LBUFFER="${LBUFFER}$(echo -n ${(q)dir}) "
     local ret=$?
     zle redisplay
     typeset -f zle-line-init >/dev/null && zle zle-line-init
     return $ret
   fi
-  # Can't use `_fzf_z` here because it inserts a space at the end
-  local cmd="fasd -Rdl"
   setopt localoptions pipefail 2> /dev/null
-  local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m)"
-  if [[ -z "$dir" ]]; then
-    zle redisplay
-    return 0
-  fi
   cd "$dir"
   local ret=$?
   zle reset-prompt
