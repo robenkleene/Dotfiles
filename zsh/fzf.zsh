@@ -55,34 +55,51 @@ _fzf-open-widget() {
 zle -N _fzf-open-widget
 bindkey '\eo' _fzf-open-widget
 
-_fzf_z() {
+__fzf-cmd() {
   local cmd="$1"
+  local term="$2"
+  if [[ -n "$term" ]]; then
+    query="--query=\"$term\" "
+  fi
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) -m
+  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m
   local ret=$?
   echo
   return $ret
 }
 
+__fzf-buffer-match() {
+  local cmd="$1"
+  local match
+  LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
+  local result=$(__fzf-cmd $cmd $match)
+  local ret=$?
+  LBUFFER+="${(q)result} "
+  zle redisplay
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  return $ret
+}
+
+__fzf-reset-finish() {
+  zle reset-prompt
+  typeset -f zle-line-init >/dev/null && zle zle-line-init
+}
+
 _fzf-z-widget() {
   local cmd="fasd -Rdl"
-  local dir=$(_fzf_z $cmd)
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER="${LBUFFER}${(q)dir} "
+    __fzf-buffer-match "$cmd"
     local ret=$?
-    zle redisplay
-    typeset -f zle-line-init >/dev/null && zle zle-line-init
     return $ret
   fi
-  setopt localoptions pipefail 2> /dev/null
+  local dir=$(__fzf-cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
     return 0
   fi
   cd "$dir"
   local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
+  __fzf-reset-finish
   return $ret
 }
 zle -N _fzf-z-widget
@@ -120,7 +137,7 @@ _fzf-tags-widget() {
   fi
   local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" $(__fzfcmd) -m)"
+  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
   if [[ -z "$result" ]]; then
     zle redisplay
     return 0
@@ -163,8 +180,6 @@ _fzf-command-widget() {
 }
 zle     -N   _fzf-command-widget
 bindkey '^@' _fzf-command-widget
-
-# Private
 
 _robenkleene_fzf_inline() {
   local result_cmd=$1
