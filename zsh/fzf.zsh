@@ -7,7 +7,7 @@ export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND='fd --type directory'
 
-source ~/.fzf/shell/completion.zsh
+# source ~/.fzf/shell/completion.zsh
 # source ~/.fzf/shell/key-bindings.zsh
 # Put back default history search
 bindkey '^R' history-incremental-search-backward
