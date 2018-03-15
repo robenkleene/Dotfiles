@@ -7,11 +7,11 @@ nnoremap <leader>b :Buffers<CR>
 " nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <M-e> :Files<CR>
+nnoremap <C-t> :Files<CR>
 nnoremap <leader>c :Commands<CR>
 vnoremap <leader>c :Commands<CR>
 nnoremap <M-c> :Cd<CR>
-nnoremap <M-t> :TmuxPaths<CR>
+" nnoremap <M-t> :TmuxPaths<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
