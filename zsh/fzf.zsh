@@ -153,7 +153,7 @@ _fzf-tags-widget() {
   fi
   local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" fzf +m)"
   if [[ -z "$result" ]]; then
     zle redisplay
     return 0
@@ -178,7 +178,7 @@ __fcmd() {
   cmds=("${(@)cmds:#g\[}")
   local cmd="print -l \\"$cmds\\" | grep -E -v \"^(_|VCS)\""
   setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) | while read item; do
+  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf | while read item; do
     echo -n "${(q)item} "
   done
   local ret=$?
@@ -200,7 +200,7 @@ bindkey '^@' _fzf-command-widget
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
-  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" $(__fzfcmd) +m)"
+  local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf +m)"
   local ret=$?
   echo $result
   return $ret
@@ -210,7 +210,7 @@ _robenkleene_fzf_inline_result() {
 fzf-safari-history-open() {
   local result=$(safari-history-dump \
     | FZF_DEFAULT_OPTS="-m --reverse --prompt \"Safari History> \" \
-    --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+    --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" fzf +m \
     | cut -f2)
   if [[ -n $result ]]; then
     open "$result"
@@ -265,7 +265,7 @@ if [ "$(uname)" = "Darwin" ]; then
     setopt localoptions pipefail 2> /dev/null
     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
       | grep -vE "\/Carthage\/" \
-      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" fzf +m \
       | tr '\n' '\0' \
       | xargs -0 open
   }
@@ -274,7 +274,7 @@ if [ "$(uname)" = "Darwin" ]; then
   fzf-file-xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
     eval $ack_search_xcode \
-      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+      | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" fzf +m \
       | tr '\n' '\0' \
       | xargs -0 open -a "Xcode"
   }
@@ -282,18 +282,18 @@ fi
 
 # ack
 fzf-vim-grep() {
-  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
   echo $result | $VIM_COMMAND -c "GrepBuffer" -
 }
 fzf-vim-file() {
-  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" $(__fzfcmd) +m | local result=`cat`
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
   $VIM_COMMAND $result
 }
 
 fzf-tmux-vim-file() {
   tmux-paths -0 \
     | xargs -0 rg --files -g "" \
-    | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" $(__fzfcmd) +m \
+    | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" fzf +m \
     | tr '\n' '\0' \
     | xargs -0 $VIM_COMMAND
 }
