@@ -95,7 +95,7 @@ _fzf-editor-widget() {
   return $ret
 }
 zle -N _fzf-editor-widget
-bindkey '^t' _fzf-editor-widget
+bindkey '\ee' _fzf-editor-widget
 
 _fzf-z-widget() {
   local cmd="fasd -Rdl"

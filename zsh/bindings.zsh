@@ -20,7 +20,7 @@ bindkey "^[^H" bash-backward-kill-word
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-bindkey '\ee' edit-command-line
+# bindkey '\ee' edit-command-line
 
 # By default, `^u` kills the whole line, rather than backwards
 bindkey "^U" backward-kill-line

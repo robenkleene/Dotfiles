@@ -7,7 +7,8 @@ nnoremap <leader>b :Buffers<CR>
 " nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <C-t> :Files<CR>
+" nnoremap <C-t> :Files<CR>
+nnoremap <M-e> :Files<CR>
 nnoremap <leader>c :Commands<CR>
 vnoremap <leader>c :Commands<CR>
 nnoremap <M-c> :Cd<CR>
