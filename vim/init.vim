@@ -80,6 +80,7 @@ Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
 " Languages {{{2
+Plug 'tpope/vim-ragtag', { 'for': 'html' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
