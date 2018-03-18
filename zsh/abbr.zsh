@@ -10,7 +10,7 @@ abbreviations=(
 
 # rg
 'a' "$ACK_COMMAND"
-'rgf' "$ACK_COMMAND --files -g"
+'af' "$ACK_COMMAND -F"
 
 # `tig`
 'tst' 'tig stash'

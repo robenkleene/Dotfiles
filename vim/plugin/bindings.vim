@@ -171,9 +171,13 @@ nnoremap <A-p> gT
 vnoremap <A-n> gt
 vnoremap <A-p> gT
 nnoremap <C-w>n gt
+nnoremap <C-w><C-n> gt
 nnoremap <C-w>p gT
+nnoremap <C-w><C-p> gT
 vnoremap <C-w>n gt
+vnoremap <C-w><C-n> gt
 vnoremap <C-w>p gT
+vnoremap <C-w><C-p> gT
 
 " Disable these use the above ones, these are too easy to accidently open new
 " splits with `<C-w><C-n>`, also `<C-w>n` is a default new split binding.
