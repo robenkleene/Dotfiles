@@ -25,6 +25,8 @@ bind stage v !bash -c "nvim -c 'Gdiff' '%(file)'"
 bind status v !bash -c "nvim -c 'Gdiff' '%(file)'"
 bind status ]] move-page-down
 bind status [[ move-page-up
+bind generic d none
+bind status dd ?@rm %(file)
 
 # Main
 bind main c ?git checkout %(commit)
