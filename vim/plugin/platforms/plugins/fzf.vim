@@ -9,8 +9,10 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 " nnoremap <C-t> :Files<CR>
 nnoremap <M-e> :Files<CR>
-nnoremap <leader>c :Commands<CR>
-vnoremap <leader>c :Commands<CR>
+" nnoremap <C-@> :Commands<CR>
+" vnoremap <C-@> :Commands<CR>
+nnoremap <C-Space> :Commands<CR>
+vnoremap <C-Space> :Commands<CR>
 nnoremap <M-c> :Cd<CR>
 " nnoremap <M-t> :TmuxPaths<CR>
 nnoremap <M-z> :Z<CR>
