@@ -26,7 +26,6 @@
                evil-visualstar/begin-search-backward)
     :init
     (progn
-      (define-key evil-normal-state-map (kbd "gx") 'browse-url-at-point)
       (define-key evil-visual-state-map (kbd "*") 'evil-visualstar/begin-search-forward)
       (define-key evil-visual-state-map (kbd "#") 'evil-visualstar/begin-search-backward)))
   (use-package evil-surround
@@ -56,6 +55,9 @@
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/languages"))
   (require 'robenkleene-evil-emacs-lisp)
   (require 'robenkleene-evil-shell)
+
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil/modes"))
+  (require 'robenkleene-evil-dired)
 
   ;; Activate
   (evil-mode 1)
