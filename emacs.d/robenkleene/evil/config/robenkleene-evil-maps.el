@@ -59,6 +59,7 @@
 (define-key evil-motion-state-map (kbd "[") robenkleene/unimpaired-previous-map)
 (define-key evil-motion-state-map (kbd "]") robenkleene/unimpaired-next-map)
 (define-key evil-motion-state-map "-" 'dired-jump)
+(define-key evil-motion-state-map (kbd "C-@") 'smex)
 
 (provide 'robenkleene-evil-maps)
 
