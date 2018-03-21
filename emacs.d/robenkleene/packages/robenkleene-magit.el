@@ -7,8 +7,9 @@
 (use-package magit
   :commands (robenkleene/magit-status-startup)
   :bind (:map robenkleene/leader-map
-              ("gs" . magit-status)
-              )
+              ("gs" . magit-status))
+  :bind (:map evil-motion-state-map
+              ("gs" . magit-status))
   :config
   ;; Refresh magit on file system changes
   (use-package magit-filenotify
