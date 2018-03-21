@@ -13,6 +13,12 @@
 ;; Hack to allow `SPC' to work as leader in Dired buffers
 (define-key dired-mode-map (kbd "SPC") nil)
 
+;; Omit hidden files
+(require 'dired-x)
+(setq-default dired-omit-mode t)
+(setq-default dired-omit-files
+              (concat dired-omit-files "\\|^\\..+$"))
+
 ;; Suppress error message
 (defvar dired-use-ls-dired)
 (setq dired-use-ls-dired nil)
