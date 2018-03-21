@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+
 ;; Disable insert mode key map
 (setcdr evil-insert-state-map nil)
 (setcdr evil-ex-completion-map nil)
