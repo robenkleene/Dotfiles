@@ -149,6 +149,7 @@
    ;;;; Text
    `(link ((t (:inherit rk-link))))
    `(success ((t (:inherit rk-success))))
+   `(trailing-whitespace ((t (:inherit rk-highlight-line))))
    
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
