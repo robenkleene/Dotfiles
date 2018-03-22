@@ -18,7 +18,7 @@
               ("*" . robenkleene/rg-selection-best-available)
               ("f" . robenkleene/find-file-best-available)
               ("c" . projectile-find-dir)
-              ("a" . robenkleene/helm-rg-best-available)
+              ;; ("a" . robenkleene/helm-rg-best-available)
               )
   :config
 

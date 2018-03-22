@@ -10,6 +10,7 @@
               )
   :bind (:map robenkleene/leader-map
               ("h" . helm-resume)
+              ("a" . robenkleene/helm-ag)
               )
   :init
   (use-package helm-swoop
@@ -34,6 +35,34 @@
     )
   (defalias 'doc 'robenkleene/helm-documentation)
 
+  ;; (defun robenkleene/helm-rg-selection (&optional arg)
+  ;;   "Call from project root, or current directory if unavailable."
+  ;;   (interactive)
+  ;;   (apply 'robenkleene/rg
+  ;;          (robenkleene/grep-parameters (robenkleene/selection-or-word)
+  ;;                                       nil
+  ;;                                       (robenkleene/prefix-project-root-or-default-directory))
+  ;;          ))
+
+  (defun robenkleene/helm-ag (dir)
+    "Call in the current directory or with prefix specify a directory."
+    (interactive
+     (list
+      (if current-prefix-arg
+          (read-directory-name "Base directory: ")
+        default-directory)))
+    ;; Clear the current prefix, for `helm-do-grep-ag' this just provides a list
+    ;; of file types built-in to `rg` which is limiting.
+    (let ((current-prefix-arg nil))
+      (if (equal dir nil)
+          (call-interactively 'helm-do-grep-ag)
+        (let ((default-directory dir))
+          (call-interactively 'helm-do-grep-ag)
+          )
+        )  
+      )
+    )
+
   :config
   (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
@@ -47,6 +76,7 @@
       (grep-mode)
       )
     )
+
   )
 
 (provide 'robenkleene-helm)
