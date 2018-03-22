@@ -16,6 +16,30 @@
 
 ;;; Colors
 
+(custom-set-variables
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#F92672")
+     (40 . "#CF4F1F")
+     (60 . "#C26C0F")
+     (80 . "#E6DB74")
+     (100 . "#AB8C00")
+     (120 . "#A18F00")
+     (140 . "#989200")
+     (160 . "#8E9500")
+     (180 . "#A6E22E")
+     (200 . "#729A1E")
+     (220 . "#609C3C")
+     (240 . "#4E9D5B")
+     (260 . "#3C9F79")
+     (280 . "#A1EFE4")
+     (300 . "#299BA6")
+     (320 . "#2896B5")
+     (340 . "#2790C3")
+     (360 . "#66D9EF"))))
+ '(vc-annotate-very-old-color nil)
+ )
+
 (defvar kleene-dark-colors-alist
   '(
     ;; Ansi
@@ -316,8 +340,6 @@
    `(org-level-8 ((t (:inherit org-level-1))))
    `(org-special-keyword ((t (:inherit rk-comment :bold t))))
    `(org-property-value ((t (:inherit rk-comment))))
-   
-   
    ))
 
 ;;; Variables
