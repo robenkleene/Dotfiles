@@ -6,12 +6,11 @@
 
 
 (use-package projectile
-  :commands (robenkleene/rg-best-available robenkleene/projectile-go-to-root)
+  :commands (robenkleene/projectile-go-to-root)
   :init
-  (defalias 'rg 'robenkleene/rg-best-available)
   (defalias 'gcd 'robenkleene/projectile-go-to-root)
   :bind (:map evil-motion-state-map
-              ("M-e" . robenkleene/find-file-best-available)
+              ("M-e" . robenkleene/find-file-directory)
               ("M-c" . projectile-find-dir)
               )
   :bind (:map robenkleene/leader-map
@@ -58,6 +57,19 @@
     (projectile-find-file-in-directory default-directory)
     )
 
+
+  (defun robenkleene/find-file-directory (dir)
+    "Call `find-file' in the current directory or with prefix specify a directory."
+    (interactive
+     (list
+      (if current-prefix-arg
+          (read-directory-name "Base directory: ")
+        default-directory)))
+    (let ((current-prefix-arg nil))
+      (projectile-find-file-in-directory dir)
+      )
+    )
+  
   (defun robenkleene/find-file-best-available (&optional arg)
     "Run best available `find-file'."
     (interactive "P")
@@ -75,47 +87,6 @@
       )
     )
 
-  (defun robenkleene/rg-selection-best-available (&optional arg)
-    "Call from project root, or current directory if unavailable."
-    (interactive)
-    (apply 'robenkleene/rg
-           (robenkleene/grep-parameters (robenkleene/selection-or-word)
-                                        nil
-                                        (robenkleene/prefix-project-root-or-default-directory))
-           ))
-
-  (defun robenkleene/rg-best-available ()
-    "Call from project root, or current directory if unavailable."
-    (interactive)
-    (apply 'robenkleene/rg
-           (robenkleene/grep-parameters nil
-                                        nil
-                                        (robenkleene/prefix-project-root-or-default-directory))
-           )
-    )
-
-  (defun robenkleene/helm-rg-best-available (&optional dir)
-    "Use best available helm `rg' at DIR."
-    (require 'grep)
-    (interactive (let ((dir (robenkleene/prefix-project-root-or-default-directory)))
-                   (list (or dir (read-directory-name "Base directory: "
-                                                      nil
-                                                      default-directory
-                                                      t))
-                         )
-                   )
-                 )
-    ;; Clear the current prefix, for `helm-do-grep-ag' this just provides a list
-    ;; of file types built-in to `rg` which is limiting.
-    (let ((current-prefix-arg nil))
-      (if (equal dir nil)
-          (call-interactively 'helm-do-grep-ag)
-        (let ((default-directory dir))
-          (call-interactively 'helm-do-grep-ag)
-          )
-        )  
-      )
-    )
 
   )
 
