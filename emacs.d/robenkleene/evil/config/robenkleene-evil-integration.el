@@ -9,13 +9,13 @@
 (defun evil-make-overriding-map (keymap &optional state copy)
   "No-op."
   )
-(defmacro evil-add-hjkl-bindings (keymap &optional state &rest bindings)
+(defmacro evil-add-basic-bindings (keymap &optional state &rest bindings)
   "No-op."
   )
 
 ;; Create my own versions of these functions
 (defvar evil-motion-state-map)
-(defmacro robenkleene/evil-add-hjkl-bindings (keymap &optional state &rest bindings)
+(defmacro robenkleene/evil-add-basic-bindings (keymap &optional state &rest bindings)
   "Add bindings to KEYMAP in STATE.
 Add additional BINDINGS if specified."
   (declare (indent defun))
@@ -75,7 +75,7 @@ And a corresponding KEYMAP for a STATE.  Add additional BINDINGS."
   `(with-eval-after-load ,package
      (defvar ,keymap)
      (robenkleene/evil-make-overriding-map ,keymap ,state)
-     (robenkleene/evil-add-hjkl-bindings ,keymap ,state ,@bindings)
+     (robenkleene/evil-add-basic-bindings ,keymap ,state ,@bindings)
      )
   )
 
