@@ -161,6 +161,7 @@
 
    ;;;; Ido
    `(ido-first-match ((t (:inherit rk-search))))
+   `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
    `(compilation-line-number ((t (:inherit rk-comment))))
