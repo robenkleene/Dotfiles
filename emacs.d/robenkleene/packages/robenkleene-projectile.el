@@ -15,7 +15,7 @@
               ("M-c" . projectile-find-dir)
               )
   :bind (:map robenkleene/leader-map
-              ("*" . robenkleene/rg-selection-best-available)
+              ;; ("*" . robenkleene/rg-selection-best-available)
               ("f" . robenkleene/find-file-best-available)
               ("c" . projectile-find-dir)
               ;; ("a" . robenkleene/helm-rg-best-available)

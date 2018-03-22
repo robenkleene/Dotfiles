@@ -10,7 +10,8 @@
               )
   :bind (:map robenkleene/leader-map
               ("h" . helm-resume)
-              ("a" . robenkleene/helm-ag)
+              ("a" . robenkleene/helm-ag-in-directory)
+              ("*" . robenkleene/rg-selection-in-directory)
               )
   :init
   (use-package helm-swoop
@@ -35,16 +36,23 @@
     )
   (defalias 'doc 'robenkleene/helm-documentation)
 
-  ;; (defun robenkleene/helm-rg-selection (&optional arg)
-  ;;   "Call from project root, or current directory if unavailable."
-  ;;   (interactive)
-  ;;   (apply 'robenkleene/rg
-  ;;          (robenkleene/grep-parameters (robenkleene/selection-or-word)
-  ;;                                       nil
-  ;;                                       (robenkleene/prefix-project-root-or-default-directory))
-  ;;          ))
+  (defun robenkleene/rg-selection-in-directory (dir)
+    "Call in the current directory or with prefix specify a directory."
+    (interactive
+     (list
+      (if current-prefix-arg
+          (read-directory-name "Base directory: ")
+        default-directory)))
+    (let ((current-prefix-arg nil))
+      (apply 'robenkleene/rg
+             (robenkleene/grep-parameters (robenkleene/selection-or-word)
+                                          nil
+                                          dir)
+             )
+      )
+    )
 
-  (defun robenkleene/helm-ag (dir)
+  (defun robenkleene/helm-ag-in-directory (dir)
     "Call in the current directory or with prefix specify a directory."
     (interactive
      (list
