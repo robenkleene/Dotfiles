@@ -179,8 +179,11 @@
 
    ;;;; diff
    `(diff-added ((t :inherit rk-diff-add)))
+   `(diff-refine-added ((t :inherit rk-diff-add)))
    `(diff-changed ((t :inherit rk-diff-change)))
+   `(diff-refine-changed ((t :inherit rk-diff-change)))
    `(diff-removed ((t :inherit rk-diff-remove)))
+   `(diff-refine-removed ((t :inherit rk-diff-remove)))
 
    ;;;; dired
    `(dired-directory ((t (:inherit link :underline nil))))
