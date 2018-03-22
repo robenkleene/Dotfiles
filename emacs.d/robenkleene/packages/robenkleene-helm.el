@@ -37,7 +37,7 @@
   (defalias 'doc 'robenkleene/helm-documentation)
 
   (defun robenkleene/rg-selection-in-directory (dir)
-    "Call in the current directory or with prefix specify a directory."
+    "Call `rg' in the current directory or with prefix specify a directory."
     (interactive
      (list
       (if current-prefix-arg
@@ -53,7 +53,7 @@
     )
 
   (defun robenkleene/helm-ag-in-directory (dir)
-    "Call in the current directory or with prefix specify a directory."
+    "Call `helm-do-grep-ag' in the current directory or with prefix specify a directory."
     (interactive
      (list
       (if current-prefix-arg
