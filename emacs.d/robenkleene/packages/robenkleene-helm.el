@@ -54,12 +54,7 @@
     ;; Clear the current prefix, for `helm-do-grep-ag' this just provides a list
     ;; of file types built-in to `rg` which is limiting.
     (let ((current-prefix-arg nil))
-      (if (equal dir nil)
-          (call-interactively 'helm-do-grep-ag)
-        (let ((default-directory dir))
-          (call-interactively 'helm-do-grep-ag)
-          )
-        )  
+      (call-interactively 'helm-do-grep-ag)
       )
     )
 
