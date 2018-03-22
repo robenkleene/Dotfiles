@@ -19,6 +19,8 @@
 
 ;; Re-enable `esc'
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-insert-state-map "\C-n" 'evil-complete-next)
+(define-key evil-insert-state-map "\C-p" 'evil-complete-previous)
 
 ;; Open Map
 (defvar robenkleene/open-map (make-keymap))
