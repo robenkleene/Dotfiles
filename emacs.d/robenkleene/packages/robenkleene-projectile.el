@@ -39,24 +39,11 @@
          (projectile-project-root))
     )
 
-  (defun robenkleene/project-root-or-default-directory ()
-    "Return the project's root, or default directory if not in a project."
-    (or (robenkleene/projectile-safe-project-root) default-directory)
-    )
-
-  (defun robenkleene/prefix-project-root-or-default-directory ()
-    "Return the project's root, or default directory if not in a project."
-    (if (equal current-prefix-arg nil)
-        (robenkleene/project-root-or-default-directory) 
-      nil)
-    )
-  
   (defun robenkleene/projectile-find-file-default-directory ()
     "Run `projectile-find-file' with `default-directory'."
     (interactive)
     (projectile-find-file-in-directory default-directory)
     )
-
 
   (defun robenkleene/find-file-directory (dir)
     "Call `find-file' in the current directory or with prefix specify a directory."
@@ -86,7 +73,6 @@
         )
       )
     )
-
 
   )
 
