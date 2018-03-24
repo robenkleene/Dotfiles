@@ -16,6 +16,9 @@
     :init
     (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
 
+  ;; Open magit status full screen
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
   ;; Refresh magit status after editing a buffer
