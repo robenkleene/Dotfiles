@@ -8,12 +8,6 @@
 
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
-;; Load `evil' early to other packages can bind to its maps
-;; This must come before `dired' for example, in order to disable `evil'
-;; integrations.
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/evil"))
-(require 'robenkleene-evil)
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-config)
 (require 'robenkleene-functions)
@@ -24,10 +18,6 @@
 
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
-;; Dependencies
-;; It's important to load these early
-(require 'robenkleene-bind-map)
-
 ;; Packages
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-better-defaults)
@@ -46,7 +36,6 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
-(require 'robenkleene-fasd)
 (require 'robenkleene-macrostep)
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)

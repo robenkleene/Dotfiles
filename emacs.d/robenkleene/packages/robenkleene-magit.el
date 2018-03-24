@@ -5,12 +5,7 @@
 (eval-when-compile (require 'use-package))
 
 (use-package magit
-  :commands (robenkleene/magit-status-startup)
-  :bind (:map robenkleene/leader-map
-              ("gs" . magit-status))
-  :bind (:map evil-motion-state-map
-              ("gs" . magit-status)
-              ("gl" . magit-log-current))
+  :commands (robenkleene/magit-status-startup magit-status magit-log-current)
   :config
   ;; Refresh magit on file system changes
   (use-package magit-filenotify

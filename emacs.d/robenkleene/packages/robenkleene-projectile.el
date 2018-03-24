@@ -9,10 +9,6 @@
   :commands (robenkleene/projectile-go-to-root)
   :init
   (defalias 'gcd 'robenkleene/projectile-go-to-root)
-  :bind (:map evil-motion-state-map
-              ("M-e" . robenkleene/find-file-directory)
-              ("M-c" . projectile-find-dir)
-              )
   :config
 
   (defun robenkleene/projectile-go-to-root ()
