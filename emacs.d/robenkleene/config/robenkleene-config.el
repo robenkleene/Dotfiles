@@ -22,8 +22,10 @@
 ;; Show the current directory in the mode line
 (setq-default mode-line-buffer-identification
               (let ((orig (car mode-line-buffer-identification)))
-                `(:eval (cons (concat ,orig (file-name-nondirectory
-                                             (directory-file-name default-directory)))
+                `(:eval (cons (concat (file-name-nondirectory (directory-file-name default-directory))
+                                      "/"
+                                      ,orig
+                                      )
                               (cdr mode-line-buffer-identification)))))
 
 ;; Set path
