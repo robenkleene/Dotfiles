@@ -19,6 +19,13 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; Show the current directory in the mode line
+(setq-default mode-line-buffer-identification
+              (let ((orig (car mode-line-buffer-identification)))
+                `(:eval (cons (concat ,orig (file-name-nondirectory
+                                             (directory-file-name default-directory)))
+                              (cdr mode-line-buffer-identification)))))
+
 ;; Set path
 (let ((paths-to-prepend
        '(

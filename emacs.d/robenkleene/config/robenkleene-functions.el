@@ -177,6 +177,22 @@
          )
   )
 
+;; (defun robenkleene/rg-selection-in-directory (dir)
+;;   "Call `rg' in the current directory or with prefix specify a directory."
+;;   (interactive
+;;    (list
+;;     (if current-prefix-arg
+;;         (read-directory-name "Base directory: ")
+;;       default-directory)))
+;;   (let ((current-prefix-arg nil))
+;;     (apply 'robenkleene/rg
+;;            (robenkleene/grep-parameters (robenkleene/selection-or-word)
+;;                                         nil
+;;                                         dir)
+;;            )
+;;     )
+;;   )
+
 (defcustom robenkleene/rg-command-files "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
   "Default `rg' command.")
 (defcustom robenkleene/rg-command "rg --smart-case --no-heading <R> <D>"
@@ -188,13 +204,16 @@
   (require 'grep)
   (let ((default-directory dir)
         (command (grep-expand-template
-                  (if (equal files nil) robenkleene/rg-command robenkleene/rg-command-files)
+                  (if (equal files nil)
+                      robenkleene/rg-command robenkleene/rg-command-files)
                   regexp
                   files))
         )
     (compilation-start command 'grep-mode)
     )
   )
+(defalias 'rg 'robenkleene/rg)
+
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here

@@ -9,8 +9,10 @@
   :commands (robenkleene/projectile-go-to-root)
   :init
   (defalias 'gcd 'robenkleene/projectile-go-to-root)
+  :bind
+  ("C-c e" . robenkleene/find-file-directory)
+  ("C-c c" . projectile-find-dir)
   :config
-
   (defun robenkleene/projectile-go-to-root ()
     "Go to the root of the project in a `dired' buffer."
     (interactive)

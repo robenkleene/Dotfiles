@@ -5,19 +5,15 @@
 (eval-when-compile (require 'use-package))
 (use-package helm
   :commands (helm-semantic-or-imenu helm-do-grep-ag)
-  :bind (:map robenkleene/emacs-lisp-leader-map
-              ("i" . helm-semantic-or-imenu)
-              )
-  :bind (:map robenkleene/leader-map
-              ("h" . helm-resume)
-              ("a" . robenkleene/helm-ag-in-directory)
-              ("*" . robenkleene/rg-selection-in-directory)
-              )
+  :bind
+  ("C-c i" . helm-semantic-or-imenu)
+  :bind
+  ("C-c h" . helm-resume)
+  ("C-c a" . robenkleene/helm-ag-in-directory)
   :init
-  (use-package helm-swoop
-    :bind (:map robenkleene/leader-map
-                ("l" . helm-swoop)
-                )
+  (use-package helm-swoop 
+    :bind
+    ("C-c l" . helm-swoop)
     :init
     (custom-set-faces
      `(helm-swoop-target-word-face ((t (:foreground nil :background nil :bold nil :inherit isearch))))
@@ -35,23 +31,7 @@
     (helm-find-1 "~/Documentation")
     )
   (defalias 'doc 'robenkleene/helm-documentation)
-
-  (defun robenkleene/rg-selection-in-directory (dir)
-    "Call `rg' in the current directory or with prefix specify a directory."
-    (interactive
-     (list
-      (if current-prefix-arg
-          (read-directory-name "Base directory: ")
-        default-directory)))
-    (let ((current-prefix-arg nil))
-      (apply 'robenkleene/rg
-             (robenkleene/grep-parameters (robenkleene/selection-or-word)
-                                          nil
-                                          dir)
-             )
-      )
-    )
-
+  
   (defun robenkleene/helm-ag-in-directory (dir)
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a directory."
     (interactive
@@ -79,7 +59,6 @@
       (grep-mode)
       )
     )
-
   )
 
 (provide 'robenkleene-helm)
