@@ -89,7 +89,7 @@ _fzf-editor-widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR $file
+  eval $EDITOR "${(q)file}"
 
   local ret=$?
   __fzf-reset-finish
