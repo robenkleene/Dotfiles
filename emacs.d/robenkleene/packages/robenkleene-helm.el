@@ -4,7 +4,8 @@
 
 (eval-when-compile (require 'use-package))
 (use-package helm
-  :commands (helm-semantic-or-imenu helm-do-grep-ag)
+  :commands (helm-semantic-or-imenu             
+             helm-do-grep-ag)
   :bind
   (:map robenkleene/leader-map
         ("h" . helm-resume)
