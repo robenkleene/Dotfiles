@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(global-unset-key (kbd "M-o"))
-(setq robenkleene-leader "M-o")
-
 ;; Use bash for external scripts
 (setq shell-file-name "sh")
 (setq shell-command-switch "-c")

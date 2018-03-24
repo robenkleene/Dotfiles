@@ -6,14 +6,18 @@
 (use-package helm
   :commands (helm-semantic-or-imenu helm-do-grep-ag)
   :bind
-  ("C-c i" . helm-semantic-or-imenu)
+  (:map robenkleene/leader-map
+        ("h" . helm-resume)
+        ("a" . robenkleene/helm-ag-in-directory)
+        ("i" . helm-semantic-or-imenu)
+        )
   :bind
-  ("C-c h" . helm-resume)
-  ("C-c a" . robenkleene/helm-ag-in-directory)
   :init
   (use-package helm-swoop 
     :bind
-    ("C-c l" . helm-swoop)
+    (:map robenkleene/leader-map
+          ("l" . helm-swoop)
+          )
     :init
     (custom-set-faces
      `(helm-swoop-target-word-face ((t (:foreground nil :background nil :bold nil :inherit isearch))))
