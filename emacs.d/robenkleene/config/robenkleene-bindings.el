@@ -2,12 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
-(define-key global-map (kbd "C-c t") 'make-frame-command)
-(define-key global-map (kbd "C-c n") 'other-frame)
-(define-key global-map (kbd "C-c p") (lambda () (interactive) (other-frame -1)))
-(define-key global-map (kbd "C-c o i")
+(defvar robenkleene-leader)
+
+(define-key global-map (kbd (format "%s o i" robenkleene-leader))
   (lambda()
     (interactive) (find-file "~/.emacs.d/robenkleene/robenkleene.el")))
+(define-key global-map (kbd (format "%s t" robenkleene-leader)) 'make-frame-command)
+
+(define-key global-map (kbd "M-n") 'other-frame)
+(define-key global-map (kbd "M-p") (lambda () (interactive) (other-frame -1)))
+
 
 (provide 'robenkleene-bindings)
 ;;; robenkleene-bindings.el ends here
