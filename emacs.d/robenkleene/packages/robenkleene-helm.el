@@ -13,6 +13,7 @@
         ("i" . helm-semantic-or-imenu)
         )
   :bind
+  ("M-a" . robenkleene/helm-ag-in-directory)
   :init
   (use-package helm-swoop 
     :bind

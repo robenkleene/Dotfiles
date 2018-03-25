@@ -14,6 +14,7 @@
 
 ;; Leader map
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
+(define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
 
 ;; Mode
