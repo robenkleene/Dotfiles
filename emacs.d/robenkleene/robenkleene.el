@@ -18,17 +18,14 @@
     (require 'robenkleene-gui)
   (require 'robenkleene-terminal))
 
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 ;; Packages
+;; `git-gutter' moves the frame in an annoying way
+;; `show-trailing-whitespace' isn't compatible with `fill-column-indicator'
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-better-defaults)
-;; Temporarily removing this because it's annoying
-;; (require 'robenkleene-company)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
-;; Disabling this for now because I don't like how the window moves to add and remove the frame
-;; (require 'robenkleene-git-gutter)
 (require 'robenkleene-ido-completing-read)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
@@ -42,8 +39,6 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
-;; `fill-column-indicator' is not compatible with `show-trailing-whitespace'
-;; Font lock errors on startup are from `fill-column-indicator'
 (require 'robenkleene-fill-column-indicator)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))

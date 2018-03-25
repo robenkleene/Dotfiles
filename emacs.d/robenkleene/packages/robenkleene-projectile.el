@@ -10,10 +10,8 @@
   :init
   (defalias 'gcd 'robenkleene/projectile-go-to-root)
   :bind
-  (:map robenkleene/leader-map
-        ("e" . robenkleene/find-file-directory)
-        ("c" . projectile-find-dir)
-        )
+  ("M-e". robenkleene/find-file-directory)
+  ("M-c". projectile-find-dir)
   :config
   (defun robenkleene/projectile-go-to-root ()
     "Go to the root of the project in a `dired' buffer."

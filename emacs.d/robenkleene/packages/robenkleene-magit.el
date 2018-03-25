@@ -6,11 +6,9 @@
 
 (use-package magit
   :commands (robenkleene/magit-status-startup magit-status magit-log-current)
-  :bind
-  (:map robenkleene/leader-map
-        ("g s" . magit-status)
-        ("g l" . magit-log-current)
-        )
+  :init
+  (defalias 'gs 'magit-status)
+  (defalias 'gl 'magit-log-current)  
   :config
   ;; Refresh magit on file system changes
   (use-package magit-filenotify

@@ -1,4 +1,4 @@
 # key: defalias
 # name: defalias
 # --
-(defalias '${1:g} '${2:grep})
+defalias '${1:g} '${2:grep}
