@@ -2,4 +2,4 @@
 # name: lambda
 # key: lambda
 # --
-lambda () (${1:message "hello")})
+lambda () (${1:message "hello"}))
