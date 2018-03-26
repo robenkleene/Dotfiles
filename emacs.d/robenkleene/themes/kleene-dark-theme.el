@@ -91,6 +91,7 @@
 (defface rk-diff-change'((t)) "Diff change" :group 'rk-faces)
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
+(defface rk-error-highlight '((t)) "Error Highlight" :group 'rk-faces)
 (defface rk-header'((t)) "Header" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
 (defface rk-link '((t)) "Link" :group 'rk-faces)
@@ -124,6 +125,7 @@
    `(rk-diff-remove ((t (:inherit rk-error))))
    `(rk-error ((t (:foreground ,error))))
    `(rk-error ((t (:foreground ,error))))
+   `(rk-error-highlight ((t (:background ,error))))
    `(rk-header ((t (:foreground ,white :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
@@ -231,6 +233,15 @@
    '(ediff-even-diff-B ((t (:inherit ediff-odd-diff-A))))
    '(ediff-even-diff-C ((t (:inherit ediff-odd-diff-A))))
 
+   ;;;; smerge
+   '(smerge-base ((t (:background nil))))
+   '(smerge-mine ((t (:background nil))))
+   '(smerge-other ((t (:background nil))))
+   '(smerge-markers ((t (:inherit rk-header))))   
+   '(smerge-refined-removed ((t (:inherit rk-diff-remove))))   
+   '(smerge-refined-added ((t (:inherit rk-diff-add))))   
+
+   
 ;;; Packages
 
    ;;;; Helm
@@ -270,6 +281,7 @@
    `(magit-diff-hunk-header ((t (:inherit rk-header))))
    `(magit-diff-hunk-heading ((t (:inherit rk-header))))
    `(magit-diff-lines-heading ((t (:inherit rk-header :background ,callout-bg))))
+   `(magit-diff-whitespace-warning ((t (:inherit rk-error-highlight))))
    `(magit-hunk-heading ((t (:inherit rk-header))))
    `(magit-section-heading ((t (:inherit rk-header))))
    `(magit-section-title ((t (:inherit rk-header))))
@@ -288,6 +300,7 @@
    `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background nil))))
    `(magit-diff-hunk-heading-highlight ((t (:inherit magit-diff-hunk-heading :background nil))))
    `(magit-diff-removed-highlight ((t (:inherit magit-diff-removed :background nil))))
+   `(magit-diff-base-highlight ((t (:inherit rk-text :background nil))))
    `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background nil))))
    `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))   
    `(magit-section-highlight ((t (:background nil))))
