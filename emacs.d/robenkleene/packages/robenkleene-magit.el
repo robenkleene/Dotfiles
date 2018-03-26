@@ -23,6 +23,16 @@
     :init
     (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
 
+  ;; Jump to the start of the first section in "magit-status-mode" buffers
+  (add-hook 'magit-refresh-buffer-hook
+            (lambda ()
+              (if (and (bobp)
+                       (string-equal major-mode "magit-status-mode"))
+                  (magit-section-forward-sibling)
+                )              
+              )
+            )
+
   ;; Open magit status full screen
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 
