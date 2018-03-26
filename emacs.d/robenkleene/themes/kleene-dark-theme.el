@@ -173,7 +173,8 @@
    ;;;; Text
    `(link ((t (:inherit rk-link))))
    `(success ((t (:inherit rk-success))))
-   `(trailing-whitespace ((t (:inherit rk-highlight-line))))
+   ;; `(trailing-whitespace ((t (:inherit rk-highlight-line))))
+   `(trailing-whitespace ((t (:background nil))))
    
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
