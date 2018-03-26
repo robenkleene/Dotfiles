@@ -60,7 +60,7 @@
 (setq auto-revert-verbose nil)
 
 ;; Highlight Cursor Line
-(global-hl-line-mode)
+;; (global-hl-line-mode)
 
 ;; Re-enable Command
 (put 'narrow-to-region 'disabled nil)
