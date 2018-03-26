@@ -93,7 +93,8 @@
 ;; in the Terminal profile:
 ;; `shift cursor up: \033[1;2A'
 ;; `shift cursor down: \033[1;2B'
-(windmove-default-keybindings)
+;; (windmove-default-keybindings)
+
 
 ;; Winner Mode
 ;; Allows going to previous and next window configurations with `C-c left/right'

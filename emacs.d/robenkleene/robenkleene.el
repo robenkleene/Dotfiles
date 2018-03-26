@@ -33,11 +33,13 @@
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
-(require 'robenkleene-smartparens)
+;; Interfering with `shift-select-mode`
+;; (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
 (require 'robenkleene-helm)
-(require 'robenkleene-buffer-move)
+;; Interfering with `shift-select-mode`
+;; (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-fill-column-indicator)
 
