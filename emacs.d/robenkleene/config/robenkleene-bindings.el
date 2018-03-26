@@ -14,6 +14,8 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") (lambda () (interactive) (other-frame -1)))
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-t") 'make-frame-command)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-s") 'save-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-S") 'save-buffers-kill-terminal)
 
 ;; Leader map
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
