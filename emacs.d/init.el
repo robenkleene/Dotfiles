@@ -11,6 +11,9 @@
                          ))
 (package-initialize)
 
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -22,8 +25,6 @@
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
 (set 'ad-redefinition-action 'accept)
 
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
 
 (load (concat user-emacs-directory "robenkleene/robenkleene.el"))
 ;;; init.el ends here
