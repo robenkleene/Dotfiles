@@ -75,7 +75,7 @@ vim-todo() {
 
 
 # Emacs
-magit() {
+emacs-magit() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
 emacs-kill-server() {

@@ -74,7 +74,8 @@ alias tme='fzf-tmux-vim-file'
 alias tmgs='tmux-git-status'
 
 # `emacs`
-alias m='magit'
+alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
+alias m='emacs-magit'
 alias e="$EMACS_COMMAND"
 
 # `ranger`
