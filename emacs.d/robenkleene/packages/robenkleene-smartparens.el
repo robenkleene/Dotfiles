@@ -5,16 +5,16 @@
 (eval-when-compile (require 'use-package))
 (use-package smartparens
   :demand
-  :bind (:map smartparens-strict-mode-map
-              ("<M-backspace>" . sp-backward-kill-word))
+  :bind
+  (:map smartparens-strict-mode-map
+        ("<M-backspace>" . sp-backward-kill-word)
+        )
   :init
-  (progn
-    ;; Enable smartparens-mode in `eval-expression'
-    (add-hook 'minibuffer-setup-hook (lambda ()
-                                       (if (eq this-command 'eval-expression)
-                                           (smartparens-mode)))
-              )
-    )
+  (add-hook 'minibuffer-setup-hook (lambda ()
+                                     (if (eq this-command 'eval-expression)
+                                         (smartparens-mode)))
+            )
+
   :config
   (require 'smartparens-config)
   (smartparens-global-mode 1)
@@ -26,6 +26,11 @@
   (setq sp-highlight-wrap-overlay nil)
   (setq sp-highlight-wrap-tag-overlay nil)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
+  ;; Unsetting these lets selecting by word work
+  (define-key smartparens-mode-map (kbd "M-F") nil)
+  (define-key smartparens-mode-map (kbd "M-B") nil)
+  (define-key smartparens-mode-map (kbd "<C-right>") nil)
+  (define-key smartparens-mode-map (kbd "<C-left>") nil)
   )
 
 (provide 'robenkleene-smartparens)

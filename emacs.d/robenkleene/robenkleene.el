@@ -34,7 +34,7 @@
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
 ;; Interfering with `shift-select-mode`
-;; (require 'robenkleene-smartparens)
+(require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
 (require 'robenkleene-helm)
