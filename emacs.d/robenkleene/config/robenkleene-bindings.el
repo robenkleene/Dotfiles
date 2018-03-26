@@ -20,9 +20,14 @@
 ;; (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
-(define-key robenkleene/leader-map (kbd "o") 'other-window)
-(define-key robenkleene/leader-map (kbd "M-o") 'other-window)
 (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
+;; Window Management
+(define-key robenkleene/leader-map (kbd "M-o") 'other-window)
+(define-key robenkleene/leader-map (kbd "o") 'other-window)
+(define-key robenkleene/leader-map (kbd "1") 'delete-other-windows)
+(define-key robenkleene/leader-map (kbd "2") 'split-window-below)
+(define-key robenkleene/leader-map (kbd "3") 'split-window-right)
+(define-key robenkleene/leader-map (kbd "0") 'delete-window)
 
 ;; Mode
 (define-minor-mode robenkleene/bindings-minor-mode
