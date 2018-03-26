@@ -28,6 +28,8 @@
 (define-key robenkleene/leader-map (kbd "2") 'split-window-below)
 (define-key robenkleene/leader-map (kbd "3") 'split-window-right)
 (define-key robenkleene/leader-map (kbd "0") 'delete-window)
+(define-key robenkleene/leader-map (kbd "<left>") 'previous-buffer)
+(define-key robenkleene/leader-map (kbd "<right>") 'next-buffer)
 
 ;; Mode
 (define-minor-mode robenkleene/bindings-minor-mode
