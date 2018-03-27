@@ -354,7 +354,15 @@
    `(org-level-8 ((t (:inherit org-level-1))))
    `(org-special-keyword ((t (:inherit rk-comment :bold t))))
    `(org-property-value ((t (:inherit rk-comment))))
+
+   ;;;; Undo Tree
+   `(undo-tree-visualizer-active-branch-face ((t (:inherit rk-header))))
+   `(undo-tree-visualizer-unmodified-face ((t (:inherit rk-warning))))
+   `(undo-tree-visualizer-current-face ((t (:inherit rk-link :underline nil :bold t))))
+   `(undo-tree-visualizer-default-face ((t (:inherit rk-comment))))
+
    ))
+
 
 ;;; Variables
 (kleene-dark-with-color-variables

@@ -33,15 +33,14 @@
 (require 'robenkleene-projectile)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
-;; Interfering with `shift-select-mode`
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
 (require 'robenkleene-helm)
-;; Interfering with `shift-select-mode`
-;; (require 'robenkleene-buffer-move)
+(require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-fill-column-indicator)
+(require 'robenkleene-undo-tree)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)

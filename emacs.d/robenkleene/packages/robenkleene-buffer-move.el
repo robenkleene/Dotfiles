@@ -15,10 +15,11 @@
          ;; `<M-S-down>': `\033[1;6B'
          ;; `<M-S-right>': `\033[1;6C'
          ;; `<M-S-left>': `\033[1;6D'
-         ("<C-S-up>" . buf-move-up)
-         ("<C-S-down>" . buf-move-down)
-         ("<C-S-left>" . buf-move-left)
-         ("<C-S-right>" . buf-move-right))
+         ;; ("<C-S-up>" . buf-move-up)
+         ;; ("<C-S-down>" . buf-move-down)
+         ;; ("<C-S-left>" . buf-move-left)
+         ;; ("<C-S-right>" . buf-move-right)
+         )
   )
 
 (provide 'robenkleene-buffer-move)
