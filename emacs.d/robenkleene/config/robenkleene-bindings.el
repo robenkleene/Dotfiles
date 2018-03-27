@@ -13,7 +13,11 @@
 ;; Global
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") (lambda () (interactive) (other-frame -1)))
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-t") 'make-frame-command)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-t") (lambda ()
+                                                              (interactive)
+                                                              (make-frame-command)
+                                                              (switch-to-buffer "*scratch*")
+                                                              ))
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-S") 'save-buffers-kill-terminal)
 
