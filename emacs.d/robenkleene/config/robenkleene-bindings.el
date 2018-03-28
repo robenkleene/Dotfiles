@@ -9,6 +9,7 @@
 ;; Leader Map
 (global-unset-key (kbd "M-o"))
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-o") robenkleene/leader-map)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
 
 ;; Global
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
@@ -18,14 +19,14 @@
                                                               (make-frame-command)
                                                               (switch-to-buffer "*scratch*")
                                                               ))
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-s") 'save-buffer)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-S") 'save-buffers-kill-terminal)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-s") 'save-buffer)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-S") 'save-buffers-kill-terminal)
 
 ;; Leader map
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 ;; (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
-(define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
-(define-key robenkleene/leader-map (kbd "s") 'save-buffer)
+;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
+;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
 (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
 ;; Window Management
 (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
