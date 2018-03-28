@@ -60,6 +60,9 @@ vim-git-conflicts() {
 vim-diff-grep() {
   diff-to-grep | vim-grep
 }
+vim-git-modified() {
+  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
+}
 vim-git-diff() {
   git diff --relative $argv | vim-diff-grep
 }
