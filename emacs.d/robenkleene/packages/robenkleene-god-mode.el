@@ -38,7 +38,7 @@
   (define-key robenkleene/god-override-x-map (kbd "2") 'split-window-below)
   (define-key robenkleene/god-override-x-map (kbd "3") 'split-window-right)
   (define-key robenkleene/god-override-x-map (kbd "0") 'delete-window)
-  (define-key robenkleene/god-override-x-map (kbd "q") 'save-buffers-kill-terminal)
+  (define-key robenkleene/god-override-x-map (kbd "c") 'save-buffers-kill-terminal)
   (define-key robenkleene/god-override-x-map (kbd "s") 'save-buffer)
   (define-key robenkleene/god-override-x-map (kbd "b") 'ibuffer)
   (define-key robenkleene/god-override-x-map (kbd "<left>") 'previous-buffer)
