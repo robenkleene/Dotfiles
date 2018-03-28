@@ -5,6 +5,7 @@
 (use-package god-mode
   :bind
   ("C-z" . god-mode-all)
+  :ensure
   :init
   (global-hl-line-mode)
   (make-variable-buffer-local 'global-hl-line-mode)
