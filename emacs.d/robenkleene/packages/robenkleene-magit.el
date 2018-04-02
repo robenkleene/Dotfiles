@@ -8,14 +8,14 @@
   :commands (robenkleene/magit-status-startup magit-status magit-log-current)
   :bind
   (:map robenkleene/leader-map
-        ("g s" . magit-status)
-        ("g l" . magit-log-current)
-        ("g f" . magit-log-buffer-file)
+        ("m s" . magit-status)
+        ("m l" . magit-log-current)
+        ("m f" . magit-log-buffer-file)
         )
   :init
-  (defalias 'gs 'magit-status)
-  (defalias 'gl 'magit-log-current)  
-  (defalias 'gf 'magit-log-buffer-file)  
+  (defalias 'ms 'magit-status)
+  (defalias 'ml 'magit-log-current)  
+  (defalias 'mf 'magit-log-buffer-file)  
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
