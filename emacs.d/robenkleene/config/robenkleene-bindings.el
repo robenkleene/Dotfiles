@@ -17,8 +17,12 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-t") (lambda ()
                                                               (interactive)
                                                               (make-frame-command)
-                                                              (switch-to-buffer "*scratch*")
                                                               ))
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-t") (lambda ()
+;;                                                               (interactive)
+;;                                                               (make-frame-command)
+;;                                                               (switch-to-buffer "*scratch*")
+;;                                                               ))
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-s") 'save-buffer)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-S") 'save-buffers-kill-terminal)
 
