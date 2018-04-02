@@ -22,9 +22,9 @@
 ;; Packages
 ;; `git-gutter' moves the frame in an annoying way
 ;; `show-trailing-whitespace' isn't compatible with `fill-column-indicator'
+(require 'robenkleene-better-defaults)
 (require 'robenkleene-god-mode)
 (require 'robenkleene-aggressive-indent)
-(require 'robenkleene-better-defaults)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
 (require 'robenkleene-ido-completing-read)
