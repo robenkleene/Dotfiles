@@ -5,6 +5,7 @@
 (use-package god-mode
   :bind
   ("C-z" . god-mode-all)
+  ("M-z" . god-mode-all)
   :ensure
   :init
   (global-hl-line-mode)
@@ -24,6 +25,9 @@
   ;; (global-set-key (kbd "C-x C-<right>") 'next-buffer)
   ;; (global-set-key (kbd "C-x C-<left>") 'previous-buffer)
 
+  ;; `yassnippet'
+  (add-to-list 'god-exempt-major-modes 'snippet-mode)
+  
   ;; God Override Mode
   (defvar robenkleene/god-override-minor-mode-map (make-keymap))
   (defvar robenkleene/god-override-x-map (make-keymap))
@@ -45,9 +49,24 @@
   (define-key robenkleene/god-override-x-map (kbd "<left>") 'previous-buffer)
   (define-key robenkleene/god-override-x-map (kbd "<right>") 'next-buffer)
 
-  ;; Overridden Modes
-  (add-hook 'dired-mode-hook 'robenkleene/god-override-minor-mode)
-  (add-hook 'magit-status-mode-hook 'robenkleene/god-override-minor-mode)
+  ;; robenkleene/god-override-exempt-major-modes
+  (defcustom robenkleene/god-override-exempt-major-modes
+    '(git-commit-mode
+      grep-mode
+      vc-annotate-mode
+      git-commit-mode
+      snippet-mode)
+    "List of major modes that should not use the override map."
+    :type '(function)
+    )
+
+  (defadvice god-mode-maybe-activate (after robenkleene/toggle-god-override-mode (&optional status) activate)
+    (if (and (not (memq major-mode robenkleene/god-override-exempt-major-modes))
+             (not (bound-and-true-p god-local-mode))
+             (not (god-git-commit-mode-p)))
+        (robenkleene/god-override-minor-mode)
+      )
+    )
 
   )
 
