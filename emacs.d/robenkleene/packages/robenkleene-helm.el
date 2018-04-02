@@ -51,7 +51,8 @@
       (call-interactively 'helm-do-grep-ag)
       )
     )
-  (helm-mode)
+
+  ;; (helm-mode)
   :config
   (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
