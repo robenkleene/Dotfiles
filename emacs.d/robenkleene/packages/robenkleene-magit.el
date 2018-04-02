@@ -5,7 +5,10 @@
 (eval-when-compile (require 'use-package))
 
 (use-package magit
-  :commands (robenkleene/magit-status-startup magit-status magit-log-current)
+  :commands (robenkleene/magit-log
+             robenkleene/magit-status-startup
+             magit-status
+             magit-log-current)
   :bind
   (:map robenkleene/leader-map
         ("m s" . magit-status)
@@ -14,8 +17,8 @@
         )
   :init
   (defalias 'ms 'magit-status)
-  (defalias 'ml 'magit-log-current)  
-  (defalias 'mf 'magit-log-buffer-file)  
+  (defalias 'ml 'magit-log-current)
+  (defalias 'mf 'magit-log-buffer-file)
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
@@ -42,6 +45,14 @@
   (setq magit-diff-refine-hunk t)
   ;; Refresh magit status after editing a buffer
   (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+
+  (defun robenkleene/magit-log ()
+    "Call magit log removing other windows."
+    (interactive)
+    (progn (call-interactively 'magit-log-current)
+           (delete-other-windows))
+    )
+  
   ;; Magit Startup Helpers
   (defun robenkleene/magit-status-current-window ()
     "Magit in current window."

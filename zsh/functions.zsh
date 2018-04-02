@@ -82,7 +82,7 @@ emacs-magit() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
 emacs-magit-log() {
-  eval "$EMACS_COMMAND -eval \"(call-interactively 'magit-log-current)\""
+  eval "$EMACS_COMMAND -eval \"(robenkleene/magit-log)\""
 }
 emacs-kill-server() {
   emacsclient -e '(kill-emacs)'
