@@ -81,6 +81,9 @@ vim-todo() {
 emacs-magit() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
+emacs-magit-log() {
+  eval "$EMACS_COMMAND -eval \"(call-interactively 'magit-log-current)\""
+}
 emacs-kill-server() {
   emacsclient -e '(kill-emacs)'
 }
