@@ -20,14 +20,37 @@
   (global-set-key (kbd "C-x C-2") 'split-window-below)
   (global-set-key (kbd "C-x C-3") 'split-window-right)
   (global-set-key (kbd "C-x C-0") 'delete-window)
+  (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
   ;; (global-set-key (kbd "C-x C-^]") 'next-buffer)
   ;; (global-set-key (kbd "C-x C-^[") 'previous-buffer)
   ;; (global-set-key (kbd "C-x C-<right>") 'next-buffer)
   ;; (global-set-key (kbd "C-x C-<left>") 'previous-buffer)
 
+
+  (add-hook 'emacs-startup-hook (lambda ()
+                                  (add-hook 'before-change-functions
+                                            (lambda (&rest args)
+                                              (if (and (not (buffer-modified-p))
+                                                       (bound-and-true-p god-local-mode)
+                                                       (god-passes-predicates-p)
+                                                       )
+                                                  (call-interactively 'god-local-mode)
+                                                )
+                                              )
+                                            )
+                                  )
+            )
+
+  ;; This is hard to get right due to arguments
+  ;; (define-key god-local-mode-map (kbd "DEL") (lambda ()
+  ;;                                              (interactive)
+  ;;                                              (sp-backward-delete-char)
+  ;;                                              (call-interactively 'god-local-mode)
+  ;;                                              ))
+  
   ;; `yassnippet'
   (add-to-list 'god-exempt-major-modes 'snippet-mode)
-  
+
   ;; God Override Mode
   (defvar robenkleene/god-override-minor-mode-map (make-keymap))
   (defvar robenkleene/god-override-x-map (make-keymap))
@@ -37,6 +60,8 @@
     nil
     'robenkleene/god-override-minor-mode-map)
   (define-key robenkleene/god-override-minor-mode-map (kbd "x") robenkleene/god-override-x-map)
+  (define-key robenkleene/god-override-minor-mode-map (kbd "SPC") 'scroll-up-command)
+  (define-key robenkleene/god-override-minor-mode-map (kbd "DEL") 'scroll-down-command)
   ;; Bindings
   (define-key robenkleene/god-override-x-map (kbd "o") 'other-window)
   (define-key robenkleene/god-override-x-map (kbd "1") 'delete-other-windows)
@@ -45,7 +70,7 @@
   (define-key robenkleene/god-override-x-map (kbd "0") 'delete-window)
   (define-key robenkleene/god-override-x-map (kbd "c") 'save-buffers-kill-terminal)
   (define-key robenkleene/god-override-x-map (kbd "s") 'save-buffer)
-  (define-key robenkleene/god-override-x-map (kbd "b") 'ibuffer)
+  (define-key robenkleene/god-override-x-map (kbd "b") 'ido-switch-buffer)
   (define-key robenkleene/god-override-x-map (kbd "<left>") 'previous-buffer)
   (define-key robenkleene/god-override-x-map (kbd "<right>") 'next-buffer)
 
@@ -61,11 +86,20 @@
     )
 
   (defadvice god-mode-maybe-activate (after robenkleene/toggle-god-override-mode (&optional status) activate)
-    (if (and (not (memq major-mode robenkleene/god-override-exempt-major-modes))
-             (not (bound-and-true-p god-local-mode))
-             (not (god-git-commit-mode-p)))
+    (if (and (not (bound-and-true-p god-local-mode))
+             (and (not (memq major-mode robenkleene/god-override-exempt-major-modes))
+                  (not (god-git-commit-mode-p))
+                  (not (minibufferp))
+                  )
+             )
         (robenkleene/god-override-minor-mode)
       )
+    )
+
+  ;; This should get caught with `god-special-mode-p' but it doesn't work for
+  ;; some reason
+  (with-current-buffer "*Messages*"
+    (robenkleene/god-override-minor-mode)
     )
 
   )
