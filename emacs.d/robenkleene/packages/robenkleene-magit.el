@@ -18,10 +18,12 @@
   (defalias 'gf 'magit-log-buffer-file)  
   :config
   ;; Refresh magit on file system changes
-  (use-package magit-filenotify
-    :commands (magit-filenotify-mode)
-    :init
-    (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
+  ;; This can cause a "Too many open files" on macOS
+  ;; https://github.com/ruediger/magit-filenotify/issues/17
+  ;; (use-package magit-filenotify
+  ;;   :commands (magit-filenotify-mode)
+  ;;   :init
+  ;;   (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
 
   ;; Jump to the start of the first section in "magit-status-mode" buffers
   (add-hook 'magit-refresh-buffer-hook
