@@ -25,6 +25,9 @@
   (god-mode-all)
   :config
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
+  (define-key god-local-mode-map (kbd "SPC") 'scroll-up-command)
+  (define-key god-local-mode-map (kbd "DEL") 'scroll-down-command)
+  (define-key god-local-mode-map (kbd "q") 'quit-window)
   (global-set-key (kbd "C-x C-o") 'other-window)
   (global-set-key (kbd "C-x C-1") 'delete-other-windows)
   (global-set-key (kbd "C-x C-2") 'split-window-below)
