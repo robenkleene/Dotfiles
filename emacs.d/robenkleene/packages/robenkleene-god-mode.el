@@ -10,8 +10,18 @@
   :init
   (global-hl-line-mode)
   (make-variable-buffer-local 'global-hl-line-mode)
-  (add-hook 'god-mode-enabled-hook (lambda () (setq global-hl-line-mode t)))
-  (add-hook 'god-mode-disabled-hook (lambda () (setq global-hl-line-mode nil)))
+
+
+  ;; (defvar robenkleene/ascend-mode-map (make-keymap))
+  ;; (define-minor-mode robenkleene/ascend-mode
+  ;;   "Ascend."
+  ;;   nil
+  ;;   nil
+  ;;   'robenkleene/ascend-mode-map)
+  ;; (define-key robenkleene/ascend-mode-map (kbd "C-x") 'robenkleene/ascend)
+  ;; (robenkleene/ascend-mode -1)
+  ;; (robenkleene/ascend-mode)
+
   (god-mode-all)
   :config
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
@@ -49,6 +59,13 @@
   
   ;; `yassnippet'
   (add-to-list 'god-exempt-major-modes 'snippet-mode)
+
+  ;; (defun robenkleene/ascend ()
+  ;;   "Enter god-more then hit `C-x'."
+  ;;   (interactive)
+  ;;   (god-mode-all)
+  ;;   (execute-kbd-macro (kbd "C-x"))
+  ;;   )
 
   ;; God Override Mode
   (defvar robenkleene/god-override-minor-mode-map (make-keymap))
@@ -99,6 +116,17 @@
     (robenkleene/god-override-minor-mode)
     )
 
+  (add-hook 'god-mode-enabled-hook (lambda ()
+                                     (setq global-hl-line-mode t)
+                                     (robenkleene/god-override-minor-mode -1)
+                                     )
+            )
+  (add-hook 'god-mode-disabled-hook (lambda ()
+                                      (setq global-hl-line-mode nil)
+                                      )
+            )
+
+  
   )
 
 (provide 'robenkleene-god-mode)
