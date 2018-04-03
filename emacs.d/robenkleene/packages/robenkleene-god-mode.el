@@ -26,11 +26,10 @@
   ;; (global-set-key (kbd "C-x C-<right>") 'next-buffer)
   ;; (global-set-key (kbd "C-x C-<left>") 'previous-buffer)
 
-
   (add-hook 'emacs-startup-hook (lambda ()
-                                  (add-hook 'before-change-functions
+                                  (add-hook 'after-change-functions
                                             (lambda (&rest args)
-                                              (if (and (not (buffer-modified-p))
+                                              (if (and (buffer-modified-p)
                                                        (bound-and-true-p god-local-mode)
                                                        (god-passes-predicates-p)
                                                        )
@@ -96,8 +95,6 @@
       )
     )
 
-  ;; This should get caught with `god-special-mode-p' but it doesn't work for
-  ;; some reason
   (with-current-buffer "*Messages*"
     (robenkleene/god-override-minor-mode)
     )
