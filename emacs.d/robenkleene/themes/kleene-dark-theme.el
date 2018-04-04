@@ -109,6 +109,7 @@
 (defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-text2 '((t)) "Text 2" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
+(defface rk-whitespace '((t)) "Whitespace" :group 'rk-faces)
 
 ;;; Theme
 
@@ -143,6 +144,7 @@
    `(rk-text ((t (:foreground ,white))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning))))
+   `(rk-whitespace ((t (:background ,highlight-line-bg))))
    
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
@@ -281,7 +283,7 @@
    `(magit-diff-hunk-header ((t (:inherit rk-header))))
    `(magit-diff-hunk-heading ((t (:inherit rk-header))))
    `(magit-diff-lines-heading ((t (:inherit rk-header :background ,callout-bg))))
-   `(magit-diff-whitespace-warning ((t (:inherit rk-error-highlight))))
+   `(magit-diff-whitespace-warning ((t (:inherit rk-whitespace))))
    `(magit-hunk-heading ((t (:inherit rk-header))))
    `(magit-section-heading ((t (:inherit rk-header))))
    `(magit-section-title ((t (:inherit rk-header))))
