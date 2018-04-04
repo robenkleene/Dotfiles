@@ -26,7 +26,7 @@
   :config
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
   (define-key god-local-mode-map (kbd "SPC") 'scroll-up-command)
-  (define-key god-local-mode-map (kbd "DEL") 'scroll-down-command)
+  (define-key god-local-mode-map (kbd "DEL") 'robenkleene/god-backspace)
   (define-key god-local-mode-map (kbd "q") 'quit-window)
   (global-set-key (kbd "C-x C-o") 'other-window)
   (global-set-key (kbd "C-x C-1") 'delete-other-windows)
@@ -53,15 +53,22 @@
                                   )
             )
 
-  ;; This is hard to get right due to arguments
-  ;; (define-key god-local-mode-map (kbd "DEL") (lambda ()
-  ;;                                              (interactive)
-  ;;                                              (sp-backward-delete-char)
-  ;;                                              (call-interactively 'god-local-mode)
-  ;;                                              ))
-  
   ;; `yassnippet'
   (add-to-list 'god-exempt-major-modes 'snippet-mode)
+
+  (defun robenkleene/god-backspace ()
+    "Delete the current region and enter insert mode."
+    (interactive)
+
+    (if (use-region-p)
+        (progn
+          (delete-region (region-beginning) (region-end))
+          (god-local-mode -1)
+          )
+      (scroll-down-command)
+      )
+
+    )
 
   ;; (defun robenkleene/ascend ()
   ;;   "Enter god-more then hit `C-x'."
