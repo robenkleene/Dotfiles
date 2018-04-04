@@ -9,8 +9,11 @@
   :bind
   (:map robenkleene/leader-map
         ("h" . helm-resume)
+        ("C-h" . helm-resume)
         ("a" . robenkleene/helm-ag-in-directory)
+        ("C-a" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
+        ("C-i" . helm-semantic-or-imenu)
         )
   :bind
   ("M-a" . robenkleene/helm-ag-in-directory)
@@ -19,6 +22,7 @@
     :bind
     (:map robenkleene/leader-map
           ("l" . helm-swoop)
+          ("C-l" . helm-swoop)
           )
     :init
     (custom-set-faces

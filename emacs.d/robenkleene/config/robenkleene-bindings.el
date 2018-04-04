@@ -7,9 +7,9 @@
 (defvar robenkleene/leader-map (make-keymap))
 
 ;; Leader Map
-(global-unset-key (kbd "M-o"))
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o") robenkleene/leader-map)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
+;; (global-unset-key (kbd "M-o"))
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o") robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
 
 ;; Global
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
