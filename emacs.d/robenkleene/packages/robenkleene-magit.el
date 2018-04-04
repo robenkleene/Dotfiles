@@ -39,7 +39,7 @@
             )
 
   ;; Open magit status full screen
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  ;; (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
