@@ -78,7 +78,7 @@ vim-todo() {
 
 
 # Emacs
-emacs-magit() {
+emacs-magit-status() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
 emacs-magit-log() {

@@ -76,7 +76,7 @@ alias tmgs='tmux-git-status'
 # `emacs`
 alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
 alias magit-log="emacs -eval \"(robenkleene/magit-log)\""
-alias m='emacs-magit'
+alias ms='emacs-magit-status'
 alias ml='emacs-magit-log'
 alias e="$EMACS_COMMAND"
 
