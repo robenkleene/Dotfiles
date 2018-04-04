@@ -17,6 +17,7 @@
 
   :config
   (require 'smartparens-config)
+  (push 'markdown-mode sp-ignore-modes-list)
   (smartparens-global-mode 1)
   (sp-use-smartparens-bindings)
   (defvar sp-highlight-pair-overlay)
