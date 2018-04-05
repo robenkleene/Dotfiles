@@ -38,8 +38,9 @@
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
 (require 'robenkleene-helm)
-(require 'robenkleene-buffer-move)
+;; (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
+(require 'robenkleene-page-break-lines)
 (require 'robenkleene-fill-column-indicator)
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
@@ -54,6 +55,5 @@
 (require 'robenkleene-swift)
 (require 'robenkleene-markdown)
 (require 'robenkleene-fish)
-(require 'robenkleene-page-break-lines)
 
 ;;; robenkleene.el ends here
