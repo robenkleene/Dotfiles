@@ -111,7 +111,6 @@
 
   (defcustom robenkleene/mortal-exempt-major-modes
     '(git-commit-mode
-      grep-mode
       vc-annotate-mode
       git-commit-mode
       snippet-mode)

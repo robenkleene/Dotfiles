@@ -202,17 +202,17 @@
   "Search for the given REGEXP using `git grep' in the current directory.  FILES DIR."
   (interactive (robenkleene/grep-parameters))
   (require 'grep)
-  (let ((default-directory dir)
+  (let ((default-directory (or dir default-directory))
         (command (grep-expand-template
                   (if (equal files nil)
-                      robenkleene/rg-command robenkleene/rg-command-files)
+                      robenkleene/rg-command
+                    robenkleene/rg-command-files)
                   regexp
                   files))
         )
     (compilation-start command 'grep-mode)
     )
   )
-(defalias 'rg 'robenkleene/rg)
 
 
 (provide 'robenkleene-functions)
