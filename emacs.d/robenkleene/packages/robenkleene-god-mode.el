@@ -89,10 +89,13 @@
     nil
     nil
     'robenkleene/mortal-mode-map)
-  (define-key robenkleene/mortal-mode-map (kbd "x") robenkleene/mortal-map)
   (define-key robenkleene/mortal-mode-map (kbd "SPC") 'scroll-up-command)
-  (define-key robenkleene/mortal-mode-map (kbd "DEL") 'scroll-down-command)
+  (define-key robenkleene/mortal-mode-map (kbd "DEL") 'scroll-down-command)  
+  (define-key robenkleene/mortal-mode-map (kbd "s") 'isearch-forward-regexp)
+  (define-key robenkleene/mortal-mode-map (kbd "r") 'isearch-backward-regexp)
+  (define-key robenkleene/mortal-mode-map (kbd "c") robenkleene/leader-map)
   ;; Bindings
+  (define-key robenkleene/mortal-mode-map (kbd "x") robenkleene/mortal-map)
   (define-key robenkleene/mortal-map (kbd "o") 'other-window)
   (define-key robenkleene/mortal-map (kbd "1") 'delete-other-windows)
   (define-key robenkleene/mortal-map (kbd "2") 'split-window-below)
@@ -141,7 +144,17 @@
                                       )
             )
 
-  
+  (add-hook 'magit-status-mode-hook
+            (lambda ()
+              (make-local-variable 'robenkleene/mortal-mode-map)
+              (setq robenkleene/mortal-mode-map (copy-tree robenkleene/mortal-mode-map))
+              (define-key robenkleene/mortal-mode-map (kbd "c") nil)
+              (define-key robenkleene/mortal-mode-map (kbd "r") nil)
+              (define-key robenkleene/mortal-mode-map (kbd "s") nil)
+              )
+            )
+
+
   )
 
 (provide 'robenkleene-god-mode)
