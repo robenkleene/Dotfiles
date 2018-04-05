@@ -42,6 +42,7 @@
 (require 'robenkleene-wgrep)
 (require 'robenkleene-fill-column-indicator)
 (require 'robenkleene-undo-tree)
+(require 'robenkleene-iedit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
