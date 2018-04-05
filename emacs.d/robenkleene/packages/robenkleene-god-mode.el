@@ -101,6 +101,7 @@
   (define-key robenkleene/god-override-x-map (kbd "c") 'save-buffers-kill-terminal)
   (define-key robenkleene/god-override-x-map (kbd "s") 'save-buffer)
   (define-key robenkleene/god-override-x-map (kbd "b") 'ido-switch-buffer)
+  (define-key robenkleene/god-override-x-map (kbd "f") 'find-file-at-point)
   (define-key robenkleene/god-override-x-map (kbd "<left>") 'previous-buffer)
   (define-key robenkleene/god-override-x-map (kbd "<right>") 'next-buffer)
 
