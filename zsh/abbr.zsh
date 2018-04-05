@@ -33,6 +33,10 @@ abbreviations=(
 # `safari`
 'sfhs' 'fzf-safari-history-open'
 
+# `swiftlint`
+'mkl' 'make lint'
+
+
 # `git`
 # `g`: `git`
 'g' 'git'
