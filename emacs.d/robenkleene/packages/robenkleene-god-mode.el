@@ -82,28 +82,28 @@
   ;;   )
 
   ;; God Override Mode
-  (defvar robenkleene/god-override-minor-mode-map (make-keymap))
-  (defvar robenkleene/god-override-x-map (make-keymap))
-  (define-minor-mode robenkleene/god-override-minor-mode
+  (defvar robenkleene/mortal-x-mode-map (make-keymap))
+  (defvar robenkleene/mortal-x-map (make-keymap))
+  (define-minor-mode robenkleene/mortal-x-mode
     "My bindings for `god-exempt-major-modes'"
     nil
     nil
-    'robenkleene/god-override-minor-mode-map)
-  (define-key robenkleene/god-override-minor-mode-map (kbd "x") robenkleene/god-override-x-map)
-  (define-key robenkleene/god-override-minor-mode-map (kbd "SPC") 'scroll-up-command)
-  (define-key robenkleene/god-override-minor-mode-map (kbd "DEL") 'scroll-down-command)
+    'robenkleene/mortal-x-mode-map)
+  (define-key robenkleene/mortal-x-mode-map (kbd "x") robenkleene/mortal-x-map)
+  (define-key robenkleene/mortal-x-mode-map (kbd "SPC") 'scroll-up-command)
+  (define-key robenkleene/mortal-x-mode-map (kbd "DEL") 'scroll-down-command)
   ;; Bindings
-  (define-key robenkleene/god-override-x-map (kbd "o") 'other-window)
-  (define-key robenkleene/god-override-x-map (kbd "1") 'delete-other-windows)
-  (define-key robenkleene/god-override-x-map (kbd "2") 'split-window-below)
-  (define-key robenkleene/god-override-x-map (kbd "3") 'split-window-right)
-  (define-key robenkleene/god-override-x-map (kbd "0") 'delete-window)
-  (define-key robenkleene/god-override-x-map (kbd "c") 'save-buffers-kill-terminal)
-  (define-key robenkleene/god-override-x-map (kbd "s") 'save-buffer)
-  (define-key robenkleene/god-override-x-map (kbd "b") 'ido-switch-buffer)
-  (define-key robenkleene/god-override-x-map (kbd "f") 'find-file-at-point)
-  (define-key robenkleene/god-override-x-map (kbd "<left>") 'previous-buffer)
-  (define-key robenkleene/god-override-x-map (kbd "<right>") 'next-buffer)
+  (define-key robenkleene/mortal-x-map (kbd "o") 'other-window)
+  (define-key robenkleene/mortal-x-map (kbd "1") 'delete-other-windows)
+  (define-key robenkleene/mortal-x-map (kbd "2") 'split-window-below)
+  (define-key robenkleene/mortal-x-map (kbd "3") 'split-window-right)
+  (define-key robenkleene/mortal-x-map (kbd "0") 'delete-window)
+  (define-key robenkleene/mortal-x-map (kbd "c") 'save-buffers-kill-terminal)
+  (define-key robenkleene/mortal-x-map (kbd "s") 'save-buffer)
+  (define-key robenkleene/mortal-x-map (kbd "b") 'ido-switch-buffer)
+  (define-key robenkleene/mortal-x-map (kbd "f") 'find-file-at-point)
+  (define-key robenkleene/mortal-x-map (kbd "<left>") 'previous-buffer)
+  (define-key robenkleene/mortal-x-map (kbd "<right>") 'next-buffer)
 
   ;; robenkleene/god-override-exempt-major-modes
   (defcustom robenkleene/god-override-exempt-major-modes
@@ -123,17 +123,17 @@
                   (not (minibufferp))
                   )
              )
-        (robenkleene/god-override-minor-mode)
+        (robenkleene/mortal-x-mode)
       )
     )
 
   (with-current-buffer "*Messages*"
-    (robenkleene/god-override-minor-mode)
+    (robenkleene/mortal-x-mode)
     )
 
   (add-hook 'god-mode-enabled-hook (lambda ()
                                      (setq global-hl-line-mode t)
-                                     (robenkleene/god-override-minor-mode -1)
+                                     (robenkleene/mortal-x-mode -1)
                                      )
             )
   (add-hook 'god-mode-disabled-hook (lambda ()
