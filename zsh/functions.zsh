@@ -241,6 +241,14 @@ cd-todo() {
   fi
 }
 
+fasd-add-all() {
+  for i in */; do
+    cd "$i"
+    _fasd_preexec
+    cd - >/dev/null
+  done
+}
+
 # Gem
 gem-update-no-doc() {
   gem update --no-ri --no-rdoc
