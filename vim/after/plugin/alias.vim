@@ -18,5 +18,8 @@ Alias SS SessionSave
 Alias SR SessionRestoreAuto
 Alias SRA SessionRestoreAuto
 Alias Q QuitSaveSession
+
+Alias SE UltiSnipsEdit
+
 " Compilers
 Alias CXC compiler\ xcodebuild
