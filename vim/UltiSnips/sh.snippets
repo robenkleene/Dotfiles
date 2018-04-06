@@ -60,16 +60,16 @@ snippet template "Basic template" b
 
 endsnippet
 snippet 1while "While loop one-liner" w
-while read i; do { ${0:echo $i;} } done
+while read i; do { ${0:echo $i} } done
 endsnippet
 snippet while ""
 while read i; do
-  ${0:echo $i;}
+  ${0:echo $i}
 done
 endsnippet
 snippet for "For loop" b
 for i in ${1:*}; do 
-  ${0:echo $i;}
+  ${0:echo $i}
 done
 endsnippet
 snippet fordir "For loop directories" b
@@ -78,7 +78,7 @@ for dir in */; do
 done
 endsnippet
 snippet 1for "For loop one-liner" w
-for i in ${1:*}; do { ${0:echo $i;} } done
+for i in ${1:*}; do { ${0:echo $i} } done
 endsnippet
 snippet 1rename "Rename files in current directory" b
 for i in *; do { mv $i \`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\` } done
