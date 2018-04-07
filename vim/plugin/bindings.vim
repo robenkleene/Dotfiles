@@ -163,6 +163,8 @@ noremap <S-Right> <C-w>l
 " Open and Close Tab
 nnoremap <C-w>t :tabnew<CR>
 vnoremap <C-w>t :<C-u>tabnew<CR>
+nnoremap <A-t> :tabnew<CR>
+vnoremap <A-t> :<C-u>tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
 vnoremap <C-w>q :<C-u>tabclose<CR>
 " Switching Tabs
