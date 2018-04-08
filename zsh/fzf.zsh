@@ -47,6 +47,17 @@ __fzf-buffer-match() {
   return $ret
 }
 
+__zsh-add-history() {
+  print -sr -- ${1%%$'\n'}
+  # Disabling instantaneous refresh for now, because I'm concerned about the
+  # performance impact and corrupting history, hit enter to refresh history
+  # fc -AI
+  # fc -R
+  # For some reason reading incrementally messes up the history stack, this
+  # whole approach for history refersh is probably wrong.
+  # fc -RI
+}
+
 __fzf-reset-finish() {
   zle reset-prompt
   # typeset -f zle-line-init >/dev/null && zle zle-line-init
@@ -71,6 +82,7 @@ _fzf-cd-widget() {
   cd "$dir"
 
   local ret=$?
+  __zsh-add-history "cd ${(q)dir}"
   __fzf-reset-finish
   return $ret
 }
@@ -91,9 +103,10 @@ _fzf-editor-widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR "${(q)file}"
+  eval $EDITOR ${(q)file}
 
   local ret=$?
+  __zsh-add-history "$EDITOR ${(q)file}"
   __fzf-reset-finish
   return $ret
 }
@@ -117,6 +130,7 @@ _fzf-z-widget() {
   cd "$dir"
 
   local ret=$?
+  __zsh-add-history "cd ${(q)dir}"
   __fzf-reset-finish
   return $ret
 }
@@ -137,9 +151,10 @@ _fzf-zvim-widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR "\"$file\""
+  eval $EDITOR ${(q)file}
 
   local ret=$?
+  __zsh-add-history "$EDITOR ${(q)file}"
   __fzf-reset-finish
   return $ret
 }
