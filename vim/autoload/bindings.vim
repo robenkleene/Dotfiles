@@ -1,3 +1,10 @@
+" None of the source control functions should be operators because they don't
+" have a character-wise action (e.g., only full lines can be referenced via
+" URL not words).
+" Also, these functions have a meaning even without a motion, e.g., opening a
+" source control link with with no selection, opens a link to the file without
+" specifying a line number.
+
 " Yank Markdown Links
 function! bindings#LinkSourceControlYank() abort
   let @" = system('~/Development/Scripts/bin/link-source-control-markdown --url-only '.fnameescape(expand('%:p')))
