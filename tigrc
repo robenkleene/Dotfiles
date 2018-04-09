@@ -5,7 +5,13 @@ set ignore-case = yes
 # Key
 # @ : Suppresses output
 # sh : Pipes aren't supported without a subshell
-# Note: Can't seem to escape double quotes, you can escape single quotes, but they behave unpredictably. Tig tokens (e.g., "%(file)") evaluate even in single quotes.
+# Note: Can't seem to escape double quotes, you can escape single quotes, but
+# they behave unpredictably. Tig tokens (e.g., "%(file)") evaluate even in
+# single quotes.
+# https://github.com/git/git/tree/v2.3.5/contrib/diff-highlight
+# This seems like it should show EOL whitespace be won't be available until
+# updating to `git` version `2.3.5`
+# set diff-highlight = true
 
 # Basic
 bind generic r refresh
