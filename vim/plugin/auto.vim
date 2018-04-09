@@ -64,3 +64,24 @@ augroup setup_netrw
   autocmd!
   autocmd FileType netrw call auto#setup_netrw()
 augroup END
+
+" Automatically save and restore metadata like cursor position
+" This prevents the working directory from being saved as part of the view
+" options, which is confusing when opening an old file where the working
+" directory may have been different.
+set viewoptions-=options
+augroup save_view
+  autocmd!
+  autocmd BufWinLeave *
+        \   if expand('%') != ''
+        \&& &buftype !~ 'nofile'
+        \&& &buftype !~ 'help'
+        \|    mkview
+        \|  endif
+  autocmd BufWinEnter *
+        \   if expand('%') != ''
+        \&& &buftype !~ 'nofile'
+        \&& &buftype !~ 'help'
+        \|    silent! loadview
+        \|  endif
+augroup END
