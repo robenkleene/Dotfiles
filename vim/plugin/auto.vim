@@ -76,12 +76,14 @@ augroup save_view
         \   if expand('%') != ''
         \&& &buftype !~ 'nofile'
         \&& &buftype !~ 'help'
+        \&& &buftype !~ 'term'
         \|    mkview
         \|  endif
   autocmd BufWinEnter *
         \   if expand('%') != ''
         \&& &buftype !~ 'nofile'
         \&& &buftype !~ 'help'
+        \&& &buftype !~ 'term'
         \|    silent! loadview
         \|  endif
 augroup END
