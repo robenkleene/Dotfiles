@@ -69,6 +69,7 @@ augroup END
 " This prevents the working directory from being saved as part of the view
 " options, which is confusing when opening an old file where the working
 " directory may have been different.
+" Match this to `sessionoptions`
 set viewoptions-=options
 " Saving and restoring folds is completely unpredictable
 set viewoptions-=folds

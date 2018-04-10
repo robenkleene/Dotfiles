@@ -18,7 +18,9 @@ let &viewdir=s:viewdir_directory
 set noswapfile
 
 " Restore buffer local options
-set sessionoptions+=localoptions
+" set sessionoptions+=localoptions
+" Match this to `viewoptions`
+set sessionoptions-=options
 set sessionoptions-=folds
 
 
