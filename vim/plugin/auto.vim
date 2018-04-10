@@ -70,6 +70,8 @@ augroup END
 " options, which is confusing when opening an old file where the working
 " directory may have been different.
 set viewoptions-=options
+" Saving and restoring folds is completely unpredictable
+set viewoptions-=folds
 augroup save_view
   autocmd!
   autocmd BufWinLeave *

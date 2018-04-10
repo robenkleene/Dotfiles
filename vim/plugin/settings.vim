@@ -19,6 +19,7 @@ set noswapfile
 
 " Restore buffer local options
 set sessionoptions+=localoptions
+set sessionoptions-=folds
 
 
 " Basic {{{1
