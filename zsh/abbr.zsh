@@ -15,6 +15,7 @@ abbreviations=(
 # `tig`
 'tst' 'tig stash'
 'ts' 'tig status +3'
+'tl' 'tig'
 
 # `tmux`
 # `tm`
