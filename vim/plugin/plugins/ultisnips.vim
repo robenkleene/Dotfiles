@@ -18,7 +18,8 @@ nnoremap <leader>os :UltiSnipsEdit<CR>
 " And the complement of the built in `i_CTRL-T` command is already overriden
 " by `RSI.vim`. Mnemonic is "text".
 inoremap <silent> <C-x><C-t> <c-r>=<SID>ulti_complete()<cr>
-inoremap <silent> <C-t> <c-r>=<SID>ulti_complete()<cr>
+" Disabling this because emacs bindings use `<C-t>` for transpose characters
+" inoremap <silent> <C-t> <c-r>=<SID>ulti_complete()<cr>
 function! s:ulti_complete() abort
     if empty(UltiSnips#SnippetsInCurrentScope(1))
         return ''
