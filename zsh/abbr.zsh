@@ -79,6 +79,7 @@ abbreviations=(
 'gl' 'git log'
 # `gm`: `git merge`
 'gm' 'git merge'
+'gms' 'git merge --squash'
 'gmt' 'git mergetool'
 # `gp`: `git push`
 'gp' 'git push'
