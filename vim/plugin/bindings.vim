@@ -86,7 +86,7 @@ nnoremap <leader>m :make<CR>
 nnoremap <leader>a :Rg 
 
 " Quit & Save Session
-nnoremap <A-s> :QuitSaveSession<CR> 
+nnoremap <A-q> :QuitSaveSession<CR> 
 " Don't use this `ZZ` only quits the current buffer, which is useless for
 " preserving state
 " nnoremap <silent> ZZ :SessionSave<CR>ZZ
