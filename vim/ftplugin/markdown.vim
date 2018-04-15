@@ -5,8 +5,11 @@ setlocal spell
 set wrap
 
 " Don't show 80 character guide
-" This is confusing because there's no way to soft wrap to the `colorcolumn`
-setlocal colorcolumn=""
+" Reason for having this off: it's confusing because there's no way to soft
+" wrap to the `colorcolumn`.
+" Reason for having this on: As a convention, code blocks in markdown should
+" be less than `80` characters long.
+" setlocal colorcolumn=""
 
 nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 nnoremap <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
