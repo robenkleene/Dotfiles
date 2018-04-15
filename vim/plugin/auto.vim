@@ -80,6 +80,8 @@ augroup save_view
         \&& &buftype !~ 'nofile'
         \&& &buftype !~ 'help'
         \&& &buftype !~ 'term'
+        \&& &filetype !~ 'gitcommit'
+        \&& &filetype !~ 'gitrebase'
         \|    mkview
         \|  endif
   autocmd BufWinEnter *
@@ -87,6 +89,8 @@ augroup save_view
         \&& &buftype !~ 'nofile'
         \&& &buftype !~ 'help'
         \&& &buftype !~ 'term'
+        \&& &filetype !~ 'gitcommit'
+        \&& &filetype !~ 'gitrebase'
         \|    silent! loadview
         \|  endif
 augroup END
