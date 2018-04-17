@@ -15,6 +15,8 @@ nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 nnoremap <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 " nnoremap <localleader>t :.!markdown-title "%"<CR>
 
+nnoremap <silent> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
+vnoremap <silent> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
 
 " Convert
 if exists(':terminal')

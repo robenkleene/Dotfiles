@@ -69,3 +69,22 @@ function! operators#OpenURLs(type, ...) abort
   let &selection = sel_save
   let @@ = reg_save
 endfunction
+
+function! operators#LinkReplace(type, ...) abort
+  " `@@` is an alias for `@"`, the unnamed register
+  let reg_save = @@
+
+  if a:0 
+    " Visual
+    silent exe "normal! gvc\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+  elseif a:type == 'line' " Line
+    " Line
+    silent exe "normal! '[V']c\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+  else
+    " Character
+    silent exe "normal! `[v`]c\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+  endif
+
+  let @@ = reg_save
+endfunction
+
