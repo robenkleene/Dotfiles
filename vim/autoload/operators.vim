@@ -64,7 +64,7 @@ function! operators#OpenURLs(type, ...) abort
     silent exe "normal! `[v`]y"
   endif
 
-  call system('~/Development/Scripts/bin/urls-open', @@)
+  call system('~/.bin/urls-open', @@)
 
   let &selection = sel_save
   let @@ = reg_save

@@ -15,7 +15,7 @@ export CDPATH=~:~/Development/:~/Documentation/
 export CLICOLOR=1
 
 # `pip3` can install executables in `~/.local/bin`
-export PATH=~/.local/bin:~/.fzf/bin:/usr/local/bin:~/Development/Scripts/bin:$PATH
+export PATH=~/.local/bin:~/.fzf/bin:/usr/local/bin:~/.bin:$PATH
 if [ ! "$(uname)" = "Darwin" ]; then
   export PATH=~/bin:$PATH
 fi

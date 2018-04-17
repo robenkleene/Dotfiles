@@ -23,8 +23,12 @@ function MakeSymlink {
 }
 
 for thisFILE in *; do 
-  # Exclude shell scripts
   if [[ ! $thisFILE =~ ".sh" ]]; then
-    MakeSymlink $thisFILE
+    # Exclude shell scripts
+    if [[ ! $thisFILE =~ "scripts" ]]; then
+      echo $thisFILE
+      # Exclude the scripts directory
+      # MakeSymlink $thisFILE
+    fi
   fi
 done

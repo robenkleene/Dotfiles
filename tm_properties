@@ -1,4 +1,4 @@
-PATH = "$PATH:~/Development/Scripts/bin"
+PATH = "$PATH:~/.bin"
 # rbenv
 TM_RUBY = "$HOME/.rbenv/shims/ruby"
 PATH = "$HOME/.rbenv/bin:$PATH"

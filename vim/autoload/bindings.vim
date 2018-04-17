@@ -7,42 +7,42 @@
 
 " Yank Markdown Links
 function! bindings#LinkSourceControlYank() abort
-  let @" = system('~/Development/Scripts/bin/link-source-control-markdown --url-only '.fnameescape(expand('%:p')))
+  let @" = system('~/.bin/link-source-control-markdown --url-only '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
 function! bindings#LinkSourceControlYankLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link-source-control-markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYank() abort
-  let @" = system('~/Development/Scripts/bin/link-source-control-markdown '.fnameescape(expand('%:p')))
+  let @" = system('~/.bin/link-source-control-markdown '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYankLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link-source-control-markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYankQuotedLines() range abort
-  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link-source-control-markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
   let @* = @"
   echo "Yanked git Markdown link"
 endfunction
 
 " Open Git Links
 function! bindings#LinkSourceControlOpen() abort
-  echo system('~/Development/Scripts/bin/link-source-control-open '.fnameescape(expand('%:p')))
+  echo system('~/.bin/link-source-control-open '.fnameescape(expand('%:p')))
 endfunction
 function! bindings#LinkSourceControlOpenLines() range abort
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/link-source-control-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link-source-control-open --line-number '.line('.').' '.fnameescape(expand('%:p')))
 endfunction
 
 " Backup Text
 function! bindings#ArchiveLines(bang) range abort
-  let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/Development/Scripts/bin/backup-text')
+  let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/backup-text')
   if (a:bang == 1)
     let temp = @s
     silent normal! gv"sd
