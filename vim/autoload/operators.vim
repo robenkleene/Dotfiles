@@ -29,18 +29,18 @@ endfunction
 function! operators#TitleCase(type, ...) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
-  
+
   if a:0 
     " Visual
-    silent exe "normal! gvc\<C-r>=system('title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
   endif
-  
+
   let @@ = reg_save
 endfunction
 
