@@ -26,9 +26,8 @@ for thisFILE in *; do
   if [[ ! $thisFILE =~ ".sh" ]]; then
     # Exclude shell scripts
     if [[ ! $thisFILE =~ "scripts" ]]; then
-      echo $thisFILE
       # Exclude the scripts directory
-      # MakeSymlink $thisFILE
+      MakeSymlink $thisFILE
     fi
   fi
 done
