@@ -10,6 +10,9 @@ optparse = OptionParser.new do |opts|
   opts.on('-u', '--url-only', "URL only") do |u|
     options[:url_only] = u
   end
+  opts.on('-s', '--no-newline', "No new lines") do |n|
+    options[:no_newline] = n
+  end
 end
 optparse.parse!
 
@@ -38,10 +41,11 @@ ARGF.each do |line|
     next
   end
   url, title, input = getLinkForPhrase(line)
-  abort "No results found for \"#{input}\"." if url.nil?
-  if options[:url_only]
-    puts url
-  else
-    puts "[#{title}](#{url})"
+  if url.nil?
+    puts input
+    next
   end
+  result = options[:url_only] ? url : "[#{title}](#{url})"
+  result.strip! if options[:no_newline]
+  puts result
 end
