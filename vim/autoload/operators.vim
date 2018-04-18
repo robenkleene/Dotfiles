@@ -32,13 +32,13 @@ function! operators#TitleCase(type, ...) abort
 
   if a:0 
     " Visual
-    silent exe "normal! gvc\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/Development/Scripts/bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save
@@ -76,13 +76,13 @@ function! operators#LinkReplace(type, ...) abort
 
   if a:0 
     " Visual
-    silent exe "normal! gvc\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/Development/Scripts/bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save

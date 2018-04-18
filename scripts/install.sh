@@ -35,4 +35,6 @@ for thisFILE in *; do
 done
 
 # Symlink the no bin directory so scripts can reference them
-ln -s $DIRECTORY/nobin $DESTINATION_DIRECTORY/nobin
+if [ ! -d $DESTINATION_DIRECTORY/nobin ]; then
+  ln -s $DIRECTORY/nobin $DESTINATION_DIRECTORY/nobin
+fi
