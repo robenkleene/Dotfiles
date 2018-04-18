@@ -33,7 +33,10 @@ end
 
 ARGF.each do |line|
   line.strip!
-  puts && continue if line.empty?
+  if line.empty?
+    puts
+    next
+  end
   url, title, input = getLinkForPhrase(line)
   abort "No results found for \"#{input}\"." if url.nil?
   if options[:url_only]
