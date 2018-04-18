@@ -74,6 +74,8 @@ function! operators#LinkReplace(type, ...) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
 
+  echom "Replacing phrases with links"
+
   if a:0 
     " Visual
     silent exe "normal! gvc\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
