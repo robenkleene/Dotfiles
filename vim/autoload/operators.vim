@@ -82,7 +82,7 @@ function! operators#LinkReplace(type, ...) abort
     silent exe "normal! '[V']c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/link-phrase --no-newline',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save
