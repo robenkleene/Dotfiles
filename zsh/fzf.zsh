@@ -103,7 +103,13 @@ _fzf-editor-widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR ${(q)file}
+  # Temporary hack for `$EDITOR` with `bindkey`, for some reason when a
+  # keybinding exists that triggers a function that includes `eval $EDITOR`,
+  # `nvim` instead opens an empty buffer with the edited file in the
+  # background. This was probably introduced with `nvim` `0.3`. Adding `-c :bd`
+  # destroys the empty buffer and shows the file that was intended to edit.
+  # eval $EDITOR ${(q)file}
+  eval $EDITOR ${(q)file} -c ":bd"
 
   local ret=$?
   __zsh-add-history "$EDITOR ${(q)file}"
@@ -151,7 +157,13 @@ _fzf-zvim-widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR ${(q)file}
+  # Temporary hack for `$EDITOR` with `bindkey`, for some reason when a
+  # keybinding exists that triggers a function that includes `eval $EDITOR`,
+  # `nvim` instead opens an empty buffer with the edited file in the
+  # background. This was probably introduced with `nvim` `0.3`. Adding `-c :bd`
+  # destroys the empty buffer and shows the file that was intended to edit.
+  # eval $EDITOR ${(q)file}
+  eval $EDITOR ${(q)file} -c ":bd"
 
   local ret=$?
   __zsh-add-history "$EDITOR ${(q)file}"
