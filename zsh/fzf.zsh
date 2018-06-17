@@ -1,6 +1,6 @@
 # export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 # Start including hidden files because these files often need to be edited, like `.gitignore`
-export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
 # fzf
 # Make `fzf` bindings available, since this is being manually imported here
@@ -8,7 +8,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 # `~/.fzf/install --bin`, which avoids installing the completions automatically
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # Including hidden directories to be consistent with `fd` is there a reason not to?
-export FZF_ALT_C_COMMAND='fd --type d --hidden'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 # source ~/.fzf/shell/completion.zsh
 # source ~/.fzf/shell/key-bindings.zsh
