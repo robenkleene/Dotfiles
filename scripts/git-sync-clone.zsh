@@ -42,11 +42,14 @@ for directory in "${(@k)repos}"; do
         echo "WARNING: The remote does not match $remote in $directory"
         echo "Replacing $current with $remote"
         if ! $dry_run; then
-          git remote rm origin
-          git remote add origin $remote
-          exitstatus=$?
-          if (($exitstatus > 0)); then
-            echo "ERROR: Failed to replace $current with $remote"
+          $(cd "$directory"; git remote rm origin)
+          if (($? > 0)); then
+            echo "ERROR: Failed remove $current"
+          else
+            $(cd "$directory"; git remote add origin $remote)
+            if (($? > 0)); then
+              echo "ERROR: Failed to add $remote"
+            else
           fi
         fi
       else
@@ -58,8 +61,7 @@ for directory in "${(@k)repos}"; do
     exitstatus=0
     if ! $dry_run; then
       git clone $remote "$directory"
-      exitstatus=$?
-      if (($exitstatus > 0)); then
+      if (($? > 0)); then
         echo "ERROR: Failed cloning $remote into $directory"
       fi
     fi
