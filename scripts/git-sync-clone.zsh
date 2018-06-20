@@ -49,7 +49,7 @@ for directory in "${(@k)repos}"; do
             $(cd "$directory"; git remote add origin $remote)
             if (($? > 0)); then
               echo "ERROR: Failed to add $remote"
-            else
+            fi
           fi
         fi
       else
