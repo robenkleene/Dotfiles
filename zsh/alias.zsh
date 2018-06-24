@@ -74,7 +74,7 @@ alias tme='fzf-tmux-vim-file'
 alias tmgs='tmux-git-status'
 
 # `make`
-alias ml='ml'
+alias ml='make lint'
 
 
 # `emacs`
