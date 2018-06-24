@@ -37,6 +37,9 @@ abbreviations=(
 # `swiftlint`
 'm' 'make'
 
+# `hub`
+'hpr' 'hub pull-request'
+
 # `git`
 # `g`: `git`
 'g' 'git'
