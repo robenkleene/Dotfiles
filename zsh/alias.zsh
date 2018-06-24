@@ -75,6 +75,7 @@ alias tmgs='tmux-git-status'
 
 # `make`
 alias ml='make lint'
+alias mac='make autocorrect'
 
 
 # `emacs`
