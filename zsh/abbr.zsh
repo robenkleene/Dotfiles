@@ -35,8 +35,7 @@ abbreviations=(
 'sfhs' 'fzf-safari-history-open'
 
 # `swiftlint`
-'mkl' 'make lint'
-
+'m' 'make'
 
 # `git`
 # `g`: `git`
