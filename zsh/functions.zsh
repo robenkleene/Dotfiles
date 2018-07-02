@@ -60,13 +60,13 @@ vim_git_conflicts() {
 vim_diff_grep() {
   diff-to-grep | vim_grep
 }
-vim-git-modified() {
+vim_git_modified() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
 }
-vim-git-diff() {
+vim_git_diff() {
   git diff --relative $argv | vim_diff_grep
 }
-vim-todo() {
+vim_todo() {
   if [ -n "$TODO_FILE" ]; then
     $VIM_COMMAND $TODO_FILE
   elif [ -n "$TODO_DIRECTORY" ]; then
@@ -78,41 +78,41 @@ vim-todo() {
 
 
 # Emacs
-emacs-magit-status() {
+emacs_magit_status() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
 }
-emacs-magit-log() {
+emacs_magit_log() {
   eval "$EMACS_COMMAND -eval \"(robenkleene/magit-log)\""
 }
-emacs-kill-server() {
+emacs_kill_server() {
   emacsclient -e '(kill-emacs)'
 }
 
 # ssh
-ssh-start() {
+ssh_start() {
   eval `ssh-agent -s`
   ssh-add
 }
-ssh-stop() {
+ssh_stop() {
   ssh-agent -k
 }
 
 # Fix slow ssh
 if [ ! "$(uname)" = "Darwin" ]; then
-  ssh-fix() {
+  ssh_fix() {
     sudo systemctl restart systemd-logind 
   }
 fi
 
 # zsh
-zsh-edit-config() {
+zsh_edit_config() {
   cd ~/Development/Dotfiles/zsh/
   eval $EDITOR ../zshrc
 }
 
 
 # neovim
-vim-server-start() {
+vim_server_start() {
   if [ -z "$TMUX" ]; then
     NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim $@
   else
@@ -120,7 +120,7 @@ vim-server-start() {
     NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim $@
   fi
 }
-vim-server-edit() {
+vim_server_edit() {
   if [ -z "$TMUX" ]; then
     nvr $@
   else

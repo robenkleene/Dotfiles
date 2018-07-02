@@ -29,7 +29,7 @@ fi
 alias p='safepaste'
 alias y='safecopy'
 alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
-alias shs='ssh-start'
+alias shs='ssh_start'
 
 # Override
 
@@ -51,7 +51,7 @@ alias vimdiff="nvim -d"
 # Shortcut
 
 # `zsh`
-alias zoi='zsh-edit-config'
+alias zoi='zsh_edit_config'
 # alias ol="$EDITOR settings.sh"
 # alias sl="source settings.sh"
 # alias ob="$EDITOR build.log"
@@ -81,20 +81,20 @@ alias mac='make autocorrect'
 # `emacs`
 # alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
 # alias magit-log="emacs -eval \"(robenkleene/magit-log)\""
-# alias ms='emacs-magit-status'
-# alias ml='emacs-magit-log'
+# alias ms='emacs_magit_status'
+# alias ml='emacs_magit_log'
 alias e="$EMACS_COMMAND"
 
 # `ranger`
 alias r='ranger_cd'
 
 # `vim`
-alias vtd='vim-todo'
-alias vgd='vim-git-diff'
+alias vtd='vim_todo'
+alias vgd='vim_git_diff'
 alias vdg='vim_diff_grep'
-alias vgm='vim-git-modified'
+alias vgm='vim_git_modified'
 alias vgc='vim_git_conflicts'
-alias vse='vim-server-edit'
+alias vse='vim_server_edit'
 alias vsr='vim_session_restore_auto'
 alias vsra='vim_session_restore_auto'
 alias vsrs='vim_session_restore_saved'
