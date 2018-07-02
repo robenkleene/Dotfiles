@@ -13,7 +13,7 @@ _robenkleene_ack_lines_no_color() {
 # Commands
 
 # ranger
-ranger-cd() {
+ranger_cd() {
   local tempfile='/tmp/chosendir'
   ranger --choosedir="$tempfile" "${@:-$(pwd)}"
   test -f "$tempfile" &&

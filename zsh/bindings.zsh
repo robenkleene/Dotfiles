@@ -8,14 +8,14 @@ bindkey -e
 
 # Use bash-style `backwards-kill-word`
 autoload -Uz select-word-style
-bash-backward-kill-word() {
+bash_backward_kill_word() {
   select-word-style bash
   WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
   select-word-style normal
 }
-zle -N bash-backward-kill-word
-bindkey "^[^?" bash-backward-kill-word
-bindkey "^[^H" bash-backward-kill-word
+zle -N bash_backward_kill_word
+bindkey "^[^?" bash_backward_kill_word
+bindkey "^[^H" bash_backward_kill_word
 # Edit in editor
 autoload -z edit-command-line
 zle -N edit-command-line
