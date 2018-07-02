@@ -18,7 +18,7 @@ bindkey '^R' history-incremental-search-backward
 
 # Library
 
-__fzf-cmd() {
+__fzf_cmd() {
   local cmd="$1"
   local term="$2"
   if [[ -n "$term" ]]; then
@@ -31,11 +31,11 @@ __fzf-cmd() {
   return $ret
 }
 
-__fzf-buffer-match() {
+__fzf_buffer_match() {
   local cmd="$1"
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-  local result=$(__fzf-cmd $cmd $MATCH)
+  local result=$(__fzf_cmd $cmd $MATCH)
   local ret=$?
   if [[ -n "$result" ]]; then
     LBUFFER+="${(q)result} "
@@ -47,7 +47,7 @@ __fzf-buffer-match() {
   return $ret
 }
 
-__zsh-add-history() {
+__zsh_add_history() {
   print -sr -- ${1%%$'\n'}
   # Disabling instantaneous refresh for now, because I'm concerned about the
   # performance impact and corrupting history, hit enter to refresh history
@@ -58,23 +58,23 @@ __zsh-add-history() {
   # fc -RI
 }
 
-__fzf-reset-finish() {
+__fzf_reset_finish() {
   zle reset-prompt
   # typeset -f zle-line-init >/dev/null && zle zle-line-init
 }
 
 # Widgets
 
-_fzf-cd-widget() {
+_fzf_cd_widget() {
   local cmd=$FZF_ALT_C_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
-    __fzf-buffer-match "$cmd"
+    __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
   fi
 
-  local dir=$(__fzf-cmd "$cmd") 
+  local dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
     return 1
@@ -82,23 +82,23 @@ _fzf-cd-widget() {
   cd "$dir"
 
   local ret=$?
-  __zsh-add-history "cd ${(q)dir}"
-  __fzf-reset-finish
+  __zsh_add_history "cd ${(q)dir}"
+  __fzf_reset_finish
   return $ret
 }
-zle -N _fzf-cd-widget
-bindkey '\ec' _fzf-cd-widget
+zle -N _fzf_cd_widget
+bindkey '\ec' _fzf_cd_widget
 
 _fzf-editor-widget() {
   local cmd=$FZF_CTRL_T_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
-    __fzf-buffer-match "$cmd"
+    __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
   fi
 
-  local file=$(__fzf-cmd "$cmd") 
+  local file=$(__fzf_cmd "$cmd") 
   if [[ ! -f "$file" ]]; then
     zle redisplay
     return 1
@@ -112,8 +112,8 @@ _fzf-editor-widget() {
   eval $EDITOR ${(q)file} -c ":bd"
 
   local ret=$?
-  __zsh-add-history "$EDITOR ${(q)file}"
-  __fzf-reset-finish
+  __zsh_add_history "$EDITOR ${(q)file}"
+  __fzf_reset_finish
   return $ret
 }
 zle -N _fzf-editor-widget
@@ -123,12 +123,12 @@ _fzf-z-widget() {
   local cmd="fasd -Rdl"
 
   if [[ -n "$LBUFFER" ]]; then
-    __fzf-buffer-match "$cmd"
+    __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
   fi
 
-  local dir=$(__fzf-cmd "$cmd") 
+  local dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
     return 1
@@ -136,8 +136,8 @@ _fzf-z-widget() {
   cd "$dir"
 
   local ret=$?
-  __zsh-add-history "cd ${(q)dir}"
-  __fzf-reset-finish
+  __zsh_add_history "cd ${(q)dir}"
+  __fzf_reset_finish
   return $ret
 }
 zle -N _fzf-z-widget
@@ -147,12 +147,12 @@ _fzf-zvim-widget() {
   local cmd="fasd -Rfl"
 
   if [[ -n "$LBUFFER" ]]; then
-    __fzf-buffer-match "$cmd"
+    __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
   fi
 
-  local file=$(__fzf-cmd "$cmd") 
+  local file=$(__fzf_cmd "$cmd") 
   if [[ ! -f "$file" ]]; then
     zle redisplay
     return 1
@@ -166,8 +166,8 @@ _fzf-zvim-widget() {
   eval $EDITOR ${(q)file} -c ":bd"
 
   local ret=$?
-  __zsh-add-history "$EDITOR ${(q)file}"
-  __fzf-reset-finish
+  __zsh_add_history "$EDITOR ${(q)file}"
+  __fzf_reset_finish
   return $ret
 }
 zle -N _fzf-zvim-widget
