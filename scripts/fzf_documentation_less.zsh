@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source ~/.bin/nobin/_fzf-inline-result.sh
+source ~/.bin/nobin/_fzf_inline_result.sh
 
 cd ~/Documentation/
 local result=$(_fzf_inline_result)

@@ -35,7 +35,7 @@ line_number = options[:line_number].to_i
 filename = File.basename(file)
 directory = File.dirname(file)
 
-source_control_url = `~/.bin/link-source-control #{Shellwords.escape(file.path)}`.strip
+source_control_url = `~/.bin/link_source_control #{Shellwords.escape(file.path)}`.strip
 
 if source_control_url =~ /^https:\/\/github.com/
   if line_number > 0

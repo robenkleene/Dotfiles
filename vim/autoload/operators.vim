@@ -32,13 +32,13 @@ function! operators#TitleCase(type, ...) abort
 
   if a:0 
     " Visual
-    silent exe "normal! gvc\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/.bin/title_case',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/title_case',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/title-case',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/title_case',@\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save
@@ -64,7 +64,7 @@ function! operators#OpenURLs(type, ...) abort
     silent exe "normal! `[v`]y"
   endif
 
-  call system('~/.bin/urls-open', @@)
+  call system('~/.bin/urls_open', @@)
 
   let &selection = sel_save
   let @@ = reg_save
@@ -78,13 +78,13 @@ function! operators#LinkReplace(type, ...) abort
 
   if a:0 
     " Visual
-    silent exe "normal! gvc\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/.bin/link_phrase',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/link_phrase',@\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/link-phrase',@\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/link_phrase',@\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save

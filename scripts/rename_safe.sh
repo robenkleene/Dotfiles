@@ -11,6 +11,6 @@ _get_title() {
   return $ret
 }
 
-source ~/.bin/nobin/_rename-files.sh
+source ~/.bin/nobin/_rename_files.sh
 
 _rename_files "$@"
