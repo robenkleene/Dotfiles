@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-fzf-documentation-less
+~/.bin/fzf_documentation_less
