@@ -237,7 +237,7 @@ _robenkleene_fzf_inline_result() {
 }
 
 # Safari
-fzf-safari-history-open() {
+fzf_safari_history_open() {
   local result=$(safari-history-dump \
     | FZF_DEFAULT_OPTS="-m --reverse --prompt \"Safari History> \" \
     --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" fzf +m \
@@ -248,7 +248,7 @@ fzf-safari-history-open() {
 }
 
 # Documentation
-fzf-documentation-editor() {
+fzf_documentation_editor() {
   cd ~/Documentation/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n "$result" ]]; then
@@ -265,7 +265,7 @@ fzf-documentation-editor() {
 }
 
 # Snippets
-fzf-snippet-copy() {
+fzf_snippet_copy() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -273,7 +273,7 @@ fzf-snippet-copy() {
   fi
   cd -
 }
-fzf-snippet-editor() {
+fzf_snippet_editor() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
@@ -291,7 +291,7 @@ fzf-snippet-editor() {
 
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
-  fzf-project-xcode() {
+  fzf_project_xcode() {
     setopt localoptions pipefail 2> /dev/null
     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
       | grep -vE "\/Carthage\/" \
@@ -301,7 +301,7 @@ if [ "$(uname)" = "Darwin" ]; then
   }
 fi
 if [ "$(uname)" = "Darwin" ]; then
-  fzf-file-xcode() {
+  fzf_file_xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
     eval $ack_search_xcode \
       | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" fzf +m \
@@ -311,16 +311,16 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # ack
-fzf-vim-grep() {
+fzf_vim_grep() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
   echo $result | $VIM_COMMAND -c "GrepBuffer" -
 }
-fzf-vim-file() {
+fzf_vim_file() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
   $VIM_COMMAND $result
 }
 
-fzf-tmux-vim-file() {
+fzf_tmux_vim_file() {
   tmux-paths -0 \
     | xargs -0 rg --files -g "" \
     | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" fzf +m \

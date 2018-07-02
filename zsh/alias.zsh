@@ -13,8 +13,8 @@ alias -g B='| bbresults --pattern grep --new-window'
 # alias -g Q='| vim_grep'
 alias -g V="$VIM_COMMAND -"
 alias -g Q='vim_grep'
-alias -g F='fzf-vim-grep'
-alias -g FF='fzf-vim-file'
+alias -g F='fzf_vim_grep'
+alias -g FF='fzf_vim_file'
 
 # Basic
 alias -- -='cd -'
@@ -70,7 +70,7 @@ alias tmsq='tmux-session-save-quit'
 alias tmp='tmux-paths'
 alias tmc='tmux-paths-run'
 alias tmack='tmux-paths-rg'
-alias tme='fzf-tmux-vim-file'
+alias tme='fzf_tmux_vim_file'
 alias tmgs='tmux-git-status'
 
 # `make`
@@ -107,7 +107,7 @@ fi
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
   alias xcb='xcodebuild-debug'
-  alias ox='fzf-project-xcode'
+  alias ox='fzf_project_xcode'
 fi
 
 # `cd`
@@ -117,9 +117,9 @@ alias cdtd='cd_todo'
 alias i='fzf-tags-vim'
 
 # `doc` & `snp`
-alias snp='fzf-snippet-copy'
-alias snpe='fzf-snippet-editor'
-alias doce='fzf-documentation-editor'
+alias snp='fzf_snippet_copy'
+alias snpe='fzf_snippet_editor'
+alias doce='fzf_documentation_editor'
 
 # `git`
 alias gbp='git_branch_print'

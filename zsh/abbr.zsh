@@ -32,7 +32,7 @@ abbreviations=(
 'wf' 'whence -f'
 
 # `safari`
-'sfhs' 'fzf-safari-history-open'
+'sfhs' 'fzf_safari_history_open'
 
 # `swiftlint`
 'm' 'make'
