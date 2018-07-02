@@ -59,8 +59,8 @@ alias zoi='zsh_edit_config'
 # alias dh='dirs -v'
 
 # scripts
-alias n='terminal-new'
-alias o='finder-new'
+alias n='terminal_new'
+alias o='finder_new'
 
 # `tmux`
 alias tma='tmux attach'
@@ -69,7 +69,7 @@ alias tmsr='tmux_session_restore'
 alias tmsq='tmux_session_save_quit'
 alias tmp='tmux_paths'
 alias tmc='tmux_paths_run'
-alias tmack='tmux-paths-rg'
+alias tmack='tmux_paths_rg'
 alias tme='fzf_tmux_vim_file'
 alias tmgs='tmux_git_status'
 
