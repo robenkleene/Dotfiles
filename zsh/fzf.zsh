@@ -89,7 +89,7 @@ _fzf_cd_widget() {
 zle -N _fzf_cd_widget
 bindkey '\ec' _fzf_cd_widget
 
-_fzf-editor-widget() {
+_fzf_editor_widget() {
   local cmd=$FZF_CTRL_T_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
@@ -116,10 +116,10 @@ _fzf-editor-widget() {
   __fzf_reset_finish
   return $ret
 }
-zle -N _fzf-editor-widget
-bindkey '\ee' _fzf-editor-widget
+zle -N _fzf_editor_widget
+bindkey '\ee' _fzf_editor_widget
 
-_fzf-z-widget() {
+_fzf_z_widget() {
   local cmd="fasd -Rdl"
 
   if [[ -n "$LBUFFER" ]]; then
@@ -140,10 +140,10 @@ _fzf-z-widget() {
   __fzf_reset_finish
   return $ret
 }
-zle -N _fzf-z-widget
-bindkey '\ez' _fzf-z-widget
+zle -N _fzf_z_widget
+bindkey '\ez' _fzf_z_widget
 
-_fzf-zvim-widget() {
+_fzf_zvim_widget() {
   local cmd="fasd -Rfl"
 
   if [[ -n "$LBUFFER" ]]; then
@@ -170,14 +170,14 @@ _fzf-zvim-widget() {
   __fzf_reset_finish
   return $ret
 }
-zle -N _fzf-zvim-widget
-bindkey '\er' _fzf-zvim-widget
+zle -N _fzf_zvim_widget
+bindkey '\er' _fzf_zvim_widget
 
 
 # Special
 
 # Tags uses a special `fzf` command
-_fzf-tags-widget() {
+_fzf_tags_widget() {
   if [[ -n "$LBUFFER" ]]; then
     return
   fi
@@ -194,8 +194,8 @@ _fzf-tags-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle -N _fzf-tags-widget
-bindkey '\ei' _fzf-tags-widget
+zle -N _fzf_tags_widget
+bindkey '\ei' _fzf_tags_widget
 
 # Commands does extra work with the `commands` and `functions` variables
 __fcmd() {
@@ -215,7 +215,7 @@ __fcmd() {
   echo
   return $ret
 }
-_fzf-command-widget() {
+_fzf_command_widget() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
   LBUFFER+="$(__fcmd $MATCH)"
@@ -224,8 +224,8 @@ _fzf-command-widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle     -N   _fzf-command-widget
-bindkey '^@' _fzf-command-widget
+zle     -N   _fzf_command_widget
+bindkey '^@' _fzf_command_widget
 
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
