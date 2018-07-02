@@ -10,9 +10,9 @@ alias -g B='| bbresults --pattern grep --new-window'
 # interactive commads. Starting `vim` results it in having to start twice,
 # which is very slow.
 # alias -g V="| $VIM_COMMAND -"
-# alias -g Q='| vim-grep'
+# alias -g Q='| vim_grep'
 alias -g V="$VIM_COMMAND -"
-alias -g Q='vim-grep'
+alias -g Q='vim_grep'
 alias -g F='fzf-vim-grep'
 alias -g FF='fzf-vim-file'
 
@@ -91,13 +91,13 @@ alias r='ranger_cd'
 # `vim`
 alias vtd='vim-todo'
 alias vgd='vim-git-diff'
-alias vdg='vim-diff-grep'
+alias vdg='vim_diff_grep'
 alias vgm='vim-git-modified'
-alias vgc='vim-git-conflicts'
+alias vgc='vim_git_conflicts'
 alias vse='vim-server-edit'
-alias vsr='vim-session-restore-auto'
-alias vsra='vim-session-restore-auto'
-alias vsrs='vim-session-restore-saved'
+alias vsr='vim_session_restore_auto'
+alias vsra='vim_session_restore_auto'
+alias vsrs='vim_session_restore_saved'
 
 # `emacs`
 if [[ "$(uname)" = "Darwin" ]]; then

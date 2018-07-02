@@ -42,29 +42,29 @@ sgitn () {
 }
 
 # vim
-vim-session-restore-saved() {
+vim_session_restore_saved() {
   $VIM_COMMAND -c "SessionRestoreSaved"
 }
-vim-session-restore-local() {
+vim_session_restore_local() {
   $VIM_COMMAND -c "SessionRestoreLocal"
 }
-vim-session-restore-auto() {
+vim_session_restore_auto() {
   $VIM_COMMAND -c "SessionRestoreAuto"
 }
-vim-grep() {
+vim_grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
-vim-git-conflicts() {
+vim_git_conflicts() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq) -c "vimgrep /======/ ##"
 }
-vim-diff-grep() {
-  diff-to-grep | vim-grep
+vim_diff_grep() {
+  diff-to-grep | vim_grep
 }
 vim-git-modified() {
   $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
 }
 vim-git-diff() {
-  git diff --relative $argv | vim-diff-grep
+  git diff --relative $argv | vim_diff_grep
 }
 vim-todo() {
   if [ -n "$TODO_FILE" ]; then
