@@ -64,7 +64,7 @@ alias o='finder-new'
 
 # `tmux`
 alias tma='tmux attach'
-alias tmnd='tmux-name-directory'
+alias tmnd='tmux_name_directory'
 alias tmsr='tmux-session-restore'
 alias tmsq='tmux-session-save-quit'
 alias tmp='tmux-paths'
@@ -122,12 +122,12 @@ alias snpe='fzf-snippet-editor'
 alias doce='fzf-documentation-editor'
 
 # `git`
-alias gbp='git-branch-print'
+alias gbp='git_branch_print'
 alias gblpr='git-branch-list-pruned'
-alias ghp='git-hash-print'
-alias grtp='git-remote-print'
-alias grtao='git-remote-add-origin'
-alias gcd='git-cd-root'
+alias ghp='git_hash_print'
+alias grtp='git_remote_print'
+alias grtao='git_remote_add_origin'
+alias gcd='git_cd_root'
 alias gdg='git-diff-grep'
 
 # `jekyll`

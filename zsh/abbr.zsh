@@ -86,7 +86,7 @@ abbreviations=(
 # `gp`: `git push`
 'gp' 'git push'
 'gpt' 'git push --tags'
-'gpbo' 'git-push-branch-origin'
+'gpbo' 'git_push_branch_origin'
 # `gr`: `git rebase`
 'gr' 'git rebase'
 'grc' 'git rebase --continue'

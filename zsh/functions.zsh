@@ -137,48 +137,48 @@ _robenkleene_tmux_default_command() {
     tmux set-option default-shell $1
   fi
 }
-tmux-default-fish() {
+tmux_default_fish() {
   _robenkleene_tmux_default_command $(which fish)
 }
-tmux-default-zsh() {
+tmux_default_zsh() {
   _robenkleene_tmux_default_command $(which zsh)
 }
-tmux-name-directory() {
+tmux_name_directory() {
   tmux rename-window "$(basename $PWD)"
 }
 
 # git
 if [ "$(uname)" = "Darwin" ]; then
-  git-reveal-diff() {
+  git_reveal_diff() {
     git diff --name-only -z | xargs -0 open -R
   }
 fi
 # To make yank versions of these add `tee /dev/tty | safecopy`
 # Branch
-git-branch-print() {
+git_branch_print() {
   git rev-parse --abbrev-ref HEAD | tr -d '\n'
 }
 # Hash
-git-hash-print() {
+git_hash_print() {
   git rev-parse HEAD | tr -d '\n'
 }
 # Remote
-git-remote-print() {
+git_remote_print() {
   git ls-remote --get-url | tr -d '\n'
 }
-git-cd-root() {
+git_cd_root() {
   cd "$(git rev-parse --show-toplevel)"
 }
-git-push-branch-origin() {
+git_push_branch_origin() {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
-git-push-origin-delete() {
+git_push_origin_delete() {
   git push origin --delete $1
 }
-git-branch-delete-origin() {
+git_branch_delete_origin() {
   git push origin --delete $1
 }
-git-remote-add-origin() {
+git_remote_add_origin() {
   git remote rm origin
   git remote add origin $1
 }
