@@ -3,7 +3,7 @@
 source ~/.bin/nobin/_fzf-inline-result.sh
 
 cd ~/Documentation/
-local result=$(_fzf-inline-result)
+local result=$(_fzf_inline_result)
 if [[ -n $result ]]; then
   parameter=$(printf '%q' "$PWD/$result")
   final_cmd="cat $parameter | less -FX"

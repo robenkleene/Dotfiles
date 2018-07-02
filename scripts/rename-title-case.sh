@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-_get-title() {
+_get_title() {
   if [[ ! $filename_no_ext =~ ^[a-z0-9-]*$ ]]; then
     return 1
   fi
@@ -13,4 +13,4 @@ _get-title() {
 
 source ~/.bin/nobin/_rename-files.sh
 
-_rename-files "$@"
+_rename_files "$@"

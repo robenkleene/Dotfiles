@@ -1,4 +1,4 @@
-_fzf-inline-result() {
+_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
   setopt localoptions pipefail 2> /dev/null
   if [ -z "$NVIM_LISTEN_ADDRESS" ]; then

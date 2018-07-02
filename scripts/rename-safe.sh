@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_get-title() {
+_get_title() {
   # `tr -dc '[:alnum:]\r\n. '`: Strip non-alphanumeric characters
   # `tr -s ' '`: Consolidate spaces to one space
   # `tr '[A-Z]' '[a-z]'`: Lowercase
@@ -13,4 +13,4 @@ _get-title() {
 
 source ~/.bin/nobin/_rename-files.sh
 
-_rename-files "$@"
+_rename_files "$@"

@@ -1,10 +1,10 @@
-# To use this function, define `_get-title` function and then `source` this.
+# To use this function, define `_get_title` function and then `source` this.
 
-_rename-files() {
+_rename_files() {
   for i in "$@"; do
     filename=$(basename "$i")
     filename_no_ext=${filename%.*}
-    title=$(_get-title "$filename_no_ext")
+    title=$(_get_title "$filename_no_ext")
     local status=$?
     if [ $status -ne 0 ]; then
       continue

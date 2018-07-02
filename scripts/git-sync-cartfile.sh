@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-handle-github() {
+handle_github() {
   echo "git@github.com:$1.git"
 }
 
@@ -17,7 +17,7 @@ while read line; do
 
   case "$type" in
     "github")
-      handle-github $subpath
+      handle_github $subpath
       ;;
     *)
       echo "$type isn't supported"
