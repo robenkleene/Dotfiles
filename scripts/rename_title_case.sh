@@ -5,7 +5,7 @@ _get_title() {
     return 1
   fi
   script_dir=$(dirname $0)
-  local result=$(echo "$1" | tr "-" " " | $script_dir/title-case)
+  local result=$(echo "$1" | tr "-" " " | $script_dir/title_case)
   local ret=$?
   echo $result
   return $ret
