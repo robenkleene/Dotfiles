@@ -65,13 +65,13 @@ alias o='finder-new'
 # `tmux`
 alias tma='tmux attach'
 alias tmnd='tmux_name_directory'
-alias tmsr='tmux-session-restore'
-alias tmsq='tmux-session-save-quit'
-alias tmp='tmux-paths'
-alias tmc='tmux-paths-run'
+alias tmsr='tmux_session_restore'
+alias tmsq='tmux_session_save_quit'
+alias tmp='tmux_paths'
+alias tmc='tmux_paths_run'
 alias tmack='tmux-paths-rg'
 alias tme='fzf_tmux_vim_file'
-alias tmgs='tmux-git-status'
+alias tmgs='tmux_git_status'
 
 # `make`
 alias ml='make lint'
@@ -106,15 +106,12 @@ fi
 
 # Xcode
 if [ "$(uname)" = "Darwin" ]; then
-  alias xcb='xcodebuild-debug'
+  alias xcb='xcodebuild_debug'
   alias ox='fzf_project_xcode'
 fi
 
 # `cd`
 alias cdtd='cd_todo'
-
-# tags
-alias i='fzf-tags-vim'
 
 # `doc` & `snp`
 alias snp='fzf_snippet_copy'
