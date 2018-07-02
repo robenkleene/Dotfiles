@@ -11,3 +11,5 @@ let b:RunErrorFormat =
       \ '%*[\ ]at\ %f:%l:%c,'.
       \ '%Z%p^,%A%f:%l,%C%m,'.
       \ '%-G%.%#'
+
+setlocal foldmethod=indent
