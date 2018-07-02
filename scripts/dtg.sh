@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-diff-to-grep
+diff_to_grep

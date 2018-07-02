@@ -6,4 +6,4 @@ while IFS= read -r -d '' i ; do
     git status
   fi
   echo
-done < <(tmux-paths -0)
+done < <(tmux_paths -0)
