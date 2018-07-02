@@ -111,7 +111,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # `cd`
-alias cdtd='cd-todo'
+alias cdtd='cd_todo'
 
 # tags
 alias i='fzf-tags-vim'
@@ -123,13 +123,13 @@ alias doce='fzf-documentation-editor'
 
 # `git`
 alias gbp='git_branch_print'
-alias gblpr='git-branch-list-pruned'
+alias gblpr='git_branch_list_pruned'
 alias ghp='git_hash_print'
 alias grtp='git_remote_print'
 alias grtao='git_remote_add_origin'
 alias gcd='git_cd_root'
-alias gdg='git-diff-grep'
+alias gdg='git_diff_grep'
 
 # `jekyll`
-alias jsw='jekyll-serve-watch'
-alias jswd='jekyll-serve-watch-drafts'
+alias jsw='jekyll_serve_watch'
+alias jswd='jekyll_serve_watch_drafts'

@@ -182,26 +182,26 @@ git_remote_add_origin() {
   git remote rm origin
   git remote add origin $1
 }
-git-branch-prune() {
+git_branch_prune() {
   git remote prune origin
 }
-git-list-modified() {
+git_list_modified() {
   git diff --name-only --diff-filter=UM | uniq
 }
-git-branch-list-pruned() {
+git_branch_list_pruned() {
   if [[ "$1" = "-D" ]]; then
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
   else
     git branch -vv | grep ': gone]' | awk '{print $1}'
   fi
 }
-git-push-force() {
+git_push_force() {
   git push --force-with-lease
 }
-git-web-open() {
+git_web_open() {
   link-source-control . | url-open
 }
-git-diff-grep() {
+git_diff_grep() {
   git diff --relative $argv | diff-to-grep
 }
 
@@ -213,27 +213,27 @@ _robenkleene_git_stash_command() {
   fi
   eval $stash_command
 }
-git-stash-pop() {
+git_stash_pop() {
   _robenkleene_git_stash_command "pop" $1
 }
-git-stash-apply() {
+git_stash_apply() {
   _robenkleene_git_stash_command "apply" $1
 }
-git-stash-show() {
+git_stash_show() {
   _robenkleene_git_stash_command "show" $1
 }
-git-stash-diff() {
+git_stash_diff() {
   _robenkleene_git_stash_command "show --patch" $1
 }
-git-stash-drop() {
+git_stash_drop() {
   _robenkleene_git_stash_command "drop" $1
 }
-git-stash-list() {
+git_stash_list() {
   git stash list
 }
 
 # Misc
-cd-todo() {
+cd_todo() {
   if [ -n "$TODO_DIRECTORY" ]; then
     cd $TODO_DIRECTORY
   else
@@ -241,7 +241,7 @@ cd-todo() {
   fi
 }
 
-fasd-add-all() {
+fasd_add_all() {
   for i in */; do
     cd "$i"
     _fasd_preexec
@@ -250,26 +250,26 @@ fasd-add-all() {
 }
 
 # Gem
-gem-update-no-doc() {
+gem_update_no_doc() {
   gem update --no-ri --no-rdoc
 }
 
 # Jekyll
-jekyll-build-watch() {
+jekyll_build_watch() {
   if [[ ! -f "_config.yml" ]]; then
     echo "Not a Jekyll site"
     return 1
   fi
   bundle exec jekyll build --watch
 }
-jekyll-build-watch-drafts() {
+jekyll_build_watch_drafts() {
   if [[ ! -f "_config.yml" ]]; then
     echo "Not a Jekyll site"
     return 1
   fi
   bundle exec jekyll build --watch --drafts
 }
-jekyll-serve-watch() {
+jekyll_serve_watch() {
   if [[ ! -f "_config.yml" ]]; then
     echo "Not a Jekyll site"
     return 1
@@ -277,7 +277,7 @@ jekyll-serve-watch() {
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch
 }
-jekyll-serve-watch-drafts() {
+jekyll_serve_watch_drafts() {
   if [[ ! -f "_config.yml" ]]; then
     echo "Not a Jekyll site"
     return 1

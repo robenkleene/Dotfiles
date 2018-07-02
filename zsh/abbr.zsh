@@ -110,7 +110,7 @@ abbreviations=(
 'gu' 'git pull'
 'gur' 'git pull -r'
 # `gw`: `git web`
-'gw' 'git-web-open'
+'gw' 'git_web_open'
 )
 
 # if [ "$(uname)" = "Darwin" ]; then
@@ -124,26 +124,26 @@ for abbr in ${(@k)abbreviations}; do
   alias $abbr="${abbreviations[$abbr]}"
 done
 
-_magic-abbrev-expand() {
+_magic_abbrev_expand() {
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
 }
 
-_magic-abbrev-expand-and-insert() {
-  _magic-abbrev-expand
+_magic_abbrev_expand_and_insert() {
+  _magic_abbrev_expand
   zle self-insert
 }
 
-_magic-abbrev-expand-and-accept() {
-  _magic-abbrev-expand
+_magic_abbrev_expand_and_accept() {
+  _magic_abbrev_expand
   zle accept-line
 }
 
-zle -N _magic-abbrev-expand-and-insert
-zle -N _magic-abbrev-expand-and-accept
-bindkey " "   _magic-abbrev-expand-and-insert
-bindkey "\r"  _magic-abbrev-expand-and-accept
+zle -N _magic_abbrev_expand_and_insert
+zle -N _magic_abbrev_expand_and_accept
+bindkey " "   _magic_abbrev_expand_and_insert
+bindkey "\r"  _magic_abbrev_expand_and_accept
 # Use original bindings in isearch
 bindkey -M isearch " " self-insert
 bindkey -M isearch "\r" accept-line
