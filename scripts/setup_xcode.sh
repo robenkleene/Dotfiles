@@ -116,10 +116,10 @@ bootstrap:
 	carthage bootstrap
 
 test:
-	xcodebuild test \
-		-alltargets \
-		-configuration Debug \
-		-scheme \$\(SCHEME\)"
+	xcodebuild test \\
+		-alltargets \\
+		-configuration Debug \\
+		-scheme \$(SCHEME)"
   echo "$makefile" > Makefile
 }
 
