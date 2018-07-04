@@ -101,8 +101,7 @@ iOSInjectionProject/"
 setup_travis() {
   travis="language: swift
 osx_image: xcode9.3
-script:
-- make ci"
+script: make ci"
   echo "$travis" > .travis.yml
 }
 
