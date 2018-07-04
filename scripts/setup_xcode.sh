@@ -1,5 +1,22 @@
 #!/usr/bin/env bash
 
+build_only=false
+while getopts "bh" option
+  do case "$option" in
+    b)
+      build_only=true
+      ;;
+    h)
+      echo "Usage: setup_xcode [-hb]"
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
 # Test for a file with `.xcodeproj` exit and do nothign if it doesn't exist
 for project_file in *.xcodeproj; do
   project_name=$(basename "$project_file")
@@ -88,9 +105,14 @@ script:
 }
 
 setup_makefile() {
-  ci_steps="lint test"
+  ci_steps="lint"
   if [[ -f "Cartfile" ]]; then
-    ci_steps="line bootstrap test"
+    ci_steps="$ci_steps bootstrap"
+  fi
+  if $build_only; then
+    ci_steps="$ci_steps build"
+  else
+    ci_steps="$ci_steps test"
   fi
   makefile="SCHEME = $project_name
 
