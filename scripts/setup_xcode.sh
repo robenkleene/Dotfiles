@@ -18,10 +18,12 @@ while getopts "bh" option
 done
 
 # Test for a file with `.xcodeproj` exit and do nothign if it doesn't exist
+shopt -s nullglob
 for project_file in *.xcodeproj; do
   project_name=$(basename "$project_file")
   project_name="${project_file%.*}"
 done
+shopt -u nullglob
 
 if [[ -z "$project_name" ]]; then
   echo "No .xcodeproj file found" 
