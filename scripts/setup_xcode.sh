@@ -107,7 +107,7 @@ script: make ci"
 
 setup_makefile() {
   ci_steps="lint"
-  if [[ -f "Cartfile" ]]; then
+  if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
     ci_steps="$ci_steps bootstrap"
   fi
   if $build_only; then
