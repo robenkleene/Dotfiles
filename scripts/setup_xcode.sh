@@ -149,10 +149,11 @@ test:
 # `.swiftlint.yml`
 setup_swiftlint() {
   swiftlint="disabled_rules:
-  - function_parameter_count
-  - xctfail_message
-  - identifier_name
   - file_length
+  - function_parameter_count
+  - identifier_name
+  - todo
+  - xctfail_message
 excluded:
   - Carthage"
   echo "$swiftlint" > .swiftlint.yml
