@@ -149,7 +149,9 @@ test:
 # `.swiftlint.yml`
 setup_swiftlint() {
   swiftlint="disabled_rules:
+  - closure_parameter_position
   - file_length
+  - function_body_length
   - function_parameter_count
   - identifier_name
   - todo
