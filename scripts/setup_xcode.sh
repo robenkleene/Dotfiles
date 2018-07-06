@@ -174,6 +174,7 @@ setup_swiftlint() {
   - function_parameter_count
   - identifier_name
   - todo
+  - type_name
   - xctfail_message
 excluded:
   - Carthage"
