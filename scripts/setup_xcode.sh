@@ -21,6 +21,9 @@ set_args() {
         ;;
       h)
         echo "Usage: setup_xcode [-hb]"
+        echo
+        echo "Create a file called .setup_xcode to automatically set flags."
+        echo "Put one flag per line."
         exit 0
         ;;
       \?)
