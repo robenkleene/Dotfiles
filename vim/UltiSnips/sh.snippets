@@ -1,6 +1,9 @@
 snippet echov "Echo variable" b
 echo "${1:HOME} = \$$1"
 endsnippet
+snippet echoa "Echo array variable" b
+echo "${1:args}[@] = \${$1[@]}"
+endsnippet
 snippet echoe "Echo error" b
 echo "${0:Error}" >&2
 endsnippet
