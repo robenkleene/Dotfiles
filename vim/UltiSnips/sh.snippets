@@ -20,6 +20,11 @@ if [[ -d "${1:\$1}" ]]; then
   ${0:echo "$1 is a directory"}
 fi
 endsnippet
+snippet ifv "Test variable" b
+if $${1:value}; then
+  ${0:echo true}
+fi
+endsnippet
 snippet ifb "Test boolean" b
 if $${1:value}; then
   ${0:echo true}
