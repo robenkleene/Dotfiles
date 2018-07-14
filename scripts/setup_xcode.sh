@@ -155,15 +155,15 @@ env:
 - carthage build --no-skip-current
 - carthage archive \$FRAMEWORK_NAME
 "
-    if [[ -f ".travis.yml" ]]; then
-      # The deploy section needs to be setup manually because it includes an
-      # encrypted key, so we overwrite the begginging of the file and preserve
-      # the end which includes the manual section.
-      # The `expr` removes whitespace.
-      local travis_lines="$(expr $(wc -l <<< "$travis") - 0)"
-      local travis_deploy=$(tail -n +$travis_lines .travis.yml)
-      travis+=$travis_deploy
-    fi
+  fi
+  if [[ -f ".travis.yml" ]]; then
+    # Some sections need to be setup manually, usually because they include
+    # encrypted keys, so we overwrite the beginning of the file and preserve
+    # the end, so a manual section can be maintained at the end.
+    # The `expr` removes whitespace.
+    local travis_lines="$(expr $(wc -l <<< "$travis") - 0)"
+    local travis_deploy=$(tail -n +$travis_lines .travis.yml)
+    travis+=$travis_deploy
   fi
   echo "$travis" > .travis.yml
 }
