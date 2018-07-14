@@ -13,7 +13,12 @@ if [[ -f ".setup_xcode" ]]; then
 fi
 
 build_only=false
-use_travis=false
+setup_deploy=false
+has_cartfile=false
+if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
+  has_cartfile=true
+fi
+
 set_args() {
   while getopts "tbh" option
     do case "$option" in
@@ -21,7 +26,7 @@ set_args() {
         build_only=true
         ;;
       t)
-        use_travis=true
+        setup_deploy=true
         ;;
       h)
         echo "Usage: setup_xcode [-hb]"
@@ -117,51 +122,53 @@ fastlane/test_output
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
-iOSInjectionProject/"
+iOSInjectionProject/
+"
   echo "$gitignore" > .gitignore
 }
 
 setup_travis() {
   local travis="language: swift
 osx_image: xcode9.4
-script: make ci"
-  if $use_travis; then
-    travis+="
+script: make ci
 xcode_project: $project_name
 xcode_scheme: $project_name
 env:
   global:
   - FRAMEWORK_NAME=$project_name
-before_install:
+"
+  if $has_cartfile || $setup_deploy; then
+    travis+="before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
-before_script:
+"
+  fi
+  if $setup_deploy; then
+    travis+="before_script:
 - make lint
 before_deploy:
 - carthage build --no-skip-current
-- carthage archive \$FRAMEWORK_NAME"
-    if [[ -f ".travis.yml" ]]; then
-      local travis_lines="$(expr $(wc -l <<< "$travis") + 1)"
-      local travis_deploy=$(tail -n +$travis_lines .travis.yml)
-      travis+="
+- carthage archive \$FRAMEWORK_NAME
 "
+    if [[ -f ".travis.yml" ]]; then
+      # The deploy section needs to be setup manually because it includes an
+      # encrypted key, so we overwrite the begginging of the file and preserve
+      # the end which includes the manual section.
+      # The `expr` `+ 0` removes whitespace.
+      local travis_lines="$(expr $(wc -l <<< "$travis") + 0)"
+      local travis_deploy=$(tail -n +$travis_lines .travis.yml)
       travis+=$travis_deploy
     fi
   fi
-  # echo "travis = $travis"
-  # exit 0
   echo "$travis" > .travis.yml
 }
 
 setup_makefile() {
-  local ci_steps="lint"
-  if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
-    ci_steps="$ci_steps bootstrap"
-  fi
+  local ci_steps
   if $build_only; then
-    ci_steps="$ci_steps build"
+    ci_steps="build"
   else
-    ci_steps="$ci_steps test"
+    ci_steps="test"
   fi
   local makefile="SCHEME = $project_name
 
@@ -190,7 +197,8 @@ test:
 	xcodebuild test \\
 		-alltargets \\
 		-configuration Debug \\
-		-scheme \$(SCHEME)"
+		-scheme \$(SCHEME)
+"
   echo "$makefile" > Makefile
 }
 
@@ -206,7 +214,8 @@ setup_swiftlint() {
   - type_name
   - xctfail_message
 excluded:
-  - Carthage"
+  - Carthage
+"
   echo "$swiftlint" > .swiftlint.yml
 }
 
