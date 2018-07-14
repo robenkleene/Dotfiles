@@ -20,12 +20,12 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "tbh" option
+  while getopts "dbh" option
     do case "$option" in
       b)
         build_only=true
         ;;
-      t)
+      d)
         setup_deploy=true
         ;;
       h)
