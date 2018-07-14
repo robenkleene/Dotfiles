@@ -12,12 +12,16 @@ if [[ -f ".setup_xcode" ]]; then
   done < ".setup_xcode"
 fi
 
+build_only=false
+use_travis=false
 set_args() {
-  build_only=false
-  while getopts "bh" option
+  while getopts "tbh" option
     do case "$option" in
       b)
         build_only=true
+        ;;
+      t)
+        use_travis=true
         ;;
       h)
         echo "Usage: setup_xcode [-hb]"
@@ -51,7 +55,7 @@ fi
 
 # `.gitignore`
 setup_gitignore() {
-  gitignore="# Xcode
+  local gitignore="# Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
@@ -118,14 +122,39 @@ iOSInjectionProject/"
 }
 
 setup_travis() {
-  travis="language: swift
-osx_image: xcode9.3
+  local travis="language: swift
+osx_image: xcode9.4
 script: make ci"
+  if $use_travis; then
+    travis+="
+xcode_project: $project_name
+xcode_scheme: $project_name
+env:
+  global:
+  - FRAMEWORK_NAME=$project_name
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- make lint
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive \$FRAMEWORK_NAME"
+    if [[ -f ".travis.yml" ]]; then
+      local travis_lines="$(expr $(wc -l <<< "$travis") + 1)"
+      local travis_deploy=$(tail -n +$travis_lines .travis.yml)
+      travis+="
+"
+      travis+=$travis_deploy
+    fi
+  fi
+  # echo "travis = $travis"
+  # exit 0
   echo "$travis" > .travis.yml
 }
 
 setup_makefile() {
-  ci_steps="lint"
+  local ci_steps="lint"
   if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
     ci_steps="$ci_steps bootstrap"
   fi
@@ -134,7 +163,7 @@ setup_makefile() {
   else
     ci_steps="$ci_steps test"
   fi
-  makefile="SCHEME = $project_name
+  local makefile="SCHEME = $project_name
 
 .PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap
 
@@ -167,7 +196,7 @@ test:
 
 # `.swiftlint.yml`
 setup_swiftlint() {
-  swiftlint="disabled_rules:
+  local swiftlint="disabled_rules:
   - closure_parameter_position
   - file_length
   - function_body_length
