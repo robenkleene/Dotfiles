@@ -143,10 +143,15 @@ env:
 - brew outdated carthage || brew upgrade carthage
 "
   fi
-  if $setup_deploy; then
-    travis+="before_script:
+  travis+="before_script:
 - make lint
-before_deploy:
+"
+  if $has_cartfile; then
+    travis+="- carthage bootstrap
+"
+  fi
+  if $setup_deploy; then
+    travis+="before_deploy:
 - carthage build --no-skip-current
 - carthage archive \$FRAMEWORK_NAME
 "
@@ -154,8 +159,8 @@ before_deploy:
       # The deploy section needs to be setup manually because it includes an
       # encrypted key, so we overwrite the begginging of the file and preserve
       # the end which includes the manual section.
-      # The `expr` `+ 0` removes whitespace.
-      local travis_lines="$(expr $(wc -l <<< "$travis") + 0)"
+      # The `expr` removes whitespace.
+      local travis_lines="$(expr $(wc -l <<< "$travis") - 0)"
       local travis_deploy=$(tail -n +$travis_lines .travis.yml)
       travis+=$travis_deploy
     fi
