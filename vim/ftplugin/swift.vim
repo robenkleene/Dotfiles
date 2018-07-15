@@ -1,6 +1,9 @@
 setlocal suffixesadd=.swift,.h,.m
 nnoremap <localleader>O :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
+command! Format :%!swiftformat
+nnoremap <localleader>f :Format<CR>
+
 let b:LintMakePrg = "swiftlint --path ".fnameescape(expand('%:p'))
 let b:LintErrorFormat =
       \ '%f:%l:%c: %trror: %m,'.

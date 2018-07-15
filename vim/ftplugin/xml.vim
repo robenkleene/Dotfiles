@@ -1,3 +1,3 @@
-command! Beautify :%! xmllint --format -
-nnoremap <localleader>b :Beautify<CR>
+command! Format :%! xmllint --format -
+nnoremap <localleader>f :Format<CR>
 
