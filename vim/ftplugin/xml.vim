@@ -1,3 +1,1 @@
-command! Format :%! xmllint --format -
-nnoremap <localleader>f :Format<CR>
-
+let b:FormatPrg = "xmllint --format -"

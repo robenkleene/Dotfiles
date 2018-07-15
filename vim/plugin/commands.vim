@@ -34,5 +34,9 @@ command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
 
 " Lint
 command! Lint :call commands#Lint()
+
+" Lint
+command! Format :call commands#Format()
+
 " Run
 command! Run :call commands#Run()

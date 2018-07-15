@@ -59,6 +59,18 @@ function! commands#Lint() abort
   let &errorformat = l:original_errorformat
 endfunction
 
+" Format
+function! commands#Format() abort
+  if !exists('b:FormatPrg')
+    echo "No b:FormatPrg defined"
+    return
+  endif
+  let l:cursor_pos = getpos(".")
+  execute "%!" . b:FormatPrg
+  call cursor(l:cursor_pos[1], l:cursor_pos[2])
+endfunction
+
+" Run
 function! commands#Run() abort
   if !exists('b:RunMakePrg')
     echo "No b:RunMakePrg defined"
