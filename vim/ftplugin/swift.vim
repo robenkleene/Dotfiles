@@ -3,6 +3,9 @@ nnoremap <localleader>O :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
 " Format
 let b:FormatPrg = "swiftformat --commas inline"
+" When piping through `swiftlint`, it leaves an emptly blank line at the end of
+" the file
+nnoremap <localleader>f :Format<CR>\|:DeleteEOFWhitespace<CR>
 
 " Lint
 let b:LintMakePrg = "swiftlint --path ".fnameescape(expand('%:p'))

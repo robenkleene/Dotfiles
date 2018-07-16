@@ -59,6 +59,12 @@ function! commands#Lint() abort
   let &errorformat = l:original_errorformat
 endfunction
 
+function! commands#DeleteEOFWhitespace() abort
+  let l:cursor_pos = getpos(".")
+  execute '0;/^\%(\_s*\S\)\@!/,$d'
+  call cursor(l:cursor_pos[1], l:cursor_pos[2])
+endfunction
+
 " Format
 function! commands#Format() abort
   if !exists('b:FormatPrg')
