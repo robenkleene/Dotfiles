@@ -72,16 +72,9 @@ let ${1:expect} = expectation(description: "${2:Expectation}")
 $1.fulfill()
 waitForExpectations(timeout: ${3:1.0}, handler: nil)
 endsnippet
-snippet dov "Do-Catch Visual" b
+snippet do "Do-Catch Visual" b
 do {
-    ${VISUAL:try someThrowingFunction()/try!/try/g}
-} catch {
-    ${2:print("Error")}
-}
-endsnippet
-snippet do "Do-Catch" b
-do {
-    try ${1:try someThrowingFunction()}
+    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}
 } catch {
     ${2:print("Error")}
 }
