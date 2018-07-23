@@ -55,13 +55,17 @@ vim_grep() {
   $VIM_COMMAND -c "GrepBuffer" -
 }
 vim_git_conflicts() {
-  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq) -c "vimgrep /======/ ##"
+  cd "$(git rev-parse --show-toplevel)" \
+    && $VIM_COMMAND $(git diff --name-only --diff-filter=UM \
+    | uniq) -c "vimgrep /======/ ##"
 }
 vim_diff_grep() {
-  diff-to-grep | vim_grep
+  cd "$(git rev-parse --show-toplevel)"
+  diff_to_grep | vim_grep
 }
 vim_git_modified() {
-  $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
+  cd "$(git rev-parse --show-toplevel)" \
+    && $VIM_COMMAND $(git diff --name-only --diff-filter=UM | uniq)
 }
 vim_git_diff() {
   git diff --relative $argv | vim_diff_grep
