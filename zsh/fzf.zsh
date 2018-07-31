@@ -108,6 +108,7 @@ _fzf_editor_widget() {
   # `nvim` instead opens an empty buffer with the edited file in the
   # background. This was probably introduced with `nvim` `0.3`. Adding `-c :bd`
   # destroys the empty buffer and shows the file that was intended to edit.
+  # `https://github.com/neovim/neovim/issues/8561`
   # eval $EDITOR ${(q)file}
   eval $EDITOR ${(q)file} -c ":bd"
 
@@ -162,6 +163,7 @@ _fzf_zvim_widget() {
   # `nvim` instead opens an empty buffer with the edited file in the
   # background. This was probably introduced with `nvim` `0.3`. Adding `-c :bd`
   # destroys the empty buffer and shows the file that was intended to edit.
+  # `https://github.com/neovim/neovim/issues/8561`
   # eval $EDITOR ${(q)file}
   eval $EDITOR ${(q)file} -c ":bd"
 
