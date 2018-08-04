@@ -57,9 +57,6 @@
                                   )
             )
 
-  ;; `yassnippet'
-  (add-to-list 'god-exempt-major-modes 'snippet-mode)
-
   (defun robenkleene/god-backspace ()
     "Delete the current region and enter insert mode."
     (interactive)
@@ -108,15 +105,7 @@
   (define-key robenkleene/mortal-map (kbd "<left>") 'previous-buffer)
   (define-key robenkleene/mortal-map (kbd "<right>") 'next-buffer)
 
-
-  (defcustom robenkleene/mortal-exempt-major-modes
-    '(git-commit-mode
-      vc-annotate-mode
-      git-commit-mode
-      snippet-mode)
-    "List of major modes that should not use the override map."
-    :type '(function)
-    )
+  (require 'robenkleene-god-mode-modes)
 
   (defadvice god-mode-maybe-activate (after robenkleene/toggle-mortal-mode (&optional status) activate)
     (if (and (not (bound-and-true-p god-local-mode))
@@ -129,10 +118,6 @@
       )
     )
 
-  (with-current-buffer "*Messages*"
-    (robenkleene/mortal-mode)
-    )
-
   (add-hook 'god-mode-enabled-hook (lambda ()
                                      (setq global-hl-line-mode t)
                                      (robenkleene/mortal-mode -1)
@@ -142,17 +127,6 @@
                                       (setq global-hl-line-mode nil)
                                       )
             )
-
-  (add-hook 'magit-status-mode-hook
-            (lambda ()
-              (make-local-variable 'robenkleene/mortal-mode-map)
-              (setq robenkleene/mortal-mode-map (copy-tree robenkleene/mortal-mode-map))
-              (define-key robenkleene/mortal-mode-map (kbd "c") nil)
-              (define-key robenkleene/mortal-mode-map (kbd "r") nil)
-              (define-key robenkleene/mortal-mode-map (kbd "s") nil)
-              )
-            )
-
 
   )
 
