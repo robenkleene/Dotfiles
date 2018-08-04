@@ -57,7 +57,7 @@ fi
 endsnippet
 snippet ifz "True if empty variable" b
 if [[ -z "$${1:1}" ]]; then
-  ${0:echo "\$$1 is empty"} 
+  ${0:echo "\$$1 is empty"}
 fi
 endsnippet
 snippet ifn "True if not empty variable" b
@@ -135,4 +135,10 @@ done
 endsnippet
 snippet >null "Redirect to null"
 >/dev/null
+endsnippet
+snippet sete "Exit on non-zero exit status"
+set -e
+endsnippet
+snippet seto "Print each command"
+set -o
 endsnippet

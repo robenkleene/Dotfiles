@@ -39,6 +39,7 @@ let g:UltiSnipsEditSplit="context"
 "     return ''
 " endfunction
 
+" Use `UltiSnips` for built-in completion with `<C-x C-u>`
 set completefunc=ListSnippets
 function! ListSnippets(findstart, base) abort
   if empty(UltiSnips#SnippetsInCurrentScope(1))
