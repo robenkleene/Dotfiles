@@ -112,6 +112,7 @@ abbreviations=(
 'gur' 'git pull -r'
 # `gw`: `git web`
 'gw' 'git_web_open'
+'glg' 'git log -p -G'
 )
 
 # if [ "$(uname)" = "Darwin" ]; then
