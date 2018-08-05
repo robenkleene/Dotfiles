@@ -8,25 +8,11 @@
   ("M-z" . god-mode-all)
   :ensure
   :init
-  ;; (global-hl-line-mode)
-  ;; (make-variable-buffer-local 'global-hl-line-mode)
-
-
-  ;; (defvar robenkleene/ascend-mode-map (make-keymap))
-  ;; (define-minor-mode robenkleene/ascend-mode
-  ;;   "Ascend."
-  ;;   nil
-  ;;   nil
-  ;;   'robenkleene/ascend-mode-map)
-  ;; (define-key robenkleene/ascend-mode-map (kbd "C-x") 'robenkleene/ascend)
-  ;; (robenkleene/ascend-mode -1)
-  ;; (robenkleene/ascend-mode)
-
   (god-mode-all)
   :config
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
   (define-key god-local-mode-map (kbd "SPC") 'scroll-up-command)
-  ;; (define-key god-local-mode-map (kbd "DEL") 'robenkleene/god-backspace)
+  (define-key god-local-mode-map (kbd "DEL") 'robenkleene/god-backspace)
   (define-key god-local-mode-map (kbd "q") 'quit-window)
   ;; (define-key god-local-mode-map (kbd ";") (lambda ()
   ;;                                            (interactive)
@@ -43,40 +29,14 @@
   ;; (global-set-key (kbd "C-x C-<right>") 'next-buffer)
   ;; (global-set-key (kbd "C-x C-<left>") 'previous-buffer)
 
-  ;; (add-hook 'emacs-startup-hook (lambda ()
-  ;;                                 (add-hook 'after-change-functions
-  ;;                                           (lambda (&rest args)
-  ;;                                             (if (and (buffer-modified-p)
-  ;;                                                      (bound-and-true-p god-local-mode)
-  ;;                                                      (god-passes-predicates-p)
-  ;;                                                      )
-  ;;                                                 (call-interactively 'god-local-mode)
-  ;;                                               )
-  ;;                                             )
-  ;;                                           )
-  ;;                                 )
-  ;;           )
-
-  ;; (defun robenkleene/god-backspace ()
-  ;;   "Delete the current region and enter insert mode."
-  ;;   (interactive)
-
-  ;;   (if (use-region-p)
-  ;;       (progn
-  ;;         (delete-region (region-beginning) (region-end))
-  ;;         (god-local-mode -1)
-  ;;         )
-  ;;     (scroll-down-command)
-  ;;     )
-
-  ;;   )
-
-  ;; (defun robenkleene/ascend ()
-  ;;   "Enter god-more then hit `C-x'."
-  ;;   (interactive)
-  ;;   (god-mode-all)
-  ;;   (execute-kbd-macro (kbd "C-x"))
-  ;;   )
+  (defun robenkleene/god-backspace ()
+    "Delete the current region or scroll down."
+    (interactive)
+    (if (use-region-p)
+        (delete-region (region-beginning) (region-end))
+      (scroll-down-command)
+      )
+    )
 
   ;; God Override Mode
   (defvar robenkleene/mortal-mode-map (make-keymap))
@@ -107,20 +67,8 @@
 
   (require 'robenkleene-god-mode-modes)
 
-  ;; (defadvice god-mode-maybe-activate (after robenkleene/toggle-mortal-mode (&optional status) activate)
-  ;;   (if (and (not (bound-and-true-p god-local-mode))
-  ;;            (and (not (memq major-mode robenkleene/mortal-exempt-major-modes))
-  ;;                 (not (god-git-commit-mode-p))
-  ;;                 (not (minibufferp))
-  ;;                 )
-  ;;            )
-  ;;       (robenkleene/mortal-mode)
-  ;;     )
-  ;;   )
-
   (add-hook 'god-mode-enabled-hook (lambda ()
                                      (message "`god-mode' enabled")
-                                     ;; (setq global-hl-line-mode t)
                                      (global-hl-line-mode 1)
                                      (robenkleene/mortal-mode -1)
                                      )
@@ -128,10 +76,8 @@
   (add-hook 'god-mode-disabled-hook (lambda ()
                                       (message "`god-mode' disabled")
                                       (global-hl-line-mode -1)
-                                      (setq global-hl-line-mode nil)
                                       )
             )
-
   )
 
 (provide 'robenkleene-god-mode)
