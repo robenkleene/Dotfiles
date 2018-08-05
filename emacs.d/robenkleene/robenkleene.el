@@ -55,5 +55,6 @@
 (require 'robenkleene-swift)
 (require 'robenkleene-markdown)
 (require 'robenkleene-fish)
+(require 'robenkleene-ledger)
 
 ;;; robenkleene.el ends here
