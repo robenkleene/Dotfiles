@@ -17,6 +17,13 @@
   (robenkleene/mortal-mode)
   )
 
+(add-hook 'help-mode-hook
+          (lambda ()
+            (define-key help-mode-map "p" 'previous-line)
+            (define-key help-mode-map "n" 'next-line)
+            )
+          )
+
 (add-hook 'magit-status-mode-hook
           (lambda ()
             (make-local-variable 'robenkleene/mortal-mode-map)
