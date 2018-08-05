@@ -67,6 +67,15 @@
 
   (require 'robenkleene-god-mode-modes)
 
+  (defadvice god-mode-maybe-activate (after robenkleene/enable-mortal-mode (&optional status) activate)
+    (if (and (not (memq major-mode robenkleene/mortal-exempt-major-modes))
+             (not (bound-and-true-p god-local-mode))
+             (not (god-git-commit-mode-p)))
+        (robenkleene/mortal-mode)
+      )
+    )
+
+
   (add-hook 'god-mode-enabled-hook (lambda ()
                                      (message "`god-mode' enabled")
                                      (global-hl-line-mode 1)
