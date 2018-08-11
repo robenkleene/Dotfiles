@@ -56,5 +56,6 @@
 (require 'robenkleene-markdown)
 (require 'robenkleene-fish)
 (require 'robenkleene-ledger)
+(require 'robenkleene-csv)
 
 ;;; robenkleene.el ends here
