@@ -27,13 +27,21 @@ def get_parameters():
 
 def get_config(config_filename):
     """Return keys from the config."""
-    config = configparser.ConfigParser()
-    config.read(config_filename)
-    return dict(date=config['DEFAULT']['DateKey'],
-                amount=config['DEFAULT']['AmountKey'],
-                description=config['DEFAULT']['DescriptionKey'],
-                to_account=config['DEFAULT']['ToAccountKey'],
-                from_account=config['DEFAULT']['FromAccountKey'])
+    parser = configparser.ConfigParser()
+    # Disable default `configparser` converting keys to lowercase
+    parser.optionxform = str
+    parser.read(config_filename)
+    keys = dict(date=parser['DEFAULT']['DateKey'],
+                amount=parser['DEFAULT']['AmountKey'],
+                description=parser['DEFAULT']['DescriptionKey'],
+                to_account=parser['DEFAULT']['ToAccountKey'],
+                from_account=parser['DEFAULT']['FromAccountKey'])
+    from_account_translations = {}
+    for key in parser['FromAccountTranslations']:
+        from_account_translations[key] = parser['FromAccountTranslations'][key]
+    return dict(keys=keys,
+                from_account_translations=from_account_translations)
+
 
 def generate_output(filename, config):
     """Translate the CSV to Ledger and output the result"""
@@ -41,11 +49,16 @@ def generate_output(filename, config):
     reader = csv.DictReader(file_object)
     for row in reader:
         # Keys
-        date = row[config['date']]
-        amount = row[config['amount']]
-        description = row[config['description']]
-        to_account = row[config['to_account']]
-        from_account = row[config['from_account']]
+        keys = config['keys']
+        date = row[keys['date']]
+        amount = row[keys['amount']]
+        description = row[keys['description']]
+        to_account = row[keys['to_account']]
+        from_account = row[keys['from_account']]
+        # Translations
+        from_account_translations = config['from_account_translations']
+        from_account = from_account_translations[
+            from_account] if from_account in from_account_translations else from_account
         # Whitespace
         whitespace_length = LINE_LENGTH - \
             len(to_account) - len(amount) - WHITESPACE_INDENT_LENGTH
@@ -62,6 +75,7 @@ def generate_output(filename, config):
         print("%s%s" % (WHITESPACE_INDENT, from_account))
         print('')
 
+
 def main():
     """main"""
     # Get Parameters
@@ -72,6 +86,7 @@ def main():
 
     # Generate Output
     generate_output(filename, config)
+
 
 if __name__ == "__main__":
     main()
