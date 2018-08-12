@@ -11,35 +11,42 @@ LINE_LENGTH = 50
 WHITESPACE_INDENT_LENGTH = 2
 WHITESPACE_INDENT = ' ' * WHITESPACE_INDENT_LENGTH
 
-def main():
-    """main"""
-    # Command-Line Options
+def get_parameters():
+    """Return the parameters."""
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', help='Configuration file', required=True)
     parser.add_argument('filename', nargs='?')
     args = parser.parse_args()
-    filename = args.filename
-    config_filename = args.config
+    return args.filename, args.config
 
-    # Config
+def get_config(config_filename):
+    """Return keys from the config."""
     config = configparser.ConfigParser()
     config.read(config_filename)
-    date_key = config['DEFAULT']['DateKey']
-    amount_key = config['DEFAULT']['AmountKey']
-    description_key = config['DEFAULT']['DescriptionKey']
-    to_account_key = config['DEFAULT']['ToAccountKey']
-    from_account_key = config['DEFAULT']['FromAccountKey']
+    return dict(date=config['DEFAULT']['DateKey'],
+                amount=config['DEFAULT']['AmountKey'],
+                description=config['DEFAULT']['DescriptionKey'],
+                to_account=config['DEFAULT']['ToAccountKey'],
+                from_account=config['DEFAULT']['FromAccountKey'])
+
+def main():
+    """main"""
+    # Parameters
+    filename, config_filename = get_parameters()
+
+    # Config
+    config = get_config(config_filename)
 
     # `csv` to `ledger`
     file_object = open(filename) if filename is not None else sys.stdin
     reader = csv.DictReader(file_object)
     for row in reader:
         # Keys
-        date = row[date_key]
-        amount = row[amount_key]
-        description = row[description_key]
-        to_account = row[to_account_key]
-        from_account = row[from_account_key]
+        date = row[config['date']]
+        amount = row[config['amount']]
+        description = row[config['description']]
+        to_account = row[config['to_account']]
+        from_account = row[config['from_account']]
         # Whitespace
         whitespace_length = LINE_LENGTH - len(to_account) - len(amount) - WHITESPACE_INDENT_LENGTH
         whitespace_length = whitespace_length if whitespace_length > 0 else 1
