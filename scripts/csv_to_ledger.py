@@ -35,16 +35,8 @@ def get_config(config_filename):
                 to_account=config['DEFAULT']['ToAccountKey'],
                 from_account=config['DEFAULT']['FromAccountKey'])
 
-
-def main():
-    """main"""
-    # Parameters
-    filename, config_filename = get_parameters()
-
-    # Config
-    config = get_config(config_filename)
-
-    # `csv` to `ledger`
+def generate_output(filename, config):
+    """Translate the CSV to Ledger and output the result"""
     file_object = open(filename) if filename is not None else sys.stdin
     reader = csv.DictReader(file_object)
     for row in reader:
@@ -70,6 +62,16 @@ def main():
         print("%s%s" % (WHITESPACE_INDENT, from_account))
         print('')
 
+def main():
+    """main"""
+    # Get Parameters
+    filename, config_filename = get_parameters()
+
+    # Get Config
+    config = get_config(config_filename)
+
+    # Generate Output
+    generate_output(filename, config)
 
 if __name__ == "__main__":
     main()
