@@ -7,7 +7,7 @@
    ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
  '(package-selected-packages
    (quote
-    (ledger-mode iedit iedi god-mode bind-key use-package smartparens page-break-lines fish-mode markdown-mode swift-mode robe nodejs-repl js2-mode slime fill-column-indicator helm-swoop helm fasd rainbow-delimiters projectile yasnippet ido-completing-read+ flycheck macrostep rainbow-mode magit-filenotify evil-terminal-cursor-changer bind-map evil-visualstar evil-commentary wgrep buffer-move smex pbcopy jade-mode enh-ruby-mode editorconfig company better-defaults aggressive-indent)))
+    (csv-mode ledger-mode iedit iedi god-mode bind-key use-package smartparens page-break-lines fish-mode markdown-mode swift-mode robe nodejs-repl js2-mode slime fill-column-indicator helm-swoop helm fasd rainbow-delimiters projectile yasnippet ido-completing-read+ flycheck macrostep rainbow-mode magit-filenotify evil-terminal-cursor-changer bind-map evil-visualstar evil-commentary wgrep buffer-move smex pbcopy jade-mode enh-ruby-mode editorconfig company better-defaults aggressive-indent)))
  '(vc-annotate-color-map
    (quote
     ((20 . "#F92672")
