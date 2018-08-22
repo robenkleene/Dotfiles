@@ -37,6 +37,7 @@ if [ ! -f $tmp_file ]; then
   exit 1
 fi
 
+first=true
 if $all; then
   old_IFS=$IFS
   IFS=$'\n'
@@ -47,11 +48,13 @@ if $all; then
     session_id=$1
     session_name=$2
     IFS=${old_IFS}
+    if ! $first; then
+      echo >> $tmp_file
+    fi
+    first=false
     echo "$session_name" >> $tmp_file
-    for window in $(tmux list-windows -t="$session_id" | cut -c 1); do
-      for pane in $(tmux list-panes -s -t="$session_id" | cut -d ' ' -f 7); do
-        tmux run-shell -t $pane "tmux display-message -p '#{pane_current_path}' >> $tmp_file"
-      done
+    for pane in $(tmux list-panes -s -t="$session_id" | cut -d ' ' -f 7); do
+      tmux run-shell -t $pane "tmux display-message -p '#{pane_current_path}' >> $tmp_file"
     done
   done
   IFS=${old_IFS}
