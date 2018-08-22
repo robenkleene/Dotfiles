@@ -12,8 +12,6 @@ while getopts 0afuh option
 do case "$option" in
   a)  all=true
     ;;
-  f)  flat=true
-    ;;
   u)  unique=true
     ;;
   0)  null_terminate=true
@@ -70,7 +68,7 @@ fi
 # Note that the front program can change the `pwd`, which might result in paths
 # appearing to be missing.
 cmd="cat $tmp_file"
-if $unique; then
+if $unique && ! $all; then
   cmd="$cmd | sort --unique | grep ."
 fi
 if $null_terminate; then
