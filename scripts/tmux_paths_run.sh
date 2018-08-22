@@ -5,4 +5,4 @@ while IFS= read -r -d '' i ; do
   # echo $i
   $@
   # echo
-done < <(tmux_paths -0)
+done < <(tmux_paths -u -0)
