@@ -7,7 +7,7 @@ fi
 
 filename="tmux_session"
 if [[ -n "$1" ]]; then
-  filename=$1
+  filename="$1"
 fi
 
 d=$'\t'

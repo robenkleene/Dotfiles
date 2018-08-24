@@ -7,7 +7,7 @@ fi
 
 filename="tmux_session"
 if [[ -n "$1" ]]; then
-  filename=$1
+  filename="$1"
 fi
 
 tmux start-server
@@ -21,7 +21,7 @@ while IFS=$'\t' read session_name window_name dir; do
     current_session="$session_name"
     count=0
   fi
-  current_session=$session_name
+  current_session="$session_name"
   if [[ -d "$dir" ]]; then
     if tmux has-session -t "$session_name" 2>/dev/null; then
       tmux new-window -d -t="$session_name:$count" -n "$window_name" -c "$dir"
@@ -29,7 +29,10 @@ while IFS=$'\t' read session_name window_name dir; do
       cd "$dir"
       tmux new-session -d -s "$session_name" -n "$window_name"
     fi
+  else
+    echo "$dir doesn't exist"
+    exit 1
   fi
-done < $filename
+done < "$filename"
 
 tmux attach
