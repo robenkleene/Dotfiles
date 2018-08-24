@@ -52,7 +52,6 @@ abbreviations=(
 # This is too dangerous, especially because it is easly confused with `git
 # branch diff`
 # 'gbd' 'git branch -d'
-'gbpr' 'git remote prune origin'
 'gbr' 'git branch -r'
 # `gc`: `git commit`
 'gc' 'git commit'

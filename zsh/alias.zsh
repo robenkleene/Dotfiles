@@ -127,6 +127,7 @@ alias grtp='git_remote_print'
 alias grtao='git_remote_add_origin'
 alias gcd='git_cd_root'
 alias gdg='git_diff_grep'
+alias gbpr='git_branch_prune'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'

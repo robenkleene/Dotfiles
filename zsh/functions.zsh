@@ -188,9 +188,9 @@ git_remote_add_origin() {
 }
 git_branch_prune() {
   git remote prune origin
-}
-git_list_modified() {
-  git diff --name-only --diff-filter=UM | uniq
+  if [[ "$1" = "-D" ]]; then
+    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+  fi
 }
 git_branch_list_pruned() {
   if [[ "$1" = "-D" ]]; then
@@ -198,6 +198,9 @@ git_branch_list_pruned() {
   else
     git branch -vv | grep ': gone]' | awk '{print $1}'
   fi
+}
+git_list_modified() {
+  git diff --name-only --diff-filter=UM | uniq
 }
 git_push_force() {
   git push --force-with-lease
