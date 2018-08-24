@@ -10,6 +10,9 @@ vim_session
 # settings.vim
 vim_settings
 
+# `tmux` session
+tmux_session
+
 # Bash Local Settings
 settings.sh
 
