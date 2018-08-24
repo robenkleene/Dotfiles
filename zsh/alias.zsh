@@ -73,6 +73,7 @@ alias tmc='tmux_paths_run'
 alias tmack='tmux_paths_rg'
 alias tme='fzf_tmux_vim_file'
 alias tmgs='tmux_git_status'
+alias tmssdw='tmux_session_save_dropbox_work'
 
 # `make`
 alias ml='make lint'
