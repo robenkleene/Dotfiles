@@ -163,7 +163,7 @@ git_branch_print() {
   git rev-parse --abbrev-ref HEAD | tr -d '\n'
 }
 # Hash
-git_hash_print() {
+git_revision_print() {
   git rev-parse HEAD | tr -d '\n'
 }
 # Remote
