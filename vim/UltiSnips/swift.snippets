@@ -60,22 +60,15 @@ class ${1:MyObject} {
     $0
 }
 endsnippet
-snippet dotry "Try-Catch" b
-do {
-    try ${1:canThrowErrors()}
-} catch let error as NSError {
-    throw error
-}
-endsnippet
 snippet expectation "Expectation" b
 let ${1:expect} = expectation(description: "${2:Expectation}")
 $1.fulfill()
 waitForExpectations(timeout: ${3:1.0}, handler: nil)
 endsnippet
-snippet do "Do-Catch Visual" b
+snippet dotry "Do-Try-Catch" b
 do {
     ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}
 } catch {
-    ${2:print("Error")}
+    ${2:throw error}
 }
 endsnippet
