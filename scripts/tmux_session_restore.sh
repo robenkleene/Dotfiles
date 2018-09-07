@@ -31,7 +31,6 @@ while IFS=$'\t' read session_name window_name dir; do
     fi
   else
     echo "$dir doesn't exist"
-    exit 1
   fi
 done < "$filename"
 
