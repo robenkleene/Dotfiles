@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-python -m json.tool "$1"
+for file in "$@"; do
+  python -m json.tool "$file"
+done
