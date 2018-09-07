@@ -292,3 +292,38 @@ jekyll_serve_watch_drafts() {
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch --drafts
 }
+
+# Simulator
+simulator_data_print() {
+  local app_process=$(ps ax | grep -E \
+    "/.*Library/Developer/CoreSimulator/Devices/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}/.*/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}" | \
+    grep -v grep | awk '{ print $1 }')
+  local app_path=$(lsof -p ${app_process} | \
+    grep -oE "/.*Library/Developer/CoreSimulator/Devices/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}/data/Containers/Data/Application/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}" | \
+    grep -v grep | awk '{ print $1 }' | head -n 1)
+  if [[ -z "$app_path" ]]; then
+    app_path=$(lsof -p ${app_process} | \
+      grep -oE "/.*Library/Developer/CoreSimulator/Devices/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}/" | \
+      grep -v grep | awk '{ print $1 }' | head -n 1)
+  fi
+
+  if [[ -z "$app_path" ]]; then
+    echo "No directory found"
+    return 1
+  fi
+
+  if [[ ! -d "$app_path" ]]; then
+    echo "$app_path is not a directory"
+    return 1
+  fi
+
+  echo "$app_path" | tr -d '\n'
+}
+
+simulator_data_cd() {
+  local app_path=$(simulator_data_print)
+  if [[ $? -ne 0 ]]; then
+    return 1
+  fi
+  cd "$app_path"
+}
