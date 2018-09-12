@@ -20,6 +20,11 @@ if [[ -d "${1:\$1}" ]]; then
   ${0:echo "$1 is a directory"}
 fi
 endsnippet
+snippet ifdn "True if not directory" b
+if [[ ! -d "${1:\$1}" ]]; then
+  ${0:echo "$1 is a directory"}
+fi
+endsnippet
 snippet ifv "Test variable" b
 if $${1:value}; then
   ${0:echo true}
@@ -32,6 +37,11 @@ fi
 endsnippet
 snippet iff "True if file" b
 if [[ -f "${1:\$1}" ]]; then
+  ${0:echo "$1 is a file"}
+fi
+endsnippet
+snippet iffn "True if not file" b
+if [[ ! -f "${1:\$1}" ]]; then
   ${0:echo "$1 is a file"}
 fi
 endsnippet
