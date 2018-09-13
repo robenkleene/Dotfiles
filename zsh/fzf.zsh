@@ -240,7 +240,7 @@ _robenkleene_fzf_inline_result() {
 
 # Safari
 fzf_safari_history_open() {
-  local result=$(safari-history-dump \
+  local result=$(safari_history_dump \
     | FZF_DEFAULT_OPTS="-m --reverse --prompt \"Safari History> \" \
     --height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS" fzf +m \
     | cut -f2)
