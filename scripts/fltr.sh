@@ -19,4 +19,5 @@ if [[ "$1" == "-c" ]]; then
   exit 0
 fi
 
-$FLTR_PATH
+$FLTR_PATH 2>&1
+exit 0
