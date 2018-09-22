@@ -329,3 +329,11 @@ fzf_tmux_vim_file() {
     | tr '\n' '\0' \
     | xargs -0 $VIM_COMMAND
 }
+
+fzf_tmux_window() {
+  if [ -z "$TMUX" ]; then
+    return
+  fi
+  local window=$(tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}')
+  tmux select-window -t ":$window"
+}
