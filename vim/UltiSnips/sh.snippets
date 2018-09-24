@@ -75,9 +75,14 @@ if [[ -n "$${1:1}" ]]; then
   ${0:echo \$$1}
 fi
 endsnippet
-snippet if "Test" b
+snippet if "If statement" b
 if ${1:true}; then
   ${0:echo "true"}
+fi
+endsnippet
+snippet ifs "True if variable matches string" b
+if [[ "$${1:1}" == "${2:string}" ]]; then
+  ${0:echo "match"}
 fi
 endsnippet
 snippet template "Basic template" b
@@ -112,7 +117,7 @@ endsnippet
 snippet exitstatus "Store exit status" b
 status=$?
 endsnippet
-snippet ifs "Change IFS" b
+snippet IFS "Change IFS" b
 old_IFS=$IFS
 IFS="${1: }"
 IFS=${old_IFS}
