@@ -15,75 +15,49 @@ ${1:my_function}() {
   ${0:echo \$1}
 }
 endsnippet
-snippet ifd "True if directory" b
-if [[ -d "${1:\$1}" ]]; then
-  ${0:echo "$1 is a directory"}
-fi
-endsnippet
-snippet ifdn "True if not directory" b
-if [[ ! -d "${1:\$1}" ]]; then
-  ${0:echo "$1 is a directory"}
-fi
-endsnippet
-snippet ifv "Test variable" b
-if $${1:value}; then
-  ${0:echo true}
-fi
-endsnippet
-snippet ifb "Test boolean" b
-if $${1:value}; then
-  ${0:echo true}
-fi
-endsnippet
-snippet iff "True if file" b
-if [[ -f "${1:\$1}" ]]; then
-  ${0:echo "$1 is a file"}
-fi
-endsnippet
-snippet iffn "True if not file" b
-if [[ ! -f "${1:\$1}" ]]; then
-  ${0:echo "$1 is a file"}
-fi
-endsnippet
-snippet ifl "True if symbolic link" b
-if [[ -L "${1:\$1}" ]]; then
-  ${0:echo "$1 is a symbolic link"}
-fi
-endsnippet
-snippet ifee "True if error exit status" b
-if [[ ${1:$?} -ne 0 ]]; then
-  ${0:exit 1}
-fi
-endsnippet
-snippet ife "Test exit status" b
-if [[ ${1:$?} -eq 0 ]]; then
-  ${0:exit 1}
-fi
-endsnippet
-snippet ife0 "True if zero exit status" b
-if [[ ${1:$?} -eq 0 ]]; then
-  ${0:exit 1}
-fi
-endsnippet
-snippet ifz "True if empty variable" b
-if [[ -z "$${1:1}" ]]; then
-  ${0:echo "\$$1 is empty"}
-fi
-endsnippet
-snippet ifn "True if not empty variable" b
-if [[ -n "$${1:1}" ]]; then
-  ${0:echo \$$1}
-fi
-endsnippet
 snippet if "If statement" b
 if ${1:true}; then
   ${0:echo "true"}
 fi
 endsnippet
-snippet ifs "True if variable matches string" b
-if [[ "$${1:1}" == "${2:string}" ]]; then
-  ${0:echo "match"}
-fi
+snippet [[ "True if variable matches string"
+[[ ${0:-n "\$1"} ]]
+endsnippet
+snippet testd "True if directory"
+-d "${1:\$1}"
+endsnippet
+snippet testdn "True if not directory"
+! -d "${1:\$1}"
+endsnippet
+snippet testv "Test variable"
+$${1:value}; then
+endsnippet
+snippet testb "Test boolean"
+$${1:value}; then
+endsnippet
+snippet testf "True if file"
+-f "${1:\$1}"
+endsnippet
+snippet testfn "True if not file"
+! -f "${1:\$1}"
+endsnippet
+snippet testl "True if symbolic link"
+-L "${1:\$1}"
+endsnippet
+snippet testexe "True if error exit status"
+${1:$?} -ne 0
+endsnippet
+snippet testex0 "True if zero exit status"
+${1:$?} -eq 0
+endsnippet
+snippet testz "True if empty variable"
+-z "$${1:1}"
+endsnippet
+snippet testn "True if not empty variable"
+-n "$${1:1}"
+endsnippet
+snippet tests "True if variable matches string"
+"$${1:1}" == "${2:string}"
 endsnippet
 snippet template "Basic template" b
 #!/usr/bin/env bash
