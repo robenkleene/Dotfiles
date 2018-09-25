@@ -60,7 +60,7 @@ alias zoi='zsh_edit_config'
 
 # scripts
 alias n='terminal_new'
-alias o='finder_new'
+alias o='open_custom'
 
 # `tmux`
 alias tma='tmux attach'
