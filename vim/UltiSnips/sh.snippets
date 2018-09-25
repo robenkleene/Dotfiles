@@ -35,8 +35,11 @@ endsnippet
 snippet testb "Test boolean"
 $${1:value}; then
 endsnippet
-snippet testf "True if file"
+snippet testf "True if regular file"
 -f "${1:\$1}"
+endsnippet
+snippet teste "True if file exists"
+-e "${1:\$1}"
 endsnippet
 snippet testfn "True if not file"
 ! -f "${1:\$1}"
