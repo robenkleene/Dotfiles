@@ -1,3 +1,4 @@
+setlocal formatprg=python\ -m\ json.tool
 let b:FormatPrg = "python -m json.tool"
 
 " Disable Conceal
