@@ -4,7 +4,7 @@ EGITREPOS=~/Development/Dotfiles/:~/Development/Snippets/:~/Development/Archive/
 
 
 if [ "$(uname)" == "Darwin" ]; then
-  EGITREPOS=$EGITREPOS:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Library/Scripts/:~/Library/Script\ Libraries/:~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+  EGITREPOS=$EGITREPOS:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Library/Scripts/:~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 fi
 
 IFS=':' read -ra repos <<< "$EGITREPOS"
