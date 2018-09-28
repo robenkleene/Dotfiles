@@ -29,7 +29,10 @@ set_args() {
         setup_deploy=true
         ;;
       h)
-        echo "Usage: setup_xcode [-hb]"
+        echo "Usage: setup_xcode [-hbd]"
+        echo
+        echo "-b: Build only"
+        echo "-d: Also setup deployment"
         echo
         echo "Create a file called .setup_xcode to automatically set flags."
         echo "Put one flag per line."
@@ -129,7 +132,7 @@ iOSInjectionProject/
 
 setup_travis() {
   local travis="language: swift
-osx_image: xcode9.4
+osx_image: xcode10
 script: make ci
 xcode_project: $project_name
 xcode_scheme: $project_name
