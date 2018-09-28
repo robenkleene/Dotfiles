@@ -45,9 +45,6 @@ alias rg="rg --with-filename --smart-case --line-number --colors 'match:fg:black
 # no_mouse: true
 alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
 
-# vimdiff
-alias vimdiff="nvim -d"
-
 # Shortcut
 
 # `zsh`

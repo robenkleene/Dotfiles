@@ -27,8 +27,6 @@ bind generic D !@sh -c "git difftool '%(file)'"
 bind generic Y !@bash -c "echo -n %(commit) | safecopy"
 bind status w !bash -c "git diff --color-words '%(file)'"
 bind stage w !bash -c "git diff --color-words '%(file)'"
-bind stage v !bash -c "nvim -c 'Gdiff' '%(file)'"
-bind status v !bash -c "nvim -c 'Gdiff' '%(file)'"
 bind status ]] move-page-down
 bind status [[ move-page-up
 bind generic d none
