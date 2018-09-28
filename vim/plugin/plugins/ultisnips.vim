@@ -1,3 +1,9 @@
+" Suppress a `DeprecationWarning` as documented here
+" https://github.com/SirVer/ultisnips/issues/996
+if has('python3')
+  silent! python3 1
+endif
+
 " Check for snippets from only one location and always edit snippets with
 " `UltiSnipsEdit` at that location
 " Note that the documentation says that this should be a single value rather
