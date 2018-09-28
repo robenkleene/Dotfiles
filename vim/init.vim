@@ -58,7 +58,7 @@ Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
       \ 'TestLast', 'TestVisit'] }
 Plug 'Konfekt/FastFold'
-" NOTE: `ultisnips` slows input
+" NOTE: `ultisnips` slows input in `nvim`
 Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
