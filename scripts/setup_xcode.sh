@@ -138,16 +138,16 @@ xcode_project: $project_name
 xcode_scheme: $project_name
 env:
   global:
-  - FRAMEWORK_NAME=$project_name
+    - FRAMEWORK_NAME=$project_name
 "
   if $has_cartfile || $setup_deploy; then
     travis+="before_install:
-- brew update
-- brew outdated carthage || brew upgrade carthage
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
 "
   fi
   travis+="before_script:
-- make lint
+  - make lint
 "
   if $has_cartfile; then
     travis+="- carthage bootstrap
@@ -155,8 +155,8 @@ env:
   fi
   if $setup_deploy; then
     travis+="before_deploy:
-- carthage build --no-skip-current
-- carthage archive \$FRAMEWORK_NAME
+  - carthage build --no-skip-current
+  - carthage archive \$FRAMEWORK_NAME
 "
   fi
   if [[ -f ".travis.yml" ]]; then
