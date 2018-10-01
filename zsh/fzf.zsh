@@ -319,7 +319,14 @@ fzf_vim_grep() {
 }
 fzf_vim_file() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
-  $VIM_COMMAND $result
+  # Temporary hack for `$EDITOR` with `bindkey`, for some reason when a
+  # keybinding exists that triggers a function that includes `eval $EDITOR`,
+  # `nvim` instead opens an empty buffer with the edited file in the
+  # background. This was probably introduced with `nvim` `0.3`. Adding `-c :bd`
+  # destroys the empty buffer and shows the file that was intended to edit.
+  # `https://github.com/neovim/neovim/issues/8561`
+  # eval $EDITOR ${(q)file}
+  $VIM_COMMAND $result -c ":bd"
 }
 
 fzf_tmux_vim_file() {
