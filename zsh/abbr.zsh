@@ -42,7 +42,7 @@ abbreviations=(
 'hpr' 'hub pull-request'
 
 # `bat`
-'c' 'bat'
+'b' 'bat'
 
 # `git`
 # `g`: `git`
