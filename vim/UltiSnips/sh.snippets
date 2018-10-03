@@ -20,7 +20,7 @@ if ${1:true}; then
   ${0:echo "true"}
 fi
 endsnippet
-snippet [[ "True if variable matches string"
+snippet [[ "Add brackets"
 [[ ${0:-n "\$1"} ]]
 endsnippet
 snippet testd "True if directory"
@@ -30,10 +30,10 @@ snippet testdn "True if not directory"
 ! -d "${1:\$1}"
 endsnippet
 snippet testv "Test variable"
-$${1:value}; then
+$${1:value}
 endsnippet
 snippet testb "Test boolean"
-$${1:value}; then
+$${1:value}
 endsnippet
 snippet testf "True if regular file"
 -f "${1:\$1}"
