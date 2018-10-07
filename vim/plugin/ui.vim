@@ -13,7 +13,6 @@ set hlsearch
 nohlsearch
 
 " Status Line {{{1
-
 set laststatus=2
 " Space Buffer
 set statusline=\ 
@@ -22,21 +21,15 @@ set statusline+=%.20{fnamemodify(getcwd(),':~')}\
 " Truncate Marker
 set statusline+=%<
 " Filename
-set statusline+=%.40f
+" set statusline+=%.40f
+" set statusline+=%.40{pathshorten(expand('%:~:.'))}
+set statusline+=%.40{expand('%:~:.')}
 " Modified
 set statusline+=%m 
 " Filetype
 set statusline+=\ %y
-
 " Switch to right
 set statusline+=%=
-
-" Neomake
-set statusline+=%{ui#MyNeomakeStatus()}
-
-" GitGutter
-set statusline+=%{ui#MyGitGutterStatus()}
-
 " Line
 set statusline+=L%l
 " Column
