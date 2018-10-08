@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-if [[ -z "$1" ]]; then
+if [[ $# -eq 0 ]]; then
   ~/.bin/finder_new
 else
-  if [[ ! -e "$1" ]]; then
-    touch "$1"
-  fi
-  open "$1"
+  # This has been removed because it isn't compatiable with passing flags to
+  # open
+  # if [[ ! -e "$1" ]]; then
+  #   touch "$1"
+  # fi
+  open "$@"
 fi
