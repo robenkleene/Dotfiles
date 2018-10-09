@@ -8,6 +8,9 @@
 
 if &shell =~# 'fish$'
   set shell=bash
+elseif &shell =~# 'zsh$'
+  " Make shell interactive to aliases work.
+  set shell=zsh\ -i
 endif
 
 " Check Status {{{1
