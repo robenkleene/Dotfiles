@@ -36,9 +36,7 @@ cat >>"$post_path"
 destination_post_path="$drafts_directory/$today-$slug.md"
 mv -n "$post_path" "$destination_post_path"
 if [[ -f "$post_path" ]]; then
-  # The move failed
   echo -n $post_path
 else
-  # The move succeeded
   echo -n $destination_post_path
 fi
