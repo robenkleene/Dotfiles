@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-today=$(date +%Y-%m-%d)
 set -e
 
 if [ "$#" -ne 1 ]; then
@@ -8,9 +7,10 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
+today=$(date +%Y-%m-%d)
 safe_title=$(echo "$1" |
   tr -dc '[:alnum:]\r\n.\-/ ' |
   tr -s ' ' | tr '[A-Z]' '[a-z]' |
   tr ' ' '-')
 
-echo $today-$safe_title
+echo "$today-$safe_title"
