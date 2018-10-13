@@ -5,13 +5,12 @@
 " pip3 install neovim
 
 " Startup {{{1
-
-if &shell =~# 'fish$'
-  set shell=bash
-elseif &shell =~# 'zsh$'
-  " Make shell interactive to aliases work.
-  set shell=zsh\ -i
-endif
+" if &shell =~# 'zsh$'
+"   " Make shell interactive to aliases work.
+"   set shell=zsh\ -i
+" elseif &shell =~# 'fish$'
+"   set shell=bash
+" endif
 
 " Check Status {{{1
 if has('nvim') && !has("python3")

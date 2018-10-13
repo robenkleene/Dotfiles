@@ -205,9 +205,6 @@ git_list_modified() {
 git_push_force() {
   git push --force-with-lease
 }
-git_web_open() {
-  link_source_control . | url_open
-}
 git_diff_grep() {
   git diff --relative $argv | diff_to_grep
 }

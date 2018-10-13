@@ -17,4 +17,4 @@ Alias Ldr LinediffReset
 
 " UltiSnips
 Alias Se UltiSnipsEdit
-
+Alias Gw silent\ !git_web_open
