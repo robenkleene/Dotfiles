@@ -19,6 +19,8 @@ nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
+inoremap <M-c> <C-\><C-O>:Cdinsert<CR>
+inoremap <M-e> <C-\><C-O>:Filesinsert<CR>
 
 " Documentation
 command! Doc call fzf#run(fzf#wrap({
@@ -97,6 +99,30 @@ command! Z :call fzf#run(fzf#wrap({
 command! Zvim :call fzf#run(fzf#wrap({
       \   'source': "fasd -Rfl",
       \   'sink': 'e'
+      \ }))
+
+" Insert
+function! s:insert(string) abort
+  let temp = @s
+  let @s =a:string
+  " Need to use a different paste depending if the cursor is at the end of the
+  " line
+  " if col('.') == col('$') - 1
+  if col('.') == col('$') && col('.') != 1
+    normal "sp
+  else
+    normal "sP
+  end
+  let @s = temp
+endfunction
+
+command! Cdinsert :call fzf#run(fzf#wrap({
+      \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'sink':   function('<SID>insert')
+      \ }))
+command! Filesinsert :call fzf#run(fzf#wrap({
+      \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'sink':   function('<SID>insert')
       \ }))
 
 " Support a `TagBuffer` function that opens the current file contents as a
