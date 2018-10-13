@@ -72,17 +72,17 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
-" TODO Figure out how to make the conditional work
-" Plug 'junegunn/fzf.vim', { 'on': ['Buffers', 'BLines', 'Files', 'History', 'Modified', 'Gfzf', 'Gfzfr' ] }
-Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 " `, { 'on': 'Dirvish' }` doesn't work for some reason
 Plug 'justinmk/vim-dirvish'
 " Also update `fzf` in external directory, it's a good idea to keep the plugin
 " and `fzf` version in sync
+" TODO Figure out how to make the conditional work
+" Plug 'junegunn/fzf.vim', { 'on': ['Buffers', 'BLines', 'Files', 'History', 'Modified', 'Gfzf', 'Gfzfr' ] }
+Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
-Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
-Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
+" This slows down `dd` significantly
+" Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
 " Languages {{{2
 Plug 'tpope/vim-ragtag', { 'for': 'html' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
