@@ -103,7 +103,9 @@ _fzf_editor_widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR ${(q)file}
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval $EDITOR ${(q)file} < /dev/tty
 
   local ret=$?
   __zsh_add_history "$EDITOR ${(q)file}"
@@ -151,7 +153,9 @@ _fzf_zvim_widget() {
     zle redisplay
     return 1
   fi
-  eval $EDITOR ${(q)file}
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval $EDITOR ${(q)file} < /dev/tty
 
   local ret=$?
   __zsh_add_history "$EDITOR ${(q)file}"
