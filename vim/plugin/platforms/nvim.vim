@@ -29,7 +29,7 @@ endfunction
 command! TigStatus call <SID>TigStatus()
 function! s:TigStatus() abort
   tabnew
-  execute 'terminal EDITOR=nvim-edit tig status +3'
+  execute 'terminal EDITOR=nvim_edit tig status +3'
   " Make escape exit insert mode
   " tnoremap <buffer> <Esc> <C-\><C-n>
 endfunction
