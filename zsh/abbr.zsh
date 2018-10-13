@@ -47,7 +47,6 @@ abbreviations=(
 
 # `xargs`
 '0fd' 'fd -0'
-'0v' "xargs -0 $VIM_COMMAND"
 
 # `git`
 # `g`: `git`
