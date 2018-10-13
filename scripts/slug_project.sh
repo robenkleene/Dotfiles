@@ -12,7 +12,7 @@ slug=$(~/.bin/slug "$1")
 mkdir -p "$slug"
 temp_path=$(mktemp "$slug/README-XXXX")
 
-echo "$title" >"# $temp_path"
+echo "# $title" >"$temp_path"
 
 destination_path="$slug/README.md"
 mv -n "$temp_path" "$destination_path"
