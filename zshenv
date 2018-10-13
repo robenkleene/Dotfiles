@@ -1,9 +1,14 @@
 # Not Exported
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  VIM_COMMAND=nvim-edit
-else
-  VIM_COMMAND=nvim
-fi
+
+# `nvim`
+# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+#   VIM_COMMAND=nvim_edit
+# else
+#   VIM_COMMAND=nvim
+# fi
+
+VIM_COMMAND=vim
+
 # `-t` means don't try to open GUI emacs
 EMACS_COMMAND='emacsclient -t'
 ACK_COMMAND=rg
