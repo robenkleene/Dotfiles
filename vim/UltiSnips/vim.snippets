@@ -25,3 +25,12 @@ endsnippet
 snippet makeprgtee "" b
 \\\\ \\\\\\|\ tee\ build.log
 endsnippet
+snippet imap "Insert mapping" b
+inoremap ${1:jk} ${2:<ESC>}
+endsnippet
+snippet vmap "Visual mapping" b
+vnoremap ${1:<leader>w} ${2::set wrap!<CR>}
+endsnippet
+snippet nmap "Normal mapping" b
+nnoremap ${1:<leader>w} ${2::set wrap!<CR>}
+endsnippet
