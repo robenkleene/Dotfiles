@@ -4,21 +4,18 @@ if has('gui_running')
 endif
 
 nnoremap <leader>b :Buffers<CR>
-" nnoremap <localleader>l :BLines<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-" nnoremap <C-t> :Files<CR>
 nnoremap <M-e> :Files<CR>
-" nnoremap <C-@> :Commands<CR>
-" vnoremap <C-@> :Commands<CR>
+" Fix `<C-@>` `<C-Space>` in `vim`
+nnoremap <C-@> :Commands<CR>
+vnoremap <C-@> :Commands<CR>
 nnoremap <C-Space> :Commands<CR>
 vnoremap <C-Space> :Commands<CR>
 nnoremap <M-c> :Cd<CR>
-" nnoremap <M-t> :TmuxPaths<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
-" nnoremap <leader>c :Modified<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
@@ -86,7 +83,6 @@ command! Modified :call fzf#run(fzf#wrap({
       \   'source': "git ls-files -m | uniq",
       \   'sink': 'e'
       \ }))
-
 
 command! Cd :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
