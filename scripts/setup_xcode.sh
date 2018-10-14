@@ -20,13 +20,16 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "dbh" option
+  while getopts "dbi:h" option
     do case "$option" in
       b)
         build_only=true
         ;;
       d)
         setup_deploy=true
+        ;;
+      i)
+        irc_notifications=$OPTARG
         ;;
       h)
         echo "Usage: setup_xcode [-hbd]"
@@ -157,6 +160,11 @@ env:
     travis+="before_deploy:
   - carthage build --no-skip-current
   - carthage archive \$FRAMEWORK_NAME
+"
+  fi
+  if [[ -n "$irc_notifications" ]]; then
+    travis+="notifications:
+  irc: $irc_notifications
 "
   fi
   if [[ -f ".travis.yml" ]]; then
