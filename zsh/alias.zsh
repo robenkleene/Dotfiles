@@ -78,7 +78,6 @@ alias tmssdw='tmux_session_save_dropbox_work'
 alias ml='make lint'
 alias mac='make autocorrect'
 
-
 # `emacs`
 # alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
 # alias magit-log="emacs -eval \"(robenkleene/magit-log)\""
@@ -136,6 +135,5 @@ alias jsw='jekyll_serve_watch'
 alias jswd='jekyll_serve_watch_drafts'
 
 # `slug`
-
 alias slpr='slug_project'
 alias slpre='slug_project_edit'
