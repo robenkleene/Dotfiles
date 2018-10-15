@@ -137,11 +137,6 @@ setup_travis() {
   local travis="language: swift
 osx_image: xcode10
 script: make ci
-xcode_project: $project_name
-xcode_scheme: $project_name
-env:
-  global:
-    - FRAMEWORK_NAME=$project_name
 "
   if $has_cartfile || $setup_deploy; then
     travis+="before_install:
@@ -153,13 +148,13 @@ env:
   - make lint
 "
   if $has_cartfile; then
-    travis+="- carthage bootstrap
+    travis+="  - carthage bootstrap
 "
   fi
   if $setup_deploy; then
     travis+="before_deploy:
   - carthage build --no-skip-current
-  - carthage archive \$FRAMEWORK_NAME
+  - carthage archive $project_name
 "
   fi
   if [[ -n "$irc_notifications" ]]; then
@@ -204,7 +199,9 @@ swiftlint_autocorrect:
 	swiftlint autocorrect
 
 build:
-	xcodebuild build
+	xcodebuild build \\
+		-alltargets \\
+		-configuration Debug
 
 bootstrap:
 	carthage bootstrap
