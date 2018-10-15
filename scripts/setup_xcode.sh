@@ -20,7 +20,7 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "dbi:h" option; do
+  while getopts "dbi:t:h" option; do
     case "$option" in
       b)
         build_only=true
@@ -30,6 +30,9 @@ set_args() {
         ;;
       i)
         irc_notifications=$OPTARG
+        ;;
+      t)
+        targets+=("$OPTARG")
         ;;
       h)
         echo "Usage: setup_xcode [-hbd]"
@@ -49,9 +52,9 @@ set_args() {
   done
 }
 
-set_args ${args[@]}
+set_args "${args[@]}"
 
-# Test for a file with `.xcodeproj` exit and do nothign if it doesn't exist
+# Test for a file with `.xcodeproj` exit and do nothing if it doesn't exist
 shopt -s nullglob
 for project_file in *.xcodeproj; do
   project_name=$(basename "$project_file")
@@ -62,6 +65,16 @@ shopt -u nullglob
 if [[ -z "$project_name" ]]; then
   echo "No .xcodeproj file found"
   exit 1
+fi
+
+if [[ -z "$targets" ]]; then
+  targets=" $project_name"
+else
+  targets_result=""
+  for target in "${targets[@]}"; do
+    targets_result+=$target
+  done
+  targets=$targets_result
 fi
 
 # `.gitignore`
@@ -154,7 +167,7 @@ script: make ci
   if $setup_deploy; then
     travis+="before_deploy:
   - carthage build --no-skip-current
-  - carthage archive $project_name
+  - carthage archive${targets}
 "
   fi
   if [[ -n "$irc_notifications" ]]; then
