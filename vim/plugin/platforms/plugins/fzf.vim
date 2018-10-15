@@ -19,8 +19,8 @@ nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
-inoremap <M-c> <C-\><C-O>:Cdinsert<CR>
-inoremap <M-e> <C-\><C-O>:Filesinsert<CR>
+inoremap <M-c> <C-\><C-o>:Cdinsert<CR><right>
+inoremap <M-e> <C-\><C-o>:Filesinsert<CR><right>
 
 " Documentation
 command! Doc call fzf#run(fzf#wrap({
