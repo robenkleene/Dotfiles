@@ -9,7 +9,7 @@ args=("$@")
 if [[ -f ".setup_xcode" ]]; then
   while read -r line || [[ -n "$line" ]]; do
     args+=("$line")
-  done < ".setup_xcode"
+  done <".setup_xcode"
 fi
 
 build_only=false
@@ -20,31 +20,30 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "dbi:h" option
-    do case "$option" in
-      b)
-        build_only=true
-        ;;
-      d)
-        setup_deploy=true
-        ;;
-      i)
-        irc_notifications=$OPTARG
-        ;;
-      h)
-        echo "Usage: setup_xcode [-hbd]"
-        echo
-        echo "-b: Build only"
-        echo "-d: Also setup deployment"
-        echo
-        echo "Create a file called .setup_xcode to automatically set flags."
-        echo "Put one flag per line."
-        exit 0
-        ;;
-      \?)
-        echo "Invalid option: -$OPTARG" >&2
-        exit 1
-        ;;
+  while getopts "dbi:h" option; do case "$option" in
+    b)
+      build_only=true
+      ;;
+    d)
+      setup_deploy=true
+      ;;
+    i)
+      irc_notifications=$OPTARG
+      ;;
+    h)
+      echo "Usage: setup_xcode [-hbd]"
+      echo
+      echo "-b: Build only"
+      echo "-d: Also setup deployment"
+      echo
+      echo "Create a file called .setup_xcode to automatically set flags."
+      echo "Put one flag per line."
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
     esac
   done
 }
@@ -60,7 +59,7 @@ done
 shopt -u nullglob
 
 if [[ -z "$project_name" ]]; then
-  echo "No .xcodeproj file found" 
+  echo "No .xcodeproj file found"
   exit 1
 fi
 
@@ -130,7 +129,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 "
-  echo "$gitignore" > .gitignore
+  echo "$gitignore" >.gitignore
 }
 
 setup_travis() {
@@ -167,11 +166,11 @@ script: make ci
     # encrypted keys, so we overwrite the beginning of the file and preserve
     # the end, so a manual section can be maintained at the end.
     # The `expr` removes whitespace.
-    local travis_lines="$(expr $(wc -l <<< "$travis") - 0)"
+    local travis_lines="$(expr $(wc -l <<<"$travis") - 0)"
     local travis_deploy=$(tail -n +$travis_lines .travis.yml)
     travis+=$travis_deploy
   fi
-  echo "$travis" > .travis.yml
+  echo "$travis" >.travis.yml
 }
 
 setup_makefile() {
@@ -212,7 +211,7 @@ test:
 		-configuration Debug \\
 		-scheme \$(SCHEME)
 "
-  echo "$makefile" > Makefile
+  echo "$makefile" >Makefile
 }
 
 # `.swiftlint.yml`
@@ -229,7 +228,7 @@ setup_swiftlint() {
 excluded:
   - Carthage
 "
-  echo "$swiftlint" > .swiftlint.yml
+  echo "$swiftlint" >.swiftlint.yml
 }
 
 setup_gitignore
