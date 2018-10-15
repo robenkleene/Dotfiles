@@ -22,29 +22,29 @@ fi
 set_args() {
   while getopts "dbi:h" option; do
     case "$option" in
-    b)
-      build_only=true
-      ;;
-    d)
-      setup_deploy=true
-      ;;
-    i)
-      irc_notifications=$OPTARG
-      ;;
-    h)
-      echo "Usage: setup_xcode [-hbd]"
-      echo
-      echo "-b: Build only"
-      echo "-d: Also setup deployment"
-      echo
-      echo "Create a file called .setup_xcode to automatically set flags."
-      echo "Put one flag per line."
-      exit 0
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
+      b)
+        build_only=true
+        ;;
+      d)
+        setup_deploy=true
+        ;;
+      i)
+        irc_notifications=$OPTARG
+        ;;
+      h)
+        echo "Usage: setup_xcode [-hbd]"
+        echo
+        echo "-b: Build only"
+        echo "-d: Also setup deployment"
+        echo
+        echo "Create a file called .setup_xcode to automatically set flags."
+        echo "Put one flag per line."
+        exit 0
+        ;;
+      \?)
+        echo "Invalid option: -$OPTARG" >&2
+        exit 1
+        ;;
     esac
   done
 }
