@@ -101,27 +101,27 @@ IFS=${old_IFS}
 endsnippet
 snippet getopts "getopts" b
 b=false
-while getopts ":a:bh" option
-  do case "$option" in
-    a)
-      echo "-a $OPTARG"
-      ;;
-    b)
-      b=true
-      echo "-b $b"
-      ;;
-    h)
-      echo "Usage: command [-hb] [-a <file>]"
-      exit 0
-      ;;
-    :)
-      echo "Option -$OPTARG requires an argument" >&2
-      exit 1
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
+while getopts ":a:bh" option; do
+  case "$option" in
+  a)
+    echo "-a $OPTARG"
+    ;;
+  b)
+    b=true
+    echo "-b $b"
+    ;;
+  h)
+    echo "Usage: command [-hb] [-a <file>]"
+    exit 0
+    ;;
+  :)
+    echo "Option -$OPTARG requires an argument" >&2
+    exit 1
+    ;;
+  \?)
+    echo "Invalid option: -$OPTARG" >&2
+    exit 1
+    ;;
   esac
 done
 endsnippet
