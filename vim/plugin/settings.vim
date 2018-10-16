@@ -107,8 +107,8 @@ endif
 " let g:netrw_preview = 1
 
 " Open splits in bottom right
-" set splitbelow
-" set splitright
+set splitbelow
+set splitright
 
 " Don't add an extra space when joining two paragraphs
 set nojoinspaces
