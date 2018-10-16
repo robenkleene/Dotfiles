@@ -18,4 +18,7 @@ Alias Ldr LinediffReset
 " UltiSnips
 Alias Se UltiSnipsEdit
 Alias Gw silent\ !git_web_open
-Alias Slpr silent\ !slug_project
+" Using the silent version of this causes Vim's UI to disappear for some
+" reason
+" Alias Slpr silent\ !slug_project
+Alias Slpr !slug_project
