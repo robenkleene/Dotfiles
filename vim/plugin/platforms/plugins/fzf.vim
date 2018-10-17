@@ -19,8 +19,13 @@ nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
-inoremap <M-c> <C-\><C-o>:Cdinsert<CR><right>
-inoremap <M-e> <C-\><C-o>:Filesinsert<CR><right>
+if has('nvim')
+  inoremap <M-c> <C-\><C-o>:Cdinsert<CR>
+  inoremap <M-e> <C-\><C-o>:Filesinsert<CR>
+else
+  inoremap <M-c> <C-\><C-o>:Cdinsert<CR><right>
+  inoremap <M-e> <C-\><C-o>:Filesinsert<CR><right>
+endif
 
 " Documentation
 command! Doc call fzf#run(fzf#wrap({
@@ -114,6 +119,11 @@ function! s:insert(string) abort
     normal "sP
   end
   let @s = temp
+  " `nvim` leaves insert mode when performing one of the insert mappings, this
+  " should re-enter insert mode, but it's not working either.
+  if has('nvim')
+    startinsert
+  endif
 endfunction
 
 command! Cdinsert :call fzf#run(fzf#wrap({
