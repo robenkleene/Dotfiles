@@ -66,6 +66,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
 Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
+Plug 'kana/vim-textobj-user'
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
