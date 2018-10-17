@@ -18,7 +18,6 @@ bind generic r refresh
 
 # External
 bind generic O !@open %(file)
-bind generic A !@atom %(file)
 bind generic X !@open -a Xcode %(file)
 bind generic R !@open --reveal %(file)
 bind generic E !@sh -c "mate --async '%(file)'"
