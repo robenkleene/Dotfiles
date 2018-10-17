@@ -41,7 +41,11 @@ endif
 syntax on
 
 " Use system clipboard by default
-set clipboard^=unnamed
+" This option breaks visual block mode paste, e.g., pasting a column of text
+" after another column. The workaround is to paste from the system clipboard
+" with `"*p`.
+" set clipboard^=unnamed
+" set clipboard^=unnamedplus
 
 " Disable mouse
 set mouse=
