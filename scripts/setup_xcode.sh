@@ -150,6 +150,10 @@ setup_travis() {
   local travis="language: swift
 osx_image: xcode10
 script: make ci
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+$/
 "
   if $has_cartfile || $setup_deploy; then
     travis+="before_install:
@@ -172,7 +176,7 @@ script: make ci
   fi
   if [[ -n "$irc_notifications" ]]; then
     travis+="notifications:
-  irc: $irc_notifications
+  irc:$irc_notifications
 "
   fi
   if [[ -f ".travis.yml" ]]; then
