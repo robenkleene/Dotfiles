@@ -157,15 +157,19 @@ vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " panes will break, because `tmux` won't be able to detect that Vim is
 " actually running as a child of `tig`.
 
-noremap <A-h> <C-w>h
-noremap <A-j> <C-w>j
-noremap <A-k> <C-w>k
-noremap <A-l> <C-w>l
-
-noremap <S-Left> <C-w>h
-noremap <S-Down> <C-w>j
-noremap <S-Up> <C-w>k
-noremap <S-Right> <C-w>l
+" Easy Movements
+" noremap <A-h> <C-w>h
+" noremap <A-j> <C-w>j
+" noremap <A-k> <C-w>k
+" noremap <A-l> <C-w>l
+" nnoremap <A-n> gt
+" nnoremap <A-p> gT
+" vnoremap <A-n> gt
+" vnoremap <A-p> gT
+" noremap <S-Left> <C-w>h
+" noremap <S-Down> <C-w>j
+" noremap <S-Up> <C-w>k
+" noremap <S-Right> <C-w>l
 
 " Open and Close Tab
 nnoremap <C-w>t :tabnew<CR>
@@ -175,10 +179,6 @@ vnoremap <A-t> :<C-u>tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
 vnoremap <C-w>q :<C-u>tabclose<CR>
 " Switching Tabs
-nnoremap <A-n> gt
-nnoremap <A-p> gT
-vnoremap <A-n> gt
-vnoremap <A-p> gT
 nnoremap <C-w>n gt
 nnoremap <C-w><C-n> gt
 nnoremap <C-w>p gT
