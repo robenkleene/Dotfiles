@@ -13,7 +13,7 @@ EMACS_COMMAND='emacsclient -t'
 ACK_COMMAND=rg
 
 # Export `CDPATH` so it's available in `vim`
-export CDPATH=~:~/Development/:~/Documentation/
+# export CDPATH=~:~/Development/:~/Documentation/
 
 # Color in `ls`
 export CLICOLOR=1
