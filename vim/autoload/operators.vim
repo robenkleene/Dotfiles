@@ -19,7 +19,7 @@ function! operators#WebSearch(type, ...) abort
   endif
 
   let escaped=substitute(@@,'[^A-Za-z0-9_.~-]','\="%".printf("%02X",char2nr(submatch(0)))','g')
-  let url="https://duckduckgo.com/?q=" . escaped
+  let url="https://duckduckgo.com/?q=".escaped
   silent exec "!open ".shellescape(url, 1)
 
   let &selection = sel_save
