@@ -198,6 +198,9 @@ vnoremap <A-Up> :cprev<CR>
 " nnoremap <C-w>n gt
 " nnoremap <C-w>p gT
 
+" Open
+nnoremap <localleader>O :!open "%:p"<CR>\|:redraw!<CR>
+
 " Quickfix
 nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
