@@ -12,6 +12,12 @@ function! commands#GrepBuffer() abort
   endif
 endfunction
 
+" Disable backgrounding
+function! commands#DisableBackgrounding() abort
+  nnoremap <C-z> :echom "Backgrounding is disabled"<CR>
+  vnoremap <C-z> :echom "Backgrounding is disabled"<CR>
+endfunction
+
 " Save & Restore Sessions
 function! commands#QuitSaveSession() abort
   SessionSave

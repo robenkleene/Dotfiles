@@ -19,7 +19,13 @@ bindkey "^[^H" bash_backward_kill_word
 # Edit in editor
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+
+_custom_edit_command_line() {
+  EDITOR="$VIM_COMMAND -c 'DisableBackgrounding'" zle edit-command-line
+}
+zle -N _custom_edit_command_line
+# bindkey "^X^E" edit-command-line
+bindkey "^X^E" _custom_edit_command_line
 # bindkey '\ee' edit-command-line
 
 # By default, `^u` kills the whole line, rather than backwards
