@@ -140,3 +140,4 @@ alias slpre='slug_project_edit'
 
 # Edit
 alias er='eval $EDITOR README.md'
+alias ec="safepaste | $VIM_COMMAND -"

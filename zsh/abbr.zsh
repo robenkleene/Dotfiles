@@ -111,6 +111,7 @@ abbreviations=(
 # `gst`: `git stash`
 'gst' 'git stash'
 'gstl' 'git stash list'
+'gstp' 'git stash pop'
 # `gt`: `git tag`
 'gt' 'git tag'
 # `gu`: `git pull`
