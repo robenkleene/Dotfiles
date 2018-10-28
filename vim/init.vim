@@ -48,7 +48,10 @@ Plug 'tpope/vim-rsi'
 
 " Colors {{{2
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
-Plug 'ap/vim-css-color', { 'for': 'css' }
+" Disabling this for now, this causes a conflict when entering the
+" command-line window, to replicate enter `%s//` in the command line and then
+" trigger `<C-f>`. At this time if `vim-css-color` is enabled it dumps an error.
+" Plug 'ap/vim-css-color', { 'for': 'css' }
 
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
@@ -59,7 +62,10 @@ Plug 'w0rp/ale'
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
       \ 'TestLast', 'TestVisit'] }
-Plug 'Konfekt/FastFold'
+" Disabling this for now, this causes a conflict when entering the
+" command-line window, to replicate enter `%s//` in the command line and then
+" trigger `<C-f>`. At this time if `FastFold` is enabled it dumps an error.
+" Plug 'Konfekt/FastFold'
 " NOTE: `ultisnips` slows input in `nvim`
 Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
