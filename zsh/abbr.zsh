@@ -120,6 +120,10 @@ abbreviations=(
 # `gw`: `git web`
 'gw' 'git_web_open'
 'glg' 'git log -p -G'
+
+# Carthage
+'chu' 'carthage update'
+'chunb' 'carthage update --no-use-binaries'
 )
 
 # if [ "$(uname)" = "Darwin" ]; then
