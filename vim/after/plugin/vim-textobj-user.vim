@@ -1,3 +1,7 @@
+if match(&runtimepath, 'vim-textobj-user') == -1
+  finish
+endif
+
 " Note that `asterisk` and `underscore` are only for Markdown, but
 " `textobj-user` doesn't have a way to specify a `textobj` is `filetype`
 " specific, so this is loaded globally.
