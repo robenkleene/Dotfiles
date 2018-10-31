@@ -89,6 +89,7 @@ Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './instal
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 " This slows down `dd` significantly
 " Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
+Plug 'wsdjeg/vim-fetch'
 " Languages {{{2
 Plug 'tpope/vim-ragtag', { 'for': 'html' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
