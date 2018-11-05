@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-command_name="sgit"
-
 set -e
 
 source ~/.bin/nobin/_giterator.sh
