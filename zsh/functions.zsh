@@ -182,6 +182,9 @@ git_push_origin_delete() {
 git_branch_delete_origin() {
   git push origin --delete $1
 }
+git_branch_set_upstream_origin_master() {
+  git branch --set-upstream-to=origin/master master
+}
 git_remote_add_origin() {
   git remote rm origin
   git remote add origin $1
