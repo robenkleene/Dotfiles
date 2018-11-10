@@ -1,5 +1,5 @@
 setlocal suffixesadd=.swift,.h,.m
-nnoremap <localleader>O :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <localleader>X :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
 " Format
 setlocal formatprg=swiftformat\ --commas\ inline

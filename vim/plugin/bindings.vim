@@ -68,15 +68,18 @@ nnoremap <localleader>s :set spell!<CR>
 
 " Open Working Directory in Terminal
 nnoremap <leader>T :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
+nnoremap <M-t> :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 
 " Reveal Current File
 nnoremap <leader>R :silent !open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 
 " TextMate
 nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 
-" Xcode
-nnoremap <leader>X :silent !open -a Xcode "%:p"<CR>\|:redraw!<CR>
+" Default
+nnoremap <leader>O :silent !open "%:p"<CR>\|:redraw!<CR>
+nnoremap <M-o> :silent !open "%:p"<CR>\|:redraw!<CR>
 
 " `make`
 nnoremap <leader>m :make<CR>
@@ -174,8 +177,8 @@ vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " Open and Close Tab
 nnoremap <C-w>t :tabnew<CR>
 vnoremap <C-w>t :<C-u>tabnew<CR>
-nnoremap <A-t> :tabnew<CR>
-vnoremap <A-t> :<C-u>tabnew<CR>
+" nnoremap <A-t> :tabnew<CR>
+" vnoremap <A-t> :<C-u>tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
 vnoremap <C-w>q :<C-u>tabclose<CR>
 " Switching Tabs
