@@ -289,7 +289,7 @@ if [ "$(uname)" = "Darwin" ]; then
       | grep -vE "\/Carthage\/" \
       | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" fzf +m \
       | tr '\n' '\0' \
-      | xargs -0 open
+      | xargs -0 env -i open
   }
 fi
 if [ "$(uname)" = "Darwin" ]; then
