@@ -20,7 +20,7 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "dbi:t:h" option; do
+  while getopts "dbi:t:s:h" option; do
     case "$option" in
       b)
         build_only=true
@@ -33,6 +33,9 @@ set_args() {
         ;;
       t)
         targets+=("$OPTARG")
+        ;;
+      s)
+        build_server=${OPTARG## }
         ;;
       h)
         echo "Usage: setup_xcode [-hbd]"
@@ -200,20 +203,23 @@ setup_makefile() {
   fi
   local makefile="SCHEME = $project_name
 
-.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap
+.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap clangformat
 
 ci: $ci_steps
 ac: autocorrect
-autocorrect: swiftformat swiftlint_autocorrect
+autocorrect: swiftformat swiftlint_autocorrect clangformat
 
 lint:
 	swiftlint --strict
 
 swiftformat:
-	swiftformat --commas inline --exclude Carthage .
+	git ls-files '*.swift' -z | xargs -0 swiftformat --commas inline
 
 swiftlint_autocorrect:
 	swiftlint autocorrect
+
+clangformat:
+	git ls-files '*.h' '*.m' -z | xargs -0 clang-format -style=file -i
 
 build:
 	xcodebuild build \\
@@ -249,7 +255,32 @@ excluded:
   echo "$swiftlint" >.swiftlint.yml
 }
 
+# `.clang-format`
+setup_clangformat() {
+  local clangformat="
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakBeforeMultilineStrings: false
+BasedOnStyle: LLVM
+ColumnLimit: 120
+IndentCaseLabels: true
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: true
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: true
+PenaltyBreakString: 1000000
+SpacesInContainerLiterals: false
+UseTab: Never
+"
+  echo "$clangformat" >.clang-format
+}
+
 setup_gitignore
-setup_travis
+if [[ "$build_server" == "travis" ]]; then
+  setup_travis
+fi
 setup_makefile
 setup_swiftlint
+setup_clangformat
