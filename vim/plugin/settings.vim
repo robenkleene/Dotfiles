@@ -45,7 +45,7 @@ syntax on
 " after another column. The workaround is to paste from the system clipboard
 " with `"*p`.
 " set clipboard^=unnamed
-" set clipboard^=unnamedplus
+set clipboard^=unnamedplus
 
 " Disable mouse
 set mouse=
