@@ -20,8 +20,11 @@ if [[ -f "Cartfile" || -f "Cartfile.private" ]]; then
 fi
 
 set_args() {
-  while getopts "dbi:t:s:h" option; do
+  while getopts "cdbi:t:s:h" option; do
     case "$option" in
+      c)
+        objective_c=true
+        ;;
       b)
         build_only=true
         ;;
@@ -196,6 +199,10 @@ branches:
 
 setup_makefile() {
   local ci_steps
+  clangformat=""
+  if [[ $objective_c ]]; then
+    clangformat=" clangformat"
+  fi
   if $build_only; then
     ci_steps="build"
   else
@@ -203,11 +210,11 @@ setup_makefile() {
   fi
   local makefile="SCHEME = $project_name
 
-.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap clangformat
+.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap$clangformat
 
 ci: $ci_steps
 ac: autocorrect
-autocorrect: swiftformat swiftlint_autocorrect clangformat
+autocorrect: swiftformat swiftlint_autocorrect$clangformat
 
 lint:
 	swiftlint --strict
@@ -218,10 +225,16 @@ swiftformat:
 swiftlint_autocorrect:
 	swiftlint autocorrect
 
-clangformat:
+"
+
+if [[ -n "$clangformat" ]]; then
+  makefile+="clangformat:
 	git ls-files '*.h' '*.m' -z | xargs -0 clang-format -style=file -i
 
-build:
+"
+fi
+
+makefile+="build:
 	xcodebuild build \\
 		-alltargets \\
 		-configuration Debug
@@ -283,4 +296,6 @@ if [[ "$build_server" == "travis" ]]; then
 fi
 setup_makefile
 setup_swiftlint
-setup_clangformat
+if [[ $objective_c ]]; then
+  setup_clangformat
+fi
