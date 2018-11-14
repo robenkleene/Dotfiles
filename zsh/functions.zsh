@@ -22,6 +22,21 @@ ranger_cd() {
     fi
     rm -f -- "$tempfile"
 }
+vim_cd() {
+  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  $VIM_COMMAND .
+  test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+    fi
+}
+vim_cd_file() {
+  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+    fi
+}
 
 # egitn
 egitn() {

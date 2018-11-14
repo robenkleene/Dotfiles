@@ -88,7 +88,11 @@ alias e="$EMACS_COMMAND"
 # `ranger`
 alias r='ranger_cd'
 
+# `vim_cd`
+alias d='vim_cd'
+
 # `vim`
+alias vcd='vim_cd_file'
 alias vtd='vim_todo'
 alias vgd='vim_git_diff'
 alias vdg='vim_diff_grep'
