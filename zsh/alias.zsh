@@ -85,9 +85,6 @@ alias mac='make autocorrect'
 # alias ml='emacs_magit_log'
 alias e="$EMACS_COMMAND"
 
-# `ranger`
-alias r='ranger_cd'
-
 # `vim_cd`
 alias d='vim_cd'
 

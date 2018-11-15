@@ -12,32 +12,6 @@ _robenkleene_ack_lines_no_color() {
 
 # Commands
 
-# ranger
-ranger_cd() {
-  local tempfile='/tmp/chosendir'
-  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-    rm -f -- "$tempfile"
-}
-vim_cd() {
-  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
-  $VIM_COMMAND .
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-}
-vim_cd_file() {
-  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-}
-
 # egitn
 egitn() {
   local gitnext=$(egit -n)
@@ -57,6 +31,21 @@ sgitn () {
 }
 
 # vim
+vim_cd() {
+  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  $VIM_COMMAND .
+  test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+    fi
+}
+vim_cd_file() {
+  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+    fi
+}
 vim_session_restore_saved() {
   $VIM_COMMAND -c "SessionRestoreSaved"
 }
