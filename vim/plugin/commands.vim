@@ -44,3 +44,6 @@ command! Format :call commands#Format()
 
 " Run
 command! Run :call commands#Run()
+
+" Slug
+command! -nargs=1 SlugProject :call commands#SlugProject(<q-args>)

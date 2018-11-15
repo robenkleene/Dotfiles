@@ -96,3 +96,7 @@ function! commands#Run() abort
   let &makeprg = l:original_makeprg
   let &errorformat = l:original_errorformat
 endfunction
+
+function commands#SlugProject(name) abort
+    execute '!slug_project' a:name
+endfunction
