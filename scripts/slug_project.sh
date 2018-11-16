@@ -2,9 +2,13 @@
 
 set -e
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -lt 1 ]; then
   echo "Wrong number of arguments" >&2
   exit 1
+fi
+
+if [[ -n "$2" ]]; then
+  cd "$2"
 fi
 
 title="$1"
