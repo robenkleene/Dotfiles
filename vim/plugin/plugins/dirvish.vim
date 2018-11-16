@@ -7,6 +7,8 @@ augroup dirvish_config
   " "Buffer-local / and ? mappings to skip the concealed path fragment."
   autocmd FileType dirvish if !empty(maparg('/', 'n')) | nunmap <buffer> /| endif
   autocmd FileType dirvish if !empty(maparg('?', 'n')) | nunmap <buffer> ?| endif
+  " Autochange the directory
+  " autocmd FileType dirvish silent! lcd %:p:h
 augroup END
 
 command! DirvishToggleHidden call <SID>ToggleHidden()
