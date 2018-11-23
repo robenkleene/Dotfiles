@@ -31,6 +31,7 @@ alias p='safepaste'
 alias y='safecopy'
 alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 alias shs='ssh_start'
+alias sts='ssh_tmux_start'
 
 # Override
 

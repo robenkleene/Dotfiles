@@ -104,6 +104,10 @@ ssh_start() {
 ssh_stop() {
   ssh-agent -k
 }
+ssh_tmux_start() {
+  ssh_start
+  tmux
+}
 
 # Fix slow ssh
 if [ ! "$(uname)" = "Darwin" ]; then
