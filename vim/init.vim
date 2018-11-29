@@ -8,8 +8,6 @@
 " if &shell =~# 'zsh$'
 "   " Make shell interactive to aliases work.
 "   set shell=zsh\ -i
-" elseif &shell =~# 'fish$'
-"   set shell=bash
 " endif
 
 " Check Status {{{1
@@ -92,7 +90,6 @@ Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 Plug 'wsdjeg/vim-fetch'
 " Languages {{{2
 Plug 'tpope/vim-ragtag', { 'for': 'html' }
-Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }

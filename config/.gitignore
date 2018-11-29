@@ -3,5 +3,3 @@
 
 # Except
 !.gitignore
-!/fish/
-!/ranger/

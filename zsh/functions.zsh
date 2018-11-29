@@ -142,19 +142,6 @@ vim_server_edit() {
 }
 
 # tmux
-_robenkleene_tmux_default_command() {
-  if [ "$(uname)" = "Darwin" ]; then
-    tmux set-option default-command "reattach-to-user-namespace -l $1"
-  else
-    tmux set-option default-shell $1
-  fi
-}
-tmux_default_fish() {
-  _robenkleene_tmux_default_command $(which fish)
-}
-tmux_default_zsh() {
-  _robenkleene_tmux_default_command $(which zsh)
-}
 tmux_name_directory() {
   tmux rename-window "$(basename $PWD)"
 }
