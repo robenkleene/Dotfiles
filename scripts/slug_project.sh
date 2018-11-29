@@ -11,17 +11,25 @@ if [[ -n "$2" ]]; then
   cd "$2"
 fi
 
+make_file() {
+  name=$1
+  directory=$2
+  contents=$3
+  mkdir -p "$directory"
+  temp_path=$(mktemp "$directory/$name-XXXX")
+  echo "$contents" >"$temp_path"
+  destination_path="$directory/$name"
+  mv -n "$temp_path" "$destination_path"
+  if [[ -f "$temp_path" ]]; then
+    echo -n "$temp_path"
+  else
+    echo -n "$destination_path"
+  fi
+}
+
 title="$1"
+contents="# $title"
 slug=$(~/.bin/slug "$1")
-mkdir -p "$slug"
-temp_path=$(mktemp "$slug/README-XXXX")
-
-echo "# $title" >"$temp_path"
-
-destination_path="$slug/README.md"
-mv -n "$temp_path" "$destination_path"
-if [[ -f "$temp_path" ]]; then
-  echo -n "$temp_path"
-else
-  echo -n "$destination_path"
-fi
+readme_path=$(make_file "README.md" "$slug")
+make_file "README.md" "$slug/archive" "$contents Archive"
+echo "$readme_path"
