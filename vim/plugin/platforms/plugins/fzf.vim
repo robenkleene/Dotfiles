@@ -8,10 +8,12 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <M-e> :Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
-nnoremap <C-@> :Commands<CR>
-vnoremap <C-@> :Commands<CR>
-nnoremap <C-Space> :Commands<CR>
-vnoremap <C-Space> :Commands<CR>
+" nnoremap <C-@> :Commands<CR>
+" vnoremap <C-@> :Commands<CR>
+" nnoremap <C-Space> :Commands<CR>
+" vnoremap <C-Space> :Commands<CR>
+nnoremap <M-x> :Commands<CR>
+vnoremap <M-x> :Commands<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <M-z> :Z<CR>
 " nnoremap <M-r> :Zvim<CR>

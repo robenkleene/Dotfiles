@@ -217,7 +217,8 @@ _fzf_command_widget() {
   return $ret
 }
 zle     -N   _fzf_command_widget
-bindkey '^@' _fzf_command_widget
+# bindkey '^@' _fzf_command_widget
+bindkey '\ex' _fzf_command_widget
 
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
