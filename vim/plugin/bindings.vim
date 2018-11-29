@@ -2,7 +2,7 @@
 
 " `C-G` to `<Esc>` like Emacs
 " rsi plugin implementation
-" cmap <script> <C-G> <C-C>
+cnoremap <script> <C-G> <C-C>
 " vnoremap <C-g> <Esc>:f<CR>
 
 " Backwards delete word
