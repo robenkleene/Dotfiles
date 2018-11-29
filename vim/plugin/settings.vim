@@ -48,7 +48,8 @@ syntax on
 set clipboard^=unnamedplus
 
 " Disable mouse
-set mouse=
+" set mouse=
+set mouse=a
 
 " Set Word Boundaries
 " For `-` and `_` there are two schools of thought:
