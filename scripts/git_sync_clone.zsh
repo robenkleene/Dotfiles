@@ -1,7 +1,12 @@
 #!/usr/bin/env zsh
 
+set -e
+
 if [[ ! -d "$1" ]]; then
-  echo "Usage: git-sync-clone <root directory> [repos file] [run]"
+  if [[ -n "$1" ]]; then
+    echo "$1 is not a directory"
+  fi
+  echo "Usage: git_sync_clone <root directory> [repos file] [run]"
   exit 1
 fi
 
