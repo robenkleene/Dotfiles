@@ -108,6 +108,10 @@ ssh_tmux_start() {
   ssh_start
   tmux
 }
+ssh_tmux_restore_start() {
+  ssh_start
+  tmux_session_auto_restore
+}
 
 # Fix slow ssh
 if [ ! "$(uname)" = "Darwin" ]; then
