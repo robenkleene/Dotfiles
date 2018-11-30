@@ -1,12 +1,14 @@
 # fasd
-eval "$(fasd --init auto)"
+if [[ $(whence -p "fasd") ]]; then
+  eval "$(fasd --init auto)"
+fi
 
 # chruby
-chruby() {
+if [[ -f "/usr/local/share/chruby/chruby.sh" ]]; then
   source /usr/local/share/chruby/chruby.sh
-  chruby $@
-}
-chruby ruby-2.4.0
+  chruby ruby-2.4.0
+fi
+
 # export PATH=$HOME/.rubies/ruby-2.4.0/bin:$PATH
 # export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 
