@@ -83,7 +83,7 @@ function! s:MyHighlights() abort
   " Comments & Tildes {{{1
   highlight comment ctermfg=darkgray
   highlight SpecialKey ctermfg=238
-  highlight NonText ctermfg=238
+  highlight NonText ctermfg=darkgrey
   highlight qfSeparator ctermfg=238
 
   " Folding {{{1
