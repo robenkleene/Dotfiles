@@ -5,6 +5,7 @@ set -e
 if [[ ! -d "$1" ]]; then
   if [[ -n "$1" ]]; then
     echo "$1 is not a directory"
+    echo
   fi
   echo "Usage: git_sync_clone <root directory> [repos file] [run]"
   exit 1
