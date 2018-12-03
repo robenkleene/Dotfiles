@@ -1,6 +1,6 @@
 # export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 # Start including hidden files because these files often need to be edited, like `.gitignore`
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude .DS_Store'
 
 # fzf
 # Make `fzf` bindings available, since this is being manually imported here
