@@ -51,5 +51,7 @@ chpwd() {
   update_prompt
 }
 
-PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}${prompt_path} %f%(1j.%j& .)%(?..%?? )%#${SSH_CONNECTION:+%#} '
+# PS1='%F{$comment}%D{%I:%M %p} %n@%m %F{cyan}${prompt_path} %f%(1j.%j& .)%(?..%?? )%#${SSH_CONNECTION:+%#} '
+# PS1='%F{$comment}%D{%I:%M %p} %n@%F{green}%m${SSH_CONNECTION:+%#} %F{cyan}${prompt_path} %f%(1j.%j& .)%(?..%?? )%#${SSH_CONNECTION:+%#} '
+PS1='%F{$comment}%D{%I:%M %p} ${SSH_CONNECTION:+%n@%m }%F{cyan}${prompt_path} %f%(1j.%j& .)%(?..%?? )%#${SSH_CONNECTION:+%#} '
 RPROMPT='${vcs_info_msg_0_}'
