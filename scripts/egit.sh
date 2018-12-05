@@ -7,7 +7,7 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 # General Text Repos
-EGITREPOS+=:~/Development/Snippets/:~/Development/Archive/:~/Development/Scratch/:~/Development/Settings/
+EGITREPOS+=:~/Development/Snippets/:~/Development/Settings/:~/Development/Archive/:~/Development/Scratch/
 # Specific Text Repos
 EGITREPOS+=:~/Documentation/notes/:~/Documentation/design-references/:~/Documentation/development-references/:~/Documentation/music-production-references/:~/Documentation/software-references/:~/Documentation/Planning/personal-projects:~/Documentation/Planning/thepotionlab-development:~/Documentation/Planning/thepotionlab-projects
 
