@@ -16,9 +16,13 @@ set_args() {
     case "$option" in
       d)
         deploy_path="$OPTARG"
+        deploy_path="${deploy_path#"${deploy_path%%[![:space:]]*}"}"
+        deploy_path="${deploy_path%"${deploy_path##*[![:space:]]}"}"   
         ;;
       p)
         local_path="$OPTARG"
+        local_path="${local_path#"${local_path%%[![:space:]]*}"}"
+        local_path="${local_path%"${local_path##*[![:space:]]}"}"   
         ;;
       l)
         deploy_local=true
@@ -45,7 +49,7 @@ set_args() {
 # file
 set_args "${file_args[@]}"
 old_hosts=("${hosts[@]}")
-unset "$hosts"
+unset $hosts
 set_args "${command_line_args[@]}"
 if [ ${#hosts[@]} -eq 0 ]; then
   hosts=("${old_hosts[@]}")
@@ -55,11 +59,6 @@ if [[ -z "$hosts" && ! $local_sync ]]; then
   echo "Missing host with -s option or -l option for local" >&2
   exit 1
 fi
-
-# TODO: The count of the `deploy_path` has to match the count of the
-# `local_path`
-
-${#array[@]}
 
 if [[ -z "$deploy_path" ]]; then
   echo "Missing deploy path with -d option" >&2
@@ -110,9 +109,13 @@ is_host_defined() {
 }
 
 for host in "${hosts[@]}"; do
+  host="$OPTARG"
+  host="${host#"${host%%[![:space:]]*}"}"
+  host="${host%"${host##*[![:space:]]}"}"   
   if ! is_host_defined $host; then
     # Only deploy to defined hosts, if a host is setup on this machine, the
     # implication is it should be deployed to.
+    echo "Skipping $host because it is not configured"
     continue
   fi
   server_path="$host:$deploy_path"
