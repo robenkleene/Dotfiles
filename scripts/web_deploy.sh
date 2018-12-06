@@ -81,7 +81,13 @@ if $deploy_local; then
     echo "$deploy_path is not a directory" >&2
     exit 1
   fi
-  # TODO: Write local deploy
+  echo "Deploying $local_path to $deploy_path"
+  # rsync --verbose --archive $dry_run --delete \
+  #   --exclude=".DS_Store" \
+  #   --filter 'protect /resume/' \
+  #   $local_path \
+  #   $deploy_path
+  echo
 fi
 
 is_host_defined() {
@@ -102,10 +108,10 @@ for host in "${hosts[@]}"; do
     continue
   fi
   server_path="$host:$deploy_path"
-  echo "Deploying $local_path to $deploy_path"
+  echo "Deploying $local_path to $server_path"
   # rsync --rsh=ssh --verbose --archive $dry_run --delete \
   #   --exclude=".DS_Store" \
-  #   --filter 'protect /resume/' \
-  #   ${project_dir}public/ \
+  #   $local_path \
   #   $server_path
+  echo
 done
