@@ -37,22 +37,36 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Clipboard
-_system-copy-region-as-kill() {
+_system_copy_region_as_kill() {
   zle copy-region-as-kill
   echo "$CUTBUFFER" | safecopy
 }
-zle -N _system-copy-region-as-kill
-_system-backward-kill-word() {
-  zle backward-kill-word
-  # print -rn "$CUTBUFFER" | safecopy
+zle -N _system_copy_region_as_kill
+_system_kill_region_or_backward_kill_word() {
+  if [[ "$REGION_ACTIVE" -eq 0 ]]; then
+    zle _system_backward_kill_word
+  else
+    zle _system_kill_region
+  fi
+}
+zle -N _system_kill_region_or_backward_kill_word
+_system_kill_region() {
+  zle kill-region
   echo "$CUTBUFFER" | safecopy
 }
-zle -N _system-backward-kill-word
-_system-yank() {
+zle -N _system_kill_region
+_system_backward_kill_word() {
+  zle backward-kill-word
+  echo "$CUTBUFFER" | safecopy
+}
+zle -N _system_backward_kill_word
+_system_yank() {
   CUTBUFFER=$(safepaste)
   zle yank
 }
-zle -N _system-yank
-bindkey -e '\ew' _system-copy-region-as-kill
-bindkey -e '^W' _system-backward-kill-word
-bindkey -e '^Y' _system-yank
+zle -N _system_yank
+bindkey -e '\ew' _system_copy_region_as_kill
+# bindkey -e '^W' _system_backward_kill_word
+# bindkey -e '^W' _system_kill_region
+bindkey -e '^W' _system_kill_region_or_backward_kill_word
+bindkey -e '^Y' _system_yank
