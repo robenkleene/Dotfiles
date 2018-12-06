@@ -55,7 +55,7 @@ set_args() {
 # file
 set_args "${file_args[@]}"
 old_hosts=("${hosts[@]}")
-unset $hosts
+unset hosts
 set_args "${command_line_args[@]}"
 if [ ${#hosts[@]} -eq 0 ]; then
   hosts=("${old_hosts[@]}")
