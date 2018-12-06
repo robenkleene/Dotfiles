@@ -1,10 +1,9 @@
 #!/bin/bash
 
 if [ "$(uname)" == "Darwin" ]; then
-	pbcopy $@
+  pbcopy $@
 elif [ -n "$TMUX" ]; then
-	tmux loadb -
+  tmux loadb -
 else
-	cat >/dev/null
+  cat >/dev/null
 fi
-
