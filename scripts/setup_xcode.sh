@@ -7,7 +7,7 @@
 
 args=("$@")
 if [[ -f ".setup_xcode" ]]; then
-  while read -r line || [[ -n "$line" ]]; do
+  while read -r line; do
     args+=("$line")
   done <".setup_xcode"
 fi
