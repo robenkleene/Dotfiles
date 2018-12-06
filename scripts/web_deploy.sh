@@ -94,11 +94,11 @@ if $deploy_local; then
     echo "Skipping local deploy because $deploy_path is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
-    # rsync --verbose --archive $dry_run --delete \
-    #   --exclude=".DS_Store" \
-    #   --filter 'protect /resume/' \
-    #   $local_path \
-    #   $deploy_path
+    rsync --verbose --archive $dry_run --delete \
+      --exclude=".DS_Store" \
+      --filter 'protect /resume/' \
+      $local_path \
+      $deploy_path
     echo
   fi
 fi
@@ -125,9 +125,9 @@ for host in "${hosts[@]}"; do
   fi
   server_path="$host:$deploy_path"
   echo "Deploying $local_path to $server_path"
-  # rsync --rsh=ssh --verbose --archive $dry_run --delete \
-  #   --exclude=".DS_Store" \
-  #   $local_path \
-  #   $server_path
+  rsync --rsh=ssh --update --verbose --archive $dry_run --delete \
+    --exclude=".DS_Store" \
+    $local_path \
+    $server_path
   echo
 done
