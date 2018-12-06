@@ -14,7 +14,7 @@ deploy_local=false
 set_args() {
   # Local OPTIND lets `getopts` be called twice
   local OPTIND
-  while getopts ":s:d:p:lfh" option; do
+  while getopts ":s:d:p:e:lfh" option; do
     case "$option" in
       d)
         deploy_path="$OPTARG"
@@ -31,6 +31,9 @@ set_args() {
         ;;
       f)
         force=true
+        ;;
+      e)
+        excludes+=("$OPTARG")
         ;;
       s)
         hosts+=("$OPTARG")
@@ -89,16 +92,23 @@ else
   echo
 fi
 
+exclude_flags=""
+for exclude in "${excludes[@]}"; do
+  exclude="${exclude#"${exclude%%[![:space:]]*}"}"
+  exclude="${exclude%"${exclude##*[![:space:]]}"}"
+  exclude_flags+="--exclude=\"$exclude\" "
+done
+
 if $deploy_local; then
   if [[ ! -d "$deploy_path" ]]; then
     echo "Skipping local deploy because $deploy_path is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
-    rsync --verbose --archive $dry_run --delete \
-      --exclude=".DS_Store" \
+    eval "rsync --verbose --archive $dry_run --delete \
+      $exclude_flags \
       --filter 'protect /resume/' \
       $local_path \
-      $deploy_path
+      $deploy_path"
     echo
   fi
 fi
@@ -125,9 +135,9 @@ for host in "${hosts[@]}"; do
   fi
   server_path="$host:$deploy_path"
   echo "Deploying $local_path to $server_path"
-  rsync --rsh=ssh --update --verbose --archive $dry_run --delete \
-    --exclude=".DS_Store" \
+  eval "rsync --rsh=ssh --update --verbose --archive $dry_run --delete \
+    $exclude_flags \
     $local_path \
-    $server_path
+    $server_path"
   echo
 done
