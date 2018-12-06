@@ -85,34 +85,33 @@ fi
 
 if $deploy_local; then
   if [[ ! -d "$deploy_path" ]]; then
-    echo "$deploy_path is not a directory" >&2
-    exit 1
+    echo "Skipping local deploy because $deploy_path is not a directory" >&2
+  else
+    echo "Deploying $local_path to $deploy_path"
+    # rsync --verbose --archive $dry_run --delete \
+      #   --exclude=".DS_Store" \
+      #   --filter 'protect /resume/' \
+      #   $local_path \
+      #   $deploy_path
+    echo
   fi
-  echo "Deploying $local_path to $deploy_path"
-  # rsync --verbose --archive $dry_run --delete \
-  #   --exclude=".DS_Store" \
-  #   --filter 'protect /resume/' \
-  #   $local_path \
-  #   $deploy_path
-  echo
 fi
 
 is_host_defined() {
-  local host=$1
+  local host="$1"
   # Hack to determine if a hsot is defined, in the `ssh -G` output, the
   # hostname will match the provided parameter if the host is not defined. If
   # it is defined, the hostname will be the IP address or URL.
-  if ! ssh -G $host G "^hostname ${host}$" >/dev/null; then
+  if ! ssh -G "$host" | grep "^hostname ${host}$" >/dev/null; then
     return
   fi
   false
 }
 
 for host in "${hosts[@]}"; do
-  host="$OPTARG"
   host="${host#"${host%%[![:space:]]*}"}"
   host="${host%"${host##*[![:space:]]}"}"   
-  if ! is_host_defined $host; then
+  if ! is_host_defined "$host"; then
     # Only deploy to defined hosts, if a host is setup on this machine, the
     # implication is it should be deployed to.
     echo "Skipping $host because it is not configured"
