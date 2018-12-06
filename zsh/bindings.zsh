@@ -35,3 +35,24 @@ bindkey "^U" backward-kill-line
 # Load the `menuselect` map first
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Clipboard
+system-copy-region-as-kill() {
+  zle copy-region-as-kill
+  echo "$CUTBUFFER" | safecopy
+}
+zle -N system-copy-region-as-kill
+system-backward-kill-word() {
+  zle backward-kill-word
+  # print -rn "$CUTBUFFER" | safecopy
+  echo "$CUTBUFFER" | safecopy
+}
+zle -N system-backward-kill-word
+system-yank() {
+  CUTBUFFER=$(safepaste)
+  zle yank
+}
+zle -N system-yank
+bindkey -e '\ew' system-copy-region-as-kill
+bindkey -e '^W' system-backward-kill-word
+bindkey -e '^Y' system-yank
