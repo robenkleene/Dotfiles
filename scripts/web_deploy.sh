@@ -12,17 +12,19 @@ fi
 force=false
 deploy_local=false
 set_args() {
+  # Local OPTIND lets `getopts` be called twice
+  local OPTIND
   while getopts ":s:d:p:lfh" option; do
     case "$option" in
       d)
         deploy_path="$OPTARG"
         deploy_path="${deploy_path#"${deploy_path%%[![:space:]]*}"}"
-        deploy_path="${deploy_path%"${deploy_path##*[![:space:]]}"}"   
+        deploy_path="${deploy_path%"${deploy_path##*[![:space:]]}"}"
         ;;
       p)
         local_path="$OPTARG"
         local_path="${local_path#"${local_path%%[![:space:]]*}"}"
-        local_path="${local_path%"${local_path##*[![:space:]]}"}"   
+        local_path="${local_path%"${local_path##*[![:space:]]}"}"
         ;;
       l)
         deploy_local=true
@@ -32,6 +34,10 @@ set_args() {
         ;;
       s)
         hosts+=("$OPTARG")
+        ;;
+      h)
+        echo "Usage: web_deploy -p <local path> -d <deploy path> [-s <host>] [-lf]"
+        exit 0
         ;;
       :)
         echo "Option -$OPTARG requires an argument" >&2
@@ -89,10 +95,10 @@ if $deploy_local; then
   else
     echo "Deploying $local_path to $deploy_path"
     # rsync --verbose --archive $dry_run --delete \
-      #   --exclude=".DS_Store" \
-      #   --filter 'protect /resume/' \
-      #   $local_path \
-      #   $deploy_path
+    #   --exclude=".DS_Store" \
+    #   --filter 'protect /resume/' \
+    #   $local_path \
+    #   $deploy_path
     echo
   fi
 fi
@@ -110,7 +116,7 @@ is_host_defined() {
 
 for host in "${hosts[@]}"; do
   host="${host#"${host%%[![:space:]]*}"}"
-  host="${host%"${host##*[![:space:]]}"}"   
+  host="${host%"${host##*[![:space:]]}"}"
   if ! is_host_defined "$host"; then
     # Only deploy to defined hosts, if a host is setup on this machine, the
     # implication is it should be deployed to.
