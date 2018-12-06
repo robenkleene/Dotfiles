@@ -2,10 +2,10 @@
 
 set -e
 
-args=("$@")
+command_line_args=("$@")
 if [[ -f ".web_deploy" ]]; then
-  while read -r line || [[ -n "$line" ]]; do
-    args+=("$line")
+  while read -r line; do
+    file_args+=("$line")
   done <".web_deploy"
 fi
 
@@ -41,7 +41,15 @@ set_args() {
   done
 }
 
-set_args "${args[@]}"
+# Hoops to jump through to make command line `hosts` overide settings from the
+# file
+set_args "${file_args[@]}"
+old_hosts=("${hosts[@]}")
+unset "$hosts"
+set_args "${command_line_args[@]}"
+if [ ${#hosts[@]} -eq 0 ]; then
+  hosts=("${old_hosts[@]}")
+fi
 
 if [[ -z "$hosts" && ! $local_sync ]]; then
   echo "Missing host with -s option or -l option for local" >&2
