@@ -15,10 +15,10 @@ set_args() {
   while getopts ":s:d:p:lfh" option; do
     case "$option" in
       d)
-        deploy_paths+=("$OPTARG")
+        deploy_path="$OPTARG"
         ;;
       p)
-        local_paths+=("$OPTARG")
+        local_path="$OPTARG"
         ;;
       l)
         deploy_local=true
@@ -48,32 +48,25 @@ if [[ -z "$hosts" && ! $local_sync ]]; then
   exit 1
 fi
 
-# TODO: The count of the `deploy_paths` has to match the count of the
-# `local_paths`
+# TODO: The count of the `deploy_path` has to match the count of the
+# `local_path`
 
 ${#array[@]}
 
-if [[ -z "$deploy_paths" ]]; then
-  echo "Missing deploy paths with -d option" >&2
+if [[ -z "$deploy_path" ]]; then
+  echo "Missing deploy path with -d option" >&2
   exit 1
 fi
 
-if [[ -z "$local_paths" ]]; then
-  echo "Missing local paths with -l option" >&2
+if [[ -z "$local_path" ]]; then
+  echo "Missing local path with -l option" >&2
   exit 1
 fi
 
-if [[ ${#local_paths[@]} != ${#deploy_paths[@]} ]]; then
-  echo "Number of local paths ${#local_paths[@]} doesn't match deploy paths ${#deploy_paths[@]}" >&2
+if [[ ! -d "$local_path" ]]; then
+  echo "$local_path is not a directory" >&2
   exit 1
 fi
-
-for local_path in "${local_paths[@]}"; do
-  if [[ ! -d "$local_path" ]]; then
-    echo "$local_path is not a directory" >&2
-    exit 1
-  fi
-done
 
 dry_run="--dry-run"
 if $force; then
@@ -84,7 +77,11 @@ else
 fi
 
 if $deploy_local; then
-  echo "Got here"
+  if [[ ! -d "$deploy_path" ]]; then
+    echo "$deploy_path is not a directory" >&2
+    exit 1
+  fi
+  # TODO: Write local deploy
 fi
 
 is_host_defined() {
@@ -98,23 +95,17 @@ is_host_defined() {
   false
 }
 
-
 for host in "${hosts[@]}"; do
   if ! is_host_defined $host; then
     # Only deploy to defined hosts, if a host is setup on this machine, the
     # implication is it should be deployed to.
     continue
   fi
-  for i in "${!local_paths[@]}"; do
-    local_path=${local_paths[$i]}
-    deploy_path=${deploy_paths[$i]}
-    server_path="$host:$deploy_path"
-    echo "Deploying $local_path to $deploy_path"
-    # rsync --rsh=ssh --verbose --archive $dry_run --delete \
-    #   --exclude=".DS_Store" \
-    #   --filter 'protect /resume/' \
-    #   ${project_dir}public/ \
-    #   $server_path
-    echo
-  done
+  server_path="$host:$deploy_path"
+  echo "Deploying $local_path to $deploy_path"
+  # rsync --rsh=ssh --verbose --archive $dry_run --delete \
+  #   --exclude=".DS_Store" \
+  #   --filter 'protect /resume/' \
+  #   ${project_dir}public/ \
+  #   $server_path
 done
