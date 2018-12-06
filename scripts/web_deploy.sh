@@ -27,7 +27,7 @@ set_args() {
         force=true
         ;;
       s)
-        servers+=("$OPTARG")
+        hosts+=("$OPTARG")
         ;;
       :)
         echo "Option -$OPTARG requires an argument" >&2
@@ -43,8 +43,8 @@ set_args() {
 
 set_args "${args[@]}"
 
-if [[ -z "$servers" && ! $local_sync ]]; then
-  echo "Missing server with -s option or -l option for local" >&2
+if [[ -z "$hosts" && ! $local_sync ]]; then
+  echo "Missing host with -s option or -l option for local" >&2
   exit 1
 fi
 
@@ -87,19 +87,34 @@ if $deploy_local; then
   echo "Got here"
 fi
 
-for server in "${servers[@]}"; do
+is_host_defined() {
+  local host=$1
+  # Hack to determine if a hsot is defined, in the `ssh -G` output, the
+  # hostname will match the provided parameter if the host is not defined. If
+  # it is defined, the hostname will be the IP address or URL.
+  if ! ssh -G $host G "^hostname ${host}$" >/dev/null; then
+    return
+  fi
+  false
+}
+
+
+for host in "${hosts[@]}"; do
+  if ! is_host_defined $host; then
+    # Only deploy to defined hosts, if a host is setup on this machine, the
+    # implication is it should be deployed to.
+    continue
+  fi
   for i in "${!local_paths[@]}"; do
     local_path=${local_paths[$i]}
     deploy_path=${deploy_paths[$i]}
-    server_path="$server:$deploy_path"
-    # Ugh, I've got write out a protect statement for every "deploy_path"
-    # except this one
+    server_path="$host:$deploy_path"
     echo "Deploying $local_path to $deploy_path"
-    rsync --rsh=ssh --verbose --archive $dry_run --delete \
-      --exclude=".DS_Store" \
-      --filter 'protect /resume/' \
-      ${project_dir}public/ \
-      $server_path
+    # rsync --rsh=ssh --verbose --archive $dry_run --delete \
+    #   --exclude=".DS_Store" \
+    #   --filter 'protect /resume/' \
+    #   ${project_dir}public/ \
+    #   $server_path
     echo
   done
 done
