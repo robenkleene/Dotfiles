@@ -6,7 +6,7 @@ fi
 # chruby
 if [[ -f "/usr/local/share/chruby/chruby.sh" ]]; then
   source /usr/local/share/chruby/chruby.sh
-  chruby ruby-2.4.0
+  chruby ruby-2.5.3
 fi
 
 # export PATH=$HOME/.rubies/ruby-2.4.0/bin:$PATH
