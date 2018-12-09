@@ -30,4 +30,4 @@ nvm() {
     nvm "$@"
   fi
 }
-export PATH=$HOME/.nvm/versions/node/v7.5.0/bin:$PATH
+export PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH
