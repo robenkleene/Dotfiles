@@ -18,7 +18,9 @@ fi
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 # This is faster:
 nvm() {
-  source ~/.nvm/nvm.sh
-  nvm "$@"
+  if [[ -f ~/.nvm/nvm.sh ]]; then
+    source ~/.nvm/nvm.sh
+    nvm "$@"
+  fi
 }
 export PATH=$HOME/.nvm/versions/node/v7.5.0/bin:$PATH
