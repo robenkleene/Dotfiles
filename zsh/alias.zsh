@@ -21,7 +21,7 @@ alias -g 0V="| xargs -0 $VIM_COMMAND"
 alias -- -='cd -'
 alias ..='cd ..'
 
-if [ ! "$(uname)" = "Darwin" ]; then
+if [[ "$(uname)" = "Linux" ]]; then
   alias ls='ls --color=auto'
 else
   alias ls='gls --color=auto'
@@ -108,7 +108,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 # Xcode
-if [ "$(uname)" = "Darwin" ]; then
+if [[ "$(uname)" = "Darwin" ]]; then
   alias xcb='xcodebuild_debug'
   alias ox='fzf_project_xcode'
 fi

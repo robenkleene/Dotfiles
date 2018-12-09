@@ -283,7 +283,7 @@ fzf_snippet_editor() {
 }
 
 # Xcode
-if [ "$(uname)" = "Darwin" ]; then
+if [[ "$(uname)" = "Darwin" ]]; then
   fzf_project_xcode() {
     setopt localoptions pipefail 2> /dev/null
     find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
@@ -293,7 +293,7 @@ if [ "$(uname)" = "Darwin" ]; then
       | xargs -0 env -i open
   }
 fi
-if [ "$(uname)" = "Darwin" ]; then
+if [[ "$(uname)" = "Darwin" ]]; then
   fzf_file_xcode() {
     local ack_search_xcode="$FZF_DEFAULT_COMMAND --glob \"*.swift\" --glob \"*.h\" --glob \"*.m\""
     eval $ack_search_xcode \

@@ -126,11 +126,6 @@ abbreviations=(
 'chunb' 'carthage update --no-use-binaries'
 )
 
-# if [ "$(uname)" = "Darwin" ]; then
-# abbreviations+=(
-# )
-# fi
-
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters
 for abbr in ${(@k)abbreviations}; do

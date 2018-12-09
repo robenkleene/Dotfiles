@@ -113,13 +113,6 @@ ssh_tmux_restore_start() {
   tmux_session_auto_restore
 }
 
-# Fix slow ssh
-if [ ! "$(uname)" = "Darwin" ]; then
-  ssh_fix() {
-    sudo systemctl restart systemd-logind 
-  }
-fi
-
 # zsh
 zsh_edit_config() {
   cd ~/Development/Dotfiles/zsh/
@@ -151,7 +144,7 @@ tmux_name_directory() {
 }
 
 # git
-if [ "$(uname)" = "Darwin" ]; then
+if [[ "$(uname)" = "Darwin" ]]; then
   git_reveal_diff() {
     git diff --name-only -z | xargs -0 open -R
   }

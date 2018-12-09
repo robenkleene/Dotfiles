@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$(uname)" == "Darwin" ]; then
+if [[ "$(uname)" == "Darwin" ]]; then
   pbcopy $@
 elif [ -n "$TMUX" ]; then
   tmux loadb -
