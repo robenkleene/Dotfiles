@@ -2,6 +2,12 @@
 # Run `zprof` after to see results
 # zmodload zsh/zprof
 
+# This is early so that any path settings can be overridden later, e.g, for
+# `nvm` and `chruby`
+if [[ -f ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi
+
 # Setup
 source ~/.zsh/settings.zsh
 # Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
@@ -24,10 +30,6 @@ source ~/.zsh/abbr.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
 source ~/.zsh/startup.zsh
-
-if [[ -f ~/.zshrc_local ]]; then
-  source ~/.zshrc_local
-fi
 
 # Plugins
 # Plugins should be sourced last
