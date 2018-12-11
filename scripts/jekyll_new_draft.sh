@@ -56,15 +56,13 @@ categories:
 ---
 "
 
-echo "$content"
+echo "$content" >"$post_path"
+cat >>"$post_path"
 
-# echo "$content" >"$post_path"
-# cat >>"$post_path"
-
-# destination_post_path="$drafts_directory/$today-$slug.md"
-# mv -n "$post_path" "$destination_post_path"
-# if [[ -f "$post_path" ]]; then
-#   echo -n $post_path
-# else
-#   echo -n $destination_post_path
-# fi
+destination_post_path="$drafts_directory/$today-$slug.md"
+mv -n "$post_path" "$destination_post_path"
+if [[ -f "$post_path" ]]; then
+  echo -n $post_path
+else
+  echo -n $destination_post_path
+fi
