@@ -284,6 +284,14 @@ jekyll_serve_watch_drafts() {
   # The `--open-url` version isn't supported by `gh-pages` jekyll yet
   bundle exec jekyll serve --watch --drafts
 }
+jekyll_write() {
+  if [[ ! -f "_config.yml" ]]; then
+    echo "Not a Jekyll site"
+    return 1
+  fi
+  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
+  bundle exec jekyll serve --watch --drafts --config _config_local.yml
+}
 
 # Simulator
 simulator_data_print() {

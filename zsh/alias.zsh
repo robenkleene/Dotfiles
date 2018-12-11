@@ -136,6 +136,7 @@ alias gbpr='git_branch_prune'
 # `jekyll`
 alias jsw='jekyll_serve_watch'
 alias jswd='jekyll_serve_watch_drafts'
+alias jw='jekyll_write'
 
 # `slug`
 alias slpr='slug_project'
