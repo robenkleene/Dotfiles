@@ -2,14 +2,38 @@
 
 set -e
 
-if [ "$#" -ne 1 ]; then
-  echo "Wrong number of arguments" >&2
+link=false
+while getopts ":t:lh" option; do
+  case "$option" in
+    t)
+      title="$OPTARG"
+      ;;
+    l)
+      link=true
+      ;;
+    h)
+      echo "Usage: jekyll_new_draft [-l] -a <file>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+# Make all lowercase and replace hyphens with spaces
+
+if [[ -z "$title" ]]; then
+  echo "Missing title with the -t option" >&2
   exit 1
 fi
 
-# Make all lowercase and replace hyphens with spaces
-title=$1
-slug=$(echo "$1" |
+slug=$(echo "$title" |
   tr -dc '[:alnum:]\r\n.\-/ ' |
   tr -s ' ' | tr '[A-Z]' '[a-z]' |
   tr ' ' '-')
@@ -23,20 +47,24 @@ fi
 today=$(date +%Y-%m-%d)
 post_path=$(mktemp "$drafts_directory/$today-XXXX")
 
+[[ "$link" = true ]] && kind="link" || kind="post"
+
 content="---
-layout: post
+layout: $kind
 title: \"$title\"
 categories: 
 ---
 "
 
-echo "$content" >"$post_path"
-cat >>"$post_path"
+echo "$content"
 
-destination_post_path="$drafts_directory/$today-$slug.md"
-mv -n "$post_path" "$destination_post_path"
-if [[ -f "$post_path" ]]; then
-  echo -n $post_path
-else
-  echo -n $destination_post_path
-fi
+# echo "$content" >"$post_path"
+# cat >>"$post_path"
+
+# destination_post_path="$drafts_directory/$today-$slug.md"
+# mv -n "$post_path" "$destination_post_path"
+# if [[ -f "$post_path" ]]; then
+#   echo -n $post_path
+# else
+#   echo -n $destination_post_path
+# fi
