@@ -34,3 +34,8 @@ endsnippet
 snippet nmap "Normal mapping" b
 nnoremap ${1:<leader>w} ${2::set wrap!<CR>}
 endsnippet
+snippet if "If statement" b
+if ${1:has('gui_running')}
+  ${2:finish}
+endif
+endsnippet
