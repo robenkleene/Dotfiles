@@ -3,7 +3,14 @@
 source ~/.bin/nobin/_fzf_inline_result.sh
 
 cd ~/Documentation/
-local result=$(_fzf_inline_result)
+local query=$1
+if [[ -n "$query" ]]; then
+  local list_cmd=$FZF_DEFAULT_COMMAND
+  local result="$(eval "$list_cmd" "$query" | head -n 1)"
+else
+  local result=$(_fzf_inline_result)
+fi
+
 if [[ -n $result ]]; then
   parameter=$(printf '%q' "$PWD/$result")
   final_cmd="cat $parameter | less -FX"

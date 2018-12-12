@@ -221,7 +221,7 @@ zle     -N   _fzf_command_widget
 bindkey '\ex' _fzf_command_widget
 
 _robenkleene_fzf_inline_result() {
-  local list_cmd=${1-$FZF_DEFAULT_COMMAND} 
+  local list_cmd=${1-$FZF_DEFAULT_COMMAND}
   setopt localoptions pipefail 2> /dev/null
   local result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf +m)"
   local ret=$?
@@ -243,7 +243,13 @@ fzf_safari_history_open() {
 # Documentation
 fzf_documentation_editor() {
   cd ~/Documentation/
-  local result=$(_robenkleene_fzf_inline_result)
+  local query=$1
+  if [[ -n "$query" ]]; then
+    local list_cmd=$FZF_DEFAULT_COMMAND
+    local result="$(eval "$list_cmd" "$query" | head -n 1)"
+  else
+    local result=$(_robenkleene_fzf_inline_result)
+  fi
   if [[ -n "$result" ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
     local final_cmd="$EDITOR $parameter"
@@ -253,7 +259,7 @@ fzf_documentation_editor() {
       print -sr $final_cmd
     fi
   else
-    cd -
+    cd - >/dev/null
   fi
 }
 
