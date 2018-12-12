@@ -11,10 +11,11 @@ fi
 
 force=false
 deploy_local=false
+root_prefix=""
 set_args() {
   # Local OPTIND lets `getopts` be called twice
   local OPTIND
-  while getopts ":s:d:p:e:lfh" option; do
+  while getopts ":s:d:p:e:lrfh" option; do
     case "$option" in
       d)
         deploy_path="$OPTARG"
@@ -38,8 +39,11 @@ set_args() {
       s)
         hosts+=("$OPTARG")
         ;;
+      r)
+        root_prefix="sudo "
+        ;;
       h)
-        echo "Usage: web_deploy -p <local path> -d <deploy path> [-s <host>] [-lf]"
+        echo "Usage: web_deploy -p <local path> -d <deploy path> [-s <host>] [-lfr]"
         exit 0
         ;;
       :)
@@ -105,7 +109,7 @@ if $deploy_local; then
     echo "Skipping local deploy because $deploy_path_parent is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
-    eval "rsync --verbose --archive $dry_run --delete \
+    eval "${root_prefix}rsync --verbose --archive $dry_run --delete \
       $exclude_flags \
       --filter 'protect /resume/' \
       $local_path \
