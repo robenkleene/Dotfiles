@@ -64,7 +64,7 @@ if [ ${#hosts[@]} -eq 0 ]; then
   hosts=("${old_hosts[@]}")
 fi
 
-if [[ -z "$hosts" && ! $local_sync ]]; then
+if [[ -z "$hosts" && $local_sync = "false" ]]; then
   echo "Missing host with -s option or -l option for local" >&2
   exit 1
 fi
