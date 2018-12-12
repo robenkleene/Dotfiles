@@ -102,7 +102,7 @@ done
 if $deploy_local; then
   deploy_path_parent="$(dirname "$deploy_path")"
   if [[ ! -d "$deploy_path_parent" ]]; then
-    echo "Skipping local deploy because $deploy_path is not a directory" >&2
+    echo "Skipping local deploy because $deploy_path_parent is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
     eval "rsync --verbose --archive $dry_run --delete \
