@@ -100,7 +100,8 @@ for exclude in "${excludes[@]}"; do
 done
 
 if $deploy_local; then
-  if [[ ! -d "$deploy_path" ]]; then
+  deploy_path_parent="$(dirname "$deploy_path")"
+  if [[ ! -d "$deploy_path_parent" ]]; then
     echo "Skipping local deploy because $deploy_path is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
