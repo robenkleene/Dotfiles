@@ -12,21 +12,32 @@ _robenkleene_ack_lines_no_color() {
 
 # Commands
 
-# egitn
 egitn() {
   local gitnext=$(egit -n)
   if [[ -n "$gitnext" ]]; then
     cd "$gitnext"
     git status
+    return
   fi
+  return 1
 }
 
-# sgit
-sgitn () {
+sgitn() {
   local gitnext=$(sgit -n)
   if [[ -n "$gitnext" ]]; then
     cd "$gitnext"
     git status
+    return
+  fi
+  return 1
+}
+
+pgitn() {
+  cd ~/Development/Projects
+  sgitn
+  if [[ $? -ne 0 ]]; then
+    cd - >/dev/null
+    return 1
   fi
 }
 
