@@ -125,6 +125,9 @@ ssh_tmux_restore_start() {
 }
 
 # zsh
+zsh_refresh_commands() {
+  rehash
+}
 zsh_edit_config() {
   cd ~/Development/Dotfiles/zsh/
   eval $EDITOR ../zshrc
