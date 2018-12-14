@@ -124,6 +124,11 @@ ssh_tmux_restore_start() {
   tmux_session_auto_restore
 }
 
+# DNS
+dns_refersh() {
+  sudo killall -HUP mDNSResponder 
+}
+
 # zsh
 zsh_refresh_commands() {
   rehash
