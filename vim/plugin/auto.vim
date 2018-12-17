@@ -22,6 +22,11 @@ augroup quickfix_height
   autocmd FileType qf call auto#AdjustWindowHeight(3, 20)
 augroup END
 
+augroup disable_autocomments
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
+
 " Highlight cursor line
 " set cursorline
 " Show cursorline only in active window
