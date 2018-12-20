@@ -71,6 +71,7 @@ Plug 'Konfekt/vim-alias'
 Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
+Plug 'markonm/traces.vim' , Cond(!has('nvim'))
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
