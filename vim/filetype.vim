@@ -7,4 +7,5 @@ augroup setup_filetype
   au! BufRead,BufNewFile *.conf setfiletype conf
   au! BufRead,BufNewFile *.m,*.h setfiletype objc
   au! BufRead,BufNewFile Fastfile setfiletype ruby
+  au! BufRead,BufNewFile *.plist setfiletype xml
 augroup END
