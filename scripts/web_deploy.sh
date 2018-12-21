@@ -15,7 +15,7 @@ root_prefix=""
 set_args() {
   # Local OPTIND lets `getopts` be called twice
   local OPTIND
-  while getopts ":s:d:p:e:lrfh" option; do
+  while getopts ":s:d:p:e:F:lrfh" option; do
     case "$option" in
       d)
         deploy_path="$OPTARG"
@@ -29,6 +29,9 @@ set_args() {
         ;;
       l)
         deploy_local=true
+        ;;
+      F)
+        filters+=("$OPTARG")
         ;;
       f)
         force=true
@@ -103,6 +106,14 @@ for exclude in "${excludes[@]}"; do
   exclude_flags+="--exclude=\"$exclude\" "
 done
 
+filter_flags=""
+for filter in "${filters[@]}"; do
+  echo "filter = $filter"
+  filter="${filter#"${filter%%[![:space:]]*}"}"
+  filter="${filter%"${filter##*[![:space:]]}"}"
+  filter_flags+="--filter=$filter "
+done
+
 if $deploy_local; then
   deploy_path_parent="$(dirname "$deploy_path")"
   if [[ ! -d "$deploy_path_parent" ]]; then
@@ -111,7 +122,7 @@ if $deploy_local; then
     echo "Deploying $local_path to $deploy_path"
     eval "${root_prefix}rsync --verbose --archive $dry_run --delete \
       $exclude_flags \
-      --filter 'protect /resume/' \
+      $filter_flags \
       $local_path \
       $deploy_path"
     echo
@@ -142,6 +153,7 @@ for host in "${hosts[@]}"; do
   echo "Deploying $local_path to $server_path"
   eval "rsync --rsh=ssh --update --verbose --archive $dry_run --delete \
     $exclude_flags \
+    $filter_flags \
     $local_path \
     $server_path"
   echo
