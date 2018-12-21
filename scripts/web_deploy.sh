@@ -108,7 +108,6 @@ done
 
 filter_flags=""
 for filter in "${filters[@]}"; do
-  echo "filter = $filter"
   filter="${filter#"${filter%%[![:space:]]*}"}"
   filter="${filter%"${filter##*[![:space:]]}"}"
   filter_flags+="--filter=$filter "
