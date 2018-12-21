@@ -43,8 +43,10 @@ set_args() {
       h)
         echo "Usage: setup_xcode [-hbd]"
         echo
+        echo "-c: Include Objective-C"
         echo "-b: Build only"
         echo "-d: Also setup deployment"
+        echo "-s: Build server, e.g., -s travis"
         echo
         echo "Create a file called .setup_xcode to automatically set flags."
         echo "Put one flag per line."
