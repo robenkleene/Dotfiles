@@ -125,6 +125,28 @@ while getopts ":a:bh" option; do
   esac
 done
 endsnippet
+snippet getoptsf "getopts force" b
+force=false
+while getopts ":fh" option; do
+  case "$option" in
+    f)
+      force=true
+      ;;
+    h)
+      echo "Usage: command [-hf]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+endsnippet
 snippet >null "Redirect to null"
 >/dev/null
 endsnippet
