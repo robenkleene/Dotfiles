@@ -33,7 +33,7 @@ fi
 
 app_version=$(agvtool what-marketing-version -terse1 | tr -d '\n')
 if [[ ! "$app_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  echo "Not a valid app version ${app_version}asdf" >&2
+  echo "Not a valid app version ${app_version}" >&2
   exit 1
 fi
 
