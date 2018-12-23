@@ -7,6 +7,9 @@ endsnippet
 snippet echoe "Echo error" b
 echo "${0:Error}" >&2
 endsnippet
+snippet cds "cd to directory of script"
+cd "$(dirname "$0")"
+endsnippet
 snippet arr "Access array"
 \${${1:args}[@]}$0
 endsnippet
