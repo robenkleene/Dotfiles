@@ -1,8 +1,8 @@
-typeset -Ag abbreviations
-
 # Abberviations should be used for native commands and functions that take
 # parameters.
 
+# These abbreviations only work as the first word of the command.
+typeset -Ag abbreviations
 abbreviations=(
 # vim
 'v' "$VIM_COMMAND"
@@ -126,6 +126,12 @@ abbreviations=(
 'chunb' 'carthage update --no-use-binaries'
 )
 
+# These abbreviations work everywhere
+typeset -Ag everywhere_abbreviations
+everywhere_abbreviations=(
+'>n' '>/dev/null 2>&1'
+)
+
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters
 for abbr in ${(@k)abbreviations}; do
@@ -134,8 +140,13 @@ done
 
 _magic_abbrev_expand() {
   local MATCH
+  # Abbreviations
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+
+  # Everywhere Abbreviations
+  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>]#}
+  LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
 }
 
 _magic_abbrev_expand_and_insert() {
