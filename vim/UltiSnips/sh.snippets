@@ -150,8 +150,8 @@ while getopts ":fh" option; do
   esac
 done
 endsnippet
-snippet >null "Redirect to null"
->/dev/null
+snippet >n "Redirect to null"
+>/dev/null 2>&1
 endsnippet
 snippet sete "Exit on non-zero exit status"
 set -e
