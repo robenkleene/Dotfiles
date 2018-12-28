@@ -124,7 +124,7 @@ abbreviations=(
 
 # Carthage
 'chu' 'carthage update'
-'chunb' 'carthage update --no-use-binaries'
+'chb' 'carthage bootstrap'
 
 # `agvtool`
 'agvm' 'agvtool what-marketing-version'
