@@ -135,6 +135,8 @@ abbreviations=(
 typeset -Ag everywhere_abbreviations
 everywhere_abbreviations=(
 '>n' '>/dev/null 2>&1'
+# Carthage
+'-nub' '--no-use-binaries'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
@@ -153,7 +155,7 @@ _magic_abbrev_expand() {
 _magic_everywhere_abbrev_expand() {
   local MATCH
   # Everywhere Abbreviations
-  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>]#}
+  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>-]#}
   LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
   if [[ -z "${everywhere_abbreviations[$MATCH]}" ]]; then
     return 1
