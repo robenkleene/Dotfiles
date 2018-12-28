@@ -148,10 +148,16 @@ _magic_abbrev_expand() {
   # Abbreviations
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#^}
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+}
 
+_magic_everywhere_abbrev_expand() {
+  local MATCH
   # Everywhere Abbreviations
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>]#}
   LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
+  if [[ -z "${everywhere_abbreviations[$MATCH]}" ]]; then
+    return 1
+  fi
 }
 
 _magic_abbrev_expand_and_insert() {
@@ -164,10 +170,18 @@ _magic_abbrev_expand_and_accept() {
   zle accept-line
 }
 
+_magic_everywhere_abbrev_expand-or-complete() {
+  if ! _magic_everywhere_abbrev_expand; then
+    zle expand-or-complete
+  fi
+}
+
 zle -N _magic_abbrev_expand_and_insert
 zle -N _magic_abbrev_expand_and_accept
-bindkey " "   _magic_abbrev_expand_and_insert
-bindkey "\r"  _magic_abbrev_expand_and_accept
+zle -N _magic_everywhere_abbrev_expand-or-complete
+bindkey " "  _magic_abbrev_expand_and_insert
+bindkey "\r" _magic_abbrev_expand_and_accept
+bindkey "^I" _magic_everywhere_abbrev_expand-or-complete
 # Use original bindings in isearch
 bindkey -M isearch " " self-insert
 bindkey -M isearch "\r" accept-line
