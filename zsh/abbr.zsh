@@ -25,16 +25,12 @@ abbreviations=(
 'tmwr' 'tmux move-window -r'
 'tm' 'tmux' 
 'tmb' 'tmux_banner'
-'tmba' 'tmux_banner_all'
 'tmls' 'tmux ls'
 'tmsn' 'tmux new'
 'tmd' 'tmux detach'
 
 # `zsh`
 'wf' 'whence -f'
-
-# `safari`
-'sfhs' 'fzf_safari_history_open'
 
 # `swiftlint`
 'm' 'make'
@@ -94,7 +90,6 @@ abbreviations=(
 # `gp`: `git push`
 'gp' 'git push'
 'gpt' 'git push --tags'
-'gpbo' 'git_push_branch_origin'
 # `gr`: `git rebase`
 'gr' 'git rebase'
 'grc' 'git rebase --continue'

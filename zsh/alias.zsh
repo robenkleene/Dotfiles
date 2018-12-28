@@ -75,6 +75,10 @@ alias tmfe='fzf_tmux_vim_file'
 alias tmfw='fzf_tmux_window'
 alias tmgs='tmux_git_status'
 alias tmssdw='tmux_session_save_dropbox_work'
+alias tmba='tmux_banner_all'
+
+# `safari`
+alias sfhs='fzf_safari_history_open'
 
 # `make`
 alias ml='make lint'
@@ -132,6 +136,7 @@ alias grtao='git_remote_add_origin'
 alias gcd='git_cd_root'
 alias gdg='git_diff_grep'
 alias gbpr='git_branch_prune'
+alias gpbo='git_push_branch_origin'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
