@@ -1,5 +1,6 @@
-# Abberviations should be used for native commands and functions that take
-# parameters.
+# Abberviations should be used for either built-in commands or custom commands
+# that take paramters.
+# Otherwise just use aliases.
 
 # These abbreviations only work as the first word of the command.
 typeset -Ag abbreviations
@@ -124,6 +125,10 @@ abbreviations=(
 # Carthage
 'chu' 'carthage update'
 'chunb' 'carthage update --no-use-binaries'
+
+# `agvtool`
+'agvm' 'agvtool what-marketing-version'
+'agvmn' 'agvtool new-marketing-version'
 )
 
 # These abbreviations work everywhere
