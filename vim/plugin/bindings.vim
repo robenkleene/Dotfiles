@@ -178,8 +178,6 @@ vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " Open and Close Tab
 nnoremap <C-w>t :tabnew<CR>
 vnoremap <C-w>t :<C-u>tabnew<CR>
-" nnoremap <A-t> :tabnew<CR>
-" vnoremap <A-t> :<C-u>tabnew<CR>
 nnoremap <C-w>q :tabclose<CR>
 vnoremap <C-w>q :<C-u>tabclose<CR>
 " Switching Tabs
@@ -192,19 +190,14 @@ vnoremap <C-w><C-n> gt
 vnoremap <C-w>p gT
 vnoremap <C-w><C-p> gT
 " quickfix
-nnoremap <A-Down> :cnext<CR>
-nnoremap <A-Up> :cprev<CR>
-vnoremap <A-Down> :cnext<CR>
-vnoremap <A-Up> :cprev<CR>
-nnoremap <A-n> :cnext<CR>
-nnoremap <A-p> :cprev<CR>
-vnoremap <A-n> :cnext<CR>
-vnoremap <A-p> :cprev<CR>
-
-" Disable these use the above ones, these are too easy to accidently open new
-" splits with `<C-w><C-n>`, also `<C-w>n` is a default new split binding.
-" nnoremap <C-w>n gt
-" nnoremap <C-w>p gT
+" nnoremap <A-Down> :cnext<CR>
+" nnoremap <A-Up> :cprev<CR>
+" vnoremap <A-Down> :cnext<CR>
+" vnoremap <A-Up> :cprev<CR>
+" nnoremap <A-n> :cnext<CR>
+" nnoremap <A-p> :cprev<CR>
+" vnoremap <A-n> :cnext<CR>
+" vnoremap <A-p> :cprev<CR>
 
 " Open
 nnoremap <localleader>O :!open "%:p"<CR>\|:redraw!<CR>
