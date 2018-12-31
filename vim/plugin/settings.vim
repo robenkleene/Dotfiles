@@ -110,6 +110,8 @@ if has('nvim')
   " This improves startup time drastically by removing the need to detect
   " clipboard settings.
   " This can be confirmed by running `nvim --startuptime profile.log`
+  " Linux doesn't have the same startup cost, so the automatic detection is
+  " fine there, it makes `tmux` clipboard work automatically.
   if has('macunix')
     let g:clipboard = {
       \ 'name': 'pbcopy',
