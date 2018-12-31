@@ -106,6 +106,26 @@ if has('nvim')
   set inccommand=split
 endif
 
+if has('nvim')
+  " This improves startup time drastically by removing the need to detect
+  " clipboard settings.
+  " This can be confirmed by running `nvim --startuptime profile.log`
+  if has('macunix')
+    let g:clipboard = {
+      \ 'name': 'pbcopy',
+      \ 'copy': {
+      \    '+': 'pbcopy',
+      \    '*': 'pbcopy',
+      \  },
+      \ 'paste': {
+      \    '+': 'pbpaste',
+      \    '*': 'pbpaste',
+      \ },
+      \ 'cache_enabled': 0,
+      \ }
+  endif
+endif
+
 
 " open previews vertically
 " let g:netrw_preview = 1
