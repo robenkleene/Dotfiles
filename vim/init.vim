@@ -86,9 +86,9 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
-" This slows down `dd` significantly
 if !has('macunix')
-  Plug 'roxma/vim-tmux-clipboard', Cond(has('nvim'))
+  " This slows down `dd` significantly
+  Plug 'roxma/vim-tmux-clipboard'
 endif
 Plug 'wsdjeg/vim-fetch'
 " Languages {{{2
