@@ -49,6 +49,14 @@ set clipboard^=unnamed,unnamedplus
 " Disable mouse
 " set mouse=
 set mouse=a
+" This greatly improves mouse support with `vim` in `tmux`. Specifically it
+" allows `vim` windows to be resized inside `tmux` and it stops `vim` from
+" scrolling when switching windows with the mouse..
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 " Set Word Boundaries
 " For `-` and `_` there are two schools of thought:
