@@ -38,7 +38,14 @@ endfunction
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
-  execute "grep " . a:terms
+  execute "silent grep " . a:terms
+  " Without `silent`, the terminal output is seen and enter is required to go
+  " to the first match
+  " execute "grep " . a:terms
+  if !has('nvim')
+    " The screen gets messed up in `vim` without this
+    redraw!
+  endif
   let &grepprg = l:original_grepprg
 endfunction
 
