@@ -53,9 +53,11 @@ set mouse=a
 " allows `vim` windows to be resized inside `tmux` and it stops `vim` from
 " scrolling when switching windows with the mouse..
 if has("mouse_sgr")
-    set ttymouse=sgr
+  set ttymouse=sgr
 else
+  if !has('nvim')
     set ttymouse=xterm2
+  endif
 end
 
 " Set Word Boundaries
