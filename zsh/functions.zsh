@@ -190,9 +190,6 @@ git_push_branch_origin() {
 git_push_origin_delete() {
   git push origin --delete $1
 }
-git_branch_delete_origin() {
-  git push origin --delete $1
-}
 git_branch_set_upstream_origin_master() {
   git branch --set-upstream-to=origin/master master
 }
