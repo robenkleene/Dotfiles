@@ -163,6 +163,11 @@ tmux_name_directory() {
 }
 
 # git
+# Autocomplete
+_robenkleene_git_branch_names() {
+  compadd "${(@)${(f)$(git branch -a)}#??}"
+}
+# Darwin
 if [[ "$(uname)" = "Darwin" ]]; then
   git_reveal_diff() {
     git diff --name-only -z | xargs -0 open -R
@@ -187,6 +192,12 @@ git_cd_root() {
 git_push_branch_origin() {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
+compdef _robenkleene_git_branch_names git_branch_delete
+git_branch_delete() {
+  git branch --delete $1 && \
+    git push origin --delete $1
+}
+compdef _robenkleene_git_branch_names git_push_origin_delete
 git_push_origin_delete() {
   git push origin --delete $1
 }
