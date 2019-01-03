@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-backup_root_directory=~/Archive/Text/
+backup_root_directory=~/Documents/Archive/Text/
 today=`date +%Y-%B-%d`
 backup_directory=$backup_root_directory$today
 mkdir -p $backup_directory

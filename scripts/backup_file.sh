@@ -2,7 +2,7 @@
 
 set -e
 
-backup_root_directory=~/Archive/Text/
+backup_root_directory=~/Documents/Archive/Text/
 
 filepath=$1
 filename=$(basename "$1")
