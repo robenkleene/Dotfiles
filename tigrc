@@ -12,6 +12,7 @@ set ignore-case = yes
 # This seems like it should show EOL whitespace be won't be available until
 # updating to `git` version `2.3.5`
 # set diff-highlight = true
+set mouse = true
 
 # Basic
 bind generic r refresh
