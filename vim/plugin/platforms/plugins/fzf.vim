@@ -13,7 +13,7 @@ nnoremap <M-e> :Files<CR>
 " nnoremap <C-Space> :Commands<CR>
 " vnoremap <C-Space> :Commands<CR>
 nnoremap <M-x> :Commands<CR>
-vnoremap <M-x> :Commands<CR>
+vnoremap <M-x> :VisualCommands<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <M-z> :Z<CR>
 " nnoremap <M-r> :Zvim<CR>
@@ -28,6 +28,13 @@ else
   inoremap <M-c> <C-\><C-o>:Cdinsert<CR><right>
   inoremap <M-e> <C-\><C-o>:Filesinsert<CR><right>
 endif
+
+" A version of `:Commands` that can take a range
+command! -range VisualCommands call <SID>VisualCommands()
+function! s:VisualCommands() abort
+  call fzf#vim#commands()
+  norm gv
+endfunction
 
 " Documentation
 command! Doc call fzf#run(fzf#wrap({
