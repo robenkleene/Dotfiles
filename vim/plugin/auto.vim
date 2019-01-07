@@ -114,7 +114,7 @@ endfunction
 augroup write_chdir
   autocmd!
   autocmd VimLeavePre *
-        \ if <SID>isdir(expand('%'))
-        \ | call writefile([expand('%:p')], s:chdirectory_file)
+        \ if <SID>isdir(expand('%:h'))
+        \ | call writefile([expand('%:h:p')], s:chdirectory_file)
         \ | endif
 augroup END
