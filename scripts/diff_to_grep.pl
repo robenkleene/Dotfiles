@@ -1,9 +1,9 @@
 #!/usr/bin/env perl
 
-# Orginally named `diff-hunk-list`
-
 use strict;
 use warnings;
+
+# Orginally named `diff-hunk-list`
 
 my $filename;
 my $line;
