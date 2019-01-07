@@ -32,8 +32,17 @@ sgitn() {
   return 1
 }
 
-pgitn() {
+sgitnp() {
   cd ~/Development/Projects
+  sgitn
+  if [[ $? -ne 0 ]]; then
+    cd - >/dev/null
+    return 1
+  fi
+}
+
+sgitnd() {
+  cd ~/Documentation
   sgitn
   if [[ $? -ne 0 ]]; then
     cd - >/dev/null
