@@ -134,7 +134,7 @@ ssh_tmux_restore_start() {
 }
 
 # DNS
-dns_refersh() {
+dns_refresh() {
   sudo killall -HUP mDNSResponder 
 }
 
