@@ -2,6 +2,7 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
+	pager = less -+X
 [push]
 	default = simple
 [merge]
