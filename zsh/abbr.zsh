@@ -9,6 +9,9 @@ abbreviations=(
 'v' "$VIM_COMMAND"
 'vd' "$VIM_COMMAND -d"
 
+# open
+'or' 'open -R'
+
 # rg
 'a' "$ACK_COMMAND"
 'af' "$ACK_COMMAND -F"
