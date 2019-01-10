@@ -16,9 +16,6 @@ elif [[ "$(uname)" = "Linux" ]]; then
   fi
 fi
 
-# export PATH=$HOME/.rubies/ruby-2.4.0/bin:$PATH
-# export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
-
 # nvm
 # Official installation is really slow:
 # export NVM_DIR="$HOME/.nvm"
@@ -30,4 +27,5 @@ nvm() {
     nvm "$@"
   fi
 }
-export PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH
+
+# export PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH

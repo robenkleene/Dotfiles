@@ -20,7 +20,7 @@ ACK_COMMAND=rg
 export CLICOLOR=1
 
 # `pip3` can install executables in `~/.local/bin`
-export PATH=~/.local/bin:~/.fzf/bin:/usr/local/bin:~/.bin:$PATH
+export PATH=~/.fzf/bin:/usr/local/bin:~/.bin:$PATH
 
 export EDITOR=$VIM_COMMAND
 # export EDITOR="$EMACS_COMMAND"
