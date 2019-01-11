@@ -6,3 +6,6 @@ Metrics/CyclomaticComplexity:
  Max: 8
 Metrics/AbcSize:
   Max: 30
+AllCops:
+  Exclude:
+    - 'bundle/**/*'
