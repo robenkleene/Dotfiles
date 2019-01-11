@@ -174,15 +174,17 @@ function! s:MyHighlights() abort
   highlight ALEStyleWarningSign ctermfg=yellow
   highlight ALEStyleErrorSign ctermfg=yellow
 
+  " tir_black bug fixes
+  " For some reason "blue" display weird in console vim when it overlaps with the
+  " highlighted cursorline (test this by running `RunColorTest` and then going
+  " to the `blue` or `darkblue` lines. Changes these colors to another fixes
+  " this)
+  highlight rubyControl ctermfg=lightblue
+  highlight rubyInterpolationDelimiter ctermfg=lightblue
+  " highlight rubyControl ctermfg=110
+  " highlight rubyInterpolationDelimiter ctermfg=110
 endfunction
 
 " Colorscheme
 set background=dark
 colorscheme tir_black
-" tir_black bug fixes
-" For some reason "blue" display weird in console vim when it overlaps with the
-" highlighted cursorline (test this by running `RunColorTest` and then going
-" to the `blue` or `darkblue` lines. Changes these colors to another fixes
-" this)
-highlight rubyControl ctermfg=lightblue
-highlight rubyInterpolationDelimiter ctermfg=lightblue
