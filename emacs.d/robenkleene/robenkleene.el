@@ -45,7 +45,8 @@
 (require 'robenkleene-wgrep)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-fill-column-indicator)
-(require 'robenkleene-undo-tree)
+;; Disable for now, this breaks default undo via `C-g C-_'
+;; (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
