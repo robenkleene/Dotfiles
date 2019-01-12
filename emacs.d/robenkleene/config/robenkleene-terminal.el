@@ -5,6 +5,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
 
+(xterm-mouse-mode 1)
+
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
 

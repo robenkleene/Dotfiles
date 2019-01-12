@@ -15,7 +15,10 @@
 (require 'robenkleene-alias)
 (require 'robenkleene-dired)
 (if window-system
-    (require 'robenkleene-gui)
+    (progn
+      (require 'robenkleene-gui)
+      (require 'robenkleene-mac)
+      )
   (require 'robenkleene-terminal))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
