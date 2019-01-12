@@ -8,6 +8,8 @@
 
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
+
 
 ;; Global
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
