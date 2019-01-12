@@ -15,10 +15,15 @@
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'make-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-z") 'undo-tree-undo)
-(global-set-key (kbd "s-Z") 'undo-tree-redo)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-Z") 'undo-tree-redo)
 
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-q") 'save-buffers-kill-terminal)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-c") 'kill-ring-save)
+
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-up>") 'beginning-of-buffer)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-down>") 'end-of-buffer)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-left>") 'move-beginning-of-line)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-right>") 'move-end-of-line)
 
 ;; Mode
 (define-minor-mode robenkleene/mac-bindings-minor-mode
