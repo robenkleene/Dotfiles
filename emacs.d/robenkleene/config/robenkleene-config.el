@@ -43,8 +43,9 @@
   )
 
 ;; Overwrite region when pasting
-(delete-selection-mode 1)
+;; (delete-selection-mode 1)
 
+;; Allow `C-i' and `<TAB>' to be bound separately
 (setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
 
 ;; Automatically save and restore session
@@ -54,15 +55,14 @@
 ;; (setq desktop-dirname "~/.emacs.d/")
 
 ;; Automatically revert unmodified buffers
-;; This way causing the cursor to jump randomly after saving so it has
-;; been temporarily disabled.
+;; This way causing the cursor to jump randomly after saving
 (global-auto-revert-mode t)
 (setq auto-revert-verbose nil)
 
 ;; Highlight Cursor Line
 ;; (global-hl-line-mode)
 
-;; Re-enable Command
+;; Allow `narrow-to-region'
 (put 'narrow-to-region 'disabled nil)
 
 ;; Automatically select help windows
@@ -88,13 +88,15 @@
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
 
+;; Editing & Navigation
+(setq shift-select-mode nil)
+
 ;; Use shift arrow keys to switch windows
 ;; Note for this to work by default on OS X, these new keys need to be defined
 ;; in the Terminal profile:
 ;; `shift cursor up: \033[1;2A'
 ;; `shift cursor down: \033[1;2B'
-;; (windmove-default-keybindings)
-
+(windmove-default-keybindings)
 
 ;; Winner Mode
 ;; Allows going to previous and next window configurations with `C-c left/right'
