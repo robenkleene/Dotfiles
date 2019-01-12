@@ -31,6 +31,7 @@
 
 ;; Leader map
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
+(define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)

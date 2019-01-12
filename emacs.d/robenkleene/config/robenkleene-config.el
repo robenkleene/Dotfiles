@@ -2,9 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Use bash for external scripts
+;; Use `bash' for external scripts
 (setq shell-file-name "sh")
 (setq shell-command-switch "-c")
+
+;; Use `zsh'
+(setq explicit-shell-file-name "/usr/local/bin/zsh")
 
 ;; Save temporary files to tmp directory
 ;; The below command makes Emacs save backups to a temporary directory, which is
