@@ -59,7 +59,7 @@
 	  (split-string
 	   (shell-command-to-string
 	    (concat "fd "
-		    " --type f --hidden --exclude .git --exclude .DS_Store"
+		    " --type f --hidden --exclude .git --exclude .DS_Store . "
 		    dir
 		    )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -69,7 +69,7 @@
 	      (puthash key path key-to-path)
 	      (push key ido-list))
 	    project-files)
-      (find-file (gethash (ido-completing-read "project-files: " ido-list) key-to-path)))
+      (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
     )
   )
 
