@@ -40,13 +40,14 @@
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
-(require 'robenkleene-helm)
+;; (require 'robenkleene-helm)
+(require 'robenkleene-ivy)
 ;; (require 'robenkleene-buffer-move)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-fill-column-indicator)
-;; Disable for now, this breaks default undo via `C-g C-_'
-;; (require 'robenkleene-undo-tree)
+;; This breaks default undo via `C-g C-_'
+(require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
