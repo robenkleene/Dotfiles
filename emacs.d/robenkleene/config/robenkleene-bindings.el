@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Automatically switch focus to new splits
+(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)
@@ -33,6 +36,7 @@
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
+
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
 (define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
