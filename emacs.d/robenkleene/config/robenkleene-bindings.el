@@ -14,8 +14,10 @@
 (defvar robenkleene/leader-map (make-keymap))
 
 ;; General
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-e") 'robenkleene/ido-recursive-find-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-e") 'robenkleene/ido-recursive-find-file)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-c") 'robenkleene/ido-recursive-find-dir)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-z") 'robenkleene/ido-z)
 
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
@@ -38,6 +40,7 @@
 ;; Leader map
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
+(define-key robenkleene/leader-map (kbd "i") 'imenu)
 (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)

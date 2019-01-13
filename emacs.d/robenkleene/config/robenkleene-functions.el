@@ -45,10 +45,34 @@
     )
   )
 
-
+(defun robenkleene/ido-recursive-find-dir (dir)
+  "Find file recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      default-directory)))
+  (let ((current-prefix-arg nil) project-files key-to-path)
+    (setq project-files
+	  (split-string
+	   (shell-command-to-string
+	    (concat "fd "
+		    " --type d --hidden --exclude .git . "
+		    dir
+		    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+	      (setq key (replace-regexp-in-string dir "" path))
+	      (puthash key path key-to-path)
+	      (push key ido-list))
+	    project-files)
+      (find-file (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)))
+    )
+  )
 
 (defun robenkleene/ido-recursive-find-file (dir)
-  "Find file recursively in DIR."
+  "Find directory recursively in DIR."
   (interactive
    (list
     (if current-prefix-arg
@@ -70,6 +94,26 @@
 	      (push key ido-list))
 	    project-files)
       (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
+    )
+  )
+
+(defun robenkleene/ido-z ()
+  "Find recent directory."
+  (interactive)
+  (let ((current-prefix-arg nil) project-files key-to-path)
+    (setq project-files
+	  (split-string
+	   (shell-command-to-string
+	    (concat "fasd -Rdl"
+		    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+	      (setq key (replace-regexp-in-string (getenv "HOME") "" path))
+	      (puthash key path key-to-path)
+	      (push key ido-list))
+	    project-files)
+      (find-file (gethash (ido-completing-read "Find z: " ido-list) key-to-path)))
     )
   )
 

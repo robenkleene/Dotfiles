@@ -12,7 +12,7 @@
   :bind
   ;; For some reason this isn't working
   ;; ("M-e". robenkleene/find-file-directory)
-  ("M-c". projectile-find-dir)
+  ;; ("M-c". projectile-find-dir)
   :config
   (defun robenkleene/projectile-go-to-root ()
     "Go to the root of the project in a `dired' buffer."
