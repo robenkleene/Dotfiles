@@ -45,6 +45,34 @@
     )
   )
 
+
+
+(defun robenkleene/ido-recursive-find-file (dir)
+  "Find file recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      default-directory)))
+  (let ((current-prefix-arg nil) project-files key-to-path)
+    (setq project-files
+	  (split-string
+	   (shell-command-to-string
+	    (concat "fd "
+		    " --type f --hidden --exclude .git --exclude .DS_Store"
+		    dir
+		    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+	      (setq key (replace-regexp-in-string dir "" path))
+	      (puthash key path key-to-path)
+	      (push key ido-list))
+	    project-files)
+      (find-file (gethash (ido-completing-read "project-files: " ido-list) key-to-path)))
+    )
+  )
+
 (defun robenkleene/open-in-xcode ()
   "Open file in Xcode."
   (interactive)

@@ -10,7 +10,8 @@
   :init
   (defalias 'gcd 'robenkleene/projectile-go-to-root)
   :bind
-  ("M-e". robenkleene/find-file-directory)
+  ;; For some reason this isn't working
+  ;; ("M-e". robenkleene/find-file-directory)
   ("M-c". projectile-find-dir)
   :config
   (defun robenkleene/projectile-go-to-root ()

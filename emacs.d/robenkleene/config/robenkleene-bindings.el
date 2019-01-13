@@ -13,9 +13,12 @@
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
 (defvar robenkleene/leader-map (make-keymap))
 
+;; General
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-e") 'robenkleene/ido-recursive-find-file)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
+
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
 
 ;; Global
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'other-frame)
