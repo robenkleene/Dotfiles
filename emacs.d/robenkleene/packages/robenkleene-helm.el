@@ -58,7 +58,9 @@
 
   ;; (helm-mode)
   :config
-  (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
+  ;; (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
+  ;; `color-always' is causing an error in Helm, but with it missing my colors don't work
+  (setq helm-grep-ag-command "rg --colors 'match:fg:white' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
   (setq helm-grep-file-path-style 'relative)
   (setq helm-truncate-lines t)
@@ -70,6 +72,7 @@
       (grep-mode)
       )
     )
+
   )
 
 (provide 'robenkleene-helm)
