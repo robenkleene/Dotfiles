@@ -9,6 +9,9 @@
   (:map smartparens-strict-mode-map
         ("<M-backspace>" . sp-backward-kill-word)
         )
+  (:map smartparens-mode-map
+        ("<M-backspace>" . sp-backward-kill-word)
+        )
   :init
   (add-hook 'minibuffer-setup-hook (lambda ()
                                      (if (eq this-command 'eval-expression)
