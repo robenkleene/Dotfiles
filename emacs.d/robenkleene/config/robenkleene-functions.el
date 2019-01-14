@@ -45,6 +45,16 @@
     )
   )
 
+(defun robenkleene/go-to-project-root ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
 (defun robenkleene/ido-key-for-path (path strip)
   "Return a good key for ido based on PATH, remove STRIP."
   (let* (
