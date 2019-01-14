@@ -94,6 +94,9 @@
 ;; Overwrite region when pasting
 (delete-selection-mode 1)
 
+;; Don't split words when wrapping
+(setq-default word-wrap t)
+
 ;; Use shift arrow keys to switch windows
 ;; Note for this to work by default on OS X, these new keys need to be defined
 ;; in the Terminal profile:
