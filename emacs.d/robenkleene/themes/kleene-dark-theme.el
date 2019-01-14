@@ -173,7 +173,8 @@
    `(region ((t (:inherit rk-match))))
    `(highlight ((t (:inherit rk-match))))
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
-
+   `(fringe ((t (:inherit rk-comment))))
+   
    ;;;; Text
    `(link ((t (:inherit rk-link))))
    `(success ((t (:inherit rk-success))))
