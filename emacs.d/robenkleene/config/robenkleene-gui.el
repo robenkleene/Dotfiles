@@ -7,7 +7,7 @@
 ;; (set-face-background 'default "#232323")
 ;; `#1A1A1A' exactly matches the bars that the `railwaycat/homebrew-emacsmacport' adds
 (set-face-background 'default "#1A1A1A")
-
+(desktop-save-mode 1)
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 (provide 'robenkleene-gui)
