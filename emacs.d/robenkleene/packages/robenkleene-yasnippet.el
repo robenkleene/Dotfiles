@@ -8,13 +8,13 @@
   :commands yas-minor-mode
   :init
   (add-hook 'prog-mode-hook #'yas-minor-mode)
-  (add-hook 'markdown-mode-hook '(lambda()
-                                   ;; This solution breaks `tab' in `markdown-mode'
-                                   ;; Disable `markdown-mode-map' tab key
-                                   ;; (define-key markdown-mode-map (kbd "C-i") nil)
-                                   ;; (yas-minor-mode)
-                                   )
-            )
+  ;; (add-hook 'markdown-mode-hook '(lambda()
+  ;;                                  ;; This solution breaks `tab' in `markdown-mode'
+  ;;                                  ;; Disable `markdown-mode-map' tab key
+  ;;                                  ;; (define-key markdown-mode-map (kbd "C-i") nil)
+  ;;                                  ;; (yas-minor-mode)
+  ;;                                  )
+  ;;           )
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-reload-all)

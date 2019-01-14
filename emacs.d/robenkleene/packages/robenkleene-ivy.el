@@ -4,7 +4,6 @@
 
 (use-package ivy
   :ensure t
-  :config
   :bind
   (:map robenkleene/leader-map
         ("l" . swiper)
