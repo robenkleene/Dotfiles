@@ -111,6 +111,9 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;; Automatically select help windows
+(setq help-window-select t)
+
 ;; Ido Mode
 (setq ido-enable-flex-matching t)
 (ido-mode 1)
