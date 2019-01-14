@@ -103,13 +103,17 @@
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
 	  (split-string
-	   (shell-command-to-string
-	    (concat "fasd -Rdl"
-		    )) "\n"))
+	   (shell-command-to-string "fasd -Rdl")
+           "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-	      (setq key (replace-regexp-in-string (getenv "HOME") "" path))
+	      (setq short-path (replace-regexp-in-string (getenv "HOME") "" path))
+              (setq best-path (if short-path short-path path))
+              (setq key (file-name-nondirectory best-path))
+              (setq container-dir (file-name-directory best-path))
+              (if container-dir
+                  (setq key (concat key " " container-dir)))
 	      (puthash key path key-to-path)
 	      (push key ido-list))
 	    project-files)
