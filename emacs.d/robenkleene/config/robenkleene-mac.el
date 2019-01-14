@@ -6,13 +6,25 @@
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+;; This fixes issues with `railwaycat' Emacs and spaces
+;; Emacs frames now stay in their space and lose focus less often
+;; (But they still lose focus sometimes)
+(menu-bar-mode 1)
+
 (defvar robenkleene/mac-bindings-minor-mode-map (make-keymap))
 
+;; More Ergonomic Emacs
 (define-key key-translation-map (kbd "s-h") (kbd "C-h"))
 (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-o") 'other-window)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-j") 'dired-jump)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-f") 'find-file-at-point)
+
+
+;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-v") 'yank)
+;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-v") 'yank)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-a") 'mark-whole-buffer)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-x") 'kill-region)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
