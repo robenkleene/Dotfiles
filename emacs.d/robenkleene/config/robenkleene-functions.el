@@ -112,10 +112,13 @@
                      (short-path (replace-regexp-in-string (getenv "HOME") "" path))
                      (best-path (if short-path short-path path))
                      (container-dir (file-name-directory best-path))
+                     (dirname (file-name-nondirectory best-path))
+                     (key (if container-dir
+                              (concat dirname " " container-dir)
+                            dirname
+                            )
+                          )
                      )
-                (setq key (file-name-nondirectory best-path))
-                (if container-dir
-                    (setq key (concat key " " container-dir)))
 	        (puthash key path key-to-path)
 	        (push key ido-list)
                 )
