@@ -89,11 +89,28 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
+
 	      (setq key (replace-regexp-in-string dir "" path))
 	      (puthash key path key-to-path)
 	      (push key ido-list))
+
 	    project-files)
       (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
+    )
+  )
+
+(defun robenkleene/ido-key-for-path (path)
+  "Return a good key for ido based on PATH."
+  (let* (
+         (short-path (replace-regexp-in-string (getenv "HOME") "" path))
+         (best-path (if short-path short-path path))
+         (container-dir (file-name-directory best-path))
+         (dirname (file-name-nondirectory best-path))
+         )
+    (if container-dir
+        (concat dirname " " container-dir)
+      dirname
+      )
     )
   )
 
@@ -108,23 +125,14 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let* (
-                     (short-path (replace-regexp-in-string (getenv "HOME") "" path))
-                     (best-path (if short-path short-path path))
-                     (container-dir (file-name-directory best-path))
-                     (dirname (file-name-nondirectory best-path))
-                     (key (if container-dir
-                              (concat dirname " " container-dir)
-                            dirname
-                            )
-                          )
-                     )
-	        (puthash key path key-to-path)
+              (let ((key (robenkleene/ido-key-for-path path)))
+                (puthash key path key-to-path)
 	        (push key ido-list)
                 )
               )
-	    project-files)
-      (find-file (gethash (ido-completing-read "Find z: " ido-list) key-to-path)))
+            project-files)
+      (find-file (gethash (ido-completing-read "Find z: " ido-list) key-to-path))
+      )
     )
   )
 
