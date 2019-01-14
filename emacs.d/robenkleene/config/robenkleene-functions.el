@@ -45,6 +45,21 @@
     )
   )
 
+(defun robenkleene/ido-key-for-path (path strip)
+  "Return a good key for ido based on PATH, remove STRIP."
+  (let* (
+         (short-path (replace-regexp-in-string strip "" path))
+         (best-path (if short-path short-path path))
+         (container-dir (file-name-directory best-path))
+         (dirname (file-name-nondirectory best-path))
+         )
+    (if container-dir
+        (concat dirname " " container-dir)
+      dirname
+      )
+    )
+  )
+
 (defun robenkleene/ido-recursive-find-dir (dir)
   "Find file recursively in DIR."
   (interactive
@@ -104,21 +119,6 @@
               )
 	    project-files)
       (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
-    )
-  )
-
-(defun robenkleene/ido-key-for-path (path strip)
-  "Return a good key for ido based on PATH, remove STRIP."
-  (let* (
-         (short-path (replace-regexp-in-string strip "" path))
-         (best-path (if short-path short-path path))
-         (container-dir (file-name-directory best-path))
-         (dirname (file-name-nondirectory best-path))
-         )
-    (if container-dir
-        (concat dirname " " container-dir)
-      dirname
-      )
     )
   )
 
