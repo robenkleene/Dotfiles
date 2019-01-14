@@ -51,7 +51,10 @@
    (list
     (if current-prefix-arg
         (read-directory-name "Base directory: ")
-      default-directory)))
+      (expand-file-name default-directory)
+      )
+    )
+   )
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
 	  (split-string
@@ -63,9 +66,11 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-	      (setq key (replace-regexp-in-string dir "" path))
-	      (puthash key path key-to-path)
-	      (push key ido-list))
+              (let ((key (robenkleene/ido-key-for-path path dir)))
+                (puthash key path key-to-path)
+	        (push key ido-list)
+                )
+              )
 	    project-files)
       (find-file (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)))
     )
@@ -77,7 +82,10 @@
    (list
     (if current-prefix-arg
         (read-directory-name "Base directory: ")
-      default-directory)))
+      (expand-file-name default-directory)
+      )
+    )
+   )
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
 	  (split-string
@@ -89,20 +97,20 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-
-	      (setq key (replace-regexp-in-string dir "" path))
-	      (puthash key path key-to-path)
-	      (push key ido-list))
-
+              (let ((key (robenkleene/ido-key-for-path path dir)))
+                (puthash key path key-to-path)
+	        (push key ido-list)
+                )
+              )
 	    project-files)
       (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
     )
   )
 
-(defun robenkleene/ido-key-for-path (path)
-  "Return a good key for ido based on PATH."
+(defun robenkleene/ido-key-for-path (path strip)
+  "Return a good key for ido based on PATH, remove STRIP."
   (let* (
-         (short-path (replace-regexp-in-string (getenv "HOME") "" path))
+         (short-path (replace-regexp-in-string strip "" path))
          (best-path (if short-path short-path path))
          (container-dir (file-name-directory best-path))
          (dirname (file-name-nondirectory best-path))
@@ -125,7 +133,7 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path)))
+              (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
                 (puthash key path key-to-path)
 	        (push key ido-list)
                 )
