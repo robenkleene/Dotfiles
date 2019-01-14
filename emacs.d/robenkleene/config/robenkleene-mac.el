@@ -8,10 +8,13 @@
 
 (defvar robenkleene/mac-bindings-minor-mode-map (make-keymap))
 
+(define-key key-translation-map (kbd "s-h") (kbd "C-h"))
+(define-key key-translation-map (kbd "s-c") (kbd "C-c"))
+(define-key key-translation-map (kbd "s-x") (kbd "C-x"))
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-v") 'yank)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-a") 'mark-whole-buffer)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-x") 'kill-region)
+;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-x") 'kill-region)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'make-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-z") 'undo-tree-undo)
@@ -19,7 +22,7 @@
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-q") 'save-buffers-kill-terminal)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-c") 'kill-ring-save)
+;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-c") 'kill-ring-save)
 
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-up>") 'beginning-of-buffer)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-down>") 'end-of-buffer)
