@@ -174,6 +174,7 @@
    `(highlight ((t (:inherit rk-match))))
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment))))
+   `(line-number ((t (:inherit rk-comment))))
    
    ;;;; Text
    `(link ((t (:inherit rk-link))))

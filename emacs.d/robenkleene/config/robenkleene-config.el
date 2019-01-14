@@ -75,6 +75,7 @@
 ;; (global-linum-mode t)
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")
+(global-display-line-numbers-mode 1)
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
@@ -90,6 +91,9 @@
 
 ;; Editing & Navigation
 ;; (setq shift-select-mode nil)
+
+;; Don't require two spaces for sentences.
+(setq sentence-end-double-space nil)
 
 ;; Overwrite region when pasting
 (delete-selection-mode 1)
@@ -122,12 +126,39 @@
 (ido-mode 1)
 (ido-everywhere t)
 
+;; Remove window chrome
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+(when (fboundp 'horizontal-scroll-bar-mode)
+  (horizontal-scroll-bar-mode -1))
+
+;; Save cursor place
+(require 'saveplace)
+(setq-default save-place t)
+
 ;; ffap
 ;; Replace `C-x C-f' with `find-file-at-point' version
 (ffap-bindings)
 
 ;; Only require `y' or `n'
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Highlight Matching parens
+(show-paren-mode 1)
+
+;; Better Defaults
+(setq-default indent-tabs-mode nil)
+(setq save-interprogram-paste-before-kill t
+      apropos-do-all t
+      mouse-yank-at-point t
+      require-final-newline t
+      load-prefer-newer t
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
 
 ;; Don't try to expand whole lines
 ;; Without this, extra parentheses can be inserted when performing

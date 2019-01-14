@@ -22,10 +22,6 @@
   (require 'robenkleene-terminal))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
-;; Packages
-;; `git-gutter' moves the frame in an annoying way
-;; `show-trailing-whitespace' isn't compatible with `fill-column-indicator'
-(require 'robenkleene-better-defaults)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
