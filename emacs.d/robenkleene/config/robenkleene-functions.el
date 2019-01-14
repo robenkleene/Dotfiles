@@ -323,6 +323,28 @@
     )
   )
 
+(defun robenkleene/forward-block (&optional n)
+  "Move to next text block."
+  (interactive "p")
+  (let ((n (if (null n) 1 n)))
+    (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
+    (previous-line)
+    )
+  )
+
+(defun robenkleene/backward-block (&optional n)
+  "Move cursor to previous text block."
+  (interactive "p")
+  (let ((n (if (null n) 1 n))
+        ($i 1))
+    (while (<= $i n)
+      (if (re-search-backward "\n[\t\n ]*\n+" nil "NOERROR")
+          (progn (skip-chars-backward "\n\t "))
+        (progn (goto-char (point-min))
+               (setq $i n)))
+      (setq $i (1+ $i))))
+  (next-line)
+  )
 
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
