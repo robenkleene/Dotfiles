@@ -18,6 +18,11 @@
   (shell-command "open -a Terminal .")
   )
 
+(defun robenkleene/empty-frame ()
+  "Open a new frame with a buffer named Untitled."
+  (interactive)
+  (switch-to-buffer-other-frame (generate-new-buffer "Untitled")))
+
 (defun robenkleene/reveal-in-finder ()
   "Open a new Finder window at the current path."
   (interactive)
