@@ -7,6 +7,8 @@
 
 (xterm-mouse-mode 1)
 
+(menu-bar-mode -1)
+
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
 

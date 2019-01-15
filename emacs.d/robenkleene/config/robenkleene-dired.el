@@ -23,5 +23,17 @@
 (defvar dired-use-ls-dired)
 (setq dired-use-ls-dired nil)
 
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
+            ))
+
+(defun robenkleene/dired-toggle-hidden ()
+  "Show/hide hidden files except . and .."
+  (interactive)
+  (setq dired-omit-mode (not dired-omit-mode))
+  (revert-buffer)
+  )
+
 (provide 'robenkleene-dired)
 ;;; robenkleene-dired.el ends here

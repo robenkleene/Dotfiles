@@ -169,7 +169,7 @@
 
 ;; Spelling
 (setq ispell-program-name "aspell")
-(setq ispell-dictionary "british")
+(setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 

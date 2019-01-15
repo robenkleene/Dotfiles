@@ -14,6 +14,7 @@
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-j") 'dired-jump)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-f") 'find-file-at-point)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-b") 'find-file-at-point)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-e") 'eval-last-sexp)
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)

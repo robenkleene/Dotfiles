@@ -306,7 +306,7 @@
    `(magit-diff-removed-highlight ((t (:inherit magit-diff-removed :background nil))))
    `(magit-diff-base-highlight ((t (:inherit rk-text :background nil))))
    `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background nil))))
-   `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))   
+   `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
    `(magit-section-highlight ((t (:background nil))))
 
    ;;;;; Region
@@ -324,9 +324,12 @@
    `(markdown-url-face ((t (:inherit rk-comment))))
    `(markdown-pre-face ((t (:inherit rk-text2))))
    `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
+   `(markdown-blockquote-face ((t (:inherit rk-text))))
+   `(markdown-gfm-checkbox-face ((t (:inherit rk-comment))))
+   
    
    ;;;; show-paren
-   `(show-paren-match ((t (:inherit rk-link))))
+   `(show-paren-match ((t (:underline t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
    ;;;; wgrep
