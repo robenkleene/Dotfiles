@@ -61,6 +61,7 @@
     ("gray3" . "#6c6c6c")
     ("gray4" . "#808080")
     ("gray5" . "#b2b2b2")
+    ("gray6" . "#eeeeee")
 
     ;; Named
     ("comment" . gray3)
@@ -141,7 +142,7 @@
    `(rk-success ((t (:foreground ,success))))
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
    `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
-   `(rk-text ((t (:foreground ,white))))
+   `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning))))
    `(rk-whitespace ((t (:background ,highlight-line-bg))))
@@ -173,7 +174,7 @@
    `(region ((t (:inherit rk-match))))
    `(highlight ((t (:inherit rk-match))))
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
-   `(fringe ((t (:inherit rk-comment))))
+   `(fringe ((t (:inherit rk-comment :background ,white))))
    `(line-number ((t (:inherit rk-comment))))
    
    ;;;; Text

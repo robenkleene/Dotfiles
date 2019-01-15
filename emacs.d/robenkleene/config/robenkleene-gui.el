@@ -6,7 +6,11 @@
 (load-theme 'kleene-dark t)
 ;; (set-face-background 'default "#232323")
 ;; `#1A1A1A' exactly matches the bars that the `railwaycat/homebrew-emacsmacport' adds
-(set-face-background 'default "#1A1A1A")
+;; (set-face-background 'default "#1A1A1A")
+(set-face-background 'default "#212121")
+(set-face-background 'fringe "#212121")
+
+(set-face-attribute 'default nil :font "Fira Mono-12")
 
 ;; Save window state
 (desktop-save-mode 1)
