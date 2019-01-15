@@ -24,6 +24,7 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e") 'robenkleene/ido-recursive-find-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-c") 'robenkleene/ido-recursive-find-dir)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-z") 'robenkleene/ido-z)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-r") 'robenkleene/reveal-in-finder)
 
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c") robenkleene/leader-map)

@@ -10,6 +10,8 @@
 
 ;; Save window state
 (desktop-save-mode 1)
+(setq desktop-restore-frames t)
+
 
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 

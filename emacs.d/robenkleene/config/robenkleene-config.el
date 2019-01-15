@@ -48,12 +48,6 @@
 ;; Allow `C-i' and `<TAB>' to be bound separately
 (setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
 
-;; Automatically save and restore session
-;; This isn't restoring window frames, and it prompts a lot when
-;; saving and restoring.
-;; (desktop-save-mode 1)
-;; (setq desktop-dirname "~/.emacs.d/")
-
 ;; Automatically revert unmodified buffers
 ;; This way causing the cursor to jump randomly after saving
 (global-auto-revert-mode t)
@@ -100,6 +94,13 @@
 
 ;; Don't split words when wrapping
 (setq-default word-wrap t)
+
+;; Disable the bell completely, it's really annoying when the bell
+;; sounds when doing a deterministic cancel (like `C-g')
+(setq ring-bell-function 'ignore)
+
+;; Wrap comments to 80 characters with `M-q'
+(setq-default fill-column 80)
 
 ;; Use shift arrow keys to switch windows
 ;; Note for this to work by default on OS X, these new keys need to be defined
