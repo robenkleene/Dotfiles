@@ -26,6 +26,7 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
+            (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
             ))
 
 (defun robenkleene/dired-toggle-hidden ()

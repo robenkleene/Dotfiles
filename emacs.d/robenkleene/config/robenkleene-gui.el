@@ -16,6 +16,10 @@
 (desktop-save-mode 1)
 (setq desktop-restore-frames t)
 
+;; Slow-down mouse scrolling
+(setq mouse-wheel-scroll-amount '(0.01))
+;; Don't change scrolling speed when scrolling fast
+;; (setq mouse-wheel-progressive-speed nil)
 
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
