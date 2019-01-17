@@ -62,5 +62,5 @@ for kcap   seq        mode     widget (
     __selection_${mode} $widget \$@
   }"
   zle -N $function_name
-  bindkey ${terminfo[$kcap]-$seq} $function_name
+  bindkey -M emacs ${terminfo[$kcap]-$seq} $function_name
 }
