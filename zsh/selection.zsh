@@ -1,7 +1,7 @@
 __selection_delete() {
   if ((REGION_ACTIVE)) then
      zle kill-region
-  else 
+  else
     local widget_name=$1
     shift
     zle $widget_name -- $@
@@ -9,7 +9,6 @@ __selection_delete() {
 }
 
 __selection_deselect() {
-  # zle set-mark-command -1
   ((REGION_ACTIVE = 0))
   local widget_name=$1
   shift
@@ -23,43 +22,76 @@ __selection_select() {
   zle $widget_name -- $@
 }
 
-for seq        mode     widget (
-    $'\e[1;2D' select   backward-char
-    $'\e[1;2C' select   forward-char
-    $'\e[1;2A' select   up-line-or-history
-    $'\e[1;2B' select   down-line-or-history
+for seq mode widget (
+# All are ordered left, right, up, down
+# Arrow
+$'\EOD' deselect backward-char
+$'\EOC' deselect forward-char
+$'\EOA' deselect up-line-or-history
+$'\EOB' deselect down-line-or-history
 
-    $'\E[1;2F' select   end-of-line
-    $'\E[4;2~' select   end-of-line
+# Arrow & Meta
+# Meta left/right are mapped to `C-b`/`C-f`
 
-    $'\E[1;2H' select   beginning-of-line
-    $'\E[1;2~' select   beginning-of-line
+# Arrow & Shift
+$'\E[1;2D' select backward-char
+$'\E[1;2C' select forward-char
+$'\E[1;2A' select up-line-or-history
+$'\E[1;2B' select down-line-or-history
 
-    $'\EOD'    deselect backward-char
-    $'\EOC'    deselect forward-char
+# Arrow, Meta & Shift
+$'\E[1;6D' select backward-word
+$'\E[1;6C' select forward-word
 
-    $'\EOF'    deselect end-of-line
-    $'\E4~'    deselect end-of-line
+# Movement
 
-    $'\EOH'    deselect beginning-of-line
-    $'\E1~'    deselect beginning-of-line
+# Character
+$'^B' deselect backward-char
+$'^F' deselect forward-char
 
-    $'\E[1;6D' select   backward-word
-    $'\E[1;6C' select   forward-word
-    $'\E[1;6F' select   end-of-line
-    $'\E[1;6H' select   beginning-of-line
+# Character Select
+$'\EB' select backward-char
+$'\EF' select forward-char
 
-    $'\E[1;5D' deselect backward-word
-    $'\E[1;5C' deselect forward-word
+# Word
+$'\Eb' deselect backward-word
+$'\Ef' deselect forward-word
 
-     $'\E[3~'  delete delete-char
-     $'^?'     delete backward-delete-char
+# Word Select
+$'\EB' select backward-word
+$'\EB' select forward-word
+
+# Line
+$'^E' deselect end-of-line
+$'^A' deselect beginning-of-line
+
+# Line Select
+# These aren't setup in my terminal
+
+# Delete
+
+# Character
+$'^D' delete delete-char-or-list
+$'^H' delete backward-delete-char
+
+# Word
+# M-d
+# M-delete
+# C-w
+$'\Ed' delete kill-word
+$'^H' delete backward-delete-char
+
+# Line
+# C-u
+# C-k
   ) {
 
   local function_name=__override_${mode}_${widget}
+
   eval "${function_name}() {
     __selection_${mode} $widget \$@
   }"
+
   zle -N $function_name
   bindkey -M emacs ${terminfo[$kcap]-$seq} $function_name
 }
