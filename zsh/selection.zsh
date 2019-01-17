@@ -1,3 +1,16 @@
+_selection_yank() {
+  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
+    # This is a hack that uses the `_system_yank()` clipboard integration to
+    # override the just yanked region with what's on the system clipboard
+    # before pasting. I.e., really this should use `_system_kill_region`, but
+    # if it did it would copy the current region and then just repaste it again
+    zle kill-region
+  fi
+  local widget_name=$1
+  shift
+  zle $widget_name -- $@
+}
+
 _selection_delete() {
   if [[ "$REGION_ACTIVE" -eq 1 ]]; then
      zle _system_kill_region
@@ -53,8 +66,7 @@ $'^B' 'deselect' 'backward-char'
 $'^F' 'deselect' 'forward-char'
 
 # Character Select
-$'\EB' 'select' 'backward-char'
-$'\EF' 'select' 'forward-char'
+# These aren't setup in my terminal
 
 # Word
 $'\Eb' 'deselect' 'backward-word'
@@ -62,7 +74,7 @@ $'\Ef' 'deselect' 'forward-word'
 
 # Word Select
 $'\EB' 'select' 'backward-word'
-$'\EB' 'select' 'forward-word'
+$'\EF' 'select' 'forward-word'
 
 # Line
 $'^E' 'deselect' 'end-of-line'
@@ -85,6 +97,9 @@ $'\E^?' 'delete' '_bash_backward_kill_word'
 # Line
 $'^U' 'delete' 'backward-kill-line'
 $'^K' 'delete' 'kill-line'
+
+# Paste
+$'^Y' 'yank' '_system_yank'
 ) {
 
   local function_name=_override_${mode}_${widget}
