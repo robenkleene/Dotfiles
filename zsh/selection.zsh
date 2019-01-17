@@ -9,7 +9,6 @@ __selection_delete() {
 }
 
 __selection_deselect() {
-  zle set-mark-command
   ((REGION_ACTIVE = 0))
   local widget_name=$1
   shift
@@ -87,7 +86,6 @@ $'^K' 'delete' 'kill-line'
 ) {
 
   local function_name=__override_${mode}_${widget}
-
   eval "${function_name}() {
     __selection_${mode} $widget \$@
   }"
