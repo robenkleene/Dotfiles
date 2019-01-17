@@ -1,4 +1,4 @@
-__override_delete() {
+__selection_delete() {
   if ((REGION_ACTIVE)) then
      zle kill-region
   else 
@@ -8,14 +8,14 @@ __override_delete() {
   fi
 }
 
-__override_deselect() {
+__selection_deselect() {
   ((REGION_ACTIVE = 0))
   local widget_name=$1
   shift
   zle $widget_name -- $@
 }
 
-__override_select() {
+__selection_select() {
   ((REGION_ACTIVE)) || zle set-mark-command
   local widget_name=$1
   shift
@@ -55,9 +55,9 @@ for key     kcap   seq        mode   widget (
     bs      x       $'^?'     delete backward-delete-char
 
   ) {
-  eval "__overide_$key() {
-    __override_$mode $widget \$@
+  eval "__override_$key() {
+    __selection_$mode $widget \$@
   }"
-  zle -N __overide_$key
-  bindkey ${terminfo[$kcap]-$seq} __overide_$key
+  zle -N __override_$key
+  bindkey ${terminfo[$kcap]-$seq} __override_$key
 }
