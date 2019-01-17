@@ -9,6 +9,7 @@ __selection_delete() {
 }
 
 __selection_deselect() {
+  # zle set-mark-command -1
   ((REGION_ACTIVE = 0))
   local widget_name=$1
   shift
@@ -55,9 +56,11 @@ for key     kcap   seq        mode   widget (
     bs      x       $'^?'     delete backward-delete-char
 
   ) {
-  eval "__override_$key() {
-    __selection_$mode $widget \$@
+
+  local function_name=__override_${mode}_${widget}
+  eval "${function_name}() {
+    __selection_${mode} $widget \$@
   }"
-  zle -N __override_$key
-  bindkey ${terminfo[$kcap]-$seq} __override_$key
+  zle -N $function_name
+  bindkey ${terminfo[$kcap]-$seq} $function_name
 }
