@@ -23,38 +23,37 @@ __selection_select() {
   zle $widget_name -- $@
 }
 
-for kcap   seq        mode     widget (
-    kLFT   $'\e[1;2D' select   backward-char
-    kRIT   $'\e[1;2C' select   forward-char
-    kri    $'\e[1;2A' select   up-line-or-history
-    kind   $'\e[1;2B' select   down-line-or-history
+for seq        mode     widget (
+    $'\e[1;2D' select   backward-char
+    $'\e[1;2C' select   forward-char
+    $'\e[1;2A' select   up-line-or-history
+    $'\e[1;2B' select   down-line-or-history
 
-    kEND   $'\E[1;2F' select   end-of-line
-    x      $'\E[4;2~' select   end-of-line
+    $'\E[1;2F' select   end-of-line
+    $'\E[4;2~' select   end-of-line
 
-    kHOM   $'\E[1;2H' select   beginning-of-line
-    x      $'\E[1;2~' select   beginning-of-line
+    $'\E[1;2H' select   beginning-of-line
+    $'\E[1;2~' select   beginning-of-line
 
-    kcub1  $'\EOD'    deselect backward-char
-    kcuf1  $'\EOC'    deselect forward-char
+    $'\EOD'    deselect backward-char
+    $'\EOC'    deselect forward-char
 
-    kend   $'\EOF'    deselect end-of-line
-    x      $'\E4~'    deselect end-of-line
+    $'\EOF'    deselect end-of-line
+    $'\E4~'    deselect end-of-line
 
-    khome  $'\EOH'    deselect beginning-of-line
-    x      $'\E1~'    deselect beginning-of-line
+    $'\EOH'    deselect beginning-of-line
+    $'\E1~'    deselect beginning-of-line
 
-    x      $'\E[1;6D' select   backward-word
-    x      $'\E[1;6C' select   forward-word
-    x      $'\E[1;6F' select   end-of-line
-    x      $'\E[1;6H' select   beginning-of-line
+    $'\E[1;6D' select   backward-word
+    $'\E[1;6C' select   forward-word
+    $'\E[1;6F' select   end-of-line
+    $'\E[1;6H' select   beginning-of-line
 
-    x      $'\E[1;5D' deselect backward-word
-    x      $'\E[1;5C' deselect forward-word
+    $'\E[1;5D' deselect backward-word
+    $'\E[1;5C' deselect forward-word
 
-    kdch1   $'\E[3~'  delete delete-char
-    x       $'^?'     delete backward-delete-char
-
+     $'\E[3~'  delete delete-char
+     $'^?'     delete backward-delete-char
   ) {
 
   local function_name=__override_${mode}_${widget}
