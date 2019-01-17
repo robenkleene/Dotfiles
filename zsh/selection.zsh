@@ -1,6 +1,6 @@
 __selection_delete() {
-  if ((REGION_ACTIVE)) then
-     zle kill-region
+  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
+     zle _system_kill_region
   else
     local widget_name=$1
     shift
@@ -9,14 +9,16 @@ __selection_delete() {
 }
 
 __selection_deselect() {
-  ((REGION_ACTIVE = 0))
+  REGION_ACTIVE=0
   local widget_name=$1
   shift
   zle $widget_name -- $@
 }
 
 __selection_select() {
-  ((REGION_ACTIVE)) || zle set-mark-command
+  if [[ "$REGION_ACTIVE" -eq 0 ]]; then
+    zle set-mark-command
+  fi
   local widget_name=$1
   shift
   zle $widget_name -- $@
@@ -26,10 +28,10 @@ for seq mode widget (
 
 # All are ordered left, right, up, down
 # Arrow
-$'\EOD' 'deselect' 'backward-char'
-$'\EOC' 'deselect' 'forward-char'
-$'\EOA' 'deselect' 'up-line-or-history'
-$'\EOB' 'deselect' 'down-line-or-history'
+$'\E[D' 'deselect' 'backward-char'
+$'\E[C' 'deselect' 'forward-char'
+$'\E[A' 'deselect' 'up-line-or-history'
+$'\E[B' 'deselect' 'down-line-or-history'
 
 # Arrow & Meta
 # Meta left/right are mapped to `C-b`/`C-f`
