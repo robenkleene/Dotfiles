@@ -23,6 +23,7 @@ __selection_select() {
 }
 
 for seq mode widget (
+
 # All are ordered left, right, up, down
 # Arrow
 $'\EOD' deselect backward-char
@@ -75,16 +76,14 @@ $'^D' delete delete-char-or-list
 $'^H' delete backward-delete-char
 
 # Word
-# M-d
-# M-delete
-# C-w
 $'\Ed' delete kill-word
-$'^H' delete backward-delete-char
+$'^W' delete _system_kill_region_or_backward_kill_word
+$'\E^?' delete _bash_backward_kill_word
 
 # Line
-# C-u
-# C-k
-  ) {
+$'^U' delete backward-kill-line
+$'^K' delete kill-line
+) {
 
   local function_name=__override_${mode}_${widget}
 
