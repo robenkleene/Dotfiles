@@ -14,6 +14,7 @@ source ~/.zsh/settings.zsh
 source ~/.zsh/bindings.zsh
 # Functions before aliases so functions don't use aliases
 source ~/.zsh/functions.zsh
+# source ~/.zsh/selection.zsh
 # `fzf` functions before aliases so functions don't use aliases and after 
 # bindings, otherwise `fzf` bindings don't work
 source ~/.zsh/fzf.zsh
