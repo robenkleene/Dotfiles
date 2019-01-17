@@ -1,4 +1,4 @@
-__selection_delete() {
+_selection_delete() {
   if [[ "$REGION_ACTIVE" -eq 1 ]]; then
      zle _system_kill_region
   else
@@ -8,14 +8,14 @@ __selection_delete() {
   fi
 }
 
-__selection_deselect() {
+_selection_deselect() {
   REGION_ACTIVE=0
   local widget_name=$1
   shift
   zle $widget_name -- $@
 }
 
-__selection_select() {
+_selection_select() {
   if [[ "$REGION_ACTIVE" -eq 0 ]]; then
     zle set-mark-command
   fi
@@ -87,9 +87,9 @@ $'^U' 'delete' 'backward-kill-line'
 $'^K' 'delete' 'kill-line'
 ) {
 
-  local function_name=__override_${mode}_${widget}
+  local function_name=_override_${mode}_${widget}
   eval "${function_name}() {
-    __selection_${mode} $widget \$@
+    _selection_${mode} $widget \$@
   }"
 
   zle -N $function_name
