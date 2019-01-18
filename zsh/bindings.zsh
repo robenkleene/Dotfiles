@@ -6,17 +6,6 @@ setopt ignore_eof
 # Use `emacs` bindings
 bindkey -e
 
-# Use bash-style `backwards-kill-word`
-autoload -Uz select-word-style
-_bash_backward_kill_word() {
-  select-word-style bash
-  WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
-  select-word-style normal
-}
-zle -N _bash_backward_kill_word
-bindkey "^[^?" _bash_backward_kill_word
-bindkey "^[^H" _bash_backward_kill_word
-
 # Edit in editor
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -37,6 +26,20 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Clipboard
+_system_kill_word() {
+  zle kill-word
+  echo "$CUTBUFFER" | safecopy
+}
+zle -N _system_kill_word
+autoload -Uz select-word-style
+_system_bash_backwards_kill_word() {
+  # Use bash-style `backwards-kill-word`
+  select-word-style bash
+  WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
+  select-word-style normal
+  echo "$CUTBUFFER" | safecopy
+}
+zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
   echo "$CUTBUFFER" | safecopy
@@ -68,8 +71,12 @@ _system_yank() {
   zle yank
 }
 zle -N _system_yank
+bindkey -e '\ed' _system_kill_word
+bindkey -e '\eD' _system_kill_word
 bindkey -e '\ew' _system_copy_region_as_kill
 # bindkey -e '^W' _system_backward_kill_word
 # bindkey -e '^W' _system_kill_region
 bindkey -e '^W' _system_kill_region_or_backward_kill_word
 bindkey -e '^Y' _system_yank
+bindkey -e "^[^?" _system_bash_backwards_kill_word
+bindkey -e "^[^H" _system_bash_backwards_kill_word
