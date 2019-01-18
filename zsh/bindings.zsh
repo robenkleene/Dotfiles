@@ -61,6 +61,9 @@ _system_backward_kill_word() {
 }
 zle -N _system_backward_kill_word
 _system_yank() {
+  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
+    zle kill-region
+  fi
   CUTBUFFER=$(safepaste)
   zle yank
 }
