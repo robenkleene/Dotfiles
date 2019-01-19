@@ -18,7 +18,5 @@
     '(push 'company-robe company-backends))
   )
 
-
 (provide 'robenkleene-ruby)
 ;;; robenkleene-ruby.el ends here
-
