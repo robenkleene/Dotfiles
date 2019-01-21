@@ -42,7 +42,7 @@ _system_bash_backwards_kill_word() {
 zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
-  REGION_ACTIVE=0
+  zle set-mark-command -n -1
   echo "$CUTBUFFER" | safecopy
 }
 zle -N _system_copy_region_as_kill
@@ -54,6 +54,14 @@ _system_kill_region_or_backward_kill_word() {
   fi
 }
 zle -N _system_kill_region_or_backward_kill_word
+_system_kill_region_or_backward_delete_char() {
+  if [[ "$REGION_ACTIVE" -eq 0 ]]; then
+    zle backward-delete-char
+  else
+    zle _system_kill_region
+  fi
+}
+zle -N _system_kill_region_or_backward_delete_char
 _system_kill_region() {
   zle kill-region
   echo "$CUTBUFFER" | safecopy
@@ -77,6 +85,8 @@ bindkey -e '\eD' _system_kill_word
 bindkey -e '\ew' _system_copy_region_as_kill
 # bindkey -e '^W' _system_backward_kill_word
 # bindkey -e '^W' _system_kill_region
+bindkey -e '^H' _system_kill_region_or_backward_delete_char
+bindkey -e '^?' _system_kill_region_or_backward_delete_char
 bindkey -e '^W' _system_kill_region_or_backward_kill_word
 bindkey -e '^Y' _system_yank
 bindkey -e "^[^?" _system_bash_backwards_kill_word
