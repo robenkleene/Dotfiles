@@ -42,6 +42,7 @@ _system_bash_backwards_kill_word() {
 zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
+  REGION_ACTIVE=0
   echo "$CUTBUFFER" | safecopy
 }
 zle -N _system_copy_region_as_kill
