@@ -128,8 +128,7 @@
    `(rk-diff-add ((t (:inherit rk-success))))
    `(rk-diff-change ((t (:inherit rk-change))))
    `(rk-diff-remove ((t (:inherit rk-error))))
-   `(rk-error ((t (:foreground ,error))))
-   `(rk-error ((t (:foreground ,error))))
+   `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
    `(rk-header ((t (:foreground ,white :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
@@ -148,7 +147,7 @@
    `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
    `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray4))))
-   `(rk-warning ((t (:foreground ,warning))))
+   `(rk-warning ((t (:foreground ,warning :underline t))))
    `(rk-whitespace ((t (:background ,highlight-line-bg))))
    
    ;;;; Syntax
