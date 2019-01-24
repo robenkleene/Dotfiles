@@ -11,6 +11,8 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+(global-set-key (kbd "C-M-%") 'query-replace)
 
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)

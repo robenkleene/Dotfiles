@@ -41,6 +41,7 @@
 ;; This breaks default undo via `C-g C-_'
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
+(require 'robenkleene-anzu)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
