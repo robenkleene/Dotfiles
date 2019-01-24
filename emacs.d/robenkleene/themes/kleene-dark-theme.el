@@ -127,7 +127,7 @@
    `(rk-comment ((t (:foreground ,comment))))
    `(rk-diff-add ((t (:inherit rk-success))))
    `(rk-diff-change ((t (:inherit rk-change))))
-   `(rk-diff-remove ((t (:inherit rk-error))))
+   `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
    `(rk-header ((t (:foreground ,white :bold t))))
