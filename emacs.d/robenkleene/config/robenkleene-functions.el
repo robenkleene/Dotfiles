@@ -257,7 +257,8 @@
 (defun robenkleene/documentation ()
   "Open Emacs documentation directory."
   (interactive)
-  (robenkleene/ido-recursive-find-file robenkleene/documentation-directory-path)
+  (view-file-other-window
+   (robenkleene/ido-recursive-get-file robenkleene/documentation-directory-path))
   )
 
 (defvar robenkleene/org-directory-path "~/Development/Scratch/Org")

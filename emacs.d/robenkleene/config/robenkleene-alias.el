@@ -8,6 +8,7 @@
 (defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
 (defalias 'osh 'robenkleene/other-window-shell)
+(defalias 'doc 'robenkleene/documentation)
 
 (provide 'robenkleene-alias)
 ;;; robenkleene-alias.el ends here
