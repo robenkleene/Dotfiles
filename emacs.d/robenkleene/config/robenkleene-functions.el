@@ -75,48 +75,9 @@
     )
   )
 
-(defun robenkleene/ido-recursive-find-dir (dir)
-  "Find file recursively in DIR."
-  (interactive
-   (list
-    (if current-prefix-arg
-        (read-directory-name "Base directory: ")
-      (expand-file-name default-directory)
-      )
-    )
-   )
-  (let ((current-prefix-arg nil) project-files key-to-path)
-    (setq project-files
-	  (split-string
-	   (shell-command-to-string
-	    (concat "fd "
-		    " --type d --hidden --exclude .git . "
-		    dir
-		    )) "\n"))
-    (setq key-to-path (make-hash-table :test 'equal))
-    (let (ido-list)
-      (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path dir)))
-                (puthash key path key-to-path)
-	        (push key ido-list)
-                )
-              )
-	    project-files)
-      (find-file (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)))
-    )
-  )
-
-(defun robenkleene/ido-recursive-find-file (dir)
+(defun robenkleene/ido-recursive-get-file (dir)
   "Find directory recursively in DIR."
-  (interactive
-   (list
-    (if current-prefix-arg
-        (read-directory-name "Base directory: ")
-      (expand-file-name default-directory)
-      )
-    )
-   )
-  (let ((current-prefix-arg nil) project-files key-to-path)
+  (let (project-files key-to-path)
     (setq project-files
 	  (split-string
 	   (shell-command-to-string
@@ -133,7 +94,92 @@
                 )
               )
 	    project-files)
-      (find-file (gethash (ido-completing-read "Find file: " ido-list) key-to-path)))
+      (gethash (ido-completing-read "Find file: " ido-list) key-to-path)
+      )
+    )
+  )
+
+(defun robenkleene/ido-recursive-get-dir (dir)
+  "Find file recursively in DIR."
+  (let (project-files key-to-path)
+    (setq project-files
+	  (split-string
+	   (shell-command-to-string
+	    (concat "fd "
+		    " --type d --hidden --exclude .git . "
+		    dir
+		    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+              (let ((key (robenkleene/ido-key-for-path path dir)))
+                (puthash key path key-to-path)
+	        (push key ido-list)
+                )
+              )
+	    project-files)
+      (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
+      )
+    )
+  )
+
+(defun robenkleene/ido-recursive-find-dir (dir)
+  "Find file recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (find-file (robenkleene/ido-recursive-get-dir dir))
+    )
+  )
+
+(defun robenkleene/ido-recursive-find-dir-other-window (dir)
+  "Find file recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (find-file-other-window (robenkleene/ido-recursive-get-dir dir))
+    )
+  )
+
+(defun robenkleene/ido-recursive-find-file (dir)
+  "Find directory recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (find-file (robenkleene/ido-recursive-get-file dir))
+    )
+  )
+
+(defun robenkleene/ido-recursive-find-file-other-window (dir)
+  "Find directory recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (find-file-other-window (robenkleene/ido-recursive-get-file dir))
     )
   )
 
@@ -204,11 +250,14 @@
     )
   )
 
-(defvar robenkleene/documentation-directory-path "~/Documentation/development-references/Emacs/")
-(defun robenkleene/emacs-documentation ()
+(defvar
+  robenkleene/documentation-directory-path
+  "~/Documentation/")
+
+(defun robenkleene/documentation ()
   "Open Emacs documentation directory."
   (interactive)
-  (find-file-other-window robenkleene/documentation-directory-path)
+  (robenkleene/ido-recursive-find-file robenkleene/documentation-directory-path)
   )
 
 (defvar robenkleene/org-directory-path "~/Development/Scratch/Org")
