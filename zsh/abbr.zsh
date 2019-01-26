@@ -133,6 +133,8 @@ abbreviations=(
 typeset -Ag everywhere_abbreviations
 everywhere_abbreviations=(
 '>n' '>/dev/null 2>&1'
+# rg
+'-gcocoa' '-g "*.{h,m,swift}"'
 # Carthage
 '-nub' '--no-use-binaries'
 )
