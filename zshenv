@@ -26,7 +26,7 @@ export EDITOR=$VIM_COMMAND
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
 # sequences
-export PAGER="less --ignore-case --RAW-CONTROL-CHARS"
+export PAGER="less --ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 
 # Atom
 export ATOM_PATH=$HOME/Applications/
