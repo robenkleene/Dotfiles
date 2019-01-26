@@ -34,6 +34,17 @@
     )
   )
 
+(defun robenkleene/slug-project (title)
+  "Create a new slug project with TITLE."
+  (interactive (list (read-from-minibuffer "Title: ")))
+  (find-file
+   (shell-command-to-string (concat "~/.bin/slug_project "
+                                    (shell-quote-argument title)
+                                    " | tr -d '\n'")
+                            )
+   )
+  )
+
 (defun robenkleene/external-editor ()
   "Open a region or buffer in external editor."
   (interactive)

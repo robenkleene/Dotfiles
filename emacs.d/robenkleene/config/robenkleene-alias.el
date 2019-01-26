@@ -9,6 +9,7 @@
 (defalias 'rg 'robenkleene/rg)
 (defalias 'osh 'robenkleene/other-window-shell)
 (defalias 'doc 'robenkleene/documentation)
+(defalias 'slug 'robenkleene/slug-project)
 
 (provide 'robenkleene-alias)
 ;;; robenkleene-alias.el ends here
