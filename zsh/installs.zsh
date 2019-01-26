@@ -13,7 +13,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 elif [[ "$(uname)" = "Linux" ]]; then
   if [[ -f /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh ]]; then
     source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh
-    source /usr/local/share/chruby/auto.sh
+    source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/auto.sh
     chruby ruby-2.5.3
   fi
 fi
