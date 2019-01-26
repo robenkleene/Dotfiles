@@ -31,5 +31,5 @@ title="$1"
 contents="# $title"
 slug=$(~/.bin/slug "$1")
 readme_path=$(make_file "README.md" "$slug" "$contents")
-make_file "README.md" "$slug/archive" "$contents Archive"
+make_file "README.md" "$slug/archive" "$contents Archive" >/dev/null
 echo "$readme_path"
