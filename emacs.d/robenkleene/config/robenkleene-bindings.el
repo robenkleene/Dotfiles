@@ -51,6 +51,7 @@
 (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
 (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
+(define-key robenkleene/leader-map (kbd "M-e") 'robenkleene/ido-recursive-insert-file)
 
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)

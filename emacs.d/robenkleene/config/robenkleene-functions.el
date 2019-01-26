@@ -164,6 +164,21 @@
     )
   )
 
+(defun robenkleene/ido-recursive-insert-file (dir)
+  "Find directory recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)))
+    )
+  )
+
 (defun robenkleene/ido-recursive-find-file (dir)
   "Find directory recursively in DIR."
   (interactive
