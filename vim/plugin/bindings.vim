@@ -132,7 +132,7 @@ command! -range LinkSourceControlOpenLines <line1>,<line2>call bindings#LinkSour
 " Yank quoted portion
 command! -range LinkSourceControlMarkdownYankQuotedLines <line1>,<line2>call bindings#LinkSourceControlMarkdownYankQuotedLines()
 " vnoremap <localleader>gq :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
-" vnoremap <localleader>q :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
+vnoremap <localleader>q :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
 
 " Copy Path
 nnoremap <leader>yp :let @*=expand("%:p")<CR>
