@@ -204,7 +204,7 @@ git_push_branch_origin() {
 compdef _robenkleene_git_branch_names git_branch_delete
 git_branch_delete() {
   git push origin --delete $1 && \
-    git branch --delete $1
+    git branch -D $1
 }
 git_tag_delete() {
   git push --delete origin $1 && \
