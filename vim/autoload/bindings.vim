@@ -68,10 +68,6 @@ function! bindings#GrepVisual() abort
   let @s = escape(@s, '#%')
   execute "Rg --fixed-strings '" . @s . "'"
   let @s = temp
-  " if len(getqflist())
-  "   copen
-  "   wincmd p
-  " endif
 endfunction
 
 " Toggle `quickfix`

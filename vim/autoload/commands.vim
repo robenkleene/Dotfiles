@@ -47,6 +47,10 @@ function! commands#Rg(terms) abort
     redraw!
   endif
   let &grepprg = l:original_grepprg
+  if len(getqflist())
+    copen
+    wincmd p
+  endif
 endfunction
 
 " `rg` & `tmux`
