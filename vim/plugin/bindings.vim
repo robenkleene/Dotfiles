@@ -176,8 +176,10 @@ vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " noremap <S-Right> <C-w>l
 
 " Open and Close Tab
-nnoremap <C-w>t :tabnew<CR>
-vnoremap <C-w>t :<C-u>tabnew<CR>
+nnoremap <C-w>t :split<CR><C-w>T
+" nnoremap <C-w>t :tabnew<CR>
+" vnoremap <C-w>t :<C-u>tabnew<CR>
+vnoremap <C-w>t :split<CR><C-w>T
 nnoremap <C-w>q :tabclose<CR>
 vnoremap <C-w>q :<C-u>tabclose<CR>
 " Switching Tabs
