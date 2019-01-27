@@ -54,3 +54,6 @@ export LS_COLORS
 # Vagrant
 export VAGRANT_HOME=~/Documents/VMs/Vagrant/vagrant.d
 export VAGRANT_VMWARE_CLONE_DIRECTORY=~/Documents/VMs/Vagrant/
+
+# Tidy
+export HTML_TIDY="~/.tidy"
