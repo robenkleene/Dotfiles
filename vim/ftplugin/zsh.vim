@@ -1,4 +1,4 @@
 setlocal foldmethod=indent
 
-" setlocal formatprg=shfmt\ -i\ 2
+setlocal equalprg=shfmt\ -i\ 2\ -ci
 let b:FormatPrg = "shfmt -i 2 -ci"

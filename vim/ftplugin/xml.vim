@@ -1,2 +1,2 @@
-" setlocal formatprg=xmllint\ --format\ -
+setlocal equalprg=xmllint\ --format\ -
 let b:FormatPrg = "xmllint --format -"
