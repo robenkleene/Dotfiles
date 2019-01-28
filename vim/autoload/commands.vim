@@ -38,7 +38,7 @@ endfunction
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
-  execute "silent grep " . a:terms
+  execute "silent grep " . escape(a:terms, '%#')
   " Without `silent`, the terminal output is seen and enter is required to go
   " to the first match
   " execute "grep " . a:terms
