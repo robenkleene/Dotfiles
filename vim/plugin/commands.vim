@@ -36,10 +36,15 @@ command! YankFileName :let @" = expand("%")|:let @+ = @"|:echo @"
 command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
 command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
 
+" Splits
+command! New :call commands#New('new')
+command! Vnew :call commands#New('vnew')
+command! Tabnew :call commands#New('tabnew')
+
 " Lint
 command! Lint :call commands#Lint()
 
-" Lint
+" Format
 command! Format :call commands#Format()
 
 " Execute

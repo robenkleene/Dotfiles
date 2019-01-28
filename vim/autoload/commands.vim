@@ -61,6 +61,23 @@ function! commands#Atm(terms) abort
   let &grepprg = l:original_grepprg
 endfunction
 
+" Splits
+function! commands#New(type) abort
+  " Note it seems like it's impossible to make a function take an optional
+  " range, because at the `command`-level whether there is a visual selection
+  " or not gets lost
+  " A nice feature if that were possible would be to have the split start with
+  " the visual selection, here's some code for that:
+  " let s:selection = join(getline("'<", "'>"), "\n")
+  let current_filetype = &filetype
+  execute a:type
+  let &filetype = current_filetype
+  " let reg_save = @@
+  " let @@ = s:selection
+  " normal ""p
+  " let @@ = reg_save
+endfunction
+
 " Lint
 function! commands#Lint() abort
   if !exists('b:LintMakePrg')
@@ -93,6 +110,7 @@ function! commands#Format() abort
   call cursor(l:cursor_pos[1], l:cursor_pos[2])
 endfunction
 
+" Execute
 function! commands#Execute() abort
   if !exists('b:ExecutePrg')
     echo "No b:ExecutePrg defined"
