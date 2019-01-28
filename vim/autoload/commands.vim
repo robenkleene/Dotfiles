@@ -93,6 +93,22 @@ function! commands#Format() abort
   call cursor(l:cursor_pos[1], l:cursor_pos[2])
 endfunction
 
+function! commands#Execute() abort
+  if !exists('b:ExecutePrg')
+    echo "No b:ExecutePrg defined"
+    return
+  endif
+  execute "%w !" . b:ExecutePrg
+endfunction
+
+function! commands#ExecuteVisual() abort
+  if !exists('b:ExecutePrg')
+    echo "No b:ExecutePrg defined"
+    return
+  endif
+  execute "'<,'>w !" . b:ExecutePrg
+endfunction
+
 " Run
 function! commands#Run() abort
   if !exists('b:RunMakePrg')

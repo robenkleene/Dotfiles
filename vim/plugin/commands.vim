@@ -42,6 +42,10 @@ command! Lint :call commands#Lint()
 " Lint
 command! Format :call commands#Format()
 
+" Execute
+command! Execute :call commands#Execute()
+command! -range ExecuteVisual :call commands#ExecuteVisual()
+
 " Run
 command! Run :call commands#Run()
 

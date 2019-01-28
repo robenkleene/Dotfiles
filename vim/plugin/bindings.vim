@@ -218,4 +218,8 @@ nnoremap <localleader>l :Lint<CR>
 nnoremap <localleader>f :Format<CR>
 
 " Run
+nnoremap <localleader>e :Execute<CR>
+vnoremap <localleader>e :ExecuteVisual<CR>
+
+" Run
 nnoremap <localleader>r :Run<CR>
