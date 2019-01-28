@@ -2,3 +2,4 @@ indent: auto
 indent-spaces: 2
 tidy-mark: no
 wrap: 80
+drop-empty-elements: no
