@@ -41,6 +41,11 @@ command! New :call commands#New('new')
 command! Vnew :call commands#New('vnew')
 command! Tabnew :call commands#New('tabnew')
 
+" Scratch
+command! Snew :call commands#Snew('new')
+command! Svnew :call commands#Snew('vnew')
+command! Stabnew :call commands#Snew('tabnew')
+
 " Lint
 command! Lint :call commands#Lint()
 

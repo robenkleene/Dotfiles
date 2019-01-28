@@ -69,14 +69,24 @@ function! commands#New(type) abort
   " A nice feature if that were possible would be to have the split start with
   " the visual selection, here's some code for that:
   " let s:selection = join(getline("'<", "'>"), "\n")
-  let current_filetype = &filetype
+  let l:current_filetype = &filetype
   execute a:type
-  let &filetype = current_filetype
+  let &filetype = l:current_filetype
   " let reg_save = @@
   " let @@ = s:selection
   " normal ""p
   " let @@ = reg_save
 endfunction
+function! commands#Snew(type) abort
+  let l:extension = expand('%:e')
+  if !strlen(l:extension)
+    let l:extension = '*'
+  end
+  let l:current_filetype = &filetype
+  let l:path = "~/Development/Scratch/Untitlted/" . l:current_filetype . "." . l:extension
+  execute a:type l:path
+endfunction
+
 
 " Lint
 function! commands#Lint() abort
