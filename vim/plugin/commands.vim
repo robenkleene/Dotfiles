@@ -24,7 +24,9 @@ command! Wcd :lcd $PWD
 command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 
 " Go to `git` root
-command! Gcd :call commands#Gcd()
+command! Gcd :call commands#Gcd('cd')
+command! Glcd :call commands#Gcd('lcd')
+
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)
 

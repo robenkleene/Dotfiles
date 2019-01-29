@@ -25,10 +25,10 @@ function! commands#QuitSaveSession() abort
 endfunction
 
 " Go to `git` root
-function! commands#Gcd() abort
+function! commands#Gcd(command) abort
   let l:git_root = system('git rev-parse --show-toplevel | tr -d "\n"')
   if v:shell_error == 0
-    execute 'lcd '.fnameescape(l:git_root)
+    execute a:type.' '.fnameescape(l:git_root)
   else
     echo "Not in a git respository."
   endif
