@@ -25,10 +25,22 @@ function! commands#QuitSaveSession() abort
 endfunction
 
 " Go to `git` root
+function! commands#Wcd(command) abort
+  let l:working_directory = getcwd(-1)
+  if v:shell_error == 0
+    execute a:command.' '.fnameescape(l:working_directory)
+    echo l:working_directory
+  else
+    echo "Error changing directory ".a.command .' '.fnameescape(l:working_directory)
+  endif
+endfunction
+
+" Go to `git` root
 function! commands#Gcd(command) abort
   let l:git_root = system('git rev-parse --show-toplevel | tr -d "\n"')
   if v:shell_error == 0
-    execute a:type.' '.fnameescape(l:git_root)
+    execute a:command.' '.fnameescape(l:git_root)
+    echo l:git_root
   else
     echo "Not in a git respository."
   endif

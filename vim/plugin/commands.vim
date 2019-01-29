@@ -23,6 +23,10 @@ command! Wcd :lcd $PWD
 " Delete whitespace at the end of the file
 command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 
+" Go to working directory
+command! Wcd :call commands#Wcd('cd')
+command! Wlcd :call commands#Wcd('lcd')
+
 " Go to `git` root
 command! Gcd :call commands#Gcd('cd')
 command! Glcd :call commands#Gcd('lcd')

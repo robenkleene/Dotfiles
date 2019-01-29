@@ -35,6 +35,8 @@ let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 " nnoremap gcd :Gcd<CR>
+nnoremap wcd :Wcd<CR>
+nnoremap wcl :Wlcd<CR>
 nnoremap gcd :Gcd<CR>
 nnoremap gcl :Glcd<CR>
 nnoremap cd :cd %:p:h<CR>
