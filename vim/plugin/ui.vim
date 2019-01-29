@@ -17,7 +17,7 @@ set laststatus=2
 " Space Buffer
 set statusline=\ 
 " Working Directory
-set statusline+=%.20{fnamemodify(getcwd(),':~')}\ 
+set statusline+=%.20{fnamemodify(getcwd(win_getid()),':~')}\ 
 " Truncate Marker
 set statusline+=%<
 " Filename
