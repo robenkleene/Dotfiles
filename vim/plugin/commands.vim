@@ -42,6 +42,7 @@ command! Vnew :call commands#New('vnew')
 command! Tabnew :call commands#New('tabnew')
 
 " Scratch
+command! -bang Sedit :call commands#Snew(<bang>0, 'edit')
 command! -bang Snew :call commands#Snew(<bang>0, 'new')
 command! -bang Svnew :call commands#Snew(<bang>0, 'vnew')
 command! -bang Stabnew :call commands#Snew(<bang>0, 'tabnew')
