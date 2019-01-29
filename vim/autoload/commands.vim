@@ -78,7 +78,7 @@ function! commands#New(type) abort
   " let @@ = reg_save
 endfunction
 function! commands#Snew(bang, type) abort
-  let l:scratch_path = "~/Development/Scratch/Untitlted/" 
+  let l:scratch_path = "~/Development/Scratch/Untitled/" 
   if (a:bang == 1)
     if exists(':Dirvish')
       execute 'Dirvish' l:scratch_path
