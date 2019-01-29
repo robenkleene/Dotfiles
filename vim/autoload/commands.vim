@@ -77,13 +77,22 @@ function! commands#New(type) abort
   " normal ""p
   " let @@ = reg_save
 endfunction
-function! commands#Snew(type) abort
+function! commands#Snew(bang, type) abort
+  let l:scratch_path = "~/Development/Scratch/Untitlted/" 
+  if (a:bang == 1)
+    if exists(':Dirvish')
+      execute 'Dirvish' l:scratch_path
+    else
+      execute 'Explore' l:scratch_path
+    endif
+    return
+  endif
   let l:extension = expand('%:e')
   if !strlen(l:extension)
     let l:extension = '*'
   end
   let l:current_filetype = &filetype
-  let l:path = "~/Development/Scratch/Untitlted/" . l:current_filetype . "." . l:extension
+  let l:path = l:scratch_path . l:current_filetype . "." . l:extension
   execute a:type l:path
 endfunction
 
