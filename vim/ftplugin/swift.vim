@@ -2,8 +2,7 @@ setlocal suffixesadd=.swift,.h,.m
 nnoremap <localleader>X :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
 " Format
-" This breaks wrapping comments
-setlocal equalprg=swiftformat\ --commas\ inline
+" setlocal equalprg=swiftformat\ --commas\ inline
 let b:FormatPrg = "swiftformat --commas inline"
 " When piping through `swiftlint`, it leaves an emptly blank line at the end of
 " the file
