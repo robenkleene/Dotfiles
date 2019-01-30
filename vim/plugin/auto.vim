@@ -118,3 +118,9 @@ augroup write_chdir
         \ | call writefile([expand('%:h:p')], s:chdirectory_file)
         \ | endif
 augroup END
+
+" Close the quickfix if it's the last window
+augroup close_quickfix
+  autocmd!
+  autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+augroup END
