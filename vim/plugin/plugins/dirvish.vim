@@ -23,3 +23,5 @@ endfunction
 
 " Default to hidden
 call <SID>ToggleHidden()
+
+let g:dirvish_relative_paths = 1
