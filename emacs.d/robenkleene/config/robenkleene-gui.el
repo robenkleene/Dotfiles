@@ -10,7 +10,7 @@
 (set-face-background 'default "#212121")
 (set-face-background 'fringe "#212121")
 
-(set-face-attribute 'default nil :font "Fira Mono-12")
+(set-face-attribute 'default nil :font "Fira Code-12:Retina")
 
 ;; Save window state
 (desktop-save-mode 1)
