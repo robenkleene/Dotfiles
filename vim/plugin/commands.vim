@@ -33,6 +33,7 @@ command! Glcd :call commands#Gcd('lcd')
 
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)
+command! -nargs=* Rgg :call commands#Rgg(<q-args>)
 
 " `rg` & `tmux`
 command! -nargs=* Atm :call commands#Atm(<q-args>)

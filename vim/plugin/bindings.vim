@@ -92,6 +92,7 @@ nnoremap <leader>m :make<CR>
 " Rg
 " Space delibrately left after
 nnoremap <leader>a :Rg 
+nnoremap <leader>ga :Rgg 
 
 " Quit & Save Session
 nnoremap <A-q> :QuitSaveSession<CR> 
@@ -159,6 +160,9 @@ xnoremap # :<C-u>call bindings#VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " Vimscript)
 nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
+" From `git` root
+nnoremap <leader>g* :Rgg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
+vnoremap <leader>g* :<C-u>Gcd<CR>:call bindings#GrepVisual()<CR>
 
 " Panes
 " The problem with `tmux` Vim navigator is that if Vim is opened form a

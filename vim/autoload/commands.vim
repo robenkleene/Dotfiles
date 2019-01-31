@@ -66,6 +66,12 @@ function! commands#Rg(terms) abort
   endif
 endfunction
 
+" From `git` root
+function! commands#Rgg(terms) abort
+  call commands#Gcd('cd')
+  execute "Rg " . a:terms
+endfunction
+
 " `rg` & `tmux`
 function! commands#Atm(terms) abort
   let l:original_grepprg = &grepprg
