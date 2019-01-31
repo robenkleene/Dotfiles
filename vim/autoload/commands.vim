@@ -61,6 +61,8 @@ function! commands#Rg(terms) abort
   let &grepprg = l:original_grepprg
   if len(getqflist())
     copen
+    " `copen` gives the quickfix focus, `wincmd p` switches back to the
+    " previous window
     wincmd p
   endif
 endfunction
