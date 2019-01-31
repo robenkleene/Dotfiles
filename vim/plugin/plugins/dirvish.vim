@@ -21,7 +21,10 @@ function! s:ToggleHidden() abort
     " `g:dirvish_relative_paths`
     " let g:dirvish_mode = ':silent keeppatterns g@\v/\.[^\/]+/?$@d _'
     " This simpler pattern works with `g:dirvish_relative_paths`
-    let g:dirvish_mode = ':silent keeppatterns g/^\..\+/d'
+    " let g:dirvish_mode = ':silent keeppatterns g/^\..\+/d'
+    " `@` is alternative regex syntax
+    " `d` is for delete
+    let g:dirvish_mode = ':silent keeppatterns g@\v(/|^)\.[^\/]+@d _'
   endif
 endfunction
 
