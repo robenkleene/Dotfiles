@@ -17,7 +17,11 @@ function! s:ToggleHidden() abort
   if exists("g:dirvish_mode")
     unlet g:dirvish_mode
   else
-    let g:dirvish_mode = ':silent keeppatterns g@\v/\.[^\/]+/?$@d _'
+    " This is the official way, but this doesn't work with
+    " `g:dirvish_relative_paths`
+    " let g:dirvish_mode = ':silent keeppatterns g@\v/\.[^\/]+/?$@d _'
+    " This simpler pattern works with `g:dirvish_relative_paths`
+    let g:dirvish_mode = ':silent keeppatterns g/^\..\+/d'
   endif
 endfunction
 
