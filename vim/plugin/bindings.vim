@@ -231,3 +231,6 @@ vnoremap <localleader>e :ExecuteVisual<CR>
 
 " Run
 nnoremap <localleader>r :Run<CR>
+
+" Emacs Paste
+cnoremap <C-y> <C-r>*
