@@ -8,7 +8,7 @@ if [[ ! -d "$path" ]]; then
   exit 1
 fi
 
-module_path=git/modules/$path
+module_path=".git/modules/$path"
 if [[ ! -d "$module_path" ]]; then
   echo "Not a directory $module_path" >&2
   exit 1
