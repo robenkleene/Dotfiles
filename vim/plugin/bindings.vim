@@ -234,4 +234,4 @@ nnoremap <localleader>r :Run<CR>
 
 " Emacs Paste
 cnoremap <C-y> <C-r>*
-inoremap <C-y> <C-r>*
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
