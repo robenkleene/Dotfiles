@@ -13,7 +13,7 @@ snippet echoe "Echo error" b
 echo "${0:Error}" >&2
 endsnippet
 snippet cds "cd to directory of script"
-cd "$(dirname "$0")"
+cd "\$(dirname "\$0")"
 endsnippet
 snippet arr "Access array"
 \${${1:args}[@]}$0
@@ -37,11 +37,8 @@ endsnippet
 snippet testdn "True if not directory"
 ! -d "${1:\$1}"
 endsnippet
-snippet testv "Test variable"
-$${1:value}
-endsnippet
 snippet testb "Test boolean"
-$${1:value}
+"$${1:value}" == "true"
 endsnippet
 snippet testf "True if regular file"
 -f "${1:\$1}"
