@@ -32,5 +32,9 @@ tags
 # Node
 node_modules
 
+# Ruby
+.bundle/
+bundle/
+
 # Emacs
 flycheck_*
