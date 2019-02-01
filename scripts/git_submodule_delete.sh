@@ -14,7 +14,6 @@ if [[ ! -d "$module_path" ]]; then
   exit 1
 fi
 
-
 git submodule deinit -f "$path"
 rm -rf "$module_path"
 git rm -f "$path"
