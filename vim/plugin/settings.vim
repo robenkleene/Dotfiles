@@ -75,8 +75,12 @@ set hidden
 set nowrap
 
 " Automatically change the working directory
-" This interferes with `ag`
+" This interferes with `rg` from the starting directory
+" Note if this gets commented out then something should be added to deal with
+" `<C-x><C-f>` starting from the working directory. (Just remapping that
+" command to do an `lcd` first would probably work.
 " set autochdir
+inoremap <C-x><C-f> <C-\><C-o>:lcd %:p:h<CR><C-x><C-f>
 " Just autoset the directory for netrw
 " let g:netrw_keepdir = 0
 
