@@ -174,7 +174,9 @@ function! commands#Run() abort
   let l:original_makeprg = &makeprg
   let l:original_errorformat = &errorformat
   let &makeprg = b:RunMakePrg
-  let &errorformat = b:RunErrorFormat
+  if exists('b:RunErrorFormat')
+    let &errorformat = b:RunErrorFormat
+  endif
   make
   let &makeprg = l:original_makeprg
   let &errorformat = l:original_errorformat
