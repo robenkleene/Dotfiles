@@ -22,11 +22,11 @@ nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
 if has('nvim')
-  inoremap <M-c> <C-\><C-o>:Cdinsert<CR>
-  inoremap <M-e> <C-\><C-o>:Filesinsert<CR>
+  inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
+  inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
 else
-  inoremap <M-c> <C-\><C-o>:Cdinsert<CR><right>
-  inoremap <M-e> <C-\><C-o>:Filesinsert<CR><right>
+  inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR><right>
+  inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
 endif
 
 " A version of `:Commands` that can take a range
