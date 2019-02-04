@@ -2,8 +2,8 @@
 
 # Emacs
 # Display a greeting message if the server is running
-if ps -u $USER | grep 'emacs --daemon' | grep --silent -v grep; then
-  echo Emacs server is running
+if ps -u $USER | grep 'emacs --bg-daemon' | grep --silent -v grep; then
+  echo "Emacs server is running"
 fi
 
 # tmux

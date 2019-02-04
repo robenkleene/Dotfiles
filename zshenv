@@ -11,6 +11,7 @@ VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs
 EMACS_COMMAND='emacsclient -t'
+# EMACS_COMMAND='emacs'
 ACK_COMMAND=rg
 
 # Export `CDPATH` so it's available in `vim`

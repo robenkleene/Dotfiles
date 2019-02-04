@@ -87,8 +87,8 @@ alias mac='make autocorrect'
 # `emacs`
 # alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
 # alias magit-log="emacs -eval \"(robenkleene/magit-log)\""
-# alias ms='emacs_magit_status'
-# alias ml='emacs_magit_log'
+alias mgs='emacs_magit_status'
+alias mgl='emacs_magit_log'
 alias e="$EMACS_COMMAND"
 
 # `vim_cd`
