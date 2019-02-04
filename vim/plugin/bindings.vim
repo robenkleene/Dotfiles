@@ -35,10 +35,12 @@ let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 " nnoremap gcd :Gcd<CR>
-nnoremap cwd :Wcd<CR>
-nnoremap cwl :Wlcd<CR>
-nnoremap cgd :Gcd<CR>
-nnoremap cgl :Glcd<CR>
+nnoremap gwcd :Wcd<CR>
+nnoremap gwcd :Wlcd<CR>
+nnoremap gcd :Gcd<CR>
+nnoremap gcl :Glcd<CR>
+" Note that `c` is change, so adding more bindings that start with `c` is
+" difficult
 nnoremap cd :cd %:p:h<CR>
 nnoremap cl :lcd %:p:h<CR>
 
