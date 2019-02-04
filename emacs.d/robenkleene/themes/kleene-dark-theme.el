@@ -44,7 +44,7 @@
   '(
     ;; Ansi
     ("black" . "#000000")
-    ("blue" . "#0087ff")    
+    ("blue" . "#0087ff")
     ("cyan" . "#4AA4B0")
     ("green" . "#62D63F")
     ("magenta" . "#af00df")
@@ -313,7 +313,8 @@
    `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background nil))))
    `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
    `(magit-section-highlight ((t (:background nil))))
-
+   `(magit-log-author ((t (:inherit rk-comment))))
+   
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
    
