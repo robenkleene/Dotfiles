@@ -20,7 +20,7 @@ rg() {
     if [ -t 1 ]; then
         command rg --with-filename --smart-case --line-number --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@" | less -RFX
     else
-        command rg "$@"
+        command rg --with-filename --smart-case --line-number "$@"
     fi
 }
 
