@@ -31,6 +31,10 @@ bind status ]] move-page-down
 bind status [[ move-page-up
 bind generic d none
 bind status dd ?@rm %(file)
+# bind generic y none
+# This doesn't work for some reason, very few lines are actually output by the
+# `%(text)` command
+# bind generic y !@bash -c "echo -n %(text) | safecopy"
 
 # Main
 bind main c ?git checkout %(commit)
