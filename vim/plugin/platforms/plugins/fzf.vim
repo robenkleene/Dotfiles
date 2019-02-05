@@ -24,8 +24,8 @@ nnoremap <M-i> :Tags<CR>
 if has('nvim')
   " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
-  inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
-  inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
+  inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR>
+  inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
