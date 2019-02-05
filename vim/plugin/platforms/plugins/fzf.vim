@@ -22,11 +22,23 @@ nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :Tags<CR>
 nnoremap <M-i> :Tags<CR>
 if has('nvim')
+  " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
+  " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
   inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
   inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
+  " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
+  " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
+  " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
+  " inoremap <M-i>e <C-\><C-o>:RelativeFilesinsert<CR>
 else
-  inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR><right>
-  inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
+  " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR><right>
+  " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
+  inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR><right>
+  inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR><right>
+  " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
+  " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
+  " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
+  " inoremap <M-i>e <C-\><C-o>:RelativeFilesinsert<CR>
 endif
 
 " A version of `:Commands` that can take a range
@@ -118,7 +130,7 @@ command! Zvim :call fzf#run(fzf#wrap({
 " Insert
 function! s:insert(string) abort
   let temp = @s
-  let @s =a:string
+  let @s = a:string
   " Need to use a different paste depending if the cursor is at the end of the
   " line
   " if col('.') == col('$') - 1
@@ -135,6 +147,30 @@ function! s:insert(string) abort
   endif
 endfunction
 
+function! s:relative_file_insert(path) abort
+  let source = expand('%')
+  let destination = a:path
+  " echom "source = ".source
+  " echom "destination = ".destination
+  " return
+  let result = system('~/.bin/relative_path '.fnameescape(source).' '.fnameescape(destination).' | tr -d "\n"')
+  let temp = @s
+  let @s = result
+  " Need to use a different paste depending if the cursor is at the end of the
+  " line
+  if col('.') == col('$') && col('.') != 1
+    normal "sp
+  else
+    normal "sP
+  end
+  " let @s = temp
+  " `nvim` leaves insert mode when performing one of the insert mappings, this
+  " should re-enter insert mode, but it's not working either.
+  if has('nvim')
+    startinsert
+  endif
+endfunction
+
 command! Cdinsert :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
       \   'sink':   function('<SID>insert')
@@ -142,6 +178,14 @@ command! Cdinsert :call fzf#run(fzf#wrap({
 command! Filesinsert :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
       \   'sink':   function('<SID>insert')
+      \ }))
+command! RelativeCdinsert :call fzf#run(fzf#wrap({
+      \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'sink':   function('<SID>relative_file_insert')
+      \ }))
+command! RelativeFilesinsert :call fzf#run(fzf#wrap({
+      \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'sink':   function('<SID>relative_file_insert')
       \ }))
 
 " Support a `TagBuffer` function that opens the current file contents as a
