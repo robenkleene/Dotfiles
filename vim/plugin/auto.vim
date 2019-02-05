@@ -78,6 +78,10 @@ augroup END
 set viewoptions-=options
 " Saving and restoring folds is completely unpredictable
 set viewoptions-=folds
+" Don't restore the current directory, this has an unpredictable effect when
+" cycling through lots of files quickly, e.g., when processing the `quickfix`
+" list.
+set viewoptions-=curdir
 augroup save_view
   autocmd!
   autocmd BufWinLeave *

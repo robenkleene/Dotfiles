@@ -23,7 +23,6 @@ set noswapfile
 set sessionoptions-=options
 set sessionoptions-=folds
 
-
 " Basic {{{1
 
 " set spell spelllang=en_us
@@ -80,6 +79,8 @@ set nowrap
 " `<C-x><C-f>` starting from the working directory. (Just remapping that
 " command to do an `lcd` first would probably work.
 " set autochdir
+" FIXME: After the `lcd` in this command, the directory should probably be
+" restored at the end
 inoremap <C-x><C-f> <C-\><C-o>:lcd %:p:h<CR><C-x><C-f>
 " Just autoset the directory for netrw
 " let g:netrw_keepdir = 0
