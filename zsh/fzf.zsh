@@ -170,10 +170,12 @@ bindkey '\er' _fzf_zvim_widget
 
 # Tags uses a special `fzf` command
 _fzf_tags_widget() {
+  local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags | cut -f 1"
   if [[ -n "$LBUFFER" ]]; then
-    return
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
   fi
-  local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
   setopt localoptions pipefail 2> /dev/null
   local result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" fzf +m)"
   if [[ -z "$result" ]]; then
