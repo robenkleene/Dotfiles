@@ -1,5 +1,5 @@
 nnoremap <leader>gd :Git d<CR>
-nnoremap <leader>gaa :Git aa<CR>
+" nnoremap <leader>gaa :Git aa<CR>
 nnoremap <leader>gp :Git p<CR>
 nnoremap <leader>gc :Gco<CR>
 nnoremap <leader>gs :Gstatus<CR>
