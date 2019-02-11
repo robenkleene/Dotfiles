@@ -302,7 +302,8 @@ fzf_snippet_editor() {
 if [[ "$(uname)" = "Darwin" ]]; then
   fzf_project_xcode() {
     setopt localoptions pipefail 2> /dev/null
-    find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
+    # find . -path '*.xcodeproj' -prune -o -name '*.xcworkspace' -o -name '*.xcodeproj' \
+    fd xcodeproj \
       | grep -vE "\/Carthage\/" \
       | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --select-1 $FZF_DEFAULT_OPTS" fzf +m \
       | tr '\n' '\0' \
