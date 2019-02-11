@@ -1,8 +1,5 @@
 setlocal foldmethod=marker
 
-" command! RunVimscript :update | :source %
-" nnoremap <localleader>r :RunVimscript<CR>
-
 function! s:RunVimscriptVisual() range abort
   let temp = @s
   normal! gv"sy
@@ -16,5 +13,5 @@ function! s:RunVimscript() range abort
   let @s = temp
 endfunction
 command! -range RunVimscriptVisual <line1>,<line2>call <SID>bindings#RunVimscriptVisual()
-vnoremap <localleader>e :'<,'>call <SID>RunVimscriptVisual()<CR>
-nnoremap <localleader>e :call <SID>RunVimscript()<CR>
+vnoremap <buffer> <localleader>e :'<,'>call <SID>RunVimscriptVisual()<CR>
+nnoremap <buffer> <localleader>e :call <SID>RunVimscript()<CR>

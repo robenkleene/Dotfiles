@@ -1,12 +1,12 @@
 setlocal suffixesadd=.swift,.h,.m
-nnoremap <localleader>X :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <buffer> <localleader>X :!open -a "Xcode.app" "%:p"<CR>\|:redraw!<CR>
 
 " Format
 " setlocal equalprg=swiftformat\ --commas\ inline
 let b:FormatPrg = "swiftformat --commas inline"
 " When piping through `swiftlint`, it leaves an emptly blank line at the end of
 " the file
-nnoremap <localleader>f :Format<CR>\|:DeleteEOFWhitespace<CR>
+nnoremap <buffer> <localleader>f :Format<CR>\|:DeleteEOFWhitespace<CR>
 
 " Lint
 let b:LintMakePrg = "swiftlint --path ".fnameescape(expand('%:p'))

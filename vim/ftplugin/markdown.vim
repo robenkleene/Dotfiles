@@ -11,12 +11,12 @@ set wrap
 " be less than `80` characters long.
 " setlocal colorcolumn=""
 
-nnoremap <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
-nnoremap <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <buffer> <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <buffer> <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 " nnoremap <localleader>t :.!markdown-title "%"<CR>
 
-nnoremap <silent> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
-vnoremap <silent> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
+nnoremap <silent> <buffer> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
+vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
 
 " Convert
 if exists(':terminal')
@@ -33,13 +33,4 @@ if exists(':terminal')
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
 endif
-nnoremap <localleader>c :ConvertMarkdown %<CR>
-
-" Follow file links
-" Search for `](` go right twice and then `gf`, etc...
-" TODO: This really should be made to only work with file URLs and relative
-" files. Right now it also works with regular URLs which causes Netrw to curl
-" the web page and open it in a temporary buffer.
-" nnoremap <buffer> <CR> ^/](<CR>2lgf
-" nnoremap <buffer> <C-w><CR> ^/](<CR>2l<C-w>f
-" nnoremap <buffer> <C-w>g<CR> ^/](<CR>2l<C-w>gf
+nnoremap <buffer> <localleader>c :ConvertMarkdown %<CR>
