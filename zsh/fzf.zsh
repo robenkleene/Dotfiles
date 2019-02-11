@@ -69,6 +69,10 @@ _fzf_cd_widget() {
   local cmd=$FZF_ALT_C_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
+    local dir="${LBUFFER##* }"
+    if [[ -d "$dir" ]]; then
+      cmd="cd $dir && $cmd && cd - >/dev/null"
+    fi
     __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
@@ -93,6 +97,10 @@ _fzf_editor_widget() {
   local cmd=$FZF_CTRL_T_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
+    local dir="${LBUFFER##* }"
+    if [[ -d "$dir" ]]; then
+      cmd="cd $dir && $cmd && cd - >/dev/null"
+    fi
     __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
