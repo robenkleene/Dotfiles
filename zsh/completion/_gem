@@ -214,7 +214,7 @@ if [[ $state = command ]]; then
       )
     ;;
     push)
-      args+=( '*:gem:_files -g "*.gem(-.)"' )
+      args=( '*:gem:_files -g "*.gem(-.)"' )
     ;;
     query)
       args+=(
