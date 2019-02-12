@@ -185,3 +185,12 @@ endfunction
 function commands#SlugProject(name) abort
     execute '!slug_project' a:name
 endfunction
+
+" Tags
+function! commands#Tags() abort
+  if !exists('b:TagPrg')
+    echo "No b:TagPrg defined"
+    return
+  endif
+  execute "!" . b:TagPrg
+endfunction

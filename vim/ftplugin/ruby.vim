@@ -5,3 +5,5 @@ let b:RunMakePrg = "ruby ".fnameescape(expand('%:p'))
 
 " let b:ExecutePrg = "ruby"
 let b:ExecutePrg = "irb --simple-prompt"
+
+let b:TagPrg = "ripper-tags -R"
