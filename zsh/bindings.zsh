@@ -15,6 +15,9 @@ _custom_edit_command_line() {
 zle -N _custom_edit_command_line
 # bindkey "^X^E" edit-command-line
 bindkey "^X^E" _custom_edit_command_line
+# `_complete_help` is supposed have this default binding, but for some reason
+# it's missing
+bindkey "^Xh" _complete_help
 # bindkey '\ee' edit-command-line
 
 # By default, `^u` kills the whole line, rather than backwards
