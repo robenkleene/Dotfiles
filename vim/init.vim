@@ -72,6 +72,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'markonm/traces.vim' , Cond(!has('nvim'))
+Plug 'beloglazov/vim-textobj-quotes'
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
