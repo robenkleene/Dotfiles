@@ -133,8 +133,17 @@ setup_rubyversion() {
   echo "$rubyversion" >.ruby-version
 }
 
+setup_gemfile() {
+  local gemfile="source 'https://rubygems.org'
+ruby '2.3.7'
+gem 'rubocop', '~> 0.63.1', require: false
+"
+  echo "$gemfile" >Gemfile
+}
+
 setup_gitignore
 setup_makefile
 setup_travis
 setup_rubocop
+setup_gemfile
 setup_rubyversion
