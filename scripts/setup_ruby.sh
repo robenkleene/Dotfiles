@@ -65,9 +65,6 @@ build-iPhoneSimulator/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-
-# Added
-/bundle/
 "
   overwrite ".gitignore" "$contents"
 }
