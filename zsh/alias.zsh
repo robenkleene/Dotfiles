@@ -17,6 +17,7 @@ alias -g F='fzf_vim_grep'
 alias -g FF='fzf_vim_file'
 alias -g 0VA="| xargs -o -0 $VIM_COMMAND"
 alias -g VA="| xargs -o $VIM_COMMAND"
+alias -g O='2>&1'
 
 # Basic
 alias -- -='cd -'

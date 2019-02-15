@@ -132,11 +132,13 @@ abbreviations=(
 # These abbreviations work everywhere
 typeset -Ag everywhere_abbreviations
 everywhere_abbreviations=(
-'>n' '>/dev/null 2>&1'
+'>n' '>/dev/null '
+'>null' '>/dev/null '
+'>o' '2>&1 '
 # rg
-'-gcocoa' '-g "*.{h,m,swift}"'
+'-gcocoa' '-g "*.{h,m,swift}" '
 # Carthage
-'-nub' '--no-use-binaries'
+'-nub' '--no-use-binaries '
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
