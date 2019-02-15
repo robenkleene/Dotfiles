@@ -13,7 +13,7 @@ overwrite() {
 
 # `.gitignore`
 setup_gitignore() {
-  local gitignore="*.gem
+  local contents="*.gem
 *.rbc
 /.config
 /coverage/
@@ -67,22 +67,22 @@ build-iPhoneSimulator/
 # Added
 /bundle/
 "
-  echo "$gitignore" >.gitignore
+  overwrite ".gitignore" "$contents"
 }
 
 setup_travis() {
-  local travis="language: ruby
+  local contents="language: ruby
 script: make ci
 rvm: 2.3.7
 branches:
   only:
     - master
 "
-  echo "$travis" >.travis.yml
+  overwrite ".travis.yml" "$contents"
 }
 
 setup_makefile() {
-  local makefile=".PHONY: ci ac autocorrect lint
+  local contents=".PHONY: ci ac autocorrect lint
 
 ci: lint
 ac: autocorrect
@@ -93,11 +93,11 @@ lint:
 autocorrect:
 	rubocop -a
 "
-  overwrite "Makefile" "$makefile"
+  overwrite "Makefile" "$contents"
 }
 
 setup_rubocop() {
-  local rubocop="Metrics/PerceivedComplexity:
+  local contents="Metrics/PerceivedComplexity:
   Max: 8
 Metrics/MethodLength:
   Max: 60
@@ -125,20 +125,20 @@ AllCops:
     - '**/vendor/**/*'
     - '**/bundle/**/*'
 "
-  echo "$rubocop" >.rubocop.yml
-}
-
-setup_rubyversion() {
-  local rubyversion="system"
-  echo "$rubyversion" >.ruby-version
+  overwrite ".rubocop.yml" "$contents"
 }
 
 setup_gemfile() {
-  local gemfile="source 'https://rubygems.org'
+  local contents="source 'https://rubygems.org'
 ruby '2.3.7'
 gem 'rubocop', '~> 0.63.1', require: false
 "
-  echo "$gemfile" >Gemfile
+  overwrite "Gemfile" "$contents"
+}
+
+setup_rubyversion() {
+  local contents="system"
+  echo "$contents" >.ruby-version
 }
 
 setup_gitignore
