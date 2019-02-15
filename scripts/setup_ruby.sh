@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 overwrite() {
   filename=$1
   contents=$2
@@ -134,6 +136,8 @@ ruby '2.3.7'
 gem 'rubocop', '~> 0.63.1', require: false
 "
   overwrite "Gemfile" "$contents"
+  # rubocop complains about blank lines at the end of Gemfile
+  sed -i '' '${/^[[:space:]]*$/d;}' "Gemfile"
 }
 
 setup_rubyversion() {

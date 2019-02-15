@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # TODO: Read the `.setup_xcode` file and add the contents as flags, one
 # flag per line
 # This can probably be done by editing the arguments array
