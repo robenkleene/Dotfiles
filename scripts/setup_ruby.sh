@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+overwrite() {
+  filename=$1
+  contents=$2
+  if [[ -f "$filename" ]]; then
+    local existing_lines="$(expr $(wc -l <<<"$contents") - 0)"
+    local existing=$(tail -n +$existing_lines "$filename")
+    contents+=$existing
+  fi
+  echo "$contents" >"$filename"
+}
+
 # `.gitignore`
 setup_gitignore() {
   local gitignore="*.gem
@@ -82,12 +93,7 @@ lint:
 autocorrect:
 	rubocop -a
 "
-  if [[ -f "Makefile" ]]; then
-    local existing_lines="$(expr $(wc -l <<<"$makefile") - 0)"
-    local existing=$(tail -n +$existing_lines Makefile)
-    makefile+=$existing
-  fi
-  echo "$makefile" >Makefile
+  overwrite "Makefile" "$makefile"
 }
 
 setup_rubocop() {
