@@ -78,6 +78,7 @@ alias tmba='tmux_banner_all'
 alias sfhs='fzf_safari_history_open'
 
 # `make`
+alias mt='make test'
 alias ml='make lint'
 alias mac='make autocorrect'
 
