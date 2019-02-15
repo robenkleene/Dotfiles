@@ -34,7 +34,7 @@ node_modules
 
 # Ruby
 .bundle/
-bundle/
+/bundle/
 
 # Emacs
 flycheck_*
