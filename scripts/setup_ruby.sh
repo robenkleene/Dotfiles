@@ -67,15 +67,6 @@ branches:
   only:
     - master
 "
-  if [[ -f ".travis.yml" ]]; then
-    # Some sections need to be setup manually, usually because they include
-    # encrypted keys, so we overwrite the beginning of the file and preserve
-    # the end, so a manual section can be maintained at the end.
-    # The `expr` removes whitespace.
-    local travis_lines="$(expr $(wc -l <<<"$travis") - 0)"
-    local travis_deploy=$(tail -n +$travis_lines .travis.yml)
-    travis+=$travis_deploy
-  fi
   echo "$travis" >.travis.yml
 }
 
@@ -91,6 +82,11 @@ lint:
 autocorrect:
 	rubocop -a
 "
+  if [[ -f "Makefile" ]]; then
+    local existing_lines="$(expr $(wc -l <<<"$makefile") - 0)"
+    local existing=$(tail -n +$existing_lines Makefile)
+    makefile+=$existing
+  fi
   echo "$makefile" >Makefile
 }
 
