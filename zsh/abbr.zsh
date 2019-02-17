@@ -107,6 +107,7 @@ abbreviations=(
 'gsmi' 'git submodule init'
 'gsmu' 'git submodule update'
 'gsmuir' 'git submodule update --init --recursive'
+'gsmuirr' 'git submodule update --init --recursive --remote'
 # `gst`: `git stash`
 'gst' 'git stash'
 'gstl' 'git stash list'
