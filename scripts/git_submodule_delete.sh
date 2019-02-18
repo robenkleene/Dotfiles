@@ -2,7 +2,35 @@
 
 set -e
 
-path=$1
+force=false
+while getopts ":p:fh" option; do
+  case "$option" in
+    p)
+      path="$OPTARG"
+      ;;
+    f)
+      force=true
+      ;;
+    h)
+      echo "Usage: git_submodule_delete [-f]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ -z "$path" ]]; then
+  echo "No path specified" >&2
+  exit 1
+fi
+
 if [[ ! -d "$path" ]]; then
   echo "Not a directory $path" >&2
   exit 1
@@ -14,6 +42,10 @@ if [[ ! -d "$module_path" ]]; then
   exit 1
 fi
 
-git submodule deinit -f "$path"
-rm -rf "$module_path"
-git rm -f "$path"
+[[ "$force" == "false" ]] && echo "Dry Run"
+echo "Deinit $path"
+[[ "$force" == "true" ]] && git submodule deinit -f "$path"
+echo "Delete $path"
+[[ "$force" == "true" ]] && rm -rf "$module_path"
+echo "Remove from git $path"
+[[ "$force" == "true" ]] && git rm -f "$path"
