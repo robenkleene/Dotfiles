@@ -133,13 +133,13 @@ abbreviations=(
 # These abbreviations work everywhere
 typeset -Ag everywhere_abbreviations
 everywhere_abbreviations=(
-'>n' '>/dev/null '
-'>null' '>/dev/null '
-'>o' '2>&1 '
+'>n' '>/dev/null'
+'>null' '>/dev/null'
+'>o' '2>&1'
 # rg
-'-gcocoa' '-g "*.{h,m,swift}" '
+'-gcocoa' '-g "*.{h,m,swift}"'
 # Carthage
-'-nub' '--no-use-binaries '
+'-nub' '--no-use-binaries'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
@@ -159,10 +159,14 @@ _magic_everywhere_abbrev_expand() {
   local MATCH
   # Everywhere Abbreviations
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>-]#}
-  LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
-  if [[ -z "${everywhere_abbreviations[$MATCH]}" ]]; then
+  if [[ -n "${everywhere_abbreviations[$MATCH]}" ]]; then
+    LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
+  elif [[ -n "${abbreviations[$MATCH]}" ]]; then
+    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+  else
     return 1
   fi
+  LBUFFER+=" "
 }
 
 _magic_abbrev_expand_and_insert() {
