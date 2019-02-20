@@ -164,6 +164,7 @@ _magic_everywhere_abbrev_expand() {
   elif [[ -n "${abbreviations[$MATCH]}" ]]; then
     LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
   else
+    LBUFFER+=$MATCH
     return 1
   fi
   LBUFFER+=" "
