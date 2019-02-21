@@ -138,6 +138,7 @@ alias grtao='git_remote_add_origin'
 alias gcd='git_cd_root'
 alias gdg='git_diff_grep'
 alias gbpr='git_branch_prune'
+alias gprpr='git_process_pull_request'
 alias gpbo='git_push_branch_origin'
 
 # `jekyll`
