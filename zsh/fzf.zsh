@@ -178,9 +178,9 @@ bindkey '\er' _fzf_zvim_widget
 
 # Tags uses a special `fzf` command
 _fzf_tags_widget() {
-  local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags"
+  local cmd="~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags | cut -f 1 | cut -f 1 -d$ | cut -f 1 -d' '"
   if [[ -n "$LBUFFER" ]]; then
-    __fzf_buffer_match "$cmd | cut -f 1"
+    __fzf_buffer_match "$cmd"
     local ret=$?
     return $ret
   fi
