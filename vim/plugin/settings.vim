@@ -91,8 +91,11 @@ set showcmd
 " Line breaks only happen on words
 set linebreak
 
-" Default Fold Method
-set foldmethod=syntax
+" " Default Fold Method
+" This causes a slow input when editing Ruby code, make a comment above a
+" `module` and start typing to replicate. Sometimes the refresh rate gets so
+" slow that words appear rather than individual characters
+" set foldmethod=syntax
 
 " Show folds in gutter
 set foldcolumn=1
