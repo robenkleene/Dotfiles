@@ -3,6 +3,9 @@ if has('gui_running')
   finish
 endif
 
+" Make a separate command so that `:Tags` can be used to generate tags
+command! -bang -nargs=* FZFTags call fzf#vim#tags(<q-args>, <bang>0)
+
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
@@ -19,8 +22,8 @@ nnoremap <M-z> :Z<CR>
 " nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
-nnoremap <leader>i :Tags<CR>
-nnoremap <M-i> :Tags<CR>
+nnoremap <leader>i :FZFTags<CR>
+nnoremap <M-i> :FZFTags<CR>
 if has('nvim')
   " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
