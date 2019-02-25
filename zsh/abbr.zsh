@@ -44,6 +44,7 @@ abbreviations=(
 # `cat`
 'c' 'cat'
 'b' 'bat'
+'brm' 'bat README.md'
 
 # `xargs`
 '0fd' 'fd -0'
