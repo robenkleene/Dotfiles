@@ -2,4 +2,4 @@
 
 set -e
 
-uuidgen
+uuidgen | tr -d '\n'
