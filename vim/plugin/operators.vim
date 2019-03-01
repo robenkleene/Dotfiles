@@ -6,8 +6,8 @@ nnoremap <silent> <localleader>S :set opfunc=operators#WebSearch<CR>g@
 vnoremap <silent> <localleader>S :<C-U>call operators#WebSearch(visualmode(), 1)<CR>
 
 " Title Case
-nnoremap <silent> <localleader>t :set opfunc=operators#TitleCase<CR>g@
-vnoremap <silent> <localleader>t :<C-U>call operators#TitleCase(visualmode(), 1)<CR>
+nnoremap <silent> <localleader>c :set opfunc=operators#TitleCase<CR>g@
+vnoremap <silent> <localleader>c :<C-U>call operators#TitleCase(visualmode(), 1)<CR>
 
 " Open URLs
 nnoremap <silent> <localleader>L :set opfunc=operators#OpenURLs<CR>g@
