@@ -130,7 +130,7 @@
    `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
-   `(rk-header ((t (:foreground ,white :bold t))))
+   `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-highlight ((t (:background ,search-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
@@ -171,7 +171,7 @@
    `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
 
    ;;;; User-Interface
-   `(default ((t (:foreground ,white))))
+   `(default ((t (:foreground ,gray6))))
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-match))))
