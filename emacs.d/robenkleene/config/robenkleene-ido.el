@@ -121,8 +121,17 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)))
+    ;; The `default-directory' means inserted file is always relative to the current directory.
+    (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)
+                                default-directory))
     )
+  )
+
+(defun robenkleene/ido-source-control-recursive-find-file ()
+  "Find directory recursively in DIR."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
+                                                                         ".git")))
   )
 
 (defun robenkleene/ido-recursive-find-file (dir)
