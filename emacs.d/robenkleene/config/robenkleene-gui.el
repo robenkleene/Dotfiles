@@ -17,7 +17,7 @@
 (setq desktop-restore-frames t)
 
 ;; Slow-down mouse scrolling
-(setq mouse-wheel-scroll-amount '(0.01))
+(setq mouse-wheel-scroll-amount '(0.001))
 ;; Don't change scrolling speed when scrolling fast
 ;; (setq mouse-wheel-progressive-speed nil)
 
