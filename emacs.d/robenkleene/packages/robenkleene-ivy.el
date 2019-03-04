@@ -8,9 +8,16 @@
   (:map robenkleene/leader-map
         ("l" . swiper)
         ("a" . robenkleene/counsel-rg)
+        ("g a" . robenkleene/counsel-rg-source-control)
         ("r" . ivy-resume)
         )
   :config
+  (defun robenkleene/counsel-rg-source-control ()
+    "Find file recursively in source control root."
+    (interactive)
+    (counsel-rg nil (locate-dominating-file default-directory
+                                            ".git"))
+    )
   (defun robenkleene/counsel-rg (dir)
     "Find file recursively in DIR."
     (interactive

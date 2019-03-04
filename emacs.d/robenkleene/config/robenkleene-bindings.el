@@ -55,11 +55,14 @@
 (define-key robenkleene/leader-map (kbd "e") 'robenkleene/ido-recursive-insert-file)
 (define-key robenkleene/leader-map (kbd "M-c") 'robenkleene/ido-recursive-insert-dir)
 (define-key robenkleene/leader-map (kbd "c") 'robenkleene/ido-recursive-insert-dir)
-(define-key robenkleene/leader-map (kbd "g e") 'robenkleene/ido-source-control-recursive-find-file)
+(define-key robenkleene/leader-map (kbd "g M-e") 'robenkleene/ido-source-control-recursive-find-file)
+(define-key robenkleene/leader-map (kbd "g M-c") 'robenkleene/ido-source-control-recursive-find-dir)
+(define-key robenkleene/leader-map (kbd "g e") 'robenkleene/ido-source-control-recursive-insert-file)
+(define-key robenkleene/leader-map (kbd "g c") 'robenkleene/ido-source-control-recursive-insert-dir)
 
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
-(define-key robenkleene/leader-map (kbd "R") 'robenkleene/reveal-in-finder)
+(define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
 ;; Window Management
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
 ;; (define-key robenkleene/leader-map (kbd "o") 'other-window)

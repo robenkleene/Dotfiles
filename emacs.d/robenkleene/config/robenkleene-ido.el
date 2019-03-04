@@ -4,8 +4,23 @@
 
 ;; Find
 
-(defun robenkleene/ido-recursive-find-dir (dir)
+(defun robenkleene/ido-recursive-find-file (dir)
   "Find file recursively in DIR."
+  (interactive
+   (list
+    (if current-prefix-arg
+        (read-directory-name "Base directory: ")
+      (expand-file-name default-directory)
+      )
+    )
+   )
+  (let ((current-prefix-arg nil))
+    (find-file (robenkleene/ido-recursive-get-file dir))
+    )
+  )
+
+(defun robenkleene/ido-recursive-find-dir (dir)
+  "Find directory recursively in DIR."
   (interactive
    (list
     (if current-prefix-arg
@@ -19,23 +34,8 @@
     )
   )
 
-(defun robenkleene/ido-recursive-find-dir-other-window (dir)
-  "Find file recursively in DIR."
-  (interactive
-   (list
-    (if current-prefix-arg
-        (read-directory-name "Base directory: ")
-      (expand-file-name default-directory)
-      )
-    )
-   )
-  (let ((current-prefix-arg nil))
-    (find-file-other-window (robenkleene/ido-recursive-get-dir dir))
-    )
-  )
-
 (defun robenkleene/ido-recursive-find-file-other-window (dir)
-  "Find directory recursively in DIR."
+  "Find file recursively in DIR in other window."
   (interactive
    (list
     (if current-prefix-arg
@@ -49,15 +49,8 @@
     )
   )
 
-(defun robenkleene/ido-source-control-recursive-find-file ()
-  "Find directory recursively in DIR."
-  (interactive)
-  (find-file (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
-                                                                         ".git")))
-  )
-
-(defun robenkleene/ido-recursive-find-file (dir)
-  "Find directory recursively in DIR."
+(defun robenkleene/ido-recursive-find-dir-other-window (dir)
+  "Find directory recursively in DIR in other window."
   (interactive
    (list
     (if current-prefix-arg
@@ -67,8 +60,22 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file (robenkleene/ido-recursive-get-file dir))
+    (find-file-other-window (robenkleene/ido-recursive-get-dir dir))
     )
+  )
+
+(defun robenkleene/ido-source-control-recursive-find-file ()
+  "Find file recursively from source control root."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
+                                                                         ".git")))
+  )
+
+(defun robenkleene/ido-source-control-recursive-find-dir ()
+  "Find directory recursively from source control root."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-dir (locate-dominating-file default-directory
+                                                                        ".git")))
   )
 
 ;; Insert
@@ -103,6 +110,22 @@
     (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)
                                 default-directory))
     )
+  )
+
+(defun robenkleene/ido-source-control-recursive-insert-file ()
+  "Find and insert file recursively from source control root."
+  (interactive)
+  (insert (file-relative-name (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
+                                                                                          ".git"))
+                              default-directory))
+  )
+
+(defun robenkleene/ido-source-control-recursive-insert-dir ()
+  "Find and insert directory recursively from source control root."
+  (interactive)
+  (insert (file-relative-name (robenkleene/ido-recursive-get-dir (locate-dominating-file default-directory
+                                                                                         ".git"))
+                              default-directory))
   )
 
 ;; Z
