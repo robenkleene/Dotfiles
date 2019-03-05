@@ -137,8 +137,9 @@ everywhere_abbreviations=(
 '>n' '>/dev/null'
 '>null' '>/dev/null'
 '>o' '2>&1'
-# rg
+# Glob
 '-gcocoa' '-g "*.{h,m,swift}"'
+'-gruby' '-g "*.rb"'
 # Carthage
 '-nub' '--no-use-binaries'
 )
