@@ -13,6 +13,7 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
+(global-set-key (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
 
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)
