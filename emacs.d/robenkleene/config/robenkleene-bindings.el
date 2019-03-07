@@ -3,8 +3,14 @@
 ;;; Code:
 
 ;; Automatically switch focus to new splits
-(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
-(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+(global-set-key "\C-x2" (lambda ()
+                          (interactive)
+                          (split-window-vertically)
+                          (other-window 1)))
+(global-set-key "\C-x3" (lambda ()
+                          (interactive)
+                          (split-window-horizontally)
+                          (other-window 1)))
 ;; Better Defaults
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
