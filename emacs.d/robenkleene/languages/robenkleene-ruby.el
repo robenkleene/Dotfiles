@@ -24,7 +24,7 @@
   ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
   (define-key robenkleene/leader-map (kbd "f") (lambda ()
                                                  (interactive)
-                                                 (robenkleene/format)
+                                                 (call-interactively 'robenkleene/format)
                                                  ;; For some reason running
                                                  ;; format kill syntax
                                                  ;; highlighting in Ruby,
