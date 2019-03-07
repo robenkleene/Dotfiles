@@ -192,6 +192,7 @@
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
+   `(vertical-border ((t (:foreground ,modeline-inactive-bg :background ,modeline-inactive-bg))))
 
    ;;;; Search
    `(isearch ((t (:inherit rk-search))))
