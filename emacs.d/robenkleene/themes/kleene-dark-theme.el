@@ -179,11 +179,13 @@
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment :background ,white))))
    `(line-number ((t (:inherit rk-comment))))
-   
+
    ;;;; Text
    `(link ((t (:inherit rk-link))))
    `(link-visited ((t (:inherit rk-link))))
    `(success ((t (:inherit rk-success))))
+   `(error ((t (:inherit rk-error))))
+   `(warning ((t (:inherit rk-warning))))
    ;; `(trailing-whitespace ((t (:inherit rk-highlight-line))))
    `(trailing-whitespace ((t (:background nil))))
    
@@ -208,8 +210,10 @@
    `(git-commit-summary ((t (:inherit rk-text))))
 
    ;;;; Flycheck
-   `(flycheck-warning ((t (:inherit rk-warning))))
-   `(flycheck-error ((t (:inherit rk-error))))
+   ;; `(flycheck-warning ((t (:inherit rk-warning))))
+   `(flycheck-info ((t (:inherit rk-warning))))
+   `(flycheck-fringe-info ((t (:inherit rk-warning))))
+   ;; `(flycheck-error ((t (:inherit rk-error))))
 
    ;;;; Flyspell
    `(flyspell-duplicate ((t (:inherit rk-warning))))
