@@ -471,5 +471,44 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/open-scratch-other-window ()
+  "Open scratch for current buffer in other window."
+  (interactive)
+  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+    (if (bound-and-true-p file)
+        (find-file-other-window file)
+      (message "No file found.")
+      )
+    )
+  )
+
+(defun robenkleene/open-scratch ()
+  "Open scratch file for current buffer."
+  (interactive)
+  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+    (if (bound-and-true-p file)
+        (find-file file)
+      (message "No file found.")
+      )
+    )
+  )
+
+(defun robenkleene/scratch-for-file (file)
+  "Return the path to the scratch file for FILE."
+  (let ((extension (file-name-extension file))
+        (scratch-directory "~/Development/Scratch/Untitled/")
+        directories
+        file)
+    (if (bound-and-true-p extension)
+        (setq directories
+              (directory-files scratch-directory
+                               nil
+                               (concat ".*\." extension)))
+      (message "No valid extension found.")
+      )
+    (expand-file-name (car directories) scratch-directory)
+    )
+  )
+
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
