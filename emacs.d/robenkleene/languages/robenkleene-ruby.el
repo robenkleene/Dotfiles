@@ -18,5 +18,19 @@
     '(push 'company-robe company-backends))
   )
 
+(with-eval-after-load "ruby-mode"
+  (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+  (define-key robenkleene/leader-map (kbd "f") (lambda ()
+                                                 (interactive)
+                                                 (robenkleene/format)
+                                                 ;; For some reason running
+                                                 ;; format kill syntax
+                                                 ;; highlighting in Ruby,
+                                                 ;; calling `ruby-mode'
+                                                 ;; re-applies it
+                                                 (ruby-mode)
+                                                 ))
+  )
+
 (provide 'robenkleene-ruby)
 ;;; robenkleene-ruby.el ends here

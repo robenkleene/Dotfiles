@@ -71,6 +71,8 @@
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
 (define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
+(define-key robenkleene/leader-map (kbd "f") 'robenkleene/format)
+
 ;; Window Management
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
 ;; (define-key robenkleene/leader-map (kbd "o") 'other-window)

@@ -449,5 +449,27 @@ Otherwise, call `backward-kill-word'."
   (next-line)
   )
 
+(defvar-local robenkleene/format-program nil)
+(defun robenkleene/format ()
+  "Run buffer or region through format program."
+  (interactive)
+  (if (bound-and-true-p robenkleene/format-program)
+      (robenkleene/shell-command-on-region robenkleene/format-program)
+    (message "No format program defined.")
+    )
+  )
+
+(defun robenkleene/shell-command-on-region (command)
+  "Pipe the current buffer or region through COMMAND."
+  (interactive "r")
+  (if (use-region-p)
+      (progn
+        (shell-command-on-region (region-beginning) (region-end) command t t)
+        (deactivate-mark)
+        )
+    (shell-command-on-region (point-min) (point-max) command t t)
+    )
+  )
+
 (provide 'robenkleene-functions)
 ;;; robenkleene-functions.el ends here
