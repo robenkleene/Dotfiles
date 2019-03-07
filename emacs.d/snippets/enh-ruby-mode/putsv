@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: putsv
+# key: putsv
+# --
+puts "${1:variable} = #{$1}"
