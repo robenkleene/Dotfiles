@@ -26,7 +26,7 @@
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
-(require 'robenkleene-ido-completing-read)
+;; (require 'robenkleene-ido-completing-read)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
@@ -43,7 +43,8 @@
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 (require 'robenkleene-anzu)
-(require 'robenkleene-company)
+;; (require 'robenkleene-company)
+;; (require 'robenkleene-ido-vertical-mode)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)

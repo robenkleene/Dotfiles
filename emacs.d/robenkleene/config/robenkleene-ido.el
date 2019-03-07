@@ -217,5 +217,18 @@
     )
   )
 
+;; (robenkleene/ido-vertical-call
+;;  (lambda ()
+;;    (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
+;;    )
+;;  )
+;; Couldn't
+;; (defun robenkleene/ido-vertical-call (fun)
+;;   "Call FUN with ido vertical and return result."
+;;   (ido-vertical-mode 1)
+;;   (with-demoted-errors (funcall fun))
+;;   (ido-vertical-mode -1)
+;;   )
+
 (provide 'robenkleene-ido)
 ;;; robenkleene-ido.el ends here
