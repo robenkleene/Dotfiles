@@ -503,7 +503,7 @@ Otherwise, call `backward-kill-word'."
         (setq directories
               (directory-files scratch-directory
                                nil
-                               (concat ".*\." extension)))
+                               (concat "^[^.].*\." extension)))
       (message "No valid extension found.")
       )
     (expand-file-name (car directories) scratch-directory)
