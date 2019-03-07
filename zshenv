@@ -9,8 +9,9 @@
 # `vim`
 VIM_COMMAND=vim
 
-# `-t` means don't try to open GUI emacs
-EMACS_COMMAND='emacsclient -t'
+# `-t` means don't try to open GUI emacs, note that this doesn't work with
+# current Emacs
+EMACS_COMMAND='emacsclient -t --no-wait'
 # EMACS_COMMAND='emacs'
 ACK_COMMAND=rg
 
