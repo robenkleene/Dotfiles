@@ -43,6 +43,7 @@
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 (require 'robenkleene-anzu)
+(require 'robenkleene-company)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
