@@ -26,7 +26,7 @@
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-flycheck)
-;; (require 'robenkleene-ido-completing-read)
+(require 'robenkleene-ido-completing-read)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
 (require 'robenkleene-pbcopy)
