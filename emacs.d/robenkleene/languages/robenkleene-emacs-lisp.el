@@ -4,7 +4,7 @@
 
 (add-hook 'lisp-mode-hook
           (lambda ()
-            (setq robenkleene/evaluate-buffer-or-region-function 'robenkleene/emacs-lisp-eval-buffer-or-region)
+            (setq-local robenkleene/evaluate-buffer-or-region-function 'robenkleene/emacs-lisp-eval-buffer-or-region)
             )
           )
 

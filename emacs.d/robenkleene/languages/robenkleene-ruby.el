@@ -10,20 +10,27 @@
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
-              (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
-              (setq robenkleene/format-function (lambda ()
-                                                  (interactive)
-                                                  (call-interactively 'robenkleene/format)
-                                                  ;; For some reason running
-                                                  ;; format kill syntax
-                                                  ;; highlighting in Ruby,
-                                                  ;; calling `ruby-mode'
-                                                  ;; re-applies it
-                                                  (ruby-mode)
-                                                  ))
-              (setq robenkleene/evaluate-buffer-or-region-function 'robenkleene/ruby-eval-buffer-or-region)
+              (setq-local robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+              (setq-local robenkleene/format-function (lambda ()
+                                                        (interactive)
+                                                        (if (bound-and-true-p robenkleene/format-program)
+                                                            (progn
+                                                              (robenkleene/shell-command-on-region robenkleene/format-program)
+                                                              (deactivate-mark)
+                                                              )
+                                                          (message "No format program defined.")
+                                                          )
+                                                        ;; For some reason running
+                                                        ;; format kill syntax
+                                                        ;; highlighting in Ruby,
+                                                        ;; calling `ruby-mode'
+                                                        ;; re-applies it
+                                                        ;; (enh-ruby-mode)
+                                                        ))
+              (setq-local robenkleene/evaluate-buffer-or-region-function 'robenkleene/ruby-eval-buffer-or-region)
               )
             )
+
   (with-eval-after-load "enh-ruby-mode"
     ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
 

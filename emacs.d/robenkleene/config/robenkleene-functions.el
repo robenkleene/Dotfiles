@@ -457,7 +457,10 @@ Otherwise, call `backward-kill-word'."
   (if (bound-and-true-p robenkleene/format-function)
       (call-interactively robenkleene/format-function)
     (if (bound-and-true-p robenkleene/format-program)
-        (robenkleene/shell-command-on-region robenkleene/format-program)
+        (progn
+          (robenkleene/shell-command-on-region robenkleene/format-program)
+          (deactivate-mark)
+          )
       (message "No format program defined.")
       )
     )
