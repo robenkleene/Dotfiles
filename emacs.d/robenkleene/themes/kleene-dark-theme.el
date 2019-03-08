@@ -380,6 +380,15 @@
    `(undo-tree-visualizer-current-face ((t (:inherit rk-link :underline nil :bold t))))
    `(undo-tree-visualizer-default-face ((t (:inherit rk-comment))))
 
+   ;;;; Anzu
+   `(anzu-mode-line ((t (:inherit rk-modeline-active :bold t))))
+   `(anzu-mode-line-no-match ((t (:inherit rk-modeline-active :bold t))))
+   
+;;; Languages
+
+   ;;; Ruby 
+   `(erm-syn-errline ((t (:inherit rk-error :box nil))))
+   `(erm-syn-warnline ((t (:inherit rk-warning :box nil))))   
    ))
 
 
