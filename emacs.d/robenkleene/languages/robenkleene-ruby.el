@@ -8,6 +8,52 @@
   :interpreter "ruby"
   :config
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
+  (add-hook 'enh-ruby-mode-hook
+            (lambda ()
+              (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+              (setq robenkleene/format-function (lambda ()
+                                                  (interactive)
+                                                  (call-interactively 'robenkleene/format)
+                                                  ;; For some reason running
+                                                  ;; format kill syntax
+                                                  ;; highlighting in Ruby,
+                                                  ;; calling `ruby-mode'
+                                                  ;; re-applies it
+                                                  (ruby-mode)
+                                                  ))
+              (setq robenkleene/evaluate-buffer-or-region-function 'robenkleene/ruby-eval-buffer-or-region)
+              )
+            )
+  (with-eval-after-load "enh-ruby-mode"
+    ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
+
+    (defalias 'irb 'robenkleene/start-irb)
+
+    (defun robenkleene/start-irb ()
+      (interactive)
+      (if (null (get-buffer "*ruby*"))
+          (run-ruby)
+        (switch-to-buffer-other-window "*ruby*")
+        )
+      )
+
+    (defun robenkleene/ruby-eval-buffer-or-region ()
+      (interactive)
+      (if (use-region-p)
+          (call-interactively 'ruby-send-region)
+        (call-interactively 'ruby-send-buffer)
+        )
+      (switch-to-buffer-other-window "*ruby*")
+      )
+
+    ;; Mode
+    ;; (define-minor-mode robenkleene/ruby-bindings-minor-mode
+    ;;   "My bindings."
+    ;;   t
+    ;;   nil
+    ;;   'robenkleene/ruby-bindings-map)
+    ;; (robenkleene/ruby-bindings-minor-mode 1)
+    )
   )
 
 (use-package robe
@@ -16,54 +62,6 @@
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
   ;; (eval-after-load 'company
   ;;   '(push 'company-robe company-backends))
-  )
-
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
-            )
-          )
-
-(with-eval-after-load "ruby-mode"
-  ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
-
-  (define-key robenkleene/leader-map (kbd "f") (lambda ()
-                                                 (interactive)
-                                                 (call-interactively 'robenkleene/format)
-                                                 ;; For some reason running
-                                                 ;; format kill syntax
-                                                 ;; highlighting in Ruby,
-                                                 ;; calling `ruby-mode'
-                                                 ;; re-applies it
-                                                 (ruby-mode)
-                                                 ))
-  (define-key robenkleene/leader-map (kbd "e") 'robenkleene/ruby-eval-buffer-or-region)
-  (defalias 'repl 'robenkleene/start-irb)
-
-  (defun robenkleene/start-irb ()
-    (interactive)
-    (if (null (get-buffer "*ruby*"))
-        (run-ruby)
-      (switch-to-buffer-other-window "*ruby*")
-      )
-    )
-
-  (defun robenkleene/ruby-eval-buffer-or-region ()
-    (interactive)
-    (if (use-region-p)
-        (call-interactively 'ruby-send-region)
-      (call-interactively 'ruby-send-buffer)
-      )
-    (switch-to-buffer-other-window "*ruby*")
-    )
-
-  ;; Mode
-  ;; (define-minor-mode robenkleene/ruby-bindings-minor-mode
-  ;;   "My bindings."
-  ;;   t
-  ;;   nil
-  ;;   'robenkleene/ruby-bindings-map)
-  ;; (robenkleene/ruby-bindings-minor-mode 1)
   )
 
 (provide 'robenkleene-ruby)

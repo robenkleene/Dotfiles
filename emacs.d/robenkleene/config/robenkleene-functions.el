@@ -450,12 +450,26 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defvar-local robenkleene/format-program nil)
+(defvar-local robenkleene/format-function nil)
 (defun robenkleene/format ()
   "Run buffer or region through format program."
   (interactive)
-  (if (bound-and-true-p robenkleene/format-program)
-      (robenkleene/shell-command-on-region robenkleene/format-program)
-    (message "No format program defined.")
+  (if (bound-and-true-p robenkleene/format-function)
+      (call-interactively robenkleene/format-function)
+    (if (bound-and-true-p robenkleene/format-program)
+        (robenkleene/shell-command-on-region robenkleene/format-program)
+      (message "No format program defined.")
+      )
+    )
+  )
+
+(defvar-local robenkleene/evaluate-buffer-or-region-function nil)
+(defun robenkleene/evaluate-buffer-or-region ()
+  "Evaluate the buffer or region."
+  (interactive)
+  (if (bound-and-true-p robenkleene/evaluate-buffer-or-region-function)
+      (call-interactively robenkleene/evaluate-buffer-or-region-function)
+    (message "No evaluate function defined.")
     )
   )
 

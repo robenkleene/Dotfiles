@@ -2,9 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(with-eval-after-load "lisp-mode"
+(add-hook 'lisp-mode-hook
+          (lambda ()
+            (setq robenkleene/evaluate-buffer-or-region-function 'robenkleene/emacs-lisp-eval-buffer-or-region)
+            )
+          )
 
-  (define-key robenkleene/leader-map (kbd "e") 'robenkleene/emacs-lisp-eval-buffer-or-region)
+(with-eval-after-load "lisp-mode"
   (defun robenkleene/emacs-lisp-eval-buffer-or-region ()
     (interactive)
     (if (use-region-p)
