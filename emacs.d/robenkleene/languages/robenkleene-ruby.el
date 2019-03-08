@@ -15,8 +15,7 @@
                                                         (interactive)
                                                         (if (bound-and-true-p robenkleene/format-program)
                                                             (progn
-                                                              (robenkleene/shell-command-on-region robenkleene/format-program)
-                                                              (deactivate-mark)
+                                                              (robenkleene/shell-command-on-buffer-or-region robenkleene/format-program)
                                                               )
                                                           (message "No format program defined.")
                                                           )

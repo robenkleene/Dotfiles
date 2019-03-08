@@ -457,10 +457,7 @@ Otherwise, call `backward-kill-word'."
   (if (bound-and-true-p robenkleene/format-function)
       (call-interactively robenkleene/format-function)
     (if (bound-and-true-p robenkleene/format-program)
-        (progn
-          (robenkleene/shell-command-on-region robenkleene/format-program)
-          (deactivate-mark)
-          )
+        (robenkleene/shell-command-on-buffer-or-region robenkleene/format-program)
       (message "No format program defined.")
       )
     )
@@ -476,7 +473,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/shell-command-on-region (command)
+(defun robenkleene/shell-command-on-buffer-or-region (command)
   "Pipe the current buffer or region through COMMAND."
   (interactive "r")
   (if (use-region-p)
@@ -484,7 +481,12 @@ Otherwise, call `backward-kill-word'."
         (shell-command-on-region (region-beginning) (region-end) command t t)
         (deactivate-mark)
         )
-    (shell-command-on-region (point-min) (point-max) command t t)
+    (let ((p (point)))
+      (save-excursion
+        (shell-command-on-region (point-min) (point-max) command t t)
+        )
+      (goto-char p)
+      )
     )
   )
 
