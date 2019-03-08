@@ -18,10 +18,15 @@
   ;;   '(push 'company-robe company-backends))
   )
 
-(with-eval-after-load "ruby-mode"
-  (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (setq robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+            )
+          )
 
+(with-eval-after-load "ruby-mode"
   ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
+
   (define-key robenkleene/leader-map (kbd "f") (lambda ()
                                                  (interactive)
                                                  (call-interactively 'robenkleene/format)
