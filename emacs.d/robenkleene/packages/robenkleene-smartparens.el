@@ -6,6 +6,7 @@
 (use-package smartparens
   :demand
   :bind
+  ("C-M-]" . sp-select-next-thing)
   (:map smartparens-strict-mode-map
         ("<M-backspace>" . sp-backward-kill-word)
         )
