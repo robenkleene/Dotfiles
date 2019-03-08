@@ -142,6 +142,7 @@ everywhere_abbreviations=(
 '-gruby' '-g "*.rb"'
 # Carthage
 '-nub' '--no-use-binaries'
+'eq' '2>&1|Q'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
