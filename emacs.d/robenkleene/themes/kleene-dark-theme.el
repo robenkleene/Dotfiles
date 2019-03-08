@@ -211,8 +211,9 @@
    `(git-commit-summary ((t (:inherit rk-text))))
 
    ;;;; Flycheck
-   ;; `(flycheck-warning ((t (:inherit rk-warning))))
-   `(flycheck-info ((t (:inherit rk-warning))))
+   `(flycheck-warning ((t (:underline t :inherit rk-warning))))
+   `(flycheck-error ((t (:underline t :inherit rk-error))))
+   `(flycheck-info ((t (:underline t :inherit rk-warning))))
    `(flycheck-fringe-info ((t (:inherit rk-warning))))
    ;; `(flycheck-error ((t (:inherit rk-error))))
 
