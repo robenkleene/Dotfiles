@@ -131,7 +131,7 @@ abbreviations=(
 'agvmn' 'agvtool new-marketing-version'
 
 # `emacs`
-'enw' 'emacs -nw'
+'emnw' 'emacs -nw'
 )
 
 # These abbreviations work everywhere
