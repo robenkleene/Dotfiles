@@ -2,6 +2,21 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Set path
+(let ((paths-to-prepend
+       '(
+         "/usr/local/bin"
+         "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/"
+         )))
+  (setenv "PATH" (mapconcat
+                  'identity
+                  (append paths-to-prepend
+                          (list (getenv "PATH")))
+                  ":"))
+  (dolist (path-to-prepend paths-to-prepend)
+    (add-to-list 'exec-path path-to-prepend))
+  )
+
 ;; Start the emacs server if it isn't already running and we're running in window mode
 (require 'server)
 (if (display-graphic-p (selected-frame))

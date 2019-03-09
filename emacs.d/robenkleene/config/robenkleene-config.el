@@ -31,19 +31,6 @@
                                       )
                               (cdr mode-line-buffer-identification)))))
 
-;; Set path
-(let ((paths-to-prepend
-       '(
-         "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/"
-         )))
-  (setenv "PATH" (mapconcat
-                  'identity
-                  (append paths-to-prepend
-                          (list (getenv "PATH")))
-                  ":"))
-  (dolist (path-to-prepend paths-to-prepend)
-    (add-to-list 'exec-path path-to-prepend))
-  )
 
 ;; Allow `C-i' and `<TAB>' to be bound separately
 (setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
