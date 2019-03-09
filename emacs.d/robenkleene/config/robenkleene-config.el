@@ -136,6 +136,9 @@
 ;; Highlight Matching parens
 (show-paren-mode 1)
 
+;; Automatically reload tags file
+(setq tags-revert-without-query 1)
+
 ;; Better Defaults
 (setq-default indent-tabs-mode nil)
 (setq save-interprogram-paste-before-kill t

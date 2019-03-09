@@ -45,5 +45,9 @@
 
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
+;; Improve compatibility of macOS dark mode
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 (provide 'robenkleene-gui)
 ;;; robenkleene-gui.el ends here
