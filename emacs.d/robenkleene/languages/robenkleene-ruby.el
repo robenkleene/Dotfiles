@@ -7,7 +7,6 @@
   :mode ("\\.rb$" "Fastfile$")
   :interpreter "ruby"
   :config
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
               (setq-local robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
@@ -62,13 +61,17 @@
     )
   )
 
-(use-package robe
-  :defer t
+(use-package inf-ruby
   :init
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  ;; (eval-after-load 'company
-  ;;   '(push 'company-robe company-backends))
-  )
+  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode))
+
+;; (use-package robe
+;;   :defer t
+;;   :init
+;;   (add-hook 'enh-ruby-mode-hook 'robe-mode)
+;;   ;; (eval-after-load 'company
+;;   ;;   '(push 'company-robe company-backends))
+;;   )
 
 (provide 'robenkleene-ruby)
 ;;; robenkleene-ruby.el ends here
