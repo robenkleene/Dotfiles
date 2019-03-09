@@ -139,6 +139,18 @@
 ;; Automatically reload tags file
 (setq tags-revert-without-query 1)
 
+(advice-add 'xref-find-definitions
+            :before
+            #'(lambda (identifier)
+                (let ((tags-file (locate-dominating-file default-directory "TAGS")))
+                  (when tags-file
+                    (visit-tags-table tags-file)
+                    )
+                  )
+                )
+            )
+
+
 ;; Better Defaults
 (setq-default indent-tabs-mode nil)
 (setq save-interprogram-paste-before-kill t
