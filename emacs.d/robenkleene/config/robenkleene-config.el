@@ -142,14 +142,15 @@
 (advice-add 'xref-find-definitions
             :before
             #'(lambda (identifier)
-                (let ((tags-file (locate-dominating-file default-directory "TAGS")))
-                  (when tags-file
-                    (visit-tags-table tags-file)
-                    )
+                (if (not (bound-and-true-p tags-file-name))
+                    (let ((tags-file (locate-dominating-file default-directory "TAGS")))
+                      (when tags-file
+                        (visit-tags-table tags-file)
+                        )
+                      )
                   )
                 )
             )
-
 
 ;; Better Defaults
 (setq-default indent-tabs-mode nil)
