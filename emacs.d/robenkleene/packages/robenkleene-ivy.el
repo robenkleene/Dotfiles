@@ -7,8 +7,8 @@
   :bind
   (:map robenkleene/leader-map
         ("l" . swiper)
-        ("a" . robenkleene/counsel-rg)
-        ("g a" . robenkleene/counsel-rg-source-control)
+        ;; ("a" . robenkleene/counsel-rg)
+        ;; ("g a" . robenkleene/counsel-rg-source-control)
         ("r" . ivy-resume)
         )
   :config

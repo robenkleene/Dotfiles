@@ -410,6 +410,19 @@ Otherwise, call `backward-kill-word'."
 (defcustom robenkleene/rg-command "rg --smart-case --no-heading <R> <D>"
   "Default `rg' command.")
 
+(defun robenkleene/source-control-directory ()
+  "Return the source control directory or nil."
+  (locate-dominating-file default-directory
+                          ".git")
+  )
+
+(defun robenkleene/rg-source-control ()
+  "Run `rg' in source control directory."
+  (interactive)
+  (cd (robenkleene/source-control-directory))
+  (call-interactively 'robenkleene/rg)
+  )
+
 (defun robenkleene/rg (regexp &optional files dir)
   "Search for the given REGEXP using `git grep' in the current directory.  FILES DIR."
   (interactive (robenkleene/grep-parameters))

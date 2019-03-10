@@ -67,6 +67,8 @@
 (define-key robenkleene/leader-map (kbd "g c") 'robenkleene/ido-source-control-recursive-find-dir)
 (define-key robenkleene/leader-map (kbd "g M-e") 'robenkleene/ido-source-control-recursive-find-file)
 (define-key robenkleene/leader-map (kbd "g M-c") 'robenkleene/ido-source-control-recursive-find-dir)
+(define-key robenkleene/leader-map (kbd "g a") 'robenkleene/rg-source-control)
+(define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
 
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)

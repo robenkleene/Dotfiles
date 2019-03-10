@@ -67,15 +67,13 @@
 (defun robenkleene/ido-source-control-recursive-find-file ()
   "Find file recursively from source control root."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
-                                                                         ".git")))
+  (find-file (robenkleene/ido-recursive-get-file (robenkleene/source-control-directory)))
   )
 
 (defun robenkleene/ido-source-control-recursive-find-dir ()
   "Find directory recursively from source control root."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-dir (locate-dominating-file default-directory
-                                                                        ".git")))
+  (find-file (robenkleene/ido-recursive-get-dir (robenkleene/source-control-directory)))
   )
 
 ;; Insert
@@ -115,16 +113,14 @@
 (defun robenkleene/ido-source-control-recursive-insert-file ()
   "Find and insert file recursively from source control root."
   (interactive)
-  (insert (file-relative-name (robenkleene/ido-recursive-get-file (locate-dominating-file default-directory
-                                                                                          ".git"))
+  (insert (file-relative-name (robenkleene/ido-recursive-get-file (robenkleene/source-control-directory))
                               default-directory))
   )
 
 (defun robenkleene/ido-source-control-recursive-insert-dir ()
   "Find and insert directory recursively from source control root."
   (interactive)
-  (insert (file-relative-name (robenkleene/ido-recursive-get-dir (locate-dominating-file default-directory
-                                                                                         ".git"))
+  (insert (file-relative-name (robenkleene/ido-recursive-get-dir (robenkleene/source-control-directory))
                               default-directory))
   )
 
