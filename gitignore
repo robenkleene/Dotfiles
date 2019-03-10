@@ -28,6 +28,7 @@ test.log
 # Ctags
 tags
 !tags/
+TAGS
 
 # Node
 node_modules
