@@ -10,7 +10,7 @@ while [[ $PWD != / ]]; do
 done
 
 emacs="false"
-if ls | grep "^TAGS$"; then
+if ls | grep "^TAGS$" 2>&1 >/dev/null; then
   emacs="true"
 fi
 
