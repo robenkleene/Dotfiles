@@ -4,10 +4,12 @@
 
 ;; Set path
 (let ((paths-to-prepend
-       '(
-         "/usr/local/bin"
-         "/Users/robenkleene/.nvm/versions/node/v0.12.2/bin/"
-         )))
+       (list
+        "/usr/local/bin"
+        (expand-file-name "~/.bin")
+        (expand-file-name "~/.nvm/versions/node/v0.12.2/bin/")
+        )
+       ))
   (setenv "PATH" (mapconcat
                   'identity
                   (append paths-to-prepend
