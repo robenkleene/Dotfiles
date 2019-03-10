@@ -26,14 +26,13 @@
                                                         ;; (enh-ruby-mode)
                                                         ))
               (setq-local robenkleene/evaluate-buffer-or-region-function 'robenkleene/ruby-eval-buffer-or-region)
+              ;; Remove `:' from the symbol syntax table this helps makes jumping
+              ;; to definition work
+              (let ((table (copy-syntax-table (syntax-table))))
+                (modify-syntax-entry ?: "." table)
+                (set-syntax-table table)
+                )
               )
-            ;; Remove `:' from the symbol syntax table this helps makes jumping
-            ;; to definition work
-            (add-hook 'enh-ruby-mode-hook #'(lambda () (modify-syntax-entry ?: ".")))
-            ;; (let ((table (copy-syntax-table (syntax-table))))
-            ;;   (modify-syntax-entry ?: "." table)
-            ;;   (set-syntax-table table)
-            ;;   )
             )
 
   (with-eval-after-load "enh-ruby-mode"
