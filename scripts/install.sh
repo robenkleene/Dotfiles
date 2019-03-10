@@ -28,7 +28,7 @@ shopt -s nullglob
 for thisFILE in *; do 
 	# Exclude this install script and directories
  	if [[ ! $thisFILE =~ "install.sh" ]] && 
-		[[ ! $thisFILE =~ "tags" ]] &&
+		[[ ! $thisFILE == "tags" ]] &&
 		[ ! -d $thisFILE ]; then
 		MakeSymlink $thisFILE
  	fi
