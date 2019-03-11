@@ -52,6 +52,11 @@ Otherwise, call `backward-kill-word'."
    )
   )
 
+(defun robenkleene/generate-tags ()
+  "Generate tags."
+  (interactive)
+  (compile "~/.bin/generate_tags -e"))
+
 (defun robenkleene/external-editor ()
   "Open a region or buffer in external editor."
   (interactive)

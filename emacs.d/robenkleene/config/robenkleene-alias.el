@@ -11,6 +11,7 @@
 (defalias 'os 'robenkleene/open-scratch-other-window)
 (defalias 'doc 'robenkleene/documentation)
 (defalias 'slug 'robenkleene/slug-project)
+(defalias 'tags 'robenkleene/generate-tags)
 
 (provide 'robenkleene-alias)
 ;;; robenkleene-alias.el ends here
