@@ -35,7 +35,6 @@
 (require 'robenkleene-smartparens)
 (require 'robenkleene-smex)
 (require 'robenkleene-macrostep)
-(require 'robenkleene-ivy)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-fill-column-indicator)
