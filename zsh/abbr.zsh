@@ -132,6 +132,7 @@ abbreviations=(
 
 # `emacs`
 'emnw' 'emacs -nw'
+'emacs' 'emacs -nw'
 )
 
 # These abbreviations work everywhere
