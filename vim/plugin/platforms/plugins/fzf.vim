@@ -4,7 +4,7 @@ if has('gui_running')
 endif
 
 " Make a separate command so that `:Tags` can be used to generate tags
-command! -bang -nargs=* FZFTags call fzf#vim#tags(<q-args>, <bang>0)
+" command! -bang -nargs=* FZFTags call fzf#vim#tags(<q-args>, <bang>0)
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
@@ -130,6 +130,11 @@ command! Zvim :call fzf#run(fzf#wrap({
       \   'sink': 'e'
       \ }))
 
+command! FZFTags :call fzf#run(fzf#wrap({
+      \   'source': "~/.bin/dump_tags",
+      \   'sink': 'tag'
+      \ }))
+
 " Insert
 function! s:insert(string) abort
   let temp = @s
@@ -200,48 +205,8 @@ function! s:TagBuffer() abort
   bdelete
   return s:open_tags(lines)
 endfunction
-let s:is_win = has('win32') || has('win64')
-function! s:escape(path)
-  return escape(a:path, ' $%#''"\')
-endfunction
-function! s:open(cmd, target)
-  if stridx('edit', a:cmd) == 0 && fnamemodify(a:target, ':p') ==# expand('%:p')
-    return
-  endif
-  execute a:cmd s:escape(a:target)
-endfunction
 function! s:open_tags(lines)
-  normal! m'
-  let qfl = []
-  let cmd = 'e'
-  try
-    let [magic, &magic, wrapscan, &wrapscan, acd, &acd] = [&magic, 0, &wrapscan, 1, &acd, 0]
-    for line in a:lines
-      try
-        let parts   = split(line, '\t\zs')
-        let excmd   = matchstr(join(parts[2:-2], '')[:-2], '^.*\ze;"\t')
-        let base    = fnamemodify(parts[-1], ':h')
-        let relpath = parts[1][:-2]
-        let abspath = relpath =~ (s:is_win ? '^[A-Z]:\' : '^/') ? relpath : join([base, relpath], '/')
-        call s:open(cmd, expand(abspath, 1))
-        execute excmd
-        call add(qfl, {'filename': expand('%'), 'lnum': line('.'), 'text': getline('.')})
-      catch /^Vim:Interrupt$/
-        break
-      catch
-        call s:warn(v:exception)
-      endtry
-    endfor
-  finally
-    let [&magic, &wrapscan, &acd] = [magic, wrapscan, acd]
-  endtry
-  if len(qfl) > 1
-    call setqflist(qfl)
-    copen
-    wincmd p
-    clast
-  endif
-  normal! zz
+  execute "tag ".a:lines[0]
 endfunction
 function! s:warn(message)
   echohl WarningMsg
@@ -249,4 +214,3 @@ function! s:warn(message)
   echohl None
   return 0
 endfunction
-
