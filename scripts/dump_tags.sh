@@ -9,8 +9,13 @@ while [[ $PWD != / ]]; do
   cd ..
 done
 
+if [[ $PWD == / ]]; then
+  echo "No tags file found" >&2
+  exit 1
+fi
+
 emacs="false"
-if ls | grep "^TAGS$" 2>&1 >/dev/null; then
+if ls TAG? | grep "^TAGS$" 2>&1 >/dev/null; then
   emacs="true"
 fi
 
@@ -19,8 +24,4 @@ if "$emacs" == "true"; then
 else
   ~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags |\
     cut -f 1 | cut -f 1 -d$ | cut -f 1 -d' '
-fi
-
-if [[ $PWD == / ]]; then
-  echo "No tags file found" >&2
 fi
