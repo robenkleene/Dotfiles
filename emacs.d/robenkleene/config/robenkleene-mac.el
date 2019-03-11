@@ -22,7 +22,7 @@
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-a") 'mark-whole-buffer)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-x") 'kill-region)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'new-frame)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'make-frame)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'robenkleene/empty-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-z") 'undo-tree-undo)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-Z") 'undo-tree-redo)
