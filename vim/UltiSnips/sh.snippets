@@ -100,14 +100,14 @@ IFS="${1: }"
 IFS=${old_IFS}
 endsnippet
 snippet getopts "getopts" b
-b=false
+b="false"
 while getopts ":a:bh" option; do
   case "$option" in
     a)
       echo "-a $OPTARG"
       ;;
     b)
-      b=true
+      b="true"
       echo "-b $b"
       ;;
     h)
