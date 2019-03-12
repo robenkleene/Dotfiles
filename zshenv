@@ -30,10 +30,6 @@ export EDITOR=$VIM_COMMAND
 # sequences
 export PAGER="less --ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 
-# Atom
-export ATOM_PATH=$HOME/Applications/
-export ATOM_REPOS_HOME=$HOME/Development/Projects/Atom
-
 # Coffeelint
 export COFFEELINT_CONFIG=$HOME/.coffeelint.json
 
