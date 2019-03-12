@@ -34,9 +34,6 @@ endsnippet
 snippet testd "True if directory"
 -d "${1:\$1}"
 endsnippet
-snippet testdn "True if not directory"
-! -d "${1:\$1}"
-endsnippet
 snippet testb "Test boolean"
 "$${1:value}" == "true"
 endsnippet
@@ -45,9 +42,6 @@ snippet testf "True if regular file"
 endsnippet
 snippet teste "True if file exists"
 -e "${1:\$1}"
-endsnippet
-snippet testfn "True if not file"
-! -f "${1:\$1}"
 endsnippet
 snippet testl "True if symbolic link"
 -L "${1:\$1}"
