@@ -137,6 +137,7 @@
    `(rk-match ((t (:background ,match-bg))))
    `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
    `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
+   `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
    `(rk-popup ((t (:inherit rk-modeline-active))))
    `(rk-popup-match ((t (:foreground ,link))))
    `(rk-popup-selection ((t (:inherit rk-search))))
@@ -179,6 +180,7 @@
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment :background ,white))))
    `(line-number ((t (:inherit rk-comment))))
+   `(match ((t (:inherit rk-match))))
 
    ;;;; Text
    `(link ((t (:inherit rk-link))))
@@ -218,7 +220,7 @@
    ;; `(flycheck-error ((t (:inherit rk-error))))
 
    ;;;; Flyspell
-   `(flyspell-duplicate ((t (:inherit rk-warning))))
+   `(flyspell-duplicate ((t (:inherit rk-none))))
    `(flyspell-incorrect ((t (:inherit rk-error))))
 
    ;;;; diff
