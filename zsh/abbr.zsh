@@ -119,8 +119,6 @@ abbreviations=(
 # `gu`: `git pull`
 'gu' 'git pull'
 'gur' 'git pull -r'
-# `gw`: `git web`
-'gw' 'git_web_open'
 'glg' 'git log -p -G'
 
 # Carthage
