@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: testn
+# key: testn
+# --
+-n "$${1:1}"

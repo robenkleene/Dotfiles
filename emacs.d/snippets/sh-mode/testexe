@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: testexe
+# key: testexe
+# --
+${1:$?} -ne 0
+

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: testb
+# key: testb
+# --
+"$${1:value}" == "true"

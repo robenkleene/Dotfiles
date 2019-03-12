@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tests
+# key: tests
+# --
+"$${1:1}" = "${2:string}"

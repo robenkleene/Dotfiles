@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: testex0
+# key: testex0
+# --
+${1:$?} -eq 0

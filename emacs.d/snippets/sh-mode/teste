@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: teste
+# key: teste
+# --
+-e "${1:\$1}"

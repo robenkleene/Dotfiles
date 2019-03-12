@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: testl
+# key: testl
+# --
+-L "${1:\$1}"
+
