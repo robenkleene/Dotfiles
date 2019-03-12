@@ -11,7 +11,7 @@ VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs, note that this doesn't work with
 # current Emacs
-EMACS_COMMAND='emacsclient -t --no-wait'
+EMACS_COMMAND='emacsclient --no-wait --create-frame'
 # EMACS_COMMAND='emacs'
 ACK_COMMAND=rg
 
@@ -39,9 +39,6 @@ export ALTERNATE_EDITOR=""
 
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1
-
-# Custom
-export INBOX_DIRECTORY=~/Documents/Text/Inbox
 
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS
