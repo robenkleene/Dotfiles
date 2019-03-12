@@ -36,6 +36,9 @@
 
 (set-face-attribute 'default nil :font "Fira Code-12:Retina")
 
+;; Cursor
+(setq-default cursor-type 'bar)
+
 ;; Save window state
 (desktop-save-mode 1)
 (setq desktop-restore-frames t)
