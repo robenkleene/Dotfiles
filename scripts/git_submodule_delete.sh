@@ -2,6 +2,10 @@
 
 set -e
 
+usage() {
+  echo "Usage: git_submodule_delete -p <PATH> [-f]"
+}
+
 force=false
 while getopts ":p:fh" option; do
   case "$option" in
@@ -12,7 +16,7 @@ while getopts ":p:fh" option; do
       force=true
       ;;
     h)
-      echo "Usage: git_submodule_delete [-f]"
+      usage
       exit 0
       ;;
     :)
@@ -28,17 +32,20 @@ done
 
 if [[ -z "$path" ]]; then
   echo "No path specified" >&2
+  usage
   exit 1
 fi
 
 if [[ ! -d "$path" ]]; then
   echo "Not a directory $path" >&2
+  usage
   exit 1
 fi
 
 module_path=".git/modules/$path"
 if [[ ! -d "$module_path" ]]; then
   echo "Not a directory $module_path" >&2
+  usage
   exit 1
 fi
 
