@@ -155,3 +155,6 @@ alias slpre='slug_project_edit'
 # Edit
 alias erm='eval $EDITOR README.md'
 alias ec="safepaste | $VIM_COMMAND -"
+
+# Tags
+alias tg="generate_tags"
