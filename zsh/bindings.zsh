@@ -31,7 +31,7 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 # Clipboard
 _system_kill_word() {
   zle kill-word
-  # echo "$CUTBUFFER" | safecopy
+  echo "$CUTBUFFER" | safecopy
 }
 zle -N _system_kill_word
 autoload -Uz select-word-style
@@ -40,7 +40,7 @@ _system_bash_backwards_kill_word() {
   select-word-style bash
   WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
   select-word-style normal
-  # echo "$CUTBUFFER" | safecopy
+  echo "$CUTBUFFER" | safecopy
 }
 zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
@@ -72,7 +72,7 @@ _system_kill_region() {
 zle -N _system_kill_region
 _system_backward_kill_word() {
   zle backward-kill-word
-  # echo "$CUTBUFFER" | safecopy
+  echo "$CUTBUFFER" | safecopy
 }
 zle -N _system_backward_kill_word
 _system_yank() {
