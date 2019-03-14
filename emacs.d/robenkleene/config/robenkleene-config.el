@@ -60,6 +60,8 @@
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
+(global-whitespace-mode)
+(setq whitespace-style (quote (tabs tab-mark)))
 
 ;; Highlight Keywords
 (add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)

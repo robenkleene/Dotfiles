@@ -37,13 +37,13 @@
 (require 'robenkleene-macrostep)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-page-break-lines)
-(require 'robenkleene-fill-column-indicator)
+;; This breaks company mode
+;; (require 'robenkleene-fill-column-indicator)
 ;; This breaks default undo via `C-g C-_'
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 (require 'robenkleene-anzu)
-;; (require 'robenkleene-company)
-;; (require 'robenkleene-ido-vertical-mode)
+(require 'robenkleene-company)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
