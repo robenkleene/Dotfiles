@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;; Load `C-x C-j' command for `dired-jump'
+;; Also enables `dired-omit-mode'
 (require 'dired-x)
 
 (with-eval-after-load 'dired
@@ -19,12 +20,12 @@
   (setq dired-use-ls-dired nil)
 
   ;; Omit hidden files
-  (setq-default dired-omit-mode t)
   (setq-default dired-omit-files
                 (concat dired-omit-files "\\|^\\..+$"))
   )
 (add-hook 'dired-mode-hook
           (lambda ()
+            (dired-omit-mode)
             ;; Hide details (showthem with "\("
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
