@@ -2,7 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-(defalias 'gcd 'robenkleene/go-to-project-root)
+;; (defalias 'gcd 'robenkleene/go-to-project-root)
+(defun gcd ()
+  "The alias keep disappearing so try this as a function."
+  (interactive)
+  (call-interactively 'robenkleene/go-to-project-root)
+  )
 (defalias 'tdb 'toggle-debug-on-error)
 (defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
