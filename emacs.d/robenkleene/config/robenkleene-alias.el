@@ -2,12 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-;; (defalias 'gcd 'robenkleene/go-to-project-root)
-(defun gcd ()
-  "The alias keep disappearing so try this as a function."
-  (interactive)
-  (call-interactively 'robenkleene/go-to-project-root)
-  )
+;; The usual alias for this, `gcd' conflicts with a built-in common lisp
+;; function with the same name
+(defalias 'cg 'robenkleene/go-to-project-root)
 (defalias 'tdb 'toggle-debug-on-error)
 (defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
