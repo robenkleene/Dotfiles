@@ -16,6 +16,9 @@
   ;;                                 (auto-save-mode)
   ;;                                 )
   ;;           )
+  ;; Try `flyspell-prog-mode' to prevent spelling errors in Markdown code blocks.
+  ;; This seems to disable spelling altogether:
+  ;; (add-hook 'markdown-mode-hook 'flyspell-prog-mode)
   )
 
 (provide 'robenkleene-markdown)

@@ -40,8 +40,8 @@
 (setq-default cursor-type 'bar)
 
 ;; Save window state
-(desktop-save-mode 1)
 (setq desktop-restore-frames t)
+(desktop-save-mode 1)
 
 ;; Slow-down mouse scrolling
 (setq mouse-wheel-scroll-amount '(0.001))
