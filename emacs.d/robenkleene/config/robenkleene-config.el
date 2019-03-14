@@ -71,7 +71,7 @@
 (setq inhibit-startup-message t)
 
 ;; Editing & Navigation
-(setq shift-select-mode nil)
+;; (setq shift-select-mode nil)
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
