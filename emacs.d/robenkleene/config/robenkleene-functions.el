@@ -57,6 +57,16 @@ Otherwise, call `backward-kill-word'."
   (interactive)
   (compile "~/.bin/generate_tags -e"))
 
+(defun robenkleene/refresh-tags ()
+  "Load the tags file relative to the current buffer."
+  (interactive)
+  (let ((tags-file (locate-dominating-file default-directory "TAGS")))
+    (when tags-file
+      (visit-tags-table tags-file)
+      )
+    )
+  )
+
 (defun robenkleene/external-editor ()
   "Open a region or buffer in external editor."
   (interactive)
