@@ -47,6 +47,9 @@
 ;; Don't change scrolling speed when scrolling fast
 ;; (setq mouse-wheel-progressive-speed nil)
 
+;; Disable mouse highlighting
+(setq mouse-highlight nil)
+
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 ;; Improve compatibility of macOS dark mode
