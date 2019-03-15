@@ -140,8 +140,8 @@ alias gdg='git_diff_grep'
 alias gbpr='git_branch_prune'
 alias gprpr='git_process_pull_request'
 alias gpbo='git_push_branch_origin'
-alias scs='source_control_open_site'
-alias scsf='source_control_open_site -f'
+alias scw='source_control_open_site'
+alias scwf='source_control_open_site -f'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
