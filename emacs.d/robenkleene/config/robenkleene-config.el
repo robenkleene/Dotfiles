@@ -62,7 +62,8 @@
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
-(global-whitespace-mode)
+(add-hook 'prog-mode-hook 'whitespace-mode)
+;; (global-whitespace-mode)
 (setq whitespace-style (quote (
                                face
                                tabs
