@@ -130,6 +130,7 @@
    `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
+   `(rk-warning-highlight ((t (:background ,warning))))
    `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-highlight ((t (:background ,search-bg))))
@@ -149,7 +150,7 @@
    `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning :underline t))))
-   `(rk-whitespace ((t (:background ,highlight-line-bg))))
+   `(rk-whitespace ((t (:inherit rk-warning-highlight))))
    
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
@@ -189,7 +190,9 @@
    `(error ((t (:inherit rk-error))))
    `(warning ((t (:inherit rk-warning))))
    ;; `(trailing-whitespace ((t (:inherit rk-highlight-line))))
-   `(trailing-whitespace ((t (:background nil))))
+   ;; `(trailing-whitespace ((t (:background nil))))
+   `(trailing-whitespace ((t (:inherit rk-whitespace))))
+   `(whitespace-line ((t (:inherit rk-warning))))
    
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))

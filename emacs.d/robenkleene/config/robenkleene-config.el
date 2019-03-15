@@ -57,11 +57,23 @@
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")
 (global-display-line-numbers-mode 1)
+;; Show cursor position
+(column-number-mode)
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
 (global-whitespace-mode)
-(setq whitespace-style (quote (tabs tab-mark)))
+(setq whitespace-style (quote (
+                               face
+                               tabs
+                               tab-mark
+                               lines-tail
+                               lines
+                               ;; spaces
+                               ;; space-mark
+                               space-before-tab
+                               space-after-tab
+                               )))
 
 ;; Highlight Keywords
 (add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
