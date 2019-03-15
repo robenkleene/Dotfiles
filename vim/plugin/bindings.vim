@@ -40,7 +40,7 @@ nnoremap gwcd :Wlcd<CR>
 nnoremap gcd :Gcd<CR>
 nnoremap gcl :Glcd<CR>
 " Note that `c` is change, so adding more bindings that start with `c` is
-" difficult
+" difficult, in particular,`cg` can't be used because of `cg_`
 nnoremap cd :cd %:p:h<CR>
 nnoremap cl :lcd %:p:h<CR>
 
