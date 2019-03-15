@@ -150,7 +150,8 @@
    `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning :underline t))))
-   `(rk-whitespace ((t (:inherit rk-warning-highlight))))
+   ;; `(rk-whitespace ((t (:inherit rk-highlight-line))))
+   `(rk-whitespace ((t (:inherit rk-warning))))
    
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
