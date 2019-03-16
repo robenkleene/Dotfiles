@@ -14,6 +14,10 @@
 (defalias 'doc 'robenkleene/documentation)
 (defalias 'slug 'robenkleene/slug-project)
 (defalias 'tags 'robenkleene/generate-tags)
+(defalias 'scw 'robenkleene/source-control-open-web)
+(defalias 'scwf (lambda ()
+                  (interactive)
+                  (robenkleene/source-control-open-web "-f")))
 
 (provide 'robenkleene-alias)
 ;;; robenkleene-alias.el ends here

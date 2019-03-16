@@ -420,10 +420,11 @@ Otherwise, call `backward-kill-word'."
 ;;     )
 ;;   )
 
-(defcustom robenkleene/rg-command-files "rg --smart-case --no-heading --glob \"<F>\" <R> <D>"
-  "Default `rg' command.")
-(defcustom robenkleene/rg-command "rg --smart-case --no-heading <R> <D>"
-  "Default `rg' command.")
+(defvar robenkleene/rg-command-files)
+(setq robenkleene/rg-command-files
+      "rg --smart-case --no-heading --glob \"<F>\" <R> <D>")
+(defvar robenkleene/rg-command)
+(setq robenkleene/rg-command "rg --smart-case --no-heading <R> <D>")
 
 (defun robenkleene/source-control-directory ()
   "Return the source control directory or nil."
@@ -438,8 +439,16 @@ Otherwise, call `backward-kill-word'."
   (call-interactively 'robenkleene/rg)
   )
 
+(defun robenkleene/source-control-open-web (&optional arg)
+  "Open a new Finder window at the current path with ARG."
+  (interactive)
+  (shell-command-to-string (concat "~/.bin/source_control_open_site "
+                                   arg)
+                           )
+  )
+
 (defun robenkleene/rg (regexp &optional files dir)
-  "Search for the given REGEXP using `git grep' in the current directory.  FILES DIR."
+  "Search for REGEXP with optional FILES and DIR."
   (interactive (robenkleene/grep-parameters))
   (require 'grep)
   (let ((default-directory (or dir default-directory))
@@ -455,16 +464,16 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/forward-block (&optional n)
-  "Move to next text block."
+  "Move to next text block N."
   (interactive "p")
   (let ((n (if (null n) 1 n)))
     (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
-    (previous-line)
+    (forward-line -1)
     )
   )
 
 (defun robenkleene/backward-block (&optional n)
-  "Move cursor to previous text block."
+  "Move cursor to previous text block N."
   (interactive "p")
   (let ((n (if (null n) 1 n))
         ($i 1))
@@ -474,7 +483,7 @@ Otherwise, call `backward-kill-word'."
         (progn (goto-char (point-min))
                (setq $i n)))
       (setq $i (1+ $i))))
-  (next-line)
+  (forward-line)
   )
 
 (defvar-local robenkleene/format-program nil)
@@ -485,7 +494,8 @@ Otherwise, call `backward-kill-word'."
   (if (bound-and-true-p robenkleene/format-function)
       (call-interactively robenkleene/format-function)
     (if (bound-and-true-p robenkleene/format-program)
-        (robenkleene/shell-command-on-buffer-or-region robenkleene/format-program)
+        (robenkleene/shell-command-on-buffer-or-region
+         robenkleene/format-program)
       (message "No format program defined.")
       )
     )
