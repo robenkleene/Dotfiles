@@ -25,4 +25,7 @@
   )
 
 (provide 'robenkleene-common-lisp)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-common-lisp.el ends here

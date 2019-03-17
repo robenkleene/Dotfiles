@@ -11,4 +11,7 @@
   )
 
 (provide 'robenkleene-editorconfig)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-editorconfig.el ends here

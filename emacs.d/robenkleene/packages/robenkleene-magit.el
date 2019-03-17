@@ -74,4 +74,7 @@
   )
 
 (provide 'robenkleene-magit)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-magit.el ends here

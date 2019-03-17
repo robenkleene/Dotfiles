@@ -37,4 +37,7 @@
   )
 
 (provide 'robenkleene-javascript)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-javascript.el ends here

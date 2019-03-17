@@ -57,4 +57,7 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 (provide 'robenkleene-gui)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-gui.el ends here

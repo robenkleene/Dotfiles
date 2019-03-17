@@ -8,4 +8,7 @@
   )
 
 (provide 'robenkleene-rainbow-mode)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-rainbow-mode.el ends here

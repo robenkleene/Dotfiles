@@ -24,4 +24,7 @@
 
 
 (provide 'robenkleene-company)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-company.el ends here

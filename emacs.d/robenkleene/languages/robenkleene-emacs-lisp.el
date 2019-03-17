@@ -19,4 +19,7 @@
   )
 
 (provide 'robenkleene-emacs-lisp)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-emacs-lisp.el ends here

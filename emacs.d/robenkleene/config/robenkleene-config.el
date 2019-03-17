@@ -213,4 +213,7 @@
     (setq ad-return-value rlt)))
 
 (provide 'robenkleene-config)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-config.el ends here

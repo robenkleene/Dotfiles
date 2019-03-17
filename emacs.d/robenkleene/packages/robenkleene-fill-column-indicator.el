@@ -14,4 +14,7 @@
   )
 
 (provide 'robenkleene-fill-column-indicator)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-fill-column-indicator.el ends here

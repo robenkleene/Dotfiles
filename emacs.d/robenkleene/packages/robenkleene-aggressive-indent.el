@@ -14,4 +14,7 @@
   )
 
 (provide 'robenkleene-aggressive-indent)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-aggressive-indent.el ends here

@@ -12,4 +12,7 @@
   )
 
 (provide 'robenkleene-iedit)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-iedit.el ends here

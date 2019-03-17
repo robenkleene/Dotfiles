@@ -9,4 +9,7 @@
   )
 
 (provide 'robenkleene-page-break-lines)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-page-break-lines.el ends here

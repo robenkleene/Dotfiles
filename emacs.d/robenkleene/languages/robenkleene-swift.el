@@ -7,4 +7,7 @@
   :defer t)
 
 (provide 'robenkleene-swift)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-swift.el ends here

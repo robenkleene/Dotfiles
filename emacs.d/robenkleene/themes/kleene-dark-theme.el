@@ -409,6 +409,6 @@
 
 ;; Local Variables:
 ;; no-byte-compile: t
+;; byte-compile-warnings: (not free-vars)
 ;; End:
-
 ;;; kleene-dark-theme.el ends here

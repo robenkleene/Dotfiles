@@ -45,4 +45,7 @@
 (robenkleene/mac-bindings-minor-mode 1)
 
 (provide 'robenkleene-mac)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-mac.el ends here

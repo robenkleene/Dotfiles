@@ -580,4 +580,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (provide 'robenkleene-functions)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-functions.el ends here

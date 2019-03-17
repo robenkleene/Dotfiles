@@ -227,4 +227,7 @@
 ;;   )
 
 (provide 'robenkleene-ido)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-ido.el ends here

@@ -10,4 +10,7 @@
   )
 
 (provide 'robenkleene-rainbow-delimiters)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-rainbow-delimiters.el ends here

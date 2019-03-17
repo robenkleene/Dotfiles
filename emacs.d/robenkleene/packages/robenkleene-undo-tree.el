@@ -9,4 +9,7 @@
   )
 
 (provide 'robenkleene-undo-tree)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-undo-tree.el ends here

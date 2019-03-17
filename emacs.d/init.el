@@ -27,4 +27,7 @@
 
 
 (load (concat user-emacs-directory "robenkleene/robenkleene.el"))
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; init.el ends here

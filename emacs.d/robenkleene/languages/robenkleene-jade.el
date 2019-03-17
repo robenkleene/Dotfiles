@@ -10,4 +10,7 @@
 ;; (add-hook 'jade-mode-hook 'robenkleene/highlight-keywords)
 
 (provide 'robenkleene-jade)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-jade.el ends here

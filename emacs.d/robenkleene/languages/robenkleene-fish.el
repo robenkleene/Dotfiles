@@ -8,4 +8,7 @@
 
 
 (provide 'robenkleene-fish)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-fish.el ends here

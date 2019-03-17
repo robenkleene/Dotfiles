@@ -20,4 +20,7 @@
                   (robenkleene/source-control-open-web "-f")))
 
 (provide 'robenkleene-alias)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-alias.el ends here

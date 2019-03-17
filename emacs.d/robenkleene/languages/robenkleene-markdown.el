@@ -22,4 +22,7 @@
   )
 
 (provide 'robenkleene-markdown)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-markdown.el ends here

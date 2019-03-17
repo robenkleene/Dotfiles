@@ -8,4 +8,7 @@
   :commands macrostep-expand)
 
 (provide 'robenkleene-macrostep)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-macrostep.el ends here

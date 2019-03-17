@@ -11,4 +11,7 @@
   )
 
 (provide 'robenkleene-pbcopy)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-pbcopy.el ends here

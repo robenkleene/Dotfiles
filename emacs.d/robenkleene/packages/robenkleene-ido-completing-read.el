@@ -12,4 +12,7 @@
   (ido-ubiquitous-mode 1))
 
 (provide 'robenkleene-ido-completing-read)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-ido-completing-read.el ends here

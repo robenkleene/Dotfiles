@@ -107,4 +107,7 @@
       (add-to-list 'minor-mode-map-alist new-keys))))
 
 (provide 'robenkleene-bindings)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-bindings.el ends here

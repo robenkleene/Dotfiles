@@ -38,4 +38,7 @@
   )
 
 (provide 'robenkleene-smartparens)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-smartparens.el ends here

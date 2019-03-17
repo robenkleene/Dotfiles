@@ -14,4 +14,7 @@
   )
 
 (provide 'robenkleene-anzu)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-anzu.el ends here

@@ -19,4 +19,7 @@
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
 
 (provide 'robenkleene-terminal)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-terminal.el ends here

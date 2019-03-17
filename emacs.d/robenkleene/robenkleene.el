@@ -58,4 +58,7 @@
 (require 'robenkleene-ledger)
 (require 'robenkleene-csv)
 
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene.el ends here
