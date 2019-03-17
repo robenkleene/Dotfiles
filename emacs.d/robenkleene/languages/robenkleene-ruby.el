@@ -53,7 +53,6 @@
     ;; (defvar robenkleene/ruby-bindings-map (make-keymap))
 
     (defalias 'irb 'robenkleene/start-irb)
-
     (defun robenkleene/start-irb ()
       (interactive)
       (if (null (get-buffer "*ruby*"))
@@ -64,11 +63,13 @@
 
     (defun robenkleene/ruby-eval-buffer-or-region ()
       (interactive)
+      (if (get-buffer "*ruby*")
+          (display-buffer "*ruby*"))
       (if (use-region-p)
-          (call-interactively 'ruby-send-region)
-        (call-interactively 'ruby-send-buffer)
-        )
-      (switch-to-buffer-other-window "*ruby*")
+          (progn
+            (call-interactively 'ruby-send-region)
+            (deactivate-mark))
+        (call-interactively 'ruby-send-buffer))
       )
 
     ;; Mode
@@ -83,7 +84,13 @@
 
 (use-package inf-ruby
   :init
-  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode))
+  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+  ;; Don't prompt about active processes for `inf-ruby' buffer
+  (add-hook 'inf-ruby-mode-hook
+            (lambda () (set-process-query-on-exit-flag
+                        (get-buffer-process (current-buffer)) nil))
+            )
+  )
 
 ;; (use-package robe
 ;;   :defer t
