@@ -9,25 +9,29 @@
   :config
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
-              (setq-local robenkleene/format-program "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
-              (setq-local robenkleene/format-function (lambda ()
-                                                        (interactive)
-                                                        (if (bound-and-true-p robenkleene/format-program)
-                                                            (progn
-                                                              (robenkleene/shell-command-on-buffer-or-region robenkleene/format-program)
-                                                              )
-                                                          (message "No format program defined.")
-                                                          )
-                                                        ;; For some reason running
-                                                        ;; format kill syntax
-                                                        ;; highlighting in Ruby,
-                                                        ;; calling `ruby-mode'
-                                                        ;; re-applies it
-                                                        ;; (enh-ruby-mode)
-                                                        ))
-              (setq-local robenkleene/evaluate-buffer-or-region-function 'robenkleene/ruby-eval-buffer-or-region)
-              ;; Remove `:' from the symbol syntax table this helps makes jumping
-              ;; to definition work
+              (setq-local robenkleene/format-program
+                          "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+              (setq-local robenkleene/format-function
+                          (lambda ()
+                            (interactive)
+                            (if (bound-and-true-p robenkleene/format-program)
+                                (progn
+                                  (robenkleene/shell-command-on-buffer-or-region
+                                   robenkleene/format-program)
+                                  )
+                              (message "No format program defined.")
+                              )
+                            ;; For some reason running
+                            ;; format kill syntax
+                            ;; highlighting in Ruby,
+                            ;; calling `ruby-mode'
+                            ;; re-applies it
+                            ;; (enh-ruby-mode)
+                            ))
+              (setq-local robenkleene/evaluate-buffer-or-region-function
+                          'robenkleene/ruby-eval-buffer-or-region)
+              ;; Remove `:' from the symbol syntax table this helps makes
+              ;; jumping to definition work
               (let ((table (copy-syntax-table (syntax-table))))
                 (modify-syntax-entry ?: "." table)
                 (set-syntax-table table)
@@ -80,4 +84,7 @@
 ;;   )
 
 (provide 'robenkleene-ruby)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-ruby.el ends here
