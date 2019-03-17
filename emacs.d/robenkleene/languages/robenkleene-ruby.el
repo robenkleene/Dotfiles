@@ -10,7 +10,8 @@
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
               (setq-local robenkleene/format-program
-                          "rubocop --auto-correct --stdin - 2>&1 | sed '1,/^====================$/d'")
+                          (concat "rubocop --auto-correct --stdin - 2>&1"
+                                  " | sed '1,/^====================$/d'"))
               (setq-local robenkleene/format-function
                           (lambda ()
                             (interactive)
