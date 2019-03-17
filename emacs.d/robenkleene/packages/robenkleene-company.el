@@ -7,7 +7,6 @@
   :init
   (global-company-mode)
   (setq company-idle-delay .1)
-  (setq company-global-modes '(not org-mode markdown-mode))
   ;; (setq company-idle-delay .1)
   ;; `company-capf': built-in auto-complete
   (setq company-backends '((company-keywords
@@ -19,6 +18,8 @@
                            company-capf
                            company-ispell
                            company-dabbrev))
+  ;; (setq company-global-modes '(not org-mode markdown-mode))
+  (add-hook 'prog-mode-hook 'company-mode)
   )
 
 
