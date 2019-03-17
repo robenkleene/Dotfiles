@@ -5,7 +5,6 @@
 (eval-when-compile (require 'use-package))
 (use-package company
   :init
-  (global-company-mode)
   (setq company-idle-delay .1)
   ;; (setq company-idle-delay .1)
   ;; `company-capf': built-in auto-complete
@@ -18,6 +17,7 @@
                            company-capf
                            company-ispell
                            company-dabbrev))
+  ;; (global-company-mode)
   ;; (setq company-global-modes '(not org-mode markdown-mode))
   (add-hook 'prog-mode-hook 'company-mode)
   )
