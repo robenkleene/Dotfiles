@@ -112,21 +112,21 @@ Otherwise, call `backward-kill-word'."
   "Find directory recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string
-	    (concat "fd "
-		    " --type f --hidden --exclude .git --exclude .DS_Store . "
-		    dir
-		    )) "\n"))
+          (split-string
+           (shell-command-to-string
+            (concat "fd "
+                    " --type f --hidden --exclude .git --exclude .DS_Store . "
+                    dir
+                    )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
-	    project-files)
+            project-files)
       (gethash (ido-completing-read "Find file: " ido-list) key-to-path)
       )
     )
@@ -136,21 +136,21 @@ Otherwise, call `backward-kill-word'."
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string
-	    (concat "fd "
-		    " --type d --hidden --exclude .git . "
-		    dir
-		    )) "\n"))
+          (split-string
+           (shell-command-to-string
+            (concat "fd "
+                    " --type d --hidden --exclude .git . "
+                    dir
+                    )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
-	    project-files)
+            project-files)
       (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
       )
     )
@@ -251,19 +251,21 @@ Otherwise, call `backward-kill-word'."
   (interactive)
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string "fasd -Rdl")
+          (split-string
+           (shell-command-to-string "fasd -Rdl")
            "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
             project-files)
-      (find-file (gethash (ido-completing-read "Find z: " ido-list) key-to-path))
+      (find-file (gethash (ido-completing-read
+                           "Find z: "
+                           ido-list) key-to-path))
       )
     )
   )
@@ -321,7 +323,8 @@ Otherwise, call `backward-kill-word'."
   "Open Emacs documentation directory."
   (interactive)
   (view-file-other-window
-   (robenkleene/ido-recursive-get-file robenkleene/documentation-directory-path))
+   (robenkleene/ido-recursive-get-file
+    robenkleene/documentation-directory-path))
   )
 
 (defvar robenkleene/org-directory-path "~/Development/Scratch/Org")
