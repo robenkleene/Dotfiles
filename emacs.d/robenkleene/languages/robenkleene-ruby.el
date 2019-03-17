@@ -26,11 +26,14 @@
                             ;; highlighting in Ruby, calling `ruby-mode'
                             ;; re-applies it. For some reason this also seems to
                             ;; be clearing local variables?
-                            ;; (call-interactively 'enh-ruby-mode)
-                            ;; (enh-ruby-mode)
-                            (call-interactively 'enh-ruby-fontify-buffer)
-                            ;; (enh-ruby-fontify-buffer)
-                            ;; (deactivate-mark)
+                            ;; (enh-ruby-fontify-buffer) Calling
+                            ;; `enh-ruby-fontify-buffer' produces an error but
+                            ;; it works fine otherwise
+                            (run-with-timer 0 nil (lambda ()
+                                                    (ignore-errors
+                                                      (enh-ruby-fontify-buffer))
+                                                    )
+                                            )
                             ))
               (setq-local robenkleene/evaluate-buffer-or-region-function
                           'robenkleene/ruby-eval-buffer-or-region)
