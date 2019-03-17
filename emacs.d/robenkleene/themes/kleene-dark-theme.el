@@ -190,8 +190,8 @@
    `(success ((t (:inherit rk-success))))
    `(error ((t (:inherit rk-error))))
    `(warning ((t (:inherit rk-warning))))
-   ;; `(trailing-whitespace ((t (:inherit rk-highlight-line))))
-   ;; `(trailing-whitespace ((t (:background nil))))
+   `(whitespace-space-after-tab ((t (:inherit rk-whitespace))))
+   `(whitespace-tab ((t (:inherit rk-whitespace))))
    `(trailing-whitespace ((t (:inherit rk-whitespace))))
    `(whitespace-line ((t (:inherit rk-warning))))
    
