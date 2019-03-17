@@ -9,6 +9,8 @@
   :config
   (add-hook 'enh-ruby-mode-hook
             (lambda ()
+              (setq-local robenkleene/run-program
+                          "rubocop --auto-correct --stdin - 2>&1")
               (setq-local robenkleene/format-program
                           (concat "rubocop --auto-correct --stdin - 2>&1"
                                   " | sed '1,/^====================$/d'"))
@@ -37,6 +39,7 @@
                             ))
               (setq-local robenkleene/evaluate-buffer-or-region-function
                           'robenkleene/ruby-eval-buffer-or-region)
+              (setq-local robenkleene/run-compile-program "ruby")
               ;; Remove `:' from the symbol syntax table this helps makes
               ;; jumping to definition work
               (let ((table (copy-syntax-table (syntax-table))))

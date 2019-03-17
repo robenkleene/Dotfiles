@@ -514,6 +514,15 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defvar-local robenkleene/run-compile-program nil)
+(defun robenkleene/run ()
+  "Run buffer or region through format program."
+  (interactive)
+  (compile (concat robenkleene/run-compile-program
+                   " "
+                   (shell-quote-argument buffer-file-name)))
+  )
+
 (defun robenkleene/shell-command-on-buffer-or-region (command)
   "Pipe the current buffer or region through COMMAND."
   (interactive "r")

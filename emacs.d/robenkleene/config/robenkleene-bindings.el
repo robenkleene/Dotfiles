@@ -72,6 +72,7 @@
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
 (define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
 (define-key robenkleene/leader-map (kbd "C-f") 'robenkleene/format)
+(define-key robenkleene/leader-map (kbd "C-r") 'robenkleene/run)
 (define-key robenkleene/leader-map (kbd "C-e")
   'robenkleene/evaluate-buffer-or-region)
 (define-key robenkleene/leader-map (kbd "o") 'occur)
@@ -94,6 +95,16 @@
   nil
   'robenkleene/bindings-minor-mode-map)
 (robenkleene/bindings-minor-mode 1)
+
+(add-hook 'after-load-functions 'robenkleene/ensure-binding-priority)
+
+(defun robenkleene/ensure-binding-priority (_file)
+  "Ensure `bindings-minor-mode' always has priority."
+  (unless (eq (caar minor-mode-map-alist) 'robenkleene/bindings-minor-mode)
+    (let ((new-keys
+           (assq 'robenkleene/bindings-minor-mode minor-mode-map-alist)))
+      (assq-delete-all 'robenkleene/bindings-minor-mode minor-mode-map-alist)
+      (add-to-list 'minor-mode-map-alist new-keys))))
 
 (provide 'robenkleene-bindings)
 ;;; robenkleene-bindings.el ends here
