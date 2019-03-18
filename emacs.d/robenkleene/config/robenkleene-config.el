@@ -9,27 +9,28 @@
 ;; Use `zsh'
 (setq explicit-shell-file-name "/usr/local/bin/zsh")
 
-;; Save temporary files to tmp directory
-;; The below command makes Emacs save backups to a temporary directory, which is
-;; great except Emacs has no interface for cleaning up the created backups, so
-;; if Emacs is creating these files, it will just tell you about them, and how to
-;; recover them, but not provide an interface for not recovering the file and
-;; preventing the message. So until this interface is available, just disable
-;; the backups.
-;; (setq auto-save-file-name-transforms
-;;       `((".*" ,temporary-file-directory t)))
-;; Just disable Emacs making backup files
+;; Save temporary files to tmp directory The below command makes Emacs save
+;; backups to a temporary directory, which is great except Emacs has no
+;; interface for cleaning up the created backups, so if Emacs is creating these
+;; files, it will just tell you about them, and how to recover them, but not
+;; provide an interface for not recovering the file and preventing the message.
+;; So until this interface is available, just disable the backups. (setq
+;; auto-save-file-name-transforms `((".*" ,temporary-file-directory t))) Just
+;; disable Emacs making backup files
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
 ;; Show the current directory in the mode line
 (setq-default mode-line-buffer-identification
               (let ((orig (car mode-line-buffer-identification)))
-                `(:eval (cons (concat (file-name-nondirectory (directory-file-name default-directory))
-                                      "/"
-                                      ,orig
-                                      )
-                              (cdr mode-line-buffer-identification)))))
+                `(:eval
+                  (cons
+                   (concat (file-name-nondirectory
+                            (directory-file-name default-directory))
+                           "/"
+                           ,orig
+                           )
+                   (cdr mode-line-buffer-identification)))))
 
 
 ;; Allow `C-i' and `<TAB>' to be bound separately
@@ -104,6 +105,13 @@
 ;; Wrap comments to 80 characters with `M-q'
 (setq-default fill-column 80)
 
+;; Show mouse hover in `modeline' instead of tool tips
+(tooltip-mode -1)
+
+;; Disable showing tooltips in the modeline, this conflicts with seeing flycheck
+;; errors
+(global-eldoc-mode -1)
+
 ;; Use shift arrow keys to switch windows
 ;; Note for this to work by default on OS X, these new keys need to be defined
 ;; in the Terminal profile:
@@ -158,7 +166,8 @@
             :before
             #'(lambda (identifier)
                 (if (not (bound-and-true-p tags-file-name))
-                    (let ((tags-file (locate-dominating-file default-directory "TAGS")))
+                    (let ((tags-file
+                           (locate-dominating-file default-directory "TAGS")))
                       (when tags-file
                         (visit-tags-table tags-file)
                         )
@@ -196,7 +205,8 @@
 (setq org-replace-disputed-keys t)
 (setq org-todo-keywords '("TODO" "STARTED" "DONE"))
 ;; Disable spell check in code blocks
-(defadvice org-mode-flyspell-verify (after org-mode-flyspell-verify-hack activate)
+(defadvice org-mode-flyspell-verify
+    (after org-mode-flyspell-verify-hack activate)
   (let ((rlt ad-return-value)
         (begin-regexp "^[ \t]*#\\+begin_\\(src\\|html\\|latex\\)")
         (end-regexp "^[ \t]*#\\+end_\\(src\\|html\\|latex\\)")
