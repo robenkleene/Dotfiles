@@ -13,6 +13,7 @@ command! SessionRestoreLocal :source vim_session
 command! SessionRestoreSaved :source ~/.vim/vim_session
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
 command! QuitSaveSession :call commands#QuitSaveSession()
+command! SessionNoAuto :autocmd! save_session
 
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
