@@ -82,6 +82,8 @@ set viewoptions-=folds
 " cycling through lots of files quickly, e.g., when processing the `quickfix`
 " list.
 set viewoptions-=curdir
+" Don't restore empty buffers
+set viewoptions-=blank
 augroup save_view
   autocmd!
   autocmd BufWinLeave *

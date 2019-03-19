@@ -22,6 +22,8 @@ set noswapfile
 " Match this to `viewoptions`
 set sessionoptions-=options
 set sessionoptions-=folds
+" Don't restore empty buffers
+set sessionoptions-=blank
 
 " Basic {{{1
 
