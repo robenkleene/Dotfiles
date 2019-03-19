@@ -24,7 +24,9 @@ export CLICOLOR=1
 # `pip3` can install executables in `~/.local/bin`
 export PATH=~/.fzf/bin:/usr/local/bin:~/.bin:$PATH
 
-export EDITOR=$VIM_COMMAND
+# Editor
+export VISUAL="$VIM_COMMAND"
+export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
 # sequences
