@@ -21,7 +21,9 @@ bindkey "^Xh" _complete_help
 # bindkey '\ee' edit-command-line
 
 # By default, `^u` kills the whole line, rather than backwards
-bindkey "^U" backward-kill-line
+# bindkey "^U" backward-kill-line
+bindkey "^U" _system_backward_kill_line
+bindkey "^K" _system_kill_line
 
 # Menu Select
 # Load the `menuselect` map first
@@ -29,9 +31,19 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Clipboard
+_system_kill_line() {
+  zle kill-line
+  echo -n "$CUTBUFFER" | safecopy
+}
+zle -N _system_kill_line
+_system_backward_kill_line() {
+  zle backward-kill-line
+  echo -n "$CUTBUFFER" | safecopy
+}
+zle -N _system_backward_kill_line
 _system_kill_word() {
   zle kill-word
-  echo "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_kill_word
 autoload -Uz select-word-style
@@ -40,13 +52,13 @@ _system_bash_backwards_kill_word() {
   select-word-style bash
   WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
   select-word-style normal
-  echo "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
   zle set-mark-command -n -1
-  echo "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_copy_region_as_kill
 _system_kill_region_or_backward_kill_word() {
@@ -67,12 +79,12 @@ _system_kill_region_or_backward_delete_char() {
 zle -N _system_kill_region_or_backward_delete_char
 _system_kill_region() {
   zle kill-region
-  echo "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_kill_region
 _system_backward_kill_word() {
   zle backward-kill-word
-  echo "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_backward_kill_word
 _system_yank() {
