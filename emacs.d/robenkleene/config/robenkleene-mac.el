@@ -7,32 +7,22 @@
 
 (defvar robenkleene/mac-bindings-minor-mode-map (make-keymap))
 
-;; More Ergonomic Emacs
+;; Ergonomic Emacs
+;; Basic
 (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
-;; For eval
+;; For evaluate
 (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
-;; For format
+;; For find file and format
 (define-key key-translation-map (kbd "s-f") (kbd "C-f"))
 ;; For run
 (define-key key-translation-map (kbd "s-r") (kbd "C-r"))
-
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "C-x s-o")
-  'other-window)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-x s-j") 'dired-jump)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "C-x s-f")
-  'ibuffer)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "C-x s-b")
-  'find-file-at-point)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "C-x s-s")
-  'save-buffer)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "C-x s-e")
-;;   'eval-last-sexp)
+;; For save
+(define-key key-translation-map (kbd "s-s") (kbd "C-s"))
+;; For dired jump
+(define-key key-translation-map (kbd "s-j") (kbd "C-j"))
+;; For `ibuffer'
+(define-key key-translation-map (kbd "s-b") (kbd "C-b"))
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
