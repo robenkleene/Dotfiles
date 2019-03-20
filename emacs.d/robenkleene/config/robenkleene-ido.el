@@ -162,11 +162,11 @@
          (short-path (replace-regexp-in-string strip "" path))
          (best-path (if short-path short-path path))
          (container-dir (file-name-directory best-path))
-         (dirname (file-name-nondirectory best-path))
+         (filename (file-name-nondirectory best-path))
          )
     (if container-dir
-        (concat dirname " " container-dir)
-      dirname
+        (concat filename " " container-dir)
+      filename
       )
     )
   )
