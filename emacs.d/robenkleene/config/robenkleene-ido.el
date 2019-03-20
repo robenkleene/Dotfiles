@@ -67,13 +67,15 @@
 (defun robenkleene/ido-source-control-recursive-find-file ()
   "Find file recursively from source control root."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file (robenkleene/source-control-directory)))
+  (find-file (robenkleene/ido-recursive-get-file
+              (robenkleene/source-control-directory)))
   )
 
 (defun robenkleene/ido-source-control-recursive-find-dir ()
   "Find directory recursively from source control root."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-dir (robenkleene/source-control-directory)))
+  (find-file (robenkleene/ido-recursive-get-dir
+              (robenkleene/source-control-directory)))
   )
 
 ;; Insert
@@ -104,7 +106,8 @@
     )
    )
   (let ((current-prefix-arg nil))
-    ;; The `default-directory' means inserted file is always relative to the current directory.
+    ;; The `default-directory' means inserted file is always relative to the
+    ;; current directory.
     (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)
                                 default-directory))
     )
@@ -113,14 +116,16 @@
 (defun robenkleene/ido-source-control-recursive-insert-file ()
   "Find and insert file recursively from source control root."
   (interactive)
-  (insert (file-relative-name (robenkleene/ido-recursive-get-file (robenkleene/source-control-directory))
+  (insert (file-relative-name (robenkleene/ido-recursive-get-file
+                               (robenkleene/source-control-directory))
                               default-directory))
   )
 
 (defun robenkleene/ido-source-control-recursive-insert-dir ()
   "Find and insert directory recursively from source control root."
   (interactive)
-  (insert (file-relative-name (robenkleene/ido-recursive-get-dir (robenkleene/source-control-directory))
+  (insert (file-relative-name (robenkleene/ido-recursive-get-dir
+                               (robenkleene/source-control-directory))
                               default-directory))
   )
 
@@ -131,19 +136,20 @@
   (interactive)
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string "fasd -Rdl")
+          (split-string
+           (shell-command-to-string "fasd -Rdl")
            "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
             project-files)
-      (find-file (gethash (ido-completing-read "Find z: " ido-list) key-to-path))
+      (find-file (gethash (ido-completing-read "Find z: " ido-list)
+                          key-to-path))
       )
     )
   )
@@ -169,21 +175,21 @@
   "Find directory recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string
-	    (concat "fd "
-		    " --type f --hidden --exclude .git --exclude .DS_Store . "
-		    dir
-		    )) "\n"))
+          (split-string
+           (shell-command-to-string
+            (concat "fd "
+                    " --type f --hidden --exclude .git --exclude .DS_Store . "
+                    dir
+                    )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
-	    project-files)
+            project-files)
       (gethash (ido-completing-read "Find file: " ido-list) key-to-path)
       )
     )
@@ -193,21 +199,21 @@
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
-	  (split-string
-	   (shell-command-to-string
-	    (concat "fd "
-		    " --type d --hidden --exclude .git . "
-		    dir
-		    )) "\n"))
+          (split-string
+           (shell-command-to-string
+            (concat "fd "
+                    " --type d --hidden --exclude .git . "
+                    dir
+                    )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
               (let ((key (robenkleene/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
-	        (push key ido-list)
+                (push key ido-list)
                 )
               )
-	    project-files)
+            project-files)
       (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
       )
     )
