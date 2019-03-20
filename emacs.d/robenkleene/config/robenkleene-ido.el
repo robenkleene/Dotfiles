@@ -165,7 +165,13 @@
          (filename (file-name-nondirectory best-path))
          )
     (if container-dir
-        (concat filename " " container-dir)
+        ;; (concat filename " " container-dir)
+        (concat filename "<"
+                (file-name-nondirectory
+                 (directory-file-name
+                  (file-name-directory container-dir)))
+                ">"
+                )
       filename
       )
     )
