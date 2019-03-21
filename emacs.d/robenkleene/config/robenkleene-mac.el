@@ -23,6 +23,8 @@
 (define-key key-translation-map (kbd "s-j") (kbd "C-j"))
 ;; For `ibuffer'
 (define-key key-translation-map (kbd "s-b") (kbd "C-b"))
+;; For keyboard quit
+(define-key key-translation-map (kbd "s-g") (kbd "C-g"))
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
