@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-~/.bin/link_source_control . | ~/.bin/url_open $@
+if [[ -z "$1" ]]; then
+  arg="$BROWSER_FLAG"
+else
+  arg="$1"
+fi
+~/.bin/link_source_control . | ~/.bin/url_open $arg

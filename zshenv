@@ -14,6 +14,7 @@ VIM_COMMAND=vim
 EMACS_COMMAND='emacsclient --no-wait --create-frame'
 # EMACS_COMMAND='emacs'
 ACK_COMMAND=rg
+export BROWSER_FLAG='-t'
 
 # Export `CDPATH` so it's available in `vim`
 # export CDPATH=~:~/Development/:~/Documentation/
