@@ -1,5 +1,4 @@
 " Format
-" setlocal equalprg=sass-convert\ --stdin\ --to\ scss
-let b:FormatPrg = "sass-convert --stdin --to scss"
+let b:FormatPrg = "prettier --parser scss"
 
 setlocal foldmethod=marker foldmarker={,}
