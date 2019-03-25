@@ -63,7 +63,7 @@ if [[ "$current" == "true" ]]; then
 fi
 
 force="false"
-if [[ "$2" = "run" ]]; then
+if [[ "$2" = "-f" ]]; then
   force="true"
 fi
 
