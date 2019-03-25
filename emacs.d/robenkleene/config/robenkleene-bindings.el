@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Add a second leader key
+(define-key key-translation-map (kbd "M-o") (kbd "C-c"))
+
 ;; Automatically switch focus to new splits
 (global-set-key "\C-x2" (lambda ()
                           (interactive)
@@ -20,6 +23,7 @@
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
+(global-set-key (kbd "C-x c") 'save-buffers-kill-terminal)
 
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)
