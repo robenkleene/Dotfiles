@@ -54,4 +54,7 @@ export VAGRANT_HOME=~/Documents/VMs/Vagrant/vagrant.d
 export VAGRANT_VMWARE_CLONE_DIRECTORY=~/Documents/VMs/Vagrant/
 
 # Tidy
-export HTML_TIDY="~/.tidy"
+export HTML_TIDY="$HOME/.tidy"
+
+# Shellcheck
+export SHELLCHECK_OPTS="-e SC1090 -e SC2148"
