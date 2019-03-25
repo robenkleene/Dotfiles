@@ -8,6 +8,6 @@ let g:ale_linters = {
   \   'objc': ['clang'],
   \   'swift': ['swiftlint'],
   \   'xml': ['xmllint'],
-  \   'sh': ['shellcheck'],
-  \   'zsh': ['shellcheck'],
+  \   'sh': ['shell', 'shellcheck'],
+  \   'zsh': ['shell', 'shellcheck'],
   \}
