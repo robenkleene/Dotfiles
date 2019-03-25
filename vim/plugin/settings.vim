@@ -190,9 +190,6 @@ set dictionary+=/usr/share/dict/words
 
 " Make `find <filename>` find files recursively
 set path+=**
-" Autocmd {{{1
-
-" Languages {{{1
 
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
