@@ -105,6 +105,9 @@ set foldcolumn=1
 " Don't Start Folded
 set nofoldenable
 
+" Don't let `{` and `}` open folds
+set foldopen-=block
+
 " Ignore case in search results
 set ignorecase
 

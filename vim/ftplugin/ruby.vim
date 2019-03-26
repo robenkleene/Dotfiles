@@ -12,3 +12,5 @@ let b:RunErrorFormat =
 let b:ExecutePrg = "irb --simple-prompt"
 
 let b:TagPrg = "ripper-tags -R"
+
+setlocal foldmethod=syntax
