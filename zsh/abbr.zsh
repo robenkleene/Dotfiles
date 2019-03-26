@@ -123,6 +123,7 @@ abbreviations=(
 
 # Carthage
 'chu' 'carthage update'
+'chunub' 'carthage update --no-use-binaries'
 'chb' 'carthage bootstrap'
 
 # `agvtool`
