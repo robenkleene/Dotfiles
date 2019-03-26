@@ -108,6 +108,10 @@ set nofoldenable
 " Don't let `{` and `}` open folds
 set foldopen-=block
 
+" Set the starting `foldlevel` this prevents a bunch of stuff from becoming
+" folded when trying to fold one thing
+set foldlevelstart=5
+
 " Ignore case in search results
 set ignorecase
 
