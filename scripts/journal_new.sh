@@ -2,7 +2,7 @@
 
 set -e
 
-journal_directory=~/Dropbox/Text/Journal
+journal_directory="$1"
 if [[ ! -d "$journal_directory" ]]; then
   echo "$journal_directory is not a directory" >&2
   exit 1
