@@ -2,15 +2,15 @@
 
 THEURLS="{"
 while read LINE; do
-	THEURLS=$THEURLS"\""${LINE}"\", "
+  THEURLS=$THEURLS"\""${LINE}"\", "
 done
 THEURLS=${THEURLS%??}
 THEURLS=$THEURLS"}"
 echo $THEURLS
 
-if [[ "$THEURLS" = "{}" ]]; then
-	echo "No urls"
-	exit 1
+if [[ "$THEURLS" == "{}" ]]; then
+  echo "No urls"
+  exit 1
 fi
 
 osascript <<-APPLESCRIPT
