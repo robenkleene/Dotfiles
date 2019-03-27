@@ -188,9 +188,5 @@ endfunction
 
 " Tags
 function! commands#Tags() abort
-  if !exists('b:TagPrg')
-    echo "No b:TagPrg defined"
-    return
-  endif
   execute "!~/.bin/generate_tags -e"
 endfunction
