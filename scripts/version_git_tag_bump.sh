@@ -1,5 +1,11 @@
 #!/bin/bash
 
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$branch" != "master" ]]; then
+  echo "Only run this script from branch master" >&2
+  exit 1;
+fi
+
 current="false"
 while getopts ":ch" option; do
   case "$option" in
