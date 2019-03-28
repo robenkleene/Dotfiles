@@ -1,6 +1,6 @@
 " General
-let g:markdown_folding = 1
-set nofoldenable
+" Turning this on was causing performance issues when editing markdown files
+" let g:markdown_folding = 1
 setlocal spell
 set wrap
 
