@@ -141,6 +141,7 @@ alias gbpr='git_branch_prune'
 alias gprpr='git_process_pull_request'
 alias gpbo='git_push_branch_origin'
 alias scw='source_control_open_site'
+alias scwp='source_control_open_site -p'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'

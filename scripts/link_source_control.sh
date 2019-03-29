@@ -52,7 +52,9 @@ if [[ $remote =~ (https://|git@)github.com[/:](.*) ]]; then
   remote_subpath="${BASH_REMATCH[2]}"
   remote_subpath=${remote_subpath%.git}
   repo_url="github.com/$remote_subpath"
-  if [[ -z "$file_subpath" ]]; then
+  if [[ "$pulls" == "true" ]]; then
+    final_url=$repo_url/pulls
+  elif [[ -z "$file_subpath" ]]; then
     final_url=$repo_url/tree/$branch
   else
     final_url="$repo_url/blob/$commit/$file_subpath"
