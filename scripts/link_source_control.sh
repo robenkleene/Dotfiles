@@ -3,8 +3,11 @@
 set -e
 
 pulls="false"
-while getopts ":f:ph" option; do
+while getopts ":f:r:ph" option; do
   case "$option" in
+    r)
+      revision="$OPTARG"
+      ;;
     f)
       file="$OPTARG"
       ;;
@@ -54,6 +57,8 @@ if [[ $remote =~ (https://|git@)github.com[/:](.*) ]]; then
   repo_url="github.com/$remote_subpath"
   if [[ "$pulls" == "true" ]]; then
     final_url=$repo_url/pulls
+  elif [[ -n "$revision" ]]; then
+    final_url=$repo_url/tree/$revision
   elif [[ -z "$file_subpath" ]]; then
     final_url=$repo_url/tree/$branch
   else
