@@ -146,6 +146,10 @@ _fzf_z_widget() {
 }
 zle -N _fzf_z_widget
 bindkey '\ez' _fzf_z_widget
+# Work around what's probably a iTerm bug where if the first key press after a
+  # new window is created is calling a widget, sometimes the character is
+  # entered at the prompted instead of calling the widget
+bindkey 'Ω' _fzf_z_widget
 
 _fzf_zvim_widget() {
   local cmd="fasd -Rfl"
