@@ -1,13 +1,38 @@
 #!/usr/bin/env bash
 
+set -e
 
-if [[ -f "$1" ]]; then
-  file_path="$1"
-  dir_path=$(dirname "$1")
-elif [[ -d "$1" ]]; then
-  dir_path="$1"
+pulls="false"
+while getopts ":f:ph" option; do
+  case "$option" in
+    f)
+      file="$OPTARG"
+      ;;
+    p)
+      pulls="true"
+      ;;
+    h)
+      echo "Usage: command [-hp] [-f <file>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ -f "$file" ]]; then
+  file_path="$file"
+  dir_path=$(dirname "$file")
+elif [[ -d "$file" ]]; then
+  dir_path="$file"
 else
-  echo "$1 is not a valid file or dir_path" >&2
+  echo "$file is not a valid file or dir_path" >&2
   exit 1
 fi
 

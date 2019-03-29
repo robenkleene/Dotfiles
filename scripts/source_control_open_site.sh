@@ -5,4 +5,4 @@ if [[ -z "$1" ]]; then
 else
   arg="$1"
 fi
-~/.bin/link_source_control . | ~/.bin/url_open $arg
+~/.bin/link_source_control -f . | ~/.bin/url_open "$arg"
