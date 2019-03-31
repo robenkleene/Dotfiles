@@ -67,8 +67,16 @@ if [[ "$2" = "-f" ]]; then
 fi
 
 case $1 in
-  major) bump 1 0 0 ;;
-  minor) bump 0 1 0 ;;
-  patch) bump 0 0 1 ;;
-  *) echo "$latest_tag"
+  major)
+    bump 1 0 0
+    ;;
+  minor)
+    bump 0 1 0
+    ;;
+  patch)
+    bump 0 0 1
+    ;;
+  *)
+    echo "$latest_tag"
+    ;;
 esac
