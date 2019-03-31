@@ -6,12 +6,8 @@ if [[ "$branch" != "master" ]]; then
   exit 1;
 fi
 
-current="false"
-while getopts ":ch" option; do
+while getopts ":h" option; do
   case "$option" in
-    c)
-      current="true"
-      ;;
     h)
       echo "Usage: command [-hb] [-a <file>]"
       exit 0
@@ -63,10 +59,7 @@ bump() {
   fi
 }
 
-if [[ "$current" == "true" ]]; then
-  get_latest_tag
-  exit 0
-fi
+latest_tag=$(get_latest_tag)
 
 force="false"
 if [[ "$2" = "-f" ]]; then
@@ -77,5 +70,5 @@ case $1 in
   major) bump 1 0 0 ;;
   minor) bump 0 1 0 ;;
   patch) bump 0 0 1 ;;
-  *) get_latest_tag
+  *) echo "$latest_tag"
 esac
