@@ -37,13 +37,14 @@ get_latest_tag() {
 }
 
 get_next_version() {
-  get_latest_tag | awk -F. -v a="$1" -v b="$2" -v c="$3" \
+  latest_tag=$4
+  echo "$latest_tag" | awk -F. -v a="$1" -v b="$2" -v c="$3" \
     '{printf("%d.%d.%d", $1+a, $2+b , $3+c)}'
 }
 
 bump() {
-  next_version=$(get_next_version "$1" "$2" "$3")
   latest_tag=$4
+  next_version=$(get_next_version "$1" "$2" "$3" "$latest_tag")
   latest_commit=$(git rev-parse "${latest_tag}" 2>/dev/null)
   head_commit=$(git rev-parse HEAD)
   if [ "$latest_commit" = "$head_commit" ]; then
