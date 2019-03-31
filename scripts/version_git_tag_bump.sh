@@ -25,7 +25,7 @@ done
 shift $((OPTIND - 1))
 
 get_latest_tag() {
-  pattern="^$PREFIX([0-9]+\.[0-9]+\.[0-9]+)\$"
+  pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
   versions=$(for tag in $(git tag); do
     [[ "$tag" =~ $pattern ]] && echo "${BASH_REMATCH[1]}"
   done)
@@ -42,8 +42,8 @@ increment_ver() {
 }
 
 bump() {
-  next_ver="${PREFIX}$(increment_ver "$1" "$2" "$3")"
-  latest_ver="${PREFIX}$(get_latest_tag)"
+  next_ver="$(increment_ver "$1" "$2" "$3")"
+  latest_ver="$(get_latest_tag)"
   latest_commit=$(git rev-parse "${latest_ver}" 2>/dev/null)
   head_commit=$(git rev-parse HEAD)
   if [ "$latest_commit" = "$head_commit" ]; then
@@ -67,13 +67,13 @@ fi
 latest_tag=$(get_latest_tag)
 case $1 in
   major)
-    bump 1 0 0
+    bump 1 0 0 "$latest_tag"
     ;;
   minor)
-    bump 0 1 0
+    bump 0 1 0 "$latest_tag"
     ;;
   patch)
-    bump 0 0 1
+    bump 0 0 1 "$latest_tag"
     ;;
   *)
     echo "$latest_tag"
