@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 firefox="false"
 technology="false"
@@ -25,6 +25,14 @@ while getopts ":fth" option; do
   esac
 done
 
+if [[ "$firefox" == "false" && "$technology" == "false" ]]; then
+  if [[ "$BROWSER_FLAG" = "-t" ]]; then
+    technology="true"
+  elif [[ "$BROWSER_FLAG" = "-f" ]]; then
+    firefox="true"
+  fi
+fi
+
 if [[ "$firefox" == "true" ]]; then
   browser_arg="-a Firefox"
 elif [[ "$technology" == "true" ]]; then
@@ -34,4 +42,4 @@ elif [[ "$technology" == "true" ]]; then
   exit 0
 fi
 
-open $browser_arg "$(urls -b)"
+open "$browser_arg" "$(urls -b)"

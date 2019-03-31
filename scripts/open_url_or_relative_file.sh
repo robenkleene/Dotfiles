@@ -19,5 +19,5 @@ while read -r line; do
     fi
     exit 0
   fi
-  echo "$line" | ~/.bin/urls_open
+  echo "$line" | ~/.bin/url_open
 done
