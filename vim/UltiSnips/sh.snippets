@@ -46,11 +46,17 @@ endsnippet
 snippet testl "True if symbolic link"
 -L "${1:\$1}"
 endsnippet
-snippet testexe "True if error exit status"
+snippet testneq "True if not equal"
 ${1:$?} -ne 0
 endsnippet
-snippet testex0 "True if zero exit status"
+snippet testeq "True if equal"
 ${1:$?} -eq 0
+endsnippet
+snippet testgt "True if greater than"
+${1:$?} -gt 0
+endsnippet
+snippet testlt "True if less than"
+${1:$?} -lt 0
 endsnippet
 snippet testz "True if empty variable"
 -z "$${1:1}"
