@@ -28,7 +28,7 @@ while getopts ":ch" option; do
 done
 shift $((OPTIND - 1))
 
-find_latest_semver() {
+get_latest_tag() {
   pattern="^$PREFIX([0-9]+\.[0-9]+\.[0-9]+)\$"
   versions=$(for tag in $(git tag); do
     [[ "$tag" =~ $pattern ]] && echo "${BASH_REMATCH[1]}"
@@ -41,13 +41,13 @@ find_latest_semver() {
 }
 
 increment_ver() {
-  find_latest_semver | awk -F. -v a="$1" -v b="$2" -v c="$3" \
+  get_latest_tag | awk -F. -v a="$1" -v b="$2" -v c="$3" \
     '{printf("%d.%d.%d", $1+a, $2+b , $3+c)}'
 }
 
 bump() {
   next_ver="${PREFIX}$(increment_ver "$1" "$2" "$3")"
-  latest_ver="${PREFIX}$(find_latest_semver)"
+  latest_ver="${PREFIX}$(get_latest_tag)"
   latest_commit=$(git rev-parse "${latest_ver}" 2>/dev/null)
   head_commit=$(git rev-parse HEAD)
   if [ "$latest_commit" = "$head_commit" ]; then
@@ -64,7 +64,7 @@ bump() {
 }
 
 if [[ "$current" == "true" ]]; then
-  find_latest_semver
+  get_latest_tag
   exit 0
 fi
 
@@ -77,5 +77,5 @@ case $1 in
   major) bump 1 0 0 ;;
   minor) bump 0 1 0 ;;
   patch) bump 0 0 1 ;;
-  *) find_latest_semver
+  *) get_latest_tag
 esac
