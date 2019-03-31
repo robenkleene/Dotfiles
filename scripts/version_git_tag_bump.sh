@@ -38,8 +38,16 @@ get_latest_tag() {
 
 get_next_version() {
   latest_tag=$4
+  if [[ $1 -gt 0 ]]; then
+    format="\"%d.%d.%d\", \$1+a, 0, 0"
+  elif [[ $2 -gt 0 ]]; then
+    format="\"%d.%d.%d\", \$1+a, \$2+b, 0"
+  else
+    format="\"%d.%d.%d\", \$1+a, \$2+b, \$3+c"
+  fi
   echo "$latest_tag" | awk -F. -v a="$1" -v b="$2" -v c="$3" \
-    '{printf("%d.%d.%d", $1+a, $2+b , $3+c)}'
+    "{printf($format)}"
+    # '{printf("%d.%d.%d", $1+a, $2+b , $3+c)}'
 }
 
 bump() {
