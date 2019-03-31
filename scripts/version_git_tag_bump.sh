@@ -36,26 +36,26 @@ get_latest_tag() {
   fi
 }
 
-increment_ver() {
+get_next_version() {
   get_latest_tag | awk -F. -v a="$1" -v b="$2" -v c="$3" \
     '{printf("%d.%d.%d", $1+a, $2+b , $3+c)}'
 }
 
 bump() {
-  next_ver="$(increment_ver "$1" "$2" "$3")"
-  latest_ver="$(get_latest_tag)"
-  latest_commit=$(git rev-parse "${latest_ver}" 2>/dev/null)
+  next_version=$(get_next_version "$1" "$2" "$3")
+  latest_tag=$4
+  latest_commit=$(git rev-parse "${latest_tag}" 2>/dev/null)
   head_commit=$(git rev-parse HEAD)
   if [ "$latest_commit" = "$head_commit" ]; then
-    echo "Current commit already tagged as $latest_ver"
+    echo "Current commit already tagged as $latest_tag"
     exit 1
   else
     if [[ "$force" == "true" ]]; then
-      git tag "$next_ver"
+      git tag "$next_version"
     else
       echo "Dry run"
     fi
-    echo "$next_ver"
+    echo "$next_version"
   fi
 }
 
