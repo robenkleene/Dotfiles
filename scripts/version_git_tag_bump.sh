@@ -59,13 +59,12 @@ bump() {
   fi
 }
 
-latest_tag=$(get_latest_tag)
-
 force="false"
 if [[ "$2" = "-f" ]]; then
   force="true"
 fi
 
+latest_tag=$(get_latest_tag)
 case $1 in
   major)
     bump 1 0 0
