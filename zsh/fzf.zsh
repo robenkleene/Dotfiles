@@ -272,9 +272,10 @@ fzf_documentation_editor() {
       # Add to history
       print -sr $final_cmd
     fi
-  else
-    cd - >/dev/null
+  # else
+  #   cd - >/dev/null
   fi
+  cd - >/dev/null
 }
 
 # Snippets
@@ -297,9 +298,10 @@ fzf_snippet_editor() {
       # Add to history
       print -sr $final_cmd
     fi
-  else
-    cd -
+  # else
+  #   cd -
   fi
+  cd -
 }
 
 # Xcode
