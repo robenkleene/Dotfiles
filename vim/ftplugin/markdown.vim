@@ -33,4 +33,5 @@ if exists(':terminal')
     tnoremap <buffer> <Esc> <C-\><C-n>
   endfunction
 endif
-nnoremap <buffer> <localleader>c :ConvertMarkdown %<CR>
+" Can't use `<localleader>c` because that's title case operator
+" nnoremap <buffer> <localleader>c :ConvertMarkdown %<CR>
