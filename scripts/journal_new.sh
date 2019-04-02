@@ -25,8 +25,7 @@ DaySuffix() {
 }
 header=$(date "+%A, %B %-d$(DaySuffix), %Y")
 content="# $header"
-last_entry_filename=$(ls "$journal_directory" | tail -n 1 | tr -d '\n')
-last_entry="$journal_directory/$last_entry_filename"
+last_entry=$(~/.bin/journal_newest "$journal_directory")
 content+="
 "
 content+=$(tail -n +2 "$last_entry")
