@@ -4,7 +4,16 @@
 
 (eval-when-compile (require 'use-package))
 (use-package swift-mode
-  :defer t)
+  :defer t
+  :config
+  (add-hook 'swift-mode-hook
+            (lambda ()
+              (interactive)
+              (whitespace-mode 0)
+              (setq-local whitespace-line-column 120)
+              (whitespace-mode 1)
+              ))
+  )
 
 (provide 'robenkleene-swift)
 ;; Local Variables:
