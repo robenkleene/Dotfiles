@@ -1,6 +1,8 @@
 " General
-" Turning this on was causing performance issues when editing markdown files
-" let g:markdown_folding = 1
+" Turning this on was causing performance issues when editing markdown files,
+" but it disables folds
+" If the slowness comes back try `set nofoldenable`
+let g:markdown_folding = 1
 setlocal spell
 set wrap
 
