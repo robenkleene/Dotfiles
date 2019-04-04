@@ -283,7 +283,7 @@ fzf_snippet_copy() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    echo $result | tr '\n' '\0' | xargs -0 cat | tee /dev/tty | safecopy
+    echo $result | tr '\n' '\0' | xargs -0 $BAT_COMMAND | tee /dev/tty | safecopy
   fi
   cd -
 }
