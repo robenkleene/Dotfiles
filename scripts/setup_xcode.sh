@@ -266,6 +266,7 @@ setup_swiftlint() {
   - todo
   - type_name
   - xctfail_message
+  - large_tuple
 excluded:
   - Carthage
 "
