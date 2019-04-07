@@ -1,8 +1,10 @@
 " General
 " Turning this on was causing performance issues when editing markdown files,
 " but it disables folds
-" If the slowness comes back try `set nofoldenable`
-let g:markdown_folding = 1
+" `set nofoldenable` doesn't help
+" An easy way to test the slowness is to run an operator like title case on a
+" title
+" let g:markdown_folding = 1
 setlocal spell
 set wrap
 
