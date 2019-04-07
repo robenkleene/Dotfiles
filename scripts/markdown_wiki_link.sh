@@ -10,7 +10,7 @@ fi
 directory="$1"
 
 while read -r line; do
-  if [[ -n "$title" ]]; then
+  if [[ -n "$title" && -n "$line" ]]; then
     echo "Only use line at a time" >&2
     exit 1
   fi
