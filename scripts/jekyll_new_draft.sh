@@ -33,10 +33,7 @@ if [[ -z "$title" ]]; then
   exit 1
 fi
 
-slug=$(echo "$title" |
-  tr -dc '[:alnum:]\r\n.\-/ ' |
-  tr -s ' ' | tr '[A-Z]' '[a-z]' |
-  tr ' ' '-')
+slug=$(echo "$title" | ~/.bin/slug)
 
 drafts_directory=~/Development/Projects/Web/robenkleene.github.io/_drafts
 if [[ ! -d "$drafts_directory" ]]; then

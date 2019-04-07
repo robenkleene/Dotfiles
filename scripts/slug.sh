@@ -2,15 +2,11 @@
 
 set -e
 
-if [ "$#" -ne 1 ]; then
-  echo "Wrong number of arguments" >&2
-  exit 1
-fi
+# `tr -dc '[:alnum:]\r\n. '`: Strip non-alphanumeric characters
+# `tr -s ' '`: Consolidate spaces to one space
+# `tr '[A-Z]' '[a-z]'`: Lowercase
+# `tr ' ' '-'`: Replace spaces with hyphens
 
-today=$(date +%Y-%m-%d)
-safe_title=$(echo "$1" |
-  tr -dc '[:alnum:]\r\n.\-/ ' |
-  tr -s ' ' | tr '[A-Z]' '[a-z]' |
-  tr ' ' '-')
-
-echo "$today-$safe_title"
+tr -dc '[:alnum:]\r\n.\-/ ' |
+  tr -s ' ' | tr '[:upper:]' '[:lower:]' |
+  tr ' ' '-'
