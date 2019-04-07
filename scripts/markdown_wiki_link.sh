@@ -2,20 +2,23 @@
 
 set -e
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -lt 1 ]; then
     echo "Wrong number of arguments" >&2
     exit 1
 fi
 
 directory="$1"
+title="$2"
 
-while read -r line; do
-  if [[ -n "$title" && -n "$line" ]]; then
-    echo "Only use line at a time" >&2
-    exit 1
-  fi
-  title="$line"
-done
+if [[ -z "$title" ]]; then
+  while read -r line; do
+    if [[ -n "$title" && -n "$line" ]]; then
+      echo "Only use line at a time" >&2
+      exit 1
+    fi
+    title="$line"
+  done
+fi
 
 if [[ -z "$title" ]]; then
   echo "No valid title found" >&2
