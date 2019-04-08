@@ -214,6 +214,8 @@ vnoremap <C-w><C-p> gT
 " vnoremap <A-p> :cprev<CR>
 
 " Open
+" Close with `bd` after open to avoid the possibility of data loss when
+" editing with a different program
 nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
 
 " Quickfix
