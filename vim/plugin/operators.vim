@@ -16,3 +16,12 @@ vnoremap <silent> <localleader>k :<C-U>call operators#MarkdownWikiLink(visualmod
 " Open URLs
 nnoremap <silent> <localleader>L :set opfunc=operators#OpenURLs<CR>g@
 vnoremap <silent> <localleader>L :<C-U>call operators#OpenURLs(visualmode(), 1)<CR>
+
+" Archive Text
+nnoremap <silent> <localleader>a :set opfunc=operators#Archive<CR>g@
+vnoremap <silent> <localleader>a :<C-U>call operators#Archive(visualmode(), 1)<CR>
+
+" Archive & Delete Text
+nnoremap <silent> <localleader>d :set opfunc=operators#ArchiveAndDelete<CR>g@
+vnoremap <silent> <localleader>d :<C-U>call operators#ArchiveAndDelete(visualmode(), 1)<CR>
+

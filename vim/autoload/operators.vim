@@ -93,7 +93,7 @@ function! operators#LinkReplace(type, ...) abort
 
   echom "Replacing phrases with links"
 
-  if a:0 
+  if a:0
     " Visual
     silent exe "normal! gvc\<C-r>=system('~/.bin/link_phrase',@\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
@@ -106,4 +106,64 @@ function! operators#LinkReplace(type, ...) abort
 
   let @@ = reg_save
 endfunction
+
+function! operators#Archive(type, ...) abort
+  let sel_save = &selection
+  let &selection = "inclusive"
+  let reg_save = @@
+
+  if a:0
+    " Visual
+    silent exe "normal! gvy"
+  elseif a:type == 'line'
+    " Line
+    silent exe "normal! '[V']y"
+  else
+    " Character
+    silent exe "normal! `[v`]y"
+  endif
+
+  let file_path = call system('~/.bin/backup_text', @@)
+  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
+  echom "Backed up ".lineCount." lines"
+
+  let &selection = sel_save
+  let @@ = reg_save
+endfunction
+
+function! operators#ArchiveAndDelete(type, ...) abort
+  let sel_save = &selection
+  let &selection = "inclusive"
+  let reg_save = @@
+
+  if a:0
+    " Visual
+    silent exe "normal! gvd"
+  elseif a:type == 'line'
+    " Line
+    silent exe "normal! '[V']d"
+  else
+    " Character
+    silent exe "normal! `[v`]d"
+  endif
+
+  let file_path = system('~/.bin/backup_text', @@)
+  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
+  echom "Backed up ".lineCount." lines"
+
+  let &selection = sel_save
+  let @@ = reg_save
+endfunction
+
+" " Backup Text
+" function! bindings#ArchiveLines(bang) range abort
+"   let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/backup_text')
+"   if (a:bang == 1)
+"     let temp = @s
+"     silent normal! gv"sd
+"     let @s = temp
+"   endif
+"   let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
+"   echom "Backed up ".lineCount." lines"
+" endfunction
 

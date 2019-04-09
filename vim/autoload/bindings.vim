@@ -40,18 +40,6 @@ function! bindings#LinkSourceControlOpenLines() range abort
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_open --line-number '.line('.').' '.fnameescape(expand('%:p')))
 endfunction
 
-" Backup Text
-function! bindings#ArchiveLines(bang) range abort
-  let file_path = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/backup_text')
-  if (a:bang == 1)
-    let temp = @s
-    silent normal! gv"sd
-    let @s = temp
-  endif
-  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
-  echom "Backed up ".lineCount." lines"
-endfunction
-
 " `grep` Visual Star
 function! bindings#VSetSearch(cmdtype) abort
   let temp = @s

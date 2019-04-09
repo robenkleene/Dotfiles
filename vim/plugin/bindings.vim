@@ -147,11 +147,6 @@ nnoremap <leader>yp :let @*=expand("%:p")<CR>
 nnoremap <leader>yf :let @*=expand("%:t")<CR>
 nnoremap <leader>yd :let @*=expand('%:p:h:t')<CR>
 
-" Backup Text
-command! -bang -range BackupText <line1>,<line2>call bindings#ArchiveLines(<bang>0)
-vnoremap <localleader>a :'<,'>BackupText<CR>
-vnoremap <localleader>d :'<,'>BackupText!<CR>
-
 " `grep` Visual Star
 " makes * and # work on visual mode too.
 xnoremap * :<C-u>call bindings#VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
