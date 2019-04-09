@@ -73,3 +73,7 @@ command! -nargs=1 SlugProject :call commands#SlugProject(<q-args>)
 
 " Tags
 command! Tags :call commands#Tags()
+
+" Profile
+command! ProfileStart :call commands#ProfileStart()
+command! ProfileEnd :call commands#ProfileEnd()

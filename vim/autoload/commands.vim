@@ -190,3 +190,14 @@ endfunction
 function! commands#Tags() abort
   execute "!~/.bin/generate_tags -e"
 endfunction
+
+function! commands#ProfileStart() abort
+  profile start profile.log
+  profile func *
+  profile file *
+endfunction
+
+function! commands#ProfileEnd() abort
+  profile pause
+  noautocmd qall!
+endfunction
