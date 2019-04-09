@@ -11,6 +11,7 @@ abbreviations=(
 
 # open
 'or' 'open -R'
+'orm' 'open README.md'
 
 # rg
 'a' "$ACK_COMMAND"
