@@ -18,6 +18,11 @@ elif [[ "$(uname)" = "Linux" ]]; then
   fi
 fi
 
+# python
+if [[ "$(uname)" = "Darwin" ]]; then
+  export PATH=$HOME/Library/Python/3.7/bin:$PATH
+fi
+
 # nvm
 # Official installation is really slow:
 # export NVM_DIR="$HOME/.nvm"
