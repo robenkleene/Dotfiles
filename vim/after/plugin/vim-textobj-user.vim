@@ -54,3 +54,28 @@ function! FindUnderscoreI()
   let tail_pos = getpos('.')
   return ['v', head_pos, tail_pos]
 endfunction
+
+call textobj#user#plugin('asterisk', {
+\   ':': {
+\     'select-a-function': 'FindColonA',
+\     'select-a': 'a:',
+\     'select-i-function': 'FindColonI',
+\     'select-i': 'i:',
+\   },
+\ })
+
+function! FindColonA()
+  normal! F:
+  let head_pos = getpos('.')
+  normal! f:
+  let tail_pos = getpos('.')
+  return ['v', head_pos, tail_pos]
+endfunction
+
+function! FindColonI()
+  normal! F:l
+  let head_pos = getpos('.')
+  normal! f:h
+  let tail_pos = getpos('.')
+  return ['v', head_pos, tail_pos]
+endfunction
