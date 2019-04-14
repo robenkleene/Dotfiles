@@ -2,7 +2,7 @@
 
 # Emacs
 # Display a greeting message if the server is running
-if ps -u $USER | grep 'emacs --bg-daemon' | grep --silent -v grep; then
+if ps -u $USER | grep '[Ee]macs.*--bg-daemon' | grep --silent -v grep; then
   echo "Emacs server is running"
 fi
 
