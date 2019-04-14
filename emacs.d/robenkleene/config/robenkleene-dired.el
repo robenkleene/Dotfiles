@@ -19,6 +19,9 @@
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)
 
+  ;; If two `dired' buffers are open, use the other window as the default
+  ;; destination for operations like rename and copy.
+  (setq dired-dwim-target t)
   ;; Omit hidden files
   (setq-default dired-omit-files
                 (concat dired-omit-files "\\|^\\..+$"))
