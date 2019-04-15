@@ -2,8 +2,22 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Find
+;; Helpers for running some functions with `ido' disabled
+(defun robenkleene/ido-call-disabled (func &rest args)
+  "Temporarily disable IDO and call function FUNC with arguments ARGS."
+  (interactive)
+  (let ((read-file-name-function #'read-file-name-default))
+    (if (called-interactively-p 'any)
+        (call-interactively func)
+      (apply func args))))
+(defun robenkleene/ido-advice-disable (command)
+  "Disable IDO when command COMMAND is called."
+  (advice-add command :around #'robenkleene/ido-call-disabled))
+;; Disable `ido-everywhere' for `dired-create-directory' (auto-completing
+;; filenames makes that function useless)
+(robenkleene/ido-advice-disable 'dired-create-directory)
 
+;; Find
 (defun robenkleene/ido-recursive-find-file (dir)
   "Find file recursively in DIR."
   (interactive
