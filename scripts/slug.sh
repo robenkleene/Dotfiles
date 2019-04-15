@@ -10,4 +10,4 @@ set -e
 
 tr -dc '[:alnum:]\r\n.\-/ ' |
   tr -s ' ' | tr '[:upper:]' '[:lower:]' |
-  tr ' ' '-' | tr '.' '-'
+  tr ' ' '-' | tr '.' '-' | tr '/' '-'
