@@ -123,7 +123,7 @@ function! operators#Archive(type, ...) abort
     silent exe "normal! `[v`]y"
   endif
 
-  let file_path = call system('~/.bin/backup_text', @@)
+  let file_path = system('~/.bin/backup_text', @@)
   let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
   echom "Backed up ".lineCount." lines"
 
