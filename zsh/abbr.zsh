@@ -134,6 +134,7 @@ abbreviations=(
 # `emacs`
 'em' 'emacs -nw'
 'emacs' 'emacs -nw'
+'e' "$EMACS_COMMAND"
 )
 
 # These abbreviations work everywhere
