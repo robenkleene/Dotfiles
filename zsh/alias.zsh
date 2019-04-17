@@ -154,7 +154,6 @@ alias slpre='slug_project_edit'
 
 # Edit
 alias erm='eval $EDITOR README.md'
-alias ela='eval $EDITOR $(journal_newest .)'
 
 # Tags
 alias tg="generate_tags"
