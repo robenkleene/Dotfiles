@@ -3,8 +3,12 @@
 set -e
 
 link=false
-while getopts ":t:lh" option; do
+pipe=false
+while getopts ":t:lhi" option; do
   case "$option" in
+    i)
+      pipe=true
+      ;;
     t)
       title="$OPTARG"
       ;;
@@ -54,7 +58,10 @@ categories:
 "
 
 echo "$content" >"$post_path"
-cat >>"$post_path"
+
+if [[ "$pipe" == "true" ]]; then
+  cat >>"$post_path"
+fi
 
 destination_post_path="$drafts_directory/$today-$slug.md"
 mv -n "$post_path" "$destination_post_path"
