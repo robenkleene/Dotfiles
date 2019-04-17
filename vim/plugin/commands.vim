@@ -21,6 +21,8 @@ command! Ghunks cexpr system('git diff --relative \| dtg')
 " Go to directory vim was launched from
 command! Wcd :lcd $PWD
 
+command! Erm :e README.md
+
 " Delete whitespace at the end of the file
 command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 
