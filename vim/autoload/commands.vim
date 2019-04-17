@@ -201,3 +201,19 @@ function! commands#ProfileEnd() abort
   profile pause
   noautocmd qall!
 endfunction
+
+" Blog
+function! commands#BlogNewPost(title, flags) abort
+  let l:filename = system('~/.bin/jekyll_new_draft ' . a:flags . ' -t '. a:title)
+  execute 'edit '.l:filename
+endfunction
+
+" Journal
+function! commands#JournalNew() abort
+  let l:filename = system('~/.bin/journal_new_make ~/Dropbox/Text/Journal')
+  execute 'edit '.l:filename
+endfunction
+function! commands#JournalLatest() abort
+  let l:filename = system('~/.bin/journal_newest ~/Dropbox/Text/Journal')
+  execute 'edit '.l:filename
+endfunction

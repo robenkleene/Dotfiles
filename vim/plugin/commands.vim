@@ -51,6 +51,14 @@ command! New :call commands#New('new')
 command! Vnew :call commands#New('vnew')
 command! Tabnew :call commands#New('tabnew')
 
+" Blog
+command! -nargs=1 BlogNewPost :call commands#BlogNewPost(<q-args>, '')
+command! -nargs=1 BlogNewLink :call commands#BlogNewPost(<q-args>, '-l')
+
+" Journal
+command! JournalNew :call commands#JournalNew()
+command! JournalLatest :call commands#JournalLatest()
+
 " Scratch
 command! -bang Sedit :call commands#Snew(<bang>0, 'edit')
 command! -bang Snew :call commands#Snew(<bang>0, 'new')
