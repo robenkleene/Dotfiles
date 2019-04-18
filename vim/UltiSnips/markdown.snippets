@@ -10,10 +10,13 @@ categories: ${2:Tag1}, ${3:Tag2}
 
 $0
 endsnippet
-snippet footnote "Footnote" b
+snippet footnotes "Footnote" b
 * * *
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt[^${1:id}]
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt[^$1]
 
-[^$1]: ut labore et dolore magna aliqua.
+[^${1:id}]: ut labore et dolore magna aliqua.
+endsnippet
+snippet footnote "Footnote" b
+[^${1:id}]: ut labore et dolore magna aliqua.
 endsnippet
