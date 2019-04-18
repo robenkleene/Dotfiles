@@ -22,3 +22,5 @@ Alias Gw silent\ !git_web_open
 " reason
 " Alias Slpr silent\ !slug_project
 Alias Slpr SlugProject
+
+Alias Scw SourceControlWeb

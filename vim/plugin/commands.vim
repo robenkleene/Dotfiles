@@ -87,3 +87,7 @@ command! Tags :call commands#Tags()
 " Profile
 command! ProfileStart :call commands#ProfileStart()
 command! ProfileEnd :call commands#ProfileEnd()
+
+" Source Control
+command! SourceControlWeb :call commands#SourceControlWeb()
+

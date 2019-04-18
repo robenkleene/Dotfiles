@@ -217,3 +217,9 @@ function! commands#JournalLatest() abort
   let l:filename = system('~/.bin/journal_newest ~/Dropbox/Text/Journal')
   execute 'edit '.l:filename
 endfunction
+
+" Open Source Control
+function! commands#SourceControlWeb() abort
+  echo system('~/.bin/source_control_open_site')
+endfunction
+
