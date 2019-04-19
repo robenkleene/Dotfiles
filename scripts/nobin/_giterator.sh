@@ -7,19 +7,25 @@ usage() {
   echo "-n : Print next directory path with unstaged changes"
 }
 
-push=false
-pull=false
-next=false
-while getopts "plnh" option
+push="false"
+pull="false"
+next="false"
+while getopts "plcm:nh" option
   do case "$option" in
     p)
-      push=true
+      push="true"
       ;;
     l)
-      pull=true
+      pull="true"
       ;;
     n)
-      next=true
+      next="true"
+      ;;
+    m)
+      message=$OPTARG
+      ;;
+    c)
+      message="Update"
       ;;
     h)
       usage
@@ -37,18 +43,18 @@ do_git_process() {
   if ! [[ -d ".git" ]]; then
     return
   fi
-  nothing_to_commit=false
+  nothing_to_commit="false"
   status=$(git status)
 
   # Test git status message 1.
   nothing_to_commit_message="nothing to commit (working directory clean)"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit=true
+  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
   # Test git status message 2.
   nothing_to_commit_message="nothing to commit, working directory clean"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit=true
+  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
   # Test git status message 3.
   nothing_to_commit_message="nothing to commit, working tree clean"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit=true
+  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
 
   if $next; then
     if ! $nothing_to_commit; then
@@ -61,10 +67,12 @@ do_git_process() {
     git status
   fi
 
-  if $push && $nothing_to_commit; then
+  if [[ "$push" == "true" && "$nothing_to_commit" == "true" ]] ; then
     git push
-  elif $pull && $nothing_to_commit; then
+  elif [[ "$pull" == "true" && "$nothing_to_commit" == "true" ]] ; then
     git pull
+  elif [[ -n "$message" && "$nothing_to_commit" == "false" ]]; then
+    git add -A :/ && git commit -m "$message"
   fi
 }
 
