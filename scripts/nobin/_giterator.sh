@@ -2,9 +2,11 @@ usage() {
   echo "Usage: $command_name [-pln]"
   echo
   echo "No flags : Just lists the status of each repo"
-  echo "-p : Push all repos without staged changes"
+  echo "-c: Stage changes with a default commit message"
   echo "-l : Pull all repos without staged changes"
+  echo "-m <message>: Stage changes with commit message"
   echo "-n : Print next directory path with unstaged changes"
+  echo "-p : Push all repos without staged changes"
 }
 
 push="false"
