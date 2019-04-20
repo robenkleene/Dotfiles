@@ -119,10 +119,10 @@ vim_todo() {
 
 # Emacs
 emacs_magit_status() {
-  eval "$EMACS_COMMAND -eval \"(robenkleene/magit-status-startup)\""
+  eval "$EMACS_COMMAND -nw -eval \"(robenkleene/magit-status-startup)\""
 }
 emacs_magit_log() {
-  eval "$EMACS_COMMAND -eval \"(robenkleene/magit-log)\""
+  eval "$EMACS_COMMAND -nw -eval \"(robenkleene/magit-log)\""
 }
 emacs_kill_server() {
   emacsclient -e '(kill-emacs)'

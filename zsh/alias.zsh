@@ -87,8 +87,6 @@ alias ml='make lint'
 alias mac='make autocorrect'
 
 # `emacs`
-# alias magit="emacs -eval \"(robenkleene/magit-status-startup)\""
-# alias magit-log="emacs -eval \"(robenkleene/magit-log)\""
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
 alias f="$EMACS_COMMAND ."
