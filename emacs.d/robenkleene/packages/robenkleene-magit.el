@@ -16,9 +16,9 @@
         ("m f" . magit-log-buffer-file)
         )
   :init
-  (defalias 'ms 'magit-status)
-  (defalias 'ml 'magit-log-current)
-  (defalias 'mf 'magit-log-buffer-file)
+  (defalias 'mgs 'magit-status)
+  (defalias 'mgl 'magit-log-current)
+  ;; (defalias 'mf 'magit-log-buffer-file)
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
