@@ -55,7 +55,7 @@ function! FindUnderscoreI()
   return ['v', head_pos, tail_pos]
 endfunction
 
-call textobj#user#plugin('asterisk', {
+call textobj#user#plugin('colon', {
 \   ':': {
 \     'select-a-function': 'FindColonA',
 \     'select-a': 'a:',
