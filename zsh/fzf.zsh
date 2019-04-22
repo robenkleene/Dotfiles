@@ -283,9 +283,11 @@ fzf_snippet_copy() {
   cd ~/Development/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    echo $result | tr '\n' '\0' | xargs -0 $BAT_COMMAND | tee /dev/tty | safecopy
+    cat "$result" | safecopy
+    cmd="$BAT_COMMAND \"$result\""
+    eval $cmd
   fi
-  cd -
+  cd - >/dev/null
 }
 fzf_snippet_editor() {
   cd ~/Development/Snippets/
@@ -301,7 +303,7 @@ fzf_snippet_editor() {
   # else
   #   cd -
   fi
-  cd -
+  cd - >/dev/null
 }
 
 # Xcode
