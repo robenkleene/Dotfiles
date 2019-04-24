@@ -43,7 +43,11 @@ Otherwise, call `backward-kill-word'."
 
 (defun robenkleene/slug-project (title &optional dir)
   "Create a new slug project with TITLE in DIR."
-  (interactive (list (read-from-minibuffer "Title: ")
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
                      (read-directory-name "Directory: "
                                           nil
                                           default-directory
