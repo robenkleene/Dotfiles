@@ -63,15 +63,17 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/wiki-link (title)
-  "Create a new slug project with TITLE."
-  (interactive (list (read-from-minibuffer "Title: ")))
-  (find-file
-   (shell-command-to-string (concat "~/.bin/slug_project "
-                                    (shell-quote-argument title)
-                                    " | tr -d '\n'")
-                            )
-   )
+(defun robenkleene/wiki-link ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command-on-region (region-beginning)
+                               (region-end)
+                               "~/.bin/markdown_wiki_link"
+                               t
+                               t
+                               )
+    )
   )
 
 (defun robenkleene/generate-tags ()

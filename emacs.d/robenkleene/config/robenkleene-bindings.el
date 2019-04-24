@@ -43,7 +43,6 @@
   'robenkleene/ido-z)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
   'robenkleene/reveal-in-finder)
-
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
   robenkleene/leader-map)
@@ -80,7 +79,10 @@
 (define-key robenkleene/leader-map (kbd "C-e")
   'robenkleene/evaluate-buffer-or-region)
 (define-key robenkleene/leader-map (kbd "o") 'occur)
-
+(define-key robenkleene/leader-map (kbd "k")
+  'robenkleene/wiki-link) ;; This is only for Markdown
+(define-key robenkleene/leader-map (kbd "C-k")
+  'robenkleene/wiki-link) ;; This is only for Markdown
 
 ;; Window Management
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
