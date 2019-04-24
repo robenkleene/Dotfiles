@@ -19,6 +19,9 @@
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)
 
+  ;; Don't show "omitted lines" message
+  (setq dired-omit-verbose nil)
+
   ;; If two `dired' buffers are open, use the other window as the default
   ;; destination for operations like rename and copy.
   (setq dired-dwim-target t)
