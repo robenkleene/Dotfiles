@@ -86,7 +86,8 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/go-to-project-root ()
   "Got to the project root."
   (interactive)
-  (let ((dir (shell-command-to-string "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
+  (let ((dir (shell-command-to-string
+              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
     (if dir
         (find-file dir)
       )
