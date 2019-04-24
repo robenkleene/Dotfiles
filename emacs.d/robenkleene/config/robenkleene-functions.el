@@ -94,30 +94,6 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/ido-z ()
-  "Find recent directory."
-  (interactive)
-  (let ((current-prefix-arg nil) project-files key-to-path)
-    (setq project-files
-          (split-string
-           (shell-command-to-string "fasd -Rdl")
-           "\n"))
-    (setq key-to-path (make-hash-table :test 'equal))
-    (let (ido-list)
-      (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
-                (puthash key path key-to-path)
-                (push key ido-list)
-                )
-              )
-            project-files)
-      (find-file (gethash (ido-completing-read
-                           "Find z: "
-                           ido-list) key-to-path))
-      )
-    )
-  )
-
 (defun robenkleene/open-in-xcode ()
   "Open file in Xcode."
   (interactive)
