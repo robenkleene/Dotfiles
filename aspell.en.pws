@@ -1,4 +1,4 @@
-personal_ws-1.1 en 18 
+personal_ws-1.1 en 19 
 STDOUT
 repurpose
 repo
@@ -12,6 +12,7 @@ submodule
 Kleene
 APIs
 roadmap
+Django
 symlink
 AppleScript
 deallocated
