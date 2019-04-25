@@ -20,6 +20,7 @@
 ;; Hack used along with binding `COMMAND-S' to `M-~' in terminal emulator to get
 ;; an easy save key
 (define-key key-translation-map  (kbd "M-~") (kbd "s-s"))
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

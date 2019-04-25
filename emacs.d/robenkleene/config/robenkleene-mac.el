@@ -44,8 +44,6 @@
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-Z")
 ;;   'undo-tree-redo)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-s") 'save-buffer)
-
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-q")
   'save-buffers-kill-terminal)
