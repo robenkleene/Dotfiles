@@ -18,7 +18,7 @@
 ;; For run
 (define-key key-translation-map (kbd "s-r") (kbd "C-r"))
 ;; For save
-(define-key key-translation-map (kbd "s-s") (kbd "C-s"))
+;; (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
 ;; For dired jump
 (define-key key-translation-map (kbd "s-j") (kbd "C-j"))
 ;; For `ibuffer'

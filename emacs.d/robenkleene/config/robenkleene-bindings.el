@@ -46,6 +46,8 @@
 ;; Leader Map
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
   robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
+  'robenkleene/rg)
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
@@ -70,7 +72,8 @@
 (define-key robenkleene/leader-map (kbd "g M-c")
   'robenkleene/ido-source-control-recursive-find-dir)
 (define-key robenkleene/leader-map (kbd "g a") 'robenkleene/rg-source-control)
-(define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
+(define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
+(define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
 (define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)

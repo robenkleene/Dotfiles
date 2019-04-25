@@ -76,6 +76,29 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/archive-and-delete ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (progn
+        (shell-command-on-region (region-beginning)
+                                 (region-end)
+                                 "~/.bin/backup_text -m")
+        (delete-region (region-beginning) (region-end))
+        )
+    )
+  )
+
+(defun robenkleene/archive ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command-on-region (region-beginning)
+                               (region-end)
+                               "~/.bin/backup_text -m")
+    )
+  )
+
 (defun robenkleene/generate-tags ()
   "Generate tags."
   (interactive)

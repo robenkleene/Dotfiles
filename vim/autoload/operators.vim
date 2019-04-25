@@ -123,9 +123,8 @@ function! operators#Archive(type, ...) abort
     silent exe "normal! `[v`]y"
   endif
 
-  let file_path = system('~/.bin/backup_text', @@)
-  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
-  echom "Backed up ".lineCount." lines"
+  let message = system('~/.bin/backup_text -m', @@)
+  echom message
 
   let &selection = sel_save
   let @@ = reg_save
@@ -147,9 +146,8 @@ function! operators#ArchiveAndDelete(type, ...) abort
     silent exe "normal! `[v`]d"
   endif
 
-  let file_path = system('~/.bin/backup_text', @@)
-  let lineCount = system('wc -l < '.fnameescape(file_path).' | tr -d " " | tr -d "\n"')
-  echom "Backed up ".lineCount." lines"
+  let message = system('~/.bin/backup_text -m', @@)
+  echom message
 
   let &selection = sel_save
   let @@ = reg_save
