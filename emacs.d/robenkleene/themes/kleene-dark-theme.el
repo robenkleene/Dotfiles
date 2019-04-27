@@ -87,6 +87,7 @@
 
 ;;; Custom Faces
 
+(defface rk-bold'((t)) "Header" :group 'rk-faces)
 (defface rk-callout '((t)) "Callout block" :group 'rk-faces)
 (defface rk-change '((t)) "Change" :group 'rk-faces)
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
@@ -98,6 +99,7 @@
 (defface rk-header'((t)) "Header" :group 'rk-faces)
 (defface rk-highlight '((t)) "Highlight" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
+(defface rk-italic'((t)) "Header" :group 'rk-faces)
 (defface rk-link '((t)) "Link" :group 'rk-faces)
 (defface rk-match'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
@@ -122,6 +124,7 @@
    'kleene-dark
 
    ;;;; Styles
+   `(rk-bold ((t (:inherit rk-header))))
    `(rk-callout ((t (:background ,callout-bg))))
    `(rk-change ((t (:foreground ,change))))
    `(rk-comment ((t (:foreground ,comment))))
@@ -130,6 +133,7 @@
    `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
+   `(rk-italic ((t (:inherit rk-text))))
    `(rk-warning-highlight ((t (:background ,warning))))
    `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
@@ -150,8 +154,8 @@
    `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray4))))
    `(rk-warning ((t (:foreground ,warning :underline t))))
-   ;; `(rk-whitespace ((t (:inherit rk-highlight-line))))
    `(rk-whitespace ((t (:inherit rk-warning))))
+   
    
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
@@ -185,6 +189,8 @@
    `(match ((t (:inherit rk-match))))
 
    ;;;; Text
+   `(bold ((t (:inherit rk-bold))))
+   `(italic ((t (:inherit rk-italic))))
    `(link ((t (:inherit rk-link))))
    `(link-visited ((t (:inherit rk-link))))
    `(success ((t (:inherit rk-success))))
