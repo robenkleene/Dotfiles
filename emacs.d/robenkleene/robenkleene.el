@@ -40,7 +40,6 @@
 ;; This breaks company mode
 ;; (require 'robenkleene-fill-column-indicator)
 ;; This breaks default undo via `C-g C-_'
-(require 'robenkleene-undo-tree)
 (require 'robenkleene-iedit)
 (require 'robenkleene-anzu)
 (require 'robenkleene-company)
