@@ -3,7 +3,7 @@
 require 'open-uri'
 
 if ARGV.empty?
-  puts "No file specified"
+  STDERR.puts "No file specified"
   exit
 end
 
