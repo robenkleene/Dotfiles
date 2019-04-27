@@ -152,6 +152,7 @@ alias slpre='slug_project_edit'
 
 # Edit
 alias erm='eval $EDITOR README.md'
+alias ecrm='eval $EMACS_COMMAND README.md'
 
 # Tags
 alias tags="generate_tags"
