@@ -71,8 +71,7 @@ Otherwise, call `backward-kill-word'."
                                (region-end)
                                "~/.bin/markdown_wiki_link"
                                t
-                               t
-                               )
+                               t)
     )
   )
 
@@ -98,6 +97,32 @@ Otherwise, call `backward-kill-word'."
                                "~/.bin/backup_text -m")
     )
   )
+
+(defun robenkleene/title-case ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command-on-region (region-beginning)
+                               (region-end)
+                               "~/.bin/title_case"
+                               t
+                               t)
+    )
+  )
+
+(defun robenkleene/web-search ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command (concat "~/.bin/web_search "
+                             (shell-quote-argument
+                              (buffer-substring (region-beginning)
+                                                (region-end))))
+                     )
+    )
+  )
+
+
 
 (defun robenkleene/generate-tags ()
   "Generate tags."
