@@ -19,17 +19,19 @@
     (add-to-list 'exec-path path-to-prepend))
   )
 
-;; Start the emacs server if it isn't already running and we're running in window mode
-(require 'server)
-(if (display-graphic-p (selected-frame))
-    (if (and (fboundp 'server-running-p)
-             (not (server-running-p)))
-        (server-start)))
+;; Start the emacs server if it isn't already running and we're running in
+;; window mode
+;; (require 'server)
+;; (if (display-graphic-p (selected-frame))
+;;     (if (and (fboundp 'server-running-p)
+;;              (not (server-running-p)))
+;;         (server-start)))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
 ;; (set-face-background 'default "#232323")
-;; `#1A1A1A' exactly matches the bars that the `railwaycat/homebrew-emacsmacport' adds
+;; `#1A1A1A' exactly matches the bars that the
+;; `railwaycat/homebrew-emacsmacport' adds
 ;; (set-face-background 'default "#1A1A1A")
 (set-face-background 'default "#212121")
 (set-face-background 'fringe "#212121")
