@@ -4,7 +4,7 @@
 
 ;; The usual alias for this, `gcd' conflicts with a built-in common lisp
 ;; function with the same name
-(defalias 'cg 'robenkleene/go-to-project-root)
+(defalias 'cdg 'robenkleene/go-to-project-root)
 (defalias 'tdb 'toggle-debug-on-error)
 (defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
