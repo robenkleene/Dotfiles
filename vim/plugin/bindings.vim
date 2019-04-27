@@ -34,11 +34,8 @@ nnoremap Y y$
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
-" nnoremap gcd :Gcd<CR>
-nnoremap gwcd :Wcd<CR>
-nnoremap gwcd :Wlcd<CR>
-nnoremap gcd :Gcd<CR>
-nnoremap gcl :Glcd<CR>
+nnoremap gcd :Cdg<CR>
+nnoremap gcl :Lcdg<CR>
 " Note that `c` is change, so adding more bindings that start with `c` is
 " difficult, in particular,`cg` can't be used because of `cg_`
 nnoremap cd :cd %:p:h<CR>
@@ -158,9 +155,6 @@ xnoremap # :<C-u>call bindings#VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " Vimscript)
 nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
-" From `git` root
-nnoremap <leader>g* :Rgg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
-vnoremap <leader>g* :<C-u>Gcd<CR>:call bindings#GrepVisual()<CR>
 
 " Panes
 " The problem with `tmux` Vim navigator is that if Vim is opened form a

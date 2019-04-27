@@ -19,7 +19,7 @@ command! SessionNoAuto :autocmd! save_session
 command! Ghunks cexpr system('git diff --relative \| dtg')
 
 " Go to directory vim was launched from
-command! Wcd :lcd $PWD
+command! Cdw :lcd $PWD
 
 command! Erm :e README.md
 
@@ -27,12 +27,12 @@ command! Erm :e README.md
 command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 
 " Go to working directory
-command! Wcd :call commands#Wcd('cd')
-command! Wlcd :call commands#Wcd('lcd')
+command! Cdw :call commands#Cdw('cd')
+command! Wlcd :call commands#Cdw('lcd')
 
 " Go to `git` root
-command! Gcd :call commands#Gcd('cd')
-command! Glcd :call commands#Gcd('lcd')
+command! Cdg :call commands#Cdg('cd')
+command! Lcdg :call commands#Cdg('lcd')
 
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)

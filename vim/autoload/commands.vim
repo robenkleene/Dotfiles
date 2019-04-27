@@ -25,7 +25,7 @@ function! commands#QuitSaveSession() abort
 endfunction
 
 " Go to `git` root
-function! commands#Wcd(command) abort
+function! commands#Cdw(command) abort
   let l:working_directory = getcwd(-1)
   if v:shell_error == 0
     execute a:command.' '.fnameescape(l:working_directory)
@@ -36,7 +36,7 @@ function! commands#Wcd(command) abort
 endfunction
 
 " Go to `git` root
-function! commands#Gcd(command) abort
+function! commands#Cdg(command) abort
   let l:git_root = system('git rev-parse --show-toplevel | tr -d "\n"')
   if v:shell_error == 0
     execute a:command.' '.fnameescape(l:git_root)
@@ -68,7 +68,7 @@ endfunction
 
 " From `git` root
 function! commands#Rgg(terms) abort
-  call commands#Gcd('cd')
+  call commands#Cdg('cd')
   execute "Rg " . a:terms
 endfunction
 

@@ -10,7 +10,7 @@ function! s:NetrwMapping()
   noremap <silent> <S-Up> <C-w>k
   noremap <silent> <S-Right> <C-w>l
   noremap <buffer> <leader>R :execute "!open -R ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
-  " noremap <buffer> gcd :Gcd<CR>\|:redraw!<CR>
+  " noremap <buffer> gcd :Cdg<CR>\|:redraw!<CR>
   " noremap <buffer> cd :execute "cd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
   " noremap <buffer> cl :execute "lcd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
 endfunction
