@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: footnote
+# key: footnote
+# --
+[^${1:id}]: ut labore et dolore magna aliqua.

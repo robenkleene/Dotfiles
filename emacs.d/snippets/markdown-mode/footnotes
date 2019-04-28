@@ -1,5 +1,9 @@
 # -*- mode: snippet -*-
-# name: footnote
-# key: footnote
+# name: footnotes
+# key: footnotes
 # --
+* * *
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt[^$1]
+
 [^${1:id}]: ut labore et dolore magna aliqua.
