@@ -25,6 +25,13 @@
 (global-set-key (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
 (global-set-key (kbd "C-x c") 'save-buffers-kill-terminal)
 
+;; These commands are part of a general strategy of mapping the command key to
+;; the control key in Emacs
+(global-set-key (kbd "<C-up>") 'beginning-of-buffer)
+(global-set-key (kbd "<C-down>") 'end-of-buffer)
+(global-set-key (kbd "<C-left>") 'move-beginning-of-line)
+(global-set-key (kbd "<C-right>") 'move-end-of-line)
+
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)
 

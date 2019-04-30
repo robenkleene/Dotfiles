@@ -106,6 +106,12 @@ bindkey -e '^W' _system_kill_region_or_backward_kill_word
 bindkey -e '^Y' _system_yank
 bindkey -e "^[^?" _system_bash_backwards_kill_word
 bindkey -e "^[^H" _system_bash_backwards_kill_word
+# Arrow Keys
+bindkey -e '^[[1;5A' beginning-of-buffer-or-history
+bindkey -e '^[[1;5B' end-of-buffer-or-history
+bindkey -e '^[[1;5D' beginning-of-line
+bindkey -e '^[[1;5C' end-of-line
+
 # Restore regular bindings for `isearch`
 bindkey -M isearch "^H" backward-delete-char
 bindkey -M isearch "^?" backward-delete-char
