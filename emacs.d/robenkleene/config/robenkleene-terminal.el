@@ -21,6 +21,14 @@
 ;; an easy save key
 (define-key key-translation-map  (kbd "M-~") (kbd "s-s"))
 
+;; (define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
+;; (define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
+(define-key key-translation-map  (kbd "ESC <up>") (kbd "M-p"))
+(define-key key-translation-map  (kbd "ESC <down>") (kbd "M-n"))
+(define-key key-translation-map  (kbd "ESC <left>") (kbd "<M-left>"))
+(define-key key-translation-map  (kbd "ESC <right>") (kbd "<M-right>"))
+
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
