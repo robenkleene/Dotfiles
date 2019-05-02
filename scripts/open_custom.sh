@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 if [[ $# -eq 0 ]]; then
-  ~/.bin/finder_new
+  # ~/.bin/finder_new
+  open .
 else
   # This has been removed because it isn't compatiable with passing flags to
   # open
