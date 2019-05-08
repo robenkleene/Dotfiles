@@ -87,10 +87,10 @@ ci: lint
 ac: autocorrect
 
 lint:
-	git ls-files '*.rb' -z | xargs -0 rubocop
+	git ls-files "*.rb" "*Rakefile" "*Gemfile" -z | xargs -0 rubocop
 
 autocorrect:
-	git ls-files '*.rb' -z | xargs -0 rubocop -a
+	git ls-files "*.rb" "*Rakefile" "*Gemfile" -z | xargs -0 rubocop -a
 "
   overwrite "Makefile" "$contents"
 }
