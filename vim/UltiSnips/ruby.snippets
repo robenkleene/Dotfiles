@@ -14,6 +14,11 @@ require 'profile'
 endsnippet
 snippet for "For loop" b
 for i in ${1:0}..${2:10}
-  puts i
+  ${0:puts i}
+end
+endsnippet
+snippet forin "For loop" b
+${1:ARGV}.each do |${2:item}|
+  ${0:puts $2}
 end
 endsnippet
