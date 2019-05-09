@@ -2,7 +2,10 @@ augroup dirvish_config
   autocmd!
   autocmd FileType dirvish nnoremap <silent><buffer>gh :<C-u>DirvishToggleHidden<CR>:Dirvish %<CR>
   autocmd FileType dirvish nnoremap <buffer><silent> <C-L> :Dirvish %<CR>
-  autocmd FileType dirvish nnoremap <localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
+  autocmd FileType dirvish nnoremap <buffer><localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
+  autocmd FileType dirvish nnoremap <buffer><localleader>d :call <SID>SetupRemoveCommandOnFile()<CR>
+  autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
+  autocmd FileType dirvish nnoremap <buffer><localleader>+ :!mkdir 
   " Dirvish maps these for the following reason, probably a mistake to unmap
   " but I find them ugly
   " "Buffer-local / and ? mappings to skip the concealed path fragment."
@@ -32,12 +35,25 @@ endfunction
 
 function! s:SetupCommandOnFile(cmd) abort
   let reg_save = @@
-  let reg_save_a = @a
   silent exe "normal! ^yg_"
   let filename_string = @@
   let filename = fnameescape(expand(filename_string))
   let @@ = a:cmd
   call feedkeys(':!' . a:cmd . " " . filename . " ")
+  let @@ = reg_save
+endfunction
+
+function! s:SetupRemoveCommandOnFile() abort
+  let reg_save = @@
+  silent exe "normal! ^yg_"
+  let filename_string = @@
+  let filename = fnameescape(expand(filename_string))
+  if filereadable(filename_string)
+    let cmd = "rm"
+  else
+    let cmd = "rmdir"
+  endif
+  call feedkeys(':!' . cmd . " " . filename)
   let @@ = reg_save
 endfunction
 
