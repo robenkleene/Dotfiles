@@ -11,4 +11,5 @@ let b:RunErrorFormat =
 " let b:ExecutePrg = "ruby"
 let b:ExecutePrg = "irb --simple-prompt"
 
-setlocal foldmethod=syntax
+" This causes slowness
+" setlocal foldmethod=syntax
