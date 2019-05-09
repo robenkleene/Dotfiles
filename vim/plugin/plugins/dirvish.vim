@@ -2,6 +2,7 @@ augroup dirvish_config
   autocmd!
   autocmd FileType dirvish nnoremap <silent><buffer>gh :<C-u>DirvishToggleHidden<CR>:Dirvish %<CR>
   autocmd FileType dirvish nnoremap <buffer><silent> <C-L> :Dirvish %<CR>
+  autocmd FileType dirvish nnoremap <localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
   " Dirvish maps these for the following reason, probably a mistake to unmap
   " but I find them ugly
   " "Buffer-local / and ? mappings to skip the concealed path fragment."
@@ -12,6 +13,7 @@ augroup dirvish_config
 augroup END
 
 command! DirvishToggleHidden call <SID>ToggleHidden()
+command! SetupCommandOnFile call <SID>SetupCommandOnFile()
 
 function! s:ToggleHidden() abort
   if exists("g:dirvish_mode")
@@ -26,6 +28,17 @@ function! s:ToggleHidden() abort
     " `d` is for delete
     let g:dirvish_mode = ':silent keeppatterns g@\v(/|^)\.[^\/]+@d _'
   endif
+endfunction
+
+function! s:SetupCommandOnFile(cmd) abort
+  let reg_save = @@
+  let reg_save_a = @a
+  silent exe "normal! ^yg_"
+  let filename_string = @@
+  let filename = fnameescape(expand(filename_string))
+  let @@ = a:cmd
+  call feedkeys(':!' . a:cmd . " " . filename . " ")
+  let @@ = reg_save
 endfunction
 
 " Default to hidden
