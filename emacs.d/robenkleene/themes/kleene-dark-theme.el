@@ -45,6 +45,7 @@
     ;; Ansi
     ("black" . "#000000")
     ("blue" . "#0087ff")
+    ("blue2" . "#87AFDF")
     ("cyan" . "#4AA4B0")
     ("green" . "#62D63F")
     ("magenta" . "#af00df")
@@ -72,7 +73,7 @@
     ("highlight" . cyan3)
     ("highlight-line-bg" . gray1)
     ("callout-bg" . gray0)
-    ("link" . cyan)
+    ("link" . blue2)
     ("modeline-active-bg" . gray4)
     ("modeline-active-fg" . white)
     ("modeline-inactive-bg" . gray2)
