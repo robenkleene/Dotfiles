@@ -122,10 +122,11 @@ function! operators#Archive(type, ...) abort
   endif
 
   let message = system('~/.bin/backup_text -m', @@)
-  echom message
-
   let &selection = sel_save
   let @@ = reg_save
+  " Force a redraw so the `echom` doesn't disappear
+  redraw
+  echom message
 endfunction
 
 function! operators#ArchiveAndDelete(type, ...) abort
@@ -145,10 +146,11 @@ function! operators#ArchiveAndDelete(type, ...) abort
   endif
 
   let message = system('~/.bin/backup_text -m', @@)
-  echom message
-
   let &selection = sel_save
   let @@ = reg_save
+  " Force a redraw so the `echom` doesn't disappear
+  redraw
+  echom message
 endfunction
 
 " " Backup Text
