@@ -31,19 +31,27 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Clipboard
+use_kill_ring="false"
+
 _system_kill_line() {
   zle kill-line
-  echo -n "$CUTBUFFER" | safecopy
+  if [[ "$use_kill_ring" == "true" ]]; then
+    echo -n "$CUTBUFFER" | safecopy
+  fi
 }
 zle -N _system_kill_line
 _system_backward_kill_line() {
   zle backward-kill-line
-  echo -n "$CUTBUFFER" | safecopy
+  if [[ "$use_kill_ring" == "true" ]]; then
+    echo -n "$CUTBUFFER" | safecopy
+  fi
 }
 zle -N _system_backward_kill_line
 _system_kill_word() {
   zle kill-word
-  echo -n "$CUTBUFFER" | safecopy
+  if [[ "$use_kill_ring" == "true" ]]; then
+    echo -n "$CUTBUFFER" | safecopy
+  fi
 }
 zle -N _system_kill_word
 autoload -Uz select-word-style
@@ -52,7 +60,9 @@ _system_bash_backwards_kill_word() {
   select-word-style bash
   WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
   select-word-style normal
-  echo -n "$CUTBUFFER" | safecopy
+  if [[ "$use_kill_ring" == "true" ]]; then
+    echo -n "$CUTBUFFER" | safecopy
+  fi
 }
 zle -N _system_bash_backwards_kill_word
 _system_copy_region_as_kill() {
@@ -73,7 +83,10 @@ _system_kill_region_or_backward_delete_char() {
   if [[ "$REGION_ACTIVE" -eq 0 ]]; then
     zle backward-delete-char
   else
-    zle _system_kill_region
+    zle kill-region
+    if [[ "$use_kill_ring" == "true" ]]; then
+      echo -n "$CUTBUFFER" | safecopy
+    fi
   fi
 }
 zle -N _system_kill_region_or_backward_delete_char
@@ -84,7 +97,9 @@ _system_kill_region() {
 zle -N _system_kill_region
 _system_backward_kill_word() {
   zle backward-kill-word
-  echo -n "$CUTBUFFER" | safecopy
+  if [[ "$use_kill_ring" == "true" ]]; then
+    echo -n "$CUTBUFFER" | safecopy
+  fi
 }
 zle -N _system_backward_kill_word
 _system_yank() {
@@ -106,6 +121,7 @@ bindkey -e '^W' _system_kill_region_or_backward_kill_word
 bindkey -e '^Y' _system_yank
 bindkey -e "^[^?" _system_bash_backwards_kill_word
 bindkey -e "^[^H" _system_bash_backwards_kill_word
+
 # Arrow Keys
 bindkey -e '^[[1;5A' beginning-of-buffer-or-history
 bindkey -e '^[[1;5B' end-of-buffer-or-history
