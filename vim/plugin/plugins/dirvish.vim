@@ -1,7 +1,7 @@
 augroup dirvish_config
   autocmd!
   autocmd FileType dirvish nnoremap <silent><buffer>gh :<C-u>DirvishToggleHidden<CR>:Dirvish %<CR>
-  autocmd FileType dirvish nnoremap <buffer><silent> <C-L> :Dirvish %<CR>
+  autocmd FileType dirvish nnoremap <buffer><silent> <C-l> :Dirvish %<CR>
   autocmd FileType dirvish nnoremap <buffer><localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
   autocmd FileType dirvish nnoremap <buffer><localleader>d :call <SID>SetupRemoveCommandOnFile()<CR>
   autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
@@ -13,6 +13,10 @@ augroup dirvish_config
   autocmd FileType dirvish if !empty(maparg('?', 'n')) | nunmap <buffer> ?| endif
   " Autochange the directory
   " autocmd FileType dirvish silent! lcd %:p:h
+augroup END
+
+augroup DirvishShellRefresh
+  autocmd FileType dirvish :autocmd! DirvishShellRefresh ShellCmdPost <buffer> :Dirvish %
 augroup END
 
 command! DirvishToggleHidden call <SID>ToggleHidden()
