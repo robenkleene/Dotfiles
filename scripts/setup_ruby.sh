@@ -119,6 +119,7 @@ Style/NumericPredicate:
   # This rule doesn't work when run locally
   Enabled: false
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - '**/node_modules/**/*'
     - '**/vendor/**/*'
