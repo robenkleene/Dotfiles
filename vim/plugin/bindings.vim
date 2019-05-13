@@ -34,8 +34,8 @@ nnoremap Y y$
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
-nnoremap gcd :Cdg<CR>
-nnoremap gcl :Lcdg<CR>
+nnoremap gcd :call commands#Cdg('cd')<CR>
+nnoremap gcl :call commands#Cdg('lcd')<CR>
 " Note that `c` is change, so adding more bindings that start with `c` is
 " difficult, in particular,`cg` can't be used because of `cg_`
 nnoremap cd :cd %:p:h<CR>

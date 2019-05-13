@@ -31,8 +31,8 @@ command! Cdw :call commands#Cdw('cd')
 command! Wlcd :call commands#Cdw('lcd')
 
 " Go to `git` root
-command! Cdg :call commands#Cdg('cd')
-command! Lcdg :call commands#Cdg('lcd')
+command! Cdg :call commands#Cdg('cd')|:Dirvish
+" command! Lcdg :call commands#Cdg('lcd')
 
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)
