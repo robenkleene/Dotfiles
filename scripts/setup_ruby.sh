@@ -97,13 +97,13 @@ autocorrect:
 
 setup_rubocop() {
   local contents="Metrics/PerceivedComplexity:
-  Max: 8
+  Max: 16
 Metrics/MethodLength:
   Max: 60
 Metrics/AbcSize:
   Max: 60
 Metrics/CyclomaticComplexity:
-  Max: 8
+  Max: 16
 Metrics/BlockLength:
   Max: 50
 Style/SymbolProc:
