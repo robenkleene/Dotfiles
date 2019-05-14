@@ -79,3 +79,14 @@ function! FindColonI()
   let tail_pos = getpos('.')
   return ['v', head_pos, tail_pos]
 endfunction
+
+call textobj#user#plugin('pipe', {
+\   'pipes_a': {
+\     'select': 'a<Bar>',
+\     '*pattern*': '|[^_]*|'
+\   },
+\   'pipes_i': {
+\     'select': 'i<Bar>',
+\     '*pattern*': '|\zs[^_]\+\ze|'
+\   },
+\ })
