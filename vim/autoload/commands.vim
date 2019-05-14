@@ -188,7 +188,8 @@ endfunction
 
 " Tags
 function! commands#Tags() abort
-  execute "!~/.bin/generate_tags -e"
+  silent execute "!~/.bin/generate_tags -e"
+  redraw!
 endfunction
 
 function! commands#ProfileStart() abort

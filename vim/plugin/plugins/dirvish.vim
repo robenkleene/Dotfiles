@@ -43,6 +43,7 @@ function! s:SetupCommandOnFile(cmd) abort
   let filename_string = @@
   let filename = fnameescape(expand(filename_string))
   let @@ = a:cmd
+  " This doesn't use `silent` because `silent requires a `:redraw!` after
   call feedkeys(':!' . a:cmd . " " . filename . " ")
   let @@ = reg_save
 endfunction
@@ -57,6 +58,7 @@ function! s:SetupRemoveCommandOnFile() abort
   else
     let cmd = "rmdir"
   endif
+  " This doesn't use `silent` because `silent requires a `:redraw!` after
   call feedkeys(':!' . cmd . " " . filename)
   let @@ = reg_save
 endfunction
