@@ -95,7 +95,7 @@ nnoremap <leader>a :Rg
 nnoremap <leader>ga :Rgg 
 
 " Quit & Save Session
-nnoremap <A-q> :QuitSaveSession<CR> 
+nnoremap <A-q> :QuitSaveSession<CR>
 " Don't use this `ZZ` only quits the current buffer, which is useless for
 " preserving state
 " nnoremap <silent> ZZ :SessionSave<CR>ZZ
@@ -105,6 +105,9 @@ nnoremap <C-w>+ 5<C-w>+
 nnoremap <C-w>- 5<C-w>-
 nnoremap <C-w>< 5<C-w><
 nnoremap <C-w>> 5<C-w>>
+
+" Easy save
+nnoremap <C-s> :w<CR>
 
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line

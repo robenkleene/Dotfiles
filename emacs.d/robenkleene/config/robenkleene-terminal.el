@@ -17,9 +17,6 @@
 
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
-;; Hack used along with binding `COMMAND-S' to `M-~' in terminal emulator to get
-;; an easy save key
-(define-key key-translation-map  (kbd "M-~") (kbd "s-s"))
 
 ;; (define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
 ;; (define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))

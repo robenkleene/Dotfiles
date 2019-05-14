@@ -3,6 +3,9 @@
 # removing this occasionally and see if path completions have started working.
 fpath=(~/.zsh/completion $fpath)
 
+# Allows `<C-s>` to be bound in Vim
+stty -ixon
+
 # Required for abbreviations
 setopt extendedglob
 # Make globs less case sensitive
