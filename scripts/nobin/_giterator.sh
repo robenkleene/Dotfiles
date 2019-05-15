@@ -70,7 +70,11 @@ do_git_process() {
   fi
 
   if [[ "$push" == "true" && "$nothing_to_commit" == "true" ]] ; then
-    git push
+    # Test `origin/master..master` to only push if there are local changes to
+    # push
+    if ! git diff --exit-code origin/master..master > /dev/null; then
+      git push
+    fi
   elif [[ "$pull" == "true" && "$nothing_to_commit" == "true" ]] ; then
     git pull
   elif [[ -n "$message" && "$nothing_to_commit" == "false" ]]; then
