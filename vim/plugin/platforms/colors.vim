@@ -52,18 +52,15 @@ function! s:MyHighlights() abort
   " Visual selection is distinguished from `Search` because a match can either
   " be selected or not selected, so this difference in colors distinguishes
   " that.
-  highlight Visual ctermbg=cyan ctermfg=black
+  highlight Visual ctermbg=darkcyan ctermfg=NONE
   " Original idea, grey background:
   " highlight MatchParen ctermfg=white ctermbg=244
   highlight MatchParen ctermfg=cyan ctermbg=NONE cterm=underline
   highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
   " Search {{{1
-  " The reason to use two colors (instead of an underline) is to have one color
-  " for the matches for the last search, and a different color for the current
-  " search
-  highlight IncSearch cterm=NONE ctermbg=cyan ctermfg=black
-  highlight Search cterm=NONE ctermbg=darkcyan ctermfg=black
+  highlight IncSearch ctermbg=cyan ctermfg=black cterm=bold
+  highlight Search ctermbg=cyan ctermfg=black cterm=bold
 
   " Status Line {{{1
   highlight StatusLine ctermbg=white ctermfg=244
