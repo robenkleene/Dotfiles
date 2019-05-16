@@ -138,7 +138,7 @@ abbreviations=(
 'ec' "$EMACS_COMMAND"
 
 # Mail
-'mba' 'mbsync -all'
+'mba' 'mbsync -all --verbose'
 )
 
 # These abbreviations work everywhere
