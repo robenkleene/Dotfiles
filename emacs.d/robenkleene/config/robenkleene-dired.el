@@ -13,6 +13,9 @@
     (setq dired-omit-mode (not dired-omit-mode))
     (revert-buffer)
     )
+  ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
+  (global-set-key (kbd "C-x j") 'dired-jump)
+  
   (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
   ;; Suppress error message
