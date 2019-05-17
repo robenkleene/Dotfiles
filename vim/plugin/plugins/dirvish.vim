@@ -7,7 +7,8 @@ augroup dirvish_config
   " autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>+ :!mkdir 
   autocmd FileType dirvish nnoremap <buffer>mv :call <SID>SetupCommandOnFile("mv")<CR>
-  autocmd FileType dirvish nnoremap <buffer>rm :call <SID>SetupRemoveCommandOnFile()<CR>
+  autocmd FileType dirvish nnoremap <buffer>rd :call <SID>SetupRemoveCommandOnFile()<CR>
+  autocmd FileType dirvish nnoremap <buffer>rm :call <SID>SetupCommandOnFile("rm")<CR>
   autocmd FileType dirvish nnoremap <buffer>cp :call <SID>SetupCommandOnFile("cp")<CR>
   autocmd FileType dirvish nnoremap <buffer>mk :!mkdir 
   " Dirvish maps these for the following reason, probably a mistake to unmap
