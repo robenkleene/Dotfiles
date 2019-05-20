@@ -83,7 +83,7 @@ set nowrap
 " set autochdir
 " FIXME: After the `lcd` in this command, the directory should probably be
 " restored at the end
-inoremap <C-x><C-f> <C-\><C-o>:lcd %:p:h<CR><C-x><C-f>
+" inoremap <C-x><C-f> <C-\><C-o>:lcd %:p:h<CR><C-x><C-f>
 " Just autoset the directory for netrw
 " let g:netrw_keepdir = 0
 
