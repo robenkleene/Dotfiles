@@ -100,15 +100,14 @@ IFS="${1: }"
 IFS=${old_IFS}
 endsnippet
 snippet getopts "getopts" b
-b="false"
-while getopts ":a:bh" option; do
+force="false"
+while getopts ":p:fh" option; do
   case "$option" in
-    a)
-      echo "-a $OPTARG"
+    p)
+      file_path="$OPTARG"
       ;;
-    b)
-      b="true"
-      echo "-b $b"
+    f)
+      force="true"
       ;;
     h)
       echo "Usage: command [-hb] [-a <file>]"
