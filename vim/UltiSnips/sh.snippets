@@ -110,7 +110,7 @@ while getopts ":p:fh" option; do
       force="true"
       ;;
     h)
-      echo "Usage: command [-hb] [-a <file>]"
+      echo "Usage: command [-hf] [-p <file_path>]"
       exit 0
       ;;
     :)
@@ -163,4 +163,10 @@ set -x
 endsnippet
 snippet setop "Any command in pipe fails the whole pipe"
 set -x
+endsnippet
+snippet guardv "Exit on empty variable"
+if [[ -z "$${1:1}" ]]; then
+  echo "Error: $1 is empty" >&2
+  exit 1
+fi
 endsnippet
