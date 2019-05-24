@@ -24,11 +24,18 @@ while getopts ":h" option; do
 done
 shift $((OPTIND - 1))
 
+get_all_tags() {
+  pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
+  for tag in $(git tag); do
+    if [[ "$tag" =~ $pattern ]]; then
+      echo "${BASH_REMATCH[1]}"
+    fi
+  done
+}
+
 get_latest_tag() {
   pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
-  versions=$(for tag in $(git tag); do
-    [[ "$tag" =~ $pattern ]] && echo "${BASH_REMATCH[1]}"
-  done)
+  versions=$(get_all_tags)
   if [ -z "$versions" ]; then
     echo 0.0.0
   else
