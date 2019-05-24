@@ -47,7 +47,7 @@ get_latest_tags() {
   if [ -z "$version_tags" ]; then
     return
   fi
-  echo "$version_tags" | head -${count}
+  echo "$version_tags" | head -"${count}"
 }
 
 get_next_version() {
