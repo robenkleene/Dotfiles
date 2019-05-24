@@ -24,7 +24,8 @@ while getopts ":h" option; do
 done
 shift $((OPTIND - 1))
 
-get_all_tags() {
+
+get_version_tags() {
   pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
   for tag in $(git tag); do
     if [[ "$tag" =~ $pattern ]]; then
@@ -33,15 +34,23 @@ get_all_tags() {
   done
 }
 
-get_latest_tag() {
-  pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
-  versions=$(get_all_tags)
-  if [ -z "$versions" ]; then
-    echo 0.0.0
-  else
-    echo "$versions" | tr '.' ' ' | sort -nr -k 1 -k 2 -k 3 | tr ' ' '.' | head -1
+get_sorted_version_tags() {
+  version_tags=$(get_version_tags)
+  if [[ -z "$version_tags" ]]; then
+    return
   fi
+  echo "$version_tags" | tr '.' ' ' | sort -nr -k 1 -k 2 -k 3 | tr ' ' '.'
 }
+
+get_latest_tags() {
+  count="$1"
+  version_tags=$(get_sorted_version_tags)
+  if [ -z "$version_tags" ]; then
+    return
+  fi
+  echo "$version_tags" | head -${count}
+}
+
 
 get_next_version() {
   latest_tag=$4
@@ -80,7 +89,12 @@ if [[ "$2" = "-f" ]]; then
   force="true"
 fi
 
-latest_tag=$(get_latest_tag)
+latest_tag=$(get_latest_tags 1)
+if [[ -z "$latest_tag" ]]; then
+  echo "Error: No tags found" >&2
+  exit 1
+fi
+
 case $1 in
   major)
     bump 1 0 0 "$latest_tag"
