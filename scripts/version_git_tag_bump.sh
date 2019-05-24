@@ -24,7 +24,6 @@ while getopts ":h" option; do
 done
 shift $((OPTIND - 1))
 
-
 get_version_tags() {
   pattern="^([0-9]+\.[0-9]+\.[0-9]+)\$"
   for tag in $(git tag); do
