@@ -51,7 +51,6 @@ get_latest_tags() {
   echo "$version_tags" | head -${count}
 }
 
-
 get_next_version() {
   latest_tag=$4
   if [[ $1 -gt 0 ]]; then
