@@ -29,7 +29,7 @@ if ${1:true}; then
 fi
 endsnippet
 snippet ex "Add brackets"
-[[ ${0:-n "\$1"} ]]
+[[ $0 ${1:-n "\$1"} ]]
 endsnippet
 snippet testd "True if directory"
 -d "${1:\$1}"
