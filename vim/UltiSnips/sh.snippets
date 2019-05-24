@@ -35,7 +35,7 @@ snippet testd "True if directory"
 -d "${1:\$1}"
 endsnippet
 snippet testb "Test boolean"
-"$${1:value}" == "true"
+"$${1:value}" == "${0:true}"
 endsnippet
 snippet testf "True if regular file"
 -f "${1:\$1}"
@@ -47,16 +47,16 @@ snippet testl "True if symbolic link"
 -L "${1:\$1}"
 endsnippet
 snippet testneq "True if not equal"
-${1:$?} -ne 0
+${1:$?} -ne ${0:0}
 endsnippet
 snippet testeq "True if equal"
-${1:$?} -eq 0
+${1:$?} -eq ${0:0}
 endsnippet
 snippet testgt "True if greater than"
-${1:$?} -gt 0
+${1:$?} -gt ${0:0}
 endsnippet
 snippet testlt "True if less than"
-${1:$?} -lt 0
+${1:$?} -lt ${0:0}
 endsnippet
 snippet testz "True if empty variable"
 -z "$${1:1}"
