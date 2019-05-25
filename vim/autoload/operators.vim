@@ -39,6 +39,7 @@ function! operators#TitleCase(type, ...) abort
   endif
 
   let @@ = reg_save
+  echom "Title case"
 endfunction
 
 function! operators#MarkdownWikiLink(type, ...) abort
