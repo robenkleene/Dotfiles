@@ -30,7 +30,7 @@
   (setq dired-dwim-target t)
   ;; Omit hidden files
   (setq-default dired-omit-files
-                (concat dired-omit-files "\\|^\\..+$"))
+                (concat dired-omit-files "\\|^\\..+$\\|Icon\015+"))
   )
 (add-hook 'dired-mode-hook
           (lambda ()
