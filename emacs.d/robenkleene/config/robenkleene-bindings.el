@@ -61,7 +61,7 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
   'robenkleene/rg)
 ;; Mac-like save in terminal and GUI
-(define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map
   (kbd "C-x s-s") 'save-buffer)
 
