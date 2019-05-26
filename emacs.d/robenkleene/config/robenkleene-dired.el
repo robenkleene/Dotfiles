@@ -29,6 +29,7 @@
   ;; destination for operations like rename and copy.
   (setq dired-dwim-target t)
   ;; Omit hidden files
+  ;; Omit hidden files (`^\\..+$\\') and macOS icon files (`Icon\015+')
   (setq-default dired-omit-files
                 (concat dired-omit-files "\\|^\\..+$\\|Icon\015+"))
   )
