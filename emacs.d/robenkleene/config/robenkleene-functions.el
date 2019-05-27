@@ -56,11 +56,28 @@ Otherwise, call `backward-kill-word'."
   (let ((default-directory (or dir default-directory)))
     (find-file
      (shell-command-to-string (concat "~/.bin/slug_project "
-                                      (shell-quote-argument title)
-                                      " | tr -d '\n'")
+                                      (shell-quote-argument title))
                               )
      )
     )
+  )
+
+(defun robenkleene/journal-latest ()
+  "Create a new slug project with TITLE in DIR."
+  (interactive)
+  (find-file
+   (shell-command-to-string (concat "~/.bin/journal_newest "
+                                    "~/Dropbox/Text/Journal"))
+   )
+  )
+
+(defun robenkleene/journal-new ()
+  "Create a new slug project with TITLE in DIR."
+  (interactive)
+  (find-file
+   (shell-command-to-string (concat "~/.bin/journal_new_make "
+                                    "~/Dropbox/Text/Journal"))
+   )
   )
 
 (defun robenkleene/wiki-link ()

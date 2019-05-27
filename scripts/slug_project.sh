@@ -34,4 +34,4 @@ today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
 readme_path=$(make_file "README.md" "$dated_slug" "$contents")
 make_file "README.md" "$dated_slug/archive" "$contents Archive" >/dev/null
-echo "$readme_path"
+echo -n "$readme_path"
