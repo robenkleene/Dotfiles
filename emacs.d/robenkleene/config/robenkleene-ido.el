@@ -179,14 +179,23 @@
          (filename (file-name-nondirectory best-path))
          )
     (if container-dir
-        ;; (concat filename " " container-dir)
-        (concat filename "<"
-                (file-name-nondirectory
-                 (directory-file-name
-                  (file-name-directory container-dir)))
-                ">"
-                )
+        (concat filename
+                (robenkleene/ido-container-directory-token container-dir))
       filename
+      )
+    )
+  )
+
+(defun robenkleene/ido-container-directory-token (dir)
+  "Return an appropriate container directory token for DIR."
+  (let ((directory-name (file-name-nondirectory
+                         (directory-file-name
+                          (file-name-directory dir)))))
+    (if (string-blank-p directory-name)
+        ""
+      (concat "<"
+              directory-name
+              ">")
       )
     )
   )
