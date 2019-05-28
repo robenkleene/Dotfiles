@@ -33,14 +33,14 @@ done
 text=$(cat)
 if [[ -z "$title" ]]; then
   if [[ -n "$text" ]]; then
-    title=$(echo "${text}" | sed -n '1 s/# *//' | tr -d '\n')
-    text=$(echo "${text}" | sed 1d)
+    title=$(echo "${text}" | sed -nE '1 s/# *(.*)/\1/p' | tr -d '\n')
+    if [[ -z "$title" ]]; then
+      echo "Missing title with the -t option" >&2
+      exit 1
+    else
+      text=$(echo "${text}" | sed 1d)
+    fi
   fi
-fi
-
-if [[ -z "$title" ]]; then
-  echo "Missing title with the -t option" >&2
-  exit 1
 fi
 
 slug=$(echo "$title" | ~/.bin/slug)
