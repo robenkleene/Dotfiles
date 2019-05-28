@@ -39,6 +39,7 @@ function! operators#TitleCase(type, ...) abort
   endif
 
   let @@ = reg_save
+  redraw
   echom "Title case"
 endfunction
 
