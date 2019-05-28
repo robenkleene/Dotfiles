@@ -35,19 +35,19 @@ snippet exn "Add negative expression"
 [[ ! ${0:-n "\$1"} ]]
 endsnippet
 snippet testd "True if directory"
--d "${0:\$1}"
+-d "${1:\$1}"
 endsnippet
 snippet testb "Test boolean"
-"$${0:value}" == "${0:true}"
+"$${1:value}" == "${0:true}"
 endsnippet
 snippet testf "True if regular file"
--f "${0:\$1}"
+-f "${1:\$1}"
 endsnippet
 snippet teste "True if file exists"
--e "${0:\$1}"
+-e "${1:\$1}"
 endsnippet
 snippet testl "True if symbolic link"
--L "${0:\$1}"
+-L "${1:\$1}"
 endsnippet
 snippet testneq "True if not equal"
 ${1:$?} -ne ${0:0}
@@ -62,13 +62,13 @@ snippet testlt "True if less than"
 ${1:$?} -lt ${0:0}
 endsnippet
 snippet testz "True if empty variable"
--z "$${0:1}"
+-z "$${1:1}"
 endsnippet
 snippet testn "True if not empty variable"
--n "$${0:1}"
+-n "$${1:1}"
 endsnippet
 snippet tests "True if variable matches string"
-"$${0:1}" = "${2:string}"
+"$${1:1}" = "${2:string}"
 endsnippet
 snippet 1while "While loop one-liner" w
 while read i; do { ${0:echo $i} } done
