@@ -30,7 +30,13 @@ while getopts ":t:lhi" option; do
   esac
 done
 
-# Make all lowercase and replace hyphens with spaces
+text=$(cat)
+if [[ -z "$title" ]]; then
+  if [[ -n "$text" ]]; then
+    title=$(echo "${text}" | sed -n '1 s/# *//' | tr -d '\n')
+    text=$(echo "${text}" | sed 1d)
+  fi
+fi
 
 if [[ -z "$title" ]]; then
   echo "Missing title with the -t option" >&2
@@ -55,6 +61,8 @@ layout: $kind
 title: \"$title\"
 categories: 
 ---
+
+$text
 "
 
 echo "$content" >"$post_path"
@@ -63,10 +71,10 @@ if [[ "$pipe" == "true" ]]; then
   cat >>"$post_path"
 fi
 
-destination_post_path="$drafts_directory/$today-$slug.md"
+destination_post_path="${drafts_directory}/${today}-${slug}.md"
 mv -n "$post_path" "$destination_post_path"
 if [[ -f "$post_path" ]]; then
-  echo -n $post_path
+  echo -n "$post_path"
 else
-  echo -n $destination_post_path
+  echo -n "$destination_post_path"
 fi
