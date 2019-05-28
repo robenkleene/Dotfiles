@@ -1,15 +1,18 @@
 augroup dirvish_config
   autocmd!
   autocmd FileType dirvish nnoremap <silent><buffer>gh :<C-u>DirvishToggleHidden<CR>:Dirvish %<CR>
-  autocmd FileType dirvish nnoremap <buffer><silent> <C-l> :Dirvish %<CR>
+  autocmd FileType dirvish nnoremap <buffer><silent> <C-l> :Dirvish %<CR>:nohlsearch<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>d :call <SID>SetupRemoveCommandOnFile()<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>+ :!mkdir 
   autocmd FileType dirvish nnoremap <buffer>mv :call <SID>SetupCommandOnFile("mv")<CR>
+  autocmd FileType dirvish nnoremap <buffer>M :call <SID>SetupCommandOnFile("mv")<CR>
   autocmd FileType dirvish nnoremap <buffer>rd :call <SID>SetupRemoveCommandOnFile()<CR>
   autocmd FileType dirvish nnoremap <buffer>rm :call <SID>SetupCommandOnFile("rm")<CR>
+  autocmd FileType dirvish nnoremap <buffer>R :call <SID>SetupCommandOnFile("rm")<CR>
   autocmd FileType dirvish nnoremap <buffer>cp :call <SID>SetupCommandOnFile("cp")<CR>
+  autocmd FileType dirvish nnoremap <buffer>C :call <SID>SetupCommandOnFile("cp")<CR>
   autocmd FileType dirvish nnoremap <buffer>mk :!mkdir 
   " Dirvish maps these for the following reason, probably a mistake to unmap
   " but I find them ugly
