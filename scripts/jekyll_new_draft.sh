@@ -39,10 +39,10 @@ fi
 
 if [[ -n "$file" ]]; then
   if [[ -f "$file" ]]; then
+    text=$(cat "$file")
+  else
     echo "Error: $file is not a file" >&2
     exit 1
-  else
-    text=$(cat "$file")
   fi
 fi
 
@@ -76,7 +76,6 @@ layout: $kind
 title: \"$title\"
 categories: 
 ---
-
 $text
 "
 
