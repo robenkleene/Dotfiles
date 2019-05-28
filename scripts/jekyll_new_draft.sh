@@ -4,13 +4,16 @@ set -e
 
 link=false
 pipe=false
-while getopts ":t:lhi" option; do
+while getopts ":t:lf:hi" option; do
   case "$option" in
     i)
       pipe=true
       ;;
     t)
       title="$OPTARG"
+      ;;
+    f)
+      file="$OPTARG"
       ;;
     l)
       link=true
@@ -30,7 +33,19 @@ while getopts ":t:lhi" option; do
   esac
 done
 
-text=$(cat)
+if [[ "$pipe" == "true" ]]; then
+  text=$(cat)
+fi
+
+if [[ -n "$file" ]]; then
+  if [[ -f "$file" ]]; then
+    echo "Error: $file is not a file" >&2
+    exit 1
+  else
+    text=$(cat "$file")
+  fi
+fi
+
 if [[ -z "$title" ]]; then
   if [[ -n "$text" ]]; then
     title=$(echo "${text}" | sed -nE '1 s/# *(.*)/\1/p' | tr -d '\n')
@@ -66,10 +81,6 @@ $text
 "
 
 echo "$content" >"$post_path"
-
-if [[ "$pipe" == "true" ]]; then
-  cat >>"$post_path"
-fi
 
 destination_post_path="${drafts_directory}/${today}-${slug}.md"
 mv -n "$post_path" "$destination_post_path"
