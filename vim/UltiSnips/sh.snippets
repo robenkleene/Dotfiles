@@ -3,13 +3,13 @@ snippet template "Basic template" b
 
 set -e
 endsnippet
-snippet echov "Echo variable" b
+snippet echov "Echo variable"
 echo "${1:HOME} = \$$1"
 endsnippet
-snippet echoa "Echo array variable" b
+snippet echoa "Echo array variable"
 echo "${1:args}[@] = \${$1[@]}"
 endsnippet
-snippet echoe "Echo error" b
+snippet echoe "Echo error"
 echo "${0:Error}" >&2
 endsnippet
 snippet cds "cd to directory of script"
