@@ -18,6 +18,9 @@ endsnippet
 snippet noslash "Remove the slash from a variable"
 ${1:noslash}=\$${0:1}%/
 endsnippet
+snippet noext "Remove the extension from a path"
+${1:noext}=\${${0:1}%.*}
+endsnippet
 snippet arr "Access array"
 \${${1:args}[@]}$0
 endsnippet
