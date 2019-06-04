@@ -15,6 +15,9 @@ endsnippet
 snippet cds "cd to directory of script"
 cd "\$(dirname "\$0")"
 endsnippet
+snippet noslash "Remove the slash from a variable"
+${1:noslash}=\$${0:1}%/
+endsnippet
 snippet arr "Access array"
 \${${1:args}[@]}$0
 endsnippet
