@@ -2,11 +2,11 @@
 
 set -e
 
-force=false
+force="false"
 while getopts ":fh" option; do
   case "$option" in
     f)
-      force=true
+      force="true"
       ;;
     h)
       echo "Usage: command [-hf]"
@@ -42,7 +42,9 @@ if git rev-parse "$app_version" >/dev/null 2>&1; then
   exit 1
 fi
 
-if $force; then
-  git tag $app_version
+if [[ "$force" == "true" ]]; then
+  git tag "$app_version"
+else
+  echo "Dry Run"
 fi
-echo $app_version
+echo "$app_version"
