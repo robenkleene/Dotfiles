@@ -16,7 +16,7 @@ snippet cds "cd to directory of script"
 cd "\$(dirname "\$0")"
 endsnippet
 snippet noslash "Remove the slash from a variable"
-${1:noslash}=\$${0:1}%/
+${1:noslash}=\${${2:1}%/}$0
 endsnippet
 snippet noext "Remove the extension from a path"
 ${1:noext}=\${${0:1}%.*}
