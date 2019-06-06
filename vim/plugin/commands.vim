@@ -54,6 +54,8 @@ command! Tabnew :call commands#New('tabnew')
 " Blog
 command! -nargs=1 BlogNewPost :call commands#BlogNewPost(<q-args>, '')
 command! -nargs=1 BlogNewLink :call commands#BlogNewPost(<q-args>, '-l')
+command! BlogNewPostWithFile :call commands#BlogNewPostWithFile('')
+command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 
 " Journal
 command! JournalNew :call commands#JournalNew()

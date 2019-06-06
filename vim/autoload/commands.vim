@@ -209,6 +209,11 @@ function! commands#BlogNewPost(title, flags) abort
   execute 'edit '.l:filename
 endfunction
 
+function! commands#BlogNewPostWithFile(flags) abort
+  let l:filename = system('~/.bin/jekyll_new_draft ' . a:flags . ' -f '.fnameescape(expand('%:p')))
+  execute 'edit '.l:filename
+endfunction
+
 " Journal
 function! commands#JournalNew() abort
   let l:filename = system('~/.bin/journal_new_make ~/Dropbox/Text/Journal')
