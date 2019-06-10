@@ -22,6 +22,9 @@ nnoremap <buffer> <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 nnoremap <silent> <buffer> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
 vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
 
+nnoremap <buffer> <localleader>W :!open -a "iA Writer.app" "%:p"<CR>\|:bd<CR>
+nnoremap <buffer> <leader>W :!open -a "iA Writer.app" "%:p"<CR>\|:bd<CR>
+
 " Convert
 if exists(':terminal')
   command! -nargs=* ConvertMarkdown call <SID>ConvertMarkdown(<f-args>)
