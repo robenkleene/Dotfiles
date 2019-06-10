@@ -6,6 +6,7 @@ function! operators#WebSearch(type, ...) abort
   " from the '[ to the '] mark.
   let &selection = "inclusive"
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0 " Invoked from Visual mode, use `gv` command.
     " Visual
@@ -21,11 +22,13 @@ function! operators#WebSearch(type, ...) abort
   silent exe system("~/.bin/web_search ".shellescape(@@))
   let &selection = sel_save
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 function! operators#TitleCase(type, ...) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0
     " Visual
@@ -39,6 +42,7 @@ function! operators#TitleCase(type, ...) abort
   endif
 
   let @@ = reg_save
+  let @* = reg_save2
   redraw
   echom "Title case"
 endfunction
@@ -46,6 +50,7 @@ endfunction
 function! operators#MarkdownWikiLink(type, ...) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0
     " Visual
@@ -59,6 +64,7 @@ function! operators#MarkdownWikiLink(type, ...) abort
   endif
 
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 function! operators#OpenURLs(type, ...) abort
@@ -69,6 +75,7 @@ function! operators#OpenURLs(type, ...) abort
   " from the '[ to the '] mark.
   let &selection = "inclusive"
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0 " Invoked from Visual mode, use `gv` command.
     " Visual
@@ -85,11 +92,13 @@ function! operators#OpenURLs(type, ...) abort
 
   let &selection = sel_save
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 function! operators#LinkReplace(type, ...) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
+  let reg_save2 = @*
 
   echom "Replacing phrases with links"
 
@@ -105,12 +114,14 @@ function! operators#LinkReplace(type, ...) abort
   endif
 
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 function! operators#Archive(type, ...) abort
   let sel_save = &selection
   let &selection = "inclusive"
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0
     " Visual
@@ -126,6 +137,7 @@ function! operators#Archive(type, ...) abort
   let message = system('~/.bin/backup_text -m', @@)
   let &selection = sel_save
   let @@ = reg_save
+  let @* = reg_save2
   " Force a redraw so the `echom` doesn't disappear
   redraw
   echom message
@@ -135,6 +147,7 @@ function! operators#ArchiveAndDelete(type, ...) abort
   let sel_save = &selection
   let &selection = "inclusive"
   let reg_save = @@
+  let reg_save2 = @*
 
   if a:0
     " Visual
@@ -150,6 +163,7 @@ function! operators#ArchiveAndDelete(type, ...) abort
   let message = system('~/.bin/backup_text -m', @@)
   let &selection = sel_save
   let @@ = reg_save
+  let @* = reg_save2
   " Force a redraw so the `echom` doesn't disappear
   redraw
   echom message

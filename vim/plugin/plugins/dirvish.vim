@@ -47,6 +47,7 @@ endfunction
 
 function! s:SetupCommandOnFile(cmd) abort
   let reg_save = @@
+  let reg_save2 = @*
   silent exe "normal! ^yg_"
   let filename_string = @@
   let filename = fnameescape(expand(filename_string))
@@ -54,10 +55,12 @@ function! s:SetupCommandOnFile(cmd) abort
   " This doesn't use `silent` because `silent requires a `:redraw!` after
   call feedkeys(':!' . a:cmd . " " . filename . " ")
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 function! s:SetupRemoveCommandOnFile() abort
   let reg_save = @@
+  let reg_save2 = @*
   silent exe "normal! ^yg_"
   let filename_string = @@
   let filename = fnameescape(expand(filename_string))
@@ -69,6 +72,7 @@ function! s:SetupRemoveCommandOnFile() abort
   " This doesn't use `silent` because `silent requires a `:redraw!` after
   call feedkeys(':!' . cmd . " " . filename)
   let @@ = reg_save
+  let @* = reg_save2
 endfunction
 
 " Default to hidden
