@@ -11,8 +11,10 @@ fi
 today=$(date +%Y-%m-%d)
 destination_entry_path="$journal_directory/$today.md"
 if [[ -f "$destination_entry_path" ]]; then
-  echo "An entry already exists at $destination_entry_path" >&2
-  exit 1
+  # Print the existing entry and return without error so scripts can simply say
+  # "open today's entry" and open the result of this script.
+  echo -n "$destination_entry_path"
+  exit 0
 fi
 
 DaySuffix() {
@@ -35,7 +37,7 @@ echo "$content" >"$entry_path"
 
 mv -n "$entry_path" "$destination_entry_path"
 if [[ -f "$entry_path" ]]; then
-  echo -n $entry_path
+  echo -n "$entry_path"
 else
-  echo -n $destination_entry_path
+  echo -n "$destination_entry_path"
 fi
