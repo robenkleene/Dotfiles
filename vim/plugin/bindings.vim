@@ -108,6 +108,7 @@ nnoremap <C-w>> 5<C-w>>
 
 " Easy save
 nnoremap <C-s> :w<CR>
+inoremap <C-s> <c-o>:w<CR>
 
 " Copy Current line to clipboard cleaned for shell pasting
 " I.e., this removes any whitespace form the beginning and end of the line
