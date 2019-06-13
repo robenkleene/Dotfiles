@@ -6,14 +6,17 @@ augroup dirvish_config
   " autocmd FileType dirvish nnoremap <buffer><localleader>d :call <SID>SetupRemoveCommandOnFile()<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>+ :!mkdir 
-  autocmd FileType dirvish nnoremap <buffer>mv :call <SID>SetupCommandOnFile("mv")<CR>
-  autocmd FileType dirvish nnoremap <buffer>M :call <SID>SetupCommandOnFile("mv")<CR>
-  autocmd FileType dirvish nnoremap <buffer>rd :call <SID>SetupRemoveCommandOnFile()<CR>
-  autocmd FileType dirvish nnoremap <buffer>rm :call <SID>SetupCommandOnFile("rm")<CR>
-  autocmd FileType dirvish nnoremap <buffer>R :call <SID>SetupCommandOnFile("rm")<CR>
-  autocmd FileType dirvish nnoremap <buffer>cp :call <SID>SetupCommandOnFile("cp")<CR>
-  autocmd FileType dirvish nnoremap <buffer>C :call <SID>SetupCommandOnFile("cp")<CR>
-  autocmd FileType dirvish nnoremap <buffer>mk :!mkdir 
+  " All of these call `:Dirvish %<CR>` first because if the directory has
+  " changed, e.g., via a `:cd` or `:lcd`, then the paths in the buffer will no
+  " longer be valid, so they need to be refreshed.
+  autocmd FileType dirvish nnoremap <buffer>mv :Dirvish %<CR>:call <SID>SetupCommandOnFile("mv")<CR>
+  autocmd FileType dirvish nnoremap <buffer>M :Dirvish %<CR>:call <SID>SetupCommandOnFile("mv")<CR>
+  autocmd FileType dirvish nnoremap <buffer>rd :Dirvish %<CR>:call <SID>SetupRemoveCommandOnFile()<CR>
+  autocmd FileType dirvish nnoremap <buffer>rm :Dirvish %<CR>:call <SID>SetupCommandOnFile("rm")<CR>
+  autocmd FileType dirvish nnoremap <buffer>R :Dirvish %<CR>:call <SID>SetupCommandOnFile("rm")<CR>
+  autocmd FileType dirvish nnoremap <buffer>cp :Dirvish %<CR>:call <SID>SetupCommandOnFile("cp")<CR>
+  autocmd FileType dirvish nnoremap <buffer>C :Dirvish %<CR>:call <SID>SetupCommandOnFile("cp")<CR>
+  autocmd FileType dirvish nnoremap <buffer>mk :Dirvish %<CR>:!mkdir 
   " Dirvish maps these for the following reason, probably a mistake to unmap
   " but I find them ugly
   " "Buffer-local / and ? mappings to skip the concealed path fragment."
