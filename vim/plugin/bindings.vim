@@ -77,6 +77,7 @@ nnoremap <M-t> :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>
 
 " Reveal Current File
 nnoremap <leader>R :silent !open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap <localleader>R :silent !open -R "%:p"<CR>\|:redraw!<CR>
 nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 
 " TextMate
