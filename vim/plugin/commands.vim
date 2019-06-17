@@ -18,21 +18,18 @@ command! SessionNoAuto :autocmd! save_session
 " Add `git` hunks to `quickfix`
 command! Ghunks cexpr system('git diff --relative \| dtg')
 
-" Go to directory vim was launched from
-command! Cdw :lcd $PWD
-
+" Edit README
 command! Erm :e README.md
+command! Ermg :call commands#Cdg('lcd')|:e README.md
 
 " Delete whitespace at the end of the file
 command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 
 " Go to working directory
-command! Cdw :call commands#Cdw('cd')
-command! Wlcd :call commands#Cdw('lcd')
-
-" Go to `git` root
-command! Cdg :call commands#Cdg('cd')|:Dirvish
-" command! Lcdg :call commands#Cdg('lcd')
+" Go to directory vim was launched from
+" command! Cdw :lcd $PWD
+" command! Cdw :call commands#Cdw('cd')
+" command! Wlcd :call commands#Cdw('lcd')
 
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)

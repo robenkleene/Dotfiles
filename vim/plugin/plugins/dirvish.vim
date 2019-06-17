@@ -30,6 +30,9 @@ augroup DirvishShellRefresh
   autocmd FileType dirvish :autocmd! DirvishShellRefresh ShellCmdPost <buffer> :Dirvish %
 augroup END
 
+" Go to `git` root
+command! Cdg :call commands#Cdg('cd')|:Dirvish
+command! Lcdg :call commands#Cdg('lcd')
 command! DirvishToggleHidden call <SID>ToggleHidden()
 command! SetupCommandOnFile call <SID>SetupCommandOnFile()
 
