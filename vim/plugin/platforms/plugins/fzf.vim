@@ -20,7 +20,7 @@ vnoremap <M-x> :VisualCommands<CR>
 nnoremap <M-c> :Cd<CR>
 nnoremap <M-z> :Z<CR>
 " nnoremap <M-r> :Zvim<CR>
-nnoremap <leader>r :History<CR>
+" nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :FZFTags<CR>
 nnoremap <M-i> :FZFTags<CR>
