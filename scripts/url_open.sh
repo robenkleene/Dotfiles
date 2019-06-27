@@ -38,7 +38,7 @@ if [[ "$firefox" == "true" ]]; then
 elif [[ "$technology" == "true" ]]; then
   # Couldn't figure out how to encode this into a variable with spaces
   # browser_arg="-a \"Safari Technology Preview\""
-  open -a "Safari Technology Preview" "$(urls -b)"
+  open -a "Safari" "$(urls -b)"
   exit 0
 fi
 
