@@ -26,7 +26,7 @@ export BROWSER_FLAG='-t'
 export CLICOLOR=1
 
 # `pip3` can install executables in `~/.local/bin`
-export PATH=~/.fzf/bin:/usr/local/bin:~/.bin:$PATH
+export PATH=~/.fzf/bin:~/.bin:/usr/local/bin:$PATH
 
 # Editor
 export VISUAL="$VIM_COMMAND"
