@@ -53,4 +53,4 @@
 [difftool]
 	prompt = false
 [difftool "wstats"]
-	cmd = wdiff --statistics \"$LOCAL\" \"$REMOTE\"
+	cmd = wdiff --statistics \"$LOCAL\" \"$REMOTE\" | tail -2
