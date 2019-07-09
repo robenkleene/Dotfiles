@@ -13,3 +13,6 @@ let b:ExecutePrg = "irb --simple-prompt"
 
 " This causes slowness
 " setlocal foldmethod=syntax
+
+" Include `@` for searching for properties
+set iskeyword+=@-@
