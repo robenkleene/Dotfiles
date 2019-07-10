@@ -48,6 +48,9 @@ command! New :call commands#New('new')
 command! Vnew :call commands#New('vnew')
 command! Tabnew :call commands#New('tabnew')
 
+" Markdown
+command! RenameFileFromTitle :call commands#RenameFileFromTitle()
+
 " Blog
 command! -nargs=1 BlogNewPost :call commands#BlogNewPost(<q-args>, '')
 command! -nargs=1 BlogNewLink :call commands#BlogNewPost(<q-args>, '-l')

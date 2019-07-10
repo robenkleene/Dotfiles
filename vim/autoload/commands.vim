@@ -192,6 +192,7 @@ function! commands#Tags() abort
   redraw!
 endfunction
 
+" Profile
 function! commands#ProfileStart() abort
   profile start profile.log
   profile func *
@@ -201,6 +202,20 @@ endfunction
 function! commands#ProfileEnd() abort
   profile pause
   noautocmd qall!
+endfunction
+
+" Markdown
+function! commands#RenameFileFromTitle() abort
+  if &filetype !=# 'markdown'
+    echom "This command only works with Markdown files"
+    return
+  endif
+  let l:filename = system('~/.bin/markdown_rename -s -p '.fnameescape(expand('%:p')))
+  if v:shell_error != 0
+      echom "Failed to rename file"
+      return
+  endif
+  execute 'edit '.l:filename
 endfunction
 
 " Blog

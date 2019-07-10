@@ -1,30 +1,61 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-for I in "$@"
-do
-	OLD_FILE=$I
-	OLD_FILENAME=$(basename "$OLD_FILE")
-	DIRECTORY=$(dirname "$OLD_FILE")
+set -e
 
-	NEW_FILENAME=$(~/.bin/markdown_filename "$OLD_FILE")
-	if [[ $? == "0" ]]; then
-		case $OLD_FILENAME in
-		*.* )  
-			EXTENSION="${OLD_FILENAME##*.}"
-			;;
-		* )  
-			EXTENSION="md"
-			;;
-		esac
-		NEW_FILENAME=$NEW_FILENAME.$EXTENSION
-		NEW_FILE=$DIRECTORY/$NEW_FILENAME
-				
-	 	if [[ ! -f $NEW_FILE ]]; then
-			mv "$OLD_FILE" "$NEW_FILE"
-			echo $NEW_FILE
-		else
-			echo "Error: $NEW_FILE already exists"
-			exit 1
-	 	fi
-	fi
+slug="false"
+while getopts ":p:sh" option; do
+  case "$option" in
+    p)
+      file_path="$OPTARG"
+      ;;
+    s)
+      slug="true"
+      ;;
+    h)
+      echo "Usage: command [-hs] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
 done
+
+old_file=$file_path
+old_filename=$(basename "$old_file")
+directory=$(dirname "$old_file")
+if ! new_filename=$(~/.bin/markdown_filename "$old_file"); then
+  echo "Error: Failed to get a new name" >&2
+  exit 1
+fi
+
+if [[ "$slug" == "true" ]]; then
+  if ! new_filename=$(echo "$new_filename" | ~/.bin/slug); then
+    echo "Error: Failed to get a new name" >&2
+    exit 1
+  fi
+fi
+
+case $old_filename in
+  *.*)
+    extension="${old_filename##*.}"
+    ;;
+  *)
+    extension="md"
+    ;;
+esac
+new_filename=$new_filename.$extension
+new_file=$directory/$new_filename
+
+if [[ ! -f $new_file ]]; then
+  mv "$old_file" "$new_file"
+  echo "$new_file"
+else
+  echo "Error: $new_file already exists" >&2
+  exit 1
+fi
