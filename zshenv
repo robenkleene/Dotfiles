@@ -16,6 +16,16 @@ VIM_COMMAND=vim
 EMACS_COMMAND='emacsclient -nw'
 # EMACS_COMMAND='emacs'
 ACK_COMMAND=rg
+
+# Don't load the rest of this file if it has already been sourced in particular
+  # this was added to prevent the path from being re-ordered when a `zsh`
+  # subshell is started (`vim` does this).
+if [[ -v ZSHENV_SOURCED ]]; then
+  return
+fi
+export ZSHENV_SOURCED=1
+
+# Exported
 export BAT_COMMAND=bat
 export BROWSER_FLAG='-t'
 
@@ -25,8 +35,9 @@ export BROWSER_FLAG='-t'
 # Color in `ls`
 export CLICOLOR=1
 
-# `pip3` can install executables in `~/.local/bin`
-export PATH=~/.fzf/bin:~/.bin:/usr/local/bin:$PATH
+# This method of setting the path prevents duplicate entries.
+typeset -U path
+path=(~/.fzf/bin ~/.bin /usr/local/bin $path[@])
 
 # Editor
 export VISUAL="$VIM_COMMAND"

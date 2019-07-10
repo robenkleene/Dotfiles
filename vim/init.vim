@@ -6,8 +6,13 @@
 
 " Startup {{{1
 " if &shell =~# 'zsh$'
-"   " Make shell interactive to aliases work.
-"   set shell=zsh\ -i
+  " Make shell interactive to aliases work.
+  " set shell=zsh\ -i
+  " This fixes an issue where `vim` loads the `zshenv` twice, the `-f` flag
+  " ignores and `rc` files which should already be configured, but this also
+  " breaks any commands in the vim created terminals because none of the other
+  " `zsh` files are sourced either.
+  " set shell=zsh\ -f
 " endif
 
 " Check Status {{{1
