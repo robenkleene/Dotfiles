@@ -41,27 +41,38 @@ while getopts "plcm:nh" option
   esac
 done
 
-do_git_process() {
-  if ! [[ -d ".git" ]]; then
-    return
-  fi
+commit_status() {
   nothing_to_commit="false"
   status=$(git status)
 
-  # Test git status message 1.
   nothing_to_commit_message="nothing to commit (working directory clean)"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
-  # Test git status message 2.
+  if [ "${status#*$nothing_to_commit_message}" != "$status" ]; then
+    echo -n "true"
+    return
+  fi
   nothing_to_commit_message="nothing to commit, working directory clean"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
-  # Test git status message 3.
+  if [ "${status#*$nothing_to_commit_message}" != "$status" ]; then
+    echo -n "true"
+    return
+  fi
   nothing_to_commit_message="nothing to commit, working tree clean"
-  test "${status#*$nothing_to_commit_message}" != "$status" && nothing_to_commit="true"
+  if [ "${status#*$nothing_to_commit_message}" != "$status" ]; then
+    echo -n "true"
+    return
+  fi
+  echo -n "false"
+}
+
+do_git_process() {
+  if ! [ -d ".git" ]; then
+    return
+  fi
+  nothing_to_commit=$(commit_status)
 
   if $next; then
     if ! $nothing_to_commit; then
       pwd
-      break
+      return
     fi
   else
     echo
@@ -69,25 +80,28 @@ do_git_process() {
     git status
   fi
 
-  if [[ "$push" == "true" && "$nothing_to_commit" == "true" ]] ; then
+  if [ -n "$message" ] && [ "$nothing_to_commit" = "false" ]; then
+    git add -A :/ && git commit -m "$message"
+    nothing_to_commit=$(commit_status)
+  fi
+
+  if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ] ; then
     # Test `origin/master..master` to only push if there are local changes to
     # push
     if ! git diff --exit-code origin/master..master > /dev/null; then
       git push
     fi
-  elif [[ "$pull" == "true" && "$nothing_to_commit" == "true" ]] ; then
+  elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ] ; then
     git pull
-  elif [[ -n "$message" && "$nothing_to_commit" == "false" ]]; then
-    git add -A :/ && git commit -m "$message"
   fi
 }
 
 giterate() {
   dir=$1
-  if [[ -d "$dir" ]]; then
-    cd "$1"
+  if [ -d "$dir" ]; then
+    cd "$1" || return
     do_git_process
-    cd - >/dev/null
+    cd - >/dev/null || return
   else
     if ! $next; then
       echo
