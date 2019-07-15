@@ -12,8 +12,8 @@ usage() {
 push="false"
 pull="false"
 next="false"
-while getopts "plcm:nh" option
-  do case "$option" in
+while getopts "plcm:nh" option; do
+  case "$option" in
     p)
       push="true"
       ;;
@@ -85,13 +85,13 @@ do_git_process() {
     nothing_to_commit=$(commit_status)
   fi
 
-  if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ] ; then
+  if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     # Test `origin/master..master` to only push if there are local changes to
     # push
-    if ! git diff --exit-code origin/master..master > /dev/null; then
+    if ! git diff --exit-code origin/master..master >/dev/null; then
       git push
     fi
-  elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ] ; then
+  elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     git pull
   fi
 }
