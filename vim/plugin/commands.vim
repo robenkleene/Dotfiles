@@ -59,6 +59,9 @@ command! -nargs=1 NewRegister :call commands#NewRegister(<q-args>, 'new')
 command! -nargs=1 VnewRegister :call commands#NewRegister(<q-args>, 'vnew')
 command! -nargs=1 TabnewRegister :call commands#NewRegister(<q-args>, 'tabnew')
 
+" Write Register
+command! -nargs=1 WriteRegister :call commands#WriteRegister(<q-args>)
+
 " Markdown
 command! RenameFileFromTitle :call commands#RenameFileFromTitle()
 

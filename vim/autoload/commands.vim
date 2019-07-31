@@ -117,7 +117,7 @@ function! commands#NewScratch(bang, type) abort
 endfunction
 
 function! s:valid_register(register) abort
-  if a:register=~'\v^(\x|"|\*|\.|:|\%|#|\\|\=)$'
+  if a:register=~'\v^(\a|\d|"|\*|\.|:|\%|#|\\|\=)$'
     return 1
   end
   return 0
@@ -130,7 +130,16 @@ function! commands#NewRegister(register, type) abort
   execute a:type
   " Don't prompt when closing this buffer
   set buftype=nofile
-  execute "normal V\"".a:register."p"
+  execute "normal \"".a:register."p"
+endfunction
+
+function! commands#WriteRegister(register) abort
+  if !s:valid_register(a:register)
+    echom a:register." is not a valid register."
+    return
+  end
+  execute "normal ggvGg_\"".a:register."d"
+  bd
 endfunction
 
 " Lint
