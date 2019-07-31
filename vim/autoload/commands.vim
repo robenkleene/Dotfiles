@@ -81,7 +81,7 @@ function! commands#Atm(terms) abort
 endfunction
 
 " Splits
-function! commands#New(type) abort
+function! commands#NewFileType(type) abort
   " Note it seems like it's impossible to make a function take an optional
   " range, because at the `command`-level whether there is a visual selection
   " or not gets lost
@@ -96,7 +96,8 @@ function! commands#New(type) abort
   " normal ""p
   " let @@ = reg_save
 endfunction
-function! commands#Snew(bang, type) abort
+
+function! commands#NewScratch(bang, type) abort
   let l:scratch_path = "~/Development/Scratch/Untitled/" 
   if (a:bang == 1)
     if exists(':Dirvish')
@@ -115,6 +116,21 @@ function! commands#Snew(bang, type) abort
   execute a:type l:path
 endfunction
 
+function! s:valid_register(register) abort
+  if a:register=~'\v^(\x|"|\*|\.|:|\%|#|\\|\=)$'
+    return 1
+  end
+  return 0
+endfunction
+function! commands#NewRegister(register, type) abort
+  " Just check if it's a single letter
+  echom "a:register = ".a:register
+  if !s:valid_register(a:register)
+    echom a:register." is not a valid register."
+    return
+  end
+  " execute a:type
+endfunction
 
 " Lint
 function! commands#Lint() abort
@@ -243,4 +259,3 @@ endfunction
 function! commands#SourceControlWeb() abort
   echo system('~/.bin/source_control_open_site')
 endfunction
-

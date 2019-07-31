@@ -44,9 +44,20 @@ command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
 command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
 
 " Splits
-command! New :call commands#New('new')
-command! Vnew :call commands#New('vnew')
-command! Tabnew :call commands#New('tabnew')
+command! NewFileType :call commands#NewFileType('new')
+command! VnewFileType :call commands#NewFileType('vnew')
+command! TabnewFileType :call commands#NewFileType('tabnew')
+
+" Scratch
+command! -bang EditScratch :call commands#NewScratch(<bang>0, 'edit')
+command! -bang NewScratch :call commands#NewScratch(<bang>0, 'new')
+command! -bang VnewScratch :call commands#NewScratch(<bang>0, 'vnew')
+command! -bang TabnewScratch :call commands#NewScratch(<bang>0, 'tabnew')
+
+" Register
+command! -nargs=1 NewRegister :call commands#NewRegister(<q-args>, 'new')
+command! -nargs=1 VnewRegister :call commands#NewRegister(<q-args>, 'vnew')
+command! -nargs=1 TabnewRegister :call commands#NewRegister(<q-args>, 'tabnew')
 
 " Markdown
 command! RenameFileFromTitle :call commands#RenameFileFromTitle()
@@ -60,12 +71,6 @@ command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 " Journal
 command! JournalNew :call commands#JournalNew()
 command! JournalLatest :call commands#JournalLatest()
-
-" Scratch
-command! -bang Sedit :call commands#Snew(<bang>0, 'edit')
-command! -bang Snew :call commands#Snew(<bang>0, 'new')
-command! -bang Svnew :call commands#Snew(<bang>0, 'vnew')
-command! -bang Stabnew :call commands#Snew(<bang>0, 'tabnew')
 
 " Lint
 command! Lint :call commands#Lint()
