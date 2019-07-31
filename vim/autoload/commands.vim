@@ -123,13 +123,14 @@ function! s:valid_register(register) abort
   return 0
 endfunction
 function! commands#NewRegister(register, type) abort
-  " Just check if it's a single letter
-  echom "a:register = ".a:register
   if !s:valid_register(a:register)
     echom a:register." is not a valid register."
     return
   end
-  " execute a:type
+  execute a:type
+  " Don't prompt when closing this buffer
+  set buftype=nofile
+  execute "normal V\"".a:register."p"
 endfunction
 
 " Lint

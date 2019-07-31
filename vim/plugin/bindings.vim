@@ -47,7 +47,8 @@ nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Macros
 " nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp
 " nnoremap <leader>sm V"wd:bd<CR>
-nnoremap <leader>om :<c-u><c-r><c-r>='let @w='.string(getreg('w'))<CR><C-f><left>
+" This is a good way to quickly edit a macro
+" nnoremap <leader>om :<c-u><c-r><c-r>='let @w='.string(getreg('w'))<CR><C-f><left>
 " Local Settings
 " Can't use `s` because it conflicts with "s" for snippets
 " `l` is for "local"
