@@ -478,7 +478,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/scratch-for-file (file)
   "Return the path to the scratch file for FILE."
   (let ((extension (file-name-extension file))
-        (scratch-directory "~/Development/Scratch/Untitled/")
+        (scratch-directory "~/Development/Scratch/Document/")
         directories
         file)
     (if (bound-and-true-p extension)
