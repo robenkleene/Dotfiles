@@ -33,8 +33,8 @@
 ;; `#1A1A1A' exactly matches the bars that the
 ;; `railwaycat/homebrew-emacsmacport' adds
 ;; (set-face-background 'default "#1A1A1A")
-(set-face-background 'default "#212121")
-(set-face-background 'fringe "#212121")
+(set-face-background 'default "#2A2A2F")
+(set-face-background 'fringe "#2A2A2F")
 
 (set-face-attribute 'default nil :font "Fira Code-12:Retina")
 
