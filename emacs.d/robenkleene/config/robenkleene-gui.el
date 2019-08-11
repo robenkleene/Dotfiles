@@ -57,6 +57,8 @@
 ;; Improve compatibility of macOS dark mode
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
+;; Open files in new frames by default
+(setq ns-pop-up-frames t)
 
 (provide 'robenkleene-gui)
 ;; Local Variables:

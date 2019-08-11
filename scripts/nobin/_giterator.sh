@@ -72,7 +72,7 @@ do_git_process() {
   if $next; then
     if ! $nothing_to_commit; then
       pwd
-      return
+      exit 0
     fi
   else
     echo
