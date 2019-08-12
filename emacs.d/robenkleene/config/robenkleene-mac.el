@@ -5,9 +5,6 @@
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
-;; Open files in new frames by default
-(setq ns-pop-up-frames t)
-
 (defvar robenkleene/mac-bindings-minor-mode-map (make-keymap))
 
 ;; Ergonomic Emacs
