@@ -233,9 +233,17 @@ Otherwise, call `backward-kill-word'."
   "~/Documentation/")
 
 (defun robenkleene/documentation ()
-  "Open Emacs documentation directory."
+  "View documentation."
   (interactive)
   (view-file-other-window
+   (robenkleene/ido-recursive-get-file
+    robenkleene/documentation-directory-path))
+  )
+
+(defun robenkleene/documentation-edit ()
+  "Edit documentation."
+  (interactive)
+  (find-file-other-window
    (robenkleene/ido-recursive-get-file
     robenkleene/documentation-directory-path))
   )

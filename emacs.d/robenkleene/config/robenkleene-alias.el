@@ -12,6 +12,7 @@
 (defalias 'osh 'robenkleene/other-window-shell)
 (defalias 'os 'robenkleene/open-scratch-other-window)
 (defalias 'doc 'robenkleene/documentation)
+(defalias 'doce 'robenkleene/documentation-edit)
 (defalias 'slug 'robenkleene/slug-project)
 (defalias 'tags 'robenkleene/generate-tags)
 (defalias 'scw 'robenkleene/source-control-open-web)
