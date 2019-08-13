@@ -1,4 +1,4 @@
-personal_ws-1.1 en 39 
+personal_ws-1.1 en 40 
 STDOUT
 repurpose
 repo
@@ -27,6 +27,7 @@ sandboxing
 roadmap
 Django
 DNS
+Luminance
 symlink
 Overton
 analytics
