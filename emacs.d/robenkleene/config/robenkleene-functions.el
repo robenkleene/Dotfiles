@@ -62,16 +62,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/journal-latest ()
-  "Create a new slug project with TITLE in DIR."
-  (interactive)
-  (find-file
-   (shell-command-to-string (concat "~/.bin/journal_newest "
-                                    "~/Dropbox/Text/Journal"))
-   )
-  )
-
-(defun robenkleene/journal-new ()
+(defun robenkleene/open-journal ()
   "Create a new slug project with TITLE in DIR."
   (interactive)
   (find-file

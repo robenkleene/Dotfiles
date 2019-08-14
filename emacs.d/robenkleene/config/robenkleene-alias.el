@@ -20,6 +20,7 @@
                   (interactive)
                   (robenkleene/source-control-open-web "-f")))
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
+(defalias 'journal 'robenkleene/open-journal)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:
