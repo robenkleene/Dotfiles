@@ -19,6 +19,7 @@
 (defalias 'scwf (lambda ()
                   (interactive)
                   (robenkleene/source-control-open-web "-f")))
+(defalias 'scratch 'robenkleene/open-emacs-scratch)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:

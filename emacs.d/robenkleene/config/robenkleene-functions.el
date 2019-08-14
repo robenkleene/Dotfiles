@@ -496,7 +496,13 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/open-scratch ()
+(defun robenkleene/open-emacs-scratch ()
+  "Open scratch file for current buffer."
+  (interactive)
+  (switch-to-buffer "*scratch*")
+  )
+
+(defun robenkleene/open-scratch-for-file ()
   "Open scratch file for current buffer."
   (interactive)
   (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
