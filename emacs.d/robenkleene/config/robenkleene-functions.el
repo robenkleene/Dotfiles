@@ -92,6 +92,30 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/blog-link-with-file ()
+  "Make a blog link from the current file."
+  (interactive)
+  (if (buffer-file-name)
+      (find-file
+       (shell-command-to-string (concat "~/.bin/jekyll_new_draft -l -f "
+                                        (shell-quote-argument buffer-file-name))
+                                )
+       )
+    )
+  )
+
+(defun robenkleene/blog-post-with-file ()
+  "Make a blog post from the current file."
+  (interactive)
+  (if (buffer-file-name)
+      (find-file
+       (shell-command-to-string (concat "~/.bin/jekyll_new_draft -f "
+                                        (shell-quote-argument buffer-file-name))
+                                )
+       )
+    )
+  )
+
 (defun robenkleene/archive-and-delete ()
   "Make a wiki link from a file named after the region."
   (interactive)
