@@ -47,11 +47,6 @@
 ;; Allow `narrow-to-region'
 (put 'narrow-to-region 'disabled nil)
 
-;; Automatically select help windows
-;; Disable this because default emacs behavior is not to auto-select
-;; these types of buffers.
-;; (setq help-window-select t)
-
 ;; Add Line Numbers
 ;; Note this is incompatible with git-gutter
 ;; (global-linum-mode t)
@@ -129,8 +124,10 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
-;; Automatically select help windows
+;; Automatically select some types of buffers
 (setq help-window-select t)
+(add-hook 'occur-hook (lambda () (pop-to-buffer (get-buffer "*Occur*"))))
+(add-hook 'grep-mode-hook (lambda () (pop-to-buffer (get-buffer "*grep*"))))
 
 ;; Ido Mode
 (setq ido-enable-flex-matching t)
