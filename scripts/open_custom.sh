@@ -4,6 +4,8 @@ directory_extension() {
   path="$1"
   directory=${path##*/}
   extension="${directory##*.}"
+  # If the directory is equal to the extension, that means the extension is
+  # missing
   [[ $directory != "$extension" ]] && echo -n "$extension"
 }
 
@@ -13,6 +15,7 @@ if [[ $# -eq 0 ]]; then
   if [[ -z "$extension" ]]; then
     open .
   else
+    # Reveal packages instead of opening them
     open -R .
   fi
 else
