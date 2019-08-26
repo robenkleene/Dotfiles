@@ -188,6 +188,7 @@
    `(fringe ((t (:inherit rk-comment :background ,white))))
    `(line-number ((t (:inherit rk-comment))))
    `(match ((t (:inherit rk-match))))
+   `(secondary-selection ((t (:inherit rk-highlight :foreground nil))))
 
    ;;;; Text
    `(bold ((t (:inherit rk-bold))))
