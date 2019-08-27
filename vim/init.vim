@@ -78,6 +78,11 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'markonm/traces.vim' , Cond(!has('nvim'))
 Plug 'beloglazov/vim-textobj-quotes'
+" Hack to fix `gx` until it's fixed in `vim` https://github.com/vim/vim/issues/4738
+Plug 'tyru/open-browser.vim'
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-open)
+vmap gx <Plug>(openbrowser-open)
 " Git {{{2
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
