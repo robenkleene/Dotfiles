@@ -39,6 +39,7 @@ alias shs='ssh_start'
 alias sts='ssh_tmux_start'
 alias strs='ssh_tmux_restore_start'
 alias sgds='sgitd -cp'
+alias ea='open -a "Emacs.app"'
 
 # Override
 
