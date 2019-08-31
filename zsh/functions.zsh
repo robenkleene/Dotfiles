@@ -127,6 +127,13 @@ emacs_magit_log() {
 emacs_kill_server() {
   emacsclient -e '(kill-emacs)'
 }
+emacs_app() {
+  if [[ $# -eq 0 ]]; then
+    open -a "Emacs.app" .
+  else
+    open -a "Emacs.app" "$@"
+  fi
+}
 
 # ssh
 ssh_start() {
