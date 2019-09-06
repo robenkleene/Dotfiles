@@ -106,6 +106,8 @@ Metrics/CyclomaticComplexity:
   Max: 16
 Metrics/BlockLength:
   Max: 50
+Metrics/ClassLength:
+  Max: 200
 Style/SymbolProc:
   # Style/SymbolProc can break when using map with refine in Ruby 2.4>
   Enabled: false
