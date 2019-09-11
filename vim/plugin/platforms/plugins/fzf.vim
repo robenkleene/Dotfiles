@@ -52,15 +52,23 @@ function! s:VisualCommands() abort
 endfunction
 
 " Documentation
+" command! Doc call fzf#run(fzf#wrap({
+"       \   'source': $FZF_DEFAULT_COMMAND,
+"       \   'sink': function('<SID>sview_lcd_sink'),
+"       \   'dir': '~/Documentation/'
+"       \ }))
+" command! Doce call fzf#run(fzf#wrap({
+"       \   'source': $FZF_DEFAULT_COMMAND,
+"       \   'sink': function('<SID>split_lcd_sink'),
+"       \   'dir': '~/Documentation/'
+"       \ }))
+" Combined `Doc` and `Doce` into one command because otherwise if you open
+" file with `Doc` and then try to edit it with `Doce`, editting still won't be
+" enabled because the buffer was already opened as view only.
 command! Doc call fzf#run(fzf#wrap({
       \   'source': $FZF_DEFAULT_COMMAND,
-      \   'sink': function('<SID>sview_lcd_sink'),
-      \   'dir': '~/Documentation/development-references/'
-      \ }))
-command! Doce call fzf#run(fzf#wrap({
-      \   'source': $FZF_DEFAULT_COMMAND,
       \   'sink': function('<SID>split_lcd_sink'),
-      \   'dir': '~/Documentation/development-references/'
+      \   'dir': '~/Documentation/'
       \ }))
 
 function! s:split_lcd_sink(e) abort
