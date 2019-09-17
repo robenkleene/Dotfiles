@@ -6,6 +6,10 @@ if ps -u $USER | grep '[Ee]macs.*--bg-daemon' | grep --silent -v grep; then
   echo "Emacs server is running"
 fi
 
+if ps -u $USER | grep 'mysqld' | grep --silent -v grep; then
+  echo "MySQL is running"
+fi
+
 # tmux
 # Fix for `tmux` overwriting this binding in `tmux.conf` with `send-prefix`
 # This is only necessary if using `C-\` as prefix
