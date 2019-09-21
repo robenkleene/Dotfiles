@@ -158,7 +158,7 @@ iOSInjectionProject/
 
 setup_travis() {
   local travis="language: swift
-osx_image: xcode10.2
+osx_image: xcode11
 script: make ci
 branches:
   only:
