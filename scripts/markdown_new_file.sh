@@ -13,7 +13,7 @@ directory=$2
 slug=$3
 
 if [[ -z "$slug" ]]; then
-  slug="$title"
+  slug=$(echo "$title" | tr '/' ' ')
 fi
 
 if [[ ! -d "$directory" ]]; then
