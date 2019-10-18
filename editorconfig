@@ -49,6 +49,10 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
+[*.c]
+indent_style = space
+indent_size = 4
+
 [*.yml]
 indent_style = space
 indent_size = 2
