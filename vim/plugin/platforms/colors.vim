@@ -37,8 +37,8 @@ function! s:MyHighlights() abort
 
   let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
   for group in s:highlightgroups
-    exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .  
-          \ s:highlightfgcolor
+    exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .
+          \ s:highlightfgcolor . ' cterm=NONE'
   endfor
 
   " Wild Menu {{{1
