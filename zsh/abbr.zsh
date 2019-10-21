@@ -151,11 +151,10 @@ everywhere_abbreviations=(
 '>null' '>/dev/null'
 '>o' '2>&1'
 # Glob
-'-gcocoa' '-g "*.{h,m,swift}"'
-'-gruby' '-g "*.rb"'
+# '-gcocoa' '-g "*.{h,m,swift}"'
+# '-gruby' '-g "*.rb"'
 # Carthage
 '-nub' '--no-use-binaries'
-'eq' '2>&1|Q'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
@@ -177,8 +176,8 @@ _magic_everywhere_abbrev_expand() {
   LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>-]#}
   if [[ -n "${everywhere_abbreviations[$MATCH]}" ]]; then
     LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
-  elif [[ -n "${abbreviations[$MATCH]}" ]]; then
-    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+  # elif [[ -n "${abbreviations[$MATCH]}" ]]; then
+  #   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
   else
     LBUFFER+=$MATCH
     return 1
