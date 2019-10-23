@@ -1,5 +1,5 @@
 usage() {
-  echo "Usage: $command_name [-pln]"
+  echo "Usage: command [-pln]"
   echo
   echo "No flags : Just lists the status of each repo"
   echo "-c: Stage changes with a default commit message"

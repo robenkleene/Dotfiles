@@ -14,8 +14,6 @@ EGITREPOS+=:~/Development/Archive/:~/Development/Scratch/
 
 IFS=':' read -ra repos <<< "$EGITREPOS"
 
-command_name="egit"
-
 source ~/.bin/nobin/_giterator.sh
 
 for repo in "${repos[@]}"; do
