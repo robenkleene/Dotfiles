@@ -4,7 +4,7 @@ set -e
 
 # if we're already in a shell session, switch back to the previous session
 if [[ -n "$TMUX" ]]; then
-  if tmux display-message -p '#S' | grep "^\d\+$"; then
+  if tmux display-message -p '#S' | grep -q "^\d\+$"; then
     tmux switch-client -l
     exit 0
   fi
@@ -15,7 +15,7 @@ unattached_shell=$(tmux list-sessions -F "#{session_name} #{session_attached}" \
 if [[ -z "$unattached_shell" ]]; then
   if [[ -n "$TMUX" ]]; then
     session=$(tmux new-session -d -P | tr -d '\n')
-    tmux switch-client -t "$session" >/dev/null
+    tmux switch-client -t "$session"
   else
     tmux new-session
   fi
