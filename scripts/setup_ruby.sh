@@ -72,7 +72,7 @@ build-iPhoneSimulator/
 setup_travis() {
   local contents="language: ruby
 script: make ci
-rvm: 2.3.7
+rvm: 2.5.3
 branches:
   only:
     - master
@@ -121,7 +121,7 @@ Style/NumericPredicate:
   # This rule doesn't work when run locally
   Enabled: false
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - '**/node_modules/**/*'
     - '**/vendor/**/*'
@@ -132,8 +132,8 @@ AllCops:
 
 setup_gemfile() {
   local contents="source 'https://rubygems.org'
-ruby '2.3.7'
-gem 'rubocop', '~> 0.63.1', require: false
+ruby '2.5.3'
+gem 'rubocop', '~> 0.76.0', require: false
 "
   overwrite "Gemfile" "$contents"
   # rubocop complains about blank lines at the end of Gemfile
@@ -141,7 +141,7 @@ gem 'rubocop', '~> 0.63.1', require: false
 }
 
 setup_rubyversion() {
-  local contents="system"
+  local contents="2.5.3"
   echo "$contents" >.ruby-version
 }
 
