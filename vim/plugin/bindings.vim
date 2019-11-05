@@ -240,3 +240,7 @@ nnoremap <localleader>r :Run<CR>
 cnoremap <C-y> <C-r>*
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
+
+" Move by display line
+noremap <silent> k gk
+noremap <silent> j gj
