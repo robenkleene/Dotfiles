@@ -2,6 +2,9 @@
 
 set -e
 
+~/.bin/egit -l
+cd "$HOME/Development/Dotfiles/scripts" && ./install.sh
+
 cd "$HOME/Development/Settings/Source Control/Directories/Documentation" && \
   ./compare.sh
 if [[ "$(uname)" = "Darwin" ]]; then
@@ -12,6 +15,5 @@ elif [[ "$(uname)" = "Linux" ]]; then
     ./compare.sh linux.txt
 fi
 
-~/.bin/egit -l
 ~/.bin/sgitd -l
 ~/.bin/sgitp -l
