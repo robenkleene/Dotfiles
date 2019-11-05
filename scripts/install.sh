@@ -44,4 +44,4 @@ fi
 
 # Cleanup dead symlinks
 cd "$DESTINATION_DIRECTORY" && \
-  find -L . -name . -o -type d -prune -o -type l -exec rm {} +~
+  find -L . -name . -o -type d -prune -o -type l -exec rm {} +
