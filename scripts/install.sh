@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 INSTALL_DIRECTORY_NAME="scripts" # The name of the directory to install from.
 
@@ -27,7 +29,7 @@ function MakeSymlink() {
 shopt -s nullglob
 for thisFILE in *; do
   # Exclude this install script and directories
-  if [[ ! $thisFILE =~ "install.sh" ]] &&
+  if [[ ! $thisFILE == "install.sh" ]] &&
     [[ ! $thisFILE == "TAGS" ]] &&
     [[ ! $thisFILE == "tags" ]] &&
     [ ! -d $thisFILE ]; then
@@ -39,3 +41,7 @@ done
 if [ ! -d $DESTINATION_DIRECTORY/nobin ]; then
   ln -s $DIRECTORY/nobin $DESTINATION_DIRECTORY/nobin
 fi
+
+# Cleanup dead symlinks
+cd "$DESTINATION_DIRECTORY" && \
+  find -L . -name . -o -type d -prune -o -type l -exec rm {} +~
