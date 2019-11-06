@@ -238,6 +238,8 @@ nnoremap <localleader>r :Run<CR>
 
 " Emacs Paste
 cnoremap <C-y> <C-r>*
+" Command Line Window Edit
+cnoremap <C-x><C-e> <C-f>
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 
