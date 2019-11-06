@@ -5,7 +5,7 @@ alias -g L='| less'
 alias -g A='| rg --no-line-number --no-filename'
 alias -g Y='| safecopy'
 alias -g Y1='| safecopy1'
-alias -g B='| bbresults --pattern grep --new-window'
+# Don't include the pipe, if it means opening in another application
 # Disable these, there's something very strange about how global aliases call
 # interactive commads. Starting `vim` results it in having to start twice,
 # which is very slow.
@@ -15,11 +15,11 @@ alias -g V="$VIM_COMMAND -"
 alias -g Q='vim_grep'
 alias -g F='fzf_vim_grep'
 alias -g FF='fzf_vim_file'
-alias -g 0VA="| xargs -o -0 $VIM_COMMAND"
-alias -g VA="| xargs -o $VIM_COMMAND"
-alias -g O='2>&1'
+alias -g 0VA="xargs -o -0 $VIM_COMMAND"
+alias -g VA="xargs -o $VIM_COMMAND"
 if [[ "$(uname)" = "Darwin" ]]; then
   alias -g OR="| xargs open -R"
+  alias -g B='bbresults --pattern grep --new-window'
 fi
 
 # Basic
