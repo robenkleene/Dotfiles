@@ -246,3 +246,5 @@ snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 " Move by display line
 noremap <silent> k gk
 noremap <silent> j gj
+noremap <silent> <Up> gk
+noremap <silent> <Down> gj
