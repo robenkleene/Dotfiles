@@ -2,7 +2,12 @@
 
 set -e
 
-ruby_version="2.5.3"
+if [[ -f ".ruby-version" ]]; then
+  read -r ruby_version < .ruby-version
+fi
+if [[ -z "$ruby_version" ]]; then
+  ruby_version="2.5.3"
+fi
 
 overwrite() {
   filename=$1
