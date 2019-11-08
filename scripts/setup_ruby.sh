@@ -2,6 +2,8 @@
 
 set -e
 
+ruby_version="2.5.3"
+
 overwrite() {
   filename=$1
   contents=$2
@@ -72,7 +74,7 @@ build-iPhoneSimulator/
 setup_travis() {
   local contents="language: ruby
 script: make ci
-rvm: 2.5.3
+rvm: $ruby_version
 branches:
   only:
     - master
@@ -132,7 +134,7 @@ AllCops:
 
 setup_gemfile() {
   local contents="source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '$ruby_version'
 gem 'rubocop', '~> 0.76.0', require: false
 "
   overwrite "Gemfile" "$contents"
@@ -141,7 +143,7 @@ gem 'rubocop', '~> 0.76.0', require: false
 }
 
 setup_rubyversion() {
-  local contents="2.5.3"
+  local contents="$ruby_version"
   echo "$contents" >.ruby-version
 }
 
