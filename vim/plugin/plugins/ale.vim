@@ -7,6 +7,7 @@ let g:ale_linters = {
   \   'javascript': ['eslint'],
   \   'markdown': ['proselint'],
   \   'objc': ['clang'],
+  \   'c': ['clang'],
   \   'swift': ['swiftlint'],
   \   'xml': ['xmllint'],
   \   'sh': ['shell', 'shellcheck'],
