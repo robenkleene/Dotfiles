@@ -24,3 +24,6 @@ Alias Gw silent\ !git_web_open
 Alias Slpr SlugProject
 
 Alias Scw SourceControlWeb
+
+Alias Snew NewScratch
+Alias Svnew VnewScratch
