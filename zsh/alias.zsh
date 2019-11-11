@@ -39,7 +39,6 @@ alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 alias shs='ssh_start'
 alias sts='ssh_tmux_start'
 alias strs='ssh_tmux_restore_start'
-alias sgds='sgitd -cp'
 alias ea='emacs_app'
 
 # Override
@@ -143,6 +142,8 @@ alias gprpr='git_process_pull_request'
 alias gpbo='git_push_branch_origin'
 alias scw='source_control_open_site'
 alias scwp='source_control_open_site -p'
+alias sgds='sgitd -cp'
+alias gsa='git_sync_all'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
