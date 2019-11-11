@@ -63,6 +63,8 @@ build-iPhoneSimulator/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
+# When installing a gem with --standalone from git, don't checkin the cache of the git repo
+**/bundle/**/cache/
 
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
