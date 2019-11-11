@@ -127,6 +127,13 @@ alias snp='fzf_snippet_copy'
 alias snpe='fzf_snippet_editor'
 alias doce='fzf_documentation_editor'
 
+# Test Variable
+alias ptv='echo $test_variable'
+# The `|| true` prevents an exit status of 1 if the output does not end in a
+# new line
+alias ytv='read test_variable || true'
+alias ctv='safepaste | read test_variable || true'
+
 # `git`
 alias gbp='git_branch_print'
 alias gblpr='git_branch_list_pruned'
