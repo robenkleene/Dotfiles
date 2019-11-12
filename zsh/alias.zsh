@@ -43,15 +43,12 @@ alias ea='emacs_app'
 
 # Override
 
-# rg
-# mitmproxy
-# Supposedly these can be set in a `~/.mitmproxy/config.yaml`, it wasn't
-# working with:
-# palette_transparent: true
-# no_mouse: true
-alias mitmproxy='mitmproxy --no-mouse --palette-transparent'
-
-# Shortcut
+# fd
+# Display hidden files by default
+# This doesn't work now because the `fzf` commands also add
+# hidden, we should be able to add the `--hidden` flag twice in a
+# future version of `fd` and we can uncomment this then.
+# alias fd='fd --hidden'
 
 # `zsh`
 alias zoi='zsh_edit_config'
