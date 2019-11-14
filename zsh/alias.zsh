@@ -76,6 +76,7 @@ alias tmfw='fzf_tmux_window'
 alias tmgs='tmux_git_status'
 alias tmssdw='tmux_session_save_dropbox_work'
 alias tmba='tmux_banner_all'
+alias tmn='tmux_shell_new'
 
 # `safari`
 alias sfhs='fzf_safari_history_open'
