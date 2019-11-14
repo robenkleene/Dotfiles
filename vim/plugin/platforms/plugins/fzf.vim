@@ -166,9 +166,8 @@ endfunction
 function! s:relative_file_insert(path) abort
   let origin_file = expand('%')
   let destination = a:path
-  echom "destination = ".destination
   let workingdir = getcwd()
-  echom "workingdir = ".workingdir
+  let shell_edit = 0
   if origin_file =~ "^/private/tmp/" && workingdir !~ "^/private/tmp/"
     " If the current file is a temp directory, but the working directory is
     " not a temp directory, that's strong indication we're editing a shell
@@ -177,10 +176,16 @@ function! s:relative_file_insert(path) abort
     " shell commands (i.e., the temp file for the command is irrelevant in
     " this case).
     let origin_file = workingdir
+    let shell_edit = 1
   end
   let result = system('~/.bin/relative_path '.shellescape(origin_file).' '.shellescape(destination).' | tr -d "\n"')
   let temp = @s
-  let @s = result
+  if shell_edit
+    " Use shell escaping if editing a shell command
+    let @s = shellescape(result)
+  else
+    let @s = result
+  end
   " Need to use a different paste depending if the cursor is at the end of the
   " line
   if col('.') == col('$') && col('.') != 1
