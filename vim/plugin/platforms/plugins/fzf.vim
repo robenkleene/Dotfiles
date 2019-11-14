@@ -164,12 +164,21 @@ function! s:insert(string) abort
 endfunction
 
 function! s:relative_file_insert(path) abort
-  let source = expand('%')
+  let origin_file = expand('%')
   let destination = a:path
-  " echom "source = ".source
-  " echom "destination = ".destination
-  " return
-  let result = system('~/.bin/relative_path '.fnameescape(source).' '.fnameescape(destination).' | tr -d "\n"')
+  echom "destination = ".destination
+  let workingdir = getcwd()
+  echom "workingdir = ".workingdir
+  if origin_file =~ "^/private/tmp/" && workingdir !~ "^/private/tmp/"
+    " If the current file is a temp directory, but the working directory is
+    " not a temp directory, that's strong indication we're editing a shell
+    " command (e.g., with `<C-x><C-e>`, in which case we want to use the
+    " working directory as a origin_file so we can complete file paths when editing
+    " shell commands (i.e., the temp file for the command is irrelevant in
+    " this case).
+    let origin_file = workingdir
+  end
+  let result = system('~/.bin/relative_path '.shellescape(origin_file).' '.shellescape(destination).' | tr -d "\n"')
   let temp = @s
   let @s = result
   " Need to use a different paste depending if the cursor is at the end of the
