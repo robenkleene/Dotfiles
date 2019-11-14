@@ -13,5 +13,5 @@ function! s:RunVimscript() range abort
   let @s = temp
 endfunction
 command! -range RunVimscriptVisual <line1>,<line2>call <SID>bindings#RunVimscriptVisual()
-vnoremap <buffer> <localleader>e :'<,'>call <SID>RunVimscriptVisual()<CR>
-nnoremap <buffer> <localleader>e :call <SID>RunVimscript()<CR>
+vnoremap <buffer> <localleader>r :'<,'>call <SID>RunVimscriptVisual()<CR>
+nnoremap <buffer> <localleader>r :call <SID>RunVimscript()<CR>
