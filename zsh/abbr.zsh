@@ -17,6 +17,7 @@ abbreviations=(
 'a' "$ACK_COMMAND"
 'af' "$ACK_COMMAND -F"
 'rgf' "$ACK_COMMAND -F"
+'rgi' "$ACK_COMMAND --no-ignore"
 
 # `tig`
 'tst' 'tig stash'
