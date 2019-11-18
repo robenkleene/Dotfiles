@@ -142,6 +142,9 @@ abbreviations=(
 
 # Mail
 'mba' 'mbsync -all --verbose'
+
+# Repla
+'rps' 'repla server'
 )
 
 # These abbreviations work everywhere
