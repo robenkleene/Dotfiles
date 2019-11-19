@@ -15,5 +15,5 @@ elif [[ "$(uname)" = "Linux" ]]; then
     ./compare.sh linux.txt
 fi
 
-~/.bin/sgitd -l
+~/.bin/sgitt -l
 ~/.bin/sgitp -l

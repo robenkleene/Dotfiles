@@ -147,8 +147,8 @@ alias gprpr='git_process_pull_request'
 alias gpbo='git_push_branch_origin'
 alias scw='source_control_open_site'
 alias scwp='source_control_open_site -p'
-alias sgds='sgitd -cp'
-alias gsa='git_sync_all'
+alias sgpt='sgitt -cp'
+alias sgla='git_pull_all'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
