@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if tmux info &> /dev/null; then 
+if tmux info &> /dev/null; then
   echo "tmux is running, exit tmux first"
   exit 1
 fi

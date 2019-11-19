@@ -2,6 +2,11 @@
 
 set -e
 
+if ! tmux info &> /dev/null; then
+  echo "tmux is not running, start tmux first"
+  exit 1
+fi
+
 # if we're already in a shell session, switch back to the previous session
 if [[ -n "$TMUX" ]]; then
   if tmux display-message -p '#S' | grep -q "^\d\+$"; then
