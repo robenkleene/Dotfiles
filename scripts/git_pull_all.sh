@@ -5,7 +5,7 @@ set -e
 ~/.bin/egit -l
 cd "$HOME/Development/Dotfiles/scripts" && ./install.sh
 
-cd "$HOME/Development/Settings/Source Control/Directories/Documentation" && \
+cd "$HOME/Development/Settings/Source Control/Directories/Text" && \
   ./compare.sh
 if [[ "$(uname)" = "Darwin" ]]; then
   cd "$HOME/Development/Settings/Source Control/Directories/Projects" && \
