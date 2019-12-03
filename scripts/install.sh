@@ -7,7 +7,7 @@ INSTALL_DIRECTORY_NAME="scripts" # The name of the directory to install from.
 # Stop if this is being run from any directory besides the install directory
 DIRECTORY=${PWD}
 DIRECTORY_NAME=${PWD##*/}
-if [ ! $DIRECTORY_NAME == $INSTALL_DIRECTORY_NAME ]; then
+if [ ! "$DIRECTORY_NAME" == "$INSTALL_DIRECTORY_NAME" ]; then
   echo "ERROR: This directory \"$DIRECTORY_NAME\" doesn't match $INSTALL_DIRECTORY_NAME."
   echo "This script only runs from the $INSTALL_DIRECTORY_NAME directory."
   exit 1
@@ -19,10 +19,9 @@ function MakeSymlink() {
   DESTINATION_DIRECTORY="$HOME/.bin"
   [ -d "$DESTINATION_DIRECTORY" ] || mkdir "$DESTINATION_DIRECTORY"
   DESTINATION=$DESTINATION_DIRECTORY/$EXECUTABLE_NAME
-  if [ -f $DESTINATION ] || [ -d $DESTINATION ]; then
-    echo "$DESTINATION skipped because it already exists."
-  else
-    ln -s $DIRECTORY/$thisFILE $DESTINATION
+  if [ ! -e "$DESTINATION" ]; then
+    echo "Installing $DESTINATION"
+    ln -s "$DIRECTORY/$thisFILE" "$DESTINATION"
   fi
 }
 
@@ -32,14 +31,14 @@ for thisFILE in *; do
   if [[ ! $thisFILE == "install.sh" ]] &&
     [[ ! $thisFILE == "TAGS" ]] &&
     [[ ! $thisFILE == "tags" ]] &&
-    [ ! -d $thisFILE ]; then
-    MakeSymlink $thisFILE
+    [ ! -d "$thisFILE" ]; then
+    MakeSymlink "$thisFILE"
   fi
 done
 
 # Symlink the no bin directory so scripts can reference them
-if [ ! -d $DESTINATION_DIRECTORY/nobin ]; then
-  ln -s $DIRECTORY/nobin $DESTINATION_DIRECTORY/nobin
+if [ ! -d "$DESTINATION_DIRECTORY/nobin" ]; then
+  ln -s "$DIRECTORY/nobin" "$DESTINATION_DIRECTORY/nobin"
 fi
 
 # Cleanup dead symlinks
