@@ -9,7 +9,7 @@ fi
 # General Text Repos
 EGITREPOS+=:~/Development/Snippets/:~/Development/Settings/
 # Last Repos
-EGITREPOS+=:~/Development/Archive/:~/Development/Scratch/
+EGITREPOS+=:~/Development/Backup/:~/Development/Archive/:~/Development/Scratch/
 
 
 IFS=':' read -ra repos <<< "$EGITREPOS"
