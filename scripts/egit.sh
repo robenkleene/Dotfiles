@@ -3,7 +3,7 @@
 # System Repos
 EGITREPOS=~/Development/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
-  EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Development/AppleScripts/:~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/:~/Library/Developer/Xcode/UserData/
+  EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Development/AppleScripts/:~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/
 fi
 
 # General Text Repos
