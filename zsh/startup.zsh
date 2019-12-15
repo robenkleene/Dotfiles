@@ -1,15 +1,5 @@
 # Startup
 
-# Emacs
-# Display a greeting message if the server is running
-if ps -u $USER | grep '[Ee]macs.*--bg-daemon' | grep --silent -v grep; then
-  echo "Emacs server is running"
-fi
-
-if ps -u $USER | grep 'mysqld' | grep --silent -v grep; then
-  echo "MySQL is running"
-fi
-
 # tmux
 # Fix for `tmux` overwriting this binding in `tmux.conf` with `send-prefix`
 # This is only necessary if using `C-\` as prefix
@@ -20,6 +10,16 @@ fi
 if tmux ls >/dev/null 2>/dev/null; then
   # Only echo if we aren't already in a tmux session
   if [ -z "$TMUX" ]; then
+    # Emacs
+    # Display a greeting message if the server is running
+    if ps -u $USER | grep '[Ee]macs.*--bg-daemon' | grep --silent -v grep; then
+      echo "Emacs server is running"
+    fi
+
+    if ps -u $USER | grep 'mysqld' | grep --silent -v grep; then
+      echo "MySQL is running"
+    fi
+
     echo tmux sessions
     tmux ls
   fi
