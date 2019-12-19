@@ -85,6 +85,7 @@ alias sfhs='fzf_safari_history_open'
 alias mt='make test'
 alias ml='make lint'
 alias mac='make autocorrect'
+alias macc='make autocorrect && git add -A :/ && git commit -m "Run autocorrect"'
 
 # `emacs`
 alias mgs='emacs_magit_status'
