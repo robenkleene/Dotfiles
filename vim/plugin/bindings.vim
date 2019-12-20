@@ -237,6 +237,9 @@ vnoremap <localleader>e :ExecuteVisual<CR>
 " Run
 nnoremap <localleader>r :Run<CR>
 
+" Make
+nnoremap <localleader>m :make<CR>
+
 " Emacs Paste
 cnoremap <C-y> <C-r>*
 " Command Line Window Edit
