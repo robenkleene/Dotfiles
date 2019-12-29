@@ -252,3 +252,16 @@ noremap <silent> k gk
 noremap <silent> j gj
 noremap <silent> <Up> gk
 noremap <silent> <Down> gj
+
+" Paste
+" These don't work
+" set <M-p>=\<Esc>p
+" noremap <M-p> "0p
+" vnoremap <M-p> "0p
+" These work but cause a delay on ESC
+" noremap <ESC>p "0p
+" vnoremap <ESC>p "0p
+noremap <localleader>p "0p
+vnoremap <localleader>p "0p
+noremap <leader>p "0p
+vnoremap <leader>p "0p
