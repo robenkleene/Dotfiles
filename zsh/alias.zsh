@@ -149,6 +149,7 @@ alias gpbo='git_push_branch_origin'
 alias scw='source_control_open_site'
 alias scwp='source_control_open_site -p'
 alias sgpt='sgitt -cp'
+alias sglt='sgitt -l'
 alias sgla='git_pull_all'
 alias gcu='git add -A :/ && git commit -m "Update"'
 
