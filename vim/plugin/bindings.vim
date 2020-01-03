@@ -32,7 +32,7 @@ nnoremap Y y$
 " Leader
 " Leader seems to nned to be set before leader mappings?
 let mapleader = "\<space>"
-let maplocalleader = "\\"
+let maplocalleader = "\<CR>"
 
 nnoremap cdg :call commands#Cdg('cd')<CR>
 " nnoremap clg :call commands#Cdg('lcd')<CR>
