@@ -30,9 +30,12 @@ nnoremap Y y$
 " cnoremap <C-w> <C-R><C-W>
 
 " Leader
-" Leader seems to nned to be set before leader mappings?
+" Leader seems to need to be set before leader mappings?
 let mapleader = "\<space>"
-let maplocalleader = "\<CR>"
+" Can't use return because of using return to open a file or item in the
+" quickfix list
+" let maplocalleader = "\<CR>"
+let maplocalleader = "\<BS>"
 
 nnoremap cdg :call commands#Cdg('cd')<CR>
 " nnoremap clg :call commands#Cdg('lcd')<CR>
