@@ -21,11 +21,11 @@
 
 ;; Start the emacs server if it isn't already running and we're running in
 ;; window mode
-;; (require 'server)
-;; (if (display-graphic-p (selected-frame))
-;;     (if (and (fboundp 'server-running-p)
-;;              (not (server-running-p)))
-;;         (server-start)))
+(require 'server)
+(if (display-graphic-p (selected-frame))
+    (if (and (fboundp 'server-running-p)
+             (not (server-running-p)))
+        (server-start)))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
@@ -58,7 +58,7 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 ;; Open files in new frames by default
-(setq ns-pop-up-frames nil)
+;; (setq ns-pop-up-frames nil)
 
 (provide 'robenkleene-gui)
 ;; Local Variables:
