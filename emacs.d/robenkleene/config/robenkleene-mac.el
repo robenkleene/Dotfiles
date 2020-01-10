@@ -9,7 +9,7 @@
 
 ;; Ergonomic Emacs
 ;; Basic
-(define-key key-translation-map (kbd "s-c") (kbd "C-c"))
+;; (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
 ;; For evaluate
 (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
