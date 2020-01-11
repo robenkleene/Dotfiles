@@ -198,6 +198,12 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+;; Mouse
+;; Double-click instead of single click to open links
+(setq mouse-1-click-follows-link 'double)
+;; To disable completely:
+;; (setq mouse-1-click-follows-link nil)
+
 ;; Org
 (setq org-replace-disputed-keys t)
 (setq org-todo-keywords '("TODO" "STARTED" "DONE"))
