@@ -12,20 +12,13 @@
 ;; (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
 (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
-;; For evaluate
 (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
-;; For find file and format
 (define-key key-translation-map (kbd "s-f") (kbd "C-f"))
-;; For run
 (define-key key-translation-map (kbd "s-r") (kbd "C-r"))
-;; For save
-;; (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
-;; For dired jump
 (define-key key-translation-map (kbd "s-j") (kbd "C-j"))
-;; For `ibuffer'
 (define-key key-translation-map (kbd "s-b") (kbd "C-b"))
-;; For keyboard quit
 (define-key key-translation-map (kbd "s-g") (kbd "C-g"))
+(define-key key-translation-map (kbd "s-y") (kbd "C-y"))
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
