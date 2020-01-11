@@ -52,7 +52,10 @@ export COFFEELINT_CONFIG=$HOME/.coffeelint.json
 
 # Emacs
 # Start the server in the background if it isn't running
-export ALTERNATE_EDITOR=""
+# Disabled for now because our current approach is to run the Emacs server from
+# GUI emacs because that's the only way GUI Emacs can be script via
+# `emacsclient`
+# export ALTERNATE_EDITOR=""
 
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1
