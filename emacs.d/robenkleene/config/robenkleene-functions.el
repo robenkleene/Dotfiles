@@ -521,6 +521,13 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/new-scratch-frame ()
+  "Make a new frame and go to the scratch buffer."
+  (interactive)
+  (let ((frame (make-frame)))
+    (select-frame-set-input-focus frame)
+    (switch-to-buffer "*scratch*")))
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
