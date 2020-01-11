@@ -386,3 +386,11 @@ simulator_data_cd() {
   fi
   cd "$app_path"
 }
+
+# For use with z
+add_common_directories() {
+  fasd -A ~/Text/notes
+  fasd -A ~/Development/Scratch
+  fasd -A ~/Development
+  fasd -A ~/Documentation
+}
