@@ -35,7 +35,8 @@ let mapleader = "\<space>"
 " Can't use return because of using return to open a file or item in the
 " quickfix list
 " let maplocalleader = "\<CR>"
-let maplocalleader = "\<BS>"
+" let maplocalleader = "\<BS>"
+let maplocalleader = "\\"
 
 nnoremap cdg :call commands#Cdg('cd')<CR>
 " nnoremap clg :call commands#Cdg('lcd')<CR>
