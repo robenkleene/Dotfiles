@@ -528,6 +528,23 @@ Otherwise, call `backward-kill-word'."
     (select-frame-set-input-focus frame)
     (switch-to-buffer "*scratch*")))
 
+(defun robenkleene/new-scratch-frame-with-current-frame ()
+  "Make a new scratch frame the same size as the current frame."
+  (interactive)
+  (let* ((frame (selected-frame))
+         (left (frame-parameter frame 'left))
+         (top (frame-parameter frame 'top))
+         (width (frame-width frame))
+         (height (frame-height frame)))
+    (let ((frame (make-frame
+                  `((left . ,left)
+                    (top . ,top)
+                    (width . ,width)
+                    (height . ,height)))))
+      (select-frame-set-input-focus frame)
+      (switch-to-buffer "*scratch*"))
+    ))
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
