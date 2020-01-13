@@ -61,6 +61,8 @@
 ;; (setq ns-pop-up-frames nil)
 (setq ns-pop-up-frames t)
 
+(setq-default line-spacing 0.1)
+
 (provide 'robenkleene-gui)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
