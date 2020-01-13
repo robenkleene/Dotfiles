@@ -537,7 +537,7 @@ Otherwise, call `backward-kill-word'."
          (width (frame-width frame))
          (height (frame-height frame)))
     (let ((frame (make-frame
-                  `((left . ,left)
+                  `((left . ,(+ left 30))
                     (top . ,top)
                     (width . ,width)
                     (height . ,height)))))
