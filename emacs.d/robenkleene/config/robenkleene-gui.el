@@ -52,6 +52,21 @@
 ;; Disable mouse highlighting
 (setq mouse-highlight nil)
 
+
+(setq-default initial-frame-alist
+              '(
+                (width . 80)
+                (height . 48)
+                ))
+(setq-default default-frame-alist
+              '(
+                (width . 80)
+                (height . 48)
+                ))
+(add-to-list 'default-frame-alist
+             '(vertical-scroll-bars . nil))
+(add-to-list 'initial-frame-alist
+             '(vertical-scroll-bars . nil))
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 ;; Improve compatibility of macOS dark mode
