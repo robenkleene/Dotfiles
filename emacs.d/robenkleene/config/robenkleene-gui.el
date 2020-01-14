@@ -7,7 +7,12 @@
        (list
         "/usr/local/bin"
         (expand-file-name "~/.bin")
-        (expand-file-name "~/.nvm/versions/node/v0.12.2/bin/")
+        (expand-file-name "~/.fzf/bin")
+        (expand-file-name "~/.gem/ruby/2.5.3/bin")
+        (expand-file-name "~/.nvm/versions/node/v11.4.0/bin")
+        (expand-file-name "~/.rubies/ruby-2.5.3/bin")
+        (expand-file-name "~/.rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/bin")
+        (expand-file-name "~/Library/Python/3.7/bin")
         )
        ))
   (setenv "PATH" (mapconcat
