@@ -159,6 +159,8 @@ everywhere_abbreviations=(
 # '-gruby' '-g "*.rb"'
 # Carthage
 '-nub' '--no-use-binaries'
+# Jekyll
+'-jcl' '--config _config_local.yml'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
