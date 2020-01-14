@@ -20,7 +20,7 @@ fi
 
 # python
 if [[ "$(uname)" = "Darwin" ]]; then
-  export PATH=$HOME/Library/Python/3.7/bin:$PATH
+  PATH=$HOME/Library/Python/3.7/bin:$PATH
 fi
 
 # nvm
@@ -35,4 +35,7 @@ nvm() {
   fi
 }
 
-export PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH
+PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH
+
+# The `-U` option prevens duplicates when `tmux` starts `zsh` instances
+export -U PATH
