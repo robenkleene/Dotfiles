@@ -160,7 +160,8 @@ everywhere_abbreviations=(
 # Carthage
 '-nub' '--no-use-binaries'
 # Jekyll
-'-jcl' '--config _config_local.yml'
+'-jl' '--config _config_local.yml'
+'-jp' '--port 4000'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing

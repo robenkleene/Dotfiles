@@ -312,46 +312,6 @@ gem_update_no_doc() {
   gem update --no-ri --no-rdoc
 }
 
-# Jekyll
-jekyll_build_watch() {
-  if [[ ! -f "_config.yml" ]]; then
-    echo "Not a Jekyll site"
-    return 1
-  fi
-  bundle exec jekyll build --watch
-}
-jekyll_build_watch_drafts() {
-  if [[ ! -f "_config.yml" ]]; then
-    echo "Not a Jekyll site"
-    return 1
-  fi
-  bundle exec jekyll build --watch --drafts
-}
-jekyll_serve_watch() {
-  if [[ ! -f "_config.yml" ]]; then
-    echo "Not a Jekyll site"
-    return 1
-  fi
-  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
-  bundle exec jekyll serve --watch
-}
-jekyll_serve_watch_drafts() {
-  if [[ ! -f "_config.yml" ]]; then
-    echo "Not a Jekyll site"
-    return 1
-  fi
-  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
-  bundle exec jekyll serve --watch --drafts
-}
-jekyll_write() {
-  if [[ ! -f "_config.yml" ]]; then
-    echo "Not a Jekyll site"
-    return 1
-  fi
-  # The `--open-url` version isn't supported by `gh-pages` jekyll yet
-  bundle exec jekyll serve --watch --drafts --config _config_local.yml
-}
-
 # Simulator
 simulator_data_print() {
   local app_process=$(ps ax | grep -E \
