@@ -14,9 +14,10 @@
       "Evaluate the region specified by `START' and `END'."
       (let ((proc (get-process nodejs-repl-process-name)))
         (comint-simple-send proc (buffer-substring-no-properties start end))))
-    
+
     (defun robenkleene/nodejs-repl-eval-buffer (&optional buffer)
-      "Evaluate the current buffer or the one given as `BUFFER'.  `BUFFER' should be a string or buffer."
+      "Evaluate the current buffer or the one given as `BUFFER'. `BUFFER' should
+be a string or buffer."
       (interactive)
       (let ((buffer (or buffer (current-buffer))))
         (with-current-buffer buffer
@@ -27,7 +28,9 @@
       (interactive)
       (if (region-active-p)
           (progn
-            (robenkleene/nodejs-repl-eval-region (region-beginning) (region-end))
+            (robenkleene/nodejs-repl-eval-region
+             (region-beginning)
+             (region-end))
             (deactivate-mark)
             )
         (robenkleene/nodejs-repl-eval-buffer)
