@@ -493,6 +493,12 @@ Otherwise, call `backward-kill-word'."
   (switch-to-buffer "*scratch*")
   )
 
+(defun robenkleene/open-markdown-scratch ()
+  "Open scratch file for current buffer."
+  (interactive)
+  (switch-to-buffer "~/Documents/Text/Scripts/Scratch.md")
+  )
+
 (defun robenkleene/open-scratch-for-file ()
   "Open scratch file for current buffer."
   (interactive)

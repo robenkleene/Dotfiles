@@ -136,10 +136,8 @@ abbreviations=(
 # `emacs` without `-nw` opens a new instance of Emacs and blocks the current
 # terminal process until it exits, which is never what you want. If you want to
 # open a file in the GUI version of Emacs, use `open -a "Emacs.app"`.
-'em' 'emacs -nw'
 'emacs' 'emacs -nw'
-# 'e' "$EMACS_COMMAND"
-'e' 'emacs -nw'
+'e' "$EMACS_COMMAND"
 'ec' "$EMACS_COMMAND"
 
 # Mail
@@ -147,6 +145,7 @@ abbreviations=(
 
 # Repla
 'rps' 'repla server'
+'rpsj' 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
 )
 
 # These abbreviations work everywhere

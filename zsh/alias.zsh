@@ -39,7 +39,8 @@ alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 alias shs='ssh_start'
 alias sts='ssh_tmux_start'
 alias strs='ssh_tmux_restore_start'
-alias ea='emacs_app'
+alias ge='emacs_app'
+alias gemacs='emacs_app'
 
 # Override
 
