@@ -56,6 +56,7 @@
 (require 'robenkleene-fish)
 (require 'robenkleene-ledger)
 (require 'robenkleene-csv)
+(require 'robenkleene-css)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

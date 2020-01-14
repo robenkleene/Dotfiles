@@ -86,7 +86,7 @@
 (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
-(define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
+;; (define-key robenkleene/leader-map (kbd "r") 'robenkleene/reveal-in-finder)
 (define-key robenkleene/leader-map (kbd "C-f") 'robenkleene/format)
 (define-key robenkleene/leader-map (kbd "C-r") 'robenkleene/run)
 (define-key robenkleene/leader-map (kbd "C-e")
