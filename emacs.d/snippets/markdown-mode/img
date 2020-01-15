@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: img
+# key: img
+# --
+![${1:Photo}](${2:images/photo.jpg})
