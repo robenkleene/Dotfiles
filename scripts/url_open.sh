@@ -38,8 +38,12 @@ if [[ "$firefox" == "true" ]]; then
 elif [[ "$technology" == "true" ]]; then
   # Couldn't figure out how to encode this into a variable with spaces
   # browser_arg="-a \"Safari Technology Preview\""
-  open -a "Safari" "$(urls -b)"
+  open -a "Safari" "$(~/.bin/urls -b)"
   exit 0
 fi
 
-open "$browser_arg" "$(urls -b)"
+if [[ -n "$1" ]]; then
+  open "$browser_arg" "$(~/.bin/urls -b)"
+else
+  open "$(~/.bin/urls -b)"
+fi
