@@ -572,6 +572,25 @@ Otherwise, call `backward-kill-word'."
       (select-frame-set-input-focus frame))
     ))
 
+(defun robenkleene/git-commit-all-message (&optional message)
+  "Commit everything in the current repository with MESSAGE."
+  (interactive (list (read-from-minibuffer "Message: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (shell-command (concat "~/.bin/git_commit_all "
+                         message)
+                 )
+  )
+
+(defun robenkleene/git-commit-all ()
+  "Commit everything in the current repository."
+  (interactive)
+  (shell-command "~/.bin/git_commit_all")
+  )
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

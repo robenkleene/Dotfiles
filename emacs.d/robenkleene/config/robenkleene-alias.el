@@ -24,6 +24,8 @@
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
 (defalias 'journal 'robenkleene/open-journal)
 (defalias 'inbox 'robenkleene/new-inbox-document)
+(defalias 'gac 'robenkleene/git-commit-all)
+(defalias 'gacm 'robenkleene/git-commit-all-message)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:
