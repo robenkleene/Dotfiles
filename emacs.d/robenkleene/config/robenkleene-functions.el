@@ -63,12 +63,27 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/open-journal ()
-  "Create a new slug project with TITLE in DIR."
+  "Open today's journal file."
   (interactive)
   (find-file
    (shell-command-to-string (concat "~/.bin/journal_new_make "
-                                    "~/Dropbox/Text/Journal"))
+                                    "~/Dropbox/Text/Journal/"))
    )
+  )
+
+(defun robenkleene/new-inbox-document (title)
+  "Create a new inbox document with TITLE at DIR."
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (find-file
+   (shell-command-to-string (concat "~/.bin/markdown_new_file "
+                                    (shell-quote-argument title)
+                                    " ~/Documents/Text/Inbox/")
+                            ))
   )
 
 (defun robenkleene/wiki-link ()
@@ -379,11 +394,11 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/source-control-open-web (&optional arg)
-  "Open a new Finder window at the current path with ARG."
+  "Open the source control website for the current repository with ARG."
   (interactive)
-  (shell-command-to-string (concat "~/.bin/source_control_open_site "
-                                   arg)
-                           )
+  (shell-command (concat "~/.bin/source_control_open_site "
+                         arg)
+                 )
   )
 
 (defun robenkleene/rg (regexp &optional files dir)
@@ -527,14 +542,21 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/new-scratch-frame ()
+(defun robenkleene/make-scratch-frame ()
   "Make a new frame and go to the scratch buffer."
   (interactive)
   (let ((frame (make-frame)))
     (select-frame-set-input-focus frame)
     (switch-to-buffer "*scratch*")))
 
-(defun robenkleene/new-scratch-frame-with-current-frame ()
+(defun robenkleene/make-scratch-frame-with-current-frame ()
+  "Make a new scratch frame the same size as the current frame."
+  (interactive)
+  (robenkleene/make-frame-with-current-frame)
+  (switch-to-buffer "*scratch*")
+  )
+
+(defun robenkleene/make-frame-with-current-frame ()
   "Make a new scratch frame the same size as the current frame."
   (interactive)
   (let* ((frame (selected-frame))
@@ -547,8 +569,7 @@ Otherwise, call `backward-kill-word'."
                     (top . ,top)
                     (width . ,width)
                     (height . ,height)))))
-      (select-frame-set-input-focus frame)
-      (switch-to-buffer "*scratch*"))
+      (select-frame-set-input-focus frame))
     ))
 
 (provide 'robenkleene-functions)

@@ -30,6 +30,7 @@
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
 (global-set-key (kbd "C-x c") 'save-buffers-kill-terminal)
+(global-set-key (kbd "C-h C-f") 'find-function)
 
 ;; These commands are part of a general strategy of mapping the command key to
 ;; the control key in Emacs

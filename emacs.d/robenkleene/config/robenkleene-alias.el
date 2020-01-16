@@ -18,11 +18,12 @@
 (defalias 'slug 'robenkleene/slug-project)
 (defalias 'tags 'robenkleene/generate-tags)
 (defalias 'scw 'robenkleene/source-control-open-web)
-(defalias 'scwf (lambda ()
+(defalias 'scwp (lambda ()
                   (interactive)
-                  (robenkleene/source-control-open-web "-f")))
+                  (robenkleene/source-control-open-web "-p")))
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
 (defalias 'journal 'robenkleene/open-journal)
+(defalias 'inbox 'robenkleene/new-inbox-document)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:

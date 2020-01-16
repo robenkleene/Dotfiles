@@ -31,7 +31,7 @@
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'make-frame)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-n")
-  'robenkleene/new-scratch-frame-with-current-frame)
+  'robenkleene/make-frame-with-current-frame)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-n")
 ;;   'robenkleene/empty-frame)
@@ -47,7 +47,9 @@
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-c")
 ;;   'kill-ring-save)
-;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-s-f") 'toggle-frame-fullscreen)
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "C-s-f")
+;;   'toggle-frame-fullscreen)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "<C-s-268632070>")
   'toggle-frame-fullscreen)
