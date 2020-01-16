@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: template
+# key: template
+# --
+#!/usr/bin/env bash
+
+set -e
