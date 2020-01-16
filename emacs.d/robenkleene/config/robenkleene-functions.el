@@ -581,7 +581,7 @@ Otherwise, call `backward-kill-word'."
                                              ))
                      ))
   (shell-command (concat "~/.bin/git_commit_all "
-                         message)
+                         (shell-quote-argument message))
                  )
   )
 
