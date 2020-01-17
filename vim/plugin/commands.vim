@@ -73,7 +73,6 @@ command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 
 " Journal
 command! JournalNew :call commands#JournalNew()
-command! JournalLatest :call commands#JournalLatest()
 
 " Lint
 command! Lint :call commands#Lint()
