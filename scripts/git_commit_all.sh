@@ -17,7 +17,7 @@ if [ -n "$message" ] && [ "$nothing_to_commit" = "false" ]; then
 fi
 
 if [ "$nothing_to_commit" = "true" ]; then
-  if ! git diff --exit-code origin/master..master >/dev/null; then
+  if ! git diff --exit-code "@{upstream}" >/dev/null; then
     git push
   fi
 fi
