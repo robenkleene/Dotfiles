@@ -170,3 +170,6 @@ alias ecrm='eval $EMACS_COMMAND README.md'
 
 # Tags
 alias tags="generate_tags"
+
+# Journal
+alias journal="journal_new_make_default_edit"

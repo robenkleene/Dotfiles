@@ -66,8 +66,7 @@ Otherwise, call `backward-kill-word'."
   "Open today's journal file."
   (interactive)
   (find-file
-   (shell-command-to-string (concat "~/.bin/journal_new_make "
-                                    "~/Dropbox/Text/Journal/"))
+   (shell-command-to-string "~/.bin/journal_new_make_default")
    )
   )
 

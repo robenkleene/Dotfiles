@@ -257,11 +257,7 @@ endfunction
 
 " Journal
 function! commands#JournalNew() abort
-  let l:filename = system('~/.bin/journal_new_make ~/Dropbox/Text/Journal')
-  execute 'edit '.l:filename
-endfunction
-function! commands#JournalLatest() abort
-  let l:filename = system('~/.bin/journal_newest ~/Dropbox/Text/Journal')
+  let l:filename = system('~/.bin/journal_new_make_default')
   execute 'edit '.l:filename
 endfunction
 
