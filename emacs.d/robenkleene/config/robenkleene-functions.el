@@ -511,7 +511,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-markdown-scratch ()
   "Open scratch file for current buffer."
   (interactive)
-  (switch-to-buffer "~/Documents/Text/Scripts/Scratch.md")
+  (find-file "~/Documents/Text/Scripts/Scratch.md")
   )
 
 (defun robenkleene/open-scratch-for-file ()
