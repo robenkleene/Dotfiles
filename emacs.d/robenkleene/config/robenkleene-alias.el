@@ -13,7 +13,7 @@
 (defalias 'es 'robenkleene/open-emacs-scratch)
 (defalias 'os 'robenkleene/open-markdown-scratch)
 ;; (defalias 'os 'robenkleene/open-scratch-ot/her-window)
-(defalias 'doc 'robenkleene/documentation)
+(defalias 'doc 'robenkleene/documentation-view)
 (defalias 'doce 'robenkleene/documentation-edit)
 (defalias 'slug 'robenkleene/slug-project)
 (defalias 'tags 'robenkleene/generate-tags)

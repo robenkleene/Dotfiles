@@ -262,21 +262,38 @@ Otherwise, call `backward-kill-word'."
   robenkleene/documentation-directory-path
   "~/Documentation/")
 
-(defun robenkleene/documentation ()
+(defun robenkleene/documentation-view ()
   "View documentation."
   (interactive)
-  (view-file-other-window
-   (robenkleene/ido-recursive-get-file
-    robenkleene/documentation-directory-path))
+  (view-file
+   (robenkleene/documentation-file))
   )
 
 (defun robenkleene/documentation-edit ()
   "Edit documentation."
   (interactive)
-  (find-file-other-window
-   (robenkleene/ido-recursive-get-file
-    robenkleene/documentation-directory-path))
+  (find-file
+   (robenkleene/documentation-file))
   )
+
+(defun robenkleene/documentation-other-window ()
+  "View documentation in other window."
+  (interactive)
+  (view-file-other-window
+   (robenkleene/documentation-file))
+  )
+
+(defun robenkleene/documentation-edit-other-window ()
+  "Edit documentation in other window."
+  (interactive)
+  (find-file-other-window
+   (robenkleene/documentation-file))
+  )
+
+(defun robenkleene/documentation-file ()
+  "Choose a documentation file."
+  (robenkleene/ido-recursive-get-file
+   robenkleene/documentation-directory-path))
 
 (defvar robenkleene/org-directory-path "~/Development/Scratch/Org")
 (defun robenkleene/emacs-org ()
