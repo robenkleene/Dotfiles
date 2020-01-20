@@ -70,6 +70,11 @@ command! Doc call fzf#run(fzf#wrap({
       \   'sink': function('<SID>split_lcd_sink'),
       \   'dir': '~/Documentation/'
       \ }))
+command! Doce call fzf#run(fzf#wrap({
+      \   'source': $FZF_DEFAULT_COMMAND,
+      \   'sink': function('<SID>split_lcd_sink'),
+      \   'dir': '~/Documentation/'
+      \ }))
 
 function! s:split_lcd_sink(e) abort
   execute 'split ' a:e
