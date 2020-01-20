@@ -79,9 +79,8 @@ Otherwise, call `backward-kill-word'."
                                              ))
                      ))
   (find-file
-   (shell-command-to-string (concat "~/.bin/markdown_new_file "
-                                    (shell-quote-argument title)
-                                    " ~/Documents/Text/Inbox/")
+   (shell-command-to-string (concat "~/.bin/inbox_new "
+                                    (shell-quote-argument title))
                             ))
   )
 
