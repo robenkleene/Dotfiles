@@ -27,7 +27,9 @@ content="# $title
 "
 
 echo "$content" > "$file_path"
-cat >> "$file_path"
+if [ ! -t 0 ]; then
+  cat >> "$file_path"
+fi
 
 destination_file_path="$directory/${slug}.md"
 mv -n "$file_path" "$destination_file_path"
