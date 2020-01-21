@@ -41,8 +41,11 @@
 (set-face-background 'default "#2A2A2F")
 (set-face-background 'fringe "#2A2A2F")
 
-(set-face-attribute 'default nil :font "Fira Code-13:Retina")
-(setq-default line-spacing 0.2)
+;; (set-face-attribute 'default nil :font "Fira Code-13:Retina")
+;; (setq-default line-spacing 0.2)
+;; (set-face-attribute 'default nil :font "Menlo-12")
+(set-face-attribute 'default nil :font "Inconsolata-14")
+(setq-default line-spacing 0.1)
 
 ;; Cursor
 (setq-default cursor-type 'bar)
