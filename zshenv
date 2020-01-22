@@ -45,6 +45,8 @@ export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
 # sequences
+# The `LESS` environment variable is respected by `git`, if that variable is
+# not set, than `git` overrides `less` with its own options.
 export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 export PAGER="less"
 
