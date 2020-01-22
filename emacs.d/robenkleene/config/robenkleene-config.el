@@ -121,8 +121,8 @@
 
 ;; Save recent file list
 (require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
+(recentf-mode t)
+(setq recentf-max-menu-items 100)
 
 ;; Automatically select some types of buffers
 (setq help-window-select t)

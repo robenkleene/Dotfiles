@@ -33,6 +33,13 @@
     )
   )
 
+(defun robenkleene/ido-recent-find-file ()
+  "Find file recursively in DIR."
+  (interactive)
+  (robenkleene/safe-open
+   (ido-completing-read "Find recent file: " recentf-list))
+  )
+
 (defun robenkleene/ido-recursive-find-dir (dir)
   "Find directory recursively in DIR."
   (interactive
