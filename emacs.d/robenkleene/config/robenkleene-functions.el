@@ -70,6 +70,14 @@ Otherwise, call `backward-kill-word'."
    )
   )
 
+(defun robenkleene/new-tweet ()
+  "Open a new tweet file."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-command-to-string "~/.bin/markdown_tweet")
+   )
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "

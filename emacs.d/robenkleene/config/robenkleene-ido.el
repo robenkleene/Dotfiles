@@ -45,10 +45,18 @@
               )
             )
           recentf-list)
-    (robenkleene/safe-find-file (gethash (ido-completing-read "Find z: " ido-list)
-                                    key-to-path))
+    (robenkleene/safe-find-file
+     (gethash (ido-completing-read "Find z: " ido-list)
+              key-to-path))
     )
   )
+
+(defun robenkleene/ido-bookmark-jump ()
+  "Jump to bookmark."
+  (interactive)
+  (bookmark-jump
+   (bookmark-get-bookmark
+    (ido-completing-read "Jump: " (bookmark-all-names)))))
 
 (defun robenkleene/ido-recursive-find-dir (dir)
   "Find directory recursively in DIR."

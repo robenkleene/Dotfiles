@@ -72,6 +72,7 @@
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
+(define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
 (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 (define-key robenkleene/leader-map (kbd "M-e")

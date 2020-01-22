@@ -23,6 +23,7 @@
                   (robenkleene/source-control-open-web "-p")))
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
 (defalias 'journal 'robenkleene/open-journal)
+(defalias 'tweet 'robenkleene/new-tweet)
 (defalias 'inbox 'robenkleene/new-inbox-document)
 (defalias 'gac 'robenkleene/git-commit-all)
 (defalias 'gacm 'robenkleene/git-commit-all-message)
