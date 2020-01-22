@@ -9,7 +9,7 @@
 (defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
 (defalias 'oi 'robenkleene/edit-init)
-(defalias 'osh 'robenkleene/other-window-shell)
+(defalias 'sho 'robenkleene/other-window-shell)
 (defalias 'es 'robenkleene/open-emacs-scratch)
 (defalias 'os 'robenkleene/open-markdown-scratch)
 ;; (defalias 'os 'robenkleene/open-scratch-ot/her-window)

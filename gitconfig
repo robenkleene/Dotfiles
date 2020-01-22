@@ -2,7 +2,6 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -+X
 	editor = vim -c "SessionNoAuto"
 [push]
 	default = simple

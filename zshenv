@@ -45,7 +45,8 @@ export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
 # sequences
-export PAGER="less --ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
+export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
+export PAGER="less"
 
 # Coffeelint
 export COFFEELINT_CONFIG=$HOME/.coffeelint.json
@@ -72,3 +73,8 @@ export HTML_TIDY="$HOME/.tidy"
 
 # Shellcheck
 export SHELLCHECK_OPTS="-e SC1090 -e SC2148"
+
+if test -n "$INSIDE_EMACS"; then
+    export PAGER=cat
+    export GIT_PAGER=cat
+fi
