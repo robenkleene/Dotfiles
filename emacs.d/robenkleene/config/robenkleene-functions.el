@@ -525,6 +525,12 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/open-tweets ()
+  "Open tweets directory."
+  (interactive)
+  (find-file "~/Documents/Text/Writing/Tweets/")
+  )
+
 (defun robenkleene/open-emacs-scratch ()
   "Open scratch file for current buffer."
   (interactive)
