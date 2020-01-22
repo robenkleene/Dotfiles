@@ -266,11 +266,13 @@
    '(smerge-base ((t (:background nil))))
    '(smerge-mine ((t (:background nil))))
    '(smerge-other ((t (:background nil))))
-   '(smerge-markers ((t (:inherit rk-header))))   
-   '(smerge-refined-removed ((t (:inherit rk-diff-remove))))   
-   '(smerge-refined-added ((t (:inherit rk-diff-add))))   
+   '(smerge-markers ((t (:inherit rk-header))))
+   '(smerge-refined-removed ((t (:inherit rk-diff-remove))))
+   '(smerge-refined-added ((t (:inherit rk-diff-add))))
 
-   
+   ;;;; eshell
+   `(eshell-prompt ((t (:inherit rk-prompt))))
+
 ;;; Packages
 
    ;;;; Helm
