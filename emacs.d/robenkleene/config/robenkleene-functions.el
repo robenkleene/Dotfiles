@@ -54,7 +54,7 @@ Otherwise, call `backward-kill-word'."
                                           t)
                      ))
   (let ((default-directory (or dir default-directory)))
-    (robenkleene/safe-open
+    (robenkleene/safe-find-file
      (shell-command-to-string (concat "~/.bin/slug_project "
                                       (shell-quote-argument title))
                               )
@@ -65,7 +65,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-journal ()
   "Open today's journal file."
   (interactive)
-  (robenkleene/safe-open
+  (robenkleene/safe-find-file
    (shell-command-to-string "~/.bin/journal_new_make_default")
    )
   )
@@ -78,7 +78,7 @@ Otherwise, call `backward-kill-word'."
                                              nil
                                              ))
                      ))
-  (robenkleene/safe-open
+  (robenkleene/safe-find-file
    (shell-command-to-string (concat "~/.bin/inbox_new "
                                     (shell-quote-argument title))
                             ))
@@ -100,7 +100,7 @@ Otherwise, call `backward-kill-word'."
   "Make a blog link from the current file."
   (interactive)
   (if (buffer-file-name)
-      (robenkleene/safe-open
+      (robenkleene/safe-find-file
        (shell-command-to-string (concat "~/.bin/jekyll_new_draft -l -f "
                                         (shell-quote-argument buffer-file-name))
                                 )
@@ -112,7 +112,7 @@ Otherwise, call `backward-kill-word'."
   "Make a blog post from the current file."
   (interactive)
   (if (buffer-file-name)
-      (robenkleene/safe-open
+      (robenkleene/safe-find-file
        (shell-command-to-string (concat "~/.bin/jekyll_new_draft -f "
                                         (shell-quote-argument buffer-file-name))
                                 )
@@ -612,7 +612,7 @@ Otherwise, call `backward-kill-word'."
   (shell-command "~/.bin/git_commit_all")
   )
 
-(defun robenkleene/safe-open (file)
+(defun robenkleene/safe-find-file (file)
   "Only open a FILE if it exists."
   (when (file-readable-p file)
     (find-file file))
