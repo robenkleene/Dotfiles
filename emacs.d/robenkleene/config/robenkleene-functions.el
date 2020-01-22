@@ -78,6 +78,12 @@ Otherwise, call `backward-kill-word'."
    )
   )
 
+(defun robenkleene/open-inbox ()
+  "Open inbox directory."
+  (interactive)
+  (find-file "~/Documents/Text/Inbox/")
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "
