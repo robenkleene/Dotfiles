@@ -241,6 +241,12 @@ Otherwise, call `backward-kill-word'."
   (switch-to-buffer-other-window "*shell*")
   (shell))
 
+(defun robenkleene/other-window-eshell ()
+  "Open eshell in other window."
+  (interactive)
+  (switch-to-buffer-other-window "*eshell*")
+  (eshell))
+
 (defun robenkleene/highlight-keywords ()
   "Highlight keywords."
   (interactive)

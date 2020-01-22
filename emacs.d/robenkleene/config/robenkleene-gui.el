@@ -24,6 +24,8 @@
     (add-to-list 'exec-path path-to-prepend))
   )
 
+(setenv "PAGER" "cat")
+
 ;; Start the emacs server if it isn't already running and we're running in
 ;; window mode
 ;; (require 'server)

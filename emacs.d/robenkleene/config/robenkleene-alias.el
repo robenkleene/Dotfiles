@@ -10,6 +10,7 @@
 (defalias 'rg 'robenkleene/rg)
 (defalias 'oi 'robenkleene/edit-init)
 (defalias 'sho 'robenkleene/other-window-shell)
+(defalias 'esho 'robenkleene/other-window-eshell)
 (defalias 'es 'robenkleene/open-emacs-scratch)
 (defalias 'os 'robenkleene/open-markdown-scratch)
 ;; (defalias 'os 'robenkleene/open-scratch-ot/her-window)
