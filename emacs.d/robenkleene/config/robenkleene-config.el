@@ -27,6 +27,8 @@
       backup-by-copying t)  ;; Copy all files, don't rename them.
 (setq vc-make-backup-files t)
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup/")))
+;; Hopefully this gets rid of the files with `#' around them
+(setq create-lockfiles nil)
 
 ;; Show the current directory in the mode line
 (setq-default mode-line-buffer-identification
