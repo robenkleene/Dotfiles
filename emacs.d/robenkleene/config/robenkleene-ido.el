@@ -46,7 +46,7 @@
             )
           recentf-list)
     (robenkleene/safe-find-file
-     (gethash (ido-completing-read "Find z: " ido-list)
+     (gethash (ido-completing-read "Find recent: " ido-list)
               key-to-path))
     )
   )

@@ -97,7 +97,6 @@
 (define-key robenkleene/leader-map (kbd "C-r") 'robenkleene/run)
 (define-key robenkleene/leader-map (kbd "C-e")
   'robenkleene/evaluate-buffer-or-region)
-(define-key robenkleene/leader-map (kbd "o") 'occur)
 (define-key robenkleene/leader-map (kbd "k")
   'robenkleene/wiki-link) ;; This is only for Markdown
 (define-key robenkleene/leader-map (kbd "C-k")
