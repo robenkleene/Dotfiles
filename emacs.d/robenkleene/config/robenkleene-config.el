@@ -205,7 +205,7 @@
 (setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
+(setq flyspell-issue-message-flag nil)
 ;; Mouse
 ;; Double-click instead of single click to open links
 (setq mouse-1-click-follows-link 'double)

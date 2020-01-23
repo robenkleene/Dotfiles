@@ -22,7 +22,6 @@
   (add-hook 'prog-mode-hook 'company-mode)
   )
 
-
 (provide 'robenkleene-company)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

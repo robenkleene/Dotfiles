@@ -2,12 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-hook 'lisp-mode-hook
+(add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (setq-local robenkleene/evaluate-buffer-or-region-function
                         'robenkleene/emacs-lisp-eval-buffer-or-region)
-            )
-          )
+            (make-local-variable 'company-backends)
+            (add-to-list 'company-backends
+                         'company-elisp)
+            ))
 
 (add-hook 'lisp-interaction-mode-hook
           (lambda ()
