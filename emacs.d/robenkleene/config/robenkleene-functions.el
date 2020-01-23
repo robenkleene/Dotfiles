@@ -163,6 +163,7 @@ Otherwise, call `backward-kill-word'."
   "Commit everything in the current repository."
   (interactive)
   (shell-command "~/.bin/sgitt -cp")
+  (other-window 1)
   )
 
 (defun robenkleene/archive-and-delete ()

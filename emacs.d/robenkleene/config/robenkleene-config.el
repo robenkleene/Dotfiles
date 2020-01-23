@@ -110,6 +110,7 @@
 ;;             (setq word-wrap nil)
 ;;             (setq truncate-lines t)))
 
+;; Set `Shell Command Output' buffer to view only
 (define-advice shell-command-on-region (:after (&rest _) my-view-output)
   "Enable `view-mode' in `*Shell Command Output*' buffer."
   (let ((buffer (get-buffer "*Shell Command Output*")))
