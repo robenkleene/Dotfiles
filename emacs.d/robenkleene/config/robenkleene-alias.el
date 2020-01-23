@@ -31,6 +31,7 @@
 (defalias 'gac 'robenkleene/git-commit-all)
 (defalias 'gacm 'robenkleene/git-commit-all-message)
 (defalias 'clear 'desktop-clear)
+(defalias 'sgpt'robenkleene/sgit-push-text-all)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:
