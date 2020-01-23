@@ -8,11 +8,21 @@
   :config
   (define-key markdown-mode-map (kbd "M-{") 'robenkleene/backward-block)
   (define-key markdown-mode-map (kbd "M-}") 'robenkleene/forward-block)
-
+  (defun flyspell-generic-textmode-verify ()
+    "Used for `flyspell-generic-check-word-predicate' in text modes."
+    (let ((f (get-text-property (- (point) 1) 'face)))
+      (not (memq f '(markdown-pre-face
+                     markdown-inline-code-face
+                     markdown-language-keyword-face)))))
+  (setq flyspell-generic-check-word-predicate
+        'flyspell-generic-textmode-verify)
   ;; This isn't working
   ;; (add-hook 'markdown-mode-hook (lambda ()
   ;;                                 ;; Turn on auto-saving
-  ;;                                 (set (make-local-variable 'auto-save-visited-file-name) t)
+  ;;                                 (set
+  ;;                                  (make-local-variable
+  ;;                                   'auto-save-visited-file-name)
+  ;;                                  t)
   ;;                                 (setq-local auto-save-default t)
   ;;                                 (auto-save-mode)
   ;;                                 )
