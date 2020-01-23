@@ -16,10 +16,9 @@ if [[ ! -d "$posts_directory" ]]; then
 fi
 
 shopt -s nullglob
-for markdown_file in $drafts_directory/*.md; do
+for markdown_file in "$drafts_directory"/*.md; do
   mv -n "$markdown_file" "$posts_directory"
   if [[ -f "$markdown_file" ]]; then
     echo "Moving $markdown_file failed" >&2
   fi
 done
-

@@ -122,6 +122,13 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/blog-publish-drafts ()
+  "Commit everything in the current repository."
+  (interactive)
+  (shell-command "~/.bin/blog_publish_drafts")
+  (robenkleene/kill-removed-buffers)
+  )
+
 (defun robenkleene/blog-post-with-file ()
   "Make a blog post from the current file."
   (interactive)
@@ -133,6 +140,25 @@ Otherwise, call `backward-kill-word'."
        )
     )
   )
+
+
+(defun robenkleene/buffer-backed-by-file-p (buffer)
+  "Return non-nil if the BUFFER is backed by a file."
+  (let ((backing-file (buffer-file-name buffer)))
+    (if (buffer-modified-p buffer)
+        t
+      (if backing-file
+          (file-exists-p (buffer-file-name buffer))
+        t))))
+
+(defun robenkleene/kill-removed-buffers ()
+  "Kill buffers whose underlying file has moved."
+  (interactive)
+  (let
+      ((to-kill
+        (-remove 'robenkleene/buffer-backed-by-file-p (buffer-list))))
+    (mapc 'kill-buffer to-kill)
+    (message "Killed %s buffers" (length to-kill))))
 
 (defun robenkleene/archive-and-delete ()
   "Make a wiki link from a file named after the region."
