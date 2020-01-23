@@ -103,6 +103,20 @@
 ;; Don't split words when wrapping
 (setq-default word-wrap t)
 
+;; Never truncate lines in minibuffer
+;; This doesn't work
+;; (add-hook 'minibuffer-setup-hook
+;;           (lambda ()
+;;             (setq word-wrap nil)
+;;             (setq truncate-lines t)))
+
+(define-advice shell-command-on-region (:after (&rest _) my-view-output)
+  "Enable `view-mode' in `*Shell Command Output*' buffer."
+  (let ((buffer (get-buffer "*Shell Command Output*")))
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
+        (view-mode)))))
+
 ;; Disable the bell completely, it's really annoying when the bell
 ;; sounds when doing a deterministic cancel (like `C-g')
 (setq ring-bell-function 'ignore)
