@@ -10,7 +10,7 @@
 ;; Ergonomic Emacs
 ;; Basic
 ;; (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
-(define-key key-translation-map (kbd "s-s") (kbd "C-s"))
+;; (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
 ;; (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
 (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
 (define-key key-translation-map (kbd "s-f") (kbd "C-f"))
@@ -22,6 +22,8 @@
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-/") 'comment-dwim)
+
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-v") 'yank)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-a")

@@ -3,10 +3,7 @@
 ;;; Code:
 
 ;; Add a second leader key
-(define-key key-translation-map (kbd "M-o") (kbd "C-c"))
-
-(define-key key-translation-map (kbd "M-o") (kbd "C-c"))
-
+;; (define-key key-translation-map (kbd "M-o") (kbd "C-c"))
 (define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
 (define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
 
@@ -49,7 +46,9 @@
 
 ;; General
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'imenu)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'imenu)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'next-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-o") 'previous-buffer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
   'robenkleene/ido-recursive-find-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
@@ -73,10 +72,10 @@
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 (define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
-(define-key robenkleene/leader-map (kbd "i") 'next-buffer)
-(define-key robenkleene/leader-map (kbd "o") 'previous-buffer)
+(define-key robenkleene/leader-map (kbd "i") 'imenu)
+;; (define-key robenkleene/leader-map (kbd "i") 'next-buffer)
+;; (define-key robenkleene/leader-map (kbd "o") 'previous-buffer)
 (define-key robenkleene/leader-map (kbd "l") 'occur)
-;; (define-key robenkleene/leader-map (kbd "i") 'imenu)
 ;; (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 (define-key robenkleene/leader-map (kbd "M-e")
   'robenkleene/ido-recursive-insert-file)
