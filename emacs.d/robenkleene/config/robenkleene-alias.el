@@ -16,7 +16,6 @@
 ;; (defalias 'os 'robenkleene/open-scratch-ot/her-window)
 (defalias 'doc 'robenkleene/documentation-view)
 (defalias 'doce 'robenkleene/documentation-edit)
-(defalias 'slug 'robenkleene/slug-project)
 (defalias 'tags 'robenkleene/generate-tags)
 (defalias 'scw 'robenkleene/source-control-open-web)
 (defalias 'scwp (lambda ()
@@ -33,6 +32,10 @@
 (defalias 'gacm 'robenkleene/git-commit-all-message)
 (defalias 'clear 'desktop-clear)
 (defalias 'sgpt'robenkleene/sgit-push-text-all)
+
+;; Longer
+(defalias 'slug-project 'robenkleene/slug-project)
+(defalias 'archive-current-file 'robenkleene/archive-current-file)
 
 (provide 'robenkleene-alias)
 ;; Local Variables:
