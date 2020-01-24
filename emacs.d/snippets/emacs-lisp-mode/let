@@ -1,6 +1,6 @@
-# -*- mode: snippet -*-
-# name: let
 # key: let
+# name: let
 # --
-let ((${1:variable} ${2:value}))
-  (message "$1 = %${3:s}." $1)
+(let ((${1:variable-name} ${2:"value"}))
+  (${3:message variable-name})
+  )
