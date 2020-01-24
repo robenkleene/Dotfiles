@@ -11,7 +11,7 @@
 ;; Basic
 ;; (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
-(define-key key-translation-map (kbd "s-x") (kbd "C-x"))
+;; (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
 (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
 (define-key key-translation-map (kbd "s-f") (kbd "C-f"))
 (define-key key-translation-map (kbd "s-r") (kbd "C-r"))
@@ -44,9 +44,9 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-q")
   'save-buffers-kill-terminal)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "s-c")
-;;   'kill-ring-save)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-c")
+  'kill-ring-save)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "C-s-f")
 ;;   'toggle-frame-fullscreen)
