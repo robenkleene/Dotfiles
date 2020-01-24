@@ -172,6 +172,23 @@ Otherwise, call `backward-kill-word'."
   (other-window 1)
   )
 
+(defun robenkleene/archive-current-file ()
+  "Archive the current file."
+  (interactive)
+  (if (buffer-file-name)
+      (let ((path buffer-file-name))
+        (progn
+          (kill-this-buffer)
+          (shell-command-to-string
+           (concat "~/.bin/backup_file "
+                   (shell-quote-argument path))
+           )
+          (robenkleene/kill-removed-buffers)
+          )
+        )
+    )
+  )
+
 (defun robenkleene/archive-and-delete ()
   "Make a wiki link from a file named after the region."
   (interactive)
