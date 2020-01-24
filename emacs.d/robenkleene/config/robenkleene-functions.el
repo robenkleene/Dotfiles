@@ -41,19 +41,20 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/slug-project (title &optional dir)
+(defun robenkleene/slug-project (title dir)
   "Create a new slug project with TITLE in DIR."
-  (interactive (list (read-from-minibuffer "Title: "
-                                           (if (use-region-p)
-                                               (buffer-substring (mark) (point))
-                                             nil
-                                             ))
-                     (read-directory-name "Directory: "
-                                          nil
-                                          default-directory
-                                          t)
-                     ))
-  (let ((default-directory (or dir default-directory)))
+  (interactive
+   (list (read-from-minibuffer "Title: "
+                               (if (use-region-p)
+                                   (buffer-substring (mark) (point))
+                                 nil
+                                 ))
+         (if current-prefix-arg
+             (read-directory-name "Directory: ")
+           (expand-file-name default-directory)
+           )
+         ))
+  (let ((default-directory dir))
     (robenkleene/safe-find-file
      (shell-command-to-string (concat "~/.bin/slug_project "
                                       (shell-quote-argument title))
