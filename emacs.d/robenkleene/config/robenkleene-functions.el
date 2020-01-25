@@ -611,6 +611,12 @@ Otherwise, call `backward-kill-word'."
   (find-file "~/Documents/Text/Scripts/Scratch.md")
   )
 
+(defun robenkleene/open-development-scratch ()
+  "Open scratch file for current buffer."
+  (interactive)
+  (find-file "~/Development/Scratch/")
+  )
+
 (defun robenkleene/open-scratch-for-file ()
   "Open scratch file for current buffer."
   (interactive)
