@@ -5,18 +5,31 @@
 (eval-when-compile (require 'use-package))
 (use-package markdown-mode
   :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  :bind
+  (([remap markdown-enter-key] . robenkleene/markdown-enter-key))
+  (:map markdown-mode-map
+        ("M-{" . robenkleene/backward-block)
+        ("M-}" . robenkleene/forward-block)
+        )
   :config
-  (define-key markdown-mode-map (kbd "M-{") 'robenkleene/backward-block)
-  (define-key markdown-mode-map (kbd "M-}") 'robenkleene/forward-block)
-  (defun flyspell-generic-textmode-verify ()
+  (defun robenkleene/flyspell-generic-textmode-verify ()
     "Used for `flyspell-generic-check-word-predicate' in text modes."
     (let ((f (get-text-property (- (point) 1) 'face)))
       (not (memq f '(markdown-pre-face
                      markdown-inline-code-face
                      markdown-language-keyword-face)))))
   (setq flyspell-generic-check-word-predicate
-        'flyspell-generic-textmode-verify)
-  ;; This isn't working
+        'robenkleene/flyspell-generic-textmode-verify)
+  (defun robenkleene/markdown-enter-key ()
+    "Follow links or enter."
+    (interactive)
+    (if (markdown-link-p)
+        (markdown-follow-thing-at-point nil)
+      (markdown-enter-key))
+    )
+
+  ;; Automatically auto-save markdown files
+  ;; This doesn't work
   ;; (add-hook 'markdown-mode-hook (lambda ()
   ;;                                 ;; Turn on auto-saving
   ;;                                 (set
