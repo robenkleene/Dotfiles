@@ -28,6 +28,10 @@
 (setq vc-make-backup-files t)
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup/")))
 ;; Hopefully this gets rid of the files with `#' around them
+;; This doesn't fix all `#' files, this for lock files specified with
+;; `.#filename'
+;; Auto-save files are specified with `#filename#', it's unclear how
+;; to organize those.
 (setq create-lockfiles nil)
 
 ;; Show the current directory in the mode line
