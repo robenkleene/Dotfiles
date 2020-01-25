@@ -7,7 +7,7 @@
    ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
  '(package-selected-packages
    (quote
-    (company inf-ruby ido-completing-read+ anzu magit csv-mode ledger-mode iedit bind-key use-package smartparens page-break-lines fish-mode markdown-mode swift-mode nodejs-repl js2-mode slime fill-column-indicator fasd rainbow-delimiters projectile yasnippet flycheck macrostep rainbow-mode magit-filenotify bind-map wgrep smex pbcopy jade-mode enh-ruby-mode editorconfig better-defaults aggressive-indent)))
+    (csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex pbcopy jade-mode aggressive-indent)))
  '(vc-annotate-color-map
    (quote
     ((20 . "#F92672")
