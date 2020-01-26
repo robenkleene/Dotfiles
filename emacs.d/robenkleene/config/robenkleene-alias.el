@@ -33,7 +33,8 @@
 (defalias 'gac 'robenkleene/git-commit-all)
 (defalias 'gacm 'robenkleene/git-commit-all-message)
 (defalias 'clear 'desktop-clear)
-(defalias 'sgpt'robenkleene/sgit-push-text-all)
+(defalias 'sgpt 'robenkleene/sgit-push-text-all)
+(defalias 'urls 'robenkleene/urls-open)
 
 ;; Longer
 (defalias 'slug-project 'robenkleene/slug-project)

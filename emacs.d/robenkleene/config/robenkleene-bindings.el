@@ -66,6 +66,8 @@
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map
   (kbd "C-x s-s") 'save-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-l")
+  'robenkleene/urls-open)
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
