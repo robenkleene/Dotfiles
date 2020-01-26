@@ -23,11 +23,14 @@
   (defun robenkleene/markdown-enter-key ()
     "Follow links or enter."
     (interactive)
-    (if (markdown-link-p)
-        (markdown-follow-thing-at-point nil)
-      (markdown-enter-key))
+    (if (eolp)
+        (markdown-enter-key)
+      (if (markdown-link-p)
+          (markdown-follow-thing-at-point nil)
+        (markdown-enter-key))
+      )
     )
-
+  
   ;; Automatically auto-save markdown files
   ;; This doesn't work
   ;; (add-hook 'markdown-mode-hook (lambda ()
