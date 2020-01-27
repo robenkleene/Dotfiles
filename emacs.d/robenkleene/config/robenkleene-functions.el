@@ -71,38 +71,10 @@ Otherwise, call `backward-kill-word'."
    )
   )
 
-(defun robenkleene/new-tweet ()
-  "Open a new tweet file."
-  (interactive)
-  (robenkleene/safe-find-file
-   (shell-command-to-string "~/.bin/markdown_tweet")
-   )
-  )
-
-(defun robenkleene/open-inbox ()
-  "Open inbox directory."
-  (interactive)
-  (find-file "~/Documents/Text/Inbox/")
-  )
-
 (defun robenkleene/open-home ()
   "Open inbox directory."
   (interactive)
   (find-file "~/")
-  )
-
-(defun robenkleene/new-inbox-document (title)
-  "Create a new inbox document with TITLE at DIR."
-  (interactive (list (read-from-minibuffer "Title: "
-                                           (if (use-region-p)
-                                               (buffer-substring (mark) (point))
-                                             nil
-                                             ))
-                     ))
-  (robenkleene/safe-find-file
-   (shell-command-to-string (concat "~/.bin/inbox_new "
-                                    (shell-quote-argument title))
-                            ))
   )
 
 (defun robenkleene/wiki-link ()
@@ -603,10 +575,56 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/tweets ()
+  "Open tweets directory or make new tweet."
+  (interactive)
+  (if current-prefix-arg
+      (robenkleene/new-tweet)
+    (robenkleene/open-tweets)
+    )
+  )
+
 (defun robenkleene/open-tweets ()
   "Open tweets directory."
   (interactive)
   (find-file "~/Documents/Text/Writing/Tweets/")
+  )
+
+(defun robenkleene/new-tweet ()
+  "Open a new tweet file."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-command-to-string "~/.bin/markdown_tweet")
+   )
+  )
+
+(defun robenkleene/inbox ()
+  "Open inbox directory or make new inbox document."
+  (interactive)
+  (if current-prefix-arg
+      (call-interactively 'robenkleene/new-inbox-document)
+    (robenkleene/open-inbox)
+    )
+  )
+
+(defun robenkleene/open-inbox ()
+  "Open inbox directory."
+  (interactive)
+  (find-file "~/Documents/Text/Inbox/")
+  )
+
+(defun robenkleene/new-inbox-document (title)
+  "Create a new inbox document with TITLE at DIR."
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (robenkleene/safe-find-file
+   (shell-command-to-string (concat "~/.bin/inbox_new "
+                                    (shell-quote-argument title))
+                            ))
   )
 
 (defun robenkleene/open-emacs-scratch ()
