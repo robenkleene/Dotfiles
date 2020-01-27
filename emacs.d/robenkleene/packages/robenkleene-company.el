@@ -4,9 +4,17 @@
 
 (eval-when-compile (require 'use-package))
 (use-package company
+  :bind
+  (:map company-active-map
+        ("C-p" . company-select-previous-or-abort)
+        ("C-n" . company-select-next-or-abort)
+        )
+  (:map company-search-map
+        ("C-p" . company-select-previous-or-abort)
+        ("C-n" . company-select-next-or-abort)
+        )
   :init
   (setq company-idle-delay .1)
-  ;; (setq company-idle-delay .1)
   ;; `company-capf': built-in auto-complete
   (setq company-backends '((company-keywords
                             company-semantic
