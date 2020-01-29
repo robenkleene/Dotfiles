@@ -1,4 +1,4 @@
-personal_ws-1.1 en 57 
+personal_ws-1.1 en 59 
 APIs
 ARKit
 AirPods
@@ -19,6 +19,7 @@ Luminance
 Mailchimp
 OmniFocus
 Overton
+QuarkXPress
 REPL
 Refractions
 Repla
@@ -55,4 +56,5 @@ submodule
 submodules
 symlink
 todo
+transformative
 vanishingly
