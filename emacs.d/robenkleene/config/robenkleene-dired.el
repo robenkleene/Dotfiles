@@ -15,7 +15,7 @@
     )
   ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
   (global-set-key (kbd "C-x j") 'dired-jump)
-  
+
   (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
   ;; Suppress error message
@@ -40,7 +40,16 @@
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
-            ))
+            (setq-local robenkleene/archive-function
+                        (lambda ()
+                          (interactive)
+                          (dired-do-shell-command
+                           "~/.bin/backup_file"
+                           nil
+                           (dired-get-marked-files))
+                          ))
+            )
+          )
 
 (provide 'robenkleene-dired)
 ;; Local Variables:

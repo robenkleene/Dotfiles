@@ -162,21 +162,25 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defvar-local robenkleene/archive-function nil)
 (defun robenkleene/archive-and-delete ()
   "Make a wiki link from a file named after the region."
   (interactive)
-  (if (use-region-p)
-      (progn
-        (shell-command-on-region (region-beginning)
-                                 (region-end)
-                                 "~/.bin/backup_text -m")
-        (delete-region (region-beginning) (region-end))
-        )
-    (robenkleene/archive-current-file))
+  (if (bound-and-true-p robenkleene/archive-function)
+      (call-interactively robenkleene/archive-function)
+    (if (use-region-p)
+        (progn
+          (shell-command-on-region (region-beginning)
+                                   (region-end)
+                                   "~/.bin/backup_text -m")
+          (delete-region (region-beginning) (region-end))
+          )
+      (robenkleene/archive-current-file))
+    )
   )
 
 (defun robenkleene/archive ()
-  "Make a wiki link from a file named after the region."
+  "Archive region."
   (interactive)
   (if (use-region-p)
       (shell-command-on-region (region-beginning)
