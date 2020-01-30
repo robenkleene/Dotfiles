@@ -85,8 +85,8 @@ while read i; do
 done
 endsnippet
 snippet for "For loop" b
-for i in ${1:*}; do
-  ${0:echo $i}
+for ${1:path} in ${2:"\$@"}; do
+  echo "\$$1"
 done
 endsnippet
 snippet fordir "For loop directories" b
