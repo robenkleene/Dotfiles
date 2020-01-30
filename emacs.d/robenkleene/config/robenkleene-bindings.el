@@ -106,6 +106,8 @@
   'robenkleene/web-search)
 (define-key robenkleene/leader-map (kbd "c")
   'robenkleene/title-case)
+(define-key robenkleene/leader-map (kbd "*")
+  'isearch-forward-symbol-at-point)
 
 ;; Window Management
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
