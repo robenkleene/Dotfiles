@@ -247,6 +247,8 @@
    `(dired-directory ((t (:inherit link :underline nil))))
    `(dired-header ((t (:inherit rk-prompt))))
    `(dired-ignored ((t (:inherit rk-comment))))
+   `(dired-mark ((t (:inherit rk-comment))))
+   `(dired-marked ((t (:inherit rk-warning :underline nil))))
 
    ;;;; ediff
    '(ediff-current-diff-A ((t (:inherit rk-highlight-line))))
