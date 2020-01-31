@@ -34,6 +34,10 @@
 ;; to organize those.
 (setq create-lockfiles nil)
 
+
+;; Suppress message when saving
+(setq save-silently t)
+
 ;; Show the current directory in the mode line
 (setq-default mode-line-buffer-identification
               (let ((orig (car mode-line-buffer-identification)))
