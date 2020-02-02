@@ -354,3 +354,7 @@ add_common_directories() {
   fasd -A ~/Development
   fasd -A ~/Documentation
 }
+
+yank_test_variable() {
+  test_variable=$(cat)
+}

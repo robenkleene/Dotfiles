@@ -131,7 +131,7 @@ alias doce='fzf_documentation_editor'
 alias ptv='echo $test_variable'
 # The `|| true` prevents an exit status of 1 if the output does not end in a
 # new line
-alias ytv='read test_variable || true'
+alias ytv='yank_test_variable'
 alias ctv='safepaste | read test_variable || true'
 
 # `git`
