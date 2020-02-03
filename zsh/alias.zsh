@@ -174,3 +174,5 @@ alias tags="generate_tags"
 
 # Journal
 alias journal="journal_new_make_default_edit"
+alias writing="$VIM_COMMAND ~/Text/writing/README.md"
+alias backup="backup_file"
