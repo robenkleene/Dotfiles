@@ -358,3 +358,12 @@ add_common_directories() {
 yank_test_variable() {
   test_variable=$(cat)
 }
+
+inbox() {
+  title="$1"
+  if [[ -z "$title" ]]; then
+    cd ~/Documents/Text/Inbox || return
+  else
+    inbox_new_edit "$title"
+  fi
+}

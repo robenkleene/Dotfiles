@@ -174,4 +174,3 @@ alias tags="generate_tags"
 
 # Journal
 alias journal="journal_new_make_default_edit"
-alias inbox="inbox_new_edit"
