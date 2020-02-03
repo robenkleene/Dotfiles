@@ -74,6 +74,9 @@ command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 " Journal
 command! JournalNew :call commands#JournalNew()
 
+" Inbox
+command! -nargs=? Inbox :call commands#Inbox(<q-args>)
+
 " Lint
 command! Lint :call commands#Lint()
 
@@ -99,4 +102,3 @@ command! ProfileEnd :call commands#ProfileEnd()
 
 " Source Control
 command! SourceControlWeb :call commands#SourceControlWeb()
-

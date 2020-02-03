@@ -46,6 +46,21 @@ function! commands#Cdg(command) abort
   endif
 endfunction
 
+" Inbox
+function! commands#Inbox(...) abort
+  let l:title = get(a:, 1, 0)
+  if empty(l:title)
+    if exists(':Dirvish')
+      execute 'Dirvish ~/Documents/Text/Inbox/'
+    else
+      execute 'Explore ~/Documents/Text/Inbox/'
+    endif
+  else
+    let l:filename = system('~/.bin/inbox_new_edit '.shellescape(title))
+    execute 'edit '.l:filename
+  endif
+endfunction
+
 " `rg`
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg

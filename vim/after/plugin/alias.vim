@@ -28,3 +28,4 @@ Alias Scw SourceControlWeb
 Alias Snew NewScratch
 Alias Svnew VnewScratch
 Alias Vsnew VnewScratch
+Alias Journal JournalNew
