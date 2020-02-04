@@ -75,7 +75,7 @@ command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 command! JournalNew :call commands#JournalNew()
 
 " Inbox
-command! -nargs=? Inbox :call commands#Inbox(<q-args>)
+command! -nargs=? Inbox :call commands#Inbox(<args>)
 
 " Archive
 command! Archive :call commands#Archive()
