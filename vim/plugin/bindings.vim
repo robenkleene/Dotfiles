@@ -70,7 +70,7 @@ nnoremap <leader>ot :edit test.log<CR>
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 " nnoremap <M-w> :set wrap!<CR>
-nmap <M-w> <C-w>
+" nmap <M-w> <C-w>
 
 " Toggle Seplling
 " Local to window
@@ -270,3 +270,5 @@ noremap <localleader>p "0p
 vnoremap <localleader>p "0p
 noremap <leader>p "0p
 vnoremap <leader>p "0p
+nnoremap <silent> <M-n> :cn<CR>
+nnoremap <silent> <M-p> :cp<CR>
