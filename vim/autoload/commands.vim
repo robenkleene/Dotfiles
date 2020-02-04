@@ -56,9 +56,20 @@ function! commands#Inbox(...) abort
       execute 'Explore ~/Documents/Text/Inbox/'
     endif
   else
-    let l:filename = system('~/.bin/inbox_new_edit '.shellescape(title))
+    let l:filename = system('~/.bin/inbox_new '.shellescape(l:title))
     execute 'edit '.l:filename
   endif
+endfunction
+
+" Archive
+function! commands#Archive() abort
+  if &modified
+    echoerr "Buffer is modified"
+    return
+  endif
+  let message = system('~/.bin/backup_file '.fnameescape(expand('%:p')))
+  echo message
+  bdelete!
 endfunction
 
 " `rg`

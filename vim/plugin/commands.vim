@@ -77,6 +77,9 @@ command! JournalNew :call commands#JournalNew()
 " Inbox
 command! -nargs=? Inbox :call commands#Inbox(<q-args>)
 
+" Archive
+command! Archive :call commands#Archive()
+
 " Lint
 command! Lint :call commands#Lint()
 
