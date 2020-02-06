@@ -367,3 +367,7 @@ inbox() {
     inbox_new_edit "$title"
   fi
 }
+
+tweets() {
+  cd ~/Documents/Text/Writing/Tweets || return
+}
