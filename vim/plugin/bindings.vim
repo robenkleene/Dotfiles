@@ -169,8 +169,8 @@ nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " Replace
 " Can't delete the word boundary because that will delete some characters if we made a selection first.
-nnoremap <leader>r :%s//<C-r>/<C-b><right><right><right><right><right><right><BS><BS><C-e>
-vnoremap <leader>r :s//<C-r>/<C-b><right><right><right><right><right><right><right><right><right><right><BS><BS><C-e>
+" nnoremap <leader>r :%s//<C-r>/<C-b><right><right><right><right><right><right><BS><BS><C-e>
+" vnoremap <leader>r :s//<C-r>/<C-b><right><right><right><right><right><right><right><right><right><right><BS><BS><C-e>
 
 " Panes
 " The problem with `tmux` Vim navigator is that if Vim is opened form a
