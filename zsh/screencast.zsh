@@ -1,2 +1,2 @@
-source ~/.zsh/ui.zsh
+PS1='$ '
 clear
