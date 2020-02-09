@@ -40,3 +40,6 @@ node_modules
 # Emacs
 flycheck_*
 \#*\#
+
+# C
+a.out
