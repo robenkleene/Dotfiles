@@ -7,10 +7,12 @@ setlocal path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platf
 " list if it fails) so running is two steps
 " let b:RunMakePrg = "cc ".fnameescape(expand('%:p')). " && ./a.out"
 " set makeprg=cc\ %
-let &makeprg = 'cd '.fnameescape(expand('%:p:h')).' && cc '.fnameescape(expand('%:t'))
+" let &makeprg = 'cd '.fnameescape(expand('%:p:h')).' && cc '.fnameescape(expand('%:t'))
+set makeprg=cd\ %:p:h\ &&\ cc\ %:t
 nnoremap <buffer> <localleader>r :make<CR>:call <SID>Run()<CR>
 function! s:Run() abort
   if len(getqflist()) == 0
-    exe '!'.fnameescape(expand('%:p:h')).'/a.out'
+    " exe '!'.fnameescape(expand('%:p:h')).'/a.out'
+    !cd %:p:h && ./a.out
   endif
 endfunction
