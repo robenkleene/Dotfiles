@@ -8,7 +8,7 @@ for filepath in "$@"; do
   filepath=$filepath
   filename=$(basename "$filepath")
   if [[ ! -e "$filepath" ]]; then
-    echo "No valid no file at $filepath"
+    echo "No valid file at $filepath"
     exit 1
   fi
   filename_no_ext=${filename%.*}
