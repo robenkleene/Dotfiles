@@ -11,5 +11,6 @@ let b:RunErrorFormat =
       \ '%*[\ ]at\ %f:%l:%c,'.
       \ '%Z%p^,%A%f:%l,%C%m,'.
       \ '%-G%.%#'
+let b:FormatPrg = "prettier --parser babel"
 
 setlocal foldmethod=indent

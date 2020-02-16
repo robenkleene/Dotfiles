@@ -1,3 +1,5 @@
+let b:FormatPrg = "prettier --parser markdown"
+
 " General
 " Turning this on was causing performance issues when editing markdown files,
 " but it disables folds
