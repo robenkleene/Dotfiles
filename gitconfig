@@ -53,3 +53,6 @@
 	prompt = false
 [difftool "wstats"]
 	cmd = wdiff --statistics \"$LOCAL\" \"$REMOTE\" | tail -2
+[user]
+	name = Roben Kleene
+	email = contact@robenkleene.com
