@@ -1,3 +1,5 @@
+setlocal suffixesadd=.js
+
 let b:RunMakePrg = "node ".fnameescape(expand('%:p'))
 let b:RunErrorFormat =
       \ '%AError:\ %m,'.
