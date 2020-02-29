@@ -25,7 +25,6 @@ nnoremap <silent> <buffer> <localleader>lr :set opfunc=operators#LinkReplace<CR>
 vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
 
 nnoremap <buffer> <localleader>W :!open -a "iA Writer.app" "%:p"<CR>\|:bd<CR>
-nnoremap <buffer> <leader>W :!open -a "iA Writer.app" "%:p"<CR>\|:bd<CR>
 
 " Convert
 if exists(':terminal')

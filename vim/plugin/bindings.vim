@@ -222,6 +222,7 @@ vnoremap <C-w><C-p> gT
 " Close with `bd` after open to avoid the possibility of data loss when
 " editing with a different program
 nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
+nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>
 
 " Quickfix
 nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
