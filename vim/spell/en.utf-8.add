@@ -134,3 +134,5 @@ TypeScript
 Webpack
 Eevee
 shader
+BSDF
+IOR
