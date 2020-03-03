@@ -149,6 +149,7 @@ abbreviations=(
 
 # Web Deploy
 'wd' 'web_deploy'
+'wdd' 'web_deploy -s aresdev'
 )
 
 # These abbreviations work everywhere
