@@ -135,3 +135,4 @@ bindkey -M isearch "^[^?" backward-kill-word
 bindkey -M isearch "^[^H" backward-kill-word
 bindkey -M isearch '^W' backward-kill-word
 bindkey -M isearch '^U' backward-kill-line
+bindkey -M isearch '^I' accept-search
