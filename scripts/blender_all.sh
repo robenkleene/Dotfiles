@@ -4,5 +4,5 @@ set -e
 
 for file in *.blend; do
   filename="${file%.*}"
-  blender --background "${file}-" --render-output //"$filename" "$@"
+  blender --background "${file}" --render-output //"${filename}-" "$@"
 done
