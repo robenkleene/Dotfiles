@@ -35,9 +35,14 @@ export BAT_COMMAND=bat
 # Color in `ls`
 export CLICOLOR=1
 
-# This method of setting the path prevents duplicate entries.
-typeset -U path
-path=(~/.fzf/bin ~/.bin /usr/local/bin $path[@])
+if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
+  # The other method doesn't work in Apple Terminal for some reason?
+  export PATH=~/.fzf/bin:~/.bin:/usr/local/bin:$PATH
+else
+  # This method of setting the path prevents duplicate entries.
+  typeset -U path
+  path=(~/.fzf/bin ~/.bin /usr/local/bin $path[@])
+fi
 
 # Editor
 export VISUAL="$VIM_COMMAND"
