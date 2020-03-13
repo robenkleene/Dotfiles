@@ -66,6 +66,12 @@ __fzf_reset_finish() {
 # Widgets
 
 _fzf_cd_widget() {
+  if [[ ! $PWD/ = $HOME/*/* ]]; then
+    echo "Only use in a subdirectory of home" >&2
+    zle redisplay
+    return 1
+  fi
+
   local cmd=$FZF_ALT_C_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
@@ -94,6 +100,12 @@ zle -N _fzf_cd_widget
 bindkey '\ec' _fzf_cd_widget
 
 _fzf_editor_widget() {
+  if [[ ! $PWD/ = $HOME/*/* ]]; then
+    echo "Only use in a subdirectory of home" >&2
+    zle redisplay
+    return 1
+  fi
+
   local cmd=$FZF_CTRL_T_COMMAND
 
   if [[ -n "$LBUFFER" ]]; then
