@@ -4,7 +4,7 @@ endif
 
 Alias G Git
 Alias A Rg
-Alias Af Rg\ -F
+Alias Rgf Rg\ -F
 
 " Compilers
 Alias CXC compiler\ xcodebuild
