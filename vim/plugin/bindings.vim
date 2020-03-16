@@ -221,8 +221,12 @@ vnoremap <C-w><C-p> gT
 " Open
 " Close with `bd` after open to avoid the possibility of data loss when
 " editing with a different program
-nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
-nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>
+" Trying just quiting becaue that seems like what we usually want.
+" nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
+" nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>
+nnoremap <localleader>O :!open "%:p"<CR>\|:qa<CR>
+nnoremap <localleader>C :!code "%:p"<CR>\|:qa<CR>
+nnoremap <leader>C :!code <C-r>=shellescape(getcwd())<CR><CR>\|:qa<CR>
 
 " Quickfix
 nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
