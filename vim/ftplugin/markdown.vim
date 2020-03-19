@@ -19,7 +19,6 @@ set wrap
 
 nnoremap <buffer> <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
 nnoremap <buffer> <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
-" nnoremap <localleader>t :.!markdown-title "%"<CR>
 
 nnoremap <silent> <buffer> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
 vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
