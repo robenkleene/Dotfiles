@@ -105,3 +105,6 @@ command! ProfileEnd :call commands#ProfileEnd()
 
 " Source Control
 command! SourceControlWeb :call commands#SourceControlWeb()
+
+" Quit
+command! QuitIfNoBuffers :call commands#QuitIfNoBuffers()

@@ -292,3 +292,9 @@ endfunction
 function! commands#SourceControlWeb() abort
   echo system('~/.bin/source_control_open_site')
 endfunction
+
+function! commands#QuitIfNoBuffers() abort
+  if (tabpagenr('$') == 1 && winnr() == 1 && len(expand('%'))==0)
+    q!
+  endif
+endfunction

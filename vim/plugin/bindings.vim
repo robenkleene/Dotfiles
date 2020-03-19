@@ -224,9 +224,9 @@ vnoremap <C-w><C-p> gT
 " Trying just quiting becaue that seems like what we usually want.
 " nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
 " nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>
-nnoremap <localleader>O :!open "%:p"<CR>\|:qa<CR>
-nnoremap <localleader>C :!code "%:p"<CR>\|:qa<CR>
-nnoremap <leader>C :!code <C-r>=shellescape(getcwd())<CR><CR>\|:qa<CR>
+nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
+nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
+nnoremap <leader>C :!code <C-r>=shellescape(getcwd())<CR><CR>\|:bd<CR>:QuitIfNoBuffers<CR>
 
 " Quickfix
 nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
