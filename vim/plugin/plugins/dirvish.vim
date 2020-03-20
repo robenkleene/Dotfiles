@@ -2,6 +2,9 @@ augroup dirvish_config
   autocmd!
   autocmd FileType dirvish nnoremap <silent><buffer>gh :<C-u>DirvishToggleHidden<CR>:Dirvish %<CR>
   autocmd FileType dirvish nnoremap <buffer><silent> <C-l> :Dirvish %<CR>:nohlsearch<CR>
+  " Adding `:Dirvish %<CR>` fixes an issue when doing `cl` followed by hitting
+  " enter on a file or directory
+  autocmd FileType dirvish nnoremap <buffer><silent> cl :lcd %:p:h<CR>:Dirvish %<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>m :call <SID>SetupCommandOnFile("mv")<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>d :call <SID>SetupRemoveCommandOnFile()<CR>
   " autocmd FileType dirvish nnoremap <buffer><localleader>c :call <SID>SetupCommandOnFile("cp")<CR>
