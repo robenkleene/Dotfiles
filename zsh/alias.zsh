@@ -154,7 +154,7 @@ alias scwp='source_control_open_site -p'
 alias sgpt='sgitt -cp'
 alias sglt='sgitt -l'
 alias sgla='git_pull_all'
-alias gcu='git add -A :/ && git commit -m "Update"'
+alias gcu='git_commit_update'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'

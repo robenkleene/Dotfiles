@@ -29,3 +29,4 @@ Alias Snew NewScratch
 Alias Svnew VnewScratch
 Alias Vsnew VnewScratch
 Alias Journal JournalNew
+Alias Gcu !git_commit_update
