@@ -2,11 +2,32 @@
 
 set -e
 
-directory="$1"
+while getopts ":t:d:h" option; do
+  case "$option" in
+    t)
+      title="$OPTARG"
+      ;;
+    d)
+      directory="$OPTARG"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
 if [[ -z "$directory" ]]; then
   directory="$PWD"
 fi
-title="$2"
 
 if [[ -z "$title" ]]; then
   text=$(cat)

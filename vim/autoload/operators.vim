@@ -54,13 +54,13 @@ function! operators#MarkdownWikiLink(type, ...) abort
 
   if a:0
     " Visual
-    silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_wiki_link '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
+    silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_wiki_link -d '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
   elseif a:type == 'line' " Line
     " Line
-    silent exe "normal! '[V']c\<C-r>=system('~/.bin/markdown_wiki_link '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/markdown_wiki_link -d '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
   else
     " Character
-    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/markdown_wiki_link '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/markdown_wiki_link -d '.fnameescape(expand(expand('%:h'))),@@.\"\\n\")\<CR>\<ESC>"
   endif
 
   let @@ = reg_save
