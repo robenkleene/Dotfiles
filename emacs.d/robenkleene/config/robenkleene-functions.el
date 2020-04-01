@@ -56,7 +56,7 @@ Otherwise, call `backward-kill-word'."
          ))
   (let ((default-directory dir))
     (robenkleene/safe-find-file
-     (shell-command-to-string (concat "~/.bin/slug_project "
+     (shell-command-to-string (concat "~/.bin/slug_project -t "
                                       (shell-quote-argument title))
                               )
      )

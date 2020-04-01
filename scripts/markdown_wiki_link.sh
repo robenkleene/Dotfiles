@@ -11,7 +11,7 @@ while getopts ":t:d:h" option; do
       directory="$OPTARG"
       ;;
     h)
-      echo "Usage: command [-hf] [-p <file_path>]"
+      echo "Usage: command [-h] [-t <title>] [-d <directory>]"
       exit 0
       ;;
     :)
@@ -27,6 +27,11 @@ done
 
 if [[ -z "$directory" ]]; then
   directory="$PWD"
+fi
+
+if [[ ! -d "$directory" ]]; then
+  echo "$directory is not a directory" >&2
+  exit 1
 fi
 
 if [[ -z "$title" ]]; then

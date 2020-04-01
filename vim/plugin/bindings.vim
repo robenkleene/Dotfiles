@@ -74,7 +74,7 @@ nnoremap <leader>w :set wrap!<CR>
 
 " Toggle Seplling
 " Local to window
-nnoremap <localleader>s :set spell!<CR>
+" nnoremap <localleader>s :set spell!<CR>
 
 " Open Working Directory in Terminal
 nnoremap <leader>T :silent !open -a Terminal "%:p:h"<CR>\|:redraw!<CR>

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-file=$(~/.bin/slug_project "$1")
+file=$(~/.bin/slug_project -t "$1")
 $EDITOR "$file"

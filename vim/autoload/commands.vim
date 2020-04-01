@@ -235,7 +235,7 @@ function! commands#Run() abort
 endfunction
 
 function commands#SlugProject(name) abort
-  let l:filename = system('~/.bin/slug_project '. a:name)
+  let l:filename = system('~/.bin/slug_project -t '. a:name)
   execute 'edit '.l:filename
 endfunction
 
