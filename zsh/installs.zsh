@@ -25,19 +25,31 @@ fi
 
 # nvm
 # Official installation is really slow:
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ "$(uname)" = "Darwin" ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+elif [[ "$(uname)" = "Linux" ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"
+fi
 
-# This is faster:
-# Automatic node version switching is probably broken by this
-nvm() {
-  if [[ -f ~/.nvm/nvm.sh ]]; then
-    source ~/.nvm/nvm.sh
+if [[ "$(uname)" = "Darwin" ]]; then
+  # This is faster:
+  # Automatic node version switching is probably broken by this
+  nvm() {
+    if [[ -f "/usr/local/opt/nvm/nvm.sh" ]]; then
+      source "/usr/local/opt/nvm/nvm.sh"
+      nvm "$@"
+    fi
+  }
+elif [[ "$(uname)" = "Linux" ]]; then
+  if [[ -f "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ]]; then
+    source "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
     nvm "$@"
   fi
-}
-
+fi
 PATH=$HOME/.nvm/versions/node/v13.12.0/bin:$PATH
 
 # The `-U` option prevens duplicates when `tmux` starts `zsh` instances
