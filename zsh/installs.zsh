@@ -26,8 +26,11 @@ fi
 # nvm
 # Official installation is really slow:
 # export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # This is faster:
+# Automatic node version switching is probably broken by this
 nvm() {
   if [[ -f ~/.nvm/nvm.sh ]]; then
     source ~/.nvm/nvm.sh
@@ -35,7 +38,7 @@ nvm() {
   fi
 }
 
-PATH=$HOME/.nvm/versions/node/v11.4.0/bin:$PATH
+PATH=$HOME/.nvm/versions/node/v13.12.0/bin:$PATH
 
 # The `-U` option prevens duplicates when `tmux` starts `zsh` instances
 export -U PATH
