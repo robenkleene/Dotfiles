@@ -45,10 +45,12 @@ if [[ "$(uname)" = "Darwin" ]]; then
     fi
   }
 elif [[ "$(uname)" = "Linux" ]]; then
-  if [[ -f "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ]]; then
-    source "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
-    nvm "$@"
-  fi
+  nvm() {
+    if [[ -f "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ]]; then
+      source "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
+      nvm "$@"
+    fi
+  }
 fi
 PATH=$HOME/.nvm/versions/node/v13.12.0/bin:$PATH
 
