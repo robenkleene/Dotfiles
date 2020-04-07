@@ -200,3 +200,6 @@ set path+=**
 
 " Doesn't work in ftplugin
 let g:xml_syntax_folding=1
+
+" Don't timeout the leader key
+set notimeout
