@@ -6,7 +6,6 @@ while read LINE; do
 done
 THEURLS=${THEURLS%??}
 THEURLS=$THEURLS"}"
-echo $THEURLS
 
 if [[ "$THEURLS" == "{}" ]]; then
   echo "No urls"
