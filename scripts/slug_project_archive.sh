@@ -15,8 +15,9 @@ project_dir=${project_dir%/}
 destination_dir="$project_dir/../../archive/projects"
 
 if [[ ! -d "$destination_dir" ]]; then
-  echo "$destination_dir does not exist" >&2
+  echo -n "$destination_dir does not exist" >&2
   exit 1
 fi
 
 mv "$project_dir" "$destination_dir"
+echo -n "$destination_dir/$project_dir"

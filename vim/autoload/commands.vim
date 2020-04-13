@@ -240,7 +240,13 @@ function commands#SlugProject(name) abort
 endfunction
 
 function commands#SlugProjectArchive() abort
-  system('~/.bin/slug_project_archive '.fnameescape(expand('%:p')))
+  let l:result = system('~/.bin/slug_project_archive '.fnameescape(expand('%:p')))
+  if v:shell_error != 0
+      echom l:result
+      return
+  endif
+  bd
+  echom l:result
 endfunction
 
 " Tags
