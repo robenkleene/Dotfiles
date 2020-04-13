@@ -47,7 +47,7 @@ abbreviations=(
 'c' 'cat'
 'b' 'bat'
 'brm' 'bat README.md'
-'crm' 'bat README.md'
+'prm' 'open -a "Repla" README.md'
 
 # `xargs`
 '0fd' 'fd -0'
