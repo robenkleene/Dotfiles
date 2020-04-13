@@ -95,6 +95,7 @@ command! Run :call commands#Run()
 
 " Slug
 command! -nargs=1 SlugProject :call commands#SlugProject(<q-args>)
+command! SlugProjectArchive :call commands#SlugProjectArchive()
 
 " Tags
 command! Tags :call commands#Tags()

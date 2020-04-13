@@ -239,6 +239,10 @@ function commands#SlugProject(name) abort
   execute 'edit '.l:filename
 endfunction
 
+function commands#SlugProjectArchive() abort
+  system('~/.bin/slug_project_archive '.fnameescape(expand('%:p')))
+endfunction
+
 " Tags
 function! commands#Tags() abort
   silent execute "!~/.bin/generate_tags -e"
