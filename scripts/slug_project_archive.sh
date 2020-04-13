@@ -9,7 +9,6 @@ fi
 
 # Remove leading and trailing slash and leading period
 project_dir=${project_dir#\.}
-project_dir=${project_dir#/}
 project_dir=${project_dir%/}
 
 destination_dir="$project_dir/../../archive/projects"
