@@ -160,6 +160,8 @@ alias gcu='git_commit_update'
 alias jsw='jekyll_serve_watch'
 alias jswd='jekyll_serve_watch_drafts'
 alias jw='jekyll_write'
+# Blog
+alias bgpd='blog_git_publish_drafts'
 
 # `slug`
 alias slpr='slug_project'
