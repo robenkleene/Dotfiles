@@ -4,7 +4,7 @@ set -e
 
 blog_directory=~/Development/Projects/Web/robenkleene.github.io/
 cd "$blog_directory"
-if ! git diff --exit-code _drafts; then
+if git diff --exit-code _drafts; then
   echo "No drafts"
   exit 1
 fi
