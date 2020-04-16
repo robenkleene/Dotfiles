@@ -60,7 +60,7 @@ alias zoi='zsh_edit_config'
 # alias dh='dirs -v'
 
 # scripts
-alias n='terminal_new'
+alias t='terminal_cd'
 alias o='open_custom'
 
 # `tmux`
