@@ -150,7 +150,7 @@ for host in "${hosts[@]}"; do
   fi
   server_path="$host:$deploy_path"
   echo "Deploying $local_path to $server_path"
-  eval "rsync --rsh=ssh --update --verbose --archive $dry_run --delete \
+  eval "rsync --rsh=ssh --verbose --archive $dry_run --delete \
     $exclude_flags \
     $filter_flags \
     $local_path \
