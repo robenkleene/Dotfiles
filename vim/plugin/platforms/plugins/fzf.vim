@@ -29,6 +29,7 @@ if has('nvim')
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
   inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR>
   inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR>
+  inoremap <M-z> <C-\><C-o>:RelativeZinsert<CR>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
@@ -38,6 +39,7 @@ else
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
   inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR><right>
   inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR><right>
+  inoremap <M-z> <C-\><C-o>:RelativeZinsert<CR><right>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
@@ -220,6 +222,10 @@ command! RelativeCdinsert :call fzf#run(fzf#wrap({
       \ }))
 command! RelativeFilesinsert :call fzf#run(fzf#wrap({
       \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'sink':   function('<SID>relative_file_insert')
+      \ }))
+command! RelativeZinsert :call fzf#run(fzf#wrap({
+      \   'source': "fasd -Rdl",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 
