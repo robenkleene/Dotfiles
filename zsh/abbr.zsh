@@ -145,6 +145,9 @@ abbreviations=(
 # Mail
 'mba' 'mbsync -all --verbose'
 
+# Visual Studio Code
+'vs' 'code'
+
 # Repla
 'rps' 'repla server'
 'rpsj' 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
