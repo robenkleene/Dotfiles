@@ -56,3 +56,5 @@
 [user]
 	name = Roben Kleene
 	email = contact@robenkleene.com
+[diff]
+	tool = vimdiff

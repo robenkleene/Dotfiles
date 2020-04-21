@@ -23,7 +23,7 @@ bind generic X !@open -a Xcode %(file)
 bind generic R !@open --reveal %(file)
 bind generic E !@sh -c "mate --async '%(file)'"
 # bind generic D !@sh -c "git diff '%(file)' | mate --async"
-bind generic D !@sh -c "git difftool '%(file)'"
+bind generic D !sh -c "git difftool '%(commit)'"
 bind generic Y !@bash -c "echo -n %(commit) | safecopy"
 bind status w !bash -c "git diff --color-words '%(file)'"
 bind stage w !bash -c "git diff --color-words '%(file)'"
@@ -41,7 +41,7 @@ bind status dd ?@rm %(file)
 bind main c ?git checkout %(commit)
 
 # Diff Tool
-bind generic T !@git difftool
+bind generic T !git difftool
 bind main T !@git difftool %(commit)^!
 # Below will work even if tig is opened from a subfolder, but it fails if the path has a space
 # bind status D !@sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\' | mate --async"
