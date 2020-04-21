@@ -6,7 +6,7 @@ let b:FormatPrg = "prettier --parser markdown"
 " `set nofoldenable` doesn't help
 " An easy way to test the slowness is to run an operator like title case on a
 " title
-" let g:markdown_folding = 1
+let g:markdown_folding = 1
 setlocal spell
 set wrap
 
