@@ -8,6 +8,10 @@ if [[ ! -d "$journal_directory" ]]; then
   exit 1
 fi
 
+# Remove trailing slash
+journal_directory=${journal_directory%/}
+
+
 today=$(date +%Y-%m-%d)
 destination_entry_path="$journal_directory/$today.md"
 if [[ -f "$destination_entry_path" ]]; then
