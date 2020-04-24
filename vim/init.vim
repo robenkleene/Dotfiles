@@ -102,6 +102,7 @@ if !has('macunix')
   Plug 'roxma/vim-tmux-clipboard'
 endif
 Plug 'wsdjeg/vim-fetch'
+Plug 'liuchengxu/vista.vim'
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml'] }
