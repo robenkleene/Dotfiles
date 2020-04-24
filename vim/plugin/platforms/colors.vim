@@ -119,7 +119,8 @@ function! s:MyHighlights() abort
   highlight markdownLinkText cterm=underline gui=underline
   highlight markdownLinkText ctermfg=110
   highlight markdownCode ctermfg=grey ctermbg=NONE
-  highlight markdownCodeBlock ctermfg=grey ctermbg=NONE
+  " Disabled because `markdownCodeBlock` clashes with heirarchical lists
+  " highlight markdownCodeBlock ctermfg=grey ctermbg=NONE
   highlight markdownListMarker ctermfg=grey
   highlight markdownItalic cterm=bold
   highlight markdownBold cterm=bold
