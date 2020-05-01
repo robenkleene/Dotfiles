@@ -45,3 +45,5 @@ flycheck_*
 
 # C
 a.out
+
+.vscode/
