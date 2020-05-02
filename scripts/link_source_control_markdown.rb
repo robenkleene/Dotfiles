@@ -19,7 +19,7 @@ end
 optparse.parse!
 
 if ARGV.empty?
-  puts "No file specified"
+  STDERR.puts "No file specified"
   exit 1
 end
 
