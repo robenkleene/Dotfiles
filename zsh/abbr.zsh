@@ -73,6 +73,7 @@ abbreviations=(
 'gcm' 'git commit -m'
 # `gcl`: `git clone`
 'gcl' 'git clone'
+'gcs' 'git clone --depth 1'
 # `gcn`: `git clean`
 'gcn' 'git clean'
 # `gcp`: `git cherry-pick`
