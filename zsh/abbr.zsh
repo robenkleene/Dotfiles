@@ -156,6 +156,9 @@ abbreviations=(
 # Web Deploy
 'wd' 'web_deploy'
 'wdd' 'web_deploy -s aresdev'
+
+# Ruby
+'bil' 'bundle install --path vendor/bundle'
 )
 
 # These abbreviations work everywhere
