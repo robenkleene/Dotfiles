@@ -159,6 +159,7 @@ abbreviations=(
 
 # Ruby
 'bil' 'bundle install --path vendor/bundle'
+'be' 'bundle exec'
 )
 
 # These abbreviations work everywhere
