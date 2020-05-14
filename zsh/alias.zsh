@@ -155,7 +155,7 @@ alias sgpt='sgitt -cp'
 alias sglt='sgitt -l'
 alias sgla='git_pull_all'
 alias gcu='git_commit_update'
-alias gpa='git_pull_all'
+alias gla='git_pull_all'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
