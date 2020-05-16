@@ -152,10 +152,10 @@ alias gpbo='git_push_branch_origin'
 alias scw='source_control_open_site'
 alias scwp='source_control_open_site -p'
 alias sgpt='sgitt -cp'
-alias sglt='sgitt -l'
-alias sgla='git_pull_all'
+alias sgut='sgitt -l'
+alias sgua='git_pull_all'
 alias gcu='git_commit_update'
-alias gla='git_pull_all'
+alias gua='git_pull_all'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
