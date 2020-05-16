@@ -3,7 +3,7 @@ usage() {
   echo
   echo "No flags : Just lists the status of each repo"
   echo "-c: Stage changes with a default commit message"
-  echo "-l : Pull all repos without staged changes"
+  echo "-u : Pull all repos without staged changes"
   echo "-m <message>: Stage changes with commit message"
   echo "-n : Print next directory path with unstaged changes"
   echo "-p : Push all repos without staged changes"
@@ -17,7 +17,7 @@ while getopts "plcm:nh" option; do
     p)
       push="true"
       ;;
-    l)
+    u)
       pull="true"
       ;;
     n)
