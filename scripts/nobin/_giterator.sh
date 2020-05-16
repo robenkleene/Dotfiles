@@ -12,7 +12,7 @@ usage() {
 push="false"
 pull="false"
 next="false"
-while getopts "plcm:nh" option; do
+while getopts "pucm:nh" option; do
   case "$option" in
     p)
       push="true"
