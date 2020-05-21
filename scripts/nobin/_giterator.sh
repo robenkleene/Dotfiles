@@ -90,7 +90,7 @@ do_git_process() {
       git push
     fi
   elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
-    git pull
+    git pull -r
   fi
 }
 
