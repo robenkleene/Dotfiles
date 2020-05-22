@@ -62,6 +62,7 @@ abbreviations=(
 'gaa' 'git add -A :/'
 # `gb`: `git branch`
 'gb' 'git branch'
+'gbum' 'git branch --set-upstream-to=origin/master master'
 # This is too dangerous, especially because it is easly confused with `git
 # branch diff`
 # 'gbd' 'git branch -d'
