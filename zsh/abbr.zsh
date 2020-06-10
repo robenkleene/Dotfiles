@@ -148,7 +148,7 @@ abbreviations=(
 'mba' 'mbsync -all --verbose'
 
 # Visual Studio Code
-'vs' 'code'
+'vs' 'code -n'
 
 # Repla
 'rps' 'repla server'
