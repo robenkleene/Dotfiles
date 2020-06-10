@@ -44,6 +44,8 @@ abbreviations=(
 'hpr' 'hub pull-request'
 # `gh`
 'ghpr' 'gh pr create'
+# Both
+'hprm' 'hub pull-request && gh pr view --web'
 
 # `cat`
 'c' 'cat'
