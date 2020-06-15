@@ -102,7 +102,7 @@ nnoremap <A-a> :Rg
 nnoremap <leader>ga :Rgg 
 
 " Quit & Save Session
-nnoremap <A-q> :QuitSaveSession<CR>
+" nnoremap <A-q> :QuitSaveSession<CR>
 " Don't use this `ZZ` only quits the current buffer, which is useless for
 " preserving state
 " nnoremap <silent> ZZ :SessionSave<CR>ZZ
@@ -148,7 +148,7 @@ command! -range LinkSourceControlOpenLines <line1>,<line2>call bindings#LinkSour
 " Yank quoted portion
 command! -range LinkSourceControlMarkdownYankQuotedLines <line1>,<line2>call bindings#LinkSourceControlMarkdownYankQuotedLines()
 " vnoremap <localleader>gq :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
-vnoremap <M-q> :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
+vnoremap <M-m> :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
 vnoremap <localleader>q :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
 
 " Copy Path
