@@ -51,7 +51,7 @@ if [[ -n "$file_path" ]]; then
     exit 1
   fi
   if [[ -z "$file_subpath" ]]; then
-    echo "No file subpath found for $file_path" >&2
+    echo "No file subpath found for $file_path (is this file in a repo?)" >&2
     exit 1
   fi
 else
