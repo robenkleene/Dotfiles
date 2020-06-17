@@ -48,6 +48,9 @@ if source_control_url =~ /^https:\/\/github.com/
     whitespace = nil
     line_count = 0
     while line = STDIN.gets
+      # This is an improvement because it doesn't error out for non-ASCII
+      # characters, but they still aren't converted properly
+      line = line.force_encoding('utf-8')
       if !whitespace
         quoted << ":\n\n"
         if line =~ /^(\s{4}|\t)/
