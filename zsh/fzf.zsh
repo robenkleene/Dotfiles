@@ -1,6 +1,7 @@
 # export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 # Start including hidden files because these files often need to be edited, like `.gitignore`
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude .DS_Store'
+export FZF_ALL_COMMAND='fd --hidden --exclude .git --exclude .DS_Store'
 
 # fzf
 # Make `fzf` bindings available, since this is being manually imported here
@@ -271,10 +272,10 @@ fzf_documentation_editor() {
   cd ~/Documentation/
   local query=$1
   if [[ -n "$query" ]]; then
-    local list_cmd=$FZF_DEFAULT_COMMAND
+    local list_cmd=$FZF_ALL_COMMAND
     local result="$(eval "$list_cmd" "$query" | head -n 1)"
   else
-    local result=$(_robenkleene_fzf_inline_result)
+    local result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
   fi
   if [[ -n "$result" ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
