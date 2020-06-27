@@ -41,6 +41,7 @@ alias sts='ssh_tmux_start'
 alias strs='ssh_tmux_restore_start'
 alias ge='emacs_app'
 alias gemacs='emacs_app'
+alias excel='open -a "Microsoft Excel"'
 
 # Override
 
