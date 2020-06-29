@@ -11,7 +11,7 @@ alias -g Y1='| safecopy1'
 # which is very slow.
 # alias -g V="| $VIM_COMMAND -"
 # alias -g Q='| vim_grep'
-alias -g V="$VIM_COMMAND -"
+alias -g V="$VIM_COMMAND -c \"ScratchBuffer\" -"
 alias -g Q='vim_grep'
 alias -g F='fzf_vim_grep'
 alias -g FF='fzf_vim_file'

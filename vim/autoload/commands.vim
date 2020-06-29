@@ -12,6 +12,10 @@ function! commands#GrepBuffer() abort
   endif
 endfunction
 
+function! commands#ScratchBuffer() abort
+  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+endfunction
+
 " Disable backgrounding
 function! commands#DisableBackgrounding() abort
   nnoremap <C-z> :echom "Backgrounding is disabled"<CR>
