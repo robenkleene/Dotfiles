@@ -55,14 +55,11 @@ _system_kill_word() {
 }
 zle -N _system_kill_word
 autoload -Uz select-word-style
-# Selecting "shell" instead of "normal" makes `backward-kill-word` delete the
-# entire last parameter instead of stopping at word boundaries
-select-word-style shell
 _system_bash_backwards_kill_word() {
   # Use bash-style `backwards-kill-word`
   select-word-style bash
   WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
-  select-word-style shell
+  select-word-style normal
   if [[ "$use_kill_ring" == "true" ]]; then
     echo -n "$CUTBUFFER" | safecopy
   fi
@@ -99,7 +96,11 @@ _system_kill_region() {
 }
 zle -N _system_kill_region
 _system_backward_kill_word() {
+  # Selecting "shell" instead of "normal" makes `backward-kill-word` delete the
+  # entire last parameter instead of stopping at word boundaries
+  select-word-style shell
   zle backward-kill-word
+  select-word-style normal
   if [[ "$use_kill_ring" == "true" ]]; then
     echo -n "$CUTBUFFER" | safecopy
   fi
