@@ -280,6 +280,8 @@ fzf_documentation_editor() {
   if [[ -n "$result" ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
     if [[ -d "$parameter" ]]; then
+      # To avoid going back to "~/Documentation" when this function ends
+      cd - >/dev/null
       cd "$parameter"
     fi
     local final_cmd="$EDITOR $parameter"
