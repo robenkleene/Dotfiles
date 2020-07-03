@@ -47,3 +47,6 @@ flycheck_*
 a.out
 
 .vscode/
+
+# Excel
+~$*.xls*
