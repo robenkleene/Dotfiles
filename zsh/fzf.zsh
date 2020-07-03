@@ -279,6 +279,9 @@ fzf_documentation_editor() {
   fi
   if [[ -n "$result" ]]; then
     local parameter=$(printf '%q' "$PWD/$result")
+    if [[ -d "$parameter" ]]; then
+      cd "$parameter"
+    fi
     local final_cmd="$EDITOR $parameter"
     eval $final_cmd
     if [ $? -eq 0 ]; then
