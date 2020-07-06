@@ -127,6 +127,7 @@ alias cdtd='cd_todo'
 alias snp='fzf_snippet_copy'
 alias snpe='fzf_snippet_editor'
 alias doce='fzf_documentation_editor'
+alias doc='fzf_documentation'
 
 # Test Variable
 alias ptv='echo $test_variable'

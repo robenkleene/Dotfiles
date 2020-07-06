@@ -296,6 +296,35 @@ fzf_documentation_editor() {
   cd - >/dev/null
 }
 
+fzf_documentation() {
+  cd ~/Documentation/
+  local query=$1
+  if [[ -n "$query" ]]; then
+    local list_cmd=$FZF_ALL_COMMAND
+    local result="$(eval "$list_cmd" "$query" | head -n 1)"
+  else
+    local result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
+  fi
+  if [[ -n "$result" ]]; then
+    local parameter=$(printf '%q' "$PWD/$result")
+    if [[ -d "$parameter" ]]; then
+      # Preserve "cd" history
+      cd - >/dev/null
+      cd "$parameter"
+      return 0
+    fi
+    local final_cmd="$BAT_COMMAND $parameter"
+    eval $final_cmd
+    if [ $? -eq 0 ]; then
+      # Add to history
+      print -sr $final_cmd
+    fi
+  # else
+  #   cd - >/dev/null
+  fi
+  cd - >/dev/null
+}
+
 # Snippets
 fzf_snippet_copy() {
   cd ~/Development/Snippets/
