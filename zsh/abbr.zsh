@@ -154,7 +154,7 @@ abbreviations=(
 
 # Repla
 'rps' 'repla server'
-'rpsj' 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
+'rpj' 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
 
 # Web Deploy
 'wd' 'web_deploy'
