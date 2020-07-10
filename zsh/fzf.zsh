@@ -136,6 +136,42 @@ _fzf_editor_widget() {
 zle -N _fzf_editor_widget
 bindkey '\ee' _fzf_editor_widget
 
+_fzf_open_widget() {
+  if [[ ! $PWD/ = $HOME/*/* ]]; then
+    echo "Only use in a subdirectory of home" >&2
+    zle redisplay
+    return 1
+  fi
+
+  local cmd=$FZF_CTRL_T_COMMAND
+
+  if [[ -n "$LBUFFER" ]]; then
+    local dir="${LBUFFER##* }"
+    if [[ -d "$dir" ]]; then
+      cmd="cd $dir && $cmd && cd - >/dev/null"
+    fi
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -f "$file" ]]; then
+    zle redisplay
+    return 1
+  fi
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval open ${(q)file} < /dev/tty
+
+  local ret=$?
+  __zsh_add_history "open ${(q)file}"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_open_widget
+bindkey '\eo' _fzf_open_widget
+
 _fzf_z_widget() {
   local cmd="fasd -Rdl"
 
