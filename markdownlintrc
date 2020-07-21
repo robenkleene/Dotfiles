@@ -1,7 +1,8 @@
 {
+    // This config is for `markdownlint` CLI, VS Code is configured in settings
     "default": true,
-    // Allow four spaces for nested lists
-    "MD007": false,
+    // Four spaces for nested lists
+    "MD007": { "indent": 4 },
     // Allow long lines
     "MD013": false
 }
