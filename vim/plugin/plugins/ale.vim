@@ -5,7 +5,7 @@ let g:ale_linters = {
   \   'html': ['stylelint', 'tidy'],
   \   'ruby': ['rubocop', 'ruby'],
   \   'javascript': ['eslint'],
-  \   'markdown': ['proselint'],
+  \   'markdown': ['proselint', 'markdownlint'],
   \   'objc': ['clang'],
   \   'c': ['clang'],
   \   'swift': ['swiftlint'],
