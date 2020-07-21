@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
+arg=""
+if [[ -n "$1" ]]; then
+  arg=" -a $1"
+fi
 # The default browser method
-while read LINE; do
-  open $LINE
+while read -r LINE; do
+  open${arg} $LINE
 done
 
 # The Safari method
