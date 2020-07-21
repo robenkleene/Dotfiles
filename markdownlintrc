@@ -1,4 +1,7 @@
 {
     "default": true,
+    // Allow four spaces for nested lists
+    "MD007": false,
+    // Allow long lines
     "MD013": false
 }
