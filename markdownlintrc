@@ -4,5 +4,7 @@
     // Four spaces for nested lists
     "MD007": { "indent": 4 },
     // Allow long lines
-    "MD013": false
+    "MD013": false,
+    // Don't force first line header
+    "MD041": false
 }
