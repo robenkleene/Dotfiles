@@ -25,10 +25,26 @@ rg() {
 }
 
 egitn() {
-  local gitnext=$(egit -n)
+  print_status="true"
+  while getopts ":n" option; do
+    case "$option" in
+      n)
+        print_status="false"
+        ;;
+      \?)
+        echo "Invalid option: -$OPTARG" >&2
+        exit 1
+        ;;
+    esac
+  done
+
+  local gitnext
+  gitnext=$(egit -n)
   if [[ -n "$gitnext" ]]; then
-    cd "$gitnext"
-    git status
+    cd "$gitnext" || return
+    if [[ "$print_status" == "true" ]]; then
+      git status
+    fi
     return
   fi
   return 1
