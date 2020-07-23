@@ -3,6 +3,9 @@
     "default": true,
     // Four spaces for nested lists
     "MD007": { "indent": 4 },
+    // Allow trailing whitespace (this is a good rule, but it's too annoying
+    // when typing)
+    "MD009": false,
     // Allow long lines
     "MD013": false,
     // Don't force first line header
