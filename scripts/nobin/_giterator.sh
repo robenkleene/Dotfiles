@@ -80,9 +80,13 @@ do_git_process() {
     git status
   fi
 
-  if [ -n "$message" ] && [ "$nothing_to_commit" = "false" ]; then
-    git add -A :/ && git commit -m "$message"
-    nothing_to_commit=$(commit_status)
+  if [ "$nothing_to_commit" = "false" ]; then
+    if [ -n "$message" ]; then
+      git add -A :/ && git commit -m "$message"
+      nothing_to_commit=$(commit_status)
+    else
+      exit 1
+    fi
   fi
 
   if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then

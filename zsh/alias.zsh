@@ -159,7 +159,7 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='sgitt -cp && egit -p'
+alias s='sgitt -cp && egit -p || egitn'
 
 # `jekyll`
 alias jsw='jekyll_serve_watch'
