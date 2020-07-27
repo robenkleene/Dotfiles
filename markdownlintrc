@@ -9,5 +9,8 @@
     // Allow long lines
     "MD013": false,
     // Don't force first line header
-    "MD041": false
+    "MD041": false,
+    // Disable blank line ending file, this is a good rule, but annoying to
+    // enforce while editing
+    "MD047": false
 }
