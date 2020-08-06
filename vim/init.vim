@@ -103,6 +103,7 @@ if !has('macunix')
 endif
 Plug 'wsdjeg/vim-fetch'
 Plug 'liuchengxu/vista.vim'
+Plug 'neoclide/coc.nvim'
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml', 'javascript'] }
