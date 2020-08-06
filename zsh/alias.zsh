@@ -1,14 +1,25 @@
-# grep
-alias -g G='| grep'
-alias -g C='| column'
-alias -g L='| less'
-alias -g A='| rg --no-line-number --no-filename'
-alias -g Y='| safecopy'
-alias -g Y1='| safecopy1'
-# Don't include the pipe, if it means opening in another application
-# Disable these, there's something very strange about how global aliases call
-# interactive commads. Starting `vim` results it in having to start twice,
-# which is very slow.
+# These could use the pipe, but in rare cases they cause problems so they've
+# been removed.
+# For example, doing something like:
+# cat Template.html Y
+# p | pandoc -f html -t markdown Y
+# Will end up with an empty clipboard, but the following works fine:
+# cat Template.html |Y
+# p | pandoc -f html -t markdown |Y
+# For that reason, we've removed the pipe from all aliases for consistency
+# (even though it still works fine with some).
+# Example command with the pipe:
+# alias -g Y='| safecopy'
+alias -g G='grep'
+alias -g C='column'
+alias -g L='less'
+alias -g A='rg --no-line-number --no-filename'
+alias -g Y='safecopy'
+alias -g Y1='safecopy1'
+# These should never use the pipe, for some reason starting an interactive
+# command with the pipe behaves unpredictably. In particular, starting `vim`
+# seems to need to open it twice, which is slow.
+# Example commands with the pipe:
 # alias -g V="| $VIM_COMMAND -"
 # alias -g Q='| vim_grep'
 alias -g V="$VIM_COMMAND -c \"ScratchBuffer\" -"
