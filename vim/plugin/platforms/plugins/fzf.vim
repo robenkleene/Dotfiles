@@ -9,7 +9,7 @@ endif
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <M-e> :Files<CR>
+nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
 " nnoremap <C-@> :Commands<CR>
 " vnoremap <C-@> :Commands<CR>
@@ -17,7 +17,7 @@ nnoremap <M-e> :Files<CR>
 " vnoremap <C-Space> :Commands<CR>
 nnoremap <M-x> :Commands<CR>
 vnoremap <M-x> :VisualCommands<CR>
-nnoremap <M-c> :Cd<CR>
+nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 " nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
@@ -27,9 +27,9 @@ nnoremap <M-i> :FZFTags<CR>
 if has('nvim')
   " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
-  inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR>
-  inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR>
-  inoremap <M-z> <C-\><C-o>:RelativeZinsert<CR>
+  inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
+  inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+  inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
@@ -37,9 +37,9 @@ if has('nvim')
 else
   " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR><right>
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
-  inoremap <M-c> <C-\><C-o>:RelativeCdinsert<CR><right>
-  inoremap <M-e> <C-\><C-o>:RelativeFilesinsert<CR><right>
-  inoremap <M-z> <C-\><C-o>:RelativeZinsert<CR><right>
+  inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR><right>
+  inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR><right>
+  inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR><right>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
