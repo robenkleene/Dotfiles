@@ -105,7 +105,7 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'liuchengxu/vista.vim'
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml'] }
+Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml', 'javascript'] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
