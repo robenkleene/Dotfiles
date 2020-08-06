@@ -46,6 +46,15 @@ else
   " inoremap <M-i>e <C-\><C-o>:RelativeFilesinsert<CR>
 endif
 
+command! -range CheckHomeSubdirectory call <SID>CheckHomeSubdirectory()
+function! s:CheckHomeSubdirectory() abort
+  if getcwd()."/" !~ glob2regpat($HOME.'/*/*')
+    echoerr "Only use in a subdirectory of home"
+    return 1
+  endif
+  return 0
+endfunction
+
 " A version of `:Commands` that can take a range
 command! -range VisualCommands call <SID>VisualCommands()
 function! s:VisualCommands() abort
