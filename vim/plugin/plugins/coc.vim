@@ -1,3 +1,10 @@
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+autocmd FileType markdown let b:coc_suggest_disable = 1
+
+" autocmd FileType gitcommit let b:coc_suggest_disable = 1
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -14,9 +21,6 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-autocmd FileType markdown let b:coc_suggest_disable = 1
-" autocmd FileType gitcommit let b:coc_suggest_disable = 1
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
