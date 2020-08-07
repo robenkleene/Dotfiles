@@ -5,9 +5,10 @@ if has('gui_running')
 endif
 
 " Notes for working with colors:
-" `XtermColorTable` displays the hex colors a terminal equivalents
+" `:XtermColorTable` displays the hex colors a terminal equivalents
 " `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
 " Or use my command `:RunColorTest`
+
 " `:so $VIMRUNTIME/syntax/hitest.vim` lists all the styled syntax groups
 " Or use my command `:RunHighlightTest`
 
