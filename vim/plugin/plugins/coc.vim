@@ -3,8 +3,8 @@ let g:coc_global_extensions = [
   \ ]
 
 autocmd FileType markdown let b:coc_suggest_disable = 1
+autocmd FileType gitcommit let b:coc_suggest_disable = 1
 
-" autocmd FileType gitcommit let b:coc_suggest_disable = 1
 " TextEdit might fail if hidden is not set.
 set hidden
 
