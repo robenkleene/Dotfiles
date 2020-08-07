@@ -1,3 +1,4 @@
 {
+  "suggest.noselect": false,
   "diagnostic.displayByAle": true
 }
