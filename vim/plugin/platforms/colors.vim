@@ -47,8 +47,8 @@ function! s:MyHighlights() abort
   " Autocomplete {{{1
   highlight Pmenu ctermfg=white ctermbg=237
   highlight PmenuSel ctermfg=black ctermbg=cyan
-  highlight PmenuSbar ctermfg=white ctermbg=239
-  highlight PmenuThumb ctermfg=239 ctermbg=239
+  highlight PmenuSbar ctermfg=239 ctermbg=239
+  highlight PmenuThumb ctermfg=244 ctermbg=244
 
   " Visual Selection {{{1
   " Visual selection is distinguished from `Search` because a match can either
