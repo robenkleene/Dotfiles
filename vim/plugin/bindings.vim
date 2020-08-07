@@ -250,6 +250,9 @@ nnoremap <localleader>r :Run<CR>
 " Make
 nnoremap <localleader>m :make<CR>
 
+" Backspace to last file
+nnoremap <BS> <C-^>
+
 " Emacs Paste
 cnoremap <C-y> <C-r>*
 " Command Line Window Edit
