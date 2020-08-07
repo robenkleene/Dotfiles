@@ -1,5 +1,6 @@
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-snippets'
   \ ]
 
 autocmd FileType markdown let b:coc_suggest_disable = 1
