@@ -361,6 +361,28 @@ fzf_documentation() {
   cd - >/dev/null
 }
 
+fzf_quick_text() {
+  local list_cmd='fd --type d --hidden --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation'
+  local result
+
+  result="$(_robenkleene_fzf_inline_result "$list_cmd")"
+  if [[ -n "$result" ]]; then
+    local parameter
+    parameter=$(printf '%q' "$PWD/$result")
+    if [[ -d "$parameter" ]]; then
+      cd "$parameter" || return
+      vim .
+      return 0
+    fi
+    local final_cmd="$EDITOR $parameter"
+    eval "$final_cmd"
+    if [ $? -eq 0 ]; then
+      # Add to history
+      print -sr "$final_cmd"
+    fi
+  fi
+}
+
 # Snippets
 fzf_snippet_copy() {
   cd ~/Development/Snippets/
