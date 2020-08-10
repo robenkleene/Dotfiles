@@ -362,20 +362,20 @@ fzf_documentation() {
 }
 
 fzf_quick_text() {
-  local list_cmd='fd --hidden --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation'
+  local list_cmd='fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation'
   local result
 
   result="$(_robenkleene_fzf_inline_result "$list_cmd")"
   if [[ -n "$result" ]]; then
-    local parameter
-    parameter=$(printf '%q' "$PWD/$result")
-    if [[ -d "$parameter" ]]; then
-      cd "$parameter" || return
+    if [[ -d "$result" ]]; then
+      cd "$result" || return
       vim .
       return 0
     fi
-    local final_cmd="$EDITOR $parameter"
-    eval "$final_cmd"
+    # local final_cmd="$EDITOR $result"
+    # eval "$final_cmd"
+
+    eval $EDITOR ${(q)result}
     if [ $? -eq 0 ]; then
       # Add to history
       print -sr "$final_cmd"
