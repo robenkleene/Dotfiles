@@ -362,7 +362,7 @@ fzf_documentation() {
 }
 
 fzf_quick_text() {
-  local list_cmd='fd --type d --hidden --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation'
+  local list_cmd='fd --hidden --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation'
   local result
 
   result="$(_robenkleene_fzf_inline_result "$list_cmd")"
