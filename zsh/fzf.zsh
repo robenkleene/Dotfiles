@@ -226,6 +226,31 @@ _fzf_zvim_widget() {
 zle -N _fzf_zvim_widget
 bindkey '\er' _fzf_zvim_widget
 
+_fzf_quick_widget() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -f "$file" ]]; then
+    zle redisplay
+    return 1
+  fi
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval $EDITOR ${(q)file} < /dev/tty
+
+  local ret=$?
+  __zsh_add_history "$EDITOR ${(q)file}"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_quick_widget
+bindkey '\eq' _fzf_quick_widget
 
 # Special
 
