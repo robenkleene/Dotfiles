@@ -1,4 +1,7 @@
 {
   "suggest.noselect": false,
-  "diagnostic.displayByAle": true
+  "diagnostic.displayByAle": true,
+  "snippets.textmateSnippetsRoots": [
+    "~/Library/Application Support/Code/User/snippets"
+  ]
 }
