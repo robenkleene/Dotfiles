@@ -74,7 +74,6 @@ alias zoi='zsh_edit_config'
 # scripts
 alias t='terminal_cd'
 alias o='open_custom'
-alias q='fzf_quick_text'
 
 # `tmux`
 alias tma='tmux attach'
