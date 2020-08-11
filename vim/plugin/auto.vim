@@ -61,9 +61,6 @@ augroup reload_buffers
   autocmd!
   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | silent! checktime | endif
 augroup END
-" This makes it so hitting `<c-z>` then changing a file then `fg` to return
-" will update instantly.
-noremap <c-z> :suspend<cr>:silent checktime<cr>
 
 augroup setup_netrw
   autocmd!

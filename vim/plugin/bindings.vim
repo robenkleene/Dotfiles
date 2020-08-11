@@ -280,3 +280,9 @@ noremap <leader>p "0p
 vnoremap <leader>p "0p
 nnoremap <silent> <M-n> :cn<CR>
 nnoremap <silent> <M-p> :cp<CR>
+
+" This makes it so hitting `<c-z>` then changing a file then `fg` to return
+" will update instantly.
+" This conflicts with blocking backgrounding with `DisableBackgrounding`,
+" removing until there's a way for these to co-exist
+noremap <c-z> :suspend<cr>:silent checktime<cr>

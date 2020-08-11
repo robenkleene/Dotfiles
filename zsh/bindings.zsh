@@ -10,7 +10,8 @@ bindkey -e
 autoload -z edit-command-line
 zle -N edit-command-line
 _custom_edit_command_line() {
-  EDITOR="$VIM_COMMAND -c 'DisableBackgrounding'" zle edit-command-line
+  # Try `EDITOR` if `VISUAL` isn't working
+  VISUAL="$VIM_COMMAND -c 'DisableBackgrounding'" zle edit-command-line
 }
 zle -N _custom_edit_command_line
 bindkey "^X^E" _custom_edit_command_line
