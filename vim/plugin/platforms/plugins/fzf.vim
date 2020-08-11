@@ -19,6 +19,7 @@ nnoremap <M-x> :Commands<CR>
 vnoremap <M-x> :VisualCommands<CR>
 nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
+nnoremap <M-o> :QuickText<CR>
 " nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
@@ -157,6 +158,11 @@ command! Zvim :call fzf#run(fzf#wrap({
 command! FZFTags :call fzf#run(fzf#wrap({
       \   'source': "~/.bin/dump_tags",
       \   'sink': 'tag'
+      \ }))
+
+command! QuickText :call fzf#run(fzf#wrap({
+      \   'source': "fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation",
+      \   'sink': 'e'
       \ }))
 
 " Insert

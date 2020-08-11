@@ -90,7 +90,7 @@ nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 
 " Default
 nnoremap <leader>O :silent !open "%:p"<CR>\|:redraw!<CR>
-nnoremap <M-o> :silent !open "%:p"<CR>\|:redraw!<CR>
+nnoremap <M-O> :silent !open "%:p"<CR>\|:redraw!<CR>
 
 " `make`
 nnoremap <leader>m :make<CR>
