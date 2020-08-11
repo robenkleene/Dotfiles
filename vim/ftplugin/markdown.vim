@@ -43,3 +43,9 @@ if exists(':terminal')
 endif
 " Can't use `<localleader>c` because that's title case operator
 " nnoremap <buffer> <localleader>c :ConvertMarkdown %<CR>
+
+command! InsertTitle call <SID>InsertTitle()
+function! s:InsertTitle() abort
+  silent exe "normal! i\<C-r>=system('~/.bin/markdown_title '.fnameescape(expand('%:p')))\<CR>\<ESC>"
+endfunction
+nnoremap <buffer> <localleader>t :InsertTitle
