@@ -170,7 +170,7 @@ _fzf_open_widget() {
   return $ret
 }
 zle -N _fzf_open_widget
-bindkey '\eo' _fzf_open_widget
+bindkey '\eO' _fzf_open_widget
 
 _fzf_z_widget() {
   local cmd="fasd -Rdl"
@@ -250,7 +250,7 @@ _fzf_quick_widget() {
   return $ret
 }
 zle -N _fzf_quick_widget
-bindkey '\eq' _fzf_quick_widget
+bindkey '\eo' _fzf_quick_widget
 
 # Special
 
