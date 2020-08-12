@@ -110,6 +110,26 @@ function! commands#Atm(terms) abort
   let &grepprg = l:original_grepprg
 endfunction
 
+function! commands#Qa(terms) abort
+  let l:original_grepprg = &grepprg
+  set grepprg=~/.bin/quick_text_search
+  " Without `silent`, the terminal output is seen and enter is required to go
+  " to the first match
+  execute "silent grep " . escape(a:terms, '%#')
+  if !has('nvim')
+    " The screen gets messed up in `vim` without this
+    redraw!
+  endif
+  let &grepprg = l:original_grepprg
+  if len(getqflist())
+    copen
+    " `copen` gives the quickfix focus, `wincmd p` switches back to the
+    " previous window
+    wincmd p
+  endif
+endfunction
+
+
 " Splits
 function! commands#NewFileType(type) abort
   " Note it seems like it's impossible to make a function take an optional

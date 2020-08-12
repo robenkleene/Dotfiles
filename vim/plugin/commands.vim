@@ -35,6 +35,7 @@ command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 " `rg`
 command! -nargs=* Rg :call commands#Rg(<q-args>)
 command! -nargs=* Rgg :call commands#Rgg(<q-args>)
+command! -nargs=* Qa :call commands#Qa(<q-args>)
 
 " `rg` & `tmux`
 command! -nargs=* Atm :call commands#Atm(<q-args>)
