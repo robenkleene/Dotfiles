@@ -193,5 +193,6 @@ alias tags="generate_tags"
 # Common
 alias journal="journal_new_make_default_edit"
 alias tweet="markdown_tweet_edit"
+alias qa="quick_text_search"
 alias writing="$VIM_COMMAND ~/Text/writing/README.md"
 alias backup="backup_file"
