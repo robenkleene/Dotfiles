@@ -18,11 +18,16 @@ elif [[ "$(uname)" = "Linux" ]]; then
   fi
 fi
 
-# python
+# Python
 if [[ "$(uname)" = "Darwin" ]]; then
   PATH=$HOME/Library/Python/3.7/bin:$PATH
-else
+elif [[ "$(uname)" = "Linux" ]]; then
   PATH=$HOME/.local/bin:$PATH
+fi
+
+# llvm
+if [[ "$(uname)" = "Darwin" ]]; then
+  PATH="/usr/local/opt/llvm/bin:$PATH"
 fi
 
 # nvm
