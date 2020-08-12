@@ -15,7 +15,6 @@ Alias CXC compiler\ xcodebuild
 Alias -range Ld Linediff
 Alias Ldr LinediffReset
 
-" UltiSnips
 Alias Gw silent\ !git_web_open
 " Using the silent version of this causes Vim's UI to disappear for some
 " reason
