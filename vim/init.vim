@@ -61,7 +61,6 @@ Plug 'editorconfig/editorconfig-vim'
 " `file-line` breaks process substituion by file, e.g.
 " `vimdiff <(echo "test 1") <(echo "test 2")`
 " Plug 'bogado/file-line'
-Plug 'w0rp/ale'
 Plug 'junegunn/rainbow_parentheses.vim', { 'on': 'RainbowParentheses' }
 Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite', 
       \ 'TestLast', 'TestVisit'] }
