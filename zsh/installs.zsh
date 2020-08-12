@@ -21,6 +21,8 @@ fi
 # python
 if [[ "$(uname)" = "Darwin" ]]; then
   PATH=$HOME/Library/Python/3.7/bin:$PATH
+else
+  PATH=$HOME/.local/bin:$PATH
 fi
 
 # nvm
