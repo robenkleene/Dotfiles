@@ -17,6 +17,6 @@
     "zsh": ["shell", "shellcheck"]
   },
   "snippets.textmateSnippetsRoots": [
-    "~/Library/Application Support/Code/User/snippets"
+    "~/.config/Code/User/snippets"
   ]
 }
