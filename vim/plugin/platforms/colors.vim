@@ -179,6 +179,7 @@ function! s:MyHighlights() abort
   highlight CoCWarningSign ctermfg=yellow
   highlight CoCErrorSign ctermfg=red
   highlight CoCInfoSign ctermfg=gray
+  highlight CoCHintSign ctermfg=gray
 
   " tir_black bug fixes
   " For some reason "blue" display weird in console vim when it overlaps with the

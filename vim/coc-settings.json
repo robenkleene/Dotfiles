@@ -1,6 +1,21 @@
 {
   "suggest.noselect": false,
-  "diagnostic.displayByAle": true,
+  "solargraph.diagnostics": true,
+  "diagnostic-languageserver.filetypes": {
+    "c": ["clang"],
+    "css": ["stylelint"],
+    "html": ["stylelint", "tidy"],
+    "javascript": ["eslint"],
+    "markdown": ["write-good", "markdownlint", "proselint"],
+    "objc": ["clang"],
+    "ruby": ["rubocop", "ruby"],
+    "scss": ["stylelint"],
+    "sh": ["shell", "shellcheck"],
+    "swift": ["swiftlint"],
+    "vim": "vint",
+    "xml": ["xmllint"],
+    "zsh": ["shell", "shellcheck"]
+  },
   "snippets.textmateSnippetsRoots": [
     "~/Library/Application Support/Code/User/snippets"
   ]

@@ -1,8 +1,11 @@
 let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-tag',
   \ 'coc-css',
-  \ 'coc-snippets'
+  \ 'coc-diagnostic',
+  \ 'coc-snippets',
+  \ 'coc-solargraph',
+  \ 'coc-sourcekit',
+  \ 'coc-tag',
+  \ 'coc-tsserver',
   \ ]
 
 autocmd FileType markdown let b:coc_suggest_disable = 1
