@@ -170,10 +170,15 @@ function! s:MyHighlights() abort
   highlight SignifySignDeleteFirstLine ctermbg=NONE ctermfg=red
 
   " Ale {{{2
-  highlight ALEErrorSign ctermfg=red
-  highlight ALEWarningSign ctermfg=yellow
-  highlight ALEStyleWarningSign ctermfg=yellow
-  highlight ALEStyleErrorSign ctermfg=yellow
+  " highlight ALEErrorSign ctermfg=red
+  " highlight ALEWarningSign ctermfg=yellow
+  " highlight ALEStyleWarningSign ctermfg=yellow
+  " highlight ALEStyleErrorSign ctermfg=yellow
+
+  " CoC {{{2
+  highlight CoCWarningSign ctermfg=yellow
+  highlight CoCErrorSign ctermfg=red
+  highlight CoCInfoSign ctermfg=gray
 
   " tir_black bug fixes
   " For some reason "blue" display weird in console vim when it overlaps with the
