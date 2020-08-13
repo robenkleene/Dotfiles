@@ -2,6 +2,7 @@ let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-css',
   \ 'coc-diagnostic',
+  \ 'coc-pairs',
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-sourcekit',
