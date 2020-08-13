@@ -6,7 +6,7 @@
     "css": ["stylelint"],
     "html": ["stylelint", "tidy"],
     "javascript": ["eslint"],
-    "markdown": ["write-good", "markdownlint", "proselint"],
+    "markdown": ["markdownlint"],
     "objc": ["clang"],
     "ruby": ["rubocop", "ruby"],
     "scss": ["stylelint"],
