@@ -49,3 +49,75 @@ function! s:InsertTitle() abort
   silent exe "normal! i\<C-r>=system('~/.bin/markdown_title '.fnameescape(expand('%:p')))\<CR>\<ESC>"
 endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
+
+
+command! -range=% MarkdownTodoInvert <line1>,<line2>call <SID>MarkdownTodo('-i')
+command! -range=% MarkdownTodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
+command! -range=% MarkdownTodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
+
+
+" function! operators#SlugProjectLink(type, ...) abort
+"   " `@@` is an alias for `@"`, the unnamed register
+"   let reg_save = @@
+"   let reg_save2 = @*
+
+"   if a:0
+"     " Visual
+"     silent exe "normal! gvc\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   elseif a:type == 'line' " Line
+"     " Line
+"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   else
+"     " Character
+"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   endif
+
+"   let @@ = reg_save
+"   let @* = reg_save2
+" endfunction
+
+
+" execute a:firstline "," a:lastline "yank"
+
+" function! commands#Execute() abort
+"   if !exists('b:ExecutePrg')
+"     echo "No b:ExecutePrg defined"
+"     return
+"   endif
+"   execute "%w !" . b:ExecutePrg
+" endfunction
+
+" function! commands#ExecuteVisual() abort
+"   if !exists('b:ExecutePrg')
+"     echo "No b:ExecutePrg defined"
+"     return
+"   endif
+"   execute "'<,'>w !" . b:ExecutePrg
+" endfunction
+
+
+" function! operators#SlugProjectLink(type, ...) abort
+"   " `@@` is an alias for `@"`, the unnamed register
+"   let reg_save = @@
+"   let reg_save2 = @*
+
+"   if a:0
+"     " Visual
+"     silent exe "normal! gvc\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   elseif a:type == 'line' " Line
+"     " Line
+"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   else
+"     " Character
+"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"   endif
+
+"   let @@ = reg_save
+"   let @* = reg_save2
+" endfunction
+
+" function! bindings#LinkSourceControlMarkdownYankQuotedLines() range abort
+"   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
+"   let @* = @"
+"   echo "Yanked git Markdown link"
+" endfunction
