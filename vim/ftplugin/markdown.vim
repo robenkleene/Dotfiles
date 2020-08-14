@@ -51,25 +51,29 @@ endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
 
 
-command! -range=% MarkdownTodoInvert <line1>,<line2>call <SID>MarkdownTodo('-i')
-command! -range=% MarkdownTodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
-command! -range=% MarkdownTodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
+" command! -range=% MarkdownTodoInvert <line1>,<line2>call <SID>MarkdownTodo('-i')
+" command! -range=% MarkdownTodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
+" command! -range=% MarkdownTodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
 
+" nnoremap <silent> <localleader>ti :set opfunc=<SID>MarkdownTodo<CR>g@
+" nnoremap <silent> <localleader>tc :set opfunc=<SID>MarkdownTodo<CR>g@
+" nnoremap <silent> <localleader>tu :set opfunc=<SID>MarkdownTodo('')<CR>g@
+" vnoremap <silent> <localleader>s :<C-U>call operators#SlugProjectLink(visualmode(), 1)<CR>
 
-" function! operators#SlugProjectLink(type, ...) abort
+" function! operators#SlugProjectLink(type, flags, ...) abort
 "   " `@@` is an alias for `@"`, the unnamed register
 "   let reg_save = @@
 "   let reg_save2 = @*
 
 "   if a:0
 "     " Visual
-"     silent exe "normal! gvc\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"     silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
 "   elseif a:type == 'line' " Line
 "     " Line
-"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
 "   else
 "     " Character
-"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
+"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
 "   endif
 
 "   let @@ = reg_save
