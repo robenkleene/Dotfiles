@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
+
 options = {}
 optparse = OptionParser.new do |opts|
   opts.on('-u', '--uncheck', 'Uncheck') do |u|
@@ -16,6 +18,7 @@ optparse.parse!
 
 ARGF.each do |line|
   result = false
-  result = line.gsub!(/^(\s*[-*]\s)\[\s\]\s/, '\1 [x] ') if options[:invert] || options[:check]
-  line.gsub!(/^(\s*[-*]\s)\[[xX]\]\s/, '\1 [ ] ') if (options[:invert] && !result) || options[:uncheck]
+  result = line.gsub!(/^(\s*[-*]\s)\[\s\]\s/, '\1[x] ') if options[:invert] || options[:check]
+  line.gsub!(/^(\s*[-*]\s)\[[xX]\]\s/, '\1[ ] ') if (options[:invert] && !result) || options[:uncheck]
+  puts line
 end
