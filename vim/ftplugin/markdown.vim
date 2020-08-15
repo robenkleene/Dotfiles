@@ -50,78 +50,37 @@ function! s:InsertTitle() abort
 endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
 
+nnoremap <silent> <localleader>bi :set opfunc=<SID>MarkdownTodoInvert<CR>g@
+nnoremap <silent> <localleader>bc :set opfunc=<SID>MarkdownTodoCheck<CR>g@
+nnoremap <silent> <localleader>bu :set opfunc=<SID>MarkdownTodoUncheck<CR>g@
+vnoremap <silent> <localleader>bi :<C-U>call <SID>MarkdownTodoInvert(visualmode(), 1)<CR>
+vnoremap <silent> <localleader>bc :<C-U>call <SID>MarkdownTodoCheck(visualmode(), 1)<CR>
+vnoremap <silent> <localleader>bu :<C-U>call <SID>MarkdownTodoUncheck(visualmode(), 1)<CR>
+function! s:MarkdownTodoInvert(type, ...) abort
+  call <SID>MarkdownTodo(a:type, '-i')
+endfunction
+function! s:MarkdownTodoCheck(type, ...) abort
+  call <SID>MarkdownTodo(a:type, '-c')
+endfunction
+function! s:MarkdownTodoUncheck(type, ...) abort
+  call <SID>MarkdownTodo(a:type, '-u')
+endfunction
+function! s:MarkdownTodo(type, flags, ...) abort
+  " `@@` is an alias for `@"`, the unnamed register
+  let reg_save = @@
+  let reg_save2 = @*
 
-" command! -range=% MarkdownTodoInvert <line1>,<line2>call <SID>MarkdownTodo('-i')
-" command! -range=% MarkdownTodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
-" command! -range=% MarkdownTodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
+  if a:0
+    " Visual
+    silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_check '.a:flags,@@)\<CR>\<ESC>"
+  elseif a:type == 'line' " Line
+    " Line
+    silent exe "normal! '[V']c\<C-r>=system('~/.bin/markdown_check '.a:flags,@@)\<CR>\<ESC>"
+  else
+    " Character
+    silent exe "normal! `[v`]c\<C-r>=system('~/.bin/markdown_check '.a:flags,@@)\<CR>\<ESC>"
+  endif
 
-" nnoremap <silent> <localleader>ti :set opfunc=<SID>MarkdownTodo<CR>g@
-" nnoremap <silent> <localleader>tc :set opfunc=<SID>MarkdownTodo<CR>g@
-" nnoremap <silent> <localleader>tu :set opfunc=<SID>MarkdownTodo('')<CR>g@
-" vnoremap <silent> <localleader>s :<C-U>call operators#SlugProjectLink(visualmode(), 1)<CR>
-
-" function! operators#SlugProjectLink(type, flags, ...) abort
-"   " `@@` is an alias for `@"`, the unnamed register
-"   let reg_save = @@
-"   let reg_save2 = @*
-
-"   if a:0
-"     " Visual
-"     silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   elseif a:type == 'line' " Line
-"     " Line
-"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   else
-"     " Character
-"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/markdown_check -i '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   endif
-
-"   let @@ = reg_save
-"   let @* = reg_save2
-" endfunction
-
-
-" execute a:firstline "," a:lastline "yank"
-
-" function! commands#Execute() abort
-"   if !exists('b:ExecutePrg')
-"     echo "No b:ExecutePrg defined"
-"     return
-"   endif
-"   execute "%w !" . b:ExecutePrg
-" endfunction
-
-" function! commands#ExecuteVisual() abort
-"   if !exists('b:ExecutePrg')
-"     echo "No b:ExecutePrg defined"
-"     return
-"   endif
-"   execute "'<,'>w !" . b:ExecutePrg
-" endfunction
-
-
-" function! operators#SlugProjectLink(type, ...) abort
-"   " `@@` is an alias for `@"`, the unnamed register
-"   let reg_save = @@
-"   let reg_save2 = @*
-
-"   if a:0
-"     " Visual
-"     silent exe "normal! gvc\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   elseif a:type == 'line' " Line
-"     " Line
-"     silent exe "normal! '[V']c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   else
-"     " Character
-"     silent exe "normal! `[v`]c\<C-r>=system('~/.bin/slug_project -l -d '.fnameescape(expand('%:h')).'/projects/',@@.\"\\n\")\<CR>\<ESC>"
-"   endif
-
-"   let @@ = reg_save
-"   let @* = reg_save2
-" endfunction
-
-" function! bindings#LinkSourceControlMarkdownYankQuotedLines() range abort
-"   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
-"   let @* = @"
-"   echo "Yanked git Markdown link"
-" endfunction
+  let @@ = reg_save
+  let @* = reg_save2
+endfunction
