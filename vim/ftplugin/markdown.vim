@@ -57,20 +57,20 @@ vnoremap <silent> <localleader>bi :<C-U>call <SID>MarkdownTodoInvert(visualmode(
 vnoremap <silent> <localleader>bc :<C-U>call <SID>MarkdownTodoCheck(visualmode(), 1)<CR>
 vnoremap <silent> <localleader>bu :<C-U>call <SID>MarkdownTodoUncheck(visualmode(), 1)<CR>
 function! s:MarkdownTodoInvert(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-i', a:1)
+  call <SID>MarkdownTodo(a:type, '-i', a:0)
 endfunction
 function! s:MarkdownTodoCheck(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-c', a:1)
+  call <SID>MarkdownTodo(a:type, '-c', a:0)
 endfunction
 function! s:MarkdownTodoUncheck(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-u', a:1)
+  call <SID>MarkdownTodo(a:type, '-u', a:0)
 endfunction
-function! s:MarkdownTodo(type, flags, ...) abort
+function! s:MarkdownTodo(type, flags, visual) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
   let reg_save2 = @*
 
-  if a:1
+  if a:visual
     " Visual
     silent exe "normal! gvc\<C-r>=system('~/.bin/markdown_check '.a:flags,@@)\<CR>\<ESC>"
   elseif a:type == 'line' " Line
