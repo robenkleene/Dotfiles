@@ -16,9 +16,16 @@ optparse = OptionParser.new do |opts|
 end
 optparse.parse!
 
+new_line = false
 ARGF.each do |line|
+  if new_line
+    puts
+  else
+    new_line = true
+  end
+
   result = false
   result = line.gsub!(/^(\s*[-*]\s)\[\s\]\s/, '\1[x] ') if options[:invert] || options[:check]
   line.gsub!(/^(\s*[-*]\s)\[[xX]\]\s/, '\1[ ] ') if (options[:invert] && !result) || options[:uncheck]
-  puts line
+  print line.chomp
 end
