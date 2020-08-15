@@ -50,12 +50,12 @@ function! s:InsertTitle() abort
 endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
 
-command! -range=% TodoToggle <line1>,<line2>call <SID>MarkdownTodo('-i')
-command! -range=% TodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
-command! -range=% TodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
-function! s:MarkdownTodo(flags) abort
-  echom "normal! :".a:firstline.",".a:lastline."!markdown_check ".a:flags
-  silent exe "normal! :".a:firstline.",".a:lastline."!markdown_check ".a:flags
+command! -range=% TodoToggle call <SID>MarkdownTodo('-i', <line1>, <line2>)
+command! -range=% TodoCheck call <SID>MarkdownTodo('-c', <line1>, <line2>)
+command! -range=% TodoUncheck call <SID>MarkdownTodo('-u', <line1>, <line2>)
+function! s:MarkdownTodo(flags, start, end) abort
+  echom "normal! :".a:start.",".a:end."!markdown_check ".a:flags
+  silent exe "normal! :".a:start.",".a:end."!markdown_check ".a:flags
 endfunction
 nnoremap <silent> <localleader>bt :set opfunc=<SID>MarkdownTodoInvert<CR>g@
 nnoremap <silent> <localleader>bc :set opfunc=<SID>MarkdownTodoCheck<CR>g@
