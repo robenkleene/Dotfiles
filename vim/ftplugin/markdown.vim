@@ -50,22 +50,29 @@ function! s:InsertTitle() abort
 endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
 
-nnoremap <silent> <localleader>bi :set opfunc=<SID>MarkdownTodoInvert<CR>g@
+command! -range=% TodoToggle <line1>,<line2>call <SID>MarkdownTodo('-i')
+command! -range=% TodoCheck <line1>,<line2>call <SID>MarkdownTodo('-c')
+command! -range=% TodoUncheck <line1>,<line2>call <SID>MarkdownTodo('-u')
+function! s:MarkdownTodo(flags) abort
+  echom "normal! :".a:firstline.",".a:lastline."!markdown_check ".a:flags
+  silent exe "normal! :".a:firstline.",".a:lastline."!markdown_check ".a:flags
+endfunction
+nnoremap <silent> <localleader>bt :set opfunc=<SID>MarkdownTodoInvert<CR>g@
 nnoremap <silent> <localleader>bc :set opfunc=<SID>MarkdownTodoCheck<CR>g@
 nnoremap <silent> <localleader>bu :set opfunc=<SID>MarkdownTodoUncheck<CR>g@
-vnoremap <silent> <localleader>bi :<C-U>call <SID>MarkdownTodoInvert(visualmode(), 1)<CR>
+vnoremap <silent> <localleader>bt :<C-U>call <SID>MarkdownTodoInvert(visualmode(), 1)<CR>
 vnoremap <silent> <localleader>bc :<C-U>call <SID>MarkdownTodoCheck(visualmode(), 1)<CR>
 vnoremap <silent> <localleader>bu :<C-U>call <SID>MarkdownTodoUncheck(visualmode(), 1)<CR>
 function! s:MarkdownTodoInvert(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-i', a:0)
+  call <SID>MarkdownTodoOperator(a:type, '-i', a:0)
 endfunction
 function! s:MarkdownTodoCheck(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-c', a:0)
+  call <SID>MarkdownTodoOperator(a:type, '-c', a:0)
 endfunction
 function! s:MarkdownTodoUncheck(type, ...) abort
-  call <SID>MarkdownTodo(a:type, '-u', a:0)
+  call <SID>MarkdownTodoOperator(a:type, '-u', a:0)
 endfunction
-function! s:MarkdownTodo(type, flags, visual) abort
+function! s:MarkdownTodoOperator(type, flags, visual) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
   let reg_save2 = @*
