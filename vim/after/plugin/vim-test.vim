@@ -5,5 +5,10 @@ let test#ruby#bundle_exec = 0
 " Populate the `quickfix` list
 let test#strategy = 'make'
 
-nnoremap <silent> <localleader>t :TestNearest<CR>
-vnoremap <silent> <localleader>t :TestNearest<CR>
+augroup test_bindings
+  autocmd!
+  let blacklist = ['markdown']
+  " autocmd FileType json,lisp RainbowParentheses
+  autocmd FileType * if index(blacklist, &ft) < 0 | nnoremap <silent> <localleader>t :TestNearest<CR>
+  autocmd FileType * if index(blacklist, &ft) < 0 | vnoremap <silent> <localleader>t :TestNearest<CR>
+augroup END
