@@ -13,6 +13,9 @@ optparse = OptionParser.new do |opts|
   opts.on('-i', '--invert', 'Invert') do |u|
     options[:invert] = u
   end
+  opts.on('-b', '--line-break', 'Invert') do |u|
+    options[:line_break] = u
+  end
 end
 optparse.parse!
 
@@ -24,8 +27,10 @@ ARGF.each do |line|
     new_line = true
   end
 
+  line.encode!('UTF-8', 'UTF-8', invalid: :replace)
   result = false
   result = line.gsub!(/^(\s*[-*]\s)\[\s\]\s/, '\1[x] ') if options[:invert] || options[:check]
   line.gsub!(/^(\s*[-*]\s)\[[xX]\]\s/, '\1[ ] ') if (options[:invert] && !result) || options[:uncheck]
   print line.chomp
 end
+puts if options[:line_break]
