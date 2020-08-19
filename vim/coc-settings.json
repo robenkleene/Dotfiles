@@ -1,6 +1,7 @@
 {
   "suggest.noselect": false,
   "solargraph.diagnostics": true,
+  "solargraph.checkGemVersion": false,
   "diagnostic-languageserver.filetypes": {
     "c": ["clang"],
     "css": ["stylelint"],
