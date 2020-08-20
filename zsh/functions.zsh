@@ -61,7 +61,7 @@ sgitn() {
 }
 
 sgitnp() {
-  cd ~/Development/Projects
+  cd ~/Developer/Projects
   sgitn
   if [[ $? -ne 0 ]]; then
     cd - >/dev/null
@@ -178,7 +178,7 @@ zsh_refresh_commands() {
   rehash
 }
 zsh_edit_config() {
-  cd ~/Development/Dotfiles/zsh/
+  cd ~/Developer/Dotfiles/zsh/
   eval $EDITOR ../zshrc
 }
 
@@ -366,8 +366,8 @@ simulator_data_cd() {
 # For use with z
 add_common_directories() {
   fasd -A ~/Text/notes
-  fasd -A ~/Development/Scratch
-  fasd -A ~/Development
+  fasd -A ~/Developer/Scratch
+  fasd -A ~/Developer
   fasd -A ~/Documentation
 }
 

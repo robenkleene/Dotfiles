@@ -2,4 +2,4 @@
 
 set -e
 
-cd ~/Development/Projects/ && $HOME/.bin/sgit $@
+cd ~/Developer/Projects/ && $HOME/.bin/sgit $@

@@ -60,7 +60,7 @@ fi
 
 slug=$(echo "$title" | ~/.bin/slug)
 
-drafts_directory=~/Development/Projects/Web/robenkleene.github.io/_drafts
+drafts_directory=~/Developer/Projects/Web/robenkleene.github.io/_drafts
 if [[ ! -d "$drafts_directory" ]]; then
   echo "$drafts_directory is not a directory" >&2
   exit 1

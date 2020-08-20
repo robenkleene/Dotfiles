@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SNIPPETS_DIRECTORY=~/Development/Snippets
+SNIPPETS_DIRECTORY=~/Developer/Snippets
 
 eval SNIPPETS_DIRECTORY_EXPANDED=${SNIPPETS_DIRECTORY}
 if [ ! -d "$SNIPPETS_DIRECTORY_EXPANDED" ]; then

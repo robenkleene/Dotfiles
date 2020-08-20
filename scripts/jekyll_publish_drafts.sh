@@ -2,8 +2,8 @@
 
 set -e
 
-drafts_directory=~/Development/Projects/Web/robenkleene.github.io/_drafts
-posts_directory=~/Development/Projects/Web/robenkleene.github.io/_posts
+drafts_directory=~/Developer/Projects/Web/robenkleene.github.io/_drafts
+posts_directory=~/Developer/Projects/Web/robenkleene.github.io/_posts
 
 if [[ ! -d "$drafts_directory" ]]; then
   echo "$drafts_directory is not a directory" >&2

@@ -2,7 +2,7 @@
 
 set -e
 
-blog_directory=~/Development/Projects/Web/robenkleene.github.io/
+blog_directory=~/Developer/Projects/Web/robenkleene.github.io/
 cd "$blog_directory"
 git add -A :/ 
 if git diff-index --quiet HEAD; then

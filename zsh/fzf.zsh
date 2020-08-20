@@ -384,7 +384,7 @@ fzf_documentation() {
 
 # Snippets
 fzf_snippet_copy() {
-  cd ~/Development/Snippets/
+  cd ~/Developer/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     cat "$result" | safecopy
@@ -394,7 +394,7 @@ fzf_snippet_copy() {
   cd - >/dev/null
 }
 fzf_snippet_editor() {
-  cd ~/Development/Snippets/
+  cd ~/Developer/Snippets/
   local result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
     local parameter=$(printf '%q' "$PWD/$result")

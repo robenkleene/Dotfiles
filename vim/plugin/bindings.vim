@@ -46,7 +46,7 @@ nnoremap cdg :call commands#Cdg('cd')<CR>
 nnoremap cl :lcd %:p:h<CR>
 
 " vimrc
-nnoremap <leader>oi :cd ~/Development/Dotfiles/vim/<CR>:edit init.vim<CR>:echo ""<CR>
+nnoremap <leader>oi :cd ~/Developer/Dotfiles/vim/<CR>:edit init.vim<CR>:echo ""<CR>
 nnoremap <leader>si :source $MYVIMRC<CR>:echo "Sourced"<CR>
 " Macros
 " nnoremap <leader>om :new<CR>:set buftype=nofile<CR>V"wp

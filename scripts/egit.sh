@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 # System Repos
-EGITREPOS=~/Development/Dotfiles/
+EGITREPOS=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
-  EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Development/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/:~/Library/Application\ Support/Code/User
+  EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Developer/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/:~/Library/Application\ Support/Code/User
 elif [[ "$(uname)" = "Linux" ]]; then
   EGITREPOS+=:~/.config/Code/User
 fi
 
 # General Text Repos
-EGITREPOS+=:~/Development/Snippets/:~/Development/Settings/
+EGITREPOS+=:~/Developer/Snippets/:~/Developer/Settings/
 # Last Repos
-EGITREPOS+=:~/Development/Backup/:~/Development/Archive/:~/Development/Scratch/
+EGITREPOS+=:~/Developer/Backup/:~/Developer/Archive/:~/Developer/Scratch/
 
 
 IFS=':' read -ra repos <<< "$EGITREPOS"

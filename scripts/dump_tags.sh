@@ -22,6 +22,6 @@ fi
 if "$emacs" == "true"; then
   cat TAGS | grep '' | cut -f 2 -d $'' | cut -f1 -d $''
 else
-  ~/Development/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags |\
+  ~/Developer/Dotfiles/vim/plugged/fzf.vim/bin/tags.pl tags |\
     cut -f 1 | cut -f 1 -d$ | cut -f 1 -d' '
 fi

@@ -297,7 +297,7 @@ Otherwise, call `backward-kill-word'."
           1 font-lock-warning-face t)))
   )
 
-(defvar robenkleene/scratch-directory-path "~/Development/Scratch/Source/")
+(defvar robenkleene/scratch-directory-path "~/Developer/Scratch/Source/")
 (defvar robenkleene/scratch-file-name "source")
 (defun robenkleene/scratch-for-buffer ()
   "Open scratch file for current buffer."
@@ -355,7 +355,7 @@ Otherwise, call `backward-kill-word'."
   (robenkleene/ido-recursive-get-file
    robenkleene/documentation-directory-path))
 
-(defvar robenkleene/org-directory-path "~/Development/Scratch/Org")
+(defvar robenkleene/org-directory-path "~/Developer/Scratch/Org")
 (defun robenkleene/emacs-org ()
   "Open Emacs documentation directory."
   (interactive)
@@ -646,7 +646,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-development-scratch ()
   "Open scratch file for current buffer."
   (interactive)
-  (find-file "~/Development/Scratch/")
+  (find-file "~/Developer/Scratch/")
   )
 
 (defun robenkleene/open-scratch-for-file ()
@@ -663,7 +663,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/scratch-for-file (file)
   "Return the path to the scratch file for FILE."
   (let ((extension (file-name-extension file))
-        (scratch-directory "~/Development/Scratch/Document/")
+        (scratch-directory "~/Developer/Scratch/Document/")
         directories
         file)
     (if (bound-and-true-p extension)

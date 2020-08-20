@@ -148,7 +148,7 @@ function! commands#NewFileType(type) abort
 endfunction
 
 function! commands#NewScratch(bang, type) abort
-  let l:scratch_path = "~/Development/Scratch/Document/" 
+  let l:scratch_path = "~/Developer/Scratch/Document/" 
   if (a:bang == 1)
     if exists(':Dirvish')
       execute 'Dirvish' l:scratch_path

@@ -12,7 +12,7 @@ rubyBinPath = path.join(process.env.HOME, ".rbenv/shims/")
 localBinPath = "/usr/local/bin"
 process.env.PATH = [nodeBinPath, rubyBinPath, localBinPath, process.env.PATH].join(':')
 # process.env.SHELL = "/bin/bash"
-# process.env.ATOM_REPOS_HOME = process.env.HOME + "/Development/Projects/Atom"
+# process.env.ATOM_REPOS_HOME = process.env.HOME + "/Developer/Projects/Atom"
 
 # The `linter-coffeelint` package no longer supports the `COFFEELINT_CONFIG`
 # environment variable because internally it uses `configfinder.coffee` to find
@@ -62,7 +62,7 @@ atom.commands.add 'atom-text-editor', 'roben-kleene:reveal-in-finder', ->
 
 # Open Scratch For Scope
 atom.commands.add 'atom-text-editor', 'roben-kleene:open-scratch-for-scope', ->
-  scratchPath = process.env.HOME + "/Development/Scratch/Source/"
+  scratchPath = process.env.HOME + "/Developer/Scratch/Source/"
   editor = atom.workspace.getActiveTextEditor()
   scope = editor.getGrammar()?.scopeName
   if scope

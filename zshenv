@@ -30,7 +30,7 @@ export BAT_COMMAND=bat
 # export BROWSER_FLAG='-t'
 
 # Export `CDPATH` so it's available in `vim`
-# export CDPATH=~:~/Development/:~/Documentation/
+# export CDPATH=~:~/Developer/:~/Documentation/
 
 # Color in `ls`
 export CLICOLOR=1

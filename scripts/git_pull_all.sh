@@ -3,17 +3,17 @@
 set -e
 
 ~/.bin/egit -u
-cd "$HOME/Development/Dotfiles/scripts" && ./install.sh
+cd "$HOME/Developer/Dotfiles/scripts" && ./install.sh
 
-cd "$HOME/Development/Settings/Source Control/Directories/Text" && \
+cd "$HOME/Developer/Settings/Source Control/Directories/Text" && \
   ./compare.sh
 if [[ "$(uname)" = "Darwin" ]]; then
-  cd "$HOME/Development/Settings/Source Control/Directories/Projects" && \
+  cd "$HOME/Developer/Settings/Source Control/Directories/Projects" && \
     ./compare.sh mac.txt
-  cd "$HOME/Development/Settings/Source Control/Directories/Max/" && \
+  cd "$HOME/Developer/Settings/Source Control/Directories/Max/" && \
     ./compare.sh
 elif [[ "$(uname)" = "Linux" ]]; then
-  cd "$HOME/Development/Settings/Source Control/Directories/Projects" && \
+  cd "$HOME/Developer/Settings/Source Control/Directories/Projects" && \
     ./compare.sh linux.txt
 fi
 
