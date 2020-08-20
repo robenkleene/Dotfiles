@@ -236,9 +236,12 @@ _fzf_quick_widget() {
   fi
 
   local file=$(__fzf_cmd "$cmd") 
-  if [[ ! -f "$file" ]]; then
+  if [[ ! -e "$file" ]]; then
     zle redisplay
     return 1
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
   fi
 
   # `vim` spits "Warning: Input is not from a terminal" without the `<
