@@ -236,6 +236,11 @@ _fzf_quick_widget() {
   fi
 
   local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -f "$file" ]]; then
+    zle redisplay
+    return 1
+  fi
+
   # `vim` spits "Warning: Input is not from a terminal" without the `<
   # /dev/tty`
   eval $EDITOR ${(q)file} < /dev/tty
