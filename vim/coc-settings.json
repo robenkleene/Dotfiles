@@ -17,7 +17,8 @@
     "xml": ["xmllint"],
     "zsh": ["shell", "shellcheck"]
   },
-  "snippets.textmateSnippetsRoots": [
-    "~/.config/Code/User/snippets"
-  ]
+  "snippets.extends": {
+    "make": ["makefile"]
+  },
+  "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"]
 }
