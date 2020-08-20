@@ -18,6 +18,9 @@
     "zsh": ["shell", "shellcheck"]
   },
   "snippets.extends": {
+    "sh": ["shellscript"],
+    "zsh": ["sh"],
+    "typescript": ["javascript"],
     "make": ["makefile"]
   },
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"]
