@@ -8,6 +8,9 @@
     "MD009": false,
     // Allow long lines
     "MD013": false,
+    // Disable forcing blank lines around lists, this is just annoying when
+    // creating a list
+    "MD032": false,
     // Don't force first line header
     "MD041": false,
     // Disable blank line ending file, this is a good rule, but annoying to
