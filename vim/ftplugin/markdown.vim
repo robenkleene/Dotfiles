@@ -50,6 +50,9 @@ function! s:InsertTitle() abort
 endfunction
 nnoremap <buffer> <localleader>t :InsertTitle<CR>
 
+vnoremap <localleader><return> :TodoToggleLine<CR>
+nnoremap <localleader><return> :TodoToggleLine<CR>
+command! -range TodoToggleLine call <SID>MarkdownTodo('-i', <line1>, <line2>)
 command! -range=% TodoToggle call <SID>MarkdownTodo('-i', <line1>, <line2>)
 command! -range=% TodoCheck call <SID>MarkdownTodo('-c', <line1>, <line2>)
 command! -range=% TodoUncheck call <SID>MarkdownTodo('-u', <line1>, <line2>)
