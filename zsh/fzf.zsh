@@ -465,3 +465,32 @@ fzf_tmux_window() {
   local window=$(tmux list-windows | awk 'BEGIN{FS=" "} {print $1 $2}' | fzf | awk 'BEGIN{FS=":"} {print $1}')
   tmux select-window -t ":$window"
 }
+
+fzf_quick_code() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    return 1
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
+  fi
+
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval "code --new-window" "${(q)file}" < /dev/tty
+
+  local ret=$?
+  __zsh_add_history "$EDITOR ${(q)file}"
+  return $ret
+}
+zle -N _fzf_quick_widget
+bindkey '\eo' _fzf_quick_widget
+
