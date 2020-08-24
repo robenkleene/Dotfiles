@@ -171,6 +171,7 @@ everywhere_abbreviations=(
 '>n' '>/dev/null'
 '>null' '>/dev/null'
 '>o' '2>&1'
+'>0' '2>&1 >/dev/null'
 # Glob
 # '-gcocoa' '-g "*.{h,m,swift}"'
 # '-gruby' '-g "*.rb"'
