@@ -285,4 +285,7 @@ nnoremap <silent> <M-p> :cp<CR>
 " will update instantly.
 " This conflicts with blocking backgrounding with `DisableBackgrounding`,
 " removing until there's a way for these to co-exist
-noremap <c-z> :suspend<cr>:silent checktime<cr>
+noremap <C-z> :suspend<cr>:silent checktime<cr>
+
+" Paste from yank register (`0`)
+vnoremap <M-y> "0p
