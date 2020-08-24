@@ -281,6 +281,36 @@ _fzf_tags_widget() {
 zle -N _fzf_tags_widget
 bindkey '\ei' _fzf_tags_widget
 
+_fzf_quick_code_widget() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    return 1
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
+  fi
+
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval "code --new-window" "${(q)file}" < /dev/tty
+
+  local ret=$?
+  __zsh_add_history "$EDITOR ${(q)file}"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_quick_code_widget
+bindkey '\eq' _fzf_quick_code_widget
+
+
 # Commands does extra work with the `commands` and `functions` variables
 __fcmd() {
   local query=""
