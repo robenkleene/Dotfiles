@@ -89,6 +89,7 @@ augroup save_view
         \&& &buftype !~ 'help'
         \&& &buftype !~ 'term'
         \&& &filetype !~ 'gitcommit'
+        \&& &filetype !~ 'pullrequest'
         \&& &filetype !~ 'gitrebase'
         \|    mkview
         \|  endif
@@ -98,6 +99,7 @@ augroup save_view
         \&& &buftype !~ 'help'
         \&& &buftype !~ 'term'
         \&& &filetype !~ 'gitcommit'
+        \&& &filetype !~ 'pullrequest'
         \&& &filetype !~ 'gitrebase'
         \|    silent! loadview
         \|  endif
