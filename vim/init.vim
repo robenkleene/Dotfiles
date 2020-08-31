@@ -100,6 +100,7 @@ if !has('macunix')
 endif
 Plug 'wsdjeg/vim-fetch'
 Plug 'liuchengxu/vista.vim'
+Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 Plug 'neoclide/coc.nvim'
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
@@ -109,5 +110,5 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
+Plug 'neoclide/jsonc.vim', { 'for': 'json'}
 call plug#end()
