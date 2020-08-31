@@ -6,6 +6,8 @@
     // Allow trailing whitespace (this is a good rule, but it's too annoying
     // when typing)
     "MD009": false,
+    // Allow hard tabs, e.g., in code blocks
+    "MD010": false,
     // Allow long lines
     "MD013": false,
     // Allow punctuation at the end of headings (e.g., `?`)
@@ -15,6 +17,8 @@
     "MD032": false,
     // Don't force first line header
     "MD041": false,
+    // Allow either fenced code blocks or indented code blocks
+    "MD046": false,
     // Disable blank line ending file, this is a good rule, but annoying to
     // enforce while editing
     "MD047": false
