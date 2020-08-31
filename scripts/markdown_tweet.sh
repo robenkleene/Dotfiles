@@ -2,4 +2,4 @@
 
 set -e
 
-~/.bin/markdown_untitled ~/Documents/Text/Writing/Tweets
+~/.bin/markdown_untitled ~/Documents/Text/Social/Tweets

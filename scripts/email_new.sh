@@ -12,4 +12,4 @@ if [[ -z "$title" ]]; then
     echo "Invalid title" >&2
     exit 1
 fi
-~/.bin/markdown_new_file "$title" ~/Documents/Text/Writing/Email/
+~/.bin/markdown_new_file "$title" ~/Documents/Text/Social/Email/
