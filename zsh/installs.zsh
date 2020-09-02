@@ -27,7 +27,7 @@ fi
 
 # llvm
 if [[ "$(uname)" = "Darwin" ]]; then
-  PATH="/usr/local/opt/llvm/bin:$PATH"
+  PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
 fi
 
 # nvm
