@@ -27,6 +27,9 @@ fi
 
 # llvm
 if [[ "$(uname)" = "Darwin" ]]; then
+  # This gets rid of errors when importing C headers
+  export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+  # Make tools like `clangd` available
   PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
 fi
 
