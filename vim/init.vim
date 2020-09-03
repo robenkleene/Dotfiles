@@ -99,7 +99,8 @@ if !has('macunix')
   Plug 'roxma/vim-tmux-clipboard'
 endif
 Plug 'wsdjeg/vim-fetch'
-Plug 'liuchengxu/vista.vim'
+" Markdown table of contents
+Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 Plug 'neoclide/coc.nvim'
 " Languages {{{2
