@@ -55,7 +55,7 @@ function! s:MyHighlights() abort
   " Visual selection is distinguished from `Search` because a match can either
   " be selected or not selected, so this difference in colors distinguishes
   " that.
-  highlight Visual ctermbg=darkcyan ctermfg=NONE
+  highlight Visual ctermbg=24 ctermfg=NONE
   " Original idea, grey background:
   " highlight MatchParen ctermfg=white ctermbg=244
   highlight MatchParen ctermfg=cyan ctermbg=NONE cterm=underline
