@@ -33,10 +33,10 @@ function! s:MyHighlights() abort
   highlight LineNr ctermbg=NONE ctermfg=238
 
   " Cursor Line {{{1
-  let s:highlightbgcolor = '237'
+  let s:highlightbgcolor = '236'
   let s:highlightfgcolor = 'NONE'
-
-  let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
+  " 'ColorColumn' is 80 character line
+  let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn', 'ColorColumn']
   for group in s:highlightgroups
     exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .
           \ s:highlightfgcolor . ' cterm=NONE'
@@ -77,11 +77,8 @@ function! s:MyHighlights() abort
   highlight TabLine cterm=NONE ctermbg=239 ctermfg=249
   highlight TabLineFill cterm=NONE ctermbg=239 ctermfg=249
 
-  " Column Guide {{{1
-  highlight ColorColumn ctermbg=237
-
   " Comments & Tildes {{{1
-  highlight comment ctermfg=darkgray
+  highlight comment ctermfg=244
   highlight SpecialKey ctermfg=238
   highlight NonText ctermfg=darkgrey
   highlight qfSeparator ctermfg=238
