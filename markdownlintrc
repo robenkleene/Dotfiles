@@ -10,6 +10,8 @@
     "MD010": false,
     // Allow long lines
     "MD013": false,
+    // Allow duplicate headings
+    "MD024": false,
     // Allow punctuation at the end of headings (e.g., `?`)
     "MD026": false,
     // Disable forcing blank lines around lists, this is just annoying when
