@@ -274,8 +274,6 @@ noremap <silent> <Down> gj
 " These work but cause a delay on ESC
 " noremap <ESC>p "0p
 " vnoremap <ESC>p "0p
-noremap <localleader>p "0p
-vnoremap <localleader>p "0p
 noremap <leader>p "0p
 vnoremap <leader>p "0p
 nnoremap <silent> <M-n> :cn<CR>
