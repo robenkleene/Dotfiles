@@ -55,6 +55,8 @@ export EDITOR="$VISUAL"
 # not set, than `git` overrides `less` with its own options.
 export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 export PAGER="less"
+# Prevent `npm` scripts from opening browser windows
+export BROWSER="none"
 
 # Coffeelint
 export COFFEELINT_CONFIG=$HOME/.coffeelint.json
