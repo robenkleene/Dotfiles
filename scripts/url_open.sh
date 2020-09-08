@@ -21,7 +21,7 @@ while getopts ":b:h" option; do
 done
 
 if [[ -z "$browser_flag" ]]; then
-  if [[ -n "$BROWSER" ]]; then
+  if [[ -n "$BROWSER" && "$BROWSER" != "none" ]]; then
     browser_arg="-a$BROWSER"
   fi
 else

@@ -47,7 +47,6 @@ fi
 # Editor
 export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
-# export BROWSER="Brave Browser"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
 # sequences
