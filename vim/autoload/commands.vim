@@ -148,7 +148,8 @@ function! commands#NewFileType(type) abort
 endfunction
 
 function! commands#NewScratch(bang, type, start, end) abort
-  if (a:end - a:start > 0)
+  let l:range = a:end - a:start > 0
+  if (l:range)
     let reg_save = @@
     let reg_save2 = @*
     exe "silent ".a:start.",".a:end."yank"
@@ -171,7 +172,7 @@ function! commands#NewScratch(bang, type, start, end) abort
   let l:path = l:scratch_path . l:current_filetype . "." . l:extension
   execute a:type l:path
 
-  if (a:end - a:start > 0)
+  if (l:range)
     exe "norm G"
     exe "silent put"
     let @@ = reg_save
