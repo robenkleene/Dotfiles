@@ -147,8 +147,14 @@ function! commands#NewFileType(type) abort
   " let @@ = reg_save
 endfunction
 
-function! commands#NewScratch(bang, type) abort
-  let l:scratch_path = "~/Developer/Scratch/Document/" 
+function! commands#NewScratch(bang, type, start, end) abort
+  if (a:end - a:start > 0)
+    let reg_save = @@
+    let reg_save2 = @*
+    exe "silent ".a:start.",".a:end."yank"
+  endif
+
+  let l:scratch_path = "~/Developer/Scratch/Document/"
   if (a:bang == 1)
     if exists(':Dirvish')
       execute 'Dirvish' l:scratch_path
@@ -164,6 +170,13 @@ function! commands#NewScratch(bang, type) abort
   let l:current_filetype = &filetype
   let l:path = l:scratch_path . l:current_filetype . "." . l:extension
   execute a:type l:path
+
+  if (a:end - a:start > 0)
+    exe "norm G"
+    exe "silent put"
+    let @@ = reg_save
+    let @* = reg_save2
+  endif
 endfunction
 
 function! s:valid_register(register) abort
