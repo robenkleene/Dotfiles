@@ -148,7 +148,7 @@ function! commands#NewFileType(type) abort
 endfunction
 
 function! commands#NewScratch(bang, type, start, end) abort
-  let l:range = a:end - a:start > 0
+  let l:range = a:start != 1 || a:end != line('$')
   if (l:range)
     let reg_save = @@
     let reg_save2 = @*

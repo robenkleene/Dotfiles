@@ -51,10 +51,10 @@ command! VnewFileType :call commands#NewFileType('vnew')
 command! TabnewFileType :call commands#NewFileType('tabnew')
 
 " Scratch
-command! -range=0 -bang EditScratch :call commands#NewScratch(<bang>0, 'edit', <line1>, <line2>)
-command! -range=0 -bang NewScratch :call commands#NewScratch(<bang>0, 'new', <line1>, <line2>)
-command! -range=0 -bang VnewScratch :call commands#NewScratch(<bang>0, 'vnew', <line1>, <line2>)
-command! -range=0 -bang TabnewScratch :call commands#NewScratch(<bang>0, 'tabnew', <line1>, <line2>)
+command! -range=% -bang EditScratch :call commands#NewScratch(<bang>0, 'edit', <line1>, <line2>)
+command! -range=% -bang NewScratch :call commands#NewScratch(<bang>0, 'new', <line1>, <line2>)
+command! -range=% -bang VnewScratch :call commands#NewScratch(<bang>0, 'vnew', <line1>, <line2>)
+command! -range=% -bang TabnewScratch :call commands#NewScratch(<bang>0, 'tabnew', <line1>, <line2>)
 
 " Register
 command! -nargs=1 NewRegister :call commands#NewRegister(<q-args>, 'new')
