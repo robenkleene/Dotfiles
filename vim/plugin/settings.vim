@@ -204,4 +204,5 @@ let g:xml_syntax_folding=1
 " Don't timeout the leader key
 set notimeout
 
+" Autocomplete max height
 set pumheight=10
