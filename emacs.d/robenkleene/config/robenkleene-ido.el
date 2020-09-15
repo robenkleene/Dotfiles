@@ -273,6 +273,14 @@
     )
   )
 
+(defun robenkleene/ido-quick-open ()
+  "Find file recursively from quick open directories."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-file
+              (robenkleene/source-control-directory)))
+  )
+
+
 ;; (robenkleene/ido-vertical-call
 ;;  (lambda ()
 ;;    (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
