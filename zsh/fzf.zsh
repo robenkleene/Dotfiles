@@ -537,6 +537,10 @@ fzf_quick() {
   fi
   if [[ -d "$file" ]]; then
     cd "$file" || exit
+    readme="$file/README.md"
+    if [[ -f "$readme" ]]; then
+      file=$readme
+    fi
   else
     dir=$(dirname "${(q)file}")
     cd "$dir" || exit
