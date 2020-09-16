@@ -518,9 +518,31 @@ fzf_quick_code() {
   eval "code --new-window" "${(q)file}" < /dev/tty
 
   local ret=$?
+  __zsh_add_history "code --new-window ${(q)file}"
+  return $ret
+}
+
+fzf_quick() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    return 1
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
+  fi
+
+  local final_cmd="$EDITOR ${(q)file}"
+  eval $final_cmd
+
+  local ret=$?
   __zsh_add_history "$EDITOR ${(q)file}"
   return $ret
 }
-zle -N _fzf_quick_widget
-bindkey '\eo' _fzf_quick_widget
-
