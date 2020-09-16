@@ -17,8 +17,8 @@ set wrap
 " be less than `80` characters long.
 " setlocal colorcolumn=""
 
-nnoremap <buffer> <localleader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
-nnoremap <buffer> <leader>P :!open -a "Marked 2.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <buffer> <localleader>P :!open -a "Repla.app" "%:p"<CR>\|:redraw!<CR>
+nnoremap <buffer> <leader>P :!open -a "Repla.app" "%:p"<CR>\|:redraw!<CR>
 
 nnoremap <silent> <buffer> <localleader>lr :set opfunc=operators#LinkReplace<CR>g@
 vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visualmode(), 1)<CR>
