@@ -537,6 +537,9 @@ fzf_quick() {
   fi
   if [[ -d "$file" ]]; then
     cd "$file" || exit
+  else
+    dir=$(dirname "${(q)file}")
+    cd "$dir" || exit
   fi
 
   local final_cmd="$EDITOR ${(q)file}"
