@@ -273,13 +273,36 @@
     )
   )
 
+(defun robenkleene/ido-recursive-get-file-or-dir (dir)
+  "Find file recursively in DIR."
+  (let (project-files key-to-path)
+    (setq project-files
+          (split-string
+           (shell-command-to-string
+            (concat "fd "
+                    "--hidden --exclude .git . "
+                    dir
+                    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+              (let ((key (robenkleene/ido-key-for-path path dir)))
+                (puthash key path key-to-path)
+                (push key ido-list)
+                )
+              )
+            project-files)
+      (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
+      )
+    )
+  )
+
 (defun robenkleene/ido-quick-open ()
   "Find file recursively from quick open directories."
   (interactive)
   (find-file (robenkleene/ido-recursive-get-file
-              (robenkleene/source-control-directory)))
+              (concat "~/Text " "~/Documents/Text/Notes " "~/Documentation")))
   )
-
 
 ;; (robenkleene/ido-vertical-call
 ;;  (lambda ()
