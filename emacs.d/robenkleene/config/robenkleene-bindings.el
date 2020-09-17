@@ -47,8 +47,10 @@
 ;; General
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'imenu)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'next-buffer)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o") 'previous-buffer)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'next-buffer)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o") 'previous-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+  'robenkleene/ido-quick-open)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
   'robenkleene/ido-recursive-find-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
