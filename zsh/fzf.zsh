@@ -536,6 +536,33 @@ fzf_quick() {
     return 1
   fi
   if [[ -d "$file" ]]; then
+    cd ${(q)file} || exit
+    __zsh_add_history "cd ${(q)file}"
+    return
+  fi
+
+  local final_cmd="$BAT_COMMAND ${(q)file}"
+  eval $final_cmd
+
+  local ret=$?
+  __zsh_add_history "$BAT_COMMAND ${(q)file}"
+  return $ret
+}
+
+fzf_quick_edit() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    return 1
+  fi
+  if [[ -d "$file" ]]; then
     cd "$file" || exit
     readme="$file/README.md"
     if [[ -f "$readme" ]]; then
