@@ -242,7 +242,15 @@ _fzf_quick_widget() {
   fi
   if [[ -d "$file" ]]; then
     cd "$file" || exit
+    readme="$file/README.md"
+    if [[ -f "$readme" ]]; then
+      file=$readme
+    fi
+  else
+    dir=$(dirname "${(q)file}")
+    cd "$dir" || exit
   fi
+
 
   # `vim` spits "Warning: Input is not from a terminal" without the `<
   # /dev/tty`
