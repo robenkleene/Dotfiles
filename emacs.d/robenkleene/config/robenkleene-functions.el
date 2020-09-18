@@ -63,14 +63,6 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/open-journal ()
-  "Open today's journal file."
-  (interactive)
-  (robenkleene/safe-find-file
-   (shell-command-to-string "~/.bin/journal_new_make_default")
-   )
-  )
-
 (defun robenkleene/open-home ()
   "Open inbox directory."
   (interactive)

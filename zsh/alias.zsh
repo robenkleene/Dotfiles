@@ -191,7 +191,7 @@ alias ecrm='eval $EMACS_COMMAND README.md'
 alias tags="generate_tags"
 
 # Common
-alias journal="journal_new_make_default_edit"
+alias journal="$VIM_COMMAND ~/Text/journal/README.md"
 alias tweet="markdown_tweet_edit"
 alias qa="quick_text_search"
 alias q="fzf_quick"

@@ -26,5 +26,4 @@ Alias Scw SourceControlWeb
 Alias -range Snew NewScratch
 Alias -range Svnew VnewScratch
 Alias -range Vsnew VnewScratch
-Alias Journal JournalNew
 Alias Gcu !git_commit_update

@@ -74,7 +74,7 @@ command! BlogNewPostWithFile :call commands#BlogNewPostWithFile('')
 command! BlogNewLinkWithFile :call commands#BlogNewPostWithFile('-l')
 
 " Journal
-command! JournalNew :call commands#JournalNew()
+command! Journal :e ~/Text/journal/README.md
 
 " Inbox
 command! -nargs=? Inbox :call commands#Inbox(<args>)

@@ -330,12 +330,6 @@ function! commands#BlogNewPostWithFile(flags) abort
   execute 'edit '.l:filename
 endfunction
 
-" Journal
-function! commands#JournalNew() abort
-  let l:filename = system('~/.bin/journal_new_make_default')
-  execute 'edit '.l:filename
-endfunction
-
 " Open Source Control
 function! commands#SourceControlWeb() abort
   echo system('~/.bin/source_control_open_site')
