@@ -264,6 +264,34 @@ _fzf_quick_widget() {
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
+_fzf_developer_widget() {
+  local cmd="fd --type d --exclude .git . ~/Developer"
+
+  if [[ -n "$LBUFFER" ]]; then
+    local dir="${LBUFFER##* }"
+    if [[ -d "$dir" ]]; then
+      cmd="cd $dir && $cmd && cd - >/dev/null"
+    fi
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local dir=$(__fzf_cmd "$cmd") 
+  if [[ ! -d "$dir" ]]; then
+    zle redisplay
+    return 1
+  fi
+  cd "$dir"
+
+  local ret=$?
+  __zsh_add_history "cd ${(q)dir}"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_developer_widget
+bindkey '\ev' _fzf_developer_widget
+
 # Special
 
 # Tags uses a special `fzf` command
@@ -605,11 +633,11 @@ fzf_developer() {
   if [[ -d "$file" ]]; then
     cd "$file" || exit
   else
-    dir=$(dirname "${(q)file}")
-    cd "$dir" || exit
+    file=$(dirname "${(q)file}")
+    cd "$file" || exit
   fi
 
   local ret=$?
-  __zsh_add_history "$EDITOR ${(q)file}"
+  __zsh_add_history "cd ${(q)file}"
   return $ret
 }
