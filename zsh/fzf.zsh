@@ -588,3 +588,28 @@ fzf_quick_edit() {
   __zsh_add_history "$EDITOR ${(q)file}"
   return $ret
 }
+
+fzf_developer() {
+  local cmd="fd --type d --exclude .git . ~/Developer"
+
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    return 1
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
+  else
+    dir=$(dirname "${(q)file}")
+    cd "$dir" || exit
+  fi
+
+  local ret=$?
+  __zsh_add_history "$EDITOR ${(q)file}"
+  return $ret
+}

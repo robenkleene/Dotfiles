@@ -134,11 +134,12 @@ fi
 # `cd`
 alias cdtd='cd_todo'
 
-# `doc` & `snp`
+# `doc` / `snp` / `dev`
 alias snp='fzf_snippet_copy'
 alias snpe='fzf_snippet_editor'
 alias doce='fzf_documentation_editor'
 alias doc='fzf_documentation'
+alias dev='fzf_developer'
 
 # Test Variable
 alias ptv='echo $test_variable'
