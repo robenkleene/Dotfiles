@@ -3,12 +3,5 @@
     "es6": true,
     "browser": true,
     "node": true
-  },
-  "overrides": [
-    {
-      "rules": {
-        "no-continue": "off"
-      }
-    }
-  ]
+  }
 }
