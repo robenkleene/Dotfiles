@@ -328,6 +328,7 @@ _fzf_quick_code_widget() {
 
   local file=$(__fzf_cmd "$cmd") 
   if [[ ! -e "$file" ]]; then
+    zle redisplay
     return 1
   fi
   if [[ -d "$file" ]]; then
