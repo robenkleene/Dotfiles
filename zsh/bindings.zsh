@@ -120,6 +120,13 @@ _system_yank() {
   zle yank
 }
 zle -N _system_yank
+
+_save_all() {
+  sgitt -cp && egit -p || egitn -n
+  zle reset-prompt
+}
+zle -N _save_all
+
 bindkey -e '\ed' _system_kill_word
 bindkey -e '\eD' _system_kill_word
 bindkey -e '\ew' _system_copy_region_as_kill
@@ -131,6 +138,7 @@ bindkey -e '^W' _system_kill_region_or_backward_kill_word
 bindkey -e '^Y' _system_yank
 bindkey -e "^[^?" _system_bash_backwards_kill_word
 bindkey -e "^[^H" _system_bash_backwards_kill_word
+bindkey -e "\es" _save_all
 
 # Arrow Keys
 bindkey -e '^[[1;5A' beginning-of-buffer-or-history
