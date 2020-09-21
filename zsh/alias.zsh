@@ -100,6 +100,12 @@ alias ml='make lint'
 alias mac='make autocorrect'
 alias macc='make autocorrect && git add -A :/ && git commit -m "Run autocorrect"'
 
+# `node`
+alias nrt='npm run test'
+alias nrl='npm run lint'
+alias nrf='npm run format'
+alias nrac='npm run autocorrect'
+
 # `emacs`
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
