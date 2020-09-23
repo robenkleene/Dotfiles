@@ -62,6 +62,7 @@ abbreviations=(
 # `ga`: `git add`
 'ga' 'git add'
 'gaa' 'git add -A :/'
+'gaac' 'git add -A :/ && git commit'
 # `gb`: `git branch`
 'gb' 'git branch'
 'gbum' 'git branch --set-upstream-to=origin/master master'
