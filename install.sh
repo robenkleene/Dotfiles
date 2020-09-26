@@ -25,7 +25,7 @@ for file in *; do
     continue
   fi
 
-  make_symlink "$file" ~/.$file
+  make_symlink "$file" "$HOME/.$file"
 done
 
 ./Scripts/install.sh
