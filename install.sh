@@ -5,24 +5,27 @@ set -e
 cd "$(dirname "$0")" || exit 1
 
 function make_symlink() {
-  source=.$1
-  destination=~/.$1
-  if [ !-e "$destination" ]; then
-    echo $source $destination
-    #    ln -s "$source" "$destination"
+  source=$1
+  destination=$2
+  if [ ! -e "$destination" ]; then
+    ln -s "$source" "$destination"
   elif [ ! -L "$destination" ]; then
-    echo "ERROR: $destination is a file and it's not a symlink!"
+    echo "Warning: $destination is a file and it's not a symlink" >&2
   fi
 }
 
-for thisFILE in *; do 
-  if [[ ! $thisFILE =~ ".sh" ]]; then
-    # Exclude shell scripts
-    if [[ ! $thisFILE =~ "scripts" ]]; then
-      # Exclude the scripts directory
-      make_symlink "$thisFILE"
-    fi
+for file in *; do
+  if [[ $file == *.sh ]]; then
+    continue
   fi
+  if [[ $file == "scripts" ]]; then
+    continue
+  fi
+  if [[ $file == "tags" || $file == "TAGS" ]]; then
+    continue
+  fi
+
+  make_symlink "$file" ~/.$file
 done
 
 ./Scripts/install.sh
