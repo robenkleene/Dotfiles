@@ -1,24 +1,17 @@
 #!/bin/bash
 
-install_directory_name="Dotfiles" # The name of the directory to install from.
+set -e
 
-# Stop if this is being run from any directory besides the install directory
-directory=${PWD}
-directory_name=${PWD##*/}
-if [ ! "$directory_name" == $install_directory_name ]; then
-  echo "ERROR: This directory \"$directory_name\" doesn't match $install_directory_name."
-  echo "This script only runs from the $install_directory_name directory."
-  exit 1
-fi
+cd "$(dirname "$0")" || exit 1
 
-function make_symlink {
+function make_symlink() {
+  source=.$1
   destination=~/.$1
-  if [ -f "$destination" ] || [ -d "$destination" ]; then
-    if [ ! -L "$destination" ]; then
-      echo "ERROR: $destination is a file and it's not a symlink!"
-    fi
-  else
-    ln -s "$directory/$1" "$destination"
+  if [ !-e "$destination" ]; then
+    echo $source $destination
+    #    ln -s "$source" "$destination"
+  elif [ ! -L "$destination" ]; then
+    echo "ERROR: $destination is a file and it's not a symlink!"
   fi
 }
 
@@ -32,5 +25,4 @@ for thisFILE in *; do
   fi
 done
 
-cd scripts || exit
-./install.sh
+./Scripts/install.sh

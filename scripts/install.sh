@@ -2,26 +2,18 @@
 
 set -e
 
-INSTALL_DIRECTORY_NAME="scripts" # The name of the directory to install from.
+cd "$(dirname "$0")" || exit 1
 
-# Stop if this is being run from any directory besides the install directory
-DIRECTORY=${PWD}
-DIRECTORY_NAME=${PWD##*/}
-if [ ! "$DIRECTORY_NAME" == "$INSTALL_DIRECTORY_NAME" ]; then
-  echo "ERROR: This directory \"$DIRECTORY_NAME\" doesn't match $INSTALL_DIRECTORY_NAME."
-  echo "This script only runs from the $INSTALL_DIRECTORY_NAME directory."
-  exit 1
-fi
+destination_dir="$HOME/.bin"
 
-function MakeSymlink() {
-  FILENAME=$1
-  EXECUTABLE_NAME="${FILENAME%.*}"
-  DESTINATION_DIRECTORY="$HOME/.bin"
-  [ -d "$DESTINATION_DIRECTORY" ] || mkdir "$DESTINATION_DIRECTORY"
-  DESTINATION=$DESTINATION_DIRECTORY/$EXECUTABLE_NAME
-  if [ ! -e "$DESTINATION" ]; then
-    echo "Installing $DESTINATION"
-    ln -s "$DIRECTORY/$thisFILE" "$DESTINATION"
+function make_symlink() {
+  source=.$1
+  destination=~/.$1
+  if [ !-e "$destination" ]; then
+    echo "ln -s $source $destination"
+    #    ln -s "$source" "$destination"
+  elif [ ! -L "$destination" ]; then
+    echo "ERROR: $destination is a file and it's not a symlink!"
   fi
 }
 
@@ -32,15 +24,19 @@ for thisFILE in *; do
     [[ ! $thisFILE == "TAGS" ]] &&
     [[ ! $thisFILE == "tags" ]] &&
     [ ! -d "$thisFILE" ]; then
-    MakeSymlink "$thisFILE"
+    make_symlink "$thisFILE"
   fi
 done
 
 # Symlink the no bin directory so scripts can reference them
-if [ ! -d "$DESTINATION_DIRECTORY/nobin" ]; then
-  ln -s "$DIRECTORY/nobin" "$DESTINATION_DIRECTORY/nobin"
+nobin_destintation=$destination_dir/nobin
+if [ ! -e "$nobin_destintation" ]; then
+  # ln -s "$DIRECTORY/nobin" "$nobin_destintation"
+  echo "ln -s "./nobin" $nobin_destintation"
+elif [ ! -L "$nobin_destintation" ]; then
+  echo "ERROR: $nobin_destintation is a file and it's not a symlink!"
 fi
 
 # Cleanup dead symlinks
-cd "$DESTINATION_DIRECTORY" && \
+cd "$destination_dir" &&
   find -L . -name . -o -type d -prune -o -type l -exec rm {} +
