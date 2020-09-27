@@ -7,8 +7,8 @@ cd "$(dirname "$0")" || exit 1
 destination_dir="$HOME/.bin"
 
 function make_symlink() {
-  source=$1
-  destination=$2
+  source="$1"
+  destination="$2"
   if [ ! -e "$destination" ]; then
     ln -s "$source" "$destination"
   elif [ ! -L "$destination" ]; then
@@ -17,8 +17,10 @@ function make_symlink() {
 }
 
 destination_dir="$HOME/.bin"
-if [ ! -d "$destination_dir" ]; then
-  echo "Destination $2 deson't exist" >&2
+if [ ! -e "$destination_dir" ]; then
+  mkdir "$destination_dir"
+elif [ ! -d "$destination_dir" ]; then
+  echo "Destination $2 exist and it's not a directory" >&2
   exit 1
 fi
 

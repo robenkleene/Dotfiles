@@ -5,8 +5,8 @@ set -e
 cd "$(dirname "$0")" || exit 1
 
 function make_symlink() {
-  source=$1
-  destination=$2
+  source="$1"
+  destination="$2"
   if [ ! -e "$destination" ]; then
     ln -s "$source" "$destination"
   elif [ ! -L "$destination" ]; then
