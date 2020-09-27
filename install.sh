@@ -28,4 +28,4 @@ for file in *; do
   make_symlink "$file" "$HOME/.$file"
 done
 
-./Scripts/install.sh
+./scripts/install.sh
