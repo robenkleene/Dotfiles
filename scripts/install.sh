@@ -3,6 +3,7 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
+source_dir=`pwd`;
 
 destination_dir="$HOME/.bin"
 
@@ -37,13 +38,13 @@ for file in *; do
   fi
 
   executable_name="${file%.*}"
-  make_symlink "$file" "$destination_dir/$executable_name"
+  make_symlink "$source_dir/$file" "$destination_dir/$executable_name"
 done
 
 # Symlink the no bin directory so scripts can reference them
 nobin_destintation=$destination_dir/nobin
 if [ ! -e "$nobin_destintation" ]; then
-  ln -s "$DIRECTORY/nobin" "$nobin_destintation"
+  ln -s "$source_dir/nobin" "$nobin_destintation"
 elif [ ! -L "$nobin_destintation" ]; then
   echo "Warning: $nobin_destintation is a file and it's not a symlink" >&2
 fi

@@ -3,6 +3,7 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
+source_dir=`pwd`;
 
 function make_symlink() {
   source="$1"
@@ -25,7 +26,7 @@ for file in *; do
     continue
   fi
 
-  make_symlink "$file" "$HOME/.$file"
+  make_symlink "$source_dir/$file" "$HOME/.$file"
 done
 
 ./scripts/install.sh
