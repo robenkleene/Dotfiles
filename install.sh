@@ -8,9 +8,9 @@ source_dir=`pwd`;
 # Codespaces already has these files, archive the existing ones first
 function cleanup_file() {
   filename="$1"
-  if [[ ! -f "$filename" && ! -L "$filename" ]]; then
-    mkdir "$HOME/backup"
-    mv "$filename" "$HOME/backup"
+  if [[ -e "$filename" && ! -L "$filename" ]]; then
+    mkdir -p "$HOME/backup"
+    mv "$filename" "$HOME/backup/"
   fi
 }
 cleanup_file "$HOME/.zshrc"
@@ -23,7 +23,7 @@ function make_symlink() {
   if [ ! -e "$destination" ]; then
     ln -s "$source" "$destination"
   elif [ ! -L "$destination" ]; then
-    echo "Warning: $destination is a file and it's not a symlink" >&2
+    echo "Warning: $destination exists and it's not a symlink" >&2
   fi
 }
 
