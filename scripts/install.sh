@@ -3,7 +3,7 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
-source_dir=`pwd`;
+source_dir=$(pwd -P);
 
 destination_dir="$HOME/.bin"
 

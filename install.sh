@@ -3,7 +3,7 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
-source_dir=$(pwd);
+source_dir=$(pwd -P);
 
 # Codespaces already has these files, archive the existing ones first
 function cleanup_file() {
