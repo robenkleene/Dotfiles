@@ -3,7 +3,7 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
-source_dir=`pwd`;
+source_dir=$(pwd);
 
 # Codespaces already has these files, archive the existing ones first
 function cleanup_file() {
@@ -42,3 +42,19 @@ for file in *; do
 done
 
 ./scripts/install.sh
+
+developer_path="${HOME}/Developer"
+if [[ ! -e "$developer_path" ]]; then
+  mkdir -p "$developer_path"
+elif [[ ! -d "$developer_path" ]]; then
+  echo "Error: A file exists at $developer_path and it's not a directory" >&2
+  exit 1
+fi
+
+# settings_path="${developer_path}/Settings"
+# if [[ ! -e "$settings_path" ]]; then
+#   mkdir -p "$settings_path"
+# elif [[ ! -d "$settings_path" ]]; then
+#   echo "Error: A file exists at $settings_path and it's not a directory" >&2
+#   exit 1
+# fi
