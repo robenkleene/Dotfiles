@@ -102,7 +102,9 @@ Plug 'wsdjeg/vim-fetch'
 " Markdown table of contents
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
-Plug 'neoclide/coc.nvim'
+if v:version > 801
+  Plug 'neoclide/coc.nvim'
+endif
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml', 'javascript'] }
