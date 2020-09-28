@@ -1,3 +1,7 @@
+if !exists(":RainbowParentheses")
+  finish
+endif
+
 augroup rainbow_parentheses
   autocmd!
   let blacklist = ['markdown']
