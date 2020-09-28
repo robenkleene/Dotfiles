@@ -9,4 +9,5 @@ augroup setup_filetype
   au! BufRead,BufNewFile Fastfile setfiletype ruby
   au! BufRead,BufNewFile *.plist setfiletype xml
   au! BufRead,BufNewFile eslintrc setfiletype json
+  au! BufRead,BufNewFile *.omnijs setfiletype javascript
 augroup END
