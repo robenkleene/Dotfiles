@@ -113,3 +113,8 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json'}
 call plug#end()
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
