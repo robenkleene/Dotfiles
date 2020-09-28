@@ -47,3 +47,5 @@ alias gt='git tag'
 alias gu='git pull'
 alias gur='git pull -r'
 alias glg='git log -p -G'
+
+alias cdg='cd "$(git rev-parse --show-toplevel)"'
