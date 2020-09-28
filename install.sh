@@ -51,6 +51,7 @@ elif [[ ! -d "$developer_path" ]]; then
   exit 1
 fi
 
+# TODO: When GitHub Codespaces supports SSH keys, install private repos via Settings
 # settings_path="${developer_path}/Settings"
 # if [[ ! -e "$settings_path" ]]; then
 #   mkdir -p "$settings_path"
