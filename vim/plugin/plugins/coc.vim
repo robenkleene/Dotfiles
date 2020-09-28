@@ -1,4 +1,4 @@
-# Codespaces is using an old version of `vim` suppress the warning
+" Codespaces is using an old version of `vim` suppress the warning
 let g:coc_disable_startup_warning = 1
 
 let g:coc_global_extensions = [
