@@ -1,6 +1,6 @@
-fucntion vim_cd
+function vim_cd
   set -l tempfile '/tmp/vim.robenkleene/chdir/chdir'
-  $VIM_COMMAND .
+  eval $VIM_COMMAND ./
   if test -f $tempfile
     if test (cat $tempfile) != (pwd)
       cd (cat $tempfile)

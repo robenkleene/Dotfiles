@@ -1,13 +1,14 @@
-if test -n FISH_SOURCED
+if set -q "$FISH_SOURCED"
   exit
 end
-set -gx FISH_SOURCED=1
+set -gx FISH_SOURCED 1
 
 # These paths are prepended and automatically handle duplicates
 set -U fish_user_paths /usr/local/bin $fish_user_paths
 set -U fish_user_paths ~/.bin $fish_user_paths
 set -U fish_user_paths ~/.fzf/bin $fish_user_paths
 
+set -gx VIM_COMMAND "vim"
 set -gx BAT_COMMAND "bat"
 set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
