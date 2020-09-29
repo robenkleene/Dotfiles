@@ -27,6 +27,7 @@ function _robenkleene-fzf-cd-widget
       end
     end
   end
+
   commandline -f repaint
 end
 bind \ec _robenkleene-fzf-cd-widget
@@ -44,6 +45,7 @@ function _robenkleene-fzf-z-widget
       end
     end
   end
+
   commandline -f repaint
 end
 bind \ez _robenkleene-fzf-z-widget
@@ -67,38 +69,26 @@ function _robenkleene-fzf-edit-widget
       end
     end
   end
+
   commandline -f repaint
 end
 bind \ee _robenkleene-fzf-edit-widget
 
-# function _robenkleene-fzf-commands-widget
-#   set -l commandline (__fzf_parse_commandline)
-#   set -l dir $commandline[1]
-#   set -l fzf_query $commandline[2]
+function _robenkleene_fish_commands
+  string split ' ' (zsh -c "echo \${(k)commands}")
+  string split ' ' (functions -n);
+  builtin --names
+end
 
-#   set -l cmd string split ' ' '(zsh -c \"echo \${(k)commands}\"); string split ' ' (functions -n); builtin --names'
+function _robenkleene-fzf-commands-widget
+  set -l cmd "_robenkleene_fish_commands"
+  begin
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if [ -n "$result" ]
+      commandline -i "$result"
+    end
+  end
 
-#   test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
-#   begin
-#     set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
-#     eval "$cmd | "(__fzfcmd)' +m --query "'$fzf_query'"' | read -l result
-
-#     if [ -n "$result" ]
-#       eval $EDITOR \"$result\"
-#       commandline -t ""
-#     end
-#   end
-#   commandline -f repaint
-# end
-# bind \ee _robenkleene-fzf-edit-widget
-
-
-
-# builtin --names
-# functions -n
-# zsh -c "echo \${(k)commands}"
-# string split ' ' (zsh -c "echo \${(k)commands}")
-
-# string split ' ' (zsh -c "echo \${(k)commands}") && string split ' ' (functions -n) && builtin --names
-
-# string split ' ' (zsh -c "echo \${(k)commands}"); string split ' ' (functions -n); builtin --names
+  commandline -f repaint
+end
+bind \ex _robenkleene-fzf-commands-widget
