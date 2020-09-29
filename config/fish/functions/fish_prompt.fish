@@ -18,6 +18,7 @@ function fish_prompt
 
   # Write pipestatus
   set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
+  set -l bg_jobs_count (count (jobs))
 
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
@@ -32,8 +33,12 @@ function fish_prompt
   else
     echo -n (prompt_pwd)
   end
-  echo -n $prompt_status
+  if test $bg_jobs_count -gt 0
+    set_color yellow
+    echo -n " \$$bg_jobs_count"
+  end
   set_color normal
+  echo -n $prompt_status
   if test $SSH_CONNECTION
     echo -n ' >> '
   else
