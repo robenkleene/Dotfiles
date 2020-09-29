@@ -92,3 +92,21 @@ function _robenkleene-fzf-commands-widget
   commandline -f repaint
 end
 bind \ex _robenkleene-fzf-commands-widget
+
+function _robenkleene-fzf-developer-widget
+  set -l cmd "fd --type d --exclude .git . ~/Developer"
+  set -l commandline (commandline)
+  begin
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if [ -n "$result" ]
+      if test -z $commandline
+        cd $result
+      else
+        commandline -i "$result"
+      end
+    end
+  end
+
+  commandline -f repaint
+end
+bind \eg _robenkleene-fzf-developer-widget
