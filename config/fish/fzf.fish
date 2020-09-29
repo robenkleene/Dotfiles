@@ -54,24 +54,17 @@ function _robenkleene-fzf-edit-widget
     commandline -f repaint
     return 1
   end
-  set -l current_cmd (commandline)
-  set -l commandline (__fzf_parse_commandline)
-  set -l dir $commandline[1]
-  set -l fzf_query $commandline[2]
 
   set -l cmd $FZF_CTRL_T_COMMAND
-
-  test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
+  set -l commandline (commandline)
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
-    eval "$cmd | "(__fzfcmd)' +m --query "'$fzf_query'"' | read -l result
-
-    if test -z $current_cmd
-      if [ -n "$result" ]
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if [ -n "$result" ]
+      if test -z $commandline
         eval $EDITOR \"$result\"
+      else
+        commandline -i "$result"
       end
-    else
-      commandline -i "$result"
     end
   end
   commandline -f repaint
