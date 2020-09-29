@@ -5,6 +5,8 @@ fzf_key_bindings
 
 set -xg FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git --exclude .DS_Store'
 set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
+set -xg FZF_TMUX_HEIGHT '40%'
+set -xg FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
 function _robenkleene-fzf-cd-widget
   if not string match --regex --quiet "^$HOME\/.+" $PWD
@@ -12,18 +14,20 @@ function _robenkleene-fzf-cd-widget
     commandline -f repaint
     return 1
   end
-  fzf-cd-widget
 end
 bind \ec _robenkleene-fzf-cd-widget
 
 function _robenkleene-fzf-z-widget
-  set -l commandline (__fzf_parse_commandline)
   set -l cmd "fasd -Rdl"
+  set -l commandline (commandline)
   begin
-    eval "$cmd | "(__fzfcmd)'"' | read -l result
+    eval "$cmd | "(__fzfcmd) | read -l result
     if [ -n "$result" ]
-      cd $result
-      commandline -t ""
+      if test -z $commandline
+        cd $result
+      else
+        commandline -i "$result"
+      end
     end
   end
   commandline -f repaint
