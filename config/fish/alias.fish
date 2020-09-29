@@ -1,3 +1,7 @@
+# "alias --save" creates an autoloaded function for an alias, but there's no
+# easy way to clean thes up later. E.g., "function --erase" still leaves the
+# file
+
 # Basic
 # alias -- -='cd -'
 # alias -- -='cd -'
