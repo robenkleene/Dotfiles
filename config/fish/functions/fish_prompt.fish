@@ -7,11 +7,23 @@ set __fish_git_prompt_showupstream 'yes'
 set __fish_git_prompt_color_branch cyan
 
 function fish_prompt
+  set -l last_pipestatus $pipestatus
+  set -l normal (set_color normal)
+
+  # If we're running via SSH, change the host color.
+  set -l color_host $fish_color_host
+  if set -q SSH_TTY
+      set color_host $fish_color_host_remote
+  end
+
+  # Write pipestatus
+  set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
+
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
   if test $SSH_CONNECTION
     echo -n ' '
-    echo -n $USER@(prompt_hostname)
+    echo -n -s "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal
   end
   echo -n ' '
   set_color $fish_color_cwd
@@ -20,6 +32,7 @@ function fish_prompt
   else
     echo -n (prompt_pwd)
   end
+  echo -n $prompt_status
   set_color normal
   if test $SSH_CONNECTION
     echo -n ' >> '
