@@ -1,0 +1,1 @@
+bind \t accept-autosuggestion
