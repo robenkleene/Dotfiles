@@ -1,5 +1,5 @@
 if set -q "$FISH_SOURCED"
-  exit
+    exit
 end
 set -gx FISH_SOURCED 1
 
@@ -33,6 +33,6 @@ set -gx HTML_TIDY "$HOME/.tidy"
 set -gx SHELLCHECK_OPTS "-e SC1090 -e SC2148"
 
 if test -n "$INSIDE_EMACS"
-    export PAGER=cat
-    export GIT_PAGER=cat
+    set -gx PAGER "cat"
+    set -gx GIT_PAGER "cat"
 end
