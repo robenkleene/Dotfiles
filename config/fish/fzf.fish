@@ -6,7 +6,7 @@ fzf_key_bindings
 set -xg FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git --exclude .DS_Store'
 set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
 
-function robenkleene-fzf-cd-widget
+function _robenkleene-fzf-cd-widget
   set -l commandline (__fzf_parse_commandline)
   if not string match --regex --quiet "^$HOME\/.+" $PWD
     echo "Only use in a subdirectory of home" >&2
@@ -15,9 +15,9 @@ function robenkleene-fzf-cd-widget
   end
   fzf-cd-widget
 end
-bind \ec robenkleene-fzf-cd-widget
+bind \ec _robenkleene-fzf-cd-widget
 
-function robenkleene-fzf-z-widget
+function _robenkleene-fzf-z-widget
   set -l commandline (__fzf_parse_commandline)
   set -l dir $commandline[1]
   set -l fzf_query $commandline[2]
@@ -36,9 +36,9 @@ function robenkleene-fzf-z-widget
   end
   commandline -f repaint
 end
-bind \ez robenkleene-fzf-z-widget
+bind \ez _robenkleene-fzf-z-widget
 
-function robenkleene-fzf-edit-widget
+function _robenkleene-fzf-edit-widget
   set -l commandline (__fzf_parse_commandline)
   if not string match --regex --quiet "^$HOME\/.+" $PWD
     echo "Only use in a subdirectory of home" >&2
@@ -62,4 +62,4 @@ function robenkleene-fzf-edit-widget
   end
   commandline -f repaint
 end
-bind \ee robenkleene-fzf-edit-widget
+bind \ee _robenkleene-fzf-edit-widget
