@@ -18,7 +18,8 @@ function fish_prompt
 
   # Write pipestatus
   set -l prompt_status (__fish_print_pipestatus " [" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
-  set -l bg_jobs_count (count (jobs))
+  # Exclude fasd background process
+  set -l bg_jobs_count (count (jobs --command | grep -v '^fasd$' || true))
 
   set_color $fish_color_comment
   echo -n (date "+%I:%M %p")
@@ -47,5 +48,9 @@ function fish_prompt
 end
 
 function fish_right_prompt
-  echo -n (__fish_git_prompt)
+  if test -e .git
+    set_color cyan
+    echo -n (basename $PWD) 
+  end
+  echo -n (__fish_git_prompt) 
 end
