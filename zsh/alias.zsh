@@ -91,9 +91,6 @@ alias tmssdw='tmux_session_save_dropbox_work'
 alias tmba='tmux_banner_all'
 alias tmn='tmux_shell_new'
 
-# `safari`
-alias sfhs='fzf_safari_history_open'
-
 # `make`
 alias mt='make test'
 alias ml='make lint'
@@ -109,7 +106,6 @@ alias nrac='npm run autocorrect'
 # `emacs`
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
-alias f="$EMACS_COMMAND ."
 
 # `vim_cd`
 alias d='vim_cd'
