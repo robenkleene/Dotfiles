@@ -8,7 +8,7 @@ set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
 
 function robenkleene-fzf-cd-widget
   set -l commandline (__fzf_parse_commandline)
-  if test "$PWD/" != "$HOME/**/*"
+  if not string match --regex --quiet "^$HOME\/.*\/" $PWD
     echo "Only use in a subdirectory of home" >&2
     commandline -f repaint
     return 1
