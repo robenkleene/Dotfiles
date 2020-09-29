@@ -2,15 +2,6 @@
 # alias -- -='cd -'
 # alias -- -='cd -'
 
-switch (uname)
-    case Linux
-        alias ls='ls --color=auto'
-    case Darwin
-        alias ls='gls --color=auto'
-    case '*'
-        alias ls='ls --color=auto'
-end
-
 alias p='safepaste'
 alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
