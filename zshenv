@@ -57,9 +57,6 @@ export PAGER="less"
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
-# Coffeelint
-export COFFEELINT_CONFIG=$HOME/.coffeelint.json
-
 # Emacs
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
