@@ -114,6 +114,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json'}
+Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
 autocmd VimEnter *
