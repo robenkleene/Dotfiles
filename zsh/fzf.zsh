@@ -324,7 +324,7 @@ _fzf_developer_widget() {
   return $ret
 }
 zle -N _fzf_developer_widget
-bindkey '\ev' _fzf_developer_widget
+bindkey '\eg' _fzf_developer_widget
 
 # Special
 
