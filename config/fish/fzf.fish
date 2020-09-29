@@ -18,16 +18,9 @@ bind \ec _robenkleene-fzf-cd-widget
 
 function _robenkleene-fzf-z-widget
   set -l commandline (__fzf_parse_commandline)
-  set -l dir $commandline[1]
-  set -l fzf_query $commandline[2]
-
   set -l cmd "fasd -Rdl"
-
-  test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
   begin
-    set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
-    eval "$cmd | "(__fzfcmd)' +m --query "'$fzf_query'"' | read -l result
-
+    eval "$cmd | "(__fzfcmd)'"' | read -l result
     if [ -n "$result" ]
       cd $result
       commandline -t ""
