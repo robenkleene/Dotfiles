@@ -1,47 +1,15 @@
-# These could use the pipe, but in rare cases they cause problems so they've
-# been removed.
-# For example, doing something like:
-# cat Template.html Y
-# p | pandoc -f html -t markdown Y
-# Will end up with an empty clipboard, but the following works fine:
-# cat Template.html |Y
-# p | pandoc -f html -t markdown |Y
-# For that reason, we've removed the pipe from all aliases for consistency
-# (even though it still works fine with some).
-# Example command with the pipe:
-# alias -g Y='| safecopy'
-alias -g G='grep'
-alias -g C='column'
-alias -g L='less'
-alias -g A='rg --no-line-number --no-filename'
-alias -g Y='safecopy'
-alias -g Y1='safecopy1'
-# These should never use the pipe, for some reason starting an interactive
-# command with the pipe behaves unpredictably. In particular, starting `vim`
-# seems to need to open it twice, which is slow.
-# Example commands with the pipe:
-# alias -g V="| $VIM_COMMAND -"
-# alias -g Q='| vim_grep'
-alias -g V="$VIM_COMMAND -c \"ScratchBuffer\" -"
-alias -g Q='vim_grep'
-alias -g F='fzf_vim_grep'
-alias -g FF='fzf_vim_file'
-alias -g 0VA="xargs -o -0 $VIM_COMMAND"
-alias -g VA="xargs -o $VIM_COMMAND"
-if [[ "$(uname)" = "Darwin" ]]; then
-  alias -g OR="| xargs open -R"
-  alias -g B='bbresults --pattern grep --new-window'
-fi
-
 # Basic
-alias -- -='cd -'
-alias ..='cd ..'
+# alias -- -='cd -'
+# alias -- -='cd -'
 
-if [[ "$(uname)" = "Linux" ]]; then
-  alias ls='ls --color=auto'
-else
-  alias ls='gls --color=auto'
-fi
+switch (uname)
+    case Linux
+        alias ls='ls --color=auto'
+    case Darwin
+        alias ls='gls --color=auto'
+    case '*'
+        alias ls='ls --color=auto'
+end
 
 alias p='safepaste'
 alias y='safecopy'
@@ -64,12 +32,7 @@ alias excel='open -a "Microsoft Excel"'
 # alias fd='fd --hidden'
 
 # `zsh`
-alias zoi='zsh_edit_config'
-# alias ol="$EDITOR settings.sh"
-# alias sl="source settings.sh"
-# alias ob="$EDITOR build.log"
-# alias ot="$EDITOR test.log"
-# alias dh='dirs -v'
+alias foi='fish_edit_config'
 
 # scripts
 alias t='terminal_cd'
@@ -121,15 +84,17 @@ alias vsra='vim_session_restore_auto'
 alias vsrs='vim_session_restore_saved'
 
 # `emacs`
-if [[ "$(uname)" = "Darwin" ]]; then
-  alias gemacs="open -a emacs"
-fi
+switch (uname)
+    case Darwin
+        alias gemacs="open -a emacs"
+end
 
 # Xcode
-if [[ "$(uname)" = "Darwin" ]]; then
-  alias xcb='xcodebuild_debug'
-  alias ox='fzf_project_xcode'
-fi
+switch (uname)
+    case Darwin
+        alias xcb='xcodebuild_debug'
+        alias ox='fzf_project_xcode'
+end
 
 # `doc` / `snp` / `dev`
 alias snp='fzf_snippet_copy'
@@ -168,7 +133,7 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='sgitt -cp && egit -p || egitn -n'
+alias s='sgitt -cp && egit -p || egitn'
 
 # `slug`
 alias slpr='slug_project'

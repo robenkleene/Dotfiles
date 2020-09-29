@@ -87,13 +87,6 @@ vim_cd() {
       cd -- "$(cat "$tempfile")"
     fi
 }
-vim_cd_file() {
-  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-}
 vim_session_restore_saved() {
   $VIM_COMMAND -c "SessionRestoreSaved"
 }
@@ -122,16 +115,6 @@ vim_git_modified() {
 vim_git_diff() {
   git diff --relative $argv | vim_diff_grep
 }
-vim_todo() {
-  if [ -n "$TODO_FILE" ]; then
-    $VIM_COMMAND $TODO_FILE
-  elif [ -n "$TODO_DIRECTORY" ]; then
-    eval $VIM_COMMAND $TODO_DIRECTORY
-  else
-    echo '$TODO_DIRECTORY is undefined or empty'
-  fi
-}
-
 
 # Emacs
 emacs_magit_status() {
@@ -307,14 +290,6 @@ git_stash_list() {
 }
 
 # Misc
-cd_todo() {
-  if [ -n "$TODO_DIRECTORY" ]; then
-    cd $TODO_DIRECTORY
-  else
-    echo '$TODO_DIRECTORY is undefined or empty'
-  fi
-}
-
 fasd_add_all() {
   for i in */; do
     cd "$i"

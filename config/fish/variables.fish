@@ -9,8 +9,6 @@ set -U fish_user_paths ~/.bin $fish_user_paths
 set -U fish_user_paths ~/.fzf/bin $fish_user_paths
 
 set -gx BAT_COMMAND "bat"
-
-
 set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
