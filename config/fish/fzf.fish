@@ -14,6 +14,20 @@ function _robenkleene-fzf-cd-widget
     commandline -f repaint
     return 1
   end
+
+  set -l cmd $FZF_ALT_C_COMMAND
+  set -l commandline (commandline)
+  begin
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if [ -n "$result" ]
+      if test -z $commandline
+        cd $result
+      else
+        commandline -i "$result"
+      end
+    end
+  end
+  commandline -f repaint
 end
 bind \ec _robenkleene-fzf-cd-widget
 
