@@ -1,3 +1,6 @@
+for a in (abbr --list)
+    abbr --erase $a
+end
 abbr -a exit 'exiting'
 abbr -a v "$VIM_COMMAND"
 abbr -a vd "$VIM_COMMAND -d"
@@ -90,4 +93,4 @@ abbr -a rpj 'repla server "bundle exec jekyll serve --watch --drafts --port 4001
 abbr -a wd 'web_deploy'
 abbr -a wdd 'web_deploy -s aresdev'
 abbr -a bil 'bundle install --path vendor/bundle'
-abbr -a be 'bundle exec'
+a
