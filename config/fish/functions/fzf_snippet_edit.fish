@@ -4,8 +4,10 @@ function fzf_snippet_edit
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            if test -f "$result"
-                eval "$EDITOR $result"
+            set -l result_path (realpath "$result")
+            if test -f "$result_path"
+                commandline "$EDITOR $result_path"
+                commandline -f execute
             end
         end
     end

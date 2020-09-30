@@ -4,8 +4,10 @@ function fzf_documentation_edit
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            if test -e "$result"
-                eval "$EDITOR $result"
+            set -l result_path (realpath "$result")
+            if test -e "$result_path"
+                commandline "cd $result_path"
+                commandline -f execute
             end
         end
     end

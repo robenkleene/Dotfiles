@@ -4,16 +4,13 @@ function fzf_documentation
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            # Convert to absolute path so we can go to previous directory
-            # before cd so ~/Documentation doesn't end up on the directory
-            # stack
             set -l result_path (realpath "$result")
             if test -d "$result_path"
-                cd -
-                cd $result_path
-                return
+                commandline "cd $result_path"
+                commandline -f execute
             else if test -f "$result"
-                eval "$BAT_COMMAND $result"
+                commandline "$BAT_COMMAND $result_path"
+                commandline -f execute
             end
         end
     end

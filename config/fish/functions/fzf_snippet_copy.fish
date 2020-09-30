@@ -4,9 +4,11 @@ function fzf_snippet_copy
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            if test -f "$result"
+            set -l result_path (realpath "$result")
+            if test -f "$result_path"
                 cat "$result" | safecopy
-                eval "$BAT_COMMAND $result"
+                commandline "$BAT_COMMAND $result_path"
+                commandline -f execute
             end
         end
     end
