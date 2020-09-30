@@ -9,6 +9,7 @@ end
 # Ruby
 source ~/.config/fish/vendor/chruby/chruby.fish
 source ~/.config/fish/vendor/chruby/auto.fish
+chruby ruby-2.5.3
 
 # llvm
 switch (uname)
