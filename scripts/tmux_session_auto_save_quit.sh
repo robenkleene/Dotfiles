@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # `^bash$` matches this script running
-commands=$(tmux list-panes -a -F "#{pane_current_command}" | grep --extended-regexp --invert-match "^zsh$|^bash$")
+commands=$(tmux list-panes -a -F "#{pane_current_command}" | grep --extended-regexp --invert-match "^zsh$|^bash$|^fish$")
 status=$?
 if [[ $status -eq 0 ]]; then
   commands=${commands//$'\n'/ }
