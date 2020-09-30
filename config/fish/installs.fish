@@ -5,3 +5,7 @@ if command -sq fasd
       end
   end
 end
+
+source ~/.config/fish/vendor/chruby/chruby.fish
+source ~/.config/fish/vendor/chruby/auto.fish
+
