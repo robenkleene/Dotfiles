@@ -19,7 +19,7 @@ function _robenkleene-fzf-cd-widget
   set -l commandline (commandline)
   begin
     eval "$cmd | "(__fzfcmd) | read -l result
-    if [ -n "$result" ]
+    if test -n "$result"
       if test -z $commandline
         cd $result
       else
@@ -37,7 +37,7 @@ function _robenkleene-fzf-z-widget
   set -l commandline (commandline)
   begin
     eval "$cmd | "(__fzfcmd) | read -l result
-    if [ -n "$result" ]
+    if test -n "$result"
       if test -z $commandline
         cd $result
       else
@@ -61,7 +61,7 @@ function _robenkleene-fzf-edit-widget
   set -l commandline (commandline)
   begin
     eval "$cmd | "(__fzfcmd) | read -l result
-    if [ -n "$result" ]
+    if test -n "$result"
       if test -z $commandline
         eval $EDITOR \"$result\"
       else
@@ -84,7 +84,7 @@ function _robenkleene-fzf-commands-widget
   set -l cmd "_robenkleene_fish_commands"
   begin
     eval "$cmd | "(__fzfcmd) | read -l result
-    if [ -n "$result" ]
+    if test -n "$result"
       commandline -i "$result"
     end
   end
@@ -98,7 +98,7 @@ function _robenkleene-fzf-developer-widget
   set -l commandline (commandline)
   begin
     eval "$cmd | "(__fzfcmd) | read -l result
-    if [ -n "$result" ]
+    if test -n "$result"
       if test -z $commandline
         cd $result
       else
