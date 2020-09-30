@@ -24,7 +24,8 @@ function _robenkleene-fzf-cd-widget
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
             if test -z $commandline
-                cd $result
+                commandline "cd $result"
+                commandline -f execute
             else
                 commandline -i "$result"
             end
@@ -42,7 +43,8 @@ function _robenkleene-fzf-z-widget
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
             if test -z $commandline
-                cd $result
+                commandline "cd $result"
+                commandline -f execute
             else
                 commandline -i "$result"
             end
@@ -66,7 +68,8 @@ function _robenkleene-fzf-edit-widget
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
             if test -z $commandline
-                eval $EDITOR \"$result\"
+                commandline "$EDITOR \"$result\""
+                commandline -f execute
             else
                 commandline -i "$result"
             end
@@ -103,7 +106,8 @@ function _robenkleene-fzf-developer-widget
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
             if test -z $commandline
-                cd $result
+                commandline "cd $result"
+                commandline -f execute
             else
                 commandline -i "$result"
             end
