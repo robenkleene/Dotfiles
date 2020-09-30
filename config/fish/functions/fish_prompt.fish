@@ -4,7 +4,7 @@ set -xg fish_color_search_match black --background=$fish_color_comment
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch cyan
+set __fish_git_prompt_color_branch green
 
 function fish_prompt
   set -l last_pipestatus $pipestatus
