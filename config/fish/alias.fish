@@ -93,8 +93,8 @@ end
 
 # `doc` / `snp` / `dev`
 alias snp='fzf_snippet_copy'
-alias snpe='fzf_snippet_editor'
-alias doce='fzf_documentation_editor'
+alias snpe='fzf_snippet_edit'
+alias doce='fzf_documentation_edit'
 alias doc='fzf_documentation'
 alias dev='fzf_developer'
 
