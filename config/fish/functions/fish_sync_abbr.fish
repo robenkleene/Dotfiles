@@ -5,6 +5,7 @@ function fish_sync_abbr
         abbr --erase $a
     end
 
+    abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
     abbr -a vd "$VIM_COMMAND -d"
     abbr -a or 'open -R'
