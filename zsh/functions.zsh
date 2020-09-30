@@ -165,11 +165,6 @@ vim_server_edit() {
   fi
 }
 
-# tmux
-tmux_name_directory() {
-  tmux rename-window "$(basename $PWD)"
-}
-
 # git
 # Autocomplete
 _robenkleene_git_branch_names() {
