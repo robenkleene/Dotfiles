@@ -1,4 +1,4 @@
 function fish_edit_config
-  cd ~/.config/fish/config.fish
+  cd ~/.config/fish/
   eval $EDITOR config.fish
 end

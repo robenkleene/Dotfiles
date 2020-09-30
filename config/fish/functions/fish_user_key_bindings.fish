@@ -1,1 +1,1 @@
-bind \t accept-autosuggestion
+# bind \t accept-autosuggestion

@@ -8,6 +8,9 @@ set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
 set -xg FZF_TMUX_HEIGHT '40%'
 set -xg FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
+set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
+
 function _robenkleene-fzf-cd-widget
     if not string match --regex --quiet "^$HOME\/.+" $PWD
         echo "Only use in a subdirectory of home" >&2
