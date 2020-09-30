@@ -22,12 +22,13 @@ function _robenkleene-fzf-cd-widget
     set -l commandline (commandline)
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
-        if test -n "$result"
+        if test -d "$result"
+            set -l result_path (string escape "$result")
             if test -z $commandline
-                commandline "cd $result"
+                commandline "cd $result_path"
                 commandline -f execute
             else
-                commandline -i "$result"
+                commandline -i "$result_path"
             end
         end
     end
@@ -41,12 +42,13 @@ function _robenkleene-fzf-z-widget
     set -l commandline (commandline)
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
-        if test -n "$result"
+        if test -d "$result"
+            set -l result_path (string escape "$result")
             if test -z $commandline
-                commandline "cd $result"
+                commandline "cd $result_path"
                 commandline -f execute
             else
-                commandline -i "$result"
+                commandline -i "$result_path"
             end
         end
     end
@@ -66,12 +68,13 @@ function _robenkleene-fzf-edit-widget
     set -l commandline (commandline)
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
-        if test -n "$result"
+        if test -f "$result"
+            set -l result_path (string escape "$result")
             if test -z $commandline
-                commandline "$EDITOR \"$result\""
+                commandline "$EDITOR $result_path"
                 commandline -f execute
             else
-                commandline -i "$result"
+                commandline -i "$result_path"
             end
         end
     end
@@ -104,12 +107,13 @@ function _robenkleene-fzf-developer-widget
     set -l commandline (commandline)
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
-        if test -n "$result"
+        if test -e "$result"
+            set -l result_path (string escape "$result")
             if test -z $commandline
-                commandline "cd $result"
+                commandline "cd $result_path"
                 commandline -f execute
             else
-                commandline -i "$result"
+                commandline -i "$result_path"
             end
         end
     end

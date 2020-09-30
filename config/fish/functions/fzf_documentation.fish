@@ -4,7 +4,7 @@ function fzf_documentation
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            set -l result_path (realpath "$result")
+            set -l result_path (string escape (realpath "$result"))
             if test -d "$result_path"
                 commandline "cd $result_path"
                 commandline -f execute
