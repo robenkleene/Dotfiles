@@ -19,6 +19,7 @@ switch (uname)
 end
 
 # Node
+set -U fish_user_paths ~/.nvm/versions/node/v13.12.0/bin $fish_user_paths
 
 # llvm
 switch (uname)
