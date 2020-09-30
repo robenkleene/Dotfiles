@@ -11,19 +11,6 @@ _robenkleene_ack_lines_no_color() {
 }
 
 # Commands
-
-# Adding `--line-number` interferes with piping to `rg`, but without it piping
-# to `vim` will also not have line numbers, so it needs to be turned on here.
-# To work around this, when piping to it use the `A` global alias.
-# alias rg="rg --with-filename --smart-case --line-number --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white'"
-rg() {
-    if [ -t 1 ]; then
-        command rg --with-filename --smart-case --line-number --colors 'match:fg:black' --colors 'match:bg:cyan' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@" | less -RFX
-    else
-        command rg --with-filename --smart-case --line-number "$@"
-    fi
-}
-
 egitn() {
   print_status="true"
   while getopts ":n" option; do
@@ -87,17 +74,11 @@ vim_cd() {
       cd -- "$(cat "$tempfile")"
     fi
 }
-vim_session_restore_saved() {
-  $VIM_COMMAND -c "SessionRestoreSaved"
-}
 vim_session_restore_local() {
   $VIM_COMMAND -c "SessionRestoreLocal"
 }
 vim_session_restore_auto() {
   $VIM_COMMAND -c "SessionRestoreAuto"
-}
-vim_grep() {
-  $VIM_COMMAND -c "GrepBuffer" -
 }
 vim_git_conflicts() {
   cd "$(git rev-parse --show-toplevel)" \

@@ -75,6 +75,8 @@ alias zoi='zsh_edit_config'
 # scripts
 alias t='terminal_cd'
 alias o='open_custom'
+alias rg='rg_custom'
+alias q='vim_grep'
 
 # `tmux`
 alias tma='tmux attach'
@@ -186,8 +188,6 @@ alias tags="generate_tags"
 alias journal="$VIM_COMMAND ~/Text/journal/README.md"
 alias tweet="markdown_tweet_edit"
 alias qa="quick_text_search"
-alias q="fzf_quick"
-alias qe="fzf_quick_edit"
 alias writing="$VIM_COMMAND ~/Text/writing/README.md"
 alias backup="backup_file"
 alias vs="vscode"

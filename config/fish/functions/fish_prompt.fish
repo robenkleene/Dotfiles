@@ -36,7 +36,7 @@ function fish_prompt
   end
   if test $bg_jobs_count -gt 0
     set_color yellow
-    echo -n " \$$bg_jobs_count"
+    echo -n " &$bg_jobs_count"
   end
   set_color normal
   echo -n $prompt_status
@@ -48,9 +48,15 @@ function fish_prompt
 end
 
 function fish_right_prompt
+  set_color cyan
   if test -e .git
-    set_color cyan
     echo -n (basename $PWD) 
+  else
+    set -l git_path (git rev-parse --show-toplevel 2>/dev/null)
+    if test $status -eq 0
+        echo -n (basename $git_path)
+    end
   end
-  echo -n (__fish_git_prompt) 
+  set_color normal
+  echo -n (fish_git_prompt)
 end

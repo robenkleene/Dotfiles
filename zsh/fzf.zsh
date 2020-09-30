@@ -541,10 +541,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 # ack
-fzf_vim_grep() {
-  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
-  echo $result | $VIM_COMMAND -c "GrepBuffer" -
-}
 fzf_vim_file() {
   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --ansi $FZF_DEFAULT_OPTS" fzf +m | local result=`cat`
   $VIM_COMMAND $result -c ":bd"

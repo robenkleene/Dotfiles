@@ -14,7 +14,7 @@ set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 set -gx PAGER "less"
-set -gx ACK_COMMAND "rg"
+set -gx ACK_COMMAND "rg_custom"
 
 # Prevent `npm` scripts from opening browser windows
 set -gx BROWSER "none"
