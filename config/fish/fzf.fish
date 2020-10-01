@@ -121,3 +121,23 @@ function _robenkleene-fzf-developer-widget
     commandline -f repaint
 end
 bind \eg _robenkleene-fzf-developer-widget
+
+function _robenkleene-fzf-quick-widget
+    set -l cmd "fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+    set -l commandline (commandline)
+    begin
+        eval "$cmd | "(__fzfcmd) | read -l result
+        if test -e "$result"
+            set -l result_path (string escape "$result")
+            if test -z $commandline
+                commandline "$EDITOR $result_path"
+                commandline -f execute
+            else
+                commandline -i "$result_path"
+            end
+        end
+    end
+
+    commandline -f repaint
+end
+bind \eo _robenkleene-fzf-quick-widget

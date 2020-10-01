@@ -205,9 +205,46 @@ _fzf_developer_widget() {
 zle -N _fzf_developer_widget
 bindkey '\eg' _fzf_developer_widget
 
-# Special
+_fzf_quick_edit_widget() {
+  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
 
-# Tags uses a special `fzf` command
+  if [[ -n "$LBUFFER" ]]; then
+    __fzf_buffer_match "$cmd"
+    local ret=$?
+    return $ret
+  fi
+
+  local file
+  file=$(__fzf_cmd "$cmd") 
+  if [[ ! -e "$file" ]]; then
+    zle redisplay
+    # Return 0 to avoid flash on cancel
+    # return 1
+    return 0
+  fi
+  if [[ -d "$file" ]]; then
+    cd "$file" || exit
+    readme="$file/README.md"
+    if [[ -f "$readme" ]]; then
+      file=$readme
+    fi
+  else
+    dir=$(dirname "${(q)file}")
+    cd "$dir" || exit
+  fi
+
+  # `vim` spits "Warning: Input is not from a terminal" without the `<
+  # /dev/tty`
+  eval $EDITOR ${(q)file} < /dev/tty
+
+  local ret=$?
+  __zsh_add_history "$EDITOR ${(q)file}"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_quick_edit_widget
+bindkey '\eo' _fzf_quick_edit_widget
+
 _fzf_tags_widget() {
   local cmd="$HOME/.bin/dump_tags"
   if [[ -n "$LBUFFER" ]]; then
@@ -358,3 +395,4 @@ fzf_snippet_editor() {
   fi
   cd - >/dev/null || return
 }
+
