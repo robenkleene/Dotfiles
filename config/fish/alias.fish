@@ -2,10 +2,6 @@
 # easy way to clean thes up later. E.g., "function --erase" still leaves the
 # file
 
-# Basic
-# alias -- -='cd -'
-# alias -- -='cd -'
-
 alias p='safepaste'
 alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
