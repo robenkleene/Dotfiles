@@ -55,7 +55,9 @@ export EDITOR="$VISUAL"
 export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 export PAGER="less"
 # Prevent `npm` scripts from opening browser windows
-export BROWSER="none"
+# export BROWSER="none"
+# Set to Chrome instead
+export BROWSER="google chrome"
 
 # Emacs
 # Start the server in the background if it isn't running
