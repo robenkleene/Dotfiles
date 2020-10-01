@@ -328,7 +328,7 @@ fzf_documentation() {
   setopt localoptions pipefail 2> /dev/null
 
   cd ~/Documentation/ || return
-  local cmd="$FZF_ALL_COMMAND"
+  local cmd="fd --hidden --exclude .git --exclude .DS_Store"
   local result
 
   result="$(eval "$cmd" | $(__fzfcmd))"
