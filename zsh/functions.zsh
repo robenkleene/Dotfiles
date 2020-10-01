@@ -65,7 +65,7 @@ vim_cd() {
   local tempfile='/tmp/vim.robenkleene/chdir/chdir'
   $VIM_COMMAND .
   test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n $(pwd))" ]; then
+    if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
       cd -- "$(cat "$tempfile")" || return
     fi
 }
@@ -112,7 +112,7 @@ emacs_app() {
 
 # ssh
 ssh_start() {
-  eval `ssh-agent -s`
+  eval "$(ssh-agent -s)"
   ssh-add
 }
 
@@ -136,21 +136,21 @@ dns_refresh() {
 }
 
 git_push_branch_origin() {
-  git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+  git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
 }
 
 git_branch_delete() {
-  git push origin --delete $1 && \
-    git branch -D $1
+  git push origin --delete "$1" && \
+    git branch -D "$1"
 }
 
 git_tag_delete() {
-  git push --delete origin $1 && \
+  git push --delete origin "$1" && \
     git fetch --prune --tags
 }
 
 git_push_origin_delete() {
-  git push origin --delete $1
+  git push origin --delete "$1"
 }
 
 git_branch_set_upstream_origin_master() {
@@ -159,7 +159,7 @@ git_branch_set_upstream_origin_master() {
 
 git_remote_add_origin() {
   git remote rm origin
-  git remote add origin $1
+  git remote add origin "$1"
 }
 
 git_branch_prune() {
