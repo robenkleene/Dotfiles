@@ -72,11 +72,6 @@ alias mgl='emacs_magit_log'
 alias d='vim_cd'
 
 # `vim`
-alias vgd='vim_git_diff'
-alias vdg='vim_diff_grep'
-alias vgm='vim_git_modified'
-alias vgc='vim_git_conflicts'
-alias vse='vim_server_edit'
 alias vsr='vim_session_restore_auto'
 alias vsra='vim_session_restore_auto'
 alias vsrs='vim_session_restore_saved'
@@ -105,7 +100,6 @@ alias dev='fzf_developer'
 alias ptv='echo $test_variable'
 # The `|| true` prevents an exit status of 1 if the output does not end in a
 # new line
-alias ytv='yank_test_variable'
 alias ctv='safepaste | read test_variable || true'
 
 # `git`

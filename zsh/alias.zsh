@@ -114,11 +114,6 @@ alias mgl='emacs_magit_log'
 alias d='vim_cd'
 
 # `vim`
-alias vgd='vim_git_diff'
-alias vdg='vim_diff_grep'
-alias vgm='vim_git_modified'
-alias vgc='vim_git_conflicts'
-alias vse='vim_server_edit'
 alias vsr='vim_session_restore_auto'
 alias vsra='vim_session_restore_auto'
 alias vsrs='vim_session_restore_saved'
