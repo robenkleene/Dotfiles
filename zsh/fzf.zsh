@@ -1,22 +1,17 @@
-# export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
-# Start including hidden files because these files often need to be edited, like `.gitignore`
 export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude .DS_Store'
 export FZF_ALL_COMMAND='fd --hidden --exclude .git --exclude .DS_Store'
-
-# fzf
-# Make `fzf` bindings available, since this is being manually imported here
-# `fzf` should be installed at `~/.fzf/`, using the command 
-# `~/.fzf/install --bin`, which avoids installing the completions automatically
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-# Including hidden directories to be consistent with `fd` is there a reason not to?
 export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
+# These set bindings, so don't import them
 # source ~/.fzf/shell/completion.zsh
 # source ~/.fzf/shell/key-bindings.zsh
-# Put back default history search
-bindkey '^R' history-incremental-search-backward
-# bindkey '^[r' fzf-history-widget
+# Need this function though:
+__fzfcmd() {
+  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
+    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
+}
 
 # Library
 
@@ -330,22 +325,26 @@ fzf_documentation_editor() {
 }
 
 fzf_documentation() {
+  setopt localoptions pipefail 2> /dev/null
+
   cd ~/Documentation/ || return
+  local cmd="$FZF_ALL_COMMAND"
   local result
-  result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
+
+  result="$(eval "$cmd" | $(__fzfcmd))"
   if [[ -n "$result" ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     if [[ -d "$parameter" ]]; then
-      # Preserve "cd" history
+      # Pop directory befor cd to not affect cd stack
       cd - >/dev/null || return
       cd "$parameter" || return
       return 0
-    fi
-    local final_cmd="$BAT_COMMAND $parameter"
-    if eval "$final_cmd"; then
-      # Add to history
-      print -sr "$final_cmd"
+    else
+      local final_cmd="$BAT_COMMAND $parameter"
+      if eval "$final_cmd"; then
+        print -sr "$final_cmd"
+      fi
     fi
   fi
   cd - >/dev/null || return
