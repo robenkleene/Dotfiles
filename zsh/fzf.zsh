@@ -1,5 +1,6 @@
 # export FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
 # Start including hidden files because these files often need to be edited, like `.gitignore`
+export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude .DS_Store'
 export FZF_ALL_COMMAND='fd --hidden --exclude .git --exclude .DS_Store'
 
@@ -330,14 +331,8 @@ fzf_documentation_editor() {
 
 fzf_documentation() {
   cd ~/Documentation/ || return
-  local query=$1
   local result
-  if [[ -n "$query" ]]; then
-    local list_cmd=$FZF_ALL_COMMAND
-    result="$(eval "$list_cmd" "$query" | head -n 1)"
-  else
-    result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
-  fi
+  result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
   if [[ -n "$result" ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
