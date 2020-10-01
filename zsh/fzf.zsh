@@ -320,10 +320,9 @@ fzf_documentation_editor() {
       cd "$parameter" || return
     fi
     local final_cmd="$EDITOR $parameter"
-    eval $final_cmd
-    if [ $? -eq 0 ]; then
+    if eval "$final_cmd"; then
       # Add to history
-      print -sr $final_cmd
+      print -sr "$final_cmd"
     fi
   fi
   cd - >/dev/null || return
@@ -349,8 +348,7 @@ fzf_documentation() {
       return 0
     fi
     local final_cmd="$BAT_COMMAND $parameter"
-    eval "$final_cmd"
-    if [ $? -eq 0 ]; then
+    if eval "$final_cmd"; then
       # Add to history
       print -sr "$final_cmd"
     fi
