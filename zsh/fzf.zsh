@@ -90,7 +90,9 @@ _fzf_cd_widget() {
   dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
-    return 1
+    # Return 0 to avoid flash on cancel
+    # return 1
+    return 0
   fi
   cd "$dir" || return
 
@@ -125,7 +127,9 @@ _fzf_editor_widget() {
   file=$(__fzf_cmd "$cmd") 
   if [[ ! -f "$file" ]]; then
     zle redisplay
-    return 1
+    # Return 0 to avoid flash on cancel
+    # return 1
+    return 0
   fi
   # `vim` spits "Warning: Input is not from a terminal" without the `<
   # /dev/tty`
@@ -148,12 +152,15 @@ _fzf_z_widget() {
     return $ret
   fi
 
-  local dir=$(__fzf_cmd "$cmd") 
+  local dir
+  dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
-    return 1
+    # Return 0 to avoid flash on cancel
+    # return 1
+    return 0
   fi
-  cd "$dir"
+  cd "$dir" || return
 
   local ret=$?
   __zsh_add_history "cd ${(q)dir}"
@@ -180,10 +187,13 @@ _fzf_developer_widget() {
     return $ret
   fi
 
-  local dir=$(__fzf_cmd "$cmd") 
+  local dir
+  dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
-    return 1
+    # Return 0 to avoid flash on cancel
+    # return 1
+    return 0
   fi
   cd "$dir"
 
