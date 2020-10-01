@@ -94,7 +94,7 @@ function _robenkleene-fzf-commands-widget
     begin
         eval "$cmd | "(__fzfcmd) | read -l result
         if test -n "$result"
-            commandline -i "$result"
+            commandline -i "$result "
         end
     end
 
