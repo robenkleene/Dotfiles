@@ -364,9 +364,9 @@ fzf_snippet_copy() {
   local result
   result=$(_robenkleene_fzf_inline_result)
   if [[ -n $result ]]; then
-    cat "$result" | safecopy
+    safecopy < "$result"
     cmd="$BAT_COMMAND \"$result\""
-    eval $cmd
+    eval "$cmd"
   fi
   cd - >/dev/null || return
 }
@@ -379,9 +379,8 @@ fzf_snippet_editor() {
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     local final_cmd="$EDITOR $parameter"
-    eval $final_cmd
-    if [ $? -eq 0 ]; then
-      print -sr $final_cmd
+    if eval "$final_cmd"; then
+      print -sr "$final_cmd"
     fi
   fi
   cd - >/dev/null || return
