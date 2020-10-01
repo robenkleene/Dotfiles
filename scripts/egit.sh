@@ -6,6 +6,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Developer/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/:~/Library/Application\ Support/Code/User
 elif [[ "$(uname)" = "Linux" ]]; then
   EGITREPOS+=:~/.config/Code/User
+  EGITREPOS+=:~/.config/Code\ -\ Insiders/User
 fi
 
 # General Text Repos
