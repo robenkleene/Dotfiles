@@ -253,12 +253,17 @@ nnoremap <localleader>m :make<CR>
 " Backspace to last file
 nnoremap <BS> <C-^>
 
-" Emacs Paste
-cnoremap <C-y> <C-r>*
 " Command Line Window Edit
 cnoremap <C-x><C-e> <C-f>
+
+" Emacs Paste
+cnoremap <C-y> <C-r>*
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
+" Fish paste
+cnoremap <C-v> <C-r>*
+inoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-r>*"
+snoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 
 " Move by display line
 noremap <silent> k gk

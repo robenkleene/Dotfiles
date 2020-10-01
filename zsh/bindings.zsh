@@ -14,7 +14,7 @@ _custom_edit_command_line() {
   VISUAL="$VIM_COMMAND -c 'DisableBackgrounding'" zle edit-command-line
 }
 zle -N _custom_edit_command_line
-bindkey "^X^E" _custom_edit_command_line
+# bindkey "^X^E" _custom_edit_command_line
 # Fish style edit line
 bindkey '\ev' _custom_edit_command_line
 # bindkey "^X^E" edit-command-line
@@ -123,24 +123,37 @@ _system_yank() {
 }
 zle -N _system_yank
 
-_save_all() {
-  sgitt -cp && egit -p || egitn -n
-  zle reset-prompt
+_system_copy() {
+  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
+    zle kill-region
+  fi
+  CUTBUFFER=$(safepaste)
+  zle yank
 }
-zle -N _save_all
+zle -N _system_yank
+
+_system_copy() {
+  echo -n "$LBUFFER" | safecopy
+}
+zle -N _system_copy
 
 bindkey -e '\ed' _system_kill_word
 bindkey -e '\eD' _system_kill_word
 bindkey -e '\ew' _system_copy_region_as_kill
+bindkey -e "^[^?" _system_bash_backwards_kill_word
+bindkey -e "^[^H" _system_bash_backwards_kill_word
 # bindkey -e '^W' _system_backward_kill_word
 # bindkey -e '^W' _system_kill_region
 bindkey -e '^H' _system_kill_region_or_backward_delete_char
 bindkey -e '^?' _system_kill_region_or_backward_delete_char
 bindkey -e '^W' _system_kill_region_or_backward_kill_word
+
+# Emacs Style
 bindkey -e '^Y' _system_yank
-bindkey -e "^[^?" _system_bash_backwards_kill_word
-bindkey -e "^[^H" _system_bash_backwards_kill_word
-bindkey -e "\es" _save_all
+# Fish Style
+bindkey -e '^V' _system_yank
+bindkey -e '^X' _system_copy
+
 
 # Arrow Keys
 bindkey -e '^[[1;5A' beginning-of-buffer-or-history
