@@ -87,30 +87,6 @@ git_cd_root() {
   cd "$(git rev-parse --show-toplevel)" || exit
 }
 
-
-
-# Emacs
-
-emacs_magit_status() {
-  eval "$EMACS_COMMAND -nw -eval \"(robenkleene/magit-status-startup)\""
-}
-
-emacs_magit_log() {
-  eval "$EMACS_COMMAND -nw -eval \"(robenkleene/magit-log)\""
-}
-emacs_kill_server() {
-  emacsclient -e '(kill-emacs)'
-}
-
-emacs_app() {
-  if [[ $# -eq 0 ]]; then
-    open -a "Emacs.app" .
-  else
-    open -a "Emacs.app" "$@"
-  fi
-}
-
-# ssh
 ssh_start() {
   eval "$(ssh-agent -s)"
   ssh-add
@@ -128,55 +104,4 @@ ssh_tmux_start() {
 ssh_tmux_restore_start() {
   ssh_start
   tmux_session_auto_restore
-}
-
-# DNS
-dns_refresh() {
-  sudo killall -HUP mDNSResponder 
-}
-
-git_push_branch_origin() {
-  git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
-}
-
-git_branch_delete() {
-  git push origin --delete "$1" && \
-    git branch -D "$1"
-}
-
-git_tag_delete() {
-  git push --delete origin "$1" && \
-    git fetch --prune --tags
-}
-
-git_push_origin_delete() {
-  git push origin --delete "$1"
-}
-
-git_branch_set_upstream_origin_master() {
-  git branch --set-upstream-to=origin/master master
-}
-
-git_remote_add_origin() {
-  git remote rm origin
-  git remote add origin "$1"
-}
-
-git_branch_prune() {
-  git remote prune origin
-  if [[ "$1" = "-D" ]]; then
-    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
-  fi
-}
-
-git_branch_list_pruned() {
-  if [[ "$1" = "-D" ]]; then
-    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
-  else
-    git branch -vv | grep ': gone]' | awk '{print $1}'
-  fi
-}
-
-git_list_modified() {
-  git diff --name-only --diff-filter=UM | uniq
 }
