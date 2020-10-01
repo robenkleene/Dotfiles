@@ -36,7 +36,8 @@ __fzf_buffer_match() {
   local cmd="$1"
   local MATCH
   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-  local result=$(__fzf_cmd $cmd $MATCH)
+  local result
+  result=$(__fzf_cmd "$cmd" "$MATCH")
   local ret=$?
   if [[ -n "$result" ]]; then
     LBUFFER+="${(q)result} "
@@ -85,12 +86,13 @@ _fzf_cd_widget() {
     return $ret
   fi
 
-  local dir=$(__fzf_cmd "$cmd") 
+  local dir
+  dir=$(__fzf_cmd "$cmd") 
   if [[ ! -d "$dir" ]]; then
     zle redisplay
     return 1
   fi
-  cd "$dir"
+  cd "$dir" || return
 
   local ret=$?
   __zsh_add_history "cd ${(q)dir}"
