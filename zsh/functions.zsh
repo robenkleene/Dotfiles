@@ -1,4 +1,9 @@
-# Private
+# Autocomplete
+_robenkleene_git_branch_names() {
+  compadd "${(@)${(f)$(git branch -a)}#??}"
+}
+compdef _robenkleene_git_branch_names git_branch_delete
+compdef _robenkleene_git_branch_names git_push_origin_delete
 
 # Commands
 egitn() {
@@ -78,6 +83,9 @@ zsh_edit_config() {
   eval $EDITOR ../zshrc
 }
 
+git_cd_root() {
+  cd "$(git rev-parse --show-toplevel)" || exit
+}
 
 
 
@@ -127,57 +135,40 @@ dns_refresh() {
   sudo killall -HUP mDNSResponder 
 }
 
-
-
-
-# neovim
-vim_server_start() {
-  if [ -z "$TMUX" ]; then
-    NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim $@
-  else
-    nvim_session_id=$(tmux display-message -p '#{session_id}')
-    NVIM_LISTEN_ADDRESS=/tmp/nvimsocket$nvim_session_id nvim $@
-  fi
-}
-# git
-# Autocomplete
-_robenkleene_git_branch_names() {
-  compadd "${(@)${(f)$(git branch -a)}#??}"
-}
-
-git_cd_root() {
-  cd "$(git rev-parse --show-toplevel)" || exit
-}
-
 git_push_branch_origin() {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
-compdef _robenkleene_git_branch_names git_branch_delete
+
 git_branch_delete() {
   git push origin --delete $1 && \
     git branch -D $1
 }
+
 git_tag_delete() {
   git push --delete origin $1 && \
     git fetch --prune --tags
 }
-compdef _robenkleene_git_branch_names git_push_origin_delete
+
 git_push_origin_delete() {
   git push origin --delete $1
 }
+
 git_branch_set_upstream_origin_master() {
   git branch --set-upstream-to=origin/master master
 }
+
 git_remote_add_origin() {
   git remote rm origin
   git remote add origin $1
 }
+
 git_branch_prune() {
   git remote prune origin
   if [[ "$1" = "-D" ]]; then
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
   fi
 }
+
 git_branch_list_pruned() {
   if [[ "$1" = "-D" ]]; then
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
@@ -185,13 +176,7 @@ git_branch_list_pruned() {
     git branch -vv | grep ': gone]' | awk '{print $1}'
   fi
 }
+
 git_list_modified() {
   git diff --name-only --diff-filter=UM | uniq
 }
-git_push_force() {
-  git push --force-with-lease
-}
-git_diff_grep() {
-  git diff --relative $argv | diff_to_grep
-}
-
