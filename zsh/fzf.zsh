@@ -201,7 +201,7 @@ _fzf_developer_widget() {
 zle -N _fzf_developer_widget
 bindkey '\eg' _fzf_developer_widget
 
-_fzf_quick_edit_widget() {
+_fzf_quick_widget() {
   local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
 
   if [[ -n "$LBUFFER" ]]; then
@@ -229,8 +229,8 @@ _fzf_quick_edit_widget() {
   __fzf_reset_finish
   return $ret
 }
-zle -N _fzf_developer_widget
-bindkey '\eo' _fzf_developer_widget
+zle -N _fzf_quick_widget
+bindkey '\eo' _fzf_quick_widget
 
 _fzf_tags_widget() {
   local cmd="$HOME/.bin/dump_tags"
