@@ -13,8 +13,9 @@ set -gx ACK_COMMAND "rg"
 
 # Prevent `npm` scripts from opening browser windows
 # set -gx BROWSER "none"
-# Set to Chrome instead
-set -gx BROWSER "google chrome"
+# Or set it
+# set -gx BROWSER "google chrome"
+set -gx BROWSER "Microsoft Edge Beta"
 
 # Emacs
 # Start the server in the background if it isn't running

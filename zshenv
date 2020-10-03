@@ -57,7 +57,8 @@ export PAGER="less"
 # Prevent `npm` scripts from opening browser windows
 # export BROWSER="none"
 # Set to Chrome instead
-export BROWSER="google chrome"
+# export BROWSER="google chrome"
+export BROWSER="Microsoft Edge Beta"
 
 # Emacs
 # Start the server in the background if it isn't running
