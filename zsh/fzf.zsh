@@ -329,13 +329,15 @@ fzf_documentation() {
 
   cd ~/Documentation/ || return
   local cmd="fd --hidden --exclude .git --exclude .DS_Store"
-  local result
+  local fzfcmd
+  fzfcmd=$(__fzfcmd)
 
-  result="$(eval "$cmd" | $(__fzfcmd))"
-  if [[ -n "$result" ]]; then
+  result=$(eval "$cmd" | $fzfcmd)
+  local result
+  if [[ -n $result ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
-    if [[ -d "$parameter" ]]; then
+    if [[ -d $parameter ]]; then
       # Pop directory befor cd to not affect cd stack
       cd - >/dev/null || return
       cd "$parameter" || return
