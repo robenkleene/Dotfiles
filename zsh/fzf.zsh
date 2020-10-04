@@ -63,6 +63,42 @@ __fzf_reset_finish() {
 
 # Widgets
 
+_fzf_cd_widget2() {
+  if [[ ! $PWD = $HOME/* ]]; then
+    echo "Only use in a subdirectory of home" >&2
+    zle redisplay
+    return 1
+  fi
+
+  local cmd=$FZF_ALT_C_COMMAND
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
+    return $ret
+  fi
+
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
+    zle redisplay
+    return $ret
+  fi
+
+  local result_parameter
+  result_parameter=${(q)result}
+  cd "$result_parameter" || return 1
+  __zsh_add_history "cd $result_parameter"
+  __fzf_reset_finish
+  return $ret
+}
+zle -N _fzf_cd_widget2
+bindkey '\ec' _fzf_cd_widget2
+
 _fzf_cd_widget() {
   if [[ ! $PWD = $HOME/* ]]; then
     echo "Only use in a subdirectory of home" >&2
@@ -97,8 +133,8 @@ _fzf_cd_widget() {
   __fzf_reset_finish
   return $ret
 }
-zle -N _fzf_cd_widget
-bindkey '\ec' _fzf_cd_widget
+# zle -N _fzf_cd_widget
+# bindkey '\ec' _fzf_cd_widget
 
 _fzf_editor_widget() {
   if [[ ! $PWD = $HOME/* ]]; then
