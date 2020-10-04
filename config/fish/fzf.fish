@@ -20,16 +20,15 @@ function _robenkleene-fzf-cd-widget
 
     set -l cmd $FZF_ALT_C_COMMAND
     set -l commandline (commandline)
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -d "$result"
-            set -l result_path (string escape "$result")
-            if test -z $commandline
-                commandline "cd $result_path"
-                commandline -f execute
-            else
-                commandline -i "$result_path"
-            end
+    eval "$cmd | "(__fzfcmd) | read -l result
+
+    if test -d "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "cd $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
         end
     end
 
@@ -40,16 +39,15 @@ bind \ec _robenkleene-fzf-cd-widget
 function _robenkleene-fzf-z-widget
     set -l cmd "fasd -Rdl"
     set -l commandline (commandline)
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -d "$result"
-            set -l result_path (string escape "$result")
-            if test -z $commandline
-                commandline "cd $result_path"
-                commandline -f execute
-            else
-                commandline -i "$result_path"
-            end
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -d "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "cd $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
         end
     end
 
@@ -66,16 +64,15 @@ function _robenkleene-fzf-edit-widget
 
     set -l cmd $FZF_CTRL_T_COMMAND
     set -l commandline (commandline)
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -f "$result"
-            set -l result_path (string escape "$result")
-            if test -z $commandline
-                commandline "$EDITOR $result_path"
-                commandline -f execute
-            else
-                commandline -i "$result_path"
-            end
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -f "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "$EDITOR $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
         end
     end
 
@@ -91,11 +88,10 @@ end
 
 function _robenkleene-fzf-commands-widget
     set -l cmd "_robenkleene_fish_commands"
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -n "$result"
-            commandline -i "$result "
-        end
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -n "$result"
+        commandline -i "$result "
     end
 
     commandline -f repaint
@@ -105,16 +101,15 @@ bind \ex _robenkleene-fzf-commands-widget
 function _robenkleene-fzf-developer-widget
     set -l cmd "fd --type d --exclude .git . ~/Developer"
     set -l commandline (commandline)
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -d "$result"
-            set -l result_path (string escape "$result")
-            if test -z $commandline
-                commandline "cd $result_path"
-                commandline -f execute
-            else
-                commandline -i "$result_path"
-            end
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -d "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "cd $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
         end
     end
 
@@ -125,16 +120,15 @@ bind \eg _robenkleene-fzf-developer-widget
 function _robenkleene-fzf-quick-widget
     set -l cmd "fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
     set -l commandline (commandline)
-    begin
-        eval "$cmd | "(__fzfcmd) | read -l result
-        if test -d "$result"
-            set -l result_path (string escape "$result")
-            if test -z $commandline
-                commandline "cd $result_path"
-                commandline -f execute
-            else
-                commandline -i "$result_path"
-            end
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -d "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "cd $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
         end
     end
 
