@@ -63,7 +63,7 @@ __fzf_reset_finish() {
 
 # Widgets
 
-_fzf_cd_widget2() {
+_fzf_cd_widget() {
   if [[ ! $PWD = $HOME/* ]]; then
     echo "Only use in a subdirectory of home" >&2
     zle redisplay
@@ -89,52 +89,15 @@ _fzf_cd_widget2() {
     return $ret
   fi
 
+  cd "$result" || return 1
   local result_parameter
   result_parameter=${(q)result}
-  cd "$result_parameter" || return 1
-  __zsh_add_history "cd $result_parameter"
-  __fzf_reset_finish
+  print -sr -- "cd $result_parameter"
+  zle reset-prompt
   return $ret
 }
-zle -N _fzf_cd_widget2
-bindkey '\ec' _fzf_cd_widget2
-
-_fzf_cd_widget() {
-  if [[ ! $PWD = $HOME/* ]]; then
-    echo "Only use in a subdirectory of home" >&2
-    zle redisplay
-    return 1
-  fi
-
-  local cmd=$FZF_ALT_C_COMMAND
-
-  if [[ -n "$LBUFFER" ]]; then
-    local dir="${LBUFFER##* }"
-    if [[ -d "$dir" ]]; then
-      cmd="cd $dir && $cmd && cd - >/dev/null"
-    fi
-    __fzf_buffer_match "$cmd"
-    local ret=$?
-    return $ret
-  fi
-
-  local dir
-  dir=$(__fzf_cmd "$cmd") 
-  if [[ ! -d "$dir" ]]; then
-    zle redisplay
-    # Return 0 to avoid flash on cancel
-    # return 1
-    return 0
-  fi
-  cd "$dir" || return
-
-  local ret=$?
-  __zsh_add_history "cd ${(q)dir}"
-  __fzf_reset_finish
-  return $ret
-}
-# zle -N _fzf_cd_widget
-# bindkey '\ec' _fzf_cd_widget
+zle -N _fzf_cd_widget
+bindkey '\ec' _fzf_cd_widget
 
 _fzf_editor_widget() {
   if [[ ! $PWD = $HOME/* ]]; then
