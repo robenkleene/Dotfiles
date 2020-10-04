@@ -74,6 +74,16 @@ _fzf_cd_widget() {
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
+  # This snipper makes it so if you start adding a path, then the fzf input is
+  # only at that path. E.g., ls dir/ then entering the command would only
+  # select from dir/. This is disabled because I haven't been using it.
+  # if [[ -n "$LBUFFER" ]]; then
+  #   local dir="${LBUFFER##* }"
+  #   if [[ -d "$dir" ]]; then
+  #     cmd="cd $dir && $cmd && cd - >/dev/null"
+  #   fi
+  # fi
+
   local result
   result="$(eval "$cmd" | $fzfcmd)"
   local ret=$?
@@ -109,6 +119,16 @@ _fzf_editor_widget() {
   local cmd=$FZF_CTRL_T_COMMAND
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
+
+  # This snipper makes it so if you start adding a path, then the fzf input is
+  # only at that path. E.g., ls dir/ then entering the command would only
+  # select from dir/. This is disabled because I haven't been using it.
+  # if [[ -n "$LBUFFER" ]]; then
+  #   local dir="${LBUFFER##* }"
+  #   if [[ -d "$dir" ]]; then
+  #     cmd="cd $dir && $cmd && cd - >/dev/null"
+  #   fi
+  # fi
 
   local result
   result="$(eval "$cmd" | $fzfcmd)"
