@@ -107,32 +107,29 @@ _fzf_editor_widget() {
   fi
 
   local cmd=$FZF_CTRL_T_COMMAND
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
 
-  if [[ -n "$LBUFFER" ]]; then
-    local dir="${LBUFFER##* }"
-    if [[ -d "$dir" ]]; then
-      cmd="cd $dir && $cmd && cd - >/dev/null"
-    fi
-    __fzf_buffer_match "$cmd"
-    local ret=$?
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -f "$result" ]]; then
+    zle redisplay
     return $ret
   fi
 
-  local file
-  file=$(__fzf_cmd "$cmd") 
-  if [[ ! -f "$file" ]]; then
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
     zle redisplay
-    # Return 0 to avoid flash on cancel
-    # return 1
-    return 0
+    return $ret
   fi
-  # `vim` spits "Warning: Input is not from a terminal" without the `<
-  # /dev/tty`
-  eval "$EDITOR ${(q)file}" < /dev/tty
 
-  local ret=$?
-  __zsh_add_history "$EDITOR ${(q)file}"
-  __fzf_reset_finish
+  local result_parameter
+  result_parameter=${(q)result}
+  eval "$EDITOR $result_parameter" < /dev/tty
+  print -sr -- "$EDITOR $result_parameter"
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_editor_widget
