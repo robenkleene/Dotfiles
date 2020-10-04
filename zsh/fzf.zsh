@@ -332,12 +332,12 @@ fzf_documentation() {
   local fzfcmd
   fzfcmd=$(__fzfcmd)
 
-  result=$(eval "$cmd" | $fzfcmd)
+  result="$(eval "$cmd" | $fzfcmd)"
   local result
   if [[ -n $result ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
-    if [[ -d $parameter ]]; then
+    if [[ -d "$parameter" ]]; then
       # Pop directory befor cd to not affect cd stack
       cd - >/dev/null || return
       cd "$parameter" || return
