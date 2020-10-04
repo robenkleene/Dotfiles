@@ -249,6 +249,32 @@ _fzf_quick_widget() {
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
+
+_fzf_command_widget2() {
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
+  local commands=( ${(k)functions[@]} ${(k)commands[@]} )
+  # There's a shell command called `g[` that `eval` has trouble parsing
+  commands=("${(@)commands:#g\[}")
+  local -x cmd="print -l \\"$commands\\" | grep -E -v \"^(_|VCS)\""
+  # local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+  if ! type "$result" > /dev/null; then
+    zle redisplay
+    return 0
+  fi
+
+  LBUFFER+="$result "
+  zle redisplay
+  return $ret
+}
+zle     -N   _fzf_command_widget2
+# bindkey '^@' _fzf_command_widget
+bindkey '\ex' _fzf_command_widget2
+
+
 __fcmd() {
   local query=""
   if [[ -n "$1" ]]; then
@@ -258,6 +284,7 @@ __fcmd() {
   # There's a shell command called `g[` that `eval` has trouble parsing
   cmds=("${(@)cmds:#g\[}")
   local cmd="print -l \\"$cmds\\" | grep -E -v \"^(_|VCS)\""
+
   setopt localoptions pipefail 2> /dev/null
   eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf | while read item; do
     echo -n "${(q)item} "
@@ -276,9 +303,9 @@ _fzf_command_widget() {
   typeset -f zle-line-init >/dev/null && zle zle-line-init
   return $ret
 }
-zle     -N   _fzf_command_widget
+# zle     -N   _fzf_command_widget
 # bindkey '^@' _fzf_command_widget
-bindkey '\ex' _fzf_command_widget
+# bindkey '\ex' _fzf_command_widget
 
 _robenkleene_fzf_inline_result() {
   local list_cmd=${1-$FZF_DEFAULT_COMMAND}
