@@ -330,11 +330,11 @@ fzf_documentation() {
   cd ~/Documentation/ || return
   local cmd="fd --hidden --exclude .git --exclude .DS_Store"
   local fzfcmd
-  fzfcmd=$(__fzfcmd)
+  fzfcmd="$(__fzfcmd)"
 
-  result="$(eval "$cmd" | $fzfcmd)"
   local result
-  if [[ -n $result ]]; then
+  result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -n "$result" ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     if [[ -d "$parameter" ]]; then
