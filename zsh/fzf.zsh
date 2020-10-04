@@ -1,6 +1,5 @@
 export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude .DS_Store'
-export FZF_ALL_COMMAND='fd --hidden --exclude .git --exclude .DS_Store'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
@@ -11,54 +10,6 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 __fzfcmd() {
   [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
     echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
-}
-
-# Library
-
-__fzf_cmd() {
-  local cmd="$1"
-  local term="$2"
-  if [[ -n "$term" ]]; then
-    query="--query=\"$term\" "
-  fi
-  setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf +m
-  local ret=$?
-  echo
-  return $ret
-}
-
-__fzf_buffer_match() {
-  local cmd="$1"
-  local MATCH
-  LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-  local result
-  result=$(__fzf_cmd "$cmd" "$MATCH")
-  local ret=$?
-  if [[ -n "$result" ]]; then
-    LBUFFER+="${(q)result} "
-  else
-    LBUFFER+=$MATCH
-  fi
-  zle redisplay
-  # typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-
-__zsh_add_history() {
-  print -sr -- ${1%%$'\n'}
-  # Disabling instantaneous refresh for now, because I'm concerned about the
-  # performance impact and corrupting history, hit enter to refresh history
-  # fc -AI
-  # fc -R
-  # For some reason reading incrementally messes up the history stack, this
-  # whole approach for history refersh is probably wrong.
-  # fc -RI
-}
-
-__fzf_reset_finish() {
-  zle reset-prompt
-  # typeset -f zle-line-init >/dev/null && zle zle-line-init
 }
 
 # Widgets
@@ -191,8 +142,8 @@ _fzf_z_widget() {
 zle -N _fzf_z_widget
 bindkey '\ez' _fzf_z_widget
 # Work around what's probably a iTerm bug where if the first key press after a
-  # new window is created is calling a widget, sometimes the character is
-  # entered at the prompted instead of calling the widget
+# new window is created is calling a widget, sometimes the character is entered
+# at the prompted instead of calling the widget
 bindkey 'Ω' _fzf_z_widget
 
 _fzf_developer_widget() {
@@ -285,47 +236,7 @@ _fzf_command_widget() {
 zle     -N   _fzf_command_widget
 bindkey '\ex' _fzf_command_widget
 
-__fcmd() {
-  local query=""
-  if [[ -n "$1" ]]; then
-    query="--query=\"$1\" "
-  fi
-  local cmds=( ${(k)functions[@]} ${(k)commands[@]} )
-  # There's a shell command called `g[` that `eval` has trouble parsing
-  cmds=("${(@)cmds:#g\[}")
-  local cmd="print -l \\"$cmds\\" | grep -E -v \"^(_|VCS)\""
-
-  setopt localoptions pipefail 2> /dev/null
-  eval "$cmd" | FZF_DEFAULT_OPTS="$query--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf | while read item; do
-    echo -n "${(q)item} "
-  done
-  local ret=$?
-  echo
-  return $ret
-}
-
-# _fzf_command_widget() {
-#   local MATCH
-#   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-#   LBUFFER+="$(__fcmd "$MATCH")"
-#   local ret=$?
-#   zle redisplay
-#   typeset -f zle-line-init >/dev/null && zle zle-line-init
-#   return $ret
-# }
-# zle     -N   _fzf_command_widget
-# bindkey '^@' _fzf_command_widget
-# bindkey '\ex' _fzf_command_widget
-
-_robenkleene_fzf_inline_result() {
-  local list_cmd=${1-$FZF_DEFAULT_COMMAND}
-  setopt localoptions pipefail 2> /dev/null
-  local result
-  result="$(eval "$list_cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS" fzf +m)"
-  local ret=$?
-  echo "$result"
-  return $ret
-}
+# Functions
 
 fzf_documentation_editor() {
   setopt localoptions pipefail 2> /dev/null
@@ -378,7 +289,6 @@ fzf_documentation() {
   cd - >/dev/null || return
 }
 
-# Snippets
 fzf_snippet_copy() {
   setopt localoptions pipefail 2> /dev/null
 
