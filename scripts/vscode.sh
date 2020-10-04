@@ -3,7 +3,7 @@
 set -e
 
 if [[ $# -eq 0 ]]; then
-  code -n .
+  code-insiders -n .
 else
-  code -n "$@"
+  code-insiders -n "$@"
 fi
