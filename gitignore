@@ -47,7 +47,5 @@ flycheck_*
 a.out
 a.out.dSYM/
 
-.vscode/
-
 # Excel
 ~$*.xls*
