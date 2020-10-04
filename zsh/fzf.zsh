@@ -249,16 +249,16 @@ _fzf_quick_widget() {
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
-
 _fzf_command_widget2() {
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
-  local commands=( ${(k)functions[@]} ${(k)commands[@]} )
+  local commands=( "${(k)functions[@]}" "${(k)commands[@]}" )
   # There's a shell command called `g[` that `eval` has trouble parsing
   commands=("${(@)commands:#g\[}")
-  local -x cmd="print -l \\"$commands\\" | grep -E -v \"^(_|VCS)\""
-  # local result
+  local -x cmd="print -l \\"${commands[*]}\\" | grep -E -v \"^(_|VCS)\""
+
+  local result
   result="$(eval "$cmd" | $fzfcmd)"
   local ret=$?
   if ! type "$result" > /dev/null; then
@@ -271,7 +271,6 @@ _fzf_command_widget2() {
   return $ret
 }
 zle     -N   _fzf_command_widget2
-# bindkey '^@' _fzf_command_widget
 bindkey '\ex' _fzf_command_widget2
 
 
