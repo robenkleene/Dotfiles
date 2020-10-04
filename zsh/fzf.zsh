@@ -157,26 +157,29 @@ bindkey '\ee' _fzf_editor_widget
 
 _fzf_z_widget() {
   local cmd="fasd -Rdl"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
 
-  if [[ -n "$LBUFFER" ]]; then
-    __fzf_buffer_match "$cmd"
-    local ret=$?
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
     return $ret
   fi
 
-  local dir
-  dir=$(__fzf_cmd "$cmd") 
-  if [[ ! -d "$dir" ]]; then
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
     zle redisplay
-    # Return 0 to avoid flash on cancel
-    # return 1
-    return 0
+    return $ret
   fi
-  cd "$dir" || return
 
-  local ret=$?
-  __zsh_add_history "cd ${(q)dir}"
-  __fzf_reset_finish
+  cd "$result" || return 1
+  local result_parameter
+  result_parameter=${(q)result}
+  print -sr -- "cd $result_parameter"
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_z_widget
@@ -188,90 +191,64 @@ bindkey 'Ω' _fzf_z_widget
 
 _fzf_developer_widget() {
   local cmd="fd --type d --exclude .git . ~/Developer"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
 
-  if [[ -n "$LBUFFER" ]]; then
-    local dir="${LBUFFER##* }"
-    if [[ -d "$dir" ]]; then
-      cmd="cd $dir && $cmd && cd - >/dev/null"
-    fi
-    __fzf_buffer_match "$cmd"
-    local ret=$?
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
     return $ret
   fi
 
-  local dir
-  dir=$(__fzf_cmd "$cmd") 
-  if [[ ! -d "$dir" ]]; then
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
     zle redisplay
-    # Return 0 to avoid flash on cancel
-    # return 1
-    return 0
+    return $ret
   fi
-  cd "$dir"
 
-  local ret=$?
-  __zsh_add_history "cd ${(q)dir}"
-  __fzf_reset_finish
+  cd "$result" || return 1
+  local result_parameter
+  result_parameter=${(q)result}
+  print -sr -- "cd $result_parameter"
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_developer_widget
 bindkey '\eg' _fzf_developer_widget
 
 _fzf_quick_widget() {
-  local cmd="fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+  local cmd="fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
 
-  if [[ -n "$LBUFFER" ]]; then
-    local dir="${LBUFFER##* }"
-    if [[ -d "$dir" ]]; then
-      cmd="cd $dir && $cmd && cd - >/dev/null"
-    fi
-    __fzf_buffer_match "$cmd"
-    local ret=$?
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
     return $ret
   fi
 
-  local dir
-  dir=$(__fzf_cmd "$cmd") 
-  if [[ ! -d "$dir" ]]; then
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
     zle redisplay
-    # Return 0 to avoid flash on cancel
-    # return 1
-    return 0
+    return $ret
   fi
-  cd "$dir"
 
-  local ret=$?
-  __zsh_add_history "cd ${(q)dir}"
-  __fzf_reset_finish
+  cd "$result" || return 1
+  local result_parameter
+  result_parameter=${(q)result}
+  print -sr -- "cd $result_parameter"
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
-_fzf_tags_widget() {
-  local cmd="$HOME/.bin/dump_tags"
-  if [[ -n "$LBUFFER" ]]; then
-    __fzf_buffer_match "$cmd"
-    local ret=$?
-    return $ret
-  fi
-  setopt localoptions pipefail 2> /dev/null
-  local result
-  result="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --nth 1..2 --tiebreak=begin $FZF_DEFAULT_OPTS" fzf +m)"
-  if [[ -z "$result" ]]; then
-    zle redisplay
-    return 0
-  fi
-  echo "$result" | $VIM_COMMAND -c "TagBuffer" -
-  local ret=$?
-  zle reset-prompt
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
-zle -N _fzf_tags_widget
-bindkey '\ei' _fzf_tags_widget
-
-# Commands does extra work with the `commands` and `functions` variables
 __fcmd() {
   local query=""
   if [[ -n "$1" ]]; then
