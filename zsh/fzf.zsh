@@ -64,6 +64,8 @@ __fzf_reset_finish() {
 # Widgets
 
 _fzf_cd_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   if [[ ! $PWD = $HOME/* ]]; then
     echo "Only use in a subdirectory of home" >&2
     zle redisplay
@@ -110,6 +112,8 @@ zle -N _fzf_cd_widget
 bindkey '\ec' _fzf_cd_widget
 
 _fzf_editor_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   if [[ ! $PWD = $HOME/* ]]; then
     echo "Only use in a subdirectory of home" >&2
     zle redisplay
@@ -156,6 +160,8 @@ zle -N _fzf_editor_widget
 bindkey '\ee' _fzf_editor_widget
 
 _fzf_z_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   local cmd="fasd -Rdl"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
@@ -190,6 +196,8 @@ bindkey '\ez' _fzf_z_widget
 bindkey 'Ω' _fzf_z_widget
 
 _fzf_developer_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   local cmd="fd --type d --exclude .git . ~/Developer"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
@@ -220,6 +228,8 @@ zle -N _fzf_developer_widget
 bindkey '\eg' _fzf_developer_widget
 
 _fzf_quick_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   local cmd="fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
@@ -249,7 +259,9 @@ _fzf_quick_widget() {
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
-_fzf_command_widget2() {
+_fzf_command_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
@@ -270,9 +282,8 @@ _fzf_command_widget2() {
   zle redisplay
   return $ret
 }
-zle     -N   _fzf_command_widget2
-bindkey '\ex' _fzf_command_widget2
-
+zle     -N   _fzf_command_widget
+bindkey '\ex' _fzf_command_widget
 
 __fcmd() {
   local query=""
@@ -293,15 +304,15 @@ __fcmd() {
   return $ret
 }
 
-_fzf_command_widget() {
-  local MATCH
-  LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
-  LBUFFER+="$(__fcmd "$MATCH")"
-  local ret=$?
-  zle redisplay
-  typeset -f zle-line-init >/dev/null && zle zle-line-init
-  return $ret
-}
+# _fzf_command_widget() {
+#   local MATCH
+#   LBUFFER=${LBUFFER%%(#m)[_\-a-zA-Z0-9]#}
+#   LBUFFER+="$(__fcmd "$MATCH")"
+#   local ret=$?
+#   zle redisplay
+#   typeset -f zle-line-init >/dev/null && zle zle-line-init
+#   return $ret
+# }
 # zle     -N   _fzf_command_widget
 # bindkey '^@' _fzf_command_widget
 # bindkey '\ex' _fzf_command_widget
@@ -317,27 +328,23 @@ _robenkleene_fzf_inline_result() {
 }
 
 fzf_documentation_editor() {
-  cd ~/Documentation/ || return
-  local query=$1
+  setopt localoptions pipefail 2> /dev/null
+
+  cd ~/Documentation/ || return 1
+  local cmd="fd --hidden --exclude .git --exclude .DS_Store"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
   local result
-  if [[ -n "$query" ]]; then
-    local list_cmd=$FZF_ALL_COMMAND
-    result="$(eval "$list_cmd" "$query" | head -n 1)"
-  else
-    result=$(_robenkleene_fzf_inline_result "$FZF_ALL_COMMAND")
-  fi
+  result="$(eval "$cmd" | $fzfcmd)"
   if [[ -n "$result" ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
-    if [[ -d "$parameter" ]]; then
-      # To avoid going back to "~/Documentation" when this function ends
-      cd - >/dev/null || return
-      cd "$parameter" || return
-    fi
-    local final_cmd="$EDITOR $parameter"
-    if eval "$final_cmd"; then
-      # Add to history
-      print -sr "$final_cmd"
+    if [[ -e "$parameter" ]]; then
+      local final_cmd="$EDITOR $parameter"
+      if eval "$final_cmd"; then
+        print -sr "$final_cmd"
+      fi
     fi
   fi
   cd - >/dev/null || return
@@ -346,7 +353,7 @@ fzf_documentation_editor() {
 fzf_documentation() {
   setopt localoptions pipefail 2> /dev/null
 
-  cd ~/Documentation/ || return
+  cd ~/Documentation/ || return 1
   local cmd="fd --hidden --exclude .git --exclude .DS_Store"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
@@ -373,22 +380,38 @@ fzf_documentation() {
 
 # Snippets
 fzf_snippet_copy() {
-  cd ~/Developer/Snippets/ || return
+  setopt localoptions pipefail 2> /dev/null
+
+  cd ~/Developer/Snippets/ || return 1
+  local cmd="fd --type f --hidden --exclude .git --exclude .DS_Store"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
   local result
-  result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
-    safecopy < "$result"
-    cmd="$BAT_COMMAND \"$result\""
-    eval "$cmd"
+  result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -n "$result" ]]; then
+    local parameter
+    parameter=$(printf '%q' "$PWD/$result")
+    safecopy < "$parameter"
+    final_cmd="$BAT_COMMAND $parameter"
+    if eval "$final_cmd"; then
+      print -sr "$final_cmd"
+    fi
   fi
   cd - >/dev/null || return
 }
 
 fzf_snippet_editor() {
-  cd ~/Developer/Snippets/ || return
+  setopt localoptions pipefail 2> /dev/null
+
+  cd ~/Developer/Snippets/ || return 1
+  local cmd="fd --type f --hidden --exclude .git --exclude .DS_Store"
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
   local result
-  result=$(_robenkleene_fzf_inline_result)
-  if [[ -n $result ]]; then
+  result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -n "$result" ]]; then
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     local final_cmd="$EDITOR $parameter"
