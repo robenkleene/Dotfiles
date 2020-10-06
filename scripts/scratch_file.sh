@@ -7,10 +7,10 @@ scratch_dir="$HOME/Developer/Scratch/Document"
 while getopts ":f:e:h" option; do
   case "$option" in
     f)
-      file_type="OPTARG"
+      file_type="$OPTARG"
       ;;
     e)
-      extension="OPTARG"
+      extension="$OPTARG"
       ;;
     h)
       echo "Usage: command [-h] [-f <file type>] [-e <extension>]"
