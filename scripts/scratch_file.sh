@@ -37,7 +37,9 @@ if [[ -z "$extension" ]]; then
   exit 1
 fi
 
-scratch_file="$scratch_dir/$scratch_file"
+# Remove period if it exists
+extension=${extension#.}
+scratch_file="$scratch_dir/$file_type.$extension"
 
 if [[ ! -f "$scratch_file" ]]; then
   echo "Scratch file $scratch_file doesn't exist" >&2
