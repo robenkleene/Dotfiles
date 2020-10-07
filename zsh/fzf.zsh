@@ -252,7 +252,7 @@ fzf_documentation_editor() {
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     if [[ -e "$parameter" ]]; then
-      local final_cmd="$VIM_COMMAND -c 'lcd %:p:h' $parameter"
+      local final_cmd="$EDITOR $parameter"
       if eval "$final_cmd"; then
         print -sr "$final_cmd"
       fi
