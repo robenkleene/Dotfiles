@@ -6,7 +6,7 @@ function fzf_documentation_edit
     if test -n "$result"
         set -l result_path (string escape (realpath "$result"))
         if test -e "$result_path"
-            commandline "$VIM_COMMAND $result_path"
+            commandline "$EDITOR -c 'lcd %:p:h' $result_path"
             commandline -f execute
         end
     end

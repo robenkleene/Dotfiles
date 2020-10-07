@@ -252,7 +252,7 @@ fzf_documentation_editor() {
     local parameter
     parameter=$(printf '%q' "$PWD/$result")
     if [[ -e "$parameter" ]]; then
-      local final_cmd="$EDITOR $parameter"
+      local final_cmd="$EDITOR -c 'lcd %:p:h' $parameter"
       if eval "$final_cmd"; then
         print -sr "$final_cmd"
       fi
