@@ -25,6 +25,7 @@ egitn() {
   if [[ -n "$gitnext" ]]; then
     cd "$gitnext" || return
     if [[ "$print_status" == "true" ]]; then
+      pwd
       git status
     fi
     return
