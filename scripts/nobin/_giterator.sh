@@ -74,10 +74,10 @@ do_git_process() {
       pwd
       exit 0
     fi
-  else
-    echo
-    pwd
-    git status
+  # else
+  #   echo
+  #   pwd
+  #   git status
   fi
 
   if [ "$nothing_to_commit" = "false" ]; then

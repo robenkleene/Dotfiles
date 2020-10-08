@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 
 # System Repos
-EGITREPOS=~/Developer/Dotfiles/
+repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
-  EGITREPOS+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Developer/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/:~/Library/Application\ Support/Code/User:~/Library/Application\ Support/Code\ -\ Insiders/User
+  repos+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Developer/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Music/Audio\ Music\ Apps/:~/Library/Application\ Support/Code/User:~/Library/Application\ Support/Code\ -\ Insiders/User
 elif [[ "$(uname)" = "Linux" ]]; then
-  EGITREPOS+=:~/.config/Code/User
-  EGITREPOS+=:~/.config/Code\ -\ Insiders/User
+  repos+=:~/.config/Code/User
+  repos+=:~/.config/Code\ -\ Insiders/User
 fi
 
 # General Text Repos
-EGITREPOS+=:~/Developer/Snippets/:~/Developer/Settings/
+repos+=:~/Developer/Snippets/:~/Developer/Settings/
 # Last Repos
-EGITREPOS+=:~/Developer/Backup/:~/Developer/Archive/:~/Developer/Scratch/
+repos+=:~/Developer/Backup/:~/Developer/Archive/:~/Developer/Scratch/
 
-
-IFS=':' read -ra repos <<< "$EGITREPOS"
+IFS=':' read -ra repos <<< "$repos"
 
 source ~/.bin/nobin/_giterator.sh
 
