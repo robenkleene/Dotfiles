@@ -1,5 +1,5 @@
 function egitn
-  set -l gitnext (~/.bin/egit -n)
+  set -l gitnext (~/.bin/egit -pn)
   if test -n $gitnext
     cd $gitnext
     pwd
