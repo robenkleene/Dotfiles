@@ -163,7 +163,7 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='sgitt -cp && egit -p || egitn'
+alias s='sgitt -cp && egitn'
 
 # `slug`
 alias slpr='slug_project'
