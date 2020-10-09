@@ -7,6 +7,8 @@ compdef _robenkleene_git_branch_names git_push_origin_delete
 
 # Commands
 egitn() {
+  # The reason `egitn` has to be run seprately after `egit` is because the
+  # second time running `egit` can't print except the path.
   print_status="true"
   while getopts ":n" option; do
     case "$option" in

@@ -75,6 +75,8 @@ do_git_process() {
     if ! $nothing_to_commit; then
       pwd
       exit 0
+    else
+      return
     fi
   fi
 
