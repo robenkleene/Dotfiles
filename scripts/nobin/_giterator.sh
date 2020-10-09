@@ -64,9 +64,11 @@ commit_status() {
 }
 
 do_git_process() {
+  local printed="false"
   if ! [ -d ".git" ]; then
     return
   fi
+  local nothing_to_commit
   nothing_to_commit=$(commit_status)
 
   if $next; then
@@ -74,14 +76,15 @@ do_git_process() {
       pwd
       exit 0
     fi
-  # else
-  #   echo
-  #   pwd
-  #   git status
   fi
 
   if [ "$nothing_to_commit" = "false" ]; then
     if [ -n "$message" ]; then
+      if [[ "$printed" = "false" ]]; then
+        echo
+        pwd
+        printed="true"
+      fi
       git add -A :/ && git commit -m "$message"
       nothing_to_commit=$(commit_status)
     else
@@ -91,6 +94,11 @@ do_git_process() {
 
   if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     if ! git diff --exit-code "@{upstream}" >/dev/null; then
+      if [[ "$printed" = "false" ]]; then
+        echo
+        pwd
+        printed="true"
+      fi
       git push
     fi
   elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
