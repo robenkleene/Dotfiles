@@ -7,12 +7,17 @@ if command -sq fasd
 end
 
 # Ruby
-source ~/.config/fish/vendor/chruby/chruby.fish
-source ~/.config/fish/vendor/chruby/auto.fish
-chruby ruby-2.5.3
+# This should really be on all platforms, but it's only configured on Darwin
+# right now.
+switch (uname)
+    case Darwin
+        source ~/.config/fish/vendor/chruby/chruby.fish
+        source ~/.config/fish/vendor/chruby/auto.fish
+        chruby ruby-2.5.3
+end
 
 # llvm
 switch (uname)
     case Darwin
-            set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
+        set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 end
