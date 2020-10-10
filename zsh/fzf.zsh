@@ -181,7 +181,11 @@ bindkey '\eg' _fzf_developer_widget
 _fzf_quick_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+  if [[ "$(uname)" = "Darwin" ]]; then
+    local cmd="fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+  else
+    local cmd="fd --type d --exclude .git . ~/Text ~/Documentation"
+  fi
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
