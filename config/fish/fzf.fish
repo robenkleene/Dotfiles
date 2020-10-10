@@ -118,7 +118,13 @@ end
 bind \eg _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
-    set -l cmd "fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+    set -l cmd
+    switch (uname)
+        case Darwin
+            set cmd "fd --type d --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation"
+        case '*'
+            set cmd "fd --type d --exclude .git . ~/Text ~/Documentation"
+    end
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
