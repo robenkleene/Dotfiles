@@ -24,6 +24,9 @@
     "typescript": ["javascript"],
     "make": ["makefile"]
   },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt"
+  },
   "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
   "git.enableGutters": true
 }
