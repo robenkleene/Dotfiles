@@ -24,5 +24,6 @@
     "typescript": ["javascript"],
     "make": ["makefile"]
   },
-  "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"]
+  "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
+  "git.enableGutters": true
 }

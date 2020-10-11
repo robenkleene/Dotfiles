@@ -81,7 +81,6 @@ let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-open)
 vmap gx <Plug>(openbrowser-open)
 " Git {{{2
-Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
 let b:terminalorneovim = !has('gui_running') || has('nvim')
