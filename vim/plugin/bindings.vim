@@ -235,10 +235,10 @@ nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 nnoremap <leader>d :call bindings#OpenTodo()<CR>
 
 " Lint
-nnoremap <localleader>l :Lint<CR>
+" nnoremap <localleader>l :Lint<CR>
 
 " Format
-nnoremap <localleader>f :Format<CR>
+nnoremap <leader>f :Format<CR>
 
 " Run
 nnoremap <localleader>e :Execute<CR>

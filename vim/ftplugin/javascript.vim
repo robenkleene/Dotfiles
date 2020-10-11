@@ -17,7 +17,5 @@ let b:FormatPrg = "prettier --parser babel"
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nnoremap <leader>f  :Prettier<CR>
-vmap <localleader>f  <Plug>(coc-format-selected)
-nmap <localleader>f  <Plug>(coc-format-selected)
 
 setlocal foldmethod=indent
