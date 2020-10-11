@@ -154,23 +154,10 @@ function! s:MyHighlights() abort
 
   " Plugins {{{1
 
-  " Signify {{{2
-  highlight SignifyLineAdd ctermbg=NONE ctermfg=green
-  highlight SignifySignAdd ctermbg=NONE ctermfg=green
-  highlight SignifyLineChange ctermbg=NONE ctermfg=lightblue
-  highlight SignifyLineChangeDelete ctermbg=NONE ctermfg=lightblue
-  highlight SignifySignChange ctermbg=NONE ctermfg=lightblue
-  highlight SignifySignChangeDelete ctermbg=NONE ctermfg=lightblue
-  highlight SignifyLineDelete ctermbg=NONE ctermfg=red
-  highlight SignifyLineDeleteFirstLine ctermbg=NONE ctermfg=red
-  highlight SignifySignDelete ctermbg=NONE ctermfg=red
-  highlight SignifySignDeleteFirstLine ctermbg=NONE ctermfg=red
-
-  " Ale {{{2
-  " highlight ALEErrorSign ctermfg=red
-  " highlight ALEWarningSign ctermfg=yellow
-  " highlight ALEStyleWarningSign ctermfg=yellow
-  " highlight ALEStyleErrorSign ctermfg=yellow
+  " Git {{{2
+  highlight CocGitAddedSign ctermbg=NONE ctermfg=green
+  highlight CocGitChangedSign ctermbg=NONE ctermfg=lightblue
+  highlight CocGitRemovedSign ctermbg=NONE ctermfg=red
 
   " CoC {{{2
   highlight CoCWarningSign ctermfg=yellow
