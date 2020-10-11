@@ -18,15 +18,21 @@
     "xml": ["xmllint"],
     "zsh": ["shell", "shellcheck"]
   },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt"
+  },
+  "diagnostic-languageserver.formatters": {
+    "shfmt": {
+      "command": "shfmt",
+      "args": ["-i", "2", "-ci"]
+    }
+  },
+  "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
     "zsh": ["sh"],
     "typescript": ["javascript"],
     "make": ["makefile"]
   },
-  "diagnostic-languageserver.formatFiletypes": {
-    "sh": "shfmt"
-  },
-  "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
   "git.enableGutters": true
 }
