@@ -86,6 +86,7 @@ endfunction
 
 vmap <localleader>f  <Plug>(coc-format-selected)
 nmap <localleader>f  <Plug>(coc-format-selected)
+nnoremap <leader>f :call CocAction('format')<CR>
 
 nnoremap <silent><nowait> <localleader>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <localleader>s  :<C-u>CocList -I symbols<cr>

@@ -6,6 +6,3 @@ let b:FormatPrg = "prettier --parser json"
 
 " Disable Conceal
 " let g:vim_json_syntax_conceal = 0
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <leader>f  :Prettier<CR>
