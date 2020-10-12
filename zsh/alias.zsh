@@ -77,6 +77,8 @@ alias o='open_custom'
 alias rg='rg_custom'
 alias q='vim_grep'
 alias l='less'
+alias s='sgitt -cp && egit -p || egitn'
+alias u='git_pull_all'
 
 # `tmux`
 alias tma='tmux attach'
@@ -163,7 +165,6 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='sgitt -cp && egit -p || egitn'
 
 # `slug`
 alias slpr='slug_project'

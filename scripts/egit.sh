@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # System Repos
 repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then

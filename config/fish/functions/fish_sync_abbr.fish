@@ -25,7 +25,6 @@ function fish_sync_abbr
     abbr -a tmls 'tmux ls'
     abbr -a tmsn 'tmux new'
     abbr -a tmd 'tmux detach'
-    abbr -a wf 'whence -f'
     abbr -a m 'make'
     abbr -a hpr 'hub pull-request'
     abbr -a ghpr 'gh pr create'
