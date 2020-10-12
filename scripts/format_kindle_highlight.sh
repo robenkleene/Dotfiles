@@ -57,7 +57,7 @@ if [ $# -gt 0 ]; then
     result=$(process $file)
     if [[ "$write" == "true" ]]; then
       title=$(head -n 1 "$file")
-      slug=$(echo "$title" | ~/.bin/slug)
+      slug=$(echo "$title" | cut -d: -f 1 | ~/.bin/slug)
       source=$(mktemp "${slug}-XXXX")
       echo "$result" >>"$source"
       destination="${slug}.md"
