@@ -26,8 +26,10 @@ done
 process() {
   local file="${1:-/dev/stdin}"
   local stored=""
+
   while read -r line; do
-    if [[ -z $line ]]; then
+    line=$(echo -n "${line//[$'\t\r\n']}")
+    if [[ -z "${line// }" ]]; then
       continue
     fi
     if [[ $line =~ ^LOCATION:[[:space:]]([0-9]+) ]]; then
@@ -44,7 +46,7 @@ process() {
       echo
       stored=""
     else
-      stored+=$line
+      stored+="$line"
     fi
   done <"${file}"
 }
