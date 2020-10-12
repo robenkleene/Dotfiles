@@ -16,7 +16,7 @@ repos+=:~/Developer/Snippets/:~/Developer/Settings/
 # Last Repos
 repos+=:~/Developer/Backup/:~/Developer/Archive/:~/Developer/Scratch/
 
-IFS=':' read -ra repos <<< "$repos"
+IFS=':' read -ra repos <<<"$repos"
 
 source ~/.bin/nobin/_giterator.sh
 
