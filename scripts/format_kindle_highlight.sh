@@ -63,9 +63,9 @@ if [ $# -gt 0 ]; then
       destination="${slug}.md"
       mv -n "$source" "$destination"
       if [[ -f "$source" ]]; then
-        echo -n "$source"
+        echo "$source"
       else
-        echo -n "$destination"
+        echo "$destination"
       fi
     else
       echo "$result"
