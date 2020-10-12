@@ -101,6 +101,11 @@ do_git_process() {
       git push
     fi
   elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
+    if [[ "$printed" = "false" ]]; then
+      echo
+      pwd
+      printed="true"
+    fi
     git pull -r
   fi
 }
