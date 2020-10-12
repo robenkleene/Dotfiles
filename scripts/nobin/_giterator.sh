@@ -1,4 +1,3 @@
-set -x
 usage() {
   echo "Usage: command [-pln]"
   echo
