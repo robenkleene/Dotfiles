@@ -22,6 +22,7 @@ while getopts ":wh" option; do
       ;;
   esac
 done
+shift "$((OPTIND - 1))"
 
 process() {
   local file="${1:-/dev/stdin}"
