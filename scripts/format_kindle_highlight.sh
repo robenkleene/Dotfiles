@@ -53,7 +53,14 @@ process() {
 
 if [ $# -gt 0 ]; then
   for file in "$@"; do
-    process $file
+    result=$(process $file)
+    if [[ "$write" == "true" ]]; then
+      title=$(head -n 1 "$file")
+      slug=$(echo "$title" | ~/.bin/slug)
+      echo "$slug"
+    else
+      echo "$result"
+    fi
   done
 else
   process
