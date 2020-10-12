@@ -1,3 +1,4 @@
+set -x
 usage() {
   echo "Usage: command [-pln]"
   echo
@@ -81,16 +82,18 @@ do_git_process() {
     fi
   fi
 
-  if [ -n "$message" ] && [ "$nothing_to_commit" = "false" ]; then
-    if [[ "$printed" = "false" ]]; then
-      echo
-      pwd
-      printed="true"
+  if [ "$nothing_to_commit" = "false" ]; then
+    if [ -n "$message" ]; then
+      if [[ "$printed" = "false" ]]; then
+        echo
+        pwd
+        printed="true"
+      fi
+      git add -A :/ && git commit -m "$message"
+      nothing_to_commit=$(commit_status)
+    elif [ "$push" = "true" ]; then
+      exit 1
     fi
-    git add -A :/ && git commit -m "$message"
-    nothing_to_commit=$(commit_status)
-  elif [ "$push" = "true" ]; then
-    exit 1
   fi
 
   if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
