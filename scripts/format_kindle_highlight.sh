@@ -29,8 +29,8 @@ process() {
   local stored=""
 
   while read -r line; do
-    line=$(echo -n "${line//[$'\t\r\n']}")
-    if [[ -z "${line// }" ]]; then
+    line=$(echo -n "${line//[$'\t\r\n']/}")
+    if [[ -z "${line// /}" ]]; then
       continue
     fi
     if [[ $line =~ ^LOCATION:[[:space:]]([0-9]+) ]]; then
@@ -58,7 +58,15 @@ if [ $# -gt 0 ]; then
     if [[ "$write" == "true" ]]; then
       title=$(head -n 1 "$file")
       slug=$(echo "$title" | ~/.bin/slug)
-      echo "$slug"
+      source=$(mktemp "${slug}-XXXX")
+      echo "$result" >>"$source"
+      destination="${slug}.md"
+      mv -n "$source" "$destination"
+      if [[ -f "$source" ]]; then
+        echo -n "$source"
+      else
+        echo -n "$destination"
+      fi
     else
       echo "$result"
     fi
