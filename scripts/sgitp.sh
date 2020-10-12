@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-cd ~/Developer/Projects/ && $HOME/.bin/sgit $@
+cd ~/Developer/Projects/ && "$HOME/.bin/sgit" "$@"

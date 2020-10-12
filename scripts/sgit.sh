@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 source ~/.bin/nobin/_giterator.sh
 
-find . -type d -execdir test -d "{}/.git" \; -print -prune | while read dir; do
+find . -type d -execdir test -d "{}/.git" \; -print -prune | while read -r dir; do
   giterate "$dir"
 done

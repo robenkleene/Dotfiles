@@ -12,6 +12,7 @@ usage() {
 push="false"
 pull="false"
 next="false"
+message=""
 while getopts "pucm:nh" option; do
   case "$option" in
     p)
@@ -80,18 +81,14 @@ do_git_process() {
     fi
   fi
 
-  if [ "$nothing_to_commit" = "false" ]; then
-    if [ -n "$message" ]; then
-      if [[ "$printed" = "false" ]]; then
-        echo
-        pwd
-        printed="true"
-      fi
-      git add -A :/ && git commit -m "$message"
-      nothing_to_commit=$(commit_status)
-    else
-      exit 1
+  if [ -n "$message" ] && [ "$nothing_to_commit" = "false" ]; then
+    if [[ "$printed" = "false" ]]; then
+      echo
+      pwd
+      printed="true"
     fi
+    git add -A :/ && git commit -m "$message"
+    nothing_to_commit=$(commit_status)
   fi
 
   if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
