@@ -91,11 +91,6 @@ do_git_process() {
       git add -A :/ && git commit -m "$message"
       nothing_to_commit=$(commit_status)
     elif [ "$push" = "true" ]; then
-      if [[ "$printed" = "false" ]]; then
-        echo
-        pwd
-        printed="true"
-      fi
       # Don't print an error message here, because it will clutter the output.
       # This exit status is used to indicate that there's at least one
       # repository that needs to be addressed manually. Changing to the
