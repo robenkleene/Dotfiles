@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-set -x
 # System Repos
 repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -22,5 +21,6 @@ IFS=':' read -ra repos <<<"$repos"
 source ~/.bin/nobin/_giterator.sh
 
 for repo in "${repos[@]}"; do
+  echo "repo = $repo"
   giterate "$repo"
 done
