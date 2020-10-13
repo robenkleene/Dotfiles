@@ -96,7 +96,10 @@ do_git_process() {
         pwd
         printed="true"
       fi
-      echo "Error: Set to push but no commit message is set" >&2
+      # Don't print an error message here, because it will clutter the output.
+      # This exit status is used to indicate that there's at least one
+      # repository that needs to be addressed manually. Changing to the
+      # directory is done by a separate call.
       exit 1
     fi
   fi
