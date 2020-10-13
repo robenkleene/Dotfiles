@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+set -x
 # System Repos
 repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
