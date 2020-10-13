@@ -21,6 +21,5 @@ IFS=':' read -ra repos <<<"$repos"
 source ~/.bin/nobin/_giterator.sh
 
 for repo in "${repos[@]}"; do
-  echo "repo = $repo"
   giterate "$repo"
 done
