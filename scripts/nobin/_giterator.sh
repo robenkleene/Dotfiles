@@ -116,7 +116,6 @@ do_git_process() {
 
 giterate() {
   dir="$1"
-  echo "dir = $dir"
   if [ -d "$dir" ]; then
     cd "$1" || return
     do_git_process
