@@ -160,10 +160,19 @@ function! s:MyHighlights() abort
   highlight CocGitRemovedSign ctermbg=NONE ctermfg=red
 
   " CoC {{{2
-  highlight CoCWarningSign ctermfg=yellow
-  highlight CoCErrorSign ctermfg=red
-  highlight CoCInfoSign ctermfg=gray
-  highlight CoCHintSign ctermfg=gray
+  highlight CocWarningSign ctermfg=yellow
+  highlight CocErrorSign ctermfg=red
+  " highlight CocWarningSign ctermfg=gray
+  " highlight CocErrorSign ctermfg=gray
+  highlight CocInfoSign ctermfg=gray
+  highlight CocHintSign ctermfg=gray
+  " Float
+  highlight CocWarningFloat ctermfg=white
+  highlight CocErrorFloat ctermfg=white
+  " highlight CocWarningSign ctermfg=gray
+  " highlight CocErrorSign ctermfg=gray
+  highlight CocInfoFloat ctermfg=white
+  highlight CocHintFloat ctermfg=white
 
   " tir_black bug fixes
   " For some reason "blue" display weird in console vim when it overlaps with the
