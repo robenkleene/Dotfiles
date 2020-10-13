@@ -77,7 +77,7 @@ do_git_process() {
       pwd
       exit 0
     else
-      return
+      return 0
     fi
   fi
 
@@ -91,6 +91,12 @@ do_git_process() {
       git add -A :/ && git commit -m "$message"
       nothing_to_commit=$(commit_status)
     elif [ "$push" = "true" ]; then
+      if [[ "$printed" = "false" ]]; then
+        echo
+        pwd
+        printed="true"
+      fi
+      echo "Error: Set to push but no commit message is set" >&2
       exit 1
     fi
   fi
@@ -123,7 +129,7 @@ giterate() {
   else
     if ! $next; then
       echo
-      echo "Directory does not exist $dir"
+      echo "Directory does not exist $dir" >&2
     fi
   fi
 }
