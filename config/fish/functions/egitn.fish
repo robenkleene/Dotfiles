@@ -3,7 +3,7 @@ function egitn
     # second time running `egit` can't print except the path.
     set -l gitnext (~/.bin/egit -n)
     if test -n $gitnext
-        cd $gitnext
+        cd "$gitnext"
         pwd
         git status
     end
