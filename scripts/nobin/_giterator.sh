@@ -84,7 +84,6 @@ do_git_process() {
   if [ "$nothing_to_commit" = "false" ]; then
     if [ -n "$message" ]; then
       if [[ "$printed" = "false" ]]; then
-        echo
         pwd
         printed="true"
       fi
@@ -102,7 +101,6 @@ do_git_process() {
   if [ "$push" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     if ! git diff --exit-code "@{upstream}" >/dev/null; then
       if [[ "$printed" = "false" ]]; then
-        echo
         pwd
         printed="true"
       fi
@@ -110,7 +108,6 @@ do_git_process() {
     fi
   elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     if [[ "$printed" = "false" ]]; then
-      echo
       pwd
       printed="true"
     fi
