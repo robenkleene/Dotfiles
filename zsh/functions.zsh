@@ -30,9 +30,8 @@ egitn() {
       pwd
       git status
     fi
-    return
+    return 1
   fi
-  return 1
 }
 
 sgitn() {

@@ -77,7 +77,7 @@ alias o='open_custom'
 alias rg='rg_custom'
 alias q='vim_grep'
 alias l='less'
-alias s='sgitt -cp && egit -p || egitn'
+alias s='{ egit -p || egitn } && sgitt -cp'
 alias u='ssh_git_pull_all'
 
 # `tmux`
