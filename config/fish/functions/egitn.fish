@@ -6,5 +6,6 @@ function egitn
         cd "$gitnext"
         pwd
         git status
+        return 1
     end
 end
