@@ -43,7 +43,7 @@ _fzf_cd_widget() {
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
-    return $ret
+    return
   fi
 
   if [[ -n "$LBUFFER" ]]; then
@@ -91,7 +91,7 @@ _fzf_editor_widget() {
 
   if [[ ! -f "$result" ]]; then
     zle redisplay
-    return $ret
+    return
   fi
 
   if [[ -n "$LBUFFER" ]]; then
@@ -123,7 +123,7 @@ _fzf_z_widget() {
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
-    return $ret
+    return
   fi
 
   if [[ -n "$LBUFFER" ]]; then
@@ -159,7 +159,7 @@ _fzf_developer_widget() {
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
-    return $ret
+    return
   fi
 
   if [[ -n "$LBUFFER" ]]; then
@@ -195,7 +195,7 @@ _fzf_quick_widget() {
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
-    return $ret
+    return
   fi
 
   if [[ -n "$LBUFFER" ]]; then
@@ -230,7 +230,7 @@ _fzf_command_widget() {
   local ret=$?
   if ! type "$result" > /dev/null; then
     zle redisplay
-    return 0
+    return
   fi
 
   LBUFFER+="$result "
@@ -282,7 +282,7 @@ fzf_documentation() {
       # Pop directory befor cd to not affect cd stack
       cd - >/dev/null || return
       cd "$parameter" || return
-      return 0
+      return
     else
       local final_cmd="$BAT_COMMAND $parameter"
       if eval "$final_cmd"; then
