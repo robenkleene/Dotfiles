@@ -53,6 +53,9 @@ abbreviations=(
 'brm' 'bat README.md'
 'prm' 'open -a "Repla" README.md'
 
+# Clear
+'r' 'clear'
+
 # `xargs`
 '0fd' 'fd -0'
 

@@ -30,6 +30,7 @@ function fish_sync_abbr
     abbr -a ghpr 'gh pr create'
     abbr -a hprm 'hub pull-request && BROWSER= gh pr view --web'
     abbr -a c 'cat'
+    abbr -a r 'clear'
     abbr -a b 'bat'
     abbr -a brm 'bat README.md'
     abbr -a prm 'open -a "Repla" README.md'
