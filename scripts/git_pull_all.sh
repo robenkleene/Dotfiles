@@ -2,11 +2,6 @@
 
 set -e
 
-if [[ "$(uname)" = "Linux" && -z $SSH_AGENT_PID ]]; then
-  eval "$(ssh-agent -s)"
-  ssh-add
-fi
-
 ~/.bin/egit -u
 cd "$HOME/Developer/Dotfiles/scripts" && ./install.sh
 

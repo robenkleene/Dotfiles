@@ -95,6 +95,11 @@ ssh_start() {
   ssh-add
 }
 
+ssh_git_pull_all() {
+  ssh_start
+  git_pull_all
+}
+
 ssh_stop() {
   ssh-agent -k
 }
