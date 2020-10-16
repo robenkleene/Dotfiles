@@ -85,7 +85,7 @@ end
 alias snp='fzf_snippet_copy'
 alias snpe='fzf_snippet_edit'
 alias doce='fzf_documentation_edit'
-alias doc='fzf_documentation'
+alias doc='fzf_documentation_less'
 alias dev='fzf_developer'
 
 # Test Variable
