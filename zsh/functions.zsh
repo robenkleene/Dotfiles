@@ -95,7 +95,9 @@ ssh_start() {
 }
 
 ssh_git_pull_all() {
-  ssh_start
+  if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
+    ssh_start
+  fi
   git_pull_all
 }
 
