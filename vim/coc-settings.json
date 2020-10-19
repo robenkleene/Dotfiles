@@ -28,6 +28,7 @@
     }
   },
   "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false,
   "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
