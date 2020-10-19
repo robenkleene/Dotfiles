@@ -8,7 +8,6 @@ let test#strategy = 'make'
 augroup test_bindings
   autocmd!
   let blacklist = ['markdown']
-  " autocmd FileType json,lisp RainbowParentheses
   autocmd FileType * if index(blacklist, &ft) < 0 | nnoremap <silent> <localleader>t :TestNearest<CR>
   autocmd FileType * if index(blacklist, &ft) < 0 | vnoremap <silent> <localleader>t :TestNearest<CR>
 augroup END
