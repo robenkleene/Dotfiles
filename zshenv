@@ -7,15 +7,15 @@
 #   VIM_COMMAND=nvim
 # fi
 # `vim`
-VIM_COMMAND=vim
+export VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs, note that this doesn't work with
 # current Emacs
 # Use `-nw` to create a new frame, otherwise only one instance of `emacsclient`
 # can be used at once
-EMACS_COMMAND='emacsclient -nw'
+export EMACS_COMMAND='emacsclient -nw'
 # EMACS_COMMAND='emacs'
-ACK_COMMAND=rg
+export ACK_COMMAND=rg
 
 # Don't load the rest of this file if it has already been sourced in particular
   # this was added to prevent the path from being re-ordered when a `zsh`
