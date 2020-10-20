@@ -42,6 +42,9 @@ else
   # This method of setting the path prevents duplicate entries.
   typeset -U path
   path=(~/.fzf/bin ~/.bin /usr/local/bin $path[@])
+  if [[ "$(uname)" = "Linux" ]]; then
+    path=(/home/linuxbrew/.linuxbrew/bin $path[@])
+  fi
 fi
 
 # Editor
