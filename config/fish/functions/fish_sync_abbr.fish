@@ -65,6 +65,8 @@ function fish_sync_abbr
     abbr -a gms 'git merge --squash'
     abbr -a gmt 'git mergetool'
     abbr -a gp 'git push'
+    abbr -a gls 'git ls-files'
+    abbr -a glsm 'git ls-files -m'
     abbr -a gpt 'git push --tags'
     abbr -a gr 'git rebase'
     abbr -a grc 'git rebase --continue'
