@@ -61,6 +61,7 @@ bind stage ] none
 bind stage [ none
 bind stage ]c :/^[+|-][^+-]
 bind stage [c :?^[+|-][^+-]
+bind stage C !git commit
 # Diff
 bind diff <Enter> edit
 bind diff ]] :/^@@
