@@ -157,6 +157,8 @@ function! s:MyHighlights() abort
   " Git {{{2
   highlight CocGitAddedSign ctermbg=NONE ctermfg=green
   highlight CocGitChangedSign ctermbg=NONE ctermfg=lightblue
+  highlight CocGitChangedRemovedSign ctermbg=NONE ctermfg=lightblue
+  highlight CocGitChangeRemovedSign ctermbg=NONE ctermfg=lightblue
   highlight CocGitRemovedSign ctermbg=NONE ctermfg=red
 
   " CoC {{{2
