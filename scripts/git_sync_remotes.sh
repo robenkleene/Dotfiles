@@ -11,7 +11,11 @@ if [[ -n "$1" ]]; then
   fi
 fi
 
-find . -type d -execdir test -d "{}/.git" \; -print -prune | while read dir; do
-  url=$(cd "$dir" && git ls-remote --get-url)
-  echo "$url \"$dir\""
-done
+print_repos() {
+  find . -type d -execdir test -d "{}/.git" \; -print -prune | while read -r dir; do
+    url=$(cd "$dir" && git ls-remote --get-url)
+    echo "$url \"$dir\""
+  done
+}
+
+print_repos | sort
