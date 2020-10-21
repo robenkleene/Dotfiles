@@ -28,7 +28,7 @@ alias o='open_custom'
 alias q='vim_grep'
 alias l='less'
 alias rg='rg_custom'
-alias u='git_pull_all'
+alias u='ssh_git_pull_all'
 
 # `tmux`
 alias tma='tmux attach'

@@ -95,6 +95,7 @@ Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './instal
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 if !has('macunix')
   " This slows down `dd` significantly
+  Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'roxma/vim-tmux-clipboard'
 endif
 Plug 'wsdjeg/vim-fetch'
