@@ -116,7 +116,7 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='begin; egit -p || egitn; end && sgitt -cp'
+alias s='begin; egit -p || egitn; end && echo "Automatic" && sgitt -cp'
 
 # `slug`
 alias slpr='slug_project'
