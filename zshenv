@@ -60,7 +60,11 @@ export PAGER="less"
 # Prevent `npm` scripts from opening browser windows
 # export BROWSER="none"
 # Set to Chrome instead
-export BROWSER="google chrome"
+if [[ "$(uname)" = "Linux" ]]; then
+  export BROWSER="none"
+elif [[ "$(uname)" = "Darwin" ]]; then
+  export BROWSER="google chrome"
+fi
 # export BROWSER="Microsoft Edge Beta"
 
 # Emacs
