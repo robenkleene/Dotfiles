@@ -22,13 +22,14 @@ alias excel='open -a "Microsoft Excel"'
 # `zsh`
 alias foi='fish_edit_config'
 
-# scripts
+# Short
 alias t='terminal_cd'
 alias o='open_custom'
 alias q='vim_grep'
 alias l='less'
 alias rg='rg_custom'
 alias u='ssh_git_pull_all'
+alias s='ssh_start && begin; egit -p || egitn; end && echo "Automatic" && sgitt -cp'
 
 # `tmux`
 alias tma='tmux attach'
@@ -116,7 +117,6 @@ alias sgut='sgitt -u'
 alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
-alias s='begin; egit -p || egitn; end && echo "Automatic" && sgitt -cp'
 
 # `slug`
 alias slpr='slug_project'

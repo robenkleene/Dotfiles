@@ -1,9 +1,4 @@
 function ssh_git_pull_all
-    switch (uname)
-        case Linux
-           if test -z $SSH_AGENT_PID 
-               ssh_start
-           end
-    end
+    ssh_start
     git_pull_all
 end
