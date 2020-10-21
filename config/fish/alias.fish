@@ -29,7 +29,7 @@ alias q='vim_grep'
 alias l='less'
 alias rg='rg_custom'
 alias u='ssh_git_pull_all'
-alias s='ssh_start && begin; egit -p || egitn; end && echo "Automatic" && sgitt -cp'
+alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 
 # `tmux`
 alias tma='tmux attach'
