@@ -33,7 +33,7 @@ alias u='ssh_git_pull_all'
 # `tmux`
 alias tma='tmux attach'
 alias tmnd='tmux_name_directory'
-alias tmsr='tmux_session_auto_restore'
+alias tmsr='tmux_session_auto_restore_ssh'
 alias tmsq='tmux_session_auto_save_quit'
 alias tmp='tmux_paths'
 alias tmpa='tmux_paths -a'
