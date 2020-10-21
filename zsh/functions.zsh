@@ -90,14 +90,14 @@ git_cd_root() {
 }
 
 ssh_start() {
-  eval "$(ssh-agent -s)"
-  ssh-add
+  if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
+    eval "$(ssh-agent -s)"
+    ssh-add
+  fi
 }
 
 ssh_git_pull_all() {
-  if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
-    ssh_start
-  fi
+  ssh_start
   git_pull_all
 }
 
