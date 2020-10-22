@@ -19,7 +19,8 @@ nnoremap <M-x> :Commands<CR>
 vnoremap <M-x> :VisualCommands<CR>
 nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
-nnoremap <M-o> :QuickText<CR>
+nnoremap <M-o> :Quick<CR>
+nnoremap <M-g> :Developer<CR>
 " nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
@@ -160,8 +161,12 @@ command! FZFTags :call fzf#run(fzf#wrap({
       \   'sink': 'tag'
       \ }))
 
-command! QuickText :call fzf#run(fzf#wrap({
-      \   'source': "fd --exclude .git . ~/Text ~/Documents/Text/Notes ~/Documentation",
+command! Quick :call fzf#run(fzf#wrap({
+      \   'source': "fd --type d --exclude .git . ~/Text ~/Documentation",
+      \   'sink': 'e'
+      \ }))
+command! Developer :call fzf#run(fzf#wrap({
+      \   'source': "fd --type d --exclude .git . ~/Developer",
       \   'sink': 'e'
       \ }))
 
