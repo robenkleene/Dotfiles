@@ -238,7 +238,7 @@ nnoremap <leader>d :call bindings#OpenTodo()<CR>
 " nnoremap <localleader>l :Lint<CR>
 
 " Format
-nnoremap <leader>f :Format<CR>
+" nnoremap <leader>f :Format<CR>
 
 " Run
 nnoremap <localleader>e :Execute<CR>
