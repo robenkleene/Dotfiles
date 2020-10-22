@@ -163,11 +163,11 @@ command! FZFTags :call fzf#run(fzf#wrap({
 
 command! Quick :call fzf#run(fzf#wrap({
       \   'source': "fd --type d --exclude .git . ~/Text ~/Documentation",
-      \   'sink': 'e'
+      \   'sink': function('<SID>cd_sink')
       \ }))
 command! Developer :call fzf#run(fzf#wrap({
       \   'source': "fd --type d --exclude .git . ~/Developer",
-      \   'sink': 'e'
+      \   'sink': function('<SID>cd_sink')
       \ }))
 
 " Insert
