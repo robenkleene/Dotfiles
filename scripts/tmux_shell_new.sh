@@ -7,18 +7,18 @@ if ! tmux info &> /dev/null; then
   exit 1
 fi
 
-# if we're already in a shell session, switch back to the previous session
-if [[ -n "$TMUX" ]]; then
-  if tmux display-message -p '#S' | grep -q -P "^\d+$"; then
-    tmux switch-client -l || exit 0
-    exit 0
-  fi
-fi
-
 if [[ "$(uname)" = "Darwin" ]]; then
   flag="-E"
 elif [[ "$(uname)" = "Linux" ]]; then
   flag="-P"
+fi
+
+# if we're already in a shell session, switch back to the previous session
+if [[ -n "$TMUX" ]]; then
+  if tmux display-message -p '#S' | grep -q $flag "^\d+$"; then
+    tmux switch-client -l || exit 0
+    exit 0
+  fi
 fi
 
 unattached_shell=$(tmux list-sessions -F "#{session_name} #{session_attached}" \
