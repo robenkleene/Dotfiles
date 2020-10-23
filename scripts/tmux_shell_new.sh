@@ -15,8 +15,14 @@ if [[ -n "$TMUX" ]]; then
   fi
 fi
 
+if [[ "$(uname)" = "Darwin" ]]; then
+  flag="-E"
+elif [[ "$(uname)" = "Linux" ]]; then
+  flag="-P"
+fi
+
 unattached_shell=$(tmux list-sessions -F "#{session_name} #{session_attached}" \
-  | grep -P "^\d+ 0$" | head -1 | tr -d '\n')
+  | grep $flag "^\d+ 0$" | head -1 | tr -d '\n')
 if [[ -z "$unattached_shell" ]]; then
   if [[ -n "$TMUX" ]]; then
     session=$(tmux new-session -d -P | tr -d '\n')
