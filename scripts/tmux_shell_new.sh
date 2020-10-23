@@ -9,7 +9,7 @@ fi
 
 # if we're already in a shell session, switch back to the previous session
 if [[ -n "$TMUX" ]]; then
-  if tmux display-message -p '#S' | grep -q "^\d\+$"; then
+  if tmux display-message -p '#S' | grep -q -P "^\d+$"; then
     tmux switch-client -l || exit 0
     exit 0
   fi
