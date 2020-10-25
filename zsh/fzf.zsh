@@ -210,6 +210,38 @@ _fzf_quick_widget() {
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
 
+_fzf_quick_files_widget() {
+  setopt localoptions pipefail 2> /dev/null
+  local cmd="fd --type f --exclude .git . ~/Text ~/Documentation"
+
+  local fzfcmd
+  fzfcmd="$(__fzfcmd)"
+
+  local result
+  result="$(eval "$cmd" | $fzfcmd)"
+  local ret=$?
+
+  if [[ ! -f "$result" ]]; then
+    zle redisplay
+    return
+  fi
+
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
+    zle redisplay
+    return $ret
+  fi
+
+  local result_parameter
+  result_parameter=${(q)result}
+  eval "$EDITOR $result_parameter" < /dev/tty
+  print -sr -- "$EDITOR $result_parameter"
+  zle reset-prompt
+  return $ret
+}
+zle -N _fzf_quick_files_widget
+bindkey '\eO' _fzf_quick_files_widget
+
 _fzf_command_widget() {
   setopt localoptions pipefail 2> /dev/null
 
