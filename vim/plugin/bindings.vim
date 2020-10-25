@@ -261,9 +261,11 @@ cnoremap <C-y> <C-r>*
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 " Fish paste
-cnoremap <C-v> <C-r>*
-inoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-r>*"
-snoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
+" Don't use this, `<C-v>` in insert mode is important for viewing how keys are
+" interpreted.
+" cnoremap <C-v> <C-r>*
+" inoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-r>*"
+" snoremap <expr> <C-v> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 
 " Move by display line
 noremap <silent> k gk

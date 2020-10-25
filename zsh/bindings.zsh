@@ -151,7 +151,9 @@ bindkey -e '^W' _system_kill_region_or_backward_kill_word
 # Emacs Style
 bindkey -e '^Y' _system_yank
 # Fish Style
-bindkey -e '^V' _system_yank
+# Don't use this, `^v` is used to show how the terminal is interpreting
+# characters
+# bindkey -e '^V' _system_yank
 bindkey -e '^X' _system_copy
 
 
