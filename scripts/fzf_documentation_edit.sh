@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -o pipefail
 
 __fzfcmd() {
   [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
@@ -12,10 +12,12 @@ cmd="fd --type f --hidden --exclude .git --exclude .DS_Store"
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
-if [[ -n "$result" ]]; then
-  parameter=$(printf '%q' "$PWD/$result")
-  if [[ -f "$parameter" ]]; then
-    final_cmd="$EDITOR $parameter"
-    eval "$final_cmd"
-  fi
+if [[ -z "$result" ]]; then
+  exit
+fi
+
+parameter=$(printf '%q' "$PWD/$result")
+if [[ -f "$parameter" ]]; then
+  final_cmd="$EDITOR $parameter"
+  eval "$final_cmd"
 fi
