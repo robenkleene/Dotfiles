@@ -135,3 +135,22 @@ function _robenkleene-fzf-quick-widget
     commandline -f repaint
 end
 bind \eo _robenkleene-fzf-quick-widget
+
+function _robenkleene-fzf-quick-files-widget
+    set -l cmd "fd --type f --exclude .git . ~/Text ~/Documentation"
+    set -l commandline (commandline)
+
+    eval "$cmd | "(__fzfcmd) | read -l result
+    if test -f "$result"
+        set -l result_path (string escape "$result")
+        if test -z $commandline
+            commandline "$EDITOR $result_path"
+            commandline -f execute
+        else
+            commandline -i "$result_path"
+        end
+    end
+
+    commandline -f repaint
+end
+bind \eO _robenkleene-fzf-quick-files-widget
