@@ -167,15 +167,15 @@ command! FZFTags :call fzf#run(fzf#wrap({
       \ }))
 
 command! Quick :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d --exclude .git . ~/Text ~/Documentation",
+      \   'source': "fd --type d . ~/Text ~/Documentation",
       \   'sink': function('<SID>cd_sink')
       \ }))
 command! QuickFiles :call fzf#run(fzf#wrap({
-      \   'source': "fd --type f --exclude .git . ~/Text ~/Documentation",
+      \   'source': "fd --type f . ~/Text ~/Documentation",
       \   'sink': function('<SID>cd_sink')
       \ }))
 command! Developer :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d --exclude .git . ~/Developer",
+      \   'source': "fd --type d . ~/Developer",
       \   'sink': function('<SID>cd_sink')
       \ }))
 

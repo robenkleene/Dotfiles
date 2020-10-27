@@ -8,7 +8,7 @@ __fzfcmd() {
 }
 
 cd ~/Developer/Snippets/ || return 1
-cmd="fd --type f --hidden --exclude .git --exclude .DS_Store"
+cmd="fd --type f"
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"

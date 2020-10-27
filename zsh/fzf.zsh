@@ -149,7 +149,7 @@ bindkey 'Ω' _fzf_z_widget
 _fzf_developer_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fd --type d --exclude .git . ~/Developer"
+  local cmd="fd --type d . ~/Developer"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
@@ -180,7 +180,7 @@ bindkey '\eg' _fzf_developer_widget
 
 _fzf_quick_widget() {
   setopt localoptions pipefail 2> /dev/null
-  local cmd="fd --type d --exclude .git . ~/Text ~/Documentation"
+  local cmd="fd --type d . ~/Text ~/Documentation"
 
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
@@ -212,7 +212,7 @@ bindkey '\eo' _fzf_quick_widget
 
 _fzf_quick_files_widget() {
   setopt localoptions pipefail 2> /dev/null
-  local cmd="fd --type f --exclude .git . ~/Text ~/Documentation"
+  local cmd="fd --type f . ~/Text ~/Documentation"
 
   local fzfcmd
   fzfcmd="$(__fzfcmd)"

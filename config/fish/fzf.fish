@@ -99,7 +99,7 @@ end
 bind \ex _robenkleene-fzf-commands-widget
 
 function _robenkleene-fzf-developer-widget
-    set -l cmd "fd --type d --exclude .git . ~/Developer"
+    set -l cmd "fd --type d . ~/Developer"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
@@ -118,7 +118,7 @@ end
 bind \eg _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
-    set -l cmd "fd --type d --exclude .git . ~/Text ~/Documentation"
+    set -l cmd "fd --type d . ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
@@ -137,7 +137,7 @@ end
 bind \eo _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
-    set -l cmd "fd --type f --exclude .git . ~/Text ~/Documentation"
+    set -l cmd "fd --type f . ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
