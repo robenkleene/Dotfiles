@@ -4,9 +4,12 @@ set -e
 
 # Startup
 
-if command -v tmux &> /dev/null; then
+if command -v tmux &>/dev/null; then
   if tmux ls >/dev/null 2>/dev/null; then
     if [ -n "$TMUX" ]; then
+      exit 0
+    fi
+    if [ -n "$VIMRUNTIME" ]; then
       exit 0
     fi
     if [ "$TERM_PROGRAM" = "vscode" ]; then
