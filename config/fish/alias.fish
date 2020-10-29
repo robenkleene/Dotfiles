@@ -31,6 +31,9 @@ alias rg='rg_custom'
 alias u='ssh_git_pull_all'
 alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 
+# `ssh`
+alias shs='ssh_start'
+
 # `tmux`
 alias tma='tmux attach'
 alias tmnd='tmux_name_directory'
