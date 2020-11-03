@@ -119,7 +119,7 @@ if $deploy_local; then
     echo "Skipping local deploy because $deploy_path_parent is not a directory" >&2
   else
     echo "Deploying $local_path to $deploy_path"
-    eval "${root_prefix}rsync --update --verbose --archive $dry_run --delete \
+    eval "${root_prefix}rsync --omit-dir-times --verbose --archive $dry_run --delete \
       $exclude_flags \
       $filter_flags \
       $local_path \
@@ -150,7 +150,7 @@ for host in "${hosts[@]}"; do
   fi
   server_path="$host:$deploy_path"
   echo "Deploying $local_path to $server_path"
-  eval "rsync --rsh=ssh --verbose --archive $dry_run --delete \
+  eval "rsync --rsh=ssh --omit-dir-times --verbose --archive $dry_run --delete \
     $exclude_flags \
     $filter_flags \
     $local_path \
