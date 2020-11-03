@@ -99,7 +99,8 @@ end
 bind \ex _robenkleene-fzf-commands-widget
 
 function _robenkleene-fzf-developer-widget
-    set -l cmd "fd --type d . ~/Developer"
+    # set -l cmd "fd --type d . ~/Developer"
+    set -l cmd "find ~/Developer -type d -exec test -e '{}/.git' ';' -print -prune"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result

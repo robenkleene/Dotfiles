@@ -149,7 +149,8 @@ bindkey 'Ω' _fzf_z_widget
 _fzf_developer_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fd --type d . ~/Developer"
+  local cmd="find ~/Developer -type d -exec test -e '{}/.git' ';' -print -prune"
+  # local cmd="fd --type d . ~/Developer"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
