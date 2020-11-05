@@ -101,6 +101,7 @@ alias mac='make autocorrect'
 alias macc='make autocorrect && git add -A :/ && git commit -m "Run autocorrect"'
 
 # `node`
+alias nt='npm test'
 alias nrt='npm run test'
 alias nrl='npm run lint'
 alias nrf='npm run format'
