@@ -36,6 +36,8 @@
 (global-set-key (kbd "<C-down>") 'end-of-buffer)
 (global-set-key (kbd "<C-left>") 'move-beginning-of-line)
 (global-set-key (kbd "<C-right>") 'move-end-of-line)
+(global-set-key (kbd "M-]") 'forward-paragraph)
+(global-set-key (kbd "M-[") 'backward-paragraph)
 
 ;; Note this doesn't work in Terminal Emacs
 (global-set-key [escape] 'keyboard-escape-quit)
