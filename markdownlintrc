@@ -17,6 +17,8 @@
     // Disable forcing blank lines around lists, this is just annoying when
     // creating a list
     "MD032": false,
+    // Allow fenced code blocks without a language specified
+    "MD040": false,
     // Don't force first line header
     "MD041": false,
     // Allow either fenced code blocks or indented code blocks
