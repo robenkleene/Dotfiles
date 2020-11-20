@@ -15,6 +15,7 @@ function fish_sync_abbr
     abbr -a af "$ACK_COMMAND -F"
     abbr -a rgf "$ACK_COMMAND -F"
     abbr -a rgi "$ACK_COMMAND --no-ignore"
+    abbr -a fdi "fd -I"
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
     abbr -a tl 'tig'
