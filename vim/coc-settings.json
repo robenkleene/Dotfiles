@@ -14,14 +14,19 @@
     "scss": ["stylelint"],
     "sh": ["shell", "shellcheck"],
     "swift": ["swiftlint"],
-    "vim": "vint",
+    "vim": ["vint"],
     "xml": ["xmllint"],
     "zsh": ["shell", "shellcheck"]
   },
   "diagnostic-languageserver.formatFiletypes": {
+    "swift": "swiftformat",
     "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
+    "swiftformat": {
+      "command": "swiftformat",
+      "args": ["--quiet", "--commas", "inline"]
+    },
     "shfmt": {
       "command": "shfmt",
       "args": ["-i", "2", "-ci"]
