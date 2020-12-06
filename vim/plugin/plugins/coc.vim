@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-pairs',
   \ 'coc-prettier',
+  \ 'coc-python',
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-sourcekit',
