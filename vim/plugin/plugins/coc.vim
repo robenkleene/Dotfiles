@@ -52,8 +52,10 @@ else
 endif
 
 " This version of tab accepts completions *and* expands snippets
+" First line was changed to just pass `<RETURN>`
+      " \ pumvisible() ? coc#_select_confirm() :
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
+      \ pumvisible() ? "\<RETURN>" :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
