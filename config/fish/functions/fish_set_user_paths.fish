@@ -7,9 +7,9 @@ function fish_set_user_paths
     # Python
     switch (uname)
         case Linux
-            set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
-        case Darwin
             set -U fish_user_paths ~/.local/bin $fish_user_paths
+        case Darwin
+            set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
     end
 
     # Node
