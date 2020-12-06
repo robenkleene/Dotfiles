@@ -20,7 +20,7 @@ fi
 
 # Python
 if [[ "$(uname)" = "Darwin" ]]; then
-  PATH=$HOME/Library/Python/3.8/bin:$PATH
+  PATH=$HOME/Library/Python/3.9/bin:$PATH
 elif [[ "$(uname)" = "Linux" ]]; then
   PATH=$HOME/.local/bin:$PATH
 fi
