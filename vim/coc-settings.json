@@ -20,9 +20,13 @@
   },
   "diagnostic-languageserver.formatFiletypes": {
     "swift": "swiftformat",
+    "python": "autopep8",
     "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
+    "autopep8": {
+      "command": "autopep8"
+    },
     "swiftformat": {
       "command": "swiftformat",
       "args": ["--quiet", "--commas", "inline"]
@@ -32,6 +36,7 @@
       "args": ["-i", "2", "-ci"]
     }
   },
+  "python.linting.pylintEnabled": false,
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
   "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
