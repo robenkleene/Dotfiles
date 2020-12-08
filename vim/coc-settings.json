@@ -19,11 +19,16 @@
     "zsh": ["shell", "shellcheck"]
   },
   "diagnostic-languageserver.formatFiletypes": {
+    "objc": "clang-format",
     "swift": "swiftformat",
     "python": "autopep8",
     "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
+    "clang-format": {
+      "command": "clang-format",
+      "args": ["-style=file"]
+    },
     "autopep8": {
       "command": "autopep8"
     },
