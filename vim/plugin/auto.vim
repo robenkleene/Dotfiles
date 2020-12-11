@@ -14,7 +14,7 @@ augroup END
 " Make Shebang Files Executable
 augroup executable_files
   autocmd!
-  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb :call auto#MakeShebangFilesExecutable()
+  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
 
 augroup quickfix_height
