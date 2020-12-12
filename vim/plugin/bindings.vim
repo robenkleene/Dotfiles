@@ -22,10 +22,6 @@ nnoremap Y y$
 " Alternative exit insert mode
 " inoremap jk <esc>
 
-" `C-y` paste like in Emacs
-" cnoremap <C-y> <C-r>*
-" inoremap <C-y> <C-r>*
-
 " `C-w` insert word at point like Emacs
 " cnoremap <C-w> <C-R><C-W>
 
