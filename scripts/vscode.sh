@@ -2,8 +2,13 @@
 
 set -e
 
+cmd="code"
+if pgrep "^Code\ -\ Insider" >/dev/null; then
+  cmd="code-insiders"
+fi
+
 if [[ $# -eq 0 ]]; then
-  code-insiders -n .
+  exec $cmd -n .
 else
-  code-insiders -n "$@"
+  exec $cmd -n "$@"
 fi
