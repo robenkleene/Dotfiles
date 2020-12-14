@@ -44,7 +44,7 @@
   "python.linting.pylintEnabled": false,
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
-  "snippets.textmateSnippetsRoots": ["~/.config/Code - Insiders/User/snippets"],
+  "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
     "zsh": ["sh"],
