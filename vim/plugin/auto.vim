@@ -59,7 +59,7 @@ augroup END
 set autoread
 augroup reload_buffers
   autocmd!
-  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | silent! checktime | endif
+  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
 augroup END
 
 augroup setup_netrw
