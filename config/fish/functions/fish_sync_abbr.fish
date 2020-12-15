@@ -88,6 +88,7 @@ function fish_sync_abbr
     abbr -a gur 'git pull -r'
     abbr -a glg 'git log -p -G'
     abbr -a gdns 'git diff --name-status'
+    abbr -a gsh 'git show'
     abbr -a chu 'carthage update'
     abbr -a chunub 'carthage update --no-use-binaries'
     abbr -a chb 'carthage bootstrap'
