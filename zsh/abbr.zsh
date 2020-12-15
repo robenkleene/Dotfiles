@@ -134,6 +134,8 @@ abbreviations=(
 'gur' 'git pull -r'
 'glg' 'git log -p -G'
 'gdns' 'git diff --name-status'
+'gsh' 'git show'
+'gg' 'git grep'
 
 # Carthage
 'chu' 'carthage update'
