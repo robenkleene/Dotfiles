@@ -25,6 +25,7 @@ end
 # Emacs
 # Start the server in the background if it isn't running
 set -gx ALTERNATE_EDITOR ""
+set -gx EMACS_COMMAND "emacsclient -nw"
 
 # Homebrew
 set -gx HOMEBREW_NO_ANALYTICS 1
