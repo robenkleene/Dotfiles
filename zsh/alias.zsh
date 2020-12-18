@@ -79,6 +79,7 @@ alias q='vim_grep'
 alias l='less'
 alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'
 alias u='ssh_git_pull_all'
+alias ut='ssh_git_pull_all -t'
 
 # `tmux`
 alias tma='tmux attach'
