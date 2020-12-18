@@ -62,6 +62,8 @@ function! s:MyHighlights() abort
   highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
   " Search {{{1
+  " Make sure the cursor shows up over this color, that's important when
+  " moving through search matches with `n` and `N`.
   highlight IncSearch ctermbg=4 ctermfg=black cterm=bold
   highlight Search ctermbg=4 ctermfg=black cterm=bold
 
