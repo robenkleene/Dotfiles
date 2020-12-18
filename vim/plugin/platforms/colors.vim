@@ -43,11 +43,11 @@ function! s:MyHighlights() abort
   endfor
 
   " Wild Menu {{{1
-  highlight Wildmenu cterm=bold ctermbg=cyan ctermfg=black
+  highlight Wildmenu cterm=bold ctermbg=4 ctermfg=black
 
   " Autocomplete {{{1
   highlight Pmenu ctermfg=white ctermbg=237
-  highlight PmenuSel ctermfg=black ctermbg=cyan
+  highlight PmenuSel ctermfg=black ctermbg=4
   highlight PmenuSbar ctermfg=239 ctermbg=239
   highlight PmenuThumb ctermfg=244 ctermbg=244
 
@@ -58,12 +58,12 @@ function! s:MyHighlights() abort
   highlight Visual ctermbg=24 ctermfg=NONE
   " Original idea, grey background:
   " highlight MatchParen ctermfg=white ctermbg=244
-  highlight MatchParen ctermfg=cyan ctermbg=NONE cterm=underline
+  highlight MatchParen ctermfg=4 ctermbg=NONE cterm=underline
   highlight Todo ctermfg=lightblue ctermbg=NONE cterm=bold
 
   " Search {{{1
-  highlight IncSearch ctermbg=cyan ctermfg=black cterm=bold
-  highlight Search ctermbg=cyan ctermfg=black cterm=bold
+  highlight IncSearch ctermbg=4 ctermfg=black cterm=bold
+  highlight Search ctermbg=4 ctermfg=black cterm=bold
 
   " Status Line {{{1
   highlight StatusLine ctermbg=white ctermfg=244
