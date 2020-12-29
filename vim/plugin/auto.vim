@@ -84,6 +84,8 @@ set viewoptions-=folds
 set viewoptions-=curdir
 " Don't restore empty buffers
 set viewoptions-=blank
+
+" `silent` because this fails if the file name is too long
 augroup save_view
   autocmd!
   autocmd BufWinLeave *
@@ -94,7 +96,7 @@ augroup save_view
         \&& &filetype !~ 'gitcommit'
         \&& &filetype !~ 'pullrequest'
         \&& &filetype !~ 'gitrebase'
-        \|    mkview
+        \|    silent! mkview
         \|  endif
   autocmd BufWinEnter *
         \   if expand('%') != ''
