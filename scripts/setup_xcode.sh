@@ -224,7 +224,7 @@ lint:
 	swiftlint --strict
 
 swiftformat:
-	git ls-files '*.swift' -z | xargs -0 swiftformat --commas inline
+	git ls-files '*.swift' -z | xargs -0 swiftformat --commas inline --disable wrapMultilineStatementBraces
 
 swiftlint_autocorrect:
 	swiftlint autocorrect
