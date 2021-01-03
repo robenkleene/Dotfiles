@@ -14,7 +14,7 @@ fi
 # General Text Repos
 repos+=:~/Developer/Snippets/:~/Developer/Settings/
 # Last Repos
-repos+=:~/Developer/Backup/:~/Developer/Archive/:~/Developer/Scratch/
+repos+=:~/Developer/Backup/:~/Developer/Archive/
 
 IFS=':' read -ra repos <<<"$repos"
 
