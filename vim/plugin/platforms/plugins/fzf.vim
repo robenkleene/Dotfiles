@@ -176,7 +176,6 @@ command! QuickFiles :call fzf#run(fzf#wrap({
       \ }))
 command! Developer :call fzf#run(fzf#wrap({
       \   'source': "find ~/Developer -type d -exec test -e '{}/.git' ';' -print -prune",
-      " \   'source': "fd --type d . ~/Developer",
       \   'sink': function('<SID>cd_sink')
       \ }))
 
