@@ -206,3 +206,7 @@ set notimeout
 
 " Autocomplete max height
 set pumheight=10
+
+" Don't save registers between runs
+set viminfo-=<50
+set viminfo+=<0
