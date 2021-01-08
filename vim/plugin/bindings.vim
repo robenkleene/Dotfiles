@@ -253,7 +253,6 @@ nnoremap <BS> <C-^>
 cnoremap <C-x><C-e> <C-f>
 
 " Emacs Paste
-cnoremap <C-y> <C-r>*
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>*"
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>\"*p"
 " Fish paste
