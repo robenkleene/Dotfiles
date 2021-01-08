@@ -66,6 +66,9 @@ endfunction
 command! -range VisualCommands call <SID>VisualCommands()
 function! s:VisualCommands() abort
   call fzf#vim#commands()
+  " This appears to no longer work because `fzf#vim#commands()` runs
+  " asyncronously, so this function exits immediately instead of waiting for a
+  " the command to be set.
   norm gv
 endfunction
 
