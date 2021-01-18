@@ -7,7 +7,7 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-pairs',
   \ 'coc-prettier',
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-sourcekit',
@@ -87,6 +87,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 " This doesn't work for some reason
 " nmap <silent> <M-.> <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nmap <localleader>n <Plug>(coc-rename)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> <a-k> :call <SID>show_documentation()<CR>

@@ -41,7 +41,6 @@
       "args": ["-i", "2", "-ci"]
     }
   },
-  "python.linting.pylintEnabled": false,
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
