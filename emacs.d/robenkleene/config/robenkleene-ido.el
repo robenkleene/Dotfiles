@@ -297,11 +297,42 @@
     )
   )
 
+(defun robenkleene/ido-recursive-get-git-repo (dir)
+  "Find file recursively in DIR."
+  (let (project-files key-to-path)
+    (setq project-files
+          (split-string
+           (shell-command-to-string
+            (concat "find "
+                    dir
+                    " -type d -exec test -e '{}/.git' ';' -print -prune"
+                    )) "\n"))
+    (setq key-to-path (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+              (let ((key (robenkleene/ido-key-for-path path dir)))
+                (puthash key path key-to-path)
+                (push key ido-list)
+                )
+              )
+            project-files)
+      (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
+      )
+    )
+  )
+
 (defun robenkleene/ido-quick-open ()
   "Find file recursively from quick open directories."
   (interactive)
   (find-file (robenkleene/ido-recursive-get-dir
               (concat "~/Documents/Text/Notes " "~/Documentation")))
+  )
+
+(defun robenkleene/ido-quick-developer ()
+  "Find file recursively from quick open directories."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-git-repo
+              "~/Developer"))
   )
 
 ;; (robenkleene/ido-vertical-call
