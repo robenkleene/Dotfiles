@@ -40,7 +40,8 @@
 (global-set-key (kbd "M-[") 'backward-paragraph)
 
 ;; Note this doesn't work in Terminal Emacs
-(global-set-key [escape] 'keyboard-escape-quit)
+;; Disabled because this makes hitting escape close splits.
+;; (global-set-key [escape] 'keyboard-escape-quit)
 
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
@@ -67,7 +68,7 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-  'robenkleene/rg)
+  robenkleene/leader-map)
 ;; Mac-like save in terminal and GUI
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map
@@ -78,7 +79,7 @@
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-(define-key robenkleene/leader-map (kbd "s") 'robenkleene/other-window-shell)
+(define-key robenkleene/leader-map (kbd "t") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
 ;; (define-key robenkleene/leader-map (kbd "i") 'next-buffer)
@@ -95,7 +96,8 @@
   'robenkleene/ido-source-control-recursive-find-dir)
 (define-key robenkleene/leader-map (kbd "g a")
   'robenkleene/rg-source-control)
-(define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
+;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
+(define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
 (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
 ;; (define-key robenkleene/leader-map (kbd "s") 'save-buffer)
@@ -114,6 +116,8 @@
   'robenkleene/title-case)
 (define-key robenkleene/leader-map (kbd "*")
   'isearch-forward-symbol-at-point)
+(define-key robenkleene/leader-map (kbd "b")
+  'ido-switch-buffer)
 
 ;; Window Management
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
