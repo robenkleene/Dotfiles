@@ -6,11 +6,9 @@
  '(ansi-color-names-vector
    ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
  '(package-selected-packages
-   (quote
-    (csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex pbcopy jade-mode aggressive-indent)))
+   '(nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex pbcopy jade-mode aggressive-indent))
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#F92672")
+   '((20 . "#F92672")
      (40 . "#CF4F1F")
      (60 . "#C26C0F")
      (80 . "#E6DB74")
@@ -27,7 +25,7 @@
      (300 . "#299BA6")
      (320 . "#2896B5")
      (340 . "#2790C3")
-     (360 . "#66D9EF"))))
+     (360 . "#66D9EF")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
