@@ -42,8 +42,9 @@
 ;; Note this doesn't work in Terminal Emacs
 ;; Disabled because this makes hitting escape close splits.
 ;; (global-set-key [escape] 'keyboard-escape-quit)
-:: This only works for isearch
+;; This only works for isearch
 ;; (define-key minibuffer-local-map (kbd "ESC") 'keyboard-escape-quit)
+;; This one works
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
 
