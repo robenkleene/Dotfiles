@@ -300,8 +300,8 @@
 (defun robenkleene/ido-quick-open ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file
-              (concat "~/Text " "~/Documents/Text/Notes " "~/Documentation")))
+  (find-file (robenkleene/ido-recursive-get-dir
+              (concat "~/Documents/Text/Notes " "~/Documentation")))
   )
 
 ;; (robenkleene/ido-vertical-call
