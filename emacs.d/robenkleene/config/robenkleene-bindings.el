@@ -36,8 +36,10 @@
 (global-set-key (kbd "<C-down>") 'end-of-buffer)
 (global-set-key (kbd "<C-left>") 'move-beginning-of-line)
 (global-set-key (kbd "<C-right>") 'move-end-of-line)
-(global-set-key (kbd "M-]") 'forward-paragraph)
-(global-set-key (kbd "M-[") 'backward-paragraph)
+;; For some reason these result in inserting characters into the scratch buffer
+;; on Emacs startup in terminal Emacs?
+;; (global-set-key (kbd "M-]") 'forward-paragraph)
+;; (global-set-key (kbd "M-[") 'backward-paragraph)
 
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
