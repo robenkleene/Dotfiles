@@ -168,6 +168,10 @@ abbreviations=(
 # Ruby
 'bil' 'bundle install --path vendor/bundle'
 'be' 'bundle exec'
+
+# Grep
+'re' 'grep'
+'rei' 'grep -i'
 )
 
 # These abbreviations work everywhere

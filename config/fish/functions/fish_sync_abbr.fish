@@ -105,4 +105,6 @@ function fish_sync_abbr
     abbr -a wdd 'web_deploy -s aresdev'
     abbr -a bil 'bundle install --path vendor/bundle'
     abbr -a hm 'history merge'
+    abbr -a re 'grep'
+    abbr -a rei 'grep -i'
 end
