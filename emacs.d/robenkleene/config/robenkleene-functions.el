@@ -606,7 +606,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-inbox ()
   "Open inbox directory."
   (interactive)
-  (find-file "~/Documents/Text/Inbox/")
+  (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
 (defun robenkleene/new-inbox-document (title)
