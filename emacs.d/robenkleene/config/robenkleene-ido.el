@@ -325,7 +325,7 @@
   "Find file recursively from quick open directories."
   (interactive)
   (find-file (robenkleene/ido-recursive-get-dir
-              (concat "~/Documents/Text/Notes " "~/Documentation")))
+              (concat "~/Text " "~/Documentation")))
   )
 
 (defun robenkleene/ido-quick-developer ()
