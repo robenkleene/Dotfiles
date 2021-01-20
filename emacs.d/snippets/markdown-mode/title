@@ -2,5 +2,5 @@
 # name: title
 # --
 `(if buffer-file-name (shell-command-to-string
-                    (format "markdown-title '%s'" buffer-file-name))
+                    (format "markdown_title '%s'" buffer-file-name))
                  "No buffer-file-name")`
