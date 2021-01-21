@@ -108,17 +108,21 @@
   'robenkleene/wiki-link) ;; This is only for Markdown
 (define-key robenkleene/leader-map (kbd "C-k")
   'robenkleene/wiki-link) ;; This is only for Markdown
-(define-key robenkleene/leader-map (kbd "s")
-  'robenkleene/web-search)
-(define-key robenkleene/leader-map (kbd "c")
-  'robenkleene/title-case)
+;; (define-key robenkleene/leader-map (kbd "s")
+;;   'robenkleene/web-search)
+;; (define-key robenkleene/leader-map (kbd "c")
+;;   'robenkleene/title-case)
 (define-key robenkleene/leader-map (kbd "*")
   'isearch-forward-symbol-at-point)
 (define-key robenkleene/leader-map (kbd "b")
   'ido-switch-buffer)
 
 ;; Window Management
-;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
+(define-key robenkleene/leader-map (kbd "M-a") 'other-window)
+(define-key robenkleene/leader-map (kbd "s") 'split-window-below)
+(define-key robenkleene/leader-map (kbd "v") 'split-window-right)
+(define-key robenkleene/leader-map (kbd "c") 'delete-window)
+(define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
 ;; (define-key robenkleene/leader-map (kbd "o") 'other-window)
 ;; (define-key robenkleene/leader-map (kbd "1") 'delete-other-windows)
 ;; (define-key robenkleene/leader-map (kbd "2") 'split-window-below)
