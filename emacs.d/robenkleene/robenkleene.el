@@ -44,6 +44,7 @@
 (require 'robenkleene-anzu)
 (require 'robenkleene-company)
 (require 'robenkleene-literate-calc-mode)
+(require 'robenkleene-imenu-list)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
