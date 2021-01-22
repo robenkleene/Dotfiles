@@ -124,8 +124,11 @@
 
 ;; Window Management
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
-(define-key robenkleene/leader-map (kbd "s") 'split-window-below)
-(define-key robenkleene/leader-map (kbd "v") 'split-window-right)
+(define-key robenkleene/leader-map (kbd "v")
+  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+(define-key robenkleene/leader-map (kbd "s")
+  (lambda () (interactive) (split-window-vertically) (other-window 1)))
+
 (define-key robenkleene/leader-map (kbd "c") 'delete-window)
 (define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
 ;; (define-key robenkleene/leader-map (kbd "o") 'other-window)
