@@ -36,10 +36,6 @@
 (global-set-key (kbd "<C-down>") 'end-of-buffer)
 (global-set-key (kbd "<C-left>") 'move-beginning-of-line)
 (global-set-key (kbd "<C-right>") 'move-end-of-line)
-;; For some reason these result in inserting characters into the scratch buffer
-;; on Emacs startup in terminal Emacs?
-;; (global-set-key (kbd "M-]") 'forward-paragraph)
-;; (global-set-key (kbd "M-[") 'backward-paragraph)
 
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
@@ -73,6 +69,15 @@
   (kbd "C-x s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-l")
   'robenkleene/urls-open)
+;; For some reason these result in inserting characters into the scratch buffer
+;; on Emacs startup in terminal Emacs?
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
+  'robenkleene/forward-block)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
+  'robenkleene/backward-block)
+;; (global-set-key (kbd "M-]") 'forward-paragraph)
+;; (global-set-key (kbd "M-[") 'backward-paragraph)
+
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)

@@ -48,6 +48,7 @@
                            nil
                            (dired-get-marked-files))
                           ))
+            (setq-local ido-use-filename-at-point nil)
             )
           )
 
