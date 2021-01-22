@@ -71,10 +71,14 @@
   'robenkleene/urls-open)
 ;; For some reason these result in inserting characters into the scratch buffer
 ;; on Emacs startup in terminal Emacs?
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
-  'robenkleene/forward-block)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
-  'robenkleene/backward-block)
+(if window-system
+    (progn
+      (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
+        'robenkleene/forward-block)
+      (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
+        'robenkleene/backward-block)
+      ))
+
 ;; (global-set-key (kbd "M-]") 'forward-paragraph)
 ;; (global-set-key (kbd "M-[") 'backward-paragraph)
 
