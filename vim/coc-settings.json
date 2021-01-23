@@ -43,6 +43,7 @@
   },
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
+  "python.analysis.typeCheckingMode": "off",
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
