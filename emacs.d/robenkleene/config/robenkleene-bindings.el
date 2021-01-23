@@ -37,6 +37,9 @@
 (global-set-key (kbd "<C-left>") 'move-beginning-of-line)
 (global-set-key (kbd "<C-right>") 'move-end-of-line)
 
+(global-set-key (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
+(global-set-key (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
+
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
 (defvar robenkleene/leader-map (make-keymap))

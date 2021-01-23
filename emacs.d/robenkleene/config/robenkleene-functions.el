@@ -509,6 +509,28 @@ Otherwise, call `backward-kill-word'."
   (forward-line)
   )
 
+(defun robenkleene/duplicate-line-below ()
+  "Duplicate the current line."
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (forward-line 1)
+  (yank)
+  )
+
+(defun robenkleene/duplicate-line-above ()
+  "Duplicate the current line."
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line -1)
+  (forward-line -1)
+  (yank)
+  )
+
 (defvar-local robenkleene/format-program nil)
 (defvar-local robenkleene/format-function nil)
 (defun robenkleene/format ()
