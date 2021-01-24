@@ -541,11 +541,19 @@ Otherwise, call `backward-kill-word'."
   "Duplicate the current line."
   (interactive)
   (move-beginning-of-line 1)
-  (kill-line)
+  (if (use-region-p)
+      (kill-region (region-beginning) (region-end))
+    (kill-line)
+    )
   (yank)
-  (end-of-line 0)
-  (open-line 1)
-  (forward-line 1)
+  (if (not (use-region-p))
+      (progn
+        (end-of-line 0)
+        (open-line 1)
+        (forward-line 1)
+        )
+    (goto-char (region-beginning))
+    )
   (yank)
   )
 
