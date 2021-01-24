@@ -79,6 +79,8 @@
     (progn
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
         'robenkleene/forward-block)
+      (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
+        'robenkleene/forward-block-select)
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
         'robenkleene/backward-block)
       ))
