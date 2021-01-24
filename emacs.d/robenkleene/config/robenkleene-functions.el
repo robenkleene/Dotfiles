@@ -526,8 +526,9 @@ Otherwise, call `backward-kill-word'."
   (move-beginning-of-line 1)
   (kill-line)
   (yank)
-  (open-line -1)
-  (forward-line -1)
+  (end-of-line 0)
+  (open-line 1)
+  (forward-line 1)
   (yank)
   )
 
