@@ -4,8 +4,9 @@
 
 ;; Add a second leader key
 ;; (define-key key-translation-map (kbd "M-o") (kbd "C-c"))
-(define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
-(define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
+;; These should be added only for terminal modes
+;; (define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
+;; (define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
 
 ;; Automatically switch focus to new splits
 (global-set-key "\C-x2" (lambda ()

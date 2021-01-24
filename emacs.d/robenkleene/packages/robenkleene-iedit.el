@@ -4,7 +4,7 @@
 
 (use-package iedit
   :commands (iedit-mode)
-  :bind 
+  :bind
   (:map robenkleene/leader-map
         (";" . iedit-mode)
         ("C-;" . iedit-mode)

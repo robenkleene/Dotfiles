@@ -20,8 +20,11 @@
 
 ;; (define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
 ;; (define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
-(define-key key-translation-map  (kbd "ESC <up>") (kbd "M-p"))
-(define-key key-translation-map  (kbd "ESC <down>") (kbd "M-n"))
+;; These should only be assigned for terminal modes
+;; (define-key key-translation-map  (kbd "ESC <up>") (kbd "M-p"))
+;; (define-key key-translation-map  (kbd "ESC <down>") (kbd "M-n"))
+(define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
+(define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
 (define-key key-translation-map  (kbd "ESC <left>") (kbd "<M-left>"))
 (define-key key-translation-map  (kbd "ESC <right>") (kbd "<M-right>"))
 
