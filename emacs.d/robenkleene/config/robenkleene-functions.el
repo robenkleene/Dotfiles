@@ -495,6 +495,16 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/forward-block-select (&optional n)
+  "Move to next text block N."
+  (interactive "p")
+  (let ((n (if (null n) 1 n)))
+    (set-mark-command nil)
+    (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
+    (forward-line -1)
+    )
+  )
+
 (defun robenkleene/backward-block (&optional n)
   "Move cursor to previous text block N."
   (interactive "p")
@@ -513,10 +523,17 @@ Otherwise, call `backward-kill-word'."
   "Duplicate the current line."
   (interactive)
   (move-beginning-of-line 1)
-  (kill-line)
+  (if (use-region-p)
+      (kill-region (region-beginning) (region-end))
+    (kill-line)
+    )
   (yank)
-  (open-line 1)
-  (forward-line 1)
+  (if (not (use-region-p))
+      (progn
+        (open-line 1)
+        (forward-line 1)
+        )
+    )
   (yank)
   )
 
