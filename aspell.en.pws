@@ -1,4 +1,4 @@
-personal_ws-1.1 en 64 
+personal_ws-1.1 en 65 
 APIs
 ARKit
 AirPods
@@ -36,6 +36,7 @@ WhatsApp
 ZUI
 accessors
 analytics
+bitwise
 crosshairs
 customizable
 customizations
