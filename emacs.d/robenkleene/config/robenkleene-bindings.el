@@ -83,11 +83,11 @@
         'robenkleene/forward-block-select)
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
         'robenkleene/backward-block)
+      (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
+        'robenkleene/backward-block-select)
       ))
-
 ;; (global-set-key (kbd "M-]") 'forward-paragraph)
 ;; (global-set-key (kbd "M-[") 'backward-paragraph)
-
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
