@@ -8,8 +8,8 @@
   :bind
   (([remap markdown-enter-key] . robenkleene/markdown-enter-key))
   (:map markdown-mode-map
-        ("M-{" . robenkleene/backward-block)
-        ("M-}" . robenkleene/forward-block)
+        ("M-[" . robenkleene/backward-block)
+        ("M-]" . robenkleene/forward-block)
         )
   :config
   (defun robenkleene/flyspell-generic-textmode-verify ()

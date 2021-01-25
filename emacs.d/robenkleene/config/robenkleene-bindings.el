@@ -40,8 +40,8 @@
 
 (global-set-key (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
 (global-set-key (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
-(global-set-key (kbd "<M-down>") 'robenkleene/move-line-down)
-(global-set-key (kbd "<M-up>") 'robenkleene/move-line-up)
+;; (global-set-key (kbd "<M-down>") 'robenkleene/move-line-down)
+;; (global-set-key (kbd "<M-up>") 'robenkleene/move-line-up)
 
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
