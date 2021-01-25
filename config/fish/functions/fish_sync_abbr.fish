@@ -15,7 +15,10 @@ function fish_sync_abbr
     abbr -a af "$ACK_COMMAND -F"
     abbr -a rgf "$ACK_COMMAND -F"
     abbr -a rgi "$ACK_COMMAND --no-ignore"
+    abbr -a rgg "$ACK_COMMAND -g"
     abbr -a fdi "fd -I"
+    abbr -a fdg "fd -g"
+    abbr -a 0fd 'fd -0'
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
     abbr -a tl 'tig'
@@ -35,7 +38,6 @@ function fish_sync_abbr
     abbr -a b 'bat'
     abbr -a brm 'bat README.md'
     abbr -a prm 'open -a "Repla" README.md'
-    abbr -a 0fd 'fd -0'
     abbr -a g 'git'
     abbr -a ga 'git add'
     abbr -a gaa 'git add -A :/'
