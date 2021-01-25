@@ -576,6 +576,21 @@ Otherwise, call `backward-kill-word'."
   (yank)
   )
 
+(defun robenkleene/move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun robenkleene/move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
 (defvar-local robenkleene/format-program nil)
 (defvar-local robenkleene/format-function nil)
 (defun robenkleene/format ()
