@@ -42,7 +42,7 @@
 ;; (set-face-background 'default "#1A1A1A")
 (set-face-background 'default "#2A2A2F")
 (set-face-background 'fringe "#2A2A2F")
-
+;; Word spacing isn't great with Fira Code
 ;; (set-face-attribute 'default nil :font "Fira Code-13:Retina")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
