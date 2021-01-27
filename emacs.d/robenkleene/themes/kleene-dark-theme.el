@@ -66,7 +66,7 @@
     ("gray6" . "#eeeeee")
 
     ;; Named
-    ("comment" . gray3)
+    ("comment" . gray4)
     ("success" . green)
     ("change" . blue)
     ("error" . red)
