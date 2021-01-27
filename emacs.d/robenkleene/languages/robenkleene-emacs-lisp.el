@@ -6,9 +6,13 @@
           (lambda ()
             (setq-local robenkleene/evaluate-buffer-or-region-function
                         'robenkleene/emacs-lisp-eval-buffer-or-region)
-            (make-local-variable 'company-backends)
-            (add-to-list 'company-backends
-                         'company-elisp)
+            (if (boundp 'company-backends)
+                (progn
+                  (make-local-variable 'company-backends)
+                  (add-to-list 'company-backends
+                               'company-elisp)
+                  )
+              )
             ))
 
 (add-hook 'lisp-interaction-mode-hook
