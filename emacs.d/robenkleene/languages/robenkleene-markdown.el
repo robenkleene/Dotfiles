@@ -8,6 +8,10 @@
   :bind
   (([remap markdown-enter-key] . robenkleene/markdown-enter-key))
   :config
+  ;; It might be possible to use this to change the default indent behavior when
+  ;; making nested lists, but it doesn't appear to be easy without also removing
+  ;; some other desirable behavior.
+  ;; (setq markdown-indent-function 'indent-relative)
   (defun robenkleene/flyspell-generic-textmode-verify ()
     "Used for `flyspell-generic-check-word-predicate' in text modes."
     (let ((f (get-text-property (- (point) 1) 'face)))
