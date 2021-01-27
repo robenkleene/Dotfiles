@@ -233,6 +233,9 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (setq flyspell-issue-message-flag nil)
+;; Don't prompt when saving a word to the dictionary
+(setq ispell-silently-savep t)
+
 ;; Mouse
 ;; Double-click instead of single click to open links
 (setq mouse-1-click-follows-link 'double)
