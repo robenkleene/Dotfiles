@@ -40,8 +40,12 @@
 ;; `#1A1A1A' exactly matches the bars that the
 ;; `railwaycat/homebrew-emacsmacport' adds
 ;; (set-face-background 'default "#1A1A1A")
-(set-face-background 'default "#2A2A2F")
-(set-face-background 'fringe "#2A2A2F")
+;; (set-face-background 'default "#2A2A2F")
+;; (set-face-background 'fringe "#2A2A2F")
+;; (set-face-background 'default "#241B31")
+;; (set-face-background 'fringe "#241B31")
+(set-face-background 'default "#392248")
+(set-face-background 'fringe "#392248")
 ;; Word spacing isn't great with Fira Code
 ;; (set-face-attribute 'default nil :font "Fira Code-13:Retina")
 ;; (setq-default line-spacing 0.2)
