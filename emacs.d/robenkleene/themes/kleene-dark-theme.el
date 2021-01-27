@@ -141,8 +141,12 @@
    `(rk-highlight ((t (:background ,search-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
    `(rk-match ((t (:background ,match-bg))))
-   `(rk-modeline-active ((t (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
-   `(rk-modeline-inactive ((t (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
+   `(rk-modeline-active
+     ((t
+       (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
+   `(rk-modeline-inactive
+     ((t
+       (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
    `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
    `(rk-popup ((t (:inherit rk-modeline-active))))
    `(rk-popup-match ((t (:foreground ,link))))
@@ -153,7 +157,7 @@
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
    `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
    `(rk-text ((t (:foreground ,gray6))))
-   `(rk-text2 ((t (:foreground ,gray4))))
+   `(rk-text2 ((t (:foreground ,gray5))))
    `(rk-warning ((t (:foreground ,warning :underline t))))
    `(rk-whitespace ((t (:inherit rk-warning))))
    
@@ -354,10 +358,10 @@
    `(markdown-url-face ((t (:inherit rk-comment))))
    `(markdown-pre-face ((t (:inherit rk-text2))))
    `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
-   `(markdown-blockquote-face ((t (:inherit rk-text))))
-   `(markdown-gfm-checkbox-face ((t (:inherit rk-comment))))
-   
-   
+   `(markdown-blockquote-face ((t (:inherit rk-text2))))
+   `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
+   `(markdown-list-face ((t (:inherit rk-text2))))
+
    ;;;; show-paren
    `(show-paren-match ((t (:underline t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
