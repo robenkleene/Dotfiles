@@ -53,8 +53,6 @@
 
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
   'robenkleene/ido-quick-open)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-O")
-  'robenkleene/ido-quick-open-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
   'robenkleene/ido-quick-developer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
@@ -76,10 +74,14 @@
   (kbd "C-x s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-l")
   'robenkleene/urls-open)
-;; For some reason these result in inserting characters into the scratch buffer
-;; on Emacs startup in terminal Emacs?
 (if window-system
     (progn
+      ;; This results in a quick search being automatically triggered on startup
+      ;; in terminal Emacs.
+      (define-key robenkleene/bindings-minor-mode-map (kbd "M-O")
+        'robenkleene/ido-quick-open-file)
+      ;; These result in inserting characters into the scratch buffer on Emacs
+      ;; startup in terminal Emacs.
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
         'robenkleene/forward-block)
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
