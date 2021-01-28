@@ -328,6 +328,13 @@
               (concat "~/Text " "~/Documentation")))
   )
 
+(defun robenkleene/ido-quick-open-file ()
+  "Find file recursively from quick open directories."
+  (interactive)
+  (find-file (robenkleene/ido-recursive-get-file
+              (concat "~/Text " "~/Documentation")))
+  )
+
 (defun robenkleene/ido-quick-developer ()
   "Find file recursively from quick open directories."
   (interactive)

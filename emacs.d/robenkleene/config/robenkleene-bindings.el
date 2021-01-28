@@ -50,8 +50,11 @@
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'imenu)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'next-buffer)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o") 'previous-buffer)
+
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
   'robenkleene/ido-quick-open)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-O")
+  'robenkleene/ido-quick-open-file)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
   'robenkleene/ido-quick-developer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
