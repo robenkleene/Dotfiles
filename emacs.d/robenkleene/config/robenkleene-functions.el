@@ -547,11 +547,10 @@ Otherwise, call `backward-kill-word'."
     (kill-line)
     )
   (yank)
-  (if (not (use-region-p))
+  (if (= (point-at-eol) (point))
       (progn
         (open-line 1)
-        (forward-line 1)
-        )
+        (forward-line 1))
     )
   (yank)
   )
