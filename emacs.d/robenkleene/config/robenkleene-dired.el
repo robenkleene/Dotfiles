@@ -35,6 +35,10 @@
   )
 (add-hook 'dired-mode-hook
           (lambda ()
+            ;; Some attempts to use the default `find-file` behavior in Dired to
+            ;; make it easy to create a new file. Neither of these work.
+            ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
+            ;; (local-set-key (kbd "C-x C-f") 'find-file)
             (dired-omit-mode)
             ;; Hide details (showthem with "\("
             (dired-hide-details-mode)
