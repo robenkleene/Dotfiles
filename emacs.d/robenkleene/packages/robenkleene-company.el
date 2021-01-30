@@ -8,6 +8,8 @@
   (:map company-active-map
         ("C-p" . company-select-previous-or-abort)
         ("C-n" . company-select-next-or-abort)
+        ;; Use tab as well as return for completion
+        ("TAB" . company-complete-selection)
         )
   (:map company-search-map
         ("C-p" . company-select-previous-or-abort)
