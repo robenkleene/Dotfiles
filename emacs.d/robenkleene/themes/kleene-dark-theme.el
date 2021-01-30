@@ -57,6 +57,7 @@
     ("cyan1" . "#005f87")
     ("cyan2" . "#008787")
     ("cyan3" . "#62D8E9")
+    ("magenta2" . "#700086")
     ("gray0" . "#303030")
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
@@ -78,9 +79,9 @@
     ("modeline-active-fg" . white)
     ("modeline-inactive-bg" . gray2)
     ("modeline-inactive-fg" . gray5)
-    ("search-bg" . cyan2)
+    ("search-bg" . magenta)
     ("search-fg" . black)
-    ("match-bg" . cyan1)
+    ("match-bg" . magenta2)
     ("match-fg" . black)
     ("warning" . yellow)
 
@@ -138,7 +139,7 @@
    `(rk-warning-highlight ((t (:background ,warning))))
    `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
-   `(rk-highlight ((t (:background ,search-bg))))
+   `(rk-highlight ((t (:background ,match-bg))))
    `(rk-link ((t (:foreground ,link :underline t))))
    `(rk-match ((t (:background ,match-bg))))
    `(rk-modeline-active
@@ -148,10 +149,12 @@
      ((t
        (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
    `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
-   `(rk-popup ((t (:inherit rk-modeline-active))))
+   `(rk-modeline-inactive
+     ((t
+       (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
    `(rk-popup-match ((t (:foreground ,link))))
-   `(rk-popup-selection ((t (:inherit rk-search))))
-   `(rk-prompt ((t (:inherit rk-search :foreground ,white :bold t))))
+   `(rk-popup-selection ((t (:inherit rk-match))))
+   `(rk-prompt ((t (:inherit rk-match :foreground ,white :bold t))))
    `(rk-search ((t (:background ,search-bg))))
    `(rk-success ((t (:foreground ,success))))
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
@@ -218,7 +221,7 @@
    `(lazy-highlight ((t (:inherit rk-match))))
 
    ;;;; Ido
-   `(ido-first-match ((t (:inherit rk-search))))
+   `(ido-first-match ((t (:inherit rk-match))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
