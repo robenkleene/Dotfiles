@@ -84,6 +84,11 @@
              '(vertical-scroll-bars . nil))
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
+;; Transparency
+;; For testing the current window
+;; (set-frame-parameter (selected-frame) 'alpha '(90 90))
+(add-to-list 'default-frame-alist '(alpha 90 90))
+
 ;; Improve compatibility of macOS dark mode
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
