@@ -40,6 +40,8 @@
 
 (global-set-key (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
 (global-set-key (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
+(global-set-key (kbd "<C-s-left>") 'winner-undo)
+(global-set-key (kbd "<C-s-right>") 'winner-redo)
 
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
