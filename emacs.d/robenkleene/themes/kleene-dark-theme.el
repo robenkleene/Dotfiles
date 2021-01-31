@@ -47,9 +47,9 @@
     ("blue" . "#0087ff")
     ("blue2" . "#87AFDF")
     ("cyan" . "#4AA4B0")
-    ("green" . "#62D63F")
+    ("green" . "#75FF95")
     ("magenta" . "#af00df")
-    ("red" . "#D32D1E")
+    ("red" . "#FF8E8E")
     ("white" . "#ffffff")
     ("yellow" . "#E5E64B")
 
@@ -222,6 +222,7 @@
 
    ;;;; Ido
    `(ido-first-match ((t (:inherit rk-match))))
+   `(ido-only-match ((t (:inherit rk-match))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
