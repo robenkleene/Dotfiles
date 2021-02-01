@@ -33,6 +33,11 @@
 (defalias 'sgpt 'robenkleene/sgit-push-text-all)
 (defalias 'urls 'robenkleene/urls-open)
 
+;; Todos
+(defalias 'todos-check 'robenkleene/todos-check)
+(defalias 'todos-uncheck 'robenkleene/todos-uncheck)
+(defalias 'todos-invert 'robenkleene/todos-invert)
+
 ;; Longer
 (defalias 'slug-project 'robenkleene/slug-project)
 (defalias 'archive-current-file 'robenkleene/archive-current-file)
