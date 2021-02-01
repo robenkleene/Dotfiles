@@ -6,7 +6,7 @@
   :ensure t
   :bind
   (:map robenkleene/leader-map
-        ("l" . imenu-list-smart-toggle)
+        ("M-i" . imenu-list-smart-toggle)
         )
   :config
   (setq imenu-list-focus-after-activation t
