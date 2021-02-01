@@ -181,6 +181,24 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/todos-uncheck ()
+  "Archive region."
+  (interactive)
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/backup_text -u")
+  )
+
+(defun robenkleene/todos-check ()
+  "Archive region."
+  (interactive)
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/backup_text -c")
+  )
+
+(defun robenkleene/todos-invert ()
+  "Archive region."
+  (interactive)
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/backup_text -i")
+  )
+
 (defun robenkleene/title-case ()
   "Make a wiki link from a file named after the region."
   (interactive)
