@@ -27,11 +27,6 @@
   ;;   :commands (magit-filenotify-mode)
   ;;   :init
   ;;   (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
-  (add-hook 'magit-status-mode-hook
-            (lambda ()
-              ;; Highlight current line
-              (hl-line-mode))
-            )
   
   ;; Jump to the start of the first section in "magit-status-mode" buffers
   (add-hook 'magit-refresh-buffer-hook

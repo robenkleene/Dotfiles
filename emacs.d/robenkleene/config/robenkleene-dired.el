@@ -35,8 +35,6 @@
   )
 (add-hook 'dired-mode-hook
           (lambda ()
-            ;; Highlight current line
-            (hl-line-mode)
             ;; Some attempts to use the default `find-file` behavior in Dired to
             ;; make it easy to create a new file. Neither of these work.
             ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)

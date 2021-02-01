@@ -61,6 +61,13 @@
 
 ;; Highlight Cursor Line
 ;; (global-hl-line-mode)
+(dolist (hook '(dired-mode-hook
+                magit-status-mode-hook
+                grep-mode-hook
+                occur-hook))
+  (add-hook hook 'hl-line-mode
+            ))
+
 
 ;; Allow `narrow-to-region'
 (put 'narrow-to-region 'disabled nil)
