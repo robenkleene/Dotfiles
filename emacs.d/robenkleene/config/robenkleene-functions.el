@@ -182,21 +182,21 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/todos-uncheck ()
-  "Archive region."
+  "Uncheck Markdown todos."
   (interactive)
-  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -u")
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -u -b")
   )
 
 (defun robenkleene/todos-check ()
-  "Archive region."
+  "Check Markdown todos."
   (interactive)
-  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -c")
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -c -b")
   )
 
 (defun robenkleene/todos-invert ()
-  "Archive region."
+  "Invert Markdown todos."
   (interactive)
-  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -i")
+  (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -i -b")
   )
 
 (defun robenkleene/title-case ()
