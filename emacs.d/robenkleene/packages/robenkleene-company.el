@@ -10,6 +10,7 @@
         ("C-n" . company-select-next-or-abort)
         ;; Use tab as well as return for completion
         ("TAB" . company-complete-selection)
+        ("<tab>" . company-complete-selection)
         )
   (:map company-search-map
         ("C-p" . company-select-previous-or-abort)
