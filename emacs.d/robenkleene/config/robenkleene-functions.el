@@ -706,6 +706,12 @@ Otherwise, call `backward-kill-word'."
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
+(defun robenkleene/open-journal ()
+  "Open inbox directory."
+  (interactive)
+  (find-file "~/Text/journal/README.md")
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "
