@@ -34,9 +34,9 @@
 (defalias 'urls 'robenkleene/urls-open)
 
 ;; Todos
-(defalias 'todos-check 'robenkleene/todos-check)
-(defalias 'todos-uncheck 'robenkleene/todos-uncheck)
-(defalias 'todos-invert 'robenkleene/todos-invert)
+(defalias 'check 'robenkleene/todos-check)
+(defalias 'uncheck 'robenkleene/todos-uncheck)
+;; (defalias 'todos-invert 'robenkleene/todos-invert)
 
 ;; Longer
 (defalias 'slug-project 'robenkleene/slug-project)
