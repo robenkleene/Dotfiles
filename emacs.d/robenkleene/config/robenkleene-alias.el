@@ -24,7 +24,7 @@
                   (interactive)
                   (robenkleene/source-control-open-web "-p")))
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
-(defalias 'tweets 'robenkleene/tweets)
+(defalias 'tweet 'robenkleene/tweets)
 (defalias 'home 'robenkleene/open-home)
 (defalias 'inbox 'robenkleene/inbox)
 (defalias 'journal 'robenkleene/open-journal)
