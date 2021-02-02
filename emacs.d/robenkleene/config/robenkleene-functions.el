@@ -28,7 +28,12 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/empty-frame ()
   "Open a new frame with a buffer named Untitled."
   (interactive)
-  (switch-to-buffer-other-frame (generate-new-buffer "Untitled")))
+  (let ((buffer (generate-new-buffer "untitled")))
+    (set-buffer buffer)
+    (text-mode)
+    (switch-to-buffer-other-frame buffer)
+    )
+  )
 
 (defun robenkleene/reveal-in-finder ()
   "Open a new Finder window at the current path."
