@@ -37,6 +37,9 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-n")
   'robenkleene/empty-frame)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "M-s-n")
+  'robenkleene/make-frame-with-current-frame)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-z")
 ;;   'undo-tree-undo)
