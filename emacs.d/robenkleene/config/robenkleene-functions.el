@@ -513,8 +513,8 @@ Otherwise, call `backward-kill-word'."
   "Move to next text block N."
   (interactive "p")
   (let ((n (if (null n) 1 n)))
-    (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
-    (forward-line -1)
+    (if (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
+        (forward-line -1))
     )
   )
 
@@ -525,8 +525,8 @@ Otherwise, call `backward-kill-word'."
       (set-mark-command nil)
     )
   (let ((n (if (null n) 1 n)))
-    (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
-    (forward-line -1)
+    (if (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)
+        (forward-line -1))
     )
   )
 
