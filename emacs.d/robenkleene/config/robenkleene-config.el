@@ -34,7 +34,6 @@
 ;; to organize those.
 (setq create-lockfiles nil)
 
-
 ;; Suppress message when saving
 (setq save-silently t)
 
@@ -184,9 +183,8 @@
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
 
-;; Save cursor place
-(require 'saveplace)
-(setq-default save-place t)
+;; Restore cursor position
+(save-place-mode 1)
 
 ;; ffap
 ;; Replace `C-x C-f' with `find-file-at-point' version
