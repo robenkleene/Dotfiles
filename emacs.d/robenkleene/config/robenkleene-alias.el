@@ -33,6 +33,7 @@
 (defalias 'clear 'desktop-clear)
 (defalias 'sgpt 'robenkleene/sgit-push-text-all)
 (defalias 'urls 'robenkleene/urls-open)
+(defalias 'new 'robenkleene/new-empty-other-window)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

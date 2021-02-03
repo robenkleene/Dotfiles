@@ -35,6 +35,16 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/new-empty-other-window ()
+  "Open a new frame with a buffer named Untitled."
+  (interactive)
+  (let ((buffer (generate-new-buffer "untitled")))
+    (set-buffer buffer)
+    (text-mode)
+    (switch-to-buffer-other-window buffer)
+    )
+  )
+
 (defun robenkleene/reveal-in-finder ()
   "Open a new Finder window at the current path."
   (interactive)
@@ -693,6 +703,18 @@ Otherwise, call `backward-kill-word'."
   "Open inbox directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/Inbox/")
+  )
+
+(defun robenkleene/open-dropbox-projects ()
+  "Open Dropbox projects directory."
+  (interactive)
+  (find-file "~/Dropbox/Documents/Projects/")
+  )
+
+(defun robenkleene/open-documents-projects ()
+  "Open Documents projects directory."
+  (interactive)
+  (find-file "~/Documents/Projects/")
   )
 
 (defun robenkleene/open-journal ()
