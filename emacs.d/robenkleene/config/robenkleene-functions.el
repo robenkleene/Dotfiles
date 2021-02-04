@@ -78,6 +78,16 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/slug-project-archive-readme ()
+  "Open slug project archive README."
+  (interactive)
+  (let ((file-path (concat default-directory "archive/README.md")))
+    (if (file-exists-p file-path)
+        (find-file file-path)
+      )
+    )
+  )
+
 (defun robenkleene/open-home ()
   "Open inbox directory."
   (interactive)
