@@ -14,7 +14,7 @@
 (defalias 'es 'robenkleene/open-emacs-scratch)
 (defalias 'os 'robenkleene/open-markdown-scratch)
 (defalias 'ods 'robenkleene/open-development-scratch)
-(defalias 'kb 'kill-this-buffer)
+(defalias 'bd 'kill-this-buffer)
 ;; (defalias 'os 'robenkleene/open-scratch-ot/her-window)
 (defalias 'doc 'robenkleene/documentation-view)
 (defalias 'doce 'robenkleene/documentation-edit)

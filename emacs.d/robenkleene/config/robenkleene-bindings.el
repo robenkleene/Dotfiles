@@ -141,6 +141,7 @@
 
 ;; Window Management
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
+(define-key robenkleene/leader-map (kbd "q") 'delete-frame)
 (define-key robenkleene/leader-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
 (define-key robenkleene/leader-map (kbd "s")
