@@ -183,15 +183,22 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/archive-current-file ()
   "Archive the current file."
   (interactive)
-  (if (buffer-file-name)
-      (let ((path buffer-file-name))
+  (if (y-or-n-p (concat "Backup " (buffer-name)))
+      (if (buffer-file-name)
+          (progn
+            (kill-this-buffer)
+            (message (shell-command-to-string
+                      (concat "~/.bin/backup_file "
+                              (shell-quote-argument buffer-file-name))
+                      ))
+            (robenkleene/kill-removed-buffers)
+            )
         (progn
+          (shell-command-on-region
+           (point-min)
+           (point-max)
+           "~/.bin/backup_text -m")
           (kill-this-buffer)
-          (shell-command-to-string
-           (concat "~/.bin/backup_file "
-                   (shell-quote-argument path))
-           )
-          (robenkleene/kill-removed-buffers)
           )
         )
     )
