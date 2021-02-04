@@ -97,7 +97,8 @@ function fish_sync_abbr
     abbr -a chb 'carthage bootstrap'
     abbr -a agvm 'agvtool what-marketing-version'
     abbr -a agvmn 'agvtool new-marketing-version'
-    abbr -a emt 'emacs -nw'
+    # Use `gemacs` for graphical Emacs
+    abbr -a emacs 'emacs -nw'
     abbr -a e "$EMACS_COMMAND"
     abbr -a ec "$EMACS_COMMAND"
     abbr -a mba 'mbsync -all --verbose'
