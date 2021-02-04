@@ -56,6 +56,7 @@
 ;; Automatically revert unmodified buffers
 ;; This way causing the cursor to jump randomly after saving
 (global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
 ;; Highlight Cursor Line
