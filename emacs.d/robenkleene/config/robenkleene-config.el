@@ -112,6 +112,9 @@
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
 
+;; Instantly show key feedback
+(setq echo-keystrokes 0.01)
+
 ;; Overwrite region when pasting
 (delete-selection-mode 1)
 
