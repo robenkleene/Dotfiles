@@ -5,6 +5,14 @@
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+;; Considering options for automatically hiding Emacs when it loses focus, to
+;; work better with Mission Control
+;; (add-function :after after-focus-change-function
+;;               (lambda ()
+;;                 (unless (frame-focus-state)
+;;                   (call-interactively 'ns-do-hide-emacs))
+;;                 ))
+
 (defvar robenkleene/mac-bindings-minor-mode-map (make-keymap))
 
 ;; Ergonomic Emacs
