@@ -92,7 +92,10 @@ Otherwise, call `backward-kill-word'."
   "Open slug project archive README."
   (interactive)
   (if (file-exists-p (concat default-directory "../../archive/projects"))
-      (if (y-or-n-p (concat "Archive" default-directory))
+      (if (y-or-n-p (concat "Archive "
+                            (file-name-nondirectory
+                             (directory-file-name default-directory)
+                             )))
           (progn
             (kill-this-buffer)
             (shell-command-to-string
@@ -218,7 +221,7 @@ Otherwise, call `backward-kill-word'."
                                    "~/.bin/backup_text -m")
           (delete-region (region-beginning) (region-end))
           )
-      (robenkleene/archive-current-file))
+      (robenkleene/-current-file))
     )
   )
 
