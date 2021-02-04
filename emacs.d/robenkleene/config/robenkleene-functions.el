@@ -88,6 +88,20 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/slug-project-archive ()
+  "Open slug project archive README."
+  (interactive)
+  (if (file-exists-p (concat default-directory "../../archive/projects"))
+      (progn
+        (kill-this-buffer)
+        (shell-command-to-string
+         (concat "~/.bin/slug_project_archive "
+                 (shell-quote-argument default-directory))
+         )
+        (robenkleene/kill-removed-buffers))
+    )
+  )
+
 (defun robenkleene/open-home ()
   "Open inbox directory."
   (interactive)
