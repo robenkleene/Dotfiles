@@ -42,6 +42,7 @@
 
 ;; Longer
 (defalias 'slug-project 'robenkleene/slug-project)
+(defalias 'slug-project-archive 'robenkleene/slug-project-archive)
 (defalias 'slug-project-archive-readme 'robenkleene/slug-project-archive-readme)
 (defalias 'archive-current-file 'robenkleene/archive-current-file)
 

@@ -94,10 +94,11 @@ Otherwise, call `backward-kill-word'."
   (if (file-exists-p (concat default-directory "../../archive/projects"))
       (progn
         (kill-this-buffer)
-        (shell-command-to-string
-         (concat "~/.bin/slug_project_archive "
-                 (shell-quote-argument default-directory))
-         )
+        (message
+         (shell-command-to-string
+          (concat "~/.bin/slug_project_archive "
+                  (shell-quote-argument (expand-file-name default-directory)))
+          ))
         (robenkleene/kill-removed-buffers))
     )
   )
@@ -167,7 +168,10 @@ Otherwise, call `backward-kill-word'."
       ((to-kill
         (-remove 'robenkleene/buffer-backed-by-file-p (buffer-list))))
     (mapc 'kill-buffer to-kill)
-    (message "Killed %s buffers" (length to-kill))))
+    (if (called-interactively-p 'extended-command)
+        (message "Killed %s buffers" (length to-kill))
+      )
+    ))
 
 (defun robenkleene/sgit-push-text-all ()
   "Commit everything in the current repository."
