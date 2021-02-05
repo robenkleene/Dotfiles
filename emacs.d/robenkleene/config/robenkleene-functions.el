@@ -221,7 +221,7 @@ Otherwise, call `backward-kill-word'."
                                    "~/.bin/backup_text -m")
           (delete-region (region-beginning) (region-end))
           )
-      (robenkleene/-current-file))
+      (robenkleene/archive-current-file))
     )
   )
 
