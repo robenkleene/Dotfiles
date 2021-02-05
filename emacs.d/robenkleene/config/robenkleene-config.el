@@ -170,8 +170,14 @@
 
 ;; Automatically select some types of buffers
 (setq help-window-select t)
-(add-hook 'occur-hook (lambda () (pop-to-buffer (get-buffer "*Occur*"))))
-(add-hook 'grep-mode-hook (lambda () (pop-to-buffer (get-buffer "*grep*"))))
+(add-hook 'occur-hook (lambda () (pop-to-buffer (get-buffer "*Occur*")))
+          )
+(add-hook 'grep-mode-hook (lambda ()
+                            (pop-to-buffer (get-buffer "*grep*"))
+                            ;; This doesn't work for some reason
+                            ;; (forward-line 4)
+                            )
+          )
 
 ;; Ido Mode
 (setq ido-enable-flex-matching t)

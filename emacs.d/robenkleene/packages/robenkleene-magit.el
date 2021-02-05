@@ -34,7 +34,7 @@
               (if (and (bobp)
                        (string-equal major-mode "magit-status-mode"))
                   (magit-section-forward-sibling)
-                )              
+                )
               )
             )
 
