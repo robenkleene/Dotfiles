@@ -1,4 +1,4 @@
-personal_ws-1.1 en 81 
+personal_ws-1.1 en 83 
 APIs
 ARKit
 AirPods
@@ -44,6 +44,7 @@ ZUI
 accessors
 analytics
 antifragile
+architected
 autofocus
 bitwise
 crosshairs
@@ -68,6 +69,7 @@ roadmap
 runtime
 sandboxed
 sandboxing
+scalable
 screencast
 scriptable
 structs
