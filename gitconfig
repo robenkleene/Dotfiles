@@ -58,3 +58,5 @@
 	email = contact@robenkleene.com
 [diff]
 	tool = vimdiff
+[init]
+	defaultBranch = main
