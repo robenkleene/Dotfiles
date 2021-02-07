@@ -5,7 +5,6 @@ let g:coc_global_extensions = [
   \ 'coc-fish',
   \ 'coc-git',
   \ 'coc-json',
-  \ 'coc-pairs',
   \ 'coc-prettier',
   \ 'coc-pyright',
   \ 'coc-snippets',
@@ -14,7 +13,9 @@ let g:coc_global_extensions = [
   \ 'coc-tag',
   \ 'coc-tsserver',
   \ ]
-
+  " Went entering pairs quickly, this produces `())`, also has problems with
+  " context, e.g., making a comment with `"`
+  " \ 'coc-pairs',
 autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd FileType gitcommit let b:coc_suggest_disable = 1
 autocmd FileType pullrequest let b:coc_suggest_disable = 1
