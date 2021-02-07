@@ -170,7 +170,12 @@
 
 ;; Automatically select some types of buffers
 (setq help-window-select t)
-(add-hook 'occur-hook (lambda () (pop-to-buffer (get-buffer "*Occur*")))
+(add-hook 'occur-hook (lambda ()
+                        (progn
+                          (pop-to-buffer (get-buffer "*Occur*"))
+                          (forward-line 1)
+                          )
+                        )
           )
 (add-hook 'grep-mode-hook (lambda ()
                             (pop-to-buffer (get-buffer "*grep*"))
