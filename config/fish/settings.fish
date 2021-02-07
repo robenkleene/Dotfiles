@@ -11,3 +11,5 @@ switch (uname)
         end
 end
 
+# Temporary work around for slow autocomplete on macOS
+function __fish_describe_command; end
