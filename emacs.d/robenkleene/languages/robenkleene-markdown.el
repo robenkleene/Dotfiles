@@ -47,7 +47,15 @@
   ;; blocks. This seems to disable spelling altogether: (add-hook
   ;; 'markdown-mode-hook 'flyspell-prog-mode)
 
-  ;; TODO: Augment `markdown-calc-indents' to never return `2'
+  ;; Augment `markdown-calc-indents' to only returns multiples of `4'
+  ;; Otherwise `markdown-mode' returns some multiples of `2', which is to align
+  ;; hard-wrapped lines to bullet points, which we never want to do.
+  (require 'seq)
+  (advice-add 'markdown-calc-indents
+              :filter-return
+              #'(lambda (list)
+                  (seq-filter
+                   (lambda (x) (eq (% x 4) 0)) list)))
   )
 
 (provide 'robenkleene-markdown)
