@@ -31,6 +31,14 @@
   ;; (global-company-mode)
   ;; (setq company-global-modes '(not org-mode markdown-mode))
   (add-hook 'prog-mode-hook 'company-mode)
+
+  ;; Add completion for `eval-expression'
+  (defun robenkleene/minibuffer-company ()
+    (unless company-mode
+      (when (eq this-command #'eval-expression)
+        (company-mode))
+      ))
+  (add-hook 'minibuffer-setup-hook 'robenkleene/minibuffer-company)
   )
 
 (provide 'robenkleene-company)
