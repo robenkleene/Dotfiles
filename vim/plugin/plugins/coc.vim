@@ -20,10 +20,10 @@ autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd FileType gitcommit let b:coc_suggest_disable = 1
 autocmd FileType pullrequest let b:coc_suggest_disable = 1
 
-# Trying to get <M-BS> delete word working in the floating window
-# nmap <M-BS> <C-W>
-# imap <M-BS> <C-W>
-# vmap <M-BS> <C-W>
+" Trying to get <M-BS> delete word working in the floating window
+" nmap <M-BS> <C-W>
+" imap <M-BS> <C-W>
+" vmap <M-BS> <C-W>
 
 " Refresh after a change that doesn't touch the file, like a `git commit`
 augroup git_refresh
