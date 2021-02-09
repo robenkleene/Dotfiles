@@ -1,0 +1,3 @@
+[MESSAGES CONTROL]
+# `invalid-name` doesn't allow variables less than three letters long
+disable=invalid-name
