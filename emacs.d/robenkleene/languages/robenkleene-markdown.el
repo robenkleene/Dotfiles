@@ -46,6 +46,8 @@
   ;; Try `flyspell-prog-mode' to prevent spelling errors in Markdown code
   ;; blocks. This seems to disable spelling altogether: (add-hook
   ;; 'markdown-mode-hook 'flyspell-prog-mode)
+
+  ;; TODO: Augment `markdown-calc-indents' to never return `2'
   )
 
 (provide 'robenkleene-markdown)
