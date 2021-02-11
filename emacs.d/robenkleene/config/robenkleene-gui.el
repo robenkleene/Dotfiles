@@ -96,6 +96,9 @@
 ;; (setq ns-pop-up-frames nil)
 (setq ns-pop-up-frames t)
 
+;; Never use GUI dialog boxes
+(setq use-dialog-box nil)
+
 ;; Note this doesn't work in Terminal Emacs
 ;; Disabled because this makes hitting escape close splits.
 ;; (global-set-key [escape] 'keyboard-escape-quit)

@@ -298,6 +298,9 @@
 ;; Always keep `imenu' up-to-date
 (setq imenu-auto-rescan t)
 
+;; Don't prompt about killing processes when quitting
+(setq confirm-kill-processes nil)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

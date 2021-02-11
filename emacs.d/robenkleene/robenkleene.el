@@ -49,6 +49,7 @@
 (require 'robenkleene-move-text)
 (require 'robenkleene-multiple-cursors)
 (require 'robenkleene-flimenu)
+(require 'robenkleene-super-save)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
