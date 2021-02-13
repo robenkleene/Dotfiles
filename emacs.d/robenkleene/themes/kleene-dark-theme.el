@@ -135,7 +135,7 @@
    `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
-   `(rk-italic ((t (:inherit rk-text))))
+   `(rk-italic ((t (:inherit rk-text :slant oblique))))
    `(rk-warning-highlight ((t (:background ,warning))))
    `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
@@ -365,6 +365,7 @@
    `(markdown-blockquote-face ((t (:inherit rk-text2))))
    `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
    `(markdown-list-face ((t (:inherit rk-text2))))
+   ;; `(markdown-italic-face ((t (:inherit rk-text2))))
 
    ;;;; show-paren
    `(show-paren-match ((t (:underline t))))

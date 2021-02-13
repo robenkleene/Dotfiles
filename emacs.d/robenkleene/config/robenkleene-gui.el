@@ -50,7 +50,10 @@
 ;; (set-face-attribute 'default nil :font "Fira Code-13:Retina")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
-(set-face-attribute 'default nil :font "Inconsolata-14")
+;; Doesn't support italics
+;; (set-face-attribute 'default nil :font "Inconsolata-14")
+;; Supports italics
+(set-face-attribute 'default nil :font "SF Mono-12")
 (setq-default line-spacing 0.1)
 
 ;; Cursor
