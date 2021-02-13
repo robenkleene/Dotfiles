@@ -1,3 +1,4 @@
+
 ;;; robenkleene-imenu-list.el --- robenkleene-imenu-list
 ;;; Commentary:
 ;;; Code:
@@ -10,7 +11,11 @@
         )
   :config
   (setq imenu-list-focus-after-activation t
-        imenu-list-auto-resize nil))
+        imenu-list-auto-resize nil)
+  ;; Treat an `imenu-list' buffer like a regular buffer
+  (setq display-buffer-alist
+        (assoc-delete-all  "^\\*Ilist\\*$" display-buffer-alist))
+  )
 
 (provide 'robenkleene-imenu-list)
 ;; Local Variables:
