@@ -75,6 +75,8 @@ Otherwise, call `backward-kill-word'."
                                  (region-end)
                                  (concat "~/.bin/slug_project -l -t "
                                          (shell-quote-argument title))
+                                 nil
+                                 t
                                  )
       (robenkleene/safe-find-file
        (shell-command-to-string (concat "~/.bin/slug_project -t "
