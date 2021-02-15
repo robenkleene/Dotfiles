@@ -129,7 +129,7 @@ Otherwise, call `backward-kill-word'."
       (shell-command-on-region (region-beginning)
                                (region-end)
                                "~/.bin/markdown_wiki_link"
-                               t
+                               nil
                                t)
     )
   )
@@ -269,7 +269,7 @@ Otherwise, call `backward-kill-word'."
       (shell-command-on-region (region-beginning)
                                (region-end)
                                "~/.bin/title_case"
-                               t
+                               nil
                                t)
     )
   )
@@ -692,12 +692,12 @@ Otherwise, call `backward-kill-word'."
   (interactive "r")
   (if (use-region-p)
       (progn
-        (shell-command-on-region (region-beginning) (region-end) command t t)
+        (shell-command-on-region (region-beginning) (region-end) command nil t)
         (deactivate-mark)
         )
     (let ((p (point)))
       (save-excursion
-        (shell-command-on-region (point-min) (point-max) command t t)
+        (shell-command-on-region (point-min) (point-max) command nil t)
         )
       (goto-char p)
       )
