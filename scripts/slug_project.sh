@@ -45,6 +45,10 @@ if [[ -z "$title" ]]; then
   exit 1
 fi
 
+if [[ -z "$directory" ]]; then
+  directory="projects"
+fi
+
 if [[ -n "$directory" ]]; then
   # Remove leading and trailing slash and leading period
   directory=${directory#\.}

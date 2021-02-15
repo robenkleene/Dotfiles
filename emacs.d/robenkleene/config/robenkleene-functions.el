@@ -70,11 +70,18 @@ Otherwise, call `backward-kill-word'."
            )
          ))
   (let ((default-directory dir))
-    (robenkleene/safe-find-file
-     (shell-command-to-string (concat "~/.bin/slug_project -t "
-                                      (shell-quote-argument title))
-                              )
-     )
+    (if (use-region-p)
+        (shell-command-on-region (region-beginning)
+                                 (region-end)
+                                 (concat "~/.bin/slug_project -l -t "
+                                         (shell-quote-argument title))
+                                 )
+      (robenkleene/safe-find-file
+       (shell-command-to-string (concat "~/.bin/slug_project -t "
+                                        (shell-quote-argument title))
+                                )
+       )
+      )
     )
   )
 
