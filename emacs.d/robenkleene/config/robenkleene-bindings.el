@@ -17,6 +17,11 @@
                           (interactive)
                           (split-window-horizontally)
                           (other-window 1)))
+
+;; History keys in isearch
+(define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
+(define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
+
 ;; Better Defaults
 ;; (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
