@@ -18,6 +18,11 @@
                           (split-window-horizontally)
                           (other-window 1)))
 
+;; Set these in such a way that other modes override, e.g., to make the bindings
+;; access history in shell modes
+(global-set-key (kbd "M-n") 'next-error)
+(global-set-key (kbd "M-p") 'previous-error)
+
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
@@ -104,7 +109,8 @@
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-(define-key robenkleene/leader-map (kbd "t") 'robenkleene/other-window-shell)
+;; (define-key robenkleene/leader-map (kbd "t") 'robenkleene/other-window-shell)
+(define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
 ;; (define-key robenkleene/leader-map (kbd "i") 'next-buffer)
