@@ -34,6 +34,7 @@
 (defalias 'sgpt 'robenkleene/sgit-push-text-all)
 (defalias 'urls 'robenkleene/urls-open)
 (defalias 'new 'robenkleene/new-empty-other-window)
+(defalias 'untitled 'robenkleene/new-empty)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
