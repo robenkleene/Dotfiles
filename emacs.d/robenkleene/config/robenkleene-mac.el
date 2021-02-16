@@ -39,15 +39,19 @@
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-x") 'kill-region)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-n") 'make-frame)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "s-n")
-;;   'robenkleene/make-frame-with-current-frame)
+
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-n")
-  'robenkleene/empty-frame)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "M-s-n")
   'robenkleene/make-frame-with-current-frame)
+
+;; Mac Style new window
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "s-n")
+;;   'robenkleene/empty-frame)
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "M-s-n")
+;;   'robenkleene/make-frame-with-current-frame)
+
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-z")
 ;;   'undo-tree-undo)
