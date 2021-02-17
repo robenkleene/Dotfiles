@@ -53,8 +53,9 @@
 ;; Doesn't support italics
 ;; (set-face-attribute 'default nil :font "Inconsolata-14")
 ;; Supports italics
-(set-face-attribute 'default nil :font "SF Mono-12")
-(setq-default line-spacing 0.1)
+;; (set-face-attribute 'default nil :font "SF Mono-12")
+(set-face-attribute 'default nil :font "Hack-12")
+(setq-default line-spacing 0.2)
 
 ;; Cursor
 (setq-default cursor-type 'bar)
