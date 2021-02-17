@@ -64,7 +64,8 @@
 (dolist (hook '(dired-mode-hook
                 magit-status-mode-hook
                 grep-mode-hook
-                occur-hook))
+                occur-hook
+                ibuffer-mode-hook))
   (add-hook hook 'hl-line-mode
             ))
 
