@@ -31,6 +31,11 @@
         (markdown-enter-key))
       )
     )
+  (define-key markdown-mode-map (kbd "M-n")
+    'next-error)
+  (define-key markdown-mode-map (kbd "M-p")
+    'previous-error)
+  
   ;; Automatically auto-save markdown files
   ;; This doesn't work
   ;; (add-hook 'markdown-mode-hook (lambda ()

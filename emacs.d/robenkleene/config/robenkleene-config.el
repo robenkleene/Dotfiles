@@ -179,6 +179,10 @@
           )
 (add-hook 'grep-mode-hook (lambda ()
                             (pop-to-buffer (get-buffer "*grep*"))
+                            (define-key grep-mode-map (kbd "M-n")
+                              'next-error)
+                            (define-key grep-mode-map (kbd "M-p")
+                              'previous-error)
                             )
           )
 
