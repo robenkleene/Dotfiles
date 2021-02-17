@@ -47,14 +47,14 @@
 (set-face-background 'default "#392248")
 (set-face-background 'fringe "#392248")
 ;; Word spacing isn't great with Fira Code
-;; (set-face-attribute 'default nil :font "Fira Code-13:Retina")
+(set-face-attribute 'default nil :font "Fira Code-12:Retina")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
 ;; Doesn't support italics
 ;; (set-face-attribute 'default nil :font "Inconsolata-14")
 ;; Supports italics
 ;; (set-face-attribute 'default nil :font "SF Mono-12")
-(set-face-attribute 'default nil :font "Hack-12")
+;; (set-face-attribute 'default nil :font "Hack-12")
 (setq-default line-spacing 0.2)
 
 ;; Cursor
