@@ -49,14 +49,19 @@
 	process = git-lfs filter-process
 [pull]
 	ff = only
-[difftool]
-	prompt = false
-[difftool "wstats"]
-	cmd = wdiff --statistics \"$LOCAL\" \"$REMOTE\" | tail -2
 [user]
 	name = Roben Kleene
 	email = contact@robenkleene.com
-[diff]
-	tool = vimdiff
 [init]
 	defaultBranch = main
+[diff]
+    tool = Kaleidoscope
+[difftool]
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
