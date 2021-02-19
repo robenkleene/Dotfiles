@@ -97,6 +97,37 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/cdg-readme ()
+  "Open README in the git root."
+  (interactive)
+  (let* ((dir (shell-command-to-string
+               "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'"))
+         (file-path (concat dir "/README.md")))
+    (if (file-exists-p file-path)
+        (find-file file-path)
+      (message "file-path = %s." file-path)
+      )
+    )
+  )
+
+(defun robenkleene/readme ()
+  "Open README in the current directory or git root."
+  (interactive)
+  (let ((file-path (concat default-directory "README.md")))
+    (if (file-exists-p file-path)
+        (find-file file-path)
+      (let* ((dir (shell-command-to-string
+                   "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'"))
+             (file-path (concat dir "/README.md")))
+        (if (file-exists-p file-path)
+            (find-file file-path)
+          (message "file-path = %s." file-path)
+          )
+        )
+      )
+    )
+  )
+
 (defun robenkleene/slug-project-archive-readme ()
   "Open slug project archive README."
   (interactive)

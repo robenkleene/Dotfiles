@@ -31,6 +31,7 @@
 (defalias 'urls 'robenkleene/urls-open)
 (defalias 'new 'robenkleene/new-empty-other-window)
 (defalias 'untitled 'robenkleene/new-empty)
+(defalias 'readme 'robenkleene/cdg-readme)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
