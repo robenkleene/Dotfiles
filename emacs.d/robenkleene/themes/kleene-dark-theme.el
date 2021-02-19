@@ -321,35 +321,49 @@
    `(magit-diff-file-heading ((t (:inherit rk-text))))
    `(magit-diff-hunk-header ((t (:inherit rk-header))))
    `(magit-diff-hunk-heading ((t (:inherit rk-header))))
-   `(magit-diff-lines-heading ((t (:inherit rk-header :background ,callout-bg))))
+   `(magit-diff-lines-heading
+     ((t (:inherit rk-header :background ,callout-bg))))
    `(magit-diff-whitespace-warning ((t (:inherit rk-whitespace))))
    `(magit-hunk-heading ((t (:inherit rk-header))))
    `(magit-section-heading ((t (:inherit rk-header))))
    `(magit-section-title ((t (:inherit rk-header))))
    ;;;;; Highlight Enabled
-   ;; `(magit-diff-added-highlight ((t (:inherit magit-diff-added :background ,callout-bg))))
-   ;; `(magit-diff-context-highlight ((t (:inherit magit-diff-context :background ,callout-bg))))
-   ;; `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background ,callout-bg))))
-   ;; `(magit-diff-hunk-heading-highlight ((t (:inherit magit-diff-hunk-heading :background ,callout-bg))))
-   ;; `(magit-diff-removed-highlight ((t (:inherit magit-diff-removed :background ,callout-bg))))
-   ;; `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background ,callout-bg))))
-   ;; `(magit-item-highlight ((t (:inherit magit-item-highlight :background ,callout-bg))))   
+   ;; `(magit-diff-added-highlight
+   ;;   ((t (:inherit magit-diff-added :background ,callout-bg))))
+   ;; `(magit-diff-context-highlight
+   ;;   ((t (:inherit magit-diff-context :background ,callout-bg))))
+   ;; `(magit-diff-file-heading-highlight
+   ;;   ((t (:inherit magit-diff-file-heading :background ,callout-bg))))
+   ;; `(magit-diff-hunk-heading-highlight
+   ;;   ((t (:inherit magit-diff-hunk-heading :background ,callout-bg))))
+   ;; `(magit-diff-removed-highlight
+   ;;   ((t (:inherit magit-diff-removed :background ,callout-bg))))
+   ;; `(magit-hunk-heading-highlight
+   ;;   ((t (:inherit magit-hunk-heading :background ,callout-bg))))
+   ;; `(magit-item-highlight
+   ;;   ((t (:inherit magit-item-highlight :background ,callout-bg))))
    ;; `(magit-section-highlight ((t (:inherit rk-callout))))
    ;;;;; Highlight disabled
-   `(magit-diff-added-highlight ((t (:inherit magit-diff-added :background nil))))
-   `(magit-diff-context-highlight ((t (:inherit magit-diff-context :background nil))))
-   `(magit-diff-file-heading-highlight ((t (:inherit magit-diff-file-heading :background nil))))
-   `(magit-diff-hunk-heading-highlight ((t (:inherit magit-diff-hunk-heading :background nil))))
-   `(magit-diff-removed-highlight ((t (:inherit magit-diff-removed :background nil))))
+   `(magit-diff-added-highlight
+     ((t (:inherit magit-diff-added :background nil))))
+   `(magit-diff-context-highlight
+     ((t (:inherit magit-diff-context :background nil))))
+   `(magit-diff-file-heading-highlight
+     ((t (:inherit magit-diff-file-heading :background nil))))
+   `(magit-diff-hunk-heading-highlight
+     ((t (:inherit magit-diff-hunk-heading :background nil))))
+   `(magit-diff-removed-highlight
+     ((t (:inherit magit-diff-removed :background nil))))
    `(magit-diff-base-highlight ((t (:inherit rk-text :background nil))))
-   `(magit-hunk-heading-highlight ((t (:inherit magit-hunk-heading :background nil))))
+   `(magit-hunk-heading-highlight
+     ((t (:inherit magit-hunk-heading :background nil))))
    `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
    `(magit-section-highlight ((t (:background nil))))
    `(magit-log-author ((t (:inherit rk-comment))))
-   
+
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
-   
+
    ;;;; markdown
    `(markdown-header-face-1 ((t (:inherit rk-header))))
    `(markdown-header-face-2 ((t (:inherit rk-header))))

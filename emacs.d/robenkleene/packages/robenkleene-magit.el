@@ -27,7 +27,7 @@
   ;;   :commands (magit-filenotify-mode)
   ;;   :init
   ;;   (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
-  
+
   ;; Jump to the start of the first section in "magit-status-mode" buffers
   (add-hook 'magit-refresh-buffer-hook
             (lambda ()
@@ -39,7 +39,8 @@
             )
 
   ;; Open magit status full screen
-  ;; (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  ;; (setq magit-display-buffer-function
+  ;;       #'magit-display-buffer-fullframe-status-v1)
 
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
@@ -52,7 +53,7 @@
     (progn (call-interactively 'magit-log-current)
            (delete-other-windows))
     )
-  
+
   ;; Magit Startup Helpers
   (defun robenkleene/magit-status-current-window ()
     "Magit in current window."
