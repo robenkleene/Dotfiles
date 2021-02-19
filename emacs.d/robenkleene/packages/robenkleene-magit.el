@@ -45,7 +45,9 @@
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
   ;; Refresh magit status after editing a buffer
-  (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+  ;; This makes the cursor sometimes jump after saving, might be able to try
+  ;; again later
+  ;; (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 
   (defun robenkleene/magit-log ()
     "Call magit log removing other windows."
