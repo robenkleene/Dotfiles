@@ -357,9 +357,9 @@
    `(magit-diff-base-highlight ((t (:inherit rk-text :background nil))))
    `(magit-hunk-heading-highlight
      ((t (:inherit magit-hunk-heading :background nil))))
-   `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
-   `(magit-section-highlight ((t (:background nil))))
    `(magit-log-author ((t (:inherit rk-comment))))
+   `(magit-section-highlight ((t (:background nil))))
+   ;; `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
 
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
