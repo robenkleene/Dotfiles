@@ -18,6 +18,16 @@
   (shell-command "open -a Terminal .")
   )
 
+(defun robenkleene/open-in-writer ()
+  "Open file in Xcode."
+  (interactive)
+  (if (buffer-file-name)
+      (shell-command (concat "open -a \"iA Writer.app\" "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    )
+  )
+
 (defun robenkleene/kill-region-or-backward-word ()
   "If the region is active and non-empty, call `kill-region'.
 Otherwise, call `backward-kill-word'."
