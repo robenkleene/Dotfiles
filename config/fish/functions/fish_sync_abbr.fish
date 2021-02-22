@@ -43,7 +43,6 @@ function fish_sync_abbr
     abbr -a gaa 'git add -A :/'
     abbr -a gaac 'git add -A :/ && git commit'
     abbr -a gb 'git branch'
-    abbr -a gbum 'git branch --set-upstream-to=origin/master master'
     abbr -a gbr 'git branch -r'
     abbr -a gc 'git commit'
     abbr -a gca 'git commit --amend'

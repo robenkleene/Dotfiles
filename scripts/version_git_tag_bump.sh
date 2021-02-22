@@ -1,7 +1,7 @@
 #!/bin/bash
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$branch" != "master" ]]; then
+if ! [[ "$branch" == "master" || "$branch" == "main" ]]; then
   echo "Only run this script from branch master" >&2
   exit 1;
 fi

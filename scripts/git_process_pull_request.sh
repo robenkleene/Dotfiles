@@ -4,7 +4,11 @@ set -e
 
 branch="$1"
 if [[ -z "$1" ]]; then
-  branch="master"
+  if git show-ref --verify --quiet refs/heads/main; then
+    branch="main"
+  elif git show-ref --verify --quiet refs/heads/master; then
+    branch="master"
+  fi
 else
   branch="$1"
 fi
