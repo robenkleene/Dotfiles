@@ -92,6 +92,14 @@
 (define-key key-translation-map (kbd "<s-left>") (kbd "<C-left>"))
 (define-key key-translation-map (kbd "<s-right>") (kbd "<C-right>"))
 
+;; Quit Emacs if we delete the last frame, which is already what happens if we
+;; click the red X to close the window
+(defun delete-frame-or-kill-emacs ()
+  "Delete the selected frame.  If the last one, kill Emacs."
+  (interactive)
+  (condition-case nil (delete-frame) (error (kill-emacs))))
+(global-set-key [remap delete-frame] 'delete-frame-or-kill-emacs)
+
 ;; Mode
 (define-minor-mode robenkleene/mac-bindings-minor-mode
   "Mac bindings."
