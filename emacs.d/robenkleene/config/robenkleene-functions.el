@@ -255,7 +255,6 @@ Otherwise, call `backward-kill-word'."
                               (shell-quote-argument buffer-file-name))
                       ))
             (kill-this-buffer)
-            (robenkleene/kill-removed-buffers)
             )
         (progn
           (shell-command-on-region
