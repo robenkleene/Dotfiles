@@ -250,11 +250,11 @@ Otherwise, call `backward-kill-word'."
   (if (y-or-n-p (concat "Backup " (buffer-name)))
       (if (buffer-file-name)
           (progn
-            (kill-this-buffer)
             (message (shell-command-to-string
                       (concat "~/.bin/backup_file "
                               (shell-quote-argument buffer-file-name))
                       ))
+            (kill-this-buffer)
             (robenkleene/kill-removed-buffers)
             )
         (progn
