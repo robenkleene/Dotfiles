@@ -818,7 +818,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-journal ()
   "Open inbox directory."
   (interactive)
-  (find-file "~/Text/journal/README.md")
+  (find-file "~/Text/journal/journal.md")
   )
 
 (defun robenkleene/new-inbox-document (title)
