@@ -33,6 +33,7 @@
 (defalias 'untitled 'robenkleene/new-empty)
 (defalias 'readme 'robenkleene/cdg-readme)
 (defalias 'writer 'robenkleene/open-in-writer)
+(defalias 'repla 'robenkleene/open-in-repla)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
