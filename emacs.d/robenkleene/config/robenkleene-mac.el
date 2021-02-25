@@ -67,9 +67,9 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-c")
   'kill-ring-save)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "C-s-f")
-;;   'toggle-frame-fullscreen)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "C-s-f")
+  'toggle-frame-fullscreen)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "<C-s-268632070>")
   'toggle-frame-fullscreen)
