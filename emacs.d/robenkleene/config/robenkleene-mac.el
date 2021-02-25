@@ -55,12 +55,12 @@
 ;;   (kbd "M-s-n")
 ;;   'robenkleene/make-frame-with-current-frame)
 
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "s-z")
-;;   'undo-tree-undo)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "s-Z")
-;;   'undo-tree-redo)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-z")
+  'undo-tree-undo)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-Z")
+  'undo-tree-redo)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-q")
   'save-buffers-kill-terminal)
