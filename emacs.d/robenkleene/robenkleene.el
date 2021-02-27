@@ -51,6 +51,7 @@
 (require 'robenkleene-flimenu)
 (require 'robenkleene-super-save)
 (require 'robenkleene-undo-tree)
+(require 'robenkleene-expand-region)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
