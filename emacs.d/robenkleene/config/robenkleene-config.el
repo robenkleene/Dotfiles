@@ -81,6 +81,9 @@
 (global-display-line-numbers-mode 1)
 ;; Show cursor position
 (column-number-mode)
+;; Hide line break indicator
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))
 
 ;; Show trailing white space
 (setq-default show-trailing-whitespace t)
