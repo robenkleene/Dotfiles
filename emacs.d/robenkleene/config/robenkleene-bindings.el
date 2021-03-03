@@ -30,7 +30,11 @@
                   (split-window-vertically) (other-window 1)))
 (global-set-key (kbd "M-s-c") 'delete-window)
 (global-set-key (kbd "M-s-o") 'delete-other-windows)
-;; (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
+(global-set-key (kbd "M-s-.") 'other-window)
+(global-set-key (kbd "M-s-<down>") 'windmove-down)
+(global-set-key (kbd "M-s-<up>") 'windmove-up)
+(global-set-key (kbd "M-s-<left>") 'windmove-left)
+(global-set-key (kbd "M-s-<right>") 'windmove-right)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
