@@ -147,6 +147,7 @@
   (let ((current-prefix-arg nil))
     ;; The `default-directory' means inserted file is always relative to the
     ;; current directory.
+    (delete-region (region-beginning) (region-end))
     (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)
                                 default-directory))
     )
