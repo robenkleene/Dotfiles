@@ -22,6 +22,15 @@
 ;; access history in shell modes
 (global-set-key (kbd "M-n") 'next-error)
 (global-set-key (kbd "M-p") 'previous-error)
+(global-set-key (kbd "M-s-v")
+                (lambda () (interactive)
+                  (split-window-horizontally) (other-window 1)))
+(global-set-key (kbd "M-s-s")
+                (lambda () (interactive)
+                  (split-window-vertically) (other-window 1)))
+(global-set-key (kbd "M-s-c") 'delete-window)
+(global-set-key (kbd "M-s-o") 'delete-other-windows)
+;; (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
