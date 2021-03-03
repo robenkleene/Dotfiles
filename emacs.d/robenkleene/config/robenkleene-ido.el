@@ -144,12 +144,15 @@
       )
     )
    )
-  (let ((current-prefix-arg nil))
+  (let* ((current-prefix-arg nil)
+         (result (file-relative-name (robenkleene/ido-recursive-get-file dir)
+                                     default-directory)))
     ;; The `default-directory' means inserted file is always relative to the
     ;; current directory.
-    (delete-region (region-beginning) (region-end))
-    (insert (file-relative-name (robenkleene/ido-recursive-get-file dir)
-                                default-directory))
+    (if (use-region-p)
+        (delete-region (region-beginning) (region-end))
+      )
+    (insert result)
     )
   )
 
