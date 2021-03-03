@@ -31,6 +31,7 @@
 (global-set-key (kbd "M-s-c") 'delete-window)
 (global-set-key (kbd "M-s-o") 'delete-other-windows)
 (global-set-key (kbd "M-s-.") 'other-window)
+(global-set-key (kbd "M-s->") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "M-s-<down>") 'windmove-down)
 (global-set-key (kbd "M-s-<up>") 'windmove-up)
 (global-set-key (kbd "M-s-<left>") 'windmove-left)
