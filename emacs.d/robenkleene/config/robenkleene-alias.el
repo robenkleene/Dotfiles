@@ -34,6 +34,7 @@
 (defalias 'readme 'robenkleene/cdg-readme)
 (defalias 'writer 'robenkleene/open-in-writer)
 (defalias 'repla 'robenkleene/open-in-repla)
+(defalias 'vscode 'robenkleene/open-in-vscode)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

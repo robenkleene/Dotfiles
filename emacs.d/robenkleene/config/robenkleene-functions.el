@@ -28,11 +28,21 @@
     )
   )
 
-(defun robenkleene/open-in-repla ()
+(defun robenkleene/open-in-writer ()
   "Open file in Xcode."
   (interactive)
   (if (buffer-file-name)
-      (shell-command (concat "repla "
+      (shell-command (concat "open -a \"iA Writer.app\" "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    )
+  )
+
+(defun robenkleene/open-in-vscode ()
+  "Open file in VS Code."
+  (interactive)
+  (if (buffer-file-name)
+      (shell-command (concat "vscode "
                              (shell-quote-argument buffer-file-name))
                      )
     )
