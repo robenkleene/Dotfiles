@@ -26,6 +26,9 @@ vnoremap <silent> <buffer> <localleader>lr :<C-U>call operators#LinkReplace(visu
 nnoremap <buffer> <localleader>W :!open -a "iA Writer.app" "%:p"<CR>\|:bd<CR>
 nnoremap <buffer> <localleader>R :silent !open -a "Repla.app" "%:p"<CR>\|:redraw!<CR>
 
+" Nothing seem to work getting Vim to redraw after this command
+command! Repla :silent !open -a "Repla.app" "%:p"
+
 " Convert
 if exists(':terminal')
   command! -nargs=* ConvertMarkdown call <SID>ConvertMarkdown(<f-args>)
