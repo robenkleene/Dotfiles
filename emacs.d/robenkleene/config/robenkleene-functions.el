@@ -169,7 +169,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/slug-project-archive ()
-  "Open slug project archive README."
+  "Archive slug project."
   (interactive)
   (if (file-exists-p (concat default-directory "../../archive/projects"))
       (if (y-or-n-p (concat "Archive "
@@ -177,12 +177,12 @@ Otherwise, call `backward-kill-word'."
                              (directory-file-name default-directory)
                              )))
           (progn
-            (kill-this-buffer)
             (shell-command-to-string
              (concat "~/.bin/slug_project_archive "
                      (shell-quote-argument
                       (expand-file-name default-directory)))
              )
+            (kill-this-buffer)
             (robenkleene/kill-removed-buffers)))
     )
   )
