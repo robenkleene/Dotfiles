@@ -3,7 +3,10 @@
 ;;; Code:
 
 (use-package expand-region
-  :bind ("M-'" . er/expand-region))
+  :bind
+  ("M-'" . er/expand-region)
+  ("C-=" . er/expand-region)
+  )
 
 (provide 'robenkleene-expand-region)
 ;; Local Variables:
