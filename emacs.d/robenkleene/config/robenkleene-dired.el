@@ -18,6 +18,7 @@
 
   (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+  (define-key dired-mode-map (kbd "M-RET") 'robenkleene/readme)
   ;; Suppress error message
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)

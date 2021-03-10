@@ -6,7 +6,7 @@
 
 (use-package smex
   :bind (("M-x" . smex))
-  :bind (("M-RET" . smex))
+  ;; :bind (("M-RET" . smex))
   :config
   (smex-initialize))
 
