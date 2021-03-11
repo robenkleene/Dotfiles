@@ -170,7 +170,11 @@
 (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
 (define-key robenkleene/leader-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+(define-key robenkleene/leader-map (kbd "M-v")
+  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
 (define-key robenkleene/leader-map (kbd "s")
+  (lambda () (interactive) (split-window-vertically) (other-window 1)))
+(define-key robenkleene/leader-map (kbd "M-s")
   (lambda () (interactive) (split-window-vertically) (other-window 1)))
 
 (define-key robenkleene/leader-map (kbd "c") 'delete-window)
