@@ -1,4 +1,4 @@
-personal_ws-1.1 en 111 
+personal_ws-1.1 en 113 
 APIs
 ARKit
 AirPods
@@ -79,6 +79,7 @@ natively
 optionals
 overreliance
 performant
+pickaxe
 prefetching
 programmability
 quicksort
@@ -96,6 +97,7 @@ sandboxing
 scalable
 screencast
 scriptable
+slimes
 structs
 subdirectory
 subfield
