@@ -68,14 +68,24 @@
   (kbd "s-c")
   'kill-ring-save)
 (define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-f")
-  'isearch-forward-regexp)
-(define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "C-s-f")
   'toggle-frame-fullscreen)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "<C-s-268632070>")
   'toggle-frame-fullscreen)
+
+;; Search
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-f")
+  'isearch-forward-regexp)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-g")
+  'isearch-repeat-forward)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-G")
+  'isearch-repeat-backward)
+
+
 
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "<s-up>")
