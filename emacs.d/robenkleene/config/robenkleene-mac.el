@@ -20,13 +20,13 @@
 ;; (define-key key-translation-map (kbd "s-c") (kbd "C-c"))
 ;; (define-key key-translation-map (kbd "s-s") (kbd "C-s"))
 ;; (define-key key-translation-map (kbd "s-x") (kbd "C-x"))
-(define-key key-translation-map (kbd "s-e") (kbd "C-e"))
-(define-key key-translation-map (kbd "s-f") (kbd "C-f"))
-(define-key key-translation-map (kbd "s-r") (kbd "C-r"))
-(define-key key-translation-map (kbd "s-j") (kbd "C-j"))
-(define-key key-translation-map (kbd "s-b") (kbd "C-b"))
-(define-key key-translation-map (kbd "s-g") (kbd "C-g"))
-(define-key key-translation-map (kbd "s-y") (kbd "C-y"))
+;; (define-key key-translation-map (kbd "s-e") (kbd "C-e"))
+;; (define-key key-translation-map (kbd "s-f") (kbd "C-f"))
+;; (define-key key-translation-map (kbd "s-r") (kbd "C-r"))
+;; (define-key key-translation-map (kbd "s-j") (kbd "C-j"))
+;; (define-key key-translation-map (kbd "s-b") (kbd "C-b"))
+;; (define-key key-translation-map (kbd "s-g") (kbd "C-g"))
+;; (define-key key-translation-map (kbd "s-y") (kbd "C-y"))
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
@@ -67,6 +67,9 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-c")
   'kill-ring-save)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-f")
+  'isearch-forward-regexp)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "C-s-f")
   'toggle-frame-fullscreen)
