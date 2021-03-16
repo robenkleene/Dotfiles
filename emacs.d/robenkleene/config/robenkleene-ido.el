@@ -162,7 +162,7 @@
   (insert (file-relative-name (robenkleene/ido-recursive-get-file
                                (robenkleene/source-control-directory))
                               default-directory))
-  )
+  )t
 
 (defun robenkleene/ido-source-control-recursive-insert-dir ()
   "Find and insert directory recursively from source control root."
@@ -338,9 +338,7 @@
   (find-file (robenkleene/ido-recursive-get-file
               (concat
                "~/Text "
-               "~/Documentation "
-               "~/Documents/Text/Notes "
-               "~/Documents/Text/Social")))
+               "~/Documentation ")))
   )
 
 (defun robenkleene/ido-quick-developer ()
