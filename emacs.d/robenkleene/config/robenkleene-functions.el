@@ -968,6 +968,26 @@ Otherwise, call `backward-kill-word'."
     (find-file file))
   )
 
+
+;; (defun robenkleene/pos-at-mouse-click (click-event)
+;;   "Print position at CLICK-EVENT."
+;;   (interactive "e")
+;;   (run-hooks 'mouse-leave-buffer-hook)
+;;   (let ((pos (cadr (event-start click-event))))
+;;     (message "%s" pos)
+;;     )
+;;   )
+
+;; (defun robenkleene/describe-char-at-mouse-click (click-event)
+;;   "`describe-char' at CLICK-EVENT."
+;;   (interactive "e")
+;;   (run-hooks 'mouse-leave-buffer-hook)
+;;   (let ((pos (cadr (event-start click-event))))
+;;     (describe-char pos)))
+
+;; (global-set-key (kbd "C-c d <down-mouse-1>")
+;;                 #'robenkleene/pos-at-mouse-click)
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
