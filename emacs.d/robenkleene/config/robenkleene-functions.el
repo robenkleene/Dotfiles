@@ -856,9 +856,15 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/open-emacs-scratch ()
-  "Open scratch file for current buffer."
+  "Open scratch buffer."
   (interactive)
   (switch-to-buffer "*scratch*")
+  )
+
+(defun robenkleene/open-emacs-messages ()
+  "Open messages buffer."
+  (interactive)
+  (switch-to-buffer "*Messages*")
   )
 
 (defun robenkleene/open-markdown-scratch ()

@@ -162,7 +162,8 @@
    `(rk-text ((t (:foreground ,gray6))))
    `(rk-text2 ((t (:foreground ,gray5))))
    `(rk-warning ((t (:foreground ,warning :underline t))))
-   `(rk-whitespace ((t (:inherit rk-warning))))
+   ;; `(rk-whitespace ((t (:inherit rk-warning))))
+   `(rk-whitespace ((t (:inherit rk-highlight-line))))
    
    
    ;;;; Syntax
