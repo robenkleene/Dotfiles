@@ -164,8 +164,7 @@
    `(rk-warning ((t (:foreground ,warning :underline t))))
    ;; `(rk-whitespace ((t (:inherit rk-warning))))
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
-   
-   
+
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
