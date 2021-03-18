@@ -36,6 +36,9 @@
 (global-set-key (kbd "M-s-<up>") 'windmove-up)
 (global-set-key (kbd "M-s-<left>") 'windmove-left)
 (global-set-key (kbd "M-s-<right>") 'windmove-right)
+(global-set-key (kbd "C-s-e") 'forward-sentence)
+(global-set-key (kbd "C-s-a") 'backward-sentence)
+
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)

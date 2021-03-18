@@ -125,6 +125,19 @@
   'robenkleene/mac-bindings-minor-mode-map)
 (robenkleene/mac-bindings-minor-mode 1)
 
+(defun robenkleene/search-selection (beg end)
+  "Search for BEG END text."
+  (interactive "r")
+  (let (
+        (selection (buffer-substring-no-properties beg end))
+        )
+    (deactivate-mark)
+    (isearch-mode t nil nil nil)
+    (isearch-yank-string selection)
+    )
+  )
+(define-key global-map (kbd "s-e") 'robenkleene/search-selection)
+
 (provide 'robenkleene-mac)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
