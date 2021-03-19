@@ -379,6 +379,7 @@
    `(markdown-blockquote-face ((t (:inherit rk-text2))))
    `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
    `(markdown-list-face ((t (:inherit rk-text2))))
+   `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
    ;; `(markdown-italic-face ((t (:inherit rk-text2))))
 
    ;;;; show-paren
