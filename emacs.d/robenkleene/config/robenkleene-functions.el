@@ -19,7 +19,7 @@
   )
 
 (defun robenkleene/open-in-writer ()
-  "Open file in Xcode."
+  "Open file in iA Writer."
   (interactive)
   (if (buffer-file-name)
       (shell-command (concat "open -a \"iA Writer.app\" "
@@ -28,11 +28,11 @@
     )
   )
 
-(defun robenkleene/open-in-writer ()
-  "Open file in Xcode."
+(defun robenkleene/open-in-repla ()
+  "Open file in Repla."
   (interactive)
   (if (buffer-file-name)
-      (shell-command (concat "open -a \"iA Writer.app\" "
+      (shell-command (concat "repla "
                              (shell-quote-argument buffer-file-name))
                      )
     )
