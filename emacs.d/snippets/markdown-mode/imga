@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: imga
+# key: imga
+# --
+[![${1:Title}](${2:path/to/image})]($2)
