@@ -106,8 +106,12 @@
 
 (define-key key-translation-map (kbd "<s-up>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<s-down>") (kbd "<C-down>"))
-(define-key key-translation-map (kbd "<s-left>") (kbd "<C-left>"))
-(define-key key-translation-map (kbd "<s-right>") (kbd "<C-right>"))
+;; (define-key key-translation-map (kbd "<s-left>") (kbd "<C-left>"))
+;; (define-key key-translation-map (kbd "<s-right>") (kbd "<C-right>"))
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "<s-left>") 'beginning-of-visual-line)
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "<s-right>") 'end-of-visual-line)
 
 ;; Quit Emacs if we delete the last frame, which is already what happens if we
 ;; click the red X to close the window
