@@ -647,9 +647,14 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/forward-block-select (&optional n)
   "Move to next text block N."
   (interactive "p")
+
+  ;; (setq this-command-keys-shift-translated t)
   (if (not (use-region-p))
       (set-mark-command nil)
     )
+
+  ;; For some reason this messes up the selection so hitting `⇧↑' restarts the
+  ;; region
   (if (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" 1)
       (forward-line -1))
   )
@@ -668,6 +673,10 @@ Otherwise, call `backward-kill-word'."
   (if (not (use-region-p))
       (set-mark-command nil)
     )
+
+  ;; (setq this-command-keys-shift-translated t)
+  ;; For some reason this messes up the selection so hitting `⇧↓' restarts the
+  ;; region
   (if (re-search-backward "\n[\t\n ]*\n+" nil "NOERROR")
       (forward-line)
     )
