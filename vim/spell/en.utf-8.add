@@ -163,3 +163,6 @@ symbolicate
 timecode
 SMPTE
 iterable
+barline
+barlines
+tuplet
