@@ -92,6 +92,8 @@
   'robenkleene/ido-z)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
   'robenkleene/reveal-in-finder)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
+  'robenkleene/open-terminal-window)
 ;; Leader Map
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
 ;;   robenkleene/leader-map)
