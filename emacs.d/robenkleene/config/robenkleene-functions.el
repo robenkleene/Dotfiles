@@ -28,6 +28,16 @@
     )
   )
 
+(defun robenkleene/open-in-nova ()
+  "Open file in Nova."
+  (interactive)
+  (if (buffer-file-name)
+      (shell-command (concat "nova "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    )
+  )
+
 (defun robenkleene/open-in-repla ()
   "Open file in Repla."
   (interactive)
