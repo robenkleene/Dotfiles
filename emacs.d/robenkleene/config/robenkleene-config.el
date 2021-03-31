@@ -69,6 +69,8 @@
   (add-hook hook 'hl-line-mode
             ))
 
+;; Fill Column
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Allow `narrow-to-region'
 (put 'narrow-to-region 'disabled nil)

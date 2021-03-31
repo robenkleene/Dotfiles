@@ -196,6 +196,7 @@
    `(line-number ((t (:inherit rk-comment))))
    `(match ((t (:inherit rk-match))))
    `(secondary-selection ((t (:inherit rk-highlight :foreground nil))))
+   `(fill-column-indicator ((t (:foreground ,highlight-line-bg))))
 
    ;;;; Text
    `(bold ((t (:inherit rk-bold))))
