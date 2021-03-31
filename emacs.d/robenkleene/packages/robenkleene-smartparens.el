@@ -4,7 +4,7 @@
 
 (eval-when-compile (require 'use-package))
 (use-package smartparens
-  :demand
+  :commands (smartparens-strict-mode smartparens-mode)
   :bind
   ("C-M-]" . sp-select-next-thing)
   (:map smartparens-strict-mode-map
@@ -18,9 +18,10 @@
                                      (if (eq this-command 'eval-expression)
                                          (smartparens-mode)))
             )
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
   :config
   (require 'smartparens-config)
-  (push 'markdown-mode sp-ignore-modes-list)
+  ;; (push 'markdown-mode sp-ignore-modes-list)
   ;; (smartparens-global-mode 1)
   (sp-use-smartparens-bindings)
   (defvar sp-highlight-pair-overlay)
@@ -29,7 +30,6 @@
   (setq sp-highlight-pair-overlay nil)
   (setq sp-highlight-wrap-overlay nil)
   (setq sp-highlight-wrap-tag-overlay nil)
-  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
   ;; Unsetting these lets selecting by word work
   (define-key smartparens-mode-map (kbd "M-F") nil)
   (define-key smartparens-mode-map (kbd "M-B") nil)
