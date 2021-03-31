@@ -49,13 +49,17 @@
 ;; (set-face-background 'default "#392248")
 ;; (set-face-background 'fringe "#392248")
 
+;; Darker purple
+(set-face-background 'default "#301B42")
+(set-face-background 'fringe "#301B42")
+
 ;; Nova purple
 ;; (set-face-background 'default "#221932")
 ;; (set-face-background 'fringe "#221932")
 
 ;; Nova inspired purple
-(set-face-background 'default "#291B3B")
-(set-face-background 'fringe "#291B3B")
+;; (set-face-background 'default "#291B3B")
+;; (set-face-background 'fringe "#291B3B")
 
 ;; Word spacing isn't great with Fira Code
 (set-face-attribute 'default nil :font "Fira Code-12:Retina")
