@@ -37,9 +37,6 @@
 (require 'robenkleene-macrostep)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-page-break-lines)
-;; This breaks company mode
-;; (require 'robenkleene-fill-column-indicator)
-;; This breaks default undo via `C-g C-_'
 (require 'robenkleene-iedit)
 (require 'robenkleene-anzu)
 (require 'robenkleene-company)
