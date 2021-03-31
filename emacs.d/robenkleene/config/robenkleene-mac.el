@@ -88,8 +88,9 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-G")
   'isearch-repeat-backward)
-
-
+(define-key robenkleene/mac-bindings-minor-mode-map
+  (kbd "s-F")
+  'robenkleene/rg)
 
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "<s-up>")
