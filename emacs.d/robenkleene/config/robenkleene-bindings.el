@@ -17,6 +17,7 @@
                           (interactive)
                           (split-window-horizontally)
                           (other-window 1)))
+(global-set-key (kbd "C-`") 'other-window)
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
 ;; access history in shell modes
@@ -38,7 +39,6 @@
 (global-set-key (kbd "M-s-<right>") 'windmove-right)
 (global-set-key (kbd "C-s-e") 'forward-sentence)
 (global-set-key (kbd "C-s-a") 'backward-sentence)
-
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
