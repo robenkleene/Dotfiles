@@ -6,7 +6,7 @@
  '(ansi-color-names-vector
    ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
  '(package-selected-packages
-   '(expand-region undo-tree super-save flimenu multiple-cursors move-text lsp-ui lsp-mode imenu-list literate-calc-mode nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex pbcopy jade-mode aggressive-indent))
+   '(undo-tree super-save flimenu move-text lsp-ui lsp-mode imenu-list literate-calc-mode nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex pbcopy jade-mode aggressive-indent))
  '(vc-annotate-color-map
    '((20 . "#F92672")
      (40 . "#CF4F1F")
