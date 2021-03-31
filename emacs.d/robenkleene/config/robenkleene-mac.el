@@ -47,6 +47,9 @@
   (kbd "M-s-n")
   'robenkleene/empty-frame)
 
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "<s-escape>")
+  'robenkleene/other-window-eshell)
+
 ;; Mac Style new window
 ;; (define-key robenkleene/mac-bindings-minor-mode-map
 ;;   (kbd "s-n")
