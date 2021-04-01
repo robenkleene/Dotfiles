@@ -362,6 +362,11 @@
    `(magit-section-highlight ((t (:background nil))))
    ;; `(magit-item-highlight ((t (:inherit magit-item-highlight :background nil))))
 
+   ;; Diff HL
+   `(diff-hl-insert ((t (:inherit rk-diff-add))))
+   `(diff-hl-change ((t (:inherit rk-diff-change))))
+   `(diff-hl-delete ((t (:inherit rk-diff-remove))))
+
    ;;;;; Region
    `(magit-diff-hunk-region ((t (:inherit region))))
 
