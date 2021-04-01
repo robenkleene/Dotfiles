@@ -46,12 +46,12 @@
 ;; (set-face-background 'fringe "#241B31")
 
 ;; Nice purple
-;; (set-face-background 'default "#392248")
-;; (set-face-background 'fringe "#392248")
+(set-face-background 'default "#392248")
+(set-face-background 'fringe "#392248")
 
 ;; Darker purple
-(set-face-background 'default "#301B42")
-(set-face-background 'fringe "#301B42")
+;; (set-face-background 'default "#301B42")
+;; (set-face-background 'fringe "#301B42")
 
 ;; Nova purple
 ;; (set-face-background 'default "#221932")
