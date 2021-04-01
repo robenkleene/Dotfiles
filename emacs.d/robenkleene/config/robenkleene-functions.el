@@ -987,6 +987,22 @@ Otherwise, call `backward-kill-word'."
     (find-file file))
   )
 
+(defun robenkleene/comment ()
+  "Like `comment-dwim', but toggle comment if cursor is not at end of line."
+  (interactive)
+  (if (region-active-p)
+      (comment-dwim nil)
+    (let (($lbp (line-beginning-position))
+          ($lep (line-end-position)))
+      (if (eq $lbp $lep)
+          (progn
+            (comment-dwim nil))
+        (if (eq (point) $lep)
+            (progn
+              (comment-dwim nil))
+          (progn
+            (comment-or-uncomment-region $lbp $lep)
+            (forward-line )))))))
 
 ;; (defun robenkleene/pos-at-mouse-click (click-event)
 ;;   "Print position at CLICK-EVENT."

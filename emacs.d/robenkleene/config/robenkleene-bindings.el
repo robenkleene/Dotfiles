@@ -81,6 +81,8 @@
 
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
   'robenkleene/ido-quick-open)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
+  'robenkleene/comment)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
   'robenkleene/ido-quick-developer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
