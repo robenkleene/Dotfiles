@@ -130,11 +130,18 @@
 
 ;; Quit Emacs if we delete the last frame, which is already what happens if we
 ;; click the red X to close the window
-;; (defun delete-frame-or-kill-emacs ()
+;; (defun robenkleene/delete-frame-or-kill-emacs ()
 ;;   "Delete the selected frame.  If the last one, kill Emacs."
 ;;   (interactive)
 ;;   (condition-case nil (delete-frame) (error (kill-emacs))))
-;; (global-set-key [remap delete-frame] 'delete-frame-or-kill-emacs)
+;; (global-set-key [remap delete-frame] 'robenkleene/delete-frame-or-kill-emacs)
+;; Modification of the above that just hides Emacs if there's only one frame
+(defun robenkleene/delete-frame-or-hide-emacs ()
+  "Delete the selected frame.  If the last one, kill Emacs."
+  (interactive)
+  (condition-case nil (delete-frame) (error (ns-hide-emacs 1))))
+(global-set-key [remap delete-frame] 'robenkleene/delete-frame-or-hide-emacs)
+
 
 ;; Mode
 (define-minor-mode robenkleene/mac-bindings-minor-mode
