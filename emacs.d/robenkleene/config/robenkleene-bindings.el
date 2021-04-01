@@ -2,82 +2,80 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Add a second leader key
-;; (define-key key-translation-map (kbd "M-o") (kbd "C-c"))
-;; These should be added only for terminal modes
-;; (define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
-;; (define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
+;; Maps
+(defvar robenkleene/bindings-minor-mode-map (make-keymap))
+(defvar robenkleene/leader-map (make-keymap))
 
 ;; Automatically switch focus to new splits
-(global-set-key "\C-x2" (lambda ()
+(define-key robenkleene/bindings-minor-mode-map "\C-x2" (lambda ()
                           (interactive)
                           (split-window-vertically)
                           (other-window 1)))
-(global-set-key "\C-x3" (lambda ()
+(define-key robenkleene/bindings-minor-mode-map "\C-x3" (lambda ()
                           (interactive)
                           (split-window-horizontally)
                           (other-window 1)))
-(global-set-key (kbd "C-`") 'other-window)
-(global-set-key (kbd "C-~") (lambda () (interactive) (other-window -1)))
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-`") 'other-window)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-~")
+  (lambda () (interactive) (other-window -1)))
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
 ;; access history in shell modes
-(global-set-key (kbd "M-n") 'next-error)
-(global-set-key (kbd "M-p") 'previous-error)
-(global-set-key (kbd "M-s-v")
-                (lambda () (interactive)
-                  (split-window-horizontally) (other-window 1)))
-(global-set-key (kbd "M-s-s")
-                (lambda () (interactive)
-                  (split-window-vertically) (other-window 1)))
-(global-set-key (kbd "M-s-c") 'delete-window)
-(global-set-key (kbd "M-s-o") 'delete-other-windows)
-(global-set-key (kbd "M-s-<down>") 'windmove-down)
-(global-set-key (kbd "M-s-<up>") 'windmove-up)
-(global-set-key (kbd "M-s-<left>") 'windmove-left)
-(global-set-key (kbd "M-s-<right>") 'windmove-right)
-(global-set-key (kbd "C-s-e") 'forward-sentence)
-(global-set-key (kbd "C-s-a") 'backward-sentence)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
 
 ;; Better Defaults
-;; (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x C-r") 'robenkleene/ido-recent-find-file)
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "M-%") 'query-replace-regexp)
-(global-set-key (kbd "C-M-%") 'query-replace)
-(global-set-key (kbd "C-w") 'robenkleene/kill-region-or-backward-word)
-(global-set-key (kbd "C-x c") 'save-buffers-kill-terminal)
-(global-set-key (kbd "C-h C-f") 'find-function)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-b")
+  'ibuffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-r")
+  'robenkleene/ido-recent-find-file)
+
+;; Add a second leader key
+;; (define-key key-translation-map (kbd "M-o") (kbd "C-c"))
+;; These should be added only for terminal modes
+;; (define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
+;; (define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
+
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-s")
+  'isearch-forward-regexp)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-r")
+  'isearch-backward-regexp)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
+  'query-replace-regexp)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
+  'robenkleene/kill-region-or-backward-word)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x c")
+  'save-buffers-kill-terminal)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-h C-f") 'find-function)
 
 ;; These commands are part of a general strategy of mapping the command key to
 ;; the control key in Emacs
-(global-set-key (kbd "<C-up>") 'beginning-of-buffer)
-(global-set-key (kbd "<C-down>") 'end-of-buffer)
-(global-set-key (kbd "<C-left>") 'move-beginning-of-line)
-(global-set-key (kbd "<C-right>") 'move-end-of-line)
+(define-key robenkleene/bindings-minor-mode-map (kbd "<C-up>")
+  'beginning-of-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "<C-down>") 'end-of-buffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "<C-left>")
+  'move-beginning-of-line)
+(define-key robenkleene/bindings-minor-mode-map (kbd "<C-right>")
+  'move-end-of-line)
 
-(global-set-key (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
-(global-set-key (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
-(global-set-key (kbd "<C-s-left>") 'winner-undo)
-(global-set-key (kbd "<C-s-right>") 'winner-redo)
-
-;; Maps
-(defvar robenkleene/bindings-minor-mode-map (make-keymap))
-(defvar robenkleene/leader-map (make-keymap))
+(define-key robenkleene/bindings-minor-mode-map
+  (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
+(define-key robenkleene/bindings-minor-mode-map
+  (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
+(define-key robenkleene/bindings-minor-mode-map
+  (kbd "<C-s-left>") 'winner-undo)
+(define-key robenkleene/bindings-minor-mode-map
+  (kbd "<C-s-right>") 'winner-redo)
 
 ;; General
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'imenu)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-i") 'next-buffer)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o") 'previous-buffer)
 
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
   'robenkleene/ido-quick-open)
@@ -124,8 +122,6 @@
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
         'robenkleene/backward-block-select)
       ))
-;; (global-set-key (kbd "M-]") 'forward-paragraph)
-;; (global-set-key (kbd "M-[") 'backward-paragraph)
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
@@ -134,10 +130,7 @@
 (define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
-;; (define-key robenkleene/leader-map (kbd "i") 'next-buffer)
-;; (define-key robenkleene/leader-map (kbd "o") 'previous-buffer)
 (define-key robenkleene/leader-map (kbd "l") 'occur)
-;; (define-key robenkleene/leader-map (kbd "o i") 'robenkleene/edit-init)
 (define-key robenkleene/leader-map (kbd "M-e")
   'robenkleene/ido-recursive-insert-file)
 (define-key robenkleene/leader-map (kbd "M-c")

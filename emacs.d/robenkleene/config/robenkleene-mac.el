@@ -95,18 +95,29 @@
   (kbd "s-F")
   'robenkleene/rg)
 
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "<s-up>")
-;;   'beginning-of-buffer)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "<s-down>")
-;;   'end-of-buffer)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "<s-left>")
-;;   'move-beginning-of-line)
-;; (define-key robenkleene/mac-bindings-minor-mode-map
-;;   (kbd "<s-right>")
-;;   'move-end-of-line)
+
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-s-v")
+  (lambda () (interactive)
+    (split-window-horizontally) (other-window 1)))
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-s-s")
+  (lambda () (interactive)
+    (split-window-vertically) (other-window 1)))
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-c")
+  'delete-window)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-o")
+  'delete-other-windows)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<down>")
+  'windmove-down)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<up>")
+  'windmove-up)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<left>")
+  'windmove-left)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<right>")
+  'windmove-right)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-s-e")
+  'forward-sentence)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "C-s-a")
+  'backward-sentence)
 
 (define-key key-translation-map (kbd "<s-up>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<s-down>") (kbd "<C-down>"))
