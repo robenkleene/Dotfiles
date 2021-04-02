@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+;; These use `global-set-key' so more specific minor modes can override them,
+;; e.g., the minibuffer
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+
 ;; Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
 (defvar robenkleene/leader-map (make-keymap))
@@ -40,10 +45,6 @@
 ;; (define-key key-translation-map (kbd "<M-up>") (kbd "M-p"))
 ;; (define-key key-translation-map (kbd "<M-down>") (kbd "M-n"))
 
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-s")
-  'isearch-forward-regexp)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-r")
-  'isearch-backward-regexp)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
