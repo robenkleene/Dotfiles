@@ -109,4 +109,5 @@ function fish_sync_abbr
     abbr -a hm 'history merge'
     abbr -a re 'grep'
     abbr -a rei 'grep -i'
+    abbr -a adbl 'adb -d logcat -s Unity'
 end

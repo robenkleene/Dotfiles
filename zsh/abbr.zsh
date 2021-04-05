@@ -173,6 +173,9 @@ abbreviations=(
 # Grep
 're' 'grep'
 'rei' 'grep -i'
+
+# Grep
+'adbl' 'adb -d logcat -s Unity'
 )
 
 # These abbreviations work everywhere
