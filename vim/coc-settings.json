@@ -22,7 +22,8 @@
     "objc": "clang-format",
     "swift": "swiftformat",
     "python": "autopep8",
-    "sh": "shfmt"
+    "sh": "shfmt",
+    "xml": "xmllint"
   },
   "diagnostic-languageserver.formatters": {
     "clang-format": {
@@ -39,6 +40,10 @@
     "shfmt": {
       "command": "shfmt",
       "args": ["-i", "2", "-ci"]
+    },
+    "xmllint": {
+      "command": "xmllint",
+      "args": ["--format", "-"]
     }
   },
   "typescript.suggestionActions.enabled": false,
