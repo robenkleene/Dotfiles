@@ -103,7 +103,10 @@
   (lambda () (interactive) (other-window -1)))
 
 ;; Window Types
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-{") 'other-window)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-l")
+  'robenkleene/open-emacs-scratch)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-u")
+  'robenkleene/new-empty)
 
 ;; Misc
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-v")
