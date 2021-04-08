@@ -30,6 +30,8 @@
 
 ;; Mac
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
+
+;; Comment
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-/") 'comment-dwim)
 
 ;; (define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-v") 'yank)
@@ -95,6 +97,10 @@
   (kbd "s-F")
   'robenkleene/rg)
 
+;; VS Code Style
+(define-key robenkleene/bindings-minor-mode-map (kbd "s-{") 'other-window)
+(define-key robenkleene/bindings-minor-mode-map (kbd "s-}")
+  (lambda () (interactive) (other-window -1)))
 
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-s-v")
   (lambda () (interactive)
