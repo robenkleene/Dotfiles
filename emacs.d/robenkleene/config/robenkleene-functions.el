@@ -68,18 +68,19 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/empty-frame ()
   "Open a new frame with a buffer named Untitled."
   (interactive)
-  (let ((buffer (generate-new-buffer "untitled")))
-    (set-buffer buffer)
-    (text-mode)
-    (switch-to-buffer-other-frame buffer)
-    )
+  (switch-to-buffer-other-frame (robenkleene/new-empty-buffer))
   )
 
 (defun robenkleene/new-empty-buffer ()
   "Return a new empty buffer."
-  (let ((buffer (generate-new-buffer "untitled")))
+  (let*
+      ;; Set the `default-directory' so that's where autosaves will go
+      ((default-directory (concat user-emacs-directory "untitled"))
+       (buffer (generate-new-buffer "untitled"))
+       )
     (set-buffer buffer)
     (text-mode)
+    (auto-save-mode)
     buffer
     )
   )
