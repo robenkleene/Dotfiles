@@ -207,7 +207,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/open-home ()
-  "Open inbox directory."
+  "Open home directory."
   (interactive)
   (find-file "~/")
   )
@@ -886,6 +886,14 @@ Otherwise, call `backward-kill-word'."
    (shell-command-to-string (concat "~/.bin/inbox_new "
                                     (shell-quote-argument title))
                             ))
+  )
+
+(defun robenkleene/save-in-inbox ()
+  "Open scratch buffer."
+  (interactive)
+  (let ((default-directory "~/Documents/Text/Notes/Inbox/"))
+    (call-interactively 'save-buffer)
+    )
   )
 
 (defun robenkleene/open-emacs-scratch ()
