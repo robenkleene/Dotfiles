@@ -70,9 +70,11 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-Z")
   'undo-tree-redo)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-q")
-  'save-buffers-kill-terminal)
+;; Disable quit
+(global-unset-key (kbd "s-q"))
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "s-q")
+;;   'save-buffers-kill-terminal)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-c")
   'kill-ring-save)
