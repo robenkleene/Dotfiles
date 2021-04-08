@@ -8,6 +8,13 @@ if [[ -f ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
 
+# Emacs Tramp mode sets the term to dumb
+case "$TERM" in
+  "dumb")
+  return
+  ;;
+esac
+
 # Setup
 source ~/.zsh/settings.zsh
 # Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
