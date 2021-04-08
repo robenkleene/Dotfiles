@@ -98,14 +98,18 @@
   'robenkleene/rg)
 
 ;; VS Code Style
-(define-key robenkleene/bindings-minor-mode-map (kbd "s-{") 'other-window)
-(define-key robenkleene/bindings-minor-mode-map (kbd "s-}")
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-{") 'other-window)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-}")
   (lambda () (interactive) (other-window -1)))
 
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-s-v")
+;; Window Types
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-{") 'other-window)
+
+;; Misc
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-v")
   (lambda () (interactive)
     (split-window-horizontally) (other-window 1)))
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-s-s")
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-s")
   (lambda () (interactive)
     (split-window-vertically) (other-window 1)))
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-c")
