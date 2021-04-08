@@ -75,24 +75,32 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/new-empty ()
-  "Open a new buffer named Untitled."
-  (interactive)
+(defun robenkleene/new-empty-buffer ()
+  "Return a new empty buffer."
   (let ((buffer (generate-new-buffer "untitled")))
     (set-buffer buffer)
     (text-mode)
-    (switch-to-buffer buffer)
+    buffer
     )
+  )
+
+(defun robenkleene/new-empty ()
+  "Open a new buffer named Untitled."
+  (interactive)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  )
+
+(defun robenkleene/new-clipboard ()
+  "Open a new buffer named Untitled."
+  (interactive)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  (yank)
   )
 
 (defun robenkleene/new-empty-other-window ()
   "Open a new window with a buffer named Untitled."
   (interactive)
-  (let ((buffer (generate-new-buffer "untitled")))
-    (set-buffer buffer)
-    (text-mode)
-    (switch-to-buffer-other-window buffer)
-    )
+  (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
   )
 
 (defun robenkleene/reveal-in-finder ()
