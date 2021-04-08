@@ -312,6 +312,9 @@
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
 
+;; Tramp
+(setq tramp-default-method "ssh")
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
