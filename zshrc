@@ -9,11 +9,9 @@ if [[ -f ~/.zshrc_local ]]; then
 fi
 
 # Emacs Tramp mode sets the term to dumb
-case "$TERM" in
-  "dumb")
+if [[ $TERM == "dumb" ]]; then
   return
-  ;;
-esac
+fi
 
 # Setup
 source ~/.zsh/settings.zsh
