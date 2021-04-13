@@ -30,6 +30,9 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
+(define-key robenkleene/bindings-minor-mode-map
+  (kbd "M-C-d") 'robenkleene/archive-and-delete)
+
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
