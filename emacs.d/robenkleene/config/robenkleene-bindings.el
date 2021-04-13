@@ -21,7 +21,10 @@
     (interactive)
     (split-window-horizontally)
     (other-window 1)))
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-`") 'other-window)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-`") 'other-window)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-`")
+  'robenkleene/other-window-shell)
+
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-~")
   (lambda () (interactive) (other-window -1)))
 
