@@ -38,6 +38,7 @@
 (defalias 'nova 'robenkleene/open-in-nova)
 (defalias 'repla 'robenkleene/open-in-repla)
 (defalias 'vscode 'robenkleene/open-in-vscode)
+(defalias 'work 'robenkleene/open-work)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

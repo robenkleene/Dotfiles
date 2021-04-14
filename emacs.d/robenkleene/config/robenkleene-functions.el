@@ -856,6 +856,12 @@ Otherwise, call `backward-kill-word'."
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
+(defun robenkleene/open-work ()
+  "Open inbox directory."
+  (interactive)
+  (find-file "~/Dropbox/Work/Text/")
+  )
+
 (defun robenkleene/open-dropbox-projects ()
   "Open Dropbox projects directory."
   (interactive)
