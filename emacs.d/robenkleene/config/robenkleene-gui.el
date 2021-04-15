@@ -111,7 +111,7 @@
 
 ;; Transparency
 ;; For testing the current window
-;; (set-frame-parameter (selected-frame) 'alpha '(98 98))
+;; (set-frame-parameter (selected-frame) 'alpha '(97 97))
 ;; The actual setting
 (add-to-list 'default-frame-alist '(alpha 98 98))
 
