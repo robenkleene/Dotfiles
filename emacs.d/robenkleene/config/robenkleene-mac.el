@@ -105,8 +105,8 @@
   'robenkleene/rg)
 
 ;; VS Code Style
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-{") 'other-window)
-(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-}")
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-}") 'other-window)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "s-{")
   (lambda () (interactive) (other-window -1)))
 
 ;; Window Types
