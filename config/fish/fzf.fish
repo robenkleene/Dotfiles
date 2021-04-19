@@ -35,6 +35,8 @@ function _robenkleene-fzf-cd-widget
     commandline -f repaint
 end
 bind \ec _robenkleene-fzf-cd-widget
+# Visual Studio Code prints this character for this binding
+bind ç _robenkleene-fzf-cd-widget
 
 function _robenkleene-fzf-z-widget
     set -l cmd "fasd -Rdl"
@@ -97,6 +99,8 @@ function _robenkleene-fzf-commands-widget
     commandline -f repaint
 end
 bind \ex _robenkleene-fzf-commands-widget
+# Visual Studio Code prints this character for this binding
+bind ≈ _robenkleene-fzf-commands-widget
 
 function _robenkleene-fzf-developer-widget
     # set -l cmd "fd --type d . ~/Developer"
@@ -117,6 +121,8 @@ function _robenkleene-fzf-developer-widget
     commandline -f repaint
 end
 bind \eg _robenkleene-fzf-developer-widget
+# Visual Studio Code prints this character for this binding
+bind © _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
     set -l cmd "fd --type d . ~/Text ~/Documentation"
@@ -136,6 +142,8 @@ function _robenkleene-fzf-quick-widget
     commandline -f repaint
 end
 bind \eo _robenkleene-fzf-quick-widget
+# Visual Studio Code prints this character for this binding
+bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
     set -l cmd "fd --type f . ~/Text ~/Documentation"

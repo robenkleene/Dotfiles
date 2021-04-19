@@ -61,6 +61,8 @@ _fzf_cd_widget() {
 }
 zle -N _fzf_cd_widget
 bindkey '\ec' _fzf_cd_widget
+# Visual Studio Code prints this character for this binding
+bindkey 'ç' _fzf_cd_widget
 
 _fzf_editor_widget() {
   setopt localoptions pipefail 2> /dev/null
@@ -178,6 +180,8 @@ _fzf_developer_widget() {
 }
 zle -N _fzf_developer_widget
 bindkey '\eg' _fzf_developer_widget
+# Visual Studio Code prints this character for this binding
+bindkey '©' _fzf_developer_widget
 
 _fzf_quick_widget() {
   setopt localoptions pipefail 2> /dev/null
@@ -210,6 +214,8 @@ _fzf_quick_widget() {
 }
 zle -N _fzf_quick_widget
 bindkey '\eo' _fzf_quick_widget
+# Visual Studio Code prints this character for this binding
+bindkey 'ø' _fzf_quick_widget
 
 _fzf_quick_files_widget() {
   setopt localoptions pipefail 2> /dev/null
@@ -268,3 +274,5 @@ _fzf_command_widget() {
 }
 zle     -N   _fzf_command_widget
 bindkey '\ex' _fzf_command_widget
+# Visual Studio Code prints this character for this binding
+bindkey '≈' _fzf_command_widget
