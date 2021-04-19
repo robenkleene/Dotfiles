@@ -47,6 +47,11 @@ else
   fi
 fi
 
+# Support user homebrew install
+if [[ -d "$HOME/.brew/bin" ]]; then
+  path=(~/.brew/bin $path[@])
+fi
+
 # Editor
 export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
