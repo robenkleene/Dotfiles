@@ -12,6 +12,11 @@ function fish_set_user_paths
             set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
     end
 
+    # Support local homebrew install
+    if test -e ~/.brew/bin
+        set -U fish_user_paths ~/.brew/bin $fish_user_paths
+    end
+
     # Node
     set -U fish_user_paths ~/.nvm/versions/node/v13.12.0/bin $fish_user_paths
 
