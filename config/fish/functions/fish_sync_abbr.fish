@@ -7,7 +7,6 @@ function fish_sync_abbr
 
     abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
-    abbr -a z "zsh"
     abbr -a vd "$VIM_COMMAND -d"
     abbr -a or 'open -R'
     abbr -a orm 'open README.md'
