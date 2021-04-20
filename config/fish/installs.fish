@@ -22,6 +22,9 @@ end
 # right now.
 switch (uname)
     case Darwin
+        if test -d ~/.brew/
+            set -gx CHRUBY_ROOT ~/.brew/
+        end
         source ~/.config/fish/vendor/chruby/chruby.fish
         source ~/.config/fish/vendor/chruby/auto.fish
         chruby ruby-2.5.3
