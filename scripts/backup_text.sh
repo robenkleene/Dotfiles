@@ -21,7 +21,7 @@ while getopts ":mh" option; do
   esac
 done
 
-backup_root_directory=~/Dropbox/Archive/Text/
+backup_root_directory=~/Archive/Text/
 today=$(date +%Y-%B-%d)
 backup_directory=$backup_root_directory$today
 mkdir -p "$backup_directory"

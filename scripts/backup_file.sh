@@ -2,7 +2,7 @@
 
 set -e
 
-backup_root_directory=~/Dropbox/Archive/Text/
+backup_root_directory=~/Archive/Text/
 
 for filepath in "$@"; do
   filepath=$filepath
