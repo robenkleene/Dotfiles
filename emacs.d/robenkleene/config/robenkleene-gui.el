@@ -12,7 +12,7 @@
         (expand-file-name "~/.nvm/versions/node/v11.4.0/bin")
         (expand-file-name "~/.rubies/ruby-2.5.3/bin")
         (expand-file-name "~/.rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/bin")
-        (expand-file-name "~/Library/Python/3.7/bin")
+        (expand-file-name "~/Library/Python/3.9/bin")
         )
        ))
   (setenv "PATH" (mapconcat
