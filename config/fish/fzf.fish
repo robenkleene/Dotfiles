@@ -56,6 +56,8 @@ function _robenkleene-fzf-z-widget
     commandline -f repaint
 end
 bind \ez _robenkleene-fzf-z-widget
+# Mosh sometimes prints this character for this binding
+bind Ω _robenkleene-fzf-z-widget
 
 function _robenkleene-fzf-edit-widget
     if not string match --regex --quiet "^$HOME\/.+" $PWD
