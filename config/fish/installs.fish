@@ -27,7 +27,7 @@ switch (uname)
         end
         source ~/.config/fish/vendor/chruby/chruby.fish
         source ~/.config/fish/vendor/chruby/auto.fish
-        chruby ruby-2.5.3
+        # chruby ruby-2.5.3
 end
 
 # llvm
