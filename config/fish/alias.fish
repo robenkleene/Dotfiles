@@ -28,8 +28,9 @@ alias o='open_custom'
 alias q='vim_grep'
 alias l='less'
 alias rg='rg_custom'
-alias u='ssh_git_pull_all'
+alias u='egit -u'
 alias ut='ssh_git_pull_all -t'
+alias ua='ssh_git_pull_all'
 alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 
 # `ssh`
