@@ -24,8 +24,7 @@ while getopts ":Hsh" option; do
 done
 
 if [[ "$use_https" == "true" ]]; then
-  sed 's/git@/https\:\/\//g' | perl -pe 's|(https\://.*?)/|\1:.git|'
-  # | perl -pe 's|(git@.*?)/|\1:|'
+  sed 's/git@/https\:\/\//g' | perl -pe 's|(https\://.*?):|\1/|'
 else
   sed 's/^https\:\/\//git@/' | perl -pe 's|(git@.*?)/|\1:|'
 fi
