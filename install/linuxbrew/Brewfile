@@ -1,0 +1,66 @@
+# Usage:
+# Install bundle:
+# brew tap homebrew/bundle
+# Install brews:
+# brew bundle
+# Remove everything else (add `--force` to execute):
+# brew bundle cleanup
+# brew bundle cleanup --force
+
+# Shell
+brew 'git'
+brew 'tig'
+brew 'tree'
+brew 'tmux'
+brew 'fasd'
+brew 'ripgrep'
+# Installation of `fd`, `bat`, and `weechat` is failing
+brew 'fd'
+brew 'bat'
+# Support for `lesskey`
+brew 'less'
+brew 'ncdu'
+
+# Editor
+brew 'aspell', args: ['with-lang-en']
+# Head version of `ctags` contains support for Objective-C
+brew 'ctags', args: ['HEAD']
+# Emacs fails to install for some reason, but don't comment this out otherwise
+# it will appear in cleanup
+brew 'emacs'
+brew 'vim'
+brew 'editorconfig'
+brew 'sbcl'
+brew 'neofetch'
+# NeoVim
+# tap 'neovim/neovim'
+# brew 'neovim'
+brew 'fish'
+brew 'hub'
+brew 'gh'
+
+# Languages
+# JavaScript
+# Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
+# Instead install `nvm` directly.
+# Ruby
+brew 'chruby'
+brew 'ruby-install'
+# Python
+# This is needed by NeoVim
+brew 'python'
+# Shell
+brew 'shfmt'
+brew 'shellcheck'
+# Rust
+brew 'binutils'
+brew 'libssh2'
+brew 'patchelf'
+# C
+brew 'valgrind'
+
+# Games
+brew 'nethack'
+
+# hub
+brew 'util-linux'

@@ -34,6 +34,9 @@ for file in *; do
   if [[ $file == "scripts" ]]; then
     continue
   fi
+  if [[ $file == "install" ]]; then
+    continue
+  fi
   if [[ $file == "tags" || $file == "TAGS" ]]; then
     continue
   fi

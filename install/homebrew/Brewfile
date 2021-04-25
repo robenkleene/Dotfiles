@@ -1,0 +1,212 @@
+# Shell
+brew 'zsh'
+brew 'git'
+brew 'tig'
+brew 'tree'
+brew 'tmux'
+brew 'fasd'
+brew 'ripgrep'
+brew 'fd'
+brew 'bat'
+brew 'mas'
+# Support for `lesskey`
+brew 'less'
+brew 'wget'
+
+# Editor
+brew 'aspell'
+# Head version of `ctags` contains support for Objective-C
+brew 'ctags', args: ['HEAD']
+brew 'vim'
+brew 'editorconfig'
+brew 'sbcl'
+brew 'fish'
+brew "neofetch"
+# NeoVim
+# tap 'neovim/neovim'
+# brew 'neovim'
+
+# Mail
+# brew 'isync'
+# brew 'msmtp'
+# brew 'mutt'
+# brew 'contacts'
+
+# Languages
+# JavaScript
+# Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
+# Instead install `nvm` directly.
+# Ruby
+brew 'chruby'
+brew 'ruby-install'
+# Shell
+brew 'shfmt'
+brew 'shellcheck'
+# Swift
+brew 'carthage'
+brew 'swiftlint'
+brew 'swiftformat'
+brew 'fastlane'
+# Objective-C
+brew 'clang-format'
+# Python
+# This is needed by NeoVim
+# brew 'python'
+# HTML
+brew 'tidy-html5'
+# mysql
+brew 'mysql'
+# MIDI
+brew 'midicsv'
+# C
+tap 'LouisBrunner/valgrind'
+brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
+
+# Special
+brew 'pandoc'
+brew 's3cmd'
+brew 'gnu-typist'
+brew 'figlet'
+brew 'w3m'
+# `renameutils` is for `qmv` rename in `$EDITOR` utility
+brew 'renameutils'
+brew 'hub'
+brew 'gh'
+brew 'cloc'
+brew 'id3lib'
+brew 'ledger'
+brew 'ncdu'
+brew 'mosh'
+brew 'youtube-dl'
+brew 'wdiff'
+brew 'mitmproxy'
+
+# Railwaycat
+# tap 'railwaycat/emacsmacport'
+# brew 'emacs-mac'
+# The `with-no-frame-refocus` options on this version of Emacs fixes the issue
+# of switching spaces when the last Emacs window on a space closes.
+# Note after installing run `brew info emacs-plus` for the command to symlink
+# to applications
+tap 'd12frosted/emacs-plus'
+brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
+
+# Cask GUI Apps
+tap 'homebrew/cask'
+# cask 'emacs'
+cask 'blender'
+cask 'wireshark'
+cask 'anki'
+cask 'processing'
+cask 'fontforge'
+
+# Animated GIFs, `gifify` dependencies
+brew 'ffmpeg'
+brew 'imagemagick'
+
+# Ergodox & Planck
+brew 'libelf'
+brew 'libusb-compat'
+brew 'libftdi0'
+brew 'libhid'
+brew 'avrdude'
+brew 'bootloadhid'
+brew 'dfu-programmer'
+brew 'dfu-util'
+brew 'isl'
+brew 'libmpc'
+brew 'teensy_loader_cli'
+brew 'osx-cross/arm/arm-gcc-bin@8'
+brew 'osx-cross/avr/avr-binutils'
+brew 'osx-cross/avr/avr-gcc@8'
+brew 'qmk/qmk/mdloader'
+brew 'qmk/qmk/qmk'
+tap 'osx-cross/avr'
+tap 'osx-cross/arm'
+tap 'qmk/qmk'
+
+# Unity
+# These packages are required to get autocomplete working with the C# VS Code
+# extension from Microsoft
+# (This also requires `"omnisharp.useGlobalMono": "always"` be set in VS Code's
+# preferences)
+brew 'mono'
+brew 'dotnet'
+# Mono & Dotnet dependencies
+brew 'brotli'
+brew 'libssh2'
+brew 'zstd'
+brew 'libmetalink'
+brew 'openldap'
+brew 'curl'
+
+# tap 'heroku/brew'
+# brew 'heroku-node'
+# brew 'heroku'
+
+# Games
+brew 'nethack'
+
+# Dependencies
+
+# Common Dependencies
+brew 'openssl'
+brew 'pcre'
+brew 'readline'
+brew 'xz'
+brew 'gmp'
+brew 'libffi'
+
+# Vim, NeoVim
+brew 'lua'
+# Ruby
+brew 'libyaml'
+# Tmux
+brew 'libevent'
+# renameutils
+brew 'coreutils'
+# ffmpeg
+brew 'libpng'
+brew 'freetype'
+brew 'fontconfig'
+brew 'gettext'
+brew 'x264'
+brew 'lame'
+brew 'xvid'
+# imagemagick
+brew 'libtool'
+brew 'jpeg'
+brew 'libtiff'
+# NeoVim
+# brew 'libtermkey'
+# brew 'libuv'
+# brew 'libvterm'
+# brew 'msgpack'
+# brew 'unibilium'
+# Legder
+brew 'boost'
+# w3m
+brew 'bdw-gc'
+# mutt
+# brew 'adns'
+# brew 'libassuan'
+# brew 'npth'
+# brew 'gpgme'
+# brew 'tokyo-cabinet'
+# brew 'libksba'
+# brew 'pinentry'
+# brew 'libusb'
+# brew 'gnupg'
+# isync
+brew 'berkeley-db'
+# mysql
+brew 'openssl@1.1'
+# mkvtoolnix / mkvtomp4
+brew 'fmt'
+brew 'guile'
+brew 'libmagic'
+brew 'mkvtoolnix'
+brew 'gpac'
+brew 'libebml'
+brew 'libmatroska'
+brew 'mkvtomp4'
