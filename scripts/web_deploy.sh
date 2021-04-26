@@ -130,7 +130,7 @@ fi
 
 is_host_defined() {
   local host="$1"
-  # Hack to determine if a hsot is defined, in the `ssh -G` output, the
+  # Hack to determine if a host is defined, in the `ssh -G` output, the
   # hostname will match the provided parameter if the host is not defined. If
   # it is defined, the hostname will be the IP address or URL.
   if ! ssh -G "$host" | grep "^hostname ${host}$" >/dev/null; then
