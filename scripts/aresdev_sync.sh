@@ -12,7 +12,7 @@ if [[ ! $PWD = $HOME/* ]]; then
   exit 1
 fi
 
-local_path=$(pwd -P);
+local_path=$(pwd -P)/;
 # Remove home
 local_subpath=${local_path#"$HOME"}
 
