@@ -68,11 +68,11 @@ fi
 
 server_path="$host:$local_path"
 if [[ "$pull" == "true" ]]; then
-  eval "rsync --omit-dir-times --verbose --archive $dry_run --delete \
+  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
     \"$local_path\" \
     \"$server_path\""
 else
-  eval "rsync --omit-dir-times --verbose --archive $dry_run --delete \
+  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
     \"$local_path\" \
     \"$server_path\""
 fi
