@@ -2,6 +2,16 @@
 
 set -euo pipefail
 
+if ! [ -d ".git" ]; then
+  echo "Only run from a git root" >&2
+  exit 1
+fi
+
+if [[ ! $PWD = $HOME/* ]]; then
+  echo "Only use in a subdirectory of home" >&2
+  exit 1
+fi
+
 local_path=$(pwd -P);
 
 force="false"
