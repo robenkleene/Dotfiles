@@ -71,10 +71,10 @@ fi
 server_path="$host:/home/robenkleene$local_subpath"
 if [[ "$pull" == "true" ]]; then
   eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
-\"$local_path\" \
-\"$server_path\""
+\"$server_path\" \
+\"$local_path\""
 else
-  echo "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
+  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
 \"$local_path\" \
 \"$server_path\""
 fi
