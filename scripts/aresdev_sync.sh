@@ -5,10 +5,11 @@ set -euo pipefail
 local_path=$(pwd -P);
 
 force="false"
-while getopts ":p:fh" option; do
+pull="false"
+while getopts ":ufh" option; do
   case "$option" in
-    p)
-      file_path="$OPTARG"
+    u)
+      pull="true"
       ;;
     f)
       force="true"
@@ -56,6 +57,12 @@ if ! is_host_defined "$host"; then
 fi
 
 server_path="$host:$local_path"
-eval "rsync --omit-dir-times --verbose --archive $dry_run --delete \
-  $local_path \
-  $server_path"
+if [[ "$pull" == "true" ]]; then
+  eval "rsync --omit-dir-times --verbose --archive $dry_run --delete \
+    $local_path \
+    $server_path"
+else
+  eval "rsync --omit-dir-times --verbose --archive $dry_run --delete \
+    $server_path \
+    $local_path"
+fi
