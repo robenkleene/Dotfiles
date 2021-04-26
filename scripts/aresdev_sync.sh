@@ -13,6 +13,8 @@ if [[ ! $PWD = $HOME/* ]]; then
 fi
 
 local_path=$(pwd -P);
+# Remove home
+local_subpath=${local_path#"$HOME"}
 
 force="false"
 pull="false"
@@ -66,13 +68,13 @@ if ! is_host_defined "$host"; then
   exit 1
 fi
 
-server_path="$host:$local_path"
+server_path="$host:/home/robenkleene$local_subpath"
 if [[ "$pull" == "true" ]]; then
   eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
-    \"$local_path\" \
-    \"$server_path\""
+\"$local_path\" \
+\"$server_path\""
 else
-  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
-    \"$local_path\" \
-    \"$server_path\""
+  echo "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
+\"$local_path\" \
+\"$server_path\""
 fi
