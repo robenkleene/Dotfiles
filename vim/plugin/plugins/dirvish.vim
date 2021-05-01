@@ -85,7 +85,12 @@ function! s:SetupRemoveCommandOnFile() abort
 endfunction
 
 " Default to hidden
-call <SID>ToggleHidden()
+" This causes hidden directories to fail, e.g., if you edit a path in a hidden
+" directory like:
+" `.github/workflows/ci.yml`
+" And then hit `-` to enter Dirvish, you'll have an empty window instead of
+" the directories contents
+" call <SID>ToggleHidden()
 
 " This makes it easier to yank what is expected
 let g:dirvish_relative_paths = 1
