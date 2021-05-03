@@ -69,12 +69,13 @@ if ! is_host_defined "$host"; then
 fi
 
 server_path="$host:/home/robenkleene$local_subpath"
+# Never add --delete because that will delete ignored files
 if [[ "$pull" == "true" ]]; then
-  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
+  eval "rsync -c --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run \
 \"$server_path\" \
 \"$local_path\""
 else
-  eval "rsync --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run --delete \
+  eval "rsync -c --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run \
 \"$local_path\" \
 \"$server_path\""
 fi
