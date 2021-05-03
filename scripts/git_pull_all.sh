@@ -28,21 +28,26 @@ if [[ "$text_only" == "false" ]]; then
 fi
 cd "$HOME/Developer/Dotfiles/scripts" && ./install.sh
 
-cd "$HOME/Developer/Settings/Source Control/Directories/Text" &&
-  ./compare.sh
-if [[ "$(uname)" = "Darwin" ]]; then
-  cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
-    ./compare.sh mac.txt
-  cd "$HOME/Developer/Settings/Source Control/Directories/Max/" &&
+if [[ -z "$PUBLIC_EGIT" ]]; then
+  cd "$HOME/Developer/Settings/Source Control/Directories/Text" &&
     ./compare.sh
-elif [[ "$(uname)" = "Linux" ]]; then
-  cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
-    ./compare.sh linux.txt
 fi
-
 ~/.bin/sgitt -u
 if [[ "$text_only" == "true" ]]; then
   exit 0
+fi
+
+
+if [[ -z "$PUBLIC_EGIT" ]]; then
+  if [[ "$(uname)" = "Darwin" ]]; then
+    cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
+      ./compare.sh mac.txt
+    cd "$HOME/Developer/Settings/Source Control/Directories/Max/" &&
+      ./compare.sh
+  elif [[ "$(uname)" = "Linux" ]]; then
+    cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
+      ./compare.sh linux.txt
+  fi
 fi
 ~/.bin/sgitp -u
 if [[ "$(uname)" = "Darwin" ]]; then
