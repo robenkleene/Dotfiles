@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -eo
 
 text_only="false"
 while getopts ":th" option; do
@@ -28,27 +28,13 @@ if [[ "$text_only" == "false" ]]; then
 fi
 cd "$HOME/Developer/Dotfiles/scripts" && ./install.sh
 
-if [[ -z "$PUBLIC_EGIT" ]]; then
-  cd "$HOME/Developer/Settings/Source Control/Directories/Text" &&
-    ./compare.sh
-fi
+~/.bin/check_repos
+
 ~/.bin/sgitt -u
 if [[ "$text_only" == "true" ]]; then
   exit 0
 fi
 
-
-if [[ -z "$PUBLIC_EGIT" ]]; then
-  if [[ "$(uname)" = "Darwin" ]]; then
-    cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
-      ./compare.sh mac.txt
-    cd "$HOME/Developer/Settings/Source Control/Directories/Max/" &&
-      ./compare.sh
-  elif [[ "$(uname)" = "Linux" ]]; then
-    cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
-      ./compare.sh linux.txt
-  fi
-fi
 ~/.bin/sgitp -u
 if [[ "$(uname)" = "Darwin" ]]; then
   ~/.bin/sgitm -u
