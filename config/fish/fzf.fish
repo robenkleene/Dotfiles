@@ -165,3 +165,4 @@ function _robenkleene-fzf-quick-files-widget
     commandline -f repaint
 end
 bind \eO _robenkleene-fzf-quick-files-widget
+bind \co _robenkleene-fzf-quick-files-widget

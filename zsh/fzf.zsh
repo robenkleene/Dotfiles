@@ -248,6 +248,7 @@ _fzf_quick_files_widget() {
 }
 zle -N _fzf_quick_files_widget
 bindkey '\eO' _fzf_quick_files_widget
+bindkey '^o' _fzf_quick_files_widget
 
 _fzf_command_widget() {
   setopt localoptions pipefail 2> /dev/null
