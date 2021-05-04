@@ -4,6 +4,9 @@ function fish_sync_abbr
     for a in (abbr --list)
         abbr --erase $a
     end
+    if test -f ~/.local_abbr.fish
+        source ~/.local_abbr.fish
+    end
 
     abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
