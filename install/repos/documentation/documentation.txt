@@ -1,0 +1,5 @@
+git@github.com:robenkleene/audio-references.git "./audio-references"
+git@github.com:robenkleene/design-references.git "./design-references"
+git@github.com:robenkleene/development-references.git "./development-references"
+git@github.com:robenkleene/software-references.git "./software-references"
+git@github.com:robenkleene/web-references.git "./web-references"
