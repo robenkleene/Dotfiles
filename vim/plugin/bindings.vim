@@ -85,8 +85,8 @@ nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 
 " Default
-nnoremap <leader>O :silent !open "%:p"<CR>\|:redraw!<CR>
-nnoremap <M-O> :silent !open "%:p"<CR>\|:redraw!<CR>
+nnoremap <localleader>O :silent !open "%:p"<CR>\|:redraw!<CR>
+" nnoremap <M-O> :silent !open "%:p"<CR>\|:redraw!<CR>
 
 " `make`
 nnoremap <leader>m :make<CR>
@@ -220,9 +220,9 @@ vnoremap <C-w><C-p> gT
 " Trying just quiting becaue that seems like what we usually want.
 " nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>
 " nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>
-nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
-nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
-nnoremap <leader>C :!code <C-r>=shellescape(getcwd())<CR><CR>\|:bd<CR>:QuitIfNoBuffers<CR>
+" nnoremap <localleader>O :!open "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
+" nnoremap <localleader>C :!code "%:p"<CR>\|:bd<CR>:QuitIfNoBuffers<CR>
+" nnoremap <leader>C :!code <C-r>=shellescape(getcwd())<CR><CR>\|:bd<CR>:QuitIfNoBuffers<CR>
 
 " Quickfix
 nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>

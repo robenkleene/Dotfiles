@@ -21,10 +21,12 @@ nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-o> :Quick<CR>
 nnoremap <M-O> :QuickFiles<CR>
+nnoremap <leader>O :QuickFiles<CR>
 " For some reason the above binding doesn't work, but the below one does
 " This can't be used because Vim can't distinguish between `<M-O>` and the
 " arrow keys
 " nnoremap O :QuickFiles<CR>
+" nnoremap  :QuickFiles<CR>
 nnoremap <M-g> :Developer<CR>
 " nnoremap <M-r> :Zvim<CR>
 nnoremap <leader>r :History<CR>
