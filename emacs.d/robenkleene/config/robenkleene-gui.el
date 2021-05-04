@@ -5,7 +5,7 @@
 ;; Set path
 (let ((paths-to-prepend
        (list
-        "/usr/local/bin"
+        "~/.brew/bin"
         (expand-file-name "~/.bin")
         (expand-file-name "~/.fzf/bin")
         (expand-file-name "~/.gem/ruby/2.5.3/bin")

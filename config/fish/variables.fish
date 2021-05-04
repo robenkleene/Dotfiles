@@ -28,7 +28,10 @@ set -gx ALTERNATE_EDITOR ""
 set -gx EMACS_COMMAND "emacsclient -nw"
 
 # Homebrew
-set -gx HOMEBREW_NO_ANALYTICS 1
+if type -q $program
+    set -gx HOMEBREW_DIR (brew --prefix)
+    set -gx HOMEBREW_NO_ANALYTICS 1
+end
 set -gx VAGRANT_HOME ~/Documents/VMs/Vagrant/vagrant.d
 set -gx VAGRANT_VMWARE_CLONE_DIRECTORY ~/Documents/VMs/Vagrant/
 
