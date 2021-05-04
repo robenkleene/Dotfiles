@@ -17,9 +17,6 @@ export EMACS_COMMAND='emacsclient -nw'
 # EMACS_COMMAND='emacs'
 export ACK_COMMAND=rg
 
-export HOMEBREW_DIR
-HOMEBREW_DIR=$(brew --prefix)
-
 # Don't load the rest of this file if it has already been sourced in particular
   # this was added to prevent the path from being re-ordered when a `zsh`
   # subshell is started (`vim` does this).
@@ -46,6 +43,10 @@ else
   typeset -U path
   path=(~/.fzf/bin ~/.bin ~/.brew/bin $path[@])
 fi
+
+# Homebrew
+export HOMEBREW_DIR
+HOMEBREW_DIR=$(brew --prefix)
 
 # Editor
 export VISUAL="$VIM_COMMAND"
