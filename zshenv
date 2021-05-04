@@ -17,6 +17,9 @@ export EMACS_COMMAND='emacsclient -nw'
 # EMACS_COMMAND='emacs'
 export ACK_COMMAND=rg
 
+export HOMEBREW_DIR
+HOMEBREW_DIR=$(brew --prefix)
+
 # Don't load the rest of this file if it has already been sourced in particular
   # this was added to prevent the path from being re-ordered when a `zsh`
   # subshell is started (`vim` does this).
@@ -37,19 +40,11 @@ export CLICOLOR=1
 
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
   # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.fzf/bin:~/.bin:/usr/local/bin:$PATH
+  export PATH=~/.fzf/bin:~/.bin:~/.brew/bin:$PATH
 else
   # This method of setting the path prevents duplicate entries.
   typeset -U path
-  path=(~/.fzf/bin ~/.bin /usr/local/bin $path[@])
-  if [[ "$(uname)" = "Linux" ]]; then
-    path=(/home/linuxbrew/.linuxbrew/bin $path[@])
-  fi
-fi
-
-# Support user homebrew install
-if [[ -d "$HOME/.brew/bin" ]]; then
-  path=(~/.brew/bin $path[@])
+  path=(~/.fzf/bin ~/.bin ~/.brew/bin $path[@])
 fi
 
 # Editor

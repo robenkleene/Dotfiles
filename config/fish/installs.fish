@@ -18,17 +18,11 @@ if command -sq fasd
 end
 
 # Ruby
-# This should really be on all platforms, but it's only configured on Darwin
-# right now.
-switch (uname)
-    case Darwin
-        if test -d ~/.brew/
-            set -gx CHRUBY_ROOT ~/.brew/
-        end
-        source ~/.config/fish/vendor/chruby/chruby.fish
-        source ~/.config/fish/vendor/chruby/auto.fish
-        # chruby ruby-2.5.3
-end
+set -gx CHRUBY_ROOT $HOMEBREW_DIR
+source ~/.config/fish/vendor/chruby/chruby.fish
+source ~/.config/fish/vendor/chruby/auto.fish
+# Not sure why this isn't working
+# chruby ruby-2.5.3
 
 # llvm
 switch (uname)

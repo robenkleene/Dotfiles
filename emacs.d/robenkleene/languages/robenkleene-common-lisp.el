@@ -7,7 +7,7 @@
 (use-package slime
   :defer t
   :config
-  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  (setq inferior-lisp-program "~/.brew/bin/sbcl")
   ;; (define-key robenkleene/lisp-eval-leader-map (kbd "b") (lambda ()
   ;;                                                          (interactive)
   ;;                                                          (slime-load-file (buffer-file-name))

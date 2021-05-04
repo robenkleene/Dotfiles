@@ -4,18 +4,10 @@ if [[ $(whence -p "fasd") ]]; then
 fi
 
 # chruby
-if [[ "$(uname)" = "Darwin" ]]; then
-  if [[ -f /usr/local/share/chruby/chruby.sh ]]; then
-    source /usr/local/share/chruby/chruby.sh
-    source /usr/local/share/chruby/auto.sh
-    chruby ruby-2.5.3
-  fi
-elif [[ "$(uname)" = "Linux" ]]; then
-  if [[ -f /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh ]]; then
-    source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh
-    source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/auto.sh
-    chruby ruby-2.5.3
-  fi
+if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
+  source "$HOMEBREW_DIR/share/chruby/chruby.sh"
+  source "$HOMEBREW_DIR/share/chruby/auto.sh"
+  chruby ruby-2.5.3
 fi
 
 # Python
