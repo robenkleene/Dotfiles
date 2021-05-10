@@ -48,6 +48,7 @@
   },
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
+  // Disable the built-in CSS checking which isn't compatible with SCSS
   "css.enable": false,
   "python.analysis.typeCheckingMode": "off",
   "python.linting.pylintUseMinimalCheckers": false,
