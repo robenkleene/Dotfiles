@@ -48,6 +48,7 @@
   },
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
+  "css.enable": false,
   "python.analysis.typeCheckingMode": "off",
   "python.linting.pylintUseMinimalCheckers": false,
   "python.linting.pylintEnabled": true,
