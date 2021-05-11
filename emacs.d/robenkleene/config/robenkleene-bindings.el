@@ -151,6 +151,8 @@
   'robenkleene/rg-source-control)
 ;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
 (define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
+(define-key robenkleene/leader-map (kbd "O")
+  'robenkleene/ido-quick-open-file)
 (define-key robenkleene/leader-map (kbd "u") 'robenkleene/new-empty)
 (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
