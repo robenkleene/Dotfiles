@@ -50,6 +50,9 @@
                            )
                    (cdr mode-line-buffer-identification)))))
 
+;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
+;; files.
+(setq enable-recursive-minibuffers t)
 
 ;; Allow `C-i' and `<TAB>' to be bound separately
 (setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
