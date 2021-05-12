@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+
+if ! tmux info &> /dev/null; then
+  # tmux isn't running
+  exit 0
+fi
+
 # `^bash$` matches this script running
 commands=$(tmux list-panes -a -F "#{pane_current_command}" | grep --extended-regexp --invert-match "^zsh$|^bash$|^fish$")
 status=$?
