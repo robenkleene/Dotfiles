@@ -49,6 +49,7 @@ alias tmgs='tmux_git_status'
 alias tmssdw='tmux_session_save_dropbox_work'
 alias tmba='tmux_banner_all'
 alias tmn='tmux_shell_new'
+alias tmr='tmux_restart'
 
 # `make`
 alias mt='make test'
