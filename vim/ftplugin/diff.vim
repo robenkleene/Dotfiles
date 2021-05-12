@@ -1,8 +1,7 @@
-" Allows diff-based folding, note that this isn't available by default because
-" that would conflict with vimdiff collapsing unchanged parts of files.
-" To switch to this method of folding:
-" set fdm=expr
 setlocal foldexpr=DiffFoldLevel()
+setlocal foldmethod=expr
+setlocal foldenable
+setlocal foldlevel=1
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
 
@@ -18,3 +17,6 @@ function! DiffFoldLevel()
         return '='
     endif
 endfunction
+
+nnoremap <tab> za
+
