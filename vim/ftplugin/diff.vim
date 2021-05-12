@@ -1,13 +1,8 @@
-if (exists("b:did_ftplugin"))
-    finish
-endif
-let b:did_ftplugin = 1
-
-setlocal nomodeline formatoptions-=croq formatoptions+=tl
-setlocal foldmethod=expr
+" Allows diff-based folding, note that this isn't available by default because
+" that would conflict with vimdiff collapsing unchanged parts of files.
+" To switch to this method of folding:
+" set fdm=expr
 setlocal foldexpr=DiffFoldLevel()
-setlocal foldcolumn=3
-
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
 
@@ -23,4 +18,3 @@ function! DiffFoldLevel()
         return '='
     endif
 endfunction
-
