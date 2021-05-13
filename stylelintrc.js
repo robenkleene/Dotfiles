@@ -1,9 +1,6 @@
 "use strict";
 
 module.exports = {
-  "plugins": [
-    "stylelint-scss"
-  ],
   rules: {
     // Interferes with SCSS
     // "at-rule-no-unknown": true,

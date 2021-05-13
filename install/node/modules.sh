@@ -20,7 +20,6 @@ modules=(
 'htmlhint'
 # CSS, SASS & LESS
 'stylelint'
-'stylelint-scss'
 
 # JavaScript
 'npm-check-updates'
