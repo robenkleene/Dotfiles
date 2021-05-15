@@ -1,9 +1,10 @@
 "use strict";
 
+// Copy of `stylelint-config-recommended`
+
 module.exports = {
   rules: {
-    // Interferes with SCSS
-    // "at-rule-no-unknown": true,
+    "at-rule-no-unknown": true,
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "comment-no-empty": true,
@@ -29,6 +30,8 @@ module.exports = {
     "no-empty-source": true,
     "no-extra-semicolons": true,
     "no-invalid-double-slash-comments": true,
+    "no-invalid-position-at-import-rule": true,
+    "no-irregular-whitespace": true,
     "property-no-unknown": true,
     "selector-pseudo-class-no-unknown": true,
     "selector-pseudo-element-no-unknown": true,
