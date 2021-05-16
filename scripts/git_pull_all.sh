@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -eo
+set -e
+set -o pipefail
 
 text_only="false"
 while getopts ":th" option; do
