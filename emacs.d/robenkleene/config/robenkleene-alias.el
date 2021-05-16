@@ -39,6 +39,7 @@
 (defalias 'repla 'robenkleene/open-in-repla)
 (defalias 'vscode 'robenkleene/open-in-vscode)
 (defalias 'work 'robenkleene/open-work)
+(defalias 'archive 'robenkleene/open-archive)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

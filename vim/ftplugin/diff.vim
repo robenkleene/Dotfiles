@@ -1,6 +1,6 @@
 setlocal foldexpr=DiffFoldLevel()
 setlocal foldmethod=expr
-setlocal foldenable
+" setlocal foldenable
 setlocal foldlevel=1
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
@@ -19,4 +19,4 @@ function! DiffFoldLevel()
 endfunction
 
 nnoremap <tab> za
-
+nnoremap <return> :set foldenable!<CR>

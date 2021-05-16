@@ -880,6 +880,12 @@ Otherwise, call `backward-kill-word'."
   (find-file "~/Text/journal/journal.md")
   )
 
+(defun robenkleene/open-archive ()
+  "Open inbox directory."
+  (interactive)
+  (find-file "~/Archive/")
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "
