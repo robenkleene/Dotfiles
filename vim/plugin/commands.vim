@@ -4,6 +4,7 @@ command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
 
 " Make the current buffer a grep buffer
 command! GrepBuffer :call commands#GrepBuffer()
+command! DiffBuffer :call commands#DiffBuffer()
 command! ScratchBuffer :call commands#ScratchBuffer()
 command! DisableBackgrounding :call commands#DisableBackgrounding()
 

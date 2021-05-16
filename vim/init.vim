@@ -115,6 +115,9 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json'}
 Plug 'dag/vim-fish', { 'for': 'fish' }
+" User is dependency of diff
+Plug 'kana/vim-gf-user',  { 'for': 'diff' }
+Plug 'kana/vim-gf-diff',  { 'for': 'diff' }
 call plug#end()
 
 autocmd VimEnter *

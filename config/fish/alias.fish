@@ -26,6 +26,7 @@ alias foi='fish_edit_config'
 alias t='terminal_cd'
 alias o='open_custom'
 alias q='vim_grep'
+alias d='vim_diff'
 alias l='less'
 alias rg='rg_custom'
 alias u='ssh_start && egit -u'
@@ -69,7 +70,7 @@ alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
 
 # `vim_cd`
-alias d='vim_cd'
+alias c='vim_cd'
 
 # `vim`
 alias vsr='vim_session_restore_auto'

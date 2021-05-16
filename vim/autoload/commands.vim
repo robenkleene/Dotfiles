@@ -12,6 +12,10 @@ function! commands#GrepBuffer() abort
   endif
 endfunction
 
+function! commands#DiffBuffer() abort
+  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+endfunction
+
 function! commands#ScratchBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
 endfunction
