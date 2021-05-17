@@ -106,9 +106,6 @@ abbreviations=(
 'gm' 'git merge'
 'gms' 'git merge --squash'
 'gmt' 'git mergetool'
-# `gp`: `git push`
-'gp' 'git push'
-'gpt' 'git push --tags'
 # `gr`: `git rebase`
 'gr' 'git rebase'
 'grc' 'git rebase --continue'
@@ -130,9 +127,6 @@ abbreviations=(
 'gstp' 'git stash pop'
 # `gt`: `git tag`
 'gt' 'git tag'
-# `gu`: `git pull`
-'gu' 'git pull'
-'gur' 'git pull -r'
 'glg' 'git log -p -G'
 'gdns' 'git diff --name-status'
 'gsh' 'git show'

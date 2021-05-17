@@ -104,6 +104,10 @@ alias ptv='echo $test_variable'
 alias ctv='safepaste | read test_variable || true'
 
 # `git`
+alias gu='git_pull'
+alias gp='git_push'
+alias gur='git_pull -r'
+alias gpt='git_push --tags'
 alias gbp='git_branch_print'
 alias gblpr='git_branch_list_pruned'
 alias grv='git_revision_print'
