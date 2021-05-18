@@ -905,6 +905,7 @@ Otherwise, call `backward-kill-word'."
   (interactive)
   (let ((default-directory "~/Documents/Text/Notes/Inbox/"))
     (call-interactively 'save-buffer)
+    (setq-local default-directory (file-name-directory buffer-file-name))
     )
   )
 

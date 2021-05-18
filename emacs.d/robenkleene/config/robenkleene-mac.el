@@ -86,9 +86,6 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "<C-s-268632070>")
   'toggle-frame-fullscreen)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-i")
-  'robenkleene/save-in-inbox)
 
 ;; Search
 (define-key robenkleene/mac-bindings-minor-mode-map
