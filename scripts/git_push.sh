@@ -7,4 +7,4 @@ if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
   ssh-add
 fi
 
-git pull "$@"
+git push "$@"
