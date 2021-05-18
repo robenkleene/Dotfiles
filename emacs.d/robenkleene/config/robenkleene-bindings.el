@@ -174,6 +174,8 @@
   'isearch-forward-symbol-at-point)
 (define-key robenkleene/leader-map (kbd "b")
   'ido-switch-buffer)
+(define-key robenkleene/leader-map (kbd "u")
+  'robenkleene/new-empty)
 
 ;; Window Management
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
