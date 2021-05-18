@@ -23,7 +23,6 @@ modules=(
 
 # JavaScript
 'npm-check-updates'
-'gulp-cli'
 'eslint'
 # Express
 'express-generator'
