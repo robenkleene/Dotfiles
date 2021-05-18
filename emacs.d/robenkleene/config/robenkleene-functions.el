@@ -903,10 +903,8 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/save-in-inbox ()
   "Open scratch buffer."
   (interactive)
-  (let ((default-directory "~/Documents/Text/Notes/Inbox/"))
-    (call-interactively 'save-buffer)
-    (setq-local default-directory (file-name-directory buffer-file-name))
-    )
+  (setq-local default-directory "~/Documents/Text/Notes/Inbox/")
+  (call-interactively 'save-buffer)
   )
 
 (defun robenkleene/open-emacs-scratch ()
