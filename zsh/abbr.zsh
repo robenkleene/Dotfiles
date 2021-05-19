@@ -37,6 +37,9 @@ abbreviations=(
 'tmsn' 'tmux new'
 'tmd' 'tmux detach'
 
+# `mosh`
+'mdv' 'mosh aresdev -- tmux attach'
+
 # `zsh`
 'wf' 'whence -f'
 
