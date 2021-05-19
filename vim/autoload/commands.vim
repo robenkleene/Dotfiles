@@ -13,7 +13,7 @@ function! commands#GrepBuffer() abort
 endfunction
 
 function! commands#DiffBuffer() abort
-  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  execute "setlocal buftype=nofile bufhidden=hide noswapfile foldenable"
 endfunction
 
 function! commands#ScratchBuffer() abort
