@@ -1,0 +1,4 @@
+# key: date
+# name: date
+# --
+`(shell-command-to-string "date +%F | tr -d '\n'")`
