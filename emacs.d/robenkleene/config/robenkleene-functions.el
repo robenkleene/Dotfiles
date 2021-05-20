@@ -909,7 +909,7 @@ Otherwise, call `backward-kill-word'."
                                              (point-max)
                                              "~/.bin/markdown_filename"
                                              standard-output))))    
-    (write-file (concat filename ".md"))
+    (write-file (concat filename ".md") t)
     )
   ;; (call-interactively 'save-buffer)
   )
