@@ -35,10 +35,11 @@ while (<>) {
 }
 
 if ($title) {
-	print "$title\n"; # \n at the end makes the output cleaner (outputs a % otherwise)
+	print "$title"; # \n at the end makes the output cleaner (outputs a % otherwise)
 } else {
-	print STDERR "No valid filename found\n";
-    exit 1;
+	print "Untitled"
+	# print STDERR "No valid filename found\n";
+	# exit 1;
 }
 
 

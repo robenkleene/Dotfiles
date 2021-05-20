@@ -901,10 +901,17 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/save-in-inbox ()
-  "Open scratch buffer."
+  "Save in inbox."
   (interactive)
   (setq-local default-directory "~/Documents/Text/Notes/Inbox/")
-  (call-interactively 'save-buffer)
+  (let ((filename (with-output-to-string
+                    (shell-command-on-region (point-min)
+                                             (point-max)
+                                             "~/.bin/markdown_filename"
+                                             standard-output))))    
+    (write-file (concat filename ".md"))
+    )
+  ;; (call-interactively 'save-buffer)
   )
 
 (defun robenkleene/open-emacs-scratch ()
