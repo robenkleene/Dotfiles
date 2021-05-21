@@ -883,7 +883,7 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/open-archive ()
   "Open inbox directory."
   (interactive)
-  (find-file "~/Archive/")
+  (find-file "~/Archive/Text/")
   )
 
 (defun robenkleene/new-inbox-document (title)
