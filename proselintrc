@@ -1,5 +1,6 @@
 {
   "checks": {
+    "misc.but": false,
     "typography.symbols": false,
     "dates_times.dates": false
   }
