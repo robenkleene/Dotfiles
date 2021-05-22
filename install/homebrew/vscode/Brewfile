@@ -1,0 +1,29 @@
+# Shell
+brew 'tig'
+brew 'tree'
+brew 'fasd'
+brew 'ripgrep'
+# Installation of `fd`, `bat`, and `weechat` is failing
+brew 'fd'
+brew 'bat'
+# Support for `lesskey`
+brew 'less'
+brew 'ncdu'
+brew 'hub'
+brew 'gh'
+
+# Languages
+# JavaScript
+# Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
+# Instead install `nvm` directly.
+# Ruby
+brew 'chruby'
+brew 'ruby-install'
+# Python
+brew 'python'
+# Shell
+brew 'shfmt'
+brew 'shellcheck'
+
+# hub
+brew 'util-linux'
