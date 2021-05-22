@@ -1,12 +1,3 @@
-# Usage:
-# Install bundle:
-# brew tap homebrew/bundle
-# Install brews:
-# brew bundle
-# Remove everything else (add `--force` to execute):
-# brew bundle cleanup
-# brew bundle cleanup --force
-
 # Shell
 brew 'git'
 brew 'tig'
