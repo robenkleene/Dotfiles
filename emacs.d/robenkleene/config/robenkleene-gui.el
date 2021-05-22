@@ -68,7 +68,8 @@
 ;; (set-face-background 'fringe "#291B3B")
 
 ;; Word spacing isn't great with Fira Code
-(set-face-attribute 'default nil :font "Fira Code-12:Retina")
+;; (set-face-attribute 'default nil :font "Fira Code-12:Retina")
+(set-face-attribute 'default nil :font "JetBrains Mono-12:Regular")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
 ;; Doesn't support italics
