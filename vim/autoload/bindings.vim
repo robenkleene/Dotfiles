@@ -8,27 +8,37 @@
 " Yank Markdown Links
 function! bindings#LinkSourceControlYank() abort
   let @" = system('~/.bin/link_source_control_markdown --url-only '.fnameescape(expand('%:p')))
-  let @* = @"
+  if exists("@*")
+    let @* = @"
+  endif
   echo "Yanked git link"
 endfunction
 function! bindings#LinkSourceControlYankLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_markdown --url-only --line-number '.line('.').' '.fnameescape(expand('%:p')))
-  let @* = @"
+  if exists("@*")
+    let @* = @"
+  endif
   echo "Yanked git link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYank() abort
   let @" = system('~/.bin/link_source_control_markdown '.fnameescape(expand('%:p')))
-  let @* = @"
+  if exists("@*")
+    let @* = @"
+  endif
   echo "Yanked git Markdown link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYankLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_markdown --line-number '.line('.').' '.fnameescape(expand('%:p')))
-  let @* = @"
+  if exists("@*")
+    let @* = @"
+  endif
   echo "Yanked git Markdown link"
 endfunction
 function! bindings#LinkSourceControlMarkdownYankQuotedLines() range abort
   let @" = system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\n')).' | '.'~/.bin/link_source_control_markdown --quote --line-number '.line('.').' '.fnameescape(expand('%:p')))
-  let @* = @"
+  if exists("@*")
+    let @* = @"
+  endif
   echo "Yanked git Markdown link"
 endfunction
 
