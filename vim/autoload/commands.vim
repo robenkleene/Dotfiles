@@ -155,7 +155,9 @@ function! commands#NewScratch(bang, type, start, end) abort
   let l:range = a:start != 1 || a:end != line('$')
   if (l:range)
     let reg_save = @@
-    let reg_save2 = @*
+    if exists("@*")
+      let reg_save2 = @*
+    endif
     exe "silent ".a:start.",".a:end."yank"
   endif
 
@@ -180,7 +182,9 @@ function! commands#NewScratch(bang, type, start, end) abort
     exe "norm G"
     exe "silent put"
     let @@ = reg_save
-    let @* = reg_save2
+    if exists("@*")
+      let @* = reg_save2
+    endif
   endif
 endfunction
 

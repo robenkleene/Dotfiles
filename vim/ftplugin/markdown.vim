@@ -80,7 +80,9 @@ endfunction
 function! s:MarkdownTodoOperator(type, flags, visual) abort
   " `@@` is an alias for `@"`, the unnamed register
   let reg_save = @@
-  let reg_save2 = @*
+  if exists("@*")
+    let reg_save2 = @*
+  endif
   let paste_save = &paste
   set paste
 
@@ -96,6 +98,8 @@ function! s:MarkdownTodoOperator(type, flags, visual) abort
   endif
 
   let @@ = reg_save
-  let @* = reg_save2
+  if exists("@*")
+    let @* = reg_save2
+  endif
   let &paste = paste_save
 endfunction
