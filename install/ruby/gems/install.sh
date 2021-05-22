@@ -4,5 +4,5 @@ set -e
 
 gem list -i "^bundler$" >/dev/null || gem install bundler
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 bundle install --system
