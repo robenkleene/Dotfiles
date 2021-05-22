@@ -31,8 +31,6 @@ if [[ -f "$HOME/.personal" ]]; then
   export PERSONAL=1
 fi
 
-cd "$(dirname "$0")" || exit 1
-
 # Codespaces already has these files, archive the existing ones first
 function cleanup_file() {
   filename="$1"
@@ -44,6 +42,8 @@ function cleanup_file() {
 cleanup_file "$HOME/.zshrc"
 cleanup_file "$HOME/.config"
 cleanup_file "$HOME/.gitconfig"
+
+cd "$(dirname "$0")" || exit 1
 
 ./update.sh
 ./install/files/dirs.sh
