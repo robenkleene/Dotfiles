@@ -36,11 +36,11 @@ cd "$(dirname "$0")" || exit 1
 if [[ -n "$CODESPACES" ]]; then
   ./install/codespaces/setup.sh
 fi
-
 ./update.sh
+
 ./install/files/dirs.sh
-./install/files/symlinks.sh
 ./install/homebrew/install.sh
+./install/files/symlinks.sh
 ./install/node/install.sh
 ./install/ruby/install.sh
 ./install/python/install.sh
