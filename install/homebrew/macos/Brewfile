@@ -19,18 +19,9 @@ brew 'aspell'
 brew 'ctags', args: ['HEAD']
 brew 'vim'
 brew 'editorconfig'
-brew 'sbcl'
+
 brew 'fish'
 brew "neofetch"
-# NeoVim
-# tap 'neovim/neovim'
-# brew 'neovim'
-
-# Mail
-# brew 'isync'
-# brew 'msmtp'
-# brew 'mutt'
-# brew 'contacts'
 
 # Languages
 # JavaScript
@@ -49,9 +40,6 @@ brew 'swiftformat'
 brew 'fastlane'
 # Objective-C
 brew 'clang-format'
-# Python
-# This is needed by NeoVim
-# brew 'python'
 # HTML
 brew 'tidy-html5'
 # mysql
@@ -61,6 +49,8 @@ brew 'midicsv'
 # C
 tap 'LouisBrunner/valgrind'
 brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
+# Lisp
+brew 'sbcl'
 
 # Special
 brew 'pandoc'
@@ -68,8 +58,6 @@ brew 's3cmd'
 brew 'gnu-typist'
 brew 'figlet'
 brew 'w3m'
-# `renameutils` is for `qmv` rename in `$EDITOR` utility
-brew 'renameutils'
 brew 'hub'
 brew 'gh'
 brew 'cloc'
@@ -157,7 +145,7 @@ brew 'xz'
 brew 'gmp'
 brew 'libffi'
 
-# Vim, NeoVim
+# Vim
 brew 'lua'
 # Ruby
 brew 'libyaml'
@@ -177,28 +165,10 @@ brew 'xvid'
 brew 'libtool'
 brew 'jpeg'
 brew 'libtiff'
-# NeoVim
-# brew 'libtermkey'
-# brew 'libuv'
-# brew 'libvterm'
-# brew 'msgpack'
-# brew 'unibilium'
 # Legder
 brew 'boost'
 # w3m
 brew 'bdw-gc'
-# mutt
-# brew 'adns'
-# brew 'libassuan'
-# brew 'npth'
-# brew 'gpgme'
-# brew 'tokyo-cabinet'
-# brew 'libksba'
-# brew 'pinentry'
-# brew 'libusb'
-# brew 'gnupg'
-# isync
-brew 'berkeley-db'
 # mysql
 brew 'openssl@1.1'
 # mkvtoolnix / mkvtomp4
