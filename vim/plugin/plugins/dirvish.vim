@@ -56,7 +56,9 @@ endfunction
 
 function! s:SetupCommandOnFile(cmd) abort
   let reg_save = @@
-  let reg_save2 = @*
+  if exists("@*")
+    let reg_save2 = @*
+  endif
   silent exe "normal! ^yg_"
   let filename_string = @@
   let filename = fnameescape(expand(filename_string))
@@ -64,7 +66,9 @@ function! s:SetupCommandOnFile(cmd) abort
   " This doesn't use `silent` because `silent requires a `:redraw!` after
   call feedkeys(':!' . a:cmd . " " . filename . " ")
   let @@ = reg_save
-  let @* = reg_save2
+  if exists("@*")
+    let @* = reg_save2
+  endif
 endfunction
 
 function! s:SetupRemoveCommandOnFile() abort
