@@ -2,6 +2,27 @@
 
 set -euo pipefail
 
+all="false"
+while getopts ":ah" option; do
+  case "$option" in
+    a)
+      all="true"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
 cd "$(dirname "$0")" || exit 1
 
 source_dir=$(pwd -P);
@@ -34,4 +55,13 @@ for file in *; do
 done
 
 ./scripts/install.sh
+
+if [[ "$all" == "false" ]]; then
+  exit 0
+fi
+
+./install/homebrew/install.sh -c
+# ./install/node/install.sh
+# ./install/ruby/install.sh
+# ./install/python/install.sh
 

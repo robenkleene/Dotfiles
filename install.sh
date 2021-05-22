@@ -27,6 +27,10 @@ if [[ "$main" == "true" && ! -e "$HOME/.personal" ]]; then
   touch "$HOME/.personal"
 fi
 
+if [[ -f "$HOME/.personal" ]]; then
+  export PERSONAL=1
+fi
+
 cd "$(dirname "$0")" || exit 1
 
 # Codespaces already has these files, archive the existing ones first
