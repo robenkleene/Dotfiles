@@ -31,19 +31,11 @@ if [[ -f "$HOME/.personal" ]]; then
   export PERSONAL=1
 fi
 
-# Codespaces already has these files, archive the existing ones first
-function cleanup_file() {
-  filename="$1"
-  if [[ -e "$filename" && ! -L "$filename" ]]; then
-    mkdir -p "$HOME/backup"
-    mv "$filename" "$HOME/backup/"
-  fi
-}
-cleanup_file "$HOME/.zshrc"
-cleanup_file "$HOME/.config"
-cleanup_file "$HOME/.gitconfig"
-
 cd "$(dirname "$0")" || exit 1
+
+if [[ -n "$CODESPACES" ]]; then
+  ./install/codespaces/setup.sh
+fi
 
 ./update.sh
 ./install/files/dirs.sh
@@ -52,3 +44,8 @@ cd "$(dirname "$0")" || exit 1
 ./install/node/install.sh
 ./install/ruby/install.sh
 ./install/python/install.sh
+if [[ -n "$PERSONAL" ]]; then
+  ./install/repos/setup_repos.zsh
+else
+  ./install/repos/setup_repos.zsh -f -H -p
+fi
