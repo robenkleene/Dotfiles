@@ -28,7 +28,7 @@ set -gx ALTERNATE_EDITOR ""
 set -gx EMACS_COMMAND "emacsclient -nw"
 
 # Homebrew
-if type -q $program
+if type -q brew
     set -gx HOMEBREW_DIR (brew --prefix)
     set -gx HOMEBREW_NO_ANALYTICS 1
 end
