@@ -61,7 +61,7 @@ if [[ "$all" == "false" ]]; then
 fi
 
 ./install/homebrew/install.sh -c
-./install/node/install.sh
-./install/ruby/install.sh
-./install/python/install.sh
+./install/node/modules/update.sh -f
+./install/ruby/gems/update.sh -f
+./install/python/packages/update.sh -f
 
