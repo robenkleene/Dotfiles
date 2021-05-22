@@ -12,6 +12,7 @@ brew 'bat'
 brew 'mas'
 # Support for `lesskey`
 brew 'less'
+brew 'wget'
 
 # Editor
 brew 'aspell'
@@ -34,11 +35,8 @@ brew 'shellcheck'
 brew 'carthage'
 brew 'swiftlint'
 brew 'swiftformat'
-brew 'fastlane'
 # Objective-C
 brew 'clang-format'
-# mysql
-brew 'mysql'
 # MIDI
 brew 'midicsv'
 # C
@@ -49,14 +47,21 @@ brew 'sbcl'
 
 # Special
 brew 'pandoc'
+brew 's3cmd'
+brew 'gnu-typist'
+brew 'figlet'
+brew 'w3m'
 brew 'hub'
 brew 'gh'
 brew 'cloc'
+brew 'id3lib'
+brew 'ledger'
 brew 'ncdu'
 brew 'mosh'
 brew 'youtube-dl'
 brew 'wdiff'
 brew 'mitmproxy'
+brew 'neofetch'
 
 # Railwaycat
 # tap 'railwaycat/emacsmacport'
@@ -73,10 +78,34 @@ tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
 cask 'wireshark'
+cask 'anki'
+cask 'processing'
+cask 'fontforge'
 
 # Animated GIFs, `gifify` dependencies
 brew 'ffmpeg'
 brew 'imagemagick'
+
+# Ergodox & Planck
+brew 'libelf'
+brew 'libusb-compat'
+brew 'libftdi0'
+brew 'libhid'
+brew 'avrdude'
+brew 'bootloadhid'
+brew 'dfu-programmer'
+brew 'dfu-util'
+brew 'isl'
+brew 'libmpc'
+brew 'teensy_loader_cli'
+brew 'osx-cross/arm/arm-gcc-bin@8'
+brew 'osx-cross/avr/avr-binutils'
+brew 'osx-cross/avr/avr-gcc@8'
+brew 'qmk/qmk/mdloader'
+brew 'qmk/qmk/qmk'
+tap 'osx-cross/avr'
+tap 'osx-cross/arm'
+tap 'qmk/qmk'
 
 # Unity
 # These packages are required to get autocomplete working with the C# VS Code
@@ -92,6 +121,9 @@ brew 'zstd'
 brew 'libmetalink'
 brew 'openldap'
 brew 'curl'
+
+# Games
+brew 'nethack'
 
 # Dependencies
 
@@ -127,3 +159,12 @@ brew 'libtiff'
 brew 'boost'
 # w3m
 brew 'bdw-gc'
+# mkvtoolnix / mkvtomp4
+brew 'fmt'
+brew 'guile'
+brew 'libmagic'
+brew 'mkvtoolnix'
+brew 'gpac'
+brew 'libebml'
+brew 'libmatroska'
+brew 'mkvtomp4'
