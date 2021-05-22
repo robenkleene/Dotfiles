@@ -1,5 +1,6 @@
 # Shell
 brew 'zsh'
+brew 'fish'
 brew 'git'
 brew 'tig'
 brew 'tree'
@@ -19,9 +20,6 @@ brew 'aspell'
 brew 'ctags', args: ['HEAD']
 brew 'vim'
 brew 'editorconfig'
-
-brew 'fish'
-brew "neofetch"
 
 # Languages
 # JavaScript
@@ -68,6 +66,7 @@ brew 'mosh'
 brew 'youtube-dl'
 brew 'wdiff'
 brew 'mitmproxy'
+brew 'neofetch'
 
 # Railwaycat
 # tap 'railwaycat/emacsmacport'
