@@ -39,13 +39,19 @@ fi
 ./update.sh
 
 ./install/files/dirs.sh
-./install/homebrew/install.sh
-./install/files/symlinks.sh
-./install/node/install.sh
-./install/ruby/install.sh
-./install/python/install.sh
 if [[ -n "$PERSONAL" ]]; then
   ./install/repos/setup_repos.zsh
 else
   ./install/repos/setup_repos.zsh -f -H -p
 fi
+
+./install/homebrew/install.sh
+
+if [[ -n "$CODESPACES" ]]; then
+  exit 0
+fi
+
+./install/files/symlinks.sh
+./install/node/install.sh
+./install/ruby/install.sh
+./install/python/install.sh

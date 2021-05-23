@@ -28,7 +28,7 @@ cd "$(dirname "$0")" || exit 1
 if [[ -n "$CODESPACES" ]]; then
   cd vscode
   brew bundle "$cleanup"
-elif [[ -n "$PERSONAL" ]]; then
+elif [[ -n "$PERSONAL" && "$(uname)" = "Darwin" ]]; then
   cd personal
   brew bundle "$cleanup"
 elif [[ "$(uname)" = "Darwin" ]]; then
