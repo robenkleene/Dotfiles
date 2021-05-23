@@ -54,7 +54,9 @@ for file in *; do
   make_symlink "$source_dir/$file" "$HOME/.$file"
 done
 
-./scripts/install.sh
+./scripts/update.sh
+
+find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
 if [[ "$all" == "false" ]]; then
   exit 0

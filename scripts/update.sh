@@ -27,7 +27,7 @@ fi
 
 for file in *; do
   # Exclude this install script and directories
-  if [[ $file == "install.sh" ]]; then
+  if [[ $file == "update.sh" ]]; then
     continue
   fi
   if [[ $file == "tags" || $file == "TAGS" ]]; then
