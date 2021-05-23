@@ -69,6 +69,7 @@
 
 ;; Word spacing isn't great with Fira Code
 ;; (set-face-attribute 'default nil :font "Fira Code-12:Retina")
+;; (setq-default line-spacing 0.2)
 (set-face-attribute 'default nil :font "JetBrains Mono-12:Regular")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
@@ -77,7 +78,6 @@
 ;; Supports italics
 ;; (set-face-attribute 'default nil :font "SF Mono-12")
 ;; (set-face-attribute 'default nil :font "Hack-12")
-(setq-default line-spacing 0.2)
 
 ;; Cursor
 (setq-default cursor-type 'bar)
