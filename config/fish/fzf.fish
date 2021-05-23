@@ -12,13 +12,11 @@ set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
 
 function _robenkleene-fzf-cd-widget
+    set -l cmd $FZF_ALT_C_COMMAND
     if not string match --regex --quiet "^$HOME\/.+" $PWD
-        echo "Only use in a subdirectory of home" >&2
-        commandline -f repaint
-        return 1
+        set cmd "$cmd --max-depth 1"
     end
 
-    set -l cmd $FZF_ALT_C_COMMAND
     set -l commandline (commandline)
     eval "$cmd | "(__fzfcmd) | read -l result
 
@@ -60,13 +58,11 @@ bind \ez _robenkleene-fzf-z-widget
 bind Ω _robenkleene-fzf-z-widget
 
 function _robenkleene-fzf-edit-widget
+    set -l cmd $FZF_CTRL_T_COMMAND
     if not string match --regex --quiet "^$HOME\/.+" $PWD
-        echo "Only use in a subdirectory of home" >&2
-        commandline -f repaint
-        return 1
+        set cmd "$cmd --max-depth 1"
     end
 
-    set -l cmd $FZF_CTRL_T_COMMAND
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result

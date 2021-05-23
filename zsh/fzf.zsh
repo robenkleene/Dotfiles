@@ -17,13 +17,11 @@ __fzfcmd() {
 _fzf_cd_widget() {
   setopt localoptions pipefail 2> /dev/null
 
+  local cmd=$FZF_ALT_C_COMMAND
   if [[ ! $PWD = $HOME/* ]]; then
-    echo "Only use in a subdirectory of home" >&2
-    zle redisplay
-    return 1
+    cmd="$cmd --maxdepth 1"
   fi
 
-  local cmd=$FZF_ALT_C_COMMAND
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
@@ -67,13 +65,11 @@ bindkey 'ç' _fzf_cd_widget
 _fzf_editor_widget() {
   setopt localoptions pipefail 2> /dev/null
 
+  local cmd=$FZF_CTRL_T_COMMAND
   if [[ ! $PWD = $HOME/* ]]; then
-    echo "Only use in a subdirectory of home" >&2
-    zle redisplay
-    return 1
+    cmd="$cmd --maxdepth 1"
   fi
 
-  local cmd=$FZF_CTRL_T_COMMAND
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
