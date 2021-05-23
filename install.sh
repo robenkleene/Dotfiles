@@ -40,6 +40,8 @@ fi
 
 ./install/files/dirs.sh
 if [[ -n "${PERSONAL-}" ]]; then
+  echo "personal"
+  echo "personal = $personal"
   ./install/repos/install.sh
 else
   ./install/repos/install.sh -p
