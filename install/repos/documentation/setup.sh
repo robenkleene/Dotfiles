@@ -27,6 +27,8 @@ while getopts ":fHh" option; do
   esac
 done
 
+mkdir -p ~/Documentation/
+
 if [[ "$use_https" == "true" ]]; then
   git_sync_clone ~/Documentation/ <(~/.bin/git_swap_format -H < documentation.txt) "$force_string"
 else

@@ -29,6 +29,6 @@ if [[ "$public" == "true" ]]; then
   ./setup_repos.zsh -f -H -p
   ./documentation/setup.sh -f -H
 else
-  ./setup_repos.zsh
-  ./documentation/setup.sh
+  ./setup_repos.zsh -f
+  ./documentation/setup.sh -f
 fi
