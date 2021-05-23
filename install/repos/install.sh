@@ -6,7 +6,7 @@ public="false"
 while getopts ":ph" option; do
   case "$option" in
     p)
-      publich="true"
+      public="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
