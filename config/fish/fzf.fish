@@ -3,12 +3,15 @@ if test -f ~/.fzf/shell/key-bindings.fish
 end
 fzf_key_bindings
 
-set -xg FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git --exclude .DS_Store'
+# Note this returns files and symlinks, regardless of whether they're
+# directories, when really we probably want files or symlinks to files
+set -xg FZF_DEFAULT_COMMAND 'fd --type f --type l --hidden --exclude .git --exclude .DS_Store'
 set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
 set -xg FZF_TMUX_HEIGHT '40%'
 set -xg FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
 set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+# We don't return symlinks here because you can't cd to symlinks to files
 set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
 
 function _robenkleene-fzf-cd-widget
