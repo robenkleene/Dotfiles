@@ -40,16 +40,16 @@ fi
 
 ./install/files/dirs.sh
 if [[ -n "${PERSONAL-}" ]]; then
-  ./install/repos/setup_repos.zsh
+  ./install/repos/install.sh
 else
-  ./install/repos/setup_repos.zsh -f -H -p
+  ./install/repos/install.sh -p
 fi
-
-./install/homebrew/install.sh
 
 if [[ -n "${CODESPACES-}" ]]; then
   exit 0
 fi
+
+./install/homebrew/install.sh
 
 ./install/files/symlinks.sh
 ./install/node/install.sh
