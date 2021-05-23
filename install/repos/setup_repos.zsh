@@ -52,10 +52,10 @@ repos=(
 
 if [[ "$include_private" == "true" ]]; then
   repos+=(
-~"/developer/scratch/" "${bitbucket_prefix}robenkleene/scratch.git$bitbucket_postfix"
-~"/developer/settings/" "${bitbucket_prefix}robenkleene/settings.git$bitbucket_postfix"
-~"/developer/archive/" "${bitbucket_prefix}robenkleene/archive.git$bitbucket_postfix"
-~"/developer/backup/" "${bitbucket_prefix}robenkleene/backup.git$bitbucket_postfix"
+~"/Developer/Scratch/" "${bitbucket_prefix}robenkleene/scratch.git$bitbucket_postfix"
+~"/Developer/Settings/" "${bitbucket_prefix}robenkleene/settings.git$bitbucket_postfix"
+~"/Developer/Archive/" "${bitbucket_prefix}robenkleene/archive.git$bitbucket_postfix"
+~"/Developer/Backup/" "${bitbucket_prefix}robenkleene/backup.git$bitbucket_postfix"
 )
 fi
 

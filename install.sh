@@ -33,21 +33,23 @@ fi
 
 cd "$(dirname "$0")" || exit 1
 
-if [[ -n "$CODESPACES" ]]; then
+if [[ -n "${CODESPACES-}" ]]; then
   ./install/codespaces/setup.sh
 fi
 ./update.sh
 
 ./install/files/dirs.sh
-if [[ -n "$PERSONAL" ]]; then
+if [[ -n "${PERSONAL-}" ]]; then
   ./install/repos/setup_repos.zsh
 else
   ./install/repos/setup_repos.zsh -f -H -p
 fi
 
+exit 0
+
 ./install/homebrew/install.sh
 
-if [[ -n "$CODESPACES" ]]; then
+if [[ -n "${CODESPACES-}" ]]; then
   exit 0
 fi
 
