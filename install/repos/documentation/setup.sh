@@ -29,6 +29,7 @@ done
 
 mkdir -p ~/Documentation/
 
+cd "$(dirname "$0")" || exit 1
 if [[ "$use_https" == "true" ]]; then
   git_sync_clone ~/Documentation/ <(~/.bin/git_swap_format -H < documentation.txt) "$force_string"
 else
