@@ -44,6 +44,7 @@ if [[ -n "${PERSONAL-}" ]]; then
   echo "personal = $personal"
   ./install/repos/install.sh
 else
+  echo "not personal"
   ./install/repos/install.sh -p
 fi
 
