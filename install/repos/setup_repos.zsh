@@ -45,7 +45,6 @@ fi
 
 typeset -A repos
 repos=(
-~"/Developer/AppleScripts/" "${github_prefix}robenkleene/AppleScripts.git"
 ~"/Developer/Dotfiles/" "${github_prefix}robenkleene/Dotfiles.git"
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
 )
@@ -61,6 +60,7 @@ fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
   repos+=(
+~"/Developer/AppleScripts/" "${github_prefix}robenkleene/AppleScripts.git"
 ~"/Library/Application Support/TextMate/Bundles/Roben Kleene.tmbundle/" "${github_prefix}robenkleene/roben-kleene-tmbundle.git"
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
 ~"/Library/Services/" "${github_prefix}robenkleene/Services.git"
@@ -76,6 +76,13 @@ elif [[ "$(uname)" = "Linux" ]]; then
   repos+=(
 ~"/.config/Code/User" "${github_prefix}robenkleene/visual-studio-code.git"
 ~"/.config/Code - Insiders/User" "${github_prefix}robenkleene/visual-studio-code.git"
+)
+fi
+
+# Overwrite with a simple set for Codespaces
+if [[ -n "${CODESPACES-}" ]]; then
+  repos=(
+~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
 )
 fi
 

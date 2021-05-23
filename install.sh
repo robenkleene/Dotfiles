@@ -45,8 +45,6 @@ else
   ./install/repos/setup_repos.zsh -f -H -p
 fi
 
-exit 0
-
 ./install/homebrew/install.sh
 
 if [[ -n "${CODESPACES-}" ]]; then
