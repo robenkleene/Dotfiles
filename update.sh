@@ -65,3 +65,4 @@ fi
 ./install/ruby/gems/update.sh -f
 ./install/python/packages/update.sh -f
 
+brew update && brew upgrade
