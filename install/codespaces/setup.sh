@@ -10,6 +10,7 @@ function cleanup_file() {
     mv "$filename" "$HOME/backup/"
   fi
 }
+cleanup_file "$HOME/.bashrc"
 cleanup_file "$HOME/.zshrc"
 cleanup_file "$HOME/.config"
 cleanup_file "$HOME/.gitconfig"
