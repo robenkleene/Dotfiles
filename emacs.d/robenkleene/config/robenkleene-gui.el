@@ -63,12 +63,12 @@
 ;; (set-face-background 'default "#2D193D")
 ;; (set-face-background 'fringe "#2D193D")
 ;; Dark In Between
-(set-face-background 'default "#291738")
-(set-face-background 'fringe "#291738")
+;; (set-face-background 'default "#291738")
+;; (set-face-background 'fringe "#291738")
 
 ;; Nova purple
-;; (set-face-background 'default "#221932")
-;; (set-face-background 'fringe "#221932")
+(set-face-background 'default "#221932")
+(set-face-background 'fringe "#221932")
 
 ;; Nova inspired purple
 ;; (set-face-background 'default "#291B3B")
