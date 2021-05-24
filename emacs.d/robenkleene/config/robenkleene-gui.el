@@ -56,8 +56,15 @@
 ;; (set-face-background 'fringe "#3A1D46")
 
 ;; Darker purple
-(set-face-background 'default "#301B42")
-(set-face-background 'fringe "#301B42")
+;; (set-face-background 'default "#301B42")
+;; (set-face-background 'fringe "#301B42")
+
+;; In Between Nova and Dark purple
+;; (set-face-background 'default "#2D193D")
+;; (set-face-background 'fringe "#2D193D")
+;; Dark In Between
+(set-face-background 'default "#291738")
+(set-face-background 'fringe "#291738")
 
 ;; Nova purple
 ;; (set-face-background 'default "#221932")
