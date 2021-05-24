@@ -27,7 +27,7 @@ done
 if [[ "$text_only" == "false" ]]; then
   ~/.bin/egit -u
 fi
-cd "$HOME/Developer/Dotfiles/scripts" && ./install.sh
+cd "$HOME/Developer/Dotfiles/scripts" && ./update.sh
 
 ~/.bin/check_repos
 
