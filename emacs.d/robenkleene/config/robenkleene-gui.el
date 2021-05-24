@@ -52,12 +52,12 @@
 ;; (set-face-background 'default "#3C1E49")
 ;; (set-face-background 'fringe "#3C1E49")
 ;; Darker still
-(set-face-background 'default "#3A1D46")
-(set-face-background 'fringe "#3A1D46")
+;; (set-face-background 'default "#3A1D46")
+;; (set-face-background 'fringe "#3A1D46")
 
 ;; Darker purple
-;; (set-face-background 'default "#301B42")
-;; (set-face-background 'fringe "#301B42")
+(set-face-background 'default "#301B42")
+(set-face-background 'fringe "#301B42")
 
 ;; Nova purple
 ;; (set-face-background 'default "#221932")
