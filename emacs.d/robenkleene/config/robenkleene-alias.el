@@ -40,6 +40,7 @@
 (defalias 'vscode 'robenkleene/open-in-vscode)
 (defalias 'work 'robenkleene/open-work)
 (defalias 'archive 'robenkleene/open-archive)
+(defalias 'title-case 'robenkleene/title-case)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
