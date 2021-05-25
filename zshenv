@@ -47,6 +47,8 @@ fi
 # Homebrew
 export HOMEBREW_DIR
 HOMEBREW_DIR=$(brew --prefix)
+export MANPATH="$HOMEBREW_DIR/share/man"
+export INFOPATH="$HOMEBREW_DIR/share/info"
 
 # Editor
 export VISUAL="$VIM_COMMAND"
