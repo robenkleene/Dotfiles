@@ -112,3 +112,6 @@ command! SourceControlWeb :call commands#SourceControlWeb()
 
 " Quit
 command! QuitIfNoBuffers :call commands#QuitIfNoBuffers()
+
+" Snippets
+command! EditCodeSnippets :e ~/.config/Code/User/snippets
