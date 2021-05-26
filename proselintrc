@@ -2,6 +2,7 @@
   "checks": {
     "misc.but": false,
     "typography.symbols": false,
-    "dates_times.dates": false
+    "dates_times.dates": false,
+    "dates_times.am_pm.lowercase_periods": false
   }
 }
