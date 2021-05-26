@@ -80,7 +80,7 @@ alias dv='vim_diff'
 alias dq='vim_diff_grep'
 alias l='less'
 alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'
-alias u='ssh_start && egit -u'
+alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
 
