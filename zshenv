@@ -45,10 +45,13 @@ else
 fi
 
 # Homebrew
-export HOMEBREW_DIR
-HOMEBREW_DIR=$(brew --prefix)
-export MANPATH="$HOMEBREW_DIR/share/man"
-export INFOPATH="$HOMEBREW_DIR/share/info"
+
+if command -v brew &> /dev/null; then
+  export HOMEBREW_DIR
+  HOMEBREW_DIR=$(brew --prefix)
+  export MANPATH="$HOMEBREW_DIR/share/man"
+  export INFOPATH="$HOMEBREW_DIR/share/info"
+fi
 
 # Editor
 export VISUAL="$VIM_COMMAND"
