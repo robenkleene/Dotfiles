@@ -16,7 +16,7 @@ let g:coc_global_extensions = [
   " context, e.g., making a comment with `"`
   " \ 'coc-pairs',
   " This keeps erroring
-  \ 'coc-fish',
+  " \ 'coc-fish',
 
 autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd FileType gitcommit let b:coc_suggest_disable = 1
