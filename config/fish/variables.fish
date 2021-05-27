@@ -31,8 +31,8 @@ set -gx EMACS_COMMAND "emacsclient -nw"
 if type -q brew
     set -gx HOMEBREW_DIR (brew --prefix)
     set -gx HOMEBREW_NO_ANALYTICS 1
-    set -gx MANPATH $HOMEBREW_DIR/share/man
-    set -gx INFOPATH $HOMEBREW_DIR/share/info
+    set -gx MANPATH $HOMEBREW_DIR/share/man:$MANPATH
+    set -gx INFOPATH $HOMEBREW_DIR/share/info:$INFOPATH
 end
 set -gx VAGRANT_HOME ~/Documents/VMs/Vagrant/vagrant.d
 set -gx VAGRANT_VMWARE_CLONE_DIRECTORY ~/Documents/VMs/Vagrant/

@@ -49,8 +49,8 @@ fi
 if command -v brew &> /dev/null; then
   export HOMEBREW_DIR
   HOMEBREW_DIR=$(brew --prefix)
-  export MANPATH="$HOMEBREW_DIR/share/man"
-  export INFOPATH="$HOMEBREW_DIR/share/info"
+  export MANPATH="$HOMEBREW_DIR/share/man:$MANPATH"
+  export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
 fi
 
 # Editor
