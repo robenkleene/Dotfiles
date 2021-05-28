@@ -47,6 +47,9 @@
 (defalias 'uncheck 'robenkleene/todos-uncheck)
 ;; (defalias 'todos-invert 'robenkleene/todos-invert)
 
+;; Languages
+(defalias 'md 'markdown-mode)
+
 ;; Longer
 (defalias 'slug-project 'robenkleene/slug-project)
 (defalias 'slug-project-archive 'robenkleene/slug-project-archive)
