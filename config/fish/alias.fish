@@ -33,6 +33,7 @@ alias rg='rg_custom'
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
+alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
 alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 
 # `ssh`
