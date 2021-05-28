@@ -83,6 +83,7 @@ alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
+alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
 
 # `tmux`
 alias tma='tmux attach'

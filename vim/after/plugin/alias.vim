@@ -27,3 +27,7 @@ Alias -range Snew NewScratch
 Alias -range Svnew VnewScratch
 Alias -range Vsnew VnewScratch
 Alias Gcu !git_commit_update
+
+" Languages
+Alias Sh set\ filetype=sh
+Alias Md set\ filetype=md
