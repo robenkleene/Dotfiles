@@ -31,3 +31,4 @@ Alias Gcu !git_commit_update
 " Languages
 Alias Sh set\ filetype=sh
 Alias Md set\ filetype=md
+Alias Js set\ filetype=js
