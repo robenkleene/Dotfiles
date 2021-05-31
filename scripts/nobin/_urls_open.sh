@@ -1,13 +1,15 @@
 #!/bin/bash
 
-arg=""
 if [[ -n "$1" ]]; then
-  arg=" -a $1"
+  while read -r LINE; do
+    open -a "$1" "$LINE"
+  done
+else
+  while read -r LINE; do
+    open "$LINE"
+  done
 fi
 # The default browser method
-while read -r LINE; do
-  open${arg} $LINE
-done
 
 # The Safari method
 # THEURLS="{"
