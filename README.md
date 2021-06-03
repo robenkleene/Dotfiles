@@ -2,10 +2,14 @@
 
 ## Install
 
-Install homebrew first, and then:
+Install homebrew locally:
+
+    git clone --depth=1 https://github.com/Homebrew/brew ~/.brew
+
+Then:
 
     mkdir -p ~/Development && git clone https://github.com/robenkleene/Dotfiles.git && ./Dotfiles/install.sh
 
-Or, if you're me:
+Or, if you're me, install homebrew normally, then:
 
     mkdir -p ~/Development && git clone git@github.com:robenkleene/Dotfiles.git && ./Dotfiles/install.sh -m
