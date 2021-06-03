@@ -49,6 +49,7 @@ if [[ -n "${CODESPACES-}" ]]; then
   exit 0
 fi
 
+export PATH="~/.brew/bin/:$PATH"
 ./install/homebrew/install.sh
 
 ./install/files/symlinks.sh
