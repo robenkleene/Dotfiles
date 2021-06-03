@@ -47,6 +47,9 @@ for file in *; do
   if [[ $file == "install" ]]; then
     continue
   fi
+  if [[ $file == "README.md" ]]; then
+    continue
+  fi
   if [[ $file == "tags" || $file == "TAGS" ]]; then
     continue
   fi
