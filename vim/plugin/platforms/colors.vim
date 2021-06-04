@@ -113,6 +113,12 @@ function! s:MyHighlights() abort
   highlight DiffChange ctermfg=NONE ctermbg=18 cterm=NONE
   " Inline changed text
   highlight DiffText ctermfg=NONE ctermbg=21 cterm=NONE
+  highlight diffLine ctermfg=white ctermbg=239 cterm=bold
+  highlight diffFile ctermfg=NONE ctermbg=239 cterm=bold
+  highlight diffOldFile ctermfg=NONE ctermbg=239 cterm=bold
+  highlight diffNewFile ctermfg=white ctermbg=239 cterm=bold
+  highlight diffSubname ctermfg=white ctermbg=239 cterm=bold
+  highlight diffIndexLine ctermfg=244
 
   " Markdown {{{1
 
