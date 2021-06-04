@@ -236,7 +236,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type f --hidden --exclude .git --exclude .DS_Store . "
+                    " --type f --follow --hidden --exclude .git --exclude .DS_Store . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -260,7 +260,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type d --hidden --exclude .git . "
+                    " --type d --follow --hidden --exclude .git . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -284,7 +284,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--hidden --exclude .git . "
+                    "--hidden --follow --exclude .git . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))

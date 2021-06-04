@@ -172,11 +172,11 @@ command! FZFTags :call fzf#run(fzf#wrap({
       \ }))
 
 command! Quick :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d . ~/Text ~/Documentation",
+      \   'source': "fd --type d --follow . ~/Text ~/Documentation",
       \   'sink': function('<SID>cd_sink')
       \ }))
 command! QuickFiles :call fzf#run(fzf#wrap({
-      \   'source': "fd --type f . ~/Text ~/Documentation",
+      \   'source': "fd --type f --follow . ~/Text ~/Documentation",
       \   'sink': 'e'
       \ }))
 command! Developer :call fzf#run(fzf#wrap({
