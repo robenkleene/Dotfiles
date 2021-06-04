@@ -98,25 +98,26 @@ function! s:MyHighlights() abort
   highlight SpellRare ctermfg=yellow ctermbg=NONE cterm=underline
 
   " Diff {{{1
-  " highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
-  " highlight DiffAdded ctermfg=darkgreen ctermbg=NONE cterm=bold
-  " highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
-  " highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
-  " highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
-  " highlight DiffText ctermfg=lightblue ctermbg=NONE cterm=bold
-  highlight DiffAdd ctermfg=NONE ctermbg=22 cterm=NONE
-  highlight DiffAdded ctermfg=NONE ctermbg=22 cterm=NONE
+  highlight DiffAdd ctermfg=darkgreen ctermbg=NONE cterm=bold
+  highlight DiffAdded ctermfg=darkgreen ctermbg=NONE cterm=bold
+  highlight DiffDelete ctermfg=red ctermbg=NONE cterm=bold
+  highlight DiffRemoved ctermfg=red ctermbg=NONE cterm=bold
+  highlight DiffChange ctermfg=lightblue ctermbg=NONE cterm=bold
+  " Inline changed text
+  highlight DiffText ctermfg=darkblue ctermbg=NONE cterm=bold
+  " highlight DiffAdd ctermfg=NONE ctermbg=22 cterm=NONE
+  " highlight DiffAdded ctermfg=NONE ctermbg=22 cterm=NONE
+  " highlight DiffRemoved ctermfg=NONE ctermbg=52 cterm=NONE
+  " highlight DiffChange ctermfg=NONE ctermbg=18 cterm=NONE
   " A white line of slashes is used when a section is removed, the `darkgray`
   " here styles the slashes
-  highlight DiffDelete ctermfg=darkgray ctermbg=52 cterm=NONE
-  highlight DiffRemoved ctermfg=NONE ctermbg=52 cterm=NONE
-  highlight DiffChange ctermfg=NONE ctermbg=18 cterm=NONE
+  " highlight DiffDelete ctermfg=darkgray ctermbg=52 cterm=NONE
   " Inline changed text
-  highlight DiffText ctermfg=NONE ctermbg=21 cterm=NONE
+  " highlight DiffText ctermfg=NONE ctermbg=21 cterm=NONE
+  highlight diffFile ctermfg=NONE cterm=bold
+  highlight diffOldFile ctermfg=NONE cterm=bold
+  highlight diffNewFile ctermfg=white cterm=bold
   highlight diffLine ctermfg=white ctermbg=239 cterm=bold
-  highlight diffFile ctermfg=NONE ctermbg=239 cterm=bold
-  highlight diffOldFile ctermfg=NONE ctermbg=239 cterm=bold
-  highlight diffNewFile ctermfg=white ctermbg=239 cterm=bold
   highlight diffSubname ctermfg=white ctermbg=239 cterm=bold
   highlight diffIndexLine ctermfg=244
 
