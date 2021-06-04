@@ -5,14 +5,14 @@ fzf_key_bindings
 
 # Note this returns files and symlinks, regardless of whether they're
 # directories, when really we probably want files or symlinks to files
-set -xg FZF_DEFAULT_COMMAND 'fd --type f --type l --hidden --exclude .git --exclude .DS_Store'
-set -xg FZF_ALL_COMMAND 'fd --hidden --exclude .git --exclude .DS_Store'
+set -xg FZF_DEFAULT_COMMAND 'fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store'
+set -xg FZF_ALL_COMMAND 'fd --hidden --follow --exclude .git --exclude .DS_Store'
 set -xg FZF_TMUX_HEIGHT '40%'
 set -xg FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
 set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 # We don't return symlinks here because you can't cd to symlinks to files
-set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
+set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git'
 
 function _robenkleene-fzf-cd-widget
     set -l cmd $FZF_ALT_C_COMMAND
@@ -126,7 +126,7 @@ bind \eg _robenkleene-fzf-developer-widget
 bind © _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
-    set -l cmd "fd --type d . ~/Text ~/Documentation"
+    set -l cmd "fd --type d --follow . ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
@@ -147,7 +147,7 @@ bind \eo _robenkleene-fzf-quick-widget
 bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
-    set -l cmd "fd --type f . ~/Text ~/Documentation"
+    set -l cmd "fd --type f --follow . ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
