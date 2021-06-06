@@ -141,6 +141,10 @@
 ;; This one works
 (define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;
 
+;; Hide line break indicator
+(setf (cdr (assq 'continuation fringe-indicator-alist))
+      '(nil nil))
+
 (provide 'robenkleene-gui)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
