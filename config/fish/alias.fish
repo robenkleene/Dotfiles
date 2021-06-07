@@ -152,6 +152,6 @@ alias backup="backup_file"
 alias vs="vscode"
 
 # Mercurial
-alias hgf='hg status --rev . | cut -d\' \' -f2'
-alias hgfb 'hg status --rev bottom | cut -d\' \' -f2'
+alias hgf='hg status --rev . | grep -r "^R" | cut -d\' \' -f2'
+alias hgfb 'hg status --rev bottom | grep -r "^R" | cut -d\' \' -f2'
 
