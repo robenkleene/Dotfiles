@@ -150,3 +150,8 @@ alias qa="quick_text_search"
 alias writing="$EDITOR ~/Text/writing/README.md"
 alias backup="backup_file"
 alias vs="vscode"
+
+# Mercurial
+alias hgf='hg status --rev . | cut -d\' \' -f2'
+alias hgfb 'hg status --rev bottom | cut -d\' \' -f2'
+
