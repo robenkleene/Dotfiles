@@ -116,4 +116,5 @@ function fish_sync_abbr
     abbr -a hgcm 'hg commit -m'
     abbr -a hgs 'hg status'
     abbr -a hgsrb 'hg status --rev bottom'
+    abbr -a hgr 'hg record'
 end
