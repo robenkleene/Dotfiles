@@ -195,3 +195,8 @@ alias qa="quick_text_search"
 alias writing="$VIM_COMMAND ~/Text/writing/README.md"
 alias backup="backup_file"
 alias vs="vscode"
+
+# Mercurial
+alias cdhg='cd (hg root)'
+alias hgf='hg status --rev ".^" | grep -v "^R" | cut -d'\'' '\'' -f2'
+alias hgfb='hg status --rev bottom^ | grep -v "^R" | cut -d'\'' '\'' -f2'

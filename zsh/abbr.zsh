@@ -190,6 +190,15 @@ everywhere_abbreviations=(
 # Jekyll
 '-jl' '--config _config_local.yml'
 '-jp' '--port 4000'
+
+# Mercurial
+'hgdb' 'hg diff -r "bottom^"'
+'hgdbs' 'hg diff -r "bottom^" --stat'
+'hgd' 'hg diff'
+'hgcm' 'hg commit -m'
+'hgs' 'hg status'
+'hgsrb' 'hg status --rev bottom'
+'hgr' 'hg record'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
