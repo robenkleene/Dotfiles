@@ -110,9 +110,9 @@ function fish_sync_abbr
     abbr -a rei 'grep -i'
     abbr -a adbl 'adb -d logcat -s Unity'
     # Mercurial
-    abbr -a hgdb 'hg diff -r "bottom^"'
-    abbr -a hgdbs 'hg diff -r "bottom^" --stat'
-    abbr -a hgd 'hg diff'
+    abbr -a hgdb 'hg diff -r "bottom^" --path .'
+    abbr -a hgdbs 'hg diff -r "bottom^" --stat --path .'
+    abbr -a hgd 'hg diff --path .'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgs 'hg status'
     abbr -a hgsrb 'hg status --rev bottom'

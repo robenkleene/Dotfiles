@@ -192,9 +192,9 @@ everywhere_abbreviations=(
 '-jp' '--port 4000'
 
 # Mercurial
-'hgdb' 'hg diff -r "bottom^"'
-'hgdbs' 'hg diff -r "bottom^" --stat'
-'hgd' 'hg diff'
+'hgdb' 'hg diff -r "bottom^" --path .'
+'hgdbs' 'hg diff -r "bottom^" --stat --path .'
+'hgd' 'hg diff --path .'
 'hgcm' 'hg commit -m'
 'hgs' 'hg status'
 'hgsrb' 'hg status --rev bottom'
