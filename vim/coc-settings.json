@@ -58,6 +58,7 @@
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
+    "objc": ["objective-c"],
     "zsh": ["sh"],
     "typescript": ["javascript"],
     "make": ["makefile"]
