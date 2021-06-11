@@ -199,6 +199,7 @@ everywhere_abbreviations=(
 'hgs' 'hg status'
 'hgsrb' 'hg status --rev bottom'
 'hgr' 'hg record'
+'hgi' 'hg import --no-commit -'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
