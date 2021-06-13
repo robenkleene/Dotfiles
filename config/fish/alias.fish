@@ -36,6 +36,12 @@ alias ua='ssh_git_pull_all'
 alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
 alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 
+# Special
+switch (uname)
+    case Darwin
+        alias dirname='dirname_args'
+end
+
 # `ssh`
 alias shs='ssh_start'
 
