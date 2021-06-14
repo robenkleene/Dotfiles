@@ -42,8 +42,9 @@ command! -nargs=* Qa :call commands#Qa(<q-args>)
 command! -nargs=* Atm :call commands#Atm(<q-args>)
 
 " Yank
-command! YankFileName :let @" = expand("%")|:let @+ = @"|:echo @"
+command! YankFileName :let @" = expand("%:t")|:let @+ = @"|:echo @"
 command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
+command! YankFilePathRelative :let @" = expand("%")|:let @+ = @"|:echo @"
 command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
 
 " Splits
