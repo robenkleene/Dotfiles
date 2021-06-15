@@ -15,8 +15,7 @@ brew 'less'
 
 # Editor
 brew 'aspell'
-# Head version of `ctags` contains support for Objective-C
-brew 'ctags', args: ['HEAD']
+brew 'ctags'
 brew 'vim'
 brew 'editorconfig'
 
