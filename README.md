@@ -9,9 +9,9 @@ Install homebrew locally:
 Then:
 
     sudo rmdir ~/Library/Services/
-    mkdir -p ~/Development && cd ~/Development && git clone https://github.com/robenkleene/Dotfiles.git && ./Dotfiles/install.sh
+    mkdir -p ~/Developer && cd ~/Developer && git clone https://github.com/robenkleene/Dotfiles.git && ./Dotfiles/install.sh
 
 Or, if you're me, install homebrew normally, then:
 
     sudo rmdir ~/Library/Services/
-    mkdir -p ~/Development && cd ~/Development && git clone git@github.com:robenkleene/Dotfiles.git && ./Dotfiles/install.sh -m
+    mkdir -p ~/Developer && cd ~/Developer && git clone git@github.com:robenkleene/Dotfiles.git && ./Dotfiles/install.sh -m
