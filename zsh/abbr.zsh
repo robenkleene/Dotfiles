@@ -48,10 +48,11 @@ abbreviations=(
 
 # `hub`
 'hpr' 'hub pull-request'
+'hprm' 'hub pull-request -m'
 # `gh`
 'ghpr' 'gh pr create'
 # Both
-'hprm' 'hub pull-request && BROWSER= gh pr view --web'
+'hprr' 'hub pull-request && BROWSER= gh pr view --web'
 
 # `cat`
 'c' 'cat'
@@ -72,6 +73,7 @@ abbreviations=(
 'ga' 'git add'
 'gaa' 'git add -A :/'
 'gaac' 'git add -A :/ && git commit'
+'gaacm' 'git add -A :/ && git commit -m'
 # `gb`: `git branch`
 'gb' 'git branch'
 # This is too dangerous, especially because it is easly confused with `git
