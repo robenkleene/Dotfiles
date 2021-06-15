@@ -7,7 +7,7 @@ check_paths() {
     fi
     local parent
     parent="${destination%/*}"
-    if test $(ls -1 "$parent" | wc -l) -gt 1; then
+    if test $(ls -1 "$parent" | wc -l 2> /dev/null) -gt 1; then
       echo "Warning: $parent contains multiple Python versions, this might mean a new version of Python is being used" >&2
     fi
   elif [[ "$(uname)" = "Linux" ]]; then
@@ -16,7 +16,7 @@ check_paths() {
     fi
     local parent
     parent=$destination/lib
-    if test $(ls -1 "$parent" | wc -l) -gt 1; then
+    if test $(ls -1 "$parent" | wc -l 2> /dev/null) -gt 1; then
       echo "Warning: $parent contains multiple Python versions, this might mean a new version of Python is being used" >&2
     fi
   fi
