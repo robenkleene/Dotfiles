@@ -1,10 +1,31 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
+
+git_parameter=""
+while getopts ":C:h" option; do
+  case "$option" in
+    C)
+      git_parameter=" -C $OPTARG"
+      ;;
+    h)
+      echo "Usage: command [-hp] [-f <file>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
 
 branch="$1"
 if [[ -z "$1" ]]; then
-  if git show-ref --verify --quiet refs/heads/main; then
+  if git$git_parameter show-ref --verify --quiet refs/heads/main; then
     branch="main"
   elif git show-ref --verify --quiet refs/heads/master; then
     branch="master"
@@ -13,19 +34,19 @@ else
   branch="$1"
 fi
 
-if ! git show-ref --verify --quiet refs/heads/"${branch}"; then
+if ! git$git_parameter show-ref --verify --quiet refs/heads/"${branch}"; then
   echo "Branch $branch does not exist" >&2
   exit 1
 fi
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+current_branch=$(git$git_parameter rev-parse --abbrev-ref HEAD)
 if [[ "$branch" = "$current_branch" ]]; then
   echo "You're already on $branch" >&2
   exit 1
 fi
 
-git checkout "$branch"
-git pull -r
-git remote prune origin
-git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
-git branch
+git$git_parameter checkout "$branch"
+git$git_parameter pull -r
+git$git_parameter remote prune origin
+git$git_parameter branch -vv | grep ': gone]' | awk '{print $1}' | xargs git$git_parameter branch -D
+git$git_parameter branch
