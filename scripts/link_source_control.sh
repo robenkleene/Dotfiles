@@ -3,10 +3,14 @@
 set -e
 
 pulls="false"
-while getopts ":f:r:ph" option; do
+git_parameter=""
+while getopts ":f:C:r:ph" option; do
   case "$option" in
     r)
       revision="$OPTARG"
+      ;;
+    C)
+      git_parameter=" -C $OPTARG"
       ;;
     f)
       file="$OPTARG"
@@ -41,10 +45,10 @@ fi
 
 cd "$dir_path"
 
-remote=$(git config --get remote.origin.url | tr -d '\n')
+remote=$(git$git_parameter config --get remote.origin.url | tr -d '\n')
 
 if [[ -n "$file_path" ]]; then
-  file_subpath=$(git ls-tree --full-name --name-only HEAD "$file_path")
+  file_subpath=$(git$git_parameter ls-tree --full-name --name-only HEAD "$file_path")
   commit=$(git rev-parse HEAD)
   if [[ -z "$commit" ]]; then
     echo "No branch found" >&2
@@ -55,7 +59,7 @@ if [[ -n "$file_path" ]]; then
     exit 1
   fi
 else
-  branch=$(git rev-parse --abbrev-ref HEAD)
+  branch=$(git$git_parameter rev-parse --abbrev-ref HEAD)
   if [[ -z "$branch" ]]; then
     echo "No branch found" >&2
     exit 1
