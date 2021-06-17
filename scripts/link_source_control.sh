@@ -47,14 +47,14 @@ cd "$dir_path"
 
 remote=$(git$git_parameter config --get remote.origin.url | tr -d '\n')
 
-if [[ -n "$file_path" ]]; then
+if [[ -n "${file_path-}" ]]; then
   file_subpath=$(git$git_parameter ls-tree --full-name --name-only HEAD "$file_path")
   commit=$(git rev-parse HEAD)
-  if [[ -z "$commit" ]]; then
+  if [[ -z "${commit-}" ]]; then
     echo "No branch found" >&2
     exit 1
   fi
-  if [[ -z "$file_subpath" ]]; then
+  if [[ -z "${file_subpath-}" ]]; then
     echo "No file subpath found (is this file in a repo?) for $file_path " >&2
     exit 1
   fi
@@ -73,9 +73,9 @@ if [[ $remote =~ (https://|git@)github.com[/:](.*) ]]; then
   repo_url="github.com/$remote_subpath"
   if [[ "$pulls" == "true" ]]; then
     final_url=$repo_url/pulls
-  elif [[ -n "$revision" ]]; then
+  elif [[ -n "${revision-}" ]]; then
     final_url=$repo_url/tree/$revision
-  elif [[ -z "$file_subpath" ]]; then
+  elif [[ -z "${file_subpath-}" ]]; then
     final_url=$repo_url/tree/$branch
   else
     final_url="$repo_url/blob/$commit/$file_subpath"
@@ -84,7 +84,7 @@ elif [[ $remote =~ (https://|git@)bitbucket.(com|org)[/:](.*) ]]; then
   remote_subpath="${BASH_REMATCH[3]}"
   remote_subpath=${remote_subpath%.git}
   repo_url="bitbucket.org/$remote_subpath"
-  if [[ -z "$file_subpath" ]]; then
+  if [[ -z "${file_subpath-}" ]]; then
     final_url=$repo_url/branch/$branch
   else
     final_url="$repo_url/src/$commit/$file_subpath"
@@ -95,7 +95,7 @@ elif [[ $remote =~ (https://|git@)([^/:]*)[/:](.*) ]]; then
   remote_subpath="${BASH_REMATCH[3]}"
   remote_subpath=${remote_subpath%.git}
   repo_url="$host/$remote_subpath"
-  if [[ -z "$file_subpath" ]]; then
+  if [[ -z "${file_subpath-}" ]]; then
     final_url=$repo_url/tree/$branch
   else
     final_url="$repo_url/blob/$commit/$file_subpath"
