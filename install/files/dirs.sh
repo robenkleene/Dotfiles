@@ -12,7 +12,7 @@ fi
 
 
 emacs_path="${HOME}/Developer/Dotfiles/emacs.d"
-untitled_emacs_path="${HOME}/Developer/Dotfiles/emacs.d"
+untitled_emacs_path="${HOME}/Developer/Dotfiles/emacs.d/untitled"
 if [[ ! -L "$emacs_path" ]]; then
   if [[ ! -e "$untitled_emacs_path" ]]; then
     mkdir -p "$untitled_emacs_path"
