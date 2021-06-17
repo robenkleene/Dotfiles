@@ -5,7 +5,7 @@
 module.exports = {
   rules: {
     // Conflicts with scss, e.g., `@include header($double-small-pica-ratio);`
-    "at-rule-no-unknown": false,
+    "at-rule-no-unknown": null,
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "comment-no-empty": true,
