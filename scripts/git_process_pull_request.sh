@@ -3,10 +3,14 @@
 set -euo pipefail
 
 git_parameter=""
-while getopts ":C:h" option; do
+branch=""
+while getopts ":C:b:h" option; do
   case "$option" in
     C)
       git_parameter=" -C $OPTARG"
+      ;;
+    b)
+      branch="$OPTARG"
       ;;
     h)
       echo "Usage: command [-hp] [-f <file>]"
@@ -23,15 +27,12 @@ while getopts ":C:h" option; do
   esac
 done
 
-branch="$1"
-if [[ -z "$1" ]]; then
+if [[ -z "$branch" ]]; then
   if git$git_parameter show-ref --verify --quiet refs/heads/main; then
     branch="main"
   elif git show-ref --verify --quiet refs/heads/master; then
     branch="master"
   fi
-else
-  branch="$1"
 fi
 
 if ! git$git_parameter show-ref --verify --quiet refs/heads/"${branch}"; then
