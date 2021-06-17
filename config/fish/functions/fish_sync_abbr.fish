@@ -120,4 +120,12 @@ function fish_sync_abbr
     abbr -a hgsrb 'hg status --rev bottom'
     abbr -a hgr 'hg record'
     abbr -a hgi 'hg import --no-commit -'
+
+    # These have been moved from aliases because they're useful to use in
+    # one-liners
+    # E.g., fd --hidden "release.yml" --exec git_process_pull_request -C {//}
+    # Note this doesn't work yet, because fish doesn't support global
+    # abbreviations but that's a planned feature.
+    abbr -a scw 'source_control_open_site'
+    abbr -a gprpr 'git_process_pull_request'
 end
