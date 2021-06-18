@@ -8,7 +8,7 @@ cd "$(dirname "$0")" || exit 1
 
 if [[ ! -e "$HOME/Library/KeyBindings"  ]]; then
   mkdir -p "$HOME/Library/KeyBindings"
-  if [[ -e "$HOME/Library/KeyBindings/DefaultKeyBinding.dict" ]]; then
+  if [[ ! -e "$HOME/Library/KeyBindings/DefaultKeyBinding.dict" ]]; then
     cp DefaultKeyBinding.dict "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
   fi
 fi
