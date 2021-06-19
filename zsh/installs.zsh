@@ -42,5 +42,10 @@ nvm() {
 }
 PATH=$HOME/.nvm/versions/node/v13.12.0/bin:$PATH
 
+# Syntax highlighting installed via Homebrew
+if [[ -n "${HOMEBREW_DIR-}" ]]; then
+  source "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
 # The `-U` option prevens duplicates when `tmux` starts `zsh` instances
 export -U PATH
