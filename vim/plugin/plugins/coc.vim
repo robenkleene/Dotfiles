@@ -15,7 +15,8 @@ let g:coc_global_extensions = [
   " Went entering pairs quickly, this produces `())`, also has problems with
   " context, e.g., making a comment with `"`
   " \ 'coc-pairs',
-  " UltiSnips is erroring on startup
+  " UltiSnips is erroring when entering characters, also doesn't seem to be
+  " necessary?
   " \ 'coc-ultisnips',
   " This keeps erroring
   " \ 'coc-fish',
