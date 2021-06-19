@@ -104,6 +104,7 @@ Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 if v:version > 801
   Plug 'neoclide/coc.nvim'
+  " Plug 'sirver/UltiSnips'
 endif
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
