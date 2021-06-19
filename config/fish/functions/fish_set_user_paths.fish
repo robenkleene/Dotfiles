@@ -18,7 +18,11 @@ function fish_set_user_paths
     end
 
     # Node
-    set -U fish_user_paths ~/.config/nvm/13.12.0/bin $fish_user_paths
+    if test -e ~/.config/nvm/13.12.0/bin
+        set -U fish_user_paths ~/.config/nvm/13.12.0/bin $fish_user_paths
+    else if test -e ~/.nvm/versions/node/v13.12.0/bin
+        set -U fish_user_paths ~/.nvm/versions/node/v13.12.0/bin $fish_user_paths
+    end
 
     # Ruby
     set -U fish_user_paths ~/.gem/ruby/2.5.3/bin $fish_user_paths
