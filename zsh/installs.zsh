@@ -40,7 +40,11 @@ nvm() {
     nvm "$@"
    fi
 }
-PATH=$HOME/.config/nvm/13.12.0/bin:$PATH
+if [[ -d "$HOME/.config/nvm/13.12.0/bin" ]]; then
+  PATH=$HOME/.config/nvm/13.12.0/bin:$PATH
+elif [[ -d "$HOME/.nvm/versions/node/v13.12.0/bin" ]]; then
+  PATH=$HOME/.nvm/versions/node/v13.12.0/bin:$PATH
+fi
 
 # Syntax highlighting installed via Homebrew
 if [[ -n "${HOMEBREW_DIR-}" ]]; then
