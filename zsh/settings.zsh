@@ -57,6 +57,9 @@ setopt nolistbeep
 # Just don't beep period
 # setopt nobeep
 
+# Renaming function
+autoload zmv
+
 # Completion
 # Enable Completion
 autoload -Uz compinit
