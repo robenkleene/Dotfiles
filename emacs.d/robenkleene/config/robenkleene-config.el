@@ -104,6 +104,19 @@
                                space-after-tab
                                )))
 
+;; Don't jump over symbols when moving by word
+;; This isn't quite what I want, this means selecting from the `H' in *HOME* to
+;; the end of the word will included the `*'
+;; (defun robenkleene/add-symbols-to-syntax ()
+;;   "Add symbols to words."
+;;   (modify-syntax-entry ?` "w")
+;;   (modify-syntax-entry ?/ "w")
+;;   (modify-syntax-entry ?# "w")
+;;   (modify-syntax-entry ?: "w")
+;;   )
+;; (add-hook 'prog-mode-hook 'robenkleene/add-symbols-to-syntax)
+;; (add-hook 'text-mode-hook 'robenkleene/add-symbols-to-syntax)
+
 ;; Highlight Keywords
 (add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
 
