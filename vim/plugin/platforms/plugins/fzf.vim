@@ -11,6 +11,7 @@ nnoremap <leader>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <leader>e :CheckHomeSubdirectory<CR>:Files<CR>
+nnoremap <ESC>e :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
 " nnoremap <C-@> :Commands<CR>
 " vnoremap <C-@> :Commands<CR>
@@ -22,6 +23,7 @@ nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-o> :Quick<CR>
 nnoremap <M-O> :QuickFiles<CR>
+nnoremap <ESC>O :QuickFiles<CR>
 nnoremap <leader>O :QuickFiles<CR>
 " For some reason the above binding doesn't work, but the below one does
 " This can't be used because Vim can't distinguish between `<M-O>` and the
