@@ -187,6 +187,12 @@ abbreviations=(
 'hgi' 'hg import --no-commit -'
 )
 
+if [[ -n "${LOCAL_ABBREVIATIONS-}" ]]; then
+  for key value in ${(kv)LOCAL_ABBREVIATIONS-}; do
+    abbreviations[key]=value
+  done
+fi
+
 # These abbreviations work everywhere
 typeset -Ag everywhere_abbreviations
 everywhere_abbreviations=(
