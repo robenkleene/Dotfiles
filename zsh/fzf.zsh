@@ -57,9 +57,7 @@ _fzf_cd_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  # accept-line instantly adds to history, reset-prompt requires hitting return
-  # zle reset-prompt
-  zle accept-line
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_cd_widget
@@ -141,9 +139,7 @@ _fzf_z_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  # accept-line instantly adds to history, reset-prompt requires hitting return
-  # zle reset-prompt
-  zle accept-line
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_z_widget
@@ -180,9 +176,7 @@ _fzf_developer_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  # accept-line instantly adds to history, reset-prompt requires hitting return
-  # zle reset-prompt
-  zle accept-line
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_developer_widget
@@ -216,9 +210,7 @@ _fzf_quick_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  # accept-line instantly adds to history, reset-prompt requires hitting return
-  # zle reset-prompt
-  zle accept-line
+  zle reset-prompt
   return $ret
 }
 zle -N _fzf_quick_widget
