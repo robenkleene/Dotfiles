@@ -175,6 +175,16 @@ abbreviations=(
 
 # Grep
 'adbl' 'adb -d logcat -s Unity'
+
+# Mercurial
+'hgdb' 'hg diff -r "bottom^" --root .'
+'hgdbs' 'hg diff -r "bottom^" --stat --root .'
+'hgd' 'hg diff --root .'
+'hgcm' 'hg commit -m'
+'hgs' 'hg status'
+'hgsrb' 'hg status --rev bottom'
+'hgr' 'hg record'
+'hgi' 'hg import --no-commit -'
 )
 
 # These abbreviations work everywhere
@@ -192,16 +202,6 @@ everywhere_abbreviations=(
 # Jekyll
 '-jl' '--config _config_local.yml'
 '-jp' '--port 4000'
-
-# Mercurial
-'hgdb' 'hg diff -r "bottom^" --root .'
-'hgdbs' 'hg diff -r "bottom^" --stat --root .'
-'hgd' 'hg diff --root .'
-'hgcm' 'hg commit -m'
-'hgs' 'hg status'
-'hgsrb' 'hg status --rev bottom'
-'hgr' 'hg record'
-'hgi' 'hg import --no-commit -'
 )
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
