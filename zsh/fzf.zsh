@@ -57,7 +57,9 @@ _fzf_cd_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_cd_widget
@@ -105,7 +107,9 @@ _fzf_editor_widget() {
   result_parameter=${(q)result}
   eval "$EDITOR $result_parameter" < /dev/tty
   print -sr -- "$EDITOR $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_editor_widget
@@ -137,7 +141,9 @@ _fzf_z_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_z_widget
@@ -174,7 +180,9 @@ _fzf_developer_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_developer_widget
@@ -208,7 +216,9 @@ _fzf_quick_widget() {
   local result_parameter
   result_parameter=${(q)result}
   print -sr -- "cd $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_quick_widget
@@ -242,7 +252,9 @@ _fzf_quick_files_widget() {
   result_parameter=${(q)result}
   eval "$EDITOR $result_parameter" < /dev/tty
   print -sr -- "$EDITOR $result_parameter"
-  zle reset-prompt
+  # accept-line instantly adds to history, reset-prompt requires hitting return
+  # zle reset-prompt
+  zle accept-line
   return $ret
 }
 zle -N _fzf_quick_files_widget
