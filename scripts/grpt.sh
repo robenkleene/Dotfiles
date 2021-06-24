@@ -22,4 +22,5 @@ while getopts ":C:h" option; do
   esac
 done
 
+# Shorthand helper script, probably better as an global abbreviation
 exec git${git_parameter-} rev-parse --show-toplevel
