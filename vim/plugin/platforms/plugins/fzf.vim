@@ -23,7 +23,8 @@ nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-o> :Quick<CR>
 nnoremap <M-O> :QuickFiles<CR>
-nnoremap <ESC>O :QuickFiles<CR>
+" Never uncomment this, this breaks arrow keys in Vim
+" nnoremap <ESC>O :QuickFiles<CR>
 nnoremap <leader>O :QuickFiles<CR>
 " For some reason the above binding doesn't work, but the below one does
 " This can't be used because Vim can't distinguish between `<M-O>` and the
