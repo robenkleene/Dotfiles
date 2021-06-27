@@ -36,11 +36,14 @@ function! s:MyHighlights() abort
   let s:highlightbgcolor = '236'
   let s:highlightfgcolor = 'NONE'
   " 'ColorColumn' is 80 character line
-  let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn', 'ColorColumn']
+  let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
   for group in s:highlightgroups
     exe 'highlight ' . group . ' ctermbg=' . s:highlightbgcolor  . ' ctermfg=' .
           \ s:highlightfgcolor . ' cterm=NONE'
   endfor
+
+  " Wild Menu {{{1
+  highlight ColorColumn ctermbg=234
 
   " Wild Menu {{{1
   highlight Wildmenu cterm=bold ctermbg=4 ctermfg=black
