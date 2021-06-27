@@ -1,0 +1,70 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+# `coc-snippets` doesn't support the `global.code-snippets` file, so for now,
+# global snippets are duplicated here.
+snippet lorem "Lorem ipsum" w
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+endsnippet
+snippet cmd "Command Key Symbol" iw
+⌘
+endsnippet
+snippet ctrl "Control Key Symbol" iw
+⌃
+endsnippet
+snippet opt "Option Key Symbol" iw
+⌥
+endsnippet
+snippet sft "Shift Key Symbol" iw
+⇧
+endsnippet
+snippet aarr "Arrows" iw
+↓↑←→
+endsnippet
+snippet uarr "Arrows" iw
+↑
+endsnippet
+snippet larr "Arrows" iw
+←
+endsnippet
+snippet rarr "Arrows" iw
+→
+endsnippet
+snippet darr "Arrows" iw
+↓
+endsnippet
+snippet ent "Enter Key Symbol" iw
+↩
+endsnippet
+snippet spc "Space Key Symbol" iw
+␣
+endsnippet
+snippet kss "Keyboard Shortcut Symbols" iw
+⇧⌃⌥⌘
+endsnippet
+snippet kso "Keyboard Shortcut Symbols Other" iw
+⌤↓↑←→⎋⌦⌫↩⇥⇤␣
+endsnippet
