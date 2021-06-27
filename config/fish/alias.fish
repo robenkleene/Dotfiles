@@ -148,7 +148,7 @@ alias ecrm='eval $EMACS_COMMAND README.md'
 alias tags="generate_tags"
 
 # Common
-alias journal="$EDITOR ~/Text/journal/README.md"
+alias journal="$EDITOR ~/Text/journal/journal.md"
 alias tweet="markdown_tweet_edit"
 alias qa="quick_text_search"
 alias writing="$EDITOR ~/Text/writing/README.md"
