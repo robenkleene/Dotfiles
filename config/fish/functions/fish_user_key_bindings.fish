@@ -2,6 +2,7 @@
 bind \cy fish_clipboard_paste
 bind \cq push_line
 bind \cw backward-kill-bigword
+# Give visual feedback on copy by also killing the line
 bind \cx 'fish_clipboard_copy; commandline -f kill-whole-line'
 # Merge history first when doing a search
 # bind -k up 'history --merge ; up-or-search'
