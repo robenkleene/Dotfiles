@@ -43,7 +43,7 @@ function! s:MyHighlights() abort
   endfor
 
   " Wild Menu {{{1
-  highlight ColorColumn ctermbg=234
+  highlight ColorColumn ctermbg=235
 
   " Wild Menu {{{1
   highlight Wildmenu cterm=bold ctermbg=4 ctermfg=black
