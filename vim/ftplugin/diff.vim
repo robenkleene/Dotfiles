@@ -17,5 +17,3 @@ function! DiffFoldLevel()
     endif
 endfunction
 
-nnoremap <tab> za
-nnoremap <return> :set foldenable!<CR>

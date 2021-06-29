@@ -289,3 +289,7 @@ noremap <C-z> :suspend<cr>:silent checktime<cr>
 
 " Paste from yank register (`0`)
 vnoremap <M-y> "0p
+
+" Fold
+nnoremap <tab> za
+nnoremap <return> :set foldenable!<CR>
