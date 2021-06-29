@@ -1,6 +1,7 @@
 # bind \t accept-autosuggestion
 bind \cy fish_clipboard_paste
 bind \cq push_line
+bind \cw backward-kill-bigword
 # Merge history first when doing a search
 # bind -k up 'history --merge ; up-or-search'
 # For some reason the above doesn't get picked up, but below does
