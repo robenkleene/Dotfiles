@@ -7,7 +7,7 @@ alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
 alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 alias ge='emacs_app'
-alias va="xargs -o $VIM_COMMAND -"
+alias va="xargs -o $VIM_COMMAND"
 alias gemacs='emacs_app'
 alias excel='open -a "Microsoft Excel"'
 
