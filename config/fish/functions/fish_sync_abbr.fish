@@ -123,4 +123,6 @@ function fish_sync_abbr
     abbr -a hgsrb 'hg status --rev bottom'
     abbr -a hgr 'hg record'
     abbr -a hgi 'hg import --no-commit -'
+    # New
+    abbr -a tre 'tr -d '\n'
 end
