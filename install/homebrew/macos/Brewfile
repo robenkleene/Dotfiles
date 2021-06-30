@@ -16,9 +16,15 @@ brew 'less'
 
 # Editor
 brew 'aspell'
-brew 'ctags'
 brew 'vim'
 brew 'editorconfig'
+
+# ctags
+# `svn` seems to be an unlisted dependency of `ctags` so it needs to be
+# installed first
+brew 'svn'
+# `HEAD` is required for Objective-C support
+brew 'ctags', args: ['HEAD']
 
 # Languages
 # JavaScript
