@@ -42,6 +42,7 @@ if has('nvim')
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
   inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
   inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+  inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
   inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
@@ -52,6 +53,7 @@ else
   " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
   inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR><right>
   inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR><right>
+  inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR><right>
   inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR><right>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
@@ -247,7 +249,7 @@ function! s:relative_file_insert(path) abort
 endfunction
 
 command! Cdinsert :call fzf#run(fzf#wrap({
-      \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'source': "fd --type d --hidden --follow --exclude .git",
       \   'sink':   function('<SID>insert')
       \ }))
 command! Filesinsert :call fzf#run(fzf#wrap({
@@ -259,7 +261,7 @@ command! RelativeCdinsert :call fzf#run(fzf#wrap({
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeFilesinsert :call fzf#run(fzf#wrap({
-      \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeZinsert :call fzf#run(fzf#wrap({
