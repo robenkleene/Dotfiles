@@ -291,5 +291,5 @@ noremap <C-z> :suspend<cr>:silent checktime<cr>
 vnoremap <M-y> "0p
 
 " Fold
+nnoremap <leader><tab> :set foldenable!<CR>
 nnoremap <tab> za
-nnoremap <return> :set foldenable!<CR>
