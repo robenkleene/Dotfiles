@@ -16,4 +16,3 @@ function! DiffFoldLevel()
         return '='
     endif
 endfunction
-
