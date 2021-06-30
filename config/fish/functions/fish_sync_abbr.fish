@@ -124,5 +124,5 @@ function fish_sync_abbr
     abbr -a hgr 'hg record'
     abbr -a hgi 'hg import --no-commit -'
     # New
-    abbr -a tre 'tr -d '\n'
+    abbr -a tre "tr -d '\n'"
 end
