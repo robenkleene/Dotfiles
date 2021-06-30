@@ -9,6 +9,9 @@ abbreviations=(
 'v' "$VIM_COMMAND"
 'vd' "$VIM_COMMAND -d"
 
+'pq' "p | q"
+'pva' "p | va"
+
 # open
 'or' 'open -R'
 'orm' 'open README.md'
