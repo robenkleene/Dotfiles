@@ -158,7 +158,7 @@ command! Modified :call fzf#run(fzf#wrap({
       \ }))
 
 command! Cd :call fzf#run(fzf#wrap({
-      \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'source': "fd --type d --hidden --follow --exclude .git",
       \   'sink':   function('<SID>file_manager')
       \ }))
 
@@ -253,11 +253,11 @@ command! Cdinsert :call fzf#run(fzf#wrap({
       \   'sink':   function('<SID>insert')
       \ }))
 command! Filesinsert :call fzf#run(fzf#wrap({
-      \   'source': "cmd=\"${FZF_CTRL_T_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store",
       \   'sink':   function('<SID>insert')
       \ }))
 command! RelativeCdinsert :call fzf#run(fzf#wrap({
-      \   'source': "cmd=\"${FZF_ALT_C_COMMAND:-\"command find -L . -mindepth 1 \\\\( -path '*/\\\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\\\) -prune -o -type d -print 2> /dev/null | cut -b3-\"}\" && eval \"$cmd\"",
+      \   'source': "fd --type d --hidden --follow --exclude .git",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeFilesinsert :call fzf#run(fzf#wrap({
