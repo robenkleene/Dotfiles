@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
 message="false"
-while getopts ":mh" option; do
+silent="false"
+while getopts ":smh" option; do
   case "$option" in
     m)
       message="true"
+      ;;
+    s)
+      silent="true"
       ;;
     h)
       echo "Usage: command [-hm]"
@@ -35,6 +39,11 @@ mv -n "$archive_file" "$destination_archive_file"
 if [[ -f "$archive_file" ]]; then
   destination_archive_file=$archive_file
 fi
+
+if [[ "$silent" == "true" ]]; then
+  exit 0
+fi
+
 if [[ "$message" == "true" ]]; then
   line_count=$(wc -l < "$destination_archive_file" | tr -d " " | tr -d "\n")
   echo -n "Backed up $line_count lines"
