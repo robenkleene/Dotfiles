@@ -30,6 +30,13 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
+;; Using `M-[' for `backward-block' isn't possible because `M-[' is the sequence
+;; for escape so it messes with many bindings
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
+  'robenkleene/forward-block)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
+  'robenkleene/backward-block)
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
