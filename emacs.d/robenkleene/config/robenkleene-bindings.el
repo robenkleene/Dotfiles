@@ -178,6 +178,13 @@
   'robenkleene/new-empty)
 
 ;; Window Management
+
+(define-key robenkleene/leader-map
+  (kbd "t")
+  'make-frame)
+(define-key robenkleene/leader-map (kbd "n") 'other-frame)
+(define-key robenkleene/leader-map (kbd "p")
+  (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
 (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
 (define-key robenkleene/leader-map (kbd "v")
