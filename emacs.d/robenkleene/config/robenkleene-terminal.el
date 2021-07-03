@@ -27,7 +27,8 @@
 (define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
 (define-key key-translation-map  (kbd "ESC <left>") (kbd "<M-left>"))
 (define-key key-translation-map  (kbd "ESC <right>") (kbd "<M-right>"))
-
+(define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
+(define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
 (provide 'robenkleene-terminal)
 ;; Local Variables:
