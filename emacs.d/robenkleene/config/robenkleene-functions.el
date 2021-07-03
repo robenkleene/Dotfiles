@@ -908,7 +908,7 @@ Otherwise, call `backward-kill-word'."
                     (shell-command-on-region (point-min)
                                              (point-max)
                                              "~/.bin/markdown_filename"
-                                             standard-output))))    
+                                             standard-output))))
     (write-file (concat filename ".md") t)
     )
   ;; (call-interactively 'save-buffer)
@@ -981,7 +981,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/make-frame-with-current-frame ()
-  "Make a new scratch frame the same size as the current frame."
+  "Make a new frame the same size as the current frame."
   (interactive)
   (let* ((frame (selected-frame))
          (left (frame-parameter frame 'left))
