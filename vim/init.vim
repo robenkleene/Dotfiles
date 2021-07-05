@@ -93,7 +93,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
 Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
-if !has('macunix')
+if !has('macunix') || !has('nvim')
   " This slows down `dd` significantly
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'roxma/vim-tmux-clipboard'
@@ -102,10 +102,8 @@ Plug 'wsdjeg/vim-fetch'
 " Markdown table of contents
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
-if v:version > 801
+if v:version > 801 || has('nvim')
   Plug 'neoclide/coc.nvim'
-  " This isn't necessary with Coc!
-  " Plug 'sirver/UltiSnips'
 endif
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
