@@ -24,6 +24,12 @@ source ~/.config/fish/vendor/chruby/auto.fish
 # Not sure why this isn't working
 # chruby ruby-2.5.3
 
+# Python
+switch (uname)
+    case Linux
+        set -gx PYTHONHOME $HOMEBREW_DIR/Cellar/python@3.9/3.9.6
+end
+
 # llvm
 switch (uname)
     case Darwin
