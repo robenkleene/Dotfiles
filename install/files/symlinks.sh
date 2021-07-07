@@ -41,3 +41,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
   fi
 fi
 
+# Vim
+if [[ -e ~/.vim && ! -e ~/.config/nvim ]]; then
+  ln -s ~/.vim ~/.config/nvim
+fi
