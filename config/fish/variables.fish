@@ -3,7 +3,8 @@ if set -q "$FISH_SOURCED"
 end
 set -gx FISH_SOURCED 1
 
-set -gx VIM_COMMAND "vim"
+# set -gx VIM_COMMAND "vim"
+set -gx VIM_COMMAND "nvim"
 set -gx BAT_COMMAND "bat"
 set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
