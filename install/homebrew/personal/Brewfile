@@ -20,6 +20,7 @@ brew 'aspell'
 # Head version of `ctags` contains support for Objective-C
 brew 'ctags', args: ['HEAD']
 brew 'vim'
+brew 'neovim'
 brew 'editorconfig'
 
 # Languages
@@ -169,3 +170,24 @@ brew 'gpac'
 brew 'libebml'
 brew 'libmatroska'
 brew 'mkvtomp4'
+
+# NeoVim
+brew 'cmake'
+brew 'libbsd'
+brew 'libnsl'
+brew 'libuv'
+brew 'luv'
+brew 'neovim'
+brew 'utf8proc'
+brew 'icu4c'
+brew 'libmetalink'
+brew 'unibilium'
+brew 'libvterm'
+brew 'msgpack'
+brew 'ninja'
+brew 'libmd'
+brew 'libtirpc'
+brew 'libtermkey'
+brew 'luajit-openresty'
+brew 'tree-sitter'
+brew 'pcre'
