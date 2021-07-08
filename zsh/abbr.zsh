@@ -189,6 +189,7 @@ abbreviations=(
 'hgsrb' 'hg status --rev bottom'
 'hgr' 'hg record'
 'hgi' 'hg import --no-commit -'
+'hgrc' 'hg rebase --continue'
 )
 
 if [[ -n "${LOCAL_ABBREVIATIONS-}" ]]; then
