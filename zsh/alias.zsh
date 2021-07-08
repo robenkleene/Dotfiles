@@ -191,7 +191,6 @@ alias journal="$VIM_COMMAND ~/Text/journal/journal.md"
 alias tweet="markdown_tweet_edit"
 alias qa="quick_text_search"
 alias writing="$VIM_COMMAND ~/Text/writing/README.md"
-alias backup="backup_file"
 alias vs="vscode"
 
 # Mercurial

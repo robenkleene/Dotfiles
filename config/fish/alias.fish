@@ -153,7 +153,6 @@ alias journal="$EDITOR ~/Text/journal/journal.md"
 alias tweet="markdown_tweet_edit"
 alias qa="quick_text_search"
 alias writing="$EDITOR ~/Text/writing/README.md"
-alias backup="backup_file"
 alias vs="vscode"
 
 # Mercurial
