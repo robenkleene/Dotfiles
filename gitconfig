@@ -2,7 +2,7 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim -c "SessionNoAuto"
+	editor = ~/.bin/vim_command -c "SessionNoAuto"
 [push]
 	default = simple
 [merge]
