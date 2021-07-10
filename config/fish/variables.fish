@@ -41,6 +41,9 @@ end
 set -gx VAGRANT_HOME ~/Documents/VMs/Vagrant/vagrant.d
 set -gx VAGRANT_VMWARE_CLONE_DIRECTORY ~/Documents/VMs/Vagrant/
 
+# Git
+set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
+
 # Tidy
 set -gx HTML_TIDY "$HOME/.tidy"
 
