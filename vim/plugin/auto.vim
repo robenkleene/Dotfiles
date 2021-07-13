@@ -134,3 +134,10 @@ augroup close_quickfix
   autocmd!
   autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 augroup END
+
+if has('nvim')
+  augroup highlight_yank
+      autocmd!
+      au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+  augroup END
+endif
