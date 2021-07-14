@@ -1,5 +1,8 @@
 # This file needs to be compiled with the `lesskey` command
 
+# `esc` doesn't make a great `abort` key because it could interfere with `esc`
+# meta keys. It's better just to get used to `^G` to abort for this reason
+
 #line-edit
 
     ^W      word-backspace
