@@ -294,3 +294,10 @@ vnoremap <M-y> "0p
 nnoremap <leader><tab> :set foldenable!<CR>
 " Can't do this because it interferes with `C-i` to go forward
 " nnoremap <tab> za
+
+nnoremap <silent> <s-tab> :<c-U>call bindings#toggle_fold()<cr>
+if has('gui_running')
+  nnoremap <silent> <tab> :<c-u>call bindings#toggle_fold()<cr>
+else
+  nnoremap <silent> <tab> :<c-u>call bindings#move_forward_or_toggle_fold()<cr>
+endif

@@ -108,3 +108,20 @@ function! bindings#OpenTodo() abort
   " terminal zsh
   " tnoremap <buffer> <Esc> <C-\><C-n>
 endfunction
+
+function! bindings#toggle_fold()
+  if foldclosed(line('.')) >= 0
+    silent! normal zv
+  else
+    silent! normal za
+  endif
+endfunction
+
+function! bindings#move_forward_or_toggle_fold()
+  let oldpos = getpos('.')
+  execute "normal! 1\<c-i>"
+  let newpos = getpos('.')
+  if newpos == oldpos
+    call bindings#toggle_fold()
+  endif
+endfunction
