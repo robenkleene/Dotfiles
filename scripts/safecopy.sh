@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  pbcopy $@
+  sed s'/⏎$//' | pbcopy "$@"
 elif [ -n "$TMUX" ]; then
-  tmux loadb -
+  sed s'/⏎$//' | tmux loadb -
 else
   cat >/dev/null
 fi
