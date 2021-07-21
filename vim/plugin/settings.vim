@@ -45,7 +45,10 @@ syntax on
 " This option breaks visual block mode paste, e.g., pasting a column of text
 " after another column. The workaround is to paste from the system clipboard
 " with `"*p`.
-set clipboard^=unnamed,unnamedplus
+" Adding `unnamedplus` breaks linewise pasting in neovim, e.g., `yyp` inserts
+" in the current line rather than pasting to a new line
+" set clipboard^=unnamed,unnamedplus
+set clipboard^=unnamed
 
 " Disable mouse
 " set mouse=
