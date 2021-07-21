@@ -126,4 +126,6 @@ function fish_sync_abbr
     abbr -a hgi 'hg import --no-commit -'
     # New
     abbr -a tre "tr -d '\n'"
+    # Fish
+    abbr -a 1for "for v in"
 end
