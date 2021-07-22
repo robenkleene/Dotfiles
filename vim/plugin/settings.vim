@@ -47,7 +47,8 @@ syntax on
 " with `"*p`.
 if has('macunix')
   " Adding `unnamedplus` breaks linewise pasting in neovim, e.g., `yyp` inserts
-  " in the current line rather than pasting to a new line  set clipboard^=unnamed,unnamedplus
+  " in the current line rather than pasting to a new line
+  set clipboard^=unnamed,unnamedplus
 endif
 
 " Disable mouse
