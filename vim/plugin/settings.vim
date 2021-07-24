@@ -25,6 +25,8 @@ set sessionoptions-=folds
 " Don't restore empty buffers
 set sessionoptions-=blank
 
+set shm+=I
+
 " Basic {{{1
 
 " set spell spelllang=en_us
