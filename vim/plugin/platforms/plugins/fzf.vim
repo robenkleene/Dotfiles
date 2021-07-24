@@ -37,32 +37,16 @@ nnoremap <leader>r :History<CR>
 nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :FZFTags<CR>
 nnoremap <M-i> :FZFTags<CR>
+inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
+inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 if has('nvim')
-  " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR>
-  " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR>
-  inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
-  inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
-  inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
-  inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
-  snoremap <M-c> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeCdinsert<CR>
-  snoremap <M-e> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeFilesinsert<CR>
-  snoremap <M-a><M-e> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeFilesinsert<CR>
-  snoremap <M-z> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeZinsert<CR>
-  " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
-  " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
-  " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
-  " inoremap <M-i>e <C-\><C-o>:RelativeFilesinsert<CR>
-else
-  " inoremap <M-c> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Cdinsert<CR><right>
-  " inoremap <M-e> <C-\><C-o>:lcd %:p:h<CR><C-\><C-o>:Filesinsert<CR><right>
-  inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR><right>
-  inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR><right>
-  inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR><right>
-  inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR><right>
-  " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
-  " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
-  " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
-  " inoremap <M-i>e <C-\><C-o>:RelativeFilesinsert<CR>
+  " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
+  snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>
+  snoremap <M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  snoremap <M-a><M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  snoremap <M-z> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeZinsert<CR>
 endif
 
 command! -range CheckHomeSubdirectory call <SID>CheckHomeSubdirectory()
