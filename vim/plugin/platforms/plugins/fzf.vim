@@ -44,6 +44,10 @@ if has('nvim')
   inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
   inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
   inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
+  snoremap <M-c> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeCdinsert<CR>
+  snoremap <M-e> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeFilesinsert<CR>
+  snoremap <M-a><M-e> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeFilesinsert<CR>
+  snoremap <M-z> <C-o>:CheckHomeSubdirectory<CR><C-o>:RelativeZinsert<CR>
   " inoremap <M-i><M-c> <C-\><C-o>:RelativeCdinsert<CR>
   " inoremap <M-i><M-e> <C-\><C-o>:RelativeFilesinsert<CR>
   " inoremap <M-i>c <C-\><C-o>:RelativeCdinsert<CR>
