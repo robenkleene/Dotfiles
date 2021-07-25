@@ -160,4 +160,4 @@ alias hgf='hg status --rev ".^" | grep -v "^R" | cut -d\' \' -f2'
 alias hgfb 'hg status --rev bottom^ | grep -v "^R" | cut -d\' \' -f2'
 
 # Special
-alias tl='time_log'
+alias lt='time_log'
