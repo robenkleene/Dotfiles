@@ -23,4 +23,4 @@ while getopts ":p:h" option; do
   esac
 done
 
-echo "$(date)", "$1" > "$log"
+echo "$(date)", "$1" >> "$log"
