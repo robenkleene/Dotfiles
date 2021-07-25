@@ -3,10 +3,13 @@
 set -euo pipefail
 
 log="$HOME/Text/journal/time.csv"
-while getopts ":p:h" option; do
+while getopts ":t:p:h" option; do
   case "$option" in
     p)
       log="$OPTARG"
+      ;;
+    t)
+      task="$OPTARG"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -23,4 +26,9 @@ while getopts ":p:h" option; do
   esac
 done
 
-echo "$(date)", "$1" >> "$log"
+if [[ -z "${task-}" ]]; then
+  echo "Error: No task" >&2
+  exit 1
+fi
+
+echo "$(date)", "$task" >> "$log"
