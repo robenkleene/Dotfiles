@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-echo "$(date)", "$1" > "${2:-~/Text/journal/time.csv}"
+echo "$(date)", "$1" > "${2:-$HOME/Text/journal/time.csv}"
