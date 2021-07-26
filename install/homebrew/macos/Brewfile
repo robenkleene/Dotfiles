@@ -9,6 +9,7 @@ brew 'tmux'
 brew 'fasd'
 brew 'ripgrep'
 brew 'fd'
+brew 'sd'
 brew 'bat'
 brew 'mas'
 # Support for `lesskey`
