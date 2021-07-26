@@ -4,10 +4,6 @@ function fish_sync_abbr
     for a in (abbr --list)
         abbr --erase $a
     end
-    if test -f ~/.local_abbr.fish
-        source ~/.local_abbr.fish
-    end
-
     abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
     abbr -a pq "p | q"
@@ -132,4 +128,9 @@ function fish_sync_abbr
     abbr -a soun "sort | uniq"
     # Fish
     abbr -a 1for "for v in"
+
+    # Local
+    if test -f ~/.local_abbr.fish
+        source ~/.local_abbr.fish
+    end
 end
