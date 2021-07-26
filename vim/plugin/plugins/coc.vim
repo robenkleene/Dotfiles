@@ -19,6 +19,7 @@ let g:coc_global_extensions = [
   " necessary?
   " \ 'coc-ultisnips',
   " This keeps erroring
+  " If I'm still having completion errors, try running `CocUninstall coc-fish`
   " \ 'coc-fish',
 
 autocmd FileType markdown let b:coc_suggest_disable = 1
