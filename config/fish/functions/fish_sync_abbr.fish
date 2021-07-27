@@ -113,7 +113,7 @@ function fish_sync_abbr
     # Mercurial
     abbr -a hgdb 'hg diff -r "bottom^" --root .'
     abbr -a hgdbs 'hg diff -r "bottom^" --stat --root .'
-    abbr -a hgdc 'hg diff -pr .^1'
+    abbr -a hgd1 'hg diff -pr .^1'
     abbr -a hgd 'hg diff --root .'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgrc 'hg rebase --continue'
