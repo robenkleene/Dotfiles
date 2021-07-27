@@ -24,4 +24,4 @@ while getopts ":C:h" option; do
   esac
 done
 
-git$git_parameter push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
+git$git_parameter push --set-upstream origin "$(git$git_parameter rev-parse --abbrev-ref HEAD)"
