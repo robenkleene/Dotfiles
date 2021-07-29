@@ -278,8 +278,10 @@ noremap <silent> <Down> gj
 " vnoremap <ESC>p "0p
 noremap <leader>p "0p
 vnoremap <leader>p "0p
-nnoremap <silent> <M-n> :cn<CR>
-nnoremap <silent> <M-p> :cp<CR>
+" nnoremap <silent> <M-n> :cn<CR>
+" nnoremap <silent> <M-p> :cp<CR>
+nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : ":next<CR>"
+nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : ":prev<CR>"
 
 " This makes it so hitting `<c-z>` then changing a file then `fg` to return
 " will update instantly.
