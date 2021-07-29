@@ -890,9 +890,7 @@ Otherwise, call `backward-kill-word'."
   "Open daily file."
   (interactive)
   (robenkleene/safe-find-file
-   (shell-quote-argument
-    (shell-command-to-string "~/.bin/daily_file"))
-   )
+   (shell-command-to-string "~/.bin/daily_file"))
   )
 
 (defun robenkleene/new-inbox-document (title)
