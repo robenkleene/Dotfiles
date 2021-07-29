@@ -12,6 +12,7 @@ brew 'fd'
 brew 'sd'
 brew 'bat'
 brew 'mas'
+brew 'rename'
 # Support for `lesskey`
 brew 'less'
 brew 'wget'
