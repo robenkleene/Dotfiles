@@ -886,6 +886,15 @@ Otherwise, call `backward-kill-word'."
   (find-file "~/Archive/Text/")
   )
 
+(defun robenkleene/open-daily ()
+  "Open daily file."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-quote-argument
+    (shell-command-to-string "~/.bin/daily_file"))
+   )
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "

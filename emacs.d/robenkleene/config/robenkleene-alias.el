@@ -25,6 +25,7 @@
 (defalias 'home 'robenkleene/open-home)
 (defalias 'inbox 'robenkleene/inbox)
 (defalias 'journal 'robenkleene/open-journal)
+(defalias 'daily 'robenkleene/open-daily)
 (defalias 'gac 'robenkleene/git-commit-all)
 (defalias 'gacm 'robenkleene/git-commit-all-message)
 (defalias 'clear 'desktop-clear)
