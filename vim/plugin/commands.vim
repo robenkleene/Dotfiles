@@ -116,3 +116,7 @@ command! QuitIfNoBuffers :call commands#QuitIfNoBuffers()
 
 " Snippets
 command! CodeSnippets :e ~/.config/Code/User/snippets
+
+" Files
+command! Fnext :call commands#Fnext()
+command! Fprev :call commands#Fprev()
