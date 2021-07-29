@@ -2,8 +2,9 @@
 
 set -euo pipefail
 
-dir=~/Text/journal
-filename=$(date +%F).md
+dir=~/Text/journal/daily
+date=$(date +%F)
+filename=$date.md
 filepath=$dir/$filename
 
 if [[ ! -d "$dir" ]]; then
@@ -12,6 +13,6 @@ if [[ ! -d "$dir" ]]; then
 fi
 
 if [[ ! -f "$filepath" ]]; then
-  touch "$filepath"
+  echo -e "# $date\n\n" >> "$filepath"
 fi
 echo "$filepath"
