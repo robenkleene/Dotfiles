@@ -24,11 +24,11 @@ brew 'vim'
 brew 'editorconfig'
 brew 'sbcl'
 brew 'neofetch'
-# NeoVim
 brew 'neovim'
 brew 'fish'
 brew 'hub'
 brew 'gh'
+brew 'rename'
 
 # Languages
 # JavaScript
