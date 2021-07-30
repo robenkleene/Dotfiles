@@ -15,4 +15,4 @@ fi
 if [[ ! -f "$filepath" ]]; then
   echo -e "# $date\n\n" >> "$filepath"
 fi
-echo "$filepath"
+echo -n "$filepath"
