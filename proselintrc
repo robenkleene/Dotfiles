@@ -3,7 +3,7 @@
     "misc.but": false,
     "typography.symbols": false,
     "dates_times.dates": false,
-    "after_the_deadline.redundancy": false,
+    "redundancy.misc": false,
     "dates_times.am_pm": false
   }
 }
