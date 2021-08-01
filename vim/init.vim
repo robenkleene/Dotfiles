@@ -73,7 +73,8 @@ Plug 'Konfekt/vim-alias'
 Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'markonm/traces.vim' , Cond(!has('nvim'))
+Plug 'machakann/vim-highlightedyank', Cond(!has('nvim'))
+Plug 'markonm/traces.vim', Cond(!has('nvim'))
 Plug 'beloglazov/vim-textobj-quotes'
 " Hack to fix `gx` until it's fixed in `vim` https://github.com/vim/vim/issues/4738
 Plug 'tyru/open-browser.vim'
