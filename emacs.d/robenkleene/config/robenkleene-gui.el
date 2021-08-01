@@ -13,6 +13,7 @@
         (expand-file-name "~/.rubies/ruby-2.5.3/bin")
         (expand-file-name "~/.rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/bin")
         (expand-file-name "~/Library/Python/3.9/bin")
+        (expand-file-name "/usr/local/bin")
         )
        ))
   (setenv "PATH" (mapconcat
