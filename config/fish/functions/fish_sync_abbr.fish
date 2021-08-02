@@ -7,6 +7,7 @@ function fish_sync_abbr
     abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
     abbr -a v- "$VIM_COMMAND -"
+    abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
     abbr -a pva "p | va"
     abbr -a vd "$VIM_COMMAND -d"
