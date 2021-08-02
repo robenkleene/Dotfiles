@@ -32,10 +32,10 @@ autocmd FileType pullrequest let b:coc_suggest_disable = 1
 " vmap <M-BS> <C-W>
 
 " Refresh after a change that doesn't touch the file, like a `git commit`
-augroup git_refresh
-  autocmd!
-  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | CocCommand git.refresh | endif
-augroup END
+" augroup git_refresh
+"   autocmd!
+"   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | CocCommand git.refresh | endif
+" augroup END
 
 " TextEdit might fail if hidden is not set.
 set hidden
