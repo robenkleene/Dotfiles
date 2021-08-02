@@ -24,8 +24,12 @@ function fish_set_user_paths
         set -U fish_user_paths ~/.nvm/versions/node/v13.12.0/bin $fish_user_paths
     end
 
+    # Keyboard
     if test -e /usr/local/opt/avr-gcc@8/bin
         set -U fish_user_paths /usr/local/opt/avr-gcc@8/bin $fish_user_paths
+    end
+    if test -e /usr/local/opt/arm-gcc-bin@8/bin
+        set -U fish_user_paths /usr/local/opt/arm-gcc-bin@8/bin $fish_user_paths
     end
 
     # Ruby
