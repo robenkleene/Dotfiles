@@ -24,6 +24,10 @@ function fish_set_user_paths
         set -U fish_user_paths ~/.nvm/versions/node/v13.12.0/bin $fish_user_paths
     end
 
+    if test -e /usr/local/opt/avr-gcc@8/bin
+        set -U fish_user_paths /usr/local/opt/avr-gcc@8/bin $fish_user_paths
+    end
+
     # Ruby
     set -U fish_user_paths ~/.gem/ruby/2.5.3/bin $fish_user_paths
     set -U fish_user_paths ~/.rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/bin $fish_user_paths
