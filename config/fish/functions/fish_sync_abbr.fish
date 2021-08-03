@@ -122,7 +122,6 @@ function fish_sync_abbr
     abbr -a hgrc 'hg rebase --continue'
     abbr -a hgs 'hg status'
     abbr -a hgsrb 'hg status --rev bottom'
-    abbr -a hgr 'hg record'
     abbr -a hgim 'hg import --prefix . --no-commit -'
     abbr -a hgu 'hg update'
     # New
