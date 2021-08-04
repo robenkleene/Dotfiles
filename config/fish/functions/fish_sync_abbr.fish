@@ -131,7 +131,7 @@ function fish_sync_abbr
     # Fish
     abbr -a 1for "for v in"
     abbr -a fsa "fish_sync_abbr"
-    abbr -a xargs0 "xargs -0"
+    abbr -a x0 "xargs -0"
 
     # Local
     if test -f ~/.local_abbr.fish
