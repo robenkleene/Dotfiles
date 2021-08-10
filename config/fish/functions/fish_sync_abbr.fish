@@ -124,6 +124,7 @@ function fish_sync_abbr
     abbr -a hgsrb 'hg status --rev bottom'
     abbr -a hgim 'hg import --prefix . --no-commit -'
     abbr -a hgu 'hg update'
+    abbr -a hgsh 'hg show'
     # New
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
