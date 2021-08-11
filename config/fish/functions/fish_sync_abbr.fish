@@ -131,7 +131,6 @@ function fish_sync_abbr
     abbr -a soun "sort | uniq"
     # Fish
     abbr -a 1for "for v in"
-    abbr -a fsa "fish_sync_abbr"
     abbr -a x0 "xargs -0"
 
     # Local
