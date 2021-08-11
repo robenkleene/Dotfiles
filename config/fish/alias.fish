@@ -22,6 +22,7 @@ alias excel='open -a "Microsoft Excel"'
 
 # `zsh`
 alias foi='fish_edit_config'
+alias fsa='fish_sync_abbr'
 
 # Short
 alias t='terminal_cd'
