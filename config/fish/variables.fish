@@ -28,6 +28,8 @@ end
 set -gx ALTERNATE_EDITOR ""
 set -gx EMACS_COMMAND "emacsclient -nw"
 
+set -gx fish_help_browser "echo"
+
 # Homebrew
 if type -q brew
     set -gx HOMEBREW_DIR (brew --prefix)
