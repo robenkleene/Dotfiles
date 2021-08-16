@@ -4,6 +4,7 @@
     "typography.symbols": false,
     "dates_times.dates": false,
     "redundancy.misc": false,
-    "dates_times.am_pm": false
+    "dates_times.am_pm": false,
+    "misc.preferred_forms": false
   }
 }
