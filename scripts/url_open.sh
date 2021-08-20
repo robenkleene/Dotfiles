@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ "$(uname)" = "Linux" ]]; then
+  cat
+  exit
+fi
+
 while getopts ":b:h" option; do
   case "$option" in
     b)
