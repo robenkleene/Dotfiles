@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-/usr/bin/python -c "import urllib, sys; print urllib.quote(sys.argv[1])" "$1"
+python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));"
