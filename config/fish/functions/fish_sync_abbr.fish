@@ -19,6 +19,7 @@ function fish_sync_abbr
     abbr -a rgi "$ACK_COMMAND --no-ignore"
     abbr -a rgg "$ACK_COMMAND -g"
     abbr -a rgh "$ACK_COMMAND --heading"
+    abbr -a rgin "rg -IN -m 1"
     abbr -a fdi "fd -I"
     abbr -a fdg "fd -g"
     abbr -a 0fd 'fd -0'
