@@ -145,7 +145,8 @@
     )
    )
   (let* ((current-prefix-arg nil)
-         (result (file-relative-name (robenkleene/ido-recursive-get-file dir)
+         (result (file-relative-name (robenkleene/ido-recursive-get-file
+                                      (shell-quote-argument dir))
                                      default-directory)))
     ;; The `default-directory' means inserted file is always relative to the
     ;; current directory.
@@ -237,7 +238,7 @@
            (shell-command-to-string
             (concat "fd "
                     " --type f --follow --hidden --exclude .git --exclude .DS_Store . "
-                    (shell-quote-argument dir)
+                    dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
