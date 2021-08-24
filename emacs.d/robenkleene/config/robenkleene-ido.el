@@ -162,7 +162,7 @@
   (insert (file-relative-name (robenkleene/ido-recursive-get-file
                                (robenkleene/source-control-directory))
                               default-directory))
-  )t
+  )
 
 (defun robenkleene/ido-source-control-recursive-insert-dir ()
   "Find and insert directory recursively from source control root."
@@ -237,7 +237,7 @@
            (shell-command-to-string
             (concat "fd "
                     " --type f --follow --hidden --exclude .git --exclude .DS_Store . "
-                    dir
+                    (shell-quote-argument dir)
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
