@@ -1,1 +1,3 @@
-alias rg rg_custom $*
+alias a TERM=eterm-color rg_custom $*
+alias rg TERM=eterm-color rg_custom $*
+alias esa eshell-read-aliases-list
