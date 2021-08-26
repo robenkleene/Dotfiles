@@ -157,7 +157,7 @@ alias writing="$EDITOR ~/Text/writing/README.md"
 alias vs="vscode"
 
 # Mercurial
-alias cdhg='cd (hg root)'
+alias cdhg='hg_cd_root'
 alias hgf='hg status --rev ".^" | grep -v "^R" | cut -d\' \' -f2'
 alias hgfb 'hg status --rev bottom^ | grep -v "^R" | cut -d\' \' -f2'
 
