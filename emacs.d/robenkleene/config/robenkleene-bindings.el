@@ -136,6 +136,8 @@
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 ;; (define-key robenkleene/leader-map (kbd "t") 'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
+(define-key robenkleene/leader-map (kbd "<escape>")
+  'robenkleene/other-window-shell)
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "i") 'imenu)
 (define-key robenkleene/leader-map (kbd "l") 'occur)
