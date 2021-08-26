@@ -1,1 +1,1 @@
-alias rg rg_custom
+alias rg rg_custom $*
