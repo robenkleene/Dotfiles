@@ -104,7 +104,10 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 if v:version > 801 || has('nvim')
-  Plug 'neoclide/coc.nvim'
+  if &shell != '/bin/zsh'
+    " Don't load 
+    Plug 'neoclide/coc.nvim'
+  endif
 endif
 " Languages {{{2
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
