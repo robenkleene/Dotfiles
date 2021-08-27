@@ -81,6 +81,7 @@ tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
 cask 'wireshark'
+cask 'kitty'
 
 # Animated GIFs, `gifify` dependencies
 brew 'ffmpeg'
