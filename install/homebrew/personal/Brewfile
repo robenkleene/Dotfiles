@@ -84,6 +84,7 @@ cask 'wireshark'
 cask 'anki'
 cask 'processing'
 cask 'fontforge'
+cask 'kitty'
 
 # Animated GIFs, `gifify` dependencies
 brew 'ffmpeg'
