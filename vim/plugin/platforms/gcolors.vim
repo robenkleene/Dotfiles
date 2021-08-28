@@ -41,6 +41,8 @@ function! s:MyHighlights() abort
     exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .
           \ s:highlightfgcolor . ' gui=NONE'
   endfor
+  " Disable underlining line numbers
+  highlight CursorLineNR cterm=NONE
 
   " Wild Menu {{{1
   highlight ColorColumn guibg=#262626
