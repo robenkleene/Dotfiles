@@ -3,4 +3,5 @@ set <F32>&
 set <F33>&
 
 " This is set in RSI
-cnoremap <C-y> <C-r>*
+" cnoremap <C-y> <C-r>*
+cnoremap <expr> <C-y> getreg('*') ? "<C-r>*" : "<C-r>0" 
