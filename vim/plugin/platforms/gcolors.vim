@@ -49,11 +49,11 @@ function! s:MyHighlights() abort
   highlight ColorColumn guibg=#262626
 
   " Wild Menu {{{1
-  highlight Wildmenu gui=bold guibg=#000080 guifg=black
+  highlight Wildmenu gui=bold guibg=#262626 guifg=black
 
   " Autocomplete {{{1
   highlight Pmenu guifg=white guibg=#3a3a3a
-  highlight PmenuSel guifg=black guibg=#000080
+  highlight PmenuSel guifg=black guibg=#262626
   highlight PmenuSbar guifg=#4e4e4e guibg=#4e4e4e
   highlight PmenuThumb guifg=#808080 guibg=#808080
 
@@ -64,14 +64,14 @@ function! s:MyHighlights() abort
   highlight Visual guibg=#005f87 guifg=NONE
   " Original idea, grey background:
   " highlight MatchParen guifg=white guibg=#808080
-  highlight MatchParen guifg=#000080 guibg=NONE gui=underline
+  highlight MatchParen guifg=#262626 guibg=NONE gui=underline
   highlight Todo guifg=lightblue guibg=NONE gui=bold
 
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#000080 guifg=black gui=bold
-  highlight Search guibg=#000080 guifg=black gui=bold
+  highlight IncSearch guibg=#262626 guifg=black gui=bold
+  highlight Search guibg=#262626 guifg=black gui=bold
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
