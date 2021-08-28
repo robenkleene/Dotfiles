@@ -54,6 +54,8 @@ tap 'LouisBrunner/valgrind'
 brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
 # Lisp
 brew 'sbcl'
+# Go
+brew 'go'
 
 # Special
 brew 'pandoc'
