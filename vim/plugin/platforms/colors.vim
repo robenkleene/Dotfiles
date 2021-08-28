@@ -1,6 +1,6 @@
 " Terminal Colors
 
-if has('gui_running')
+if has('gui_running' || &termguicolors)
   finish
 endif
 
