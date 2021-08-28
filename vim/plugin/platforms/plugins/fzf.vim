@@ -19,6 +19,9 @@ nnoremap <ESC>e :CheckHomeSubdirectory<CR>:Files<CR>
 " vnoremap <C-Space> :Commands<CR>
 nnoremap <M-x> :Commands<CR>
 vnoremap <M-x> :VisualCommands<CR>
+" Fix for kitty
+nnoremap ≈ :Commands<CR>
+vnoremap ≈ :VisualCommands<CR>
 nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-o> :Quick<CR>
