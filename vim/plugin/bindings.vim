@@ -255,6 +255,7 @@ cnoremap <C-x><C-e> <C-f>
 " Emacs Paste
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>*" : "<C-r>0" 
 snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>*" : "<C-r>0" 
+
 " Fish paste
 " Don't use this, `<C-v>` in insert mode is important for viewing how keys are
 " interpreted.
