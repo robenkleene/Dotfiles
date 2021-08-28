@@ -22,6 +22,7 @@ vnoremap <M-x> :VisualCommands<CR>
 " Fix for kitty
 nnoremap ≈ :Commands<CR>
 vnoremap ≈ :VisualCommands<CR>
+nnoremap Ω :Z<CR>
 nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
 nnoremap <M-o> :Quick<CR>
