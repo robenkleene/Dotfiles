@@ -1,6 +1,6 @@
 " GUI Colors
 
-if !has('gui_running' && !&termguicolors)
+if !has('gui_running') && !&termguicolors
   finish
 endif
 
