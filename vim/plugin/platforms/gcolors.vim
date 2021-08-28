@@ -12,6 +12,10 @@ endif
 " `:so $VIMRUNTIME/syntax/hitest.vim` lists all the styled syntax groups
 " Or use my command `:RunHighlightTest`
 
+" Colorscheme
+set background=dark
+colorscheme ir_black
+
 " Set the `augroup` before setting the color scheme
 augroup MyColors
   autocmd!
@@ -43,6 +47,8 @@ function! s:MyHighlights() abort
   endfor
 
   " Disable underlining line numbers
+  highlight CursorColumn cterm=NONE
+  highlight CursorLine cterm=NONE
   highlight CursorLineNR cterm=NONE
 
   " Wild Menu {{{1
@@ -53,7 +59,7 @@ function! s:MyHighlights() abort
 
   " Autocomplete {{{1
   highlight Pmenu guifg=white guibg=#3a3a3a
-  highlight PmenuSel guifg=black guibg=#262626
+  highlight PmenuSel guifg=black guibg=#69a9FF
   highlight PmenuSbar guifg=#4e4e4e guibg=#4e4e4e
   highlight PmenuThumb guifg=#808080 guibg=#808080
 
@@ -70,8 +76,10 @@ function! s:MyHighlights() abort
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#262626 guifg=black gui=bold
-  highlight Search guibg=#262626 guifg=black gui=bold
+  highlight IncSearch guibg=#69a9FF guifg=black gui=NONE
+  highlight Search guibg=#69a9FF guifg=black gui=NONE
+  highlight IncSearch cterm=NONE
+  highlight Search cterm=NONE
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
@@ -83,7 +91,9 @@ function! s:MyHighlights() abort
 
   " Tabs {{{1
   highlight TabLine gui=NONE guibg=#4e4e4e guifg=#b2b2b2
+  highlight TabLine cterm=NONE
   highlight TabLineFill gui=NONE guibg=#4e4e4e guifg=#b2b2b2
+  highlight TabLineFill cterm=NONE
 
   " Comments & Tildes {{{1
   highlight comment guifg=#808080
@@ -202,6 +212,3 @@ function! s:MyHighlights() abort
   " highlight rubyInterpolationDelimiter guifg=#87afdf
 endfunction
 
-" Colorscheme
-set background=dark
-colorscheme ir_black

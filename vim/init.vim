@@ -20,6 +20,9 @@ if has('nvim') && !has("python3")
   echom "Running nvim without python3"
 endif
 
+" Set here so &termguicolors is set for later checks
+set termguicolors
+
 " Plugins {{{1
 
 " Install Vim-Plug if it is missing
