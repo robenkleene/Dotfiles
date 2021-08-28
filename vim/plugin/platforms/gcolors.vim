@@ -41,6 +41,7 @@ function! s:MyHighlights() abort
     exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .
           \ s:highlightfgcolor . ' gui=NONE'
   endfor
+
   " Disable underlining line numbers
   highlight CursorLineNR cterm=NONE
 
@@ -73,7 +74,7 @@ function! s:MyHighlights() abort
   highlight Search guibg=#000080 guifg=black gui=bold
 
   " Status Line {{{1
-  highlight StatusLine guibg=white guifg=#808080
+  highlight StatusLine guifg=white guibg=#808080
   highlight StatusLineNC guifg=#4e4e4e guibg=#b2b2b2
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
