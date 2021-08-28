@@ -4,119 +4,146 @@ if !has('gui_running') && !&termguicolors
   finish
 endif
 
-" Set the `augroup` before setting the `colorscheme`
-augroup MyGUIColors
+" Notes for working with colors:
+" `:XtermColorTable` displays the hex colors a terminal equivalents
+" `:so $VIMRUNTIME/syntax/colortest.vim` displays the named colors
+" Or use my command `:RunColorTest`
+
+" `:so $VIMRUNTIME/syntax/hitest.vim` lists all the styled syntax groups
+" Or use my command `:RunHighlightTest`
+
+" Set the `augroup` before setting the color scheme
+augroup MyColors
   autocmd!
-  autocmd ColorScheme * call <SID>MyGUIHighlights()
+  autocmd ColorScheme * call <SID>MyHighlights()
 augroup END
 
-function! s:MyGUIHighlights() abort
-
+function! s:MyHighlights() abort
   " Background {{{1
-  let s:bgcolor = '#232323'
-  let s:backgroundgroups = ['CursorColumn', 'LineNr',
-              \ 'NonText', 'SpecialKey', 'VertSplit',
-              \ 'Normal', 'FoldColumn', 'SignColumn']
+  let s:bgcolor = 'NONE'
+  let s:backgroundgroups = [
+        \ 'NonText', 'SpecialKey', 'VertSplit',
+        \ 'Normal', 'SignColumn', 'FoldColumn']
   " Set Background Colors
   for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
   endfor
-  
+
   " Line Numbers {{{1
-  highlight LineNr guifg=#7c7c7c
-  
+  highlight LineNr guibg=NONE guifg=#444444
+
   " Cursor Line {{{1
-  let s:highlightbgcolor = '#3A3A3A'
+  let s:highlightbgcolor = '#303030'
   let s:highlightfgcolor = 'NONE'
-  
+  " 'ColorColumn' is 80 character line
   let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
   for group in s:highlightgroups
-    exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .  
-          \ s:highlightfgcolor
+    exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .
+          \ s:highlightfgcolor . ' gui=NONE'
   endfor
-  
+
   " Wild Menu {{{1
-  highlight Wildmenu guibg=cyan guifg=black
-  
+  highlight ColorColumn guibg=#262626
+
+  " Wild Menu {{{1
+  highlight Wildmenu gui=bold guibg=#000080 guifg=black
+
   " Autocomplete {{{1
-  highlight Pmenu guifg=white guibg=#666666
-  highlight PmenuSel guifg=black guibg=cyan
-  
+  highlight Pmenu guifg=white guibg=#3a3a3a
+  highlight PmenuSel guifg=black guibg=#000080
+  highlight PmenuSbar guifg=#4e4e4e guibg=#4e4e4e
+  highlight PmenuThumb guifg=#808080 guibg=#808080
+
   " Visual Selection {{{1
-  let s:selectionbgcolor = 'darkcyan'
-  let s:selectionfgcolor = 'black'
-  let s:selectiongroups = ['Visual', 'MatchParen']
-  for group in s:selectiongroups
-      exe 'highlight ' . group . ' guibg=' . s:selectionbgcolor  . ' guifg=' .  
-                  \ s:selectionfgcolor
-  endfor
-  
+  " Visual selection is distinguished from `Search` because a match can either
+  " be selected or not selected, so this difference in colors distinguishes
+  " that.
+  highlight Visual guibg=#005f87 guifg=NONE
+  " Original idea, grey background:
+  " highlight MatchParen guifg=white guibg=#808080
+  highlight MatchParen guifg=#000080 guibg=NONE gui=underline
+  highlight Todo guifg=lightblue guibg=NONE gui=bold
+
   " Search {{{1
-  highlight IncSearch gui=NONE guifg=black guibg=cyan
-  highlight Search gui=NONE guifg=black guibg=darkcyan
-  
-  " StatusLine {{{1
-  highlight StatusLine guibg=#666666 guifg=white gui=NONE
-  highlight StatusLineNC guifg=#B2B2B2 guibg=#4E4E4E
-  
+  " Make sure the cursor shows up over this color, that's important when
+  " moving through search matches with `n` and `N`.
+  highlight IncSearch guibg=#000080 guifg=black gui=bold
+  highlight Search guibg=#000080 guifg=black gui=bold
+
+  " Status Line {{{1
+  highlight StatusLine guibg=white guifg=#808080
+  highlight StatusLineNC guifg=#4e4e4e guibg=#b2b2b2
+  highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
+
   " Mode Message {{{1
   highlight ModeMsg guifg=black guibg=darkcyan gui=bold
+
   " Tabs {{{1
-  highlight TabLine gui=NONE guibg=#4E4E4E guifg=#B2B2B2
-  highlight TabLineFill gui=NONE guibg=#4E4E4E guifg=#B2B2B2
-  
-  " Tabs {{{1
-  highlight TabLine gui=NONE guifg=#4E4E4E guibg=#B2B2B2
-  highlight TabLineFill gui=NONE guifg=#4E4E4E guibg=#B2B2B2
-  
-  " Column Guide {{{1
-  highlight ColorColumn guibg=#3A3A3A
-  
-  " Tildes {{{1
-  highlight NonText guifg=DarkGray
-  
+  highlight TabLine gui=NONE guibg=#4e4e4e guifg=#b2b2b2
+  highlight TabLineFill gui=NONE guibg=#4e4e4e guifg=#b2b2b2
+
   " Comments & Tildes {{{1
-  highlight comment guifg=darkgray
-  highlight SpecialKey guifg=#303030
-  highlight NonText guifg=#303030
-  
+  highlight comment guifg=#808080
+  highlight SpecialKey guifg=#444444
+  highlight NonText guifg=darkgrey
+  highlight qfSeparator guifg=#444444
+
   " Folding {{{1
   " Same as inactive status line
-  highlight Folded guifg=#B2B2B2 guibg=#3A3A3A
-  
+  highlight Folded guifg=#b2b2b2 guibg=#3a3a3a
+  highlight FoldColumn guifg=#444444
+
   " Warnings & Errors {{{1
   highlight WarningMsg guifg=black guibg=yellow gui=bold
   highlight ErrorMsg guifg=white guibg=red gui=bold
   highlight SpellBad guifg=red guibg=NONE gui=underline
   highlight SpellCap guifg=yellow guibg=NONE gui=underline
-  
+  highlight SpellRare guifg=yellow guibg=NONE gui=underline
+
   " Diff {{{1
   highlight DiffAdd guifg=darkgreen guibg=NONE gui=bold
   highlight DiffAdded guifg=darkgreen guibg=NONE gui=bold
   highlight DiffDelete guifg=red guibg=NONE gui=bold
   highlight DiffRemoved guifg=red guibg=NONE gui=bold
   highlight DiffChange guifg=lightblue guibg=NONE gui=bold
-  highlight DiffText guifg=lightblue guibg=NONE gui=bold
-  
+  " Inline changed text
+  highlight DiffText guifg=darkblue guibg=NONE gui=bold
+  " highlight DiffAdd guifg=NONE guibg=22 gui=NONE
+  " highlight DiffAdded guifg=NONE guibg=22 gui=NONE
+  " highlight DiffRemoved guifg=NONE guibg=52 gui=NONE
+  " highlight DiffChange guifg=NONE guibg=18 gui=NONE
+  " A white line of slashes is used when a section is removed, the `darkgray`
+  " here styles the slashes
+  " highlight DiffDelete guifg=darkgray guibg=52 gui=NONE
+  " Inline changed text
+  " highlight DiffText guifg=NONE guibg=21 gui=NONE
+  highlight diffFile guifg=NONE gui=bold
+  highlight diffOldFile guifg=NONE gui=bold
+  highlight diffNewFile guifg=white gui=bold
+  highlight diffLine guifg=white guibg=#4e4e4e gui=bold
+  highlight diffSubname guifg=white guibg=#4e4e4e gui=bold
+  highlight diffIndexLine guifg=#808080
+
   " Markdown {{{1
-  
+
   " Custom Syntax
   " Colors
   highlight markdownLinkText gui=underline gui=underline
-  highlight markdownLinkText guifg=#88B0D5
+  highlight markdownLinkText guifg=#87afdf
   highlight markdownCode guifg=grey guibg=NONE
-  highlight markdownCodeBlock guifg=grey guibg=NONE
+  " Disabled because `markdownCodeBlock` clashes with heirarchical lists
+  " highlight markdownCodeBlock guifg=grey guibg=NONE
   highlight markdownListMarker guifg=grey
   highlight markdownItalic gui=bold
   highlight markdownBold gui=bold
-  
+
   highlight markdownH1 guifg=white gui=bold
   highlight markdownH2 guifg=white gui=bold
   highlight markdownH3 guifg=white gui=bold
   highlight markdownH4 guifg=white gui=bold
   highlight markdownH5 guifg=white gui=bold
   highlight markdownH6 guifg=white gui=bold
-  
+
   " Groups
   highlight link markdownItalicDelimiter Comment
   highlight link markdownBoldDelimiter Comment
@@ -135,27 +162,43 @@ function! s:MyGUIHighlights() abort
   highlight link markdownH4 String
   highlight link markdownH5 String
   highlight link markdownH6 String
-  
-  
-  " Plugins {{{1
-  
-  " Git Gutter {{{2
-  highlight GitGutterAdd guifg=green
-  highlight GitGutterChange guifg=lightblue
-  highlight GitGutterDelete guifg=red
-  highlight GitGutterAddDefault guibg=NONE guifg=green
-  highlight GitGutterChangeDefault guibg=NONE guifg=lightblue
-  highlight GitGutterDeleteDefault guibg=NONE guifg=red
-  highlight GitGutterAddInvisible guibg=NONE guifg=green
-  highlight GitGutterChangeInvisible guibg=NONE guifg=lightblue
-  highlight GitGutterDeleteInvisible guibg=NONE guifg=red
-  
-  " Syntastic {{{2
-  highlight SyntasticErrorSign guifg=red
-  highlight SyntasticWarningSign guifg=yellow
-  highlight SyntasticStyleWarningSign guifg=yellow
 
+
+  " Plugins {{{1
+
+  " Git {{{2
+  highlight CocGitAddedSign guibg=NONE guifg=green
+  highlight CocGitChangedSign guibg=NONE guifg=lightblue
+  highlight CocGitChangedRemovedSign guibg=NONE guifg=lightblue
+  highlight CocGitChangeRemovedSign guibg=NONE guifg=lightblue
+  highlight CocGitRemovedSign guibg=NONE guifg=red
+
+  " CoC {{{2
+  highlight CocWarningSign guifg=yellow
+  highlight CocErrorSign guifg=red
+  " highlight CocWarningSign guifg=gray
+  " highlight CocErrorSign guifg=gray
+  highlight CocInfoSign guifg=gray
+  highlight CocHintSign guifg=gray
+  " Float
+  highlight CocWarningFloat guifg=white
+  highlight CocErrorFloat guifg=white
+  " highlight CocWarningSign guifg=gray
+  " highlight CocErrorSign guifg=gray
+  highlight CocInfoFloat guifg=white
+  highlight CocHintFloat guifg=white
+
+  " tir_black bug fixes
+  " For some reason "blue" display weird in console vim when it overlaps with the
+  " highlighted cursorline (test this by running `RunColorTest` and then going
+  " to the `blue` or `darkblue` lines. Changes these colors to another fixes
+  " this)
+  highlight rubyControl guifg=lightblue
+  highlight rubyInterpolationDelimiter guifg=lightblue
+  " highlight rubyControl guifg=#87afdf
+  " highlight rubyInterpolationDelimiter guifg=#87afdf
 endfunction
 
-colorscheme ir_black
+" Colorscheme
 set background=dark
+colorscheme ir_black
