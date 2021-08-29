@@ -84,7 +84,7 @@ function! s:MyHighlights() abort
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
-  highlight StatusLineNC guifg=#4e4e4e guibg=#b2b2b2
+  highlight StatusLineNC guifg=#b2b2b2 guibg=#4e4e4e
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
   " Mode Message {{{1
