@@ -55,7 +55,7 @@ function! s:MyHighlights() abort
   highlight ColorColumn guibg=#262626
 
   " Wild Menu {{{1
-  highlight Wildmenu gui=bold guibg=#262626 guifg=black
+  highlight Wildmenu guifg=black guibg=#69a9FF
 
   " Autocomplete {{{1
   highlight Pmenu guifg=white guibg=#3a3a3a
