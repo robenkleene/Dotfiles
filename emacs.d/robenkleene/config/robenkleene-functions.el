@@ -373,6 +373,41 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+(defun robenkleene/next ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (buffer-live-p "*grep*")
+      (next-error)
+    (robenkleene/find-next-file)
+    )
+  )
+
+(defun robenkleene/previous ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (buffer-live-p "*grep*")
+      (previous-error)
+    (robenkleene/find-next-file t)
+    )
+  )
+
+(defun robenkleene/find-next-file (&optional backward)
+  "Find the next file in the current directory, optionally BACKWARD.
+
+With prefix arg, find the previous file."
+  (interactive "P")
+  (when buffer-file-name
+    (let* ((file (expand-file-name buffer-file-name))
+           (files
+            (cl-remove-if
+             (lambda (file) (cl-first (file-attributes file)))
+             (sort (directory-files
+                    (file-name-directory file) t nil t) 'string<)))
+           (pos
+            (mod (+ (cl-position file files :test 'equal) (if backward -1 1))
+                 (length files))))
+      (find-file (nth pos files)))))
+
 (defun robenkleene/web-search ()
   "Make a wiki link from a file named after the region."
   (interactive)
