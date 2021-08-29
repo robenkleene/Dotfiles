@@ -34,4 +34,8 @@ modules=(
 'vsce'
 # VS Code Extensions
 'generator-code'
+
+# JSON
+# Output JSON schema from an input file
+'generate-schema'
 )
