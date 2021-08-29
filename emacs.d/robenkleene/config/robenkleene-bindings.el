@@ -183,9 +183,15 @@
 
 (define-key robenkleene/leader-map
   (kbd "t")
-  'make-frame)
+  (lambda () (interactive) (make-frame) (other-frame 1)))
+(define-key robenkleene/leader-map
+  (kbd "M-t")
+  (lambda () (interactive) (make-frame) (other-frame 1)))
 (define-key robenkleene/leader-map (kbd "n") 'other-frame)
 (define-key robenkleene/leader-map (kbd "p")
+  (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
+(define-key robenkleene/leader-map (kbd "M-n") 'other-frame)
+(define-key robenkleene/leader-map (kbd "M-p")
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
 (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
