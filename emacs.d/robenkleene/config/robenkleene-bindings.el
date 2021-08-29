@@ -30,8 +30,13 @@
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
 ;; access history in shell modes
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'robenkleene/next)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-p")
+  'robenkleene/previous)
+
+
 
 (define-key robenkleene/bindings-minor-mode-map
   (kbd "M-C-d") 'robenkleene/archive-and-delete)
