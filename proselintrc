@@ -5,6 +5,7 @@
     "dates_times.dates": false,
     "redundancy.misc": false,
     "dates_times.am_pm": false,
+    "weasel_words.very": false,
     "misc.preferred_forms": false
   }
 }
