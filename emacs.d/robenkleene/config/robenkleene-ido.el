@@ -201,7 +201,7 @@
 (defun robenkleene/ido-links ()
   "Open link."
   (interactive)
-  (let ((current-prefix-arg nil) project-files key-to-path)
+  (let ((current-prefix-arg nil))
     (setq links
           (split-string
            (shell-command-to-string
@@ -216,13 +216,15 @@
                 )
               )
             links)
-      (shell-command
-       (concat "echo "
-               (shell-quote-argument
-                (gethash
-                 (ido-completing-read "Find link: " ido-list)
-                 key-to-link)) " | ~/.bin/urls_open")
-       )
+      (let ((result (gethash
+                     (ido-completing-read "Find link: " ido-list)
+                     key-to-link)))
+        (shell-command
+         (concat "echo "
+                 (shell-quote-argument result)
+                 " | ~/.bin/urls_open")
+         )
+        )
       )
     )
   )
