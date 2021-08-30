@@ -205,7 +205,7 @@
     (setq links
           (split-string
            (shell-command-to-string
-            "~/.bin/dump_text_links ~/Text ~/Documentation")
+            "~/.bin/dump_text_links")
            "\n"))
     (setq key-to-link (make-hash-table :test 'equal))
     (let (ido-list)
