@@ -364,7 +364,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/urls-open ()
-  "Make a wiki link from a file named after the region."
+  "Open URLs in the region."
   (interactive)
   (if (use-region-p)
       (shell-command-on-region (region-beginning)

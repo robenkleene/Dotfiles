@@ -43,6 +43,7 @@
 (defalias 'work 'robenkleene/open-work)
 (defalias 'archive 'robenkleene/open-archive)
 (defalias 'title-case 'robenkleene/title-case)
+(defalias 'lnk 'robenkleene/ido-links)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

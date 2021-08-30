@@ -193,7 +193,36 @@
               )
             project-files)
       (robenkleene/safe-find-file (gethash (ido-completing-read "Find z: " ido-list)
-                                      key-to-path))
+                                           key-to-path))
+      )
+    )
+  )
+
+(defun robenkleene/ido-links ()
+  "Open link."
+  (interactive)
+  (let ((current-prefix-arg nil) project-files key-to-path)
+    (setq links
+          (split-string
+           (shell-command-to-string
+            "rg --no-filename --only-matching \"\[([^\[\]]*)\]\((http.*?)\)\" ~/Text ~/Documentation")
+           "\n"))
+    (setq key-to-link (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (link)
+              (let ((key link))
+                (puthash key link key-to-link)
+                (push key ido-list)
+                )
+              )
+            links)
+      (shell-command
+       (concat "echo "
+               (shell-quote-argument
+                (gethash
+                 (ido-completing-read "Find link: " ido-list)
+                 key-to-path)) " | ~/.bin/urls_open")
+       )
       )
     )
   )
