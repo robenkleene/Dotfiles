@@ -205,7 +205,7 @@
     (setq links
           (split-string
            (shell-command-to-string
-            "rg --no-filename --only-matching \"\[([^\[\]]*)\]\((http.*?)\)\" ~/Text ~/Documentation")
+            "~/.bin/dump_text_links ~/Text ~/Documentation")
            "\n"))
     (setq key-to-link (make-hash-table :test 'equal))
     (let (ido-list)
@@ -221,7 +221,7 @@
                (shell-quote-argument
                 (gethash
                  (ido-completing-read "Find link: " ido-list)
-                 key-to-path)) " | ~/.bin/urls_open")
+                 key-to-link)) " | ~/.bin/urls_open")
        )
       )
     )
