@@ -108,7 +108,7 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
 Plug 'wsdjeg/FlyGrep.vim', { 'on': 'FlyGrep' }
 if v:version > 801 || has('nvim')
-  Plug 'neoclide/coc.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " if &shell != '/bin/zsh'
   "   " Don't load for kitty
   "   Plug 'neoclide/coc.nvim'
