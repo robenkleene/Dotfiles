@@ -2,13 +2,22 @@
 
 if [[ -n "$1" ]]; then
   while read -r LINE; do
-    open -a "$1" "$LINE"
+    if [[ "$(uname)" = "Darwin" ]]; then
+      open -a "$1" "$LINE" > /dev/null
+    elif [[ "$(uname)" = "Linux" ]]; then
+      echo "$1"
+    fi
   done
 else
   while read -r LINE; do
-    open "$LINE"
+    if [[ "$(uname)" = "Darwin" ]]; then
+      open "$LINE" > /dev/null
+    elif [[ "$(uname)" = "Linux" ]]; then
+      echo "$LINE"
+    fi
   done
 fi
+
 # The default browser method
 
 # The Safari method
