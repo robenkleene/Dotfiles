@@ -3,7 +3,7 @@ function fish_set_colors
     set -U fish_color_command 39BAE6 #39BAE6
     set -U fish_color_quote C2D94C #C2D94C
     set -U fish_color_redirection FFEE99 #FFEE99
-    set -U fish_color_end F29668 #F29668
+    set -U fish_color_end FFEE99 #FFEE99
     set -U fish_color_error red red
     set -U fish_color_param 95E6CB #95E6CB
     set -U fish_color_match FFEE99 #FFEE99
