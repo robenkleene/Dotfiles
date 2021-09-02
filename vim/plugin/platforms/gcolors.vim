@@ -43,7 +43,7 @@ function! s:MyHighlights() abort
   let s:highlightgroups = ['CursorLine', 'CursorLineNr', 'CursorColumn']
   for group in s:highlightgroups
     exe 'highlight ' . group . ' guibg=' . s:highlightbgcolor  . ' guifg=' .
-          \ s:highlightfgcolor . ' gui=NONE'
+          \ s:highlightfgcolor . ' gui=NONE cterm=NONE'
   endfor
 
   " Disable underlining line numbers
@@ -67,17 +67,17 @@ function! s:MyHighlights() abort
   " Visual selection is distinguished from `Search` because a match can either
   " be selected or not selected, so this difference in colors distinguishes
   " that.
-  highlight Visual guibg=#005f87 guifg=NONE gui=NONE
+  highlight Visual guibg=#005f87 guifg=NONE gui=NONE cterm=NONE
   highlight Visual ctermbg=24 ctermfg=NONE
   " Original idea, grey background:
-  highlight MatchParen guifg=lightblue guibg=NONE gui=underline
-  highlight Todo guifg=lightblue guibg=NONE gui=bold
+  highlight MatchParen guifg=lightblue guibg=NONE gui=underline cterm=underline
+  highlight Todo guifg=lightblue guibg=NONE gui=bold cterm=bold
 
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#69a9FF guifg=black gui=bold
-  highlight Search guibg=#69a9FF guifg=black gui=bold
+  highlight IncSearch guibg=#69a9FF guifg=black gui=bold cterm=bold
+  highlight Search guibg=#69a9FF guifg=black gui=bold cterm=bold
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
@@ -85,11 +85,11 @@ function! s:MyHighlights() abort
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
   " Mode Message {{{1
-  highlight ModeMsg guifg=black guibg=darkcyan gui=bold
+  highlight ModeMsg guifg=black guibg=darkcyan gui=bold cterm=bold
 
   " Tabs {{{1
-  highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE 
-  highlight TabLineFill guibg=#4e4e4e guifg=#b2b2b2 gui=NONE
+  highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE cterm=NONE 
+  highlight TabLineFill guibg=#4e4e4e guifg=#b2b2b2 gui=NONE cterm=NONE
 
   " Comments & Tildes {{{1
   highlight comment guifg=#808080
@@ -103,55 +103,55 @@ function! s:MyHighlights() abort
   highlight FoldColumn guifg=#444444
 
   " Warnings & Errors {{{1
-  highlight WarningMsg guifg=black guibg=yellow gui=bold
-  highlight ErrorMsg guifg=white guibg=red gui=bold
-  highlight SpellBad guifg=red guibg=NONE gui=underline
-  highlight SpellCap guifg=yellow guibg=NONE gui=underline
-  highlight SpellRare guifg=yellow guibg=NONE gui=underline
+  highlight WarningMsg guifg=black guibg=yellow gui=bold cterm=bold
+  highlight ErrorMsg guifg=white guibg=red gui=bold cterm=bold
+  highlight SpellBad guifg=red guibg=NONE gui=underline cterm=underline
+  highlight SpellCap guifg=yellow guibg=NONE gui=underline cterm=underline
+  highlight SpellRare guifg=yellow guibg=NONE gui=underline cterm=underline
 
   " Diff {{{1
-  highlight DiffAdd guifg=green guibg=NONE gui=bold
-  highlight DiffAdded guifg=green guibg=NONE gui=bold
-  highlight DiffDelete guifg=red guibg=NONE gui=bold
-  highlight DiffRemoved guifg=red guibg=NONE gui=bold
-  highlight DiffChange guifg=darkcyan guibg=NONE gui=bold
+  highlight DiffAdd guifg=green guibg=NONE gui=bold cterm=bold
+  highlight DiffAdded guifg=green guibg=NONE gui=bold cterm=bold
+  highlight DiffDelete guifg=red guibg=NONE gui=bold cterm=bold
+  highlight DiffRemoved guifg=red guibg=NONE gui=bold cterm=bold
+  highlight DiffChange guifg=darkcyan guibg=NONE gui=bold cterm=bold
   " Inline changed text
-  highlight DiffText guifg=lightblue guibg=NONE gui=bold
-  " highlight DiffAdd guifg=NONE guibg=22 gui=NONE
-  " highlight DiffAdded guifg=NONE guibg=22 gui=NONE
-  " highlight DiffRemoved guifg=NONE guibg=52 gui=NONE
-  " highlight DiffChange guifg=NONE guibg=18 gui=NONE
+  highlight DiffText guifg=lightblue guibg=NONE gui=bold cterm=bold
+  " highlight DiffAdd guifg=NONE guibg=22 gui=NONE cterm=NONE
+  " highlight DiffAdded guifg=NONE guibg=22 gui=NONE cterm=NONE
+  " highlight DiffRemoved guifg=NONE guibg=52 gui=NONE cterm=NONE
+  " highlight DiffChange guifg=NONE guibg=18 gui=NONE cterm=NONE
   " A white line of slashes is used when a section is removed, the `darkgray`
   " here styles the slashes
-  " highlight DiffDelete guifg=darkgray guibg=52 gui=NONE
+  " highlight DiffDelete guifg=darkgray guibg=52 gui=NONE cterm=NONE
   " Inline changed text
-  " highlight DiffText guifg=NONE guibg=21 gui=NONE
-  highlight diffFile guifg=NONE gui=bold
-  highlight diffOldFile guifg=NONE gui=bold
-  highlight diffNewFile guifg=white gui=bold
-  highlight diffLine guifg=white guibg=#4e4e4e gui=bold
-  highlight diffSubname guifg=white guibg=#4e4e4e gui=bold
+  " highlight DiffText guifg=NONE guibg=21 gui=NONE cterm=NONE
+  highlight diffFile guifg=NONE gui=bold cterm=bold
+  highlight diffOldFile guifg=NONE gui=bold cterm=bold
+  highlight diffNewFile guifg=white gui=bold cterm=bold
+  highlight diffLine guifg=white guibg=#4e4e4e gui=bold cterm=bold
+  highlight diffSubname guifg=white guibg=#4e4e4e gui=bold cterm=bold
   highlight diffIndexLine guifg=#808080
 
   " Markdown {{{1
 
   " Custom Syntax
   " Colors
-  highlight markdownLinkText gui=underline gui=underline
+  highlight markdownLinkText gui=underline cterm=underline
   highlight markdownLinkText guifg=#87afdf
   highlight markdownCode guifg=grey guibg=NONE
   " Disabled because `markdownCodeBlock` clashes with heirarchical lists
   " highlight markdownCodeBlock guifg=grey guibg=NONE
   highlight markdownListMarker guifg=grey
-  highlight markdownItalic gui=bold
-  highlight markdownBold gui=bold
+  highlight markdownItalic gui=bold cterm=bold
+  highlight markdownBold gui=bold cterm=bold
 
-  highlight markdownH1 guifg=white gui=bold
-  highlight markdownH2 guifg=white gui=bold
-  highlight markdownH3 guifg=white gui=bold
-  highlight markdownH4 guifg=white gui=bold
-  highlight markdownH5 guifg=white gui=bold
-  highlight markdownH6 guifg=white gui=bold
+  highlight markdownH1 guifg=white gui=bold cterm=bold
+  highlight markdownH2 guifg=white gui=bold cterm=bold
+  highlight markdownH3 guifg=white gui=bold cterm=bold
+  highlight markdownH4 guifg=white gui=bold cterm=bold
+  highlight markdownH5 guifg=white gui=bold cterm=bold
+  highlight markdownH6 guifg=white gui=bold cterm=bold
 
   " Groups
   highlight link markdownItalicDelimiter Comment
@@ -181,9 +181,7 @@ function! s:MyHighlights() abort
   highlight CocGitChangedRemovedSign guibg=NONE guifg=lightblue
   highlight CocGitChangeRemovedSign guibg=NONE guifg=lightblue
   highlight CocGitRemovedSign guibg=NONE guifg=red
-
-  " CoC {{{2
-  highlight CocWarningSign guifg=yellow
+" CoC {{{2 highlight CocWarningSign guifg=yellow
   highlight CocErrorSign guifg=red
   " highlight CocWarningSign guifg=gray
   " highlight CocErrorSign guifg=gray
