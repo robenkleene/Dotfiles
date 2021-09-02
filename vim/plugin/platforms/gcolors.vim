@@ -71,7 +71,8 @@ function! s:MyHighlights() abort
   highlight Visual ctermbg=24 ctermfg=NONE cterm=NONE
   " Original idea, grey background:
   " highlight MatchParen guifg=white guibg=#808080
-  highlight MatchParen guifg=#262626 guibg=NONE gui=underline
+  highlight MatchParen guifg=lightblue guibg=NONE gui=underline
+  highlight MatchParen cterm=underline
   highlight Todo guifg=lightblue guibg=NONE gui=bold
 
   " Search {{{1
