@@ -80,8 +80,8 @@ function! s:MyHighlights() abort
   " moving through search matches with `n` and `N`.
   highlight IncSearch guibg=#69a9FF guifg=black gui=NONE
   highlight Search guibg=#69a9FF guifg=black gui=NONE
-  highlight IncSearch cterm=NONE
-  highlight Search cterm=NONE
+  highlight IncSearch cterm=bold
+  highlight Search cterm=bold
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
