@@ -34,7 +34,7 @@ function! s:MyHighlights() abort
   endfor
 
   " Line Numbers {{{1
-  highlight LineNr guibg=NONE guifg=#444444
+  highlight LineNr guifg=#444444 guibg=NONE
 
   " Cursor Line {{{1
   let s:highlightbgcolor = '#303030'
@@ -68,20 +68,16 @@ function! s:MyHighlights() abort
   " be selected or not selected, so this difference in colors distinguishes
   " that.
   highlight Visual guibg=#005f87 guifg=NONE gui=NONE
-  highlight Visual ctermbg=24 ctermfg=NONE cterm=NONE
+  highlight Visual ctermbg=24 ctermfg=NONE
   " Original idea, grey background:
-  " highlight MatchParen guifg=white guibg=#808080
   highlight MatchParen guifg=lightblue guibg=NONE gui=underline
-  highlight MatchParen cterm=underline
   highlight Todo guifg=lightblue guibg=NONE gui=bold
 
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#69a9FF guifg=black gui=NONE
-  highlight Search guibg=#69a9FF guifg=black gui=NONE
-  highlight IncSearch cterm=bold
-  highlight Search cterm=bold
+  highlight IncSearch guibg=#69a9FF guifg=black gui=bold
+  highlight Search guibg=#69a9FF guifg=black gui=bold
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
@@ -92,10 +88,8 @@ function! s:MyHighlights() abort
   highlight ModeMsg guifg=black guibg=darkcyan gui=bold
 
   " Tabs {{{1
-  highlight TabLine gui=NONE guibg=#4e4e4e guifg=#b2b2b2
-  highlight TabLine cterm=NONE
-  highlight TabLineFill gui=NONE guibg=#4e4e4e guifg=#b2b2b2
-  highlight TabLineFill cterm=NONE
+  highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE 
+  highlight TabLineFill guibg=#4e4e4e guifg=#b2b2b2 gui=NONE
 
   " Comments & Tildes {{{1
   highlight comment guifg=#808080
