@@ -1,6 +1,3 @@
-set fish_color_comment 555555
-set -xg fish_color_search_match black --background=$fish_color_comment
-
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'yes'
