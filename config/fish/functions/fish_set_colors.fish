@@ -1,17 +1,17 @@
 function fish_set_colors
     set -U fish_color_normal B3B1AD #B3B1AD
-    set -U fish_color_command 39BAE6 #39BAE6
+    set -U fish_color_command 95E6CB #95E6CB
     set -U fish_color_quote C2D94C #C2D94C
     set -U fish_color_redirection FFEE99 #FFEE99
     set -U fish_color_end FFEE99 #FFEE99
     set -U fish_color_error red red
-    set -U fish_color_param 95E6CB #95E6CB
+    set -U fish_color_param 39BAE6 #39BAE6
     set -U fish_color_match FFEE99 #FFEE99
     set -U fish_color_selection --background=E6B450 #E6B450
     set -U fish_color_history_current --bold
-    set -U fish_color_operator E6B450 #E6B450
-    set -U fish_color_escape 95E6CB #95E6CB
-    set -U fish_color_cwd 59C2FF #59C2FF
+    set -U fish_color_operator FFEE99 #FFEE99
+    set -U fish_color_escape 39BAE6 #39BAE6
+    set -U fish_color_cwd 39BAE6 #39BAE6
     set -U fish_color_cwd_root red
     set -U fish_color_valid_path --underline
     set -U fish_color_autosuggestion 4D5566 #4D5566
