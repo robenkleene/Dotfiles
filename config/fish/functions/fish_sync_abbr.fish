@@ -11,11 +11,11 @@ function fish_sync_abbr
     abbr -a pq "p | q"
     abbr -a pva "p | va"
     abbr -a vd "$VIM_COMMAND -d"
-    abbr -a or 'open -R'
+    abbr -a oR 'open -R'
     abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
     abbr -a af "$ACK_COMMAND -F"
-    abbr -a rgf "$ACK_COMMAND -F"
+    abbr -a rgF "$ACK_COMMAND -F"
     abbr -a rgi "$ACK_COMMAND --no-ignore"
     abbr -a rgg "$ACK_COMMAND -g"
     abbr -a rgh "$ACK_COMMAND --heading"
