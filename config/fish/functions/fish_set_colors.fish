@@ -1,15 +1,15 @@
 function fish_set_colors
-    set -U fish_color_normal B3B1AD #B3B1AD
+    set -U fish_color_normal white
     set -U fish_color_command cyan
     set -U fish_color_quote green
-    set -U fish_color_redirection B3B1AD #B3B1AD
+    set -U fish_color_redirection white
     set -U fish_color_end yellow
     set -U fish_color_error red red
-    set -U fish_color_param B3B1AD #B3B1AD
+    set -U fish_color_param white
     set -U fish_color_match blue
     set -U fish_color_selection --background=cyan #E6B450
     set -U fish_color_history_current --bold
-    set -U fish_color_operator B3B1AD #B3B1AD
+    set -U fish_color_operator white
     set -U fish_color_escape blue
     set -U fish_color_cwd blue
     set -U fish_color_cwd_root red
