@@ -5,7 +5,7 @@ function fish_set_colors
     set -U fish_color_redirection white
     set -U fish_color_end yellow
     set -U fish_color_error red red
-    set -U fish_color_param white
+    set -U fish_color_param blue
     set -U fish_color_match blue
     set -U fish_color_selection --background=cyan #E6B450
     set -U fish_color_history_current --bold
