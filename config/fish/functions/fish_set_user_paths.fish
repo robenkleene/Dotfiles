@@ -9,6 +9,7 @@ function fish_set_user_paths
         case Linux
             set -U fish_user_paths ~/.local/bin $fish_user_paths
         case Darwin
+            set -U fish_user_paths /usr/local/bin $fish_user_paths
             set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
     end
 
