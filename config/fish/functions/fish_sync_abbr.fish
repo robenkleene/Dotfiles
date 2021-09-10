@@ -131,6 +131,7 @@ function fish_sync_abbr
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
     abbr -a soun "sort | uniq"
+    abbr -a xsr "xargs -0 sed -n"
     # Fish
     abbr -a 1for "for v in"
     abbr -a x0 "xargs -0"
