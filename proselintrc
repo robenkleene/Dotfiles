@@ -6,6 +6,7 @@
     "redundancy.misc": false,
     "dates_times.am_pm": false,
     "weasel_words.very": false,
+    "needless_variants.misc": false,
     "misc.preferred_forms": false
   }
 }
