@@ -295,6 +295,7 @@ vnoremap <M-y> "0p
 
 " Fold
 nnoremap <leader><tab> :set foldenable!<CR>
+nnoremap <localleader><tab> zM
 " Can't do this because it interferes with `C-i` to go forward
 " nnoremap <tab> za
 
