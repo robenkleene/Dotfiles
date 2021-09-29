@@ -23,7 +23,8 @@ set statusline+=%<
 " Filename
 " set statusline+=%.40f
 " set statusline+=%.40{pathshorten(expand('%:~:.'))}
-set statusline+=%.40{expand('%:~:.')}
+" The number is the maximum number of characters to use
+set statusline+=%.100{expand('%:~:.')}
 " Modified
 set statusline+=%m 
 " Filetype
