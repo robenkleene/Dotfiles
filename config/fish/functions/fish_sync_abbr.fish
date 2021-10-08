@@ -128,6 +128,7 @@ function fish_sync_abbr
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
     abbr -a hgmva 'hg mv --after'
+    abbr -a hgrm 'hg resolve -m'
     # New
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
