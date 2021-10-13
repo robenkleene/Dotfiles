@@ -16,11 +16,11 @@ function fish_sync_abbr
     abbr -a a "$ACK_COMMAND"
     abbr -a af "$ACK_COMMAND -F"
     abbr -a rgF "$ACK_COMMAND -F"
-    abbr -a rgi "$ACK_COMMAND --no-ignore"
+    abbr -a rgni "$ACK_COMMAND --no-ignore"
     abbr -a rgg "$ACK_COMMAND -g"
     abbr -a rgh "$ACK_COMMAND --heading"
     abbr -a rgin "rg -IN -m 1"
-    abbr -a fdi "fd -I"
+    abbr -a fdni "fd --no-ignore"
     abbr -a fdg "fd -g"
     abbr -a 0fd 'fd -0'
     abbr -a tst 'tig stash'
@@ -134,6 +134,7 @@ function fish_sync_abbr
     abbr -a ore "open -R"
     abbr -a soun "sort | uniq"
     abbr -a xsr "xargs -0 sed -n"
+    abbr -a lsal "ls -al"
     # Fish
     abbr -a 1for "for v in"
     abbr -a x0 "xargs -0"
