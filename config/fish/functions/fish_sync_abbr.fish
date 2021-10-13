@@ -10,6 +10,7 @@ function fish_sync_abbr
     abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
     abbr -a pva "p | va"
+    abbr -a pdq "p | dq"
     abbr -a vd "$VIM_COMMAND -d"
     abbr -a oR 'open -R'
     abbr -a orm 'open README.md'
