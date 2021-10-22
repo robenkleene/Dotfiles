@@ -2,12 +2,6 @@
 
 set -eo pipefail
 
-__fzfcmd() {
-  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
-    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
-}
-
-cd ~/Developer/Snippets/ || return 1
 cmd="rg --no-filename --only-matching \"\[([^\[\]]*)\]\((http.*?)\)\" ~/Text ~/Documentation"
 fzfcmd="$(__fzfcmd)"
 
