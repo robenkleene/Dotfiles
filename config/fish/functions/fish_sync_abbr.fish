@@ -136,6 +136,7 @@ function fish_sync_abbr
     abbr -a ore "open -R"
     abbr -a soun "sort | uniq"
     abbr -a xsr "xargs -0 sed -n"
+    abbr -a lsa "ls -al"
     abbr -a lsal "ls -al"
     # Fish
     abbr -a 1for "for v in"
