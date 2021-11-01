@@ -1,7 +1,6 @@
 # Shell
 brew 'zsh-syntax-highlighting'
 brew 'tig'
-brew 'tree'
 brew 'ripgrep'
 brew 'fd'
 brew 'fzf'
