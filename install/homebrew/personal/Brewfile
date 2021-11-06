@@ -17,6 +17,8 @@ brew 'wget'
 
 # Editor
 brew 'aspell'
+# Required before `ctags`
+brew 'svn'
 # Head version of `ctags` contains support for Objective-C
 brew 'ctags', args: ['HEAD']
 brew 'vim'

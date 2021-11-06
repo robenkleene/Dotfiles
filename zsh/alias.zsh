@@ -39,7 +39,9 @@ alias ..='cd ..'
 if [[ "$(uname)" = "Linux" ]]; then
   alias ls='ls --color=auto'
 else
-  alias ls='gls --color=auto'
+  if type "gls" > /dev/null; then
+    alias ls='gls --color=auto'
+  fi
 fi
 
 alias p='safepaste'

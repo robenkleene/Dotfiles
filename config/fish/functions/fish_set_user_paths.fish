@@ -18,6 +18,10 @@ function fish_set_user_paths
         set -U fish_user_paths ~/.brew/bin $fish_user_paths
     end
 
+    if test -e /opt/homebrew/bin/
+        set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+    end
+
     # Node
     if test -e ~/.config/nvm/13.12.0/bin
         set -U fish_user_paths ~/.config/nvm/13.12.0/bin $fish_user_paths
