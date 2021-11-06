@@ -7,7 +7,7 @@ fi
 if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
   source "$HOMEBREW_DIR/share/chruby/chruby.sh"
   source "$HOMEBREW_DIR/share/chruby/auto.sh"
-  chruby ruby-2.5.3
+  chruby ruby-3.0.2
 fi
 
 # Python
