@@ -44,8 +44,9 @@ brew 'clang-format'
 # MIDI
 brew 'midicsv'
 # C
-tap 'LouisBrunner/valgrind'
-brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
+# Failing on Apple Silicon
+# tap 'LouisBrunner/valgrind'
+# brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
 # Lisp
 brew 'sbcl'
 # Go

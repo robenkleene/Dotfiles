@@ -9,7 +9,7 @@ else
   exit 1
 fi
 
-nvm use v13.12.0 || nvm install v13.12.0
+nvm use v17.0.1 || nvm install v17.0.1
 
 cd "$(dirname "$0")" || exit 1
-./modules/install.sh "$@"
+./modules/install.sh -f "$@"
