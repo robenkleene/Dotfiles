@@ -12,6 +12,8 @@ if [[ ! -e "$brew_bin" ]]; then
     brew_prefix=$(/usr/local/bin/brew --prefix)
   elif [[ -e "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
     brew_prefix=$(/home/linuxbrew/.linuxbrew/bin/brew --prefix)
+  elif [[ -e "/opt/homebrew/bin/brew" ]]; then
+    brew_prefix=$(/opt/homebrew/bin/brew --prefix)
   fi
   brew_prefix_bin="$brew_prefix/bin"
   if [[ ! -e "$brew_prefix_bin" ]]; then
