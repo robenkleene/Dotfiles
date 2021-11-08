@@ -54,7 +54,7 @@
   "python.linting.pylintUseMinimalCheckers": false,
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
-  "python.pythonPath": "/usr/local/bin/python3",
+  "python.pythonPath": "~/.brew/bin/python3",
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "snippets.extends": {
     "sh": ["shellscript"],
