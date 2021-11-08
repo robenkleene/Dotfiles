@@ -10,4 +10,6 @@ modules=(
 'vim-vint'
 'pip-autoremove'
 'rope'
+# Repla requirement
+'django'
 )
