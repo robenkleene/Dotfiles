@@ -98,6 +98,7 @@ function fish_sync_abbr
     abbr -a gg 'git grep'
     abbr -a chu 'carthage update'
     abbr -a chunub 'carthage update --no-use-binaries'
+    abbr -a chunubm 'carthage update --no-use-binaries --platform macos'
     abbr -a chb 'carthage bootstrap'
     abbr -a agvm 'agvtool what-marketing-version'
     abbr -a agvmn 'agvtool new-marketing-version'
