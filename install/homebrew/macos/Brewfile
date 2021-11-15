@@ -81,7 +81,6 @@ brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
 tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
-cask 'wireshark'
 cask 'kitty'
 
 # Animated GIFs, `gifify` dependencies
