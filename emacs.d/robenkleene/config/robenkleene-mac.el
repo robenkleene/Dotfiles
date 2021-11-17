@@ -91,12 +91,14 @@
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-f")
   'isearch-forward-regexp)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-g")
-  'isearch-repeat-forward)
-(define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-G")
-  'isearch-repeat-backward)
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "s-g")
+;;   'isearch-forward-repeat)
+(define-key key-translation-map (kbd "s-g") (kbd "C-s"))
+;; (define-key robenkleene/mac-bindings-minor-mode-map
+;;   (kbd "s-G")
+;;   'isearch-repeat-backward)
+(define-key key-translation-map (kbd "s-G") (kbd "C-r"))
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-F")
   'robenkleene/rg)
@@ -177,7 +179,8 @@
         (selection (buffer-substring-no-properties beg end))
         )
     (deactivate-mark)
-    (isearch-mode t nil nil nil)
+    (isearch-forward nil 1)
+    ;; (isearch-mode t nil nil nil)
     (isearch-yank-string selection)
     )
   )
