@@ -30,9 +30,9 @@ function fish_set_user_paths
     end
 
     # Ruby
-    set -U fish_user_paths ~/.gem/ruby/2.5.3/bin $fish_user_paths
-    set -U fish_user_paths ~/.rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/bin $fish_user_paths
-    set -U fish_user_paths ~/.rubies/ruby-2.5.3/bin $fish_user_paths
+    set -U fish_user_paths ~/.gem/ruby/3.0.2/bin $fish_user_paths
+    # set -U fish_user_paths ~/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0/bin $fish_user_paths
+    set -U fish_user_paths ~/.rubies/ruby-3.0.2/bin $fish_user_paths
 
     # llvm
     switch (uname)
