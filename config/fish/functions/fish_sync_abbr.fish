@@ -124,6 +124,7 @@ function fish_sync_abbr
     abbr -a hgd 'hg diff --root .'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgrc 'hg rebase --continue'
+    abbr -a hgra 'hg rebase --abort'
     abbr -a hgs 'hg status'
     abbr -a hgst 'hg status'
     abbr -a hgsrb 'hg status --rev bottom'
