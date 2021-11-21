@@ -45,6 +45,7 @@ function fish_sync_abbr
     abbr -a r 'clear'
     abbr -a b 'bat'
     abbr -a brm 'bat README.md'
+    abbr -a blj 'bat .vscode/launch.json'
     abbr -a prm 'open -a "Repla" README.md'
     abbr -a g 'git'
     abbr -a ga 'git add'
