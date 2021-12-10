@@ -13,4 +13,5 @@ if [[ ! -f ".vscode/launch.json" ]]; then
 fi
 
 command=$(jq --raw-output '.configurations[0].runtimeExecutable' .vscode/launch.json)
-echo "$command"
+args=$(jq --raw-output '.configurations[0].runtimeArgs | join(" ")' .vscode/launch.json)
+exec $command $args
