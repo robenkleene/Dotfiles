@@ -7,5 +7,10 @@ if [[ ! -x "$(command -v jq)" ]]; then
   exit 1
 fi
 
+if [[ ! -f ".vscode/launch.json" ]]; then
+  echo "Error: .vscode/launch.json does not exist" >&2
+  exit 1
+fi
+
 command=$(jq --raw-output '.configurations[0].runtimeExecutable' .vscode/launch.json)
 echo "$command"
