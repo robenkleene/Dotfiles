@@ -144,6 +144,7 @@ function fish_sync_abbr
     # Fish
     abbr -a 1for "for v in"
     abbr -a x0 "xargs -0"
+    abbr -a fsi "source ~/.config/fish/config.fish"
 
     # Local
     if test -f ~/.local_abbr.fish
