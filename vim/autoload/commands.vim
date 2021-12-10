@@ -1,6 +1,14 @@
 " Make the current buffer a grep buffer
 function! commands#GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  " If the input is a list of files, populate the `argslist`
+  let l:filenames = getline(1, '$')
+  call map(l:filenames, "fnameescape(v:val)")
+  if filereadable(getline('1'))
+    bdelete
+    execute "args ".join(l:filenames)
+    return
+  endif
   " `cbuffer`: Convert to `quickfix`
   " `bprevious`: Go back to grep input
   " `bdelete`: Delete the grep buffer
