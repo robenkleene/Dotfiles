@@ -165,3 +165,4 @@ alias hgfb 'hg status --rev bottom^ | grep -v "^R" | cut -d\' \' -f2'
 # Special
 alias lt='time_log -t'
 alias fmj='format_json'
+alias lj='launch_json'
