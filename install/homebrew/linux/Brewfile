@@ -48,6 +48,8 @@ brew 'libssh2'
 brew 'patchelf'
 # C
 brew 'valgrind'
+# json
+brew 'jq'
 
 # Games
 brew 'nethack'
