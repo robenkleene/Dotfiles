@@ -2,6 +2,18 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun robenkleene/safecopy ()
+  (shell-command-to-string "safepaste"))
+
+(defun robenkleene/safepaste (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(setq interprogram-cut-function 'robenkleene/safepaste)
+(setq interprogram-paste-function 'robenkleene/safecopy)
+
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
 
