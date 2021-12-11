@@ -192,7 +192,7 @@
   (lambda () (interactive) (make-frame) (other-frame 1)))
 (define-key robenkleene/leader-map (kbd "n") 'other-frame)
 (define-key robenkleene/leader-map (kbd "p")
-  (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
+  (lambda () (interactive) (other-frame -1)))
 (define-key robenkleene/leader-map (kbd "M-n") 'other-frame)
 (define-key robenkleene/leader-map (kbd "M-p")
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
