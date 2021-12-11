@@ -14,4 +14,5 @@ fi
 
 command=$(jq --raw-output '.configurations[0].runtimeExecutable' .vscode/launch.json)
 args=$(jq --raw-output '.configurations[0].runtimeArgs | join(" ")' .vscode/launch.json)
+echo "$command $args"
 exec $command $args
