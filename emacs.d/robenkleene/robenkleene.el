@@ -29,7 +29,6 @@
 (require 'robenkleene-ido-completing-read)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
-(require 'robenkleene-pbcopy)
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)

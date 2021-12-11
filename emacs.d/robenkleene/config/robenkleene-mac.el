@@ -2,6 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Fix cut & paste
+(defun robenkleene/copy-from-osx ()
+  (shell-command-to-string "pbpaste"))
+(defun robenkleene/paste-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+(setq interprogram-cut-function 'robenkleene/paste-to-osx)
+(setq interprogram-paste-function 'robenkleene/copy-from-osx)
+
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
