@@ -49,6 +49,10 @@ if [[ -n "${CODESPACES-}" ]]; then
   exit 0
 fi
 
+if [[ "$(uname)" = "Darwin" ]]; then
+  ./install/settings/macos/install.sh
+fi
+
 export PATH="~/.brew/bin/:$PATH"
 ./install/homebrew/install.sh
 
