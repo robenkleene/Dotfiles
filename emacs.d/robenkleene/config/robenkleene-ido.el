@@ -29,7 +29,7 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file (robenkleene/ido-recursive-get-file dir))
+    (find-file (robenkleene/ido-recursive-get-file (shell-quote-argument dir)))
     )
   )
 
