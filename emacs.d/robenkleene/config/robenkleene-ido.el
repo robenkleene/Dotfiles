@@ -240,7 +240,7 @@
          (filename (file-name-nondirectory best-path))
          )
     (if container-dir
-        (concat (shell-quote-argument filename)
+        (concat filename
                 (robenkleene/ido-container-directory-token container-dir))
       filename
       )
@@ -269,7 +269,7 @@
            (shell-command-to-string
             (concat "fd "
                     " --type f --follow --hidden --exclude .git --exclude .DS_Store . "
-                    (shell-quote-argument dir)
+                    dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
@@ -293,7 +293,7 @@
            (shell-command-to-string
             (concat "fd "
                     " --type d --follow --hidden --exclude .git . "
-                    (shell-quote-argument dir)
+                    dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
@@ -317,7 +317,7 @@
            (shell-command-to-string
             (concat "fd "
                     "--hidden --follow --exclude .git . "
-                    (shell-quote-argument dir)
+                    dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
@@ -340,7 +340,7 @@
           (split-string
            (shell-command-to-string
             (concat "find "
-                    (shell-quote-argument dir)
+                    dir
                     " -type d -exec test -e '{}/.git' ';' -print -prune"
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
