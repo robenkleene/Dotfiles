@@ -928,6 +928,13 @@ With prefix arg, find the previous file."
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
+(defun robenkleene/browse-daily ()
+  "Open daily file."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-command-to-string "~/.bin/daily_file -b"))
+  )
+
 (defun robenkleene/new-inbox-document (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "
