@@ -921,6 +921,12 @@ With prefix arg, find the previous file."
   (find-file "~/Text/journal/todo.md")
   )
 
+(defun robenkleene/open-todo-archive ()
+  "Open todo archive file."
+  (interactive)
+  (find-file "~/Text/journal/todo-archive.md")
+  )
+
 (defun robenkleene/open-archive ()
   "Open inbox directory."
   (interactive)
