@@ -28,14 +28,14 @@ while getopts ":bh" option; do
   esac
 done
 
-if [[ "$browse" == "true" ]]; then
-  find . | sort | tail -1 | tr -d '\n'
-  exit 0
-fi
-
 if [[ ! -d "$dir" ]]; then
   echo "Error: $dir doesn't exit" >&2
   exit 1
+fi
+
+if [[ "$browse" == "true" ]]; then
+  find "$dir" | sort | tail -1 | tr -d '\n'
+  exit 0
 fi
 
 if [[ ! -f "$filepath" ]]; then
