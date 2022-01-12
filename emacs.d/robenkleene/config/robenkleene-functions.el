@@ -910,9 +910,15 @@ With prefix arg, find the previous file."
   )
 
 (defun robenkleene/open-journal ()
-  "Open inbox directory."
+  "Open journal file."
   (interactive)
   (find-file "~/Text/journal/journal.md")
+  )
+
+(defun robenkleene/open-todo ()
+  "Open todo file."
+  (interactive)
+  (find-file "~/Text/journal/todo.md")
   )
 
 (defun robenkleene/open-archive ()

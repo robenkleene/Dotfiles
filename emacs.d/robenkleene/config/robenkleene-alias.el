@@ -25,6 +25,7 @@
 (defalias 'home 'robenkleene/open-home)
 (defalias 'inbox 'robenkleene/inbox)
 (defalias 'journal 'robenkleene/open-journal)
+(defalias 'todo'robenkleene/open-todo)
 (defalias 'daily 'robenkleene/open-daily)
 (defalias 'bdaily 'robenkleene/browse-daily)
 (defalias 'od 'robenkleene/open-daily)
