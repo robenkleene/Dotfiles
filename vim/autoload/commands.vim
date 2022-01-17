@@ -9,6 +9,10 @@ function! commands#GrepBuffer() abort
     execute "args ".join(l:filenames)
     return
   endif
+  " If it's diff output, first convert it to `grep`
+  if getline('1')[0:len('diff --')-1] ==# 'diff --'
+    execute "%!diff_to_grep"
+  endif
   " `cbuffer`: Convert to `quickfix`
   " `bprevious`: Go back to grep input
   " `bdelete`: Delete the grep buffer
