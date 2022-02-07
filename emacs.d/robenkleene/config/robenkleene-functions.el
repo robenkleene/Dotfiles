@@ -981,6 +981,12 @@ With prefix arg, find the previous file."
   (switch-to-buffer "*scratch*")
   )
 
+(defun robenkleene/open-scratch-text ()
+  "Open scratch text buffer."
+  (interactive)
+  (switch-to-buffer (generate-new-buffer "Untitled"))
+  )
+
 (defun robenkleene/open-emacs-messages ()
   "Open messages buffer."
   (interactive)
