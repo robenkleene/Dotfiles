@@ -48,6 +48,7 @@
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-diff-hl)
 (require 'robenkleene-expand-region)
+(require 'robenkleene-evil)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
