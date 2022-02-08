@@ -4,15 +4,31 @@
 
 (eval-when-compile (require 'use-package))
 (use-package evil
-  :commands (turn-on-evil-mode)
+  :commands (evil-mode)
   :bind
-  ("C-c v" . turn-on-evil-mode)
-  ("C-c C-v" . turn-on-evil-mode)
+  ("C-c v" . evil-mode)
+  ("C-c C-v" . evil-mode)
   :init
   ;; (setq evil-toggle-key "")
+  (if (display-graphic-p)
+      (add-hook 'evil-mode-hook
+                (lambda ()
+                  (unless evil-mode
+                    (message "Emacs")
+                    (robenkleene/evil-fix-cursor)
+                    )
+                  (if evil-mode (message "Evil"))
+                  )
+                )
+    )
+  (defun robenkleene/evil-fix-cursor ()
+    (interactive)
+    (dolist (buffer (buffer-list))
+      (with-current-buffer buffer
+        (kill-local-variable 'cursor-type))))
   :config
-  (define-key evil-normal-state-map (kbd "C-c v") 'turn-off-evil-mode)
-  (define-key evil-normal-state-map (kbd "C-c C-v") 'turn-off-evil-mode)
+  (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
+  (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
