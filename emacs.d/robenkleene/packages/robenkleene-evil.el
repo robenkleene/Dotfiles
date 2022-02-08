@@ -4,20 +4,15 @@
 
 (eval-when-compile (require 'use-package))
 (use-package evil
-  :commands (turn-on-evil-mode turn-off-evil-mode)
+  :commands (turn-on-evil-mode)
   :bind
-  ("C-c v" . robenkleene/toggle-evil)
+  ("C-c v" . turn-on-evil-mode)
+  ("C-c C-v" . turn-on-evil-mode)
   :init
   ;; (setq evil-toggle-key "")
-  (defun robenkleene/toggle-evil ()
-    (interactive)
-    (if (bound-and-true-p evil-mode)
-        (turn-off-evil-mode)
-      (turn-on-evil-mode)
-      ))
   :config
-  ;; (define-key evil-normal-state-map "\C-c/" nil)
-  (define-key evil-normal-state-map (kbd "C-c v") 'robenkleene/toggle-evil)
+  (define-key evil-normal-state-map (kbd "C-c v") 'turn-off-evil-mode)
+  (define-key evil-normal-state-map (kbd "C-c C-v") 'turn-off-evil-mode)
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
