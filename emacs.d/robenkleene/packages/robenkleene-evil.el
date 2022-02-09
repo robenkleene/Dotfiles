@@ -10,6 +10,14 @@
   ("C-c C-v" . evil-mode)
   (:map robenkleene/leader-map
         ("[" . evil-mode)
+        ("/" . (lambda ()
+                 (interactive)
+                 (evil-mode)
+                 (evil-search-forward)))
+        ("?" . (lambda ()
+                 (interactive)
+                 (evil-mode)
+                 (evil-search-backward)))
         )
   :init
   ;; (setq evil-toggle-key "")
@@ -33,6 +41,7 @@
   (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
   (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
   (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
+  (define-key evil-normal-state-map (kbd "q") 'evil-mode)
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
