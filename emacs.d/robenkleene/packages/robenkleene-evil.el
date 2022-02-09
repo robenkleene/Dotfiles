@@ -38,10 +38,12 @@
       (with-current-buffer buffer
         (kill-local-variable 'cursor-type))))
   :config
-  (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
-  (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
-  (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
-  (define-key evil-normal-state-map (kbd "q") 'evil-mode)
+  (with-eval-after-load 'evil-maps
+    (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
+    (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
+    (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
+    (define-key evil-normal-state-map (kbd "q") 'evil-mode)
+    )
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
