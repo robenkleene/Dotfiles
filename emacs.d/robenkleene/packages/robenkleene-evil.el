@@ -8,6 +8,9 @@
   :bind
   ("C-c v" . evil-mode)
   ("C-c C-v" . evil-mode)
+  (:map robenkleene/leader-map
+        ("[" . evil-mode)
+        )
   :init
   ;; (setq evil-toggle-key "")
   (if (display-graphic-p)
@@ -29,6 +32,7 @@
   :config
   (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
   (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
+  (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
