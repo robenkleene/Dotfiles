@@ -6,10 +6,9 @@
 (use-package evil
   :commands (evil-mode)
   :bind
-  ("C-c v" . evil-mode)
-  ("C-c C-v" . evil-mode)
   (:map robenkleene/leader-map
         ("[" . evil-mode)
+        ("j" . evil-mode)
         ("/" . (lambda ()
                  (interactive)
                  (evil-mode)
@@ -39,8 +38,6 @@
         (kill-local-variable 'cursor-type))))
   :config
   (with-eval-after-load 'evil-maps
-    (define-key evil-normal-state-map (kbd "C-c v") 'evil-mode)
-    (define-key evil-normal-state-map (kbd "C-c C-v") 'evil-mode)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
