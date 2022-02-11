@@ -48,6 +48,7 @@
 (defalias 'archive 'robenkleene/open-archive)
 (defalias 'title-case 'robenkleene/title-case)
 (defalias 'lnk 'robenkleene/ido-links)
+(defalias 'clip 'robenkleene/new-clipboard)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
