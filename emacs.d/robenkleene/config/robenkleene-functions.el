@@ -85,6 +85,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+
 (defun robenkleene/new-empty ()
   "Open a new buffer named Untitled."
   (interactive)
@@ -979,12 +980,6 @@ With prefix arg, find the previous file."
   "Open scratch buffer."
   (interactive)
   (switch-to-buffer "*scratch*")
-  )
-
-(defun robenkleene/open-scratch-text ()
-  "Open scratch text buffer."
-  (interactive)
-  (switch-to-buffer (generate-new-buffer "Untitled"))
   )
 
 (defun robenkleene/open-emacs-messages ()
