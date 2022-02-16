@@ -43,6 +43,8 @@
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
+  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
+  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
