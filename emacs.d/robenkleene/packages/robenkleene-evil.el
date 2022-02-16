@@ -37,14 +37,29 @@
       (with-current-buffer buffer
         (kill-local-variable 'cursor-type))))
   :config
+  (unless (display-graphic-p)
+    (use-package evil-terminal-cursor-changer
+      :config
+      (evil-terminal-cursor-changer-activate)
+      (setq evil-motion-state-cursor 'box)
+      (setq evil-visual-state-cursor 'box)
+      (setq evil-normal-state-cursor 'box)
+      (setq evil-insert-state-cursor 'bar)
+      (setq evil-emacs-state-cursor  'hbar)
+      )
+    )
+  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
+  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
+
+  ;; Bindings
   (with-eval-after-load 'evil-maps
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
-  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
-  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
+
+  ;; Packages
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
                evil-visualstar/begin-search-backward)
@@ -57,18 +72,10 @@
   (use-package evil-surround
     :init
     (global-evil-surround-mode 1))
-
-  (unless (display-graphic-p)
-    (use-package evil-terminal-cursor-changer
-      :config
-      (evil-terminal-cursor-changer-activate)
-      (setq evil-motion-state-cursor 'box)
-      (setq evil-visual-state-cursor 'box)
-      (setq evil-normal-state-cursor 'box)
-      (setq evil-insert-state-cursor 'bar)
-      (setq evil-emacs-state-cursor  'hbar)
-      )
-    )
+  (use-package evil-goggles
+    :ensure t
+    :config
+    (evil-goggles-mode))
   )
 
 (provide 'robenkleene-evil)
