@@ -36,8 +36,8 @@
 (defalias 'lnk 'robenkleene/ido-links)
 
 ;; Buffers & Files
-(defalias 'daily-new 'robenkleene/open-daily)
-(defalias 'daily 'robenkleene/browse-daily)
+(defalias 'daily-browse 'robenkleene/browse-daily)
+(defalias 'daily 'robenkleene/open-daily)
 (defalias 'clip 'robenkleene/new-clipboard)
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
 (defalias 'scratch-text 'robenkleene/new-empty)
@@ -51,7 +51,6 @@
 (defalias 'journal 'robenkleene/open-journal)
 (defalias 'todo 'robenkleene/open-todo)
 (defalias 'todo-archive 'robenkleene/open-todo-archive)
-(defalias 'od 'robenkleene/open-daily)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
