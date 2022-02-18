@@ -1,5 +1,6 @@
 # bind \t accept-autosuggestion
 bind \cy fish_clipboard_paste
+bind \cv vim_grep_clipboard
 bind \cq push_line
 bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
@@ -11,7 +12,7 @@ bind \cx 'fish_clipboard_copy; commandline -f kill-whole-line'
 # want "up-or-search" to return the previous command.
 # bind \e\[A 'history --merge ; up-or-search'
 
-# These aren't support until Fish 3.2 and then shoudl be built-in
+# These aren't support until Fish 3.2 and then should be built-in
 # bind \c_ undo
 # bind \c_ undo
 # bind \e/ redo
