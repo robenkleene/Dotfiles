@@ -13,15 +13,19 @@ function! commands#GrepBuffer() abort
   if getline('1')[0:len('diff --')-1] ==# 'diff --'
     execute "%!diff_to_grep"
   endif
-  " `cbuffer`: Convert to `quickfix`
-  " `bprevious`: Go back to grep input
-  " `bdelete`: Delete the grep buffer
-  if line('$') == 1
-    " Don't show the quickfix list if there's exactly one match
-    execute "cbuffer | bprevious | bdelete"
-  else
-    execute "cbuffer | bprevious | bdelete | cw | wincmd k"
+  " If it's grep output, populate the quickfix list
+  if getline('1') =~# '^.\{-}:\d\{-}:'
+    " `cbuffer`: Convert to `quickfix`
+    " `bprevious`: Go back to grep input
+    " `bdelete`: Delete the grep buffer
+    if line('$') == 1
+      " Don't show the quickfix list if there's exactly one match
+      execute "cbuffer | bprevious | bdelete"
+    else
+      execute "cbuffer | bprevious | bdelete | cw | wincmd k"
+    endif
   endif
+  " Otherwise just edit the buffer
 endfunction
 
 function! commands#DiffBuffer() abort
