@@ -14,6 +14,7 @@ function fish_sync_abbr
     abbr -a pdq "p | dq"
     abbr -a vd "$VIM_COMMAND -d"
     abbr -a oR 'open -R'
+    abbr -a oRgm 'open -R (git ls-files -m)'
     abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
     abbr -a af "$ACK_COMMAND -F"
