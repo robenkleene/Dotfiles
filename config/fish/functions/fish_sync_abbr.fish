@@ -9,6 +9,7 @@ function fish_sync_abbr
     abbr -a v- "$VIM_COMMAND -"
     abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
+    abbr -a tq "tmp | q"
     abbr -a pa "p | va"
     abbr -a pva "p | va"
     abbr -a pdq "p | dq"
