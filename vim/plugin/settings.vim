@@ -201,6 +201,9 @@ set dictionary+=/usr/share/dict/words
 "   " set grepformat=%f:%l:%c:%m,%f:%l:%m
 " endif
 
+" Prefer spaces to tabs
+set expandtab
+
 " Make `find <filename>` find files recursively
 set path+=**
 
