@@ -10,5 +10,5 @@ tmux copy-mode \; \
   send -X search-forward " " \; \
   send-key -X cursor-up \; \
   send-key -X copy-pipe-and-cancel "safecopy"
-sleep 0.5
+sleep 0.1
 ~/.bin/safepaste
