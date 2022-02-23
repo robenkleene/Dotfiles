@@ -148,9 +148,9 @@ vnoremap <M-m> :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR
 vnoremap <localleader>q :'<,'>call bindings#LinkSourceControlMarkdownYankQuotedLines()<CR>
 
 " Copy Path
-nnoremap <leader>yp :let @*=expand("%:p")<CR>
-nnoremap <leader>yf :let @*=expand("%:t")<CR>
-nnoremap <leader>yd :let @*=expand('%:p:h:t')<CR>
+nnoremap <leader>yp :let @*=expand("%:p")<CR>:echo "Yanked path"<CR>
+nnoremap <leader>yf :let @*=expand("%:t")<CR>:echo "Yanked filename"<CR>
+nnoremap <leader>yd :let @*=expand('%:p:h:t')<CR>:echo "Yanked directory path"<CR>
 
 " `grep` Visual Star
 " makes * and # work on visual mode too.
