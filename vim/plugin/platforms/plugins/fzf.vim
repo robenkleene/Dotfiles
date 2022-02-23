@@ -150,7 +150,7 @@ command! Modified :call fzf#run(fzf#wrap({
       \ }))
 
 command! Cd :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d --hidden --follow --exclude .git",
+      \   'source': "fd --type d --hidden --follow --exclude .git --exclude .hg",
       \   'sink':   function('<SID>file_manager')
       \ }))
 
@@ -241,19 +241,19 @@ function! s:relative_file_insert(path) abort
 endfunction
 
 command! Cdinsert :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d --hidden --follow --exclude .git",
+      \   'source': "fd --type d --hidden --follow --exclude .git --exclude .hg",
       \   'sink':   function('<SID>insert')
       \ }))
 command! Filesinsert :call fzf#run(fzf#wrap({
-      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store",
+      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store",
       \   'sink':   function('<SID>insert')
       \ }))
 command! RelativeCdinsert :call fzf#run(fzf#wrap({
-      \   'source': "fd --type d --hidden --follow --exclude .git",
+      \   'source': "fd --type d --hidden --follow --exclude .git --exclude .hg",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeFilesinsert :call fzf#run(fzf#wrap({
-      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store",
+      \   'source': "fd --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeZinsert :call fzf#run(fzf#wrap({
