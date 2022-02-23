@@ -181,7 +181,7 @@
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
           (split-string
-           (shell-command-to-string "fasd -Rdl")
+           (shell-command-to-string "fasd -dl")
            "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
@@ -268,7 +268,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type f --follow --hidden --exclude .git --exclude .DS_Store . "
+                    " --type f --follow --hidden --exclude .git --exclude .hg --exclude .DS_Store . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -292,7 +292,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type d --follow --hidden --exclude .git . "
+                    " --type d --follow --hidden --exclude .git --exclude .hg . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -316,7 +316,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--hidden --follow --exclude .git . "
+                    "--hidden --follow --exclude .git --exclude .hg . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))

@@ -1,10 +1,10 @@
 export FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS"
 # Note this returns files and symlinks, regardless of whether they're
 # directories, when really we probably want files or symlinks to files
-export FZF_DEFAULT_COMMAND='fd --type f --follow --type l --hidden --exclude .git --exclude .DS_Store'
+export FZF_DEFAULT_COMMAND='fd --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # We don't return symlinks here because you can't cd to symlinks to files
-export FZF_ALT_C_COMMAND='fd --type d --follow --hidden --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --follow --hidden --exclude .git --exclude .hg'
 
 # These set bindings, so don't import them
 # source ~/.fzf/shell/completion.zsh
