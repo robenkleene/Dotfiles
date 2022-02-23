@@ -122,6 +122,7 @@ function fish_sync_abbr
     # Mercurial
     abbr -a hgdb 'hg diff --root . -r "bottom^"'
     abbr -a hgdbs 'hg diff --root . -r "bottom^" --stat'
+    abbr -a hgdbf 'hg status --rev bottom -n'
     abbr -a hgd1 'hg diff --root . -pr .^1'
     abbr -a hgd1s 'hg diff --root . -pr .^1 --stat'
     abbr -a hgd 'hg diff --root .'
