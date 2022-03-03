@@ -138,6 +138,8 @@
   'delete-window)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-o")
   'delete-other-windows)
+(define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-w")
+  'delete-other-frames)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<down>")
   'windmove-down)
 (define-key robenkleene/mac-bindings-minor-mode-map (kbd "M-s-<up>")
