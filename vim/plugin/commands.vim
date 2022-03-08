@@ -42,10 +42,10 @@ command! -nargs=* Qa :call commands#Qa(<q-args>)
 command! -nargs=* Atm :call commands#Atm(<q-args>)
 
 " Yank
-command! YankFileName :let @" = expand("%:t")|:let @+ = @"|:echo @"
-command! YankFilePath :let @" = expand("%:p")|:let @+ = @"|:echo @"
-command! YankFilePathRelative :let @" = expand("%")|:let @+ = @"|:echo @"
-command! YankDirectoryPath :let @" = expand("%:p:h")|:let @+ = @"|:echo @"
+command! YankFileName :let @" = expand("%:t")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
+command! YankFilePath :let @" = expand("%:p")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
+command! YankFilePathRelative :let @" = expand("%")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
+command! YankDirectoryPath :let @" = expand("%:p:h")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
 
 " Splits
 command! NewFileType :call commands#NewFileType('new')
