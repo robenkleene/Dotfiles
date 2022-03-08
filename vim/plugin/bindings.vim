@@ -94,7 +94,7 @@ nnoremap <leader>m :make<CR>
 " Rg
 " Space delibrately left after
 nnoremap <leader>a :Rg 
-nnoremap <A-a> :Rg 
+nnoremap <A-a>a :Rg 
 nnoremap <leader>ga :Rgg 
 
 " Quit & Save Session
