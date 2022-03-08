@@ -42,10 +42,11 @@ command! -nargs=* Qa :call commands#Qa(<q-args>)
 command! -nargs=* Atm :call commands#Atm(<q-args>)
 
 " Yank
-command! YankFileName :let @" = expand("%:t")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
-command! YankFilePath :let @" = expand("%:p")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
-command! YankFilePathRelative :let @" = expand("%")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
-command! YankDirectoryPath :let @" = expand("%:p:h")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"
+command! YankFileName :let @" = expand("%:t")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"|:RegToSafe
+command! YankFilePath :let @" = expand("%:p")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"|:RegToSafe
+command! YankFilePathRelative :let @" = expand("%")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"|:RegToSafe
+command! YankDirectoryPath :let @" = expand("%:p:h")|:if has('clipboard')|:let @+ = @"|:endif|:echo @"|:RegToSafe
+command! RegToSafe :call system('~/.bin/safecopy',getreg('"'))
 
 " Splits
 command! NewFileType :call commands#NewFileType('new')
