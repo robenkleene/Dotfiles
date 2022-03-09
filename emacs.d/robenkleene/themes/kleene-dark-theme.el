@@ -293,6 +293,7 @@
    `(helm-source-header ((t (:inherit rk-modeline-inactive))))
    `(helm-candidate-number ((t (:inherit rk-prompt))))
    `(helm-grep-finish ((t (:inherit rk-prompt))))
+   `(helm-grep-file ((t (:inherit link :underline nil))))
 
    ;;;; Rainbow Delimiters
    `(rainbow-delimiters-depth-1-face ((t (:bold nil :foreground "#AFD7D7"))))
