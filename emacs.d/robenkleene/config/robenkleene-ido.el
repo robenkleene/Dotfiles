@@ -268,7 +268,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type f --follow --hidden --exclude .git --exclude .hg --exclude .DS_Store . "
+                    "--max-results=1000 --type f --follow --hidden --exclude .git --exclude .hg --exclude .DS_Store . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -292,7 +292,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    " --type d --follow --hidden --exclude .git --exclude .hg . "
+                    "--max-results=1000 --type d --follow --hidden --exclude .git --exclude .hg . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -316,7 +316,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--hidden --follow --exclude .git --exclude .hg . "
+                    "--max-results=1000 --hidden --follow --exclude .git --exclude .hg . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
