@@ -64,6 +64,7 @@
 (require 'robenkleene-ledger)
 (require 'robenkleene-csv)
 (require 'robenkleene-css)
+(require 'robenkleene-objective-c)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
