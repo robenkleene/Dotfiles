@@ -15,7 +15,7 @@ function fish_sync_abbr
     abbr -a pdq "p | dq"
     abbr -a vd "$VIM_COMMAND -d"
     abbr -a oR 'open -R'
-    abbr -a oRglsm 'open -R (git ls-files -m)'
+    abbr -a oRglsc 'open -R (git ls-files -m -o --exclude-standard)'
     abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
     abbr -a af "$ACK_COMMAND -F"
@@ -80,6 +80,7 @@ function fish_sync_abbr
     abbr -a gmt 'git mergetool'
     abbr -a gls 'git ls-files'
     abbr -a glsm 'git ls-files -m'
+    abbr -a glsc 'git ls-files -m -o --exclude-standard'
     abbr -a gr 'git rebase'
     abbr -a grc 'git rebase --continue'
     abbr -a grs 'git rebase --skip'
