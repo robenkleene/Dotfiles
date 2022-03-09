@@ -6,25 +6,26 @@
 (use-package helm
   :commands (helm-semantic-or-imenu
              robenkleene/helm-ag-in-directory
-             robenkleene/helm-recursive-find-file)
+             robenkleene/helm-recursive-find-file
+             helm-find-files-or-marked)
   :bind
-  ("M-E" . robenkleene/helm-recursive-find-file)
-  ("M-C" . robenkleene/helm-recursive-find-dir)
+  ("M-e" . robenkleene/helm-recursive-find-file)
+  ("M-c" . robenkleene/helm-recursive-find-dir)
   ("M-A" . helm-do-grep-ag)
   (:map robenkleene/leader-map
-        ("H" . helm-resume)
+        ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
-        ("I" . helm-semantic-or-imenu)
-        ("E" . robenkleene/helm-recursive-find-file)
-        ("C" . robenkleene/helm-recursive-find-dir)
-        ("A" . robenkleene/helm-ag-in-directory)
+        ("i" . helm-semantic-or-imenu)
+        ("e" . robenkleene/helm-recursive-find-file)
+        ("c" . robenkleene/helm-recursive-find-dir)
+        ("a" . robenkleene/helm-ag-in-directory)
         )
   :init
   (use-package helm-swoop
     :commands (helm-swoop)
     :bind
     (:map robenkleene/leader-map
-          ("L" . helm-swoop)
+          ("l" . helm-swoop)
           )
     :init
     (custom-set-faces
@@ -54,6 +55,7 @@ directory."
     )
 
   :config
+  (require 'helm-files)
   (setq helm-grep-ag-command
         "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
