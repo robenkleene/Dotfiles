@@ -692,6 +692,34 @@ With prefix arg, find the previous file."
     )
   )
 
+(defun robenkleene/git-diff-grep ()
+  "Search for REGEXP with optional FILES and DIR."
+  (interactive)
+  (require 'grep)
+  (cd (robenkleene/source-control-directory))
+  (compilation-start
+   "git diff --relative | diff_to_grep"
+   'grep-mode)
+  )
+
+(defun robenkleene/hg-diff-grep ()
+  "Search for REGEXP with optional FILES and DIR."
+  (interactive)
+  (require 'grep)
+  (compilation-start
+   "hg diff --root . | diff_to_grep"
+   'grep-mode)
+  )
+
+(defun robenkleene/hg-diff-bottom-grep ()
+  "Search for REGEXP with optional FILES and DIR."
+  (interactive)
+  (require 'grep)
+  (compilation-start
+   "hg diff --root . -r \"bottom^\" | diff_to_grep"
+   'grep-mode)
+  )
+
 (defun robenkleene/forward-block (&optional n)
   "Move to next text block N."
   (interactive "p")
