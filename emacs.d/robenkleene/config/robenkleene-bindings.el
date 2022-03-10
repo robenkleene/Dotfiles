@@ -177,8 +177,10 @@
   'robenkleene/wiki-link) ;; This is only for Markdown
 ;; (define-key robenkleene/leader-map (kbd "s")
 ;;   'robenkleene/web-search)
-(define-key robenkleene/leader-map (kbd "C")
-  'robenkleene/title-case)
+;; (define-key robenkleene/leader-map (kbd "C")
+;;   'robenkleene/title-case)
+(global-set-key (kbd "C-c c")
+                'robenkleene/title-case)
 (define-key robenkleene/leader-map (kbd "*")
   'isearch-forward-symbol-at-point)
 (define-key robenkleene/leader-map (kbd "b")
