@@ -4,7 +4,7 @@ function! commands#GrepBuffer() abort
   " If the input is a list of files, populate the `argslist`
   let l:filenames = getline(1, '$')
   call map(l:filenames, "fnameescape(v:val)")
-  if filereadable(getline('1'))
+  if filereadable(getline('1')) || isdirectory(getline('1'))
     bdelete
     execute "args ".join(l:filenames)
     return
