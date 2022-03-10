@@ -9,23 +9,21 @@
              robenkleene/helm-recursive-find-file
              helm-find-files-or-marked)
   :bind
-  ("M-e" . robenkleene/helm-recursive-find-file)
-  ("M-c" . robenkleene/helm-recursive-find-dir)
   ("M-A" . helm-do-grep-ag)
   (:map robenkleene/leader-map
-        ("h" . helm-resume)
+        ("H" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
-        ("i" . helm-semantic-or-imenu)
-        ("e" . robenkleene/helm-recursive-find-file)
-        ("c" . robenkleene/helm-recursive-find-dir)
-        ("a" . robenkleene/helm-ag-in-directory)
+        ("I" . helm-semantic-or-imenu)
+        ("E" . robenkleene/helm-recursive-find-file)
+        ("C" . robenkleene/helm-recursive-find-dir)
+        ("A" . robenkleene/helm-ag-in-directory)
         )
   :init
   (use-package helm-swoop
     :commands (helm-swoop)
     :bind
     (:map robenkleene/leader-map
-          ("l" . helm-swoop)
+          ("L" . helm-swoop)
           )
     :init
     (custom-set-faces
