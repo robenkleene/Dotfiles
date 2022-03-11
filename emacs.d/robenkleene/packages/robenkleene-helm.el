@@ -7,36 +7,21 @@
   :commands (helm-semantic-or-imenu
              robenkleene/helm-ag-in-directory
              robenkleene/helm-recursive-find-file
-             helm-find-files-or-marked)
+             helm-find-files-or-marked
+             helm-occur)
   :bind
-  ("M-A" . helm-do-grep-ag)
+  ;; ("M-A" . helm-do-grep-ag)
   (:map robenkleene/leader-map
-        ("H" . helm-resume)
+        ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
         ("E" . robenkleene/helm-recursive-find-file)
         ("C" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
+        ("l" . helm-occur)
         )
   :init
-  (use-package helm-swoop
-    :commands (helm-swoop)
-    :bind
-    (:map robenkleene/leader-map
-          ("l" . helm-swoop)
-          )
-    :init
-    (custom-set-faces
-     `(helm-swoop-target-word-face
-       ((t (:foreground nil :background nil :bold nil :inherit isearch))))
-     `(helm-swoop-target-line-face
-       ((t (:foreground nil :background nil :inherit hl-line))))
-     )
-    :config
-    ;; Don't use word at cursor by default
-    (setq helm-swoop-pre-input-function (lambda () nil))
-    )
-
+  (setq helm-sources-using-default-as-input nil)
   (defun robenkleene/helm-ag-in-directory (dir)
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a
 directory."
