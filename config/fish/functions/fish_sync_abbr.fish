@@ -108,8 +108,8 @@ function fish_sync_abbr
     abbr -a agvmn 'agvtool new-marketing-version'
     # Use `gemacs` for graphical Emacs
     abbr -a emacs 'emacs -nw'
-    abbr -a e "$EMACS_COMMAND"
-    abbr -a ec "$EMACS_COMMAND"
+    # abbr -a e "$EMACS_COMMAND"
+    # abbr -a ec "$EMACS_COMMAND"
     abbr -a mba 'mbsync -all --verbose'
     abbr -a rps 'repla server'
     abbr -a rpj 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
