@@ -13,17 +13,17 @@
   (:map robenkleene/leader-map
         ("H" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
-        ("I" . helm-semantic-or-imenu)
+        ("i" . helm-semantic-or-imenu)
         ("E" . robenkleene/helm-recursive-find-file)
         ("C" . robenkleene/helm-recursive-find-dir)
-        ("A" . robenkleene/helm-ag-in-directory)
+        ("a" . robenkleene/helm-ag-in-directory)
         )
   :init
   (use-package helm-swoop
     :commands (helm-swoop)
     :bind
     (:map robenkleene/leader-map
-          ("L" . helm-swoop)
+          ("l" . helm-swoop)
           )
     :init
     (custom-set-faces
