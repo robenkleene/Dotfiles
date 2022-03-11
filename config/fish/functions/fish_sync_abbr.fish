@@ -128,6 +128,7 @@ function fish_sync_abbr
     abbr -a hgdbfq 'hg status --rev bottom -n | q'
     abbr -a hgdq 'hg diff --root . | q'
     abbr -a hgd1 'hg diff --root . -pr .^1'
+    abbr -a hgdl 'hg diff --root . -pr .^1'
     abbr -a hgd1s 'hg diff --root . -pr .^1 --stat'
     abbr -a hgd 'hg diff --root .'
     abbr -a hgcm 'hg commit -m'
