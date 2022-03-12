@@ -328,6 +328,11 @@
 ;; Tramp
 (setq tramp-default-method "ssh")
 
+;; `find-file-hook' can cause slow behavior
+;; (remove-hook 'find-file-hook 'vc-find-file-hook)
+;; Removes massive slow down with large `hg' repos
+(setq vc-handled-backends '(Git))
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
