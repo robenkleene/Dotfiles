@@ -374,10 +374,16 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
+
 (defun robenkleene/next ()
   "Make a wiki link from a file named after the region."
   (interactive)
-  (if (buffer-live-p "*grep*")
+  (if
+      (or
+       (buffer-live-p (get-buffer "*grep*"))
+       (buffer-live-p (get-buffer "*hgrep*"))
+       (buffer-live-p (get-buffer "*hmoccur*"))
+       )
       (next-error)
     (robenkleene/find-next-file)
     )
@@ -386,7 +392,12 @@ Otherwise, call `backward-kill-word'."
 (defun robenkleene/previous ()
   "Make a wiki link from a file named after the region."
   (interactive)
-  (if (buffer-live-p "*grep*")
+  (if
+      (or
+       (buffer-live-p (get-buffer "*grep*"))
+       (buffer-live-p (get-buffer "*hgrep*"))
+       (buffer-live-p (get-buffer "*hmoccur*"))
+       )
       (previous-error)
     (robenkleene/find-next-file t)
     )

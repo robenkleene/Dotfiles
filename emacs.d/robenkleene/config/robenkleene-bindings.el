@@ -45,12 +45,6 @@
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
 
-;; Better Defaults
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-b")
-  'ibuffer)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-r")
-  'robenkleene/ido-recent-find-file)
-
 ;; Add a second leader key
 ;; (define-key key-translation-map (kbd "M-o") (kbd "C-c"))
 ;; These should be added only for terminal modes
@@ -94,18 +88,24 @@
   'robenkleene/ido-quick-open)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
   'robenkleene/comment)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
-  'robenkleene/ido-quick-developer)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
-  'robenkleene/ido-recursive-find-file)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
-  'robenkleene/ido-recursive-find-dir)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
-  'robenkleene/ido-z)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
   'robenkleene/reveal-in-finder)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
   'robenkleene/open-terminal-window)
+
+;; ido
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
+  'robenkleene/ido-quick-developer)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
+;;   'robenkleene/ido-recursive-find-file)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
+;;   'robenkleene/ido-recursive-find-dir)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
+  'robenkleene/ido-z)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-b")
+  'ibuffer)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-r")
+  'robenkleene/ido-recent-find-file)
 
 ;; Leader Map
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
@@ -144,18 +144,6 @@
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 ;; (define-key robenkleene/leader-map (kbd "i") 'imenu)
 ;; (define-key robenkleene/leader-map (kbd "l") 'occur)
-(define-key robenkleene/leader-map (kbd "M-e")
-  'robenkleene/ido-recursive-insert-file)
-(define-key robenkleene/leader-map (kbd "M-c")
-  'robenkleene/ido-recursive-find-dir)
-;; (define-key robenkleene/leader-map (kbd "E")
-;;   'robenkleene/ido-recursive-find-file)
-;; (define-key robenkleene/leader-map (kbd "C")
-;;   'robenkleene/ido-recursive-insert-dir)
-(define-key robenkleene/leader-map (kbd "g M-e")
-  'robenkleene/ido-source-control-recursive-find-file)
-(define-key robenkleene/leader-map (kbd "g M-c")
-  'robenkleene/ido-source-control-recursive-find-dir)
 (define-key robenkleene/leader-map (kbd "g a")
   'robenkleene/rg-source-control)
 ;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
@@ -188,6 +176,21 @@
   'ido-switch-buffer)
 (define-key robenkleene/leader-map (kbd "u")
   'robenkleene/new-empty)
+
+;; Leader Map ido
+;; (define-key robenkleene/leader-map (kbd "M-e")
+;;   'robenkleene/ido-recursive-insert-file)
+;; (define-key robenkleene/leader-map (kbd "M-c")
+;;   'robenkleene/ido-recursive-find-dir)
+;; (define-key robenkleene/leader-map (kbd "E")
+;;   'robenkleene/ido-recursive-find-file)
+;; (define-key robenkleene/leader-map (kbd "C")
+;;   'robenkleene/ido-recursive-insert-dir)
+(define-key robenkleene/leader-map (kbd "g M-e")
+  'robenkleene/ido-source-control-recursive-find-file)
+(define-key robenkleene/leader-map (kbd "g M-c")
+  'robenkleene/ido-source-control-recursive-find-dir)
+
 
 ;; Window Management
 
