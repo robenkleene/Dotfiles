@@ -20,6 +20,7 @@
         ;; ("E" . robenkleene/helm-recursive-find-file)
         ;; ("C" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
+        ("H" . helm-apropos)
         ("l" . helm-occur)
         )
   :init
@@ -28,6 +29,7 @@
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a
 directory."
     (interactive
+     
      (list
       (if current-prefix-arg
           (read-directory-name "Base directory: ")
@@ -40,6 +42,16 @@ directory."
     )
 
   :config
+  (setq helm-grep-use-ioccur-style-keys nil)
+  (define-key helm-map (kbd "<left>") 'backward-char)
+  (define-key helm-map (kbd "<right>") 'forward-char)
+  ;; (define-key helm-grep-map (kbd "<left>") 'backward-char)
+  ;; (define-key helm-grep-map (kbd "<right>") 'forward-char)
+  (add-hook 'helm-grep-mode-hook (lambda()
+                                   (define-key helm-grep-map (kbd "<left>") 'backward-char)
+                                   (define-key helm-grep-map (kbd "<right>") 'forward-char)
+                                   ))
+
   (require 'helm-files)
   (setq helm-grep-ag-command
         "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number %s %s %s")
