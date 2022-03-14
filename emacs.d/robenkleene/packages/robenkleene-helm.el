@@ -11,12 +11,14 @@
              helm-occur)
   :bind
   ;; ("M-A" . helm-do-grep-ag)
+  ("M-e" . robenkleene/helm-recursive-find-file)
+  ("M-c" . robenkleene/helm-recursive-find-dir)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
-        ("E" . robenkleene/helm-recursive-find-file)
-        ("C" . robenkleene/helm-recursive-find-dir)
+        ;; ("E" . robenkleene/helm-recursive-find-file)
+        ;; ("C" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
         ("l" . helm-occur)
         )
@@ -49,6 +51,12 @@ directory."
   (defadvice helm-grep-save-results-1
       (after robenkleene/helm-do-grep-ag-grep-mode () activate)
     (with-current-buffer (get-buffer-create "*hgrep*")
+      (grep-mode)
+      )
+    )
+  (defadvice helm-occur-save-results
+      (after helm-occur () activate)
+    (with-current-buffer (get-buffer-create "*hmoccur*")
       (grep-mode)
       )
     )
