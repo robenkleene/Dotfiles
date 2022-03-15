@@ -660,11 +660,11 @@ With prefix arg, find the previous file."
 ;;     )
 ;;   )
 
-(defvar robenkleene/rg-command-files)
-(setq robenkleene/rg-command-files
-      "rg --smart-case --no-heading --glob \"<F>\" <R> <D>")
+;; (defvar robenkleene/rg-command-files)
+;; (setq robenkleene/rg-command-files
+;;       "rg --smart-case --no-heading --glob \"<F>\" <R> <D>")
 (defvar robenkleene/rg-command)
-(setq robenkleene/rg-command "rg --smart-case --no-heading <R> <D>")
+(setq robenkleene/rg-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number <R> <D>")
 
 (defun robenkleene/source-control-directory ()
   "Return the source control directory or nil."

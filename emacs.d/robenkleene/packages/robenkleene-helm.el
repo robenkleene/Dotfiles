@@ -11,14 +11,14 @@
              helm-occur)
   :bind
   ;; ("M-A" . helm-do-grep-ag)
-  ("M-e" . robenkleene/helm-recursive-find-file)
-  ("M-c" . robenkleene/helm-recursive-find-dir)
+  ;; ("M-e" . robenkleene/helm-recursive-find-file)
+  ;; ("M-c" . robenkleene/helm-recursive-find-dir)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
-        ;; ("E" . robenkleene/helm-recursive-find-file)
-        ;; ("C" . robenkleene/helm-recursive-find-dir)
+        ("e" . robenkleene/helm-recursive-find-file)
+        ("c" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
