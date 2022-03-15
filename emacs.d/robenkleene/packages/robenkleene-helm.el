@@ -18,7 +18,7 @@
         ;; ("A" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
         ("e" . robenkleene/helm-recursive-find-file)
-        ("c" . robenkleene/helm-recursive-find-dir)
+        ("C" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
@@ -29,7 +29,6 @@
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a
 directory."
     (interactive
-     
      (list
       (if current-prefix-arg
           (read-directory-name "Base directory: ")
