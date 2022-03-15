@@ -18,7 +18,7 @@ function fish_sync_abbr
     abbr -a oRglsc 'open -R (git ls-files -m -o --exclude-standard)'
     abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
-    abbr -a af "$ACK_COMMAND -F"
+    abbr -a aF "$ACK_COMMAND -F"
     abbr -a rgF "$ACK_COMMAND -F"
     abbr -a rgni "$ACK_COMMAND --no-ignore"
     abbr -a rgg "$ACK_COMMAND -g"
