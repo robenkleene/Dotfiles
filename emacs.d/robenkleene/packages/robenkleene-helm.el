@@ -17,7 +17,7 @@
         ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
         ("i" . helm-semantic-or-imenu)
-        ("e" . robenkleene/helm-recursive-find-file)
+        ("E" . robenkleene/helm-recursive-find-file)
         ("C" . robenkleene/helm-recursive-find-dir)
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
