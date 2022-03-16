@@ -68,14 +68,21 @@ if ! is_host_defined "$host"; then
   exit 1
 fi
 
+# excludes_file=$(mktemp "${TMPDIR:-/tmp}/rsync-excludes.XXXX")
+# git ls-files --exclude-standard -oi --directory > "$excludes_file"
+
+includes_file=$(mktemp "${TMPDIR:-/tmp}/rsync-includes.XXXX")
+git ls-files -m -o --exclude-standard > "$includes_file"
 server_path="$host:/home/robenkleene$local_subpath"
 # Never add --delete because that will delete ignored files
 if [[ "$pull" == "true" ]]; then
-  eval "rsync -c --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run \
+  # eval "rsync -c --omit-dir-times --exclude=\".*\" --exclude=\"node_modules\" --exclude-from=$excludes_file --verbose --archive $dry_run \
+  eval "rsync -c --omit-dir-times --files-from=$includes_file --verbose --archive $dry_run \
 \"$server_path\" \
 \"$local_path\""
 else
-  eval "rsync -c --omit-dir-times --exclude=\".*\" --verbose --archive $dry_run \
+  # eval "rsync -c --omit-dir-times --exclude=\".*\" --exclude=\"node_modules\" --exclude-from=$excludes_file --verbose --archive $dry_run \
+  eval "rsync -c --omit-dir-times --files-from=$includes_file --verbose --archive $dry_run \
 \"$local_path\" \
 \"$server_path\""
 fi
