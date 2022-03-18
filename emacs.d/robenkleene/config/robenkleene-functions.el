@@ -1148,6 +1148,24 @@ With prefix arg, find the previous file."
             (comment-or-uncomment-region $lbp $lep)
             (forward-line )))))))
 
+(defun robenkleene/yank-filepath ()
+  "Copy the filename to the kill ring."
+  (interactive)
+  (kill-new (buffer-file-name))
+  (message (buffer-file-name))
+  )
+
+(defun robenkleene/yank-filename ()
+  "Copy the filename to the kill ring."
+  (interactive)
+  (kill-new (buffer-name))
+  )
+
+(defun robenkleene/yank-directory ()
+  "Copy the directory into the kill ring."
+  (interactive)
+  (kill-new default-directory))
+
 ;; (defun robenkleene/pos-at-mouse-click (click-event)
 ;;   "Print position at CLICK-EVENT."
 ;;   (interactive "e")
