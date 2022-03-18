@@ -143,6 +143,7 @@ function fish_sync_abbr
     abbr -a hgsh 'hg show'
     abbr -a hgmva 'hg mv --after'
     abbr -a hgrm 'hg resolve -m'
+    abbr -a hgsf 'hg status -n'
     # New
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
