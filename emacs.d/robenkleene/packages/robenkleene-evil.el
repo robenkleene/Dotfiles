@@ -41,17 +41,18 @@
   (add-hook 'text-mode-hook 'evil-mode)
   (add-hook 'prog-mode-hook 'evil-mode)
   :config
-  (unless (display-graphic-p)
-    (use-package evil-terminal-cursor-changer
-      :config
-      (evil-terminal-cursor-changer-activate)
-      (setq evil-motion-state-cursor 'box)
-      (setq evil-visual-state-cursor 'box)
-      (setq evil-normal-state-cursor 'box)
-      (setq evil-insert-state-cursor 'bar)
-      (setq evil-emacs-state-cursor  'hbar)
-      )
-    )
+  ;; Cursor gets stuck using this
+  ;; (unless (display-graphic-p)
+  ;;   (use-package evil-terminal-cursor-changer
+  ;;     :config
+  ;;     (evil-terminal-cursor-changer-activate)
+  ;;     (setq evil-motion-state-cursor 'box)
+  ;;     (setq evil-visual-state-cursor 'box)
+  ;;     (setq evil-normal-state-cursor 'box)
+  ;;     (setq evil-insert-state-cursor 'bar)
+  ;;     (setq evil-emacs-state-cursor  'hbar)
+  ;;     )
+  ;;   )
   (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
   (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
 
