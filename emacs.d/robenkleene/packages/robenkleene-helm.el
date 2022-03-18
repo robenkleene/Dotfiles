@@ -22,6 +22,7 @@
         ("A" . robenkleene/helm-ag-in-directory)
         ("S" . helm-apropos)
         ("L" . helm-occur)
+        ("B" . helm-buffer-list)
         )
   :init
   (setq helm-sources-using-default-as-input nil)
