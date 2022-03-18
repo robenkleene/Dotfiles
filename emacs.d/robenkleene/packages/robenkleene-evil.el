@@ -36,6 +36,10 @@
     (dolist (buffer (buffer-list))
       (with-current-buffer buffer
         (kill-local-variable 'cursor-type))))
+  (setq evil-disable-insert-state-bindings t)
+  (setq evil-default-state 'insert)
+  (add-hook 'text-mode-hook 'evil-mode)
+  (add-hook 'prog-mode-hook 'evil-mode)
   :config
   (unless (display-graphic-p)
     (use-package evil-terminal-cursor-changer
@@ -56,7 +60,8 @@
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
-    (define-key evil-normal-state-map (kbd "q") 'evil-mode)
+    (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
+    ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
 
   ;; Packages
