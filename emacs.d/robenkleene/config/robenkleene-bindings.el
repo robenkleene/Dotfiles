@@ -148,7 +148,7 @@
   'robenkleene/rg-source-control)
 ;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
 ;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
-(define-key robenkleene/leader-map (kbd "A") 'robenkleene/rg)
+(define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
 (define-key robenkleene/leader-map (kbd "O")
   'robenkleene/ido-quick-open-file)
 (define-key robenkleene/leader-map (kbd "u") 'robenkleene/new-empty)
