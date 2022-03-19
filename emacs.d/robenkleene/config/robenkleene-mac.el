@@ -3,15 +3,23 @@
 ;;; Code:
 
 ;; Fix cut & paste
+;; Need to store the last paste because the function should only return a value
+;; if it's different than the last paste
+(setq robenkleene/last-paste nil)
 (defun robenkleene/copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
+  (let ((copied-text (shell-command-to-string "pbpaste")))
+    (unless (string= copied-text robenkleene/last-paste)
+      copied-text)))
+(setq interprogram-paste-function 'robenkleene/copy-from-osx)
+
 (defun robenkleene/paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
-      (process-send-eof proc))))
+      (process-send-eof proc)))
+  (setq robenkleene/last-paste text)
+  )
 (setq interprogram-cut-function 'robenkleene/paste-to-osx)
-(setq interprogram-paste-function 'robenkleene/copy-from-osx)
 
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)

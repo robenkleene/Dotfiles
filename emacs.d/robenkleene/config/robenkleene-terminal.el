@@ -2,16 +2,23 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun robenkleene/safecopy ()
-  (shell-command-to-string "safepaste"))
-
+;; Need to store the last paste because the function should only return a value
+;; if it's different than the last paste
+(setq robenkleene/last-paste nil)
 (defun robenkleene/safepaste (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
+      (unless (string))
       (process-send-string proc text)
-      (process-send-eof proc))))
-
+      (process-send-eof proc)))
+  (setq robenkleene/last-paste text)
+  )
 (setq interprogram-cut-function 'robenkleene/safepaste)
+
+(defun robenkleene/safecopy ()
+  (let ((copied-text (shell-command-to-string "safepaste")))
+    (unless (string= copied-text robenkleene/last-paste)
+      copied-text)))
 (setq interprogram-paste-function 'robenkleene/safecopy)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
