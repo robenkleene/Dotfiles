@@ -5,14 +5,16 @@
 (eval-when-compile (require 'use-package))
 (use-package helm
   :commands (helm-semantic-or-imenu
+             helm-buffers-list
              robenkleene/helm-ag-in-directory
              robenkleene/helm-recursive-find-file
              helm-find-files-or-marked
              helm-occur)
   :bind
-  ;; ("M-A" . helm-do-grep-ag)
+  ;; ("M-A" . helm-do-g
   ("M-e" . robenkleene/helm-recursive-find-file)
   ("M-c" . robenkleene/helm-recursive-find-dir)
+  ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
         ;; ("A" . robenkleene/helm-ag-in-directory)
@@ -22,7 +24,7 @@
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
-        ("b" . helm-buffer-list)
+        ;; ("b" . helm-buffers-list)
         )
   :init
   (setq helm-sources-using-default-as-input nil)
