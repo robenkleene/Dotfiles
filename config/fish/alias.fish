@@ -43,7 +43,7 @@ if test -f "$HOME/.personal"
     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 else
     # Don't automatically commit on non-personal machines
-    alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -p'
+    alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 end
 
 # Special
