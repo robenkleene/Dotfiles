@@ -39,7 +39,12 @@ alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
 alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
-alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
+if test -f "$HOME/.personal"
+    alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
+else
+    # Don't automatically commit on non-personal machines
+    alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -p'
+end
 
 # Special
 switch (uname)
