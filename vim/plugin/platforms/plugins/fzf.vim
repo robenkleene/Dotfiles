@@ -45,8 +45,20 @@ inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<C
 inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
-nnoremap <leader>a :Rg<CR>
-nnoremap <A-a>a :Rg<CR>
+nnoremap <leader>a :RG<CR>
+nnoremap <A-a>a :RG<CR>
+
+function! RipgrepFzf(query, fullscreen)
+  " let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let command_fmt = "rg --no-heading --with-filename --smart-case --line-number --colors \'match:fg:black\' --colors \'match:bg:cyan\' --colors \'path:fg:cyan\' --colors \'line:fg:white\' -p \"$@\" -- %s || true"
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
 if has('nvim')
   " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
   snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>
