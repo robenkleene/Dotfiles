@@ -34,7 +34,8 @@ command! DeleteEOFWhitespace :call commands#DeleteEOFWhitespace()
 " command! Wlcd :call commands#Cdw('lcd')
 
 " `rg`
-command! -nargs=* Rg :call commands#Rg(<q-args>)
+" command! -nargs=* Rg :call commands#Rg(<q-args>)
+command! -nargs=* A :call commands#Rg(<q-args>)
 command! -nargs=* Rgg :call commands#Rgg(<q-args>)
 command! -nargs=* Qa :call commands#Qa(<q-args>)
 

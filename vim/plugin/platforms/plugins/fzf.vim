@@ -45,6 +45,8 @@ inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<C
 inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
+nnoremap <leader>a :Rg<CR>
+nnoremap <A-a>a :Rg<CR>
 if has('nvim')
   " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
   snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>

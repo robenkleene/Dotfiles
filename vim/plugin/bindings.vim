@@ -87,14 +87,13 @@ nnoremap <leader>E :silent !mate --async "%:p"<CR>\|:redraw!<CR>
 " Default
 nnoremap <localleader>O :silent !open "%:p"<CR>\|:redraw!<CR>
 " nnoremap <M-O> :silent !open "%:p"<CR>\|:redraw!<CR>
+nnoremap <A-a>A :A 
 
 " `make`
 nnoremap <leader>m :make<CR>
 
 " Rg
 " Space delibrately left after
-nnoremap <leader>a :Rg 
-nnoremap <A-a>a :Rg 
 nnoremap <leader>ga :Rgg 
 
 " Quit & Save Session

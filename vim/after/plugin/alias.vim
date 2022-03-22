@@ -3,7 +3,7 @@ if !exists(':Alias')
 endif
 
 Alias G Git
-Alias A Rg
+" Alias A Rg
 Alias Rgf Rg\ -F
 
 " Compilers
