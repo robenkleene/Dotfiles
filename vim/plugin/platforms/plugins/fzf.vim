@@ -6,6 +6,9 @@ endif
 " Make a separate command so that `:Tags` can be used to generate tags
 " command! -bang -nargs=* FZFTags call fzf#vim#tags(<q-args>, <bang>0)
 
+
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
+
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
