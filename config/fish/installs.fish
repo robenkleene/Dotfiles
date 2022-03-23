@@ -14,7 +14,7 @@ if command -sq fasd
         test -d "$ret"; and cd "$ret"; or printf "%s\n" $ret
       end
     end
-    alias z="fasd_cd -d"
+    # alias z="fasd_cd -d"
 end
 
 # Ruby
