@@ -53,8 +53,6 @@ nnoremap <A-a>a :RG<CR>
 
 function! RipgrepFzf(query, fullscreen)
   " let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  " let command_fmt = "term=%s; test ${#term} -gt 1 && rg --no-heading --with-filename --smart-case --line-number --colors \'match:fg:black\' --colors \'match:bg:cyan\' --colors \'path:fg:cyan\' --colors \'line:fg:white\' --pretty -- ${term} || true"
-  " let command_fmt = "rg --no-heading --with-filename --smart-case --line-number --colors \'match:fg:black\' --colors \'match:bg:cyan\' --colors \'path:fg:cyan\' --colors \'line:fg:white\' --pretty -- %s || true"
   let command_fmt = "rg_reload %s || true"
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
