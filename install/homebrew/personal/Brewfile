@@ -64,7 +64,8 @@ brew 'cloc'
 brew 'id3lib'
 brew 'ledger'
 brew 'ncdu'
-brew 'mosh'
+# HEAD for truecolor support
+brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
 brew 'wdiff'
 brew 'mitmproxy'
