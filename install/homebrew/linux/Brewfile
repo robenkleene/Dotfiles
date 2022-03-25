@@ -28,6 +28,8 @@ brew 'fish'
 brew 'hub'
 brew 'gh'
 brew 'rename'
+# HEAD for truecolor support
+brew 'mosh', args: ['HEAD']
 
 # Languages
 # JavaScript
