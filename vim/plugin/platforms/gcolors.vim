@@ -1,4 +1,4 @@
-" GUI Colors
+
 
 if !has('gui_running') && !&termguicolors
   finish
@@ -27,11 +27,15 @@ function! s:MyHighlights() abort
   let s:bgcolor = 'NONE'
   let s:backgroundgroups = [
         \ 'NonText', 'SpecialKey', 'VertSplit',
-        \ 'Normal', 'SignColumn', 'FoldColumn']
+        \ 'SignColumn', 'FoldColumn']
+        " \ 'Normal',
   " Set Background Colors
   for group in s:backgroundgroups
     exe 'highlight ' . group . ' guibg=' . s:bgcolor
   endfor
+
+  " Set the background separately so that the fzf window picks it up
+  highlight Normal guibg=#211930
 
   " Line Numbers {{{1
   highlight LineNr guifg=#444444 guibg=NONE
