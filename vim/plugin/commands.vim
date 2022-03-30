@@ -8,6 +8,7 @@ command! GrepBufferFromClipboard :call commands#GrepBufferFromClipboard()
 command! DiffBuffer :call commands#DiffBuffer()
 command! ScratchBuffer :call commands#ScratchBuffer()
 command! DisableBackgrounding :call commands#DisableBackgrounding()
+command! NewBufferWithClipboard :call commands#NewBufferWithClipboard()
 
 " Save & Restore Sessions
 command! SessionSaveLocal :mksession! vim_session

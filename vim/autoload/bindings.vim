@@ -64,7 +64,7 @@ function! bindings#GrepVisual() abort
   " let @s = escape(@s, '\\/.*$^~[]#%')
   " Only escape things that are auto-expanded by Vim
   let @s = escape(@s, '#%-')
-  execute "Rg --fixed-strings '" . @s . "'"
+  execute "A --fixed-strings '" . @s . "'"
   let @s = temp
 endfunction
 
