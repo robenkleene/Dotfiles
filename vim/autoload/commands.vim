@@ -28,6 +28,13 @@ function! commands#GrepBuffer() abort
   " Otherwise just edit the buffer
 endfunction
 
+function! commands#GrepBufferFromClipboard() abort
+  execute "enew"
+  normal P
+  call commands#GrepBuffer()
+endfunction
+
+
 function! commands#DiffBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile foldenable"
 endfunction

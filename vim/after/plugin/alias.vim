@@ -6,6 +6,8 @@ Alias G Git
 " Alias A Rg
 Alias Rgf Rg\ -F
 
+Alias Q GrepBufferFromClipboard
+
 " Compilers
 Alias CXC compiler\ xcodebuild
 
