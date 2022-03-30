@@ -102,7 +102,18 @@ function! commands#Rg(terms) abort
   set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
   " Without `silent`, the terminal output is seen and enter is required to go
   " to the first match
-  execute "silent grep " . escape(a:terms, '%#')
+  if len(a:terms)
+    execute "silent grep " . escape(a:terms, '%#')
+  else
+    let l:search = getreg('/')
+    if l:search[0:len('\<')-1] ==# '\<'
+      let l:search = l:search[2:len(l:search)-3]
+    endif
+    if !len(l:search)
+      return
+    endif
+    execute "silent grep " . escape(l:search, '%#')
+  endif
   if !has('nvim')
     " The screen gets messed up in `vim` without this
     redraw!
