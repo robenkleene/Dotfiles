@@ -287,7 +287,8 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " will update instantly.
 " This conflicts with blocking backgrounding with `DisableBackgrounding`,
 " removing until there's a way for these to co-exist
-noremap <C-z> :suspend<cr>:silent checktime<cr>
+" For some reason this was causing `<C-z>` to suspend to sometimes not work
+" noremap <C-z> :suspend<cr>:silent checktime<cr>
 
 " Paste from yank register (`0`)
 vnoremap <M-y> "0p
