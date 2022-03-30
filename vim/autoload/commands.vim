@@ -29,11 +29,14 @@ function! commands#GrepBuffer() abort
 endfunction
 
 function! commands#GrepBufferFromClipboard() abort
-  execute "enew"
-  normal P
+  call commands#NewBufferWithClipboard()
   call commands#GrepBuffer()
 endfunction
 
+function! commands#NewBufferWithClipboard() abort
+  execute "enew"
+  normal P
+endfunction
 
 function! commands#DiffBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile foldenable"

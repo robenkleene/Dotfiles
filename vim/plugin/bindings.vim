@@ -160,7 +160,7 @@ xnoremap # :<C-u>call bindings#VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " With no visual selection, the current word is searched for
 " (The `\\|` is not intuitive, this is because `|` separates commands in
 " Vimscript)
-nnoremap <leader>* :Rg '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
+nnoremap <leader>* :A '(^\\|\W)<C-r><C-w>($\\|\W)'<CR>
 vnoremap <leader>* :<C-u>call bindings#GrepVisual()<CR>
 " Replace
 " Can't delete the word boundary because that will delete some characters if we made a selection first.
