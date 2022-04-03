@@ -70,7 +70,9 @@
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
+    (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
+    (define-key evil-normal-state-map (kbd "<RET>") nil)
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
 
@@ -91,6 +93,15 @@
     :ensure t
     :config
     (evil-goggles-mode))
+  (use-package evil-commentary
+    :init
+    (evil-commentary-mode)
+    )
+  (use-package evil-smartparens
+    :init
+    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+    )
+
   )
 
 (provide 'robenkleene-evil)
