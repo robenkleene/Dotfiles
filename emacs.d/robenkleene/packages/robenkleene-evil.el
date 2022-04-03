@@ -20,24 +20,35 @@
         )
   :init
   ;; (setq evil-toggle-key "")
-  (if (display-graphic-p)
-      (add-hook 'evil-mode-hook
-                (lambda ()
-                  (unless evil-mode
-                    (message "Emacs")
+  ;; hl-line in normal mode & cursor fix
+  (add-hook 'evil-mode-hook
+            (lambda ()
+              (unless evil-mode
+                (message "Emacs")
+                (if (display-graphic-p)
                     (robenkleene/evil-fix-cursor)
-                    )
-                  (if evil-mode (message "Evil"))
                   )
                 )
-    )
+              (if evil-mode
+                  (progn
+                    (if (eq evil-state 'normal)
+                        (hl-line-mode +1)
+                      )
+                    (message "Evil")
+                    )
+                )
+              )
+            )
+  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
+  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
+
   (defun robenkleene/evil-fix-cursor ()
     (interactive)
     (dolist (buffer (buffer-list))
       (with-current-buffer buffer
         (kill-local-variable 'cursor-type))))
   (setq evil-disable-insert-state-bindings t)
-  (setq evil-default-state 'insert)
+  ;; (setq evil-default-state 'insert)
   (add-hook 'text-mode-hook 'evil-mode)
   (add-hook 'prog-mode-hook 'evil-mode)
   :config
@@ -53,8 +64,6 @@
   ;;     (setq evil-emacs-state-cursor  'hbar)
   ;;     )
   ;;   )
-  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
-  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
 
   ;; Bindings
   (with-eval-after-load 'evil-maps
