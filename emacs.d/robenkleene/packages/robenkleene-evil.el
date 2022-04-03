@@ -72,7 +72,7 @@
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
-    (define-key evil-normal-state-map (kbd "<RET>") nil)
+    (define-key evil-motion-state-map (kbd "RET") nil)
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
 
