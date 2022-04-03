@@ -13,6 +13,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
+nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <leader>e :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <ESC>e :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
@@ -28,8 +29,11 @@ vnoremap ≈ :VisualCommands<CR>
 nnoremap Ω :Z<CR>
 nnoremap <M-c> :CheckHomeSubdirectory<CR>:Cd<CR>
 nnoremap <M-z> :Z<CR>
-nnoremap <M-o> :Quick<CR>
-nnoremap <M-O> :QuickFiles<CR>
+" nnoremap <M-o> :Quick<CR>
+" nnoremap <M-O> :QuickFiles<CR>
+nnoremap <leader>fc :Quick<CR>
+nnoremap <leader>fo :QuickFiles<CR>
+nnoremap <leader>fe :QuickFiles<CR>
 " Never uncomment this, this breaks arrow keys in Vim
 " nnoremap <ESC>O :QuickFiles<CR>
 nnoremap <leader>O :QuickFiles<CR>

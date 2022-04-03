@@ -82,6 +82,7 @@ function _robenkleene-fzf-edit-widget
     commandline -f repaint
 end
 bind \ee _robenkleene-fzf-edit-widget
+bind \eo _robenkleene-fzf-edit-widget
 
 function _robenkleene_fish_commands
     string split ' ' (zsh -c "echo \${(k)commands}")
