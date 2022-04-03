@@ -84,8 +84,8 @@
 ;; General
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-o") 'other-window)
 
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
-  'robenkleene/ido-quick-open)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+;;   'robenkleene/ido-quick-open)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
   'robenkleene/comment)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
@@ -122,8 +122,8 @@
     (progn
       ;; This results in a quick search being automatically triggered on startup
       ;; in terminal Emacs.
-      (define-key robenkleene/bindings-minor-mode-map (kbd "M-O")
-        'robenkleene/ido-quick-open-file)
+      ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-O")
+      ;;   'robenkleene/ido-quick-open-file)
       ;; These result in inserting characters into the scratch buffer on Emacs
       ;; startup in terminal Emacs.
       (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
@@ -137,6 +137,12 @@
       ))
 
 ;; Leader map
+(define-key robenkleene/leader-map (kbd "f o")
+  'robenkleene/ido-quick-open-file)
+(define-key robenkleene/leader-map (kbd "f e")
+  'robenkleene/ido-quick-open-file)
+(define-key robenkleene/leader-map (kbd "f c")
+  'robenkleene/ido-quick-open)
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
 (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
 ;; (define-key robenkleene/leader-map (kbd "t") 'robenkleene/other-window-shell)
@@ -144,8 +150,8 @@
 (define-key robenkleene/leader-map (kbd "g a")
   'robenkleene/rg-source-control)
 ;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/archive)
-(define-key robenkleene/leader-map (kbd "O")
-  'robenkleene/ido-quick-open-file)
+;; (define-key robenkleene/leader-map (kbd "O")
+;;   'robenkleene/ido-quick-open-file)
 (define-key robenkleene/leader-map (kbd "u") 'robenkleene/new-empty)
 (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 ;; (define-key robenkleene/leader-map (kbd "q") 'save-buffers-kill-terminal)
@@ -173,6 +179,8 @@
 ;; Leader Map ido
 (define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
 (define-key robenkleene/leader-map (kbd "M-e")
+  'robenkleene/ido-recursive-insert-file)
+(define-key robenkleene/leader-map (kbd "M-o")
   'robenkleene/ido-recursive-insert-file)
 (define-key robenkleene/leader-map (kbd "M-c")
   'robenkleene/ido-recursive-insert-dir)
