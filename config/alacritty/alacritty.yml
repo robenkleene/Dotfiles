@@ -1,0 +1,37 @@
+shell:
+	program: /usr/local/bin/fish
+
+window:
+  dimensions:
+    columns: 80
+    lines: 48
+
+font:
+	normal:
+	  family: "JetBrains Mono"
+	size: 13.0
+
+colors:
+  primary:
+    background: '#211930'
+    foreground: '#ffffff'
+
+  normal:
+    black:   '#000000'
+    red:     '#FF8E8E'
+    green:   '#75FF95'
+    yellow:  '#E5E64B'
+    blue:    '#87AFDF'
+    magenta: '#b879b8'
+    cyan:    '#4AA4B0'
+    white:   '#d9d9d9'
+
+  bright:
+    black:   '#252525'
+    red:     '#dabdbd'
+    green:   '#bddabd'
+    yellow:  '#dadabd'
+    blue:    '#0087ff'
+    magenta: '#dabdda'
+    cyan:    '#bddada'
+    white:   '#FFFFFF'
