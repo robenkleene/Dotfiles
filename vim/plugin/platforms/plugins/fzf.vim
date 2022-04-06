@@ -7,7 +7,12 @@ endif
 " command! -bang -nargs=* FZFTags call fzf#vim#tags(<q-args>, <bang>0)
 
 " Fullscreen
-let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
+if exists('$TMUX')
+  " tmux is faster when it's available
+  let g:fzf_layout = { 'tmux': '-p100%,100%' }
+else
+  let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
+endif
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
