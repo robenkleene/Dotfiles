@@ -26,6 +26,10 @@ colors:
     cyan:    '#4AA4B0'
     white:   '#d9d9d9'
 
+  cursor:
+    text: '0xffffff'
+    cursor: '#456954'
+
   bright:
     black:   '#252525'
     red:     '#dabdbd'

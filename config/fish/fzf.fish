@@ -83,6 +83,8 @@ function _robenkleene-fzf-edit-widget
 end
 bind \ee _robenkleene-fzf-edit-widget
 bind \eo _robenkleene-fzf-edit-widget
+# Visual Studio Code prints this character for this binding
+bind ø _robenkleene-fzf-edit-widget
 
 function _robenkleene_fish_commands
     string split ' ' (zsh -c "echo \${(k)commands}")
@@ -143,9 +145,9 @@ function _robenkleene-fzf-quick-widget
 
     commandline -f repaint
 end
-bind \eo _robenkleene-fzf-quick-widget
+# bind \eo _robenkleene-fzf-quick-widget
 # Visual Studio Code prints this character for this binding
-bind ø _robenkleene-fzf-quick-widget
+# bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
     set -l cmd "fd --type f --follow . ~/Text ~/Documentation"
