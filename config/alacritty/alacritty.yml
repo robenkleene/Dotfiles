@@ -1,5 +1,5 @@
 shell:
-	program: /usr/local/bin/fish
+  program: /usr/local/bin/fish
 
 window:
   dimensions:
@@ -7,9 +7,9 @@ window:
     lines: 48
 
 font:
-	normal:
-	  family: "JetBrains Mono"
-	size: 13.0
+  normal:
+    family: "JetBrains Mono"
+  size: 13.0
 
 colors:
   primary:
