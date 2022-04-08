@@ -14,7 +14,8 @@ function! commands#GrepBuffer() abort
     execute "%!diff_to_grep"
   endif
   " If it's grep output, populate the quickfix list
-  if getline('1') =~# '^.\{-}:\d\{-}:'
+  " Check the first three lines, to allow for various types of imperfect input
+  if getline('1') =~# '^.\{-}:\d\{-}:' || getline('2') =~# '^.\{-}:\d\{-}:' || getline('3') =~# '^.\{-}:\d\{-}:'
     " `cbuffer`: Convert to `quickfix`
     " `bprevious`: Go back to grep input
     " `bdelete`: Delete the grep buffer
