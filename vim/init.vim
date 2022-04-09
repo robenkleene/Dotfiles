@@ -20,6 +20,8 @@ if has('nvim') && !has("python3")
   echom "Running nvim without python3"
 endif
 
+let b:terminalorneovim = !has('gui_running') || has('nvim')
+
 " Set here so &termguicolors is set for later checks
 set termguicolors
 
@@ -47,18 +49,19 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible' ", Cond(!has('nvim'))
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rsi'
 
-" Colors {{{2
+" Colors & UI {{{2
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 " Disabling this for now, this causes a conflict when entering the
 " command-line window, to replicate enter `%s//` in the command line and then
 " trigger `<C-f>`. At this time if `vim-css-color` is enabled it dumps an error.
 " Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'tomtom/quickfixsigns_vim'
+Plug 'machakann/vim-highlightedyank', Cond(!has('nvim'))
 
 " Editing {{{2
 Plug 'editorconfig/editorconfig-vim'
@@ -74,10 +77,8 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
 " Plug 'Konfekt/FastFold'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
-Plug 'junegunn/goyo.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'machakann/vim-highlightedyank', Cond(!has('nvim'))
 Plug 'markonm/traces.vim', Cond(!has('nvim'))
 Plug 'beloglazov/vim-textobj-quotes'
 " Hack to fix `gx` until it's fixed in `vim` https://github.com/vim/vim/issues/4738
@@ -88,21 +89,18 @@ vmap gx <Plug>(openbrowser-open)
 " Git {{{2
 Plug 'tpope/vim-fugitive'
 " Navigation {{{2
-let b:terminalorneovim = !has('gui_running') || has('nvim')
 " `, { 'on': 'Dirvish' }` doesn't work for some reason
 Plug 'justinmk/vim-dirvish'
 " Also update `fzf` in external directory, it's a good idea to keep the plugin
 " and `fzf` version in sync
-" TODO Figure out how to make the conditional work
-" Plug 'junegunn/fzf.vim', { 'on': ['Buffers', 'BLines', 'Files', 'History', 'Modified', 'Gfzf', 'Gfzfr' ] }
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
-Plug 'ctrlpvim/ctrlp.vim', Cond(!b:terminalorneovim)
 if !has('macunix')
   " This slows down `dd` significantly
   Plug 'tmux-plugins/vim-tmux-focus-events'
   Plug 'roxma/vim-tmux-clipboard'
 endif
+" Handle line and column numbers, i.e., `vim file:12:3`
 Plug 'wsdjeg/vim-fetch'
 " Markdown table of contents
 Plug 'liuchengxu/vista.vim', { 'on': 'Vista' }
