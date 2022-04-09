@@ -6,6 +6,6 @@ highlight QuickFixSignsDiffAdd guifg=green guibg=NONE gui=bold cterm=bold
 highlight QuickFixSignsDiffDelete guifg=red guibg=NONE gui=bold cterm=bold
 highlight QuickFixSignsDiffChange guifg=darkcyan guibg=NONE gui=bold cterm=bold
 
-sign define QFS_QFL texthl=DiffChange
+sign define QFS_QFL text=> texthl=DiffChange
 
 let g:quickfixsigns#vcsdiff#highlight = {'DEL': 'DiffDelete', 'ADD': 'DiffAdd', 'CHANGE': 'DiffChange'}
