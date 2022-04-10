@@ -1,1 +1,1 @@
-let g:quickfixsigns#marks#texthl = 'DiffChange'
+let g:quickfixsigns#marks#texthl = 'DiffText'
