@@ -25,10 +25,10 @@ done
 coc_extensions_path=~/.config/coc/extensions
 vimrc_path=~/Developer/Dotfiles/vim/plugin/plugins/coc.vim
 
-echo "Comparing CoC extensions list with installed extensions"
-expected=$(grep -ioh "'coc-.*'" $vimrc_path | tr -d "'" | sort)
+expected=$(grep -v "[ \t]*\"" $vimrc_path | grep -ioh "'coc-.*'" | tr -d "'" | sort)
 actual=$(jq -r ".dependencies | keys | sort | .[]" "$coc_extensions_path/package.json")
 
 if [[ "$expected" != "$actual" ]]; then
-    diff <(echo "$expected") <(echo "$actual")
+  echo "Deleted should be installed but aren't, added should not be installed but are"
+  diff --color=always <(echo "$expected") <(echo "$actual") || true
 fi
