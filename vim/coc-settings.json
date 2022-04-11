@@ -57,6 +57,7 @@
   "python.pythonPath": "~/.brew/bin/python3",
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "diagnostic.errorSign": ">",
+  "diagnostic.warningSign": ">",
   "snippets.extends": {
     "sh": ["shellscript"],
     "objc": ["objective-c"],

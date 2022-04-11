@@ -187,7 +187,7 @@ function! s:MyHighlights() abort
   highlight CocGitRemovedSign guibg=NONE guifg=red
 " CoC {{{2 highlight CocWarningSign guifg=yellow
   highlight CocErrorSign guifg=red
-  " highlight CocWarningSign guifg=gray
+  highlight CocWarningSign guifg=yellow
   " highlight CocErrorSign guifg=gray
   highlight CocInfoSign guifg=gray
   highlight CocHintSign guifg=gray
