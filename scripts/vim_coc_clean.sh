@@ -30,5 +30,6 @@ actual=$(jq -r ".dependencies | keys | sort | .[]" "$coc_extensions_path/package
 
 if [[ "$expected" != "$actual" ]]; then
   echo "Deleted should be installed but aren't, added should not be installed but are"
-  diff --color=always <(echo "$expected") <(echo "$actual") || true
+  # Use bat for color since macOS diff doesn't support the color flag
+  diff <(echo "$expected") <(echo "$actual") | bat --plain || true
 fi
