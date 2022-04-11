@@ -10,9 +10,8 @@ let g:coc_global_extensions = [
   \ 'coc-sourcekit',
   \ 'coc-tag',
   \ 'coc-tsserver',
+  \ 'coc-git',
   \ ]
-  " Just trying quickfixsigns  instead of `coc-git`
-  " \ 'coc-git',
   " Went entering pairs quickly, this produces `())`, also has problems with
   " context, e.g., making a comment with `"`
   " \ 'coc-pairs',
