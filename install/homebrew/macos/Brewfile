@@ -55,6 +55,7 @@ brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
 brew 'sbcl'
 # Go
 brew 'go'
+brew 'jq'
 
 # Special
 brew 'pandoc'

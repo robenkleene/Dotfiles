@@ -51,6 +51,7 @@ brew 'midicsv'
 brew 'sbcl'
 # Go
 brew 'go'
+brew 'jq'
 
 # Special
 brew 'pandoc'
