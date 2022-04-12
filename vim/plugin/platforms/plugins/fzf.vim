@@ -17,7 +17,6 @@ endif
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
-nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <leader>e :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <ESC>e :CheckHomeSubdirectory<CR>:Files<CR>
@@ -54,8 +53,8 @@ nnoremap <localleader>i :BTags<CR>
 nnoremap <leader>i :FZFTags<CR>
 nnoremap <M-i> :FZFTags<CR>
 inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
-inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
-inoremap <M-a><M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+inoremap <M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 nnoremap <leader>a :RG<CR>
 nnoremap <A-a>a :RG<CR>
@@ -74,8 +73,8 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 if has('nvim')
   " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
   snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>
-  snoremap <M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
-  snoremap <M-a><M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  snoremap <M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  snoremap <M-a><M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
   snoremap <M-z> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeZinsert<CR>
 endif
 
