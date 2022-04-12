@@ -76,6 +76,7 @@
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "TAB") nil)
+    (define-key evil-motion-state-map (kbd "M-.") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
