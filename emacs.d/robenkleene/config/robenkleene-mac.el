@@ -80,10 +80,6 @@
 ;;   'robenkleene/make-frame-with-current-frame)
 
 (define-key robenkleene/mac-bindings-minor-mode-map
-  (kbd "s-O")
-  'robenkleene/ido-quick-open-file)
-
-(define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-z")
   'undo-tree-undo)
 (define-key robenkleene/mac-bindings-minor-mode-map

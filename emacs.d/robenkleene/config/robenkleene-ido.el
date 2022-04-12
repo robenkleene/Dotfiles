@@ -357,14 +357,14 @@
     )
   )
 
-(defun robenkleene/ido-quick-open ()
+(defun robenkleene/ido-project-open ()
   "Find file recursively from quick open directories."
   (interactive)
   (find-file (robenkleene/ido-recursive-get-dir
-              (concat "~/Text " "~/Documentation")))
+              (concat "--max-depth 1 ~/Text/Projects")))
   )
 
-(defun robenkleene/ido-quick-open-file ()
+(defun robenkleene/ido-frequent-open-file ()
   "Find file recursively from quick open directories."
   (interactive)
   (find-file (robenkleene/ido-recursive-get-file
