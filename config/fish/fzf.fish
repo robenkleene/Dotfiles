@@ -81,7 +81,6 @@ function _robenkleene-fzf-edit-widget
 
     commandline -f repaint
 end
-bind \ee _robenkleene-fzf-edit-widget
 bind \eo _robenkleene-fzf-edit-widget
 # Visual Studio Code prints this character for this binding
 bind ø _robenkleene-fzf-edit-widget
