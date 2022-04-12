@@ -66,6 +66,8 @@
   ;;   )
 
   ;; Bindings
+  (defvar robenkleene/evil-leader-map (make-keymap))
+  (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (with-eval-after-load 'evil-maps
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -73,6 +75,8 @@
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-motion-state-map (kbd "RET") nil)
+    (define-key evil-motion-state-map (kbd "TAB") nil)
+    (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     )
 
