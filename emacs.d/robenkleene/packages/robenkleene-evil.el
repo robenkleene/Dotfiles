@@ -52,7 +52,8 @@
   (add-hook 'text-mode-hook 'evil-mode)
   (add-hook 'prog-mode-hook 'evil-mode)
   :config
-  ;; Cursor gets stuck using this
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
   ;; (unless (display-graphic-p)
   ;;   (use-package evil-terminal-cursor-changer
   ;;     :config
@@ -69,12 +70,14 @@
   (defvar robenkleene/evil-leader-map (make-keymap))
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (with-eval-after-load 'evil-maps
+    ;; Normal
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
+    ;; Motion
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
