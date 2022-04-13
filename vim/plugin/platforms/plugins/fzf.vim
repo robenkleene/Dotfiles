@@ -18,8 +18,6 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
-nnoremap <leader>e :CheckHomeSubdirectory<CR>:Files<CR>
-nnoremap <ESC>e :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
 " nnoremap <C-@> :Commands<CR>
 " vnoremap <C-@> :Commands<CR>
