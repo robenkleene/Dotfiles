@@ -261,14 +261,16 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-file (dir)
+(defun robenkleene/ido-recursive-get-file (dir &optional term)
   "Find directory recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--max-results=1000 --type f --follow --hidden --exclude .git --exclude .hg --exclude .DS_Store . "
+                    "--max-results=1000 --type f --follow --hidden --exclude .git --exclude .hg --exclude .DS_Store "
+                    (or term ".")
+                    " "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -360,8 +362,8 @@
 (defun robenkleene/ido-project-open ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-dir
-              (concat "--max-depth 1 ~/Text/Projects")))
+  (find-file (robenkleene/ido-recursive-get-file
+              "--type f --max-depth 2 ~/Text/Projects" "README.md"))
   )
 
 (defun robenkleene/ido-frequent-open-file ()
