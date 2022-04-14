@@ -13,6 +13,9 @@ Alias Clip NewBufferWithClipboard
 " Compilers
 Alias CXC compiler\ xcodebuild
 
+" Clear quickfix
+Alias Qc cexpr\ []
+
 " Plugins
 
 " LineDiff
