@@ -26,6 +26,7 @@ function fish_sync_abbr
     abbr -a rgin "rg -IN -m 1"
     abbr -a fdni "fd --no-ignore"
     abbr -a fdg "fd -g"
+    abbr -a fdF "fd -F"
     abbr -a 0fd 'fd -0'
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
@@ -121,13 +122,14 @@ function fish_sync_abbr
     abbr -a rei 'grep -i'
     abbr -a adbl 'adb -d logcat -s Unity'
     # Mercurial
-    abbr -a hgdb 'hg diff --root . -r "bottom^"'
+    abbr -a hgdb 'hg diff --root . -r "bottom^" --pager never'
     abbr -a hgdbs 'hg diff --root . -r "bottom^" --stat'
     abbr -a hgdbf 'hg status --rev bottom -n'
     abbr -a hgd1 'hg diff --root . -pr .^1'
-    abbr -a hgdl 'hg diff --root . -pr .^1'
+    abbr -a hgdl 'hg diff --root . -pr .^1 --pager never'
+    abbr -a hgdln 'hg diff --root . -pr .^1 --pager never'
     abbr -a hgd1s 'hg diff --root . -pr .^1 --stat'
-    abbr -a hgd 'hg diff --root .'
+    abbr -a hgd 'hg diff --root . --pager never'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgrc 'hg rebase --continue'
     abbr -a hgra 'hg rebase --abort'
