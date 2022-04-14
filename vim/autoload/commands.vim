@@ -15,7 +15,7 @@ function! commands#GrepBuffer() abort
   endif
   " If it's grep output, populate the quickfix list
   " Check the first three lines, to allow for various types of imperfect input
-  if getline('1') =~# '^.\{-}:\d\{-}:' || getline('2') =~# '^.\{-}:\d\{-}:' || getline('3') =~# '^.\{-}:\d\{-}:'
+  if getline('1') =~# '^.\{-}:\s\?\d\{-}:' || getline('2') =~# '^.\{-}:\s\?\d\{-}:' || getline('3') =~# '^.\{-}:\s\?\d\{-}:'
     " `cbuffer`: Convert to `quickfix`
     " `bprevious`: Go back to grep input
     " `bdelete`: Delete the grep buffer
