@@ -17,6 +17,9 @@ let &viewdir=s:viewdir_directory
 " Disable swap files
 set noswapfile
 
+" Instantly trigger escape, e.g., this gets rid of inserting an accented character when performing `<ESC>j` quickly
+set noesckeys
+
 " Restore buffer local options
 " set sessionoptions+=localoptions
 " Match this to `viewoptions`
