@@ -18,7 +18,9 @@ let &viewdir=s:viewdir_directory
 set noswapfile
 
 " Instantly trigger escape, e.g., this gets rid of inserting an accented character when performing `<ESC>j` quickly
-set noesckeys
+" This breaks arrow keys in insert mode
+" set noesckeys
+set timeoutlen=1000 ttimeoutlen=0
 
 " Restore buffer local options
 " set sessionoptions+=localoptions
