@@ -1,4 +1,5 @@
 {
+  "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "solargraph.diagnostics": true,
   "solargraph.checkGemVersion": false,
