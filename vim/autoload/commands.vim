@@ -10,7 +10,7 @@ function! commands#GrepBuffer() abort
     return
   endif
   " If it's diff output, first convert it to `grep`
-  if getline('1')[0:len('diff --')-1] ==# 'diff --' || getline('1')[0:len('changeset:')-1] ==# 'changeset:'
+  if getline('1')[0:len('diff --')-1] ==# 'diff --' || getline('2')[0:len('diff --')-1] ==# 'diff --' || getline('1')[0:len('changeset:')-1] ==# 'changeset:'
     execute "%!diff_to_grep"
   endif
   " If it's grep output, populate the quickfix list
