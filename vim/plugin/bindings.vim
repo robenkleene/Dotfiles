@@ -252,10 +252,12 @@ nnoremap <BS> <C-^>
 cnoremap <C-x><C-e> <C-f>
 
 " Emacs Paste
-inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>*" : "<C-r>0" 
-snoremap <expr> <C-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>*" : "<C-r>0" 
-inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>0"
-snoremap <expr> <M-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>0"
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : getreg('*') ? "<C-r>*" : "<C-r>0"
+snoremap <C-y> "0p
+nnoremap <C-y> "0p
+inoremap <M-y> "0p
+snoremap <M-y> "0p
+nnoremap <M-y> "0p
 
 " Fish paste
 " Don't use this, `<C-v>` in insert mode is important for viewing how keys are
