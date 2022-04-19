@@ -2,9 +2,9 @@
 function! commands#GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   " If the input is a list of files, populate the `argslist`
-  let l:filenames = getline(1, '$')
-  call map(l:filenames, "fnameescape(v:val)")
   if filereadable(getline('1')) || isdirectory(getline('1'))
+    let l:filenames = getline(1, '$')
+    call map(l:filenames, "fnameescape(v:val)")
     bdelete
     execute "args ".join(l:filenames)
     return
@@ -19,17 +19,18 @@ function! commands#GrepBuffer() abort
   " Now just always treat as grep buffer if it's not a diff, lots of command
   " output contain grep results buried in them
   execute "%!grep_clean"
-  if line('$') == 1
-    " Don't show the quickfix list if there's exactly one match
-    execute "cbuffer | bprevious | bdelete"
-  else
-    execute "cbuffer | bprevious | bdelete | cw | wincmd k"
+  cbuffer
+  if len(getqflist())
+    bprevious
+    bdelete
+    if len(getqflist()) > 1
+      execute "bprevious | bdelete | cw | wincmd k"
+    endif
   endif
   " `cbuffer`: Convert to `quickfix`
   " `bprevious`: Go back to grep input
   " `bdelete`: Delete the grep buffer
   " endif
-  " Otherwise just edit the buffer
 endfunction
 
 function! commands#GrepBufferFromClipboard() abort
