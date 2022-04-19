@@ -2,7 +2,9 @@
 # easy way to clean thes up later. E.g., "function --erase" still leaves the
 # file
 
-alias p='safepaste'
+# Use wrapper file instead because piping from an alias to vim doesn't allow
+# backgrounding
+# alias p='safepaste'
 alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
 alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
