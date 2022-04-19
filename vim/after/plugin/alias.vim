@@ -8,7 +8,9 @@ Alias Rgf Rg\ -F
 
 Alias Q GrepBufferFromClipboard
 
-Alias Clip NewBufferWithClipboard
+Alias Eclip NewBufferWithClipboard
+Alias Clip :new<CR>:NewBufferWithClipboard<CR>
+Alias Vclip :vnew<CR>:NewBufferWithClipboard<CR>
 
 " Compilers
 Alias CXC compiler\ xcodebuild
