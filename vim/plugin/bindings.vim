@@ -255,9 +255,11 @@ cnoremap <C-x><C-e> <C-f>
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
 snoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : ""\0p"
 nnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
+vnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
 inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
 snoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
 nnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
+vnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
 
 " Fish paste
 " Don't use this, `<C-v>` in insert mode is important for viewing how keys are
@@ -293,9 +295,6 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " removing until there's a way for these to co-exist
 " For some reason this was causing `<C-z>` to suspend to sometimes not work
 " noremap <C-z> :suspend<cr>:silent checktime<cr>
-
-" Paste from yank register (`0`)
-vnoremap <M-y> "0p
 
 " Fold
 nnoremap <leader><tab> :set foldenable!<CR>
