@@ -50,7 +50,7 @@ process_dir() {
       correct_filenames $EMACS_FILENAME $FILENAME
     fi
     return 0
-  elif [[ -d ".git" ]]; then
+  elif [[ -d ".git" || -d ".hg" ]]; then
     if [[ "$emacs" == "true" ]]; then
       ctags -e
       correct_filenames $FILENAME $EMACS_FILENAME

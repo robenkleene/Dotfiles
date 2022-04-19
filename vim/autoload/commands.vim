@@ -338,7 +338,12 @@ endfunction
 
 " Tags
 function! commands#Tags() abort
-  silent execute "!~/.bin/generate_tags -e"
+  silent execute "!ctags"
+  redraw!
+endfunction
+
+function! commands#Ptags() abort
+  silent execute "!~/.bin/generate_tags"
   redraw!
 endfunction
 
