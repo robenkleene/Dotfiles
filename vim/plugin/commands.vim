@@ -106,7 +106,8 @@ command! -nargs=1 SlugProject :call commands#SlugProject(<q-args>)
 command! SlugProjectArchive :call commands#SlugProjectArchive()
 
 " Tags
-command! Tags :call commands#Tags()
+command! Ptags :call commands#Ptags()
+command! Tags :call commands#tags()
 
 " Profile
 command! ProfileStart :call commands#ProfileStart()
