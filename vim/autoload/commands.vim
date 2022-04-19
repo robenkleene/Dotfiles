@@ -15,17 +15,20 @@ function! commands#GrepBuffer() abort
   endif
   " If it's grep output, populate the quickfix list
   " Check the first three lines, to allow for various types of imperfect input
-  if getline('1') =~# '^.\{-}:\s\?\d\{-}:' || getline('2') =~# '^.\{-}:\s\?\d\{-}:' || getline('3') =~# '^.\{-}:\s\?\d\{-}:'
-    " `cbuffer`: Convert to `quickfix`
-    " `bprevious`: Go back to grep input
-    " `bdelete`: Delete the grep buffer
-    if line('$') == 1
-      " Don't show the quickfix list if there's exactly one match
-      execute "cbuffer | bprevious | bdelete"
-    else
-      execute "cbuffer | bprevious | bdelete | cw | wincmd k"
-    endif
+  " if getline('1') =~# '^.\{-}:\s\?\d\{-}:' || getline('2') =~# '^.\{-}:\s\?\d\{-}:' || getline('3') =~# '^.\{-}:\s\?\d\{-}:'
+  " Now just always treat as grep buffer if it's not a diff, lots of command
+  " output contain grep results buried in them
+  execute "%!grep_clean"
+  if line('$') == 1
+    " Don't show the quickfix list if there's exactly one match
+    execute "cbuffer | bprevious | bdelete"
+  else
+    execute "cbuffer | bprevious | bdelete | cw | wincmd k"
   endif
+  " `cbuffer`: Convert to `quickfix`
+  " `bprevious`: Go back to grep input
+  " `bdelete`: Delete the grep buffer
+  " endif
   " Otherwise just edit the buffer
 endfunction
 
