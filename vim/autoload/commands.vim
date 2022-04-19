@@ -1,6 +1,7 @@
 " Make the current buffer a grep buffer
 function! commands#GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  cexpr []
   " If the input is a list of files, populate the `argslist`
   if filereadable(getline('1')) || isdirectory(getline('1'))
     let l:filenames = getline(1, '$')
