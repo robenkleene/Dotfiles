@@ -2,12 +2,17 @@
 function! commands#GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   cexpr []
+  cw
   " If the input is a list of files, populate the `argslist`
   if filereadable(getline('1')) || isdirectory(getline('1'))
     let l:filenames = getline(1, '$')
     call map(l:filenames, "fnameescape(v:val)")
-    bdelete
     execute "args ".join(l:filenames)
+    " Can't seem to figure out how to not make this quit vim when using the
+    " `:Q` command to populate the quickfix from the clipboard if it's files,
+    " not grep matches
+    " bprevious
+    " bdelete
     return
   endif
   " If it's diff output, first convert it to `grep`
@@ -25,13 +30,10 @@ function! commands#GrepBuffer() abort
     bprevious
     bdelete
     if len(getqflist()) > 1
-      execute "bprevious | bdelete | cw | wincmd k"
+      cw
+      wincmd k
     endif
   endif
-  " `cbuffer`: Convert to `quickfix`
-  " `bprevious`: Go back to grep input
-  " `bdelete`: Delete the grep buffer
-  " endif
 endfunction
 
 function! commands#GrepBufferFromClipboard() abort
