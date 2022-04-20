@@ -7,6 +7,7 @@ Alias G Git
 Alias Rgf Rg\ -F
 
 Alias Pq GrepBufferFromClipboard
+Alias Gb GrepBuffer
 
 Alias Eclip NewBufferWithClipboard
 Alias Clip :new<CR>:NewBufferWithClipboard<CR>
