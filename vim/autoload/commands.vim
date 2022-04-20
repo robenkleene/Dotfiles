@@ -27,8 +27,9 @@ function! commands#GrepBuffer() abort
   execute "%!grep_clean"
   cbuffer
   if len(getqflist())
-    bprevious
-    bdelete
+    " Keep these around because it makes it easier to recall the search later
+    " bprevious
+    " bdelete
     if len(getqflist()) > 1
       cw
       wincmd k
