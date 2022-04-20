@@ -1,7 +1,9 @@
 " Make the current buffer a grep buffer
 function! commands#GrepBuffer() abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
-  cexpr []
+  if len(getqflist())
+    cexpr []
+  endif
   cw
   " If the input is a list of files, populate the `argslist`
   if filereadable(getline('1')) || isdirectory(getline('1'))

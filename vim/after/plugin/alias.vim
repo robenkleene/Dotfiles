@@ -17,7 +17,9 @@ Alias Vclip :vnew<CR>:NewBufferWithClipboard<CR>
 Alias CXC compiler\ xcodebuild
 
 " Clear quickfix
-Alias Qc cexpr\ []
+Alias Qc :cexpr\ []<CR>:cw<CR>
+Alias Ac argdelete\ *
+Alias C :cexpr\ []<CR>:cw<CR>:silent!\ argdelete\ *<CR><CR>:echo\ "Cleared"<CR>
 
 " Plugins
 
