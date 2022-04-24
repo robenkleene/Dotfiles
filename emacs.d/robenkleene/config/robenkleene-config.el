@@ -190,6 +190,13 @@
 
 ;; Automatically select some types of buffers
 (setq help-window-select t)
+;; Automatically jump to first help result
+(defadvice help-mode-finish
+    (after robenkleene/help-mode-finish () activate)
+  (with-current-buffer (get-buffer-create "*Help*")
+    (forward-button 1)
+    )
+  )
 (add-hook 'occur-hook (lambda ()
                         (progn
                           (pop-to-buffer (get-buffer "*Occur*"))
