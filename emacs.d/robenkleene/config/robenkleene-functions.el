@@ -109,6 +109,7 @@ Otherwise, call `backward-kill-word'."
   "Open a new window with a buffer named Untitled."
   (interactive)
   (split-window-right)
+  (other-window 1)
   (switch-to-buffer (robenkleene/new-empty-buffer))
   )
 
