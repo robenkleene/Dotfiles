@@ -90,19 +90,20 @@ brew 'ffmpeg'
 brew 'imagemagick'
 
 # Unity
+# Disable these because they fail too often when installing
 # These packages are required to get autocomplete working with the C# VS Code
 # extension from Microsoft
 # (This also requires `"omnisharp.useGlobalMono": "always"` be set in VS Code's
 # preferences)
-brew 'mono'
-brew 'dotnet'
-# Mono & Dotnet dependencies
-brew 'brotli'
-brew 'libssh2'
-brew 'zstd'
-brew 'libmetalink'
-brew 'openldap'
-brew 'curl'
+# brew 'mono'
+# brew 'dotnet'
+# # Mono & Dotnet dependencies
+# brew 'brotli'
+# brew 'libssh2'
+# brew 'zstd'
+# brew 'libmetalink'
+# brew 'openldap'
+# brew 'curl'
 
 # Dependencies
 
@@ -125,8 +126,7 @@ brew 'coreutils'
 # ffmpeg
 brew 'libpng'
 brew 'freetype'
-brew 'fontconfig'
-brew 'gettext'
+brew 'fontconfig' brew 'gettext'
 brew 'x264'
 brew 'lame'
 brew 'xvid'
