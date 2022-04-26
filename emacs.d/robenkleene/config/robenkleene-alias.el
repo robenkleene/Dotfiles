@@ -49,6 +49,7 @@
 (defalias 'scratch-text 'robenkleene/new-empty)
 (defalias 'messages 'robenkleene/open-emacs-messages)
 (defalias 'new 'robenkleene/new-empty-other-window)
+(defalias 'vnew 'robenkleene/new-empty-other-window-vertical)
 (defalias 'untitled 'robenkleene/new-empty)
 (defalias 'enew 'robenkleene/new-empty)
 (defalias 'tweet 'robenkleene/tweets)

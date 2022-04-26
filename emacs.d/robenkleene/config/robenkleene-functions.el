@@ -105,6 +105,13 @@ Otherwise, call `backward-kill-word'."
   (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
   )
 
+(defun robenkleene/new-empty-other-window-vertical ()
+  "Open a new window with a buffer named Untitled."
+  (interactive)
+  (split-window-right)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  )
+
 (defun robenkleene/reveal-in-finder ()
   "Open a new Finder window at the current path."
   (interactive)
