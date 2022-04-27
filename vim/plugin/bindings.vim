@@ -308,3 +308,8 @@ if has('gui_running')
 else
   nnoremap <silent> <tab> :<c-u>call bindings#move_forward_or_toggle_fold()<cr>
 endif
+
+nnoremap <c-x><c-s> :update<CR>
+nnoremap <c-x>s :update<CR>
+inoremap <c-x><c-s> <ESC>:update<CR>gi
+inoremap <c-x>s <ESC>:update<CR>gi
