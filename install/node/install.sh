@@ -4,8 +4,16 @@ set -euo pipefail
 
 if [[ -f ~/.nvm/nvm.sh ]]; then
   source ~/.nvm/nvm.sh
+elif [[ ! -e ~/.nvm ]]; then
+  git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+  if [[ -f ~/.nvm/nvm.sh ]]; then
+    source ~/.nvm/nvm.sh
+  else
+    echo "Error: Failed to install nvm" >&2
+    exit 1
+  fi
 else
-  echo "Error: nvm not found" >&2
+  echo "Error: Failed to load nvm" >&2
   exit 1
 fi
 

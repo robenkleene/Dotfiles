@@ -54,7 +54,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 export PATH="~/.brew/bin/:$PATH"
-./install/homebrew/install.sh
+# Let homebrew fail because it fails too often
+./install/homebrew/install.sh || true
 
 ./install/files/symlinks.sh
 ./install/node/install.sh
