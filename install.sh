@@ -54,8 +54,18 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 export PATH="~/.brew/bin/:$PATH"
-# Let homebrew fail because it fails too often
-./install/homebrew/install.sh || true
+
+# Use fish to test whether brew install has already run
+if ! command -v fish &> /dev/null; then
+  # Let homebrew fail because it fails too often
+  ./install/homebrew/install.sh || true
+fi
+
+if [[ ! -e ~/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+exit 0
 
 ./install/files/symlinks.sh
 ./install/node/install.sh
