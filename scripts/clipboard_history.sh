@@ -12,6 +12,5 @@ fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
 if [[ -n "$result" ]]; then
-  parameter=$(printf '%q' "$PWD/$result" | tr '\0' '\n')
-  safecopy < "$parameter"
+  echo "$result" | tr '\0' '\n' | safecopy
 fi
