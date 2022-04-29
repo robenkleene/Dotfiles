@@ -108,6 +108,9 @@ nnoremap <C-w>- 5<C-w>-
 nnoremap <C-w>< 5<C-w><
 nnoremap <C-w>> 5<C-w>>
 
+nnoremap <m-left> w
+nnoremap <m-right> e
+
 " Easy save
 " nnoremap <C-s> :w<CR>
 " inoremap <C-s> <c-o>:w<CR>
