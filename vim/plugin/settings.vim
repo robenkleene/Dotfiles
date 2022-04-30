@@ -52,11 +52,12 @@ syntax on
 " This option breaks visual block mode paste, e.g., pasting a column of text
 " after another column. The workaround is to paste from the system clipboard
 " with `"*p`.
-if has('macunix')
-  " Adding `unnamedplus` breaks linewise pasting in neovim, e.g., `yyp` inserts
-  " in the current line rather than pasting to a new line
-  set clipboard^=unnamed,unnamedplus
-endif
+" Instead handle this with safecopy integration
+" if has('macunix')
+"   " Adding `unnamedplus` breaks linewise pasting in neovim, e.g., `yyp` inserts
+"   " in the current line rather than pasting to a new line
+"   set clipboard^=unnamed,unnamedplus
+" endif
 
 " Disable mouse
 " set mouse=
