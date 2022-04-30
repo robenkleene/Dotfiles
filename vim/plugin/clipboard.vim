@@ -1,3 +1,8 @@
+if has('macunix')
+  " This breaks linewise paste on macOS
+  finish
+endif
+
 func! s:TmuxBufferName()
     let l:list = systemlist('tmux list-buffers -F"#{buffer_name}"')
     if len(l:list)==0
