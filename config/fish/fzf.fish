@@ -167,3 +167,18 @@ function _robenkleene-fzf-quick-files-widget
 end
 # bind \eO _robenkleene-fzf-quick-files-widget
 # bind \co _robenkleene-fzf-quick-files-widget
+
+function _robenkleene-fzf-clipboard-widget
+    set -l cmd "cat $HOME/.clipboard_history"
+    set -l commandline (commandline)
+
+    eval "$cmd | "(__fzfcmd) | tr '\0' '\n' | read -l result
+    if test -z $commandline
+        echo "$result" | ~/.bin/safecopy
+    else
+        commandline -i "$result"
+    end
+
+    commandline -f repaint
+end
+bind \ev _robenkleene-fzf-clipboard-widget

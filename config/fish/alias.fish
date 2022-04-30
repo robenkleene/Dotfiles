@@ -45,6 +45,7 @@ alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
 alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
 alias clip='safepaste | vim -'
+alias ch='clipboard_history'
 if test -f "$HOME/.personal"
     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 else
