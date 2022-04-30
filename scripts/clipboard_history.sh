@@ -12,5 +12,5 @@ fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd | tr '\0' '\n')"
 if [[ -n "$result" ]]; then
-  echo "$result" | safecopy
+  echo "$result" | ~/.bin/safecopy -s
 fi

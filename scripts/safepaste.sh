@@ -2,10 +2,10 @@
 
 set -e
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  pbpaste
-elif [ -n "$TMUX" ]; then
+if [ -n "$TMUX" ]; then
   tmux saveb -
+elif [[ "$(uname)" == "Darwin" ]]; then
+  pbpaste
 else
   echo ''
 fi
