@@ -23,7 +23,7 @@ while getopts ":sh" option; do
   esac
 done
 
-if [ -n "$TMUX" ]; then
+if [ -n "${TMUX:-}" ]; then
   if [[ "$skip_history" == "true" ]]; then
     sed s'/⏎$//' | tmux loadb -
   else
