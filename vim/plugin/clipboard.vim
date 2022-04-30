@@ -1,8 +1,3 @@
-if has('macunix')
-  " This breaks linewise paste on macOS
-  finish
-endif
-
 func! s:TmuxBufferName()
     let l:list = systemlist('tmux list-buffers -F"#{buffer_name}"')
     if len(l:list)==0
@@ -31,7 +26,7 @@ func! s:Enable()
         augroup vimtmuxclipboard
             autocmd!
             autocmd FocusLost * call s:update_from_tmux()
-            autocmd	FocusGained   * call s:update_from_tmux()
+            autocmd FocusGained   * call s:update_from_tmux()
             autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
         augroup END
         let @" = s:TmuxBuffer()
@@ -41,7 +36,7 @@ func! s:Enable()
         augroup vimtmuxclipboard
             autocmd!
             autocmd FocusLost     *  silent! call system('~/.bin/safecopy',@")
-            autocmd	FocusGained   *  let @" = s:TmuxBuffer()
+            autocmd FocusGained   *  let @" = s:TmuxBuffer()
         augroup END
         let @" = s:TmuxBuffer()
     endif
@@ -49,11 +44,11 @@ func! s:Enable()
 endfunc
 
 func! s:update_from_tmux()
-    let buffer_name = s:TmuxBufferName()
-    if s:lastbname != buffer_name
-        let @" = s:TmuxBuffer()
-    endif
-    let s:lastbname=s:TmuxBufferName()
+  let buffer_name = s:TmuxBufferName()
+  if s:lastbname != buffer_name
+      let @" = s:TmuxBuffer()
+  endif
+  let s:lastbname=s:TmuxBufferName()
 endfunc
 
 call s:Enable()
