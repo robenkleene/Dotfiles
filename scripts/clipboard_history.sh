@@ -7,7 +7,7 @@ __fzfcmd() {
     echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
 }
 
-cmd="cat $HOME/.clipboard_history"
+cmd="tac $HOME/.clipboard_history"
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd | tr '\0' '\n')"

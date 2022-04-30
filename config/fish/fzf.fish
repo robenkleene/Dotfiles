@@ -169,7 +169,7 @@ end
 # bind \co _robenkleene-fzf-quick-files-widget
 
 function _robenkleene-fzf-clipboard-widget
-    set -l cmd "cat $HOME/.clipboard_history"
+    set -l cmd "tac $HOME/.clipboard_history"
     set -l commandline (commandline)
 
     if test -z $commandline
