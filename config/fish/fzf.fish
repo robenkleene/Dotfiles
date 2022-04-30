@@ -180,4 +180,4 @@ function _robenkleene-fzf-clipboard-widget
 
     commandline -f repaint
 end
-bind \ev _robenkleene-fzf-clipboard-widget
+bind \e\\ _robenkleene-fzf-clipboard-widget
