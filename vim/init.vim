@@ -95,11 +95,8 @@ Plug 'justinmk/vim-dirvish'
 " and `fzf` version in sync
 Plug 'junegunn/fzf.vim', Cond(b:terminalorneovim)
 Plug 'junegunn/fzf', Cond(b:terminalorneovim, { 'dir': '~/.fzf', 'do': './install --no-key-bindings --no-update-rc --no-completion' })
-if !has('macunix')
-  " This slows down `dd` significantly
-  Plug 'tmux-plugins/vim-tmux-focus-events'
-  Plug 'roxma/vim-tmux-clipboard'
-endif
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 " Handle line and column numbers, i.e., `vim file:12:3`
 Plug 'wsdjeg/vim-fetch'
 " Markdown table of contents
