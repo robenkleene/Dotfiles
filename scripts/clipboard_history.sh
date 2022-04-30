@@ -10,7 +10,7 @@ __fzfcmd() {
 cmd="cat $HOME/.clipboard_history"
 fzfcmd="$(__fzfcmd)"
 
-result="$(eval "$cmd" | $fzfcmd)"
+result="$(eval "$cmd" | $fzfcmd | tr '\0' '\n')"
 if [[ -n "$result" ]]; then
-  echo "$result" | tr '\0' '\n' | safecopy
+  echo "$result" | safecopy
 fi
