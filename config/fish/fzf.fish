@@ -172,9 +172,9 @@ function _robenkleene-fzf-clipboard-widget
     set -l cmd "cat $HOME/.clipboard_history"
     set -l commandline (commandline)
 
-    eval "$cmd | "(__fzfcmd) | tr '\0' '\n' | read -l result
+    set result (eval "$cmd |"(__fzfcmd) | tr '\0' '\n')
     if test -z $commandline
-        echo "$result" | ~/.bin/safecopy
+        echo -e "$result" | ~/.bin/safecopy
     else
         commandline -i "$result"
     end
