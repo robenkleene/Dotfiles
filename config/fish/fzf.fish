@@ -173,7 +173,7 @@ function _robenkleene-fzf-clipboard-widget
     set -l commandline (commandline)
 
     if test -z $commandline
-        eval "$cmd |"(__fzfcmd) | tr '\0' '\n' | ~/.bin/safecopy
+        eval "$cmd |"(__fzfcmd) | tr '\0' '\n' | ~/.bin/safecopy -s
     else
         commandline -i (eval "$cmd |"(__fzfcmd) | tr '\0' '\n')
     end
