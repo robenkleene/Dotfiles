@@ -128,7 +128,7 @@ command! ClipboardHistoryInsert call fzf#run(fzf#wrap({
       \   'sink': function('<SID>insert'),
       \ }))
 function! s:clipboard_copy(e) abort
-  system('tr \'\0\' \'\n\' | ~/.bin/safecopy -s', a:e)
+  system('~/.bin/safecopy -s', a:e)
 endfunction
 
 function! s:split_lcd_sink(e) abort
