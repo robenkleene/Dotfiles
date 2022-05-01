@@ -74,8 +74,15 @@
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
+  (define-key robenkleene/evil-leader-map (kbd "l") 'robenkleene/helm-occur)
   (with-eval-after-load 'evil-maps
     ;; Normal
+    (define-key evil-normal-state-map (kbd "C-w t")
+      (lambda nil (interactive) (make-frame) (other-frame 1)))
+    (define-key evil-normal-state-map (kbd "C-w p")
+      (lambda nil (interactive) (other-frame -1)))
+    (define-key evil-normal-state-map (kbd "C-w n")
+      'other-frame)
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
