@@ -1,3 +1,15 @@
+if exists('##TextYankPost')==1
+    augroup safecopy
+        autocmd!
+        autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
+    augroup END
+else
+    augroup safecopy
+        autocmd!
+        autocmd FocusLost *  silent! call system('~/.bin/safecopy',@")
+    augroup END
+endif
+
 if $TMUX==''
     finish
 endif
@@ -29,15 +41,13 @@ if exists('##TextYankPost')==1
     augroup vimtmuxclipboard
         autocmd!
         autocmd FocusLost * call s:update_from_tmux()
-        autocmd FocusGained   * call s:update_from_tmux()
-        autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
+        autocmd FocusGained * call s:update_from_tmux()
     augroup END
     let @" = s:TmuxBuffer()
 else
     augroup vimtmuxclipboard
         autocmd!
-        autocmd FocusLost     *  silent! call system('~/.bin/safecopy',@")
-        autocmd FocusGained   *  let @" = s:TmuxBuffer()
+        autocmd FocusGained * let @" = s:TmuxBuffer()
     augroup END
     let @" = s:TmuxBuffer()
 endif
