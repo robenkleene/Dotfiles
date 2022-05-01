@@ -389,7 +389,7 @@
     (setq links
           (split-string
            (shell-command-to-string
-            "tac ~./clipboard_history")
+            "tac ~/.clipboard_history")
            "\n"))
     (setq key-to-link (make-hash-table :test 'equal))
     (let (ido-list)
