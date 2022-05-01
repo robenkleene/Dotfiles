@@ -39,8 +39,8 @@
                 )
               )
             )
-  (add-hook 'evil-normal-state-entry-hook (lambda() (hl-line-mode +1)))
-  (add-hook 'evil-normal-state-exit-hook (lambda() (hl-line-mode -1)))
+  (add-hook 'evil-normal-state-entry-hook (lambda () (hl-line-mode +1)))
+  (add-hook 'evil-normal-state-exit-hook (lambda () (hl-line-mode -1)))
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
   (with-eval-after-load 'evil
     (defalias #'forward-evil-word #'forward-evil-symbol)
@@ -74,13 +74,13 @@
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
-  (define-key robenkleene/evil-leader-map (kbd "l") 'robenkleene/helm-occur)
+  (define-key robenkleene/evil-leader-map (kbd "l") 'helm-occur)
   (with-eval-after-load 'evil-maps
     ;; Normal
     (define-key evil-normal-state-map (kbd "C-w t")
-      (lambda nil (interactive) (make-frame) (other-frame 1)))
+      (lambda () (interactive) (make-frame) (other-frame 1)))
     (define-key evil-normal-state-map (kbd "C-w p")
-      (lambda nil (interactive) (other-frame -1)))
+      (lambda () (interactive) (other-frame -1)))
     (define-key evil-normal-state-map (kbd "C-w n")
       'other-frame)
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
