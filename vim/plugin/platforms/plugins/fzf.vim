@@ -59,8 +59,10 @@ nnoremap <A-a>a :RG<CR>
 " These don't work for some reason
 " inoremap <M-\> :ClipboardHistoryInsert<CR>
 " nnoremap <M-\> :ClipboardHistoryCopy<CR>
-inoremap \ :ClipboardHistoryInsert<CR>
-nnoremap \ :ClipboardHistoryCopy<CR>
+inoremap <C-\> :ClipboardHistoryInsert<CR>
+nnoremap <C-\> :ClipboardHistoryCopy<CR>
+" inoremap \ :ClipboardHistoryInsert<CR>
+" nnoremap \ :ClipboardHistoryCopy<CR>
 
 function! RipgrepFzf(query, fullscreen)
   " let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
