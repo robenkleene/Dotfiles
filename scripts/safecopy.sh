@@ -25,13 +25,13 @@ done
 
 if [ -n "${TMUX:-}" ]; then
   if [[ "$skip_history" == "true" ]]; then
-    sed s'/⏎$//' | tmux loadb -
+    tr '\0' '\n' | sed s'/⏎$//' | tmux loadb -
   else
     sed s'/⏎$//' | tee >(~/.bin/clipboard_history_save) | tmux loadb -
   fi
 elif [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$skip_history" == "true" ]]; then
-    pbcopy
+    tr '\0' '\n' | pbcopy
   else
     tee >(~/.bin/clipboard_history_save) | pbcopy
   fi
