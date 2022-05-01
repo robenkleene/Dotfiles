@@ -56,6 +56,8 @@ inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFiles
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 nnoremap <leader>a :RG<CR>
 nnoremap <A-a>a :RG<CR>
+inoremap <M-\> :ClipboardHistoryInsert<CR>
+nnoremap <M-\> :ClipboardHistoryCopy<CR>
 
 function! RipgrepFzf(query, fullscreen)
   " let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
