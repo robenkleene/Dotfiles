@@ -59,7 +59,7 @@ nnoremap <A-a>a :RG<CR>
 " These don't work for some reason
 " inoremap <M-\> :ClipboardHistoryInsert<CR>
 " nnoremap <M-\> :ClipboardHistoryCopy<CR>
-inoremap <C-\> :ClipboardHistoryInsert<CR>
+inoremap <C-\> <C-\><C-o>:ClipboardHistoryInsert<CR>
 nnoremap <C-\> :ClipboardHistoryCopy<CR>
 " inoremap \ :ClipboardHistoryInsert<CR>
 " nnoremap \ :ClipboardHistoryCopy<CR>
