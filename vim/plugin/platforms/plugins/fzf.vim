@@ -119,6 +119,17 @@ command! Doce call fzf#run(fzf#wrap({
       \   'sink': function('<SID>split_lcd_sink'),
       \   'dir': '~/Documentation/'
       \ }))
+command! ClipboardHistoryCopy call fzf#run(fzf#wrap({
+      \   'source': 'tac ~/.clipboard_history',
+      \   'sink': function('<SID>split_lcd_sink'),
+      \ }))
+command! ClipboardHistoryInsert call fzf#run(fzf#wrap({
+      \   'source': 'tac ~/.clipboard_history',
+      \   'sink': function('<SID>insert'),
+      \ }))
+function! s:clipboard_copy(e) abort
+  system('tr \'\0\' \'\n\' | ~/.bin/safecopy -s', a:e)
+endfunction
 
 function! s:split_lcd_sink(e) abort
   execute 'split ' a:e
