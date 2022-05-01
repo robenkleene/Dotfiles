@@ -382,18 +382,36 @@
               "~/Developer"))
   )
 
-;; (robenkleene/ido-vertical-call
-;;  (lambda ()
-;;    (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
-;;    )
-;;  )
-;; Couldn't
-;; (defun robenkleene/ido-vertical-call (fun)
-;;   "Call FUN with ido vertical and return result."
-;;   (ido-vertical-mode 1)
-;;   (with-demoted-errors (funcall fun))
-;;   (ido-vertical-mode -1)
-;;   )
+(defun robenkleene/ido-clipboard-history-copy ()
+  "Open link."
+  (interactive)
+  (let ((current-prefix-arg nil))
+    (setq links
+          (split-string
+           (shell-command-to-string
+            "tac ~./clipboard_history")
+           "\n"))
+    (setq key-to-link (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (link)
+              (let ((key link))
+                (puthash key link key-to-link)
+                (push key ido-list)
+                )
+              )
+            links)
+      (let ((result (gethash
+                     (ido-completing-read "Copy clipboard history: " ido-list)
+                     key-to-link)))
+        (shell-command
+         (concat "echo "
+                 (shell-quote-argument result)
+                 " | ~/.bin/safecopy -s")
+         )
+        )
+      )
+    )
+  )
 
 (provide 'robenkleene-ido)
 ;; Local Variables:
