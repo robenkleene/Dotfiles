@@ -403,11 +403,7 @@
       (let ((result (gethash
                      (ido-completing-read "Copy clipboard history: " ido-list)
                      key-to-link)))
-        (shell-command
-         (concat "echo "
-                 (shell-quote-argument result)
-                 " | ~/.bin/safecopy -s")
-         )
+        (kill-new result)
         )
       )
     )
