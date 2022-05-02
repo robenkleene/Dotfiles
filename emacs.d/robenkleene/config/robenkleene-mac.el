@@ -184,9 +184,9 @@
 ;; Mode
 (define-minor-mode robenkleene/mac-bindings-minor-mode
   "Mac bindings."
-  t
-  nil
-  'robenkleene/mac-bindings-minor-mode-map)
+  :init-value t
+  :lighter nil
+  :keymap 'robenkleene/mac-bindings-minor-mode-map)
 (robenkleene/mac-bindings-minor-mode 1)
 
 (defun robenkleene/search-selection (beg end)
