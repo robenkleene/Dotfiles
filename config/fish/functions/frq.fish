@@ -4,8 +4,7 @@ function frq
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -f "$result"
-        set -l result_path (string escape "$result")
-        $EDITOR $result_path
+        $EDITOR $result
     end
 end
 
