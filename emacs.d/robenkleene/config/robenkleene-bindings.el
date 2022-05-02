@@ -225,9 +225,9 @@
 ;; Mode
 (define-minor-mode robenkleene/bindings-minor-mode
   "My bindings."
-  t
-  nil
-  'robenkleene/bindings-minor-mode-map)
+  :init-value t
+  :lighter nil
+  :keymap 'robenkleene/bindings-minor-mode-map)
 (robenkleene/bindings-minor-mode 1)
 
 (add-hook 'after-load-functions 'robenkleene/ensure-binding-priority)
