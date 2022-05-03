@@ -1,7 +1,20 @@
 if test -f ~/.fzf/shell/key-bindings.fish
     source ~/.fzf/shell/key-bindings.fish
 end
+# This sets up the fzf history which is better than Fish's builtin history
+# If you comment these out, you'll have to define __fzfcmd like below
 fzf_key_bindings
+# function __fzfcmd
+#   test -n "$FZF_TMUX"; or set FZF_TMUX 0
+#   test -n "$FZF_TMUX_HEIGHT"; or set FZF_TMUX_HEIGHT 40%
+#   if [ -n "$FZF_TMUX_OPTS" ]
+#     echo "fzf-tmux $FZF_TMUX_OPTS -- "
+#   else if [ $FZF_TMUX -eq 1 ]
+#     echo "fzf-tmux -d$FZF_TMUX_HEIGHT -- "
+#   else
+#     echo "fzf"
+#   end
+# end
 
 # Note this returns files and symlinks, regardless of whether they're
 # directories, when really we probably want files or symlinks to files
