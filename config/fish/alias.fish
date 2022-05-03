@@ -95,6 +95,7 @@ alias nrac='npm run autocorrect'
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
 alias eks='emacs_kill_server'
+alias ers='emacs_reset_server'
 
 # `vim_cd`
 alias d='vim_cd'
