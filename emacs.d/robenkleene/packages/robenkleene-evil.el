@@ -73,6 +73,7 @@
   (defvar robenkleene/evil-leader-map (make-keymap))
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (define-key robenkleene/evil-leader-map (kbd "l") 'helm-occur)
+  (define-key robenkleene/evil-leader-map (kbd "h") 'helm-resume)
   (with-eval-after-load 'evil-maps
     ;; Normal
     (define-key evil-normal-state-map (kbd "C-w t")
