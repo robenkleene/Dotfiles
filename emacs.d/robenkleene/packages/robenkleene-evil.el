@@ -24,7 +24,6 @@
   (add-hook 'evil-mode-hook
             (lambda ()
               (unless evil-mode
-                (message "Emacs")
                 (if (display-graphic-p)
                     (robenkleene/evil-fix-cursor)
                   )
@@ -34,7 +33,6 @@
                     (if (eq evil-state 'normal)
                         (hl-line-mode +1)
                       )
-                    (message "Evil")
                     )
                 )
               )
