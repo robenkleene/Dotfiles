@@ -107,7 +107,25 @@
         'evil-visualstar/begin-search-backward)))
   (use-package evil-surround
     :init
-    (global-evil-surround-mode 1))
+    (setq evil-goggles-enable-delete nil)
+    (setq evil-goggles-enable-change nil)
+    (setq evil-goggles-enable-indent nil)
+    (setq evil-goggles-enable-yank t)
+    (setq evil-goggles-enable-join nil)
+    (setq evil-goggles-enable-fill-and-move nil)
+    (setq evil-goggles-enable-paste nil)
+    (setq evil-goggles-enable-shift nil)
+    (setq evil-goggles-enable-surround nil)
+    (setq evil-goggles-enable-commentary nil)
+    (setq evil-goggles-enable-nerd-commenter nil)
+    (setq evil-goggles-enable-replace-with-register nil)
+    (setq evil-goggles-enable-set-marker nil)
+    (setq evil-goggles-enable-undo nil)
+    (setq evil-goggles-enable-redo nil)
+    (setq evil-goggles-enable-record-macro nil)
+    (global-evil-surround-mode 1)
+    )
+
   (use-package evil-goggles
     :ensure t
     :config
