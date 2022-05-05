@@ -88,7 +88,10 @@
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
+    (define-key evil-normal-state-map (kbd "C-.") nil)
     ;; Motion
+    (define-key evil-normal-state-map (kbd "<DOWN>") 'evil-next-visual-line)
+    (define-key evil-normal-state-map (kbd "<UP>") 'evil-previous-visual-line)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
