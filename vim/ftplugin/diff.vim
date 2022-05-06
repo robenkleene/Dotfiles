@@ -1,6 +1,8 @@
 setlocal foldexpr=DiffFoldLevel()
 setlocal foldmethod=expr
 setlocal foldlevel=1
+execute "setlocal buftype=nofile"
+
 nnoremap <return> :OpenDiff<CR>
 
 function! DiffFoldLevel()
@@ -25,10 +27,10 @@ function! s:OpenDiff()
   let l:fin = search('^@@', 'nW') - 1
   let reg_save = @@
   let @@ = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
-  echom "@@ = ".@@
   execute "enew"
   normal ""P
   call commands#GrepBuffer()
-  let @@ = reg_save
+  cclose
   clast
+  let @@ = reg_save
 endfunction

@@ -228,4 +228,4 @@ set viminfo+=<0
 
 " Automatically change directory
 " set autochdir
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
