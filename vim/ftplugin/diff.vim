@@ -3,7 +3,7 @@ setlocal foldmethod=expr
 setlocal foldlevel=1
 execute "setlocal buftype=nofile"
 
-nnoremap <return> :OpenDiff<CR>
+nnoremap <buffer> <return> :OpenDiff<CR>
 
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
