@@ -188,6 +188,7 @@
    ;;;; User-Interface
    `(default ((t (:foreground ,gray6))))
    `(hl-line ((t (:inherit rk-highlight-line))))
+   `(line-number-current-line ((t (:inherit rk-highlight-line))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
    `(region ((t (:inherit rk-match))))
    `(highlight ((t (:inherit rk-highlight :foreground nil))))
