@@ -51,12 +51,27 @@
       (with-current-buffer buffer
         (kill-local-variable 'cursor-type))))
   (setq evil-disable-insert-state-bindings t)
+  ;; Persist search highlighting
+  (setq evil-search-module 'evil-search)
   ;; (setq evil-default-state 'insert)
-  (add-hook 'text-mode-hook 'evil-mode)
-  (add-hook 'prog-mode-hook 'evil-mode)
-  :config
+  ;; (add-hook 'text-mode-hook 'evil-mode)
+  ;; (add-hook 'prog-mode-hook 'evil-mode)
+
+  ;; Don't let anything override Evil
+  ;; don't let modes override any states (!)
+  (setq evil-overriding-maps nil
+        evil-intercept-maps nil
+        evil-pending-intercept-maps nil
+        evil-pending-overriding-maps nil)
+  ;; subvert evil-operation.el overrides (dired, ibuffer etc.)
+  (advice-add 'evil-make-overriding-map :override #'ignore)
+  (advice-add 'evil-make-intercept-map  :override #'ignore)
+  (advice-add 'evil-add-hjkl-bindings   :override #'ignore)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
+
+  (evil-mode 1)
+  :config
   ;; (unless (display-graphic-p)
   ;;   (use-package evil-terminal-cursor-changer
   ;;     :config
@@ -82,21 +97,32 @@
       (lambda () (interactive) (other-frame -1)))
     (define-key evil-normal-state-map (kbd "C-w n")
       'other-frame)
-    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
+    (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; Motion
-    (define-key evil-normal-state-map (kbd "<DOWN>") 'evil-next-visual-line)
-    (define-key evil-normal-state-map (kbd "<UP>") 'evil-previous-visual-line)
+    ;; Motion binds normal and visual
     (define-key evil-motion-state-map (kbd "RET") nil)
+    (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
-    )
+    ;; Visual Line Movement
+    ;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+    ;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+    ;; (define-key evil-motion-state-map (kbd "<DOWN>") 'evil-next-visual-line)
+    ;; (define-key evil-motion-state-map (kbd "<UP>") 'evil-previous-visual-line)
+    (define-key evil-normal-state-map
+      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+    (define-key evil-normal-state-map
+      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+    (define-key evil-motion-state-map
+      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+    (define-key evil-motion-state-map
+      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
 
   ;; Packages
   (use-package evil-visualstar
