@@ -225,3 +225,7 @@ set pumheight=10
 " Don't save registers between runs
 set viminfo-=<50
 set viminfo+=<0
+
+" Automatically change directory
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
