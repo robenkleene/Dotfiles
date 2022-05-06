@@ -1,5 +1,5 @@
 " Make the current buffer a grep buffer
-function! commands#GrepBuffer() abort
+function! commands#GrepBuffer(...) abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if len(getqflist())
     cexpr []
@@ -29,9 +29,12 @@ function! commands#GrepBuffer() abort
   execute "%!grep_clean"
   cbuffer
   if len(getqflist())
-    " Keep these around because it makes it easier to recall the search later
-    " bprevious
-    " bdelete
+    " Keep these around by default because it makes it easier to recall the
+    " search later
+    if (a:0 > 0 && a:1 > 0)
+      bprevious
+      bdelete
+    endif
     if len(getqflist()) > 1
       cw
       wincmd k

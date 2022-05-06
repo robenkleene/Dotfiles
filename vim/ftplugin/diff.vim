@@ -1,6 +1,8 @@
 setlocal foldexpr=DiffFoldLevel()
 setlocal foldmethod=expr
 setlocal foldlevel=1
+nnoremap <return> :OpenDiff<CR>
+
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
 
@@ -15,4 +17,18 @@ function! DiffFoldLevel()
     else
         return '='
     endif
+endfunction
+
+command! OpenDiff :call <SID>OpenDiff()
+function! s:OpenDiff()
+  let l:start = search('^diff --git', 'bnW')
+  let l:fin = search('^@@', 'nW') - 1
+  let reg_save = @@
+  let @@ = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
+  echom "@@ = ".@@
+  execute "enew"
+  normal ""P
+  call commands#GrepBuffer()
+  let @@ = reg_save
+  clast
 endfunction
