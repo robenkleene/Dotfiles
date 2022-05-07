@@ -114,11 +114,11 @@ function! s:MyHighlights() abort
   highlight SpellRare guifg=yellow guibg=NONE gui=underline cterm=underline
 
   " Diff {{{1
-  highlight DiffAdd guifg=green guibg=NONE gui=bold cterm=bold
-  highlight DiffAdded guifg=green guibg=NONE gui=bold cterm=bold
-  highlight DiffDelete guifg=red guibg=NONE gui=bold cterm=bold
-  highlight DiffRemoved guifg=red guibg=NONE gui=bold cterm=bold
-  highlight DiffChange guifg=darkcyan guibg=NONE gui=bold cterm=bold
+  highlight DiffAdd guifg=#75FF95 guibg=NONE gui=bold cterm=bold
+  highlight DiffAdded guifg=#75FF95 guibg=NONE gui=bold cterm=bold
+  highlight DiffDelete guifg=#FF8E8E guibg=NONE gui=bold cterm=bold
+  highlight DiffRemoved guifg=#FF8E8E guibg=NONE gui=bold cterm=bold
+  highlight DiffChange guifg=#0087ff guibg=NONE gui=bold cterm=bold
   " Inline changed text
   highlight DiffText guifg=lightblue guibg=NONE gui=bold cterm=bold
   " highlight DiffAdd guifg=NONE guibg=22 gui=NONE cterm=NONE
