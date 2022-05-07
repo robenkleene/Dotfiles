@@ -13,6 +13,7 @@ if exists('$TMUX')
 else
   let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
 endif
+let g:fzf_preview_window = ['right:50%:wrap']
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
