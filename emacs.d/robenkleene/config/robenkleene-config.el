@@ -72,6 +72,7 @@
                 ibuffer-mode-hook))
   (add-hook hook 'hl-line-mode
             ))
+(setq hl-line-sticky-flag nil)
 
 ;; Fill Column
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
