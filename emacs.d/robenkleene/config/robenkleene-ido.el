@@ -318,7 +318,7 @@
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--max-results=1000 --hidden --follow --exclude .git --exclude .hg . "
+                    "--max-results=10000 --hidden --follow --exclude .git --exclude .hg . "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -366,10 +366,10 @@
               "--type f --max-depth 2 ~/Text/Projects" "README.md"))
   )
 
-(defun robenkleene/ido-frequent-open-file ()
+(defun robenkleene/ido-frequent-open-file-or-dir ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file
+  (find-file (robenkleene/ido-recursive-get-file-or-dir
               (concat
                "~/Text "
                "~/Documentation ")))

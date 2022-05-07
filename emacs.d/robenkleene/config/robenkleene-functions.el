@@ -550,7 +550,7 @@ With prefix arg, find the previous file."
   "Edit documentation."
   (interactive)
   (find-file
-   (robenkleene/documentation-file))
+   (robenkleene/documentation-file-or-dir))
   )
 
 (defun robenkleene/documentation-other-window ()
@@ -570,6 +570,11 @@ With prefix arg, find the previous file."
 (defun robenkleene/documentation-file ()
   "Choose a documentation file."
   (robenkleene/ido-recursive-get-file
+   robenkleene/documentation-directory-path))
+
+(defun robenkleene/documentation-file-or-dir ()
+  "Choose a documentation file."
+  (robenkleene/ido-recursive-get-file-or-dir
    robenkleene/documentation-directory-path))
 
 (defvar robenkleene/org-directory-path "~/Developer/Scratch/Org")

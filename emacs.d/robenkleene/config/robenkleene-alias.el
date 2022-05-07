@@ -39,7 +39,7 @@
 (defalias 'title-case 'robenkleene/title-case)
 (defalias 'lnk 'robenkleene/ido-links)
 (defalias 'prj 'robenkleene/ido-project-open)
-(defalias 'frq 'robenkleene/ido-frequent-open-file)
+(defalias 'frq 'robenkleene/ido-frequent-open-file-or-dir)
 
 ;; Buffers & Files
 (defalias 'daily-browse 'robenkleene/browse-daily)
