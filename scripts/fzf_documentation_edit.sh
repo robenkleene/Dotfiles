@@ -8,7 +8,7 @@ __fzfcmd() {
 }
 
 cd ~/Documentation/ || return 1
-cmd="fd --type f --follow"
+cmd="fd --follow"
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
@@ -17,7 +17,7 @@ if [[ -z "$result" ]]; then
 fi
 
 parameter=$(printf '%q' "$PWD/$result")
-if [[ -f "$parameter" ]]; then
+if [[ -e "$parameter" ]]; then
   final_cmd="$EDITOR $parameter"
   eval "$final_cmd"
 fi
