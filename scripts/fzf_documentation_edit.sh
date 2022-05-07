@@ -18,6 +18,9 @@ fi
 
 parameter=$(printf '%q' "$PWD/$result")
 if [[ -e "$parameter" ]]; then
+  if [[ -d "$parameter" ]]; then
+    cd "$parameter"
+  fi
   final_cmd="$EDITOR $parameter"
   eval "$final_cmd"
 fi
