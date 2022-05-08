@@ -575,7 +575,7 @@ With prefix arg, find the previous file."
 (defun robenkleene/documentation-file-or-dir ()
   "Choose a documentation file."
   (robenkleene/ido-recursive-get-file-or-dir
-   robenkleene/documentation-directory-path))
+   robenkleene/documentation-directory-path "-g \"*.md\" "))
 
 (defvar robenkleene/org-directory-path "~/Developer/Scratch/Org")
 (defun robenkleene/emacs-org ()
