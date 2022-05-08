@@ -78,6 +78,8 @@ inoremap <silent><expr> <TAB>
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+" Close the popup menu instead of selecting a match for return
+inoremap <expr> <CR> pumvisible() ? "\<C-e>\<CR>" : "\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
