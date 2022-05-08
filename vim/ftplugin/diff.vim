@@ -1,6 +1,7 @@
 setlocal foldexpr=DiffFoldLevel()
 setlocal foldmethod=expr
 setlocal foldlevel=1
+" Allow quickly quitting without saving when piping a diff to vim
 execute "setlocal buftype=nofile"
 
 nnoremap <buffer> <return> :OpenDiff<CR>
@@ -25,8 +26,15 @@ command! OpenDiff :call <SID>OpenDiff()
 function! s:OpenDiff()
   let l:start = search('^diff --git', 'bnW')
   let l:fin = search('^@@', 'nW') - 1
+  if !l:start
+    return
+  endif
+  if l:fin < 0
+    let l:fin = line('$')
+  endif
   let reg_save = @@
-  let @@ = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
+  let l:diff = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
+  let @@ = system('~/.bin/diff_to_grep | tail -n1', l:diff)
   execute "enew"
   normal ""P
   call commands#GrepBuffer()
