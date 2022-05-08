@@ -11,6 +11,6 @@ resize_file_bytes=1000000
 temp_file=$(mktemp "${TMPDIR:-/tmp}/clipboard_history.XXXX")
 # awk on macOS doesn't strips everything after a null byte
 # tail -n "$max_size" < "$clipboard_history" | awk '!x[$0]++' > "$temp_file"; mv "$temp_file" "$clipboard_history"
-if [[ $(stat -f %z "$clipboard_history") -gt ${max_file_bytes} ]]; then
+if [[ $(stat -c %s "$clipboard_history") -gt ${max_file_bytes} ]]; then
   tail --bytes "$resize_file_bytes" < "$clipboard_history" > "$temp_file"; mv "$temp_file" "$clipboard_history"
 fi
