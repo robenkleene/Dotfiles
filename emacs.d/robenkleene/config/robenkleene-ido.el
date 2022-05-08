@@ -375,7 +375,7 @@
               (concat
                "~/Text "
                "~/Documentation ")
-              "-g \"*.md\" "))
+              "\"^[^.]+\\$|.*\\.md\" "))
   )
 
 (defun robenkleene/ido-quick-developer ()
