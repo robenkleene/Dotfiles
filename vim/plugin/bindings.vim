@@ -322,3 +322,6 @@ inoremap <c-x>s <ESC>:update<CR>gi
 " nnoremap <c-x><c-c> :qa<CR>
 inoremap <c-x>c <ESC>:qa<CR>
 nnoremap <c-x>c :qa<CR>
+
+cnoremap <A-left> <S-Left>
+cnoremap <A-right> <S-Right>
