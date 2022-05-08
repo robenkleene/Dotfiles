@@ -104,7 +104,7 @@
       'other-frame)
     (define-key evil-normal-state-map (kbd "M-a") robenkleene/leader-map)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
-    (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
+    ;; (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
@@ -128,6 +128,13 @@
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
+
+  ;; Prevent evil from forcing `set-mark-command' from entering visual mode
+  ;; (which has weird side effects like breaking `forward-sexp')
+  (add-hook 'evil-local-mode-hook
+            (lambda ()
+              (remove-hook 'activate-mark-hook
+                           'evil-visual-activate-hook t)))
 
   ;; Packages
   (use-package evil-visualstar
