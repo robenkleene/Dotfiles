@@ -313,15 +313,16 @@ else
 endif
 
 " Emacs
-nnoremap <c-x><c-s> :update<CR>
-nnoremap <c-x>s :update<CR>
-inoremap <c-x><c-s> <ESC>:update<CR>gi
-inoremap <c-x>s <ESC>:update<CR>gi
+" Can't do these because it conflicts with `C-x` to decrement number
+" nnoremap <c-x><c-s> :update<CR>
+" nnoremap <c-x>s :update<CR>
+" inoremap <c-x><c-s> <ESC>:update<CR>gi
+" inoremap <c-x>s <ESC>:update<CR>gi
 " This doesn't work for some reason
 " inoremap <c-x><c-c> <ESC>:qa<CR>
 " nnoremap <c-x><c-c> :qa<CR>
-inoremap <c-x>c <ESC>:qa<CR>
-nnoremap <c-x>c :qa<CR>
+" inoremap <c-x>c <ESC>:qa<CR>
+" nnoremap <c-x>c :qa<CR>
 
 cnoremap <A-left> <S-Left>
 cnoremap <A-right> <S-Right>
