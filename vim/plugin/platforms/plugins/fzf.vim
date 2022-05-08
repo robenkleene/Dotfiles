@@ -62,6 +62,7 @@ nnoremap <A-a>a :RG<CR>
 " nnoremap <M-\> :ClipboardHistoryCopy<CR>
 inoremap <C-\> <C-\><C-o>:ClipboardHistoryInsert<CR>
 nnoremap <C-\> :ClipboardHistoryCopy<CR>
+vnoremap <C-\> :ClipboardHistoryInsert<CR>
 " inoremap \ :ClipboardHistoryInsert<CR>
 " nnoremap \ :ClipboardHistoryCopy<CR>
 
@@ -131,13 +132,21 @@ command! ClipboardHistoryCopy call fzf#run(fzf#wrap({
       \   'source': 'tac ~/.clipboard_history',
       \   'sink': function('<SID>clipboard_copy'),
       \ }))
-command! ClipboardHistoryInsert call fzf#run(fzf#wrap({
-      \   'source': 'tac ~/.clipboard_history',
-      \   'sink': function('<SID>insert'),
-      \ }))
+command! -range ClipboardHistoryInsert :call <SID>clipboard_history_insert(<range>)
+
 function! s:clipboard_copy(e) abort
   call system('~/.bin/safecopy -s', a:e)
   let @" = a:e
+endfunction
+
+function! s:clipboard_history_insert(range) abort
+  if a:range
+    normal gvd
+  endif
+  call fzf#run(fzf#wrap({
+        \   'source': 'tac ~/.clipboard_history',
+        \   'sink': function('<SID>insert'),
+        \ }))
 endfunction
 
 function! s:split_lcd_sink(e) abort
