@@ -1,5 +1,5 @@
 function frq
-    set -l cmd "fd --follow -g \"*.md\" ~/Text ~/Documentation"
+    set -l cmd "fd --follow \"^[^.]+\\\$|.*\\.md\" ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
