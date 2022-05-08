@@ -34,11 +34,9 @@ function! s:OpenDiff()
   endif
   let reg_save = @@
   let l:diff = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
-  let @@ = system('~/.bin/diff_to_grep | tail -n1', l:diff)
-  execute "enew"
-  normal ""P
-  call commands#GrepBuffer()
-  cclose
-  clast
-  let @@ = reg_save
+  let l:grep = system('~/.bin/diff_to_grep | tail -n1 | cut -d: -f1,2', l:diff)
+  let l:parts = split(l:grep, ':')
+  exec "edit " . fnameescape(l:parts[0])
+  " Go to line
+	exec l:parts[1]
 endfunction
