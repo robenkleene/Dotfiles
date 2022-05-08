@@ -287,14 +287,15 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-dir (dir)
+(defun robenkleene/ido-recursive-get-dir (dir &optional term)
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--max-results=1000 --type d --follow --hidden --exclude .git --exclude .hg . "
+                    "--max-results=1000 --type d --follow --hidden --exclude .git --exclude .hg "
+                    (or term ".")
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -311,14 +312,15 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-file-or-dir (dir)
+(defun robenkleene/ido-recursive-get-file-or-dir (dir &optional term)
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
           (split-string
            (shell-command-to-string
             (concat "fd "
-                    "--max-results=10000 --hidden --follow --exclude .git --exclude .hg . "
+                    "--max-results=10000 --hidden --follow --exclude .git --exclude .hg "
+                    (or term ".")
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
@@ -330,7 +332,7 @@
                 )
               )
             project-files)
-      (gethash (ido-completing-read "Find dir: " ido-list) key-to-path)
+      (gethash (ido-completing-read "Find: " ido-list) key-to-path)
       )
     )
   )
@@ -372,7 +374,8 @@
   (find-file (robenkleene/ido-recursive-get-file-or-dir
               (concat
                "~/Text "
-               "~/Documentation ")))
+               "~/Documentation ")
+              "-g \"*.md\" "))
   )
 
 (defun robenkleene/ido-quick-developer ()
