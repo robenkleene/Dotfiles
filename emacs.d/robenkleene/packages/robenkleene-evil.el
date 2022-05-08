@@ -45,6 +45,11 @@
     ;; make evil-search-word look for symbol rather than word boundaries
     (setq-default evil-symbol-word-search t))
 
+  ;; Prevent cutting when doing a visual paste, which breaks visual paste
+  ;; completely when system clipboard integration is present because the yank
+  ;; overwrites what's intended to paste
+  (setq-default evil-kill-on-visual-paste nil)
+
   (defun robenkleene/evil-fix-cursor ()
     (interactive)
     (dolist (buffer (buffer-list))
