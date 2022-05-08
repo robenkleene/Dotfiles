@@ -8,7 +8,7 @@ __fzfcmd() {
 }
 
 cd ~/Documentation/ || return 1
-cmd="fd --type f --follow"
+cmd="fd --type f --follow -g \"*.md\""
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
