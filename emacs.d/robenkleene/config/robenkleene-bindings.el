@@ -155,6 +155,8 @@
 ;;   'robenkleene/web-search)
 ;; (define-key robenkleene/leader-map (kbd "C")
 ;;   'robenkleene/title-case)
+(define-key robenkleene/leader-map (kbd "r")
+  'robenkleene/reveal-in-finder)
 (global-set-key (kbd "C-c c")
                 'robenkleene/title-case)
 (define-key robenkleene/leader-map (kbd "*")
