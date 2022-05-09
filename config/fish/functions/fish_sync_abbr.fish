@@ -27,6 +27,7 @@ function fish_sync_abbr
     abbr -a fdni "fd --no-ignore"
     abbr -a fdg "fd -g"
     abbr -a fdF "fd -F"
+    abbr -a fdI "fd -I"
     abbr -a 0fd 'fd -0'
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
