@@ -117,6 +117,11 @@ directory."
       )
     )
 
+  ;; (defun robenkleene/helm-clipboard-history-copy ()
+  ;;   "Copy from clipboard history."
+  ;;   (interactive)
+  ;;   )
+
   )
 
 (provide 'robenkleene-helm)
