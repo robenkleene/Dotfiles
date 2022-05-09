@@ -24,6 +24,7 @@ function fish_sync_abbr
     abbr -a rgg "$ACK_COMMAND -g"
     abbr -a rgh "$ACK_COMMAND --heading"
     abbr -a rgin "rg -IN -m 1"
+    abbr -a rgmd "rg --max-depth"
     abbr -a fdni "fd --no-ignore"
     abbr -a fdg "fd -g"
     abbr -a fdF "fd -F"
