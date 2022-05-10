@@ -107,7 +107,7 @@ command! SlugProjectArchive :call commands#SlugProjectArchive()
 
 " Tags
 command! Ptags :call commands#Ptags()
-command! Tags :call commands#tags()
+command! Tags :call commands#Tags()
 
 " Profile
 command! ProfileStart :call commands#ProfileStart()
