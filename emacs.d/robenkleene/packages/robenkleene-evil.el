@@ -170,15 +170,17 @@
   (use-package evil-goggles
     :ensure t
     :config
-    (evil-goggles-mode))
+    (evil-goggles-mode)
+    (setq evil-goggles-duration 0.300))
   (use-package evil-commentary
     :init
     (evil-commentary-mode)
     )
-  (use-package evil-smartparens
-    :init
-    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-    )
+  ;; `evil-smartparens' is incompatible with `evil-goggles'
+  ;; (use-package evil-smartparens
+  ;;   :init
+  ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+  ;;   )
 
   )
 
