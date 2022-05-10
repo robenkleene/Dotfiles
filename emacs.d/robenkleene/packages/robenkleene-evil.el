@@ -171,7 +171,9 @@
     :ensure t
     :config
     (evil-goggles-mode)
-    (setq evil-goggles-duration 0.300))
+    (setq evil-goggles-duration 0.300)
+    (setq evil-goggles-pulse nil)
+    )
   (use-package evil-commentary
     :init
     (evil-commentary-mode)
