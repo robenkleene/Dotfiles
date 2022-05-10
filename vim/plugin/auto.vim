@@ -141,3 +141,6 @@ if has('nvim')
       au TextYankPost * silent! lua vim.highlight.on_yank { higroup='Visual', on_visual=false }
   augroup END
 endif
+
+" Don't ask to save unnamed files
+autocmd BufEnter * if eval('@%')=='' | setlocal buftype=nofile noswapfile | endif
