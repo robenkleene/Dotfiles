@@ -183,6 +183,10 @@
   ;;   :init
   ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   ;;   )
+  (use-package evil-cleverparens
+    :init
+    (add-hook 'smartparens-enabled-hook #'evil-cleverparens-mode)
+    )
 
   )
 
