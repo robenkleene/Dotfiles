@@ -15,10 +15,10 @@
 ;; files, it will just tell you about them, and how to recover them, but not
 ;; provide an interface for not recovering the file and preventing the message.
 ;; So until this interface is available, just disable the backups.
-;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))) Just
-;; disable Emacs making backup files
-;; (setq make-backup-files nil)
-;; (setq auto-save-default nil)
+;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+;; Just disable Emacs making backup files
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; Re-enabling backups after losing data in a crash
 (setq version-control t     ;; Use version numbers for backups.
