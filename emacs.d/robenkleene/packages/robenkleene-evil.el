@@ -183,10 +183,13 @@
   ;;   :init
   ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   ;;   )
-  (use-package evil-cleverparens
-    :init
-    (add-hook 'smartparens-enabled-hook #'evil-cleverparens-mode)
-    )
+  ;; This messes too much with regular vim bindings
+  ;; (use-package evil-cleverparens
+  ;;   :config
+  ;;   (setq evil-cp-regular-bindings)
+  ;;   :init
+  ;;   (add-hook 'smartparens-enabled-hook #'evil-cleverparens-mode)
+  ;;   )
 
   )
 
