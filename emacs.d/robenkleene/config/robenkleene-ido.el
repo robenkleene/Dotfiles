@@ -296,6 +296,7 @@
             (concat "fd "
                     "--max-results=1000 --type d --follow --hidden --exclude .git --exclude .hg "
                     (or term ".")
+                    " "
                     dir
                     )) "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
