@@ -8,6 +8,7 @@
              helm-buffers-list
              robenkleene/helm-ag-in-directory
              robenkleene/helm-recursive-find-file
+             robenkleene/helm-documentation-edit
              helm-find-files-or-marked
              helm-occur)
   :bind
@@ -116,6 +117,32 @@ directory."
     (let ((current-prefix-arg nil))
       (helm-fd-1 dir)
       )
+    )
+
+  (defun robenkleene/helm-recursive-find-file-or-dir (dir)
+    "Find file recursively in DIR."
+    (interactive
+     (list
+      (if current-prefix-arg
+          (read-directory-name "Base directory: ")
+        (expand-file-name default-directory)
+        )
+      )
+     )
+    (custom-set-variables
+     '(helm-fd-switches '("--follow" "--hidden" "--exclude"
+                          ".git" "--exclude" ".hg" "--exclude" ".DS_Store"
+                          "--color" "always"))
+     )
+    (let ((current-prefix-arg nil))
+      (helm-fd-1 dir)
+      )
+    )
+
+  (defun robenkleene/helm-documentation-edit ()
+    "Edit documentation."
+    (interactive)
+    (robenkleene/helm-recursive-find-file-or-dir "~/Documentation/")
     )
 
   ;; (defun robenkleene/helm-clipboard-history-copy ()
