@@ -207,36 +207,27 @@ directory."
   ;;               (force-mode-line-update))
   ;;            (helm-log "Error: fd %s"
   ;;                      (replace-regexp-in-string "\n" "" event))))))))
-  
-  ;; ;; (defvar robenkleene/helm-fd-map
-  ;; ;;   (let ((map (make-sparse-keymap)))
-  ;; ;;     (set-keymap-parent map helm-generic-files-map)
-  ;; ;;     (define-key map (kbd "DEL") 'helm-delete-backward-no-update)
-  ;; ;;     map))
-  
+
   ;; (defvar robenkleene/helm-fd-source
-  ;;   (helm-build-async-source "fd"
-  ;;                            :header-name (lambda (name)
-  ;;                                           (concat name " in [" (helm-default-directory) "]"))
+  ;;   (helm-build-async-source "Clipboard History"
+  ;;                            :header-name "Clipboard History"
   ;;                            :candidates-process 'robenkleene/helm-fd-shell-command-fn
   ;;                            :filtered-candidate-transformer 'robenkleene/helm-fd-transformer
-  ;;                            :action-transformer 'helm-transform-file-load-el
-  ;;                            :persistent-action 'helm-ff-kill-or-find-buffer-fname
-  ;;                            :action 'helm-type-file-actions
+  ;;                            ;; :action-transformer 'helm-transform-file-load-el
+  ;;                            ;; :persistent-action 'helm-ff-kill-or-find-buffer-fname
+  ;;                            ;; :action 'helm-type-file-actions
   ;;                            :help-message 'helm-generic-file-help-message
-  ;;                            ;; :keymap robenkleene/helm-fd-map
   ;;                            :candidate-number-limit 9999
   ;;                            :requires-pattern 3))
-  
-  ;; (defun robenkleene/helm-fd (dir)
-  ;;   "Run `fd' in DIR."
-  ;;   (let ((default-directory (file-name-as-directory dir)))
-  ;;     (helm :sources 'robenkleene/helm-fd-source
-  ;;           :buffer "*helm fd*"
-  ;;           :ff-transformer-show-only-basename nil
-  ;;           :case-fold-search helm-file-name-case-fold-search))
+
+  ;; (defun robenkleene/helm-clipboard-history-copy ()
+  ;;   "Copy from clipboard history."
+  ;;   (helm :sources 'robenkleene/helm-fd-source
+  ;;         :buffer "*helm fd*"
+  ;;         :ff-transformer-show-only-basename nil
+  ;;         :case-fold-search helm-file-name-case-fold-search)
   ;;   )
-  
+
   ;; (defun robenkleene/helm-clipboard-history-copy ()
   ;;   "Copy from clipboard history."
   ;;   (interactive)
