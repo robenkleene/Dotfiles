@@ -102,6 +102,9 @@
   'ibuffer)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-r")
   'robenkleene/ido-recent-find-file)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+  'robenkleene/ido-recursive-find-file)
+
 
 ;; Leader Map
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
@@ -169,7 +172,7 @@
 (define-key robenkleene/leader-map (kbd "M-o")
   'robenkleene/ido-recursive-insert-file)
 (define-key robenkleene/leader-map (kbd "M-c")
-  'robenkleene/ido-recursive-insert-dir)
+  'robenkleene/ido-recursive-find-file)
 (define-key robenkleene/leader-map (kbd "C")
   'robenkleene/ido-recursive-find-dir)
 (define-key robenkleene/leader-map (kbd "g M-o")
@@ -190,7 +193,6 @@
 (define-key robenkleene/leader-map (kbd "L") 'occur)
 
 ;; Window Management
-
 (define-key robenkleene/leader-map
   (kbd "t")
   (lambda () (interactive) (make-frame) (other-frame 1)))

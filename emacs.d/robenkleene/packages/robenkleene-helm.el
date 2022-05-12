@@ -13,7 +13,7 @@
   :bind
   ;; ("M-A" . helm-do-g
   ("M-e" . robenkleene/helm-recursive-find-file)
-  ("M-o" . robenkleene/helm-recursive-find-file)
+  ;; ("M-o" . robenkleene/helm-recursive-find-file)
   ("M-c" . robenkleene/helm-recursive-find-dir)
   ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
@@ -22,6 +22,7 @@
         ("i" . helm-semantic-or-imenu)
         ;; ("E" . robenkleene/helm-recursive-find-file)
         ;; ("C" . robenkleene/helm-recursive-find-dir)
+        ("O" . robenkleene/helm-recursive-find-file)
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
