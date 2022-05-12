@@ -5,6 +5,8 @@ setlocal foldlevel=1
 execute "setlocal buftype=nofile"
 
 nnoremap <buffer> <return> :OpenDiff<CR>
+nnoremap <buffer> [[ zk
+nnoremap <buffer> ]] zj
 
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
