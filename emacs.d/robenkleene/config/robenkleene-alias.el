@@ -12,7 +12,7 @@
 (defalias 'esh 'eshell)
 (defalias 'bd 'kill-this-buffer)
 ;; (defalias 'os 'robenkleene/open-scratch-other-window)
-(defalias 'doc 'robenkleene/documentation-edit)
+(defalias 'doc 'robenkleene/helm-documentation-edit)
 ;; (defalias 'doc 'robenkleene/documentation-view)
 ;; (defalias 'doce 'robenkleene/documentation-edit)
 (defalias 'tags 'robenkleene/generate-tags)
