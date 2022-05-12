@@ -17,6 +17,7 @@ let g:fzf_preview_window = ['right:50%:wrap']
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
+nnoremap <M-a>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
