@@ -107,6 +107,8 @@
     ;; (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
+    (define-key evil-normal-state-map (kbd "C-y") nil)
+    (define-key evil-motion-state-map [down-mouse-1] nil)
     (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; Motion
     ;; Motion binds normal and visual
