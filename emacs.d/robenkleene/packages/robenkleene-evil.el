@@ -143,6 +143,9 @@
             (lambda ()
               (remove-hook 'activate-mark-hook
                            'evil-visual-activate-hook t)))
+  ;; Allow evil to go one character beyond the last which makes it easier to
+  ;; capture sexp
+  (setq evil-move-beyond-eol t)
 
   ;; Packages
   (use-package evil-visualstar
