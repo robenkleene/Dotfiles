@@ -57,8 +57,8 @@
   "python.linting.enabled": true,
   "python.pythonPath": "~/.brew/bin/python3",
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
-  "diagnostic.errorSign": ">",
-  "diagnostic.warningSign": ">",
+  "diagnostic.errorSign": "»",
+  "diagnostic.warningSign": "»",
   "diagnostic.checkCurrentLine": true,
   "snippets.extends": {
     "sh": ["shellscript"],
