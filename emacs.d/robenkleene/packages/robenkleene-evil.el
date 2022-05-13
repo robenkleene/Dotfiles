@@ -131,6 +131,12 @@
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
 
+  ;; Languages
+  (evil-define-key 'normal 'emacs-lisp-mode-map
+    (kbd "K") 'robenkleene/describe-thing-at-point)
+  (evil-define-key 'normal 'lisp-interaction-mode-map
+    (kbd "K") 'robenkleene/describe-thing-at-point)
+
   ;; Prevent evil from forcing `set-mark-command' from entering visual mode
   ;; (which has weird side effects like breaking `forward-sexp')
   (add-hook 'evil-local-mode-hook
