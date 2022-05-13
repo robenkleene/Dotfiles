@@ -59,6 +59,7 @@
   "snippets.textmateSnippetsRoots": ["~/.config/Code/User/snippets"],
   "diagnostic.errorSign": ">",
   "diagnostic.warningSign": ">",
+  "diagnostic.checkCurrentLine": true,
   "snippets.extends": {
     "sh": ["shellscript"],
     "objc": ["objective-c"],
