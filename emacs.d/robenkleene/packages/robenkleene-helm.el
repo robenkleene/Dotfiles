@@ -149,7 +149,11 @@ directory."
     (helm-build-async-source "test2"
                              :candidates-process
                              (lambda ()
-                               (start-process "echo" nil "echo" "a\nb\nc\nd\ne"))))
+                               (start-process
+                                "clipboard history"
+                                nil
+                                "tac"
+                                "~/.clipboard_history"))))
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
     (helm :sources robenkleene/helm-clipboard-history-source
