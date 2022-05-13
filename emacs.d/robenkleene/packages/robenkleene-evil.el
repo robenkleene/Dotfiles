@@ -107,7 +107,7 @@
     ;; (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
-    (define-key evil-normal-state-map (kbd "C-y") nil)
+    (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
     (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; Motion
@@ -116,6 +116,14 @@
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
+    ;; You can't `p' to paste if you're in `set-mark-command' so just always go
+    ;; to insert mode in order to use `C-y' for paste. It's too confusing
+    ;; otherwise.
+    (define-key evil-motion-state-map (kbd "C-@")
+      (lambda ()
+        (interactive)
+        (call-interactively 'evil-insert)
+        (call-interactively 'set-mark-command)))
     ;; (define-key evil-normal-state-map (kbd "q") 'evil-mode)
     ;; Visual Line Movement
     ;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
