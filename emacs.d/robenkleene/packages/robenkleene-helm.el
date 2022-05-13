@@ -144,11 +144,18 @@ directory."
     (robenkleene/helm-recursive-find-file-or-dir "~/Documentation/")
     )
 
-  ;; (defun robenkleene/helm-clipboard-history-copy ()
-  ;;   "Copy from clipboard history."
-  ;;   (interactive)
-  ;;   )
+  (setq robenkleene/clipboard-history-source
+        `((name . "Clipboard History")
+          (candidates . (lambda () ()))
+          (action . (lambda (candidate)
+                      (helm-marked-candidates)))))
 
+  (defun robenkleene/helm-clipboard-history-insert ()
+    (interactive)
+    (insert
+     (mapconcat 'identity
+                (helm :sources '(robenkleene/clipboard-history-source))
+                ",")))
   )
 
 (provide 'robenkleene-helm)
