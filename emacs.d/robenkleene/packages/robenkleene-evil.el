@@ -88,6 +88,7 @@
   ;;     (setq evil-emacs-state-cursor  'hbar)
   ;;     )
   ;;   )
+  (evil-set-undo-system 'undo-redo)
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
@@ -120,6 +121,11 @@
     ;; to insert mode in order to use `C-y' for paste. It's too confusing
     ;; otherwise.
     (define-key evil-motion-state-map (kbd "C-@")
+      (lambda ()
+        (interactive)
+        (call-interactively 'evil-insert)
+        (call-interactively 'set-mark-command)))
+    (define-key evil-motion-state-map (kbd "C-SPC")
       (lambda ()
         (interactive)
         (call-interactively 'evil-insert)
