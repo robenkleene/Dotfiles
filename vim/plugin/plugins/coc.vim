@@ -22,6 +22,8 @@ let g:coc_global_extensions = [
   " If I'm still having completion errors, try running `CocUninstall coc-fish`
   " \ 'coc-fish',
 
+let g:coc_default_semantic_highlight_groups = 0
+
 autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd FileType gitcommit let b:coc_suggest_disable = 1
 autocmd FileType pullrequest let b:coc_suggest_disable = 1
