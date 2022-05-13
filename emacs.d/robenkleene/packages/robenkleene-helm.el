@@ -144,18 +144,28 @@ directory."
     (robenkleene/helm-recursive-find-file-or-dir "~/Documentation/")
     )
 
-  (setq robenkleene/clipboard-history-source
-        `((name . "Clipboard History")
-          (candidates . (lambda () ()))
-          (action . (lambda (candidate)
-                      (helm-marked-candidates)))))
+  ;; (setq robenkleene/clipboard-history-source
+  ;;       `((name . "Clipboard History")
+  ;;         (candidates . (lambda () (shell-command-to-string
+  ;;                                   "tac ~/.clipboard_history")))
+  ;;         (action . (lambda (candidate)
+  ;;                     (helm-marked-candidates)))))
 
-  (defun robenkleene/helm-clipboard-history-insert ()
-    (interactive)
-    (insert
-     (mapconcat 'identity
-                (helm :sources '(robenkleene/clipboard-history-source))
-                ",")))
+  ;; (defun robenkleene/helm-clipboard-history-insert ()
+  ;;   (interactive)
+  ;;   (insert
+  ;;    (mapconcat 'identity
+  ;;               (helm :sources '(robenkleene/clipboard-history-source))
+  ;;               ",")))
+
+  (defun robenkleene/helm-clipboard-source ()
+    "Show `hl-todo'-keyword items in buffer."
+    (helm :sources (helm-build-in-buffer-source "helm clipboard history"
+                     :init (lambda ()
+                             (shell-command-to-string
+                              "tac ~/.clipboard_history")))
+          :buffer "*helm clipboard history*"))
+  
   )
 
 (provide 'robenkleene-helm)
