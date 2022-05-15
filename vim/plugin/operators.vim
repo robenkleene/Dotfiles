@@ -28,4 +28,5 @@ vnoremap <silent> <localleader>a :<C-U>call operators#Archive(visualmode(), 1)<C
 " Archive & Delete Text
 nnoremap <silent> <localleader>d :set opfunc=operators#ArchiveAndDelete<CR>g@
 vnoremap <silent> <localleader>d :<C-U>call operators#ArchiveAndDelete(visualmode(), 1)<CR>
+vnoremap <silent> <M-a>d :<C-U>call operators#ArchiveAndDelete(visualmode(), 1)<CR>
 
