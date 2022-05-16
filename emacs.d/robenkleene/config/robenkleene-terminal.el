@@ -24,7 +24,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 (load-theme 'kleene-dark t)
 
-(xterm-mouse-mode 1)
+;; This is causing panes not to be selectable in Emacs, but disabling means
+;; mouse scrolling doesn't work
+;; (xterm-mouse-mode 1)
 (global-set-key [mouse-4] (lambda ()
                             (interactive)
                             (scroll-down 1)))
