@@ -39,6 +39,10 @@
             )
   (add-hook 'evil-normal-state-entry-hook (lambda () (hl-line-mode +1)))
   (add-hook 'evil-normal-state-exit-hook (lambda () (hl-line-mode -1)))
+  ;; Save when exiting insert mode
+  (add-hook 'evil-insert-state-exit-hook
+            (lambda ()
+              (call-interactively #'save-buffer)))
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
   (with-eval-after-load 'evil
     (defalias #'forward-evil-word #'forward-evil-symbol)
