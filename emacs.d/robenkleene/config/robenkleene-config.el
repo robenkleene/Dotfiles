@@ -18,7 +18,16 @@
 ;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 ;; Just disable Emacs making backup files
 (setq make-backup-files nil)
+
+;; Auto-Save
+;; Automatically save buffers every second
+;; Disables auto-saving altogether
 (setq auto-save-default nil)
+;; Save to the original filename, instead of a separate auto-save file
+(auto-save-visited-mode 1)
+(setq auto-save-visited-interval 1)
+;; This doesn't work for some reason
+(add-hook 'after-save-hook (lambda () (message "Saved")))
 
 ;; Re-enabling backups after losing data in a crash
 (setq version-control t     ;; Use version numbers for backups.
