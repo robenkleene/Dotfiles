@@ -180,17 +180,17 @@ function! s:MyHighlights() abort
   " Plugins {{{1
 
   " Git {{{2
-  highlight CocGitAddedSign guibg=NONE guifg=green
-  highlight CocGitChangedSign guibg=NONE guifg=lightblue
-  highlight CocGitChangedRemovedSign guibg=NONE guifg=lightblue
-  highlight CocGitChangeRemovedSign guibg=NONE guifg=lightblue
-  highlight CocGitRemovedSign guibg=NONE guifg=red
+  highlight CocGitAddedSign guibg=NONE guifg=#75FF95
+  highlight CocGitChangedSign guibg=NONE guifg=#0087ff
+  highlight CocGitChangedRemovedSign guibg=NONE guifg=#0087ff
+  highlight CocGitChangeRemovedSign guibg=NONE guifg=#0087ff
+  highlight CocGitRemovedSign guibg=NONE guifg=#FF8E8E
 " CoC {{{2 highlight CocWarningSign guifg=yellow
   highlight CocErrorSign guifg=red
   highlight CocWarningSign guifg=yellow
   " highlight CocErrorSign guifg=gray
-  highlight CocInfoSign guifg=gray
-  highlight CocHintSign guifg=gray
+  highlight CocInfoSign guifg=#808080
+  highlight CocHintSign guifg=#808080
   " Float
   highlight CocWarningFloat guifg=white
   highlight CocErrorFloat guifg=white
@@ -198,6 +198,8 @@ function! s:MyHighlights() abort
   " highlight CocErrorSign guifg=gray
   highlight CocInfoFloat guifg=white
   highlight CocHintFloat guifg=white
+  " Other
+  highlight CocFadeOut guifg=#808080 guibg=NONE
 
   " tir_black bug fixes
   " For some reason "blue" display weird in console vim when it overlaps with the

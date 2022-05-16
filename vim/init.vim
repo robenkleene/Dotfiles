@@ -59,7 +59,6 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 " command-line window, to replicate enter `%s//` in the command line and then
 " trigger `<C-f>`. At this time if `vim-css-color` is enabled it dumps an error.
 " Plug 'ap/vim-css-color', { 'for': 'css' }
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'machakann/vim-highlightedyank', Cond(!has('nvim'))
 
