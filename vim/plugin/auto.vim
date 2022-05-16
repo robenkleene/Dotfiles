@@ -1,3 +1,9 @@
+" Autosave on change
+augroup autosave
+    autocmd!
+    autocmd FileType * autocmd TextChanged,InsertLeave <buffer> if &readonly == 0 && filereadable(bufname('%')) | silent write | echo "Saved" | endif
+augroup END
+
 augroup save_session
   autocmd!
   autocmd VimLeave * mksession! ~/.vim/vim_auto_session
