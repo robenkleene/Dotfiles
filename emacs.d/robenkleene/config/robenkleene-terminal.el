@@ -27,7 +27,8 @@
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
 ;; This also breaks selecting Emacs panes with the mouse
-;; (xterm-mouse-mode 1)
+;; This appears to be a Kitty bug
+(xterm-mouse-mode 1)
 (global-set-key [mouse-4] (lambda ()
                             (interactive)
                             (scroll-down 1)))
