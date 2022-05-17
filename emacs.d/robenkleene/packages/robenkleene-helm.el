@@ -146,24 +146,29 @@ directory."
     (robenkleene/helm-recursive-find-file-or-dir "~/Documentation/")
     )
 
+
+  (defun robenkleene/helm-clipboard-history-candidates-process ()
+    (start-process
+     "clipboard history"
+     nil
+     "clipboard_history_search"
+     helm-pattern
+     ))
+
   (defvar robenkleene/helm-clipboard-history-source
     (helm-build-async-source
         "helm clipboard history"
       :candidates-process
-      (lambda ()
-        (start-process
-         "clipboard history"
-         nil
-         "clipboard_history_search"
-         helm-pattern
-         ))))
+      (robenkleene/helm-clipboard-history-candidates-process)
+      :action (lambda (candidate)
+                (message "candidate = %s." candidate))
+      ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
     (helm :sources robenkleene/helm-clipboard-history-source
           :buffer "*helm clipboard history*"
-          :action '(lambda (candidate)
-                     (message "candidate = %s." candidate)))
+          )
     )
   )
 
