@@ -146,18 +146,22 @@ directory."
     )
 
   (defvar robenkleene/helm-clipboard-history-source
-    (helm-build-async-source "helm clipboard history"
-      :candidates-process
-      (lambda ()
-        (start-process
-         "clipboard history"
-         nil
-         "tac"
-         (expand-file-name ".clipboard_history" (getenv "HOME"))))))
+    (helm-build-async-source
+     "helm clipboard history"
+     :candidates-process
+     (lambda ()
+       (start-process
+        "clipboard history"
+        nil
+        "tac"
+        (expand-file-name ".clipboard_history" (getenv "HOME"))))))
+
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
     (helm :sources robenkleene/helm-clipboard-history-source
-          :buffer "*helm clipboard history*")
+          :buffer "*helm clipboard history*"
+          :action (lambda (candidate)
+                    (message "candidate = %s." candidate)))
     )
   )
 
