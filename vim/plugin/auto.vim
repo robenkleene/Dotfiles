@@ -71,6 +71,12 @@ augroup reload_buffers
   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
 augroup END
 
+" Added to clear escape sequences appearing when clicking a window in iTerm2
+augroup focus_redraw
+  autocmd!
+  autocmd FocusGained * :redraw!
+augroup END
+
 augroup setup_netrw
   autocmd!
   autocmd FileType netrw call auto#setup_netrw()
