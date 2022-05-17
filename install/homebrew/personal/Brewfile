@@ -87,9 +87,8 @@ tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
 cask 'anki'
-cask 'processing'
-cask 'fontforge'
 cask 'kitty'
+cask 'alacritty'
 
 # Animated GIFs, `gifify` dependencies
 brew 'ffmpeg'
