@@ -64,6 +64,9 @@ nnoremap <A-a>a :RG<CR>
 inoremap <C-\> <C-\><C-o>:ClipboardHistoryInsert<CR>
 nnoremap <C-\> :ClipboardHistoryCopy<CR>
 vnoremap <C-\> :ClipboardHistoryInsert<CR>
+inoremap <M-a>\ <C-\><C-o>:ClipboardHistoryInsert<CR>
+nnoremap <M-a>\ :ClipboardHistoryCopy<CR>
+vnoremap <M-a>\ :ClipboardHistoryInsert<CR>
 " inoremap \ :ClipboardHistoryInsert<CR>
 " nnoremap \ :ClipboardHistoryCopy<CR>
 

@@ -190,6 +190,8 @@
 (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
 (define-key robenkleene/leader-map (kbd "B")
   'ido-switch-buffer)
+(define-key robenkleene/leader-map (kbd "\\")
+  'robenkleene/ido-clipboard-history-copy)
 ;; Alternatives to helm
 (define-key robenkleene/leader-map (kbd "I") 'imenu)
 (define-key robenkleene/leader-map (kbd "L") 'occur)
