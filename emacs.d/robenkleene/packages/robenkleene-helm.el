@@ -153,8 +153,8 @@ directory."
        (start-process
         "clipboard history"
         nil
-        "tac"
-        (expand-file-name ".clipboard_history" (getenv "HOME"))))))
+        "clipboard_history_search"
+        ))))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
