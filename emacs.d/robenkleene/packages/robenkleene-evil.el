@@ -163,7 +163,9 @@
                            'evil-visual-activate-hook t)))
   ;; Allow evil to go one character beyond the last which makes it easier to
   ;; capture sexp
-  (setq evil-move-beyond-eol t)
+  ;; (I forgot why I turned this on, but I suspect it's something that's already
+  ;; solved by going into insert mode automatically on `set-mark-command')
+  ;; (setq evil-move-beyond-eol t)
 
   ;; Packages
   (use-package evil-visualstar
