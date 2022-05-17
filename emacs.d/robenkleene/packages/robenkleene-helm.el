@@ -161,7 +161,7 @@ directory."
       :candidates-process
       (robenkleene/helm-clipboard-history-candidates-process)
       :action (lambda (candidate)
-                (message "candidate = %s." candidate))
+                (kill-new candidate))
       ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
