@@ -209,6 +209,13 @@
     :init
     (evil-commentary-mode)
     )
+  (use-package evil-numbers
+    :init
+    (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+    (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+    :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
+    )
+
   ;; `evil-smartparens' is incompatible with `evil-goggles'
   ;; (use-package evil-smartparens
   ;;   :init
