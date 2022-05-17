@@ -27,6 +27,7 @@
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
+        ("\\" . robenkleene/helm-clipboard-history-copy)
         ;; ("b" . helm-buffers-list)
         )
   :init
@@ -161,8 +162,8 @@ directory."
     (interactive)
     (helm :sources robenkleene/helm-clipboard-history-source
           :buffer "*helm clipboard history*"
-          :action (lambda (candidate)
-                    (message "candidate = %s." candidate)))
+          :action '(lambda (candidate)
+                     (message "candidate = %s." candidate)))
     )
   )
 
