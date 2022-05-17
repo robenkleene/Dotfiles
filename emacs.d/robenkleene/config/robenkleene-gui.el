@@ -120,10 +120,10 @@
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 ;; Transparency
-;; For testing the current window
-;; (set-frame-parameter (selected-frame) 'alpha '(97 97))
+;; For testing the current window (leave commented out)
+;; (set-frame-parameter (selected-frame) 'alpha '(99 99))
 ;; The actual setting
-;; (add-to-list 'default-frame-alist '(alpha 98 98))
+(add-to-list 'default-frame-alist '(alpha 99 99))
 
 ;; Improve compatibility of macOS dark mode
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
