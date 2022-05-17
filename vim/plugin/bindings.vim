@@ -255,14 +255,24 @@ nnoremap <BS> <C-^>
 cnoremap <C-x><C-e> <C-f>
 
 " Emacs Paste
-inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-snoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : ""\0p"
-nnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
-vnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
-inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-snoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
-nnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
-vnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+" snoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : ""\0p"
+" nnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" vnoremap <expr> <C-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+" snoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" nnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" vnoremap <expr> <M-y> len(getreg('*')) ? "\"*p" : "\"0p"
+" Star register isn't working, probably because of my clipboard integration so
+" use this instead
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>0"
+snoremap <expr> <C-y> ""\0p"
+nnoremap <expr> <C-y> "\"0p"
+vnoremap <expr> <C-y> "\"0p"
+inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : "<C-r>0"
+snoremap <expr> <M-y> "\"0p"
+nnoremap <expr> <M-y> "\"0p"
+vnoremap <expr> <M-y> "\"0p"
 
 " Fish paste
 " Don't use this, `<C-v>` in insert mode is important for viewing how keys are
