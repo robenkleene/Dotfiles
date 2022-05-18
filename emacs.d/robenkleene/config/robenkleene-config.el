@@ -28,8 +28,7 @@
 (setq auto-save-visited-interval 1)
 ;; This doesn't work for some reason
 (add-function :after after-focus-change-function
-              (lambda ()
-                (call-interactively #'save-buffer)))
+              'robenkleene/save-buffer-if-visiting-file)
 (add-hook 'after-save-hook (lambda () (message "Saved")))
 
 ;; Re-enabling backups after losing data in a crash
