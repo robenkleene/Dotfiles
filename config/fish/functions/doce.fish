@@ -8,6 +8,6 @@ function doce
         $EDITOR $result
     else if test -d "$result"
         cd $result
+        $EDITOR .
     end
 end
-
