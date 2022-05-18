@@ -1205,6 +1205,15 @@ With prefix arg, find the previous file."
           ;; surrounding sexp for a function call.
           ((setq sym (function-at-point)) (describe-function sym)))))
 
+(defun robenkleene/save-buffer-if-visiting-file (&optional args)
+  "Save the current buffer only if it is visiting a file"
+  (interactive)
+  (if (and (buffer-file-name) (buffer-modified-p))
+      (progn
+        (message "Saved")
+        )
+    ))
+
 ;; (defun robenkleene/pos-at-mouse-click (click-event)
 ;;   "Print position at CLICK-EVENT."
 ;;   (interactive "e")
