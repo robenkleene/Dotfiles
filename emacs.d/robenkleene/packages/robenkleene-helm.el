@@ -155,14 +155,21 @@ directory."
      helm-pattern
      ))
 
+
+  ;; (defvar robenkleene/helm-clipboard-history-source
+  ;;   "My function description."
+  ;;   (helm-build-async-source "test2"
+  ;;                            :candidates-process
+  ;;                            (lambda ()
+  ;;                              (start-process "echo" nil "echo" "a\nb\nc\nd\ne"))))
   (defvar robenkleene/helm-clipboard-history-source
     (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      (robenkleene/helm-clipboard-history-candidates-process)
-      :action (lambda (candidate)
-                (kill-new candidate))
-      ))
+     "helm clipboard history"
+     :candidates-process
+     (robenkleene/helm-clipboard-history-candidates-process)
+     :action (lambda (candidate)
+               (kill-new candidate))
+     ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
