@@ -1210,7 +1210,7 @@ With prefix arg, find the previous file."
   (interactive)
   (if (and (buffer-file-name) (buffer-modified-p))
       (progn
-        (message "Saved")
+        (call-interactively #'save-buffer)
         )
     ))
 

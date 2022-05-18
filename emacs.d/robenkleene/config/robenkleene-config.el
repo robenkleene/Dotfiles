@@ -29,7 +29,8 @@
 ;; This doesn't work for some reason
 (add-function :after after-focus-change-function
               'robenkleene/save-buffer-if-visiting-file)
-(add-hook 'after-save-hook (lambda () (message "Saved")))
+;; Just look at the modeline instead
+;; (add-hook 'after-save-hook (lambda () (message "Saved")))
 
 ;; Re-enabling backups after losing data in a crash
 (setq version-control t     ;; Use version numbers for backups.
