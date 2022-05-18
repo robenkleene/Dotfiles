@@ -42,7 +42,9 @@
   ;; Save when exiting insert mode
   (add-hook 'evil-insert-state-exit-hook
             (lambda ()
-              (call-interactively #'save-buffer)))
+              (if buffer-file-name
+                  (call-interactively #'save-buffer))
+              ))
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
   (with-eval-after-load 'evil
     (defalias #'forward-evil-word #'forward-evil-symbol)
