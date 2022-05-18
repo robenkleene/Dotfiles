@@ -157,10 +157,12 @@ directory."
 
   (defvar robenkleene/helm-clipboard-history-source
     (helm-build-async-source
-     "helm clipboard history"
-     :candidates-process
-     'robenkleene/helm-clipboard-history-candidates-process
-     ))
+        "helm clipboard history"
+      :candidates-process
+      'robenkleene/helm-clipboard-history-candidates-process
+      :action (lambda (candidate)
+                (kill-new candidate))
+      ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
