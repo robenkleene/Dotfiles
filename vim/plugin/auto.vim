@@ -1,8 +1,7 @@
 " Autosave on change
 augroup autosave
   autocmd!
-  
-  autocmd FileType * autocmd TextChanged,InsertLeave <buffer> let blacklist = ['gitcommit'] | if index(blacklist, &ft) < 0 && &readonly == 0 && filereadable(bufname('%')) | silent write | echom "Saved" | endif
+  autocmd FileType * autocmd TextChanged,InsertLeave <buffer> let blacklist = ['gitcommit', 'pullrequest'] | if index(blacklist, &ft) < 0 && &readonly == 0 && filereadable(bufname('%')) | silent write | echom "Saved" | endif
 augroup END
 
 augroup save_session
