@@ -27,7 +27,7 @@
         ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
-        ("\\" . robenkleene/helm-clipboard-history-copy)
+        ("\\" . robenkleene/helm-clipboard-history-insert)
         ;; ("b" . helm-buffers-list)
         )
   :init
@@ -53,10 +53,11 @@ directory."
   (define-key helm-map (kbd "<right>") 'forward-char)
   ;; (define-key helm-grep-map (kbd "<left>") 'backward-char)
   ;; (define-key helm-grep-map (kbd "<right>") 'forward-char)
-  (add-hook 'helm-grep-mode-hook (lambda()
-                                   (define-key helm-grep-map (kbd "<left>") 'backward-char)
-                                   (define-key helm-grep-map (kbd "<right>") 'forward-char)
-                                   ))
+  (add-hook 'helm-grep-mode-hook
+            (lambda()
+              (define-key helm-grep-map (kbd "<left>") 'backward-char)
+              (define-key helm-grep-map (kbd "<right>") 'forward-char)
+              ))
 
   (require 'helm-files)
   (setq helm-grep-ag-command
@@ -155,18 +156,34 @@ directory."
      helm-pattern
      ))
 
-  (defvar robenkleene/helm-clipboard-history-source
+  (defvar robenkleene/helm-clipboard-history-copy-source
     (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      'robenkleene/helm-clipboard-history-candidates-process
-      :action (lambda (candidate)
-                (kill-new candidate))
-      ))
+     "helm clipboard history"
+     :candidates-process
+     'robenkleene/helm-clipboard-history-candidates-process
+     :action (lambda (candidate)
+               (kill-new candidate))
+     ))
+
+  (defvar robenkleene/helm-clipboard-history-insert-source
+    (helm-build-async-source
+     "helm clipboard history"
+     :candidates-process
+     'robenkleene/helm-clipboard-history-candidates-process
+     :action (lambda (candidate)
+               (insert candidate))
+     ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
-    (helm :sources robenkleene/helm-clipboard-history-source
+    (helm :sources robenkleene/helm-clipboard-history-copy-source
+          :buffer "*helm clipboard history*"
+          )
+    )
+
+  (defun robenkleene/helm-clipboard-history-insert ()
+    (interactive)
+    (helm :sources robenkleene/helm-clipboard-history-insert-source
           :buffer "*helm clipboard history*"
           )
     )
