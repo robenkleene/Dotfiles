@@ -7,6 +7,8 @@ execute "setlocal buftype=nofile"
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
 nnoremap <buffer> ]] zj
+nnoremap <buffer> <C-l> :%delete<CR>:r!~/.bin/diff_status<CR>
+nnoremap <buffer> q ZQ
 
 function! DiffFoldLevel()
     let l:line=getline(v:lnum)
