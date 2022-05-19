@@ -155,4 +155,5 @@ if has('nvim')
 endif
 
 " Don't ask to save unnamed files
-autocmd BufEnter * if eval('@%')=='' | setlocal buftype=nofile noswapfile | endif
+" This breaks the `:h` command for some reason?
+" autocmd BufEnter * if eval('@%')=='' | setlocal buftype=nofile noswapfile | endif
