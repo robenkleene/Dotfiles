@@ -9,7 +9,7 @@ setlocal nomodifiable
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
 nnoremap <buffer> ]] zj
-nnoremap <buffer> <C-l> :set modifiable<CR>:%delete<CR>:r!~/.bin/diff_status<CR>:set nomodifiable<CR>
+nnoremap <buffer> <C-l> :set modifiable<CR>:%delete<CR>:r!~/.bin/diff_status<CR>:1d<CR>:set nomodifiable<CR>
 nnoremap <buffer> q ZQ
 
 function! DiffFoldLevel()
