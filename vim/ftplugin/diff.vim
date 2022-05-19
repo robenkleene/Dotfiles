@@ -3,13 +3,13 @@ setlocal foldmethod=expr
 setlocal foldlevel=1
 " Allow quickly quitting without saving when piping a diff to vim
 setlocal buftype=nofile
-setlocal readonly
+" setlocal readonly
 setlocal nomodifiable
 
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
 nnoremap <buffer> ]] zj
-nnoremap <buffer> <C-l> :%delete<CR>:r!~/.bin/diff_status<CR>
+nnoremap <buffer> <C-l> :set modifiable<CR>:%delete<CR>:r!~/.bin/diff_status<CR>:set nomodifiable<CR>
 nnoremap <buffer> q ZQ
 
 function! DiffFoldLevel()
