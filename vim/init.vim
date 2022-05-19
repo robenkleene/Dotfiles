@@ -74,7 +74,7 @@ Plug 'janko-m/vim-test', { 'on': ['TestNearest', 'TestFile', 'TestSuite',
 " command-line window, to replicate enter `%s//` in the command line and then
 " trigger `<C-f>`. At this time if `FastFold` is enabled it dumps an error.
 " Plug 'Konfekt/FastFold'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+" Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'Konfekt/vim-alias'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kana/vim-textobj-user'
