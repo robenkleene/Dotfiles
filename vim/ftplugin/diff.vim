@@ -2,7 +2,9 @@ setlocal foldexpr=DiffFoldLevel()
 setlocal foldmethod=expr
 setlocal foldlevel=1
 " Allow quickly quitting without saving when piping a diff to vim
-execute "setlocal buftype=nofile"
+setlocal buftype=nofile
+setlocal readonly
+setlocal nomodifiable
 
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
