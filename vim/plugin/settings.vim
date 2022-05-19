@@ -87,6 +87,9 @@ set hidden
 " Text
 set nowrap
 
+" Allow moving to next line by moving past end of line
+set whichwrap+=<,>,h,l,[,]
+
 " Automatically change the working directory
 " This interferes with `rg` from the starting directory
 " Note if this gets commented out then something should be added to deal with

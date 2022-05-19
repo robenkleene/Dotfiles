@@ -150,6 +150,9 @@
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
 
+  ;; Along crossing lines by moving past end of line
+  (setq-default evil-cross-lines t)
+
   ;; Languages
   (evil-define-key 'normal 'emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
