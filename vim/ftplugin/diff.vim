@@ -1,4 +1,4 @@
-setlocal foldexpr=DiffFoldLevel()
+setlocal foldexpr=<SID>DiffFoldLevel()
 setlocal foldmethod=expr
 setlocal foldlevel=1
 " Allow quickly quitting without saving when piping a diff to vim
@@ -9,10 +9,10 @@ setlocal nomodifiable
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
 nnoremap <buffer> ]] zj
-nnoremap <buffer> <C-l> :set modifiable<CR>:%delete<CR>:r!~/.bin/diff_status<CR>:1d<CR>:set nomodifiable<CR>
+nnoremap <buffer> <C-l> :RefreshDiff<CR>
 nnoremap <buffer> q ZQ
 
-function! DiffFoldLevel()
+function! s:DiffFoldLevel()
     let l:line=getline(v:lnum)
 
     if l:line =~# '^\(diff\|Index\)'     " file
@@ -26,6 +26,15 @@ function! DiffFoldLevel()
     else
         return '='
     endif
+endfunction
+
+command! RefreshDiff :call <SID>RefreshDiff()
+function! s:RefreshDiff() abort
+  setlocal modifiable
+  %delete
+  r !~/.bin/diff_status
+  1d
+  setlocal nomodifiable
 endfunction
 
 command! OpenDiff :call <SID>OpenDiff()
