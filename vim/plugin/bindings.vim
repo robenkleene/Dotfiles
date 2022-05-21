@@ -108,6 +108,7 @@ nnoremap <C-w>- 5<C-w>-
 nnoremap <C-w>< 5<C-w><
 nnoremap <C-w>> 5<C-w>>
 
+" Move by word
 nnoremap <m-left> w
 nnoremap <m-right> e
 
