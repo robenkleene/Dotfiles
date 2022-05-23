@@ -149,6 +149,7 @@
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
+  (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
 
   ;; Along crossing lines by moving past end of line
   (setq-default evil-cross-lines t)
