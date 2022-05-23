@@ -190,7 +190,7 @@
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(line-number-current-line ((t (:inherit rk-highlight-line :foreground ,white))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
-   `(region ((t (:inherit rk-match))))
+   `(region ((t (:inherit rk-match :foreground ,comment))))
    `(highlight ((t (:inherit rk-highlight :foreground nil))))
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment :background ,white))))
