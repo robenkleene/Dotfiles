@@ -337,3 +337,6 @@ endif
 
 cnoremap <A-left> <S-Left>
 cnoremap <A-right> <S-Right>
+
+" Dismiss selection mode with q like in tmux
+vnoremap q <ESC>
