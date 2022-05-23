@@ -71,8 +71,7 @@ function! s:MyHighlights() abort
   " Visual selection is distinguished from `Search` because a match can either
   " be selected or not selected, so this difference in colors distinguishes
   " that.
-  highlight Visual guibg=#5f0087 guifg=NONE gui=NONE cterm=NONE
-  highlight Visual ctermbg=24 ctermfg=NONE
+  highlight Visual guibg=#5f0087 guifg=#181818 gui=NONE cterm=NONE
   " Original idea, grey background:
   highlight MatchParen guifg=lightblue guibg=NONE gui=underline cterm=underline
   highlight Todo guifg=lightblue guibg=NONE gui=bold cterm=bold
@@ -89,7 +88,7 @@ function! s:MyHighlights() abort
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
   " Mode Message {{{1
-  highlight ModeMsg guifg=black guibg=#5f00d7 gui=bold cterm=bold
+  highlight ModeMsg guifg=#181818 guibg=#5f0087 gui=bold cterm=bold
 
   " Tabs {{{1
   highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE cterm=NONE 
