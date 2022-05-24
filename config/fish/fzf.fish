@@ -18,14 +18,14 @@ fzf_key_bindings
 
 # Note this returns files and symlinks, regardless of whether they're
 # directories, when really we probably want files or symlinks to files
-set -xg FZF_DEFAULT_COMMAND 'fd --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store'
-set -xg FZF_ALL_COMMAND 'fd --hidden --follow --exclude .git --exclude .hg --exclude .DS_Store'
+set -xg FZF_DEFAULT_COMMAND 'fd --strip-cwd-prefix --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store'
+set -xg FZF_ALL_COMMAND 'fd --strip-cwd-prefix --hidden --follow --exclude .git --exclude .hg --exclude .DS_Store'
 set -xg FZF_TMUX_HEIGHT '40%'
 set -xg FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS"
 
 set -xg FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 # We don't return symlinks here because you can't cd to symlinks to files
-set -xg FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude .hg'
+set -xg FZF_ALT_C_COMMAND 'fd --strip-cwd-prefix --type d --hidden --follow --exclude .git --exclude .hg'
 
 function _robenkleene-fzf-cd-widget
     set -l cmd $FZF_ALT_C_COMMAND
