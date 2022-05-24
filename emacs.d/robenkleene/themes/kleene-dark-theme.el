@@ -48,7 +48,7 @@
     ("blue2" . "#87AFDF")
     ("cyan" . "#4AA4B0")
     ("green" . "#75FF95")
-    ("magenta" . "#5f00d7")
+    ("magenta" . "#8700af")
     ("red" . "#FF8E8E")
     ("white" . "#ffffff")
     ("yellow" . "#E5E64B")
