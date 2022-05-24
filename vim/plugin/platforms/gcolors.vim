@@ -88,7 +88,7 @@ function! s:MyHighlights() abort
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
   " Mode Message {{{1
-  highlight ModeMsg guifg=white guibg=#5f0087 gui=bold cterm=bold
+  highlight ModeMsg guifg=white guibg=#8700af gui=bold cterm=bold
 
   " Tabs {{{1
   highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE cterm=NONE 
