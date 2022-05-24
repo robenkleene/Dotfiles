@@ -59,11 +59,11 @@ function! s:MyHighlights() abort
   highlight ColorColumn guibg=#262626
 
   " Wild Menu {{{1
-  highlight Wildmenu guifg=white guibg=#5f00d7 gui=bold
+  highlight Wildmenu guifg=white guibg=#8700af gui=bold
 
   " Autocomplete {{{1
   highlight Pmenu guifg=white guibg=#3a3a3a
-  highlight PmenuSel guifg=white guibg=#5f00d7
+  highlight PmenuSel guifg=white guibg=#8700af
   highlight PmenuSbar guifg=#4e4e4e guibg=#4e4e4e
   highlight PmenuThumb guifg=#808080 guibg=#808080
 
@@ -79,7 +79,7 @@ function! s:MyHighlights() abort
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#5f00d7 guifg=white gui=bold cterm=bold
+  highlight IncSearch guibg=#8700af guifg=white gui=bold cterm=bold
   highlight Search guibg=#5f0087 guifg=white gui=bold cterm=bold
 
   " Status Line {{{1
