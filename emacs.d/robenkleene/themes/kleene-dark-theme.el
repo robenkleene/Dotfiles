@@ -79,7 +79,7 @@
     ("modeline-active-fg" . white)
     ("modeline-inactive-bg" . gray2)
     ("modeline-inactive-fg" . gray5)
-    ("search-bg" . magenta2)
+    ("search-bg" . magenta)
     ("search-fg" . gray4)
     ("match-bg" . magenta2)
     ("match-fg" . gray4)
@@ -211,7 +211,7 @@
    `(whitespace-tab ((t (:inherit rk-whitespace))))
    `(trailing-whitespace ((t (:inherit rk-whitespace))))
    `(whitespace-line ((t (:inherit rk-warning))))
-   
+
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
@@ -223,8 +223,8 @@
    `(lazy-highlight ((t (:inherit rk-match))))
 
    ;;;; Ido
-   `(ido-first-match ((t (:inherit rk-match :bold t))))
-   `(ido-only-match ((t (:inherit rk-match :bold t))))
+   `(ido-first-match ((t (:inherit rk-search :bold t))))
+   `(ido-only-match ((t (:inherit rk-search :bold t))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
@@ -289,7 +289,9 @@
 
    ;;;; Helm
    `(helm-selection ((t (:inherit rk-highlight-line))))
+   `(helm-selection-line ((t (:inherit rk-highlight-line))))
    `(helm-match ((t (:inherit rk-match))))
+   `(helm-match-item ((t (:inherit rk-match))))
    `(helm-grep-lineno ((t (:inherit rk-comment))))
    `(helm-source-header ((t (:inherit rk-modeline-inactive))))
    `(helm-candidate-number ((t (:inherit rk-prompt))))
