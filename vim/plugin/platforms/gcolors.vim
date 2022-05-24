@@ -63,7 +63,7 @@ function! s:MyHighlights() abort
 
   " Autocomplete {{{1
   highlight Pmenu guifg=white guibg=#3a3a3a
-  highlight PmenuSel guifg=black guibg=#5f00d7
+  highlight PmenuSel guifg=white guibg=#5f00d7
   highlight PmenuSbar guifg=#4e4e4e guibg=#4e4e4e
   highlight PmenuThumb guifg=#808080 guibg=#808080
 
@@ -71,7 +71,7 @@ function! s:MyHighlights() abort
   " Visual selection is distinguished from `Search` because a match can either
   " be selected or not selected, so this difference in colors distinguishes
   " that.
-  highlight Visual guibg=#5f0087 guifg=#808080 gui=NONE cterm=NONE
+  highlight Visual guibg=#5f0087 guifg=white gui=NONE cterm=NONE
   " Original idea, grey background:
   highlight MatchParen guifg=lightblue guibg=NONE gui=underline cterm=underline
   highlight Todo guifg=lightblue guibg=NONE gui=bold cterm=bold
@@ -79,8 +79,8 @@ function! s:MyHighlights() abort
   " Search {{{1
   " Make sure the cursor shows up over this color, that's important when
   " moving through search matches with `n` and `N`.
-  highlight IncSearch guibg=#5f00d7 guifg=black gui=bold cterm=bold
-  highlight Search guibg=#5f0087 guifg=black gui=bold cterm=bold
+  highlight IncSearch guibg=#5f00d7 guifg=white gui=bold cterm=bold
+  highlight Search guibg=#5f0087 guifg=white gui=bold cterm=bold
 
   " Status Line {{{1
   highlight StatusLine guifg=white guibg=#808080
@@ -88,7 +88,7 @@ function! s:MyHighlights() abort
   highlight VertSplit guifg=#4e4e4e guibg=#4e4e4e
 
   " Mode Message {{{1
-  highlight ModeMsg guifg=#808080 guibg=#5f0087 gui=bold cterm=bold
+  highlight ModeMsg guifg=white guibg=#5f0087 gui=bold cterm=bold
 
   " Tabs {{{1
   highlight TabLine guibg=#4e4e4e guifg=#b2b2b2 gui=NONE cterm=NONE 
