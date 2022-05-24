@@ -79,7 +79,7 @@
     ("modeline-active-fg" . white)
     ("modeline-inactive-bg" . gray2)
     ("modeline-inactive-fg" . gray5)
-    ("search-bg" . magenta)
+    ("search-bg" . magenta2)
     ("search-fg" . gray4)
     ("match-bg" . magenta2)
     ("match-fg" . gray4)
@@ -154,7 +154,7 @@
        (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
    `(rk-popup-match ((t (:foreground ,link))))
    `(rk-popup-selection ((t (:inherit rk-match))))
-   `(rk-prompt ((t (:inherit rk-match :bold t))))
+   `(rk-prompt ((t (:inherit rk-match :foreground ,comment :bold t))))
    `(rk-search ((t (:background ,search-bg))))
    `(rk-success ((t (:foreground ,success))))
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
@@ -223,8 +223,8 @@
    `(lazy-highlight ((t (:inherit rk-match))))
 
    ;;;; Ido
-   `(ido-first-match ((t (:inherit rk-match))))
-   `(ido-only-match ((t (:inherit rk-match))))
+   `(ido-first-match ((t (:inherit rk-match :foreground ,comment))))
+   `(ido-only-match ((t (:inherit rk-match :foreground ,comment))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
