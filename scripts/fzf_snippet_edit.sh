@@ -8,7 +8,7 @@ __fzfcmd() {
 }
 
 cd ~/Developer/Snippets/ || return 1
-cmd="fd --type f --follow"
+cmd="fd --strip-cwd-prefix --type f --follow"
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
