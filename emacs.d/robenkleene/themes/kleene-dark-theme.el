@@ -154,7 +154,7 @@
        (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
    `(rk-popup-match ((t (:foreground ,link))))
    `(rk-popup-selection ((t (:inherit rk-match))))
-   `(rk-prompt ((t (:inherit rk-match :foreground ,comment :bold t))))
+   `(rk-prompt ((t (:inherit rk-match :bold t))))
    `(rk-search ((t (:background ,search-bg))))
    `(rk-success ((t (:foreground ,success))))
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
@@ -190,7 +190,7 @@
    `(hl-line ((t (:inherit rk-highlight-line))))
    `(line-number-current-line ((t (:inherit rk-highlight-line :foreground ,white))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
-   `(region ((t (:inherit rk-match :foreground ,comment))))
+   `(region ((t (:inherit rk-match :foreground ,white))))
    `(highlight ((t (:inherit rk-highlight :foreground nil))))
    `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment :background ,white))))
@@ -223,8 +223,8 @@
    `(lazy-highlight ((t (:inherit rk-match))))
 
    ;;;; Ido
-   `(ido-first-match ((t (:inherit rk-match :foreground ,comment))))
-   `(ido-only-match ((t (:inherit rk-match :foreground ,comment))))
+   `(ido-first-match ((t (:inherit rk-match :bold t))))
+   `(ido-only-match ((t (:inherit rk-match :bold t))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Compilation (used for grep)
