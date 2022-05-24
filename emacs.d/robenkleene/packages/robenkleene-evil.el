@@ -55,6 +55,9 @@
   ;; overwrites what's intended to paste
   (setq-default evil-kill-on-visual-paste nil)
 
+  ;; Don't show last ex command or search by default
+  (setq-default evil-want-empty-ex-last-command nil)
+  
   (defun robenkleene/evil-fix-cursor ()
     (interactive)
     (dolist (buffer (buffer-list))
