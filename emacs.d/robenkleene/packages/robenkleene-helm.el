@@ -60,8 +60,10 @@ directory."
               ))
 
   (require 'helm-files)
+  ;; Only the named colors work here for some reason, e.g., we're using
+  ;; `magenta' instead of `91', which is the exact color we want
   (setq helm-grep-ag-command
-        "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number %s %s %s")
+        "rg --color=always --colors 'match:fg:white' --colors 'match:bg:magenta' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
   (setq helm-grep-file-path-style 'relative)
   (setq helm-truncate-lines t)
