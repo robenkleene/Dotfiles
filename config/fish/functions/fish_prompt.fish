@@ -48,7 +48,7 @@ function fish_prompt
 end
 
 function fish_right_prompt
-    set_color cyan
+    set_color brcyan
     if test -e .git
         echo -n (basename $PWD)
     else
