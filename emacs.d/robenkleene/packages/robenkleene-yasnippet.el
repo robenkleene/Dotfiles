@@ -22,12 +22,25 @@
   ;; Allow recursive snippet expansion
   (setq yas-triggers-in-field t)
   ;; Support yas in minibuffer
-  (add-hook 'minibuffer-setup-hook 'yas-minor-mode)
-  (define-key minibuffer-local-map [tab] yas-maybe-expand)
+  (add-hook 'minibuffer-setup-hook
+            (lambda ()
+              (yas-minor-mode)
+              ;; (local-set-key (kbd "TAB") 'yas-expand)
+              (local-set-key (kbd "TAB") (symbol-function 'yas-maybe-expand))
+              )
+            )
+  ;; Original implementation that stopped working:
+  ;; (add-hook 'minibuffer-setup-hook 'yas-minor-mode)
+  ;; (define-key minibuffer-local-map [tab] yas-maybe-expand)
+  ;; (define-key minibuffer-local-map "M-o"  (lambda ()
+  ;;                                      (debug)
+  ;;                                      (message "got here")
+  ;;                                      (yas-maybe-expand)))
   ;; (define-key minibuffer-local-map [tab] (symbol-function 'yas-maybe-expand))
   ;; Set minibuffer mode as child of `text-mode', so text snippets are available
   ;; in minibuffer mode
-  (yas--define-parents 'minibuffer-inactive-mode '(text-mode))
+  ;; (yas--define-parents 'minibuffer-inactive-mode '(text-mode))
+  (yas--define-parents 'minibuffer-mode '(text-mode))
   )
 
 (provide 'robenkleene-yasnippet)
