@@ -23,7 +23,10 @@
   (setq yas-triggers-in-field t)
   ;; Support yas in minibuffer
   (add-hook 'minibuffer-setup-hook 'yas-minor-mode)
-  (define-key minibuffer-local-map [tab] (symbol-function 'yas-maybe-expand))
+  (define-key minibuffer-local-map [tab] yas-maybe-expand)
+  ;; (define-key minibuffer-local-map [tab] (symbol-function 'yas-maybe-expand))
+  ;; Set minibuffer mode as child of `text-mode', so text snippets are available
+  ;; in minibuffer mode
   (yas--define-parents 'minibuffer-inactive-mode '(text-mode))
   )
 
