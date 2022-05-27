@@ -58,6 +58,7 @@ inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFiles
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 nnoremap <leader>a :RG<CR>
 nnoremap <A-a>a :RG<CR>
+nnoremap <C-u><A-a>a :RGL<CR>
 " These don't work for some reason
 " inoremap <M-\> :ClipboardHistoryInsert<CR>
 " nnoremap <M-\> :ClipboardHistoryCopy<CR>
@@ -78,8 +79,17 @@ function! RipgrepFzf(query, fullscreen)
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
+function! RipgrepFzfLocal(query, fullscreen)
+  " let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let command_fmt = "rg_reload --max-depth 1 %s || true"
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+command! -nargs=* -bang RGL call RipgrepFzfLocal(<q-args>, <bang>0)
 
 if has('nvim')
   " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
