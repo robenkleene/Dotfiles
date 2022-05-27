@@ -31,9 +31,14 @@
               (if evil-mode
                   (progn
                     (if (eq evil-state 'normal)
-                        (hl-line-mode +1)
+                        (progn
+                          (hl-line-mode +1)
+                          (blink-cursor-mode -1)
+                          )
+                      (blink-cursor-mode)
                       )
                     )
+                (blink-cursor-mode)
                 )
               )
             )
