@@ -32,17 +32,23 @@
         )
   :init
   (setq helm-sources-using-default-as-input nil)
-  (defun robenkleene/helm-ag-in-directory (dir)
+
+  ;; Only the named colors work here for some reason, e.g., we're using
+  ;; `magenta' instead of `91', which is the exact color we want
+  (setq helm-grep-ag-command
+        "rg --color=always --colors 'match:fg:white' --colors 'match:bg:magenta' --smart-case --no-heading --line-number %s %s %s")
+  (defun robenkleene/helm-ag-in-directory ()
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a
 directory."
-    (interactive
-     (list
-      (if current-prefix-arg
-          (read-directory-name "Base directory: ")
-        default-directory)))
+    (interactive)
     ;; Clear the current prefix, for `helm-do-grep-ag' this just provides a list
     ;; of file types built-in to `rg` which is limiting.
-    (let ((current-prefix-arg nil))
+    (let ((helm-grep-ag-command (if current-prefix-arg
+                                    (concat helm-grep-ag-command
+                                            " --max-depth 1")
+                                  helm-grep-ag-command))
+          (current-prefix-arg nil)
+          )
       (call-interactively 'helm-do-grep-ag)
       )
     )
@@ -60,10 +66,6 @@ directory."
               ))
 
   (require 'helm-files)
-  ;; Only the named colors work here for some reason, e.g., we're using
-  ;; `magenta' instead of `91', which is the exact color we want
-  (setq helm-grep-ag-command
-        "rg --color=always --colors 'match:fg:white' --colors 'match:bg:magenta' --smart-case --no-heading --line-number %s %s %s")
   ;; Use relative paths (this makes `wgrep' possible)
   (setq helm-grep-file-path-style 'relative)
   (setq helm-truncate-lines t)
