@@ -22,13 +22,14 @@
   ;; Allow recursive snippet expansion
   (setq yas-triggers-in-field t)
   ;; Support yas in minibuffer
-  (add-hook 'minibuffer-setup-hook
-            (lambda ()
-              (yas-minor-mode)
-              ;; (local-set-key (kbd "TAB") 'yas-expand)
-              (local-set-key (kbd "TAB") (symbol-function 'yas-maybe-expand))
-              )
-            )
+  ;; This just isn't worth it, breaks too many things
+  ;; (add-hook 'minibuffer-setup-hook
+  ;;           (lambda ()
+  ;;             (yas-minor-mode)
+  ;;             ;; (local-set-key (kbd "TAB") 'yas-expand)
+  ;;             (local-set-key (kbd "TAB") (symbol-function 'yas-maybe-expand))
+  ;;             )
+  ;;           )
   ;; Original implementation that stopped working:
   ;; (add-hook 'minibuffer-setup-hook 'yas-minor-mode)
   ;; (define-key minibuffer-local-map [tab] yas-maybe-expand)
