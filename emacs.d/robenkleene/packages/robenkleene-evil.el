@@ -121,6 +121,21 @@
     ;; (define-key evil-normal-state-map (kbd "<escape>") 'evil-insert)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
+    (defun robenkleene/ispell-save-word ()
+      (interactive)
+      (let ((current-location (point))
+            (word (flyspell-get-word)))
+        (when (consp word)
+          (flyspell-do-correct 'save
+                               nil
+                               (car word)
+                               current-location
+                               (cadr word)
+                               (caddr word)
+                               current-location))
+        (setq ispell-pdict-modified-p nil)))
+    (define-key evil-normal-state-map "zg" 'robenkleene/ispell-save-word)
+    (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
     (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
