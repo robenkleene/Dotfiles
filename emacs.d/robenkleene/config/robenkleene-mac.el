@@ -24,6 +24,11 @@
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+;; Hide the window title completely, which looks cool
+;; This works by moving the frame size information to the second line which
+;; isn't visible
+(setq-default frame-title-format '("\n"))
+
 ;; Considering options for automatically hiding Emacs when it loses focus, to
 ;; work better with Mission Control
 ;; (add-function :after after-focus-change-function
