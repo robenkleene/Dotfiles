@@ -28,6 +28,7 @@
 ;; This works by moving the frame size information to the second line which
 ;; isn't visible
 (setq-default frame-title-format '("\n"))
+(setq ns-use-proxy-icon nil)
 
 ;; Considering options for automatically hiding Emacs when it loses focus, to
 ;; work better with Mission Control
