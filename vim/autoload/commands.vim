@@ -17,6 +17,7 @@ function! commands#GrepBuffer(...) abort
     " bdelete
     return
   endif
+  set modifiable
   " If it's diff output, first convert it to `grep`
   if getline('1')[0:len('diff --')-1] ==# 'diff --' || getline('2')[0:len('diff --')-1] ==# 'diff --' || getline('1')[0:len('changeset:')-1] ==# 'changeset:'
     execute "silent %!diff_clean | diff_to_grep"
