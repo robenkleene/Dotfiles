@@ -175,7 +175,12 @@
   (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
   ;; Evil
   ;; Evil Goggles is broken for this
-  (evil-define-key 'normal global-map (kbd "Y") (kbd "y$"))
+  ;; (evil-define-key 'normal global-map (kbd "Y") (kbd "y$"))
+  (evil-define-key 'normal global-map
+    (kbd "Y")
+    (lambda () (interactive)
+      (evil-goggles--show-blocking-hint (point) (line-end-position))
+      (evil-yank (point) (line-end-position))))
 
   ;; Along crossing lines by moving past end of line
   (setq-default evil-cross-lines t)
