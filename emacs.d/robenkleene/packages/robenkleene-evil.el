@@ -173,6 +173,8 @@
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
   (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
+  ;; Evil
+  (evil-define-key 'normal global-map (kbd "Y") (kbd "y$"))
 
   ;; Along crossing lines by moving past end of line
   (setq-default evil-cross-lines t)
