@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# 1. Ignore all /Applications folders that don't have 
+# 1. Ignore all /Applications folders that don't have a `.app` in them
 
 # Also list all the excluded paths that don't exist
 
