@@ -61,7 +61,6 @@ fi
 if [[ "$(uname)" = "Darwin" ]]; then
   repos+=(
 ~"/Developer/AppleScripts/" "${github_prefix}robenkleene/AppleScripts.git"
-~"/Library/Application Support/TextMate/Bundles/Roben Kleene.tmbundle/" "${github_prefix}robenkleene/roben-kleene-tmbundle.git"
 ~"/Library/Application Support/BBEdit/" "${github_prefix}robenkleene/BBEdit.git"
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
 ~"/Library/Services/" "${github_prefix}robenkleene/Services.git"

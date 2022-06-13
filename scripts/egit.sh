@@ -5,13 +5,7 @@ set -eo pipefail
 # System Repos
 repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
-  repos+=:~/Library/Services/:~/Library/Application\ Support/TextMate/Bundles/Roben\ Kleene.tmbundle/:~/Library/Application\ Support/BBEdit/:~/Developer/AppleScripts/:~/Library/Developer/Xcode/UserData/:~/Library/Application\ Support/Code/User:~/Library/Application\ Support/Code\ -\ Insiders/User
-  if [[ -z "$PUBLIC_EGIT" ]]; then
-    repos+=:~/Music/Audio\ Music\ Apps/
-  fi
-elif [[ "$(uname)" = "Linux" ]]; then
-  repos+=:~/.config/Code/User
-  repos+=:~/.config/Code\ -\ Insiders/User
+  repos+=:~/Library/Services/:~/Developer/AppleScripts/
 fi
 
 if [[ -z "$PUBLIC_EGIT" ]]; then
