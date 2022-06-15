@@ -319,6 +319,9 @@
 ;; To disable completely:
 ;; (setq mouse-1-click-follows-link nil)
 
+;; Disable mouse highlighting
+(setq mouse-highlight nil)
+
 ;; Org
 (setq org-replace-disputed-keys t)
 (setq org-todo-keywords '("TODO" "STARTED" "DONE"))
