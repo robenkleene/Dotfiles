@@ -12,7 +12,7 @@ if [[ -z "$PUBLIC_EGIT" ]]; then
   # General Text Repos
   repos+=:~/Developer/Snippets/:~/Developer/Settings/
   # Last Repos
-  repos+=:~/Developer/Backup/:~/Developer/Archive/
+  repos+=:~/Developer/Archive/
 fi
 
 IFS=':' read -ra repos <<<"$repos"
