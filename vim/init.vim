@@ -26,7 +26,7 @@ let b:terminalorneovim = !has('gui_running') || has('nvim')
 " set Vim-specific sequences for RGB colors
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-if !$TERM_PROGRAM =~ "Apple_Terminal"
+if $TERM_PROGRAM != "Apple_Terminal"
   " macOS Terminal only supports 256 colors (same with `tmux`)
   set termguicolors
 endif
