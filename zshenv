@@ -46,13 +46,8 @@ else
 fi
 
 # Homebrew
-
-if command -v brew &> /dev/null; then
-  export HOMEBREW_DIR
-  HOMEBREW_DIR=$(brew --prefix)
-  export MANPATH="$HOMEBREW_DIR/share/man:$MANPATH"
-  export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
-fi
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
 
 # Editor
 export VISUAL="$VIM_COMMAND"
@@ -77,10 +72,6 @@ fi
 # Emacs
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
-
-# Homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ANALYTICS=1
 
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS

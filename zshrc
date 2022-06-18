@@ -2,6 +2,16 @@
 # Run `zprof` after to see results
 # zmodload zsh/zprof
 
+# Homebrew
+# This was moved from `zshenv` because the brew path (in `/usr/local/bin`) is
+# set by `/etc/profile`, and that's sourced *after* loading `zshenv`
+if command -v brew &> /dev/null; then
+  export HOMEBREW_DIR
+  HOMEBREW_DIR=$(brew --prefix)
+  export MANPATH="$HOMEBREW_DIR/share/man:$MANPATH"
+  export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
+fi
+
 # This is early so that any path settings can be overridden later, e.g, for
 # `nvm` and `chruby`
 if [[ -f ~/.zshrc_local ]]; then
