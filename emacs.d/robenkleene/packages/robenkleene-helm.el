@@ -14,7 +14,7 @@
              helm-occur)
   :bind
   ;; ("M-A" . helm-do-g
-  ("M-e" . robenkleene/helm-recursive-find-file)
+  ;; ("M-e" . robenkleene/helm-recursive-find-file)
   ;; ("M-o" . robenkleene/helm-recursive-find-file)
   ;; ("M-c" . robenkleene/helm-recursive-find-dir)
   ("C-x b" . helm-buffers-list)

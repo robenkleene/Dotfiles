@@ -20,6 +20,7 @@ nnoremap <leader>l :BLines<CR>
 nnoremap <M-a>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
+nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
 " Fix `<C-@>` `<C-Space>` in `vim`
 " nnoremap <C-@> :Commands<CR>
 " vnoremap <C-@> :Commands<CR>
@@ -54,6 +55,7 @@ nnoremap <leader>i :FZFTags<CR>
 nnoremap <M-i> :FZFTags<CR>
 inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
 inoremap <M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 nnoremap <leader>a :RG<CR>
@@ -95,6 +97,7 @@ if has('nvim')
   " `nvim` treats select mode slightly differently than `vim`, this hack fixes some issues
   snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>
   snoremap <M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  snoremap <M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
   snoremap <M-a><M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
   snoremap <M-z> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeZinsert<CR>
 endif
