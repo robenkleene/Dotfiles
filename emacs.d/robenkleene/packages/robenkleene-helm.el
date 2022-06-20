@@ -98,7 +98,7 @@ directory."
     (custom-set-variables
      '(helm-fd-switches '("--type" "f" "--follow" "--hidden" "--exclude"
                           ".git" "--exclude" ".hg" "--exclude" ".DS_Store"
-                          "--color" "always"))
+                          "--color" "never"))
      )
     (let ((current-prefix-arg nil))
       (helm-fd-1 dir)
@@ -118,7 +118,7 @@ directory."
     (custom-set-variables
      '(helm-fd-switches '("--type" "d" "--follow" "--hidden" "--exclude"
                           ".git" "--exclude" ".hg" "--exclude" ".DS_Store"
-                          "--color" "always"))
+                          "--color" "never"))
      )
     (let ((current-prefix-arg nil))
       (helm-fd-1 dir)
@@ -138,7 +138,7 @@ directory."
     (custom-set-variables
      '(helm-fd-switches '("--follow" "--hidden" "--exclude"
                           ".git" "--exclude" ".hg" "--exclude" ".DS_Store"
-                          "--color" "always"))
+                          "--color" "never"))
      )
     (let ((current-prefix-arg nil))
       (helm-fd-1 dir)
