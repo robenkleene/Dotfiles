@@ -112,6 +112,7 @@ _fzf_editor_widget() {
 }
 zle -N _fzf_editor_widget
 bindkey '\eo' _fzf_editor_widget
+bindkey '\ee' _fzf_editor_widget
 
 _fzf_z_widget() {
   setopt localoptions pipefail 2> /dev/null
