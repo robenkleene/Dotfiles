@@ -8,6 +8,10 @@
   :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
   :bind
   (([remap markdown-enter-key] . robenkleene/markdown-enter-key))
+  :init
+  (setq flyspell-generic-check-word-predicate
+        'robenkleene/flyspell-generic-textmode-verify)
+  (setq markdown-enable-wiki-links t)
   :config
   ;; It might be possible to use this to change the default indent behavior when
   ;; making nested lists, but it doesn't appear to be easy without also removing
@@ -19,8 +23,6 @@
       (not (memq f '(markdown-pre-face
                      markdown-inline-code-face
                      markdown-language-keyword-face)))))
-  (setq flyspell-generic-check-word-predicate
-        'robenkleene/flyspell-generic-textmode-verify)
   (defun robenkleene/markdown-enter-key ()
     "Follow links or enter."
     (interactive)
