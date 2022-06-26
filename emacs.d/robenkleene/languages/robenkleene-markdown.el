@@ -5,13 +5,18 @@
 (eval-when-compile (require 'use-package))
 
 (use-package markdown-mode
-  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  :mode
+  ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  ;; For Wiki Links
+  ;; Doesn't support following links though
+  ;; ("\\.\\(m\\(ark\\)?down\\|md\\)$" . gfm-mode)
   :bind
   (([remap markdown-enter-key] . robenkleene/markdown-enter-key))
   :init
   (setq flyspell-generic-check-word-predicate
         'robenkleene/flyspell-generic-textmode-verify)
   (setq markdown-enable-wiki-links t)
+
   :config
   ;; It might be possible to use this to change the default indent behavior when
   ;; making nested lists, but it doesn't appear to be easy without also removing
