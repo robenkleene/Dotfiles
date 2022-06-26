@@ -146,6 +146,7 @@
     (define-key evil-motion-state-map [down-mouse-1] nil)
     (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
     ;; Motion
+    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     ;; Motion binds normal and visual
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
