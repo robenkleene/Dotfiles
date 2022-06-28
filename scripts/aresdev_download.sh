@@ -6,4 +6,4 @@ if [[ -z "$1" ]]; then
   echo "Error: Missing path" >&2
 fi
 
-sftp aresdev:"$1" .
+sftp aresdev:"\"$1\"" .
