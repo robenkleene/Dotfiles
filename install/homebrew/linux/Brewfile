@@ -40,7 +40,9 @@ brew 'chruby'
 brew 'ruby-install'
 # Python
 # This is needed by NeoVim
-brew 'python'
+# This install doesn't work will on Linux, removing for now, maybe need a
+# different way of installing Python?
+# brew 'python'
 # Shell
 brew 'shfmt'
 brew 'shellcheck'

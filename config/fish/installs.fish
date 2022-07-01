@@ -25,9 +25,10 @@ source ~/.config/fish/vendor/chruby/auto.fish
 # chruby ruby-2.5.3
 
 # Python
+# Get the correct Python version by running `brew info python3`
 # switch (uname)
 #    case Linux
-#        set -gx PYTHONHOME $HOMEBREW_DIR/Cellar/python@3.9/3.9.6
+#        set -gx PYTHONHOME $HOMEBREW_DIR/Cellar/python@3.9/3.9.13_1
 # end
 
 # llvm
