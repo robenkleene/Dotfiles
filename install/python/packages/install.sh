@@ -2,6 +2,11 @@
 
 set -e
 
+if [[ "$(uname)" = "Linux" ]]; then
+  echo "Error: Linux shouldn't install Python right now until we have a different method of installing it than homebrew" >&2
+  exit 1
+fi
+
 source "${BASH_SOURCE%/*}/packages.sh"
 source "${BASH_SOURCE%/*}/checks.sh"
 check_paths
