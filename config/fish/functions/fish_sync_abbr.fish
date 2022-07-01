@@ -153,6 +153,7 @@ function fish_sync_abbr
     abbr -a xsr "xargs -0 sed -n"
     abbr -a lsa "ls -al"
     abbr -a lsal "ls -al"
+    abbr -a svr "python -m SimpleHTTPServer"
     # Fish
     abbr -a 1for "for v in"
     abbr -a x0 "xargs -0"
