@@ -6,6 +6,7 @@ Alias G Git
 " Alias A Rg
 Alias Rgf Rg\ -F
 
+Alias P :!safepaste
 Alias Pq GrepBufferFromClipboard
 Alias Gb GrepBuffer
 
