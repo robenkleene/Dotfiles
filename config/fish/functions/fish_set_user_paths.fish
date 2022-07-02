@@ -36,10 +36,15 @@ function fish_set_user_paths
     end
 
     # Ruby
-    set -U fish_user_paths ~/.gem/ruby/3.0.2/bin $fish_user_paths
-    # set -U fish_user_paths ~/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0/bin $fish_user_paths
-    set -U fish_user_paths ~/.rubies/ruby-3.0.2/bin $fish_user_paths
+    if test -d ~/.gem/ruby/3.0.2/bin
+        set -U fish_user_paths ~/.gem/ruby/3.0.2/bin $fish_user_paths
+    end
+    if test -d ~/.rubies/ruby-3.0.2/bin
+        set -U fish_user_paths ~/.rubies/ruby-3.0.2/bin $fish_user_paths
+    end
 
     # Python
-    set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+    if test -d $PYENV_ROOT/bin
+        set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+    end
 end
