@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+cd "$(dirname "$0")" || exit 1
+
 if [[ -f ~/.nvm/nvm.sh ]]; then
   source ~/.nvm/nvm.sh
 elif [[ ! -e ~/.nvm ]]; then

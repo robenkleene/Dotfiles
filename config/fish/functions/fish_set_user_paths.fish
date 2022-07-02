@@ -40,4 +40,6 @@ function fish_set_user_paths
     # set -U fish_user_paths ~/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0/bin $fish_user_paths
     set -U fish_user_paths ~/.rubies/ruby-3.0.2/bin $fish_user_paths
 
+    # Python
+    set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 end
