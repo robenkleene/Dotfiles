@@ -25,8 +25,7 @@ source ~/.config/fish/vendor/chruby/auto.fish
 
 # Python
 set -Ux PYENV_ROOT $HOME/.pyenv
-# This is from the instructions but it's almost certainly slow
-# pyenv init - | source
+pyenv init - | source
 
 # llvm
 switch (uname)
