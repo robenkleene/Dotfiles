@@ -18,18 +18,15 @@ if command -sq fasd
 end
 
 # Ruby
-set -gx CHRUBY_ROOT $HOMEBREW_DIR
 source ~/.config/fish/vendor/chruby/chruby.fish
 source ~/.config/fish/vendor/chruby/auto.fish
 # Not sure why this isn't working
 # chruby ruby-2.5.3
 
 # Python
-# Get the correct Python version by running `brew info python3`
-# switch (uname)
-#    case Linux
-#        set -gx PYTHONHOME $HOMEBREW_DIR/Cellar/python@3.9/3.9.13_1
-# end
+set -Ux PYENV_ROOT $HOME/.pyenv
+# This is from the instructions but it's almost certainly slow
+# pyenv init - | source
 
 # llvm
 switch (uname)
