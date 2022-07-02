@@ -1,8 +1,6 @@
 declare -a modules
 
 modules=(
-'jupyter'
-'neovim'
 'pylint'
 'autopep8'
 'proselint'
@@ -10,6 +8,4 @@ modules=(
 'vim-vint'
 'pip-autoremove'
 'rope'
-# Repla requirement
-'django'
 )
