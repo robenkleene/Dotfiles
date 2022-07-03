@@ -106,7 +106,7 @@ function _robenkleene_fish_commands
 end
 
 function _robenkleene-fzf-commands-widget
-    set -l cmd "_robenkleene_fish_commands"
+    set -l cmd _robenkleene_fish_commands
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -n "$result"

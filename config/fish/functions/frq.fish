@@ -9,4 +9,3 @@ function frq
         cd $result
     end
 end
-
