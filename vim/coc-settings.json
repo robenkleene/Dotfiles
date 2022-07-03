@@ -20,13 +20,17 @@
     "zsh": ["shell", "shellcheck"]
   },
   "diagnostic-languageserver.formatFiletypes": {
+    "fish": "fish_indent",
     "objc": "clang-format",
-    "swift": "swiftformat",
     "python": "autopep8",
     "sh": "shfmt",
+    "swift": "swiftformat",
     "xml": "xmllint"
   },
   "diagnostic-languageserver.formatters": {
+    "fish_indent": {
+      "command": "fish_indent"
+    },
     "clang-format": {
       "command": "clang-format",
       "args": ["-style=file"]
