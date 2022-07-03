@@ -3,23 +3,23 @@ if set -q "$FISH_SOURCED"
 end
 set -gx FISH_SOURCED 1
 
-set -gx VIM_COMMAND "vim"
+set -gx VIM_COMMAND vim
 # set -gx VIM_COMMAND "nvim"
-set -gx BAT_COMMAND "bat"
+set -gx BAT_COMMAND bat
 set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
-set -gx PAGER "less"
-set -gx ACK_COMMAND "rg"
+set -gx PAGER less
+set -gx ACK_COMMAND rg
 
 # Prevent `npm` scripts from opening browser windows
 # set -gx BROWSER "none"
 # Or set it
 switch (uname)
     case Linux
-            set -gx BROWSER "none"
+        set -gx BROWSER none
     case Darwin
-            set -gx BROWSER "google chrome"
+        set -gx BROWSER "google chrome"
 end
 # set -gx BROWSER "Microsoft Edge Beta"
 
@@ -28,7 +28,7 @@ end
 set -gx ALTERNATE_EDITOR ""
 set -gx EMACS_COMMAND "emacsclient -nw"
 
-set -gx fish_help_browser "echo"
+set -gx fish_help_browser echo
 
 # Homebrew
 if type -q brew
@@ -53,6 +53,6 @@ set -gx HTML_TIDY "$HOME/.tidy"
 set -gx SHELLCHECK_OPTS "-e SC1090 -e SC2148"
 
 if test -n "$INSIDE_EMACS"
-    set -gx PAGER "cat"
-    set -gx GIT_PAGER "cat"
+    set -gx PAGER cat
+    set -gx GIT_PAGER cat
 end

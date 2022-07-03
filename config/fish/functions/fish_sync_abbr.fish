@@ -17,7 +17,7 @@ function fish_sync_abbr
     abbr -a oR 'open -R'
     abbr -a oRglsc 'open -R (git ls-files -m -o --exclude-standard)'
     abbr -a orm 'open README.md'
-    abbr -a f "fd"
+    abbr -a f fd
     abbr -a a "$ACK_COMMAND"
     abbr -a aF "$ACK_COMMAND -F"
     abbr -a rgF "$ACK_COMMAND -F"
@@ -33,27 +33,27 @@ function fish_sync_abbr
     abbr -a 0fd 'fd -0'
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
-    abbr -a tl 'tig'
+    abbr -a tl tig
     abbr -a tmsw 'tmux swap-window -t'
     abbr -a tmwr 'tmux move-window -r'
-    abbr -a tm 'tmux'
-    abbr -a tmb 'tmux_banner'
+    abbr -a tm tmux
+    abbr -a tmb tmux_banner
     abbr -a tmls 'tmux ls'
     abbr -a tmsn 'tmux new'
     abbr -a tmd 'tmux detach'
     abbr -a mdv 'mosh aresdev -- tmux attach'
-    abbr -a m 'make'
+    abbr -a m make
     abbr -a hpr 'hub pull-request'
     abbr -a hprm 'hub pull-request -m'
     abbr -a ghpr 'gh pr create'
     abbr -a hprr 'hub pull-request && BROWSER= gh pr view --web'
-    abbr -a c 'cat'
-    abbr -a r 'clear'
-    abbr -a b 'bat'
+    abbr -a c cat
+    abbr -a r clear
+    abbr -a b bat
     abbr -a brm 'bat README.md'
     abbr -a blj 'bat .vscode/launch.json'
     abbr -a prm 'open -a "Repla" README.md'
-    abbr -a g 'git'
+    abbr -a g git
     abbr -a ga 'git add'
     abbr -a gaa 'git add -A :/'
     abbr -a gaac 'git add -A :/ && git commit'
@@ -117,11 +117,11 @@ function fish_sync_abbr
     abbr -a mba 'mbsync -all --verbose'
     abbr -a rps 'repla server'
     abbr -a rpj 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
-    abbr -a wd 'web_deploy'
+    abbr -a wd web_deploy
     abbr -a wdd 'web_deploy -s aresdev'
     abbr -a bil 'bundle install --path vendor/bundle'
     abbr -a hm 'history merge'
-    abbr -a re 'grep'
+    abbr -a re grep
     abbr -a rei 'grep -i'
     abbr -a adbl 'adb -d logcat -s Unity'
     # Mercurial
