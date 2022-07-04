@@ -3,8 +3,9 @@
 set -e
 
 source "${BASH_SOURCE%/*}/packages.sh"
-source "${BASH_SOURCE%/*}/checks.sh"
-check_paths
+# `checks.sh` appears to be superfluous after starting to use `pyenv`?
+# source "${BASH_SOURCE%/*}/checks.sh"
+# check_paths
 
 force=false
 while getopts ":fh" option; do
