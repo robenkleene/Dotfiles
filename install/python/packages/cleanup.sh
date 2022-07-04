@@ -45,7 +45,10 @@ fi
 
 pipdeptree --user-only | grep -v "^\s" | cut -d "=" -f 1 | while IFS=$'\n' read -r module; do
   if [[ ! " ${modules[*]} " =~ " ${module} " ]]; then
-    if $force; then
+    if [ "$module" = "wheel" ]; then
+      # `wheel` appears to be auto-installed?
+      continue
+    elif $force; then
       set -x
       pip-autoremove --yes "$module"
       set +x

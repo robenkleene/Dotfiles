@@ -8,6 +8,4 @@ modules=(
 'vim-vint'
 'pip-autoremove'
 'rope'
-# `wheel` appears to be auto-installed?
-'wheel'
 )
