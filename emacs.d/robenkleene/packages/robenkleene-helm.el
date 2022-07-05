@@ -14,7 +14,8 @@
              helm-find-files-or-marked
              helm-occur)
   :bind
-  ;; ("M-A" . helm-do-g
+  ;; ("M-A" . helm-do-rg)
+  ("M-/" . robenkleene/helm-text-edit)
   ;; ("M-e" . robenkleene/helm-recursive-find-file)
   ;; ("M-o" . robenkleene/helm-recursive-find-file)
   ;; ("M-c" . robenkleene/helm-recursive-find-dir)
