@@ -1,11 +1,14 @@
-function bct
-    set -l cmd "fd --type f . ~/Documents/Text/Notes/Bucket"
+function bct --argument-names 'term'
+    if test -z "$term"
+        set term "."
+    end
+    set -l cmd "fd --type f $term ~/Documents/Text/Notes/Bucket"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
-    if test -d "$result"
+    if test -e "$result"
         set -l result_path (string escape "$result")
-        cd $result_path
+        cat "$result_path" | ~/.bin/urls -b | ~/.bin/url_open
     end
 end
 
