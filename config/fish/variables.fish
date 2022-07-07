@@ -13,14 +13,14 @@ set -gx PAGER less
 set -gx ACK_COMMAND rg
 
 # Prevent `npm` scripts from opening browser windows
-# set -gx BROWSER "none"
+set -gx BROWSER "none"
 # Or set it
-switch (uname)
-    case Linux
-        set -gx BROWSER none
-    case Darwin
-        set -gx BROWSER "google chrome"
-end
+# switch (uname)
+#     case Linux
+#         set -gx BROWSER none
+#     case Darwin
+#         set -gx BROWSER "google chrome"
+# end
 # set -gx BROWSER "Microsoft Edge Beta"
 
 # Emacs
