@@ -1,11 +1,13 @@
 function bct --argument-names 'term'
-    if test -z "$term"
-        set term "."
-    end
 
     cd ~/Documents/Text/Notes/Bucket
 
-    set -l cmd "fd --type f $term"
+    set -l cmd
+    if test -z "$term"
+        set cmd "fd --type f ."
+    else
+        set cmd "rg \"$term\""
+    end
     set -l commandline (commandline)
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -e "$result"
