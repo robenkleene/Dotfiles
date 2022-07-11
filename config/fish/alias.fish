@@ -178,6 +178,7 @@ alias hgf='hg status --rev ".^" | grep -v "^R" | cut -d\' \' -f2'
 alias hgfb 'hg status --rev bottom^ | grep -v "^R" | cut -d\' \' -f2'
 
 # Special
+alias cdsc='sc_cd_root'
 alias lt='time_log -t'
 alias fmj='format_json'
 alias lj='launch_json'
