@@ -147,6 +147,7 @@ function fish_sync_abbr
     abbr -a hgrm 'hg resolve -m'
     abbr -a hgsf 'hg status --no-status'
     abbr -a hgsfb 'hg status --no-status --rev bottom^'
+    abbr -a hgfb 'hg status --no-status --rev bottom^'
     # New
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
