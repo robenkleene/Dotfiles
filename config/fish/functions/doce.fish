@@ -6,8 +6,11 @@ function doce
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -f "$result"
         $EDITOR $result
+        cd -
     else if test -d "$result"
         cd $result
         $EDITOR .
+    else
+        cd -
     end
 end
