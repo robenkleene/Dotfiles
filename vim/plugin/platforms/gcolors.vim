@@ -35,7 +35,8 @@ function! s:MyHighlights() abort
   endfor
 
   " Set the background separately so that the fzf window picks it up
-  highlight Normal guibg=#211930
+  " highlight Normal guibg=#211930
+  highlight Normal guibg=NONE
 
   " Line Numbers {{{1
   highlight LineNr guifg=#444444 guibg=NONE
