@@ -61,8 +61,6 @@ if ! command -v fish &> /dev/null; then
   ./install/homebrew/install.sh || true
 fi
 
-exit 0
-
 ./install/files/symlinks.sh
 ./install/node/install.sh
 ./install/ruby/install.sh
