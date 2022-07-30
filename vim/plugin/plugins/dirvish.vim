@@ -29,9 +29,10 @@ augroup dirvish_config
   " autocmd FileType dirvish silent! lcd %:p:h
 augroup END
 
-augroup DirvishShellRefresh
-  autocmd FileType dirvish :autocmd! DirvishShellRefresh ShellCmdPost <buffer> :Dirvish %
-augroup END
+" This shouldn't be necessary anymore
+" augroup DirvishShellRefresh
+"   autocmd FileType dirvish :autocmd! DirvishShellRefresh ShellCmdPost <buffer> :Dirvish %
+" augroup END
 
 " Go to `git` root
 command! Cdg :call commands#Cdg('cd')
