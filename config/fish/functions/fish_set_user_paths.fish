@@ -47,4 +47,9 @@ function fish_set_user_paths
     if test -d $PYENV_ROOT/bin
         set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     end
+
+    # Rust
+    if test -d $HOME/.cargo/bin
+        set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+    end
 end
