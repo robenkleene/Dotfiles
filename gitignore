@@ -49,3 +49,6 @@ a.out.dSYM/
 
 # Excel
 ~$*.xls*
+
+# Rust
+target/
