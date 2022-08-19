@@ -3,11 +3,18 @@ if set -q "$FISH_SOURCED"
 end
 set -gx FISH_SOURCED 1
 
+# Emacs
+# Start the server in the background if it isn't running
+set -gx ALTERNATE_EDITOR ""
+set -gx EMACS_COMMAND "emacsclient -nw"
+
+# Other
 set -gx VIM_COMMAND vim
 # set -gx VIM_COMMAND "nvim"
 set -gx BAT_COMMAND bat
 set -gx VISUAL "$VIM_COMMAND"
 set -gx EDITOR "$VISUAL"
+set -gx MD_EDITOR "$EMACS_COMMAND"
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 set -gx PAGER less
 set -gx ACK_COMMAND rg
@@ -22,11 +29,6 @@ set -gx BROWSER "none"
 #         set -gx BROWSER "google chrome"
 # end
 # set -gx BROWSER "Microsoft Edge Beta"
-
-# Emacs
-# Start the server in the background if it isn't running
-set -gx ALTERNATE_EDITOR ""
-set -gx EMACS_COMMAND "emacsclient -nw"
 
 set -gx fish_help_browser echo
 
