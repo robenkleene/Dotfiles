@@ -11,14 +11,18 @@ tell application "System Events"
 	# 		activate
 	# 	end tell
 	# else if application process "iTerm2" exists then
-        tell application "iTerm"
-                set theWindow to (create window with default profile)
-                tell theWindow
-                        tell current session of theWindow
-                                write text "cd " & the quoted form of thePath
-                                activate
-                        end tell
-                end tell
+        # tell application "iTerm"
+        #         set theWindow to (create window with default profile)
+        #         tell theWindow
+        #                 tell current session of theWindow
+        #                         write text "cd " & the quoted form of thePath
+        #                         activate
+        #                 end tell
+        #         end tell
+        # end tell
+        tell application "kitty"
+                open thePath
+                activate
         end tell
 	# end if
 end tell
