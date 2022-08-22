@@ -192,6 +192,9 @@
   ;; Along crossing lines by moving past end of line
   (setq-default evil-cross-lines t)
 
+  ;; Modes
+  (evil-define-key 'normal 'dired-mode-map
+    (kbd "R") 'dired-do-rename)
   ;; Languages
   (evil-define-key 'normal 'emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
