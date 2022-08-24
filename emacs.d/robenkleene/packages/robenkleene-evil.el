@@ -195,6 +195,8 @@
   ;; Modes
   (evil-define-key 'normal 'dired-mode-map
     (kbd "R") 'dired-do-rename)
+  (evil-define-key 'normal 'dired-mode-map
+    (kbd "+") 'dired-create-directory)
   ;; Languages
   (evil-define-key 'normal 'emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
