@@ -269,13 +269,13 @@ cnoremap <C-x><C-e> <C-f>
 " Star register isn't working, probably because of my clipboard integration so
 " use this instead
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-r>0"
-snoremap <expr> <C-y> ""\0p"
-nnoremap <expr> <C-y> "\"0p"
-vnoremap <expr> <C-y> "\"0p"
+snoremap <expr> <C-y> ""\0P"
+nnoremap <expr> <C-y> "\"0P"
+vnoremap <expr> <C-y> "\"0P"
 inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : "<C-r>0"
-snoremap <expr> <M-y> "\"0p"
-nnoremap <expr> <M-y> "\"0p"
-vnoremap <expr> <M-y> "\"0p"
+snoremap <expr> <M-y> "\"0P"
+nnoremap <expr> <M-y> "\"0P"
+vnoremap <expr> <M-y> "\"0P"
 
 " Fish paste
 " Don't use this, `<C-v>` in insert mode is important for viewing how keys are
