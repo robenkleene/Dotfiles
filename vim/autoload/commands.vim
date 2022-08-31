@@ -425,7 +425,12 @@ function! s:FileByOffset(num) abort
   endif
   let num = a:num
   while num
-    let files = s:entries(fnamemodify(file,':h'))
+    if isdirectory(file)
+      let num += (num > 0 ? -1 : 1)
+      continue
+    endif
+    let path = fnamemodify(file,':h')
+    let files = s:entries(path)
     if a:num < 0
       call reverse(sort(filter(files,'v:val <# file')))
     else
@@ -437,14 +442,6 @@ function! s:FileByOffset(num) abort
     else
       let file = temp
       let found = 1
-      while isdirectory(file)
-        let files = s:entries(file)
-        if empty(files)
-          let found = 0
-          break
-        endif
-        let file = files[num > 0 ? 0 : -1]
-      endwhile
       let num += (num > 0 ? -1 : 1) * found
     endif
   endwhile
