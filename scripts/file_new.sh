@@ -1,13 +1,40 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+path_only="false"
+root=""
+while getopts ":pr:h" option; do
+  case "$option" in
+    p)
+      path_only="true"
+      ;;
+    r)
+      root="$OPTARG"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ -n "$root" ]]; then
+   cd "$root" || {
+           echo "Failed to create a new file because the directory is invalid"
+           exit 1
+   }
+fi
 
 BASENAME="untitled"
-
-if [ ! -z "$1" ]; then
-	cd "$1" || {
-		echo "Failed to create a new file because the directory is invalid"
-		exit 1
-	}
-fi
 
 for i in {1..9}
 do
@@ -28,6 +55,8 @@ if [ -z "$FILENAME" ]; then
 	exit 1
 fi
 
-touch "$FILENAME"
+if [[ "$path_only" != "true" ]]; then
+  touch "$FILENAME"
+fi
 PATH=`pwd`
 echo $PATH/$FILENAME
