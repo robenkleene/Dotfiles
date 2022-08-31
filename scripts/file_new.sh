@@ -3,14 +3,18 @@
 set -euo pipefail
 
 path_only="false"
+image="false"
 root=""
-while getopts ":pr:h" option; do
+while getopts ":ipr:h" option; do
   case "$option" in
     p)
       path_only="true"
       ;;
     r)
       root="$OPTARG"
+      ;;
+    i)
+      image="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -35,6 +39,9 @@ if [[ -n "$root" ]]; then
 fi
 
 BASENAME="untitled"
+if [[ "$image" == "true" ]]; then
+  BASENAME=$BASENAME.png
+fi
 
 for i in {1..9}
 do
