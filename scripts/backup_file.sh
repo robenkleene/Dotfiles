@@ -5,7 +5,7 @@ set -e
 backup_root_directory=$HOME/Archive/Text/
 
 for filepath in "$@"; do
-  fullpath=$(realpath -s "$filepath")
+  fullpath=$(echo "$(cd "$(dirname "$filepath")" && pwd -P)/$(basename "$filepath")")
   filename=$(basename "$filepath")
   if [[ $fullpath == $backup_root_directory* ]]; then
     echo "Error: Skipping $filename because it's already in the archive directory" >&2
