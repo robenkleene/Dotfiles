@@ -45,6 +45,11 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
+" Fix alacritty colors
+if &term == "alacritty"
+    let &term = "xterm-256color"
+endif
+
 " Syntax highlighting
 syntax on
 
