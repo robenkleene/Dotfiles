@@ -14,5 +14,4 @@ font:
 alt_send_esc: false
 
 import:
-  -  ~/.config/alacritty/modifiers.yml
   -  ~/.config/alacritty/theme.yml
