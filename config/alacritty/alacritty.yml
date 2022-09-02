@@ -39,3 +39,6 @@ colors:
     magenta: '#dabdda'
     cyan:    '#bddada'
     white:   '#FFFFFF'
+
+import:
+  -  ~/.config/alacritty/modifiers.yml
