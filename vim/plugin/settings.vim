@@ -48,6 +48,8 @@ endif
 " Fix alacritty colors
 if &term == "alacritty"
     let &term = "xterm-256color"
+    let &t_TI = ""
+    let &t_TE = ""
 endif
 
 " Syntax highlighting
