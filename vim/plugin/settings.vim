@@ -47,9 +47,11 @@ endif
 
 " Fix alacritty colors
 if &term == "alacritty"
-    let &term = "xterm-256color"
-    let &t_TI = ""
-    let &t_TE = ""
+  " Setting the `term` this way breaks modifier keys
+  " let &term = "xterm-256color"
+  " Fix some support for colors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
 endif
 
 " Syntax highlighting

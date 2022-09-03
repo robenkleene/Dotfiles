@@ -13,6 +13,10 @@ font:
 
 alt_send_esc: false
 
+env:
+  # Colors in `vim` don't work without setting `xterm-256color`
+  TERM: xterm-256color
+
 import:
   -  ~/.config/alacritty/modifiers.yml
   -  ~/.config/alacritty/theme.yml
