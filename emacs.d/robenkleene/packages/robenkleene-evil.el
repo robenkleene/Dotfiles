@@ -279,6 +279,12 @@
   ;;   (add-hook 'smartparens-enabled-hook #'evil-cleverparens-mode)
   ;;   )
 
+  (use-package crux
+    :commands (crux-delete-file-and-buffer)
+    :init
+    (evil-ex-define-cmd "Remove" 'crux-delete-file-and-buffer)
+    (evil-ex-define-cmd "Rename" 'crux-rename-file-and-buffer)
+    )
   )
 
 (provide 'robenkleene-evil)
