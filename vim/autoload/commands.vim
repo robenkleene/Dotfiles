@@ -410,12 +410,7 @@ function! s:entries(path) abort
   let path = substitute(a:path,'[\\/]$','','')
   let files = split(glob(path."/.*"),"\n")
   let files += split(glob(path."/*"),"\n")
-  call map(files,'substitute(v:val,"[\\/]$","","")')
-  call filter(files,'v:val !~# "[\\\\/]\\.\\.\\=$"')
-
-  let filter_suffixes = substitute(escape(&suffixes, '~.*$^'), ',', '$\\|', 'g') .'$'
-  call filter(files, 'v:val !~# filter_suffixes')
-
+  call filter(files, '!isdirectory(v:val)')
   return files
 endfunction
 function! s:FileByOffset(num) abort
