@@ -100,7 +100,6 @@ alias ers='emacs_reset_server'
 
 # `vim_cd`
 alias d='vim_cd .'
-alias v='vim_cd'
 
 # `vim`
 alias vsr='vim_session_restore_auto'
