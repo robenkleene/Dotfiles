@@ -423,29 +423,15 @@ function! s:FileByOffset(num) abort
   if empty(file)
     let file = getcwd() . '/'
   endif
+  let path = fnamemodify(file,':h')
+  let files = s:entries(path)
   let num = a:num
-  while num
-    if isdirectory(file)
-      let num += (num > 0 ? -1 : 1)
-      continue
-    endif
-    let path = fnamemodify(file,':h')
-    let files = s:entries(path)
-    if a:num < 0
-      call reverse(sort(filter(files,'v:val <# file')))
-    else
-      call sort(filter(files,'v:val ># file'))
-    endif
-    let temp = get(files,0,'')
-    if empty(temp)
-      let file = fnamemodify(file,':h')
-    else
-      let file = temp
-      let found = 1
-      let num += (num > 0 ? -1 : 1) * found
-    endif
-  endwhile
-  return file
+  if a:num < 0
+    call reverse(sort(filter(files,'v:val <# file')))
+  else
+    call sort(filter(files,'v:val ># file'))
+  endif
+  return get(files,0,'')
 endfunction
 function! commands#Fnext() abort
   let l:filename = fnameescape(<SID>FileByOffset(1))
