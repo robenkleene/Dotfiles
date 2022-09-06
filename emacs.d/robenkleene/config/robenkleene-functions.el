@@ -1014,6 +1014,20 @@ With prefix arg, find the previous file."
                             ))
   )
 
+(defun robenkleene/new-projects-document (title)
+  "Create a new inbox document with TITLE at DIR."
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (robenkleene/safe-find-file
+   (shell-command-to-string (concat "~/.bin/projects_new "
+                                    (shell-quote-argument title))
+                            ))
+  )
+
 (defun robenkleene/save-in-inbox ()
   "Save in inbox."
   (interactive)

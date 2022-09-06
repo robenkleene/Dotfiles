@@ -13,4 +13,4 @@ if [[ -z "$title" ]]; then
     exit 1
 fi
 
-~/.bin/markdown_new_file "$title" ~/Documents/Text/Notes/Inbox/
+~/.bin/markdown_new_file "$title" ~/Documents/Text/Notes/Projects/

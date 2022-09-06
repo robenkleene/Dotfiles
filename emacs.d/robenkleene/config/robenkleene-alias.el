@@ -56,6 +56,8 @@
 (defalias 'tweet 'robenkleene/tweets)
 (defalias 'home 'robenkleene/open-home)
 (defalias 'inbox 'robenkleene/inbox)
+(defalias 'inbox-new 'robenkleene/new-inbox-document)
+(defalias 'projects-new 'robenkleene/new-projects-document)
 (defalias 'journal 'robenkleene/open-journal)
 (defalias 'todo 'robenkleene/open-todo)
 (defalias 'todo-archive 'robenkleene/open-todo-archive)
