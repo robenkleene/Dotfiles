@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 if [ "$#" -ne 1 ]; then
     echo "Wrong number of arguments" >&2
@@ -12,4 +12,5 @@ if [[ -z "$title" ]]; then
     echo "Invalid title" >&2
     exit 1
 fi
+
 ~/.bin/markdown_new_file "$title" ~/Documents/Text/Notes/Inbox/
