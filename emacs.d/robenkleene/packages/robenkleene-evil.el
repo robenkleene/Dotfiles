@@ -284,6 +284,7 @@
     :init
     (evil-ex-define-cmd "Remove" 'crux-delete-file-and-buffer)
     (evil-ex-define-cmd "Rename" 'crux-rename-file-and-buffer)
+    (evil-ex-define-cmd "Archive" 'robenkleene/archive-current-file)
     )
   )
 
