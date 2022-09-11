@@ -361,10 +361,79 @@
 ;; Removes massive slow down with large `hg' repos
 (setq vc-handled-backends '(Git))
 
-(add-hook
- 'kill-emacs-hook
- (lambda ()
-   (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir")))
+;; (add-hook
+;;  'delete-frame-functions
+;;  (lambda (frame)
+;;    (message "default-directory = %s." default-directory)
+;;    ;; (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir")
+
+;;    ;; (message "default-directory = %s." default-directory)
+;;    ;; (message "buffer = %s." (buffer-file-name))
+;;    ;; (message "path = %s." (file-name-directory
+;;    ;;                        (buffer-file-name (window-buffer
+;;    ;;                                           (frame-root-window frame)))))
+;;    ;; (write-region
+;;    ;;  (file-name-directory
+;;    ;;   (buffer-file-name (window-buffer (frame-root-window frame))))
+;;    ;;  nil
+;;    ;;  "/tmp/vim.robenkleene/chdir/chdir"
+;;    ;;  )
+;;    ;; (with-selected-frame frame
+;;    ;;   (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir"))
+;;    ;; (with-selected-frame frame
+;;    ;;   (message "default-directory = %s." default-directory)
+;;    ;;   )
+;;    (message "frame = %s." frame)
+;;    ;; (message "dired-directory = %s." dired-directory)
+;;    )
+;;  )
+
+;; (add-hook
+;;  'after-delete-frame-functions
+;;  (lambda (frame)
+;;    ;; (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir")
+
+;;    (message "after default-directory = %s." default-directory)
+;;    ;; (message "buffer = %s." (buffer-file-name))
+;;    ;; (message "path = %s." (file-name-directory
+;;    ;;                        (buffer-file-name (window-buffer
+;;    ;;                                           (frame-root-window frame)))))
+;;    ;; (write-region
+;;    ;;  (file-name-directory
+;;    ;;   (buffer-file-name (window-buffer (frame-root-window frame))))
+;;    ;;  nil
+;;    ;;  "/tmp/vim.robenkleene/chdir/chdir"
+;;    ;;  )
+;;    ;; (with-selected-frame frame
+;;    ;;   (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir"))
+;;    ;; (with-selected-frame frame
+;;    ;;   (message "default-directory = %s." default-directory)
+;;    ;;   )
+;;    (message "after frame = %s." frame)
+;;    ;; (message "dired-directory = %s." dired-directory)
+;;    )
+;;  )
+
+;; Theoretically this would be clear in `delete-frame-functions' but for
+;; `emacsclient' connections that's being called after the frame is deleted and
+;; the `default-directory' is then wrong
+(defadvice delete-frame
+    (before robenkleene/delete-frame-chdir activate)
+  (write-region
+   (expand-file-name default-directory)
+   nil
+   "/tmp/vim.robenkleene/chdir/chdir"
+   )
+  )
+
+
+;; (add-hook
+;;  'kill-emacs-hook
+;;  (lambda ()
+;;    ;; (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir")
+;;    (append-to-file default-directory nil "/tmp/vim.robenkleene/chdir/chdir")
+;;    )
+;;  )
 
 (provide 'robenkleene-config)
 ;; Local Variables:
