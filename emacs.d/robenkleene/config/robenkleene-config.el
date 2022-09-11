@@ -361,6 +361,11 @@
 ;; Removes massive slow down with large `hg' repos
 (setq vc-handled-backends '(Git))
 
+(add-hook
+ 'kill-emacs-hook
+ (lambda ()
+   (write-region default-directory nil "/tmp/vim.robenkleene/chdir/chdir")))
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
