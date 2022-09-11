@@ -163,15 +163,21 @@ end
 # bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
-    set -l cmd "fd --type f --follow . ~/Text ~/Documentation"
+    set -l cmd "fd --follow . ~/Text ~/Documentation"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -f "$result"
         set -l result_path (string escape "$result")
         if test -z $commandline
-            commandline "$EDITOR $result_path"
-            commandline -f execute
+            if test -f "$result_path"
+                set -q MD_EDITOR || set MD_EDITOR $EDITOR
+                commandline "$MD_EDITOR $result_path"
+                commandline -f execute
+            else if test -d "$result_path"
+                commandline "cd $result_path"
+                commandline -f execute
+            end
         else
             commandline -i "$result_path"
         end
@@ -180,6 +186,7 @@ function _robenkleene-fzf-quick-files-widget
     commandline -f repaint
 end
 # bind \eO _robenkleene-fzf-quick-files-widget
+bind \e/ _robenkleene-fzf-quick-files-widget
 # bind \co _robenkleene-fzf-quick-files-widget
 
 function _robenkleene-fzf-clipboard-widget
