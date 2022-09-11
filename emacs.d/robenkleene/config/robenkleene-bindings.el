@@ -38,8 +38,8 @@
 
 
 
-(define-key robenkleene/bindings-minor-mode-map
-  (kbd "M-C-d") 'robenkleene/archive-and-delete)
+;; (define-key robenkleene/bindings-minor-mode-map
+;;   (kbd "M-C-d") 'robenkleene/archive-and-delete)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
