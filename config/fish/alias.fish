@@ -99,8 +99,9 @@ alias mgl='emacs_magit_log'
 alias eks='emacs_kill_server'
 alias ers='emacs_reset_server'
 
-# `vim_cd`
-alias d='vim_cd .'
+# TUI change dir
+# alias d='vim_cd .'
+alias d='emacs_cd .'
 
 # `vim`
 alias vsr='vim_session_restore_auto'
