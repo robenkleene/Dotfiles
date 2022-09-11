@@ -10,7 +10,6 @@ function doce
         cd -
     else if test -d "$result"
         cd $result
-        eval $MD_EDITOR .
     else
         cd -
     end
