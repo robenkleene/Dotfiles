@@ -13,6 +13,8 @@
                                'company-elisp)
                   )
               )
+            (modify-syntax-entry ?_ "w")
+            (modify-syntax-entry ?- "w")
             ))
 
 (add-hook 'lisp-interaction-mode-hook

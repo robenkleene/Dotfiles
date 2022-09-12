@@ -47,18 +47,20 @@
   (define-key markdown-mode-map (kbd "C-c i")
     'robenkleene/save-in-inbox)
 
-  ;; Automatically auto-save markdown files
-  ;; This doesn't work
-  ;; (add-hook 'markdown-mode-hook (lambda ()
-  ;;                                 ;; Turn on auto-saving
-  ;;                                 (set
-  ;;                                  (make-local-variable
-  ;;                                   'auto-save-visited-file-name)
-  ;;                                  t)
-  ;;                                 (setq-local auto-save-default t)
-  ;;                                 (auto-save-mode)
-  ;;                                 )
-  ;;           )
+  (add-hook 'markdown-mode-hook (lambda ()
+                                  (modify-syntax-entry ?_ "w")
+                                  (modify-syntax-entry ?- "w")
+                                  ;; Automatically auto-save markdown files
+                                  ;; This doesn't work
+                                  ;; Turn on auto-saving
+                                  ;; (set
+                                  ;;  (make-local-variable
+                                  ;;   'auto-save-visited-file-name)
+                                  ;;  t)
+                                  ;; (setq-local auto-save-default t)
+                                  ;; (auto-save-mode)
+                                  )
+            )
   ;; Try `flyspell-prog-mode' to prevent spelling errors in Markdown code
   ;; blocks. This seems to disable spelling altogether: (add-hook
   ;; 'markdown-mode-hook 'flyspell-prog-mode)
