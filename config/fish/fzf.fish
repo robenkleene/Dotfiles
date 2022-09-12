@@ -40,6 +40,7 @@ function _robenkleene-fzf-cd-widget
         set -l result_path (string escape "$result")
         if test -z $commandline
             commandline "cd $result_path"
+            commandline -f repaint
             commandline -f execute
         else
             commandline -i "$result_path"
@@ -61,6 +62,7 @@ function _robenkleene-fzf-z-widget
         set -l result_path (string escape "$result")
         if test -z $commandline
             commandline "cd $result_path"
+            commandline -f repaint
             commandline -f execute
         else
             commandline -i "$result_path"
@@ -86,6 +88,7 @@ function _robenkleene-fzf-edit-widget
         set -l result_path (string escape "$result")
         if test -z $commandline
             commandline "$EDITOR $result_path"
+            commandline -f repaint
             commandline -f execute
         else
             commandline -i "$result_path"
@@ -129,6 +132,7 @@ function _robenkleene-fzf-developer-widget
         set -l result_path (string escape "$result")
         if test -z $commandline
             commandline "cd $result_path"
+            commandline -f repaint
             commandline -f execute
         else
             commandline -i "$result_path"
@@ -150,6 +154,7 @@ function _robenkleene-fzf-quick-widget
         set -l result_path (string escape "$result")
         if test -z $commandline
             commandline "cd $result_path"
+            commandline -f repaint
             commandline -f execute
         else
             commandline -i "$result_path"
@@ -169,13 +174,14 @@ function _robenkleene-fzf-quick-files-widget
     eval "$cmd | "(__fzfcmd) | read -l result
     set -l result_path (string escape "$result")
     if test -z $commandline
-        commandline "cd $result_path"
         if test -f "$result"
             set -q MD_EDITOR || set MD_EDITOR $EDITOR
             commandline "$MD_EDITOR $result_path"
+            commandline -f repaint
             commandline -f execute
         else if test -d "$result"
             commandline "cd $result_path"
+            commandline -f repaint
             commandline -f execute
         end
     else
