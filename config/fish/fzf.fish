@@ -167,20 +167,19 @@ function _robenkleene-fzf-quick-files-widget
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
-    if test -f "$result"
-        set -l result_path (string escape "$result")
-        if test -z $commandline
-            if test -f "$result_path"
-                set -q MD_EDITOR || set MD_EDITOR $EDITOR
-                commandline "$MD_EDITOR $result_path"
-                commandline -f execute
-            else if test -d "$result_path"
-                commandline "cd $result_path"
-                commandline -f execute
-            end
-        else
-            commandline -i "$result_path"
+    set -l result_path (string escape "$result")
+    if test -z $commandline
+        commandline "cd $result_path"
+        if test -f "$result"
+            set -q MD_EDITOR || set MD_EDITOR $EDITOR
+            commandline "$MD_EDITOR $result_path"
+            commandline -f execute
+        else if test -d "$result"
+            commandline "cd $result_path"
+            commandline -f execute
         end
+    else
+        commandline -i "$result_path"
     end
 
     commandline -f repaint
