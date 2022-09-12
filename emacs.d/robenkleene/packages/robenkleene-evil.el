@@ -50,10 +50,9 @@
             'robenkleene/save-buffer-if-visiting-file)
 
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
-  (with-eval-after-load 'evil
-    (defalias #'forward-evil-word #'forward-evil-symbol)
-    ;; make evil-search-word look for symbol rather than word boundaries
-    (setq-default evil-symbol-word-search t))
+  ;; (with-eval-after-load 'evil
+  ;;   (defalias #'forward-evil-word #'forward-evil-symbol)
+  ;;   (setq-default evil-symbol-word-search t))
 
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
