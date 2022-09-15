@@ -7,7 +7,10 @@ if [ -t 1 ]; then
   if [ "$TERM" = "dumb" ]; then
     exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
   else
-    exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@" | less -RFX
+    # With pager
+    # exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@" | less -RFX
+    # Without pager works nicer if a search is taking a long time and we need to cancel
+    exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
   fi
 else
     exec rg --with-filename --smart-case --line-number "$@"
