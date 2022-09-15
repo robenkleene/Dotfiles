@@ -146,7 +146,7 @@ bind \eg _robenkleene-fzf-developer-widget
 bind © _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
-    set -l cmd "fd --type d --follow . ~/Text ~/Documentation"
+    set -l cmd "fd --type d --follow . ~/Text/Notes"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
@@ -168,7 +168,7 @@ end
 # bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
-    set -l cmd "fd --follow . ~/Text ~/Documentation"
+    set -l cmd "fd --follow . ~/Text/Notes"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result

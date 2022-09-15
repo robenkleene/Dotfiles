@@ -156,7 +156,7 @@ directory."
   (defun robenkleene/helm-text-edit ()
     "Edit documentation."
     (interactive)
-    (robenkleene/helm-recursive-find-file-or-dir "~/Text/")
+    (robenkleene/helm-recursive-find-file-or-dir "~/Text/Notes")
     )
 
   (defun robenkleene/helm-clipboard-history-candidates-process ()
