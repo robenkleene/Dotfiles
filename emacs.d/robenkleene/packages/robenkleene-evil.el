@@ -199,6 +199,8 @@
     (kbd "C") 'dired-do-copy)
   (evil-define-key 'normal dired-mode-map
     (kbd "+") 'dired-create-directory)
+  (evil-define-key 'normal dired-mode-map
+    (kbd "s") 'dired-sort-toggle-or-edit)
   ;; Languages
   (evil-define-key 'normal emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
