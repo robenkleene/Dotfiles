@@ -42,7 +42,7 @@
             ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
             ;; (local-set-key (kbd "C-x C-f") #'find-file)
             (dired-omit-mode)
-            ;; Hide details (showthem with "\("
+            ;; Hide details (show them with open parentheses)
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
