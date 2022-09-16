@@ -39,6 +39,6 @@ if [[ "$browse" == "true" ]]; then
 fi
 
 if [[ ! -f "$filepath" ]]; then
-  echo -e "# $date\n\n" >> "$filepath"
+  echo -e "# $date\n" >> "$filepath"
 fi
 echo -n "$filepath"
