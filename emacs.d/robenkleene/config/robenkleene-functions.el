@@ -716,6 +716,13 @@ With prefix arg, find the previous file."
     )
   )
 
+(defun robenkleene/grep-from-clipboard ()
+  "Grep buffer with clipboard."
+  (interactive)
+  (require 'grep)
+  (compilation-start "safepaste" 'grep-mode)
+  )
+
 (defun robenkleene/git-diff-grep ()
   "Search for REGEXP with optional FILES and DIR."
   (interactive)
