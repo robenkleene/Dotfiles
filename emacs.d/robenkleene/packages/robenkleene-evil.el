@@ -209,6 +209,10 @@
   (evil-define-key 'normal lisp-interaction-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
 
+  ;; ex
+  (evil-ex-define-cmd "Archive" 'robenkleene/archive-current-file)
+  (evil-ex-define-cmd "Rg" 'robenkleene/rg)
+
   ;; Prevent evil from forcing `set-mark-command' from entering visual mode
   ;; (which has weird side effects like breaking `forward-sexp')
   (add-hook 'evil-local-mode-hook
@@ -284,11 +288,10 @@
   ;;   )
 
   (use-package crux
-    :commands (crux-delete-file-and-buffer)
+    :commands (crux-delete-file-and-buffer crux-rename-file-and-buffer)
     :init
     (evil-ex-define-cmd "Remove" 'crux-delete-file-and-buffer)
     (evil-ex-define-cmd "Rename" 'crux-rename-file-and-buffer)
-    (evil-ex-define-cmd "Archive" 'robenkleene/archive-current-file)
     )
   )
 
