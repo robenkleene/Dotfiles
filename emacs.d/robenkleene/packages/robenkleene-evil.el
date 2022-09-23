@@ -107,6 +107,8 @@
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (define-key robenkleene/evil-leader-map (kbd "l") 'helm-occur)
   (define-key robenkleene/evil-leader-map (kbd "q") 'helm-resume)
+  (define-key robenkleene/evil-leader-map (kbd "`")
+    'robenkleene/other-window-eshell)
   (with-eval-after-load 'evil-maps
     ;; Normal
     (define-key evil-normal-state-map (kbd "C-w t")
