@@ -10,7 +10,7 @@
  '(helm-fd-switches
    '("--follow" "--hidden" "--exclude" ".git" "--exclude" ".hg" "--exclude" ".DS_Store" "--color" "never"))
  '(package-selected-packages
-   '(crux evil-numbers evil-commentary helm-swoop helm evil-goggles evil-terminal-cursor-changer evil-surround evil-visualstar evil expand-region diff-hl bind-key use-package undo-tree super-save flimenu move-text lsp-ui lsp-mode imenu-list literate-calc-mode nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex jade-mode aggressive-indent))
+   '(eglot crux evil-numbers evil-commentary helm-swoop helm evil-goggles evil-terminal-cursor-changer evil-surround evil-visualstar evil expand-region diff-hl bind-key use-package undo-tree super-save flimenu move-text lsp-ui lsp-mode imenu-list literate-calc-mode nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company page-break-lines smartparens rainbow-mode rainbow-delimiters magit yasnippet ido-completing-read+ flycheck editorconfig anzu iedit js2-mode fasd macrostep magit-filenotify bind-map wgrep smex jade-mode aggressive-indent))
  '(vc-annotate-color-map
    '((20 . "#F92672")
      (40 . "#CF4F1F")
