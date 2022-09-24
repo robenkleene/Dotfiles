@@ -24,10 +24,12 @@
                             company-files
                             company-gtags
                             company-etags
-                            company-dabbrev-code)
-                           company-capf
-                           company-ispell
-                           company-dabbrev))
+                            company-dabbrev-code
+                            company-capf
+                            company-ispell
+                            company-dabbrev
+                            )
+                           ))
   ;; (global-company-mode)
   ;; (setq company-global-modes '(not org-mode markdown-mode))
   (add-hook 'prog-mode-hook 'company-mode)
