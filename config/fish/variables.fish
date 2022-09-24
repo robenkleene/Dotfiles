@@ -12,9 +12,11 @@ set -gx EMACS_COMMAND "emacsclient -nw"
 set -gx VIM_COMMAND vim
 # set -gx VIM_COMMAND "nvim"
 set -gx BAT_COMMAND bat
-set -gx VISUAL "$VIM_COMMAND"
+# set -gx VISUAL "$VIM_COMMAND"
+set -gx VISUAL "$EMACS_COMMAND"
 set -gx EDITOR "$VISUAL"
 set -gx MD_EDITOR "$EMACS_COMMAND"
+# set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 set -gx PAGER less
 set -gx ACK_COMMAND rg
@@ -44,9 +46,6 @@ if type -q brew
 end
 set -gx VAGRANT_HOME ~/Documents/VMs/Vagrant/vagrant.d
 set -gx VAGRANT_VMWARE_CLONE_DIRECTORY ~/Documents/VMs/Vagrant/
-
-# Git
-set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
 
 # Tidy
 set -gx HTML_TIDY "$HOME/.tidy"
