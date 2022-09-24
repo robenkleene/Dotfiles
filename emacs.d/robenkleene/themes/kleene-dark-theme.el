@@ -47,7 +47,8 @@
     ("white" . "#ffffff")
     ("blue" . "#87AFDF")
     ("brightblue" . "#3792E3")
-    ("cyan" . "##00AFAF")
+    ;; For some reason cyan doesn't work as a color name?
+    ;; ("cyan" . "##00AFAF")
     ("brightcyan" . "#00FFFF")
     ("green" . "#75FF95")
     ("brightgreen" . "#BDDABD")
@@ -59,7 +60,7 @@
     ("brightyellow" . "#DADABD")
 
     ;; Palette
-    ("cyan1" . "#005f87")
+    ("cyan1" . "#00AFAF")
     ("cyan2" . "#008787")
     ("cyan3" . "#62D8E9")
     ("magenta2" . "#5f0087")
@@ -178,23 +179,23 @@
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
    ;;;; Syntax
-   `(font-lock-builtin-face ((t (:foreground, "#DADABD"))))
+   `(font-lock-builtin-face ((t (:foreground ,brightyellow))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
-   `(font-lock-constant-face ((t (:foreground, "#BDDABD"))))
+   `(font-lock-constant-face ((t (:foreground ,brightgreen))))
    `(font-lock-doc-face ((t (:foreground ,string))))
    `(font-lock-doc-string-face ((t (:foreground ,string))))
-   `(font-lock-function-name-face ((t (:foreground, "#DABDBD"))))
-   `(font-lock-keyword-face ((t (:foreground, "#87AFDF"))))
-   `(font-lock-negation-char-face ((t (:foreground, "#DABDBD"))))
-   `(font-lock-number-face ((t (:foreground, "#DBA3EB"))))
-   `(font-lock-preprocessor-face ((t (:foreground, "#87AFDF"))))
-   `(font-lock-reference-face ((t (:foreground, "#BDDABD"))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground, "#DBA3EB"))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground, "#DBA3EB"))))
-   `(font-lock-string-face ((t (:foreground, "#BDDABD"))))
-   `(font-lock-type-face ((t (:foreground, "#DADABD"))))
-   `(font-lock-variable-name-face ((t (:foreground, "#00AFAF"))))
+   `(font-lock-function-name-face ((t (:foreground ,cyan1))))
+   `(font-lock-keyword-face ((t (:foreground ,blue))))
+   `(font-lock-negation-char-face ((t (:foreground ,brightred))))
+   `(font-lock-number-face ((t (:foreground ,brightmagenta))))
+   `(font-lock-preprocessor-face ((t (:foreground ,brightblue))))
+   `(font-lock-reference-face ((t (:foreground ,brightgreen))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground ,brightmagenta))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,brightmagenta))))
+   `(font-lock-string-face ((t (:foreground ,brightgreen))))
+   `(font-lock-type-face ((t (:foreground ,brightyellow))))
+   `(font-lock-variable-name-face ((t (:foreground ,cyan1))))
    `(font-lock-warning-face ((t (:inherit rk-warning))))
 
    ;;;; User-Interface
@@ -471,7 +472,7 @@
 (kleene-dark-with-color-variables
   (custom-theme-set-variables
    'kleene-dark
-   `(ansi-color-names-vector [,black ,red ,green ,yellow ,blue ,magenta ,cyan ,white]))
+   `(ansi-color-names-vector [,black ,red ,green ,yellow ,blue ,magenta ,cyan1 ,white]))
   )
 
 (provide-theme 'kleene-dark)
