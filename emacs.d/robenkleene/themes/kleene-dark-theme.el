@@ -44,13 +44,13 @@
   '(
     ;; Ansi
     ("black" . "#000000")
+    ("white" . "#ffffff")
     ("blue" . "#0087ff")
     ("blue2" . "#87AFDF")
     ("cyan" . "#4AA4B0")
     ("green" . "#75FF95")
     ("magenta" . "#8700af")
     ("red" . "#FF8E8E")
-    ("white" . "#ffffff")
     ("yellow" . "#E5E64B")
 
     ;; Palette
@@ -68,6 +68,7 @@
 
     ;; Named
     ("comment" . gray4)
+    ("string" . green)
     ("success" . green)
     ("change" . blue)
     ("error" . red)
@@ -93,6 +94,7 @@
 (defface rk-callout '((t)) "Callout block" :group 'rk-faces)
 (defface rk-change '((t)) "Change" :group 'rk-faces)
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
+(defface rk-string '((t)) "String" :group 'rk-faces)
 (defface rk-diff-add '((t)) "Diff add" :group 'rk-faces)
 (defface rk-diff-change'((t)) "Diff change" :group 'rk-faces)
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
@@ -130,6 +132,7 @@
    `(rk-callout ((t (:background ,callout-bg))))
    `(rk-change ((t (:foreground ,change))))
    `(rk-comment ((t (:foreground ,comment))))
+   `(rk-string ((t (:foreground ,string))))
    `(rk-diff-add ((t (:inherit rk-success))))
    `(rk-diff-change ((t (:inherit rk-change))))
    `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
@@ -166,33 +169,36 @@
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
    ;;;; Syntax
-   `(font-lock-builtin-face ((t (:foreground, "#FFFFB6"))))
+   `(font-lock-builtin-face ((t (:foreground, "#DADABD"))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
-   `(font-lock-constant-face ((t (:foreground, "#99CC99"))))
-   `(font-lock-doc-face ((t (:foreground, "#A8FF60"))))
-   `(font-lock-doc-string-face ((t (:foreground, "#A8FF60"))))
-   `(font-lock-function-name-face ((t (:foreground, "#FFD2A7"))))
-   `(font-lock-keyword-face ((t (:foreground, "#96CBFE"))))
-   `(font-lock-negation-char-face ((t (:foreground, "#FF6C60"))))
-   `(font-lock-number-face ((t (:foreground, "#FF73FD"))))
-   `(font-lock-preprocessor-face ((t (:foreground, "#96CBFE"))))
-   `(font-lock-reference-face ((t (:foreground, "#99CC99"))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground, "#E9C"))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground, "#E9C"))))
-   `(font-lock-string-face ((t (:foreground, "#A8FF60"))))
-   `(font-lock-type-face ((t (:foreground, "#FFFFB6"))))
-   `(font-lock-variable-name-face ((t (:foreground, "#C6C5FE"))))
-   `(font-lock-warning-face ((t (:foreground, "#FF6C60"))))
+   `(font-lock-constant-face ((t (:foreground, "#BDDABD"))))
+   `(font-lock-doc-face ((t (:foreground ,string))))
+   `(font-lock-doc-string-face ((t (:foreground ,string))))
+   `(font-lock-function-name-face ((t (:foreground, "#DABDBD"))))
+   `(font-lock-keyword-face ((t (:foreground, "#87AFDF"))))
+   `(font-lock-negation-char-face ((t (:foreground, "#DABDBD"))))
+   `(font-lock-number-face ((t (:foreground, "#DBA3EB"))))
+   `(font-lock-preprocessor-face ((t (:foreground, "#87AFDF"))))
+   `(font-lock-reference-face ((t (:foreground, "#BDDABD"))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground, "#DBA3EB"))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground, "#DBA3EB"))))
+   `(font-lock-string-face ((t (:foreground, "#BDDABD"))))
+   `(font-lock-type-face ((t (:foreground, "#DADABD"))))
+   `(font-lock-variable-name-face ((t (:foreground, "#00AFAF"))))
+   `(font-lock-warning-face ((t (:inherit rk-warning))))
 
    ;;;; User-Interface
    `(default ((t (:foreground ,gray6))))
    `(hl-line ((t (:inherit rk-highlight-line))))
-   `(line-number-current-line ((t (:inherit rk-highlight-line :foreground ,white))))
+   `(line-number-current-line
+     ((t (:inherit rk-highlight-line :foreground ,white))))
    `(minibuffer-prompt ((t (:inherit rk-prompt))))
-   `(region ((t (:inherit rk-match :foreground ,white))))
+   ;; `(region ((t (:inherit rk-match :foreground ,white))))
+   `(region ((t (:inherit rk-match))))
    `(highlight ((t (:inherit rk-highlight :foreground nil))))
-   `(header-line ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
+   `(header-line
+     ((t (:inherit rk-header :underline t :background ,modeline-inactive-bg))))
    `(fringe ((t (:inherit rk-comment :background ,white))))
    `(line-number ((t (:inherit rk-comment))))
    `(match ((t (:inherit rk-match))))
@@ -208,6 +214,7 @@
    `(error ((t (:inherit rk-error))))
    `(warning ((t (:inherit rk-warning))))
    `(whitespace-space-after-tab ((t (:inherit rk-whitespace))))
+   `(whitespace-space-before-tab ((t (:inherit rk-whitespace))))
    `(whitespace-tab ((t (:inherit rk-whitespace))))
    `(trailing-whitespace ((t (:inherit rk-whitespace))))
    `(whitespace-line ((t (:inherit rk-warning))))
@@ -215,7 +222,9 @@
    ;;;; Mode Line
    `(mode-line-inactive ((t (:inherit rk-modeline-inactive))))
    `(mode-line ((t (:inherit rk-modeline-active))))
-   `(vertical-border ((t (:foreground ,modeline-inactive-bg :background ,modeline-inactive-bg))))
+   `(vertical-border ((t (:foreground
+                          ,modeline-inactive-bg
+                          :background ,modeline-inactive-bg))))
 
    ;;;; Search
    `(isearch ((t (:inherit rk-search))))

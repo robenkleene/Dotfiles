@@ -117,9 +117,11 @@
 
 ;; Transparency
 ;; For testing the current window (leave commented out)
+;; (set-frame-parameter (selected-frame) 'alpha '(100 100))
 ;; (set-frame-parameter (selected-frame) 'alpha '(96 96))
 ;; The actual setting
-(add-to-list 'default-frame-alist '(alpha 96 96))
+;; (add-to-list 'default-frame-alist '(alpha 96 96))
+(add-to-list 'default-frame-alist '(alpha 100 100))
 
 ;; Improve compatibility of macOS dark mode
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
