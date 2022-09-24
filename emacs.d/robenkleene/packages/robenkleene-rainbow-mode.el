@@ -8,6 +8,7 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook #'rainbow-mode)
+  (add-hook 'text-mode-hook #'rainbow-mode)
   )
 
 (provide 'robenkleene-rainbow-mode)
