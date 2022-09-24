@@ -47,11 +47,16 @@
     ("white" . "#ffffff")
     ("blue" . "#87AFDF")
     ("brightblue" . "#3792E3")
-    ("cyan" . "#4AA4B0")
+    ("cyan" . "##00AFAF")
+    ("brightcyan" . "#00FFFF")
     ("green" . "#75FF95")
-    ("magenta" . "#8700af")
-    ("red" . "#FF8E8E")
+    ("brightgreen" . "#BDDABD")
+    ("magenta" . "#C978EB")
+    ("brightmagenta" . "#DBA3EB")
+    ("red" . "#D75F00")
+    ("brightred" . "#DABDBD")
     ("yellow" . "#E5E64B")
+    ("brightyellow" . "#DADABD")
 
     ;; Palette
     ("cyan1" . "#005f87")
@@ -241,8 +246,9 @@
    `(ido-subdir ((t (:inherit link :underline nil))))
 
    ;;;; Ido
-   `(evil-ex-info ((t (:inherit rk-warning-highlight))))
-   `(evil-ex-substitute-replacement ((t (:inherit rk-change-highlight))))
+   `(evil-ex-info ((t (:inherit rk-warning :bold t :underline nil))))
+   `(evil-ex-substitute-replacement
+     ((t (:inherit rk-change-highlight))))
 
    ;;;; Compilation (used for grep)
    `(compilation-line-number ((t (:inherit rk-comment))))
