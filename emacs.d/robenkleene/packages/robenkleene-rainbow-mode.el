@@ -4,7 +4,10 @@
 
 (eval-when-compile (require 'use-package))
 (use-package rainbow-mode
-  :commands rainbow-mode
+  ;; :commands rainbow-mode
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-mode)
   )
 
 (provide 'robenkleene-rainbow-mode)
