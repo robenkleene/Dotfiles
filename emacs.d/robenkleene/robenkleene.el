@@ -65,6 +65,7 @@
 (require 'robenkleene-csv)
 (require 'robenkleene-css)
 (require 'robenkleene-objective-c)
+(require 'robenkleene-git-commit)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
