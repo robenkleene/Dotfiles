@@ -63,7 +63,7 @@
     ("cyan1" . "#00AFAF")
     ("cyan2" . "#008787")
     ("cyan3" . "#62D8E9")
-    ("magenta2" . "#5f0087")
+    ("purple" . "#5f0087")
     ("gray0" . "#303030")
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
@@ -88,7 +88,7 @@
     ("modeline-inactive-fg" . gray5)
     ("search-bg" . magenta)
     ("search-fg" . gray4)
-    ("match-bg" . magenta2)
+    ("match-bg" . purple)
     ("match-fg" . gray4)
     ("warning" . yellow)
 
@@ -246,7 +246,7 @@
    `(ido-only-match ((t (:inherit rk-search :bold t))))
    `(ido-subdir ((t (:inherit link :underline nil))))
 
-   ;;;; Ido
+   ;;;; Evil
    `(evil-ex-info ((t (:inherit rk-warning :bold t :underline nil))))
    `(evil-ex-substitute-replacement
      ((t (:inherit rk-change-highlight))))
