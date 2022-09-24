@@ -93,6 +93,7 @@
 (defface rk-bold'((t)) "Header" :group 'rk-faces)
 (defface rk-callout '((t)) "Callout block" :group 'rk-faces)
 (defface rk-change '((t)) "Change" :group 'rk-faces)
+(defface rk-change-highlight '((t)) "Change Highlight" :group 'rk-faces)
 (defface rk-comment '((t)) "Comments" :group 'rk-faces)
 (defface rk-string '((t)) "String" :group 'rk-faces)
 (defface rk-diff-add '((t)) "Diff add" :group 'rk-faces)
@@ -119,6 +120,7 @@
 (defface rk-text '((t)) "Text" :group 'rk-faces)
 (defface rk-text2 '((t)) "Text 2" :group 'rk-faces)
 (defface rk-warning '((t)) "Warning" :group 'rk-faces)
+(defface rk-warning-highlight '((t)) "Warning Highlight" :group 'rk-faces)
 (defface rk-whitespace '((t)) "Whitespace" :group 'rk-faces)
 
 ;;; Theme
@@ -131,6 +133,7 @@
    `(rk-bold ((t (:inherit rk-header))))
    `(rk-callout ((t (:background ,callout-bg))))
    `(rk-change ((t (:foreground ,change))))
+   `(rk-change-highlight ((t (:background ,change))))
    `(rk-comment ((t (:foreground ,comment))))
    `(rk-string ((t (:foreground ,string))))
    `(rk-diff-add ((t (:inherit rk-success))))
@@ -139,7 +142,8 @@
    `(rk-error ((t (:foreground ,error :underline t))))
    `(rk-error-highlight ((t (:background ,error))))
    `(rk-italic ((t (:inherit rk-text :slant oblique))))
-   `(rk-warning-highlight ((t (:background ,warning))))
+   `(rk-warning-highlight
+     ((t (:background ,warning :foreground ,black :bold t))))
    `(rk-header ((t (:foreground ,gray6 :bold t))))
    `(rk-highlight-line ((t (:background ,highlight-line-bg))))
    `(rk-highlight ((t (:background ,match-bg))))
@@ -235,6 +239,10 @@
    `(ido-first-match ((t (:inherit rk-search :bold t))))
    `(ido-only-match ((t (:inherit rk-search :bold t))))
    `(ido-subdir ((t (:inherit link :underline nil))))
+
+   ;;;; Ido
+   `(evil-ex-info ((t (:inherit rk-warning-highlight))))
+   `(evil-ex-substitute-replacement ((t (:inherit rk-change-highlight))))
 
    ;;;; Compilation (used for grep)
    `(compilation-line-number ((t (:inherit rk-comment))))
