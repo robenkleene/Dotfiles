@@ -245,6 +245,7 @@
    `(ido-first-match ((t (:inherit rk-search :bold t))))
    `(ido-only-match ((t (:inherit rk-search :bold t))))
    `(ido-subdir ((t (:inherit link :underline nil))))
+   `(completions-common-part ((t (:inherit rk-prompt))))
 
    ;;;; Evil
    `(evil-ex-info ((t (:inherit rk-warning :bold t :underline nil))))
