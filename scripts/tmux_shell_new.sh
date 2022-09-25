@@ -14,12 +14,12 @@ elif [[ "$(uname)" = "Linux" ]]; then
 fi
 
 # if we're already in a shell session, switch back to the previous session
-if [[ -n "$TMUX" ]]; then
-  if tmux display-message -p '#S' | grep -q $flag "^\d+$"; then
-    tmux switch-client -l || exit 0
-    exit 0
-  fi
-fi
+# if [[ -n "$TMUX" ]]; then
+#   if tmux display-message -p '#S' | grep -q $flag "^\d+$"; then
+#     tmux switch-client -l || exit 0
+#     exit 0
+#   fi
+# fi
 
 unattached_shell=$(tmux list-sessions -F "#{session_name} #{session_attached}" \
   | grep $flag "^\d+ 0$" | head -1 | tr -d '\n')
