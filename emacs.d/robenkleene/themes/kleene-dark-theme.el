@@ -169,7 +169,7 @@
    `(rk-popup-match ((t (:foreground ,link))))
    `(rk-popup-selection ((t (:inherit rk-match))))
    `(rk-prompt ((t (:inherit rk-match :bold t))))
-   `(rk-search ((t (:background ,search-bg))))
+   `(rk-search ((t (:background ,search-bg :foreground ,white))))
    `(rk-success ((t (:foreground ,success))))
    `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
    `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
