@@ -15,6 +15,7 @@ alias e='emacsclient_wrapper'
 alias gemacs='emacs_app'
 alias excel='open -a "Microsoft Excel"'
 
+alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
 # Override
 
 # fd
