@@ -24,7 +24,6 @@ source ~/.config/fish/vendor/chruby/auto.fish
 # chruby ruby-2.5.3
 
 # Python
-
 if test -d $HOME/.pyenv
     set -Ux PYENV_ROOT $HOME/.pyenv
     pyenv init - | source
