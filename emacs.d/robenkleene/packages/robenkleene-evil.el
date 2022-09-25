@@ -20,6 +20,7 @@
         )
   :init
   ;; (setq evil-toggle-key "")
+
   ;; hl-line in normal mode & cursor fix
   (add-hook 'evil-mode-hook
             (lambda ()
