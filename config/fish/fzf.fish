@@ -168,7 +168,7 @@ end
 # bind ø _robenkleene-fzf-quick-widget
 
 function _robenkleene-fzf-quick-files-widget
-    set -l cmd "fd --follow . ~/Text/Notes"
+    set -l cmd "fd --follow . ~/Documents/Text/Notes"
     set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
