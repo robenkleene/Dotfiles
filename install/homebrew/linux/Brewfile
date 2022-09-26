@@ -47,6 +47,7 @@ brew 'shellcheck'
 brew 'binutils'
 brew 'libssh2'
 brew 'patchelf'
+brew 'wasm-pack'
 # C
 brew 'valgrind'
 # json
