@@ -21,6 +21,13 @@ fi
 #   fi
 # fi
 
+# If we're already in a shell session, just exit
+if [[ -n "$TMUX" ]]; then
+  if tmux display-message -p '#S' | grep -q $flag "^\d+$"; then
+    exit 0
+  fi
+fi
+
 unattached_shell=$(tmux list-sessions -F "#{session_name} #{session_attached}" \
   | grep $flag "^\d+ 0$" | head -1 | tr -d '\n')
 if [[ -z "$unattached_shell" ]]; then
