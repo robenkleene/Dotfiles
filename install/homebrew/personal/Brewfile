@@ -52,6 +52,8 @@ brew 'sbcl'
 # Go
 brew 'go'
 brew 'jq'
+# Rust
+brew 'wasm-pack'
 
 # Special
 brew 'pandoc'
