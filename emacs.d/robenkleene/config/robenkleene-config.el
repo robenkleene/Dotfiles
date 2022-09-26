@@ -362,19 +362,6 @@
 ;; Removes massive slow down with large `hg' repos
 (setq vc-handled-backends '(Git))
 
-;; Theoretically this would be clear in `delete-frame-functions' but for
-;; `emacsclient' connections that's being called after the frame is deleted and
-;; the `default-directory' is then wrong
-(defadvice delete-frame
-    (before robenkleene/delete-frame-chdir activate)
-  "Write to chdir."
-  (write-region
-   (expand-file-name default-directory)
-   nil
-   "/tmp/vim.robenkleene/chdir/chdir"
-   )
-  )
-
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

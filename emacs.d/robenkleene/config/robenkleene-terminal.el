@@ -63,6 +63,19 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
   'robenkleene/backward-block)
 
+;; Theoretically this would be clear in `delete-frame-functions' but for
+;; `emacsclient' connections that's being called after the frame is deleted and
+;; the `default-directory' is then wrong
+(defadvice delete-frame
+    (before robenkleene/delete-frame-chdir activate)
+  "Write to chdir."
+  (write-region
+   (expand-file-name default-directory)
+   nil
+   "/tmp/vim.robenkleene/chdir/chdir"
+   )
+  )
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
