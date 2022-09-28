@@ -208,6 +208,8 @@
     (kbd "s") 'dired-sort-toggle-or-edit)
   (evil-define-key 'normal dired-mode-map
     (kbd "\(") 'dired-hide-details-mode)
+  (evil-define-key 'normal dired-mode-map
+    (kbd "g h") 'dired-omit-mode)
   ;; Languages
   (evil-define-key 'normal emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
