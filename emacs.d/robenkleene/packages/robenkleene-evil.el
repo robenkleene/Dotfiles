@@ -199,6 +199,8 @@
   (evil-define-key 'normal dired-mode-map
     (kbd "R") 'dired-do-rename)
   (evil-define-key 'normal dired-mode-map
+    (kbd "D") 'dired-do-delete)
+  (evil-define-key 'normal dired-mode-map
     (kbd "C") 'dired-do-copy)
   (evil-define-key 'normal dired-mode-map
     (kbd "+") 'dired-create-directory)
