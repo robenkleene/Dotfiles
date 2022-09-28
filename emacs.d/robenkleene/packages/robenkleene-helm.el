@@ -16,9 +16,9 @@
   :bind
   ;; ("M-A" . helm-do-rg)
   ("M-/" . robenkleene/helm-text-edit)
-  ;; ("M-e" . robenkleene/helm-recursive-find-file)
-  ;; ("M-o" . robenkleene/helm-recursive-find-file)
-  ;; ("M-c" . robenkleene/helm-recursive-find-dir)
+  ("M-e" . robenkleene/helm-recursive-find-file)
+  ("M-o" . robenkleene/helm-recursive-find-file)
+  ("M-c" . robenkleene/helm-recursive-find-dir)
   ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
