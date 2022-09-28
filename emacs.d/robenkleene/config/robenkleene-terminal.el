@@ -69,11 +69,13 @@
 (defadvice delete-frame
     (before robenkleene/delete-frame-chdir activate)
   "Write to chdir."
-  (write-region
-   (expand-file-name default-directory)
-   nil
-   "/tmp/vim.robenkleene/chdir/chdir"
-   )
+  (if (file-exists-p "/tmp/vim.robenkleene/chdir/chdir")
+      (write-region
+       (expand-file-name default-directory)
+       nil
+       "/tmp/vim.robenkleene/chdir/chdir"
+       )
+    )
   )
 
 (provide 'robenkleene-terminal)
