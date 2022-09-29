@@ -127,7 +127,9 @@ function fish_sync_abbr
     # Mercurial
     abbr -a hgdb 'hg diff --root . -r "bottom^"'
     abbr -a hgdbs 'hg diff --root . -r "bottom^" --stat'
-    abbr -a hgdbf 'hg status --rev bottom -n'
+    # This wasn't showing added files
+    # abbr -a hgdbf 'hg status --rev bottom -n'
+    abbr -a hgdbf 'hg status --change bottom'
     abbr -a hgd1 'hg diff --root . -pr .^1'
     abbr -a hgdl 'hg diff --root . -pr .^1'
     abbr -a hgdln 'hg diff --root . -pr .^1'
@@ -148,7 +150,7 @@ function fish_sync_abbr
     abbr -a hgsf 'hg status --no-status'
     abbr -a hgsfb 'hg status --no-status --rev bottom^'
     abbr -a hgfb 'hg status --no-status --rev bottom^'
-    abbr -a hgcleanup 'hg purge && hg checkout --clean .'
+    abbr -a hgcleanup 'hg purge && hg checkout --clean . && hg status'
     # New
     abbr -a tre "tr -d '\n'"
     abbr -a ore "open -R"
