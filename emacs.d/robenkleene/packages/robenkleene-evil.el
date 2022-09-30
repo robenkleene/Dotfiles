@@ -120,6 +120,8 @@
   (define-key robenkleene/evil-leader-map (kbd "q") 'helm-resume)
   (define-key robenkleene/evil-leader-map (kbd "`")
     'robenkleene/other-window-eshell)
+  (define-key robenkleene/evil-leader-map (kbd "b")
+    'helm-buffers-list)
   (with-eval-after-load 'evil-maps
     ;; Normal
     (define-key evil-normal-state-map (kbd "C-w t")
