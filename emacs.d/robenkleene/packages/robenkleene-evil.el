@@ -197,34 +197,34 @@
   ;; Evil Goggles is broken for this
   ;; (evil-define-key 'normal global-map (kbd "Y") (kbd "y$"))
   (evil-define-key 'normal global-map
-    (kbd "Y")
-    (lambda () (interactive)
-      (evil-goggles--show-blocking-hint (point) (line-end-position))
-      (evil-yank (point) (line-end-position))))
+                   (kbd "Y")
+                   (lambda () (interactive)
+                     (evil-goggles--show-blocking-hint (point) (line-end-position))
+                     (evil-yank (point) (line-end-position))))
 
   ;; Along crossing lines by moving past end of line
   (setq-default evil-cross-lines t)
 
   ;; Modes
   (evil-define-key 'normal dired-mode-map
-    (kbd "R") 'dired-do-rename)
+                   (kbd "R") 'dired-do-rename)
   (evil-define-key 'normal dired-mode-map
-    (kbd "D") 'dired-do-delete)
+                   (kbd "D") 'dired-do-delete)
   (evil-define-key 'normal dired-mode-map
-    (kbd "C") 'dired-do-copy)
+                   (kbd "C") 'dired-do-copy)
   (evil-define-key 'normal dired-mode-map
-    (kbd "+") 'dired-create-directory)
+                   (kbd "+") 'dired-create-directory)
   (evil-define-key 'normal dired-mode-map
-    (kbd "s") 'dired-sort-toggle-or-edit)
+                   (kbd "s") 'dired-sort-toggle-or-edit)
   (evil-define-key 'normal dired-mode-map
-    (kbd "\(") 'dired-hide-details-mode)
+                   (kbd "\(") 'dired-hide-details-mode)
   (evil-define-key 'normal dired-mode-map
-    (kbd "g h") 'dired-omit-mode)
+                   (kbd "g h") 'dired-omit-mode)
   ;; Languages
   (evil-define-key 'normal emacs-lisp-mode-map
-    (kbd "K") 'robenkleene/describe-thing-at-point)
+                   (kbd "K") 'robenkleene/describe-thing-at-point)
   (evil-define-key 'normal lisp-interaction-mode-map
-    (kbd "K") 'robenkleene/describe-thing-at-point)
+                   (kbd "K") 'robenkleene/describe-thing-at-point)
 
   ;; ex
   (evil-ex-define-cmd "Archive" 'robenkleene/archive-current-file)
