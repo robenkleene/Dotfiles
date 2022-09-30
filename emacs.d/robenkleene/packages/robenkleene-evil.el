@@ -46,6 +46,16 @@
   (add-hook 'evil-normal-state-entry-hook (lambda () (hl-line-mode +1)))
   (add-hook 'evil-normal-state-exit-hook (lambda () (hl-line-mode -1)))
 
+
+  (setq
+   ;; evil-normal-state-tag
+   ;; (propertize " <N> " 'face '((:background "red" :foreground "black")))
+   evil-insert-state-tag
+   (propertize " <I> " 'face '((:background "cyan")))
+   evil-emacs-state-tag
+   (propertize " <E> " 'face '((:background "blue")))
+   )
+
   ;; Save when exiting insert mode
   (add-hook 'evil-insert-state-exit-hook
             'robenkleene/save-buffer-if-visiting-file)
