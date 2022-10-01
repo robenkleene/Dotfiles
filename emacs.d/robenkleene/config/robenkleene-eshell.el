@@ -9,7 +9,12 @@
   (add-hook
    'eshell-mode-hook
    (lambda ()
+     ;; For some reason eshell input uses this face
+     (face-remap-add-relative
+      'markdown-inline-code-face '(:foreground "white"))
+
      (setq pcomplete-cycle-completions nil)
+
      ;; Bindings
      (define-key eshell-mode-map (kbd "C-u") 'eshell-kill-input)
      )
