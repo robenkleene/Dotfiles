@@ -12,6 +12,7 @@ bind \cx\ce edit_command_buffer
 # These characters sometimes get input from macOS's accented character system
 bind ˜ true
 bind õ true
+bind ã true
 # Merge history first when doing a search
 # bind -k up 'history --merge ; up-or-search'
 # For some reason the above doesn't get picked up, but below does
