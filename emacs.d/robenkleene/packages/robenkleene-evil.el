@@ -51,9 +51,9 @@
    ;; evil-normal-state-tag
    ;; (propertize " <N> " 'face '((:background "red" :foreground "black")))
    evil-insert-state-tag
-   (propertize " <I> " 'face '((:background "cyan")))
+   (propertize " <I> " 'face '((:background "cyan" :foreground "white")))
    evil-emacs-state-tag
-   (propertize " <E> " 'face '((:background "blue")))
+   (propertize " <E> " 'face '((:background "blue" :foreground "white")))
    )
 
   ;; Save when exiting insert mode
