@@ -20,6 +20,11 @@
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
   (define-key dired-mode-map (kbd "M-RET") 'robenkleene/readme)
   (define-key dired-mode-map (kbd "-") 'dired-jump)
+  (defun robenkleene/dired-open-files (&optional arg)
+    "Open marked files."
+    (interactive)
+    (dired-do-shell-command "~/.bin/open_custom" nil (dired-get-marked-files))
+    )
   ;; Suppress error message
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)
