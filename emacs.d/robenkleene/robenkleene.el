@@ -15,6 +15,7 @@
 (require 'robenkleene-bindings)
 (require 'robenkleene-alias)
 (require 'robenkleene-dired)
+(require 'robenkleene-eshell)
 (if window-system
     (progn
       (require 'robenkleene-gui)
