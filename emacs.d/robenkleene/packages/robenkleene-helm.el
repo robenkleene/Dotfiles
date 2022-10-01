@@ -11,6 +11,7 @@
              robenkleene/helm-documentation-edit
              robenkleene/helm-text-edit
              robenkleene/helm-clipboard-history-copy
+             robenkleene/helm-z
              helm-find-files-or-marked
              helm-occur)
   :bind
@@ -19,6 +20,7 @@
   ("M-e" . robenkleene/helm-recursive-find-file)
   ("M-o" . robenkleene/helm-recursive-find-file)
   ("M-c" . robenkleene/helm-recursive-find-dir)
+  ("M-z" . robenkleene/helm-z)
   ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
@@ -198,6 +200,20 @@ directory."
           :buffer "*helm clipboard history*"
           )
     )
+
+
+  (defun robenkleene/helm-z ()
+    "helm z."
+    (interactive)
+    (find-file (helm-comp-read
+                "Z: "
+                (split-string
+                 (shell-command-to-string
+                  "fasd -dl | sort | sed 's/\\/$//' | uniq")
+                 "\n"
+                 t)))
+    )
+
   )
 
 (provide 'robenkleene-helm)

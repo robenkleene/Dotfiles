@@ -94,8 +94,8 @@
 ;; ido
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-g")
   'robenkleene/ido-quick-developer)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
-  'robenkleene/ido-z)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
+;;   'robenkleene/ido-z)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-\\")
   'robenkleene/ido-clipboard-history-copy)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-x C-b")
