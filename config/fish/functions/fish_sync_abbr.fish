@@ -41,7 +41,8 @@ function fish_sync_abbr
     abbr -a tmls 'tmux ls'
     abbr -a tmsn 'tmux new'
     abbr -a tmd 'tmux detach'
-    abbr -a mdv 'mosh aresdev -- tmux attach'
+    abbr -a mdv 'mosh aresdev'
+    abbr -a mdvt 'mosh aresdev -- tmux attach'
     abbr -a m make
     abbr -a hpr 'hub pull-request'
     abbr -a hprm 'hub pull-request -m'
