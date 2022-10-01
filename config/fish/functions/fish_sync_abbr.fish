@@ -31,6 +31,7 @@ function fish_sync_abbr
     abbr -a fdF "fd -F"
     abbr -a fdI "fd -I"
     abbr -a 0fd 'fd -0'
+    abbr -a rlf 'readlink -f'
     abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
     abbr -a tl tig
