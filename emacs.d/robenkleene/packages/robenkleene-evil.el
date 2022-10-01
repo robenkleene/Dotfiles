@@ -222,6 +222,8 @@
     (kbd "\(") 'dired-hide-details-mode)
   (evil-define-key 'normal dired-mode-map
     (kbd "g h") 'dired-omit-mode)
+  (evil-define-key 'normal dired-mode-map
+    (kbd "m") 'dired-mark)
   ;; Languages
   (evil-define-key 'normal emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)
