@@ -716,10 +716,17 @@ With prefix arg, find the previous file."
     )
   )
 
+(defun robenkleene/compilation-next-once (buffer desc)
+  "Run once after compilation."
+  (robenkleene/next)
+  (remove-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
+  )
+
 (defun robenkleene/grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
+  (add-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 
