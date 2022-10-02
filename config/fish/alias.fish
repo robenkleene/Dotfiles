@@ -97,8 +97,8 @@ alias nrac='npm run autocorrect'
 # `emacs`
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
-alias eks='emacs_kill_server'
-alias ers='emacs_reset_server'
+alias esk='emacs_kill_server'
+alias esr='emacs_reset_server'
 alias eq='emacs_grep'
 
 # TUI change dir
