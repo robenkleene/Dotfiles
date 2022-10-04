@@ -122,6 +122,9 @@
     'robenkleene/other-window-eshell)
   (define-key robenkleene/evil-leader-map (kbd "b")
     'helm-buffers-list)
+  (define-key robenkleene/evil-leader-map (kbd "w")
+    'toggle-truncate-lines)
+
   (with-eval-after-load 'evil-maps
     ;; Normal
     (define-key evil-normal-state-map (kbd "C-w t")
