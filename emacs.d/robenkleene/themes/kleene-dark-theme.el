@@ -54,7 +54,7 @@
     ("brightgreen" . "#BDDABD")
     ("magenta" . "#C978EB")
     ("brightmagenta" . "#DBA3EB")
-    ("red" . "#D75F00")
+    ("red" . "#9D571A")
     ("brightred" . "#DABDBD")
     ("yellow" . "#E5E64B")
     ("brightyellow" . "#DADABD")
