@@ -52,4 +52,9 @@ function fish_set_user_paths
     if test -d $HOME/.cargo/bin
         set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
     end
+
+    # Android
+    if test -n "$ANDROID_SDK"
+        fish_add_path {$ANDROID_SDK}/emulator {$ANDROID_SDK}/tools {$ANDROID_SDK}/tools/bin {$ANDROID_SDK}/platform-tools
+    end
 end
