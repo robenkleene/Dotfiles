@@ -113,8 +113,8 @@
 ;; Leader Map
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
 ;;   robenkleene/leader-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-  robenkleene/leader-map)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
+;;   robenkleene/leader-map)
 ;; Mac-like save in terminal and GUI
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map

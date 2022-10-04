@@ -17,7 +17,7 @@ let g:fzf_preview_window = ['right:50%:wrap']
 
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :BLines<CR>
-nnoremap <M-a>l :BLines<CR>
+" nnoremap <M-a>l :BLines<CR>
 " nnoremap <leader>f :Files<CR>
 nnoremap <M-o> :CheckHomeSubdirectory<CR>:Files<CR>
 nnoremap <M-e> :CheckHomeSubdirectory<CR>:Files<CR>
@@ -56,20 +56,21 @@ nnoremap <M-i> :FZFTags<CR>
 inoremap <M-c> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeCdinsert<CR>
 inoremap <M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-e> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
-inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
+" inoremap <M-a><M-o> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeFilesinsert<CR>
 inoremap <M-z> <C-\><C-o>:CheckHomeSubdirectory<CR><C-\><C-o>:RelativeZinsert<CR>
 nnoremap <leader>a :RG<CR>
-nnoremap <A-a>a :RG<CR>
-nnoremap <C-u><A-a>a :RGL<CR>
+" nnoremap <A-a>a :RG<CR>
+nnoremap <M-a> :RG<CR>
+" nnoremap <C-u><A-a>a :RGL<CR>
 " These don't work for some reason
 " inoremap <M-\> :ClipboardHistoryInsert<CR>
 " nnoremap <M-\> :ClipboardHistoryCopy<CR>
 inoremap <C-\> <C-\><C-o>:ClipboardHistoryInsert<CR>
 nnoremap <C-\> :ClipboardHistoryCopy<CR>
 vnoremap <C-\> :ClipboardHistoryInsert<CR>
-inoremap <M-a>\ <C-\><C-o>:ClipboardHistoryInsert<CR>
-nnoremap <M-a>\ :ClipboardHistoryCopy<CR>
-vnoremap <M-a>\ :ClipboardHistoryInsert<CR>
+" inoremap <M-a>\ <C-\><C-o>:ClipboardHistoryInsert<CR>
+" nnoremap <M-a>\ :ClipboardHistoryCopy<CR>
+" vnoremap <M-a>\ :ClipboardHistoryInsert<CR>
 " inoremap \ :ClipboardHistoryInsert<CR>
 " nnoremap \ :ClipboardHistoryCopy<CR>
 
@@ -98,7 +99,7 @@ if has('nvim')
   snoremap <M-c> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeCdinsert<CR>
   snoremap <M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
   snoremap <M-e> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
-  snoremap <M-a><M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
+  " snoremap <M-a><M-o> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeFilesinsert<CR>
   snoremap <M-z> <ESC>:CheckHomeSubdirectory<CR>gvd:RelativeZinsert<CR>
 endif
 
