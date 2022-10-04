@@ -21,6 +21,7 @@
   ("M-o" . robenkleene/helm-recursive-find-file)
   ("M-c" . robenkleene/helm-recursive-find-dir)
   ("M-z" . robenkleene/helm-z)
+  ("M-a" . robenkleene/helm-ag-in-directory)
   ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
