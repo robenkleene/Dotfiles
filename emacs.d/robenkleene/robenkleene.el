@@ -8,6 +8,10 @@
 
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
+(if (file-exists-p "~/.emacs_local.el")
+    (load-file "~/.emacs_local.el")
+  )
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
 (require 'robenkleene-config)
 (require 'robenkleene-functions)
