@@ -171,6 +171,7 @@
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
+    (define-key evil-motion-state-map (kbd "g f") 'find-file-at-point)
     ;; You can't `p' to paste if you're in `set-mark-command' so just always go
     ;; to insert mode in order to use `C-y' for paste. It's too confusing
     ;; otherwise.
