@@ -233,6 +233,8 @@
     (kbd "!") 'dired-do-shell-command)
   (evil-define-key 'normal dired-mode-map
     (kbd "o") 'robenkleene/dired-open-files)
+  (evil-define-key 'normal dired-mode-map
+    (kbd "u") 'dired-unmark)
   ;; Languages
   (evil-define-key 'normal emacs-lisp-mode-map
     (kbd "K") 'robenkleene/describe-thing-at-point)

@@ -41,6 +41,7 @@
 (defalias 'prj 'robenkleene/ido-project-open)
 ;; (defalias 'frq 'robenkleene/ido-frequent-open-file-or-dir)
 (defalias 'frq 'robenkleene/helm-text-edit)
+(defalias 'dired-write 'dired-toggle-read-only)
 
 ;; Buffers & Files
 (defalias 'daily-browse 'robenkleene/browse-daily)
