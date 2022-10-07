@@ -42,6 +42,9 @@
 ;; (defalias 'frq 'robenkleene/ido-frequent-open-file-or-dir)
 (defalias 'frq 'robenkleene/helm-text-edit)
 (defalias 'dired-write 'dired-toggle-read-only)
+(defalias 'terminal (lambda ()
+                      (interactive)
+                      (eshell "new")))
 
 ;; Buffers & Files
 (defalias 'daily-browse 'robenkleene/browse-daily)
