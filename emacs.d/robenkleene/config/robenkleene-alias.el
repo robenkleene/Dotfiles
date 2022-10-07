@@ -44,6 +44,8 @@
 (defalias 'dired-write 'dired-toggle-read-only)
 (defalias 'terminal (lambda ()
                       (interactive)
+                      (split-window)
+                      (other-window 1)
                       (eshell "new")))
 
 ;; Buffers & Files
