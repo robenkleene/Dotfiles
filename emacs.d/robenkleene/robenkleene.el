@@ -46,7 +46,6 @@
 (require 'robenkleene-company)
 (require 'robenkleene-literate-calc-mode)
 (require 'robenkleene-imenu-list)
-;; (require 'robenkleene-lsp)
 (require 'robenkleene-move-text)
 (require 'robenkleene-flimenu)
 (require 'robenkleene-super-save)
@@ -55,7 +54,8 @@
 (require 'robenkleene-expand-region)
 (require 'robenkleene-evil)
 (require 'robenkleene-helm)
-;; (require 'robenkleene-eglot)
+;; (require 'robenkleene-lsp)
+(require 'robenkleene-eglot)
 (require 'robenkleene-fasd)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
@@ -73,6 +73,7 @@
 (require 'robenkleene-css)
 (require 'robenkleene-objective-c)
 (require 'robenkleene-git-commit)
+(require 'robenkleene-rust)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

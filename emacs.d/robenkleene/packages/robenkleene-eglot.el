@@ -17,7 +17,13 @@
               ("C-c r" . eglot-rename)
               ("C-c a" . eglot-code-actions))
   :config
+
+  ;; Turn off automatic syntax checking
+  ;; (setq eglot-send-changes-idle-time (* 60 60))
+
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  ;; Disable minibuffer docs
+  ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
   )
 
 (provide 'robenkleene-eglot)
