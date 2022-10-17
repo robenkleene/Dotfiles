@@ -48,6 +48,7 @@ brew 'binutils'
 brew 'libssh2'
 brew 'patchelf'
 brew 'wasm-pack'
+brew 'rust-analyzer'
 # C
 brew 'valgrind'
 # json

@@ -54,6 +54,7 @@ brew 'go'
 brew 'jq'
 # Rust
 brew 'wasm-pack'
+brew 'rust-analyzer'
 
 # Special
 brew 'pandoc'
