@@ -21,7 +21,10 @@
   ;; Turn off automatic syntax checking
   ;; (setq eglot-send-changes-idle-time (* 60 60))
 
+  ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  (add-to-list 'eglot-server-programs '(rustic-mode . "rust-analyzer"))
+
   ;; Disable minibuffer docs
   ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
   )
