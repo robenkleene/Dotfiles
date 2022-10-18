@@ -4,7 +4,7 @@
 
 (use-package eglot
   :defines (eglot-mode-map eglot-server-programs)
-  :hook (((c-mode c++-mode) . eglot-ensure))
+  :hook (((c-mode c++-mode rust-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
               ("C-c r" . eglot-rename)
               ("C-c f r" . xref-find-references)
@@ -23,7 +23,7 @@
 
   ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-  (add-to-list 'eglot-server-programs '(rustic-mode . "rust-analyzer"))
+  (add-to-list 'eglot-server-programs '(rust . "rust-analyzer"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
@@ -31,7 +31,7 @@
   ;;                  )))
 
   ;; Disable minibuffer docs
-  ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
+  (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
   )
 
 (provide 'robenkleene-eglot)

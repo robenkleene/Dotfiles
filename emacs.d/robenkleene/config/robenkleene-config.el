@@ -362,6 +362,15 @@
 ;; Removes massive slow down with large `hg' repos
 (setq vc-handled-backends '(Git))
 
+(defun robenkleene/project-override (dir)
+  "Override project function with DIR."
+  (let ((override (locate-dominating-file dir ".project.el")))
+    (if override
+        (cons 'vc override)
+      nil)))
+
+(add-hook 'project-find-functions #'robenkleene/project-override)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
