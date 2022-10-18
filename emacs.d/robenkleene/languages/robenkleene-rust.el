@@ -2,12 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package rustic
-  :config
-  (setq
-   ;; rustic-lsp-client 'eglot
-   rustic-format-on-save nil
-   )
+;; (use-package rustic
+;;   :config
+;;   (setq
+;;    rustic-lsp-client 'eglot
+;;    rustic-format-on-save nil
+;;    )
+;;   )
+
+(use-package rust-mode
+  :ensure t
   )
 
 (provide 'robenkleene-rust)
