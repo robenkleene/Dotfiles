@@ -78,6 +78,9 @@
     )
   )
 
+(unless (robenkleene/system-is-mac)
+  (setq browse-url-browser-function 'eww-browse-url))
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
