@@ -42,6 +42,7 @@ vender/bundle/
 # Emacs
 flycheck_*
 \#*\#
+.project.el
 
 # C
 a.out
