@@ -6,10 +6,13 @@
   ;; :hook (
   ;;        (enh-ruby-mode . lsp)
   ;;        (swift-mode . lsp)
+  ;;        (rustic-mode . lsp)
   ;;        )
   :commands lsp)
 
-(use-package lsp-ui :commands lsp-ui-mode)
+(use-package lsp-ui
+  :commands lsp-ui-mode)
+
 (provide 'robenkleene-lsp)
 
 ;; Local Variables:

@@ -5,7 +5,7 @@
 (use-package rustic
   :config
   (setq
-   rustic-lsp-client 'eglot
+   ;; rustic-lsp-client 'eglot
    rustic-format-on-save nil
    )
   )
