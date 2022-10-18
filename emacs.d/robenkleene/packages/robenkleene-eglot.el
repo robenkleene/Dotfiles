@@ -24,6 +24,11 @@
   ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
   (add-to-list 'eglot-server-programs '(rustic-mode . "rust-analyzer"))
+  ;; `settings.json'
+  ;; (setq-default eglot-workspace-configuration
+  ;;               '((:rust-analyzer
+  ;;                  :linkedProjects [""]
+  ;;                  )))
 
   ;; Disable minibuffer docs
   ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
