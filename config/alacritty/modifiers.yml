@@ -92,5 +92,6 @@ key_bindings:
     # Emacs
   - { key: Period,   mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
   - { key: Comma,    mods: Alt|Shift, chars: "\x1b<"                       } # Alt + <
+  - { key: Key1,     mods: Alt|Shift,     chars: "\x1b!"                       }
   - { key: Semicolon,    mods: Alt|Shift, chars: "\x1b:"                       }
   - { key: Slash,    mods: Alt, chars: "\x1b/"                       }
