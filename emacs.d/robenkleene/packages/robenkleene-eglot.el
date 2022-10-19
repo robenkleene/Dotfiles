@@ -30,7 +30,7 @@
   ;;                  )))
 
   ;; Disable minibuffer docs
-  (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
+  ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
   )
 
 (provide 'robenkleene-eglot)
