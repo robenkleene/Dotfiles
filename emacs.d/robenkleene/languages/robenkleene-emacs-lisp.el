@@ -20,11 +20,11 @@
                                                  whitespace-style)))
             ))
 
-(add-hook 'lisp-interaction-mode-hook
-          (lambda ()
-            (whitespace-mode 0)
-            )
-          )
+;; (add-hook 'lisp-interaction-mode-hook
+;;           (lambda ()
+;;             (whitespace-mode 0)
+;;             )
+;;           )
 
 (with-eval-after-load "lisp-mode"
   (defun robenkleene/emacs-lisp-eval-buffer-or-region ()
