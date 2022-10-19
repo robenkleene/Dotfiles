@@ -109,7 +109,6 @@
                                face
                                tabs
                                tab-mark
-                               lines-tail
                                ;; spaces
                                ;; space-mark
                                space-before-tab
