@@ -29,8 +29,15 @@
   ;;                  :linkedProjects [""]
   ;;                  )))
 
-  ;; Disable minibuffer docs
-  ;; (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
+  (add-hook 'eglot-managed-mode-hook
+            (lambda ()
+              ;; Disable clicking flymake highlighted text
+              (put 'eglot-note 'flymake-overlay-control nil)
+              (put 'eglot-warning 'flymake-overlay-control nil)
+              (put 'eglot-error 'flymake-overlay-control nil)
+              ;; Disable minibuffer docs
+              ;; (eldoc-mode -1)
+              ))
   )
 
 (provide 'robenkleene-eglot)
