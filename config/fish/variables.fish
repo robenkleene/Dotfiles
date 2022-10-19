@@ -39,6 +39,7 @@ if type -q brew
     set -gx HOMEBREW_DIR (brew --prefix)
     set -gx HOMEBREW_NO_ANALYTICS 1
     set -gx HOMEBREW_NO_AUTO_UPDATE 1
+    set -gx HOMEBREW_NO_INSTALL_CLEANUP 1
     set -q MANPATH || set MANPATH ''
     set -x MANPATH $MANPATH $HOMEBREW_DIR/share/man
     set -q INFOPATH || set MANPATH ''
