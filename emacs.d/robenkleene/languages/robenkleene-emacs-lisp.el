@@ -15,6 +15,9 @@
               )
             (modify-syntax-entry ?_ "w")
             (modify-syntax-entry ?- "w")
+            (when (boundp 'whitespace-style)
+              (setq-local whitespace-style (push 'lines-tail
+                                                 whitespace-style)))
             ))
 
 (add-hook 'lisp-interaction-mode-hook
