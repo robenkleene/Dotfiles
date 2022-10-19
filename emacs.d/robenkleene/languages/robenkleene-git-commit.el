@@ -3,7 +3,15 @@
 ;;; Code:
 
 (use-package git-commit
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'git-commit-mode-hook
+            (lambda ()
+              (when (boundp 'whitespace-style)
+                (setq-local whitespace-style (add-to-list 'lines-tail
+                                                          whitespace-style)))
+              ))
+  )
 
 (provide 'robenkleene-git-commit)
 ;; Local Variables:

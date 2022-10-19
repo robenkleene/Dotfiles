@@ -46,6 +46,9 @@
                 (modify-syntax-entry ?: "." table)
                 (set-syntax-table table)
                 )
+              (when (boundp 'whitespace-style)
+                (setq-local whitespace-style (add-to-list 'lines-tail
+                                                          whitespace-style)))
               )
             )
 

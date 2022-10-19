@@ -3,11 +3,11 @@
 ;;; Code:
 
 
-(add-hook 'objc-mode-hook
-          (lambda ()
-            (interactive)
-            (whitespace-mode 0)
-            ))
+;; (add-hook 'objc-mode-hook
+;;           (lambda ()
+;;             (interactive)
+;;             (whitespace-mode 0)
+;;             ))
 
 (provide 'robenkleene-objective-c)
 ;; Local Variables:
