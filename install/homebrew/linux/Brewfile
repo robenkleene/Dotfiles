@@ -2,6 +2,7 @@
 brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'tig'
+brew 'helix'
 brew 'tmux'
 brew 'fasd'
 brew 'ripgrep'
