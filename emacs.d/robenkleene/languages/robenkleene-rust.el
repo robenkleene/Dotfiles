@@ -12,6 +12,12 @@
 
 (use-package rust-mode
   :ensure t
+  :config
+  (add-hook 'rust-mode-hook
+            (lambda ()
+              (setq-local robenkleene/format-function
+                          'eglot-format)
+              ))
   )
 
 (provide 'robenkleene-rust)

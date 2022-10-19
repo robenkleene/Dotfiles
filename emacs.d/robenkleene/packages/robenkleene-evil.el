@@ -124,6 +124,8 @@
     'helm-buffers-list)
   (define-key robenkleene/evil-leader-map (kbd "w")
     'toggle-truncate-lines)
+  (define-key robenkleene/evil-leader-map (kbd "f")
+    'robenkleene/format)
 
   (with-eval-after-load 'evil-maps
     ;; Normal
