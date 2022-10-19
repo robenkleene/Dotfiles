@@ -20,6 +20,7 @@ set -gx MD_EDITOR "$EMACS_COMMAND"
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 set -gx PAGER less
 set -gx ACK_COMMAND rg
+set -gx COLORTERM "truecolor"
 
 # Prevent `npm` scripts from opening browser windows
 set -gx BROWSER "none"
