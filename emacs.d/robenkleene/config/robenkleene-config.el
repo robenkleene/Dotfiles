@@ -110,7 +110,6 @@
                                tabs
                                tab-mark
                                lines-tail
-                               lines
                                ;; spaces
                                ;; space-mark
                                space-before-tab
