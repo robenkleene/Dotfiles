@@ -70,6 +70,7 @@
 (require 'robenkleene-fish)
 (require 'robenkleene-ledger)
 (require 'robenkleene-csv)
+(require 'robenkleene-bash)
 (require 'robenkleene-css)
 (require 'robenkleene-objective-c)
 (require 'robenkleene-git-commit)
