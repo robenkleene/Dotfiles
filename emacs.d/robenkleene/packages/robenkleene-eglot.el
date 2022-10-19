@@ -35,8 +35,14 @@
               (put 'eglot-note 'flymake-overlay-control nil)
               (put 'eglot-warning 'flymake-overlay-control nil)
               (put 'eglot-error 'flymake-overlay-control nil)
+              ;; Tweak minibuffer documentation
               ;; Disable minibuffer docs
               ;; (eldoc-mode -1)
+              ;; Show all diagnostic information in the minibuffer
+              (setq eldoc-documentation-functions
+                    (cons #'flymake-eldoc-function
+                          (remove #'flymake-eldoc-function eldoc-documentation-functions)))
+              (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
               ))
   )
 
