@@ -6,6 +6,7 @@ theme = "nord"
 [editor]
 cursorline = true
 auto-format = false
+color-modes = true
 
 [keys.normal]
 y = ":clipboard-yank"
