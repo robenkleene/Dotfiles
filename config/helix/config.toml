@@ -1,7 +1,7 @@
 # theme = "tokyonight"
 # theme = "catppuccin_frappe"
-# theme = "catppuccin_macchiato"
-theme = "nord"
+theme = "catppuccin_macchiato"
+# theme = "nord"
 
 [editor]
 # Makes the selection too hard to see
