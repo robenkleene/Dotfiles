@@ -8,6 +8,17 @@ cursorline = true
 auto-format = false
 color-modes = true
 
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
 [keys.normal]
 y = ":clipboard-yank"
 p = ":clipboard-paste-after"
