@@ -68,7 +68,7 @@
 ;; the `default-directory' is then wrong
 (defadvice delete-frame
     (before robenkleene/delete-frame-chdir activate)
-  "Write to chdir."
+  "Write to chdir and save desktop."
   (if (file-exists-p "/tmp/vim.robenkleene/chdir/chdir")
       (write-region
        (expand-file-name default-directory)
@@ -76,6 +76,15 @@
        "/tmp/vim.robenkleene/chdir/chdir"
        )
     )
+  ;; Prevent prompting for existing desktop files
+  ;; This isn't much use because it doesn't work nicely with `emacsclient'
+  ;; (if (file-exists-p (concat desktop-dirname ".emacs.desktop"))
+  ;;     (delete-file (concat desktop-dirname ".emacs.desktop"))
+  ;;   )
+  ;; (if (file-exists-p (concat desktop-dirname ".emacs.desktop.lock"))
+  ;;     (delete-file (concat desktop-dirname ".emacs.desktop.lock"))
+  ;;   )
+  ;; (desktop-save-in-desktop-dir)
   )
 
 (unless (robenkleene/system-is-mac)

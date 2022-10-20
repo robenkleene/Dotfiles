@@ -369,6 +369,10 @@
 
 (add-hook 'project-find-functions #'robenkleene/project-override)
 
+(setq desktop-path 'user-emacs-directory)
+(setq desktop-dirname user-emacs-directory)
+(setq desktop-save t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
