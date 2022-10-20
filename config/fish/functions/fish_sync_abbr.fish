@@ -151,7 +151,7 @@ function fish_sync_abbr
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
     abbr -a hgmva 'hg mv --after'
-    abbr -a hgrm 'hg resolve -m'
+    abbr -a hgrm 'hg resolve --mark'
     abbr -a hgsf 'hg status --no-status'
     abbr -a hgsfb 'hg status --no-status --rev bottom^'
     abbr -a hgfb 'hg status --no-status --rev bottom^'
