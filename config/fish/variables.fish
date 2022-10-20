@@ -62,3 +62,18 @@ if test -n "$INSIDE_EMACS"
     set -gx PAGER cat
     set -gx GIT_PAGER cat
 end
+
+# nnn
+set BLK "0B"
+set CHR "0B"
+set DIR "04"
+set EXE "06"
+set REG "00"
+set HARDLINK "06"
+set SYMLINK "06"
+set MISSING "00"
+set ORPHAN "09"
+set FIFO "06"
+set SOCK "0B"
+set OTHER "06"
+set -gx NNN_FCOLORS "$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
