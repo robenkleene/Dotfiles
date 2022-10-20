@@ -3,7 +3,7 @@
 ;;; Code:
 
 (use-package eglot
-  :hook (((c-mode c++-mode rust-mode) . eglot-ensure))
+  ;; :hook (((c-mode c++-mode rust-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
               ("C-c r" . eglot-rename)
               ("C-c f r" . xref-find-references)
