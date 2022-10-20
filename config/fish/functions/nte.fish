@@ -1,5 +1,5 @@
 function nte
-    set -l cmd "fd --follow \"^[^.]+\\\$|.*\\.md\" ~/Text ~/Documentation"
+    set -l cmd "fd --follow \"^[^.]+\\\$|.*\\.md\" ~/Documents/Text/Notes"
     set -l commandline (commandline)
     set -q MD_EDITOR || set MD_EDITOR $EDITOR
 
