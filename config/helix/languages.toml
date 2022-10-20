@@ -1,0 +1,3 @@
+[[language]]
+name = "rust"
+roots = ["Cargo.toml"]
