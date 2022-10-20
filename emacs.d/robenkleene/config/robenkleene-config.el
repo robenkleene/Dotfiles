@@ -77,13 +77,20 @@
 
 ;; Highlight Cursor Line
 ;; (global-hl-line-mode)
-(dolist (hook '(dired-mode-hook
+;; Only certain modes
+;; This approach is also more compatible with evil
+(dolist (hook '(
+                dired-mode-hook
                 magit-status-mode-hook
                 grep-mode-hook
                 occur-hook
-                ibuffer-mode-hook))
+                ibuffer-mode-hook
+                prog-mode-hook
+                text-mode-hook
+                ))
   (add-hook hook 'hl-line-mode
             ))
+;; Highlight only in current window
 (setq hl-line-sticky-flag nil)
 
 ;; Fill Column
