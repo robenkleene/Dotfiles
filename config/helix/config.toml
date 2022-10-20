@@ -4,7 +4,8 @@
 theme = "nord"
 
 [editor]
-cursorline = true
+# Makes the selection too hard to see
+# cursorline = true
 auto-format = false
 color-modes = true
 
@@ -25,3 +26,4 @@ p = ":clipboard-paste-after"
 P = ":clipboard-paste-before"
 Z = { Q = ":quit!", Z = ":x" }
 C-w = { c = "wclose" }
+A-S = "split_selection_on_newline"
