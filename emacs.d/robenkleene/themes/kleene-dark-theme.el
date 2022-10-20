@@ -181,8 +181,8 @@
 
    ;;;; Syntax
    `(font-lock-builtin-face ((t (:foreground ,brightyellow))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,comment))))
-   `(font-lock-comment-face ((t (:foreground ,comment))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,comment :slant oblique))))
+   `(font-lock-comment-face ((t (:foreground ,comment :slant oblique))))
    `(font-lock-constant-face ((t (:foreground ,brightgreen))))
    `(font-lock-doc-face ((t (:foreground ,string))))
    `(font-lock-doc-string-face ((t (:foreground ,string))))
