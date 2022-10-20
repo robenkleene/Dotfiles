@@ -3,6 +3,10 @@
 # theme = "catppuccin_macchiato"
 theme = "nord"
 
+[editor]
+cursorline = true
+auto-format = false
+
 [keys.normal]
 y = ":clipboard-yank"
 p = ":clipboard-paste-after"
