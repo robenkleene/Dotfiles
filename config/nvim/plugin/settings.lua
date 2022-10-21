@@ -1,13 +1,7 @@
--- Set highlight on search
-vim.o.hlsearch = true
-
--- Make line numbers default
+-- Line numbers
 vim.wo.number = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Enable break indent
+-- Indent wrapped lines
 vim.o.breakindent = true
 
 -- Save undo history
