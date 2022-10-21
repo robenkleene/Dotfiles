@@ -39,10 +39,6 @@ require('packer').startup(function(use)
 end)
 -- stylua: ignore end
 
--- When we are bootstrapping a configuration, it doesn't
--- make sense to execute the rest of the init.lua.
---
--- You'll need to restart nvim, and then it will work.
 if is_bootstrap then
   print '=================================='
   print '    Plugins are being installed'
@@ -93,12 +89,8 @@ vim.cmd [[colorscheme catppuccin]]
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\\'
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
