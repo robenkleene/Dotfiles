@@ -9,7 +9,7 @@ set -gx ALTERNATE_EDITOR ""
 set -gx EMACS_COMMAND "emacsclient -nw"
 
 # Other
-set -gx VIM_COMMAND vim
+set -gx VIM_COMMAND nvim
 # set -gx VIM_COMMAND "nvim"
 set -gx BAT_COMMAND bat
 # set -gx VISUAL "$VIM_COMMAND"
@@ -18,7 +18,7 @@ set -gx BAT_COMMAND bat
 set -gx VISUAL "hx"
 set -gx EDITOR "$VISUAL"
 set -gx MD_EDITOR "$EMACS_COMMAND"
-set -gx GIT_EDITOR "$EMACS_COMMAND"
+set -gx GIT_EDITOR "$VIM_COMMAND"
 # set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
 set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 set -gx PAGER less
