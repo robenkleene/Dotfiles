@@ -3,6 +3,14 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
 
+local s = luasnip.snippet
+local t = luasnip.text_node
+luasnip.add_snippets("markdown", {
+     s("title", {
+        t(vim.fn.system("markdown_title " .. vim.fn.fnameescape("%"))),
+     })
+})
+
 cmp.setup {
   snippet = {
     expand = function(args)
