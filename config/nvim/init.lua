@@ -36,6 +36,9 @@ require('packer').startup(function(use)
 
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
 
+  -- Languages
+  use { 'dag/vim-fish', ft = {'fish'}, }
+
   if is_bootstrap then
     require('packer').sync()
   end
