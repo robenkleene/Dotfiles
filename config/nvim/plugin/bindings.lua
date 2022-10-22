@@ -9,6 +9,7 @@ nnoremap <leader>w :set wrap!<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
+inoremap <M-BS> <C-W>
 ]])
 
 -- Diagnostic keymaps
