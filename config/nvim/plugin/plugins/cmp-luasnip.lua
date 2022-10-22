@@ -4,10 +4,10 @@ local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
 
 local s = luasnip.snippet
-local t = luasnip.text_node
+local fmt = require("luasnip.extras.fmt").fmt
 luasnip.add_snippets("markdown", {
      s("title", {
-        t(vim.fn.system("markdown_title " .. vim.fn.fnameescape(vim.fn.expand('%')))),
+        fmt(vim.fn.system("markdown_title " .. vim.fn.fnameescape(vim.fn.expand('%'))), {}),
      })
 })
 
