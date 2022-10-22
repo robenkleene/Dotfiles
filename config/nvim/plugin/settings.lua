@@ -41,3 +41,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Automatically use system clipboard
 vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
+
+vim.cmd([[
+" For state restoration
+set sessionoptions-=options
+set sessionoptions-=folds
+set sessionoptions-=blank
+" Set Word Boundaries
+" For `-` and `_` there are two schools of thought:
+" 1. They should not be in `iskeyword` in order to match the `bash` default
+" 2. They should be in `iskeyword` because it facilitates searching for 
+" symbols with the `*` command.
+" set iskeyword-=_
+set iskeyword+=-
+" Open splits in bottom right
+set splitbelow
+set splitright
+" Show whitespace
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+]])
