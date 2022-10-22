@@ -21,10 +21,6 @@
       copied-text)))
 (setq interprogram-paste-function 'robenkleene/safecopy)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
-;; (load-theme 'kleene-dark t)
-(load-theme 'catppuccin-mocha t)
-
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
 ;; This also breaks selecting Emacs panes with the mouse
