@@ -23,13 +23,13 @@ require('packer').startup(function(use)
   use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
   use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
   use {
-  	"catppuccin/nvim",
-  	as = "catppuccin",
-  	config = function()
-  		vim.g.catppuccin_flavour = "mocha"
-  		require("catppuccin").setup()
-  	end
-  } 
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      vim.g.catppuccin_flavour = "mocha"
+      require("catppuccin").setup()
+    end
+  }
   use 'nvim-lualine/lualine.nvim'
 
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
