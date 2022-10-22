@@ -57,6 +57,7 @@
 ;; (require 'robenkleene-lsp)
 (require 'robenkleene-eglot)
 (require 'robenkleene-fasd)
+(require 'robenkleene-autothemer)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
