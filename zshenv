@@ -50,8 +50,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
 # Editor
-# export VISUAL="$VIM_COMMAND"
-export VISUAL="$EMACS_COMMAND"
+export VISUAL="$VIM_COMMAND"
+# export VISUAL="$EMACS_COMMAND"
 export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
