@@ -38,3 +38,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- Automatically use system clipboard
+vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
