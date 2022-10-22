@@ -1,6 +1,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
+vim.cmd([[
+  nnoremap <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>:echo ""<CR>
+]])
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
