@@ -12,10 +12,10 @@ set -gx EMACS_COMMAND "emacsclient -nw"
 set -gx VIM_COMMAND nvim
 # set -gx VIM_COMMAND "nvim"
 set -gx BAT_COMMAND bat
-# set -gx VISUAL "$VIM_COMMAND"
+set -gx VISUAL "$VIM_COMMAND"
 # set -gx VISUAL "$EMACS_COMMAND"
 # `hx` doesn't support jumping to a line number from `tig` for example
-set -gx VISUAL "hx"
+# set -gx VISUAL "hx"
 set -gx EDITOR "$VISUAL"
 set -gx MD_EDITOR "$EMACS_COMMAND"
 set -gx GIT_EDITOR "$VIM_COMMAND"
