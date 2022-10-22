@@ -1,3 +1,6 @@
+-- Start message
+vim.o.shortmess = vim.o.shortmess .. "I"
+
 -- Line numbers
 vim.wo.number = true
 
