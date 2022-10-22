@@ -1,4 +1,3 @@
-vim.cmd([[
 function! commands#GrepBuffer(...) abort
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if len(getqflist())
@@ -52,4 +51,3 @@ function! commands#NewBufferWithClipboard() abort
   execute "enew"
   normal P
 endfunction
-]])
