@@ -9,6 +9,10 @@
         "language": "all",
         "path": "~/.config/Code/User/snippets/global.code-snippets"
       },
+      {
+        "language": "c",
+        "path": "~/.config/Code/User/snippets/c.json"
+      }
     ]
   }
 }
