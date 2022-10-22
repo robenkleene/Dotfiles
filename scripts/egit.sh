@@ -2,16 +2,14 @@
 
 set -eo pipefail
 
-# System Repos
 repos=~/Developer/Dotfiles/
+repos+=:~/.config/Code/User
 if [[ "$(uname)" == "Darwin" ]]; then
   repos+=:~/Library/Services/:~/Developer/AppleScripts/
 fi
 
 if [[ -z "$PUBLIC_EGIT" ]]; then
-  # General Text Repos
   repos+=:~/Developer/Snippets/:~/Developer/Settings/
-  # Last Repos
   repos+=:~/Developer/Archive/
 fi
 
