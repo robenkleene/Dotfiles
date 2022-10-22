@@ -6,6 +6,9 @@ nnoremap <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>:
 nnoremap cl :lcd %:p:h<CR>
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
+nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
+nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
+nnoremap <script> <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 ]])
 
 -- Diagnostic keymaps
