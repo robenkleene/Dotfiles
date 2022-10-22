@@ -7,7 +7,7 @@ local s = luasnip.snippet
 local t = luasnip.text_node
 luasnip.add_snippets("markdown", {
      s("title", {
-        t(vim.fn.system("markdown_title " .. vim.fn.fnameescape("%"))),
+        t(vim.fn.system("markdown_title " .. vim.fn.fnameescape(vim.fn.expand('%')))),
      })
 })
 
