@@ -3,6 +3,7 @@ vim.g.maplocalleader = '\\'
 
 vim.cmd([[
   nnoremap <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>:echo ""<CR>
+  nnoremap cl :lcd %:p:h<CR>
 ]])
 
 -- Diagnostic keymaps
