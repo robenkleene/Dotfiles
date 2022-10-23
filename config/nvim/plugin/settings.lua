@@ -52,4 +52,8 @@ set splitbelow
 set splitright
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
+" Autocomplete max height
+set pumheight=10
+" Disable swap files, this allows multiple instances to edit the same file
+set noswapfile
 ]])

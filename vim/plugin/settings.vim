@@ -14,7 +14,7 @@ endif
 let &directory=s:swap_file_directory . "//"
 let &viewdir=s:viewdir_directory
 
-" Disable swap files
+" Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
 
 " Instantly trigger escape, e.g., this gets rid of inserting an accented character when performing `<ESC>j` quickly
