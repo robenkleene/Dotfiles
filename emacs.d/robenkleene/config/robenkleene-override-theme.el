@@ -146,7 +146,9 @@
   `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
   ;; Styles
-  `(region ((t (:inherit rk-match))))
+  ;; This doesn't work for some reason?
+  ;; `(region ((t (:inherit rk-match))))
+  `(region ((t (:background ,match-bg))))
 
   ;; Packages
 
@@ -160,6 +162,24 @@
   `(helm-candidate-number ((t (:inherit rk-prompt))))
   `(helm-grep-finish ((t (:inherit rk-prompt))))
   `(helm-grep-file ((t (:inherit link :underline nil))))
+
+  `(markdown-header-face-1 ((t (:inherit rk-header))))
+  `(markdown-header-face-2 ((t (:inherit rk-header))))
+  `(markdown-header-face-3 ((t (:inherit rk-header))))
+  `(markdown-header-face-4 ((t (:inherit rk-header))))
+  `(markdown-header-face-5 ((t (:inherit rk-header))))
+  `(markdown-header-face-6 ((t (:inherit rk-header))))
+  `(markdown-markup-face ((t (:inherit rk-comment))))
+  `(markdown-link-face ((t (:inherit rk-link))))
+  `(markdown-url-face ((t (:inherit rk-comment))))
+  `(markdown-pre-face ((t (:inherit rk-text2))))
+  `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
+  `(markdown-blockquote-face ((t (:inherit rk-text2))))
+  `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
+  `(markdown-list-face ((t (:inherit rk-text2))))
+  `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
+  ;; `(markdown-italic-face ((t (:inherit rk-text2))))
+  
   )
  )
 
