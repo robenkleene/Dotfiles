@@ -48,6 +48,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
 (load-theme 'catppuccin-mocha t)
+(require 'robenkleene-override-theme)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
 (require 'robenkleene-languages)
