@@ -182,12 +182,6 @@
                   )
                  )))
 
-;; Ido Mode
-(setq ido-enable-flex-matching t)
-(ido-mode 1)
-(ido-everywhere t)
-(setq ido-use-filename-at-point t)
-
 ;; Remove window chrome
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
