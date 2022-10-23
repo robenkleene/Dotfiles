@@ -31,5 +31,15 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
+
+" Autoreload files edited by other programs
+set autoread
+augroup reload_buffers
+  autocmd!
+  " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
+  " <file>` while just `checktime` does. (`silent! checktime` when editing the
+  " same file in another `vim` instance though.)
+  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
+augroup END
 ]])
 
