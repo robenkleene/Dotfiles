@@ -61,4 +61,6 @@ set viewoptions-=blank
 set sessionoptions-=options
 set sessionoptions-=folds
 set sessionoptions-=blank
+" Prefer spaces to tabs
+set expandtab
 ]])
