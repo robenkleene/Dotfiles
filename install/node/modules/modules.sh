@@ -42,4 +42,6 @@ modules=(
 # Language Servers
 # HTML
 'vscode-langservers-extracted'
+'typescript'
+'typescript-language-server'
 )
