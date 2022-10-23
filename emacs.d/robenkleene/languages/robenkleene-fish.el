@@ -8,12 +8,7 @@
   :config
   (add-hook 'fish-mode-hook
             (lambda ()
-              (when (boundp 'whitespace-style)
-                (whitespace-mode 0)
-                (setq-local whitespace-style (push 'lines-tail
-                                                   whitespace-style))
-                (whitespace-mode 1)
-                )
+
               ))
   )
 

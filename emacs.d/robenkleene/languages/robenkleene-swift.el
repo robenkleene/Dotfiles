@@ -8,10 +8,6 @@
   :config
   (add-hook 'swift-mode-hook
             (lambda ()
-              (interactive)
-              (whitespace-mode 0)
-              (setq-local whitespace-line-column 120)
-              (whitespace-mode 1)
               ))
   )
 
