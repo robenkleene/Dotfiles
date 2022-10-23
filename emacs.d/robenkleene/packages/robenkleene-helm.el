@@ -21,7 +21,7 @@
   ("M-o" . robenkleene/helm-recursive-find-file)
   ("M-c" . robenkleene/helm-recursive-find-dir)
   ("M-z" . robenkleene/helm-z)
-  ("M-a" . robenkleene/helm-ag-in-directory)
+  ;; ("M-a" . robenkleene/helm-ag-in-directory)
   ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ("h" . helm-resume)
@@ -172,21 +172,21 @@ directory."
 
   (defvar robenkleene/helm-clipboard-history-copy-source
     (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      'robenkleene/helm-clipboard-history-candidates-process
-      :action (lambda (candidate)
-                (kill-new (string-replace "\0" "\n" candidate)))
-      ))
+     "helm clipboard history"
+     :candidates-process
+     'robenkleene/helm-clipboard-history-candidates-process
+     :action (lambda (candidate)
+               (kill-new (string-replace "\0" "\n" candidate)))
+     ))
 
   (defvar robenkleene/helm-clipboard-history-insert-source
     (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      'robenkleene/helm-clipboard-history-candidates-process
-      :action (lambda (candidate)
-                (insert (string-replace "\0" "\n" candidate)))
-      ))
+     "helm clipboard history"
+     :candidates-process
+     'robenkleene/helm-clipboard-history-candidates-process
+     :action (lambda (candidate)
+               (insert (string-replace "\0" "\n" candidate)))
+     ))
 
   (defun robenkleene/helm-clipboard-history-copy ()
     (interactive)
