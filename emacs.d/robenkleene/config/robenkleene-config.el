@@ -380,6 +380,19 @@
 (setq desktop-dirname user-emacs-directory)
 (setq desktop-save t)
 
+(defun robenkleene/fasd-add ()
+  "Add file or directory `fasd'."
+  (if (executable-find "fasd")
+      (let ((file (if (string= major-mode "dired-mode")
+                      dired-directory
+                    (buffer-file-name))))
+        (when (and file
+                   (stringp file)
+                   (file-readable-p file))
+          (start-process "*fasd*" nil "fasd" "--add" file)))))
+(add-hook 'find-file-hook 'robenkleene/fasd-add)
+(add-hook 'dired-mode-hook 'robenkleene/fasd-add)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

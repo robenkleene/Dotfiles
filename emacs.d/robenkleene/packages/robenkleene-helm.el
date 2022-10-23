@@ -218,4 +218,7 @@ directory."
   )
 
 (provide 'robenkleene-helm)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
 ;;; robenkleene-helm.el ends here
