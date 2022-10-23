@@ -163,6 +163,14 @@
   `(helm-grep-finish ((t (:inherit rk-prompt))))
   `(helm-grep-file ((t (:inherit link :underline nil))))
 
+  ;; Whitespace
+  `(whitespace-space-after-tab ((t (:inherit rk-whitespace))))
+  `(whitespace-space-before-tab ((t (:inherit rk-whitespace))))
+  `(whitespace-tab ((t (:inherit rk-whitespace))))
+  `(trailing-whitespace ((t (:inherit rk-whitespace))))
+  `(whitespace-line ((t (:inherit rk-warning))))
+
+  ;; Markdown
   `(markdown-header-face-1 ((t (:inherit rk-header))))
   `(markdown-header-face-2 ((t (:inherit rk-header))))
   `(markdown-header-face-3 ((t (:inherit rk-header))))
