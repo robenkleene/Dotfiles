@@ -294,6 +294,13 @@
 (add-hook 'find-file-hook 'robenkleene/fasd-add)
 (add-hook 'dired-mode-hook 'robenkleene/fasd-add)
 
+;; Automatically revert unmodified buffers
+;; This way causing the cursor to jump randomly after saving
+(global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t)
+;; Suppress message
+;; (setq auto-revert-verbose nil)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
