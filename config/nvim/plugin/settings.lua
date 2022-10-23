@@ -43,10 +43,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
 
 vim.cmd([[
-" For state restoration
-set sessionoptions-=options
-set sessionoptions-=folds
-set sessionoptions-=blank
+" Settings
 set iskeyword+=-
 set splitbelow
 set splitright
@@ -56,4 +53,12 @@ set list
 set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
+" For state restoration
+set viewoptions-=options
+set viewoptions-=folds
+set viewoptions-=curdir
+set viewoptions-=blank
+set sessionoptions-=options
+set sessionoptions-=folds
+set sessionoptions-=blank
 ]])
