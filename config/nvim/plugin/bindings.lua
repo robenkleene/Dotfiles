@@ -8,6 +8,7 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
+nnoremap <leader>cq :GrepBufferFromClipboard<CR>
 " Text Editing
 inoremap <M-BS> <C-W>
 nnoremap <localleader>w :set wrap!<CR>
