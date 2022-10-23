@@ -38,4 +38,8 @@ modules=(
 # JSON
 # Output JSON schema from an input file
 'generate-schema'
+
+# Language Servers
+# HTML
+'vscode-langservers-extracted'
 )
