@@ -35,5 +35,11 @@ vim.cmd([[
   highlight link markdownH4 String
   highlight link markdownH5 String
   highlight link markdownH6 String
+  highlight link markdownH1Delimiter Comment
+  highlight link markdownH2Delimiter Comment
+  highlight link markdownH3Delimiter Comment
+  highlight link markdownH4Delimiter Comment
+  highlight link markdownH5Delimiter Comment
+  highlight link markdownH6Delimiter Comment
 ]])
 
