@@ -101,95 +101,99 @@
 (defface rk-whitespace '((t)) "Whitespace" :group 'rk-faces)
 
 (kleene-dark-with-color-variables
- (custom-set-faces
+  (custom-set-faces
     ;;;; Styles
-  `(rk-bold ((t (:inherit rk-header))))
-  `(rk-callout ((t (:background ,callout-bg))))
-  `(rk-change ((t (:foreground ,change))))
-  `(rk-change-highlight ((t (:background ,change))))
-  `(rk-comment ((t (:foreground ,comment))))
-  `(rk-string ((t (:foreground ,string))))
-  `(rk-diff-add ((t (:inherit rk-success))))
-  `(rk-diff-change ((t (:inherit rk-change))))
-  `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
-  `(rk-error ((t (:foreground ,error :underline t))))
-  `(rk-error-highlight ((t (:background ,error))))
-  `(rk-italic ((t (:inherit rk-text :slant oblique))))
-  `(rk-warning-highlight
-    ((t (:background ,warning :foreground ,black :bold t))))
-  `(rk-header ((t (:foreground ,gray6 :bold t))))
-  `(rk-highlight-line ((t (:background ,highlight-line-bg))))
-  `(rk-highlight ((t (:background ,match-bg))))
-  `(rk-link ((t (:foreground ,link :underline t))))
-  `(rk-match ((t (:background ,match-bg))))
-  `(rk-modeline-active
-    ((t
-      (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
-  `(rk-modeline-inactive
-    ((t
-      (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
-  `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
-  `(rk-modeline-inactive
-    ((t
-      (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
-  `(rk-popup-match ((t (:foreground ,link))))
-  `(rk-popup-selection ((t (:inherit rk-match))))
-  `(rk-prompt ((t (:inherit rk-match :bold t))))
-  `(rk-search ((t (:background ,search-bg :foreground ,white))))
-  `(rk-success ((t (:foreground ,success))))
-  `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
-  `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
-  `(rk-text ((t (:foreground ,gray6))))
-  `(rk-text2 ((t (:foreground ,gray5))))
-  `(rk-warning ((t (:foreground ,warning :underline t))))
-  ;; `(rk-whitespace ((t (:inherit rk-warning))))
-  `(rk-whitespace ((t (:inherit rk-highlight-line))))
+   `(rk-bold ((t (:inherit rk-header))))
+   `(rk-callout ((t (:background ,callout-bg))))
+   `(rk-change ((t (:foreground ,change))))
+   `(rk-change-highlight ((t (:background ,change))))
+   `(rk-comment ((t (:foreground ,comment))))
+   `(rk-string ((t (:foreground ,string))))
+   `(rk-diff-add ((t (:inherit rk-success))))
+   `(rk-diff-change ((t (:inherit rk-change))))
+   `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
+   `(rk-error ((t (:foreground ,error :underline t))))
+   `(rk-error-highlight ((t (:background ,error))))
+   `(rk-italic ((t (:inherit rk-text :slant oblique))))
+   `(rk-warning-highlight
+     ((t (:background ,warning :foreground ,black :bold t))))
+   `(rk-header ((t (:foreground ,gray6 :bold t))))
+   `(rk-highlight-line ((t (:background ,highlight-line-bg))))
+   `(rk-highlight ((t (:background ,match-bg))))
+   `(rk-link ((t (:foreground ,link :underline t))))
+   `(rk-match ((t (:background ,match-bg))))
+   `(rk-modeline-active
+     ((t
+       (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
+   `(rk-modeline-inactive
+     ((t
+       (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
+   `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
+   `(rk-modeline-inactive
+     ((t
+       (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
+   `(rk-popup-match ((t (:foreground ,link))))
+   `(rk-popup-selection ((t (:inherit rk-match))))
+   `(rk-prompt ((t (:inherit rk-match :bold t))))
+   `(rk-search ((t (:background ,search-bg :foreground ,white))))
+   `(rk-success ((t (:foreground ,success))))
+   `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
+   `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
+   `(rk-text ((t (:foreground ,gray6))))
+   `(rk-text2 ((t (:foreground ,gray5))))
+   `(rk-warning ((t (:foreground ,warning :underline t))))
+   ;; `(rk-whitespace ((t (:inherit rk-warning))))
+   `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
-  ;; Styles
-  ;; This doesn't work for some reason?
-  ;; `(region ((t (:inherit rk-match))))
-  `(region ((t (:background ,match-bg))))
+   ;; Styles
+   ;; This doesn't work for some reason?
+   ;; `(region ((t (:inherit rk-match))))
+   `(region ((t (:background ,match-bg))))
 
-  ;; Packages
+   ;; Packages
 
-  ;; Helm
-  `(helm-selection ((t (:inherit rk-highlight-line))))
-  `(helm-selection-line ((t (:inherit rk-highlight-line))))
-  `(helm-match ((t (:inherit rk-match))))
-  `(helm-match-item ((t (:inherit rk-match))))
-  `(helm-grep-lineno ((t (:inherit rk-comment))))
-  `(helm-source-header ((t (:inherit rk-modeline-inactive))))
-  `(helm-candidate-number ((t (:inherit rk-prompt))))
-  `(helm-grep-finish ((t (:inherit rk-prompt))))
-  `(helm-grep-file ((t (:inherit link :underline nil))))
+   ;; Helm
+   `(helm-selection ((t (:inherit rk-highlight-line))))
+   `(helm-selection-line ((t (:inherit rk-highlight-line))))
+   `(helm-match ((t (:inherit rk-match))))
+   `(helm-match-item ((t (:inherit rk-match))))
+   `(helm-grep-lineno ((t (:inherit rk-comment))))
+   `(helm-source-header ((t (:inherit rk-modeline-inactive))))
+   `(helm-candidate-number ((t (:inherit rk-prompt))))
+   `(helm-grep-finish ((t (:inherit rk-prompt))))
+   `(helm-grep-file ((t (:inherit link :underline nil))))
 
-  ;; Whitespace
-  `(whitespace-space-after-tab ((t (:inherit rk-whitespace))))
-  `(whitespace-space-before-tab ((t (:inherit rk-whitespace))))
-  `(whitespace-tab ((t (:inherit rk-whitespace))))
-  `(trailing-whitespace ((t (:inherit rk-whitespace))))
-  `(whitespace-line ((t (:inherit rk-warning))))
+   ;; Whitespace
+   `(whitespace-space-after-tab ((t (:inherit rk-whitespace))))
+   `(whitespace-space-before-tab ((t (:inherit rk-whitespace))))
+   `(whitespace-tab ((t (:inherit rk-whitespace))))
+   `(trailing-whitespace ((t (:inherit rk-whitespace))))
+   `(whitespace-line ((t (:inherit rk-warning))))
 
-  ;; Markdown
-  `(markdown-header-face-1 ((t (:inherit rk-header))))
-  `(markdown-header-face-2 ((t (:inherit rk-header))))
-  `(markdown-header-face-3 ((t (:inherit rk-header))))
-  `(markdown-header-face-4 ((t (:inherit rk-header))))
-  `(markdown-header-face-5 ((t (:inherit rk-header))))
-  `(markdown-header-face-6 ((t (:inherit rk-header))))
-  `(markdown-markup-face ((t (:inherit rk-comment))))
-  `(markdown-link-face ((t (:inherit rk-link))))
-  `(markdown-url-face ((t (:inherit rk-comment))))
-  `(markdown-pre-face ((t (:inherit rk-text2))))
-  `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
-  `(markdown-blockquote-face ((t (:inherit rk-text2))))
-  `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
-  `(markdown-list-face ((t (:inherit rk-text2))))
-  `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
-  ;; `(markdown-italic-face ((t (:inherit rk-text2))))
-  
+   ;;;; show-paren
+   `(show-paren-match ((t (:underline t :background nil :foreground nil :bold nil))))
+   `(show-paren-mismatch ((t (:inherit rk-error))))
+
+   ;; Markdown
+   `(markdown-header-face-1 ((t (:inherit rk-header))))
+   `(markdown-header-face-2 ((t (:inherit rk-header))))
+   `(markdown-header-face-3 ((t (:inherit rk-header))))
+   `(markdown-header-face-4 ((t (:inherit rk-header))))
+   `(markdown-header-face-5 ((t (:inherit rk-header))))
+   `(markdown-header-face-6 ((t (:inherit rk-header))))
+   `(markdown-markup-face ((t (:inherit rk-comment))))
+   `(markdown-link-face ((t (:inherit rk-link))))
+   `(markdown-url-face ((t (:inherit rk-comment))))
+   `(markdown-pre-face ((t (:inherit rk-text2))))
+   `(markdown-inline-code-face ((t (:inherit markdown-pre-face))))
+   `(markdown-blockquote-face ((t (:inherit rk-text2))))
+   `(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
+   `(markdown-list-face ((t (:inherit rk-text2))))
+   `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
+   ;; `(markdown-italic-face ((t (:inherit rk-text2))))
+   
+   )
   )
- )
 
 (provide 'robenkleene-override-theme)
 ;; Local Variables:
