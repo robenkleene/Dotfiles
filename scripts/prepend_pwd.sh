@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-while read i; do
-  echo ${PWD}/$i
+while IFS= read -r line || [ "$line" ]; do 
+  echo ${PWD}/$line
 done
