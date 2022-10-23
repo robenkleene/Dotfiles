@@ -1,4 +1,5 @@
 vim.cmd([[
+function! s:OverrideColors()
   highlight MatchParen guifg=lightblue guibg=NONE gui=underline cterm=underline
   " Colors
   highlight markdownLinkText gui=underline cterm=underline
@@ -41,5 +42,10 @@ vim.cmd([[
   highlight link markdownH4Delimiter Comment
   highlight link markdownH5Delimiter Comment
   highlight link markdownH6Delimiter Comment
+endfunction
+augroup override_colors
+    autocmd!
+    autocmd ColorScheme * call <SID>OverrideColors()
+augroup END
 ]])
 
