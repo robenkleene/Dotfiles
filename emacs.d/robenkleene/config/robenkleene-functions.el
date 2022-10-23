@@ -1242,6 +1242,24 @@ With prefix arg, find the previous file."
         )
     ))
 
+(defun robenkleene/fasd-add ()
+  "Add file or directory `fasd'."
+  (if (executable-find "fasd")
+      (let ((file (if (string= major-mode "dired-mode")
+                      dired-directory
+                    (buffer-file-name))))
+        (when (and file
+                   (stringp file)
+                   (file-readable-p file))
+          (start-process "*fasd*" nil "fasd" "--add" file)))))
+
+(defun robenkleene/project-override (dir)
+  "Override project function with DIR."
+  (let ((override (locate-dominating-file dir ".project")))
+    (if override
+        (cons 'vc override)
+      nil)))
+
 ;; (defun robenkleene/pos-at-mouse-click (click-event)
 ;;   "Print position at CLICK-EVENT."
 ;;   (interactive "e")

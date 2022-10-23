@@ -47,57 +47,16 @@
 ;; to organize those.
 (setq create-lockfiles nil)
 
-;; Suppress message when saving
-(setq save-silently t)
+(setq desktop-path 'user-emacs-directory)
+(setq desktop-dirname user-emacs-directory)
+(setq desktop-save t)
 
-;; Show the current directory in the mode line
-(setq-default mode-line-buffer-identification
-              (let ((orig (car mode-line-buffer-identification)))
-                `(:eval
-                  (cons
-                   (concat (file-name-nondirectory
-                            (directory-file-name default-directory))
-                           "/"
-                           ,orig
-                           )
-                   (cdr mode-line-buffer-identification)))))
+;; Suppress message when saving
+;; (setq save-silently t)
 
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
 (setq enable-recursive-minibuffers t)
-
-;; Allow `C-i' and `<TAB>' to be bound separately
-(setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
-
-;; Automatically revert unmodified buffers
-;; This way causing the cursor to jump randomly after saving
-(global-auto-revert-mode t)
-(setq global-auto-revert-non-file-buffers t)
-(setq auto-revert-verbose nil)
-
-;; Highlight Cursor Line
-;; (global-hl-line-mode)
-;; Only certain modes
-;; This approach is also more compatible with evil
-(dolist (hook '(
-                dired-mode-hook
-                magit-status-mode-hook
-                grep-mode-hook
-                occur-hook
-                ibuffer-mode-hook
-                prog-mode-hook
-                text-mode-hook
-                ))
-  (add-hook hook 'hl-line-mode
-            ))
-;; Highlight only in current window
-(setq hl-line-sticky-flag nil)
-
-;; Fill Column
-(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
-
-;; Allow `narrow-to-region'
-(put 'narrow-to-region 'disabled nil)
 
 ;; Add Line Numbers
 ;; Note this is incompatible with git-gutter
@@ -122,24 +81,11 @@
                                space-after-tab
                                )))
 
-;; Don't jump over symbols when moving by word
-;; This isn't quite what I want, this means selecting from the `H' in *HOME* to
-;; the end of the word will included the `*'
-;; (defun robenkleene/add-symbols-to-syntax ()
-;;   "Add symbols to words."
-;;   (modify-syntax-entry ?` "w")
-;;   (modify-syntax-entry ?/ "w")
-;;   (modify-syntax-entry ?# "w")
-;;   (modify-syntax-entry ?: "w")
-;;   )
-;; (add-hook 'prog-mode-hook 'robenkleene/add-symbols-to-syntax)
-;; (add-hook 'text-mode-hook 'robenkleene/add-symbols-to-syntax)
-
 ;; Highlight Keywords
 (add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
 
-;; Enable Folding for Programming Modes
-(add-hook 'prog-mode-hook 'hs-minor-mode)
+;; Fill Column
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
@@ -150,24 +96,14 @@
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
 
-;; Instantly show key feedback
-(setq echo-keystrokes 0.01)
-
 ;; Overwrite region when pasting
 (delete-selection-mode 1)
 
 ;; Don't split words when wrapping
 (setq-default word-wrap t)
 
-;; Never truncate lines in minibuffer
-;; This doesn't work
-;; (add-hook 'minibuffer-setup-hook
-;;           (lambda ()
-;;             (setq word-wrap nil)
-;;             (setq truncate-lines t)))
-
 ;; Set `Shell Command Output' buffer to view only
-(define-advice shell-command-on-region (:after (&rest _) my-view-output)
+(define-advice shell-command-on-region (:after (&rest _) robenkleene/shell-command-output)
   "Enable `view-mode' in `*Shell Command Output*' buffer."
   (let ((buffer (get-buffer "*Shell Command Output*")))
     (when (buffer-live-p buffer)
@@ -273,9 +209,6 @@
 ;; Highlight Matching parens
 (show-paren-mode 1)
 
-;; Automatically reload tags file
-(setq tags-revert-without-query 1)
-
 (advice-add 'xref-find-definitions
             :before
             #'(lambda (identifier)
@@ -313,7 +246,7 @@
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
 (add-hook 'text-mode-hook 'flyspell-mode)
-;; This is way to noisy
+;; This is way too noisy
 ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (setq flyspell-issue-message-flag nil)
 ;; Don't prompt when saving a word to the dictionary
@@ -353,43 +286,17 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
-;; Always keep `imenu' up-to-date
-(setq imenu-auto-rescan t)
-
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
-
-;; Tramp
-(setq tramp-default-method "ssh")
 
 ;; `find-file-hook' can cause slow behavior
 ;; (remove-hook 'find-file-hook 'vc-find-file-hook)
 ;; Removes massive slow down with large `hg' repos
 (setq vc-handled-backends '(Git))
 
-(defun robenkleene/project-override (dir)
-  "Override project function with DIR."
-  (let ((override (locate-dominating-file dir ".project.el")))
-    (if override
-        (cons 'vc override)
-      nil)))
-
+;; Allow project roots to be overridden with a `.project' file
 (add-hook 'project-find-functions #'robenkleene/project-override)
 
-(setq desktop-path 'user-emacs-directory)
-(setq desktop-dirname user-emacs-directory)
-(setq desktop-save t)
-
-(defun robenkleene/fasd-add ()
-  "Add file or directory `fasd'."
-  (if (executable-find "fasd")
-      (let ((file (if (string= major-mode "dired-mode")
-                      dired-directory
-                    (buffer-file-name))))
-        (when (and file
-                   (stringp file)
-                   (file-readable-p file))
-          (start-process "*fasd*" nil "fasd" "--add" file)))))
 (add-hook 'find-file-hook 'robenkleene/fasd-add)
 (add-hook 'dired-mode-hook 'robenkleene/fasd-add)
 
