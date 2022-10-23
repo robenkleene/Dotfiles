@@ -10,7 +10,7 @@
  '(helm-fd-switches
    '("--follow" "--hidden" "--exclude" ".git" "--exclude" ".hg" "--exclude" ".DS_Store" "--color" "never"))
  '(package-selected-packages
-   '(rust-mode eglot helm-swoop helm evil-goggles evil-terminal-cursor-changer diff-hl autothemer use-package undo-tree nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company smartparens rainbow-mode rainbow-delimiters magit yasnippet flycheck editorconfig js2-mode fasd magit-filenotify wgrep smex jade-mode aggressive-indent))
+   '(rust-mode eglot helm-swoop helm evil-goggles evil-terminal-cursor-changer diff-hl autothemer use-package undo-tree nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime company smartparens rainbow-mode rainbow-delimiters magit yasnippet flycheck editorconfig js2-mode fasd magit-filenotify wgrep smex jade-mode aggressive-indent crux))
  '(vc-annotate-color-map
    '((20 . "#F92672")
      (40 . "#CF4F1F")
