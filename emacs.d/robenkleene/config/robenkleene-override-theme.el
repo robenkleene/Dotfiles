@@ -148,7 +148,7 @@
    ;; Styles
    ;; This doesn't work for some reason?
    ;; `(region ((t (:inherit rk-match))))
-   `(region ((t (:background ,match-bg))))
+   `(region ((t (:background "#45475A"))))
 
    ;; Packages
 
