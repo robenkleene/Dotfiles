@@ -44,7 +44,6 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-eglot)
 (require 'robenkleene-autothemer)
-(require 'robenkleene-crux)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
