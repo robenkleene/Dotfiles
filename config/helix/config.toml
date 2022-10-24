@@ -29,4 +29,5 @@ R = ":clipboard-paste-replace"
 Z = { Q = ":quit!", Z = ":x" }
 C-w = { c = "wclose" }
 A-S = "split_selection_on_newline"
-space = { f = "file_picker_in_current_directory" }
+# More consistent to use the default binding (shift bindings work on workplace)
+# space = { f = "file_picker_in_current_directory" }
