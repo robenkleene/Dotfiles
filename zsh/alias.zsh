@@ -118,6 +118,8 @@ alias nrac='npm run autocorrect'
 # `emacs`
 alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
+alias esk='emacs_kill_server'
+alias esr='emacs_reset_server'
 
 # `vim_cd`
 alias d='vim_cd'
