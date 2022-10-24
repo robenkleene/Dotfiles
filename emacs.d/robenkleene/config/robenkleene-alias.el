@@ -67,6 +67,7 @@
 (defalias 'journal 'robenkleene/open-journal)
 (defalias 'todo 'robenkleene/open-todo)
 (defalias 'todo-archive 'robenkleene/open-todo-archive)
+(defalias 'cg 'robenkleene/grep-from-clipboard)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)

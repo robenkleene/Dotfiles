@@ -99,7 +99,7 @@ alias mgs='emacs_magit_status'
 alias mgl='emacs_magit_log'
 alias esk='emacs_kill_server'
 alias esr='emacs_reset_server'
-alias eq='emacs_grep'
+alias eg='emacs_grep'
 
 # TUI change dir
 alias d='$CD_COMMAND .'
