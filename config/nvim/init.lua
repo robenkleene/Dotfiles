@@ -10,12 +10,10 @@ end
 -- stylua: ignore start
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'                                                         -- Package manager
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
   use "gpanders/editorconfig.nvim"
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
+  use { 'L3MON4D3/LuaSnip' }
   -- UI
   use {
     "catppuccin/nvim",
@@ -31,12 +29,6 @@ require('packer').startup(function(use)
 
   -- Languages
   use { 'dag/vim-fish', ft = {'fish'}, }
-  -- LSP
-  use 'nvim-treesitter/nvim-treesitter'
-  use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
-  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
   if is_bootstrap then
     require('packer').sync()

@@ -75,6 +75,7 @@ brew 'youtube-dl'
 brew 'wdiff'
 brew 'mitmproxy'
 brew 'neofetch'
+brew 'hyperfine'
 
 # Railwaycat
 # tap 'railwaycat/emacsmacport'
