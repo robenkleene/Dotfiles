@@ -301,6 +301,9 @@
 ;; Suppress message
 ;; (setq auto-revert-verbose nil)
 
+;; Automatically enable disabled commands
+(setq disabled-command-hook 'enable-me)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
