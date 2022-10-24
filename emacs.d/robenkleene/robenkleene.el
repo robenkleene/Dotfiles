@@ -48,6 +48,8 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
+;; If this theme seems broken, check the `COLORTERM' shell environment variable
+;; is set
 (load-theme 'catppuccin-mocha t)
 (require 'robenkleene-override-theme)
 
