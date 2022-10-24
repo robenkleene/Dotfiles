@@ -14,13 +14,9 @@ require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
-  use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
-  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
   use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
+  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
+  -- UI
   use {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -30,13 +26,17 @@ require('packer').startup(function(use)
     end
   }
   use 'nvim-lualine/lualine.nvim'
-
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
-
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
 
   -- Languages
   use { 'dag/vim-fish', ft = {'fish'}, }
+  -- LSP
+  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
+  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
   if is_bootstrap then
     require('packer').sync()
