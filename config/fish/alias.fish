@@ -102,8 +102,7 @@ alias esr='emacs_reset_server'
 alias eq='emacs_grep'
 
 # TUI change dir
-alias d='vim_cd .'
-# alias d='emacs_cd .'
+alias d='$CD_COMMAND .'
 
 # `vim`
 alias vsr='vim_session_restore_auto'
