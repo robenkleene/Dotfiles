@@ -44,6 +44,7 @@
 (require 'robenkleene-helm)
 (require 'robenkleene-eglot)
 (require 'robenkleene-autothemer)
+(require 'robenkleene-page-break-lines)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
