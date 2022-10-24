@@ -11,7 +11,6 @@ end
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'                                                         -- Package manager
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
-  use "tpope/vim-eunuch"
   use "gpanders/editorconfig.nvim"
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
