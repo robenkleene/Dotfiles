@@ -24,7 +24,7 @@ vim.keymap.set('n', '<leader>l', function()
     previewer = false,
   })
 end)
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<leader>F', require('telescope.builtin').find_files)
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep)
 -- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags)
 -- vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string)
