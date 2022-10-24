@@ -7,9 +7,6 @@ vim.wo.number = true
 -- Indent wrapped lines
 vim.o.breakindent = true
 
--- Save undo history
-vim.o.undofile = true
-
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
