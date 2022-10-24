@@ -74,6 +74,8 @@ fi
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
 
+export COLORTERM="truecolor"
+
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS
 # Note that this doesn't work with `ls` built-in to macOS
