@@ -1,4 +1,3 @@
-vim.cmd([[
 let s:temporary_directory = "/tmp/vim.robenkleene/"
 let s:chdirectory_directory = s:temporary_directory . "chdir"
 let s:chdirectory_file = s:chdirectory_directory . "/chdir"
@@ -96,5 +95,4 @@ augroup write_chdir
         \ | call writefile([expand('%:p')], s:chdirectory_file)
         \ | endif
 augroup END
-]])
 
