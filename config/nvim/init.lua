@@ -61,5 +61,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- Set leader now so later bindings pick it up
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
