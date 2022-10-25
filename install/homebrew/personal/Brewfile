@@ -76,6 +76,7 @@ brew 'wdiff'
 brew 'mitmproxy'
 brew 'neofetch'
 brew 'hyperfine'
+brew 'sd'
 
 # Railwaycat
 # tap 'railwaycat/emacsmacport'
