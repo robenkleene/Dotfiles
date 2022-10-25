@@ -5,3 +5,5 @@ merge = internal:merge3
 pager = delta
 [delta]
 syntax-theme = Nord
+[committemplate]
+%unset emptymsg
