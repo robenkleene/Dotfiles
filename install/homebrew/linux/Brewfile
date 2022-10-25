@@ -12,6 +12,7 @@ brew 'bat'
 # Support for `lesskey`
 brew 'less'
 brew 'ncdu'
+brew 'git-delta'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']

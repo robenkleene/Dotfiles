@@ -2,50 +2,13 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
+	pager = delta
 [push]
 	default = simple
 [merge]
-	tool = vimdiff
 	conflictstyle = diff3
-[alias]
-	a = add
-	aa = add -A :/
-	b = branch
-	bd = branch -d
-	c = commit
-	cl = clone
-	co = checkout
-	cob = checkout -b
-	d = diff
-	dt = difftool
-	dw = diff --color-words
-	f = fetch
-	l = log
-	m = merge
-	mt = mergetool
-	p = push
-	pt = push --tags
-	r = rebase
-	rc = rebase --continue
-	s = status
-	sm = submodule
-	smi = submodule init
-	smu = submodule update
-	smuir = submodule update --init -recursive
-	t = tag
-	u = pull
-	wstats = difftool -t wstats
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [include]
 	path = .gitconfig_local
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
 [pull]
 	ff = only
 [user]
@@ -53,14 +16,7 @@
 	email = contact@robenkleene.com
 [init]
 	defaultBranch = main
-[diff]
-    tool = Kaleidoscope
-[difftool]
-	prompt = false
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [mergetool]
 	prompt = false
+[delta]
+	syntax-theme = Nord
