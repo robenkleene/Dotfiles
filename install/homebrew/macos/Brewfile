@@ -14,11 +14,12 @@ brew 'mas'
 brew 'rename'
 # Support for `lesskey`
 brew 'less'
+brew 'git-delta'
 
 # Editor
 brew 'aspell'
 brew 'vim'
-# brew 'nvim'
+brew 'nvim'
 brew 'editorconfig'
 
 # ctags
