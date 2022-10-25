@@ -31,7 +31,7 @@ function! s:entries(path) abort
   let path = substitute(a:path,'[\\/]$','','')
   let files = split(glob(path."/.*"),"\n")
   let files += split(glob(path."/*"),"\n")
-  call filter(files, '!isdirectory(v:val)')
+  call filter(files, '!isdirectory(v:val) && v:val !~ "\.DS_Store$"')
   return files
 endfunction
 function! s:FileByOffset(num) abort
