@@ -11,6 +11,7 @@ set -gx EMACS_COMMAND "emacsclient -nw"
 # Other
 set -gx VIM_COMMAND nvim
 # set -gx VIM_COMMAND "nvim"
+set -gx CAT_COMMAND "bat"
 set -gx MD_CAT_COMMAND "bat --style plain"
 set -gx VISUAL "$VIM_COMMAND"
 # set -gx VISUAL "$EMACS_COMMAND"
