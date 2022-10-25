@@ -5,7 +5,7 @@ function doc
     cd ~/Documentation/
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -f "$result"
-        $MD_CAT_COMMAND $result
+        eval $MD_CAT_COMMAND $result
         cd -
     else if test -d "$result"
         cd $result
