@@ -106,6 +106,7 @@ function fish_sync_abbr
     abbr -a gdns 'git diff --name-status'
     abbr -a gsh 'git show'
     abbr -a gg 'git grep'
+    abbr -a gbl 'git blame'
     abbr -a gcleanup 'git checkout -- . && git clean -dff'
     abbr -a chu 'carthage update'
     abbr -a chunub 'carthage update --no-use-binaries'
