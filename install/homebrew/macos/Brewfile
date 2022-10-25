@@ -69,6 +69,8 @@ brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
 brew 'wdiff'
 brew 'mitmproxy'
+brew 'hyperfine'
+brew 'sd'
 
 # Railwaycat
 # tap 'railwaycat/emacsmacport'

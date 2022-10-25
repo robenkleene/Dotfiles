@@ -31,6 +31,8 @@ brew 'gh'
 brew 'rename'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
+brew 'hyperfine'
+brew 'sd'
 
 # Languages
 # JavaScript
