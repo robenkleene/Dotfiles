@@ -1,4 +1,3 @@
-vim.cmd([[
 function! s:OverrideColors()
   highlight MatchParen guifg=lightblue guibg=NONE gui=underline cterm=underline
   " Colors
@@ -47,5 +46,4 @@ augroup override_colors
     autocmd!
     autocmd ColorScheme * call <SID>OverrideColors()
 augroup END
-]])
 

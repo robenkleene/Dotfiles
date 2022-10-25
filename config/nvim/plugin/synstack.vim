@@ -1,4 +1,3 @@
-vim.cmd([[
 if !exists("*synstack")
   finish
 endif
@@ -30,4 +29,3 @@ function! s:SyntaxColors()
 endfunc
 " Echo Syntax Colors
 command! SyntaxEchoColors :echo <SID>SyntaxColors()
-]])
