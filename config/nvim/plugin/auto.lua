@@ -77,5 +77,24 @@ augroup disable_autocomments
   autocmd!
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
+
+" Write directory to temp file
+let s:temporary_directory = "/tmp/vim.robenkleene/"
+let s:chdirectory_directory = s:temporary_directory . "chdir"
+let s:chdirectory_file = s:chdirectory_directory . "/chdir"
+if !isdirectory(s:chdirectory_directory)
+  call mkdir(s:chdirectory_directory, 'p')
+endif
+function! s:isdir(dir)
+  return !empty(a:dir) && (isdirectory(a:dir) ||
+        \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
+endfunction
+augroup write_chdir
+  autocmd!
+  autocmd VimLeavePre *
+        \ if <SID>isdir(expand('%'))
+        \ | call writefile([expand('%:p')], s:chdirectory_file)
+        \ | endif
+augroup END
 ]])
 
