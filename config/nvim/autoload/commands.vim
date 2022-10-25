@@ -4,6 +4,7 @@ function! commands#GrepBuffer(...) abort
     cexpr []
   endif
   cw
+
   " If the input is a list of files, populate the `argslist`
   if filereadable(getline('1')) || isdirectory(getline('1'))
     let l:filenames = getline(1, '$')
@@ -21,12 +22,14 @@ function! commands#GrepBuffer(...) abort
   if getline('1')[0:len('diff --')-1] ==# 'diff --' || getline('2')[0:len('diff --')-1] ==# 'diff --' || getline('1')[0:len('changeset:')-1] ==# 'changeset:'
     execute "silent %!diff_clean | diff_to_grep"
   endif
+
   " If it's grep output, populate the quickfix list
   " Check the first three lines, to allow for various types of imperfect input
   " if getline('1') =~# '^.\{-}:\s\?\d\{-}:' || getline('2') =~# '^.\{-}:\s\?\d\{-}:' || getline('3') =~# '^.\{-}:\s\?\d\{-}:'
   " Now just always treat as grep buffer if it's not a diff, lots of command
   " output contain grep results buried in them
   execute "silent %!grep_clean"
+
   cbuffer
   if len(getqflist())
     " Keep these around by default because it makes it easier to recall the
