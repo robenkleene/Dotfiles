@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Automatically use system clipboard
-vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
+-- vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
 
 vim.cmd([[
 " Settings
