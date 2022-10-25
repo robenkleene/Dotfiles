@@ -1,0 +1,8 @@
+[ui]
+ignore = ~/.hgignore
+merge = internal:merge3
+[pager]
+pager = delta
+[delta]
+syntax-theme = Nord
+%include ~/.hgrc_local
