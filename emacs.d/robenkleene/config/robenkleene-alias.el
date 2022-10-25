@@ -49,8 +49,8 @@
                       (eshell "new")))
 
 ;; Buffers & Files
-(defalias 'daily-browse 'robenkleene/browse-daily)
-(defalias 'daily 'robenkleene/open-daily)
+(defalias 'daily 'robenkleene/browse-daily)
+(defalias 'daily-new 'robenkleene/open-daily)
 (defalias 'clip 'robenkleene/new-clipboard)
 (defalias 'scratch 'robenkleene/open-emacs-scratch)
 (defalias 'scratch-text 'robenkleene/new-empty)
@@ -64,9 +64,6 @@
 (defalias 'inbox 'robenkleene/inbox)
 (defalias 'inbox-new 'robenkleene/new-inbox-document)
 (defalias 'projects-new 'robenkleene/new-projects-document)
-(defalias 'journal 'robenkleene/open-journal)
-(defalias 'todo 'robenkleene/open-todo)
-(defalias 'todo-archive 'robenkleene/open-todo-archive)
 (defalias 'cg 'robenkleene/grep-from-clipboard)
 
 ;; Todos

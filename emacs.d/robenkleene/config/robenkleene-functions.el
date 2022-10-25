@@ -976,24 +976,6 @@ With prefix arg, find the previous file."
   (find-file "~/Documents/Projects/")
   )
 
-(defun robenkleene/open-journal ()
-  "Open journal file."
-  (interactive)
-  (find-file "~/Text/journal/journal.md")
-  )
-
-(defun robenkleene/open-todo ()
-  "Open todo file."
-  (interactive)
-  (find-file "~/Text/journal/todo.md")
-  )
-
-(defun robenkleene/open-todo-archive ()
-  "Open todo archive file."
-  (interactive)
-  (find-file "~/Text/journal/todo-archive.md")
-  )
-
 (defun robenkleene/open-archive ()
   "Open inbox directory."
   (interactive)
