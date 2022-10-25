@@ -14,6 +14,15 @@ require('packer').startup(function(use)
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
   use { 'L3MON4D3/LuaSnip' }
+  use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+          require("nvim-surround").setup({
+              -- Configuration here, or leave empty to use defaults
+          })
+      end
+  })
   -- UI
   use {
     "catppuccin/nvim",
@@ -26,7 +35,6 @@ require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
-
   -- Languages
   use { 'dag/vim-fish', ft = {'fish'}, }
 
