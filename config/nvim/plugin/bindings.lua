@@ -29,6 +29,8 @@ vnoremap <space>p "*p
 vnoremap <space>P "*P
 nnoremap <space>y "*y
 vnoremap <space>y "*y
+" Command Line
+cnoremap <C-A> <Home>
 ]])
 
 -- Diagnostic keymaps
