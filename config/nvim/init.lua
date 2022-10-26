@@ -7,6 +7,12 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+-- Set before plugins that require this
+vim.o.termguicolors = true
+-- Set leader now so later bindings pick it up
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
+
 -- stylua: ignore start
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'                                                         -- Package manager
@@ -14,6 +20,12 @@ require('packer').startup(function(use)
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
   use { 'L3MON4D3/LuaSnip' }
+  use({
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+          require("colorizer").setup()
+      end
+  })
   use({
       "kylechui/nvim-surround",
       tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -53,14 +65,3 @@ if is_bootstrap then
   return
 end
 
--- Automatically source and re-compile packer whenever you save this init.lua
-local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-  command = 'source <afile> | PackerCompile',
-  group = packer_group,
-  pattern = vim.fn.expand '$MYVIMRC',
-})
-
--- Set leader now so later bindings pick it up
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'

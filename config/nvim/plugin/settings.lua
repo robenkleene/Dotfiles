@@ -19,7 +19,6 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
-vim.o.termguicolors = true
 vim.cmd [[colorscheme catppuccin]]
 
 -- Set completeopt to have a better completion experience
