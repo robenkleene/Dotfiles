@@ -29,9 +29,9 @@ function fish_set_user_paths
     end
 
     # Node
-    if test -e ~/.config/nvm/17.0.1/bin
-        set -U fish_user_paths ~/.config/nvm/17.0.1/bin $fish_user_paths
-    else if test -e ~/.nvm/versions/node/v17.0.1/bin
+    # Never install `nvm.fish` because it'll conflict with the way `nvm` is installed via the dotfiles installed script (`~/Developer/Dotfiles/install/node`)
+    # If I do need to support `nvm`, it's a good idea to switch to using `fisher` and install the plugin
+    if test -e ~/.nvm/versions/node/v17.0.1/bin
         set -U fish_user_paths ~/.nvm/versions/node/v17.0.1/bin $fish_user_paths
     end
 
