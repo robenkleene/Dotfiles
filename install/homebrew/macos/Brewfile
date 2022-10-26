@@ -58,6 +58,8 @@ brew 'sbcl'
 # Go
 brew 'go'
 brew 'jq'
+brew 'lua-language-server'
+brew 'rust-analyzer'
 
 # Special
 brew 'pandoc'

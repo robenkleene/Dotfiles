@@ -40,8 +40,11 @@ modules=(
 'generate-schema'
 
 # Language Servers
-# HTML
+# HTML, CSS, SCSS, JSON
 'vscode-langservers-extracted'
+# JavaScript & TypeScript
 'typescript'
 'typescript-language-server'
+# Bash
+'bash-language-server'
 )

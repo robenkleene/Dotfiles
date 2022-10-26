@@ -57,6 +57,7 @@ brew 'jq'
 # Rust
 brew 'wasm-pack'
 brew 'rust-analyzer'
+brew 'lua-language-server'
 
 # Special
 brew 'pandoc'
