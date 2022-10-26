@@ -113,10 +113,11 @@
 ;; Leader Map
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
 ;;   robenkleene/leader-map)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-;;   robenkleene/leader-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
   robenkleene/leader-map)
+;; The problem with `M-o' is that `o' is the binding for closing other panes
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+;;   robenkleene/leader-map)
 ;; Mac-like save in terminal and GUI
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "s-s") 'save-buffer)
 (define-key robenkleene/bindings-minor-mode-map
@@ -211,7 +212,7 @@
 (define-key robenkleene/leader-map (kbd "M-p")
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
-(define-key robenkleene/leader-map (kbd "M-o") 'other-window)
+;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
 (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
 (define-key robenkleene/leader-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
