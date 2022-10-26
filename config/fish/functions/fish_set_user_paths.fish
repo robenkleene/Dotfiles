@@ -36,6 +36,7 @@ function fish_set_user_paths
     end
 
     # Ruby
+    # Never install `chruby.fish` for the same reasons at `nvm.fish`, need a coherent strategy for supporting Bash and fish version management installs
     if test -d ~/.gem/ruby/3.0.2/bin
         set -U fish_user_paths ~/.gem/ruby/3.0.2/bin $fish_user_paths
     end
