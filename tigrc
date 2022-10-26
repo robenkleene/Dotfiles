@@ -128,12 +128,14 @@ bind status - status-update
 color title-focus color249 color238 bold
 # Inactive section
 color title-blur color244 color235
-color search-result black cyan
+# Current Line
 color cursor white color54 bold
+
+color search-result black cyan
 # Status
 color stat-unstaged color243 default
 color stat-untracked color243 default
-color stat-staged green default	bold
+color stat-staged green default bold
 color header cyan default
 color section blue default bold
 # Diff
