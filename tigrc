@@ -55,10 +55,12 @@ bind generic <Ctrl-V> move-page-down
 # Stage
 # bind status s status-update
 bind stage <Enter> edit
-bind stage ]] :/^@@
-bind stage [[ :?^@@
-bind stage ] none
-bind stage [ none
+bind stage ] :/^@@
+bind stage [ :?^@@
+# bind stage ]] :/^@@
+# bind stage [[ :?^@@
+# bind stage ] none
+# bind stage [ none
 bind stage ]c :/^[+|-][^+-]
 bind stage [c :?^[+|-][^+-]
 bind stage C !git commit
