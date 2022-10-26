@@ -16,13 +16,8 @@
              helm-occur)
   :bind
   ;; ("M-A" . helm-do-rg)
-  ("M-/" . robenkleene/helm-text-edit)
-  ("M-e" . robenkleene/helm-recursive-find-file)
-  ("M-o" . robenkleene/helm-recursive-find-file)
-  ("M-c" . robenkleene/helm-recursive-find-dir)
-  ("M-z" . robenkleene/helm-z)
   ;; ("M-a" . robenkleene/helm-ag-in-directory)
-  ("C-x b" . helm-buffers-list)
+  ;; ("C-x b" . helm-buffers-list)
   (:map robenkleene/leader-map
         ;; ("h" . helm-resume)
         ("'" . helm-resume)
@@ -35,6 +30,10 @@
         ("l" . helm-occur)
         ("\\" . robenkleene/helm-clipboard-history-insert)
         ;; ("b" . helm-buffers-list)
+        ("M-/" . robenkleene/helm-text-edit)
+        ("o" . robenkleene/helm-recursive-find-file)
+        ("c" . robenkleene/helm-recursive-find-dir)
+        ("z" . robenkleene/helm-z)
         )
   :init
   (setq helm-sources-using-default-as-input nil)
