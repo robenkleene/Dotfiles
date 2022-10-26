@@ -57,6 +57,7 @@ brew 'rust-analyzer'
 brew 'valgrind'
 # json
 brew 'jq'
+brew 'lua-language-server'
 
 # Games
 brew 'nethack'
