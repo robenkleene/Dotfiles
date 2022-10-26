@@ -24,3 +24,4 @@ import:
   -  ~/.config/alacritty/modifiers.yml
   # -  ~/.config/alacritty/robenkleene.yml
   -  ~/.config/alacritty/tokyo-night.yml
+  # -  ~/.config/alacritty/omni.yml
