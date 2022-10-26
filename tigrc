@@ -122,10 +122,12 @@ bind status - status-update
 # And (colortest.pl)
 # color0-color255
 # UI
-color title-focus color254 color244 bold
-color title-blur color249 color239
+# Active section
+color title-focus color249 color238 bold
+# Inactive section
+color title-blur color244 color235
 color search-result black cyan
-color cursor black cyan
+color cursor white color54 bold
 # Status
 color stat-unstaged color243 default
 color stat-untracked color243 default
