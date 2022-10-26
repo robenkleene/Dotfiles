@@ -39,7 +39,11 @@
   ;; Omit hidden files (`^\\..+$\\') and macOS icon files (`Icon\015+')
   (setq-default dired-omit-files
                 (concat dired-omit-files
-                        "\\|^\\..+$\\|^Icon\015+\\|^flycheck_+"))
+                        "\\|^Icon\015+\\|^flycheck_+"
+                        ;; This one includes hidden files
+                        ;; "\\|^\\..+$\\|^Icon\015+\\|^flycheck_+"
+                        )
+                )
   )
 (add-hook 'dired-mode-hook
           (lambda ()
@@ -49,7 +53,7 @@
             ;; (local-set-key (kbd "C-x C-f") #'find-file)
             (dired-omit-mode)
             ;; Hide details (show them with open parentheses)
-            (dired-hide-details-mode)
+            ;; (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
             (setq-local robenkleene/archive-function
