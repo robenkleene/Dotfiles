@@ -33,11 +33,11 @@ function _robenkleene-fzf-cd-widget
         set cmd "$cmd --max-depth 1"
     end
 
-    set -l commandline (commandline)
     eval "$cmd | "(__fzfcmd) | read -l result
 
     if test -d "$result"
         set -l result_path (string escape "$result")
+        set -l commandline (commandline)
         if test -z $commandline
             commandline "cd $result_path"
             commandline -f repaint
@@ -55,11 +55,11 @@ bind ç _robenkleene-fzf-cd-widget
 
 function _robenkleene-fzf-z-widget
     set -l cmd "fasd -Rdl"
-    set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -d "$result"
         set -l result_path (string escape "$result")
+        set -l commandline (commandline)
         if test -z $commandline
             commandline "cd $result_path"
             commandline -f repaint
@@ -81,11 +81,11 @@ function _robenkleene-fzf-edit-widget
         set cmd "$cmd --max-depth 1"
     end
 
-    set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -f "$result"
         set -l result_path (string escape "$result")
+        set -l commandline (commandline)
         if test -z $commandline
             commandline "$EDITOR $result_path"
             commandline -f repaint
@@ -125,11 +125,11 @@ bind ≈ _robenkleene-fzf-commands-widget
 function _robenkleene-fzf-developer-widget
     # set -l cmd "fd --type d . ~/Developer"
     set -l cmd "find ~/Developer -type d -exec test -e '{}/.git' ';' -print -prune"
-    set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -d "$result"
         set -l result_path (string escape "$result")
+        set -l commandline (commandline)
         if test -z $commandline
             commandline "cd $result_path"
             commandline -f repaint
@@ -147,11 +147,11 @@ bind © _robenkleene-fzf-developer-widget
 
 function _robenkleene-fzf-quick-widget
     set -l cmd "fd --type d --follow . ~/Text/Notes"
-    set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -d "$result"
         set -l result_path (string escape "$result")
+        set -l commandline (commandline)
         if test -z $commandline
             commandline "cd $result_path"
             commandline -f repaint
@@ -169,10 +169,10 @@ end
 
 function _robenkleene-fzf-quick-files-widget
     set -l cmd "fd --follow . ~/Documents/Text/Notes"
-    set -l commandline (commandline)
 
     eval "$cmd | "(__fzfcmd) | read -l result
     set -l result_path (string escape "$result")
+    set -l commandline (commandline)
     if test -z $commandline
         if test -f "$result"
             set -q MD_EDITOR || set MD_EDITOR $EDITOR
