@@ -22,4 +22,5 @@ style:
 
 import:
   -  ~/.config/alacritty/modifiers.yml
-  -  ~/.config/alacritty/theme.yml
+  # -  ~/.config/alacritty/robenkleene.yml
+  -  ~/.config/alacritty/tokyo-night.yml
