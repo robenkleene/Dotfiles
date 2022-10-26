@@ -140,6 +140,7 @@ abbreviations=(
 'gdns' 'git diff --name-status'
 'gsh' 'git show'
 'gg' 'git grep'
+'gcleanup' 'git checkout -- . && git clean -dff '
 
 # Carthage
 'chu' 'carthage update'
