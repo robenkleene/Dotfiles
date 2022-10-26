@@ -21,7 +21,7 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use { 'L3MON4D3/LuaSnip' }
   use({
-      "norcalli/nvim-colorizer.lua",
+      "NvChad/nvim-colorizer.lua",
       config = function()
           require("colorizer").setup()
       end
