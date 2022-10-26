@@ -19,11 +19,11 @@ nnoremap <C-w>p gT
 vnoremap <C-w>n gt
 vnoremap <C-w>p gT
 " Clipboard
-" nnoremap <space>p "*p
-" nnoremap <space>P "*P
-" vnoremap <space>p "*p
-" vnoremap <space>P "*P
-" nnoremap <space>y "*y
-" vnoremap <space>y "*y
+nnoremap <space>p "*p
+nnoremap <space>P "*P
+vnoremap <space>p "*p
+vnoremap <space>P "*P
+nnoremap <space>y "*y
+vnoremap <space>y "*y
 " Command Line
 cnoremap <C-A> <Home>
