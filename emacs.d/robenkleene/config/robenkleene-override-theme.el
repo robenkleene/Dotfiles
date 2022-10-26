@@ -146,7 +146,8 @@
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
    ;; Styles
-
+   `(italic ((t (:underline nil :slant italic))))
+   `(bold ((t (:bold t))))
 
    ;; This doesn't work for some reason?
    ;; `(region ((t (:inherit rk-match))))
@@ -196,7 +197,6 @@
    `(markdown-list-face ((t (:inherit rk-text2))))
    `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
    ;; `(markdown-italic-face ((t (:inherit rk-text2))))
-   
    )
   )
 
