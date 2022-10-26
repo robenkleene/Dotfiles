@@ -53,7 +53,9 @@
             ;; (local-set-key (kbd "C-x C-f") #'find-file)
             (dired-omit-mode)
             ;; Hide details (show them with open parentheses)
-            ;; (dired-hide-details-mode)
+            ;; Definitely need this because lack of colors in Dired mode means
+            ;; it's hard to tell the details from the filename
+            (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
             (setq-local robenkleene/archive-function
