@@ -17,12 +17,6 @@ if command -sq fasd
     # alias z="fasd_cd -d"
 end
 
-# Ruby
-source ~/.config/fish/vendor/chruby/chruby.fish
-source ~/.config/fish/vendor/chruby/auto.fish
-# Not sure why this isn't working
-# chruby ruby-2.5.3
-
 # Python
 if test -d $HOME/.pyenv
     set -Ux PYENV_ROOT $HOME/.pyenv
