@@ -26,7 +26,8 @@
                             company-etags
                             company-dabbrev-code
                             company-capf
-                            company-ispell
+                            ;; Disable this because it shows up in comments
+                            ;; company-ispell
                             company-dabbrev
                             )
                            ))
