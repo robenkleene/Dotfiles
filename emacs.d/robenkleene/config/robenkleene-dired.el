@@ -44,6 +44,8 @@
                         ;; "\\|^\\..+$\\|^Icon\015+\\|^flycheck_+"
                         )
                 )
+  ;; Add `h' for human readable file sizes
+  (setq dired-listing-switches "-alh")
   )
 (add-hook 'dired-mode-hook
           (lambda ()
