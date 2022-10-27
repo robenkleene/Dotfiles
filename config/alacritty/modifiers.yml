@@ -1,10 +1,12 @@
 key_bindings:
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
   - { key: B,         mods: Alt,       chars: "\x1bb"                       }
+  - { key: B,         mods: Alt|Control,       chars: "\x1b\x02"                       }
   - { key: C,         mods: Alt,       chars: "\x1bc"                       }
   - { key: D,         mods: Alt,       chars: "\x1bd"                       }
   - { key: E,         mods: Alt,       chars: "\x1be"                       }
   - { key: F,         mods: Alt,       chars: "\x1bf"                       }
+  - { key: F,         mods: Alt|Control,       chars: "\x1b\x06"                       }
   - { key: G,         mods: Alt,       chars: "\x1bg"                       }
   - { key: H,         mods: Alt,       chars: "\x1bh"                       }
   - { key: I,         mods: Alt,       chars: "\x1bi"                       }
@@ -62,6 +64,7 @@ key_bindings:
   - { key: Key9,      mods: Alt,       chars: "\x1b9"                       }
   - { key: Key0,      mods: Alt,       chars: "\x1b0"                       }
   - { key: Space,     mods: Control,   chars: "\x00"                        } # Ctrl + Space
+  - { key: Space,     mods: Alt|Control,   chars: "\x1b\x00"                        } # Ctrl + Space
   - { key: Grave,     mods: Alt,       chars: "\x1b`"                       } # Alt + `
   - { key: Grave,     mods: Alt|Shift, chars: "\x1b~"                       } # Alt + ~
   - { key: Period,    mods: Alt,       chars: "\x1b."                       } # Alt + .
