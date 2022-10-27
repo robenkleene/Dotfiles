@@ -95,25 +95,26 @@ bind generic <Up> move-up
 bind generic l scroll-right
 bind generic <C-w><C-w> view-next
 
-bind generic g  none
-bind generic gg move-first-line
+# bind generic g  none
+# bind generic gg move-first-line
+bind generic g move-first-line
 
 bind main    G  none
 bind generic G  move-last-line
 
 bind generic v  none
 bind generic B view-help
-bind generic gm view-main
-bind generic gd view-diff
-bind generic gl view-log
-bind generic gt view-tree
-bind generic gb view-blob
-bind generic gx view-blame
-bind generic gr view-refs
-bind generic gs view-status
-bind generic gu view-stage
-bind generic gy view-stash
-bind generic gp view-pager
+# bind generic gm view-main
+# bind generic gd view-diff
+# bind generic gl view-log
+# bind generic gt view-tree
+# bind generic gb view-blob
+# bind generic gx view-blame
+# bind generic gr view-refs
+# bind generic gs view-status
+# bind generic gu view-stage
+# bind generic gy view-stash
+# bind generic gp view-pager
 
 # Fugitive
 bind status - status-update
