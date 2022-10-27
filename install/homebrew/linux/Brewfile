@@ -13,6 +13,7 @@ brew 'bat'
 brew 'less'
 brew 'ncdu'
 brew 'git-delta'
+brew 'tldr'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
