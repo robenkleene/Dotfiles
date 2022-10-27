@@ -170,6 +170,8 @@ function fish_sync_abbr
     abbr -a 1for "for v in"
     abbr -a x0 "xargs -0"
     abbr -a fsi "source ~/.config/fish/config.fish"
+    # Rust
+    abbr -a cgrb "cargo run --bin"
 
     # Local
     if test -f ~/.local_abbr.fish
