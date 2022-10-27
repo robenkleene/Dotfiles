@@ -93,14 +93,6 @@
             )
   )
 
-;; (use-package robe
-;;   :defer t
-;;   :init
-;;   (add-hook 'enh-ruby-mode-hook 'robe-mode)
-;;   ;; (eval-after-load 'company
-;;   ;;   '(push 'company-robe company-backends))
-;;   )
-
 (provide 'robenkleene-ruby)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
