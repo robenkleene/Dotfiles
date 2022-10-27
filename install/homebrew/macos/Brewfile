@@ -15,6 +15,7 @@ brew 'rename'
 # Support for `lesskey`
 brew 'less'
 brew 'git-delta'
+brew 'tldr'
 
 # Editor
 brew 'aspell'
