@@ -34,9 +34,6 @@
         ("\\" . robenkleene/helm-clipboard-history-insert)
         ;; ("b" . helm-buffers-list)
         ("M-/" . robenkleene/helm-text-edit)
-        ("o" . robenkleene/helm-recursive-find-file)
-        ("c" . robenkleene/helm-recursive-find-dir)
-        ("z" . robenkleene/helm-z)
         )
   :init
   (setq helm-sources-using-default-as-input nil)
