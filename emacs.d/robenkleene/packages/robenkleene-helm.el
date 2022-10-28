@@ -13,7 +13,8 @@
              robenkleene/helm-clipboard-history-copy
              robenkleene/helm-z
              helm-find-files-or-marked
-             helm-occur)
+             helm-occur
+             )
   :bind
   ;; ("M-A" . helm-do-rg)
   ;; ("M-a" . robenkleene/helm-ag-in-directory)
@@ -28,17 +29,42 @@
         ("i" . helm-semantic-or-imenu)
         ("C" . robenkleene/helm-recursive-find-dir)
         ("O" . robenkleene/helm-recursive-find-file)
-        ("a" . robenkleene/helm-ag-in-directory)
         ("H" . helm-apropos)
         ("l" . helm-occur)
         ("\\" . robenkleene/helm-clipboard-history-insert)
         ;; ("b" . helm-buffers-list)
         ("M-/" . robenkleene/helm-text-edit)
+        ("a" . robenkleene/helm-ag-in-directory)
         ("o" . robenkleene/helm-recursive-find-file)
         ("c" . robenkleene/helm-recursive-find-dir)
         ("z" . robenkleene/helm-z)
         )
   :init
+  (defun o ()
+    "Alias."
+    (interactive)
+    (call-interactively 'robenkleene/helm-recursive-find-file)
+    )
+  (defun e ()
+    "Alias."
+    (interactive)
+    (call-interactively 'robenkleene/helm-recursive-find-file)
+    )
+  (defun c ()
+    "Alias."
+    (interactive)
+    (call-interactively robenkleene/helm-recursive-find-dir)
+    )
+  (defun z ()
+    "Alias."
+    (interactive)
+    (call-interactively 'robenkleene/helm-z)
+    )
+  (defun a ()
+    "Alias."
+    (interactive)
+    (call-interactively 'robenkleene/helm-ag-in-directory)
+    )
   (setq helm-sources-using-default-as-input nil)
 
   ;; Only the named colors work here for some reason, e.g., we're using
