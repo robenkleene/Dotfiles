@@ -115,6 +115,8 @@
 ;;   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
   robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
+  robenkleene/leader-map)
 ;; The problem with `M-o' is that `o' is the binding for closing other panes
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
 ;;   robenkleene/leader-map)
@@ -124,21 +126,21 @@
   (kbd "C-x s-s") 'save-buffer)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-l")
 ;;   'robenkleene/urls-open)
-(if window-system
-    (progn
-      ;; This results in a quick search being automatically triggered on startup
-      ;; in terminal Emacs.
-      ;; These result in inserting characters into the scratch buffer on Emacs
-      ;; startup in terminal Emacs.
-      (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
-        'robenkleene/forward-block)
-      (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
-        'robenkleene/forward-block-select)
-      (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
-        'robenkleene/backward-block)
-      (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
-        'robenkleene/backward-block-select)
-      ))
+;; (if window-system
+;;     (progn
+;;       ;; This results in a quick search being automatically triggered on startup
+;;       ;; in terminal Emacs.
+;;       ;; These result in inserting characters into the scratch buffer on Emacs
+;;       ;; startup in terminal Emacs.
+;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
+;;         'robenkleene/forward-block)
+;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
+;;         'robenkleene/forward-block-select)
+;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
+;;         'robenkleene/backward-block)
+;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
+;;         'robenkleene/backward-block-select)
+;;       ))
 
 ;; Leader map
 ;; (define-key robenkleene/leader-map (kbd "w") 'visual-line-mode)
@@ -212,6 +214,7 @@
 (define-key robenkleene/leader-map (kbd "M-p")
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
 (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
+(define-key robenkleene/leader-map (kbd "M-W") 'other-window)
 ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
 (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
 (define-key robenkleene/leader-map (kbd "v")
