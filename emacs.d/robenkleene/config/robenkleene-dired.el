@@ -39,7 +39,7 @@
   ;; Omit hidden files (`^\\..+$\\') and macOS icon files (`Icon\015+')
   (setq-default dired-omit-files
                 (concat dired-omit-files
-                        "\\|^Icon\015+\\|^flycheck_+"
+                        "\\|^\.DS_Store\\|^Icon\015+\\|^flycheck_+"
                         ;; This one includes hidden files
                         ;; "\\|^\\..+$\\|^Icon\015+\\|^flycheck_+"
                         )
