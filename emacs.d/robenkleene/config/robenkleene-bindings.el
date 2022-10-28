@@ -75,13 +75,13 @@
 ;; Leader Key
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
 ;;   robenkleene/leader-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-  robenkleene/leader-map)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
+;;   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
 ;; The problem with `M-o' is that `o' is the binding for closing other panes
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
-;;   robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+  robenkleene/leader-map)
 
 ;; Core Fuzzy Keys
 
