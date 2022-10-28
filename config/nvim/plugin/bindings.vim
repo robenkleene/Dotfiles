@@ -27,3 +27,5 @@ nnoremap <space>y "*y
 vnoremap <space>y "*y
 " Command Line
 cnoremap <C-A> <Home>
+" Other
+nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
