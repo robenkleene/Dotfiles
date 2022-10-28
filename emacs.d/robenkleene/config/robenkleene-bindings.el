@@ -5,6 +5,7 @@
 ;; New Maps
 (defvar robenkleene/bindings-minor-mode-map (make-keymap))
 (defvar robenkleene/leader-map (make-keymap))
+(defvar robenkleene/window-map (make-keymap))
 
 ;; Search & Replace
 
@@ -78,7 +79,7 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
-  robenkleene/leader-map)
+  robenkleene/window-map)
 ;; The problem with `M-o' is that `o' is the binding for closing other panes
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
 ;;   robenkleene/leader-map)
@@ -148,6 +149,8 @@
 ;;   'robenkleene/evaluate-buffer-or-region)
 
 ;; Core Window Management
+
+;; Leader-Key Based
 (define-key robenkleene/leader-map
   (kbd "t")
   (lambda () (interactive) (make-frame) (other-frame 1)))
@@ -174,6 +177,34 @@
   (lambda () (interactive) (split-window-vertically) (other-window 1)))
 (define-key robenkleene/leader-map (kbd "c") 'delete-window)
 (define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
+
+;; Window-Key Based
+(define-key robenkleene/window-map
+  (kbd "t")
+  (lambda () (interactive) (make-frame) (other-frame 1)))
+(define-key robenkleene/window-map
+  (kbd "M-t")
+  (lambda () (interactive) (make-frame) (other-frame 1)))
+(define-key robenkleene/window-map (kbd "n") 'other-frame)
+(define-key robenkleene/window-map (kbd "p")
+  (lambda () (interactive) (other-frame -1)))
+(define-key robenkleene/window-map (kbd "M-n") 'other-frame)
+(define-key robenkleene/window-map (kbd "M-p")
+  (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
+(define-key robenkleene/window-map (kbd "M-a") 'other-window)
+(define-key robenkleene/window-map (kbd "M-W") 'other-window)
+;; (define-key robenkleene/window-map (kbd "M-o") 'other-window)
+(define-key robenkleene/window-map (kbd "q") 'delete-frame)
+(define-key robenkleene/window-map (kbd "v")
+  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+(define-key robenkleene/window-map (kbd "M-v")
+  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+(define-key robenkleene/window-map (kbd "s")
+  (lambda () (interactive) (split-window-vertically) (other-window 1)))
+(define-key robenkleene/window-map (kbd "M-s")
+  (lambda () (interactive) (split-window-vertically) (other-window 1)))
+(define-key robenkleene/window-map (kbd "c") 'delete-window)
+(define-key robenkleene/window-map (kbd "o") 'delete-other-windows)
 
 ;; Mode
 (define-minor-mode robenkleene/bindings-minor-mode
