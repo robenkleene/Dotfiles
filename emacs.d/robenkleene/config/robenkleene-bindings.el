@@ -43,7 +43,6 @@
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
 ;;   'robenkleene/comment)
 
-
 ;; New Keys
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
@@ -151,32 +150,32 @@
 ;; Core Window Management
 
 ;; Leader-Key Based
-(define-key robenkleene/leader-map
-  (kbd "t")
-  (lambda () (interactive) (make-frame) (other-frame 1)))
-(define-key robenkleene/leader-map
-  (kbd "M-t")
-  (lambda () (interactive) (make-frame) (other-frame 1)))
-(define-key robenkleene/leader-map (kbd "n") 'other-frame)
-(define-key robenkleene/leader-map (kbd "p")
-  (lambda () (interactive) (other-frame -1)))
-(define-key robenkleene/leader-map (kbd "M-n") 'other-frame)
-(define-key robenkleene/leader-map (kbd "M-p")
-  (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
-(define-key robenkleene/leader-map (kbd "M-a") 'other-window)
-(define-key robenkleene/leader-map (kbd "M-W") 'other-window)
-;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
-(define-key robenkleene/leader-map (kbd "q") 'delete-frame)
-(define-key robenkleene/leader-map (kbd "v")
-  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key robenkleene/leader-map (kbd "M-v")
-  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key robenkleene/leader-map (kbd "s")
-  (lambda () (interactive) (split-window-vertically) (other-window 1)))
-(define-key robenkleene/leader-map (kbd "M-s")
-  (lambda () (interactive) (split-window-vertically) (other-window 1)))
-(define-key robenkleene/leader-map (kbd "c") 'delete-window)
-(define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
+;; (define-key robenkleene/leader-map
+;;   (kbd "t")
+;;   (lambda () (interactive) (make-frame) (other-frame 1)))
+;; (define-key robenkleene/leader-map
+;;   (kbd "M-t")
+;;   (lambda () (interactive) (make-frame) (other-frame 1)))
+;; (define-key robenkleene/leader-map (kbd "n") 'other-frame)
+;; (define-key robenkleene/leader-map (kbd "p")
+;;   (lambda () (interactive) (other-frame -1)))
+;; (define-key robenkleene/leader-map (kbd "M-n") 'other-frame)
+;; (define-key robenkleene/leader-map (kbd "M-p")
+;;   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
+;; (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
+;; (define-key robenkleene/leader-map (kbd "M-W") 'other-window)
+;; ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
+;; (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
+;; (define-key robenkleene/leader-map (kbd "v")
+;;   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+;; (define-key robenkleene/leader-map (kbd "M-v")
+;;   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
+;; (define-key robenkleene/leader-map (kbd "s")
+;;   (lambda () (interactive) (split-window-vertically) (other-window 1)))
+;; (define-key robenkleene/leader-map (kbd "M-s")
+;;   (lambda () (interactive) (split-window-vertically) (other-window 1)))
+;; (define-key robenkleene/leader-map (kbd "c") 'delete-window)
+;; (define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
 
 ;; Window-Key Based
 (define-key robenkleene/window-map
