@@ -4,6 +4,7 @@ key_bindings:
   - { key: B,         mods: Alt|Control,       chars: "\x1b\x02"                       }
   - { key: C,         mods: Alt,       chars: "\x1bc"                       }
   - { key: D,         mods: Alt,       chars: "\x1bd"                       }
+  - { key: D,         mods: Alt|Control,       chars: "\x1b\x04"                       }
   - { key: E,         mods: Alt,       chars: "\x1be"                       }
   - { key: F,         mods: Alt,       chars: "\x1bf"                       }
   - { key: F,         mods: Alt|Control,       chars: "\x1b\x06"                       }
@@ -22,6 +23,7 @@ key_bindings:
   - { key: S,         mods: Alt,       chars: "\x1bs"                       }
   - { key: T,         mods: Alt,       chars: "\x1bt"                       }
   - { key: U,         mods: Alt,       chars: "\x1bu"                       }
+  - { key: U,         mods: Alt|Control,       chars: "\x1b\x15"                       }
   - { key: V,         mods: Alt,       chars: "\x1bv"                       }
   - { key: W,         mods: Alt,       chars: "\x1bw"                       }
   - { key: X,         mods: Alt,       chars: "\x1bx"                       }
