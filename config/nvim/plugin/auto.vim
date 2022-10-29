@@ -19,36 +19,37 @@ augroup END
 augroup auto_save_session
   autocmd!
   autocmd VimLeave * 
-	\   if &filetype !~ 'gitcommit'
-	\&& &filetype !~ 'pullrequest'
-	\&& &filetype !~ 'gitrebase'
-	\|    silent! mksession! ~/.vim/vim_auto_session
-	\|  endif
+  \ if expand('%:p') !~ '^/tmp'
+  \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'pullrequest'
+  \&& &filetype !~ 'gitrebase'
+  \|    silent! mksession! ~/.vim/vim_auto_session
+  \|  endif
 augroup END
 
 " Save View
 augroup save_view
   autocmd!
   autocmd BufWinLeave *
-        \   if expand('%') != ''
-        \&& &buftype !~ 'nofile'
-        \&& &buftype !~ 'help'
-        \&& &buftype !~ 'term'
-        \&& &filetype !~ 'gitcommit'
-        \&& &filetype !~ 'pullrequest'
-        \&& &filetype !~ 'gitrebase'
-        \|    silent! mkview
-        \|  endif
+  \   if expand('%') != ''
+  \&& &buftype !~ 'nofile'
+  \&& &buftype !~ 'help'
+  \&& &buftype !~ 'term'
+  \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'pullrequest'
+  \&& &filetype !~ 'gitrebase'
+  \|    silent! mkview
+  \|  endif
   autocmd BufWinEnter *
-        \   if expand('%') != ''
-        \&& &buftype !~ 'nofile'
-        \&& &buftype !~ 'help'
-        \&& &buftype !~ 'term'
-        \&& &filetype !~ 'gitcommit'
-        \&& &filetype !~ 'pullrequest'
-        \&& &filetype !~ 'gitrebase'
-        \|    silent! loadview
-        \|  endif
+  \   if expand('%') != ''
+  \&& &buftype !~ 'nofile'
+  \&& &buftype !~ 'help'
+  \&& &buftype !~ 'term'
+  \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'pullrequest'
+  \&& &filetype !~ 'gitrebase'
+  \|    silent! loadview
+  \|  endif
 augroup END
 
 augroup quickfix_height
