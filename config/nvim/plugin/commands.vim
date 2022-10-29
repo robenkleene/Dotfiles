@@ -5,3 +5,5 @@ command! Cq :GrepBufferFromClipboard
 " Files
 command! Fnext :call commands#Fnext()
 command! Fprev :call commands#Fprev()
+
+command! YankGrep :call commands#YankGrep()
