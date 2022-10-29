@@ -57,3 +57,9 @@ function! commands#Fprev() abort
   let l:filename = fnameescape(<SID>FileByOffset(-1))
   execute 'edit '.l:filename
 endfunction
+
+function! commands#YankGrep()
+  let @@ = expand("%:p").":".line('.').":0"
+  call system('~/.bin/safecopy', @@)
+  echo "Yanked Grep"
+endfunction
