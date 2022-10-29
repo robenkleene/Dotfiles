@@ -248,7 +248,10 @@
 
 ;; Mouse
 ;; Double-click instead of single click to open links
-(setq mouse-1-click-follows-link 'double)
+;; This interferes with using the mouse to select text, e.g., in terminal Emacs
+;; in Blink Shell
+;; (setq mouse-1-click-follows-link 'double)
+(setq mouse-1-click-follows-link nil)
 ;; To disable completely:
 ;; (setq mouse-1-click-follows-link nil)
 
