@@ -60,7 +60,7 @@ brew 'valgrind'
 brew 'jq'
 brew 'lua-language-server'
 # C++
-# Also installs `clangd`, `clang`, and `lldb`
+# Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
 brew 'llvm'
 
 # Games
