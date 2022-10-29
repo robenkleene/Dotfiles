@@ -43,6 +43,9 @@
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
 ;;   'robenkleene/comment)
 
+;; Improve completion
+(global-set-key (kbd "M-/") 'hippie-expand)
+
 ;; New Keys
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
