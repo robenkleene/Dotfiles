@@ -204,6 +204,11 @@
   (lambda () (interactive) (split-window-vertically) (other-window 1)))
 (define-key robenkleene/window-map (kbd "c") 'delete-window)
 (define-key robenkleene/window-map (kbd "o") 'delete-other-windows)
+(define-key robenkleene/window-map (kbd "<") 'shrink-window-horizontally)
+(define-key robenkleene/window-map (kbd ">") 'enlarge-window-horizontally)
+(define-key robenkleene/window-map (kbd "-") 'shrink-window)
+(define-key robenkleene/window-map (kbd "+") 'enlarge-window)
+(define-key robenkleene/window-map (kbd "=") 'balance-windows)
 
 ;; Mode
 (define-minor-mode robenkleene/bindings-minor-mode
