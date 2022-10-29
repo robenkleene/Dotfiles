@@ -59,6 +59,9 @@ brew 'valgrind'
 # json
 brew 'jq'
 brew 'lua-language-server'
+# C++
+# Also installs `clangd`, `clang`, and `lldb`
+brew 'llvm'
 
 # Games
 brew 'nethack'
