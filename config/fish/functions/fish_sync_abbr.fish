@@ -9,52 +9,20 @@ function fish_sync_abbr
     abbr -a v- "$VIM_COMMAND -"
     abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
-    abbr -a tq "tmp | q"
-    abbr -a pa "p | va"
-    abbr -a pva "p | va"
-    abbr -a pdq "p | dq"
-    abbr -a vd "$VIM_COMMAND -d"
     abbr -a oR 'open -R'
-    abbr -a oRglsc 'open -R (git ls-files -m -o --exclude-standard)'
     abbr -a orm 'open README.md'
-    abbr -a f fd
     abbr -a a "$ACK_COMMAND"
-    abbr -a aF "$ACK_COMMAND -F"
-    abbr -a rgF "$ACK_COMMAND -F"
-    abbr -a rgni "$ACK_COMMAND --no-ignore"
-    abbr -a rgg "$ACK_COMMAND -g"
-    abbr -a rgh "$ACK_COMMAND --heading"
-    abbr -a rgin "rg -IN -m 1"
-    abbr -a rgmd "rg --max-depth"
-    abbr -a fdni "fd --no-ignore"
-    abbr -a fdg "fd -g"
-    abbr -a fdF "fd -F"
-    abbr -a fdI "fd -I"
-    abbr -a 0fd 'fd -0'
-    abbr -a rlf 'readlink -f'
-    abbr -a tst 'tig stash'
     abbr -a ts 'tig status +3'
-    abbr -a tl tig
-    abbr -a tmsw 'tmux swap-window -t'
-    abbr -a tmwr 'tmux move-window -r'
-    abbr -a tm tmux
-    abbr -a tmb tmux_banner
-    abbr -a tmls 'tmux ls'
-    abbr -a tmsn 'tmux new'
     abbr -a tmd 'tmux detach'
     abbr -a mdv 'mosh aresdev'
     abbr -a mdvt 'mosh aresdev -- tmux attach'
-    abbr -a m make
     abbr -a hpr 'hub pull-request'
     abbr -a hprm 'hub pull-request -m'
     abbr -a ghpr 'gh pr create'
     abbr -a hprr 'hub pull-request && BROWSER= gh pr view --web'
     abbr -a c "$CAT_COMMAND"
-    abbr -a r clear
     abbr -a b bat
     abbr -a brm 'bat README.md'
-    abbr -a blj 'bat .vscode/launch.json'
-    abbr -a prm 'open -a "Repla" README.md'
     abbr -a g git
     abbr -a ga 'git add'
     abbr -a gaa 'git add -A :/'
@@ -63,33 +31,21 @@ function fish_sync_abbr
     abbr -a gb 'git branch'
     abbr -a gbr 'git branch -r'
     abbr -a gc 'git commit'
-    abbr -a gca 'git commit --amend'
-    abbr -a gcam 'git commit --amend -m'
+    abbr -a git_commit_amend 'git commit --amend'
+    abbr -a git_commit_ammend_message 'git commit --amend -m'
     abbr -a gcm 'git commit -m'
     abbr -a gcl 'git clone'
-    abbr -a gcs 'git clone --depth 1'
-    abbr -a gcn 'git clean'
-    abbr -a gcp 'git cherry-pick'
-    abbr -a gcpc 'git cherry-pick --continue'
     abbr -a gco 'git checkout'
     abbr -a gcob 'git checkout -b'
     abbr -a gd 'git diff'
     abbr -a gdr 'git diff --relative'
     abbr -a gdt 'git difftool'
-    abbr -a gdv 'git diff --relative | diff-to-grep | vg'
     abbr -a gdw 'git diff --color-words'
-    abbr -a gdfu 'git diff --name-only --diff-filter=U'
     abbr -a gf 'git fetch'
     abbr -a gl 'git log'
     abbr -a gm 'git merge'
     abbr -a gms 'git merge --squash'
     abbr -a gmt 'git mergetool'
-    abbr -a gls 'git ls-files'
-    abbr -a glsm 'git ls-files -m'
-    abbr -a glsc 'git ls-files -m -o --exclude-standard'
-    abbr -a gr 'git rebase'
-    abbr -a grc 'git rebase --continue'
-    abbr -a grs 'git rebase --skip'
     abbr -a grph 'git rev-parse HEAD'
     abbr -a grphc "git rev-parse HEAD | tr -d '\n' | c"
     abbr -a gs 'git status'
@@ -103,72 +59,46 @@ function fish_sync_abbr
     abbr -a gstp 'git stash pop'
     abbr -a gt 'git tag'
     abbr -a glg 'git log -p -G'
-    abbr -a gdns 'git diff --name-status'
     abbr -a gsh 'git show'
-    abbr -a gg 'git grep'
     abbr -a gbl 'git blame'
-    abbr -a gcleanup 'git checkout -- . && git clean -dff'
+    abbr -a gitcleanup 'git checkout -- . && git clean -dff'
     abbr -a chu 'carthage update'
     abbr -a chunub 'carthage update --no-use-binaries'
     abbr -a chunubm 'carthage update --no-use-binaries --platform macos'
     abbr -a chb 'carthage bootstrap'
-    abbr -a agvm 'agvtool what-marketing-version'
-    abbr -a agvmn 'agvtool new-marketing-version'
+    abbr -a agv_marketing_version 'agvtool what-marketing-version'
+    abbr -a agv_new_marketing_version 'agvtool new-marketing-version'
     # Use `gemacs` for graphical Emacs
     abbr -a emacs 'emacs -nw'
     # abbr -a e "$EMACS_COMMAND"
     # abbr -a ec "$EMACS_COMMAND"
-    abbr -a mba 'mbsync -all --verbose'
-    abbr -a rps 'repla server'
-    abbr -a rpj 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
+    # abbr -a mba 'mbsync -all --verbose'
     abbr -a wd web_deploy
-    abbr -a wdd 'web_deploy -s aresdev'
-    abbr -a bil 'bundle install --path vendor/bundle'
+    abbr -a bundle_install_local 'bundle install --path vendor/bundle'
     abbr -a fhm 'history merge'
-    abbr -a re grep
-    abbr -a rei 'grep -i'
-    abbr -a adbl 'adb -d logcat -s Unity'
     # Mercurial
     abbr -a hgdb 'hg diff --root . -r "bottom^"'
-    abbr -a hgdbs 'hg diff --root . -r "bottom^" --stat'
+    abbr -a hg_diff_bottom_stat 'hg diff --root . -r "bottom^" --stat'
     # This wasn't showing added files
     # abbr -a hgdbf 'hg status --rev bottom -n'
-    abbr -a hgdbf 'hg status --change bottom --no-status'
-    abbr -a hgd1 'hg diff --root . -pr .^1'
-    abbr -a hgdl 'hg diff --root . -pr .^1'
-    abbr -a hgdln 'hg diff --root . -pr .^1'
-    abbr -a hgd1s 'hg diff --root . -pr .^1 --stat'
+    abbr -a hg_status_bottom_no_status 'hg status --change bottom --no-status'
+    abbr -a hg_diff_last 'hg diff --root . -pr .^1'
+    abbr -a hg_diff_last_stat 'hg diff --root . -pr .^1 --stat'
     abbr -a hgd 'hg diff'
     abbr -a hgdr 'hg diff --root .'
-    abbr -a hgdf 'hg status --change . --no-status'
     abbr -a hgcm 'hg commit -m'
-    abbr -a hgrc 'hg rebase --continue'
-    abbr -a hgra 'hg rebase --abort'
     abbr -a hgs 'hg status'
     abbr -a hgst 'hg shelve'
     abbr -a hgstp 'hg unshelve'
-    abbr -a hgsrb 'hg status --rev bottom'
-    abbr -a hgim 'hg import --prefix . --no-commit -'
+    abbr -a hg_import_no_commit 'hg import --prefix . --no-commit -'
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
-    abbr -a hgshs 'hg show --stat'
-    abbr -a hgmva 'hg mv --after'
+    abbr -a hg_show_stat 'hg show --stat'
     abbr -a hgrm 'hg resolve --mark'
-    abbr -a hgsf 'hg status --no-status'
-    abbr -a hgsfb 'hg status --no-status --rev bottom^'
-    abbr -a hgfb 'hg status --no-status --rev bottom^'
     abbr -a hgcleanup 'hg purge && hg checkout --clean . && hg status'
     # New
-    abbr -a tre "tr -d '\n'"
-    abbr -a ore "open -R"
-    abbr -a soun "sort | uniq"
-    abbr -a xsr "xargs -0 sed -n"
-    abbr -a lsa "ls -al"
-    abbr -a lsal "ls -al"
-    abbr -a srv "python -m http.server 8000"
+    abbr -a tr_line_ending "tr -d '\n'"
     # Fish
-    abbr -a 1for "for v in"
-    abbr -a x0 "xargs -0"
     abbr -a fsi "source ~/.config/fish/config.fish"
     # Rust
     abbr -a cgrb "cargo run --bin"
