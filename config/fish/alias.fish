@@ -7,13 +7,11 @@
 # alias p='safepaste'
 alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
-alias safecopy1='tr -d '\''\n'\'' | tee /dev/tty | safecopy'
 alias ge='emacs_app'
 alias ec='emacsclient_wrapper'
 alias e='emacsclient_wrapper'
 # alias va="xargs -o $VIM_COMMAND"
 alias gemacs='emacs_app'
-alias excel='open -a "Microsoft Excel"'
 
 alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
 # Override
@@ -35,18 +33,12 @@ alias t='terminal_cd'
 alias o='open_custom'
 alias q='vim_grep'
 alias dv='vim_diff'
-alias vt='vim_tag'
-alias ve='vim -c Files'
-alias vc='vim -c Cd'
-alias va='vim -c RG'
-alias vs='diff_status | vim -'
-alias l='less -RFX'
 alias rg='rg_custom'
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
 alias pull='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && git_pull_all -t'
-alias clip='safepaste | vim -'
+alias clip="safepaste | $VIM_COMMAND -"
 alias ch='clipboard_history'
 if test -f "$HOME/.personal"
     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
@@ -69,16 +61,6 @@ alias tma='tmux attach'
 alias tmnd='tmux_name_directory'
 alias tmsr='tmux_session_auto_restore_ssh'
 alias tmsq='tmux_session_auto_save_quit'
-# alias tmp='tmux_paths'
-# alias tmpa='tmux_paths -a'
-alias tmc='tmux_paths_run'
-alias tmack='tmux_paths_rg'
-alias tmgs='tmux_git_status'
-alias tmssdw='tmux_session_save_dropbox_work'
-alias tmba='tmux_banner_all'
-alias tmn='tmux_shell_new'
-alias tmr='tmux_restart'
-alias tmp='tmux_yank_paste'
 
 # `make`
 alias mt='make test'
@@ -94,8 +76,6 @@ alias nrf='npm run format'
 alias nrac='npm run autocorrect'
 
 # `emacs`
-alias mgs='emacs_magit_status'
-alias mgl='emacs_magit_log'
 alias esk='emacs_kill_server'
 alias esr='emacs_reset_server'
 alias eg='emacs_grep'
@@ -105,7 +85,6 @@ alias d='$CD_COMMAND .'
 
 # `vim`
 alias vsr='vim_session_restore_auto'
-alias vsra='vim_session_restore_auto'
 alias vsrs='vim_session_restore_saved'
 
 # `emacs`
@@ -124,8 +103,6 @@ end
 # `doc` / `snp` / `dev`
 alias snp='fzf_snippet_copy'
 alias snpe='fzf_snippet_edit'
-alias lnk='fzf_link_open'
-alias dev='fzf_developer'
 
 # Test Variable
 alias ptv='echo $test_variable'
@@ -151,19 +128,11 @@ alias gbpr='git_branch_prune'
 alias gpbo='git_push_branch_origin'
 alias scwp='source_control_open_site -p'
 alias scwr='BROWSER= gh pr view --web'
-alias sgpt='sgitt -cp'
-alias sgut='sgitt -u'
-alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
 
-# `slug`
-alias slpr='slug_project'
-alias slpre='slug_project_edit'
-
 # Edit
 alias erm='eval $MD_EDITOR README.md'
-alias ecrm='eval $EMACS_COMMAND README.md'
 
 # Tags
 alias tags="generate_tags"
@@ -171,18 +140,13 @@ alias tags="generate_tags"
 # Common
 alias journal="$EDITOR ~/Text/journal/journal.md"
 alias tweet="markdown_tweet_edit"
-alias qa="quick_text_search"
 alias writing="$EDITOR ~/Text/writing/README.md"
 
 # Mercurial
 alias cdhg='hg_cd_root'
-alias hgf='hg status --rev ".^" | grep -v "^R" | cut -d\' \' -f2'
-alias hgfb 'hg status --rev bottom^ | grep -v "^R" | cut -d\' \' -f2'
 
 # Special
 alias cdsc='sc_cd_root'
 alias lt='time_log -t'
 alias fmj='format_json'
-alias lj='launch_json'
-alias rta='prepend_pwd'
-alias ftg='append_grep'
+alias ljr='launch_json_run'
