@@ -11,14 +11,14 @@
 
 ;; These use `global-set-key' so more specific minor modes can override them,
 ;; e.g., the minibuffer
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
-  'query-replace-regexp)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+;; (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+;; Swap query replace
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
+;;   'query-replace-regexp)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
