@@ -18,3 +18,5 @@ set sessionoptions-=folds
 set sessionoptions-=blank
 " Prefer spaces to tabs
 set expandtab
+" Don't start folded
+set nofoldenable
