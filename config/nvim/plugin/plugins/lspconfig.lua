@@ -26,22 +26,15 @@ end
 
 -- Languages
 
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-}
-
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-}
-
-require('lspconfig')['rust_analyzer'].setup{
-    on_attach = on_attach,
-    settings = {
-      ["rust-analyzer"] = {}
-    }
-}
-
 require'lspconfig'.bashls.setup{
+  on_attach = on_attach,
+}
+
+require'lspconfig'.cssls.setup{
+  on_attach = on_attach,
+}
+
+require'lspconfig'.html.setup{
   on_attach = on_attach,
 }
 
@@ -61,4 +54,16 @@ require('lspconfig').sumneko_lua.setup {
       telemetry = { enable = false },
     },
   },
+}
+
+require('lspconfig').pyright.setup{
+    on_attach = on_attach,
+}
+
+require('lspconfig').rust_analyzer.setup{
+    on_attach = on_attach,
+}
+
+require('lspconfig').tsserver.setup{
+    on_attach = on_attach,
 }
