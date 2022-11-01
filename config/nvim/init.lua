@@ -19,7 +19,8 @@ require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
-  use { 'L3MON4D3/LuaSnip' }
+  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
+  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
   use({
       "NvChad/nvim-colorizer.lua",
       config = function()
@@ -46,6 +47,7 @@ require('packer').startup(function(use)
   }
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'neovim/nvim-lspconfig'
   use 'nvim-treesitter/playground'
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
