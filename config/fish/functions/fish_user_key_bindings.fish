@@ -1,11 +1,9 @@
 # bind \t accept-autosuggestion
 bind \cy fish_clipboard_paste
-bind \cv vim_grep_clipboard
 bind \cq push_line
 bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
 bind \ew 'fish_clipboard_copy; commandline -f kill-whole-line'
-# bind \ew fish_clipboard_copy
 bind \cx\ce edit_command_buffer
 
 # unbind
@@ -13,6 +11,7 @@ bind \cx\ce edit_command_buffer
 bind ˜ true
 bind õ true
 bind ã true
+bind ñ true
 # Merge history first when doing a search
 # bind -k up 'history --merge ; up-or-search'
 # For some reason the above doesn't get picked up, but below does
