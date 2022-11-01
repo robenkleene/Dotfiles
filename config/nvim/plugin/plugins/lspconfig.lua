@@ -24,24 +24,25 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local lsp_flags = {
-  debounce_text_changes = 150,
-}
+-- Languages
+
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
-    flags = lsp_flags,
 }
+
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
-    flags = lsp_flags,
 }
+
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
     settings = {
       ["rust-analyzer"] = {}
     }
+}
+
+require'lspconfig'.bashls.setup{
+  on_attach = on_attach,
 }
 
 require('lspconfig').sumneko_lua.setup {
@@ -54,7 +55,7 @@ require('lspconfig').sumneko_lua.setup {
         path = runtime_path,
       },
       diagnostics = {
-        globals = { 'vim' },
+        globals = { 'vim', 'capabilities', 'runtime_path', },
       },
       workspace = { library = vim.api.nvim_get_runtime_file('', true) },
       telemetry = { enable = false },
