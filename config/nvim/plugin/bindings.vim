@@ -5,8 +5,7 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
 nnoremap <leader>cq :GrepBufferFromClipboard<CR>
-" Text Editing
-inoremap <M-BS> <C-W>
+" Other
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 " Tabs
@@ -27,5 +26,10 @@ nnoremap <space>y "*y
 vnoremap <space>y "*y
 " Command Line
 cnoremap <C-A> <Home>
+cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+" Insert
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+inoremap <M-BS> <C-W>
 " Other
 nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
+
