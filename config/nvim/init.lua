@@ -45,6 +45,7 @@ require('packer').startup(function(use)
     end
   }
   use 'nvim-lualine/lualine.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
   -- Languages
