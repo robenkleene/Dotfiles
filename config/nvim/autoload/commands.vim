@@ -63,3 +63,9 @@ function! commands#YankGrep()
   call system('~/.bin/safecopy', @@)
   echo "Yanked Grep"
 endfunction
+
+function! commands#YankPath()
+  let @@ = expand("%:p")
+  call system('~/.bin/safecopy', @@)
+  echo "Yanked Path"
+endfunction
