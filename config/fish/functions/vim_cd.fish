@@ -4,10 +4,9 @@ function vim_cd
   eval $VIM_COMMAND $argv
   if test -f $tempfile
     set -l result (cat $tempfile)
-    echo $result
     if test -n $result
-      if test $result != (pwd)
-        cd (cat $tempfile)
+      if test "$result" != (pwd)
+        cd $result
       end
     end
   end
