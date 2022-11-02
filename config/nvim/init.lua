@@ -54,6 +54,11 @@ require('packer').startup(function(use)
   -- Languages
   use { 'dag/vim-fish', ft = {'fish'}, }
 
+
+  if vim.fn.filereadable("~/.nvim_local.lua") ~= 0 then
+    vim.cmd('source ' .. "~/.nvim_local.lua")
+  end
+
   if is_bootstrap then
     require('packer').sync()
   end
