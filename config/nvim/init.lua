@@ -54,6 +54,8 @@ require('packer').startup(function(use)
   -- Languages
   use { 'dag/vim-fish', ft = {'fish'}, }
 
+  -- Allow `B` to pipe just part of a visual selection
+  use 'vim-scripts/vis'
 
   if vim.fn.filereadable("~/.nvim_local.lua") ~= 0 then
     vim.cmd('source ' .. "~/.nvim_local.lua")
