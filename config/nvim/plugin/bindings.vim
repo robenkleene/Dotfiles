@@ -27,6 +27,7 @@ vnoremap <space>y "*y
 " Command Line
 cnoremap <C-A> <Home>
 cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+cnoremap <M-BS> <C-W>
 " Insert
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
 inoremap <M-BS> <C-W>
