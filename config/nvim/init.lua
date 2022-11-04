@@ -57,7 +57,7 @@ require('packer').startup(function(use)
   -- Allow `B` to pipe just part of a visual selection
   use 'vim-scripts/vis'
 
-  if vim.fn.filereadable("~/.nvim_local.lua") ~= 0 then
+  if vim.fn.filereadable(vim.fn.expand("~/.nvim_local.lua")) ~= 0 then
     vim.cmd('source ' .. "~/.nvim_local.lua")
   end
 
