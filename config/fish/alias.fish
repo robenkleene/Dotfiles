@@ -5,7 +5,6 @@
 # Use wrapper file instead because piping from an alias to vim doesn't allow
 # backgrounding
 # alias p='safepaste'
-alias y='safecopy'
 alias pv="safepaste | $VIM_COMMAND -"
 alias ge='emacs_app'
 alias ec='emacsclient_wrapper'
