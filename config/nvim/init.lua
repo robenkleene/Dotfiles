@@ -57,8 +57,10 @@ require('packer').startup(function(use)
   -- Allow `B` to pipe just part of a visual selection
   use 'vim-scripts/vis'
 
-  if vim.fn.filereadable(vim.fn.expand("~/.nvim_local.lua")) ~= 0 then
-    vim.cmd('source ' .. "~/.nvim_local.lua")
+  if vim.fn.filereadable(vim.fn.expand("~/.nvim_local/nvim_local.lua")) ~= 0 then
+    package.path = os.getenv("HOME") .. "/.nvim_local/" .. package.path
+    local nvim_local = require("nvim_local")
+    nvim_local.packer_continue(use)
   end
 
   if is_bootstrap then
