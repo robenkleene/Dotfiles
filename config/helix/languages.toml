@@ -1,10 +1,3 @@
-# [[language]]
-# name = "conf"
-# scope = "source.conf"
-# roots = []
-# file-types = ["tigrc", "conf"]
-# comment-token = "#"
-#
-# [[grammar]]
-# name = "conf"
-# source = { git = "https://github.com/the-mikedavis/tree-sitter-git-commit", rev = "318dd72abfaa7b8044c1d1fbeabcd06deaaf038f" }
+[[language]]
+name = "git-commit"
+file-types = ["tigrc", "conf"]
