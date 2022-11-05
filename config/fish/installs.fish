@@ -17,6 +17,11 @@ if command -sq fasd
     # alias z="fasd_cd -d"
 end
 
+# Implement `!!`
+function bangbang --on-event fish_postexec
+    alias !!="$argv[1]"
+end
+
 # Python
 if test -d $HOME/.pyenv
     set -Ux PYENV_ROOT $HOME/.pyenv
