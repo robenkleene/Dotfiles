@@ -103,10 +103,6 @@ switch (uname)
         alias ox='fzf_project_xcode'
 end
 
-# `doc` / `snp` / `dev`
-alias snp='fzf_snippet_copy'
-alias snpe='fzf_snippet_edit'
-
 # Test Variable
 alias ptv='echo $test_variable'
 # The `|| true` prevents an exit status of 1 if the output does not end in a
