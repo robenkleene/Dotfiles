@@ -22,7 +22,7 @@ alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
 # future version of `fd` and we can uncomment this then.
 # alias fd='fd --hidden'
 
-# `zsh`
+# Fish
 alias foi='fish_edit_config'
 alias fsa='fish_sync_abbr'
 alias fu='fish_update'
@@ -33,6 +33,10 @@ alias o='open_custom'
 alias q='vim_grep'
 alias dv='vim_diff'
 alias rg='rg_custom'
+alias ll='ls -lh'
+alias la='ls -lhA'
+alias l='ls -lhA'
+
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'

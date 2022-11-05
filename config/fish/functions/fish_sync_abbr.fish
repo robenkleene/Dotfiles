@@ -7,12 +7,12 @@ function fish_sync_abbr
     abbr -a -- - 'cd -'
     abbr -a v "$VIM_COMMAND"
     abbr -a v- "$VIM_COMMAND -"
+    abbr -a v. "$VIM_COMMAND ."
     abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
     abbr -a oR 'open -R'
     abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
-    abbr -a l "less -RFX"
     abbr -a ts 'tig status +3'
     abbr -a tmd 'tmux detach'
     abbr -a mdv 'mosh aresdev'
