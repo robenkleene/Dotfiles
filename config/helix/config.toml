@@ -27,6 +27,8 @@ tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 # p = ":clipboard-paste-after"
 # P = ":clipboard-paste-before"
 # R = ":clipboard-paste-replace"
+"{" = { "{" = "goto_prev_paragraph" }
+"}" = { "}" = "goto_next_paragraph" }
 Z = { Q = ":quit!", Z = ":x" }
 C-w = { c = "wclose" }
 A-S = "split_selection_on_newline"
