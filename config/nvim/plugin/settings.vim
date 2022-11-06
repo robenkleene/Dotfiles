@@ -24,3 +24,5 @@ set nofoldenable
 set wildmode=longest:full,full
 " Show column vertical line
 set colorcolumn=80
+" Line breaks only happen on words
+set linebreak
