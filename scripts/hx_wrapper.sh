@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ $1 =~ ^\+[0-9]+$ ]]; then
-  echo hx $2:${1#"+"}
+  exec hx $2:${1#"+"}
 else
   exec hx "$@"
 fi
