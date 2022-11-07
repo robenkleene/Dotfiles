@@ -1,3 +1,4 @@
-[[language]]
-name = "git-commit"
-file-types = ["tigrc", "conf"]
+# I think this is breaking actual git commit
+# [[language]]
+# name = "git-commit"
+# file-types = ["tigrc", "conf"]
