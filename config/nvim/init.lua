@@ -56,6 +56,7 @@ require('packer').startup(function(use)
 
   -- Allow `B` to pipe just part of a visual selection
   use 'vim-scripts/vis'
+  use 'github/copilot.vim'
 
   if vim.fn.filereadable(vim.fn.expand("~/.nvim_local/nvim_local.lua")) ~= 0 then
     package.path = os.getenv("HOME") .. "/.nvim_local/" .. package.path
