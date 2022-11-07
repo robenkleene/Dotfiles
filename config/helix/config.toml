@@ -9,6 +9,7 @@ theme = "catppuccin_mocha"
 # cursorline = true
 auto-format = false
 color-modes = true
+auto-info = false
 
 [editor.cursor-shape]
 normal = "block"
