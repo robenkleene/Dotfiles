@@ -74,8 +74,9 @@ function fish_sync_abbr
     abbr -a bundle_install_local 'bundle install --path vendor/bundle'
     abbr -a fhm 'history merge'
     # Mercurial
-    abbr -a hg_diff_relative 'hg diff -r "bottom^"'
-    abbr -a hg_diff_bottom_stat 'hg diff -r "bottom^" --stat'
+    abbr -a hg_diff_relative 'hg diff --root .'
+    abbr -a hg_diff_bottom 'hg diff -r "bottom^"'
+    abbr -a hg_diff_stat 'hg diff --stat'
     # This wasn't showing added files
     # abbr -a hgdbf 'hg status --rev bottom -n'
     abbr -a hg_status_bottom_no_status 'hg status --change bottom --no-status'
