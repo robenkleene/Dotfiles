@@ -16,6 +16,5 @@ elif [[ -t 1 ]]; then
     exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
   fi
 else
-  # Don't show any decorations when piping to `rg`
-  exec rg --smart-case "$@"
+  exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
 fi
