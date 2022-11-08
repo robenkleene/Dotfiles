@@ -3,8 +3,8 @@
 set -e
 
 # Only use colors in an interactive shell
-if [ -t 1 ]; then
-  if [ "$TERM" = "dumb" ]; then
+if [[ -t 1 ]]; then
+  if [[ "$TERM" = "dumb" ]]; then
     exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
   else
     # With pager
@@ -13,5 +13,5 @@ if [ -t 1 ]; then
     exec rg --no-heading --with-filename --smart-case --line-number --colors 'match:fg:white' --colors 'match:bg:91' --colors 'path:fg:cyan' --colors 'line:fg:white' -p "$@"
   fi
 else
-    exec rg --with-filename --smart-case --line-number "$@"
+  exec rg --smart-case "$@"
 fi
