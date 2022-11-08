@@ -70,6 +70,7 @@ elif [[ "$(uname)" = "Darwin" ]]; then
   export BROWSER="google chrome"
 fi
 # export BROWSER="Microsoft Edge Beta"
+export TIG_EDITOR="hx_wrapper"
 
 # Emacs
 # Start the server in the background if it isn't running
