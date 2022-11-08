@@ -1,4 +1,4 @@
 #!/bin/sh
 
-urls | ~/.bin/nobin/_urls_search.pl $@
+~/.bin/url_filter | ~/.bin/nobin/_urls_search.pl "$@"
 
