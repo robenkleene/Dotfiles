@@ -1,11 +1,13 @@
 # bind \t accept-autosuggestion
-bind \cy fish_clipboard_paste
+# This conflicts with using the kill ring, use `\cv` instead
+# bind \cy fish_clipboard_paste
 bind \cq push_line
 bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
 bind \ew 'fish_clipboard_copy; commandline -f kill-whole-line'
 bind \cx\ce edit_command_buffer
-
+# This is how you bind `C-space` but the selection works funny
+# bind -k nul begin-selection
 # unbind
 # These characters sometimes get input from macOS's accented character system
 bind ˜ true
