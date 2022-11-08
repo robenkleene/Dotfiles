@@ -2,7 +2,7 @@
 
 set -e
 
-url=$(~/.bin/safepaste | ~/.bin/urls -b)
+url=$(~/.bin/safepaste | ~/.bin/url_filter -b)
 
 if [[ -z "$url" ]]; then
   echo "No URL found on the clipboard" >&2
