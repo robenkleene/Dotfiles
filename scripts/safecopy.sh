@@ -21,9 +21,9 @@ done
 
 # macOS has to go first to be able to copy from tmux to macOS
 if [[ "$(uname)" == "Darwin" ]]; then
-  exec tr '\0' '\n' | pbcopy
+  exec pbcopy
 elif [ -n "${TMUX:-}" ]; then
-  tr '\0' '\n' | sed s'/⏎$//' | tmux loadb -
+  exec sed s'/⏎$//' | tmux loadb -
 else
-  cat >/dev/null
+  exec cat >/dev/null
 fi
