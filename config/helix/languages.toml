@@ -1,4 +1,10 @@
-# I think this is breaking actual git commit
-# [[language]]
-# name = "git-commit"
-# file-types = ["tigrc", "conf"]
+[[language]]
+name = "conf"
+scope = "source.conf"
+roots = []
+comment-token = "#"
+file-types = ["conf", "hosts", "tigrc"]
+
+[[grammar]]
+name = "conf"
+source = { git = "https://github.com/robenkleene/tree-sitter-conf.git", rev = "0ee2c91e7715429fe5c487d854413e80f944cf20" }
