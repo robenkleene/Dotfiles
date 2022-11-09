@@ -22,6 +22,9 @@ tab = "→"
 newline = "⏎"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
+[editor.whitespace.render]
+tab = "all"
+
 [keys.normal]
 # Can't use these because you'd also have to override `d` which doesn't seem possible?
 # y = ":clipboard-yank"
@@ -35,17 +38,18 @@ C-w = { c = "wclose" }
 A-S = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
-p = ":clipboard-paste-after"
-P = ":clipboard-paste-before"
-y = ":clipboard-yank-join"
-Y = ":clipboard-yank"
-R = ":clipboard-paste-replace"
-d = [":clipboard-yank-join", "delete_selection"]
+# Messes with multiple cursors pasting
+# p = ":clipboard-paste-after"
+# P = ":clipboard-paste-before"
+# y = ":clipboard-yank-join"
+# Y = ":clipboard-yank"
+# R = ":clipboard-paste-replace"
+# d = [":clipboard-yank-join", "delete_selection"]
 
-[keys.select]
-p = ":clipboard-paste-after"
-P = ":clipboard-paste-before"
-y = ":clipboard-yank-join"
-Y = ":clipboard-yank"
-R = ":clipboard-paste-replace"
-d = [":clipboard-yank-join", "delete_selection"]
+# [keys.select]
+# p = ":clipboard-paste-after"
+# P = ":clipboard-paste-before"
+# y = ":clipboard-yank-join"
+# Y = ":clipboard-yank"
+# R = ":clipboard-paste-replace"
+# d = [":clipboard-yank-join", "delete_selection"]
