@@ -8,9 +8,12 @@ theme = "catppuccin_mocha"
 # Makes the selection too hard to see
 # cursorline = true
 auto-format = false
+# Show mode indicator in color
 color-modes = true
+# Disable pop-ups for multi-key commands
 auto-info = false
 rulers = [80]
+auto-pairs = false
 
 [editor.cursor-shape]
 normal = "block"
