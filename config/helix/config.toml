@@ -10,6 +10,7 @@ theme = "catppuccin_mocha"
 auto-format = false
 color-modes = true
 auto-info = false
+rulers = [80]
 
 [editor.cursor-shape]
 normal = "block"
@@ -31,10 +32,13 @@ tab = "all"
 # p = ":clipboard-paste-after"
 # P = ":clipboard-paste-before"
 # R = ":clipboard-paste-replace"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
+# Probably not worth maintaining these? If I do, we need to also support
+# extending the selection if it's present
+# "{" = "goto_prev_paragraph"
+# "}" = "goto_next_paragraph"
 Z = { Q = ":quit!", Z = ":x" }
-C-w = { c = "wclose" }
+# Note `rotate_view` doesn't actually goes to the next view, not the previous
+C-w = { c = "wclose", W = "rotate_view" }
 A-S = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
