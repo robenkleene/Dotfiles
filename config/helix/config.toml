@@ -26,6 +26,9 @@ tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 [editor.whitespace.render]
 tab = "all"
 
+[keys.insert]
+C-v = ":clipboard-paste-before"
+
 [keys.normal]
 # Can't use these because you'd also have to override `d` which doesn't seem possible?
 # y = ":clipboard-yank"
