@@ -281,3 +281,43 @@ zle     -N   _fzf_command_widget
 bindkey '\ex' _fzf_command_widget
 # Visual Studio Code prints this character for this binding
 bindkey '≈' _fzf_command_widget
+
+# Functions
+
+fzf_documentation_edit() {
+  cd ~/Documentation/ || return 1
+  local cmd="fd --follow \"^[^.]+\\\$|.*\\.md\""
+  local fzfcmd="$(__fzfcmd)"
+
+  local result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -z "$result" ]]; then
+    exit
+  fi
+
+  parameter=$(printf '%q' "$PWD/$result")
+  if [[ -e "$parameter" ]]; then
+    if [[ -d "$parameter" ]]; then
+      cd "$parameter"
+    else
+      final_cmd="$EDITOR $parameter"
+      eval "$final_cmd"
+    fi
+  fi
+}
+
+fzf_documentation_less() {
+  cd ~/Documentation/ || return 1
+  local cmd="fd --type f --follow -g \"*.md\""
+  local fzfcmd="$(__fzfcmd)"
+
+  local result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -z "$result" ]]; then
+    exit
+  fi
+
+  local parameter=$(printf '%q' "$PWD/$result")
+  if [[ -f "$parameter" ]]; then
+    local final_cmd="$BAT_COMMAND $parameter"
+    eval "$final_cmd"
+  fi
+}
