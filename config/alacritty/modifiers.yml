@@ -111,3 +111,6 @@ key_bindings:
   - { key: Comma,     mods: Alt, chars: "\x1b,"                       }
   - { key: Semicolon,    mods: Alt, chars: "\x1b;"                       }
   - { key: Period,    mods: Alt, chars: "\x1b."                       }
+  # macOS
+  # This is supposed to allow creating new windows in the same session
+  - { key: N, mods: Command, action: CreateNewWindow }
