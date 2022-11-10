@@ -38,6 +38,7 @@ for file in *; do
   fi
 
   executable_name="${file%.*}"
+  chmod a+x "$source_dir/$file"
   make_symlink "$source_dir/$file" "$destination_dir/$executable_name"
 done
 
