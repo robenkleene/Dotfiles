@@ -50,6 +50,8 @@ C-s = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
 "#" = "toggle_comments"
+# Extend the selection by default
+# "g" = { "l" = "extend_to_line_end", "h" = "extend_to_line_start" }
 
 # Use system clipboard
 # Messes with multiple cursors pasting
