@@ -5,8 +5,9 @@ bind \cq push_line
 bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
 # bind \ew 'fish_clipboard_copy; commandline -f kill-whole-line'
-bind \ex 'fish_clipboard_copy; commandline -f kill-whole-line'
-bind \cx\ce edit_command_buffer
+bind \cx 'fish_clipboard_copy; commandline -f kill-whole-line'
+# This conflicts with cut, just use the native bindings of `\ee` or `\ev`
+# bind \cx\ce edit_command_buffer
 # This is how you bind `C-space` but the selection works funny
 # bind -k nul begin-selection
 # unbind
