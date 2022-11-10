@@ -49,6 +49,9 @@ A-S = "split_selection_on_newline"
 C-s = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
+"#" = "toggle_comments"
+
+# Use system clipboard
 # Messes with multiple cursors pasting
 # p = ":clipboard-paste-after"
 # P = ":clipboard-paste-before"
