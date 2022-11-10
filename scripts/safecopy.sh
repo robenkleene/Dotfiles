@@ -21,7 +21,9 @@ done
 
 
 # macOS has to go first to be able to copy from tmux to macOS
-if [[ "$(uname)" == "Darwin" ]]; then
+# It seems like Alacritty has it's own clipboard integration that conflicts
+# with this, so just disable everything if Alacritty
+if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
   exec pbcopy
 elif [ -n "${TMUX:-}" ]; then
   exec sed s'/⏎$//' | tmux loadb -

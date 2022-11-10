@@ -14,6 +14,7 @@ font:
 alt_send_esc: false
 
 env:
+  ALACRITTY: "1"
   # Colors in `vim` don't work without setting `xterm-256color`
   TERM: xterm-256color
 
@@ -24,3 +25,6 @@ import:
   -  ~/.config/alacritty/modifiers.yml
   -  ~/.config/alacritty/robenkleene.yml
   # -  ~/.config/alacritty/tokyo-night.yml
+
+selection:
+  save_to_clipboard: false
