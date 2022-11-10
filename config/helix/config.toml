@@ -53,6 +53,10 @@ C-s = "split_selection_on_newline"
 # Extend the selection by default
 # "g" = { "l" = "extend_to_line_end", "h" = "extend_to_line_start" }
 
+[keys.select]
+A-S = "split_selection_on_newline"
+C-s = "split_selection_on_newline"
+
 # Use system clipboard
 # Messes with multiple cursors pasting
 # p = ":clipboard-paste-after"
