@@ -284,7 +284,7 @@ bindkey '≈' _fzf_command_widget
 
 # Functions
 
-fzf_documentation_edit() {
+doce() {
   cd ~/Documentation/ || return 1
   local cmd="fd --follow \"^[^.]+\\\$|.*\\.md\""
   local fzfcmd="$(__fzfcmd)"
@@ -305,19 +305,15 @@ fzf_documentation_edit() {
   fi
 }
 
-fzf_documentation_less() {
-  cd ~/Documentation/ || return 1
-  local cmd="fd --type f --follow -g \"*.md\""
-  local fzfcmd="$(__fzfcmd)"
+snpe() {
+  cd ~/Developer/Snippets/ || return 1
+  cmd="fd --strip-cwd-prefix --type f --follow"
+  fzfcmd="$(__fzfcmd)"
 
-  local result="$(eval "$cmd" | $fzfcmd)"
-  if [[ -z "$result" ]]; then
-    exit
-  fi
-
-  local parameter=$(printf '%q' "$PWD/$result")
-  if [[ -f "$parameter" ]]; then
-    local final_cmd="$CAT_COMMAND $parameter"
+  result="$(eval "$cmd" | $fzfcmd)"
+  if [[ -n "$result" ]]; then
+    parameter=$(printf '%q' "$PWD/$result")
+    final_cmd="$EDITOR $parameter"
     eval "$final_cmd"
   fi
 }

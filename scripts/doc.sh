@@ -7,14 +7,17 @@ __fzfcmd() {
     echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
 }
 
-cd ~/Developer/Snippets/ || return 1
-cmd="fd --strip-cwd-prefix --type f --follow"
+cd ~/Documentation/ || return 1
+cmd="fd --type f --follow -g \"*.md\""
 fzfcmd="$(__fzfcmd)"
 
 result="$(eval "$cmd" | $fzfcmd)"
-if [[ -n "$result" ]]; then
-  parameter=$(printf '%q' "$PWD/$result")
-  ~/.bin/safecopy < "$parameter"
-  final_cmd="$CAT_COMMAND $parameter"
+if [[ -z "$result" ]]; then
+  exit
+fi
+
+parameter=$(printf '%q' "$PWD/$result")
+if [[ -f "$parameter" ]]; then
+  final_cmd="$MD_CAT_COMMAND $parameter"
   eval "$final_cmd"
 fi
