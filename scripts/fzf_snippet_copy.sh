@@ -14,7 +14,7 @@ fzfcmd="$(__fzfcmd)"
 result="$(eval "$cmd" | $fzfcmd)"
 if [[ -n "$result" ]]; then
   parameter=$(printf '%q' "$PWD/$result")
-  safecopy < "$parameter"
-  final_cmd="$BAT_COMMAND $parameter"
+  ~/.bin/safecopy < "$parameter"
+  final_cmd="$CAT_COMMAND $parameter"
   eval "$final_cmd"
 fi

@@ -317,7 +317,7 @@ fzf_documentation_less() {
 
   local parameter=$(printf '%q' "$PWD/$result")
   if [[ -f "$parameter" ]]; then
-    local final_cmd="$BAT_COMMAND $parameter"
+    local final_cmd="$CAT_COMMAND $parameter"
     eval "$final_cmd"
   fi
 }
