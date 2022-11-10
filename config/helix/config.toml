@@ -13,7 +13,7 @@ color-modes = true
 # Disable pop-ups for multi-key commands
 auto-info = false
 rulers = [80]
-auto-pairs = false
+# auto-pairs = false
 
 [editor.cursor-shape]
 normal = "block"
