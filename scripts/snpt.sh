@@ -53,7 +53,7 @@ fi
 
 if [[ "${SNIPPET:0:1}" == "." ]]; then
 	# Auto-insert template for the given language if no snippet is provided. Note that right now this clashes with the read from line above
-	SNIPPET=Template$SNIPPET
+	SNIPPET=template$SNIPPET
 fi
 
 
