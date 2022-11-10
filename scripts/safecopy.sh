@@ -19,11 +19,11 @@ while getopts ":sh" option; do
   esac
 done
 
+tmux display "got here"
+
 # macOS has to go first to be able to copy from tmux to macOS
 if [[ "$(uname)" == "Darwin" ]]; then
-  pbcopy
-  # Below version occasionally gets an error in Alacritty?
-  # exec pbcopy
+  exec pbcopy
 elif [ -n "${TMUX:-}" ]; then
   exec sed s'/⏎$//' | tmux loadb -
 else
