@@ -17,6 +17,7 @@ brew 'less'
 brew 'wget'
 brew 'git-delta'
 brew 'tldr'
+brew 'choose-rust'
 
 # Editor
 brew 'aspell'
