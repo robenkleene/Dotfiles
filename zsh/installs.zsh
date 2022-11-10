@@ -25,6 +25,11 @@ if [[ "$(uname)" = "Darwin" ]]; then
   PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
 fi
 
+# Rust
+if [[ -d $HOME/.cargo/bin ]]; then
+  PATH=$HOME/.cargo/bin:$PATH
+fi
+
 # nvm
 # Official installation is really slow:
 # Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
