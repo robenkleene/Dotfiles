@@ -16,6 +16,7 @@ brew 'rename'
 brew 'less'
 brew 'git-delta'
 brew 'tldr'
+brew 'choose-rust'
 
 # Editor
 brew 'aspell'
