@@ -3,18 +3,6 @@
 
 # Vim Temporary Files
 .*.sw?
-# Vim Local Session
-vim_session
-# Vim Local Settings
-# This filename is too common
-# settings.vim
-vim_settings
-
-# `tmux` session
-tmux_session
-
-# Bash Local Settings
-settings.sh
 
 # Build Logs
 build.log
