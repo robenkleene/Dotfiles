@@ -28,6 +28,7 @@ export ZSHENV_SOURCED=1
 
 # Exported
 export CAT_COMMAND=bat
+export MD_CAT_COMMAND="bat --style plain"
 # export BROWSER_FLAG='-t'
 
 # Export `CDPATH` so it's available in `vim`
