@@ -72,7 +72,9 @@ function fish_sync_abbr
     # abbr -a mba 'mbsync -all --verbose'
     abbr -a wd web_deploy
     abbr -a bundle_install_local 'bundle install --path vendor/bundle'
+    # Fish
     abbr -a fhm 'history merge'
+    abbr -a fke 'echo $fish_killring[1]'
     # Mercurial
     abbr -a hg_diff_relative 'hg diff --root .'
     abbr -a hg_diff_bottom 'hg diff -r "bottom^"'
