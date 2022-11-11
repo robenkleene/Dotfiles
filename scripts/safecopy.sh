@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -eo pipefail
 
 while getopts ":sh" option; do
   case "$option" in
@@ -23,6 +23,10 @@ done
 # macOS has to go first to be able to copy from tmux to macOS
 # It seems like Alacritty has it's own clipboard integration that conflicts
 # with this, so just disable everything if Alacritty
+if [[ ! -t 0 ]]; then
+  # Unset Alacritty if we're being piped too
+  unset ALACRITTY
+fi
 if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
   exec pbcopy
 elif [ -n "${TMUX:-}" ]; then
