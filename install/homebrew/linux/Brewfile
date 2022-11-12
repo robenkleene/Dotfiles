@@ -15,6 +15,7 @@ brew 'ncdu'
 brew 'git-delta'
 brew 'tldr'
 brew 'choose-rust'
+brew 'nushell'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
