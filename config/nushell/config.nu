@@ -9,7 +9,7 @@ let-env config = {
     }]
     env_change: {
       PWD: [{|before, after|
-        $nothing  # replace with source code to run if the PWD environment is different since the last repl input
+        fasd -A $after
       }]
     }
   }
@@ -26,5 +26,4 @@ let-env config = {
     }
   ]
 }
-
 
