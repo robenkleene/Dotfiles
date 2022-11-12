@@ -43,7 +43,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
   fi
 fi
 
-# Vim
-if [[ -e ~/.vim && ! -e ~/.config/nvim ]]; then
-  ln -s ~/.vim ~/.config/nvim
+# Nushell
+if [[ -e ~/.config/nushell && ! -e "~/Library/Application\ Support/nushell/" ]]; then
+  ln -s $HOME/.config/nushell/ ~/Library/Application\ Support/
 fi

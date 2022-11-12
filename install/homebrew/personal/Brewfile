@@ -18,6 +18,7 @@ brew 'wget'
 brew 'git-delta'
 brew 'tldr'
 brew 'choose-rust'
+brew 'nushell'
 
 # Editor
 brew 'aspell'
