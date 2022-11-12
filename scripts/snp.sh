@@ -2,19 +2,40 @@
 
 set -eo pipefail
 
-__fzfcmd() {
-  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
-    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
-}
+edit="false"
+while getopts ":eh" option; do
+  case "$option" in
+    e)
+      edit="true"
+      ;;
+    h)
+      echo "Usage: command [-e]"
+      exit 0
+      ;;
+    :)
+      echo "Option -OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ "$edit" == "true" ]]; then
+  command="${EDITOR:=vim}"
+else
+  command="${MD_CAT_COMMAND:=cat}"
+fi
 
 cd ~/Developer/Snippets/ || return 1
 cmd="fd --strip-cwd-prefix --type f --follow"
-fzfcmd="$(__fzfcmd)"
 
-result="$(eval "$cmd" | $fzfcmd)"
+result="$(eval "$cmd" | fzf)"
 if [[ -n "$result" ]]; then
   parameter=$(printf '%q' "$PWD/$result")
   ~/.bin/safecopy < "$parameter"
-  final_cmd="$MD_CAT_COMMAND $parameter"
+  final_cmd="$command $parameter"
   eval "$final_cmd"
 fi
