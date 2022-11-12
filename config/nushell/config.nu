@@ -516,7 +516,7 @@ let-env config = {
         mode: emacs
         event: [
             { edit: clear }
-            { edit: insertstring value: 'cd (fasd -Rdl | each {|it| $it.name} | str collect (char nl) | fzf | str trim)' }
+            { edit: insertstring value: 'cd (fasd -Rdl | str collect (char nl) | fzf | str trim)' }
             { send: enter }
         ]
     }
