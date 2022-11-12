@@ -3,10 +3,11 @@ def create_left_prompt [] {
     $"(ansi light_gray)(date format '%r') (ansi light_gray)(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim)(ansi cyan) ($env.PWD | path basename)"
 }
 def create_right_prompt [] {
-    let time_segment = ([
-        (date now | date format '%r')
-    ] | str join)
-    $"(ansi light_gray)($time_segment)"
+    # let time_segment = ([
+    #     (date now | date format '%r')
+    # ] | str join)
+    # $"(ansi light_gray)($time_segment)"
+    ""
 }
 let-env PROMPT_COMMAND = { create_left_prompt }
 let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
