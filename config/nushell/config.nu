@@ -15,33 +15,13 @@ let-env config = {
   }
   keybindings: [
     {
-        name: fzf_z
-        modifier: alt
-        keycode: char_z
-        mode: emacs
-        event: {
-          send: executehostcommand
-          cmd: "cd (nu -c 'fasd -Rdl' | str collect (char nl) | fzf | str trim)"
-        }
-    }
-    {
-        name: fzf_cd
-        modifier: alt
-        keycode: char_c
-        mode: emacs
-        event: {
-          send: executehostcommand
-          cmd: "cd (nu -c $env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)"
-        }
-    }
-    {
-      name: fzf_edit
+      name: fzf_z
       modifier: alt
-      keycode: char_o
+      keycode: char_z
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "nu -c $env.EDITOR (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)"
+        cmd: "cd (nu -c 'fasd -Rdl' | str collect (char nl) | fzf | str trim)"
       }
     }
   ]
