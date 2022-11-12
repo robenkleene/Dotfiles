@@ -11,7 +11,7 @@ auto-format = false
 # Show mode indicator in color
 color-modes = true
 # Disable pop-ups for multi-key commands
-auto-info = false
+# auto-info = false
 rulers = [80]
 auto-pairs = false
 
