@@ -19,34 +19,21 @@ let-env config = {
         modifier: alt
         keycode: char_z
         mode: emacs
-        event: [
-            { edit: clear }
-            { edit: insertstring value: 'cd (fasd -Rdl | str collect (char nl) | fzf | str trim)' }
-            { send: enter }
-        ]
+        event: {
+          send: executehostcommand
+          cmd: "cd (nu -c 'fasd -Rdl' | str collect (char nl) | fzf | str trim)"
+        }
     }
     {
         name: fzf_cd
         modifier: alt
         keycode: char_c
         mode: emacs
-        event: [
-            { edit: clear }
-            { edit: insertstring value: 'cd (nu -c $env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)' }
-            { send: enter }
-        ]
+        event: {
+          send: executehostcommand
+          cmd: "cd (nu -c $env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)"
+        }
     }
-    # {
-    #     name: fzf_edit
-    #     modifier: alt
-    #     keycode: char_o
-    #     mode: emacs
-    #     event: [
-    #         { edit: clear }
-    #         { edit: insertstring value: 'cd (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)' }
-    #         { send: enter }
-    #     ]
-    # }
     {
       name: fzf_edit
       modifier: alt
@@ -54,7 +41,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "commandline (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)"
+        cmd: "nu -c $env.EDITOR (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)"
       }
     }
   ]
