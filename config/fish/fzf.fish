@@ -195,17 +195,3 @@ end
 bind \e/ _robenkleene-fzf-quick-files-widget
 # bind \co _robenkleene-fzf-quick-files-widget
 
-function _robenkleene-fzf-clipboard-widget
-    set -l cmd "tac $HOME/.clipboard_history"
-    set -l commandline (commandline)
-
-    if test -z $commandline
-        eval "$cmd |"(__fzfcmd) | ~/.bin/safecopy -s
-    else
-        commandline -i (eval "$cmd |"(__fzfcmd) | tr '\0' '\n')
-    end
-
-    commandline -f repaint
-end
-bind \e\\ _robenkleene-fzf-clipboard-widget
-bind \ea\\ _robenkleene-fzf-clipboard-widget

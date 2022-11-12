@@ -13,3 +13,9 @@ def create_right_prompt [] {
 let-env PROMPT_COMMAND = { create_left_prompt }
 let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 
+# fzf
+let-env FZF_DEFAULT_COMMAND = 'fd --strip-cwd-prefix --type f --follow --type l --hidden --exclude .git --exclude .hg --exclude .DS_Store'
+let-env FZF_ALL_COMMAND = 'fd --strip-cwd-prefix --hidden --follow --exclude .git --exclude .hg --exclude .DS_Store'
+let-env FZF_TMUX_HEIGHT = '40%'
+let-env FZF_DEFAULT_OPTS = "--height $env.FZF_TMUX_HEIGHT --reverse $env.FZF_DEFAULT_OPTS $env.FZF_ALT_C_OPTS"
+let-env FZF_ALT_C_COMMAND = 'fd --strip-cwd-prefix --type d --hidden --follow --exclude .git --exclude .hg'
