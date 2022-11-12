@@ -12,10 +12,9 @@ let-env PROMPT_COMMAND = { create_left_prompt }
 let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 
 # Path
-let-env PATH = ($env.PATH | prepend '~/.fzf/bin')
-let-env PATH = ($env.PATH | prepend '~/.bin')
-
-let opt_paths = [
+let paths = [
+'~/.bin'
+'~/.fzf/bin'
 '/opt/homebrew/bin/'
 '~/.bin'
 '~/.nvm/versions/node/v17.0.1/bin'
@@ -23,7 +22,7 @@ let opt_paths = [
 '~/.rubies/ruby-3.0.2/bin'
 '~/.cargo/bin'
 ]
-$opt_paths | each { |path|
+$paths | each { |path|
     if ($path | path exists) {
         let-env PATH = ($env.PATH | prepend $path)
     }
