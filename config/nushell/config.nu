@@ -1,3 +1,7 @@
+# Allow macOS open and Nushell open to co-exist
+def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
+alias open = ^open
+
 let-env config = {
   show_banner: false
   hooks: {
