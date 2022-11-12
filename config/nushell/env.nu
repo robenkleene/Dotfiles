@@ -1,5 +1,6 @@
 # Prompt
 def create_left_prompt [] {
+    # $"(ansi yellow) (date format '%r') (ansi reset) ' ' (ansi g) (whoami) '@' (hostname) (ansi reset) ' ' (ansi r) (pwd) (ansi reset) ' '"
     $"(ansi blue)($env.PWD | path basename)"
 }
 def create_right_prompt [] {
