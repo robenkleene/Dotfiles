@@ -1,13 +1,7 @@
 # Nushell Environment Config File
 
 def create_left_prompt [] {
-    let path_segment = if (is-admin) {
-        $"(ansi red_bold)($env.PWD)"
-    } else {
-        $"(ansi green_bold)($env.PWD)"
-    }
-
-    $path_segment
+    $"(ansi cyan)($env.PWD)"
 }
 
 def create_right_prompt [] {
