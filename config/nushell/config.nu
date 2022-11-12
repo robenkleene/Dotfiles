@@ -424,7 +424,8 @@ let-env config = {
             description_text: yellow
         }
         source: { |buffer, position|
-            $nu.scope.commands
+            fasd -Rdl
+            # $nu.scope.commands
         }
       }
   ]
@@ -535,7 +536,7 @@ let-env config = {
       modifier: alt
       keycode: char_z
       mode: [emacs, vi_normal, vi_insert]
-      event: { send: menu name: commands_with_description }
+      event: { send: menu name: fzf_z }
     }
   ]
 }
