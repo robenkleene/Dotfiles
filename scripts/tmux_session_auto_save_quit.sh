@@ -7,7 +7,7 @@ if ! tmux info &> /dev/null; then
 fi
 
 # `^bash$` matches this script running
-commands=$(tmux list-panes -a -F "#{pane_current_command}" | grep --extended-regexp --invert-match "^zsh$|^bash$|^fish$")
+commands=$(tmux list-panes -a -F "#{pane_current_command}" | grep --extended-regexp --invert-match "^zsh$|^bash$|^fish$|^nu$")
 status=$?
 if [[ $status -eq 0 ]]; then
   commands=${commands//$'\n'/ }
