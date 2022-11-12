@@ -17,7 +17,19 @@ alias mopen = ^open
 #     # Don't automatically commit on non-personal machines
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 # end
+# function ssh_start
+#     switch (uname)
+#         case Linux
+#            if test -z $SSH_AGENT_PID
+#                 eval (ssh-agent -c)
+#                 ssh-add
+#            end
+#     end
+# end
 
+# def ssh_start [] {
+
+# }
 # def egitn [] {
 
 # }
