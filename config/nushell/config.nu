@@ -1,5 +1,30 @@
 alias mopen = ^open
 
+# function egitn
+#     # The reason `egitn` has to be run seprately after `egit` is because the
+#     # second time running `egit` can't print except the path.
+#     set -l gitnext (~/.bin/egit -n)
+#     if test -n "$gitnext"
+#         cd "$gitnext"
+#         pwd
+#         git status
+#         return 1
+#     end
+# end
+# if test -f "$HOME/.personal"
+#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
+# else
+#     # Don't automatically commit on non-personal machines
+#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
+# end
+
+# def egitn [] {
+
+# }
+# def s [] {
+
+# }
+
 let-env config = {
   show_banner: false
   hooks: {
