@@ -2,29 +2,11 @@
 
 set -eo pipefail
 
-while getopts ":sh" option; do
-  case "$option" in
-    h)
-      echo "Usage: command [-hf] [-p <file_path>]"
-      exit 0
-      ;;
-    :)
-      echo "Option -OPTARG requires an argument" >&2
-      exit 1
-      ;;
-    \?)
-      echo "Invalid option: -OPTARG" >&2
-      exit 1
-      ;;
-  esac
-done
-
-
 # macOS has to go first to be able to copy from tmux to macOS
 # It seems like Alacritty has it's own clipboard integration that conflicts
 # with this, so just disable everything if Alacritty
-if [[ ! -t 0 ]]; then
-  # Unset Alacritty if we're being piped too
+if [[ -n $1 ]]; then
+  # Unset Alacritty if we're being piped to from the `y` command
   unset ALACRITTY
 fi
 if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
