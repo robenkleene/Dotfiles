@@ -1,7 +1,6 @@
 # Prompt
 def create_left_prompt [] {
-    # $"(ansi yellow) (date format '%r') (ansi reset) ' ' (ansi g) (whoami) '@' (hostname) (ansi reset) ' ' (ansi r) (pwd) (ansi reset) ' '"
-    $"(ansi blue)($env.PWD | path basename)"
+    $"(ansi light_gray)(date format '%r') (ansi light_gray)(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim)(ansi cyan) ($env.PWD | path basename)"
 }
 def create_right_prompt [] {
     let time_segment = ([
