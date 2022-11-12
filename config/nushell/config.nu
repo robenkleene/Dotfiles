@@ -32,7 +32,7 @@ let-env config = {
         mode: emacs
         event: [
             { edit: clear }
-            { edit: insertstring value: 'cd ($env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)' }
+            { edit: insertstring value: 'cd (nu -c $env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)' }
             { send: enter }
         ]
     }
