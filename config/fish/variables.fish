@@ -27,7 +27,7 @@ set -gx EDITOR "$VISUAL"
 # set -gx GIT_EDITOR "$VIM_COMMAND"
 # set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
 set -gx TIG_EDITOR "hx_wrapper"
-set -gx LESS "--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
+set -gx LESS "--ignore-case --quit-if-one-screen"
 set -gx PAGER less
 set -gx ACK_COMMAND rg
 set -gx COLORTERM "truecolor"
@@ -56,14 +56,6 @@ if type -q brew
     set -q INFOPATH || set MANPATH ''
     set -x INFOPATH $INFOPATH $HOMEBREW_DIR/share/info
 end
-set -gx VAGRANT_HOME ~/Documents/VMs/Vagrant/vagrant.d
-set -gx VAGRANT_VMWARE_CLONE_DIRECTORY ~/Documents/VMs/Vagrant/
-
-# Tidy
-set -gx HTML_TIDY "$HOME/.tidy"
-
-# Shellcheck
-set -gx SHELLCHECK_OPTS "-e SC1090 -e SC2148"
 
 if test -n "$INSIDE_EMACS"
     set -gx PAGER cat

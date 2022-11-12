@@ -19,11 +19,6 @@ function fish_set_user_paths
             set -U fish_user_paths /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin $fish_user_paths
     end
 
-    # Support user homebrew install
-    if test -e ~/.brew/bin
-        set -U fish_user_paths ~/.brew/bin $fish_user_paths
-    end
-
     if test -e /opt/homebrew/bin/
         set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
     end
