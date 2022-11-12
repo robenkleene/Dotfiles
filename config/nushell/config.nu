@@ -26,7 +26,7 @@ let-env config = {
         ]
     }
     {
-        name: fzf_c
+        name: fzf_cd
         modifier: alt
         keycode: char_c
         mode: emacs
@@ -36,5 +36,28 @@ let-env config = {
             { send: enter }
         ]
     }
+    # {
+    #     name: fzf_edit
+    #     modifier: alt
+    #     keycode: char_o
+    #     mode: emacs
+    #     event: [
+    #         { edit: clear }
+    #         { edit: insertstring value: 'cd (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)' }
+    #         { send: enter }
+    #     ]
+    # }
+    {
+      name: fzf_edit
+      modifier: alt
+      keycode: char_o
+      mode: emacs
+      event: {
+        send: executehostcommand
+        cmd: "commandline (nu -c $env.FZF_CTRL_T_COMMAND | str collect (char nl) | fzf | str trim)"
+      }
+    }
   ]
 }
+
+
