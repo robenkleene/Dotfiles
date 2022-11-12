@@ -5,16 +5,6 @@ if command -sq fasd
             command fasd --proc (command fasd --sanitize "$argv") >/dev/null 2>&1 &
         end
     end
-    function fasd_cd -d "fasd builtin cd"
-        if test (count $argv) -le 1
-            command fasd "$argv"
-        else
-            fasd -e 'printf %s' $argv | read -l ret
-            test -z "$ret"; and return
-            test -d "$ret"; and cd "$ret"; or printf "%s\n" $ret
-        end
-    end
-    # alias z="fasd_cd -d"
 end
 
 # Implement `!!`

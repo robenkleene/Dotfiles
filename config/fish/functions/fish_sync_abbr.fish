@@ -11,7 +11,6 @@ function fish_sync_abbr
     abbr -a pv "p | $VIM_COMMAND -"
     abbr -a pq "p | q"
     abbr -a oR 'open -R'
-    abbr -a orm 'open README.md'
     abbr -a a "$ACK_COMMAND"
     abbr -a ts 'tig status +3'
     abbr -a tmd 'tmux detach'

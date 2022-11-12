@@ -2,13 +2,6 @@
 def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
 alias open = ^open
 
-def doce [] { }
-def snpe [] { 
-  cd ~/Developer/Snippets
-  let result = (fd --follow | fzf)
-
-}
-
 let-env config = {
   show_banner: false
   hooks: {
