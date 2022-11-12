@@ -28,11 +28,11 @@ let-env config = {
     {
         name: fzf_c
         modifier: alt
-        keycode: char_z
+        keycode: char_c
         mode: emacs
         event: [
             { edit: clear }
-            { edit: insertstring value: 'cd (fasd -Rdl | str collect (char nl) | fzf | str trim)' }
+            { edit: insertstring value: 'cd ($env.FZF_ALT_C_COMMAND | str collect (char nl) | fzf | str trim)' }
             { send: enter }
         ]
     }
