@@ -1,15 +1,15 @@
 # Nushell Environment Config File
 
 def create_left_prompt [] {
-    $"(ansi cyan)($env.PWD)"
+    $"(ansi blue)($env.PWD | path basename)"
 }
 
 def create_right_prompt [] {
     let time_segment = ([
-        (date now | date format '%m/%d/%Y %r')
+        (date now | date format '%r')
     ] | str join)
 
-    $"(ansi blue)($time_segment)"
+    $"(ansi light_gray)($time_segment)"
 }
 
 # Use nushell functions to define your right and left prompt
