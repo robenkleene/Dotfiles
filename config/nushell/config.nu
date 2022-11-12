@@ -406,6 +406,27 @@ let-env config = {
             | each { |it| {value: $it.command description: $it.usage} }
         }
       }
+      {
+        name: fzf_z
+        only_buffer_difference: true
+        marker: "# "
+        type: {
+            layout: description
+            columns: 4
+            col_width: 20
+            col_padding: 2
+            selection_rows: 4
+            description_rows: 10
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+        source: { |buffer, position|
+            $nu.scope.commands
+        }
+      }
   ]
   keybindings: [
     {
@@ -505,6 +526,14 @@ let-env config = {
       name: commands_with_description
       modifier: control
       keycode: char_s
+      mode: [emacs, vi_normal, vi_insert]
+      event: { send: menu name: commands_with_description }
+    }
+    # Custom
+    {
+      name: fzf_z
+      modifier: alt
+      keycode: char_z
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
     }
