@@ -406,28 +406,6 @@ let-env config = {
             | each { |it| {value: $it.command description: $it.usage} }
         }
       }
-      {
-        name: fzf_z
-        only_buffer_difference: true
-        marker: "# "
-        type: {
-            layout: description
-            columns: 4
-            col_width: 20
-            col_padding: 2
-            selection_rows: 4
-            description_rows: 10
-        }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
-        source: { |buffer, position|
-            fasd -Rdl
-            # $nu.scope.commands
-        }
-      }
   ]
   keybindings: [
     {
@@ -530,13 +508,17 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
     }
-    # Custom
+    # fzf
     {
-      name: fzf_z
-      modifier: alt
-      keycode: char_z
-      mode: [emacs, vi_normal, vi_insert]
-      event: { send: menu name: fzf_z }
+        name: fzf_z
+        modifier: alt
+        keycode: char_z
+        mode: emacs
+        event: [
+            { edit: clear }
+            { edit: insertstring value: 'cd (fasd -Rdl | each {|it| $it.name} | str collect (char nl) | fzf | str trim)' }
+            { send: enter }
+        ]
     }
   ]
 }
