@@ -9,7 +9,7 @@ def create_right_prompt [] {
         (date now | date format '%m/%d/%Y %r')
     ] | str join)
 
-    $time_segment
+    $"(ansi blue)($time_segment)"
 }
 
 # Use nushell functions to define your right and left prompt
