@@ -39,6 +39,11 @@ alias p = ^p
 
 # }
 
+def ssh_start [] {
+  if ((uname | str trim) == "Linux") {
+    ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | transpose -i -r -d | load-env
+  }
+}
 
 let-env config = {
   # table_mode: none
