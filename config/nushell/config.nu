@@ -41,6 +41,13 @@ alias p = ^p
 
 
 let-env config = {
+  # table_mode: none
+  # table_mode: compact
+  table_mode: light
+  table_trim: {
+    methodology: truncating,
+    wrapping_try_keep_words: true,
+  }
   show_banner: false
   # Keep hooks keys so they can be programatically editting
   hooks: {
