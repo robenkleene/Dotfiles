@@ -20,20 +20,19 @@ alias p = ^p
 # }
 
 def-env s [] {
-  print "1"
   ssh_start
-  print "2"
   do --ignore-errors {
     (egit -p)
   }
-  print "3"
-  egitn
-  print "Auto"
-  sgitt -cp
+  if ((egitn | length) == 0) {
+    print "Auto"
+    sgitt -cp
+  }
 }
 def-env egitn [] {
   let gitnext = (~/.bin/egit -n)
   if (($gitnext | length) > 0) {
+    cd $gitnext
     pwd
     git status
   }
@@ -42,6 +41,7 @@ def-env egitn [] {
   } else {
     .
   })
+  $gitnext
 }
 
 def ssh_start [] {
