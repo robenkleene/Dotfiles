@@ -19,12 +19,15 @@ alias p = ^p
 
 # }
 
-def s [] {
+def-env s [] {
   print "1"
   ssh_start
   print "2"
-  egit -p || egitn
+  do --ignore-errors {
+    (egit -p)
+  }
   print "3"
+  egitn
   print "Auto"
   sgitt -cp
 }
