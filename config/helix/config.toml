@@ -48,6 +48,7 @@ C-w = { c = "wclose", W = "rotate_view" }
 # A-S = "split_selection_on_newline"
 # C-s = "split_selection_on_newline"
 C-m = "split_selection_on_newline"
+A-m = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
 "#" = "toggle_comments"
