@@ -9,9 +9,6 @@ alias p = ^p
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 # end
 
-# def s [] {
-
-# }
 # def u [] {
 
 # }
@@ -22,6 +19,15 @@ alias p = ^p
 
 # }
 
+def s [] {
+  print "1"
+  ssh_start
+  print "2"
+  egit -p || egitn
+  print "3"
+  print "Auto"
+  sgitt -cp
+}
 def-env egitn [] {
   let gitnext = (~/.bin/egit -n)
   if (($gitnext | length) > 0) {
