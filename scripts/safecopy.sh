@@ -10,9 +10,9 @@ if [[ -n $1 ]]; then
   unset ALACRITTY
 fi
 if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
-  exec pbcopy
+  exec perl -pe 'chomp if eof' | sed s'/⏎$//' | pbcopy
 elif [ -n "${TMUX:-}" ]; then
-  exec sed s'/⏎$//' | tmux loadb -
+  exec perl -pe 'chomp if eof' | sed s'/⏎$//' | tmux loadb -
 else
   exec cat >/dev/null
 fi
