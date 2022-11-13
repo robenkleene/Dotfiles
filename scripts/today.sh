@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-date +%Y-%m-%d
+date +%Y-%m-%d | tr -d '\n'
