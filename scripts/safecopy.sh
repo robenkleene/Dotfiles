@@ -9,6 +9,8 @@ if [[ -n $1 ]]; then
   # Unset Alacritty if we're being piped to from the `y` command
   unset ALACRITTY
 fi
+# Chomp the last new line break which makes it safer to paste a single line
+# into the terminal.
 if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
   exec perl -pe 'chomp if eof' | sed s'/⏎$//' | pbcopy
 elif [ -n "${TMUX:-}" ]; then
