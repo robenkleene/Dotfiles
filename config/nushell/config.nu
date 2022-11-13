@@ -9,13 +9,16 @@ alias p = ^p
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 # end
 
-# def ssh_start [] {
-
-# }
 # def s [] {
 
 # }
 # def u [] {
+
+# }
+# def ut [] {
+
+# }
+# def ua [] {
 
 # }
 
