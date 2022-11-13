@@ -83,7 +83,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "cd (nu -c 'zoxide query --list' | str trim | str collect (char nl) | fzf | str trim)"
+        cmd: "cd (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)"
       }
     }
     {
@@ -93,7 +93,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "cd (nu -c 'fd --strip-cwd-prefix --type d --hidden --follow --max-depth 1 --exclude .git --exclude .hg' | str trim | str collect (char nl) | fzf | str trim)"
+        cmd: "cd (fd --strip-cwd-prefix --type d --hidden --follow --max-depth 1 --exclude .git --exclude .hg | str trim | str collect (char nl) | fzf | str trim)"
       }
     }
     {
@@ -103,7 +103,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: ($"($env.EDITOR) " + "(nu -c 'fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store' | str trim | str collect (char nl) | fzf | str trim)")
+        cmd: ($"($env.EDITOR) " + "(fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store | str trim | str collect (char nl) | fzf | str trim)")
       }
     }
   ]
