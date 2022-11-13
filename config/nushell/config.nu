@@ -57,18 +57,18 @@ let-env config = {
     }
   }    
   keybindings: [
-    {
-      name: ctrl_v
-      modifier: control
-      keycode: Char_v
-      mode: emacs
-      event: {
-        edit: insertstring
-        # TODO: Seems to print "no buffers" on Linux if the tmux pasteboard
-        # is empty?
-        value: $"(~/.bin/safepaste)"
-      }
-    }
+    # This doesn't work because the command is evaluated at initialization,
+    # instead of after the binding is triggered
+    # {
+    #   name: ctrl_v
+    #   modifier: control
+    #   keycode: Char_v
+    #   mode: emacs
+    #   event: {
+    #     edit: insertstring
+    #     value: $"(~/.bin/safepaste)"
+    #   }
+    # }
     {
       name: fzf_z
       modifier: alt
