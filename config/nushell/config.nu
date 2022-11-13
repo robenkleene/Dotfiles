@@ -50,6 +50,16 @@ let-env config = {
   }
   keybindings: [
     {
+      name: ctrl_v
+      modifier: control
+      keycode: Char_v
+      mode: emacs
+      event: {
+        edit: insertstring
+        value: $"(~/.bin/safepaste)"
+      }
+    }
+    {
       name: fzf_z
       modifier: alt
       keycode: char_z
