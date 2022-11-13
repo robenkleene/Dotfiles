@@ -7,6 +7,11 @@ def create_left_prompt [] {
         $prompt
     }
     let prompt = $prompt + $"(ansi cyan_bold)($env.PWD | path basename)(ansi reset) "
+    let prompt = if ($env.LAST_EXIT_CODE > 0) {
+        $prompt + $"(ansi red)($env.LAST_EXIT_CODE)(ansi reset) "
+    } else {
+        $prompt
+    }
     $prompt
 }
 def create_right_prompt [] {
