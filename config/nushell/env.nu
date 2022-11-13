@@ -1,12 +1,12 @@
 # Prompt
 def create_left_prompt [] {
-    let prompt = $"(ansi light_gray)(date format '%r') "
+    let prompt = $"(ansi reset)(ansi blue_dimmed)(date format '%r')(ansi reset) "
     let prompt = if ("SSH_CONNECTION" in (env).name) {
-        $prompt + $"(ansi light_gray)(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim)"
+        $prompt + $"(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim) "
     } else {
         $prompt
     }
-    let prompt = $prompt + $"(ansi cyan)($env.PWD | path basename)(ansi reset) "
+    let prompt = $prompt + $"(ansi cyan_bold)($env.PWD | path basename)(ansi reset) "
     $prompt
 }
 def create_right_prompt [] {
