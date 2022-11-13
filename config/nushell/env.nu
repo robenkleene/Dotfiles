@@ -13,21 +13,30 @@ let-env PROMPT_COMMAND = { create_left_prompt }
 let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 
 # Path
-let paths = [
-'~/.bin'
-'~/.fzf/bin'
-'/opt/homebrew/bin/'
-'~/.bin'
-'~/.nvm/versions/node/v17.0.1/bin'
-'~/.gem/ruby/3.0.2/bin'
-'~/.rubies/ruby-3.0.2/bin'
-'~/.cargo/bin'
-]
-$paths | each { |path|
-    if ($path | path exists) {
-        let-env PATH = ($env.PATH | prepend $path)
-    }
-}
+# Fix for unsplit path by default
+let-env PATH = ($env.PATH | split row ":")
+# Loop not working on macOS?
+# let paths = [
+# '~/.bin'
+# '~/.fzf/bin'
+# '/opt/homebrew/bin/'
+# '~/.nvm/versions/node/v17.0.1/bin'
+# '~/.gem/ruby/3.0.2/bin'
+# '~/.rubies/ruby-3.0.2/bin'
+# '~/.cargo/bin'
+# ]
+# $paths | each { |path|
+#     if ($path | path exists) {
+#         let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin/')
+#     }
+# }
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.bin")
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.fzf/bin")
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.nvm/versions/node/v17.0.1/bin")
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.gem/ruby/3.0.2/bin")
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.rubies/ruby-3.0.2/bin")
+let-env PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
+let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin/')
 
 # fzf
 let-env FZF_DEFAULT_OPTS = "--height 40% --reverse"
