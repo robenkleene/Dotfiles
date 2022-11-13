@@ -39,15 +39,23 @@ alias p = ^p
 
 # }
 
+
 let-env config = {
   show_banner: false
+  # Keep hooks keys so they can be programatically editting
   hooks: {
+    pre_prompt: [{
+      $nothing
+    }]
+    pre_execution: [{
+      $nothing
+    }]
     env_change: {
       PWD: [{|before, after|
-        zoxide add -- $after
+        $nothing
       }]
     }
-  }
+  }    
   keybindings: [
     {
       name: ctrl_v
@@ -90,5 +98,11 @@ let-env config = {
       }
     }
   ]
+}
+
+if ((which 'zoxide' | length) > 0) {
+  let-env config = ($env.config | update hooks.env_change.PWD ($env.config.hooks.env_change.PWD | append {|_, dir|
+    zoxide add -- $dir
+  }))
 }
 
