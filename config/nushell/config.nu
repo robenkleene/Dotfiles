@@ -64,6 +64,8 @@ let-env config = {
       mode: emacs
       event: {
         edit: insertstring
+        # TODO: Seems to print "no buffers" on Linux if the tmux pasteboard
+        # is empty?
         value: $"(~/.bin/safepaste)"
       }
     }
