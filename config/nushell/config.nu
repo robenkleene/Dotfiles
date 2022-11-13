@@ -2,42 +2,35 @@ alias mopen = ^open
 alias rg = rg_custom
 alias p = ^p
 
-# function egitn
-#     # The reason `egitn` has to be run seprately after `egit` is because the
-#     # second time running `egit` can't print except the path.
-#     set -l gitnext (~/.bin/egit -n)
-#     if test -n "$gitnext"
-#         cd "$gitnext"
-#         pwd
-#         git status
-#         return 1
-#     end
-# end
 # if test -f "$HOME/.personal"
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
 # else
 #     # Don't automatically commit on non-personal machines
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 # end
-# function ssh_start
-#     switch (uname)
-#         case Linux
-#            if test -z $SSH_AGENT_PID
-#                 eval (ssh-agent -c)
-#                 ssh-add
-#            end
-#     end
-# end
 
 # def ssh_start [] {
-
-# }
-# def egitn [] {
 
 # }
 # def s [] {
 
 # }
+# def u [] {
+
+# }
+
+def-env egitn [] {
+  let gitnext = (~/.bin/egit -n)
+  if (($gitnext | length) > 0) {
+    pwd
+    git status
+  }
+  cd (if (($gitnext | length) > 0) {
+    $gitnext
+  } else {
+    .
+  })
+}
 
 def ssh_start [] {
   if ((uname | str trim) == "Linux") {
