@@ -44,7 +44,7 @@ let-env config = {
   hooks: {
     env_change: {
       PWD: [{|before, after|
-        fasd -A $after
+        zoxide add -- $after
       }]
     }
   }
@@ -56,7 +56,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "cd (nu -c 'fasd -Rdl' | str collect (char nl) | fzf | str trim)"
+        cmd: "cd (nu -c 'zoxide query --list' | str trim | str collect (char nl) | fzf)"
       }
     }
     {

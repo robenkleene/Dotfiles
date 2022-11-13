@@ -225,12 +225,12 @@ command! Cd :call fzf#run(fzf#wrap({
       \ }))
 
 command! Z :call fzf#run(fzf#wrap({
-      \   'source': "fasd -Rdl",
+      \   'source': "zoxide query --list",
       \   'sink': function('<SID>cd_sink')
       \ }))
 
 command! Zvim :call fzf#run(fzf#wrap({
-      \   'source': "fasd -Rfl",
+      \   'source': "zoxide query --list",
       \   'sink': 'e'
       \ }))
 
@@ -327,7 +327,7 @@ command! RelativeFilesinsert :call fzf#run(fzf#wrap({
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 command! RelativeZinsert :call fzf#run(fzf#wrap({
-      \   'source': "fasd -Rdl",
+      \   'source': "zoxide query --list",
       \   'sink':   function('<SID>relative_file_insert')
       \ }))
 

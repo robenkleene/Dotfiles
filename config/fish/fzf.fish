@@ -8,7 +8,7 @@ fzf_key_bindings
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
 
 function _robenkleene-fzf-z-widget
-    set -l cmd "fasd -Rdl"
+    set -l cmd "zoxide query --list"
 
     eval "$cmd | "(__fzfcmd) | read -l result
     if test -d "$result"

@@ -294,8 +294,8 @@
 ;; Allow project roots to be overridden with a `.project' file
 (add-hook 'project-find-functions #'robenkleene/project-override)
 
-(add-hook 'find-file-hook 'robenkleene/fasd-add)
-(add-hook 'dired-mode-hook 'robenkleene/fasd-add)
+;; (add-hook 'find-file-hook 'robenkleene/fasd-add)
+;; (add-hook 'dired-mode-hook 'robenkleene/fasd-add)
 
 ;; Automatically revert unmodified buffers
 ;; This way causing the cursor to jump randomly after saving

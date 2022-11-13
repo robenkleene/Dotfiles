@@ -4,7 +4,6 @@ brew 'git'
 brew 'tig'
 brew 'helix'
 brew 'tmux'
-brew 'fasd'
 brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing
 brew 'fd'
@@ -16,6 +15,7 @@ brew 'git-delta'
 brew 'tldr'
 brew 'choose-rust'
 brew 'nushell'
+brew 'zoxide'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
