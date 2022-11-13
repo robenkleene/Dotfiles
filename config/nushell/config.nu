@@ -1,4 +1,6 @@
 alias mopen = ^open
+alias rg = rg_custom
+alias p = ^p
 
 # function egitn
 #     # The reason `egitn` has to be run seprately after `egit` is because the

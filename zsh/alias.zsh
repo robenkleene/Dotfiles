@@ -1,37 +1,3 @@
-# These could use the pipe, but in rare cases they cause problems so they've
-# been removed.
-# For example, doing something like:
-# cat Template.html Y
-# p | pandoc -f html -t markdown Y
-# Will end up with an empty clipboard, but the following works fine:
-# cat Template.html |Y
-# p | pandoc -f html -t markdown |Y
-# For that reason, we've removed the pipe from all aliases for consistency
-# (even though it still works fine with some).
-# Example command with the pipe:
-# alias -g Y='| safecopy'
-# alias -g G='grep'
-# alias -g C='column'
-# alias -g L='less'
-# alias -g A='rg --no-line-number --no-filename'
-# alias -g Y='safecopy'
-# alias -g Y1='safecopy1'
-# These should never use the pipe, for some reason starting an interactive
-# command with the pipe behaves unpredictably. In particular, starting `vim`
-# seems to need to open it twice, which is slow.
-# Example commands with the pipe:
-# alias -g V="| $VIM_COMMAND -"
-# alias -g Q='| vim_grep'
-# alias -g V="$VIM_COMMAND -c \"ScratchBuffer\" -"
-# alias -g Q='vim_grep'
-# alias -g F='fzf_vim_grep'
-# alias -g 0VA="xargs -o -0 $VIM_COMMAND"
-# alias -g VA="xargs -o $VIM_COMMAND"
-# if [[ "$(uname)" = "Darwin" ]]; then
-#   alias -g OR="| xargs open -R"
-#   alias -g B='bbresults --pattern grep --new-window'
-# fi
-
 # Basic
 alias -- -='cd -'
 alias ..='cd ..'
@@ -74,10 +40,7 @@ alias zoi='zsh_edit_config'
 # alias dh='dirs -v'
 
 # scripts
-alias t='terminal_cd'
-alias o='open_custom'
 alias rg='rg_custom'
-alias q='vim_grep'
 alias dv='vim_diff'
 alias l='less'
 alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'

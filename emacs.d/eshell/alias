@@ -3,4 +3,3 @@ alias rg TERM=eterm-color rg_custom $*
 alias esu eshell-read-aliases-list
 alias ut git_pull_all -t
 alias u egit -u && ~/Developer/Dotfiles/update.sh
-alias o ~/.bin/open_custom
