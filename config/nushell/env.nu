@@ -1,6 +1,11 @@
 # Prompt
 def create_left_prompt [] {
-    $"(ansi light_gray)(date format '%r') (ansi light_gray)(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim)(ansi cyan) ($env.PWD | path basename)"
+    let prompt = $"(ansi light_gray)(date format '%r') "
+    # if ("SSH_CONNECTION" in (env).name) {
+    #     let prompt = ($prompt | append $"(ansi light_gray)(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim)")
+    # }
+    # let prompt = ($prompt | append $"(ansi cyan)($env.PWD | path basename)")
+    $prompt
 }
 def create_right_prompt [] {
     # let time_segment = ([
