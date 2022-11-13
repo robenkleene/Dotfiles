@@ -45,7 +45,7 @@ let-env FZF_DEFAULT_OPTS = "--height 40% --reverse"
 let-env ALTERNATE_EDITOR = ""
 let-env MD_CAT_COMMAND = "bat --style plain"
 let-env VISUAL = "hx"
-let-env VISUAL = "hx"
+let-env EDITOR = $"($env.VISUAL)"
 let-env TIG_EDITOR = "hx_wrapper"
 let-env BROWSER = "none"
 
