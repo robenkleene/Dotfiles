@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+cd "$(dirname "$0")" || exit 1
+
 # Brew
 
 # Give a consistent path for brew installs
@@ -47,3 +49,5 @@ fi
 if [[ -e ~/.config/nushell && ! -e "~/Library/Application\ Support/nushell/" ]]; then
   ln -s $HOME/.config/nushell/ ~/Library/Application\ Support/
 fi
+
+./link_user_paths.sh
