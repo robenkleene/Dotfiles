@@ -55,12 +55,6 @@ end
 # `ssh`
 alias shs='ssh_start'
 
-# `tmux`
-alias tma='tmux attach'
-alias tmnd='tmux_name_directory'
-alias tmsr='tmux_session_auto_restore_ssh'
-alias tmsq='tmux_session_auto_save_quit'
-
 # `make`
 alias mt='make test'
 alias ml='make lint'
