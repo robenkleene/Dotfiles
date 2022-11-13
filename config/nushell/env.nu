@@ -1,13 +1,13 @@
 # Prompt
 def create_left_prompt [] {
-    let prompt = $"(ansi reset)(ansi blue_dimmed)(date format '%r')(ansi reset) "
+    let prompt = $"(ansi reset)(ansi blue_dimmed)(date format '%r')(ansi reset)"
     let prompt = if ("SSH_CONNECTION" in (env).name) {
         # $prompt + $"(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim) "
-        $prompt + $"(ansi yellow)(hostname | str trim) "
+        $prompt + $" (ansi yellow)(hostname | str trim)"
     } else {
         $prompt
     }
-    let prompt = $prompt + $"(ansi cyan_bold)($env.PWD | path basename)(ansi reset)"
+    let prompt = $prompt + $" (ansi cyan_bold)($env.PWD | path basename)(ansi reset)"
     let prompt = if ($env.LAST_EXIT_CODE > 0) {
         $prompt + $" (ansi red)($env.LAST_EXIT_CODE)(ansi reset)"
     } else {
