@@ -14,7 +14,7 @@ __fzfcmd() {
 _fzf_z_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fasd -Rdl"
+  local cmd="zoxide query --list"
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 

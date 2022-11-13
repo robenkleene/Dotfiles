@@ -239,7 +239,7 @@ directory."
                 "Z: "
                 (split-string
                  (shell-command-to-string
-                  "fasd -dl | sort | sed 's/\\/$//' | uniq")
+                  "zoxide query --list | sort | sed 's/\\/$//' | uniq")
                  "\n"
                  t)))
     )

@@ -1,6 +1,6 @@
-# fasd
-if [[ $(whence -p "fasd") ]]; then
-  eval "$(fasd --init auto)"
+# zoxide
+if [[ $(whence -p "zoxide") ]]; then
+  eval "$(zoxide init zsh)"
 fi
 
 # chruby

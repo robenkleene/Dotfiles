@@ -15,8 +15,8 @@ function fish_prompt
 
     # Write pipestatus
     set -l prompt_status (__fish_print_pipestatus " " "?" "|" (set_color $fish_color_status) (set_color $fish_color_status) $last_pipestatus)
-    # Exclude fasd background process
-    set -l bg_jobs_count (count (jobs --command | grep -v '^fasd$' || true))
+    # Exclude zoxide background process
+    set -l bg_jobs_count (count (jobs --command | grep -v '^zoxide$' || true))
 
     set_color $fish_color_comment
     echo -n (date "+%I:%M %p")
