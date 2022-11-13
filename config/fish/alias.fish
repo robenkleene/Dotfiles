@@ -28,9 +28,7 @@ alias fsa='fish_sync_abbr'
 alias fu='fish_update'
 
 # Short
-alias t='terminal_cd'
 alias o='open_custom'
-alias q='vim_grep'
 alias dv='vim_diff'
 alias rg='rg_custom'
 alias ll='ls -lh'
