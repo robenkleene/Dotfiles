@@ -96,7 +96,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "hx (nu -c 'fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store' | str trim | str collect (char nl) | fzf | str trim)"
+        cmd: ($"($env.EDITOR) " + "(nu -c 'fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store' | str trim | str collect (char nl) | fzf | str trim)")
       }
     }
   ]
