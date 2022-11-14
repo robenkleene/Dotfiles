@@ -1,4 +1,6 @@
+source theme.nu
 let-env config = {
+  color_config: $dark_theme
   # table_mode: none
   # table_mode: compact
   table_mode: light
