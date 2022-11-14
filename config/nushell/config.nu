@@ -1,12 +1,8 @@
+source alias.nu
+source commands.nu
 source theme.nu
-def-env fzf_z [] {
-  let $result = (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)
-  cd (if (($result | str length) > 0) {
-    $result
-  } else {
-    "."
-  })
-}
+source fzf.nu
+
 let-env config = {
   color_config: $dark_theme
   # table_mode: none
@@ -32,18 +28,6 @@ let-env config = {
     }
   }    
   keybindings: [
-    # This doesn't work because the command is evaluated at initialization,
-    # instead of after the binding is triggered
-    # {
-    #   name: ctrl_v
-    #   modifier: control
-    #   keycode: Char_v
-    #   mode: emacs
-    #   event: {
-    #     edit: insertstring
-    #     value: $"(~/.bin/safepaste)"
-    #   }
-    # }
     {
       name: fzf_z
       modifier: alt
@@ -51,7 +35,6 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        # cmd: "cd (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)"
         cmd: "fzf_z"
       }
     }
@@ -62,7 +45,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "cd (fd --strip-cwd-prefix --type d --hidden --follow --max-depth 1 --exclude .git --exclude .hg | str trim | str collect (char nl) | fzf | str trim)"
+        cmd: "fzf_c"
       }
     }
     {
@@ -78,6 +61,4 @@ let-env config = {
   ]
 }
 
-source alias.nu
 source installs.nu
-source commands.nu
