@@ -5,16 +5,6 @@
 #     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 # end
 
-# def u [] {
-
-# }
-# def ut [] {
-
-# }
-# def ua [] {
-
-# }
-
 def-env s [] {
   ssh_start
   do --ignore-errors {
@@ -25,6 +15,7 @@ def-env s [] {
     sgitt -cp
   }
 }
+
 def-env egitn [] {
   let gitnext = (~/.bin/egit -n)
   if (($gitnext | length) > 0) {
@@ -46,3 +37,18 @@ def ssh_start [] {
   }
 }
 
+def ut [] {
+  ssh_start
+  git_pull_all -t
+}
+
+def ua [] {
+  ssh_start
+  git_pull_all
+}
+
+def u [] {
+  ssh_start
+  egit -u
+  ~/Developer/Dotfiles/update.sh
+}
