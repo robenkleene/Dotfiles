@@ -18,6 +18,7 @@ brew 'tldr'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
+brew 'zellij'
 
 # Editor
 brew 'aspell'
