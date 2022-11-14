@@ -1,57 +1,3 @@
-alias mopen = ^open
-alias rg = rg_custom
-alias p = ^p
-alias g = git
-alias ts = tig status +3
-
-# if test -f "$HOME/.personal"
-#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
-# else
-#     # Don't automatically commit on non-personal machines
-#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
-# end
-
-# def u [] {
-
-# }
-# def ut [] {
-
-# }
-# def ua [] {
-
-# }
-
-def-env s [] {
-  ssh_start
-  do --ignore-errors {
-    (egit -p)
-  }
-  if ((egitn | length) == 0) {
-    print "Auto"
-    sgitt -cp
-  }
-}
-def-env egitn [] {
-  let gitnext = (~/.bin/egit -n)
-  if (($gitnext | length) > 0) {
-    cd $gitnext
-    pwd
-    git status
-  }
-  cd (if (($gitnext | length) > 0) {
-    $gitnext
-  } else {
-    .
-  })
-  $gitnext
-}
-
-def ssh_start [] {
-  if ((uname | str trim) == "Linux") {
-    ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | transpose -i -r -d | load-env
-  }
-}
-
 let-env config = {
   # table_mode: none
   # table_mode: compact
@@ -121,9 +67,6 @@ let-env config = {
   ]
 }
 
-if ((which 'zoxide' | length) > 0) {
-  let-env config = ($env.config | update hooks.env_change.PWD ($env.config.hooks.env_change.PWD | append {|_, dir|
-    zoxide add -- $dir
-  }))
-}
-
+source alias.nu
+source installs.nu
+source commands.nu
