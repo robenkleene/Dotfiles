@@ -1,4 +1,12 @@
 source theme.nu
+def-env fzf_z [] {
+  let $result = (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)
+  cd (if (($result | str length) > 0) {
+    $result
+  } else {
+    "."
+  })
+}
 let-env config = {
   color_config: $dark_theme
   # table_mode: none
@@ -43,7 +51,8 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: "cd (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)"
+        # cmd: "cd (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)"
+        cmd: "fzf_z"
       }
     }
     {
