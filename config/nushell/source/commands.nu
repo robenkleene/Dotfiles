@@ -11,8 +11,14 @@ def-env s [] {
     # This prints a blank line for some reason
     (egit -p)
   }
-  let result = (egitn)
-  if (($result | length) <= 1) {
+
+  let gitnext = (egitn)
+  cd (if ((print $gitnext | length) > 0) {
+    $gitnext
+  } else {
+    "."
+  })
+  if ((print $gitnext | length) == 0) {
     print "Auto"
     sgitt -cp
   }
@@ -22,16 +28,11 @@ def-env egitn [] {
   let gitnext = (~/.bin/egit -n | str trim)
 
   # Why do empty strings have a length of `1`?
-  if (($gitnext | length) > 1) {
+  if ((print $gitnext | length) > 0) {
     cd $gitnext
     pwd
     git status
   }
-  cd (if (($gitnext | length) > 1) {
-    $gitnext
-  } else {
-    "."
-  })
   $gitnext
 }
 
