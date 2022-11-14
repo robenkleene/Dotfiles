@@ -55,7 +55,7 @@ let-env config = {
       mode: emacs
       event: {
         send: executehostcommand
-        cmd: ($"($env.EDITOR) " + "(fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store | str trim | str collect (char nl) | fzf | str trim)")
+        cmd: "fzf_o"
       }
     }
   ]

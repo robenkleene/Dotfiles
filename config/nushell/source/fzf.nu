@@ -19,6 +19,6 @@ def-env fzf_c [] {
 def-env fzf_o [] {
   let $result = (fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store | str trim | str collect (char nl) | fzf | str trim)
   if (($result | str length) > 0) {
-    $"($env.EDITOR) " + $result
+    nu -c ($"($env.EDITOR) " + $result)
   }
 }
