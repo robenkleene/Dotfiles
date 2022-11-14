@@ -1,22 +1,12 @@
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+simplified_ui true
+default_shell "nu"
+pane_frames true
+theme "nord"
+copy_command "safecopy"
 
-plugins:
-    - path: tab-bar
-      tag: tab-bar
-    - path: status-bar
-      tag: status-bar
-    - path: strider
-      tag: strider
-    - path: compact-bar
-      tag: compact-bar
-
-simplified_ui: true
-
-default_shell: nu
-
-pane_frames: false
-
-theme: nord
-
-copy_command: "safecopy"                     # osx
-
-scrollback_editor: hx
