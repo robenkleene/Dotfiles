@@ -67,3 +67,7 @@ let-env HOMEBREW_NO_ANALYTICS = 1
 let-env HOMEBREW_NO_AUTO_UPDATE = 1
 let-env HOMEBREW_NO_INSTALL_CLEANUP = 1
 
+let-env NU_LIB_DIRS = [
+    ($nu.config-path | path dirname | path join 'source')
+]
+
