@@ -6,7 +6,7 @@ plugins {
 }
 simplified_ui true
 default_shell "nu"
-pane_frames true
+pane_frames false
 theme "nord"
 copy_command "safecopy"
 
