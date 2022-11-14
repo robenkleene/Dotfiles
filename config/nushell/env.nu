@@ -61,6 +61,7 @@ let-env VISUAL = "hx"
 let-env EDITOR = $"($env.VISUAL)"
 let-env TIG_EDITOR = "hx_wrapper"
 let-env BROWSER = "none"
+let-env VIM_COMMAND = "nvim"
 
 # Homebrew
 let-env HOMEBREW_NO_ANALYTICS = 1
