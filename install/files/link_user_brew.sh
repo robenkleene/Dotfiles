@@ -15,6 +15,8 @@ if [[ -e "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
   brew_prefix=$(/home/linuxbrew/.linuxbrew/bin/brew --prefix)
 elif [[ -e "/opt/homebrew/bin/brew" ]]; then
   brew_prefix=$(/opt/homebrew/bin/brew --prefix)
+elif [[ -e "$HOME/.brew/bin/brew" ]]; then
+  brew_prefix=$(~/.brew/bin/brew --prefix)
 else
   echo "Skipping, No alternative directory found" >&2
   exit 0
