@@ -47,7 +47,7 @@ fi
 
 # Nushell
 if [[ -e ~/.config/nushell && ! -e "~/Library/Application\ Support/nushell/" ]]; then
-  ln -s $HOME/.config/nushell/ ~/Library/Application\ Support/
+  ln -s $HOME/.config/nushell/ ~/Library/Application\ Support/nushell
 fi
 
-./link_user_paths.sh
+./link_user_brew.sh

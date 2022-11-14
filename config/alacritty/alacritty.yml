@@ -1,5 +1,5 @@
 shell:
-  program: /opt/homebrew/bin/nu
+  program: /usr/local/bin/nu
 
 window:
   dimensions:
