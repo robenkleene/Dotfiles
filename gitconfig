@@ -20,3 +20,5 @@
 	prompt = false
 [delta]
 	syntax-theme = Nord
+[alias]
+	cleanup =!git checkout -- . && git clean -dff 
