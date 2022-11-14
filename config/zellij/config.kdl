@@ -9,65 +9,14 @@ plugins:
     - path: compact-bar
       tag: compact-bar
 
-# Send a request for a simplified ui (without arrow fonts) to plugins
-# Options:
-#   - true
-#   - false (Default)
 simplified_ui: true
 
-# Choose the path to the default shell that zellij will use for opening new panes
-# Default: $SHELL
-# default_shell: fish
+default_shell: nu
 
-# Toggle between having pane frames around the panes
-# Options:
-#   - true (default)
-#   - false
 pane_frames: false
 
-# Choose the theme that is specified in the themes section.
-# For some examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
-# Default: default
 theme: nord
 
-# Choose the mode that zellij uses when starting up.
-# Default: normal
-#default_mode: locked
+copy_command: "safecopy"                     # osx
 
-# Toggle enabling the mouse mode.
-# On certain configurations, or terminals this could
-# potentially interfere with copying text.
-# Options:
-#   - true (default)
-#   - false
-#mouse_mode: false
-
-# Configure the scroll back buffer size
-# This is the number of lines zellij stores for each pane in the scroll back
-# buffer. Excess number of lines are discarded in a FIFO fashion.
-# Valid values: positive integers
-# Default value: 10000
-#scroll_buffer_size: 10000
-
-# Provide a command to execute when copying text. The text will be piped to
-# the stdin of the program to perform the copy. This can be used with
-# terminal emulators which do not support the OSC 52 ANSI control sequence
-# that will be used by default if this option is not set.
-# Examples:
-#copy_command: "xclip -selection clipboard" # x11
-#copy_command: "wl-copy"                    # wayland
-#copy_command: "pbcopy"                     # osx
-
-# Choose the destination for copied text
-# Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
-# Does not apply when using copy_command.
-# Options:
-#   - system (default)
-#   - primary
-#copy_clipboard: primary
-
-# Enable or disable automatic copy (and clear) of selection when releasing mouse
-#copy_on_select: true
-
-# Path to the default editor to use to edit pane scrollbuffer
-# scrollback_editor: /usr/bin/nano
+scrollback_editor: hx
