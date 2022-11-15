@@ -69,3 +69,12 @@ def gur [] {
   ssh_start
   git pull -r
 }
+
+def-env cdsc [] {
+  let root = (source_control_root)
+  cd (if (($root | str length) > 0) {
+    $root
+  } else {
+    "."
+  })
+}
