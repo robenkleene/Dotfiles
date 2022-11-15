@@ -28,7 +28,7 @@ if [[ "$main" == "true" && ! -e "$HOME/.personal" ]]; then
 fi
 
 if [[ -f "$HOME/.personal" ]]; then
-  export PERSONAL=1
+  PERSONAL=1
 fi
 
 cd "$(dirname "$0")" || exit 1
