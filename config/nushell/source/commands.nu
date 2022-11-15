@@ -28,7 +28,7 @@ def-env egitn [] {
   if (($gitnext | str length) > 0) {
     cd $gitnext
     pwd
-    git status
+    git -c color.status=always status
   }
   $gitnext
 }
