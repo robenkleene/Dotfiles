@@ -6,12 +6,12 @@ def-env s [] {
   }
 
   let gitnext = (egitn)
-  cd (if (($gitnext | length) > 0) {
+  cd (if (($gitnext | str length) > 0) {
     $gitnext
   } else {
     "."
   })
-  if (($gitnext | length) == 0) {
+  if (($gitnext | str length) == 0) {
     print "Auto"
     if ("~/.personal" | path exists) {
       sgitt -cp
