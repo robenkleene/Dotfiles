@@ -1,4 +1,4 @@
-source ~/.nu_local/local.nu
+source ~/.local.nu
 
 # Prompt
 def create_left_prompt [] {
