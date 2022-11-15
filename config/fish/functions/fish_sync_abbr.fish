@@ -5,23 +5,12 @@ function fish_sync_abbr
         abbr --erase $a
     end
     abbr -a -- - 'cd -'
-    abbr -a v "$VIM_COMMAND"
-    abbr -a v- "$VIM_COMMAND -"
-    abbr -a v. "$VIM_COMMAND ."
-    abbr -a pv "p | $VIM_COMMAND -"
-    abbr -a pq "p | q"
     abbr -a oR 'open -R'
-    abbr -a a "$ACK_COMMAND"
     abbr -a ts 'tig status +3'
-    abbr -a tmd 'tmux detach'
-    abbr -a mdv 'mosh aresdev'
-    abbr -a mdvt 'mosh aresdev -- tmux attach'
     abbr -a hpr 'hub pull-request'
     abbr -a hprm 'hub pull-request -m'
     abbr -a ghpr 'gh pr create'
     abbr -a hprr 'hub pull-request && BROWSER= gh pr view --web'
-    abbr -a c "$CAT_COMMAND"
-    abbr -a b bat
     abbr -a brm 'bat README.md'
     abbr -a g git
     abbr -a ga 'git add'
@@ -35,13 +24,9 @@ function fish_sync_abbr
     abbr -a gco 'git checkout'
     abbr -a gcob 'git checkout -b'
     abbr -a gd 'git diff'
-    abbr -a gdt 'git difftool'
     abbr -a gdw 'git diff --color-words'
-    abbr -a gf 'git fetch'
     abbr -a gl 'git log'
     abbr -a gm 'git merge'
-    abbr -a gms 'git merge --squash'
-    abbr -a gmt 'git mergetool'
     abbr -a gs 'git status'
     abbr -a gsm 'git submodule'
     abbr -a gsmi 'git submodule init'
