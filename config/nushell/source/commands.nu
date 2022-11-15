@@ -54,3 +54,18 @@ def u [] {
   egit -u
   ~/Developer/Dotfiles/update.sh
 }
+
+def gp [] {
+  ssh_start
+  git push
+}
+
+def gu [] {
+  ssh_start
+  git pull
+}
+
+def gur [] {
+  ssh_start
+  git pull -r
+}

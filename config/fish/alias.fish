@@ -9,8 +9,6 @@ alias pv="safepaste | $VIM_COMMAND -"
 alias ge='emacs_app'
 alias ec='emacsclient_wrapper'
 alias e='emacsclient_wrapper'
-# alias va="xargs -o $VIM_COMMAND"
-alias gemacs='emacs_app'
 
 alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
 # Override
@@ -52,14 +50,10 @@ switch (uname)
         alias dirname='dirname_args'
 end
 
-# `ssh`
-alias shs='ssh_start'
-
 # `make`
 alias mt='make test'
 alias ml='make lint'
 alias mac='make autocorrect'
-alias macc='make autocorrect && git add -A :/ && git commit -m "Run autocorrect"'
 
 # `node`
 alias nt='npm test'
@@ -89,32 +83,16 @@ end
 # Xcode
 switch (uname)
     case Darwin
-        alias xcb='xcodebuild_debug'
         alias ox='fzf_project_xcode'
 end
-
-# Test Variable
-alias ptv='echo $test_variable'
-# The `|| true` prevents an exit status of 1 if the output does not end in a
-# new line
-alias ctv='safepaste | read test_variable || true'
 
 # `git`
 alias gu='ssh_start && git pull'
 alias gp='ssh_start && git push'
 alias gur='ssh_start && git pull -r'
-alias gpt='ssh_start && git push --tags'
-alias gblpr='git_branch_list_pruned'
-alias grtao='git_remote_add_origin'
-alias gac='git_commit_all'
-alias gacm='git_commit_all'
-alias cdg='git_cd_root'
-alias gbpr='git_branch_prune'
 alias gpbo='git_push_branch_origin'
 alias scwp='source_control_open_site -p'
 alias scwr='BROWSER= gh pr view --web'
-alias gcu='git_commit_update'
-alias gua='git_pull_all'
 
 # Edit
 alias erm='eval $MD_EDITOR README.md'
@@ -122,16 +100,5 @@ alias erm='eval $MD_EDITOR README.md'
 # Tags
 alias tags="generate_tags"
 
-# Common
-alias journal="$EDITOR ~/Text/journal/journal.md"
-alias tweet="markdown_tweet_edit"
-alias writing="$EDITOR ~/Text/writing/README.md"
-
-# Mercurial
-alias cdhg='hg_cd_root'
-
 # Special
 alias cdsc='sc_cd_root'
-alias lt='time_log -t'
-alias fmj='format_json'
-alias ljr='launch_json_run'
