@@ -13,8 +13,8 @@ fi
 # into the terminal.
 if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
   exec perl -pe 'chomp if eof' | sed s'/⏎$//' | pbcopy
-elif [ -n "${TMUX:-}" ]; then
+fi
+
+if [ -n "${TMUX:-}" ]; then
   exec perl -pe 'chomp if eof' | sed s'/⏎$//' | tmux loadb -
-else
-  exec cat >/dev/null
 fi
