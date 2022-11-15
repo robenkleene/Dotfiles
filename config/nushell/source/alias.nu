@@ -6,5 +6,5 @@ alias ts = tig status +3
 alias g = git
 alias gd = git diff
 alias gs = git status
-alias gaac = git add -A :/ && git commit
+alias gaac = git aac
 alias gco = git checkout
