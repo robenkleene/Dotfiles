@@ -3,7 +3,7 @@
 set -eo pipefail
 
 
-if [[ -z "$PUBLIC_EGIT" ]]; then
+if [[ -f "$HOME/.personal" ]]; then
   cd "$HOME/Developer/Dotfiles/install/repos/documentation" &&
     ./compare.sh
   cd "$HOME/Developer/Settings/Source Control/Directories/Text" &&

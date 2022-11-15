@@ -8,7 +8,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   repos+=:~/Library/Services/:~/Developer/AppleScripts/
 fi
 
-if [[ -z "$PUBLIC_EGIT" ]]; then
+if [[ -f "$HOME/.personal" ]]; then
   repos+=:~/Developer/Snippets/:~/Developer/Settings/
   repos+=:~/Developer/Archive/
 fi
