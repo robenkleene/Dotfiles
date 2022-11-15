@@ -39,7 +39,6 @@ abbreviations=(
 'tmb' 'tmux_banner'
 'tmls' 'tmux ls'
 'tmsn' 'tmux new'
-'tmd' 'tmux detach'
 
 # `mosh`
 'mdv' 'mosh aresdev -- tmux attach'
