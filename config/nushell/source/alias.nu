@@ -8,3 +8,4 @@ alias gd = git diff
 alias gs = git status
 alias gaac = git aac
 alias gco = git checkout
+alias gp = git push
