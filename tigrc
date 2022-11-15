@@ -122,7 +122,7 @@ color title-focus color249 color238 bold
 # Inactive section
 color title-blur color244 color235
 # Current Line
-color cursor white color54 bold
+color cursor white color237 bold
 
 color search-result black cyan
 # Status
