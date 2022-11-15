@@ -23,7 +23,7 @@ let-env config = {
     }]
     env_change: {
       PWD: [{|before, after|
-        $nothing
+        zoxide add -- $after
       }]
     }
   }    
@@ -61,4 +61,3 @@ let-env config = {
   ]
 }
 
-source installs.nu
