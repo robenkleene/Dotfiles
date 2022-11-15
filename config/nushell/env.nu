@@ -49,7 +49,7 @@ let-env PATH = ($env.PATH | prepend $"($env.HOME)/.nvm/versions/node/v17.0.1/bin
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.gem/ruby/3.0.2/bin")
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.rubies/ruby-3.0.2/bin")
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
-let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin/')
+let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin')
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.brew/bin")
 
 # fzf
@@ -70,6 +70,7 @@ let-env HOMEBREW_NO_AUTO_UPDATE = 1
 let-env HOMEBREW_NO_INSTALL_CLEANUP = 1
 
 let-env NU_LIB_DIRS = [
+    '~/.nu_local'
     ($nu.config-path | path dirname | path join 'source')
 ]
 
