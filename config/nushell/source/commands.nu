@@ -1,10 +1,3 @@
-# if test -f "$HOME/.personal"
-#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto" && sgitt -cp'
-# else
-#     # Don't automatically commit on non-personal machines
-#     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
-# end
-
 def-env s [] {
   ssh_start
   do --ignore-errors {
@@ -20,7 +13,11 @@ def-env s [] {
   })
   if (($gitnext | length) == 0) {
     print "Auto"
-    sgitt -cp
+    if ("~/.personal" | path exists) {
+      sgitt -cp
+    } else {
+      sgitt -c
+    }
   }
 }
 
