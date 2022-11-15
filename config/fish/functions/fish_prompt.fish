@@ -22,15 +22,17 @@ function fish_prompt
     echo -n (date "+%I:%M %p")
     if test $SSH_CONNECTION
         echo -n ' '
-        echo -n -s "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal
+        # echo -n -s "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal
+        echo -n -s (set_color $color_host) (prompt_hostname) $normal
     end
     echo -n ' '
     set_color $fish_color_cwd
-    if test -e .git
-        echo -n '.'
-    else
-        echo -n (prompt_pwd)
-    end
+    # if test -e .git
+    #     echo -n '.'
+    # else
+    #     echo -n (prompt_pwd)
+    # end
+    echo -n (prompt_pwd)
     if test $bg_jobs_count -gt 0
         set_color yellow
         echo -n " &$bg_jobs_count"
@@ -47,16 +49,16 @@ function fish_prompt
     # end
 end
 
-function fish_right_prompt
-    set_color cyan
-    if test -e .git
-        echo -n (basename $PWD)
-    else
-        set -l git_path (git rev-parse --show-toplevel 2>/dev/null)
-        if test $status -eq 0
-            echo -n (basename $git_path)
-        end
-    end
-    set_color normal
-    echo -n (fish_git_prompt)
-end
+# function fish_right_prompt
+#     set_color cyan
+#     if test -e .git
+#         echo -n (basename $PWD)
+#     else
+#         set -l git_path (git rev-parse --show-toplevel 2>/dev/null)
+#         if test $status -eq 0
+#             echo -n (basename $git_path)
+#         end
+#     end
+#     set_color normal
+#     echo -n (fish_git_prompt)
+# end
