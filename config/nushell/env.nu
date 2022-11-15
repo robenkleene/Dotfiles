@@ -1,3 +1,5 @@
+source ~/.nu_local/local.nu
+
 # Prompt
 def create_left_prompt [] {
     let prompt = $"(ansi reset)(ansi blue_dimmed)(date format '%r')(ansi reset)"

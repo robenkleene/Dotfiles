@@ -2,9 +2,6 @@ source alias.nu
 source commands.nu
 source theme.nu
 source fzf.nu
-if ("~/.nu_local" | path exists) {
-  source local.nu
-}
 
 let-env config = {
   color_config: $dark_theme
