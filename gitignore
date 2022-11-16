@@ -6,6 +6,7 @@
 
 # Build Logs
 build.log
+build/
 
 # Test Logs
 test.log
