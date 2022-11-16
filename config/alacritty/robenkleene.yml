@@ -11,19 +11,19 @@ colors:
     blue:    '#87AFDF'
     magenta: '#C978EB'
     cyan:    '#00AFAF'
-    white:   '#D9D9D9'
+    white:   '#FFFFFF'
 
   cursor:
     text: '0xffffff'
     cursor: '#456954'
 
   bright:
-    black:   '#252525'
+    black:   '#444444'
     red:     '#DABDBD'
     green:   '#BDDABD'
     yellow:  '#DADABD'
     blue:    '#3792E3'
     magenta: '#DBA3EB'
     cyan:    '#00FFFF'
-    white:   '#FFFFFF'
+    white:   '#999999'
 
