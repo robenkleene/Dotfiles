@@ -18,7 +18,7 @@ colors:
     cursor: '#456954'
 
   bright:
-    black:   '#444444'
+    black:   '#555555'
     red:     '#DABDBD'
     green:   '#BDDABD'
     yellow:  '#DADABD'
