@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+touch ~/.local.nu
+
 developer_path="${HOME}/Developer"
 if [[ ! -e "$developer_path" ]]; then
   mkdir -p "$developer_path"
