@@ -27,6 +27,13 @@ let-env config = {
   }    
   keybindings: [
     {
+      name: ctrl_w
+      modifier: Control
+      keycode: char_w
+      mode: emacs
+      event: { edit: CutBigWordLeft }
+    }
+    {
       name: fzf_z
       modifier: alt
       keycode: char_z
