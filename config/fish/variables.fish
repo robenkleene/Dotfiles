@@ -8,10 +8,10 @@ set -gx VIM_COMMAND nvim
 # set -gx VIM_COMMAND "nvim"
 set -gx CAT_COMMAND "bat"
 set -gx MD_CAT_COMMAND "bat --style plain"
-# set -gx VISUAL "hx"
+# # set -gx VISUAL "hx"
+# set -gx TIG_EDITOR "hx_wrapper"
 set -gx VISUAL "$VIM_COMMAND"
 # set -gx VISUAL "$EMACS_COMMAND"
-# `hx` doesn't support jumping to a line number from `tig` for example
 # set -gx CD_COMMAND "emacs_cd"
 set -gx CD_COMMAND "vim_cd"
 
@@ -21,7 +21,6 @@ set -gx EDITOR "$VISUAL"
 # set -gx GIT_EDITOR "$EMACS_COMMAND"
 # set -gx GIT_EDITOR "$VIM_COMMAND"
 # set -gx GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
-set -gx TIG_EDITOR "hx_wrapper"
 set -gx LESS "--ignore-case --quit-if-one-screen"
 set -gx PAGER less
 set -gx ACK_COMMAND rg
