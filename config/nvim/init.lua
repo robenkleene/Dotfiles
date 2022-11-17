@@ -19,8 +19,7 @@ require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
   use "elihunter173/dirbuf.nvim"
   use 'numToStr/Comment.nvim'
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
+  use { 'L3MON4D3/LuaSnip' }
   use({
       "NvChad/nvim-colorizer.lua",
       config = function()
@@ -45,7 +44,6 @@ require('packer').startup(function(use)
       require("catppuccin").setup()
     end
   }
-  use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'neovim/nvim-lspconfig'
   use 'nvim-treesitter/playground'
