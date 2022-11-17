@@ -6,8 +6,6 @@
 # backgrounding
 # alias p='safepaste'
 alias pv="safepaste | $VIM_COMMAND -"
-alias ge='emacs_app'
-alias ec='emacsclient_wrapper'
 alias e='emacsclient_wrapper'
 
 alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
@@ -29,9 +27,8 @@ alias fu='fish_update'
 alias o='open_custom'
 alias dv='vim_diff'
 alias rg='rg_custom'
-alias ll='ls -lh'
-alias la='ls -lhA'
-alias l='ls -lhA'
+alias a='rg_custom'
+alias v="$VIM_COMMAND"
 
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
 alias ut='ssh_git_pull_all -t'
@@ -72,7 +69,6 @@ alias d='$CD_COMMAND .'
 
 # `vim`
 alias vsr='vim_session_restore_auto'
-alias vsrs='vim_session_restore_saved'
 
 # `emacs`
 switch (uname)
@@ -93,9 +89,6 @@ alias gur='ssh_start && git pull -r'
 alias gpbo='git_push_branch_origin'
 alias scwp='source_control_open_site -p'
 alias scwr='BROWSER= gh pr view --web'
-
-# Edit
-alias erm='eval $MD_EDITOR README.md'
 
 # Tags
 alias tags="generate_tags"

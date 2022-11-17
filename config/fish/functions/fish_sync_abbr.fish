@@ -28,17 +28,10 @@ function fish_sync_abbr
     abbr -a gl 'git log'
     abbr -a gm 'git merge'
     abbr -a gs 'git status'
-    abbr -a gsm 'git submodule'
-    abbr -a gsmi 'git submodule init'
-    abbr -a gsmu 'git submodule update'
-    abbr -a gsmuir 'git submodule update --init --recursive'
     abbr -a gsmuirr 'git submodule update --init --recursive --remote'
-    abbr -a gst 'git stash'
-    abbr -a gt 'git tag'
     abbr -a git_log_grep 'git log -p -G'
     abbr -a gsh 'git show'
     abbr -a gbl 'git blame'
-    abbr -a gitcleanup 'git checkout -- . && git clean -dff'
     abbr -a git_diff_relative 'git diff --relative'
     abbr -a git_commit_amend 'git commit --amend'
     abbr -a git_remote_print 'git ls-remote --get-url'
@@ -49,12 +42,7 @@ function fish_sync_abbr
     abbr -a chb 'carthage bootstrap'
     abbr -a agv_marketing_version 'agvtool what-marketing-version'
     abbr -a agv_new_marketing_version 'agvtool new-marketing-version'
-    # Use `gemacs` for graphical Emacs
     abbr -a emacs 'emacs -nw'
-    # abbr -a e "$EMACS_COMMAND"
-    # abbr -a ec "$EMACS_COMMAND"
-    # abbr -a mba 'mbsync -all --verbose'
-    abbr -a wd web_deploy
     abbr -a bundle_install_local 'bundle install --path vendor/bundle'
     # Fish
     abbr -a fhm 'history merge'
