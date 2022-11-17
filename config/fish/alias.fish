@@ -6,10 +6,8 @@
 # backgrounding
 # alias p='safepaste'
 alias pv="safepaste | $VIM_COMMAND -"
+alias pq="safepaste | vim_grep"
 alias e='emacsclient_wrapper'
-
-alias pe="$EMACS_COMMAND -nw -eval \"(robenkleene/new-clipboard)\""
-# Override
 
 # fd
 # Display hidden files by default
