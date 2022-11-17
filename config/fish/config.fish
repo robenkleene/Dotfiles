@@ -1,8 +1,7 @@
 # Hooray!
 set fish_greeting
 
-
-if test -n $TMUX
+if test -z $TMUX
     ~/.bin/print_shell_status
 end
 
