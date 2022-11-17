@@ -39,12 +39,6 @@ else
     alias s='ssh_start && begin; egit -p || egitn; end && echo "Auto"; sgitt -p'
 end
 
-# Special
-switch (uname)
-    case Darwin
-        alias dirname='dirname_args'
-end
-
 # `make`
 alias mt='make test'
 alias ml='make lint'
@@ -68,15 +62,11 @@ alias d='$CD_COMMAND .'
 # `vim`
 alias vsr='vim_session_restore_auto'
 
-# `emacs`
-switch (uname)
-    case Darwin
-        alias gemacs="open -a emacs"
-end
-
 # Xcode
 switch (uname)
     case Darwin
+        alias gemacs="open -a emacs"
+        alias dirname='dirname_args'
         alias ox='fzf_project_xcode'
 end
 
