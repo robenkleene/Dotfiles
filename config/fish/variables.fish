@@ -1,8 +1,3 @@
-if set -q "$FISH_SOURCED"
-    exit
-end
-set -gx FISH_SOURCED 1
-
 # Emacs
 # Start the server in the background if it isn't running
 set -gx ALTERNATE_EDITOR ""
@@ -34,14 +29,6 @@ set -gx COLORTERM "truecolor"
 
 # Prevent `npm` scripts from opening browser windows
 set -gx BROWSER "none"
-# Or set it
-# switch (uname)
-#     case Linux
-#         set -gx BROWSER none
-#     case Darwin
-#         set -gx BROWSER "google chrome"
-# end
-# set -gx BROWSER "Microsoft Edge Beta"
 
 set -gx fish_help_browser echo
 
