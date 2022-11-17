@@ -8,6 +8,7 @@
 alias pv="safepaste | $VIM_COMMAND -"
 alias pq="safepaste | vim_grep"
 alias e='emacsclient_wrapper'
+alias rg='rg_custom'
 
 # fd
 # Display hidden files by default
