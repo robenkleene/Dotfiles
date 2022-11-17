@@ -1,8 +1,8 @@
+# This sets up the fzf history which is better than Fish's builtin history
+# If you comment these out, you'll have to define __fzfcmd like below
 if test -f ~/.fzf/shell/key-bindings.fish
     source ~/.fzf/shell/key-bindings.fish
 end
-# This sets up the fzf history which is better than Fish's builtin history
-# If you comment these out, you'll have to define __fzfcmd like below
 fzf_key_bindings
 
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
