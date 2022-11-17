@@ -23,7 +23,7 @@
   (defun robenkleene/dired-open-files (&optional arg)
     "Open marked files."
     (interactive)
-    (dired-do-shell-command "~/.bin/open_custom" nil (dired-get-marked-files))
+    (dired-do-shell-command "open" nil (dired-get-marked-files))
     )
   ;; Suppress error message
   (defvar dired-use-ls-dired)

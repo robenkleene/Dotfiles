@@ -4,7 +4,14 @@ function fish_sync_abbr
     for a in (abbr --list)
         abbr --erase $a
     end
+
     abbr -a -- - 'cd -'
+    abbr -a o 'open'
+    abbr -a dv 'vim_diff'
+    abbr -a rg 'rg_custom'
+    abbr -a a 'rg_custom'
+    abbr -a v "$VIM_COMMAND"
+    abbr -a b "bat"
     abbr -a oR 'open -R'
     abbr -a ts 'tig status +3'
     abbr -a hpr 'hub pull-request'

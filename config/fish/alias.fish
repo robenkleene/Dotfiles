@@ -21,13 +21,6 @@ alias foi='fish_edit_config'
 alias fsa='fish_sync_abbr'
 alias fu='fish_update'
 
-# Short
-alias o='open_custom'
-alias dv='vim_diff'
-alias rg='rg_custom'
-alias a='rg_custom'
-alias v="$VIM_COMMAND"
-
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
