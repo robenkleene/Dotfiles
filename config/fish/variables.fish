@@ -13,8 +13,8 @@ set -gx VIM_COMMAND nvim
 # set -gx VIM_COMMAND "nvim"
 set -gx CAT_COMMAND "bat"
 set -gx MD_CAT_COMMAND "bat --style plain"
-set -gx VISUAL "hx"
-# set -gx VISUAL "$VIM_COMMAND"
+# set -gx VISUAL "hx"
+set -gx VISUAL "$VIM_COMMAND"
 # set -gx VISUAL "$EMACS_COMMAND"
 # `hx` doesn't support jumping to a line number from `tig` for example
 # set -gx CD_COMMAND "emacs_cd"
