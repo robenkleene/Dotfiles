@@ -36,7 +36,7 @@ function fish_sync_abbr
     abbr -a gm 'git merge'
     abbr -a gs 'git status'
     abbr -a gsmuirr 'git submodule update --init --recursive --remote'
-    abbr -a git_log_grep 'git log -p -G'
+    abbr -a glg 'git log -p -G'
     abbr -a gsh 'git show'
     abbr -a gbl 'git blame'
     abbr -a git_diff_relative 'git diff --relative'
