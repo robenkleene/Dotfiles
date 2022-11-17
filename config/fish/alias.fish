@@ -60,7 +60,6 @@ alias vsr='vim_session_restore_auto'
 switch (uname)
     case Darwin
         alias gemacs="open -a emacs"
-        alias dirname='dirname_args'
         alias ox='fzf_project_xcode'
 end
 
