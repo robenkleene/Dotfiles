@@ -46,13 +46,9 @@ alias gur='ssh_start && git pull -r'
 alias gpt='ssh_start && git push --tags'
 
 alias cdg='git_cd_root'
-alias gbpr='git_branch_prune'
 alias gpbo='git_push_branch_origin'
 alias scwp='source_control_open_site -p'
 alias scwr='BROWSER= gh pr view --web'
-alias sgpt='sgitt -cp'
-alias sgut='sgitt -u'
-alias sgua='git_pull_all'
 alias gcu='git_commit_update'
 alias gua='git_pull_all'
 
