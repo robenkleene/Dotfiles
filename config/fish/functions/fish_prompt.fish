@@ -1,8 +1,3 @@
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch green
-
 function fish_prompt
     set -l last_pipestatus $pipestatus
     set -l normal (set_color normal)
@@ -16,7 +11,8 @@ function fish_prompt
     # Write pipestatus
     set -l prompt_status (__fish_print_pipestatus " " "?" "|" (set_color $fish_color_status) (set_color $fish_color_status) $last_pipestatus)
     # Exclude zoxide background process
-    set -l bg_jobs_count (count (jobs --command | grep -v '^zoxide$' || true))
+    # set -l bg_jobs_count (count (jobs --command | grep -v '^zoxide$' || true))
+    set -l bg_jobs_count (count (jobs --command || true))
 
     set_color $fish_color_comment
     echo -n (date "+%I:%M %p")
@@ -26,6 +22,7 @@ function fish_prompt
         echo -n -s (set_color $color_host) (prompt_hostname) $normal
     end
     echo -n ' '
+
     set_color $fish_color_cwd
     # if test -e .git
     #     echo -n '.'
@@ -33,6 +30,7 @@ function fish_prompt
     #     echo -n (prompt_pwd)
     # end
     echo -n (prompt_pwd)
+
     if test $bg_jobs_count -gt 0
         set_color yellow
         echo -n " &$bg_jobs_count"
@@ -41,12 +39,6 @@ function fish_prompt
     echo -n $prompt_status
 
     echo -n ' > '
-    # SSH Double Prompt
-    # if test $SSH_CONNECTION
-    #   echo -n ' >> '
-    # else
-    #   echo -n ' > '
-    # end
 end
 
 # function fish_right_prompt
