@@ -5,146 +5,28 @@
 # These abbreviations only work as the first word of the command.
 typeset -Ag abbreviations
 abbreviations=(
-# vim
-'v' "$VIM_COMMAND"
-'vd' "$VIM_COMMAND -d"
-
 'pq' "p | q"
-'pva' "p | va"
-
-# open
-'or' 'open -R'
-'orm' 'open README.md'
-
-# rg
-'a' "$ACK_COMMAND"
-'af' "$ACK_COMMAND -F"
-'rgf' "$ACK_COMMAND -F"
-'rgi' "$ACK_COMMAND --no-ignore"
-'rgg' "$ACK_COMMAND --g"
-'rgh' "$ACK_COMMAND --heading"
-'fdi' "fd -I"
-'fdg' "fd -g"
-
-# `tig`
-'tst' 'tig stash'
 'ts' 'tig status +3'
-'tl' 'tig'
-
-# `tmux`
-# `tm`
-'tmsw' 'tmux swap-window -t'
-'tmwr' 'tmux move-window -r'
-'tm' 'tmux' 
-'tmb' 'tmux_banner'
-'tmls' 'tmux ls'
-'tmsn' 'tmux new'
-
-# `mosh`
 'mdv' 'mosh aresdev -- tmux attach'
-
-# `zsh`
-'wf' 'whence -f'
-
-# `swiftlint`
-'m' 'make'
-
-# `hub`
 'hpr' 'hub pull-request'
 'hprm' 'hub pull-request -m'
-# `gh`
 'ghpr' 'gh pr create'
-# Both
 'hprr' 'hub pull-request && BROWSER= gh pr view --web'
-
-# `cat`
-'c' 'cat'
-'b' 'bat'
-'brm' 'bat README.md'
-'prm' 'open -a "Repla" README.md'
-
-# Clear
-'r' 'clear'
-
-# `xargs`
-'0fd' 'fd -0'
-
-# `git`
-# `g`: `git`
 'g' 'git'
 # `ga`: `git add`
-'ga' 'git add'
-'gaa' 'git add -A :/'
 'gaac' 'git add -A :/ && git commit'
-'gaacm' 'git add -A :/ && git commit -m'
 # `gb`: `git branch`
 'gb' 'git branch'
-# This is too dangerous, especially because it is easly confused with `git
-# branch diff`
-# 'gbd' 'git branch -d'
-'gbr' 'git branch -r'
-# `gc`: `git commit`
-'gc' 'git commit'
-'gca' 'git commit --amend'
-'gcam' 'git commit --amend -m'
-'gcm' 'git commit -m'
-# `gcl`: `git clone`
-'gcl' 'git clone'
-'gcs' 'git clone --depth 1'
-# `gcn`: `git clean`
-'gcn' 'git clean'
-# `gcp`: `git cherry-pick`
-'gcp' 'git cherry-pick'
-'gcpc' 'git cherry-pick --continue'
-# `gco`: `git checkout`
 'gco' 'git checkout'
 'gcob' 'git checkout -b'
-# `gd`: `git diff`
 'gd' 'git diff'
-'gdr' 'git diff --relative'
-'gdt' 'git difftool'
-'gdv' 'git diff --relative | diff-to-grep | vg'
 'gdw' 'git diff --color-words'
-'gdfu' 'git diff --name-only --diff-filter=U'
-# `gf`: `git fetch`
-'gf' 'git fetch'
-# `gl`: `git log`
-'gl' 'git log'
-# `gm`: `git merge`
-'gm' 'git merge'
-'gms' 'git merge --squash'
-'gmt' 'git mergetool'
-# `gr`: `git rebase`
-'gr' 'git rebase'
-'grc' 'git rebase --continue'
-'grs' 'git rebase --skip'
-# `grp`: `git rev-parse`
-'grph' 'git rev-parse HEAD'
-'grphc' "git rev-parse HEAD | tr -d '\n' | c"
-# `gs`: `git status`
 'gs' 'git status'
-# `gsm`: `git submodule`
-'gsm' 'git submodule'
-'gsmi' 'git submodule init'
-'gsmu' 'git submodule update'
-'gsmuir' 'git submodule update --init --recursive'
 'gsmuirr' 'git submodule update --init --recursive --remote'
-# `gst`: `git stash`
-'gst' 'git stash'
-'gstl' 'git stash list'
-'gstp' 'git stash pop'
-# `gt`: `git tag`
-'gt' 'git tag'
 'glg' 'git log -p -G'
-'gdns' 'git diff --name-status'
-'gsh' 'git show'
-'gg' 'git grep'
-'gcleanup' 'git checkout -- . && git clean -dff '
 
 # Carthage
-'chu' 'carthage update'
 'chunub' 'carthage update --no-use-binaries'
-'chb' 'carthage bootstrap'
 
 # `agvtool`
 'agvm' 'agvtool what-marketing-version'
@@ -156,40 +38,12 @@ abbreviations=(
 # open a file in the GUI version of Emacs, use `open -a "Emacs.app"`.
 'emacs' 'emacs -nw'
 'e' "$EMACS_COMMAND"
-'ec' "$EMACS_COMMAND"
-
-# Mail
-'mba' 'mbsync -all --verbose'
-
-# Repla
-'rps' 'repla server'
-'rpj' 'repla server "bundle exec jekyll serve --watch --drafts --port 4001" -r "...done"'
-
-# Web Deploy
-'wd' 'web_deploy'
-'wdd' 'web_deploy -s aresdev'
-
-# Ruby
-'bil' 'bundle install --path vendor/bundle'
-'be' 'bundle exec'
-
-# Grep
-'re' 'grep'
-'rei' 'grep -i'
-
-# Grep
-'adbl' 'adb -d logcat -s Unity'
 
 # Mercurial
-'hgdb' 'hg diff -r "bottom^" --root .'
-'hgdbs' 'hg diff -r "bottom^" --stat --root .'
-'hgd' 'hg diff --root .'
+'hgd' 'hg diff'
 'hgcm' 'hg commit -m'
 'hgs' 'hg status'
 'hgsrb' 'hg status --rev bottom'
-'hgr' 'hg record'
-'hgi' 'hg import --no-commit -'
-'hgrc' 'hg rebase --continue'
 )
 
 if [[ -n "${LOCAL_ABBREVIATIONS-}" ]]; then
