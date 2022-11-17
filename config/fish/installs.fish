@@ -9,13 +9,15 @@ function bangbang --on-event fish_postexec
 end
 
 # Python
-if test -d $HOME/.pyenv
-    set -Ux PYENV_ROOT $HOME/.pyenv
-    pyenv init - | source
-end
+# So slow!
+# if test -d $HOME/.pyenv
+#     set -Ux PYENV_ROOT $HOME/.pyenv
+#     pyenv init - | source
+# end
 
 # llvm
-switch (uname)
-    case Darwin
-        set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
-end
+# This doesn't seem to be working anyway
+# switch (uname)
+#     case Darwin
+#         set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
+# end

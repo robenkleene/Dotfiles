@@ -1,7 +1,10 @@
 # Hooray!
 set fish_greeting
 
-~/.bin/print_shell_status
+
+if test -n $TMUX
+    ~/.bin/print_shell_status
+end
 
 source ~/.config/fish/settings.fish
 source ~/.config/fish/variables.fish
