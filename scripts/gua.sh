@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/vim_session_restore_auto
+exec ~/.bin/git_pull_all
