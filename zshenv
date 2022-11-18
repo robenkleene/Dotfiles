@@ -53,8 +53,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # Editor
 # export VISUAL="$EMACS_COMMAND"
-export VISUAL="hx"
-# export VISUAL="$VIM_COMMAND"
+# export VISUAL="hx"
+export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 # `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
@@ -72,7 +72,7 @@ elif [[ "$(uname)" = "Darwin" ]]; then
   export BROWSER="google chrome"
 fi
 # export BROWSER="Microsoft Edge Beta"
-export TIG_EDITOR="hx_wrapper"
+# export TIG_EDITOR="hx_wrapper"
 
 # Emacs
 # Start the server in the background if it isn't running
