@@ -1,20 +1,3 @@
-# Abbr
-alias a='rg_custom'
-alias v='nvim'
-
-# Bash Script
-alias pv="safepaste | $VIM_COMMAND -"
-alias esk='emacs_kill_server'
-alias esr='emacs_reset_server'
-if [[ "$(uname)" = "Darwin" ]]; then
-  alias ox='fzf_project_xcode'
-fi
-alias gpbo='git_push_branch_origin'
-alias scwp='source_control_open_site -p'
-alias scwr='BROWSER= gh pr view --web'
-alias gua='git_pull_all'
-alias tags="generate_tags"
-
 # Alias
 alias -- -='cd -'
 alias ..='cd ..'
