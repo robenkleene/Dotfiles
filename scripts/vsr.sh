@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-~/.bin/vim_session_restore_auto
+exec ~/.bin/vim_session_restore_auto

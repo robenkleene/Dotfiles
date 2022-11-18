@@ -1,6 +1,4 @@
 # Bash Script
-alias pv="safepaste | $VIM_COMMAND -"
-alias pq="safepaste | vim_grep"
 alias e='emacsclient_wrapper'
 alias esk='emacs_kill_server'
 alias esr='emacs_reset_server'
