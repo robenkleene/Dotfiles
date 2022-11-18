@@ -57,10 +57,9 @@ alias d='$CD_COMMAND .'
 alias vsr='vim_session_restore_auto'
 
 # Xcode
-switch (uname)
-    case Darwin
-        alias gemacs="open -a emacs"
-        alias ox='fzf_project_xcode'
+if test -n MACOS
+    alias gemacs="open -a emacs"
+    alias ox='fzf_project_xcode'
 end
 
 # `git`

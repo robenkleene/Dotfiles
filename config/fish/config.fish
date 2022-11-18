@@ -1,4 +1,3 @@
-# Hooray!
 set fish_greeting
 
 if test -z $TMUX
@@ -6,7 +5,6 @@ if test -z $TMUX
 end
 
 source ~/.config/fish/settings.fish
-source ~/.config/fish/variables.fish
 source ~/.config/fish/installs.fish
 source ~/.config/fish/fzf.fish
 source ~/.config/fish/alias.fish
