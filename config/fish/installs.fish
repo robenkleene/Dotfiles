@@ -3,9 +3,9 @@ if command -sq zoxide
     zoxide init fish | source
 end
 
-# Implement `!!`
-function bangbang --on-event fish_postexec
-    alias !!="$argv[1]"
+if test -n "$INSIDE_EMACS"
+    set -Ux PAGER cat
+    set -Ux GIT_PAGER cat
 end
 
 # Python
