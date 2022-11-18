@@ -1,4 +1,3 @@
--- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -15,26 +14,36 @@ vim.g.maplocalleader = '\\'
 
 -- stylua: ignore start
 require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'                                                         -- Package manager
+  use 'wbthomason/packer.nvim'
   use "gpanders/editorconfig.nvim"
-  use "elihunter173/dirbuf.nvim"
-  use 'numToStr/Comment.nvim'
+  use {
+    "elihunter173/dirbuf.nvim",
+    config = require("dirbuf").setup {
+      show_hidden = false,
+    }
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use { 'L3MON4D3/LuaSnip' }
-  use({
-      "NvChad/nvim-colorizer.lua",
-      config = function()
-          require("colorizer").setup()
-      end
-  })
-  use({
-      "kylechui/nvim-surround",
-      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-      config = function()
-          require("nvim-surround").setup({
-              -- Configuration here, or leave empty to use defaults
-          })
-      end
-  })
+  use {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({})
+    end
+  }
+  use {
+    "kylechui/nvim-surround",
+    tag = "*",
+    config = function()
+      require("nvim-surround").setup()
+    end
+  }
+  -- Use `B` command to pipe just part of a visual selection
+  use 'vim-scripts/vis'
   -- UI
   use {
     "catppuccin/nvim",
@@ -50,10 +59,7 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
   -- Languages
-  use { 'dag/vim-fish', ft = {'fish'}, }
-
-  -- Allow `B` to pipe just part of a visual selection
-  use 'vim-scripts/vis'
+  use { 'dag/vim-fish', ft = { 'fish' }, }
 
   if vim.fn.filereadable(vim.fn.expand("~/.nvim_local/nvim_local.lua")) ~= 0 then
     package.path = os.getenv("HOME") .. "/.nvim_local/" .. package.path
@@ -75,4 +81,3 @@ if is_bootstrap then
   print '=================================='
   return
 end
-

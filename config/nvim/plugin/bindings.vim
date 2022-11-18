@@ -2,6 +2,9 @@ nnoremap <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>:
 nnoremap cl :lcd %:p:h<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
+" Move by display line
+noremap <silent> k gk
+noremap <silent> j gj
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
 nnoremap <leader>cq :GrepBufferFromClipboard<CR>
