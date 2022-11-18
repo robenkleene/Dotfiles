@@ -1,6 +1,7 @@
 # zoxide
-if command -sq zoxide
-    zoxide init fish | source
+function __zoxide_hook --on-variable PWD
+    test -z "$fish_private_mode"
+    and command zoxide add -- (builtin pwd -L)
 end
 
 if test -n "$INSIDE_EMACS"
