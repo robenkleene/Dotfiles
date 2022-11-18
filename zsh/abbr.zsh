@@ -5,6 +5,8 @@
 # These abbreviations only work as the first word of the command.
 typeset -Ag abbreviations
 abbreviations=(
+'v' "$VIM_COMMAND"
+'a' 'rg'
 'pq' "p | q"
 'ts' 'tig status +3'
 'mdv' 'mosh aresdev -- tmux attach'

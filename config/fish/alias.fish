@@ -1,19 +1,3 @@
-# Bash Script
-alias e='emacsclient_wrapper'
-alias esk='emacs_kill_server'
-alias esr='emacs_reset_server'
-alias eg='emacs_grep'
-alias vsr='vim_session_restore_auto'
-alias gpbo='git_push_branch_origin'
-alias scwp='source_control_open_site -p'
-alias scwr='BROWSER= gh pr view --web'
-alias gemacs="open -a emacs"
-alias ox='fzf_project_xcode'
-alias gua='git_pull_all'
-
-# Tags
-alias tags="generate_tags"
-
 # Function
 alias cdsc='sc_cd_root'
 alias gu='ssh_start && git pull'
