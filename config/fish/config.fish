@@ -1,5 +1,3 @@
-set fish_greeting
-
 if test -z $TMUX
     ~/.bin/print_shell_status
 end
