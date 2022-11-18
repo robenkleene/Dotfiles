@@ -1,4 +1,3 @@
-# Alias
 alias -- -='cd -'
 alias ..='cd ..'
 if [[ "$(uname)" = "Linux" ]]; then
@@ -22,4 +21,3 @@ alias gur='ssh_start && git pull -r'
 alias gpt='ssh_start && git push --tags'
 alias cdg='git_cd_root'
 alias cdhg='cd (hg root)'
-alias gcu='git_commit_update'
