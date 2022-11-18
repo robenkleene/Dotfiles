@@ -4,6 +4,8 @@ function fish_sync_variables
     end
     # Fish
     set -Ux fish_help_browser echo
+    # Suppress default greeting
+    set -U fish_greeting
 
     # Emacs
     # Start the server in the background if it isn't running
