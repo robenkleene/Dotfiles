@@ -60,8 +60,11 @@ require('packer').startup(function(use)
     end
   }
   use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/playground',
+    cmd = 'TSPlaygroundToggle'
+  }
   use 'neovim/nvim-lspconfig'
-  use 'nvim-treesitter/playground'
   use {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
