@@ -26,3 +26,5 @@ set wildmode=longest:full,full
 set colorcolumn=80
 " Line breaks only happen on words
 set linebreak
+" Launch without wrapped lines
+set nowrap
