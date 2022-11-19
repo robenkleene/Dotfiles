@@ -68,6 +68,7 @@ require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
+    -- Not due to a bug, `require` aren't lazy loaded
     requires = {
       {
         'nvim-telescope/telescope-fzf-native.nvim',
