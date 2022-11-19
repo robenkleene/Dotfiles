@@ -6,6 +6,7 @@ function! auto#MakeShebangFilesExecutable() abort
   endif
 endfunction
 
+" Used for calculating quickfix height
 function! auto#AdjustWindowHeight(minheight, maxheight) abort
   execute max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
   execute "normal! \<C-w>="
