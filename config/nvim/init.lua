@@ -18,9 +18,12 @@ require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
   use {
     "elihunter173/dirbuf.nvim",
-    config = require("dirbuf").setup {
-      show_hidden = false,
-    }
+    keys = "-",
+    config = function()
+      require("dirbuf").setup {
+        show_hidden = false,
+      }
+    end
   }
   use {
     'numToStr/Comment.nvim',
@@ -43,7 +46,10 @@ require('packer').startup(function(use)
     end
   }
   -- Use `B` command to pipe just part of a visual selection
-  use 'vim-scripts/vis'
+  use {
+    'vim-scripts/vis',
+    cmd = "B"
+  }
   -- UI
   use {
     "catppuccin/nvim",
@@ -56,8 +62,19 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
   use 'neovim/nvim-lspconfig'
   use 'nvim-treesitter/playground'
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
+  use {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    requires = {
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+        cond = vim.fn.executable "make" == 1
+      },
+      { 'nvim-lua/plenary.nvim' },
+    },
+    module = "telescope"
+  }
   -- Languages
   use { 'dag/vim-fish', ft = { 'fish' }, }
 
