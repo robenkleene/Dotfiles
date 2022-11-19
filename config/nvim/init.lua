@@ -18,7 +18,8 @@ require('packer').startup(function(use)
   use "gpanders/editorconfig.nvim"
   use {
     "elihunter173/dirbuf.nvim",
-    keys = "-",
+    -- Disabling this because then it won't be available for `nvim .`
+    -- keys = "-",
     config = function()
       require("dirbuf").setup {
         show_hidden = false,
