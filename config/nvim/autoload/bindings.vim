@@ -11,7 +11,6 @@ function! bindings#ToggleQuickfixList() abort
     wincmd p
   endif
 endfunction
-
 function! bindings#GetBufferList() abort
   redir =>buflist 
   silent! ls 
