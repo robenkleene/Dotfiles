@@ -32,7 +32,15 @@ require('packer').startup(function(use)
         require('Comment').setup()
     end
   }
-  use { 'L3MON4D3/LuaSnip' }
+  use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
+      vim.cmd([[
+        imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+      ]])
+    end
+  }
   use {
     "NvChad/nvim-colorizer.lua",
     config = function()
