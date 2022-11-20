@@ -67,6 +67,7 @@ require('packer').startup(function(use)
       require("catppuccin").setup()
     end
   }
+  use 'arkav/lualine-lsp-progress'
   use {
     'nvim-lualine/lualine.nvim',
     config = function()
@@ -79,7 +80,7 @@ require('packer').startup(function(use)
         sections = {
           lualine_a = {'mode'},
           lualine_b = {'diagnostics'},
-          lualine_c = {'filename'},
+          lualine_c = {'filename', 'lsp_progress'},
           lualine_x = {'filetype'},
           lualine_y = {'progress'},
           lualine_z = {'location'}
