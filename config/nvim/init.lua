@@ -67,6 +67,16 @@ require('packer').startup(function(use)
       require("catppuccin").setup()
     end
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'catppuccin',
+        }
+      }
+    end
+  }
   use 'nvim-treesitter/nvim-treesitter'
   use {
     'nvim-treesitter/playground',
