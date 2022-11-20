@@ -54,12 +54,11 @@ require('packer').startup(function(use)
       require("nvim-surround").setup()
     end
   }
-  -- Use `B` command to pipe just part of a visual selection
   use {
+    -- Use `B` command to pipe just part of a visual selection
     'vim-scripts/vis',
     cmd = "B"
   }
-  -- UI
   use {
     "catppuccin/nvim",
     as = "catppuccin",
