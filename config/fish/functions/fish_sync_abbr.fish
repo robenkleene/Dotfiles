@@ -10,6 +10,7 @@ function fish_sync_abbr
     abbr -a dv 'vim_diff'
     abbr -a a 'rg'
     abbr -a v "$VIM_COMMAND"
+    abbr -a v- "$VIM_COMMAND -"
     abbr -a b "bat"
     abbr -a oR 'open -R'
     abbr -a mdv 'mosh aresdev'
