@@ -28,3 +28,5 @@ set colorcolumn=80
 set linebreak
 " Launch without wrapped lines
 set nowrap
+" Don't timeout leader key
+set notimeout
