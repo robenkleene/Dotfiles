@@ -23,26 +23,27 @@ zle_highlight+=(paste:none)
 # Enable vcs integration
 autoload -Uz vcs_info
 # Disable unused vcs
-zstyle ':vcs_info:*' disable bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
+# zstyle ':vcs_info:*' disable bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
 # Style
 # Rebase & Merge Conflicts
 # Standard
 # `%b`: Branch
 # `%u`: Staged changes
 # `%c`: Unstaged changes
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' formats '%F{cyan}%r %F{green}%b%f%u%c'
-zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
+# zstyle ':vcs_info:*' stagedstr '+'
+# zstyle ':vcs_info:*' unstagedstr '*'
+# zstyle ':vcs_info:*' formats '%F{cyan}%r %F{green}%b%f%u%c'
+# zstyle ':vcs_info:*' actionformats '%F{cyan}%r %F{green}%b%f%u%c %F{red}(%a)%f'
 
 # Prompt
 update_prompt() {
-  vcs_info
-  if [[ -a .git ]]; then
-    prompt_path='.'
-  else
-    prompt_path=%1~
-  fi
+  # vcs_info
+  # if [[ -a .git ]]; then
+  #   prompt_path='.'
+  # else
+  #   prompt_path=%1~
+  # fi
+  prompt_path=%1~
 }
 precmd() {
   update_prompt
@@ -55,4 +56,4 @@ chpwd() {
 # easier to find in search. This is `<C-k><space><space>` in Vim.
 # Add ${SSH_CONNECTION:+%#} after the last #% to put back double SSH prompt
 PS1='%F{$comment}%D{%I:%M %p} %F{yellow}${SSH_CONNECTION:+%n@%m }%F{cyan}${prompt_path} %F{yellow}%(1j.%j& .)%F{red}%(?..%?? )%f%# '
-RPROMPT='${vcs_info_msg_0_}'
+# RPROMPT='${vcs_info_msg_0_}'
