@@ -8,3 +8,5 @@ command! Fprev :call commands#Fprev()
 
 command! YankGrep :call commands#YankGrep()
 command! YankPath :call commands#YankPath()
+
+cnoreabbrev E Explore
