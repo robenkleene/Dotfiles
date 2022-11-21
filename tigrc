@@ -21,6 +21,7 @@ bind generic r refresh
 # External
 bind generic T !sh -c "git difftool '%(commit)'"
 bind generic D !sh -c "git diff '%(commit)' | delta"
+bind generic S !sh -c "git show '%(commit)' | delta"
 bind generic Y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
 bind generic y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
 bind status w !bash -c "git diff --color-words '%(file)'"
