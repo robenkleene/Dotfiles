@@ -61,11 +61,11 @@ endfunction
 function! commands#YankGrep()
   let @@ = expand("%:p").":".line('.').":0"
   call system('~/.bin/safecopy', @@)
-  echo "Yanked Grep"
+  echo getreg('@')
 endfunction
 
 function! commands#YankPath()
   let @@ = expand("%:p")
   call system('~/.bin/safecopy', @@)
-  echo "Yanked Path"
+  echo getreg('@')
 endfunction
