@@ -31,7 +31,7 @@ bind status [[ move-page-up
 bind generic d none
 
 # Main
-bind main c ?git checkout %(commit)
+bind main o ?git checkout %(commit)
 
 # Diff Tool
 bind generic T !git difftool
