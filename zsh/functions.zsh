@@ -114,3 +114,11 @@ ssh_tmux_restore_start() {
   ssh_start
   tmux_session_auto_restore
 }
+
+cdsc() {
+    if git rev-parse --is-inside-work-tree &> /dev/null; then
+        git_cd_root
+    else
+        hg_cd_root
+    fi
+}
