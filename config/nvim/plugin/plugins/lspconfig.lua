@@ -4,6 +4,10 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 local on_attach = function(_, bufnr)
   vim.api.nvim_create_autocmd("CursorHold", {
     buffer = bufnr,
