@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec vim $(~/.bin/daily_file)
+exec $VIM_COMMAND $(~/.bin/daily_file)
