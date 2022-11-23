@@ -30,3 +30,8 @@ set linebreak
 set nowrap
 " Don't timeout leader key
 set notimeout
+
+" Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" Sort case-insensitive
+let g:netrw_sort_options = "i"
