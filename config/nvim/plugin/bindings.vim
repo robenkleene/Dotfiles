@@ -5,6 +5,9 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " Move by display line
 noremap <silent> k gk
 noremap <silent> j gj
+nnoremap <A-left> b
+nnoremap <A-right> w
+
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
 nnoremap <leader>cq :GrepBufferFromClipboard<CR>
