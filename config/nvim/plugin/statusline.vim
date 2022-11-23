@@ -15,10 +15,8 @@ set statusline+=%m
 set statusline+=\ %y
 " Switch to right
 set statusline+=%=
-" Line
-set statusline+=L%l
-" Column
-set statusline+=\ C%c
+" Line/Column
+set statusline+=%l:%c
 " Location
 set statusline+=\ %P
 " Space Buffer
