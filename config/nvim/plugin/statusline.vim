@@ -1,8 +1,9 @@
+highlight User1 guifg=lightblue
 " Space Buffer
 set statusline=\ 
 " Working Directory
 " set statusline+=%.20{fnamemodify(getcwd(win_getid()),':~')}\ 
-set statusline+=%.20{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\ 
+set statusline+=%1*%.20{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}%*\ 
 " Truncate Marker
 set statusline+=%<
 " Filename
