@@ -1,0 +1,25 @@
+" Space Buffer
+set statusline=\ 
+" Working Directory
+set statusline+=%.20{fnamemodify(getcwd(win_getid()),':~')}\ 
+" Truncate Marker
+set statusline+=%<
+" Filename
+" set statusline+=%.40f
+" set statusline+=%.40{pathshorten(expand('%:~:.'))}
+" The number is the maximum number of characters to use
+set statusline+=%.100{expand('%:~:.')}
+" Modified
+set statusline+=%m 
+" Filetype
+set statusline+=\ %y
+" Switch to right
+set statusline+=%=
+" Line
+set statusline+=L%l
+" Column
+set statusline+=\ C%c
+" Location
+set statusline+=\ %P
+" Space Buffer
+set statusline+=\ 
