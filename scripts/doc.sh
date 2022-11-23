@@ -3,8 +3,12 @@
 set -eo pipefail
 
 edit="false"
-while getopts ":eh" option; do
+path="false"
+while getopts ":peh" option; do
   case "$option" in
+    p)
+      path="true"
+      ;;
     e)
       edit="true"
       ;;
@@ -25,12 +29,17 @@ done
 
 if [[ "$edit" == "true" ]]; then
   command="${EDITOR:=vim}"
+elif [[ "$path" == "true" ]]; then
+  command="echo"
 else
   command="${MD_CAT_COMMAND:=cat}"
 fi
 
 cd ~/Documentation/ || return 1
 cmd="fd --type f --follow -g \"*.md\""
+if [[ "$path" == "true" ]]; then
+  cmd="fd --follow"
+fi
 
 result="$(eval "$cmd" | fzf)"
 if [[ -z "$result" ]]; then
@@ -38,7 +47,7 @@ if [[ -z "$result" ]]; then
 fi
 
 parameter=$(printf '%q' "$PWD/$result")
-if [[ -f "$parameter" ]]; then
+if [[ -e "$parameter" ]]; then
   final_cmd="$command $parameter"
   eval "$final_cmd"
 fi
