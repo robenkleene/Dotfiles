@@ -17,7 +17,7 @@ function fish_prompt
     # else
     #     echo -n (prompt_pwd)
     # end
-    printf ' %s' (prompt_pwd)
+    printf ' %s/' (prompt_pwd)
 
     # Exclude zoxide background process
     # set -l bg_jobs_count (count (jobs --command | grep -v '^zoxide$' || true))
