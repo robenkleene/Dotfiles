@@ -8,7 +8,7 @@ set statusline+=%<
 " set statusline+=%.40f
 " set statusline+=%.40{pathshorten(expand('%:~:.'))}
 " The number is the maximum number of characters to use
-set statusline+=%.100{expand('%:~:.')}
+set statusline+=%.100{expand('%:t')}
 " Modified
 set statusline+=%m 
 " Filetype
@@ -16,7 +16,7 @@ set statusline+=\ %y
 " Switch to right
 set statusline+=%=
 " Line/Column
-set statusline+=%l:%c
+set statusline+=\ %l:%c
 " Location
 set statusline+=\ %P
 " Space Buffer
