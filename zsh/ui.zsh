@@ -56,5 +56,5 @@ chpwd() {
 # easier to find in search. This is `<C-k><space><space>` in Vim.
 # Add ${SSH_CONNECTION:+%#} after the last #% to put back double SSH prompt
 # PS1='%F{$comment}%D{%I:%M %p} %F{yellow}${SSH_CONNECTION:+%n@%m }%F{cyan}${prompt_path} %F{yellow}%(1j.%j& .)%F{red}%(?..%?? )%f%# '
-PS1='%F{$comment}%D{%I:%M %p} %F{yellow}${SSH_CONNECTION:+%m }%F{cyan}${prompt_path} %F{yellow}%(1j.%j& .)%F{red}%(?..%?? )%f%# '
+PS1='%F{$comment}%D{%I:%M %p} %F{yellow}${SSH_CONNECTION:+%m }%F{cyan}${prompt_path}/ %F{yellow}%(1j.%j& .)%F{red}%(?..%?? )%f%# '
 # RPROMPT='${vcs_info_msg_0_}'
