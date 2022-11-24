@@ -16,7 +16,7 @@ function fish_sync_variables
     set -Ux VIM_COMMAND nvim
     # set -Ux VIM_COMMAND "nvim"
     set -Ux CAT_COMMAND "bat"
-    set -Ux MD_CAT_COMMAND "bat --style plain"
+    set -Ux MD_CAT_COMMAND "bat --style plain --pager none"
     # # set -Ux VISUAL "hx"
     # set -Ux TIG_EDITOR "hx_wrapper"
     set -Ux VISUAL "$VIM_COMMAND"
