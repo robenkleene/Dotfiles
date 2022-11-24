@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-dir=~/Documents/Text/journal/daily
+dir=~/Documents/Text/Notes/Journal/Daily
 date=$(date +%F)
 filename=$date.md
 filepath=$dir/$filename
