@@ -9,10 +9,10 @@ set statusline+=%1*%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}%*\
 " Truncate Marker
 set statusline+=%<
 " Filename
-" set statusline+=%.40f
-" set statusline+=%.40{pathshorten(expand('%:~:.'))}
-" The number is the maximum number of characters to use
 set statusline+=%(%.40{expand('%:t')}\ %)
+"                                      ^^ End group
+"                   ^^ Maximum number of characters
+"               ^^ Start group that disappears if flags are empty
 " Modified
 set statusline+=%(%2*%m%*\ %)
 " Filetype
