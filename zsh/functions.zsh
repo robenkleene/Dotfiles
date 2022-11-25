@@ -122,13 +122,3 @@ cdsc() {
         hg_cd_root
     fi
 }
-
-zsh_update() {
-  cd
-  zcompile .zshenv
-  zcompile .zshrc
-  cd - > /dev/null
-  cd ~/.zsh
-  for f in *.zsh; do zcompile "$f"; done
-  cd - > /dev/null
-}
