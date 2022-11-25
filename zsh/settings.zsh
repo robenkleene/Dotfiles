@@ -64,6 +64,7 @@ autoload zmv
 # Enable Completion
 autoload -Uz compinit
 compinit
+
 # Automatically select the first option
 # Don't enable this because it makes it difficult to narrow in on a choice
 # setopt menucomplete
