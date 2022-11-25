@@ -62,8 +62,9 @@ autoload zmv
 
 # Completion
 # Enable Completion
-autoload -Uz compinit
-compinit
+# This is probably important but zsh is slow to load with it
+# autoload -Uz compinit
+# compinit
 
 # Automatically select the first option
 # Don't enable this because it makes it difficult to narrow in on a choice
