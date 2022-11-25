@@ -1,14 +1,6 @@
 # Not Exported
 
-# `nvim`
-# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-#   VIM_COMMAND=nvim_edit
-# else
-#   VIM_COMMAND=nvim
-# fi
-# `vim`
 export VIM_COMMAND=nvim
-# export VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs, note that this doesn't work with
 # current Emacs
@@ -54,6 +46,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Editor
 # export VISUAL="$EMACS_COMMAND"
 # export VISUAL="hx"
+# export TIG_EDITOR="hx_wrapper"
 export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
@@ -64,31 +57,13 @@ export EDITOR="$VISUAL"
 export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
 export PAGER="less"
 # Prevent `npm` scripts from opening browser windows
-# export BROWSER="none"
-# Set to Chrome instead
-if [[ "$(uname)" = "Linux" ]]; then
-  export BROWSER="none"
-elif [[ "$(uname)" = "Darwin" ]]; then
-  export BROWSER="google chrome"
-fi
-# export BROWSER="Microsoft Edge Beta"
-# export TIG_EDITOR="hx_wrapper"
+export BROWSER="none"
 
 # Emacs
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
 
 export COLORTERM="truecolor"
-
-# Vagrant
-export VAGRANT_HOME=~/Documents/VMs/Vagrant/vagrant.d
-export VAGRANT_VMWARE_CLONE_DIRECTORY=~/Documents/VMs/Vagrant/
-
-# Tidy
-export HTML_TIDY="$HOME/.tidy"
-
-# Shellcheck
-export SHELLCHECK_OPTS="-e SC1090 -e SC2148"
 
 if test -n "$INSIDE_EMACS"; then
     export PAGER=cat
