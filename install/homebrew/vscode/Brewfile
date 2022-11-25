@@ -1,5 +1,4 @@
 # Shell
-brew 'zsh-syntax-highlighting'
 brew 'tig'
 brew 'ripgrep'
 brew 'fd'
