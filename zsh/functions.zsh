@@ -127,8 +127,8 @@ zsh_update() {
   cd
   zcompile .zshenv
   zcompile .zshrc
-  cd -
+  cd - > /dev/null
   cd ~/.zsh
   for f in *.zsh; do zcompile "$f"; done
-  cd -
+  cd - > /dev/null
 }
