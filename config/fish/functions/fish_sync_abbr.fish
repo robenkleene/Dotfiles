@@ -46,24 +46,13 @@ function fish_sync_abbr
     abbr -a fhm 'history merge'
     abbr -a fke 'echo $fish_killring[1]'
     # Mercurial
-    abbr -a hg_diff_relative 'hg diff --root .'
-    abbr -a hg_diff_bottom 'hg diff -r "bottom^"'
-    abbr -a hg_diff_stat 'hg diff --stat'
-    # This wasn't showing added files
-    # abbr -a hgdbf 'hg status --rev bottom -n'
-    abbr -a hg_status_bottom_no_status 'hg status --change bottom --no-status'
-    abbr -a hg_diff_last 'hg diff -pr .^1'
-    abbr -a hg_diff_last_stat 'hg diff -pr .^1 --stat'
     abbr -a hgd 'hg diff'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgs 'hg status'
     abbr -a hgsv 'hg shelve'
     abbr -a hgsvu 'hg unshelve'
-    abbr -a hg_import_no_commit 'hg import --prefix . --no-commit -'
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
-    abbr -a hg_show_stat 'hg show --stat'
-    abbr -a hgrm 'hg resolve --mark'
     abbr -a hgcleanup 'hg purge && hg checkout --clean . && hg status'
     # New
     abbr -a tr_line_ending "tr -d '\n'"
