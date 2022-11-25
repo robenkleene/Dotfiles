@@ -58,6 +58,7 @@ for file in *; do
 done
 
 ./scripts/update.sh
+./scripts/zsh_compile.zsh
 
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
