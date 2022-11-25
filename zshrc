@@ -1,6 +1,6 @@
 # Profile
 # Run `zprof` after to see results
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 # Homebrew
 # This was moved from `zshenv` because the brew path (in `/usr/local/bin`) is
