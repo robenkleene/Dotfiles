@@ -71,8 +71,19 @@ require('packer').startup(function(use)
     config = function()
       vim.g.catppuccin_flavour = "mocha"
       require("catppuccin").setup()
+      vim.cmd [[colorscheme catppuccin]]
     end
   }
+  -- use({
+  --     'rose-pine/neovim',
+  --     as = 'rose-pine',
+  --     config = function()
+  --       require('rose-pine').setup({
+  --         dark_variant = 'main',
+  --       })
+  --       vim.cmd('colorscheme rose-pine')
+  --     end
+  -- })
   -- use {
   --   'nvim-lualine/lualine.nvim',
   --   config = function()
