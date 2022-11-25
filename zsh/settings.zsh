@@ -62,8 +62,8 @@ autoload zmv
 
 # Completion
 # Enable Completion
-# This is probably important but zsh is slow to load with it
-# autoload -Uz compinit
+autoload -Uz compinit
+# This is just re-generating the cache and shouldn't be run on startup
 # compinit
 
 # Automatically select the first option
