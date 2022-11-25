@@ -4,8 +4,13 @@ set -eo pipefail
 
 edit="false"
 path="false"
-while getopts ":peh" option; do
+directory="false"
+while getopts ":pdeh" option; do
   case "$option" in
+    d)
+      path="true"
+      directory="true"
+      ;;
     p)
       path="true"
       ;;
@@ -39,6 +44,9 @@ cd ~/Documentation/ || return 1
 cmd="fd --type f --follow -g \"*.md\""
 if [[ "$path" == "true" ]]; then
   cmd="fd --follow"
+  if [[ "$directory" == "true" ]]; then
+    cmd="fd --follow --type d"
+  fi
 fi
 
 result="$(eval "$cmd" | fzf)"
