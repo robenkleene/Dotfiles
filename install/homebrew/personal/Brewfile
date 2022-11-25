@@ -1,6 +1,5 @@
 # Shell
 brew 'zsh'
-brew 'zsh-syntax-highlighting'
 brew 'fish'
 brew 'git'
 brew 'tig'
