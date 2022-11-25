@@ -7,19 +7,17 @@ function fish_sync_abbr
 
     abbr -a -- - 'cd -'
     abbr -a o 'open'
-    abbr -a dv 'vim_diff'
     abbr -a a 'rg'
     abbr -a v "$VIM_COMMAND"
     abbr -a v- "$VIM_COMMAND -"
-    abbr -a b "bat"
-    abbr -a oR 'open -R'
+    abbr -a b 'bat'
+    abbr -a z 'zsh'
     abbr -a mdv 'mosh aresdev'
     abbr -a ts 'tig status +3'
     abbr -a hpr 'hub pull-request'
     abbr -a hprm 'hub pull-request -m'
     abbr -a ghpr 'gh pr create'
     abbr -a hprr 'hub pull-request && BROWSER= gh pr view --web'
-    abbr -a brm 'bat README.md'
     abbr -a g git
     abbr -a gaa 'git add -A :/'
     abbr -a gaac 'git add -A :/ && git commit'
@@ -36,9 +34,6 @@ function fish_sync_abbr
     abbr -a glg 'git log -p -G'
     abbr -a gsh 'git show'
     abbr -a gbl 'git blame'
-    abbr -a git_diff_relative 'git diff --relative'
-    abbr -a git_remote_print 'git ls-remote --get-url'
-    abbr -a git_revision_print 'git rev-parse HEAD'
     abbr -a chu 'carthage update'
     abbr -a chunub 'carthage update --no-use-binaries'
     abbr -a chunubm 'carthage update --no-use-binaries --platform macos'
