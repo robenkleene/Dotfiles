@@ -1,0 +1,99 @@
+{
+  "lorem": {
+    "prefix": "lorem",
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    ],
+    "description": "Lorem ipsum"
+  },
+  "cmd": {
+    "prefix": "cmd",
+    "body": ["⌘"],
+    "description": "⌘"
+  },
+  "ctrl": {
+    "prefix": "ctrl",
+    "body": ["⌃"],
+    "description": "⌃"
+  },
+  "opt": {
+    "prefix": "opt",
+    "body": ["⌥"],
+    "description": "⌥"
+  },
+  "sft": {
+    "prefix": "sft",
+    "body": ["⇧"],
+    "description": "⇧"
+  },
+  "esc": {
+    "prefix": "esc",
+    "body": ["⎋"],
+    "description": "⎋"
+  },
+  "aarr": {
+    "prefix": "aarr",
+    "body": "↓↑←→",
+    "description": "Arrows"
+  },
+  "uarr": {
+    "prefix": "uarr",
+    "body": "↑",
+    "description": "Arrows"
+  },
+  "larr": {
+    "prefix": "larr",
+    "body": "←",
+    "description": "Arrows"
+  },
+  "rarr": {
+    "prefix": "rarr",
+    "body": "→",
+    "description": "Arrows"
+  },
+  "darr": {
+    "prefix": "darr",
+    "body": "↓",
+    "description": "Arrows"
+  },
+  "ent": {
+    "prefix": ["ent", "ret"],
+    "body": "↩",
+    "description": "Enter"
+  },
+  "spc": {
+    "prefix": "spc",
+    "body": "␣",
+    "description": "Space"
+  },
+  "kso": {
+    "prefix": "kso",
+    "body": ["⌤↓↑←→⎋⌦⌫↩⇥⇤␣"],
+    "description": "Other keyboard shortcut symbols"
+  },
+  "kss": {
+    "prefix": "kss",
+    "body": ["⇧⌃⌥⌘"],
+    "description": "Keyboard shortcut symbols"
+  },
+  "redhex": {
+    "prefix": "redhex",
+    "body": ["#ff0000"],
+    "description": "Hex Red"
+  },
+  "greenhex": {
+    "prefix": "greenhex",
+    "body": ["#00ff00"],
+    "description": "Hex Green"
+  },
+  "bluehex": {
+    "prefix": "bluehex",
+    "body": ["#0000ff"],
+    "description": "Hex Blue"
+  },
+  "yellowhex": {
+    "prefix": "yellowhex",
+    "body": ["#ffff00"],
+    "description": "Hex Yellow"
+  }
+}

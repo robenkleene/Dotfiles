@@ -1,0 +1,226 @@
+{
+  "template": {
+    "prefix": "template",
+    "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
+    "description": "Basic template"
+  },
+  "echov": {
+    "prefix": "echov",
+    "body": "echo \"${1:HOME} = \\$$1\"",
+    "description": "Echo variable"
+  },
+  "echoa": {
+    "prefix": "echova",
+    "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
+    "description": "Echo array variable"
+  },
+  "echoe": {
+    "prefix": "echoe",
+    "body": "echo \"${0:Error}\" >&2",
+    "description": "Echo error"
+  },
+  "cds": {
+    "prefix": "cds",
+    "body": "cd \"\\$(dirname \"\\$0\")\" || exit 1",
+    "description": "cd to directory of script"
+  },
+  "noslash": {
+    "prefix": "noslash",
+    "body": "${1:noslash}=\\${${2:1}%/}$0",
+    "description": "Remove the slash from a variable"
+  },
+  "noext": {
+    "prefix": "noext",
+    "body": "${1:noext}=\\${${0:1}%.*}",
+    "description": "Remove the extension from a path"
+  },
+  "arr": {
+    "prefix": "arr",
+    "body": "\\${${1:args}[@]}$0",
+    "description": "Access array"
+  },
+  "function": {
+    "prefix": "function",
+    "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
+    "description": "Function"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
+    "description": "If statement"
+  },
+  "ifuname": {
+    "prefix": "ifuname",
+    "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n	echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n	echo \"Linux\"\nfi",
+    "description": "If platform"
+  },
+  "ex": {
+    "prefix": "ex",
+    "body": "[[ ${0:-n \"\\${1:-\\}\"} ]]",
+    "description": "Add expression"
+  },
+  "exn": {
+    "prefix": "exn",
+    "body": "[[ ! ${0:-n \"\\$1\"} ]]",
+    "description": "Add negative expression"
+  },
+  "testd": {
+    "prefix": "testd",
+    "body": "-d \"${1:\\$1}\"",
+    "description": "True if directory"
+  },
+  "testb": {
+    "prefix": "testb",
+    "body": "\"$${1:value}\" == \"${0:true}\"",
+    "description": "Test boolean"
+  },
+  "testf": {
+    "prefix": "testf",
+    "body": "-f \"${1:\\$1}\"",
+    "description": "True if regular file"
+  },
+  "teste": {
+    "prefix": "teste",
+    "body": "-e \"${1:\\$1}\"",
+    "description": "True if file exists"
+  },
+  "testl": {
+    "prefix": "testl",
+    "body": "-L \"${1:\\$1}\"",
+    "description": "True if symbolic link"
+  },
+  "testneq": {
+    "prefix": "testneq",
+    "body": "${1:$?} -ne ${0:0}",
+    "description": "True if not equal"
+  },
+  "testeq": {
+    "prefix": "testeq",
+    "body": "${1:$?} -eq ${0:0}",
+    "description": "True if equal"
+  },
+  "testgt": {
+    "prefix": "testgt",
+    "body": "${1:$?} -gt ${0:0}",
+    "description": "True if greater than"
+  },
+  "testlt": {
+    "prefix": "testlt",
+    "body": "${1:$?} -lt ${0:0}",
+    "description": "True if less than"
+  },
+  "testz": {
+    "prefix": "testz",
+    "body": "-z \"${${1:1}-}\"",
+    "description": "True if empty variable"
+  },
+  "testn": {
+    "prefix": "testn",
+    "body": "-n \"${${1:1}-}\"",
+    "description": "True if not empty variable"
+  },
+  "tests": {
+    "prefix": "tests",
+    "body": "\"$${1:1}\" = \"${2:string}\"",
+    "description": "True if variable matches string"
+  },
+  "testx": {
+    "prefix": "testx",
+    "body": "-x \"$(command -v ${1:ls})\"",
+    "description": "True if command is executable"
+  },
+  "testmac": {
+    "prefix": "testmac",
+    "body": "\"$(uname)\" = \"Darwin\"",
+    "description": "True if Mac"
+  },
+  "testlinux": {
+    "prefix": "testlinux",
+    "body": "\"$(uname)\" = \"Linux\"",
+    "description": "True if Linux"
+  },
+  "1while": {
+    "prefix": "1while",
+    "body": "while read i; do { ${0:echo $i} } done",
+    "description": "While loop one-liner"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while read i; do\n  ${0:echo $i}\ndone"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
+    "description": "For loop"
+  },
+  "fordir": {
+    "prefix": "fordir",
+    "body": "for dir in */; do\n  echo $dir;\ndone",
+    "description": "For loop directories"
+  },
+  "1for": {
+    "prefix": "1for",
+    "body": "for i in ${1:*}; do { ${0:echo $i} } done",
+    "description": "For loop one-liner"
+  },
+  "1rename": {
+    "prefix": "1rename",
+    "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
+    "description": "Rename files in current directory"
+  },
+  "exitstatus": {
+    "prefix": "exitstatus",
+    "body": "status=$?",
+    "description": "Store exit status"
+  },
+  "IFS": {
+    "prefix": "IFS",
+    "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
+    "description": "Change IFS"
+  },
+  "getopts": {
+    "prefix": "getopts",
+    "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
+    "description": "getopts"
+  },
+  "getoptsf": {
+    "prefix": "getoptsf",
+    "body": "force=false\nwhile getopts \":fh\" option; do\n  case \"$option\" in\n    f)\n      force=true\n      ;;\n    h)\n      echo \"Usage: command [-hf]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
+    "description": "getopts force"
+  },
+  ">n": {
+    "prefix": ">n",
+    "body": ">/dev/null",
+    "description": "Redirect STDOUT to null"
+  },
+  ">null": {
+    "prefix": ">null",
+    "body": ">/dev/null",
+    "description": "Redirect STDOUT to null"
+  },
+  ">o": {
+    "prefix": ">o",
+    "body": "2>&1",
+    "description": "Redirect STDERR to STDOUT to null"
+  },
+  "sete": {
+    "prefix": "sete",
+    "body": "set -e",
+    "description": "Exit on non-zero exit status"
+  },
+  "setx": {
+    "prefix": "setx",
+    "body": "set -x",
+    "description": "Print each command"
+  },
+  "setop": {
+    "prefix": "setop",
+    "body": "set -x",
+    "description": "Any command in pipe fails the whole pipe"
+  },
+  "guardv": {
+    "prefix": "guardv",
+    "body": "if [[ -z \"$${1:1}\" ]]; then\n  echo \"Error: $1 is empty\" >&2\n  exit 1\nfi",
+    "description": "Exit on empty variable"
+  }
+}

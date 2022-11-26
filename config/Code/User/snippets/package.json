@@ -1,0 +1,86 @@
+{
+  "name": "robenkleene-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "global.json"
+      },
+      {
+        "language": "c",
+        "path": "c.json"
+      },
+      {
+        "language": "css",
+        "path": "css.json"
+      },
+      {
+        "language": "fish",
+        "path": "fish.json"
+      },
+      {
+        "language": "html",
+        "path": "html.json"
+      },
+      {
+        "language": "javascript",
+        "path": "javascript.json"
+      },
+      {
+        "language": "json",
+        "path": "json.json"
+      },
+      {
+        "language": "jsonc",
+        "path": "jsonc.json"
+      },
+      {
+        "language": "make",
+        "path": "makefile.json"
+      },
+      {
+        "language": "markdown",
+        "path": "markdown.json"
+      },
+      {
+        "language": "objective-c",
+        "path": "objective-c.json"
+      },
+      {
+        "language": "rust",
+        "path": "rust.json"
+      },
+      {
+        "language": "perl",
+        "path": "perl.json"
+      },
+      {
+        "language": "python",
+        "path": "python.json"
+      },
+      {
+        "language": "ruby",
+        "path": "ruby.json"
+      },
+      {
+        "language": ["shellscript", "sh"],
+        "path": "shellscript.json"
+      },
+      {
+        "language": "swift",
+        "path": "swift.json"
+      },
+      {
+        "language": "vim",
+        "path": "vim.json"
+      },
+      {
+        "language": "zsh",
+        "path": "zsh.json"
+      }
+    ]
+  }
+}
