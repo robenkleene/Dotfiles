@@ -1,0 +1,66 @@
+{
+  "Launch Node": {
+    "prefix": "launchnode",
+    "body": [
+      "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"name\": \"Launch via npm\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"]\n    }\n  ]\n}\n"
+    ],
+    "description": "Launch JSON for Node"
+  },
+  "Launch npm": {
+    "prefix": "launchnpm",
+    "body": [
+      "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"name\": \"Launch via npm\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"env\": { \"BROWSER\": \"none\" },\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"]\n    }\n  ]\n}\n"
+    ],
+    "description": "Launch JSON for Node"
+  },
+  "Launch C": {
+    "prefix": "launchc",
+    "body": [
+      "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n      {\n          \"type\": \"lldb\",\n          \"request\": \"launch\",\n          \"name\": \"Debug\",\n          // Compile first with `cc -g <name>.c`\n          \"program\": \"\\${workspaceFolder}/a.out\",\n          \"args\": [],\n          \"cwd\": \"\\${workspaceFolder}\"\n      }\n  ]\n}"
+    ],
+    "description": "Launch JSON for C"
+  },
+  "Launch Open Browser": {
+    "prefix": "launchbrowser",
+    "body": [
+      "\"serverReadyAction\": {\n  \"pattern\": \"https?://localhost:([0-9]+)\",\n  \"uriFormat\": \"http://localhost:%s\"\n}"
+    ],
+    "description": "Automatically launch browser"
+  },
+  "Launch Open Browser React": {
+    "prefix": "launchbrowserreact",
+    "body": [
+      "\"serverReadyAction\": {\n  \"pattern\": \"Starting the development server...\",\n  \"uriFormat\": \"http://localhost:3000\",\n}"
+    ],
+    "description": "Automatically launch browser"
+  },
+  "Launch Terminal": {
+    "prefix": "launchterminal",
+    "body": ["\"console\": \"integratedTerminal\""],
+    "description": "Automatically launch browser"
+  },
+  "Launch Chrome": {
+    "prefix": "launchchrome",
+    "body": ["\"env\": { \"BROWSER\": \"google chrome\" },"],
+    "description": "Launch Chrome"
+  },
+  "Launch Debug With Chrome": {
+    "prefix": "launchchromedebug",
+    "body": ["\"action\": \"debugWithChrome\""],
+    "description": "Debug with Chrome"
+  },
+  "Launch Template HTML": {
+    "prefix": "launch-template-html",
+    "body": [
+      "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"name\": \"Live Server\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"runtimeExecutable\": \"live-server\"\n    },\n    {\n      \"name\": \"Debug With Chrome\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"runtimeExecutable\": \"live-server\",\n      \"args\": [ \"--no-browser\"],\n      \"serverReadyAction\": {\n        \"pattern\": \"https?://127.0.0.1:([0-9]+)\",\n        \"action\": \"debugWithChrome\",\n        \"uriFormat\": \"http://localhost:%s\"\n      }\n    }\n  ]\n}"
+    ],
+    "description": "Launch Template HTML"
+  },
+  "Launch Template NPM": {
+    "prefix": "launch-template-npm",
+    "body": [
+      "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"name\": \"NPM Start\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"]\n    },\n    {\n      \"name\": \"Debug With Chrome\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"env\": {\n        \"BROWSER\": \"none\"\n      },\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"],\n      \"serverReadyAction\": {\n        \"pattern\": \"Starting the development server...\",\n        \"uriFormat\": \"http://localhost:3000\",\n        \"action\": \"debugWithChrome\"\n      }\n    }\n  ]\n}"
+    ],
+    "description": "Launch Template NPM"
+  },
+}

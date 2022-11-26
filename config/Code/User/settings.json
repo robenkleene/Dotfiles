@@ -1,0 +1,275 @@
+{
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.colorCustomizations": {
+    "editor.foreground": "#aabbcc",
+    "editor.selectionBackground": "#284667",
+    "editor.selectionHighlightBackground": "#444",
+    "editor.findMatchBackground": "#284667",
+    "editor.findMatchHighlightBackground": "#444",
+    "list.activeSelectionBackground": "#333",
+    "list.activeSelectionForeground": "#aabbcc",
+    "list.focusBackground": "#444",
+    "list.focusForeground": "#aabbcc",
+    "list.inactiveFocusBackground": "#333",
+    "list.inactiveFocusForeground": "#aabbcc",
+    "list.inactiveSelectionBackground": "#333",
+    "list.inactiveSelectionForeground": "#aabbcc",
+    "sideBar.foreground": "#888"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "punctuation.definition.heading.markdown, punctuation.definition.string.begin.markdown, punctuation.definition.string.end.markdown, punctuation.definition.metadata.markdown, markup.underline.link.markdown, punctuation.definition.bold.markdown, markup.underline.link.image.markdown, punctuation.definition.italic.markdown, punctuation.definition.raw.markdown",
+        "settings": {
+          "foreground": "#777"
+        }
+      },
+      {
+        "scope": "punctuation.definition.list.begin.markdown, markup.list, text",
+        "settings": {
+          "foreground": "#ABB2BF"
+        }
+      },
+      {
+        "scope": "markup.raw.block.markdown, markup.inline.raw.string.markdown, markup.quote.markdown",
+        "settings": {
+          "foreground": "#888"
+        }
+      },
+      {
+        "scope": "entity.name.section.markdown, markup.italic.markdown, markup.bold.markdown",
+        "settings": {
+          "foreground": "#fff"
+        }
+      }
+    ]
+  },
+  "update.showReleaseNotes": false,
+  "workbench.colorTheme": "SynthWave '84",
+  "workbench.activityBar.visible": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "search.useGlobalIgnoreFiles": true,
+  "debug.onTaskErrors": "showErrors",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "bracket-pair-colorizer-2.excludedLanguages": ["markdown"],
+  "c-cpp-flylint.cppcheck.enable": false,
+  "c-cpp-flylint.flexelint.enable": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabCompletion": "onlySnippets",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "editor.cursorBlinking": "phase",
+  "workbench.editor.closeOnFileDelete": true,
+  "extensions.ignoreRecommendations": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+  "breadcrumbs.enabled": true,
+  "window.zoomLevel": 0,
+  "editor.showFoldingControls": "always",
+  "window.openFilesInNewWindow": "default",
+  "explorer.compactFolders": false,
+  "editor.find.autoFindInSelection": "multiline",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "window.newWindowDimensions": "inherit",
+  "explorer.sortOrder": "mixed",
+  "markdownlint.config": {
+    // This config is for `markdownlint` CLI, VS Code is configured in settings
+    "default": true,
+    // Four spaces for nested lists
+    "MD007": { "indent": 4 },
+    // Allow trailing whitespace (this is a good rule, but it's too annoying
+    // when typing)
+    "MD009": false,
+    // Allow hard tabs, e.g., in code blocks
+    "MD010": false,
+    // Allow long lines
+    "MD013": false,
+    // Allow duplicate headings
+    "MD024": false,
+    // Allow punctuation at the end of headings (e.g., `?`)
+    "MD026": false,
+    // Don't require blank lines around fenced code blocks, hierarchical code
+    // blocks in lists look better without blank lines around them.
+    "MD031": false,
+    // Disable forcing blank lines around lists, this is just annoying when
+    // creating a list
+    "MD032": false,
+    // Allow fenced code blocks without a language specified
+    "MD040": false,
+    // Don't force first line header
+    "MD041": false,
+    // Allow either fenced code blocks or indented code blocks
+    "MD046": false,
+    // Disable blank line ending file, this is a good rule, but annoying to
+    // enforce while editing
+    "MD047": false
+  },
+  "files.associations": {
+    "*.omnifocusjs": "javascript",
+    "*.omnijs": "javascript"
+  },
+  "prettier.config": {
+    "overrides": [
+      {
+        "files": "*.md",
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
+  },
+  "write-good.write-good-config": {
+    "so": false,
+    "adverb": false,
+    "tooWordy": false,
+    "passive": false,
+    "thereIs": false,
+    "weasel": false
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown.extension.list.indentationSize": "inherit",
+  "cSpell.userWords": [
+    "Ableton",
+    "Airtable",
+    "AppleScript",
+    "Bootable",
+    "Brewfile",
+    "Bézier",
+    "Codespaces",
+    "Eevee",
+    "Feedly",
+    "Figma",
+    "GLTF",
+    "IINA",
+    "Jupyter",
+    "Kleene",
+    "Kleene's",
+    "Lightroom",
+    "Mailchimp",
+    "Omni",
+    "Perlin",
+    "Photoshop",
+    "Pinboard",
+    "Repla",
+    "Roben",
+    "Stackoverflow",
+    "Trapcode",
+    "Ultrabeat",
+    "artboard",
+    "behaviour",
+    "codespace",
+    "crossfade",
+    "customizability",
+    "deallocate",
+    "deallocating",
+    "denoise",
+    "denoiser",
+    "denoising",
+    "dotfiles",
+    "fasd",
+    "heapsort",
+    "icosphere",
+    "keyframes",
+    "minimap",
+    "numpad",
+    "omnifocus",
+    "osascript",
+    "performant",
+    "playhead",
+    "popularities",
+    "rasterization",
+    "roadmap",
+    "robenkleene",
+    "scpt",
+    "scrollable",
+    "sidechain",
+    "struct",
+    "subarray",
+    "submodule",
+    "subproblems",
+    "superpolynomial",
+    "timecode",
+    "todos",
+    "touchpad",
+    "trackpad",
+    "uncheck",
+    "xoff",
+    "yoff",
+    "zoff"
+  ],
+  "cSpell.spellCheckDelayMs": 500,
+  "cSpell.ignoreRegExpList": ["/\\b[A-Z]+\\b/"],
+  "workbench.iconTheme": "vscode-icons",
+  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODUwLFwiaGVpZ2h0XCI6MTEwMH0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+  "eslint.options": { "configFile": "/Users/robenkleene/.eslintrc" },
+  "vsicons.dontShowNewVersionMessage": true,
+  "cSpell.showStatus": false,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "codespaces.accountProvider": "GitHub",
+  "dotfiles.targetPath": "~/Developer/Dotfiles",
+  "dotfiles.repository": "https://github.com/robenkleene/Dotfiles",
+  "dotfiles.installCommand": "~/Developer/Dotfiles/install.sh",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.shell.linux": "/home/linuxbrew/.linuxbrew/bin/fish",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "debug.openDebug": "neverOpen",
+  // Disable suggested actions because suggesting to refactor to ES6 modules
+  // keeps sending me down pointless rabbit holes.
+  "javascript.suggestionActions.enabled": false,
+  "testExplorer.codeLens": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.pythonPath": "/usr/local/bin/python3",
+  "python.linting.pylintUseMinimalCheckers": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "omnisharp.useGlobalMono": "always",
+  "csharp.referencesCodeLens.enabled": false,
+  "[plaintext]": {
+    "editor.quickSuggestions": false
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "css.validate": false,
+  "scss.validate": false,
+  "terminal.integrated.tabs.enabled": true,
+  "security.workspace.trust.enabled": false,
+  "vscode-edge-devtools.mirrorEdits": true,
+  // Disable restoring windows, hopefully this helps with the terminal being in
+  // a weird position when re-opening after an SSH session
+  "window.restoreWindows": "none",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.indentation": false
+}

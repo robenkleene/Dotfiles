@@ -1,0 +1,7 @@
+{
+  "template": {
+    "prefix": "template",
+    "body": "#!/usr/bin/env zsh\n\nset -euo pipefail\n\n",
+    "description": "Basic template"
+  }
+}

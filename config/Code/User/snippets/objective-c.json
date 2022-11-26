@@ -1,0 +1,67 @@
+{
+  "templatex": {
+    "prefix": "templatex",
+    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n$0",
+    "description": "Xcode Template"
+  },
+  "template": {
+    "prefix": "template",
+    "body": "#import <Foundation/Foundation.h>\n\n@interface SampleClass : NSObject\n- (void)sampleMethod;\n@end\n\n@implementation SampleClass\n- (void)sampleMethod {\n    NSLog(@\"Hello, World! \\n\");\n}\n@end\n\nint main() {\n    SampleClass *sampleClass = [[SampleClass alloc] init];\n    [sampleClass sampleMethod];\n    return 0;\n}\n",
+    "description": "Template"
+  },
+  "delegate": {
+    "prefix": "delegate",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n@protocol ${1:MyClass}Delegate <NSObject>\n- (void)handleEventFor$1:($1 *)${2:myObject};\n- (${3:id})$2:($1 *)$2 ${4:valueForKey}:(${5:NSString *})${6:key};\n@end\nNS_ASSUME_NONNULL_END",
+    "description": "Delegate"
+  },
+  "protocol": {
+    "prefix": "protocol",
+    "body": "@protocol ${1:MyProtocol} <NSObject>\n$0\n@end",
+    "description": "Protocol"
+  },
+  "implementation": {
+    "prefix": "implementation",
+    "body": "@implementation ${1:MyClass}\n$0\n@end",
+    "description": "Protocol"
+  },
+  "interface": {
+    "prefix": "interface",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$0\n@end\nNS_ASSUME_NONNULL_END",
+    "description": "Interface"
+  },
+  "extension": {
+    "prefix": "extension",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} (${2:MyCategory})\n$0\n@end\nNS_ASSUME_NONNULL_END",
+    "description": "Class Extension"
+  },
+  "extensionc": {
+    "prefix": "extensionc",
+    "body": "@interface ${1:MyClass} ($2)\n$0\n@end",
+    "description": "Class Extension"
+  },
+  "property": {
+    "prefix": "property",
+    "body": "@property (nonatomic, strong) ${1:NSString} *${2:identifier};",
+    "description": "Property"
+  },
+  "propertyd": {
+    "prefix": "propertyd",
+    "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;",
+    "description": "Delegate property"
+  },
+  "nonnull": {
+    "prefix": "nonnull",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n${VISUAL}\nNS_ASSUME_NONNULL_END",
+    "description": "Assume nonnull block"
+  },
+  "init": {
+    "prefix": "init",
+    "body": "- (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\\l$0/}\n{\n    self = [super init];\n    if (self) {\n\t\t_${1/.*/\\l$0/} = ${1/.*/\\l$0/};\n    }\n    return self;\n}",
+    "description": "Initialization method"
+  },
+  "forin": {
+    "prefix": "forin",
+    "body": "for (${1:id} ${2:object} in ${3:objects}) {\n    $0\n}",
+    "description": "Fast enumeration"
+  }
+}

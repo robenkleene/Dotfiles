@@ -1,0 +1,8 @@
+{
+  "template": {
+    "prefix": "template",
+    "body": "fn main() {\n    println!(\"Hello, world!\");\n}\n",
+    "description": "Template"
+  }
+}
+
