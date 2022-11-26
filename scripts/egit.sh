@@ -3,7 +3,6 @@
 set -eo pipefail
 
 repos=~/Developer/Dotfiles/
-repos+=:~/.config/Code/User/
 if [[ "$(uname)" == "Darwin" ]]; then
   repos+=:~/Library/Services/:~/Developer/AppleScripts/
 fi
