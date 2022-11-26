@@ -18,6 +18,7 @@ function fish_sync_abbr
     abbr -a g git
     abbr -a gaa 'git add -A :/'
     abbr -a gaac 'git add -A :/ && git commit'
+    abbr -a gaaca 'git add -A :/ && git commit --amend'
     abbr -a gb 'git branch'
     abbr -a gc 'git commit'
     abbr -a gco 'git checkout'
