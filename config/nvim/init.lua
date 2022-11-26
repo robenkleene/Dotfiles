@@ -35,7 +35,7 @@ require('packer').startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }
   use {
@@ -115,7 +115,7 @@ require('packer').startup(function(use)
   use {
     'j-hui/fidget.nvim',
     config = function()
-      require"fidget".setup({})
+      require "fidget".setup({})
     end
   }
   use 'nvim-treesitter/nvim-treesitter'
