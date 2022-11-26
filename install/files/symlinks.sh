@@ -37,7 +37,7 @@ if [[ -e "$vscode_path" && ! -e "$vscode_insiders_path" ]]; then
 fi
 if [[ "$(uname)" = "Darwin" ]]; then
   if [[ ! -e "$HOME/Library/Application Support/Code" ]]; then
-    ln -s "$vscode_path" "$vscode_insiders_path" "$HOME/Library/Application Support/Code"
+    ln -s "$vscode_path" "$HOME/Library/Application Support/Code"
   fi
   if [[ ! -e "$HOME/Library/Application Support/Code - Insiders" ]]; then
     ln -s "$vscode_path" "$HOME/Library/Application Support/Code - Insiders"
