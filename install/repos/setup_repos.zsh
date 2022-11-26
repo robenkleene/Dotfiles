@@ -64,19 +64,12 @@ if [[ "$(uname)" = "Darwin" ]]; then
 ~"/Library/Application Support/BBEdit/" "${github_prefix}robenkleene/BBEdit.git"
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
 ~"/Library/Services/" "${github_prefix}robenkleene/Services.git"
-~"/Library/Application Support/Code/User" "${github_prefix}robenkleene/visual-studio-code.git"
-~"/Library/Application Support/Code - Insiders/User" "${github_prefix}robenkleene/visual-studio-code.git"
 )
   if [[ "$include_private" == "true" ]]; then
     repos+=(
 ~"/Music/Audio Music Apps/" "${bitbucket_prefix}robenkleene/audio-music-apps.git$bitbucket_postfix"
     )
   fi
-elif [[ "$(uname)" = "Linux" ]]; then
-  repos+=(
-~"/.config/Code/User" "${github_prefix}robenkleene/visual-studio-code.git"
-~"/.config/Code - Insiders/User" "${github_prefix}robenkleene/visual-studio-code.git"
-)
 fi
 
 # Overwrite with a simple set for Codespaces

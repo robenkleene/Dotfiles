@@ -30,24 +30,23 @@ if [[ ! -e "$brew_bin" ]]; then
 fi
 
 # VS Code
-
-# Link VS Code so that there's the same directory on Linux and macOS
+vscode_path="$HOME/.config/Code"
+vscode_insiders_path="$HOME/.config/Code\ -\ Insiders/"
+if [[ -e "$vscode_path" && ! -e "$vscode_insiders_path" ]]; then
+  ln -s "$vscode_path" "$vscode_insiders_path"
+fi
 if [[ "$(uname)" = "Darwin" ]]; then
-  vscode_path="$HOME/.config/Code"
-  if [[ ! -e "$vscode_path/User" ]]; then
-    mkdir -p "$vscode_path"
-    ln -s "$HOME/Library/Application Support/Code/User" "$vscode_path/User"
+  if [[ ! -e "$HOME/Library/Application\ Support/Code" ]]; then
+    ln -s "$vscode_path" "$vscode_insiders_path" "$HOME/Library/Application\ Support/Code"
   fi
-  vscode_insiders_path="$HOME/.config/Code - Insiders/"
-  if [[ ! -e "$vscode_insiders_path/User" ]]; then
-    mkdir -p "$vscode_insiders_path"
-    ln -s "$HOME/Library/Application Support/Code - Insiders/User" "$vscode_insiders_path/User"
+  if [[ ! -e "$HOME/Library/Application\ Support/Code\ -\ Insiders" ]]; then
+    ln -s "$vscode_path" "$HOME/Library/Application\ Support/Code\ -\ Insiders"
   fi
 fi
 
 # Nushell
-if [[ -e ~/.config/nushell && ! -e "~/Library/Application\ Support/nushell/" ]]; then
-  ln -s $HOME/.config/nushell/ ~/Library/Application\ Support/nushell
+if [[ -e ~/.config/nushell && ! -e "$HOME/Library/Application\ Support/nushell/" ]]; then
+  ln -s "$HOME/.config/nushell/" "$HOME/Library/Application\ Support/nushell"
 fi
 
 ./link_user_brew.sh
