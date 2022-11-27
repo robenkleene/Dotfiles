@@ -10,6 +10,7 @@ noremap <silent> <up> gk
 noremap <silent> <down> gj
 nnoremap <A-left> b
 nnoremap <A-right> w
+inoremap <A-BS> <C-W>
 
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
