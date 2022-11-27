@@ -7,7 +7,6 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
-
 nnoremap <leader>oi :cd ~/Developer/Dotfiles/<CR>:edit vimrc<CR>:echo ""<CR>
 nnoremap cl :lcd %:p:h<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
@@ -19,7 +18,6 @@ noremap <silent> <up> gk
 noremap <silent> <down> gj
 nnoremap <A-left> b
 nnoremap <A-right> w
-inoremap <A-BS> <C-W>
 
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
@@ -44,13 +42,7 @@ vnoremap <space>P "*P
 nnoremap <space>y "*y
 vnoremap <space>y "*y
 " Command Line
-cnoremap <C-A> <Home>
-" cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-cnoremap <expr> <C-v> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-cnoremap <M-BS> <C-W>
 cnoremap <A-left> <S-Left>
 cnoremap <A-right> <S-Right>
-" Insert
-inoremap <M-BS> <C-W>
 " Other
 nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
