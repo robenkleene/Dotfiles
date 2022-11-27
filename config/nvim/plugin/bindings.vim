@@ -5,6 +5,8 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " Move by display line
 noremap <silent> k gk
 noremap <silent> j gj
+noremap <silent> <up> gk
+noremap <silent> <down> gj
 nnoremap <A-left> b
 nnoremap <A-right> w
 
