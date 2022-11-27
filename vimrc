@@ -21,6 +21,7 @@ Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Remove' ] }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-rsi'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
