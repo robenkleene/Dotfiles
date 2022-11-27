@@ -1,5 +1,6 @@
 " Settings
 set shortmess+=atI
+set number
 set mouse=a
 set smartcase
 set iskeyword+=-
