@@ -2,6 +2,7 @@
 /.netrwbook
 /vim_session
 /vim_auto_session
+/view
 
 # Vim Plug
 /plugged
