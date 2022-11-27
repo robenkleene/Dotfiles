@@ -1,10 +1,3 @@
-# Autocomplete
-_robenkleene_git_branch_names() {
-  compadd "${(@)${(f)$(git branch -a)}#??}"
-}
-compdef _robenkleene_git_branch_names git_branch_delete
-compdef _robenkleene_git_branch_names git_push_origin_delete
-
 # Commands
 egitn() {
   # The reason `egitn` has to be run seprately after `egit` is because the
