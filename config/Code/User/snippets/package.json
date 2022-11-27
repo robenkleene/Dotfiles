@@ -7,7 +7,7 @@
     "snippets": [
       {
         "language": "all",
-        "path": "global.json"
+        "path": "global.code-snippets"
       },
       {
         "language": "c",
