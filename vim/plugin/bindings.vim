@@ -1,4 +1,13 @@
 let mapleader = "\<space>"
+" Fix option key in Vim
+let c='a'
+while c <= 'z'
+  exec "set <M-".tolower(c).">=\e".c
+  exec "nnoremap \e".c." <M-".tolower(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+
 nnoremap <leader>oi :cd ~/Developer/Dotfiles/<CR>:edit vimrc<CR>:echo ""<CR>
 nnoremap cl :lcd %:p:h<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
