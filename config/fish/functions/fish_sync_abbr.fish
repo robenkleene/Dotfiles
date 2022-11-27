@@ -9,8 +9,6 @@ function fish_sync_abbr
     abbr -a o 'open'
     abbr -a a 'rg'
     abbr -a v "$VIM_COMMAND"
-    abbr -a v- "$VIM_COMMAND -"
-    abbr -a v. "$VIM_COMMAND ."
     abbr -a b 'bat'
     abbr -a z 'zsh'
     abbr -a mdv 'mosh aresdev'
