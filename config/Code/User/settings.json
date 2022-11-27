@@ -258,7 +258,11 @@
   "omnisharp.useGlobalMono": "always",
   "csharp.referencesCodeLens.enabled": false,
   "[plaintext]": {
-    "editor.quickSuggestions": false
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
   },
   "workbench.editor.untitled.hint": "hidden",
   "css.validate": false,
