@@ -1,5 +1,7 @@
 " Settings
 set shortmess+=atI
+" Hide tilde for lines not in buffer
+set fillchars=eob:\ 
 set number
 set mouse=a
 set smartcase
