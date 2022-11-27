@@ -1,4 +1,5 @@
-nnoremap <leader>oi :cd ~/Developer/Dotfiles/vim/<CR>:edit init.vim<CR>:echo ""<CR>
+let mapleader = "\<space>"
+nnoremap <leader>oi :cd ~/Developer/Dotfiles/<CR>:edit vimrc<CR>:echo ""<CR>
 nnoremap cl :lcd %:p:h<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
