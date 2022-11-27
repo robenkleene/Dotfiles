@@ -42,8 +42,6 @@ cnoremap <M-BS> <C-W>
 cnoremap <A-left> <S-Left>
 cnoremap <A-right> <S-Right>
 " Insert
-" inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-inoremap <expr> <C-v> pumvisible() ? "\<C-y>" : len(getreg('*')) ? "<C-r>*" : "<C-r>0"
 inoremap <M-BS> <C-W>
 " Other
 nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
