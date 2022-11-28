@@ -6,7 +6,7 @@ function vim_cd
         set -l result (cat $tempfile)
         if test -n $result && \
             test "$result" != (pwd) && \
-            string length $result && \
+            string length $result > /dev/null && \
             test -d $result
             cd $result
         end
