@@ -52,3 +52,6 @@ set notimeout
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " Sort case-insensitive
 let g:netrw_sort_options = "i"
+" Faster `netrw` but clibpoard might get clobbered
+" This doesn't seem to make a difference
+" let g:netrw_clipboard = 0
