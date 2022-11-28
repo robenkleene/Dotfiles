@@ -4,7 +4,16 @@ set shortmess+=atI
 set fillchars=eob:\ 
 set number
 set mouse=a
+
+" Smartcase
+set ignorecase
 set smartcase
+
+" Highlight search results
+set hlsearch
+" Don't display saved search highlights on startup
+nohlsearch
+
 set iskeyword+=-
 set splitbelow
 set splitright
