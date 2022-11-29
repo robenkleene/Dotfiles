@@ -20,7 +20,10 @@ set splitright
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
 " Use system clipboard
-set clipboard^=unnamed,unnamedplus
+" Delibrately ommitted because the custom clipboard `augroup` handles the
+" clipboard (and also supports `tmux`). Also having this causes line breaks to
+" be misshandled when copying lines (e.g., `yy`)
+" set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
 set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
