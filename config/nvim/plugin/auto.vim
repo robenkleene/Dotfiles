@@ -97,3 +97,10 @@ augroup write_chdir
         \ | endif
 augroup END
 
+augroup no_whitespace_insert
+  autocmd!
+  autocmd InsertEnter * setlocal nolist
+  autocmd InsertLeave * setlocal list
+augroup END
+
+
