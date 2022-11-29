@@ -85,8 +85,8 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
 ;; The problem with `M-o' is that `o' is the binding for closing other panes
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
-  robenkleene/leader-map)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+;;   robenkleene/leader-map)
 
 ;; Core Fuzzy Keys
 
@@ -97,13 +97,13 @@
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
 ;;   'robenkleene/ido-recursive-find-dir)
 
-(define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
+;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
 ;; (define-key robenkleene/leader-map (kbd "M-o")
 ;;   'robenkleene/ido-recursive-insert-file)
 ;; (define-key robenkleene/leader-map (kbd "M-c")
 ;;   'robenkleene/ido-recursive-find-file)
-(define-key robenkleene/leader-map (kbd "C")
-  'robenkleene/ido-recursive-find-dir)
+;; (define-key robenkleene/leader-map (kbd "C")
+;;   'robenkleene/ido-recursive-find-dir)
 ;; (define-key robenkleene/leader-map (kbd "g M-o")
 ;;   'robenkleene/ido-source-control-recursive-find-file)
 ;; (define-key robenkleene/leader-map (kbd "g M-c")
@@ -114,14 +114,14 @@
 ;;   'robenkleene/yank-directory)
 ;; (define-key robenkleene/leader-map (kbd "y p")
 ;;   'robenkleene/yank-filepath)
-(define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
-(define-key robenkleene/leader-map (kbd "B")
-  'ido-switch-buffer)
+;; (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
+;; (define-key robenkleene/leader-map (kbd "B")
+;;   'ido-switch-buffer)
 ;; (define-key robenkleene/leader-map (kbd "\\")
 ;;   'robenkleene/ido-clipboard-history-copy)
 ;; Alternatives to helm
-(define-key robenkleene/leader-map (kbd "I") 'imenu)
-(define-key robenkleene/leader-map (kbd "L") 'occur)
+;; (define-key robenkleene/leader-map (kbd "I") 'imenu)
+;; (define-key robenkleene/leader-map (kbd "L") 'occur)
 
 ;; Other
 
@@ -145,9 +145,9 @@
 ;;       ))
 
 ;; Leader map
-(define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-(define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
-(define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
+;; (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
+;; (define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
+;; (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
 
 ;; (define-key robenkleene/leader-map (kbd "C-e")
 ;;   'robenkleene/evaluate-buffer-or-region)
