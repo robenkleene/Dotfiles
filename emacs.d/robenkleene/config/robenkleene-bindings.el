@@ -70,6 +70,7 @@
   'robenkleene/reveal-in-finder)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
   'robenkleene/open-terminal-window)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 
 ;; ido
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
