@@ -39,18 +39,22 @@ done
 if [[ "$(uname)" == "Darwin" ]]; then
 # if [[ "$(uname)" == "Darwin" && -z $ALACRITTY ]]; then
   if [[ "$append" == "true" ]]; then
-    new=$(perl -pe 'chomp if eof' | sed s'/⏎$//')
+    # Don't do anything fancy with trimming new lines, otherwise that makes it
+    # hard to append multiple selections that contain trailing new lines
+    new=$(sed s'/⏎$//')
     { pbpaste; echo "$new"; } | pbcopy
   else
-    exec perl -pe 'chomp if eof' | sed s'/⏎$//' | pbcopy
+    exec sed s'/⏎$//' | pbcopy
   fi
 else
   if [ -n "${TMUX:-}" ]; then
+    # Don't do anything fancy with trimming new lines, otherwise that makes it
+    # hard to append multiple selections that contain trailing new lines
     if [[ "$append" == "true" ]]; then
-      new=$(perl -pe 'chomp if eof' | sed s'/⏎$//')
+      new=$(sed s'/⏎$//')
       { TERM=xterm-256color tmux saveb -; echo "$new"; } | tmux loadb -
     else
-      exec perl -pe 'chomp if eof' | sed s'/⏎$//' | tmux loadb -
+      exec sed s'/⏎$//' | tmux loadb -
     fi
   fi
 fi
