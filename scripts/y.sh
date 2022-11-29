@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/safecopy --force
+exec ~/.bin/safecopy -f "$@"
