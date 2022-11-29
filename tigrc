@@ -80,6 +80,7 @@ bind generic <Ctrl-F> move-page-down
 bind generic f move-page-down
 bind generic b none
 bind generic b move-page-up
+bind generic <Backspace> move-page-up
 bind generic h scroll-left
 bind generic j move-down
 bind generic k move-up
