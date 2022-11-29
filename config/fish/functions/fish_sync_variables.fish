@@ -13,8 +13,8 @@ function fish_sync_variables
     set -Ux EMACS_COMMAND "emacsclient -nw"
 
     # Other
-    # set -Ux VIM_COMMAND nvim
-    set -Ux VIM_COMMAND vim
+    set -Ux VIM_COMMAND nvim
+    # set -Ux VIM_COMMAND vim
     set -Ux CAT_COMMAND "bat"
     set -Ux MD_CAT_COMMAND "bat --style plain"
 
