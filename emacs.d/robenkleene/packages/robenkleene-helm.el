@@ -39,6 +39,12 @@
         ("c" . robenkleene/helm-recursive-find-dir)
         ("z" . robenkleene/helm-z)
         )
+  (:map dired-mode-map
+        ("M-a" . robenkleene/helm-ag-in-directory)
+        ("M-o" . robenkleene/helm-recursive-find-file)
+        ("M-c" . robenkleene/helm-recursive-find-dir)
+        ("M-z" . robenkleene/helm-z)
+        )
   :init
   (defun o ()
     "Alias."
