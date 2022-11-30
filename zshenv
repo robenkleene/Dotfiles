@@ -20,12 +20,12 @@ fi
 export ZSHENV_SOURCED=1
 
 # Exported
-export CAT_COMMAND=bat
-export MD_CAT_COMMAND="bat --style plain"
 # export BROWSER_FLAG='-t'
 
 # Export `CDPATH` so it's available in `vim`
 # export CDPATH=~:~/Developer/:~/Documentation/
+
+export COLORTERM="truecolor"
 
 # Color in `ls`
 export CLICOLOR=1
@@ -64,7 +64,8 @@ export BROWSER="none"
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
 
-export COLORTERM="truecolor"
+export MD_CAT_COMMAND="bat --style plain"
+export MD_EDITOR_COMMAND="$EMACS_COMMAND"
 
 if test -n "$INSIDE_EMACS"; then
     export PAGER=cat

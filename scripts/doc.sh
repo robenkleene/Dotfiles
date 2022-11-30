@@ -33,7 +33,7 @@ while getopts ":pdeh" option; do
 done
 
 if [[ "$edit" == "true" ]]; then
-  command="${EDITOR:=vim}"
+  command="${MD_EDITOR_COMMAND:=vim}"
 elif [[ "$path" == "true" ]]; then
   command="echo"
 else
