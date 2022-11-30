@@ -46,16 +46,18 @@ if [[ "$(uname)" == "Darwin" ]]; then
   else
     exec sed s'/⏎$//' | pbcopy
   fi
-else
-  if [ -n "${TMUX:-}" ]; then
-    # Don't do anything fancy with trimming new lines, otherwise that makes it
-    # hard to append multiple selections that contain trailing new lines
-    if [[ "$append" == "true" ]]; then
-      new=$(sed s'/⏎$//')
-      { TERM=xterm-256color tmux saveb -; echo "$new"; } | tmux loadb -
-    else
-      exec sed s'/⏎$//' | tmux loadb -
-    fi
+fi
+
+# Always also copy to the tmux clipboard so that pasting inside tmux with
+# `paste-buffer` works
+if [ -n "${TMUX:-}" ]; then
+  # Don't do anything fancy with trimming new lines, otherwise that makes it
+  # hard to append multiple selections that contain trailing new lines
+  if [[ "$append" == "true" ]]; then
+    new=$(sed s'/⏎$//')
+    { TERM=xterm-256color tmux saveb -; echo "$new"; } | tmux loadb -
+  else
+    exec sed s'/⏎$//' | tmux loadb -
   fi
 fi
 
