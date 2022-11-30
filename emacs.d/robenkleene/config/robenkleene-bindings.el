@@ -85,9 +85,11 @@
 ;;   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
-;; The problem with `M-o' is that `o' is the binding for closing other panes
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
-;;   robenkleene/leader-map)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+  robenkleene/window-map)
+(define-key robenkleene/window-map (kbd "M-o") 'other-window)
+(define-key robenkleene/window-map (kbd "M-O") (lambda () (interactive) (other-window -1)))
+(define-key robenkleene/window-map (kbd "O") (lambda () (interactive) (other-window -1)))
 
 ;; Core Fuzzy Keys
 
@@ -196,9 +198,7 @@
 (define-key robenkleene/window-map (kbd "M-n") 'other-frame)
 (define-key robenkleene/window-map (kbd "M-p")
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
-(define-key robenkleene/window-map (kbd "M-a") 'other-window)
 (define-key robenkleene/window-map (kbd "M-W") 'other-window)
-;; (define-key robenkleene/window-map (kbd "M-o") 'other-window)
 (define-key robenkleene/window-map (kbd "q") 'delete-frame)
 (define-key robenkleene/window-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
