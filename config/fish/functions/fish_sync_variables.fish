@@ -15,8 +15,8 @@ function fish_sync_variables
     # Other
     set -Ux VIM_COMMAND nvim
     # set -Ux VIM_COMMAND vim
-    set -Ux CAT_COMMAND "bat"
     set -Ux MD_CAT_COMMAND "bat --style plain"
+    set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
 
     # # set -Ux VISUAL "hx"
     # set -Ux TIG_EDITOR "hx_wrapper"
