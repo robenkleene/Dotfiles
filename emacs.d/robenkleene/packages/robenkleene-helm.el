@@ -22,6 +22,7 @@
   ;; ("M-o" . robenkleene/helm-recursive-find-file)
   ;; ("M-c" . robenkleene/helm-recursive-find-dir)
   ;; ("M-z" . robenkleene/helm-z)
+  ("C-c l" . helm-occur)
   (:map robenkleene/leader-map
         ;; ("h" . helm-resume)
         ("'" . helm-resume)
@@ -42,6 +43,7 @@
   (:map dired-mode-map
         ("M-a" . robenkleene/helm-ag-in-directory)
         ("M-o" . robenkleene/helm-recursive-find-file)
+        ("M-e" . robenkleene/helm-recursive-find-file)
         ("M-c" . robenkleene/helm-recursive-find-dir)
         ("M-z" . robenkleene/helm-z)
         )
