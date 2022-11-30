@@ -41,8 +41,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$append" == "true" ]]; then
     # Don't do anything fancy with trimming new lines, otherwise that makes it
     # hard to append multiple selections that contain trailing new lines
-    new=$(sed s'/⏎$//')
-    { pbpaste; echo "$new"; } | pbcopy
+    { pbpaste; sed s'/⏎$//'; } | pbcopy
   else
     exec sed s'/⏎$//' | pbcopy
   fi
@@ -54,8 +53,7 @@ if [ -n "${TMUX:-}" ]; then
   # Don't do anything fancy with trimming new lines, otherwise that makes it
   # hard to append multiple selections that contain trailing new lines
   if [[ "$append" == "true" ]]; then
-    new=$(sed s'/⏎$//')
-    { TERM=xterm-256color tmux saveb -; echo "$new"; } | tmux loadb -
+    { TERM=xterm-256color tmux saveb -; sed s'/⏎$//'; } | tmux loadb -
   else
     exec sed s'/⏎$//' | tmux loadb -
   fi
