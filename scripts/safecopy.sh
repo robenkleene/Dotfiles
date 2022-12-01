@@ -43,19 +43,20 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # hard to append multiple selections that contain trailing new lines
     { pbpaste; sed s'/⏎$//'; } | pbcopy
   else
-    exec sed s'/⏎$//' | pbcopy
+    sed s'/⏎$//' | pbcopy
+    if [ -n "${TMUX:-}" ]; then
+      # Always also copy to the tmux clipboard so that pasting inside tmux with
+      # `paste-buffer` works
+      pbpaste | tmux loadb -
+    fi
   fi
-fi
-
-# Always also copy to the tmux clipboard so that pasting inside tmux with
-# `paste-buffer` works
-if [ -n "${TMUX:-}" ]; then
+elif [ -n "${TMUX:-}" ]; then
   # Don't do anything fancy with trimming new lines, otherwise that makes it
   # hard to append multiple selections that contain trailing new lines
   if [[ "$append" == "true" ]]; then
     { TERM=xterm-256color tmux saveb -; sed s'/⏎$//'; } | tmux loadb -
   else
-    exec sed s'/⏎$//' | tmux loadb -
+    sed s'/⏎$//' | tmux loadb -
   fi
 fi
 
