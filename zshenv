@@ -55,8 +55,10 @@ export EDITOR="$VISUAL"
 # sequences
 # The `LESS` environment variable is respected by `git`, if that variable is
 # not set, than `git` overrides `less` with its own options.
-export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
-export PAGER="less"
+# export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
+# export PAGER="less"
+# Just use `tmux` for paging
+export PAGER="none"
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
