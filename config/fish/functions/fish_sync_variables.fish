@@ -33,8 +33,10 @@ function fish_sync_variables
     # set -Ux GIT_EDITOR "$EMACS_COMMAND"
     # set -Ux GIT_EDITOR "$VIM_COMMAND"
     # set -Ux GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
-    set -Ux LESS "--ignore-case --quit-if-one-screen"
-    set -Ux PAGER less
+    # set -Ux LESS "--ignore-case --quit-if-one-screen"
+    # set -Ux PAGER less
+    # Just use `tmux` for paging
+    set -Ux PAGER none
     set -Ux ACK_COMMAND rg
     set -Ux COLORTERM "truecolor"
 
