@@ -43,6 +43,7 @@ function fish_sync_variables
     set -Ux PAGER cat
     set -Ux MANPAGER "less $LESS"
     set -Ux BAT_PAGER "less $LESS"
+    set -Ux DELTA_PAGER cat
 
     set -Ux ACK_COMMAND rg
     set -Ux COLORTERM "truecolor"
