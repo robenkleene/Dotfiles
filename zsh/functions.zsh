@@ -82,6 +82,10 @@ git_cd_root() {
   cd "$(git rev-parse --show-toplevel)" || exit
 }
 
+hg_cd_root() {
+  cd "$(hg root)" || exit
+}
+
 ssh_start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
