@@ -33,8 +33,16 @@ function fish_sync_variables
     # set -Ux GIT_EDITOR "$EMACS_COMMAND"
     # set -Ux GIT_EDITOR "$VIM_COMMAND"
     # set -Ux GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
-    set -Ux LESS "--ignore-case --quit-if-one-screen"
-    set -Ux PAGER less
+
+    # Pager philosphy is to use use the pager for output we don't want in
+    # our history because it's easy to recreate. E.g., `man` see how to use
+    # a command or `bat` to see the contents of a file, we don't want in
+    # our history because it's easy to grab again if we need it.
+    # We only want things like compile, test, or search results in our history
+    set -Ux LESS "--RAW-CONTROL-CHARS --ignore-case --incsearch"
+    set -Ux PAGER cat
+    set -Ux MANPAGER "less $LESS"
+    set -Ux BAT_PAGER "less $LESS"
 
     set -Ux ACK_COMMAND rg
     set -Ux COLORTERM "truecolor"

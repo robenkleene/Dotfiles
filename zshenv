@@ -51,12 +51,17 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
-# `--RAW-CONTROL-CHAR` was added because `bat` was showing raw color escape
-# sequences
-# The `LESS` environment variable is respected by `git`, if that variable is
-# not set, than `git` overrides `less` with its own options.
-export LESS="--ignore-case --RAW-CONTROL-CHARS --quit-if-one-screen"
-export PAGER="less"
+
+# Pager philosphy is to use use the pager for output we don't want in
+# our history because it's easy to recreate. E.g., `man` see how to use
+# a command or `bat` to see the contents of a file, we don't want in
+# our history because it's easy to grab again if we need it.
+# We only want things like compile, test, or search results in our history
+export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
+export PAGER="cat"
+export MANPAGER="less $LESS"
+export BAT_PAGER="less $LESS"
+
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
