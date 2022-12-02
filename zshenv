@@ -61,6 +61,7 @@ export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
 export PAGER="cat"
 export MANPAGER="less $LESS"
 export BAT_PAGER="less $LESS"
+export DELTA_PAGER="cat"
 
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
