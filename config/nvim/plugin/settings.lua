@@ -33,4 +33,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Use system clipboard
-vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
+-- Delibrately ommitted because the custom clipboard `augroup` handles the
+-- clipboard (and also supports `tmux`). Also having this causes line breaks to
+-- be misshandled when copying lines (e.g., `yy`)
+-- vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
