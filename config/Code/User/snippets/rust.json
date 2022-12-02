@@ -1,4 +1,16 @@
 {
+  "Print variable": {
+    "scope": "rust",
+    "prefix": "printlnv",
+    "body": ["println!(\"${1:foo} = {}\", $1);"],
+    "description": "Print variable"
+  },
+  "Print variable debug": {
+    "scope": "rust",
+    "prefix": "printlnvd",
+    "body": ["println!(\"${1:foo} = {:?}\", $1);"],
+    "description": "Print variable"
+  },
   "template": {
     "prefix": "template",
     "body": "fn main() {\n    println!(\"Hello, world!\");\n}\n",
