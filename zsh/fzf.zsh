@@ -14,12 +14,14 @@ __fzfcmd() {
 _fzf_z_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="zoxide query --list"
-  local fzfcmd
-  fzfcmd="$(__fzfcmd)"
-
+  # local cmd="zoxide query --list"
+  # local fzfcmd
+  # fzfcmd="$(__fzfcmd)"
+  # local result
+  # result="$(eval "$cmd" | $fzfcmd)"
   local result
-  result="$(eval "$cmd" | $fzfcmd)"
+  result="$(zoxide query --interactive)"
+
   local ret=$?
 
   if [[ ! -d "$result" ]]; then

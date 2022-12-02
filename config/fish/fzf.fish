@@ -8,9 +8,10 @@ fzf_key_bindings
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
 
 function _robenkleene-fzf-z-widget
-    set -l cmd "zoxide query --list"
+    # set -l cmd "zoxide query --list"
+    # eval "$cmd | "(__fzfcmd) | read -l result
+    zoxide query --interactive | read -l result
 
-    eval "$cmd | "(__fzfcmd) | read -l result
     if test -d "$result"
         set -l result_path (string escape "$result")
         set -l commandline (commandline)
