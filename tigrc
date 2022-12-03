@@ -2,6 +2,10 @@ set vertical-split = no
 # This breaks being able to stage partial commits
 # set wrap-lines = yes
 set ignore-case = smart-case
+
+# Make dates take up less space
+set main-view-date = relative-compact
+
 # Key
 # @ : Suppresses output
 # sh : Pipes aren't supported without a subshell
