@@ -30,7 +30,6 @@ brew 'sbcl'
 brew 'neofetch'
 brew 'neovim'
 brew 'fish'
-brew 'hub'
 brew 'gh'
 brew 'rename'
 # HEAD for truecolor support

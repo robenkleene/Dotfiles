@@ -7,7 +7,6 @@ brew 'bat'
 # Support for `lesskey`
 brew 'less'
 brew 'ncdu'
-brew 'hub'
 brew 'gh'
 
 # Shell
