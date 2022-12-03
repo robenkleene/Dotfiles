@@ -6,6 +6,7 @@ abbreviations=(
 'b' 'bat'
 'pq' "p | q"
 'ts' 'tig status +3'
+'tl' 'tig'
 'mdv' 'mosh aresdev -- tmux attach'
 'g' 'git'
 # `ga`: `git add`
