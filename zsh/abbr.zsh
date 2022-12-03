@@ -7,10 +7,6 @@ abbreviations=(
 'pq' "p | q"
 'ts' 'tig status +3'
 'mdv' 'mosh aresdev -- tmux attach'
-'hpr' 'hub pull-request'
-'hprm' 'hub pull-request -m'
-'ghpr' 'gh pr create'
-'hprr' 'hub pull-request && BROWSER= gh pr view --web'
 'g' 'git'
 # `ga`: `git add`
 'gaac' 'git add -A :/ && git commit'
@@ -24,13 +20,6 @@ abbreviations=(
 'gsmuirr' 'git submodule update --init --recursive --remote'
 'glg' 'git log -p -G'
 
-# Carthage
-'chunub' 'carthage update --no-use-binaries'
-
-# `agvtool`
-'agvm' 'agvtool what-marketing-version'
-'agvmn' 'agvtool new-marketing-version'
-
 # `emacs`
 # `emacs` without `-nw` opens a new instance of Emacs and blocks the current
 # terminal process until it exits, which is never what you want. If you want to
@@ -42,7 +31,6 @@ abbreviations=(
 'hgd' 'hg diff'
 'hgcm' 'hg commit -m'
 'hgs' 'hg status'
-'hgsrb' 'hg status --rev bottom'
 )
 
 # Support local abbr created in `~/.zshrc_local`

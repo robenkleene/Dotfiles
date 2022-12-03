@@ -13,6 +13,7 @@ function fish_sync_abbr
     abbr -a z 'zsh'
     abbr -a mdv 'mosh aresdev'
     abbr -a ts 'tig status +3'
+    abbr -a emacs 'emacs -nw'
     # Git
     abbr -a g git
     abbr -a gaa 'git add -A :/'
@@ -30,17 +31,6 @@ function fish_sync_abbr
     abbr -a glg 'git log -p -G'
     abbr -a gsh 'git show'
     abbr -a gbl 'git blame'
-    # Hub
-    abbr -a hpr 'hub pull-request'
-    abbr -a hprm 'hub pull-request -m'
-    abbr -a ghpr 'gh pr create'
-    abbr -a hprr 'hub pull-request && BROWSER= gh pr view --web'
-    # Carthage
-    abbr -a chu 'carthage update'
-    abbr -a chunub 'carthage update --no-use-binaries'
-    abbr -a chunubm 'carthage update --no-use-binaries --platform macos'
-    abbr -a chb 'carthage bootstrap'
-    abbr -a emacs 'emacs -nw'
     # Fish
     abbr -a fhm 'history merge'
     abbr -a fke 'echo $fish_killring[1]'
