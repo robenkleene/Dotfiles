@@ -69,3 +69,26 @@ function! commands#YankPath()
   call system('~/.bin/safecopy', @@)
   echo getreg('@')
 endfunction
+
+function! commands#Rg(terms) abort
+  let l:original_grepprg = &grepprg
+  set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
+  if len(a:terms)
+    execute "silent grep " . escape(a:terms, '%#')
+  else
+    let l:search = getreg('/')
+    if l:search[0:len('\<')-1] ==# '\<'
+      let l:search = l:search[2:len(l:search)-3]
+    endif
+    if !len(l:search)
+      return
+    endif
+    execute "silent grep " . escape(l:search, '%#')
+  endif
+  redraw!
+  let &grepprg = l:original_grepprg
+  if len(getqflist())
+    copen
+    wincmd p
+  endif
+endfunction
