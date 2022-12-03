@@ -1,4 +1,4 @@
-nnoremap <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>:echo ""<CR>
+nnoremap <silent> <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>
 nnoremap <silent> cl :lcd %:p:h<CR>
 nnoremap <silent> cd :cd %:p:h<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
@@ -18,21 +18,14 @@ nnoremap <leader>cq :GrepBufferFromClipboard<CR>
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 " Tabs
-nnoremap <C-w>t :split<CR><C-w>T
-vnoremap <C-w>t :split<CR><C-w>T
-nnoremap <C-w>q :tabclose<CR>
-vnoremap <C-w>q :<C-u>tabclose<CR>
+nnoremap <silent> <C-w>t :split<CR><C-w>T
+vnoremap <silent> <C-w>t :split<CR><C-w>T
+nnoremap <silent> <C-w>q :tabclose<CR>
+vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
 nnoremap <C-w>n gt
 nnoremap <C-w>p gT
 vnoremap <C-w>n gt
 vnoremap <C-w>p gT
-" Clipboard
-nnoremap <space>p "*p
-nnoremap <space>P "*P
-vnoremap <space>p "*p
-vnoremap <space>P "*P
-nnoremap <space>y "*y
-vnoremap <space>y "*y
 " Command Line
 cnoremap <C-A> <Home>
 " cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
@@ -43,4 +36,4 @@ cnoremap <A-right> <S-Right>
 " Insert
 inoremap <M-BS> <C-W>
 " Other
-nnoremap <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
