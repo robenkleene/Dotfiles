@@ -1,7 +1,3 @@
-# Abberviations should be used for either built-in commands or custom commands
-# that take paramters.
-# Otherwise just use aliases.
-
 # These abbreviations only work as the first word of the command.
 typeset -Ag abbreviations
 abbreviations=(
@@ -49,28 +45,12 @@ abbreviations=(
 'hgsrb' 'hg status --rev bottom'
 )
 
+# Support local abbr created in `~/.zshrc_local`
 if [[ -n "${LOCAL_ABBREVIATIONS-}" ]]; then
   for key value in ${(kv)LOCAL_ABBREVIATIONS-}; do
     abbreviations[key]=value
   done
 fi
-
-# These abbreviations work everywhere
-typeset -Ag everywhere_abbreviations
-everywhere_abbreviations=(
-'>n' '>/dev/null'
-'>null' '>/dev/null'
-'>o' '2>&1'
-'>0' '2>&1 >/dev/null'
-# Glob
-# '-gcocoa' '-g "*.{h,m,swift}"'
-# '-gruby' '-g "*.rb"'
-# Carthage
-'-nub' '--no-use-binaries'
-# Jekyll
-'-jl' '--config _config_local.yml'
-'-jp' '--port 4000'
-)
 
 # Make alias for each abbreviations, for syntax highlighting, and executing
 # command without parameters
@@ -85,43 +65,20 @@ _magic_abbrev_expand() {
   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
 }
 
-_magic_everywhere_abbrev_expand() {
-  local MATCH
-  # Everywhere Abbreviations
-  LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9>-]#}
-  if [[ -n "${everywhere_abbreviations[$MATCH]}" ]]; then
-    LBUFFER+=${everywhere_abbreviations[$MATCH]:-$MATCH}
-  # elif [[ -n "${abbreviations[$MATCH]}" ]]; then
-  #   LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
-  else
-    LBUFFER+=$MATCH
-    return 1
-  fi
-  LBUFFER+=" "
-}
-
 _magic_abbrev_expand_and_insert() {
   _magic_abbrev_expand
   zle self-insert
 }
+zle -N _magic_abbrev_expand_and_insert
 
 _magic_abbrev_expand_and_accept() {
   _magic_abbrev_expand
   zle accept-line
 }
-
-_magic_everywhere_abbrev_expand-or-complete() {
-  if ! _magic_everywhere_abbrev_expand; then
-    zle expand-or-complete
-  fi
-}
-
-zle -N _magic_abbrev_expand_and_insert
 zle -N _magic_abbrev_expand_and_accept
-zle -N _magic_everywhere_abbrev_expand-or-complete
+
 bindkey " "  _magic_abbrev_expand_and_insert
 bindkey "\r" _magic_abbrev_expand_and_accept
-bindkey "^I" _magic_everywhere_abbrev_expand-or-complete
 # Use original bindings in isearch
 bindkey -M isearch " " self-insert
 bindkey -M isearch "\r" accept-line
