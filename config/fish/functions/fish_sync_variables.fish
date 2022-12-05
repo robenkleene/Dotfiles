@@ -39,18 +39,11 @@ function fish_sync_variables
     # a command or `bat` to see the contents of a file, we don't want in
     # our history because it's easy to grab again if we need it.
     # We only want things like compile, test, or search results in our history
-    set -Ux LESS "--RAW-CONTROL-CHARS --ignore-case --incsearch"
-    set -Ux PAGER cat
-    set -Ux MANPAGER "less $LESS"
-    set -Ux BAT_PAGER "less $LESS"
-    set -Ux DELTA_PAGER cat
-
     set -Ux ACK_COMMAND rg
     set -Ux COLORTERM "truecolor"
 
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"
-
 
     # Homebrew
     if type -q brew

@@ -52,17 +52,6 @@ export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
 # export EDITOR="$EMACS_COMMAND"
 
-# Pager philosphy is to use use the pager for output we don't want in
-# our history because it's easy to recreate. E.g., `man` see how to use
-# a command or `bat` to see the contents of a file, we don't want in
-# our history because it's easy to grab again if we need it.
-# We only want things like compile, test, or search results in our history
-export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
-export PAGER="cat"
-export MANPAGER="less $LESS"
-export BAT_PAGER="less $LESS"
-export DELTA_PAGER="cat"
-
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
