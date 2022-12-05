@@ -1,5 +1,5 @@
 def-env fzf_z [] {
-  let $result = (zoxide query --list | str trim | str collect (char nl) | fzf | str trim)
+  let $result = (zoxide query --interactive | str trim)
   cd (if (($result | str length) > 0) {
     $result
   } else {
