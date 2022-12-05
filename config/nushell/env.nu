@@ -57,15 +57,24 @@ let-env PATH = ($env.PATH | prepend $"($env.HOME)/.brew/bin")
 # fzf
 let-env FZF_DEFAULT_OPTS = "--height 40% --reverse"
 
-# Editor
+# Emacs
 let-env ALTERNATE_EDITOR = ""
+let-env EMACS_COMMAND = "emacsclient -nw"
+
 let-env MD_CAT_COMMAND = "bat --style plain"
-# let-env VISUAL = "hx"
+let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
+
 let-env VISUAL = "nvim"
 let-env EDITOR = $"($env.VISUAL)"
-let-env TIG_EDITOR = "hx_wrapper"
-let-env BROWSER = "none"
+
+# hx
+# let-env VISUAL = "hx"
+# let-env TIG_EDITOR = "hx_wrapper"
+
 let-env VIM_COMMAND = "nvim"
+
+let-env BROWSER = "none"
+let-env COLORTERM = "truecolor"
 
 # Homebrew
 let-env HOMEBREW_NO_ANALYTICS = 1
