@@ -9,7 +9,6 @@ export VIM_COMMAND=nvim
 # can be used at once
 export EMACS_COMMAND='emacsclient -nw'
 # EMACS_COMMAND='emacs'
-export ACK_COMMAND=rg
 
 # Don't load the rest of this file if it has already been sourced in particular
   # this was added to prevent the path from being re-ordered when a `zsh`
