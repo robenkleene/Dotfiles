@@ -65,6 +65,7 @@ require('packer').startup(function(use)
     'vim-scripts/vis',
     cmd = "B"
   }
+  use 'github/copilot.vim'
   use {
     "catppuccin/nvim",
     as = "catppuccin",
