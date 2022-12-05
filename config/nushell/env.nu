@@ -2,7 +2,7 @@ source ~/.local.nu
 
 # Prompt
 def create_left_prompt [] {
-    let prompt = $"(ansi reset)(ansi blue_dimmed)(date format '%r')(ansi reset)"
+    let prompt = $"(ansi reset)(ansi light_gray)(date format '%r')(ansi reset)"
     let prompt = if ("SSH_CONNECTION" in (env).name) {
         # $prompt + $"(whoami | str trim)(ansi reset)@(ansi yellow)(hostname | str trim) "
         $prompt + $" (ansi yellow)(hostname | str trim)"
