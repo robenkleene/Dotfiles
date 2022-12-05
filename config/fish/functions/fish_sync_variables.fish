@@ -14,36 +14,20 @@ function fish_sync_variables
 
     # Other
     set -Ux VIM_COMMAND nvim
-    # set -Ux VIM_COMMAND vim
     set -Ux MD_CAT_COMMAND "bat --style plain"
     set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
+    set -Ux CD_COMMAND "vim_cd"
 
-    # # set -Ux VISUAL "hx"
+    # hx
+    # set -Ux VISUAL "hx"
     # set -Ux TIG_EDITOR "hx_wrapper"
 
     set -Ux VISUAL "$VIM_COMMAND"
-    # set -Ux VISUAL "$EMACS_COMMAND"
-
-    # set -Ux CD_COMMAND "emacs_cd"
-    set -Ux CD_COMMAND "vim_cd"
-
     set -Ux EDITOR "$VISUAL"
-    # set -Ux MD_EDITOR "$EMACS_COMMAND"
-    # set -Ux MD_EDITOR "$VIM_COMMAND"
-    # set -Ux GIT_EDITOR "$EMACS_COMMAND"
-    # set -Ux GIT_EDITOR "$VIM_COMMAND"
-    # set -Ux GIT_EDITOR "$VIM_COMMAND -c \"SessionNoAuto\""
-
-    # Pager philosphy is to use use the pager for output we don't want in
-    # our history because it's easy to recreate. E.g., `man` see how to use
-    # a command or `bat` to see the contents of a file, we don't want in
-    # our history because it's easy to grab again if we need it.
-    # We only want things like compile, test, or search results in our history
-    set -Ux ACK_COMMAND rg
-    set -Ux COLORTERM "truecolor"
 
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"
+    set -Ux COLORTERM "truecolor"
 
     # Homebrew
     if type -q brew
