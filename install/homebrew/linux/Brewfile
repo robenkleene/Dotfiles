@@ -7,11 +7,10 @@ brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing
 brew 'fd'
 brew 'bat'
-# Support for `lesskey`
+# Support for `incsearch`
 brew 'less'
 brew 'ncdu'
 brew 'git-delta'
-brew 'tldr'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
