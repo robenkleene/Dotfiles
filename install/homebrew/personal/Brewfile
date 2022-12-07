@@ -10,16 +10,16 @@ brew 'fd'
 brew 'bat'
 brew 'mas'
 brew 'rename'
-# Support for `lesskey`
+# Support for `incsearch`
 brew 'less'
 brew 'wget'
 brew 'git-delta'
-brew 'tldr'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
 brew 'zellij'
 brew 'scrcpy'
+
 # Editor
 brew 'aspell'
 # Required before `ctags`

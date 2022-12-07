@@ -22,9 +22,10 @@ function fish_sync_variables
     # set -Ux VISUAL "hx"
     # set -Ux TIG_EDITOR "hx_wrapper"
 
+    # Standard
+    set -Ux LESS "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
     set -Ux VISUAL "$VIM_COMMAND"
     set -Ux EDITOR "$VISUAL"
-
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"
     set -Ux COLORTERM "truecolor"

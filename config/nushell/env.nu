@@ -66,6 +66,7 @@ let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
 
 let-env VISUAL = "nvim"
 let-env EDITOR = $"($env.VISUAL)"
+let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 
 # hx
 # let-env VISUAL = "hx"
