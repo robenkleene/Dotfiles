@@ -19,9 +19,10 @@ function fish_set_user_paths
             set -U fish_user_paths /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin $fish_user_paths
     end
 
-    if test -e /opt/homebrew/bin/
-        set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-    end
+    # Is this necessary with the `brew` override?
+    # if test -e /opt/homebrew/bin/
+    #     set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+    # end
 
     # Node
     # Never install `nvm.fish` because it'll conflict with the way `nvm` is installed via the dotfiles installed script (`~/Developer/Dotfiles/install/node`)
