@@ -43,14 +43,13 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
-# Editor
-# export VISUAL="$EMACS_COMMAND"
+# Stanard
+# hx
 # export VISUAL="hx"
 # export TIG_EDITOR="hx_wrapper"
 export VISUAL="$VIM_COMMAND"
 export EDITOR="$VISUAL"
-# export EDITOR="$EMACS_COMMAND"
-
+export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
