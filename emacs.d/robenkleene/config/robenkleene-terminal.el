@@ -55,10 +55,10 @@
 
 ;; Using `M-[' for `backward-block' isn't possible because `M-[' is the sequence
 ;; for escape so it messes with many bindings
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
-  'robenkleene/forward-block)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
-  'robenkleene/backward-block)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
+;;   'robenkleene/forward-block)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
+;;   'robenkleene/backward-block)
 
 ;; Theoretically this would be clear in `delete-frame-functions' but for
 ;; `emacsclient' connections that's being called after the frame is deleted and
