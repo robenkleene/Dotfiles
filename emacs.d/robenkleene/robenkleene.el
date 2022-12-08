@@ -44,6 +44,7 @@
 (require 'robenkleene-autothemer)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-expand-region)
+(require 'robenkleene-adaptive-wrap)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
