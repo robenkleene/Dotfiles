@@ -42,10 +42,6 @@
     'next-error)
   (define-key markdown-mode-map (kbd "M-p")
     'previous-error)
-  (define-key markdown-mode-map (kbd "s-i")
-    'robenkleene/save-in-inbox)
-  (define-key markdown-mode-map (kbd "C-c i")
-    'robenkleene/save-in-inbox)
 
   (add-hook 'markdown-mode-hook (lambda ()
                                   (modify-syntax-entry ?_ "w")
