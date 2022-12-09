@@ -42,6 +42,11 @@
     'next-error)
   (define-key markdown-mode-map (kbd "M-p")
     'previous-error)
+  ;; Default move by paragraph doesn't skip over Markdown list items
+  (define-key markdown-mode-map (kbd "M-}")
+    'robenkleene/forward-block)
+  (define-key markdown-mode-map (kbd "M-{")
+    'robenkleene/backward-block)
 
   (add-hook 'markdown-mode-hook (lambda ()
                                   (modify-syntax-entry ?_ "w")
