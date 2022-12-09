@@ -307,6 +307,9 @@
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
 
+;; Don't wrap lines by default
+(set-default 'truncate-lines t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
