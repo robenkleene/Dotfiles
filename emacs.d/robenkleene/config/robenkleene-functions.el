@@ -1003,20 +1003,6 @@ With prefix arg, find the previous file."
                             ))
   )
 
-(defun robenkleene/save-in-inbox ()
-  "Save in inbox."
-  (interactive)
-  (setq-local default-directory "~/Documents/Text/Notes/Inbox/")
-  (let ((filename (with-output-to-string
-                    (shell-command-on-region (point-min)
-                                             (point-max)
-                                             "~/.bin/markdown_filename"
-                                             standard-output))))
-    (write-file (concat filename ".md") t)
-    )
-  ;; (call-interactively 'save-buffer)
-  )
-
 (defun robenkleene/open-emacs-scratch ()
   "Open scratch buffer."
   (interactive)
@@ -1027,12 +1013,6 @@ With prefix arg, find the previous file."
   "Open messages buffer."
   (interactive)
   (switch-to-buffer "*Messages*")
-  )
-
-(defun robenkleene/open-markdown-scratch ()
-  "Open scratch file for current buffer."
-  (interactive)
-  (find-file "~/Documents/Text/Scripts/Scratch.md")
   )
 
 (defun robenkleene/open-development-scratch ()
@@ -1106,25 +1086,6 @@ With prefix arg, find the previous file."
                     ))))
       (select-frame-set-input-focus frame))
     )
-  )
-
-(defun robenkleene/git-commit-all-message (&optional message)
-  "Commit everything in the current repository with MESSAGE."
-  (interactive (list (read-from-minibuffer "Message: "
-                                           (if (use-region-p)
-                                               (buffer-substring (mark) (point))
-                                             nil
-                                             ))
-                     ))
-  (shell-command (concat "~/.bin/git_commit_all "
-                         (shell-quote-argument message))
-                 )
-  )
-
-(defun robenkleene/git-commit-all ()
-  "Commit everything in the current repository."
-  (interactive)
-  (shell-command "~/.bin/git_commit_all")
   )
 
 (defun robenkleene/safe-find-file (file)
