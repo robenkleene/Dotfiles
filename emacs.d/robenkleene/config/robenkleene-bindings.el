@@ -85,11 +85,11 @@
 ;;   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
   robenkleene/window-map)
-(define-key robenkleene/window-map (kbd "M-o") 'other-window)
-(define-key robenkleene/window-map (kbd "M-O") (lambda () (interactive) (other-window -1)))
-(define-key robenkleene/window-map (kbd "O") (lambda () (interactive) (other-window -1)))
+(define-key robenkleene/window-map (kbd "M-a") 'other-window)
+(define-key robenkleene/window-map (kbd "M-A") (lambda () (interactive) (other-window -1)))
+(define-key robenkleene/window-map (kbd "A") (lambda () (interactive) (other-window -1)))
 
 ;; Core Fuzzy Keys
 
