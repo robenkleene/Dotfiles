@@ -90,7 +90,11 @@ require('lspconfig').sumneko_lua.setup {
       diagnostics = {
         globals = { 'vim', 'capabilities', 'runtime_path', },
       },
-      workspace = { library = vim.api.nvim_get_runtime_file('', true) },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+        -- Disable message about configuring `luassert` workspace
+        checkThirdParty = false
+      },
       telemetry = { enable = false },
     },
   },
