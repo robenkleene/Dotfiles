@@ -66,6 +66,7 @@
 (defalias 'inbox-new 'robenkleene/new-inbox-document)
 (defalias 'projects-new 'robenkleene/new-projects-document)
 (defalias 'cg 'robenkleene/grep-from-clipboard)
+(defalias 'today 'robenkleene/today)
 
 ;; Todos
 (defalias 'check 'robenkleene/todos-check)
