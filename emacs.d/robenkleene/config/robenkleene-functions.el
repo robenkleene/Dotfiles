@@ -1182,6 +1182,12 @@ With prefix arg, find the previous file."
         (cons 'vc override)
       nil)))
 
+(defun robenkleene/today (&optional arg)
+  "Return the current date."
+  (interactive)
+  (shell-command "date +%Y-%m-%d | tr -d '\n'")
+  )
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
