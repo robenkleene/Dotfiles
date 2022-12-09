@@ -36,7 +36,6 @@
 (require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
-(require 'robenkleene-smex)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-undo-tree)
 (require 'robenkleene-helm)
