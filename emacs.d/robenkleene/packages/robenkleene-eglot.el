@@ -5,12 +5,14 @@
 (use-package eglot
   ;; :hook (((c-mode c++-mode rust-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
-              ("C-c r" . eglot-rename)
-              ("C-c f r" . xref-find-references)
-              ("C-c f d" . eglot-find-declaration)
-              ("C-c f D" . xref-find-definitions-other-window)
-              ("C-c f t" . eglot-find-typeDefinition)
-              ("C-c f i" . eglot-find-implementation)
+              ("C-c g r" . xref-find-references)
+              ("C-c g y" . eglot-find-typeDefinition)
+              ("C-c g i" . eglot-find-implementation)
+              ;; Also bound to `M-.' by default
+              ("C-c g d" . xref-find-definitions)
+              ;; ("C-c g d" . eglot-find-declaration)
+              ;; ("C-c f D" . xref-find-definitions-other-window)
+              ;; ("C-c f D" . xref-find-definitions-other-window)
               ("C-c =" . eglot-format-buffer)
               ("C-c c" . eglot-completion-at-point)
               ("C-c r" . eglot-rename)
