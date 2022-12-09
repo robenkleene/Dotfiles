@@ -10,36 +10,12 @@
              robenkleene/helm-recursive-find-file
              robenkleene/helm-documentation-edit
              robenkleene/helm-text-edit
-             robenkleene/helm-clipboard-history-copy
              robenkleene/helm-z
              helm-find-files-or-marked
              helm-occur
              )
   :bind
-  ;; ("M-A" . helm-do-rg)
-  ;; ("M-a" . robenkleene/helm-ag-in-directory)
-  ;; ("C-x b" . helm-buffers-list)
-  ;; ("M-o" . robenkleene/helm-recursive-find-file)
-  ;; ("M-c" . robenkleene/helm-recursive-find-dir)
-  ;; ("M-z" . robenkleene/helm-z)
   ("C-c l" . helm-occur)
-  (:map robenkleene/leader-map
-        ;; ("h" . helm-resume)
-        ("'" . helm-resume)
-        ;; ("A" . robenkleene/helm-ag-in-directory)
-        ("i" . helm-semantic-or-imenu)
-        ("C" . robenkleene/helm-recursive-find-dir)
-        ("O" . robenkleene/helm-recursive-find-file)
-        ("H" . helm-apropos)
-        ("l" . helm-occur)
-        ("\\" . robenkleene/helm-clipboard-history-insert)
-        ;; ("b" . helm-buffers-list)
-        ("M-/" . robenkleene/helm-text-edit)
-        ("a" . robenkleene/helm-ag-in-directory)
-        ("o" . robenkleene/helm-recursive-find-file)
-        ("c" . robenkleene/helm-recursive-find-dir)
-        ("z" . robenkleene/helm-z)
-        )
   (:map robenkleene/window-map
         ("a" . robenkleene/helm-ag-in-directory)
         )
@@ -201,47 +177,6 @@ directory."
     (interactive)
     (robenkleene/helm-recursive-find-file-or-dir "~/Documents/Text/Notes")
     )
-
-  (defun robenkleene/helm-clipboard-history-candidates-process ()
-    (start-process
-     "clipboard history"
-     nil
-     "clipboard_history_search"
-     helm-pattern
-     ))
-
-  (defvar robenkleene/helm-clipboard-history-copy-source
-    (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      'robenkleene/helm-clipboard-history-candidates-process
-      :action (lambda (candidate)
-                (kill-new (string-replace "\0" "\n" candidate)))
-      ))
-
-  (defvar robenkleene/helm-clipboard-history-insert-source
-    (helm-build-async-source
-        "helm clipboard history"
-      :candidates-process
-      'robenkleene/helm-clipboard-history-candidates-process
-      :action (lambda (candidate)
-                (insert (string-replace "\0" "\n" candidate)))
-      ))
-
-  (defun robenkleene/helm-clipboard-history-copy ()
-    (interactive)
-    (helm :sources robenkleene/helm-clipboard-history-copy-source
-          :buffer "*helm clipboard history*"
-          )
-    )
-
-  (defun robenkleene/helm-clipboard-history-insert ()
-    (interactive)
-    (helm :sources robenkleene/helm-clipboard-history-insert-source
-          :buffer "*helm clipboard history*"
-          )
-    )
-
 
   (defun robenkleene/helm-z ()
     "helm z."
