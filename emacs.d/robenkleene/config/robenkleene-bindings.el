@@ -39,13 +39,7 @@
     (split-window-horizontally)
     (other-window 1)))
 
-;; Others
-
-;; Tweak comment behavior
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-;")
-;;   'robenkleene/comment)
-
-;; Improve completion
+;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; New Keys
@@ -59,11 +53,6 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
   'robenkleene/kill-region-or-backward-word)
 
-;; (define-key robenkleene/bindings-minor-mode-map
-;;   (kbd "<M-S-down>") 'robenkleene/duplicate-line-below)
-;; (define-key robenkleene/bindings-minor-mode-map
-;;   (kbd "<M-S-up>") 'robenkleene/duplicate-line-above)
-
 ;; General
 
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
@@ -72,17 +61,7 @@
   'robenkleene/open-terminal-window)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 
-;; ido
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-z")
-;;   'robenkleene/ido-z)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-\\")
-  'robenkleene/ido-clipboard-history-copy)
-
 ;; Leader Key
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-c")
-;;   robenkleene/leader-map)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-;;   robenkleene/leader-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
@@ -90,100 +69,6 @@
 (define-key robenkleene/window-map (kbd "M-a") 'other-window)
 (define-key robenkleene/window-map (kbd "M-A") (lambda () (interactive) (other-window -1)))
 (define-key robenkleene/window-map (kbd "A") (lambda () (interactive) (other-window -1)))
-
-;; Core Fuzzy Keys
-
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-o")
-;;   'robenkleene/ido-recursive-find-file)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-e")
-;;   'robenkleene/ido-recursive-find-file)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-c")
-;;   'robenkleene/ido-recursive-find-dir)
-
-;; (define-key robenkleene/leader-map (kbd "a") 'robenkleene/rg)
-;; (define-key robenkleene/leader-map (kbd "M-o")
-;;   'robenkleene/ido-recursive-insert-file)
-;; (define-key robenkleene/leader-map (kbd "M-c")
-;;   'robenkleene/ido-recursive-find-file)
-;; (define-key robenkleene/leader-map (kbd "C")
-;;   'robenkleene/ido-recursive-find-dir)
-;; (define-key robenkleene/leader-map (kbd "g M-o")
-;;   'robenkleene/ido-source-control-recursive-find-file)
-;; (define-key robenkleene/leader-map (kbd "g M-c")
-;;   'robenkleene/ido-source-control-recursive-find-dir)
-;; (define-key robenkleene/leader-map (kbd "y f")
-;;   'robenkleene/yank-filename)
-;; (define-key robenkleene/leader-map (kbd "y d")
-;;   'robenkleene/yank-directory)
-;; (define-key robenkleene/leader-map (kbd "y p")
-;;   'robenkleene/yank-filepath)
-;; (define-key robenkleene/leader-map (kbd "z") 'robenkleene/ido-bookmark-jump)
-;; (define-key robenkleene/leader-map (kbd "B")
-;;   'ido-switch-buffer)
-;; (define-key robenkleene/leader-map (kbd "\\")
-;;   'robenkleene/ido-clipboard-history-copy)
-;; Alternatives to helm
-;; (define-key robenkleene/leader-map (kbd "I") 'imenu)
-;; (define-key robenkleene/leader-map (kbd "L") 'occur)
-
-;; Other
-
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-l")
-;;   'robenkleene/urls-open)
-
-;; (if window-system
-;;     (progn
-;;       ;; This results in a quick search being automatically triggered on startup
-;;       ;; in terminal Emacs.
-;;       ;; These result in inserting characters into the scratch buffer on Emacs
-;;       ;; startup in terminal Emacs.
-;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-]")
-;;         'robenkleene/forward-block)
-;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
-;;         'robenkleene/forward-block-select)
-;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-[")
-;;         'robenkleene/backward-block)
-;;       (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
-;;         'robenkleene/backward-block-select)
-;;       ))
-
-;; Leader map
-;; (define-key robenkleene/leader-map (kbd "w") 'toggle-truncate-lines)
-;; (define-key robenkleene/leader-map (kbd "`") 'robenkleene/other-window-eshell)
-;; (define-key robenkleene/leader-map (kbd "d") 'robenkleene/archive-and-delete)
-
-;; (define-key robenkleene/leader-map (kbd "C-e")
-;;   'robenkleene/evaluate-buffer-or-region)
-
-;; Core Window Management
-
-;; Leader-Key Based
-;; (define-key robenkleene/leader-map
-;;   (kbd "t")
-;;   (lambda () (interactive) (make-frame) (other-frame 1)))
-;; (define-key robenkleene/leader-map
-;;   (kbd "M-t")
-;;   (lambda () (interactive) (make-frame) (other-frame 1)))
-;; (define-key robenkleene/leader-map (kbd "n") 'other-frame)
-;; (define-key robenkleene/leader-map (kbd "p")
-;;   (lambda () (interactive) (other-frame -1)))
-;; (define-key robenkleene/leader-map (kbd "M-n") 'other-frame)
-;; (define-key robenkleene/leader-map (kbd "M-p")
-;;   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
-;; (define-key robenkleene/leader-map (kbd "M-a") 'other-window)
-;; (define-key robenkleene/leader-map (kbd "M-W") 'other-window)
-;; ;; (define-key robenkleene/leader-map (kbd "M-o") 'other-window)
-;; (define-key robenkleene/leader-map (kbd "q") 'delete-frame)
-;; (define-key robenkleene/leader-map (kbd "v")
-;;   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-;; (define-key robenkleene/leader-map (kbd "M-v")
-;;   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-;; (define-key robenkleene/leader-map (kbd "s")
-;;   (lambda () (interactive) (split-window-vertically) (other-window 1)))
-;; (define-key robenkleene/leader-map (kbd "M-s")
-;;   (lambda () (interactive) (split-window-vertically) (other-window 1)))
-;; (define-key robenkleene/leader-map (kbd "c") 'delete-window)
-;; (define-key robenkleene/leader-map (kbd "o") 'delete-other-windows)
 
 ;; Window-Key Based
 (define-key robenkleene/window-map
