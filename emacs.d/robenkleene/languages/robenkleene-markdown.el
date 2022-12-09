@@ -51,6 +51,8 @@
   (add-hook 'markdown-mode-hook (lambda ()
                                   (modify-syntax-entry ?_ "w")
                                   (modify-syntax-entry ?- "w")
+                                  ;; Wrap lines by automatically in Markdown documents
+                                  (set 'truncate-lines nil)
                                   ;; Automatically auto-save markdown files
                                   ;; This doesn't work
                                   ;; Turn on auto-saving
