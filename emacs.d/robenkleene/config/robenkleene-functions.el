@@ -28,31 +28,11 @@
     )
   )
 
-(defun robenkleene/open-in-nova ()
-  "Open file in Nova."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "nova "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    )
-  )
-
 (defun robenkleene/open-in-repla ()
   "Open file in Repla."
   (interactive)
   (if (buffer-file-name)
       (shell-command (concat "repla "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    )
-  )
-
-(defun robenkleene/open-in-vscode ()
-  "Open file in VS Code."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "vscode "
                              (shell-quote-argument buffer-file-name))
                      )
     )
@@ -84,7 +64,6 @@ Otherwise, call `backward-kill-word'."
     buffer
     )
   )
-
 
 (defun robenkleene/new-empty ()
   "Open a new buffer named Untitled."
@@ -1241,25 +1220,6 @@ With prefix arg, find the previous file."
     (if override
         (cons 'vc override)
       nil)))
-
-;; (defun robenkleene/pos-at-mouse-click (click-event)
-;;   "Print position at CLICK-EVENT."
-;;   (interactive "e")
-;;   (run-hooks 'mouse-leave-buffer-hook)
-;;   (let ((pos (cadr (event-start click-event))))
-;;     (message "%s" pos)
-;;     )
-;;   )
-
-;; (defun robenkleene/describe-char-at-mouse-click (click-event)
-;;   "`describe-char' at CLICK-EVENT."
-;;   (interactive "e")
-;;   (run-hooks 'mouse-leave-buffer-hook)
-;;   (let ((pos (cadr (event-start click-event))))
-;;     (describe-char pos)))
-
-;; (global-set-key (kbd "C-c d <down-mouse-1>")
-;;                 #'robenkleene/pos-at-mouse-click)
 
 (provide 'robenkleene-functions)
 ;; Local Variables:
