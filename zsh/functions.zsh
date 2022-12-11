@@ -78,14 +78,6 @@ zsh_edit_config() {
   eval $EDITOR ../zshrc
 }
 
-git_cd_root() {
-  cd "$(git rev-parse --show-toplevel)" || exit
-}
-
-hg_cd_root() {
-  cd "$(hg root)" || exit
-}
-
 ssh_start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
@@ -114,8 +106,11 @@ ssh_tmux_restore_start() {
 
 cdsc() {
     if git rev-parse --is-inside-work-tree &> /dev/null; then
-        git_cd_root
+        cd "$(git rev-parse --show-toplevel)" || exit
     else
-        hg_cd_root
+        cd "$(hg root)" || exit
+    fi
+    if [[ -n "$1" ]]; then
+      cd "$1"
     fi
 }
