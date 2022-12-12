@@ -104,13 +104,16 @@ ssh_tmux_restore_start() {
   tmux_session_auto_restore
 }
 
-cdsc() {
-    if git rev-parse --is-inside-work-tree &> /dev/null; then
-        cd "$(git rev-parse --show-toplevel)" || exit
-    else
-        cd "$(hg root)" || exit
-    fi
-    if [[ -n "$1" ]]; then
-      cd "$1"
-    fi
+git_cd() {
+  cd "$(git rev-parse --show-toplevel)" || return
+  if [[ -n "$1" ]]; then
+    cd "$1"
+  fi
+}
+
+hg_cd() {
+  cd "$(hg root)" || return
+  if [[ -n "$1" ]]; then
+    cd "$1"
+  fi
 }
