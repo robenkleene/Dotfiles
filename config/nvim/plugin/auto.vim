@@ -107,19 +107,21 @@ augroup no_whitespace_insert
 augroup END
 
 " clipboard
-if exists('##TextYankPost')==1
-  augroup safecopy
-    autocmd!
-    autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
-  augroup END
-else
+" Disalbe the `TextYankPost` method because it breaks linewise pasting between
+" vim sessions
+" if exists('##TextYankPost')==1
+"   augroup safecopy
+"     autocmd!
+"     autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
+"   augroup END
+" else
   augroup safecopy
     autocmd!
     autocmd FocusLost *  silent! call system('~/.bin/safecopy',@")
   augroup END
-endif
-augroup safepaste
-  autocmd!
-  autocmd FocusGained * let @" = system('~/.bin/safepaste')
-augroup END
+  augroup safepaste
+    autocmd!
+    autocmd FocusGained * let @" = system('~/.bin/safepaste')
+  augroup END
+" endif
 let @" = system('~/.bin/safepaste')
