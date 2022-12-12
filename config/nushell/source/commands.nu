@@ -70,10 +70,29 @@ def gur [] {
   git pull -r
 }
 
-def-env cdsc [] {
-  let root = (source_control_root)
+def-env git_cd [dir = ""] {
+  let root = (git rev-parse --show-toplevel)
   cd (if (($root | str length) > 0) {
     $root
+  } else {
+    "."
+  })
+  cd (if (($dir | str length) > 0) {
+    $dir
+  } else {
+    "."
+  })
+}
+
+def-env hg_cd [dir = ""] {
+  let root = (hg root)
+  cd (if (($root | str length) > 0) {
+    $root
+  } else {
+    "."
+  })
+  cd (if (($dir | str length) > 0) {
+    $dir
   } else {
     "."
   })
