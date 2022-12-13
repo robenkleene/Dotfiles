@@ -107,21 +107,17 @@ augroup no_whitespace_insert
 augroup END
 
 " clipboard
-" Disalbe the `TextYankPost` method because it breaks linewise pasting between
-" vim sessions
-" if exists('##TextYankPost')==1
-"   augroup safecopy
-"     autocmd!
-"     autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
-"   augroup END
-" else
-  augroup safecopy
-    autocmd!
-    autocmd FocusLost *  silent! call system('~/.bin/safecopy',@")
-  augroup END
-  augroup safepaste
-    autocmd!
-    autocmd FocusGained * let @" = system('~/.bin/safepaste')
-  augroup END
-" endif
+" Copy to the clipboard and append a new line which forces a linewise paste
+" when pasting into another vim instance
+augroup safecopy
+  autocmd!
+  autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n").."\n")
+augroup END
+" When moving to another vim instance, copy from the system clipboard, this
+" allows pastin between Vim instances without using `unnamedplus` which can
+" mess up using `yyp` to copy a line within a Vim session
+augroup safepaste
+  autocmd!
+  autocmd FocusGained * let @" = system('~/.bin/safepaste')
+augroup END
 let @" = system('~/.bin/safepaste')
