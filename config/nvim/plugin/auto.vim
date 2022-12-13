@@ -107,17 +107,16 @@ augroup no_whitespace_insert
 augroup END
 
 " clipboard
-" Copy to the clipboard and append a new line which forces a linewise paste
-" when pasting into another vim instance
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n").."\n")
+  autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
 augroup END
-" When moving to another vim instance, copy from the system clipboard, this
-" allows pastin between Vim instances without using `unnamedplus` which can
-" mess up using `yyp` to copy a line within a Vim session
+" When moving to another vim instance, copy from the system clipboard and
+" append a new line so pasting is always linewise. this allows pastin between
+" Vim instances without using `unnamedplus` which can mess up using `yyp` to
+" copy a line within a Vim session
 augroup safepaste
   autocmd!
-  autocmd FocusGained * let @" = system('~/.bin/safepaste')
+  autocmd FocusGained * let @" = system('~/.bin/safepaste').."\n"
 augroup END
 let @" = system('~/.bin/safepaste')
