@@ -37,7 +37,6 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
-(require 'robenkleene-undo-tree)
 (require 'robenkleene-helm)
 (require 'robenkleene-eglot)
 (require 'robenkleene-autothemer)
