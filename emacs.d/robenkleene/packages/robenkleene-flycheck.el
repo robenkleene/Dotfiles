@@ -20,7 +20,7 @@
           erlang-rebar3
           html-tidy
           javascript-eslint
-          proselint
+          ;; proselint
           ruby-rubocop
           ruby
           scss-stylelint
