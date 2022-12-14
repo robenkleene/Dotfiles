@@ -4,6 +4,11 @@ function __zoxide_hook --on-variable PWD
     and command zoxide add -- (builtin pwd -L)
 end
 
+# This doesn't work because the `$fish_killring` is a read-only variable
+# function __sync_clipboard --on-event fish_focus_in
+#     set fish_killring (safepaste) $fish_killring 
+# end
+
 if test -n "$INSIDE_EMACS"
     set -Ux PAGER cat
     set -Ux GIT_PAGER cat
