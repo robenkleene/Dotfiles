@@ -43,6 +43,7 @@
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-expand-region)
 (require 'robenkleene-adaptive-wrap)
+(require 'robenkleene-vundo)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
