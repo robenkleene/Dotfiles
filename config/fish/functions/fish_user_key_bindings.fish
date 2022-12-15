@@ -1,7 +1,7 @@
 # bind \t accept-autosuggestion
 # This conflicts with using the kill ring, use `\cv` instead
-# bind \cy fish_clipboard_paste
-bind \cy fish_safepaste
+# bind \cy fish_safepaste
+bind \cv fish_safepaste
 bind \cq push_line
 bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
