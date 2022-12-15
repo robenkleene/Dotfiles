@@ -8,7 +8,6 @@ directory="false"
 while getopts ":pdeh" option; do
   case "$option" in
     d)
-      path="true"
       directory="true"
       ;;
     p)
@@ -34,7 +33,7 @@ done
 
 if [[ "$edit" == "true" ]]; then
   command="${MD_EDITOR_COMMAND:=vim}"
-elif [[ "$path" == "true" ]]; then
+elif [[ "$path" == "true" || "$directory" == "true" ]]; then
   command="echo"
 else
   command="${MD_CAT_COMMAND:=cat}"
@@ -42,11 +41,9 @@ fi
 
 cd ~/Documentation/ || return 1
 cmd="fd --type f --follow -g \"*.md\""
-if [[ "$path" == "true" ]]; then
-  cmd="fd --follow"
-  if [[ "$directory" == "true" ]]; then
-    cmd="fd --follow --type d"
-  fi
+
+if [[ "$directory" == "true" ]]; then
+  cmd="fd --follow --type d"
 fi
 
 result="$(eval "$cmd" | fzf)"
