@@ -16,9 +16,9 @@
              )
   :bind
   ("C-c l" . helm-occur)
-  (:map robenkleene/window-map
-        ("a" . robenkleene/helm-ag-in-directory)
-        )
+  ;; (:map robenkleene/window-map
+  ;;       ("a" . robenkleene/helm-ag-in-directory)
+  ;;       )
   (:map dired-mode-map
         ("M-a" . robenkleene/helm-ag-in-directory)
         ("M-o" . robenkleene/helm-recursive-find-file)
