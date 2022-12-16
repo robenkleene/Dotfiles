@@ -64,11 +64,11 @@
 ;; Leader Key
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
   robenkleene/window-map)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-  robenkleene/window-map)
-(define-key robenkleene/window-map (kbd "M-a") 'other-window)
-(define-key robenkleene/window-map (kbd "M-A") (lambda () (interactive) (other-window -1)))
-(define-key robenkleene/window-map (kbd "A") (lambda () (interactive) (other-window -1)))
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
+;;   robenkleene/window-map)
+;; (define-key robenkleene/window-map (kbd "M-a") 'other-window)
+;; (define-key robenkleene/window-map (kbd "M-A") (lambda () (interactive) (other-window -1)))
+;; (define-key robenkleene/window-map (kbd "A") (lambda () (interactive) (other-window -1)))
 
 ;; Window-Key Based
 (define-key robenkleene/window-map
