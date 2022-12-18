@@ -53,7 +53,7 @@
   ;; Starting modes without Evil enabled
   (evil-set-initial-state 'dired-mode 'emacs)
   ;; This starts commit editing in insert mode
-  (add-hook 'with-editor-mode-hook 'evil-insert-state)
+  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
