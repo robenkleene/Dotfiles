@@ -127,8 +127,8 @@
     (define-key evil-motion-state-map (kbd "g f") 'xref-find-references)
     (define-key evil-motion-state-map (kbd "g r") 'find-file-at-point)
     (define-key evil-motion-state-map (kbd "g y") 'eglot-find-typeDefinition)
-    (define-key evil-motion-state-map (kbd "g i") 'find-file-at-point)
-    (define-key evil-motion-state-map (kbd "g d") 'find-file-at-point)
+    (define-key evil-motion-state-map (kbd "g i") 'eglot-find-implementation)
+    (define-key evil-motion-state-map (kbd "g d") 'xref-find-definitions)
 
     (define-key evil-normal-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
