@@ -46,8 +46,12 @@
 
   ;; Just use default Emacs in insert mode
   (setq evil-disable-insert-state-bindings t)
+
   ;; Persist search highlighting
   (setq evil-search-module 'evil-search)
+
+  ;; Make `Y' yank to eol
+  (setq evil-want-Y-yank-to-eol t)
 
   ;; Set initial state to insert
   ;; (setq evil-default-state 'insert)
@@ -59,7 +63,6 @@
         evil-pending-overriding-maps nil)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
-
   ;; Disabling all Evil "smart" features
   ;; subvert evil-operation.el overrides (dired, ibuffer etc.)
   (advice-add 'evil-make-overriding-map :override #'ignore)
@@ -117,8 +120,8 @@
     (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
     ;; Motion
-    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     ;; Motion binds normal and visual
+    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "TAB") nil)
