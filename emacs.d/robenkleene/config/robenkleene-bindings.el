@@ -21,6 +21,10 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
   'query-replace-regexp)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-S-<down>") 'robenkleene/duplicate-line-below)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-S-<up>") 'robenkleene/duplicate-line-above)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-<down>") 'robenkleene/move-line-up)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-<up>") 'robenkleene/move-line-down)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
