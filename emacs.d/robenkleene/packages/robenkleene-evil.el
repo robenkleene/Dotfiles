@@ -131,6 +131,10 @@
     (define-key dired-mode-map (kbd "j") 'next-line)
     (define-key dired-mode-map (kbd "k") 'previous-line)
     (define-key dired-mode-map (kbd "-") 'dired-jump)
+    (define-key dired-mode-map (kbd "/") 'evil-ex-search-forward)
+    (define-key dired-mode-map (kbd "?") 'evil-ex-search-backward)
+    (define-key dired-mode-map (kbd "Z") nil)
+    (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
     )
 
   ;; Packages
