@@ -54,8 +54,19 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-p")
   'robenkleene/previous)
 
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
+;;   'robenkleene/kill-region-or-backward-word)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
-  'robenkleene/kill-region-or-backward-word)
+  'robenkleene/kill-region-or-window-map)
+(defun robenkleene/kill-region-or-window-map ()
+  "If the region is active and non-empty, call `kill-region'.
+Otherwise, use `robenkleene/window-map'."
+  (interactive)
+  (if (use-region-p)
+      (call-interactively 'kill-region)
+    (set-transient-map robenkleene/window-map)
+    )
+  )
 
 ;; General
 
@@ -66,8 +77,8 @@
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 
 ;; Leader Key
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
-  robenkleene/window-map)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
+;;   robenkleene/window-map)
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
 ;;   robenkleene/window-map)
 ;; (define-key robenkleene/window-map (kbd "M-a") 'other-window)
