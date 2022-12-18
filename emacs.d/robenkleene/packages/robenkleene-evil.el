@@ -9,6 +9,8 @@
   (setq
    evil-normal-state-tag
    (propertize " N " 'face '((:background "darkorchid" :foreground "white")))
+   evil-operator-state-tag
+   (propertize " O " 'face '((:background "darkorchid" :foreground "white")))
    evil-insert-state-tag
    (propertize " I " 'face '((:background "royalblue" :foreground "white")))
    evil-emacs-state-tag
@@ -25,6 +27,8 @@
    (propertize " VSL " 'face '((:background "slategray" :foreground "white")))
    evil-visual-state-tag
    (propertize " V " 'face '((:background "slategray" :foreground "white")))
+   evil-replace-state-tag
+   (propertize " R " 'face '((:background "slategray" :foreground "white")))
    )
 
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
@@ -120,7 +124,11 @@
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
-    (define-key evil-motion-state-map (kbd "g f") 'find-file-at-point)
+    (define-key evil-motion-state-map (kbd "g f") 'xref-find-references)
+    (define-key evil-motion-state-map (kbd "g r") 'find-file-at-point)
+    (define-key evil-motion-state-map (kbd "g y") 'eglot-find-typeDefinition)
+    (define-key evil-motion-state-map (kbd "g i") 'find-file-at-point)
+    (define-key evil-motion-state-map (kbd "g d") 'find-file-at-point)
 
     (define-key evil-normal-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
@@ -172,6 +180,29 @@
   (use-package evil-commentary
     :init
     (evil-commentary-mode)
+    )
+
+  (use-package evil-goggles
+    :config
+    (setq evil-goggles-enable-delete nil)
+    (setq evil-goggles-enable-change nil)
+    (setq evil-goggles-enable-indent nil)
+    (setq evil-goggles-enable-yank t)
+    (setq evil-goggles-enable-join nil)
+    (setq evil-goggles-enable-fill-and-move nil)
+    (setq evil-goggles-enable-paste nil)
+    (setq evil-goggles-enable-shift nil)
+    (setq evil-goggles-enable-surround nil)
+    (setq evil-goggles-enable-commentary nil)
+    (setq evil-goggles-enable-nerd-commenter nil)
+    (setq evil-goggles-enable-replace-with-register nil)
+    (setq evil-goggles-enable-set-marker nil)
+    (setq evil-goggles-enable-undo nil)
+    (setq evil-goggles-enable-redo nil)
+    (setq evil-goggles-enable-record-macro nil)
+    (evil-goggles-mode)
+    (setq evil-goggles-duration 0.100)
+    (setq evil-goggles-pulse nil)
     )
 
   )
