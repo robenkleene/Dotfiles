@@ -14,10 +14,9 @@ alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'
 alias u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
-alias d='vim_cd'
+alias d="$CD_COMMAND"
 alias gu='ssh_start && git pull'
 alias gp='ssh_start && git push'
 alias gur='ssh_start && git pull -r'
 alias gpt='ssh_start && git push --tags'
-alias cdg='git_cd_root'
-alias cdhg='cd (hg root)'
+
