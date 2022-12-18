@@ -15,6 +15,16 @@
    (propertize " E " 'face '((:background "slateblue" :foreground "white")))
    evil-motion-state-tag
    (propertize " M " 'face '((:background "violet" :foreground "white")))
+   evil-visual-block-tag
+   (propertize " VB " 'face '((:background "slategray" :foreground "white")))
+   evil-visual-char-tag
+   (propertize " VC " 'face '((:background "slategray" :foreground "white")))
+   evil-visual-line-tag
+   (propertize " VL " 'face '((:background "slategray" :foreground "white")))
+   evil-visual-screen-line-tag
+   (propertize " VSL " 'face '((:background "slategray" :foreground "white")))
+   evil-visual-state-tag
+   (propertize " V " 'face '((:background "slategray" :foreground "white")))
    )
 
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
@@ -35,7 +45,7 @@
   ;; Persist search highlighting
   (setq evil-search-module 'evil-search)
 
-  ;; Start out in emacs mode
+  ;; Set initial state to insert
   ;; (setq evil-default-state 'insert)
 
   ;; Don't let anything override Evil
@@ -45,8 +55,8 @@
         evil-pending-overriding-maps nil)
   ;; subvert evil-operation.el overrides (dired, ibuffer etc.)
   (advice-add 'evil-make-overriding-map :override #'ignore)
-  (advice-add 'evil-make-intercept-map  :override #'ignore)
-  (advice-add 'evil-add-hjkl-bindings   :override #'ignore)
+  (advice-add 'evil-make-intercept-map :override #'ignore)
+  (advice-add 'evil-add-hjkl-bindings :override #'ignore)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
 
@@ -147,6 +157,7 @@
         'evil-visualstar/begin-search-forward)
       (define-key evil-visual-state-map (kbd "#")
         'evil-visualstar/begin-search-backward)))
+
   (use-package evil-surround
     :init
     (global-evil-surround-mode 1)
