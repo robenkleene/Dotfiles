@@ -53,19 +53,27 @@
         evil-intercept-maps nil
         evil-pending-intercept-maps nil
         evil-pending-overriding-maps nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+
+  ;; Disabling all Evil "smart" features
   ;; subvert evil-operation.el overrides (dired, ibuffer etc.)
   (advice-add 'evil-make-overriding-map :override #'ignore)
   (advice-add 'evil-make-intercept-map :override #'ignore)
   (advice-add 'evil-add-hjkl-bindings :override #'ignore)
-  (setq evil-vsplit-window-right t)
-  (setq evil-split-window-below t)
+  (setq evil-emacs-state-modes nil)
+  (setq evil-insert-state-modes nil)
 
   (evil-mode 1)
   :config
   ;; Starting modes without Evil enabled
   (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'eshell-mode 'insert)
   ;; This starts commit editing in insert mode
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
+
+  ;; Enable redo
+  (evil-set-undo-system 'undo-redo)
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
