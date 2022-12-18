@@ -8,11 +8,13 @@
   :init
   (setq
    evil-normal-state-tag
-   (propertize " N " 'face '((:background "red" :foreground "black")))
+   (propertize " N " 'face '((:background "darkorchid" :foreground "white")))
    evil-insert-state-tag
-   (propertize " I " 'face '((:background "cyan" :foreground "white")))
+   (propertize " I " 'face '((:background "royalblue" :foreground "white")))
    evil-emacs-state-tag
-   (propertize " E " 'face '((:background "blue" :foreground "white")))
+   (propertize " E " 'face '((:background "slateblue" :foreground "white")))
+   evil-motion-state-tag
+   (propertize " M " 'face '((:background "violet" :foreground "white")))
    )
 
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
