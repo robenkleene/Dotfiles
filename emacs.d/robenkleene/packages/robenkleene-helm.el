@@ -16,7 +16,7 @@
              )
   :bind
   ("C-c l" . helm-occur)
-  ("C-x b" . helm-buffer-list)
+  ("C-x b" . helm-buffers-list)
   ;; (:map robenkleene/window-map
   ;;       ("a" . robenkleene/helm-ag-in-directory)
   ;;       )
