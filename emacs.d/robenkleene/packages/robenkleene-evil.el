@@ -157,14 +157,12 @@
 
   ;; Packages
   (use-package evil-visualstar
-    :commands (evil-visualstar/begin-search-forward
-               evil-visualstar/begin-search-backward)
     :init
-    (progn
-      (define-key evil-visual-state-map (kbd "*")
-        'evil-visualstar/begin-search-forward)
-      (define-key evil-visual-state-map (kbd "#")
-        'evil-visualstar/begin-search-backward)))
+    (global-evil-visualstar-mode)
+    (setq evil-visualstar/persistent t)
+    :config
+    (global-evil-visualstar-mode)
+    )
 
   (use-package evil-surround
     :init
