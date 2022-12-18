@@ -176,9 +176,13 @@
    `(trailing-whitespace ((t (:inherit rk-whitespace))))
    `(whitespace-line ((t (:inherit rk-warning))))
 
-   ;;;; show-paren
+   ;; show-paren
    `(show-paren-match ((t (:underline t :background nil :foreground nil :bold nil))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
+
+   ;; Evil Goggle
+   ;; This should be the default but isn't working for some reason
+   `(evil-goggles-default-face ((t (:inherit region))))
 
    ;; Markdown
    `(markdown-header-face-1 ((t (:inherit rk-header))))
