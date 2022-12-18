@@ -47,7 +47,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # hx
 # export VISUAL="hx"
 # export TIG_EDITOR="hx_wrapper"
-export VISUAL="$VIM_COMMAND"
+# export VISUAL="$VIM_COMMAND"
+export VISUAL="$EMACS_COMMAND"
 export EDITOR="$VISUAL"
 export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
@@ -58,6 +59,8 @@ export BROWSER="none"
 export ALTERNATE_EDITOR=""
 
 export MD_CAT_COMMAND="bat --style plain"
+# export CD_COMMAND="vim_cd"
+export CD_COMMAND="emacs_cd"
 export MD_EDITOR_COMMAND="$EMACS_COMMAND"
 
 if test -n "$INSIDE_EMACS"; then
