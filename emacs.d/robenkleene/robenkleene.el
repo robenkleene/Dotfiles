@@ -44,6 +44,7 @@
 (require 'robenkleene-expand-region)
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-vundo)
+(require 'robenkleene-evil)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
