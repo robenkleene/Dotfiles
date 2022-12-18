@@ -24,7 +24,7 @@ let-env config = {
         zoxide add -- $after
       }]
     }
-  }    
+  }
   keybindings: [
     {
       name: ctrl_w
