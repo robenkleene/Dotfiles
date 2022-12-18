@@ -3,7 +3,6 @@ alias v = nvim
 alias a = rg_custom
 alias rg = rg_custom
 alias p = ^p
-alias l = ^ls
 alias ts = tig status +3
 # git
 alias g = git
