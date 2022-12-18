@@ -60,19 +60,19 @@ let-env FZF_DEFAULT_OPTS = "--height 40% --reverse"
 # Emacs
 let-env ALTERNATE_EDITOR = ""
 let-env EMACS_COMMAND = "emacsclient -nw"
+let-env VIM_COMMAND = "nvim"
 
 let-env MD_CAT_COMMAND = "bat --style plain"
 let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
 
-let-env VISUAL = "nvim"
+# let-env VISUAL = $"($env.VIM_COMMAND)"
+let-env VISUAL = $"($env.EMACS_COMMAND)"
 let-env EDITOR = $"($env.VISUAL)"
 let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 
 # hx
 # let-env VISUAL = "hx"
 # let-env TIG_EDITOR = "hx_wrapper"
-
-let-env VIM_COMMAND = "nvim"
 
 let-env BROWSER = "none"
 let-env COLORTERM = "truecolor"
