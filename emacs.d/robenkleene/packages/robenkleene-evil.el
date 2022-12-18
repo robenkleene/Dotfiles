@@ -34,10 +34,7 @@
   (setq evil-search-module 'evil-search)
 
   ;; Start out in emacs mode
-  (setq evil-default-state 'insert)
-  ;; Go into evil for specific modes
-  ;; (add-hook 'text-mode-hook 'evil-mode)
-  (add-hook 'prog-mode-hook 'evil-mode)
+  ;; (setq evil-default-state 'insert)
 
   ;; Don't let anything override Evil
   (setq evil-overriding-maps nil
@@ -53,7 +50,10 @@
 
   (evil-mode 1)
   :config
-  ;; (evil-set-undo-system 'undo-redo)
+  ;; Starting modes without Evil enabled
+  (evil-set-initial-state 'dired-mode 'emacs)
+  ;; This starts commit editing in insert mode
+  (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
@@ -102,20 +102,6 @@
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     (define-key evil-motion-state-map (kbd "g f") 'find-file-at-point)
 
-    ;; You can't `p' to paste if you're in `set-mark-command' so just always go
-    ;; to insert mode in order to use `C-y' for paste. It's too confusing
-    ;; otherwise.
-    ;; (define-key evil-motion-state-map (kbd "C-@")
-    ;;   (lambda ()
-    ;;     (interactive)
-    ;;     (call-interactively 'evil-insert)
-    ;;     (call-interactively 'set-mark-command)))
-    ;; (define-key evil-motion-state-map (kbd "C-SPC")
-    ;;   (lambda ()
-    ;;     (interactive)
-    ;;     (call-interactively 'evil-insert)
-    ;;     (call-interactively 'set-mark-command)))
-
     (define-key evil-normal-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-normal-state-map
@@ -125,6 +111,7 @@
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     )
+
   (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
 
   ;; Allow crossing lines by moving past end of line
@@ -155,13 +142,6 @@
   (use-package evil-commentary
     :init
     (evil-commentary-mode)
-    )
-
-  (use-package evil-numbers
-    :init
-    (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-    (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-    :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     )
 
   )
