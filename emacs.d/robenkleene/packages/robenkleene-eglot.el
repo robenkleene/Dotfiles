@@ -18,7 +18,6 @@
               ("C-c r" . eglot-rename)
               ("C-c a" . eglot-code-actions))
   :config
-
   ;; Turn off automatic syntax checking
   ;; (setq eglot-send-changes-idle-time (* 60 60))
 
