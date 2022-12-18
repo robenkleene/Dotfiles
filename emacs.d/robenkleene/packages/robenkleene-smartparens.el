@@ -14,10 +14,11 @@
         ("<M-backspace>" . sp-backward-kill-word)
         )
   :init
-  (add-hook 'minibuffer-setup-hook (lambda ()
-                                     (if (eq this-command 'eval-expression)
-                                         (smartparens-mode)))
-            )
+  ;; This breaks `M-backspace' for backward kill word for some reason?
+  ;; (add-hook 'minibuffer-setup-hook (lambda ()
+  ;;                                    (if (eq this-command 'eval-expression)
+  ;;                                        (smartparens-mode)))
+  ;;           )
   (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
   :config
   (require 'smartparens-config)
