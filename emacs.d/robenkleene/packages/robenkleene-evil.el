@@ -34,7 +34,7 @@
   (setq evil-search-module 'evil-search)
 
   ;; Start out in emacs mode
-  (setq evil-default-state 'emacs)
+  (setq evil-default-state 'insert)
   ;; Go into evil for specific modes
   ;; (add-hook 'text-mode-hook 'evil-mode)
   (add-hook 'prog-mode-hook 'evil-mode)
