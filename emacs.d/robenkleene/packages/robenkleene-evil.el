@@ -186,6 +186,7 @@
     (define-key dired-mode-map (kbd "Z") nil)
     (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
+    (define-key dired-mode-map (kbd ":") 'evil-ex)
     )
 
   ;; Packages
