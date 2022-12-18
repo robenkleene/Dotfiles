@@ -33,7 +33,6 @@
 (require 'robenkleene-flycheck)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
-(require 'robenkleene-rainbow-delimiters)
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
