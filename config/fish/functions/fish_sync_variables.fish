@@ -16,7 +16,8 @@ function fish_sync_variables
     set -Ux VIM_COMMAND nvim
     set -Ux MD_CAT_COMMAND "bat --style plain"
     set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
-    set -Ux CD_COMMAND "vim_cd"
+    # set -Ux CD_COMMAND "vim_cd"
+    set -Ux CD_COMMAND "emacs_cd"
 
     # hx
     # set -Ux VISUAL "hx"
@@ -24,7 +25,8 @@ function fish_sync_variables
 
     # Standard
     set -Ux LESS "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
-    set -Ux VISUAL "$VIM_COMMAND"
+    # set -Ux VISUAL "$VIM_COMMAND"
+    set -Ux VISUAL "$EMACS_COMMAND"
     set -Ux EDITOR "$VISUAL"
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"
