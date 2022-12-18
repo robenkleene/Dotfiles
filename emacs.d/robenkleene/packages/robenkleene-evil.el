@@ -84,6 +84,27 @@
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
+  (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
+  (define-key robenkleene/evil-leader-map (kbd "l") 'helm-occur)
+  (define-key robenkleene/evil-leader-map (kbd "q") 'helm-resume)
+  (define-key robenkleene/evil-leader-map (kbd "b")
+    'helm-buffers-list)
+  (define-key robenkleene/evil-leader-map (kbd "F")
+    'robenkleene/helm-recursive-find-file)
+  (define-key robenkleene/evil-leader-map (kbd "/")
+    'robenkleene/helm-ag-in-directory)
+  (define-key robenkleene/evil-leader-map (kbd "i")
+    'helm-semantic-or-imenu)
+  (define-key robenkleene/evil-leader-map (kbd "w")
+    'toggle-truncate-lines)
+  (define-key robenkleene/evil-leader-map (kbd "=")
+    'eglot-format-buffer)
+  (define-key robenkleene/evil-leader-map (kbd "a")
+    'eglot-code-actions)
+  (define-key robenkleene/evil-leader-map (kbd "r")
+    'eglot-rename)
+  (define-key robenkleene/evil-leader-map (kbd "c")
+    'eglot-completion-at-point)
 
   (with-eval-after-load 'evil-maps
     ;; Normal
