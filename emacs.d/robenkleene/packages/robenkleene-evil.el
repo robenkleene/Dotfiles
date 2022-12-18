@@ -126,6 +126,13 @@
               (remove-hook 'activate-mark-hook
                            'evil-visual-activate-hook t)))
 
+  ;; Modes
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "j") 'next-line)
+    (define-key dired-mode-map (kbd "k") 'previous-line)
+    (define-key dired-mode-map (kbd "-") 'dired-jump)
+    )
+
   ;; Packages
   (use-package evil-visualstar
     :commands (evil-visualstar/begin-search-forward
