@@ -69,21 +69,11 @@ Otherwise, use `robenkleene/window-map'."
   )
 
 ;; General
-
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
   'robenkleene/reveal-in-finder)
 (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
   'robenkleene/open-terminal-window)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
-
-;; Leader Key
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-W")
-;;   robenkleene/window-map)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-a")
-;;   robenkleene/window-map)
-;; (define-key robenkleene/window-map (kbd "M-a") 'other-window)
-;; (define-key robenkleene/window-map (kbd "M-A") (lambda () (interactive) (other-window -1)))
-;; (define-key robenkleene/window-map (kbd "A") (lambda () (interactive) (other-window -1)))
 
 ;; Window-Key Based
 (define-key robenkleene/window-map
@@ -100,8 +90,8 @@ Otherwise, use `robenkleene/window-map'."
   (lambda () (interactive) (split-window-horizontally) (other-frame -1)))
 (define-key robenkleene/window-map (kbd "C-w") 'other-window)
 (define-key robenkleene/window-map (kbd "w") 'other-window)
-(define-key robenkleene/window-map (kbd "C-W") (lambda () (other-window -1)))
-(define-key robenkleene/window-map (kbd "W") (lambda () (other-window -1)))
+(define-key robenkleene/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
+(define-key robenkleene/window-map (kbd "W") (lambda () (interactive) (other-window -1)))
 (define-key robenkleene/window-map (kbd "q") 'delete-frame)
 (define-key robenkleene/window-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
