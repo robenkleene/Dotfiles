@@ -298,11 +298,11 @@
 (add-hook 'dired-mode-hook 'robenkleene/z-add)
 
 ;; Automatically revert unmodified buffers
-;; This way causing the cursor to jump randomly after saving
+;; This was causing the cursor to jump randomly after saving
 (global-auto-revert-mode t)
 (setq global-auto-revert-non-file-buffers t)
-;; Suppress message
-;; (setq auto-revert-verbose nil)
+;; Suppress message that happens every time a buffer gets reverted
+(setq auto-revert-verbose nil)
 
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
