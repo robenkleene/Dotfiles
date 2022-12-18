@@ -2,11 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (modify-syntax-entry ?_ "w")
-            (modify-syntax-entry ?- "w")
-            ))
+;; (add-hook 'emacs-lisp-mode-hook
+;;           (lambda ()
+;;             (modify-syntax-entry ?_ "w")
+;;             (modify-syntax-entry ?- "w")
+;;             ))
 
 (provide 'robenkleene-emacs-lisp)
 ;; Local Variables:
