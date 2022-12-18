@@ -49,8 +49,8 @@
     'robenkleene/backward-block)
 
   (add-hook 'markdown-mode-hook (lambda ()
-                                  (modify-syntax-entry ?_ "w")
-                                  (modify-syntax-entry ?- "w")
+                                  ;; (modify-syntax-entry ?_ "w")
+                                  ;; (modify-syntax-entry ?- "w")
                                   ;; Wrap lines by automatically in Markdown documents
                                   (set 'truncate-lines nil)
                                   ;; Automatically auto-save markdown files
