@@ -289,7 +289,10 @@
 ;; `find-file-hook' can cause slow behavior
 ;; (remove-hook 'find-file-hook 'vc-find-file-hook)
 ;; Removes massive slow down with large `hg' repos
-(setq vc-handled-backends '(Git))
+;; (setq vc-handled-backends '(Git))
+;; Disable all backends, `git' shows an annoying message about following
+;; symbolic link
+(setq vc-handled-backends nil)
 
 ;; Allow project roots to be overridden with a `.project' file
 (add-hook 'project-find-functions #'robenkleene/project-override)
