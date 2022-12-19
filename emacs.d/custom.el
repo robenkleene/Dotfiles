@@ -38,6 +38,7 @@
  ;; If there is more than one, they won't work right.
  '(bold ((t (:bold t))))
  '(evil-goggles-default-face ((t (:inherit region))))
+ '(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
  '(helm-candidate-number ((t (:inherit rk-prompt))))
  '(helm-grep-file ((t (:inherit link :underline nil))))
  '(helm-grep-finish ((t (:inherit rk-prompt))))
@@ -52,8 +53,10 @@
  '(italic ((t (:underline nil :slant italic))))
  '(line-number-current-line ((t (:bold nil))))
  '(markdown-blockquote-face ((t (:inherit rk-text2))))
+ '(markdown-code-face ((t (:inherit rk-text2 :foreground nil :background nil))))
  '(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal))))
  '(markdown-gfm-checkbox-face ((t (:inherit rk-text2))))
+ '(markdown-header-delimiter-face ((t (:inherit rk-comment :foreground nil))))
  '(markdown-header-face-1 ((t (:inherit rk-header))))
  '(markdown-header-face-2 ((t (:inherit rk-header))))
  '(markdown-header-face-3 ((t (:inherit rk-header))))
