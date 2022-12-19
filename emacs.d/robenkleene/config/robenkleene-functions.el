@@ -701,11 +701,20 @@ With prefix arg, find the previous file."
   (remove-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
   )
 
+(defun robenkleene/compilation-hide-once (buffer desc)
+  "Hide next compilation."
+  ;; This doesn't work
+  (let ((win (get-buffer-window buffer 'visible)))
+    (when win (delete-window win)))
+  (remove-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
+  )
+
 (defun robenkleene/grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
   (add-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
+  (add-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 
