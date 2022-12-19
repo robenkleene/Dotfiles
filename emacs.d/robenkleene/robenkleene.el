@@ -43,6 +43,7 @@
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
+(require 'robenkleene-smex)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")
 ;; (load-theme 'kleene-dark t)
