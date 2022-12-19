@@ -59,7 +59,7 @@
   ;; Only the named colors work here for some reason, e.g., we're using
   ;; `magenta' instead of `91', which is the exact color we want
   (setq helm-grep-ag-command
-        "rg --color=always --colors 'match:fg:white' --colors 'match:bg:magenta' --smart-case --no-heading --line-number %s %s %s")
+        "rg --color=always --colors 'match:fg:black' --colors 'match:bg:cyan' --smart-case --no-heading --line-number %s %s %s")
   (defun robenkleene/helm-ag-in-directory ()
     "Call `helm-do-grep-ag' in the current directory or with prefix specify a
 directory."
