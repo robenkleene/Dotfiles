@@ -203,6 +203,9 @@
    `(markdown-list-face ((t (:inherit rk-text2 :foreground nil))))
    `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal :foreground nil))))
    ;; `(markdown-italic-face ((t (:inherit rk-text2))))
+
+   ;; Git Commit
+   `(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
    )
   )
 
