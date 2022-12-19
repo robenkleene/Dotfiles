@@ -8,27 +8,27 @@
   :init
   (setq
    evil-normal-state-tag
-   (propertize " N " 'face '((:background "darkorchid" :foreground "white")))
+   (propertize " N " 'face '((:background "purple3" :foreground "white")))
    evil-operator-state-tag
-   (propertize " O " 'face '((:background "darkorchid" :foreground "white")))
+   (propertize " O " 'face '((:background "purple3" :foreground "white")))
    evil-insert-state-tag
-   (propertize " I " 'face '((:background "royalblue" :foreground "white")))
+   (propertize " I " 'face '((:background "RoyalBlue" :foreground "white")))
    evil-emacs-state-tag
-   (propertize " E " 'face '((:background "slateblue" :foreground "white")))
+   (propertize " E " 'face '((:background "RoyalBlue" :foreground "white")))
    evil-motion-state-tag
-   (propertize " M " 'face '((:background "violet" :foreground "white")))
+   (propertize " M " 'face '((:background "purple3" :foreground "white")))
    evil-visual-block-tag
-   (propertize " VB " 'face '((:background "slategray" :foreground "white")))
+   (propertize " VB " 'face '((:background "purple3" :foreground "white")))
    evil-visual-char-tag
-   (propertize " VC " 'face '((:background "slategray" :foreground "white")))
+   (propertize " VC " 'face '((:background "purple3" :foreground "white")))
    evil-visual-line-tag
-   (propertize " VL " 'face '((:background "slategray" :foreground "white")))
+   (propertize " VL " 'face '((:background "purple3" :foreground "white")))
    evil-visual-screen-line-tag
-   (propertize " VSL " 'face '((:background "slategray" :foreground "white")))
+   (propertize " VSL " 'face '((:background "purple3" :foreground "white")))
    evil-visual-state-tag
-   (propertize " V " 'face '((:background "slategray" :foreground "white")))
+   (propertize " V " 'face '((:background "purple3" :foreground "white")))
    evil-replace-state-tag
-   (propertize " R " 'face '((:background "slategray" :foreground "white")))
+   (propertize " R " 'face '((:background "purple3" :foreground "white")))
    )
 
   ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
