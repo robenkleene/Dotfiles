@@ -76,6 +76,9 @@
   ;; Starting modes without Evil enabled
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'eshell-mode 'insert)
+  ;; Not sure why this isn't necessary
+  ;; (evil-set-initial-state 'help-mode 'motion)
+
   ;; This starts commit editing in insert mode
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
