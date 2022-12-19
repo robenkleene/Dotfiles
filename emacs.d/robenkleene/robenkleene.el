@@ -48,7 +48,9 @@
 ;; (load-theme 'kleene-dark t)
 ;; If this theme seems broken, check the `COLORTERM' shell environment variable
 ;; is set
-(load-theme 'catppuccin-mocha t)
+;; (load-theme 'catppuccin-mocha t)
+;; (require 'robenkleene-modus)
+(require 'robenkleene-ef-themes)
 (require 'robenkleene-override-theme)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
