@@ -1197,6 +1197,14 @@ With prefix arg, find the previous file."
   (shell-command "date +%Y-%m-%d | tr -d '\n'")
   )
 
+(defun robenkleene/describe-char-at-mouse-click (click-event)
+  "`describe-char' at CLICK-EVENT's position.
+CLICK-EVENT should be a mouse-click event."
+  (interactive "e")
+  (run-hooks 'mouse-leave-buffer-hook)
+  (let ((pos (cadr (event-start click-event))))
+    (describe-char pos)))
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
