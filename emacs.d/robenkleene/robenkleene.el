@@ -36,7 +36,6 @@
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-eglot)
-(require 'robenkleene-autothemer)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-expand-region)
 (require 'robenkleene-adaptive-wrap)
