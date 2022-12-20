@@ -85,6 +85,7 @@
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'compilation-mode 'motion)
   (evil-set-initial-state 'package-menu-mode 'motion)
+  (evil-set-initial-state 'debugger-mode 'motion)
   ;; Not sure why this isn't necessary
 
   ;; This starts commit editing in insert mode
