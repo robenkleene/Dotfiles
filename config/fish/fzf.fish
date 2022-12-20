@@ -8,8 +8,6 @@ fzf_key_bindings
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
 
 function _robenkleene-fzf-z-widget
-    # set -l cmd "zoxide query --list"
-    # eval "$cmd | "(__fzfcmd) | read -l result
     zoxide query --interactive | read -l result
 
     if test -d "$result"
@@ -28,15 +26,19 @@ function _robenkleene-fzf-z-widget
 end
 bind \ez _robenkleene-fzf-z-widget
 
-function _robenkleene-fzf-cd-widget
-    set -l cmd "fd --strip-cwd-prefix --type d --hidden --follow --max-depth 1 --exclude .git --exclude .hg"
+function _robenkleene-fzf-open-widget
+    set -l cmd "fd --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg"
     eval "$cmd | "(__fzfcmd) | read -l result
 
-    if test -d "$result"
+    if test -e "$result"
         set -l result_path (string escape "$result")
         set -l commandline (commandline)
         if test -z $commandline
-            commandline "cd $result_path"
+            if test -d "$result"
+                commandline "cd $result_path"
+            else
+                commandline "$EDITOR $result_path"
+            end
             commandline -f repaint
             commandline -f execute
         else
@@ -46,24 +48,4 @@ function _robenkleene-fzf-cd-widget
 
     commandline -f repaint
 end
-bind \ec _robenkleene-fzf-cd-widget
-
-function _robenkleene-fzf-edit-widget
-    set -l cmd "fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store"
-    eval "$cmd | "(__fzfcmd) | read -l result
-
-    if test -f "$result"
-        set -l result_path (string escape "$result")
-        set -l commandline (commandline)
-        if test -z $commandline
-            commandline "$EDITOR $result_path"
-            commandline -f repaint
-            commandline -f execute
-        else
-            commandline -i "$result_path"
-        end
-    end
-
-    commandline -f repaint
-end
-bind \eo _robenkleene-fzf-edit-widget
+bind \eo _robenkleene-fzf-open-widget
