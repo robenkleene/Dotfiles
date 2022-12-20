@@ -168,8 +168,6 @@
       :history 'file-name-history)))
   )
 
-
-
 (provide 'robenkleene-vertico)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
