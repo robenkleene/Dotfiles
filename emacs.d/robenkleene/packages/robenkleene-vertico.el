@@ -86,8 +86,8 @@
   (:map dired-mode-map
         ("M-a" . consult-ripgrep)
         ("M-o" . consult-find)
+        ;; ("M-z" . consult-recent-file)
         ("M-z" . robenkleene/consult-z)
-        ;; ("M-z" . robenkleene/consult-z)
         )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
@@ -156,38 +156,47 @@
     (interactive)
     (find-file
      (consult--read
-      (shell-command-to-string "zoxide query --list")
+      (or (mapcar #'abbreviate-file-name
+                  (split-string (shell-command-to-string "zoxide query --list")
+                                "\n"))
+          (user-error "No recent files"))
+      
       :prompt "Z: "
       :sort nil
       :require-match t
       :category 'file
       :state (consult--file-preview)
       :history 'file-name-history)))
+
+
+  (defcustom consult-include-system-recent-files nil
+    "Whether to include files used by other programs in `consult-recent-file'."
+    :type 'boolean
+    :group 'consult)
+
+;;;###autoload
+  (defun consult-recent-file ()
+    "Find recent using `completing-read'."
+    (interactive)
+    (find-file
+     (consult--read
+      (or (mapcar #'abbreviate-file-name
+                  (if consult-include-system-recent-files
+                      (consult--recent-files-mixed-candidates)
+                    recentf-list))
+          (user-error "No recent files"))
+      :prompt "Find recent file: "
+      :sort nil
+      :require-match t
+      :category 'file
+      :state (consult--file-preview)
+      :history 'file-name-history)))
+
+
+
   )
 
 
-(defcustom consult-include-system-recent-files nil
-  "Whether to include files used by other programs in `consult-recent-file'."
-  :type 'boolean
-  :group 'consult)
-
-;;;###autoload
-(defun consult-recent-file ()
-  "Find recent using `completing-read'."
-  (interactive)
-  (find-file
-   (consult--read
-    (or (mapcar #'abbreviate-file-name
-                (if consult-include-system-recent-files
-                    (consult--recent-files-mixed-candidates)
-                  recentf-list))
-        (user-error "No recent files"))
-    :prompt "Find recent file: "
-    :sort nil
-    :require-match t
-    :category 'file
-    :state (consult--file-preview)
-    :history 'file-name-history)))
 
 (provide 'robenkleene-vertico)
 ;; Local Variables:
