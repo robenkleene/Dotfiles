@@ -35,7 +35,6 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
-(require 'robenkleene-helm)
 (require 'robenkleene-eglot)
 (require 'robenkleene-autothemer)
 (require 'robenkleene-page-break-lines)
@@ -43,7 +42,6 @@
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
-;; (require 'robenkleene-smex)
 (require 'robenkleene-vertico)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/robenkleene/themes/")

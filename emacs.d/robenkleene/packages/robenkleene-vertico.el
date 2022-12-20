@@ -81,6 +81,8 @@
 ;; Example configuration for Consult
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
+  :commands
+  (robenkleene/consult-doc)
   :bind
   ("C-c l" . consult-line)
   (:map dired-mode-map
@@ -170,6 +172,30 @@
       :category 'file
       :state (consult--file-preview)
       :history 'file-name-history)))
+
+  (defun robenkleene/consult-doc ()
+    "Doc using `completing-read'."
+    (interactive)
+    (let ((default-directory "~/Documentation"))
+      (find-file
+       (consult--read
+        (or (mapcar #'abbreviate-file-name
+                    (split-string
+                     (replace-regexp-in-string
+                      "\n$" ""
+                      (shell-command-to-string
+                       "fd --follow"))
+                     "\n"))
+            (user-error "No recent files"))
+        :prompt "Doc: "
+        :sort nil
+        :require-match t
+        :category 'file
+        :state (consult--file-preview)
+        :history 'file-name-history))  
+      )
+    )
+
   )
 
 (provide 'robenkleene-vertico)
