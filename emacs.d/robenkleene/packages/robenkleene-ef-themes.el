@@ -4,7 +4,8 @@
 
 (use-package ef-themes
   :config
-  (ef-themes-select 'ef-winter))
+  ;; (ef-themes-select 'ef-winter)
+  )
 
 (provide 'robenkleene-ef-themes)
 ;; Local Variables:
