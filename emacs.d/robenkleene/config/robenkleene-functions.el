@@ -898,7 +898,7 @@ With prefix arg, find the previous file."
   )
 
 (defun robenkleene/open-scratch-other-window ()
-  "Open scratch for current buffer in other window."
+  "Switch to scratch for current buffer in other window."
   (interactive)
   (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
     (if (bound-and-true-p file)
@@ -908,31 +908,8 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/tweets ()
-  "Open tweets directory or make new tweet."
-  (interactive)
-  (if current-prefix-arg
-      (robenkleene/new-tweet)
-    (robenkleene/open-tweets)
-    )
-  )
-
-(defun robenkleene/open-tweets ()
-  "Open tweets directory."
-  (interactive)
-  (find-file "~/Documents/Text/Writing/Tweets/")
-  )
-
-(defun robenkleene/new-tweet ()
-  "Open a new tweet file."
-  (interactive)
-  (robenkleene/safe-find-file
-   (shell-command-to-string "~/.bin/markdown_tweet")
-   )
-  )
-
 (defun robenkleene/inbox ()
-  "Open inbox directory or make new inbox document."
+  "Switch to inbox directory or make new inbox document."
   (interactive)
   (if current-prefix-arg
       (call-interactively 'robenkleene/new-inbox-document)
@@ -941,44 +918,26 @@ With prefix arg, find the previous file."
   )
 
 (defun robenkleene/open-inbox ()
-  "Open inbox directory."
+  "Switch to inbox directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
-(defun robenkleene/open-work ()
-  "Open inbox directory."
-  (interactive)
-  (find-file "~/Dropbox/Work/Text/")
-  )
-
-(defun robenkleene/open-dropbox-projects ()
-  "Open Dropbox projects directory."
-  (interactive)
-  (find-file "~/Dropbox/Documents/Projects/")
-  )
-
-(defun robenkleene/open-documents-projects ()
-  "Open Documents projects directory."
-  (interactive)
-  (find-file "~/Documents/Projects/")
-  )
-
 (defun robenkleene/open-archive ()
-  "Open inbox directory."
+  "Switch to inbox directory."
   (interactive)
   (find-file "~/Archive/Text/")
   )
 
 (defun robenkleene/open-daily ()
-  "Open daily file."
+  "Create daily file and switch to it."
   (interactive)
   (robenkleene/safe-find-file
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
 (defun robenkleene/browse-daily ()
-  "Open daily file."
+  "Switch to daily file."
   (interactive)
   (robenkleene/safe-find-file
    (shell-command-to-string "~/.bin/daily_file -b"))
@@ -1013,25 +972,25 @@ With prefix arg, find the previous file."
   )
 
 (defun robenkleene/open-emacs-scratch ()
-  "Open scratch buffer."
+  "Switch to scratch buffer."
   (interactive)
   (switch-to-buffer "*scratch*")
   )
 
 (defun robenkleene/open-emacs-messages ()
-  "Open messages buffer."
+  "Switch to messages buffer."
   (interactive)
   (switch-to-buffer "*Messages*")
   )
 
 (defun robenkleene/open-development-scratch ()
-  "Open scratch file for current buffer."
+  "Switch to scratch file for current buffer."
   (interactive)
   (find-file "~/Developer/Scratch/")
   )
 
 (defun robenkleene/open-scratch-for-file ()
-  "Open scratch file for current buffer."
+  "Switch to scratch file for current buffer."
   (interactive)
   (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
     (if (bound-and-true-p file)
