@@ -701,20 +701,20 @@ With prefix arg, find the previous file."
   (remove-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
   )
 
-(defun robenkleene/compilation-hide-once (buffer desc)
-  "Hide next compilation."
-  ;; This doesn't work
-  (let ((win (get-buffer-window buffer 'visible)))
-    (when win (delete-window win)))
-  (remove-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
-  )
+;; This doesn't work for some reason
+;; (defun robenkleene/compilation-hide-once (buffer desc)
+;;   "Hide next compilation."
+;;   (let ((win (get-buffer-window buffer 'visible)))
+;;     (when win (delete-window win)))
+;;   (remove-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
+;;   )
 
 (defun robenkleene/grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
   (add-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
-  (add-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
+  ;; (add-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 
@@ -957,20 +957,6 @@ With prefix arg, find the previous file."
                             ))
   )
 
-(defun robenkleene/new-projects-document (title)
-  "Create a new inbox document with TITLE at DIR."
-  (interactive (list (read-from-minibuffer "Title: "
-                                           (if (use-region-p)
-                                               (buffer-substring (mark) (point))
-                                             nil
-                                             ))
-                     ))
-  (robenkleene/safe-find-file
-   (shell-command-to-string (concat "~/.bin/projects_new "
-                                    (shell-quote-argument title))
-                            ))
-  )
-
 (defun robenkleene/open-emacs-scratch ()
   "Switch to scratch buffer."
   (interactive)
@@ -981,12 +967,6 @@ With prefix arg, find the previous file."
   "Switch to messages buffer."
   (interactive)
   (switch-to-buffer "*Messages*")
-  )
-
-(defun robenkleene/open-development-scratch ()
-  "Switch to scratch file for current buffer."
-  (interactive)
-  (find-file "~/Developer/Scratch/")
   )
 
 (defun robenkleene/open-scratch-for-file ()
@@ -1115,7 +1095,7 @@ With prefix arg, find the previous file."
                                (eq (char-syntax (char-after (point))) ?_)
                                (forward-sexp -1))
                            (skip-chars-forward "`'")
-        	           (let ((obj (read (current-buffer))))
+                           (let ((obj (read (current-buffer))))
                              (and (symbolp obj) (fboundp obj) obj))))))
            (describe-function sym))
           ((setq sym (variable-at-point)) (describe-variable sym))
