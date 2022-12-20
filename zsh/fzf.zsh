@@ -45,10 +45,10 @@ _fzf_z_widget() {
 zle -N _fzf_z_widget
 bindkey '\ez' _fzf_z_widget
 
-_fzf_cd_widget() {
+_fzf_open_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fd --strip-cwd-prefix --type d --hidden --follow --max-depth 1 --exclude .git --exclude .hg"
+  local cmd="fd --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg"
   if [[ ! $PWD = $HOME/* ]]; then
     cmd="$cmd --maxdepth 1"
   fi
@@ -60,43 +60,7 @@ _fzf_cd_widget() {
   result="$(eval "$cmd" | $fzfcmd)"
   local ret=$?
 
-  if [[ ! -d "$result" ]]; then
-    zle redisplay
-    return
-  fi
-
-  if [[ -n "$LBUFFER" ]]; then
-    LBUFFER+=$result
-    zle redisplay
-    return $ret
-  fi
-
-  cd "$result" || return 1
-  local result_parameter
-  result_parameter=${(q)result}
-  print -sr -- "cd $result_parameter"
-  zle reset-prompt
-  return $ret
-}
-zle -N _fzf_cd_widget
-bindkey '\ec' _fzf_cd_widget
-
-_fzf_editor_widget() {
-  setopt localoptions pipefail 2> /dev/null
-
-  local cmd="fd --strip-cwd-prefix --type f --follow --type l --hidden --max-depth 1 --exclude .DS_Store"
-  if [[ ! $PWD = $HOME/* ]]; then
-    cmd="$cmd --maxdepth 1"
-  fi
-
-  local fzfcmd
-  fzfcmd="$(__fzfcmd)"
-
-  local result
-  result="$(eval "$cmd" | $fzfcmd)"
-  local ret=$?
-
-  if [[ ! -f "$result" ]]; then
+  if [[ ! -e "$result" ]]; then
     zle redisplay
     return
   fi
@@ -109,10 +73,15 @@ _fzf_editor_widget() {
 
   local result_parameter
   result_parameter=${(q)result}
-  eval "$EDITOR $result_parameter" < /dev/tty
-  print -sr -- "$EDITOR $result_parameter"
+  if [[ -d "$result" ]]; then
+    cd "$result" || return 1
+    print -sr -- "cd $result_parameter"
+  else
+    eval "$EDITOR $result_parameter" < /dev/tty
+    print -sr -- "$EDITOR $result_parameter"
+  fi
   zle accept-line
   return $ret
 }
-zle -N _fzf_editor_widget
-bindkey '\eo' _fzf_editor_widget
+zle -N _fzf_open_widget
+bindkey '\eo' _fzf_open_widget
