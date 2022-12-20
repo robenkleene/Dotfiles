@@ -62,6 +62,7 @@
 (require 'robenkleene-objective-c)
 (require 'robenkleene-git-commit)
 (require 'robenkleene-rust)
+(require 'robenkleene-kotlin)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

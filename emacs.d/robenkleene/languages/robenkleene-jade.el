@@ -4,7 +4,7 @@
 
 (eval-when-compile (require 'use-package))
 (use-package jade-mode
-  :defer t)
+  :mode "\\.jade\\'")
 
 ;; TODO: This doesn't work for some reason
 ;; (add-hook 'jade-mode-hook 'robenkleene/highlight-keywords)

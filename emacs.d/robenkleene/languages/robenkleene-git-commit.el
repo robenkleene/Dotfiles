@@ -5,10 +5,11 @@
 (use-package git-commit
   :ensure t
   :config
-  (add-hook 'git-commit-mode-hook
-            (lambda ()
+  ;; :mode ""
+  ;; (add-hook 'git-commit-mode-hook
+  ;;           (lambda ()
 
-              ))
+  ;;             ))
   )
 
 (provide 'robenkleene-git-commit)

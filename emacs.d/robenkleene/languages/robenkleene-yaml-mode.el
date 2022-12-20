@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package yaml-mode :ensure t)
+(use-package yaml-mode
+  :mode "\\.yaml\\'"
+  )
 
 (provide 'robenkleene-yaml-mode)
 ;; Local Variables:

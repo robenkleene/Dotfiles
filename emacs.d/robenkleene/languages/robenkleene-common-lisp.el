@@ -5,7 +5,7 @@
 (eval-when-compile (require 'use-package))
 
 (use-package slime
-  :defer t
+  :mode "\\.cl\\'"
   :config
   (setq inferior-lisp-program "~/.brew/bin/sbcl")
   ;; (define-key robenkleene/lisp-eval-leader-map (kbd "b") (lambda ()
