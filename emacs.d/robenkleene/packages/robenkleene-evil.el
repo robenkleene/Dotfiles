@@ -77,11 +77,14 @@
 
   (evil-mode 1)
   :config
-  ;; Starting modes without Evil enabled
+  ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
+  ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
+  ;; Motion
   (evil-set-initial-state 'help-mode 'motion)
   (evil-set-initial-state 'compilation-mode 'motion)
+  (evil-set-initial-state 'package-menu-mode 'motion)
   ;; Not sure why this isn't necessary
 
   ;; This starts commit editing in insert mode
@@ -93,16 +96,15 @@
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
   (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
-  (define-key robenkleene/evil-leader-map (kbd "l") 'helm-occur)
-  (define-key robenkleene/evil-leader-map (kbd "q") 'helm-resume)
+  (define-key robenkleene/evil-leader-map (kbd "l") 'consult-occur)
   (define-key robenkleene/evil-leader-map (kbd "b")
-    'helm-buffers-list)
+    'consult-buffer)
   (define-key robenkleene/evil-leader-map (kbd "F")
-    'robenkleene/helm-recursive-find-file)
+    'consult-find)
   (define-key robenkleene/evil-leader-map (kbd "/")
-    'robenkleene/helm-ag-in-directory)
+    'consult-ripgrep)
   (define-key robenkleene/evil-leader-map (kbd "i")
-    'helm-semantic-or-imenu)
+    'consult-imenu)
   (define-key robenkleene/evil-leader-map (kbd "w")
     'toggle-truncate-lines)
   (define-key robenkleene/evil-leader-map (kbd "=")

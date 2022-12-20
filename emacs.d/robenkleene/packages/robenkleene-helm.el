@@ -22,7 +22,7 @@
   ;;       ("a" . robenkleene/helm-ag-in-directory)
   ;;       )
   (:map dired-mode-map
-        ("M-a" . robenkleene/helm-ag-in-directory)
+        ;; ("M-a" . robenkleene/helm-ag-in-directory)
         ("M-o" . robenkleene/helm-recursive-find-file)
         ("M-e" . robenkleene/helm-recursive-find-file)
         ("M-c" . robenkleene/helm-recursive-find-dir)
