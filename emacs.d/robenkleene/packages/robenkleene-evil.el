@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
 (use-package evil
   :commands (evil-mode)
   :init

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package csv-mode
-  :ensure t
   :mode "\\.csv\\'")
 
 (provide 'robenkleene-csv)

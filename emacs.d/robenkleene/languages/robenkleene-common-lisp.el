@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
-
 (use-package slime
   :mode "\\.cl\\'"
   :config
