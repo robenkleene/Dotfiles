@@ -170,10 +170,11 @@
    `(helm-grep-file ((t (:inherit link :underline nil))))
 
    ;; Whitespace
-   `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background nil))))
-   `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background nil))))
-   `(whitespace-tab ((t (:inherit rk-whitespace :background nil))))
-   `(trailing-whitespace ((t (:inherit rk-whitespace :background nil))))
+   `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
+   `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
+   `(whitespace-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
+   `(trailing-whitespace ((t (:inherit rk-whitespace :background nil :underline nil))))
+   `(nobreak-space ((t (:inherit rk-whitespace :background nil :underline nil))))
    `(whitespace-line ((t (:inherit rk-warning :background nil))))
 
    ;; show-paren
