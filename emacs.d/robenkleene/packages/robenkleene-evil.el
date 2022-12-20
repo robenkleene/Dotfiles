@@ -79,6 +79,7 @@
   :config
   ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'ibuffer-mode 'emacs)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
   ;; Motion
@@ -198,6 +199,15 @@
     (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key dired-mode-map (kbd ":") 'evil-ex)
+    )
+
+  (with-eval-after-load 'ibuffer
+    (define-key ibuffer-mode-map (kbd "j") 'next-line)
+    (define-key ibuffer-mode-map (kbd "k") 'previous-line)
+    (define-key ibuffer-mode-map (kbd "/") 'evil-ex-search-forward)
+    (define-key ibuffer-mode-map (kbd "?") 'evil-ex-search-backward)
+    (define-key ibuffer-mode-map (kbd "SPC") robenkleene/evil-leader-map)
+    (define-key ibuffer-mode-map (kbd ":") 'evil-ex)
     )
 
   ;; Packages

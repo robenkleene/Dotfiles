@@ -47,6 +47,7 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-c d <down-mouse-1>")
                 #'robenkleene/describe-char-at-mouse-click)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; New Keys
 
