@@ -184,6 +184,7 @@
   ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
+  (evil-set-initial-state 'vterm-mode 'emacs)
   (dolist
       (mode '(
               magit-cherry-mode

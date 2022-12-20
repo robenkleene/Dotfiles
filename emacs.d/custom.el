@@ -69,6 +69,7 @@
  '(markdown-markup-face ((t (:inherit rk-comment))))
  '(markdown-pre-face ((t (:inherit rk-text2))))
  '(markdown-url-face ((t (:inherit rk-comment))))
+ '(nobreak-space ((t (:inherit rk-whitespace :background nil :underline nil))))
  '(region ((t (:background "#45475A"))))
  '(rk-bold ((t (:inherit rk-header))))
  '(rk-callout ((t (:background "#303030"))))
