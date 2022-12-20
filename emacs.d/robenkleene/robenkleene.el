@@ -6,8 +6,6 @@
 ;; in `tmux': `{ infocmp -x screen-256color; printf '\t%s\n' 'ncv@,'; } > /tmp/t
 ;; && tic -x /tmp/t'
 
-(setq-default flycheck-emacs-lisp-load-path 'inherit)
-
 (if (file-exists-p "~/.emacs_local.el")
     (load-file "~/.emacs_local.el")
   )
