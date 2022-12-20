@@ -2,9 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
 (use-package swift-mode
-  :defer t
+  :mode "\\.swift\\'"
   :config
   (add-hook 'swift-mode-hook
             (lambda ()

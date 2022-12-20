@@ -2,11 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-hook 'sh-mode-hook
-          (lambda ()
+;; (add-hook 'sh-mode-hook
+;;           (lambda ()
 
-            )
-          )
+;;             )
+;;           )
 
 (provide 'robenkleene-bash)
 ;; Local Variables:

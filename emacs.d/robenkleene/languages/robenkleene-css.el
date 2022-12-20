@@ -2,12 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-hook 'scss-mode-hook
-          (lambda ()
-            (setq-local robenkleene/format-program "prettier --parser scss")
+;; (add-hook 'scss-mode-hook
+;;           (lambda ()
 
-            )
-          )
+;;             )
+;;           )
 
 (provide 'robenkleene-css)
 ;; Local Variables:
