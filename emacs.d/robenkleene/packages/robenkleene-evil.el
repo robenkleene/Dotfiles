@@ -76,21 +76,6 @@
 
   (evil-mode 1)
   :config
-  ;; Emacs
-  (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'ibuffer-mode 'emacs)
-  (evil-set-initial-state 'magit-status-mode 'emacs)
-  ;; Insert
-  (evil-set-initial-state 'eshell-mode 'insert)
-  ;; Motion
-  (evil-set-initial-state 'help-mode 'motion)
-  (evil-set-initial-state 'compilation-mode 'motion)
-  (evil-set-initial-state 'package-menu-mode 'motion)
-  (evil-set-initial-state 'debugger-mode 'motion)
-  ;; Not sure why this isn't necessary
-
-  ;; This starts commit editing in insert mode
-  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
@@ -192,6 +177,37 @@
                            'evil-visual-activate-hook t)))
 
   ;; Modes
+
+  ;; This starts commit editing in insert mode
+  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
+
+  ;; Emacs
+  (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'ibuffer-mode 'emacs)
+  (dolist
+      (mode '(
+              magit-cherry-mode
+              magit-diff-mode
+              magit-log-mode
+              magit-log-select-mode
+              magit-popup-mode
+              magit-popup-sequence-mode
+              magit-process-mode
+              magit-reflog-mode
+              magit-refs-mode
+              magit-revision-mode
+              magit-stash-mode
+              magit-stashes-mode
+              magit-status-mode
+              ))
+    (evil-set-initial-state mode 'emacs))
+  ;; Insert
+  (evil-set-initial-state 'eshell-mode 'insert)
+  ;; Motion
+  (evil-set-initial-state 'help-mode 'motion)
+  (evil-set-initial-state 'compilation-mode 'motion)
+  (evil-set-initial-state 'package-menu-mode 'motion)
+  (evil-set-initial-state 'debugger-mode 'motion)
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "j") 'next-line)
     (define-key dired-mode-map (kbd "k") 'previous-line)
@@ -214,17 +230,30 @@
     )
 
   (with-eval-after-load 'magit
-    ;; magit-cherry-mode magit-diff-mode magit-log-mode magit-log-select-mode
-    ;; magit-popup-mode magit-popup-sequence-mode magit-process-mode
-    ;; magit-reflog-mode magit-refs-mode magit-revision-mode magit-stash-mode
-    ;; magit-stashes-mode magit-status-mode
-    (define-key magit-status-mode-map (kbd "j") 'next-line)
-    (define-key magit-status-mode-map (kbd "k") 'previous-line)
-    (define-key magit-status-mode-map (kbd "/") 'evil-ex-search-forward)
-    (define-key magit-status-mode-map (kbd "?") 'evil-ex-search-backward)
-    (define-key magit-status-mode-map (kbd "SPC") robenkleene/evil-leader-map)
-    (define-key magit-status-mode-map (kbd ":") 'evil-ex)
-    )
+    (dolist
+        (map (list
+              ;; magit-cherry-mode-map
+              ;; magit-diff-mode-map
+              ;; magit-log-mode-map
+              ;; magit-log-select-mode-map
+              ;; magit-popup-mode-map
+              ;; magit-popup-sequence-mode-map
+              ;; magit-process-mode-map
+              ;; magit-reflog-mode-map
+              ;; magit-refs-mode-map
+              ;; magit-revision-mode-map
+              ;; magit-stash-mode-map
+              ;; magit-stashes-mode-map
+              magit-status-mode-map
+              )
+             )
+      (define-key map (kbd "j") 'next-line)
+      (define-key map (kbd "k") 'previous-line)
+      (define-key map (kbd "/") 'evil-ex-search-forward)
+      (define-key map (kbd "?") 'evil-ex-search-backward)
+      (define-key map (kbd "SPC") robenkleene/evil-leader-map)
+      (define-key map (kbd ":") 'evil-ex)
+      ))
 
   ;; Packages
   (use-package evil-visualstar
