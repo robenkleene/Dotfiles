@@ -12,7 +12,7 @@
   (:map dired-mode-map
         ;; ("M-a" . consult-ripgrep)
         ;; ("M-o" . consult-find)
-        ;; ("M-z" . robenkleene/consult-z)
+        ("M-z" . robenkleene/consult-z)
         )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is

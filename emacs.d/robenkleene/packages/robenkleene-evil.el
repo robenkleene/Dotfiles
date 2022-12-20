@@ -219,6 +219,8 @@
     (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key dired-mode-map (kbd ":") 'evil-ex)
+    (define-key dired-mode-map (kbd "g") nil)
+    (define-key dired-mode-map (kbd "g h") 'robenkleene/dired-toggle-hidden)
     )
 
   (with-eval-after-load 'ibuffer
