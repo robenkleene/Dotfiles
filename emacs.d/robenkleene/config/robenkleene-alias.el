@@ -5,8 +5,6 @@
 ;; The usual alias for this, `gcd' conflicts with a built-in common lisp
 ;; function with the same name
 (defalias 'cdg 'robenkleene/go-to-project-root)
-(defalias 'tdb 'toggle-debug-on-error)
-(defalias 'df 'delete-frame)
 (defalias 'rg 'robenkleene/rg)
 (defalias 'oi 'robenkleene/edit-init)
 (defalias 'esh 'eshell)
