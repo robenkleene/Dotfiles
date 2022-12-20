@@ -122,7 +122,7 @@
 
 ;; Disable showing tooltips in the modeline, this conflicts with seeing flycheck
 ;; errors
-(global-eldoc-mode -1)
+;; (global-eldoc-mode -1)
 
 ;; Use shift arrow keys to switch windows
 ;; Note for this to work by default on OS X, these new keys need to be defined
