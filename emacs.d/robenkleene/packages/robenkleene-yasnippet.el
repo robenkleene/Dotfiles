@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
-
 (use-package yasnippet
   :commands yas-minor-mode
   :init

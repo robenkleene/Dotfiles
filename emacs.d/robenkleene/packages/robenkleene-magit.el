@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
-
 (use-package magit
   :commands (robenkleene/magit-log
              robenkleene/magit-status-startup

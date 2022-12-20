@@ -3,9 +3,7 @@
 ;;; Code:
 
 (use-package git-commit
-  :ensure t
-  :config
-  ;; :mode ""
+  :mode "COMMIT_EDITMSG$"
   ;; (add-hook 'git-commit-mode-hook
   ;;           (lambda ()
 

@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
 (use-package page-break-lines
   :init
   (global-page-break-lines-mode)

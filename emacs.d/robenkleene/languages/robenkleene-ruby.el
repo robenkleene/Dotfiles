@@ -2,9 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile (require 'use-package))
 (use-package enh-ruby-mode
-  :mode ("\\.rb$" "Fastfile$")
+  :mode ("\\.rb\\'" "Fastfile$")
   :interpreter "ruby"
   :config
   (add-hook 'enh-ruby-mode-hook
