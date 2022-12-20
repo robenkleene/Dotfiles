@@ -157,8 +157,12 @@
     (find-file
      (consult--read
       (or (mapcar #'abbreviate-file-name
-                  (split-string (shell-command-to-string "zoxide query --list")
-                                "\n"))
+                  (split-string
+                   (replace-regexp-in-string
+                    "\n$" ""
+                    (shell-command-to-string
+                     "zoxide query --list"))
+                   "\n"))
           (user-error "No recent files"))
       :prompt "Z: "
       :sort nil
