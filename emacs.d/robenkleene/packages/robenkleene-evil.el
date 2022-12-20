@@ -70,14 +70,19 @@
   (advice-add 'evil-add-hjkl-bindings :override #'ignore)
   (setq evil-emacs-state-modes nil)
   (setq evil-insert-state-modes nil)
+  (setq evil-motion-state-modes nil)
+  (setq evil-normal-state-modes nil)
+  (setq evil-operator-state-modes nil)
+  (setq evil-visual-state-modes nil)
 
   (evil-mode 1)
   :config
   ;; Starting modes without Evil enabled
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'eshell-mode 'insert)
+  (evil-set-initial-state 'help-mode 'motion)
+  (evil-set-initial-state 'compilation-mode 'motion)
   ;; Not sure why this isn't necessary
-  ;; (evil-set-initial-state 'help-mode 'motion)
 
   ;; This starts commit editing in insert mode
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
