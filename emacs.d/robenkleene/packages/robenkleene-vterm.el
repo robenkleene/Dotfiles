@@ -14,6 +14,7 @@
   (add-hook 'vterm-mode-hook
             (lambda ()
               (face-remap-add-relative 'nobreak-space '(:background nil))
+              (face-remap-add-relative 'trailing-whitespace '(:background nil))
               ;; (setq nobreak-space 'override-nobreak-space)
               (whitespace-mode 0)
               ))
