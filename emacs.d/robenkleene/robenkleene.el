@@ -39,7 +39,11 @@
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
+;; Completion
 (require 'robenkleene-vertico)
+(require 'robenkleene-orderless)
+(require 'robenkleene-consult)
+(require 'robenkleene-marginalia)
 
 ;; Theme
 (require 'robenkleene-modus)

@@ -79,6 +79,7 @@
   ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
+  (evil-set-initial-state 'magit-mode 'emacs)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
   ;; Motion
@@ -164,6 +165,7 @@
     (define-key evil-motion-state-map (kbd "g y") 'eglot-find-typeDefinition)
     (define-key evil-motion-state-map (kbd "g i") 'eglot-find-implementation)
     (define-key evil-motion-state-map (kbd "g d") 'xref-find-definitions)
+    (define-key evil-motion-state-map (kbd "M-z") 'robenkleene/consult-z)
 
     (define-key evil-normal-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
@@ -207,6 +209,19 @@
     (define-key ibuffer-mode-map (kbd "?") 'evil-ex-search-backward)
     (define-key ibuffer-mode-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key ibuffer-mode-map (kbd ":") 'evil-ex)
+    )
+
+  (with-eval-after-load 'magit
+    ;; magit-cherry-mode magit-diff-mode magit-log-mode magit-log-select-mode
+    ;; magit-popup-mode magit-popup-sequence-mode magit-process-mode
+    ;; magit-reflog-mode magit-refs-mode magit-revision-mode magit-stash-mode
+    ;; magit-stashes-mode magit-status-mode
+    (define-key magit-status-mode-map (kbd "j") 'next-line)
+    (define-key magit-status-mode-map (kbd "k") 'previous-line)
+    (define-key magit-status-mode-map (kbd "/") 'evil-ex-search-forward)
+    (define-key magit-status-mode-map (kbd "?") 'evil-ex-search-backward)
+    (define-key magit-status-mode-map (kbd "SPC") robenkleene/evil-leader-map)
+    (define-key magit-status-mode-map (kbd ":") 'evil-ex)
     )
 
   ;; Packages
