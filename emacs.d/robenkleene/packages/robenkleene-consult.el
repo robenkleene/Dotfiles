@@ -7,12 +7,12 @@
   :commands
   (robenkleene/consult-doc robenkleene/consult-z)
   :bind
-  ("C-c l" . consult-line)
+  ;; Prefer the evil leader bindings
+  ;; ("C-c l" . consult-line)
   (:map dired-mode-map
-        ("M-a" . consult-ripgrep)
-        ("M-o" . consult-find)
-        ;; ("M-z" . consult-recent-file)
-        ("M-z" . robenkleene/consult-z)
+        ;; ("M-a" . consult-ripgrep)
+        ;; ("M-o" . consult-find)
+        ;; ("M-z" . robenkleene/consult-z)
         )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is

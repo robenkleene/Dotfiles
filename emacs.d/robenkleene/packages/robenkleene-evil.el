@@ -79,7 +79,7 @@
   ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
-  (evil-set-initial-state 'magit-mode 'emacs)
+  (evil-set-initial-state 'magit-status-mode 'emacs)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
   ;; Motion
@@ -117,6 +117,8 @@
     'eglot-rename)
   (define-key robenkleene/evil-leader-map (kbd "c")
     'eglot-completion-at-point)
+  (define-key robenkleene/evil-leader-map (kbd "l")
+    'consult-line)
 
   (with-eval-after-load 'evil-maps
     ;; Normal
