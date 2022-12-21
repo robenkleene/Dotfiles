@@ -5,7 +5,10 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :commands
-  (robenkleene/consult-doc robenkleene/consult-z robenkleene/consult-fd)
+  (robenkleene/consult-doc
+   robenkleene/consult-z
+   robenkleene/consult-fd
+   robenkleene/consult-fd-pwd)
   :bind
   ;; Prefer the evil leader bindings
   ;; ("C-c l" . consult-line)
@@ -99,6 +102,16 @@
     "`consult-find with fd'."
     (interactive "P")
     (let ((consult-find-command "fd --type f --color=never --hidden --exclude .git/ --exclude .hg/ --exclude .DS_Store"))
+      (consult-find dir initial)))
+
+  (defun robenkleene/consult-fd-pwd (&optional dir initial)
+    "`consult-find with fd'."
+    (interactive "P")
+    (let* (
+           (default-directory (getenv "PWD"))
+           (consult-find-command
+            "fd --type f --color=never --hidden --exclude .git/ --exclude .hg/ --exclude .DS_Store")
+           )
       (consult-find dir initial)))
 
   (defun robenkleene/consult-doc ()
