@@ -72,7 +72,7 @@ Otherwise, call `backward-kill-word'."
   )
 
 (defun robenkleene/new-clipboard ()
-  "Open a new buffer named Untitled."
+  "Switch a new buffer with the clipboard contents."
   (interactive)
   (switch-to-buffer (robenkleene/new-empty-buffer))
   (yank)
@@ -130,37 +130,6 @@ Otherwise, call `backward-kill-word'."
                                         (shell-quote-argument title))
                                 )
        )
-      )
-    )
-  )
-
-(defun robenkleene/cdg-readme ()
-  "Open README in the git root."
-  (interactive)
-  (let* ((dir (shell-command-to-string
-               "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'"))
-         (file-path (concat dir "/README.md")))
-    (if (file-exists-p file-path)
-        (find-file file-path)
-      (message "file-path = %s." file-path)
-      )
-    )
-  )
-
-(defun robenkleene/readme ()
-  "Open README in the current directory or git root."
-  (interactive)
-  (let ((file-path (concat default-directory "README.md")))
-    (if (file-exists-p file-path)
-        (find-file file-path)
-      (let* ((dir (shell-command-to-string
-                   "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'"))
-             (file-path (concat dir "/README.md")))
-        (if (file-exists-p file-path)
-            (find-file file-path)
-          (message "file-path = %s." file-path)
-          )
-        )
       )
     )
   )
@@ -452,7 +421,18 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/go-to-project-root ()
+(defun robenkleene/hg-cd ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string
+              "hg root 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
+(defun robenkleene/hg-cd ()
   "Got to the project root."
   (interactive)
   (let ((dir (shell-command-to-string
@@ -461,6 +441,12 @@ With prefix arg, find the previous file."
         (find-file dir)
       )
     )
+  )
+
+(defun robenkleene/pwd-cd ()
+  "Got to the project root."
+  (interactive)
+  (find-file (getenv "PWD"))
   )
 
 (defun robenkleene/open-in-xcode ()
