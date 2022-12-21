@@ -110,19 +110,6 @@
     'robenkleene/toggle-grep-buffer)
 
   (with-eval-after-load 'evil-maps
-    ;; Normal
-    (define-key evil-normal-state-map (kbd "C-w t")
-      (lambda () (interactive) (make-frame) (other-frame 1)))
-    (define-key evil-normal-state-map (kbd "C-w C-t")
-      (lambda () (interactive) (make-frame) (other-frame 1)))
-    (define-key evil-normal-state-map (kbd "C-w p")
-      (lambda () (interactive) (other-frame -1)))
-    (define-key evil-normal-state-map (kbd "C-w n")
-      'other-frame)
-    (define-key evil-normal-state-map (kbd "C-w C-p")
-      (lambda () (interactive) (other-frame -1)))
-    (define-key evil-normal-state-map (kbd "C-w C-n")
-      'other-frame)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "_") 'ibuffer)
     (define-key evil-normal-state-map (kbd "M-.") nil)
@@ -146,6 +133,7 @@
     (define-key evil-motion-state-map [down-mouse-1] nil)
     ;; Motion
     ;; Motion binds normal and visual
+    (define-key evil-motion-state-map (kbd "C-w") robenkleene/window-map)
     (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)

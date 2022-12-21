@@ -313,6 +313,8 @@
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
 
+(tab-bar-mode)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
