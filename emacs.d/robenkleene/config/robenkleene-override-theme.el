@@ -152,9 +152,11 @@
    ;; This doesn't work for some reason?
    ;; `(region ((t (:inherit rk-match))))
    ;; `(region ((t (:background "#45475A"))))
+
    ;; Using bold on the current line caused a bug where the current line
    ;; sometimes shifted slightly
-   `(line-number-current-line ((t (:bold nil))))
+   ;; `(line-number-current-line ((t (:bold nil :background nil))))
+   ;; `(line-number-current-line ((t (:bold nil))))
 
    ;; Packages
 
