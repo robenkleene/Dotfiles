@@ -11,7 +11,6 @@
   ;; ("C-c l" . consult-line)
   (:map dired-mode-map
         ;; ("M-a" . consult-ripgrep)
-        ;; ("M-o" . consult-find)
         ("M-z" . robenkleene/consult-z)
         )
 
