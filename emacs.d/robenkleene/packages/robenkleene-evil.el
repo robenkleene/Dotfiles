@@ -87,7 +87,7 @@
   (define-key robenkleene/evil-leader-map (kbd "b")
     'consult-buffer)
   (define-key robenkleene/evil-leader-map (kbd "F")
-    'consult-find)
+    'robenkleene/consult-fd)
   (define-key robenkleene/evil-leader-map (kbd "/")
     'consult-ripgrep)
   (define-key robenkleene/evil-leader-map (kbd "i")

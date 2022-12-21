@@ -5,7 +5,7 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :commands
-  (robenkleene/consult-doc robenkleene/consult-z)
+  (robenkleene/consult-doc robenkleene/consult-z robenkleene/consult-fd)
   :bind
   ;; Prefer the evil leader bindings
   ;; ("C-c l" . consult-line)
@@ -95,6 +95,12 @@
       :state (consult--file-preview)
       :history 'file-name-history)))
 
+  (defun robenkleene/consult-fd (&optional dir initial)
+    "`consult-find with fd'."
+    (interactive "P")
+    (let ((consult-find-command "fd --type f --color=never --hidden --exclude .git/ --exclude .hg/ --exclude .DS_Store"))
+      (consult-find dir initial)))
+
   (defun robenkleene/consult-doc ()
     "Doc using `completing-read'."
     (interactive)
@@ -114,7 +120,7 @@
         :require-match t
         :category 'file
         :state (consult--file-preview)
-        :history 'file-name-history))  
+        :history 'file-name-history))
       )
     )
 
