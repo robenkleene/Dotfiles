@@ -442,6 +442,20 @@ With prefix arg, find the previous file."
   (switch-to-buffer-other-window "*eshell*")
   (eshell))
 
+(defun robenkleene/toggle-grep-buffer ()
+  "Toggle grep buffer."
+  (interactive)
+
+  (if (get-buffer "*grep*")
+      (let ((win (get-buffer-window "*grep*" 'visible)))
+        (if win
+            (delete-window win)
+          (switch-to-buffer-other-window "*grep*")
+          )
+        )
+    )
+  )
+
 (defun robenkleene/highlight-keywords ()
   "Highlight keywords."
   (interactive)
