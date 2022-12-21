@@ -124,6 +124,7 @@
     (define-key evil-normal-state-map (kbd "C-w C-n")
       'other-frame)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
+    (define-key evil-normal-state-map (kbd "_") 'ibuffer)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (defun robenkleene/ispell-save-word ()
@@ -234,6 +235,8 @@
     (define-key ibuffer-mode-map (kbd "?") 'evil-ex-search-backward)
     (define-key ibuffer-mode-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key ibuffer-mode-map (kbd ":") 'evil-ex)
+    (define-key dired-mode-map (kbd "-") 'dired-jump)
+    (define-key dired-mode-map (kbd "_") 'ibuffer)
     )
 
   (with-eval-after-load 'magit
@@ -260,6 +263,8 @@
       (define-key map (kbd "?") 'evil-ex-search-backward)
       (define-key map (kbd "SPC") robenkleene/evil-leader-map)
       (define-key map (kbd ":") 'evil-ex)
+      (define-key dired-mode-map (kbd "-") 'dired-jump)
+      (define-key dired-mode-map (kbd "_") 'ibuffer)
       ))
 
   ;; Packages
