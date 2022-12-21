@@ -265,7 +265,7 @@ Otherwise, call `backward-kill-word'."
 
 (defvar-local robenkleene/archive-function nil)
 (defun robenkleene/archive-and-delete ()
-  "Make a wiki link from a file named after the region."
+  "Archive the current file or region."
   (interactive)
   (if (bound-and-true-p robenkleene/archive-function)
       (call-interactively robenkleene/archive-function)
@@ -376,19 +376,6 @@ With prefix arg, find the previous file."
                  (length files))))
       (find-file (nth pos files)))))
 
-(defun robenkleene/web-search ()
-  "Make a wiki link from a file named after the region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command (concat "~/.bin/web_search "
-                             (shell-quote-argument
-                              (buffer-substring (region-beginning)
-                                                (region-end))))
-                     )
-    )
-  )
-
-
 
 (defun robenkleene/generate-tags ()
   "Generate tags."
@@ -401,22 +388,6 @@ With prefix arg, find the previous file."
   (let ((tags-file (locate-dominating-file default-directory "TAGS")))
     (when tags-file
       (visit-tags-table tags-file)
-      )
-    )
-  )
-
-(defun robenkleene/external-editor ()
-  "Open a region or buffer in external editor."
-  (interactive)
-  (if (use-region-p)
-      (progn
-        (shell-command-on-region (region-beginning) (region-end) "mate -a")
-        (deactivate-mark)
-        )
-    (if (buffer-file-name)
-        (shell-command (concat "mate -a "
-                               (shell-quote-argument buffer-file-name))
-                       )
       )
     )
   )
@@ -542,35 +513,30 @@ With prefix arg, find the previous file."
   (robenkleene/ido-recursive-get-file-or-dir
    robenkleene/documentation-directory-path "\"^[^.]+\\$|.*\\.md\" "))
 
-(defvar robenkleene/org-directory-path "~/Developer/Scratch/Org")
-(defun robenkleene/emacs-org ()
-  "Open Emacs documentation directory."
-  (interactive)
-  (find-file-other-window robenkleene/org-directory-path)
-  )
-
-(defun robenkleene/print-variable ()
-  "Replace the current line with a variable print statement."
-  (interactive)
-  (let ((extension (file-name-extension (buffer-file-name))))
-    (if extension
-        (shell-command-on-region
-         (line-beginning-position)
-         (line-end-position)
-         (format "variable-print -l %s" extension)
-         nil
-         t)
+(defun robenkleene/bounds-of-selection-or-word ()
+  "Get the bounds of the selection or word."
+  (if (use-region-p)
+      (list (region-beginning) (region-end))
+    (let ((bounds (bounds-of-thing-at-point 'word)) )
+      (list (car bounds) (cdr bounds))
       )
     )
   )
 
-(defun robenkleene/kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc 'kill-buffer (cdr (buffer-list (current-buffer)))
-        )
+(defun robenkleene/selection-or-word ()
+  "My function description."
+  (let ((selection (apply 'buffer-substring-no-properties
+                          (robenkleene/bounds-of-selection-or-word))))
+    (if (= (length selection) 0) nil selection))
   )
-(defalias 'kill-other-buffers 'robenkleene/kill-other-buffers)
+
+(defun robenkleene/source-control-open-web (&optional arg)
+  "Open the source control website for the current repository with ARG."
+  (interactive)
+  (shell-command (concat "~/.bin/source_control_open_site "
+                         arg)
+                 )
+  )
 
 (defun robenkleene/grep-parameters (&optional regexp files dir)
   "Get the parameters for grep.  REGEXP FILES DIR."
@@ -597,73 +563,9 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/bounds-of-selection-or-word ()
-  "Get the bounds of the selection or word."
-  (if (use-region-p)
-      (list (region-beginning) (region-end))
-    (let ((bounds (bounds-of-thing-at-point 'word)) )
-      (list (car bounds) (cdr bounds))
-      )
-    )
-  )
-
-(defun robenkleene/selection-or-word ()
-  "My function description."
-  (let ((selection (apply 'buffer-substring-no-properties
-                          (robenkleene/bounds-of-selection-or-word))))
-    (if (= (length selection) 0) nil selection))
-  )
-
-(defun robenkleene/rg-selection ()
-  "Run `rg' on the selection.  BEG END."
-  (interactive)
-  (apply 'robenkleene/rg
-         (robenkleene/grep-parameters (robenkleene/selection-or-word))
-         )
-  )
-
-;; (defun robenkleene/rg-selection-in-directory (dir)
-;;   "Call `rg' in the current directory or with prefix specify a directory."
-;;   (interactive
-;;    (list
-;;     (if current-prefix-arg
-;;         (read-directory-name "Base directory: ")
-;;       default-directory)))
-;;   (let ((current-prefix-arg nil))
-;;     (apply 'robenkleene/rg
-;;            (robenkleene/grep-parameters (robenkleene/selection-or-word)
-;;                                         nil
-;;                                         dir)
-;;            )
-;;     )
-;;   )
-
-;; (defvar robenkleene/rg-command-files)
-;; (setq robenkleene/rg-command-files
-;;       "rg --smart-case --no-heading --glob \"<F>\" <R> <D>")
 (defvar robenkleene/rg-command)
-(setq robenkleene/rg-command "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number <R> <D>")
-
-(defun robenkleene/source-control-directory ()
-  "Return the source control directory or nil."
-  (locate-dominating-file default-directory
-                          ".git")
-  )
-
-(defun robenkleene/rg-source-control ()
-  "Run `rg' in source control directory."
-  (interactive)
-  (cd (robenkleene/source-control-directory))
-  (call-interactively 'robenkleene/rg)
-  )
-
-(defun robenkleene/source-control-open-web (&optional arg)
-  "Open the source control website for the current repository with ARG."
-  (interactive)
-  (shell-command (concat "~/.bin/source_control_open_site "
-                         arg)
-                 )
-  )
+(setq robenkleene/rg-command
+      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number <R> <D>")
 
 (defun robenkleene/rg (regexp &optional files dir)
   "Search for REGEXP with optional FILES and DIR."
@@ -720,15 +622,6 @@ With prefix arg, find the previous file."
   (require 'grep)
   (compilation-start
    "hg diff --root . | diff_to_grep"
-   'grep-mode)
-  )
-
-(defun robenkleene/hg-diff-bottom-grep ()
-  "Search for REGEXP with optional FILES and DIR."
-  (interactive)
-  (require 'grep)
-  (compilation-start
-   "hg diff --root . -r \"bottom^\" | diff_to_grep"
    'grep-mode)
   )
 
@@ -883,17 +776,6 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/open-scratch-other-window ()
-  "Switch to scratch for current buffer in other window."
-  (interactive)
-  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
-    (if (bound-and-true-p file)
-        (find-file-other-window file)
-      (message "No file found.")
-      )
-    )
-  )
-
 (defun robenkleene/inbox ()
   "Switch to inbox directory or make new inbox document."
   (interactive)
@@ -953,6 +835,17 @@ With prefix arg, find the previous file."
   "Switch to messages buffer."
   (interactive)
   (switch-to-buffer "*Messages*")
+  )
+
+(defun robenkleene/open-scratch-other-window ()
+  "Switch to scratch for current buffer in other window."
+  (interactive)
+  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+    (if (bound-and-true-p file)
+        (find-file-other-window file)
+      (message "No file found.")
+      )
+    )
   )
 
 (defun robenkleene/open-scratch-for-file ()
