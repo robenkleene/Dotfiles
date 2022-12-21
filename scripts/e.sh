@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/emacsclient_wrapper "$@"
+exec emacsclient -nw "$@"
