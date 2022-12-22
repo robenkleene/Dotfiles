@@ -215,6 +215,7 @@
     (define-key dired-mode-map (kbd ":") 'evil-ex)
     (define-key dired-mode-map (kbd "Z") nil)
     (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
+    (define-key dired-mode-map (kbd "Z Z") 'evil-quit)
     ;; Dired
     (define-key dired-mode-map (kbd "-") 'dired-jump)
     (define-key dired-mode-map (kbd "g") nil)
@@ -232,6 +233,7 @@
     (define-key dired-mode-map (kbd ":") 'evil-ex)
     (define-key dired-mode-map (kbd "Z") nil)
     (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
+    (define-key dired-mode-map (kbd "Z Z") 'evil-quit)
     )
 
   (with-eval-after-load 'magit
@@ -262,6 +264,7 @@
       (define-key dired-mode-map (kbd ":") 'evil-ex)
       (define-key dired-mode-map (kbd "Z") nil)
       (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
+      (define-key dired-mode-map (kbd "Z Z") 'evil-quit)
       ))
 
   ;; Packages
