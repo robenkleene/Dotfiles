@@ -322,6 +322,9 @@
 ;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
 
+;; Use `completion' if line is already indented
+;; (setq tab-always-indent 'complete)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
