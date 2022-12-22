@@ -68,6 +68,10 @@ let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
 # let-env VISUAL = $"($env.VIM_COMMAND)"
 let-env VISUAL = $"($env.EMACS_COMMAND)"
 let-env EDITOR = $"($env.VISUAL)"
+# Without explicitely specifying `less` as the pager, Linux will use the
+# wrong version of `less` (system installed, which doesn't support the
+# `incsearch` option instead of Homebrew installed.
+let-env PAGER = "less"
 let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 
 # hx
