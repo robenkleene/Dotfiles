@@ -960,15 +960,20 @@ With prefix arg, find the previous file."
   )
 
 (defun robenkleene/kill-filename ()
-  "Copy the filename to the kill ring."
+  "Kill `buffer-name'"
   (interactive)
   (kill-new (buffer-name))
   )
 
 (defun robenkleene/kill-dir ()
-  "Copy the directory into the kill ring."
+  "Kill `default-directory'."
   (interactive)
   (kill-new default-directory))
+
+(defun robenkleene/kill-today ()
+  "Kill the today's date."
+  (interactive)
+  (kill-new (robenkleene/today)))
 
 ;;; describe this point lisp only
 (defun robenkleene/describe-thing-at-point ()
