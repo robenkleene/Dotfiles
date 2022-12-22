@@ -9,7 +9,7 @@ if [[ -n "${1-}" ]]; then
   # --because `--eval` can't be combined with opening files
   # This also probably wouldn't be ideal because the `PWD` environment variable
   # is scoped to multiple `emacsclient`
-  exec emacsclient -nw "$@" --eval "(setenv \"PWD\" \"$PWD\")"
+  exec emacsclient -nw "$@"
 else
   exec emacsclient -nw .
 fi
