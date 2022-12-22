@@ -111,7 +111,6 @@
 
   (with-eval-after-load 'evil-maps
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
-    (define-key evil-normal-state-map (kbd "_") 'ibuffer)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (defun robenkleene/ispell-save-word ()
