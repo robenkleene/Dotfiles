@@ -201,6 +201,9 @@
   (evil-set-initial-state 'compilation-mode 'motion)
   (evil-set-initial-state 'package-menu-mode 'motion)
   (evil-set-initial-state 'debugger-mode 'motion)
+  ;; Mode that happens when an error is hit
+  (evil-set-initial-state 'special-mode 'motion)
+
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "j") 'next-line)
     (define-key dired-mode-map (kbd "k") 'previous-line)
