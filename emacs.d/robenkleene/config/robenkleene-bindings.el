@@ -49,6 +49,7 @@
                 #'robenkleene/describe-char-at-mouse-click)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-o") 'find-file)
+(global-set-key (kbd "M-<tab>") 'completion-at-point)
 
 ;; New Keys
 
