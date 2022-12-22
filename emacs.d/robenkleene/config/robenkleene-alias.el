@@ -40,10 +40,11 @@
 (defalias 'enew 'robenkleene/new-empty)
 
 ;; Text
-(defalias 'daily 'robenkleene/open-daily)
 (defalias 'clip 'robenkleene/new-clipboard)
 (defalias 'inbox 'robenkleene/inbox)
 (defalias 'inbox-new 'robenkleene/new-inbox-document)
+(defalias 'daily 'robenkleene/daily)
+(defalias 'daily-new 'robenkleene/daily-new)
 
 ;; Slug Project
 (defalias 'slug-project 'robenkleene/slug-project)
