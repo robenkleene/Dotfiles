@@ -18,6 +18,11 @@
 (defalias 'archive-current-file 'robenkleene/archive-current-file)
 (defalias 'today 'robenkleene/today)
 
+;; Kill
+(defalias 'kill-path 'robenkleene/kill-path)
+(defalias 'kill-dir 'robenkleene/kill-dir)
+(defalias 'kill-filename 'robenkleene/kill-filename)
+
 ;; cd
 (defalias 'git-cd 'robenkleene/git-cd)
 (defalias 'hg-cd 'robenkleene/hg-cd)

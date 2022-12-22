@@ -952,20 +952,20 @@ With prefix arg, find the previous file."
             (comment-or-uncomment-region $lbp $lep)
             (forward-line )))))))
 
-(defun robenkleene/yank-filepath ()
+(defun robenkleene/kill-path ()
   "Copy the filename to the kill ring."
   (interactive)
   (kill-new (buffer-file-name))
   (message (buffer-file-name))
   )
 
-(defun robenkleene/yank-filename ()
+(defun robenkleene/kill-filename ()
   "Copy the filename to the kill ring."
   (interactive)
   (kill-new (buffer-name))
   )
 
-(defun robenkleene/yank-directory ()
+(defun robenkleene/kill-dir ()
   "Copy the directory into the kill ring."
   (interactive)
   (kill-new default-directory))
