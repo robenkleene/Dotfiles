@@ -1,5 +1,0 @@
-# key: filenamen
-# name: filenamen
-# condition: 'force-in-comment
-# --
-`(file-name-sans-extension (file-name-nondirectory buffer-file-name))`
