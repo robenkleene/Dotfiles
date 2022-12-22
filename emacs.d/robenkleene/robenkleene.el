@@ -46,6 +46,7 @@
 (require 'robenkleene-orderless)
 (require 'robenkleene-consult)
 (require 'robenkleene-marginalia)
+(require 'robenkleene-embark)
 
 ;; Theme
 (require 'robenkleene-modus)
