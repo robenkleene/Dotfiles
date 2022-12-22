@@ -323,7 +323,7 @@
 (tab-bar-mode)
 
 ;; Use `completion' if line is already indented
-;; (setq tab-always-indent 'complete)
+(setq tab-always-indent 'complete)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
