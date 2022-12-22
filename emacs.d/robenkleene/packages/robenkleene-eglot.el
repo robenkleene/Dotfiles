@@ -3,7 +3,11 @@
 ;;; Code:
 
 (use-package eglot
-  :hook (((c-mode c++-mode rust-mode) . eglot-ensure))
+  :hook (((c-mode
+           c++-mode
+           rust-mode
+           sh-mode) . eglot-ensure)
+         )
   :bind (:map eglot-mode-map
               ("C-c g r" . xref-find-references)
               ("C-c g y" . eglot-find-typeDefinition)
@@ -24,6 +28,7 @@
   ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
   (add-to-list 'eglot-server-programs '((rust-mode) "rust-analyzer"))
+  (add-to-list 'eglot-server-programs '((shell-script-mode) "bash-language-server"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
