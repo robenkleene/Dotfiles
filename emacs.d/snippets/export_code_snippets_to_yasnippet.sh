@@ -12,9 +12,8 @@ if [[ ! -d $HOME"/.config/Code/User/snippets" ]]; then
   exit 1
 fi
 
-
-
 if [[ ! -d $HOME"/.emacs.d/snippets" ]]; then
   echo "YASnippet dir ~/.emacs.d/snippets not found" >&2
   exit 1
 fi
+
