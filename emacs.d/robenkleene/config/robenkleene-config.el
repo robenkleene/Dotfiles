@@ -313,6 +313,13 @@
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
 
+;; Don't show tab bar for one tab
+(setq tab-bar-show 1)
+;; Don't show close button
+(setq tab-bar-close-button-show nil)
+;; Hide plus button and other extras
+(setq tab-bar-format '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))
+;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
 
 (provide 'robenkleene-config)
