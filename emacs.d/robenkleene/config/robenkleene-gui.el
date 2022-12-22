@@ -137,7 +137,7 @@
 ;; This only works for isearch
 ;; (define-key minibuffer-local-map (kbd "ESC") 'keyboard-escape-quit)
 ;; This one works
-(define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;
+;; (define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;
 
 ;; Hide line break indicator
 (setf (cdr (assq 'continuation fringe-indicator-alist))
