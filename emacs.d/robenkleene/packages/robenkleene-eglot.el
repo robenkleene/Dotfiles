@@ -6,6 +6,7 @@
   :hook (((c-mode
            c++-mode
            rust-mode
+           ruby-mode
            sh-mode) . eglot-ensure)
          )
   :bind (:map eglot-mode-map
@@ -29,6 +30,7 @@
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
   (add-to-list 'eglot-server-programs '((rust-mode) "rust-analyzer"))
   (add-to-list 'eglot-server-programs '((shell-script-mode) "bash-language-server"))
+  (add-to-list 'eglot-server-programs '((ruby-mode) "solargraph"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
