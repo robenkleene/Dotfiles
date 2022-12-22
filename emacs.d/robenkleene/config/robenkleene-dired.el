@@ -18,6 +18,9 @@
 
   (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+  ;; Disable `dired' defaulting to current file completed in `find-file`
+  (define-key dired-mode-map (kbd "C-x C-f")
+    (lambda () (interactive) (call-interactively 'find-file)))
   (define-key dired-mode-map (kbd "M-o")
     (lambda () (interactive) (call-interactively 'find-file)))
 
