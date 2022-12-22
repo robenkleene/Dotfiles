@@ -22,6 +22,7 @@
 (defalias 'kill-path 'robenkleene/kill-path)
 (defalias 'kill-dir 'robenkleene/kill-dir)
 (defalias 'kill-filename 'robenkleene/kill-filename)
+(defalias 'kill-today'robenkleene/kill-today)
 
 ;; cd
 (defalias 'git-cd 'robenkleene/git-cd)
