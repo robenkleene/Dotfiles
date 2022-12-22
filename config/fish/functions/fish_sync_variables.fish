@@ -24,7 +24,9 @@ function fish_sync_variables
     # set -Ux TIG_EDITOR "hx_wrapper"
 
     # Standard
-    # Without explicitely specifying `less` as the pager, Linux will use the wrong version of `less` (system installed, which doesn't support the `incsearch` option instead of Homebrew installed.
+    # Without explicitely specifying `less` as the pager, Linux will use the
+    # wrong version of `less` (system installed, which doesn't support the
+    # `incsearch` option instead of Homebrew installed.
     set -Ux PAGER "less"
     set -Ux LESS "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
     # set -Ux VISUAL "$VIM_COMMAND"
