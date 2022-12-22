@@ -811,14 +811,14 @@ With prefix arg, find the previous file."
   (find-file "~/Archive/Text/")
   )
 
-(defun robenkleene/open-daily ()
-  "Create daily file and switch to it."
+(defun robenkleene/daily-new ()
+  "Switch to daily file, creating it if missing."
   (interactive)
   (robenkleene/safe-find-file
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
-(defun robenkleene/browse-daily ()
+(defun robenkleene/daily ()
   "Switch to daily file."
   (interactive)
   (robenkleene/safe-find-file
@@ -952,20 +952,20 @@ With prefix arg, find the previous file."
             (comment-or-uncomment-region $lbp $lep)
             (forward-line )))))))
 
-(defun robenkleene/kill-path ()
+(defun robenkleene/kill-buffer-file-name ()
   "Copy the filename to the kill ring."
   (interactive)
   (kill-new (buffer-file-name))
   (message (buffer-file-name))
   )
 
-(defun robenkleene/kill-filename ()
+(defun robenkleene/kill-buffer-name ()
   "Kill `buffer-name'"
   (interactive)
   (kill-new (buffer-name))
   )
 
-(defun robenkleene/kill-dir ()
+(defun robenkleene/kill-default-directory ()
   "Kill `default-directory'."
   (interactive)
   (kill-new default-directory))
