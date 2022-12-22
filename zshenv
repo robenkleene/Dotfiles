@@ -50,6 +50,10 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # export VISUAL="$VIM_COMMAND"
 export VISUAL="$EMACS_COMMAND"
 export EDITOR="$VISUAL"
+# Without explicitely specifying `less` as the pager, Linux will use the
+# wrong version of `less` (system installed, which doesn't support the
+# `incsearch` option instead of Homebrew installed.
+export LESS="less"
 export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
