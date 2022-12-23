@@ -1,0 +1,8 @@
+# key: ifuname
+# name: ifuname
+# --
+if [[ "$(uname)" = "Darwin" ]]; then
+  echo "Darwin"
+elif [[ "$(uname)" = "Linux" ]]; then
+  echo "Linux"
+fi

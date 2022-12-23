@@ -1,0 +1,6 @@
+# key: function
+# name: function
+# --
+${1:my_function}() {
+  ${0:echo \$1}
+}

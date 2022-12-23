@@ -1,0 +1,6 @@
+# key: for
+# name: for
+# --
+for i in ${1:0}..${2:10}
+  ${0:puts i}
+end

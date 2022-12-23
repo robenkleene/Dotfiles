@@ -1,0 +1,6 @@
+# key: implementation
+# name: implementation
+# --
+@implementation ${1:MyClass}
+$0
+@end

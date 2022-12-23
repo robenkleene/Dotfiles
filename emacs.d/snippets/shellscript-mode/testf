@@ -1,0 +1,4 @@
+# key: testf
+# name: testf
+# --
+-f "${1:\$1}"

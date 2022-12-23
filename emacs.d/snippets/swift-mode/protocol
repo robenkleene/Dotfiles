@@ -1,0 +1,6 @@
+# key: protocol
+# name: protocol
+# --
+protocol ${1:MyType} {
+    $0
+}

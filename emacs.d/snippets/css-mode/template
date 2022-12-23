@@ -1,0 +1,4 @@
+# key: template
+# name: template
+# --
+["body {\n  color: blue;\n}"]

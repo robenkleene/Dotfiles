@@ -1,0 +1,4 @@
+# key: log
+# name: log
+# --
+NSLog("$0")

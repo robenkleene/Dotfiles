@@ -1,0 +1,4 @@
+# key: grid
+# name: grid
+# --
+["body {\n  background-image: repeating-linear-gradient(#ddd 0 1px, transparent 1px 100%),\n    repeating-linear-gradient(90deg, #ddd 0 1px, transparent 1px 100%);\n  background-size: 8px 8px;\n}"]

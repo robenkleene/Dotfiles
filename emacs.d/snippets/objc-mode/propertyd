@@ -1,0 +1,4 @@
+# key: propertyd
+# name: propertyd
+# --
+@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;

@@ -1,0 +1,4 @@
+# key: testx
+# name: testx
+# --
+-x "$(command -v ${1:ls})"

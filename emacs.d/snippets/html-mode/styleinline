@@ -1,0 +1,8 @@
+# key: styleinline
+# name: styleinline
+# --
+<style>
+  body {
+    color: blue;
+  }
+</style>

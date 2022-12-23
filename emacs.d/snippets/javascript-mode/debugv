@@ -1,0 +1,4 @@
+# key: debugv
+# name: debugv
+# --
+debug("${1:document} " + $1);

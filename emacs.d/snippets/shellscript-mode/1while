@@ -1,0 +1,4 @@
+# key: 1while
+# name: 1while
+# --
+while read i; do { ${0:echo $i} } done

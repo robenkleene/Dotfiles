@@ -1,0 +1,4 @@
+# key: testmac
+# name: testmac
+# --
+"$(uname)" = "Darwin"

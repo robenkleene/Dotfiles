@@ -1,0 +1,6 @@
+# key: whilec
+# name: whilec
+# --
+while ((c = getchar()) != EOF) {
+	$0
+}

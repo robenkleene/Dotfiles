@@ -1,0 +1,4 @@
+# key: testd
+# name: testd
+# --
+-d "${1:\$1}"

@@ -1,0 +1,6 @@
+# key: nonnull
+# name: nonnull
+# --
+NS_ASSUME_NONNULL_BEGIN
+${VISUAL}
+NS_ASSUME_NONNULL_END

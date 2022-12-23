@@ -1,0 +1,4 @@
+# key: linkcss
+# name: linkcss
+# --
+<link rel="stylesheet" type="text/css" href="${0:css/style.css}" />

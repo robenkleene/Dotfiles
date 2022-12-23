@@ -1,0 +1,4 @@
+# key: arr
+# name: arr
+# --
+\${${1:args}[@]}$0

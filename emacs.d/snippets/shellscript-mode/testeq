@@ -1,0 +1,4 @@
+# key: testeq
+# name: testeq
+# --
+${1:$?} -eq ${0:0}

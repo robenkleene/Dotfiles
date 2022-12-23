@@ -1,0 +1,4 @@
+# key: scriptjs
+# name: scriptjs
+# --
+<script type="text/javascript" src="${0:js/script.js}"></script>

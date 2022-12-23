@@ -1,0 +1,8 @@
+# key: interface
+# name: interface
+# --
+NS_ASSUME_NONNULL_BEGIN
+@interface ${1:MyClass} : NSObject
+$0
+@end
+NS_ASSUME_NONNULL_END

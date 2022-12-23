@@ -1,0 +1,6 @@
+# key: extensionc
+# name: extensionc
+# --
+@interface ${1:MyClass} ($2)
+$0
+@end
