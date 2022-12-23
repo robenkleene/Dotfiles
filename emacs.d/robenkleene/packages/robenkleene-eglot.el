@@ -28,9 +28,9 @@
 
   ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-  (add-to-list 'eglot-server-programs '((rust-mode) "rust-analyzer"))
-  (add-to-list 'eglot-server-programs '((shell-script-mode) "bash-language-server"))
-  (add-to-list 'eglot-server-programs '((ruby-mode) "solargraph"))
+  (add-to-list 'eglot-server-programs '(rust-mode "rust-analyzer"))
+  (add-to-list 'eglot-server-programs '(shell-script-mode "bash-language-server"))
+  (add-to-list 'eglot-server-programs '(ruby-mode "solargraph" "socket" "--port" :autoport))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer

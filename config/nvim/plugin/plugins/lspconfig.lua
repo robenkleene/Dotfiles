@@ -78,6 +78,10 @@ require'lspconfig'.html.setup{
   on_attach = on_attach,
 }
 
+require'lspconfig'.solargraph.setup{
+  on_attach = on_attach,
+}
+
 require('lspconfig').sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
