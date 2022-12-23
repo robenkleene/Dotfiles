@@ -52,7 +52,7 @@
 (setq desktop-save t)
 
 ;; Suppress message when saving
-;; (setq save-silently t)
+(setq save-silently t)
 
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
