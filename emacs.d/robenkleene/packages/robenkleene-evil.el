@@ -170,14 +170,14 @@
 
   ;; Modes
 
-  ;; This starts commit editing in insert mode
-  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
-
   ;; Emacs
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
   (evil-set-initial-state 'vterm-mode 'emacs)
   (evil-set-initial-state 'with-editor-mode 'emacs)
+  ;; Alternative way to start git commit in insert mode:
+  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
+
   (dolist
       (mode '(
               magit-cherry-mode
