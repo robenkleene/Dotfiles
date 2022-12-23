@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
-# name: template
 # key: template
+# name: template
 # --
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
+

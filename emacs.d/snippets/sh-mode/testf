@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: testf
 # key: testf
+# name: testf
 # --
 -f "${1:\$1}"

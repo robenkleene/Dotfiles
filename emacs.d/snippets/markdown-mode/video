@@ -1,4 +1,7 @@
-# key: ["video"]
-# name: ["video"]
+# -*- mode: snippet -*-
+# key: video
+# name: video
 # --
-["<video controls>\n  <source src=\"${1:path/to/video}\" type=\"video/mp4\">\n</video>"]
+<video controls>
+  <source src="${1:path/to/video}" type="video/mp4">
+</video>
