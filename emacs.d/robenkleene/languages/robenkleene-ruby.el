@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (provide 'robenkleene-ruby)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
