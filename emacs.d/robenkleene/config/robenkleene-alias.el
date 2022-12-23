@@ -46,6 +46,9 @@
 (defalias 'daily 'robenkleene/daily)
 (defalias 'daily-create 'robenkleene/daily-create)
 
+;; Magit
+(defalias 'ms 'magit-status)
+
 ;; Slug Project
 (defalias 'slug-project 'robenkleene/slug-project)
 (defalias 'slug-project-archive 'robenkleene/slug-project-archive)
