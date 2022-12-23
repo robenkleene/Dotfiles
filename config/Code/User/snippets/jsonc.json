@@ -62,5 +62,5 @@
       "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"name\": \"NPM Start\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"]\n    },\n    {\n      \"name\": \"Debug With Chrome\",\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"env\": {\n        \"BROWSER\": \"none\"\n      },\n      \"runtimeExecutable\": \"npm\",\n      \"runtimeArgs\": [\"run-script\", \"start\"],\n      \"serverReadyAction\": {\n        \"pattern\": \"Starting the development server...\",\n        \"uriFormat\": \"http://localhost:3000\",\n        \"action\": \"debugWithChrome\"\n      }\n    }\n  ]\n}"
     ],
     "description": "Launch Template NPM"
-  },
+  }
 }
