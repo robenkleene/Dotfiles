@@ -955,24 +955,27 @@ With prefix arg, find the previous file."
 (defun robenkleene/kill-buffer-file-name ()
   "Copy the filename to the kill ring."
   (interactive)
-  (kill-new (buffer-file-name))
   (message (buffer-file-name))
+  (kill-new (buffer-file-name))
   )
 
 (defun robenkleene/kill-buffer-name ()
   "Kill `buffer-name'"
   (interactive)
+  (message (buffer-name))
   (kill-new (buffer-name))
   )
 
 (defun robenkleene/kill-default-directory ()
   "Kill `default-directory'."
   (interactive)
+  (message default-directory)
   (kill-new default-directory))
 
 (defun robenkleene/kill-today ()
   "Kill the today's date."
   (interactive)
+  (message (robenkleene/today))
   (kill-new (robenkleene/today)))
 
 ;;; describe this point lisp only
@@ -1031,7 +1034,7 @@ With prefix arg, find the previous file."
 (defun robenkleene/today (&optional arg)
   "Return the current date."
   (interactive)
-  (shell-command "date +%Y-%m-%d | tr -d '\n'")
+  (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
   )
 
 (defun robenkleene/describe-char-at-mouse-click (click-event)

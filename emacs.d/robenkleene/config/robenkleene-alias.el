@@ -19,10 +19,10 @@
 (defalias 'today 'robenkleene/today)
 
 ;; Kill
-(defalias 'kill-path 'robenkleene/kill-path)
-(defalias 'kill-dir 'robenkleene/kill-dir)
-(defalias 'kill-filename 'robenkleene/kill-filename)
-(defalias 'kill-today'robenkleene/kill-today)
+(defalias 'kill-buffer-file-name 'robenkleene/kill-buffer-file-name)
+(defalias 'kill-default-directory 'robenkleene/kill-default-directory)
+(defalias 'kill-buffer-name 'robenkleene/kill-buffer-name)
+(defalias 'kill-today 'robenkleene/kill-today)
 
 ;; cd
 (defalias 'git-cd 'robenkleene/git-cd)
