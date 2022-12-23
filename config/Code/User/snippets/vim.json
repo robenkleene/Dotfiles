@@ -7,10 +7,6 @@
     "prefix": "function",
     "body": "function! s:${1:Name}() abort\n  ${2:\" Statements}\nendfunction"
   },
-  "call": {
-    "prefix": "call",
-    "body": "call <SID>${1:Name}()"
-  },
   "augroup": {
     "prefix": "augroup",
     "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END"
@@ -18,25 +14,6 @@
   "makeprgxcodebuildtest": {
     "prefix": "makeprgxcodebuildtest",
     "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}"
-  },
-  "makeprgtee": {
-    "prefix": "makeprgtee",
-    "body": "\\\\\\\\ \\\\\\\\\\\\|\\ tee\\ build.log"
-  },
-  "imap": {
-    "prefix": "imap",
-    "body": "inoremap ${1:jk} ${2:<ESC>}",
-    "description": "Insert mapping"
-  },
-  "vmap": {
-    "prefix": "vmap",
-    "body": "vnoremap ${1:<leader>w} ${2::set wrap!<CR>}",
-    "description": "Visual mapping"
-  },
-  "nmap": {
-    "prefix": "nmap",
-    "body": "nnoremap ${1:<leader>w} ${2::set wrap!<CR>}",
-    "description": "Normal mapping"
   },
   "if": {
     "prefix": "if",

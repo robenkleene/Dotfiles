@@ -75,25 +75,5 @@
     "prefix": "kss",
     "body": ["⇧⌃⌥⌘"],
     "description": "Keyboard shortcut symbols"
-  },
-  "redhex": {
-    "prefix": "redhex",
-    "body": ["#ff0000"],
-    "description": "Hex Red"
-  },
-  "greenhex": {
-    "prefix": "greenhex",
-    "body": ["#00ff00"],
-    "description": "Hex Green"
-  },
-  "bluehex": {
-    "prefix": "bluehex",
-    "body": ["#0000ff"],
-    "description": "Hex Blue"
-  },
-  "yellowhex": {
-    "prefix": "yellowhex",
-    "body": ["#ffff00"],
-    "description": "Hex Yellow"
   }
 }
