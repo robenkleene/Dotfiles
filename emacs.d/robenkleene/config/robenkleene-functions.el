@@ -790,7 +790,7 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/inbox ()
+(defun robenkleene/inbox-create-or-open ()
   "Switch to inbox directory or make new inbox document."
   (interactive)
   (if current-prefix-arg
@@ -799,19 +799,19 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/open-inbox ()
+(defun robenkleene/inbox-open ()
   "Switch to inbox directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
-(defun robenkleene/open-archive ()
+(defun robenkleene/archive-open ()
   "Switch to inbox directory."
   (interactive)
   (find-file "~/Archive/Text/")
   )
 
-(defun robenkleene/daily-new ()
+(defun robenkleene/daily-create ()
   "Switch to daily file, creating it if missing."
   (interactive)
   (robenkleene/safe-find-file
@@ -825,7 +825,7 @@ With prefix arg, find the previous file."
    (shell-command-to-string "~/.bin/daily_file -b"))
   )
 
-(defun robenkleene/new-inbox-document (title)
+(defun robenkleene/inbox-create (title)
   "Create a new inbox document with TITLE at DIR."
   (interactive (list (read-from-minibuffer "Title: "
                                            (if (use-region-p)

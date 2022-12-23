@@ -42,9 +42,9 @@
 ;; Text
 (defalias 'clip 'robenkleene/new-clipboard)
 (defalias 'inbox 'robenkleene/inbox)
-(defalias 'inbox-new 'robenkleene/new-inbox-document)
+(defalias 'inbox-create 'robenkleene/inbox-create)
 (defalias 'daily 'robenkleene/daily)
-(defalias 'daily-new 'robenkleene/daily-new)
+(defalias 'daily-create 'robenkleene/daily-create)
 
 ;; Slug Project
 (defalias 'slug-project 'robenkleene/slug-project)
