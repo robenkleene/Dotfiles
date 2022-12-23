@@ -2,4 +2,4 @@
 # key: logvj
 # name: logvj
 # --
-["console.log(\"${1:result} = \" + JSON.stringify($1));"]
+console.log("${1:result} = " + JSON.stringify($1));

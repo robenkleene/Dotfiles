@@ -2,4 +2,4 @@
 # key: logv
 # name: logv
 # --
-["console.log(\"${1:result} = \" + $1);"]
+console.log("${1:result} = " + $1);
