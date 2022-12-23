@@ -9,7 +9,7 @@
     "body": "echo \"${1:HOME} = \\$$1\"",
     "description": "Echo variable"
   },
-  "echoa": {
+  "echova": {
     "prefix": "echova",
     "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
     "description": "Echo array variable"
