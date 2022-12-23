@@ -246,41 +246,41 @@
     (define-key ibuffer-mode-map (kbd "Z Z") 'evil-quit)
     )
 
-  (with-eval-after-load 'magit
-    (dolist
-        (map (list
-              ;; magit-cherry-mode-map
-              ;; magit-diff-mode-map
-              ;; magit-log-mode-map
-              ;; magit-log-select-mode-map
-              ;; magit-popup-mode-map
-              ;; magit-popup-sequence-mode-map
-              ;; magit-process-mode-map
-              ;; magit-reflog-mode-map
-              ;; magit-refs-mode-map
-              ;; magit-revision-mode-map
-              ;; magit-stash-mode-map
-              ;; magit-stashes-mode-map
-              magit-status-mode-map
-              )
-             )
-      (define-key map (kbd "j") 'next-line)
-      (define-key map (kbd "k") 'previous-line)
-      (define-key map (kbd "C-f") 'evil-scroll-page-down)
-      (define-key map (kbd "C-b") 'evil-scroll-page-up)
-      (define-key map (kbd "g") nil)
-      (define-key map (kbd "g g") 'evil-goto-first-line)
-      (define-key map (kbd "G") 'evil-goto-line)
-      (define-key map (kbd "/") 'evil-ex-search-forward)
-      (define-key map (kbd "?") 'evil-ex-search-backward)
-      (define-key map (kbd "n") 'evil-ex-search-next)
-      (define-key map (kbd "N") 'evil-ex-search-previous)
-      (define-key map (kbd "SPC") robenkleene/evil-leader-map)
-      (define-key map (kbd ":") 'evil-ex)
-      (define-key map (kbd "Z") nil)
-      (define-key map (kbd "Z Q") 'evil-quit)
-      (define-key map (kbd "Z Z") 'evil-quit)
-      ))
+  ;; (with-eval-after-load 'magit
+  ;;   (dolist
+  ;;       (map (list
+  ;;             ;; magit-cherry-mode-map
+  ;;             ;; magit-diff-mode-map
+  ;;             ;; magit-log-mode-map
+  ;;             ;; magit-log-select-mode-map
+  ;;             ;; magit-popup-mode-map
+  ;;             ;; magit-popup-sequence-mode-map
+  ;;             ;; magit-process-mode-map
+  ;;             ;; magit-reflog-mode-map
+  ;;             ;; magit-refs-mode-map
+  ;;             ;; magit-revision-mode-map
+  ;;             ;; magit-stash-mode-map
+  ;;             ;; magit-stashes-mode-map
+  ;;             magit-status-mode-map
+  ;;             )
+  ;;            )
+  ;;     (define-key map (kbd "j") 'next-line)
+  ;;     (define-key map (kbd "k") 'previous-line)
+  ;;     (define-key map (kbd "C-f") 'evil-scroll-page-down)
+  ;;     (define-key map (kbd "C-b") 'evil-scroll-page-up)
+  ;;     (define-key map (kbd "g") nil)
+  ;;     (define-key map (kbd "g g") 'evil-goto-first-line)
+  ;;     (define-key map (kbd "G") 'evil-goto-line)
+  ;;     (define-key map (kbd "/") 'evil-ex-search-forward)
+  ;;     (define-key map (kbd "?") 'evil-ex-search-backward)
+  ;;     (define-key map (kbd "n") 'evil-ex-search-next)
+  ;;     (define-key map (kbd "N") 'evil-ex-search-previous)
+  ;;     (define-key map (kbd "SPC") robenkleene/evil-leader-map)
+  ;;     (define-key map (kbd ":") 'evil-ex)
+  ;;     (define-key map (kbd "Z") nil)
+  ;;     (define-key map (kbd "Z Q") 'evil-quit)
+  ;;     (define-key map (kbd "Z Z") 'evil-quit)
+  ;;     ))
 
   ;; Packages
   (use-package evil-visualstar
