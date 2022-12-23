@@ -1,7 +1,0 @@
-# key: template
-# name: template
-# --
-#!/usr/bin/env zsh
-
-set -euo pipefail
-

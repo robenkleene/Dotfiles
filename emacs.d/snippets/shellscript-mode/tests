@@ -1,4 +1,0 @@
-# key: tests
-# name: tests
-# --
-"$${1:1}" = "${2:string}"

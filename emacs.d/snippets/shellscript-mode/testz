@@ -1,4 +1,0 @@
-# key: testz
-# name: testz
-# --
--z "${${1:1}-}"

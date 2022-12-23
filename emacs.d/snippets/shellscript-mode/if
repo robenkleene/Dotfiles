@@ -1,6 +1,0 @@
-# key: if
-# name: if
-# --
-if ${1:true}; then
-  ${0:echo "true"}
-fi
