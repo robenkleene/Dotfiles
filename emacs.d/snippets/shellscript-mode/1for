@@ -1,0 +1,4 @@
+# key: 1for
+# name: 1for
+# --
+for i in ${1:*}; do { ${0:echo $i} } done

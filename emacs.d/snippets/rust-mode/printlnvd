@@ -1,0 +1,4 @@
+# key: printlnvd
+# name: printlnvd
+# --
+["println!(\"${1:foo} = {:?}\", $1);"]

@@ -1,0 +1,4 @@
+# key: testlt
+# name: testlt
+# --
+${1:$?} -lt ${0:0}

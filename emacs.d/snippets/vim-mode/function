@@ -1,0 +1,6 @@
+# key: function
+# name: function
+# --
+function! s:${1:Name}() abort
+  ${2:" Statements}
+endfunction

@@ -1,0 +1,7 @@
+# key: template
+# name: template
+# --
+.PHONY: hello
+
+hello:
+	echo "Hello"

@@ -1,0 +1,8 @@
+# key: main
+# name: main
+# --
+def main():
+	"""
+	main
+	"""
+	$0

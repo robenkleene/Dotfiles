@@ -1,0 +1,4 @@
+# key: echomv
+# name: echomv
+# --
+echom "${1:Variable} = ".$1

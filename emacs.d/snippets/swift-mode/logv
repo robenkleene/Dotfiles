@@ -1,0 +1,4 @@
+# key: logv
+# name: logv
+# --
+NSLog("${1:variable} = \($1)")

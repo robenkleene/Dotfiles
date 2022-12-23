@@ -1,0 +1,4 @@
+# key: testn
+# name: testn
+# --
+-n "${${1:1}-}"

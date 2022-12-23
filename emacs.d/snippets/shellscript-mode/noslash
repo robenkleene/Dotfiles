@@ -1,0 +1,4 @@
+# key: noslash
+# name: noslash
+# --
+${1:noslash}=\${${2:1}%/}$0

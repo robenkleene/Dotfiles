@@ -1,0 +1,6 @@
+# key: expectation
+# name: expectation
+# --
+let ${1:expect} = expectation(description: "${2:Expectation}")
+$1.fulfill()
+waitForExpectations(timeout: ${3:1.0}, handler: nil)

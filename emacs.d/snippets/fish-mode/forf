@@ -1,0 +1,4 @@
+# key: forf
+# name: forf
+# --
+["for ${1:file} in (${2:ls})\n    echo $$1\nend"]

@@ -1,0 +1,4 @@
+# key: noext
+# name: noext
+# --
+${1:noext}=\${${0:1}%.*}

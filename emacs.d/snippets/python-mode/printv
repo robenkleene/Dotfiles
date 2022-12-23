@@ -1,0 +1,4 @@
+# key: printv
+# name: printv
+# --
+print("${1:Variable} =", $1)

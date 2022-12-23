@@ -1,0 +1,4 @@
+# key: cds
+# name: cds
+# --
+cd "\$(dirname "\$0")" || exit 1

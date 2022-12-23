@@ -1,0 +1,4 @@
+# key: echova
+# name: echova
+# --
+echo "${1:args}[@] = \${$1[@]}"

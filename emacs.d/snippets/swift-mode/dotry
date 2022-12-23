@@ -1,0 +1,8 @@
+# key: dotry
+# name: dotry
+# --
+do {
+    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}
+} catch {
+    ${2:throw error}
+}

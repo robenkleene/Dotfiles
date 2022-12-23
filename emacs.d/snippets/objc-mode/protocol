@@ -1,0 +1,6 @@
+# key: protocol
+# name: protocol
+# --
+@protocol ${1:MyProtocol} <NSObject>
+$0
+@end

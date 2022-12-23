@@ -1,0 +1,4 @@
+# key: testl
+# name: testl
+# --
+-L "${1:\$1}"

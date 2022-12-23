@@ -1,0 +1,4 @@
+# key: 1rename
+# name: 1rename
+# --
+for i in *; do { mv $i \`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\` } done

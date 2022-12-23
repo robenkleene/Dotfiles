@@ -1,0 +1,4 @@
+# key: property
+# name: property
+# --
+@property (nonatomic, strong) ${1:NSString} *${2:identifier};

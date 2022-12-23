@@ -1,0 +1,4 @@
+# key: testlinux
+# name: testlinux
+# --
+"$(uname)" = "Linux"

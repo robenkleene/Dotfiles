@@ -1,0 +1,4 @@
+# key: printfv
+# name: printfv
+# --
+printf("${1:variable} = %i\n", $1);

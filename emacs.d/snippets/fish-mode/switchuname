@@ -1,0 +1,4 @@
+# key: switchuname
+# name: switchuname
+# --
+["switch (uname)\n    case Linux\n            echo Hi Tux!\n    case Darwin\n            echo Hi Hexley!\n    case FreeBSD NetBSD DragonFly\n            echo Hi Beastie!\n    case '*'\n            echo Hi, stranger!\nend"]

@@ -1,0 +1,4 @@
+# key: putse
+# name: putse
+# --
+STDERR.puts 

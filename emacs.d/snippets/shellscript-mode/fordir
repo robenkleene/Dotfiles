@@ -1,0 +1,6 @@
+# key: fordir
+# name: fordir
+# --
+for dir in */; do
+  echo $dir;
+done
