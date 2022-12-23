@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-grep -E --only-matching ".*:\d+:.*"
+grep -E --only-matching ".*:[0-9]+:"
