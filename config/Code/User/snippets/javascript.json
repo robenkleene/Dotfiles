@@ -2,13 +2,13 @@
   "logv": {
     "scope": "javascript,typescript",
     "prefix": "logv",
-    "body": ["console.log(\"${1:result} = \" + $1);"],
+    "body": "console.log(\"${1:result} = \" + $1);",
     "description": "Log variable"
   },
   "logvj": {
     "scope": "javascript,typescript",
     "prefix": "logvj",
-    "body": ["console.log(\"${1:result} = \" + JSON.stringify($1));"],
+    "body": "console.log(\"${1:result} = \" + JSON.stringify($1));",
     "description": "Log JSON stringify variable"
   },
   "template": {

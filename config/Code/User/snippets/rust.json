@@ -2,13 +2,13 @@
   "printlnv": {
     "scope": "rust",
     "prefix": "printlnv",
-    "body": ["println!(\"${1:foo} = {}\", $1);"],
+    "body": "println!(\"${1:foo} = {}\", $1);",
     "description": "Print variable"
   },
   "printlnvd": {
     "scope": "rust",
     "prefix": "printlnvd",
-    "body": ["println!(\"${1:foo} = {:?}\", $1);"],
+    "body": "println!(\"${1:foo} = {:?}\", $1);",
     "description": "Print variable debug"
   },
   "template": {
