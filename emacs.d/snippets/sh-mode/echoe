@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: echoe
 # key: echoe
+# name: echoe
 # --
 echo "${0:Error}" >&2
