@@ -198,6 +198,7 @@
 
    ;; Git Commit
    `(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
+
    )
   )
 
