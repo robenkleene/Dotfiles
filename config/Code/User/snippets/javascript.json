@@ -1,15 +1,15 @@
 {
-  "Log variable": {
+  "logv": {
     "scope": "javascript,typescript",
     "prefix": "logv",
     "body": ["console.log(\"${1:result} = \" + $1);"],
     "description": "Log variable"
   },
-  "Log string variable": {
+  "logvj": {
     "scope": "javascript,typescript",
-    "prefix": "logs",
+    "prefix": "logvj",
     "body": ["console.log(\"${1:result} = \" + JSON.stringify($1));"],
-    "description": "Log string variable"
+    "description": "Log JSON stringify variable"
   },
   "template": {
     "scope": "javascript,typescript",
@@ -22,18 +22,5 @@
     "prefix": "debugv",
     "body": "debug(\"${1:document} \" + $1);",
     "description": "Debug variable"
-  },
-  "Visual Studio Code command function": {
-    "scope": "javascript,typescript",
-    "prefix": "vscommand",
-    "body": [
-      "let ${1: commandName}Disposable = vscode.commands.registerCommand(",
-      "  \"extension.$1\",",
-      "  async (uri: vscode.Uri) => {",
-      "  }",
-      ");",
-      "context.subscriptions.push($1Disposable);"
-    ],
-    "description": "Visual Studio Code command function"
   }
 }

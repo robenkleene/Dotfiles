@@ -182,45 +182,5 @@
     "prefix": "getopts",
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "getopts"
-  },
-  "getoptsf": {
-    "prefix": "getoptsf",
-    "body": "force=false\nwhile getopts \":fh\" option; do\n  case \"$option\" in\n    f)\n      force=true\n      ;;\n    h)\n      echo \"Usage: command [-hf]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
-    "description": "getopts force"
-  },
-  ">n": {
-    "prefix": ">n",
-    "body": ">/dev/null",
-    "description": "Redirect STDOUT to null"
-  },
-  ">null": {
-    "prefix": ">null",
-    "body": ">/dev/null",
-    "description": "Redirect STDOUT to null"
-  },
-  ">o": {
-    "prefix": ">o",
-    "body": "2>&1",
-    "description": "Redirect STDERR to STDOUT to null"
-  },
-  "sete": {
-    "prefix": "sete",
-    "body": "set -e",
-    "description": "Exit on non-zero exit status"
-  },
-  "setx": {
-    "prefix": "setx",
-    "body": "set -x",
-    "description": "Print each command"
-  },
-  "setop": {
-    "prefix": "setop",
-    "body": "set -x",
-    "description": "Any command in pipe fails the whole pipe"
-  },
-  "guardv": {
-    "prefix": "guardv",
-    "body": "if [[ -z \"$${1:1}\" ]]; then\n  echo \"Error: $1 is empty\" >&2\n  exit 1\nfi",
-    "description": "Exit on empty variable"
   }
 }

@@ -1,15 +1,15 @@
 {
-  "Image Link": {
+  "imga": {
     "prefix": ["imga"],
     "body": ["[![${1:Title}](${2:path/to/image})]($2)"],
     "description": "A link to an image"
   },
-  "Image": {
+  "img": {
     "prefix": ["img"],
     "body": ["![${1:Title}](${2:path/to/img})"],
     "description": "A link to an image"
   },
-  "Video": {
+  "video": {
     "prefix": ["video"],
     "body": ["<video controls>\n  <source src=\"${1:path/to/video}\" type=\"video/mp4\">\n</video>"],
     "description": "A video with controls"

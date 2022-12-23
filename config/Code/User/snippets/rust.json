@@ -1,15 +1,15 @@
 {
-  "Print variable": {
+  "printlnv": {
     "scope": "rust",
     "prefix": "printlnv",
     "body": ["println!(\"${1:foo} = {}\", $1);"],
     "description": "Print variable"
   },
-  "Print variable debug": {
+  "printlnvd": {
     "scope": "rust",
     "prefix": "printlnvd",
     "body": ["println!(\"${1:foo} = {:?}\", $1);"],
-    "description": "Print variable"
+    "description": "Print variable debug"
   },
   "template": {
     "prefix": "template",
