@@ -160,17 +160,6 @@
 
    ;; Packages
 
-   ;; Helm
-   `(helm-selection ((t (:inherit rk-highlight-line))))
-   `(helm-selection-line ((t (:inherit rk-highlight-line))))
-   `(helm-match ((t (:inherit rk-match))))
-   `(helm-match-item ((t (:inherit rk-match))))
-   `(helm-grep-lineno ((t (:inherit rk-comment))))
-   `(helm-source-header ((t (:inherit rk-modeline-inactive))))
-   `(helm-candidate-number ((t (:inherit rk-prompt))))
-   `(helm-grep-finish ((t (:inherit rk-prompt))))
-   `(helm-grep-file ((t (:inherit link :underline nil))))
-
    ;; Whitespace
    `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
    `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
