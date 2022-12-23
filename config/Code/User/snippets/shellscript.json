@@ -51,7 +51,7 @@
   },
   "ifuname": {
     "prefix": "ifuname",
-    "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n	echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n	echo \"Linux\"\nfi",
+    "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
   "ex": {
