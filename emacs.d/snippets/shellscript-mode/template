@@ -1,7 +1,0 @@
-# key: template
-# name: template
-# --
-#!/usr/bin/env bash
-
-set -euo pipefail
-

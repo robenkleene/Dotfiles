@@ -1,4 +1,0 @@
-# key: testb
-# name: testb
-# --
-"$${1:value}" == "${0:true}"
