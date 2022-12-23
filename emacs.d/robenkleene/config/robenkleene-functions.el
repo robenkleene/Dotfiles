@@ -403,7 +403,7 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/hg-cd ()
+(defun robenkleene/git-cd ()
   "Got to the project root."
   (interactive)
   (let ((dir (shell-command-to-string
