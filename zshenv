@@ -47,8 +47,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # hx
 # export VISUAL="hx"
 # export TIG_EDITOR="hx_wrapper"
-# export VISUAL="$VIM_COMMAND"
-export VISUAL="$EMACS_COMMAND"
+export VISUAL="$VIM_COMMAND"
+# export VISUAL="$EMACS_COMMAND"
 export EDITOR="$VISUAL"
 # Without explicitely specifying `less` as the pager, Linux will use the
 # wrong version of `less` (system installed, which doesn't support the

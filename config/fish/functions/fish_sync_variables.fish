@@ -29,8 +29,8 @@ function fish_sync_variables
     # `incsearch` option instead of Homebrew installed.
     set -Ux PAGER "less"
     set -Ux LESS "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
-    # set -Ux VISUAL "$VIM_COMMAND"
-    set -Ux VISUAL "$EMACS_COMMAND"
+    set -Ux VISUAL "$VIM_COMMAND"
+    # set -Ux VISUAL "$EMACS_COMMAND"
     set -Ux EDITOR "$VISUAL"
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"

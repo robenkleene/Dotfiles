@@ -65,8 +65,8 @@ let-env VIM_COMMAND = "nvim"
 let-env MD_CAT_COMMAND = "bat --style plain"
 let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
 
-# let-env VISUAL = $"($env.VIM_COMMAND)"
-let-env VISUAL = $"($env.EMACS_COMMAND)"
+let-env VISUAL = $"($env.VIM_COMMAND)"
+# let-env VISUAL = $"($env.EMACS_COMMAND)"
 let-env EDITOR = $"($env.VISUAL)"
 # Without explicitely specifying `less` as the pager, Linux will use the
 # wrong version of `less` (system installed, which doesn't support the
