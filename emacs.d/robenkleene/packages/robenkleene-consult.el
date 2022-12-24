@@ -108,7 +108,7 @@
     "`consult-find with fd'."
     (interactive "P")
     (let* (
-           (default-directory (getenv "PWD"))
+           (default-directory (robenkleene/pwd))
            (consult-find-command
             "fd --type f --color=never --hidden --exclude .git/ --exclude .hg/ --exclude .DS_Store")
            )

@@ -417,10 +417,16 @@ With prefix arg, find the previous file."
 (defun robenkleene/pwd-cd ()
   "Got to the project root."
   (interactive)
+  (find-file (robenkleene/pwd))
+  )
+
+(defun robenkleene/pwd ()
+  "Return project root."
+  (interactive)
   (if (daemonp)
       (let ((client (frame-parameter nil 'client)))
-        (find-file (process-get client 'server-client-directory)))
-    (find-file (getenv "PWD"))
+        (process-get client 'server-client-directory))
+    (getenv "PWD")
     )
   )
 
