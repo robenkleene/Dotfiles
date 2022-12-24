@@ -106,8 +106,8 @@
     'eglot-completion-at-point)
   (define-key robenkleene/evil-leader-map (kbd "l")
     'consult-line)
-  (define-key robenkleene/evil-leader-map (kbd "q")
-    'robenkleene/toggle-grep-buffer)
+  ;; (define-key robenkleene/evil-leader-map (kbd "q")
+  ;;   'robenkleene/toggle-grep-buffer)
 
   (with-eval-after-load 'evil-maps
     ;; (define-key evil-normal-state-map (kbd "-") 'dired-jump)
