@@ -419,9 +419,7 @@ With prefix arg, find the previous file."
   (interactive)
   (if (daemonp)
       (let ((client (frame-parameter nil 'client)))
-        (find-file (set-frame-parameter nil
-                                        'cwd
-                                        (process-get client 'server-client-directory))))
+        (find-file (process-get client 'server-client-directory)))
     (find-file (getenv "PWD"))
     )
   )
