@@ -110,7 +110,7 @@
     'robenkleene/toggle-grep-buffer)
 
   (with-eval-after-load 'evil-maps
-    (define-key evil-normal-state-map (kbd "-") 'dired-jump)
+    ;; (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (defun robenkleene/ispell-save-word ()
@@ -202,6 +202,7 @@
   (evil-set-initial-state 'compilation-mode 'motion)
   (evil-set-initial-state 'package-menu-mode 'motion)
   (evil-set-initial-state 'debugger-mode 'motion)
+  (evil-set-initial-state 'messages-mode 'motion)
   ;; Mode that happens when an error is hit
   (evil-set-initial-state 'special-mode 'motion)
 
