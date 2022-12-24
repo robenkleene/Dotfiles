@@ -1,6 +1,7 @@
 nnoremap <silent> <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>
 nnoremap <silent> cl :lcd %:p:h<CR>
 nnoremap <silent> cd :cd %:p:h<CR>
+nnoremap <silent> cg :execute 'cd' getcwd(-1)<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
 " Move by display line
