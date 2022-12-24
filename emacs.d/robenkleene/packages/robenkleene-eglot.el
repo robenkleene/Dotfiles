@@ -39,10 +39,11 @@
 
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
-              ;; Disable clicking flymake highlighted text
-              ;; (put 'eglot-note 'flymake-overlay-control nil)
-              ;; (put 'eglot-warning 'flymake-overlay-control nil)
-              ;; (put 'eglot-error 'flymake-overlay-control nil)
+              ;; Disable clicking on `flymake' highlighted text to perform
+              ;; actions
+              (put 'eglot-note 'flymake-overlay-control nil)
+              (put 'eglot-warning 'flymake-overlay-control nil)
+              (put 'eglot-error 'flymake-overlay-control nil)
               ;; Tweak minibuffer documentation
               ;; Disable minibuffer docs
               ;; (eldoc-mode -1)
