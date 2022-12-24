@@ -417,7 +417,13 @@ With prefix arg, find the previous file."
 (defun robenkleene/pwd-cd ()
   "Got to the project root."
   (interactive)
-  (find-file (getenv "PWD"))
+  (if (daemonp)
+      (let ((client (frame-parameter nil 'client)))
+        (find-file (set-frame-parameter nil
+                                        'cwd
+                                        (process-get client 'server-client-directory))))
+    (find-file (getenv "PWD"))
+    )
   )
 
 (defun robenkleene/open-in-xcode ()
