@@ -40,6 +40,8 @@
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
 (require 'robenkleene-vterm)
+(require 'robenkleene-org)
+(require 'robenkleene-compilation)
 
 ;; Completion
 (require 'robenkleene-vertico)
