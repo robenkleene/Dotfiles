@@ -4,10 +4,10 @@
 
 (use-package swift-mode
   :mode "\\.swift\\'"
-  :config
-  (add-hook 'swift-mode-hook
-            (lambda ()
-              ))
+  ;; :config
+  ;; (add-hook 'swift-mode-hook
+  ;;           (lambda ()
+  ;;             ))
   )
 
 (provide 'robenkleene-swift)

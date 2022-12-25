@@ -172,6 +172,10 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
 
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
+    )
+
   ;; Packages
   (use-package evil-visualstar
     :init
