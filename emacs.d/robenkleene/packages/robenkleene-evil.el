@@ -52,10 +52,10 @@
   ;; Make `Y' yank to eol
   (setq evil-want-Y-yank-to-eol t)
 
-  ;; Set initial state to insert
-  ;; (setq evil-default-state 'insert)
-
   ;; Don't let anything override Evil
+  ;; Set initial state
+  (setq evil-default-state 'emacs)
+
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
         evil-pending-intercept-maps nil
@@ -169,120 +169,8 @@
                            'evil-visual-activate-hook t)))
 
   ;; Modes
-
-  ;; Emacs
-  (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'ibuffer-mode 'emacs)
-  (evil-set-initial-state 'vterm-mode 'emacs)
-  (evil-set-initial-state 'with-editor-mode 'emacs)
-  ;; Alternative way to start git commit in insert mode:
-  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
-
-  (dolist
-      (mode '(
-              magit-cherry-mode
-              magit-diff-mode
-              magit-log-mode
-              magit-log-select-mode
-              magit-popup-mode
-              magit-popup-sequence-mode
-              magit-process-mode
-              magit-reflog-mode
-              magit-refs-mode
-              magit-revision-mode
-              magit-stash-mode
-              magit-stashes-mode
-              magit-status-mode
-              ))
-    (evil-set-initial-state mode 'emacs))
-  ;; Insert
-  (evil-set-initial-state 'eshell-mode 'insert)
-  ;; Motion
-  (evil-set-initial-state 'help-mode 'motion)
-  (evil-set-initial-state 'compilation-mode 'motion)
-  (evil-set-initial-state 'package-menu-mode 'motion)
-  (evil-set-initial-state 'debugger-mode 'motion)
-  (evil-set-initial-state 'messages-mode 'motion)
-  ;; Mode that happens when an error is hit
-  (evil-set-initial-state 'special-mode 'motion)
-
-  ;; (with-eval-after-load 'dired
-  ;;   (define-key dired-mode-map (kbd "j") 'next-line)
-  ;;   (define-key dired-mode-map (kbd "k") 'previous-line)
-  ;;   (define-key dired-mode-map (kbd "C-f") 'evil-scroll-page-down)
-  ;;   (define-key dired-mode-map (kbd "C-b") 'evil-scroll-page-up)
-  ;;   (define-key dired-mode-map (kbd "g") nil)
-  ;;   (define-key dired-mode-map (kbd "g g") 'evil-goto-first-line)
-  ;;   (define-key dired-mode-map (kbd "G") 'evil-goto-line)
-  ;;   (define-key dired-mode-map (kbd "/") 'evil-ex-search-forward)
-  ;;   (define-key dired-mode-map (kbd "?") 'evil-ex-search-backward)
-  ;;   (define-key dired-mode-map (kbd "n") 'evil-ex-search-next)
-  ;;   (define-key dired-mode-map (kbd "N") 'evil-ex-search-previous)
-  ;;   (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
-  ;;   (define-key dired-mode-map (kbd ":") 'evil-ex)
-  ;;   (define-key dired-mode-map (kbd "Z") nil)
-  ;;   (define-key dired-mode-map (kbd "Z Q") 'evil-quit)
-  ;;   (define-key dired-mode-map (kbd "Z Z") 'evil-quit)
-  ;;   ;; Dired
-  ;;   (define-key dired-mode-map (kbd "-") 'dired-jump)
-  ;;   (define-key dired-mode-map (kbd "g") nil)
-  ;;   (define-key dired-mode-map (kbd "g h") 'robenkleene/dired-toggle-hidden)
-  ;;   )
-
-  ;; (with-eval-after-load 'ibuffer
-  ;;   (define-key ibuffer-mode-map (kbd "j") 'next-line)
-  ;;   (define-key ibuffer-mode-map (kbd "k") 'previous-line)
-  ;;   (define-key ibuffer-mode-map (kbd "C-f") 'evil-scroll-page-down)
-  ;;   (define-key ibuffer-mode-map (kbd "C-b") 'evil-scroll-page-up)
-  ;;   (define-key ibuffer-mode-map (kbd "g") nil)
-  ;;   (define-key ibuffer-mode-map (kbd "g g") 'evil-goto-first-line)
-  ;;   (define-key ibuffer-mode-map (kbd "G") 'evil-goto-line)
-  ;;   (define-key ibuffer-mode-map (kbd "/") 'evil-ex-search-forward)
-  ;;   (define-key ibuffer-mode-map (kbd "?") 'evil-ex-search-backward)
-  ;;   (define-key ibuffer-mode-map (kbd "n") 'evil-ex-search-next)
-  ;;   (define-key ibuffer-mode-map (kbd "N") 'evil-ex-search-previous)
-  ;;   (define-key ibuffer-mode-map (kbd "SPC") robenkleene/evil-leader-map)
-  ;;   (define-key ibuffer-mode-map (kbd ":") 'evil-ex)
-  ;;   (define-key ibuffer-mode-map (kbd "Z") nil)
-  ;;   (define-key ibuffer-mode-map (kbd "Z Q") 'evil-quit)
-  ;;   (define-key ibuffer-mode-map (kbd "Z Z") 'evil-quit)
-  ;;   )
-
-  ;; (with-eval-after-load 'magit
-  ;;   (dolist
-  ;;       (map (list
-  ;;             ;; magit-cherry-mode-map
-  ;;             ;; magit-diff-mode-map
-  ;;             ;; magit-log-mode-map
-  ;;             ;; magit-log-select-mode-map
-  ;;             ;; magit-popup-mode-map
-  ;;             ;; magit-popup-sequence-mode-map
-  ;;             ;; magit-process-mode-map
-  ;;             ;; magit-reflog-mode-map
-  ;;             ;; magit-refs-mode-map
-  ;;             ;; magit-revision-mode-map
-  ;;             ;; magit-stash-mode-map
-  ;;             ;; magit-stashes-mode-map
-  ;;             magit-status-mode-map
-  ;;             )
-  ;;            )
-  ;;     (define-key map (kbd "j") 'next-line)
-  ;;     (define-key map (kbd "k") 'previous-line)
-  ;;     (define-key map (kbd "C-f") 'evil-scroll-page-down)
-  ;;     (define-key map (kbd "C-b") 'evil-scroll-page-up)
-  ;;     (define-key map (kbd "g") nil)
-  ;;     (define-key map (kbd "g g") 'evil-goto-first-line)
-  ;;     (define-key map (kbd "G") 'evil-goto-line)
-  ;;     (define-key map (kbd "/") 'evil-ex-search-forward)
-  ;;     (define-key map (kbd "?") 'evil-ex-search-backward)
-  ;;     (define-key map (kbd "n") 'evil-ex-search-next)
-  ;;     (define-key map (kbd "N") 'evil-ex-search-previous)
-  ;;     (define-key map (kbd "SPC") robenkleene/evil-leader-map)
-  ;;     (define-key map (kbd ":") 'evil-ex)
-  ;;     (define-key map (kbd "Z") nil)
-  ;;     (define-key map (kbd "Z Q") 'evil-quit)
-  ;;     (define-key map (kbd "Z Z") 'evil-quit)
-  ;;     ))
+  (evil-set-initial-state 'prog-mode 'normal)
+  (evil-set-initial-state 'text-mode 'normal)
 
   ;; Packages
   (use-package evil-visualstar
