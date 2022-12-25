@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(setq compile-command nil)
 (ignore-errors
   (require 'ansi-color)
   (defun robenkleene/colorize-compilation-buffer ()
