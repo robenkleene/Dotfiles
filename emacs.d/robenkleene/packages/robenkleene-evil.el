@@ -171,6 +171,10 @@
   ;; Modes
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
+  ;; Git Commit
+  (evil-set-initial-state 'with-editor-mode 'emacs)
+  ;; Alternative way to start git commit in insert mode:
+  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
