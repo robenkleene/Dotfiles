@@ -55,9 +55,13 @@
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
 ;; access history in shell modes
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'robenkleene/next)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-p")
-  'robenkleene/previous)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'robenkleene/next)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-p")
+;;   'robenkleene/previous)
+;; Try using this instead, to difficult to keep track of all modes that populate
+;; error list
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
+(define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
 ;;   'robenkleene/kill-region-or-backward-word)

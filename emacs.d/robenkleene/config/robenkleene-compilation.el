@@ -19,6 +19,13 @@
                                    )
           )
 
+(with-eval-after-load 'compilation
+  (define-key compilation-mode-map (kbd "M-n")
+    'next-error)
+  (define-key compilation-mode-map (kbd "M-p")
+    'previous-error)
+  )
+
 (provide 'robenkleene-compilation)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
