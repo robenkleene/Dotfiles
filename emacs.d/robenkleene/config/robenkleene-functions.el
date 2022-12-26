@@ -339,6 +339,7 @@ Otherwise, call `backward-kill-word'."
        (buffer-live-p (get-buffer "*grep*"))
        (buffer-live-p (get-buffer "*hgrep*"))
        (buffer-live-p (get-buffer "*hmoccur*"))
+       (buffer-live-p (get-buffer "*compilation*"))
        )
       (next-error)
     (robenkleene/find-next-file)
