@@ -427,7 +427,8 @@ With prefix arg, find the previous file."
   (if (daemonp)
       (let ((client (frame-parameter nil 'client)))
         (process-get client 'server-client-directory))
-    (getenv "PWD")
+    (if (getenv "PWD")
+        default-directory)
     )
   )
 
