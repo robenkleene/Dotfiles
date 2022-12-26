@@ -171,6 +171,7 @@
   ;; Modes
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
+  (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Git Commit
   (evil-set-initial-state 'with-editor-mode 'emacs)
   ;; Alternative way to start git commit in insert mode:
