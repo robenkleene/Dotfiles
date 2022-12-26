@@ -59,6 +59,15 @@
     (setq enable-recursive-minibuffers t)
 
     )
+
+  (use-package vertico-repeat
+    :bind
+    ("M-R" . vertico-repeat)
+    :init
+    (add-hook 'minibuffer-setup-hook #'vertico-repeat-save)
+    (add-to-list 'savehist-additional-variables 'vertico-repeat-history)
+    )
+
   )
 
 (provide 'robenkleene-vertico)
