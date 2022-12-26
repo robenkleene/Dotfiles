@@ -43,6 +43,8 @@
 (require 'robenkleene-org)
 (require 'robenkleene-compilation)
 (require 'robenkleene-grep)
+(require 'robenkleene-prog)
+(require 'robenkleene-text)
 
 ;; Completion
 (require 'robenkleene-vertico)
