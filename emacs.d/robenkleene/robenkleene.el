@@ -16,14 +16,21 @@
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
 (require 'robenkleene-alias)
-(require 'robenkleene-dired)
-(require 'robenkleene-eshell)
 (if window-system
     (progn
       (require 'robenkleene-gui)
       (require 'robenkleene-mac)
       )
   (require 'robenkleene-terminal))
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
+(require 'robenkleene-org)
+(require 'robenkleene-compilation)
+(require 'robenkleene-grep)
+(require 'robenkleene-prog)
+(require 'robenkleene-text)
+(require 'robenkleene-dired)
+(require 'robenkleene-eshell)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
 (require 'robenkleene-smartparens)
@@ -40,11 +47,6 @@
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
 (require 'robenkleene-vterm)
-(require 'robenkleene-org)
-(require 'robenkleene-compilation)
-(require 'robenkleene-grep)
-(require 'robenkleene-prog)
-(require 'robenkleene-text)
 
 ;; Completion
 (require 'robenkleene-vertico)
