@@ -99,13 +99,13 @@
       :history 'file-name-history)))
 
   (defun robenkleene/consult-fd (&optional dir initial)
-    "`consult-find with fd'."
+    "`consult-find' with `fd'."
     (interactive "P")
     (let ((consult-find-command "fd --type f --color=never --hidden --exclude .git/ --exclude .hg/ --exclude .DS_Store"))
       (consult-find dir initial)))
 
   (defun robenkleene/consult-fd-pwd (&optional dir initial)
-    "`consult-find with fd'."
+    "`consult-find' with `fd' in `pwd'."
     (interactive "P")
     (let* (
            (default-directory (robenkleene/pwd))
