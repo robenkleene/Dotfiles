@@ -61,6 +61,7 @@
     )
 
   (use-package vertico-repeat
+    :ensure nil
     :bind
     ("M-R" . vertico-repeat)
     :init
