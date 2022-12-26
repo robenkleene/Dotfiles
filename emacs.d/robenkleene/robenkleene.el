@@ -42,6 +42,7 @@
 (require 'robenkleene-vterm)
 (require 'robenkleene-org)
 (require 'robenkleene-compilation)
+(require 'robenkleene-grep)
 
 ;; Completion
 (require 'robenkleene-vertico)
