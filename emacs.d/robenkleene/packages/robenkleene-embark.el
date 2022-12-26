@@ -6,14 +6,15 @@
   :bind
   (
    ;; Doesn't work in terminal
-   ("C-." . embark-act)         ;; pick some comfortable binding
+   ;; ("C-." . embark-act)         ;; pick some comfortable binding
+   ("C-c ." . embark-act)         ;; pick some comfortable binding
+   ("C-c ;" . embark-dwim)         ;; pick some comfortable binding
    ;; Doesn't work in terminal
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
+   ;; ("C-;" . embark-dwim)        ;; good alternative: M-.
    ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
-  (:map minibuffer-mode-map
-        ;; ("M-a" . consult-ripgrep)
-        ("M-." . embark-act)
-        )
+  ;; (:map minibuffer-mode-map
+  ;;       ("M-." . embark-act)
+  ;;       )
   :init
 
   ;; Optionally replace the key help with a completing-read interface
@@ -32,7 +33,6 @@
     :hook
     (embark-collect-mode . consult-preview-at-point-mode))
   )
-
 
 (provide 'robenkleene-embark)
 ;; Local Variables:
