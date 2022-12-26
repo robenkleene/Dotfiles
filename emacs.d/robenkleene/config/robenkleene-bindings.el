@@ -79,10 +79,10 @@ Otherwise, use `robenkleene/window-map'."
   )
 
 ;; General
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
-  'robenkleene/reveal-in-finder)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
-  'robenkleene/open-terminal-window)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
+;;   'robenkleene/reveal-in-finder)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
+;;   'robenkleene/open-terminal-window)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 
 ;; Window-Key Based
