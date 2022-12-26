@@ -60,8 +60,9 @@
 ;;   'robenkleene/previous)
 ;; Try using this instead, to difficult to keep track of all modes that populate
 ;; error list
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
+;; Trying binding these on `text' and `prog' modes instead
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
+;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
 ;;   'robenkleene/kill-region-or-backward-word)
