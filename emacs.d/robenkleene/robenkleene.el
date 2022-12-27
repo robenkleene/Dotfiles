@@ -37,6 +37,7 @@
 (require 'robenkleene-prog)
 (require 'robenkleene-text)
 (require 'robenkleene-dired)
+(require 'robenkleene-ibuffer)
 (require 'robenkleene-eshell)
 
 ;; Packages
