@@ -56,7 +56,8 @@
   ;; Don't let anything override Evil
   ;; Set initial state
   ;; (setq evil-default-state 'emacs)
-  (setq evil-default-state 'insert)
+  ;; (setq evil-default-state 'insert)
+  (setq evil-default-state 'motion)
 
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
@@ -112,7 +113,6 @@
   ;;   'robenkleene/toggle-grep-buffer)
 
   (with-eval-after-load 'evil-maps
-    ;; (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (defun robenkleene/ispell-save-word ()
@@ -130,10 +130,11 @@
         (setq ispell-pdict-modified-p nil)))
     (define-key evil-normal-state-map "zg" 'robenkleene/ispell-save-word)
     (define-key evil-normal-state-map "z=" 'ispell-word)
-    (define-key evil-motion-state-map (kbd "C-y") nil)
-    (define-key evil-motion-state-map [down-mouse-1] nil)
     ;; Motion
     ;; Motion binds normal and visual
+    (define-key evil-motion-state-map (kbd "C-y") nil)
+    (define-key evil-motion-state-map [down-mouse-1] nil)
+    (define-key evil-motion-state-map (kbd "-") 'dired-jump)
     (define-key evil-motion-state-map (kbd "C-w") robenkleene/window-map)
     (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
@@ -177,10 +178,10 @@
   (evil-set-initial-state 'conf-mode 'normal)
   (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Insert
-  ;; (evil-set-initial-state 'eshell-mode 'insert)
-  
+  (evil-set-initial-state 'eshell-mode 'insert)
   ;; Git Commit
   (evil-set-initial-state 'with-editor-mode 'emacs)
+
   ;; Alternative way to start git commit in insert mode:
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
