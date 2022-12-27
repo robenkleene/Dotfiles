@@ -289,6 +289,18 @@
 ;; Use `completion' if line is already indented
 (setq tab-always-indent 'complete)
 
+;; Make isearch wrap automatically
+;; Prevents issue where you have to press backspace twice when
+;; trying to remove the first character that fails a search
+(define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
+(defadvice isearch-search (after robenkleene/isearch-no-fail activate)
+  (unless isearch-success
+    (ad-disable-advice 'isearch-search 'after 'robenkleene/isearch-no-fail)
+    (ad-activate 'isearch-search)
+    (isearch-repeat (if isearch-forward 'forward))
+    (ad-enable-advice 'isearch-search 'after 'robenkleene/isearch-no-fail)
+    (ad-activate 'isearch-search)))
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
