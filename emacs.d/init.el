@@ -3,7 +3,7 @@
 ;;; Code:
 
 ;; Byte compile init files
-(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
 (require 'package)
 (setq package-enable-at-startup nil)
