@@ -40,7 +40,6 @@
 (require 'robenkleene-eshell)
 
 ;; Packages
-(require 'robenkleene-auto-compile)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
@@ -92,7 +91,6 @@
 
 (setq package-selected-packages
       '(use-package
-         auto-compile
          esup
          eshell-syntax-highlighting
          monky
@@ -136,6 +134,7 @@
          evil-numbers
          evil-commentary
          ))
+
 
 (provide 'robenkleene)
 ;; Local Variables:
