@@ -54,7 +54,8 @@
 
   ;; Don't let anything override Evil
   ;; Set initial state
-  (setq evil-default-state 'emacs)
+  ;; (setq evil-default-state 'emacs)
+  (setq evil-default-state 'insert)
 
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
@@ -175,7 +176,7 @@
   (evil-set-initial-state 'conf-mode 'normal)
   (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Insert
-  (evil-set-initial-state 'eshell-mode 'insert)
+  ;; (evil-set-initial-state 'eshell-mode 'insert)
   
   ;; Git Commit
   (evil-set-initial-state 'with-editor-mode 'emacs)
