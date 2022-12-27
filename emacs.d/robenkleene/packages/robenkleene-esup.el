@@ -1,4 +1,4 @@
-;;; robenkleene-esop.el --- robenkleene-esop
+;;; robenkleene-esup.el --- robenkleene-esup
 ;;; Commentary:
 ;;; Code:
 
@@ -9,8 +9,8 @@
   (setq esup-depth 0)
   :commands (esup))
 
-(provide 'robenkleene-esop)
+(provide 'robenkleene-esup)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
-;;; robenkleene-esop.el ends here
+;;; robenkleene-esup.el ends here
