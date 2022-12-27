@@ -6,6 +6,7 @@
 !.gitignore
 !init.el
 !custom.el
+!init-use-package.el
 !/robenkleene/
 !/snippets/
 !/eshell/
