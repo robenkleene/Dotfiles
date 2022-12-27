@@ -46,8 +46,9 @@
 (require 'robenkleene-expand-region)
 (require 'robenkleene-vundo)
 (require 'robenkleene-evil)
-(require 'robenkleene-vterm)
+;; (require 'robenkleene-vterm)
 (require 'robenkleene-monky)
+;; (require 'robenkleene-esup)
 
 ;; Completion
 (require 'robenkleene-vertico)
