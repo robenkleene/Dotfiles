@@ -10,7 +10,7 @@
     (load-file "~/.emacs_local.el")
   )
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
+;; Config
 (require 'robenkleene-config)
 (require 'robenkleene-functions)
 (require 'robenkleene-ido)
@@ -23,7 +23,7 @@
       )
   (require 'robenkleene-terminal))
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
+;; Modes
 (require 'robenkleene-org)
 (require 'robenkleene-compilation)
 (require 'robenkleene-grep)
@@ -32,7 +32,7 @@
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+;; Packages
 (require 'robenkleene-smartparens)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
@@ -65,7 +65,7 @@
 (require 'robenkleene-ef-themes)
 (require 'robenkleene-override-theme)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+;; Languages
 (require 'robenkleene-languages)
 (require 'robenkleene-common-lisp)
 (require 'robenkleene-emacs-lisp)
@@ -83,6 +83,7 @@
 (require 'robenkleene-rust)
 (require 'robenkleene-kotlin)
 
+(provide 'robenkleene)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
