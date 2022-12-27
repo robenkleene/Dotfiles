@@ -22,15 +22,15 @@
 
 (setq use-package-always-ensure t)
 ;; `use-package' requires `bind-key'
-(use-package bind-key
-  :ensure t
-  :config
-  (add-to-list 'same-window-buffer-names "*Personal Keybindings*"))
+;; (use-package bind-key
+;;   :ensure t
+;;   :config
+;;   (add-to-list 'same-window-buffer-names "*Personal Keybindings*"))
 
 ;; (defvar use-package-verbose t)
 
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+;; (setq custom-file "~/.emacs.d/custom.el")
+;; (load custom-file)
 
 ;; Suppresses annoying message:
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
