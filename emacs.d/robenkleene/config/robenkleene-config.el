@@ -297,6 +297,9 @@
     (ad-enable-advice 'isearch-search 'after 'robenkleene/isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+;; Always prefer newer `.el' file if there's an older `.elc' file
+(setq load-prefer-newer t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
