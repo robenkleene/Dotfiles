@@ -90,6 +90,53 @@
 (require 'robenkleene-rust)
 (require 'robenkleene-kotlin)
 
+(setq package-selected-packages
+      '(use-package
+         auto-compile
+         esup
+         eshell-syntax-highlighting
+         monky
+         better-defaults
+         yaml-mode
+         embark-consult
+         kotlin-mode
+         consult
+         ef-themes
+         rust-mode
+         eglot
+         evil-goggles
+         use-package
+         nodejs-repl
+         csv-mode
+         ledger-mode
+         fish-mode
+         markdown-mode
+         swift-mode
+         inf-ruby
+         enh-ruby-mode
+         slime
+         smartparens
+         rainbow-mode
+         magit
+         yasnippet
+         editorconfig
+         magit-filenotify
+         wgrep
+         jade-mode
+         aggressive-indent
+         page-break-lines
+         expand-region
+         adaptive-wrap
+         vundo
+         vertico
+         orderless
+         marginalia
+         evil-visualstar
+         evil-surround
+         evil-numbers
+         evil-commentary
+         ))
+
 (provide 'robenkleene)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
