@@ -17,7 +17,12 @@
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (package-install 'use-package))
+  (package-install 'use-package)
+  (eval-when-compile
+    (unless (bound-and-true-p package--initialized)
+      (package-initialize))
+    (require 'use-package)
+    ))
 (require 'use-package)
 (setq use-package-always-ensure t)
 ;; `use-package' requires `bind-key'
