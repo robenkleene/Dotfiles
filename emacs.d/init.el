@@ -40,7 +40,15 @@
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
 (set 'ad-redefinition-action 'accept)
 
-(load (concat user-emacs-directory "robenkleene/robenkleene.el"))
+(eval-and-compile
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+  )
+(require 'robenkleene)
+
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
