@@ -42,10 +42,6 @@
 
 (eval-and-compile
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
   )
 (require 'robenkleene)
 
