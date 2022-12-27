@@ -10,7 +10,7 @@
  '(helm-fd-switches
    '("--follow" "--hidden" "--exclude" ".git" "--exclude" ".hg" "--exclude" ".DS_Store" "--color" "never"))
  '(package-selected-packages
-   '(esup eshell-syntax-highlighting monky better-defaults yaml-mode embark-consult kotlin-mode consult ef-themes rust-mode eglot evil-goggles use-package nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime smartparens rainbow-mode magit yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap vundo vertico orderless marginalia evil-visualstar evil-surround evil-numbers evil-commentary))
+   '(auto-compile esup eshell-syntax-highlighting monky better-defaults yaml-mode embark-consult kotlin-mode consult ef-themes rust-mode eglot evil-goggles use-package nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime smartparens rainbow-mode magit yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap vundo vertico orderless marginalia evil-visualstar evil-surround evil-numbers evil-commentary))
  '(vc-annotate-color-map
    '((20 . "#F92672")
      (40 . "#CF4F1F")

@@ -9,7 +9,6 @@
 (setq package-enable-at-startup nil)
 (setq package-archives '(
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ;; ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ))
 (package-initialize)
@@ -18,12 +17,9 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package)
-  (eval-when-compile
-    (unless (bound-and-true-p package--initialized)
-      (package-initialize))
-    (require 'use-package)
-    ))
-(require 'use-package)
+  (load "~/.emacs.d/init-use-package.el")
+  )
+
 (setq use-package-always-ensure t)
 ;; `use-package' requires `bind-key'
 (use-package bind-key
