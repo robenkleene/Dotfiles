@@ -48,7 +48,7 @@
 (require 'robenkleene-evil)
 ;; (require 'robenkleene-vterm)
 (require 'robenkleene-monky)
-(require 'robenkleene-esup)
+;; (require 'robenkleene-esup)
 
 ;; Completion
 (require 'robenkleene-vertico)
