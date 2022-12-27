@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package adaptive-wrap
   :init
   (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)

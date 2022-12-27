@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package ef-themes
   :config
   ;; (ef-themes-select 'ef-winter)

@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package git-commit
   :mode "COMMIT_EDITMSG$"
   ;; (add-hook 'git-commit-mode-hook
