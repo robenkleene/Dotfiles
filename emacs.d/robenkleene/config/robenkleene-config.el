@@ -47,10 +47,6 @@
 ;; to organize those.
 (setq create-lockfiles nil)
 
-(setq desktop-path 'user-emacs-directory)
-(setq desktop-dirname user-emacs-directory)
-(setq desktop-save t)
-
 ;; Suppress message when saving
 (setq save-silently t)
 

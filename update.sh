@@ -59,7 +59,6 @@ done
 
 ./scripts/update.sh
 ./scripts/zsh_update.zsh
-./scripts/emacs_bytecompile.sh
 
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 

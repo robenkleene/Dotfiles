@@ -90,6 +90,9 @@
 (setq-default cursor-type 'bar)
 
 ;; Save window state
+(setq desktop-path 'user-emacs-directory)
+(setq desktop-dirname 'user-emacs-directory)
+(setq desktop-save t)
 ;; (desktop-save-mode 1)
 
 ;; Slow-down mouse scrolling
