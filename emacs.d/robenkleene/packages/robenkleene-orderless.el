@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package orderless
   :init
   ;; Configure a custom style dispatcher (see the Consult wiki)

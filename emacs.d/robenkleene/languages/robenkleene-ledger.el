@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package ledger-mode
   :mode "\\.ledger\\'")
 

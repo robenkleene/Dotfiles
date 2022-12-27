@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package marginalia
   ;; Either bind `marginalia-cycle' globally or only in the minibuffer
   :bind (("M-A" . marginalia-cycle)

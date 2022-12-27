@@ -29,8 +29,9 @@
 
 ;; (defvar use-package-verbose t)
 
-;; (setq custom-file "~/.emacs.d/custom.el")
-;; (load custom-file)
+;; Without this, using `package.el` will add this content to this file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 ;; Suppresses annoying message:
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'

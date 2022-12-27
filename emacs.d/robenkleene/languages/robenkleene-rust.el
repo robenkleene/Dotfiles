@@ -10,6 +10,7 @@
 ;;    )
 ;;   )
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package rust-mode
   :mode ("\\.rs\\'")
   :init

@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package csv-mode
   :mode "\\.csv\\'")
 

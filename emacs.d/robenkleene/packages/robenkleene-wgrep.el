@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package wgrep
   :commands wgrep-change-to-wgrep-mode
   :init

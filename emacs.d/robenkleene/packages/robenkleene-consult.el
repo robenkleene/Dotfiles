@@ -3,6 +3,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :commands

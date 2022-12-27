@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package magit
   :commands (robenkleene/magit-log
              robenkleene/magit-status-startup

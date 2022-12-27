@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package editorconfig
   :config
   (add-to-list 'editorconfig-indentation-alist '(markdown-mode markdown-list-indent-width))

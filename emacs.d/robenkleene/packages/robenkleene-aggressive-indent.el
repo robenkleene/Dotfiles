@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(load "~/.emacs.d/init-use-package.el")
 (use-package aggressive-indent
   :init
   ;; (global-aggressive-indent-mode 1)
