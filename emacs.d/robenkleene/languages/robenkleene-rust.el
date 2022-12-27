@@ -11,7 +11,13 @@
 ;;   )
 
 (use-package rust-mode
-  :mode "\\.rs\\'"
+  :mode ("\\.rs\\'")
+  :init
+  ;; Make Rust `compilation-error-regexp-alist' available even if a Rust buffer
+  ;; hasn't been visited first
+  (with-eval-after-load "compile"
+    (require 'rust-compile)
+    )
   :config
   (add-hook 'rust-mode-hook
             (lambda ()
