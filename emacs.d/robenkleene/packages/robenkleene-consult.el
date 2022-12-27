@@ -10,14 +10,9 @@
   (robenkleene/consult-doc
    robenkleene/consult-z
    robenkleene/consult-fd
-   robenkleene/consult-fd-pwd)
-  :bind
-  ;; Prefer the evil leader bindings
-  ;; ("C-c l" . consult-line)
-  (:map dired-mode-map
-        ;; ("M-a" . consult-ripgrep)
-        ("M-z" . robenkleene/consult-z)
-        )
+   robenkleene/consult-fd-pwd
+   robenkleene/consult-eshell-z
+   )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
   ;; relevant when you use the default completion UI.
@@ -40,6 +35,14 @@
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
 
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "M-z") 'robenkleene/consult-z)
+    )
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (define-key eshell-mode-map (kbd "M-z") 'robenkleene/consult-eshell-z)
+              )
+            )
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
@@ -99,6 +102,28 @@
       :category 'file
       :state (consult--file-preview)
       :history 'file-name-history)))
+
+  (defun robenkleene/consult-eshell-z ()
+    "z using `completing-read'."
+    (interactive)
+    (eshell/cd
+     (consult--read
+      (or (mapcar #'abbreviate-file-name
+                  (split-string
+                   (replace-regexp-in-string
+                    "\n$" ""
+                    (shell-command-to-string
+                     "zoxide query --list"))
+                   "\n"))
+          (user-error "No recent files"))
+      :prompt "Z: "
+      :sort nil
+      :require-match t
+      :category 'file
+      :state (consult--file-preview)
+      :history 'file-name-history))
+    (eshell-send-input)
+    )
 
   (defun consult--fd-builder (input)
     (pcase-let* ((`(,arg . ,opts) (consult--command-split input))
