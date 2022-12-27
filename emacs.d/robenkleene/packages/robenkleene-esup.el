@@ -4,6 +4,10 @@
 
 (use-package esup
   :ensure t
+  :init
+  ;; This fixes a bug when running `esup', alas it also makes the results
+  ;; useless
+  (setq esup-depth 1)
   :commands (esup))
 
 (provide 'robenkleene-esup)
