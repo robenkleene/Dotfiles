@@ -636,7 +636,6 @@ With prefix arg, find the previous file."
   "Search for REGEXP with optional FILES and DIR."
   (interactive)
   (require 'grep)
-  (cd (robenkleene/source-control-directory))
   (compilation-start
    "git diff --relative | diff_to_grep"
    'grep-mode)
@@ -807,7 +806,7 @@ With prefix arg, find the previous file."
   (interactive)
   (if current-prefix-arg
       (call-interactively 'robenkleene/new-inbox-document)
-    (robenkleene/open-inbox)
+    (robenkleene/inbox-open)
     )
   )
 
