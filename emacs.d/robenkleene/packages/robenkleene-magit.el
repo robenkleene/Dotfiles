@@ -46,7 +46,12 @@
   (defun robenkleene/magit-egit ()
     "`egit' `magit'"
     (interactive)
-    (unless (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
+    (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
+        (progn
+          (async-shell-command "~/.bin/sgitt_auto" "*egit save*" "*egit save*")
+          (switch-to-buffer-other-window "*egit save*")
+          (view-mode)
+          )
       (let ((default-directory (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
         (magit-status)
         )
