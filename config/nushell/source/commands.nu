@@ -51,8 +51,7 @@ def ua [] {
 
 def u [] {
   ssh_start
-  egit -u
-  ~/Developer/Dotfiles/update.sh
+  ~/.bin/egit_update
 }
 
 def gp [] {

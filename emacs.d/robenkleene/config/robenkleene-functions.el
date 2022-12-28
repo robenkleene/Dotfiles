@@ -1056,6 +1056,14 @@ CLICK-EVENT should be a mouse-click event."
   (let ((pos (cadr (event-start click-event))))
     (describe-char pos)))
 
+(defun robenkleene/egit-update (&optional arg)
+  "Run update."
+  (interactive)
+  (async-shell-command "~/.bin/egit_update" "*egit update*" "*egit update*")
+  (switch-to-buffer-other-window "*egit update*")
+  (view-mode)
+  )
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
