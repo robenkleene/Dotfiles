@@ -10,7 +10,7 @@ fi
 alias zoi='zsh_edit_config'
 alias gemacs='emacs_app'
 alias rg='rg_custom'
-alias s='ssh_start && { egit -p || egitn } && echo "Auto" && sgitt -cp'
+alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
 alias u='ssh_start && ~/.bin/egit_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'

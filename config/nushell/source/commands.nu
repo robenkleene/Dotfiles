@@ -12,12 +12,7 @@ def-env s [] {
     "."
   })
   if (($gitnext | str length) == 0) {
-    print "Auto"
-    if ("~/.personal" | path exists) {
-      sgitt -cp
-    } else {
-      sgitt -c
-    }
+    ~/.bin/sgitt_auto
   }
 }
 
