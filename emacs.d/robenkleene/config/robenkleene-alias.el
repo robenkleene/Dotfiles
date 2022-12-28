@@ -17,6 +17,7 @@
 (defalias 'title-case 'robenkleene/title-case)
 (defalias 'archive-current-file 'robenkleene/archive-current-file)
 (defalias 'today 'robenkleene/today)
+(defalias 'u 'robenkleene/egit-update)
 
 ;; Kill
 (defalias 'kill-buffer-file-name 'robenkleene/kill-buffer-file-name)
