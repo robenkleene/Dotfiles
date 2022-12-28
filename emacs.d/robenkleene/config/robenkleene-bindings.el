@@ -84,6 +84,7 @@ Otherwise, use `robenkleene/window-map'."
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
 ;;   'robenkleene/open-terminal-window)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
+(define-key robenkleene/bindings-minor-mode-map (kbd "C-c `") 'eshell)
 
 ;; Window-Key Based
 (define-key robenkleene/window-map
