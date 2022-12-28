@@ -4,20 +4,15 @@
 
 (load "~/.emacs.d/init-use-package.el")
 (use-package magit
-  :commands (robenkleene/magit-log
-             robenkleene/magit-status-startup
+  :commands (
+             robenkleene/magit-egit
              magit-status
-             magit-log-current)
-  :bind
-  (:map robenkleene/leader-map
-        ("m s" . magit-status)
-        ("m l" . magit-log-current)
-        ("m f" . magit-log-buffer-file)
-        )
+             magit-log-current
+             )
   :init
-  (defalias 'mgs 'magit-status)
-  (defalias 'mgl 'magit-log-current)
-  ;; (defalias 'mf 'magit-log-buffer-file)
+  (defalias 'ms 'magit-status)
+  (defalias 'ml 'magit-log-current)
+  (defalias 's 'robenkleene/magit-egit)
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
@@ -48,31 +43,16 @@
   ;; again later
   ;; (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 
-  (defun robenkleene/magit-log ()
-    "Call magit log removing other windows."
+  (defun robenkleene/magit-egit ()
+    "`egit' `magit'"
     (interactive)
-    (progn (call-interactively 'magit-log-current)
-           (delete-other-windows))
+    (unless (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
+      (let ((default-directory (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
+        (magit-status)
+        )
+      )
     )
 
-  ;; Magit Startup Helpers
-  (defun robenkleene/magit-status-current-window ()
-    "Magit in current window."
-    (interactive)
-    (progn (call-interactively 'magit-status)
-           (delete-other-windows))
-    )
-  (defun robenkleene/magit-focus-selected-frame ()
-    "Focus on current frame."
-    (select-frame-set-input-focus (selected-frame))
-    )
-  (defun robenkleene/magit-status-startup ()
-    "Startup magit full frame with focus."
-    (interactive)
-    (progn
-      (robenkleene/magit-status-current-window)
-      (robenkleene/magit-focus-selected-frame))
-    )
   )
 
 (provide 'robenkleene-magit)
