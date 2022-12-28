@@ -109,6 +109,8 @@
     'eglot-completion-at-point)
   (define-key robenkleene/evil-leader-map (kbd "l")
     'consult-line)
+  (define-key robenkleene/evil-leader-map (kbd "k")
+    'eldoc-doc-buffer)
   ;; (define-key robenkleene/evil-leader-map (kbd "q")
   ;;   'robenkleene/toggle-grep-buffer)
 
@@ -130,36 +132,36 @@
         (setq ispell-pdict-modified-p nil)))
     (define-key evil-normal-state-map "zg" 'robenkleene/ispell-save-word)
     (define-key evil-normal-state-map "z=" 'ispell-word)
+    (define-key evil-normal-state-map (kbd "SPC") robenkleene/evil-leader-map)
+    (define-key evil-normal-state-map (kbd "g f") 'xref-find-references)
+    (define-key evil-normal-state-map (kbd "g r") 'find-file-at-point)
+    (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
+    (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
+    (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
+    (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
+    (define-key evil-normal-state-map (kbd "-") 'dired-jump)
+    (define-key evil-normal-state-map (kbd "M-z") 'robenkleene/consult-z)
+    ;; Visual Line
+    (define-key evil-motion-state-map
+      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+    (define-key evil-motion-state-map
+      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     ;; Motion
     ;; Motion binds normal and visual
     (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
-    (define-key evil-motion-state-map (kbd "-") 'dired-jump)
     (define-key evil-motion-state-map (kbd "C-w") robenkleene/window-map)
     (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
+    (define-key evil-motion-state-map (kbd "<backspace>") 'page-up)
+    (define-key evil-motion-state-map (kbd "SPC") 'page-down)
     (define-key evil-motion-state-map (kbd "TAB") nil)
-    (define-key evil-motion-state-map (kbd "SPC") robenkleene/evil-leader-map)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
-    (define-key evil-motion-state-map (kbd "g f") 'xref-find-references)
-    (define-key evil-motion-state-map (kbd "g r") 'find-file-at-point)
-    (define-key evil-motion-state-map (kbd "g y") 'eglot-find-typeDefinition)
-    (define-key evil-motion-state-map (kbd "g i") 'eglot-find-implementation)
-    (define-key evil-motion-state-map (kbd "g d") 'xref-find-definitions)
-    (define-key evil-motion-state-map (kbd "M-z") 'robenkleene/consult-z)
-
-    (define-key evil-normal-state-map
-      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-    (define-key evil-normal-state-map
-      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
-    (define-key evil-motion-state-map
-      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-    (define-key evil-motion-state-map
-      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+    ;; Visual
+    (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
 
-  (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
 
   ;; Allow crossing lines by moving past end of line
   ;; (setq-default evil-cross-lines t)
