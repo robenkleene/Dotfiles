@@ -85,7 +85,7 @@
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
-  ;; (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
+  (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (define-key robenkleene/evil-leader-map (kbd "l") 'consult-occur)
   (define-key robenkleene/evil-leader-map (kbd "b")
     'consult-buffer)
@@ -97,8 +97,8 @@
     'consult-ripgrep)
   (define-key robenkleene/evil-leader-map (kbd "i")
     'consult-imenu)
-  ;; (define-key robenkleene/evil-leader-map (kbd "w")
-  ;;   'toggle-truncate-lines)
+  (define-key robenkleene/evil-leader-map (kbd "w")
+    'toggle-truncate-lines)
   (define-key robenkleene/evil-leader-map (kbd "=")
     'eglot-format-buffer)
   (define-key robenkleene/evil-leader-map (kbd "a")
