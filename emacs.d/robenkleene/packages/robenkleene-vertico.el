@@ -8,7 +8,7 @@
   :bind
   (:map vertico-map
         ("?" . 'minibuffer-completion-help)
-        ("C-c <RET>" . 'minibuffer-force-complete-and-exit)
+        ;; ("C-c <RET>" . 'minibuffer-force-complete-and-exit)
         ("C-c [?\t]" . 'minibuffer-complete)
         )
   :init
