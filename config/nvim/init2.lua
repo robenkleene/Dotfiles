@@ -1,3 +1,9 @@
+-- Set before plugins that require this
+vim.o.termguicolors = true
+-- Set leader now so later bindings pick it up
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({

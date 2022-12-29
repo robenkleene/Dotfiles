@@ -1,5 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
+  event = "VeryLazy",
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
     local opts = { noremap=true, silent=true }

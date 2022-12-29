@@ -1,6 +1,6 @@
 return {
-  { "gpanders/editorconfig.nvim" },
-  { "tpope/vim-vinegar" },
+  { "gpanders/editorconfig.nvim", event = "VeryLazy" },
+  { "tpope/vim-vinegar", event = "VeryLazy" },
   {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
@@ -8,6 +8,7 @@ return {
   { "numToStr/Comment.nvim", config = true },
   {
     'L3MON4D3/LuaSnip',
+    event = "VeryLazy",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
       vim.cmd([[
@@ -15,14 +16,14 @@ return {
         ]])
     end
   },
-  { "NvChad/nvim-colorizer.lua", config = true },
-  { "kylechui/nvim-surround", config = true },
+  { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
+  { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
     -- Use `B` command to pipe just part of a visual selection
     'vim-scripts/vis',
     cmd = "B"
   },
-  { 'github/copilot.vim' },
+  { 'github/copilot.vim', event = "VeryLazy" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -32,7 +33,7 @@ return {
       vim.cmd [[colorscheme catppuccin]]
     end
   },
-  { 'j-hui/fidget.nvim', },
+  { 'j-hui/fidget.nvim', event = "VeryLazy" },
   {
       'nvim-treesitter/playground',
       cmd = 'TSPlaygroundToggle'
