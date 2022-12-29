@@ -1,12 +1,21 @@
 return {
   { "gpanders/editorconfig.nvim", event = "VeryLazy" },
-  { "tpope/vim-vinegar", event = "VeryLazy" },
-  { "elihunter173/dirbuf.nvim" },
+  {
+    "elihunter173/dirbuf.nvim",
+    keys = {
+      { '-' },
+    },
+    config = function()
+      require("dirbuf").setup {
+        show_hidden = false,
+      }
+    end
+  },
   {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
   },
-  { "numToStr/Comment.nvim", config = true },
+  { "numToStr/Comment.nvim", config = true, event = "VeryLazy" },
   {
     'L3MON4D3/LuaSnip',
     event = "VeryLazy",

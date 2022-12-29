@@ -7,15 +7,15 @@ return {
       build = 'make',
     },
     config = true,
-    keys = {
-      { '<leader>b' },
-      { '<leader>l' },
-      { '<leader>F' },
-      { '<leader>f' },
-      { '<leader>/' },
-      { '<leader>s' },
-      { '<leader>S' },
-    },
+  },
+  keys = {
+    { '<leader>b' },
+    { '<leader>l' },
+    { '<leader>F' },
+    { '<leader>f' },
+    { '<leader>/' },
+    { '<leader>s' },
+    { '<leader>S' },
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
