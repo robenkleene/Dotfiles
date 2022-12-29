@@ -37,8 +37,8 @@ else
   done
 fi
 
+redirect=" 2> /dev/null"
 if [[ "$verbose" == "true" ]]; then
-  emacs --batch -nw -eval '(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)'
-else
-  emacs --batch -nw -eval '(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)' 2> /dev/null
+  redirect=""
 fi
+emacs --batch -nw -eval '(byte-recompile-directory (expand-file-name "~/.emacs.d/robenkleene") 0)'"$redirect"
