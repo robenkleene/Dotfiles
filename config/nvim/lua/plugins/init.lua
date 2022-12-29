@@ -2,9 +2,10 @@ return {
   { "gpanders/editorconfig.nvim", event = "VeryLazy" },
   {
     "elihunter173/dirbuf.nvim",
-    keys = {
-      { '-' },
-    },
+    -- This breaks `nvim .`
+    -- keys = {
+    --   { '-' },
+    -- },
     config = function()
       require("dirbuf").setup {
         show_hidden = false,
