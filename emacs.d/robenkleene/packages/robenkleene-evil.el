@@ -159,6 +159,7 @@
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") nil)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
+    (define-key evil-motion-state-map (kbd "+") nil)
     ;; Visual
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )

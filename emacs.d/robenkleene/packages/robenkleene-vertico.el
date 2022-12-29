@@ -4,6 +4,14 @@
 
 (load "~/.emacs.d/init-use-package.el")
 (use-package vertico
+  :demand t
+  :bind
+  (:map vertico-map
+        ("?" . 'minibuffer-completion-help)
+        ("C-c <RET>" . 'minibuffer-force-complete-and-exit)
+        ("C-c [?\t]" . 'minibuffer-complete)
+        )
+  )
   :init
   (vertico-mode)
 
