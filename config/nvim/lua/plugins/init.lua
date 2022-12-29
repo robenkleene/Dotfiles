@@ -1,6 +1,7 @@
 return {
   { "gpanders/editorconfig.nvim", event = "VeryLazy" },
   { "tpope/vim-vinegar", event = "VeryLazy" },
+  { "elihunter173/dirbuf.nvim" },
   {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
@@ -12,7 +13,7 @@ return {
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
       vim.cmd([[
-        imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+        imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
         ]])
     end
   },
