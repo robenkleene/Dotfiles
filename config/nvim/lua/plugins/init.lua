@@ -32,5 +32,11 @@ return {
       vim.cmd [[colorscheme catppuccin]]
     end
   },
-  { 'j-hui/fidget.nvim', }
+  { 'j-hui/fidget.nvim', },
+  {
+      'nvim-treesitter/playground',
+      cmd = 'TSPlaygroundToggle'
+  },
+  -- Languages
+  { 'dag/vim-fish', ft = { 'fish' }, }
 }
