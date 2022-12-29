@@ -15,6 +15,8 @@ nnoremap <A-right> w
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
 nnoremap <leader>cq :GrepBufferFromClipboard<CR>
+nnoremap <leader>* :Rg <C-r><C-w><cr>
+vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 " Other
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
