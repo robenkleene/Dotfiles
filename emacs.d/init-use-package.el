@@ -5,8 +5,7 @@
 (eval-when-compile
   (unless (bound-and-true-p package--initialized)
     (package-initialize))
-  (require 'use-package)
-  )
+  (require 'use-package))
 
 (provide 'init-use-package)
 ;; Local Variables:
