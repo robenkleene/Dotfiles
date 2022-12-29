@@ -157,6 +157,7 @@
     (define-key evil-motion-state-map (kbd "<backspace>") 'scoll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
     (define-key evil-motion-state-map (kbd "TAB") nil)
+    (define-key evil-motion-state-map (kbd "-") nil)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     ;; Visual
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
@@ -188,6 +189,7 @@
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "-") 'dired-jump)
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
     (evil-define-key 'motion dired-mode-map (kbd "SPC") robenkleene/evil-leader-map
       )
