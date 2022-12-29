@@ -59,7 +59,8 @@ done
 
 ./scripts/update.sh
 ./scripts/zsh_update.zsh
-./scripts/emacs_bytecompile.sh
+# This is breaking every time it's run without the `-c` option
+# ./scripts/emacs_bytecompile.sh
 
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
