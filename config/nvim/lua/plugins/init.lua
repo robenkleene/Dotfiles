@@ -19,6 +19,10 @@ return {
   { "numToStr/Comment.nvim", config = true, event = "VeryLazy" },
   {
     'L3MON4D3/LuaSnip',
+    -- This can't co-exist with GitHub Copilot
+    -- keys = {
+    --   { '<Tab>', mode = "i" },
+    -- },
     event = "VeryLazy",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
@@ -27,6 +31,7 @@ return {
         ]])
     end
   },
+  { 'github/copilot.vim', event = "VeryLazy", },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
@@ -34,7 +39,6 @@ return {
     'vim-scripts/vis',
     cmd = "B"
   },
-  { 'github/copilot.vim', event = "VeryLazy" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
