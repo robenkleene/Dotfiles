@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(load "~/.emacs.d/init-use-package.el")
+(eval-when-compile
+  (unless (bound-and-true-p package--initialized)
+    (package-initialize))
+  (require 'use-package))
 (use-package adaptive-wrap
   :init
   (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
