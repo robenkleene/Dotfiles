@@ -17,8 +17,10 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package)
-  (load "~/.emacs.d/init-use-package.el")
-  )
+  (eval-when-compile
+    (unless (bound-and-true-p package--initialized)
+      (package-initialize))
+    (require 'use-package)))
 
 (setq use-package-always-ensure t)
 ;; `use-package' requires `bind-key'

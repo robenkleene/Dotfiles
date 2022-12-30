@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(load "~/.emacs.d/init-use-package.el")
+(eval-when-compile
+  (unless (bound-and-true-p package--initialized)
+    (package-initialize))
+  (require 'use-package))
 (use-package editorconfig
   :config
   (add-to-list 'editorconfig-indentation-alist '(markdown-mode markdown-list-indent-width))

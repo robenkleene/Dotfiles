@@ -29,8 +29,14 @@ done
 
 if [[ "$clean" == "true" ]]; then
   find ~/.emacs.d/robenkleene -name "*.elc" -type f -delete
+  find ~/.emacs.d/ -maxdepth 1 -name "*.elc" -type f -delete
 else
   find ~/.emacs.d/robenkleene -name "*.elc" -type f | while read -r line; do
+    if [[ ! -f "${line%?}" ]]; then
+      rm "$line"
+    fi
+  done
+  find ~/.emacs.d/ -maxdepth 1 -name "*.elc" -type f | while read -r line; do
     if [[ ! -f "${line%?}" ]]; then
       rm "$line"
     fi
