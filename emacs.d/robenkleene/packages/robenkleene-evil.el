@@ -82,6 +82,7 @@
 
   (evil-mode 1)
   :config
+  ;; Without `evil-' these conflict with other functions
   (defalias 'evil-motion 'evil-motion-state)
   (defalias 'evil-emacs 'evil-emacs-state)
   (defalias 'evil-insert 'evil-insert-state)
@@ -92,7 +93,7 @@
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
-  (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
+  ;; (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (define-key robenkleene/evil-leader-map (kbd "l") 'consult-occur)
   (define-key robenkleene/evil-leader-map (kbd "b")
     'consult-buffer)
