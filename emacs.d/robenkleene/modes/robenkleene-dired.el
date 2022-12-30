@@ -37,8 +37,10 @@
   ;; Don't show "omitted lines" message
   (setq dired-omit-verbose nil)
   ;; Kill the current buffer when going to new directory
-  (setq dired-kill-when-opening-new-dired-buffer t)
-  ;; When deleting a directory, always also kill the corresponding dired buffer
+  ;; Can't enable this because then it's hard to open two side-by-side Dired
+  ;; buffers
+  ;; (setq dired-kill-when-opening-new-dired-buffer t)
+  ;; When deleting a directory, always also kill the corresponding Dired buffer
   (defadvice robenkleene/dired-delete-entry (before force-clean-up-buffers (file) activate)
     (kill-buffer (get-file-buffer file)))
 
