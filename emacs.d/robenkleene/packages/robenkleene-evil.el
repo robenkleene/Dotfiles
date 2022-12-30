@@ -202,8 +202,13 @@
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "-") 'dired-jump)
     (define-key dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
-    (evil-define-key 'motion dired-mode-map (kbd "SPC") robenkleene/evil-leader-map
-      )
+    (evil-define-key 'motion dired-mode-map (kbd "SPC") robenkleene/evil-leader-map)
+    )
+
+  (with-eval-after-load 'markdown-mode
+    ;; Default move by paragraph doesn't skip over individual Markdown list items
+    (evil-define-key 'motion markdown-mode-map (kbd "{") 'robenkleene/backward-block)
+    (evil-define-key 'motion markdown-mode-map (kbd "}") 'robenkleene/forward-block)
     )
 
   ;; Packages
