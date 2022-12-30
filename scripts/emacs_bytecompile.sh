@@ -47,4 +47,8 @@ redirect=" 2> /dev/null"
 if [[ "$verbose" == "true" ]]; then
   redirect=""
 fi
-eval "emacs --batch -nw -eval '(byte-recompile-directory (expand-file-name \"~/.emacs.d/robenkleene\") 0)' $redirect"
+# Compiling these files causes the `personal keybindings` void error?
+# cd ~/.emacs.d/ || exit 1
+# eval "emacs --quick --batch -f batch-byte-compile *.el" $redirect
+eval "emacs --quick --batch -eval '(byte-recompile-directory (expand-file-name \"~/.emacs.d/robenkleene\") 0)' $redirect"
+
