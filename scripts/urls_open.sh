@@ -1,3 +1,3 @@
 #!/bin/sh
 
-~/.bin/url_filter | ~/.bin/nobin/_urls_open.sh "$@"
+~/.bin/filter_url | ~/.bin/nobin/_urls_open.sh "$@"
