@@ -82,10 +82,10 @@
 
   (evil-mode 1)
   :config
-  (defalias 'motion 'evil-motion-state)
-  (defalias 'emacs 'evil-emacs-state)
-  (defalias 'insert 'evil-insert-state)
-  (defalias 'normal 'evil-normal-state)
+  (defalias 'evil-motion 'evil-motion-state)
+  (defalias 'evil-emacs 'evil-emacs-state)
+  (defalias 'evil-insert 'evil-insert-state)
+  (defalias 'evil-normal 'evil-normal-state)
 
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
