@@ -28,8 +28,9 @@
    (propertize " VL " 'face '((:background "purple3" :foreground "white")))
    evil-visual-screen-line-tag
    (propertize " VSL " 'face '((:background "purple3" :foreground "white")))
-   evil-visual-state-tag
-   (propertize " V " 'face '((:background "purple3" :foreground "white")))
+   ;; If this is set, it'll be used instead of the more specific visual tags above
+   ;; evil-visual-state-tag
+   ;; (propertize " V " 'face '((:background "purple3" :foreground "white")))
    evil-replace-state-tag
    (propertize " R " 'face '((:background "purple3" :foreground "white")))
    )
@@ -82,17 +83,19 @@
 
   (evil-mode 1)
   :config
-  ;; Without `evil-' these conflict with other functions
-  (defalias 'evil-motion 'evil-motion-state)
-  (defalias 'evil-emacs 'evil-emacs-state)
-  (defalias 'evil-insert 'evil-insert-state)
-  (defalias 'evil-normal 'evil-normal-state)
+  ;; These conflict with other functions, just use the defaults
+  ;; (defalias 'motion 'evil-motion-state)
+  ;; (defalias 'emacs 'evil-emacs-state)
+  ;; (defalias 'insert 'evil-insert-state)
+  ;; (defalias 'normal 'evil-normal-state)
 
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
 
   ;; Bindings
   (defvar robenkleene/evil-leader-map (make-keymap))
+  ;; Don't enable this, it's too easy to keep hitting it in buffers that don't
+  ;; support it otherwise
   ;; (define-key robenkleene/evil-leader-map (kbd "o i") 'robenkleene/edit-init)
   (define-key robenkleene/evil-leader-map (kbd "l") 'consult-occur)
   (define-key robenkleene/evil-leader-map (kbd "b")
