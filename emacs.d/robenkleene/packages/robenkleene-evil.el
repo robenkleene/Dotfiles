@@ -182,9 +182,6 @@
               (remove-hook 'activate-mark-hook
                            'evil-visual-activate-hook t)))
 
-  ;; (add-hook 'wgrep-setup-hook
-  ;;           (lambda () (evil-normal-state)))
-
   ;; Modes
   ;; Normal
   (evil-set-initial-state 'prog-mode 'normal)
