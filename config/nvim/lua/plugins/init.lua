@@ -26,9 +26,10 @@ return {
     event = "VeryLazy",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/Code/User/snippets" } })
-      vim.cmd([[
-        imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-        ]])
+      vim.api.nvim_set_keymap(
+        'i', '<Tab>',
+        'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
+        {expr = true, silent = true})
     end
   },
   { 'github/copilot.vim', event = "VeryLazy", },
@@ -45,7 +46,7 @@ return {
     config = function()
       vim.g.catppuccin_flavour = "mocha"
       require("catppuccin").setup()
-      vim.cmd [[colorscheme catppuccin]]
+      vim.cmd("colorscheme catppuccin")
     end
   },
   { 'j-hui/fidget.nvim', event = "VeryLazy" },
