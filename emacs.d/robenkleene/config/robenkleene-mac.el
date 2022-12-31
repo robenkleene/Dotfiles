@@ -90,10 +90,10 @@
 
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-z")
-  'undo-tree-undo)
+  'undo-only)
 (define-key robenkleene/mac-bindings-minor-mode-map
   (kbd "s-Z")
-  'undo-tree-redo)
+  'undo-redo)
 
 ;; Disable quit
 (global-unset-key (kbd "s-q"))
