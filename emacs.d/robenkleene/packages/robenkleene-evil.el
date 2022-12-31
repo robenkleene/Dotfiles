@@ -11,23 +11,23 @@
   :init
   (setq
    evil-normal-state-tag
-   (propertize " N " 'face '((:background "purple3" :foreground "white")))
+   (propertize " NORMAL " 'face '((:background "purple3" :foreground "white")))
    evil-operator-state-tag
-   (propertize " O " 'face '((:background "purple3" :foreground "white")))
+   (propertize " OPERATOR " 'face '((:background "purple3" :foreground "white")))
    evil-insert-state-tag
-   (propertize " I " 'face '((:background "RoyalBlue" :foreground "white")))
+   (propertize " INSERT " 'face '((:background "RoyalBlue" :foreground "white")))
    evil-emacs-state-tag
-   (propertize " E " 'face '((:background "RoyalBlue" :foreground "white")))
+   (propertize " EMACS " 'face '((:background "RoyalBlue" :foreground "white")))
    evil-motion-state-tag
-   (propertize " M " 'face '((:background "purple3" :foreground "white")))
+   (propertize " MOTION " 'face '((:background "purple3" :foreground "white")))
    evil-visual-block-tag
-   (propertize " VB " 'face '((:background "purple3" :foreground "white")))
+   (propertize " VISUAL (B) " 'face '((:background "purple3" :foreground "white")))
    evil-visual-char-tag
-   (propertize " VC " 'face '((:background "purple3" :foreground "white")))
+   (propertize " VISUAL (C) " 'face '((:background "purple3" :foreground "white")))
    evil-visual-line-tag
-   (propertize " VL " 'face '((:background "purple3" :foreground "white")))
+   (propertize " VISUAL (L) " 'face '((:background "purple3" :foreground "white")))
    evil-visual-screen-line-tag
-   (propertize " VSL " 'face '((:background "purple3" :foreground "white")))
+   (propertize " VISUAL (SL) " 'face '((:background "purple3" :foreground "white")))
    ;; If this is set, it'll be used instead of the more specific visual tags above
    ;; evil-visual-state-tag
    ;; (propertize " V " 'face '((:background "purple3" :foreground "white")))
