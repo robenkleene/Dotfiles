@@ -300,6 +300,9 @@
 ;; Always prefer newer `.el' file if there's an older `.elc' file
 (setq load-prefer-newer t)
 
+;; Don't try to parse long line
+(global-so-long-mode)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
