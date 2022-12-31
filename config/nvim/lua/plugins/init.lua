@@ -48,6 +48,7 @@ return {
             {
               'filename',
               path = 1,
+              shorting_target = 20,
             }
           },
           lualine_x = {'filetype'},
