@@ -11,6 +11,7 @@ return {
         'lua',
         'javascript',
         'kotlin',
+        'help',
         'html',
         'markdown',
         'markdown_inline',
@@ -18,7 +19,8 @@ return {
         'query',
         'rust',
         'toml',
-        'typescript'
+        'typescript',
+        'vim',
       },
       highlight = { enable = true },
       indent = { enable = true },
