@@ -3,6 +3,11 @@ return {
   config = function()
     require('nvim-treesitter.configs').setup {
       -- `query` is for treesitter playground
+      -- `c`, `lua`, `help`, and `vim` are installed by default by Neovim, so
+      -- they must be present otherwise the default versions will be found by
+      -- the treesitter plugin which are incompatible.
+      -- See the directories where parsers are found:
+      -- `:echo nvim_get_runtime_file('parser', v:true)`
       ensure_installed = {
         'bash',
         'c',
