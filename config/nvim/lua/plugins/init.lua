@@ -32,6 +32,34 @@ return {
         {expr = true, silent = true})
     end
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'catppuccin',
+          component_separators = '|',
+          section_separators = '',
+        },
+        sections = {
+          lualine_a = {'mode'},
+          lualine_b = {'diagnostics'},
+          lualine_c = {'filename'},
+          lualine_x = {'filetype'},
+          lualine_y = {'progress'},
+          lualine_z = {'location'}
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = {'filename'},
+          lualine_x = {'location'},
+          lualine_y = {},
+          lualine_z = {}
+        }
+      }
+    end
+  },
   { 'github/copilot.vim', event = "VeryLazy", },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
