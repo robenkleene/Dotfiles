@@ -103,7 +103,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/slug-project (title dir)
+(defun robenkleene/slug-project-create (title dir)
   "Create a new slug project with TITLE in DIR."
   (interactive
    (list (read-from-minibuffer "Title: "
@@ -240,7 +240,7 @@ Otherwise, call `backward-kill-word'."
   (other-window 1)
   )
 
-(defun robenkleene/archive-current-file ()
+(defun robenkleene/archive-this-buffer ()
   "Archive the current file."
   (interactive)
   (if (y-or-n-p (concat "Backup " (buffer-name)))
@@ -280,7 +280,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/archive ()
+(defun robenkleene/archive-region ()
   "Archive region."
   (interactive)
   (if (use-region-p)
@@ -308,7 +308,7 @@ Otherwise, call `backward-kill-word'."
   (robenkleene/shell-command-on-buffer-or-region "~/.bin/markdown_check -i -b")
   )
 
-(defun robenkleene/title-case ()
+(defun robenkleene/convert-region-to-title-case ()
   "Make a wiki link from a file named after the region."
   (interactive)
   (if (use-region-p)
@@ -983,7 +983,7 @@ With prefix arg, find the previous file."
   (message default-directory)
   (kill-new default-directory))
 
-(defun robenkleene/kill-today ()
+(defun robenkleene/kill-date-today ()
   "Kill the today's date."
   (interactive)
   (message (robenkleene/today))
@@ -1042,7 +1042,7 @@ With prefix arg, find the previous file."
         (cons 'vc override)
       nil)))
 
-(defun robenkleene/today (&optional arg)
+(defun robenkleene/date-today (&optional arg)
   "Return the current date."
   (interactive)
   (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")

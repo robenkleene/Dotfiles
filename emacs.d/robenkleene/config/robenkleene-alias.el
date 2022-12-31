@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Shorthand
 (defalias 'rg 'robenkleene/rg)
 (defalias 'oi 'robenkleene/edit-init)
 (defalias 'cg 'robenkleene/grep-from-clipboard)
@@ -12,18 +13,19 @@
 (defalias 'scwp (lambda ()
                   (interactive)
                   (robenkleene/source-control-open-web "-p")))
-(defalias 'clear 'desktop-clear)
 (defalias 'repla 'robenkleene/open-in-repla)
-(defalias 'title-case 'robenkleene/title-case)
-(defalias 'archive-current-file 'robenkleene/archive-current-file)
-(defalias 'today 'robenkleene/today)
 (defalias 'u 'robenkleene/egit-update)
+
+;; Vim
+(defalias 'new 'robenkleene/new-empty-other-window)
+(defalias 'vnew 'robenkleene/new-empty-other-window-vertical)
+(defalias 'enew 'robenkleene/new-empty)
 
 ;; Kill
 (defalias 'kill-buffer-file-name 'robenkleene/kill-buffer-file-name)
 (defalias 'kill-default-directory 'robenkleene/kill-default-directory)
 (defalias 'kill-buffer-name 'robenkleene/kill-buffer-name)
-(defalias 'kill-today 'robenkleene/kill-today)
+(defalias 'kill-date-today 'robenkleene/kill-date-today)
 
 ;; cd
 (defalias 'git-cd 'robenkleene/git-cd)
@@ -31,24 +33,24 @@
 (defalias 'pwd-cd 'robenkleene/pwd-cd)
 
 ;; Buffers
-(defalias 'scratch 'robenkleene/open-emacs-scratch)
-(defalias 'messages 'robenkleene/open-emacs-messages)
-(defalias 'home 'robenkleene/open-home)
+(defalias 'switch-to-scratch 'robenkleene/open-emacs-scratch)
+(defalias 'switch-to-messages 'robenkleene/open-emacs-messages)
+(defalias 'switch-to-home 'robenkleene/open-home)
 
-;; Vim
-(defalias 'new 'robenkleene/new-empty-other-window)
-(defalias 'vnew 'robenkleene/new-empty-other-window-vertical)
-(defalias 'enew 'robenkleene/new-empty)
+;; Text Converstions
+(defalias 'archive-this-buffer 'robenkleene/archive-current-file)
+(defalias 'archive-region 'robenkleene/archive-region)
+(defalias 'convert-region-to-title-case 'robenkleene/convert-region-to-title-case)
+(defalias 'date-today 'robenkleene/date-today)
 
 ;; Text
-(defalias 'clip 'robenkleene/new-clipboard)
-(defalias 'inbox 'robenkleene/inbox)
+(defalias 'switch-to-inbox 'robenkleene/inbox)
 (defalias 'inbox-create 'robenkleene/inbox-create)
-(defalias 'daily 'robenkleene/daily)
+(defalias 'switch-to-daily 'robenkleene/daily)
 (defalias 'daily-create 'robenkleene/daily-create)
 
 ;; Slug Project
-(defalias 'slug-project 'robenkleene/slug-project)
+(defalias 'slug-project-create 'robenkleene/slug-project)
 (defalias 'slug-project-archive 'robenkleene/slug-project-archive)
 (defalias 'slug-project-archive-readme 'robenkleene/slug-project-archive-readme)
 
