@@ -810,13 +810,13 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/inbox-open ()
+(defun robenkleene/switch-to-inbox ()
   "Switch to inbox directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
-(defun robenkleene/archive-open ()
+(defun robenkleene/switch-to-archive ()
   "Switch to inbox directory."
   (interactive)
   (find-file "~/Archive/Text/")
