@@ -46,6 +46,8 @@
 ;; Text
 (defalias 'switch-to-inbox 'robenkleene/switch-to-inbox)
 (defalias 'switch-to-archive 'robenkleene/switch-to-archive)
+(defalias 'switch-to-text 'robenkleene/switch-to-text)
+(defalias 'switch-to-notes 'robenkleene/switch-to-notes)
 (defalias 'inbox-create 'robenkleene/inbox-create)
 (defalias 'switch-to-daily 'robenkleene/daily)
 (defalias 'daily-create 'robenkleene/daily-create)
