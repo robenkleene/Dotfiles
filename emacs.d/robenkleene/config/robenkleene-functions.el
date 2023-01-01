@@ -816,8 +816,20 @@ With prefix arg, find the previous file."
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
+(defun robenkleene/switch-to-notes ()
+  "Switch to notes directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/")
+  )
+
+(defun robenkleene/switch-to-text ()
+  "Switch to text directory."
+  (interactive)
+  (find-file "~/Text/")
+  )
+
 (defun robenkleene/switch-to-archive ()
-  "Switch to inbox directory."
+  "Switch to archive directory."
   (interactive)
   (find-file "~/Archive/Text/")
   )
