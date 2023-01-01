@@ -53,6 +53,7 @@ return {
       'nvim-treesitter/playground',
       cmd = 'TSPlaygroundToggle'
   },
+  { 'j-hui/fidget.nvim', config = true, event = "VeryLazy" },
   -- Languages
   { 'dag/vim-fish', ft = { 'fish' }, }
 }
