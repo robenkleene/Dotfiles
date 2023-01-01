@@ -44,7 +44,8 @@
 (defalias 'date-today 'robenkleene/date-today)
 
 ;; Text
-(defalias 'switch-to-inbox 'robenkleene/inbox)
+(defalias 'switch-to-inbox 'robenkleene/switch-to-inbox)
+(defalias 'switch-to-archive 'robenkleene/switch-to-archive)
 (defalias 'inbox-create 'robenkleene/inbox-create)
 (defalias 'switch-to-daily 'robenkleene/daily)
 (defalias 'daily-create 'robenkleene/daily-create)
