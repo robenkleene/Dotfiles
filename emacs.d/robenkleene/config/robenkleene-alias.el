@@ -5,7 +5,7 @@
 ;; Shorthand
 (defalias 'rg 'robenkleene/rg)
 (defalias 'oi 'robenkleene/edit-init)
-(defalias 'cg 'robenkleene/grep-from-clipboard)
+(defalias 'yg 'robenkleene/grep-from-clipboard)
 (defalias 'esh 'eshell)
 (defalias 'bd 'kill-this-buffer)
 (defalias 'doc 'robenkleene/consult-doc)
