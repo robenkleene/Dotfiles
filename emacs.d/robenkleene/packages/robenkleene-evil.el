@@ -174,7 +174,8 @@
     ;; Visual
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
-
+  ;; Ex Commands
+  (evil-ex-define-cmd "OI" 'robenkleene/edit-init)
 
   ;; Allow crossing lines by moving past end of line
   ;; (setq-default evil-cross-lines t)
