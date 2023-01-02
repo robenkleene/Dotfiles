@@ -1,3 +1,4 @@
+command! OI :cd ~/Developer/Dotfiles/config/nvim/ | :edit init.lua
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
 command! GrepBuffer :call commands#GrepBuffer()
 command! GrepBufferFromClipboard :call commands#GrepBufferFromClipboard()

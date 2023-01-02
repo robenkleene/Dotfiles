@@ -1,4 +1,4 @@
-nnoremap <silent> <leader>oi :cd ~/Developer/Dotfiles/config/nvim/<CR>:edit init.lua<CR>
+" nnoremap <silent> <leader>oi :OI<CR>
 nnoremap <silent> cl :lcd %:p:h<CR>:echo getcwd()<CR>
 nnoremap <silent> cd :cd %:p:h<CR>:echo getcwd()<CR>
 nnoremap <silent> cg :execute 'cd' getcwd(-1)<CR>:echo getcwd()<CR>
