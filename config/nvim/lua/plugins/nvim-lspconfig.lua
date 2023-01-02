@@ -60,6 +60,7 @@ return {
       -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
       vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, bufopts)
+      vim.api.nvim_echo({{"LSP attached"}}, false, {})
     end
 
     -- Languages
