@@ -176,6 +176,7 @@
     )
   ;; Ex Commands
   (evil-ex-define-cmd "OI" 'robenkleene/edit-init)
+  (evil-ex-define-cmd "Rg" 'robenkleene/rg)
 
   ;; Allow crossing lines by moving past end of line
   ;; (setq-default evil-cross-lines t)
