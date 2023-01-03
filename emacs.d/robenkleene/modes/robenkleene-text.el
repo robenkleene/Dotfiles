@@ -8,7 +8,7 @@
   (define-key text-mode-map (kbd "M-p")
     'previous-error)
   (define-key text-mode-map (kbd "M-r")
-    'robenkleene/reveal-in-finder)
+    'reveal-in-finder)
   )
 
 (provide 'robenkleene-text)
