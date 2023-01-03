@@ -45,7 +45,7 @@ Otherwise, call `backward-kill-word'."
   (call-interactively
    (if (use-region-p) 'kill-region 'backward-kill-word)))
 
-(defun robenkleene/empty-frame ()
+(defun robenkleene/switch-to-empty-buffer-other-frame ()
   "Open a new frame with a buffer named Untitled."
   (interactive)
   (switch-to-buffer-other-frame (robenkleene/new-empty-buffer))
@@ -65,7 +65,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/new-empty ()
+(defun robenkleene/switch-to-empty-buffer ()
   "Open a new buffer named Untitled."
   (interactive)
   (switch-to-buffer (robenkleene/new-empty-buffer))
@@ -78,13 +78,13 @@ Otherwise, call `backward-kill-word'."
   (yank)
   )
 
-(defun robenkleene/new-empty-other-window ()
+(defun robenkleene/switch-to-empty-buffer-other-window ()
   "Open a new window with a buffer named Untitled."
   (interactive)
   (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
   )
 
-(defun robenkleene/new-empty-other-window-vertical ()
+(defun robenkleene/switch-to-empty-buffer-other-window-right ()
   "Open a new window with a buffer named Untitled."
   (interactive)
   (split-window-right)

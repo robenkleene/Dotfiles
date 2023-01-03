@@ -15,11 +15,17 @@
                   (robenkleene/source-control-open-web "-p")))
 (defalias 'repla 'robenkleene/open-in-repla)
 (defalias 'u 'robenkleene/egit-update)
+(defalias 'reveal-in-finder 'robenkleene/reveal-in-finder)
 
+;; Empty
+(defalias 'switch-to-empty-buffer-other-window 'robenkleene/switch-to-empty-buffer-other-window)
+(defalias 'switch-to-empty-buffer-other-window-right 'robenkleene/switch-to-empty-buffer-other-window-right)
+(defalias 'switch-to-empty-buffer 'robenkleene/switch-to-empty-buffer)
+(defalias 'switch-to-empty-buffer-other-frame 'robenkleene/switch-to-empty-buffer-other-frame)
 ;; Vim
-(defalias 'new 'robenkleene/new-empty-other-window)
-(defalias 'vnew 'robenkleene/new-empty-other-window-vertical)
-(defalias 'enew 'robenkleene/new-empty)
+;; (defalias 'new 'robenkleene/switch-to-empty-buffer-other-window)
+;; (defalias 'vnew 'robenkleene/switch-to-empty-buffer-other-window-right)
+;; (defalias 'enew 'robenkleene/switch-to-empty-buffer)
 
 ;; Kill
 (defalias 'kill-buffer-file-name 'robenkleene/kill-buffer-file-name)
