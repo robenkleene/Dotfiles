@@ -2,29 +2,27 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun robenkleene/edit-init ()
-  "Edit init."
-  (interactive)
-  (find-file "~/.emacs.d/robenkleene/robenkleene.el")
-  )
+;; Live
 
-(defun robenkleene/open-terminal-window ()
-  "Open a new Terminal window at the current path."
-  (interactive)
-  (shell-command "open -a Terminal .")
-  )
-
-(defun robenkleene/open-in-writer ()
-  "Open file in iA Writer."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "open -a \"iA Writer.app\" "
-                             (shell-quote-argument buffer-file-name))
-                     )
+(defun rg (regexp &optional files dir)
+  "Search for REGEXP with optional FILES and DIR."
+  (interactive (robenkleene/grep-parameters))
+  (require 'grep)
+  (let ((default-directory (or dir default-directory))
+        (command (grep-expand-template
+                  (if (equal files nil)
+                      robenkleene/rg-command
+                    robenkleene/rg-command-files)
+                  regexp
+                  files))
+        )
+    (compilation-start command 'grep-mode)
     )
   )
 
-(defun robenkleene/open-in-repla ()
+;; Mac OS
+
+(defun open-in-repla ()
   "Open file in Repla."
   (interactive)
   (if (buffer-file-name)
@@ -34,40 +32,7 @@
     )
   )
 
-(defun robenkleene/switch-to-empty-buffer-other-frame ()
-  "Open a new frame with a buffer named Untitled."
-  (interactive)
-  (switch-to-buffer-other-frame (robenkleene/new-empty-buffer))
-  )
-
-(defun robenkleene/switch-to-empty-buffer ()
-  "Open a new buffer named Untitled."
-  (interactive)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
-  )
-
-(defun robenkleene/new-clipboard ()
-  "Switch a new buffer with the clipboard contents."
-  (interactive)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
-  (yank)
-  )
-
-(defun robenkleene/switch-to-empty-buffer-other-window ()
-  "Open a new window with a buffer named Untitled."
-  (interactive)
-  (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
-  )
-
-(defun robenkleene/switch-to-empty-buffer-other-window-right ()
-  "Open a new window with a buffer named Untitled."
-  (interactive)
-  (split-window-right)
-  (other-window 1)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
-  )
-
-(defun robenkleene/reveal-in-finder ()
+(defun reveal-in-finder ()
   "Open a new Finder window at the current path."
   (interactive)
   (if (buffer-file-name)
@@ -78,7 +43,174 @@
     )
   )
 
-(defun robenkleene/slug-project-create (title dir)
+;; Switch To
+
+(defun switch-to-inbox ()
+  "Switch to inbox directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/Inbox/")
+  )
+
+(defun switch-to-notes ()
+  "Switch to notes directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/")
+  )
+
+(defun switch-to-text ()
+  "Switch to text directory."
+  (interactive)
+  (find-file "~/Text/")
+  )
+
+(defun switch-to-archive ()
+  "Switch to archive directory."
+  (interactive)
+  (find-file "~/Archive/Text/")
+  )
+
+(defun switch-to-daily ()
+  "Switch to daily file."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-command-to-string "~/.bin/daily_file -b"))
+  )
+
+(defun switch-to-scratch ()
+  "Switch to scratch buffer."
+  (interactive)
+  (switch-to-buffer "*scratch*")
+  )
+
+(defun switch-to-messages ()
+  "Switch to messages buffer."
+  (interactive)
+  (switch-to-buffer "*Messages*")
+  )
+
+(defun switch-to-scratch-other-window ()
+  "Switch to scratch for current buffer in other window."
+  (interactive)
+  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+    (if (bound-and-true-p file)
+        (find-file-other-window file)
+      (message "No file found.")
+      )
+    )
+  )
+
+;; Switch To Empty
+
+(defun switch-to-empty-buffer-other-window ()
+  "Open a new window with a buffer named Untitled."
+  (interactive)
+  (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
+  )
+
+(defun switch-to-empty-buffer-other-window-right ()
+  "Open a new window with a buffer named Untitled."
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  )
+
+(defun switch-to-empty-buffer-other-frame ()
+  "Open a new frame with a buffer named Untitled."
+  (interactive)
+  (switch-to-buffer-other-frame (robenkleene/new-empty-buffer))
+  )
+
+(defun switch-to-empty-buffer ()
+  "Open a new buffer named Untitled."
+  (interactive)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  )
+
+;; Kill
+
+(defun kill-buffer-file-name ()
+  "Copy the filename to the kill ring."
+  (interactive)
+  (message (buffer-file-name))
+  (kill-new (buffer-file-name))
+  )
+
+(defun robenkleene/kill-buffer-name ()
+  "Kill `buffer-name'"
+  (interactive)
+  (message (buffer-name))
+  (kill-new (buffer-name))
+  )
+
+(defun kill-default-directory ()
+  "Kill `default-directory'."
+  (interactive)
+  (message default-directory)
+  (kill-new default-directory))
+
+(defun kill-date-today ()
+  "Kill the today's date."
+  (interactive)
+  (message (robenkleene/today))
+  (kill-new (robenkleene/today)))
+
+;; Cd
+
+(defun cd-hg ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string
+              "hg root 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
+(defun cd-git ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string
+              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
+(defun cd-pwd ()
+  "Got to the project root."
+  (interactive)
+  (find-file (robenkleene/pwd))
+  )
+
+;; Text
+
+(defun daily-create ()
+  "Switch to daily file, creating it if missing."
+  (interactive)
+  (robenkleene/safe-find-file
+   (shell-command-to-string "~/.bin/daily_file"))
+  )
+
+(defun inbox-create (title)
+  "Create a new inbox document with TITLE at DIR."
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (robenkleene/safe-find-file
+   (shell-command-to-string (concat "~/.bin/inbox_new "
+                                    (shell-quote-argument title))
+                            ))
+  )
+
+;; Slug Project
+
+(defun slug-project-create (title dir)
   "Create a new slug project with TITLE in DIR."
   (interactive
    (list (read-from-minibuffer "Title: "
@@ -109,7 +241,7 @@
     )
   )
 
-(defun robenkleene/slug-project-archive-readme ()
+(defun slug-project-archive-readme ()
   "Open slug project archive README."
   (interactive)
   (let ((file-path (concat default-directory "archive/README.md")))
@@ -119,7 +251,7 @@
     )
   )
 
-(defun robenkleene/slug-project-archive ()
+(defun slug-project-archive ()
   "Archive slug project."
   (interactive)
   (if (file-exists-p (concat default-directory "../../archive/projects"))
@@ -137,6 +269,32 @@
             (robenkleene/kill-removed-buffers)))
     )
   )
+
+;; Older
+
+(defun robenkleene/open-terminal-window ()
+  "Open a new Terminal window at the current path."
+  (interactive)
+  (shell-command "open -a Terminal .")
+  )
+
+(defun robenkleene/open-in-writer ()
+  "Open file in iA Writer."
+  (interactive)
+  (if (buffer-file-name)
+      (shell-command (concat "open -a \"iA Writer.app\" "
+                             (shell-quote-argument buffer-file-name))
+                     )
+    )
+  )
+
+(defun robenkleene/new-clipboard ()
+  "Switch a new buffer with the clipboard contents."
+  (interactive)
+  (switch-to-buffer (robenkleene/new-empty-buffer))
+  (yank)
+  )
+
 
 (defun robenkleene/open-home ()
   "Open home directory."
@@ -209,34 +367,6 @@
       (visit-tags-table tags-file)
       )
     )
-  )
-
-(defun robenkleene/hg-cd ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "hg root 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
-(defun robenkleene/git-cd ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
-(defun robenkleene/pwd-cd ()
-  "Got to the project root."
-  (interactive)
-  (find-file (robenkleene/pwd))
   )
 
 (defun robenkleene/pwd ()
@@ -325,30 +455,6 @@
    (robenkleene/documentation-file))
   )
 
-(defun robenkleene/source-control-open-web (&optional arg)
-  "Open the source control website for the current repository with ARG."
-  (interactive)
-  (shell-command (concat "~/.bin/source_control_open_site "
-                         arg)
-                 )
-  )
-
-(defun robenkleene/rg (regexp &optional files dir)
-  "Search for REGEXP with optional FILES and DIR."
-  (interactive (robenkleene/grep-parameters))
-  (require 'grep)
-  (let ((default-directory (or dir default-directory))
-        (command (grep-expand-template
-                  (if (equal files nil)
-                      robenkleene/rg-command
-                    robenkleene/rg-command-files)
-                  regexp
-                  files))
-        )
-    (compilation-start command 'grep-mode)
-    )
-  )
-
 (defun robenkleene/grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
@@ -418,81 +524,6 @@
     )
   )
 
-(defun robenkleene/switch-to-inbox ()
-  "Switch to inbox directory."
-  (interactive)
-  (find-file "~/Documents/Text/Notes/Inbox/")
-  )
-
-(defun robenkleene/switch-to-notes ()
-  "Switch to notes directory."
-  (interactive)
-  (find-file "~/Documents/Text/Notes/")
-  )
-
-(defun robenkleene/switch-to-text ()
-  "Switch to text directory."
-  (interactive)
-  (find-file "~/Text/")
-  )
-
-(defun robenkleene/switch-to-archive ()
-  "Switch to archive directory."
-  (interactive)
-  (find-file "~/Archive/Text/")
-  )
-
-(defun robenkleene/daily-create ()
-  "Switch to daily file, creating it if missing."
-  (interactive)
-  (robenkleene/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file"))
-  )
-
-(defun robenkleene/daily ()
-  "Switch to daily file."
-  (interactive)
-  (robenkleene/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file -b"))
-  )
-
-(defun robenkleene/inbox-create (title)
-  "Create a new inbox document with TITLE at DIR."
-  (interactive (list (read-from-minibuffer "Title: "
-                                           (if (use-region-p)
-                                               (buffer-substring (mark) (point))
-                                             nil
-                                             ))
-                     ))
-  (robenkleene/safe-find-file
-   (shell-command-to-string (concat "~/.bin/inbox_new "
-                                    (shell-quote-argument title))
-                            ))
-  )
-
-(defun robenkleene/open-emacs-scratch ()
-  "Switch to scratch buffer."
-  (interactive)
-  (switch-to-buffer "*scratch*")
-  )
-
-(defun robenkleene/open-emacs-messages ()
-  "Switch to messages buffer."
-  (interactive)
-  (switch-to-buffer "*Messages*")
-  )
-
-(defun robenkleene/open-scratch-other-window ()
-  "Switch to scratch for current buffer in other window."
-  (interactive)
-  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
-    (if (bound-and-true-p file)
-        (find-file-other-window file)
-      (message "No file found.")
-      )
-    )
-  )
-
 (defun robenkleene/open-scratch-for-file ()
   "Switch to scratch file for current buffer."
   (interactive)
@@ -559,32 +590,6 @@
       (select-frame-set-input-focus frame))
     )
   )
-
-(defun robenkleene/kill-buffer-file-name ()
-  "Copy the filename to the kill ring."
-  (interactive)
-  (message (buffer-file-name))
-  (kill-new (buffer-file-name))
-  )
-
-(defun robenkleene/kill-buffer-name ()
-  "Kill `buffer-name'"
-  (interactive)
-  (message (buffer-name))
-  (kill-new (buffer-name))
-  )
-
-(defun robenkleene/kill-default-directory ()
-  "Kill `default-directory'."
-  (interactive)
-  (message default-directory)
-  (kill-new default-directory))
-
-(defun robenkleene/kill-date-today ()
-  "Kill the today's date."
-  (interactive)
-  (message (robenkleene/today))
-  (kill-new (robenkleene/today)))
 
 (defun robenkleene/egit-update (&optional arg)
   "Run update."
