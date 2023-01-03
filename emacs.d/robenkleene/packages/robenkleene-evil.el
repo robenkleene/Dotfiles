@@ -193,7 +193,9 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'conf-mode 'normal)
-  (evil-set-initial-state 'fundamental-mode 'normal)
+  ;; `*eldoc*' buffer is also `fundamental', need to target this more
+  ;; specifically.
+  ;; (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
   ;; Git Commit
