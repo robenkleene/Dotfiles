@@ -20,6 +20,8 @@
 ;; Config
 (require 'robenkleene-config)
 (require 'robenkleene-functions)
+(require 'robenkleene-functions-bindings)
+(require 'robenkleene-functions-interactive)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
 (require 'robenkleene-alias)
