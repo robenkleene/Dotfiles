@@ -10,11 +10,11 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :commands
-  (robenkleene/consult-doc
-   robenkleene/consult-z
-   robenkleene/consult-fd
-   robenkleene/consult-fd-pwd
-   robenkleene/consult-eshell-z
+  (rk/consult-doc
+   rk/consult-z
+   rk/consult-fd
+   rk/consult-fd-pwd
+   rk/consult-eshell-z
    )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
@@ -39,11 +39,11 @@
         xref-show-definitions-function #'consult-xref)
 
   (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "M-z") 'robenkleene/consult-z)
+    (define-key dired-mode-map (kbd "M-z") 'rk/consult-z)
     )
   (add-hook 'eshell-mode-hook
             (lambda ()
-              (define-key eshell-mode-map (kbd "M-z") 'robenkleene/consult-eshell-z)
+              (define-key eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
               )
             )
   ;; Configure other variables and modes in the :config section,
@@ -86,7 +86,7 @@
   ;;;; 4. locate-dominating-file
   ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
 
-  (defun robenkleene/consult-z ()
+  (defun rk/consult-z ()
     "z using `completing-read'."
     (interactive)
     (find-file
@@ -106,7 +106,7 @@
       :state (consult--file-preview)
       :history 'file-name-history)))
 
-  (defun robenkleene/consult-eshell-z ()
+  (defun rk/consult-eshell-z ()
     "z using `completing-read'."
     (interactive)
     (eshell/cd
@@ -149,20 +149,20 @@
                         opts)
               :highlight hl))))
 
-  (defun robenkleene/consult-fd (&optional dir initial)
+  (defun rk/consult-fd (&optional dir initial)
     (interactive "P")
     (let* ((prompt-dir (consult--directory-prompt "Fd" dir))
            (default-directory (cdr prompt-dir)))
       (find-file (consult--find (car prompt-dir) #'consult--fd-builder initial))))
 
-  (defun robenkleene/consult-fd-pwd (&optional dir initial)
+  (defun rk/consult-fd-pwd (&optional dir initial)
     "`consult-find' with `fd' in `pwd'."
     (interactive "P")
-    (let ((default-directory (robenkleene/pwd)))
-      (call-interactively 'robenkleene/consult-fd)
+    (let ((default-directory (rk/pwd)))
+      (call-interactively 'rk/consult-fd)
       ))
 
-  (defun robenkleene/consult-doc ()
+  (defun rk/consult-doc ()
     "Doc using `completing-read'."
     (interactive)
     (let ((default-directory "~/Documentation"))

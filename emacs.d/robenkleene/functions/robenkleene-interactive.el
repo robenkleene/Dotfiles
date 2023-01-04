@@ -6,13 +6,13 @@
 
 (defun rg (regexp &optional files dir)
   "Search for REGEXP with optional FILES and DIR."
-  (interactive (robenkleene/grep-parameters))
+  (interactive (rk/grep-parameters))
   (require 'grep)
   (let ((default-directory (or dir default-directory))
         (command (grep-expand-template
                   (if (equal files nil)
-                      robenkleene/rg-command
-                    robenkleene/rg-command-files)
+                      rk/rg-command
+                    rk/rg-command-files)
                   regexp
                   files))
         )
@@ -72,7 +72,7 @@
 (defun switch-to-daily ()
   "Switch to daily file."
   (interactive)
-  (robenkleene/safe-find-file
+  (rk/safe-find-file
    (shell-command-to-string "~/.bin/daily_file -b"))
   )
 
@@ -91,7 +91,7 @@
 (defun switch-to-scratch-other-window ()
   "Switch to scratch for current buffer in other window."
   (interactive)
-  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+  (let ((file (rk/scratch-for-file (buffer-file-name))))
     (if (bound-and-true-p file)
         (find-file-other-window file)
       (message "No file found.")
@@ -104,7 +104,7 @@
 (defun switch-to-empty-buffer-other-window ()
   "Open a new window with a buffer named Untitled."
   (interactive)
-  (switch-to-buffer-other-window (robenkleene/new-empty-buffer))
+  (switch-to-buffer-other-window (rk/new-empty-buffer))
   )
 
 (defun switch-to-empty-buffer-other-window-right ()
@@ -112,19 +112,19 @@
   (interactive)
   (split-window-right)
   (other-window 1)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
+  (switch-to-buffer (rk/new-empty-buffer))
   )
 
 (defun switch-to-empty-buffer-other-frame ()
   "Open a new frame with a buffer named Untitled."
   (interactive)
-  (switch-to-buffer-other-frame (robenkleene/new-empty-buffer))
+  (switch-to-buffer-other-frame (rk/new-empty-buffer))
   )
 
 (defun switch-to-empty-buffer ()
   "Open a new buffer named Untitled."
   (interactive)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
+  (switch-to-buffer (rk/new-empty-buffer))
   )
 
 ;; Kill
@@ -136,7 +136,7 @@
   (kill-new (buffer-file-name))
   )
 
-(defun robenkleene/kill-buffer-name ()
+(defun rk/kill-buffer-name ()
   "Kill `buffer-name'"
   (interactive)
   (message (buffer-name))
@@ -152,8 +152,8 @@
 (defun kill-date-today ()
   "Kill the today's date."
   (interactive)
-  (message (robenkleene/today))
-  (kill-new (robenkleene/today)))
+  (message (rk/today))
+  (kill-new (rk/today)))
 
 ;; Cd
 
@@ -182,7 +182,7 @@
 (defun cd-pwd ()
   "Got to the project root."
   (interactive)
-  (find-file (robenkleene/pwd))
+  (find-file (rk/pwd))
   )
 
 ;; Text
@@ -190,7 +190,7 @@
 (defun daily-create ()
   "Switch to daily file, creating it if missing."
   (interactive)
-  (robenkleene/safe-find-file
+  (rk/safe-find-file
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
@@ -202,7 +202,7 @@
                                              nil
                                              ))
                      ))
-  (robenkleene/safe-find-file
+  (rk/safe-find-file
    (shell-command-to-string (concat "~/.bin/inbox_new "
                                     (shell-quote-argument title))
                             ))
@@ -232,7 +232,7 @@
                                  nil
                                  t
                                  )
-      (robenkleene/safe-find-file
+      (rk/safe-find-file
        (shell-command-to-string (concat "~/.bin/slug_project -t "
                                         (shell-quote-argument title))
                                 )
@@ -266,19 +266,19 @@
                       (expand-file-name default-directory)))
              )
             (kill-this-buffer)
-            (robenkleene/kill-removed-buffers)))
+            (rk/kill-removed-buffers)))
     )
   )
 
 ;; Older
 
-(defun robenkleene/open-terminal-window ()
+(defun rk/open-terminal-window ()
   "Open a new Terminal window at the current path."
   (interactive)
   (shell-command "open -a Terminal .")
   )
 
-(defun robenkleene/open-in-writer ()
+(defun rk/open-in-writer ()
   "Open file in iA Writer."
   (interactive)
   (if (buffer-file-name)
@@ -288,40 +288,40 @@
     )
   )
 
-(defun robenkleene/new-clipboard ()
+(defun rk/new-clipboard ()
   "Switch a new buffer with the clipboard contents."
   (interactive)
-  (switch-to-buffer (robenkleene/new-empty-buffer))
+  (switch-to-buffer (rk/new-empty-buffer))
   (yank)
   )
 
 
-(defun robenkleene/open-home ()
+(defun rk/open-home ()
   "Open home directory."
   (interactive)
   (find-file "~/")
   )
 
-(defun robenkleene/kill-removed-buffers ()
+(defun rk/kill-removed-buffers ()
   "Kill buffers whose underlying file has moved."
   (interactive)
   (let
       ((to-kill
-        (-remove 'robenkleene/buffer-backed-by-file-p (buffer-list))))
+        (-remove 'rk/buffer-backed-by-file-p (buffer-list))))
     (mapc 'kill-buffer to-kill)
     (if (called-interactively-p 'extended-command)
         (message "Killed %s buffers" (length to-kill))
       )
     ))
 
-(defun robenkleene/sgit-push-text-all ()
+(defun rk/sgit-push-text-all ()
   "Commit everything in the current repository."
   (interactive)
   (shell-command "~/.bin/sgitt -cp")
   (other-window 1)
   )
 
-(defun robenkleene/archive-this-buffer ()
+(defun rk/archive-this-buffer ()
   "Archive the current file."
   (interactive)
   (if (y-or-n-p (concat "Backup " (buffer-name)))
@@ -344,7 +344,7 @@
     )
   )
 
-(defun robenkleene/urls-open ()
+(defun rk/urls-open ()
   "Open URLs in the region."
   (interactive)
   (if (use-region-p)
@@ -354,12 +354,12 @@
     )
   )
 
-(defun robenkleene/generate-tags ()
+(defun rk/generate-tags ()
   "Generate tags."
   (interactive)
   (compile "~/.bin/generate_tags -e"))
 
-(defun robenkleene/refresh-tags ()
+(defun rk/refresh-tags ()
   "Load the tags file relative to the current buffer."
   (interactive)
   (let ((tags-file (locate-dominating-file default-directory "TAGS")))
@@ -369,7 +369,7 @@
     )
   )
 
-(defun robenkleene/pwd ()
+(defun rk/pwd ()
   "Return project root."
   (interactive)
   (if (daemonp)
@@ -380,7 +380,7 @@
     )
   )
 
-(defun robenkleene/open-in-xcode ()
+(defun rk/open-in-xcode ()
   "Open file in Xcode."
   (interactive)
   (if (buffer-file-name)
@@ -390,29 +390,29 @@
     )
   )
 
-(defun robenkleene/other-window-shell ()
+(defun rk/other-window-shell ()
   "Open shell in other window."
   (interactive)
   (switch-to-buffer-other-window "*shell*")
   (shell))
 
-(defun robenkleene/other-window-eshell ()
+(defun rk/other-window-eshell ()
   "Open eshell in other window."
   (interactive)
   (switch-to-buffer-other-window "*eshell*")
   (eshell))
 
-(defvar robenkleene/scratch-directory-path "~/Developer/Scratch/Source/")
-(defvar robenkleene/scratch-file-name "source")
-(defun robenkleene/scratch-for-buffer ()
+(defvar rk/scratch-directory-path "~/Developer/Scratch/Source/")
+(defvar rk/scratch-file-name "source")
+(defun rk/scratch-for-buffer ()
   "Open scratch file for current buffer."
   (interactive)
   (let ((extension (file-name-extension (buffer-file-name))))
     (if extension
         (let ((scratch-file-name
                (format "%s%s.%s"
-                       robenkleene/scratch-directory-path
-                       robenkleene/scratch-file-name
+                       rk/scratch-directory-path
+                       rk/scratch-file-name
                        extension
                        )
                )
@@ -424,81 +424,81 @@
   )
 
 (defvar
-  robenkleene/documentation-directory-path
+  rk/documentation-directory-path
   "~/Documentation/")
 
-(defun robenkleene/documentation-view ()
+(defun rk/documentation-view ()
   "View documentation."
   (interactive)
   (view-file
-   (robenkleene/documentation-file))
+   (rk/documentation-file))
   )
 
-(defun robenkleene/documentation-edit ()
+(defun rk/documentation-edit ()
   "Edit documentation."
   (interactive)
   (find-file
-   (robenkleene/documentation-file-or-dir))
+   (rk/documentation-file-or-dir))
   )
 
-(defun robenkleene/documentation-other-window ()
+(defun rk/documentation-other-window ()
   "View documentation in other window."
   (interactive)
   (view-file-other-window
-   (robenkleene/documentation-file))
+   (rk/documentation-file))
   )
 
-(defun robenkleene/documentation-edit-other-window ()
+(defun rk/documentation-edit-other-window ()
   "Edit documentation in other window."
   (interactive)
   (find-file-other-window
-   (robenkleene/documentation-file))
+   (rk/documentation-file))
   )
 
-(defun robenkleene/grep-from-clipboard ()
+(defun rk/grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
-  (add-hook 'compilation-finish-functions 'robenkleene/compilation-next-once)
-  ;; (add-hook 'compilation-finish-functions 'robenkleene/compilation-hide-once)
+  (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
+  ;; (add-hook 'compilation-finish-functions 'rk/compilation-hide-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 
-(defvar-local robenkleene/format-program nil)
-(defvar-local robenkleene/format-function nil)
-(defun robenkleene/format ()
+(defvar-local rk/format-program nil)
+(defvar-local rk/format-function nil)
+(defun rk/format ()
   "Run buffer or region through format program."
   (interactive)
-  (if (bound-and-true-p robenkleene/format-function)
-      (call-interactively robenkleene/format-function)
-    (if (bound-and-true-p robenkleene/format-program)
-        (robenkleene/shell-command-on-buffer-or-region
-         robenkleene/format-program)
+  (if (bound-and-true-p rk/format-function)
+      (call-interactively rk/format-function)
+    (if (bound-and-true-p rk/format-program)
+        (rk/shell-command-on-buffer-or-region
+         rk/format-program)
       (message "No format program defined.")
       )
     )
   )
 
-(defvar-local robenkleene/evaluate-buffer-or-region-function nil)
-(defun robenkleene/evaluate-buffer-or-region ()
+(defvar-local rk/evaluate-buffer-or-region-function nil)
+(defun rk/evaluate-buffer-or-region ()
   "Evaluate the buffer or region."
   (interactive)
-  (if (bound-and-true-p robenkleene/evaluate-buffer-or-region-function)
-      (call-interactively robenkleene/evaluate-buffer-or-region-function)
+  (if (bound-and-true-p rk/evaluate-buffer-or-region-function)
+      (call-interactively rk/evaluate-buffer-or-region-function)
     (message "No evaluate function defined.")
     )
   )
 
-(defvar-local robenkleene/run-compile-program nil)
-(defun robenkleene/run ()
+(defvar-local rk/run-compile-program nil)
+(defun rk/run ()
   "Run buffer or region through format program."
   (interactive)
-  (compile (concat robenkleene/run-compile-program
+  (compile (concat rk/run-compile-program
                    " "
                    (shell-quote-argument buffer-file-name)))
   )
 
-(defun robenkleene/shell-command-on-buffer-or-region (command)
+(defun rk/shell-command-on-buffer-or-region (command)
   "Pipe the current buffer or region through COMMAND."
   (interactive "r")
   (if (use-region-p)
@@ -515,19 +515,19 @@
     )
   )
 
-(defun robenkleene/inbox-create-or-open ()
+(defun rk/inbox-create-or-open ()
   "Switch to inbox directory or make new inbox document."
   (interactive)
   (if current-prefix-arg
-      (call-interactively 'robenkleene/new-inbox-document)
-    (robenkleene/inbox-open)
+      (call-interactively 'rk/new-inbox-document)
+    (rk/inbox-open)
     )
   )
 
-(defun robenkleene/open-scratch-for-file ()
+(defun rk/open-scratch-for-file ()
   "Switch to scratch file for current buffer."
   (interactive)
-  (let ((file (robenkleene/scratch-for-file (buffer-file-name))))
+  (let ((file (rk/scratch-for-file (buffer-file-name))))
     (if (bound-and-true-p file)
         (find-file file)
       (message "No file found.")
@@ -535,7 +535,7 @@
     )
   )
 
-(defun robenkleene/scratch-for-file (file)
+(defun rk/scratch-for-file (file)
   "Return the path to the scratch file for FILE."
   (let ((extension (file-name-extension file))
         (scratch-directory "~/Developer/Scratch/Document/")
@@ -552,21 +552,21 @@
     )
   )
 
-(defun robenkleene/make-scratch-frame ()
+(defun rk/make-scratch-frame ()
   "Make a new frame and go to the scratch buffer."
   (interactive)
   (let ((frame (make-frame)))
     (select-frame-set-input-focus frame)
     (switch-to-buffer "*scratch*")))
 
-(defun robenkleene/make-scratch-frame-with-current-frame ()
+(defun rk/make-scratch-frame-with-current-frame ()
   "Make a new scratch frame the same size as the current frame."
   (interactive)
-  (robenkleene/make-frame-with-current-frame)
+  (rk/make-frame-with-current-frame)
   (switch-to-buffer "*scratch*")
   )
 
-(defun robenkleene/make-frame-with-current-frame ()
+(defun rk/make-frame-with-current-frame ()
   "Make a new frame the same size as the current frame."
   (interactive)
   (let* ((frame (selected-frame))
@@ -591,7 +591,7 @@
     )
   )
 
-(defun robenkleene/egit-update (&optional arg)
+(defun rk/egit-update (&optional arg)
   "Run update."
   (interactive)
   (async-shell-command "~/.bin/egit_update" "*egit update*" "*egit update*")
@@ -599,7 +599,7 @@
   (view-mode)
   )
 
-(defun robenkleene/toggle-grep-buffer ()
+(defun rk/toggle-grep-buffer ()
   "Toggle grep buffer."
   (interactive)
 

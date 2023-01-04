@@ -5,10 +5,10 @@
 (setq compile-command nil)
 (ignore-errors
   (require 'ansi-color)
-  (defun robenkleene/colorize-compilation-buffer ()
+  (defun rk/colorize-compilation-buffer ()
     (when (eq major-mode 'compilation-mode)
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
-  (add-hook 'compilation-filter-hook 'robenkleene/colorize-compilation-buffer))
+  (add-hook 'compilation-filter-hook 'rk/colorize-compilation-buffer))
 
 (add-hook 'compilation-mode-hook (lambda ()
                                    (pop-to-buffer (get-buffer "*compilation*"))

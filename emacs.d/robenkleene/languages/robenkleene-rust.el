@@ -25,7 +25,7 @@
   :config
   (add-hook 'rust-mode-hook
             (lambda ()
-              (setq-local robenkleene/format-function
+              (setq-local rk/format-function
                           'eglot-format)
               ))
   )

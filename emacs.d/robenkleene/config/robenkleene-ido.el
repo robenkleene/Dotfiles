@@ -3,22 +3,22 @@
 ;;; Code:
 
 ;; Helpers for running some functions with `ido' disabled
-(defun robenkleene/ido-call-disabled (func &rest args)
+(defun rk/ido-call-disabled (func &rest args)
   "Temporarily disable IDO and call function FUNC with arguments ARGS."
   (interactive)
   (let ((read-file-name-function #'read-file-name-default))
     (if (called-interactively-p 'any)
         (call-interactively func)
       (apply func args))))
-(defun robenkleene/ido-advice-disable (command)
+(defun rk/ido-advice-disable (command)
   "Disable IDO when command COMMAND is called."
-  (advice-add command :around #'robenkleene/ido-call-disabled))
+  (advice-add command :around #'rk/ido-call-disabled))
 ;; Disable `ido-everywhere' for `dired-create-directory' (auto-completing
 ;; filenames makes that function useless)
-(robenkleene/ido-advice-disable 'dired-create-directory)
+(rk/ido-advice-disable 'dired-create-directory)
 
 ;; Find
-(defun robenkleene/ido-recursive-find-file (dir)
+(defun rk/ido-recursive-find-file (dir)
   "Find file recursively in DIR."
   (interactive
    (list
@@ -29,36 +29,36 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file (robenkleene/ido-recursive-get-file (shell-quote-argument dir)))
+    (find-file (rk/ido-recursive-get-file (shell-quote-argument dir)))
     )
   )
 
-(defun robenkleene/ido-recent-find-file ()
+(defun rk/ido-recent-find-file ()
   "Find file recursively in DIR."
   (interactive)
   (setq key-to-path (make-hash-table :test 'equal))
   (let (ido-list)
     (mapc (lambda (path)
-            (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
+            (let ((key (rk/ido-key-for-path path (getenv "HOME"))))
               (puthash key path key-to-path)
               (push key ido-list)
               )
             )
           recentf-list)
-    (robenkleene/safe-find-file
+    (rk/safe-find-file
      (gethash (ido-completing-read "Find recent: " ido-list)
               key-to-path))
     )
   )
 
-(defun robenkleene/ido-bookmark-jump ()
+(defun rk/ido-bookmark-jump ()
   "Jump to bookmark."
   (interactive)
   (bookmark-jump
    (bookmark-get-bookmark
     (ido-completing-read "Jump: " (bookmark-all-names)))))
 
-(defun robenkleene/ido-recursive-find-dir (dir)
+(defun rk/ido-recursive-find-dir (dir)
   "Find directory recursively in DIR."
   (interactive
    (list
@@ -69,11 +69,11 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file (robenkleene/ido-recursive-get-dir dir))
+    (find-file (rk/ido-recursive-get-dir dir))
     )
   )
 
-(defun robenkleene/ido-recursive-find-file-other-window (dir)
+(defun rk/ido-recursive-find-file-other-window (dir)
   "Find file recursively in DIR in other window."
   (interactive
    (list
@@ -84,11 +84,11 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file-other-window (robenkleene/ido-recursive-get-file dir))
+    (find-file-other-window (rk/ido-recursive-get-file dir))
     )
   )
 
-(defun robenkleene/ido-recursive-find-dir-other-window (dir)
+(defun rk/ido-recursive-find-dir-other-window (dir)
   "Find directory recursively in DIR in other window."
   (interactive
    (list
@@ -99,13 +99,13 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (find-file-other-window (robenkleene/ido-recursive-get-dir dir))
+    (find-file-other-window (rk/ido-recursive-get-dir dir))
     )
   )
 
 ;; Insert
 
-(defun robenkleene/ido-recursive-insert-dir (dir)
+(defun rk/ido-recursive-insert-dir (dir)
   "Find and insert file recursively in DIR."
   (interactive
    (list
@@ -116,11 +116,11 @@
     )
    )
   (let ((current-prefix-arg nil))
-    (insert (robenkleene/ido-recursive-get-dir dir))
+    (insert (rk/ido-recursive-get-dir dir))
     )
   )
 
-(defun robenkleene/ido-recursive-insert-file (dir)
+(defun rk/ido-recursive-insert-file (dir)
   "Find and insert directory recursively in DIR."
   (interactive
    (list
@@ -131,7 +131,7 @@
     )
    )
   (let* ((current-prefix-arg nil)
-         (result (file-relative-name (robenkleene/ido-recursive-get-file
+         (result (file-relative-name (rk/ido-recursive-get-file
                                       (shell-quote-argument dir))
                                      default-directory)))
     ;; The `default-directory' means inserted file is always relative to the
@@ -146,7 +146,7 @@
 
 ;; Z
 
-(defun robenkleene/ido-z ()
+(defun rk/ido-z ()
   "Find recent directory."
   (interactive)
   (let ((current-prefix-arg nil) project-files key-to-path)
@@ -157,19 +157,19 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path (getenv "HOME"))))
+              (let ((key (rk/ido-key-for-path path (getenv "HOME"))))
                 (puthash key path key-to-path)
                 (push key ido-list)
                 )
               )
             project-files)
-      (robenkleene/safe-find-file (gethash (ido-completing-read "Find z: " ido-list)
+      (rk/safe-find-file (gethash (ido-completing-read "Find z: " ido-list)
                                            key-to-path))
       )
     )
   )
 
-(defun robenkleene/ido-links ()
+(defun rk/ido-links ()
   "Open link."
   (interactive)
   (let ((current-prefix-arg nil))
@@ -202,7 +202,7 @@
 
 ;; Helper
 
-(defun robenkleene/ido-key-for-path (path strip)
+(defun rk/ido-key-for-path (path strip)
   "Return a good key for ido based on PATH, remove STRIP."
   (let* (
          (short-path (replace-regexp-in-string strip "" path))
@@ -212,13 +212,13 @@
          )
     (if container-dir
         (concat filename
-                (robenkleene/ido-container-directory-token container-dir))
+                (rk/ido-container-directory-token container-dir))
       filename
       )
     )
   )
 
-(defun robenkleene/ido-container-directory-token (dir)
+(defun rk/ido-container-directory-token (dir)
   "Return an appropriate container directory token for DIR."
   (let ((directory-name (file-name-nondirectory
                          (directory-file-name
@@ -232,7 +232,7 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-file (dir &optional term)
+(defun rk/ido-recursive-get-file (dir &optional term)
   "Find directory recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
@@ -247,7 +247,7 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path dir)))
+              (let ((key (rk/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
                 (push key ido-list)
                 )
@@ -258,7 +258,7 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-dir (dir &optional term)
+(defun rk/ido-recursive-get-dir (dir &optional term)
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
@@ -273,7 +273,7 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path dir)))
+              (let ((key (rk/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
                 (push key ido-list)
                 )
@@ -284,7 +284,7 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-file-or-dir (dir &optional term)
+(defun rk/ido-recursive-get-file-or-dir (dir &optional term)
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
@@ -298,7 +298,7 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path dir)))
+              (let ((key (rk/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
                 (push key ido-list)
                 )
@@ -309,7 +309,7 @@
     )
   )
 
-(defun robenkleene/ido-recursive-get-git-repo (dir)
+(defun rk/ido-recursive-get-git-repo (dir)
   "Find file recursively in DIR."
   (let (project-files key-to-path)
     (setq project-files
@@ -322,7 +322,7 @@
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)
       (mapc (lambda (path)
-              (let ((key (robenkleene/ido-key-for-path path dir)))
+              (let ((key (rk/ido-key-for-path path dir)))
                 (puthash key path key-to-path)
                 (push key ido-list)
                 )
@@ -333,27 +333,27 @@
     )
   )
 
-(defun robenkleene/ido-project-open ()
+(defun rk/ido-project-open ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file
+  (find-file (rk/ido-recursive-get-file
               "--type f --max-depth 2 ~/Text/Projects" "README.md"))
   )
 
-(defun robenkleene/ido-frequent-open-file-or-dir ()
+(defun rk/ido-frequent-open-file-or-dir ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-file-or-dir
+  (find-file (rk/ido-recursive-get-file-or-dir
               (concat
                "~/Text "
                "~/Documentation ")
               "\"^[^.]+\\$|.*\\.md\" "))
   )
 
-(defun robenkleene/ido-quick-developer ()
+(defun rk/ido-quick-developer ()
   "Find file recursively from quick open directories."
   (interactive)
-  (find-file (robenkleene/ido-recursive-get-git-repo
+  (find-file (rk/ido-recursive-get-git-repo
               "~/Developer"))
   )
 

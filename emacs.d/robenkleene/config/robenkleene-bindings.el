@@ -3,9 +3,9 @@
 ;;; Code:
 
 ;; New Maps
-(defvar robenkleene/bindings-minor-mode-map (make-keymap))
-(defvar robenkleene/leader-map (make-keymap))
-(defvar robenkleene/window-map (make-keymap))
+(defvar rk/bindings-minor-mode-map (make-keymap))
+(defvar rk/leader-map (make-keymap))
+(defvar rk/window-map (make-keymap))
 
 ;; Search & Replace
 
@@ -15,16 +15,16 @@
 ;; because `C-M-%' isn't possible to type in a terminal
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
 ;; Swap query replace
-(define-key robenkleene/bindings-minor-mode-map (kbd "M-%")
+(define-key rk/bindings-minor-mode-map (kbd "M-%")
   'query-replace-regexp)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-S-<down>") 'robenkleene/duplicate-line-below)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-S-<up>") 'robenkleene/duplicate-line-above)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-<down>") 'robenkleene/move-line-down)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-<up>") 'robenkleene/move-line-up)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
@@ -33,11 +33,11 @@
 ;; Window Management
 
 ;; Automatically switch focus to new splits
-(define-key robenkleene/bindings-minor-mode-map "\C-x2" (lambda ()
+(define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
                                                           (interactive)
                                                           (split-window-vertically)
                                                           (other-window 1)))
-(define-key robenkleene/bindings-minor-mode-map "\C-x3"
+(define-key rk/bindings-minor-mode-map "\C-x3"
   (lambda ()
     (interactive)
     (split-window-horizontally)
@@ -46,7 +46,7 @@
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-c d <down-mouse-1>")
-                #'robenkleene/describe-char-at-mouse-click)
+                #'rk/describe-char-at-mouse-click)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-o") 'find-file)
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
@@ -55,82 +55,82 @@
 
 ;; Set these in such a way that other modes override, e.g., to make the bindings
 ;; access history in shell modes
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'robenkleene/next)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-p")
-;;   'robenkleene/previous)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-n") 'rk/next)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-p")
+;;   'rk/previous)
 ;; Try using this instead, to difficult to keep track of all modes that populate
 ;; error list
 ;; Trying binding these on `text' and `prog' modes instead
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-n") 'next-error)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-p") 'previous-error)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-n") 'next-error)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
-;;   'robenkleene/kill-region-or-backward-word)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
-  'robenkleene/kill-region-or-window-map)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-w")
+;;   'rk/kill-region-or-backward-word)
+(define-key rk/bindings-minor-mode-map (kbd "C-w")
+  'rk/kill-region-or-window-map)
 
 ;; General
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")
-;;   'robenkleene/reveal-in-finder)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-t")
-;;   'robenkleene/open-terminal-window)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-c `") 'eshell)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-r")
+;;   'rk/reveal-in-finder)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
+;;   'rk/open-terminal-window)
+(define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
+(define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell)
 
 ;; Window-Key Based
-(define-key robenkleene/window-map
+(define-key rk/window-map
   (kbd "t")
   'tab-new)
-(define-key robenkleene/window-map
+(define-key rk/window-map
   (kbd "M-t")
   'tab-new)
-(define-key robenkleene/window-map (kbd "n") 'tab-next)
-(define-key robenkleene/window-map (kbd "p")
+(define-key rk/window-map (kbd "n") 'tab-next)
+(define-key rk/window-map (kbd "p")
   'tab-previous)
-(define-key robenkleene/window-map (kbd "M-n") 'tab-next)
-(define-key robenkleene/window-map (kbd "M-p")
+(define-key rk/window-map (kbd "M-n") 'tab-next)
+(define-key rk/window-map (kbd "M-p")
   'tab-previous)
-(define-key robenkleene/window-map (kbd "C-w") 'other-window)
-(define-key robenkleene/window-map (kbd "w") 'other-window)
-(define-key robenkleene/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
-(define-key robenkleene/window-map (kbd "W") (lambda () (interactive) (other-window -1)))
-(define-key robenkleene/window-map (kbd "q") 'tab-close)
-(define-key robenkleene/window-map (kbd "v")
+(define-key rk/window-map (kbd "C-w") 'other-window)
+(define-key rk/window-map (kbd "w") 'other-window)
+(define-key rk/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
+(define-key rk/window-map (kbd "W") (lambda () (interactive) (other-window -1)))
+(define-key rk/window-map (kbd "q") 'tab-close)
+(define-key rk/window-map (kbd "v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key robenkleene/window-map (kbd "M-v")
+(define-key rk/window-map (kbd "M-v")
   (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key robenkleene/window-map (kbd "s")
+(define-key rk/window-map (kbd "s")
   (lambda () (interactive) (split-window-vertically) (other-window 1)))
-(define-key robenkleene/window-map (kbd "M-s")
+(define-key rk/window-map (kbd "M-s")
   (lambda () (interactive) (split-window-vertically) (other-window 1)))
-(define-key robenkleene/window-map (kbd "c")
+(define-key rk/window-map (kbd "c")
   (lambda () (interactive)
     (condition-case nil (delete-window) (error (tab-close)))
     )
   )
-(define-key robenkleene/window-map (kbd "o") 'delete-other-windows)
-(define-key robenkleene/window-map (kbd "<") 'shrink-window-horizontally)
-(define-key robenkleene/window-map (kbd ">") 'enlarge-window-horizontally)
-(define-key robenkleene/window-map (kbd "-") 'shrink-window)
-(define-key robenkleene/window-map (kbd "+") 'enlarge-window)
-(define-key robenkleene/window-map (kbd "=") 'balance-windows)
+(define-key rk/window-map (kbd "o") 'delete-other-windows)
+(define-key rk/window-map (kbd "<") 'shrink-window-horizontally)
+(define-key rk/window-map (kbd ">") 'enlarge-window-horizontally)
+(define-key rk/window-map (kbd "-") 'shrink-window)
+(define-key rk/window-map (kbd "+") 'enlarge-window)
+(define-key rk/window-map (kbd "=") 'balance-windows)
 
 ;; Mode
-(define-minor-mode robenkleene/bindings-minor-mode
+(define-minor-mode rk/bindings-minor-mode
   "My bindings."
   :init-value t
   :lighter nil
-  :keymap 'robenkleene/bindings-minor-mode-map)
-(robenkleene/bindings-minor-mode 1)
+  :keymap 'rk/bindings-minor-mode-map)
+(rk/bindings-minor-mode 1)
 
-(add-hook 'after-load-functions 'robenkleene/ensure-binding-priority)
+(add-hook 'after-load-functions 'rk/ensure-binding-priority)
 
-(defun robenkleene/ensure-binding-priority (_file)
+(defun rk/ensure-binding-priority (_file)
   "Ensure `bindings-minor-mode' always has priority."
-  (unless (eq (caar minor-mode-map-alist) 'robenkleene/bindings-minor-mode)
+  (unless (eq (caar minor-mode-map-alist) 'rk/bindings-minor-mode)
     (let ((new-keys
-           (assq 'robenkleene/bindings-minor-mode minor-mode-map-alist)))
-      (assq-delete-all 'robenkleene/bindings-minor-mode minor-mode-map-alist)
+           (assq 'rk/bindings-minor-mode minor-mode-map-alist)))
+      (assq-delete-all 'rk/bindings-minor-mode minor-mode-map-alist)
       (add-to-list 'minor-mode-map-alist new-keys))))
 
 (provide 'robenkleene-bindings)

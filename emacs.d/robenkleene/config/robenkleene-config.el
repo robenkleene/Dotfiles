@@ -28,7 +28,7 @@
 (setq auto-save-visited-interval 1)
 ;; This doesn't work for some reason
 (add-function :after after-focus-change-function
-              'robenkleene/save-buffer-if-visiting-file)
+              'rk/save-buffer-if-visiting-file)
 ;; Just look at the modeline instead
 ;; (add-hook 'after-save-hook (lambda () (message "Saved")))
 
@@ -78,7 +78,7 @@
                                )))
 
 ;; Highlight Keywords
-(add-hook 'prog-mode-hook 'robenkleene/highlight-keywords)
+(add-hook 'prog-mode-hook 'rk/highlight-keywords)
 
 ;; Fill Column
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
@@ -99,7 +99,7 @@
 (setq-default word-wrap t)
 
 ;; Set `Shell Command Output' buffer to view only
-(define-advice shell-command-on-region (:after (&rest _) robenkleene/shell-command-output)
+(define-advice shell-command-on-region (:after (&rest _) rk/shell-command-output)
   "Enable `view-mode' in `*Shell Command Output*' buffer."
   (let ((buffer (get-buffer "*Shell Command Output*")))
     (when (buffer-live-p buffer)
@@ -146,7 +146,7 @@
 ;; 2. Sometimes one help points to another, and this only works for the first
 ;; help buffer loaded
 ;; (defadvice help-mode-finish
-;;     (after robenkleene/help-mode-finish () activate)
+;;     (after rk/help-mode-finish () activate)
 ;;   (with-current-buffer (get-buffer-create "*Help*")
 ;;     (forward-button 1)
 ;;     )
@@ -255,10 +255,10 @@
 (remove-hook 'find-file-hook 'vc-find-file-hook)
 
 ;; Allow project roots to be overridden with a `.project' file
-(add-hook 'project-find-functions #'robenkleene/project-override)
+(add-hook 'project-find-functions #'rk/project-override)
 
-(add-hook 'find-file-hook 'robenkleene/z-add)
-(add-hook 'dired-mode-hook 'robenkleene/z-add)
+(add-hook 'find-file-hook 'rk/z-add)
+(add-hook 'dired-mode-hook 'rk/z-add)
 
 ;; Automatically revert unmodified buffers
 ;; This was causing the cursor to jump randomly after saving
@@ -289,12 +289,12 @@
 ;; Prevents issue where you have to press backspace twice when
 ;; trying to remove the first character that fails a search
 (define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
-(defadvice isearch-search (after robenkleene/isearch-no-fail activate)
+(defadvice isearch-search (after rk/isearch-no-fail activate)
   (unless isearch-success
-    (ad-disable-advice 'isearch-search 'after 'robenkleene/isearch-no-fail)
+    (ad-disable-advice 'isearch-search 'after 'rk/isearch-no-fail)
     (ad-activate 'isearch-search)
     (isearch-repeat (if isearch-forward 'forward))
-    (ad-enable-advice 'isearch-search 'after 'robenkleene/isearch-no-fail)
+    (ad-enable-advice 'isearch-search 'after 'rk/isearch-no-fail)
     (ad-activate 'isearch-search)))
 
 ;; Always prefer newer `.el' file if there's an older `.elc' file
