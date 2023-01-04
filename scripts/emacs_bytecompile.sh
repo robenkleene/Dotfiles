@@ -4,13 +4,17 @@ set -euo pipefail
 
 verbose="false"
 clean="false"
-while getopts ":cvh" option; do
+while getopts ":cCvh" option; do
   case "$option" in
     v)
       verbose="true"
       ;;
     c)
       clean="true"
+      ;;
+    C)
+      clean="true"
+      hard="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -47,6 +51,11 @@ redirect=" 2> /dev/null"
 if [[ "$verbose" == "true" ]]; then
   redirect=""
 fi
+
+if [[ "$hard" == "true" ]]; then
+  exit 0
+fi
+
 # Compiling these files causes the `personal keybindings` void error?
 # cd ~/.emacs.d/ || exit 1
 # eval "emacs --quick --batch -f batch-byte-compile *.el" $redirect
