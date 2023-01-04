@@ -7,7 +7,7 @@
 (require 'dired-x)
 
 (with-eval-after-load 'dired
-  (defun robenkleene/dired-toggle-hidden ()
+  (defun rk/dired-toggle-hidden ()
     "Show/hide hidden files except . and .."
     (interactive)
     (setq dired-omit-mode (not dired-omit-mode))
@@ -16,7 +16,7 @@
   ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
   ;; (global-set-key (kbd "C-x j") 'dired-jump)
 
-  (define-key dired-mode-map (kbd "C-c g h") 'robenkleene/dired-toggle-hidden)
+  (define-key dired-mode-map (kbd "C-c g h") 'rk/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
   ;; Disable `dired' defaulting to current file completed in `find-file`
   (define-key dired-mode-map (kbd "C-x C-f")
@@ -25,7 +25,7 @@
     (lambda () (interactive) (call-interactively 'find-file)))
 
   ;; (define-key dired-mode-map (kbd "-") 'dired-jump)
-  (defun robenkleene/dired-open-files (&optional arg)
+  (defun rk/dired-open-files (&optional arg)
     "Open marked files."
     (interactive)
     (dired-do-shell-command "open" nil (dired-get-marked-files))
@@ -41,7 +41,7 @@
   ;; buffers
   ;; (setq dired-kill-when-opening-new-dired-buffer t)
   ;; When deleting a directory, always also kill the corresponding Dired buffer
-  (defadvice robenkleene/dired-delete-entry (before force-clean-up-buffers (file) activate)
+  (defadvice rk/dired-delete-entry (before force-clean-up-buffers (file) activate)
     (kill-buffer (get-file-buffer file)))
 
   ;; If two `dired' buffers are open, use the other window as the default
@@ -73,7 +73,7 @@
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
-            (setq-local robenkleene/archive-function
+            (setq-local rk/archive-function
                         (lambda ()
                           (interactive)
                           (dired-do-shell-command

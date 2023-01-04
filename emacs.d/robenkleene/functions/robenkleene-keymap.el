@@ -2,19 +2,19 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun robenkleene/kill-region-or-backward-word ()
+(defun rk/kill-region-or-backward-word ()
   "If the region is active and non-empty, call `kill-region'.
 Otherwise, call `backward-kill-word'."
   (interactive)
   (call-interactively
    (if (use-region-p) 'kill-region 'backward-kill-word)))
 
-(defvar-local robenkleene/archive-function nil)
-(defun robenkleene/archive-and-delete ()
+(defvar-local rk/archive-function nil)
+(defun rk/archive-and-delete ()
   "Archive the current file or region."
   (interactive)
-  (if (bound-and-true-p robenkleene/archive-function)
-      (call-interactively robenkleene/archive-function)
+  (if (bound-and-true-p rk/archive-function)
+      (call-interactively rk/archive-function)
     (if (use-region-p)
         (progn
           (shell-command-on-region (region-beginning)
@@ -22,11 +22,11 @@ Otherwise, call `backward-kill-word'."
                                    "~/.bin/backup_text -m")
           (delete-region (region-beginning) (region-end))
           )
-      (robenkleene/archive-current-file))
+      (rk/archive-current-file))
     )
   )
 
-(defun robenkleene/archive-region ()
+(defun rk/archive-region ()
   "Archive region."
   (interactive)
   (if (use-region-p)
@@ -36,7 +36,7 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun robenkleene/next ()
+(defun rk/next ()
   "Make a wiki link from a file named after the region."
   (interactive)
   (if
@@ -47,11 +47,11 @@ Otherwise, call `backward-kill-word'."
        (buffer-live-p (get-buffer "*compilation*"))
        )
       (next-error)
-    (robenkleene/find-next-file)
+    (rk/find-next-file)
     )
   )
 
-(defun robenkleene/previous ()
+(defun rk/previous ()
   "Make a wiki link from a file named after the region."
   (interactive)
   (if
@@ -61,11 +61,11 @@ Otherwise, call `backward-kill-word'."
        (buffer-live-p (get-buffer "*hmoccur*"))
        )
       (previous-error)
-    (robenkleene/find-next-file t)
+    (rk/find-next-file t)
     )
   )
 
-(defun robenkleene/find-next-file (&optional backward)
+(defun rk/find-next-file (&optional backward)
   "Find the next file in the current directory, optionally BACKWARD.
 
 With prefix arg, find the previous file."
@@ -82,7 +82,7 @@ With prefix arg, find the previous file."
                  (length files))))
       (find-file (nth pos files)))))
 
-(defun robenkleene/convert-region-to-title-case ()
+(defun rk/convert-region-to-title-case ()
   "Make a wiki link from a file named after the region."
   (interactive)
   (if (use-region-p)
@@ -94,14 +94,14 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/forward-block (&optional n)
+(defun rk/forward-block (&optional n)
   "Move to next text block N."
   (interactive "p")
   (if (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" 1)
       (forward-line -1))
   )
 
-(defun robenkleene/forward-block-select (&optional n)
+(defun rk/forward-block-select (&optional n)
   "Move to next text block N."
   (interactive "p")
 
@@ -116,7 +116,7 @@ With prefix arg, find the previous file."
       (forward-line -1))
   )
 
-(defun robenkleene/backward-block (&optional n)
+(defun rk/backward-block (&optional n)
   "Move cursor to previous text block N."
   (interactive "p")
   (if (re-search-backward "\n[\t\n ]*\n+" nil "NOERROR")
@@ -124,7 +124,7 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/backward-block-select (&optional n)
+(defun rk/backward-block-select (&optional n)
   "Move cursor to previous text block N."
   (interactive "p")
   (if (not (use-region-p))
@@ -139,7 +139,7 @@ With prefix arg, find the previous file."
     )
   )
 
-(defun robenkleene/duplicate-line-below ()
+(defun rk/duplicate-line-below ()
   "Duplicate the current line."
   (interactive)
   (move-beginning-of-line 1)
@@ -161,7 +161,7 @@ With prefix arg, find the previous file."
   (yank)
   )
 
-(defun robenkleene/duplicate-line-above ()
+(defun rk/duplicate-line-above ()
   "Duplicate the current line."
   (interactive)
   (move-beginning-of-line 1)
@@ -179,14 +179,14 @@ With prefix arg, find the previous file."
   (yank)
   )
 
-(defun robenkleene/move-line-up ()
+(defun rk/move-line-up ()
   "Move up the current line."
   (interactive)
   (transpose-lines 1)
   (forward-line -2)
   (indent-according-to-mode))
 
-(defun robenkleene/move-line-down ()
+(defun rk/move-line-down ()
   "Move down the current line."
   (interactive)
   (forward-line 1)
@@ -194,7 +194,7 @@ With prefix arg, find the previous file."
   (forward-line -1)
   (indent-according-to-mode))
 
-(defun robenkleene/comment ()
+(defun rk/comment ()
   "Like `comment-dwim', but toggle comment if cursor is not at end of line."
   (interactive)
   (if (region-active-p)
@@ -211,13 +211,13 @@ With prefix arg, find the previous file."
             (comment-or-uncomment-region $lbp $lep)
             (forward-line )))))))
 
-(defun robenkleene/kill-region-or-window-map ()
+(defun rk/kill-region-or-window-map ()
   "If the region is active and non-empty, call `kill-region'.
-Otherwise, use `robenkleene/window-map'."
+Otherwise, use `rk/window-map'."
   (interactive)
   (if (use-region-p)
       (call-interactively 'kill-region)
-    (set-transient-map robenkleene/window-map)
+    (set-transient-map rk/window-map)
     )
   )
 

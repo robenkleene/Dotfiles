@@ -8,14 +8,14 @@
   (require 'use-package))
 (use-package magit
   :commands (
-             robenkleene/magit-egit
+             rk/magit-egit
              magit-status
              magit-log-current
              )
   :init
   (defalias 'ms 'magit-status)
   (defalias 'ml 'magit-log-current)
-  (defalias 's 'robenkleene/magit-egit)
+  (defalias 's 'rk/magit-egit)
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
@@ -46,7 +46,7 @@
   ;; again later
   ;; (add-hook 'after-save-hook 'magit-after-save-refresh-status)
 
-  (defun robenkleene/magit-egit ()
+  (defun rk/magit-egit ()
     "`egit' `magit'"
     (interactive)
     (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)

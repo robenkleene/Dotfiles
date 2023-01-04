@@ -2,13 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun robenkleene/edit-init ()
+(defun rk/edit-init ()
   "Edit init."
   (interactive)
   (find-file "~/.emacs.d/robenkleene/robenkleene.el")
   )
 
-(defun robenkleene/source-control-open-web (&optional arg)
+(defun rk/source-control-open-web (&optional arg)
   "Open the source control website for the current repository with ARG."
   (interactive)
   (shell-command (concat "~/.bin/source_control_open_site "

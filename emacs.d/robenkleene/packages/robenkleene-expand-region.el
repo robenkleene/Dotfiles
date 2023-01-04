@@ -11,7 +11,7 @@
   ("M-'" . er/expand-region)
   :init
   ;; Add support for Markdown inline code, and code blocks
-  (defun robenkleene/mark-markdown-inline-code ()
+  (defun rk/mark-markdown-inline-code ()
     "Marks one CSS declaration, eg. font-weight: bold;"
     (interactive)
     (search-backward-regexp "`" (line-beginning-position))
@@ -20,14 +20,14 @@
     (search-forward "`" (line-end-position))
     (backward-char)
     (exchange-point-and-mark))
-  (defun robenkleene/add-markdown-mode-expansions ()
+  (defun rk/add-markdown-mode-expansions ()
     (make-variable-buffer-local 'er/try-expand-list)
     (setq er/try-expand-list (append
                               er/try-expand-list
                               '(
-                                robenkleene/mark-markdown-inline-code
+                                rk/mark-markdown-inline-code
                                 ))))
-  (add-hook 'markdown-mode-hook 'robenkleene/add-markdown-mode-expansions)
+  (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
   )
 
 (provide 'robenkleene-expand-region)

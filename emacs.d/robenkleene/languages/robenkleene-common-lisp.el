@@ -10,14 +10,14 @@
   :mode "\\.cl\\'"
   :config
   (setq inferior-lisp-program "~/.brew/bin/sbcl")
-  ;; (define-key robenkleene/lisp-eval-leader-map (kbd "b") (lambda ()
+  ;; (define-key rk/lisp-eval-leader-map (kbd "b") (lambda ()
   ;;                                                          (interactive)
   ;;                                                          (slime-load-file (buffer-file-name))
   ;;                                                          ;; (slime-compile-and-load-file)
   ;;                                                          (message "Compiled & loaded buffer")
   ;;                                                          )
   ;;   )
-  ;; (define-key robenkleene/lisp-eval-leader-map (kbd "r") (lambda (begin end)
+  ;; (define-key rk/lisp-eval-leader-map (kbd "r") (lambda (begin end)
   ;;                                                          (interactive "r")
   ;;                                                          (slime-eval-region begin end)
   ;;                                                          (message "Evaluated region")

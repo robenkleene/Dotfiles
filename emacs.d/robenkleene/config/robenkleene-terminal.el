@@ -4,22 +4,22 @@
 
 ;; Need to store the last paste because the function should only return a value
 ;; if it's different than the last paste
-(setq robenkleene/last-paste nil)
-(defun robenkleene/safepaste (text &optional push)
+(setq rk/last-paste nil)
+(defun rk/safepaste (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
       (unless (string))
       (process-send-string proc text)
       (process-send-eof proc)))
-  (setq robenkleene/last-paste text)
+  (setq rk/last-paste text)
   )
-(setq interprogram-cut-function 'robenkleene/safepaste)
+(setq interprogram-cut-function 'rk/safepaste)
 
-(defun robenkleene/safecopy ()
+(defun rk/safecopy ()
   (let ((copied-text (shell-command-to-string "safepaste")))
-    (unless (string= copied-text robenkleene/last-paste)
+    (unless (string= copied-text rk/last-paste)
       copied-text)))
-(setq interprogram-paste-function 'robenkleene/safecopy)
+(setq interprogram-paste-function 'rk/safecopy)
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
@@ -55,22 +55,22 @@
 
 ;; Using `M-[' for `backward-block' isn't possible because `M-[' is the sequence
 ;; for escape so it messes with many bindings
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-}")
-;;   'robenkleene/forward-block)
-;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-{")
-;;   'robenkleene/backward-block)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-}")
+;;   'rk/forward-block)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-{")
+;;   'rk/backward-block)
 
 ;; Theoretically this would be clear in `delete-frame-functions' but for
 ;; `emacsclient' connections that's being called after the frame is deleted and
 ;; the `default-directory' is then wrong
 (defadvice delete-frame
-    (before robenkleene/delete-frame-chdir activate)
+    (before rk/delete-frame-chdir activate)
   "Write to chdir and save desktop."
-  (if (file-exists-p "/tmp/vim.robenkleene/chdir/chdir")
+  (if (file-exists-p "/tmp/vim.rk/chdir/chdir")
       (write-region
        (expand-file-name default-directory)
        nil
-       "/tmp/vim.robenkleene/chdir/chdir"
+       "/tmp/vim.rk/chdir/chdir"
        )
     )
   ;; Prevent prompting for existing desktop files
@@ -84,7 +84,7 @@
   ;; (desktop-save-in-desktop-dir)
   )
 
-(unless (robenkleene/system-is-mac)
+(unless (rk/system-is-mac)
   (setq browse-url-browser-function 'eww-browse-url))
 
 (provide 'robenkleene-terminal)
