@@ -15,14 +15,17 @@
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/functions"))
   )
 
-;; Config
-(require 'robenkleene-config)
+;; Functions
 (require 'robenkleene-functions)
 (require 'robenkleene-functions-bindings)
 (require 'robenkleene-functions-interactive)
 (require 'robenkleene-functions-alias)
+
+;; Config
+(require 'robenkleene-config)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
 (require 'robenkleene-alias)
