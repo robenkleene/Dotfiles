@@ -28,7 +28,6 @@
 (require 'robenkleene-config)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
-(require 'robenkleene-alias)
 (if window-system
     (progn
       (require 'robenkleene-gui)
