@@ -43,88 +43,49 @@
     )
   )
 
-;; Switch To
+;; Switch to
 
-(defun switch-to-inbox ()
+(defun inbox ()
   "Switch to inbox directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
-(defun switch-to-notes ()
+(defun notes ()
   "Switch to notes directory."
   (interactive)
   (find-file "~/Documents/Text/Notes/")
   )
 
-(defun switch-to-text ()
+(defun text ()
   "Switch to text directory."
   (interactive)
   (find-file "~/Text/")
   )
 
-(defun switch-to-archive ()
+(defun archive ()
   "Switch to archive directory."
   (interactive)
   (find-file "~/Archive/Text/")
   )
 
-(defun switch-to-daily ()
+(defun daily ()
   "Switch to daily file."
   (interactive)
   (rk/safe-find-file
    (shell-command-to-string "~/.bin/daily_file -b"))
   )
 
-(defun switch-to-scratch ()
+(defun scratch ()
   "Switch to scratch buffer."
   (interactive)
   (switch-to-buffer "*scratch*")
   )
 
-(defun switch-to-messages ()
+(defun messages ()
   "Switch to messages buffer."
   (interactive)
   (switch-to-buffer "*Messages*")
-  )
-
-(defun switch-to-scratch-other-window ()
-  "Switch to scratch for current buffer in other window."
-  (interactive)
-  (let ((file (rk/scratch-for-file (buffer-file-name))))
-    (if (bound-and-true-p file)
-        (find-file-other-window file)
-      (message "No file found.")
-      )
-    )
-  )
-
-;; Switch To Empty
-
-(defun switch-to-empty-buffer-other-window ()
-  "Open a new window with a buffer named Untitled."
-  (interactive)
-  (switch-to-buffer-other-window (rk/new-empty-buffer))
-  )
-
-(defun switch-to-empty-buffer-other-window-right ()
-  "Open a new window with a buffer named Untitled."
-  (interactive)
-  (split-window-right)
-  (other-window 1)
-  (switch-to-buffer (rk/new-empty-buffer))
-  )
-
-(defun switch-to-empty-buffer-other-frame ()
-  "Open a new frame with a buffer named Untitled."
-  (interactive)
-  (switch-to-buffer-other-frame (rk/new-empty-buffer))
-  )
-
-(defun switch-to-empty-buffer ()
-  "Open a new buffer named Untitled."
-  (interactive)
-  (switch-to-buffer (rk/new-empty-buffer))
   )
 
 ;; Kill
@@ -206,6 +167,12 @@
    (shell-command-to-string (concat "~/.bin/inbox_new "
                                     (shell-quote-argument title))
                             ))
+  )
+
+(defun untitled-create ()
+  "Open a new Untitled buffer."
+  (interactive)
+  (switch-to-buffer (rk/new-empty-buffer))
   )
 
 ;; Slug Project
@@ -423,6 +390,18 @@
     )
   )
 
+(defun rk/switch-to-scratch-other-window ()
+  "Switch to scratch for current buffer in other window."
+  (interactive)
+  (let ((file (rk/scratch-for-file (buffer-file-name))))
+    (if (bound-and-true-p file)
+        (find-file-other-window file)
+      (message "No file found.")
+      )
+    )
+  )
+
+
 (defvar
   rk/documentation-directory-path
   "~/Documentation/")
@@ -512,15 +491,6 @@
         )
       (goto-char p)
       )
-    )
-  )
-
-(defun rk/inbox-create-or-open ()
-  "Switch to inbox directory or make new inbox document."
-  (interactive)
-  (if current-prefix-arg
-      (call-interactively 'rk/new-inbox-document)
-    (rk/inbox-open)
     )
   )
 
