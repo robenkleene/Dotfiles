@@ -1,4 +1,4 @@
-;;; robenkleene-functions-interactive.el --- robenkleene-functions-interactive.el
+;;; robenkleene-interactive.el --- robenkleene-interactive.el
 ;;; Commentary:
 ;;; Code:
 
@@ -613,8 +613,8 @@
     )
   )
 
-(provide 'robenkleene-functions-interactive)
+(provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
-;;; robenkleene-functions-interactive.el ends here
+;;; robenkleene-interactive.el ends here
