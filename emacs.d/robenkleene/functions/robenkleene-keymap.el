@@ -1,4 +1,4 @@
-;;; robenkleene-functions-bindings.el --- robenkleene-functions-bindings
+;;; robenkleene-keymap.el --- robenkleene-keymap
 ;;; Commentary:
 ;;; Code:
 
@@ -211,8 +211,18 @@ With prefix arg, find the previous file."
             (comment-or-uncomment-region $lbp $lep)
             (forward-line )))))))
 
-(provide 'robenkleene-functions-bindings)
+(defun robenkleene/kill-region-or-window-map ()
+  "If the region is active and non-empty, call `kill-region'.
+Otherwise, use `robenkleene/window-map'."
+  (interactive)
+  (if (use-region-p)
+      (call-interactively 'kill-region)
+    (set-transient-map robenkleene/window-map)
+    )
+  )
+
+(provide 'robenkleene-keymap)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
-;;; robenkleene-functions-bindings.el ends here
+;;; robenkleene-keymap.el ends here

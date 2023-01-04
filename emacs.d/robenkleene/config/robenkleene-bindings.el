@@ -68,15 +68,6 @@
 ;;   'robenkleene/kill-region-or-backward-word)
 (define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
   'robenkleene/kill-region-or-window-map)
-(defun robenkleene/kill-region-or-window-map ()
-  "If the region is active and non-empty, call `kill-region'.
-Otherwise, use `robenkleene/window-map'."
-  (interactive)
-  (if (use-region-p)
-      (call-interactively 'kill-region)
-    (set-transient-map robenkleene/window-map)
-    )
-  )
 
 ;; General
 ;; (define-key robenkleene/bindings-minor-mode-map (kbd "M-r")

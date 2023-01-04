@@ -20,9 +20,9 @@
 
 ;; Functions
 (require 'robenkleene-functions)
-(require 'robenkleene-functions-bindings)
-(require 'robenkleene-functions-interactive)
-(require 'robenkleene-functions-alias)
+(require 'robenkleene-keymap)
+(require 'robenkleene-interactive)
+(require 'robenkleene-alias)
 
 ;; Config
 (require 'robenkleene-config)

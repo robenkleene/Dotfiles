@@ -1,4 +1,4 @@
-;;; robenkleene-functions-alias.el --- robenkleene-functions-alias
+;;; robenkleene-alias.el --- robenkleene-alias
 ;;; Commentary:
 ;;; Code:
 
@@ -16,8 +16,8 @@
                  )
   )
 
-(provide 'robenkleene-functions-alias)
+(provide 'robenkleene-alias)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
-;;; robenkleene-functions-alias.el ends here
+;;; robenkleene-alias.el ends here
