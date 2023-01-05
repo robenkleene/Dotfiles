@@ -172,7 +172,13 @@
 (defun untitled-create ()
   "Open a new Untitled buffer."
   (interactive)
-  (switch-to-buffer (rk/new-empty-buffer))
+  (switch-to-buffer (rk/create-untitled-buffer))
+  )
+
+(defun untitled ()
+  "Open a new Untitled buffer."
+  (interactive)
+  (find-file (concat user-emacs-directory "untitled/"))
   )
 
 ;; Slug Project
@@ -258,7 +264,7 @@
 (defun rk/new-clipboard ()
   "Switch a new buffer with the clipboard contents."
   (interactive)
-  (switch-to-buffer (rk/new-empty-buffer))
+  (switch-to-buffer (rk/create-untitled-buffer))
   (yank)
   )
 

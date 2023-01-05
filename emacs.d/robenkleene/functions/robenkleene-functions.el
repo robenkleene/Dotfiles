@@ -6,10 +6,9 @@
   "Test if this is a Mac."
   (string-equal system-type "darwin"))
 
-(defun rk/new-empty-buffer ()
+(defun rk/create-untitled-buffer ()
   "Return a new empty buffer."
   (let*
-      ;; Set the `default-directory' so that's where autosaves will go
       ((default-directory (concat user-emacs-directory "untitled"))
        (buffer (generate-new-buffer "untitled"))
        )
