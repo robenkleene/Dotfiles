@@ -132,14 +132,6 @@
 (define-key rk/mac-bindings-minor-mode-map (kbd "s-{")
   (lambda () (interactive) (other-window -1)))
 
-;; Window Types
-;; (define-key rk/mac-bindings-minor-mode-map (kbd "s-l")
-;;   'rk/open-emacs-scratch)
-;; (define-key rk/mac-bindings-minor-mode-map (kbd "s-u")
-;;   'rk/new-empty)
-;; (define-key rk/mac-bindings-minor-mode-map (kbd "s-y")
-;;   'rk/new-clipboard)
-
 ;; Misc
 (define-key rk/mac-bindings-minor-mode-map (kbd "M-s-v")
   (lambda () (interactive)
