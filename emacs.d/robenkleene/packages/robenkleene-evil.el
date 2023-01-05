@@ -176,6 +176,7 @@
     )
   ;; Ex Commands
   (evil-ex-define-cmd "EI" 'rk/edit-init)
+  (evil-ex-define-cmd "Pq" 'rk/grep-from-clipboard)
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
