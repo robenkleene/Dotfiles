@@ -110,7 +110,7 @@
   (message default-directory)
   (kill-new default-directory))
 
-(defun kill-date-today ()
+(defun kill-today ()
   "Kill the today's date."
   (interactive)
   (message (rk/today))
