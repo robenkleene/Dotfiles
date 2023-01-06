@@ -113,8 +113,8 @@
 (defun kill-today ()
   "Kill the today's date."
   (interactive)
-  (message (rk/today))
-  (kill-new (rk/today)))
+  (message (rk/date-today))
+  (kill-new (rk/date-today)))
 
 ;; Cd
 
