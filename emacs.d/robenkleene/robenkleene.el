@@ -61,6 +61,7 @@
 (require 'robenkleene-evil)
 (require 'robenkleene-monky)
 (require 'robenkleene-esup)
+(require 'robenkleene-vterm)
 
 ;; Completion
 (require 'robenkleene-vertico)
