@@ -205,6 +205,7 @@
   ;; (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
+  (evil-set-initial-state 'vterm-mode 'insert)
   ;; Git Commit
   (evil-set-initial-state 'with-editor-mode 'emacs)
 
