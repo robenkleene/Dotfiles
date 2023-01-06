@@ -243,6 +243,42 @@
     )
   )
 
+;; Region
+
+(defun title-case-region ()
+  "Make a wiki link from a file named after the region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command-on-region (region-beginning)
+                               (region-end)
+                               "~/.bin/title_case"
+                               nil
+                               t)
+    )
+  )
+
+(defun backup-region ()
+  "Backup region."
+  (interactive)
+  (if (use-region-p)
+      (shell-command-on-region (region-beginning)
+                               (region-end)
+                               "~/.bin/backup_text -m")
+    )
+  )
+
+(defun archive-region ()
+  "Backup and delete region."
+  (interactive)
+  (if (use-region-p)
+      (progn
+        (shell-command-on-region (region-beginning)
+                                 (region-end)
+                                 "~/.bin/backup_text -m")
+        (delete-region (region-beginning) (region-end))
+        )
+  ))
+
 ;; Older
 
 (defun rk/open-terminal-window ()

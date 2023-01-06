@@ -178,6 +178,8 @@
   (evil-ex-define-cmd "EI" 'rk/edit-init)
   (evil-ex-define-cmd "Pq" 'rk/grep-from-clipboard)
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
+  (evil-ex-define-cmd "Archive" 'archive-region)
+  (evil-ex-define-cmd "TitleCase" 'title-case-region)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
     (rg arg)

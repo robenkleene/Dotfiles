@@ -26,16 +26,6 @@ Otherwise, call `backward-kill-word'."
     )
   )
 
-(defun rk/archive-region ()
-  "Archive region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command-on-region (region-beginning)
-                               (region-end)
-                               "~/.bin/backup_text -m")
-    )
-  )
-
 (defun rk/next ()
   "Make a wiki link from a file named after the region."
   (interactive)
@@ -81,18 +71,6 @@ With prefix arg, find the previous file."
             (mod (+ (cl-position file files :test 'equal) (if backward -1 1))
                  (length files))))
       (find-file (nth pos files)))))
-
-(defun rk/convert-region-to-title-case ()
-  "Make a wiki link from a file named after the region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command-on-region (region-beginning)
-                               (region-end)
-                               "~/.bin/title_case"
-                               nil
-                               t)
-    )
-  )
 
 (defun rk/forward-block (&optional n)
   "Move to next text block N."
