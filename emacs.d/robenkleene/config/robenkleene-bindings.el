@@ -92,6 +92,7 @@
   'tab-previous)
 (define-key rk/window-map (kbd "C-w") 'other-window)
 (define-key rk/window-map (kbd "w") 'other-window)
+(define-key rk/window-map (kbd ":") 'switch-to-minibuffer)
 (define-key rk/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
 (define-key rk/window-map (kbd "W") (lambda () (interactive) (other-window -1)))
 (define-key rk/window-map (kbd "q") 'tab-close)
