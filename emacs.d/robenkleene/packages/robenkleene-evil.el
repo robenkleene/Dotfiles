@@ -175,7 +175,7 @@
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
   ;; Ex Commands
-  (evil-ex-define-cmd "EI" 'rk/edit-init)
+  (evil-ex-define-cmd "Ei" 'rk/edit-init)
   (evil-ex-define-cmd "Pq" 'rk/grep-from-clipboard)
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
   (evil-ex-define-cmd "Archive" 'archive-region)
