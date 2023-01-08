@@ -40,6 +40,7 @@ return {
     'vim-scripts/vis',
     cmd = "B"
   },
+  -- Themes
   {
     "catppuccin/nvim",
     -- name = "catppuccin",
@@ -53,6 +54,18 @@ return {
     config = function()
       vim.cmd("colorscheme tokyonight-night")
     end
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    -- config = function()
+    --   vim.cmd("colorscheme carbonfox")
+    -- end
+  },
+  {
+    "rose-pine/neovim",
+    -- config = function()
+    --   vim.cmd("colorscheme rose-pine")
+    -- end
   },
   {
       'nvim-treesitter/playground',
