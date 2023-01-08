@@ -2,13 +2,17 @@
 
 message="false"
 silent="false"
-while getopts ":smh" option; do
+echo="false"
+while getopts ":smeh" option; do
   case "$option" in
     m)
       message="true"
       ;;
     s)
       silent="true"
+      ;;
+    e)
+      echo="true"
       ;;
     h)
       echo "Usage: command [-hm]"
@@ -30,7 +34,11 @@ today=$(date +%Y-%B-%d)
 backup_directory=$backup_root_directory$today
 mkdir -p "$backup_directory"
 archive_file=$(mktemp "$backup_directory/$today-ArchivedText.XXXX")
-cat > "$archive_file"
+if [[ "$echo" == "true" ]]; then
+  cat > "$archive_file"
+else
+  tee "$archive_file"
+fi
 # Add a new line to the end of the file if it's missing, without this `wc` will
 # say `0` lines for `1` line.
 sed -i '' -e '$a\' "$archive_file"
