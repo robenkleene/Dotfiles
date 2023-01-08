@@ -35,3 +35,7 @@ set notimeout
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " Sort case-insensitive
 let g:netrw_sort_options = "i"
+
+set cursorline
+" Highlight just the line number
+set cursorlineopt=number
