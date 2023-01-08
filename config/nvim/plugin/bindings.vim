@@ -31,8 +31,6 @@ vnoremap <C-w>n gt
 vnoremap <C-w>p gT
 " Command Line
 cnoremap <C-A> <Home>
-" cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
-cnoremap <expr> <C-v> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
 cnoremap <M-BS> <C-W>
 cnoremap <A-left> <S-Left>
 cnoremap <A-right> <S-Right>
