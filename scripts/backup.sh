@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/backup_text
+exec ~/.bin/backup_text -e
