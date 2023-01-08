@@ -1,6 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
-  event = "VeryLazy",
+  -- `VeryLazy` disrupts connecting to existing LSP
+  -- event = "VeryLazy",
   config = function()
     local opts = { noremap=true, silent=true }
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -63,6 +64,16 @@ return {
       vim.keymap.set('n', '=', function() vim.lsp.buf.format { async = true } end, bufopts)
       vim.api.nvim_echo({{"LSP attached"}}, false, {})
     end
+
+-- Doesn't appear this is necessary with `VeryLazy` removed, also wouldn't work
+-- *with* `VeryLazy`, because it means the `autocmd` wouldn't fire because it
+-- would be defined too late
+--     vim.cmd([[
+-- augroup lsp_start
+--   autocmd!
+--   autocmd FileType rust :LspStart
+-- augroup END 
+--     ]])
 
     -- Languages
 
