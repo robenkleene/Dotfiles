@@ -42,10 +42,16 @@ return {
   },
   {
     "catppuccin/nvim",
-    name = "catppuccin",
+    -- name = "catppuccin",
+    -- config = function()
+    --   require("catppuccin").setup()
+    --   vim.cmd("colorscheme catppuccin")
+    -- end
+  },
+  {
+    "folke/tokyonight.nvim",
     config = function()
-      require("catppuccin").setup()
-      vim.cmd("colorscheme catppuccin")
+      vim.cmd("colorscheme tokyonight-night")
     end
   },
   {
