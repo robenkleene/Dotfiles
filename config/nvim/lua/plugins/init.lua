@@ -66,6 +66,12 @@ return {
   --   end
   -- },
   -- {
+  --   "whatyouhide/vim-gotham",
+  --   config = function()
+  --     vim.cmd("colorscheme gotham")
+  --   end
+  -- },
+  -- {
   --   "rose-pine/neovim",
   --   config = function()
   --     vim.cmd("colorscheme rose-pine")
