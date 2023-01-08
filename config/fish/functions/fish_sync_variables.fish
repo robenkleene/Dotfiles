@@ -16,8 +16,8 @@ function fish_sync_variables
     set -Ux VIM_COMMAND nvim
     set -Ux MD_CAT_COMMAND "bat --style plain"
     set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
-    # set -Ux CD_COMMAND "vim_cd"
-    set -Ux CD_COMMAND "emacs_cd"
+    set -Ux CD_COMMAND "vim_cd"
+    # set -Ux CD_COMMAND "emacs_cd"
 
     # hx
     # set -Ux VISUAL "hx"
