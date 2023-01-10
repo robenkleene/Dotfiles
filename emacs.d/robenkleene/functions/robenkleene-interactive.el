@@ -51,6 +51,12 @@
   (find-file "~/Documents/Text/Notes/Inbox/")
   )
 
+(defun projects ()
+  "Switch to projects directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/Projects/")
+  )
+
 (defun notes ()
   "Switch to notes directory."
   (interactive)
@@ -156,7 +162,7 @@
   )
 
 (defun inbox-create (title)
-  "Create a new inbox document with TITLE at DIR."
+  "Create a new inbox document with TITLE."
   (interactive (list (read-from-minibuffer "Title: "
                                            (if (use-region-p)
                                                (buffer-substring (mark) (point))
@@ -165,6 +171,20 @@
                      ))
   (rk/safe-find-file
    (shell-command-to-string (concat "~/.bin/inbox_new "
+                                    (shell-quote-argument title))
+                            ))
+  )
+
+(defun projects-create (title)
+  "Create a new projects document with TITLE."
+  (interactive (list (read-from-minibuffer "Title: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (rk/safe-find-file
+   (shell-command-to-string (concat "~/.bin/projects_new "
                                     (shell-quote-argument title))
                             ))
   )
