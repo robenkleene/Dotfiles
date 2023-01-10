@@ -1,11 +1,13 @@
-# Any aliases removed should be deleted manually
 function fish_sync_alias
-    alias --save cdsc='sc_cd_root'
+    # After adding an alias, run `fish_sync_alias` to generate the functions
+    # Any aliases removed need to be deleted manually!
     alias --save gu='ssh_start && git pull'
     alias --save gp='ssh_start && git push'
     alias --save gur='ssh_start && git pull -r'
-    alias --save d='$CD_COMMAND'
-    alias --save de='emacs_cd'
+    # These need the trailing `.` so they can be run without arguments to open
+    # the current directory
+    alias --save d='$CD_COMMAND .'
+    alias --save de='emacs_cd .'
     alias --save rg='rg_custom'
     alias --save foi='fish_edit_config'
     alias --save fsa='fish_sync_abbr'
