@@ -15,6 +15,7 @@ alias u='ssh_start && ~/.bin/egit_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
 alias d="$CD_COMMAND"
+alias ed="emacs_cd"
 alias gu='ssh_start && git pull'
 alias gp='ssh_start && git push'
 alias gur='ssh_start && git pull -r'
