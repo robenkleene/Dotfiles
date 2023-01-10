@@ -14,8 +14,10 @@ alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
 alias u='ssh_start && ~/.bin/egit_update'
 alias ut='ssh_git_pull_all -t'
 alias ua='ssh_git_pull_all'
-alias d="$CD_COMMAND"
-alias de="emacs_cd"
+# The trailing `.` are intentional so that the alias can be called without
+# arguments to open the current directory
+alias d="$CD_COMMAND ."
+alias de="emacs_cd ."
 alias gu='ssh_start && git pull'
 alias gp='ssh_start && git push'
 alias gur='ssh_start && git pull -r'
