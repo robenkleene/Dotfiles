@@ -5,7 +5,7 @@ function fish_sync_alias
     alias --save gp='ssh_start && git push'
     alias --save gur='ssh_start && git pull -r'
     alias --save d='$CD_COMMAND'
-    alias --save ed='emacs_cd'
+    alias --save de='emacs_cd'
     alias --save rg='rg_custom'
     alias --save foi='fish_edit_config'
     alias --save fsa='fish_sync_abbr'
