@@ -66,11 +66,11 @@
 (defadvice delete-frame
     (before rk/delete-frame-chdir activate)
   "Write to chdir and save desktop."
-  (if (file-exists-p "/tmp/vim.rk/chdir/chdir")
+  (if (file-exists-p "/tmp/vim.robenkleene/chdir/chdir")
       (write-region
        (expand-file-name default-directory)
        nil
-       "/tmp/vim.rk/chdir/chdir"
+       "/tmp/vim.robenkleene/chdir/chdir"
        )
     )
   ;; Prevent prompting for existing desktop files
