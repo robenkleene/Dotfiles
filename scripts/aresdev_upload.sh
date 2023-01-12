@@ -7,4 +7,4 @@ if [[ $# -lt 1 ]]; then
   exit 1
 fi
 
-scp "$1" aresdev:"\"/home/robenkleene/${2:-}\""
+scp "$1" aresdev:/home/robenkleene/${2:-}
