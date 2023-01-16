@@ -96,7 +96,6 @@
   (defvar rk/evil-leader-map (make-keymap))
   ;; Don't enable this, it's too easy to keep hitting it in buffers that don't
   ;; support it otherwise
-  ;; (define-key rk/evil-leader-map (kbd "o i") 'rk/edit-init)
   (define-key rk/evil-leader-map (kbd "l") 'consult-occur)
   (define-key rk/evil-leader-map (kbd "b")
     'consult-buffer)
@@ -175,7 +174,7 @@
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
   ;; Ex Commands
-  (evil-ex-define-cmd "Ei" 'rk/edit-init)
+  (evil-ex-define-cmd "Ei" 'edit-init)
   (evil-ex-define-cmd "Pq" 'rk/grep-from-clipboard)
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
   (evil-define-command rk/ex-rg (arg)
