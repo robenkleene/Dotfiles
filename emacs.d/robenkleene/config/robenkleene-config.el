@@ -303,6 +303,10 @@
 ;; Don't try to parse long line
 (global-so-long-mode)
 
+;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
+;; disabled by default)
+(setq disabled-command-function nil)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
