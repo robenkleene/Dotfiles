@@ -44,6 +44,10 @@ return {
       'nvim-treesitter/playground',
       cmd = 'TSPlaygroundToggle'
   },
+  {
+      'mbbill/undotree',
+      cmd = 'UndotreeToggle'
+  },
   -- Themes
   -- {
   --   "catppuccin/nvim",
