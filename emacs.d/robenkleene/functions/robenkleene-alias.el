@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(defalias 'ei 'rk/edit-init)
+(defalias 'ei 'edit-init)
 (defalias 'yg 'rk/grep-from-clipboard)
 (defalias 'doc 'rk/consult-doc)
 (defalias 'scw 'rk/source-control-open-web)
@@ -17,7 +17,7 @@
 ;; (defalias 'vnew 'rk/switch-to-empty-buffer-other-window-right)
 ;; (defalias 'enew 'rk/switch-to-empty-buffer)
 
-(defun rk/edit-init ()
+(defun edit-init ()
   "Edit init."
   (interactive)
   (find-file "~/.emacs.d/robenkleene/robenkleene.el")
