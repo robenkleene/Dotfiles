@@ -14,7 +14,6 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "fab3e2212e206f4f8b3bbaa656e129443c9b802e" },
   "telescope.nvim": { "branch": "master", "commit": "b69b33eded07341253bc1f0b4ae6bbc5c411a2ab" },
   "tokyonight.nvim": { "branch": "main", "commit": "73671f5dd48a577e753def35b410ef1157d6560b" },
-  "undotree": { "branch": "master", "commit": "1a23ea84bd02c34f50d8e10a8b4bfc89597ffe4e" },
   "vim-eunuch": { "branch": "master", "commit": "291ef1f8c8996ca7715df1032a35a27b12d7b5cf" },
   "vim-fish": { "branch": "master", "commit": "50b95cbbcd09c046121367d49039710e9dc9c15f" },
   "vis": { "branch": "master", "commit": "6a87efbfbd97238716b602c2b53564aa6329b5de" }
