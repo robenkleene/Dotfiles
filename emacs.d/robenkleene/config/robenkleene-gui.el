@@ -90,8 +90,8 @@
 (setq-default cursor-type 'bar)
 
 ;; Save window state
-(setq desktop-path `(,user-emacs-directory "~"))
-(setq desktop-dirname 'user-emacs-directory)
+(setq desktop-path `(,user-emacs-directory))
+(setq desktop-dirname user-emacs-directory)
 (setq desktop-save t)
 ;; Toggle save
 ;; (desktop-save-mode 1)
