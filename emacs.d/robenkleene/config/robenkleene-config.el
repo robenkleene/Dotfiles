@@ -59,7 +59,15 @@
 ;; (global-linum-mode t)
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")
-(global-display-line-numbers-mode 1)
+;; (global-display-line-numbers-mode 1)
+;; Only show line numbers in programming modes
+;; (add-hook 'prog-mode-hook 'linum-mode)
+;; Don't show line numbers in GUI mode because of that bug where the line with
+;; the cursor sometimes gets offset slightly
+(unless window-system
+  (add-hook 'prog-mode-hook 'linum-mode)
+  )
+
 ;; Show cursor position
 (column-number-mode)
 
