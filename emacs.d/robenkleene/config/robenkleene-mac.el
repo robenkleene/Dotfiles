@@ -158,10 +158,10 @@
 (define-key rk/mac-bindings-minor-mode-map (kbd "C-s-a")
   'backward-sentence)
 
-(define-key key-translation-map (kbd "<s-up>") (kbd "<C-up>"))
-(define-key key-translation-map (kbd "<s-down>") (kbd "<C-down>"))
-;; (define-key key-translation-map (kbd "<s-left>") (kbd "<C-left>"))
-;; (define-key key-translation-map (kbd "<s-right>") (kbd "<C-right>"))
+(define-key rk/mac-bindings-minor-mode-map
+  (kbd "<s-up>") 'beginning-of-buffer)
+(define-key rk/mac-bindings-minor-mode-map
+  (kbd "<s-down>") 'end-of-buffer)
 (define-key rk/mac-bindings-minor-mode-map
   (kbd "<s-left>") 'beginning-of-visual-line)
 (define-key rk/mac-bindings-minor-mode-map
