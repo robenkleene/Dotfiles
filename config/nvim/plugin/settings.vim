@@ -38,4 +38,4 @@ let g:netrw_sort_options = "i"
 
 set cursorline
 " Highlight just the line number
-set cursorlineopt=number
+" set cursorlineopt=number

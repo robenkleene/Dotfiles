@@ -315,6 +315,9 @@
 ;; disabled by default)
 (setq disabled-command-function nil)
 
+;; Highlight the current line
+(global-hl-line-mode 1)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
