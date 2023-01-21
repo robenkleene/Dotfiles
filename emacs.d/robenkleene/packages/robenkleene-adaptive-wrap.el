@@ -7,6 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package adaptive-wrap
+  :diminish
   :init
   (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
   )

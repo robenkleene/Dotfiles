@@ -7,7 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package yasnippet
-  :commands yas-minor-mode
+  :diminish (yas-minor-mode) 
   :init
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
   ;; (add-hook 'markdown-mode-hook '(lambda()

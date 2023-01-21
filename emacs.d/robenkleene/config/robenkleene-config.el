@@ -19,6 +19,10 @@
 ;; Just disable Emacs making backup files
 (setq make-backup-files nil)
 
+;; Mode line
+;; Don't show `vc-mode' in mode-line
+(setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
+
 ;; Auto-Save
 ;; Automatically save buffers every second
 ;; Disables auto-saving altogether

@@ -8,6 +8,7 @@
   (require 'use-package))
 
 (use-package smartparens
+  :diminish
   :commands (smartparens-strict-mode smartparens-mode)
   :bind
   ("C-M-]" . sp-select-next-thing)
