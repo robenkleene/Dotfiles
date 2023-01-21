@@ -10,9 +10,12 @@
   :init
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode)
-  ;; Not working
-  (diminish 'whitespace-mode)
-  (diminish 'flyspell-mode)
+  (with-eval-after-load 'whitespace
+    (diminish 'whitespace-mode)
+    )
+  (with-eval-after-load 'flyspell
+    (diminish 'flyspell-mode)
+    )
   )
 
 (provide 'robenkleene-diminish)
