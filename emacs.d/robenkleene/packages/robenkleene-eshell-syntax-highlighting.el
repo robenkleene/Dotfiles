@@ -7,6 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package eshell-syntax-highlighting
+  :diminish
   :after esh-mode
   :config
   (eshell-syntax-highlighting-global-mode +1))

@@ -7,6 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package page-break-lines
+  :diminish
   :init
   (global-page-break-lines-mode)
   )

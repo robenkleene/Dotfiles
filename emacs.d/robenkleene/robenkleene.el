@@ -46,6 +46,7 @@
 (require 'robenkleene-eshell)
 
 ;; Packages
+(require 'robenkleene-diminish)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)

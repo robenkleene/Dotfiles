@@ -7,6 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package editorconfig
+  :diminish
   :config
   (add-to-list 'editorconfig-indentation-alist '(markdown-mode markdown-list-indent-width))
   (editorconfig-mode 1)

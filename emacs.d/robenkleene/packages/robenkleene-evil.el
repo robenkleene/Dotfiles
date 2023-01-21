@@ -236,11 +236,13 @@
     )
 
   (use-package evil-commentary
+    :diminish
     :init
     (evil-commentary-mode)
     )
 
   (use-package evil-goggles
+    :diminish
     :config
     (setq evil-goggles-enable-delete nil)
     (setq evil-goggles-enable-change nil)
