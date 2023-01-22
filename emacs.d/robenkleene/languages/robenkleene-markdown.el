@@ -18,8 +18,14 @@
   (setq flyspell-generic-check-word-predicate
         'rk/flyspell-generic-textmode-verify)
   (setq markdown-enable-wiki-links t)
-
   :config
+  ;; Performance Tweak
+  ;; This disables italics from `*', but that was causing slowness when entering long lines
+  (defconst markdown-regex-italic
+    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
+  (defconst markdown-regex-gfm-italic
+    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
+
   ;; It might be possible to use this to change the default indent behavior when
   ;; making nested lists, but it doesn't appear to be easy without also removing
   ;; some other desirable behavior.
@@ -78,8 +84,7 @@
               :filter-return
               #'(lambda (list)
                   (seq-filter
-                   (lambda (x) (eq (% x 4) 0)) list)))
-  )
+                   (lambda (x) (eq (% x 4) 0)) list))))
 
 (provide 'robenkleene-markdown)
 ;; Local Variables:
