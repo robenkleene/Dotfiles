@@ -23,7 +23,8 @@
   ;; This disables italics from `*', but that was causing slowness with input in
   ;; large Markdown files
   ;; (Probably due to parsing `*' for lists vs. italic)
-  ;; You can test this by running `profile-start', then input, then `profile-report'
+  ;; You can test this by running `profile-start', then input, then
+  ;; `profile-report'. It seems to only appear when editing heirarchical lists
   (defconst markdown-regex-italic
     "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
   (defconst markdown-regex-gfm-italic
