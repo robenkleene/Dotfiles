@@ -23,11 +23,11 @@
   ;; This disables italics from `*', but that was causing slowness with input in
   ;; large Markdown files
   ;; (Probably due to parsing `*' for lists vs. italic)
-  ;; (defconst markdown-regex-italic
-  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
-  ;; (defconst markdown-regex-gfm-italic
-  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
-  ;; This doesn't appear to be the cause, to test run `profile-start', then input, then `profile-report'
+  ;; You can test this by running `profile-start', then input, then `profile-report'
+  (defconst markdown-regex-italic
+    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
+  (defconst markdown-regex-gfm-italic
+    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
 
   ;; It might be possible to use this to change the default indent behavior when
   ;; making nested lists, but it doesn't appear to be easy without also removing
