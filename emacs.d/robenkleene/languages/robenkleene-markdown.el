@@ -20,7 +20,9 @@
   (setq markdown-enable-wiki-links t)
   :config
   ;; Performance Tweak
-  ;; This disables italics from `*', but that was causing slowness when entering long lines
+  ;; This disables italics from `*', but that was causing slowness with input in
+  ;; large Markdown files
+  ;; (Probably due to parsing `*' for lists vs. italic)
   (defconst markdown-regex-italic
     "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
   (defconst markdown-regex-gfm-italic
