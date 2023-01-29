@@ -179,7 +179,11 @@
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
-    (rg arg)
+    (compilation-start
+     (concat
+      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
+      arg)
+     'grep-mode)
     )
 
   ;; Allow crossing lines by moving past end of line
