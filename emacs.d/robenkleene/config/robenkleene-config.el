@@ -322,6 +322,9 @@
 ;; Highlight the current line
 (global-hl-line-mode 1)
 
+;; Make new buffers use `text-mode'
+(setq-default major-mode 'text-mode)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
