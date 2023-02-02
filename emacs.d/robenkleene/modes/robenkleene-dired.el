@@ -46,7 +46,15 @@
 
   ;; If two `dired' buffers are open, use the other window as the default
   ;; destination for operations like rename and copy.
-  (setq dired-dwim-target t)
+  ;; Disabling this because it reduces flexibility, e.g., in situations where we
+  ;; are setting up a directory structure and want to use another directory for
+  ;; reference.
+  ;; Instead to move files to another directory:
+  ;; 1. First navigate to the destination
+  ;; 2. Then navigate to the source
+  ;; 3. Use initialize the rename and use `m-n' to find the destination in the
+  ;; Dired "future history"
+  ;; (setq dired-dwim-target t)
   ;; Omit hidden files
   ;; Omit hidden files (`^\\..+$\\') and macOS icon files (`Icon\015+')
   (setq-default dired-omit-files
