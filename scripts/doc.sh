@@ -31,7 +31,11 @@ while getopts ":pdeh" option; do
   esac
 done
 
+cmd="fd --type f --follow -g \"*.md\""
+
 if [[ "$edit" == "true" ]]; then
+  # With edit, allow directories
+  cmd="fd --follow --exclude \"*.{png,jpg}\""
   command="${MD_EDITOR_COMMAND:=vim}"
 elif [[ "$path" == "true" || "$directory" == "true" ]]; then
   command="echo"
@@ -39,13 +43,11 @@ else
   command="${MD_CAT_COMMAND:=cat}"
 fi
 
-cd ~/Documentation/ || return 1
-cmd="fd --type f --follow -g \"*.md\""
-
 if [[ "$directory" == "true" ]]; then
   cmd="fd --follow --type d"
 fi
 
+cd ~/Documentation/ || return 1
 result="$(eval "$cmd" | fzf)"
 if [[ -z "$result" ]]; then
   exit
