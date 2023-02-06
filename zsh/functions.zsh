@@ -65,6 +65,15 @@ vim_cd() {
     fi
 }
 
+emacs_cd() {
+  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  eval $EMACS_COMMAND .
+  test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
+      cd -- "$(cat "$tempfile")" || return
+    fi
+}
+
 yank_test_variable() {
   test_variable=$(cat)
 }
