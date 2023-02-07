@@ -226,7 +226,7 @@
     ;; The block movement don't work with Evil visual selection for some reason
     (evil-define-key 'visual markdown-mode-map (kbd "{") 'evil-backward-paragraph)
     (evil-define-key 'visual markdown-mode-map (kbd "}") 'evil-forward-paragraph)
-  )
+    )
 
   ;; Packages
   (use-package evil-visualstar
@@ -268,7 +268,7 @@
     (setq evil-goggles-enable-redo nil)
     (setq evil-goggles-enable-record-macro nil)
     (evil-goggles-mode)
-    (setq evil-goggles-duration 0.100)
+    (setq evil-goggles-duration 0.200)
     (setq evil-goggles-pulse nil)
     )
 
