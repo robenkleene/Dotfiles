@@ -223,7 +223,10 @@
     ;; Default move by paragraph doesn't skip over individual Markdown list items
     (evil-define-key 'motion markdown-mode-map (kbd "{") 'rk/backward-block)
     (evil-define-key 'motion markdown-mode-map (kbd "}") 'rk/forward-block)
-    )
+    ;; The block movement don't work with Evil visual selection for some reason
+    (evil-define-key 'visual markdown-mode-map (kbd "{") 'evil-backward-paragraph)
+    (evil-define-key 'visual markdown-mode-map (kbd "}") 'evil-forward-paragraph)
+  )
 
   ;; Packages
   (use-package evil-visualstar
