@@ -32,7 +32,6 @@ return {
         {expr = true, silent = true})
     end
   },
-  { 'github/copilot.vim', event = "VeryLazy", },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
