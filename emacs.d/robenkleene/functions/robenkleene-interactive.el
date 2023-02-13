@@ -43,6 +43,64 @@
     )
   )
 
+;; Cd
+
+(defun cd-hg ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string
+              "hg root 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
+(defun cd-git ()
+  "Got to the project root."
+  (interactive)
+  (let ((dir (shell-command-to-string
+              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
+    (if dir
+        (find-file dir)
+      )
+    )
+  )
+
+(defun cd-pwd ()
+  "Got to the project root."
+  (interactive)
+  (find-file (rk/pwd))
+  )
+
+;; Kill
+
+(defun kill-buffer-file-name ()
+  "Copy the filename to the kill ring."
+  (interactive)
+  (message (buffer-file-name))
+  (kill-new (buffer-file-name))
+  )
+
+(defun rk/kill-buffer-name ()
+  "Kill `buffer-name'"
+  (interactive)
+  (message (buffer-name))
+  (kill-new (buffer-name))
+  )
+
+(defun kill-default-directory ()
+  "Kill `default-directory'."
+  (interactive)
+  (message default-directory)
+  (kill-new default-directory))
+
+(defun kill-today ()
+  "Kill the today's date."
+  (interactive)
+  (message (rk/date-today))
+  (kill-new (rk/date-today)))
+
 ;; Switch to
 
 (defun inbox ()
@@ -94,62 +152,13 @@
   (switch-to-buffer "*Messages*")
   )
 
-;; Kill
-
-(defun kill-buffer-file-name ()
-  "Copy the filename to the kill ring."
+(defun untitled ()
+  "Switch to untitled directory."
   (interactive)
-  (message (buffer-file-name))
-  (kill-new (buffer-file-name))
-  )
-
-(defun rk/kill-buffer-name ()
-  "Kill `buffer-name'"
-  (interactive)
-  (message (buffer-name))
-  (kill-new (buffer-name))
-  )
-
-(defun kill-default-directory ()
-  "Kill `default-directory'."
-  (interactive)
-  (message default-directory)
-  (kill-new default-directory))
-
-(defun kill-today ()
-  "Kill the today's date."
-  (interactive)
-  (message (rk/date-today))
-  (kill-new (rk/date-today)))
-
-;; Cd
-
-(defun cd-hg ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "hg root 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
-(defun cd-git ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
-(defun cd-pwd ()
-  "Got to the project root."
-  (interactive)
-  (find-file (rk/pwd))
+  (find-file
+   "~/Documents/Text/Notes/Untitled/"
+   ;; (concat user-emacs-directory "untitled/")
+   )
   )
 
 ;; Text
@@ -193,12 +202,6 @@
   "Open a new Untitled buffer."
   (interactive)
   (switch-to-buffer (rk/create-untitled-buffer))
-  )
-
-(defun untitled ()
-  "Open a new Untitled buffer."
-  (interactive)
-  (find-file (concat user-emacs-directory "untitled/"))
   )
 
 ;; Slug Project
