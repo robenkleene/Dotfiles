@@ -9,7 +9,9 @@
 (defun rk/create-untitled-buffer ()
   "Return a new empty buffer."
   (let*
-      ((default-directory (concat user-emacs-directory "untitled"))
+      (
+       ;; (default-directory (concat user-emacs-directory "untitled"))
+       (default-directory "~/Documents/Text/Notes/Untitled/")
        (buffer (generate-new-buffer "untitled"))
        )
     (set-buffer buffer)
