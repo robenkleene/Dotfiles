@@ -284,6 +284,10 @@
 
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
+;; Wrap in text modes
+(add-hook 'text-mode-hook (lambda ()
+                            (set 'truncate-lines nil)
+                            ))
 
 ;; Don't show tab bar for one tab
 (setq tab-bar-show 1)
