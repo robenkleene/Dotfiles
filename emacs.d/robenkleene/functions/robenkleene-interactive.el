@@ -161,6 +161,14 @@
    )
   )
 
+(defun people ()
+  "Switch to people directory."
+  (interactive)
+  (find-file
+   "~/Documents/Text/Notes/People/"
+   )
+  )
+
 ;; Text
 
 (defun daily-create ()
@@ -195,6 +203,20 @@
   (rk/safe-find-file
    (shell-command-to-string (concat "~/.bin/projects_new "
                                     (shell-quote-argument title))
+                            ))
+  )
+
+(defun people-create (name)
+  "Create a new people document with Name."
+  (interactive (list (read-from-minibuffer "Name: "
+                                           (if (use-region-p)
+                                               (buffer-substring (mark) (point))
+                                             nil
+                                             ))
+                     ))
+  (rk/safe-find-file
+   (shell-command-to-string (concat "~/.bin/people_new "
+                                    (shell-quote-argument name))
                             ))
   )
 
