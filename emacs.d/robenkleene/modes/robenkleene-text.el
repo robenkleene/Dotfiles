@@ -3,10 +3,14 @@
 ;;; Code:
 
 (with-eval-after-load 'text
+  ;; (define-key text-mode-map (kbd "M-n")
+  ;;   'next-error)
+  ;; (define-key text-mode-map (kbd "M-p")
+  ;;   'previous-error)
   (define-key text-mode-map (kbd "M-n")
-    'next-error)
+    'rk/next)
   (define-key text-mode-map (kbd "M-p")
-    'previous-error)
+    'rk/previos)
   )
 
 (provide 'robenkleene-text)
