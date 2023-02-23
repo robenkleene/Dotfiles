@@ -11,5 +11,6 @@ command! YankGrep :call commands#YankGrep()
 command! YankPath :call commands#YankPath()
 
 command! -nargs=* Rg :call commands#Rg(<q-args>)
+command! Cwise :let @"=substitute(@", '\n\+$', '', '')
 
 cnoreabbrev E Explore
