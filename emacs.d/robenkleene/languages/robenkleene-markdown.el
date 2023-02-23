@@ -50,10 +50,15 @@
         (markdown-enter-key))
       )
     )
+  ;; Override `markdown-mode' bindings
+  ;; (define-key markdown-mode-map (kbd "M-n")
+  ;;   'next-error)
+  ;; (define-key markdown-mode-map (kbd "M-p")
+  ;;   'previous-error)
   (define-key markdown-mode-map (kbd "M-n")
-    'next-error)
+    'rk/next)
   (define-key markdown-mode-map (kbd "M-p")
-    'previous-error)
+    'rk/previous)
   ;; Default move by paragraph doesn't skip individual over Markdown list items
   (define-key markdown-mode-map (kbd "M-}")
     'rk/forward-block)
