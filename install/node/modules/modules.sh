@@ -47,4 +47,6 @@ modules=(
 'typescript-language-server'
 # Bash
 'bash-language-server'
+# Python
+'pyright'
 )
