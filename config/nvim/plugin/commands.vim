@@ -12,5 +12,6 @@ command! YankPath :call commands#YankPath()
 
 command! -nargs=* Rg :call commands#Rg(<q-args>)
 command! Cpaste :let @"=substitute(@", '\n\+$', '', '') | :norm p
+command! Cwise :let @"=substitute(@", '\n\+$', '', '')
 
 cnoreabbrev E Explore
