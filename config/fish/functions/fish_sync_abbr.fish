@@ -35,6 +35,7 @@ function fish_sync_abbr
     # Fish
     abbr -a fhm 'history merge'
     abbr -a fke 'echo $fish_killring[1]'
+    abbr -a printfvn 'printf "%s\n"'
     # Mercurial
     abbr -a hgd 'hg diff'
     abbr -a hgcm 'hg commit -m'
