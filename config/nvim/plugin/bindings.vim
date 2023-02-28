@@ -40,6 +40,6 @@ inoremap <M-BS> <C-W>
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 " Paste
 inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : ":Cwise<CR><C-r>0"
-snoremap <expr> <C-y> ":Cwise<CR>\"0P"
-nnoremap <expr> <C-y> ":Cwise<CR>\"0P"
-vnoremap <expr> <C-y> ":Cwise<CR>\"0P"
+snoremap <expr> <C-y> ":Cwise<CR>\"0p"
+nnoremap <expr> <C-y> ":Cwise<CR>\"0p"
+vnoremap <expr> <C-y> ":<C-u>Cwise<CR>gv\"0p"
