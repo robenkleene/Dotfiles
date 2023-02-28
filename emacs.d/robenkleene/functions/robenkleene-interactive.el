@@ -152,6 +152,13 @@
   (switch-to-buffer "*Messages*")
   )
 
+(defun scratch-window ()
+  "Delete other windows and switch to scratch buffer."
+  (interactive)
+  (delete-other-windows)
+  (switch-to-buffer "*scratch*")
+  )
+
 (defun untitled ()
   "Switch to untitled directory."
   (interactive)
