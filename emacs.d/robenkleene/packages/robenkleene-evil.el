@@ -151,6 +151,7 @@
     (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
     (define-key evil-normal-state-map (kbd "-") 'dired-jump)
     (define-key evil-normal-state-map (kbd "M-z") 'rk/consult-z)
+    (define-key evil-normal-state-map (kbd "M-c") 'rk/consult-z-subdir)
     ;; Visual Line
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)

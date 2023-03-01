@@ -12,6 +12,7 @@
   :commands
   (rk/consult-doc
    rk/consult-z
+   rk/consult-z-subdir
    rk/consult-fd
    rk/consult-fd-pwd
    rk/consult-eshell-z
@@ -40,6 +41,7 @@
 
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "M-z") 'rk/consult-z)
+    (define-key dired-mode-map (kbd "M-c") 'rk/consult-z-subdir)
     )
   (add-hook 'eshell-mode-hook
             (lambda ()
@@ -97,6 +99,26 @@
                     "\n$" ""
                     (shell-command-to-string
                      "~/.bin/z_list"))
+                   "\n"))
+          (user-error "No recent files"))
+      :prompt "Z: "
+      :sort nil
+      :require-match t
+      :category 'file
+      :state (consult--file-preview)
+      :history 'file-name-history)))
+
+  (defun rk/consult-z-subdir ()
+    "z subdir using `completing-read'."
+    (interactive)
+    (find-file
+     (consult--read
+      (or (mapcar #'abbreviate-file-name
+                  (split-string
+                   (replace-regexp-in-string
+                    "\n$" ""
+                    (shell-command-to-string
+                     "~/.bin/z_list_subdir"))
                    "\n"))
           (user-error "No recent files"))
       :prompt "Z: "
