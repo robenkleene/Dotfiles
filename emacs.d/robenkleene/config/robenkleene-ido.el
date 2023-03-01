@@ -152,7 +152,7 @@
   (let ((current-prefix-arg nil) project-files key-to-path)
     (setq project-files
           (split-string
-           (shell-command-to-string "zoxide query --list")
+           (shell-command-to-string "~/.bin/z_list")
            "\n"))
     (setq key-to-path (make-hash-table :test 'equal))
     (let (ido-list)

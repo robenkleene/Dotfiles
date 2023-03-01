@@ -96,7 +96,7 @@
                    (replace-regexp-in-string
                     "\n$" ""
                     (shell-command-to-string
-                     "zoxide query --list"))
+                     "~/.bin/z_list"))
                    "\n"))
           (user-error "No recent files"))
       :prompt "Z: "
@@ -116,7 +116,7 @@
                    (replace-regexp-in-string
                     "\n$" ""
                     (shell-command-to-string
-                     "zoxide query --list"))
+                     "~/.bin/z_list"))
                    "\n"))
           (user-error "No recent files"))
       :prompt "Z: "

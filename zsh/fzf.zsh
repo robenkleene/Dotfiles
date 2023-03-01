@@ -20,7 +20,7 @@ _fzf_z_widget() {
   # local result
   # result="$(eval "$cmd" | $fzfcmd)"
   local result
-  result="$(zoxide query --interactive)"
+  result="$(~/.bin/z_fzf)"
 
   local ret=$?
 
