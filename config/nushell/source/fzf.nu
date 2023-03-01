@@ -7,6 +7,15 @@ def-env fzf_z [] {
   })
 }
 
+def-env fzf_z_subdir [] {
+  let $result = (~/.bin/z_fzf_subdir | str trim)
+  cd (if (($result | str length) > 0) {
+    $result
+  } else {
+    "."
+  })
+}
+
 def-env fzf_o [] {
   let $result = (fd --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg | str trim | str collect (char nl) | fzf | str trim)
   if (($result | str length) == 0) {

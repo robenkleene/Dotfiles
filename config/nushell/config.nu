@@ -44,6 +44,16 @@ let-env config = {
       }
     }
     {
+      name: fzf_c
+      modifier: alt
+      keycode: char_c
+      mode: emacs
+      event: {
+        send: executehostcommand
+        cmd: "fzf_z_subdir"
+      }
+    }
+    {
       name: fzf_o
       modifier: alt
       keycode: char_o
