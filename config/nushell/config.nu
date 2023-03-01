@@ -21,7 +21,7 @@ let-env config = {
     }]
     env_change: {
       PWD: [{|before, after|
-        zoxide add -- $after
+        ~/.bin/z_add $after
       }]
     }
   }

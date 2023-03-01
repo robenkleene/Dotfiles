@@ -1,7 +1,7 @@
 # zoxide
-function __zoxide_hook --on-variable PWD
+function __z_hook --on-variable PWD
     test -z "$fish_private_mode"
-    and command zoxide add -- (builtin pwd -L)
+    and command ~/.bin/z_add (builtin pwd -L)
 end
 
 # This doesn't work because the `$fish_killring` is a read-only variable

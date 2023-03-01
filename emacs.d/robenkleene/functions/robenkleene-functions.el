@@ -150,14 +150,14 @@
 
 (defun rk/z-add ()
   "Add file or directory."
-  (if (executable-find "zoxide")
+  (if (executable-find "z_add")
       (let ((file (if (string= major-mode "dired-mode")
                       dired-directory
                     (buffer-file-name))))
         (when (and file
                    (stringp file)
                    (file-readable-p file))
-          (start-process "*z add*" nil "zoxide" "add" "--" (expand-file-name file))))))
+          (start-process "*z add*" nil "z_add" (expand-file-name file))))))
 
 (defun rk/project-override (dir)
   "Override project function with DIR."

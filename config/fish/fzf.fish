@@ -8,7 +8,7 @@ fzf_key_bindings
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
 
 function _robenkleene-fzf-z-widget
-    zoxide query --interactive | read -l result
+    ~/.bin/z_fzf | read -l result
 
     if test -d "$result"
         set -l result_path (string escape "$result")
