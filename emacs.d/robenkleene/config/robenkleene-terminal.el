@@ -2,24 +2,30 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Need to store the last paste because the function should only return a value
-;; if it's different than the last paste
-(setq rk/last-paste nil)
-(defun rk/safepaste (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
-      (unless (string))
-      (process-send-string proc text)
-      (process-send-eof proc)))
-  (setq rk/last-paste text)
-  )
-(setq interprogram-cut-function 'rk/safepaste)
+;; Only enable if macOS clipboard commadns or `tmux' pasteboard are available
+(if (or (getenv "TMUX") window-system)
+    (progn
+      ;; Need to store the last paste because the function should only return a value
+      ;; if it's different than the last paste
+      (setq rk/last-paste nil)
+      (defun rk/safepaste (text &optional push)
+        (let ((process-connection-type nil))
+          (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
+            (unless (string))
+            (process-send-string proc text)
+            (process-send-eof proc)))
+        (setq rk/last-paste text)
+        )
 
-(defun rk/safecopy ()
-  (let ((copied-text (shell-command-to-string "safepaste")))
-    (unless (string= copied-text rk/last-paste)
-      copied-text)))
-(setq interprogram-paste-function 'rk/safecopy)
+      (defun rk/safecopy ()
+        (let ((copied-text (shell-command-to-string "safepaste")))
+          (unless (string= copied-text rk/last-paste)
+            copied-text)))
+
+      (setq interprogram-cut-function 'rk/safepaste)
+      (setq interprogram-paste-function 'rk/safecopy)
+      )
+  )
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
