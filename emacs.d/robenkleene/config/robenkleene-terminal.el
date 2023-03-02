@@ -3,7 +3,7 @@
 ;;; Code:
 
 ;; Only enable if macOS clipboard commadns or `tmux' pasteboard are available
-(if (or (getenv "TMUX") window-system)
+(if (or (getenv "TMUX") (rk/system-is-mac))
     (progn
       ;; Need to store the last paste because the function should only return a value
       ;; if it's different than the last paste
