@@ -1,5 +1,6 @@
 return {
-  { "gpanders/editorconfig.nvim", event = "VeryLazy" },
+  -- Indent is broken if `VeryLazy` is set
+  { "gpanders/editorconfig.nvim" },
   {
     "elihunter173/dirbuf.nvim",
     -- This breaks `nvim .`
