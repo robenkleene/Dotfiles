@@ -19,6 +19,12 @@ zle -N _custom_edit_command_line
 bindkey '\ev' _custom_edit_command_line
 # bindkey "^X^E" edit-command-line
 
+_reveal() {
+  open .
+}
+zle -N _reveal
+bindkey '\er' _reveal
+
 # `_complete_help` is supposed have this default binding, but for some reason
 # it's missing
 bindkey "^Xh" _complete_help
