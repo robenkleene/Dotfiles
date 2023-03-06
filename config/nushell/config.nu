@@ -54,6 +54,16 @@ let-env config = {
       }
     }
     {
+      name: open_dir
+      modifier: alt
+      keycode: char_r
+      mode: emacs
+      event: {
+        send: executehostcommand
+        cmd: "open_dir"
+      }
+    }
+    {
       name: fzf_o
       modifier: alt
       keycode: char_o

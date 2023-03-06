@@ -91,3 +91,7 @@ def-env hg_cd [dir = ""] {
     "."
   })
 }
+
+def-env open_dir [] {
+  (^open .)
+}
