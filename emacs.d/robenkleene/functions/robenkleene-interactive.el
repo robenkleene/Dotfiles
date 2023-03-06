@@ -103,41 +103,10 @@
 
 ;; Switch to
 
-(defun inbox ()
-  "Switch to inbox directory."
-  (interactive)
-  (find-file "~/Documents/Text/Notes/Inbox/")
-  )
-
-(defun projects ()
-  "Switch to projects directory."
-  (interactive)
-  (find-file "~/Documents/Text/Notes/Projects/")
-  )
-
-(defun notes ()
-  "Switch to notes directory."
-  (interactive)
-  (find-file "~/Documents/Text/Notes/")
-  )
-
-(defun text ()
-  "Switch to text directory."
-  (interactive)
-  (find-file "~/Text/")
-  )
-
 (defun archive ()
   "Switch to archive directory."
   (interactive)
   (find-file "~/Archive/Text/")
-  )
-
-(defun daily ()
-  "Switch to daily file."
-  (interactive)
-  (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file -b"))
   )
 
 (defun scratch ()
@@ -152,6 +121,53 @@
   (switch-to-buffer "*Messages*")
   )
 
+;; Text (stored in version control)
+
+(defun text ()
+  "Switch to text directory."
+  (interactive)
+  (find-file "~/Text/")
+  )
+
+(defun text-projects ()
+  "Switch to text projects directory."
+  (interactive)
+  (find-file "~/Text/Projects/")
+  )
+
+(defun text-wiki ()
+  "Switch to text projects directory."
+  (interactive)
+  (find-file "~/Text/Projects/")
+  )
+
+;; Notes (stored in `~/Documents')
+
+(defun notes ()
+  "Switch to notes directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/")
+  )
+
+(defun notes-inbox ()
+  "Switch to inbox directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/Inbox/")
+  )
+
+(defun notes-projects ()
+  "Switch to projects directory."
+  (interactive)
+  (find-file "~/Documents/Text/Notes/Projects/")
+  )
+
+(defun notes-daily ()
+  "Switch to daily file."
+  (interactive)
+  (rk/safe-find-file
+   (shell-command-to-string "~/.bin/daily_file -b"))
+  )
+
 (defun scratch-window ()
   "Delete other windows and switch to scratch buffer."
   (interactive)
@@ -159,7 +175,7 @@
   (switch-to-buffer "*scratch*")
   )
 
-(defun untitled ()
+(defun notes-untitled ()
   "Switch to untitled directory."
   (interactive)
   (find-file
@@ -168,25 +184,26 @@
    )
   )
 
-(defun people ()
-  "Switch to people directory."
+(defun notes-people ()
+  "Switch to notes-people directory."
   (interactive)
   (find-file
    "~/Documents/Text/Notes/People/"
    )
   )
 
+
 ;; Text
 
-(defun daily-create ()
-  "Switch to daily file, creating it if missing."
+(defun notes-daily-create ()
+  "Switch to notes daily file, creating it if missing."
   (interactive)
   (rk/safe-find-file
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
-(defun inbox-create (title)
-  "Create a new inbox document with TITLE."
+(defun note-inbox-create (title)
+  "Create a new notes inbox document with TITLE."
   (interactive (list (read-from-minibuffer "Title: "
                                            (if (use-region-p)
                                                (buffer-substring (mark) (point))
@@ -199,8 +216,8 @@
                             ))
   )
 
-(defun projects-create (title)
-  "Create a new projects document with TITLE."
+(defun notes-projects-create (title)
+  "Create a new notes projects document with TITLE."
   (interactive (list (read-from-minibuffer "Title: "
                                            (if (use-region-p)
                                                (buffer-substring (mark) (point))
@@ -213,8 +230,8 @@
                             ))
   )
 
-(defun people-create (name)
-  "Create a new people document with Name."
+(defun notes-people-create (name)
+  "Create a new notes people document with Name."
   (interactive (list (read-from-minibuffer "Name: "
                                            (if (use-region-p)
                                                (buffer-substring (mark) (point))
@@ -227,8 +244,8 @@
                             ))
   )
 
-(defun untitled-create ()
-  "Open a new Untitled buffer."
+(defun notes-untitled-create ()
+  "Open a new notes untitled buffer."
   (interactive)
   (switch-to-buffer (rk/create-untitled-buffer))
   )
