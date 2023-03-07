@@ -120,3 +120,11 @@ augroup safepaste
   autocmd FocusGained * let @" = system('~/.bin/safepaste').."\n"
 augroup END
 let @" = system('~/.bin/safepaste')
+
+" z add
+" Not sure why this doesn't work consistently
+augroup z_add
+  autocmd!
+  autocmd VimEnter * silent! au! FileExplorer *
+  autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
+augroup END
