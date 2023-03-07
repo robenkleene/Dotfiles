@@ -56,13 +56,6 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
-;; Using `M-[' for `backward-block' isn't possible because `M-[' is the sequence
-;; for escape so it messes with many bindings
-;; (define-key rk/bindings-minor-mode-map (kbd "M-}")
-;;   'rk/forward-block)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-{")
-;;   'rk/backward-block)
-
 ;; Theoretically this would be clear in `delete-frame-functions' but for
 ;; `emacsclient' connections that's being called after the frame is deleted and
 ;; the `default-directory' is then wrong

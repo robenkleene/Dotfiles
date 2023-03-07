@@ -59,11 +59,6 @@
     'rk/next)
   (define-key markdown-mode-map (kbd "M-p")
     'rk/previous)
-  ;; Default move by paragraph doesn't skip individual over Markdown list items
-  ;; (define-key markdown-mode-map (kbd "M-}")
-  ;;   'rk/forward-block)
-  ;; (define-key markdown-mode-map (kbd "M-{")
-  ;;   'rk/backward-block)
 
   (add-hook 'markdown-mode-hook
             (lambda ()
