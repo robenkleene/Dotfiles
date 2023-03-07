@@ -125,6 +125,7 @@ let @" = system('~/.bin/safepaste')
 " Not sure why this doesn't work consistently
 augroup z_add
   autocmd!
-  autocmd VimEnter * silent! au! FileExplorer *
+  autocmd VimEnter * if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
   autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
 augroup END
+if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
