@@ -60,24 +60,28 @@
   (define-key markdown-mode-map (kbd "M-p")
     'rk/previous)
   ;; Default move by paragraph doesn't skip individual over Markdown list items
-  (define-key markdown-mode-map (kbd "M-}")
-    'rk/forward-block)
-  (define-key markdown-mode-map (kbd "M-{")
-    'rk/backward-block)
+  ;; (define-key markdown-mode-map (kbd "M-}")
+  ;;   'rk/forward-block)
+  ;; (define-key markdown-mode-map (kbd "M-{")
+  ;;   'rk/backward-block)
 
-  (add-hook 'markdown-mode-hook (lambda ()
-                                  ;; (modify-syntax-entry ?_ "w")
-                                  ;; (modify-syntax-entry ?- "w")
-                                  ;; Automatically auto-save markdown files
-                                  ;; This doesn't work
-                                  ;; Turn on auto-saving
-                                  ;; (set
-                                  ;;  (make-local-variable
-                                  ;;   'auto-save-visited-file-name)
-                                  ;;  t)
-                                  ;; (setq-local auto-save-default t)
-                                  ;; (auto-save-mode)
-                                  )
+  (add-hook 'markdown-mode-hook
+            (lambda ()
+              ;; Use blank lines to indicate paragraphs
+              (setq-local paragraph-start "[ 	]*$")
+              (setq-local paragraph-separate "[ 	]*$")
+              ;; (modify-syntax-entry ?_ "w")
+              ;; (modify-syntax-entry ?- "w")
+              ;; Automatically auto-save markdown files
+              ;; This doesn't work
+              ;; Turn on auto-saving
+              ;; (set
+              ;;  (make-local-variable
+              ;;   'auto-save-visited-file-name)
+              ;;  t)
+              ;; (setq-local auto-save-default t)
+              ;; (auto-save-mode)
+              )
             )
   ;; Try `flyspell-prog-mode' to prevent spelling errors in Markdown code
   ;; blocks. This seems to disable spelling altogether: (add-hook
