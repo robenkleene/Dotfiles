@@ -82,7 +82,7 @@ bindkey '\ec' _fzf_z_subdir_widget
 _fzf_open_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="fd --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg"
+  local cmd="~/.bin/find_ls"
   if [[ ! $PWD = $HOME/* ]]; then
     cmd="$cmd --maxdepth 1"
   fi
