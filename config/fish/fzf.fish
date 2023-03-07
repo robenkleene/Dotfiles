@@ -46,7 +46,7 @@ end
 bind \ec _robenkleene-fzf-z-subdir-widget
 
 function _robenkleene-fzf-open-widget
-    set -l cmd "fd --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg"
+    set -l cmd "~/.bin/find_ls"
     eval "$cmd | "(__fzfcmd) | read -l result
 
     if test -e "$result"
