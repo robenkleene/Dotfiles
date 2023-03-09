@@ -53,8 +53,9 @@ if [[ -z "$result" ]]; then
   exit
 fi
 
-parameter=$(printf '%q' "$PWD/$result")
-if [[ -e "$parameter" ]]; then
+parameter="$PWD/$result"
+if [[ -e $parameter ]]; then
+  parameter=$(printf '%q' "$PWD/$result")
   final_cmd="$command $parameter"
   eval "$final_cmd"
 fi
