@@ -16,7 +16,7 @@ def numeric_to_semitone(numeric_notation):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python numeric_to_semitone.py <numeric_notation>")
+        print("Error: Missing argument", file=sys.stderr)
     else:
         numeric_notation = sys.argv[1]
         semitone_sequence = numeric_to_semitone(numeric_notation)
