@@ -192,7 +192,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Highlight Matching parens
-(show-paren-mode 1)
+(show-paren-mode t)
 
 (advice-add 'xref-find-definitions
             :before
