@@ -202,6 +202,8 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'conf-mode 'normal)
+  ;; Special mode that triggers for long lines
+  (evil-set-initial-state 'so-long-mode 'normal)
   ;; `*eldoc*' buffer is also `fundamental', need to target this more
   ;; specifically.
   ;; (evil-set-initial-state 'fundamental-mode 'normal)

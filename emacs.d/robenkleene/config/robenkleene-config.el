@@ -318,6 +318,19 @@
 
 ;; Don't try to parse long line
 (global-so-long-mode)
+;; Don't force long line files to read-only
+;; Not sure why this doesn't work
+;; (setq so-long-variable-overrides (delq 'buffer-read-only so-long-variable-overrides))
+;; So instead just resetting the whole variable with that entry removed
+(setq so-long-variable-overrides
+      '((bidi-inhibit-bpa . t)
+        (bidi-paragraph-direction . left-to-right)
+        ;; (buffer-read-only . t)
+        (global-hl-line-mode . nil)
+        (line-move-visual . t)
+        (show-paren-mode . nil)
+        (truncate-lines . nil)
+        (which-func-mode . nil)))
 
 ;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
 ;; disabled by default)
