@@ -13,5 +13,10 @@
     "prefix": "printv",
     "body": "print(\"${1:Variable} =\", $1)",
     "description": "Print a variable"
+  },
+  "printe": {
+    "prefix": "printe",
+    "body": "print(\"${1:Error}\", file=sys.stderr)",
+    "description": "Print to STDERR"
   }
 }
