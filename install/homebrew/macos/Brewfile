@@ -83,8 +83,11 @@ brew 'sd'
 # of switching spaces when the last Emacs window on a space closes.
 # Note after installing run `brew info emacs-plus` for the command to symlink
 # to applications
-tap 'd12frosted/emacs-plus'
-brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
+# tap 'd12frosted/emacs-plus'
+# brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
+# Just install from binary, not worth dealing with Homebrew symlinks and
+# dependencies
+# brew 'emacs'
 
 # Cask GUI Apps
 tap 'homebrew/cask'
