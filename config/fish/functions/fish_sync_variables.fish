@@ -42,6 +42,7 @@ function fish_sync_variables
         set -Ux HOMEBREW_NO_ANALYTICS 1
         set -Ux HOMEBREW_NO_AUTO_UPDATE 1
         set -Ux HOMEBREW_NO_INSTALL_CLEANUP 1
+        set -Ux HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
         set -Ux MANPATH $MANPATH $HOMEBREW_DIR/share/man
         set -Ux INFOPATH $INFOPATH $HOMEBREW_DIR/share/info
     end
