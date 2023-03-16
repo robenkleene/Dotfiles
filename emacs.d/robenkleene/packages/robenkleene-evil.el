@@ -276,6 +276,8 @@
   (use-package evil-terminal-cursor-changer
     :config
     (unless (display-graphic-p)
+      ;; Prevent blinking cursor from getting stuck when exiting emacs
+      (blink-cursor-mode 0)
       (evil-terminal-cursor-changer-activate)
       (setq evil-motion-state-cursor 'box)
       (setq evil-visual-state-cursor 'box)
