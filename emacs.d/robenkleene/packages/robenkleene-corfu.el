@@ -26,8 +26,8 @@
         corfu-auto-delay 0
         corfu-auto-prefix 2
         completion-styles '(basic))
-  (if (display-graphic-p)
-      (global-corfu-mode)
+  (global-corfu-mode)
+  (unless (display-graphic-p)
     (corfu-terminal-mode +1)
     )
   )
