@@ -22,6 +22,10 @@
     ;;(add-to-list 'completion-at-point-functions #'cape-symbol)
     ;;(add-to-list 'completion-at-point-functions #'cape-line)
     )
+  (setq corfu-auto t
+        corfu-auto-delay 0
+        corfu-auto-prefix 2
+        completion-styles '(basic))
   (if (display-graphic-p)
       (global-corfu-mode)
     (corfu-terminal-mode +1)
