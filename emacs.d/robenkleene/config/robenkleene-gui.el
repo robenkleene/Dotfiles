@@ -115,7 +115,7 @@
              '(vertical-scroll-bars . nil))
 (add-to-list 'initial-frame-alist
              '(vertical-scroll-bars . nil))
-(add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
+;; (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 ;; Transparency
 ;; For testing the current window (leave commented out)
