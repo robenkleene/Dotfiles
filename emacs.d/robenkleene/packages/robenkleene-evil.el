@@ -273,6 +273,17 @@
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     )
 
+  (use-package evil-terminal-cursor-changer
+    :config
+    (unless (display-graphic-p)
+      (evil-terminal-cursor-changer-activate)
+      (setq evil-motion-state-cursor 'box)
+      (setq evil-visual-state-cursor 'box)
+      (setq evil-normal-state-cursor 'box)
+      (setq evil-insert-state-cursor 'bar)
+      (setq evil-emacs-state-cursor  'hbar)
+      )
+    )
   )
 
 (provide 'robenkleene-evil)
