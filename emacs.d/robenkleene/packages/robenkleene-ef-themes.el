@@ -9,6 +9,8 @@
 (use-package ef-themes
   :config
   ;; (ef-themes-select 'ef-winter)
+  ;; (ef-themes-select 'ef-dark)
+  (ef-themes-select 'ef-night)
   )
 
 (provide 'robenkleene-ef-themes)
