@@ -9,10 +9,13 @@
   (use-package corfu-terminal)
   (use-package cape
     :init
-    (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+    ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
     (add-to-list 'completion-at-point-functions #'cape-file)
     ;;(add-to-list 'completion-at-point-functions #'cape-history)
-    ;;(add-to-list 'completion-at-point-functions #'cape-keyword)
+    ;; Programming language symbol
+    ;; (add-to-list 'completion-at-point-functions #'cape-keyword)
+    ;; Elisp symbol
+    ;; (add-to-list 'completion-at-point-functions #'cape-symbol)
     ;;(add-to-list 'completion-at-point-functions #'cape-tex)
     ;;(add-to-list 'completion-at-point-functions #'cape-sgml)
     ;;(add-to-list 'completion-at-point-functions #'cape-rfc1345)
