@@ -342,6 +342,9 @@
 ;; Make new buffers use `text-mode'
 (setq-default major-mode 'text-mode)
 
+;; Don't blink the cursor
+(blink-cursor-mode 0)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
