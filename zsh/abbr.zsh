@@ -18,6 +18,7 @@ abbreviations=(
 'gd' 'git diff'
 'gdw' 'git diff --color-words'
 'gs' 'git status'
+'gt' 'git tag'
 'gsmuirr' 'git submodule update --init --recursive --remote'
 'glg' 'git log -p -G'
 

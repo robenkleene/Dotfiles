@@ -26,6 +26,7 @@ function fish_sync_abbr
     abbr -a gd 'git diff'
     abbr -a gdw 'git diff --color-words'
     abbr -a gl 'git log'
+    abbr -a gt 'git tag'
     abbr -a gm 'git merge'
     abbr -a gs 'git status'
     abbr -a gsmuirr 'git submodule update --init --recursive --remote'
