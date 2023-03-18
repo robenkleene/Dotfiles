@@ -30,7 +30,7 @@ return {
         'vim',
       },
       highlight = { enable = true },
-      indent = { enable = true },
+      -- indent = { enable = true },
       -- Trying to customize Markdown colors, this doesn't work for some reason
       custom_captures = {
         ["text.uri"] = "Comment",
