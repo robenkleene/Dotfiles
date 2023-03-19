@@ -84,6 +84,8 @@ GEM
     nanaimo (0.3.0)
     nap (1.1.0)
     netrc (0.11.0)
+    nokogiri (1.13.10-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -100,6 +102,7 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.1)
+    repla (0.10.4)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
@@ -155,11 +158,13 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   cocoapods
   pry-byebug
+  repla
   ripper-tags
   rubocop
   ruby-debug-ide
