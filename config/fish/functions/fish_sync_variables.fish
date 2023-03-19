@@ -47,6 +47,11 @@ function fish_sync_variables
         set -Ux INFOPATH $INFOPATH $HOMEBREW_DIR/share/info
     end
 
+    # Ruby
+    set -Ux GEM_HOME "$HOME/.gem/ruby/3.0.2"
+    set -Ux GEM_PATH "$HOME/.gem/ruby/3.0.2:/Users/robenkleene/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0"
+    set -Ux GEM_ROOT "$HOME/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0/"
+
     switch (uname)
         case Darwin
             set -Ux MACOS 1
