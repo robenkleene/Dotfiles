@@ -48,6 +48,8 @@ function fish_sync_variables
     end
 
     # Ruby
+    # `zsh` has `chruby` setup, so to configure these in fish, get the values
+    # of these environment variables from `zsh`
     set -Ux GEM_HOME "$HOME/.gem/ruby/3.0.2"
     set -Ux GEM_PATH "$HOME/.gem/ruby/3.0.2:/Users/robenkleene/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0"
     set -Ux GEM_ROOT "$HOME/.rubies/ruby-3.0.2/lib/ruby/gems/3.0.0/"
