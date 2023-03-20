@@ -2,7 +2,21 @@
 
 set -euo pipefail
 
-touch ~/.local.nu
+# Files
+
+if [[ ! -e "$HOME/.local.nu" ]]; then
+  touch ~/.local.nu
+fi
+
+# `.editorconfig` is only supported in directories that are children of the
+# home directory. To support other directories, symlink them here.
+if [[ -e "$HOME/../Shared/Max 8/Packages" ]]; then
+  if [[ ! -e "$HOME/../Shared/Max 8/Packages/.editorconfig" ]]; then
+    ln -s ~/.editorconfig/ "$HOME/../Shared/Max 8/Packages/.editorconfig"
+  fi
+fi
+
+# Directories
 
 developer_path="${HOME}/Developer"
 if [[ ! -e "$developer_path" ]]; then
@@ -11,7 +25,6 @@ elif [[ ! -d "$developer_path" ]]; then
   echo "Error: A file exists at $developer_path and it's not a directory" >&2
   exit 1
 fi
-
 
 emacs_path="${HOME}/Developer/Dotfiles/emacs.d"
 untitled_emacs_path="${HOME}/Developer/Dotfiles/emacs.d/untitled"
