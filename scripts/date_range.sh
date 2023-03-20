@@ -38,9 +38,6 @@ do
 	DATEOFFSET=$(($i-1+$FORWARDMODIFIER-$BACKWARDMODIFIER))
 	if [[ $DATEOFFSET -lt 0 ]]; then
 		DATEOFFSET=${DATEOFFSET#-} # Absolute value
-		echo `date -v-"$DATEOFFSET"d '+%m/%d/%Y'`
-	else
-		echo `date -v+"$DATEOFFSET"d '+%m/%d/%Y'`
-
-	fi	
+	fi
+  echo `date -v+"$DATEOFFSET"d '+%Y-%m-%d'`
 done
