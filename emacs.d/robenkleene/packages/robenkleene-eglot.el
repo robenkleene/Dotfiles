@@ -11,6 +11,8 @@
            c++-mode
            rust-mode
            ruby-mode
+           js-mode
+           typescript-mode
            sh-mode) . eglot-ensure)
          )
   :bind (:map eglot-mode-map
@@ -35,6 +37,8 @@
   (add-to-list 'eglot-server-programs '(rust-mode "rust-analyzer"))
   (add-to-list 'eglot-server-programs '(shell-script-mode "bash-language-server"))
   (add-to-list 'eglot-server-programs '(ruby-mode "solargraph" "socket" "--port" :autoport))
+  (add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server" "--stdio"))
+  (add-to-list 'eglot-server-programs '((js-mode) "typescript-language-server" "--stdio"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
