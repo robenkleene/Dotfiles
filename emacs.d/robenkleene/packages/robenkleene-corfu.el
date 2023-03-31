@@ -5,6 +5,10 @@
 ;; Enable Corfu completion UI
 ;; See the Corfu README for more configuration tips.
 (use-package corfu
+  :bind (:map corfu-map
+              ;; Disable return so that `ls<ret>' on Terminal enters the command
+              ("RET" . nil)
+              )
   :init
   (use-package corfu-terminal)
   (use-package cape
