@@ -158,29 +158,26 @@
                  (`(,re . ,hl) (funcall consult--regexp-compiler
                                         arg 'extended t)))
       (when re
-        (list :command (append
-                        (list "fd"
-                              "--type"
-                              "f"
-                              "--color=never"
-                              "--hidden"
-                              "--exclude"
-                              ".git/"
-                              "--exclude"
-                              ".hg/"
-                              "--exclude"
-                              ".DS_Store"
-                              (consult--join-regexps re 'extended))
-                        opts)
-              :highlight hl))))
+        (cons (append
+               (list "fd"
+                     "--type"
+                     "f"
+                     "--color=never"
+                     "--hidden"
+                     "--exclude"
+                     ".git/"
+                     "--exclude"
+                     ".hg/"
+                     "--exclude"
+                     ".DS_Store"
+                     (consult--join-regexps re 'extended))
+               opts)
+              hl))))
 
   (defun rk/consult-fd (&optional dir initial)
     (interactive "P")
-    ;; (let* ((prompt-dir (consult--directory-prompt "Fd" dir))
-    ;;        (default-directory (cdr prompt-dir)))
-    ;;   (find-file (consult--find (car prompt-dir) #'consult--fd-builder initial)))
-    (find-file (consult--find (car '(default-directory)) #'rk/consult--fd-builder initial))
-    )
+    (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Fd" dir)))
+      (find-file (consult--find prompt #'rk/consult--fd-builder initial))))
 
   (defun rk/consult-fd-pwd (&optional dir initial)
     "`consult-find' with `fd' in `pwd'."
