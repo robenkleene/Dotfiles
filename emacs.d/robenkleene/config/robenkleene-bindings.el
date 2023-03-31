@@ -82,7 +82,7 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell)
 (define-key rk/bindings-minor-mode-map (kbd "C-`") 'eshell)
-(define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
 
 ;; Window-Key Based
 (define-key rk/window-map
