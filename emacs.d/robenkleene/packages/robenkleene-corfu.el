@@ -5,10 +5,10 @@
 ;; Enable Corfu completion UI
 ;; See the Corfu README for more configuration tips.
 (use-package corfu
-  :bind (:map corfu-map
-              ;; Disable return so that `ls<ret>' on Terminal enters the command
-              ("RET" . nil)
-              )
+  ;; :bind (:map corfu-map
+  ;;             ;; Disable return so that `ls<ret>' on Terminal enters the command
+  ;;             ("RET" . nil)
+  ;;             )
   :init
   (use-package corfu-terminal)
   (use-package cape
@@ -37,6 +37,30 @@
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)
     )
+
+  ;; eshell
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (setq-local corfu-auto nil)
+              (corfu-mode)))
+  (defun corfu-send-shell (&rest _)
+    "Send completion candidate when inside comint/eshell."
+    (cond
+     ((and (derived-mode-p 'eshell-mode) (fboundp 'eshell-send-input))
+      (eshell-send-input))
+     ((and (derived-mode-p 'comint-mode)  (fboundp 'comint-send-input))
+      (comint-send-input))))
+
+  (advice-add #'corfu-insert :after #'corfu-send-shell)
+
+  ;; The advices are only needed on Emacs 28 and older.
+  (when (< emacs-major-version 29)
+    ;; Silence the pcomplete capf, no errors or messages!
+    (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-silent)
+
+    ;; Ensure that pcomplete does not write to the buffer
+    ;; and behaves as a pure `completion-at-point-function'.
+    (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-purify))
   )
 
 (provide 'robenkleene-corfu)
