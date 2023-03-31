@@ -177,7 +177,6 @@
   ;; Ex Commands
   (evil-ex-define-cmd "Ei" 'edit-init)
   (evil-ex-define-cmd "Pq" 'rk/grep-from-clipboard)
-  (evil-ex-define-cmd "Rg" 'rk/ex-rg)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
     (compilation-start
@@ -186,6 +185,42 @@
       arg)
      'grep-mode)
     )
+  (evil-ex-define-cmd "Rg" 'rk/ex-rg)
+  (evil-define-command rk/rename-current-buffer-file (new-filename &optional bang)
+    :repeat nil
+    :move-point nil
+    (interactive "<f><!>")
+    (let ((name (buffer-name))
+          (old-filename (buffer-file-name)))
+      (if (not old-filename)
+          (message "Buffer '%s' is not visiting a file!" name)
+        (progn
+          (rename-file name new-filename bang)
+          (if (get-buffer new-filename)
+              (kill-buffer new-filename)
+            )
+          (rename-buffer new-filename)
+          (set-visited-file-name new-filename)
+          (set-buffer-modified-p nil)
+          )
+        )
+      )
+    )
+
+  (evil-define-command rk/remove-current-buffer-file ()
+    "Kill the current buffer and deletes the file it is visiting."
+    (interactive)
+    (let ((filename (buffer-file-name)))
+      (when filename
+        (if (vc-backend filename)
+            (vc-delete-file filename)
+          (progn
+            (delete-file filename)
+            (message "Deleted file %s" filename)
+            (kill-buffer))))))
+
+  (evil-ex-define-cmd "Remove" 'rk/remove-current-buffer-file)
+  (evil-ex-define-cmd "Rename" 'rk/rename-current-buffer-file)
 
   ;; Allow crossing lines by moving past end of line
   ;; (setq-default evil-cross-lines t)
