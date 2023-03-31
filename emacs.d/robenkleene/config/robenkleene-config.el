@@ -69,7 +69,9 @@
 ;; Don't show line numbers in GUI mode because of that bug where the line with
 ;; the cursor sometimes gets offset slightly
 (unless window-system
-  (add-hook 'prog-mode-hook 'linum-mode)
+  (global-display-line-numbers-mode 1)
+  ;; This looks janky
+  ;; (add-hook 'prog-mode-hook 'linum-mode)
   )
 
 ;; Show cursor position
@@ -260,9 +262,11 @@
 ;; (setq vc-handled-backends '(Git))
 ;; Disable all backends, `git' shows an annoying message about following
 ;; symbolic link
-;; (setq vc-handled-backends nil)
+(setq vc-handled-backends nil)
+;; (setq vc-handled-backends ())
 ;; Try lighter alternatives to the above that keep `vc' features available:
-(setq vc-follow-symlinks t)
+;; This is still slow with large code bases
+;; (setq vc-follow-symlinks t)
 ;; `find-file-hook' can cause slow behavior
 (remove-hook 'find-file-hook 'vc-find-file-hook)
 
