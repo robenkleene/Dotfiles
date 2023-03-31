@@ -153,7 +153,7 @@
     (eshell-send-input)
     )
 
-  (defun consult--fd-builder (input)
+  (defun rk/consult--fd-builder (input)
     (pcase-let* ((`(,arg . ,opts) (consult--command-split input))
                  (`(,re . ,hl) (funcall consult--regexp-compiler
                                         arg 'extended t)))
@@ -176,9 +176,11 @@
 
   (defun rk/consult-fd (&optional dir initial)
     (interactive "P")
-    (let* ((prompt-dir (consult--directory-prompt "Fd" dir))
-           (default-directory (cdr prompt-dir)))
-      (find-file (consult--find (car prompt-dir) #'consult--fd-builder initial))))
+    ;; (let* ((prompt-dir (consult--directory-prompt "Fd" dir))
+    ;;        (default-directory (cdr prompt-dir)))
+    ;;   (find-file (consult--find (car prompt-dir) #'consult--fd-builder initial)))
+    (find-file (consult--find (car '(default-directory)) #'rk/consult--fd-builder initial))
+    )
 
   (defun rk/consult-fd-pwd (&optional dir initial)
     "`consult-find' with `fd' in `pwd'."
