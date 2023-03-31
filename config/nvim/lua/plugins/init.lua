@@ -2,14 +2,10 @@ return {
   -- Indent is broken if `VeryLazy` is set
   { "gpanders/editorconfig.nvim" },
   {
-    "elihunter173/dirbuf.nvim",
-    -- This breaks `nvim .`
-    -- keys = {
-    --   { '-' },
-    -- },
+    "stevearc/oil.nvim",
     config = function()
-      require("dirbuf").setup {
-        show_hidden = false,
+      require("oil").setup {
+        vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
       }
     end
   },
