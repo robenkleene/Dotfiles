@@ -13,9 +13,8 @@
   (use-package corfu-terminal)
   (use-package cape
     :init
-    ;; This helps complete Emacs symbols that aren't loaded yet
-    ;; (E.g., the name of a WIP function)
-    (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+    ;; Don't add here because it interferes with text modes
+    ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
     (add-to-list 'completion-at-point-functions #'cape-file)
     ;;(add-to-list 'completion-at-point-functions #'cape-history)
     ;; Programming language symbol
@@ -40,6 +39,14 @@
     (corfu-terminal-mode +1)
     )
 
+  ;; Languages
+  (add-hook 'prog-mode-hook (lambda ()
+                              ;; This helps complete Emacs symbols that aren't
+                              ;; loaded yet (E.g., the name of a WIP function)
+                              (setq-local completion-at-point-functions
+                                          (cons #'cape-dabbrev
+                                                completion-at-point-functions))
+                              ))
   ;; eshell
   (add-hook 'eshell-mode-hook
             (lambda ()
@@ -52,17 +59,15 @@
       (eshell-send-input))
      ((and (derived-mode-p 'comint-mode)  (fboundp 'comint-send-input))
       (comint-send-input))))
-
   (advice-add #'corfu-insert :after #'corfu-send-shell)
-
   ;; The advices are only needed on Emacs 28 and older.
   (when (< emacs-major-version 29)
     ;; Silence the pcomplete capf, no errors or messages!
     (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-silent)
-
     ;; Ensure that pcomplete does not write to the buffer
     ;; and behaves as a pure `completion-at-point-function'.
     (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-purify))
+
   )
 
 (provide 'robenkleene-corfu)
