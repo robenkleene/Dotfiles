@@ -13,6 +13,8 @@
   (use-package corfu-terminal)
   (use-package cape
     :init
+    ;; This helps complete Emacs symbols that aren't loaded yet
+    ;; (E.g., the name of a WIP function)
     (add-to-list 'completion-at-point-functions #'cape-dabbrev)
     (add-to-list 'completion-at-point-functions #'cape-file)
     ;;(add-to-list 'completion-at-point-functions #'cape-history)
