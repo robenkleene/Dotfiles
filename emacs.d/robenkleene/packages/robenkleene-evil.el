@@ -246,7 +246,7 @@
   (evil-set-initial-state 'eshell-mode 'insert)
   (evil-set-initial-state 'vterm-mode 'insert)
   ;; Git Commit
-  (evil-set-initial-state 'with-editor-mode 'emacs)
+  (evil-set-initial-state 'with-editor-mode 'insert)
 
   ;; Alternative way to start git commit in insert mode:
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
