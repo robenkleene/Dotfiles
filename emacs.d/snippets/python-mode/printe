@@ -1,0 +1,4 @@
+# key: printe
+# name: printe
+# --
+print("${1:Error}", file=sys.stderr)
