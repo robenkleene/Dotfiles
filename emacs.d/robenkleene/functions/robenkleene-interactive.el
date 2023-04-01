@@ -680,7 +680,7 @@
   (view-mode)
   )
 
-(defun rk/toggle-grep-buffer ()
+(defun grep-toggle-buffer ()
   "Toggle grep buffer."
   (interactive)
 

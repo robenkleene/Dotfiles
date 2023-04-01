@@ -121,8 +121,8 @@
     'consult-line)
   (define-key rk/evil-leader-map (kbd "k")
     'eldoc-doc-buffer)
-  ;; (define-key rk/evil-leader-map (kbd "q")
-  ;;   'rk/toggle-grep-buffer)
+  (define-key rk/evil-leader-map (kbd "q")
+    'grep-toggle-buffer)
 
   (with-eval-after-load 'evil-maps
     (define-key evil-normal-state-map (kbd "M-.") nil)
