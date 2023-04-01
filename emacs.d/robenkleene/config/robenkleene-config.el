@@ -68,11 +68,11 @@
 ;; (add-hook 'prog-mode-hook 'linum-mode)
 ;; Don't show line numbers in GUI mode because of that bug where the line with
 ;; the cursor sometimes gets offset slightly
-(unless window-system
-  (global-display-line-numbers-mode 1)
-  ;; This looks janky
-  ;; (add-hook 'prog-mode-hook 'linum-mode)
-  )
+;; (unless window-system
+;;   (global-display-line-numbers-mode 1)
+;;   ;; This looks janky
+;;   ;; (add-hook 'prog-mode-hook 'linum-mode)
+;;   )
 
 ;; Show cursor position
 (column-number-mode)
