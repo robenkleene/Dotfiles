@@ -7,7 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package yasnippet
-  :diminish (yas-minor-mode) 
+  :diminish (yas-minor-mode)
   :init
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
   ;; (add-hook 'markdown-mode-hook '(lambda()
@@ -20,7 +20,6 @@
   (yas-global-mode 1)
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-  (yas-reload-all)
   ;; Allow recursive snippet expansion
   (setq yas-triggers-in-field t)
   ;; Support yas in minibuffer

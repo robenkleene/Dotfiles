@@ -10,6 +10,8 @@
                   (interactive)
                   (rk/source-control-open-web "-p")))
 (defalias 'u 'rk/egit-update)
+(defalias 'ms 'magit-status)
+(defalias 's 'magit-egit)
 
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
