@@ -15,6 +15,9 @@
              magit-status
              magit-log-current
              )
+  :init
+  (defalias 'gs 'magit-status)
+  (defalias 's 'magit-egit)
   :config
   ;; Refresh magit on file system changes
   ;; This can cause a "Too many open files" on macOS
