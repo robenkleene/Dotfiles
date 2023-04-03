@@ -350,6 +350,10 @@
 ;; Don't blink the cursor
 (blink-cursor-mode 0)
 
+(with-eval-after-load 'shell-mode-map
+  (define-key shell-mode-map (kbd "q") 'quit-window)
+  )
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
