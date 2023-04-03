@@ -26,6 +26,10 @@
     'previous-error)
   )
 
+;; Keep the error highlight until another command (without this the highlighted
+;; line gets cleared, e.g., conflicting with `hg-line-mode')
+(setq next-error-highlight t)
+
 (provide 'robenkleene-compilation)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
