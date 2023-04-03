@@ -8,10 +8,15 @@
   (require 'use-package))
 (use-package wgrep
   :commands wgrep-change-to-wgrep-mode
+  :bind
+  (:map wgrep-mode-map
+        ("C-c ESC" . 'minibuffer-completion-help)
+        )
   :init
   (setq wgrep-auto-save-buffer t)
   (with-eval-after-load "grep"
-    (define-key grep-mode-map (kbd "C-c C-p") 'wgrep-change-to-wgrep-mode))
+    ;; Use same binding as `dired-toggle-read-only'
+    (define-key grep-mode-map (kbd "C-x C-q") 'wgrep-change-to-wgrep-mode))
   )
 
 (provide 'robenkleene-wgrep)
