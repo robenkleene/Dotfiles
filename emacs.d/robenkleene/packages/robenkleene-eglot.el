@@ -55,6 +55,8 @@
               ;; Tweak minibuffer documentation
               ;; Disable minibuffer docs
               ;; (eldoc-mode -1)
+              ;; Only allow one lien in echo area for eldoc
+              (setq eldoc-echo-area-use-multiline-p nil)
               ;; This is supposed to make `Eldoc' and `flymake' messages
               ;; co-exist in the minibuffer, not sure it's working though
               (setq eldoc-documentation-functions
