@@ -259,6 +259,40 @@
     (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
     )
 
+  ;; For `wgrep'
+  (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
+    (if (evil-motion-state-p)
+        (evil-normal-state)
+      )
+    )
+  (defadvice wgrep-to-original-mode (after rk/wgrep-to-original-mode)
+    (if (or (evil-normal-state-p) (evil-insert-state-p)
+            (evil-motion-state)
+            )
+        )
+    )
+
+  ;; For `wdired'
+  (defadvice wdired-change-to-dired-mode (after rk/wdired-change-to-dired-mode)
+    (if (or (evil-normal-state-p) (evil-insert-state-p)
+            (evil-motion-state)
+            )
+        )
+    )
+  (add-hook 'wdired-mode-hook
+            (lambda ()
+              (if (evil-motion-state-p)
+                  (evil-normal-state)
+                )
+              )
+            )
+  ;; Doesn't work for some reason
+  ;; (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
+  ;;   (if (evil-motion-state-p)
+  ;;       (evil-normal-state)
+  ;;     )
+  ;;   )
+
   ;; Packages
   (use-package evil-visualstar
     :init
