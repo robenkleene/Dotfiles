@@ -153,7 +153,7 @@
 (setq recentf-max-saved-items 100)
 
 ;; Automatically select some types of buffers
-(setq help-window-select t)
+;; (setq help-window-select t)
 ;; Automatically jump to first help button
 ;; In practice, this is odd:
 ;; 1. Sometimes there isn't a button, so instead it jumps to the back button

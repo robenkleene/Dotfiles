@@ -94,7 +94,7 @@
 (setq desktop-dirname user-emacs-directory)
 (setq desktop-save t)
 ;; Toggle save
-;; (desktop-save-mode 1)
+(desktop-save-mode 1)
 
 ;; Slow-down mouse scrolling
 (setq mouse-wheel-scroll-amount '(0.001))
