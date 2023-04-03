@@ -165,15 +165,13 @@
 ;;     (forward-button 1)
 ;;     )
 ;;   )
-
-(add-hook 'occur-hook (lambda ()
-                        (progn
-                          (pop-to-buffer (get-buffer "*Occur*"))
-                          (forward-line 1)
-                          )
-                        )
-          )
-
+;; (add-hook 'occur-hook (lambda ()
+;;                         (progn
+;;                           (pop-to-buffer (get-buffer "*Occur*"))
+;;                           (forward-line 1)
+;;                           )
+;;                         )
+;;           )
 
 ;; Remove window chrome
 (when (fboundp 'tool-bar-mode)
