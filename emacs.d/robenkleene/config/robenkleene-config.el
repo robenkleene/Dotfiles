@@ -350,7 +350,7 @@
 ;; Don't blink the cursor
 (blink-cursor-mode 0)
 
-(with-eval-after-load 'shell-mode-map
+(with-eval-after-load 'shell
   (define-key shell-mode-map (kbd "q") 'quit-window)
   )
 
