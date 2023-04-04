@@ -7,7 +7,7 @@ function fish_sync_alias
     # These need the trailing `.` so they can be run without arguments to open
     # the current directory
     alias --save d='$CD_COMMAND .'
-    alias --save de='emacs_cd .'
+    alias --save ecd='emacs_cd .'
     alias --save rg='rg_custom'
     alias --save foi='fish_edit_config'
     alias --save fsa='fish_sync_abbr'
