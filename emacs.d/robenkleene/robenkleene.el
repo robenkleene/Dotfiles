@@ -62,7 +62,6 @@
 (require 'robenkleene-evil)
 (require 'robenkleene-monky)
 (require 'robenkleene-esup)
-;; (require 'robenkleene-vterm)
 (require 'robenkleene-corfu)
 
 ;; Completion
