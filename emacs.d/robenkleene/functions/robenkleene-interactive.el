@@ -552,6 +552,7 @@
   (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
   ;; (add-hook 'compilation-finish-functions 'rk/compilation-hide-once)
   (compilation-start "safepaste" 'grep-mode)
+  (delete-other-windows)
   )
 
 (defvar-local rk/format-program nil)
