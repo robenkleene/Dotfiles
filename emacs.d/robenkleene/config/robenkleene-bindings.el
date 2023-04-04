@@ -122,6 +122,8 @@
 (define-key rk/window-map (kbd "-") 'shrink-window)
 (define-key rk/window-map (kbd "+") 'enlarge-window)
 (define-key rk/window-map (kbd "=") 'balance-windows)
+(define-key rk/window-map (kbd "C-o") 'winner-undo)
+(define-key rk/window-map (kbd "C-i") 'winner-redo)
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
