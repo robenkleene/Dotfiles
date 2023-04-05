@@ -22,7 +22,7 @@
 
 ;; Mac OS
 
-(defun open-in-repla ()
+(defun repla-open-file ()
   "Open file in Repla."
   (interactive)
   (if (buffer-file-name)
@@ -356,7 +356,7 @@
   (shell-command "open -a Terminal .")
   )
 
-(defun rk/open-in-writer ()
+(defun rk/writer-open-file ()
   "Open file in iA Writer."
   (interactive)
   (if (buffer-file-name)
@@ -458,7 +458,7 @@
     )
   )
 
-(defun rk/open-in-xcode ()
+(defun rk/xcode-open-file ()
   "Open file in Xcode."
   (interactive)
   (if (buffer-file-name)
