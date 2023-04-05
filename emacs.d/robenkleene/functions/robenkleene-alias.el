@@ -3,7 +3,7 @@
 ;;; Code:
 
 (defalias 'ei 'edit-init)
-(defalias 'yg 'rk/grep-from-clipboard)
+(defalias 'yg 'grep-from-clipboard)
 (defalias 'doc 'rk/consult-doc)
 (defalias 'scw 'rk/source-control-open-web)
 (defalias 'scwp (lambda ()

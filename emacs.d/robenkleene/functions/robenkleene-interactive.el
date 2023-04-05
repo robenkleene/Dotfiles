@@ -545,14 +545,20 @@
    (rk/documentation-file))
   )
 
-(defun rk/grep-from-clipboard ()
+(defun grep-from-clipboard-startup ()
+  "Grep buffer with clipboard."
+  (interactive)
+  (grep-from-clipboard)
+  (delete-other-windows)
+  )
+
+(defun grep-from-clipboard ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
   (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
   ;; (add-hook 'compilation-finish-functions 'rk/compilation-hide-once)
   (compilation-start "safepaste" 'grep-mode)
-  (delete-other-windows)
   )
 
 (defvar-local rk/format-program nil)
