@@ -169,7 +169,7 @@
    `(whitespace-line ((t (:inherit rk-warning :background nil))))
 
    ;; show-paren
-   `(show-paren-match ((t (:underline t :background nil :foreground nil :bold nil))))
+   `(show-paren-match ((t (:underline t :background nil :foreground nil :bold t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
    ;; Evil Goggle
