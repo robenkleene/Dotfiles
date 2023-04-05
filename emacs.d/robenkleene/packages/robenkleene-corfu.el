@@ -8,6 +8,8 @@
   :bind (:map corfu-map
               ;; Disable return so that `ls<ret>' on Terminal enters the command
               ;; ("RET" . nil)
+              ;; Fix conflict between `yas' and `corfu'
+              ("TAB" . nil)
               ("C-y" . corfu-complete)
               )
   :init
@@ -68,7 +70,6 @@
     ;; Ensure that pcomplete does not write to the buffer
     ;; and behaves as a pure `completion-at-point-function'.
     (advice-add 'pcomplete-completions-at-point :around #'cape-wrap-purify))
-
   )
 
 (provide 'robenkleene-corfu)
