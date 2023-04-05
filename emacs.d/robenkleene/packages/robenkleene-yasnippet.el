@@ -8,6 +8,8 @@
   (require 'use-package))
 (use-package yasnippet
   :diminish (yas-minor-mode)
+  :bind (:map snippet-mode-map
+              ("C-c C-k" . yas-abort-snippet))
   :init
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
   ;; (add-hook 'markdown-mode-hook '(lambda()
