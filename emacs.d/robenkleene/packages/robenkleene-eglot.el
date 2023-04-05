@@ -63,6 +63,9 @@
                     (cons #'flymake-eldoc-function
                           (remove #'flymake-eldoc-function eldoc-documentation-functions)))
               (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
+              ;; Don't bold the current symbol (we can just search for it to get
+              ;; this functionality and it's less distracting that way)
+              (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
               ))
   )
 
