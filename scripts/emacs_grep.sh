@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-eval "$EMACS_COMMAND -nw -eval \"(rk/grep-from-clipboard)\""
+eval "$EMACS_COMMAND -nw -eval \"(grep-from-clipboard-startup)\""
