@@ -96,6 +96,7 @@
 (require 'robenkleene-git-commit)
 (require 'robenkleene-rust)
 (require 'robenkleene-kotlin)
+(require 'robenkleene-typescript)
 
 (provide 'robenkleene)
 ;; Local Variables:
