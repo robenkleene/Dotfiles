@@ -55,7 +55,7 @@
         (progn
           (async-shell-command "~/.bin/sgitt_auto" "*egit save*" "*egit save*")
           ;; (switch-to-buffer-other-window "*egit save*")
-          (view-mode)
+          ;; (view-mode)
           )
       (let ((default-directory (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
         (magit-status)
