@@ -297,9 +297,9 @@
   (use-package evil-visualstar
     :init
     (global-evil-visualstar-mode)
-    (setq evil-visualstar/persistent t)
-    :config
-    (global-evil-visualstar-mode)
+    ;; This causes `*' than `n' to extend the selection, which clearly isn't
+    ;; desirable. Not sure why this was ever enabled to begin with
+    ;; (setq evil-visualstar/persistent t)
     )
 
   (use-package evil-surround
