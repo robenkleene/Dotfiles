@@ -29,6 +29,9 @@ return {
         'typescript',
         'vim',
       },
+      -- Trying to prevent the constant re-installing
+      sync_install = false,
+      build = ":TSUpdate",
       highlight = { enable = true },
       -- indent = { enable = true },
       -- Trying to customize Markdown colors, this doesn't work for some reason
