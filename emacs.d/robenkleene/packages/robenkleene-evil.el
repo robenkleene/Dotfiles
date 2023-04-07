@@ -145,7 +145,7 @@
     (define-key evil-normal-state-map "zg" 'rk/ispell-save-word)
     (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
-    (define-key evil-normal-state-map (kbd "g f") 'xref-find-references)
+    ;; (define-key evil-normal-state-map (kbd "g f") 'xref-find-references)
     (define-key evil-normal-state-map (kbd "g r") 'find-file-at-point)
     (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
