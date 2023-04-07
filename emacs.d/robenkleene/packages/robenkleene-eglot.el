@@ -7,13 +7,16 @@
     (package-initialize))
   (require 'use-package))
 (use-package eglot
-  :hook (((c-mode
+  :hook (((
            c++-mode
-           rust-mode
-           ruby-mode
+           c-mode
            js-mode
+           lua-mode
+           ruby-mode
+           rust-mode
+           sh-mode
            typescript-mode
-           sh-mode) . eglot-ensure)
+           ) . eglot-ensure)
          )
   :bind (:map eglot-mode-map
               ("C-c g r" . xref-find-references)
@@ -34,11 +37,12 @@
 
   ;; Languages
   (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  (add-to-list 'eglot-server-programs '(js-mode "typescript-language-server" "--stdio"))
+  (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
+  (add-to-list 'eglot-server-programs '(typescript-mode "typescript-language-server" "--stdio"))
+  (add-to-list 'eglot-server-programs '(ruby-mode "solargraph" "socket" "--port" :autoport))
   (add-to-list 'eglot-server-programs '(rust-mode "rust-analyzer"))
   (add-to-list 'eglot-server-programs '(shell-script-mode "bash-language-server"))
-  (add-to-list 'eglot-server-programs '(ruby-mode "solargraph" "socket" "--port" :autoport))
-  (add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server" "--stdio"))
-  (add-to-list 'eglot-server-programs '((js-mode) "typescript-language-server" "--stdio"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
