@@ -1,14 +1,7 @@
 return {
   -- Indent is broken if `VeryLazy` is set
   { "gpanders/editorconfig.nvim" },
-  {
-    "stevearc/oil.nvim",
-    config = function()
-      require("oil").setup {
-        vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-      }
-    end
-  },
+  { "justinmk/vim-dirvish" },
   {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
