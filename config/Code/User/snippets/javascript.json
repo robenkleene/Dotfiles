@@ -26,7 +26,7 @@
   "for": {
     "scope": "javascript,typescript",
     "prefix": "for",
-    "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
+    "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "Template"
   }
 }
