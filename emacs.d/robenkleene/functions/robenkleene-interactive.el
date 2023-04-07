@@ -78,9 +78,18 @@
 (defun kill-buffer-file-name ()
   "Copy the filename to the kill ring."
   (interactive)
-  (message (buffer-file-name))
-  (kill-new (buffer-file-name))
+  (if buffer-file-name
+      (progn
+        (message buffer-file-name)
+        (kill-new buffer-file-name)
+        )
+    (progn
+      (message default-directory)
+      (kill-new default-directory)
+      )
+    )
   )
+(defalias 'kill-buffer-file-path 'kill-buffer-file-name)
 
 (defun rk/kill-buffer-name ()
   "Kill `buffer-name'"
