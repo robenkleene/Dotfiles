@@ -38,7 +38,7 @@
         corfu-auto-delay 0
         corfu-auto-prefix 2
         completion-styles '(basic))
-  (global-corfu-mode)
+  ;; (global-corfu-mode)
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)
     )
@@ -50,12 +50,13 @@
                               (setq-local completion-at-point-functions
                                           (cons #'cape-dabbrev
                                                 completion-at-point-functions))
+                              (corfu-mode)
                               ))
   ;; eshell
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (setq-local corfu-auto nil)
-              (corfu-mode)))
+  ;; (add-hook 'eshell-mode-hook
+  ;;           (lambda ()
+  ;;             (setq-local corfu-auto nil)
+  ;;             (corfu-mode)))
   (defun corfu-send-shell (&rest _)
     "Send completion candidate when inside comint/eshell."
     (cond

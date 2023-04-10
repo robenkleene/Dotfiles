@@ -72,7 +72,9 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
 
   ;; Use `consult' for Emacs `ex' (command line) completions
-  (setq completion-in-region-function 'consult-completion-in-region)
+  ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
+  ;; fails
+  ;; (setq completion-in-region-function 'consult-completion-in-region)
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
