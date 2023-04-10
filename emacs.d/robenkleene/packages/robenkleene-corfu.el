@@ -52,6 +52,10 @@
                                                 completion-at-point-functions))
                               (corfu-mode)
                               ))
+  ;; For completing relative paths
+  (add-hook 'text-mode-hook (lambda ()
+                              (corfu-mode)
+                              ))
   ;; eshell
   ;; (add-hook 'eshell-mode-hook
   ;;           (lambda ()
