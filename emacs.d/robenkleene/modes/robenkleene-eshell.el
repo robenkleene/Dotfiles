@@ -5,7 +5,7 @@
 (with-eval-after-load 'eshell
 
   ;; Show tab completion options instead of just choosing one
-  (setq eshell-cmpl-cycle-completions nil)
+  ;; (setq eshell-cmpl-cycle-completions nil)
   (add-hook
    'eshell-mode-hook
    (lambda ()
@@ -17,8 +17,6 @@
      (face-remap-add-relative 'trailing-whitespace '(:background nil))
      ;; (setq nobreak-space 'override-nobreak-space)
      (whitespace-mode 0)
-
-     (setq pcomplete-cycle-completions nil)
 
      ;; Bindings
      (define-key eshell-mode-map (kbd "C-u") 'eshell-kill-input)
