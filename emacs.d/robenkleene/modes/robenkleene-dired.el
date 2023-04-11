@@ -34,6 +34,9 @@
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)
 
+  ;; Don't ask `Kill buffer of' when deleting a buffer, just kill it
+  (setq dired-clean-confirm-killing-deleted-buffers nil)
+
   ;; Don't show "omitted lines" message
   (setq dired-omit-verbose nil)
   ;; Kill the current buffer when going to new directory
