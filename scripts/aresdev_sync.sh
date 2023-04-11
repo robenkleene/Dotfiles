@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
+cd "$(git rev-parse --show-toplevel)"
+
 if ! [ -d ".git" ]; then
-  echo "Only run from a git root" >&2
+  echo "Not in a git repository" >&2
   exit 1
 fi
 
