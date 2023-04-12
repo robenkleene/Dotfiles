@@ -112,21 +112,6 @@
 
 ;; Switch to
 
-;; Emacs
-
-;; Shouldn't necessary, just switch buffers?
-;; (defun scratch ()
-;;   "Switch to scratch buffer."
-;;   (interactive)
-;;   (switch-to-buffer "*scratch*")
-;;   )
-
-;; (defun messages ()
-;;   "Switch to messages buffer."
-;;   (interactive)
-;;   (switch-to-buffer "*Messages*")
-;;   )
-
 (defun scratch-window ()
   "Delete other windows and switch to scratch buffer."
   (interactive)
@@ -134,136 +119,25 @@
   (switch-to-buffer "*scratch*")
   )
 
-;; Shouldn't be necessary, just use `z'
-;; (defun archive ()
-;;   "Switch to archive directory."
-;;   (interactive)
-;;   (find-file "~/Archive/Text/")
-;;   )
-
-;; Text (stored in version control)
-
-;; Shouldn't be necessary, just use `z'
-;; (defun text ()
-;;   "Switch to text directory."
-;;   (interactive)
-;;   (find-file "~/Text/")
-;;   )
-
-;; (defun text-projects ()
-;;   "Switch to text projects directory."
-;;   (interactive)
-;;   (find-file "~/Text/Projects/")
-;;   )
-
-;; (defun text-wiki ()
-;;   "Switch to text projects directory."
-;;   (interactive)
-;;   (find-file "~/Text/Projects/")
-;;   )
-
-;; Notes (stored in `~/Documents')
-
-;; Shouldn't be necessary, just use `z'
-;; (defun notes ()
-;;   "Switch to notes directory."
-;;   (interactive)
-;;   (find-file "~/Documents/Text/Notes/")
-;;   )
-
-;; (defun notes-inbox ()
-;;   "Switch to inbox directory."
-;;   (interactive)
-;;   (find-file "~/Documents/Text/Notes/Inbox/")
-;;   )
-
-;; (defun notes-projects ()
-;;   "Switch to projects directory."
-;;   (interactive)
-;;   (find-file "~/Documents/Text/Notes/Projects/")
-;;   )
-
-;; (defun notes-untitled ()
-;;   "Switch to untitled directory."
-;;   (interactive)
-;;   (find-file
-;;    "~/Documents/Text/Notes/Untitled/"
-;;    ;; (concat user-emacs-directory "untitled/")
-;;    )
-;;   )
-
-;; (defun notes-people ()
-;;   "Switch to notes-people directory."
-;;   (interactive)
-;;   (find-file
-;;    "~/Documents/Text/Notes/People/"
-;;    )
-;;   )
-
-(defun notes-daily ()
-  "Switch to daily file."
-  (interactive)
-  (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file -b"))
-  )
-
-;; Text
-
-(defun notes-daily-create ()
+(defun daily-create ()
   "Switch to notes daily file, creating it if missing."
   (interactive)
   (rk/safe-find-file
    (shell-command-to-string "~/.bin/daily_file"))
   )
 
-(defun notes-untitled-create ()
+(defun daily ()
+  "Switch to daily file."
+  (interactive)
+  (rk/safe-find-file
+   (shell-command-to-string "~/.bin/daily_file -b"))
+  )
+
+(defun untitled-create ()
   "Open a new notes untitled buffer."
   (interactive)
   (switch-to-buffer (rk/create-untitled-buffer))
   )
-
-;; Not really using these
-;; (defun note-inbox-create (title)
-;;   "Create a new notes inbox document with TITLE."
-;;   (interactive (list (read-from-minibuffer "Title: "
-;;                                            (if (use-region-p)
-;;                                                (buffer-substring (mark) (point))
-;;                                              nil
-;;                                              ))
-;;                      ))
-;;   (rk/safe-find-file
-;;    (shell-command-to-string (concat "~/.bin/inbox_new "
-;;                                     (shell-quote-argument title))
-;;                             ))
-;;   )
-
-;; (defun notes-projects-create (title)
-;;   "Create a new notes projects document with TITLE."
-;;   (interactive (list (read-from-minibuffer "Title: "
-;;                                            (if (use-region-p)
-;;                                                (buffer-substring (mark) (point))
-;;                                              nil
-;;                                              ))
-;;                      ))
-;;   (rk/safe-find-file
-;;    (shell-command-to-string (concat "~/.bin/projects_new "
-;;                                     (shell-quote-argument title))
-;;                             ))
-;;   )
-
-;; (defun notes-people-create (name)
-;;   "Create a new notes people document with Name."
-;;   (interactive (list (read-from-minibuffer "Name: "
-;;                                            (if (use-region-p)
-;;                                                (buffer-substring (mark) (point))
-;;                                              nil
-;;                                              ))
-;;                      ))
-;;   (rk/safe-find-file
-;;    (shell-command-to-string (concat "~/.bin/people_new "
-;;                                     (shell-quote-argument name))
-;;                             ))
-;;   )
 
 ;; Slug Project
 
