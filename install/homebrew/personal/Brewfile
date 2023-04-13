@@ -81,6 +81,9 @@ brew 'neofetch'
 brew 'hyperfine'
 brew 'sd'
 
+# macOS
+brew 'suspicious-package'
+
 # Railwaycat
 # tap 'railwaycat/emacsmacport'
 # brew 'emacs-mac'
