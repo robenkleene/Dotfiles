@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: matchopt
+# name: matchopt
+# --
+match ${1:result} {
+  Some($1) => $1,
+  None => ${2:println!("No value")},
+}
