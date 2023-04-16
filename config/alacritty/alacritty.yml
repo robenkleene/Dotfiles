@@ -5,6 +5,7 @@ window:
   dimensions:
     columns: 80
     lines: 48
+  decorations: "None"
 
 font:
   normal:
