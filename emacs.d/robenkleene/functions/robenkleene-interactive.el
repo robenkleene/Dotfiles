@@ -450,6 +450,15 @@
   (compilation-start "safepaste" 'grep-mode)
   )
 
+(defun diff-from-clipboard (&optional arg)
+  "Diff buffer with clipboard."
+  (interactive)
+  (switch-to-buffer
+   (generate-new-buffer "*diff from clipboard*"))
+  (yank)
+  (diff-mode)
+  )
+
 (defvar-local rk/format-program nil)
 (defvar-local rk/format-function nil)
 (defun rk/format ()
