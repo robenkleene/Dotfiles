@@ -44,6 +44,7 @@
 (require 'robenkleene-dired)
 (require 'robenkleene-ibuffer)
 (require 'robenkleene-eshell)
+(require 'robenkleene-diff)
 
 ;; Packages
 (require 'robenkleene-diminish)
