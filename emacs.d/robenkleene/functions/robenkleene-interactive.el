@@ -457,6 +457,8 @@
    (generate-new-buffer "*diff from clipboard*"))
   (yank)
   (diff-mode)
+  (beginning-of-buffer)
+  (diff-file-next)
   )
 
 (defvar-local rk/format-program nil)
