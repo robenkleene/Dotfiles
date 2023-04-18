@@ -3,15 +3,15 @@
 # name: uiviewcontroller
 # --
 //
-//  `!v expand("%:t")`
-//  `!v expand("%:h")`
+//  \`!v expand("%:t")\`
+//  \`!v expand("%:h")\`
 //
-//  Created by Roben Kleene on `date +%-m/%-d/%y`.
-//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.
+//  Created by Roben Kleene on \`date +%-m/%-d/%y\`.
+//  Copyright (c) \`date +%Y\` Roben Kleene. All rights reserved.
 //
 
 import UIKit
 
-class `!v expand("%:t:r")`: UIViewController {
+class \`!v expand("%:t:r")\`: UIViewController {
     $0
 }

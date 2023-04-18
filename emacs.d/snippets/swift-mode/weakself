@@ -2,4 +2,4 @@
 # key: weakself
 # name: weakself
 # --
-guard let \`self\` = self else { return }
+guard let \\`self\\` = self else { return }
