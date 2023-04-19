@@ -8,9 +8,7 @@ setlocal nomodifiable
 " Useful for debugging
 " setlocal foldcolumn=3
 
-nnoremap <buffer> <return> :OpenDiff<CR>
-nnoremap <buffer> [[ zk
-nnoremap <buffer> ]] zj
+nnoremap <buffer> <C-]> :OpenDiff<CR>
 
 function! DiffFold(lnum)
   let line = getline(a:lnum)
