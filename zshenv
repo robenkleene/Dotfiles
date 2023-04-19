@@ -55,7 +55,7 @@ export EDITOR="$VISUAL"
 # wrong version of `less` (system installed, which doesn't support the
 # `incsearch` option instead of Homebrew installed.
 export LESS="less"
-export LESS="--RAW-CONTROL-CHARS --ignore-case --incsearch"
+export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
 export BROWSER="none"
 
