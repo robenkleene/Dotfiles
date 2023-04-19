@@ -35,12 +35,12 @@
    (propertize " R " 'face '((:background "purple3" :foreground "white")))
    )
 
-  ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
-  ;; Disabling this because it causes move by word to jump over paths, e.g.,
-  ;; `/this/is/a/path'
-  ;; (with-eval-after-load 'evil
-  ;;   (defalias #'forward-evil-word #'forward-evil-symbol)
-  ;;   (setq-default evil-symbol-word-search t))
+  (with-eval-after-load 'evil
+    ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
+    ;; Disabling this because it causes move by word to jump over paths, e.g.,
+    ;; `/this/is/a/path'
+    ;; (defalias #'forward-evil-word #'forward-evil-symbol)
+    (setq-default evil-symbol-word-search t))
 
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
