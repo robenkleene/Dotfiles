@@ -1,5 +1,5 @@
-" setlocal foldexpr=<SID>DiffFoldLevel(v:lnum)
-" setlocal foldmethod=expr
+setlocal foldmethod=expr
+setlocal foldexpr=DiffFold(v:lnum)
 setlocal foldlevel=1
 " Allow quickly quitting without saving when piping a diff to vim
 setlocal buftype=nofile
@@ -10,8 +10,6 @@ nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
 nnoremap <buffer> ]] zj
 
-setlocal foldmethod=expr
-setlocal foldexpr=DiffFold(v:lnum)
 function! DiffFold(lnum)
   let line = getline(a:lnum)
   if line =~ '^\(diff\|---\|+++\|@@\) '
