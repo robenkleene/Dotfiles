@@ -35,7 +35,17 @@ function! s:OpenDiff()
   let l:diff = join(getbufline(bufnr('%'), l:start, l:fin), "\n")
   let l:grep = system('~/.bin/diff_to_grep | tail -n1 | cut -d: -f1,2', l:diff)
   let l:parts = split(l:grep, ':')
+  " TODO: To get the proper line number: Add the number of lines between the
+  " @@ and this line
+  " let l:lnum = line('.')
+  " let l:hunkstart = search('^@@ ', 'bnW')
+  " let l:offset = l:lnum - l:hunkstart
   exec "edit " . fnameescape(l:parts[0])
-  " Go to line
-  exec l:parts[1]
+  " echom "l:lnum = ".l:lnum
+  " echom "l:hunkstart = ".l:hunkstart
+  " echom "l:parts[1] = ".l:parts[1]
+  " let l:destlnum = l:parts[1] + l:offset
+  " echom "l:destlnum = ".l:destlnum
+  let l:destlnum = l:parts[1]
+  exec l:destlnum
 endfunction
