@@ -37,5 +37,5 @@ function! s:OpenDiff()
   let l:parts = split(l:grep, ':')
   exec "edit " . fnameescape(l:parts[0])
   " Go to line
-	exec l:parts[1]
+  exec l:parts[1]
 endfunction
