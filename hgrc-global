@@ -3,9 +3,6 @@ ignore = ~/.hgignore
 merge = internal:merge3
 paginate = never
 [pager]
-pager = delta
 attend = diff
-[delta]
-syntax-theme = Nord
 [committemplate]
 %unset emptymsg
