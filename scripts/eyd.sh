@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-eval "$EMACS_COMMAND -nw -eval \"(diff-from-clipboard)\""
+eval "$EMACS_COMMAND -eval \"(diff-from-clipboard)\""
