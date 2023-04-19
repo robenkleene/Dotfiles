@@ -20,3 +20,5 @@
 [alias]
 	cleanup =!git checkout -- . && git clean -dff 
 	aac =!git add -A :/ && git commit
+[pager]
+	diff = false
