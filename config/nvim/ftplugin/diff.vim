@@ -3,8 +3,10 @@ setlocal foldexpr=DiffFold(v:lnum)
 setlocal foldlevel=1
 " Allow quickly quitting without saving when piping a diff to vim
 setlocal buftype=nofile
-" setlocal readonly
+setlocal readonly
 setlocal nomodifiable
+" Useful for debugging
+" setlocal foldcolumn=3
 
 nnoremap <buffer> <return> :OpenDiff<CR>
 nnoremap <buffer> [[ zk
@@ -12,30 +14,14 @@ nnoremap <buffer> ]] zj
 
 function! DiffFold(lnum)
   let line = getline(a:lnum)
-  if line =~ '^\(diff\|---\|+++\|@@\) '
-    return 1
-  elseif line[0] =~ '[-+ ]'
-    return 2
+  if line =~ '^diff'
+    return '>1'
+  elseif line =~ '^@@'
+    return '>2'
   else
-    return 0
+    return '='
   endif
 endfunction
-
-" function! s:DiffFoldLevel(lnum)
-"     let l:line=getline(lnum)
-"
-"     if l:line =~# '^\(diff\|[Ii]ndex\)'     " file
-"         return '>1'
-"     elseif l:line =~# '^\(@@\|\d\)'  " hunk
-"         return '>2'
-"     elseif l:line =~# '^\*\*\* \d\+,\d\+ \*\*\*\*$' " context: file1
-"         return '>2'
-"     elseif l:line =~# '^--- \d\+,\d\+ ----$'     " context: file2
-"         return '>2'
-"     else
-"         return '='
-"     endif
-" endfunction
 
 command! OpenDiff :call <SID>OpenDiff()
 function! s:OpenDiff()
