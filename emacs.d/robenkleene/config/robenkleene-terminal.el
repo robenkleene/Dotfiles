@@ -87,9 +87,11 @@
 (setq-default mode-line-format (remove 'mode-line-end-spaces mode-line-format))
 
 ;; Use nicer symbol for the border on terminal that doesn't have space between `|'
-(set-display-table-slot standard-display-table
-                        'vertical-border 
-                        (make-glyph-code ?│))
+(defun rk/change-window-divider ()
+  (let ((display-table (or buffer-display-table standard-display-table)))
+    (set-display-table-slot display-table 5 ?│)
+    (set-window-display-table (selected-window) display-table)))
+(add-hook 'window-configuration-change-hook 'rk/change-window-divider)
 
 (provide 'robenkleene-terminal)
 ;; Local Variables:
