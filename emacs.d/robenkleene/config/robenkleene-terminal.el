@@ -86,6 +86,11 @@
 ;; By default, there's a bunch of `-' at the end of the modeline, remove these
 (setq-default mode-line-format (remove 'mode-line-end-spaces mode-line-format))
 
+;; Use nicer symbol for the border on terminal that doesn't have space between `|'
+(set-display-table-slot standard-display-table
+                        'vertical-border 
+                        (make-glyph-code ?│))
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
