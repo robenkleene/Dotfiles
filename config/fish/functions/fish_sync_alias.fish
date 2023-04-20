@@ -10,8 +10,6 @@ function fish_sync_alias
     alias --save ecd='emacs_cd .'
     alias --save rg='rg_custom'
     alias --save foi='fish_edit_config'
-    alias --save fsa='fish_sync_abbr'
-    alias --save fu='fish_update'
     alias --save u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
     alias --save ut='ssh_git_pull_all -t'
     alias --save ua='ssh_git_pull_all'

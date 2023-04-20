@@ -7,7 +7,6 @@ function fish_sync_abbr
 
     abbr -a -- - 'cd -'
     abbr -a o 'open'
-    abbr -a a 'rg'
     abbr -a v "$VIM_COMMAND"
     abbr -a b 'bat'
     abbr -a z 'zsh'
@@ -32,7 +31,6 @@ function fish_sync_abbr
     abbr -a gsmuirr 'git submodule update --init --recursive --remote'
     abbr -a glg 'git log -p -G'
     abbr -a gsh 'git show'
-    abbr -a gbl 'git blame'
     # Fish
     abbr -a fhm 'history merge'
     abbr -a fke 'echo $fish_killring[1]'
@@ -41,11 +39,8 @@ function fish_sync_abbr
     abbr -a hgd 'hg diff'
     abbr -a hgcm 'hg commit -m'
     abbr -a hgs 'hg status'
-    abbr -a hgsv 'hg shelve'
-    abbr -a hgsvu 'hg unshelve'
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
-    abbr -a hgcleanup 'hg purge && hg checkout --clean . && hg status'
     # Fish
     abbr -a fsi "source ~/.config/fish/config.fish"
 
