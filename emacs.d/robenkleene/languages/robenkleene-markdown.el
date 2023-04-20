@@ -18,6 +18,8 @@
   (setq flyspell-generic-check-word-predicate
         'rk/flyspell-generic-textmode-verify)
   (setq markdown-enable-wiki-links t)
+  ;; Show a flat list of headers in `imenu', instead of a nested list
+  (setq markdown-nested-imenu-heading-index nil)
   :config
   ;; Performance Tweak
   ;; This disables italics from `*', but that was causing slowness with input in
