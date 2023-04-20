@@ -83,6 +83,9 @@
 (unless (rk/system-is-mac)
   (setq browse-url-browser-function 'eww-browse-url))
 
+;; By default, there's a bunch of `-' at the end of the modeline, remove these
+(setq-default mode-line-format (remove 'mode-line-end-spaces mode-line-format))
+
 (provide 'robenkleene-terminal)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
