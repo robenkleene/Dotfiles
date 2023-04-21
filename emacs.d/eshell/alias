@@ -1,6 +1,32 @@
-alias a TERM=eterm-color rg_custom $*
 alias rg TERM=eterm-color rg_custom $*
 alias esu eshell-read-aliases-list
-alias ut git_pull_all -t
+
 alias u egit -u && ~/Developer/Dotfiles/update.sh
+alias ut git_pull_all -t
+alias ua git_pull_all -t
+
 alias ms magit-status
+
+alias gu git pull
+alias gp git push
+
+alias gaa git add -A :/
+alias gaac git add -A :/ && git commit
+alias gb git branch
+alias gc git commit
+alias gco git checkout
+alias gcob git checkout -b
+alias gd git diff
+alias gdw git diff --color-words
+alias gl git log
+alias gt git tag
+alias gm git merge
+alias gs git status
+alias gsmuirr git submodule update --init --recursive --remote
+alias glg git log -p -G
+alias gsh git show
+alias hgd hg diff
+alias hgcm hg commit -m
+alias hgs hg status
+alias hgu hg update
+alias hgsh hg show

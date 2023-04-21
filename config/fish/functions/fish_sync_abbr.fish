@@ -31,10 +31,6 @@ function fish_sync_abbr
     abbr -a gsmuirr 'git submodule update --init --recursive --remote'
     abbr -a glg 'git log -p -G'
     abbr -a gsh 'git show'
-    # Fish
-    abbr -a fhm 'history merge'
-    abbr -a fke 'echo $fish_killring[1]'
-    abbr -a printfvn 'printf "%s\n"'
     # Mercurial
     abbr -a hgd 'hg diff'
     abbr -a hgcm 'hg commit -m'
@@ -42,6 +38,9 @@ function fish_sync_abbr
     abbr -a hgu 'hg update'
     abbr -a hgsh 'hg show'
     # Fish
+    abbr -a fhm 'history merge'
+    abbr -a fke 'echo $fish_killring[1]'
+    abbr -a printfvn 'printf "%s\n"'
     abbr -a fsi "source ~/.config/fish/config.fish"
 
     # Local
