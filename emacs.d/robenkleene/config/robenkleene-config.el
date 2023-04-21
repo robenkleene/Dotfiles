@@ -258,14 +258,14 @@
 (setq confirm-kill-processes nil)
 
 ;; Removes massive slow down with large `hg' repos
-;; (setq vc-handled-backends '(Git))
-;; Disable all backends, `git' shows an annoying message about following
-;; symbolic link
-(setq vc-handled-backends nil)
-;; (setq vc-handled-backends ())
-;; Try lighter alternatives to the above that keep `vc' features available:
-;; This is still slow with large code bases
+(setq vc-handled-backends '(Git))
+;; `git' has an annoying message when following symlinks:
+;; This instead follows the link and echos
+;; Display in echo area
 ;; (setq vc-follow-symlinks t)
+;; This just edits the file in place and ignores `vc' features
+(setq vc-follow-symlinks nil)
+;; This is still slow with large code bases
 ;; `find-file-hook' can cause slow behavior
 (remove-hook 'find-file-hook 'vc-find-file-hook)
 

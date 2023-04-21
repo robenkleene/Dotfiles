@@ -170,6 +170,7 @@
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "<backspace>") 'scoll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
+    (define-key evil-normal-state-map (kbd "M-i") 'consult-imenu)
     ;; This breaks `C-i' to jump forward in normal mode
     ;; (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
