@@ -352,6 +352,20 @@
   (define-key shell-mode-map (kbd "q") 'quit-window)
   )
 
+;; Treat `-' and `_' as part of words for all modes except Emacs Lisp
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (unless (derived-mode-p 'emacs-lisp-mode)
+              (progn
+                (modify-syntax-entry ?_ "w")
+                (modify-syntax-entry ?- "w")
+                ))))
+(add-hook 'text-mode-hook
+          (lambda ()
+            (modify-syntax-entry ?_ "w")
+            (modify-syntax-entry ?- "w")
+            ))
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
