@@ -257,18 +257,6 @@
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
 
-;; Removes massive slow down with large `hg' repos
-(setq vc-handled-backends '(Git))
-;; `git' has an annoying message when following symlinks:
-;; This instead follows the link and echos
-;; Display in echo area
-;; (setq vc-follow-symlinks t)
-;; This just edits the file in place and ignores `vc' features
-(setq vc-follow-symlinks nil)
-;; This is still slow with large code bases
-;; `find-file-hook' can cause slow behavior
-(remove-hook 'find-file-hook 'vc-find-file-hook)
-
 ;; Allow project roots to be overridden with a `.project' file
 (add-hook 'project-find-functions #'rk/project-override)
 
