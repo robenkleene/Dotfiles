@@ -70,6 +70,12 @@ return {
   --     vim.cmd("colorscheme rose-pine")
   --   end
   -- },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   config = function()
+  --     vim.cmd("colorscheme kanagawa-wave")
+  --   end
+  -- },
   -- Languages
   { 'dag/vim-fish', ft = { 'fish' }, }
 }
