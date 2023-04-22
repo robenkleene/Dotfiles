@@ -11,6 +11,8 @@
                   (rk/source-control-open-web "-p")))
 (defalias 'u 'rk/egit-update)
 
+(defalias 'esh 'eshell)
+
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
 ;; (defalias 'new 'rk/switch-to-empty-buffer-other-window)
