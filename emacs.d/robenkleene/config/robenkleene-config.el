@@ -362,6 +362,12 @@
 ;; Size of buffer from bottom of the screen when scrolling
 (setq scroll-margin 1)
 
+;; Abbrev
+;; Not using these yet
+;; (setq save-abbrevs nil)
+;; Use abbreviations
+;; (set-default 'abbrev-mode t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
