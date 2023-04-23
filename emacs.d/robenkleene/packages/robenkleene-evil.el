@@ -170,7 +170,7 @@
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "<backspace>") 'scoll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
-    (define-key evil-normal-state-map (kbd "M-i") 'consult-imenu)
+    (define-key evil-motion-state-map (kbd "M-i") 'consult-imenu)
     ;; This breaks `C-i' to jump forward in normal mode
     ;; (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
@@ -257,8 +257,11 @@
   ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "SPC") rk/evil-leader-map)
     (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
+    )
+
+  (with-eval-after-load 'magit-mode
+    (evil-define-key 'motion magit-status-mode-map (kbd "TAB") 'magit-section-toggle)
     )
 
   ;; For `wgrep'
