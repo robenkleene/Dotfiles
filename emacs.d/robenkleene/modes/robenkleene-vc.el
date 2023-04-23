@@ -17,6 +17,13 @@
 ;; Another potential slowdown
 (setq vc-hg-parse-hg-data-structures nil)
 
+(defadvice vc-print-log (before rk/vc-print-log-hg)
+  "Support for `hg'"
+  (setq-local vc-handled-backends
+              (cons #'Hg
+                    vc-handled-backends))
+  )
+
 (provide 'robenkleene-vc)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
