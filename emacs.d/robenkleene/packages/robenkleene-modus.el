@@ -6,13 +6,13 @@
   (unless (bound-and-true-p package--initialized)
     (package-initialize))
   (require 'use-package))
-(use-package emacs
+(use-package modus-themes
   :init
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil
         modus-themes-region '(bg-only no-extend))
   :config
-  ;; (load-theme 'modus-vivendi)
+  (load-theme 'modus-vivendi-tinted)
   )
 
 (provide 'robenkleene-modus)
