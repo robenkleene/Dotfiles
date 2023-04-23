@@ -47,6 +47,22 @@
 ;;       )
 ;;     ))
 
+(defun rk/eshell-interactive-output-readonly ()
+  "Make output of interactive commands in eshell read-only.
+This should be the last entry in eshell-output-filter-functions!"
+  (let ((end eshell-last-output-end))
+    (save-excursion
+      (goto-char end)
+      (end-of-line 0)
+      (setq end (point)))
+    (when (< eshell-last-output-block-begin end)
+      (put-text-property eshell-last-output-block-begin end 'read-only "Read-only interactive eshell output"))))
+
+(defun rk/eshell-make-interactive-output-readonly ()
+  (add-hook 'eshell-output-filter-functions 'rk/eshell-interactive-output-readonly 'append))
+
+(add-hook 'eshell-mode-hook 'rk/eshell-make-interactive-output-readonly)
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
