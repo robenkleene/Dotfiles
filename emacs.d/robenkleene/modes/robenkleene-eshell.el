@@ -35,6 +35,18 @@
     )
   )
 
+;; This works to add abbreviations but probably shouldn't use this because it
+;; doesn't enforce the abbreviations are only used at the start of the line? For
+;; the command
+;; (progn
+;;   (when (boundp 'eshell-mode-abbrev-table)
+;;     (clear-abbrev-table eshell-mode-abbrev-table))
+;;   (define-abbrev-table 'eshell-mode-abbrev-table
+;;     '(
+;;       ("gsmuirr" "git submodule update --init --recursive --remote")
+;;       )
+;;     ))
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
