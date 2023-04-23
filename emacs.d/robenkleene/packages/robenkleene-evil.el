@@ -153,7 +153,6 @@
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
     (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
     (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
-    (define-key evil-normal-state-map (kbd "M-z") 'rk/consult-z)
     (define-key evil-normal-state-map (kbd "M-c") 'rk/consult-z-subdir)
     ;; Visual Line
     (define-key evil-motion-state-map
@@ -176,6 +175,7 @@
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
+    (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
     ;; Visual
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
