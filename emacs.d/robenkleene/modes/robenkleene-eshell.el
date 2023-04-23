@@ -24,6 +24,17 @@
    )
   )
 
+(defun egit-save ()
+  "`egit' save"
+  (interactive)
+  (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
+      (progn
+        (shell-command-to-string "~/.bin/sgitt_auto")
+        )
+    (eshell/cd (shell-command-to-string "~/.bin/egit -n | tr -d '\n'"))
+    )
+  )
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
