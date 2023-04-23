@@ -25,6 +25,9 @@
   ;; The :init configuration is always executed (Not lazy)
   :init
 
+  ;; Allow two character search terms
+  (setq consult-async-min-input 2)
+
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
@@ -40,7 +43,6 @@
         xref-show-definitions-function #'consult-xref)
 
   (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "M-z") 'rk/consult-z)
     (define-key dired-mode-map (kbd "M-c") 'rk/consult-z-subdir)
     )
   (add-hook 'eshell-mode-hook
