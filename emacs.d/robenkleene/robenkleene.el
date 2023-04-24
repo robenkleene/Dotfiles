@@ -34,6 +34,7 @@
       (require 'robenkleene-mac)
       )
   (require 'robenkleene-terminal))
+(require 'robenkleene-troubleshooting)
 
 ;; Modes
 (require 'robenkleene-org)
