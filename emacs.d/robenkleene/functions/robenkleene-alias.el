@@ -12,6 +12,8 @@
 (defalias 'u 'rk/egit-update)
 
 (defalias 'esh 'eshell)
+(defalias 'ydb 'yank-to-diff-buffer)
+(defalias 'ygb 'yank-to-grep-buffer)
 
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
