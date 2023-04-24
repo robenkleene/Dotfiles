@@ -36,6 +36,8 @@
  ;; If there is more than one, they won't work right.
  '(bold ((t (:bold t))))
  '(evil-goggles-default-face ((t (:inherit region))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#808080" :slant oblique))))
+ '(font-lock-comment-face ((t (:foreground "#808080" :slant oblique))))
  '(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
  '(italic ((t (:underline nil :slant italic))))
  '(markdown-blockquote-face ((t (:inherit rk-text2 :foreground nil))))
