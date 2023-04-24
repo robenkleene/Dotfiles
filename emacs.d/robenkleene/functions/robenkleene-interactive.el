@@ -434,14 +434,14 @@
    (rk/documentation-file))
   )
 
-(defun rk/grep-from-clipboard-startup ()
+(defun rk/yank-to-grep-buffer-startup ()
   "Grep buffer with clipboard."
   (interactive)
   (grep-from-clipboard)
   (delete-other-windows)
   )
 
-(defun grep-from-clipboard ()
+(defun yank-to-grep-buffer ()
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)

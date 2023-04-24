@@ -181,7 +181,7 @@
     )
   ;; Ex Commands
   (evil-ex-define-cmd "Ei" 'edit-init)
-  (evil-ex-define-cmd "Pq" 'grep-from-clipboard)
+  (evil-ex-define-cmd "Pq" 'yank-to-grep-buffer)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
     (compilation-start

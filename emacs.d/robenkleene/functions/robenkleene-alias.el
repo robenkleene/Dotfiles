@@ -3,7 +3,7 @@
 ;;; Code:
 
 (defalias 'ei 'edit-init)
-(defalias 'yg 'grep-from-clipboard)
+(defalias 'yg 'yank-to-grep-buffer)
 (defalias 'doc 'rk/consult-doc)
 (defalias 'scw 'rk/source-control-open-web)
 (defalias 'scwp (lambda ()
