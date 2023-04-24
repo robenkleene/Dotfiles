@@ -434,7 +434,7 @@
    (rk/documentation-file))
   )
 
-(defun grep-from-clipboard-startup ()
+(defun rk/grep-from-clipboard-startup ()
   "Grep buffer with clipboard."
   (interactive)
   (grep-from-clipboard)
