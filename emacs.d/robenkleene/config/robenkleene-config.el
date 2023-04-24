@@ -360,6 +360,9 @@
 ;; Use abbreviations
 ;; (set-default 'abbrev-mode t)
 
+;; Don't truncate imenu items
+(setq imenu-max-item-length nil)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
