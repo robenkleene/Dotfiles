@@ -45,11 +45,7 @@
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "M-c") 'rk/consult-z-subdir)
     )
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (define-key eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
-              )
-            )
+
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config

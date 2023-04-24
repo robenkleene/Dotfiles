@@ -25,6 +25,13 @@
                     vc-handled-backends))
   )
 
+(defun rk/vc-print-log-startup ()
+  "`vc' log in current window."
+  (interactive)
+  (progn (call-interactively 'vc-print-log)
+         (delete-other-windows))
+  )
+
 (provide 'robenkleene-vc)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
