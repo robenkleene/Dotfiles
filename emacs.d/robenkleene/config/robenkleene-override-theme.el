@@ -40,7 +40,7 @@
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
     ("gray3" . "#6c6c6c")
-    ("gray4" . "#888888")
+    ("gray4" . "#808080")
     ("gray5" . "#b2b2b2")
     ("gray6" . "#eeeeee")
 
