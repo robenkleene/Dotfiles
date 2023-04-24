@@ -266,6 +266,11 @@
     (evil-define-key 'motion magit-status-mode-map (kbd "TAB") 'magit-section-toggle)
     )
 
+  (with-eval-after-load 'esh-mode
+    (evil-define-key 'normal eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
+    (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
+    )
+
   ;; For `wgrep'
   (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
     (if (evil-motion-state-p)

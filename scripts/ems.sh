@@ -2,4 +2,4 @@
 
 set -e
 
-eval "$EMACS_COMMAND -nw -eval \"(magit-status-startup)\""
+eval "$EMACS_COMMAND -nw -eval \"(rk/magit-status-startup)\""

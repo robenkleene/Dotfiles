@@ -10,7 +10,7 @@
   :bind
   ("C-c s" . magit-egit)
   :commands (
-             magit-status-startup
+             rk/magit-status-startup
              magit-egit
              magit-status
              magit-log-current
@@ -76,7 +76,7 @@
     (select-frame-set-input-focus (selected-frame))
     )
 
-  (defun magit-status-startup ()
+  (defun rk/magit-status-startup ()
     "Startup magit full frame with focus."
     (interactive)
     (progn
