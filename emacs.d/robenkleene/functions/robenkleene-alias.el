@@ -11,6 +11,7 @@
                   (rk/source-control-open-web "-p")))
 (defalias 'u 'rk/egit-update)
 
+(defalias 'uc 'untitled-create)
 (defalias 'esh 'eshell)
 (defalias 'ydb 'yank-to-diff-buffer)
 (defalias 'ygb 'yank-to-grep-buffer)
