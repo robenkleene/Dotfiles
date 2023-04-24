@@ -40,7 +40,7 @@
     ("gray1" . "#3a3a3a")
     ("gray2" . "#4e4e4e")
     ("gray3" . "#6c6c6c")
-    ("gray4" . "#808080")
+    ("gray4" . "#888888")
     ("gray5" . "#b2b2b2")
     ("gray6" . "#eeeeee")
 
@@ -148,6 +148,10 @@
    ;; Styles
    `(italic ((t (:underline nil :slant italic))))
    `(bold ((t (:bold t))))
+
+   ;;;; Syntax
+   `(font-lock-comment-delimiter-face ((t (:foreground ,comment :slant oblique))))
+   `(font-lock-comment-face ((t (:foreground ,comment :slant oblique))))
 
    ;; This doesn't work for some reason?
    ;; `(region ((t (:inherit rk-match))))
