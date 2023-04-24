@@ -41,7 +41,7 @@
     ("gray2" . "#4e4e4e")
     ("gray3" . "#6c6c6c")
     ("gray4" . "#808080")
-    ("gray5" . "#b2b2b2")
+    ("gray5" . "#a7a7a7")
     ("gray6" . "#eeeeee")
 
     ;; Named
@@ -198,8 +198,8 @@
    `(markdown-gfm-checkbox-face ((t (:inherit rk-text2 :foreground nil))))
    `(markdown-list-face ((t (:inherit rk-text2 :foreground nil))))
    `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal :foreground nil))))
-   `(markdown-italic-face ((t (:inherit rk-text2 :foreground nil :background nil))))
-   `(markdown-bold-face ((t (:inherit rk-text2 :foreground nil :background nil))))
+   `(markdown-italic-face ((t (:inherit rk-text :foreground nil :background nil))))
+   `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background nil :bold t))))
 
    ;; Git Commit
    `(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
