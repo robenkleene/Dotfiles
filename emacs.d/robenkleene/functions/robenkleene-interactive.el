@@ -450,7 +450,7 @@
   (compilation-start "safepaste" 'grep-mode)
   )
 
-(defun diff-from-clipboard (&optional arg)
+(defun yank-to-diff-buffer (&optional arg)
   "Diff buffer with clipboard."
   (interactive)
   (switch-to-buffer
