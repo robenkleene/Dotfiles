@@ -170,8 +170,10 @@
     (define-key evil-motion-state-map (kbd "<backspace>") 'scoll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
     (define-key evil-motion-state-map (kbd "M-i") 'consult-imenu)
-    ;; This breaks `C-i' to jump forward in normal mode
-    ;; (define-key evil-motion-state-map (kbd "TAB") nil)
+    ;; `nil' breaks `C-i' to jump forward in normal mode
+    ;; But without setting this to `nil' `TAB' doesn't work to jump to links in
+    ;; help buffers
+    (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
