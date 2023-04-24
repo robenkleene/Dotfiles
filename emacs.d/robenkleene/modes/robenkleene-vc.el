@@ -16,6 +16,7 @@
 
 ;; Another potential slowdown
 (setq vc-hg-parse-hg-data-structures nil)
+(setq vc-log-show-limit 100)
 
 (defadvice vc-print-log (before rk/vc-print-log-hg)
   "Support for `hg'"
