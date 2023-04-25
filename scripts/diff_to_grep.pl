@@ -3,13 +3,15 @@
 use strict;
 use warnings;
 
-# Orginally named `diff-hunk-list`
+my $destLine = $ARGV[0] // 0;
 
 my $filename;
 my $line;
 my $offset = 0;
 my $printed = 0;
+my $lineNumber = 0;
 while (<STDIN>) {
+   $lineNumber++;
    if (m(^\+\+\+ b/(.*)$)) {
       $printed = 0;
       $filename = $1;
@@ -22,17 +24,22 @@ while (<STDIN>) {
    } elsif (m(^\+(.*)$)) {
       my $data = $1 || '-';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless $printed;
+         unless $printed || $destLine > 0;
       $offset++;
       $printed = 1;
    } elsif (m(^\-(.*)$)) {
       my $data = $1 || '-';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless $printed;
-      $offset++;
+         unless $printed || $destLine > 0;
+      # Don't increment the offset for subtracted lines
       $printed = 1;
    } elsif (m(^ )) {
       $printed = 0;
       $offset++;
+   }
+
+   if ($lineNumber == $destLine) {
+      print "$filename:" . ($offset + $line - 1);
+      exit 0;
    }
 }
