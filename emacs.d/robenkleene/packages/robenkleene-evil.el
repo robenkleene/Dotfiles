@@ -147,8 +147,7 @@
     (define-key evil-normal-state-map "zg" 'rk/ispell-save-word)
     (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
-    ;; (define-key evil-normal-state-map (kbd "g f") 'xref-find-references)
-    (define-key evil-normal-state-map (kbd "g r") 'find-file-at-point)
+    (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
     (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
     (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
@@ -321,6 +320,9 @@
 
   (use-package evil-commentary
     :diminish
+    ;; Disable binding that conflicts with `eglot-find-typeDefinition'
+    :map (evil-commentary-mode-map
+          ("g y" . nil))
     :init
     (evil-commentary-mode)
     )
