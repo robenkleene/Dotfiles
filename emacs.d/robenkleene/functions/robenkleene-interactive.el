@@ -437,7 +437,7 @@
 (defun rk/yank-to-grep-buffer-startup ()
   "Grep buffer with clipboard."
   (interactive)
-  (grep-from-clipboard)
+  (yank-to-grep-buffer)
   (delete-other-windows)
   )
 
