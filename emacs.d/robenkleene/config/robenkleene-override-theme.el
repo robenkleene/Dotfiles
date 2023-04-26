@@ -146,7 +146,8 @@
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
    ;; Styles
-   `(default ((t (:foreground ,gray6))))
+   ;; Prefer to use the default text colors
+   ;; `(default ((t (:foreground ,gray6))))
    `(italic ((t (:underline nil :slant italic))))
    `(bold ((t (:bold t))))
 
