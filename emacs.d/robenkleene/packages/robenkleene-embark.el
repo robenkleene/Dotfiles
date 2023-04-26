@@ -31,6 +31,11 @@
                  nil
                  (window-parameters (mode-line-format . none))))
 
+  ;; ;; Use completion instead of keyboard shortcuts
+  ;; (setq embark-prompter #'embark-completing-read-prompter)
+  ;; ;; Don't show the completion pop-up
+  (setq embark-indicators '(embark-minimal-indicator))
+
   ;; Consult users will also want the embark-consult package.
   (use-package embark-consult
     :ensure t ; only need to install it, embark loads it after consult if found
