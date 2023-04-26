@@ -41,7 +41,7 @@
     ("gray2" . "#4e4e4e")
     ("gray3" . "#6c6c6c")
     ("gray4" . "#808080")
-    ("gray5" . "#a7a7a7")
+    ("gray5" . "#b2b2b2")
     ("gray6" . "#eeeeee")
 
     ;; Named
@@ -146,6 +146,7 @@
    `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
    ;; Styles
+   `(default ((t (:foreground ,gray6))))
    `(italic ((t (:underline nil :slant italic))))
    `(bold ((t (:bold t))))
 
