@@ -155,6 +155,7 @@
     (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
     (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
     (define-key evil-normal-state-map (kbd "M-c") 'rk/consult-z-subdir)
+    (define-key evil-normal-state-map (kbd "C-i") 'evil-jump-forward)
     ;; Visual Line
     (define-key evil-motion-state-map
       (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
@@ -172,7 +173,8 @@
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
     (define-key evil-motion-state-map (kbd "M-i") 'consult-imenu)
     ;; `nil' breaks `C-i' to jump forward in normal mode
-    ;; But without setting this to `nil' `TAB' doesn't work to jump to links in
+    ;; But without setting this to `nil' (and then setting `C-i' to
+    ;; `evil-jump-forward' in normal) `TAB' doesn't work to jump to links in
     ;; help buffers
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
