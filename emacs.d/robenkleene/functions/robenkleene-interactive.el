@@ -445,7 +445,7 @@
   "Grep buffer with clipboard."
   (interactive)
   (require 'grep)
-  ;; (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
+  (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 
