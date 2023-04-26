@@ -16,6 +16,9 @@
    rk/consult-fd
    rk/consult-fd-pwd
    rk/consult-eshell-z
+   consult-compile-error
+   consult-ripgrep
+   consult-theme
    )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
