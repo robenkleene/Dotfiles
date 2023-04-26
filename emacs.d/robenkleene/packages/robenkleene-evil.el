@@ -323,10 +323,10 @@
   (use-package evil-commentary
     :diminish
     ;; Disable binding that conflicts with `eglot-find-typeDefinition'
-    :bind (:map evil-commentary-mode-map
-                ("g y" . nil))
     :init
     (evil-commentary-mode)
+    :config
+    (evil-define-key 'normal evil-commentary-mode-map (kbd "gy") nil)
     )
 
   (use-package evil-goggles
