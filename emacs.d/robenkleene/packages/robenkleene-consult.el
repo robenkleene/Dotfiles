@@ -9,6 +9,9 @@
   (require 'use-package))
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
+  :bind (
+         ("C-x i" . consult-imenu)
+         )
   :commands
   (rk/consult-doc
    rk/consult-z
@@ -16,6 +19,7 @@
    rk/consult-fd
    rk/consult-fd-pwd
    rk/consult-eshell-z
+   consult-imenu
    consult-compile-error
    consult-ripgrep
    consult-theme
