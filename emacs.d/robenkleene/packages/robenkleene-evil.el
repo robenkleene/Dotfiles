@@ -56,6 +56,9 @@
   ;; Persist search highlighting
   (setq evil-search-module 'evil-search)
 
+  ;; Disable smart case
+  ;; (setq evil-ex-search-case 'sensitive)
+
   ;; Make `Y' yank to eol
   (setq evil-want-Y-yank-to-eol t)
 
