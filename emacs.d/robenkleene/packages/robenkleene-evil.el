@@ -359,9 +359,14 @@
     )
 
   (use-package evil-numbers
-    :init
-    (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-    (define-key evil-normal-state-map (kbd "C-S-a") 'evil-numbers/dec-at-pt)
+    :bind (
+           (:map evil-normal-state-map
+                 ("C-a" . evil-numbers/inc-at-pt)
+                 ("C-S-a". evil-numbers/dec-at-pt)
+                 )
+           (:map rk/evil-leader-map
+                 ("C-x" . evil-numbers/dec-at-pt))
+           )
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     )
 
