@@ -11,10 +11,13 @@
                   (rk/source-control-open-web "-p")))
 (defalias 'u 'rk/egit-update)
 
-(defalias 'uc 'untitled-create)
 (defalias 'esh 'eshell)
 (defalias 'yd 'yank-to-diff-buffer)
 (defalias 'yg 'yank-to-grep-buffer)
+
+;; Text
+(defalias 'uc 'untitled-create)
+(defalias 'dc 'daily-create)
 
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
