@@ -39,8 +39,16 @@ inoremap <M-BS> <C-W>
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 " Paste
-inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>:<C-u>Cwise<CR><C-r>0"
-snoremap <expr> <C-y> ":Cwise<CR>\"0p"
-nnoremap <expr> <C-y> ":Cwise<CR>\"0p"
-vnoremap <expr> <C-y> ":<C-u>Cwise<CR>gv\"0p"
-cnoremap <expr> <C-y> len(getreg('*')) ? "<C-r>*" : "<C-r>0"
+" We need to be able to paste from both the `*` register and the `0` register:
+" 1. We use `*` when yanking and then pasting in insert mode
+" 2. We use `0` when pasting with a visual selection multiple times
+inoremap <expr> <C-y> pumvisible() ? "\<C-y>" : "<C-o>:<C-u>Cwise<CR><C-r>*"
+snoremap <expr> <C-y> ":Cwise<CR>p"
+nnoremap <expr> <C-y> ":Cwise<CR>p"
+vnoremap <expr> <C-y> ":<C-u>Cwise<CR>gvp"
+cnoremap <expr> <C-y> "<C-r>*"
+inoremap <expr> <M-y> pumvisible() ? "\<C-y>" : "<C-o>:<C-u>Cwise<CR><C-r>0"
+snoremap <expr> <M-y> ":Cwise<CR>\"0p"
+nnoremap <expr> <M-y> ":Cwise<CR>\"0p"
+vnoremap <expr> <M-y> ":<C-u>Cwise<CR>gv\"0p"
+cnoremap <expr> <M-y> "<C-r>0"
