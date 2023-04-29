@@ -24,6 +24,7 @@ fi
 # If we're already in a shell session, just exit
 if [[ -n "$TMUX" ]]; then
   if tmux display-message -p '#S' | grep -q $flag "^\d+$"; then
+    tmux new-window -c ~
     exit 0
   fi
 fi
@@ -45,3 +46,4 @@ else
     tmux attach-session -t "$unattached_shell"
   fi
 fi
+tmux new-window -c ~
