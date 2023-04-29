@@ -11,6 +11,7 @@
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (
          ("C-x i" . consult-imenu)
+         ("C-x b" . consult-buffer)
          )
   :commands
   (rk/consult-doc
