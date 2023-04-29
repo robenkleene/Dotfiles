@@ -1,4 +1,6 @@
 alias rg TERM=eterm-color rg_custom $*
+alias fd fd --color=never $*
+
 alias esu eshell-read-aliases-list
 
 alias u egit -u && ~/Developer/Dotfiles/update.sh
