@@ -13,7 +13,7 @@
   },
   "template": {
     "prefix": "template",
-    "body": "fn main() {\n    println!(\"Hello, world!\");\n}\n",
+    "body": "fn main() {\n    ${1:println!(\"Hello, world!\");}\n}\n",
     "description": "Template"
   },
   "matchopt": {
