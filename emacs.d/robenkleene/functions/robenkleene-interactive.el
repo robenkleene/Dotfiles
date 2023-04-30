@@ -453,7 +453,7 @@
   "Diff buffer with clipboard."
   (interactive)
   (switch-to-buffer
-   (generate-new-buffer "*diff from clipboard*"))
+   (generate-new-buffer "*yank to diff*"))
   (yank)
   (diff-mode)
   (beginning-of-buffer)
@@ -464,9 +464,9 @@
   "`virtual-dired' buffer with clipboard."
   (interactive)
   (switch-to-buffer
-   (generate-new-buffer "*virtual dired from clipboard*"))
+   (generate-new-buffer "*yank to virtual dired*"))
   (yank)
-  (virtual-dired)
+  (virtual-dired default-directory)
   (beginning-of-buffer)
   )
 
