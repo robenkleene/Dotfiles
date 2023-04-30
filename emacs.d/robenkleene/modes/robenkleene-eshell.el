@@ -20,6 +20,7 @@
 
      ;; Bindings
      (define-key eshell-mode-map (kbd "C-u") 'eshell-kill-input)
+     (define-key eshell-mode-map (kbd "C-c u") 'rk/eshell-kill-last-output)
      )
    )
   )
@@ -62,6 +63,12 @@ This should be the last entry in eshell-output-filter-functions!"
   (add-hook 'eshell-output-filter-functions 'rk/eshell-interactive-output-readonly 'append))
 
 (add-hook 'eshell-mode-hook 'rk/eshell-make-interactive-output-readonly)
+
+(defun rk/eshell-kill-last-output ()
+  "Kill the output."
+  (interactive)
+  (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
+  )
 
 (provide 'robenkleene-eshell)
 ;; Local Variables:
