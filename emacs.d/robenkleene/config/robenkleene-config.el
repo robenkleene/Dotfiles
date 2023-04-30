@@ -281,7 +281,9 @@
                             ))
 
 ;; Don't show tab bar for one tab
+;; This causes the echo area to disappear when a new frame is added
 (setq tab-bar-show 1)
+;; (setq tab-bar-show nil)
 ;; Don't show close button
 (setq tab-bar-close-button-show nil)
 ;; Hide plus button and other extras
