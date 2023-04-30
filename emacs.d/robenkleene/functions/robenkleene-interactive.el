@@ -466,7 +466,7 @@
   (switch-to-buffer
    (generate-new-buffer "*yank to virtual dired*"))
   (yank)
-  (virtual-dired default-directory)
+  (dired-virtual default-directory)
   (beginning-of-buffer)
   )
 
