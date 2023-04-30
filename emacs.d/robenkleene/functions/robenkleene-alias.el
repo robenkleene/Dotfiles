@@ -12,7 +12,8 @@
 (defalias 'u 'rk/egit-update)
 
 (defalias 'esh 'eshell)
-(defalias 'yd 'yank-to-diff-buffer)
+(defalias 'yp 'yank-to-diff-buffer)
+(defalias 'yd 'yank-to-virtual-dired-buffer)
 (defalias 'yg 'yank-to-grep-buffer)
 
 ;; Text
