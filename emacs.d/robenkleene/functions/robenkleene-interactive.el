@@ -460,6 +460,16 @@
   (diff-file-next)
   )
 
+(defun yank-to-virtual-dired-buffer (&optional arg)
+  "`virtual-dired' buffer with clipboard."
+  (interactive)
+  (switch-to-buffer
+   (generate-new-buffer "*virtual dired from clipboard*"))
+  (yank)
+  (virtual-dired)
+  (beginning-of-buffer)
+  )
+
 (defvar-local rk/format-program nil)
 (defvar-local rk/format-function nil)
 (defun rk/format ()
