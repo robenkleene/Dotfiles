@@ -70,6 +70,27 @@ This should be the last entry in eshell-output-filter-functions!"
   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
   )
 
+(defun rk/eshell-last-output-to-diff-buffer ()
+  "Diff buffer with output of last command."
+  (interactive)
+  (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
+  (yank-to-diff-buffer)
+  )
+
+(defun rk/eshell-last-output-to-grep-buffer ()
+  "Grep buffer with output of last command."
+  (interactive)
+  (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
+  (yank-to-grep-buffer)
+  )
+
+(defun rk/eshell-last-output-to-dired-virtual-buffer ()
+  "Virtual dired buffer with output of last command."
+  (interactive)
+  (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
+  (yank-to-virtual-dired-buffer)
+  )
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
