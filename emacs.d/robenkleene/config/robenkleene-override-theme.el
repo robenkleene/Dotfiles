@@ -161,21 +161,21 @@
 
    ;; Using bold on the current line caused a bug where the current line
    ;; sometimes shifted slightly
-   ;; `(line-number-current-line ((t (:bold nil :background nil))))
+   ;; `(line-number-current-line ((t (:bold nil :background unspecified))))
    ;; `(line-number-current-line ((t (:bold nil))))
 
    ;; Packages
 
    ;; Whitespace
-   `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
-   `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
-   `(whitespace-tab ((t (:inherit rk-whitespace :background nil :underline nil))))
-   `(trailing-whitespace ((t (:inherit rk-whitespace :background nil :underline nil))))
-   `(nobreak-space ((t (:inherit rk-whitespace :background nil :underline nil))))
-   `(whitespace-line ((t (:inherit rk-warning :background nil))))
+   `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
+   `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
+   `(whitespace-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
+   `(trailing-whitespace ((t (:inherit rk-whitespace :background unspecified :underline nil))))
+   `(nobreak-space ((t (:inherit rk-whitespace :background unspecified :underline nil))))
+   `(whitespace-line ((t (:inherit rk-warning :background unspecified))))
 
    ;; show-paren
-   `(show-paren-match ((t (:underline t :background nil :foreground nil :bold t))))
+   `(show-paren-match ((t (:underline t :background unspecified :foreground nil :bold t))))
    `(show-paren-mismatch ((t (:inherit rk-error))))
 
    ;; Evil Goggle
@@ -193,18 +193,18 @@
    `(markdown-header-delimiter-face ((t (:inherit rk-comment :foreground nil))))
    `(markdown-link-face ((t (:inherit rk-link :foreground nil))))
    `(markdown-url-face ((t (:inherit rk-comment :foreground nil))))
-   `(markdown-pre-face ((t (:inherit rk-comment :foreground nil :background nil))))
-   `(markdown-code-face ((t (:inherit rk-comment :foreground nil :background nil))))
-   `(markdown-inline-code-face ((t (:inherit markdown-pre-face :foreground nil :background nil))))
+   `(markdown-pre-face ((t (:inherit rk-comment :foreground nil :background unspecified))))
+   `(markdown-code-face ((t (:inherit rk-comment :foreground nil :background unspecified))))
+   `(markdown-inline-code-face ((t (:inherit markdown-pre-face :foreground nil :background unspecified))))
    `(markdown-blockquote-face ((t (:inherit default :foreground nil))))
    `(markdown-gfm-checkbox-face ((t (:inherit rk-comment :foreground nil))))
    `(markdown-list-face ((t (:inherit default :foreground nil))))
    `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal :foreground nil))))
-   `(markdown-italic-face ((t (:inherit rk-text :foreground nil :background nil))))
-   `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background nil :bold t))))
+   `(markdown-italic-face ((t (:inherit rk-text :foreground nil :background unspecified))))
+   `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background unspecified :bold t))))
 
    ;; Git Commit
-   `(git-commit-summary ((t (:inherit rk-text :foreground nil :background nil))))
+   `(git-commit-summary ((t (:inherit rk-text :foreground nil :background unspecified))))
 
    )
   )
