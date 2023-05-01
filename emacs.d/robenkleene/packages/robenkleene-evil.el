@@ -132,6 +132,8 @@
   ;;   'grep-toggle-buffer)
   (define-key rk/evil-leader-map (kbd "q")
     'consult-compile-error)
+  (define-key rk/evil-leader-map (kbd "`")
+    'eshell)
 
   (with-eval-after-load 'evil-maps
     (define-key evil-normal-state-map (kbd "M-.") nil)
@@ -172,7 +174,7 @@
     (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
-    (define-key evil-motion-state-map (kbd "<backspace>") 'scoll-down-command)
+    (define-key evil-motion-state-map (kbd "<backspace>") 'scroll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
     (define-key evil-motion-state-map (kbd "M-i") 'consult-imenu)
     ;; `nil' breaks `C-i' to jump forward in normal mode
