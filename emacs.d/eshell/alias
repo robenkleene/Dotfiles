@@ -33,3 +33,7 @@ alias hgcm hg commit -m
 alias hgs hg status
 alias hgu hg update
 alias hgsh hg show
+
+alias yd rk/eshell-last-output-to-diff-buffer
+alias yg rk/eshell-last-output-to-grep-buffer
+alias yl rk/eshell-last-output-to-virtual-dired-buffer

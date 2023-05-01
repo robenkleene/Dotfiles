@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-eval "$EMACS_COMMAND -eval \"(yank-to-diff-buffer)\""
+eval "$EMACS_COMMAND -eval \"(rk/yank-to-diff-buffer-startup)\""

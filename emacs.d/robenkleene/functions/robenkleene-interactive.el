@@ -435,14 +435,28 @@
   )
 
 (defun rk/yank-to-grep-buffer-startup ()
-  "Grep buffer with clipboard."
+  "Yank to grep buffer deleting other window."
   (interactive)
   (yank-to-grep-buffer)
   (delete-other-windows)
   )
 
+(defun rk/yank-to-diff-buffer-startup ()
+  "Yank to diff buffer deleting other window."
+  (interactive)
+  (yank-to-diff-buffer)
+  (delete-other-windows)
+  )
+
+(defun rk/yank-to-virtual-dired-buffer-startup ()
+  "Yank to diff buffer deleting other window."
+  (interactive)
+  (yank-to-diff-buffer)
+  (delete-other-windows)
+  )
+
 (defun yank-to-grep-buffer ()
-  "Grep buffer with clipboard."
+  "Yank to grep buffer."
   (interactive)
   (require 'grep)
   (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
@@ -450,7 +464,7 @@
   )
 
 (defun yank-to-diff-buffer (&optional arg)
-  "Diff buffer with clipboard."
+  "Yank to diff buffer."
   (interactive)
   (switch-to-buffer
    (generate-new-buffer "*diff yank*"))
@@ -461,7 +475,7 @@
   )
 
 (defun yank-to-virtual-dired-buffer (&optional arg)
-  "`virtual-dired' buffer with clipboard."
+  "Yank to virtual dired buffer."
   (interactive)
   (switch-to-buffer
    (generate-new-buffer "*virtual dired yank*"))
