@@ -365,6 +365,10 @@
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)
 
+;; Window Management
+;; Make display buffer rules more consistent
+(setq switch-to-buffer-obey-display-actions t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
