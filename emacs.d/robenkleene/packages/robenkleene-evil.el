@@ -279,6 +279,14 @@
     (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
     )
 
+  (with-eval-after-load 'help-mode
+    ;; Can't do this because it'll interfere with `TAB' to jump to next link in
+    ;; tag buffers
+    ;; (evil-define-key 'motion help-mode-map (kbd "C-i") 'help-go-forward)
+    ;; (evil-define-key 'motion help-mode-map (kbd "C-o") 'help-go-back)
+    (evil-define-key 'motion help-mode-map (kbd "C-t") 'help-go-back)
+    )
+
   ;; For `wgrep'
   (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
     (if (evil-motion-state-p)
