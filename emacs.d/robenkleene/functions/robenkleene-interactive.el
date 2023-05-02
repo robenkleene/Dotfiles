@@ -110,6 +110,17 @@
   (message (rk/date-today))
   (kill-new (rk/date-today)))
 
+(defun kill-breakpoint ()
+  "Kill breakpoint'."
+  (interactive)
+  (if buffer-file-name
+      (progn
+        (kill-new buffer-file-name)
+        (message buffer-file-name)
+        )
+    )
+  )
+
 ;; Switch to
 
 (defun scratch-window ()
