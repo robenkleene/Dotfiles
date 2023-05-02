@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq org-replace-disputed-keys t)
+;; Breaks choosing the date day with `shift' movement keys
+;; (setq org-replace-disputed-keys t)
+
 (setq org-todo-keywords '("TODO" "STARTED" "DONE"))
 ;; Disable spell check in code blocks
 (defadvice org-mode-flyspell-verify
@@ -21,7 +23,6 @@
         (setq case-fold-search old-flag))
       (if (and b e (< (point) e)) (setq rlt nil)))
     (setq ad-return-value rlt)))
-
 
 (provide 'robenkleene-org)
 ;; Local Variables:
