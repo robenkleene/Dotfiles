@@ -24,6 +24,16 @@
       (if (and b e (< (point) e)) (setq rlt nil)))
     (setq ad-return-value rlt)))
 
+(setq org-directory "~/Documents/Text/Notes/Todo")
+(setq org-default-notes-file (concat org-directory "/todo.org"))
+(setq org-agenda-files (list org-directory))
+
+(defun org ()
+  (interactive)
+  "Switch to `org-default-notes-file' file."
+  (rk/safe-find-file org-default-notes-file)
+  )
+
 (provide 'robenkleene-org)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
