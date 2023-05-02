@@ -25,7 +25,7 @@
     (setq ad-return-value rlt)))
 
 (setq org-directory "~/Documents/Text/Notes/Todo")
-(setq org-default-notes-file (concat org-directory "/todo.org"))
+(setq org-default-notes-file (concat org-directory "/Todo.org"))
 (setq org-agenda-files (list org-directory))
 
 (defun org ()
