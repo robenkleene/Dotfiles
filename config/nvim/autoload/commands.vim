@@ -91,3 +91,10 @@ function! commands#Rg(terms) abort
     wincmd p
   endif
 endfunction
+
+function! commands#YankBreakpoint()
+  let @@ = "b ".expand("%:p").":".line('.')
+  call system('~/.bin/safecopy', @@)
+  echo "Yanked breakpoint"
+endfunction
+

@@ -18,6 +18,7 @@ nnoremap <leader>cq :GrepBufferFromClipboard<CR>
 nnoremap <leader>* :Rg <C-r><C-w><cr>
 vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 " Other
+nnoremap <localleader>yb :YankBreakpoint<CR>
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 " Tabs
