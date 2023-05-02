@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec tmux attach \; run-shell 'tmux_shell_new'
+exec tmux_shell_new
