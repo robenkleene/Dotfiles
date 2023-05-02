@@ -51,8 +51,9 @@
 (global-set-key (kbd "M-o") 'find-file)
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
 ;; Always allow meta up and down to match M-p and M-n
-(define-key key-translation-map (kbd "M-<up>") (kbd "M-p"))
-(define-key key-translation-map (kbd "M-<down>") (kbd "M-n"))
+;; This breaks `org-mode' bindings to move an item up or down
+;; (define-key key-translation-map (kbd "M-<up>") (kbd "M-p"))
+;; (define-key key-translation-map (kbd "M-<down>") (kbd "M-n"))
 ;; (define-key input-decode-map (kbd "M-<up>") (kbd "M-p"))
 ;; (define-key input-decode-map (kbd "M-<down>") (kbd "M-n"))
 
