@@ -25,13 +25,18 @@
     (setq ad-return-value rlt)))
 
 (setq org-directory "~/Documents/Text/Notes/Todo")
-(setq org-default-notes-file (concat org-directory "/Todo.org"))
+(setq org-default-notes-file (concat org-directory "/todo.org"))
 (setq org-agenda-files (list org-directory))
+(setq org-deadline-warning-days 0)
 
 (defun org ()
   (interactive)
   "Switch to `org-default-notes-file' file."
   (rk/safe-find-file org-default-notes-file)
+  )
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
   )
 
 (provide 'robenkleene-org)
