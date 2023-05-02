@@ -41,9 +41,8 @@ if [[ -z "$unattached_shell" ]]; then
 else
   unattached_shell=${unattached_shell::${#unattached_shell}-2}
   if [[ -n "$TMUX" ]]; then
-    tmux switch-client -t "$unattached_shell"
+    tmux switch-client -t "$unattached_shell" \; tmux new-window -c ~
   else
-    tmux attach-session -t "$unattached_shell"
+    tmux attach-session -t "$unattached_shell" \; tmux new-window -c ~
   fi
 fi
-tmux new-window -c ~
