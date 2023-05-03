@@ -51,7 +51,10 @@
   (use-package org-modern
     :commands (global-org-modern-mode)
     :init
-    (with-eval-after-load 'org (global-org-modern-mode)))
+    (with-eval-after-load 'org (global-org-modern-mode))
+    :config
+    (setq org-modern-hide-stars nil)
+    )
   )
 
 (provide 'robenkleene-org)
