@@ -40,9 +40,10 @@
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
 (set 'ad-redefinition-action 'accept)
 
-(eval-and-compile
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
-  )
+;; This is probably causing lots of files to be checked for compiling on startup
+;; (eval-and-compile
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
+;; )
 (require 'robenkleene)
 
 ;; Local Variables:

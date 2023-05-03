@@ -10,13 +10,14 @@
     (load-file "~/.emacs_local.el")
   )
 
-(eval-and-compile
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/functions"))
-  )
+;; This is probably causing lots of files to be checked for compiling on startup
+;; (eval-and-compile
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/config"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/modes"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/packages"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/languages"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/functions"))
+;; )
 
 ;; Functions
 (require 'robenkleene-functions)
