@@ -12,11 +12,15 @@
 ;; Just automatically always select new buffers
 ;; This works to target automatically focus all popups, but it breaks magit
 ;; commit
-;; (defun rk/switch-to-buffer (buffer alist)
-;;   (select-window (display-buffer-pop-up-window
-;;                   buffer alist)))
-;; (setq display-buffer-alist
-;;       '(("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))))
+(defun rk/switch-to-buffer (buffer alist)
+  (select-window (display-buffer-pop-up-window
+                  buffer alist)))
+(setq display-buffer-alist
+      '(
+        ("*transient*" display-buffer-no-window)
+        ("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))
+        )
+      )
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
