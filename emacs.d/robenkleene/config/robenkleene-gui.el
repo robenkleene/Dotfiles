@@ -100,16 +100,17 @@
 ;; Don't change scrolling speed when scrolling fast
 ;; (setq mouse-wheel-progressive-speed nil)
 
-(setq-default initial-frame-alist
-              '(
-                (width . 80)
-                (height . 48)
-                ))
-(setq-default default-frame-alist
-              '(
-                (width . 80)
-                (height . 48)
-                ))
+;; These make windows jump around when restoring desktop state
+;; (setq-default initial-frame-alist
+;;               '(
+;;                 (width . 80)
+;;                 (height . 48)
+;;                 ))
+;; (setq-default default-frame-alist
+;;               '(
+;;                 (width . 80)
+;;                 (height . 48)
+;;                 ))
 (add-to-list 'default-frame-alist
              '(vertical-scroll-bars . nil))
 (add-to-list 'initial-frame-alist
@@ -122,7 +123,7 @@
 ;; (set-frame-parameter (selected-frame) 'alpha '(96 96))
 ;; The actual setting
 ;; (add-to-list 'default-frame-alist '(alpha 96 96))
-(add-to-list 'default-frame-alist '(alpha 100 100))
+;; (add-to-list 'default-frame-alist '(alpha 100 100))
 
 ;; Improve compatibility of macOS dark mode
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))

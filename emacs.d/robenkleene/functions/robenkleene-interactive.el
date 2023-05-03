@@ -597,10 +597,10 @@
                    (eval left)
                  left))
          (top (frame-parameter frame 'top))
-         ;; (width (frame-width frame))
-         ;; (height (frame-height frame))
-         (width (assoc-default 'width default-frame-alist))
-         (height (assoc-default 'height default-frame-alist))
+         (width (frame-width frame))
+         (height (frame-height frame))
+         ;; (width (assoc-default 'width default-frame-alist))
+         ;; (height (assoc-default 'height default-frame-alist))
          )
     (let ((frame (make-frame
                   `(
