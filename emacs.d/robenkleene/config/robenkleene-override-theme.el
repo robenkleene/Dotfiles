@@ -215,6 +215,8 @@
    `(org-level-8 ((t (:inherit org-level-1 :foreground nil :bold nil))))
    `(org-special-keyword ((t (:inherit rk-comment :bold t :foreground nil))))
    `(org-property-value ((t (:inherit rk-comment :foreground nil))))
+   ;; Agenda
+   `(org-agenda-date ((t (:inherit rk-header :foreground nil))))
 
    ;; Git Commit
    `(git-commit-summary ((t (:inherit rk-text :foreground nil :background unspecified))))
