@@ -204,8 +204,6 @@
    `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background unspecified :bold t))))
 
    ;; Org
-   `(org-todo ((t (:inherit rk-tag-active :foreground nil))))
-   `(org-done ((t (:inherit rk-tag-inactive :foreground nil))))
    `(org-code ((t (:inherit rk-comment :foreground nil))))
    `(org-level-1 ((t (:inherit rk-text2 :foreground nil))))
    `(org-level-2 ((t (:inherit org-level-1 :foreground nil :bold nil))))
