@@ -7,9 +7,11 @@
 (setq switch-to-buffer-obey-display-actions t)
 
 ;; Automatically select some types of buffers
-;; (setq help-window-select t)
+(setq help-window-select t)
 
 ;; Just automatically always select new buffers
+;; This works to target automatically focus all popups, but it breaks magit
+;; commit
 ;; (defun rk/switch-to-buffer (buffer alist)
 ;;   (select-window (display-buffer-pop-up-window
 ;;                   buffer alist)))
