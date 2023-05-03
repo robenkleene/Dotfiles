@@ -7,7 +7,14 @@
 (setq switch-to-buffer-obey-display-actions t)
 
 ;; Automatically select some types of buffers
-(setq help-window-select t)
+;; (setq help-window-select t)
+
+;; Just automatically always select new buffers
+;; (defun rk/switch-to-buffer (buffer alist)
+;;   (select-window (display-buffer-pop-up-window
+;;                   buffer alist)))
+;; (setq display-buffer-alist
+;;       '(("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
