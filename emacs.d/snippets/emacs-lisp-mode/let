@@ -1,6 +1,6 @@
 # key: let
 # name: let
 # --
-(let ((${1:variable-name} ${2:"value"}))
-  (${3:message variable-name})
-  )
+let ((${1:variable-name} ${2:"value"}))
+  $0
+  
