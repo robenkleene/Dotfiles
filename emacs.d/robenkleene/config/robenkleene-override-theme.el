@@ -203,6 +203,21 @@
    `(markdown-italic-face ((t (:inherit rk-text :foreground nil :background unspecified))))
    `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background unspecified :bold t))))
 
+   ;; Org
+   `(org-todo ((t (:inherit rk-tag-active :foreground nil))))
+   `(org-done ((t (:inherit rk-tag-inactive :foreground nil))))
+   `(org-code ((t (:inherit rk-comment :foreground nil))))
+   `(org-level-1 ((t (:inherit rk-text :foreground nil))))
+   `(org-level-2 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-3 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-4 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-5 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-6 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-7 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-level-8 ((t (:inherit org-level-1 :foreground nil :bold nil))))
+   `(org-special-keyword ((t (:inherit rk-comment :bold t :foreground nil))))
+   `(org-property-value ((t (:inherit rk-comment :foreground nil))))
+
    ;; Git Commit
    `(git-commit-summary ((t (:inherit rk-text :foreground nil :background unspecified))))
 
