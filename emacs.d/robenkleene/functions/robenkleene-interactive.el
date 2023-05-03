@@ -624,6 +624,14 @@
   ;; (view-mode)
   )
 
+(defun rk/git-pull-all-text (&optional arg)
+  "Pull all text."
+  (interactive)
+  (async-shell-command "~/.bin/git_pull_all -t" "*egit update*" "*egit update*")
+  ;; (switch-to-buffer-other-window "*egit update*")
+  ;; (view-mode)
+  )
+
 (defun grep-toggle-buffer ()
   "Toggle grep buffer."
   (interactive)

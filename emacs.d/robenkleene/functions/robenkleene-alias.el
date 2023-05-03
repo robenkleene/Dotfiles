@@ -10,6 +10,7 @@
                   (interactive)
                   (rk/source-control-open-web "-p")))
 (defalias 'u 'rk/egit-update)
+(defalias 'ut 'rk/git-pull-all-text)
 
 (defalias 'esh 'eshell)
 (defalias 'yd 'yank-to-diff-buffer)
