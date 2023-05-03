@@ -152,8 +152,6 @@
 (setq recentf-max-menu-items 100)
 (setq recentf-max-saved-items 100)
 
-;; Automatically select some types of buffers
-;; (setq help-window-select t)
 ;; Automatically jump to first help button
 ;; In practice, this is odd:
 ;; 1. Sometimes there isn't a button, so instead it jumps to the back button
@@ -364,10 +362,6 @@
 
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)
-
-;; Window Management
-;; Make display buffer rules more consistent
-(setq switch-to-buffer-obey-display-actions t)
 
 (provide 'robenkleene-config)
 ;; Local Variables:

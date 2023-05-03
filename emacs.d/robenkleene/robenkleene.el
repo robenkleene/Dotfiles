@@ -26,6 +26,7 @@
 
 ;; Config
 (require 'robenkleene-config)
+(require 'robenkleene-window-management)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
 (if window-system
