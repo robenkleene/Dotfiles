@@ -14,7 +14,7 @@
       'markdown-inline-code-face '(:foreground "white"))
      ;; Disable whitespace
      (face-remap-add-relative 'nobreak-space '(:background nil))
-     (face-remap-add-relative 'trailing-whitespace '(:background nil))
+     ;; (face-remap-add-relative 'trailing-whitespace '(:background nil))
      ;; (setq nobreak-space 'override-nobreak-space)
      (whitespace-mode 0)
 

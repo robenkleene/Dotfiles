@@ -78,8 +78,9 @@
 (column-number-mode)
 
 ;; Show trailing white space
-(setq-default show-trailing-whitespace t)
-(add-hook 'prog-mode-hook 'whitespace-mode)
+;; (setq-default show-trailing-whitespace t)
+(add-hook 'prog-mode-hook (lambda () (setq-local show-trailing-whitespace t)))
+(add-hook 'text-mode-hook (lambda () (setq-local show-trailing-whitespace t)))
 ;; (global-whitespace-mode)
 (setq whitespace-style (quote (
                                face
