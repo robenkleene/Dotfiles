@@ -620,8 +620,8 @@
   "Run update."
   (interactive)
   (async-shell-command "~/.bin/egit_update" "*egit update*" "*egit update*")
-  (switch-to-buffer-other-window "*egit update*")
-  (view-mode)
+  ;; (switch-to-buffer-other-window "*egit update*")
+  ;; (view-mode)
   )
 
 (defun grep-toggle-buffer ()
