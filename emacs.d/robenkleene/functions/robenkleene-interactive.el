@@ -114,12 +114,14 @@
   "Kill breakpoint'."
   (interactive)
   (if buffer-file-name
-      (progn
-        (kill-new buffer-file-name)
-        (message buffer-file-name)
+      (let* (
+             (path buffer-file-name)
+             (line-number (line-number-at-pos))
+             (command (concat "b " path ":"))
+             )
+        (message "command = %s." command)
         )
-    )
-  )
+    ))
 
 ;; Switch to
 
