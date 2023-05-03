@@ -134,6 +134,8 @@
     'consult-compile-error)
   (define-key rk/evil-leader-map (kbd "`")
     'eshell)
+  (define-key rk/evil-leader-map (kbd "y b")
+    'kill-breakpoint)
 
   (with-eval-after-load 'evil-maps
     (defun rk/ispell-save-word ()
