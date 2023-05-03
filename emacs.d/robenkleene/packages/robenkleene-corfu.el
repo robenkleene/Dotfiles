@@ -16,7 +16,9 @@
   :init
   (use-package corfu-terminal)
   (setq corfu-auto t
-        corfu-auto-delay 0
+        ;; Settings this too low is weird because of the way corfu auto-inserts
+        ;; on exact matches
+        ;; corfu-auto-delay 0
         corfu-auto-prefix 2
         completion-styles '(basic))
   ;; (global-corfu-mode)
