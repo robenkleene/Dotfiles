@@ -10,7 +10,7 @@
               ;; ("RET" . nil)
               ;; Fix conflict between `yas' and `corfu'
               ;; ("TAB" . nil)
-              ("<tab>" . nil)
+              ;; ("<tab>" . nil)
               ("C-y" . corfu-complete)
               )
   :init
