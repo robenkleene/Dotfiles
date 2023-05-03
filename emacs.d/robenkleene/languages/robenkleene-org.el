@@ -12,7 +12,7 @@
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
   (setq org-startup-indented t)
-  (setq org-todo-keywords '("TODO" "STARTED" "DONE"))
+  (setq org-todo-keywords '("TODO" "WIP" "DONE"))
   ;; Disable spell check in code blocks
   (defadvice org-mode-flyspell-verify
       (after org-mode-flyspell-verify-hack activate)
