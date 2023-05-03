@@ -116,10 +116,11 @@
   (if buffer-file-name
       (let* (
              (path buffer-file-name)
-             (line-number (line-number-at-pos))
-             (command (concat "b " path ":"))
+             (line-number (number-to-string (line-number-at-pos)))
+             (command (concat "b " path ":" line-number))
              )
-        (message "command = %s." command)
+        (message "%s" command)
+        (kill-new command)
         )
     ))
 
