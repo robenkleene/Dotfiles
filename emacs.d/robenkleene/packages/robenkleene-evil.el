@@ -136,8 +136,6 @@
     'eshell)
 
   (with-eval-after-load 'evil-maps
-    (define-key evil-normal-state-map (kbd "M-.") nil)
-    (define-key evil-normal-state-map (kbd "C-.") nil)
     (defun rk/ispell-save-word ()
       (interactive)
       (let ((current-location (point))
@@ -168,6 +166,8 @@
       (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     ;; Motion
     ;; Motion binds normal and visual
+    (define-key evil-motion-state-map (kbd "M-.") nil)
+    (define-key evil-motion-state-map (kbd "C-.") nil)
     (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
     (define-key evil-motion-state-map (kbd "C-w") rk/window-map)
@@ -176,7 +176,6 @@
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "<backspace>") 'scroll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
-    (define-key evil-motion-state-map (kbd "M-i") 'consult-imenu)
     ;; `nil' breaks `C-i' to jump forward in normal mode
     ;; But without setting this to `nil' (and then setting `C-i' to
     ;; `evil-jump-forward' in normal) `TAB' doesn't work to jump to links in
@@ -259,32 +258,16 @@
   ;; (evil-set-initial-state 'fundamental-mode 'normal)
   ;; Insert
   (evil-set-initial-state 'eshell-mode 'insert)
-  (evil-set-initial-state 'vterm-mode 'insert)
   ;; Git Commit
   (evil-set-initial-state 'with-editor-mode 'insert)
-
-  ;; Alternative way to start git commit in insert mode:
-  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   (with-eval-after-load 'dired
     (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
     )
 
-  (with-eval-after-load 'magit-mode
-    (evil-define-key 'motion magit-status-mode-map (kbd "TAB") 'magit-section-toggle)
-    )
-
   (with-eval-after-load 'esh-mode
     (evil-define-key 'normal eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
     (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
-    )
-
-  (with-eval-after-load 'help-mode
-    ;; Can't do this because it'll interfere with `TAB' to jump to next link in
-    ;; tag buffers
-    ;; (evil-define-key 'motion help-mode-map (kbd "C-i") 'help-go-forward)
-    ;; (evil-define-key 'motion help-mode-map (kbd "C-o") 'help-go-back)
-    (evil-define-key 'motion help-mode-map (kbd "C-t") 'help-go-back)
     )
 
   ;; For `wgrep'
