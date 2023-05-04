@@ -53,7 +53,7 @@
     (interactive)
     (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
         (progn
-          (async-shell-command "~/.bin/sgitt_auto" "*egit save*" "*egit save*")
+          (async-shell-command "~/.bin/sgitt_auto" "*egit*" "*egit*")
           ;; (switch-to-buffer-other-window "*egit save*")
           ;; (view-mode)
           )
