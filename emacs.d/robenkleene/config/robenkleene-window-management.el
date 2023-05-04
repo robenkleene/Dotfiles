@@ -16,12 +16,14 @@
 ;; commit
 (defun rk/switch-to-buffer (buffer alist)
   (let* (
-         (window (display-buffer-in-previous-window
+         (window (display-buffer-reuse-window
                   buffer alist))
-         (window (or window (get-buffer-window buffer)))
+         ;; (window (or window (get-buffer-window buffer)))
+         (window (or window (display-buffer-use-least-recent-window
+                             buffer alist)))
          (window (or window (display-buffer-pop-up-window
                              buffer alist)))
-         (window (or window (get-buffer-window buffer)))
+         ;; (window (or window (get-buffer-window buffer)))
          )
     (if (window-live-p window)
         (select-window window)
@@ -31,7 +33,7 @@
 
 (setq display-buffer-alist
       '(
-        ("*transient*" display-buffer-no-window)
+        ;; ("*transient*" display-buffer-no-window)
         ("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))
         )
       )
