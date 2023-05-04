@@ -18,7 +18,6 @@
   (let* (
          (window (display-buffer-reuse-window
                   buffer alist))
-         ;; (window (or window (get-buffer-window buffer)))
          (window (or window (display-buffer-use-least-recent-window
                              buffer alist)))
          (window (or window (display-buffer-pop-up-window
@@ -33,7 +32,6 @@
 
 (setq display-buffer-alist
       '(
-        ;; ("*transient*" display-buffer-no-window)
         ("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))
         )
       )
