@@ -299,6 +299,14 @@
                 )
               )
             )
+  ;; Fix a bug where `org-agenda-redo-all' from `\g' leaves agenda in Emacs
+  ;; state
+  (defadvice org-agenda-redo-all (before rk/org-agenda-redo-all-cleanup)
+    (if (evil-emacs-state-p)
+        (evil-motion-state)
+      )
+    )
+
   ;; Doesn't work for some reason
   ;; (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
   ;;   (if (evil-motion-state-p)
