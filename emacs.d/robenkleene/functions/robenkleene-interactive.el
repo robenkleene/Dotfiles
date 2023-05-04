@@ -619,16 +619,16 @@
 (defun rk/egit-update (&optional arg)
   "Run update."
   (interactive)
-  (async-shell-command "~/.bin/egit_update" "*egit update*" "*egit update*")
-  ;; (switch-to-buffer-other-window "*egit update*")
+  (async-shell-command "~/.bin/egit_update" "*egit*" "*egit*")
+  ;; (switch-to-buffer-other-window "*egit*")
   ;; (view-mode)
   )
 
 (defun rk/git-pull-all-text (&optional arg)
   "Pull all text."
   (interactive)
-  (async-shell-command "~/.bin/git_pull_all -t" "*egit update*" "*egit update*")
-  ;; (switch-to-buffer-other-window "*egit update*")
+  (async-shell-command "~/.bin/git_pull_all -t" "*egit*" "*egit*")
+  ;; (switch-to-buffer-other-window "*egit*")
   ;; (view-mode)
   )
 
