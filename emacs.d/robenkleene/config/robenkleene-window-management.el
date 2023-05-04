@@ -18,8 +18,10 @@
   (let* (
          (window (display-buffer-reuse-window
                   buffer alist))
-         (window (or window (display-buffer-use-least-recent-window
-                             buffer alist)))
+         ;; With two frames side-by-side, this will open the buffer in both
+         ;; frames!?
+         ;; (window (or window (display-buffer-use-least-recent-window
+         ;;                     buffer alist)))
          (window (or window (display-buffer-pop-up-window
                              buffer alist)))
          ;; (window (or window (get-buffer-window buffer)))
