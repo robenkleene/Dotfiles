@@ -40,7 +40,10 @@
         (if (and b e (< (point) e)) (setq rlt nil)))
       (setq ad-return-value rlt)))
 
-  (setq org-deadline-warning-days 3)
+  (setq org-deadline-warning-days 0)
+  (setq org-agenda-span 10
+        org-agenda-start-on-weekday nil
+        org-agenda-start-day "-3d")
 
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
