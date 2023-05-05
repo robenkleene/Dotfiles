@@ -249,6 +249,7 @@
                            'evil-visual-activate-hook t)))
 
   ;; Modes
+
   ;; Normal
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
@@ -272,7 +273,9 @@
     (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
     )
 
-  ;; For `wgrep'
+  ;; Troubleshooting
+
+  ;; `wgrep'
   (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
     (if (evil-motion-state-p)
         (evil-normal-state)
@@ -285,7 +288,7 @@
         )
     )
 
-  ;; For `wdired'
+  ;; `wdired'
   (defadvice wdired-change-to-dired-mode (after rk/wdired-change-to-dired-mode)
     (if (or (evil-normal-state-p) (evil-insert-state-p)
             (evil-motion-state)
@@ -299,6 +302,8 @@
                 )
               )
             )
+
+  ;; `org-agenda'
   ;; Fix a bug where `org-agenda-redo-all' from `\g' leaves agenda in Emacs
   ;; state
   (defadvice org-agenda-redo-all (before rk/org-agenda-redo-all-cleanup)
@@ -307,14 +312,8 @@
       )
     )
 
-  ;; Doesn't work for some reason
-  ;; (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
-  ;;   (if (evil-motion-state-p)
-  ;;       (evil-normal-state)
-  ;;     )
-  ;;   )
-
   ;; Packages
+
   (use-package evil-visualstar
     :init
     (global-evil-visualstar-mode)
