@@ -12,6 +12,8 @@
   :bind (
          ("C-x i" . consult-imenu)
          ("C-x b" . consult-buffer)
+         ("C-c r" . consult-recent-file)
+         ("C-c q" . consult-compile)
          )
   :commands
   (rk/consult-doc

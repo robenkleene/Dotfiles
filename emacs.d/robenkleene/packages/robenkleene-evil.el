@@ -136,6 +136,8 @@
     'eshell)
   (define-key rk/evil-leader-map (kbd "y b")
     'kill-breakpoint)
+  (define-key rk/evil-leader-map (kbd "r")
+    'consult-recent-file)
 
   (with-eval-after-load 'evil-maps
     (defun rk/ispell-save-word ()
