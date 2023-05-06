@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 (eval-when-compile
   (unless (bound-and-true-p package--initialized)
     (package-initialize))
@@ -10,10 +9,8 @@
 (use-package pulsar
   :init
   (pulsar-global-mode)
-  ;; integration with the `consult' package:
   (add-hook 'consult-after-jump-hook #'pulsar-reveal-entry)
-
-  ;; integration with the built-in `imenu':
+  (add-hook 'next-error-hook #'pulsar-pulse-line)
   (add-hook 'imenu-after-jump-hook #'pulsar-reveal-entry)
   )
 
