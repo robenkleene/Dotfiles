@@ -21,6 +21,7 @@
                                          rk/other-window-reverse
                                          rk/split-vertical
                                          rk/split-horizontal
+                                         rk/delete-window
                                          )))
   )
 
