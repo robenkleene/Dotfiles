@@ -21,5 +21,3 @@
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
 ;;; robenkleene-pulsar.el ends here
-
-
