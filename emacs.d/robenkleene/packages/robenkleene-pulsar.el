@@ -11,11 +11,9 @@
   :init
   (pulsar-global-mode)
   ;; integration with the `consult' package:
-  (add-hook 'consult-after-jump-hook #'pulsar-recenter-top)
   (add-hook 'consult-after-jump-hook #'pulsar-reveal-entry)
 
   ;; integration with the built-in `imenu':
-  (add-hook 'imenu-after-jump-hook #'pulsar-recenter-top)
   (add-hook 'imenu-after-jump-hook #'pulsar-reveal-entry)
   )
 
