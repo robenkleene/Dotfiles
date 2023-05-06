@@ -17,11 +17,16 @@
   (setq pulsar-face 'pulsar-magenta)
   (setq pulsar-pulse-functions (append pulsar-pulse-functions
                                        '(
-                                         display-buffer
                                          rk/other-window-reverse
                                          rk/split-vertical
                                          rk/split-horizontal
                                          rk/delete-window
+                                         eshell
+                                         dired-jump
+                                         describe-function
+                                         describe-mode
+                                         describe-key
+                                         magit-status
                                          )))
   )
 
