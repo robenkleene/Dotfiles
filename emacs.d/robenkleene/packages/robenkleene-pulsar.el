@@ -21,6 +21,7 @@
                                          rk/split-vertical
                                          rk/split-horizontal
                                          rk/delete-window
+                                         rk/switch-to-buffer
                                          eshell
                                          dired-jump
                                          describe-function
