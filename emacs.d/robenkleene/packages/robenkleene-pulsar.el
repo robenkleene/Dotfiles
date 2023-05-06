@@ -13,7 +13,7 @@
   (add-hook 'next-error-hook #'pulsar-pulse-line)
   (add-hook 'imenu-after-jump-hook #'pulsar-reveal-entry)
   ;; (setq pulsar-delay 0.02)
-  (setq pulsar-iterations 3)
+  (setq pulsar-iterations 15)
   (setq pulsar-face 'pulsar-magenta)
   (setq pulsar-pulse-functions (append pulsar-pulse-functions
                                        '(
