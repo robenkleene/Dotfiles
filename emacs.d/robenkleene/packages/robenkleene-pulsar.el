@@ -12,8 +12,16 @@
   (add-hook 'consult-after-jump-hook #'pulsar-reveal-entry)
   (add-hook 'next-error-hook #'pulsar-pulse-line)
   (add-hook 'imenu-after-jump-hook #'pulsar-reveal-entry)
-  (setq pulsar-delay 0.1)
+  ;; (setq pulsar-delay 0.02)
+  (setq pulsar-iterations 3)
   (setq pulsar-face 'pulsar-magenta)
+  (setq pulsar-pulse-functions (append pulsar-pulse-functions
+                                       '(
+                                         display-buffer
+                                         rk/other-window-reverse
+                                         rk/split-vertical
+                                         rk/split-horizontal
+                                         )))
   )
 
 (provide 'robenkleene-pulsar)

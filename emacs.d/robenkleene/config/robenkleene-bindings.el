@@ -103,16 +103,10 @@
 (define-key rk/window-map (kbd ":") 'switch-to-minibuffer)
 ;; For some reason this also overwrites `C-w C-w'
 ;; (define-key rk/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
-(define-key rk/window-map (kbd "W") (lambda () (interactive) (other-window -1)))
+(define-key rk/window-map (kbd "W") 'rk/other-window-reverse)
 (define-key rk/window-map (kbd "q") 'tab-close)
-(define-key rk/window-map (kbd "v")
-  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key rk/window-map (kbd "C-v")
-  (lambda () (interactive) (split-window-horizontally) (other-window 1)))
-(define-key rk/window-map (kbd "s")
-  (lambda () (interactive) (split-window-vertically) (other-window 1)))
-(define-key rk/window-map (kbd "C-s")
-  (lambda () (interactive) (split-window-vertically) (other-window 1)))
+(define-key rk/window-map (kbd "v") 'rk/split-horizontal)
+(define-key rk/window-map (kbd "s") 'rk/split-vertical)
 (define-key rk/window-map (kbd "c")
   (lambda () (interactive)
     (condition-case nil (delete-window) (error (tab-close)))
@@ -126,6 +120,25 @@
 (define-key rk/window-map (kbd "=") 'balance-windows)
 (define-key rk/window-map (kbd "C-o") 'winner-undo)
 (define-key rk/window-map (kbd "C-i") 'winner-redo)
+
+;; Use functions instead of lambdas for these because they're more compatible
+;; with `post-command-hook', e.g., for Pulsar
+(defun rk/other-window-reverse (&optional arg)
+  (interactive)
+  (other-window -1)
+  )
+
+(defun rk/split-horizontal (&optional arg)
+  (interactive)
+  (split-window-horizontally)
+  (call-interactively 'other-window)
+  )
+
+(defun rk/split-vertical (&optional arg)
+  (interactive)
+  (split-window-vertically)
+  (call-interactively 'other-window)
+  )
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
