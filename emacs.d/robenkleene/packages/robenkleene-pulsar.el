@@ -12,6 +12,8 @@
   (add-hook 'consult-after-jump-hook #'pulsar-reveal-entry)
   (add-hook 'next-error-hook #'pulsar-pulse-line)
   (add-hook 'imenu-after-jump-hook #'pulsar-reveal-entry)
+  (setq pulsar-delay 0.1)
+  (setq pulsar-face 'pulsar-magenta)
   )
 
 (provide 'robenkleene-pulsar)
