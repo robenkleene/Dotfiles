@@ -68,6 +68,7 @@
 (require 'robenkleene-monky)
 (require 'robenkleene-esup)
 (require 'robenkleene-corfu)
+(require 'robenkleene-pulsar)
 
 ;; Completion
 (require 'robenkleene-vertico)
