@@ -127,13 +127,13 @@
 (defun rk/split-horizontal (&optional arg)
   (interactive)
   (split-window-horizontally)
-  (other-window)
+  (other-window 1)
   )
 
 (defun rk/split-vertical (&optional arg)
   (interactive)
   (split-window-vertically)
-  (other-window)
+  (other-window 1)
   )
 
 (defun rk/delete-window (&optional arg)
