@@ -21,13 +21,14 @@
                                          rk/split-vertical
                                          rk/split-horizontal
                                          rk/delete-window
-                                         rk/switch-to-buffer
-                                         eshell
-                                         dired-jump
-                                         describe-function
-                                         describe-mode
-                                         describe-key
-                                         magit-status
+                                         ;; Not sure why none of these work?
+                                         ;; rk/switch-to-buffer
+                                         ;; eshell
+                                         ;; dired-jump
+                                         ;; describe-function
+                                         ;; describe-mode
+                                         ;; describe-key
+                                         ;; magit-status
                                          )))
   ;; Not sure why this isn't working?
   ;; (defadvice select-window (after rk/switch-to-buffer-pulsar)
