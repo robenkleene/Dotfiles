@@ -29,6 +29,13 @@
                                          describe-key
                                          magit-status
                                          )))
+  ;; Not sure why this isn't working?
+  ;; (defadvice select-window (after rk/switch-to-buffer-pulsar)
+  ;;   "Trigger Pulsar after switching to a buffer."
+  ;;   (pulsar-pulse-line)
+  ;;   )
+  ;; Not sure why this isn't working?
+  ;; (add-function :after after-focus-change-function #'pulsar-pulse-line)
   )
 
 (provide 'robenkleene-pulsar)
