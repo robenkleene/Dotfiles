@@ -21,6 +21,7 @@
                                          rk/split-vertical
                                          rk/split-horizontal
                                          rk/delete-window
+<<<<<<< HEAD
                                          ;; Not sure why none of these work?
                                          ;; rk/switch-to-buffer
                                          ;; eshell
@@ -29,6 +30,24 @@
                                          ;; describe-mode
                                          ;; describe-key
                                          ;; magit-status
+||||||| parent of 72cb20f5 (Flash file)
+                                         rk/switch-to-buffer
+                                         eshell
+                                         dired-jump
+                                         describe-function
+                                         describe-mode
+                                         describe-key
+                                         magit-status
+=======
+                                         rk/switch-to-buffer
+                                         eshell
+                                         dired-jump
+                                         dired-find-file
+                                         describe-function
+                                         describe-mode
+                                         describe-key
+                                         magit-status
+>>>>>>> 72cb20f5 (Flash file)
                                          )))
   ;; Not sure why this isn't working?
   ;; (defadvice select-window (after rk/switch-to-buffer-pulsar)
