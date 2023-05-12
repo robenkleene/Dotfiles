@@ -277,15 +277,6 @@
     (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
     )
 
-  ;; Integrations
-
-  (with-eval-after-load 'pulsar
-    (setq pulsar-pulse-functions (append pulsar-pulse-functions
-                                         '(
-                                           evil-ex-nohighlight
-                                           )))
-    )
-
   ;; Troubleshooting
 
   ;; `wgrep'
