@@ -153,6 +153,26 @@
   (switch-to-buffer (rk/create-untitled-buffer))
   )
 
+(defun untitled-create-other-window ()
+  "Open a new notes untitled buffer in the other window."
+  (interactive)
+  (switch-to-buffer-other-window (rk/create-untitled-buffer))
+  )
+
+(defun untitled-create-split-horizontally ()
+  "Open a new notes untitled buffer in the other window."
+  (interactive)
+  (rk/split-horizontally)
+  (switch-to-buffer (rk/create-untitled-buffer))
+  )
+
+(defun untitled-create-split-vertically ()
+  "Open a new notes untitled buffer in the other window."
+  (interactive)
+  (rk/split-vertically)
+  (switch-to-buffer-other-window (rk/create-untitled-buffer))
+  )
+
 ;; Slug Project
 
 (defun slug-project-create (title dir)
