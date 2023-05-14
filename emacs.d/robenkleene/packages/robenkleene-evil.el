@@ -197,6 +197,9 @@
   ;; Ex Commands
   (evil-ex-define-cmd "Ei" 'edit-init)
   (evil-ex-define-cmd "Pq" 'yank-to-grep-buffer)
+  (evil-ex-define-cmd "Unew" 'untitled-create-split-vertically)
+  (evil-ex-define-cmd "Uvnew" 'untitled-create-split-horizontally)
+  (evil-ex-define-cmd "Uenew" 'untitled-create)
   (evil-define-command rk/ex-rg (arg)
     (interactive "<a>")
     (compilation-start
