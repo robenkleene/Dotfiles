@@ -282,7 +282,8 @@
 ;; Don't show tab bar for one tab
 ;; This causes the echo area to disappear when a new frame is added
 (if window-system
-    (setq tab-bar-show nil)
+    ;; (setq tab-bar-show nil)
+    (setq tab-bar-show t)
   (setq tab-bar-show 1)
   )
 ;; (setq tab-bar-show nil)
