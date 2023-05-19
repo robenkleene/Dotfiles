@@ -170,7 +170,7 @@
   "Open a new notes untitled buffer in the other window."
   (interactive)
   (rk/split-vertically)
-  (switch-to-buffer-other-window (rk/create-untitled-buffer))
+  (switch-to-buffer (rk/create-untitled-buffer))
   )
 
 ;; Slug Project
