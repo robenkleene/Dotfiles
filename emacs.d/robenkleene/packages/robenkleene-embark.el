@@ -25,14 +25,15 @@
   (setq prefix-help-command #'embark-prefix-help-command)
 
   :config
-  (defun rk/embark-reveal-in-finder (file)
+  (defun embark-reveal-in-finder (file)
     "Reveal `file' in finder."
     (interactive "GFile: ")
     (shell-command (concat "open -R "
                            (shell-quote-argument file))
                    )
     )
-  (define-key embark-file-map "R" #'rk/embark-reveal-in-finder)
+  (define-key embark-file-map "M-r" #'embark-reveal-in-finder)
+  (define-key embark-region-map "M-r" #'embark-reveal-in-finder)
 
   ;; Hide the mode line of the Embark live/completions buffers
   (add-to-list 'display-buffer-alist
