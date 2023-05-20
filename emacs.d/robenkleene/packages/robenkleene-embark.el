@@ -28,9 +28,12 @@
   (defun embark-reveal-in-finder (file)
     "Reveal `file' in finder."
     (interactive "GFile: ")
-    (shell-command (concat "open -R "
-                           (shell-quote-argument file))
-                   )
+    (if (file-exists-p file)
+        (shell-command (concat "open -R "
+                               (shell-quote-argument (expand-file-name file)))
+                       )
+
+      )
     )
   (define-key embark-file-map "R" #'embark-reveal-in-finder)
   (define-key embark-region-map "R" #'embark-reveal-in-finder)
