@@ -191,6 +191,8 @@
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
     (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
+    ;; Conflicts with Dired shell command, also not part of the standard Vim API
+    (define-key evil-motion-state-map (kbd "!") nil)
     ;; Visual
     (define-key evil-visual-state-map (kbd "q") 'evil-force-normal-state)
     )
