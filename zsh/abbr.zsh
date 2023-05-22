@@ -7,6 +7,7 @@ abbreviations=(
 'tl' 'tig'
 'mdv' 'mosh aresdev -- tmux attach'
 'g' 'git'
+'a' 'rg'
 # `ga`: `git add`
 'gaac' 'git add -A :/ && git commit'
 # `gb`: `git branch`

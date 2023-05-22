@@ -10,6 +10,7 @@ function fish_sync_abbr
     abbr -a v "$VIM_COMMAND"
     abbr -a b 'bat'
     abbr -a z 'zsh'
+    abbr -a a 'rg'
     abbr -a mdv 'mosh aresdev'
     abbr -a ts 'tig status +3'
     abbr -a tl 'tig'
