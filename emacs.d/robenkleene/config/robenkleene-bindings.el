@@ -107,6 +107,8 @@
 (define-key rk/window-map (kbd "q") 'tab-close)
 (define-key rk/window-map (kbd "v") 'rk/split-horizontally)
 (define-key rk/window-map (kbd "s") 'rk/split-vertically)
+(define-key rk/window-map (kbd "C-v") 'rk/split-horizontally)
+(define-key rk/window-map (kbd "C-s") 'rk/split-vertically)
 (define-key rk/window-map (kbd "c") 'rk/delete-window)
 (define-key rk/window-map (kbd "o") 'delete-other-windows)
 (define-key rk/window-map (kbd "<") 'shrink-window-horizontally)
