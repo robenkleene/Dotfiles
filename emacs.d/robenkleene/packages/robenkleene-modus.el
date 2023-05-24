@@ -8,6 +8,10 @@
   (require 'use-package))
 (use-package modus-themes
   :init
+  ;; Remove borders around windows
+  (setq modus-themes-common-palette-overrides
+        '((fringe unspecified)))
+
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil
         modus-themes-region '(bg-only no-extend))
