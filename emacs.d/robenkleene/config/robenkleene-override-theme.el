@@ -110,7 +110,7 @@
   (set-face-attribute 'rk-string nil :foreground string)
   (set-face-attribute 'rk-diff-add nil :inherit 'rk-success)
   (set-face-attribute 'rk-diff-change nil :inherit 'rk-change)
-  (set-face-attribute 'rk-diff-remove nil :inherit 'rk-error :underline nil)
+  (set-face-attribute 'rk-diff-remove nil :inherit 'rk-error :underline 'unspecified)
   (set-face-attribute 'rk-error nil :foreground error :underline t)
   (set-face-attribute 'rk-error-highlight nil :background error)
   (set-face-attribute 'rk-italic nil :inherit 'rk-text :slant 'oblique)
@@ -137,7 +137,7 @@
 
   ;; Styles
   ;; Prefer to use the default text colors
-  (set-face-attribute 'italic nil :underline nil :slant 'italic)
+  (set-face-attribute 'italic nil :underline 'unspecified :slant 'italic)
   (set-face-attribute 'bold nil :bold t)
 
   ;; Syntax
@@ -150,17 +150,17 @@
   ;; Packages
 
   ;; Whitespace
-  (set-face-attribute 'trailing-whitespace nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  (set-face-attribute 'nobreak-space nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  (set-face-attribute 'trailing-whitespace nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
+  (set-face-attribute 'nobreak-space nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
   ;; (with-eval-after-load 'whitespace
-  ;;   (set-face-attribute 'whitespace-space-after-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  ;;   (set-face-attribute 'whitespace-space-before-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  ;;   (set-face-attribute 'whitespace-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;;   (set-face-attribute 'whitespace-space-after-tab nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
+  ;;   (set-face-attribute 'whitespace-space-before-tab nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
+  ;;   (set-face-attribute 'whitespace-tab nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
   ;;   (set-face-attribute 'whitespace-line nil :inherit 'rk-warning :background 'unspecified)
   ;;   )
 
   ;; show-paren
-  (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground nil :bold t)
+  (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground 'unspecified :bold t)
   (set-face-attribute 'show-paren-mismatch nil :inherit 'rk-error)
 
   ;; Evil Goggle
@@ -169,47 +169,47 @@
 
   ;; Markdown
   (with-eval-after-load 'markdown-mode
-    (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-header-face-4 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-header-face-5 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-header-face-6 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'markdown-markup-face nil :inherit 'rk-comment :foreground nil)
-    (set-face-attribute 'markdown-header-delimiter-face nil :inherit 'rk-comment :foreground nil)
-    (set-face-attribute 'markdown-link-face nil :inherit 'rk-link :foreground nil)
-    (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground nil)
-    (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-inline-code-face nil :inherit 'markdown-pre-face :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-blockquote-face nil :inherit 'default :foreground nil)
-    (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground nil)
-    (set-face-attribute 'markdown-list-face nil :inherit 'default :foreground nil)
-    (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-comment :slant 'normal :foreground nil)
-    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground nil :background 'unspecified :bold t)
+    (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-4 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-5 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-6 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-markup-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-delimiter-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-link-face nil :inherit 'rk-link :foreground 'unspecified)
+    (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-inline-code-face nil :inherit 'markdown-pre-face :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-blockquote-face nil :inherit 'default :foreground 'unspecified)
+    (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-list-face nil :inherit 'default :foreground 'unspecified)
+    (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-comment :slant 'normal :foreground 'unspecified)
+    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified :bold t)
     )
 
   ;; Org
   (with-eval-after-load 'org
-    (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground nil)
-    (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground nil)
-    (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground nil :bold nil)
-    (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground nil)
-    (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
+    (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
     ;; Agenda
-    (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
     )
 
   ;; Git Commit
   (with-eval-after-load 'magit
-    (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground nil :background 'unspecified)
+    (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
     )
 
   )
