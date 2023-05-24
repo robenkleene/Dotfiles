@@ -133,7 +133,6 @@
   (set-face-attribute 'rk-text nil :foreground gray6)
   (set-face-attribute 'rk-text2 nil :foreground gray5)
   (set-face-attribute 'rk-warning nil :foreground warning :underline t)
-  ;; (set-face-attribute 'rk-whitespace nil :inherit 'rk-warning)
   (set-face-attribute 'rk-whitespace nil :inherit 'rk-highlight-line)
 
   ;; Styles
@@ -166,7 +165,7 @@
   (set-face-attribute 'evil-goggles-default-face nil :inherit 'region)
 
   ;; Markdown
-  (with-eval-after-load 'markdown
+  (with-eval-after-load 'markdown-mode
     (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground nil)
     (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground nil)
     (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground nil)
@@ -179,11 +178,11 @@
     (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground nil)
     (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
     (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-inline-code-face nil :inherit markdown-pre-face :foreground nil :background 'unspecified)
-    (set-face-attribute 'markdown-blockquote-face nil :inherit default :foreground nil)
+    (set-face-attribute 'markdown-inline-code-face nil :inherit 'markdown-pre-face :foreground nil :background 'unspecified)
+    (set-face-attribute 'markdown-blockquote-face nil :inherit 'default :foreground nil)
     (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground nil)
     (set-face-attribute 'markdown-list-face nil :inherit 'default :foreground nil)
-    (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-comment :slant normal :foreground nil)
+    (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-comment :slant 'normal :foreground nil)
     (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground nil :background 'unspecified)
     (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground nil :background 'unspecified :bold t)
     )
