@@ -140,9 +140,12 @@
   (set-face-attribute 'italic nil :underline nil :slant 'italic)
   (set-face-attribute 'bold nil :bold t)
 
-   ;;;; Syntax
+  ;; Syntax
   (set-face-attribute 'font-lock-comment-delimiter-face nil :foreground comment :slant 'oblique)
   (set-face-attribute 'font-lock-comment-face nil :foreground comment :slant 'oblique)
+
+  ;; Fill Column
+  (set-face-attribute 'fill-column-indicator nil :foreground callout-bg :background 'unspecified)
 
   ;; Packages
 
