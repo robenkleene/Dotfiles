@@ -25,6 +25,13 @@
                     vc-handled-backends))
   )
 
+(defadvice vc-print-root-log (before rk/vc-print-root-log-hg)
+  "Support for `hg'"
+  (setq-local vc-handled-backends
+              (cons #'Hg
+                    vc-handled-backends))
+  )
+
 (defun rk/vc-print-log-startup ()
   "`vc' log in current window."
   (interactive)
