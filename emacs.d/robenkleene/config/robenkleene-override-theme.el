@@ -148,12 +148,14 @@
   ;; Packages
 
   ;; Whitespace
-  ;; (set-face-attribute 'whitespace-space-after-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  ;; (set-face-attribute 'whitespace-space-before-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  ;; (set-face-attribute 'whitespace-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
   (set-face-attribute 'trailing-whitespace nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
   (set-face-attribute 'nobreak-space nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
-  ;; (set-face-attribute 'whitespace-line nil :inherit 'rk-warning :background 'unspecified)
+  ;; (with-eval-after-load 'whitespace
+  ;;   (set-face-attribute 'whitespace-space-after-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;;   (set-face-attribute 'whitespace-space-before-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;;   (set-face-attribute 'whitespace-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;;   (set-face-attribute 'whitespace-line nil :inherit 'rk-warning :background 'unspecified)
+  ;;   )
 
   ;; show-paren
   (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground nil :bold t)
