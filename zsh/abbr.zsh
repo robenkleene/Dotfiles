@@ -8,9 +8,9 @@ abbreviations=(
 'mdv' 'mosh aresdev -- tmux attach'
 'g' 'git'
 'a' 'rg'
-# `ga`: `git add`
+# git
+'gc' 'git commit'
 'gaac' 'git add -A :/ && git commit'
-# `gb`: `git branch`
 'gb' 'git branch'
 'gco' 'git checkout'
 'gcob' 'git checkout -b'
