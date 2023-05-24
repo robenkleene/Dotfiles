@@ -78,7 +78,7 @@
 (defface rk-diff-remove '((t)) "Diff remove" :group 'rk-faces)
 (defface rk-error '((t)) "Errors" :group 'rk-faces)
 (defface rk-error-highlight '((t)) "Error Highlight" :group 'rk-faces)
-(defface rk-header'((t)) "Header" :group 'rk-faces)
+(defface rk-header '((t)) "Header" :group 'rk-faces)
 (defface rk-highlight '((t)) "Highlight" :group 'rk-faces)
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
 (defface rk-italic'((t)) "Header" :group 'rk-faces)
@@ -101,127 +101,113 @@
 (defface rk-whitespace '((t)) "Whitespace" :group 'rk-faces)
 
 (kleene-dark-with-color-variables
-  (custom-set-faces
-    ;;;; Styles
-   `(rk-bold ((t (:inherit rk-header))))
-   `(rk-callout ((t (:background ,callout-bg))))
-   `(rk-change ((t (:foreground ,change))))
-   `(rk-change-highlight ((t (:background ,change))))
-   `(rk-comment ((t (:foreground ,comment))))
-   `(rk-string ((t (:foreground ,string))))
-   `(rk-diff-add ((t (:inherit rk-success))))
-   `(rk-diff-change ((t (:inherit rk-change))))
-   `(rk-diff-remove ((t (:inherit rk-error :underline nil))))
-   `(rk-error ((t (:foreground ,error :underline t))))
-   `(rk-error-highlight ((t (:background ,error))))
-   `(rk-italic ((t (:inherit rk-text :slant oblique))))
-   `(rk-warning-highlight
-     ((t (:background ,warning :foreground ,black :bold t))))
-   `(rk-header ((t (:foreground ,gray6 :bold t))))
-   `(rk-highlight-line ((t (:background ,highlight-line-bg))))
-   `(rk-highlight ((t (:background ,match-bg))))
-   `(rk-link ((t (:foreground ,link :underline t))))
-   `(rk-match ((t (:background ,match-bg))))
-   `(rk-modeline-active
-     ((t
-       (:foreground ,modeline-active-fg :background ,modeline-active-bg))))
-   `(rk-modeline-inactive
-     ((t
-       (:foreground ,modeline-inactive-fg :background ,modeline-inactive-bg))))
-   `(rk-none ((t (:foreground nil :background nil :bold nil :underline nil))))
-   `(rk-modeline-inactive
-     ((t
-       (:foreground ,modeline-active-fg :background ,modeline-inactive-bg))))
-   `(rk-popup-match ((t (:foreground ,link))))
-   `(rk-popup-selection ((t (:inherit rk-match))))
-   `(rk-prompt ((t (:inherit rk-match :bold t))))
-   `(rk-search ((t (:background ,search-bg :foreground ,white))))
-   `(rk-success ((t (:foreground ,success))))
-   `(rk-tag-active ((t (:inherit rk-modeline-active :bold t))))
-   `(rk-tag-inactive ((t (:inherit rk-modeline-inactive :bold t))))
-   `(rk-text ((t (:foreground ,gray6))))
-   `(rk-text2 ((t (:foreground ,gray5))))
-   `(rk-warning ((t (:foreground ,warning :underline t))))
-   ;; `(rk-whitespace ((t (:inherit rk-warning))))
-   `(rk-whitespace ((t (:inherit rk-highlight-line))))
 
-   ;; Styles
-   ;; Prefer to use the default text colors
-   ;; `(default ((t (:foreground ,gray6))))
-   `(italic ((t (:underline nil :slant italic))))
-   `(bold ((t (:bold t))))
+  (set-face-attribute 'rk-bold nil :inherit 'rk-header)
+  (set-face-attribute 'rk-callout nil :background callout-bg)
+  (set-face-attribute 'rk-change nil :foreground change)
+  (set-face-attribute 'rk-change-highlight nil :background change)
+  (set-face-attribute 'rk-comment nil :foreground comment)
+  (set-face-attribute 'rk-string nil :foreground string)
+  (set-face-attribute 'rk-diff-add nil :inherit 'rk-success)
+  (set-face-attribute 'rk-diff-change nil :inherit 'rk-change)
+  (set-face-attribute 'rk-diff-remove nil :inherit 'rk-error :underline nil)
+  (set-face-attribute 'rk-error nil :foreground error :underline t)
+  (set-face-attribute 'rk-error-highlight nil :background error)
+  (set-face-attribute 'rk-italic nil :inherit 'rk-text :slant 'oblique)
+  (set-face-attribute 'rk-warning-highlight nil :background warning :foreground black :bold t)
+  (set-face-attribute 'rk-header nil :foreground gray6 :bold t)
+  (set-face-attribute 'rk-highlight-line nil :background highlight-line-bg)
+  (set-face-attribute 'rk-highlight nil :background match-bg)
+  (set-face-attribute 'rk-link nil :foreground link :underline t)
+  (set-face-attribute 'rk-match nil :background match-bg)
+  (set-face-attribute 'rk-modeline-active nil :foreground modeline-active-fg :background modeline-active-bg)
+  (set-face-attribute 'rk-modeline-inactive nil :foreground modeline-inactive-fg :background modeline-inactive-bg)
+  (set-face-attribute 'rk-modeline-inactive nil :foreground modeline-active-fg :background modeline-inactive-bg)
+  (set-face-attribute 'rk-popup-match nil :foreground link)
+  (set-face-attribute 'rk-popup-selection nil :inherit 'rk-match)
+  (set-face-attribute 'rk-prompt nil :inherit 'rk-match :bold t)
+  (set-face-attribute 'rk-search nil :background search-bg :foreground white)
+  (set-face-attribute 'rk-success nil :foreground success)
+  (set-face-attribute 'rk-tag-active nil :inherit 'rk-modeline-active :bold t)
+  (set-face-attribute 'rk-tag-inactive nil :inherit 'rk-modeline-inactive :bold t)
+  (set-face-attribute 'rk-text nil :foreground gray6)
+  (set-face-attribute 'rk-text2 nil :foreground gray5)
+  (set-face-attribute 'rk-warning nil :foreground warning :underline t)
+  ;; (set-face-attribute 'rk-whitespace nil :inherit 'rk-warning)
+  (set-face-attribute 'rk-whitespace nil :inherit 'rk-highlight-line)
+
+  ;; Styles
+  ;; Prefer to use the default text colors
+  (set-face-attribute 'italic nil :underline nil :slant 'italic)
+  (set-face-attribute 'bold nil :bold t)
 
    ;;;; Syntax
-   `(font-lock-comment-delimiter-face ((t (:foreground ,comment :slant oblique))))
-   `(font-lock-comment-face ((t (:foreground ,comment :slant oblique))))
+  (set-face-attribute 'font-lock-comment-delimiter-face nil :foreground comment :slant 'oblique)
+  (set-face-attribute 'font-lock-comment-face nil :foreground comment :slant 'oblique)
 
-   ;; This doesn't work for some reason?
-   ;; `(region ((t (:inherit rk-match))))
-   ;; `(region ((t (:background "#45475A"))))
+  ;; Packages
 
-   ;; Using bold on the current line caused a bug where the current line
-   ;; sometimes shifted slightly
-   ;; `(line-number-current-line ((t (:bold nil :background unspecified))))
-   ;; `(line-number-current-line ((t (:bold nil))))
+  ;; Whitespace
+  ;; (set-face-attribute 'whitespace-space-after-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;; (set-face-attribute 'whitespace-space-before-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;; (set-face-attribute 'whitespace-tab nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  (set-face-attribute 'trailing-whitespace nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  (set-face-attribute 'nobreak-space nil :inherit 'rk-whitespace :background 'unspecified :underline nil)
+  ;; (set-face-attribute 'whitespace-line nil :inherit 'rk-warning :background 'unspecified)
 
-   ;; Packages
+  ;; show-paren
+  (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground nil :bold t)
+  (set-face-attribute 'show-paren-mismatch nil :inherit 'rk-error)
 
-   ;; Whitespace
-   `(whitespace-space-after-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
-   `(whitespace-space-before-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
-   `(whitespace-tab ((t (:inherit rk-whitespace :background unspecified :underline nil))))
-   `(trailing-whitespace ((t (:inherit rk-whitespace :background unspecified :underline nil))))
-   `(nobreak-space ((t (:inherit rk-whitespace :background unspecified :underline nil))))
-   `(whitespace-line ((t (:inherit rk-warning :background unspecified))))
+  ;; Evil Goggle
+  ;; This should be the default but isn't working for some reason
+  (set-face-attribute 'evil-goggles-default-face nil :inherit 'region)
 
-   ;; show-paren
-   `(show-paren-match ((t (:underline t :background unspecified :foreground nil :bold t))))
-   `(show-paren-mismatch ((t (:inherit rk-error))))
+  ;; Markdown
+  (with-eval-after-load 'markdown
+    (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-header-face-4 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-header-face-5 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-header-face-6 nil :inherit 'rk-header :foreground nil)
+    (set-face-attribute 'markdown-markup-face nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'markdown-header-delimiter-face nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'markdown-link-face nil :inherit 'rk-link :foreground nil)
+    (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
+    (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground nil :background 'unspecified)
+    (set-face-attribute 'markdown-inline-code-face nil :inherit markdown-pre-face :foreground nil :background 'unspecified)
+    (set-face-attribute 'markdown-blockquote-face nil :inherit default :foreground nil)
+    (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'markdown-list-face nil :inherit default :foreground nil)
+    (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-comment :slant normal :foreground nil)
+    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground nil :background 'unspecified)
+    (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground nil :background 'unspecified :bold t)
+    )
 
-   ;; Evil Goggle
-   ;; This should be the default but isn't working for some reason
-   `(evil-goggles-default-face ((t (:inherit region))))
+  ;; Org
+  (with-eval-after-load 'org
+    (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground nil)
+    (set-face-attribute 'org-level-1 nil :inherit 'rk-text2 :foreground nil)
+    (set-face-attribute 'org-level-2 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-3 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-4 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-5 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-6 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-7 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-level-8 nil :inherit org-level-1 :foreground nil :bold nil)
+    (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground nil)
+    (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground nil)
+    ;; Agenda
+    (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground nil)
+    )
 
-   ;; Markdown
-   `(markdown-header-face-1 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-header-face-2 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-header-face-3 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-header-face-4 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-header-face-5 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-header-face-6 ((t (:inherit rk-header :foreground nil))))
-   `(markdown-markup-face ((t (:inherit rk-comment :foreground nil))))
-   `(markdown-header-delimiter-face ((t (:inherit rk-comment :foreground nil))))
-   `(markdown-link-face ((t (:inherit rk-link :foreground nil))))
-   `(markdown-url-face ((t (:inherit rk-comment :foreground nil))))
-   `(markdown-pre-face ((t (:inherit rk-comment :foreground nil :background unspecified))))
-   `(markdown-code-face ((t (:inherit rk-comment :foreground nil :background unspecified))))
-   `(markdown-inline-code-face ((t (:inherit markdown-pre-face :foreground nil :background unspecified))))
-   `(markdown-blockquote-face ((t (:inherit default :foreground nil))))
-   `(markdown-gfm-checkbox-face ((t (:inherit rk-comment :foreground nil))))
-   `(markdown-list-face ((t (:inherit default :foreground nil))))
-   `(markdown-footnote-marker-face ((t (:inherit rk-comment :slant normal :foreground nil))))
-   `(markdown-italic-face ((t (:inherit rk-text :foreground nil :background unspecified))))
-   `(markdown-bold-face ((t (:inherit rk-text :foreground nil :background unspecified :bold t))))
+  ;; Git Commit
+  (with-eval-after-load 'magit
+    (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground nil :background 'unspecified)
+    )
 
-   ;; Org
-   `(org-code ((t (:inherit rk-comment :foreground nil))))
-   `(org-level-1 ((t (:inherit rk-text2 :foreground nil))))
-   `(org-level-2 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-3 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-4 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-5 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-6 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-7 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-level-8 ((t (:inherit org-level-1 :foreground nil :bold nil))))
-   `(org-special-keyword ((t (:inherit rk-comment :bold t :foreground nil))))
-   `(org-property-value ((t (:inherit rk-comment :foreground nil))))
-   ;; Agenda
-   `(org-agenda-date ((t (:inherit rk-header :foreground nil))))
-
-   ;; Git Commit
-   `(git-commit-summary ((t (:inherit rk-text :foreground nil :background unspecified))))
-
-   )
   )
 
 (provide 'robenkleene-override-theme)
