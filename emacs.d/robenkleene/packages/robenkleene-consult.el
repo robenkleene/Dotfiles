@@ -40,6 +40,8 @@
 
   ;; Refresh faster
   (setq consult-async-refresh-delay 0.1)
+  (setq consult-async-input-debounce 0.1)
+  (setq consult-async-input-throttle 0.1)
 
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
