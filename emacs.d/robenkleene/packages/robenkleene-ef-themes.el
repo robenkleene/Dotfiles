@@ -9,8 +9,8 @@
 (use-package ef-themes
   :config
   ;; (ef-themes-select 'ef-winter)
-  (ef-themes-select 'ef-dark)
-  ;; (ef-themes-select 'ef-night)
+  ;; (ef-themes-select 'ef-dark)
+  (ef-themes-select 'ef-night)
   ;; (ef-themes-select 'ef-duo-dark)
   )
 
