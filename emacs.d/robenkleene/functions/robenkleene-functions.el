@@ -96,17 +96,16 @@
 
 (defun rk/compilation-next-once (buffer desc)
   "Run once after compilation."
+  (advice-add 'rk/next :after #'rk/compilation-hide-once)
   (rk/next)
   (remove-hook 'compilation-finish-functions 'rk/compilation-next-once)
   )
 
-;; This doesn't work for some reason
-;; (defun rk/compilation-hide-once (buffer desc)
-;;   "Hide next compilation."
-;;   (let ((win (get-buffer-window buffer 'visible)))
-;;     (when win (delete-window win)))
-;;   (remove-hook 'compilation-finish-functions 'rk/compilation-hide-once)
-;;   )
+(defun rk/compilation-hide-once ()
+  "Hide compilation buffer once."
+  (delete-other-windows)
+  (advice-remove 'rk/next #'rk/compilation-hide-once)
+  )
 
 (defun rk/safe-find-file (file)
   "Only open a FILE if it exists."
