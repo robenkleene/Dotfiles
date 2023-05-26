@@ -45,6 +45,10 @@
         org-agenda-start-on-weekday nil
         org-agenda-start-day "-3d")
 
+  ;; Always follow the current agenda item in the other window, doesn't work
+  ;; nicely with evil
+  ;; (setq org-agenda-start-with-follow-mode t)
+
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
     )
