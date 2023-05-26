@@ -38,10 +38,10 @@
   ;; Allow two character search terms
   (setq consult-async-min-input 2)
 
-  ;; Refresh faster
-  (setq consult-async-refresh-delay 0.1)
-  (setq consult-async-input-debounce 0.1)
-  (setq consult-async-input-throttle 0.1)
+  ;; Get initial results faster
+  ;; (setq consult-async-refresh-delay 0.01)
+  (setq consult-async-input-debounce 0.05)
+  ;; (setq consult-async-input-throttle 0.01)
 
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
