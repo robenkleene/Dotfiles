@@ -41,9 +41,6 @@
       (setq ad-return-value rlt)))
 
   (setq org-deadline-warning-days 0)
-  (setq org-agenda-span 10
-        org-agenda-start-on-weekday nil
-        org-agenda-start-day "-3d")
 
   ;; Always follow the current agenda item in the other window, doesn't work
   ;; nicely with evil
@@ -51,6 +48,20 @@
 
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
+    )
+
+  ;; Agenda
+  (setq org-agenda-span 10
+        org-agenda-start-on-weekday nil
+        org-agenda-start-day "-3d")
+  (setq org-agenda-start-with-log-mode t)
+  (with-eval-after-load 'org-agenda
+    (add-to-list 'org-agenda-custom-commands
+                 '("l" "Log agenda review" agenda ""
+                   (
+                    (org-agenda-log-mode t)
+                    ))
+                 )
     )
 
   ;; Packages
