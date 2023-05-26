@@ -9,7 +9,7 @@
 ;; Automatically select some types of buffers
 ;; Unnecessary with below automatic switch to buffer
 ;; But still helps because it's less buggy
-(setq help-window-select t)
+;; (setq help-window-select t)
 
 ;; Just automatically always select new buffers
 ;; This works better than below `defadvice display-buffer' method with `magit',
