@@ -294,7 +294,10 @@
 ;; Don't show close button
 (setq tab-bar-close-button-show nil)
 ;; Hide plus button and other extras
-(setq tab-bar-format '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))
+;; (setq tab-bar-format '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))
+(setq tab-bar-format '(tab-bar-format-tabs))
+;; Hide ugly bar separator in terminal emacs
+(setq tab-bar-separator " ")
 ;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
 
