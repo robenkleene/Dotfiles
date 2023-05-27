@@ -285,7 +285,11 @@
 ;;     (setq tab-bar-show nil)
 ;;   (setq tab-bar-show 1)
 ;;   )
-(setq tab-bar-show 1)
+;; Show for more than 1 tab
+;; (setq tab-bar-show 1)
+;; Always show
+(setq tab-bar-show t)
+;; Never show
 ;; (setq tab-bar-show nil)
 ;; Don't show close button
 (setq tab-bar-close-button-show nil)
