@@ -391,17 +391,13 @@
     )
   )
 
-(defun rk/other-window-shell ()
-  "Open shell in other window."
-  (interactive)
-  (switch-to-buffer-other-window "*shell*")
-  (shell))
-
-(defun rk/other-window-eshell ()
+(defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
-  (switch-to-buffer-other-window "*eshell*")
-  (eshell))
+  (let ((buf (eshell)))
+    (switch-to-buffer (other-buffer buf))
+    (switch-to-buffer-other-window buf))
+  )
 
 (defvar rk/scratch-directory-path "~/Developer/Scratch/Source/")
 (defvar rk/scratch-file-name "source")
