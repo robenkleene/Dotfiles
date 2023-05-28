@@ -33,13 +33,18 @@
                               (setq-local completion-at-point-functions
                                           (cons #'cape-dabbrev
                                                 completion-at-point-functions))
+                              ;; Also have to double these up for some reason in
+                              ;; `prog-mode', but company still doesn't work in
+                              ;; `prog-mode'
+                              (add-to-list 'completion-at-point-functions #'cape-file)
+                              (add-to-list 'completion-at-point-functions (cape-company-to-capf #'company-yasnippet))
                               (corfu-mode)
                               ))
   ;; For completing relative paths
   (add-hook 'text-mode-hook (lambda ()
                               (corfu-mode)
                               ))
-  ;; eshell
+  ;; enable in eshell
   ;; (add-hook 'eshell-mode-hook
   ;;           (lambda ()
   ;;             (setq-local corfu-auto nil)
@@ -80,11 +85,18 @@
   ;;(add-to-list 'completion-at-point-functions #'cape-symbol)
   ;;(add-to-list 'completion-at-point-functions #'cape-line)
   (use-package company
+    :after cape
     :init
-    ;; No idea why this doesn't work
+    ;; This only works in `text-mode' for some reason
     (add-to-list 'completion-at-point-functions (cape-company-to-capf #'company-yasnippet))
     )
+  ;; Try this after git support is added to `use-package' in Emacs 29
+  ;; (use-package cape-yasnippet
+  ;;   :init
+  ;;   (add-to-list 'completion-at-point-functions 'cape-yasnippet)
+  ;;   )
   )
+
 
 (provide 'robenkleene-corfu)
 ;; Local Variables:
