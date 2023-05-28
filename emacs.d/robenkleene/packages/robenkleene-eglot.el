@@ -70,6 +70,14 @@
               ;; Don't bold the current symbol (we can just search for it to get
               ;; this functionality and it's less distracting that way)
               (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
+
+              ;; `eglot-completion-at-point' breaks all other completions,
+              ;; including `yasnippet' if it's first in the
+              ;; `completion-at-point-functions' list moving it to last seems to
+              ;; fix it
+              (remove-hook 'completion-at-point-functions #'eglot-completion-at-point t)
+              (add-to-list 'completion-at-point-functions #'eglot-completion-at-point t)
+
               ))
   )
 
