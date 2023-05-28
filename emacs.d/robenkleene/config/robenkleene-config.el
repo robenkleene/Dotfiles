@@ -300,6 +300,11 @@
 (setq tab-bar-separator " ")
 ;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
+;; New frames don't have the tab bar visible for some reason so toggle it
+(add-hook 'after-make-frame-functions (lambda (frame)
+                                        (tab-bar-mode)
+                                        (tab-bar-mode)
+                                        ))
 
 ;; Use `completion' if line is already indented
 (setq tab-always-indent 'complete)
