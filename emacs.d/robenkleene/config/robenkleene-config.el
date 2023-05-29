@@ -300,6 +300,11 @@
 (setq tab-bar-separator " ")
 ;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
+;; Show numbers
+(setq tab-bar-tab-hints t)
+;; Allow selecting tabs with `M-#'
+;; Not sure why this doesn't work
+;; (setq tab-bar-select-tab-modifiers '(meta))
 
 ;; Use `completion' if line is already indented
 (setq tab-always-indent 'complete)
