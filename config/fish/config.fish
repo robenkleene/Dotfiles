@@ -6,6 +6,7 @@
 source ~/.config/fish/settings.fish
 source ~/.config/fish/installs.fish
 source ~/.config/fish/fzf.fish
+source ~/.config/fish/abbr.fish
 
 if test -f ~/.local.fish
     source ~/.local.fish
