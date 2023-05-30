@@ -200,6 +200,9 @@ brew 'luajit-openresty'
 brew 'tree-sitter'
 brew 'pcre'
 
+# VR
+brew 'scrcpy'
+
 # VS Code
 vscode "bradlc.vscode-tailwindcss"
 vscode "castwide.solargraph"
