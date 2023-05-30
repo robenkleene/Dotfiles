@@ -12,8 +12,6 @@ font:
     family: "JetBrains Mono"
   size: 13.0
 
-alt_send_esc: false
-
 env:
   ALACRITTY: "1"
   # Colors in `vim` don't work without setting `xterm-256color`
