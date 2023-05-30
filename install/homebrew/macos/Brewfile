@@ -27,9 +27,10 @@ brew 'editorconfig'
 # ctags
 # `svn` seems to be an unlisted dependency of `ctags` so it needs to be
 # installed first
-brew 'svn'
+# brew 'svn'
+# Remove this in favor of LSP support because it sometimes has problems compiling
 # `HEAD` is required for Objective-C support
-brew 'ctags', args: ['HEAD']
+# brew 'ctags', args: ['HEAD']
 
 # Languages
 # JavaScript

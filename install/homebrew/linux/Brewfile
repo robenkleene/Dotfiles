@@ -18,8 +18,9 @@ brew 'zellij'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
+# Remove this in favor of LSP support because it sometimes has problems compiling
 # Head version of `ctags` contains support for Objective-C
-brew 'ctags', args: ['HEAD']
+# brew 'ctags', args: ['HEAD']
 # Emacs fails to install for some reason, but don't comment this out otherwise
 # it will appear in cleanup
 brew 'emacs'
