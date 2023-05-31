@@ -18,8 +18,13 @@
   },
   "match": {
     "prefix": "match",
-    "body": "match ${1:result} {\n  Some($1) => $1,\n  None => ${2:println!(\"No value\")},\n}",
-    "description": "matchopt"
+    "body": "match ${1:optional} {\n  Some($1) => $1,\n  None => ${2:println!(\"No value\")}\n}",
+    "description": "match"
+  },
+  "matchresult": {
+    "prefix": "matchresult",
+    "body": "match ${1:result} {\n  Ok($1) => $1,\n  Err(err) => panic!(\"Error: {}\", err)\n}",
+    "description": "matchresult"
   }
 }
 
