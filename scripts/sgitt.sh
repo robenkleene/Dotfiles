@@ -9,6 +9,3 @@ if [[ ! -f "$HOME/.personal" ]]; then
 fi
 
 cd ~/Text/ && "$HOME/.bin/sgit" "$@"
-
-source ~/.bin/nobin/_giterator.sh
-giterate "$HOME/Developer/Scratch/"

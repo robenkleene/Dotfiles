@@ -9,6 +9,7 @@ fi
 
 if [[ -f "$HOME/.personal" ]]; then
   repos+=:~/Developer/Snippets/:~/Developer/Settings/
+  repos+=:~/Developer/Scratch/
   repos+=:~/Developer/Archive/
 fi
 
