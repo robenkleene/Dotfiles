@@ -16,8 +16,8 @@
     "body": "fn main() {\n    ${1:println!(\"Hello, world!\");}\n}\n",
     "description": "Template"
   },
-  "matchopt": {
-    "prefix": "matchopt",
+  "match": {
+    "prefix": "match",
     "body": "match ${1:result} {\n  Some($1) => $1,\n  None => ${2:println!(\"No value\")},\n}",
     "description": "matchopt"
   }
