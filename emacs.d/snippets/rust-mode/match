@@ -2,7 +2,7 @@
 # key: match
 # name: match
 # --
-match ${1:result} {
+match ${1:optional} {
   Some($1) => $1,
-  None => ${2:println!("No value")},
+  None => ${2:println!("No value")}
 }
