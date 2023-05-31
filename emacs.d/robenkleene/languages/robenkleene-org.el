@@ -46,6 +46,7 @@
   ;; nicely with evil
   ;; (setq org-agenda-start-with-follow-mode t)
 
+  (setq org-agenda-window-setup 'current-window)
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
     )
