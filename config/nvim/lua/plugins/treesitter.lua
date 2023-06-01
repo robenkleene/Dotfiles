@@ -18,7 +18,7 @@ return {
         'lua',
         'javascript',
         'kotlin',
-        'help',
+        -- 'help',
         'html',
         'markdown',
         'markdown_inline',

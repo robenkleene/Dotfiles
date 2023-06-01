@@ -89,6 +89,9 @@
     :init
     ;; This only works in `text-mode' for some reason
     (add-to-list 'completion-at-point-functions (cape-company-to-capf #'company-yasnippet))
+    ;; (add-hook 'prog-mode-hook (lambda ()
+    ;;                             (add-to-list 'completion-at-point-functions (cape-company-to-capf #'company-yasnippet))
+    ;;                             ))
     )
   ;; Try this after git support is added to `use-package' in Emacs 29
   ;; (use-package cape-yasnippet

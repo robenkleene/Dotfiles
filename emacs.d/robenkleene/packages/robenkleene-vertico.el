@@ -7,7 +7,7 @@
     (package-initialize))
   (require 'use-package))
 (use-package vertico
-  :demand t
+  :commands (vertico-mode)
   :bind
   (:map vertico-map
         ("?" . 'minibuffer-completion-help)
@@ -70,15 +70,6 @@
     ;; Enable recursive minibuffers
     (setq enable-recursive-minibuffers t)
 
-    )
-
-  (use-package vertico-repeat
-    :ensure nil
-    :bind
-    ("M-R" . vertico-repeat)
-    :init
-    (add-hook 'minibuffer-setup-hook #'vertico-repeat-save)
-    (add-to-list 'savehist-additional-variables 'vertico-repeat-history)
     )
 
   )
