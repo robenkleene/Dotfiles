@@ -111,11 +111,11 @@
                                    (5.0)))
                                  mode-line-frame-identification
                                  mode-line-position
-                                 evil-mode-line-tag
                                  " "
                                  mode-line-modes
                                  mode-line-misc-info
-                                 mode-line-end-spaces))
+                                 mode-line-end-spaces
+                                 ))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
