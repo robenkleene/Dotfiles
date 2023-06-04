@@ -72,7 +72,8 @@
 ;; (setq tab-bar-format '(tab-bar-format-history tab-bar-format-tabs tab-bar-separator))
 (setq tab-bar-format '(tab-bar-format-tabs))
 ;; Hide ugly bar separator in terminal emacs
-(setq tab-bar-separator " ")
+;; (setq tab-bar-separator " ")
+(setq tab-bar-separator "")
 ;; Turn on tab bar (must be after setting options)
 (tab-bar-mode)
 ;; Show numbers
@@ -81,19 +82,21 @@
 ;; Not sure why this doesn't work
 ;; (setq tab-bar-select-tab-modifiers '(meta))
 ;; Add space to sides of `tab-bar'
+;; Don't make ugly massive tabs
+(setq tab-bar-auto-width nil)
 (defun rk/tab-bar-tab-name-format (tab i)
   (let ((current-p (eq (car tab) 'current-tab)))
     (propertize
      (concat
       " "
       (if tab-bar-tab-hints (format "%d " i) "")
-      (alist-get 'name tab)
-      (or (and tab-bar-close-button-show
-               (not (eq tab-bar-close-button-show
-                        (if current-p 'non-selected 'selected)))
-               tab-bar-close-button)
-          "")
-      " "
+      ;; (alist-get 'name tab)
+      ;; (or (and tab-bar-close-button-show
+      ;;          (not (eq tab-bar-close-button-show
+      ;;                   (if current-p 'non-selected 'selected)))
+      ;;          tab-bar-close-button)
+      ;;     "")
+      ;; " "
       )
      'face (funcall tab-bar-tab-face-function tab))))
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
