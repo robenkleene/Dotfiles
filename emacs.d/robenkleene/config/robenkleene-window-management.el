@@ -90,16 +90,32 @@
      (concat
       " "
       (if tab-bar-tab-hints (format "%d " i) "")
-      ;; (alist-get 'name tab)
-      ;; (or (and tab-bar-close-button-show
-      ;;          (not (eq tab-bar-close-button-show
-      ;;                   (if current-p 'non-selected 'selected)))
-      ;;          tab-bar-close-button)
-      ;;     "")
-      ;; " "
+      (alist-get 'name tab)
+      (or (and tab-bar-close-button-show
+               (not (eq tab-bar-close-button-show
+                        (if current-p 'non-selected 'selected)))
+               tab-bar-close-button)
+          "")
+      " "
       )
      'face (funcall tab-bar-tab-face-function tab))))
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
+;; Don't show the file name in the mode line, because it's already in the tab
+(setq-default mode-line-format (remove 'mode-line-buffer-identification mode-line-format))
+
+(setq-default mode-line-format '("%e" mode-line-front-space
+                                 (:propertize
+                                  ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote)
+                                  display
+                                  (min-width
+                                   (5.0)))
+                                 mode-line-frame-identification
+                                 mode-line-position
+                                 evil-mode-line-tag
+                                 " "
+                                 mode-line-modes
+                                 mode-line-misc-info
+                                 mode-line-end-spaces))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
