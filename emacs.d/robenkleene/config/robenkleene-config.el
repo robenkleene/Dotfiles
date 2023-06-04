@@ -305,6 +305,23 @@
 ;; Allow selecting tabs with `M-#'
 ;; Not sure why this doesn't work
 ;; (setq tab-bar-select-tab-modifiers '(meta))
+;; Add space to sides of `tab-bar'
+(defun rk/tab-bar-tab-name-format (tab i)
+  (let ((current-p (eq (car tab) 'current-tab)))
+    (propertize
+     (concat
+      " "
+      (if tab-bar-tab-hints (format "%d " i) "")
+      (alist-get 'name tab)
+      (or (and tab-bar-close-button-show
+               (not (eq tab-bar-close-button-show
+                        (if current-p 'non-selected 'selected)))
+               tab-bar-close-button)
+          "")
+      " "
+      )
+     'face (funcall tab-bar-tab-face-function tab))))
+(setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
 
 ;; Use `completion' if line is already indented
 (setq tab-always-indent 'complete)
