@@ -10,9 +10,15 @@ function fish_set_user_paths
             set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
     end
 
-    set -U fish_user_paths ~/.brew/bin $fish_user_paths
-    set -U fish_user_paths ~/.fzf/bin $fish_user_paths
-    set -U fish_user_paths ~/.bin $fish_user_paths
+    if test -e ~/.brew/bin
+        set -U fish_user_paths ~/.brew/bin $fish_user_paths
+    end
+    if test -e ~/.fzf/bin
+        set -U fish_user_paths ~/.fzf/bin $fish_user_paths
+    end
+    if test -e ~/.bin
+        set -U fish_user_paths ~/.bin $fish_user_paths
+    end
 
     # llvm
     switch (uname)
@@ -52,7 +58,7 @@ function fish_set_user_paths
     end
 
     # Android
-    if test -n "$ANDROID_SDK"
-        fish_add_path {$ANDROID_SDK}/emulator {$ANDROID_SDK}/tools {$ANDROID_SDK}/tools/bin {$ANDROID_SDK}/platform-tools
-    end
+    # if test -n "$ANDROID_SDK"
+    #     fish_add_path {$ANDROID_SDK}/emulator {$ANDROID_SDK}/tools {$ANDROID_SDK}/tools/bin {$ANDROID_SDK}/platform-tools
+    # end
 end
