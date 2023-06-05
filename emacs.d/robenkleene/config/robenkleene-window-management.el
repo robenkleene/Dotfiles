@@ -101,7 +101,9 @@
      'face (funcall tab-bar-tab-face-function tab))))
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
 ;; Don't show the file name in the mode line, because it's already in the tab
-(setq-default mode-line-format (remove 'mode-line-buffer-identification mode-line-format))
+;; Actually keep this because it still helps when you have a file in a separate
+;; split
+;; (setq-default mode-line-format (remove 'mode-line-buffer-identification mode-line-format))
 
 (setq-default mode-line-format '("%e" mode-line-front-space
                                  (:propertize
@@ -110,6 +112,7 @@
                                   (min-width
                                    (5.0)))
                                  mode-line-frame-identification
+                                 mode-line-buffer-identification
                                  mode-line-position
                                  " "
                                  mode-line-modes
