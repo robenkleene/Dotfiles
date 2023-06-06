@@ -29,8 +29,10 @@
    evil-visual-screen-line-tag
    (propertize " V (SL) " 'face '((:background "purple3" :foreground "white")))
    ;; If this is set, it'll be used instead of the more specific visual tags above
-   ;; evil-visual-state-tag
-   ;; (propertize " V " 'face '((:background "purple3" :foreground "white")))
+   ;; The above ones caused an issue where using the mouse to drag a selection
+   ;; sometimes would cause the indicator to disappear
+   evil-visual-state-tag
+   (propertize " V " 'face '((:background "purple3" :foreground "white")))
    evil-replace-state-tag
    (propertize " R " 'face '((:background "purple3" :foreground "white")))
    )
@@ -252,10 +254,10 @@
 
   ;; Prevent evil from forcing `set-mark-command' from entering visual mode
   ;; (which has weird side effects like breaking `forward-sexp')
-  (add-hook 'evil-local-mode-hook
-            (lambda ()
-              (remove-hook 'activate-mark-hook
-                           'evil-visual-activate-hook t)))
+  ;; (add-hook 'evil-local-mode-hook
+  ;;           (lambda ()
+  ;;             (remove-hook 'activate-mark-hook
+  ;;                          'evil-visual-activate-hook t)))
 
   ;; Modes
 
@@ -383,19 +385,21 @@
     :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     )
 
-  (use-package evil-terminal-cursor-changer
-    :config
-    (unless (display-graphic-p)
-      ;; Prevent blinking cursor from getting stuck when exiting emacs
-      (blink-cursor-mode 0)
-      (evil-terminal-cursor-changer-activate)
-      (setq evil-motion-state-cursor 'box)
-      (setq evil-visual-state-cursor 'box)
-      (setq evil-normal-state-cursor 'box)
-      (setq evil-insert-state-cursor 'bar)
-      (setq evil-emacs-state-cursor  'hbar)
-      )
-    )
+  ;; This doesn't work that well, requires a second key to be pressed before the
+  ;; cursor changes
+  ;; (use-package evil-terminal-cursor-changer
+  ;;   :config
+  ;;   (unless (display-graphic-p)
+  ;;     ;; Prevent blinking cursor from getting stuck when exiting emacs
+  ;;     (blink-cursor-mode 0)
+  ;;     (evil-terminal-cursor-changer-activate)
+  ;;     (setq evil-motion-state-cursor 'box)
+  ;;     (setq evil-visual-state-cursor 'box)
+  ;;     (setq evil-normal-state-cursor 'box)
+  ;;     (setq evil-insert-state-cursor 'bar)
+  ;;     (setq evil-emacs-state-cursor  'hbar)
+  ;;     )
+  ;;   )
   )
 
 (provide 'robenkleene-evil)
