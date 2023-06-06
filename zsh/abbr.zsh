@@ -29,7 +29,6 @@ abbreviations=(
 
 # Mercurial
 'hgd' 'hg diff'
-'hgcm' 'hg commit -m'
 'hgs' 'hg status'
 )
 

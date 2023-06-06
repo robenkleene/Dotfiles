@@ -27,7 +27,6 @@ abbr -a glg 'git log -p -G'
 abbr -a gsh 'git show'
 # Mercurial
 abbr -a hgd 'hg diff'
-abbr -a hgcm 'hg commit -m'
 abbr -a hgs 'hg status'
 abbr -a hgu 'hg update'
 abbr -a hgsh 'hg show'

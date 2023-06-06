@@ -29,7 +29,6 @@ alias gsmuirr git submodule update --init --recursive --remote
 alias glg git log -p -G
 alias gsh git show
 alias hgd hg diff
-alias hgcm hg commit -m
 alias hgs hg status
 alias hgu hg update
 alias hgsh hg show
