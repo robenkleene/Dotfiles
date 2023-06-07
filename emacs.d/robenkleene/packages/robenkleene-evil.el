@@ -167,6 +167,8 @@
     (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
     (define-key evil-normal-state-map (kbd "M-c") 'rk/consult-z-subdir)
     (define-key evil-normal-state-map (kbd "C-i") 'evil-jump-forward)
+    ;; Disable this to prevent accidental page ups
+    (define-key evil-motion-state-map (kbd "<backspace>") nil)
     ;; Visual Line
     (define-key evil-motion-state-map
                 (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
