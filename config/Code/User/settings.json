@@ -46,7 +46,6 @@
     ]
   },
   "update.showReleaseNotes": false,
-  "workbench.colorTheme": "SynthWave '84",
   "workbench.activityBar.visible": true,
   "C_Cpp.updateChannel": "Insiders",
   "editor.minimap.enabled": false,
@@ -275,5 +274,6 @@
   "window.restoreWindows": "none",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.guides.indentation": false
+  "editor.guides.indentation": false,
+  "workbench.colorTheme": "SynthWave '84"
 }
