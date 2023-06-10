@@ -274,12 +274,16 @@
   ;; `*eldoc*' buffer is also `fundamental', need to target this more
   ;; specifically.
   ;; (evil-set-initial-state 'fundamental-mode 'normal)
-  ;; Insert
-  (evil-set-initial-state 'eshell-mode 'insert)
-  ;; Git Commit
-  (evil-set-initial-state 'with-editor-mode 'insert)
-  ;; Ediff
-  (evil-set-initial-state 'ediff-mode 'emacs)
+  (if (eq evil-default-state 'motion)
+      (progn
+        ;; Insert
+        (evil-set-initial-state 'eshell-mode 'insert)
+        ;; Git Commit
+        (evil-set-initial-state 'with-editor-mode 'insert)
+        ;; Ediff
+        (evil-set-initial-state 'ediff-mode 'emacs)
+        )
+    )
 
   ;; (with-eval-after-load 'dired
   ;;   (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
