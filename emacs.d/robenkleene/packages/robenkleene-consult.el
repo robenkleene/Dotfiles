@@ -17,7 +17,7 @@
          ("C-c z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
          ("C-c c" . rk/consult-z-subdir)
-         ("C-c l" . rk/consult-line)
+         ("C-c l" . consult-line)
          ("C-c i" . consult-imenu)
          )
   :commands
