@@ -269,6 +269,9 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'conf-mode 'normal)
+  ;; Git Commit
+  (evil-set-initial-state 'with-editor-mode 'emacs)
+
   ;; Special mode that triggers for long lines
   (evil-set-initial-state 'so-long-mode 'normal)
   ;; `*eldoc*' buffer is also `fundamental', need to target this more
@@ -278,8 +281,6 @@
       (progn
         ;; Insert
         (evil-set-initial-state 'eshell-mode 'insert)
-        ;; Git Commit
-        (evil-set-initial-state 'with-editor-mode 'insert)
         ;; Ediff
         (evil-set-initial-state 'ediff-mode 'emacs)
         )
