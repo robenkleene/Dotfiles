@@ -105,20 +105,22 @@
 ;; split
 ;; (setq-default mode-line-format (remove 'mode-line-buffer-identification mode-line-format))
 
-(setq-default mode-line-format '("%e" mode-line-front-space
-                                 (:propertize
-                                  ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote)
-                                  display
-                                  (min-width
-                                   (5.0)))
-                                 mode-line-frame-identification
-                                 mode-line-buffer-identification
-                                 mode-line-position
-                                 " "
-                                 mode-line-modes
-                                 mode-line-misc-info
-                                 mode-line-end-spaces
-                                 ))
+;; Removing spacing in the mode line
+;; This results in too many visual issues
+;; (setq-default mode-line-format '("%e" mode-line-front-space
+;;                                  (:propertize
+;;                                   ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote)
+;;                                   display
+;;                                   (min-width
+;;                                    (5.0)))
+;;                                  mode-line-frame-identification
+;;                                  mode-line-buffer-identification
+;;                                  mode-line-position
+;;                                  " "
+;;                                  mode-line-modes
+;;                                  mode-line-misc-info
+;;                                  mode-line-end-spaces
+;;                                  ))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
