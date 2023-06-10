@@ -66,9 +66,9 @@
 
   ;; Don't let anything override Evil
   ;; Set initial state
-  ;; (setq evil-default-state 'emacs)
+  (setq evil-default-state 'emacs)
   ;; (setq evil-default-state 'insert)
-  (setq evil-default-state 'motion)
+  ;; (setq evil-default-state 'motion)
 
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
@@ -159,7 +159,7 @@
     (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (define-key evil-normal-state-map (kbd "M-.") nil)
-    (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
+    ;; (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
     (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
     (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
@@ -280,6 +280,7 @@
 
   (with-eval-after-load 'dired
     (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
+    (evil-define-key 'emacs dired-mode-map (kbd "-") 'dired-up-directory)
     )
 
   (with-eval-after-load 'esh-mode
