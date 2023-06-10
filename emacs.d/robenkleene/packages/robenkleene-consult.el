@@ -10,10 +10,15 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (
-         ("C-x i" . consult-imenu)
          ("C-x b" . consult-buffer)
          ("C-c r" . consult-recent-file)
-         ("C-c q" . consult-compile)
+         ("C-c q" . consult-compile-error)
+         ("C-c /" . consult-ripgrep)
+         ("C-c z" . rk/consult-z)
+         ("C-c f" . rk/consult-fd)
+         ("C-c c" . rk/consult-z-subdir)
+         ("C-c l" . rk/consult-line)
+         ("C-c i" . consult-imenu)
          )
   :commands
   (rk/consult-doc
