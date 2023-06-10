@@ -160,6 +160,8 @@
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (define-key evil-normal-state-map (kbd "M-.") nil)
     ;; (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
+    (define-key evil-normal-state-map (kbd "<backspace>") 'scroll-down-command)
+    (define-key evil-normal-state-map (kbd "DEL") 'scroll-down-command)
     (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
     (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
@@ -183,6 +185,7 @@
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
     (define-key evil-motion-state-map (kbd "<backspace>") 'scroll-down-command)
+    (define-key evil-motion-state-map (kbd "DEL") 'scroll-down-command)
     (define-key evil-motion-state-map (kbd "SPC") 'scroll-up-command)
     ;; `nil' breaks `C-i' to jump forward in normal mode
     ;; But without setting this to `nil' (and then setting `C-i' to
