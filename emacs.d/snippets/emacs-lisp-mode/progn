@@ -1,6 +1,0 @@
-# key: progn
-# name: progn
-# --
-(progn
-  ($0)
-  )
