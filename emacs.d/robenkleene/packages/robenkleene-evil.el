@@ -66,9 +66,9 @@
 
   ;; Don't let anything override Evil
   ;; Set initial state
-  (setq evil-default-state 'emacs)
+  ;; (setq evil-default-state 'emacs)
   ;; (setq evil-default-state 'insert)
-  ;; (setq evil-default-state 'motion)
+  (setq evil-default-state 'motion)
 
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
@@ -159,7 +159,7 @@
     (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-normal-state-map (kbd "C-.") nil)
     (define-key evil-normal-state-map (kbd "M-.") nil)
-    ;; (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
+    (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
     (define-key evil-normal-state-map (kbd "<backspace>") 'scroll-down-command)
     (define-key evil-normal-state-map (kbd "DEL") 'scroll-down-command)
     (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
@@ -192,10 +192,10 @@
     ;; `evil-jump-forward' in normal) `TAB' doesn't work to jump to links in
     ;; help buffers
     (define-key evil-motion-state-map (kbd "TAB") nil)
-    ;; (define-key evil-motion-state-map (kbd "-") 'dired-jump)
-    ;; (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
+    (define-key evil-motion-state-map (kbd "-") 'dired-jump)
+    (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
-    ;; (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
+    (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
     ;; Conflicts with Dired shell command, also not part of the standard Vim API
     (define-key evil-motion-state-map (kbd "!") nil)
     ;; Visual
@@ -270,7 +270,7 @@
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'conf-mode 'normal)
   ;; Git Commit
-  (evil-set-initial-state 'with-editor-mode 'emacs)
+  (evil-set-initial-state 'with-editor-mode 'insert)
 
   ;; Special mode that triggers for long lines
   (evil-set-initial-state 'so-long-mode 'normal)
@@ -286,10 +286,10 @@
         )
     )
 
-  ;; (with-eval-after-load 'dired
-  ;;   (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
-  ;;   (evil-define-key 'emacs dired-mode-map (kbd "-") 'dired-up-directory)
-  ;;   )
+  (with-eval-after-load 'dired
+    (evil-define-key 'motion dired-mode-map (kbd "SPC") rk/evil-leader-map)
+    (evil-define-key 'emacs dired-mode-map (kbd "-") 'dired-up-directory)
+    )
 
   (with-eval-after-load 'esh-mode
     (evil-define-key 'normal eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
