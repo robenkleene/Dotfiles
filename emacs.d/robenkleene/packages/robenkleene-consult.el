@@ -91,14 +91,15 @@
   ;; Use `consult' for Emacs `ex' (command line) completions, and eshell
   ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
   ;; fails
-  ;; (with-eval-after-load 'vertico
-  ;;   (setq completion-in-region-function
-  ;;         (lambda (&rest args)
-  ;;           (apply (if vertico-mode
-  ;;                      #'consult-completion-in-region
-  ;;                    #'completion--in-region)
-  ;;                  args)))
-  ;;   )
+  ;; This should also work for the minibuffer
+  (with-eval-after-load 'vertico
+    (setq completion-in-region-function
+          (lambda (&rest args)
+            (apply (if vertico-mode
+                       #'consult-completion-in-region
+                     #'completion--in-region)
+                   args)))
+    )
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
