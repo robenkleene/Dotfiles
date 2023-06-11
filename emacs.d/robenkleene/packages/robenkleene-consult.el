@@ -7,7 +7,6 @@
     (package-initialize))
   (require 'use-package))
 (use-package consult
-  ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (
          ("C-x b" . consult-buffer)
          ("C-c r" . consult-recent-file)
@@ -30,6 +29,7 @@
    consult-compile-error
    consult-ripgrep
    consult-theme
+   consult-completion-in-region
    )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
@@ -65,6 +65,17 @@
     (define-key dired-mode-map (kbd "M-c") 'rk/consult-z-subdir)
     )
 
+  ;; Use `consult' for Emacs `ex' (command line) completions, and eshell
+  ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
+  ;; fails
+  ;; This should also work for the minibuffer
+  (setq completion-in-region-function
+        (lambda (&rest args)
+          (apply (if vertico-mode
+                     #'consult-completion-in-region
+                   #'completion--in-region)
+                 args)))
+
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
@@ -87,19 +98,6 @@
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
   (setq consult-narrow-key "<") ;; (kbd "C-+")
-
-  ;; Use `consult' for Emacs `ex' (command line) completions, and eshell
-  ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
-  ;; fails
-  ;; This should also work for the minibuffer
-  (with-eval-after-load 'vertico
-    (setq completion-in-region-function
-          (lambda (&rest args)
-            (apply (if vertico-mode
-                       #'consult-completion-in-region
-                     #'completion--in-region)
-                   args)))
-    )
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
