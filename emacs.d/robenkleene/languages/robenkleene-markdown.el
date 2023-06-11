@@ -65,8 +65,8 @@
   (add-hook 'markdown-mode-hook
             (lambda ()
               ;; Use blank lines to indicate paragraphs
-              (setq-local paragraph-start "[ 	]*$")
-              (setq-local paragraph-separate "[ 	]*$")
+              (setq-local paragraph-start "[[:blank:]]*\n")
+              (setq-local paragraph-separate "[[:blank:]]*$")
               ;; (modify-syntax-entry ?_ "w")
               ;; (modify-syntax-entry ?- "w")
               ;; Automatically auto-save markdown files
