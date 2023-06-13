@@ -254,7 +254,7 @@
   (evil-ex-define-cmd "Rename" 'rk/rename-current-buffer-file)
 
   ;; Allow crossing lines by moving past end of line
-  ;; (setq-default evil-cross-lines t)
+  (setq-default evil-cross-lines t)
 
   ;; Prevent evil from forcing `set-mark-command' from entering visual mode
   ;; (which has weird side effects like breaking `forward-sexp')
