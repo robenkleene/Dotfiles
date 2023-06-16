@@ -15,6 +15,7 @@ brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
 brew 'zellij'
+brew 'nnn'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
