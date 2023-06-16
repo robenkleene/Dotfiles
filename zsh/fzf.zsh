@@ -79,6 +79,40 @@ _fzf_z_subdir_widget() {
 zle -N _fzf_z_subdir_widget
 bindkey '\ec' _fzf_z_subdir_widget
 
+_fzf_z_parentdir_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
+  # local cmd="zoxide query --list"
+  # local fzfcmd
+  # fzfcmd="$(__fzfcmd)"
+  # local result
+  # result="$(eval "$cmd" | $fzfcmd)"
+  local result
+  result="$(~/.bin/z_fzf_parentdir)"
+
+  local ret=$?
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
+    return
+  fi
+
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
+    zle redisplay
+    return $ret
+  fi
+
+  cd "$result" || return 1
+  local result_parameter
+  result_parameter=${(q)result}
+  print -sr -- "cd $result_parameter"
+  zle reset-prompt
+  return $ret
+}
+zle -N _fzf_z_parentdir_widget
+bindkey '\e-' _fzf_z_parentdir_widget
+
 _fzf_open_widget() {
   setopt localoptions pipefail 2> /dev/null
 
