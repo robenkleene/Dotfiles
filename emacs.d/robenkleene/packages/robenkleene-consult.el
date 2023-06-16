@@ -15,6 +15,7 @@
          ("C-c z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
          ("C-c c" . rk/consult-z-subdir)
+         ("C-c -" . rk/consult-z-parentdir)
          ("C-c l" . consult-line)
          ("C-c i" . consult-imenu)
          )
@@ -22,6 +23,7 @@
   (rk/consult-doc
    rk/consult-z
    rk/consult-z-subdir
+   rk/consult-z-parentdir
    rk/consult-fd
    rk/consult-fd-pwd
    rk/consult-eshell-z
@@ -147,6 +149,26 @@
                     "\n$" ""
                     (shell-command-to-string
                      "~/.bin/z_list_subdir"))
+                   "\n"))
+          (user-error "No recent files"))
+      :prompt "Z: "
+      :sort nil
+      :require-match t
+      :category 'file
+      :state (consult--file-preview)
+      :history 'file-name-history)))
+
+  (defun rk/consult-z-parentdir ()
+    "z subdir using `completing-read'."
+    (interactive)
+    (find-file
+     (consult--read
+      (or (mapcar #'abbreviate-file-name
+                  (split-string
+                   (replace-regexp-in-string
+                    "\n$" ""
+                    (shell-command-to-string
+                     "~/.bin/z_list_parentdir"))
                    "\n"))
           (user-error "No recent files"))
       :prompt "Z: "
