@@ -36,7 +36,7 @@ else
         end
         commandline -f repaint
     end
-    bind \er fzf-history-widget
+    bind \cr fzf-history-widget
 end
 
 set -xg FZF_DEFAULT_OPTS "--height 40% --reverse"
