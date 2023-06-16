@@ -78,6 +78,7 @@ key_bindings:
   - { key: Period,    mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
   - { key: Comma,     mods: Alt|Shift, chars: "\x1b<"                       } # Alt + <
   - { key: Minus,     mods: Alt|Shift, chars: "\x1b_"                       } # Alt + _
+  - { key: Minus,     mods: Alt, chars: "\x1b-"                       } # Alt + _
   - { key: Key5,      mods: Alt|Shift, chars: "\x1b%"                       } # Alt + %
   - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
   - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \

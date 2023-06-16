@@ -102,3 +102,22 @@ function _robenkleene-fzf-open-widget
     commandline -f repaint
 end
 bind \eo _robenkleene-fzf-open-widget
+
+function _robenkleene-fzf-z-parentdir-widget
+    ~/.bin/z_fzf_parentdir | read -l result
+
+    if test -d "$result"
+        set -l result_path (string escape "$result")
+        set -l commandline (commandline)
+        if test -z $commandline
+            commandline "cd $result_path"
+            commandline -f repaint
+            commandline -f execute
+        else
+            commandline -i "$result_path"
+        end
+    end
+
+    commandline -f repaint
+end
+bind \e- _robenkleene-fzf-z-parentdir-widget
