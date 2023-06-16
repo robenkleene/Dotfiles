@@ -14,9 +14,9 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     # see. To cd on quit only on ^G, remove the "-x" from both lines below,
     # without changing the paths.
     if test -n "$XDG_CONFIG_HOME"
-        set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+        set NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
     else
-        set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+        set NNN_TMPFILE "$HOME/.config/nnn/.lastd"
     end
 
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
