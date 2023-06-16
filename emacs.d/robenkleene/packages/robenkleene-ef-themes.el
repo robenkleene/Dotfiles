@@ -10,8 +10,9 @@
   :config
   ;; (ef-themes-select 'ef-winter)
   ;; (ef-themes-select 'ef-dark)
-  (ef-themes-select 'ef-night)
   ;; (ef-themes-select 'ef-duo-dark)
+  ;; (ef-themes-select 'ef-night)
+  (ef-themes-select 'ef-bio)
   )
 
 (provide 'robenkleene-ef-themes)
