@@ -7,6 +7,7 @@ setlocal readonly
 setlocal nomodifiable
 " Useful for debugging
 setlocal foldcolumn=3
+setlocal foldenable
 
 nnoremap <buffer> gd :OpenDiff<CR>
 
