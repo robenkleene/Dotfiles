@@ -36,6 +36,9 @@ function fish_sync_variables
     set -Ux BROWSER "none"
     set -Ux COLORTERM "truecolor"
 
+    # nnn
+    set -Ux NNN_PLUG 'z:fzf_z'
+
     # Homebrew
     if type -q brew
         set -Ux HOMEBREW_DIR (brew --prefix)
