@@ -1,6 +1,7 @@
 setlocal foldexpr=DiffFold(v:lnum)
 setlocal foldmethod=expr
-setlocal foldlevel=1
+" Set starting fold level
+setlocal foldlevel=2
 " Allow quickly quitting without saving when piping a diff to vim
 setlocal buftype=nofile
 setlocal readonly
