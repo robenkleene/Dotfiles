@@ -1,6 +1,7 @@
 # Shell
 brew 'git'
 brew 'tig'
+brew 'fzf'
 brew 'helix'
 brew 'tmux'
 brew 'ripgrep'
