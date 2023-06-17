@@ -21,6 +21,7 @@ vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 nnoremap <localleader>yb :YankBreakpoint<CR>
 nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
+nnoremap <leader>` :terminal<CR>
 " Tabs
 nnoremap <silent> <C-w>t :split<CR><C-w>T
 vnoremap <silent> <C-w>t :split<CR><C-w>T

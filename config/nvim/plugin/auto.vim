@@ -129,3 +129,9 @@ augroup z_add
   autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
 augroup END
 if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
+
+augroup terminal_insert
+  autocmd!
+  " Start terminals in insert mode
+  autocmd TermOpen * startinsert
+augroup END
