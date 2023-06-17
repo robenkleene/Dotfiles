@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-# CTX=+
-#
+CTX=+
+
 # shellcheck disable=SC1090,SC1091
 . "$(dirname "$0")"/.nnn-plugin-helper
 
@@ -11,7 +11,7 @@ if ! type fzf >/dev/null 2>&1; then
     exit 1
 fi
 
-result="$(~/.bin/z_fzf_subdir)"
+result="$PWD/$(~/.bin/z_fzf_subdir)"
 
 if [ ! -d "$result" ]; then
   exit 0
