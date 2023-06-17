@@ -44,6 +44,9 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 
+# nnn
+export NNN_PLUG='z:fzf_z;c:fzf_subdir;-:fzf_parentdir'
+
 # Stanard
 # hx
 # export VISUAL="hx"
