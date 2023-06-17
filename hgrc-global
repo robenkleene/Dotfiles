@@ -1,8 +1,9 @@
 [ui]
 ignore = ~/.hgignore
 merge = internal:merge3
-paginate = never
 [pager]
-attend = diff
+pager = less
+# Note bizarrely in order to exclude `show`, you also need to exclude `log`
+ignore = show, log, diff
 [committemplate]
 %unset emptymsg
