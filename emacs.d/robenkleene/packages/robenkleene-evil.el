@@ -58,6 +58,12 @@
   ;; Persist search highlighting
   (setq evil-search-module 'evil-search)
 
+  ;; Center search results
+  (advice-add 'evil-ex-search-next :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  (advice-add 'evil-ex-search-previous :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+
   ;; Disable smart case
   ;; (setq evil-ex-search-case 'sensitive)
 
