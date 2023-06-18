@@ -12,4 +12,6 @@ if [[ -n "${1-}" ]]; then
   exec emacsclient -nw "$@"
 else
   exec emacsclient -nw .
+  # exec emacsclient -nw --eval "(cd \"$PWD\")"
+  # exec emacsclient -nw . --eval "(switch-to-buffer \"*scratch*\")"
 fi
