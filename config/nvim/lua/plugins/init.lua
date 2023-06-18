@@ -37,6 +37,7 @@ return {
       'mbbill/undotree',
       cmd = 'UndotreeToggle'
   },
+  { 'samjwill/nvim-unception' },
   -- Themes
   -- {
   --   "catppuccin/nvim",
