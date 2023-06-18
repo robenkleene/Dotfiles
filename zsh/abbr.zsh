@@ -14,10 +14,6 @@ abbreviations=(
 # terminal process until it exits, which is never what you want. If you want to
 # open a file in the GUI version of Emacs, use `open -a "Emacs.app"`.
 'emacs' 'emacs -nw'
-
-# Mercurial
-'hgd' 'hg diff'
-'hgs' 'hg status'
 )
 
 # Support local abbr created in `~/.zshrc_local`
