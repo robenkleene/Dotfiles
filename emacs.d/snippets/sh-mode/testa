@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: testa
+# name: testa
+# --
+"$#" ${1:-ne} ${2:1}
