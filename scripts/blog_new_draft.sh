@@ -44,6 +44,9 @@ if [[ -n "$file" ]]; then
     echo "Error: $file is not a file" >&2
     exit 1
   fi
+elif [ "$#" -eq 1 ] && [[ -f "${1:-}" ]]; then
+  # If there's one argument and it's a file, use it as the file
+  text=$(cat "$1")
 fi
 
 if [[ -z "$title" ]]; then
