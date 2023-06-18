@@ -18,9 +18,16 @@
 [mergetool]
 	prompt = false
 [alias]
+	l = log
 	cleanup =!git checkout -- . && git clean -dff 
 	aac =!git add -A :/ && git commit
-        aa = add -A :/
-        co = checkout
+	aa = add -A :/
+	co = checkout
+	b = branch
+	d = diff
+	t = tag
+	s = status
+	sh = show
+	lg = log -p -G
 [pager]
 	diff = false

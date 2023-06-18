@@ -6,20 +6,8 @@ abbreviations=(
 'ts' 'tig status +3'
 'tl' 'tig'
 'mdv' 'mosh aresdev -- tmux attach'
-'g' 'git'
-'a' 'rg'
 # git
-'gc' 'git commit'
-'gaac' 'git add -A :/ && git commit'
-'gb' 'git branch'
-'gco' 'git checkout'
-'gcob' 'git checkout -b'
-'gd' 'git diff'
-'gdw' 'git diff --color-words'
-'gs' 'git status'
-'gt' 'git tag'
-'gsmuirr' 'git submodule update --init --recursive --remote'
-'glg' 'git log -p -G'
+'g' 'git'
 
 # `emacs`
 # `emacs` without `-nw` opens a new instance of Emacs and blocks the current
