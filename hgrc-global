@@ -1,9 +1,20 @@
+# Put this in ~/.hgrc
+# [ui]
+# %include ~/.hgrc-global
 [ui]
 ignore = ~/.hgignore
 merge = internal:merge3
+[alias]
+i = !hg-sl-up
+cleanup = !hg purge && hg checkout --clean . && hg status
+c = commit
+d = diff
+u = update
+sh = show
 [pager]
 pager = less
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`
+# Note this also has to be in `~/.hgrc` for some reason
 ignore = show, log, diff
 [committemplate]
 %unset emptymsg
