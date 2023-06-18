@@ -84,6 +84,11 @@
     "body": "-e \"${1:\\$1}\"",
     "description": "True if file exists"
   },
+  "testa": {
+    "prefix": "testa",
+    "body": "\"$#\" ${1:-ne} ${2:1}",
+    "description": "True one argument"
+  },
   "testl": {
     "prefix": "testl",
     "body": "-L \"${1:\\$1}\"",
