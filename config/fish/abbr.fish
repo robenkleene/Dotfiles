@@ -9,11 +9,6 @@ abbr -a tl 'tig'
 abbr -a emacs 'emacs -nw'
 # Git
 abbr -a g git
-# Mercurial
-abbr -a hgd 'hg diff'
-abbr -a hgs 'hg status'
-abbr -a hgu 'hg update'
-abbr -a hgsh 'hg show'
 # Fish
 abbr -a fhm 'history merge'
 
