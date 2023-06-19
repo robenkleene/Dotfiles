@@ -8,8 +8,12 @@
 ;; This instead follows the link and echos
 ;; Display in echo area
 ;; (setq vc-follow-symlinks t)
+
 ;; This just edits the file in place and ignores `vc' features
-(setq vc-follow-symlinks nil)
+;; This breaks detection of the current backend.
+;; E.g., `vc-dir-root' will fail while editing a dotfile
+;; (setq vc-follow-symlinks nil)
+
 ;; This is still slow with large code bases
 ;; `find-file-hook' can cause slow behavior
 (remove-hook 'find-file-hook 'vc-find-file-hook)
