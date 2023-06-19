@@ -110,14 +110,14 @@
   (message (rk/date-today))
   (kill-new (rk/date-today)))
 
-(defun kill-breakpoint ()
-  "Kill breakpoint'."
+(defun kill-grep ()
+  "Kill grep."
   (interactive)
   (if buffer-file-name
       (let* (
              (path buffer-file-name)
              (line-number (number-to-string (line-number-at-pos)))
-             (command (concat "b " path ":" line-number))
+             (command (concat path ":" line-number))
              )
         (message "%s" command)
         (kill-new command)
