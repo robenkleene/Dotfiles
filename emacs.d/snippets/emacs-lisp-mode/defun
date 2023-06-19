@@ -1,6 +1,6 @@
 # key: defun
 # name: defun
 # --
-defun ${1:my-function} (${2:&optional arg})
-  "${3:My function description}."
+defun ${1:hello-world} (${2:&optional arg})
+  "${3:Prints `hello world'.}"
   $0
