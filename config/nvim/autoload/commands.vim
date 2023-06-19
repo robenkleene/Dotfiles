@@ -59,7 +59,7 @@ function! commands#Fprev() abort
 endfunction
 
 function! commands#YankGrep()
-  let @@ = expand("%:p").":".line('.').":0"
+  let @@ = expand("%:p").":".line('.')
   call system('~/.bin/safecopy', @@)
   echo getreg('@')
 endfunction
@@ -91,10 +91,3 @@ function! commands#Rg(terms) abort
     wincmd p
   endif
 endfunction
-
-function! commands#YankBreakpoint()
-  let @@ = "b ".expand("%:p").":".line('.')
-  call system('~/.bin/safecopy', @@)
-  echo "Yanked breakpoint"
-endfunction
-
