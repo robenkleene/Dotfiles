@@ -70,6 +70,7 @@
 (require 'robenkleene-monky)
 (require 'robenkleene-esup)
 (require 'robenkleene-corfu)
+(require 'robenkleene-auto-dim-other-buffers)
 
 ;; Completion
 (require 'robenkleene-vertico)
