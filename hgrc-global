@@ -5,6 +5,7 @@
 ignore = ~/.hgignore
 merge = internal:merge3
 [alias]
+s = status
 i = !hg-sl-up
 cleanup = !hg purge && hg checkout --clean . && hg status
 c = commit
