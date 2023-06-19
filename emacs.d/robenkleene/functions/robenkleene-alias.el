@@ -17,6 +17,15 @@
 (defalias 'yl 'yank-to-virtual-dired-buffer)
 (defalias 'yg 'yank-to-grep-buffer)
 
+;; vc-mode
+(defalias 'vcs (lambda ()
+                 (interactive)
+                 (vc-dir-root)
+                 (forward-paragraph)
+                 ))
+(defalias 'vcd 'vc-root-diff)
+(defalias 'vccd 'vc-cd-vc-root)
+
 ;; Text
 (defalias 'uc 'untitled-create)
 (defalias 'dc 'daily-create)
