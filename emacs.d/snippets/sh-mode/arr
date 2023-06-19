@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: arr
-# name: arr
+# name: Access array
 # --
 \${${1:args}[@]}$0

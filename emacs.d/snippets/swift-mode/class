@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: class
-# name: class
+# name: Class
 # --
 class ${1:MyObject} {
     $0

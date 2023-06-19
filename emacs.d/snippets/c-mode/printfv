@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: printfv
-# name: printfv
+# name: Print a variable
 # --
 printf("${1:variable} = %i\n", $1);

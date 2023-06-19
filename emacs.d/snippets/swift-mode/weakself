@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: weakself
-# name: weakself
+# name: Weak self, strong self
 # --
 guard let \\`self\\` = self else { return }

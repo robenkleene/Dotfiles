@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: echova
-# name: echova
+# name: Echo array variable
 # --
 echo "${1:args}[@] = \${$1[@]}"

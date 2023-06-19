@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testd
-# name: testd
+# name: True if directory
 # --
 -d "${1:\$1}"

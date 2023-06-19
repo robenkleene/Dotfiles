@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: logv
-# name: logv
+# name: Log variable
 # --
 NSLog("${1:variable} = \($1)")

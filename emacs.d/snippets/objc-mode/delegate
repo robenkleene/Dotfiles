@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: delegate
-# name: delegate
+# name: Delegate
 # --
 NS_ASSUME_NONNULL_BEGIN
 @protocol ${1:MyClass}Delegate <NSObject>

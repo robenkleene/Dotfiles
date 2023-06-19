@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: printlnv
-# name: printlnv
+# name: Print variable
 # --
 println!("${1:foo} = {}", $1);

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: uiviewcontroller
-# name: uiviewcontroller
+# name: View Controller
 # --
 //
 //  \`!v expand("%:t")\`

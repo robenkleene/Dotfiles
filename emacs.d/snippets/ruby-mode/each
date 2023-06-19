@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: each
-# name: each
+# name: Each loop
 # --
 (${1:0}..${2:10}).each do |i|
   ${0:puts i}

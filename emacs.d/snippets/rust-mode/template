@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: template
-# name: template
+# name: Template
 # --
 fn main() {
     ${1:println!("Hello, world!");}

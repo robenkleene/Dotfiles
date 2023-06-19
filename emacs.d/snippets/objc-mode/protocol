@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: protocol
-# name: protocol
+# name: Protocol
 # --
 @protocol ${1:MyProtocol} <NSObject>
 $0

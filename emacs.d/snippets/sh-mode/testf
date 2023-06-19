@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testf
-# name: testf
+# name: True if regular file
 # --
 -f "${1:\$1}"

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: printlnvd
-# name: printlnvd
+# name: Print variable debug
 # --
 println!("${1:foo} = {:?}", $1);

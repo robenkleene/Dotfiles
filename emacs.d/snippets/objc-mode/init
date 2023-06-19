@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: init
-# name: init
+# name: Initialization method
 # --
 - (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\l$0/}
 {

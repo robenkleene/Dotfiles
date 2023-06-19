@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testn
-# name: testn
+# name: True if not empty variable
 # --
 -n "${${1:1}-}"

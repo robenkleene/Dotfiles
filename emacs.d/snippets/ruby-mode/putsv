@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: putsv
-# name: putsv
+# name: Print a variable
 # --
 puts "${1:variable} = #{$1}"
