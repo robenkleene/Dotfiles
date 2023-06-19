@@ -47,6 +47,7 @@
 (require 'robenkleene-dired)
 (require 'robenkleene-ibuffer)
 (require 'robenkleene-eshell)
+(require 'robenkleene-shell)
 (require 'robenkleene-diff)
 (require 'robenkleene-vc)
 (require 'robenkleene-ediff)
