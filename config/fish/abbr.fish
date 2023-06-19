@@ -9,6 +9,7 @@ abbr -a emacs 'emacs -nw'
 abbr -a g git
 # Fish
 abbr -a fhm 'history merge'
+abbr -a printfv 'printf "%s\n"'
 
 # Local
 if test -f ~/.local_abbr.fish
