@@ -2,10 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile
-  (unless (bound-and-true-p package--initialized)
-    (package-initialize))
-  (require 'use-package))
 (use-package markdown-mode
   :mode
   ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
@@ -58,9 +54,9 @@
   ;; (define-key markdown-mode-map (kbd "M-p")
   ;;   'previous-error)
   (define-key markdown-mode-map (kbd "M-n")
-    'rk/next)
+              'rk/next)
   (define-key markdown-mode-map (kbd "M-p")
-    'rk/previous)
+              'rk/previous)
 
   (add-hook 'markdown-mode-hook
             (lambda ()

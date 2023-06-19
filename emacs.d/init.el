@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Byte compile init files
-;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
-
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(
@@ -40,10 +37,8 @@
 ;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
 (set 'ad-redefinition-action 'accept)
 
-;; This is probably causing lots of files to be checked for compiling on startup
-;; (eval-and-compile
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene"))
-;; )
+
 (require 'robenkleene)
 
 ;; Local Variables:

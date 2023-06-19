@@ -2,10 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(eval-when-compile
-  (unless (bound-and-true-p package--initialized)
-    (package-initialize))
-  (require 'use-package))
 (use-package modus-themes
   :init
   ;; Remove borders around windows
