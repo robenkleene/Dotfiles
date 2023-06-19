@@ -317,8 +317,12 @@
   (if (eq evil-default-state 'motion)
       (progn
         ;; Insert
+        ;; Don't know why this doesnt' work
+        ;; (evil-set-initial-state 'comint-mode 'insert)
         (evil-set-initial-state 'eshell-mode 'insert)
-        ;; Ediff
+        (evil-set-initial-state 'shell-mode 'insert)
+        (evil-set-initial-state 'term-mode 'insert)
+        ;; ;; Ediff
         (evil-set-initial-state 'ediff-mode 'emacs)
         )
     )
