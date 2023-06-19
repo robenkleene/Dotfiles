@@ -12,7 +12,8 @@
   ;; (ef-themes-select 'ef-dark)
   ;; (ef-themes-select 'ef-duo-dark)
   ;; (ef-themes-select 'ef-night)
-  (ef-themes-select 'ef-bio)
+  ;; (ef-themes-select 'ef-bio)
+  (ef-themes-select 'ef-symbiosis)
   )
 
 (provide 'robenkleene-ef-themes)
