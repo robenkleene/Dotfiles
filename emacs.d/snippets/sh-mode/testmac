@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testmac
-# name: testmac
+# name: True if Mac
 # --
 "$(uname)" = "Darwin"

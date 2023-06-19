@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: teste
-# name: teste
+# name: True if file exists
 # --
 -e "${1:\$1}"

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: log
-# name: log
+# name: Log
 # --
 NSLog("$0")

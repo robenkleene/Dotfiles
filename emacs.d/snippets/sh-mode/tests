@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: tests
-# name: tests
+# name: True if variable matches string
 # --
 "$${1:1}" = "${2:string}"

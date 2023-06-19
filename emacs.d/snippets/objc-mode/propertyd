@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: propertyd
-# name: propertyd
+# name: Delegate property
 # --
 @property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;

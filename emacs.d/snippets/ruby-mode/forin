@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: forin
-# name: forin
+# name: For loop
 # --
 ${1:ARGV}.each do |${2:item}|
   ${0:puts $2}

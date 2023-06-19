@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: ex
-# name: ex
+# name: Add expression
 # --
 [[ ${0:-n "\${1:-\}"} ]]

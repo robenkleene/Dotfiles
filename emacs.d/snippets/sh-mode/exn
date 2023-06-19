@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: exn
-# name: exn
+# name: Add negative expression
 # --
 [[ ! ${0:-n "\$1"} ]]

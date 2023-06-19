@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testgt
-# name: testgt
+# name: True if greater than
 # --
 ${1:$?} -gt ${0:0}

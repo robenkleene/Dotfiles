@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: profile
-# name: profile
+# name: Require profile
 # --
 require 'profile'

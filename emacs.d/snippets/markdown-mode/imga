@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: imga
-# name: imga
+# name: A link to an image
 # --
 [![${1:Title}](${2:path/to/image})]($2)

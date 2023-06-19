@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: noext
-# name: noext
+# name: Remove the extension from a path
 # --
 ${1:noext}=\${${0:1}%.*}

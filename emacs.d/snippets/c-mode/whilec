@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: whilec
-# name: whilec
+# name: While char
 # --
 while ((c = getchar()) != EOF) {
 	$0

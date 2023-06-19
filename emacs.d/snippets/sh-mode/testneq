@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: testneq
-# name: testneq
+# name: True if not equal
 # --
 ${1:$?} -ne ${0:0}

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: exitstatus
-# name: exitstatus
+# name: Store exit status
 # --
 status=$?

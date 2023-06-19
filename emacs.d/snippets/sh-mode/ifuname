@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: ifuname
-# name: ifuname
+# name: If platform
 # --
 if [[ "$(uname)" = "Darwin" ]]; then
   echo "Darwin"

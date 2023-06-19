@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: match
-# name: match
+# name: Match
 # --
 match ${1:optional} {
   Some($1) => $1,

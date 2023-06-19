@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: extensionc
-# name: extensionc
+# name: Class Extension
 # --
 @interface ${1:MyClass} ($2)
 $0

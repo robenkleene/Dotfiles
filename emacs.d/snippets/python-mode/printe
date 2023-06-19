@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: printe
-# name: printe
+# name: Print to STDERR
 # --
 print("${1:Error}", file=sys.stderr)

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: forin
-# name: forin
+# name: Fast enumeration
 # --
 for (${1:id} ${2:object} in ${3:objects}) {
     $0

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: noslash
-# name: noslash
+# name: Remove the slash from a variable
 # --
 ${1:noslash}=\${${2:1}%/}$0

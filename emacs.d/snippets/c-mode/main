@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: main
-# name: main
+# name: Main loop
 # --
 int main() {
     $0

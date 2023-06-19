@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: echov
-# name: echov
+# name: Echo variable
 # --
 echo "${1:HOME} = \$$1"
