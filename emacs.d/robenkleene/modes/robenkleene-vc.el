@@ -36,6 +36,20 @@
                     vc-handled-backends))
   )
 
+(defadvice vc-cd-vc-root (before rk/vc-cd-vc-root-hg)
+  "Support for `hg'"
+  (setq-local vc-handled-backends
+              (cons #'Hg
+                    vc-handled-backends))
+  )
+
+(defadvice vc-root-diff (before rk/vc-root-diff-hg)
+  "Support for `hg'"
+  (setq-local vc-handled-backends
+              (cons #'Hg
+                    vc-handled-backends))
+  )
+
 (defun rk/vc-print-log-startup ()
   "`vc' log in current window."
   (interactive)
