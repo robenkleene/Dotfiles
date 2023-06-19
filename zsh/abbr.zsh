@@ -3,8 +3,6 @@ typeset -Ag abbreviations
 abbreviations=(
 'v' "$VIM_COMMAND"
 'b' 'bat'
-'ts' 'tig status +3'
-'tl' 'tig'
 'mdv' 'mosh aresdev -- tmux attach'
 # git
 'g' 'git'

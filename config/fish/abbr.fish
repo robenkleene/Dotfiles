@@ -4,8 +4,6 @@
 abbr -a -- - 'cd -'
 abbr -a v "$VIM_COMMAND"
 abbr -a mdv 'mosh aresdev'
-abbr -a ts 'tig status +3'
-abbr -a tl 'tig'
 abbr -a emacs 'emacs -nw'
 # Git
 abbr -a g git
