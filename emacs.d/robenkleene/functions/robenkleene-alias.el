@@ -24,6 +24,7 @@
                  (forward-paragraph)
                  ))
 (defalias 'vcd 'vc-root-diff)
+(defalias 'vcl 'vc-print-root-log)
 (defalias 'vccd 'vc-cd-vc-root)
 
 ;; Text
