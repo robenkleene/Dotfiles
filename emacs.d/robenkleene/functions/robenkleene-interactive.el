@@ -662,6 +662,19 @@
     )
   )
 
+(defun vc-cd-vc-root ()
+  "Go to root directory for current repo."
+  (interactive)
+  (find-file (vc-root-dir))
+  )
+
+(defun clear ()
+  "Clear everything."
+  (interactive)
+  (desktop-clear)
+  (tab-close-group "")
+  )
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
