@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ -f "/Applications/Emacs.app/Contents/MacOS/Emacs" ]]; then
-  exec "/Applications/Emacs.app/Contents/MacOS/Emacs -nw" "$@"
+  exec "/Applications/Emacs.app/Contents/MacOS/Emacs" "-nw" "$@"
 else
-  exec "$HOME/.brew/bin/emacs -nw" "$@"
+  exec "$HOME/.brew/bin/emacs" "-nw" "$@"
 fi
