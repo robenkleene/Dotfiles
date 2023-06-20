@@ -2,7 +2,7 @@
 vim.o.shortmess = vim.o.shortmess .. "I"
 
 -- Line numbers
--- vim.wo.number = true
+vim.wo.number = true
 
 -- Indent wrapped lines
 vim.o.breakindent = true
