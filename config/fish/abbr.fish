@@ -3,11 +3,7 @@
 # Common
 abbr -a -- - 'cd -'
 abbr -a v "$VIM_COMMAND"
-abbr -a mdv 'mosh aresdev'
-abbr -a emacs 'emacs -nw'
-# Git
 abbr -a g git
-# Fish
 abbr -a fhm 'history merge'
 abbr -a printfv 'printf "%s\n"'
 
