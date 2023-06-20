@@ -16,6 +16,7 @@ sh = show
 pager = less
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`
 # Note this also has to be in `~/.hgrc` for some reason
-ignore = show, log, diff
+# Don't do this, instead just use `G q` to go to the end of the file and quit
+# ignore = show, log, diff
 [committemplate]
 %unset emptymsg
