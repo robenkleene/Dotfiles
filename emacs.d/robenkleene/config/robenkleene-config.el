@@ -266,6 +266,8 @@
 (setq global-auto-revert-non-file-buffers t)
 ;; Suppress message that happens every time a buffer gets reverted
 (setq auto-revert-verbose nil)
+;; Remove messages about saving when a file on disk has changed
+(setq revert-without-query '(".*"))
 
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
