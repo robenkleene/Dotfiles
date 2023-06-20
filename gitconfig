@@ -32,4 +32,5 @@
 	sh = show
 	t = tag
 [pager]
+# Don't do this, instead just use `G q` to go to the end of the file and quit
 	diff = false
