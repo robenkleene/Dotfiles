@@ -14,6 +14,8 @@ bind \cx\ce edit_command_buffer
 # bind \cx\cx 'fish_cmdline_safecopy; commandline -f kill-whole-line'
 # New approach that works for multi-line prompts
 bind \cx\cx 'fish_cmdline_safecopy; commandline ""; commandline -f repaint'
+# This fails occassionaly, and running the same command manually with single
+# quotes instead of double around the term seems to fix it
 bind \cx\cd 'history delete --exact --case-sensitive "(commandline)"; commandline -f kill-whole-line'
 # This is how you bind `C-space` but the selection works funny
 # bind -k nul begin-selection
