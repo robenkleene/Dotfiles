@@ -59,19 +59,17 @@
 (setq enable-recursive-minibuffers t)
 
 ;; Add Line Numbers
-;; Note this is incompatible with git-gutter
-;; (global-linum-mode t)
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")
 ;; (global-display-line-numbers-mode 1)
 ;; Only show line numbers in programming modes
-;; (add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 ;; Don't show line numbers in GUI mode because of that bug where the line with
 ;; the cursor sometimes gets offset slightly
 ;; (unless window-system
 ;;   (global-display-line-numbers-mode 1)
 ;;   ;; This looks janky
-;;   ;; (add-hook 'prog-mode-hook 'linum-mode)
+;;   ;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 ;;   )
 
 ;; Show cursor position
