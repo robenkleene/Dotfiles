@@ -2,16 +2,7 @@
 typeset -Ag abbreviations
 abbreviations=(
 'v' "$VIM_COMMAND"
-'b' 'bat'
-'mdv' 'mosh aresdev -- tmux attach'
-# git
 'g' 'git'
-
-# `emacs`
-# `emacs` without `-nw` opens a new instance of Emacs and blocks the current
-# terminal process until it exits, which is never what you want. If you want to
-# open a file in the GUI version of Emacs, use `open -a "Emacs.app"`.
-'emacs' 'emacs -nw'
 )
 
 # Support local abbr created in `~/.zshrc_local`
