@@ -197,6 +197,8 @@
     (define-key evil-motion-state-map (kbd "TAB") nil)
     (define-key evil-motion-state-map (kbd "-") 'dired-jump)
     (define-key evil-motion-state-map (kbd "Z Q") 'evil-quit)
+    ;; Also support this because `less' supports it too
+    (define-key evil-motion-state-map (kbd "Z Z") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
     (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
     ;; Conflicts with Dired shell command, also not part of the standard Vim API
