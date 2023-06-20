@@ -7,7 +7,14 @@ return {
     cmd = { 'Rename', 'Remove' }
   },
   { "numToStr/Comment.nvim", config = true, event = "VeryLazy" },
-  { "levouh/tint.nvim", config = true, event = "VeryLazy" },
+  {
+    "levouh/tint.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- Set to background color to prevent text from being hidden by tinting
+      require("tint.transforms").tint_with_threshold(-100, "#1A1B25", 150)
+    end
+  },
   {
     'L3MON4D3/LuaSnip',
     -- This can't co-exist with GitHub Copilot
