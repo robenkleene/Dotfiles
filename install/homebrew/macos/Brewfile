@@ -17,7 +17,6 @@ brew 'git-delta'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
-brew 'zellij'
 brew 'nnn'
 
 # Editor
@@ -42,14 +41,11 @@ brew 'editorconfig'
 brew 'chruby'
 brew 'ruby-install'
 # Shell
-brew 'shfmt'
 brew 'shellcheck'
 # Swift
-brew 'carthage'
-brew 'swiftlint'
-brew 'swiftformat'
-brew 'fastlane'
 # Objective-C
+brew 'carthage'
+brew 'fastlane'
 brew 'clang-format'
 # mysql
 brew 'mysql'
@@ -58,12 +54,13 @@ brew 'midicsv'
 # C
 tap 'LouisBrunner/valgrind'
 brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
-# Lisp
-brew 'sbcl'
 # Go
 brew 'go'
+# json
 brew 'jq'
+# lua
 brew 'lua-language-server'
+# rust
 brew 'rust-analyzer'
 
 # Special
@@ -102,7 +99,6 @@ brew 'suspicious-package'
 tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
-cask 'kitty'
 cask 'alacritty'
 
 # Animated GIFs, `gifify` dependencies

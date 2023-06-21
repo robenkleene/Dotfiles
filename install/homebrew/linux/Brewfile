@@ -3,6 +3,7 @@ brew 'git'
 brew 'tig'
 brew 'fzf'
 brew 'helix'
+brew 'hexyl'
 brew 'tmux'
 brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing
@@ -15,7 +16,6 @@ brew 'git-delta'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
-brew 'zellij'
 brew 'nnn'
 
 # Editor
@@ -28,7 +28,6 @@ brew 'aspell', args: ['with-lang-en']
 brew 'emacs'
 brew 'vim'
 brew 'editorconfig'
-brew 'sbcl'
 brew 'neofetch'
 brew 'neovim'
 brew 'fish'
@@ -46,10 +45,7 @@ brew 'sd'
 # Ruby
 brew 'chruby'
 brew 'ruby-install'
-# Python
-# This is needed by NeoVim
 # Shell
-brew 'shfmt'
 brew 'shellcheck'
 # Rust
 brew 'binutils'
@@ -68,9 +64,6 @@ brew 'llvm'
 
 # Games
 brew 'nethack'
-
-# hub
-brew 'util-linux'
 
 # NeoVim
 brew 'cmake'
