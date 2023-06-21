@@ -30,6 +30,8 @@ return {
           i = {
             ["<C-p>"] = require('telescope.actions').cycle_history_prev,
             ["<C-n>"] = require('telescope.actions').cycle_history_next,
+            ["<M-p>"] = require('telescope.actions').cycle_history_prev,
+            ["<M-n>"] = require('telescope.actions').cycle_history_next,
             ["<M-Up>"] = require('telescope.actions').cycle_history_prev,
             ["<M-Down>"] = require('telescope.actions').cycle_history_next,
           },
