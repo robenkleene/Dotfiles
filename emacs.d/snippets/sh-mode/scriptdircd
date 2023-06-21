@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: cds
+# key: scriptdircd
 # name: cd to directory of script
 # --
 cd "\$(dirname "\$0")" || exit 1
