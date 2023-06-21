@@ -28,6 +28,7 @@
 	lg = log -p -G
 	p = push
 	u = pull
+	ur = pull -r
 	s = status
 	sh = show
 	t = tag
