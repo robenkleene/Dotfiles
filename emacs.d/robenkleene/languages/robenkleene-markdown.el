@@ -57,6 +57,10 @@
               'rk/next)
   (define-key markdown-mode-map (kbd "M-p")
               'rk/previous)
+  (define-key markdown-mode-map (kbd "M-{")
+              'rk/backward-block)
+  (define-key markdown-mode-map (kbd "M-}")
+              'rk/forward-block)
 
   (add-hook 'markdown-mode-hook
             (lambda ()
