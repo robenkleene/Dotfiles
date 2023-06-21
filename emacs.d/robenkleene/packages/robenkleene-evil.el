@@ -4,7 +4,9 @@
 
 (use-package evil
   :commands (evil-mode)
-  :init
+  ;; :init
+  ;; (evil-mode 1)
+  :config
   (setq
    evil-normal-state-tag
    (propertize " N " 'face '((:background "purple3" :foreground "white")))
@@ -90,8 +92,6 @@
   (setq evil-operator-state-modes nil)
   (setq evil-visual-state-modes nil)
 
-  ;; (evil-mode 1)
-  :config
   ;; These conflict with other functions, just use the defaults
   ;; (defalias 'motion 'evil-motion-state)
   ;; (defalias 'emacs 'evil-emacs-state)
@@ -377,7 +377,8 @@
   ;; Packages
 
   (use-package evil-visualstar
-    :init
+    :commands evil-mode
+    :config
     (global-evil-visualstar-mode)
     ;; This causes `*' than `n' to extend the selection, which clearly isn't
     ;; desirable. Not sure why this was ever enabled to begin with
@@ -385,21 +386,23 @@
     )
 
   (use-package evil-surround
-    :init
+    :commands evil-mode
+    :config
     (global-evil-surround-mode 1)
     )
 
   (use-package evil-commentary
     :diminish
+    :commands evil-mode
     ;; Disable binding that conflicts with `eglot-find-typeDefinition'
-    :init
-    (evil-commentary-mode)
     :config
+    (evil-commentary-mode)
     (evil-define-key 'normal evil-commentary-mode-map (kbd "gy") nil)
     )
 
   (use-package evil-goggles
     :diminish
+    :commands evil-mode
     :config
     (setq evil-goggles-enable-delete nil)
     (setq evil-goggles-enable-change nil)
@@ -423,6 +426,7 @@
     )
 
   (use-package evil-numbers
+    :commands evil-mode
     :bind (
            (:map evil-normal-state-map
                  ("C-a" . evil-numbers/inc-at-pt)
@@ -431,7 +435,6 @@
            (:map rk/evil-leader-map
                  ("C-x" . evil-numbers/dec-at-pt))
            )
-    :commands (evil-numbers/inc-at-pt evil-numbers/dec-at-pt)
     )
 
   ;; This doesn't work that well, requires a second key to be pressed before the
