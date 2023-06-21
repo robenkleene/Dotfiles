@@ -9,6 +9,7 @@ command! Fprev :call commands#Fprev()
 
 command! YankGrep :call commands#YankGrep()
 command! YankPath :call commands#YankPath()
+command! YankFilename :call commands#YankFilename()
 
 command! -nargs=* Rg :call commands#Rg(<q-args>)
 command! Cpaste :let @0=substitute(@0, '\n\+$', '', '') | :norm "0p
