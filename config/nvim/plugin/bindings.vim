@@ -1,7 +1,9 @@
 " nnoremap <silent> <leader>oi :OI<CR>
-nnoremap <silent> cl :lcd %:p:h<CR>:echo getcwd()<CR>
-nnoremap <silent> cd :cd %:p:h<CR>:echo getcwd()<CR>
-nnoremap <silent> cg :execute 'cd' getcwd(-1)<CR>:echo getcwd()<CR>
+" Can't use `cl` here because it conflicts with "changing" current char plus
+" one right
+nnoremap <silent> cdl :lcd %:p:h<CR>:echo getcwd()<CR>
+nnoremap <silent> cdg :cd %:p:h<CR>:echo getcwd()<CR>
+nnoremap <silent> cdp :execute 'cd' getcwd(-1)<CR>:echo getcwd()<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
 " Move by display line
