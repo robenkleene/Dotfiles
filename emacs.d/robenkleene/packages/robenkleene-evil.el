@@ -90,7 +90,7 @@
   (setq evil-operator-state-modes nil)
   (setq evil-visual-state-modes nil)
 
-  (evil-mode 1)
+  ;; (evil-mode 1)
   :config
   ;; These conflict with other functions, just use the defaults
   ;; (defalias 'motion 'evil-motion-state)
