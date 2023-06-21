@@ -11,9 +11,10 @@ return {
     "levouh/tint.nvim",
     event = "VeryLazy",
     config = function()
-      -- Set to background color to prevent text from being hidden by tinting
-      require("tint").setup()
-      require("tint.transforms").tint_with_threshold(-100, "#1A1B25", 150)
+      require("tint").setup({
+        -- tint_background_colors = true,
+        highlight_ignore_patterns = { "Tab.*", ".*LineNr" }
+      })
     end
   },
   {
