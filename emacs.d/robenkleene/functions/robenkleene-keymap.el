@@ -72,7 +72,7 @@ With prefix arg, find the previous file."
                  (length files))))
       (find-file (nth pos files)))))
 
-(defun robenkleene/forward-block (&optional n)
+(defun rk/forward-block (&optional n)
   "Move to next text block N."
   (interactive "p")
   (if (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" 1)
