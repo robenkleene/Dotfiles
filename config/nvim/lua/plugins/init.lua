@@ -12,6 +12,7 @@ return {
     event = "VeryLazy",
     config = function()
       -- Set to background color to prevent text from being hidden by tinting
+      require("tint").setup()
       require("tint.transforms").tint_with_threshold(-100, "#1A1B25", 150)
     end
   },
