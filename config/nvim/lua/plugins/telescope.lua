@@ -25,6 +25,16 @@ return {
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
     require('telescope').setup{
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-p>"] = require('telescope.actions').cycle_history_prev,
+            ["<C-n>"] = require('telescope.actions').cycle_history_next,
+            ["<M-Up>"] = require('telescope.actions').cycle_history_prev,
+            ["<M-Down>"] = require('telescope.actions').cycle_history_next,
+          },
+        }
+      },
       pickers = {
         find_files = { theme = "dropdown" },
         buffers = { theme = "dropdown" },
