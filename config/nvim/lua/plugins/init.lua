@@ -13,7 +13,7 @@ return {
     config = function()
       require("tint").setup({
         -- tint_background_colors = true,
-        highlight_ignore_patterns = { "Tab.*", ".*LineNr" }
+        highlight_ignore_patterns = { "EndOfBuffer", "Tab.*", ".*LineNr" }
       })
     end
   },
