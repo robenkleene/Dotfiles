@@ -165,7 +165,9 @@
 
   ;; Evil Goggle
   ;; This should be the default but isn't working for some reason
-  (set-face-attribute 'evil-goggles-default-face nil :inherit 'region)
+  (with-eval-after-load 'evil-mode
+    (set-face-attribute 'evil-goggles-default-face nil :inherit 'region)
+    )
 
   ;; Markdown
   (with-eval-after-load 'markdown-mode
