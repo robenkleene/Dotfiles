@@ -70,6 +70,12 @@ function! commands#YankPath()
   echo getreg('@')
 endfunction
 
+function! commands#YankFilename()
+  let @@ = expand("%")
+  call system('~/.bin/safecopy', @@)
+  echo getreg('@')
+endfunction
+
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
