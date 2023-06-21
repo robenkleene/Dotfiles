@@ -19,11 +19,6 @@
     "body": "echo \"${0:Error}\" >&2",
     "description": "Echo error"
   },
-  "cds": {
-    "prefix": "cds",
-    "body": "cd \"\\$(dirname \"\\$0\")\" || exit 1",
-    "description": "cd to directory of script"
-  },
   "noslash": {
     "prefix": "noslash",
     "body": "${1:noslash}=\\${${2:1}%/}$0",
@@ -182,6 +177,16 @@
     "prefix": "IFS",
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Change IFS"
+  },
+  "scriptdir": {
+    "prefix": "scriptdir",
+    "body": "script_dir=$(dirname \"\\$0\")",
+    "description": "Script directory"
+  },
+  "scriptdircd": {
+    "prefix": "scriptdircd",
+    "body": "cd \"\\$(dirname \"\\$0\")\" || exit 1",
+    "description": "cd to directory of script"
   },
   "getopts": {
     "prefix": "getopts",
