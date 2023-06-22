@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# Allow unbound variable for $1
+set -eo pipefail
 
 hg log --template '{node|short} {author|user}: {desc|strip|firstline}\n' --limit 100 "$1" | \
   fzf --no-sort --ansi --tiebreak=index \
