@@ -4,5 +4,7 @@ augroup dirvish_mapping
 augroup END
 
 function! s:DirvishMapping()
-  noremap <silent><buffer> cd <Nop>
+  nnoremap <silent><buffer> cd <Nop>
+  nnoremap <silent><buffer> / /
+  nnoremap <silent><buffer> ? ?
 endfunction
