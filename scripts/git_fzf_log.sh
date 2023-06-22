@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# Allow unbound variable for $1
+set -eo pipefail
 
-git log --graph --color=always --format="%C(auto)%h %s%d " | \
+separator="."
+if [[ "$#" -eq 1 ]]; then
+  separator=" -- "
+fi
+
+git log --graph --color=always --format="%C(auto)%h %s%d" ${separator}"${1}" | \
   fzf --no-sort --ansi --tiebreak=index \
-  --preview 'echo {} | ~/.bin/nobin/_git_fzf_commit_preview.sh' \
+  --preview "echo {} | ~/.bin/nobin/_git_fzf_commit_preview.sh \"$1\"" \
   --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up' \
   --height=100% \
   --preview-window '<30(bottom,30%)' | grep --only-matching "[a-f0-9]\{7\}"
