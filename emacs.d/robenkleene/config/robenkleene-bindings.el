@@ -84,11 +84,12 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-`") 'eshell-other-window)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
+(define-key rk/bindings-minor-mode-map (kbd "C-c M-z") 'zap-to-char)
 
 ;; Window-Key Based
 (define-key rk/window-map
-  (kbd "t")
-  'tab-new)
+            (kbd "t")
+            'tab-new)
 (define-key rk/window-map
   (kbd "M-t")
   'tab-new)
