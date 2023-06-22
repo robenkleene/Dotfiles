@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+preview_opts="--preview 'bat -n --color=always {}' --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up'"
+
+__fzfcmd() {
+  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
+    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} ${preview_opts} -- " || echo "fzf ${preview_opts}"
+}
+eval "$(__fzfcmd)"
+

@@ -32,7 +32,10 @@ fi
 cd ~/Developer/Snippets/ || return 1
 cmd="fd --strip-cwd-prefix --type f --follow"
 
-result="$(eval "$cmd" | fzf)"
+set +e
+result="$(eval "$cmd" | ~/.bin/nobin/_fzf_bat_preview.sh)"
+set -e
+
 if [[ -n "$result" ]]; then
   parameter=$(printf '%q' "$PWD/$result")
   ~/.bin/safecopy < "$parameter"
