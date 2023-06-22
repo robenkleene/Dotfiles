@@ -262,8 +262,10 @@
 
 ;; Automatically revert unmodified buffers
 ;; This was causing the cursor to jump randomly after saving
-(global-auto-revert-mode t)
+(global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t)
+;; Auto-revert more quickly
+(setq auto-revert-interval 1)
 ;; Suppress message that happens every time a buffer gets reverted
 (setq auto-revert-verbose nil)
 ;; Remove messages about saving when a file on disk has changed
