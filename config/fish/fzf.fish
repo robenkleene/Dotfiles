@@ -74,7 +74,7 @@ bind \ec _robenkleene-fzf-z-subdir-widget
 
 function _robenkleene-fzf-open-widget
     set -l cmd "~/.bin/find_ls"
-    eval "$cmd | "(__fzfcmd) | read -l result
+    eval "$cmd | "(~/.bin/nobin/_fzf_bat_preview.sh) | read -l result
 
     if test -e "$result"
         set -l result_path (string escape "$result")

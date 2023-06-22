@@ -50,7 +50,7 @@ fi
 cd ~/Documentation/ || return 1
 
 set +e
-result="$(eval "$cmd" | fzf --preview 'bat -n --color=always {}' --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up')"
+result="$(eval "$cmd" | ~/.bin/nobin/_fzf_bat_preview.sh)"
 set -e
 if [[ -z "$result" ]]; then
   exit
