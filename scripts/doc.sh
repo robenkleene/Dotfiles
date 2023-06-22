@@ -48,7 +48,10 @@ if [[ "$directory" == "true" ]]; then
 fi
 
 cd ~/Documentation/ || return 1
-result="$(eval "$cmd" | fzf)"
+
+set +e
+result="$(eval "$cmd" | fzf --preview 'bat -n --color=always {}' --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up')"
+set -e
 if [[ -z "$result" ]]; then
   exit
 fi
