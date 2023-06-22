@@ -33,7 +33,7 @@ cd ~/Developer/Snippets/ || return 1
 cmd="fd --strip-cwd-prefix --type f --follow"
 
 set +e
-result="$(eval "$cmd" | ~/.bin/fzf_bat)"
+result="$(eval "$cmd" | ~/.bin/fzf_preview)"
 set -e
 
 if [[ -n "$result" ]]; then
