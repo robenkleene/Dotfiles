@@ -125,7 +125,7 @@ _fzf_open_widget() {
   fzfcmd="$(__fzfcmd)"
 
   local result
-  result="$(eval "$cmd" | ~/.bin/nobin/_fzf_bat_preview.sh)"
+  result="$(eval "$cmd" | ~/.bin/fzf_bat)"
   local ret=$?
 
   if [[ ! -e "$result" ]]; then
