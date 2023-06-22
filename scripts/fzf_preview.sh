@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-preview_opts="--preview 'bat -n --color=always {}' --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up'"
+preview_opts="--preview '~/.bin/nobin/_fzf_preview.sh {}' --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up'"
 
 __fzfcmd() {
   [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
