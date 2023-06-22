@@ -22,40 +22,42 @@
 (setq vc-hg-parse-hg-data-structures nil)
 (setq vc-log-show-limit 100)
 
-(defadvice vc-print-log (before rk/vc-print-log-hg)
-  "Support for `hg'"
-  (setq-local vc-handled-backends
-              (cons #'Hg
-                    vc-handled-backends))
-  )
+;; `hg' commands just hang too often, comment these out to remind me not to run
+;; them
+;; (defadvice vc-print-log (before rk/vc-print-log-hg)
+;;   "Support for `hg'"
+;;   (setq-local vc-handled-backends
+;;               (cons #'Hg
+;;                     vc-handled-backends))
+;;   )
 
-(defadvice vc-print-root-log (before rk/vc-print-root-log-hg)
-  "Support for `hg'"
-  (setq-local vc-handled-backends
-              (cons #'Hg
-                    vc-handled-backends))
-  )
+;; (defadvice vc-print-root-log (before rk/vc-print-root-log-hg)
+;;   "Support for `hg'"
+;;   (setq-local vc-handled-backends
+;;               (cons #'Hg
+;;                     vc-handled-backends))
+;;   )
 
-(defadvice vc-cd-vc-root (before rk/vc-cd-vc-root-hg)
-  "Support for `hg'"
-  (setq-local vc-handled-backends
-              (cons #'Hg
-                    vc-handled-backends))
-  )
+;; (defadvice vc-cd-vc-root (before rk/vc-cd-vc-root-hg)
+;;   "Support for `hg'"
+;;   (setq-local vc-handled-backends
+;;               (cons #'Hg
+;;                     vc-handled-backends))
+;;   )
 
-(defadvice vc-root-diff (before rk/vc-root-diff-hg)
-  "Support for `hg'"
-  (setq-local vc-handled-backends
-              (cons #'Hg
-                    vc-handled-backends))
-  )
+;; (defadvice vc-root-diff (before rk/vc-root-diff-hg)
+;;   "Support for `hg'"
+;;   (setq-local vc-handled-backends
+;;               (cons #'Hg
+;;                     vc-handled-backends))
+;;   )
 
-(defun rk/vc-print-log-startup ()
-  "`vc' log in current window."
-  (interactive)
-  (progn (call-interactively 'vc-print-log)
-         (delete-other-windows))
-  )
+;; (defun rk/vc-print-log-startup ()
+;;   "`vc' log in current window."
+;;   (interactive)
+;;   (progn (call-interactively 'vc-print-log)
+;;          (delete-other-windows))
+;;   )
 
 (provide 'robenkleene-vc)
 ;; Local Variables:
