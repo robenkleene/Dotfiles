@@ -4,6 +4,6 @@ augroup netrw_mapping
 augroup END
 
 function! s:NetrwMapping()
-  noremap <silent><buffer> cd :execute "cd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
-  noremap <silent><buffer> cl :execute "lcd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
+  noremap <silent><buffer> cdg :execute "cd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
+  noremap <silent><buffer> cdl :execute "lcd ".fnameescape(b:netrw_curdir)<CR>\|:redraw!<CR>
 endfunction
