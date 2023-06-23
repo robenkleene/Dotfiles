@@ -40,4 +40,3 @@ nnoremap <expr> <leader>p ":Cwise<CR>\"0p"
 vnoremap <expr> <leader>p ":<C-u>Cwise<CR>gv\"0p"
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
-nnoremap - :NNN<CR>
