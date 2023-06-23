@@ -29,14 +29,20 @@
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
+(defun rk/isearch-delete ()
+  "Delete query."
+  (interactive)
+  (isearch-del-char most-positive-fixnum))
+(define-key isearch-mode-map (kbd "M-<backspace>") 'rk/isearch-delete)
+(define-key isearch-mode-map (kbd "M-DEL") 'rk/isearch-delete)
 
 ;; Window Management
 
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
-                                                          (interactive)
-                                                          (split-window-vertically)
-                                                          (other-window 1)))
+                                                 (interactive)
+                                                 (split-window-vertically)
+                                                 (other-window 1)))
 (define-key rk/bindings-minor-mode-map "\C-x3"
   (lambda ()
     (interactive)
