@@ -267,7 +267,7 @@
 ;; Auto-revert more quickly
 (setq auto-revert-interval 1)
 ;; Suppress message that happens every time a buffer gets reverted
-(setq auto-revert-verbose nil)
+;; (setq auto-revert-verbose nil)
 ;; Remove messages about saving when a file on disk has changed
 (setq revert-without-query '(".*"))
 
