@@ -17,9 +17,6 @@ return {
     { '<leader>s' },
     { '<leader>S' },
     { '<leader>r' },
-    { '<M-c>' },
-    { '<M-z>' },
-    { '<M-->' },
     { '<M-o>' },
   },
   config = function()
@@ -54,9 +51,6 @@ return {
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    vim.keymap.set('n', '<M-c>', ":Telescope find_files find_command=z_list_subdir<CR>")
-    vim.keymap.set('n', '<M-z>', ":Telescope find_files find_command=z_list<CR>")
-    vim.keymap.set('n', '<M-->', ":Telescope find_files find_command=z_list_parentdir<CR>")
     vim.keymap.set('n', '<M-o>', ":Telescope find_files find_command=find_ls<CR>")
   end
 }
