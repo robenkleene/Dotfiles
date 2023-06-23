@@ -5,7 +5,7 @@ return {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
   },
-  { "numToStr/Comment.nvim", config = true, event = "VeryLazy" },
+  { "numToStr/Comment.nvim",     config = true, event = "VeryLazy" },
   {
     "levouh/tint.nvim",
     event = "VeryLazy",
@@ -28,23 +28,36 @@ return {
       vim.api.nvim_set_keymap(
         'i', '<Tab>',
         'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
-        {expr = true, silent = true})
+        { expr = true, silent = true })
     end
   },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
-  { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
+  { "kylechui/nvim-surround",    config = true, event = "VeryLazy" },
   {
     -- Use `B` command to pipe just part of a visual selection
     'vim-scripts/vis',
     cmd = "B"
   },
   {
-      'nvim-treesitter/playground',
-      cmd = 'TSPlaygroundToggle'
+    'luukvbaal/nnn.nvim',
+    config = function()
+      require("nnn").setup({
+        replace_netrw = "picker",
+      })
+      vim.keymap.set('n', '-', ":NnnPicker<CR>")
+    end,
+    cmd = { "NnnPicker", "Explore" },
+    keys = {
+      { '-' },
+    }
   },
   {
-      'mbbill/undotree',
-      cmd = 'UndotreeToggle'
+    'nvim-treesitter/playground',
+    cmd = 'TSPlaygroundToggle'
+  },
+  {
+    'mbbill/undotree',
+    cmd = 'UndotreeToggle'
   },
   { 'samjwill/nvim-unception' },
   -- Themes
@@ -87,5 +100,5 @@ return {
   --   end
   -- },
   -- Languages
-  { 'dag/vim-fish', ft = { 'fish' }, }
+  { 'dag/vim-fish',           ft = { 'fish' }, }
 }

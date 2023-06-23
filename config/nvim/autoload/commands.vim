@@ -27,12 +27,6 @@ function! commands#NewBufferWithClipboard() abort
   normal VP
 endfunction
 
-function! commands#NNN() abort
-  let l:term_dir=expand('%:p:h')
-  enew
-  call termopen(["nnn","-AQe",l:term_dir], {'cwd': l:term_dir })
-endfunction
-
 function! s:entries(path) abort
   let path = substitute(a:path,'[\\/]$','','')
   let files = split(glob(path."/.*"),"\n")
