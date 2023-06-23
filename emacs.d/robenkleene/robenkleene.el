@@ -63,7 +63,6 @@
 (require 'robenkleene-eglot)
 (require 'robenkleene-expand-region)
 (require 'robenkleene-vundo)
-(require 'robenkleene-evil)
 (require 'robenkleene-monky)
 (require 'robenkleene-esup)
 (require 'robenkleene-corfu)
