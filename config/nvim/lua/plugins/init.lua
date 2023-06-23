@@ -7,16 +7,6 @@ return {
   },
   { "numToStr/Comment.nvim",     config = true, event = "VeryLazy" },
   {
-    "levouh/tint.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("tint").setup({
-        -- tint_background_colors = true,
-        highlight_ignore_patterns = { "EndOfBuffer", "Tab.*", ".*LineNr" }
-      })
-    end
-  },
-  {
     'L3MON4D3/LuaSnip',
     -- This can't co-exist with GitHub Copilot
     -- keys = {
