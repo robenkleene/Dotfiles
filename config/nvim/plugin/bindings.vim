@@ -7,8 +7,10 @@ nnoremap <silent> cdp :execute 'cd' getcwd(-1)<CR>:echo getcwd()<CR>
 nnoremap <expr> <M-n> len(getqflist()) ? ":cn<CR>" : len(argv()) > 1 ? ":next<CR>" : ":Fnext<CR>"
 nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR>" : ":Fprev<CR>"
 " Move by display line
-noremap <silent> k gk
-noremap <silent> j gj
+" This breaks entering snippets, e.g., if you start a snippet, and are at the
+" first `$1`, if you type `j` it will mess up instead of entering `j`
+" noremap <silent> k gk
+" noremap <silent> j gj
 noremap <silent> <up> gk
 noremap <silent> <down> gj
 nnoremap <A-left> b
