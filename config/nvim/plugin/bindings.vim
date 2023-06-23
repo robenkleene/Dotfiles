@@ -38,4 +38,4 @@ nnoremap <expr> <leader>p ":Cwise<CR>\"0p"
 vnoremap <expr> <leader>p ":<C-u>Cwise<CR>gv\"0p"
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
-nnoremap - :let term_dir=expand('%:p:h') \| enew \| call termopen(["nnn","-AQe"], {'cwd': term_dir })<CR>
+nnoremap - :NNN<CR>
