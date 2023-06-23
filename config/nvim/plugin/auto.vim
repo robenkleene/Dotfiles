@@ -130,8 +130,10 @@ augroup z_add
 augroup END
 if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
 
-augroup terminal_insert
+augroup terminal_settings
   autocmd!
   " Start terminals in insert mode
   autocmd TermOpen * startinsert
+  " Automatically close terminals
+  autocmd TermClose * call feedkeys("i")
 augroup END
