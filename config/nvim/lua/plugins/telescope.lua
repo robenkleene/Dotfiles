@@ -46,11 +46,10 @@ return {
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
     vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
     vim.keymap.set('n', '<leader>F', require('telescope.builtin').find_files)
-    vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
+    vim.keymap.set('n', '<leader>f', '<cmd>lua require("telescope.builtin").find_files({cwd = "%:h"})<CR>')
     vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    vim.keymap.set('n', '<M-o>', ":Telescope find_files find_command=find_ls,-f<CR>")
   end
 }
