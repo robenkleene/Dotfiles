@@ -2,24 +2,25 @@
 ;;; Commentary:
 ;;; Code:
 
+;; This adds a lot of latency, can I get away without it?
 ;; Fix cut & paste
 ;; Need to store the last paste because the function should only return a value
 ;; if it's different than the last paste
-(setq rk/last-paste nil)
-(defun rk/copy-from-osx ()
-  (let ((copied-text (shell-command-to-string "pbpaste")))
-    (unless (string= copied-text rk/last-paste)
-      copied-text)))
-(setq interprogram-paste-function 'rk/copy-from-osx)
+;; (setq rk/last-paste nil)
+;; (defun rk/copy-from-osx ()
+;;   (let ((copied-text (shell-command-to-string "pbpaste")))
+;;     (unless (string= copied-text rk/last-paste)
+;;       copied-text)))
+;; (setq interprogram-paste-function 'rk/copy-from-osx)
 
-(defun rk/paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc)))
-  (setq rk/last-paste text)
-  )
-(setq interprogram-cut-function 'rk/paste-to-osx)
+;; (defun rk/paste-to-osx (text &optional push)
+;;   (let ((process-connection-type nil))
+;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+;;       (process-send-string proc text)
+;;       (process-send-eof proc)))
+;;   (setq rk/last-paste text)
+;;   )
+;; (setq interprogram-cut-function 'rk/paste-to-osx)
 
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
