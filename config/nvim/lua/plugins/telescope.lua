@@ -51,6 +51,6 @@ return {
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    vim.keymap.set('n', '<M-o>', ":Telescope find_files find_command=find_ls<CR>")
+    vim.keymap.set('n', '<M-o>', ":Telescope find_files find_command=find_ls,-f<CR>")
   end
 }
