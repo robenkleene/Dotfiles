@@ -7,7 +7,7 @@
          ("C-x b" . consult-buffer)
          ("C-c r" . consult-recent-file)
          ("C-c q" . consult-compile-error)
-         ("C-c /" . consult-ripgrep)
+         ("C-c s" . consult-ripgrep)
          ("C-c z" . rk/consult-z)
          ("M-z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
