@@ -320,7 +320,9 @@
 (setq disabled-command-function nil)
 
 ;; Highlight the current line
-;; (global-hl-line-mode 1)
+;; This makes it way easier to find the cursor in buffers with complicated
+;; colors like `diff'
+(global-hl-line-mode 1)
 
 ;; Make new buffers use `text-mode'
 (setq-default major-mode 'text-mode)
