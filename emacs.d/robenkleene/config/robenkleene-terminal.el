@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Only enable if macOS clipboard commadns or `tmux' pasteboard are available
+;; This adds a lot of latency, can I get away without it?
+;; Only enable if macOS clipboard commands or `tmux' pasteboard are available
 (if (or (getenv "TMUX") (rk/system-is-mac))
     (progn
       ;; Need to store the last paste because the function should only return a value
