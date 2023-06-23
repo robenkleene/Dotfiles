@@ -21,10 +21,10 @@
 (define-key rk/bindings-minor-mode-map (kbd "M-%")
   'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
+(define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
+(define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
+(define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
+(define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
