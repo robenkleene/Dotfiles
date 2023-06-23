@@ -39,19 +39,6 @@ return {
     cmd = "B"
   },
   {
-    'luukvbaal/nnn.nvim',
-    config = function()
-      require("nnn").setup({
-        replace_netrw = "picker",
-      })
-      vim.keymap.set('n', '-', ":NnnPicker<CR>")
-    end,
-    cmd = { "NnnPicker", "Explore" },
-    keys = {
-      { '-' },
-    }
-  },
-  {
     'nvim-treesitter/playground',
     cmd = 'TSPlaygroundToggle'
   },

@@ -4,7 +4,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "editorconfig.nvim": { "branch": "master", "commit": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf" },
   "lazy.nvim": { "branch": "main", "commit": "b7043f2983d7aead78ca902f3f2053907081859a" },
-  "nnn.nvim": { "branch": "master", "commit": "4616ec65eb0370af548e356c3ec542c1b167b415" },
   "nvim-cmp": { "branch": "main", "commit": "8a1694ff330ed58ed29716686fcef79c28090354" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
   "nvim-lspconfig": { "branch": "master", "commit": "11a1be0e5f180b57079db56de10a20b4323111ae" },
