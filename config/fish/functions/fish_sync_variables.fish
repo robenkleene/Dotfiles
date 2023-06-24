@@ -7,21 +7,13 @@ function fish_sync_variables
     # Suppress default greeting
     set -U fish_greeting
 
+    # Setup editors first so others can depend on them
+    # Vim
+    set -Ux VIM_COMMAND nvim
     # Emacs
     # Start the server in the background if it isn't running
     set -Ux ALTERNATE_EDITOR ""
     set -Ux EMACS_COMMAND "emacsclient -nw"
-
-    # Other
-    set -Ux VIM_COMMAND nvim
-    set -Ux MD_CAT_COMMAND "bat --style plain"
-    set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
-    # set -Ux CD_COMMAND "vim_cd"
-    set -Ux CD_COMMAND "emacs_cd"
-
-    # hx
-    # set -Ux VISUAL "hx"
-    # set -Ux TIG_EDITOR "hx_wrapper"
 
     # Standard
     # Without explicitely specifying `less` as the pager, Linux will use the
@@ -35,6 +27,18 @@ function fish_sync_variables
     # Prevent `npm` scripts from opening browser windows
     set -Ux BROWSER "none"
     set -Ux COLORTERM "truecolor"
+
+
+    # Other
+    set -Ux MD_CAT_COMMAND "bat --style plain"
+    # set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
+    set -Ux MD_EDITOR_COMMAND "$VISUAL"
+    # set -Ux CD_COMMAND "vim_cd"
+    set -Ux CD_COMMAND "emacs_cd"
+
+    # hx
+    # set -Ux VISUAL "hx"
+    # set -Ux TIG_EDITOR "hx_wrapper"
 
     # nnn
     set -Ux NNN_PLUG "z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal;o:fzf_ls;p:preview"
