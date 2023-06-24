@@ -19,7 +19,7 @@ fi
 
 if [ -d "$result" ]; then
     nnn_cd "$result" "$CTX"
-else
+elif [ -f "$result" ]; then
     exec "$EDITOR" "$result"
 fi
 
