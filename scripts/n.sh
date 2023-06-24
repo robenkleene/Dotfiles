@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec nnn -eAQ
+exec export LESS="" nnn -eAQ

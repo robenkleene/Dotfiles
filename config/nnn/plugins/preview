@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
 fi
 
 if [ -d "$1" ]; then
-    find "$1" | LESS="" less
+    find "$1" | less
 elif [ -f "$1" ]; then
-    LESS="" bat --paging=always "$1"
+    bat --paging=always "$1"
 fi
