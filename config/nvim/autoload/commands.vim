@@ -106,5 +106,9 @@ endfunction
 
 function! commands#NNN() abort
   let l:path=expand('%:p')
-  call termopen(["nnn","-AQe",l:path])
+  " Without an `enew` it takes over the current buffer completely which means if
+  " you have a file, make a split, then enter `nnn` in the split, it'll open
+  " in both splits.
+  enew
+  call termopen(["nnn","-AQ",l:path])
 endfunction
