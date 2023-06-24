@@ -112,4 +112,5 @@ function! commands#NNN() abort
   enew
   call termopen(["nnn","-AQ",l:path])
   setlocal bufhidden=wipe
+  setlocal buftype=nofile
 endfunction
