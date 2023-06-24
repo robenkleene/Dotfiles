@@ -26,7 +26,7 @@
 	d = diff
 	l = log
 	lgr = log -p -G
-	lg = git log --oneline --graph
+	lg = log --oneline --graph
 	p = push
 	u = pull
 	ur = pull --rebase
