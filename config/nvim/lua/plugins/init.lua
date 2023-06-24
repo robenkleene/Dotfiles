@@ -5,7 +5,11 @@ return {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
   },
-  { "numToStr/Comment.nvim",     config = true, event = "VeryLazy" },
+  { 
+    "numToStr/Comment.nvim",
+    config = true,
+    event = "VeryLazy"
+  },
   {
     'L3MON4D3/LuaSnip',
     -- This can't co-exist with GitHub Copilot
