@@ -25,10 +25,11 @@
 	co = checkout
 	d = diff
 	l = log
-	lg = log -p -G
+	lgr = log -p -G
+	lg = git log --oneline --graph
 	p = push
 	u = pull
-	ur = pull -r
+	ur = pull --rebase
 	s = status
 	sh = show
 	t = tag
