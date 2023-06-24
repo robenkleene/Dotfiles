@@ -2,9 +2,36 @@
 
 set -e
 
-if [[ ! -d "$1" ]]; then
-  if [[ -n "$1" ]]; then
-    echo "$1 is not a directory"
+force="false"
+while getopts ":p:s:fh" option; do
+  case "$option" in
+    p)
+      file_path="$OPTARG"
+      ;;
+    s)
+      source_file="$OPTARG"
+      ;;
+    f)
+      force="true"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <dir_path>] [-s <source_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ ! -d "$file_path" ]]; then
+  if [[ -n "$file_path" ]]; then
+    echo "$file_path is not a directory"
     echo
   fi
   echo "Usage: git_sync_clone <root directory> [repos file] [run]"
@@ -12,10 +39,8 @@ if [[ ! -d "$1" ]]; then
 fi
 
 dry_run=true
-if [[ "$3" == "run" ]]; then
+if [[ "$force" == "true" ]]; then
   dry_run=false
-else
-  echo "Dry Run\n"
 fi
 
 typeset -A repos
@@ -28,9 +53,9 @@ while read line; do
   dir="${dir%\"}"
   dir="${dir#\"}"
   repos+=( $dir $remote )
-done < "${2:-/dev/stdin}"
+done < "${source_file:-/dev/stdin}"
 
-cd "$1" || exit 1
+cd "$file_path" || exit 1
 
 for directory in "${(@k)repos}"; do
   remote="$repos[$directory]"

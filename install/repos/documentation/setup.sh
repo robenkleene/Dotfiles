@@ -31,7 +31,7 @@ mkdir -p ~/Documentation/
 
 cd "$(dirname "$0")" || exit 1
 if [[ "$use_https" == "true" ]]; then
-  ~/.bin/git_sync_clone ~/Documentation/ <(~/.bin/git_swap_format -H < documentation.txt) "$force_string"
+  ~/.bin/git_sync_clone -p ~/Documentation/ -s <(~/.bin/git_swap_format -H < documentation.txt) -f
 else
-  ~/.bin/git_sync_clone ~/Documentation/ documentation.txt "$force_string"
+  ~/.bin/git_sync_clone -p ~/Documentation/ -s documentation.txt -f
 fi
