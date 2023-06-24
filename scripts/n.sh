@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec nnn -AQ
+exec nnn -eAQ

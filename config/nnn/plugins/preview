@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ -n "$result" ]; then
+    exit 1
+fi
+
+if [ -d "$1" ]; then
+    ls "$1"
+elif [ -f "$1" ]; then
+    exec bat "$1"
+fi
