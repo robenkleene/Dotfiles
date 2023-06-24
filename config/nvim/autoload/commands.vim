@@ -111,6 +111,4 @@ function! commands#NNN() abort
   " in both splits.
   enew
   call termopen(["nnn","-AQ",l:path])
-  setlocal bufhidden=wipe
-  setlocal buftype=nofile
 endfunction
