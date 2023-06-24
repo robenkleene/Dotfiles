@@ -103,3 +103,8 @@ function! commands#TerminalLocal() abort
   enew
   call termopen([&shell], { 'cwd': l:term_dir })
 endfunction
+
+function! commands#NNN() abort
+  let l:path=expand('%:p')
+  call termopen(["nnn","-AQe",l:path])
+endfunction

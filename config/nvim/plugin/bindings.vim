@@ -26,6 +26,7 @@ nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 nnoremap <leader>T :terminal<CR>
 nnoremap <leader>t :TerminalLocal<CR>
+nnoremap - :NNN<CR>
 " Tabs
 nnoremap <silent> <C-w>t :split<CR><C-w>T
 vnoremap <silent> <C-w>t :split<CR><C-w>T
