@@ -110,7 +110,7 @@ function! commands#NNN() abort
   " you have a file, make a split, then enter `nnn` in the split, it'll open
   " in both splits.
   enew
-  call termopen(["nnn","-AQ",l:path])
+  call termopen(["nnn","-eAQ",l:path])
   " `bufhidden=delete` should close the buffer when it hides, which would help
   " prevent the "job still running" messages when quitting with `:wqa` and a
   " still living `nnn` buffer. This doesn't work though.
