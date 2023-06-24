@@ -150,6 +150,9 @@ n ()
 
     # The command builtin allows one to alias nnn to n, if desired, without
     # making an infinitely recursive alias
+
+    # Override LESS because some nnn commands use LESS and options like
+    # --quit-if-one-screen interfere because they don't pause at the end
     export LESS="" command nnn -eAQ "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
