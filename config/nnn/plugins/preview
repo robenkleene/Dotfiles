@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
-if [ -n "$result" ]; then
+if [ -z "$1" ]; then
     exit 1
 fi
 
 if [ -d "$1" ]; then
-    ls "$1"
+    find "$1" | LESS="" less
 elif [ -f "$1" ]; then
-    exec bat "$1"
+    LESS="" bat --paging=always "$1"
 fi
