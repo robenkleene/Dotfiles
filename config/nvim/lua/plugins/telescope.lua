@@ -16,7 +16,7 @@ return {
     { '<leader>/' },
     { '<leader>s' },
     { '<leader>S' },
-    { '<leader>r' },
+    { '<leader>R' },
     { '<M-o>' },
   },
   config = function()
@@ -50,6 +50,6 @@ return {
     vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-    vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
+    vim.keymap.set('n', '<leader>R', require('telescope.builtin').oldfiles)
   end
 }
