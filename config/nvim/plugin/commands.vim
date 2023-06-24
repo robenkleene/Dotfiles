@@ -14,3 +14,6 @@ command! YankFilename :call commands#YankFilename()
 command! -nargs=* Rg :call commands#Rg(<q-args>)
 command! Cpaste :let @0=substitute(@0, '\n\+$', '', '') | :norm "0p
 command! Cwise :let @0=substitute(@0, '\n\+$', '', '')
+
+command! TerminalLocal :call commands#TerminalLocal()
+

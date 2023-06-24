@@ -97,3 +97,9 @@ function! commands#Rg(terms) abort
     wincmd p
   endif
 endfunction
+
+function! commands#TerminalLocal() abort
+  let l:term_dir=expand('%:p:h')
+  enew
+  call termopen([&shell], { 'cwd': l:term_dir })
+endfunction
