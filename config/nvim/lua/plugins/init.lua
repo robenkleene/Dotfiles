@@ -42,9 +42,6 @@ return {
   },
   {
     'samjwill/nvim-unception',
-    config = function()
-      vim.g.unception_enable_flavor_text = false
-    end
   },
   -- Themes
   -- {
