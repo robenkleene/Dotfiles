@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+CTX=+
+
+# shellcheck disable=SC1090,SC1091
+. "$(dirname "$0")"/.nnn-plugin-helper
+
+if ! type fzf >/dev/null 2>&1; then
+    printf "fzf missing"
+    read -r _
+    exit 1
+fi
+
+result="$(~/.bin/fzf_ls)"
+
+if [ -n "$result" ]; then
+    exit 1
+fi
+
+if [ -d "$result" ]; then
+    nnn_cd "$result" "$CTX"
+else
+    exec "$EDITOR" "$result"
+fi
+

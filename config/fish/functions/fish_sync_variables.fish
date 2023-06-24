@@ -37,7 +37,8 @@ function fish_sync_variables
     set -Ux COLORTERM "truecolor"
 
     # nnn
-    set -Ux NNN_PLUG 'z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal'
+    set -Ux NNN_PLUG 'z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal;o:fzf_ls'
+    set -Ux NNN_OPENER 'preview'
 
     # Homebrew
     if type -q brew

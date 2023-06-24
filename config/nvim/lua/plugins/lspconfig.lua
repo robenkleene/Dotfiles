@@ -68,7 +68,8 @@ return {
       -- Open and focus the float
       -- vim.keymap.set('n', '<leader>k', ":lua vim.lsp.buf.hover()<CR>:lua vim.lsp.buf.hover()<CR>", bufopts)
       vim.keymap.set('n', '=', function() vim.lsp.buf.format { async = true } end, bufopts)
-      vim.api.nvim_echo({{"LSP attached"}}, false, {})
+      -- This sometimes fires twice which causes the "press enter to continue prompt", and I usually don't care anyway
+      -- vim.api.nvim_echo({{"LSP attached"}}, false, {})
     end
 
 -- Doesn't appear this is necessary with `VeryLazy` removed, also wouldn't work
