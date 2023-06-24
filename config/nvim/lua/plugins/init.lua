@@ -22,7 +22,11 @@ return {
       vim.api.nvim_set_keymap(
         'i', '<Tab>',
         'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
-        { expr = true, silent = true })
+        { expr = true, silent = true }
+      )
+      local luasnip = require 'luasnip'
+      -- Make sh snippets available to zsh
+      luasnip.filetype_extend("zsh", { "sh" })
     end
   },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
