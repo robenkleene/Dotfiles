@@ -27,7 +27,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
 
     # The command function allows one to alias this function to `nnn` without
     # making an infinitely recursive alias
-    command nnn -eAQ $argv
+    begin; set -lx LESS ""; command nnn -eAQ $argv; end
 
     if test -e $NNN_TMPFILE
         source $NNN_TMPFILE
