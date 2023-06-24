@@ -3,6 +3,7 @@ vim.o.termguicolors = true
 -- Set leader now so later bindings pick it up
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
+-- This setting oly works here
 vim.g.unception_enable_flavor_text = false
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
