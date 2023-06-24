@@ -111,4 +111,8 @@ function! commands#NNN() abort
   " in both splits.
   enew
   call termopen(["nnn","-AQ",l:path])
+  " `bufhidden=delete` should close the buffer when it hides, which would help
+  " prevent the "job still running" messages when quitting with `:wqa` and a
+  " still living `nnn` buffer. This doesn't work though.
+  setlocal bufhidden=delete
 endfunction
