@@ -2,7 +2,7 @@
 typeset -Ag abbreviations
 abbreviations=(
 'v' "$VIM_COMMAND"
-'g' 'git'
+# 'g' 'git'
 )
 
 # Support local abbr created in `~/.zshrc_local`

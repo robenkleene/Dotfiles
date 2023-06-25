@@ -20,19 +20,9 @@
 [alias]
 	aa = add -A :/
 	aac =!git add -A :/ && git commit
-	b = branch
 	cleanup =!git checkout -- . && git clean -dff 
-	co = checkout
-	d = diff
-	l = log
-	lgr = log -p -G
+	lgrep = log -p -G
 	lg = log --oneline --graph
-	p = push
-	u = pull
-	ur = pull --rebase
-	s = status
-	sh = show
-	t = tag
 [pager]
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 #	diff = false
