@@ -32,7 +32,7 @@ done
 if [[ "$path" == "true" ]]; then
   ~/.bin/daily_file
 else
-  command="${MD_EDITOR_COMMAND:=vim}"
+  command="${MD_EDITOR_COMMAND:-${EDITOR:=vim}}"
   exec $command "$(~/.bin/daily_file)"
 fi
 

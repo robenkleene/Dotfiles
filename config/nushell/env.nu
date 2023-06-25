@@ -63,7 +63,8 @@ let-env EMACS_COMMAND = "emacsclient -nw"
 let-env VIM_COMMAND = "nvim"
 
 let-env MD_CAT_COMMAND = "bat --style plain"
-let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
+# MD_EDITOR_COMMAND fallsback to EDITOR if not set
+# let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
 
 let-env VISUAL = $"($env.VIM_COMMAND)"
 # let-env VISUAL = $"($env.EMACS_COMMAND)"

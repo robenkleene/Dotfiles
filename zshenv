@@ -69,7 +69,8 @@ export ALTERNATE_EDITOR=""
 export MD_CAT_COMMAND="bat --style plain"
 # export CD_COMMAND="vim_cd"
 export CD_COMMAND="emacs_cd"
-export MD_EDITOR_COMMAND="$EMACS_COMMAND"
+# MD_EDITOR_COMMAND fallsback to EDITOR if not set
+# export MD_EDITOR_COMMAND="$EMACS_COMMAND"
 
 if test -n "$INSIDE_EMACS"; then
     export PAGER=cat

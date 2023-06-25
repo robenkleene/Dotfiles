@@ -36,7 +36,7 @@ cmd="fd --type f --follow -g \"*.md\""
 if [[ "$edit" == "true" ]]; then
   # With edit, allow directories
   cmd="fd --follow --exclude \"*.{png,jpg}\""
-  command="${MD_EDITOR_COMMAND:=vim}"
+  command="${MD_EDITOR_COMMAND:-${EDITOR:=vim}}"
 elif [[ "$path" == "true" || "$directory" == "true" ]]; then
   command="echo"
 else
