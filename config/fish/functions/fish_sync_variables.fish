@@ -2,6 +2,7 @@ function fish_sync_variables
     for v in (set --names -U | grep -v "^_*fish")
         set -e $v
     end
+
     # Fish
     set -Ux fish_help_browser echo
     # Suppress default greeting
@@ -28,11 +29,10 @@ function fish_sync_variables
     set -Ux BROWSER "none"
     set -Ux COLORTERM "truecolor"
 
-
     # Other
     set -Ux MD_CAT_COMMAND "bat --style plain"
+    # MD_EDITOR_COMMAND fallsback to EDITOR if not set
     # set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
-    set -Ux MD_EDITOR_COMMAND "$VISUAL"
     # set -Ux CD_COMMAND "vim_cd"
     set -Ux CD_COMMAND "emacs_cd"
 
