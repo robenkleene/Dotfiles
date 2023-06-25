@@ -30,7 +30,7 @@ return {
     end
   },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
-  { "kylechui/nvim-surround",    config = true, event = "VeryLazy" },
+  { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
     -- Use `B` command to pipe just part of a visual selection
     'vim-scripts/vis',
@@ -39,10 +39,6 @@ return {
   {
     'nvim-treesitter/playground',
     cmd = 'TSPlaygroundToggle'
-  },
-  {
-    'mbbill/undotree',
-    cmd = 'UndotreeToggle'
   },
   {
     'samjwill/nvim-unception',
