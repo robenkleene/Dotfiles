@@ -15,7 +15,7 @@ while getopts ":p:s:fh" option; do
       force="true"
       ;;
     h)
-      echo "Usage: command [-hf] [-p <dir_path>] [-s <source_path>]"
+      usage
       exit 0
       ;;
     :)
@@ -29,12 +29,19 @@ while getopts ":p:s:fh" option; do
   esac
 done
 
+usage() {
+  echo "Usage: git_sync_clone -p <root directory> -s [repos file] [-f]"
+}
+
 if [[ ! -d "$file_path" ]]; then
-  if [[ -n "$file_path" ]]; then
-    echo "$file_path is not a directory"
-    echo
-  fi
-  echo "Usage: git_sync_clone <root directory> [repos file] [run]"
+  echo "Missing or invalid root directory"
+  usage
+  exit 1
+fi
+
+if [[ ! -f "$source_file" ]]; then
+  echo "Missing or invalid repos file"
+  usage
   exit 1
 fi
 
