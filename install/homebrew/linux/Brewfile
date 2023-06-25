@@ -60,6 +60,7 @@ brew 'jq'
 brew 'lua-language-server'
 # C++
 # Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
+# Removed to save disk space
 brew 'llvm'
 
 # Games
