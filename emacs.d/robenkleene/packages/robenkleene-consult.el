@@ -9,7 +9,7 @@
          ("C-c q" . consult-compile-error)
          ("C-c s" . consult-ripgrep)
          ("C-c z" . rk/consult-z)
-         ("M-z" . rk/consult-z)
+         ;; ("M-z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
          ("C-c c" . rk/consult-z-subdir)
          ("C-c -" . rk/consult-z-parentdir)
