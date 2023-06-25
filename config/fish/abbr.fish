@@ -4,7 +4,7 @@
 abbr -a -- - 'cd -'
 abbr -a v "$VIM_COMMAND"
 # abbr -a g git
-abbr -a fhm 'history merge'
+# abbr -a fhm 'history merge'
 abbr -a printfv 'printf "%s\n"'
 
 # Local
