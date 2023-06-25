@@ -2,7 +2,7 @@
 
 set -e
 
-cargo install reap-grep
+cargo install rep-grep
 # Helper for generating cargo files
 # If this is failing just comment it out
 # cargo install cargo-generate
