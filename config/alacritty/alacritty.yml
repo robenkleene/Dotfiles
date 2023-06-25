@@ -17,6 +17,14 @@ env:
   # Colors in `vim` don't work without setting `xterm-256color`
   TERM: xterm-256color
 
+# Disable holding shift to make URLs clickable
+hints:
+  enabled:
+   - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+     command: xdg-open
+     post_processing: true
+
 style:
   blinking: Off
 
