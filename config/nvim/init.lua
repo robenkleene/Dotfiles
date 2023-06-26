@@ -5,6 +5,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 -- This setting oly works here
 vim.g.unception_enable_flavor_text = false
+-- This makes in insert mode on edit
+-- vim.g.unception_delete_replaced_buffer = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
