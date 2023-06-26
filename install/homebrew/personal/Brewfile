@@ -24,6 +24,8 @@ brew 'scrcpy'
 
 # Editor
 brew 'aspell'
+# Dependency of jinx spell checker in Emacs
+brew 'enchant'
 # Required before `ctags`
 # brew 'svn'
 # Remove this in favor of LSP support because it sometimes has problems compiling
