@@ -79,7 +79,8 @@ let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsear
 # let-env VISUAL = "hx"
 # let-env TIG_EDITOR = "hx_wrapper"
 
-let-env BROWSER = "none"
+# This breaks `gh browse`
+# let-env BROWSER = "none"
 let-env COLORTERM = "truecolor"
 
 # Homebrew

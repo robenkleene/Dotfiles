@@ -18,9 +18,6 @@ if [[ -v ZSHENV_SOURCED ]]; then
 fi
 export ZSHENV_SOURCED=1
 
-# Exported
-# export BROWSER_FLAG='-t'
-
 # Export `CDPATH` so it's available in `vim`
 # export CDPATH=~:~/Developer/:~/Documentation/
 
@@ -47,7 +44,7 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # nnn
 export NNN_PLUG='z:fzf_z;c:fzf_subdir;-:fzf_parentdir'
 
-# Stanard
+# Standard
 # hx
 # export VISUAL="hx"
 # export TIG_EDITOR="hx_wrapper"
@@ -60,7 +57,8 @@ export EDITOR="$VISUAL"
 export LESS="less"
 export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
-export BROWSER="none"
+# This breaks `gh browse`
+# export BROWSER="none"
 
 # Emacs
 # Start the server in the background if it isn't running
