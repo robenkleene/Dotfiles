@@ -225,16 +225,6 @@
 ;;   (setq hippie-expand-try-functions-list
 ;;         (remq f hippie-expand-try-functions-list)))
 
-;; Spelling
-(setq ispell-program-name "aspell")
-(setq ispell-dictionary "english")
-(add-hook 'text-mode-hook 'flyspell-mode)
-;; This is way too noisy
-;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(setq flyspell-issue-message-flag nil)
-;; Don't prompt when saving a word to the dictionary
-(setq ispell-silently-savep t)
-
 ;; Mouse
 ;; Double-click instead of single click to open links
 ;; This interferes with using the mouse to select text, e.g., in terminal Emacs

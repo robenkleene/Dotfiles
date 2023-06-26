@@ -25,6 +25,7 @@
 ;; Config
 (require 'robenkleene-config)
 (require 'robenkleene-window-management)
+(require 'robenkleene-spelling)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
 (if window-system
@@ -64,7 +65,7 @@
 (require 'robenkleene-expand-region)
 (require 'robenkleene-esup)
 (require 'robenkleene-corfu)
-(require 'robenkleene-flyspell-lazy)
+(require 'robenkleene-jinx)
 
 ;; Completion
 (require 'robenkleene-vertico)
