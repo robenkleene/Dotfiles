@@ -26,7 +26,8 @@ function fish_sync_variables
     # set -Ux VISUAL "$EMACS_COMMAND"
     set -Ux EDITOR "$VISUAL"
     # Prevent `npm` scripts from opening browser windows
-    set -Ux BROWSER "none"
+    # This breaks `gh browse`
+    # set -Ux BROWSER "none"
     set -Ux COLORTERM "truecolor"
 
     # Other
