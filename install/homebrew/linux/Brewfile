@@ -12,7 +12,6 @@ brew 'bat'
 # Support for `incsearch`
 brew 'less'
 brew 'ncdu'
-brew 'git-delta'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
@@ -30,11 +29,9 @@ brew 'aspell', args: ['with-lang-en']
 brew 'emacs'
 brew 'vim'
 brew 'editorconfig'
-brew 'neofetch'
 brew 'neovim'
 brew 'fish'
 brew 'gh'
-brew 'rename'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'hyperfine'
@@ -56,14 +53,14 @@ brew 'patchelf'
 brew 'wasm-pack'
 brew 'rust-analyzer'
 # C
-brew 'valgrind'
+# brew 'valgrind'
 # json
 brew 'jq'
 brew 'lua-language-server'
 # C++
 # Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
 # Removed to save disk space
-brew 'llvm'
+# brew 'llvm'
 
 # Games
 brew 'nethack'

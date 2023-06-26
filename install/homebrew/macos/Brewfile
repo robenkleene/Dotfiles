@@ -10,11 +10,8 @@ brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
 brew 'bat'
-brew 'mas'
-brew 'rename'
 # Support for `incsearch`
 brew 'less'
-brew 'git-delta'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
@@ -123,59 +120,3 @@ brew 'imagemagick'
 # brew 'libmetalink'
 # brew 'openldap'
 # brew 'curl'
-
-# Dependencies
-
-# Common Dependencies
-brew 'openssl'
-brew 'pcre'
-brew 'readline'
-brew 'xz'
-brew 'gmp'
-brew 'libffi'
-
-# Vim
-brew 'lua'
-# Ruby
-brew 'libyaml'
-# Tmux
-brew 'libevent'
-# renameutils
-brew 'coreutils'
-# ffmpeg
-brew 'libpng'
-brew 'freetype'
-brew 'fontconfig'
-brew 'gettext'
-brew 'x264'
-brew 'lame'
-brew 'xvid'
-# imagemagick
-brew 'libtool'
-brew 'jpeg'
-brew 'libtiff'
-# Legder
-brew 'boost'
-# w3m
-brew 'bdw-gc'
-
-# NeoVim
-# brew 'cmake'
-# brew 'libbsd'
-# brew 'libnsl'
-# brew 'libuv'
-# brew 'luv'
-# brew 'neovim'
-# brew 'utf8proc'
-# brew 'icu4c'
-# brew 'libmetalink'
-# brew 'unibilium'
-# brew 'libvterm'
-# brew 'msgpack'
-# brew 'ninja'
-# brew 'libmd'
-# brew 'libtirpc'
-# brew 'libtermkey'
-# brew 'luajit-openresty'
-# brew 'tree-sitter'
-# brew 'pcre'
