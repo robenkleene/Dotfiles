@@ -25,6 +25,8 @@ brew 'aspell', args: ['with-lang-en']
 # brew 'ctags', args: ['HEAD']
 # Emacs fails to install for some reason, but don't comment this out otherwise
 # it will appear in cleanup
+# Dependency of jinx spell checker in Emacs
+brew 'enchant'
 brew 'emacs'
 brew 'vim'
 brew 'editorconfig'

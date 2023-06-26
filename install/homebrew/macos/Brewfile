@@ -22,6 +22,8 @@ brew 'nnn'
 
 # Editor
 brew 'aspell'
+# Dependency of jinx spell checker in Emacs
+brew 'enchant'
 brew 'vim'
 brew 'nvim'
 brew 'editorconfig'
