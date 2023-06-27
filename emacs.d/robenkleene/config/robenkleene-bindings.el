@@ -13,14 +13,20 @@
 ;; e.g., the minibuffer
 ;; Prefer the `regexp' versions of search and query replace, this is partially
 ;; because `C-M-%' isn't possible to type in a terminal
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+;; Toggle these off, here's the new strategy:
+;; Use `C-s' to start an `isearch', then use `M-r' to switch it to a regular
+;; expression. From `isearch', hit `M-%' to start a query replace. The query
+;; replace will match the same mode as the `isearch' (so it will be `regex' if
+;; you hit `M-r')
+;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+;; (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
 ;; Swap query replace
-(define-key rk/bindings-minor-mode-map (kbd "M-%")
-  'query-replace-regexp)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-%")
+;;             'query-replace-regexp)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+
 (define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
 (define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
 (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
