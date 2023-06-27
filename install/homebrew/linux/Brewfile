@@ -27,7 +27,7 @@ brew 'aspell', args: ['with-lang-en']
 # Dependency of jinx spell checker in Emacs
 # brew 'enchant'
 brew 'emacs'
-brew 'vim'
+# brew 'vim'
 brew 'editorconfig'
 brew 'neovim'
 brew 'fish'
