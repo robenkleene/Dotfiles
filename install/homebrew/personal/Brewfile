@@ -12,7 +12,6 @@ brew 'fd'
 brew 'bat'
 # Support for `incsearch`
 brew 'less'
-brew 'wget'
 brew 'choose-rust'
 brew 'nushell'
 brew 'zoxide'
@@ -28,7 +27,7 @@ brew 'aspell'
 # Remove this in favor of LSP support because it sometimes has problems compiling
 # Head version of `ctags` contains support for Objective-C
 # brew 'ctags', args: ['HEAD']
-brew 'vim'
+# brew 'vim'
 brew 'neovim'
 brew 'editorconfig'
 
