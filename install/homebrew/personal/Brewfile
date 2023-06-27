@@ -20,14 +20,6 @@ brew 'sd'
 
 # Editor
 brew 'aspell'
-# Dependency of jinx spell checker in Emacs
-# brew 'enchant'
-# Required before `ctags`
-# brew 'svn'
-# Remove this in favor of LSP support because it sometimes has problems compiling
-# Head version of `ctags` contains support for Objective-C
-# brew 'ctags', args: ['HEAD']
-# brew 'vim'
 brew 'neovim'
 brew 'editorconfig'
 
@@ -46,10 +38,6 @@ brew 'carthage'
 brew 'clang-format'
 # MIDI
 brew 'midicsv'
-# C
-# Failing on Apple Silicon
-# tap 'LouisBrunner/valgrind'
-# brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
 # Go
 brew 'go'
 brew 'jq'
@@ -68,34 +56,19 @@ brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
-brew 'wdiff'
 brew 'mitmproxy'
 brew 'hyperfine'
 
 # macOS
 brew 'suspicious-package'
 
-# Railwaycat
-# tap 'railwaycat/emacsmacport'
-# brew 'emacs-mac'
-# The `with-no-frame-refocus` options on this version of Emacs fixes the issue
-# of switching spaces when the last Emacs window on a space closes.
-# Note after installing run `brew info emacs-plus` for the command to symlink
-# to applications
-# tap 'd12frosted/emacs-plus'
-# brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
-# Just install from binary, not worth dealing with Homebrew symlinks and
-# dependencies
-# brew 'emacs'
-
 # Cask GUI Apps
 tap 'homebrew/cask'
-# cask 'emacs'
 cask 'blender'
 cask 'anki'
 cask 'alacritty'
 
-# Animated GIFs, `gifify` dependencies
+# Media
 brew 'ffmpeg'
 brew 'imagemagick'
 
@@ -104,22 +77,6 @@ brew 'qmk/qmk/qmk'
 tap 'osx-cross/avr'
 tap 'osx-cross/arm'
 tap 'qmk/qmk'
-
-# Unity
-# Disable these because they fail too often when installing
-# These packages are required to get autocomplete working with the C# VS Code
-# extension from Microsoft
-# (This also requires `"omnisharp.useGlobalMono": "always"` be set in VS Code's
-# preferences)
-# brew 'mono'
-# brew 'dotnet'
-# Mono & Dotnet dependencies
-# brew 'brotli'
-# brew 'libssh2'
-# brew 'zstd'
-# brew 'libmetalink'
-# brew 'openldap'
-# brew 'curl'
 
 # Games
 brew 'nethack'
