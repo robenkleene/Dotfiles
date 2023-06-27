@@ -21,7 +21,8 @@ function fish_sync_variables
     # wrong version of `less` (system installed, which doesn't support the
     # `incsearch` option instead of Homebrew installed.
     set -Ux PAGER "less"
-    set -Ux LESS "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
+    # `--no-init`: Don't clear screen when quitting less
+    set -Ux LESS "--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
     set -Ux VISUAL "$VIM_COMMAND"
     # set -Ux VISUAL "$EMACS_COMMAND"
     set -Ux EDITOR "$VISUAL"
