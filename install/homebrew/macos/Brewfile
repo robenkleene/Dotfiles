@@ -25,14 +25,6 @@ brew 'aspell'
 brew 'nvim'
 brew 'editorconfig'
 
-# ctags
-# `svn` seems to be an unlisted dependency of `ctags` so it needs to be
-# installed first
-# brew 'svn'
-# Remove this in favor of LSP support because it sometimes has problems compiling
-# `HEAD` is required for Objective-C support
-# brew 'ctags', args: ['HEAD']
-
 # Languages
 # JavaScript
 # Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
@@ -47,13 +39,6 @@ brew 'shellcheck'
 brew 'carthage'
 brew 'fastlane'
 brew 'clang-format'
-# mysql
-brew 'mysql'
-# MIDI
-brew 'midicsv'
-# C
-tap 'LouisBrunner/valgrind'
-brew 'LouisBrunner/valgrind/valgrind', args: ['HEAD']
 # Go
 brew 'go'
 # json
@@ -71,7 +56,6 @@ brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
-brew 'wdiff'
 brew 'mitmproxy'
 brew 'hyperfine'
 brew 'sd'
@@ -82,19 +66,6 @@ brew 'scrcpy'
 # macOS
 brew 'suspicious-package'
 
-# Railwaycat
-# tap 'railwaycat/emacsmacport'
-# brew 'emacs-mac'
-# The `with-no-frame-refocus` options on this version of Emacs fixes the issue
-# of switching spaces when the last Emacs window on a space closes.
-# Note after installing run `brew info emacs-plus` for the command to symlink
-# to applications
-# tap 'd12frosted/emacs-plus'
-# brew 'emacs-plus', args: ['with-elrumo2-icon', 'with-no-frame-refocus']
-# Just install from binary, not worth dealing with Homebrew symlinks and
-# dependencies
-# brew 'emacs'
-
 # Cask GUI Apps
 tap 'homebrew/cask'
 # cask 'emacs'
@@ -104,19 +75,3 @@ cask 'alacritty'
 # Animated GIFs, `gifify` dependencies
 brew 'ffmpeg'
 brew 'imagemagick'
-
-# Unity
-# Disable these because they fail too often when installing
-# These packages are required to get autocomplete working with the C# VS Code
-# extension from Microsoft
-# (This also requires `"omnisharp.useGlobalMono": "always"` be set in VS Code's
-# preferences)
-# brew 'mono'
-# brew 'dotnet'
-# # Mono & Dotnet dependencies
-# brew 'brotli'
-# brew 'libssh2'
-# brew 'zstd'
-# brew 'libmetalink'
-# brew 'openldap'
-# brew 'curl'
