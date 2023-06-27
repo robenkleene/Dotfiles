@@ -138,5 +138,6 @@ augroup terminal_settings
   " Start terminals in insert mode
   autocmd TermOpen * startinsert
   " Automatically close terminals
-  autocmd TermClose * call feedkeys("i")
+  " This breaks things like `vim.g.unception_delete_replaced_buffer`
+  " autocmd TermClose * call feedkeys("i")
 augroup END
