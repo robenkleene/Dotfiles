@@ -26,7 +26,6 @@ nnoremap <localleader>w :set wrap!<CR>
 nnoremap <leader>w :set wrap!<CR>
 nnoremap <leader>T :terminal<CR>
 nnoremap <leader>t :TerminalLocal<CR>
-nnoremap - :NNN<CR>
 " Tabs
 nnoremap <silent> <C-w>t :split<CR><C-w>T
 vnoremap <silent> <C-w>t :split<CR><C-w>T
@@ -42,3 +41,4 @@ nnoremap <expr> <leader>p ":Cwise<CR>\"0p"
 vnoremap <expr> <leader>p ":<C-u>Cwise<CR>gv\"0p"
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
+nnoremap _ :NNN<CR>

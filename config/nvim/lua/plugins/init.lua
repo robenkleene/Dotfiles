@@ -11,6 +11,13 @@ return {
     event = "VeryLazy"
   },
   {
+    'stevearc/oil.nvim',
+    config = function()
+      require("oil").setup()
+      vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+    end
+  },
+  {
     'L3MON4D3/LuaSnip',
     -- This can't co-exist with GitHub Copilot
     -- keys = {
