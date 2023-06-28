@@ -274,18 +274,6 @@
 ;; Use `completion' if line is already indented
 (setq tab-always-indent 'complete)
 
-;; Make isearch wrap automatically
-;; Prevents issue where you have to press backspace twice when
-;; trying to remove the first character that fails a search
-(define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
-(defadvice isearch-search (after rk/isearch-no-fail activate)
-  (unless isearch-success
-    (ad-disable-advice 'isearch-search 'after 'rk/isearch-no-fail)
-    (ad-activate 'isearch-search)
-    (isearch-repeat (if isearch-forward 'forward))
-    (ad-enable-advice 'isearch-search 'after 'rk/isearch-no-fail)
-    (ad-activate 'isearch-search)))
-
 ;; Always prefer newer `.el' file if there's an older `.elc' file
 (setq load-prefer-newer t)
 
