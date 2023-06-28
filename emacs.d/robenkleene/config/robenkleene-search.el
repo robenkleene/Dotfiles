@@ -15,6 +15,8 @@
     (ad-enable-advice 'isearch-search 'after 'rk/isearch-no-fail)
     (ad-activate 'isearch-search)))
 
+(setq isearch-allow-motion t)
+
 (provide 'robenkleene-search)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

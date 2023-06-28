@@ -25,6 +25,7 @@
 ;; Config
 (require 'robenkleene-config)
 (require 'robenkleene-window-management)
+(require 'robenkleene-search)
 (require 'robenkleene-spelling)
 (require 'robenkleene-ido)
 (require 'robenkleene-bindings)
