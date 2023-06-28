@@ -96,7 +96,7 @@
 
 (defun rk/compilation-next-once (buffer desc)
   "Run once after compilation."
-  (advice-add 'rk/next :after #'rk/compilation-hide-once)
+  ;; (advice-add 'rk/next :after #'rk/compilation-hide-once)
   (rk/next)
   (remove-hook 'compilation-finish-functions 'rk/compilation-next-once)
   )
