@@ -675,13 +675,13 @@
   (tab-close-group "")
   )
 
-(defun make-directory-today ()
+(defun create-directory-today ()
   "Create a directory named with the date."
   (interactive)
   (shell-command "~/.bin/mkdir_today")
   )
 
-(defun make-file-today ()
+(defun create-file-today ()
   "Create a directory named with the date."
   (interactive)
   (shell-command "~/.bin/touch_today")
