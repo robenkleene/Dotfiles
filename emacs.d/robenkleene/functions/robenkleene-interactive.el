@@ -675,6 +675,18 @@
   (tab-close-group "")
   )
 
+(defun make-directory-today ()
+  "Create a directory named with the date."
+  (interactive)
+  (shell-command "~/.bin/mkdir_today")
+  )
+
+(defun make-file-today ()
+  "Create a directory named with the date."
+  (interactive)
+  (shell-command "~/.bin/touch_today")
+  )
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
