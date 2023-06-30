@@ -10,7 +10,8 @@ function fish_sync_alias
     alias --save ecd='emacs_cd .'
     alias --save rg='rg_custom'
     # Makes output compatible with Emacs `dired-virtual`
-    alias --save fd='fd --strip-cwd-prefix'
+    # This breaks simple usages like `fd . <path>`
+    # alias --save fd='fd --strip-cwd-prefix'
     alias --save foi='fish_edit_config'
     alias --save u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
     alias --save ut='ssh_git_pull_all -t'
