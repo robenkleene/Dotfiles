@@ -63,7 +63,8 @@
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
-
+  ;; This mark command marks whole lists
+  (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
   (add-hook 'markdown-mode-hook
             (lambda ()
               ;; Use blank lines to indicate paragraphs
