@@ -39,6 +39,9 @@ vnoremap <C-w>p gT
 snoremap <expr> <leader>p ":Cwise<CR>\"0p"
 nnoremap <expr> <leader>p ":Cwise<CR>\"0p"
 vnoremap <expr> <leader>p ":<C-u>Cwise<CR>gv\"0p"
+snoremap <expr> <leader>P ":Cwise<CR>\"0P"
+nnoremap <expr> <leader>P ":Cwise<CR>\"0P"
+vnoremap <expr> <leader>P ":<C-u>Cwise<CR>gv\"0P"
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 nnoremap _ :NNN<CR>
