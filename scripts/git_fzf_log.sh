@@ -3,12 +3,12 @@
 # Allow unbound variable for $1
 set -eo pipefail
 
-separator="."
-if [[ "$#" -eq 1 ]]; then
+separator=" ."
+if [[ -n "${1-}" ]]; then
   separator=" -- "
 fi
 
-git log --graph --color=always --format="%C(auto)%h %s%d" ${separator}"${1}" | \
+git log --graph --color=always --format="%C(auto)%h %s%d"${separator}"${1}" | \
   fzf --no-sort --ansi --tiebreak=index \
   --preview "echo {} | ~/.bin/nobin/_git_fzf_commit_preview.sh \"$1\"" \
   --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' \
