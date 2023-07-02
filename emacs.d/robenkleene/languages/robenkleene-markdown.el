@@ -56,14 +56,19 @@
   ;; (define-key markdown-mode-map (kbd "M-p")
   ;;   'previous-error)
   (define-key markdown-mode-map (kbd "M-n")
-              'rk/next)
+    'rk/next)
   (define-key markdown-mode-map (kbd "M-p")
-              'rk/previous)
+    'rk/previous)
+  ;; (define-key markdown-mode-map (kbd "M-{")
+  ;;             'rk/backward-block)
+  ;; (define-key markdown-mode-map (kbd "M-}")
+  ;;             'rk/forward-block)
+  ;; The default commands treat each list item as a single paragraph.
+  ;; These commands jump over entire lists
   (define-key markdown-mode-map (kbd "M-{")
-              'rk/backward-block)
+    'markdown-backward-block)
   (define-key markdown-mode-map (kbd "M-}")
-              'rk/forward-block)
-  ;; This mark command marks whole lists
+    'markdown-forward-block)
   (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
   (add-hook 'markdown-mode-hook
             (lambda ()
