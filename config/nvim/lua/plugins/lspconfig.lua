@@ -56,15 +56,15 @@ return {
       vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, bufopts)
       -- vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, bufopts)
       -- Run the command twice to automatically focus the float
-      vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, bufopts)
+      vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, bufopts)
       -- Open and focus the float
       -- vim.keymap.set('n', '<leader>d', ":lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>", bufopts)
-      vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
-      vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set('n', '<localleader>r', vim.lsp.buf.rename, bufopts)
+      vim.keymap.set('n', '<localleader>a', vim.lsp.buf.code_action, bufopts)
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
       -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-      vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, bufopts)
+      vim.keymap.set('n', '<localleader>k', vim.lsp.buf.hover, bufopts)
       -- Open and focus the float
       -- vim.keymap.set('n', '<leader>k', ":lua vim.lsp.buf.hover()<CR>:lua vim.lsp.buf.hover()<CR>", bufopts)
       vim.keymap.set('n', '=', function() vim.lsp.buf.format { async = true } end, bufopts)
