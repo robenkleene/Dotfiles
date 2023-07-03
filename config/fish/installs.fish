@@ -14,6 +14,12 @@ if test -n "$INSIDE_EMACS"
     set -Ux GIT_PAGER cat
 end
 
+# This doesn't work for some reason
+# switch (uname)
+#     case Linux
+#         set -Ux RUST_LLDB "lldb-6.0"
+# end
+
 # Python
 # So slow!
 # if test -d $HOME/.pyenv
