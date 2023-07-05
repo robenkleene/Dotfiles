@@ -80,31 +80,22 @@ key_bindings:
   - { key: Grave,     mods: Alt,       chars: "\x1b`"                       } # Alt + `
   - { key: Grave,     mods: Alt|Shift, chars: "\x1b~"                       } # Alt + ~
   - { key: Apostrophe, mods: Alt, chars: "\x1B'" }
-  - { key: Key8,      mods: Alt|Shift, chars: "\x1b*"                       } # Alt + *
+  - { key: Key1,      mods: Alt|Shift, chars: "\x1b!"                       } # Alt + #
+  - { key: Key2,      mods: Alt|Shift, chars: "\x1b@"                       } # Alt + #
   - { key: Key3,      mods: Alt|Shift, chars: "\x1b#"                       } # Alt + #
+  - { key: Key4,      mods: Alt|Shift, chars: "\x1b$"                       } # Alt + #
+  - { key: Key5,      mods: Alt|Shift, chars: "\x1b%"                       } # Alt + %
+  - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
+  - { key: Key7,      mods: Alt|Shift, chars: "\x1b&"                       } # Alt + ^
+  - { key: Key8,      mods: Alt|Shift, chars: "\x1b*"                       } # Alt + *
+  - { key: Key9,      mods: Alt|Shift, chars: "\x1b("                       } # Alt + *
+  - { key: Key0,      mods: Alt|Shift, chars: "\x1b)"                       } # Alt + *
   - { key: Period,    mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
   - { key: Comma,     mods: Alt|Shift, chars: "\x1b<"                       } # Alt + <
   - { key: Minus,     mods: Alt|Shift, chars: "\x1b_"                       } # Alt + _
   - { key: Minus,     mods: Alt, chars: "\x1b-"                       } # Alt + _
-  - { key: Key5,      mods: Alt|Shift, chars: "\x1b%"                       } # Alt + %
-  - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
   - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
-    # Bash
-  - { key: Key8,     mods: Alt|Shift, chars: "\x1b*"                       }
-  - { key: Key3,     mods: Alt|Shift, chars: "\x1b#"                       }
-  # `tmux`
-  - { key: Key1,     mods: Alt,     chars: "\x1b1"                       }
-  - { key: Key2,     mods: Alt,     chars: "\x1b2"                       }
-  - { key: Key3,     mods: Alt,     chars: "\x1b3"                       }
-  - { key: Key4,     mods: Alt,     chars: "\x1b4"                       }
-  - { key: Key5,     mods: Alt,     chars: "\x1b5"                       }
-  - { key: Key6,     mods: Alt,     chars: "\x1b6"                       }
-  - { key: Key7,     mods: Alt,     chars: "\x1b7"                       }
-  - { key: Key8,     mods: Alt,     chars: "\x1b8"                       }
-  - { key: Key9,     mods: Alt,     chars: "\x1b9"                       }
-  - { key: Key0,     mods: Alt,     chars: "\x1b0"                       }
-    # Emacs
   - { key: Period,   mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
   - { key: Comma,    mods: Alt|Shift, chars: "\x1b<"                       } # Alt + <
   - { key: Key1,     mods: Alt|Shift,     chars: "\x1b!"                       }
