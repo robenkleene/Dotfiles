@@ -89,10 +89,11 @@
 
 ;; General
 (define-key rk/bindings-minor-mode-map (kbd "M-r")
-  'reveal-in-finder)
+            'reveal-in-finder)
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
 ;;   'rk/open-terminal-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
+(define-key rk/bindings-minor-mode-map (kbd "C-c u") 'untitled-create)
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-`") 'eshell-other-window)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
