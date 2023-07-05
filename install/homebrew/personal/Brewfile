@@ -17,6 +17,8 @@ brew 'nushell'
 brew 'zoxide'
 brew 'nnn'
 brew 'sd'
+# Really useful to see diff by word quickly
+brew 'git-delta'
 
 # Editor
 brew 'aspell'
