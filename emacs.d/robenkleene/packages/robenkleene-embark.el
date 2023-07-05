@@ -7,7 +7,8 @@
   (
    ;; Doesn't work in terminal
    ;; ("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-c ." . embark-act)         ;; pick some comfortable binding
+   ;; ("C-c ." . embark-act)         ;; pick some comfortable binding
+   ("C-c e" . embark-act)         ;; pick some comfortable binding
    ("C-c ;" . embark-dwim)         ;; pick some comfortable binding
    ;; Doesn't work in terminal
    ;; ("C-;" . embark-dwim)        ;; good alternative: M-.
