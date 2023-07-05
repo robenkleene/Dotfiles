@@ -95,6 +95,7 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 (define-key rk/bindings-minor-mode-map (kbd "C-c u") 'untitled-create)
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
+(define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-`") 'eshell-other-window)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
 (define-key rk/bindings-minor-mode-map (kbd "C-c M-z") 'zap-to-char)
