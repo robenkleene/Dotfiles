@@ -1,4 +1,7 @@
 function! commands#GrepBuffer(...) abort
+  " Remove blank lines at the end of the file (which get their own entries
+  " otherwise)
+  v/\_s*\S/d
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if len(getqflist())
     cexpr []
