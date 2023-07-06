@@ -2,4 +2,5 @@
 
 set -euo pipefail
 
-grep -E --only-matching ".*:[0-9]+:"
+grep -E --only-matching ".*:[0-9]+:" | sed "s/^ *--> *//"
+#                                      ^ Rust prefixes errors with `-->`
