@@ -168,6 +168,8 @@ bindkey -e '^[[1;5A' beginning-of-buffer-or-history
 bindkey -e '^[[1;5B' end-of-buffer-or-history
 bindkey -e '^[[1;5D' beginning-of-line
 bindkey -e '^[[1;5C' end-of-line
+bindkey -e '^[[1;3D' backward-word
+bindkey -e '^[[1;3C' forward-word
 
 # Restore regular bindings for `isearch`
 bindkey -M isearch "^H" backward-delete-char
