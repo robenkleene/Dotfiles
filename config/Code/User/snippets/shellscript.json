@@ -139,6 +139,11 @@
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if Linux"
   },
+  "testuname": {
+    "prefix": "testuname",
+    "body": "\"$(uname)\" = \"Linux\"",
+    "description": "True if uname matches"
+  },
   "1while": {
     "prefix": "1while",
     "body": "while read i; do { ${0:echo $i} } done",
