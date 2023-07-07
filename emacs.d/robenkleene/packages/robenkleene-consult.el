@@ -230,26 +230,11 @@
       (call-interactively 'rk/consult-fd)
       ))
 
-  (defun rk/consult-doc ()
-    "Doc using `completing-read'."
-    (interactive)
+  (defun rk/consult-doc (&optional dir initial)
+    (interactive "P")
     (let ((default-directory "~/Documentation"))
-      (find-file
-       (consult--read
-        (or (mapcar #'abbreviate-file-name
-                    (split-string
-                     (replace-regexp-in-string
-                      "\n$" ""
-                      (shell-command-to-string
-                       "fd --follow"))
-                     "\n"))
-            (user-error "No recent files"))
-        :prompt "Doc: "
-        :sort nil
-        :require-match t
-        :category 'file
-        :state (consult--file-preview)
-        :history 'file-name-history))
+      (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Doc" dir)))
+        (find-file (consult--find prompt #'rk/consult--fd-builder initial)))
       )
     )
 
