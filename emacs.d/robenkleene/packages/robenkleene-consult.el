@@ -221,7 +221,7 @@
   (defun rk/consult-fd (&optional dir initial)
     (interactive "P")
     (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Fd" dir)))
-      (find-file (consult--find prompt #'rk/consult--fd-builder initial))))
+      (find-file (rk/consult--find prompt #'rk/consult--fd-builder initial))))
 
   (defun rk/consult-fd-pwd (&optional dir initial)
     "`consult-find' with `fd' in `pwd'."
@@ -234,11 +234,36 @@
     (interactive "P")
     (let ((default-directory "~/Documentation"))
       (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Doc" dir)))
-        (find-file (consult--find prompt #'rk/consult--fd-builder initial)))
+        (find-file (rk/consult--find prompt #'rk/consult--fd-builder initial)))
       )
     )
 
   )
+
+;; Custom version of `consult--find' that just adds `:state
+;; (consult--file-preview)' to enable file previews
+(defun rk/consult--find (prompt builder initial)
+  "Run find command in current directory.
+
+The function returns the selected file.
+The filename at point is added to the future history.
+
+BUILDER is the command line builder function.
+PROMPT is the prompt.
+INITIAL is initial input."
+  (consult--read
+   (consult--async-command builder
+     (consult--async-map (lambda (x) (string-remove-prefix "./" x)))
+     (consult--async-highlight builder)
+     :file-handler t) ;; allow tramp
+   :prompt prompt
+   :sort nil
+   :require-match t
+   :initial (consult--async-split-initial initial)
+   :add-history (consult--async-split-thingatpt 'filename)
+   :category 'file
+   :state (consult--file-preview)
+   :history '(:input consult--find-history)))
 
 (provide 'robenkleene-consult)
 ;; Local Variables:
