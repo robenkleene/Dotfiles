@@ -66,6 +66,7 @@
 (require 'robenkleene-expand-region)
 (require 'robenkleene-esup)
 (require 'robenkleene-corfu)
+(require 'robenkleene-iedit)
 
 ;; Completion
 (require 'robenkleene-vertico)
