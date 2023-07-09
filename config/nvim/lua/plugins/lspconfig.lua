@@ -7,9 +7,10 @@ return {
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-    vim.diagnostic.config({
-      virtual_text = false,
-    })
+    -- Disable showing "virtual text" (diagnostic messages at the end of lines)
+    -- vim.diagnostic.config({
+    --   virtual_text = false,
+    -- })
 
     -- Echo diagnostics, but this forces hitting enter for longer messages
     -- function PrintDiagnostics(opts, bufnr, line_nr, client_id)
