@@ -6,13 +6,13 @@
   :bind
   (
    ;; Doesn't work in terminal
-   ;; ("C-." . embark-act)         ;; pick some comfortable binding
-   ;; ("C-c ." . embark-act)         ;; pick some comfortable binding
-   ("C-c e" . embark-act)         ;; pick some comfortable binding
-   ("C-c ;" . embark-dwim)         ;; pick some comfortable binding
+   ;; ("C-." . embark-act)
+   ;; ("C-c ." . embark-act)
+   ("C-c e" . embark-act)
+   ;; ("C-c ;" . embark-dwim)
    ;; Doesn't work in terminal
-   ;; ("C-;" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+   ;; ("C-;" . embark-dwim)
+   ("C-h B" . embark-bindings))
   ;; (:map minibuffer-mode-map
   ;;       ("M-." . embark-act)
   ;;       )
