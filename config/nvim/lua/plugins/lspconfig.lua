@@ -8,6 +8,10 @@ return {
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
     -- Disable showing "virtual text" (diagnostic messages at the end of lines)
+    -- Re-enabling these because they're helpful for Rust messages that often
+    -- have multiple parts in the file, e.g.:
+    -- 1. `<variable> does not live long enough`
+    -- 2. `<variable> variable is borrowed here`
     -- vim.diagnostic.config({
     --   virtual_text = false,
     -- })
