@@ -38,20 +38,10 @@ return {
         --     fallback()
         --   end
         -- end, { 'i', 's' }),
-        ['<C-n>'] = cmp.mapping(function(fallback)
-          if require('cmp').visible() then
-            cmp.select_next_item()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
-        ['<C-p>'] = cmp.mapping(function(fallback)
-          if require('cmp').visible() then
-            cmp.select_prev_item()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
       },
       sources = {
         { name = 'nvim_lsp' },
