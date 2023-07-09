@@ -204,8 +204,6 @@
       (when re
         (cons (append
                (list "fd"
-                     "--type"
-                     "f"
                      "--color=never"
                      "--hidden"
                      "--exclude"
