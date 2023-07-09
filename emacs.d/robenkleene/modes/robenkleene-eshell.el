@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+;; (setq eshell-scroll-to-bottom-on-input t)
+
 (with-eval-after-load 'eshell
 
   ;; Show tab completion options instead of just choosing one
