@@ -64,7 +64,7 @@
     ;;       #'command-completion-default-include-p)
 
     ;; Enable recursive minibuffers
-    (setq enable-recursive-minibuffers t)
+    ;; (setq enable-recursive-minibuffers t)
 
     )
 
