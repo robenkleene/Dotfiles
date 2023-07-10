@@ -1,5 +1,12 @@
+# special
 alias -- -='cd -'
 alias ..='cd ..'
+
+alias gu='ssh_start && git pull'
+alias gp='ssh_start && git push'
+alias gur='ssh_start && git pull -r'
+
+# ls
 if [[ "$(uname)" = "Linux" ]]; then
   alias ls='ls --color=auto'
 else
@@ -7,19 +14,21 @@ else
     alias ls='gls --color=auto'
   fi
 fi
+
+# zsh
 alias zoi='zsh_edit_config'
-alias gemacs='emacs_app'
-alias rg='rg_custom'
+
+# egit
 alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
 alias u='ssh_start && ~/.bin/egit_update'
-alias ut='ssh_git_pull_all -t'
-alias ua='ssh_git_pull_all'
+alias ut='ssh_start && ssh_git_pull_all -t'
+alias ua='ssh_start && ssh_git_pull_all'
+
+# cd
 # The trailing `.` are intentional so that the alias can be called without
 # arguments to open the current directory
 alias d="$CD_COMMAND ."
 alias ecd="emacs_cd ."
-alias gu='ssh_start && git pull'
-alias gp='ssh_start && git push'
-alias gur='ssh_start && git pull -r'
-alias gpt='ssh_start && git push --tags'
 
+# misc
+alias rg='rg_custom'
