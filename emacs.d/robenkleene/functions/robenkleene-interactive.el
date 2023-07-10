@@ -147,6 +147,12 @@
    (shell-command-to-string "~/.bin/daily_file -b"))
   )
 
+(defun untitled-markdown-create ()
+  "Open a new notes untitled Markdown buffer."
+  (interactive)
+  (switch-to-buffer (rk/create-untitled-markdown-buffer))
+  )
+
 (defun untitled-create ()
   "Open a new notes untitled buffer."
   (interactive)
