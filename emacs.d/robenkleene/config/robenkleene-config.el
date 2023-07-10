@@ -56,7 +56,8 @@
 
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
-(setq enable-recursive-minibuffers t)
+;; Try disabling recursive minibuffers, in practice it's really confusing
+;; (setq enable-recursive-minibuffers t)
 
 ;; Add Line Numbers
 ;; Offset the number by two spaces to work around some weird fringe glitch
