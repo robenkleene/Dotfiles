@@ -1,3 +1,4 @@
-function ua --wraps=ssh_git_pull_all --description 'alias ua=ssh_git_pull_all'
-  ssh_git_pull_all $argv; 
+function ua --wraps='ssh_start && ssh_git_pull_all' --description 'alias ua=ssh_start && ssh_git_pull_all'
+  ssh_start && ssh_git_pull_all $argv
+        
 end
