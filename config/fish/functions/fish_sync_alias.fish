@@ -13,11 +13,13 @@ function fish_sync_alias
     # fish
     alias --save foi='fish_edit_config'
 
-    # Misc
+    # cd
     # These need the trailing `.` so they can be run without arguments to open
     # the current directory
     alias --save d='$CD_COMMAND .'
     alias --save ecd='emacs_cd .'
+
+    # Misc
     alias --save rg='rg_custom'
     # Makes output compatible with Emacs `dired-virtual`
     # This breaks simple usages like `fd . <path>`
