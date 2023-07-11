@@ -206,6 +206,7 @@
                (list "fd"
                      "--color=never"
                      "--hidden"
+                     "--follow"
                      "--exclude"
                      ".git/"
                      "--exclude"
