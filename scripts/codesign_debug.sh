@@ -15,4 +15,7 @@ entitlements='<?xml version="1.0" encoding="UTF-8"?>
         <true/>
     </dict>
 </plist>'
+
+# `=(` is special process substitution `zsh` syntax that writes a temporary
+# file and then inserts the path to that file
 codesign -s - -v -f --entitlements =(echo -n "$entitlements") "$1"
