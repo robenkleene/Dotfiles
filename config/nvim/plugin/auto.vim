@@ -148,3 +148,9 @@ augroup ft_stdin
   " Don't prompt to save when piped to stdin
   autocmd StdinReadPost * :set buftype=nofile
 augroup END
+
+augroup diff_stdin
+  autocmd!
+  " Make piped diffs read only
+  autocmd StdinReadPost * if &filetype == 'diff' | setlocal readonly nomodifiable | end
+augroup END

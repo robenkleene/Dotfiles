@@ -6,16 +6,9 @@ setlocal foldlevel=2
 " Handled as default now
 " setlocal buftype=nofile
 
-setlocal readonly
-setlocal nomodifiable
 " Useful for debugging
 setlocal foldcolumn=3
 setlocal foldenable
-
-augroup diff_stdin
-  autocmd!
-  autocmd StdinReadPost * setlocal readonly nomodifiable
-augroup END
 
 nnoremap <buffer> gd :OpenDiff<CR>
 
