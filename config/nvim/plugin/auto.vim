@@ -141,3 +141,10 @@ augroup terminal_settings
   " This breaks things like `vim.g.unception_delete_replaced_buffer`
   " autocmd TermClose * call feedkeys("i")
 augroup END
+
+
+augroup ft_stdin
+  autocmd!
+  " Don't prompt to save when piped to stdin
+  autocmd StdinReadPost * :set buftype=nofile
+augroup END
