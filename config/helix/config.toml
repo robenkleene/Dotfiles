@@ -15,6 +15,9 @@ color-modes = true
 rulers = [80]
 auto-pairs = false
 
+[editor.soft-wrap]
+enable = true
+
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
@@ -51,6 +54,7 @@ C-m = "split_selection_on_newline"
 A-m = "split_selection_on_newline"
 # More consistent to use the default binding (shift bindings work on workplace)
 # space = { f = "file_picker_in_current_directory" }
+space = { w = ":toggle-option soft-wrap.enable" }
 "#" = "toggle_comments"
 # Extend the selection by default
 # "g" = { "l" = "extend_to_line_end", "h" = "extend_to_line_start" }
