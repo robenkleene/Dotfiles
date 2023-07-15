@@ -33,3 +33,17 @@ end
 #     case Darwin
 #         set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 # end
+
+# These cannot be set in the `fish_sync_variables` function due to special
+# handling
+# These contains checks do not work
+if set -q HOMEBREW_DIR
+    if not contains $HOMEBREW_DIR/share/man $MANPATH
+        set -q MANPATH || set -gx MANPATH ''
+        set -gx MANPATH $MANPATH $HOMEBREW_DIR/share/man
+    end
+    if not contains $HOMEBREW_DIR/share/info $INFOPATH
+        set -q INFOPATH || set -gx INFOPATH ''
+        set -gx INFOPATH $INFOPATH $HOMEBREW_DIR/share/info
+    end
+end
