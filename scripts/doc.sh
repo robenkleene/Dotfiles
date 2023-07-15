@@ -50,7 +50,7 @@ fi
 cd ~/Documentation/ || return 1
 
 set +e
-result="$(eval "$cmd" | ~/.bin/fzf_preview)"
+result="$(eval "$cmd" | ~/.bin/fzf_file)"
 set -e
 if [[ -z "$result" ]]; then
   exit
