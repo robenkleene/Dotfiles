@@ -90,7 +90,7 @@
       (path-separator . ":")
       (null-device . "/dev/null"))) t)
  '(custom-safe-themes
-   '("ca9ce9f0c5bb46610c20f4ebcaa3d1c8ed6b8f9c5a956620cba250686fe645cf" "f82e68d489e6c21c9552c4e8e35a03d126d9eba632a8e7b4f9329d1374b4a19c" "ad114fd8820edf7d947f356a237468ae2c402565a60b813ee36f6cd3f1d325ae" "c6fb2c37975e0d8fcc91ae7501f06bc9c58f3fb55e658be0fce30cd58bd66f3e" default))
+   '("28d61ac6f26030e3c649e9f75b6ebd93dbf7f5f7b2f13e14cb1fe101e8cf4737" "ca9ce9f0c5bb46610c20f4ebcaa3d1c8ed6b8f9c5a956620cba250686fe645cf" "f82e68d489e6c21c9552c4e8e35a03d126d9eba632a8e7b4f9329d1374b4a19c" "ad114fd8820edf7d947f356a237468ae2c402565a60b813ee36f6cd3f1d325ae" "c6fb2c37975e0d8fcc91ae7501f06bc9c58f3fb55e658be0fce30cd58bd66f3e" default))
  '(package-selected-packages
    '(iedit consult embark-consult embark bind-map pbcopy rainbow-delimiters fill-column-indicator lua-mode typescript-mode magit eshell-syntax-highlighting better-defaults yaml-mode kotlin-mode ef-themes rust-mode eglot use-package nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime smartparens rainbow-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap vertico orderless marginalia corfu-terminal diminish cape popon org-modern modus-themes company))
  '(vc-annotate-color-map
