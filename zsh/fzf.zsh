@@ -128,10 +128,12 @@ _fzf_open_widget() {
   result="$(eval "$cmd" | ~/.bin/fzf_file)"
   local ret=$?
 
-  if [[ ! -e "$result" ]]; then
-    zle redisplay
-    return
-  fi
+  # Comment out exists check because it's not compatible with opening
+  # multiple files
+  # if [[ ! -e "$result" ]]; then
+  #   zle redisplay
+  #   return
+  # fi
 
   if [[ -n "$LBUFFER" ]]; then
     LBUFFER+=$result
