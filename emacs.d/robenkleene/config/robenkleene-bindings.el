@@ -60,7 +60,6 @@
 (global-set-key (kbd "C-c d <down-mouse-1>")
                 #'rk/describe-char-at-mouse-click)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-o") 'find-file)
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
 ;; Always allow meta up and down to match M-p and M-n
 ;; This breaks `org-mode' bindings to move an item up or down
