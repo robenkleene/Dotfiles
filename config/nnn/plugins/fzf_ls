@@ -11,7 +11,7 @@ if ! type fzf >/dev/null 2>&1; then
     exit 1
 fi
 
-result="$(~/.bin/fzf_ls)"
+result="$(~/.bin/ls_fzf)"
 
 if [ -n "$result" ]; then
     exit 1
