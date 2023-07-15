@@ -145,6 +145,9 @@ _fzf_open_widget() {
     cd "$result" || return 1
     print -sr -- "cd $result_parameter"
   else
+    # while read item; do
+    #     echo -n "${(q)item} "
+    # done
     eval "$EDITOR $result_parameter" < /dev/tty
     print -sr -- "$EDITOR $result_parameter"
   fi
