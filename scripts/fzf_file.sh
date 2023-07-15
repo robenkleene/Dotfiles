@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -euo pipefail
 
-fzf --preview "$HOME/.bin/nobin/_fzf_preview_file.sh {}" \
+fzf --ansi --no-sort --preview "$HOME/.bin/nobin/_fzf_preview_file.sh {}" \
   --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' \
   --height=100% \
   --preview-window '<30(bottom,30%):wrap' 
