@@ -45,6 +45,8 @@
   (setq org-agenda-window-setup 'current-window)
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
+    (define-key org-mode-map (kbd "M-<left>") nil)
+    (define-key org-mode-map (kbd "M-<right>") nil)
     )
 
   ;; Agenda
