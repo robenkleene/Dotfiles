@@ -135,21 +135,21 @@ _fzf_open_widget() {
   #   return
   # fi
 
+  local result_parameter
+  result_parameter=$(while IFS= read item; do
+      echo -n "${(q)item} "
+    done <<< "$result")
+
   if [[ -n "$LBUFFER" ]]; then
-    LBUFFER+=$result
+    LBUFFER+=$result_parameter
     zle redisplay
     return $ret
   fi
 
-  local result_parameter
   if [[ -d "$result" ]]; then
-    result_parameter=${(q)result}
     cd "$result" || return 1
     print -sr -- "cd $result_parameter"
   else
-    result_parameter=$(while IFS= read item; do
-        echo -n "${(q)item} "
-      done <<< "$result")
     eval "$EDITOR $result_parameter" < /dev/tty
     print -sr -- "$EDITOR $result_parameter"
   fi
