@@ -76,20 +76,20 @@ function _robenkleene-fzf-open-widget
     set -l cmd "~/.bin/find_ls -f"
     eval "$cmd | "~/.bin/fzf_file | read -l result
 
-    if test -e "$result"
-        set -l result_path (string escape "$result")
-        set -l commandline (commandline)
-        if test -z $commandline
-            if test -d "$result"
-                commandline "cd $result_path"
-            else
-                commandline "$EDITOR $result_path"
-            end
-            commandline -f repaint
-            commandline -f execute
+    set -l result_parameter (for file in $result
+        echo (string escape "$file")
+    end)
+    set -l commandline (commandline)
+    if test -z $commandline
+        if test -d "$result"
+            commandline "cd $result_parameter"
         else
-            commandline -i "$result_path"
+            commandline "$EDITOR $result_parameter"
         end
+        commandline -f repaint
+        commandline -f execute
+    else
+        commandline -i "$result_parameter"
     end
 
     commandline -f repaint
