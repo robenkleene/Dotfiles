@@ -73,11 +73,9 @@ end
 bind \ec _robenkleene-fzf-z-subdir-widget
 
 function _robenkleene-fzf-open-widget
-    set -l cmd "~/.bin/find_ls -f"
-    eval "$cmd | "~/.bin/fzf_file | read -l result
-
+    set -l result (~/.bin/find_ls -f | ~/.bin/fzf_file)
     set -l result_parameter (for file in $result
-        echo (string escape "$file")
+        echo -n (string escape "$file") ""
     end)
     set -l commandline (commandline)
     if test -z $commandline
