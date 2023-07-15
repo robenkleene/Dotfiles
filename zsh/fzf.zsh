@@ -140,14 +140,14 @@ _fzf_open_widget() {
   fi
 
   local result_parameter
-  result_parameter=${(q)result}
   if [[ -d "$result" ]]; then
+    result_parameter=${(q)result}
     cd "$result" || return 1
     print -sr -- "cd $result_parameter"
   else
-    # while read item; do
-    #     echo -n "${(q)item} "
-    # done
+    result_parameter=$(while IFS= read item; do
+        echo -n "${(q)item} "
+      done <<< "$result")
     eval "$EDITOR $result_parameter" < /dev/tty
     print -sr -- "$EDITOR $result_parameter"
   fi
