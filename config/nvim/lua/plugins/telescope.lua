@@ -18,6 +18,7 @@ return {
     { '<leader>i' },
     { '<leader>I' },
     { '<leader>r' },
+    { '<leader>m' },
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
@@ -52,5 +53,6 @@ return {
     vim.keymap.set('n', '<leader>i', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
+    vim.keymap.set('n', '<leader>m', require('telescope.builtin').marks)
   end
 }
