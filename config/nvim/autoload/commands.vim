@@ -106,16 +106,3 @@ function! commands#TerminalLocal() abort
   enew
   call termopen([&shell], { 'cwd': l:term_dir })
 endfunction
-
-function! commands#NNN() abort
-  let l:path=expand('%:p')
-  " Without an `enew` it takes over the current buffer completely which means if
-  " you have a file, make a split, then enter `nnn` in the split, it'll open
-  " in both splits.
-  enew
-  call termopen(["nnn","-eAQ",l:path])
-  " `bufhidden=delete` should close the buffer when it hides, which would help
-  " prevent the "job still running" messages when quitting with `:wqa` and a
-  " still living `nnn` buffer. This doesn't work though.
-  setlocal bufhidden=delete
-endfunction
