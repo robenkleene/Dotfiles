@@ -73,7 +73,7 @@ end
 bind \ec _robenkleene-fzf-z-subdir-widget
 
 function _robenkleene-fzf-open-widget
-    set -l cmd "~/.bin/find_ls"
+    set -l cmd "~/.bin/find_ls -f"
     eval "$cmd | "~/.bin/fzf_file | read -l result
 
     if test -e "$result"

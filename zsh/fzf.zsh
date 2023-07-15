@@ -116,7 +116,7 @@ bindkey '\e-' _fzf_z_parentdir_widget
 _fzf_open_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="~/.bin/find_ls"
+  local cmd="~/.bin/find_ls -f"
   if [[ ! $PWD = $HOME/* ]]; then
     cmd="$cmd --maxdepth 1"
   fi
