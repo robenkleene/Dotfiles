@@ -1,4 +1,7 @@
 function! commands#GrepBuffer(...) abort
+  " Remove blank lines at the end of the file (which get their own entries
+  " otherwise)
+  v/\_s*\S/d
   execute "setlocal buftype=nofile bufhidden=hide noswapfile"
   if len(getqflist())
     cexpr []
@@ -24,7 +27,7 @@ endfunction
 
 function! commands#NewBufferWithClipboard() abort
   execute "enew"
-  normal P
+  normal VP
 endfunction
 
 function! s:entries(path) abort
@@ -59,13 +62,19 @@ function! commands#Fprev() abort
 endfunction
 
 function! commands#YankGrep()
-  let @@ = expand("%:p").":".line('.').":0"
+  let @@ = expand("%:p").":".line('.')
   call system('~/.bin/safecopy', @@)
   echo getreg('@')
 endfunction
 
 function! commands#YankPath()
   let @@ = expand("%:p")
+  call system('~/.bin/safecopy', @@)
+  echo getreg('@')
+endfunction
+
+function! commands#YankFilename()
+  let @@ = expand("%")
   call system('~/.bin/safecopy', @@)
   echo getreg('@')
 endfunction
@@ -85,7 +94,6 @@ function! commands#Rg(terms) abort
     endif
     execute "silent grep " . escape(l:search, '%#')
   endif
-  redraw!
   let &grepprg = l:original_grepprg
   if len(getqflist())
     copen
