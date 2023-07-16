@@ -10,4 +10,3 @@ if [[ "$#" -eq 1 ]]; then
 else
   hg show --color=always "$hash"
 fi
-
