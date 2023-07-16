@@ -7,5 +7,5 @@ if [[ "$(uname)" == "Darwin" ]]; then
 elif [ -n "$TMUX" ]; then
   TERM=xterm-256color tmux saveb -
 else
-  echo ''
+  cat /tmp/robenkleene.transient/clipboard 2>/dev/null || echo ''
 fi

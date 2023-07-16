@@ -58,5 +58,6 @@ elif [ -n "${TMUX:-}" ]; then
   else
     sed s'/⏎$//' | tmux loadb -
   fi
+else
+  cat > /tmp/robenkleene.transient/clipboard
 fi
-
