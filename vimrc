@@ -25,8 +25,8 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 " Theme
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 " Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'ghifarit53/tokyonight-vim'
@@ -40,12 +40,13 @@ Plug 'neoclide/jsonc.vim', { 'for': 'json'}
 Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
-colorscheme catppuccin_mocha
+" colorscheme catppuccin_mocha
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 1
 " colorscheme tokyonight
 " colorscheme nightfly
-" colorscheme embark
+let g:embark_terminal_italics = 1
+colorscheme embark
 " colorscheme gotham
 
 autocmd VimEnter *
