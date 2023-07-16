@@ -8,7 +8,7 @@ if [[ -n "${1-}" ]]; then
   separator=" -- "
 fi
 
-hash=$(cat | head -1 | grep --only-matching "[a-f0-9]\{7\}")
+hash=$(cat | grep --only-matching "[a-f0-9]\{7\}" | sed 's/\s.*$//' | head -1)
 if [[ -z "${hash-}" ]]; then
   echo "Error: No hash found" >&2
   exit 1
