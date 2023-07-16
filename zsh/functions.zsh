@@ -57,7 +57,7 @@ sgitnd() {
 }
 
 vim_cd() {
-  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  local tempfile='/tmp/robenkleene.transient/chdir/chdir'
   $VIM_COMMAND .
   test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
@@ -66,7 +66,7 @@ vim_cd() {
 }
 
 emacs_cd() {
-  local tempfile='/tmp/vim.robenkleene/chdir/chdir'
+  local tempfile='/tmp/robenkleene.transient/chdir/chdir'
   eval $EMACS_COMMAND .
   test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
