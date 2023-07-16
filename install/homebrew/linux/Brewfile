@@ -23,8 +23,8 @@ brew 'git-delta'
 brew 'aspell', args: ['with-lang-en']
 brew 'emacs'
 brew 'editorconfig'
-brew 'neovim'
 brew 'vim'
+brew 'neovim'
 brew 'fish'
 brew 'gh'
 # HEAD for truecolor support
