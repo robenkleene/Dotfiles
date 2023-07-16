@@ -21,6 +21,7 @@ augroup auto_save_session
   autocmd VimLeave * 
   \ if expand('%:p') !~ '^/tmp'
   \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'hgcommit'
   \&& &filetype !~ 'pullrequest'
   \&& &filetype !~ 'gitrebase'
   \|    silent! mksession! ~/.vim/vim_auto_session
@@ -36,6 +37,7 @@ augroup save_view
   \&& &buftype !~ 'help'
   \&& &buftype !~ 'term'
   \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'hgcommit'
   \&& &filetype !~ 'pullrequest'
   \&& &filetype !~ 'gitrebase'
   \|    silent! mkview
@@ -46,6 +48,7 @@ augroup save_view
   \&& &buftype !~ 'help'
   \&& &buftype !~ 'term'
   \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'hgcommit'
   \&& &filetype !~ 'pullrequest'
   \&& &filetype !~ 'gitrebase'
   \|    silent! loadview
@@ -61,17 +64,20 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
-
+"
 " Autoreload files edited by other programs
 set autoread
-augroup reload_buffers
-  autocmd!
-  " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
-  " <file>` while just `checktime` does. (`silent! checktime` when editing the
-  " same file in another `vim` instance though.)
-  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
-augroup END
-
+" This causes a delay when opening the command-line window with `<C-f>`?
+" Maybe `set autoread` is enough?
+" augroup reload_buffers
+"   autocmd!
+"   " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
+"   " <file>` while just `checktime` does. (`silent! checktime` when editing the
+"   " same file in another `vim` instance though.)
+"   " autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
+"   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if !bufexists("[Command Line]") | checktime | endif
+" augroup END
+"
 " Do not extend comments automatically, e.g., with `O`
 augroup disable_autocomments
   autocmd!
@@ -104,19 +110,37 @@ augroup no_whitespace_insert
 augroup END
 
 " clipboard
-if exists('##TextYankPost')==1
-  augroup safecopy
-    autocmd!
-    autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
-  augroup END
-else
-  augroup safecopy
-    autocmd!
-    autocmd FocusLost *  silent! call system('~/.bin/safecopy',@")
-  augroup END
-endif
+augroup safecopy
+  autocmd!
+  autocmd TextYankPost * silent! call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
+augroup END
+" When moving to another vim instance, copy from the system clipboard and
+" append a new line so pasting is always linewise. this allows pastin between
+" Vim instances without using `unnamedplus` which can mess up using `yyp` to
+" copy a line within a Vim session
 augroup safepaste
   autocmd!
-  autocmd FocusGained * let @" = system('~/.bin/safepaste')
+  autocmd FocusGained * let @" = system('~/.bin/safepaste').."\n"
 augroup END
 let @" = system('~/.bin/safepaste')
+
+" z add
+" Not sure why this doesn't work consistently
+augroup z_add
+  autocmd!
+  autocmd VimEnter * if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
+  autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
+augroup END
+if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
+
+augroup ft_stdin
+  autocmd!
+  " Don't prompt to save when piped to stdin
+  autocmd StdinReadPost * :set buftype=nofile
+augroup END
+
+augroup diff_stdin
+  autocmd!
+  " Make piped diffs read only
+  autocmd StdinReadPost * if &filetype == 'diff' | setlocal readonly nomodifiable | end
+augroup END
