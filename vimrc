@@ -24,6 +24,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rsi'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
+" Theme
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+" Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 " Languages
 Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml', 'javascript'] }
@@ -37,6 +40,8 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
 colorscheme catppuccin_mocha
+" colorscheme nightfly
+" colorscheme embark
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
