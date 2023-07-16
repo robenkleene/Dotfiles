@@ -1,4 +1,4 @@
-let s:temporary_directory = "/tmp/vim.robenkleene/"
+let s:temporary_directory = "/tmp/robenkleene.transient/"
 let s:chdirectory_directory = s:temporary_directory . "chdir"
 let s:chdirectory_file = s:chdirectory_directory . "/chdir"
 if !isdirectory(s:chdirectory_directory)
@@ -85,7 +85,7 @@ augroup disable_autocomments
 augroup END
 
 " Write directory to temp file
-let s:temporary_directory = "/tmp/vim.robenkleene/"
+let s:temporary_directory = "/tmp/robenkleene.transient/"
 let s:chdirectory_directory = s:temporary_directory . "chdir"
 let s:chdirectory_file = s:chdirectory_directory . "/chdir"
 if !isdirectory(s:chdirectory_directory)

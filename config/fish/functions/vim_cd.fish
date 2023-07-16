@@ -1,5 +1,5 @@
 function vim_cd
-    set -l tempfile '/tmp/vim.robenkleene/chdir/chdir'
+    set -l tempfile '/tmp/robenkleene.transient/chdir/chdir'
     truncate -s 0 $tempfile
     eval $VIM_COMMAND $argv
     if test -f $tempfile
