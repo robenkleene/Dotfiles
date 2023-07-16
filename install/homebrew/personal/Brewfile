@@ -23,6 +23,7 @@ brew 'git-delta'
 # Editor
 brew 'aspell'
 brew 'neovim'
+brew 'vim'
 brew 'editorconfig'
 
 # Languages
