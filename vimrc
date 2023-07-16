@@ -21,7 +21,6 @@ Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Remove' ] }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-rsi'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
 " Theme
@@ -31,7 +30,6 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'ghifarit53/tokyonight-vim'
 " Languages
-Plug 'tpope/vim-ragtag', { 'for': ['html', 'xml', 'javascript'] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
