@@ -30,6 +30,8 @@ Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 " Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'ghifarit53/tokyonight-vim'
+Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
@@ -45,9 +47,11 @@ call plug#end()
 " let g:tokyonight_enable_italic = 1
 " colorscheme tokyonight
 " colorscheme nightfly
-let g:embark_terminal_italics = 1
-colorscheme embark
+" let g:embark_terminal_italics = 1
+" colorscheme embark
 " colorscheme gotham
+" colorscheme moonfly
+colorscheme night-owl
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
