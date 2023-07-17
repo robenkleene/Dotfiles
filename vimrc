@@ -41,10 +41,10 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
 " let g:embark_terminal_italics = 1
-colorscheme embark
+" colorscheme embark
 " colorscheme gotham
 " colorscheme catppuccin_mocha
-" colorscheme night-owl
+colorscheme night-owl
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
