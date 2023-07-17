@@ -21,7 +21,10 @@ _fzf_z_widget() {
   # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf)"
-
+  if (( $? )) then
+    zle reset-prompt
+    return $ret
+  fi
   local ret=$?
 
   if [[ ! -d "$result" ]]; then
@@ -55,7 +58,10 @@ _fzf_z_subdir_widget() {
   # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf_subdir)"
-
+  if (( $? )) then
+    zle reset-prompt
+    return $ret
+  fi
   local ret=$?
 
   if [[ ! -d "$result" ]]; then
@@ -89,7 +95,10 @@ _fzf_z_parentdir_widget() {
   # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf_parentdir)"
-
+  if (( $? )) then
+    zle reset-prompt
+    return $ret
+  fi
   local ret=$?
 
   if [[ ! -d "$result" ]]; then
@@ -126,6 +135,10 @@ _fzf_open_widget() {
 
   local result
   result="$(eval "$cmd" | ~/.bin/fzf_file)"
+  if (( $? )) then
+    zle reset-prompt
+    return $ret
+  fi
   local ret=$?
 
   # Comment out exists check because it's not compatible with opening
