@@ -1,6 +1,3 @@
-shell:
-  program: /usr/local/bin/fish
-
 window:
   dimensions:
     columns: 80
