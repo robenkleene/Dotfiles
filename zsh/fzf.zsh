@@ -33,7 +33,7 @@ _fzf_z_widget() {
 
   cd "$result" || return 1
   local result_parameter
-  result_parameter=${(qqq)result}
+  result_parameter=${(qq)result}
   print -sr -- "cd $result_parameter"
   zle reset-prompt
   return $ret
@@ -65,7 +65,7 @@ _fzf_z_subdir_widget() {
 
   cd "$result" || return 1
   local result_parameter
-  result_parameter=${(qqq)result}
+  result_parameter=${(qq)result}
   print -sr -- "cd $result_parameter"
   zle reset-prompt
   return $ret
@@ -97,7 +97,7 @@ _fzf_z_parentdir_widget() {
 
   cd "$result" || return 1
   local result_parameter
-  result_parameter=${(qqq)result}
+  result_parameter=${(qq)result}
   print -sr -- "cd $result_parameter"
   zle reset-prompt
   return $ret
@@ -126,7 +126,7 @@ _fzf_open_widget() {
 
   local result_parameter
   result_parameter=$(while IFS= read item; do
-      echo -n "${(qqq)item} "
+      echo -n "${(qq)item} "
     done <<< "$result")
 
   if [[ -n "$LBUFFER" ]]; then
