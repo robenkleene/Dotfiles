@@ -107,7 +107,7 @@ _system_copy() {
 zle -N _system_copy
 
 _system_kill_line() {
-  zle kill-line
+  zle kill-whole-line
   echo -n "$CUTBUFFER" | safecopy
 }
 zle -N _system_kill_line
