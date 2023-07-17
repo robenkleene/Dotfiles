@@ -9,16 +9,9 @@ __fzfcmd() {
     echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
 }
 
-# Widgets
-
 _fzf_z_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  # local cmd="zoxide query --list"
-  # local fzfcmd
-  # fzfcmd="$(__fzfcmd)"
-  # local result
-  # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf)"
   if (( $? )) then
@@ -51,11 +44,6 @@ bindkey '\ez' _fzf_z_widget
 _fzf_z_subdir_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  # local cmd="zoxide query --list"
-  # local fzfcmd
-  # fzfcmd="$(__fzfcmd)"
-  # local result
-  # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf_subdir)"
   if (( $? )) then
@@ -88,11 +76,6 @@ bindkey '\ec' _fzf_z_subdir_widget
 _fzf_z_parentdir_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  # local cmd="zoxide query --list"
-  # local fzfcmd
-  # fzfcmd="$(__fzfcmd)"
-  # local result
-  # result="$(eval "$cmd" | $fzfcmd)"
   local result
   result="$(~/.bin/z_fzf_parentdir)"
   if (( $? )) then
@@ -140,13 +123,6 @@ _fzf_open_widget() {
     return $ret
   fi
   local ret=$?
-
-  # Comment out exists check because it's not compatible with opening
-  # multiple files
-  # if [[ ! -e "$result" ]]; then
-  #   zle redisplay
-  #   return
-  # fi
 
   local result_parameter
   result_parameter=$(while IFS= read item; do
