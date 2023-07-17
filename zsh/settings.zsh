@@ -40,7 +40,7 @@ setopt autopushd pushdminus pushdsilent pushdtohome
 
 # History
 # Share history between sessions
-setopt share_history
+# setopt share_history
 HISTFILE=~/.zsh_history
 # Number of history entries loaded into a session
 HISTSIZE=10000
