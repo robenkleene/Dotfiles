@@ -41,9 +41,9 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
 " let g:embark_terminal_italics = 1
-" colorscheme embark
+colorscheme embark
 " colorscheme gotham
-colorscheme catppuccin_mocha
+" colorscheme catppuccin_mocha
 " colorscheme night-owl
 
 autocmd VimEnter *
