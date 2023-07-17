@@ -25,13 +25,21 @@ while getopts ":s:d:fh" option; do
   esac
 done
 
+if [[ "$force" != "true" ]]; then
+  echo "Dry Run"
+  echo
+fi
+
 function make_symlink() {
   source="$1"
   destination="$2"
-  if [ ! -e "$destination" ]; then
+  if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
+    echo "Warning: $destination already exists and it's not a symlink" >&2
+  fi
+  if [[ "$force" == "true" ]]; then
     ln -s "$source" "$destination"
-  elif [ ! -L "$destination" ]; then
-    echo "Warning: $destination is a file and it's not a symlink" >&2
+  else
+    echo "Linking $source to $destination"
   fi
 }
 
