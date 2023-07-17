@@ -44,6 +44,10 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # nnn
 export NNN_PLUG='z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal;o:ls_fzf;p:preview'
 
+# FZF
+# Use `fd` for `:Files` in `fzf.vim`
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Standard
 # hx
 # export VISUAL="hx"

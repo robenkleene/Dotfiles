@@ -38,6 +38,9 @@ function fish_sync_variables
     # set -Ux CD_COMMAND "vim_cd"
     set -Ux CD_COMMAND "emacs_cd"
 
+    # Use `fd` for `:Files` in `fzf.vim`
+    set -Ux FZF_DEFAULT_COMMAND "fd --type f"
+
     # hx
     # set -Ux VISUAL "hx"
     # set -Ux TIG_EDITOR "hx_wrapper"
