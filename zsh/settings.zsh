@@ -22,21 +22,12 @@ autoload -Uz run-help
 # This command fails on Linux, so drop its output
 unalias run-help &>/dev/null
 
-alias help=run-help
-autoload -Uz run-help-git
-# autoload -Uz run-help-ip
-# autoload -Uz run-help-openssl
-# autoload -Uz run-help-p4
-# autoload -Uz run-help-sudo
-# autoload -Uz run-help-svk
-# autoload -Uz run-help-svn
-
 # Automatically `pushd` with `cd`
 # `pushdtohome`: Allow `pushd` (or `cd` with `autopushd`) to go to home
 # `pushdsilent`: Don't dump directory list after each `pushd` (or `cd`)
 # `pushdminus`: Swaps the meaning of `+` and `-`, so `cd -3` is the third
 # oldest directory (it's easiest to do `cd -<tab>`.
-setopt autopushd pushdminus pushdsilent pushdtohome
+# setopt autopushd pushdminus pushdsilent pushdtohome
 
 # History
 # Share history between sessions
