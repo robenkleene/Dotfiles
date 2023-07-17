@@ -6,6 +6,8 @@ nnoremap <leader>r :History<CR>
 nnoremap <leader>s :RG<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
+nnoremap <leader>i :BTags<CR>
+nnoremap <leader>I :Tags<CR>
 
 nnoremap <M-z> :Z<CR>
 
