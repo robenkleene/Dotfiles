@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'thinca/vim-visualstar'
 " Theme
@@ -45,6 +46,9 @@ call plug#end()
 " colorscheme gotham
 " colorscheme catppuccin_mocha
 colorscheme night-owl
+
+" Needs to happen before bindings are set
+let mapleader="\<Space>"
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
