@@ -9,15 +9,7 @@ bindkey -e
 # Edit in editor
 autoload -z edit-command-line
 zle -N edit-command-line
-_custom_edit_command_line() {
-  # Try `EDITOR` if `VISUAL` isn't working
-  VISUAL="$VIM_COMMAND -c 'DisableBackgrounding'" zle edit-command-line
-}
-zle -N _custom_edit_command_line
-# bindkey "^X^E" _custom_edit_command_line
-# Fish style edit line
-bindkey '\ev' _custom_edit_command_line
-# bindkey "^X^E" edit-command-line
+bindkey "^X^E" edit-command-line
 
 _reveal() {
   open .
@@ -28,7 +20,6 @@ bindkey '\er' _reveal
 # `_complete_help` is supposed have this default binding, but for some reason
 # it's missing
 bindkey "^Xh" _complete_help
-# bindkey '\ee' edit-command-line
 
 # By default, `^u` kills the whole line, rather than backwards
 # bindkey "^U" backward-kill-line
