@@ -1,4 +1,5 @@
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
+command! Sr :SessionRestoreAuto
 command! GrepBuffer :call commands#GrepBuffer()
 command! Gb :call commands#GrepBuffer()
 command! GrepBufferFromClipboard :call commands#GrepBufferFromClipboard()
