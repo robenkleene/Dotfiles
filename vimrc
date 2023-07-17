@@ -24,6 +24,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
+Plug 'thinca/vim-visualstar'
 " Theme
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
