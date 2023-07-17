@@ -108,16 +108,11 @@ bindkey '\e-' _fzf_z_parentdir_widget
 _fzf_open_widget() {
   setopt localoptions pipefail 2> /dev/null
 
-  local cmd="~/.bin/find_ls -f"
-  if [[ ! $PWD = $HOME/* ]]; then
-    cmd="$cmd --maxdepth 1"
-  fi
-
   local fzfcmd
   fzfcmd="$(__fzfcmd)"
 
   local result
-  result="$(eval "$cmd" | ~/.bin/fzf_file)"
+  result="$(~/.bin/find_ls -f | ~/.bin/fzf_file)"
   if (( $? )) then
     zle reset-prompt
     return $ret
