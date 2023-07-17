@@ -70,6 +70,9 @@ export CD_COMMAND="emacs_cd"
 # MD_EDITOR_COMMAND fallsback to EDITOR if not set
 # export MD_EDITOR_COMMAND="$EMACS_COMMAND"
 
+# Without this `less` doesn't get picked up as `man` pager resulting in warning
+# about `incsearch` not being supported
+export PAGER=less
 if test -n "$INSIDE_EMACS"; then
     export PAGER=cat
     export GIT_PAGER=cat
