@@ -35,7 +35,6 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/installs.zsh
 # Interactive
 source ~/.zsh/ui.zsh
-source ~/.zsh/abbr.zsh
 
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
