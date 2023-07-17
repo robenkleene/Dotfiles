@@ -1,3 +1,4 @@
+nnoremap Y y$
 " nnoremap <silent> <leader>oi :OI<CR>
 " Can't use `cl` here because it conflicts with "changing" current char plus
 " one right
