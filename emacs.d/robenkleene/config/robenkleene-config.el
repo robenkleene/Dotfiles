@@ -248,9 +248,6 @@
 ;; Allow project roots to be overridden with a `.project' file
 (add-hook 'project-find-functions #'rk/project-override)
 
-(add-hook 'find-file-hook 'rk/z-add)
-(add-hook 'dired-mode-hook 'rk/z-add)
-
 ;; Automatically revert unmodified buffers
 ;; This was causing the cursor to jump randomly after saving
 (global-auto-revert-mode)

@@ -124,15 +124,6 @@ augroup safepaste
 augroup END
 let @" = system('~/.bin/safepaste')
 
-" z add
-" Not sure why this doesn't work consistently
-augroup z_add
-  autocmd!
-  autocmd VimEnter * if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
-  autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
-augroup END
-if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
-
 augroup terminal_settings
   autocmd!
   " Start terminals in insert mode
@@ -141,7 +132,6 @@ augroup terminal_settings
   " This breaks things like `vim.g.unception_delete_replaced_buffer`
   " autocmd TermClose * call feedkeys("i")
 augroup END
-
 
 augroup ft_stdin
   autocmd!
