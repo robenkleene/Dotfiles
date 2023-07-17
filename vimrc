@@ -1,5 +1,9 @@
 let b:terminalorneovim = !has('gui_running') || has('nvim')
 
+" Fix for italics in tmux
+set t_ZH=[3m
+set t_ZR=[23m
+
 if $TERM_PROGRAM != "Apple_Terminal"
   set termguicolors
 endif
