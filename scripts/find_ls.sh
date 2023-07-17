@@ -27,5 +27,4 @@ modifier=""
 if [[ "$files" == "true" ]]; then
   modifier="--type f"
 fi
-
 exec fd ${modifier} --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg
