@@ -35,11 +35,12 @@ function make_symlink() {
   destination="$2"
   if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
     echo "Warning: $destination already exists and it's not a symlink" >&2
-  fi
-  if [[ "$force" == "true" ]]; then
-    ln -s "$source" "$destination"
   else
-    echo "Linking $source to $destination"
+    if [[ "$force" == "true" ]]; then
+      ln -s "$source" "$destination"
+    else
+      echo "Linking $source to $destination"
+    fi
   fi
 }
 
@@ -67,5 +68,5 @@ if [[ "$force" == "true" ]]; then
     find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 else
 
-  find -L . -name . -o -type d -prune -o -type l -exec echo "Deleting {}" +
+  find -L . -name . -o -type d -prune -o -type l -exec echo Deleting {} +
 fi
