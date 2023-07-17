@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-~/.bin/safepaste && echo | while IFS= read item; do
-  echo -n "${(q)item} "
+~/.bin/safepaste | while IFS= read item; do
+  echo -n "${(qqq)item} "
 done
