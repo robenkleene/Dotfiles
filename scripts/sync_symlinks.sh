@@ -33,13 +33,15 @@ fi
 function make_symlink() {
   source="$1"
   destination="$2"
-  if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
+  if [ -e "$destination" ] && [ ! -L "$destination" ]; then
     echo "Warning: $destination already exists and it's not a symlink" >&2
   else
-    if [[ "$force" == "true" ]]; then
-      ln -s "$source" "$destination"
-    else
-      echo "Linking $source to $destination"
+    if [ ! -e "$destination" ]; then
+      if [[ "$force" == "true" ]]; then
+        ln -s "$source" "$destination"
+      else
+        echo "Linking $source to $destination"
+      fi
     fi
   fi
 }
@@ -54,19 +56,20 @@ if [ ! -d "$dst" ]; then
   exit 1
 fi
 
-for file in "$src"/*; do
+cd "$src"
+for file in *; do
   if [ -d "$file" ]; then
     continue
   fi
 
   make_symlink "$src/$file" "$dst/$file"
 done
+cd - >/dev/null
 
 # Cleanup dead symlinks
 cd "$dst"
 if [[ "$force" == "true" ]]; then
     find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 else
-
   find -L . -name . -o -type d -prune -o -type l -exec echo Deleting {} +
 fi

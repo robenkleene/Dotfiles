@@ -5,6 +5,9 @@ set fillchars=eob:\
 set number
 set mouse=a
 
+" Indent wrapped lines
+set breakindent
+
 " Smartcase
 set ignorecase
 set smartcase
