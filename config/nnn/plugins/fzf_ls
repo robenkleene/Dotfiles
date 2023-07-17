@@ -1,9 +1,13 @@
 #!/usr/bin/env sh
 
-CTX=+
-
 # shellcheck disable=SC1090,SC1091
 . "$(dirname "$0")"/.nnn-plugin-helper
+
+# Must be after plugin helper
+# + for next
+# CTX=+
+# current context
+export CUR_CTX=1
 
 if ! type fzf >/dev/null 2>&1; then
     printf "fzf missing"
