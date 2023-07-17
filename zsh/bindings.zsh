@@ -9,20 +9,20 @@ bindkey -e
 # Edit in editor
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+bindkey -e "^X^E" edit-command-line
 
 _reveal() {
   open .
 }
 zle -N _reveal
-bindkey '\er' _reveal
+bindkey -e '\er' _reveal
 
 # `_complete_help` is supposed have this default binding, but for some reason
 # it's missing
-bindkey "^Xh" _complete_help
+bindkey -e "^Xh" _complete_help
 
 # By default, `^u` kills the whole line, rather than backwards
-bindkey "^U" backward-kill-line
+bindkey -e "^U" backward-kill-line
 
 # Menu Select
 # Load the `menuselect` map first
