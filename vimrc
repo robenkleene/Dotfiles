@@ -53,7 +53,7 @@ colorscheme night-owl
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
-command! Ei :cd ~/Developer/Dotfiles/ | :edit vimrc
+command! Ei :cd ~/Developer/Dotfiles/vim | :edit ../vimrc
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
