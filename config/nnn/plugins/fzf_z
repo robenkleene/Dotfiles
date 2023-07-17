@@ -21,4 +21,4 @@ if [ ! -d "$result" ]; then
   exit 0
 fi
 
-nnn_cd "$result"
+nnn_cd "$result" $CTX
