@@ -1,6 +1,7 @@
 command! Ei :cd ~/Developer/Dotfiles/ | :edit vimrc
 command! SessionRestoreAuto :source ~/.vim/vim_auto_session
 command! GrepBuffer :call commands#GrepBuffer()
+command! Gb :call commands#GrepBuffer()
 command! GrepBufferFromClipboard :call commands#GrepBufferFromClipboard()
 command! Pq :GrepBufferFromClipboard
 " Files
