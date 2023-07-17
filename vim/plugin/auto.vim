@@ -124,16 +124,6 @@ augroup safepaste
 augroup END
 let @" = system('~/.bin/safepaste')
 
-" z add
-" Not sure why this doesn't work consistently
-augroup z_add
-  autocmd!
-  " This was breaking vim vinegar
-  " autocmd VimEnter * if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
-  autocmd BufEnter * if s:isdir(expand('%')) | call system('~/.bin/z_add '.shellescape(expand('%'))) | endif
-augroup END
-" if exists('#FileExplorer') | execute 'autocmd! FileExplorer *' | endif
-
 augroup ft_stdin
   autocmd!
   " Don't prompt to save when piped to stdin
