@@ -19,6 +19,7 @@ setopt nocaseglob
 
 # Help
 autoload -Uz run-help
+alias help=run-help
 # This command fails on Linux, so drop its output
 unalias run-help &>/dev/null
 
