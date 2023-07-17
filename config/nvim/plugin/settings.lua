@@ -1,19 +1,3 @@
--- Start message
-vim.o.shortmess = vim.o.shortmess .. "I"
-
--- Line numbers
-vim.wo.number = true
-
--- Indent wrapped lines
-vim.o.breakindent = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
