@@ -81,7 +81,7 @@ function _robenkleene-fzf-open-widget
     if test -z $commandline
         if test -d "$result"
             commandline "cd $result_parameter"
-        else
+        else if test -n "$result"
             commandline "$EDITOR $result_parameter"
         end
         commandline -f repaint
