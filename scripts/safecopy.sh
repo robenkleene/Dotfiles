@@ -44,13 +44,14 @@ if [[ "$(uname)" == "Darwin" ]]; then
     { pbpaste; sed s'/⏎$//'; } | pbcopy
   else
     sed s'/⏎$//' | pbcopy
-    if [ -n "${TMUX:-}" ]; then
+    if [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
       # Always also copy to the tmux clipboard so that pasting inside tmux with
       # `paste-buffer` works
       pbpaste | tmux loadb -
     fi
   fi
-elif [ -n "${TMUX:-}" ]; then
+elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
+  # Never use `TMUX` `INSIDE_EMACS` because the `TMUX` session may no longer be running
   # Don't do anything fancy with trimming new lines, otherwise that makes it
   # hard to append multiple selections that contain trailing new lines
   if [[ "$append" == "true" ]]; then
@@ -59,5 +60,5 @@ elif [ -n "${TMUX:-}" ]; then
     sed s'/⏎$//' | tmux loadb -
   fi
 else
-  cat > /tmp/robenkleene.transient/clipboard
+  sed s'/⏎$//' > /tmp/robenkleene.transient/clipboard
 fi
