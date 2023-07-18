@@ -31,10 +31,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'thinca/vim-visualstar'
 " Theme
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-Plug 'whatyouhide/vim-gotham'
-Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
+" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+" Plug 'whatyouhide/vim-gotham'
+" Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
+Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
@@ -45,17 +46,22 @@ Plug 'neoclide/jsonc.vim', { 'for': 'json'}
 Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
-" let g:embark_terminal_italics = 1
-" colorscheme embark
-" colorscheme gotham
-" colorscheme catppuccin_mocha
-colorscheme night-owl
-
-" Needs to happen before bindings are set
-let mapleader="\<Space>"
-command! Ei :cd ~/Developer/Dotfiles/vim | :edit ../vimrc
-
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+
+" Theme
+set background=dark
+" Set after plug sync (doesn't help when installing themes)
+" let g:embark_terminal_italics = 1
+" colorscheme embark
+" colorscheme gotham
+" colorscheme catppuccin_mocha
+" colorscheme night-owl
+colorscheme iceberg
+
+" Needs to happen before bindings are set
+let mapleader="\<Space>"
+
+command! Ei :cd ~/Developer/Dotfiles/vim | :edit ../vimrc
