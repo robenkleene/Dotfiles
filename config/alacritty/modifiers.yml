@@ -93,9 +93,9 @@ key_bindings:
   - { key: Period,    mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
   - { key: Comma,     mods: Alt|Shift, chars: "\x1b<"                       } # Alt + <
   - { key: Minus,     mods: Alt|Shift, chars: "\x1b_"                       } # Alt + _
-  - { key: Minus,     mods: Alt|Shift|Control, chars: "\x1b\x5F"                       }
+  - { key: Minus,     mods: Alt|Shift|Control, chars: "\x1b\x1F"                       }
   - { key: Minus,     mods: Alt, chars: "\x1b-"                       } # Alt + _
-  - { key: Minus,     mods: Alt|Control, chars: "\x1b\x2D"                       } # Alt + _
+  - { key: Minus,     mods: Alt|Control, chars: "\x1b\x1F"                       } # Alt + _
   - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
   - { key: Period,   mods: Alt|Shift, chars: "\x1b>"                       } # Alt + >
