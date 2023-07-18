@@ -10,8 +10,11 @@
       ;; if it's different than the last paste
       (setq rk/last-paste nil)
       (defun rk/safepaste (text &optional push)
-        (let ((process-connection-type nil))
-          (let ((proc (start-process "safecopy" "*Messages*" "safecopy")))
+        (setenv "INSIDE_EMACS" "1")
+        (let (
+              (process-connection-type nil)
+              )
+          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "safecopy")))
             (unless (string))
             (process-send-string proc text)
             (process-send-eof proc)))
@@ -19,7 +22,7 @@
         )
 
       (defun rk/safecopy ()
-        (let ((copied-text (shell-command-to-string "safepaste")))
+        (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 safepaste")))
           (unless (string= copied-text rk/last-paste)
             copied-text)))
 
