@@ -7,11 +7,11 @@ date=$(date +%F)
 filename=$date.md
 filepath=$dir/$filename
 
-browse="false"
-while getopts ":bh" option; do
+new="false"
+while getopts ":nh" option; do
   case "$option" in
-    b)
-      browse="true"
+    n)
+      new="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -33,12 +33,12 @@ if [[ ! -d "$dir" ]]; then
   exit 1
 fi
 
-if [[ "$browse" == "true" ]]; then
-  find "$dir" | sort | tail -1 | tr -d '\n'
+if [[ "$new" == "true" ]]; then
+  if [[ ! -f "$filepath" ]]; then
+    echo -e "# $date\n" >> "$filepath"
+  fi
+  echo -n "$filepath"
   exit 0
 fi
 
-if [[ ! -f "$filepath" ]]; then
-  echo -e "# $date\n" >> "$filepath"
-fi
-echo -n "$filepath"
+find "$dir" | sort | tail -1 | tr -d '\n'

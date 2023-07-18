@@ -137,14 +137,14 @@
   "Switch to notes daily file, creating it if missing."
   (interactive)
   (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file"))
+   (shell-command-to-string "~/.bin/daily_file -n"))
   )
 
 (defun daily ()
   "Switch to daily file."
   (interactive)
   (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file -b"))
+   (shell-command-to-string "~/.bin/daily_file"))
   )
 
 (defun untitled-markdown-create ()
