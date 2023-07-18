@@ -3,8 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#000000" "#D32D1E" "#62D63F" "#E5E64B" "#005FFF" "#af00df" "#4AA4B0" "#ffffff"])
  '(connection-local-criteria-alist
    '(((:application eshell)
       eshell-connection-default-profile)
@@ -13,7 +11,7 @@
      ((:application tramp :machine "robenkleene-mac")
       tramp-connection-local-darwin-ps-profile)
      ((:application tramp)
-      tramp-connection-local-default-system-profile tramp-connection-local-default-shell-profile)) t)
+      tramp-connection-local-default-system-profile tramp-connection-local-default-shell-profile)))
  '(connection-local-profile-alist
    '((eshell-connection-default-profile
       (eshell-path-env-list))
@@ -88,11 +86,11 @@
       (shell-command-switch . "-c"))
      (tramp-connection-local-default-system-profile
       (path-separator . ":")
-      (null-device . "/dev/null"))) t)
+      (null-device . "/dev/null"))))
  '(custom-safe-themes
    '("28d61ac6f26030e3c649e9f75b6ebd93dbf7f5f7b2f13e14cb1fe101e8cf4737" "ca9ce9f0c5bb46610c20f4ebcaa3d1c8ed6b8f9c5a956620cba250686fe645cf" "f82e68d489e6c21c9552c4e8e35a03d126d9eba632a8e7b4f9329d1374b4a19c" "ad114fd8820edf7d947f356a237468ae2c402565a60b813ee36f6cd3f1d325ae" "c6fb2c37975e0d8fcc91ae7501f06bc9c58f3fb55e658be0fce30cd58bd66f3e" default))
  '(package-selected-packages
-   '(iedit consult embark-consult embark bind-map pbcopy rainbow-delimiters fill-column-indicator lua-mode typescript-mode magit eshell-syntax-highlighting better-defaults yaml-mode kotlin-mode ef-themes rust-mode eglot use-package nodejs-repl csv-mode ledger-mode fish-mode markdown-mode swift-mode inf-ruby enh-ruby-mode slime smartparens rainbow-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap vertico orderless marginalia corfu-terminal diminish cape popon org-modern modus-themes company))
+   '(yaml-mode consult embark-consult iedit embark bind-map pbcopy rainbow-delimiters fill-column-indicator lua-mode magit eshell-syntax-highlighting better-defaults kotlin-mode ef-themes eglot use-package nodejs-repl csv-mode ledger-mode fish-mode markdown-mode inf-ruby enh-ruby-mode slime smartparens rainbow-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap orderless corfu-terminal diminish cape popon org-modern modus-themes company))
  '(vc-annotate-color-map
    '((20 . "#F92672")
      (40 . "#CF4F1F")
