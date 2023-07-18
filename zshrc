@@ -38,4 +38,3 @@ source ~/.zsh/ui.zsh
 
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
-source ~/.zsh/startup.zsh
