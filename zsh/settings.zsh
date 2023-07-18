@@ -55,8 +55,11 @@ autoload zmv
 # Completion
 # Enable Completion
 autoload -Uz compinit
-# This is just re-generating the cache and shouldn't be run on startup
+# This is just re-generating the cache and shouldn't be run on startup?
+# Removing this breaks `menu select` to highlight the current match
 # compinit
+# With the `-C` is fast and fixes the issue
+compinit -C
 
 # Automatically select the first option
 # Don't enable this because it makes it difficult to narrow in on a choice
