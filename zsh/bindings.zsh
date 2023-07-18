@@ -112,6 +112,10 @@ _system_kill_line() {
 }
 zle -N _system_kill_line
 
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey -e "^[m" copy-earlier-word
+
 bindkey -e '\ew' _system_copy_region_as_kill
 bindkey -e "^[^?" _bash_backward_kill_word
 bindkey -e "^[^H" _bash_backward_kill_word
