@@ -83,24 +83,6 @@ _backward_kill_word() {
 }
 zle -N _backward_kill_word
 
-_system_yank() {
-  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
-    zle kill-region
-  fi
-  CUTBUFFER=$(safepaste)
-  zle yank
-}
-zle -N _system_yank
-
-_system_copy() {
-  if [[ "$REGION_ACTIVE" -eq 1 ]]; then
-    zle kill-region
-  fi
-  CUTBUFFER=$(safepaste)
-  zle yank
-}
-zle -N _system_yank
-
 _system_copy() {
   echo -n "$LBUFFER" | safecopy
 }
@@ -124,7 +106,6 @@ bindkey -e '^?' _kill_region_or_backward_delete_char
 bindkey -e '^W' _system_kill_region_or_backward_kill_word
 
 # Emacs Style
-bindkey -e '^Y' _system_yank
 bindkey -e '^X^X' _system_kill_line
 
 # Arrow Keys
