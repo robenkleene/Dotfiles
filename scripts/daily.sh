@@ -9,4 +9,4 @@ set -euo pipefail
 # file, since you're already at the correct directory.
 
 command="${MD_EDITOR_COMMAND:-${EDITOR:=vim}}"
-exec $command "$(~/.bin/daily_file)"
+exec $command "$(~/.bin/daily_file "$@")"
