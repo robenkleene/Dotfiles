@@ -41,8 +41,7 @@ Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'neoclide/jsonc.vim', { 'for': 'json'}
+Plug 'neoclide/jsonc.vim', { 'for': 'json' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
