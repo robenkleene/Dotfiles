@@ -11,6 +11,7 @@ return {
     event = "VeryLazy"
   },
   {
+    -- Opening files from oil can cause `ftplugin` to not fire, as a workaround just use the fuzzy finder instead
     'stevearc/oil.nvim',
     config = function()
       require("oil").setup()
