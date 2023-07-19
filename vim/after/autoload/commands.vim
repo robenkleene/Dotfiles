@@ -28,7 +28,7 @@ endfunction
 
 function! commands#NewBufferWithClipboard() abort
   execute "enew"
-  normal V"*P
+  normal V"0P
 endfunction
 
 function! s:entries(path) abort
