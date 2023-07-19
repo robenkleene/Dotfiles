@@ -35,11 +35,11 @@ nnoremap <C-w>p gT
 vnoremap <C-w>n gt
 vnoremap <C-w>p gT
 " Paste
-snoremap <expr> <localleader>p ":Cwise<CR>\"0p"
-nnoremap <expr> <localleader>p ":Cwise<CR>\"0p"
-vnoremap <expr> <localleader>p ":<C-u>Cwise<CR>gv\"0p"
-snoremap <expr> <localleader>P ":Cwise<CR>\"0P"
-nnoremap <expr> <localleader>P ":Cwise<CR>\"0P"
-vnoremap <expr> <localleader>P ":<C-u>Cwise<CR>gv\"0P"
+snoremap <localleader>p :Cwise<CR>"0p
+nnoremap <localleader>p :Cwise<CR>"0p
+vnoremap <localleader>p :<C-u>Cwise<CR>gv"0p
+snoremap <localleader>P :Cwise<CR>"0P
+nnoremap <localleader>P :Cwise<CR>"0P
+vnoremap <localleader>P :<C-u>Cwise<CR>gv"0P
 " Other
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
