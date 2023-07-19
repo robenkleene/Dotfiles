@@ -11,3 +11,7 @@ mkdir -p "$HOME/Developer/Dotfiles/config/nvim/plugin"
 ~/.bin/sync_symlinks -s "$HOME/Developer/Dotfiles/vim/after/autoload" -d "$HOME/Developer/Dotfiles/config/nvim/after/autoload" -f
 ~/.bin/sync_symlinks -s "$HOME/Developer/Dotfiles/vim/ftplugin" -d "$HOME/Developer/Dotfiles/config/nvim/ftplugin" -f
 ~/.bin/sync_symlinks -s "$HOME/Developer/Dotfiles/vim/plugin" -d "$HOME/Developer/Dotfiles/config/nvim/plugin" -f
+if [[ -e "$HOME/Developer/Dotfiles/vim/filetype.vim" ]]; then
+  ln -s "$HOME/Developer/Dotfiles/vim/filetype.vim" "$HOME/Developer/Dotfiles/config/nvim/filetype.vim"
+fi
+
