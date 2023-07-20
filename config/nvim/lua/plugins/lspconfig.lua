@@ -73,7 +73,10 @@ return {
       vim.keymap.set('n', '<localleader>k', vim.lsp.buf.hover, bufopts)
       -- Open and focus the float
       -- vim.keymap.set('n', '<leader>k', ":lua vim.lsp.buf.hover()<CR>:lua vim.lsp.buf.hover()<CR>", bufopts)
-      vim.keymap.set('n', '=', function() vim.lsp.buf.format { async = true } end, bufopts)
+      -- Really this should be a motion not a direct command
+      -- e.g., so we can do =`] to format the last pasted text
+      -- vim.keymap.set('n', '=', function() vim.lsp.buf.format { async = true } end, bufopts)
+      vim.keymap.set('n', '<localleader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
       -- This sometimes fires twice which causes the "press enter to continue prompt", and I usually don't care anyway
       -- vim.api.nvim_echo({{"LSP attached"}}, false, {})
     end
