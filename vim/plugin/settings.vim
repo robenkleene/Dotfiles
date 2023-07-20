@@ -32,13 +32,13 @@ set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
 " For state restoration
-set viewoptions-=options
-set viewoptions-=folds
-set viewoptions-=curdir
-set viewoptions-=blank
-set sessionoptions-=options
-set sessionoptions-=folds
-set sessionoptions-=blank
+" set viewoptions-=options
+" set viewoptions-=folds
+" set viewoptions-=curdir
+" set viewoptions-=blank
+" set sessionoptions-=options
+" set sessionoptions-=folds
+" set sessionoptions-=blank
 " Prefer spaces to tabs
 set expandtab
 " Don't start folded
