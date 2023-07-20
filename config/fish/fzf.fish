@@ -54,7 +54,7 @@ end
 bind \ez _robenkleene-fzf-z-widget
 
 function _robenkleene-fzf-z-subdir-widget
-    ~/.bin/z_fzf_subdir | read -l result
+    ~/.bin/z_subdir_fzf | read -l result
 
     if test -d "$result"
         set -l result_path (string escape "$result")
@@ -95,7 +95,7 @@ end
 bind \eo _robenkleene-fzf-open-widget
 
 function _robenkleene-fzf-z-parentdir-widget
-    ~/.bin/z_fzf_parentdir | read -l result
+    ~/.bin/z_parentdir_fzf | read -l result
 
     if test -d "$result"
         set -l result_path (string escape "$result")
