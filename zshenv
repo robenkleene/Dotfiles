@@ -18,9 +18,6 @@ if [[ -v ZSHENV_SOURCED ]]; then
 fi
 export ZSHENV_SOURCED=1
 
-# Export `CDPATH` so it's available in `vim`
-# export CDPATH=~:~/Developer/:~/Documentation/
-
 export COLORTERM="truecolor"
 
 # Color in `ls`
