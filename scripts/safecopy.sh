@@ -51,7 +51,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     if [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
       # Always also copy to the tmux clipboard so that pasting inside tmux with
       # `paste-buffer` works
-      pbpaste | tmux loadb"${register_parameter}" -
+      pbpaste | tmux loadb${register_parameter} -
     fi
   fi
 elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
@@ -59,9 +59,9 @@ elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
   # Don't do anything fancy with trimming new lines, otherwise that makes it
   # hard to append multiple selections that contain trailing new lines
   if [[ "$append" == "true" ]]; then
-    { TERM=xterm-256color tmux saveb"${register_parameter}" -; sed s'/⏎$//'; } | tmux loadb"${register_parameter}" -
+    { TERM=xterm-256color tmux saveb${register_parameter} -; sed s'/⏎$//'; } | tmux loadb"${register_parameter}" -
   else
-    sed s'/⏎$//' | tmux loadb"${register_parameter}" -
+    sed s'/⏎$//' | tmux loadb${register_parameter} -
   fi
 else
   sed s'/⏎$//' > /tmp/robenkleene.transient/clipboard

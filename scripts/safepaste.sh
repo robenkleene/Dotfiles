@@ -27,10 +27,10 @@ if [[ -n "${register-}" ]]; then
   register_parameter=" -b ${register} "
 fi
 
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$(uname)" = "Darwin" ]] && [[ -z "${register:-}" ]]; then
   pbpaste
 elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
-  TERM=xterm-256color tmux saveb"${register_parameter}" -
+  TERM=xterm-256color tmux saveb${register_parameter} -
 else
   cat /tmp/robenkleene.transient/clipboard 2>/dev/null || echo ''
 fi
