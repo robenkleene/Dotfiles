@@ -100,4 +100,6 @@ function! commands#Rg(terms) abort
     copen
     wincmd p
   endif
+  " Vim usually has artifacts if we don't redraw after this
+  redraw!
 endfunction
