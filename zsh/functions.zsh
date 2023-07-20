@@ -38,24 +38,6 @@ sgitn() {
   return 1
 }
 
-sgitnp() {
-  cd ~/Developer/Projects || return
-  sgitn
-  if [[ $? -ne 0 ]]; then
-    cd - >/dev/null
-    return 1
-  fi
-}
-
-sgitnd() {
-  cd ~/Documentation || return
-  sgitn
-  if [[ $? -ne 0 ]]; then
-    cd - >/dev/null
-    return 1
-  fi
-}
-
 vim_cd() {
   local tempfile='/tmp/robenkleene.transient/chdir/chdir'
   $VIM_COMMAND .
