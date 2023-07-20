@@ -45,7 +45,7 @@ _fzf_z_subdir_widget() {
   setopt localoptions pipefail 2> /dev/null
 
   local result
-  result="$(~/.bin/z_fzf_subdir)"
+  result="$(~/.bin/z_subdir_fzf)"
   if (( $? )) then
     zle reset-prompt
     return $ret
@@ -77,7 +77,7 @@ _fzf_z_parentdir_widget() {
   setopt localoptions pipefail 2> /dev/null
 
   local result
-  result="$(~/.bin/z_fzf_parentdir)"
+  result="$(~/.bin/z_parentdir_fzf)"
   if (( $? )) then
     zle reset-prompt
     return $ret

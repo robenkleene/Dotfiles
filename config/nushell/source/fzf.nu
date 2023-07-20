@@ -8,7 +8,7 @@ def-env fzf_z [] {
 }
 
 def-env fzf_z_subdir [] {
-  let $result = (~/.bin/z_fzf_subdir | str trim)
+  let $result = (~/.bin/z_subdir_fzf | str trim)
   cd (if (($result | str length) > 0) {
     $result
   } else {
