@@ -3,8 +3,12 @@
 set -euo pipefail
 
 files="false"
-while getopts ":fh" option; do
+recursive="false"
+while getopts ":frh" option; do
   case "$option" in
+    r)
+      recursive="true"
+      ;;
     f)
       files="true"
       ;;
@@ -23,8 +27,14 @@ while getopts ":fh" option; do
   esac
 done
 
-modifier=""
+type=""
 if [[ "$files" == "true" ]]; then
-  modifier="--type f"
+  type=" --type f "
 fi
-exec fd ${modifier} --strip-cwd-prefix --follow --hidden --max-depth 1 --exclude .DS_Store --exclude .git --exclude .hg
+
+depth=" --max-depth 1 "
+if [[ "$recursive" == "true" ]]; then
+  depth=""
+fi
+
+exec fd${type}--strip-cwd-prefix --follow --hidden${depth} --exclude .DS_Store --exclude .git --exclude .hg
