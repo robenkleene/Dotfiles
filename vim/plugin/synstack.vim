@@ -27,5 +27,6 @@ function! s:SyntaxColors()
   let syntaxcolors .= ' undercurl:' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"undercurl")
   return syntaxcolors
 endfunc
+
 " Echo Syntax Colors
 command! SyntaxEchoColors :echo <SID>SyntaxColors()
