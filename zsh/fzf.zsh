@@ -34,7 +34,7 @@ _fzf_z_widget() {
   cd "$result" || return 1
   local result_parameter
   result_parameter=${(qq)result}
-  print -sr -- "cd $result_parameter"
+  print -sr -- "cd ${result_parameter}"
   zle reset-prompt
   return $ret
 }
