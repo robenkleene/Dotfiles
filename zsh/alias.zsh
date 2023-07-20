@@ -2,9 +2,7 @@
 alias -- -='cd -'
 alias ..='cd ..'
 
-alias gu='ssh_start && git pull'
-alias gp='ssh_start && git push'
-alias gur='ssh_start && git pull -r'
+alias gits='ssh_start && git'
 
 # ls
 if [[ "$(uname)" = "Linux" ]]; then
