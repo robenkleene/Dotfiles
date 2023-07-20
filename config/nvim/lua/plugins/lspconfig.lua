@@ -38,21 +38,22 @@ return {
     -- vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
 
     local on_attach = function(_, bufnr)
-      vim.api.nvim_create_autocmd("CursorHold", {
-        buffer = bufnr,
-        callback = function()
-          local options = {
-            focusable = false,
-            close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-            border = 'rounded',
-            source = 'always',
-            prefix = ' ',
-            scope = 'cursor',
-          }
-          -- Show in a floating window, but this conflicts with other popups
-          -- vim.diagnostic.open_float(nil, opts)
-        end
-      })
+      -- Show on hover a floating window, but this conflicts with other popups
+      -- vim.api.nvim_create_autocmd("CursorHold", {
+      --   buffer = bufnr,
+      --   callback = function()
+      --     local options = {
+      --       focusable = false,
+      --       close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      --       border = 'rounded',
+      --       source = 'always',
+      --       prefix = ' ',
+      --       scope = 'cursor',
+      --     }
+      --   end
+      --   -- Show in a a floating window, but this conflicts with other popups
+      --   -- vim.diagnostic.open_float(nil, opts)
+      -- })
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
       local bufopts = { noremap=true, silent=true, buffer=bufnr }
       -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
