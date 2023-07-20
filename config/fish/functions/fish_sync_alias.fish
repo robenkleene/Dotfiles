@@ -3,9 +3,7 @@ function fish_sync_alias
     # Any aliases removed need to be deleted manually!
 
     # git
-    alias --save gu='ssh_start && git pull'
-    alias --save gp='ssh_start && git push'
-    alias --save gur='ssh_start && git pull -r'
+    alias --save gits='ssh_start && git'
     # egit
     alias --save u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
     alias --save ut='ssh_start && ssh_git_pull_all -t'
