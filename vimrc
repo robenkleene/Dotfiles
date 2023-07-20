@@ -78,10 +78,10 @@ vnoremap <silent> * :call setreg("/",
     \ '\\_s\\+', 'g')
     \ )<Cr>n
 
-vnoremap <silent> # :call setreg("?",
+vnoremap <silent> # :call setreg("/", 
     \ substitute(<SID>getSelectedText(),
     \ '\_s\+',
     \ '\\_s\\+', 'g')
-    \ )<Cr>n
+    \ )<Bar>let v:searchforward = 0<Cr>n
 
 command! Ei :cd ~/Developer/Dotfiles/vim | :edit ../vimrc
