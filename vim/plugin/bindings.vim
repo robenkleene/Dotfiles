@@ -22,7 +22,8 @@ vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 nnoremap <localleader>yg :YankGrep<CR>
 nnoremap <localleader>w :set wrap!<CR>
 " Tabs
-nnoremap <silent> <C-w>t :tabnew<CR>
+nnoremap <silent> <C-w>t :split<CR><C-w>T
+vnoremap <silent> <C-w>t :split<CR><C-w>T
 nnoremap <silent> <C-w>q :tabclose<CR>
 vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
 " Paste
