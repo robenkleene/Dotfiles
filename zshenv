@@ -25,18 +25,12 @@ export CLICOLOR=1
 
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
   # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.fzf/bin:~/.bin:~/.brew/bin:$PATH
+  export PATH=~/.bin:$PATH
 else
   # This method of setting the path prevents duplicate entries.
   typeset -U path
-  path=(~/.fzf/bin ~/.bin ~/.brew/bin $path[@])
+  path=(~/.bin $path[@])
 fi
-
-# Homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 
 # nnn
 export NNN_PLUG='z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal;o:ls_fzf;p:preview'
