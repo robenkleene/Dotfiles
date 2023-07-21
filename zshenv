@@ -23,13 +23,15 @@ export COLORTERM="truecolor"
 # Color in `ls`
 export CLICOLOR=1
 
+# Note that `~/.brew/bin` *must* be set here so that the brew installed version
+# of `mosh` gets picked up that supports truecolor
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
   # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.bin:$PATH
+  export PATH=~/.brew/bin:~/.bin:$PATH
 else
   # This method of setting the path prevents duplicate entries.
   typeset -U path
-  path=(~/.bin $path[@])
+  path=(~/.brew/bin ~/.bin $path[@])
 fi
 
 # nnn

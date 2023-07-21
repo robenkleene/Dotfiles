@@ -56,14 +56,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
-  # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.brew/bin:$PATH
-else
-  # This method of setting the path prevents duplicate entries.
-  typeset -U path
-  path=(~/.brew/bin $path[@])
-fi
+# Home brew should already be set, but this moves it back to the front of path
+PATH=~/.brew/bin:$PATH
 
 # The `-U` option prevens duplicates when `tmux` starts `zsh` instances
 export -U PATH
