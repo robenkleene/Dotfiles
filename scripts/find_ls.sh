@@ -37,4 +37,4 @@ if [[ "$recursive" == "true" ]]; then
   depth=""
 fi
 
-exec fd${type}--strip-cwd-prefix --follow --hidden${depth} --exclude .DS_Store --exclude .git --exclude .hg
+exec fd${type}--strip-cwd-prefix --follow --color=always --hidden${depth} --exclude .DS_Store --exclude .git --exclude .hg

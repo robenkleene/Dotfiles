@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-if [[ -n "$1" ]]; then
+if [[ -n "${1:-}" ]]; then
   cd "$1"
 fi
 
