@@ -2,6 +2,12 @@
 # Run `zprof` after to see results
 # zmodload zsh/zprof
 
+# This fixes issue on the server with unicode characters
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # Homebrew
 # This was moved from `zshenv` because the brew path (in `/usr/local/bin`) is
 # set by `/etc/profile`, and that's sourced *after* loading `zshenv`
