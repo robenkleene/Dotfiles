@@ -17,7 +17,7 @@ def-env fzf_z_subdir [] {
 }
 
 def-env fzf_o [] {
-  let $result = (~/.bin/find_ls -f)
+  let $result = (~/.bin/ls_fzf -f)
   if (($result | str length) == 0) {
      return
   }
