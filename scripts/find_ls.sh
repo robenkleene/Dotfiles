@@ -4,8 +4,11 @@ set -euo pipefail
 
 files="false"
 recursive="false"
-while getopts ":frh" option; do
+while getopts ":d:frh" option; do
   case "$option" in
+    d)
+      dir="$OPTARG"
+      ;;
     r)
       recursive="true"
       ;;
@@ -17,11 +20,11 @@ while getopts ":frh" option; do
       exit 0
       ;;
     :)
-      echo "Option -OPTARG requires an argument" >&2
+      echo "Option -$OPTARG requires an argument" >&2
       exit 1
       ;;
     \?)
-      echo "Invalid option: -OPTARG" >&2
+      echo "Invalid option: -$OPTARG" >&2
       exit 1
       ;;
   esac
@@ -37,4 +40,9 @@ if [[ "$recursive" == "true" ]]; then
   depth=""
 fi
 
-exec fd${type} --strip-cwd-prefix --follow --color=always --hidden${depth} --exclude .DS_Store --exclude .git --exclude .hg
+term=" --strip-cwd-prefix"
+if [[ -n "${dir-}" ]]; then
+  term=" . $dir"
+fi
+
+exec fd${type} --follow --color=always --hidden${depth} --exclude .DS_Store --exclude .git --exclude .hg${term}
