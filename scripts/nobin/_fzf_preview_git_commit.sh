@@ -13,6 +13,4 @@ if [[ -z "${hash-}" ]]; then
   echo "Error: No hash found" >&2
   exit 1
 fi
-echo "hash = $hash"
-echo "separator = $separator"
 git show --color=always "$hash"${separator}"${1}"
