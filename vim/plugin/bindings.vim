@@ -11,10 +11,8 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " first `$1`, if you type `j` it will mess up instead of entering `j`
 " noremap <silent> k gk
 " noremap <silent> j gj
-noremap <silent> <up> gk
-noremap <silent> <down> gj
-nnoremap <A-left> b
-nnoremap <A-right> w
+" noremap <silent> <up> gk
+" noremap <silent> <down> gj
 
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
@@ -23,17 +21,9 @@ vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 " Other
 nnoremap <localleader>yg :YankGrep<CR>
 nnoremap <localleader>w :set wrap!<CR>
-nnoremap <leader>T :terminal<CR>
-nnoremap <leader>t :TerminalLocal<CR>
 " Tabs
-nnoremap <silent> <C-w>t :split<CR><C-w>T
-vnoremap <silent> <C-w>t :split<CR><C-w>T
 nnoremap <silent> <C-w>q :tabclose<CR>
 vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
-nnoremap <C-w>n gt
-nnoremap <C-w>p gT
-vnoremap <C-w>n gt
-vnoremap <C-w>p gT
 " Paste
 snoremap <localleader>p :Cwise<CR>"0p
 nnoremap <localleader>p :Cwise<CR>"0p
