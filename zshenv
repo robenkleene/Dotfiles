@@ -40,7 +40,7 @@ export NNN_PLUG='z:fzf_z;c:fzf_subdir;-:fzf_parentdir;r:reveal;o:ls_fzf;p:previe
 # FZF
 # Use `fd` for `:Files` in `fzf.vim`
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_PREVIEW_OPTS=" --bind=ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --height=40 --preview-window=bottom,50%:wrap"
+export FZF_DEFAULT_PREVIEW_OPTS=" --bind=ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --height=40 --preview-window=right,50%:wrap"
 
 # Standard
 # hx

@@ -11,7 +11,7 @@ function fish_sync_variables
     # fzf
     # Use `fd` for `:Files` in `fzf.vim`
     set -Ux FZF_DEFAULT_COMMAND "fd --type f"
-    set -Ux FZF_DEFAULT_PREVIEW_OPTS " --bind=ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --height=40 --preview-window=bottom,50%:wrap"
+    set -Ux FZF_DEFAULT_PREVIEW_OPTS " --bind=ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --height=40 --preview-window=right,50%:wrap"
     # Setup editors first so others can depend on them
     # Vim
     # set -Ux VIM_COMMAND nvim
