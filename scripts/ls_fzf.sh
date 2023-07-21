@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-source ~/.bin/nobin/_fzf_preview_opts.sh
-
 export CLICOLOR=1
 export SHELL=sh
 # We're not using `z_list_parentdir`, z version probably not worth the
