@@ -2,8 +2,9 @@
 
 set -euo pipefail
 
+param=""
 if [[ -n "${1:-}" ]]; then
-  cd "$1"
+  param=" -d $1"
 fi
 
-exec ~/.bin/ls_fzf -r
+exec ~/.bin/ls_fzf -r${param}
