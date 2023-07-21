@@ -1,3 +1,11 @@
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+# Home brew should already be set, but this moves it back to the front of path
+PATH=~/.brew/bin:$PATH
+
 # zoxide
 if [[ $(whence -p "zoxide") ]]; then
   eval "$(zoxide init zsh)"
@@ -50,14 +58,6 @@ if [[ -d "$HOME/.config/nvm/17.0.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v17.0.1/bin" ]]; then
   PATH=$HOME/.nvm/versions/node/v17.0.1/bin:$PATH
 fi
-
-# Homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-# Home brew should already be set, but this moves it back to the front of path
-PATH=~/.brew/bin:$PATH
 
 # The `-U` option prevens duplicates when `tmux` starts `zsh` instances
 export -U PATH
