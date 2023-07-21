@@ -29,10 +29,10 @@ done
 
 type=""
 if [[ "$files" == "true" ]]; then
-  type=" --type f "
+  type=" --type f"
 fi
 
-depth=" --max-depth 1 "
+depth=" --max-depth 1"
 if [[ "$recursive" == "true" ]]; then
   depth=""
 fi
