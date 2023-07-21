@@ -53,6 +53,9 @@ set linebreak
 set nowrap
 " Don't timeout leader key
 set notimeout
+" Don't prompt when trying to navigate to another buffer when current buffer
+" is modified
+set hidden
 
 " Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
