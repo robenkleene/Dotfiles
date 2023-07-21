@@ -73,7 +73,7 @@ end
 bind \ec _robenkleene-fzf-z-subdir-widget
 
 function _robenkleene-fzf-open-widget
-    set -l result (~/.bin/find_ls -f | ~/.bin/fzf_file)
+    set -l result (~/.bin/find_ls -f | ~/.bin/filter_fzf_file)
     set -l result_parameter (for file in $result
         echo -n (string escape "$file") ""
     end)
