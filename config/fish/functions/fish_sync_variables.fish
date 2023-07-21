@@ -8,6 +8,11 @@ function fish_sync_variables
     # Suppress default greeting
     set -U fish_greeting
 
+    # fzf
+    # Use `fd` for `:Files` in `fzf.vim`
+    set -Ux FZF_DEFAULT_COMMAND "fd --type f"
+    set -Ux FXF_DEFAULT_PREVIEW_OPTS " --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' --height=40% --preview-window '<30(bottom,30%):wrap"
+
     # Setup editors first so others can depend on them
     # Vim
     # set -Ux VIM_COMMAND nvim
@@ -38,9 +43,6 @@ function fish_sync_variables
     # set -Ux MD_EDITOR_COMMAND "$EMACS_COMMAND"
     # set -Ux CD_COMMAND "vim_cd"
     set -Ux CD_COMMAND "emacs_cd"
-
-    # Use `fd` for `:Files` in `fzf.vim`
-    set -Ux FZF_DEFAULT_COMMAND "fd --type f"
 
     # hx
     # set -Ux VISUAL "hx"
