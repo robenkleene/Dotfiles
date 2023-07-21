@@ -14,11 +14,11 @@ _fzf_z_widget() {
 
   local result
   result="$(~/.bin/z_fzf)"
-  if (( $? )) then
+  local ret=$?
+  if (( $ret )) then
     zle reset-prompt
     return $ret
   fi
-  local ret=$?
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
@@ -46,11 +46,11 @@ _fzf_z_subdir_widget() {
 
   local result
   result="$(~/.bin/z_subdir_fzf)"
-  if (( $? )) then
+  local ret=$?
+  if (( $ret )) then
     zle reset-prompt
     return $ret
   fi
-  local ret=$?
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
@@ -78,11 +78,11 @@ _fzf_z_parentdir_widget() {
 
   local result
   result="$(~/.bin/z_parentdir_fzf)"
-  if (( $? )) then
+  local ret=$?
+  if (( $ret )) then
     zle reset-prompt
     return $ret
   fi
-  local ret=$?
 
   if [[ ! -d "$result" ]]; then
     zle redisplay
@@ -113,11 +113,11 @@ _fzf_open_widget() {
 
   local result
   result="$(~/.bin/ls_fzf -f)"
-  if (( $? )) then
+  local ret=$?
+  if (( $ret )) then
     zle reset-prompt
     return $ret
   fi
-  local ret=$?
 
   local result_parameter
   result_parameter=$(while IFS= read item; do
