@@ -19,65 +19,15 @@ set main-view-date = relative-compact
 set mouse = true
 # set diff-options = --color-words
 
-# Basic
-bind generic r refresh
-
-# External
-bind generic T !sh -c "git difftool '%(commit)'"
-bind generic D !sh -c "git diff '%(commit)'"
-bind generic S !sh -c "git show '%(commit)'"
-bind generic Y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
-bind generic y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
-bind status w !bash -c "git diff --color-words '%(file)'"
-bind stage w !bash -c "git diff --color-words '%(file)'"
-bind status ]] move-page-down
-bind status [[ move-page-up
-bind generic d none
-
-# Main
-bind main o ?git checkout %(commit)
-
-# Diff Tool
-bind generic T !git difftool
-bind main T !@git difftool %(commit)^!
-# Below will work even if tig is opened from a subfolder, but it fails if the path has a space
-# bind status D !@sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\' | mate --async"
-
-# LaunchBar
-# bind status L !sh -c "osascript -e 'tell application \"LaunchBar\" to open \"$(pwd)/%(file)\"'"
-
 # Emacs
 bind generic <Ctrl-V> move-page-down
 
 # Stage
-# bind status s status-update
 bind stage <Enter> edit
-# bind stage ] :/^@@
-# bind stage [ :?^@@
 bind stage ] :/^@@
 bind stage [ :?^@@
-# bind stage ] none
-# bind stage [ none
-bind stage ]c :/^[+|-][^+-]
-bind stage [c :?^[+|-][^+-]
-bind stage C !git commit
-# Diff
-bind diff <Enter> edit
-bind diff ]] :/^@@
-bind diff [[ :?^@@
-bind diff ] none
-bind diff [ none
-bind diff ]c :/^[+|-][^+-]
-bind diff [c :?^[+|-][^+-]
 
-# Debugging
-# bind status Z !sh -c 'cat %(file)'
-# bind status Z !sh -c "git diff \'$(git rev-parse --show-toplevel)/%(file)\'"
-
-# Vim
-# Below doesn't work, looking for where of canceling out of command line prompt
-# bind generic <Ctrl-G> prompt
-# This is nice but isn't supported anywhere else
+# Movement
 bind generic - none
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down
@@ -91,10 +41,6 @@ bind generic k move-up
 bind generic <Down> move-down
 bind generic <Up> move-up
 bind generic l scroll-right
-bind generic <C-w><C-w> view-next
-
-# bind generic g  none
-# bind generic gg move-first-line
 bind generic g move-first-line
 
 bind main    G  none
@@ -102,20 +48,6 @@ bind generic G  move-last-line
 
 bind generic v  none
 bind generic B view-help
-# bind generic gm view-main
-# bind generic gd view-diff
-# bind generic gl view-log
-# bind generic gt view-tree
-# bind generic gb view-blob
-# bind generic gx view-blame
-# bind generic gr view-refs
-# bind generic gs view-status
-# bind generic gu view-stage
-# bind generic gy view-stash
-# bind generic gp view-pager
-
-# Fugitive
-bind status - status-update
 
 # Colors
 # Available Colors
