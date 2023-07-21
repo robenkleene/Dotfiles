@@ -112,7 +112,7 @@ _fzf_open_widget() {
   fzfcmd="$(__fzfcmd)"
 
   local result
-  result="$(~/.bin/find_ls -f | ~/.bin/filter_fzf_file)"
+  result="$(~/.bin/ls_fzf -f)"
   if (( $? )) then
     zle reset-prompt
     return $ret
