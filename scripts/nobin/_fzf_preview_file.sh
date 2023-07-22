@@ -2,8 +2,21 @@
 
 set -euo pipefail
 
-if [[ -f "$1" ]]; then
-  bat --style=plain --color=always "$@"
-elif [[ -d "$1" ]]; then
-  ls -Cp "$1"
+bat_param=""
+verbose="false"
+if [[ "$#" -gt 1 ]]; then
+  bat_param=" --style=plain"
+  verbose="true"
 fi
+
+for var in "$@"; do
+  if [[ -f "$1" ]]; then
+    bat$bat_param --color=always "$var"
+  elif [[ -d "$var" ]]; then
+    if [[ "$verbose" == "true" ]]; then
+      echo "$var"
+      echo
+    fi
+    ls -Cp "$var"
+  fi
+done
