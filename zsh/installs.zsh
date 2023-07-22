@@ -13,6 +13,7 @@ if command -v brew &> /dev/null; then
   HOMEBREW_DIR=$(brew --prefix)
   export MANPATH="$HOMEBREW_DIR/share/man:$MANPATH"
   export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
+  FPATH="$HOMEBREW_DIR/share/zsh/site-functions:${FPATH}"
 fi
 
 # fzf
