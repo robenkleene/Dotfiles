@@ -5,7 +5,7 @@ INITIAL_QUERY="${*:-}"
 : | fzf --ansi --disabled --multi --query "$INITIAL_QUERY" \
     --bind "start:reload:$RG_PREFIX {q}" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
-    --bind='ctrl-v:become(vim {+}),ctrl-x:execute-silent(echo {+} | pbcopy)+accept,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' \
     --delimiter : \
     --preview 'bat --style=plain --color=always {1} --line-range {2}: --highlight-line {2}' \
-    --height=20 --preview-window=right,50%:wrap       
+    --bind='ctrl-v:become(vim {+}),ctrl-x:execute-silent(echo {+} | ~/.bin/safecopy)+accept,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' \
+    --height=20 --preview-window=right,50%:wrap
