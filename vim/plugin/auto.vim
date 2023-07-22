@@ -28,7 +28,7 @@ augroup auto_save_session
   \|  endif
 augroup END
 
-" Save View
+" Exclude buffers from restoring view settings
 augroup save_view
   autocmd!
   autocmd BufWinLeave *
@@ -127,11 +127,17 @@ let @" = system('~/.bin/safepaste')
 augroup ft_stdin
   autocmd!
   " Don't prompt to save when piped to stdin
-  autocmd StdinReadPost * :set buftype=nofile
+  autocmd StdinReadPost * setlocal buftype=nofile
 augroup END
 
 augroup diff_stdin
   autocmd!
   " Make piped diffs read only
   autocmd StdinReadPost * if &filetype == 'diff' | setlocal readonly nomodifiable | end
+augroup END
+
+augroup nofilename_nofile
+  autocmd!
+  " Don't prompt for saving buffers with no file
+  autocmd BufEnter * if eval('@%') == '' | setlocal buftype=nofile | end
 augroup END
