@@ -31,7 +31,6 @@ source ~/.zsh/bindings.zsh
 source ~/.zsh/functions.zsh
 # `fzf` functions before aliases so functions don't use aliases and after 
 # bindings, otherwise `fzf` bindings don't work
-source ~/.zsh/fzf.zsh
 source ~/.zsh/installs.zsh
 # Interactive
 source ~/.zsh/ui.zsh
