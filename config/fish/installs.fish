@@ -53,8 +53,8 @@ if test -e $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
     source $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
     fzf_key_bindings
 end
-function _robenkleene-fzf-z-parentdir-widget
-    ~/.bin/z_parentdir_fzf | read -l result
+function _robenkleene-fzf-z-widget
+    ~/.bin/z_fzf | read -l result
 
     if test -d "$result"
         set -l result_path (string escape "$result")
@@ -70,4 +70,4 @@ function _robenkleene-fzf-z-parentdir-widget
 
     commandline -f repaint
 end
-bind \e- _robenkleene-fzf-z-parentdir-widget
+bind \ez _robenkleene-fzf-z-widget
