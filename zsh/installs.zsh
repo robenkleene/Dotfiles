@@ -13,6 +13,37 @@ fi
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
 fi
+_fzf_z_widget() {
+  setopt localoptions pipefail 2> /dev/null
+
+  local result
+  result="$(~/.bin/z_fzf)"
+  local ret=$?
+  if (( $ret )) then
+    zle reset-prompt
+    return $ret
+  fi
+
+  if [[ ! -d "$result" ]]; then
+    zle redisplay
+    return
+  fi
+
+  if [[ -n "$LBUFFER" ]]; then
+    LBUFFER+=$result
+    zle redisplay
+    return $ret
+  fi
+
+  cd "$result" || return 1
+  local result_parameter
+  result_parameter=${(qq)result}
+  print -sr -- "cd ${result_parameter}"
+  zle reset-prompt
+  return $ret
+}
+zle -N _fzf_z_widget
+bindkey '\ez' _fzf_z_widget
 
 # zoxide
 if [[ $(whence -p "zoxide") ]]; then
