@@ -5,6 +5,15 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # Home brew should already be set, but this moves it back to the front of path
 PATH=~/.brew/bin:$PATH
+# Homebrew
+# This was moved from `zshenv` because the brew path (in `/usr/local/bin`) is
+# set by `/etc/profile`, and that's sourced *after* loading `zshenv`
+if command -v brew &> /dev/null; then
+  export HOMEBREW_DIR
+  HOMEBREW_DIR=$(brew --prefix)
+  export MANPATH="$HOMEBREW_DIR/share/man:$MANPATH"
+  export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
+fi
 
 # fzf
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
