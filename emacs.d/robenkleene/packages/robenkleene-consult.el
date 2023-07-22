@@ -11,16 +11,12 @@
          ("C-c z" . rk/consult-z)
          ;; ("M-z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
-         ("C-c c" . rk/consult-z-subdir)
-         ("C-c -" . rk/consult-z-parentdir)
          ("C-c l" . consult-line)
          ("C-c i" . consult-imenu)
          )
   :commands
   (rk/consult-doc
    rk/consult-z
-   rk/consult-z-subdir
-   rk/consult-z-parentdir
    rk/consult-fd
    rk/consult-fd-pwd
    rk/consult-eshell-z
@@ -59,10 +55,6 @@
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
-
-  (with-eval-after-load 'dired
-    (define-key dired-mode-map (kbd "M-c") 'rk/consult-z-subdir)
-    )
 
   ;; Use `consult' for Emacs `ex' (command line) completions, and eshell
   ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
@@ -126,46 +118,6 @@
                     "\n$" ""
                     (shell-command-to-string
                      "~/.bin/z_list"))
-                   "\n"))
-          (user-error "No recent files"))
-      :prompt "Z: "
-      :sort nil
-      :require-match t
-      :category 'file
-      :state (consult--file-preview)
-      :history 'file-name-history)))
-
-  (defun rk/consult-z-subdir ()
-    "z subdir using `completing-read'."
-    (interactive)
-    (find-file
-     (consult--read
-      (or (mapcar #'abbreviate-file-name
-                  (split-string
-                   (replace-regexp-in-string
-                    "\n$" ""
-                    (shell-command-to-string
-                     "~/.bin/z_list_subdir"))
-                   "\n"))
-          (user-error "No recent files"))
-      :prompt "Z: "
-      :sort nil
-      :require-match t
-      :category 'file
-      :state (consult--file-preview)
-      :history 'file-name-history)))
-
-  (defun rk/consult-z-parentdir ()
-    "z subdir using `completing-read'."
-    (interactive)
-    (find-file
-     (consult--read
-      (or (mapcar #'abbreviate-file-name
-                  (split-string
-                   (replace-regexp-in-string
-                    "\n$" ""
-                    (shell-command-to-string
-                     "~/.bin/z_list_parentdir"))
                    "\n"))
           (user-error "No recent files"))
       :prompt "Z: "
