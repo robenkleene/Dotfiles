@@ -47,3 +47,9 @@ if set -q HOMEBREW_DIR
         set -gx INFOPATH $INFOPATH $HOMEBREW_DIR/share/info
     end
 end
+
+# fzf
+if test -e $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
+    source $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
+    fzf_key_bindings
+end
