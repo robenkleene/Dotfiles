@@ -6,6 +6,14 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # Home brew should already be set, but this moves it back to the front of path
 PATH=~/.brew/bin:$PATH
 
+# fzf
+if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
+  source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
+fi
+if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
+  source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
+fi
+
 # zoxide
 if [[ $(whence -p "zoxide") ]]; then
   eval "$(zoxide init zsh)"
