@@ -2,15 +2,15 @@
 
 set -euo pipefail
 
-bat_param=""
+bat_param=" --style=plain"
 verbose="false"
 if [[ "$#" -gt 1 ]]; then
-  bat_param=" --style=plain"
+  bat_param=""
   verbose="true"
 fi
 
 for var in "$@"; do
-  if [[ -f "$1" ]]; then
+  if [[ -f "$var" ]]; then
     bat$bat_param --color=always "$var"
   elif [[ -d "$var" ]]; then
     if [[ "$verbose" == "true" ]]; then
