@@ -1,3 +1,6 @@
+" Backtick expansion doesn't work with fish
+set shell=zsh
+
 " Settings
 set shortmess+=atI
 " Hide tilde for lines not in buffer
