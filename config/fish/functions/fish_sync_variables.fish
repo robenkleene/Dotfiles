@@ -13,8 +13,8 @@ function fish_sync_variables
     set -Ux FZF_DEFAULT_COMMAND "fd --type f"
     # Setup editors first so others can depend on them
     # Vim
-    # set -Ux VIM_COMMAND nvim
-    set -Ux VIM_COMMAND vim
+    set -Ux VIM_COMMAND nvim
+    # set -Ux VIM_COMMAND vim
     # Emacs
     # Start the server in the background if it isn't running
     set -Ux ALTERNATE_EDITOR ""
