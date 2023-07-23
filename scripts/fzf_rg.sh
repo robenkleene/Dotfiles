@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
 RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
-# Allows search term from args
-# INITIAL_QUERY="${*:-}"
-INITIAL_QUERY=""
 : | fzf --ansi --reverse --disabled --keep-right --multi --query "$INITIAL_QUERY" \
-    --bind "start:reload:$RG_PREFIX {q} $@" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $@ || true" \
     --delimiter : \
     --preview 'bat --style=plain --color=always {1} --line-range {2}: --highlight-line {2}' \
