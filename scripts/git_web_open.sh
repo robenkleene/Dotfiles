@@ -3,4 +3,4 @@
 # Use default browser
 export BROWSER=
 
-~/.bin/git_web_link -f . "$@" | ~/.bin/url_open
+~/.bin/git_web_link -f . "$@" | ~/.bin/filter_url_open

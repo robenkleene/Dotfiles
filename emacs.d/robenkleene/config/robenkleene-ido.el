@@ -193,7 +193,7 @@
         (shell-command
          (concat "echo "
                  (shell-quote-argument result)
-                 " | ~/.bin/urls_open")
+                 " | ~/.bin/filter_urls_open")
          )
         )
       )
