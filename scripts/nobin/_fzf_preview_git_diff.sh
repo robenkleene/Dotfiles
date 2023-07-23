@@ -3,7 +3,7 @@
 set -euo pipefail
 
 input=$(cat)
-file=${input#*[ ?][A-Z?] }
+file=${input#*[A-Z?] }
 if [[ ${input:0:1} != "?" ]]; then
   git diff --color=always "$file"
 else
