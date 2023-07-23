@@ -198,13 +198,13 @@
     (if (use-region-p)
         (shell-command-on-region (region-beginning)
                                  (region-end)
-                                 (concat "~/.bin/slug_project -l -t "
+                                 (concat "~/.bin/slug_project -t "
                                          (shell-quote-argument title))
                                  nil
                                  t
                                  )
       (rk/safe-find-file
-       (shell-command-to-string (concat "~/.bin/slug_project -t "
+       (shell-command-to-string (concat "~/.bin/slug_project -f -t "
                                         (shell-quote-argument title))
                                 )
        )

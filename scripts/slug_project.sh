@@ -2,8 +2,8 @@
 
 set -e
 
-link="false"
-while getopts ":t:d:lh" option; do
+filename="false"
+while getopts ":t:d:fh" option; do
   case "$option" in
     t)
       title="$OPTARG"
@@ -11,8 +11,8 @@ while getopts ":t:d:lh" option; do
     d)
       directory="$OPTARG"
       ;;
-    l)
-      link="true"
+    f)
+      filename="true"
       ;;
     h)
       echo "Usage: command [-hl] [-t <title>] [-d <directory>]"
@@ -86,8 +86,8 @@ today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
 readme_path=$(make_file "README.md" "$dated_slug" "$contents")
 make_file "README.md" "$dated_slug/archive" "$contents Archive" >/dev/null
-if [[ "$link" == "true" ]]; then
-  echo -n "[$title]($directory$readme_path)"
-else
+if [[ "$filename" == "true" ]]; then
   echo -n "$directory$readme_path"
+else
+  echo -n "[$title]($directory$readme_path)"
 fi
