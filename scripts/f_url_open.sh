@@ -34,7 +34,7 @@ else
 fi
 
 if [[ -z "$browser_arg" ]]; then
-  open "$(~/.bin/filter_url -b)"
+  open "$(~/.bin/f_url -b)"
 else
-  open "$browser_arg" "$(~/.bin/filter_url -b)"
+  open "$browser_arg" "$(~/.bin/f_url -b)"
 fi

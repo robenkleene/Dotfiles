@@ -357,7 +357,7 @@
   (if (use-region-p)
       (shell-command-on-region (region-beginning)
                                (region-end)
-                               "~/.bin/filter_urls_open")
+                               "~/.bin/f_urls_open")
     )
   )
 
