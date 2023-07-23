@@ -26,10 +26,11 @@ nnoremap <silent> <C-w>t :split<CR><C-w>T
 vnoremap <silent> <C-w>t :split<CR><C-w>T
 nnoremap <silent> <C-w>q :tabclose<CR>
 vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
-nnoremap <C-w>n gt
-nnoremap <C-w>p gT
-vnoremap <C-w>n gt
-vnoremap <C-w>p gT
+" Try using the defaults for these
+" nnoremap <C-w>n gt
+" nnoremap <C-w>p gT
+" vnoremap <C-w>n gt
+" vnoremap <C-w>p gT
 " Paste
 snoremap <localleader>p :Cwise<CR>"0p
 nnoremap <localleader>p :Cwise<CR>"0p
