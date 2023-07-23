@@ -41,7 +41,7 @@ return {
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
-    -- Use `B` command to pipe just part of a visual selection
+    -- Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
     'vim-scripts/vis',
     cmd = "B"
   },
