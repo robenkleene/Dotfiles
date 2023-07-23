@@ -29,6 +29,8 @@ Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
+" Use `B` command to pipe just part of a visual selection
+Plug 'vim-scripts/vis', { 'on': 'B' }
 " Theme
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
