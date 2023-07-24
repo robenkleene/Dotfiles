@@ -103,3 +103,13 @@ function! commands#Rg(terms) abort
   " Vim usually has artifacts if we don't redraw after this
   redraw!
 endfunction
+
+function! commands#Z(terms) abort
+  let l:result = system('~/.bin/z_get '. a:terms)
+  cd l:result
+endfunction
+
+function! commands#Lz(terms) abort
+  let l:result = system('~/.bin/z_get '. a:terms)
+  lcd l:result
+endfunction
