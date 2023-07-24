@@ -55,11 +55,6 @@ _fzf_z_widget() {
 zle -N _fzf_z_widget
 bindkey '\ez' _fzf_z_widget
 
-# zoxide
-if [[ $(whence -p "zoxide") ]]; then
-  eval "$(zoxide init zsh)"
-fi
-
 # chruby
 if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
   source "$HOMEBREW_DIR/share/chruby/chruby.sh"

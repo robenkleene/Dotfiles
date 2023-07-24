@@ -1,9 +1,3 @@
-# zoxide
-function __z_hook --on-variable PWD
-    test -z "$fish_private_mode"
-    and command ~/.bin/z_add (builtin pwd -L)
-end
-
 # This doesn't work because the `$fish_killring` is a read-only variable
 # function __sync_clipboard --on-event fish_focus_in
 #     set fish_killring (safepaste) $fish_killring 
