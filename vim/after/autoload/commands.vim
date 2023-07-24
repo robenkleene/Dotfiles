@@ -106,10 +106,10 @@ endfunction
 
 function! commands#Z(terms) abort
   let l:result = system('~/.bin/z_get '. a:terms)
-  cd l:result
+  exe "Explore ".l:result
 endfunction
 
 function! commands#Lz(terms) abort
   let l:result = system('~/.bin/z_get '. a:terms)
-  lcd l:result
+  exe "Explore ".l:result
 endfunction
