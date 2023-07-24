@@ -29,7 +29,6 @@
 
 ;; Text
 (defalias 'uc 'untitled-create)
-(defalias 'dc 'daily-create)
 
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
