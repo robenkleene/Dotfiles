@@ -12,6 +12,9 @@ command! YankGrep :call commands#YankGrep()
 command! YankPath :call commands#YankPath()
 command! YankFilename :call commands#YankFilename()
 
-command! -nargs=* Rg :call commands#Rg(<q-args>)
 command! Cpaste :let @0=substitute(@0, '\n\+$', '', '') | :norm "0p
 command! Cwise :let @0=substitute(@0, '\n\+$', '', '')
+
+command! -nargs=* Rg :call commands#Rg(<q-args>)
+command! -nargs=* Z :call commands#Z(<q-args>)
+command! -nargs=* Lz :call commands#Lz(<q-args>)
