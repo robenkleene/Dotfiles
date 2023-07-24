@@ -133,20 +133,6 @@
   (switch-to-buffer "*scratch*")
   )
 
-(defun daily-create ()
-  "Switch to notes daily file, creating it if missing."
-  (interactive)
-  (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file -n"))
-  )
-
-(defun daily ()
-  "Switch to daily file."
-  (interactive)
-  (rk/safe-find-file
-   (shell-command-to-string "~/.bin/daily_file"))
-  )
-
 (defun untitled-markdown-create ()
   "Open a new notes untitled Markdown buffer."
   (interactive)
