@@ -193,7 +193,7 @@
         (shell-command
          (concat "echo "
                  (shell-quote-argument result)
-                 " | ~/.bin/f_urls_open")
+                 " | ~/.bin/f_only_urls_open")
          )
         )
       )
