@@ -5,6 +5,9 @@
 
 source ~/.config/fish/settings.fish
 source ~/.config/fish/installs.fish
+# Regenerate with `zoxide init fish > ~/.config/fish/zoxide.fish`
+source ~/.config/fish/zoxide.fish
+
 source ~/.config/fish/abbr.fish
 
 if test -f ~/.local.fish
