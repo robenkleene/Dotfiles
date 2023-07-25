@@ -584,6 +584,18 @@
   (tab-close-group "")
   )
 
+(defun z (term)
+  "Jump to directory."
+  (interactive
+   (list (read-from-minibuffer "Z: ")
+         ))
+  (rk/safe-find-file
+   (shell-command-to-string (concat "~/.bin/zoxide query "
+                                    term)
+                            )
+   )
+  )
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
