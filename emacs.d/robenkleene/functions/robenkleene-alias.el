@@ -4,7 +4,6 @@
 
 (defalias 'ei 'edit-init)
 (defalias 'yg 'yank-to-grep-buffer)
-(defalias 'doc 'rk/consult-doc)
 (defalias 'scw 'rk/source-control-open-web)
 (defalias 'scwp (lambda ()
                   (interactive)
@@ -26,9 +25,6 @@
 (defalias 'vcd 'vc-root-diff)
 (defalias 'vcl 'vc-print-root-log)
 (defalias 'vccd 'vc-cd-vc-root)
-
-;; Text
-(defalias 'uc 'untitled-create)
 
 ;; Vim
 ;; (defalias 'bd 'kill-this-buffer)
