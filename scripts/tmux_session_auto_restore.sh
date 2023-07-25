@@ -4,6 +4,7 @@
 unset VISUAL
 unset EDITOR
 unset PAGER
+unset LESS
 
 unset VIM_COMMAND
 
