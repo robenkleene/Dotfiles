@@ -15,11 +15,9 @@
          ("C-c i" . consult-imenu)
          )
   :commands
-  (rk/consult-doc
-   rk/consult-z
+  (
    rk/consult-fd
    rk/consult-fd-pwd
-   rk/consult-eshell-z
    consult-imenu
    consult-compile-error
    consult-ripgrep
@@ -107,48 +105,6 @@
   ;;;; 4. locate-dominating-file
   ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
 
-  (defun rk/consult-z ()
-    "z using `completing-read'."
-    (interactive)
-    (find-file
-     (consult--read
-      (or (mapcar #'abbreviate-file-name
-                  (split-string
-                   (replace-regexp-in-string
-                    "\n$" ""
-                    (shell-command-to-string
-                     "~/.bin/z_list"))
-                   "\n"))
-          (user-error "No recent files"))
-      :prompt "Z: "
-      :sort nil
-      :require-match t
-      :category 'file
-      :state (consult--file-preview)
-      :history 'file-name-history)))
-
-  (defun rk/consult-eshell-z ()
-    "z using `completing-read'."
-    (interactive)
-    (eshell/cd
-     (consult--read
-      (or (mapcar #'abbreviate-file-name
-                  (split-string
-                   (replace-regexp-in-string
-                    "\n$" ""
-                    (shell-command-to-string
-                     "~/.bin/z_list"))
-                   "\n"))
-          (user-error "No recent files"))
-      :prompt "Z: "
-      :sort nil
-      :require-match t
-      :category 'file
-      :state (consult--file-preview)
-      :history 'file-name-history))
-    (eshell-send-input)
-    )
-
   (defun rk/consult--fd-builder (input)
     (pcase-let* ((`(,arg . ,opts) (consult--command-split input))
                  (`(,re . ,hl) (funcall consult--regexp-compiler
@@ -180,14 +136,6 @@
     (let ((default-directory (rk/pwd)))
       (call-interactively 'rk/consult-fd)
       ))
-
-  (defun rk/consult-doc (&optional dir initial)
-    (interactive "P")
-    (let ((default-directory "~/Documentation"))
-      (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Doc" dir)))
-        (find-file (rk/consult--find prompt #'rk/consult--fd-builder initial)))
-      )
-    )
 
   )
 
