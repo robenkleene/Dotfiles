@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-zoxide query "$@"
+zoxide query "$@" | tr -d '\n'

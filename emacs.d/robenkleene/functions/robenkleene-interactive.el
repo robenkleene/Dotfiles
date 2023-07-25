@@ -590,7 +590,7 @@
    (list (read-from-minibuffer "Z: ")
          ))
   (rk/safe-find-file
-   (shell-command-to-string (concat "~/.bin/zoxide query "
+   (shell-command-to-string (concat "~/.bin/z_get "
                                     term)
                             )
    )
