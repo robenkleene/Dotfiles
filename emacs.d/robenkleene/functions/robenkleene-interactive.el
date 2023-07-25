@@ -502,24 +502,12 @@
     )
   )
 
-(defun rk/open-scratch-for-file ()
-  "Switch to scratch file for current buffer."
+(defun rk/make-scratch-frame ()
+  "Make a new frame and go to the scratch buffer."
   (interactive)
-  (let ((file (rk/scratch-for-file (buffer-file-name))))
-    (if (bound-and-true-p file)
-        (find-file file)
-      (message "No file found.")
-      )
-    )
-  )
-
-(defun rk/scratch-for-file (file)
-  (defun rk/make-scratch-frame ()
-    "Make a new frame and go to the scratch buffer."
-    (interactive)
-    (let ((frame (make-frame)))
-      (select-frame-set-input-focus frame)
-      (switch-to-buffer "*scratch*")))
+  (let ((frame (make-frame)))
+    (select-frame-set-input-focus frame)
+    (switch-to-buffer "*scratch*")))
 
 (defun rk/make-scratch-frame-with-current-frame ()
   "Make a new scratch frame the same size as the current frame."
