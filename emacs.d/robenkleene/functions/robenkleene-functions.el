@@ -6,36 +6,6 @@
   "Test if this is a Mac."
   (string-equal system-type "darwin"))
 
-(defun rk/create-untitled-buffer ()
-  "Return a new empty buffer."
-  (let*
-      (
-       ;; (default-directory (concat user-emacs-directory "untitled"))
-       (default-directory "~/Documents/Text/Notes/Untitled/")
-       (buffer (generate-new-buffer "untitled"))
-       )
-    (set-buffer buffer)
-    (text-mode)
-    (auto-save-mode)
-    buffer
-    )
-  )
-
-(defun rk/create-untitled-markdown-buffer ()
-  "Return a new empty Markdown buffer."
-  (let*
-      (
-       ;; (default-directory (concat user-emacs-directory "untitled"))
-       (default-directory "~/Documents/Text/Notes/Untitled/")
-       (buffer (generate-new-buffer "untitled.md"))
-       )
-    (set-buffer buffer)
-    (markdown-mode)
-    (auto-save-mode)
-    buffer
-    )
-  )
-
 (defun rk/buffer-backed-by-file-p (buffer)
   "Return non-nil if the BUFFER is backed by a file."
   (let ((backing-file (buffer-file-name buffer)))
