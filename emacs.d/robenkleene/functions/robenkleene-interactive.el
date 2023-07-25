@@ -329,46 +329,6 @@
     (switch-to-buffer-other-window buf))
   )
 
-(defvar rk/scratch-directory-path "~/Developer/Scratch/Source/")
-(defvar rk/scratch-file-name "source")
-(defun rk/scratch-for-buffer ()
-  "Open scratch file for current buffer."
-  (interactive)
-  (let ((extension (file-name-extension (buffer-file-name))))
-    (if extension
-        (let ((scratch-file-name
-               (format "%s%s.%s"
-                       rk/scratch-directory-path
-                       rk/scratch-file-name
-                       extension
-                       )
-               )
-              )
-          (find-file-other-window scratch-file-name)
-          )
-      )
-    )
-  )
-
-(defun rk/switch-to-scratch-other-window ()
-  "Switch to scratch for current buffer in other window."
-  (interactive)
-  (let ((file (rk/scratch-for-file (buffer-file-name))))
-    (if (bound-and-true-p file)
-        (find-file-other-window file)
-      (message "No file found.")
-      )
-    )
-  )
-
-
-(defun rk/documentation-view ()
-  "View documentation."
-  (interactive)
-  (view-file
-   (rk/documentation-file))
-  )
-
 (defun rk/yank-to-grep-buffer-startup ()
   "Yank to grep buffer deleting other window."
   (interactive)
