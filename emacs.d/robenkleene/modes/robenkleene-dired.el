@@ -16,7 +16,7 @@
   ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
   ;; (global-set-key (kbd "C-x j") 'dired-jump)
 
-  (define-key dired-mode-map (kbd "C-c g h") 'rk/dired-toggle-hidden)
+  (define-key dired-mode-map (kbd "C-c .") 'rk/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
   ;; Disable `dired' defaulting to current file completed in `find-file`
   (define-key dired-mode-map (kbd "C-x C-f")
