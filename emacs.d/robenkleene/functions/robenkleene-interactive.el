@@ -261,39 +261,9 @@
                                  "~/.bin/backup_text -m")
         (delete-region (region-beginning) (region-end))
         )
-  ))
+    ))
 
 ;; Older
-
-(defun rk/open-terminal-window ()
-  "Open a new Terminal window at the current path."
-  (interactive)
-  (shell-command "open -a Terminal .")
-  )
-
-(defun rk/writer-open-file ()
-  "Open file in iA Writer."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "open -a \"iA Writer.app\" "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    )
-  )
-
-(defun rk/new-clipboard ()
-  "Switch a new buffer with the clipboard contents."
-  (interactive)
-  (switch-to-buffer (rk/create-untitled-buffer))
-  (yank)
-  )
-
-
-(defun rk/open-home ()
-  "Open home directory."
-  (interactive)
-  (find-file "~/")
-  )
 
 (defun rk/kill-removed-buffers ()
   "Kill buffers whose underlying file has moved."
@@ -424,35 +394,10 @@
   )
 
 
-(defvar
-  rk/documentation-directory-path
-  "~/Documentation/")
-
 (defun rk/documentation-view ()
   "View documentation."
   (interactive)
   (view-file
-   (rk/documentation-file))
-  )
-
-(defun rk/documentation-edit ()
-  "Edit documentation."
-  (interactive)
-  (find-file
-   (rk/documentation-file-or-dir))
-  )
-
-(defun rk/documentation-other-window ()
-  "View documentation in other window."
-  (interactive)
-  (view-file-other-window
-   (rk/documentation-file))
-  )
-
-(defun rk/documentation-edit-other-window ()
-  "Edit documentation in other window."
-  (interactive)
-  (find-file-other-window
    (rk/documentation-file))
   )
 
@@ -569,28 +514,12 @@
   )
 
 (defun rk/scratch-for-file (file)
-  "Return the path to the scratch file for FILE."
-  (let ((extension (file-name-extension file))
-        (scratch-directory "~/Developer/Scratch/Document/")
-        directories
-        file)
-    (if (bound-and-true-p extension)
-        (setq directories
-              (directory-files scratch-directory
-                               nil
-                               (concat "^[^.].*\." extension)))
-      (message "No valid extension found.")
-      )
-    (expand-file-name (car directories) scratch-directory)
-    )
-  )
-
-(defun rk/make-scratch-frame ()
-  "Make a new frame and go to the scratch buffer."
-  (interactive)
-  (let ((frame (make-frame)))
-    (select-frame-set-input-focus frame)
-    (switch-to-buffer "*scratch*")))
+  (defun rk/make-scratch-frame ()
+    "Make a new frame and go to the scratch buffer."
+    (interactive)
+    (let ((frame (make-frame)))
+      (select-frame-set-input-focus frame)
+      (switch-to-buffer "*scratch*")))
 
 (defun rk/make-scratch-frame-with-current-frame ()
   "Make a new scratch frame the same size as the current frame."
@@ -665,18 +594,6 @@
   (interactive)
   (desktop-clear)
   (tab-close-group "")
-  )
-
-(defun create-directory-today ()
-  "Create a directory named with the date."
-  (interactive)
-  (shell-command "~/.bin/mkdir_today")
-  )
-
-(defun create-file-today ()
-  "Create a directory named with the date."
-  (interactive)
-  (shell-command "~/.bin/touch_today")
   )
 
 (provide 'robenkleene-interactive)
