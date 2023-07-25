@@ -64,7 +64,6 @@
 (require 'robenkleene-wgrep)
 (require 'robenkleene-eglot)
 (require 'robenkleene-expand-region)
-(require 'robenkleene-esup)
 (require 'robenkleene-corfu)
 (require 'robenkleene-iedit)
 
