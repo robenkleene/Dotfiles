@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Help prevent trying to compile the entire home directory on Emacs startup
+(cd "~/.emacs.d")
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(
