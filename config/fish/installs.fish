@@ -4,8 +4,8 @@
 # end
 
 if test -n "$INSIDE_EMACS"
-    set -Ux PAGER cat
-    set -Ux GIT_PAGER cat
+    set -gx PAGER cat
+    set -gx GIT_PAGER cat
 end
 
 # This doesn't work for some reason
