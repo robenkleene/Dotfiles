@@ -3,7 +3,7 @@ return {
   -- `VeryLazy` disrupts connecting to existing LSP
   -- event = "VeryLazy",
   config = function()
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap = true, silent = true }
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
@@ -55,7 +55,7 @@ return {
       --   -- vim.diagnostic.open_float(nil, opts)
       -- })
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-      local bufopts = { noremap=true, silent=true, buffer=bufnr }
+      local bufopts = { noremap = true, silent = true, buffer = bufnr }
       -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
@@ -81,35 +81,35 @@ return {
       -- vim.api.nvim_echo({{"LSP attached"}}, false, {})
     end
 
--- Doesn't appear this is necessary with `VeryLazy` removed, also wouldn't work
--- *with* `VeryLazy`, because it means the `autocmd` wouldn't fire because it
--- would be defined too late
---     vim.cmd([[
--- augroup lsp_start
---   autocmd!
---   autocmd FileType rust :LspStart
--- augroup END 
---     ]])
+    -- Doesn't appear this is necessary with `VeryLazy` removed, also wouldn't work
+    -- *with* `VeryLazy`, because it means the `autocmd` wouldn't fire because it
+    -- would be defined too late
+    --     vim.cmd([[
+    -- augroup lsp_start
+    --   autocmd!
+    --   autocmd FileType rust :LspStart
+    -- augroup END
+    --     ]])
 
     -- Languages
 
-    require'lspconfig'.bashls.setup{
+    require 'lspconfig'.bashls.setup {
       on_attach = on_attach,
     }
 
-    require'lspconfig'.clangd.setup{
+    require 'lspconfig'.clangd.setup {
       on_attach = on_attach,
     }
 
-    require'lspconfig'.cssls.setup{
+    require 'lspconfig'.cssls.setup {
       on_attach = on_attach,
     }
 
-    require'lspconfig'.html.setup{
+    require 'lspconfig'.html.setup {
       on_attach = on_attach,
     }
 
-    require'lspconfig'.solargraph.setup{
+    require 'lspconfig'.solargraph.setup {
       on_attach = on_attach,
     }
 
@@ -135,19 +135,23 @@ return {
       },
     }
 
-    require('lspconfig').pyright.setup{
+    require('lspconfig').pyright.setup {
       on_attach = on_attach,
     }
 
-    require('lspconfig').rust_analyzer.setup{
+    require('lspconfig').rust_analyzer.setup {
       on_attach = on_attach,
     }
 
-    require('lspconfig').tsserver.setup{
+    require('lspconfig').tsserver.setup {
       on_attach = on_attach,
     }
 
-    require'lspconfig'.jsonls.setup {
+    require 'lspconfig'.jsonls.setup {
+      on_attach = on_attach,
+    }
+
+    require 'lspconfig'.pylsp.setup {
       on_attach = on_attach,
     }
   end
