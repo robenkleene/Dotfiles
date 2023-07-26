@@ -2,4 +2,4 @@
 # key: testz
 # name: True if empty variable
 # --
--z "${${1:1}-}"
+-z "${${1:1}:-}"

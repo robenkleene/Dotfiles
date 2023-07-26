@@ -2,4 +2,4 @@
 # key: testn
 # name: True if not empty variable
 # --
--n "${${1:1}-}"
+-n "${${1:1}:-}"
