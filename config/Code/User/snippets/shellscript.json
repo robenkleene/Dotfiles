@@ -188,8 +188,8 @@
     "body": "script_dir=$(dirname \"\\$0\")",
     "description": "Script directory"
   },
-  "scriptdircd": {
-    "prefix": "scriptdircd",
+  "cdscriptdir": {
+    "prefix": "cdscriptdir",
     "body": "cd \"\\$(dirname \"\\$0\")\" || exit 1",
     "description": "cd to directory of script"
   },
