@@ -32,12 +32,19 @@ unalias run-help &>/dev/null
 
 # History
 # Share history between sessions
-# setopt share_history
 HISTFILE=~/.zsh_history
 # Number of history entries loaded into a session
 HISTSIZE=10000
 # Number of history entries saved to disk
 SAVEHIST=10000
+
+# By default `zsh` appends to history on exit, and reads it on startup
+# Append to history immediately after a command is run
+setopt inc_append_history_time
+# Share History
+# zsh will save and load each line immediately
+# setopt share_history
+
 # Reduce dupes
 # setopt hist_expire_dups_first
 # setopt hist_ignore_dups
