@@ -14,7 +14,8 @@ else
 fi
 
 # zsh
-alias zoi='zsh_edit_config'
+alias zei='zsh_edit_config'
+alias zeh='$EDITOR ~/.zsh_history'
 
 # egit
 alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'

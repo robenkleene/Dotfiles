@@ -9,7 +9,7 @@ function fish_sync_alias
     alias --save ut='ssh_start && ssh_git_pull_all -t'
     alias --save ua='ssh_start && ssh_git_pull_all'
     # fish
-    alias --save foi='fish_edit_config'
+    alias --save fei='fish_edit_config'
 
     # cd
     # These need the trailing `.` so they can be run without arguments to open
