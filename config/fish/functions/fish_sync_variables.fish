@@ -3,6 +3,8 @@ function fish_sync_variables
         set -e $v
     end
 
+    set -U CDPATH . ~
+
     # Fish
     set -Ux fish_help_browser echo
     # Suppress default greeting
