@@ -9,13 +9,10 @@
 # current context
 export CUR_CTX=1
 
-if ! type fzf >/dev/null 2>&1; then
-    printf "fzf missing"
-    read -r _
-    exit 1
-fi
-
-result="$(~/.bin/z_fzf)"
+echo
+printf "z: "
+IFS= read -r line
+result="$(~/.bin/z_get "${line}")"
 
 if [ ! -d "$result" ]; then
   exit 0
