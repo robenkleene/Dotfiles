@@ -49,7 +49,7 @@ function fish_sync_variables
     # set -Ux TIG_EDITOR "hx_wrapper"
 
     # nnn
-    set -Ux NNN_PLUG "z:fzf_z;r:reveal;p:preview"
+    set -Ux NNN_PLUG "z:z;r:reveal;p:preview"
 
     # Homebrew
     if type -q brew
