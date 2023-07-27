@@ -5,8 +5,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-export VIM_COMMAND=nvim
-# export VIM_COMMAND=vim
+# export VIM_COMMAND=nvim
+export VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs, note that this doesn't work with
 # current Emacs
