@@ -1,3 +1,5 @@
+# `zshrc` is things for interactive shells
+
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
@@ -25,10 +27,17 @@ if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
 fi
 
 # chruby
-if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
-  source "$HOMEBREW_DIR/share/chruby/chruby.sh"
-  source "$HOMEBREW_DIR/share/chruby/auto.sh"
-  chruby ruby-3.0.2
+# This is ridiculously slow
+# if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
+#   source "$HOMEBREW_DIR/share/chruby/chruby.sh"
+#   source "$HOMEBREW_DIR/share/chruby/auto.sh"
+#   chruby ruby-3.0.2
+# fi
+if [[ -d ~/.gem/ruby/3.0.2/bin ]]; then
+    PATH=~/.gem/ruby/3.0.2/bin:$PATH
+fi
+if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
+    PATH=~/.rubies/ruby-3.0.2/bin:$PATH
 fi
 
 # Python
@@ -71,6 +80,3 @@ if [[ -d "$HOME/.config/nvm/17.0.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v17.0.1/bin" ]]; then
   PATH=$HOME/.nvm/versions/node/v17.0.1/bin:$PATH
 fi
-
-# The `-U` option prevens duplicates when `tmux` starts `zsh` instances
-export -U PATH

@@ -14,6 +14,7 @@ if [[ $TERM == "dumb" ]]; then
 fi
 
 # Setup
+source ~/.zsh/variables.zsh
 # Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
 source ~/.zsh/bindings.zsh
 # `fzf` functions before aliases so functions don't use aliases and after 
