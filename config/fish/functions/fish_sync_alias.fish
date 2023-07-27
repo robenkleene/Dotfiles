@@ -5,7 +5,7 @@ function fish_sync_alias
     # git
     alias --save gits='ssh_start && git'
     # egit
-    alias --save u='ssh_start && egit -u && ~/Developer/Dotfiles/update.sh && fish_update'
+    alias --save u='ssh_start && ~/.bin/egit_update'
     alias --save ut='ssh_start && ssh_git_pull_all -t'
     alias --save ua='ssh_start && ssh_git_pull_all'
     # fish

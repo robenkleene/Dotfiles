@@ -59,6 +59,7 @@ done
 
 ./scripts/update.sh
 ./scripts/zsh_update.zsh
+./scripts/fish_update.fish
 # This is breaking every time it's run without the `-c` option
 # ./scripts/emacs_bytecompile.sh
 
