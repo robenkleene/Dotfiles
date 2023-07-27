@@ -37,4 +37,3 @@ bind ñ true
 # bind \c_ undo
 # bind \e/ redo
 
-fzf_key_bindings
