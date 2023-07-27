@@ -33,26 +33,6 @@ let-env config = {
       event: { edit: CutBigWordLeft }
     }
     {
-      name: fzf_z
-      modifier: alt
-      keycode: char_z
-      mode: emacs
-      event: {
-        send: executehostcommand
-        cmd: "fzf_z"
-      }
-    }
-    {
-      name: fzf_c
-      modifier: alt
-      keycode: char_c
-      mode: emacs
-      event: {
-        send: executehostcommand
-        cmd: "fzf_z_subdir"
-      }
-    }
-    {
       name: open_dir
       modifier: alt
       keycode: char_r
@@ -60,16 +40,6 @@ let-env config = {
       event: {
         send: executehostcommand
         cmd: "open_dir"
-      }
-    }
-    {
-      name: fzf_o
-      modifier: alt
-      keycode: char_o
-      mode: emacs
-      event: {
-        send: executehostcommand
-        cmd: "fzf_o"
       }
     }
   ]
