@@ -42,7 +42,7 @@ else
 fi
 
 # nnn
-export NNN_PLUG='z:fzf_z;r:reveal;o:ls_fzf;p:preview'
+export NNN_PLUG='z:fzf_z;r:reveal;p:preview'
 
 # FZF
 # Use `fd` for `:Files` in `fzf.vim`

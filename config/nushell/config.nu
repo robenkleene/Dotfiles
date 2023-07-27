@@ -1,6 +1,5 @@
 source alias.nu
 source commands.nu
-source fzf.nu
 
 let-env config = {
   # table_mode: none
