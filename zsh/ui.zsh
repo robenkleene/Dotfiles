@@ -39,13 +39,8 @@ autoload -Uz vcs_info
 
 # Prompt
 update_prompt() {
-  # vcs_info
-  # if [[ -a .git ]]; then
-  #   prompt_path='.'
-  # else
-  #   prompt_path=%1~
-  # fi
-  prompt_path=%1~
+  # `man zshmisc` for more info
+  prompt_path=%2~
 }
 precmd() {
   update_prompt
