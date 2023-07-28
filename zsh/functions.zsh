@@ -143,3 +143,22 @@ n ()
         rm -f "$NNN_TMPFILE" > /dev/null
     }
 }
+
+# Accepts one history line number as argument.
+# Use `dc -1` to remove the last line.
+dc () {
+  # Prevent the specified history line from being 
+  # saved.
+  local HISTORY_IGNORE="${(b)$(fc -ln $1 $1)}"
+
+  # Write out the history to file, excluding lines that
+  # match `$HISTORY_IGNORE`.
+  fc -W
+
+  # Dispose of the current history and read the new 
+  # history from file.
+  fc -p $HISTFILE $HISTSIZE $SAVEHIST
+
+  # TA-DA!
+  print "Deleted '$HISTORY_IGNORE' from history."
+}
