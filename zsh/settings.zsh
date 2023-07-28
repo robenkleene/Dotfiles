@@ -42,7 +42,8 @@ SAVEHIST=10000
 # Append to history immediately after a command is run
 setopt inc_append_history_time
 # Share History
-# zsh will save and load each line immediately
+# zsh will save and load each line immediately, but this will intermingle
+# history from multiple running shells
 # setopt share_history
 
 # Reduce dupes
