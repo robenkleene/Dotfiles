@@ -60,30 +60,6 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
-;; Theoretically this would be clear in `delete-frame-functions' but for
-;; `emacsclient' connections that's being called after the frame is deleted and
-;; the `default-directory' is then wrong
-(defadvice delete-frame
-    (before rk/delete-frame-chdir activate)
-  "Write to chdir and save desktop."
-  (if (file-exists-p "/tmp/robenkleene.transient/chdir/chdir")
-      (write-region
-       (expand-file-name default-directory)
-       nil
-       "/tmp/robenkleene.transient/chdir/chdir"
-       )
-    )
-  ;; Prevent prompting for existing desktop files
-  ;; This isn't much use because it doesn't work nicely with `emacsclient'
-  ;; (if (file-exists-p (concat desktop-dirname ".emacs.desktop"))
-  ;;     (delete-file (concat desktop-dirname ".emacs.desktop"))
-  ;;   )
-  ;; (if (file-exists-p (concat desktop-dirname ".emacs.desktop.lock"))
-  ;;     (delete-file (concat desktop-dirname ".emacs.desktop.lock"))
-  ;;   )
-  ;; (desktop-save-in-desktop-dir)
-  )
-
 (unless (rk/system-is-mac)
   (setq browse-url-browser-function 'eww-browse-url))
 
