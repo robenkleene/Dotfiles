@@ -13,4 +13,4 @@ if tmux info &> /dev/null; then
   exit 1
 fi
 
-tmux new-session 'tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
+exec tmux new-session 'tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
