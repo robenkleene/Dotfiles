@@ -40,7 +40,6 @@ brew 'sd'
 brew 'chruby'
 brew 'ruby-install'
 # Shell
-brew 'shellcheck'
 # Rust
 brew 'wasm-pack'
 brew 'rust-analyzer'

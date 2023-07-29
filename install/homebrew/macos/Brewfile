@@ -35,7 +35,6 @@ brew 'editorconfig'
 brew 'chruby'
 brew 'ruby-install'
 # Shell
-brew 'shellcheck'
 # Swift
 # Objective-C
 brew 'carthage'
@@ -63,7 +62,6 @@ brew 'hyperfine'
 brew 'sd'
 
 # VR
-brew 'scrcpy'
 
 # macOS
 brew 'suspicious-package'
