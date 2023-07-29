@@ -38,24 +38,6 @@ sgitn() {
   return 1
 }
 
-vim_cd() {
-  local tempfile='/tmp/robenkleene.transient/chdir/chdir'
-  $VIM_COMMAND .
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
-      cd -- "$(cat "$tempfile")" || return
-    fi
-}
-
-emacs_cd() {
-  local tempfile='/tmp/robenkleene.transient/chdir/chdir'
-  eval $EMACS_COMMAND .
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n "$(pwd)")" ]; then
-      cd -- "$(cat "$tempfile")" || return
-    fi
-}
-
 yank_test_variable() {
   test_variable=$(cat)
 }
