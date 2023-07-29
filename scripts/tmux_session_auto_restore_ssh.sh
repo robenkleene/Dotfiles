@@ -6,4 +6,4 @@ if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
   eval "$(ssh-agent -s)"
   ssh-add
 fi
-tmux_session_auto_restore
+exec tmux_session_auto_restore
