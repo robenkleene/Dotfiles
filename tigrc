@@ -49,6 +49,9 @@ bind generic G  move-last-line
 bind generic v  none
 bind generic B view-help
 
+# Allows hitting `C` to stage while viewing a diff in staging
+bind stage C !git commit 
+
 # Colors
 # Available Colors
 # white, black, green, magenta, blue, cyan, yellow, red, default
