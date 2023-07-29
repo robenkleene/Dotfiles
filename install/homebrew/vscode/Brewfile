@@ -10,7 +10,6 @@ brew 'ncdu'
 brew 'gh'
 
 # Shell
-brew 'shellcheck'
 
 # hub
 brew 'util-linux'

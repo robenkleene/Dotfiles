@@ -33,14 +33,11 @@ brew 'editorconfig'
 # Ruby
 brew 'chruby'
 brew 'ruby-install'
-# Shell
-brew 'shellcheck'
 # Swift
 # Objective-C
 brew 'carthage'
 brew 'clang-format'
 # MIDI
-brew 'midicsv'
 # Go
 brew 'go'
 brew 'jq'
@@ -52,7 +49,6 @@ brew 'lua-language-server'
 
 # Special
 brew 'pandoc'
-brew 's3cmd'
 brew 'gh'
 brew 'cloc'
 brew 'ncdu'
@@ -85,7 +81,6 @@ tap 'qmk/qmk'
 brew 'nethack'
 
 # VR
-brew 'scrcpy'
 
 # VS Code
 vscode "bradlc.vscode-tailwindcss"
@@ -138,7 +133,6 @@ vscode "sleistner.vscode-fileutils"
 vscode "stkb.rewrap"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "stylelint.vscode-stylelint"
-vscode "timonwong.shellcheck"
 vscode "travisthetechie.write-good-linter"
 vscode "vadimcn.vscode-lldb"
 vscode "vscode-icons-team.vscode-icons"
