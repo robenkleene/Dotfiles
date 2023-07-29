@@ -15,6 +15,7 @@ if [[ ! -e "$HOME/Library/KeyBindings"  ]]; then
   mkdir -p "$HOME/Library/KeyBindings"
 fi
 
-if [[ ! -e "$HOME/Library/KeyBindings/DefaultKeyBinding.dict" ]]; then
-  cp DefaultKeyBinding.dict "$HOME/Library/KeyBindings/"
-fi
+# Try without this bindings file
+# if [[ ! -e "$HOME/Library/KeyBindings/DefaultKeyBinding.dict" ]]; then
+#   cp DefaultKeyBinding.dict "$HOME/Library/KeyBindings/"
+# fi
