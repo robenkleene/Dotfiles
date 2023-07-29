@@ -59,9 +59,10 @@ export PATH="~/.brew/bin/:$PATH"
 if ! command -v fish &> /dev/null; then
   # Let homebrew fail because it fails too often
   ./install/homebrew/install.sh || true
+else
+  ./install/fish/setup.sh
 fi
 
-./install/fish/setup.sh
 ./install/files/symlinks.sh
 ./install/node/install.sh
 ./install/ruby/install.sh
