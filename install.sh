@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# Can't include `e` because the `command -v fish` below can fail
+set -uo pipefail
 
 main="false"
 while getopts ":mh" option; do
