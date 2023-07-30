@@ -4,7 +4,7 @@ set -eo pipefail
 
 repos=~/Developer/Dotfiles/
 if [[ "$(uname)" == "Darwin" ]]; then
-  repos+=:~/Library/Services/:~/Developer/AppleScripts/
+  repos+=:~/Developer/AppleScripts/
 fi
 
 if [[ -f "$HOME/.personal" ]]; then
