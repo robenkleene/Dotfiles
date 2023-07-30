@@ -34,7 +34,7 @@ usage() {
 }
 
 if [[ ! -d "$file_path" ]]; then
-  echo "Missing or invalid root directory"
+  echo "Missing or invalid root directory $file_path"
   usage
   exit 1
 fi
