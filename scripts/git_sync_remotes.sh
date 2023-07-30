@@ -4,7 +4,7 @@ set -e
 
 if [[ -n "$1" ]]; then
   if [[ ! -d "$1" ]]; then
-    echo "Usage: git-sync-remotes <root directory>"
+    echo "Error: $1 is not a directory"
     exit 1
   else
     cd "$1"
