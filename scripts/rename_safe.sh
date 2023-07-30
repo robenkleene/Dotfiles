@@ -2,7 +2,7 @@
 
 _get_title() {
   local result
-  result=$(echo "$1" | ~/.bin/slug)
+  result=$(echo "$1" | ~/.bin/f_to_slug)
   local ret=$?
   echo "$result"
   return $ret
