@@ -128,6 +128,10 @@ n ()
 
 # Accepts one history line number as argument.
 # Use `dc -1` to remove the last line.
+# The naming convention `dc` is probably based on `fc` which is the underlying
+# history management program for Bash and Zsh. `fc` stands for "fix command"
+# (because with history you retrieve a command and can then fix it). So `dc`
+# probably stands for "delete history".
 dc () {
   # Prevent the specified history line from being 
   # saved.
