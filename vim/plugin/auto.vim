@@ -66,6 +66,7 @@ augroup disable_autocomments
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 
+" This is so trailing spaces aren't visible when typing in insert mode
 augroup no_whitespace_insert
   autocmd!
   autocmd InsertEnter * setlocal nolist
