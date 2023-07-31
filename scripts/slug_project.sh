@@ -70,7 +70,7 @@ make_file() {
   mkdir -p "$directory"
   local temp_path
   temp_path=$(mktemp "$directory/$name-XXXX")
-  echo -e "$contents" >"$temp_path"
+  echo "$contents" >"$temp_path"
   local destination_path="$directory/$name"
   mv -n "$temp_path" "$destination_path"
   if [[ -f "$temp_path" ]]; then
@@ -80,7 +80,8 @@ make_file() {
   fi
 }
 
-contents="# $title/n/n"
+contents="# $title
+"
 slug=$(echo "$title" | ~/.bin/f_to_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
