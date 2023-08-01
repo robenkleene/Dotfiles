@@ -37,6 +37,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 # Number of history entries saved to disk
 SAVEHIST=10000
+# Don't save commands starting with a space to history
+setopt HIST_IGNORE_SPACE
 
 # By default `zsh` appends to history on exit, and reads it on startup
 # Append to history immediately after a command is run
