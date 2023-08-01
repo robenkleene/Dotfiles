@@ -2,6 +2,19 @@ return {
   'neovim/nvim-lspconfig',
   -- `VeryLazy` disrupts connecting to existing LSP
   -- event = "VeryLazy",
+  ft = {
+    "sh",
+    "c",
+    "cpp",
+    "css",
+    "scss",
+    "html",
+    "ruby",
+    "lua",
+    "python",
+    "rust",
+    "json",
+  },
   config = function()
     local opts = { noremap = true, silent = true }
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -151,8 +164,5 @@ return {
       on_attach = on_attach,
     }
 
-    require 'lspconfig'.pyright.setup {
-      on_attach = on_attach,
-    }
   end
 }
