@@ -5,7 +5,7 @@ set -euo pipefail
 urls="{"
 while read -r line; do
   urls=$urls\"${line}\", 
-done <<< "$(~/.bin/f_to_urls)"
+done <<< "$(~/.bin/f_text_to_urls)"
 
 urls=${urls%??}
 urls=$urls\"}
