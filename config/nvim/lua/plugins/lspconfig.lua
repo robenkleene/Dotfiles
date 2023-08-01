@@ -2,18 +2,26 @@ return {
   'neovim/nvim-lspconfig',
   -- `VeryLazy` disrupts connecting to existing LSP
   -- event = "VeryLazy",
+  -- Set the same for cmp, treesitter, lsp
   ft = {
-    "sh",
     "c",
     "cpp",
     "css",
-    "scss",
     "html",
-    "ruby",
-    "lua",
-    "python",
-    "rust",
+    "javascript",
     "json",
+    "jsx",
+    "kotlin",
+    "lua",
+    "markdown",
+    "python",
+    "ruby",
+    "rust",
+    "scss",
+    "sh",
+    "typescript",
+    "toml",
+    "vim",
   },
   config = function()
     local opts = { noremap = true, silent = true }

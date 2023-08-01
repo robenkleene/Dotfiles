@@ -3,6 +3,27 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip'
   },
+  -- Set the same for cmp, treesitter, lsp
+  ft = {
+    "c",
+    "cpp",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "jsx",
+    "kotlin",
+    "lua",
+    "markdown",
+    "python",
+    "ruby",
+    "rust",
+    "scss",
+    "sh",
+    "typescript",
+    "toml",
+    "vim",
+  },
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'

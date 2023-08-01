@@ -2,6 +2,27 @@ return {
   'nvim-treesitter/nvim-treesitter',
   -- Not `VeryLazy` because it can cause a flash of re-highlighting otherwise
   -- event = "VeryLazy",
+  -- Set the same for cmp, treesitter, lsp
+  ft = {
+    "c",
+    "cpp",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "jsx",
+    "kotlin",
+    "lua",
+    "markdown",
+    "python",
+    "ruby",
+    "rust",
+    "scss",
+    "sh",
+    "typescript",
+    "toml",
+    "vim",
+  },
   config = function()
     require('nvim-treesitter.configs').setup {
       -- `query` is for treesitter playground
