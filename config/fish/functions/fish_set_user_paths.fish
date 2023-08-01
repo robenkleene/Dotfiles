@@ -61,4 +61,8 @@ function fish_set_user_paths
     # if test -n "$ANDROID_SDK"
     #     fish_add_path {$ANDROID_SDK}/emulator {$ANDROID_SDK}/tools {$ANDROID_SDK}/tools/bin {$ANDROID_SDK}/platform-tools
     # end
+
+    if test -f ~/.local_paths.fish
+        source ~/.local_paths.fish
+    end
 end
