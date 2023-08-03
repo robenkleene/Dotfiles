@@ -193,7 +193,7 @@
         (shell-command
          (concat "echo "
                  (shell-quote-argument result)
-                 " | ~/.bin/f_o_urls_open")
+                 " | ~/.bin/f_a_text_to_url_open")
          )
         )
       )
