@@ -10,15 +10,15 @@ return {
     config = true,
     event = "VeryLazy"
   },
-  { 'tpope/vim-vinegar' },
+  -- { 'tpope/vim-vinegar' },
   -- Opening files from oil can cause `ftplugin` to not fire, as a workaround just use the fuzzy finder instead
-  -- {
-  --   'stevearc/oil.nvim',
-  --   config = function()
-  --     require("oil").setup()
-  --     vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-  --   end
-  -- },
+  {
+    'stevearc/oil.nvim',
+    config = function()
+      require("oil").setup()
+      vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+    end
+  },
   {
     'L3MON4D3/LuaSnip',
     -- This can't co-exist with GitHub Copilot
