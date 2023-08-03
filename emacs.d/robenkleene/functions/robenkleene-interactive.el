@@ -275,16 +275,6 @@
     )
   )
 
-(defun rk/urls-open ()
-  "Open URLs in the region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command-on-region (region-beginning)
-                               (region-end)
-                               "~/.bin/f_a_text_to_url_open")
-    )
-  )
-
 (defun rk/generate-tags ()
   "Generate tags."
   (interactive)

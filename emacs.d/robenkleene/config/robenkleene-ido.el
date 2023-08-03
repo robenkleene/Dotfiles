@@ -169,37 +169,6 @@
     )
   )
 
-(defun rk/ido-links ()
-  "Open link."
-  (interactive)
-  (let ((current-prefix-arg nil))
-    (setq links
-          (split-string
-           (shell-command-to-string
-            "~/.bin/dump_text_links")
-           "\n"))
-    (setq key-to-link (make-hash-table :test 'equal))
-    (let (ido-list)
-      (mapc (lambda (link)
-              (let ((key link))
-                (puthash key link key-to-link)
-                (push key ido-list)
-                )
-              )
-            links)
-      (let ((result (gethash
-                     (ido-completing-read "Find link: " ido-list)
-                     key-to-link)))
-        (shell-command
-         (concat "echo "
-                 (shell-quote-argument result)
-                 " | ~/.bin/f_a_text_to_url_open")
-         )
-        )
-      )
-    )
-  )
-
 ;; Helper
 
 (defun rk/ido-key-for-path (path strip)
