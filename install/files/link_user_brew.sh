@@ -6,8 +6,10 @@ set -euo pipefail
 # one username
 
 default_brew_bin=/usr/local/bin
-if [[ ! -d "$default_brew_bin" ]]; then
-  echo "$default_brew_bin doesn't exist" >&2
+if [[ ! -e "$default_brew_bin" ]]; then
+  mkdir -p "$default_brew_bin"
+elif [[ ! -d "$default_brew_bin" ]]
+  echo "$default_brew_bin exists but isn't a directory" >&2
   exit 1
 fi
 
