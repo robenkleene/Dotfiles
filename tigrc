@@ -6,48 +6,10 @@ set ignore-case = smart-case
 # Make dates take up less space
 set main-view-date = relative-compact
 
-# Key
-# @ : Suppresses output
-# sh : Pipes aren't supported without a subshell
-# Note: Can't seem to escape double quotes, you can escape single quotes, but
-# they behave unpredictably. Tig tokens (e.g., "%(file)") evaluate even in
-# single quotes.
-# https://github.com/git/git/tree/v2.3.5/contrib/diff-highlight
-# This seems like it should show EOL whitespace be won't be available until
-# updating to `git` version `2.3.5`
-# set diff-highlight = true
 set mouse = true
-# set diff-options = --color-words
 
-# Emacs
-bind generic <Ctrl-V> move-page-down
-
-# Stage
-bind stage <Enter> edit
 bind stage ] :/^@@
 bind stage [ :?^@@
-
-# Movement
-bind generic - none
-bind generic <Ctrl-B> move-page-up
-bind generic <Ctrl-F> move-page-down
-bind generic f move-page-down
-bind generic b none
-bind generic b move-page-up
-bind generic <Backspace> move-page-up
-bind generic h scroll-left
-bind generic j move-down
-bind generic k move-up
-bind generic <Down> move-down
-bind generic <Up> move-up
-bind generic l scroll-right
-bind generic g move-first-line
-
-bind main    G  none
-bind generic G  move-last-line
-
-bind generic v  none
-bind generic B view-help
 
 # Allows hitting `C` to stage while viewing a diff in staging
 bind stage C !git commit 
@@ -64,7 +26,7 @@ color title-focus color249 color238 bold
 color title-blur color244 color235
 # Current Line
 color cursor white color239 bold
-
+# Search
 color search-result black cyan
 # Status
 color stat-unstaged color243 default
