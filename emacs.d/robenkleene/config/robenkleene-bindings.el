@@ -92,11 +92,8 @@
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
 ;;   'rk/open-terminal-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
-(define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
+;; Not available in terminal
 (define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
-;; (define-key rk/bindings-minor-mode-map (kbd "C-`") 'eshell-other-window)
-;; (define-key rk/bindings-minor-mode-map (kbd "C-c s") 'rk/sgit-push-text-all)
-(define-key rk/bindings-minor-mode-map (kbd "C-c M-z") 'zap-to-char)
 
 ;; Window-Key Based
 (define-key rk/window-map
@@ -106,56 +103,9 @@
   (kbd "M-t")
   'tab-new)
 (define-key rk/window-map (kbd "n") 'tab-next)
-(define-key rk/window-map (kbd "p")
-  'tab-previous)
-(define-key rk/window-map (kbd "M-n") 'tab-next)
-(define-key rk/window-map (kbd "M-p")
-  'tab-previous)
-(define-key rk/window-map (kbd "C-w") 'other-window)
-(define-key rk/window-map (kbd "w") 'other-window)
+(define-key rk/window-map (kbd "p") 'tab-previous)
 (define-key rk/window-map (kbd ":") 'switch-to-minibuffer)
-;; For some reason this also overwrites `C-w C-w'
-;; (define-key rk/window-map (kbd "C-W") (lambda () (interactive) (other-window -1)))
-(define-key rk/window-map (kbd "W") 'rk/other-window-reverse)
 (define-key rk/window-map (kbd "q") 'tab-close)
-(define-key rk/window-map (kbd "v") 'rk/split-horizontally)
-(define-key rk/window-map (kbd "s") 'rk/split-vertically)
-(define-key rk/window-map (kbd "C-v") 'rk/split-horizontally)
-(define-key rk/window-map (kbd "C-s") 'rk/split-vertically)
-(define-key rk/window-map (kbd "c") 'rk/delete-window)
-(define-key rk/window-map (kbd "o") 'delete-other-windows)
-(define-key rk/window-map (kbd "<") 'shrink-window-horizontally)
-(define-key rk/window-map (kbd ">") 'enlarge-window-horizontally)
-(define-key rk/window-map (kbd "-") 'shrink-window)
-(define-key rk/window-map (kbd "+") 'enlarge-window)
-(define-key rk/window-map (kbd "=") 'balance-windows)
-(define-key rk/window-map (kbd "C-o") 'winner-undo)
-(define-key rk/window-map (kbd "C-i") 'winner-redo)
-
-;; Use functions instead of lambdas for these because they're more compatible
-;; with `post-command-hook', e.g., for Pulsar
-(defun rk/other-window-reverse (&optional arg)
-  (interactive)
-  (other-window -1)
-  )
-
-(defun rk/split-horizontally (&optional arg)
-  (interactive)
-  (split-window-horizontally)
-  (other-window 1)
-  )
-
-(defun rk/split-vertically (&optional arg)
-  (interactive)
-  (split-window-vertically)
-  (other-window 1)
-  )
-
-(defun rk/delete-window (&optional arg)
-  (interactive)
-  (interactive)
-  (condition-case nil (delete-window) (error (tab-close)))
-  )
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
