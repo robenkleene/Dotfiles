@@ -72,5 +72,11 @@ return {
         { name = 'luasnip' },
       },
     }
+    vim.cmd([[
+    augroup NvimCmp
+      au!
+      au FileType markdown lua require('cmp').setup.buffer { enabled = false }
+    augroup END
+    ]])
   end
 }
