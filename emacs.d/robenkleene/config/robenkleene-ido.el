@@ -302,30 +302,6 @@
     )
   )
 
-(defun rk/ido-project-open ()
-  "Find file recursively from quick open directories."
-  (interactive)
-  (find-file (rk/ido-recursive-get-file
-              "--type f --max-depth 2 ~/Text/Projects" "README.md"))
-  )
-
-(defun rk/ido-frequent-open-file-or-dir ()
-  "Find file recursively from quick open directories."
-  (interactive)
-  (find-file (rk/ido-recursive-get-file-or-dir
-              (concat
-               "~/Text "
-               "~/Documentation ")
-              "\"^[^.]+\\$|.*\\.md\" "))
-  )
-
-(defun rk/ido-quick-developer ()
-  "Find file recursively from quick open directories."
-  (interactive)
-  (find-file (rk/ido-recursive-get-git-repo
-              "~/Developer"))
-  )
-
 (provide 'robenkleene-ido)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
