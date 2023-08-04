@@ -3,8 +3,6 @@
 ;;; Code:
 
 (use-package magit
-  :bind
-  ("C-c s" . magit-egit)
   :commands (
              rk/magit-status-startup
              magit-egit
