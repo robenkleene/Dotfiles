@@ -46,7 +46,7 @@ zsh_refresh_commands() {
   rehash
 }
 
-zsh_edit_config() {
+zsh_edit_init() {
   cd ~/Developer/Dotfiles/zsh/ || return
   eval $EDITOR ../zshrc
 }

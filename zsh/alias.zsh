@@ -14,20 +14,13 @@ else
 fi
 
 # zsh
-alias zei='zsh_edit_config'
-alias zeh='$EDITOR ~/.zsh_history'
+alias zsh_edit_history='$EDITOR ~/.zsh_history'
 
 # egit
 alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
 alias u='ssh_start && ~/.bin/egit_update'
 alias ut='ssh_start && ssh_git_pull_all -t'
 alias ua='ssh_start && ssh_git_pull_all'
-
-# cd
-# The trailing `.` are intentional so that the alias can be called without
-# arguments to open the current directory
-alias d="$CD_COMMAND ."
-alias ecd="emacs_cd ."
 
 # misc
 alias rg='rg_custom'
