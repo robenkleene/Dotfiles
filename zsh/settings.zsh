@@ -28,7 +28,7 @@ unalias run-help &>/dev/null
 # `pushdsilent`: Don't dump directory list after each `pushd` (or `cd`)
 # `pushdminus`: Swaps the meaning of `+` and `-`, so `cd -3` is the third
 # oldest directory (it's easiest to do `cd -<tab>`.
-# setopt autopushd pushdminus pushdsilent pushdtohome
+setopt autopushd pushdminus pushdsilent pushdtohome
 
 # History
 # Share history between sessions
