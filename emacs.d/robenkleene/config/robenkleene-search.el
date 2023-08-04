@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
 ;; Make isearch wrap automatically
 ;; Prevents issue where you have to press backspace twice when
 ;; trying to remove the first character that fails a search
