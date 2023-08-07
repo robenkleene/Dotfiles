@@ -2,10 +2,9 @@
 
 set -euo pipefail
 
-echo "Auto"
-if [[ -f "$HOME/.personal" ]]; then
-  # Only automatically commit on personal machines
-  sgitt -cp
-else
-  sgitt -p
+if [[ ! -f "$HOME/.personal" ]]; then
+  exit 0
 fi
+
+echo "Auto"
+sgitt -cp

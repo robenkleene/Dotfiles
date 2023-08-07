@@ -3,14 +3,21 @@
 set -eo pipefail
 
 repos=~/Developer/Dotfiles/
+repos+=:~/Developer/Snippets/
 if [[ "$(uname)" == "Darwin" ]]; then
   repos+=:~/Developer/AppleScripts/
 fi
 
 if [[ -f "$HOME/.personal" ]]; then
-  repos+=:~/Developer/Snippets/:~/Developer/Settings/
+  repos+=:~/Developer/Settings/
   repos+=:~/Developer/Scratch/
   repos+=:~/Developer/Archive/
+else
+  repos+=:~/Documentation/design-references/
+  repos+=:~/Documentation/software-references/
+  repos+=:~/Documentation/audio-references/
+  repos+=:~/Documentation/development-references/
+  repos+=:~/Documentation/web-references/
 fi
 
 IFS=':' read -ra repos <<<"$repos"
