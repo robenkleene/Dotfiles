@@ -7,4 +7,4 @@ hg log --template '{node|short} {author|user}: {desc|strip|firstline}\n' --limit
   fzf --nth 2.. --no-sort --ansi --reverse \
   --preview "echo {} | ~/.bin/nobin/_fzf_preview_hg_rev.sh \"$1\"" \
   --bind="ctrl-x:execute-silent(echo {1} | ~/.bin/safecopy)+accept,alt-p:become(echo {} | ~/.bin/nobin/_fzf_preview_hg_rev.sh \"$1\"),ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" \
-  --height=20 --preview-window=right,50%:wrap
+  --height=100% --preview-window=right,50%:wrap
