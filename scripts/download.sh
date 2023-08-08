@@ -3,4 +3,8 @@
 set -e
 
 cd ~/Downloads/
-curl --remote-name --location $@
+
+for var in "$@"
+do
+  curl --remote-name --location "$var"
+done
