@@ -3,7 +3,7 @@
 # Allow unbound variable for $1
 set -eo pipefail
 
-hash=$(cat | grep --only-matching "[a-f0-9]\{8\}" | sed 's/\s.*$//' | head -1)
+hash=$(cat | grep --only-matching "[a-f0-9]\{12\}" | sed 's/\s.*$//' | head -1)
 
 if [[ "$#" -eq 1 ]]; then
   hg log --color=always --patch --rev "$hash" "$1"
