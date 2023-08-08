@@ -11,12 +11,6 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -e "^X^E" edit-command-line
 
-_reveal() {
-  open .
-}
-zle -N _reveal
-bindkey -e '\er' _reveal
-
 # `_complete_help` is supposed have this default binding, but for some reason
 # it's missing
 bindkey -e "^Xh" _complete_help
