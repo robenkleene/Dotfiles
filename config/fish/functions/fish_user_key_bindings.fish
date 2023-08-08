@@ -8,7 +8,6 @@ bind \cw backward-kill-bigword
 # Give visual feedback on copy by also killing the line
 # bind \cx 'fish_clipboard_copy; commandline -f kill-whole-line'
 # bind \cx 'fish_cmdline_safecopy; commandline -f kill-whole-line'
-bind \er 'open .'
 # This conflicts with cut, just use the native bindings of `\ee` or `\ev`
 bind \cx\ce edit_command_buffer
 # bind \cx\cx 'fish_cmdline_safecopy; commandline -f kill-whole-line'
