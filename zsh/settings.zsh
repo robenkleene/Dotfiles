@@ -13,7 +13,7 @@ setopt extendedglob
 # as `TAG`
 setopt nocaseglob
 # `cd` just by typing name
-# setopt autocd
+setopt auto_cd
 # This is supposed to allow aliases to work in `vim` but it doesn't work
 # It's also a bit dangeruous, because it enables aliases in `zsh` scripts# setopt aliases
 
