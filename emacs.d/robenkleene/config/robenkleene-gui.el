@@ -90,11 +90,14 @@
 (setq-default cursor-type 'bar)
 
 ;; Save window state
-(setq desktop-path `(,user-emacs-directory))
-(setq desktop-dirname user-emacs-directory)
-(setq desktop-save t)
+;; Don't restore window state because it makes it hard to enforce that Emacs
+;; always starts up in the `~/.emacs.d/' directory otherwise, which it turns
+;; makes Emacs often try to compile your entire hard drive.
+;; (setq desktop-path `(,user-emacs-directory))
+;; (setq desktop-dirname user-emacs-directory)
+;; (setq desktop-save t)
 ;; Toggle save
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 ;; Slow-down mouse scrolling
 (setq mouse-wheel-scroll-amount '(0.001))
