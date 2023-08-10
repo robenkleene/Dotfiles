@@ -39,11 +39,12 @@ if [[ ! -d "$file_path" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$source_file" ]]; then
-  echo "Missing or invalid repos file"
-  usage
-  exit 1
-fi
+# Remove this check to allow process substitution
+# if [[ ! -f "$source_file" ]]; then
+#   echo "Missing or invalid repos file"
+#   usage
+#   exit 1
+# fi
 
 dry_run=true
 if [[ "$force" == "true" ]]; then
