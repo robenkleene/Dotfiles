@@ -4,8 +4,6 @@
 
 ;; New Maps
 (defvar rk/bindings-minor-mode-map (make-keymap))
-(defvar rk/leader-map (make-keymap))
-(defvar rk/window-map (make-keymap))
 
 ;; Search & Replace
 
@@ -27,10 +25,10 @@
 ;;             'query-replace-regexp)
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
-(define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
-(define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
-(define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
-(define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
@@ -81,11 +79,6 @@
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-n") 'next-error)
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
-;; (define-key rk/bindings-minor-mode-map (kbd "C-w")
-;;   'rk/kill-region-or-backward-word)
-(define-key rk/bindings-minor-mode-map (kbd "C-w")
-  'rk/kill-region-or-window-map)
-
 ;; General
 (define-key rk/bindings-minor-mode-map (kbd "M-r")
             'reveal-in-finder)
@@ -94,18 +87,9 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 ;; Not available in terminal
 (define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
-
-;; Window-Key Based
-(define-key rk/window-map
-            (kbd "t")
-            'tab-new)
-(define-key rk/window-map
-  (kbd "M-t")
-  'tab-new)
-(define-key rk/window-map (kbd "n") 'tab-next)
-(define-key rk/window-map (kbd "p") 'tab-previous)
-(define-key rk/window-map (kbd ":") 'switch-to-minibuffer)
-(define-key rk/window-map (kbd "q") 'tab-close)
+;; No default binding
+(define-key rk/bindings-minor-mode-map (kbd "C-x :")
+            'switch-to-minibuffer)
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
