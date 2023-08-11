@@ -1,4 +1,6 @@
-export CDPATH=~
+# Adding home to `CDPATH` make `cd <relative-path>` tab complete paths from
+# home, which is annoying when doing typical folder navigation
+# export CDPATH=~
 
 # export VIM_COMMAND=nvim
 export VIM_COMMAND=vim
