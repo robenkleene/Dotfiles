@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RG_PREFIX="fd --color=always "
+RG_PREFIX="fd --color=always --follow"
 : | fzf --ansi --reverse --disabled --keep-right --multi --query "$INITIAL_QUERY" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $@ || true" \
     --delimiter : \
