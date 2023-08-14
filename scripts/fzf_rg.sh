@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --follow"
 : | fzf --ansi --reverse --disabled --keep-right --multi --query "$INITIAL_QUERY" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $@ || true" \
     --delimiter : \
