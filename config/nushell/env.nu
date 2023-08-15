@@ -54,9 +54,6 @@ let-env PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
 # let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin')
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.brew/bin")
 
-# fzf
-let-env FZF_DEFAULT_OPTS = "--height 40% --reverse"
-
 # Emacs
 let-env ALTERNATE_EDITOR = ""
 let-env EMACS_COMMAND = "emacsclient -nw"
