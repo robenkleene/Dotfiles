@@ -9,23 +9,6 @@ Otherwise, call `backward-kill-word'."
   (call-interactively
    (if (use-region-p) 'kill-region 'backward-kill-word)))
 
-(defvar-local rk/archive-function nil)
-(defun rk/archive-and-delete ()
-  "Archive the current file or region."
-  (interactive)
-  (if (bound-and-true-p rk/archive-function)
-      (call-interactively rk/archive-function)
-    (if (use-region-p)
-        (progn
-          (shell-command-on-region (region-beginning)
-                                   (region-end)
-                                   "~/.bin/backup_text -m")
-          (delete-region (region-beginning) (region-end))
-          )
-      (rk/archive-current-file))
-    )
-  )
-
 (defun rk/next ()
   "Make a wiki link from a file named after the region."
   (interactive)

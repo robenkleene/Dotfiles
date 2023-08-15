@@ -195,90 +195,12 @@
     )
   )
 
-;; Region
-
-(defun title-case-region ()
-  "Make a wiki link from a file named after the region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command-on-region (region-beginning)
-                               (region-end)
-                               "~/.bin/title_case"
-                               nil
-                               t)
-    )
-  )
-
-(defun backup-region ()
-  "Backup region."
-  (interactive)
-  (if (use-region-p)
-      (shell-command-on-region (region-beginning)
-                               (region-end)
-                               "~/.bin/backup_text -m")
-    )
-  )
-
-(defun archive-region ()
-  "Backup and delete region."
-  (interactive)
-  (if (use-region-p)
-      (progn
-        (shell-command-on-region (region-beginning)
-                                 (region-end)
-                                 "~/.bin/backup_text -m")
-        (delete-region (region-beginning) (region-end))
-        )
-    ))
-
-;; Older
-
-(defun rk/kill-removed-buffers ()
-  "Kill buffers whose underlying file has moved."
-  (interactive)
-  (let
-      ((to-kill
-        (-remove 'rk/buffer-backed-by-file-p (buffer-list))))
-    (mapc 'kill-buffer to-kill)
-    (if (called-interactively-p 'extended-command)
-        (message "Killed %s buffers" (length to-kill))
-      )
-    ))
-
 (defun rk/sgit-push-text-all ()
   "Commit everything in the current repository."
   (interactive)
   (shell-command "~/.bin/sgitt -cp")
   (other-window 1)
   )
-
-(defun rk/archive-this-buffer ()
-  "Archive the current file."
-  (interactive)
-  (if (y-or-n-p (concat "Backup " (buffer-name)))
-      (if (buffer-file-name)
-          (progn
-            (message (shell-command-to-string
-                      (concat "~/.bin/backup_file "
-                              (shell-quote-argument buffer-file-name))
-                      ))
-            (kill-this-buffer)
-            )
-        (progn
-          (shell-command-on-region
-           (point-min)
-           (point-max)
-           "~/.bin/backup_text -m")
-          (kill-this-buffer)
-          )
-        )
-    )
-  )
-
-(defun rk/generate-tags ()
-  "Generate tags."
-  (interactive)
-  (compile "~/.bin/generate_tags -e"))
 
 (defun rk/refresh-tags ()
   "Load the tags file relative to the current buffer."

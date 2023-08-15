@@ -84,14 +84,6 @@
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
-            (setq-local rk/archive-function
-                        (lambda ()
-                          (interactive)
-                          (dired-do-shell-command
-                           "~/.bin/backup_file"
-                           nil
-                           (dired-get-marked-files))
-                          ))
             (setq-local ido-use-filename-at-point nil)
             )
           )
