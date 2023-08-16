@@ -82,7 +82,7 @@ endfunction
 
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
-  set grepprg=rg\ --smart-case\ --vimgrep\ --no-heading
+  set grepprg=rg\ \ --vimgrep\ --no-heading
   if len(a:terms)
     execute "silent grep " . escape(a:terms, '%#')
   else
