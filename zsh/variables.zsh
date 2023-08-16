@@ -2,8 +2,8 @@
 # home, which is annoying when doing typical folder navigation
 # export CDPATH=~
 
-# export VIM_COMMAND=nvim
-export VIM_COMMAND=vim
+export VIM_COMMAND=nvim
+# export VIM_COMMAND=vim
 
 # `-t` means don't try to open GUI emacs, note that this doesn't work with
 # current Emacs
