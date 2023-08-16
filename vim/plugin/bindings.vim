@@ -28,8 +28,6 @@ vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
 " vnoremap <C-w>p gT
 " Quickfix
 nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
-nnoremap <leader>* :Rg <C-r><C-w><cr>
-vnoremap <leader>* :<C-u>call bindings#RgVisual()<CR>
 " Other
 nnoremap <localleader>w :set wrap!<CR>
 " Custom
