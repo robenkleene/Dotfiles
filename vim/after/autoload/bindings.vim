@@ -17,9 +17,3 @@ function! bindings#GetBufferList() abort
   redir END 
   return buflist 
 endfunction
-function! bindings#RgVisual()
-  let temp = @s
-  norm! gv"sy
-  execute "Rg " . @s
-  let @s = temp
-endfunction
