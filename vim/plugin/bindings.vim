@@ -17,19 +17,20 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cp<CR>" : len(argv()) > 1 ? ":prev<CR
 " noremap <silent> <down> gj
 
 " Tabs
-nnoremap <silent> <C-w>t :split<CR><C-w>T
-vnoremap <silent> <C-w>t :split<CR><C-w>T
-nnoremap <silent> <C-w>q :tabclose<CR>
-vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
+" nnoremap <silent> <C-w>t :split<CR><C-w>T
+" vnoremap <silent> <C-w>t :split<CR><C-w>T
+" nnoremap <silent> <C-w>q :tabclose<CR>
+" vnoremap <silent> <C-w>q :<C-u>tabclose<CR>
 " Try using the defaults for these
 " nnoremap <C-w>n gt
 " nnoremap <C-w>p gT
 " vnoremap <C-w>n gt
 " vnoremap <C-w>p gT
 " Quickfix
-nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
+" Use `:copen`
+" nnoremap <leader>q :call bindings#ToggleQuickfixList()<CR>
 " Other
-nnoremap <localleader>w :set wrap!<CR>
+" nnoremap <localleader>w :set wrap!<CR>
 " Custom
 nnoremap <localleader>yg :YankGrep<CR>
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
