@@ -1,14 +1,14 @@
 setlocal foldexpr=DiffFold(v:lnum)
 setlocal foldmethod=expr
-" Set starting fold level
-setlocal foldlevel=2
 " Allow quickly quitting without saving when piping a diff to vim
-" Handled as default now
+" Handled as default for piping now
 " setlocal buftype=nofile
 
+" Set starting fold level
+" setlocal foldlevel=2
 " Useful for debugging
-setlocal foldcolumn=3
-setlocal foldenable
+" setlocal foldcolumn=3
+" setlocal foldenable
 
 nnoremap <buffer> gd :OpenDiff<CR>
 
