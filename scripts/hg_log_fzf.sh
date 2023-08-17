@@ -6,5 +6,5 @@ set -eo pipefail
 hg log --template '{node|short} {author|user}: {desc|strip|firstline}\n' --limit 100 "$1" | \
   fzf --nth 2.. --no-sort --ansi --reverse --multi \
   --preview "echo {} | ~/.bin/nobin/_fzf_preview_hg_rev.sh \"$1\"" \
-  --bind="ctrl-x:execute-silent(echo {1} | ~/.bin/safecopy)+accept,alt-p:become(echo {} | ~/.bin/nobin/_fzf_preview_hg_rev.sh \"$1\"),ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" \
+  --bind="ctrl-x:execute-silent(echo {1} | ~/.bin/safecopy)+accept,alt-p:become(echo {} | ~/.bin/nobin/_fzf_preview_hg_rev.sh \"$1\"),ctrl-u:preview-page-up,ctrl-d:preview-page-down" \
   --height=100% --preview-window=right,50%:wrap
