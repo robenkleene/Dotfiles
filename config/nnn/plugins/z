@@ -12,10 +12,10 @@ export CUR_CTX=1
 echo
 printf "z: "
 IFS= read -r line
-result="$(~/.bin/z_get "${line}")"
+result="$(~/.bin/z_get ${line})"
 
 if [ ! -d "$result" ]; then
   exit 0
 fi
 
-nnn_cd "$result" $CTX
+nnn_cd "$result" "$CTX"
