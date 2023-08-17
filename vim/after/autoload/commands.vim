@@ -96,11 +96,12 @@ function! commands#Rg(terms) abort
     execute "silent grep " . escape(l:search, '%#')
   endif
   let &grepprg = l:original_grepprg
-  if len(getqflist())
-    copen
-    wincmd p
-  endif
-  " Vim usually has artifacts if we don't redraw after this
+  " Open the quickfix list and navigate to the first result
+  " if len(getqflist())
+  "   copen
+  "   wincmd p
+  " endif
+  " Vim has artifacts if we don't redraw after this
   redraw!
 endfunction
 
