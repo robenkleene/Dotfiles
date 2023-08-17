@@ -37,7 +37,8 @@ set noswapfile
 " For state restoration
 " set viewoptions-=options
 " set viewoptions-=folds
-" set viewoptions-=curdir
+" Prevent restoring view from changing the current working directory
+set viewoptions-=curdir
 " set viewoptions-=blank
 " set sessionoptions-=options
 " set sessionoptions-=folds
