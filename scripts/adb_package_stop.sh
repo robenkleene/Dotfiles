@@ -2,5 +2,5 @@
 
 set -euo pipefail
 for var in "$@"; do
-  adb shell am kill "$var"
+  adb shell am force-stop "$var"
 done
