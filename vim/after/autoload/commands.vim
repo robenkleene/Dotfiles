@@ -14,10 +14,11 @@ function! commands#GrepBuffer(...) abort
       bprevious
       bdelete
     endif
-    if len(getqflist()) > 1
-      cwindow
-      wincmd k
-    endif
+    " Automatically open quickfix
+    " if len(getqflist()) > 1
+    "   cwindow
+    "   wincmd k
+    " endif
   endif
 endfunction
 
