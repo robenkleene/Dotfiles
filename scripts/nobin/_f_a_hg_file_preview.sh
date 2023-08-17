@@ -7,5 +7,5 @@ file=${input#*[A-Z?] }
 if [[ ${input:0:1} != "?" ]]; then
   hg diff --color=always "$file"
 else
-  ~/.bin/nobin/_fzf_preview_file.sh "$file"
+  ~/.bin/nobin/_preview_file.sh "$file"
 fi
