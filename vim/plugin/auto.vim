@@ -46,7 +46,7 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
-"
+
 " Autoreload files edited by other programs
 set autoread
 " This causes a delay when opening the command-line window with `<C-f>`?
