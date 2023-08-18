@@ -2,10 +2,7 @@
 # than `g log`
 # Common
 abbr -a -- - 'cd -'
-# abbr -a v "$VIM_COMMAND"
-# abbr -a g git
-# abbr -a fhm 'history merge'
-abbr -a printfv 'printf "%s\n"'
+# abbr -a printfv 'printf "%s\n"'
 
 # Local
 if test -f ~/.local_abbr.fish
