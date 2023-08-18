@@ -56,28 +56,13 @@ let-env PATH = ($env.PATH | prepend $"($env.HOME)/.brew/bin")
 
 # Emacs
 let-env ALTERNATE_EDITOR = ""
-let-env EMACS_COMMAND = "emacsclient -nw"
-let-env VIM_COMMAND = "nvim"
 
-let-env MD_CAT_COMMAND = "bat --style plain"
-# MD_EDITOR_COMMAND fallsback to EDITOR if not set
-# let-env MD_EDITOR_COMMAND = $"($env.EMACS_COMMAND)"
-
-let-env VISUAL = $"($env.VIM_COMMAND)"
-# let-env VISUAL = $"($env.EMACS_COMMAND)"
-let-env EDITOR = $"($env.VISUAL)"
 # Without explicitely specifying `less` as the pager, Linux will use the
 # wrong version of `less` (system installed, which doesn't support the
 # `incsearch` option instead of Homebrew installed.
 let-env PAGER = "less"
 let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 
-# hx
-# let-env VISUAL = "hx"
-# let-env TIG_EDITOR = "hx_wrapper"
-
-# This breaks `gh browse`
-# let-env BROWSER = "none"
 let-env COLORTERM = "truecolor"
 
 # Homebrew

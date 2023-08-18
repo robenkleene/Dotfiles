@@ -9,7 +9,6 @@ set --erase --global EDITOR
 set --erase --global VISUAL
 set --erase --global PAGER
 set --erase --global LESS
-set --erase --global VIM_COMMAND
 
 source ~/.config/fish/settings.fish
 source ~/.config/fish/installs.fish
