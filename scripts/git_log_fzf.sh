@@ -12,4 +12,4 @@ git log --graph --color=always --format="%C(auto)%h %s%d"${separator}"${1}" | \
   fzf --no-sort --ansi --reverse --multi \
   --preview "echo {} | ~/.bin/nobin/_f_a_git_commit_preview.sh \"$1\"" \
   --bind="alt-p:become(echo {} | ~/.bin/nobin/_f_a_git_commit_preview.sh \"$1\"),alt-u:become(echo {} | ~/.bin/nobin/_f_a_git_commit_checkout.sh),ctrl-u:preview-page-up,ctrl-d:preview-page-down" \
-  --height=20 --preview-window=right,50%:wrap
+  --height=100% --preview-window=right,50%:wrap
