@@ -21,8 +21,8 @@
 	aa = add -A :/
 	aac =!git add -A :/ && git commit
 	cleanup =!git checkout -- . && git clean -dff 
-	lgrep = log -p -G
-	lg = log --oneline --graph
-[pager]
+	statustool =!~/.bin/git_status_fzf
+	logtool =!~/.bin/git_log_fzf
 # Don't do this, instead just use `G q` to go to the end of the file and quit
+# [pager]
 #	diff = false
