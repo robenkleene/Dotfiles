@@ -7,7 +7,7 @@ while IFS= read -r input; do
   # Trim whitespace
   file="${file#"${file%%[![:space:]]*}"}"
   file="${file%"${file##*[![:space:]]}"}"
-  if [[ ${input:0:1} = "M" ]]; then
+  if [[ ${input:0:2} = " M" ]]; then
     git add "$file"
   else
     git restore --staged "$file"
