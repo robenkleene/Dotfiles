@@ -39,6 +39,7 @@ set noswapfile
 " set viewoptions-=folds
 " Prevent restoring view from changing the current working directory
 set viewoptions-=curdir
+set sessionoptions-=curdir
 " set viewoptions-=blank
 " set sessionoptions-=options
 " set sessionoptions-=folds
@@ -59,7 +60,9 @@ set nowrap
 set notimeout
 " Don't prompt when trying to navigate to another buffer when current buffer
 " is modified
-set hidden
+" This causes the `%` register to not be set when opening a directory, e.g.,
+" `vim .` the `%` register won't be set and `cd %` will fail
+" set hidden
 
 " Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
