@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-
 for input in "$@"; do
   file=${input#*[A-Z?] }
   # Trim whitespace
@@ -16,4 +15,3 @@ for input in "$@"; do
     git restore --staged "$file"
   fi
 done
-exec git status
