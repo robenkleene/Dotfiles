@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-while IFS= read -r input; do
+for input in "$@"; do
   file=${input#*[A-Z?] }
   # Trim whitespace
   file="${file#"${file%%[![:space:]]*}"}"
