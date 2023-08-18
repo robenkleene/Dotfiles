@@ -2,10 +2,12 @@
 
 set -euo pipefail
 
-input=$(cat)
-file=${input#*[A-Z?] }
-if [[ ${input:0:1} != "?" ]]; then
-  nvim "$file"
-else
-  git difftool "$file"
-fi
+git difftool "$@"
+# Support multiple files?
+# input=$(cat)
+# file=${input#*[A-Z?] }
+# if [[ ${input:0:1} != "?" ]]; then
+#   nvim "$file"
+# else
+#   git difftool "$file"
+# fi
