@@ -6,6 +6,10 @@ return {
     cmd = { 'Rename', 'Remove' }
   },
   {
+    'tpope/vim-unimpaired',
+     keys = { "]q", "[q" },
+  },
+  {
     "numToStr/Comment.nvim",
     config = true,
     event = "VeryLazy"
