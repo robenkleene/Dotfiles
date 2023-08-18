@@ -71,7 +71,7 @@
   },
   "kss": {
     "prefix": "kss",
-    "body": "⇧⌃⌥⌘",
+    "body": "⌃⌥⇧⌘",
     "description": "Keyboard shortcut symbols"
   }
 }
