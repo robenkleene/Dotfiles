@@ -48,7 +48,7 @@ zsh_refresh_commands() {
 
 zsh_edit_init() {
   cd ~/Developer/Dotfiles/zsh/ || return
-  eval $EDITOR ../zshrc
+  eval ${EDITOR:-vim} ../zshrc
 }
 
 ssh_start() {
