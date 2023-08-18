@@ -19,10 +19,12 @@
 	prompt = false
 [alias]
 	aa = add -A :/
-	aac =!git add -A :/ && git commit
-	cleanup =!git checkout -- . && git clean -dff 
-	statustool =!~/.bin/git_status_fzf
-	logtool =!~/.bin/git_log_fzf
+	aac = !git add -A :/ && git commit
+	cleanup = !git checkout -- . && git clean -dff 
+	statustool = !~/.bin/git_status_fzf
+	logtool = !~/.bin/git_log_fzf
+	st = statustool
+	lt = logtool
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 # [pager]
 #	diff = false
