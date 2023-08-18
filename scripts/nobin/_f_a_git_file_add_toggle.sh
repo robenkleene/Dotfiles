@@ -13,3 +13,4 @@ while IFS= read -r input; do
     git restore --staged "$file"
   fi
 done
+exec git status
