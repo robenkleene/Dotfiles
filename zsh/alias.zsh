@@ -14,7 +14,7 @@ else
 fi
 
 # zsh
-alias zsh_edit_history='$EDITOR ~/.zsh_history'
+alias zsh_edit_history='${EDITOR:-vim} ~/.zsh_history'
 
 # egit
 alias s='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
