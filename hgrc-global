@@ -16,3 +16,7 @@ pager = less
 # ignore = show, log, diff
 [committemplate]
 %unset emptymsg
+[extensions]
+extdiff =
+[extdiff]
+cmd.vimdiff =
