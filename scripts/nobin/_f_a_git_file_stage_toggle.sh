@@ -11,6 +11,8 @@ for input in "$@"; do
     git add "$file"
   elif [[ ${input:0:2} = "MM" ]]; then
     git add "$file"
+  elif [[ ${input:0:2} = " D" ]]; then
+    git rm "$file"
   elif [[ ${input:0:2} = "??" ]]; then
     git add "$file"
   else
