@@ -1,0 +1,14 @@
+iabbrev :cmd: ⌘
+iabbrev :ctrl: ⌃
+iabbrev :darr: ↓
+iabbrev :esc: ⎋
+iabbrev :kso: ⌤↓↑←→⎋⌦⌫↩⇥⇤␣
+iabbrev :kss: ⇧⌃⌥⌘
+iabbrev :larr: ←
+iabbrev :opt: ⌥
+iabbrev :rarr: →
+iabbrev :ret: ↩
+iabbrev :shft: ⇧
+iabbrev :spc: ␣
+iabbrev :tab: ⇥
+iabbrev :uarr: ↑
