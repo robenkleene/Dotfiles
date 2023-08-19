@@ -8,10 +8,10 @@ if [[ ! -t 0 ]]; then
 elif [[ -t 1 ]]; then
   if [[ "$TERM" = "dumb" ]]; then
     # Emacs
-    exec rg --no-heading --with-filename --line-number --colors 'match:fg:white' --colors 'match:bg:239' --colors 'path:fg:cyan' --colors 'line:fg:white' "$@"
+    exec rg --no-heading --with-filename --line-number "$@"
   else
     # Default
-    exec rg --no-heading --with-filename --colors 'match:fg:white' --colors 'match:bg:239' --colors 'path:fg:cyan' --colors 'line:fg:white' "$@"
+    exec rg --no-heading --with-filename --line-number "$@"
   fi
 else
   # Use grep format and no colors when piping *from* rg
