@@ -8,14 +8,14 @@ for input in "$@"; do
   file="${file#"${file%%[![:space:]]*}"}"
   file="${file%"${file##*[![:space:]]}"}"
   if [[ ${input:0:2} = " M" ]]; then
-    git add "$file"
+    eval git add "$file"
   elif [[ ${input:0:2} = "MM" ]]; then
-    git add "$file"
+    eval git add "$file"
   elif [[ ${input:0:2} = " D" ]]; then
-    git rm "$file"
+    eval rm "$file"
   elif [[ ${input:0:2} = "??" ]]; then
-    git add "$file"
+    eval add "$file"
   else
-    git restore --staged "$file"
+    eval restore --staged "$file"
   fi
 done
