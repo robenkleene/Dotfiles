@@ -14,7 +14,7 @@ for input in "$@"; do
   elif [[ ${input:0:2} = " D" ]]; then
     eval rm "$file"
   elif [[ ${input:0:2} = "??" ]]; then
-    eval add "$file"
+    eval git add "$file"
   else
     eval restore --staged "$file"
   fi
