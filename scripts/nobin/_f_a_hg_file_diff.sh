@@ -8,8 +8,8 @@ for input in "$@"; do
   file="${file#"${file%%[![:space:]]*}"}"
   file="${file%"${file##*[![:space:]]}"}"
   if [[ ${input:0:1} != "?" ]]; then
-    hg diff --color=always "$file"
+    eval hg diff --color=always "$file"
   else
-    ~/.bin/nobin/_preview_file.sh "$file"
+    eval ~/.bin/nobin/_preview_file.sh "$file"
   fi
 done
