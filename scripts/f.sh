@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/fzf_fd
+exec ~/.bin/fzf_fd "$@"
