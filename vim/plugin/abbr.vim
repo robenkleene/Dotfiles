@@ -1,13 +1,17 @@
+iabbrev :btab: ⇤
 iabbrev :cmd: ⌘
 iabbrev :ctrl: ⌃
 iabbrev :darr: ↓
+iabbrev :del: ⌫
 iabbrev :esc: ⎋
+iabbrev :fdel: ⌦
 iabbrev :kso: ⌤↓↑←→⎋⌦⌫↩⇥⇤␣
 iabbrev :kss: ⇧⌃⌥⌘
 iabbrev :larr: ←
 iabbrev :opt: ⌥
 iabbrev :rarr: →
 iabbrev :ret: ↩
+iabbrev :ent: ⌤
 iabbrev :shft: ⇧
 iabbrev :spc: ␣
 iabbrev :tab: ⇥
