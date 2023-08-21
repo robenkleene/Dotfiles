@@ -23,7 +23,7 @@ return {
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
-    require('telescope').setup{
+    require('telescope').setup {
       defaults = {
         mappings = {
           i = {
@@ -37,7 +37,10 @@ return {
         }
       },
       pickers = {
-        find_files = { theme = "dropdown" },
+        find_files = {
+          theme = "dropdown",
+          follow = true
+        },
         buffers = { theme = "dropdown" },
         current_buffer_fuzzy_find = { theme = "dropdown" },
         live_grep = { theme = "dropdown" },
