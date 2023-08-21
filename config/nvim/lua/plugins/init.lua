@@ -22,7 +22,7 @@ return {
   {
     "numToStr/Comment.nvim",
     config = true,
-    event = "VeryLazy"
+    keys = { "gc", { "gc", mode = "v" } },
   },
   { 'tpope/vim-vinegar' },
   -- Opening files from oil can cause `ftplugin` (e.g., `ftplugin/markdown.vim`) to not fire, as a workaround just use the fuzzy finder instead
@@ -105,5 +105,5 @@ return {
   --   end
   -- },
   -- Languages
-  { 'dag/vim-fish',           ft = { 'fish' }, }
+  { 'dag/vim-fish', ft = { 'fish' }, }
 }
