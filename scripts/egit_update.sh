@@ -2,4 +2,29 @@
 
 set -euo pipefail
 
-egit -u && ~/Developer/Dotfiles/update.sh
+settings_only="false"
+while getopts ":sh" option; do
+  case "$option" in
+    s)
+      settings_only="true"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+~/.bin/egit -u
+if [[ "$settings_only" != "true" ]]; then
+  ~/.bin/git_pull_all -t
+fi
+~/Developer/Dotfiles/update.sh

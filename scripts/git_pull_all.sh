@@ -26,6 +26,11 @@ done
 
 if [[ "$text_only" == "false" ]]; then
   ~/.bin/egit -u
+  if [[ ! -f "$HOME/.personal" ]]; then
+    # Bit of a hack to avoid pulling twice on non-personal machine since these
+    # should be added to `egit` on those machines
+    exit 0
+  fi
 fi
 cd "$HOME/Developer/Dotfiles/scripts" && ./update.sh
 
