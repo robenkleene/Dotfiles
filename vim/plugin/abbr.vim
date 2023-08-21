@@ -12,7 +12,7 @@ iabbrev :opt: ⌥
 iabbrev :rarr: →
 iabbrev :ret: ↩
 iabbrev :ent: ⌤
-iabbrev :shft: ⇧
+iabbrev :sft: ⇧
 iabbrev :spc: ␣
 iabbrev :tab: ⇥
 iabbrev :uarr: ↑
