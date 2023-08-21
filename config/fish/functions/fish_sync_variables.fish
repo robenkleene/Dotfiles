@@ -27,7 +27,7 @@ function fish_sync_variables
 
     # fzf
     # Use `fd` for `:Files` in `fzf.vim`
-    set -Ux FZF_DEFAULT_COMMAND "fd --type f"
+    set -Ux FZF_DEFAULT_COMMAND "fd --type f --follow"
 
     # nnn
     set -Ux NNN_PLUG "z:z;r:reveal;p:preview"
