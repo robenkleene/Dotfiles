@@ -42,4 +42,4 @@ export NNN_PLUG='z:z;r:reveal;p:preview'
 
 # FZF
 # Use `fd` for `:Files` in `fzf.vim`
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --type f --follow'
