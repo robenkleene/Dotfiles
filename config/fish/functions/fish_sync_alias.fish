@@ -8,6 +8,7 @@ function fish_sync_alias
     alias --save u='ssh_start && ~/.bin/egit_update'
     alias --save ut='ssh_start && ssh_git_pull_all -t'
     alias --save ua='ssh_start && ssh_git_pull_all'
+    alias --save us='ssh_start && ~/.bin/egit_update -s'
 
     # Misc
     alias --save rg='rg_custom'
