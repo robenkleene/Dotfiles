@@ -26,6 +26,7 @@ done
 
 if [[ "$text_only" == "false" ]]; then
   ~/.bin/egit -u
+else
   if [[ ! -f "$HOME/.personal" ]]; then
     # Bit of a hack to avoid pulling twice on non-personal machine since these
     # should be added to `egit` on those machines
