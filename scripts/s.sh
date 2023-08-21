@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-{ ~/.bin/egit -p || ~/.bin/egit -n && exit 1; } && ~/.bin/sgitt_auto
+~/.bin/egit -p && ~/.bin/sgitt_auto
