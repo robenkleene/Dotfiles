@@ -12,5 +12,5 @@ command! YankFilename :call commands#YankFilename()
 command! Cpaste :let @0=substitute(@0, '\n\+$', '', '') | :norm "0p
 command! Cwise :let @0=substitute(@0, '\n\+$', '', '')
 
-command! -nargs=* Rg :call commands#Rg(<q-args>)
-command! -nargs=* Z :call commands#Z(<q-args>)
+command! -nargs=+ Rg :call commands#Rg(<q-args>)
+command! -nargs=1 Z :call commands#Z(<q-args>)
