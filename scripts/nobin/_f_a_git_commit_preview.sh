@@ -8,9 +8,13 @@ if [[ -n "${1-}" ]]; then
   separator=" -- "
 fi
 
-hash=$(cat | grep --only-matching "[a-f0-9]\{7\}" | sed 's/\s.*$//' | head -1)
-if [[ -z "${hash-}" ]]; then
+hashes=$(cat | grep --only-matching "[a-f0-9]\{7\}" | sed 's/\s.*$//')
+if [[ -z "${hashes:-}" ]]; then
   echo "Error: No hash found" >&2
   exit 1
 fi
-git show --color=always "$hash"${separator}"${1}"
+
+IFS=$'\n'
+for hash in $hashes; do
+  git show --color=always "$hash"${separator}"${1}"
+done
