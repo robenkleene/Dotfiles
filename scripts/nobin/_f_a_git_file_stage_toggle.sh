@@ -12,10 +12,10 @@ for input in "$@"; do
   elif [[ ${input:0:2} = "MM" ]]; then
     eval git add "$file"
   elif [[ ${input:0:2} = " D" ]]; then
-    eval rm "$file"
+    eval git rm "$file"
   elif [[ ${input:0:2} = "??" ]]; then
     eval git add "$file"
   else
-    eval restore --staged "$file"
+    eval git restore --staged "$file"
   fi
 done
