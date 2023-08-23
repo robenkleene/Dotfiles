@@ -25,6 +25,9 @@ return {
     keys = { "gc", { "gc", mode = "v" } },
   },
   { 'tpope/vim-vinegar' },
+  -- This doesn't handle visual blocks correctly
+  -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
+  { 'tpope/vim-surround' },
   -- Opening files from oil can cause `ftplugin` (e.g., `ftplugin/markdown.vim`) to not fire, as a workaround just use the fuzzy finder instead
   -- {
   --   'stevearc/oil.nvim',
@@ -53,7 +56,6 @@ return {
     end
   },
   { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
-  { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
     -- Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
     'vim-scripts/vis',
