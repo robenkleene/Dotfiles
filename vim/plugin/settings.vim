@@ -9,6 +9,8 @@ set fillchars=eob:\
 set number
 " Mouse
 set mouse=a
+" Show key presses in lower left
+set showcmd
 
 " Indent wrapped lines
 set breakindent
