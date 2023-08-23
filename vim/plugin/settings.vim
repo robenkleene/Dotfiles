@@ -1,11 +1,13 @@
 " Backtick expansion doesn't work with fish
 set shell=zsh
 
-" Settings
-set shortmess+=atI
-" Hide tilde for lines not in buffer
+" `I`: Don't show intro message
+set shortmess+=I
+" Hide tildes the tildes below line numbers
 set fillchars=eob:\ 
+" Line numbers
 set number
+" Mouse
 set mouse=a
 
 " Indent wrapped lines
