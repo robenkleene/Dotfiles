@@ -5,6 +5,11 @@ source nnn.nu
 
 $env.config = {
   show_banner: false,
+  cursor_shape: {
+    # Prevent nushell from changing the cursor shape because it doesn't change
+    # it back when exiting
+    emacs: block
+  },
   keybindings: [
     {
       name: ctrl_w
