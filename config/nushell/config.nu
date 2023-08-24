@@ -1,5 +1,6 @@
 source alias.nu
 source commands.nu
+source zoxide.nu
 
 let-env config = {
   # table_mode: none
