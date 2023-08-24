@@ -24,6 +24,7 @@ source ~/.zsh/bindings.zsh
 source ~/.zsh/installs.zsh
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
+source ~/.zsh/nnn.zsh
 
 source ~/.zsh/settings.zsh
 # Functions before aliases so functions don't use aliases
