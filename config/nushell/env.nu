@@ -65,6 +65,11 @@ let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsear
 
 let-env COLORTERM = "truecolor"
 
+# Installs
+
+# nnn
+let-env NNN_PLUG = 'z:z;r:reveal;p:preview'
+
 # Homebrew
 let-env HOMEBREW_NO_ANALYTICS = 1
 let-env HOMEBREW_NO_AUTO_UPDATE = 1
