@@ -56,6 +56,7 @@ return {
       local luasnip = require 'luasnip'
       -- Make sh snippets available to zsh
       luasnip.filetype_extend("zsh", { "sh" })
+      luasnip.filetype_extend("typescript", { "javascript" })
     end
   },
   -- Do I really need this?
