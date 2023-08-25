@@ -1,0 +1,7 @@
+--no-heading
+--with-filename
+--line-number
+--colors=match:fg:white
+--colors=match:bg:239
+--colors=path:fg:cyan
+--colors=line:fg:white
