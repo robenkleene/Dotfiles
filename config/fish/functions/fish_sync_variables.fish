@@ -25,6 +25,9 @@ function fish_sync_variables
 
     # Installs
 
+    # rg
+    export RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+
     # fzf
     # Use `fd` for `:Files` in `fzf.vim`
     set -Ux FZF_DEFAULT_COMMAND "fd --type f"
