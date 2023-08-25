@@ -67,6 +67,9 @@ let-env COLORTERM = "truecolor"
 
 # Installs
 
+# rg
+let-env RIPGREP_CONFIG_PATH = "$HOME/.ripgreprc"
+
 # nnn
 let-env NNN_PLUG = 'z:z;r:reveal;p:preview'
 
