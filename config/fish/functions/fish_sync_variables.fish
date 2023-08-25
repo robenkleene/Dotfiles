@@ -26,7 +26,7 @@ function fish_sync_variables
     # Installs
 
     # rg
-    export RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+    set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
     # fzf
     # Use `fd` for `:Files` in `fzf.vim`
