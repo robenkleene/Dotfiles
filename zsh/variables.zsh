@@ -37,6 +37,9 @@ export ALTERNATE_EDITOR=""
 
 # Installs
 
+# rg
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # nnn
 export NNN_PLUG='z:z;r:reveal;p:preview'
 
