@@ -11,7 +11,11 @@ if [[ -n "${1:-}" ]]; then
   fi
 fi
 
-tmp=$(mktemp "clipboard_to_png-XXXXXX")
+if [[ -n "${dir:-}" ]]; then
+  tmp=$(mktemp "${dir}/clipboard_to_png-XXXXXX")
+else
+  tmp=$(mktemp "clipboard_to_png-XXXXXX")
+fi
 osascript -e "get the clipboard as «class PNGf»" | sed "s/«data PNGf//; s/»//" | xxd -r -p > "$tmp"
 
 if [[ -z "${dst:-}" ]]; then
@@ -19,7 +23,7 @@ if [[ -z "${dst:-}" ]]; then
 fi
 
 if [[ -n "${dir:-}" ]]; then
-  dst="$dir/${tmp}.png"
+  dst="${tmp}.png"
 fi
 
 mv -n "$tmp" "$dst"
