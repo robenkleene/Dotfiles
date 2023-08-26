@@ -16,9 +16,9 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -e "^X^E" edit-command-line
 
-# Word style "bash" stops at most word separators
+# `shell` deletes the last parameter
 autoload -Uz select-word-style
-default_word_style="bash"
+default_word_style="shell"
 select-word-style $default_word_style
 
 autoload -Uz copy-earlier-word
@@ -26,10 +26,9 @@ zle -N copy-earlier-word
 bindkey -e "^[m" copy-earlier-word
 
 _bash_backward_kill_word() {
-  # Use bash-style "backwards-kill-word", this provides expected separation
-  # between "^W" and "^DEL"
+  # `bash` consideres only alphanumeric characters as part of words 
   select-word-style bash
-  WORDCHARS='*?[]~\!#$%^(){}<>|`@#$%^*()+:?' zle backward-kill-word
+  zle backward-kill-word
   select-word-style $default_word_style
 }
 zle -N _bash_backward_kill_word
