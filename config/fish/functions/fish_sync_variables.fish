@@ -12,6 +12,8 @@ function fish_sync_variables
 
     set -Ux COLORTERM "truecolor"
 
+    set -Ux EDITOR "nvim"
+
     # Without explicitely specifying `less` as the pager, Linux will use the
     # wrong version of `less` (system installed, which doesn't support the
     # `incsearch` option instead of Homebrew installed.
