@@ -1,6 +1,4 @@
 return {
-  -- Indent is broken if `VeryLazy` is set
-  { "gpanders/editorconfig.nvim" },
   {
     'tpope/vim-eunuch',
     cmd = { 'Rename', 'Remove' }
