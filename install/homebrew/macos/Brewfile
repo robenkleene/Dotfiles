@@ -1,23 +1,22 @@
 # Shell
 brew 'zsh'
-brew 'fish'
 brew 'git'
 brew 'tig'
 brew 'fzf'
-brew 'helix'
-brew 'hexyl'
 brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
 brew 'bat'
 # Support for `incsearch`
 brew 'less'
-brew 'choose-rust'
-brew 'nushell'
 brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
+# Modern
+brew 'fish'
+brew 'nushell'
+brew 'helix'
 
 # Editor
 brew 'aspell'
@@ -59,7 +58,6 @@ brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
 brew 'mitmproxy'
 brew 'hyperfine'
-brew 'sd'
 
 # VR
 

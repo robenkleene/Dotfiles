@@ -2,8 +2,6 @@
 brew 'git'
 brew 'tig'
 brew 'fzf'
-brew 'helix'
-brew 'hexyl'
 brew 'tmux'
 brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing
@@ -12,12 +10,14 @@ brew 'bat'
 # `less` support for `incsearch`
 brew 'less'
 brew 'ncdu'
-brew 'choose-rust'
-brew 'nushell'
 brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
+# Modern
+brew 'helix'
+brew 'nushell'
+brew 'fish'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
@@ -25,12 +25,10 @@ brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
 brew 'neovim'
-brew 'fish'
 brew 'gh'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'hyperfine'
-brew 'sd'
 
 # Languages
 # JavaScript
