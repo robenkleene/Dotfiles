@@ -38,6 +38,7 @@ Plug 'vim-scripts/vis', { 'on': 'B' }
 " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
+" Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -61,6 +62,7 @@ set background=dark
 " colorscheme gotham
 " colorscheme catppuccin_mocha
 " colorscheme night-owl
+" colorscheme nightfly
 colorscheme iceberg
 
 " Needs to happen before bindings are set
