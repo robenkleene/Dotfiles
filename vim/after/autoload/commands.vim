@@ -22,16 +22,6 @@ function! commands#GrepBuffer(...) abort
   endif
 endfunction
 
-function! commands#GrepBufferFromClipboard() abort
-  call commands#NewBufferWithClipboard()
-  call commands#GrepBuffer()
-endfunction
-
-function! commands#NewBufferWithClipboard() abort
-  execute "enew"
-  normal V"0P
-endfunction
-
 function! commands#YankGrep()
   let @@ = expand("%:p").":".line('.')
   call system('~/.bin/safecopy', @@)
@@ -66,12 +56,14 @@ function! commands#Rg(terms) abort
     execute "silent grep " . escape(l:search, '%#')
   endif
   let &grepprg = l:original_grepprg
-  " Open the quickfix list and navigate to the first result
-  " if len(getqflist())
-  "   copen
-  "   wincmd p
-  " endif
-  " Vim has artifacts if we don't redraw after this
+  redraw!
+endfunction
+
+function! commands#GrepBufferFromClipboard() abort
+  let l:original_grepprg = &grepprg
+  set grepprg=~/.bin/safepaste
+  execute "silent grep"
+  let &grepprg = l:original_grepprg
   redraw!
 endfunction
 
