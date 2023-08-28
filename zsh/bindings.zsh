@@ -22,9 +22,9 @@ default_word_style="shell"
 select-word-style $default_word_style
 
 # Cycle through previous parameters
-# autoload -Uz copy-earlier-word
-# zle -N copy-earlier-word
-# bindkey -e "^[m" copy-earlier-word
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey -e "^[m" copy-earlier-word
 
 _bash_backward_kill_word() {
   # `bash` consideres only alphanumeric characters as part of words 
