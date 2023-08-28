@@ -33,6 +33,18 @@ _bash_backward_kill_word() {
 }
 zle -N _bash_backward_kill_word
 
+_system_kill_line() {
+  zle kill-whole-line
+  echo -n "$CUTBUFFER" | ~/.bin/safecopy
+}
+zle -N _system_kill_line
+
+_system_yank() {
+  CUTBUFFER=$(~/.bin/safepaste)
+  zle yank
+}
+zle -N _system_yank
+
 # `⌥⌫` to delete previous word
 bindkey -e "^[^?" _bash_backward_kill_word
 bindkey -e "^[^H" _bash_backward_kill_word
