@@ -3,11 +3,12 @@
 set -euo pipefail
 
 if command -v pbcopy &> /dev/null; then
-  sed s'/⏎$//' | pbcopy
   if [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
     # Always also copy to the tmux clipboard so that pasting inside tmux with
     # `paste-buffer` works
-    pbpaste | tmux loadb -
+    sed s'/⏎$//' | tee >(pbcopy) | tmux loadb -
+  else
+    sed s'/⏎$//' | pbcopy
   fi
 elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
   # Never use `TMUX` `INSIDE_EMACS` because the `TMUX` session may no longer be
