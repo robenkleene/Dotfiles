@@ -16,9 +16,8 @@ if !has('nvim')
   " Markup
   highlight markdownItalic gui=italic cterm=italic
   highlight markdownBold gui=bold cterm=bold
-  highlight markdownLinkText guifg=#87afdf gui=underline cterm=underline
-  highlight markdownId guifg=#87afdf gui=underline cterm=underline
-  highlight markdownId guifg=#87afdf gui=underline cterm=underline
+  highlight markdownLinkText guifg=lightblue gui=underline cterm=underline
+  highlight markdownId guifg=lightblue gui=underline cterm=underline
   highlight markdownCode guifg=darkgray
   highlight markdownCodeBlock guifg=darkgray
 
