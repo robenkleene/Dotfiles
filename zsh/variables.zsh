@@ -12,7 +12,9 @@ export CLICOLOR=1
 # wrong version of `less` (system installed, which doesn't support the
 # `incsearch` option instead of Homebrew installed.
 export LESS="less"
-export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
+# `--no-init`: Prevent less output from being cleared on exit, e.g., so we can
+# do `Gq` to dump the entire contents to the terminal
+export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
 # Prevent `npm` scripts from opening browser windows
 # This breaks `gh browse`
 # export BROWSER="none"
