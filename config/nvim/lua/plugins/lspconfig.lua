@@ -84,6 +84,8 @@ return {
       -- vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, bufopts)
       -- Run the command twice to automatically focus the float
       vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, bufopts)
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
       -- Open and focus the float
       -- vim.keymap.set('n', '<leader>d', ":lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>", bufopts)
       vim.keymap.set('n', '<localleader>r', vim.lsp.buf.rename, bufopts)
