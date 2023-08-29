@@ -5,4 +5,5 @@
 /view
 
 # Vim Plug
+/autoload
 /plugged
