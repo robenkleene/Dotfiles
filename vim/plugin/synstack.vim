@@ -2,6 +2,8 @@ if !exists("*synstack")
   finish
 endif
 
+command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
+
 " Syntax Groups
 function! s:SyntaxGroups()
   return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
