@@ -1,4 +1,9 @@
 if !has('nvim')
+  " Checkboxes aren't part of Markdown syntax, and their lack of support
+  " causes some ugly syntax issues, this cleans that up.
+  syn match Checkbox '^\s*\- \[[ x]\]'
+  highlight link Checkbox Comment
+
   " Disable spell check in URLs
   syn match UrlNoSpell '([^[:space:]]\+)' contains=@NoSpell
   " Markdown list items with checkboxes breaks assigning the correct syntax
