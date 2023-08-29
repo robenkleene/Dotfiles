@@ -16,6 +16,9 @@ set showcmd
 set breakindent
 
 " Smartcase
+" Without this, a lowercase search will not match words with uppercase
+" letters, even if `smartcase` is on
+set ignorecase
 set smartcase
 
 " Indent
