@@ -18,19 +18,21 @@ if !has('nvim')
   highlight markdownBold gui=bold cterm=bold
   highlight markdownLinkText guifg=#87afdf gui=underline cterm=underline
   highlight markdownId guifg=#87afdf gui=underline cterm=underline
+  highlight markdownId guifg=#87afdf gui=underline cterm=underline
+  highlight markdownCode guifg=darkgray
+  highlight markdownCodeBlock guifg=darkgray
 
   " Headers
-  highlight markdownH1 guifg=white gui=bold cterm=bold
-  highlight markdownH2 guifg=white gui=bold cterm=bold
-  highlight markdownH3 guifg=white gui=bold cterm=bold
-  highlight markdownH4 guifg=white gui=bold cterm=bold
-  highlight markdownH5 guifg=white gui=bold cterm=bold
-  highlight markdownH6 guifg=white gui=bold cterm=bold
+  highlight markdownH1 guifg=white gui=bold
+  highlight markdownH2 guifg=white gui=bold
+  highlight markdownH3 guifg=white gui=bold
+  highlight markdownH4 guifg=white gui=bold
+  highlight markdownH5 guifg=white gui=bold
+  highlight markdownH6 guifg=white gui=bold
 
   " Link
   highlight link markdownBlockquote Comment
   highlight link markdownBoldDelimiter Comment
-  highlight link markdownCode Comment
   highlight link markdownCodeDelimiter Comment
   highlight link markdownFootnote Comment
   highlight link markdownFootnoteDefinition Comment
