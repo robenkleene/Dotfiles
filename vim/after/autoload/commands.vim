@@ -56,7 +56,9 @@ function! commands#Rg(terms) abort
     execute "silent grep " . escape(l:search, '%#')
   endif
   let &grepprg = l:original_grepprg
-  redraw!
+  if !has('nvim')
+    redraw!
+  endif
 endfunction
 
 function! commands#GrepBufferFromClipboard() abort
@@ -64,7 +66,9 @@ function! commands#GrepBufferFromClipboard() abort
   set grepprg=~/.bin/safepaste
   execute "silent grep"
   let &grepprg = l:original_grepprg
-  redraw!
+  if !has('nvim')
+    redraw!
+  endif
 endfunction
 
 function! commands#Z(terms) abort
