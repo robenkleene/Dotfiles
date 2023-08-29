@@ -16,8 +16,13 @@ set showcmd
 set breakindent
 
 " Smartcase
-set ignorecase
 set smartcase
+
+" Indent
+" When opening lines, make it the same indent level as the current line
+set autoindent
+" Indent blocks (e.g., after a `{`) automatically
+set smartindent
 
 " Highlight search results
 set hlsearch
