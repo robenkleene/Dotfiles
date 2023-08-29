@@ -9,10 +9,10 @@ if !has('nvim')
   " Syntax Colors
 
   " Markup
-  highlight markdownLinkText gui=underline cterm=underline
   highlight markdownItalic gui=italic cterm=italic
   highlight markdownBold gui=bold cterm=bold
-  highlight markdownLinkText guifg=#87afdf
+  highlight markdownLinkText guifg=#87afdf gui=underline cterm=underline
+  highlight markdownId guifg=#87afdf gui=underline cterm=underline
 
   " Headers
   highlight markdownH1 guifg=white gui=bold cterm=bold
