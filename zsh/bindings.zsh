@@ -56,10 +56,8 @@ bindkey -e "^Xh" _complete_help
 bindkey -e '^V' _system_yank
 bindkey -e '^X^X' _system_kill_line
 
-# Arrow Keys
-bindkey -e '^[[1;5A' beginning-of-buffer-or-history
-bindkey -e '^[[1;5B' end-of-buffer-or-history
-bindkey -e '^[[1;5D' beginning-of-line
-bindkey -e '^[[1;5C' end-of-line
-bindkey -e '^[[1;3D' backward-word
-bindkey -e '^[[1;3C' forward-word
+# History
+# Use the text already entered at prompt when using `<up>` / `<down>` to
+# navigate history
+bindkey -e "^[[A" history-beginning-search-backward
+bindkey -e "^[[B" history-beginning-search-forward
