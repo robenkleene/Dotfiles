@@ -1,9 +1,5 @@
 return {
   {
-    'tpope/vim-eunuch',
-    cmd = { 'Rename', 'Remove' }
-  },
-  {
     'tpope/vim-unimpaired',
     keys = {
       "]a", "[a",
