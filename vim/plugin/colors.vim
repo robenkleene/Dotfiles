@@ -14,8 +14,6 @@ function! s:OverrideColors()
     highlight markdownBold guifg=white gui=bold cterm=bold
     highlight markdownLinkText guifg=lightblue gui=underline cterm=underline
     highlight markdownId guifg=lightblue gui=underline cterm=underline
-    highlight markdownCode guifg=darkgray
-    highlight markdownCodeBlock guifg=darkgray
 
     " Headers
     highlight markdownH1 guifg=white gui=bold cterm=bold
@@ -26,6 +24,8 @@ function! s:OverrideColors()
     highlight markdownH6 guifg=white gui=bold cterm=bold
 
     " Link
+    highlight link markdownCode Comment
+    highlight link markdownCodeBlock Comment
     highlight link markdownBlockquote Comment
     highlight link markdownBoldDelimiter Comment
     highlight link markdownCodeDelimiter Comment
