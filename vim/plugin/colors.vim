@@ -1,0 +1,52 @@
+function! s:OverrideColors()
+  if !has('nvim')
+    " Markdown
+
+    " Custom
+    highlight link Checkbox Comment
+    " Markdown list items with checkboxes breaks assigning the correct syntax
+    " group to URLs, so just assign the `Comment` style to our made up
+    " `UrlNoSpell` group
+    highlight link UrlNoSpell Comment
+
+    " Markup
+    highlight markdownItalic guifg=white gui=italic cterm=italic
+    highlight markdownBold guifg=white gui=bold cterm=bold
+    highlight markdownLinkText guifg=lightblue gui=underline cterm=underline
+    highlight markdownId guifg=lightblue gui=underline cterm=underline
+    highlight markdownCode guifg=darkgray
+    highlight markdownCodeBlock guifg=darkgray
+
+    " Headers
+    highlight markdownH1 guifg=white gui=bold
+    highlight markdownH2 guifg=white gui=bold
+    highlight markdownH3 guifg=white gui=bold
+    highlight markdownH4 guifg=white gui=bold
+    highlight markdownH5 guifg=white gui=bold
+    highlight markdownH6 guifg=white gui=bold
+
+    " Link
+    highlight link markdownBlockquote Comment
+    highlight link markdownBoldDelimiter Comment
+    highlight link markdownCodeDelimiter Comment
+    highlight link markdownFootnote Comment
+    highlight link markdownFootnoteDefinition Comment
+    highlight link markdownH1Delimiter Comment
+    highlight link markdownH2Delimiter Comment
+    highlight link markdownH3Delimiter Comment
+    highlight link markdownH4Delimiter Comment
+    highlight link markdownH5Delimiter Comment
+    highlight link markdownH6Delimiter Comment
+    highlight link markdownHeadingDelimiter Comment
+    highlight link markdownItalicDelimiter Comment
+    highlight link markdownLinkDelimiter Comment
+    highlight link markdownLinkText Keyword
+    highlight link markdownLinkTextDelimiter Comment
+    highlight link markdownListMarker Comment
+    highlight link markdownUrl Comment
+  endif
+endfunction
+augroup override_colors
+    autocmd!
+    autocmd ColorScheme * call <SID>OverrideColors()
+augroup END
