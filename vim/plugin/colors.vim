@@ -18,12 +18,12 @@ function! s:OverrideColors()
     highlight markdownCodeBlock guifg=darkgray
 
     " Headers
-    highlight markdownH1 guifg=white gui=bold
-    highlight markdownH2 guifg=white gui=bold
-    highlight markdownH3 guifg=white gui=bold
-    highlight markdownH4 guifg=white gui=bold
-    highlight markdownH5 guifg=white gui=bold
-    highlight markdownH6 guifg=white gui=bold
+    highlight markdownH1 guifg=white gui=bold cterm=bold
+    highlight markdownH2 guifg=white gui=bold cterm=bold
+    highlight markdownH3 guifg=white gui=bold cterm=bold
+    highlight markdownH4 guifg=white gui=bold cterm=bold
+    highlight markdownH5 guifg=white gui=bold cterm=bold
+    highlight markdownH6 guifg=white gui=bold cterm=bold
 
     " Link
     highlight link markdownBlockquote Comment
@@ -50,3 +50,16 @@ augroup override_colors
     autocmd!
     autocmd ColorScheme * call <SID>OverrideColors()
 augroup END
+
+if !has('nvim')
+  " Theme
+  set background=dark
+  " Set after plug sync (doesn't help when installing themes)
+  " let g:embark_terminal_italics = 1
+  " colorscheme embark
+  " colorscheme gotham
+  " colorscheme catppuccin_mocha
+  " colorscheme night-owl
+  " colorscheme nightfly
+  colorscheme iceberg
+endif

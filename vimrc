@@ -54,17 +54,6 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" Theme
-set background=dark
-" Set after plug sync (doesn't help when installing themes)
-" let g:embark_terminal_italics = 1
-" colorscheme embark
-" colorscheme gotham
-" colorscheme catppuccin_mocha
-" colorscheme night-owl
-" colorscheme nightfly
-colorscheme iceberg
-
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
 
