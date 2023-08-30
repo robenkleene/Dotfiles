@@ -21,7 +21,6 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
-Plug 'tpope/vim-eunuch', { 'on': [ 'Rename', 'Remove' ] }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
