@@ -57,7 +57,15 @@ bindkey -e '^V' _system_yank
 bindkey -e '^X^X' _system_kill_line
 
 # History
+# Don't think I use this enough to warrant adding it?
 # Use the text already entered at prompt when using `<up>` / `<down>` to
 # navigate history
-bindkey -e "^[[A" history-beginning-search-backward
-bindkey -e "^[[B" history-beginning-search-forward
+# bindkey -e "^[[A" history-beginning-search-backward
+# bindkey -e "^[[B" history-beginning-search-forward
+# This is better because it leaves the cursor and the end of the line, which is
+# the normal behavior for history
+# autoload -U history-search-end
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end history-search-end
+# bindkey "^[[A" history-beginning-search-backward-end
+# bindkey "^[[B" history-beginning-search-forward-end
