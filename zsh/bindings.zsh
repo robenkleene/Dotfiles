@@ -55,6 +55,8 @@ bindkey -e "^[^H" _bash_backward_kill_word
 bindkey -e "^Xh" _complete_help
 bindkey -e '^V' _system_yank
 bindkey -e '^X^X' _system_kill_line
+# By default, `^U` kills the whole line, rather than backwards
+bindkey -e '^U' backward-kill-line
 
 # History
 # Don't think I use this enough to warrant adding it?
