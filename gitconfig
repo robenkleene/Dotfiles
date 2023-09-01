@@ -18,7 +18,6 @@
 [mergetool]
 	prompt = false
 [alias]
-	cleanup = !git checkout -- . && git clean -dff 
 	statustool = !~/.bin/git_status_fzf
 	logtool = !~/.bin/git_log_fzf
 	st = statustool
