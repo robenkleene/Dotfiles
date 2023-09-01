@@ -18,8 +18,6 @@
 [mergetool]
 	prompt = false
 [alias]
-	aa = add -A :/
-	aac = !git add -A :/ && git commit
 	cleanup = !git checkout -- . && git clean -dff 
 	statustool = !~/.bin/git_status_fzf
 	logtool = !~/.bin/git_log_fzf
