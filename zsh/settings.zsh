@@ -37,6 +37,8 @@ setopt HIST_IGNORE_SPACE
 
 # By default `zsh` appends to history on exit, and reads it on startup
 # Append to history immediately after a command is run
+# `inc_append_history_time` appends after the command finishes running
+# `inc_append_history` appends when the command starts
 setopt inc_append_history_time
 # Share History
 # zsh will save and load each line immediately, but this will intermingle
