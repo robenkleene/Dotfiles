@@ -25,6 +25,7 @@
     (add-to-list 'exec-path path-to-prepend))
   )
 
+;; `less' can cause problems in `eshell'
 (setenv "PAGER" "cat")
 
 ;; Start the emacs server if it isn't already running and we're running in
@@ -34,44 +35,6 @@
 ;;     (if (and (fboundp 'server-running-p)
 ;;              (not (server-running-p)))
 ;;         (server-start)))
-
-;; (set-face-background 'default "#232323")
-;; `#1A1A1A' exactly matches the bars that the
-;; `railwaycat/homebrew-emacsmacport' adds
-;; (set-face-background 'default "#1A1A1A")
-;; (set-face-background 'default "#2A2A2F")
-;; (set-face-background 'fringe "#2A2A2F")
-;; (set-face-background 'default "#241B31")
-;; (set-face-background 'fringe "#241B31")
-
-;; Nice purple
-;; (set-face-background 'default "#392248")
-;; (set-face-background 'fringe "#392248")
-;; Slightly darker
-;; (set-face-background 'default "#3C1E49")
-;; (set-face-background 'fringe "#3C1E49")
-;; Darker still
-;; (set-face-background 'default "#3A1D46")
-;; (set-face-background 'fringe "#3A1D46")
-
-;; Darker purple
-;; (set-face-background 'default "#301B42")
-;; (set-face-background 'fringe "#301B42")
-
-;; In Between Nova and Dark purple
-;; (set-face-background 'default "#2D193D")
-;; (set-face-background 'fringe "#2D193D")
-;; Dark In Between
-;; (set-face-background 'default "#291738")
-;; (set-face-background 'fringe "#291738")
-
-;; Nova purple
-;; (set-face-background 'default "#221932")
-;; (set-face-background 'fringe "#221932")
-
-;; Nova inspired purple
-;; (set-face-background 'default "#291B3B")
-;; (set-face-background 'fringe "#291B3B")
 
 ;; Word spacing isn't great with Fira Code
 ;; (set-face-attribute 'default nil :font "Fira Code-12:Retina")
@@ -85,9 +48,6 @@
 ;; Supports italics
 ;; (set-face-attribute 'default nil :font "SF Mono-12")
 ;; (set-face-attribute 'default nil :font "Hack-12")
-
-;; Cursor
-(setq-default cursor-type 'bar)
 
 ;; Save window state
 ;; Don't restore window state because it makes it hard to enforce that Emacs
@@ -129,11 +89,7 @@
 ;; (add-to-list 'default-frame-alist '(alpha 96 96))
 ;; (add-to-list 'default-frame-alist '(alpha 100 100))
 
-;; Improve compatibility of macOS dark mode
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
 ;; Open files in new frames by default
-;; (setq ns-pop-up-frames nil)
 (setq ns-pop-up-frames t)
 
 ;; Never use GUI dialog boxes
