@@ -88,7 +88,7 @@
       (path-separator . ":")
       (null-device . "/dev/null"))))
  '(custom-safe-themes
-   '("69f7e8101867cfac410e88140f8c51b4433b93680901bb0b52014144366a08c8" "28d61ac6f26030e3c649e9f75b6ebd93dbf7f5f7b2f13e14cb1fe101e8cf4737" "ca9ce9f0c5bb46610c20f4ebcaa3d1c8ed6b8f9c5a956620cba250686fe645cf" "f82e68d489e6c21c9552c4e8e35a03d126d9eba632a8e7b4f9329d1374b4a19c" "ad114fd8820edf7d947f356a237468ae2c402565a60b813ee36f6cd3f1d325ae" "c6fb2c37975e0d8fcc91ae7501f06bc9c58f3fb55e658be0fce30cd58bd66f3e" default))
+   '("8d11daa5f67b21b377f159f12b47074e3dc706d03aa42dce90203f4516041448" "69f7e8101867cfac410e88140f8c51b4433b93680901bb0b52014144366a08c8" "28d61ac6f26030e3c649e9f75b6ebd93dbf7f5f7b2f13e14cb1fe101e8cf4737" "ca9ce9f0c5bb46610c20f4ebcaa3d1c8ed6b8f9c5a956620cba250686fe645cf" "f82e68d489e6c21c9552c4e8e35a03d126d9eba632a8e7b4f9329d1374b4a19c" "ad114fd8820edf7d947f356a237468ae2c402565a60b813ee36f6cd3f1d325ae" "c6fb2c37975e0d8fcc91ae7501f06bc9c58f3fb55e658be0fce30cd58bd66f3e" default))
  '(package-selected-packages
    '(vertico typescript-mode marginalia swift-mode rust-mode yaml-mode consult embark-consult iedit embark bind-map pbcopy rainbow-delimiters fill-column-indicator lua-mode magit eshell-syntax-highlighting better-defaults kotlin-mode ef-themes eglot use-package nodejs-repl csv-mode fish-mode markdown-mode inf-ruby enh-ruby-mode smartparens rainbow-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines expand-region adaptive-wrap orderless corfu-terminal diminish cape popon org-modern modus-themes company))
  '(vc-annotate-color-map
