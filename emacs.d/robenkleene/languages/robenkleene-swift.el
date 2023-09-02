@@ -3,12 +3,7 @@
 ;;; Code:
 
 (use-package swift-mode
-  :mode "\\.swift\\'"
-  ;; :config
-  ;; (add-hook 'swift-mode-hook
-  ;;           (lambda ()
-  ;;             ))
-  )
+  :mode "\\.swift\\'")
 
 (provide 'robenkleene-swift)
 ;; Local Variables:

@@ -3,8 +3,7 @@
 ;;; Code:
 
 (use-package yaml-mode
-  :mode "\\.yaml\\'"
-  )
+  :mode "\\.yaml\\'")
 
 (provide 'robenkleene-yaml-mode)
 ;; Local Variables:

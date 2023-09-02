@@ -3,13 +3,7 @@
 ;;; Code:
 
 (use-package fish-mode
-  :mode "\\.fish\\'"
-  :config
-  (add-hook 'fish-mode-hook
-            (lambda ()
-
-              ))
-  )
+  :mode "\\.fish\\'")
 
 (provide 'robenkleene-fish)
 ;; Local Variables:
