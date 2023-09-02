@@ -3,12 +3,7 @@
 ;;; Code:
 
 (use-package git-commit
-  :mode "COMMIT_EDITMSG$"
-  ;; (add-hook 'git-commit-mode-hook
-  ;;           (lambda ()
-
-  ;;             ))
-  )
+  :mode "COMMIT_EDITMSG$")
 
 (provide 'robenkleene-git-commit)
 ;; Local Variables:
