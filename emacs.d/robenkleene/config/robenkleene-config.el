@@ -24,16 +24,16 @@
 (setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
 
 ;; Auto-Save
-;; Automatically save buffers every second
 ;; Disables auto-saving altogether
-(setq auto-save-default nil)
+;; (setq auto-save-default nil)
 ;; Save to the original filename, instead of a separate auto-save file
-(auto-save-visited-mode 1)
-(setq auto-save-visited-interval 1)
+;; (auto-save-visited-mode 1)
+;; Automatically save every second
+;; (setq auto-save-visited-interval 1)
 ;; This doesn't work for some reason
-(add-function :after after-focus-change-function
-              'rk/save-buffer-if-visiting-file)
-;; Just look at the modeline instead
+;; (add-function :after after-focus-change-function
+;;               'rk/save-buffer-if-visiting-file)
+;; Disable this, just look at the modeline instead
 ;; (add-hook 'after-save-hook (lambda () (message "Saved")))
 
 ;; Re-enabling backups after losing data in a crash
