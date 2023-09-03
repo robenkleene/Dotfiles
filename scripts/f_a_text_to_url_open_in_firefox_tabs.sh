@@ -3,7 +3,7 @@
 set -euo pipefail
 
 input=$(cat)
-url=$(echo "$input" | ~/.bin/f_text_to_url)
+url=$(echo "$input" | ~/.bin/f_txt_to_url)
 while IFS= read -r line; do
     /Applications/Firefox.app/Contents/MacOS/firefox --new-tab "$line"
 done <<< "$urls"
