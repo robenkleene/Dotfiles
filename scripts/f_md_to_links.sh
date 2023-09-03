@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-grep --only-matching "(?:__|[*#])|\[(.*?)\]\(.*?\)"
+grep --only-matching "\[.*\](.*)"
