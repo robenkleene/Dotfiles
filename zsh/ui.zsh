@@ -50,8 +50,11 @@ PS1+='%F{cyan}%20<...<%~%<< '
 # Jobs
 PS1+='%F{yellow}%(1j.&%j .)'
 # Exit status
-# Ignore exit status `146` because it's sent every time a job is backgrounded
-PS1+='%F{red}%(146?..%(?..%?? ))'
+# Ignore exit statuses `146` and `148` because it's they're sent every time a
+# job is backgrounded.
+# `146` on macOS
+# `148` on Linux
+PS1+='%F{red}%(146?..%(148?..%(?..%?? )))'
 PS1+='%f%# '
 
 # Right prompt
