@@ -83,6 +83,9 @@ let g:netrw_sort_options = "i"
 " Faster `netrw` but clibpoard might get clobbered
 " This doesn't seem to make a difference
 " let g:netrw_clipboard = 0
+" Don't automatically enter directories when clicking them (instead just move
+" the cursor)
+let g:netrw_mousemaps = 0
 
 set cursorline
 " Highlight just the line number
