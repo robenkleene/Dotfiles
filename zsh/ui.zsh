@@ -54,7 +54,8 @@ PS1+='%F{yellow}%(1j.&%j .)'
 # job is backgrounded.
 # `146` on macOS
 # `148` on Linux
-PS1+='%F{red}%(146?..%(148?..%(?..%?? )))'
+# PS1+='%F{red}%(146?..%(148?..%(?..%?? )))'
+PS1+='%F{red}%(?..%?? )'
 PS1+='%f%# '
 
 # Right prompt
