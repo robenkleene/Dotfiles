@@ -32,6 +32,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 " Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
 Plug 'vim-scripts/vis', { 'on': 'B' }
+" More reliable open browser
+Plug 'tyru/open-browser.vim'
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-open)
+vmap gx <Plug>(openbrowser-open)
 " Theme
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
