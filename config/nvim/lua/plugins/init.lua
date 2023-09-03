@@ -46,6 +46,18 @@ return {
   },
   { 'samjwill/nvim-unception', },
   { 'bogado/file-line', },
+  {
+    -- More reliable open browser
+    "tyru/open-browser.vim",
+    keys = { "gx" },
+    config = function()
+        vim.cmd([[
+        let g:netrw_nogx = 1
+        nmap gx <Plug>(openbrowser-open)
+        vmap gx <Plug>(openbrowser-open)
+        ]])
+    end
+  },
   -- Themes
   -- {
   --   "catppuccin/nvim",
