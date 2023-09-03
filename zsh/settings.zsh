@@ -35,6 +35,10 @@ SAVEHIST=10000
 # Don't save commands starting with a space to history
 setopt HIST_IGNORE_SPACE
 
+# Remove `|` from `ZLE_REMOVE_SUFFIX_CHARS`, without this setting, doing
+# `./<tab-complete-command> |` removes the space before the pipe, which is odd
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
+
 # By default `zsh` appends to history on exit, and reads it on startup
 # Append to history immediately after a command is run
 # `inc_append_history_time` appends after the command finishes running
