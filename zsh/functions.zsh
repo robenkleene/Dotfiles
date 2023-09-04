@@ -77,20 +77,6 @@ ssh_tmux_restore_start() {
   tmux_session_auto_restore
 }
 
-git_cd() {
-  cd "$(git rev-parse --show-toplevel)" || return
-  if [[ -n "$1" ]]; then
-    cd "$1"
-  fi
-}
-
-hg_cd() {
-  cd "$(hg root)" || return
-  if [[ -n "$1" ]]; then
-    cd "$1"
-  fi
-}
-
 # Accepts one history line number as argument.
 # Use `dc -1` to remove the last line.
 # The naming convention `dc` is probably based on `fc` which is the underlying
