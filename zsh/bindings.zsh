@@ -46,21 +46,29 @@ _system_yank() {
 }
 zle -N _system_yank
 
-# Reference
-# BackSpace  "${terminfo[kbs]}"
-# Home       "${terminfo[khome]}"
-# End        "${terminfo[kend]}"
-# Insert     "${terminfo[kich1]}"
-# Delete     "${terminfo[kdch1]}"
-# Up         "${terminfo[kcuu1]}"
-# Down       "${terminfo[kcud1]}"
-# Left       "${terminfo[kcub1]}"
-# Right      "${terminfo[kcuf1]}"
-# PageUp     "${terminfo[kpp]}"
-# PageDown   "${terminfo[knp]}"
+# This should already be defined
+# typeset -A key
+# key=(
+#     BackSpace  "${terminfo[kbs]}"
+#     Home       "${terminfo[khome]}"
+#     End        "${terminfo[kend]}"
+#     Insert     "${terminfo[kich1]}"
+#     Delete     "${terminfo[kdch1]}"
+#     Up         "${terminfo[kcuu1]}"
+#     Down       "${terminfo[kcud1]}"
+#     Left       "${terminfo[kcub1]}"
+#     Right      "${terminfo[kcuf1]}"
+#     PageUp     "${terminfo[kpp]}"
+#     PageDown   "${terminfo[knp]}"
+# )
 
 # `⌥⌫` to delete previous word
-bindkey -e "${terminfo[kdch1]}" _bash_backward_kill_word
+bindkey -e "^[${key[BackSpace]}" _bash_backward_kill_word
+
+# Fix option forward / backward word, seems to work my default on macOS but
+# not Linux
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
 
 # `zsh` is supposed to have this `_complete_help` binding default, but for some
 # reason it's missing
@@ -72,5 +80,5 @@ bindkey -e '^U' backward-kill-line
 
 # Search history based on first word
 # This is more consistent with `vim`
-bindkey -e "${terminfo[kcuu1]}" up-line-or-search
-bindkey -e "${terminfo[kcud1]}" down-line-or-search 
+bindkey -e "${key[Up]}" up-line-or-search
+bindkey -e "${key[Down]}" down-line-or-search 
