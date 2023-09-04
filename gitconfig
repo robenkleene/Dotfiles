@@ -18,6 +18,7 @@
 [mergetool]
 	prompt = false
 [alias]
+	root = rev-parse --show-toplevel
 	statustool = !~/.bin/git_status_fzf
 	logtool = !~/.bin/git_log_fzf
 	st = statustool
