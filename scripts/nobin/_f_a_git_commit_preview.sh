@@ -16,5 +16,5 @@ fi
 
 IFS=$'\n'
 for hash in $hashes; do
-  git show --color=always "$hash"${separator}"${1}"
+  eval git show --color=always "$hash"${separator}"${1}"
 done
