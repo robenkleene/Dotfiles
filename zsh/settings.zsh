@@ -73,6 +73,11 @@ compinit -C
 # Automatically select the first option
 # Don't enable this because it makes it difficult to narrow in on a choice
 # setopt menucomplete
+# Show the menu on the first tab, instead of only completing the ambiguous
+# portion
+# This makes tab completion often take one less tab, because it becomes just
+# two tabs to select the first match if ambiguous, instead of three tabs.
+setopt nolistambiguous
 # Use a menu when expanding globs
 # Can't figure out how to make this work with recursive globs
 # setopt globcomplete
