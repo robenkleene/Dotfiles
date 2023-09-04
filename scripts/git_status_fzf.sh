@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+# `git` aliases (in `gitconfig`) area always run from the `git` root, and `GIT_PREFIX` contains the path the alias was run from
+if [[ -d "${GIT_PREFIX:-}" ]]; then
+  cd "${GIT_PREFIX:-}"
+fi
+
 git -c color.status=always status --short | \
   fzf --nth 2.. --no-sort --ansi --reverse --multi \
   --preview "~/.bin/nobin/_f_a_git_file_diff.sh {}" \

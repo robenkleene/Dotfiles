@@ -3,6 +3,12 @@
 # Allow unbound variable for $1
 set -eo pipefail
 
+# `git` aliases (in `gitconfig`) area always run from the `git` root, and
+# `GIT_PREFIX` contains the path the alias was run from
+if [[ -d "${GIT_PREFIX:-}" ]]; then
+  cd "${GIT_PREFIX:-}"
+fi
+
 separator=" ."
 if [[ -n "${1-}" ]]; then
   separator=" -- "
