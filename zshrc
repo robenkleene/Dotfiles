@@ -22,15 +22,20 @@ source ~/.zsh/bindings.zsh
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
 # before completions are generated
 source ~/.zsh/installs.zsh
+
+source ~/.zsh/settings.zsh
+
+# Installs
+# Installs after `settings` so completion isn't overwritten
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
 source ~/.zsh/nnn.zsh
 
-source ~/.zsh/settings.zsh
 # Functions before aliases so functions don't use aliases
 source ~/.zsh/functions.zsh
+# Aliases defined after functions so functions don't use aliases
+source ~/.zsh/alias.zsh
+
 # Interactive
 source ~/.zsh/ui.zsh
 
-# Aliases defined after functions so functions don't use aliases
-source ~/.zsh/alias.zsh

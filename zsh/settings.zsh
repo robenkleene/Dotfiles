@@ -9,8 +9,6 @@ setopt extendedglob
 setopt nocaseglob
 # `cd` just by typing name
 setopt auto_cd
-# This is supposed to allow aliases to work in `vim` but it doesn't work
-# It's also a bit dangeruous, because it enables aliases in `zsh` scripts# setopt aliases
 
 # Help
 autoload -Uz run-help
@@ -60,8 +58,8 @@ setopt nolistbeep
 # Just don't beep period
 # setopt nobeep
 
-# Renaming function
-autoload zmv
+# Add renaming function
+# autoload zmv
 
 # Completion
 # Enable Completion
