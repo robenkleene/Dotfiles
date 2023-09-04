@@ -63,7 +63,10 @@ zle -N _system_yank
 # )
 
 # `⌥⌫` to delete previous word
+# This works on Linux
 bindkey -e "^[${key[BackSpace]}" _bash_backward_kill_word
+# This is the only thing that seems to work on macOS
+bindkey -e "^[^?" _bash_backward_kill_word
 
 # Fix option forward / backward word, seems to work my default on macOS but
 # not Linux
