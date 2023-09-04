@@ -46,29 +46,31 @@ _system_yank() {
 }
 zle -N _system_yank
 
-# `⌥⌫` to delete previous word
-bindkey -e "^[^?" _bash_backward_kill_word
-bindkey -e "^[^H" _bash_backward_kill_word
+# Reference
+# BackSpace  "${terminfo[kbs]}"
+# Home       "${terminfo[khome]}"
+# End        "${terminfo[kend]}"
+# Insert     "${terminfo[kich1]}"
+# Delete     "${terminfo[kdch1]}"
+# Up         "${terminfo[kcuu1]}"
+# Down       "${terminfo[kcud1]}"
+# Left       "${terminfo[kcub1]}"
+# Right      "${terminfo[kcuf1]}"
+# PageUp     "${terminfo[kpp]}"
+# PageDown   "${terminfo[knp]}"
 
-# `_complete_help` is supposed have this default binding, but for some reason
-# it's missing
+# `⌥⌫` to delete previous word
+bindkey -e "${terminfo[kdch1]}" _bash_backward_kill_word
+
+# `zsh` is supposed to have this `_complete_help` binding default, but for some
+# reason it's missing
 bindkey -e "^Xh" _complete_help
 bindkey -e '^V' _system_yank
 bindkey -e '^X^X' _system_kill_line
 # By default, `^U` kills the whole line, rather than backwards
 bindkey -e '^U' backward-kill-line
 
-# History
-# Don't think I use this enough to warrant adding it?
-# Use the text already entered at prompt when using `<up>` / `<down>` to
-# navigate history
-# bindkey -e "^[[A" history-beginning-search-backward
-# bindkey -e "^[[B" history-beginning-search-forward
-# This is better because it leaves the cursor and the end of the line, which is
-# the normal behavior for history
-# This also makes it more consistebt with Vim
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+# Search history based on first word
+# This is more consistent with `vim`
+bindkey -e "${terminfo[kcuu1]}" up-line-or-search
+bindkey -e "${terminfo[kcud1]}" down-line-or-search 
