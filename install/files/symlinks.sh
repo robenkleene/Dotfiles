@@ -57,5 +57,10 @@ fi
 # Do this here so `./link_user_brew.sh` can create `/usr/local/bin`
 if [[ "$(uname)" = "Linux" ]]; then
   # `lldb-6.0` is installed by default on Ubuntu
-  sudo ln -s "/usr/bin/lldb-6.0" "/usr/local/bin/lldb"
+  if [[ ! -e "/usr/local/bin/lldb" ]]; then
+    sudo ln -s "/usr/bin/lldb-6.0" "/usr/local/bin/lldb"
+  fi
+  if [[ ! -e "/usr/local/bin/clangd" ]]; then
+    sudo ln -s "/usr/bin/clangd-10" "/usr/local/bin/clangd"
+  fi
 fi
