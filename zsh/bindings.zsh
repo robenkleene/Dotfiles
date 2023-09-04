@@ -66,8 +66,9 @@ bindkey -e '^U' backward-kill-line
 # bindkey -e "^[[B" history-beginning-search-forward
 # This is better because it leaves the cursor and the end of the line, which is
 # the normal behavior for history
-# autoload -U history-search-end
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^[[A" history-beginning-search-backward-end
-# bindkey "^[[B" history-beginning-search-forward-end
+# This also makes it more consistebt with Vim
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
