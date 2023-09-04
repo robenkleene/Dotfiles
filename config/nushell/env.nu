@@ -82,4 +82,3 @@ let-env NU_LIB_DIRS = [
     '~/.nu_local'
     ($nu.config-path | path dirname | path join 'source')
 ]
-
