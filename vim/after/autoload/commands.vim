@@ -73,5 +73,8 @@ endfunction
 
 function! commands#Z(terms) abort
   let l:result = system('~/.bin/z_get '. a:terms)
+  if v:shell_error != 0
+      return
+  endif
   exe "Explore ".l:result
 endfunction
