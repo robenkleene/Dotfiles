@@ -77,5 +77,5 @@ function! commands#Z(terms) abort
       return
   endif
   exe "Explore ".l:result
-  cd "%"
+  cd %
 endfunction
