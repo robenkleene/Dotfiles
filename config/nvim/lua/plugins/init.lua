@@ -19,6 +19,7 @@ return {
     keys = { "gc", { "gc", mode = "v" } },
   },
   { 'tpope/vim-vinegar' },
+  { 'tpope/vim-rsi' },
   -- This doesn't handle visual blocks correctly
   -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   { 'tpope/vim-surround',
