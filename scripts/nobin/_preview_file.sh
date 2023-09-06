@@ -5,7 +5,8 @@ set -euo pipefail
 bat_param=" --style=plain"
 verbose="false"
 if [[ "$#" -gt 1 ]]; then
-  bat_param=""
+  # Never paginate for multiple files so they can all be dumped to the terminal
+  bat_param=" --paging=never"
   verbose="true"
 fi
 
