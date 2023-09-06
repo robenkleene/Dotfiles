@@ -46,7 +46,7 @@
 (menu-bar-mode -1)
 
 ;; Disable cursor blinking
-(setq visible-cursor nil)
+;; (setq visible-cursor nil)
 
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))

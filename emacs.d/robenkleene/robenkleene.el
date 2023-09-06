@@ -72,7 +72,6 @@
 (require 'robenkleene-orderless)
 (require 'robenkleene-consult)
 (require 'robenkleene-marginalia)
-(require 'robenkleene-embark)
 
 ;; Eshell
 (require 'robenkleene-eshell-syntax-highlighting)
