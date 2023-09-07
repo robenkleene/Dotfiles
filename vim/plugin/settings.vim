@@ -15,6 +15,9 @@ set showcmd
 " Indent wrapped lines
 set breakindent
 
+" Allow yanks to be repeated with `.`
+set cpoptions+=y
+
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
