@@ -9,3 +9,6 @@ modules=(
 'pip-autoremove'
 'rope'
 )
+if [[ "$(uname)" = "Linux" ]]; then
+  modules+=('qmk')
+fi
