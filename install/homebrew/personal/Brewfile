@@ -69,12 +69,6 @@ cask 'alacritty'
 brew 'ffmpeg'
 brew 'imagemagick'
 
-# Ergodox & Planck
-brew 'qmk/qmk/qmk'
-tap 'osx-cross/avr'
-tap 'osx-cross/arm'
-tap 'qmk/qmk'
-
 # Games
 brew 'nethack'
 
