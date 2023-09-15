@@ -8,7 +8,7 @@ vim.g.unception_enable_flavor_text = false
 -- This makes in insert mode on edit
 vim.g.unception_delete_replaced_buffer = true
 
-vim.cmd([[command! Ei :cd ~/Developer/Dotfiles/config/nvim | :edit init.lua ]])
+vim.cmd([[command! Ei :edit ~/Developer/Dotfiles/config/nvim/init.lua ]])
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
