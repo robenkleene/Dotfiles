@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-~/.bin/egit -p && ~/.bin/sgitt_auto
+~/.bin/egit -pn && ~/.bin/sgitt_auto
