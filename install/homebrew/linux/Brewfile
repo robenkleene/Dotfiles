@@ -43,6 +43,8 @@ brew 'wasm-pack'
 brew 'rust-analyzer'
 # C
 # brew 'valgrind'
+# C++
+brew 'cmake'
 # json
 brew 'jq'
 brew 'lua-language-server'
