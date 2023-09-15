@@ -1,3 +1,7 @@
 tags
 \#*\#
 *.arblockbk
+
+# Vim
+# Default filename for session files
+Session.vim

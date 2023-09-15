@@ -3,6 +3,8 @@
 
 # Vim Temporary Files
 .*.sw?
+# Default filename for session files
+Session.vim
 
 # Build Logs
 build.log
