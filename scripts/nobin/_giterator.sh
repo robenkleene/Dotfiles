@@ -75,7 +75,13 @@ do_git_process() {
   if $next; then
     if ! $nothing_to_commit; then
       pwd
-      exit 0
+      if [ "$push" = "true" ]; then
+        # Give a non-zero exit status so push scripts can fail
+        exit 1
+      else
+        # Give a zero exit status scripts that cd can continue
+        exit 0
+      fi
     else
       return 0
     fi
