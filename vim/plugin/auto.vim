@@ -1,15 +1,3 @@
-augroup auto_save_session
-  autocmd!
-  autocmd VimLeave * 
-  \ if expand('%:p') !~ '^/tmp'
-  \&& &filetype !~ 'gitcommit'
-  \&& &filetype !~ 'hgcommit'
-  \&& &filetype !~ 'pullrequest'
-  \&& &filetype !~ 'gitrebase'
-  \|    silent! mksession! ~/.vim/vim_auto_session
-  \|  endif
-augroup END
-
 " Exclude buffers from restoring view settings
 augroup save_view
   autocmd!
