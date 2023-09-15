@@ -28,18 +28,6 @@ function! commands#YankGrep()
   echo getreg('@')
 endfunction
 
-function! commands#YankPath()
-  let @@ = expand("%:p")
-  call system('~/.bin/safecopy', @@)
-  echo getreg('@')
-endfunction
-
-function! commands#YankFilename()
-  let @@ = expand("%")
-  call system('~/.bin/safecopy', @@)
-  echo getreg('@')
-endfunction
-
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ \ --vimgrep\ --no-heading
