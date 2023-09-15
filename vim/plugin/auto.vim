@@ -37,11 +37,6 @@ augroup save_view
   \|  endif
 augroup END
 
-augroup quickfix_height
-  autocmd!
-  autocmd FileType qf call auto#AdjustWindowHeight(3, 20)
-augroup END
-
 augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
