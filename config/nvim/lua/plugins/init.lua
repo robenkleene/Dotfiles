@@ -25,10 +25,6 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
-  {
-    'tpope/vim-obsession',
-    cmd = "Obsession"
-  },
   -- Opening files from oil can cause `ftplugin` (e.g., `ftplugin/markdown.vim`) to not fire, as a workaround just use the fuzzy finder instead
   -- {
   --   'stevearc/oil.nvim',
