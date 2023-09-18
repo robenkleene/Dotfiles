@@ -8,6 +8,7 @@ modules=(
 'vim-vint'
 'pip-autoremove'
 'rope'
+'visidata'
 )
 if [[ "$(uname)" = "Linux" ]]; then
   modules+=('qmk')
