@@ -4,15 +4,16 @@
 
 (use-package consult
   :bind (
+         ;; Use `consult-buffer' by default
          ("C-x b" . consult-buffer)
          ("C-c r" . consult-recent-file)
          ("C-c q" . consult-compile-error)
          ("C-c g" . consult-ripgrep)
-         ("C-c z" . rk/consult-z)
-         ;; ("M-z" . rk/consult-z)
          ("C-c f" . rk/consult-fd)
-         ("C-c l" . consult-line)
-         ("C-c i" . consult-imenu)
+         ;; Use `consult-line' by default
+         ("M-s o" . consult-line)
+         ;; Use `consult-imenu' by default
+         ("M-g i" . consult-imenu)
          )
   :commands
   (
