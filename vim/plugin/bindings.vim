@@ -2,3 +2,9 @@ nnoremap Y yg_
 
 nnoremap <localleader>yg :YankGrep<CR>
 nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
+
+" Use visual line unless there's a <vcount>
+" This breaks entering snippets, e.g., if you start a snippet, and are at the
+" first `$1`, if you type `j` it will mess up instead of entering `j`
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
