@@ -93,3 +93,7 @@ let g:netrw_mousemaps = 0
 set cursorline
 " Highlight just the line number
 " set cursorlineopt=number
+
+" Allow moving past the first character on the line, this makes editing prose
+" easier
+set whichwrap+=h,l
