@@ -1,28 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   -- `VeryLazy` or `ft` disrupts connecting to existing LSP
-  -- event = "VeryLazy",
-  -- Set the same for cmp, treesitter, lsp
-  -- ft = {
-  --   "c",
-  --   "cpp",
-  --   "css",
-  --   "html",
-  --   "javascript",
-  --   "json",
-  --   "jsx",
-  --   "kotlin",
-  --   "lua",
-  --   "markdown",
-  --   "python",
-  --   "ruby",
-  --   "rust",
-  --   "scss",
-  --   "sh",
-  --   "typescript",
-  --   "toml",
-  --   "vim",
-  -- },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),

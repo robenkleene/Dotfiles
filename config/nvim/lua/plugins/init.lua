@@ -25,16 +25,6 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
-  -- Opening files from oil can cause `ftplugin` (e.g., `ftplugin/markdown.vim`) to not fire, as a workaround just use the fuzzy finder instead
-  -- {
-  --   'stevearc/oil.nvim',
-  --   config = function()
-  --     require("oil").setup()
-  --     vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-  --   end
-  -- },
-  -- Do I really need this?
-  -- { "NvChad/nvim-colorizer.lua", config = true, event = "VeryLazy" },
   {
     -- Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
     'vim-scripts/vis',
@@ -45,8 +35,6 @@ return {
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
   { 'samjwill/nvim-unception', },
-  -- This breaks session restoration?
-  -- { 'bogado/file-line', },
   {
     -- More reliable open browser
     "tyru/open-browser.vim",
