@@ -4,15 +4,6 @@
 
 (use-package org
   :mode ("\\.org\\'" . org-mode)
-  :init
-  (setq org-directory "~/Documents/Text/Notes/Todo")
-  (setq org-default-notes-file (concat org-directory "/todo.org"))
-  (setq org-agenda-files (list org-directory))
-  (defun org ()
-    (interactive)
-    "Switch to `org-default-notes-file' file."
-    (rk/safe-find-file org-default-notes-file)
-    )
   :config
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
