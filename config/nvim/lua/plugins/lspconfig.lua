@@ -174,5 +174,9 @@ return {
       on_attach = on_attach,
     }
 
+    require 'lspconfig'.marksman.setup {
+      on_attach = on_attach,
+    }
+
   end
 }
