@@ -47,6 +47,8 @@ brew 'jq'
 brew 'lua-language-server'
 # rust
 brew 'rust-analyzer'
+# Markdown
+brew 'marksman'
 
 # Special
 brew 'pandoc'

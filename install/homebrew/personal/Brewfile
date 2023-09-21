@@ -44,6 +44,8 @@ brew 'wasm-pack'
 brew 'rust-analyzer'
 # lua
 brew 'lua-language-server'
+# Markdown
+brew 'marksman'
 
 # Special
 brew 'pandoc'

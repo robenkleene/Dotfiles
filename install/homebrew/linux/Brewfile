@@ -52,6 +52,8 @@ brew 'lua-language-server'
 # Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
 # Removed to save disk space
 # brew 'llvm'
+# Markdown
+brew 'marksman'
 
 # Games
 brew 'nethack'
