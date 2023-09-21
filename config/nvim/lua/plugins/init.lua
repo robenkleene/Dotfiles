@@ -42,10 +42,11 @@ return {
   },
   {
     'nvim-treesitter/playground',
-    cmd = 'TSPlaygroundToggle'
+    cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
   { 'samjwill/nvim-unception', },
-  { 'bogado/file-line', },
+  -- This breaks session restoration?
+  -- { 'bogado/file-line', },
   {
     -- More reliable open browser
     "tyru/open-browser.vim",
