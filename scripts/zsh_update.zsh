@@ -21,5 +21,5 @@ if type rustup > /dev/null; then
 fi
 
 # Re-generate completion cache
-autoload -Uz compinit
-compinit
+# Must be run interactively because completions are only loaded that way
+zsh -i -c "autoload -Uz compinit && compinit"
