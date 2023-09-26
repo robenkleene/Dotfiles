@@ -14,6 +14,7 @@ if [[ $TERM == "dumb" ]]; then
 fi
 
 # Setup
+# Source variables first because it sets fpath
 source ~/.zsh/variables.zsh
 # Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
 source ~/.zsh/bindings.zsh
@@ -26,10 +27,10 @@ source ~/.zsh/installs.zsh
 source ~/.zsh/settings.zsh
 
 # Installs
-# Installs after `settings` so completion isn't overwritten
+# Source installs after `settings` so completion isn't overwritten
+source ~/.zsh/nnn.zsh
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
-source ~/.zsh/nnn.zsh
 
 # Functions before aliases so functions don't use aliases
 source ~/.zsh/functions.zsh
