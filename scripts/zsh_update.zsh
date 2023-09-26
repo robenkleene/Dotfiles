@@ -8,6 +8,12 @@ zcompile .zshrc
 cd ~/.zsh
 for f in *.zsh; do zcompile "$f"; done
 
+# Installs
+
+if type zoxide > /dev/null; then
+  zoxide init zsh > ~/.zsh/zoxide.zsh
+fi
+
 # Completion
 
 if [[ ! -e ~/.zfunc ]]; then
