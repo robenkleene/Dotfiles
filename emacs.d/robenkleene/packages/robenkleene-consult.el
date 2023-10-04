@@ -5,14 +5,17 @@
 (use-package consult
   :bind (
          ;; Use `consult-buffer' by default
-         ("C-x b" . consult-buffer)
-         ("C-c r" . consult-recent-file)
-         ("C-c q" . consult-compile-error)
+         ;; Just use default `C-x b'
+         ;; ("C-x b" . consult-buffer)
+         ;; Just use default `C-x r'
+         ;; ("C-x r" . consult-recent-file)
+         ;; ("C-c q" . consult-compile-error)
          ("C-c g" . consult-ripgrep)
          ("C-c f" . rk/consult-fd)
-         ;; Use `consult-line' by default
+         ;; Use `consult-line' by default which fuzzy matches lines, and jumps
+         ;; to matches
          ("M-s o" . consult-line)
-         ;; Use `consult-imenu' by default
+         ;; Use `consult-imenu' by default which automatically jumps to matches
          ("M-g i" . consult-imenu)
          )
   :commands
