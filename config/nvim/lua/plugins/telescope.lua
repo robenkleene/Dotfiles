@@ -9,16 +9,14 @@ return {
     config = true,
   },
   keys = {
-    { '<leader>b' },
-    { '<leader>l' },
+    -- { '<leader>b' },
+    -- { '<leader>l' },
     { '<leader>f' },
-    -- { '<leader>F' },
     { '<leader>g' },
-    -- { '<leader>S' },
     { '<leader>i' },
     { '<leader>I' },
-    { '<leader>r' },
-    { '<leader>m' },
+    -- { '<leader>r' },
+    -- { '<leader>m' },
     { '<leader>d' },
   },
   config = function()
@@ -45,18 +43,16 @@ return {
         lsp_dynamic_workspace_symbols = { theme = "dropdown" }
       }
     }
-    vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
-    vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
+    -- vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
+    -- vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
     -- vim.keymap.set('n', '<leader>f', '<cmd>lua require("telescope.builtin").find_files({cwd = "%:h"})<CR>')
-    -- vim.keymap.set('n', '<leader>F', require('telescope.builtin').find_files)
     -- vim.keymap.set('n', '<leader>s', '<cmd>lua require("telescope.builtin").live_grep({cwd = "%:h"})<CR>')
-    -- vim.keymap.set('n', '<leader>S', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
     vim.keymap.set('n', '<leader>i', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-    vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    vim.keymap.set('n', '<leader>m', require('telescope.builtin').marks)
+    -- vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
+    -- vim.keymap.set('n', '<leader>m', require('telescope.builtin').marks)
     vim.keymap.set('n', '<leader>d', require('telescope.builtin').diagnostics)
   end
 }
