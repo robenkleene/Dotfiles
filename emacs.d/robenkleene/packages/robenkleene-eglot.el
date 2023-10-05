@@ -12,6 +12,11 @@
            rust-mode
            sh-mode
            typescript-mode
+           markdown-mode
+           python-mode
+           json-mode
+           html-mode
+           css-mode
            ) . eglot-ensure)
          )
   :bind (:map eglot-mode-map
@@ -39,6 +44,11 @@
   (add-to-list 'eglot-server-programs '(ruby-mode "solargraph" "socket" "--port" :autoport))
   (add-to-list 'eglot-server-programs '(rust-mode "rust-analyzer"))
   (add-to-list 'eglot-server-programs '(shell-script-mode "bash-language-server"))
+  (add-to-list 'eglot-server-programs '(python-mode "pyright"))
+  (add-to-list 'eglot-server-programs '(json-mode "vscode-json-language-server"))
+  (add-to-list 'eglot-server-programs '(html-mode "vscode-html-language-server"))
+  (add-to-list 'eglot-server-programs '(css-mode "vscode-css-language-server"))
+  (add-to-list 'eglot-server-programs '(markdown-mode "marksman"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
