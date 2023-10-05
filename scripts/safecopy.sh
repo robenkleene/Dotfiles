@@ -2,18 +2,21 @@
 
 set -euo pipefail
 
+# Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
+# variable is recorded when the emacs server was started
 if command -v pbcopy &> /dev/null; then
-  if [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
+  if [[ -n "${INSIDE_EMACS:-}" ]]; then
+    { sed s'/⏎$//' | sed '/^\^C$/d' | tee >(pbcopy) | tmux loadb - ; } || sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
+  elif [[ -n "${TMUX:-}" ]]; then
     # Always also copy to the tmux clipboard so that pasting inside tmux with
     # `paste-buffer` works
     sed s'/⏎$//' | sed '/^\^C$/d' | tee >(pbcopy) | tmux loadb -
   else
     sed s'/⏎$//' | sed '/^\^C$/d' | pbcopy
   fi
-elif [ -n "${TMUX:-}" ] && [ -z "${INSIDE_EMACS:-}" ]; then
-  # Never use `TMUX` `INSIDE_EMACS` because the `TMUX` session may no longer be
-  # running Don't do anything fancy with trimming new lines, otherwise that
-  # makes it hard to append multiple selections that contain trailing new lines
+elif [[ -n "${INSIDE_EMACS:-}" ]]; then
+  { sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb - ; } || sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
+elif [[ -n "${TMUX:-}" ]]; then
   sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb -
 else
   sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
