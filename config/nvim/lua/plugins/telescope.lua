@@ -35,7 +35,7 @@ return {
         }
       },
       pickers = {
-        find_files = { theme = "dropdown", additional_args = { "--follow" } },
+        find_files = { theme = "dropdown", follow = true },
         buffers = { theme = "dropdown" },
         current_buffer_fuzzy_find = { theme = "dropdown" },
         live_grep = { theme = "dropdown", additional_args = { "--follow" } },
