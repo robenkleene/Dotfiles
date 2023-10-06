@@ -35,10 +35,10 @@ return {
         }
       },
       pickers = {
-        find_files = { theme = "dropdown", },
+        find_files = { theme = "dropdown", additional_args = { "--follow" } },
         buffers = { theme = "dropdown" },
         current_buffer_fuzzy_find = { theme = "dropdown" },
-        live_grep = { theme = "dropdown" },
+        live_grep = { theme = "dropdown", additional_args = { "--follow" } },
         lsp_document_symbols = { theme = "dropdown" },
         lsp_dynamic_workspace_symbols = { theme = "dropdown" }
       }
