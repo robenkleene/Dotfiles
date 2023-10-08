@@ -53,7 +53,9 @@ brew 'lua-language-server'
 # Removed to save disk space
 # brew 'llvm'
 # Markdown
-brew 'marksman'
+# On Linux this gets:
+# error while loading shared libraries: libgcc_s.so.1: cannot open shared object file: No such file or directory
+# brew 'marksman'
 
 # Games
 brew 'nethack'
