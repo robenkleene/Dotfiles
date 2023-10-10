@@ -22,7 +22,8 @@ set cpoptions+=y
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
 set ignorecase
-set smartcase
+" Just use `\c` to make search case insensitive
+" set smartcase
 
 " Indent
 " When opening lines, make it the same indent level as the current line
