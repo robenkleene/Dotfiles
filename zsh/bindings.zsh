@@ -84,8 +84,19 @@ bindkey -e '^U' backward-kill-line
 # Search history based on first word
 # This is more consistent with `vim`
 # This works for Linux
-bindkey -e "${key[Up]}" up-line-or-search
-bindkey -e "${key[Down]}" down-line-or-search 
+# bindkey -e "${key[Up]}" up-line-or-search
+# bindkey -e "${key[Down]}" down-line-or-search 
+# # This is the only thing that seems to work on macOS
+# bindkey -e "^[[A" up-line-or-search
+# bindkey -e "^[[B" down-line-or-search
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey -e "${key[Up]}" up-line-or-beginning-search
+bindkey -e "${key[Down]}" down-line-or-beginning-search 
 # This is the only thing that seems to work on macOS
-bindkey -e "^[[A" up-line-or-search
-bindkey -e "^[[B" down-line-or-search
+bindkey -e "^[[A" up-line-or-beginning-search
+bindkey -e "^[[B" down-line-or-beginning-search
