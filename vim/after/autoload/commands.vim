@@ -50,7 +50,6 @@ function! commands#Rg(terms) abort
 endfunction
 
 function! commands#Fd(terms) abort
-  " echom "silent args `fd " . escape(a:terms, '%#') . "`"
   execute "silent args `fd " . escape(a:terms, '%#') . "`"
   if !has('nvim')
     redraw!
