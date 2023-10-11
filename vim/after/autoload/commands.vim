@@ -50,10 +50,11 @@ function! commands#Rg(terms) abort
 endfunction
 
 function! commands#Fd(terms) abort
-  execute "silent args `fd " . escape(a:terms, '%#') . "`"
-  if !has('nvim')
-    redraw!
+  let l:result = system('fd ' . escape(a:terms, '%#') . ' | tr "\n" " "')
+  if v:shell_error != 0
+      return
   endif
+  execute "args ".l:result
 endfunction
 
 function! commands#GrepBufferFromClipboard() abort
@@ -71,6 +72,6 @@ function! commands#Z(terms) abort
   if v:shell_error != 0
       return
   endif
-  exe "Explore ".l:result
+  execute "Explore ".l:result
   cd %
 endfunction
