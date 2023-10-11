@@ -49,6 +49,14 @@ function! commands#Rg(terms) abort
   endif
 endfunction
 
+function! commands#Fd(terms) abort
+  " echom "silent args `fd " . escape(a:terms, '%#') . "`"
+  execute "silent args `fd " . escape(a:terms, '%#') . "`"
+  if !has('nvim')
+    redraw!
+  endif
+endfunction
+
 function! commands#GrepBufferFromClipboard() abort
   let l:original_grepprg = &grepprg
   set grepprg=~/.bin/safepaste
