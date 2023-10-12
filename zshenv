@@ -26,5 +26,9 @@ else
   path=(~/.brew/bin ~/.bin $path[@])
 fi
 
-# The `-U` option prevens duplicates when `tmux` starts `zsh` instances
+# The `-U` option prevents duplicates when `tmux` starts `zsh` instances
 export -U PATH
+
+# Allow custom man pages
+export MANPATH=$MANPATH:$HOME/.man
+export -U MANPATH
