@@ -25,6 +25,17 @@ augroup save_view
   \|  endif
 augroup END
 
+augroup auto_save_session
+  autocmd!
+  autocmd VimLeave * 
+  \ if expand('%:p') !~ '^/tmp'
+  \&& &filetype !~ 'gitcommit'
+  \&& &filetype !~ 'pullrequest'
+  \&& &filetype !~ 'gitrebase'
+  \|    silent! mksession! ~/.vim/vim_auto_session
+  \|  endif
+augroup END
+
 augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
