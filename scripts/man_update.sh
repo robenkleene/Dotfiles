@@ -14,14 +14,16 @@ fi
 find -L "$destination_dir" -name "*.9" -type f -exec rm {} +
 
 while IFS= read -r -d '' -u 9; do
-  filename=$(basename -- "$REPLY")
+  source=$REPLY
+  filename=$(basename -- "$source")
   filename="${filename%.*}"
-  if [[ ! "$filename" =~ '-' ]]; then
-    filename="${filename}-overview"
-  fi
+  # Instead just use `man 9 <command>` to access this version
+  # if [[ ! "$filename" =~ '-' ]]; then
+  #   filename="${filename}-overview"
+  # fi
   dest="$destination_dir/$filename".9
   if [[ -e "$dest" ]]; then
-    echo "Warning: Skipping $dest because it already exists" >&2
+    echo "Warning: Skipping $dest because it already exists, using $source" >&2
   fi
   pandoc --standalone -t man "$REPLY" --output "$dest"
 done 9< <( find ~/Documentation -name "*.md" -type f -exec printf '%s\0' {} + )
