@@ -1,6 +1,9 @@
 " Backtick expansion doesn't work with fish
 set shell=zsh
 
+" Enable the `:Man` command
+runtime ftplugin/man.vim
+
 " `I`: Don't show intro message
 set shortmess+=I
 " Hide tildes the tildes below line numbers
