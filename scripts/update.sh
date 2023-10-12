@@ -21,7 +21,7 @@ destination_dir="$HOME/.bin"
 if [ ! -e "$destination_dir" ]; then
   mkdir "$destination_dir"
 elif [ ! -d "$destination_dir" ]; then
-  echo "Destination $2 exist and it's not a directory" >&2
+  echo "Destination $destination_dir exist and it's not a directory" >&2
   exit 1
 fi
 
