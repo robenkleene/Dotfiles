@@ -30,6 +30,9 @@ brew 'gh'
 brew 'mosh', args: ['HEAD']
 brew 'hyperfine'
 
+# Special
+brew 'pandoc'
+
 # Languages
 # JavaScript
 # Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
