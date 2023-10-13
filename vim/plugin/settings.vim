@@ -69,6 +69,8 @@ set expandtab
 set nofoldenable
 " Only complete to longest match in wildmenu
 set wildmode=longest:full,full
+" Use a vertical wildmenu
+" set wildoptions=pum
 " Show column vertical line
 set colorcolumn=80
 " Line breaks only happen on words
