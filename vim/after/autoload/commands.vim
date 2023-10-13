@@ -50,7 +50,7 @@ function! commands#Rg(terms) abort
 endfunction
 
 function! commands#Fd(terms) abort
-  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf "%q "')
+  let l:result = system('fd ' . a:terms . ' -X printf "%s "')
   if v:shell_error != 0
       return
   endif
