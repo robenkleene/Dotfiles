@@ -9,5 +9,5 @@ set -e
 # `tr '.' '-'`: Replace period with hyphens
 
 tr -dc '[:alnum:]\r\n.\-/ ' |
-  tr -s ' ' | tr '[:upper:]' '[:lower:]' |
+  tr -s ' ' | tr '[:upper:]' '[:lower:]' | awk '{$1=$1;print}' |
   tr ' ' '-' | tr '.' '-' | tr '/' '-'
