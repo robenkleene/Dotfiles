@@ -14,7 +14,9 @@ export CLICOLOR=1
 export LESS="less"
 # `--no-init`: Prevent less output from being cleared on exit, e.g., so we can
 # do `Gq` to dump the entire contents to the terminal
-export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
+# `--ignore-case`: Smart case (without this option do `-i` inside `less` to
+# toggle case sensitivity
+export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch"
 # Prevent `npm` scripts from opening browser windows
 # This breaks `gh browse`
 # export BROWSER="none"

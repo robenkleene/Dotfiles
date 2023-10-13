@@ -5,6 +5,8 @@ function fish_sync_variables
 
     # set -U CDPATH . ~
 
+    set -Ux MANPATH "$MANPATH:$HOME/.man"
+
     # Fish
     set -Ux fish_help_browser echo
     # Suppress default greeting
@@ -19,7 +21,8 @@ function fish_sync_variables
     # `incsearch` option instead of Homebrew installed.
     set -Ux PAGER "less"
     # `--no-init`: Don't clear screen when quitting less
-    set -Ux LESS "--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
+    # `--ignore-case`: Smart case
+    set -Ux LESS "--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch"
 
     # Emacs
     # Start the server in the background if it isn't running
