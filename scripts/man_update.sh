@@ -13,8 +13,8 @@ fi
 # Delete all existing
 find -L "$destination_dir" -name "*.9" -type f -exec rm {} +
 
-while IFS= read -r -d '' -u 9; do
-  source=$REPLY
+while IFS= read -r; do
+  source="$REPLY"
   filename=$(basename -- "$source")
   filename="${filename%.*}"
   # Instead just use `man 9 <command>` to access this version
@@ -26,5 +26,4 @@ while IFS= read -r -d '' -u 9; do
     echo "Warning: Skipping $dest because it already exists, using $source" >&2
   fi
   pandoc --standalone -t man "$REPLY" --output "$dest"
-done 9< <( find ~/Documentation -name "*.md" -type f -exec printf '%s\0' {} + )
-
+done < <( find ~/Documentation -type f -name "*.md" -exec awk '/^%/{print FILENAME} {nextfile}' {} + )
