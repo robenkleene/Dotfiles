@@ -50,13 +50,19 @@ function! commands#Rg(terms) abort
 endfunction
 
 function! commands#Fd(terms) abort
-  let l:result = system('fd ' . a:terms . ' -X printf "%s "')
+  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf "%s "')
   if v:shell_error != 0
       return
   endif
   execute "args ".l:result
 endfunction
 
+function! commands#completeMan9(arglead, cmdline, cursorpos) abort
+  let cmd = "basename `fd  ". escape(a:arglead, '%#') . " ~/.man` | sed 's/\.9$//'"
+  return systemlist(cmd)
+endfunction
+
+command! -nargs=1 -complete=customlist,<sid>CompleteFd FD execute 'edit' <f-args>
 function! commands#GrepBufferFromClipboard() abort
   let l:original_grepprg = &grepprg
   set grepprg=~/.bin/safepaste
