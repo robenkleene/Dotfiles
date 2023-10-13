@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+cd "$(dirname "$0")" || exit 1
+
 destination_dir="$HOME/.man/man9"
 if [ ! -e "$destination_dir" ]; then
   mkdir -p "$destination_dir"
@@ -27,4 +29,4 @@ while IFS= read -r; do
     echo "Warning: Skipping $dest because it already exists, using $source" >&2
   fi
   pandoc --standalone --to man --from markdown <({ echo "% ${title}(9) Reference"; cat "$source"; }) --output "$dest"
-done < <( find ~/Documentation -type f -name "*.md" -exec awk '/^%/{print FILENAME} {nextfile}' {} + )
+done < <( find markdown -type f -name "*.md" -exec awk '/^%/{print FILENAME} {nextfile}' {} + )
