@@ -1,5 +1,3 @@
-# `nvim`
-
-## General
+# General
 
 - `:CheckHealth`: Status check

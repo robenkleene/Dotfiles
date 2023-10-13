@@ -1,6 +1,4 @@
-# C Strings
-
-## String Pointers vs. Arrays
+# String Pointers vs. Arrays
 
 C has two ways of storing a string:
 
@@ -36,7 +34,7 @@ But in memory, a string literal is actually stored as an array with with a null 
 
 Some functions in C automatically handle strings, e.g., `printf(p)` will print `abc`. `printf("%s", p);` can also be used to print the entire string.
 
-## Converting `char` to `int`
+# Converting `char` to `int`
 
 Characters are `int` which has a couple of implications.
 

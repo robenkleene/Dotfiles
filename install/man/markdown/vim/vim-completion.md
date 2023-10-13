@@ -1,8 +1,6 @@
-# `vim` Completion
-
 - `<C-e>`: Revert completion (without menu visible)
 
-## Menu
+# Menu
 
 When the menu is visible:
 
@@ -10,7 +8,7 @@ When the menu is visible:
 - `<C-e>`: Cancel completion
 - `<C-p>` / `<C-n>`: Select previous / next entry
 
-## Types
+# Types
 
 All in insert mode.
 

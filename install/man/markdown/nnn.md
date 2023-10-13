@@ -1,16 +1,14 @@
-# `nnn`
-
 - `␣`: Tag file
 - `^G`: Quit cd
 - `1` / `2` / `3` / `4`: Switch to tab
 - `␣` / `+`: Toggle selection
 - `nnn <file-path>`: Open `nnn` with file highlighted
 
-## Navigation
+# Navigation
 
 - `C-u` / `C-d`: Page up / down
 
-## Filter
+# Filter
 
 - `/`: Filter
 - `⎋`: Exit prompt (e.g., a filter)
@@ -18,11 +16,11 @@
 - `^N`: Type to nav
 - `.`: Toggle show hidden files
 
-## Help
+# Help
 
 - `?`: Show shortcuts (dumped to terminal so you can see them on quit)
 
-## Operations
+# Operations
 
 - `o`: Choose program to open with
 - `e`: Edit file (e.g., an empty file that can't be edited with return)
@@ -37,25 +35,25 @@
 - `!` / `^]`: Spawn new shell on top of `nnn` (use `exit` to get back to `nnn`, `echo $NNNLVL` will show the current level)
 - `]`: Open native shell prompt to enter shell commands
 
-## Plugins
+# Plugins
 
 - `;`: Run a plugin (followed by assigned key) or `↩` to select a plugin to run
 - `⌥<key>`: Can also be used to run a plugin
 
-## Selection
+# Selection
 
 - `a`: Select all
 - `A`: Invert selection
 
-## Shell Commands
+# Shell Commands
 
-### Native Command Prompt
+## Native Command Prompt
 
 - `]`: Enters the native command prompt
 - `^D`: Exit native command prompt
 - To run a command on the currently hovered file: `]` to enter the native command prompt, then `<command> $nnn`. E.g., `open $nnn` will open the currently hovered file.
 
-#### Variables & Substitutions
+### Variables & Substitutions
 
 - `$nnn`: Hovered file (e.g., `open $nnn`)
 - `$d<number>`: Directory in context `<number>` (e.g., `cp "$f1" "$d3"`)

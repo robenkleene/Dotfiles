@@ -1,8 +1,6 @@
-# Rust Tests
-
 Use the `#[test]` attribute to specify tests.
 
-## Diffing Comparison
+# Diffing Comparison
 
 When comparing results, the expected output is usually displayed first. E.g., in the following `assert_cmd` example, the contents of `result` will be displayed first (i.e., as `original`):
 

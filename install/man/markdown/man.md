@@ -1,8 +1,6 @@
-# `man`
-
 To access the second `man` page, e.g., `unlink(2)`, use `man 2 unlink`
 
-## Example
+# Example
 
        less -?
        less --help
@@ -16,7 +14,7 @@ To access the second `man` page, e.g., `unlink(2)`, use `man 2 unlink`
        (See  the  OPTIONS section for alternate option syntax with long option
        names.)
 
-### Manual Page Syntax
+## Manual Page Syntax
 
 From `man manpages`:
 

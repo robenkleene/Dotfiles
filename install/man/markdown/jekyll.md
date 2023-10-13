@@ -1,6 +1,4 @@
-# `jekyll`
-
-## Common Configurations
+# Common Configurations
 
 Only recent:
 
@@ -14,33 +12,33 @@ Everything No Configuration:
 
 	bundle exec jekyll serve --watch --drafts
 
-## Normal
+# Normal
 
 	jekyll build --watch
 	jekyll serve
 
-## With Drafts
+# With Drafts
 
 	jekyll build --watch --drafts
 	jekyll serve --drafts
 
-## With `github-pages` Gem
+# With `github-pages` Gem
 
 	bundle exec jekyll serve
 	bundle exec jekyll build --watch
 
-### Include Drafts
+## Include Drafts
 
 	bundle exec jekyll serve --drafts
 	bundle exec jekyll build --watch --drafts
 
-## `serve` Flags
+# `serve` Flags
 
 - `-P` / `--port`: Specify a port
 
-## Generating Faster
+# Generating Faster
 
-### Local `_config.yml`
+## Local `_config.yml`
 
 	--config _config_local.yml
 
@@ -50,11 +48,11 @@ This is useful to specify a local theme that doesn't need to get fetched from th
 	# remote_theme: robenkleene/cyclist
 	theme: cyclist
 
-### Limit posts
+## Limit posts
 
 	--limit_posts 5
 
-## Overriding Themes
+# Overriding Themes
 
 Overriding themes works simply: To override any file from a theme (including theme gems), just put a file to override the default in the site as same relative path from the theme root. For example, to override `assets/main.scss` in the theme, add that same path to the site.
 

@@ -1,6 +1,4 @@
-# `zsh` Bindings
-
-## Editing
+# Editing
 
 - `C-_` / `C-X u` / `C-X C-u`: Undo
 - `M-C--`: Insert previous parameter
@@ -15,7 +13,7 @@
 - `C-w`: Kill last word (or parameter)
 - `M-<return>`: Insert new line (to extend the command to multiple lines)
 
-### Autoload
+## Autoload
 
 ```
 autoload -Uz copy-earlier-word
@@ -27,7 +25,7 @@ bindkey -e "^[m" copy-earlier-word
 
 - Cycle through previous parameters.
 
-## History
+# History
 
 - `^r`: Reverse history search
 - `^s`: Reverse history search
@@ -36,11 +34,11 @@ bindkey -e "^[m" copy-earlier-word
 
 (Just use a movement command (like `^[a` or `^[e`) to dismiss the search.)
 
-### Menu
+## Menu
 
 When the menu is visible to select various options.
 
-### Bindings
+## Bindings
 
 `man zshzle` for what each widget does.
 

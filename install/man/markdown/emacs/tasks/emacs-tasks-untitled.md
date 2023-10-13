@@ -1,5 +1,3 @@
-# Emacs Untitled
-
 Notes for managing untitled files.
 
 - Buffers without an associated file aren't auto-saved by default, so turn on auto-save for them.

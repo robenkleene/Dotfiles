@@ -1,5 +1,3 @@
-# `emacs` Flycheck
-
-## Troubleshooting
+# Troubleshooting
 
 - `M-x flycheck-verify-setup`: Shows status of checkers

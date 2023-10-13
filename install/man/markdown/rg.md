@@ -1,5 +1,3 @@
-# `rg`
-
 `rg` is case sensitive by default, this is to be consistent with `grep` which is also case sensitive by default.
 
 - `-i` & `--ignore-case`: Ignore case
@@ -9,7 +7,7 @@
 - `--no-ignore`: Include ignored files
 - There's no option to print full paths, but `rg <search term> $PWD` works as a workaround
 
-## Filenames
+# Filenames
 
 - `-l` & `--files-with-matches`: List files with matches
 - `-g` or `--glob`: Filter by filename
@@ -22,20 +20,20 @@
 - `--files`: Print each file but don't search
 - `--files -g`: Search for files matching glob.
 
-## Examples
+# Examples
 
 - `rg -U --multiline-dotall "string1.*string2" -g "*.m"`
 - `-U`: Enable multiline search
 - `--multiline-dotall`: Allow `.` to match newlines (alternatively, `(?s:.)` can be replace `.` to match new lines)
 - `rg -IN -m 1 ".*import.*"`: Print matching lines, max 1 per file, good for quickly remembering how to do something
 
-## Troubleshooting
+# Troubleshooting
 
 - To search for hyphens, precede the search term with `--`, e.g., `rg -- --bind`
 
-## Special Characters
+# Special Characters
 
-### ASCII Character Classes
+## ASCII Character Classes
 
 - `[[:alnum:]]`: Alphanumeric
 - `[[:alpha:]]`: Alphabetic
@@ -52,7 +50,7 @@
 - `[[:word:]]`: Word characters
 - `[[:xdigit:]]`: Hex digit
 
-### Perl Character Classes
+## Perl Character Classes
 
 - `\d`: Digit
 - `\D`: Not digit
@@ -62,7 +60,7 @@
 - `\b`: Not word character
 - `\W`: Not word character
 
-### Empty Matches
+## Empty Matches
 
 - `^`: The beginning of text (or start-of-line with multi-line mode)
 - `$`: The end of text (or end-of-line with multi-line mode)

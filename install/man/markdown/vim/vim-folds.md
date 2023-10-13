@@ -1,6 +1,4 @@
-# `vim` Folds
-
-## Folding
+# Folding
 
 - `zi`: Toggle folding
 - `zv`: Reveal cursor
@@ -14,16 +12,16 @@
 - `zM`: Close all folds
 - `zo` / `zc`: Open / close visually selected folds
 
-### Navigation
+## Navigation
 
 - `zk` / `zj`: Next / previous fold
 - `[z` / `z]`: Start / end of fold
 
-### Combos
+## Combos
 
 - `zMzv`: Close all except cursor
 
-## Working With Folds
+# Working With Folds
 
 1. `zM`: Fold everything
 2. `zr`: Repeat until there's the right level of visibility

@@ -1,18 +1,16 @@
-# `git` Revision
-
 - `git rev-parse HEAD`: Print current revision
 
-## Special Revisions
+# Special Revisions
 
 - `HEAD`: Current commit
 - `ORIG_HEAD`: Head before a drastic change
 
-## Relative Revisions
+# Relative Revisions
 
 - `HEAD~2`: Two commits back from `HEAD` (or grandparent)
 - `HEAD^2`:
 
-## Reflog
+# Reflog
 
 The reflog is a chronological list of changes in `git`.
 

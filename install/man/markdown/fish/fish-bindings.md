@@ -1,5 +1,3 @@
-# `fish`
-
 - `⌥E` / `⌥V`: Edit current line in editor
 - `⌃X` / `⌃V`: Copy and paste current line
 - `→`: Accept completion
@@ -8,7 +6,7 @@
 - `⌥↑` / `⌥↓`: Cycle through parameters from history
 - `⌥.`: Cycle through parameters from history
 
-## Commands
+# Commands
 
 - `bind`: List all bindings
 - `bind --list-modes`: List modes

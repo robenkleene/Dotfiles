@@ -1,8 +1,6 @@
-# Bash Variables
-
 - `IFS`: Internal Field Separator, defaults to whitespace (space, tab, newline)
 
-## Modifiers
+# Modifiers
 
 - `${#var}`: Length of variable
 - `${EDITOR:-vim}`: Default value

@@ -1,6 +1,4 @@
-# `rbenv`
-
-## Installing Ruby Versions
+# Installing Ruby Versions
 
 List available `ruby` versions:
 
@@ -14,7 +12,7 @@ Installing a Ruby version:
 
 	rbenv install 2.0.0-p247
 
-## Setting the current Ruby version
+# Setting the current Ruby version
 
 Print the current version:
 
@@ -28,7 +26,7 @@ Setting by the `RBENV_VERSION` environment variable:
 
 	export RBENV_VERSION=1.9.3-p194
 
-## Installation Instructions
+# Installation Instructions
 
 1. Install `rbenv` via Homebrew:
 

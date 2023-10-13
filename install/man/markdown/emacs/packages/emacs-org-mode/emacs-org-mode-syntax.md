@@ -1,5 +1,3 @@
-# Emacs Org Mode Syntax
-
 - `*bold*`
 - `/italic/`
 - `_underlined_`

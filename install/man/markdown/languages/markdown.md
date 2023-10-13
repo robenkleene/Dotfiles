@@ -1,6 +1,4 @@
-# Markdown
-
-## Backticks
+# Backticks
 
 To include a backtick, use multiple backticks as the delimiter:
 
@@ -14,7 +12,7 @@ This is the clearest way to write a keyboard shortcut that includes a backtick:
 
 	- `` ^` ``: Cycle editor focus
 
-## Lists
+# Lists
 
 For multi-paragraph list items, indent the lines as much as the previous paragraph, e.g.:
 

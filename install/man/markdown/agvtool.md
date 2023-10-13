@@ -1,6 +1,4 @@
-# `agvtool`
-
-## `plist` Mappings
+# `plist` Mappings
 
 In Xcode's Target General Settings:
 
@@ -11,7 +9,7 @@ In Xcode's Project "Build Settings" under "Versioning", in the `Info.plist`:
 
 - **Current Project Version**: `CURRENT_PROJECT_VERSION`
 
-## Setting up a new project
+# Setting up a new project
 
 In Xcode, in the Target's "Build Settings" under "Versioning":
 
@@ -23,7 +21,7 @@ In the Target's in the Target's "General" settings:
 1. Set the "Build" (e.g, `1`) *this must match the value for "Current Project Version" above*
 2. Set the "Version" (e.g, `1.0`) 
 
-## Commands
+# Commands
 
 Print the current build number:
 
@@ -41,7 +39,7 @@ Bump the build number:
 
 	agvtool bump -all
 
-### Bumping Build Number
+## Bumping Build Number
 
 `agvtool bump -all` increments the build number, which increments both:
 

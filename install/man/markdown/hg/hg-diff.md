@@ -1,5 +1,3 @@
-# `hg` Diff
-
 - `hg diff -r .^1`: Diff of last commit plus local changes
 - `hg diff -r bottom`: Diff master
 - `hg diff --root .`: Relative

@@ -1,6 +1,4 @@
-# Bash Commands
-
-## Group Commands
+# Group Commands
 
 ```
 { ~/.bin/egit -p || ~/.bin/egit -n; } && ~/.bin/sgitt_auto

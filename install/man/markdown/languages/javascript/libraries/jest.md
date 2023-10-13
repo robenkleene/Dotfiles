@@ -1,8 +1,6 @@
-%
-
 # Jest
 
-## `npm`
+# `npm`
 
 - `npm test -- test/window.test.js`: Run a single test file
 - `npm test -- test/window.test.js -t Reload`: Run a single test in a file (`-t` takes a regular expression?)

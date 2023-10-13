@@ -1,5 +1,3 @@
-# `vim` Paths
-
 No these will only work for commands that take a file path, e.g., `:e %:h` will work, but `:echo %` will not.
 
 `echo expand('%')` will also work. 
@@ -13,15 +11,15 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 - `%:e`: File extension
 - `%:r`: Filename without extension
 
-## Examples
+# Examples
 
 - `let @a = expand('%:t)`: Yank current filename to register `a`
 
-## Command-Line Mode
+# Command-Line Mode
 
 - `<c-r>%`: Insert the relative path
 
-## Insert Mode
+# Insert Mode
 
 - `<c-r>%`: Insert the absolute path
 - `<c-r>=expand("%:p")`: Insert with a modifier

@@ -1,5 +1,3 @@
-# Helix Editing
-
 - `d`: Delete selection
 - `>`: Indent
 - `<`: Outdent

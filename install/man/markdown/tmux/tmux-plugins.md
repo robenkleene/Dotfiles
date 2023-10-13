@@ -1,6 +1,4 @@
-# `tmux` Plugins
-
-## Resurrect
+# Resurrect
 
 * `<prefix>C-s`: Save
 * `<prefix>C-r`: Restore

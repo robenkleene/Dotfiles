@@ -1,5 +1,3 @@
-# `lldb` Variables
-
 - `frame variable` / `fr v`: Show all variables and arguments in the current frame
 - `frame variable --no-args` / `fr v a`: Show only all variables in the current frame
 - `frame variable <variable>` / `fr v <variable>`: Show value of frame `<variable>`

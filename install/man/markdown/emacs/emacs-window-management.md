@@ -1,13 +1,11 @@
-# `emacs` Window Management
-
 - `C-x C-space` or `C-x C-@`: Return to previous position
 
-## Buffers
+# Buffers
 
 - `C-x <left>` / `C-x <right>`: Go to previous / next buffer
 - `C-x k`: Kill buffer
 
-## Frames
+# Frames
 
 - `C-x 5 2`: Create a new frame
 - `C-x 5 0`: Delete current frame
@@ -15,7 +13,7 @@
 - `C-x 5 o`: Cycle through frames
 - `C-x ←` or `C-x →`: Next or previous buffer
 
-## Windows
+# Windows
 
 - `C-x 0`: Close window
 - `C-x o`: Next window
@@ -25,18 +23,18 @@
 - `C-x 3`: Split window vertically
 - `C-x +`: Make window equal size
 
-## Tabs
+# Tabs
 
 - `C-x t 2`: Create new tab
 - `C-x t O` / `C-x t o`: Go to previous / next tab
 - `C-x t 0`: Close tab
 - `C-x t 1`: Close other tabs
 
-## Other Window
+# Other Window
 
 - `C-M-v` / `S-C-M-v`: Page down / up in other window (note page up doesn't work in terminal Emacs)
 - `C-u - C-M-v` / `M-- C-M-v`: Page up in other window (works in terminal emacs)
 
-## Window Configurations
+# Window Configurations
 
 - `C-c ←` or `C-c →`: With `winner-mode` enabled, previous/next configuration

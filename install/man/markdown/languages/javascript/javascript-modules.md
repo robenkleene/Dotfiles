@@ -1,32 +1,30 @@
-%
-
 # Modules
 
 CommonJS vs. ES6 modules. CommonJS 
 
-## CommonJS
+# CommonJS
 
-### Import
+## Import
 
 ``` javascript
 const package = require('module-name')
 ```
 
-### Export
+## Export
 
 ``` javascript
 module.exports = value
 ```
 
-## ES6 Modules
+# ES6 Modules
 
-### Import
+## Import
 
 ``` JavaScript
 import randomSquare from './modules/square.js';
 ```
 
-### Export
+## Export
 
 ``` JavaScript
 export default randomSquare;

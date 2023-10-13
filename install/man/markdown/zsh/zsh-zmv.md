@@ -1,8 +1,6 @@
-# `zsh` `zmv`
-
 - `zmv` is a renaming function built in to zsh
 
-## Examples
+# Examples
 
     zmv -n '(**/)(*).jade' '$1$2.pug'
     zmv -n '(**/)jade' '$1pug'

@@ -1,5 +1,3 @@
-# `pushd`
-
 This assumes the following settings are set:
 
 	setopt autopushd pushdminus pushdsilent pushdtohome

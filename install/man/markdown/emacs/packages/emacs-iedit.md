@@ -1,8 +1,6 @@
-# Emacs iedit
-
 - `iedit-mode`: Start editing symbol at point, or matches for region if a region is selected
 
-## Region
+# Region
 
 To change only matches in a region:
 

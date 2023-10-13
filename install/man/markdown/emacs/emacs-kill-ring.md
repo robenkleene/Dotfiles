@@ -1,13 +1,11 @@
-# Emacs Kill Ring
-
 Kill commands append to the clipboard, until a movement command happens.
 
-## Yank
+# Yank
 
 - `C-y`: Yank last kill
 - `M-y`: Cycle through kill ring replacing yanked text
 
-## No Region
+# No Region
 
 - `M-d`: Forward kill word
 - `C-<backspace>`: Backward kill word
@@ -15,12 +13,12 @@ Kill commands append to the clipboard, until a movement command happens.
 - `M-k`: Kill sentence
 - `C-M-k`: Kill s-expression
 
-## Region
+# Region
 
 - `C-w`: Kill active region
 - `M-w`: Copy to kill ring
 
-### Modifiers
+## Modifiers
 
 These modify the next command.
 

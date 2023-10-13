@@ -1,6 +1,4 @@
-# `git-clone`
-
-## Shallow
+# Shallow
 
 `git clone` without history:
 

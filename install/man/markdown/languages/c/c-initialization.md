@@ -1,5 +1,3 @@
-# C Initialization
-
 Quoting the C standard [local variable initialized to zero in C - Stack Overflow](https://stackoverflow.com/questions/21152138/local-variable-initialized-to-zero-in-c):
 
 > If an object that has automatic storage duration is not initialized explicitly, its value is indeterminate.

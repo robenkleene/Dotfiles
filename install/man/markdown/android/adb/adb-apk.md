@@ -1,5 +1,3 @@
-# `adb` APK
-
 - Install: `adb install <apk-path>`
 - Uninstall: `adb uninstall <package-name>`
 - Package Name: `adb shell pm list packages`

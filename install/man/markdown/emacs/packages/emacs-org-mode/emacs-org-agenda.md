@@ -1,5 +1,3 @@
-# Emacs Org Agenda
-
 - `<return>`: Go to entry in this window
 - `<tab>`: Go to entry in other window
 - `m` / `u`: Mark / unmark item

@@ -1,5 +1,3 @@
-# Emacs Evil
-
 Enable each Evil mode:
 
 - `evil-motion-state`
@@ -7,6 +5,6 @@ Enable each Evil mode:
 - `evil-insert-state`
 - `evil-normal-state`
 
-## Normal or Motion
+# Normal or Motion
 
 - `\`: Do one Emacs mode command

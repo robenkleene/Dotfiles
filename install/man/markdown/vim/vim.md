@@ -1,5 +1,3 @@
-# `vim`
-
-## Flags
+# Flags
 
 - `-o`: Open each file in a split

@@ -1,5 +1,3 @@
-# `ln`
-
 	ln -s <original file> <symlink location>
 
 Note the order is similar to `cp`, `mv`, etc...

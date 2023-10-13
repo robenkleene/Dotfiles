@@ -1,9 +1,7 @@
-# `echo`
-
 - `echo foo`: Print with new line
 - `echo -n foo`: Print without new line
 
-## Notes
+# Notes
 
 Add the `-e` flag to interpret backslashes:
 

@@ -1,8 +1,6 @@
-# Rust CLI Apps
-
 - `cargo run | cat`: Will pipe through a command
 
-## `atty`
+# `atty`
 
 `true` if `STDOUT` is not a TTY
 

@@ -1,6 +1,4 @@
-# Ruby Troubleshooting
-
-## Library not loaded
+# Library not loaded
 
 An error like this can appear when running Ruby if the version of a library Ruby was compiled against gets removed. This often happens with `openssl`, the error includes line like this:
 

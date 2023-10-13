@@ -1,5 +1,3 @@
-# Brew Bundle
-
 - `brew tap homebrew/bundle`: Install bundle
 - `brew bundle`: Install brews
 - `brew bundle cleanup`: Dry run of remove everything not in `Brewfile`

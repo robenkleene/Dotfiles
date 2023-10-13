@@ -1,14 +1,12 @@
-# Rust Cheat Sheet
+# Array
 
-## Array
-
-### Literal
+## Literal
 
 ```
 let arr = ["a", "b", "c"];
 ```
 
-## Hashmap
+# Hashmap
 
 There's no real literal.
 
@@ -20,7 +18,7 @@ let vikings = HashMap::from([
 ]);
 ```
 
-## Vec
+# Vec
 
 ```
 let vec = vec!["a", "b", "c"];

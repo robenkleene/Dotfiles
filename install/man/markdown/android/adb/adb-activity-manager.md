@@ -1,5 +1,3 @@
-# `adb` Process
-
 - `adb shell am`: List activity manager help
 - `adb shell am force-stop <package-name>`: Quit a process
 - `adb shell am kill <package-name>`: Kill an process

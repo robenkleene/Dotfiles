@@ -1,13 +1,11 @@
-# `vim` Search, Find & Replace
-
 See [`vim-quickfix.md`](vim-quickfix.md) for more.
 
-## Search
+# Search
 
 - `n`: Next search
 - `N`: Previous search
 
-## `grep`
+# `grep`
 
 - `:%s/this/that/gc`: Replace this with that, asking for confirmation each time
 - `:g/pid/d`: Delete lines matching pattern
@@ -17,7 +15,7 @@ See [`vim-quickfix.md`](vim-quickfix.md) for more.
 - `:%s#this#that#g`: Alternative find and replace separator for when the find and replace strings have slashes
 - `:g//norm gcc`: Perform a normal mode command on every matched search
 
-## `vimgrep`
+# `vimgrep`
 
 - `:vim[grep] {pattern} ##`: Search `args` (`##`) and populate the `quickfix` list with the results.
 - `:vim[grep] {pattern} %`: Populate the `quickfix` list with matches of the pattern in the current file
@@ -25,16 +23,16 @@ See [`vim-quickfix.md`](vim-quickfix.md) for more.
 
 Add `| copen` to the end of any of the above to show the `quickfix` list.
 
-## `windo`
+# `windo`
 
 - `windo %s/foo/bar/g`: Replace in all open windows
 
-## Replace
+# Replace
 
 - `s/foo/bar`
 - `s#foo#bar`: Alternative syntax, very useful for replaces that involve a lot of slashes.
 
-## Using `gn`
+# Using `gn`
 
 **Visual Method**: After doing a search, type `gn` to select the next match, then type `n` to go to the next match, then `gn` again to select, then `.` to perform the previous operation.
 

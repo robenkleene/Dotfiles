@@ -1,12 +1,10 @@
-# `vim` Debugging
-
-## Test a Key Code
+# Test a Key Code
 
 	:<C-V><enter>
 
 After doing above you'll see what appears for `<enter>`.
 
-## Debugging Bindings
+# Debugging Bindings
 
 List any manually set bindings:
 
@@ -22,15 +20,15 @@ A function:
 
 You might need to specify `nmap`, etc...
 
-## Debugging Commands
+# Debugging Commands
 
 	:verbose command Ag
 
-## Show all loaded `vim` Scripts
+# Show all loaded `vim` Scripts
 
 	:scriptnames
 
-## Profiling
+# Profiling
 
 	:profile start ~/Downloads/profile.log
 	:profile func *

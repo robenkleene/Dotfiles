@@ -1,11 +1,9 @@
-# `vim` Notes
-
-## `.vimrc` Subtlety
+# `.vimrc` Subtlety
 
 * `vimrc` is loaded before plugins
 * Only put the minimum in the `after/plugin` folder because re-sourcing your `vimrc` won't reload these.
 
-## Running Tests
+# Running Tests
 
 Set a make program:
 

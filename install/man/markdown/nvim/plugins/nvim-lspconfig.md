@@ -1,14 +1,12 @@
-# `nvim` `lspconfig`
-
 - To apply formatting to all buffers in the `arglist` just use `:argodo norm <format-binding>`
 - Telescope has a `require('telescope.builtin').diagnostics` that shows all diagnostics for a project
 - `q`: Dismiss floating overlay
 
-## Bindings
+# Bindings
 
 There's no way to scroll the pop-up window, instead you have to focus it, and then navigate within it.
 
-## Troubleshooting
+# Troubleshooting
 
 For `other clients that match the filetype`:
 

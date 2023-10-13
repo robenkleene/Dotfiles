@@ -1,5 +1,3 @@
-# C Struct
-
 Declare a `struct`:
 
 ``` c

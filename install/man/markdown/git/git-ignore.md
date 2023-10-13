@@ -1,8 +1,6 @@
-# `git` Ignore
-
 - `git clean -dfX`: Delete all ignored files
 
-## Ignored Files
+# Ignored Files
 
 List ignored files:
 

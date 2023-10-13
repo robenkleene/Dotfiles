@@ -1,14 +1,12 @@
-# Git Patch
-
 Make and apply a patch.
 
-## Make
+# Make
 
 From current working copy
 
 	git diff
 
-## Apply
+# Apply
 
 Apply a patch from `stdin`:
 

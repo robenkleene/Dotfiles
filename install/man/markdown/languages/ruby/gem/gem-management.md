@@ -1,6 +1,4 @@
-# Gem Management
-
-## The Problem
+# The Problem
 
 If a Ruby script is run from the command-line that has a shebang that sets a different Ruby than the default Ruby, then this will cause an inconsistency between the Ruby binary and the gem configuration.
 
@@ -8,11 +6,11 @@ Here's an example of a shebang line that overrides the default Ruby:
 
 	#!/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
 
-## The Workaround
+# The Workaround
 
 The work around is to use a `.ruby-version` file to override the current version of Ruby. This should be done in any directory that has Ruby files with shebangs that override the default ruby.
 
-## System Ruby
+# System Ruby
 
 Use system Ruby for Repla:
 
@@ -27,14 +25,14 @@ Since the default executable path is not setup by default, bundler and rake must
 	gem install --user-install bundler --bindir /usr/local/bin
 	gem install --user-install rake --bindir /usr/local/bin
 
-### Restoring Default `gems`
+## Restoring Default `gems`
 
 These are probably supposed to be installed by default, if they get deleted, use these commands to restore them to `/Library/Ruby/Gems/2.3.0/`
 
 	sudo gem install test-unit
 	sudo gem install power_assert
 
-## Correct Installation
+# Correct Installation
 
 Here's how Bundler should work after being correctly installed:
 
