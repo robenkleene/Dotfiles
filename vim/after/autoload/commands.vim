@@ -58,7 +58,7 @@ function! commands#Fd(terms) abort
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
-  let cmd = "basename `fd  ". escape(a:arglead, '%#') . " ~/.man` | sed 's/\.9$//'"
+  let cmd = "basename `fd ^". escape(a:arglead, '%#') . " ~/.man` | sed 's/\.9$//'"
   return systemlist(cmd)
 endfunction
 
