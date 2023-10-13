@@ -1,5 +1,3 @@
-%
-
 # Helix LSP
 
 ## Bindings

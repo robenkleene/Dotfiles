@@ -1,5 +1,3 @@
-%
-
 # Emacs Consult
 
 ## `rg`

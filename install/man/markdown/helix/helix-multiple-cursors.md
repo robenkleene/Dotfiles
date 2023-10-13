@@ -1,5 +1,3 @@
-%
-
 # Helix Multiple Cursors
 
 - `A-s`: Split selection on new lines (e.g., make a cursor on each line)

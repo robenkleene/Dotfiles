@@ -1,5 +1,3 @@
-%
-
 # `hg` Patch
 
 - `hg import --prefix . --no-commit -`: Import commit from STDIN

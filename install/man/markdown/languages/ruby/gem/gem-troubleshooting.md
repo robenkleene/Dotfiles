@@ -1,5 +1,3 @@
-%
-
 # Gem Troubleshooting
 
 Each time this command is run:

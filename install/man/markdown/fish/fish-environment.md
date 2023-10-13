@@ -1,5 +1,3 @@
-%
-
 # Fish Variables
 
 ## Path

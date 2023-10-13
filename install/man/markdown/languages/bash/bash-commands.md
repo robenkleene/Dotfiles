@@ -1,5 +1,3 @@
-%
-
 # Bash Commands
 
 ## Group Commands

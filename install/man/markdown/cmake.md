@@ -1,5 +1,3 @@
-%
-
 # `cmake`
 
 1. Creat a build directory `mkdir build` and `cd` into it

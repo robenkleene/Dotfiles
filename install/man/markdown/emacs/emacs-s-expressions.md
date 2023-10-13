@@ -1,5 +1,3 @@
-%
-
 # Emacs S-Expressions
 
 * `C-M-f` / `C-M-b`: Move forward / backward through s-expressions

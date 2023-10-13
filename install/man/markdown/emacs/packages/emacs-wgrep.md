@@ -1,5 +1,3 @@
-%
-
 # `wgrep`
 
 * `C-c C-p`: Enter `wgrep` mode

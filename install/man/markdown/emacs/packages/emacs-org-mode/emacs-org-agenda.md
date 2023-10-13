@@ -1,5 +1,3 @@
-%
-
 # Emacs Org Agenda
 
 - `<return>`: Go to entry in this window

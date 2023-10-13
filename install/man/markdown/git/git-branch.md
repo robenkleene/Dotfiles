@@ -1,5 +1,3 @@
-%
-
 # `git` Branch
 
 ## Rename

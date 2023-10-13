@@ -1,5 +1,3 @@
-%
-
 # `vim` History
 
 - `:ol[dfiles]`: View list of old files

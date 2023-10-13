@@ -1,5 +1,3 @@
-%
-
 # `emacs` Debugging
 
 - `(debug)`: Pause in debugger when this is called

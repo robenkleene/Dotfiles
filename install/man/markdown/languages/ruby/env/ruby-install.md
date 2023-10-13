@@ -1,5 +1,3 @@
-%
-
 # `ruby-install`
 
 - `ruby-install --latest`: Refreshes the list of available Rubies

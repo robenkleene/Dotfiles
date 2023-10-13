@@ -1,5 +1,3 @@
-%
-
 # `fish` Variables
 
 - `set -lx VAR world`: Local exported variable

@@ -1,5 +1,3 @@
-%
-
 # `emacs` Troubleshooting
 
 - `emacs -q`: Open Emacs without loading init

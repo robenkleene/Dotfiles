@@ -1,5 +1,3 @@
-%
-
 # Rust Examples
 
 ## Map

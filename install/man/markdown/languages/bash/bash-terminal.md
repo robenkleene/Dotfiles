@@ -1,5 +1,3 @@
-%
-
 # `bash` Terminal
 
 Opening files:

@@ -1,5 +1,3 @@
-%
-
 # `git`
 
 ## New Repo

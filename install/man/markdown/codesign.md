@@ -1,5 +1,3 @@
-%
-
 # `codesign`
 
 - `codesign -dvvv <path>`: Check code sign status

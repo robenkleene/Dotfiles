@@ -1,5 +1,3 @@
-%
-
 # `cargo` Install
 
 - `cargo install <crate>`: Update a crate to the latest version

@@ -1,5 +1,3 @@
-%
-
 # `rename`
 
 - `-n, --dry-run, --just-print`

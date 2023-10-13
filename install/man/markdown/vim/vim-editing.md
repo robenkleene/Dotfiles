@@ -1,5 +1,3 @@
-%
-
 # `vim` Editing
 
 - `ZZ`: Quit and save

@@ -1,5 +1,3 @@
-%
-
 # `vim` Completion
 
 - `<C-e>`: Revert completion (without menu visible)

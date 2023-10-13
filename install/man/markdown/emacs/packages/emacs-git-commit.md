@@ -1,5 +1,3 @@
-%
-
 # Emacs Git Commit
 
 - `C-c C-c`: Save commit message and exit

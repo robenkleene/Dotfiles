@@ -1,5 +1,3 @@
-%
-
 # `expand`
 
 To convert tabs to spaces ore vice-versa:

@@ -1,5 +1,3 @@
-%
-
 # `zsh` `isearch`
 
 `isearch` uses the `isearch` keymap (`bindkey -M isearch`) which is empty by default.

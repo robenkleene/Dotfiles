@@ -1,5 +1,3 @@
-%
-
 # C Debugging
 
 1. Compile with debug information `clang -g linkedlist.c`

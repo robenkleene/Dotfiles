@@ -1,5 +1,3 @@
-%
-
 # Org Mode
 
 ## Outline

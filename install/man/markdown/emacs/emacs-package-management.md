@@ -1,5 +1,3 @@
-%
-
 # `emacs` Package Management
 
 - `M-x package-list-packages`: List Packages

@@ -1,5 +1,3 @@
-%
-
 # Vim Visual Block Mode
 
 Easy to edit before and after the selection:

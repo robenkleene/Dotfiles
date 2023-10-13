@@ -1,5 +1,3 @@
-%
-
 # `emacs` Movement
 
 ## Movement

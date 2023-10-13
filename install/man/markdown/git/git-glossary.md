@@ -1,5 +1,3 @@
-%
-
 # `git` Glossary
 
 - **HEAD**: The currently checked out commit.

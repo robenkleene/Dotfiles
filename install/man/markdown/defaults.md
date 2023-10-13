@@ -1,5 +1,3 @@
-%
-
 # Defaults
 
 To delete an apps preferences:

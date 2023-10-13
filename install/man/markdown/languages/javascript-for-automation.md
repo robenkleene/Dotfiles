@@ -1,5 +1,3 @@
-%
-
 # JavaScript for Automation
 
 Print the keys of an object:

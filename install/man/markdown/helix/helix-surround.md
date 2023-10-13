@@ -1,5 +1,3 @@
-%
-
 # Helix Surround
 
 - `ms<char>`

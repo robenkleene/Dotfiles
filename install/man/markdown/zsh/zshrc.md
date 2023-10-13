@@ -1,5 +1,3 @@
-%
-
 # `zshrc`
 
 To set a custom `zshrc` startup `zsh` as follows:

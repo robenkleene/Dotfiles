@@ -1,5 +1,3 @@
-%
-
 # `rbenv`
 
 ## Installing Ruby Versions

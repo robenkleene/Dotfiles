@@ -1,5 +1,3 @@
-%
-
 # Rust
 
 ## `str`, `String`, `&String`, `&str`

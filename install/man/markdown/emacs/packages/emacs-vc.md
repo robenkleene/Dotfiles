@@ -1,5 +1,3 @@
-%
-
 # Emacs VC
 
 - `vc-print-log`: Show log for current file or directory

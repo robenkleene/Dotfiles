@@ -1,5 +1,3 @@
-%
-
 # Rust Cheat Sheet
 
 ## Array

@@ -1,5 +1,3 @@
-%
-
 # `lldb` Process
 
 - `(lldb) process launch`: Start program

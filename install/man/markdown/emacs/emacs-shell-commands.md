@@ -1,5 +1,3 @@
-%
-
 # `emacs` Shell Commands
 
 - `C-u M-!`: Insert the result of a shell command in the minibuffer (e.g., for a filename). Requires `(setq enable-recursive-minibuffers t)`.

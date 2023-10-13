@@ -1,5 +1,3 @@
-%
-
 # Emacs Macros
 
 - `C-x (`: Start recording

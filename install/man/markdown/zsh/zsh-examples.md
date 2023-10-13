@@ -1,5 +1,3 @@
-%
-
 # `zsh` Examples
 
 ## Loop

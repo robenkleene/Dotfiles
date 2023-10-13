@@ -1,5 +1,3 @@
-%
-
 # Emacs Calendar
 
 - `<` / `>`: Scroll left / right

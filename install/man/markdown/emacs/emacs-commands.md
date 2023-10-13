@@ -1,5 +1,3 @@
-%
-
 # `emacs` Commands
 
 - `C-x C-c`: Quit

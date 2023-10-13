@@ -1,5 +1,3 @@
-%
-
 # `zsh` Bindings
 
 ## Editing

@@ -1,5 +1,3 @@
-%
-
 # Helix Movement
 
 - `<number>G`: Go to line number

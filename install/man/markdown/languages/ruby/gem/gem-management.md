@@ -1,5 +1,3 @@
-%
-
 # Gem Management
 
 ## The Problem

@@ -1,5 +1,3 @@
-%
-
 # `adb` APK
 
 - `pm` is an alias to `cmd package`

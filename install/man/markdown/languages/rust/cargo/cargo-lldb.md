@@ -1,5 +1,3 @@
-%
-
 # Cargo `lldb`
 
 1. `lldb target/debug/reap`

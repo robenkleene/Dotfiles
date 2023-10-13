@@ -1,5 +1,3 @@
-%
-
 # `zsh`
 
 - `exec zsh` to reload

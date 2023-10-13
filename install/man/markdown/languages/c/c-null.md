@@ -1,5 +1,3 @@
-%
-
 # C Null
 
 A pointer can be set to `NULL` and then pointed to a value later:

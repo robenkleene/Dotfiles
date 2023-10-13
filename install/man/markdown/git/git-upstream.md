@@ -1,5 +1,3 @@
-%
-
 # `git` Upstream
 
 1. Check if `upstream` is set with `git remote -v`

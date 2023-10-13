@@ -1,5 +1,3 @@
-%
-
 # Emacs Dired Virtual
 
 - `ls -l`: Output that can be converted to a `dired-virtual` buffer (i.e., you need the additional metadata for it to work)

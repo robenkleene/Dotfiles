@@ -1,5 +1,3 @@
-%
-
 # `tmux`
 
 * `tmux kill-server`: Kill everything

@@ -1,5 +1,3 @@
-%
-
 # Helix Compiling
 
 1. Compile with `cargo install --path helix-term`

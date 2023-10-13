@@ -1,5 +1,3 @@
-%
-
 # `jekyll`
 
 ## Common Configurations

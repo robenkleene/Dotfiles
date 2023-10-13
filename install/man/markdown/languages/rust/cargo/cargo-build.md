@@ -1,4 +1,2 @@
-%
-
 # `cargo` Build
 

@@ -1,5 +1,3 @@
-%
-
 # `rg`
 
 `rg` is case sensitive by default, this is to be consistent with `grep` which is also case sensitive by default.

@@ -1,5 +1,3 @@
-%
-
 # `less`
 
 - `-i`: Ignore case (also use *inside of less* to toggle case-sensitivity)

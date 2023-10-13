@@ -1,5 +1,3 @@
-%
-
 # Vim Fuzzy Finder Workarounds
 
 - `ls`: List buffers
