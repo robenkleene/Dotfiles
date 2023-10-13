@@ -1,5 +1,3 @@
-%
-
 # Ruby Troubleshooting
 
 ## Library not loaded

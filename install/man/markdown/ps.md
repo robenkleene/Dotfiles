@@ -1,5 +1,3 @@
-%
-
 # `ps`
 
 - `ps -fp <pid>`: Show info about process

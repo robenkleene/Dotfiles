@@ -1,5 +1,3 @@
-%
-
 # `git` Checkout
 
 - `git checkout master -- <path>`: Checkout a file from another branch, note this adds it to the index (`git reset` removes all files from the index)

@@ -1,5 +1,3 @@
-%
-
 # Emacs Interface
 
 - Minibuffer

@@ -1,5 +1,3 @@
-%
-
 # `vim` Shell Commands
 
 ## Output in Echo Area

@@ -1,5 +1,3 @@
-%
-
 # `emacs` Lisp
 
 * `nil` and the empty list `()` are the same.

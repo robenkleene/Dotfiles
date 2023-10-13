@@ -1,5 +1,3 @@
-%
-
 # `find`
 
 - `find . -name "*.bundle"`

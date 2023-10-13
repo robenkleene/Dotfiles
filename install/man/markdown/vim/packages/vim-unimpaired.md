@@ -1,5 +1,3 @@
-%
-
 # `vim` Unimpaired
 
 - `[q` / `]q`: Previous / next `quickfix` item

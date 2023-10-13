@@ -1,5 +1,3 @@
-%
-
 # `lldb`
 
 - `↩`: Repeat last command

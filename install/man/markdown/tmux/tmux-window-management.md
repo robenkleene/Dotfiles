@@ -1,5 +1,3 @@
-%
-
 # `tmux` Window Management
 
 ## Splits

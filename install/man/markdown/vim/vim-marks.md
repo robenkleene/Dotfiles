@@ -1,5 +1,3 @@
-%
-
 # Vim Marks
 
 - `ma`: Set file local mark `a` (every file can have a mark `a`)

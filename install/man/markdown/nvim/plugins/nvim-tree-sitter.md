@@ -1,5 +1,3 @@
-%
-
 # `nvim` Tree-Sitter
 
 ## Customizing Colors

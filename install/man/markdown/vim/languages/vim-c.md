@@ -1,5 +1,3 @@
-%
-
 # C
 
 C has a couple of characteristics that making working with it unique in Vim.

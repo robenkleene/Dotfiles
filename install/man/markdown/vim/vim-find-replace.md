@@ -1,5 +1,3 @@
-%
-
 # `vim` Search, Find & Replace
 
 See [`vim-quickfix.md`](vim-quickfix.md) for more.

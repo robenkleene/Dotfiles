@@ -1,5 +1,3 @@
-%
-
 # Emacs `eglot`
 
 - `C-h .`: Show diagnostics at point

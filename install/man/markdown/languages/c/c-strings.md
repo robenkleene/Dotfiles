@@ -1,5 +1,3 @@
-%
-
 # C Strings
 
 ## String Pointers vs. Arrays

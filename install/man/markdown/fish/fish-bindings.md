@@ -1,5 +1,3 @@
-%
-
 # `fish`
 
 - `⌥E` / `⌥V`: Edit current line in editor

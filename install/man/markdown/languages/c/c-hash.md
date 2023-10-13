@@ -1,5 +1,3 @@
-%
-
 # C Hash
 
 [This hash implementation]() is from chapter 6.6, "Table Lookup" from the *C Programming Language*.

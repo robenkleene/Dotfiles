@@ -1,5 +1,3 @@
-%
-
 # Helix Selection
 
 - `;`: Deselect

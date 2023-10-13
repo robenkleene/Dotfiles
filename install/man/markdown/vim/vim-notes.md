@@ -1,5 +1,3 @@
-%
-
 # `vim` Notes
 
 ## `.vimrc` Subtlety

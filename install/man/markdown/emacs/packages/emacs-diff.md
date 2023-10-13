@@ -1,5 +1,3 @@
-%
-
 # Emacs Diff
 
 - `C-c C-c` / `M-RET`: Go to source file of hunk

@@ -1,5 +1,3 @@
-%
-
 # `chruby`
 
 - `chruby`: List available rubies

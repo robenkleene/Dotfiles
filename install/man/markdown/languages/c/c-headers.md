@@ -1,5 +1,3 @@
-%
-
 # C Headers
 
 ## `#include <stdio.h>`

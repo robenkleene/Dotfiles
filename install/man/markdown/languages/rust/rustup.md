@@ -1,5 +1,3 @@
-%
-
 # Rustup
 
 - `rustup show`: Show installed toolchains

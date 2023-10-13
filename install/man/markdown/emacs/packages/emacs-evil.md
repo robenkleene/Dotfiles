@@ -1,5 +1,3 @@
-%
-
 # Emacs Evil
 
 Enable each Evil mode:

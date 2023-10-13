@@ -1,5 +1,3 @@
-%
-
 # `hg` Status
 
 - `hg status --change .`: List uncommitted changed files

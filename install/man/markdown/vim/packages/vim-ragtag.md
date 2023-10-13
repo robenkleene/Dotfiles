@@ -1,5 +1,3 @@
-%
-
 # `ragtag`
 
 * `<C-x><space>`: Convert `html` to `<html></html>`

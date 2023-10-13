@@ -1,5 +1,3 @@
-%
-
 # `git` Rename Repo
 
 1. Rename the directory

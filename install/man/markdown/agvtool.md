@@ -1,5 +1,3 @@
-%
-
 # `agvtool`
 
 ## `plist` Mappings

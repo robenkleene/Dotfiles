@@ -1,5 +1,3 @@
-%
-
 # `emacs` Quick Start
 
 - `M-/`: Complete word

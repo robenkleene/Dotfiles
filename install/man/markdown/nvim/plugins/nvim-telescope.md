@@ -1,5 +1,3 @@
-%
-
 # `nvim` Telescope
 
 - `C-d`: Scroll down preview

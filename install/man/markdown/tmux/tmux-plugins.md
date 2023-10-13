@@ -1,5 +1,3 @@
-%
-
 # `tmux` Plugins
 
 ## Resurrect

@@ -1,5 +1,3 @@
-%
-
 # `adb`
 
 - `adb reboot`: Reboot

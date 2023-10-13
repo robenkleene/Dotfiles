@@ -1,5 +1,3 @@
-%
-
 # `vim` Quickfix
 
 ## Navigating

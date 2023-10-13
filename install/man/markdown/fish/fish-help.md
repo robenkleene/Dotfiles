@@ -1,5 +1,3 @@
-%
-
 # Fish Help
 
 - `\ew`: Show help for current token

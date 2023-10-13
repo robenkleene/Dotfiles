@@ -1,5 +1,3 @@
-%
-
 # `vim` Colors
 
 ## Show Available Colors

@@ -1,5 +1,3 @@
-%
-
 # `fish` History
 
 - `history merge`: Merge history from all running sessions

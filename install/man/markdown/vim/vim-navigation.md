@@ -1,5 +1,3 @@
-%
-
 # `vim` Navigation
 
 ## `vim` Marks

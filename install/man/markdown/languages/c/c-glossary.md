@@ -1,5 +1,3 @@
-%
-
 # C Glossary
 
 - **Static**

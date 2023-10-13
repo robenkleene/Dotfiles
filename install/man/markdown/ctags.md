@@ -1,5 +1,3 @@
-%
-
 # `ctags`
 
 Recursive

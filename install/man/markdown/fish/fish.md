@@ -1,5 +1,3 @@
-%
-
 # fish
 
 - `⌥↑` / `⌥.`: Insert last argument of previous command

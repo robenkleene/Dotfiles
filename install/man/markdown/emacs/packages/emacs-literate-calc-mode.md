@@ -1,5 +1,3 @@
-%
-
 # Literate Calc Mode
 
 Just toggle on the `literate-calc-minor-mode` and variables will start being calculated:

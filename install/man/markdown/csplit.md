@@ -1,5 +1,3 @@
-%
-
 # `csplit`
 
 Split a file based on a regular expression:

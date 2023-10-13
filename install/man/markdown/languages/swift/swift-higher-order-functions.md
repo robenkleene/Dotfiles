@@ -1,5 +1,3 @@
-%
-
 # Swift Higher-Order Functions
 
 ## `map`

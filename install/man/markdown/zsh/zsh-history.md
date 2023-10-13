@@ -1,5 +1,3 @@
-%
-
 # `zsh` History
 
 - `fc` stands for "find command"

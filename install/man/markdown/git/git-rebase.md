@@ -1,5 +1,3 @@
-%
-
 # `git` Rebase
 
 There's not shorthand, unfortunately:

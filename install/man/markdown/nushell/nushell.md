@@ -1,5 +1,3 @@
-%
-
 # Nushell
 
 - `ansi -l`: List colors

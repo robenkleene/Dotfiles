@@ -1,5 +1,3 @@
-%
-
 # Emacs Quitting
 
 If there are modified buffers, to review them use:

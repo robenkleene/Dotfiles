@@ -1,5 +1,3 @@
-%
-
 # `gem`
 
 ## Building Gems

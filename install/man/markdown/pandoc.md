@@ -1,5 +1,3 @@
-%
-
 # `pandoc`
 
 ## HTML to Markdown

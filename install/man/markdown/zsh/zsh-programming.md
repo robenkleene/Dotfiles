@@ -1,5 +1,3 @@
-%
-
 # `zsh` Programming
 
 Most of this kind of documentation is found in `man zshexpn`.

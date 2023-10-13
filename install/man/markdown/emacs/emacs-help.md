@@ -1,5 +1,3 @@
-%
-
 # `emacs` Help
 
 - `C-h k`: Tell what a key does (describe-key)

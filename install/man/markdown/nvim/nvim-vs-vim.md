@@ -1,5 +1,3 @@
-%
-
 # `nvim` vs `vim`
 
 - Broadly speaking, `nvim` is better at IDE features (like LSP, DAP, Tree-Sitter) because it supports a more sophisticated programming language (Lua).

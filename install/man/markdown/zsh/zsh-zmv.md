@@ -1,5 +1,3 @@
-%
-
 # `zsh` `zmv`
 
 - `zmv` is a renaming function built in to zsh

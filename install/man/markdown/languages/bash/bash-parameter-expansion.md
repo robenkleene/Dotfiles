@@ -1,5 +1,3 @@
-%
-
 # Bash Parameter Expansion
 
 - `${var:-$default}`: Use `default` if `var` isn't set

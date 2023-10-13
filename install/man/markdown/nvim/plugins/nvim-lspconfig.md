@@ -1,5 +1,3 @@
-%
-
 # `nvim` `lspconfig`
 
 - To apply formatting to all buffers in the `arglist` just use `:argodo norm <format-binding>`

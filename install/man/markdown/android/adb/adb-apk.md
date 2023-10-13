@@ -1,5 +1,3 @@
-%
-
 # `adb` APK
 
 - Install: `adb install <apk-path>`

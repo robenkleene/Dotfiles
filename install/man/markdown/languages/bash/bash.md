@@ -1,5 +1,3 @@
-%
-
 # Bash
 
 - `$(command)`: Command substitution, the result of the command replaces the  `cat $(ls)` command.

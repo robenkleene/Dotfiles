@@ -1,5 +1,3 @@
-%
-
 # Bash Bindings
 
 - `bind -l`: Binding function names

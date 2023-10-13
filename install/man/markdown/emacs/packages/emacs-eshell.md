@@ -1,5 +1,3 @@
-%
-
 # Emacs Eshell
 
 - `C-c C-u`: Clear line
