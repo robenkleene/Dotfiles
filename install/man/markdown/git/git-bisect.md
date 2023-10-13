@@ -1,5 +1,3 @@
-# `git` Bisect
-
 This is a good start for finding a good commit:
 
 * `git log master..`: list all the commits on the current branch that aren't on master

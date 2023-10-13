@@ -1,5 +1,3 @@
-# `lldb` Abbr
-
 - `r <parameters>`: Run, optionally passing parameters to the executable
 - `n`: Step over
 - `s`: Step in

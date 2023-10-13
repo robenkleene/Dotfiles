@@ -1,6 +1,4 @@
-# `vim` `makeprg`
-
-## `errorformat`
+# `errorformat`
 
 	\%-G%.%#
 

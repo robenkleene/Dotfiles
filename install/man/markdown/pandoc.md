@@ -1,6 +1,4 @@
-# `pandoc`
-
-## HTML to Markdown
+# HTML to Markdown
 
 From a pipe:
 
@@ -10,14 +8,14 @@ From a file:
 
 	pandoc testfile.html -o test.md --parse-raw
 
-## Rich Text to Markdown
+# Rich Text to Markdown
 
     cat convert.rtf | pandoc -f rtf -t markdown
 
-## Markdown to Org
+# Markdown to Org
 
 	pandoc -f markdown -t org
 
-## Vim
+# Vim
 
     %w !pandoc -f markdown -o ~/Temp/exports/export.docx

@@ -1,5 +1,3 @@
-# `emacs` Quick Start
-
 - `M-/`: Complete word
 - `C-x C-j`: Dired mode
 - `C-x s`: Save

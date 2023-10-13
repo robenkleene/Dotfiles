@@ -1,6 +1,4 @@
-# `vim` Quickfix
-
-## Navigating
+# Navigating
 
 - `:cnext` & `:cprev`: Cycle through matches 
 - `:copen`: Show `quickfix` window 
@@ -9,12 +7,12 @@
 - `:col[der]`: Go to previous `quickfix` list
 - `:cnew[er]`: Go to next `quickfix` list
 
-## Mass Edits
+# Mass Edits
 
 - `:cdo`: Do command to each entry in the `quickfix` list, e.g., `:cdo s/this/that/g`
 - `:cfdo`: Do command to each file in the `quickfix` list, e.g., `:cfdo %s/this/that/g`
 
-### Examples
+## Examples
 
 On each entry in the `quickfix` list:
 
@@ -23,7 +21,7 @@ On each entry in the `quickfix` list:
 - `:cdo norm @q`: Perform the macro in register `q` on each entry
 - `:cdo norm gcc`: Comment out each entry
 
-## Other
+# Other
 
 Populating the `quickfix` window with an arbitrary command:
 

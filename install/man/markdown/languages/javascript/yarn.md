@@ -1,5 +1,3 @@
-%
-
 # `yarn`
 
 - `yarn install`: Equivalent to `npm install`

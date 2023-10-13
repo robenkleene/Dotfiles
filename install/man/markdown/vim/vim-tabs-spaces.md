@@ -1,6 +1,4 @@
-# Vim Tabs Spaces
-
-## Convert Tabs to Spaces
+# Convert Tabs to Spaces
 
 	set expandtab
 	retab!
@@ -9,7 +7,7 @@ Through command line application:
 
 	!expand
 
-## Convert Spaces to Tabs
+# Convert Spaces to Tabs
 
 	set noexpandtab
 	retab!

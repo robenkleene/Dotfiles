@@ -1,5 +1,3 @@
-# C Format Specifiers
-
 Format specifiers.
 
 - `%c`: Character
@@ -23,38 +21,38 @@ Format specifiers.
 - `%n`: Prints nothing
 - `%%`: Prints % character
 
-## Examples
+# Examples
 
-### Integer
+## Integer
 
     printf("INT_MAX = %d\n", INT_MAX);
 
-### Char
+## Char
 
     printf("%c", s2[k]);
 
-### String (Character Array)
+## String (Character Array)
 
     char longest[MAXLINE];
     printf("%s", longest);
 
-### Float
+## Float
 
     printf("%3d %6.1f\n", cel, cel * (9.0 / 5.0) + 32);
 
-### Unsigned Long
+## Unsigned Long
 
     printf("%lu\n", strtol(s, NULL, 16));
 
-### Unsigned Long Long
+## Unsigned Long Long
 
     printf("ULLONG_MA = %llu\n", ULLONG_MAX);
 
-## Portable Format Specifiers
+# Portable Format Specifiers
 
 - `PRIu64`: Unsigned
 
-### Usage
+## Usage
 
 ```
 printf("foo is equal to %" PRIu64 "!\n", foo);

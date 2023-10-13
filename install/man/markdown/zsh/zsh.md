@@ -1,9 +1,7 @@
-# `zsh`
-
 - `exec zsh` to reload
 - `^g`: Cancel
 
-## Commands
+# Commands
 
 - `rehash`: Rebuild auto-complete index
 - `setopt`: List enabled options
@@ -11,14 +9,14 @@
 
 Simple way to get a key code: hit `^v` then the key.
 
-## Help
+# Help
 
 - `man zshconrib`: Help for user contributions
 - `man zshzle`: Some information about key bindings
 
-## Customization
+# Customization
 
-### Colors
+## Colors
 
 List available colors:
 
@@ -29,11 +27,11 @@ Named colors
 	autoload colors && colors
 	echo ${(o)color} # or which colors
 
-### Prompt
+## Prompt
 
 - `man zshmisc`: `/SIMPLE PROMPT ESCAPES` has a list of escape sequences
 
-## Redirection
+# Redirection
 
 `1` is `stdout` and `2` is `stderr`.
 
@@ -46,6 +44,6 @@ Named colors
 - `>/dev/null 2>&1`: Discard `stdout` and `stderr`
 - `>/dev/null`: Discard `stdout`
 
-## Functions
+# Functions
 
 - `whence -f git-copy-remote-url`: Print function

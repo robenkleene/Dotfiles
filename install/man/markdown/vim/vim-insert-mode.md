@@ -1,5 +1,3 @@
-# Vim Insert Mode
-
 - `C-a`: Insert last inserted text
 - `C-@`: Insert last inserted text and leave insert mode
 - `C-d` / `C-t`: indent / outdent line

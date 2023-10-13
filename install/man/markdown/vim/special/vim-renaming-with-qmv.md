@@ -1,5 +1,3 @@
-# `vim` Renaming With `qmv`
-
 Renaming with `qmv` is usually straightforward, but if a find and replace needs to be performed it can be more complicated.
 
 1. Use visual block mode to select the second, destination, column and delete it with `d`

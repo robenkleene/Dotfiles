@@ -1,5 +1,3 @@
-# `fd`
-
 `fd` uses smart case by default.
 
 - `-e <file-extension>`: Search by file extension, this option can be used repeatedly to search for multiple file extensions
@@ -10,18 +8,18 @@
 - `-t d` / `-t f`: Specify only directories / files
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
 
-## One Liners
+# One Liners
 
 - `fd --hidden "release.yml" --exec fish -c "cd {//}; pwd; git status"`: Perform commands
 - `fd -e "md" . ./raster/`: Search a specific path without supplying a pattern (note the `.` as a pattern that matches everything)
 - `fd --type executable` / `fd -t executable`: Find all executable files
 
-## Deleting Files
+# Deleting Files
 
 - `fd <term> -X rm`: Files
 - `fd <term> -X rm -r`: Directories
 
-## Troubleshooting
+# Troubleshooting
 
 - `fd` doesn't search full paths by default, so `rg "dir.*file"` won't find a `file` in a `dir`, but `fd -p "dir.*file"` will
 

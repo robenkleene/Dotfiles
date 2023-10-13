@@ -1,5 +1,3 @@
-# Fish Debugging
-
 Print expansion before executing:
 
     set fish_trace 1

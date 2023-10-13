@@ -1,15 +1,13 @@
-# `fzf`
-
 - Just `fzf` alone lists files recursively by default
 
-## Flags
+# Flags
 
 - `--no-sort`: Prevents sorting matches as you type
 
-## Bindings
+# Bindings
 
 - `⇥`: Toggle select multiple matches
 
-## Actions
+# Actions
 
 - `{+}`: Replaced by a quoted, space-separate, list of the selected lines

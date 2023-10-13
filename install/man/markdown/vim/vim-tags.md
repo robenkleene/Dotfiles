@@ -1,5 +1,3 @@
-# `vim` Tags
-
 * `<C-]>`: Jump to definition of the keyword under the cursor (this adds it to the `tagstack`)
 * `<C-w><C-]>`: Open tag under cursor in a new split
 * `<C-w>v<C-]>`: Open tag under cursor in a new vertical split

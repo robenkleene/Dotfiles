@@ -1,8 +1,6 @@
-# `git` Master to Main
-
 - Rename the main branch from `master` to `main` on GitHub, by going to branches, then clicking the edit button next to the branch.
 
-## Updating Local Checkouts
+# Updating Local Checkouts
 
     # Move master to main
     git branch -m master main

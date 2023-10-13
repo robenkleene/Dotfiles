@@ -1,13 +1,11 @@
-# `vim` Macros
-
 * `qa`: Start recording a macro into register `a`
 * `q`: Stop recording
 * `@a`: Playback macro
 * `@@`: Repeat last macro
 
-## Editing an Existing Macro
+# Editing an Existing Macro
 
-### Quick Way
+## Quick Way
 
 Just set the value of the register to be the intended macro:
 
@@ -15,7 +13,7 @@ Just set the value of the register to be the intended macro:
 
 To edit an existing Macro, use `<C-r>a` between the single quotes to paste the contents of that register.
 
-### Elaborate Way
+## Elaborate Way
 
 For more complex edits:
 

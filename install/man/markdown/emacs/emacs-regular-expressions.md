@@ -1,5 +1,3 @@
-# Emacs Regular Expressions
-
 ```
   \        prevents interpretation of following special char
   \|       or

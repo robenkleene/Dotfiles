@@ -1,5 +1,3 @@
-# `bash` Terminal
-
 Opening files:
 
     fd ultisnips -0 | xargs -o -0 vim

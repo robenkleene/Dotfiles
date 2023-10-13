@@ -1,45 +1,43 @@
-# `git`
-
-## New Repo
+# New Repo
 
     git remote add origin <remote-url>
     git push origin master
     git branch --set-upstream-to=origin/master master
 
-## Common
+# Common
 
 - `git show <hash>`: Show a commit
 - `git clone --depth 1 <repo>`: Clone without history
 - `git clean -df`: Remove untracked
 
-## Log
+# Log
 
 - `git log -p` (`-u`, `--patch`): Generate a patch for the commit, this is a lot like a combined `git log` and `git diff`
 
-### File Substitution
+## File Substitution
 
 Using file substitution with with `vimdiff`:
 
     vimdiff <(git show development:Cartfile) Cartfile
 
-## Remote
+# Remote
 
 - `git ls-remote --get-url`: Print just the URL
 
 Update origin: `git remote rm origin` then `git remote add origin` with the new one.
 
-### `git-remote`
+## `git-remote`
 
 - `--verbose` or `-v`: Print the full remote URL with additional info
 
 
-## Information
+# Information
 
 - `git rev-parse HEAD`: Print current commit
 
-## Listing Files
+# Listing Files
 
-### `git ls-files`
+## `git ls-files`
 
 - `-m` or `--modified`: List modified files
 - `-o` or `--others`: List untracked and ignored files
@@ -47,7 +45,7 @@ Update origin: `git remote rm origin` then `git remote add origin` with the new 
 
 So `git ls-files -o --exclude-standard` will list untracked files that aren't ignored.
 
-## `git stash`
+# `git stash`
 
 - `git stash show -p` or `git stash show --patch`: Show a `diff` of the stash
 - `git stash save "My stash"`: Give a stash a name
@@ -57,16 +55,16 @@ So `git ls-files -o --exclude-standard` will list untracked files that aren't ig
     - `n`: Do not stash this hunk
     - `q`: Quit and don't stash anymore
 
-## Merge Upstream
+# Merge Upstream
 
     git merge upstream/master
 
-## Revert to a Commit
+# Revert to a Commit
 
 This will make one commit that reverts to a previous commit:
 
     git revert --no-commit 0cb64eb7eff0827d3fea1e6c4d172b9fe85b852b..HEAD
 
-## From a Path
+# From a Path
 
 - `-C`: Run a git command from a path

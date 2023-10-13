@@ -1,27 +1,25 @@
-# `hg`
-
 - `hg status`
 - `hg amend`: Amend last commit (`hg` has no staging)
 - `hg id -i`: Print commit ID
 - `hg update`: Checkout a commit
 
-## Files
+# Files
 
 - `hg add`: Add all untracked files
 - `hg addremove`: Add and remove all files
 - `hg rm <file>`: Remove
 - `hg record`: Make partial commits
 
-## Pull
+# Pull
 
 - `hg pull`: Fetch commits (does not merge like `git`, only downloads, more like `git fetch`)
 
-## Rebase
+# Rebase
 
 - `hg rebase -d master`: Get branch up-to-date with master
 - `hg rebase -s . -d master`: Rebase current diff onto master
 
-## Reverting
+# Reverting
 
 - `hg revert --all`: Revert all files
 - `hg purge --files`: Delete all untracked files (marked by `?`)
@@ -31,35 +29,35 @@
 - `hg up -C remote/master`: Checkout and discard all local changes
 - `hg update --clean fbobjc/stable`
 
-### Hard Rest
+## Hard Rest
 
 - `hg purge && hg checkout --clean .`
 
-### Reverting Reverts
+## Reverting Reverts
 
 - `hg backout <reverting diff>`
 
-## Conflicts
+# Conflicts
 
 - `hg resolve --all`: Resolve all merge conflicts
 
-## Workflow
+# Workflow
 
 - `hg log -pr .`: Show last commit
 - `hg backout -r .`: Revert last commit
 
-## Stash
+# Stash
 
 - `hg shelve --list`: List stashed changes
 - `hg unshelve`: Pop from stash
 - `hg shelve -d default`: Drop default stash
 
-## Troubleshooting
+# Troubleshooting
 
 - `hg purge`: Delete untracked
 - `hg reset --clean master`: Reset to branch
 
-## `histedit`
+# `histedit`
 
 To squash or rebase
 
@@ -67,7 +65,7 @@ To squash or rebase
 - `hg resolve -t internal:other --all`: Accept theirs
 - `hg resolve -t internal:local --all`: Accept ours
 
-### Split a Commit
+## Split a Commit
 
 Or edit
 
@@ -75,7 +73,7 @@ Or edit
 2. Use `hg record` to selectively commit changes, including making edits before hand or making multiple commits
 3. Use `hg histedit --continue` to finish
 
-## Move
+# Move
 
 To clean up a `addremove` that should be a move:
 
@@ -85,7 +83,7 @@ To clean up a `addremove` that should be a move:
 4. `hg mv <oldfile> <newfile`
 5. `hg amend`
 
-## Other
+# Other
 
 - `hg cat --rev=<rev> <file path>`: Get file contents on another branch
 - `hg log -r "<commit>::."`: Check if a commit (`<commit>`) is an ancestor of the current commit (`.`)

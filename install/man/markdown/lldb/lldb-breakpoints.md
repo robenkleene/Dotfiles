@@ -1,5 +1,3 @@
-# `lldb` Breakpoints
-
 Note that `b` is *not* simply shorthand for `breakpoint`, these commands require `breakpoint`.
 
 - `breakpoint set -n`: Set a breakpoint by a symbol, e.g., for a function name

@@ -1,47 +1,45 @@
-# Swift Higher-Order Functions
-
-## `map`
+# `map`
 
 	let squares = values.map { $0 * $0 }
 
-## `compactMap`
+# `compactMap`
 
 	let keys: [String?] = ["Tom", nil, "Peter", nil, "Harry"]
 	let validNames = keys.compactMap { $0 }
 
-## `flatMap`
+# `flatMap`
 
 	let results = [[5,2,7], [4,8], [9,1,3]]
 	let allResults = results.flatMap { $0 }
 
-## `filter`
+# `filter`
 
 	let even = digits.filter { $0 % 2 == 0 }
 
-## `reduce`
+# `reduce`
 
 	let items = [2.0,4.0,5.0,7.0]
 	let total = items.reduce(10.0, +)
 
-## `forEach`
+# `forEach`
 
 	numbers.forEach { $0.isMultiple(of: 2) ? print("\($0) is even") : print("\($0) is odd") }
 
-## `contains`
+# `contains`
 
 Returns a boolean.
 
 	let hasNumbersLessThan5 = numbers.contains { $0 < 5 }
 
-## `removeAll`
+# `removeAll`
 
 	numbers.removeAll { $0 < 10 }
 
-## `sorted`
+# `sorted`
 
 	let sorted = toSort.sorted { $0 > $1 }
 
-## `split`
+# `split`
 
 	let message = "Hello World!"
 	let result = message.split { $0 == " " }

@@ -1,5 +1,3 @@
-# `zsh` Help
-
 - `man zshall`: Everything
 - `man zshmisc`: Prompt
 - `man zshzle`: Bindings

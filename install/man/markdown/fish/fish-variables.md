@@ -1,5 +1,3 @@
-# `fish` Variables
-
 - `set -lx VAR world`: Local exported variable
 - `set -e VAR`: Erase variable
 - `set result (pbpaste)`: Set a variable
@@ -7,11 +5,11 @@
 - `printf "%s\n" $result`: Print variable separated by line endings 
 - `set --show MANPATH`: Deeper inspection into variables
 
-## One Liner
+# One Liner
 
 - `key=value echo $key`: Set variable for one command
 
-## Universal Variables
+# Universal Variables
 
 - Stored in `~/.config/fish_variables` and preserved across restarts (`abbr` are also stored in this file)
 - `set -Ux`: Save universal variable (that will also be exported with `-x`, which is probably what's wanted)

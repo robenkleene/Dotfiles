@@ -1,13 +1,11 @@
-# C Headers
-
-## `#include <stdio.h>`
+# `#include <stdio.h>`
 
 - Declares `printf`
 
-## `#include <stddef.h>`
+# `#include <stddef.h>`
 
 - Declares `NULL`
 
-## `#include <stdlib.h>`
+# `#include <stdlib.h>`
 
 - Declares `malloc`

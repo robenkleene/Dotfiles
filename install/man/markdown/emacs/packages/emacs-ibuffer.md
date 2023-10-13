@@ -1,5 +1,3 @@
-# Emacs IBuffer
-
 - `u`: Unmark buffer
 - `m`: Mark buffer
 - `t`: Invert marked buffers
@@ -7,7 +5,7 @@
 - `* M`: Mark buffers by major mode
 - `U t` (or `* s`): Mark all buffers
 
-## On Marked Buffers
+# On Marked Buffers
 
 - `M-s a C-s`: Do incremental search in the marked buffers.
 - `M-s a C-M-s`: Isearch for regexp in the marked buffers.
@@ -16,7 +14,7 @@
 - `I`: As above, with a regular expression.
 - `0`: Run occur on the marked buffers.
 
-## Sort
+# Sort
 
 - `,`: Rotate through sorting option
 - `s i`: Reverse sorting order

@@ -1,5 +1,3 @@
-# Bash Equality
-
 These are equivalent:
 
     [[ $x == "$y" ]]
@@ -7,7 +5,7 @@ These are equivalent:
     [ "$x" == "$y" ]
     [ "$x" = "$y" ]
 
-## String Comparison
+# String Comparison
 
 In Bash the right hand side is always a glob.
 

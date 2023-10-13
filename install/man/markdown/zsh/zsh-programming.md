@@ -1,8 +1,6 @@
-# `zsh` Programming
-
 Most of this kind of documentation is found in `man zshexpn`.
 
-## Associative Arrays
+# Associative Arrays
 
 	typeset -A abbreviations
 
@@ -11,7 +9,7 @@ Most of this kind of documentation is found in `man zshexpn`.
 	'key2' 'value2'
 	)
 
-### Parameter Expansion Flags
+## Parameter Expansion Flags
 
 List all keys:
 
@@ -21,6 +19,6 @@ Ascending order
 
 	${(o)assoc}
 
-## Numbers
+# Numbers
 
 - `{42..69}`: Expands to numbers between `42` and `69`

@@ -1,8 +1,6 @@
-# `git` Log
-
 - `git log main..`: list all the commits on the current branch that aren't on main
 
-## Searching `git` Log
+# Searching `git` Log
 
 - `git log --grep "something"`: Search commit messages for a regular expression
 - `git log -G`: Output all commits whose contents match a regular expression

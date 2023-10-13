@@ -1,26 +1,24 @@
-# Make
-
 - `-d`: Print debug information
 - `make --debug=b`: Run with basic debugging information
 
-## Notes
+# Notes
 
-### Parameters
+## Parameters
 
 In `Makefile`, it's really difficult to pass a parameter to a `make` command, e.g., `make force_deploy -f`. This is because in `make` parlance the arguments are all supposed to be files to run the command on, so it breaks the paradigm. Instead to solve this just make a separate shell script.
 
-### Deleting Targets
+## Deleting Targets
 
 - If `.DELETE_ON_ERROR` appears as a target, then if the build fails, the target will be deleted. The `-i` / `--ignore-errors` option can often be used to keep an executable.
 
-## Tips
+# Tips
 
 To suppress output of a command, precede it with an `@`:
 
     hello:
         @echo "hello world"
 
-## Functions
+# Functions
 
     define test_message
         remote=$$(git config --get remote.origin.url | tr -d '\n'); \
@@ -43,7 +41,7 @@ To suppress output of a command, precede it with an `@`:
     test_finish:
         @$(call test_message,CIFINISHED)
 
-## Variables
+# Variables
 
     NAME = robenkleene_macos
     ERGODOX_SRC = $(shell pwd)/ergodox_ez$(NAME)

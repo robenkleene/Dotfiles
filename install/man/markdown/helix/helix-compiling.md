@@ -1,11 +1,9 @@
-# Helix Compiling
-
 1. Compile with `cargo install --path helix-term`
 2. After compiling, before running, add create a symlink to the runtime path: 
 
         ln -s $PWD/runtime ~/.config/helix/runtime
 
-## Notes
+# Notes
 
 Package managers make a wrapper script that sets the Helix runtime path:
 

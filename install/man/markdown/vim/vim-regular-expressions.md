@@ -1,8 +1,6 @@
-# `vim` Regular Expressions
-
 - Find and replace whole words only, use `s/\<word\>/newword/g`. (Note that the `*` and `#` commands populate the current word with this, so you can get use those commands to populate the `/` register with the search term.)
 
-## Notes
+# Notes
 
 `magic` is the default setting, this means non-greedy is `\{-}` and capture groups is `\(\)`.
 
@@ -20,7 +18,7 @@
 	\{    {        {          {     literal_'{'
 	a     a        a          a     literal_'a'
 
-## Pattern Modifiers
+# Pattern Modifiers
 
 * `/\v`: Very magic search makes most special characters take on their meaning.
 * `/\V`: `verynomagic` search, no special characters, everything is interpreted literally.
@@ -29,7 +27,7 @@
 
 By default Vim searches for the literal characters for most punctuation (excluding `[]`, `.`, `*`, others? These need to be normally need to be escaped).
 
-## Special Characters
+# Special Characters
 
 * Use `\{-}` instead of `*` for non-greedy (or `{-}` with `\v`)
 * `.`: Any character except new line

@@ -1,5 +1,3 @@
-# Helix Selection
-
 - `;`: Deselect
 - `w`: Select to the beginning of the next current word
 - `e`: Select to the end of the current word
@@ -15,7 +13,7 @@
 - `A-;`: Swap cursor and anchor
 - `f↩` / `t↩`: Select to the end of the line
 
-### Select Mode
+## Select Mode
 
 After using `s` to select a term.
 

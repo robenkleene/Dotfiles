@@ -1,10 +1,8 @@
-# `cloc`
-
-## Flags
+# Flags
 
 - `--by-file`: List results by file
 
-## Only `git` Files
+# Only `git` Files
 
 	cloc --vcs=git
 

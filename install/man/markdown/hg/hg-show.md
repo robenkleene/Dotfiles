@@ -1,10 +1,8 @@
-# `hg` Show
-
-## Basic
+# Basic
 
 - `hg show`: Shows latest committed diff (excluding working directory changes)
 
-## Other
+# Other
 
 - `hg show --stat`: Show just filenames modified
 - `hg show <rev> <file-path>`: Show changes to file at revision

@@ -1,12 +1,10 @@
-# `ruby`
-
 Break up long strings:
 
 	string = "line #1"\
 			 "line #2"\
 			 "line #3"
 
-## Performance Profiling
+# Performance Profiling
 
 Just add:
 
@@ -14,17 +12,17 @@ Just add:
 
 The analysis will get printed to `STDIN`.
 
-### Command Line
+## Command Line
 
 - `ruby -r profile`
 - `rake -r profile`
 
-## Asserts
+# Asserts
 
-### Quick Pattern
+## Quick Pattern
 
 	raise unless file_view.class == Window
 
-### Order
+## Order
 
 	assert(expected, actual)

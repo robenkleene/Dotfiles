@@ -1,5 +1,3 @@
-# Gem Troubleshooting
-
 Each time this command is run:
 
     repla server "bundle exec jekyll serve --watch --drafts --config _config_local.yml"

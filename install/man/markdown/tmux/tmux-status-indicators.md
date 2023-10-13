@@ -1,6 +1,4 @@
-# `tmux` Status Indicators
-
-## Window Status Indicators
+# Window Status Indicators
 
 - `*`: Current window
 - `-`: Marks the last window (previously selected).

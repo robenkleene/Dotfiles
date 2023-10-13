@@ -1,7 +1,5 @@
-# Emacs Tramp
-
 - `C-x C-f` `/ssh:aresdev:`
 
-## Debugging
+# Debugging
 
     (setq tramp-verbose 10)

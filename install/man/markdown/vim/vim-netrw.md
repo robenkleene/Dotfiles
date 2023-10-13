@@ -1,5 +1,3 @@
-# `vim` `netrw`
-
 - `:e`: Refresh the file list
 - `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`)
 - `d`: Create directory
@@ -10,13 +8,13 @@
 - `i`: Switch between different display styles (e.g., tree view, showing metadata)
 - `p`: Preview file
 
-## Opening Files
+# Opening Files
 
 - `o`: Open file in horizontal split
 - `v`: Open file in vertical split
 - `t`: Open file in new tab
 
-## Mark
+# Mark
 
 - `mf`: Mark file
 - `mF`: Unmark file
@@ -25,6 +23,6 @@
 - `mc`: Copy marked files to target directory
 - `mm`: Move marked files to target directory
 
-## Vinegar
+# Vinegar
 
 With `vim-vinegar`, `gh` to show hidden files.

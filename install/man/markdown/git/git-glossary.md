@@ -1,5 +1,3 @@
-# `git` Glossary
-
 - **HEAD**: The currently checked out commit.
 - **Staging Area**: Where you add files to prepare them for a commit.
 - **Working Tree**: A tree of checked out files.

@@ -1,5 +1,3 @@
-# `zsh` Jobs
-
 * `<C-z>`: Suspend
 * `fg`: Resume
 * `jobs`: List jobs

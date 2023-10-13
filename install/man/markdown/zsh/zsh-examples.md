@@ -1,6 +1,4 @@
-# `zsh` Examples
-
-## Loop
+# Loop
 
 ```
 for f in *; ls -l $f

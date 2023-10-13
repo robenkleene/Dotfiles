@@ -1,11 +1,9 @@
-# `tmux`
-
 * `tmux kill-server`: Kill everything
 * `:source-file ~/.tmux.conf`: Reload `tmux.conf`
 * `tmux source-file ~/.tmux.conf`: Reload `tmux.conf`
 * `tmux list-keys -t vi-edit`
 
-## Sessions
+# Sessions
 
 * `<prefix>$`: Rename session
 * `<prefix>d`: Detach
@@ -14,16 +12,16 @@
 * `tmux attach -t [target session]`: Attach to a specific session
 * `tmux kill-session`: Kill current session
 
-### Creating Sessions
+## Creating Sessions
 
 * `:new`: Make new session
 
-### Switching Sessions
+## Switching Sessions
 
 * `<prefix>s`: Choose session
 * `<prefix>(` / `<prefix>)` : Next / Previous session
 
-## Panes
+# Panes
 
 * `<prefix>x`: Kill pane
 * `<prefix>M-Up` / `<prefix>M-Down` / `<prefix>M-Left` / `<prefix>M-Right`: Resize pane
@@ -32,40 +30,40 @@
 * `join-pane -t :0`: Move pane to window 0
 * `respawn-pane -k`: Re-spawn pane, killing first (use on "stuck" panes)
 
-### Creating Panes
+## Creating Panes
 
 * `<prefix>%`: Vertical Split
 * `<prefix>"`: Horizontal Split
 
-### Switching Panes
+## Switching Panes
 
 * `<prefix>o`: Next pane
 * `<prefix>;`: Previous pane
 * `<prefix>q`: Switch to numbered pane
 * `<prefix>!`: Switch a pane to window
 
-### Moving Panes
+## Moving Panes
 
 * `<prefix>{` / `<prefix>{`: Move panes
 
-## Windows
+# Windows
 
 * `<prefix>,`: Rename Window
 * `<prefix>&`: Kill window
 
-### Creating Windows
+## Creating Windows
 
 * `<prefix>c`: New Window
 * `new-window -a`: New window to the right of this one
 
-### Switching Windows
+## Switching Windows
 
 * `<prefix>0`, `<prefix>1`...: Switch to that window number
 * `<prefix>'`: Switch to window (Prompt to enter window number)
 * `<prefix>l`: Last Window
 * `<prefix>n` / `<prefix>p`: Next Window
 
-### Moving Windows
+## Moving Windows
 
 * `swap-window -s 3 -t 1`: Move window index 3 to a used index
 * `swap-window -t 1`: Move current window to a used index
@@ -73,7 +71,7 @@
 	* `:movew -r`: Move all windows to next unused window number
 * `<prefix>.`: Move window (Prompt to enter window number)
 
-## Scroll, Copy & Paste Modes
+# Scroll, Copy & Paste Modes
 
 * `<prefix>[`: Enter copy/scroll mode
 * `<prefix>]`: Paste

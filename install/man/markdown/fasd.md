@@ -1,5 +1,3 @@
-# `fasd`
-
 Delete an entry:
 
 	fasd -D /Users/kleener/Development/Projects/windowpane/scripts
