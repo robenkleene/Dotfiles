@@ -69,3 +69,4 @@ fi
 ./install/ruby/install.sh
 ./install/python/install.sh
 ./install/rust/install.sh
+./install/man/install.sh

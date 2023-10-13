@@ -29,4 +29,4 @@ while IFS= read -r; do
     echo "Warning: Skipping $dest because it already exists, using $source" >&2
   fi
   pandoc --standalone --to man --from markdown <({ echo "% ${title}(9) Reference"; cat "$source"; }) --output "$dest"
-done < <( find markdown -type f -name "*.md" -exec awk '/^%/{print FILENAME} {nextfile}' {} + )
+done < <( find markdown -type f -name "*.md" )
