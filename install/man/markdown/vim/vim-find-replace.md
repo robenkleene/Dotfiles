@@ -1,5 +1,3 @@
-See [`vim-quickfix.md`](vim-quickfix.md) for more.
-
 # Search
 
 - `n`: Next search
@@ -31,6 +29,7 @@ Add `| copen` to the end of any of the above to show the `quickfix` list.
 
 - `s/foo/bar`
 - `s#foo#bar`: Alternative syntax, very useful for replaces that involve a lot of slashes.
+- `&` represents the entire match, e.g., in `%s/a file/mv "&" "&"`
 
 # Using `gn`
 
