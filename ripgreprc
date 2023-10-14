@@ -1,6 +1,7 @@
 --no-heading
 --with-filename
 --line-number
+--column
 --colors=match:fg:white
 --colors=match:bg:239
 --colors=path:fg:cyan
