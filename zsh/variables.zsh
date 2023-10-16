@@ -50,5 +50,7 @@ export NNN_PLUG='z:z;r:reveal;p:preview'
 # FZF
 # Use `fd` for `:Files` in `fzf.vim`
 export FZF_DEFAULT_COMMAND='fd --type f'
+# Always wrap preview window because it's usually useless without it
+export FZF_DEFAULT_OPTS='--preview-window=wrap'
 
 fpath=( ~/.zfunc "${fpath[@]}" )
