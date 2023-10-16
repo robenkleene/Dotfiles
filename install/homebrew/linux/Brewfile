@@ -32,6 +32,8 @@ brew 'hyperfine'
 
 # Special
 brew 'pandoc'
+# Shows whitespace nicer than xxd
+brew 'hexyl'
 
 # Languages
 # JavaScript

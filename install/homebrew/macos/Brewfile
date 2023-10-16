@@ -60,6 +60,9 @@ brew 'mosh', args: ['HEAD']
 brew 'youtube-dl'
 brew 'mitmproxy'
 brew 'hyperfine'
+# Shows whitespace nicer than xxd
+brew 'hexyl'
+brew 'scrcpy'
 
 # VR
 
