@@ -17,3 +17,7 @@
 - Prefixed with `^` means result must start with
 - Prefixed with `!` means result must not contain
 - Suffixed with `$` means result must end with
+
+# Preview
+
+- `⇧↑` / `⇧↓`: Scroll preview window up / down
