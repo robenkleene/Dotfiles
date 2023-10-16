@@ -6,8 +6,9 @@ cd "$(dirname "$0")" || exit 1
 
 # Delete all existing
 destination_dir="$HOME/.man/man9"
-mkdir "$destination_dir"
-find -L "$destination_dir" -name "*.9" -type f -exec rm {} +
+if [[ -d "$destination_dir" ]]; then
+  find -L "$destination_dir" -name "*.9" -type f -exec rm {} +
+fi
 
 while IFS= read -r; do
   ~/.bin/md_man_update "$REPLY"
