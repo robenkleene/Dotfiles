@@ -102,4 +102,7 @@ set cursorline
 
 " Allow moving past the first character on the line, this makes editing prose
 " easier
-set whichwrap+=h,l
+" <,> are arrow keys in normal and visual modes
+" [,] are arrow keys in insert mode
+set whichwrap+=h,l,<,>,[,]
+
