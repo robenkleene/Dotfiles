@@ -22,10 +22,11 @@
 - `<prefix>n`: Next window
 - `<prefix>.`: Move a window by specifying a window number
 - `swap-window -t -1` / `swap-window -t +1`: Swap window left / right
+- `:kill-window -a`: Kill other windows
 
 # Panes
 
-- `:kill-pane -a`: Kill all panes except this one
+- `:kill-pane -a`: Kill other panes
 - `<prefix>x`: Kill pane
 - `<prefix>!`: Move current pane to new window
 - `<prefix>;`: Last pane
