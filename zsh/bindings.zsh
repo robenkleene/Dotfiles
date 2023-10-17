@@ -96,6 +96,8 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+bindkey -e '^P' up-line-or-beginning-search
+bindkey -e '^N' down-line-or-beginning-search
 bindkey -e "${key[Up]}" up-line-or-beginning-search
 bindkey -e "${key[Down]}" down-line-or-beginning-search 
 # This is the only thing that seems to work on macOS
