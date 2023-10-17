@@ -1,5 +1,7 @@
 - `adb reboot`: Reboot
+- `adb shell reboot -p`: Shutdown
 - `adb devices`: List devices
+
 
 # `adb shell`
 
