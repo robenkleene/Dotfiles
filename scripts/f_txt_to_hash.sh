@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-grep --only-matching "[^A-Z][a-f0-9]\{9\}[a-f0-9]* " | sed 's/\s.*$//'
+grep --only-matching "[a-f0-9]\{9\}[a-f0-9]*" | sed 's/\s.*$//'
