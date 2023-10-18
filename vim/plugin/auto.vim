@@ -32,6 +32,7 @@ augroup auto_save_session
   \&& &filetype !~ 'gitcommit'
   \&& &filetype !~ 'pullrequest'
   \&& &filetype !~ 'gitrebase'
+  \&& &filetype !~ 'hgcommit'
   \|    silent! mksession! ~/.vim/vim_auto_session
   \|  endif
 augroup END
