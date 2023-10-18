@@ -73,6 +73,7 @@ brew 'suspicious-package'
 tap 'homebrew/cask'
 # cask 'emacs'
 cask 'blender'
+cask 'godot'
 cask 'alacritty'
 
 # Animated GIFs, `gifify` dependencies
