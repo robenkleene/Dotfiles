@@ -24,7 +24,7 @@ set cpoptions+=y
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
-set ignorecase
+" set ignorecase
 " Just use `\c` to make search case insensitive
 " set smartcase
 
