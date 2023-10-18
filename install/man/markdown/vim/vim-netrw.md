@@ -23,6 +23,10 @@
 - `mc`: Copy marked files to target directory
 - `mm`: Move marked files to target directory
 
+## Shell Commands
+
+- `mx`: Run shell command on marked files (to specify where the file should appear in the command, use `%`)
+
 # Vinegar
 
 With `vim-vinegar`, `gh` to show hidden files.
