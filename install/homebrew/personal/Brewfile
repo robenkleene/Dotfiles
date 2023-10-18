@@ -66,6 +66,7 @@ brew 'suspicious-package'
 # Cask GUI Apps
 tap 'homebrew/cask'
 cask 'blender'
+cask 'godot'
 cask 'anki'
 cask 'alacritty'
 
