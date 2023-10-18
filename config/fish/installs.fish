@@ -11,7 +11,8 @@ end
 # fzf
 if test -e $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
     source $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
-    fzf_key_bindings
+    # This is causing problems saying "unknown command"
+    # fzf_key_bindings
 end
 
 # This doesn't work for some reason
