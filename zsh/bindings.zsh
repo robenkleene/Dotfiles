@@ -37,8 +37,10 @@ zle -N _bash_backward_kill_word
 
 _system_kill_line() {
   # Copy
+  # This disrupts the history less
   echo -n "$BUFFER" | ~/.bin/safecopy
   # Cut
+  # This provides visual feedback
   # zle kill-whole-line
   # echo -n "$CUTBUFFER" | ~/.bin/safecopy
 }
