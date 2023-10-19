@@ -1,3 +1,4 @@
+- `brew update` and `brew upgrade` should be dine in alphabetical order
 - `brew update`: Update homebrew itself
 - `brew upgrade <package>`: Brew update package or everything if it's omitted
 
