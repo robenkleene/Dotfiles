@@ -16,9 +16,10 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -e "^X^E" edit-command-line
 
-# `shell` deletes the last parameter
 autoload -Uz select-word-style
-default_word_style="shell"
+# `shell` deletes the last parameter, including strings and shell commands
+# default_word_style="shell"
+default_word_style="default"
 select-word-style $default_word_style
 
 # Cycle through previous parameters
