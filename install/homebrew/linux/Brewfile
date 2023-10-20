@@ -15,9 +15,9 @@ brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
 # Modern
-brew 'helix'
-brew 'nushell'
-brew 'fish'
+# brew 'helix'
+# brew 'nushell'
+# brew 'fish'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
