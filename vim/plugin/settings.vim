@@ -106,3 +106,4 @@ set cursorline
 " [,] are arrow keys in insert mode
 set whichwrap+=h,l,<,>,[,]
 
+set completefunc=commands#CompleteRegisters

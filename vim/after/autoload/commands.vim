@@ -57,6 +57,21 @@ function! commands#Fd(terms) abort
   execute "args ".l:result
 endfunction
 
+function! command#CompleteRegisters(findstart, base)
+  let s = ''
+  redir => s
+  silent registers
+  redir END
+  let reg_list = []
+  for reg_str in split(s, "\n")[1:]
+      let abbr = reg_str[6:7]
+      let word = reg_str[10:]
+      let reg_dict = {"menu": word, "abbr": abbr, "word": "", "dup": v:true, "empty": v:true, "kind": "r"}
+      call add(reg_list, reg_dict)
+  endfor
+  return complete(col('.'), reg_list)
+endfunction
+
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
   let cmd = "find ~/.man -type f -name '". escape(a:arglead, '%#') . "*' -exec basename {} '.9' \\;"
   return systemlist(cmd)
