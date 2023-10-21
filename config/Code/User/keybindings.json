@@ -26,11 +26,6 @@
     "when": "!terminalFocus"
   },
   {
-    "key": "ctrl+alt+w",
-    "command": "editor.action.toggleWordWrap",
-    "when": "editorTextFocus"
-  },
-  {
     // Codespaces doesn't have this keyboard shortcut by default
     "key": "cmd+0",
     "command": "workbench.action.focusSideBar"
