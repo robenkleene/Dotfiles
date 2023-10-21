@@ -28,6 +28,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 " Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
 Plug 'vim-scripts/vis', { 'on': 'B' }
 " More reliable open browser
