@@ -84,7 +84,9 @@ setopt nolistambiguous
 # Highlight tab match
 zstyle ':completion:*' menu select
 # Make completion case and hyphen insensitive
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+# This makes some completions add an addition latter, likes
+# `tmux_session_s` where the `s` is too specific
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 # Cache completion by default at `~/.zcompcache`
 # These don't appear to do anything
 # zstyle ':completion::complete:*' use-cache true
