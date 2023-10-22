@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "SynthWave '84",
     "security.workspace.trust.enabled": false,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "always"
 }
