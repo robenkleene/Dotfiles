@@ -1,4 +1,5 @@
 {
     "workbench.colorTheme": "SynthWave '84",
-    "security.workspace.trust.enabled": false
+    "security.workspace.trust.enabled": false,
+    "workbench.startupEditor": "none"
 }
