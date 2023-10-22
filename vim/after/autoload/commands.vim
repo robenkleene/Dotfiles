@@ -58,6 +58,9 @@ function! commands#Fd(terms) abort
 endfunction
 
 function! command#CompleteRegisters(findstart, base)
+  if a:findstart == 1
+    return 0
+  endif
   let s = ''
   redir => s
   silent registers
