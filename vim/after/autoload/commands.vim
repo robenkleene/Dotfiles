@@ -57,7 +57,7 @@ function! commands#Fd(terms) abort
   execute "args ".l:result
 endfunction
 
-function! command#CompleteRegisters(findstart, base)
+function! commands#CompleteRegisters(findstart, base)
   if a:findstart == 1
     return 0
   endif
