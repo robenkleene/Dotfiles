@@ -2,8 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq explicit-shell-file-name "/usr/local/bin/fish")
-(setq shell-file-name "fish")
+;; (setq explicit-shell-file-name "/usr/local/bin/fish")
+;; (setq shell-file-name "fish")
 (add-hook 'shell-mode-hook (lambda ()
                              (setq comint-process-echoes t)
                              ;; Disable whitespace
