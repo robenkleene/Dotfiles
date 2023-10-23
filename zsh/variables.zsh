@@ -16,7 +16,7 @@ export LESS="less"
 # do `Gq` to dump the entire contents to the terminal
 # `--ignore-case`: Smart case (without this option do `-i` inside `less` to
 # toggle case sensitivity
-export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch"
+export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch --ignore-case"
 # Prevent `npm` scripts from opening browser windows
 # This breaks `gh browse`
 # export BROWSER="none"
