@@ -48,7 +48,7 @@
   (add-to-list 'eglot-server-programs '(json-mode "vscode-json-language-server"))
   (add-to-list 'eglot-server-programs '(html-mode "vscode-html-language-server"))
   (add-to-list 'eglot-server-programs '(css-mode "vscode-css-language-server"))
-  (add-to-list 'eglot-server-programs '(markdown-mode "marksman"))
+  ;; (add-to-list 'eglot-server-programs '(markdown-mode "marksman"))
   ;; `settings.json'
   ;; (setq-default eglot-workspace-configuration
   ;;               '((:rust-analyzer
