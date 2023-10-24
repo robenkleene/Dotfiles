@@ -39,15 +39,15 @@ if [[ -n "${CODESPACES-}" ]]; then
 fi
 ./update.sh
 
+if [[ -n "${CODESPACES:-}" ]]; then
+  exit 0
+fi
+
 ./install/files/dirs.sh
 if [[ -n "${PERSONAL:-}" ]]; then
   ./install/repos/install.sh
 else
   ./install/repos/install.sh -p
-fi
-
-if [[ -n "${CODESPACES:-}" ]]; then
-  exit 0
 fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
