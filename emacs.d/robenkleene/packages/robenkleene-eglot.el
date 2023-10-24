@@ -12,7 +12,7 @@
            rust-mode
            sh-mode
            typescript-mode
-           markdown-mode
+           ;; markdown-mode
            python-mode
            json-mode
            html-mode
