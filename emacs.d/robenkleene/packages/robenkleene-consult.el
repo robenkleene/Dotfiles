@@ -4,11 +4,10 @@
 
 (use-package consult
   :bind (
-         ;; Use `consult-buffer' by default
-         ;; Just use default `C-x b'
-         ;; ("C-x b" . consult-buffer)
+         ;; Use `conult-buffer' by default which features a preview
+         ("C-x b" . consult-buffer)
          ;; Just use default `C-x r'
-         ;; ("C-x r" . consult-recent-file)
+         ("C-c r" . consult-recent-file)
          ;; ("C-c q" . consult-compile-error)
          ("C-c g" . consult-ripgrep)
          ("C-c f" . rk/consult-fd)
