@@ -1,5 +1,6 @@
 {
     "security.workspace.trust.enabled": false,
     "workbench.startupEditor": "none",
-    "git.openRepositoryInParentFolders": "always"
+    "git.openRepositoryInParentFolders": "always",
+    "extensions.ignoreRecommendations": true
 }
