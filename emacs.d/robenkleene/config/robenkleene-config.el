@@ -333,6 +333,9 @@
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)
 
+;; Echo keystrokes to the echo area immediately
+(setq echo-keystrokes 0.1)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
