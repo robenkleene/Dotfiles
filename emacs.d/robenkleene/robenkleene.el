@@ -63,7 +63,6 @@
 (require 'robenkleene-rainbow-mode)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-eglot)
-(require 'robenkleene-expand-region)
 (require 'robenkleene-corfu)
 (require 'robenkleene-iedit)
 
