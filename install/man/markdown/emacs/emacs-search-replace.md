@@ -28,7 +28,16 @@
 # Replace
 
 - `M-%`: Find & replace
-- `C-M-%`: Regular expression find & replace
+- `C-M-%`: Regular expression find & replace (doesn't work in terminal Emacs)
+
+## From Incremental Search
+
+This is the best approach that also works on terminal.
+
+1. Start a regular expression incremental search (`C-M-s`)
+2. Enter the search term and hit `M-%` to switch to a query replace
+3. Enter the replace term and hit enter
+4. Hit `!` to apply the replace
 
 ## Active Replace
 
