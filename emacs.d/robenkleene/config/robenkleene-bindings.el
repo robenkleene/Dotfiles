@@ -82,6 +82,8 @@
 ;; General
 (define-key rk/bindings-minor-mode-map (kbd "M-r")
             'reveal-in-finder)
+(define-key rk/bindings-minor-mode-map (kbd "C-c z")
+            'z)
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
 ;;   'rk/open-terminal-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
