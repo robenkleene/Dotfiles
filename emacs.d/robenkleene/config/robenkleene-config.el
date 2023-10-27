@@ -18,6 +18,9 @@
 ;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 ;; Just disable Emacs making backup files
 (setq make-backup-files nil)
+;; The above still seems to create backup files, probably for when a file is
+;; saved but not modified, save those to a temporary directory.
+(setq backup-directory-alist `(("." . temporary-file-directory)))
 
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
