@@ -16,19 +16,21 @@
 ;; expression. From `isearch', hit `M-%' to start a query replace. The query
 ;; replace will match the same mode as the `isearch' (so it will be `regex' if
 ;; you hit `M-r')
-;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
-;; (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-;; (define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
-;; (define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+;; The above approach doesn't work for doing a replace in a region, because
+;; starting the `isearch' moves the point
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
 ;; Swap query replace
-;; (define-key rk/bindings-minor-mode-map (kbd "M-%")
-;;             'query-replace-regexp)
-;; (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+(define-key rk/bindings-minor-mode-map (kbd "M-%")
+            'query-replace-regexp)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
-;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
+(define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
+(define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
+(define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
+(define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
