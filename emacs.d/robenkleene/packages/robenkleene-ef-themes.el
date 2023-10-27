@@ -11,7 +11,7 @@
   ;; (ef-themes-select 'ef-bio)
   ;; (ef-themes-select 'ef-symbiosis)
   ;; (ef-themes-select 'ef-elea-dark)
-  ;; (ef-themes-select 'ef-maris-dark)
+  (ef-themes-select 'ef-maris-dark)
   )
 
 (provide 'robenkleene-ef-themes)
