@@ -25,6 +25,7 @@
 
 # Tabs
 
+- `C-x t r`: Rename tab
 - `C-x t 2`: Create new tab
 - `C-x t O` / `C-x t o`: Go to previous / next tab
 - `C-x t 0`: Close tab
