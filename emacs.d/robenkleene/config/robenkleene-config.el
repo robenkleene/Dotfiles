@@ -339,6 +339,9 @@
 ;; Echo keystrokes to the echo area immediately
 (setq echo-keystrokes 0.1)
 
+;; Make `remember-notes' use Fundamental mode
+(setq remember-notes-initial-major-mode 'fundamental-mode)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
