@@ -23,6 +23,16 @@
 - `mc`: Copy marked files to target directory
 - `mm`: Move marked files to target directory
 
+## Copy File
+
+1. `mf` to mark the file to copy
+2. `mt` to set the target directory
+3. `mc` to copy the file to the target directory
+
+## Duplicate File
+
+There's no nice way to do this, using `!cp <src> <dst>`, using `C-r C-f` to fill in the current file at the cursor, is probably the best way.
+
 ## Shell Commands
 
 - `mx`: Run shell command on marked files (to specify where the file should appear in the command, use `%`)
