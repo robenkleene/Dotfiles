@@ -34,16 +34,19 @@ return {
         'typescript',
         'vim',
       },
+      modules = {},
+      auto_install = false,
+      ignore_install = { "all" },
       -- Trying to prevent the constant re-installing
       sync_install = false,
       build = ":TSUpdate",
       highlight = { enable = true },
       -- indent = { enable = true },
       -- Trying to customize Markdown colors, this doesn't work for some reason
-      custom_captures = {
-        ["text.uri"] = "Comment",
-        ["punctuation.delimiter"] = "Comment",
-      },
+      -- custom_captures = {
+      --   ["text.uri"] = "Comment",
+      --   ["punctuation.delimiter"] = "Comment",
+      -- },
       textobjects = {
         select = {
           enable = true,
