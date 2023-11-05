@@ -61,18 +61,18 @@ function! commands#CompleteRegisters(findstart, base)
   if a:findstart == 1
     return 0
   endif
-  let s = ''
-  redir => s
+  let l:contents = ''
+  redir => l:contents
   silent registers
   redir END
-  let reg_list = []
-  for reg_str in split(s, "\n")[1:]
-      let abbr = reg_str[6:7]
-      let word = reg_str[10:]
-      let reg_dict = {"menu": word, "abbr": abbr, "word": "", "dup": v:true, "empty": v:true, "kind": "r"}
-      call add(reg_list, reg_dict)
+  let l:reg_list = []
+  for l:reg_str in split(l:contents, "\n")[1:]
+    let l:abbr = reg_str[6:7]
+    let l:word = reg_str[10:]
+    let l:reg_dict = {"menu": l:word, "abbr": l:abbr, "word": "", "dup": v:true, "empty": v:true, "kind": "r"}
+    call add(l:reg_list, l:reg_dict)
   endfor
-  return complete(col('.'), reg_list)
+  return {"words": l:reg_list}
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
