@@ -85,7 +85,7 @@ let @" = system('~/.bin/safepaste')
 
 " Fixes problems where Vim is just showing escaped junk in the window
 if !has('nvim')
-  augroup safepaste
+  augroup focus_redraw
     autocmd!
     autocmd FocusGained * redraw!
   augroup END
