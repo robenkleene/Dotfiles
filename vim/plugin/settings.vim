@@ -98,6 +98,11 @@ let g:netrw_sort_options = "i"
 let g:netrw_mousemaps = 0
 " Put netrw directories into the jumplist
 let g:netrw_keepj = ""
+" The `g:netrw_gx` variable determines how `netrw` identifies URLs, by default
+" this is set to `<cfile>`, which uses `isfname` variable to determine what to
+" use as the URL
+" Adding [, ] to `isfname` makes URLs that have brackets work with `gx`
+set isfname+=[,]
 
 set cursorline
 " Highlight just the line number
