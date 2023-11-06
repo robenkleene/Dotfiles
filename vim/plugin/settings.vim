@@ -96,6 +96,8 @@ let g:netrw_sort_options = "i"
 " Don't automatically enter directories when clicking them (instead just move
 " the cursor)
 let g:netrw_mousemaps = 0
+" Put netrw directories into the jumplist
+let g:netrw_keepj = ""
 
 set cursorline
 " Highlight just the line number
