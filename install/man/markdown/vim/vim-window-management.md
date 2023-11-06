@@ -53,3 +53,4 @@
 - `zh` / `zl`: Move window left / right
 - `zH` / `zL`: Move window left / right by half a screen
 - `zs` / `ze`: Align cursor with left / right side of window
+- `zszH`: Center cursor horizontally
