@@ -46,11 +46,6 @@ zsh_refresh_commands() {
   rehash
 }
 
-zsh_edit_init() {
-  cd ~/Developer/Dotfiles/zsh/ || return
-  eval ${EDITOR:-vim} ../zshrc
-}
-
 ssh_start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
