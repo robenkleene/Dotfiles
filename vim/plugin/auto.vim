@@ -83,6 +83,14 @@ augroup safepaste
 augroup END
 let @" = system('~/.bin/safepaste')
 
+" Fixes problems where Vim is just showing escaped junk in the window
+if !has('nvim')
+  augroup safepaste
+    autocmd!
+    autocmd FocusGained * redraw!
+  augroup END
+endif
+
 augroup ft_stdin
   autocmd!
   " Don't prompt to save when piped to stdin
