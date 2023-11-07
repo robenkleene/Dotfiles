@@ -14,11 +14,15 @@ Command to do `less` like `git` pager:
 
 # Bindings
 
+- `H`: Show help including bindings
 - `''`: Go to previous position (e.g., to return how you started after a search)
 
-# Search
+# Search & Filter
 
 `/\W-<flag`: Search for a short flag (`\W` matches a word boundary)
+- `&`: Show only matching lines
+- `⌃C`: Exit search or filter (enter again to quit `less`)
+
 
 # Interactive
 
