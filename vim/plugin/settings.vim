@@ -68,6 +68,10 @@ set sessionoptions-=curdir
 set expandtab
 " Don't start folded
 set nofoldenable
+" Don't let search open folds (useful for determining if a term appears in
+" un-folded text)
+" Make folds really sticky
+set foldopen-=search,hor,block,percent,quickfix,tag
 " Only complete to longest match in wildmenu
 set wildmode=longest:full,full
 " Use a vertical wildmenu
