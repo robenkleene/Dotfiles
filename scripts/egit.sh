@@ -18,7 +18,6 @@ else
   repos+=:~/Documentation/audio-references/
   repos+=:~/Documentation/development-references/
   repos+=:~/Documentation/web-references/
-  repos+=:~/Documentation/tutorial-references/
 fi
 
 IFS=':' read -ra repos <<<"$repos"
