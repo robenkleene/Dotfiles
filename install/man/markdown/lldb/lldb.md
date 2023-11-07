@@ -15,6 +15,10 @@ y- `(lldb) run`: Start program
 - `source info <file path>`: Display source line information for the current target process
 - `⌃C`: Seems to stop the process?
 
+## Running
+
+- `call <function>`: Call a function
+
 # Debug Builds
 
 ## Linux
