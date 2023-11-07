@@ -57,8 +57,8 @@ for file in *; do
   make_symlink "$source_dir/$file" "$HOME/.$file"
 done
 
-./scripts/update.sh
-./scripts/zsh_update.zsh
+../scripts/update.sh
+../scripts/zsh_update.zsh
 # ./scripts/fish_update.fish
 # This takes too long, just update manually for now
 # ./scripts/man_update.sh
