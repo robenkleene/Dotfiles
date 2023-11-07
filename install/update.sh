@@ -27,6 +27,7 @@ cd "$(dirname "$0")" || exit 1
 
 source_dir=$(pwd -P);
 
+cd ..
 function make_symlink() {
   source="$1"
   destination="$2"
@@ -37,7 +38,7 @@ function make_symlink() {
   fi
 }
 
-for file in ../*; do
+for file in *; do
   if [[ $file == *.sh ]]; then
     continue
   fi
@@ -56,6 +57,7 @@ for file in ../*; do
 
   make_symlink "$source_dir/$file" "$HOME/.$file"
 done
+cd - > /dev/null
 
 ../scripts/update.sh
 ../scripts/zsh_update.zsh
