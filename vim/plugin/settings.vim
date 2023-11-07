@@ -71,7 +71,10 @@ set nofoldenable
 " Don't let search open folds (useful for determining if a term appears in
 " un-folded text)
 " Make folds really sticky
-set foldopen-=search,hor,block,percent,quickfix,tag
+" Not sure why removing these doesn't work
+" set foldopen-=search,hor,block,percent,quickfix,tag
+" But just setting undo is the same thing
+set foldopen=undo
 " Only complete to longest match in wildmenu
 set wildmode=longest:full,full
 " Use a vertical wildmenu
