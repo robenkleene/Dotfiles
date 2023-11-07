@@ -20,9 +20,22 @@ Command to do `less` like `git` pager:
 # Search & Filter
 
 `/\W-<flag`: Search for a short flag (`\W` matches a word boundary)
-- `&`: Show only matching lines
-- `⌃C`: Exit search or filter (enter again to quit `less`)
+- `&`: Show only matching lines (hit `&` again with an empty search)
+- There's no way to exit a search or filter in `less`, the only thing you can do is hit enter (`⌃C` kind of works, but this has side effects like killing an incoming pipe)
+- `⌥U`: Un-highlight search matches
 
+# Follow Mode
+
+- `less +F`: Start less in follow mode
+- `⇧F`: Enter follow mode with `less` running
+- `⌃X`: Exit follow mode (this does not break an incoming pipe)
+
+## Filter
+
+1. Launch with `+F`, e.g., `adb logcat | less +F`
+2. `⌃X` to exit follow mode
+3. `&` to filter the messages
+4. `⇧F` to re-enable follow mode
 
 # Interactive
 
