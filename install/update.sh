@@ -37,7 +37,7 @@ function make_symlink() {
   fi
 }
 
-for file in *; do
+for file in ../*; do
   if [[ $file == *.sh ]]; then
     continue
   fi
