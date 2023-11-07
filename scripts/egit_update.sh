@@ -27,4 +27,4 @@ done
 if [[ "$settings_only" != "true" ]]; then
   ~/.bin/git_pull_all -t
 fi
-~/Developer/Dotfiles/update.sh
+~/Developer/Dotfiles/install/update.sh

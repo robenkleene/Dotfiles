@@ -3,7 +3,7 @@ alias fd fd --color=never $*
 
 alias esu eshell-read-aliases-list
 
-alias u egit -u && ~/Developer/Dotfiles/update.sh
+alias u egit -u && ~/Developer/Dotfiles/install/update.sh
 alias ut git_pull_all -t
 alias ua git_pull_all -t
 
