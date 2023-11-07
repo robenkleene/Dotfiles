@@ -4,6 +4,9 @@ let-env NNN_TMPFILE = $"($cfgHome)/nnn/.lastd"
 
 def-env n [...x] {
   # Launch nnn. Add desired flags after `^nnn`, ex: `^nnn -eda ($x | str join)`
+  # -e: Use $VISUAL by default to edit text files
+  # -Q: Don't confirm on quit with multiple contexts active
+  # -A: Don't auto-enter directories
   ^nnn -eAQ ($x | str join)
   let newpath = (
     if ($env.NNN_TMPFILE | path exists) {
