@@ -71,9 +71,9 @@ if [[ "$all" == "false" ]]; then
   exit 0
 fi
 
-./install/homebrew/install.sh -c
-./install/node/modules/update.sh -f
-./install/ruby/gems/update.sh -f
-./install/python/packages/update.sh -f
+./homebrew/install.sh -c
+./node/modules/update.sh -f
+./ruby/gems/update.sh -f
+./python/packages/update.sh -f
 
 brew update && brew upgrade

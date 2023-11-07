@@ -35,7 +35,7 @@ fi
 cd "$(dirname "$0")" || exit 1
 
 if [[ -n "${CODESPACES-}" ]]; then
-  ./install/codespaces/setup.sh
+  ./codespaces/setup.sh
 fi
 ./update.sh
 
@@ -43,15 +43,15 @@ if [[ -n "${CODESPACES:-}" ]]; then
   exit 0
 fi
 
-./install/files/dirs.sh
+./files/dirs.sh
 if [[ -n "${PERSONAL:-}" ]]; then
-  ./install/repos/install.sh
+  ./repos/install.sh
 else
-  ./install/repos/install.sh -p
+  ./repos/install.sh -p
 fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
-  ./install/settings/macos/install.sh
+  ./settings/macos/install.sh
 fi
 
 export PATH="~/.brew/bin/:$PATH"
@@ -59,14 +59,14 @@ export PATH="~/.brew/bin/:$PATH"
 # Use fish to test whether brew install has already run
 if ! command -v fish &> /dev/null; then
   # Let homebrew fail because it fails too often
-  ./install/homebrew/install.sh || true
+  ./homebrew/install.sh || true
 else
-  ./install/fish/setup.sh
+  ./fish/setup.sh
 fi
 
-./install/files/symlinks.sh
-./install/node/install.sh
-./install/ruby/install.sh
-./install/python/install.sh
-./install/rust/install.sh
-./install/man/install.sh
+./files/symlinks.sh
+./node/install.sh
+./ruby/install.sh
+./python/install.sh
+./rust/install.sh
+./man/install.sh
