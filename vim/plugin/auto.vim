@@ -29,6 +29,7 @@ augroup auto_save_session
   autocmd!
   autocmd VimLeave * 
   \ if expand('%:p') !~ '^/tmp'
+  \&& len(v:this_session) == 0
   \&& &filetype !~ 'gitcommit'
   \&& &filetype !~ 'pullrequest'
   \&& &filetype !~ 'gitrebase'
