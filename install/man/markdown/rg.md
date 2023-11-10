@@ -17,6 +17,7 @@
     - To do a negative glob, precede with `!`, e.g., `rg -g "\!*.html" import`
     - An example of the above techniques being combined:
         - `rg -s executable -g "\!{handlers,fixers}/*"`
+    - Multiple globs can be combined, e.g., to filter based on an extension, and exclude a directory `-g '!Test' -g '*.{h,cpp}'`
 - `--files`: Print each file but don't search
 - `--files -g`: Search for files matching glob.
 
