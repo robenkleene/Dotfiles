@@ -54,6 +54,11 @@ if [[ "$(uname)" = "Darwin" ]]; then
   ./settings/macos/install.sh
 fi
 
+if [[ ! -e "$HOME/.tmux/plugins/tpm" ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ~/.tmux/plugins/tpm/bin/install_plugins
+fi
+
 export PATH="~/.brew/bin/:$PATH"
 
 # Use fish to test whether brew install has already run
