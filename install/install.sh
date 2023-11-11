@@ -28,10 +28,6 @@ if [[ "$main" == "true" && ! -e "$HOME/.personal" ]]; then
   touch "$HOME/.personal"
 fi
 
-if [[ -f "$HOME/.personal" ]]; then
-  PERSONAL=1
-fi
-
 cd "$(dirname "$0")" || exit 1
 
 if [[ -n "${CODESPACES-}" ]]; then
@@ -44,11 +40,7 @@ if [[ -n "${CODESPACES:-}" ]]; then
 fi
 
 ./files/dirs.sh
-if [[ -n "${PERSONAL:-}" ]]; then
-  ./repos/install.sh
-else
-  ./repos/install.sh -p
-fi
+./repos/install.sh
 
 if [[ "$(uname)" = "Darwin" ]]; then
   ./settings/macos/install.sh
