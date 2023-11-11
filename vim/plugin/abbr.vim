@@ -16,3 +16,10 @@ iabbrev :sft: ⇧
 iabbrev :spc: ␣
 iabbrev :tab: ⇥
 iabbrev :uarr: ↑
+
+function! s:InsertTitle()
+    let l:filename = expand('%:p')
+    let l:title = system('md_title ' . shellescape(l:filename))
+    return l:title
+endfunction
+iabbrev :title: <C-R>=<SID>InsertTitle()<CR>
