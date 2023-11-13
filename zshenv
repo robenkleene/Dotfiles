@@ -32,3 +32,9 @@ export -U PATH
 # Allow custom man pages
 export MANPATH=$MANPATH:$HOME/.man
 export -U MANPATH
+
+#
+if [[ "$(uname)" = "Linux" ]]; then
+  export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
+  export XDG_CONIFG_HOME=${XDG_CONIFG_HOME:="$HOME/.config"}
+fi
