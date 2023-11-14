@@ -22,13 +22,9 @@ hints:
      command: xdg-open
      post_processing: true
 
-style:
-  blinking: Off
-
 import:
   -  ~/.config/alacritty/modifiers.yml
   -  ~/.config/alacritty/robenkleene.yml
-  # -  ~/.config/alacritty/tokyo-night.yml
 
 selection:
   save_to_clipboard: false
