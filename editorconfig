@@ -5,19 +5,19 @@ root = true
 indent_style = space
 indent_size = 2
 
-[{*.rb,Fastfile,*.gemspec}]
+[{*.rb,*.gemspec,Fastfile}]
 indent_style = space
 indent_size = 2
 
-[{*.js,*.json,*.ts}]
+[*.{js,json,ts}]
 indent_style = space
 indent_size = 2
 
-[{*.jade,*.pug}]
+[*.{jade,pug}]
 indent_style = space
 indent_size = 2
 
-[{*.scss,*.css}]
+[*.{scss,css}]
 indent_style = space
 indent_size = 2
 
@@ -41,7 +41,7 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
-[{*.mm,*.m,*.h}]
+[*.{mm,m,h}]
 indent_style = space
 indent_size = 4
 
@@ -61,7 +61,7 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-[*.cpp]
+[*.{h,cpp}]
 indent_style = space
 indent_size = 2
 
@@ -69,7 +69,7 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
-[tmux.conf]
+[*.conf]
 indent_style = space
 indent_size = 4
 
