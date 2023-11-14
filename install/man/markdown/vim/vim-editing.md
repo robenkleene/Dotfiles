@@ -1,6 +1,10 @@
 - `ZZ`: Quit and save
 - `ZQ`: Quit without saving
 
+# Normal Mode
+
+- `]p`: Paste indented
+
 # Insert Mode
 
 - `cc`: Enter insert mode at correct indent level
