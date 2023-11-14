@@ -22,12 +22,6 @@ function! commands#GrepBuffer(...) abort
   endif
 endfunction
 
-function! commands#YankGrep()
-  let @@ = expand("%:p").":".line('.')
-  call system('~/.bin/safecopy', @@)
-  echo getreg('@')
-endfunction
-
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ \ --vimgrep\ --no-heading
