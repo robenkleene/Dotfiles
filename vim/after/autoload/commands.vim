@@ -53,7 +53,7 @@ endfunction
 
 function! commands#CompleteRegisters(findstart, base)
   if a:findstart == 1
-    return 0
+    return col('.')
   endif
   let l:dump = ''
   redir => l:dump
