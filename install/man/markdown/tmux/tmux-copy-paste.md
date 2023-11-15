@@ -1,5 +1,3 @@
-- `<prefix>=`: Show previous copies
-
 # Copy Mode
 
 - `Y`: Paste selection
@@ -9,6 +7,10 @@
 # Commands
 
 - `tmux show-buffer`: Show the `tmux` buffer
+
+# Clipboard
+
+- `:choose-buffer` / `<prefix>=`: Paste from clipboard history
 
 # Default Mouse
 
