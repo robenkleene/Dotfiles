@@ -110,6 +110,9 @@ let g:netrw_keepj = ""
 " use as the URL
 " Adding [, ] to `isfname` makes URLs that have brackets work with `gx`
 set isfname+=[,]
+" Remove `.h` from suffixes, this prevents header files from being sorted at 
+" the bottom in `netrw`
+set suffixes-=.h
 
 set cursorline
 " Highlight just the line number
