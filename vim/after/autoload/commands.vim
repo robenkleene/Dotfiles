@@ -62,9 +62,16 @@ function! commands#CompleteRegisters(findstart, base)
   let l:reg_list = []
   for l:reg_str in split(l:dump, "\n")[1:]
     let l:reg = reg_str[6:7]
-    let l:type = getreginfo(l:reg).regtype
-    let l:contents = join(getreginfo(l:reg).regcontents, "\n")
-    let l:reg_dict = {"menu": l:contents, "abbr": '"' . l:reg, "word": l:contents, "dup": v:true, "empty": v:true, "kind": l:type}
+    " let l:type = getreginfo(l:reg).regtype
+    let l:menu = getreginfo(l:reg).regcontents[0]
+    " Vim completion does not support new lines (instead it inserts '^@'),
+    " unfortunately
+    " let l:contents = join(getreginfo(l:reg).regcontents, "\n")
+    let l:contents = getreginfo(l:reg).regcontents[0]
+    " let l:info = join(getreginfo(l:reg).regcontents, "\n")
+    " Don't use `"kind": l:type`, this is for specific letters, see `:h complete-item-kind`
+    " Don't use `"info": l:info`, this makes the info appear in a split
+    let l:reg_dict = {"menu": l:menu, "abbr": '"' . l:reg, "word": l:contents, "dup": v:true, "empty": v:true }
     call add(l:reg_list, l:reg_dict)
   endfor
   return {"words": l:reg_list}
