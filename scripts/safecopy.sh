@@ -2,6 +2,27 @@
 
 set -euo pipefail
 
+system="false"
+while getopts ":sh" option; do
+  case "$option" in
+    s)
+      system="true"
+      ;;
+    h)
+      echo "Usage: command [-hf] [-p <file_path>]"
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
 # Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
 # variable is recorded when the emacs server was started
 if [[ -n "${INSIDE_EMACS:-}" ]]; then
@@ -12,8 +33,14 @@ if [[ -n "${INSIDE_EMACS:-}" ]]; then
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb -
+  if [[ "$system" == "true" ]]; then
+    if command -v pbcopy &> /dev/null; then
+      sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
+    fi
+  fi
 elif command -v pbcopy &> /dev/null; then
   sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
 else
   sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
 fi
+

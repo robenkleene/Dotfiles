@@ -49,7 +49,12 @@ set list
 " Delibrately ommitted because the custom clipboard `augroup` handles the
 " clipboard (and also supports `tmux`). Also having this causes line breaks to
 " be misshandled when copying lines (e.g., `yy`)
-" set clipboard^=unnamed,unnamedplus
+" New strategy is to not use system clipboard with `safecopy` and instead just
+" use Vim's system clipboard support, which will automatically integrate with
+" the numbered registers so that pasting from the system clipboard  over a
+" visual selection doesn't lose the system clipboard, which it does with the
+" `safecopy` based system
+set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
 set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
