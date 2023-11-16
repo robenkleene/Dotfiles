@@ -2,11 +2,11 @@
 
 set -euo pipefail
 
-system="false"
+skip_system="false"
 while getopts ":sh" option; do
   case "$option" in
     s)
-      system="true"
+      skip_system="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -33,7 +33,7 @@ if [[ -n "${INSIDE_EMACS:-}" ]]; then
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb -
-  if [[ "$system" == "true" ]]; then
+  if [[ "$skip_system" == "false" ]]; then
     if command -v pbcopy &> /dev/null; then
       TERM=xterm-256color tmux saveb - | sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
     fi
