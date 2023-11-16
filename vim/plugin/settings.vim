@@ -54,7 +54,8 @@ set list
 " the numbered registers so that pasting from the system clipboard  over a
 " visual selection doesn't lose the system clipboard, which it does with the
 " `safecopy` based system
-set clipboard^=unnamed,unnamedplus
+" Actually setting clipboard this way doesn't use number registers either
+" set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
 set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
