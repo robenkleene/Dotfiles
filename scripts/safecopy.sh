@@ -35,7 +35,7 @@ elif [[ -n "${TMUX:-}" ]]; then
   sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb -
   if [[ "$system" == "true" ]]; then
     if command -v pbcopy &> /dev/null; then
-      sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
+      TERM=xterm-256color tmux saveb - | sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
     fi
   fi
 elif command -v pbcopy &> /dev/null; then
