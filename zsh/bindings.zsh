@@ -39,6 +39,10 @@ _system_kill_line() {
   # Copy
   # This disrupts the history less
   echo -n "$BUFFER" | ~/.bin/safecopy
+  # Sending `send-break` resolves the state where history navigation has
+  # stopped working, but it's probably better to get in the habit of hitting
+  # `^C` in that case anyway
+  # zle send-break
   # Cut
   # This provides visual feedback
   # zle kill-whole-line
@@ -102,6 +106,10 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+# This has an odd side effect where if an edit command is performed, even one
+# that has no affect on the `BUFFER`, then commands will restart as a search,
+# typically causing the history back and forward keys to appear not to work,
+# because they are now performing a search
 bindkey -e '^P' up-line-or-beginning-search
 bindkey -e '^N' down-line-or-beginning-search
 bindkey -e "${key[Up]}" up-line-or-beginning-search
