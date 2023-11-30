@@ -1,3 +1,4 @@
-- `windo diffthis`: Diff currently open files
-- `diffoff!`: End current diff
+- `:windo diffthis`: Diff currently open files
+- `:diffoff!`: End current diff
+- `:diffupdate`: Update diff
 - `w !diff % -`: Diff buffer vs. saved version
