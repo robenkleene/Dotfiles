@@ -38,14 +38,6 @@ sgitn() {
   return 1
 }
 
-yank_test_variable() {
-  test_variable=$(cat)
-}
-
-zsh_refresh_commands() {
-  rehash
-}
-
 ssh_start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
