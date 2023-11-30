@@ -120,7 +120,9 @@ set isfname+=[,]
 " the bottom in `netrw`
 set suffixes-=.h
 
-set cursorline
+" With my current colorscheme, `iceberg`, this breaks comparing two buffers
+" with `:windo diffthis`
+" set cursorline
 " Highlight just the line number
 " set cursorlineopt=number
 
