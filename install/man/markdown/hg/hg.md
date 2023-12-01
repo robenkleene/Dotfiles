@@ -1,7 +1,7 @@
 - `hg status`
 - `hg amend`: Amend last commit (`hg` has no staging)
 - `hg id -i`: Print commit ID
-- `hg update`: Checkout a commit
+- `hg update` / `hg up`: Checkout a commit
 
 # Files
 
