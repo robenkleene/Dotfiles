@@ -52,10 +52,14 @@ return {
     -- vim.keymap.set('n', '<leader>s', '<cmd>lua require("telescope.builtin").live_grep({cwd = "%:h"})<CR>')
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
-    vim.keymap.set('n', '<leader>i', require('telescope.builtin').lsp_document_symbols)
-    vim.keymap.set('n', '<leader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    -- vim.keymap.set('n', '<leader>m', require('telescope.builtin').marks)
-    vim.keymap.set('n', '<leader>d', require('telescope.builtin').diagnostics)
+    -- vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
+    -- vim.keymap.set('n', '<localleader>i', require('telescope.builtin').lsp_document_symbols)
+    -- vim.keymap.set('n', '<localleader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
+    -- vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
+    -- This doesn't work either:
+--     vim.cmd([[
+-- nnoremap <localleader>D <cmd>lua require('telescope.builtin').diagnostics()<cr>
+-- ]])
   end
 }
