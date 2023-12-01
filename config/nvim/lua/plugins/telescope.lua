@@ -13,11 +13,11 @@ return {
     { '<leader>l' },
     { '<leader>f' },
     { '<leader>g' },
-    { '<leader>i' },
-    { '<leader>I' },
     { '<leader>r' },
-    -- { '<leader>m' },
-    { '<leader>d' },
+    { '<localleader>D' },
+    { '<localleader>i' },
+    { '<localleader>I' },
+    { '<localleader>R' },
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
@@ -53,13 +53,9 @@ return {
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    -- vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
-    -- vim.keymap.set('n', '<localleader>i', require('telescope.builtin').lsp_document_symbols)
-    -- vim.keymap.set('n', '<localleader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-    -- vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
-    -- This doesn't work either:
---     vim.cmd([[
--- nnoremap <localleader>D <cmd>lua require('telescope.builtin').diagnostics()<cr>
--- ]])
+    vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
+    vim.keymap.set('n', '<localleader>i', require('telescope.builtin').lsp_document_symbols)
+    vim.keymap.set('n', '<localleader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
+    vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
   end
 }
