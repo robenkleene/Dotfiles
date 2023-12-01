@@ -35,12 +35,9 @@ return {
         }
       },
       pickers = {
-        find_files = { theme = "dropdown", follow = true },
-        buffers = { theme = "dropdown" },
-        current_buffer_fuzzy_find = { theme = "dropdown" },
-        live_grep = { theme = "dropdown", additional_args = { "--follow" } },
-        lsp_document_symbols = { theme = "dropdown" },
-        lsp_dynamic_workspace_symbols = { theme = "dropdown" }
+        -- theme = "dropdown" looks better but uses space less efficiently
+        find_files = { follow = true },
+        live_grep = { additional_args = { "--follow" } },
       }
     }
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
