@@ -28,8 +28,3 @@ require("lazy").setup("plugins", {
   }
 })
 
--- These don't work in the `telescope.lua` file for some reason
-vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
-vim.keymap.set('n', '<localleader>i', require('telescope.builtin').lsp_document_symbols)
-vim.keymap.set('n', '<localleader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
