@@ -38,6 +38,12 @@ return {
         -- theme = "dropdown" looks better but uses space less efficiently
         find_files = { follow = true },
         live_grep = { additional_args = { "--follow" } },
+        lsp_document_symbols = {
+          -- Add more space for the symbol
+          -- symbol_width = 40,
+          -- Show the line of the declaration
+          show_line = true
+        },
       }
     }
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
