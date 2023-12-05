@@ -94,6 +94,10 @@
 ;; No default binding
 (define-key rk/bindings-minor-mode-map (kbd "C-x :")
             'switch-to-minibuffer)
+;; Other window
+(define-key rk/bindings-minor-mode-map (kbd "C-x O")
+            'previous-multiframe-window)
+
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
