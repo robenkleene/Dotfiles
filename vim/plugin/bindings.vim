@@ -9,5 +9,7 @@ nnoremap <silent> <M-r> :silent !open -R "%:p"<CR>\|:redraw!<CR>
 " the beginning of the line.
 " This breaks entering snippets, e.g., if you start a snippet, and are at the
 " first `$1`, if you type `j` it will mess up instead of entering `j`
-noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> <Up> v:count ? 'k' : 'gk'
+noremap <expr> <Down> v:count ? 'j' : 'gj'
