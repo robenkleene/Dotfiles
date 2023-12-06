@@ -39,7 +39,9 @@ elif [[ -n "${TMUX:-}" ]]; then
     fi
   fi
 elif command -v pbcopy &> /dev/null; then
-  sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
+  if [[ "$skip_system" == "false" ]]; then
+    sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
+  fi
 else
   sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
 fi
