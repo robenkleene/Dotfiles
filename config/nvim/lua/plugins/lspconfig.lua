@@ -74,5 +74,10 @@ return {
 
     -- require 'lspconfig'.marksman.setup {
     -- }
+
+    local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
+    if f~=nil then io.close(f)
+      dofile(vim.env.HOME .. '/.nvim_local.lua')
+    end
   end
 }
