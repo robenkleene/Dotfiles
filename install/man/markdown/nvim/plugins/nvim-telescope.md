@@ -1,3 +1,4 @@
 - `C-d`: Scroll down preview
 - `C-u`: Scroll up preview
 - `C-q`: Move matches to `quickfix` list
+- `:Telescope resume`: Resume last picker
