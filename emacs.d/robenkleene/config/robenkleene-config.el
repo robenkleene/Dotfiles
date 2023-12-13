@@ -102,6 +102,9 @@
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
+;; Set default scratch message to empty, this makes it easy to use the scratch
+;; buffer in a different mode, e.g., `M-x markdown-mode'
+(setq initial-scratch-message "")
 
 ;; Editing & Navigation
 ;; (setq shift-select-mode nil)
