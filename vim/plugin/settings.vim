@@ -126,10 +126,4 @@ set suffixes-=.h
 " Highlight just the line number
 " set cursorlineopt=number
 
-" Allow moving past the first character on the line, this makes editing prose
-" easier
-" <,> are arrow keys in normal and visual modes
-" [,] are arrow keys in insert mode
-set whichwrap+=h,l,<,>,[,]
-
 set completefunc=commands#CompleteRegisters
