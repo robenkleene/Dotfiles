@@ -15,3 +15,10 @@ Print an `enum`:
 #include <iostream>
 std::cout << "enum = " << static_cast<int>(enum) << std::endl;
 ```
+
+Print a memory address:
+
+```
+#include <iostream>
+std::cout << "&foo = %p" << &foo << std::endl;
+```
