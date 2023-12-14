@@ -77,7 +77,10 @@
             ;; make it easy to create a new file. Neither of these work.
             ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
             ;; (local-set-key (kbd "C-x C-f") #'find-file)
-            (dired-omit-mode)
+            ;; Don't emit hidden files by default because the `.' makes it
+            ;; really easy to run a shell command on the current file just by
+            ;; selecting the `.' and hitting `!'
+            ;; (dired-omit-mode)
             ;; Hide details (show them with open parentheses)
             ;; Definitely need this because lack of colors in Dired mode means
             ;; it's hard to tell the details from the filename
