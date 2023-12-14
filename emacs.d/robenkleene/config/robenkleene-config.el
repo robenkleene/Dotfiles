@@ -345,6 +345,9 @@
 ;; Make `remember-notes' use Fundamental mode
 (setq remember-notes-initial-major-mode 'fundamental-mode)
 
+;; Allow repeating some bindings like `C-x o' then `o' to keep switching frames
+(repeat-mode 1)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
