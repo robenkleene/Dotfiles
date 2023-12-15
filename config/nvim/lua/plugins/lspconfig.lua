@@ -28,10 +28,12 @@ return {
     })
 
     -- Languages
+    local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
+    if f==nil then io.close(f)
+      require 'lspconfig'.clangd.setup {}
+    end
 
     require 'lspconfig'.bashls.setup {}
-
-    require 'lspconfig'.clangd.setup {}
 
     require 'lspconfig'.cssls.setup {}
 
@@ -75,9 +77,5 @@ return {
     -- require 'lspconfig'.marksman.setup {
     -- }
 
-    local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
-    if f~=nil then io.close(f)
-      dofile(vim.env.HOME .. '/.nvim_local.lua')
-    end
   end
 }
