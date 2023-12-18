@@ -2,16 +2,17 @@ if !exists("*synstack")
   finish
 endif
 
-command! RunColorTest :source $VIMRUNTIME/syntax/colortest.vim
+command! SyntaxColorsTest :source $VIMRUNTIME/syntax/colortest.vim
+command! SyntaxHighlightTest :source $VIMRUNTIME/syntax/hitest.vim
 
 " Syntax Groups
 function! s:SyntaxGroups()
   return join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
 endfunc
 " Echo Syntax Group
-command! EchoSyntaxGroups :echo <SID>SyntaxGroups()
+command! SyntaxGroupsEcho :echo <SID>SyntaxGroups()
 " Yank Syntax Group
-command! YankSyntaxGroups :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
+command! SyntaxGroupsYank :let @" = <SID>SyntaxGroups()|:let @+ = @"|:echo @"
 
 " Syntax Colors
 function! s:SyntaxColors()
@@ -31,4 +32,4 @@ function! s:SyntaxColors()
 endfunc
 
 " Echo Syntax Colors
-command! SyntaxEchoColors :echo <SID>SyntaxColors()
+command! SyntaxColorsEcho :echo <SID>SyntaxColors()
