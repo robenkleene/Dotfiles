@@ -61,5 +61,7 @@ if !has('nvim')
   " colorscheme catppuccin_mocha
   " colorscheme night-owl
   " colorscheme nightfly
-  colorscheme iceberg
+  " colorscheme iceberg
+  " colorscheme nightfox
+  colorscheme duskfox
 endif
