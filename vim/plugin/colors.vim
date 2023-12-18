@@ -13,6 +13,10 @@ function! s:OverrideColors()
     highlight clear SpellBad
     highlight SpellBad cterm=underline
 
+    " Underrline never looks good for highlight line
+    highlight CursorLine cterm=none
+    highlight CursorLineNr cterm=none
+
     " Markup
     highlight markdownItalic guifg=white gui=italic cterm=italic
     highlight markdownBold guifg=white gui=bold cterm=bold
