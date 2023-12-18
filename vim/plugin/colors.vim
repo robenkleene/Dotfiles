@@ -8,6 +8,10 @@ function! s:OverrideColors()
     " group to URLs, so just assign the `Comment` style to our made up
     " `UrlNoSpell` group
     highlight link UrlNoSpell Comment
+    " Just underline for mispelled words because color schemes can't be
+    " trusted to provide enough contrast to keep things legible
+    highlight clear SpellBad
+    highlight SpellBad cterm=underline
 
     " Markup
     highlight markdownItalic guifg=white gui=italic cterm=italic
