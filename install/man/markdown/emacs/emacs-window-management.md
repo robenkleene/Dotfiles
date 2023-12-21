@@ -39,3 +39,7 @@
 # Window Configurations
 
 - `C-c ←` or `C-c →`: With `winner-mode` enabled, previous/next configuration
+
+# Cursor
+
+- `C-l`: Center cursor
