@@ -45,8 +45,8 @@ Plug 'vim-scripts/vis', { 'on': 'B' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
 " Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
-" Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
-Plug 'EdenEast/nightfox.nvim'
+" Plug 'EdenEast/nightfox.nvim'
+Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
