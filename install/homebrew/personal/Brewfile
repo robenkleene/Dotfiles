@@ -69,6 +69,7 @@ cask 'blender'
 cask 'godot'
 cask 'anki'
 cask 'alacritty'
+cask 'processing'
 
 # Media
 brew 'ffmpeg'
@@ -76,6 +77,3 @@ brew 'imagemagick'
 
 # Games
 brew 'nethack'
-
-# VS Code
-vscode "RobbOwen.synthwave-vscode"
