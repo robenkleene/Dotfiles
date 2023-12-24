@@ -1,20 +1,13 @@
-* `M-;`: Comment or uncomment selected region
-* `C-x C-;`: Comment or uncomment line
-- `C-o`: Open empty line above
-- `C-x C-o`: Delete empty blank lines
-
 # Undo & Redo
 
 - `C-x u` or `C-/` or `C-_`: Undo
   - `C-g`: Followed by an undo binding to redo, to do this repeatedly, then use `C-x z` to repeat, followed by tapping `z` over and over again to keep repeating.
 
-# Editing
+# Uppercase, Lowercase & Capitalization
 
 - `M-l`: Lowercase word
 - `M-u`: Uppercase word
 - `M-c`: Capitalize word
-- `M-\` / `C-u M-\` : Delete whitespace forward / backward next non-whitespace character
-- `M-z` / `C-u M-z`: Delete to character forward / backward
 
 # Transpose
 
@@ -55,12 +48,24 @@
 
 # Special
 
-- `M-q`: Wrap comment
+- `M-q`: Wrap
+- `M-z` / `C-u M-z`: Delete to character forward / backward
+
+# Split & Merge Lines
+
 - `M-^`: Join line with line above
+- `C-o`: Open empty line above
+- `C-x C-o`: Delete empty blank lines
+
+# Comments
+
+- `M-;`: Comment or uncomment selected region
+- `C-x C-;`: Comment or uncomment line
 
 # Whitespace
 
 - `M-\`: Delete whitespace until next word
+- `M-\` / `C-u M-\` : Delete whitespace forward / backward next non-whitespace character
 
 # Spelling
 
