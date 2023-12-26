@@ -16,12 +16,6 @@
   ;; overwrites what's intended to paste
   (setq-default evil-kill-on-visual-paste nil)
 
-  ;; Don't show last ex command or search by default
-  (setq-default evil-want-empty-ex-last-command nil)
-
-  ;; Persist search highlighting
-  (setq evil-search-module 'evil-search)
-
   ;; Make `Y' yank to eol
   (setq evil-want-Y-yank-to-eol t)
 
@@ -35,8 +29,7 @@
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
 
-  ;; Disabling all Evil "smart" features
-  ;; subvert evil-operation.el overrides (dired, ibuffer etc.)
+  ;; Disabling all the "smart" Evil features
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
         evil-pending-intercept-maps nil
@@ -51,6 +44,7 @@
   (setq evil-operator-state-modes nil)
   (setq evil-visual-state-modes nil)
 
+  ;; After Load
   (with-eval-after-load 'evil
     ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
     ;; Disabling this because it causes move by word to jump over paths, e.g.,
@@ -58,68 +52,7 @@
     ;; (defalias #'forward-evil-word #'forward-evil-symbol)
     (setq-default evil-symbol-word-search t))
 
-  ;; Modes
-  (setq evil-default-state 'emacs)
-  (evil-set-initial-state 'prog-mode 'insert)
-  (evil-set-initial-state 'text-mode 'insert)
-  (evil-set-initial-state 'conf-mode 'insert)
-
-  ;; Bindings
-  (defvar rk/evil-leader-map (make-keymap))
-  (define-key rk/evil-leader-map (kbd "l") 'consult-occur)
-  (define-key rk/evil-leader-map (kbd "b")
-              'consult-buffer)
-  (define-key rk/evil-leader-map (kbd "f")
-              'rk/consult-fd)
-  (define-key rk/evil-leader-map (kbd "g")
-              'consult-ripgrep)
-  (define-key rk/evil-leader-map (kbd "i")
-              'consult-imenu)
-  (define-key rk/evil-leader-map (kbd "r")
-              'consult-recent-file)
-  (define-key rk/evil-leader-map (kbd "=")
-              'eglot-format-buffer)
-  (define-key rk/evil-leader-map (kbd "a")
-              'eglot-code-actions)
-  (define-key rk/evil-leader-map (kbd "r")
-              'eglot-rename)
-  (define-key rk/evil-leader-map (kbd "c")
-              'eglot-completion-at-point)
-  (define-key rk/evil-leader-map (kbd "l")
-              'consult-line)
-  (define-key rk/evil-leader-map (kbd "k")
-              'eldoc-doc-buffer)
-  (define-key rk/evil-leader-map (kbd "d")
-              'eldoc-doc-buffer)
-
   (with-eval-after-load 'evil-maps
-    (defun rk/ispell-save-word ()
-      (interactive)
-      (let ((current-location (point))
-            (word (flyspell-get-word)))
-        (when (consp word)
-          (flyspell-do-correct 'save
-                               nil
-                               (car word)
-                               current-location
-                               (cadr word)
-                               (caddr word)
-                               current-location))
-        (setq ispell-pdict-modified-p nil)))
-    (define-key evil-insert-state-map "C-w" nil)
-    (define-key evil-normal-state-map "zg" 'rk/ispell-save-word)
-    (define-key evil-normal-state-map "z=" 'ispell-word)
-    (define-key evil-normal-state-map (kbd "C-.") nil)
-    (define-key evil-normal-state-map (kbd "M-.") nil)
-    (define-key evil-normal-state-map (kbd "SPC") rk/evil-leader-map)
-    (define-key evil-normal-state-map (kbd "<backspace>") 'scroll-down-command)
-    (define-key evil-normal-state-map (kbd "DEL") 'scroll-down-command)
-    (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
-    (define-key evil-normal-state-map (kbd "g k") 'find-file-at-point)
-    (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
-    (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
-    (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
-    (define-key evil-normal-state-map (kbd "C-i") 'evil-jump-forward)
     ;; Visual Line
     (define-key evil-motion-state-map
                 (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
@@ -127,16 +60,11 @@
                 (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     )
 
-  ;; Ex Commands
-  (evil-define-command rk/ex-rg (arg)
-    (interactive "<a>")
-    (compilation-start
-     (concat
-      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
-      arg)
-     'grep-mode)
-    )
-  (evil-ex-define-cmd "Rg" 'rk/ex-rg)
+  ;; Modes
+  (setq evil-default-state 'emacs)
+  (evil-set-initial-state 'prog-mode 'insert)
+  (evil-set-initial-state 'text-mode 'insert)
+  (evil-set-initial-state 'conf-mode 'insert)
 
   ;; Packages
 
