@@ -262,6 +262,9 @@
   ;; (evil-set-initial-state 'prog-mode 'normal)
   ;; (evil-set-initial-state 'text-mode 'normal)
   ;; (evil-set-initial-state 'conf-mode 'normal)
+  (evil-set-initial-state 'prog-mode 'insert)
+  (evil-set-initial-state 'text-mode 'insert)
+  (evil-set-initial-state 'conf-mode 'insert)
   ;; Git Commit
   ;; (evil-set-initial-state 'with-editor-mode 'insert)
 
