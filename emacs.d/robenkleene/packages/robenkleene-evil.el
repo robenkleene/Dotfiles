@@ -2,46 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Just use default Emacs in insert mode
+;; This won't work in `:config'
+(setq evil-disable-insert-state-bindings t)
+
 (use-package evil
   :commands (evil-mode)
   :init
   (evil-mode 1)
   :config
-  (setq
-   evil-normal-state-tag
-   (propertize " N " 'face '((:background "purple3" :foreground "white")))
-   evil-operator-state-tag
-   (propertize " O " 'face '((:background "purple3" :foreground "white")))
-   evil-insert-state-tag
-   (propertize " I " 'face '((:background "RoyalBlue" :foreground "white")))
-   evil-emacs-state-tag
-   (propertize " E " 'face '((:background "RoyalBlue" :foreground "white")))
-   evil-motion-state-tag
-   (propertize " M " 'face '((:background "purple3" :foreground "white")))
-   evil-visual-block-tag
-   (propertize " V (B) " 'face '((:background "purple3" :foreground "white")))
-   evil-visual-char-tag
-   (propertize " V (C) " 'face '((:background "purple3" :foreground "white")))
-   evil-visual-line-tag
-   (propertize " V (L) " 'face '((:background "purple3" :foreground "white")))
-   evil-visual-screen-line-tag
-   (propertize " V (SL) " 'face '((:background "purple3" :foreground "white")))
-   ;; If this is set, it'll be used instead of the more specific visual tags above
-   ;; The above ones caused an issue where using the mouse to drag a selection
-   ;; sometimes would cause the indicator to disappear
-   evil-visual-state-tag
-   (propertize " V " 'face '((:background "purple3" :foreground "white")))
-   evil-replace-state-tag
-   (propertize " R " 'face '((:background "purple3" :foreground "white")))
-   )
-
-  (with-eval-after-load 'evil
-    ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
-    ;; Disabling this because it causes move by word to jump over paths, e.g.,
-    ;; `/this/is/a/path'
-    ;; (defalias #'forward-evil-word #'forward-evil-symbol)
-    (setq-default evil-symbol-word-search t))
-
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
   ;; overwrites what's intended to paste
@@ -50,14 +19,8 @@
   ;; Don't show last ex command or search by default
   (setq-default evil-want-empty-ex-last-command nil)
 
-  ;; Just use default Emacs in insert mode
-  (setq evil-disable-insert-state-bindings t)
-
   ;; Persist search highlighting
   (setq evil-search-module 'evil-search)
-
-  ;; Disable smart case
-  ;; (setq evil-ex-search-case 'sensitive)
 
   ;; Make `Y' yank to eol
   (setq evil-want-Y-yank-to-eol t)
@@ -88,6 +51,13 @@
   (setq evil-operator-state-modes nil)
   (setq evil-visual-state-modes nil)
 
+  (with-eval-after-load 'evil
+    ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
+    ;; Disabling this because it causes move by word to jump over paths, e.g.,
+    ;; `/this/is/a/path'
+    ;; (defalias #'forward-evil-word #'forward-evil-symbol)
+    (setq-default evil-symbol-word-search t))
+
   ;; Modes
   (setq evil-default-state 'emacs)
   (evil-set-initial-state 'prog-mode 'insert)
@@ -98,29 +68,29 @@
   (defvar rk/evil-leader-map (make-keymap))
   (define-key rk/evil-leader-map (kbd "l") 'consult-occur)
   (define-key rk/evil-leader-map (kbd "b")
-    'consult-buffer)
+              'consult-buffer)
   (define-key rk/evil-leader-map (kbd "f")
-    'rk/consult-fd)
+              'rk/consult-fd)
   (define-key rk/evil-leader-map (kbd "g")
-    'consult-ripgrep)
+              'consult-ripgrep)
   (define-key rk/evil-leader-map (kbd "i")
-    'consult-imenu)
+              'consult-imenu)
   (define-key rk/evil-leader-map (kbd "r")
-    'consult-recent-file)
+              'consult-recent-file)
   (define-key rk/evil-leader-map (kbd "=")
-    'eglot-format-buffer)
+              'eglot-format-buffer)
   (define-key rk/evil-leader-map (kbd "a")
-    'eglot-code-actions)
+              'eglot-code-actions)
   (define-key rk/evil-leader-map (kbd "r")
-    'eglot-rename)
+              'eglot-rename)
   (define-key rk/evil-leader-map (kbd "c")
-    'eglot-completion-at-point)
+              'eglot-completion-at-point)
   (define-key rk/evil-leader-map (kbd "l")
-    'consult-line)
+              'consult-line)
   (define-key rk/evil-leader-map (kbd "k")
-    'eldoc-doc-buffer)
+              'eldoc-doc-buffer)
   (define-key rk/evil-leader-map (kbd "d")
-    'eldoc-doc-buffer)
+              'eldoc-doc-buffer)
 
   (with-eval-after-load 'evil-maps
     (defun rk/ispell-save-word ()
@@ -136,6 +106,7 @@
                                (caddr word)
                                current-location))
         (setq ispell-pdict-modified-p nil)))
+    (define-key evil-insert-state-map "C-w" nil)
     (define-key evil-normal-state-map "zg" 'rk/ispell-save-word)
     (define-key evil-normal-state-map "z=" 'ispell-word)
     (define-key evil-normal-state-map (kbd "C-.") nil)
@@ -151,42 +122,36 @@
     (define-key evil-normal-state-map (kbd "C-i") 'evil-jump-forward)
     ;; Visual Line
     (define-key evil-motion-state-map
-      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+                (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-motion-state-map
-      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+                (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     )
 
   ;; Ex Commands
   (evil-define-command rk/ex-rg (arg)
-                       (interactive "<a>")
-                       (compilation-start
-                        (concat
-                         "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
-                         arg)
-                        'grep-mode)
-                       )
+    (interactive "<a>")
+    (compilation-start
+     (concat
+      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
+      arg)
+     'grep-mode)
+    )
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
 
   ;; Packages
 
   (use-package evil-visualstar
-    :commands evil-mode
     :config
     (global-evil-visualstar-mode)
-    ;; This causes `*' than `n' to extend the selection
-    ;; (setq evil-visualstar/persistent t)
     )
 
   (use-package evil-surround
-    :commands evil-mode
     :config
     (global-evil-surround-mode 1)
     )
 
   (use-package evil-commentary
     :diminish
-    :commands evil-mode
-    ;; Disable binding that conflicts with `eglot-find-typeDefinition'
     :config
     (evil-commentary-mode)
     (evil-define-key 'normal evil-commentary-mode-map (kbd "gy") nil)
