@@ -21,7 +21,7 @@
 
 # Branches
 
-- `b c`: Change branch
+- `b c`: Create branch (note this will first prompt for which branch to base the new one off of)
 
 # Diff
 
