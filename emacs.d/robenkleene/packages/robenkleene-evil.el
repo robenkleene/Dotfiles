@@ -57,10 +57,10 @@
   (setq evil-search-module 'evil-search)
 
   ;; Center search results
-  (advice-add 'evil-ex-search-next :after
-              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
-  (advice-add 'evil-ex-search-previous :after
-              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  ;; (advice-add 'evil-ex-search-next :after
+  ;;             (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  ;; (advice-add 'evil-ex-search-previous :after
+  ;;             (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
 
   ;; Disable smart case
   ;; (setq evil-ex-search-case 'sensitive)
@@ -70,9 +70,9 @@
 
   ;; Don't let anything override Evil
   ;; Set initial state
-  ;; (setq evil-default-state 'emacs)
+  (setq evil-default-state 'emacs)
   ;; (setq evil-default-state 'insert)
-  (setq evil-default-state 'motion)
+  ;; (setq evil-default-state 'motion)
 
   (setq evil-overriding-maps nil
         evil-intercept-maps nil
@@ -107,41 +107,41 @@
   ;; support it otherwise
   (define-key rk/evil-leader-map (kbd "l") 'consult-occur)
   (define-key rk/evil-leader-map (kbd "b")
-              'consult-buffer)
+    'consult-buffer)
   (define-key rk/evil-leader-map (kbd "f")
-              'rk/consult-fd)
+    'rk/consult-fd)
   (define-key rk/evil-leader-map (kbd "F")
-              'rk/consult-fd-pwd)
+    'rk/consult-fd-pwd)
   (define-key rk/evil-leader-map (kbd "/")
-              'consult-ripgrep)
+    'consult-ripgrep)
   (define-key rk/evil-leader-map (kbd "i")
-              'consult-imenu)
+    'consult-imenu)
   (define-key rk/evil-leader-map (kbd "w")
-              'toggle-truncate-lines)
+    'toggle-truncate-lines)
   (define-key rk/evil-leader-map (kbd "=")
-              'eglot-format-buffer)
+    'eglot-format-buffer)
   (define-key rk/evil-leader-map (kbd "a")
-              'eglot-code-actions)
+    'eglot-code-actions)
   (define-key rk/evil-leader-map (kbd "r")
-              'eglot-rename)
+    'eglot-rename)
   (define-key rk/evil-leader-map (kbd "c")
-              'eglot-completion-at-point)
+    'eglot-completion-at-point)
   (define-key rk/evil-leader-map (kbd "l")
-              'consult-line)
+    'consult-line)
   (define-key rk/evil-leader-map (kbd "k")
-              'eldoc-doc-buffer)
+    'eldoc-doc-buffer)
   (define-key rk/evil-leader-map (kbd "d")
-              'eldoc-doc-buffer)
+    'eldoc-doc-buffer)
   ;; (define-key rk/evil-leader-map (kbd "q")
   ;;   'grep-toggle-buffer)
   (define-key rk/evil-leader-map (kbd "q")
-              'consult-compile-error)
+    'consult-compile-error)
   (define-key rk/evil-leader-map (kbd "`")
-              'eshell)
+    'eshell)
   (define-key rk/evil-leader-map (kbd "y g")
-              'kill-grep)
+    'kill-grep)
   (define-key rk/evil-leader-map (kbd "r")
-              'consult-recent-file)
+    'consult-recent-file)
 
   (with-eval-after-load 'evil-maps
     (defun rk/ispell-save-word ()
@@ -169,21 +169,18 @@
     (define-key evil-normal-state-map (kbd "g y") 'eglot-find-typeDefinition)
     (define-key evil-normal-state-map (kbd "g i") 'eglot-find-implementation)
     (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
-    (define-key evil-normal-state-map (kbd "M-c") 'rk/consult-z-subdir)
-    (define-key evil-normal-state-map (kbd "M--") 'rk/consult-z-parentdir)
     (define-key evil-normal-state-map (kbd "C-i") 'evil-jump-forward)
     ;; Visual Line
     (define-key evil-motion-state-map
-                (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+      (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-motion-state-map
-                (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+      (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     ;; Motion
     ;; Motion binds normal and visual
     (define-key evil-motion-state-map (kbd "M-.") nil)
     (define-key evil-motion-state-map (kbd "C-.") nil)
     (define-key evil-motion-state-map (kbd "C-y") nil)
     (define-key evil-motion-state-map [down-mouse-1] nil)
-    (define-key evil-motion-state-map (kbd "C-w") rk/window-map)
     (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
     (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-motion-state-map (kbd "C-l") 'evil-ex-nohighlight)
@@ -200,7 +197,6 @@
     ;; Also support this because `less' supports it too
     (define-key evil-motion-state-map (kbd "Z Z") 'evil-quit)
     (define-key evil-motion-state-map (kbd "+") nil)
-    (define-key evil-motion-state-map (kbd "M-z") 'rk/consult-z)
     ;; Conflicts with Dired shell command, also not part of the standard Vim API
     (define-key evil-motion-state-map (kbd "!") nil)
     ;; Visual
@@ -238,58 +234,20 @@
     )
 
   ;; Ex Commands
-  (evil-ex-define-cmd "Ei" 'edit-init)
-  (evil-ex-define-cmd "Pq" 'yank-to-grep-buffer)
-  (evil-ex-define-cmd "Unew" 'untitled-create-split-vertically)
-  (evil-ex-define-cmd "Uvnew" 'untitled-create-split-horizontally)
-  (evil-ex-define-cmd "Uenew" 'untitled-create)
+  ;; (evil-ex-define-cmd "Ei" 'edit-init)
+  ;; (evil-ex-define-cmd "Pq" 'yank-to-grep-buffer)
   (evil-define-command rk/ex-rg (arg)
-    (interactive "<a>")
-    (compilation-start
-     (concat
-      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
-      arg)
-     'grep-mode)
-    )
+                       (interactive "<a>")
+                       (compilation-start
+                        (concat
+                         "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number" " "
+                         arg)
+                        'grep-mode)
+                       )
   (evil-ex-define-cmd "Rg" 'rk/ex-rg)
-  (evil-define-command rk/rename-current-buffer-file (new-filename &optional bang)
-    :repeat nil
-    :move-point nil
-    (interactive "<f><!>")
-    (let ((name (buffer-name))
-          (old-filename (buffer-file-name)))
-      (if (not old-filename)
-          (message "Buffer '%s' is not visiting a file!" name)
-        (progn
-          (rename-file name new-filename bang)
-          (if (get-buffer new-filename)
-              (kill-buffer new-filename)
-            )
-          (rename-buffer new-filename)
-          (set-visited-file-name new-filename)
-          (set-buffer-modified-p nil)
-          )
-        )
-      )
-    )
-
-  (evil-define-command rk/remove-current-buffer-file ()
-    "Kill the current buffer and deletes the file it is visiting."
-    (interactive)
-    (let ((filename (buffer-file-name)))
-      (when filename
-        (if (vc-backend filename)
-            (vc-delete-file filename)
-          (progn
-            (delete-file filename)
-            (message "Deleted file %s" filename)
-            (kill-buffer))))))
-
-  (evil-ex-define-cmd "Remove" 'rk/remove-current-buffer-file)
-  (evil-ex-define-cmd "Rename" 'rk/rename-current-buffer-file)
 
   ;; Allow crossing lines by moving past end of line
-  (setq-default evil-cross-lines t)
+  ;; (setq-default evil-cross-lines t)
 
   ;; Prevent evil from forcing `set-mark-command' from entering visual mode
   ;; (which has weird side effects like breaking `forward-sexp')
@@ -301,14 +259,15 @@
   ;; Modes
 
   ;; Normal
-  (evil-set-initial-state 'prog-mode 'normal)
-  (evil-set-initial-state 'text-mode 'normal)
-  (evil-set-initial-state 'conf-mode 'normal)
+  ;; (evil-set-initial-state 'prog-mode 'normal)
+  ;; (evil-set-initial-state 'text-mode 'normal)
+  ;; (evil-set-initial-state 'conf-mode 'normal)
   ;; Git Commit
-  (evil-set-initial-state 'with-editor-mode 'insert)
+  ;; (evil-set-initial-state 'with-editor-mode 'insert)
 
   ;; Special mode that triggers for long lines
-  (evil-set-initial-state 'so-long-mode 'normal)
+  ;; (evil-set-initial-state 'so-long-mode 'normal)
+
   ;; `*eldoc*' buffer is also `fundamental', need to target this more
   ;; specifically.
   ;; (evil-set-initial-state 'fundamental-mode 'normal)
@@ -330,40 +289,35 @@
     (evil-define-key 'emacs dired-mode-map (kbd "-") 'dired-up-directory)
     )
 
-  (with-eval-after-load 'esh-mode
-    (evil-define-key 'normal eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
-    (evil-define-key 'insert eshell-mode-map (kbd "M-z") 'rk/consult-eshell-z)
-    )
-
   ;; Troubleshooting
 
   ;; `wgrep'
-  (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
-    (if (evil-motion-state-p)
-        (evil-normal-state)
-      )
-    )
-  (defadvice wgrep-to-original-mode (after rk/wgrep-to-original-mode)
-    (if (or (evil-normal-state-p) (evil-insert-state-p)
-            (evil-motion-state)
-            )
-        )
-    )
+  ;; (defadvice wgrep-change-to-wgrep-mode (after rk/wgrep-change-to-wgrep-mode)
+  ;;   (if (evil-motion-state-p)
+  ;;       (evil-normal-state)
+  ;;     )
+  ;;   )
+  ;; (defadvice wgrep-to-original-mode (after rk/wgrep-to-original-mode)
+  ;;   (if (or (evil-normal-state-p) (evil-insert-state-p)
+  ;;           (evil-motion-state)
+  ;;           )
+  ;;       )
+  ;;   )
 
   ;; `wdired'
-  (defadvice wdired-change-to-dired-mode (after rk/wdired-change-to-dired-mode)
-    (if (or (evil-normal-state-p) (evil-insert-state-p)
-            (evil-motion-state)
-            )
-        )
-    )
-  (add-hook 'wdired-mode-hook
-            (lambda ()
-              (if (evil-motion-state-p)
-                  (evil-normal-state)
-                )
-              )
-            )
+  ;; (defadvice wdired-change-to-dired-mode (after rk/wdired-change-to-dired-mode)
+  ;;   (if (or (evil-normal-state-p) (evil-insert-state-p)
+  ;;           (evil-motion-state)
+  ;;           )
+  ;;       )
+  ;;   )
+  ;; (add-hook 'wdired-mode-hook
+  ;;           (lambda ()
+  ;;             (if (evil-motion-state-p)
+  ;;                 (evil-normal-state)
+  ;;               )
+  ;;             )
+  ;;           )
 
   ;; `org-agenda'
   ;; Fix a bug where `org-agenda-redo-all' from `\g' leaves agenda in Emacs
@@ -430,10 +384,8 @@
     :bind (
            (:map evil-normal-state-map
                  ("C-a" . evil-numbers/inc-at-pt)
-                 ("C-S-a". evil-numbers/dec-at-pt)
+                 ("C-x". evil-numbers/dec-at-pt)
                  )
-           (:map rk/evil-leader-map
-                 ("C-x" . evil-numbers/dec-at-pt))
            )
     )
 
