@@ -65,6 +65,7 @@
 (require 'robenkleene-eglot)
 (require 'robenkleene-corfu)
 (require 'robenkleene-iedit)
+(require 'robenkleene-evil)
 
 ;; Completion
 (require 'robenkleene-vertico)
