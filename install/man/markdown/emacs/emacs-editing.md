@@ -27,7 +27,7 @@
 ## Rectangular
 
 - `C-x SPC`: Enter rectangular selection mode
-- `C-x r t`: Prepend each line in select
+- `C-x r t` / `string-rectangle`: Prepend each line in select (use `C-M-%` / `query-replace-regexp` to append each line)
 
 # Movement
 
@@ -50,6 +50,7 @@
 
 - `M-q`: Wrap
 - `M-z` / `C-u M-z`: Delete to character forward / backward
+- `C-x C-q`: Toggle view only mode
 
 # Split & Merge Lines
 
