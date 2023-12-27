@@ -13,7 +13,8 @@
 
 # URL
 
-- `C-c C-l`: Add URL (just `C-y` after to paste from clipboard)
+- `org-store-link`: Store a link that can be added with `C-c C-l`
+- `C-c C-l` / `org-insert-link`: Add URL (just `C-y` after to paste from clipboard)
 - `C-c C-o`: Open URL
 
 # Todo
