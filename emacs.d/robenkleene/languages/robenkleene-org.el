@@ -6,6 +6,9 @@
   :mode ("\\.org\\'" . org-mode)
   :commands (org-store-link)
   :config
+  ;; Allow `<s' to create a source code block
+  (require 'org-tempo)
+
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
   (setq org-startup-indented t)
@@ -37,9 +40,11 @@
 
   (setq org-agenda-window-setup 'current-window)
   (with-eval-after-load 'org
-    (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
+    ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
     (define-key org-mode-map (kbd "M-<left>") nil)
     (define-key org-mode-map (kbd "M-<right>") nil)
+    (define-key org-mode-map (kbd "M-S-<left>") nil)
+    (define-key org-mode-map (kbd "M-S-<right>") nil)
     )
 
   ;; Agenda
