@@ -1,2 +1,3 @@
 - `C-c C-,` / `org-insert-structure-template` then `s`: Insert source code block (this binding doesn't work in terminal Emacs)
 - With `(require 'org-tempo)`, inserting `<s` followed by tab will insert source code
+- After `src` there's a space, enter the source code type for syntax higlighting (e.g., `src C++`)
