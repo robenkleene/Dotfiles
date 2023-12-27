@@ -1,4 +1,5 @@
 - `C-h .`: Show diagnostics at point
+- `eglot-list-connections`: Show attached LSP
 
 # Project Management
 
