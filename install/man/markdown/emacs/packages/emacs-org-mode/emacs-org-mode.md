@@ -16,6 +16,7 @@
 - `org-store-link`: Store a link that can be added with `C-c C-l`
 - `C-c C-l` / `org-insert-link`: Add URL (just `C-y` after to paste from clipboard)
 - `C-c C-o`: Open URL
+- `C-c C-x C-p` / `C-c C-x C-n`: Goto previous / next link
 
 # Todo
 
