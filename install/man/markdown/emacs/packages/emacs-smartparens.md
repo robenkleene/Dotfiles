@@ -1,4 +1,4 @@
-- `M-D`: Unwrap s-expression, e.g., remove parenthesis or quotes
+- `M-S-d`: Unwrap s-expression, e.g., remove parenthesis or quotes
 - `C-M-b` / `C-M-f`: Move forward and backward by s-expression
 - `C-M-SPC`: Select current s-expression
 - `C-M-w`: Copy s-expression
