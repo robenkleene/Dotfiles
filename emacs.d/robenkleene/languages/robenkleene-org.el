@@ -4,6 +4,7 @@
 
 (use-package org
   :mode ("\\.org\\'" . org-mode)
+  :commands (org-store-link)
   :config
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
@@ -28,6 +29,7 @@
       (setq ad-return-value rlt)))
 
   (setq org-deadline-warning-days 0)
+  (setq org-return-follows-link 1)
 
   ;; Always follow the current agenda item in the other window, doesn't work
   ;; nicely with evil
