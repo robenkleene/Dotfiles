@@ -10,7 +10,7 @@
          ("C-c r" . consult-recent-file)
          ;; ("C-c q" . consult-compile-error)
          ("C-c g" . consult-ripgrep)
-         ("C-c f" . rk/consult-fd)
+         ("C-c f" . consult-fd)
          ;; Use `consult-line' by default which fuzzy matches lines, and jumps
          ;; to matches
          ("M-s o" . consult-line)
@@ -19,8 +19,7 @@
          )
   :commands
   (
-   rk/consult-fd
-   rk/consult-fd-pwd
+   consult-fd
    consult-imenu
    consult-compile-error
    consult-ripgrep
@@ -107,65 +106,7 @@
   ;; (setq consult-project-function (lambda (_) (vc-root-dir)))
   ;;;; 4. locate-dominating-file
   ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
-
-  (defun rk/consult--fd-builder (input)
-    (pcase-let* ((`(,arg . ,opts) (consult--command-split input))
-                 (`(,re . ,hl) (funcall consult--regexp-compiler
-                                        arg 'extended t)))
-      (when re
-        (cons (append
-               (list "fd"
-                     "--color=never"
-                     "--hidden"
-                     "--follow"
-                     "--exclude"
-                     ".git/"
-                     "--exclude"
-                     ".hg/"
-                     "--exclude"
-                     ".DS_Store"
-                     (consult--join-regexps re 'extended))
-               opts)
-              hl))))
-
-  (defun rk/consult-fd (&optional dir initial)
-    (interactive "P")
-    (pcase-let* ((`(,prompt ,paths ,dir) (consult--directory-prompt "Fd" dir)))
-      (find-file (rk/consult--find prompt #'rk/consult--fd-builder initial))))
-
-  (defun rk/consult-fd-pwd (&optional dir initial)
-    "`consult-find' with `fd' in `pwd'."
-    (interactive "P")
-    (let ((default-directory (rk/pwd)))
-      (call-interactively 'rk/consult-fd)
-      ))
-
   )
-
-;; Custom version of `consult--find' that just adds `:state
-;; (consult--file-preview)' to enable file previews
-(defun rk/consult--find (prompt builder initial)
-  "Run find command in current directory.
-
-The function returns the selected file.
-The filename at point is added to the future history.
-
-BUILDER is the command line builder function.
-PROMPT is the prompt.
-INITIAL is initial input."
-  (consult--read
-   (consult--async-command builder
-     (consult--async-map (lambda (x) (string-remove-prefix "./" x)))
-     (consult--async-highlight builder)
-     :file-handler t) ;; allow tramp
-   :prompt prompt
-   :sort nil
-   :require-match t
-   :initial (consult--async-split-initial initial)
-   :add-history (consult--async-split-thingatpt 'filename)
-   :category 'file
-   :state (consult--file-preview)
-   :history '(:input consult--find-history)))
 
 (provide 'robenkleene-consult)
 ;; Local Variables:
