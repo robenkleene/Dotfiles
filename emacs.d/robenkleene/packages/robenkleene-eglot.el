@@ -38,7 +38,9 @@
   ;; (setq eglot-send-changes-idle-time (* 60 60))
 
   ;; Languages
-  (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+  (if (not (assoc '(c++-mode c-mode) eglot-server-programs))
+      (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+    )
   (add-to-list 'eglot-server-programs '(js-mode "typescript-language-server" "--stdio"))
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
   (add-to-list 'eglot-server-programs '(typescript-mode "typescript-language-server" "--stdio"))
