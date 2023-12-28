@@ -71,6 +71,7 @@
 (require 'robenkleene-vertico)
 (require 'robenkleene-orderless)
 (require 'robenkleene-consult)
+(require 'robenkleene-embark)
 (require 'robenkleene-marginalia)
 
 ;; Eshell
