@@ -21,6 +21,7 @@
         ;; corfu-auto-delay 0
         corfu-auto-prefix 2
         completion-styles '(basic))
+  ;; (setq global-corfu-modes '((not eshell-mode) t))
   ;; (global-corfu-mode)
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)
@@ -45,10 +46,10 @@
                               (corfu-mode)
                               ))
   ;; Enable in eshell
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (setq-local corfu-auto nil)
-              (corfu-mode)))
+  ;; (add-hook 'eshell-mode-hook
+  ;;           (lambda ()
+  ;;             (setq-local corfu-auto nil)
+  ;;             (corfu-mode)))
 
   ;; Enable in Minibuffer
   ;; (defun corfu-enable-in-minibuffer ()
