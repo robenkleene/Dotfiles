@@ -16,6 +16,17 @@
 
 (setq isearch-allow-motion t)
 
+;; Make `isearch' repeatable, but this makes editing the string after a search
+;; starts harder
+(defvar isearch-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "s") #'isearch-repeat-forward)
+    (define-key map (kbd "r") #'isearch-repeat-backward)
+    map))
+
+(dolist (cmd '(isearch-repeat-forward isearch-repeat-backward))
+  (put cmd 'repeat-map 'isearch-repeat-map))
+
 (provide 'robenkleene-search)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
