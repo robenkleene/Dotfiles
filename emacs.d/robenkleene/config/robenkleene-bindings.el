@@ -99,6 +99,19 @@
             'previous-multiframe-window)
 
 
+;; Make undo repeatable, this is available by default, this adds `r' to redo
+(defvar undo-only-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "u") #'undo-only)
+    (define-key map (kbd "r") #'undo-redo)
+    map))
+
+(dolist (cmd '(undo))
+  (put cmd 'repeat-map 'undo-only-repeat-map))
+;; `undo' is bound by default, this makes the redo available
+(define-key rk/bindings-minor-mode-map (kbd "C-x u")
+            'undo-only)
+
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
