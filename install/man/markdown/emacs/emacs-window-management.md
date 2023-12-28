@@ -31,6 +31,10 @@
 - `C-x t 0`: Close tab
 - `C-x t 1`: Close other tabs
 
+# Buffers
+
+- `C-x <left>` / `C-x <right>`: Go to previous / next buffer
+
 # Other Window
 
 - `C-M-v` / `S-C-M-v`: Page down / up in other window (note page up doesn't work in terminal Emacs)
