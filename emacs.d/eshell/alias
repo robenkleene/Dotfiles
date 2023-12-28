@@ -1,5 +1,7 @@
+;; eshell aliases (comment example)
 alias rg TERM=eterm-color rg $*
 alias fd fd --color=never $*
+alias hg hg --pager=cat $*
 
 alias u egit -u && ~/Developer/Dotfiles/install/update.sh
 alias ut git_pull_all -t
