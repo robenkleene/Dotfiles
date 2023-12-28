@@ -9,8 +9,11 @@
              magit-status
              magit-log-current
              )
+  :bind (:map magit-file-section-map
+              ("RET" . magit-diff-visit-file-other-window)
+              :map magit-hunk-section-map
+              ("RET" . magit-diff-visit-file-other-window))
   :init
-  (defalias 'ms 'magit-status)
   (defalias 's 'magit-egit)
   :config
   ;; Refresh magit on file system changes (not this is only necessary for
@@ -24,22 +27,22 @@
   ;;   (add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
 
   ;; Jump to the start of the first section in "magit-status-mode" buffers
-  (add-hook 'magit-refresh-buffer-hook
-            (lambda ()
-              (if (and (bobp)
-                       (string-equal major-mode "magit-status-mode"))
-                  (progn
-                    (magit-section-forward-sibling)
-                    ;; Not sure why this doesn't work
-                    (magit-next-line)
-                    )
-                )
-              )
-            )
+  ;; (add-hook 'magit-refresh-buffer-hook
+  ;;           (lambda ()
+  ;;             (if (and (bobp)
+  ;;                      (string-equal major-mode "magit-status-mode"))
+  ;;                 (progn
+  ;;                   (magit-section-forward-sibling)
+  ;;                   ;; Not sure why this doesn't work
+  ;;                   (magit-next-line)
+  ;;                   )
+  ;;               )
+  ;;             )
+  ;;           )
 
   ;; Open magit status full screen
-  (setq magit-display-buffer-function
-        #'magit-display-buffer-fullframe-status-v1)
+  ;; (setq magit-display-buffer-function
+  ;;       #'magit-display-buffer-fullframe-status-v1)
 
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)

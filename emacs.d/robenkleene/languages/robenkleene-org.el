@@ -86,7 +86,7 @@
                 (when (derived-mode-p 'prog-mode)
                   (goto-line (string-to-number search-string)))))
   ;; Open links in current window
-  (add-to-list 'org-link-frame-setup '(file . find-file))
+  ;; (add-to-list 'org-link-frame-setup '(file . find-file))
 
   ;; Agenda
   (setq org-agenda-span 10
