@@ -82,6 +82,13 @@
   (dolist (cmd '(markdown-next-link markdown-previous-link))
     (put cmd 'repeat-map 'markdown-link-repeat-map))
 
+  ;; After jumping to a link, move one character right so `<return>' will open
+  ;; the link
+  (defadvice markdown-next-link (after rk/markdown-next-link activate)
+    (forward-char))
+  (defadvice markdown-previous-link (after rk/markdown-previous-link activate)
+    (forward-char))
+
   (add-hook 'markdown-mode-hook
             (lambda ()
               ;; Use blank lines to indicate paragraphs
