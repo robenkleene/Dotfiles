@@ -45,6 +45,10 @@
     (define-key org-mode-map (kbd "M-<right>") nil)
     (define-key org-mode-map (kbd "M-S-<left>") nil)
     (define-key org-mode-map (kbd "M-S-<right>") nil)
+    (define-key org-mode-map (kbd "S-<down>") nil)
+    (define-key org-mode-map (kbd "S-<up>") nil)
+    (define-key org-mode-map (kbd "S-<left>") nil)
+    (define-key org-mode-map (kbd "S-<right>") nil)
     (define-key org-mode-map (kbd "M-n") 'org-next-link)
     (define-key org-mode-map (kbd "M-p") 'org-previous-link)
 
@@ -58,6 +62,16 @@
       (put cmd 'repeat-map 'org-link-repeat-map))
 
     )
+
+  ;; When creating links to text files, use line numbers instead of searches
+  (add-hook 'org-create-file-search-functions
+            '(lambda ()
+               (when (derived-mode-p 'prog-mode)
+                 (number-to-string (line-number-at-pos)))))
+  (add-hook 'org-execute-file-search-functions
+            '(lambda (search-string)
+               (when (derived-mode-p 'prog-mode)
+                 (goto-line (string-to-number search-string)))))
 
   ;; Agenda
   (setq org-agenda-span 10
