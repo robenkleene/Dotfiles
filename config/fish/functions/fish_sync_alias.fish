@@ -11,7 +11,6 @@ function fish_sync_alias
     alias --save us='ssh_start && ~/.bin/egit_update -s'
 
     # Misc
-    alias --save rg='rg_custom'
     # Makes output compatible with Emacs `dired-virtual`
     # This breaks simple usages like `fd . <path>`
     # alias --save fd='fd --strip-cwd-prefix'
