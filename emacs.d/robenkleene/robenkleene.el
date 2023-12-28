@@ -74,9 +74,6 @@
 (require 'robenkleene-embark)
 (require 'robenkleene-marginalia)
 
-;; Eshell
-(require 'robenkleene-eshell-syntax-highlighting)
-
 ;; Theme
 (require 'robenkleene-modus)
 (require 'robenkleene-ef-themes)
