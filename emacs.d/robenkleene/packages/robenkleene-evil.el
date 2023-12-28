@@ -53,6 +53,8 @@
     (setq-default evil-symbol-word-search t))
 
   (with-eval-after-load 'evil-maps
+    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
+    (define-key evil-insert-state-map (kbd "C-z") 'suspend-frame)
     ;; Visual Line
     (define-key evil-motion-state-map
                 (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
