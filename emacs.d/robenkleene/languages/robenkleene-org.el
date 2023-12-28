@@ -34,6 +34,19 @@
   (setq org-deadline-warning-days 0)
   (setq org-return-follows-link 1)
 
+  (defun org-remove-link ()
+    "Replace an org link by its description or if empty its address"
+    (interactive)
+    (if (org-in-regexp org-link-bracket-re 1)
+        (save-excursion
+          (let ((remove (list (match-beginning 0) (match-end 0)))
+                (description
+                 (if (match-end 2) 
+                     (org-match-string-no-properties 2)
+                   (org-match-string-no-properties 1))))
+            (apply 'delete-region remove)
+            (insert description)))))
+
   ;; Always follow the current agenda item in the other window, doesn't work
   ;; nicely with evil
   ;; (setq org-agenda-start-with-follow-mode t)
@@ -63,7 +76,7 @@
 
     )
 
-  ;; When creating links to text files, use line numbers instead of searches
+  ;; Use line numbers when creating links for some modes
   (add-hook 'org-create-file-search-functions
             '(lambda ()
                (when (derived-mode-p 'prog-mode)
