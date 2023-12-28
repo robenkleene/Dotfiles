@@ -45,6 +45,18 @@
     (define-key org-mode-map (kbd "M-<right>") nil)
     (define-key org-mode-map (kbd "M-S-<left>") nil)
     (define-key org-mode-map (kbd "M-S-<right>") nil)
+    (define-key org-mode-map (kbd "M-n") 'org-next-link)
+    (define-key org-mode-map (kbd "M-p") 'org-previous-link)
+
+    (defvar org-link-repeat-map
+      (let ((map (make-sparse-keymap)))
+        (define-key map (kbd "n") #'org-next-link)
+        (define-key map (kbd "p") #'org-previous-link)
+        map))
+
+    (dolist (cmd '(org-next-link org-previous-link))
+      (put cmd 'repeat-map 'org-link-repeat-map))
+
     )
 
   ;; Agenda

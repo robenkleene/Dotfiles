@@ -72,6 +72,16 @@
   ;; (define-key markdown-mode-map (kbd "M-}")
   ;;             'markdown-forward-block)
   (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
+
+  (defvar markdown-link-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "n") #'markdown-next-link)
+      (define-key map (kbd "p") #'markdown-previous-link)
+      map))
+
+  (dolist (cmd '(markdown-next-link markdown-previous-link))
+    (put cmd 'repeat-map 'markdown-link-repeat-map))
+
   (add-hook 'markdown-mode-hook
             (lambda ()
               ;; Use blank lines to indicate paragraphs
