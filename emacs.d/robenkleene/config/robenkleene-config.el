@@ -158,25 +158,6 @@
 (setq recentf-max-menu-items 100)
 (setq recentf-max-saved-items 100)
 
-;; Automatically jump to first help button
-;; In practice, this is odd:
-;; 1. Sometimes there isn't a button, so instead it jumps to the back button
-;; 2. Sometimes one help points to another, and this only works for the first
-;; help buffer loaded
-;; (defadvice help-mode-finish
-;;     (after rk/help-mode-finish () activate)
-;;   (with-current-buffer (get-buffer-create "*Help*")
-;;     (forward-button 1)
-;;     )
-;;   )
-;; (add-hook 'occur-hook (lambda ()
-;;                         (progn
-;;                           (pop-to-buffer (get-buffer "*Occur*"))
-;;                           (forward-line 1)
-;;                           )
-;;                         )
-;;           )
-
 ;; Remove window chrome
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
