@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; (setq eshell-scroll-to-bottom-on-input t)
-
 (with-eval-after-load 'eshell
 
   ;; Show tab completion options instead of just choosing one
@@ -27,29 +25,6 @@
    )
   )
 
-(defun egit-save ()
-  "`egit' save"
-  (interactive)
-  (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
-      (progn
-        (shell-command-to-string "~/.bin/sgitt_auto")
-        )
-    (eshell/cd (shell-command-to-string "~/.bin/egit -n | tr -d '\n'"))
-    )
-  )
-
-;; This works to add abbreviations but probably shouldn't use this because it
-;; doesn't enforce the abbreviations are only used at the start of the line? For
-;; the command
-;; (progn
-;;   (when (boundp 'eshell-mode-abbrev-table)
-;;     (clear-abbrev-table eshell-mode-abbrev-table))
-;;   (define-abbrev-table 'eshell-mode-abbrev-table
-;;     '(
-;;       ("gsmuirr" "git submodule update --init --recursive --remote")
-;;       )
-;;     ))
-
 (defun rk/eshell-interactive-output-readonly ()
   "Make output of interactive commands in eshell read-only.
 This should be the last entry in eshell-output-filter-functions!"
@@ -71,29 +46,6 @@ This should be the last entry in eshell-output-filter-functions!"
   (interactive)
   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
   )
-
-;; Problem with these is that out of last command starts before processing
-
-;; (defun rk/eshell-last-output-to-diff-buffer ()
-;;   "Diff buffer with output of last command."
-;;   (interactive)
-;;   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
-;;   (yank-to-diff-buffer)
-;;   )
-
-;; (defun rk/eshell-last-output-to-grep-buffer ()
-;;   "Grep buffer with output of last command."
-;;   (interactive)
-;;   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
-;;   (yank-to-grep-buffer)
-;;   )
-
-;; (defun rk/eshell-last-output-to-dired-virtual-buffer ()
-;;   "Virtual dired buffer with output of last command."
-;;   (interactive)
-;;   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
-;;   (yank-to-virtual-dired-buffer)
-;;   )
 
 (provide 'robenkleene-eshell)
 ;; Local Variables:
