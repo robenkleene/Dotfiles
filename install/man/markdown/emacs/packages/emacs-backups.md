@@ -1,1 +1,2 @@
 - `recover-this-file`: Restore from Emacs backup
+- To view a diff of the changes, first run `recover-this-file` and accept the changes, then run `diff-buffer-with-file` before saving to see the differences. To discard the changes, just undo.
