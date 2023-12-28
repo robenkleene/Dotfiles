@@ -47,6 +47,16 @@ This should be the last entry in eshell-output-filter-functions!"
   (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
   )
 
+(defun rk/eshell-z (&rest args)
+  "Jump to directory."
+  (interactive)
+  (eshell/cd
+   (shell-command-to-string (concat "~/.bin/z_get "
+                                    args)
+                            )
+   )
+  )
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

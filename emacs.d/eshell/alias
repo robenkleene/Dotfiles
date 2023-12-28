@@ -4,3 +4,5 @@ alias fd fd --color=never $*
 alias u egit -u && ~/Developer/Dotfiles/install/update.sh
 alias ut git_pull_all -t
 alias ua git_pull_all -t
+
+alias z rk/eshell-z
