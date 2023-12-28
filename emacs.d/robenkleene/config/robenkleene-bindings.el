@@ -86,6 +86,9 @@
             'reveal-in-finder)
 (define-key rk/bindings-minor-mode-map (kbd "C-c z")
             'z)
+;; Quickly create org links
+(define-key rk/bindings-minor-mode-map (kbd "C-c l")
+            'org-store-link)
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
 ;;   'rk/open-terminal-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
@@ -97,7 +100,6 @@
 ;; Other window
 (define-key rk/bindings-minor-mode-map (kbd "C-x O")
             'previous-multiframe-window)
-
 
 ;; Make undo repeatable, this is available by default, this adds `r' to redo
 (defvar undo-only-repeat-map
