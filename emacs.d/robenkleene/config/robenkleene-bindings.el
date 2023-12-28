@@ -82,6 +82,8 @@
 ;; (define-key rk/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
 ;; General
+(define-key rk/bindings-minor-mode-map (kbd "C-x j")
+            'dired-jump)
 (define-key rk/bindings-minor-mode-map (kbd "M-r")
             'reveal-in-finder)
 (define-key rk/bindings-minor-mode-map (kbd "C-c z")
