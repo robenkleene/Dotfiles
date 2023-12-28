@@ -1,0 +1,1 @@
+- `recover-this-file`: Restore from Emacs backup
