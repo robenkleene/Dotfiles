@@ -78,13 +78,13 @@
 
   ;; Use line numbers when creating links for some modes
   (add-hook 'org-create-file-search-functions
-            '(lambda ()
-               (when (derived-mode-p 'prog-mode)
-                 (number-to-string (line-number-at-pos)))))
+            #'(lambda ()
+                (when (derived-mode-p 'prog-mode)
+                  (number-to-string (line-number-at-pos)))))
   (add-hook 'org-execute-file-search-functions
-            '(lambda (search-string)
-               (when (derived-mode-p 'prog-mode)
-                 (goto-line (string-to-number search-string)))))
+            #'(lambda (search-string)
+                (when (derived-mode-p 'prog-mode)
+                  (goto-line (string-to-number search-string)))))
   ;; Open links in current window
   (add-to-list 'org-link-frame-setup '(file . find-file))
 
