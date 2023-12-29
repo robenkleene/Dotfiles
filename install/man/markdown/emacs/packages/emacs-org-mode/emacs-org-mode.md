@@ -1,9 +1,13 @@
 # Outline
 
-- `M-RET`: New list item at current level before children
-- `C-RET`: New list item at current level after children
-- `M-S-RET`: New todo item at current level before children
-- `C-S-RET`: New todo item at current level after children
+- `M-RET`: New sibling list item before children
+- `C-RET`: New sibling list item after children (doesn't work in terminal Emacs)
+- `M-RET <tab>`: New first child list item
+- `C-RET <tab>`: New last child list item (doesn't work in terminal Emacs)
+- `M-S-RET`: New todo item at current level before children (doesn't work in terminal Emacs)
+- `C-S-RET`: New todo item at current level after children (doesn't work in terminal Emacs)
+- `M-S-RET <tab>`: New child todo item before children (doesn't work in terminal Emacs)
+- `C-S-RET <tab>`: New child todo item after children (doesn't work in terminal Emacs)
 - `C-c C-x C-w` / `C-c C-x C-y`: Kill / paste subtree
 
 ## Moving
