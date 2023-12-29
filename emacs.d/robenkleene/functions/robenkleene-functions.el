@@ -48,6 +48,12 @@
     (find-file file))
   )
 
+(defun rk/safe-find-file-other-window (file)
+  "Only open a FILE if it exists."
+  (when (file-readable-p file)
+    (find-file-other-window file))
+  )
+
 (defun rk/project-override (dir)
   "Override project function with DIR."
   (let ((override (locate-dominating-file dir ".project")))
