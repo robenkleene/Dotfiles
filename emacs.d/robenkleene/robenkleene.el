@@ -53,18 +53,14 @@
 
 ;; Packages
 (require 'robenkleene-diminish)
-(require 'robenkleene-smartparens)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-yasnippet)
 (require 'robenkleene-magit)
-(require 'robenkleene-rainbow-mode)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-eglot)
-(require 'robenkleene-corfu)
-(require 'robenkleene-iedit)
 (require 'robenkleene-evil)
 
 ;; Completion
