@@ -3,8 +3,10 @@
 
 # Speed Keys
 
+## Navigation
+
 - `p` / `n`: Next / previous item
-- `l` / `r`: Shift left / right
+- `b` / `f`: Next / previous sibling
 
 ## Deleting
 
@@ -12,6 +14,7 @@
 
 ## Moving
 
+- `l` / `r`: Shift left / right
 - `w`: Refile
 
 ## Todo

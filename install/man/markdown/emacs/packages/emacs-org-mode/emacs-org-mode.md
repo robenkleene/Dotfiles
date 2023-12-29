@@ -16,6 +16,12 @@
 - `M-S-RET`: New todo item at current level before children
 - `M-S-RET <tab>`: New child todo item before children
 
+## Navigation
+
+- `M-{` / `M-}`: Previous / next element
+- `C-c C-p` / `C-c C-n`: Previous / next item
+- `C-c C-b` / `C-c C-f`: Previous / next sibling
+
 ## Moving
 
 - `M-left` / `M-right`: Demote / promote item
