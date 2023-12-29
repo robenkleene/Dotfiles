@@ -27,11 +27,6 @@
             'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
-(define-key rk/bindings-minor-mode-map (kbd "M-S-<down>") 'rk/duplicate-line-below)
-(define-key rk/bindings-minor-mode-map (kbd "M-S-<up>") 'rk/duplicate-line-above)
-(define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
-(define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
-
 ;; History keys in isearch
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
@@ -57,29 +52,8 @@
 
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-c d <down-mouse-1>")
-                #'rk/describe-char-at-mouse-click)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
-;; Always allow meta up and down to match M-p and M-n
-;; This breaks `org-mode' bindings to move an item up or down
-;; (define-key key-translation-map (kbd "M-<up>") (kbd "M-p"))
-;; (define-key key-translation-map (kbd "M-<down>") (kbd "M-n"))
-;; (define-key input-decode-map (kbd "M-<up>") (kbd "M-p"))
-;; (define-key input-decode-map (kbd "M-<down>") (kbd "M-n"))
-
-;; New Keys
-
-;; Set these in such a way that other modes override, e.g., to make the bindings
-;; access history in shell modes
-;; (define-key rk/bindings-minor-mode-map (kbd "M-n") 'rk/next)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-p")
-;;   'rk/previous)
-;; Try using this instead, to difficult to keep track of all modes that populate
-;; error list
-;; Trying binding these on `text' and `prog' modes instead
-;; (define-key rk/bindings-minor-mode-map (kbd "M-n") 'next-error)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-p") 'previous-error)
 
 ;; General
 (define-key rk/bindings-minor-mode-map (kbd "C-x j")
@@ -92,17 +66,9 @@
 ;; Quickly create org links
 (define-key rk/bindings-minor-mode-map (kbd "C-c l")
             'org-store-link)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-t")
-;;   'rk/open-terminal-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 ;; Not available in terminal
 (define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
-;; No default binding
-(define-key rk/bindings-minor-mode-map (kbd "C-x :")
-            'switch-to-minibuffer)
-;; Other window
-(define-key rk/bindings-minor-mode-map (kbd "C-x O")
-            'previous-multiframe-window)
 
 ;; Make undo repeatable, this is available by default, this adds `r' to redo
 (defvar undo-only-repeat-map

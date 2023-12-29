@@ -266,7 +266,6 @@
   "Yank to grep buffer."
   (interactive)
   (require 'grep)
-  (add-hook 'compilation-finish-functions 'rk/compilation-next-once)
   (compilation-start "safepaste" 'grep-mode)
   )
 

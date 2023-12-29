@@ -33,9 +33,6 @@
 ;; (auto-save-visited-mode 1)
 ;; Automatically save every second
 ;; (setq auto-save-visited-interval 1)
-;; This doesn't work for some reason
-;; (add-function :after after-focus-change-function
-;;               'rk/save-buffer-if-visiting-file)
 ;; Disable this, just look at the modeline instead
 ;; (add-hook 'after-save-hook (lambda () (message "Saved")))
 
