@@ -59,14 +59,16 @@
   (setq org-agenda-window-setup 'current-window)
   (with-eval-after-load 'org
     ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
-    ;; (define-key org-mode-map (kbd "M-<left>") nil)
-    ;; (define-key org-mode-map (kbd "M-<right>") nil)
-    ;; (define-key org-mode-map (kbd "M-S-<left>") nil)
-    ;; (define-key org-mode-map (kbd "M-S-<right>") nil)
-    ;; (define-key org-mode-map (kbd "S-<down>") nil)
-    ;; (define-key org-mode-map (kbd "S-<up>") nil)
-    ;; (define-key org-mode-map (kbd "S-<left>") nil)
-    ;; (define-key org-mode-map (kbd "S-<right>") nil)
+    ;; Disable `org-mode' keys that conflict with basic text editing
+    (define-key org-mode-map (kbd "M-<left>") nil)
+    (define-key org-mode-map (kbd "M-<right>") nil)
+    (define-key org-mode-map (kbd "M-S-<left>") nil)
+    (define-key org-mode-map (kbd "M-S-<right>") nil)
+    (define-key org-mode-map (kbd "S-<down>") nil)
+    (define-key org-mode-map (kbd "S-<up>") nil)
+    (define-key org-mode-map (kbd "S-<left>") nil)
+    (define-key org-mode-map (kbd "S-<right>") nil)
+    ;; Navigating links
     (define-key org-mode-map (kbd "M-n") 'org-next-link)
     (define-key org-mode-map (kbd "M-p") 'org-previous-link)
 
