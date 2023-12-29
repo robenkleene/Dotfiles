@@ -1,8 +1,9 @@
 # Outline
 
-## Items
-
-- `M-RET` / `C-RET`: New list item at current level before / after children (hold `⇧` to make the new item a todo)
+- `M-RET`: New list item at current level before children
+- `C-RET`: New list item at current level after children
+- `M-S-RET`: New todo item at current level before children
+- `C-S-RET`: New todo item at current level after children
 - `C-c C-x C-w` / `C-c C-x C-y`: Kill / paste subtree
 
 ## Moving
@@ -13,13 +14,11 @@
 
 # Todo
 
-- `M-S-<ret>` / `C-S-<ret>`: Add todo at current level before / after children
-- `S-<left>` / `S-<right>`: Cycle todo states (`DONE` / `TODO`)
+- `S-<left>` / `S-<right>` on a todo: Cycle todo states (`DONE` / `TODO`)
 - `C-c C-t`: Cycle todo state
 - `C-c C-d` / `C-u C-c C-d`: Insert / remove deadline
 - `C-c C-s` / `C-u C-c C-s`: Insert / remove schedule
 - `C-c .`: Change date
-- `S-<left>` / `S-<right>` on a date changes the date by one day
 - To make a weekly repeating todo, just add `+7d` to the end of the date, e.g., `2023-05-29 Mon +7d`
 
 ## Date Picker
@@ -29,11 +28,14 @@
 - `+1` / `+1d`: Schedule date to tomorrow
 - `.`: Go to today
 
-# Misc
+# Archive
 
 - `C-c C-x C-s`: Archive item
+
+# Sorting
+
 - `C-c ^` / `org-sort`: Sort (then `d` to sort by deadline)
 
-# Column View
+# Columns
 
 - `C-c C-x C-c` / `C-c C-c`: Turn on / off column view for the current subtree
