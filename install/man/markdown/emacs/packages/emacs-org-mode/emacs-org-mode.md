@@ -22,6 +22,10 @@
 - `M-up` / `M-down`: Move item up / down
 - `C-c C-w`: Move item to a category
 
+## Deleting
+
+- To delete an item `C-a C-k C-k` or `C-k C-k` at the end of the previous line
+
 # Todo
 
 - `S-<left>` / `S-<right>` on a todo: Cycle todo states (`DONE` / `TODO`)
