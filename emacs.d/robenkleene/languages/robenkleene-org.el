@@ -11,6 +11,8 @@
 
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
+
+  ;; Hide leading asterisks
   (setq org-startup-indented t)
   ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
   ;; Disable spell check in code blocks
@@ -33,6 +35,9 @@
 
   (setq org-deadline-warning-days 0)
   (setq org-return-follows-link 1)
+
+  ;; Enable special keys when the point is right after the asterisk
+  (setq org-use-speed-commands t)
 
   (defun org-remove-link ()
     "Replace an org link by its description or if empty its address"
