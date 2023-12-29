@@ -3,10 +3,6 @@
 ;;; Code:
 
 ;; (with-eval-after-load 'text-mode
-;;   (define-key text-mode-map (kbd "M-n")
-;;               'rk/next)
-;;   (define-key text-mode-map (kbd "M-p")
-;;               'rk/previous)
 ;;   )
 
 (provide 'robenkleene-text)
