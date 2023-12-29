@@ -23,38 +23,39 @@
      (define-key eshell-mode-map (kbd "C-c u") 'rk/eshell-kill-last-output)
      )
    )
-  )
 
-(defun rk/eshell-interactive-output-readonly ()
-  "Make output of interactive commands in eshell read-only.
+  (defun rk/eshell-interactive-output-readonly ()
+    "Make output of interactive commands in eshell read-only.
 This should be the last entry in eshell-output-filter-functions!"
-  (let ((end eshell-last-output-end))
-    (save-excursion
-      (goto-char end)
-      (end-of-line 0)
-      (setq end (point)))
-    (when (< eshell-last-output-block-begin end)
-      (put-text-property eshell-last-output-block-begin end 'read-only "Read-only interactive eshell output"))))
+    (let ((end eshell-last-output-end))
+      (save-excursion
+        (goto-char end)
+        (end-of-line 0)
+        (setq end (point)))
+      (when (< eshell-last-output-block-begin end)
+        (put-text-property eshell-last-output-block-begin end 'read-only "Read-only interactive eshell output"))))
 
-(defun rk/eshell-make-interactive-output-readonly ()
-  (add-hook 'eshell-output-filter-functions 'rk/eshell-interactive-output-readonly 'append))
+  (defun rk/eshell-make-interactive-output-readonly ()
+    (add-hook 'eshell-output-filter-functions 'rk/eshell-interactive-output-readonly 'append))
 
-(add-hook 'eshell-mode-hook 'rk/eshell-make-interactive-output-readonly)
+  (add-hook 'eshell-mode-hook 'rk/eshell-make-interactive-output-readonly)
 
-(defun rk/eshell-kill-last-output ()
-  "Kill the output."
-  (interactive)
-  (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
-  )
+  (defun rk/eshell-kill-last-output ()
+    "Kill the output."
+    (interactive)
+    (kill-ring-save (eshell-beginning-of-output) (eshell-end-of-output))
+    )
 
-(defun rk/eshell-z (&rest args)
-  "Jump to directory."
-  (interactive)
-  (eshell/cd
-   (shell-command-to-string (concat "~/.bin/z_get "
-                                    args)
-                            )
-   )
+  (defun eshell/z (&rest args)
+    "Jump to directory."
+    (eshell/cd
+     (shell-command-to-string (concat "~/.bin/z_get "
+                                      (apply 'eshell-flatten-and-stringify args))
+                              )
+     )
+    )
+
+  (add-hook 'eshell-directory-change-hook 'z-add)
   )
 
 (provide 'robenkleene-eshell)
