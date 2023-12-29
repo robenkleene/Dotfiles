@@ -13,7 +13,7 @@
 (defun edit-init ()
   "Edit init."
   (interactive)
-  (find-file "~/.emacs.d/robenkleene/robenkleene.el")
+  (find-file-other-window "~/.emacs.d/robenkleene/robenkleene.el")
   )
 
 (provide 'robenkleene-alias)
