@@ -104,6 +104,10 @@ key_bindings:
   - { key: Semicolon,    mods: Alt|Shift, chars: "\x1b:"                       }
   - { key: Slash,    mods: Alt, chars: "\x1b/"                       }
   - { key: Return,    mods: Alt, chars: "\x1b\r"                       }
+  - { key: Return,    mods: Control, chars: "\x1b[13;5u"                       }
+  - { key: Return,    mods: Control|Shift, chars: "\x1b[13;6u"                       }
+  - { key: Return,    mods: Alt|Control, chars: "\x1b[13;13u"                       }
+  - { key: Return,    mods: Shift, chars: "\x1b[13;2u"                       }
   - { key: LBracket,         mods: Alt, chars: "\x1b["                       }
   - { key: RBracket,         mods: Alt, chars: "\x1b]"                       }
   - { key: LBracket,         mods: Alt|Shift, chars: "\x1b{"                       }
