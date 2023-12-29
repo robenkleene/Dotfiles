@@ -1,14 +1,16 @@
 # Outline
 
-- `M-RET`: New sibling list item before children
-- `M-RET <tab>`: New first child list item
+The outlining keys will create a list item when in used in the context of a list, and a headline in the context of a headline.
+
+- `M-RET`: New sibling headline or list item before children
+- `M-RET <tab>`: New first child headline or list item
 - `C-c C-x C-w` / `C-c C-x C-y`: Kill / paste subtree
 
 ## Additions Poorly Supported in Terminal
 
-- `C-RET`: New sibling list item after children
-- `C-RET <tab>`: New last child list item
-- `C-S-RET`: New todo item at current level after children
+- `C-RET`: New sibling headline or list item after children
+- `C-RET <tab>`: New last child headline or list item
+- `C-S-RET`: New todo headline or list item at current level after children
 - `C-S-RET <tab>`: New child todo item after children
 
 ## Additions Unsupported in Terminal
