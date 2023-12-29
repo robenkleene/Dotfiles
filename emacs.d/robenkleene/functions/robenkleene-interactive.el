@@ -436,6 +436,15 @@
    )
   )
 
+(defun z-add ()
+  "Add file or directory."
+  (if (executable-find "z_add")
+      (let ((file default-directory))
+        (when (and file
+                   (stringp file)
+                   (file-readable-p file))
+          (start-process "*z add*" nil "z_add" (expand-file-name file))))))
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
