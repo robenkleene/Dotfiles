@@ -59,6 +59,11 @@
   ;;   'rk/next)
   ;; (define-key markdown-mode-map (kbd "M-p")
   ;;   'rk/previous)
+  ;; These are bound to previous / next link by default
+  (define-key markdown-mode-map (kbd "M-n")
+              nil)
+  (define-key markdown-mode-map (kbd "M-p")
+              nil)
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
