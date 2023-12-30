@@ -47,16 +47,15 @@
     )
   )
 
-(defvar block-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "{") #'rk/backward-block)
-    (define-key map (kbd "}") #'rk/forward-block)
-    (define-key map (kbd "[") #'rk/backward-block)
-    (define-key map (kbd "]") #'rk/forward-block)
-    map))
-
-(dolist (cmd '(rk/backward-block rk/forward-block))
-  (put cmd 'repeat-map 'block-repeat-map))
+;; (defvar block-repeat-map
+;;   (let ((map (make-sparse-keymap)))
+;;     (define-key map (kbd "{") #'rk/backward-block)
+;;     (define-key map (kbd "}") #'rk/forward-block)
+;;     (define-key map (kbd "[") #'rk/backward-block)
+;;     (define-key map (kbd "]") #'rk/forward-block)
+;;     map))
+;; (dolist (cmd '(rk/backward-block rk/forward-block))
+;;   (put cmd 'repeat-map 'block-repeat-map))
 
 (provide 'robenkleene-keymap)
 ;; Local Variables:
