@@ -63,6 +63,20 @@
   ;; (define-key markdown-mode-map (kbd "M-}")
   ;;             'markdown-forward-block)
   (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
+  ;; Navigating links
+  (defvar markdown-link-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "<tab>") #'markdown-next-link)
+      (define-key map (kbd "<backtab>") #'markdown-previous-link)
+      (define-key map (kbd "n") #'markdown-next-link)
+      (define-key map (kbd "p") #'markdown-previous-link)
+      map))
+
+  (dolist (cmd '(markdown-next-link markdown-previous-link))
+    (put cmd 'repeat-map 'markdown-link-repeat-map))
+
+  (define-key markdown-mode-map (kbd "C-c <tab>") 'markdown-next-link)
+  (define-key markdown-mode-map (kbd "C-c <backtab>") 'markdown-previous-link)
 
   ;; After jumping to a link, move one character right so `<return>' will open
   ;; the link
