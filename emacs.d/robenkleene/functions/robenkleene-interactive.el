@@ -67,11 +67,7 @@
     )
   )
 
-(defun cd-pwd ()
-  "Got to the project root."
-  (interactive)
-  (find-file (rk/pwd))
-  )
+
 
 ;; Kill
 
@@ -124,77 +120,6 @@
         )
     ))
 
-;; Switch to
-
-(defun scratch-window ()
-  "Delete other windows and switch to scratch buffer."
-  (interactive)
-  (delete-other-windows)
-  (switch-to-buffer "*scratch*")
-  )
-
-;; Slug Project
-
-(defun slug-project-create (title dir)
-  "Create a new slug project with TITLE in DIR."
-  (interactive
-   (list (read-from-minibuffer "Title: "
-                               (if (use-region-p)
-                                   (buffer-substring (mark) (point))
-                                 nil
-                                 ))
-         (if current-prefix-arg
-             (read-directory-name "Directory: ")
-           (expand-file-name default-directory)
-           )
-         ))
-  (let ((default-directory dir))
-    (if (use-region-p)
-        (shell-command-on-region (region-beginning)
-                                 (region-end)
-                                 (concat "~/.bin/slug_project -t "
-                                         (shell-quote-argument title))
-                                 nil
-                                 t
-                                 )
-      (rk/safe-find-file
-       (shell-command-to-string (concat "~/.bin/slug_project -f -t "
-                                        (shell-quote-argument title))
-                                )
-       )
-      )
-    )
-  )
-
-(defun slug-project-archive-readme ()
-  "Open slug project archive README."
-  (interactive)
-  (let ((file-path (concat default-directory "archive/README.md")))
-    (if (file-exists-p file-path)
-        (find-file file-path)
-      )
-    )
-  )
-
-(defun slug-project-archive ()
-  "Archive slug project."
-  (interactive)
-  (if (file-exists-p (concat default-directory "../../archive/projects"))
-      (if (y-or-n-p (concat "Archive "
-                            (file-name-nondirectory
-                             (directory-file-name default-directory)
-                             )))
-          (progn
-            (shell-command-to-string
-             (concat "~/.bin/slug_project_archive "
-                     (shell-quote-argument
-                      (expand-file-name default-directory)))
-             )
-            (kill-this-buffer)
-            (rk/kill-removed-buffers)))
-    )
-  )
-
 (defun rk/sgit-push-text-all ()
   "Commit everything in the current repository."
   (interactive)
@@ -223,43 +148,12 @@
     )
   )
 
-(defun rk/xcode-open-file ()
-  "Open file in Xcode."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "open -a \"Xcode\" "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    )
-  )
-
 (defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
   (let ((buf (eshell)))
     (switch-to-buffer (other-buffer buf))
     (switch-to-buffer-other-window buf))
-  )
-
-(defun rk/yank-to-grep-buffer-startup ()
-  "Yank to grep buffer deleting other window."
-  (interactive)
-  (yank-to-grep-buffer)
-  (delete-other-windows)
-  )
-
-(defun rk/yank-to-diff-buffer-startup ()
-  "Yank to diff buffer deleting other window."
-  (interactive)
-  (yank-to-diff-buffer)
-  (delete-other-windows)
-  )
-
-(defun rk/yank-to-virtual-dired-buffer-startup ()
-  "Yank to diff buffer deleting other window."
-  (interactive)
-  (yank-to-diff-buffer)
-  (delete-other-windows)
   )
 
 (defun yank-to-grep-buffer ()
@@ -280,106 +174,6 @@
   (diff-file-next)
   )
 
-(defun yank-to-virtual-dired-buffer (&optional arg)
-  "Yank to virtual dired buffer."
-  (interactive)
-  (switch-to-buffer
-   (generate-new-buffer "*virtual dired yank*"))
-  (yank)
-  (dired-virtual default-directory)
-  (beginning-of-buffer)
-  )
-
-(defvar-local rk/format-program nil)
-(defvar-local rk/format-function nil)
-(defun rk/format ()
-  "Run buffer or region through format program."
-  (interactive)
-  (if (bound-and-true-p rk/format-function)
-      (call-interactively rk/format-function)
-    (if (bound-and-true-p rk/format-program)
-        (rk/shell-command-on-buffer-or-region
-         rk/format-program)
-      (message "No format program defined.")
-      )
-    )
-  )
-
-(defvar-local rk/evaluate-buffer-or-region-function nil)
-(defun rk/evaluate-buffer-or-region ()
-  "Evaluate the buffer or region."
-  (interactive)
-  (if (bound-and-true-p rk/evaluate-buffer-or-region-function)
-      (call-interactively rk/evaluate-buffer-or-region-function)
-    (message "No evaluate function defined.")
-    )
-  )
-
-(defvar-local rk/run-compile-program nil)
-(defun rk/run ()
-  "Run buffer or region through format program."
-  (interactive)
-  (compile (concat rk/run-compile-program
-                   " "
-                   (shell-quote-argument buffer-file-name)))
-  )
-
-(defun rk/shell-command-on-buffer-or-region (command)
-  "Pipe the current buffer or region through COMMAND."
-  (interactive "r")
-  (if (use-region-p)
-      (progn
-        (shell-command-on-region (region-beginning) (region-end) command nil t)
-        (deactivate-mark)
-        )
-    (let ((p (point)))
-      (save-excursion
-        (shell-command-on-region (point-min) (point-max) command nil t)
-        )
-      (goto-char p)
-      )
-    )
-  )
-
-(defun rk/make-scratch-frame ()
-  "Make a new frame and go to the scratch buffer."
-  (interactive)
-  (let ((frame (make-frame)))
-    (select-frame-set-input-focus frame)
-    (switch-to-buffer "*scratch*")))
-
-(defun rk/make-scratch-frame-with-current-frame ()
-  "Make a new scratch frame the same size as the current frame."
-  (interactive)
-  (rk/make-frame-with-current-frame)
-  (switch-to-buffer "*scratch*")
-  )
-
-(defun rk/make-frame-with-current-frame ()
-  "Make a new frame the same size as the current frame."
-  (interactive)
-  (let* ((frame (selected-frame))
-         (left (frame-parameter frame 'left))
-         (left (if (consp left)
-                   (eval left)
-                 left))
-         (top (frame-parameter frame 'top))
-         (width (frame-width frame))
-         (height (frame-height frame))
-         ;; (width (assoc-default 'width default-frame-alist))
-         ;; (height (assoc-default 'height default-frame-alist))
-         )
-    (let ((frame (make-frame
-                  `(
-                    (left . ,(+ left 30))
-                    (top . ,(+ top 30))
-                    (width . ,width)
-                    (height . ,height)
-                    ))))
-      (select-frame-set-input-focus frame))
-    )
-  )
-
 (defun rk/egit-update (&optional arg)
   "Run update."
   (interactive)
@@ -394,33 +188,6 @@
   (async-shell-command "~/.bin/git_pull_all -t" "*egit*" "*egit*")
   ;; (switch-to-buffer-other-window "*egit*")
   ;; (view-mode)
-  )
-
-(defun grep-toggle-buffer ()
-  "Toggle grep buffer."
-  (interactive)
-
-  (if (get-buffer "*grep*")
-      (let ((win (get-buffer-window "*grep*" 'visible)))
-        (if win
-            (delete-window win)
-          (switch-to-buffer-other-window "*grep*")
-          )
-        )
-    )
-  )
-
-(defun vc-cd-vc-root ()
-  "Go to root directory for current repo."
-  (interactive)
-  (find-file (vc-root-dir))
-  )
-
-(defun clear ()
-  "Clear everything."
-  (interactive)
-  (desktop-clear)
-  (tab-close-group "")
   )
 
 (defun z (term)
