@@ -68,10 +68,13 @@
     (define-key org-mode-map (kbd "S-<up>") nil)
     (define-key org-mode-map (kbd "S-<left>") nil)
     (define-key org-mode-map (kbd "S-<right>") nil)
+    (define-key org-mode-map (kbd "M-{")
+                'rk/backward-block)
+    (define-key org-mode-map (kbd "M-}")
+                'rk/forward-block)
     ;; Navigating links
     (define-key org-mode-map (kbd "C-c <tab>") 'org-next-link)
     (define-key org-mode-map (kbd "C-c <backtab>") 'org-previous-link)
-
     (defvar org-link-repeat-map
       (let ((map (make-sparse-keymap)))
         (define-key map (kbd "<tab>") #'org-next-link)
@@ -79,7 +82,6 @@
         (define-key map (kbd "n") #'org-next-link)
         (define-key map (kbd "p") #'org-previous-link)
         map))
-
     (dolist (cmd '(org-next-link org-previous-link))
       (put cmd 'repeat-map 'org-link-repeat-map))
 
