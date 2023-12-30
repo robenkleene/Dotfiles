@@ -1,0 +1,18 @@
+(require 'package)
+(setq package-enable-at-startup nil)
+(setq package-archives '(
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package)
+  (eval-when-compile
+    (unless (bound-and-true-p package--initialized)
+      (package-initialize))
+    (require 'use-package)))
+(setq use-package-always-ensure t)
+(dolist (package '(evil evil-numbers evil-commentary evil-surround evil-visualstar vertico typescript-mode marginalia swift-mode rust-mode yaml-mode consult bind-map fill-column-indicator lua-mode magit better-defaults kotlin-mode ef-themes eglot use-package nodejs-repl csv-mode fish-mode markdown-mode inf-ruby enh-ruby-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines adaptive-wrap orderless diminish cape popon org-modern modus-themes company embark embark-consult))
+  (use-package package))
