@@ -1,6 +1,6 @@
 (require 'package)
-(setq package-selected-packages
-      '(evil evil-numbers evil-commentary evil-surround evil-visualstar vertico typescript-mode marginalia swift-mode rust-mode yaml-mode consult bind-map fill-column-indicator lua-mode magit better-defaults kotlin-mode ef-themes eglot use-package nodejs-repl csv-mode fish-mode markdown-mode inf-ruby enh-ruby-mode yasnippet editorconfig magit-filenotify wgrep jade-mode aggressive-indent page-break-lines adaptive-wrap orderless diminish popon org-modern modus-themes company embark embark-consult))
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 (setq package-enable-at-startup nil)
 (setq package-archives '(
                          ("gnu" . "http://elpa.gnu.org/packages/")
