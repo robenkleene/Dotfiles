@@ -67,3 +67,4 @@ fi
 ./python/install.sh
 ./rust/install.sh
 ./man/install.sh
+./emacs/install.sh
