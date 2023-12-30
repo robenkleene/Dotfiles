@@ -64,15 +64,6 @@
   ;;             'markdown-forward-block)
   (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
 
-  (defvar markdown-link-repeat-map
-    (let ((map (make-sparse-keymap)))
-      (define-key map (kbd "n") #'markdown-next-link)
-      (define-key map (kbd "p") #'markdown-previous-link)
-      map))
-
-  (dolist (cmd '(markdown-next-link markdown-previous-link))
-    (put cmd 'repeat-map 'markdown-link-repeat-map))
-
   ;; After jumping to a link, move one character right so `<return>' will open
   ;; the link
   (defadvice markdown-next-link (after rk/markdown-next-link activate)
