@@ -6,25 +6,25 @@
 (cd "~/.emacs.d")
 
 (require 'package)
-(setq package-enable-at-startup nil)
-(setq package-archives '(
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ))
+;; (setq package-enable-at-startup nil)
+;; (setq package-archives '(
+;;                          ("gnu" . "http://elpa.gnu.org/packages/")
+;;                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+;;                          ("melpa" . "http://melpa.org/packages/")
+;;                          ))
 (package-initialize)
 
 ;; Use Emacs install script instead
 ;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  (eval-when-compile
-    (unless (bound-and-true-p package--initialized)
-      (package-initialize))
-    (require 'use-package)))
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package)
+;;   (eval-when-compile
+;;     (unless (bound-and-true-p package--initialized)
+;;       (package-initialize))
+;;     (require 'use-package)))
 ;; Install packages
-(setq use-package-always-ensure t)
+;; (setq use-package-always-ensure t)
 
 ;; `use-package' requires `bind-key'
 ;; (use-package bind-key
