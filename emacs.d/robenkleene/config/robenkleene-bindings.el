@@ -83,16 +83,15 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x u")
             'undo-only)
 
-(defvar paragraph-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "{") #'backward-paragraph)
-    (define-key map (kbd "}") #'forward-paragraph)
-    (define-key map (kbd "[") #'backward-paragraph)
-    (define-key map (kbd "]") #'forward-paragraph)
-    map))
-
-(dolist (cmd '(backward-paragraph forward-paragraph))
-  (put cmd 'repeat-map 'paragraph-repeat-map))
+;; (defvar paragraph-repeat-map
+;;   (let ((map (make-sparse-keymap)))
+;;     (define-key map (kbd "{") #'backward-paragraph)
+;;     (define-key map (kbd "}") #'forward-paragraph)
+;;     (define-key map (kbd "[") #'backward-paragraph)
+;;     (define-key map (kbd "]") #'forward-paragraph)
+;;     map))
+;; (dolist (cmd '(backward-paragraph forward-paragraph))
+;;   (put cmd 'repeat-map 'paragraph-repeat-map))
 
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
