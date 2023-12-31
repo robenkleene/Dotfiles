@@ -73,8 +73,8 @@
     (define-key org-mode-map (kbd "M-}")
                 'rk/forward-block)
     ;; Navigating links
-    (define-key org-mode-map (kbd "C-c <tab>") 'org-next-link)
-    (define-key org-mode-map (kbd "C-c <backtab>") 'org-previous-link)
+    (define-key org-mode-map (kbd "M-g <tab>") 'org-next-link)
+    (define-key org-mode-map (kbd "M-g <backtab>") 'org-previous-link)
     (defvar org-link-repeat-map
       (let ((map (make-sparse-keymap)))
         (define-key map (kbd "<tab>") #'org-next-link)
