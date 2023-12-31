@@ -2,10 +2,23 @@
 ;;; Commentary:
 ;;; Code:
 
-(with-eval-after-load 'eshell
+;; `less' can cause problems in `eshell'
+;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
+;; that need a pager set
+(setenv "PAGER" "")
+;; Instead just sety these as visual commands
+(setenv "GIT_PAGER" "")
+;; Force `git' colors all the time
+;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
 
-  (setq eshell-visual-options '(("git" "--help" "--paginate")))
-  (setq eshell-visual-subcommands '(("git" "log" "diff" "show")))
+(with-eval-after-load 'eshell
+  ;; (defun eshell/git (&rest args)
+  ;;   "Run git with color.ui auto when in Eshell."
+  ;;   (let ((process-environment (cons "TERM=" process-environment)))
+  ;;     (apply 'eshell-exec-visual (cons "git" args))))
+
+  ;; (setq eshell-visual-options '(("git" "--help" "--paginate")))
+  ;; (setq eshell-visual-subcommands '(("git" "log" "diff" "show")))
 
   ;; Show tab completion options instead of just choosing one
   ;; (setq eshell-cmpl-cycle-completions nil)

@@ -1,6 +1,10 @@
 ;; eshell aliases (comment example)
-alias rg TERM=eterm-color rg $*
-alias fd fd --color=never $*
+;; Trick to get `git' to use it's default color behavior, this works because it
+;; overrides the `TERM=dumb' and then `git' it's default behavior of only
+;; applying color if it's not being piped
+alias git TERM= git $*
+alias rg TERM= rg $*
+;; alias fd fd --color=never $*
 alias hg hg --pager=cat $*
 alias - cd -
 

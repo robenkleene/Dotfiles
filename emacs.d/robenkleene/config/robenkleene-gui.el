@@ -25,13 +25,6 @@
     (add-to-list 'exec-path path-to-prepend))
   )
 
-;; `less' can cause problems in `eshell'
-;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
-;; that need a pager set
-;; (setenv "PAGER" "cat")
-;; Instead just sety these as visual commands
-;; (setenv "GIT_PAGER" "cat")
-
 ;; Start the emacs server if it isn't already running and we're running in
 ;; window mode
 ;; (require 'server)

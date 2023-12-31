@@ -9,7 +9,7 @@ fi
 export ZSHENV_SOURCED=1
 
 # This helps with some issues with mosh, e.g., utf-8 support and specifying
-# locale 
+# locale
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

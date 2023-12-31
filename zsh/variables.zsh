@@ -21,12 +21,13 @@ export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch --ig
 # This breaks `gh browse`
 # export BROWSER="none"
 
-# Without this `less` doesn't get picked up as `man` pager resulting in warning
-# about `incsearch` not being supported
-export PAGER=less
 if test -n "$INSIDE_EMACS"; then
     export PAGER=cat
     export GIT_PAGER=cat
+else
+    # Without this `less` doesn't get picked up as `man` pager resulting in warning
+    # about `incsearch` not being supported
+    export PAGER=less
 fi
 
 # LS COLORS
