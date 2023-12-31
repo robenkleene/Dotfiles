@@ -48,7 +48,7 @@
 (define-key rk/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
 (define-key rk/mac-bindings-minor-mode-map
             (kbd "s-n")
-            'rk/make-frame-with-current-frame)
+            'make-frame-with-current-frame)
 (define-key rk/mac-bindings-minor-mode-map
 	    (kbd "C-s-f")
 	    'toggle-frame-fullscreen)
