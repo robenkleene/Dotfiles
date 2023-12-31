@@ -10,7 +10,7 @@
   :init
 
   ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
+  ;; (setq prefix-help-command #'embark-prefix-help-command)
 
   :config
   (defun embark-reveal-in-finder (file)
