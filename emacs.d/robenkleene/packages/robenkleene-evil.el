@@ -9,8 +9,31 @@
 (use-package evil
   :commands (evil-mode)
   :init
+  ;; Configure all this before starting evil for existing buffers
+  ;; Disabling all the "smart" Evil features
+  (setq evil-overriding-maps nil
+        evil-intercept-maps nil
+        evil-pending-intercept-maps nil
+        evil-pending-overriding-maps nil)
+  (advice-add 'evil-make-overriding-map :override #'ignore)
+  (advice-add 'evil-make-intercept-map :override #'ignore)
+  (advice-add 'evil-add-hjkl-bindings :override #'ignore)
+  (setq evil-emacs-state-modes nil)
+  (setq evil-insert-state-modes nil)
+  (setq evil-motion-state-modes nil)
+  (setq evil-normal-state-modes nil)
+  (setq evil-operator-state-modes nil)
+  (setq evil-visual-state-modes nil)
+  ;; Modes
+  (setq evil-default-state 'emacs)
+  ;; Start Evil
   (evil-mode 1)
   :config
+  ;; Set initial state for some modes
+  (evil-set-initial-state 'prog-mode 'insert)
+  (evil-set-initial-state 'text-mode 'insert)
+  (evil-set-initial-state 'conf-mode 'insert)
+
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
   ;; overwrites what's intended to paste
@@ -28,21 +51,6 @@
 
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
-
-  ;; Disabling all the "smart" Evil features
-  (setq evil-overriding-maps nil
-        evil-intercept-maps nil
-        evil-pending-intercept-maps nil
-        evil-pending-overriding-maps nil)
-  (advice-add 'evil-make-overriding-map :override #'ignore)
-  (advice-add 'evil-make-intercept-map :override #'ignore)
-  (advice-add 'evil-add-hjkl-bindings :override #'ignore)
-  (setq evil-emacs-state-modes nil)
-  (setq evil-insert-state-modes nil)
-  (setq evil-motion-state-modes nil)
-  (setq evil-normal-state-modes nil)
-  (setq evil-operator-state-modes nil)
-  (setq evil-visual-state-modes nil)
 
   ;; After Load
   (with-eval-after-load 'evil
@@ -62,12 +70,6 @@
     (define-key evil-motion-state-map
                 (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
     )
-
-  ;; Modes
-  (setq evil-default-state 'emacs)
-  (evil-set-initial-state 'prog-mode 'insert)
-  (evil-set-initial-state 'text-mode 'insert)
-  (evil-set-initial-state 'conf-mode 'insert)
 
   ;; Packages
 
