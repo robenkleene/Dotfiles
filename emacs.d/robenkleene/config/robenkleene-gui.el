@@ -26,7 +26,7 @@
   )
 
 ;; `less' can cause problems in `eshell'
-(setenv "PAGER" "cat")
+;; (setenv "PAGER" "cat")
 ;; Instead just sety these as visual commands
 ;; (setenv "GIT_PAGER" "cat")
 
