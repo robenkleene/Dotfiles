@@ -204,6 +204,7 @@
 
 (defun z-add ()
   "Add file or directory."
+  (interactive)
   (if (executable-find "z_add")
       (let ((file default-directory))
         (when (and file

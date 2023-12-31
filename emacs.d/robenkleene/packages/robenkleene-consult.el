@@ -6,11 +6,11 @@
   :bind (
          ;; Use `conult-buffer' by default which features a preview
          ("C-x b" . consult-buffer)
-         ;; Just use default `C-x r'
-         ("C-c r" . consult-recent-file)
+         ;; Just use default `C-x b' and jump to recent files
+         ;; ("M-g r" . consult-recent-file)
          ;; ("C-c q" . consult-compile-error)
-         ("C-c g" . consult-ripgrep)
-         ("C-c f" . consult-fd)
+         ("M-s g" . consult-ripgrep)
+         ("M-s f" . consult-fd)
          ;; Use `consult-line' by default which fuzzy matches lines, and jumps
          ;; to matches
          ("M-s o" . consult-line)

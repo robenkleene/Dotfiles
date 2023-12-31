@@ -56,6 +56,14 @@
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
 
 ;; General
+(defvar dired-jump-other-window-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "j") #'dired-jump)
+    map))
+(dolist (cmd '(dired-jump-other-window))
+  (put cmd 'repeat-map 'dired-jump-other-window-repeat-map))
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-j")
+            'dired-jump-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-x j")
             'dired-jump)
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
