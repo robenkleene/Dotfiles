@@ -27,7 +27,8 @@
 
 ;; `less' can cause problems in `eshell'
 (setenv "PAGER" "cat")
-(setenv "GIT_PAGER" "cat")
+;; Instead just sety these as visual commands
+;; (setenv "GIT_PAGER" "cat")
 
 ;; Start the emacs server if it isn't already running and we're running in
 ;; window mode

@@ -4,6 +4,9 @@
 
 (with-eval-after-load 'eshell
 
+  (setq eshell-visual-options '(("git" "--help" "--paginate")))
+  (setq eshell-visual-subcommands '(("git" "log" "diff" "show")))
+
   ;; Show tab completion options instead of just choosing one
   ;; (setq eshell-cmpl-cycle-completions nil)
   (add-hook
