@@ -73,9 +73,12 @@
   )
 (add-hook 'dired-mode-hook
           (lambda ()
-            ;; Some attempts to use the default `find-file` behavior in Dired to
+            ;; Some attempts to use the default `find-file' behavior in Dired to
             ;; make it easy to create a new file. Neither of these work.
             ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
+            ;; Free up `M-s f'
+            ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
+            ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
             ;; (local-set-key (kbd "C-x C-f") #'find-file)
             ;; Don't emit hidden files by default because the `.' makes it
             ;; really easy to run a shell command on the current file just by

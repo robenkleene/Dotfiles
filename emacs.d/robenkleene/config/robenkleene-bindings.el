@@ -69,7 +69,7 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c `") 'eshell-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "M-r")
             'reveal-in-finder)
-(define-key rk/bindings-minor-mode-map (kbd "C-c z")
+(define-key rk/bindings-minor-mode-map (kbd "M-g z")
             'z)
 ;; Quickly create org links
 (define-key rk/bindings-minor-mode-map (kbd "C-c l")

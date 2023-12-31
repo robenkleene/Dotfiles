@@ -11,6 +11,9 @@
          ;; ("C-c q" . consult-compile-error)
          ("M-s g" . consult-ripgrep)
          ("M-s f" . consult-fd)
+         (:map dired-mode-map
+               ("M-s f" . consult-fd)
+               )
          ;; Use `consult-line' by default which fuzzy matches lines, and jumps
          ;; to matches
          ("M-s o" . consult-line)
