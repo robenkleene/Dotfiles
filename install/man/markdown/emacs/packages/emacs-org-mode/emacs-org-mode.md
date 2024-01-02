@@ -2,7 +2,8 @@
 
 The outlining keys will create a list item when in used in the context of a list, and a headline in the context of a headline.
 
-- `M-RET`: New sibling headline or list item before children
+- `M-RET`: New sibling headline or list item before children, split at insertion point
+- `C-u M-RET`: New sibling headline or list item before children, always below current
 - `M-RET <tab>`: New first child headline or list item
 - `C-c C-x C-w` / `C-c C-x C-y`: Kill / paste subtree
 
