@@ -4,4 +4,3 @@ set -euo pipefail
 
 x=$(cat)
 echo ${(q)x}
-
