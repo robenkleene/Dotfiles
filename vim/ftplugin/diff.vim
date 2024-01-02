@@ -24,7 +24,7 @@ function! DiffFold(lnum)
 endfunction
 command! OpenDiff :call <SID>OpenDiff()
 function! s:OpenDiff() abort
-  let l:grep = system('~/.bin/f_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
+  let l:grep = system('~/.bin/p_f_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
   let l:parts = split(l:grep, ':')
   exec "edit " . fnameescape(l:parts[0])
   let l:destlnum = l:parts[1]

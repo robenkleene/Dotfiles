@@ -82,7 +82,7 @@ make_file() {
 
 contents="# $title
 "
-slug=$(echo "$title" | ~/.bin/f_txt_to_slug)
+slug=$(echo "$title" | ~/.bin/p_f_txt_to_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
 readme_path=$(make_file "README.md" "$dated_slug" "$contents")
