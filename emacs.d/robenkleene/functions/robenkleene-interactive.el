@@ -67,44 +67,7 @@
     )
   )
 
-
-
 ;; Kill
-
-(defun kill-buffer-file-name ()
-  "Copy the filename to the kill ring."
-  (interactive)
-  (if buffer-file-name
-      (progn
-        (message buffer-file-name)
-        (kill-new buffer-file-name)
-        )
-    (progn
-      (message default-directory)
-      (kill-new default-directory)
-      )
-    )
-  )
-(defalias 'kill-buffer-file-path 'kill-buffer-file-name)
-
-(defun rk/kill-buffer-name ()
-  "Kill `buffer-name'"
-  (interactive)
-  (message (buffer-name))
-  (kill-new (buffer-name))
-  )
-
-(defun kill-default-directory ()
-  "Kill `default-directory'."
-  (interactive)
-  (message default-directory)
-  (kill-new default-directory))
-
-(defun kill-today ()
-  "Kill the today's date."
-  (interactive)
-  (message (rk/date-today))
-  (kill-new (rk/date-today)))
 
 (defun kill-grep ()
   "Kill grep."
