@@ -23,3 +23,9 @@ Kill commands append to the clipboard, until a movement command happens.
 These modify the next command.
 
 - `C-M-w`: Append next kill
+
+## Emacs Lisp Examples
+
+- `(kill-new (buffer-file-name))`: File path
+- `(kill-new (buffer-name))`: File name
+
