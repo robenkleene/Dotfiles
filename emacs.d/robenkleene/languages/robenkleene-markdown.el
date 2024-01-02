@@ -79,6 +79,23 @@
   (dolist (cmd '(markdown-next-link markdown-previous-link))
     (put cmd 'repeat-map 'markdown-link-repeat-map))
 
+  (defvar markdown-outline-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "u") #'markdown-outline-up)
+      (define-key map (kbd "p") #'markdown-outline-previous)
+      (define-key map (kbd "n") #'markdown-outline-next)
+      (define-key map (kbd "b") #'markdown-outline-previous-same-level)
+      (define-key map (kbd "f") #'markdown-outline-next-same-level)
+      map))
+  (dolist (cmd '(
+                 markdown-outline-up
+                 markdown-outline-previous
+                 markdown-outline-next
+                 markdown-outline-previous-same-level
+                 markdown-outline-next-same-level
+                 ))
+    (put cmd 'repeat-map 'markdown-outline-repeat-map))
+
   ;; After jumping to a link, move one character right so `<return>' will open
   ;; the link
   (defadvice markdown-next-link (after rk/markdown-next-link activate)

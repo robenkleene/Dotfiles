@@ -37,7 +37,7 @@
   (setq org-return-follows-link 1)
 
   ;; Enable special keys when the point is right after the asterisk
-  (setq org-use-speed-commands t)
+  ;; (setq org-use-speed-commands t)
 
   (defun org-remove-link ()
     "Replace an org link by its description or if empty its address"
@@ -72,6 +72,8 @@
                 'rk/backward-block)
     (define-key org-mode-map (kbd "M-}")
                 'rk/forward-block)
+    (define-key org-mode-map (kbd "C-c C-u")
+                'rk/org-up-heading)
     ;; Navigating links
     (define-key org-mode-map (kbd "M-g <tab>") 'org-next-link)
     (define-key org-mode-map (kbd "M-g <backtab>") 'org-previous-link)
@@ -85,6 +87,28 @@
     (dolist (cmd '(org-next-link org-previous-link))
       (put cmd 'repeat-map 'org-link-repeat-map))
 
+    )
+
+  (defvar org-outline-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "u") #'rk/org-up-heading)
+      (define-key map (kbd "p") #'org-previous-visible-heading)
+      (define-key map (kbd "n") #'org-next-visible-heading)
+      (define-key map (kbd "b") #'org-backward-heading-same-level)
+      (define-key map (kbd "f") #'org-forward-heading-same-level)
+      map))
+  (dolist (cmd '(
+                 rk/org-up-heading
+                 org-previous-visible-heading
+                 org-next-visible-heading
+                 org-backward-heading-same-level
+                 org-forward-heading-same-level
+                 ))
+    (put cmd 'repeat-map 'org-outline-repeat-map))
+  (defun rk/org-up-heading (&optional arg)
+    "Go up a heading placeholder for repeat map."
+    (interactive)
+    (outline-up-heading 1)
     )
 
   ;; Use line numbers when creating links for some modes
