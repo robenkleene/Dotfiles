@@ -16,6 +16,8 @@
   (setq markdown-enable-wiki-links t)
   ;; Show a flat list of headers in `imenu', instead of a nested list
   (setq markdown-nested-imenu-heading-index nil)
+  ;; Enable syntax highlighting for code blocks
+  (setq markdown-fontify-code-blocks-natively t)
   :config
   ;; Performance Tweak
   ;; This disables italics from `*', but that was causing slowness with input in
