@@ -195,7 +195,7 @@
   (interactive
    (list (read-from-minibuffer "Z: ")
          ))
-  (rk/safe-find-file-other-window
+  (rk/safe-find-file
    (shell-command-to-string (concat "~/.bin/z_get "
                                     term)
                             )
