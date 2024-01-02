@@ -52,7 +52,7 @@
 
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
 
 ;; General
