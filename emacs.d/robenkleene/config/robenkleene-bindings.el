@@ -39,6 +39,8 @@
 
 ;; Window Management
 
+(define-key rk/bindings-minor-mode-map (kbd "C-x :")
+            'switch-to-minibuffer)
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
                                                  (interactive)
