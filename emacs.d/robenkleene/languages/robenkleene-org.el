@@ -62,6 +62,8 @@
     ;; Disable `org-mode' keys that conflict with basic text editing
     (define-key org-mode-map (kbd "M-<left>") nil)
     (define-key org-mode-map (kbd "M-<right>") nil)
+    (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
+    (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
     (define-key org-mode-map (kbd "M-S-<left>") nil)
     (define-key org-mode-map (kbd "M-S-<right>") nil)
     (define-key org-mode-map (kbd "S-<down>") nil)
