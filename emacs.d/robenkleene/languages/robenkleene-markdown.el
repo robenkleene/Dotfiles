@@ -68,6 +68,7 @@
 
   ;; Navigating links
   (define-key markdown-mode-map (kbd "M-g <tab>") 'markdown-next-link)
+  (define-key markdown-mode-map (kbd "M-g TAB") 'markdown-next-link)
   (define-key markdown-mode-map (kbd "M-g <backtab>") 'markdown-previous-link)
   (defvar markdown-link-repeat-map
     (let ((map (make-sparse-keymap)))
