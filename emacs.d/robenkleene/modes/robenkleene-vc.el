@@ -3,7 +3,7 @@
 ;;; Code:
 
 ;; Removes massive slow down with large `hg' repos
-(setq vc-handled-Backends '())
+(setq vc-handled-backends nil)
 ;; Even `git' has slow downs when opening files
 ;; (setq vc-handled-backends '(Git))
 ;; `git' has an annoying message when following symlinks:
