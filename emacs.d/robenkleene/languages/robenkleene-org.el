@@ -82,6 +82,7 @@
                 'org-babel-mark-block)
     ;; Navigating links
     (define-key org-mode-map (kbd "M-g <tab>") 'org-next-link)
+    (define-key org-mode-map (kbd "M-g TAB") 'org-next-link)
     (define-key org-mode-map (kbd "M-g <backtab>") 'org-previous-link)
     (defvar org-link-repeat-map
       (let ((map (make-sparse-keymap)))
