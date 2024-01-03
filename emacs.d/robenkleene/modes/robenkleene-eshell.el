@@ -11,6 +11,11 @@
 ;; Force `git' colors all the time
 ;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
 
+
+(with-eval-after-load 'esh-mode
+  (add-to-list 'exec-path (expand-file-name (concat eshell-directory-name "bin")))
+  )
+
 (with-eval-after-load 'eshell
   ;; (defun eshell/git (&rest args)
   ;;   "Run git with color.ui auto when in Eshell."
@@ -19,6 +24,12 @@
 
   ;; (setq eshell-visual-options '(("git" "--help" "--paginate")))
   ;; (setq eshell-visual-subcommands '(("git" "log" "diff" "show")))
+
+  (setq eshell-visual-subcommands '(
+                                    ("hg" "diff" "show")
+                                    ("git" "diff" "show")
+                                    )
+        )
 
   ;; Show tab completion options instead of just choosing one
   ;; (setq eshell-cmpl-cycle-completions nil)
