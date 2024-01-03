@@ -5,15 +5,16 @@
 ;; Make isearch wrap automatically
 ;; Prevents issue where you have to press backspace twice when
 ;; trying to remove the first character that fails a search
-(define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
-(defadvice isearch-search (after rk/isearch-no-fail activate)
-  (unless isearch-success
-    (ad-disable-advice 'isearch-search 'after 'rk/isearch-no-fail)
-    (ad-activate 'isearch-search)
-    (isearch-repeat (if isearch-forward 'forward))
-    (ad-enable-advice 'isearch-search 'after 'rk/isearch-no-fail)
-    (ad-activate 'isearch-search)))
+;; (define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
+;; (defadvice isearch-search (after rk/isearch-no-fail activate)
+;;   (unless isearch-success
+;;     (ad-disable-advice 'isearch-search 'after 'rk/isearch-no-fail)
+;;     (ad-activate 'isearch-search)
+;;     (isearch-repeat (if isearch-forward 'forward))
+;;     (ad-enable-advice 'isearch-search 'after 'rk/isearch-no-fail)
+;;     (ad-activate 'isearch-search)))
 
+;; Use these motions instead of automatically wrapping
 (setq isearch-allow-motion t)
 
 ;; Make `isearch' repeatable, but this makes editing the string after a search
