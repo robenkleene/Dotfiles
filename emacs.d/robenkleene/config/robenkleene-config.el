@@ -328,6 +328,10 @@
 
 ;; Automatically add view keys when viewing read only files
 (setq view-read-only t)
+(with-eval-after-load 'view
+  (define-key view-mode-map (kbd "n") nil)
+  (define-key view-mode-map (kbd "p") nil)
+  )
 
 (provide 'robenkleene-config)
 ;; Local Variables:
