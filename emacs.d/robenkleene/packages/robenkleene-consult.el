@@ -6,22 +6,29 @@
   :bind (
          ;; Use `conult-buffer' by default which features a preview
          ("C-x b" . consult-buffer)
+         ("C-x 4 b" . consult-buffer-other-window)
+         ("C-x 5 b" . consult-buffer-other-frame)
+         ("C-x t b" . consult-buffer-other-tab)
          ;; Just use default `C-x b' and jump to recent files
          ;; ("M-g r" . consult-recent-file)
-         ;; ("C-c q" . consult-compile-error)
          ("M-s g" . consult-ripgrep)
-         ("M-s f" . consult-fd)
-         (:map dired-mode-map
-               ("M-s f" . consult-fd)
-               )
          ;; Use `consult-line' by default which fuzzy matches lines, and jumps
          ;; to matches
          ("M-s o" . consult-line)
          ;; Use `consult-imenu' by default which automatically jumps to matches
          ("M-g i" . consult-imenu)
+         ("M-s f" . consult-fd)
+         (:map dired-mode-map
+               ("M-s f" . consult-fd)
+               )
          )
   :commands
   (
+   consult-buffer
+   consult-buffer-other-window
+   consult-buffer-other-frame
+   consult-buffer-other-tab
+   consult-line
    consult-fd
    consult-imenu
    consult-compile-error
