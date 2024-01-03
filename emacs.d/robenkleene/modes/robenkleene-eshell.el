@@ -11,12 +11,23 @@
 ;; Force `git' colors all the time
 ;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
 
-
+;; Allow shell commands to be overridden in the `bin' directory 
 (with-eval-after-load 'esh-mode
   (add-to-list 'exec-path (expand-file-name (concat eshell-directory-name "bin")))
   )
 
 (with-eval-after-load 'eshell
+  ;; Enable `view-mode' bindings like `q' to quit when running visual commands
+  ;; (which are already view-only)
+  (defun rk/term-view-mode-once (&rest ignored)
+    (view-mode 1)
+    (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
+    )
+  (defadvice eshell-exec-visual (before rk/eshell-exec-visual)
+    "Wrapper function description."
+    (add-hook 'term-mode-hook #'rk/term-view-mode-once)
+    )
+
   ;; (defun eshell/git (&rest args)
   ;;   "Run git with color.ui auto when in Eshell."
   ;;   (let ((process-environment (cons "TERM=" process-environment)))
