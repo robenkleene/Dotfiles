@@ -85,5 +85,3 @@ vnoremap <silent> # :call setreg("/",
     \ '\_s\+',
     \ '\\_s\\+', 'g')
     \ )<Bar>let v:searchforward = 0<Cr>n
-
-command! Ei :edit ~/Developer/Dotfiles/vimrc
