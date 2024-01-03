@@ -74,6 +74,10 @@
                 'rk/forward-block)
     (define-key org-mode-map (kbd "C-c C-u")
                 'rk/org-up-heading)
+    ;; The default binding for this is `mark-defun' which isn't useful, this
+    ;; binding will mark just the source code of a source block
+    (define-key org-mode-map (kbd "C-M-h")
+                'org-babel-mark-block)
     ;; Navigating links
     (define-key org-mode-map (kbd "M-g <tab>") 'org-next-link)
     (define-key org-mode-map (kbd "M-g <backtab>") 'org-previous-link)
