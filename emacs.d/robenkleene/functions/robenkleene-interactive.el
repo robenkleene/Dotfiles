@@ -165,6 +165,42 @@
    )
   )
 
+(defun z-other-window (term)
+  "Jump to directory."
+  (interactive
+   (list (read-from-minibuffer "Z: ")
+         ))
+  (rk/safe-find-file-other-window
+   (shell-command-to-string (concat "~/.bin/z_get "
+                                    term)
+                            )
+   )
+  )
+
+(defun z-other-tab (term)
+  "Jump to directory."
+  (interactive
+   (list (read-from-minibuffer "Z: ")
+         ))
+  (rk/safe-find-file-other-tab
+   (shell-command-to-string (concat "~/.bin/z_get "
+                                    term)
+                            )
+   )
+  )
+
+(defun z-other-frame (term)
+  "Jump to directory."
+  (interactive
+   (list (read-from-minibuffer "Z: ")
+         ))
+  (rk/safe-find-file-other-frame
+   (shell-command-to-string (concat "~/.bin/z_get "
+                                    term)
+                            )
+   )
+  )
+
 (defun z-add ()
   "Add file or directory."
   (interactive)
