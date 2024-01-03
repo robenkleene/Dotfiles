@@ -2,8 +2,6 @@
 alias -- -='cd -'
 alias ..='cd ..'
 
-alias gits='ssh_start && git'
-
 # ls
 if [[ "$(uname)" = "Linux" ]]; then
   alias ls='ls --color=auto'
@@ -12,10 +10,6 @@ else
     alias ls='gls --color=auto'
   fi
 fi
-
-# zsh
-alias zsh_history_edit='${EDITOR:-vim} ~/.zsh_history'
-alias zsh_init_edit='${EDITOR:-vim} ~/.zshrc'
 
 # egit
 # These are aliases instead of shell functions because they set the `ssh`
