@@ -83,6 +83,15 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-c w") 'toggle-truncate-lines)
 ;; Not available in terminal
 (define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
+(defvar previous-multiframe-window-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "O") #'previous-multiframe-window)
+    (define-key map (kbd "o") #'other-window)
+    map))
+(dolist (cmd '(previous-multiframe-window))
+  (put cmd 'repeat-map 'previous-multiframe-window-repeat-map))
+(define-key rk/bindings-minor-mode-map (kbd "C-x O")
+            'previous-multiframe-window)
 
 ;; Make undo repeatable, this is available by default, this adds `r' to redo
 (defvar undo-only-repeat-map
