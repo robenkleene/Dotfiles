@@ -326,6 +326,18 @@
 ;; Allow repeating some bindings like `C-x o' then `o' to keep switching frames
 (repeat-mode 1)
 
+;; Automatically add view keys when viewing read only files
+(setq view-read-only t)
+(defun rk/term-view-mode-once (&rest ignored)
+  (view-mode 1)
+  (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
+  )
+
+(defadvice eshell-exec-visual (before rk/eshell-exec-visual)
+  "Wrapper function description."
+  (add-hook 'term-mode-hook #'rk/term-view-mode-once)
+  )
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
