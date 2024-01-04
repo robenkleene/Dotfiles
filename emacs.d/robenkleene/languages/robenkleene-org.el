@@ -8,6 +8,8 @@
   :config
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
+  (add-to-list 'org-structure-template-alist
+               '("eshell-visual" . "SRC eshell :results output none :session eshell"))
 
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
@@ -56,6 +58,7 @@
   ;; nicely with evil
   ;; (setq org-agenda-start-with-follow-mode t)
 
+
   (setq org-agenda-window-setup 'current-window)
   (with-eval-after-load 'org
     ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
@@ -99,6 +102,7 @@
   (org-babel-do-load-languages 'org-babel-load-languages
                                '(
                                  (shell . t)
+                                 (eshell . t)
                                  )
                                )
   (defvar org-outline-repeat-map
