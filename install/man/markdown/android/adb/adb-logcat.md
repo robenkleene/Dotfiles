@@ -1,6 +1,7 @@
 # `adb` `logcat`
 
 - `adb logcat`: Stream log
+- `adb logcat -d`: Dump log and then quit
 - `adb logcat -c`: Clear log
 
 ## For Bug Report
