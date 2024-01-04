@@ -17,6 +17,6 @@
     (require 'use-package)))
 (setq use-package-always-ensure t)
 (dolist (package package-selected-packages)
-  (use-package package))
+  (package-install package))
 (package-upgrade-all)
 (package-autoremove)
