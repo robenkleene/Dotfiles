@@ -14,6 +14,11 @@
 - `C-M-h`: Mark `defun`
 - `C-x C-p`: Mark page
 - `M-@`: Mark word
+- `C-M-@` / `C-M-SPC`: Mark s-expression
+
+## Reverting
+
+- `M--` followed by a mark command goes backwards (e.g., `M-- C-M-SPC` will revert the last mark s-expression)
 
 ## Symbol
 
