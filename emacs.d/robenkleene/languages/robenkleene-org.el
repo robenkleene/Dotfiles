@@ -96,6 +96,11 @@
 
     )
 
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '(
+                                 (shell . t)
+                                 )
+                               )
   (defvar org-outline-repeat-map
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "u") #'rk/org-up-heading)
