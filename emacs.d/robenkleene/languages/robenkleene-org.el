@@ -153,6 +153,11 @@
   ;;   :config
   ;;   (setq org-modern-hide-stars nil)
   ;;   )
+  ;; Needs to always be available when killing
+  (use-package org-rich-yank
+    :demand t
+    :bind (:map org-mode-map
+                ("C-M-y" . org-rich-yank)))
   )
 
 (provide 'robenkleene-org)
