@@ -32,7 +32,10 @@ return {
             ["<M-Up>"] = require('telescope.actions').cycle_history_prev,
             ["<M-Down>"] = require('telescope.actions').cycle_history_next,
           },
-        }
+        },
+        path_display = {
+          "smart"
+        },
       },
       pickers = {
         -- Good themes are `ivy` and `dropdown`. `dropdown` makes good use of vertical space (but not horizontal), `ivy` makes good use of horizontal space (and ok use use of vertical space)
@@ -50,6 +53,7 @@ return {
         lsp_dynamic_workspace_symbols = { theme = "ivy" },
         lsp_references = { theme = "ivy" },
         diagnostics = { theme = "ivy" },
+        oldfiles = { theme = "ivy" },
       }
     }
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
