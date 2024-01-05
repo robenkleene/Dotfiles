@@ -1,18 +1,15 @@
-" nnoremap <silent> <expr> <localleader>yg set opfunc=operators#GrepYank<CR>g@
-" vnoremap <silent> <expr> <localleader>yg operators#GrepYank(visualmode(), 1)<CR>
+nnoremap <expr> <localleader>yg GrepYank()
+xnoremap <expr> <localleader>yg GrepYank()
+nnoremap <expr> <localleader>yg<localleader>yg GrepYank() .. '_'
 
-nnoremap <expr> <localleader>yg CountSpaces()
-xnoremap <expr> <localleader>yg CountSpaces()
-nnoremap <expr> <localleader>yg<localleader>yg CountSpaces() .. '_'
-
-function CountSpaces(context = {}, type = '') abort
+function GrepYank(context = {}, type = '') abort
   if a:type == ''
     let context = #{
           \ dot_command: v:false,
           \ extend_block: '',
           \ virtualedit: [&l:virtualedit, &g:virtualedit],
           \ }
-    let &operatorfunc = function('CountSpaces', [context])
+    let &operatorfunc = function('GrepYank', [context])
     set virtualedit=block
     return 'g@'
   endif
@@ -47,7 +44,6 @@ function CountSpaces(context = {}, type = '') abort
     let commands ..= '"' .. v:register .. 'y'
     execute 'silent noautocmd keepjumps normal! ' .. commands
     let result = expand("%:~").":".line('.').":\n".@@
-    echom "v:register = ".v:register."END"
     exe "let @".v:register." = result"
     if v:register == '"'
       let save.register = result

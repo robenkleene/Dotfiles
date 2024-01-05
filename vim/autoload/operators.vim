@@ -1,43 +1,57 @@
-function! operators#GrepYank(type, ...) abort
-  " `@@` is an alias for `@"`, the unnamed register
-  let sel_save = &selection
-  " From `h :map-operator`: The 'selection' option is temporarily set to
-  " "inclusive" to be able to yank exactly the right text by using Visual mode
-  " from the '[ to the '] mark.
-  let &selection = "inclusive"
-  let reg_save = @@
-  if exists("@*")
-    " Protect the `*` register
-    let reg_save2 = @*
-  endif
-  if exists("@+")
-    " Protect the `*` register
-    let reg_save3 = @+
-  endif
-  if a:0
-    " Visual
-    silent exe "normal! gvy"
-  elseif a:type == 'line'
-    " Line
-    silent exe "normal! '[V']y"
-  else
-    " Character
-    silent exe "normal! `[v`]y"
+function operators#GrepYank(context = {}, type = '') abort
+  if a:type == ''
+    let context = #{
+          \ dot_command: v:false,
+          \ extend_block: '',
+          \ virtualedit: [&l:virtualedit, &g:virtualedit],
+          \ }
+    let &operatorfunc = function('CountSpaces', [context])
+    set virtualedit=block
+    return 'g@'
   endif
 
-  let result = expand("%:~").":".line('.').":\n".@@
-  echom "let @".v:register." = result"
-  exe "let @".v:register." = result"
+  let save = #{
+        \ clipboard: &clipboard,
+        \ selection: &selection,
+        \ virtualedit: [&l:virtualedit, &g:virtualedit],
+        \ register: getreginfo('"'),
+        \ visual_marks: [getpos("'<"), getpos("'>")],
+        \ }
 
-
-  let &selection = sel_save
-  if v:register != '"'
-    let @@ = reg_save
-  endif
-  if exists("@*")
-    let @* = reg_save2
-  endif
-  if exists("@+")
-    let @+ = reg_save3
-  endif
+  try
+    set clipboard= selection=inclusive virtualedit=
+    let commands = #{
+          \ line: "'[V']",
+          \ char: "`[v`]",
+          \ block: "`[\<C-V>`]",
+          \ }[a:type]
+    let [_, _, col, off] = getpos("']")
+    if off != 0
+      let vcol = getline("'[")->strpart(0, col + off)->strdisplaywidth()
+      if vcol >= [line("'["), '$']->virtcol() - 1
+        let a:context.extend_block = '$'
+      else
+        let a:context.extend_block = vcol .. '|'
+      endif
+    endif
+    if a:context.extend_block != ''
+      let commands ..= 'oO' .. a:context.extend_block
+    endif
+    let commands ..= '"' .. v:register .. 'y'
+    execute 'silent noautocmd keepjumps normal! ' .. commands
+    let result = expand("%:~").":".line('.').":\n".@@
+    echom "v:register = ".v:register."END"
+    exe "let @".v:register." = result"
+    if v:register == '"'
+      let save.register = result
+    endif
+  finally
+    call setreg('"', save.register)
+    call setpos("'<", save.visual_marks[0])
+    call setpos("'>", save.visual_marks[1])
+    let &clipboard = save.clipboard
+    let &selection = save.selection
+    let [&l:virtualedit, &g:virtualedit] = get(a:context.dot_command ? save : a:context, 'virtualedit')
+    let a:context.dot_command = v:true
+  endtry
 endfunction
