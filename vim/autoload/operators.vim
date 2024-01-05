@@ -26,7 +26,9 @@ function! operators#GrepYank(type, ...) abort
   endif
 
   let result = expand("%:~").":".line('.').":\n".@@
+  echom "let @".v:register." = result"
   exe "let @".v:register." = result"
+
 
   let &selection = sel_save
   if v:register != '"'
