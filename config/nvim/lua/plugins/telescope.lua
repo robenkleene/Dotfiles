@@ -33,6 +33,7 @@ return {
             ["<M-Down>"] = require('telescope.actions').cycle_history_next,
           },
         },
+        -- Always make filename visible, e.g., if a path is long, don't cut it off
         path_display = {
           "smart"
         },
