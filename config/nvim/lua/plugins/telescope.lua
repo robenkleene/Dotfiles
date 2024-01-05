@@ -35,7 +35,7 @@ return {
         }
       },
       pickers = {
-        -- Good themes are `ivy` and `dropdown`. `dropdown` makes good use of vertical space (but not horizontal), `ivy` makes good use of both vertical and horizontal space
+        -- Good themes are `ivy` and `dropdown`. `dropdown` makes good use of vertical space (but not horizontal), `ivy` makes good use of horizontal space (and ok use use of vertical space)
         buffers = { theme = "ivy" },
         current_buffer_fuzzy_find = { theme = "ivy" },
         find_files = { theme = "ivy", follow = true },
