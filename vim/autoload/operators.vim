@@ -5,7 +5,7 @@ function operators#GrepYank(context = {}, type = '') abort
           \ extend_block: '',
           \ virtualedit: [&l:virtualedit, &g:virtualedit],
           \ }
-    let &operatorfunc = function('CountSpaces', [context])
+    let &operatorfunc = function('operators#GrepYank', [context])
     set virtualedit=block
     return 'g@'
   endif
@@ -40,7 +40,6 @@ function operators#GrepYank(context = {}, type = '') abort
     let commands ..= '"' .. v:register .. 'y'
     execute 'silent noautocmd keepjumps normal! ' .. commands
     let result = expand("%:~").":".line('.').":\n".@@
-    echom "v:register = ".v:register."END"
     exe "let @".v:register." = result"
     if v:register == '"'
       let save.register = result
@@ -55,3 +54,4 @@ function operators#GrepYank(context = {}, type = '') abort
     let a:context.dot_command = v:true
   endtry
 endfunction
+
