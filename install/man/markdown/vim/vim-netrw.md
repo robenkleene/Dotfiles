@@ -1,4 +1,4 @@
-- `:e`: Refresh the file list
+- `<C-l>`: Refresh the file list
 - `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`)
 - `d`: Create directory
 - `D`: Delete file
@@ -25,9 +25,17 @@
 
 ## Copy File
 
-1. `mf` to mark the file to copy
-2. `mt` to set the target directory
-3. `mc` to copy the file to the target directory
+1. `mt` to set the target directory
+2. `mf` to mark the files
+3. `mc` to copy the files to the target directory
+
+## Move File
+
+1. `mt` to set the target directory
+2. `mf` to mark the files
+3. `mm` to move the files to the target directory
+
+Note the file list won't update automatically, so refresh with `<C-l>`
 
 ## Duplicate File
 
