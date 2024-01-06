@@ -54,4 +54,12 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # Always wrap preview window because it's usually useless without it
 export FZF_DEFAULT_OPTS='--preview-window=wrap'
 
+# marksman
+if [[ "$(uname)" == "Linux" ]]; then
+  # marksman was crashing on launch due to missing library errors without
+  # setting `LD_LIBRARY_PATH`
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu
+  export LD_LIBRARY_PATH
+fi
+
 fpath=( ~/.zfunc "${fpath[@]}" )
