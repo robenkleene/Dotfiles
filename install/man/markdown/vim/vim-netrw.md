@@ -27,13 +27,15 @@
 
 1. `mt` to set the target directory
 2. `mf` to mark the files
-3. `mc` to copy the files to the target directory
+3. `cd` to set the working directory as the same directory as the marked files
+4. `mc` to copy the files to the target directory
 
 ## Move File
 
 1. `mt` to set the target directory
 2. `mf` to mark the files
-3. `mm` to move the files to the target directory
+3. `cd` to set the working directory as the same directory as the marked files
+4. `mm` to move the files to the target directory
 
 Note the file list won't update automatically, so refresh with `<C-l>`
 
