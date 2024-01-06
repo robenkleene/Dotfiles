@@ -59,8 +59,12 @@ brew 'lua-language-server'
 # brew 'llvm'
 # Markdown
 # On Linux this gets:
-# error while loading shared libraries: libgcc_s.so.1: cannot open shared object file: No such file or directory
-# brew 'marksman'
+# error while loading shared libraries: libgcc_s.so.1: cannot open shared
+# object file: No such file or directory Work around is to do `sudo find /
+# -iname *libraryname*.so*` to find the library path, then Update it like
+# `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu` and export
+# `LD_LIBRARY_PATH`
+brew 'marksman'
 
 # Games
 brew 'nethack'
