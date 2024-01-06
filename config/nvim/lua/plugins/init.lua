@@ -34,7 +34,6 @@ return {
     'nvim-treesitter/playground',
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
-  { 'samjwill/nvim-unception', },
   {
     -- More reliable open browser
     "tyru/open-browser.vim",
