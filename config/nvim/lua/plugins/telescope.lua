@@ -43,7 +43,7 @@ return {
         buffers = { theme = "ivy" },
         current_buffer_fuzzy_find = { theme = "ivy" },
         find_files = { theme = "ivy", follow = true },
-        live_grep = { additional_args = { theme = "ivy", "--follow" } },
+        live_grep = { theme = "ivy", additional_args = { "--follow" } },
         lsp_document_symbols = {
           -- Add more space for the symbol
           -- symbol_width = 40,
