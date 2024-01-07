@@ -6,3 +6,4 @@
 4. On the computer, get the device name with `adb devices`
 5. Start `lldb`, then `platform select remote-android` and then connect using the device name `platform connect connect://<device-name>:10086`
 6. In `lldb`, `platform process list` to list all the processes to connect to
+7. Filter the process list with `platform process list -r .*<term>.*`, `-r` is for regular expression
