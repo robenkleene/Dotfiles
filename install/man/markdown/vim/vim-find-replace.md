@@ -3,6 +3,13 @@
 - `n`: Next search
 - `N`: Previous search
 
+# `rg` & `fd`
+
+- `!rg <term>` to view results
+- `0r !rg <term>` then `:cbuffer` to move results to quickfix
+- "arg `fd <term>`" to populate args list
+- If the above won't work with spaces just append `:1` to each line and use `:cbuffer`
+
 # `grep`
 
 - `:%s/this/that/gc`: Replace this with that, asking for confirmation each time
