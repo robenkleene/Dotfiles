@@ -6,6 +6,7 @@
 - `:vnew`: New empty vertical split
 - `<C-w>v`: New vertical split with current file
 - `<C-w><C-s>`: New horizontal split with current file
+- `:enew`: New window replacing current window
 
 # Switching Windows
 
