@@ -14,10 +14,10 @@ return {
     { '<leader>f' },
     { '<leader>g' },
     { '<leader>r' },
-    { '<localleader>D' },
-    { '<localleader>s' },
-    { '<localleader>S' },
-    { '<localleader>R' },
+    { '<leader>D' },
+    { '<leader>s' },
+    { '<leader>S' },
+    { '<leader>R' },
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
@@ -64,9 +64,9 @@ return {
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
-    vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
-    vim.keymap.set('n', '<localleader>s', require('telescope.builtin').lsp_document_symbols)
-    vim.keymap.set('n', '<localleader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-    vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
+    vim.keymap.set('n', '<leader>D', require('telescope.builtin').diagnostics)
+    vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
+    vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
+    vim.keymap.set('n', '<leader>R', require('telescope.builtin').lsp_references)
   end
 }
