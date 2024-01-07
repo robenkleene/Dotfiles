@@ -15,8 +15,8 @@ return {
     { '<leader>g' },
     { '<leader>r' },
     { '<localleader>D' },
-    { '<localleader>i' },
-    { '<localleader>I' },
+    { '<localleader>s' },
+    { '<localleader>S' },
     { '<localleader>R' },
   },
   config = function()
@@ -65,8 +65,8 @@ return {
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
     vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
     vim.keymap.set('n', '<localleader>D', require('telescope.builtin').diagnostics)
-    vim.keymap.set('n', '<localleader>i', require('telescope.builtin').lsp_document_symbols)
-    vim.keymap.set('n', '<localleader>I', require('telescope.builtin').lsp_dynamic_workspace_symbols)
+    vim.keymap.set('n', '<localleader>s', require('telescope.builtin').lsp_document_symbols)
+    vim.keymap.set('n', '<localleader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<localleader>R', require('telescope.builtin').lsp_references)
   end
 }
