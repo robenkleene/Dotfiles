@@ -125,5 +125,3 @@ set suffixes-=.h
 " set cursorline
 " Highlight just the line number
 " set cursorlineopt=number
-
-set completefunc=commands#CompleteRegisters
