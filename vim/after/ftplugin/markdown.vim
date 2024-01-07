@@ -4,10 +4,10 @@
 " the beginning of the line.
 " This breaks entering snippets, e.g., if you start a snippet, and are at the
 " first `$1`, if you type `j` it will mess up instead of entering `j`
-" noremap <buffer> <expr> k v:count ? 'k' : 'gk'
-" noremap <buffer> <expr> j v:count ? 'j' : 'gj'
-" noremap <buffer> <expr> <Up> v:count ? 'k' : 'gk'
-" noremap <buffer> <expr> <Down> v:count ? 'j' : 'gj'
+noremap <buffer> <expr> k v:count ? 'k' : 'gk'
+noremap <buffer> <expr> j v:count ? 'j' : 'gj'
+noremap <buffer> <expr> <Up> v:count ? 'k' : 'gk'
+noremap <buffer> <expr> <Down> v:count ? 'j' : 'gj'
 
 " Allow moving past the first character on the line, this makes editing prose
 " easier
