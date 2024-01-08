@@ -1,20 +1,9 @@
---langdef=CoffeeScript
---langmap=CoffeeScript:.coffee
---regex-CoffeeScript=/^[ \t]*(@?[a-zA-Z$_\.1-9]+)[ \t]*(=|\:)[ \t]*(\(.*\))?[ \t]*(-|=)>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*([a-zA-Z$_1-9]+\:\:[a-zA-Z$_\.1-9]+)[ \t]*(=|\:)[ \t]*(\(.*\))?[ \t]*(-|=)>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*describe[ \t]"(.+)"[ \t]*,[ \t]+[-=]>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*describe[ \t]'(.+)'[ \t]*,[ \t]+[-=]>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*it[ \t]"([^"]+)"[ \t]*,[ \t]+[-=]>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*it[ \t]'([^']+)'[ \t]*,[ \t]+[-=]>/\1/f,function/
---regex-CoffeeScript=/^[ \t]*f+describe[ \t]"(.+)"[ \t]*,[ \t]+[-=]>/focused\: \1/f,function/
---regex-CoffeeScript=/^[ \t]*f+describe[ \t]'(.+)'[ \t]*,[ \t]+[-=]>/focused: \1/f,function/
---regex-CoffeeScript=/^[ \t]*f+it[ \t]"([^"]+)"[ \t]*,[ \t]+[-=]>/focused: \1/f,function/
---regex-CoffeeScript=/^[ \t]*f+it[ \t]'([^']+)'[ \t]*,[ \t]+[-=]>/focused: \1/f,function/
---regex-CoffeeScript=/^[ \t]*xdescribe[ \t]"(.+)"[ \t]*,[ \t]+[-=]>/disabled\: \1/f,function/
---regex-CoffeeScript=/^[ \t]*xdescribe[ \t]'(.+)'[ \t]*,[ \t]+[-=]>/disabled: \1/f,function/
---regex-CoffeeScript=/^[ \t]*xit[ \t]"([^"]+)"[ \t]*,[ \t]+[-=]>/disabled: \1/f,function/
---regex-CoffeeScript=/^[ \t]*xit[ \t]'([^']+)'[ \t]*,[ \t]+[-=]>/disabled: \1/f,function/
---regex-CoffeeScript=/^[ \t]*class[ \t]*([a-zA-Z$_\.1-9]+)[ \t]*/\1/f,function/
+--tag-relative=yes
+
+--exclude=*node_modules/*
+--exclude=.git
+--exclude=Carthage
+--exclude=build
 
 --langdef=Css
 --langmap=Css:.css
@@ -67,14 +56,3 @@
 --regex-Go=/type[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/t,type/
 
 --langmap=objectivec:.m.h.mm
-
---exclude=*node_modules/*
---exclude=.git
-
---recurse=yes
---tag-relative=yes
-
---exclude=.git
---exclude=node_modules
---exclude=Carthage
---exclude=build
