@@ -1,14 +1,6 @@
 - `ZZ`: Quit and save
 - `ZQ`: Quit without saving
-
-# Normal Mode
-
-- `]p`: Paste indented
-
-# Insert Mode
-
 - `cc`: Enter insert mode at correct indent level
-- `^r *`: Paste from clipboard in insert mode (also has a side effect of pasting character-wise instead of line-wise)
 
 # Completion
 
