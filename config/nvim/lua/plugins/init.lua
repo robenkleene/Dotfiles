@@ -1,18 +1,5 @@
 return {
-  {
-    'tpope/vim-unimpaired',
-    keys = {
-      "]a", "[a",
-      "]b", "[b",
-      "]f", "[f",
-      "]l", "[l",
-      "]n", "[n",
-      "]q", "[q",
-      "]Q", "[Q",
-      "]t", "[t",
-      "]T", "[T",
-    },
-  },
+  { 'tpope/vim-unimpaired', },
   {
     "numToStr/Comment.nvim",
     config = true,
