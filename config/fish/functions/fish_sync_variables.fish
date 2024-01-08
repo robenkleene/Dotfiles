@@ -16,14 +16,6 @@ function fish_sync_variables
 
     set -Ux EDITOR "nvim"
 
-    # Without explicitely specifying `less` as the pager, Linux will use the
-    # wrong version of `less` (system installed, which doesn't support the
-    # `incsearch` option instead of Homebrew installed.
-    set -Ux PAGER "less"
-    # `--no-init`: Don't clear screen when quitting less
-    # `--ignore-case`: Smart case
-    set -Ux LESS "--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch"
-
     # Emacs
     # Start the server in the background if it isn't running
     set -Ux ALTERNATE_EDITOR ""
