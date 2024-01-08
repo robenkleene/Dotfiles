@@ -1,5 +1,5 @@
 # Shell
-brew 'tig'
+brew 'gitui'
 brew 'ripgrep'
 brew 'fd'
 brew 'fzf'
