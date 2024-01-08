@@ -57,12 +57,6 @@ let-env PATH = ($env.PATH | prepend $"($env.HOME)/.brew/bin")
 # Emacs
 let-env ALTERNATE_EDITOR = ""
 
-# Without explicitely specifying `less` as the pager, Linux will use the
-# wrong version of `less` (system installed, which doesn't support the
-# `incsearch` option instead of Homebrew installed.
-let-env PAGER = "less"
-let-env LESS = "--RAW-CONTROL-CHARS --quit-if-one-screen --ignore-case --incsearch"
-
 let-env COLORTERM = "truecolor"
 
 # Installs

@@ -7,16 +7,11 @@ brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
 brew 'bat'
-# Support for `incsearch`
-brew 'less'
 brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
-# Modern
-# brew 'fish'
-# brew 'nushell'
-# brew 'helix'
+brew 'universal-ctags'
 
 # Editor
 brew 'aspell'

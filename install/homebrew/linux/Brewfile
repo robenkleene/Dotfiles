@@ -7,17 +7,12 @@ brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing
 brew 'fd'
 brew 'bat'
-# `less` support for `incsearch`
-brew 'less'
 brew 'ncdu'
 brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
-# Modern
-# brew 'helix'
-# brew 'nushell'
-# brew 'fish'
+brew 'universal-ctags'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']

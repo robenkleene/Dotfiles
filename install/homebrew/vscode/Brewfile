@@ -4,12 +4,6 @@ brew 'ripgrep'
 brew 'fd'
 brew 'fzf'
 brew 'bat'
-# Support for `lesskey`
-brew 'less'
 brew 'ncdu'
 brew 'gh'
-
-# Shell
-
-# hub
-brew 'util-linux'
+brew 'universal-ctags'

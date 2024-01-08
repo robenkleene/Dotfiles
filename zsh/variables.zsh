@@ -7,16 +7,6 @@ export COLORTERM="truecolor"
 # Color in `ls`
 export CLICOLOR=1
 
-# Pager
-# Without explicitely specifying `less` as the pager, Linux will use the
-# wrong version of `less` (system installed, which doesn't support the
-# `incsearch` option instead of Homebrew installed.
-export LESS="less"
-# `--no-init`: Prevent less output from being cleared on exit, e.g., so we can
-# do `Gq` to dump the entire contents to the terminal
-# `--ignore-case`: Smart case (without this option do `-i` inside `less` to
-# toggle case sensitivity
-export LESS="--no-init --RAW-CONTROL-CHARS --quit-if-one-screen --incsearch --ignore-case"
 # Prevent `npm` scripts from opening browser windows
 # This breaks `gh browse`
 # export BROWSER="none"
