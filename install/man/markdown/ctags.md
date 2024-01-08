@@ -1,9 +1,7 @@
 Recursive
 
-	ctags -R .
+- `ctags -R .`: Recursive
+- `ctags *`: Local
+- `ctags --language-force="c++" -R *`: Specify only some languages
 
-This isn't necessary with the `--recurse=yes` option dotfile option.
-
-Current Directory
-
-    ctags *
+The `--recurse=yes` option can be instead added to the `~/.ctags` file
