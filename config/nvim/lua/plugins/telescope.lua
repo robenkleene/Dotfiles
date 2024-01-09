@@ -18,6 +18,8 @@ return {
     { '<leader>s' },
     { '<leader>S' },
     { '<leader>R' },
+    { '<leader>t' },
+    { '<leader>T' },
   },
   config = function()
     pcall(require('telescope').load_extension, 'fzf')
@@ -68,5 +70,8 @@ return {
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
     vim.keymap.set('n', '<leader>R', require('telescope.builtin').lsp_references)
+    vim.keymap.set('n', '<leader>t', require('telescope.builtin').current_buffer_tags)
+    vim.keymap.set('n', '<leader>T', require('telescope.builtin').tags)
+
   end
 }
