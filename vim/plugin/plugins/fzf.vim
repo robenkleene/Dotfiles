@@ -6,5 +6,5 @@ nnoremap <leader>r :History<CR>
 nnoremap <leader>g :RG<CR>
 nnoremap <leader>f :Files<CR>
 " nnoremap <leader>m :Marks<CR>
-" nnoremap <leader>s :BTags<CR>
-" nnoremap <leader>S :Tags<CR>
+nnoremap <leader>t :BTags<CR>
+nnoremap <leader>T :Tags<CR>
