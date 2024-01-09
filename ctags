@@ -1,5 +1,5 @@
 --tag-relative=yes
---extra=+f
+--extras=+f
 
 --exclude=*node_modules/*
 --exclude=.git
