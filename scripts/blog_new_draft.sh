@@ -61,7 +61,7 @@ if [[ -z "$title" ]]; then
   fi
 fi
 
-slug=$(echo "$title" | ~/.bin/p_f_txt_to_slug)
+slug=$(echo "$title" | ~/.bin/f_txt_to_slug)
 
 drafts_directory=~/Developer/Projects/Web/robenkleene.github.io/_drafts
 if [[ ! -d "$drafts_directory" ]]; then
