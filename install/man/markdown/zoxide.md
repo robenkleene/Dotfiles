@@ -1,0 +1,4 @@
+- `zoxide query <term>`: Return the best match
+- `zoxide query --list <term>`: Return a list of matches
+- `zoxide query --list`: Dump all potential matches
+- `zoxide add -- <path>`: Add a path to the database (not sure if the `--` is necessary?)

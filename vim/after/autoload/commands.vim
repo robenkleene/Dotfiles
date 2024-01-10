@@ -4,7 +4,7 @@ function! commands#completeMan9(arglead, cmdline, cursorpos) abort
 endfunction
 
 function! commands#Z(terms) abort
-  let l:result = system('~/.bin/z_get ' . escape(a:terms, '%#'))
+  let l:result = system('zoxide query ' . escape(a:terms, '%#'))
   if v:shell_error != 0
       return
   endif
