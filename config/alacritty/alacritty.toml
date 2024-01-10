@@ -1,0 +1,23 @@
+import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
+
+[env]
+ALACRITTY = "1"
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrains Mono"
+
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[selection]
+save_to_clipboard = false
+
+[window.dimensions]
+columns = 80
+lines = 48
