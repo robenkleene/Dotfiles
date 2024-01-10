@@ -49,7 +49,6 @@
 
 # Tabs
 
-- `<C-w>T`: Move file to new tab
 - `<C-w>T`: Move a window to a new tab
 - `:tabnew`: Make new tab
 - `:tabe[dit]`: Edit file in tab
