@@ -201,16 +201,6 @@
    )
   )
 
-(defun z-add ()
-  "Add file or directory."
-  (interactive)
-  (if (executable-find "z_add")
-      (let ((file default-directory))
-        (when (and file
-                   (stringp file)
-                   (file-readable-p file))
-          (start-process "*z add*" nil "z_add" (expand-file-name file))))))
-
 (defun make-frame-with-current-frame ()
   "Make a new frame the same size as the current frame."
   (interactive)
