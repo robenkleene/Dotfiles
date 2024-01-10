@@ -41,8 +41,8 @@ set hlsearch
 nohlsearch
 
 set iskeyword+=-
-" set splitbelow
-" set splitright
+set splitbelow
+set splitright
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
 " Use system clipboard
