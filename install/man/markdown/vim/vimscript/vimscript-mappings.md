@@ -1,0 +1,1 @@
+- `<silent>` makes a mapping not echo to minibuffer, e.g. in `nnoremap <silent> <buffer> gd :OpenDiff<CR>`

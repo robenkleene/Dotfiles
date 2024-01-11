@@ -14,7 +14,7 @@
 
 ## Navigation
 
-- `zk` / `zj`: Next / previous fold
+- `zk` / `zj`: End of previous fold / start of next fold
 - `[z` / `z]`: Start / end of fold
 
 ## Combos

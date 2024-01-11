@@ -29,7 +29,7 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 # Types of Commands
 
 - `:normal dd`: Delete current line
-- `:echo expand('%')`: Echo result of running a VimScript command
+- `:echo expand('%')`: Echo result of running a Vimscript command
 
 # Command-Line Window
 
