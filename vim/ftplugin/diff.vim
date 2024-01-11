@@ -4,11 +4,12 @@ setlocal foldmethod=expr
 " Handled as default for piping now
 " setlocal buftype=nofile
 
-" Set starting fold level
-" setlocal foldlevel=2
 " Useful for debugging
 " setlocal foldcolumn=3
-" setlocal foldenable
+" Start with folding enabling bindings to navigate folds are available
+setlocal foldenable
+" Set starting fold level so all folds are open
+setlocal foldlevel=2
 
 nnoremap <silent> <buffer> gd :OpenDiff<CR>
 
