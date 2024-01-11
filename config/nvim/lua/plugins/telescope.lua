@@ -13,7 +13,7 @@ return {
     { '<leader>l' },
     { '<leader>f' },
     { '<leader>g' },
-    { '<leader>r' },
+    { '<leader>o' },
     { '<leader>D' },
     { '<leader>s' },
     { '<leader>S' },
@@ -65,7 +65,13 @@ return {
     -- vim.keymap.set('n', '<leader>s', '<cmd>lua require("telescope.builtin").live_grep({cwd = "%:h"})<CR>')
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
-    vim.keymap.set('n', '<leader>r', require('telescope.builtin').oldfiles)
+    -- vim.keymap.set('n', '<leader>o', require('telescope.builtin').oldfiles)
+    -- Sort `oldfiles` by most recently opened
+    vim.keymap.set('n', '<leader>o', function() require("telescope.builtin").oldfiles({
+      tiebreak = function(current_entry, existing_entry, _)
+        return current_entry.index < existing_entry.index
+      end,
+    }) end)
     vim.keymap.set('n', '<leader>D', require('telescope.builtin').diagnostics)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
     vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols)
