@@ -10,7 +10,7 @@ setlocal foldmethod=expr
 " setlocal foldcolumn=3
 " setlocal foldenable
 
-nnoremap <buffer> gd :OpenDiff<CR>
+nnoremap <silent> <buffer> gd :OpenDiff<CR>
 
 function! DiffFold(lnum)
   let line = getline(a:lnum)
