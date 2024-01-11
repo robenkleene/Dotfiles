@@ -10,14 +10,15 @@ return {
   },
   keys = {
     { '<leader>b' },
-    { '<leader>l' },
+    { '<leader>D' },
     { '<leader>f' },
     { '<leader>g' },
+    { '<leader>l' },
+    { '<leader>m' },
     { '<leader>o' },
-    { '<leader>D' },
+    { '<leader>R' },
     { '<leader>s' },
     { '<leader>S' },
-    { '<leader>R' },
     { '<leader>t' },
     { '<leader>T' },
   },
@@ -57,6 +58,7 @@ return {
         lsp_references = { theme = "ivy" },
         diagnostics = { theme = "ivy" },
         oldfiles = { theme = "ivy" },
+        marks = { theme = "ivy" },
       }
     }
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
@@ -78,6 +80,7 @@ return {
     vim.keymap.set('n', '<leader>R', require('telescope.builtin').lsp_references)
     vim.keymap.set('n', '<leader>t', require('telescope.builtin').current_buffer_tags)
     vim.keymap.set('n', '<leader>T', require('telescope.builtin').tags)
+    vim.keymap.set('n', '<leader>m', require('telescope.builtin').marks)
 
   end
 }
