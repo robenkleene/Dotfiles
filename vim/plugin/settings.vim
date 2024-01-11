@@ -97,7 +97,10 @@ set notimeout
 " is modified
 " This causes the `%` register to not be set when opening a directory, e.g.,
 " `vim .` the `%` register won't be set and `cd %` will fail
-" set hidden
+" Without this, navigating away from a buffer will "abandon" it, i.e., remove
+" it from the buffer list and discard its contents. This means `gF` to go to a
+" grep line followed by `<C-o>` to go back will fail
+set hidden
 
 " Hide dot files in file list (`gh` to toggle in `vim-vinegar`)
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
