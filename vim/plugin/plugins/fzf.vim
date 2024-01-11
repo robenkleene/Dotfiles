@@ -1,10 +1,10 @@
 set rtp+=$HOMEBREW_DIR/opt/fzf
 
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>l :BLines<CR>
-nnoremap <leader>r :History<CR>
-nnoremap <leader>g :RG<CR>
-nnoremap <leader>f :Files<CR>
-" nnoremap <leader>m :Marks<CR>
-nnoremap <leader>t :BTags<CR>
-nnoremap <leader>T :Tags<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>l :BLines<CR>
+nnoremap <silent> <leader>r :History<CR>
+nnoremap <silent> <leader>g :RG<CR>
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>t :BTags<CR>
+nnoremap <silent> <leader>T :Tags<CR>
+" nnoremap <silent> <leader>m :Marks<CR>
