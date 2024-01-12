@@ -39,10 +39,22 @@ function operators#GrepYank(context = {}, type = '') abort
     endif
     let commands ..= '"' .. v:register .. 'y'
     execute 'silent noautocmd keepjumps normal! ' .. commands
-    let result = expand("%:~").":".line('.').":\n".@@
-    exe "let @".v:register." = result"
+    let l:result = expand("%:~").":".line('.').":\n".@@
+    " exe "let @".v:register." = l:result"
+
+    " Use termporary buffer to force `YankTextPost` to trigger
+    let l:current_buffer = bufnr('%')
+    enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+    call append(0, l:result)
+    exe 'silent noautocmd keepjumps normal! gg"'.v:register.'ayG'
+    bd!
+    execute 'buffer' l:current_buffer
+
     if v:register == '"'
-      let save.register = result
+      let save.register = l:result
     endif
   finally
     call setreg('"', save.register)
