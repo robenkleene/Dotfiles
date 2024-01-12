@@ -42,12 +42,12 @@ return {
   --     vim.cmd("colorscheme catppuccin")
   --   end
   -- },
-  {
-    "folke/tokyonight.nvim",
-    config = function()
-      vim.cmd("colorscheme tokyonight")
-    end
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   config = function()
+  --     vim.cmd("colorscheme tokyonight")
+  --   end
+  -- },
   -- {
   --   "EdenEast/nightfox.nvim",
   --   config = function()
