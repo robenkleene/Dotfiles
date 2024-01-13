@@ -1,6 +1,6 @@
 # Shell
 brew 'git'
-brew 'gitui'
+brew 'tig'
 brew 'fzf'
 brew 'tmux'
 brew 'ripgrep'
