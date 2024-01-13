@@ -72,7 +72,7 @@ augroup END
 " clipboard
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * silent! if v:event["regname"] == '*' || v:event["regname"] == '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
 augroup END
 " When moving to another vim instance, copy from the system clipboard and
 " append a new line so pasting is always linewise. this allows pastin between
