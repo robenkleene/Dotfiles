@@ -37,27 +37,23 @@ function operators#GrepYank(context = {}, type = '') abort
     if a:context.extend_block != ''
       let commands ..= 'oO' .. a:context.extend_block
     endif
-    let commands ..= '"' .. v:register .. 'y'
+    let commands ..= 'y'
+    let l:register=v:register
     execute 'silent noautocmd keepjumps normal! ' .. commands
-    let l:result = expand("%:~").":".line('.').":\n".@@
-    " exe "let @".v:register." = l:result"
+    let @@ = expand("%:~").":".line('.').":\n".@@
 
     " Use termporary buffer to force `YankTextPost` to trigger
     let l:current_buffer = bufnr('%')
     enew
-    setlocal buftype=nofile
-    setlocal bufhidden=hide
-    setlocal noswapfile
-    call append(0, l:result)
-    exe 'silent noautocmd keepjumps normal! gg"'.v:register.'ayG'
+    setlocal buftype=nofile bufhidden=hide noswapfile
+    exe 'silent noautocmd keepjumps normal! VPgg"'.l:register.'yG'
     bd!
     execute 'buffer' l:current_buffer
 
-    if v:register == '"'
-      let save.register = l:result
-    endif
   finally
-    call setreg('"', save.register)
+    if l:register !=# '"'
+      call setreg('"', save.register)
+    endif
     call setpos("'<", save.visual_marks[0])
     call setpos("'>", save.visual_marks[1])
     let &clipboard = save.clipboard
