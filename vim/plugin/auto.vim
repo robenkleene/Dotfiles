@@ -72,7 +72,7 @@ augroup END
 " clipboard
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
+  autocmd TextYankPost * silent! if v:event["regname"] == '*' || v:event["regname"] == '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
 augroup END
 " When moving to another vim instance, copy from the system clipboard and
 " append a new line so pasting is always linewise. this allows pastin between
@@ -80,9 +80,10 @@ augroup END
 " copy a line within a Vim session
 augroup safepaste
   autocmd!
-  autocmd FocusGained * let @" = system('~/.bin/safepaste').."\n"
+  autocmd FocusGained * let @* = system('~/.bin/safepaste').."\n" | let @+ = system('~/.bin/safepaste').."\n"
 augroup END
-let @" = system('~/.bin/safepaste')
+let @* = system('~/.bin/safepaste')
+let @+ = system('~/.bin/safepaste')
 
 " Fixes problems where Vim is just showing escaped junk in the window
 if !has('nvim')
