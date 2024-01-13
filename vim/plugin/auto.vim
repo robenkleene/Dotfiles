@@ -76,7 +76,7 @@ augroup END
 " itself, so trying to do so here would create a conflict
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * silent! if v:event["regname"] ==# '' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
 augroup END
 " When moving to another vim instance, copy from the safe clipboard and
 " append a new line so pasting is always linewise.

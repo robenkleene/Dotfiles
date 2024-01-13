@@ -46,7 +46,7 @@ function operators#GrepYank(context = {}, type = '') abort
     let l:current_buffer = bufnr('%')
     enew
     setlocal buftype=nofile bufhidden=hide noswapfile
-    exe 'silent noautocmd keepjumps normal! VPgg"'.l:register.'yG'
+    exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
     bd!
     execute 'buffer' l:current_buffer
 
