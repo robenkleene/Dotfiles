@@ -1,7 +1,7 @@
 # Shell
 brew 'zsh'
 brew 'git'
-brew 'gitui'
+brew 'tig'
 brew 'fzf'
 brew 'tmux'
 brew 'ripgrep'
