@@ -12,7 +12,7 @@ set fillchars=eob:\
 set number
 " Mouse
 set mouse=a
-" Show key presses in lower left
+" Show key presses in lower right
 set showcmd
 
 " Indent wrapped lines
@@ -31,9 +31,10 @@ set smartcase
 
 " Indent
 " When opening lines, make it the same indent level as the current line
+" Neovim defaults to `autoindent`
 set autoindent
 " Indent blocks (e.g., after a `{`) automatically
-set smartindent
+" set smartindent
 
 " Highlight search results
 set hlsearch
@@ -57,7 +58,7 @@ set list
 " Actually setting clipboard this way doesn't use number registers either
 " set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
-set pumheight=10
+" set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
 " For state restoration
@@ -80,7 +81,7 @@ set nofoldenable
 " Not sure why removing these doesn't work
 " set foldopen-=search,hor,block,percent,quickfix,tag
 " But just setting undo is the same thing
-set foldopen=undo
+" set foldopen=undo
 " Only complete to longest match in wildmenu
 set wildmode=longest:full,full
 " Use a vertical wildmenu
