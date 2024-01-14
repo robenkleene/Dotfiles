@@ -8,8 +8,8 @@ set main-view-date = relative-compact
 
 set mouse = true
 
-bind stage ] :/^@@
-bind stage [ :?^@@
+# bind stage ] :/^@@
+# bind stage [ :?^@@
 
 # Allows hitting `C` to stage while viewing a diff in staging
 bind stage C !git commit 
