@@ -15,7 +15,9 @@
 
 - `:ol[dfiles]` / `:bro[wse] ol[dfiles]`: List old files
 - You can hit `:` in this list to enter an edit command, e.g., `e #<1` to edit old file number `1`
-- `'{count}`: Open a recent file (with `0` being the most recent)
-- `'0`: Open the most recent file
 - `:e #<1`: Edit most recent file
 - `:e #<2`: Edit second most recent file
+
+# Marks
+
+Another way to open a recent file is to use the `:marks` list, this is because the numbered marks automatically map to the most recently edited files. So `'<count>` opens recent files, e.g., `'0` to open the most recent file.
