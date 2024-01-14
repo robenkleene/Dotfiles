@@ -18,10 +18,7 @@
 [mergetool]
 	prompt = false
 [alias]
-	statustool = !~/.bin/git_status_fzf
-	logtool = !~/.bin/git_log_fzf
-	st = statustool
-	lt = logtool
+	root = rev-parse --show-toplevel
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 # [pager]
 #	diff = false
