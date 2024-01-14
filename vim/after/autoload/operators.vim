@@ -43,12 +43,10 @@ function operators#GrepYank(context = {}, type = '') abort
     let @@ = expand("%:~").":".line('.').":\n".@@
 
     " Use termporary buffer to force `YankTextPost` to trigger
-    let l:current_buffer = bufnr('%')
     new
     setlocal buftype=nofile bufhidden=hide noswapfile
     exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
     bd!
-    execute 'buffer' l:current_buffer
 
   finally
     if l:register !=# '"'
