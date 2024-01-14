@@ -25,18 +25,20 @@ augroup save_view
   \|  endif
 augroup END
 
-augroup auto_save_session
-  autocmd!
-  autocmd VimLeave * 
-  \ if expand('%:p') !~ '^/tmp'
-  \&& len(v:this_session) == 0
-  \&& &filetype !~ 'gitcommit'
-  \&& &filetype !~ 'pullrequest'
-  \&& &filetype !~ 'gitrebase'
-  \&& &filetype !~ 'hgcommit'
-  \|    silent! mksession! ~/.vim/vim_auto_session
-  \|  endif
-augroup END
+" Disabling this, just use `mks[session]!` to save, and `vim -S` to load,
+" which is more foolproof
+" augroup auto_save_session
+"   autocmd!
+"   autocmd VimLeave * 
+"   \ if expand('%:p') !~ '^/tmp'
+"   \&& len(v:this_session) == 0
+"   \&& &filetype !~ 'gitcommit'
+"   \&& &filetype !~ 'pullrequest'
+"   \&& &filetype !~ 'gitrebase'
+"   \&& &filetype !~ 'hgcommit'
+"   \|    silent! mksession! ~/.vim/vim_auto_session
+"   \|  endif
+" augroup END
 
 augroup executable_files
   autocmd!
