@@ -1,6 +1,7 @@
-`:` to enter `Command-line-mode`
+- `:` to enter `Command-line-mode`
 - `<C-c>` or `ESC`: Close command line and command line window
 - `<C-n>` / `<C-p>`: Next / previous comment
+- `<C-f>`: Enter command line window from command line (command history)
 
 # Files
 
