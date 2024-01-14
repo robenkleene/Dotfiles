@@ -1,5 +1,6 @@
 - `:ls` / `:buffers` / `:files`: List buffers
-- `b <term><tab>`: Tab complete a file in the buffer list based on part of it's name
+- `:b <term><tab>`: Tab complete a file in the buffer list based on part of it's name
+- `:sb <buffer>`: Open a buffer in a horizontal split
 - `:b <buffer-number>` / `:<buffer-number>b`: Switch to a buffer by number
 - `:bp[revious]` / `:bn[ext]`: Switch to previous / next buffer
 - `:b[uffer] <buffer-name>`: Switch a buffer by name with tab completion (note this works both for the buffer list and arguments list)
