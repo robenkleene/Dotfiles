@@ -44,7 +44,7 @@ function operators#GrepYank(context = {}, type = '') abort
 
     " Use termporary buffer to force `YankTextPost` to trigger
     let l:current_buffer = bufnr('%')
-    enew
+    new
     setlocal buftype=nofile bufhidden=hide noswapfile
     exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
     bd!
