@@ -82,7 +82,11 @@ set nofoldenable
 " set foldopen-=search,hor,block,percent,quickfix,tag
 " But just setting undo is the same thing
 " set foldopen=undo
-" Only complete to longest match in wildmenu
+" Complete to longest match and show a menu, matching the typical `zsh` setup.
+" Note this doesn't seem to always work, e.g., `:tag <term><tab>` doesn't seem
+" to complete to the longest common string. But you can test the setting is
+" correct by going to a directory with matching filenames and trying `:e
+" <term><tab>`
 set wildmode=longest:full,full
 " Use a vertical wildmenu
 " set wildoptions=pum
