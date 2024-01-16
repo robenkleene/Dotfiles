@@ -57,7 +57,8 @@ Once files have been opened as arguments, `##` can be used to represent them in 
 # Language Specific
 
 - `]}` & `[{`: Go to next or previous brace (only works from inside a brace pair)
-- `]m` & `[m`: Go to next or previous method
+- `]m` & `[m`: Go to next or previous start of method
+- `]M` & `[M`: Go to next or previous end of method
 
 # View
 
