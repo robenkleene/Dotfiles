@@ -5,7 +5,7 @@
 # Insert
 
 - `^r <register>`: Paste in insert mode (also has a side effect of pasting character-wise instead of line-wise)
-- `^r ^p <register>`: Paste in inert mode without indenting
+- `^r ^p <register>`: Paste in insert mode without indenting
 
 # System Clipboard
 
