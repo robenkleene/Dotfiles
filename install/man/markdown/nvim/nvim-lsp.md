@@ -1,2 +1,3 @@
-- `:lua vim.diagnostic.setqflist()`
-- `:lua vim.diagnostic.setloclist()`
+- `:lua vim.diagnostic.setqflist()`: Populate quickfix list with diagnostics
+- `:lua vim.diagnostic.setloclist()`: Populate location list with diagnostics
+- `:lua vim.diagnostic.disable()` / `:lua vim.diagnostic.enable()`: Disable / enable diagnostics
