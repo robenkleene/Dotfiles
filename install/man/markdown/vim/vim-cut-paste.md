@@ -1,6 +1,9 @@
 # Normal
 
 - `]p`: Paste indented
+- `P`: Paste without yanking in visual mode (note this can also be repeated with the `.` command)
+- `zp`: Paste removing trailing whitespace (e.g., paste character-wise)
+- `zP`: Paste removing trailing whitespace, without yanking first in visual mode (e.g., paste character-wise)
 
 # Insert
 
@@ -40,6 +43,7 @@ The `g_` operator, goes to the end of the line without selecting the new line ch
 
 * `v$`: Visual select to the end of the line, a `y` after this will include the new line
 * `y$`: Yank to the end of the line, this will *not* include the new line
+- `zy`: Yank without trailing whitespace
 
 # Quoted Strings
 
