@@ -41,7 +41,9 @@ set hlsearch
 " Don't display saved search highlights on startup
 nohlsearch
 
-set iskeyword+=-
+" Add hyphen to word characters, this shouldn't be set as a default and
+" instead be set per filetype
+" set iskeyword+=-
 set splitbelow
 set splitright
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
