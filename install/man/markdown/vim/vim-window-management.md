@@ -55,6 +55,8 @@
 - `:tabc[lose]`: Close tab
 - `gt`: Next tab
 - `gT`: Previous tab
+- `:tab <command>`: Open command in a new tab
+- `:[sp]lit +<command>`: Is supposed to work similarly for splits, but it's less predictable (e.g., `:split +tag <term>` seems to fail)
 
 # Cursor Position in Window
 
