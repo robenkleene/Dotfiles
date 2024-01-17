@@ -11,10 +11,6 @@ brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
-# Modern
-# brew 'nushell'
-# brew 'fish'
-# brew 'helix'
 brew 'universal-ctags'
 
 # Editor
@@ -34,15 +30,14 @@ brew 'ruby-install'
 # Objective-C
 brew 'carthage'
 brew 'clang-format'
-# MIDI
 # Go
 brew 'go'
+# json
 brew 'jq'
-# Rust
-brew 'wasm-pack'
-brew 'rust-analyzer'
 # lua
 brew 'lua-language-server'
+# Rust
+brew 'rust-analyzer'
 # Markdown
 brew 'marksman'
 
@@ -58,6 +53,8 @@ brew 'mitmproxy'
 brew 'hyperfine'
 # Shows whitespace nicer than xxd
 brew 'hexyl'
+# VR
+brew 'scrcpy'
 
 # macOS
 brew 'suspicious-package'

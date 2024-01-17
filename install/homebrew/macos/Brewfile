@@ -15,10 +15,8 @@ brew 'universal-ctags'
 
 # Editor
 brew 'aspell'
-# Dependency of jinx spell checker in Emacs
-# brew 'enchant'
-brew 'vim'
 brew 'neovim'
+brew 'vim'
 brew 'editorconfig'
 
 # Languages
@@ -28,11 +26,9 @@ brew 'editorconfig'
 # Ruby
 brew 'chruby'
 brew 'ruby-install'
-# Shell
 # Swift
 # Objective-C
 brew 'carthage'
-brew 'fastlane'
 brew 'clang-format'
 # Go
 brew 'go'
@@ -40,7 +36,7 @@ brew 'go'
 brew 'jq'
 # lua
 brew 'lua-language-server'
-# rust
+# Rust
 brew 'rust-analyzer'
 # Markdown
 brew 'marksman'
@@ -57,20 +53,23 @@ brew 'mitmproxy'
 brew 'hyperfine'
 # Shows whitespace nicer than xxd
 brew 'hexyl'
-brew 'scrcpy'
-
 # VR
+brew 'scrcpy'
 
 # macOS
 brew 'suspicious-package'
 
 # Cask GUI Apps
 tap 'homebrew/cask'
-# cask 'emacs'
 cask 'blender'
 cask 'godot'
+cask 'anki'
 cask 'alacritty'
+cask 'processing'
 
-# Animated GIFs, `gifify` dependencies
+# Media
 brew 'ffmpeg'
 brew 'imagemagick'
+
+# Games
+brew 'nethack'
