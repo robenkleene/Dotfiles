@@ -87,6 +87,10 @@ zstyle ':completion:*' menu select
 # This makes some completions add an addition latter, likes
 # `tmux_session_s` where the `s` is too specific
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+# Allow partial matches, e.g., `vim md<tab>` for all files with `.md` extension
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+
 # Cache completion by default at `~/.zcompcache`
 # These don't appear to do anything
 # zstyle ':completion::complete:*' use-cache true
