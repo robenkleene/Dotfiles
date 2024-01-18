@@ -11,7 +11,7 @@ setlocal foldenable
 " Set starting fold level so all folds are open
 setlocal foldlevel=2
 
-nnoremap <silent> <buffer> gd :OpenDiff<CR>
+nnoremap <silent> <buffer> <localleader>gd :OpenDiff<CR>
 
 function! DiffFold(lnum)
   let line = getline(a:lnum)
