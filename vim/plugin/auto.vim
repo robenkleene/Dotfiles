@@ -27,6 +27,8 @@ augroup END
 
 " Disabling this, just use `mks[session]!` to save, and `vim -S` to load,
 " which is more foolproof
+" Also opening `vim` then using `'0` to go to the most recent file gets most
+" of the way there alone
 " augroup auto_save_session
 "   autocmd!
 "   autocmd VimLeave * 
