@@ -1,0 +1,1 @@
+- `:filetype detect`: Detect file type
