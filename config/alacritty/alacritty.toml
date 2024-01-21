@@ -18,6 +18,5 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 [selection]
 save_to_clipboard = false
 
-[window.dimensions]
-columns = 80
-lines = 48
+[window]
+dimensions = { columns = 80, lines = 48 }
