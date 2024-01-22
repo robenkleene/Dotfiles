@@ -42,6 +42,13 @@ return {
   --     vim.cmd("colorscheme catppuccin")
   --   end
   -- },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  --   opts = function()
+  --     return { theme = 'tokyonight' }
+  --   end,
+  -- },
   {
     "folke/tokyonight.nvim",
     config = function()
