@@ -51,9 +51,11 @@ return {
   -- },
   {
     "folke/tokyonight.nvim",
-    config = function()
-      vim.cmd("colorscheme tokyonight-night")
-    end
+    -- Don't set this here because then override colors `autocmd` will trigger
+    -- too late
+    -- config = function()
+    --   vim.cmd("colorscheme tokyonight-night")
+    -- end
   },
   -- {
   --   "EdenEast/nightfox.nvim",

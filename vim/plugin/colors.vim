@@ -1,4 +1,11 @@
 function! s:OverrideColors()
+  " Don't change the background color in the status line, this allows colors
+  " to be used in the status line (otherwise the background color won't match
+  " for the colored section)
+  " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
+  " the color and `%*` returns to the default `StatusLine` color
+  highlight StatusLine guifg=#AAAAAA guibg=NONE gui=NONE cterm=NONE
+  highlight StatusLineNC guifg=#666666 guibg=NONE gui=NONE cterm=NONE
   if !has('nvim')
     " Markdown
 
@@ -59,9 +66,9 @@ augroup override_colors
     autocmd ColorScheme * call <SID>OverrideColors()
 augroup END
 
+set background=dark
 if !has('nvim')
   " Theme
-  set background=dark
   " Set after plug sync (doesn't help when installing themes)
   " let g:embark_terminal_italics = 1
   " colorscheme embark
@@ -72,4 +79,6 @@ if !has('nvim')
   " colorscheme nightfox
   " colorscheme duskfox
   colorscheme iceberg
+else
+  colorscheme tokyonight-night
 endif
