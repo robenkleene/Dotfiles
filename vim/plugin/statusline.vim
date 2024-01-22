@@ -10,7 +10,7 @@ set statusline+=%(%.40{expand('%:t')}\ %)
 "                   ^^ Maximum number of characters
 "               ^^ Start group that disappears if flags are empty
 " Modified
-set statusline+=%#WarningMsg#%(%m\ %)%*
+set statusline+=%#WarningMsg#%(%m%)%*\ 
 " Filetype
 set statusline+=%y
 " Switch to right
