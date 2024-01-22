@@ -14,6 +14,7 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 ```
 `:!echo $VIMRUNTIME`
 ```
+
 # Movement
 
 - `<C-b>` / `<C-e>`: Go to beginning/end of line
