@@ -11,6 +11,7 @@ return {
         local opts = { buffer = ev.buf }
 
         vim.keymap.set('n', '<localleader>gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', '<localleader>gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', '<localleader>gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', '<localleader>gy', vim.lsp.buf.type_definition, opts)
         vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, opts)
@@ -19,11 +20,11 @@ return {
         -- `:lua vim.diagnostic.setloclist()`
         -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
         -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-        vim.keymap.set('n', '<localleader>r', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<localleader>a', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<localleader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', '<localleader>gr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<localleader>k', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', '<localleader>=', function() vim.lsp.buf.format { async = true } end, opts)
       end,
     })
