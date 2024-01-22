@@ -6,7 +6,7 @@ function! s:OverrideColors()
   " the color and `%*` returns to the default `StatusLine` color
   highlight StatusLine guifg=#BBBBBB guibg=NONE gui=NONE cterm=NONE
   highlight StatusLineNC guifg=#777777 guibg=NONE gui=NONE cterm=NONE
-  highlight! link ModeMsg WarningMsg
+  highlight! link ModeMsg ErrorMsg
   " Underrline never looks good for highlight line
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
