@@ -24,6 +24,12 @@ There's no nice way to do this, it's easier to just create a new buffer (`:new`)
 
 - `vnew | 0r !git blame #`: Trick to get blame output side-by-side with command
 
+# Special Characters
+
+- `!` always represents the previous shell command, unless it's preceded by a `\`. For example, `:!echo ! \! \\!` after `:!ls` executs `echo ls ! \!`
+- `|` can normally be used to execute multiple commands on the command line, but not after a shell command, because with a shell command `|` is used to pipe
+- There are two methods to execute another command-line command after a shell command, either use `exe[cute]` (e.g., `:execute 'r !ls' | '[` or insert a `^@` with `<C-v><C-j>`
+
 # Special
 
 - `!clear`: Clear the external command buffer
