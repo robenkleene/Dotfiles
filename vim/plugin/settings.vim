@@ -90,6 +90,7 @@ set nofoldenable
 " correct by going to a directory with matching filenames and trying `:e
 " <term><tab>`
 set wildmode=longest:full,full
+set completeopt+=longest
 " Use a vertical wildmenu
 " set wildoptions=pum
 " Show column vertical line
