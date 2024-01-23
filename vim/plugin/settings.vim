@@ -68,15 +68,17 @@ set noswapfile
 " set viewoptions-=folds
 " Prevent restoring view from changing the current working directory
 set viewoptions-=curdir
+set viewoptions-=folds
 set sessionoptions-=curdir
 " set viewoptions-=blank
 " set sessionoptions-=options
-" set sessionoptions-=folds
+set sessionoptions-=folds
 " set sessionoptions-=blank
 " Prefer spaces to tabs
 set expandtab
 " Don't start folded
-set nofoldenable
+" set nofoldenable
+set foldlevelstart=99
 " Don't let search open folds (useful for determining if a term appears in
 " un-folded text)
 " Make folds really sticky
