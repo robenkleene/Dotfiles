@@ -12,6 +12,7 @@ setlocal foldenable
 setlocal foldlevel=2
 
 nnoremap <silent> <buffer> <localleader>gd :OpenDiff<CR>
+nnoremap <silent> <buffer> <C-w><localleader>d :OpenDiffNew<CR>
 
 function! DiffFold(lnum)
   let line = getline(a:lnum)
@@ -24,6 +25,7 @@ function! DiffFold(lnum)
   endif
 endfunction
 command! OpenDiff :call <SID>OpenDiff()
+command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort
   let l:grep = system('~/.bin/f_from_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
   let l:parts = split(l:grep, ':')
