@@ -1,0 +1,4 @@
+- Neovim uses the "shada" file instead of `~/.viminfo`
+- There are a variety of possible locations for the `shada` file (see `:h shada-file-name`), by default it's at `~/.local/state/nvim/shada/main.shada`
+- `:wsh[ada]`: Write `shada`
+- `:rsh[ada]`: Read `shada`
