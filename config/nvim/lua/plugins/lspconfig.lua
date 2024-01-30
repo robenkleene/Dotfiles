@@ -2,6 +2,8 @@ return {
   'neovim/nvim-lspconfig',
   -- `VeryLazy` or `ft` disrupts connecting to existing LSP
   config = function()
+    -- Disable virtual text (error messages at the ends of lines)
+    -- This is for code that we don't have full control over, we don't want to have to properly setup LSP for all code bases we touch, so this makes the messages less intrusive in those cases
     vim.diagnostic.config({
       virtual_text = false,
     })
