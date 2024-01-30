@@ -2,6 +2,9 @@ return {
   'neovim/nvim-lspconfig',
   -- `VeryLazy` or `ft` disrupts connecting to existing LSP
   config = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
