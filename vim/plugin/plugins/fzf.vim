@@ -12,4 +12,4 @@ nnoremap <silent> <leader>f :Files<CR>
 " Just use `:tags` tab completion instead
 " nnoremap <silent> <leader>t :BTags<CR>
 " nnoremap <silent> <leader>T :Tags<CR>
-nnoremap <silent> <leader>m :Marks<CR>
+" nnoremap <silent> <leader>m :Marks<CR>
