@@ -13,7 +13,7 @@ return {
     { '<leader>D' },
     { '<leader>f' },
     { '<leader>g' },
-    { '<leader>l' },
+    -- { '<leader>l' },
     -- { '<leader>m' },
     -- { '<leader>o' },
     { '<leader>R' },
@@ -61,9 +61,10 @@ return {
         marks = { theme = "ivy" },
       }
     }
-    -- Just use `:b <tab>` instead
+    -- Use `:b <tab>` instead
     -- vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
-    vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
+    -- Use `g/pattern/` instead
+    -- vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
     -- vim.keymap.set('n', '<leader>f', '<cmd>lua require("telescope.builtin").find_files({cwd = "%:h"})<CR>')
     -- vim.keymap.set('n', '<leader>s', '<cmd>lua require("telescope.builtin").live_grep({cwd = "%:h"})<CR>')
     vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
