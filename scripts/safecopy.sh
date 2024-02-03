@@ -23,26 +23,30 @@ while getopts ":sh" option; do
   esac
 done
 
+# Fish adds `⏎` and zsh adds `%` to the end of output
+# `^C` is the character to terminate a command
+# We don't do this now for simplicity, but here's how you'd strip those:
+# sed s'/⏎$//'
+# sed '/^\^C$/d'
+
 # Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
 # variable is recorded when the emacs server was started
 if [[ -n "${INSIDE_EMACS:-}" ]]; then
-  if command -v pbcopy &> /dev/null; then
-    { sed s'/⏎$//' | sed '/^\^C$/d' | tee >(pbcopy) | tmux loadb - ; } || sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
+  if command -v pbcopy &> /dev/null; && [[ "$skip_system" == "false" ]]; then
+    tee >(pbcopy) | tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
   else
-    { sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb - ; } || sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
+    tmux loadb - || cat  > /tmp/robenkleene.transient/clipboard
   fi
 elif [[ -n "${TMUX:-}" ]]; then
-  sed s'/⏎$//' | sed '/^\^C$/d' | tmux loadb -
+  tmux loadb -
   if [[ "$skip_system" == "false" ]]; then
     if command -v pbcopy &> /dev/null; then
-      TERM=xterm-256color tmux saveb - | sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
+      TERM=xterm-256color tmux saveb - | pbcopy
     fi
   fi
-elif command -v pbcopy &> /dev/null; then
-  if [[ "$skip_system" == "false" ]]; then
-    sed s'/⏎$//' | sed '/^\^c$/d' | pbcopy
-  fi
+elif command -v pbcopy &> /dev/null; && [[ "$skip_system" == "false" ]]; then
+  pbcopy
 else
-  sed s'/⏎$//' | sed '/^\^C$/d' > /tmp/robenkleene.transient/clipboard
+  cat > /tmp/robenkleene.transient/clipboard
 fi
 
