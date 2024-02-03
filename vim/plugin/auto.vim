@@ -73,24 +73,24 @@ augroup no_whitespace_insert
   autocmd InsertLeave * setlocal list
 augroup END
 
-" clipboard
-" Sync the default (`"`) register (note for some reason `v:event["regname"]`
-" is set to the empty string instead of `"` for the default register), don't
-" use the `+` and `*` registers because Vim already tries to sync those
-" itself, so trying to do so here would create a conflict
-augroup safecopy
-  autocmd!
-  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-augroup END
-" When moving to another vim instance, copy from the safe clipboard and
-" append a new line so pasting is always linewise.
-" This allows pastin between Vim instances without using `unnamedplus` which
-" can mess up using `yyp` to copy a line within a Vim session
-augroup safepaste
-  autocmd!
-  autocmd FocusGained * let @@ = system('~/.bin/safepaste -s').."\n"
-augroup END
-let @@ = system('~/.bin/safepaste -s')
+" " clipboard
+" " Sync the default (`"`) register (note for some reason `v:event["regname"]`
+" " is set to the empty string instead of `"` for the default register), don't
+" " use the `+` and `*` registers because Vim already tries to sync those
+" " itself, so trying to do so here would create a conflict
+" augroup safecopy
+"   autocmd!
+"   autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+" augroup END
+" " When moving to another vim instance, copy from the safe clipboard and
+" " append a new line so pasting is always linewise.
+" " This allows pastin between Vim instances without using `unnamedplus` which
+" " can mess up using `yyp` to copy a line within a Vim session
+" augroup safepaste
+"   autocmd!
+"   autocmd FocusGained * let @@ = system('~/.bin/safepaste -s').."\n"
+" augroup END
+" let @@ = system('~/.bin/safepaste -s')
 
 " Fixes problems where Vim is just showing escaped junk in the window
 if !has('nvim')
