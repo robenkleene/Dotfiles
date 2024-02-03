@@ -88,9 +88,9 @@ augroup END
 " can mess up using `yyp` to copy a line within a Vim session
 augroup safepaste
   autocmd!
-  autocmd FocusGained * let @@ = system('~/.bin/safepaste').."\n"
+  autocmd FocusGained * let @@ = system('~/.bin/safepaste -s').."\n"
 augroup END
-let @@ = system('~/.bin/safepaste')
+let @@ = system('~/.bin/safepaste -s')
 
 " Fixes problems where Vim is just showing escaped junk in the window
 if !has('nvim')
