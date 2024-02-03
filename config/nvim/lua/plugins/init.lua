@@ -82,5 +82,6 @@ return {
   --   end
   -- },
   -- Languages
-  { 'dag/vim-fish', ft = { 'fish' }, }
+  { 'dag/vim-fish', ft = { 'fish' }, },
+  { 'sophacles/vim-processing', ft = { 'pde' }, }
 }

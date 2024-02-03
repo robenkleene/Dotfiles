@@ -83,3 +83,7 @@ indent_size = 2
 [*.kt]
 indent_style = space
 indent_size = 2
+
+[*.pde]
+indent_style = space
+indent_size = 2
