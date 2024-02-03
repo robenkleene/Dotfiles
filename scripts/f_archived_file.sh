@@ -63,8 +63,8 @@ if [[ "$message" == "true" ]]; then
   line_count=$(wc -l < "$destination_archive_file" | tr -d " " | tr -d "\n")
   echo -n "Backed up $line_count lines"
 else
-  if [[ -t 1 ]]; then
-    # Only echo file path if stdout is a terminal
-    echo -n "$destination_archive_file"
-  fi
+  # if [[ -t 1 ]]; then
+  #   # Only echo file path if stdout is a terminal
+  echo -n "$destination_archive_file"
+  # fi
 fi
