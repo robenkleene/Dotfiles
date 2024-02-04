@@ -33,6 +33,7 @@ return {
         ]])
     end
   },
+  { "github/copilot.vim" },
   -- Themes
   -- {
   --   "catppuccin/nvim",
