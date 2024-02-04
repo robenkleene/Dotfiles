@@ -75,8 +75,8 @@ nvm() {
     nvm "$@"
    fi
 }
-if [[ -d "$HOME/.config/nvm/17.0.1/bin" ]]; then
-  PATH=$HOME/.config/nvm/17.0.1/bin:$PATH
-elif [[ -d "$HOME/.nvm/versions/node/v17.0.1/bin" ]]; then
-  PATH=$HOME/.nvm/versions/node/v17.0.1/bin:$PATH
+if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
+  PATH=$HOME/.config/nvm/21.6.1/bin:$PATH
+elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
+  PATH=$HOME/.nvm/versions/node/v21.6.1/bin:$PATH
 fi
