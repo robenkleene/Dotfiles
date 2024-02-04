@@ -32,7 +32,7 @@ set smartcase
 " Indent
 " When opening lines, make it the same indent level as the current line
 " Neovim defaults to `autoindent`
-set autoindent
+set noautoindent
 " Indent blocks (e.g., after a `{`) automatically
 " set smartindent
 
