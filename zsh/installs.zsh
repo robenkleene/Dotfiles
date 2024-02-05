@@ -18,14 +18,6 @@ if command -v brew &> /dev/null; then
   FPATH="$HOMEBREW_DIR/share/zsh/site-functions:${FPATH}"
 fi
 
-# fzf
-if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
-  source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
-fi
-if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
-  source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
-fi
-
 # chruby
 # This is ridiculously slow
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then

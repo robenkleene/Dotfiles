@@ -2,7 +2,6 @@
 brew 'tig'
 brew 'ripgrep'
 brew 'fd'
-brew 'fzf'
 brew 'bat'
 brew 'ncdu'
 brew 'gh'

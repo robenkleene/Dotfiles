@@ -4,10 +4,6 @@
 [ui]
 ignore = ~/.hgignore
 merge = internal:merge3
-[alias]
-cleanup = !hg purge && hg checkout --clean . && hg status
-statustool = !~/.bin/hg_status_fzf
-logtool = !~/.bin/hg_log_fzf
 [pager]
 pager = less
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`

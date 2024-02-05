@@ -2,7 +2,6 @@
 brew 'zsh'
 brew 'git'
 brew 'tig'
-brew 'fzf'
 brew 'tmux'
 brew 'ripgrep'
 brew 'fd'

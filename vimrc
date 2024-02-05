@@ -29,8 +29,6 @@ Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
 Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
 " Fixes a bug where focus events aren't firing for vim
 Plug 'tmux-plugins/vim-tmux-focus-events'
 " Use `B` command to pipe just part of a visual selection, e.g., `B !sort`

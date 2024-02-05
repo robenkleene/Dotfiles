@@ -1,7 +1,6 @@
 # Shell
 brew 'git'
 brew 'tig'
-brew 'fzf'
 brew 'tmux'
 brew 'ripgrep'
 # Installation of `fd`, `bat`, and `weechat` is failing

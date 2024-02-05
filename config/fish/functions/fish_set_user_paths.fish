@@ -13,9 +13,6 @@ function fish_set_user_paths
     if test -e ~/.brew/bin
         set -U fish_user_paths ~/.brew/bin $fish_user_paths
     end
-    if test -e ~/.fzf/bin
-        set -U fish_user_paths ~/.fzf/bin $fish_user_paths
-    end
     if test -e ~/.bin
         set -U fish_user_paths ~/.bin $fish_user_paths
     end

@@ -33,7 +33,6 @@ let-env PATH = ($env.PATH | split row ":")
 # Loop not working on macOS?
 # let paths = [
 # '~/.bin'
-# '~/.fzf/bin'
 # '/opt/homebrew/bin/'
 # '~/.nvm/versions/node/v17.0.1/bin'
 # '~/.gem/ruby/3.0.2/bin'
@@ -46,7 +45,6 @@ let-env PATH = ($env.PATH | split row ":")
 #     }
 # }
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.bin")
-let-env PATH = ($env.PATH | prepend $"($env.HOME)/.fzf/bin")
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.nvm/versions/node/v17.0.1/bin")
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.gem/ruby/3.0.2/bin")
 let-env PATH = ($env.PATH | prepend $"($env.HOME)/.rubies/ruby-3.0.2/bin")
