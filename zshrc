@@ -16,10 +16,9 @@ fi
 # Setup
 # Source variables first because it sets fpath
 source ~/.zsh/variables.zsh
-# Bindings have to be before `fzf` otherwise the `fzf` bindings won't stick
 source ~/.zsh/bindings.zsh
-# `fzf` functions before aliases so functions don't use aliases and after 
-# bindings, otherwise `fzf` bindings don't work
+# `installs.zsh` before `alias.zsh` so functions don't use aliases and after
+# bindings, otherwise bindings conflict with install bindings
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
 # before completions are generated
 source ~/.zsh/installs.zsh

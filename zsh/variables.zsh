@@ -38,12 +38,6 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # nnn
 export NNN_PLUG='z:z;r:reveal;p:preview'
 
-# FZF
-# Use `fd` for `:Files` in `fzf.vim`
-export FZF_DEFAULT_COMMAND='fd --type f'
-# Always wrap preview window because it's usually useless without it
-export FZF_DEFAULT_OPTS='--preview-window=wrap'
-
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
   # marksman was crashing on launch due to missing library errors without

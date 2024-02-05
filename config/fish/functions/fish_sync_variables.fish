@@ -25,10 +25,6 @@ function fish_sync_variables
     # rg
     set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
-    # fzf
-    # Use `fd` for `:Files` in `fzf.vim`
-    set -Ux FZF_DEFAULT_COMMAND "fd --type f"
-
     # nnn
     set -Ux NNN_PLUG "z:z;r:reveal;p:preview"
 
