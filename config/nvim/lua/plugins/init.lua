@@ -1,9 +1,21 @@
 return {
   { 'tpope/vim-unimpaired', },
   {
-    "numToStr/Comment.nvim",
-    config = true,
-    keys = { "gc", { "gc", mode = "v" } },
+    'tpope/vim-commentary',
+    -- This prevents the `autocmd` from firing
+    -- keys = { "gc", { "gc", mode = "v" } },
+    config = function()
+      vim.cmd([[
+      map  gc  <Plug>Commentary
+      nmap gcc <Plug>CommentaryLine
+      " Suppress the extra space after `//` for processing files
+      " Without `b:commentary_format` commentary adds this by default
+      augroup commentary_format
+        autocmd!
+        autocmd FileType processing :let b:commentary_format = &commentstring
+      augroup END
+      ]])
+    end
   },
   { 'tpope/vim-vinegar' },
   -- This doesn't handle visual blocks correctly
