@@ -35,17 +35,16 @@ return {
   },
   {
     -- More reliable open browser
-    "tyru/open-browser.vim",
+    'tyru/open-browser.vim',
     keys = { "gx" },
     config = function()
-        vim.cmd([[
-        let g:netrw_nogx = 1
-        nmap gx <Plug>(openbrowser-open)
-        vmap gx <Plug>(openbrowser-open)
-        ]])
+      vim.cmd([[
+      let g:netrw_nogx = 1
+      nmap gx <Plug>(openbrowser-open)
+      vmap gx <Plug>(openbrowser-open)
+      ]])
     end
   },
-  { "github/copilot.vim" },
   -- Themes
   -- {
   --   "catppuccin/nvim",
