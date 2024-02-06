@@ -33,6 +33,9 @@ return {
     'nvim-treesitter/playground',
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
+  { "github/copilot.vim",
+    cmd = { "Copilot" },
+  },
   {
     -- More reliable open browser
     'tyru/open-browser.vim',
