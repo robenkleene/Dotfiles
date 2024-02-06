@@ -1,4 +1,4 @@
-- `cargo publish --dry-run` / `cargo package`: Test package before publishing
+- `cargo publish --dry-run` / `cargo package`: Test package before publishing (also run `cargo update -w` to make sure the `Cargo.lock` file is in sync)
 
 # Removing
 
