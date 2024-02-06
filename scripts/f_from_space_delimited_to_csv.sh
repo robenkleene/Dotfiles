@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-sed -E 's/[[:space:]]+/, /g'
+~/.bin/f_strip | sed -E 's/[[:space:]]+/, /g'
