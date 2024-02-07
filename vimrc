@@ -1,5 +1,3 @@
-let b:terminalorneovim = !has('gui_running') || has('nvim')
-
 " Fix for italics in tmux
 set t_ZH=[3m
 set t_ZR=[23m
@@ -26,11 +24,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'machakann/vim-highlightedyank'
-Plug 'guns/xterm-color-table.vim', { 'on': 'XtermColorTable' }
+" Good to be accustomed to not having this, because it makes it easier when
+" using implementations of Vim mode that doesn't support this (e.g., in Visual
+" Studio Code)
+" Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
-" Fixes a bug where focus events aren't firing for vim
-Plug 'tmux-plugins/vim-tmux-focus-events'
 " Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
 Plug 'vim-scripts/vis', { 'on': 'B' }
 " More reliable open browser
@@ -64,6 +62,27 @@ autocmd VimEnter *
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
 
+" Indent
+" When opening lines, make it the same indent level as the current line
+" Neovim defaults to `autoindent`
+set autoindent
+
+" Fix a problem in Vim where a bunch of escaped junk is shown in the window
+augroup focus_redraw
+  autocmd!
+  autocmd FocusGained * redraw!
+augroup END
+
+" Hack to fix meta keys
+let c='a'
+while c <= 'z'
+  exec "set <M-".tolower(c).">=\e".c
+  exec "nnoremap \e".c." <M-".tolower(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+" Visual star
+" This is the default in nvim
 function! s:getSelectedText()
   let l:old_reg = getreg('"')
   let l:old_regtype = getregtype('"')
