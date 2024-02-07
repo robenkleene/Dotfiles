@@ -1,3 +1,12 @@
+function! commands#Rg(terms) abort
+  let l:original_grepprg = &grepprg
+  set grepprg=rg\ \ --vimgrep\ --no-heading
+  if len(a:terms)
+    execute "grep " . escape(a:terms, '%#')
+  endif
+  let &grepprg = l:original_grepprg
+endfunction
+
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
   let cmd = "find ~/.man -type f -name '". escape(a:arglead, '%#') . "*' -exec basename {} '.9' \\;"
   return systemlist(cmd)
