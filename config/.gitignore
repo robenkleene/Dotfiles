@@ -3,15 +3,9 @@
 
 # Except
 !.gitignore
-!coc
-!fish
-!kitty
 !alacritty
-!helix
 !nvim
 !bat
-!nushell
-!zellij
 !Code
 !nnn
 !tmux

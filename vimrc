@@ -50,7 +50,6 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json' }
-Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'sophacles/vim-processing', { 'for': 'processing' }
 call plug#end()
 

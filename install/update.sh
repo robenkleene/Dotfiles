@@ -62,7 +62,6 @@ cd - > /dev/null
 ../scripts/update.sh
 ../scripts/zsh_update.zsh
 ../install/vim/install.sh
-# ./scripts/fish_update.fish
 # This takes too long, just update manually for now
 # ./scripts/man_update.sh
 # This is breaking every time it's run without the `-c` option
