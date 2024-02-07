@@ -53,12 +53,10 @@ fi
 
 export PATH="~/.brew/bin/:$PATH"
 
-# Use fish to test whether brew install has already run
-if ! command -v fish &> /dev/null; then
+# Use nvim to test whether brew install has already run
+if ! command -v nvim &> /dev/null; then
   # Let homebrew fail because it fails too often
   ./homebrew/install.sh || true
-else
-  ./fish/setup.sh
 fi
 
 ./files/symlinks.sh

@@ -47,7 +47,5 @@ link_app() {
   fi
 }
 
-link_app fish
 link_app tmux
 link_app zsh
-link_app nu

@@ -4,10 +4,6 @@ set -euo pipefail
 
 # Files
 
-if [[ ! -e "$HOME/.local.nu" ]]; then
-  touch ~/.local.nu
-fi
-
 # `.editorconfig` is only supported in directories that are children of the
 # home directory. To support other directories, symlink them here.
 if [[ -e "$HOME/../Shared/Max 8/Packages" ]]; then

@@ -77,7 +77,6 @@
 
 ;; Languages
 (require 'robenkleene-csv)
-(require 'robenkleene-fish)
 (require 'robenkleene-git-commit)
 (require 'robenkleene-jade)
 (require 'robenkleene-kotlin)
