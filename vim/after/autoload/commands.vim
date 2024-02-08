@@ -1,10 +1,12 @@
 function! commands#Fd(terms) abort
-  " `%q` uses single quotes, which Vim doesn't support as an escaping strategy
-  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf " %s"')
-  if v:shell_error != 0
-      return
+  let cmd = 'fd ' . escape(a:terms, '%#') . ' -0'
+  let l:result = systemlist(cmd)
+  if v:shell_error != 0 || empty(l:result)
+    return
   endif
-  execute "args".l:result
+  let escaped_files = map(l:result, {_, v -> fnameescape(v)})
+  let args_list = join(escaped_files, ' ')
+  execute 'args ' . args_list
 endfunction
 
 function! commands#Rg(terms) abort
