@@ -9,8 +9,12 @@ set statusline+=%(%.40{expand('%:t')}\ %)
 "                                      ^^ End group
 "                   ^^ Maximum number of characters
 "               ^^ Start group that disappears if flags are empty
-" Modified
+" %m: Modified
 set statusline+=%(%#WarningMsg#%m%*\ %)
+" %r: Read-only mode
+set statusline+=%(%#WarningMsg#%r%*\ %)
+" %h: Read-only
+set statusline+=%(%#WarningMsg#%h%*\ %)
 " Filetype
 set statusline+=%y
 " Switch to right
