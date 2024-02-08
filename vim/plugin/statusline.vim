@@ -5,10 +5,7 @@ set statusline+=%#netrwDir#%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'
 " Truncate Marker
 set statusline+=%<
 " Filename
-set statusline+=%(%.40{expand('%:t')!=''?expand('%:t'):'[No\ Name]'}\ %)
-"                                      ^^ End group
-"                   ^^ Maximum number of characters
-"               ^^ Start group that disappears if flags are empty
+set statusline+=%(%.40{&filetype=='netrw'?b:netrw_curdir:(expand('%:t')!=''?expand('%:t'):'[No\ Name]')}\ %)
 " %m: Modified
 set statusline+=%(%#WarningMsg#%m%*\ %)
 " %r: Read-only mode
