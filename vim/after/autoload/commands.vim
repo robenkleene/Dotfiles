@@ -1,9 +1,10 @@
 function! commands#Fd(terms) abort
-  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf "%q "')
+  " `%q` uses single quotes, which Vim doesn't support as an escaping strategy
+  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf " %s"')
   if v:shell_error != 0
       return
   endif
-  execute "args ".l:result
+  execute "args".l:result
 endfunction
 
 function! commands#Rg(terms) abort
