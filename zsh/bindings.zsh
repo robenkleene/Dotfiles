@@ -35,27 +35,6 @@ _bash_backward_kill_word() {
 }
 zle -N _bash_backward_kill_word
 
-_system_kill_line() {
-  # Copy
-  # This disrupts the history less
-  echo -n "$BUFFER" | ~/.bin/safecopy
-  # Sending `send-break` resolves the state where history navigation has
-  # stopped working, but it's probably better to get in the habit of hitting
-  # `^C` in that case anyway
-  # zle send-break
-  # Cut
-  # This provides visual feedback
-  # zle kill-whole-line
-  # echo -n "$CUTBUFFER" | ~/.bin/safecopy
-}
-zle -N _system_kill_line
-
-_system_yank() {
-  CUTBUFFER=$(~/.bin/safepaste)
-  zle yank
-}
-zle -N _system_yank
-
 # This should already be defined
 # typeset -A key
 # key=(
@@ -86,8 +65,6 @@ bindkey "^[[1;3C" forward-word
 # `zsh` is supposed to have this `_complete_help` binding default, but for some
 # reason it's missing
 bindkey -e "^Xh" _complete_help
-bindkey -e '^V' _system_yank
-bindkey -e '^X^X' _system_kill_line
 # By default, `^U` kills the whole line, rather than backwards
 bindkey -e '^U' backward-kill-line
 
