@@ -4,8 +4,8 @@ function! s:OverrideColors()
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
-  highlight StatusLine guifg=#BBBBBB guibg=NONE gui=NONE cterm=NONE
-  highlight StatusLineNC guifg=#777777 guibg=NONE gui=NONE cterm=NONE
+  highlight StatusLine guifg=White guibg=NONE gui=NONE cterm=NONE
+  highlight StatusLineNC guifg=#999999 guibg=NONE gui=NONE cterm=NONE
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
