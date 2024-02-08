@@ -1,7 +1,7 @@
 " Space Buffer
 set statusline=\ 
 " Working Directory
-set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\ 
+set statusline+=%#netrwDir#%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}%*\ 
 " Truncate Marker
 set statusline+=%<
 " Filename
