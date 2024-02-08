@@ -1,12 +1,12 @@
 function! commands#Fd(terms) abort
-  let cmd = 'fd ' . escape(a:terms, '%#') . ' -0'
+  let cmd = 'fd ' . escape(a:terms, '%#')
   let l:result = systemlist(cmd)
   if v:shell_error != 0 || empty(l:result)
     return
   endif
-  let escaped_files = map(l:result, {_, v -> fnameescape(v)})
-  let args_list = join(escaped_files, ' ')
-  execute 'args ' . args_list
+  let l:escaped_files = map(l:result, {_, v -> fnameescape(v)})
+  let l:args_list = join(l:escaped_files, ' ')
+  execute 'args ' . l:args_list
 endfunction
 
 function! commands#Rg(terms) abort
