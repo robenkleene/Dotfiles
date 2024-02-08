@@ -6,6 +6,7 @@
 - `:[ta]g`: Jump to the next entry in the `tagstack`
 - `g]`: Show a list for matches of the item under the cursor
 - `:[ts]elect`: Show the matches in the `tag-matchlist`
+- `:[ts]elect /`: Shows matches for the current file first
 - `:[tn]ext`: Jump to the next match
 - `:[tp]revious`: Jump the previous match
 - `:tags`: Show the contents of the `tagstack`
