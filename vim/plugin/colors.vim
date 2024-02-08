@@ -8,8 +8,10 @@ function! s:OverrideColors()
   highlight StatusLineNC guifg=#777777 guibg=NONE gui=NONE cterm=NONE
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
+  highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
   highlight netrwDir guifg=DarkCyan guibg=NONE gui=NONE cterm=NONE
-  highlight! link ModeMsg ErrorMsg
+  highlight ModeMsg guifg=White guibg=#5F5FAA gui=NONE cterm=NONE
+  " highlight! link ModeMsg ErrorMsg
   " Underrline never looks good for highlight line
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
