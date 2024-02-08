@@ -1,3 +1,11 @@
+function! commands#Fd(terms) abort
+  let l:result = system('fd ' . escape(a:terms, '%#') . ' -X printf "%s "')
+  if v:shell_error != 0
+      return
+  endif
+  execute "args ".l:result
+endfunction
+
 function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ \ --vimgrep\ --no-heading
