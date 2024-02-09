@@ -28,7 +28,7 @@ function! commands#Z(terms) abort
   if v:shell_error != 0
       return
   endif
-  execute "Explore ".l:result
+  " execute "Explore ".l:result
   cd %
 endfunction
 
