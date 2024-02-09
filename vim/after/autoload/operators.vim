@@ -60,4 +60,3 @@ function operators#GrepYank(context = {}, type = '') abort
     let a:context.dot_command = v:true
   endtry
 endfunction
-
