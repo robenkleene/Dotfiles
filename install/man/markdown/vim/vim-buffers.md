@@ -19,6 +19,8 @@
 - You can hit `:` in this list to enter an edit command, e.g., `e #<1` to edit old file number `1`
 - `:e #<1`: Edit most recent file
 - `:e #<2`: Edit second most recent file
+- `:sp #<1`: Edit old file in horizontal split
+- `:vs #<1`: Edit old file in vertical split
 
 # Marks
 
