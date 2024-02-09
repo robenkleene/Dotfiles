@@ -33,9 +33,11 @@ set smartcase
 " set smartindent
 
 " Highlight search results
-" set hlsearch
+" This is important even when doing a substitution, because it makes clear
+" when you might have false positives
+set hlsearch
 " Don't display saved search highlights on startup
-" nohlsearch
+nohlsearch
 
 " Add hyphen to word characters, this shouldn't be set as a default and
 " instead be set per filetype
