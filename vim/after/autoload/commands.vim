@@ -41,3 +41,18 @@ function! commands#Dc(term) abort
   call histdel(':', l:term)
   echo "Deleted '".l:result."' from history."
 endfunction
+
+function! commands#P(cmd) range abort
+    let l:save = @@
+
+    execute 'silent noautocmd keepjumps normal! gvy'
+    new
+    setlocal buftype=nofile bufhidden=hide noswapfile
+    execute 'silent noautocmd keepjumps normal! p'
+    execute 'silent noautocmd keepjumps 0,$'.a:cmd
+    execute 'silent noautocmd keepjumps normal! ggvGg_y'
+    bd!
+    execute 'silent noautocmd keepjumps normal! gvp'
+
+    let @@ = l:save
+endfunction
