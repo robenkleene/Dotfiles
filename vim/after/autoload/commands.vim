@@ -28,8 +28,11 @@ function! commands#Z(terms) abort
   if v:shell_error != 0
       return
   endif
+  " Don't also explore, this helps in the case where you might have a No Name
+  " buffer open that you want to switch to a directory to save
   " execute "Explore ".l:result
-  cd %
+  " cd %
+  execute "cd ".l:result
 endfunction
 
 function! commands#Dc(term) abort
