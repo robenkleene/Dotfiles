@@ -33,9 +33,9 @@ set smartcase
 " set smartindent
 
 " Highlight search results
-set hlsearch
+" set hlsearch
 " Don't display saved search highlights on startup
-nohlsearch
+" nohlsearch
 
 " Add hyphen to word characters, this shouldn't be set as a default and
 " instead be set per filetype
