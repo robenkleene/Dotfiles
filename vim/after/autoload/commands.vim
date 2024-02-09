@@ -43,16 +43,26 @@ function! commands#Dc(term) abort
 endfunction
 
 function! commands#P(cmd) range abort
-    let l:save = @@
+  let l:save = @@
 
-    execute 'silent noautocmd keepjumps normal! gvy'
-    new
-    setlocal buftype=nofile bufhidden=hide noswapfile
-    execute 'silent noautocmd keepjumps normal! p'
-    execute 'silent noautocmd keepjumps 0,$'.a:cmd
+  execute 'silent noautocmd keepjumps normal! gv'
+  let l:mode = mode(1)
+  execute 'silent noautocmd keepjumps normal! y'
+  new
+  setlocal buftype=nofile bufhidden=hide noswapfile
+  execute 'silent noautocmd keepjumps normal! p'
+  execute 'silent noautocmd keepjumps 0,$'.a:cmd
+
+  if l:mode == 'v'
     execute 'silent noautocmd keepjumps normal! ggvGg_y'
-    bd!
-    execute 'silent noautocmd keepjumps normal! gvp'
+  elseif l:mode == 'V'
+    execute 'silent noautocmd keepjumps normal! ggVGy'
+  elseif l:mode == "\<C-V>"
+    execute 'silent noautocmd keepjumps normal! gg<C-v>G$y'
+  endif
 
-    let @@ = l:save
+  bd!
+  execute 'silent noautocmd keepjumps normal! gvp'
+
+  let @@ = l:save
 endfunction
