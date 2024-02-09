@@ -71,12 +71,14 @@ augroup focus_redraw
 augroup END
 
 " Hack to fix meta keys
-let c='a'
-while c <= 'z'
-  exec "set <M-".tolower(c).">=\e".c
-  exec "nnoremap \e".c." <M-".tolower(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
+" This causes hitting `ESC` then a letter really quickly in insert mode to
+" insert an accented character
+" let c='a'
+" while c <= 'z'
+"   exec "set <M-".tolower(c).">=\e".c
+"   exec "nnoremap \e".c." <M-".tolower(c).">"
+"   let c = nr2char(1+char2nr(c))
+" endw
 
 " Visual star
 " This is the default in nvim
