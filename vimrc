@@ -29,8 +29,6 @@ Plug 'tpope/vim-repeat'
 " Studio Code)
 " Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
-" Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
-Plug 'vim-scripts/vis', { 'on': 'B' }
 " More reliable open browser
 " Plug 'tyru/open-browser.vim'
 " let g:netrw_nogx = 1
