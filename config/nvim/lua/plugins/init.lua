@@ -25,11 +25,6 @@ return {
   },
   { 'tpope/vim-repeat' },
   {
-    -- Use `B` command to pipe just part of a visual selection, e.g., `B !sort`
-    'vim-scripts/vis',
-    cmd = "B"
-  },
-  {
     'nvim-treesitter/playground',
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
