@@ -68,3 +68,8 @@ augroup nofilename_nofile
   " Don't prompt for saving buffers with no file
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
+
+augroup safecopy
+  autocmd!
+  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+augroup END
