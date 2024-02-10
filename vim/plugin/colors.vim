@@ -73,9 +73,3 @@ augroup override_colors
     autocmd!
     autocmd ColorScheme * call <SID>OverrideColors()
 augroup END
-
-set background=dark
-
-if has('nvim')
-  colorscheme tokyonight-night
-endif

@@ -61,7 +61,6 @@ autocmd VimEnter *
 " Set colorscheme only after all vimscript is loaded so our updated colors get
 " applied
 " `++nested` is required so the override colors autocmd is called
-autocmd VimEnter * ++nested colorscheme sorbet
 " Theme
 " Set after plug sync (doesn't help when installing themes)
 " let g:embark_terminal_italics = 1
@@ -75,6 +74,8 @@ autocmd VimEnter * ++nested colorscheme sorbet
 " colorscheme catppuccin_mocha
 " colorscheme iceberg
 " colorscheme sorbet
+set background=dark
+autocmd VimEnter * ++nested colorscheme sorbet
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
