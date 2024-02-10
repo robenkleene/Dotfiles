@@ -35,13 +35,14 @@ Plug 'editorconfig/editorconfig-vim'
 " nmap gx <Plug>(openbrowser-open)
 " vmap gx <Plug>(openbrowser-open)
 " Theme
+" Plug 'nordtheme/vim'
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 " Plug 'whatyouhide/vim-gotham'
 " Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
 " Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Plug 'EdenEast/nightfox.nvim'
-Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
+" Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
