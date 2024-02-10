@@ -1,3 +1,8 @@
+- `:E`: Open `netrw` in directory of current file
+- `:e .`: Open `netrw` in working directory
+
+# Bindings
+
 - `<C-l>`: Refresh the file list
 - `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`)
 - `d`: Create directory
