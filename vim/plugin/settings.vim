@@ -32,10 +32,6 @@ set smartcase
 " Indent blocks (e.g., after a `{`) automatically
 " set smartindent
 
-" Highlight search results
-" This is important even when doing a substitution, because it makes clear
-" when you might have false positives
-set hlsearch
 " Don't display saved search highlights on startup
 nohlsearch
 
