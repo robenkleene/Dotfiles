@@ -64,6 +64,12 @@ let mapleader="\<Space>"
 " Neovim defaults to `autoindent`
 set autoindent
 
+" Highlight search results
+" This is important even when doing a substitution, because it makes clear
+" when you might have false positives
+" Neovim defaults to `hlsearch`
+set hlsearch
+
 " Fix a problem in Vim where a bunch of escaped junk is shown in the window
 augroup focus_redraw
   autocmd!
