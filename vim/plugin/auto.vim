@@ -69,7 +69,9 @@ augroup nofilename_nofile
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
 
-augroup safecopy
-  autocmd!
-  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-augroup END
+" Don't depend on this because the `*` and `+` registers aren't even defined
+" in terminal vim on Linux
+" augroup safecopy
+"   autocmd!
+"   autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+" augroup END
