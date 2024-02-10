@@ -58,6 +58,10 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+" Set colorscheme only after all vimscript is loaded so our updated colors get
+" applied
+autocmd VimEnter * colorscheme sorbet
+
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
 
