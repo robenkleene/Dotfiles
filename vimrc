@@ -44,6 +44,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'EdenEast/nightfox.nvim'
 " Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
 " Languages
+Plug 'bfrg/vim-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
