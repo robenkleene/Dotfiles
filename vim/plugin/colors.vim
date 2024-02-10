@@ -75,20 +75,7 @@ augroup override_colors
 augroup END
 
 set background=dark
-if !has('nvim')
-  " Theme
-  " Set after plug sync (doesn't help when installing themes)
-  " let g:embark_terminal_italics = 1
-  " colorscheme nord
-  " colorscheme embark
-  " colorscheme gotham
-  " colorscheme night-owl
-  " colorscheme nightfly
-  " colorscheme nightfox
-  " colorscheme duskfox
-  " colorscheme catppuccin_mocha
-  " colorscheme iceberg
-  colorscheme sorbet
-else
+
+if has('nvim')
   colorscheme tokyonight-night
 endif
