@@ -26,3 +26,7 @@ local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
 if f~=nil then io.close(f)
   dofile(vim.env.HOME .. '/.nvim_local.lua')
 end
+vim.cmd([[
+set background=dark
+autocmd VimEnter * ++nested colorscheme tokyonight-night
+]])
