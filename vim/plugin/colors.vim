@@ -16,7 +16,10 @@ function! s:OverrideColors()
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
 
-  highlight Comment guifg=#999999 guibg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#777777 guibg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#333333 guibg=NONE gui=NONE cterm=NONE
+  " highlight! link NonText Comment
+  highlight! link SpecialKey NonText
 
   if !has('nvim')
     " Markdown
