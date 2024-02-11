@@ -17,6 +17,7 @@ function! s:OverrideColors()
   highlight CursorLineNr cterm=none
 
   highlight Comment guifg=#777777 guibg=NONE gui=NONE cterm=NONE
+  " Whitespaces characters
   highlight NonText guifg=#333333 guibg=NONE gui=NONE cterm=NONE
   " highlight! link NonText Comment
   highlight! link SpecialKey NonText
