@@ -23,6 +23,11 @@ function! s:OverrideColors()
   highlight! link SpecialKey NonText
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
+  highlight Search guifg=DarkCyan
+  highlight CurSearch guifg=LightCyan
+  highlight Visual guifg=DarkGray
+  highlight! link QuickFixLine CurSearch
+  highlight! link IncSearch CurSearch
 
   if !has('nvim')
     " Markdown
