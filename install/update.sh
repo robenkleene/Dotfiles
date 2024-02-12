@@ -24,10 +24,13 @@ while getopts ":ah" option; do
 done
 
 cd "$(dirname "$0")" || exit 1
+cd ..
 
 source_dir=$(pwd -P);
 
-cd ..
+# Cleanup dead symlinks
+find -L "$HOME" -name . -o -type d -prune -o -type l -exec rm {} +
+
 function make_symlink() {
   source="$1"
   destination="$2"
@@ -66,8 +69,6 @@ cd - > /dev/null
 # ./scripts/man_update.sh
 # This is breaking every time it's run without the `-c` option
 # ./scripts/emacs_bytecompile.sh
-
-find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
 if [[ "$all" == "false" ]]; then
   exit 0
