@@ -89,8 +89,12 @@ zle -N down-line-or-beginning-search
 # because they are now performing a search
 bindkey -e '^P' up-line-or-beginning-search
 bindkey -e '^N' down-line-or-beginning-search
-bindkey -e "${key[Up]}" up-line-or-beginning-search
-bindkey -e "${key[Down]}" down-line-or-beginning-search 
+if [[ -n "${key[Up]}" ]]; then
+  bindkey -e "${key[Up]}" up-line-or-beginning-search
+fi
+if [[ -n "${key[Down]}" ]]; then
+  bindkey -e "${key[Down]}" down-line-or-beginning-search
+fi
 # This is the only thing that seems to work on macOS
 bindkey -e "^[[A" up-line-or-beginning-search
 bindkey -e "^[[B" down-line-or-beginning-search
