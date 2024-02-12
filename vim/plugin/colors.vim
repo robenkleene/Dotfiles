@@ -24,7 +24,7 @@ function! s:OverrideColors()
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
-  highlight CurSearch guibg=LightCyan guifg=Black gui=NONE cterm=NONE
+  highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
   highlight Visual guibg=DarkGray guifg=Black gui=NONE cterm=NONE
   highlight! link QuickFixLine CurSearch
   highlight! link IncSearch CurSearch
