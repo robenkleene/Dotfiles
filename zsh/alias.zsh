@@ -1,6 +1,7 @@
 # special
-alias -- -='cd -'
-alias ..='cd ..'
+# Don't use these because they aren't support in other apps (e.g., Vim)
+# alias -- -='cd -'
+# alias ..='cd ..'
 
 # ls
 if [[ "$(uname)" = "Linux" ]]; then
