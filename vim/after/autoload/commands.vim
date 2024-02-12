@@ -23,6 +23,18 @@ function! commands#completeMan9(arglead, cmdline, cursorpos) abort
   return systemlist(cmd)
 endfunction
 
+function! commands#Lz(terms) abort
+  let l:result = system('zoxide query ' . escape(a:terms, '%#'))
+  if v:shell_error != 0
+      return
+  endif
+  " Don't also explore, this helps in the case where you might have a No Name
+  " buffer open that you want to switch to a directory to save
+  " execute "Explore ".l:result
+  " cd %
+  execute "cd ".l:result
+endfunction
+
 function! commands#Z(terms) abort
   let l:result = system('zoxide query ' . escape(a:terms, '%#'))
   if v:shell_error != 0
