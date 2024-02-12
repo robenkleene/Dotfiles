@@ -35,10 +35,6 @@ if [[ ! -f "$HOME/.personal" ]]; then
 fi
 ./update.sh
 
-if [[ ! -f "$HOME/.personal" ]]; then
-  exit 0
-fi
-
 ./files/dirs.sh
 ./repos/install.sh
 
