@@ -29,7 +29,7 @@ cd ..
 source_dir=$(pwd -P);
 
 # Cleanup dead symlinks
-find -L "$HOME" -type l -exec rm {} +
+find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
 function make_symlink() {
   source="$1"
