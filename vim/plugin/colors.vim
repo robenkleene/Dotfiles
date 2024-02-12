@@ -22,6 +22,8 @@ function! s:OverrideColors()
   " highlight! link NonText Comment
   highlight! link SpecialKey NonText
 
+  highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
+
   if !has('nvim')
     " Markdown
 
