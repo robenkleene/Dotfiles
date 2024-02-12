@@ -28,7 +28,7 @@ function! s:OverrideColors()
   highlight! link QuickFixLine CurSearch
   highlight! link IncSearch CurSearch
 
-  highlight Visual guibg=LightBlue guifg=Black gui=NONE cterm=NONE
+  highlight Visual guibg=#5F5FAA guifg=White gui=NONE cterm=NONE
 
   if !has('nvim')
     " Markdown
