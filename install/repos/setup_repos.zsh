@@ -71,8 +71,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
   # fi
 fi
 
-# Overwrite with a simple set for Codespaces
-if [[ -n "${CODESPACES-}" ]]; then
+# Overwrite with a simple set for non-personal machines
+if [[ ! -f "$HOME/.personal" ]]; then
   repos=(
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
 )

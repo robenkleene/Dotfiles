@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Codespaces already has these files, archive the existing ones first
+# Remove blocking files, archive the existing ones first
 function cleanup_file() {
   filename="$1"
   if [[ -e "$filename" && ! -L "$filename" ]]; then

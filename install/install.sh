@@ -30,12 +30,12 @@ fi
 
 cd "$(dirname "$0")" || exit 1
 
-if [[ -n "${CODESPACES-}" ]]; then
-  ./codespaces/setup.sh
+if [[ ! -f "$HOME/.personal" ]]; then
+  ./minimal/setup.sh
 fi
 ./update.sh
 
-if [[ -n "${CODESPACES:-}" ]]; then
+if [[ ! -f "$HOME/.personal" ]]; then
   exit 0
 fi
 

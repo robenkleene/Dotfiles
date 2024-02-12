@@ -3,7 +3,7 @@
 set -euo pipefail
 
 cleanup=""
-while getopts ":ch" option; do
+while getopts ":mch" option; do
   case "$option" in
     c)
       cleanup="cleanup -f"
@@ -25,18 +25,22 @@ done
 
 cd "$(dirname "$0")" || exit 1
 
-if [[ -n "${CODESPACES-}" ]]; then
-  cd vscode
-  brew bundle "$cleanup"
-elif [[ -f "$HOME/.personal" && "$(uname)" = "Darwin" ]]; then
-  cd personal
-  brew bundle "$cleanup"
-elif [[ "$(uname)" = "Darwin" ]]; then
-  cd macos
-  brew bundle "$cleanup"
+if [[ "$(uname)" = "Darwin" ]]; then
+  # if [[ -f "$HOME/.personal" ]]; then
+    cd macos
+    brew bundle "$cleanup"
+  # else
+  #   cd macos
+  #   brew bundle "$cleanup"
+  # fi
 elif [[ "$(uname)" = "Linux" ]]; then
-  cd linux
-  brew bundle "$cleanup"
+  if [[ -f "$HOME/.personal" ]]; then
+    cd linux
+    brew bundle "$cleanup"
+  else
+    cd minimal
+    brew bundle "$cleanup"
+  fi
 else
   echo "Error: Unsupported platform" >&2
   exit 1
