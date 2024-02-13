@@ -19,7 +19,7 @@ comment=241
 # Disable inverted syntax highlighting for pasted text
 zle_highlight+=(paste:none)
 # Color region
-zle_highlight+=(region:bg=241,fg=black)
+zle_highlight+=(region:bg=241,fg=white)
 
 # vcs
 # Enable vcs integration
