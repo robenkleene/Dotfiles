@@ -6,6 +6,7 @@ Note that the space after `w` is mandatory!
 - `:w !bash`: File
 - `:%w !bash`: File
 - `:'<,'>w !bash`: Visual selection (note this only works for *line-wise* selection, sub-line selection will not work! This is because `:` `ex` commands are all line based)
+
 # Replacing Selection
 
 - `:'<,'>!sort`: Pipe visual selection through sort
@@ -17,6 +18,10 @@ Note that the space after `w` is mandatory!
 - `:r !ls`: Input the result of a shell command below the current line
 - `:0r !ls`: Input the result of a shell command at the beginning of the document
 - These don't work with interactive commands (their output is written to a temporary buffer)
+
+# Insert Mode
+
+- Use the expression register and `system()` to insert the result of a shell command (e.g., `<C-r>=system('pbpaste')`)
 
 # Output in a New Buffer
 
