@@ -10,7 +10,6 @@ function! s:OverrideColors()
   highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
   highlight netrwDir guifg=DarkCyan guibg=NONE gui=NONE cterm=NONE
-  highlight ModeMsg guifg=White guibg=#5F5FAA gui=NONE cterm=NONE
   " highlight! link ModeMsg ErrorMsg
   " Underrline never looks good for highlight line
   highlight CursorLine cterm=none
@@ -20,16 +19,17 @@ function! s:OverrideColors()
   " Whitespaces characters
   highlight NonText guifg=#333333 guibg=NONE gui=NONE cterm=NONE
   " highlight! link NonText Comment
-  highlight! link SpecialKey NonText
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
-  highlight! link QuickFixLine CurSearch
+
+  highlight Visual guibg=DarkGray guifg=Black gui=NONE cterm=NONE
+
+  highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
-
-  highlight Visual guibg=lightblue guifg=White gui=NONE cterm=NONE
-
+  highlight! link ModeMsg Visual
+  highlight! link SpecialKey NonText
   if !has('nvim')
     " Markdown
 
