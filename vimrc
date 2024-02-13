@@ -36,7 +36,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
 " Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 " Plug 'EdenEast/nightfox.nvim'
-" Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
+if v:version < 900
+  Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
+endif
 " Languages
 Plug 'bfrg/vim-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -70,7 +72,11 @@ autocmd VimEnter *
 " colorscheme iceberg
 " colorscheme sorbet
 set background=dark
-autocmd VimEnter * ++nested colorscheme sorbet
+if v:version < 900
+  autocmd VimEnter * ++nested colorscheme iceberg
+else
+  autocmd VimEnter * ++nested colorscheme sorbet
+endif
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
