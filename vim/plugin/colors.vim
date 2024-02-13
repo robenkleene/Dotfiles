@@ -26,10 +26,18 @@ function! s:OverrideColors()
 
   highlight Visual guibg=#888888 guifg=white gui=NONE cterm=NONE
 
+  highlight Pmenu guibg=#555555 guifg=white gui=NONE cterm=NONE
+
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
   highlight! link ModeMsg Visual
   highlight! link SpecialKey NonText
+  " The wild menu background is StatusLine
+  highlight! link Wildmenu Visual
+  highlight! link PmenuSel Wildmenu
+  highlight! link PmenuSbar Wildmenu
+  highlight! link PmenuThumb Pmenu
+
   if !has('nvim')
     " Markdown
 
