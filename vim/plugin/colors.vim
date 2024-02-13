@@ -24,9 +24,9 @@ function! s:OverrideColors()
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
 
-  highlight Visual guibg=#888888 guifg=white gui=NONE cterm=NONE
+  highlight Visual guibg=#585858 guifg=white gui=NONE cterm=NONE
 
-  highlight Pmenu guibg=#555555 guifg=white gui=NONE cterm=NONE
+  highlight Pmenu guibg=#333333 guifg=white gui=NONE cterm=NONE
 
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
