@@ -5,7 +5,6 @@ brew 'tig'
 brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
-brew 'bat'
 brew 'zoxide'
 brew 'nnn'
 # Really useful to see diff by word quickly
