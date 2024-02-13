@@ -8,7 +8,7 @@ setopt PROMPT_SUBST
 # ZLE_RPROMPT_INDENT=-1
 # Track Changed and Staged Files
 # (Enables `%c` and `%u` below)
-zstyle ':vcs_info:*' check-for-changes true
+# zstyle ':vcs_info:*' check-for-changes true
 
 # Colors
 comment=241
