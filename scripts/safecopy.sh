@@ -47,6 +47,12 @@ elif [[ -n "${TMUX:-}" ]]; then
 elif command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
+  if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
+    if [[ ! -e /tmp/robenkleene.transient/ ]]; then
+      mkdir -p /tmp/robenkleene.transient/
+    fi
+    touch /tmp/robenkleene.transient/clipboard
+  fi
   cat > /tmp/robenkleene.transient/clipboard
 fi
 
