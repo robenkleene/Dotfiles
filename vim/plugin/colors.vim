@@ -16,7 +16,7 @@ function! s:OverrideColors()
   highlight CursorLineNr cterm=none
 
   " Whitespaces characters
-  highlight NonText guifg=#444444 guibg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#585858 guibg=NONE gui=NONE cterm=NONE
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
