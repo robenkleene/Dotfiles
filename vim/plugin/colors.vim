@@ -1,11 +1,12 @@
 function! s:OverrideColors()
+  highlight Comment guifg=#808080 guibg=NONE gui=NONE cterm=NONE
   " Don't change the background color in the status line, this allows colors
   " to be used in the status line (otherwise the background color won't match
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
-  highlight StatusLine guifg=White guibg=NONE gui=bold cterm=bold
-  highlight StatusLineNC guifg=#999999 guibg=NONE gui=NONE cterm=NONE
+  highlight StatusLine guifg=#A8A8A8 guibg=NONE gui=NONE cterm=NONE
+  highlight! link StatusLineNC Comment
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
@@ -15,9 +16,8 @@ function! s:OverrideColors()
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
 
-  highlight Comment guifg=#888888 guibg=NONE gui=NONE cterm=NONE
   " Whitespaces characters
-  highlight NonText guifg=#333333 guibg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#3A3A3A guibg=NONE gui=NONE cterm=NONE
   " highlight! link NonText Comment
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
@@ -25,17 +25,17 @@ function! s:OverrideColors()
   highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
 
   highlight Visual guibg=#585858 guifg=white gui=NONE cterm=NONE
+  highlight! link ModeMsg Visual
 
-  highlight Pmenu guibg=#333333 guifg=white gui=NONE cterm=NONE
+  highlight Pmenu guibg=#3A3A3A guifg=white gui=NONE cterm=NONE
 
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
-  highlight! link ModeMsg Visual
   highlight! link SpecialKey NonText
   " The wild menu background is StatusLine
-  highlight! link Wildmenu Visual
-  highlight! link PmenuSel Wildmenu
-  highlight! link PmenuSbar Wildmenu
+  highlight! link Wildmenu ModeMsg
+  highlight! link PmenuSel Visual
+  highlight! link PmenuSbar Visual
   highlight! link PmenuThumb Pmenu
 
   if !has('nvim')
