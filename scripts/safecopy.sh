@@ -44,7 +44,7 @@ elif [[ -n "${TMUX:-}" ]]; then
       TERM=xterm-256color tmux saveb - | pbcopy
     fi
   fi
-elif command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
+elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
   if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
