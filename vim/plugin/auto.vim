@@ -77,5 +77,5 @@ augroup safecopy
   " autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
   " t
   " autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
