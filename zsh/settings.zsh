@@ -100,4 +100,4 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 # This will get completion to use `$LS_COLORS` but it overrides highlighting
 # partial matches
 # in `"ma=48;5;246;38;5;15"` the third value is the background color (`246`) and the sixth value is the foreground color `15`
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} "ma=48;5;246;38;5;231"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} "ma=48;5;240;38;5;231"
