@@ -70,21 +70,21 @@ function! s:OverrideColors()
     highlight link markdownCode Comment
     highlight link markdownCodeBlock Comment
     highlight link markdownBlockquote Comment
-    highlight link markdownBoldDelimiter Comment
-    highlight link markdownCodeDelimiter Comment
+    highlight link markdownBoldDelimiter NonText
+    highlight link markdownCodeDelimiter NonText
     highlight link markdownFootnote Comment
     highlight link markdownFootnoteDefinition Comment
-    highlight link markdownH1Delimiter Comment
-    highlight link markdownH2Delimiter Comment
-    highlight link markdownH3Delimiter Comment
-    highlight link markdownH4Delimiter Comment
-    highlight link markdownH5Delimiter Comment
-    highlight link markdownH6Delimiter Comment
-    highlight link markdownHeadingDelimiter Comment
-    highlight link markdownItalicDelimiter Comment
-    highlight link markdownLinkDelimiter Comment
+    highlight link markdownH1Delimiter NonText
+    highlight link markdownH2Delimiter NonText
+    highlight link markdownH3Delimiter NonText
+    highlight link markdownH4Delimiter NonText
+    highlight link markdownH5Delimiter NonText
+    highlight link markdownH6Delimiter NonText
+    highlight link markdownHeadingDelimiter NonText
+    highlight link markdownItalicDelimiter NonText
+    highlight link markdownLinkDelimiter NonText
     highlight link markdownLinkText Keyword
-    highlight link markdownLinkTextDelimiter Comment
+    highlight link markdownLinkTextDelimiter NonText
     highlight link markdownListMarker Comment
     highlight link markdownUrl Comment
   endif
