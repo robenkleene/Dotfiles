@@ -11,14 +11,12 @@ function! s:OverrideColors()
   highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
   highlight netrwDir guifg=DarkCyan guibg=NONE gui=NONE cterm=NONE
-  " highlight! link ModeMsg ErrorMsg
   " Underrline never looks good for highlight line
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
 
   " Whitespaces characters
   highlight NonText guifg=#444444 guibg=NONE gui=NONE cterm=NONE
-  " highlight! link NonText Comment
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
@@ -29,7 +27,11 @@ function! s:OverrideColors()
 
   highlight Pmenu guibg=#444444 guifg=#A8A8A8 gui=NONE cterm=NONE
 
-  highlight! VertSplit guibg=NONE guifg=#444444 gui=NONE cterm=NONE
+  if !has('nvim')
+    highlight! VertSplit guibg=NONE guifg=#444444 gui=NONE cterm=NONE
+  else
+    highlight! WinSeparator guibg=NONE guifg=#444444 gui=NONE cterm=NONE
+  endif
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
