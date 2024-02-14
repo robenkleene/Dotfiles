@@ -1,8 +1,3 @@
-# Search
-
-- `n`: Next search
-- `N`: Previous search
-
 # `rg` & `fd`
 
 - `!rg <term>` to view results
@@ -27,21 +22,3 @@
 - `:bufdo vimgrepa[dd] {pattern} %`: Populate the `quickfix` list with matches of the pattern in the current file
 
 Add `| copen` to the end of any of the above to show the `quickfix` list.
-
-# `windo`
-
-- `windo %s/foo/bar/g`: Replace in all open windows
-
-# Replace
-
-- `s/foo/bar`
-- `s#foo#bar`: Alternative syntax, very useful for replaces that involve a lot of slashes.
-- `&` represents the entire match, e.g., in `%s/a file/mv "&" "&"`
-
-# Using `gn`
-
-**Visual Method**: After doing a search, type `gn` to select the next match, then type `n` to go to the next match, then `gn` again to select, then `.` to perform the previous operation.
-
-**Motion Method**: Do a motion edit like `cgn`, this will edit the next match, after the edit hit the `.` to perform the same operation on the next match automatically.
-
-- `dgn`: Delete the next match
