@@ -17,7 +17,7 @@ function! s:OverrideColors()
   highlight CursorLineNr cterm=none
 
   " Whitespaces characters
-  highlight NonText guifg=#3A3A3A guibg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#444444 guibg=NONE gui=NONE cterm=NONE
   " highlight! link NonText Comment
 
   highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
@@ -27,8 +27,9 @@ function! s:OverrideColors()
   highlight Visual guibg=#585858 guifg=white gui=NONE cterm=NONE
   highlight! link ModeMsg Visual
 
-  highlight Pmenu guibg=#3A3A3A guifg=white gui=NONE cterm=NONE
+  highlight Pmenu guibg=#444444 guifg=#A8A8A8 gui=NONE cterm=NONE
 
+  highlight! VertSplit guibg=NONE guifg=#444444 gui=NONE cterm=NONE
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
