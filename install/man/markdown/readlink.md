@@ -1,0 +1,1 @@
+- `readlink -f <path>`: Print the full path of a symlink
