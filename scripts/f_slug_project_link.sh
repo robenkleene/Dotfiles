@@ -32,7 +32,7 @@ done
 if [[ -z "$title" ]]; then
   text=$(cat)
   while read -r line; do
-    if [[ -n "$title" && -n "$line" ]]; then
+    if [[ -n "$title" ]]; then
       echo "Only use line at a time" >&2
       exit 1
     fi
@@ -80,8 +80,7 @@ make_file() {
   fi
 }
 
-contents="# $title
-"
+contents="# $title"
 slug=$(echo "$title" | ~/.bin/f_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
