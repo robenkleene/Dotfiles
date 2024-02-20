@@ -41,6 +41,12 @@ function! s:OverrideColors()
   highlight! link PmenuSbar Visual
   highlight! link PmenuThumb Pmenu
 
+  highlight DiffAdd ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+  highlight DiffAdded ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+  highlight DiffDelete ctermfg=Red ctermbg=NONE cterm=NONE
+  highlight DiffRemoved ctermfg=Red ctermbg=NONE cterm=NONE
+  highlight DiffChange ctermfg=LightBlue ctermbg=NONE cterm=NONE
+
   if !has('nvim')
     " Markdown
 
