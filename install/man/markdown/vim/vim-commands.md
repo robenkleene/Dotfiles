@@ -1,0 +1,3 @@
+- `:substitute`: Substitute
+- `:sort`: Sort
+- `:sort u`: Sort and remove duplicates
