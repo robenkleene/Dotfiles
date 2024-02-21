@@ -63,7 +63,7 @@ done
 cd - > /dev/null
 
 ../scripts/update.sh
-../scripts/zsh_update.zsh
+../install/zsh/update.zsh
 ../install/vim/install.sh
 # This takes too long, just update manually for now
 # ./scripts/man_update.sh
