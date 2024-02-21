@@ -8,6 +8,7 @@ let g:markdown_fenced_languages = [
       \'bash=sh',
       \'c',
       \'cpp',
+      \'diff',
       \'html',
       \'java',
       \'javascript',
