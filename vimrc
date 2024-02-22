@@ -24,10 +24,10 @@ Plug 'tpope/vim-repeat'
 " Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 " More reliable open browser
-" Plug 'tyru/open-browser.vim'
-" let g:netrw_nogx = 1
-" nmap gx <Plug>(openbrowser-open)
-" vmap gx <Plug>(openbrowser-open)
+Plug 'tyru/open-browser.vim'
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-open)
+vmap gx <Plug>(openbrowser-open)
 " Theme
 " Plug 'nordtheme/vim'
 " Plug 'catppuccin/vim', { 'as': 'catppuccin' }
