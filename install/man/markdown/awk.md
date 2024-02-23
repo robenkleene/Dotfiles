@@ -4,6 +4,8 @@
 
 # Examples
 
+## Learning
+
 - `$0`: Represents input (i.e., each line)
 
 `awk '/<regex>/'` is short hand for `awk '$0 ~ /<regex>/{print $0}'`.
@@ -25,4 +27,12 @@ gate
 apple
 what
 kite
+```
+
+## Capturing Between Delimiters
+
+Capture everything between the first `DUMPSTART` and `DUMPEND` pair:
+
+```
+awk '/DUMPSTART.*$/,/^.*DUMPEND.*$/{print; if(/DUMPEND.*$/) exit}'
 ```
