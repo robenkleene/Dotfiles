@@ -41,7 +41,9 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 # Append to history immediately after a command is run
 # `inc_append_history_time` appends after the command finishes running
 # `inc_append_history` appends when the command starts
-setopt inc_append_history_time
+# Traced a slowdown problem to `inc_append_history_time`, so keeping it off for
+# now
+# setopt inc_append_history_time
 # Share History
 # zsh will save and load each line immediately, but this will intermingle
 # history from multiple running shells
