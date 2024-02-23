@@ -37,6 +37,12 @@ function operators#GrepYank(context = {}, type = '') abort
     if a:context.extend_block != ''
       let commands ..= 'oO' .. a:context.extend_block
     endif
+
+    " Workaround where visual line mode gets stuck on otherwise
+    if a:type == 'line'
+      redraw
+    endif
+
     let commands ..= 'y'
     let l:register=v:register
     execute 'silent noautocmd keepjumps normal! ' .. commands
