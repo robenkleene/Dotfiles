@@ -40,9 +40,16 @@ function operators#GrepYank(context = {}, type = '') abort
     let commands ..= 'y'
     let l:register=v:register
     execute 'silent noautocmd keepjumps normal! ' .. commands
-    let @@ = expand("%:~").":".line('.').":\n".@@
+    let l:contents = @@
+    let l:result = ''
+    let l:idx = line('.')
+    for l:line in split(l:contents, '\n')
+      let l:result .= expand("%:~").":".l:idx.":".l:line."\n"
+      let l:idx += 1
+    endfor
 
     " Use termporary buffer to force `YankTextPost` to trigger
+    let @@ = l:result
     new
     setlocal buftype=nofile bufhidden=hide noswapfile
     exe 'silent keepjumps normal! VPgg"'.l:register.'yG'

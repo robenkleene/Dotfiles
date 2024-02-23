@@ -1,3 +1,3 @@
-nnoremap <expr> <localleader>yg operators#GrepYank()
-xnoremap <expr> <localleader>yg operators#GrepYank()
-nnoremap <expr> <localleader>ygyg operators#GrepYank() .. '_'
+nnoremap <expr> gyg operators#GrepYank()
+xnoremap <expr> gyg operators#GrepYank()
+nnoremap <expr> gyggyg operators#GrepYank() .. '_'
