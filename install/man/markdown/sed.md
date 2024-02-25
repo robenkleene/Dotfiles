@@ -1,21 +1,19 @@
-# `sed`
-
 - `-i`: Replace in files, note that for macOS this needs to be `-i ''`
+- With `-E` parentheses default to capture groups, without `-E`, capture groups need to be escaped
 
-## Remove Spaces
+## Examples
+
+### Remove Spaces
 
 	sed 's/ //g'
 
-## Replace Multiple Spaces With One Space
+### Replace Multiple Spaces With One Space
 
 	sed "s/  */ /g"
 
-## Capture Groups
+### Capture Groups
 
 	sed 's/.*:\(.*\):.*/\1/p'`
-
-Another example:
-
     sed -E 's/^( *-) */\1 /g'
 
 Note that the `-E` flag inverts whether the parentheses need to be escaped.
