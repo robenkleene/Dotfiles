@@ -45,7 +45,7 @@ autoload -Uz vcs_info
 PS1='%F{$comment}%D{%I:%M %p} '
 # Machine Name
 # PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
-PS1+='%F{yellow}%m '
+PS1+='%F{$comment}%m '
 # Path
 PS1+='%F{cyan}%20<...<%~%<< '
 # Jobs
