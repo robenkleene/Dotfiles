@@ -65,7 +65,7 @@ function! commands#P(cmd) range abort
   execute 'silent noautocmd keepjumps normal! y'
   new
   setlocal buftype=nofile bufhidden=hide noswapfile
-  execute 'silent noautocmd keepjumps normal! p'
+  execute 'silent noautocmd keepjumps normal! Vp'
   execute 'silent noautocmd keepjumps 0,$'.a:cmd
 
   if l:mode == 'v'
