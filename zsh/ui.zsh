@@ -43,8 +43,9 @@ autoload -Uz vcs_info
 # `man zshmisc` for explanation
 # Time
 PS1='%F{$comment}%D{%I:%M %p} '
-# Time
-PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
+# Machine Name
+# PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
+PS1+='%F{yellow}%m '
 # Path
 PS1+='%F{cyan}%20<...<%~%<< '
 # Jobs

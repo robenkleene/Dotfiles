@@ -2,8 +2,9 @@
 set statusline=\ 
 " Working Directory
 set statusline+=%#netrwDir#%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}%*\ 
-" SSH
-set statusline+=%#WarningMsg#%{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}%*
+" Machine Name
+" set statusline+=%#WarningMsg#%{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}%*
+set statusline+=%#WarningMsg#%{hostname()}\ %*
 " Truncate Marker
 set statusline+=%<
 " Filename
