@@ -2,7 +2,9 @@
 # home, which is annoying when doing typical folder navigation
 # export CDPATH=~
 
-export COLORTERM="truecolor"
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+  export COLORTERM="truecolor"
+fi
 
 # Color in `ls`
 export CLICOLOR=1
