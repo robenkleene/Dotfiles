@@ -18,7 +18,7 @@
 - `⌃v`: Visual Block Mode
 - `gv`: Reselect last visual block
 
-Text cut with `^v` is `blockwise`, if you then paste it, the text will interleave with any lines it overlaps with. To get around this behavior, just use the `:put` command, which pastes the text as if it were yanked `linewise`.
+Text cut with `^v` or `v` is `blockwise`, if you then paste it, the text will interleave with any lines it overlaps with. To get around this behavior, just use the `:put` command, which pastes the text as if it were yanked `linewise`.
 
 # Undo
 
