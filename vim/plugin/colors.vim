@@ -8,29 +8,29 @@ function! s:OverrideColors()
   highlight StatusLine guifg=#A8A8A8 ctermfg=248 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight! link StatusLineNC Comment
   " Make colors used in statusline consistent
-  highlight ErrorMsg guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-  highlight WarningMsg guifg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-  highlight netrwDir guifg=DarkCyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight ErrorMsg guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight WarningMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight netrwDir guifg=DarkCyan ctermfg=DarkCyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   " Underrline never looks good for highlight line
-  highlight CursorLine cterm=none
-  highlight CursorLineNr cterm=none
+  highlight CursorLine gui=NONE cterm=NONE
+  highlight CursorLineNr gui=NONE cterm=NONE
 
   " Whitespaces characters
   highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-  highlight MatchParen guifg=DarkCyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
-  highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
-  highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
+  highlight MatchParen guifg=DarkCyan ctermfg=DarkCyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
+  highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
+  highlight CurSearch guibg=Cyan ctermbg=Cyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
 
-  highlight Visual guibg=#585858 ctermfg=240 guifg=white gui=NONE cterm=NONE
+  highlight Visual guifg=white ctermfg=white guibg=#585858 ctermbg=240 gui=NONE cterm=NONE
   highlight! link ModeMsg Visual
 
   highlight Pmenu guibg=#444444 ctermbg=240 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
 
   if !has('nvim')
-    highlight! VertSplit guibg=NONE ctermbg=NONE guifg=#444444 ctermfg=240 gui=NONE cterm=NONE
+    highlight! VertSplit guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   else
-    highlight! WinSeparator guibg=NONE ctermbg=NONE guifg=#444444 ctermfg=240 gui=NONE cterm=NONE
+    highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
@@ -80,7 +80,6 @@ function! s:OverrideColors()
     highlight markdownH4 guifg=white gui=bold cterm=bold
     highlight markdownH5 guifg=white gui=bold cterm=bold
     highlight markdownH6 guifg=white gui=bold cterm=bold
-
     " Link
     highlight link markdownCode Comment
     highlight link markdownCodeBlock Comment
