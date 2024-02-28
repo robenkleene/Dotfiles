@@ -55,7 +55,8 @@ brew 'hyperfine'
 # Shows whitespace nicer than xxd
 brew 'hexyl'
 # VR
-brew 'scrcpy'
+# Use another install method
+# brew 'scrcpy'
 
 # macOS
 brew 'suspicious-package'
