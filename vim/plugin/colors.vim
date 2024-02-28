@@ -1,11 +1,11 @@
 function! s:OverrideColors()
-  highlight Comment guifg=#808080 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   " Don't change the background color in the status line, this allows colors
   " to be used in the status line (otherwise the background color won't match
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
-  highlight StatusLine guifg=#A8A8A8 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight StatusLine guifg=#A8A8A8 ctermfg=248 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight! link StatusLineNC Comment
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -16,21 +16,21 @@ function! s:OverrideColors()
   highlight CursorLineNr cterm=none
 
   " Whitespaces characters
-  highlight NonText guifg=#585858 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
   highlight MatchParen guifg=DarkCyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
 
-  highlight Visual guibg=#585858 guifg=white gui=NONE cterm=NONE
+  highlight Visual guibg=#585858 ctermfg=240 guifg=white gui=NONE cterm=NONE
   highlight! link ModeMsg Visual
 
-  highlight Pmenu guibg=#444444 guifg=#A8A8A8 gui=NONE cterm=NONE
+  highlight Pmenu guibg=#444444 ctermbg=240 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
 
   if !has('nvim')
-    highlight! VertSplit guibg=NONE ctermbg=NONE guifg=#444444 gui=NONE cterm=NONE
+    highlight! VertSplit guibg=NONE ctermbg=NONE guifg=#444444 ctermfg=240 gui=NONE cterm=NONE
   else
-    highlight! WinSeparator guibg=NONE ctermbg=NONE guifg=#444444 gui=NONE cterm=NONE
+    highlight! WinSeparator guibg=NONE ctermbg=NONE guifg=#444444 ctermfg=240 gui=NONE cterm=NONE
   endif
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
