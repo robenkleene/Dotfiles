@@ -74,9 +74,12 @@ augroup END
 augroup safecopy
   autocmd!
   " System clipboard
-  " autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-  " t
-  " autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
   " Not specifying `-s` to skip the system clipboard causes `"*p` to replace a visual selection to fail for some reason
-  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  " Don't filter on register because `if v:event["regname"] ==# ''` because
+  " there's no way to append to the unnamed register, but every other register
+  " is automatically duplicated to the unnamed register. So this way we can
+  " yank then append to any lettered register and have those changes reflected
+  " in the clipboard.
+  " autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
 augroup END
