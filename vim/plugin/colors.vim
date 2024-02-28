@@ -1,24 +1,24 @@
 function! s:OverrideColors()
-  highlight Comment guifg=#808080 guibg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#808080 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   " Don't change the background color in the status line, this allows colors
   " to be used in the status line (otherwise the background color won't match
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
-  highlight StatusLine guifg=#A8A8A8 guibg=NONE gui=NONE cterm=NONE
+  highlight StatusLine guifg=#A8A8A8 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight! link StatusLineNC Comment
   " Make colors used in statusline consistent
-  highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
-  highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
-  highlight netrwDir guifg=DarkCyan guibg=NONE gui=NONE cterm=NONE
+  highlight ErrorMsg guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight WarningMsg guifg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight netrwDir guifg=DarkCyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   " Underrline never looks good for highlight line
   highlight CursorLine cterm=none
   highlight CursorLineNr cterm=none
 
   " Whitespaces characters
-  highlight NonText guifg=#585858 guibg=NONE gui=NONE cterm=NONE
+  highlight NonText guifg=#585858 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-  highlight MatchParen guifg=DarkCyan guibg=NONE gui=bold cterm=bold
+  highlight MatchParen guifg=DarkCyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan guifg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan guifg=Black gui=NONE cterm=NONE
 
@@ -28,9 +28,9 @@ function! s:OverrideColors()
   highlight Pmenu guibg=#444444 guifg=#A8A8A8 gui=NONE cterm=NONE
 
   if !has('nvim')
-    highlight! VertSplit guibg=NONE guifg=#444444 gui=NONE cterm=NONE
+    highlight! VertSplit guibg=NONE ctermbg=NONE guifg=#444444 gui=NONE cterm=NONE
   else
-    highlight! WinSeparator guibg=NONE guifg=#444444 gui=NONE cterm=NONE
+    highlight! WinSeparator guibg=NONE ctermbg=NONE guifg=#444444 gui=NONE cterm=NONE
   endif
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
@@ -42,16 +42,16 @@ function! s:OverrideColors()
   highlight! link PmenuThumb Pmenu
 
   " Messages
-  highlight ErrorMsg guifg=Red guibg=NONE gui=NONE cterm=NONE
-  highlight WarningMsg guifg=Yellow guibg=NONE gui=NONE cterm=NONE
+  highlight ErrorMsg guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight WarningMsg guifg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
   " Diff
-  highlight DiffAdd guifg=Green guibg=NONE gui=NONE cterm=NONE
-  highlight DiffAdded guifg=Green guibg=NONE gui=NONE cterm=NONE
-  highlight DiffDelete guifg=Red guibg=NONE gui=NONE cterm=NONE
-  highlight DiffRemoved guifg=Red guibg=NONE gui=NONE cterm=NONE
-  highlight DiffChange guifg=LightBlue guibg=NONE gui=NONE cterm=NONE
-  highlight DiffChange guifg=LightBlue guibg=NONE gui=NONE cterm=NONE
+  highlight DiffAdd guifg=Green guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffAdded guifg=Green guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffDelete guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffRemoved guifg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffChange guifg=LightBlue guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffChange guifg=LightBlue guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
   if !has('nvim')
     " Markdown
