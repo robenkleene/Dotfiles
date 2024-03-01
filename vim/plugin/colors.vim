@@ -1,16 +1,19 @@
 function! s:OverrideColors()
-  highlight Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
+
+  " Status Line
   " Don't change the background color in the status line, this allows colors
   " to be used in the status line (otherwise the background color won't match
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
   highlight StatusLine guifg=#A8A8A8 ctermfg=248 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-  highlight! link StatusLineNC Comment
+  highlight StatusLineNC guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight netrwDir guifg=DarkCyan ctermfg=DarkCyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+
   " Underrline never looks good for highlight line
   highlight CursorLine gui=NONE cterm=NONE
   highlight CursorLineNr gui=NONE cterm=NONE
