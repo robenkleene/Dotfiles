@@ -15,3 +15,7 @@
 -- This causes line breaks to be misshandled when copying lines (e.g.,
 -- `yy`)
 -- vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
+
+-- Always show the `signcolumn`, this prevents an issue where the text moves
+-- because indicators are flapping
+vim.opt.signcolumn = "yes"
