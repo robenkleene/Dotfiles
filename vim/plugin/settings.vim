@@ -75,6 +75,9 @@ set expandtab
 " Don't start folded
 " set nofoldenable
 set foldlevelstart=99
+" Default to foldmethod indent because that always works (the default is
+" `manual`)
+set foldmethod=indent
 " Don't let search open folds (useful for determining if a term appears in
 " un-folded text)
 " Make folds really sticky
