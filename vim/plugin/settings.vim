@@ -75,6 +75,8 @@ set expandtab
 " Don't start folded
 " set nofoldenable
 set foldlevelstart=99
+" The above doesn't catch everything for some reason
+set foldlevel=99
 " Default to foldmethod indent because that always works (the default is
 " `manual`)
 set foldmethod=indent
