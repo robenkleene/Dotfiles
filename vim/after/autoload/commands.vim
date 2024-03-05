@@ -1,5 +1,5 @@
 function! commands#Fd(terms) abort
-  let cmd = 'fd ' . escape(a:terms, '%#')
+  let cmd = 'fd ' . a:terms
   let l:result = systemlist(cmd)
   if v:shell_error != 0 || empty(l:result)
     return
@@ -26,12 +26,12 @@ function! commands#Rg(terms) abort
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
-  let cmd = "find ~/.man -type f -name '". escape(a:arglead, '%#') . "*' -exec basename {} '.9' \\;"
+  let cmd = "find ~/.man -type f -name '". a:arglead . "*' -exec basename {} '.9' \\;"
   return systemlist(cmd)
 endfunction
 
 function! commands#Lz(terms) abort
-  let l:result = system('zoxide query ' . escape(a:terms, '%#'))
+  let l:result = system('zoxide query ' . a:terms)
   if v:shell_error != 0
       return
   endif
@@ -43,7 +43,7 @@ function! commands#Lz(terms) abort
 endfunction
 
 function! commands#Z(terms) abort
-  let l:result = system('zoxide query ' . escape(a:terms, '%#'))
+  let l:result = system('zoxide query ' . a:terms)
   if v:shell_error != 0
       return
   endif
