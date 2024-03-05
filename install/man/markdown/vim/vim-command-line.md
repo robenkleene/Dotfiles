@@ -15,6 +15,10 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 `:!echo $VIMRUNTIME`
 ```
 
+# Escaping
+
+- Just using a backslash, e.g., for `\!`, `\#`, or `\%` should be enough (note that this is only necessary for `:!rg` style commands, custom commands like `:Rg` do not require these characters to be escaped)
+
 # Movement
 
 - `<C-b>` / `<C-e>`: Go to beginning/end of line
