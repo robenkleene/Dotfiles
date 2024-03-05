@@ -13,7 +13,14 @@ function! commands#Rg(terms) abort
   let l:original_grepprg = &grepprg
   set grepprg=rg\ \ --vimgrep\ --no-heading
   if len(a:terms)
-    execute "grep " . escape(a:terms, '%#')
+    " Not sure we should be using this, ideally what we want is:
+    " `!rg <terms-including-!%#>`
+    " To include identical results as:
+    " `Rg <terms-including-!%#>`
+    " Haven't been able to make that happen because the `:!rg` variant
+    " requires these to be escaped, but the `:Rg` variant does not
+    " execute "grep " . escape(a:terms, '!%#')
+    execute "grep " . a:terms
   endif
   let &grepprg = l:original_grepprg
 endfunction
