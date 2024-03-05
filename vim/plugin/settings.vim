@@ -30,6 +30,8 @@ set ignorecase
 " Use `\C` to make case-sensitive
 " Or just use `\c` to make search case insensitive
 set smartcase
+" When using completion, prefer matching the same case
+set infercase
 
 " Indent blocks (e.g., after a `{`) automatically
 " set smartindent
