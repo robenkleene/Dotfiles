@@ -75,4 +75,3 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 `expr` / `=`: Typed expression history
 `input` / `@`: Input line history
 `debug` / `>`: Debug command history
-
