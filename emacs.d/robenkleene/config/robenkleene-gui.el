@@ -56,7 +56,7 @@
 ;; (desktop-save-mode 1)
 
 ;; Slow-down mouse scrolling
-(setq mouse-wheel-scroll-amount '(0.001))
+;; (setq mouse-wheel-scroll-amount '(0.001))
 ;; Don't change scrolling speed when scrolling fast
 ;; (setq mouse-wheel-progressive-speed nil)
 
@@ -84,9 +84,6 @@
 ;; The actual setting
 ;; (add-to-list 'default-frame-alist '(alpha 96 96))
 ;; (add-to-list 'default-frame-alist '(alpha 100 100))
-
-;; Open files in new frames by default
-(setq ns-pop-up-frames t)
 
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)

@@ -4,7 +4,7 @@
 
 ;; Window Management
 ;; Make display buffer rules more consistent
-(setq switch-to-buffer-obey-display-actions t)
+;; (setq switch-to-buffer-obey-display-actions t)
 
 ;; Automatically select some types of buffers
 ;; Unnecessary with below automatic switch to buffer
