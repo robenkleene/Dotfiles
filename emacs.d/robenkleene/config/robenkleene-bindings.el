@@ -27,7 +27,6 @@
             'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
-
 ;; Window Management
 (define-key rk/bindings-minor-mode-map (kbd "C-x :")
             'switch-to-minibuffer)
@@ -36,6 +35,8 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; General
+(define-key rk/bindings-minor-mode-map (kbd "C-x j")
+            'dired-jump)
 (defvar dired-jump-other-window-repeat-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "j") #'dired-jump)
