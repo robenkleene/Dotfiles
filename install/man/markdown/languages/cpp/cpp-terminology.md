@@ -1,0 +1,1 @@
+- Variables defined in a class header file are called "Member Variables"
