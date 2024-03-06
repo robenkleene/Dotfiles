@@ -108,15 +108,21 @@
   ;; (view-mode)
   )
 
+(defun rk/z (term)
+  "Z directory."
+  (shell-command-to-string (concat "zoxide query "
+                                   term
+                                   " | tr -d '\n'")
+                           )
+  )
+
 (defun z (term)
   "Jump to directory."
   (interactive
    (list (read-from-minibuffer "Z: ")
          ))
   (rk/safe-find-file
-   (shell-command-to-string (concat "zoxide query "
-                                    term)
-                            )
+   (rk/z term)
    )
   )
 
@@ -126,9 +132,7 @@
    (list (read-from-minibuffer "Z: ")
          ))
   (rk/safe-find-file-other-window
-   (shell-command-to-string (concat "zoxide query "
-                                    term)
-                            )
+   (rk/z term)
    )
   )
 
@@ -138,9 +142,7 @@
    (list (read-from-minibuffer "Z: ")
          ))
   (rk/safe-find-file-other-tab
-   (shell-command-to-string (concat "zoxide query "
-                                    term)
-                            )
+   (rk/z term)
    )
   )
 
@@ -150,9 +152,7 @@
    (list (read-from-minibuffer "Z: ")
          ))
   (rk/safe-find-file-other-frame
-   (shell-command-to-string (concat "zoxide query "
-                                    term)
-                            )
+   (rk/z term)
    )
   )
 
