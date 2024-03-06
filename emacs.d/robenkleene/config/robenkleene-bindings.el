@@ -30,6 +30,16 @@
 ;; Window Management
 (define-key rk/bindings-minor-mode-map (kbd "C-x :")
             'switch-to-minibuffer)
+;; Automatically switch focus to new splits
+(define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
+                                                 (interactive)
+                                                 (split-window-vertically)
+                                                 (other-window 1)))
+(define-key rk/bindings-minor-mode-map "\C-x3"
+  (lambda ()
+    (interactive)
+    (split-window-horizontally)
+    (other-window 1)))
 
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
