@@ -23,56 +23,49 @@
 (require 'robenkleene-alias)
 
 ;; Config
+(require 'robenkleene-bindings)
 (require 'robenkleene-config)
-(require 'robenkleene-window-management)
+(require 'robenkleene-ido)
 (require 'robenkleene-search)
 (require 'robenkleene-spelling)
-(require 'robenkleene-ido)
-(require 'robenkleene-bindings)
+(require 'robenkleene-troubleshooting)
+(require 'robenkleene-window-management)
+
 (if window-system
     (progn
       (require 'robenkleene-gui)
       (require 'robenkleene-mac)
       )
   (require 'robenkleene-terminal))
-(require 'robenkleene-troubleshooting)
 
 ;; Modes
-(require 'robenkleene-compilation)
-(require 'robenkleene-diff)
 (require 'robenkleene-dired)
-(require 'robenkleene-ediff)
 (require 'robenkleene-eshell)
-(require 'robenkleene-grep)
-(require 'robenkleene-ibuffer)
-(require 'robenkleene-org)
-(require 'robenkleene-prog)
 (require 'robenkleene-shell)
-(require 'robenkleene-text)
 (require 'robenkleene-vc)
 
 ;; Packages
-(require 'robenkleene-diminish)
-(require 'robenkleene-aggressive-indent)
-(require 'robenkleene-editorconfig)
-(require 'robenkleene-page-break-lines)
 (require 'robenkleene-adaptive-wrap)
-(require 'robenkleene-yasnippet)
-(require 'robenkleene-magit)
-(require 'robenkleene-wgrep)
+(require 'robenkleene-aggressive-indent)
+(require 'robenkleene-diminish)
+(require 'robenkleene-editorconfig)
 (require 'robenkleene-eglot)
 (require 'robenkleene-evil)
+(require 'robenkleene-magit)
+(require 'robenkleene-page-break-lines)
+(require 'robenkleene-wgrep)
+(require 'robenkleene-yasnippet)
 
 ;; Completion
-(require 'robenkleene-vertico)
-(require 'robenkleene-orderless)
 (require 'robenkleene-consult)
 (require 'robenkleene-embark)
 (require 'robenkleene-marginalia)
+(require 'robenkleene-orderless)
+(require 'robenkleene-vertico)
 
 ;; Theme
-(require 'robenkleene-modus)
 (require 'robenkleene-ef-themes)
+(require 'robenkleene-modus)
 (require 'robenkleene-override-theme)
 
 ;; Languages
@@ -83,6 +76,7 @@
 (require 'robenkleene-languages)
 (require 'robenkleene-lua)
 (require 'robenkleene-markdown)
+(require 'robenkleene-org)
 (require 'robenkleene-rust)
 (require 'robenkleene-swift)
 (require 'robenkleene-typescript)
