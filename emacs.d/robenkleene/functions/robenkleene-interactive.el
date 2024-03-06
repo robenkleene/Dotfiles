@@ -22,55 +22,10 @@
 
 ;; Mac OS
 
-(defun repla-open-file ()
-  "Open file in Repla."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "repla "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    )
-  )
-
-(defun reveal-in-finder ()
-  "Open a new Finder window at the current path."
-  (interactive)
-  (if (buffer-file-name)
-      (shell-command (concat "open -R "
-                             (shell-quote-argument buffer-file-name))
-                     )
-    (shell-command "open .")
-    )
-  )
-
-;; Cd
-
-(defun cd-hg ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "hg root 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
-(defun cd-git ()
-  "Got to the project root."
-  (interactive)
-  (let ((dir (shell-command-to-string
-              "git rev-parse --show-toplevel 2> /dev/null | tr -d '\n'")))
-    (if dir
-        (find-file dir)
-      )
-    )
-  )
-
 ;; Kill
 
-(defun kill-grep ()
-  "Kill grep."
+(defun grep-line ()
+  "grep for current line."
   (interactive)
   (if buffer-file-name
       (let* (
@@ -79,7 +34,7 @@
              (command (concat path ":" line-number))
              )
         (message "%s" command)
-        (kill-new command)
+        command
         )
     ))
 
@@ -90,7 +45,7 @@
   (other-window 1)
   )
 
-(defun rk/refresh-tags ()
+(defun tags-refresh ()
   "Load the tags file relative to the current buffer."
   (interactive)
   (let ((tags-file (locate-dominating-file default-directory "TAGS")))
@@ -100,7 +55,7 @@
     )
   )
 
-(defun rk/pwd ()
+(defun pwd-safe ()
   "Return project root."
   (interactive)
   (if (daemonp)
