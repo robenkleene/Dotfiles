@@ -35,6 +35,7 @@ function! s:OverrideColors()
   else
     highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
+  highlight! link CursorLineNr StatusLine
   highlight! link QuickFixLine Visual
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
