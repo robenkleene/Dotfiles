@@ -4,10 +4,6 @@
 
 (use-package wgrep
   :commands wgrep-change-to-wgrep-mode
-  :bind
-  (:map wgrep-mode-map
-        ("C-c ESC" . 'minibuffer-completion-help)
-        )
   :init
   (setq wgrep-auto-save-buffer t)
   (with-eval-after-load "grep"

@@ -12,33 +12,10 @@
         )
   :init
   (vertico-mode)
-
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
-
-  ;; Show more candidates
-  (setq vertico-count 15)
-
-  ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
-
-  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  ;; (setq vertico-cycle t)
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
   (use-package savehist
     :init
     (savehist-mode))
-
-  ;; Use `consult-completion-in-region' if Vertico is enabled.
-  ;; Otherwise use the default `completion--in-region' function.
-  ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
-  ;; fails
-  ;; (setq completion-in-region-function
-  ;;       (lambda (&rest args)
-  ;;         (apply (if vertico-mode
-  ;;                    #'consult-completion-in-region
-  ;;                  #'completion--in-region)
-  ;;                args)))
 
   (use-package emacs
     :init
