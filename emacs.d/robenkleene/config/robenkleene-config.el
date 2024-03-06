@@ -33,8 +33,8 @@
 ;; (auto-save-visited-mode 1)
 ;; Automatically save every second
 ;; (setq auto-save-visited-interval 1)
-;; Disable this, just look at the modeline instead
-;; (add-hook 'after-save-hook (lambda () (message "Saved")))
+;; Suppress message when saving
+;; (setq save-silently t)
 
 ;; Re-enabling backups after losing data in a crash
 (setq version-control t     ;; Use version numbers for backups.
@@ -50,9 +50,6 @@
 ;; Auto-save files are specified with `#filename#', it's unclear how
 ;; to organize those.
 (setq create-lockfiles nil)
-
-;; Suppress message when saving
-;; (setq save-silently t)
 
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
@@ -102,9 +99,6 @@
 ;; Set default scratch message to empty, this makes it easy to use the scratch
 ;; buffer in a different mode, e.g., `M-x markdown-mode'
 (setq initial-scratch-message "")
-
-;; Editing & Navigation
-;; (setq shift-select-mode nil)
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
@@ -177,6 +171,7 @@
 ;; Highlight Matching parens
 (show-paren-mode t)
 
+;; Load `TAGS` file automatically
 (advice-add 'xref-find-definitions
             :before
             #'(lambda (identifier)
