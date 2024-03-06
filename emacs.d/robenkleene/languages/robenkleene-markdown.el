@@ -66,20 +66,6 @@
   ;;             'markdown-forward-block)
   (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
 
-  ;; Navigating links
-  (define-key markdown-mode-map (kbd "M-g <tab>") 'markdown-next-link)
-  (define-key markdown-mode-map (kbd "M-g TAB") 'markdown-next-link)
-  (define-key markdown-mode-map (kbd "M-g <backtab>") 'markdown-previous-link)
-  (defvar markdown-link-repeat-map
-    (let ((map (make-sparse-keymap)))
-      (define-key map (kbd "<tab>") #'markdown-next-link)
-      (define-key map (kbd "<backtab>") #'markdown-previous-link)
-      (define-key map (kbd "n") #'markdown-next-link)
-      (define-key map (kbd "p") #'markdown-previous-link)
-      map))
-  (dolist (cmd '(markdown-next-link markdown-previous-link))
-    (put cmd 'repeat-map 'markdown-link-repeat-map))
-
   (defvar markdown-outline-repeat-map
     (let ((map (make-sparse-keymap)))
       (define-key map (kbd "u") #'markdown-outline-up)

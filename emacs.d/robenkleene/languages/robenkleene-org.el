@@ -64,39 +64,28 @@
   ;; Bindings
   ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
   ;; Disable `org-mode' keys that conflict with basic text editing
-  (define-key org-mode-map (kbd "M-<left>") nil)
-  (define-key org-mode-map (kbd "M-<right>") nil)
-  (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
-  (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
-  (define-key org-mode-map (kbd "M-S-<left>") nil)
-  (define-key org-mode-map (kbd "M-S-<right>") nil)
-  (define-key org-mode-map (kbd "S-<down>") nil)
-  (define-key org-mode-map (kbd "S-<up>") nil)
-  (define-key org-mode-map (kbd "S-<left>") nil)
-  (define-key org-mode-map (kbd "S-<right>") nil)
+  ;; (define-key org-mode-map (kbd "M-<left>") nil)
+  ;; (define-key org-mode-map (kbd "M-<right>") nil)
+  ;; (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
+  ;; (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
+  ;; (define-key org-mode-map (kbd "M-S-<left>") nil)
+  ;; (define-key org-mode-map (kbd "M-S-<right>") nil)
+  ;; (define-key org-mode-map (kbd "S-<down>") nil)
+  ;; (define-key org-mode-map (kbd "S-<up>") nil)
+  ;; (define-key org-mode-map (kbd "S-<left>") nil)
+  ;; (define-key org-mode-map (kbd "S-<right>") nil)
+
   (define-key org-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key org-mode-map (kbd "M-}")
               'rk/forward-block)
+
   (define-key org-mode-map (kbd "C-c C-u")
               'rk/org-up-heading)
   ;; The default binding for this is `mark-defun' which isn't useful, this
   ;; binding will mark just the source code of a source block
   (define-key org-mode-map (kbd "C-M-h")
               'org-babel-mark-block)
-  ;; Navigating links
-  (define-key org-mode-map (kbd "M-g <tab>") 'org-next-link)
-  (define-key org-mode-map (kbd "M-g TAB") 'org-next-link)
-  (define-key org-mode-map (kbd "M-g <backtab>") 'org-previous-link)
-  (defvar org-link-repeat-map
-    (let ((map (make-sparse-keymap)))
-      (define-key map (kbd "<tab>") #'org-next-link)
-      (define-key map (kbd "<backtab>") #'org-previous-link)
-      (define-key map (kbd "n") #'org-next-link)
-      (define-key map (kbd "p") #'org-previous-link)
-      map))
-  (dolist (cmd '(org-next-link org-previous-link))
-    (put cmd 'repeat-map 'org-link-repeat-map))
 
   (org-babel-do-load-languages 'org-babel-load-languages
                                '(
