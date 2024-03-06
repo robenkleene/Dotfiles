@@ -35,7 +35,7 @@ if [[ -n "${INSIDE_EMACS:-}" ]]; then
   if command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
     tee >(pbcopy) | tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
   else
-    tmux loadb - || cat  > /tmp/robenkleene.transient/clipboard
+    tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   tmux loadb -

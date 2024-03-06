@@ -4,31 +4,29 @@
 
 ;; This adds a lot of latency, can I get away without it?
 ;; Only enable if macOS clipboard commands or `tmux' pasteboard are available
-(if (or (getenv "TMUX") (rk/system-is-mac))
-    (progn
-      ;; Need to store the last paste because the function should only return a value
-      ;; if it's different than the last paste
-      (setq rk/last-paste nil)
-      (defun rk/safepaste (text &optional push)
-        (setenv "INSIDE_EMACS" "1")
-        (let (
-              (process-connection-type nil)
-              )
-          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "safecopy")))
-            (unless (string))
-            (process-send-string proc text)
-            (process-send-eof proc)))
-        (setq rk/last-paste text)
-        )
+(progn
+  ;; Need to store the last paste because the function should only return a value
+  ;; if it's different than the last paste
+  (setq rk/last-paste nil)
+  (defun rk/safepaste (text &optional push)
+    (setenv "INSIDE_EMACS" "1")
+    (let (
+          (process-connection-type nil)
+          )
+      (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
+        (unless (string))
+        (process-send-string proc text)
+        (process-send-eof proc)))
+    (setq rk/last-paste text)
+    )
 
-      (defun rk/safecopy ()
-        (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 safepaste")))
-          (unless (string= copied-text rk/last-paste)
-            copied-text)))
+  (defun rk/safecopy ()
+    (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
+      (unless (string= copied-text rk/last-paste)
+        copied-text)))
 
-      (setq interprogram-cut-function 'rk/safepaste)
-      (setq interprogram-paste-function 'rk/safecopy)
-      )
+  (setq interprogram-cut-function 'rk/safepaste)
+  (setq interprogram-paste-function 'rk/safecopy)
   )
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
