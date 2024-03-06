@@ -35,10 +35,10 @@ return {
     })
 
     -- Languages
-    -- local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
-    -- if f==nil then
-    require 'lspconfig'.clangd.setup {}
-    -- end
+    local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
+    if f==nil then
+      require 'lspconfig'.clangd.setup {}
+    end
 
     require 'lspconfig'.bashls.setup {}
 

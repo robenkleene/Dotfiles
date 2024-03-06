@@ -26,10 +26,6 @@ require("lazy").setup("plugins", {
   }
 })
 
-local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
-if f~=nil then io.close(f)
-  dofile(vim.env.HOME .. '/.nvim_local.lua')
-end
 vim.cmd([[
 set background=dark
 " `tokyonight` turns back on `termguicolors`
@@ -40,3 +36,8 @@ else
   autocmd VimEnter * ++nested colorscheme quiet
 endif
 ]])
+
+local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
+if f~=nil then io.close(f)
+  dofile(vim.env.HOME .. '/.nvim_local.lua')
+end
