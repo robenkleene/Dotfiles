@@ -25,18 +25,21 @@
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+;; Open files in new frames by default
+(setq ns-pop-up-frames t)
+
 ;; Hide the window title completely, which looks cool
 ;; This works by moving the frame size information to the second line which
 ;; isn't visible
-(setq-default frame-title-format '("\n"))
-(setq ns-use-proxy-icon nil)
+;; (setq-default frame-title-format '("\n"))
+;; (setq ns-use-proxy-icon nil)
 
 (defvar rk/mac-bindings-minor-mode-map (make-keymap))
 
 ;; Selection
-(define-key rk/mac-bindings-minor-mode-map
-            (kbd "s-a")
-            'mark-whole-buffer)
+;; (define-key rk/mac-bindings-minor-mode-map
+;;             (kbd "s-a")
+;;             'mark-whole-buffer)
 
 (global-unset-key (kbd "s-q"))
 (define-key rk/mac-bindings-minor-mode-map
@@ -58,25 +61,25 @@
 
 ;; Editing
 ;; Undo
-(define-key rk/mac-bindings-minor-mode-map
-            (kbd "s-z")
-            'undo-only)
-(define-key rk/mac-bindings-minor-mode-map
-	    (kbd "s-Z")
-	    'undo-redo)
-(define-key rk/mac-bindings-minor-mode-map
-	    (kbd "s-c")
-	    'kill-ring-save)
+;; (define-key rk/mac-bindings-minor-mode-map
+;;             (kbd "s-z")
+;;             'undo-only)
+;; (define-key rk/mac-bindings-minor-mode-map
+;; 	    (kbd "s-Z")
+;; 	    'undo-redo)
+;; (define-key rk/mac-bindings-minor-mode-map
+;; 	    (kbd "s-c")
+;; 	    'kill-ring-save)
 
 ;; Movement
-(define-key rk/mac-bindings-minor-mode-map
-            (kbd "<s-up>") 'beginning-of-buffer)
-(define-key rk/mac-bindings-minor-mode-map
-  (kbd "<s-down>") 'end-of-buffer)
-(define-key rk/mac-bindings-minor-mode-map
-	    (kbd "<s-left>") 'beginning-of-visual-line)
-(define-key rk/mac-bindings-minor-mode-map
-	    (kbd "<s-right>") 'end-of-visual-line)
+;; (define-key rk/mac-bindings-minor-mode-map
+;;             (kbd "<s-up>") 'beginning-of-buffer)
+;; (define-key rk/mac-bindings-minor-mode-map
+;;   (kbd "<s-down>") 'end-of-buffer)
+;; (define-key rk/mac-bindings-minor-mode-map
+;; 	    (kbd "<s-left>") 'beginning-of-visual-line)
+;; (define-key rk/mac-bindings-minor-mode-map
+;; 	    (kbd "<s-right>") 'end-of-visual-line)
 
 
 ;; Mode

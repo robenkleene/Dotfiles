@@ -10,6 +10,7 @@
     (if (called-interactively-p 'any)
         (call-interactively func)
       (apply func args))))
+
 (defun rk/ido-advice-disable (command)
   "Disable IDO when command COMMAND is called."
   (advice-add command :around #'rk/ido-call-disabled))
@@ -143,7 +144,6 @@
     )
   )
 
-
 ;; Z
 
 (defun rk/ido-z ()
@@ -164,7 +164,7 @@
               )
             project-files)
       (rk/safe-find-file (gethash (ido-completing-read "Find z: " ido-list)
-                                           key-to-path))
+                                  key-to-path))
       )
     )
   )

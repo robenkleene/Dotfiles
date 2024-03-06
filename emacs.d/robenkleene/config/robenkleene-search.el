@@ -15,7 +15,7 @@
 ;;     (ad-activate 'isearch-search)))
 
 ;; Use these motions instead of automatically wrapping
-(setq isearch-allow-motion t)
+;; (setq isearch-allow-motion t)
 
 ;; Make `isearch' repeatable, but this makes editing the string after a search
 ;; starts harder
