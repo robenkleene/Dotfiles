@@ -23,7 +23,9 @@ while getopts ":sh" option; do
   esac
 done
 
-if [[ -n "${TMUX:-}" ]] && [[ -z "${INSIDE_EMACS:-}" ]]; then
+if [[ -n "${INSIDE_EMACS:-}" ]]; then
+  TERM=xterm-256color tmux saveb - || cat /tmp/robenkleene.transient/clipboard 2>/dev/null
+elif [[ -n "${TMUX:-}" ]]; then
   TERM=xterm-256color tmux saveb -
 elif [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
   pbpaste
