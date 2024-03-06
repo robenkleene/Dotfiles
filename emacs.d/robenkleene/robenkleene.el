@@ -38,18 +38,18 @@
 (require 'robenkleene-troubleshooting)
 
 ;; Modes
-(require 'robenkleene-org)
 (require 'robenkleene-compilation)
-(require 'robenkleene-grep)
-(require 'robenkleene-prog)
-(require 'robenkleene-text)
-(require 'robenkleene-dired)
-(require 'robenkleene-ibuffer)
-(require 'robenkleene-eshell)
-(require 'robenkleene-shell)
 (require 'robenkleene-diff)
-(require 'robenkleene-vc)
+(require 'robenkleene-dired)
 (require 'robenkleene-ediff)
+(require 'robenkleene-eshell)
+(require 'robenkleene-grep)
+(require 'robenkleene-ibuffer)
+(require 'robenkleene-org)
+(require 'robenkleene-prog)
+(require 'robenkleene-shell)
+(require 'robenkleene-text)
+(require 'robenkleene-vc)
 
 ;; Packages
 (require 'robenkleene-diminish)
