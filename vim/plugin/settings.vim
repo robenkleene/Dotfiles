@@ -58,7 +58,7 @@ set list
 " Actually setting clipboard this way doesn't use number registers either
 " set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
-" set pumheight=10
+set pumheight=20
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
 " For state restoration
@@ -95,7 +95,10 @@ set foldmethod=indent
 " correct by going to a directory with matching filenames and trying `:e
 " <term><tab>`
 set wildmode=longest:full,full
-set completeopt+=longest
+" This is causing an issue where the text to complete gets deleted
+" It also sometimes just looks ugly like the text for the full match shows for
+" an instant and then gets deleted
+" set completeopt+=longest
 " Use a vertical wildmenu
 " set wildoptions=pum
 " Show column vertical line
