@@ -1,6 +1,8 @@
 - `C-x k`: Kill buffer
 - `C-x C-b`: List buffers
-- `C-x C-f`: Open file
+- `C-x C-f`: Find file
+- `C-x 4 C-f`: Find file other window
+- `C-x 5 C-f`: Find file other frame
 - `C-x C-s`: Save buffer
 
 # State Restoration
