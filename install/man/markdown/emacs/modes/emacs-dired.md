@@ -1,3 +1,6 @@
+- `C-x C-j`: Dired jump
+- `C-x 4 C-j`: Dired jump other window
+- `C-x 5 C-j`: Dired jump other frame
 - `^`: Up directory
 - `+`: Create directory
 - `C-x C-f`: Create a new file (`ido-mode` interferes with inserting spaces in a filename, to get around those use `C-f` to drop down to the default `find-file` interface)
