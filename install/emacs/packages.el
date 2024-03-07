@@ -16,6 +16,7 @@
       (package-initialize))
     (require 'use-package)))
 (package-autoremove)
+(package-refresh-contents)
 ;; (setq use-package-always-ensure t)
 (dolist (package package-selected-packages)
   (package-install package))
