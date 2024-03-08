@@ -87,8 +87,10 @@ zle -N down-line-or-beginning-search
 # that has no affect on the `BUFFER`, then commands will restart as a search,
 # typically causing the history back and forward keys to appear not to work,
 # because they are now performing a search
-bindkey -e '^P' up-line-or-beginning-search
-bindkey -e '^N' down-line-or-beginning-search
+# Don't bind '^P' and '^N' Vim doesn't bind these either, they just do normal
+# history traversal
+# bindkey -e '^P' up-line-or-beginning-search
+# bindkey -e '^N' down-line-or-beginning-search
 if [[ -n "${key[Up]}" ]]; then
   bindkey -e "${key[Up]}" up-line-or-beginning-search
 fi
