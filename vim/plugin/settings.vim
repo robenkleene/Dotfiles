@@ -69,8 +69,9 @@ set viewoptions-=curdir
 set viewoptions-=folds
 set sessionoptions-=curdir
 " set viewoptions-=blank
-" set sessionoptions-=options
 set sessionoptions-=folds
+set sessionoptions+=options
+set sessionoptions+=localoptions
 " set sessionoptions-=blank
 " Prefer spaces to tabs
 set expandtab
