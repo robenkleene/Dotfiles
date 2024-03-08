@@ -17,7 +17,8 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 
 # Escaping
 
-- Just using a backslash, e.g., for `\!`, `\#`, or `\%` should be enough (note that this is only necessary for `:!rg` style commands, custom commands like `:Rg` do not require these characters to be escaped)
+- To pass `!`, `#`, `%` to a shell command, which trigger it's Vim command-line meaning, just escape it with a backslash: `\!`, `\#`, or `\%` (note that this is only necessary for `:!rg` style commands, custom commands like `:Rg` do not require these characters to be escaped)
+- To use a `|` after a shell command in Vim, e.g., to run `0r !git diff` then `cd ..` on one command line insert a `<NL>` between the two commands with `<C-v><C-j>` (see `h :bar`)
 
 # Movement
 
@@ -60,7 +61,7 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 
 # Multiple Commands
 
-- `echo "hello" | echo "world"
+- `echo "hello" | echo "world"`
 
 # History
 
