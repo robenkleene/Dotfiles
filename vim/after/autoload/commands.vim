@@ -88,3 +88,32 @@ function! commands#P(cmd) range abort
 
   let @@ = l:save
 endfunction
+
+function! commands#Qfput(reg) abort
+  let l:reg = a:reg
+  if a:reg == ''
+    if match(&clipboard, 'unnamedplus') != -1
+      let l:reg = '+'
+    elsif match(&clipboard, 'unnamed') != -1
+      let l:reg = '*'
+    else
+      let l:reg = '"'
+    endif
+  endif
+  new
+  execute 'put '.l:reg
+  silent g/^\s*$/d
+  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
+  " Clear existing quickfix list
+  if len(getqflist())
+    cexpr []
+  endif
+  cbuffer
+  if len(getqflist())
+    bprevious
+    bdelete
+    crewind
+  else
+    bdelete
+  endif
+endfunction
