@@ -16,8 +16,8 @@
       (package-initialize))
     (require 'use-package)))
 (package-autoremove)
-(package-refresh-contents)
+;; Do upgrade early because this also does a refresh
+(package-upgrade-all)
 ;; (setq use-package-always-ensure t)
 (dolist (package package-selected-packages)
   (package-install package))
-(package-upgrade-all)
