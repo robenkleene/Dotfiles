@@ -29,7 +29,6 @@
 ;;   ;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 ;;   )
 
-
 (provide 'robenkleene-prog)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

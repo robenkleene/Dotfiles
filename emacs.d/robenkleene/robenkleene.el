@@ -79,6 +79,7 @@
 (require 'robenkleene-swift)
 (require 'robenkleene-text)
 (require 'robenkleene-typescript)
+(require 'robenkleene-yaml)
 
 (provide 'robenkleene)
 ;; Local Variables:
