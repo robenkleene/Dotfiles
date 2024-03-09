@@ -18,18 +18,7 @@
 
   (define-key dired-mode-map (kbd "C-c .") 'rk/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
-  ;; Disable `dired' defaulting to current file completed in `find-file`
-  (define-key dired-mode-map (kbd "C-x C-f")
-    (lambda () (interactive) (call-interactively 'find-file)))
-  (define-key dired-mode-map (kbd "M-o")
-    (lambda () (interactive) (call-interactively 'find-file)))
 
-  ;; (define-key dired-mode-map (kbd "-") 'dired-jump)
-  (defun rk/dired-open-files (&optional arg)
-    "Open marked files."
-    (interactive)
-    (dired-do-shell-command "open" nil (dired-get-marked-files))
-    )
   ;; Suppress error message
   (defvar dired-use-ls-dired)
   (setq dired-use-ls-dired nil)
@@ -71,6 +60,7 @@
   ;; Add `h' for human readable file sizes
   (setq dired-listing-switches "-alh")
   )
+
 (add-hook 'dired-mode-hook
           (lambda ()
             ;; Some attempts to use the default `find-file' behavior in Dired to

@@ -16,6 +16,7 @@
 
   ;; Hide leading asterisks
   (setq org-startup-indented t)
+  ;; Add WIP mode
   ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
   ;; Disable spell check in code blocks
   (defadvice org-mode-flyspell-verify
@@ -57,7 +58,6 @@
   ;; Always follow the current agenda item in the other window, doesn't work
   ;; nicely with evil
   ;; (setq org-agenda-start-with-follow-mode t)
-
 
   (setq org-agenda-window-setup 'current-window)
 
