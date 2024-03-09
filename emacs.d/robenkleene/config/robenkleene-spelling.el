@@ -6,8 +6,6 @@
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
 
-;; This is way too noisy
-;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (setq flyspell-issue-message-flag nil)
 ;; Don't prompt when saving a word to the dictionary
 (setq ispell-silently-savep t)
