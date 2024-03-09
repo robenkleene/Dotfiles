@@ -2,58 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Window Management
-;; Make display buffer rules more consistent
-;; (setq switch-to-buffer-obey-display-actions t)
-
-;; Automatically select some types of buffers
-;; Unnecessary with below automatic switch to buffer
-;; But still helps because it's less buggy
-;; (setq help-window-select t)
-
-;; Just automatically always select new buffers
-;; This works better than below `defadvice display-buffer' method with `magit',
-;; otherwise seems identical
-;; This makes `next-error' to cycle through grep matches always open in a new
-;; window
-;; (defun rk/switch-to-buffer (buffer alist)
-;;   (let* (
-;;          (window (display-buffer-reuse-window
-;;                   buffer alist))
-;;          ;; With two frames side-by-side, this will open the buffer in both
-;;          ;; frames!?
-;;          ;; (window (or window (display-buffer-use-least-recent-window
-;;          ;;                     buffer alist)))
-;;          (window (or window (display-buffer-pop-up-window
-;;                              buffer alist)))
-;;          ;; (window (or window (get-buffer-window buffer)))
-;;          )
-;;     (if (window-live-p window)
-;;         (select-window window)
-;;       )
-;;     )
-;;   )
-;; (setq display-buffer-alist
-;;       '(
-;;         ("[ ]?[*][^*]+[*]" (rk/switch-to-buffer))
-;;         )
-;;       )
-
-;; Theoretically this is better than the above, because at least sometimes this
-;; should re-use buffers?
-;; (defadvice display-buffer (after rk/display-buffer-select (buffer &optional action frame) activate)
-;;   "Wrapper function description."
-;;   (if buffer
-;;       (let (
-;;             (window (get-buffer-window buffer))
-;;             )
-;;         (if (window-live-p window)
-;;             (select-window window)
-;;           )
-;;         )
-;;     )
-;;   )
-
 ;; Don't show tab bar for one tab
 ;; This causes the echo area to disappear when a new frame is added
 ;; (if window-system
@@ -100,27 +48,6 @@
       )
      'face (funcall tab-bar-tab-face-function tab))))
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
-;; Don't show the file name in the mode line, because it's already in the tab
-;; Actually keep this because it still helps when you have a file in a separate
-;; split
-;; (setq-default mode-line-format (remove 'mode-line-buffer-identification mode-line-format))
-
-;; Removing spacing in the mode line
-;; This results in too many visual issues
-;; (setq-default mode-line-format '("%e" mode-line-front-space
-;;                                  (:propertize
-;;                                   ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote)
-;;                                   display
-;;                                   (min-width
-;;                                    (5.0)))
-;;                                  mode-line-frame-identification
-;;                                  mode-line-buffer-identification
-;;                                  mode-line-position
-;;                                  " "
-;;                                  mode-line-modes
-;;                                  mode-line-misc-info
-;;                                  mode-line-end-spaces
-;;                                  ))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:

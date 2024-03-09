@@ -60,23 +60,12 @@
 ;; Offset the number by two spaces to work around some weird fringe glitch
 ;; (setq linum-format "  %d ")
 ;; (global-display-line-numbers-mode 1)
-;; Only show line numbers in programming modes
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-;; Don't show line numbers in GUI mode because of that bug where the line with
-;; the cursor sometimes gets offset slightly
-;; (unless window-system
-;;   (global-display-line-numbers-mode 1)
-;;   ;; This looks janky
-;;   ;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-;;   )
 
 ;; Show cursor position
 (column-number-mode)
 
 ;; Show trailing white space
 ;; (setq-default show-trailing-whitespace t)
-(add-hook 'prog-mode-hook (lambda () (setq-local show-trailing-whitespace t)))
-(add-hook 'text-mode-hook (lambda () (setq-local show-trailing-whitespace t)))
 ;; (global-whitespace-mode)
 (setq whitespace-style (quote (
                                face
@@ -87,12 +76,6 @@
                                space-before-tab
                                space-after-tab
                                )))
-
-;; Highlight Keywords
-(add-hook 'prog-mode-hook 'rk/highlight-keywords)
-
-;; Fill Column
-(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
@@ -223,9 +206,6 @@
 
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
-
-;; Allow project roots to be overridden with a `.project' file
-(add-hook 'project-find-functions #'rk/project-override)
 
 ;; Automatically revert unmodified buffers
 ;; This was causing the cursor to jump randomly after saving

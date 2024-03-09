@@ -74,6 +74,7 @@
 (require 'robenkleene-lua)
 (require 'robenkleene-markdown)
 (require 'robenkleene-org)
+(require 'robenkleene-prog)
 (require 'robenkleene-rust)
 (require 'robenkleene-swift)
 (require 'robenkleene-text)
