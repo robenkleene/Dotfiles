@@ -56,6 +56,7 @@
 
 (define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell-other-window)
 
+;; Z
 (define-key rk/bindings-minor-mode-map (kbd "M-g z")
             'z)
 (define-key rk/bindings-minor-mode-map (kbd "C-x 4 z")

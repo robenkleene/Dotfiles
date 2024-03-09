@@ -233,23 +233,12 @@
 (setq global-auto-revert-non-file-buffers t)
 ;; Auto-revert more quickly
 (setq auto-revert-interval 1)
-;; Suppress message that happens every time a buffer gets reverted
-;; (setq auto-revert-verbose nil)
-;; Remove messages about saving when a file on disk has changed
-(setq revert-without-query '(".*"))
 
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
 
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
-;; Wrap in text modes
-(add-hook 'text-mode-hook (lambda ()
-                            (set 'truncate-lines nil)
-                            ))
-
-;; Use `completion' if line is already indented
-(setq tab-always-indent 'complete)
 
 ;; Always prefer newer `.el' file if there's an older `.elc' file
 (setq load-prefer-newer t)
@@ -274,40 +263,11 @@
 ;; disabled by default)
 (setq disabled-command-function nil)
 
-;; Highlight the current line
-;; This makes it way easier to find the cursor in buffers with complicated
-;; colors like `diff'
-;; (global-hl-line-mode 1)
-
 ;; Make new buffers use `text-mode'
 (setq-default major-mode 'text-mode)
 
 ;; Don't blink the cursor
 (blink-cursor-mode 0)
-
-(with-eval-after-load 'shell
-  (define-key shell-mode-map (kbd "q") 'quit-window)
-  )
-
-;; Treat `-' and `_' as part of words for all modes except Emacs Lisp
-;; (add-hook 'prog-mode-hook
-;;           (lambda ()
-;;             (unless (derived-mode-p 'emacs-lisp-mode)
-;;               (progn
-;;                 (modify-syntax-entry ?_ "w")
-;;                 (modify-syntax-entry ?- "w")
-;;                 ))))
-;; (add-hook 'text-mode-hook
-;;           (lambda ()
-;;             (modify-syntax-entry ?_ "w")
-;;             (modify-syntax-entry ?- "w")
-;;             ))
-
-;; Abbrev
-;; Not using these yet
-;; (setq save-abbrevs nil)
-;; Use abbreviations
-;; (set-default 'abbrev-mode t)
 
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)

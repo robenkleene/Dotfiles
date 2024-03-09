@@ -76,6 +76,7 @@
 (require 'robenkleene-org)
 (require 'robenkleene-rust)
 (require 'robenkleene-swift)
+(require 'robenkleene-text)
 (require 'robenkleene-typescript)
 
 (provide 'robenkleene)
