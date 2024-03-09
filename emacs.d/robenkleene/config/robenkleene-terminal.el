@@ -58,7 +58,7 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
-(unless (rk/system-is-mac)
+(unless (string-equal system-type "darwin")
   (setq browse-url-browser-function 'eww-browse-url))
 
 ;; By default, there's a bunch of `-' at the end of the modeline, remove these

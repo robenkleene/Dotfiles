@@ -2,6 +2,29 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun rk/make-frame-with-current-frame ()
+  "Make a new frame the same size as the current frame."
+  (interactive)
+  (let* ((frame (selected-frame))
+         (left (frame-parameter frame 'left))
+         (left (if (consp left)
+                   (eval left)
+                 left))
+         (top (frame-parameter frame 'top))
+         (width (frame-width frame))
+         (height (frame-height frame))
+         )
+    (let ((frame (make-frame
+                  `(
+                    (left . ,(+ left 30))
+                    (top . ,(+ top 30))
+                    (width . ,width)
+                    (height . ,height)
+                    ))))
+      (select-frame-set-input-focus frame))
+    )
+  )
+
 (defun rk/forward-block (&optional n)
   "Move to next text block N."
   (interactive "p")

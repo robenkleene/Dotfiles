@@ -55,46 +55,14 @@
 ;; Toggle save
 ;; (desktop-save-mode 1)
 
-;; Slow-down mouse scrolling
-;; (setq mouse-wheel-scroll-amount '(0.001))
-;; Don't change scrolling speed when scrolling fast
-;; (setq mouse-wheel-progressive-speed nil)
-
-;; These make windows jump around when restoring desktop state
-;; (setq-default initial-frame-alist
-;;               '(
-;;                 (width . 80)
-;;                 (height . 48)
-;;                 ))
-;; (setq-default default-frame-alist
-;;               '(
-;;                 (width . 80)
-;;                 (height . 48)
-;;                 ))
 (add-to-list 'default-frame-alist
              '(vertical-scroll-bars . nil))
 (add-to-list 'initial-frame-alist
              '(vertical-scroll-bars . nil))
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
-;; Transparency
-;; For testing the current window (leave commented out)
-;; (set-frame-parameter (selected-frame) 'alpha '(100 100))
-;; (set-frame-parameter (selected-frame) 'alpha '(96 96))
-;; The actual setting
-;; (add-to-list 'default-frame-alist '(alpha 96 96))
-;; (add-to-list 'default-frame-alist '(alpha 100 100))
-
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
-
-;; Note this doesn't work in Terminal Emacs
-;; Disabled because this makes hitting escape close splits.
-;; (global-set-key [escape] 'keyboard-escape-quit)
-;; This only works for isearch
-;; (define-key minibuffer-local-map (kbd "ESC") 'keyboard-escape-quit)
-;; This one works
-;; (define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;
 
 ;; Hide line break indicator
 (setf (cdr (assq 'continuation fringe-indicator-alist))

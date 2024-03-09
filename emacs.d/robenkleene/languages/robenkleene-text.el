@@ -2,9 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Wrap in text modes
 (add-hook 'text-mode-hook (lambda ()
+                            ;; Wrap in text modes
                             (set 'truncate-lines nil)
+                            ;; Spelling
+                            (flyspell-mode)
+                            ;; Show trailing whitespace
+                            (setq-local show-trailing-whitespace t)
                             ))
 
 (provide 'robenkleene-text)

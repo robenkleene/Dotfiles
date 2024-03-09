@@ -5,8 +5,6 @@
 ;; Spelling
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
-;; Disable in favor of jinx
-(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; This is way too noisy
 ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)

@@ -1,3 +1,5 @@
+- `C-x C-space` or `C-x C-@`: Return to previous position
+
 # Buffers
 
 - `C-x b`: Switch to previous buffer (or select another previous buffer)

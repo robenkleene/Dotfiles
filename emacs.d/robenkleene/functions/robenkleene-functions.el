@@ -2,15 +2,32 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun rk/system-is-mac ()
-  "Test if this is a Mac."
-  (string-equal system-type "darwin"))
+(defun today (&optional arg)
+  "Return the current date."
+  (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
+  )
 
-(defun rk/highlight-keywords ()
-  "Highlight keywords."
-  (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
-          1 font-lock-warning-face t)))
+(defun grep-line ()
+  "grep for current line."
+  (if buffer-file-name
+      (let* (
+             (path buffer-file-name)
+             (line-number (number-to-string (line-number-at-pos)))
+             (command (concat path ":" line-number))
+             )
+        (message "%s" command)
+        command
+        )
+    ))
+
+;; For use in functions
+
+(defun rk/z (term)
+  "Z directory."
+  (shell-command-to-string (concat "zoxide query "
+                                   term
+                                   " | tr -d '\n'")
+                           )
   )
 
 (defun rk/grep-parameters (&optional regexp files dir)
@@ -64,18 +81,6 @@
   "Only open a FILE if it exists."
   (when (file-readable-p file)
     (find-file-other-frame file))
-  )
-
-(defun rk/project-override (dir)
-  "Override project function with DIR."
-  (let ((override (locate-dominating-file dir ".project")))
-    (if override
-        (cons 'vc override)
-      nil)))
-
-(defun today (&optional arg)
-  "Return the current date."
-  (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
   )
 
 (provide 'robenkleene-functions)
