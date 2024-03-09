@@ -89,7 +89,7 @@ function! commands#P(cmd) range abort
   let @@ = l:save
 endfunction
 
-function! commands#Qfput(reg) abort
+function! commands#Putqf(reg) abort
   let l:reg = a:reg
   if a:reg == ''
     if match(&clipboard, 'unnamedplus') != -1
