@@ -13,6 +13,10 @@
                              (whitespace-mode 0)
                              ))
 
+(with-eval-after-load 'shell
+  (define-key shell-mode-map (kbd "q") 'quit-window)
+  )
+
 (provide 'robenkleene-shell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
