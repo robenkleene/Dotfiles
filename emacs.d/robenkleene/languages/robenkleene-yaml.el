@@ -1,15 +1,15 @@
-;;; robenkleene-yaml-mode.el --- robenkleene-yaml-mode
+;;; robenkleene-yaml.el --- robenkleene-yaml
 ;;; Commentary:
 ;;; Code:
 
 (use-package yaml-mode
   :mode "\\.yaml\\'")
 
-(provide 'robenkleene-yaml-mode)
+(provide 'robenkleene-yaml)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
-;;; robenkleene-yaml-mode.el ends here
+;;; robenkleene-yaml.el ends here
