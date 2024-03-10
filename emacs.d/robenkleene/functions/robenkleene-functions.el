@@ -30,35 +30,6 @@
                            )
   )
 
-(defun rk/grep-parameters (&optional regexp files dir)
-  "Get the parameters for grep.  REGEXP FILES DIR."
-  (require 'grep)
-  (if (equal current-prefix-arg nil)
-      (list (or regexp (grep-read-regexp))
-            files
-            dir)
-    ;; `grep-files-aliases' defaults to a version of `all' that's
-    ;; incompatible with `rg'
-    (let* ((grep-files-aliases '(("all" . "*.*")))
-           (final-regexp (or regexp (grep-read-regexp)))
-           (final-files (or files (grep-read-files final-regexp)))
-           (final-dir (or dir
-                          (read-directory-name "Base directory: "
-                                               nil
-                                               default-directory
-                                               t)
-                          )
-                      )
-           )
-      (list final-regexp final-files final-dir)
-      )
-    )
-  )
-
-(defvar rk/rg-command)
-(setq rk/rg-command
-      "rg --color=always --colors 'match:fg:white' --colors 'match:bg:cyan' --smart-case --no-heading --line-number <R> <D>")
-
 (defun rk/safe-find-file (file)
   "Only open a FILE if it exists."
   (when (file-readable-p file)
