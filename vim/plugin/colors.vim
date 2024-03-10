@@ -30,6 +30,15 @@ function! s:OverrideColors()
 
   highlight Pmenu guibg=#444444 ctermbg=240 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
 
+  " Diff
+  highlight DiffDelete guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffChange guifg=Blue ctermfg=Blue guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight DiffAdd guifg=LightGreen ctermfg=LightGreen guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  " These won't work here, they'd need to be in `after/syntax/diff.vim`
+  " highlight! link diffAdded DiffAdd
+  " highlight! link diffRemoved DiffDelete
+  " highlight! link diffChanged DiffChange
+
   if !has('nvim')
     highlight! VertSplit guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   else
