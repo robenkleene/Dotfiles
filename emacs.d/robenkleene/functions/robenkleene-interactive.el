@@ -26,11 +26,16 @@
   (interactive
    (list (read-from-minibuffer "Diff: ")
          ))
-  (async-shell-command command "*Diff Shell Command*" "*Diff Shell Command*")
-  (switch-to-buffer
-   "*diff shell command*")
-  (diff-mode)
-  (beginning-of-buffer)
+  (let* ((output-buffer "*Async Shell Command Output*")
+         (process (start-process-shell-command "async-command" output-buffer command)))
+    (set-process-sentinel process
+                          (lambda (proc event)
+                            (when (string-match-p "finished" event)
+                              (with-current-buffer (process-buffer proc)
+                                (diff-mode)
+                                (beginning-of-buffer)
+                                )
+                              (display-buffer (process-buffer proc))))))
   )
 
 (defun z (term)
