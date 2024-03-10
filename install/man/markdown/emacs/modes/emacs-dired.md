@@ -30,6 +30,7 @@
 ## Shell Commands
 
 - `!`: Do shell command on file
+- `M-!`: Do shell command in current directory
 
 ## Dired Write Mode
 
