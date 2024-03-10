@@ -33,6 +33,7 @@
                             (when (string-match-p "finished" event)
                               (with-current-buffer (process-buffer proc)
                                 (diff-mode)
+                                (read-only-mode 1)
                                 (beginning-of-buffer)
                                 )
                               (display-buffer (process-buffer proc))))))
