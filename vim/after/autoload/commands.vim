@@ -1,6 +1,5 @@
-function! commands#Fd(terms) abort
-  let cmd = 'fd ' . a:terms
-  let l:result = systemlist(cmd)
+function! commands#ShArgs(cmd) abort
+  let l:result = systemlist(a:cmd)
   if v:shell_error != 0 || empty(l:result)
     return
   endif
@@ -9,20 +8,18 @@ function! commands#Fd(terms) abort
   execute 'args ' . l:args_list
 endfunction
 
-function! commands#Rg(terms) abort
+function! commands#ShGrep(cmd) abort
   let l:original_grepprg = &grepprg
-  set grepprg=rg\ \ --vimgrep\ --no-heading
-  if len(a:terms)
-    " Not sure we should be using this, ideally what we want is:
-    " `!rg <terms-including-!%#>`
-    " To include identical results as:
-    " `Rg <terms-including-!%#>`
-    " Haven't been able to make that happen because the `:!rg` variant
-    " requires these to be escaped, but the `:Rg` variant does not
-    " execute "grep " . escape(a:terms, '!%#')
-    execute "grep " . a:terms
-  endif
+  execute 'set grepprg='.escape(a:cmd,' ')
+  execute "grep"
   let &grepprg = l:original_grepprg
+endfunction
+
+function! commands#ShDiff(cmd) abort
+  new
+  execute '0r !'.a:cmd
+  norm Gddgg
+  set ft=diff
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
@@ -87,33 +84,4 @@ function! commands#P(cmd) range abort
   execute 'silent noautocmd keepjumps normal! gvp'
 
   let @@ = l:save
-endfunction
-
-function! commands#Putqf(reg) abort
-  let l:reg = a:reg
-  if a:reg == ''
-    if match(&clipboard, 'unnamedplus') != -1
-      let l:reg = '+'
-    elsif match(&clipboard, 'unnamed') != -1
-      let l:reg = '*'
-    else
-      let l:reg = '"'
-    endif
-  endif
-  new
-  execute 'put '.l:reg
-  silent g/^\s*$/d
-  execute "setlocal buftype=nofile bufhidden=hide noswapfile"
-  " Clear existing quickfix list
-  if len(getqflist())
-    cexpr []
-  endif
-  cbuffer
-  if len(getqflist())
-    bprevious
-    bdelete
-    crewind
-  else
-    bdelete
-  endif
 endfunction
