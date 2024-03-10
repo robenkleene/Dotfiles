@@ -26,7 +26,7 @@
   (interactive
    (list (read-from-minibuffer "Diff: ")
          ))
-  (async-shell-command command "*diff shell command*" "*diff shell command*")
+  (async-shell-command command "*Diff Shell Command*" "*Diff Shell Command*")
   (switch-to-buffer
    "*diff shell command*")
   (diff-mode)
