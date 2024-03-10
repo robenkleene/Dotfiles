@@ -4,22 +4,6 @@
 
 ;; Live
 
-(defun rg (regexp &optional files dir)
-  "Search for REGEXP with optional FILES and DIR."
-  (interactive (rk/grep-parameters))
-  (require 'grep)
-  (let ((default-directory (or dir default-directory))
-        (command (grep-expand-template
-                  (if (equal files nil)
-                      rk/rg-command
-                    rk/rg-command-files)
-                  regexp
-                  files))
-        )
-    (compilation-start command 'grep-mode)
-    )
-  )
-
 (defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
@@ -28,22 +12,25 @@
     (switch-to-buffer-other-window buf))
   )
 
-(defun yank-to-grep-buffer ()
-  "Yank to grep buffer."
-  (interactive)
+(defun grep-shell-command (command)
+  "Create grep buffer from COMMAND."
+  (interactive
+   (list (read-from-minibuffer "Grep: ")
+         ))
   (require 'grep)
-  (compilation-start "safepaste" 'grep-mode)
+  (compilation-start command 'grep-mode)
   )
 
-(defun yank-to-diff-buffer (&optional arg)
-  "Yank to diff buffer."
-  (interactive)
+(defun diff-shell-command (command)
+  "Create diff buffer from COMMAND."
+  (interactive
+   (list (read-from-minibuffer "Diff: ")
+         ))
+  (async-shell-command command "*diff shell command*" "*diff shell command*")
   (switch-to-buffer
-   (generate-new-buffer "*diff yank*"))
-  (yank)
+   "*diff shell command*")
   (diff-mode)
   (beginning-of-buffer)
-  (diff-file-next)
   )
 
 (defun z (term)
