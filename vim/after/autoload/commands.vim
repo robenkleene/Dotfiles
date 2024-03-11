@@ -1,4 +1,4 @@
-function! commands#ShArgs(cmd) abort
+function! commands#ShArg(cmd) abort
   let l:result = systemlist(a:cmd)
   if v:shell_error != 0 || empty(l:result)
     return
