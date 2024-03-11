@@ -2,27 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun today (&optional arg)
-  "Return the current date."
+(defun rk/z-add ()
+  "Add file or directory."
   (interactive)
-  (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
-  )
-
-(defun grep-line ()
-  "grep for current line."
-  (interactive)
-  (if buffer-file-name
-      (let* (
-             (path buffer-file-name)
-             (line-number (number-to-string (line-number-at-pos)))
-             (command (concat path ":" line-number))
-             )
-        (message "%s" command)
-        command
-        )
-    ))
-
-;; For use in functions
+  (if (executable-find "z_add")
+      (let ((file default-directory))
+        (when (and file
+                   (stringp file)
+                   (file-readable-p file))
+          (start-process "*z add*" nil "z_add" (expand-file-name file))))))
 
 (defun rk/z (term)
   "Z directory."
