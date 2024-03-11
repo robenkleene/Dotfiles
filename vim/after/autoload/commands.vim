@@ -15,6 +15,13 @@ function! commands#ShGrep(cmd) abort
   let &grepprg = l:original_grepprg
 endfunction
 
+function! commands#ShMake(cmd) abort
+  let l:original_makeprg = &makeprg
+  execute 'set makeprg='.escape(a:cmd,' ')
+  execute "make"
+  let &makeprg = l:original_makeprg
+endfunction
+
 function! commands#ShDiff(cmd) abort
   new
   execute '0r !'.a:cmd
