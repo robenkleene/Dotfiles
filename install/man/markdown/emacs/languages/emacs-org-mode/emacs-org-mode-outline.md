@@ -33,4 +33,3 @@ The outlining keys will create a list item when in used in the context of a list
 ## Deleting
 
 - To delete an item `C-a C-k C-k` or `C-k C-k` at the end of the previous line
-
