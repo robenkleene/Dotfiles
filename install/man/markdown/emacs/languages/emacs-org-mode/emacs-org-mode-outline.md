@@ -34,12 +34,3 @@ The outlining keys will create a list item when in used in the context of a list
 
 - To delete an item `C-a C-k C-k` or `C-k C-k` at the end of the previous line
 
-# Todo
-
-- `S-<left>` / `S-<right>` on a todo: Cycle todo states (`DONE` / `TODO`)
-- `C-c C-t`: Cycle todo state
-- `C-c C-d` / `C-u C-c C-d`: Insert / remove deadline
-- `C-c C-s` / `C-u C-c C-s`: Insert / remove schedule
-- `C-c .`: Change date
-- To make a weekly repeating todo, just add `+7d` to the end of the date, e.g., `2023-05-29 Mon +7d`
-
