@@ -1,0 +1,1 @@
+- `C-x b *scratch*`: Create a new scratch buffer
