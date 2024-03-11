@@ -62,8 +62,6 @@
 To squash or rebase
 
 - `hg histedit`: Interactive history re-order
-- `hg resolve -t internal:other --all`: Accept theirs
-- `hg resolve -t internal:local --all`: Accept ours
 
 ## Split a Commit
 
