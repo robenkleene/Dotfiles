@@ -6,6 +6,15 @@
   :mode ("\\.org\\'" . org-mode)
   :commands (org-store-link)
   :config
+  ;; Setup to allow easily dynamically setting up an `org-agenda' file list Use
+  ;; `C-c [' to add the current org file to the list, this will append it to
+  ;; `org-agenda-files'
+  ;; Default is `~/org`
+  (setq org-directory (concat user-emacs-directory "org"))
+  (setq org-agenda-files (concat org-directory "/agenda.org"))
+  (if (not (file-exists-p org-agenda-files))
+      (make-empty-file org-agenda-files))
+
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist
