@@ -93,7 +93,7 @@ This should be the last entry in eshell-output-filter-functions!"
      )
     )
 
-  (add-hook 'eshell-directory-change-hook 'z-add)
+  (add-hook 'eshell-directory-change-hook 'rk/z-add)
   )
 
 (provide 'robenkleene-eshell)

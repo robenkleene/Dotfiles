@@ -4,11 +4,13 @@
 
 (defun today (&optional arg)
   "Return the current date."
+  (interactive)
   (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
   )
 
 (defun grep-line ()
   "grep for current line."
+  (interactive)
   (if buffer-file-name
       (let* (
              (path buffer-file-name)

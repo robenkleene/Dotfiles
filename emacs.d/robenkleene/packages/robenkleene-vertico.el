@@ -6,9 +6,8 @@
   :commands (vertico-mode)
   :bind
   (:map vertico-map
+        ;; Display possible completions (like `<tab>` for default interface)
         ("?" . 'minibuffer-completion-help)
-        ;; ("C-c <RET>" . 'minibuffer-force-complete-and-exit)
-        ("C-c [?\t]" . 'minibuffer-complete)
         )
   :init
   (vertico-mode)
