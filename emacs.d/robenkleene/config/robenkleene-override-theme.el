@@ -157,7 +157,7 @@
   (set-face-attribute 'nobreak-space nil :inherit 'rk-whitespace :background 'unspecified :underline 'unspecified)
 
   ;; show-paren
-  (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground 'unspecified :bold t)
+  (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground 'unspecified :bold nil)
   (set-face-attribute 'show-paren-mismatch nil :inherit 'rk-error)
 
   ;; Evil Goggle
