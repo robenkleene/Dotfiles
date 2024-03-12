@@ -26,3 +26,7 @@
 1. `zM`: Fold everything
 2. `zr`: Repeat until there's the right level of visibility
 3. `za`: Explore a single node
+
+# Troubleshooting
+
+- For some reason having `indent_size` set for a file type can interfere with `foldmethod=indent`, remove that line from `.editorconfig` to fix
