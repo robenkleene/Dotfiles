@@ -22,6 +22,7 @@ Plug 'tpope/vim-repeat'
 " using implementations of Vim mode that doesn't support this (e.g., in Visual
 " Studio Code)
 " Plug 'machakann/vim-highlightedyank'
+" `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
