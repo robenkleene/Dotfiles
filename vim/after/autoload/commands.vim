@@ -1,4 +1,4 @@
-function! commands#ShArg(cmd) abort
+function! commands#ArgsSh(cmd) abort
   let l:result = systemlist(a:cmd)
   if v:shell_error != 0 || empty(l:result)
     return
@@ -8,21 +8,21 @@ function! commands#ShArg(cmd) abort
   execute 'args ' . l:args_list
 endfunction
 
-function! commands#ShGrep(cmd) abort
+function! commands#GrepSh(cmd) abort
   let l:original_grepprg = &grepprg
   execute 'set grepprg='.escape(a:cmd,' ')
   execute "grep"
   let &grepprg = l:original_grepprg
 endfunction
 
-function! commands#ShMake(cmd) abort
+function! commands#MakeSh(cmd) abort
   let l:original_makeprg = &makeprg
   execute 'set makeprg='.escape(a:cmd,' ')
   execute "make"
   let &makeprg = l:original_makeprg
 endfunction
 
-function! commands#ShDiff(cmd) abort
+function! commands#DiffSh(cmd) abort
   new
   execute '0r !'.a:cmd
   norm Gddgg
