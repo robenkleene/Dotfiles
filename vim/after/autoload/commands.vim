@@ -23,9 +23,13 @@ function! commands#MakeSh(cmd) abort
 endfunction
 
 function! commands#DiffSh(cmd) abort
-  new
-  execute '0r !'.a:cmd
-  norm Gddgg
+  " Neither approach supports `DiffSh git diff %` well, but this one at
+  " least allows `DiffSh git diff #`
+  execute 'new | 0r !'.a:cmd
+  " let l:result = system(a:cmd)
+  " new
+  " put =l:result
+  norm Gddggdd
   set ft=diff
 endfunction
 
