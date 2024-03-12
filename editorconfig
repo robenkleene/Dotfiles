@@ -9,7 +9,13 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
-[*.{js,json,ts}]
+[*.json]
+indent_style = space
+# Use 4 spaces for JSON because that's what `python -m json.tool` uses
+# For some reason just having this set breaks Vim folding JSON files with `foldmethod=indent`
+# indent_size = 4
+
+[*.{js,ts}]
 indent_style = space
 indent_size = 2
 
