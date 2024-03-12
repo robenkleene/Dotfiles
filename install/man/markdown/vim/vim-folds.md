@@ -27,6 +27,10 @@
 2. `zr`: Repeat until there's the right level of visibility
 3. `za`: Explore a single node
 
+# Manual
+
+- Use the `zf` operator to mark a fold, e.g., `zf%` to fold between delimiters
+
 # Troubleshooting
 
 - The maximum number of nested folds supported by Vim is `20`, this is the default, and maximum, value of `foldnestmax`
