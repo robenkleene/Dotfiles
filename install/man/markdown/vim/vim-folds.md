@@ -29,4 +29,4 @@
 
 # Troubleshooting
 
-- For some reason having `indent_size` set for a file type can interfere with `foldmethod=indent`, remove that line from `.editorconfig` to fix
+- The maximum number of nested folds supported by Vim is `20`, this is the default, and maximum, value of `foldnestmax`
