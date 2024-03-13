@@ -10,7 +10,9 @@ endfunction
 
 function! commands#GrepSh(cmd) abort
   let l:original_grepprg = &grepprg
-  execute 'set grepprg='.escape(a:cmd,' ')
+  " Escape `\` so they aren't removed when setting `grepprg`
+  " Setting `grepprg` requires escaping spaces
+  execute 'set grepprg='.escape(a:cmd,' \')
   execute "grep"
   let &grepprg = l:original_grepprg
 endfunction
