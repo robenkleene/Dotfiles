@@ -216,6 +216,10 @@
 ;; Prevent the `Reverting buffer'
 (setq auto-revert-verbose nil)
 
+;; Suppress message when saving, just check for the `**` in the lower-left when
+;; a file is unsaved
+(setq save-silently t)
+
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
 
