@@ -25,7 +25,8 @@ endfunction
 function! commands#DiffSh(cmd) abort
   " Neither approach supports `DiffSh git diff %` well, but this one at
   " least allows `DiffSh git diff #`
-  execute 'new | 0r !'.a:cmd
+  let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
+  execute 'new | 0r !'.l:cmd
   " let l:result = system(a:cmd)
   " new
   " put =l:result
