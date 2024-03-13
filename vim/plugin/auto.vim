@@ -54,18 +54,6 @@ augroup no_whitespace_insert
   autocmd InsertLeave * setlocal list
 augroup END
 
-augroup ft_stdin
-  autocmd!
-  " Don't prompt to save when piped to stdin
-  autocmd StdinReadPost * setlocal buftype=nofile
-augroup END
-
-augroup diff_stdin
-  autocmd!
-  " Make piped diffs read only
-  autocmd StdinReadPost * if &filetype == 'diff' | setlocal readonly nomodifiable | end
-augroup END
-
 augroup nofilename_nofile
   autocmd!
   " Don't prompt for saving buffers with no file

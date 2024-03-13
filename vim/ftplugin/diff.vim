@@ -12,20 +12,21 @@ setlocal foldmethod=expr
 setlocal foldenable
 " Set starting fold level so all folds are open
 setlocal foldlevel=2
+setlocal readonly nomodifiable
 
 nnoremap <silent> <buffer> <localleader>gd :OpenDiff<CR>
 nnoremap <silent> <buffer> <C-w><localleader>d :OpenDiffNew<CR>
 
-function! DiffFold(lnum)
-  let line = getline(a:lnum)
-  if line =~ '^diff'
-    return '>1'
-  elseif line =~ '^@@'
-    return '>2'
-  else
-    return '='
-  endif
-endfunction
+" function! DiffFold(lnum)
+"   let line = getline(a:lnum)
+"   if line =~ '^diff'
+"     return '>1'
+"   elseif line =~ '^@@'
+"     return '>2'
+"   else
+"     return '='
+"   endif
+" endfunction
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort

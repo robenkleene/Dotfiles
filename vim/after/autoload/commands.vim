@@ -33,10 +33,10 @@ function! commands#DiffSh(cmd) abort
   " Reset undo for this buffer
   let l:oldundolevels=&undolevels
   setlocal undolevels=-1
-  setlocal ft=diff
   execute '0r !'.l:cmd
   norm Gddggdd
   let &l:undolevels=l:oldundolevels
+  setlocal ft=diff
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
