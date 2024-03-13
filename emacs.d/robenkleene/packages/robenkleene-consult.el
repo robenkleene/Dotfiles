@@ -17,22 +17,8 @@
          )
   :commands
   (
-   consult-line
-   consult-fd
-   consult-ripgrep
    consult-theme
    )
-  :init
-  ;; Use `consult' for Emacs `ex' (command line) completions, and eshell
-  ;; This causes eshell to complete `./update.sh' to `update.sh' which of course
-  ;; fails
-  ;; This should also work for the minibuffer
-  (setq completion-in-region-function
-        (lambda (&rest args)
-          (apply (if vertico-mode
-                     #'consult-completion-in-region
-                   #'completion--in-region)
-                 args)))
   )
 
 (provide 'robenkleene-consult)
