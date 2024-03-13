@@ -1,6 +1,4 @@
-" setlocal foldexpr=DiffFold(v:lnum)
-" setlocal foldexpr=DiffFold(v:lnum)
-setlocal foldexpr=getline(v:lnum)=~'^diff'?'>1':getline(v:lnum)=~'^@@'?'>2':=
+setlocal foldexpr=getline(v:lnum)=~'^diff'?'>1':getline(v:lnum)=~'^@@'?'>2':'='
 setlocal foldmethod=expr
 " Allow quickly quitting without saving when piping a diff to vim
 " Handled as default for piping now
@@ -17,16 +15,6 @@ setlocal readonly nomodifiable
 nnoremap <silent> <buffer> <localleader>gd :OpenDiff<CR>
 nnoremap <silent> <buffer> <C-w><localleader>d :OpenDiffNew<CR>
 
-" function! DiffFold(lnum)
-"   let line = getline(a:lnum)
-"   if line =~ '^diff'
-"     return '>1'
-"   elseif line =~ '^@@'
-"     return '>2'
-"   else
-"     return '='
-"   endif
-" endfunction
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort
