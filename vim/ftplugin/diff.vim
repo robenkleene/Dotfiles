@@ -1,4 +1,6 @@
-setlocal foldexpr=DiffFold(v:lnum)
+" setlocal foldexpr=DiffFold(v:lnum)
+" setlocal foldexpr=DiffFold(v:lnum)
+setlocal foldexpr=getline(v:lnum)=~'^diff'?'>1':getline(v:lnum)=~'^@@'?'>2':=
 setlocal foldmethod=expr
 " Allow quickly quitting without saving when piping a diff to vim
 " Handled as default for piping now

@@ -26,12 +26,17 @@ function! commands#DiffSh(cmd) abort
   " Neither approach supports `DiffSh git diff %` well, but this one at
   " least allows `DiffSh git diff #`
   let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
-  execute 'new | 0r !'.l:cmd
   " let l:result = system(a:cmd)
   " new
   " put =l:result
+  new
+  " Reset undo for this buffer
+  let l:oldundolevels=&undolevels
+  setlocal undolevels=-1
+  setlocal ft=diff
+  execute '0r !'.l:cmd
   norm Gddggdd
-  set ft=diff
+  let &l:undolevels=l:oldundolevels
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
