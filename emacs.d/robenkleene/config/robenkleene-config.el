@@ -154,7 +154,7 @@
 ;; Highlight Matching parens
 (show-paren-mode t)
 
-;; Load `TAGS` file automatically
+;; Load `TAGS' file automatically
 (advice-add 'xref-find-definitions
             :before
             #'(lambda (identifier)
@@ -213,6 +213,8 @@
 (setq global-auto-revert-non-file-buffers t)
 ;; Auto-revert more quickly
 (setq auto-revert-interval 1)
+;; Prevent the `Reverting buffer'
+(setq auto-revert-verbose nil)
 
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
