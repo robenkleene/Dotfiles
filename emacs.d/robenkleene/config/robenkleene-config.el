@@ -35,6 +35,8 @@
 ;; (setq auto-save-visited-interval 1)
 ;; Suppress message when saving
 ;; (setq save-silently t)
+;; Suppress message every time auto-saving happens
+(setq-default auto-save-no-message t)
 
 ;; Re-enabling backups after losing data in a crash
 (setq version-control t     ;; Use version numbers for backups.
