@@ -7,16 +7,9 @@
 (require 'dired-x)
 
 (with-eval-after-load 'dired
-  (defun rk/dired-toggle-hidden ()
-    "Show/hide hidden files except . and .."
-    (interactive)
-    (setq dired-omit-mode (not dired-omit-mode))
-    (revert-buffer)
-    )
   ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
   ;; (global-set-key (kbd "C-x j") 'dired-jump)
 
-  (define-key dired-mode-map (kbd "C-c .") 'rk/dired-toggle-hidden)
   (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
 
   ;; Suppress error message
