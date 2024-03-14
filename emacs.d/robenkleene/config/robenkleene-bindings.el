@@ -93,6 +93,8 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x u")
             'undo-only)
 
+(define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)
+
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
