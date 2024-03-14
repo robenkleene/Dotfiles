@@ -23,6 +23,8 @@
   (dolist (path-to-prepend paths-to-prepend)
     (add-to-list 'exec-path path-to-prepend))
   )
+;; Make `rg' called from within Emacs use `ripgreprc'
+(setenv "RIPGREP_CONFIG_PATH" (expand-file-name "~/.ripgreprc"))
 
 ;; Start the emacs server if it isn't already running and we're running in
 ;; window mode
