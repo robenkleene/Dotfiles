@@ -26,7 +26,7 @@
 
 ## Rectangular
 
-- `C-x SPC`: Enter rectangular selection mode
+- `C-x SPC`: Enter rectangular selection (block editing) mode
 - `C-x r t` / `string-rectangle`: Prepend each line in select (use `C-M-%` / `query-replace-regexp` to append each line)
 
 # Movement
