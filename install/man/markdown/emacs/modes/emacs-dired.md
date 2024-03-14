@@ -11,6 +11,10 @@
 - `0 w` / `dired-copy-filename-as-kill`: Kill path to file
 - `C-x C-h`: Cycle through human readable file sizes
 
+## Hidden
+
+- `C-x M-o` / `dired-omit-mode`: Show hidden files
+
 ## Mark
 
 - `m` / `u`: Mark / Remove mark
