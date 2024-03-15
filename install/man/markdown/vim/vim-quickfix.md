@@ -1,7 +1,7 @@
 # Navigating
 
-- `:cnext` & `:cprev`: Cycle through matches 
-- `:copen`: Show `quickfix` window 
+- `:cnext` & `:cprev`: Cycle through matches
+- `:[cw]indow`, `:copen`: Show `quickfix` window
 - `:ccl[ose]`: Close `quickfix` window
 - `:cb[uffer]`: Populate the `quickfix` list from the results in the current window
 - `:col[der]`: Go to previous `quickfix` list
