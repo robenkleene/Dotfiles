@@ -11,6 +11,20 @@
     )
   )
 
+(defun get-line-grep ()
+  "grep for current line."
+  (interactive)
+  (if buffer-file-name
+      (let* (
+             (path buffer-file-name)
+             (line-number (number-to-string (line-number-at-pos)))
+             (command (concat path ":" line-number))
+             )
+        (message "%s" command)
+        command
+        )
+    ))
+
 (defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
