@@ -8,7 +8,7 @@ setopt extendedglob
 # as `TAG`
 setopt nocaseglob
 # `cd` just by typing name
-setopt auto_cd
+# setopt auto_cd
 
 # Help
 autoload -Uz run-help
