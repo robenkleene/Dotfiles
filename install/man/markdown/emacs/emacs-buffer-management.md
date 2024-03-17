@@ -1,9 +1,10 @@
 - `C-x k`: Kill buffer
 - `C-x C-b`: List buffers
-- `C-x C-f`: Find file
+- `C-x C-f`: Find file (future history with `M-n` will be populated with the file at point)
 - `C-x 4 C-f`: Find file other window
 - `C-x 5 C-f`: Find file other frame
 - `C-x C-s`: Save buffer
+- `C-x s`: Prompt to save all modified buffers
 
 # State Restoration
 
