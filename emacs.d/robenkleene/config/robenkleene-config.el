@@ -277,6 +277,19 @@
   (define-key view-mode-map (kbd "p") nil)
   )
 
+;; Goto grep line number and use `find-file-at-point' by default
+(defun rk/find-file-at-point-goto-line (ret)
+  "Ignore RET and jump to line number given in `ffap-string-at-point'."
+  (when (and
+         (stringp ffap-string-at-point)
+         (string-match ":\\([0-9]+\\)" ffap-string-at-point))
+    (goto-line (string-to-number (match-string 1 ffap-string-at-point)))
+    )
+  ret)
+(advice-add 'find-file-at-point :filter-return #'rk/find-file-at-point-goto-line)
+;; This also overrides in `dired-mode' which is not desirable
+;; (ffap-bindings)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
