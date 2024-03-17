@@ -287,8 +287,7 @@
     )
   ret)
 (advice-add 'find-file-at-point :filter-return #'rk/find-file-at-point-goto-line)
-;; This also overrides in `dired-mode' which is not desirable
-;; (ffap-bindings)
+(ffap-bindings)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
