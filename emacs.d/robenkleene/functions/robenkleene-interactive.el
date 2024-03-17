@@ -2,25 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun today (&optional arg)
+(defun get-today (&optional arg)
   "Return the current date."
   (interactive)
-  (shell-command-to-string "date +%Y-%m-%d | tr -d '\n'")
+  (let ((result (shell-command-to-string "date +%F | tr -d '\n'")))
+    (message "%s" result)
+    result
+    )
   )
-
-(defun grep-line ()
-  "grep for current line."
-  (interactive)
-  (if buffer-file-name
-      (let* (
-             (path buffer-file-name)
-             (line-number (number-to-string (line-number-at-pos)))
-             (command (concat path ":" line-number))
-             )
-        (message "%s" command)
-        command
-        )
-    ))
 
 (defun eshell-other-window ()
   "Open eshell in other window."
