@@ -56,13 +56,15 @@
 
 (add-hook 'dired-mode-hook
           (lambda ()
-            ;; Some attempts to use the default `find-file' behavior in Dired to
-            ;; make it easy to create a new file. Neither of these work.
+            ;; Don't use `ffap-bindings' in `dired-mode' (use the default
+            ;; `find-file') because make it easy to create a new file. These
+            ;; don't work because `ffap-bindings' redirect `find-file` to the
+            ;; `ffap' versions
             ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
+            ;; (local-set-key (kbd "C-x C-f") #'find-file)
             ;; Free up `M-s f'
             ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
             ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
-            ;; (local-set-key (kbd "C-x C-f") #'find-file)
             ;; Don't emit hidden files by default because the `.' makes it
             ;; really easy to run a shell command on the current file just by
             ;; selecting the `.' and hitting `!'
@@ -73,7 +75,6 @@
             (dired-hide-details-mode)
             ;; Auto-refresh on file system change
             (auto-revert-mode)
-            (setq-local ido-use-filename-at-point nil)
 
             ;; Add to `z' The reason we do this in Emacs `dired-mode', but not
             ;; say `netrw' in Vim is because Vim works more naturally with the

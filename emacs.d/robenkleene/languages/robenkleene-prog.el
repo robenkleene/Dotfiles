@@ -9,6 +9,11 @@
           1 font-lock-warning-face t)))
   )
 
+(with-eval-after-load 'prog-mode
+  ;; Allow following grep line matches
+  (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+  )
+
 (add-hook 'prog-mode-hook (lambda ()
                             ;; Wrap in text modes
                             (display-line-numbers-mode)
