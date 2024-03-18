@@ -65,10 +65,8 @@
             ;; Free up `M-s f'
             ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
             ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
-            ;; Don't emit hidden files by default because the `.' makes it
-            ;; really easy to run a shell command on the current file just by
-            ;; selecting the `.' and hitting `!'
-            ;; (dired-omit-mode)
+            ;; Omit hidden files
+            (dired-omit-mode)
             ;; Hide details (show them with open parentheses)
             ;; Definitely need this because lack of colors in Dired mode means
             ;; it's hard to tell the details from the filename
