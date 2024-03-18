@@ -12,7 +12,6 @@
          ("M-s g" . consult-ripgrep)
          ("M-s f" . consult-fd)
          ;; `find-file-read-only' by default, convention is to rebind this
-         ("C-x C-r" . consult-recent-file)
          (:map dired-mode-map
                ("M-s f" . consult-fd)
                )
