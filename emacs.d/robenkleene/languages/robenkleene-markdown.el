@@ -95,6 +95,9 @@
               ;; Use blank lines to indicate paragraphs
               (setq-local paragraph-start "[[:blank:]]*\n")
               (setq-local paragraph-separate "[[:blank:]]*$")
+              ;; Set backtick as a string delimiter, this makes the `sexp'
+              ;; commands (like `mark-sexp') work with backticks
+              (modify-syntax-entry ?` "\"")
               ;; (modify-syntax-entry ?_ "w")
               ;; (modify-syntax-entry ?- "w")
               ;; Automatically auto-save markdown files
