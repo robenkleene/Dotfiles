@@ -2,5 +2,6 @@
 
 set -euo pipefail
 
-adb shell cd /sdcard/Oculus/Screenshots && rm *.jpg
-adb shell cd /sdcard/Oculus/VideoShots && rm *.mp4
+# The `-f` option suppresses the error if there are no files to delete
+adb shell 'cd /sdcard/Oculus/Screenshots && rm -f *.jpg'
+adb shell 'cd /sdcard/Oculus/VideoShots && rm -f *.mp4'
