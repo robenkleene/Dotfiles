@@ -4,6 +4,13 @@
 
 (use-package consult
   :bind (
+         ;; Use `consult-buffer' because it supports `recentf' by defalt (hit
+         ;; `f<space>')
+         ("C-x b" . consult-buffer)
+         ("C-x 4 b" . consult-buffer-other-window)
+         ("C-x 5 b" . consult-buffer-other-frame)
+         ("C-x t b" . consult-buffer-other-tab)
+         ("M-s o" . consult-line)
          ;; Use `consult-line' by default which fuzzy matches lines, and jumps
          ;; to matches
          ("M-s o" . consult-line)
