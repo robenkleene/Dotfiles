@@ -24,7 +24,11 @@ while getopts ":sh" option; do
 done
 
 if [[ -n "${INSIDE_EMACS:-}" ]]; then
-  TERM=xterm-256color tmux saveb - || cat /tmp/robenkleene.transient/clipboard 2>/dev/null
+  if [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
+    pbpaste
+  else
+    TERM=xterm-256color tmux saveb - || cat /tmp/robenkleene.transient/clipboard 2>/dev/null
+  fi
 elif [[ -n "${TMUX:-}" ]]; then
   TERM=xterm-256color tmux saveb -
 elif [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
