@@ -5,12 +5,17 @@
 (defun rk/z-add ()
   "Add file or directory."
   (interactive)
-  (if (executable-find "z_add")
+  (if (executable-find "zoxide")
       (let ((file default-directory))
         (when (and file
                    (stringp file)
                    (file-readable-p file))
-          (start-process "*z add*" nil "z_add" (expand-file-name file))))))
+          (start-process "*z add*"
+                         nil
+                         "zoxide"
+                         "add"
+                         (expand-file-name file)
+                         )))))
 
 (defun rk/z (term)
   "Z directory."
