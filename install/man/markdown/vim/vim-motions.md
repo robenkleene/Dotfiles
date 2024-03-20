@@ -17,8 +17,22 @@
 
 # By Function
 
+## Using Delimiters
+
+These are like doing `%` from the middle of a function.
+
 - `]]` / `][`: Next `{` / next `}` (start of next function, end of current function)
 - `[[` / `[]`: Previous `{` / previous `}` (start of current function, end of previous function)
+
+## Using Method Signature
+
+- `[m` / `]m`: Next / previous method start
+- `[M` / `]M`: Next / previous method end
+
+# By Unmatched Pairs
+
+- `[(` / `])`: Next unmatched `(` / previous unmatched `)`
+- `[{` / `]}`: Next unmatched `{` / previous unmatched `}`
 
 # By Sentence
 
