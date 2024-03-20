@@ -1,7 +1,7 @@
 # Navigating
 
 - `:cnext` & `:cprev`: Cycle through matches
-- `:[cw]indow [height]`: Toggle `quickfix` window, optionally with a `[height]`
+- `:[cw]indow [height]`: Open `quickfix` window if there are errors, close it if there are not errors, optionally with a `[height]`
 - `:cope[n] [height]`: Show `quickfix` window, optionally with a `[height]`
 - `:res[ize] [N]`: Can also be used to set the `quickfix` list to a height `[N]`
 - `:ccl[ose]`: Close `quickfix` window
