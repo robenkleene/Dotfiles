@@ -26,13 +26,13 @@ These are like doing `%` from the middle of a function.
 
 ## Using Method Signature
 
-- `[m` / `]m`: Next / previous method start
-- `[M` / `]M`: Next / previous method end
+- `[m` / `]m`: Previous / next method start
+- `[M` / `]M`: Previous / next method end
 
 # By Unmatched Pairs
 
-- `[(` / `])`: Next unmatched `(` / previous unmatched `)`
-- `[{` / `]}`: Next unmatched `{` / previous unmatched `}`
+- `[(` / `])`: Previous unmatched `(` / next unmatched `)`
+- `[{` / `]}`: Previous unmatched `{` / next unmatched `}`
 
 # By Sentence
 
