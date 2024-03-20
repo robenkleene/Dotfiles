@@ -1,6 +1,11 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   -- Not `VeryLazy` because it can cause a flash of re-highlighting otherwise
+  dependencies = {
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+  },
   config = function()
     require('nvim-treesitter.configs').setup {
       -- `query` is for treesitter playground
@@ -36,6 +41,25 @@ return {
       sync_install = false,
       build = ":TSUpdate",
       highlight = { enable = true },
+      textobjects = {
+        -- Use these for languages that don't use braces and therefore don't support Vim's built-in function navigation with `[m`, `[M`, etc...
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_previous_start = {
+            ["<localleader>[m"] = "@function.outer",
+          },
+          goto_next_start = {
+            ["<localleader>]m"] = "@function.outer",
+          },
+          goto_previous_end = {
+            ["<localleader>[M"] = "@function.outer",
+          },
+          goto_next_end = {
+            ["<localleader>]M"] = "@function.outer",
+          },
+        },
+      },
     }
   end
 }
