@@ -31,6 +31,8 @@ function! commands#DiffSh(cmd) abort
   " let l:result = system(a:cmd)
   " new
   " put =l:result
+  " This could be either `enew` or `new`, `:tag` works like `enew` and `:h`
+  " and `:Man` work like `new`
   new
   " Reset undo for this buffer
   let l:oldundolevels=&undolevels
