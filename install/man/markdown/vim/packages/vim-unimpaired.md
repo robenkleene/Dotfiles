@@ -1,7 +1,7 @@
 - `[q` / `]q`: Previous / next `quickfix` item
 - `[b` / `]b`: Previous / next buffer
 - `[f` / `]f`: Previous / next file
-- `[n` / `]n`: Previous / next diff conflict marker
+- `[n` / `]n`: Previous / next hunk (in a diff) or next diff conflict marker (in a file with conflicts)
 
 # Paste
 
