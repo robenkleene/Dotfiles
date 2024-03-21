@@ -15,7 +15,6 @@
   )
 
 (add-hook 'prog-mode-hook (lambda ()
-                            ;; Wrap in text modes
                             (display-line-numbers-mode)
                             ;; Show trailing whitespace
                             (setq-local show-trailing-whitespace t)

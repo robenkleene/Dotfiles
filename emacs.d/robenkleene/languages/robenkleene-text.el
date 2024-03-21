@@ -20,9 +20,15 @@
   (define-key text-mode-map (kbd "C-x C-f") 'ffap)
   )
 
+;; Also wrap on `-` and `/` (in particular this helps URLs wrap more naturally)
+(setq rk/text-category-table (copy-category-table))
+(modify-category-entry ?- ?| rk/text-category-table)
+(modify-category-entry ?/ ?| rk/text-category-table)
 (add-hook 'text-mode-hook (lambda ()
                             ;; Wrap in text modes
                             (set 'truncate-lines nil)
+                            (set-category-table rk/text-category-table)
+                            (setq-local word-wrap-by-category t)
                             ;; Spelling
                             (flyspell-mode)
                             ;; Show trailing whitespace
