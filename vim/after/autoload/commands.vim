@@ -8,19 +8,19 @@ function! commands#ArgsSh(cmd) abort
   execute 'args ' . l:args_list
 endfunction
 
-function! commands#GrepSh(cmd) abort
+function! commands#GrepSh(bang, cmd) abort
   let l:original_grepprg = &grepprg
   " Escape `\` so they aren't removed when setting `grepprg`
   " Setting `grepprg` requires escaping spaces
   execute 'set grepprg='.escape(a:cmd,' \')
-  execute "grep"
+  execute "grep".(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
 
-function! commands#MakeSh(cmd) abort
+function! commands#MakeSh(bang, cmd) abort
   let l:original_makeprg = &makeprg
   execute 'set makeprg='.escape(a:cmd,' ')
-  execute "make"
+  execute "make".(a:bang ? '!':'')
   let &makeprg = l:original_makeprg
 endfunction
 
