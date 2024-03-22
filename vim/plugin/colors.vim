@@ -21,7 +21,7 @@ function! s:OverrideColors()
   " Whitespaces characters
   highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-  highlight MatchParen guifg=DarkCyan ctermfg=DarkCyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
+  highlight MatchParen guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
   highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan ctermbg=Cyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
 
