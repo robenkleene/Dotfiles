@@ -20,6 +20,12 @@
 
 - `M--` followed by a mark command goes backwards (e.g., `M-- C-M-SPC` will revert the last mark s-expression)
 
+## Off-Screen
+
+In Emacs the cursor can't scroll off-screen, which means if you want to select contiguous text, for example with `mark-block` (`M-h`) eventually the bottom of the selection will move off screen. If you try to scroll the bottom of the selection back on screen, then you'll have lost the beginning of your selection, because Emacs will move the cursor which represents the beginning of the cursor.
+
+As a workaround, you can hit `C-x C-x` (`exchange-point-and-mark`) to see where the selection is, and then move back with `C-x C-x` again (unfortunately, if you continue marking with `M-h` for example, it'll start a new selection if you don't move back with a second `C-x C-x` again first.
+
 ## Symbol
 
 Oddly there's no mark command to mark the current symbol, but `M-s .` to start an `isearch` for the current symbol, followed by `M-w` works to copy it.
