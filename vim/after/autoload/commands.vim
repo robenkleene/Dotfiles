@@ -43,8 +43,25 @@ function! commands#DiffSh(cmd) abort
   setlocal ft=diff
 endfunction
 
-function! commands#VersionControlRoot(cmd) abort
-  execute "a:cmd"
+function! commands#VersionControlRoot(bang, cmd) abort
+  let l:original_dir = getcwd()
+  let l:dir = finddir('.')
+  while l:dir !=# '' && !isdirectory(l:dir . '/.git') && !isdirectory(l:dir . '/.hg')
+    let l:dir = fnamemodify(l:dir, ':h')
+  endwhile
+  if l:dir ==# ''
+    echohl ErrorMsg | echom "No version control directory found" | echohl None
+  else
+    if a:cmd isnot# ''
+      call lcd(l:dir)
+      execute a:cmd
+      if !a:bang
+        call lcd(l:original_dir)
+      endif
+    else
+      call cd(l:dir)
+    endif
+  endif
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
