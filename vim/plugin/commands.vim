@@ -1,8 +1,6 @@
 command! -range -nargs=+ -complete=command P silent <line1>,<line2>call commands#P(<q-args>)
 command! -range -nargs=+ -complete=shellcmd Psh <line1>,<line2>call commands#P('!'.<q-args>)
-command! -nargs=* -bang -complete=command Vcr call commands#VersionControlRoot(<bang>0, <q-args>)
-" For some reason we need to add `-nargs=?` in order to support the expression
-" register (`=`)
+
 command! -nargs=+ -bang -complete=shellcmd GrepSh call commands#GrepSh(<bang>0, <q-args>)
 command! -nargs=+ -complete=shellcmd DiffSh call commands#DiffSh(<q-args>)
 command! -nargs=+ -complete=shellcmd ArgsSh call commands#ArgsSh(<q-args>)

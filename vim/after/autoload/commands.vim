@@ -43,31 +43,6 @@ function! commands#DiffSh(cmd) abort
   setlocal ft=diff
 endfunction
 
-function! commands#VersionControlRoot(bang, cmd) abort
-  let l:original_dir = getcwd()
-  let l:dir = ''
-  let l:git_dir = finddir('.git', '.;')
-  let l:hg_dir = finddir('.hg', '.;')
-  if l:git_dir != '' && (l:hg_dir == '' || strlen(l:git_dir) < strlen(l:hg_dir))
-      let l:dir = fnamemodify(l:git_dir, ':h')
-  elseif l:hg_dir != ''
-      let l:dir = fnamemodify(l:hg_dir, ':h')
-  endif
-  if l:dir ==# ''
-    echohl ErrorMsg | echom "No version control directory found" | echohl None
-  else
-    if a:cmd isnot# ''
-      execute 'lcd' fnameescape(l:dir)
-      execute a:cmd
-      if !a:bang
-        execute 'lcd' fnameescape(l:original_dir)
-      endif
-    else
-      execute 'cd' fnameescape(l:dir)
-    endif
-  endif
-endfunction
-
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
   let cmd = "find ~/.man -type f -name '". a:arglead . "*' -exec basename {} '.9' \\;"
   return systemlist(cmd)
