@@ -50,8 +50,7 @@
 # Tabs
 
 - `<C-w>T`: Move a window to a new tab
-- `:tabnew`: Make new tab
-- `:tabe[dit]`: Edit file in tab
+- `:tabe[dit]` / `:tabnew`: Make new tab
 - `:tabc[lose]`: Close tab
 - `gt`: Next tab
 - `gT`: Previous tab
