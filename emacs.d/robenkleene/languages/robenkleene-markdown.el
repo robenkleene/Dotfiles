@@ -56,16 +56,16 @@
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
-  ;; The default commands treat each list item as a single paragraph.
-  ;; These commands jump over entire lists
-  ;; This one still behaves weird in some cases, e.g., when trying to jump over
-  ;; an open code block
-  ;; (define-key markdown-mode-map (kbd "M-{")
-  ;;             'markdown-backward-block)
-  ;; (define-key markdown-mode-map (kbd "M-}")
-  ;;             'markdown-forward-block)
+  ;; The default commands treat each list item as a single paragraph. These
+  ;; commands jump over entire lists This one still behaves weird in some cases,
+  ;; e.g., when trying to jump over an open code block (define-key
+  ;; markdown-mode-map (kbd "M-{") 'markdown-backward-block) (define-key
+  ;; markdown-mode-map (kbd "M-}") 'markdown-forward-block)
   ;; `markdown-mark-block' doesn't support `M-- M-h' shrink a selection
-  ;; (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
+  ;; (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block) The default
+  ;; `markdown-mark-paragraph' doesn't support `M-- M-h' either, so just use the
+  ;; default
+  (define-key markdown-mode-map [remap mark-paragraph] nil)
 
   (defvar markdown-outline-repeat-map
     (let ((map (make-sparse-keymap)))
