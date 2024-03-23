@@ -64,7 +64,8 @@
   ;;             'markdown-backward-block)
   ;; (define-key markdown-mode-map (kbd "M-}")
   ;;             'markdown-forward-block)
-  (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
+  ;; `markdown-mark-block' doesn't support `M-- M-h' shrink a selection
+  ;; (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block)
 
   (defvar markdown-outline-repeat-map
     (let ((map (make-sparse-keymap)))
