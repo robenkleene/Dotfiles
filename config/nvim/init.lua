@@ -37,6 +37,17 @@ else
 endif
 ]])
 
+-- `vim-vinegar` does this interally to use sorting based on suffixes, but for
+-- some reason it doesn't work in Neovim, it also doesn't work as a config
+-- function for `vim-vinegar`
+vim.cmd([[
+function! s:sort_sequence(suffixes) abort
+  return '[\/]$,*' . (empty(a:suffixes) ? '' : ',\%(' .
+        \ join(map(split(a:suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$')
+endfunction
+let g:netrw_sort_sequence = s:sort_sequence(&suffixes)
+]])
+
 local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
 if f~=nil then io.close(f)
   dofile(vim.env.HOME .. '/.nvim_local.lua')
