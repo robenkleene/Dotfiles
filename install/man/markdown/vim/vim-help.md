@@ -3,9 +3,10 @@ See `:help help-summary`.
 # General
 
 - `:h :command`: Used for `cmdline` commands (e.g., `:help :help`)
-- `:h 'option'`: Options (e.g., `:help 'incsearch'`)
+- `:h 'option'`: Wrap options in `'` to search for them (e.g., `:help 'incsearch'`)
 - `:h function()`: Functions (e.g., `bufnr()`)
 - `K`: Help for keyword under the cursor
+- `:helpgrep <term>`: Populate the `quickfix` list with matches if you can't find what you're looking for
 
 ## Prefixes
 
