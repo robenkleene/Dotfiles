@@ -63,10 +63,9 @@ set pumheight=20
 set noswapfile
 " For state restoration
 " set viewoptions-=options
-" set viewoptions-=folds
 " Prevent restoring view from changing the current working directory
 set viewoptions-=curdir
-set viewoptions-=folds
+" set viewoptions-=folds
 set sessionoptions-=curdir
 " set viewoptions-=blank
 set sessionoptions-=folds
@@ -77,19 +76,30 @@ set sessionoptions+=localoptions
 set expandtab
 " Don't start folded
 " set nofoldenable
-set foldlevelstart=99
-" The above doesn't catch everything for some reason
+" If this is set, then having a buffer with folds, jumping to a tag, then
+" returning to the original file, will open folds
+" set foldlevelstart=99
+" Just `foldlevelstart` doesn't catch everything for some reason
 set foldlevel=99
 " Default to foldmethod indent because that always works (the default is
 " `manual`)
 set foldmethod=indent
 " Don't let search open folds (useful for determining if a term appears in
 " un-folded text)
-" Make folds really sticky
+" Make folds sticky
+" Set what opens folds
 " Not sure why removing these doesn't work
-" set foldopen-=search,hor,block,percent,quickfix,tag
-" But just setting undo is the same thing
-" set foldopen=undo
+" set foldopen-=search
+" Without this, jumping to a symbol and back will open the current fold
+" (because a mark is set before jumping)
+set foldopen-=mark
+" Horizontal movements
+set foldopen-=hor
+set foldopen-=jump
+set foldopen-=block
+" set foldopen-=percent
+" set foldopen-=quickfix
+set foldopen-=tag
 " Complete to longest match and show a menu, matching the typical `zsh` setup.
 " Note this doesn't seem to always work, e.g., `:tag <term><tab>` doesn't seem
 " to complete to the longest common string. But you can test the setting is
