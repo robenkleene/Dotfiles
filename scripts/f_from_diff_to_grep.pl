@@ -12,8 +12,16 @@ my $printed = 0;
 my $lineNumber = 0;
 while (<STDIN>) {
    $lineNumber++;
-   if (m(^\+\+\+ b/(.*)$)) {
+   if (m(^diff --git a/.*? b/(.*)$)) {
       $printed = 0;
+      $line = 1;
+      $offset = 1;
+      $filename = $1;
+      $filename =~ s/\s+$//;
+   } elsif (m(^\+\+\+ b/(.*)$)) {
+      $printed = 0;
+      $line = 1;
+      $offset = 1;
       $filename = $1;
       $filename =~ s/\s+$//;
    } elsif (m(^\-\-\- a/(.*)$)) {
