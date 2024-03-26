@@ -12,5 +12,4 @@ while read -r filename; do
     title=$(echo "$filename_no_ext" | ~/.bin/f_titlecase)
   fi
   echo "$title"
-one
-
+done
