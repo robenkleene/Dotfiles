@@ -57,7 +57,7 @@ function! commands#Lz(terms) abort
   " buffer open that you want to switch to a directory to save
   " execute "Explore ".l:result
   " cd %
-  execute "cd ".l:result
+  execute "lcd ".l:result
 endfunction
 
 function! commands#Z(terms) abort
