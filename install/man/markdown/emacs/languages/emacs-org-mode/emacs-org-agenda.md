@@ -1,4 +1,5 @@
 - `org-agenda`: Show menu (then hit e.g., `a` to show today)
+- `org-agenda-list`: Show agenda (same as `M-x org-agenda a`)
 - `C-c [`: Add current file to `org-agenda-files`
 - `<return>`: Go to entry in this window
 - `<tab>`: Go to entry in other window
