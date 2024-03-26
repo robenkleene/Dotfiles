@@ -65,7 +65,10 @@ set noswapfile
 " set viewoptions-=options
 " Prevent restoring view from changing the current working directory
 set viewoptions-=curdir
-" set viewoptions-=folds
+" This prevents opening new files with folds being restored, it does not
+" affect opening a file with folds then navigating away and back to that same
+" file
+set viewoptions-=folds
 set sessionoptions-=curdir
 " set viewoptions-=blank
 set sessionoptions-=folds

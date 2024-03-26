@@ -3,5 +3,5 @@
 " manual
 setlocal foldmethod=manual
 " setlocal foldcolumn=3
-setlocal foldlevelstart=99
+" setlocal foldlevelstart=99
 
