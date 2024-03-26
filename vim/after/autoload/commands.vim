@@ -38,7 +38,7 @@ function! commands#DiffSh(cmd) abort
   let l:oldundolevels=&undolevels
   setlocal undolevels=-1
   execute '0r !'.l:cmd
-  norm Gddggdd
+  norm Gddgg
   let &l:undolevels=l:oldundolevels
   setlocal ft=diff
 endfunction
