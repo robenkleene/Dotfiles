@@ -3,6 +3,7 @@
 set -euo pipefail
 
 while read -r filename; do
+  filename=$(basename "$filename")
   filename_no_ext=${filename%.*}
   if [[ $filename_no_ext =~ ^[a-z0-9_-]*$ ]]; then
     # If the filename contains only lowercase letters, hyphens, and underscores then assume
