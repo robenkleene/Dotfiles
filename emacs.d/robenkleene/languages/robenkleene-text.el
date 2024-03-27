@@ -20,10 +20,14 @@
   (define-key text-mode-map (kbd "C-x C-f") 'ffap)
   )
 
-;; Also wrap on `-` and `/` (in particular this helps URLs wrap more naturally)
+;; Add characters to wrap on (in particular this helps URLs wrap more naturally)
 (setq rk/text-category-table (copy-category-table))
 (modify-category-entry ?- ?| rk/text-category-table)
 (modify-category-entry ?/ ?| rk/text-category-table)
+(modify-category-entry ?. ?| rk/text-category-table)
+(modify-category-entry ?, ?| rk/text-category-table)
+(modify-category-entry ?_ ?| rk/text-category-table)
+(modify-category-entry ?: ?| rk/text-category-table)
 (add-hook 'text-mode-hook (lambda ()
                             ;; Wrap in text modes
                             (set 'truncate-lines nil)
