@@ -18,6 +18,9 @@
 (with-eval-after-load 'text-mode
   ;; Allow following grep line matches
   (define-key text-mode-map (kbd "C-x C-f") 'ffap)
+  ;; Make is so quotes and double quotes can be selected with `mark-sexp'
+  (modify-syntax-entry ?' "\"")
+  (modify-syntax-entry ?\" "\"")
   )
 
 ;; Add characters to wrap on (in particular this helps URLs wrap more naturally)
