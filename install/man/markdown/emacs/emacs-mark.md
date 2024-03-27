@@ -29,3 +29,10 @@ As a workaround, you can hit `C-x C-x` (`exchange-point-and-mark`) to see where 
 ## Symbol
 
 Oddly there's no mark command to mark the current symbol, but `M-s .` to start an `isearch` for the current symbol, followed by `M-w` works to copy it.
+
+## Mark Within Delimiters
+
+1. Use `M-@` (`mark-sexp`) to select the text including the delimiters
+2. Move the cursor right, so it's within the delimiter on the left side
+3. Use `C-x C-x` (`exchange-point-and-mark`) to switch to the other side
+4. Move the cursor left twice, so it's within the delimiters on the right side
