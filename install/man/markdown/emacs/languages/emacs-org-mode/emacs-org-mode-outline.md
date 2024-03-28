@@ -3,7 +3,7 @@ The outlining keys will create a list item when in used in the context of a list
 - `M-RET`: New sibling headline or list item before children, split at insertion point
 - `M-m M-RET`: Add new sibling above this headline (if at the beginning of the line `M-RET` adds above current heading
 - `C-u M-RET`: New sibling headline or list item before children, always below current
-- `M-RET <tab>`: New first child headline or list item
+- `M-RET <tab>`: New first child headline or list item (after creating a new item, `<tab>` allows cycling through indent levels, `<backtab>` does not unindent though, just use `<tab>` and keep cycling)
 - `C-c C-x C-w` / `C-c C-x C-y`: Kill / paste subtree
 
 ## Additions Poorly Supported in Terminal
