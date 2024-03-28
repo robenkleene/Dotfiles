@@ -38,10 +38,6 @@
     ;; Vertico commands are hidden in normal buffers.
     ;; (setq read-extended-command-predicate
     ;;       #'command-completion-default-include-p)
-
-    ;; Enable recursive minibuffers
-    ;; (setq enable-recursive-minibuffers t)
-
     )
 
   )
