@@ -97,7 +97,9 @@ set foldmethod=indent
 " (because a mark is set before jumping)
 set foldopen-=mark
 " Horizontal movements
-set foldopen-=hor
+" No reason not to keep this option, since without it horizontal movement keys
+" (i.e., `h`, `l`) do nothing
+" set foldopen-=hor
 set foldopen-=jump
 set foldopen-=block
 " set foldopen-=percent
