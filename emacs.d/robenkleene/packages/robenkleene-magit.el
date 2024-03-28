@@ -25,8 +25,8 @@
     (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
         (progn
           (async-shell-command "~/.bin/sgitt_auto" "*egit*" "*egit*")
-          ;; (switch-to-buffer-other-window "*egit save*")
-          ;; (view-mode)
+          (with-current-buffer "*egit*"
+            (view-mode))
           )
       (let ((default-directory (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
         (magit-status)
