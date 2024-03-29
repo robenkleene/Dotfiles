@@ -91,6 +91,4 @@ return {
   --     vim.cmd("colorscheme kanagawa-wave")
   --   end
   -- },
-  -- Languages
-  { 'sophacles/vim-processing', ft = { 'processing' }, }
 }
