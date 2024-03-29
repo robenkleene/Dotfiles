@@ -36,7 +36,6 @@ brew 'chruby'
 brew 'ruby-install'
 # Shell
 # Rust
-brew 'wasm-pack'
 brew 'rust-analyzer'
 # C
 # brew 'valgrind'
