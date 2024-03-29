@@ -49,7 +49,7 @@ brew 'cloc'
 brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
-brew 'youtube-dl'
+brew 'yt-dlp'
 brew 'mitmproxy'
 brew 'hyperfine'
 # Shows whitespace nicer than xxd
