@@ -5,6 +5,31 @@
 - `const` means that a pointer can be assigned, e.g., (`const int foo`) can't do `*foo = 42`
 - When an variable object is `const` it can only access methods on its class that are also marked `const`
 
+## `*` vs. `&` vs. `unique_ptr`
+
+For a `unique_ptr` instance variable:
+
+```
+std::unique_ptr<Foo> foo;
+```
+
+
+### `unique_ptr` to Raw Pointer
+
+`get()` is used to access the raw pointer.
+
+If a function takes a pointer as a parameter:
+
+```
+void SetFoo(Foo* const bar);
+```
+
+To pass in a `unique_ptr`, use `get`:
+
+```
+SetFoo(foo->get());
+```
+
 ## Memory Management
 
 - If you use `new` you need to use `std::destroy` somewhere to prevent a leak.
