@@ -13,6 +13,13 @@ For a `unique_ptr` instance variable:
 std::unique_ptr<Foo> foo;
 ```
 
+The constructor takes a reference:
+
+```
+foo(&fooIn)
+```
+
+The `&` returns the address, so a `unique_ptr` constructor takes a memory address.
 
 ### `unique_ptr` to Raw Pointer
 
