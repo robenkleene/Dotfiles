@@ -1,5 +1,6 @@
 # `cpp` Pointers
 
+- A raw pointer is a variable that contains the memory address of an object (or function)
 - Prefer references (`Bar& foo`) over pointers (`Bar* foo`) because references can't be null
 - A reference (e.g., `Bar& foo` as a function parameter) is just a pointer that can't be null
 - `const` means that a pointer can be assigned, e.g., (`const int foo`) can't do `*foo = 42`
@@ -19,7 +20,7 @@ The constructor takes a reference:
 foo(&fooIn)
 ```
 
-The `&` returns the address, so a `unique_ptr` constructor takes a memory address.
+The `&` returns the address, so a `unique_ptr` constructor takes a raw pointer.
 
 ### `unique_ptr` to Raw Pointer
 
