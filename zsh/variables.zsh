@@ -6,8 +6,9 @@ if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   export COLORTERM="truecolor"
 fi
 
-# Smartcase in `less`
-export LESS="--ignore-case"
+# Smartcase and incremental search in `less`
+# `--RAW-CONTROL-CHARS` fixes escape code issue with colors on Linux
+export LESS="--ignore-case --incsearch --RAW-CONTROL-CHARS"
 
 # Color in `ls`
 export CLICOLOR=1
