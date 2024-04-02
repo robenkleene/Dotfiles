@@ -2,14 +2,16 @@ command! -range -nargs=+ -complete=command P silent <line1>,<line2>call commands
 command! -range -nargs=+ -complete=shellcmd Psh <line1>,<line2>call commands#P('!'.<q-args>)
 
 command! -nargs=+ -bang -complete=shellcmd GrepSh call commands#GrepSh(<bang>0, <q-args>)
-command! -nargs=+ -complete=shellcmd DiffSh call commands#DiffSh(<q-args>)
 command! -nargs=+ -complete=shellcmd ArgsSh call commands#ArgsSh(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd MakeSh call commands#MakeSh(<bang>0, <q-args>)
+command! -nargs=+ -complete=shellcmd NewSh call commands#Nsh(<q-args>)
+command! -nargs=+ -complete=shellcmd VNewSh call commands#Vsh(<q-args>)
 " Shorthand
 command! -nargs=+ -bang -complete=shellcmd Gsh call commands#GrepSh(<bang>0, <q-args>)
-command! -nargs=+ -complete=shellcmd Dsh call commands#DiffSh(<q-args>)
 command! -nargs=+ -complete=shellcmd Ash call commands#ArgsSh(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd Msh call commands#MakeSh(<bang>0, <q-args>)
+command! -nargs=+ -complete=shellcmd Nsh call commands#Nsh(<q-args>)
+command! -nargs=+ -complete=shellcmd Vsh call commands#Vsh(<q-args>)
 
 command! -nargs=+ Z call commands#Z(<q-args>)
 command! -nargs=+ Lz call commands#Lz(<q-args>)
