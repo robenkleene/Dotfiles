@@ -24,23 +24,31 @@ function! commands#MakeSh(bang, cmd) abort
   let &makeprg = l:original_makeprg
 endfunction
 
-function! commands#DiffSh(cmd) abort
+function! commands#Nsh(cmd) abort
+  call commands#NewSh("new", a:cmd)
+endfunction
+
+function! commands#Vsh(cmd) abort
+  call commands#NewSh("vnew", a:cmd)
+endfunction
+
+function! commands#NewSh(split, cmd) abort
+  let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
   " Neither approach supports `DiffSh git diff %` well, but this one at
   " least allows `DiffSh git diff #`
-  let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
   " let l:result = system(a:cmd)
   " new
   " put =l:result
   " This could be either `enew` or `new`, `:tag` works like `enew` and `:h`
   " and `:Man` work like `new`
-  new
+  exec a:split
   " Reset undo for this buffer
   let l:oldundolevels=&undolevels
   setlocal undolevels=-1
   execute '0r !'.l:cmd
   norm Gddgg
   let &l:undolevels=l:oldundolevels
-  setlocal ft=diff
+  filetype detect
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
