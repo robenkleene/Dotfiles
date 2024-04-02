@@ -6,6 +6,9 @@ if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   export COLORTERM="truecolor"
 fi
 
+# Smartcase in `less`
+export LESS="--ignore-case"
+
 # Color in `ls`
 export CLICOLOR=1
 
