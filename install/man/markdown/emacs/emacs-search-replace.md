@@ -39,7 +39,7 @@ This is the best approach that also works on terminal.
 3. Enter the replace term and hit enter
 4. Hit `!` to apply the replace
 
-## Active Replace
+## Replace Bindings
 
 - `!`: Replace to the end of the file
 - `␣` or `Y`: One replacement
@@ -54,3 +54,10 @@ This is the best approach that also works on terminal.
 
 - `highlight-regex`: Highlight regular expression
 - `highlight-phrase`: Highlight case-insensitive with spaces
+
+# Region
+
+Emacs doesn't have a built-in way to only `query-replace` in a region, but there are a couple of alternatives:
+
+- Just use a regular `query-replace` without a region selected and just hit `␣` until all the desired matches are replaced
+- Select a region, use `C-x n n` to narrow to that region, do a `query-replace` and hit `!` to replace all matches, and use `C-x n p` to exit narrowing
