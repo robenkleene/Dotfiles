@@ -1,6 +1,7 @@
 # Magic
 
-`magic` is the default setting, this means non-greedy is `\{-}` and capture groups is `\(\)`.
+- `magic` is the default setting, this means non-greedy is `\{-}` and capture groups is `\(\)`.
+- `\|` is Vim's version of "or"
 
 	\v    \m       \M         \V    matches
 	none  'magic'  'nomagic'  none

@@ -1,4 +1,4 @@
-- `-E` / `--extended-regexp`: Support or, e.g., `grep -E "open class|open var"`
+- `-E` / `--extended-regexp`: Support or, e.g., `grep -E "foo|bar"`
 - `-v` / `--invert-match`: Invert matches
 - `-o` / `--only-matching`: Only show match
 

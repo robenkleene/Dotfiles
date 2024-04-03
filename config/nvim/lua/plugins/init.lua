@@ -41,8 +41,6 @@ return {
       ]])
     end
   },
-  -- Navigate by indent level, useful for inspecting JSON
-  { 'jeetsukumaran/vim-indentwise' },
   -- Themes
   -- {
   --   "catppuccin/nvim",
