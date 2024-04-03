@@ -47,8 +47,19 @@
   (interactive
    (list (read-from-minibuffer "Find: ")
          ))
-  (require 'find-dired)
-  (find-dired-with-command default-directory command)
+  (let* ((output-buffer "*Find Shell Command*"))
+    (if (get-buffer output-buffer)
+        (kill-buffer output-buffer))
+    (let ((process (start-process-shell-command "async-command" output-buffer command)))
+      (set-process-sentinel process
+                            (lambda (proc event)
+                              (when (string-match-p "finished" event)
+                                (with-current-buffer (process-buffer proc)
+                                  (require 'dired-x)
+                                  (ansi-color-apply-on-region (point-min) (point-max))
+                                  (dired-virtual default-directory)
+                                  (beginning-of-buffer))
+                                (display-buffer (process-buffer proc)))))))
   )
 
 (defun diff-shell-command (command)
