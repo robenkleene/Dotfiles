@@ -6,7 +6,7 @@
 
 # `*` vs. `&` vs. `unique_ptr`
 
-For a `unique_ptr` instance variable:
+For a `unique_ptr` member variable:
 
 ```
 std::unique_ptr<Foo> foo;
@@ -48,3 +48,13 @@ SetFoo(foo->get());
 std::unique_ptr<int> valuePtr;
 valuePtr.reset(new int(47));
 ```
+
+### Dangers
+
+If you have a `unique_ptr` member variable:
+
+```
+std::unique_ptr<Foo> foo;
+```
+
+You probably never want to assign that via the constructor (e.g., don't do `foo(fooIn)`) because that will result in a doubly released pointer as both this member variable, and the original owner, will calll `std::destroy` on it.
