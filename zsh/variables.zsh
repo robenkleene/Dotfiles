@@ -8,7 +8,10 @@ fi
 
 # Smartcase and incremental search in `less`
 # `--RAW-CONTROL-CHARS` fixes escape code issue with colors on Linux
-export LESS="--ignore-case --incsearch --RAW-CONTROL-CHARS"
+# `--quit-if-one-screen` is the default but gets disabled with `LESS` set
+# `--no-init` is also the default and gets disabled with `LESS` set (this makes
+# it so hitting `q` with `less` results on screen doesn't get cleared)
+export LESS="--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS"
 
 # Color in `ls`
 export CLICOLOR=1
