@@ -53,13 +53,6 @@
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
 
-;; Completion
-(require 'robenkleene-consult)
-(require 'robenkleene-embark)
-(require 'robenkleene-marginalia)
-(require 'robenkleene-orderless)
-(require 'robenkleene-vertico)
-
 ;; Theme
 (require 'robenkleene-ef-themes)
 (require 'robenkleene-modus)
