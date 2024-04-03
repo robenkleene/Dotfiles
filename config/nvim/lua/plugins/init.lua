@@ -20,16 +20,14 @@ return {
   { 'tpope/vim-vinegar' },
   -- This doesn't handle visual blocks correctly
   -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
-  { 'tpope/vim-surround',
+  {
+    'tpope/vim-surround',
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
   {
     'nvim-treesitter/playground',
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
-  },
-  { "github/copilot.vim",
-    cmd = { "Copilot" },
   },
   {
     -- More reliable open browser
@@ -43,6 +41,8 @@ return {
       ]])
     end
   },
+  -- Navigate by indent level, useful for inspecting JSON
+  { 'jeetsukumaran/vim-indentwise' },
   -- Themes
   -- {
   --   "catppuccin/nvim",

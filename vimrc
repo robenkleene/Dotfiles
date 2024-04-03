@@ -26,6 +26,8 @@ Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
+" Navigate by indent level, useful for inspecting JSON
+Plug 'jeetsukumaran/vim-indentwise'
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-open)
 vmap gx <Plug>(openbrowser-open)
