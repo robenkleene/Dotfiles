@@ -27,10 +27,11 @@
 (setq rk/text-category-table (copy-category-table))
 (modify-category-entry ?- ?| rk/text-category-table)
 (modify-category-entry ?/ ?| rk/text-category-table)
-(modify-category-entry ?. ?| rk/text-category-table)
-(modify-category-entry ?, ?| rk/text-category-table)
+;; It looks funny to have line breaks on `:`, `.` and `,` in normal prose
+;; (modify-category-entry ?. ?| rk/text-category-table)
+;; (modify-category-entry ?, ?| rk/text-category-table)
+;; (modify-category-entry ?: ?| rk/text-category-table)
 (modify-category-entry ?_ ?| rk/text-category-table)
-(modify-category-entry ?: ?| rk/text-category-table)
 (add-hook 'text-mode-hook (lambda ()
                             ;; Wrap in text modes
                             (set 'truncate-lines nil)
