@@ -39,6 +39,9 @@ return {
       ignore_install = { "all" },
       -- Trying to prevent the constant re-installing
       sync_install = false,
+      -- Try to fix crashes on Markdown by disabling `indent`
+      -- If we ever want to enable this, turn of `smartindent`
+      indent = false,
       build = ":TSUpdate",
       highlight = { enable = true },
       textobjects = {
