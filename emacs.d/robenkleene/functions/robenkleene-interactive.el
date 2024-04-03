@@ -42,6 +42,15 @@
   (compilation-start command 'grep-mode)
   )
 
+(defun find-shell-command-dired (command)
+  "Create dired buffer from COMMAND."
+  (interactive
+   (list (read-from-minibuffer "Find: ")
+         ))
+  (require 'find-dired)
+  (find-dired-with-command default-directory command)
+  )
+
 (defun diff-shell-command (command)
   "Create diff buffer from COMMAND."
   (interactive
