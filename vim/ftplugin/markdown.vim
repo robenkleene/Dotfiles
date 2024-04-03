@@ -17,7 +17,9 @@ let g:markdown_fenced_languages = [
       \'javascript',
       \'js=javascript',
       \'json',
-      \'kotlin',
+      " Causing an error on exit in Neovim that `syntax/kotlin.vim` can't be
+      " found. Probably need to install a plugin?
+      " \'kotlin',
       \'lua',
       \'python',
       \'ruby',

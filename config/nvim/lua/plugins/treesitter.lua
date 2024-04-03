@@ -21,7 +21,8 @@ return {
         'cpp',
         'lua',
         'javascript',
-        'kotlin',
+        -- Causing an error on quit that `syntax/kotlin.vim` can't be found, probably need to install a plugin to enable this?
+        -- 'kotlin',
         -- 'help',
         'html',
         'markdown',
