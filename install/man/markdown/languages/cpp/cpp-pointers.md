@@ -4,6 +4,11 @@
 - `const` means that a pointer can be assigned, e.g., (`const int foo`) can't do `*foo = 42`
 - When an variable object is `const` it can only access methods on its class that are also marked `const`
 
+# `.` vs. `->`
+
+- `foo.bar`: Access a member variable
+- `foo->bar`: Access a member variable on a pointer (shorthand for `(*foo).bar`)
+
 # `*` vs. `&` vs. `unique_ptr`
 
 For a `unique_ptr` member variable:
