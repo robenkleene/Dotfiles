@@ -50,7 +50,7 @@
   (let* ((output-buffer "*Find Shell Command*"))
     (if (get-buffer output-buffer)
         (kill-buffer output-buffer))
-    (let ((process (start-process-shell-command "async-command" output-buffer (concat command " | xargs ls -l"))))
+    (let ((process (start-process-shell-command "async-command" output-buffer (concat command " | tr \\\\n \\\\0 | xargs -0 ls -l"))))
       (set-process-sentinel process
                             (lambda (proc event)
                               (when (string-match-p "finished" event)
