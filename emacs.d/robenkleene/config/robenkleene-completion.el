@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Show completion matches on second tab
 (setq completion-auto-select 'second-tab)
 
 (provide 'robenkleene-completion)
