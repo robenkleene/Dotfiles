@@ -11,6 +11,7 @@
 - `<Backtab>` / `<Tab>`, `p` / `n`: Previous / next match
 - `z`: Kill buffer
 - `M-g M-c`: Switch back to minibuffer
+- You can use `C-h f` to see help for the current function from the completion window
 
 # Stuck Minibuffer
 
