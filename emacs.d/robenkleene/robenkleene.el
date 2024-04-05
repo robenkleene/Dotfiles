@@ -50,6 +50,7 @@
 (require 'robenkleene-eglot)
 (require 'robenkleene-magit)
 (require 'robenkleene-page-break-lines)
+(require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
 
