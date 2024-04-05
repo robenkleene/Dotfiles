@@ -29,8 +29,9 @@
 ;; Great for closing open buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
-;; Window Management
-(define-key rk/bindings-minor-mode-map (kbd "C-x :")
+;; Window Management `M-g M-c' is unbound, and it's used in the `*Completions*'
+;; buffer to return to the minibuffer
+(define-key rk/bindings-minor-mode-map (kbd "M-g M-c")
             'switch-to-minibuffer)
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
