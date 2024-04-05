@@ -36,7 +36,7 @@
 (defun grep-shell-command (command)
   "Create grep buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Grep: ")
+   (list (read-from-minibuffer "Grep Command: ")
          ))
   (require 'grep)
   (compilation-start command 'grep-mode)
@@ -45,7 +45,7 @@
 (defun find-shell-command-dired (command)
   "Create dired buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Find: ")
+   (list (read-from-minibuffer "Find Command: ")
          ))
   (let* ((output-buffer "*Find Shell Command*"))
     (if (get-buffer output-buffer)
@@ -55,17 +55,19 @@
                             (lambda (proc event)
                               (when (string-match-p "finished" event)
                                 (with-current-buffer (process-buffer proc)
-                                  (require 'dired-x)
+                                  (require 'ansi-color)
                                   (ansi-color-apply-on-region (point-min) (point-max))
+                                  (require 'dired-x)
                                   (dired-virtual default-directory)
                                   (beginning-of-buffer))
-                                (display-buffer (process-buffer proc)))))))
-  )
+                                ;; (display-buffer (process-buffer proc))
+                                (switch-to-buffer-other-window (process-buffer proc))
+                                ))))))
 
 (defun diff-shell-command (command)
   "Create diff buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Diff: ")
+   (list (read-from-minibuffer "Diff Command: ")
          ))
   (let* ((output-buffer "*Diff Shell Command*"))
     (if (get-buffer output-buffer)
