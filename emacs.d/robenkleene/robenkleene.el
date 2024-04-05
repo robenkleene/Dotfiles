@@ -24,6 +24,7 @@
 
 ;; Config
 (require 'robenkleene-bindings)
+(require 'robenkleene-completion)
 (require 'robenkleene-config)
 (require 'robenkleene-spelling)
 (require 'robenkleene-troubleshooting)
