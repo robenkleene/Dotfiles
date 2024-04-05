@@ -36,6 +36,10 @@ function! commands#Esh(cmd) abort
   call commands#NewSh("enew", a:cmd)
 endfunction
 
+function! commands#Tsh(cmd) abort
+  call commands#NewSh("tabnew", a:cmd)
+endfunction
+
 function! commands#NewSh(split, cmd) abort
   let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
   " Neither approach supports `DiffSh git diff %` well, but this one at
