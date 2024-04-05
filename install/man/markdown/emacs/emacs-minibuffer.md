@@ -1,6 +1,16 @@
 - `M-p` / `M-n`: Previous / next command
 - `C-g`: Cancel minibuffer
+- `<SPC>`: Complete word
+- `<Tab>`: Complete
+- `M-v` / `M-g M-c`: Switch to the completion window
 - You can focus the minibuffer just by using the usually window switching commands
+
+# Completion Window
+
+- The read-only bindings work here, e.g., `<SPC>` to go forward and `<BS>` to go backward
+- `<Backtab>` / `<Tab>`, `p` / `n`: Previous / next match
+- `z`: Kill buffer
+- `M-g M-c`: Switch back to minibuffer
 
 # Stuck Minibuffer
 
