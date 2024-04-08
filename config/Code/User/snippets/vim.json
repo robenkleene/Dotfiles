@@ -1,19 +1,23 @@
 {
-  "echomv": {
-    "prefix": "echomv",
-    "body": "echom \"${1:Variable} = \".$1"
+  "echom_variable": {
+    "prefix": "echom_variable",
+    "body": "echom \"${1:Variable} = \".$1",
+    "description": "`echom` variable"
   },
   "function": {
     "prefix": "function",
-    "body": "function! s:${1:Name}() abort\n  ${2:\" Statements}\nendfunction"
+    "body": "function! s:${1:Name}() abort\n  ${2:\" Statements}\nendfunction",
+    "description": "Function"
   },
   "augroup": {
     "prefix": "augroup",
-    "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END"
+    "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END",
+    "description": "`augroup`"
   },
-  "makeprgxcodebuildtest": {
-    "prefix": "makeprgxcodebuildtest",
-    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}"
+  "set_makeprg_xcodebuild_test": {
+    "prefix": "set_makeprg_xcodebuild_test",
+    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
+    "description": "Set `makeprg` for `xcodebuild test`"
   },
   "if": {
     "prefix": "if",
