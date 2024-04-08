@@ -5,8 +5,20 @@
     "body": "#!/usr/bin/env node\n\n$0",
     "description": "template"
   },
-  "max-template": {
-    "prefix": "max-template",
+  "log_variable": {
+    "scope": "javascript,typescript",
+    "prefix": "log_variable",
+    "body": "console.log(\"${1:result} = \" + $1);",
+    "description": "Log variable"
+  },
+  "for": {
+    "scope": "javascript,typescript",
+    "prefix": "for",
+    "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
+    "description": "For loop"
+  },
+  "max_template": {
+    "prefix": "max_template",
     "body": [
       "// Re-compile the file automatically when it changes",
       "autowatch = 1;",
