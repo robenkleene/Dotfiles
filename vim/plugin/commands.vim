@@ -19,5 +19,6 @@ command! -nargs=+ -complete=shellcmd Tsh call commands#Tsh(<q-args>)
 
 command! -nargs=+ Z call commands#Z(<q-args>)
 command! -nargs=+ Lz call commands#Lz(<q-args>)
+command! -nargs=+ Tz call commands#Tz(<q-args>)
 command! -nargs=1 Dc :all commands#Dc(<q-args>)
 command! -nargs=1 -complete=customlist,commands#completeMan9 Man9 execute 'Man 9' <f-args>
