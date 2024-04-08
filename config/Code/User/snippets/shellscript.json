@@ -149,29 +149,24 @@
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "Rename files in current directory"
   },
-  "exitstatus": {
-    "prefix": "exitstatus",
-    "body": "status=$?",
-    "description": "Store exit status"
+  "exit_status": {
+    "prefix": "exit_status",
+    "body": "\\$?",
+    "description": "Exit status"
   },
-  "IFS": {
-    "prefix": "IFS",
+  "ifs": {
+    "prefix": "ifs",
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
-    "description": "Change IFS"
+    "description": "Set IFS"
   },
-  "scriptdir": {
-    "prefix": "scriptdir",
-    "body": "script_dir=$(dirname \"\\$0\")",
+  "script_dir": {
+    "prefix": "script_dir",
+    "body": "\\$(dirname \"\\$0\")",
     "description": "Script directory"
-  },
-  "cdscriptdir": {
-    "prefix": "cdscriptdir",
-    "body": "cd \"\\$(dirname \"\\$0\")\" || exit 1",
-    "description": "cd to directory of script"
   },
   "getopts": {
     "prefix": "getopts",
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
-    "description": "getopts"
+    "description": "`getopts`"
   }
 }
