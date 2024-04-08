@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Use corfu because `yasnippt' suport for `hippie-expand' isn't working
 (use-package corfu
   :init
   (use-package cape
