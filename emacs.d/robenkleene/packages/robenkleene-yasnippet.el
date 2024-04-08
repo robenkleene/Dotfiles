@@ -11,6 +11,7 @@
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   ;; Allow snippet `key' to be expanded with `hippie-expand'
+  ;; This isn't working for some reason
   (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
   )
 
