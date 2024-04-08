@@ -4,35 +4,35 @@
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n\n",
     "description": "Basic template"
   },
-  "echov": {
-    "prefix": "echov",
+  "echo_variable": {
+    "prefix": "echo_variable",
     "body": "echo \"${1:HOME} = \\$$1\"",
     "description": "Echo variable"
   },
-  "echova": {
-    "prefix": "echova",
+  "echo_variable_array": {
+    "prefix": "echo_variable_array",
     "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
     "description": "Echo array variable"
   },
-  "echoe": {
-    "prefix": "echoe",
+  "echo_error": {
+    "prefix": "echo_error",
     "body": "echo \"${0:Error}\" >&2",
-    "description": "Echo error"
+    "description": "Echo to standard error"
   },
-  "noslash": {
-    "prefix": "noslash",
-    "body": "${1:noslash}=\\${${2:1}%/}$0",
-    "description": "Remove the slash from a variable"
+  "parameter_expansion_remove_trailing_slash": {
+    "prefix": "parameter_expansion_remove_trailing_slash",
+    "body": "\\${${2:1}%/}$0",
+    "description": "Remove a trailing slash from a variable"
   },
-  "noext": {
-    "prefix": "noext",
-    "body": "${1:noext}=\\${${0:1}%.*}",
+  "parameter_expansion_remove_extension": {
+    "prefix": "parameter_expansion_remove_extension",
+    "body": "\\${${0:1}%.*}",
     "description": "Remove the extension from a path"
   },
-  "arr": {
-    "prefix": "arr",
+  "array_access": {
+    "prefix": "array_access",
     "body": "\\${${1:args}[@]}$0",
-    "description": "Access array"
+    "description": "Access an array element"
   },
   "function": {
     "prefix": "function",
@@ -44,68 +44,53 @@
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If statement"
   },
-  "ifuname": {
+  "if_uname": {
     "prefix": "ifuname",
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
-  "ex": {
-    "prefix": "ex",
-    "body": "[[ ${0:-n \"\\${1:-\\}\"} ]]",
-    "description": "Add expression"
-  },
-  "exn": {
-    "prefix": "exn",
-    "body": "[[ ! ${0:-n \"\\$1\"} ]]",
-    "description": "Add negative expression"
-  },
-  "testd": {
-    "prefix": "testd",
+  "test_directory": {
+    "prefix": "test_directory",
     "body": "-d \"${1:\\$1}\"",
     "description": "True if directory"
   },
-  "testb": {
-    "prefix": "testb",
+  "test_boolean": {
+    "prefix": "test_boolean",
     "body": "\"$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
-  "testf": {
-    "prefix": "testf",
+  "test_file": {
+    "prefix": "test_file",
     "body": "-f \"${1:\\$1}\"",
     "description": "True if regular file"
   },
-  "teste": {
-    "prefix": "teste",
+  "test_exists": {
+    "prefix": "test_exists",
     "body": "-e \"${1:\\$1}\"",
     "description": "True if file exists"
   },
-  "testa": {
-    "prefix": "testa",
-    "body": "\"$#\" ${1:-ne} ${2:1}",
-    "description": "True one argument"
-  },
-  "testl": {
-    "prefix": "testl",
+  "test_link": {
+    "prefix": "test_link",
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "testneq": {
-    "prefix": "testneq",
+  "test_not_equal": {
+    "prefix": "test_not_equal",
     "body": "${1:$?} -ne ${0:0}",
     "description": "True if not equal"
   },
-  "testeq": {
-    "prefix": "testeq",
+  "test_equal": {
+    "prefix": "test_equal",
     "body": "${1:$?} -eq ${0:0}",
     "description": "True if equal"
   },
-  "testgt": {
-    "prefix": "testgt",
+  "test_greater_than": {
+    "prefix": "test_greater_than",
     "body": "${1:$?} -gt ${0:0}",
     "description": "True if greater than"
   },
-  "testlt": {
-    "prefix": "testlt",
+  "test_less_than": {
+    "prefix": "test_less_than",
     "body": "${1:$?} -lt ${0:0}",
     "description": "True if less than"
   },

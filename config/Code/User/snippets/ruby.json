@@ -3,5 +3,30 @@
     "prefix": "template",
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
+  },
+  "puts_variable": {
+    "prefix": "puts_variable",
+    "body": "puts \"${1:variable} = #{$1}\"",
+    "description": "Print a variable"
+  },
+  "puts_error": {
+    "prefix": "puts_error",
+    "body": "STDERR.puts",
+    "description": "`puts` to standard error"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
+    "description": "For loop"
+  },
+  "forin": {
+    "prefix": "forin",
+    "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
+    "description": "For in loop"
+  },
+  "each": {
+    "prefix": "each",
+    "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
+    "description": "Each loop"
   }
 }

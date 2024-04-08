@@ -53,5 +53,10 @@
     "prefix": "init",
     "body": "- (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\\l$0/}\n{\n    self = [super init];\n    if (self) {\n\t\t_${1/.*/\\l$0/} = ${1/.*/\\l$0/};\n    }\n    return self;\n}",
     "description": "Initialization method"
+  },
+  "forin": {
+    "prefix": "forin",
+    "body": "for (${1:id} ${2:object} in ${3:objects}) {\n    $0\n}",
+    "description": "Fast enumeration"
   }
 }
