@@ -2,6 +2,6 @@
   "template": {
     "prefix": "template",
     "body": ".PHONY: hello\n\nhello:\n\techo \"Hello\"",
-    "description": "Template"
+    "description": "Makefile Template"
   }
 }

@@ -2,36 +2,6 @@
   "template": {
     "prefix": "template",
     "body": "#!/usr/bin/env ruby\n\n",
-    "description": "Basic template"
-  },
-  "putsv": {
-    "prefix": "putsv",
-    "body": "puts \"${1:variable} = #{$1}\"",
-    "description": "Print a variable"
-  },
-  "putse": {
-    "prefix": "putse",
-    "body": "STDERR.puts ",
-    "description": "Print to STDERR"
-  },
-  "profile": {
-    "prefix": "profile",
-    "body": "require 'profile'",
-    "description": "Require profile"
-  },
-  "each": {
-    "prefix": "each",
-    "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
-    "description": "Each loop"
-  },
-  "for": {
-    "prefix": "for",
-    "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
-    "description": "For loop"
-  },
-  "forin": {
-    "prefix": "forin",
-    "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
-    "description": "For loop"
+    "description": "Ruby template"
   }
 }

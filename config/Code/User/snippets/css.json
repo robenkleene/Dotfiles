@@ -2,7 +2,7 @@
   "template": {
     "prefix": "template",
     "body": "body {\n  color: blue;\n}",
-    "description": "Template"
+    "description": "CSS template"
   },
   "grid": {
     "prefix": "grid",

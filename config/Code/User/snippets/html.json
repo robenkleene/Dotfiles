@@ -5,12 +5,12 @@
     "description": "Template"
   },
   "linkcss": {
-    "prefix": "linkcss",
+    "prefix": "link-css",
     "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${0:css/style.css}\" />",
     "description": "Link CSS"
   },
   "scriptjs": {
-    "prefix": "scriptjs",
+    "prefix": "script-js",
     "body": "<script type=\"text/javascript\" src=\"${0:js/script.js}\"></script>",
     "description": "Add JavaScript"
   }
