@@ -1,6 +1,7 @@
 -- Use `cmp` because `luasnip` doesn't support Vim builtin completion
 return {
-  'hrsh7th/nvim-cmp', dependencies = {
+  'hrsh7th/nvim-cmp',
+  dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip'
   },
@@ -33,6 +34,14 @@ return {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      formatting = {
+        -- Truncate completion items to `20` characters
+        -- Fixes a problem of the menu width jumping around too much as candidates change
+        format = function(_, vim_item)
+          vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+          return vim_item
+        end
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-e>'] = cmp.mapping.abort(),
