@@ -54,15 +54,15 @@
     "body": "↓",
     "description": "Down arrow symbol"
   },
-  "ent": {
-    "prefix": ["ent", "ret"],
+  "ret": {
+    "prefix": "ret",
     "body": "↩",
-    "description": "Enter"
+    "description": "Return symbol"
   },
   "spc": {
     "prefix": "spc",
     "body": "␣",
-    "description": "Space"
+    "description": "Space symbol"
   },
   "kso": {
     "prefix": "kso",
