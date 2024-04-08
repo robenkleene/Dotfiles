@@ -58,7 +58,8 @@ set list
 " Actually setting clipboard this way doesn't use number registers either
 " set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
-set pumheight=20
+" Setting this two high is annoying with autocomplete
+set pumheight=10
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
 " For state restoration
