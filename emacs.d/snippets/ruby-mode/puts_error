@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: puts_error
+# name: `puts` to standard error
+# --
+STDERR.puts

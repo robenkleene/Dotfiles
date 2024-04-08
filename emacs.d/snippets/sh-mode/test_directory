@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: test_directory
+# name: True if directory
+# --
+-d "${1:\$1}"

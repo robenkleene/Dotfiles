@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: test_greater_than
+# name: True if greater than
+# --
+${1:$?} -gt ${0:0}

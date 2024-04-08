@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: printv
+# name: Print variable
+# --
+print("${1:Variable} =", $1)

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: echom_variable
+# name: `echom` variable
+# --
+echom "${1:Variable} = ".$1
