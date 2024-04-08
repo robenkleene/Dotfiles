@@ -13,15 +13,5 @@
     "prefix": "scriptjs",
     "body": "<script type=\"text/javascript\" src=\"${0:js/script.js}\"></script>",
     "description": "Add JavaScript"
-  },
-  "border": {
-    "prefix": "border",
-    "body": "border: 1px solid red;",
-    "description": "Red border"
-  },
-  "styleinline": {
-    "prefix": "styleinline",
-    "body": "<style>\n  body {\n    color: blue;\n  }\n</style>",
-    "description": "Style tag with inline styles"
   }
 }

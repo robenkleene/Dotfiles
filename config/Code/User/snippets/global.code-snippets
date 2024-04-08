@@ -7,52 +7,52 @@
   "cmd": {
     "prefix": "cmd",
     "body": "⌘",
-    "description": "⌘"
+    "description": "Command key symbol"
   },
   "ctrl": {
     "prefix": "ctrl",
     "body": "⌃",
-    "description": "⌃"
+    "description": "Control key symbol"
   },
   "opt": {
     "prefix": "opt",
     "body": "⌥",
-    "description": "⌥"
+    "description": "Option key symbol"
   },
   "sft": {
     "prefix": "sft",
     "body": "⇧",
-    "description": "⇧"
+    "description": "Shift key symbol"
   },
   "esc": {
     "prefix": "esc",
     "body": "⎋",
-    "description": "⎋"
+    "description": "Escape key symbol"
   },
   "aarr": {
     "prefix": "aarr",
     "body": "↓↑←→",
-    "description": "Arrows"
+    "description": "Arrow key symbols"
   },
   "uarr": {
     "prefix": "uarr",
     "body": "↑",
-    "description": "Arrows"
+    "description": "Up arrow symbol"
   },
   "larr": {
     "prefix": "larr",
     "body": "←",
-    "description": "Arrows"
+    "description": "Left arrow symbol"
   },
   "rarr": {
     "prefix": "rarr",
     "body": "→",
-    "description": "Arrows"
+    "description": "Right arrow symbol"
   },
   "darr": {
     "prefix": "darr",
     "body": "↓",
-    "description": "Arrows"
+    "description": "Down arrow symbol"
   },
   "ent": {
     "prefix": ["ent", "ret"],
