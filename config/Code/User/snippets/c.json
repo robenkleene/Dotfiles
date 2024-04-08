@@ -2,6 +2,6 @@
   "template": {
     "prefix": "template",
     "body": "#include <stdio.h>\n\nint main() {\n    printf(\"hello, world\\n\");\n}",
-    "description": "Template"
+    "description": "C template"
   }
 }
