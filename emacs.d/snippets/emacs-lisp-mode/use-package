@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: use-package
-# key: use-package
-# --
-(use-package ${1:my-package})
