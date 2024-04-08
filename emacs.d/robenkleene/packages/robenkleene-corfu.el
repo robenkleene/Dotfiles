@@ -41,6 +41,8 @@
   (add-hook 'text-mode-hook (lambda ()
                               (corfu-mode)
                               ))
+  :config
+  (setq corfu-auto t)
   )
 
 (provide 'robenkleene-corfu)
