@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: puts_variable
+# name: Print a variable
+# --
+puts "${1:variable} = #{$1}"

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: script_dir
+# name: Script directory
+# --
+\$(dirname "\$0")

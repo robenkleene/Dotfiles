@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: while
+# name: While loop
+# --
+while read i; do
+  ${0:echo $i}
+done

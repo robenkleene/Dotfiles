@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: while_getchar
+# name: While character loop
+# --
+while ((c = getchar()) != EOF) {
+	$0
+}

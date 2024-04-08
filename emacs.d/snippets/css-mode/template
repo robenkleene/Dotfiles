@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: template
+# name: CSS template
+# --
+body {
+  color: blue;
+}

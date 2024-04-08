@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: test_less_than
+# name: True if less than
+# --
+${1:$?} -lt ${0:0}
