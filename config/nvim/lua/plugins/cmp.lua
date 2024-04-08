@@ -1,3 +1,4 @@
+-- Use `cmp` because `luasnip` doesn't support Vim builtin completion
 return {
   'hrsh7th/nvim-cmp', dependencies = {
     'hrsh7th/cmp-nvim-lsp',
