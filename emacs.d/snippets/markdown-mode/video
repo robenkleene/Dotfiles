@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: video
-# name: A video with controls
-# --
-<video controls>
-  <source src="${1:path/to/video}" type="video/mp4">
-</video>

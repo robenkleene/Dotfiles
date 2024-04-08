@@ -1,6 +1,7 @@
-# key: let
-# name: let
+# -*- mode: snippet -*-
+# name: let*
+# key: let*
 # --
-let ((${1:variable-name} ${2:"value"}))
+let* ((${1:foo} ${2:"value"})
+     (${2:bar} $1))
   $0
-  

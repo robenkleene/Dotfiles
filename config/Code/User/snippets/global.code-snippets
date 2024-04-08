@@ -73,5 +73,20 @@
     "prefix": "kss",
     "body": "⌃⌥⇧⌘",
     "description": "Keyboard shortcut symbols"
+  },
+  "flat": {
+    "prefix": "flat",
+    "body": "♭",
+    "description": "Flat symbol"
+  },
+  "degrees": {
+    "prefix": "degrees",
+    "body": "°",
+    "description": "Degrees symbol"
+  },
+  "sharp": {
+    "prefix": "sharp",
+    "body": "♯",
+    "description": "Sharp symbol"
   }
 }

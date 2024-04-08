@@ -1,4 +1,0 @@
-# key: today
-# name: today
-# --
-`(shell-command-to-string "date +%F | tr -d '\n'")`
