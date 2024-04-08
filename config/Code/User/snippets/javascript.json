@@ -1,42 +1,12 @@
 {
-  "logv": {
-    "scope": "javascript,typescript",
-    "prefix": "logv",
-    "body": "console.log(\"${1:result} = \" + $1);",
-    "description": "logv"
-  },
-  "logvj": {
-    "scope": "javascript,typescript",
-    "prefix": "logvj",
-    "body": "console.log(\"${1:result} = \" + JSON.stringify($1));",
-    "description": "logvj"
-  },
   "template": {
     "scope": "javascript,typescript",
     "prefix": "template",
     "body": "#!/usr/bin/env node\n\n$0",
     "description": "template"
   },
-  "debugv": {
-    "scope": "javascript,typescript",
-    "prefix": "debugv",
-    "body": "debug(\"${1:document} \" + $1);",
-    "description": "debugv"
-  },
-  "for": {
-    "scope": "javascript,typescript",
-    "prefix": "for",
-    "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
-    "description": "for"
-  },
-  "postv": {
-    "scope": "javascript,typescript",
-    "prefix": "postv",
-    "body": "post(\"${1:result} = \" + $1 + \"\\n\");",
-    "description": "postv"
-  },
-  "templatemax": {
-    "prefix": "templatemax",
+  "max-template": {
+    "prefix": "max-template",
     "body": [
       "// Re-compile the file automatically when it changes",
       "autowatch = 1;",
@@ -104,6 +74,6 @@
       "}",
       ""
     ],
-    "description": "templatemax"
+    "description": "Max template"
   }
 }
