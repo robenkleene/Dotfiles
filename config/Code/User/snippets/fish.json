@@ -14,8 +14,8 @@
     "body": "for ${1:file} in (${2:ls})\n    echo $$1\nend",
     "description": "For in"
   },
-  "forin-1": {
-    "prefix": "forin_1",
+  "1_forin": {
+    "prefix": "1_forin",
     "body": "for ${1:file} in (${2:ls}); echo $$1; end",
     "description": "For in one-liner"
   }
