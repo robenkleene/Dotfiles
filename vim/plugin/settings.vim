@@ -92,8 +92,9 @@ set foldmethod=indent
 " un-folded text)
 " Make folds sticky
 " Set what opens folds
-" Not sure why removing these doesn't work
-" set foldopen-=search
+" Exclude search, this makes it easy to search just changed contents in
+" `vimdiff` (because all unchanged content will be folded)
+set foldopen-=search
 " Without this, jumping to a symbol and back will open the current fold
 " (because a mark is set before jumping)
 set foldopen-=mark
