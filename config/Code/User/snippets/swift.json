@@ -4,50 +4,30 @@
     "body": "#!/usr/bin/swift\n\n$0",
     "description": "Template"
   },
-  "templatex": {
-    "prefix": "templatex",
-    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n$0",
-    "description": "Template"
-  },
   "delegate": {
     "prefix": "delegate",
     "body": "protocol ${1:MyClass}Delegate {\n    func ${2:handleEvent}(for: $1})\n    func ${1/.*/\\l$0/}(_  ${1/.*/\\l$0/}: $1, ${3:valueForKey} ${4:key}: ${5:String}) -> ${6:Any}\n}",
     "description": "Delegate"
   },
-  "weakself": {
-    "prefix": "weakself",
+  "guard_weak_self": {
+    "prefix": "guard_weak_self",
     "body": "guard let \\`self\\` = self else { return }",
-    "description": "Weak self, strong self"
+    "description": "Weak self, strong self guard statement"
   },
   "protocol": {
     "prefix": "protocol",
     "body": "protocol ${1:MyType} {\n    $0\n}",
     "description": "Protocol"
   },
-  "uiviewcontroller": {
-    "prefix": "uiviewcontroller",
-    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\nimport UIKit\n\nclass `!v expand(\"%:t:r\")`: UIViewController {\n    $0\n}",
-    "description": "View Controller"
-  },
-  "log": {
-    "prefix": "log",
-    "body": "NSLog(\"$0\")",
-    "description": "Log"
-  },
-  "logv": {
-    "prefix": "logv",
+  "log_variable": {
+    "prefix": "log_variable",
     "body": "NSLog(\"${1:variable} = \\($1)\")",
     "description": "Log variable"
   },
-  "printv": {
-    "prefix": "printv",
+  "print_variable": {
+    "prefix": "print_variable",
     "body": "print(\"${1:variable} = \\($1)\")",
     "description": "Print variable"
-  },
-  "print": {
-    "prefix": "print",
-    "body": "print(\"$0\")",
-    "description": "Print"
   },
   "class": {
     "prefix": "class",
@@ -59,9 +39,9 @@
     "body": "let ${1:expect} = expectation(description: \"${2:Expectation}\")\n$1.fulfill()\nwaitForExpectations(timeout: ${3:1.0}, handler: nil)",
     "description": "Expectation"
   },
-  "dotry": {
-    "prefix": "dotry",
+  "do_catch": {
+    "prefix": "do_catch",
     "body": "do {\n    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}\n} catch {\n    ${2:throw error}\n}",
-    "description": "Do-Try-Catch"
+    "description": "`do-catch` statement"
   }
 }
