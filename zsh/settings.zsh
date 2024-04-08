@@ -6,7 +6,9 @@ setopt extendedglob
 # Make globs less case sensitive
 # Without this set, `ls **/TAG` will print a match with the file name `tag`
 # as `TAG`
-setopt nocaseglob
+# `setopt nocaseglob` was causing an odd completion issue where an extra letter
+# was being added to completions
+# setopt nocaseglob
 # `cd` just by typing name
 # setopt auto_cd
 
@@ -20,7 +22,7 @@ unalias run-help &>/dev/null
 # `pushdtohome`: Allow `pushd` (or `cd` with `autopushd`) to go to home
 # `pushdsilent`: Don't dump directory list after each `pushd` (or `cd`)
 # `pushdminus`: Swaps the meaning of `+` and `-`, so `cd -3` is the third
-# oldest directory (it's easiest to do `cd -<tab>`.
+# oldest directory (it's easiest to do `cd -<tab>`).
 setopt autopushd pushdminus pushdsilent pushdtohome
 
 # History
@@ -65,12 +67,11 @@ setopt nolistbeep
 
 # Completion
 # Enable Completion
-autoload -Uz compinit
-# This is just re-generating the cache and shouldn't be run on startup?
+# `compinit -C` is just re-generating the cache and shouldn't be run on startup?
 # Removing this breaks `menu select` to highlight the current match
 # compinit
 # With the `-C` is fast and fixes the issue
-compinit -C
+autoload -Uz compinit && compinit -C
 
 # Automatically select the first option
 # Don't enable this because it makes it difficult to narrow in on a choice
