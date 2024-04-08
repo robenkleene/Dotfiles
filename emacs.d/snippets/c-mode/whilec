@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: whilec
-# name: While char
-# --
-while ((c = getchar()) != EOF) {
-	$0
-}

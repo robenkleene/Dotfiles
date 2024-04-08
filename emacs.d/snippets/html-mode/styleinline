@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: styleinline
-# name: Style tag with inline styles
-# --
-<style>
-  body {
-    color: blue;
-  }
-</style>

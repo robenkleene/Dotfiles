@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: forf
-# name: forf
-# --
-for ${1:file} in (${2:ls})
-    echo $$1
-end

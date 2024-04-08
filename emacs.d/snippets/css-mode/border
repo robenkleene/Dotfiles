@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: border
-# name: Red border
-# --
-border: 1px solid red;

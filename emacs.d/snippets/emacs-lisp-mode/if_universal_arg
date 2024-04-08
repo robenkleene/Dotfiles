@@ -1,5 +1,5 @@
-# key: universal
-# name: universal
+# key: if_universal_arg
+# name: if_universal_arg
 # --
 (let ((current-prefix-arg nil))
   (if (equal arg nil)

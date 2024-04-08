@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: print
-# name: Print
-# --
-print("$0")

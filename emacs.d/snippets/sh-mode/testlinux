@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: testlinux
-# name: True if Linux
-# --
-"$(uname)" = "Linux"

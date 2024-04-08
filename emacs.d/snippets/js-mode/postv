@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: postv
-# name: postv
-# --
-post("${1:result} = " + $1 + "\n");

@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: makeprgxcodebuildtest
-# name: makeprgxcodebuildtest
-# --
-setlocal makeprg=xcodebuild\ test
-			\\\ -alltargets
-			\\\ -configuration\ Debug
-			\\\ -scheme\ ${1:Scheme}
-			\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: testlt
-# name: True if less than
-# --
-${1:$?} -lt ${0:0}

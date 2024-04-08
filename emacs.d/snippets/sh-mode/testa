@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: testa
-# name: True one argument
-# --
-"$#" ${1:-ne} ${2:1}
