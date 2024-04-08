@@ -8,6 +8,7 @@ filename_to_mode = {
   'objective-c' => 'objc',
   'shellscript' => 'sh',
   'javascript' => 'js',
+  'global' => 'text',
   'zsh' => nil
 }
 
@@ -43,7 +44,7 @@ unless options[:force]
   puts
 end
 
-Dir.glob("#{code_snippets_path}/*.json") do |file_path|
+Dir.glob("#{code_snippets_path}/*.{json,code-snippets}") do |file_path|
   contents = File.read(file_path)
   json = JSON.parse(contents)
   filename = File.basename(file_path, File.extname(file_path))
