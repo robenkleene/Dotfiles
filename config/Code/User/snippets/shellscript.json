@@ -94,67 +94,58 @@
     "body": "${1:$?} -lt ${0:0}",
     "description": "True if less than"
   },
-  "testz": {
-    "prefix": "testz",
+  "test_empty": {
+    "prefix": "test_empty",
     "body": "-z \"${${1:1}:-}\"",
     "description": "True if empty variable"
   },
-  "testn": {
-    "prefix": "testn",
+  "test_not_empty": {
+    "prefix": "test_not_empty",
     "body": "-n \"${${1:1}:-}\"",
     "description": "True if not empty variable"
   },
-  "tests": {
-    "prefix": "tests",
+  "test_string": {
+    "prefix": "test_string",
     "body": "\"$${1:1}\" = \"${2:string}\"",
     "description": "True if variable matches string"
   },
-  "testx": {
-    "prefix": "testx",
+  "test_executable": {
+    "prefix": "test_executable",
     "body": "-x \"$(command -v ${1:ls})\"",
     "description": "True if command is executable"
   },
-  "testmac": {
-    "prefix": "testmac",
-    "body": "\"$(uname)\" = \"Darwin\"",
-    "description": "True if Mac"
-  },
-  "testlinux": {
-    "prefix": "testlinux",
-    "body": "\"$(uname)\" = \"Linux\"",
-    "description": "True if Linux"
-  },
-  "testuname": {
+  "test_uname": {
     "prefix": "testuname",
     "body": "\"$(uname)\" = \"Linux\"",
-    "description": "True if uname matches"
+    "description": "True if `uname` matches"
   },
-  "1while": {
-    "prefix": "1while",
+  "1_while": {
+    "prefix": "1_while",
     "body": "while read i; do { ${0:echo $i} } done",
     "description": "While loop one-liner"
   },
   "while": {
     "prefix": "while",
-    "body": "while read i; do\n  ${0:echo $i}\ndone"
+    "body": "while read i; do\n  ${0:echo $i}\ndone",
+    "description": "While loop"
   },
   "for": {
     "prefix": "for",
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
     "description": "For loop"
   },
-  "fordir": {
-    "prefix": "fordir",
+  "for_dir": {
+    "prefix": "for_dir",
     "body": "for dir in */; do\n  echo $dir;\ndone",
     "description": "For loop directories"
   },
-  "1for": {
-    "prefix": "1for",
+  "1_for": {
+    "prefix": "1_for",
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
     "description": "For loop one-liner"
   },
-  "1rename": {
-    "prefix": "1rename",
+  "1_for_rename": {
+    "prefix": "1_for_rename",
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "Rename files in current directory"
   },
