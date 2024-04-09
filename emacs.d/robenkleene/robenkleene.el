@@ -52,6 +52,7 @@
 (require 'robenkleene-magit)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-smartparens)
+(require 'robenkleene-vertico)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
 
