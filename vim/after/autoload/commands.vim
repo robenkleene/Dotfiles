@@ -64,19 +64,19 @@ function! commands#completeMan9(arglead, cmdline, cursorpos) abort
   return systemlist(cmd)
 endfunction
 
-function! commands#Tz(terms) abort
-  call commands#Zcd("tcd", a:terms)
+function! commands#Ztcd(terms) abort
+  call commands#Z("tcd", a:terms)
 endfunction
 
-function! commands#Lz(terms) abort
-  call commands#Zcd("lcd", a:terms)
+function! commands#Zlcd(terms) abort
+  call commands#Z("lcd", a:terms)
 endfunction
 
-function! commands#Z(terms) abort
-  call commands#Zcd("cd", a:terms)
+function! commands#Zcd(terms) abort
+  call commands#Z("cd", a:terms)
 endfunction
 
-function! commands#Zcd(cd, terms) abort
+function! commands#Z(cd, terms) abort
   let l:result = system('zoxide query ' . a:terms)
   if v:shell_error != 0
       return
