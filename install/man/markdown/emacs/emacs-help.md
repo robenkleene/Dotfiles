@@ -11,3 +11,7 @@
 - `r` / `C-c C-b` / `help-go-forward`: Go to next help topic
 - `<TAB>` or `forward-button`: Go to next button
 - `S-<TAB>` or `back-button`: Go to next button
+
+# Minibuffer
+
+- From `M-x`, `C-h f` will show help for the current function
