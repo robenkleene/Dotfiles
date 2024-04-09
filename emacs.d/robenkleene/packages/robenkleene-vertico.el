@@ -33,6 +33,14 @@
          )
   )
 
+;; Orderless makes regular fuzzy matching work, without it a search for a
+;; filename will have to start with the start of that filename
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
 (provide 'robenkleene-vertico)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
