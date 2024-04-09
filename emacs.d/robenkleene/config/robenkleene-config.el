@@ -22,6 +22,10 @@
 ;; saved but not modified, save those to a temporary directory.
 (setq backup-directory-alist `(("." . temporary-file-directory)))
 
+;; Persist minibuffer history between restarts (packages like `vertico' will use
+;; this to prioritized commonly used commands)
+(savehist-mode)
+
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
 (setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
