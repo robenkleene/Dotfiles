@@ -9,18 +9,9 @@
 ;; Use `zsh'
 (setq explicit-shell-file-name "/usr/local/bin/zsh")
 
-;; Save temporary files to tmp directory The below command makes Emacs save
-;; backups to a temporary directory, which is great except Emacs has no
-;; interface for cleaning up the created backups, so if Emacs is creating these
-;; files, it will just tell you about them, and how to recover them, but not
-;; provide an interface for not recovering the file and preventing the message.
-;; So until this interface is available, just disable the backups.
-;; (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-;; Just disable Emacs making backup files
-(setq make-backup-files nil)
-;; The above still seems to create backup files, probably for when a file is
-;; saved but not modified, save those to a temporary directory.
-(setq backup-directory-alist `(("." . temporary-file-directory)))
+;; Without this, Emacs leaves an autosave file (e.g. `#foo.bar#') when quitting
+;; without saving
+(setq kill-buffer-delete-auto-save-files t)
 
 ;; Persist minibuffer history between restarts (packages like `vertico' will use
 ;; this to prioritized commonly used commands)
