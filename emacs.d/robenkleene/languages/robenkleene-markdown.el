@@ -15,7 +15,9 @@
         'rk/flyspell-generic-textmode-verify)
   (setq markdown-enable-wiki-links t)
   ;; Show a flat list of headers in `imenu', instead of a nested list
-  ;; (setq markdown-nested-imenu-heading-index t)
+  ;; (The nested list means you have to choose the top heading, then a more
+  ;; specific heading)
+  (setq markdown-nested-imenu-heading-index nil)
   ;; Enable syntax highlighting for code blocks
   (setq markdown-fontify-code-blocks-natively t)
   :config
