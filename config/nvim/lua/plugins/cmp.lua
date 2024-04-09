@@ -40,7 +40,11 @@ return {
         -- Truncate completion items to `20` characters
         -- Fixes a problem of the menu width jumping around too much as candidates change
         format = function(_, vim_item)
-          vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+          local MAX_LENGTH = 30
+          local MARKER = "…"
+          if string.len(vim_item.abbr) > MAX_LENGTH then
+            vim_item.abbr = string.sub(vim_item.abbr, 1, MAX_LENGTH) .. MARKER
+          end
           return vim_item
         end
       },
