@@ -1,7 +1,7 @@
 {
   "template": {
     "prefix": "template",
-    "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n\n",
+    "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   },
   "echo_variable": {
