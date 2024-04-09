@@ -19,6 +19,18 @@
   (marginalia-mode)
   )
 
+(use-package consult
+  :bind (
+         ;; Use `consult-buffer' because it supports `recentf' by defalt (hit
+         ;; `f<space>')
+         ("C-x b" . consult-buffer)
+         ("C-x 4 b" . consult-buffer-other-window)
+         ("C-x 5 b" . consult-buffer-other-frame)
+         ("C-x t b" . consult-buffer-other-tab)
+         ("M-g i" . consult-imenu)
+         )
+  )
+
 (provide 'robenkleene-vertico)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
