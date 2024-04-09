@@ -65,7 +65,10 @@
                                   (ansi-color-apply-on-region (point-min) (point-max))
                                   (require 'dired-x)
                                   (dired-virtual default-directory)
-                                  (beginning-of-buffer))
+                                  ;; Go to first file
+                                  (beginning-of-buffer)
+                                  (dired-next-line 1)
+                                  )
                                 ;; (display-buffer (process-buffer proc))
                                 (switch-to-buffer-other-window (process-buffer proc))
                                 ))))))
