@@ -1,5 +1,3 @@
-# Processing Functions Camera
-
 ```
 camera(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ)
 ```
