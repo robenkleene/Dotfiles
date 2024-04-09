@@ -1,7 +1,3 @@
-# Processing Print
-
-## Print a Variable
-
-``` pde
+``` java
 print("variable = ", variable, "\n");
 ```
