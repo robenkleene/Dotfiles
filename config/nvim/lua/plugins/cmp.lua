@@ -11,6 +11,7 @@ return {
     "cpp",
     "css",
     "html",
+    "java",
     "javascript",
     "json",
     "jsx",
