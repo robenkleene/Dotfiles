@@ -26,6 +26,10 @@
         "path": "html.json"
       },
       {
+        "language": "java",
+        "path": "java.json"
+      },
+      {
         "language": "javascript",
         "path": "javascript.json"
       },
