@@ -27,6 +27,8 @@
          ("C-x 4 b" . consult-buffer-other-window)
          ("C-x 5 b" . consult-buffer-other-frame)
          ("C-x t b" . consult-buffer-other-tab)
+         ;; This has find-as-you-type, but also doesn't need the odd `*rescan*'
+         ;; item
          ("M-g i" . consult-imenu)
          )
   )
