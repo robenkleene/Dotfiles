@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: pde_template_3d
-# name: Java template
+# name: Processing 3D template
 # --
 void setup() {
   size(400, 400, P3D);
