@@ -123,3 +123,14 @@ function! commands#P(cmd) range abort
 
   let @@ = l:save
 endfunction
+
+function! commands#New(split) range abort
+  let l:save = @@
+
+  execute 'silent noautocmd keepjumps normal! gv'
+  execute 'silent noautocmd keepjumps normal! y'
+  execute a:split
+  execute 'silent noautocmd keepjumps normal! Vp'
+
+  let @@ = l:save
+endfunction
