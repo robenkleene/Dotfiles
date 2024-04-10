@@ -1,7 +1,9 @@
 # Bindings
 
 - `<C-]>`: Jump to definition of the keyword under the cursor (this adds it to the `tagstack`)
-- `<C-w><C-]>`: Open tag under cursor in a new split (there are no other split options, so use `<C-w>v` first for example)
+- `<C-w><C-]>`: Open tag under cursor in a new split
+- `<C-w>v<C-]>`: Open tag under cursor in a new vertical split (note this is two separate commands, not a special binding)
+- `<C-w><C-]><C-w>T`: Open tag under cursor in a new tab (note this is two separate commands, not a special binding)
 - `g]`: Show a list for matches of the item under the cursor
 - `<C-w>g]`: Show a list for matches of the item under the cursor and open the choice in a new split (there are no other split options, so use `<C-w>v` first for example)
 - `<C-t>`: Jump backward in the `tagstack` (`<C-o>` can usually also be used instead, which uses the `jumplist`)
