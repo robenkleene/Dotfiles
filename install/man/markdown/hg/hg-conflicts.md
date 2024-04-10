@@ -1,4 +1,5 @@
 - `hg resolve -t internal:other --all`: Accept theirs
 - `hg resolve -t internal:local --all`: Accept ours
 - `hg resolve -m <file>` / `hg resolve --mark <file>`: Mark as resolved
+- `hg resolve -m` / `hg resolve --mark`: Mark *all* files as resolved (e.g., if no file is supplied, all files are marked as resolved)
 - `hg rebase -c` / `hg rebase --continue`: Continue rebase
