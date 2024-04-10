@@ -87,9 +87,11 @@ This should be the last entry in eshell-output-filter-functions!"
   (defun eshell/z (&rest args)
     "Jump to directory."
     (eshell/cd
-     (shell-command-to-string (concat "zoxide query "
-                                      (apply 'eshell-flatten-and-stringify args))
-                              )
+     (shell-command-to-string
+      (concat "zoxide query "
+              (apply 'eshell-flatten-and-stringify args)
+              " | tr -d '\\n'")
+      )
      )
     )
 
