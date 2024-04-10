@@ -2,11 +2,11 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "nvim-lua/plenary.nvim", },
   keys = {
+    { '<leader>C' },
     { '<leader>b' },
+    { '<leader>c' },
     { '<leader>o' },
     { '<leader>s' },
-    { '<leader>c' },
-    { '<leader>C' },
   },
   config = function()
     require('telescope').setup {
@@ -30,10 +30,11 @@ return {
         oldfiles = { theme = "ivy" },
       }
     }
+    -- Strategy here is to use a minimal number of telescope pickers, and instead have other functionality populate the `quickfix` list and then use the `quickfix` telescope binding to traverse
+    vim.keymap.set('n', '<leader>C', require('telescope.builtin').quickfixhistory)
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
+    vim.keymap.set('n', '<leader>c', require('telescope.builtin').quickfix)
     vim.keymap.set('n', '<leader>o', require('telescope.builtin').oldfiles)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
-    vim.keymap.set('n', '<leader>c', require('telescope.builtin').quickfix)
-    vim.keymap.set('n', '<leader>C', require('telescope.builtin').quickfixhistory)
   end
 }
