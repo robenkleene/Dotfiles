@@ -19,6 +19,10 @@ return {
       pickers = {
         buffers = { theme = "ivy" },
         current_buffer_fuzzy_find = { theme = "ivy" },
+        diagnostics = { theme = "ivy" },
+        oldfiles = { theme = "ivy" },
+        quickfix = { theme = "ivy" },
+        quickfixhistory = { theme = "ivy" },
         lsp_document_symbols = {
           -- Add more space for the symbol
           -- symbol_width = 40,
@@ -26,8 +30,6 @@ return {
           theme = "ivy",
           show_line = true
         },
-        diagnostics = { theme = "ivy" },
-        oldfiles = { theme = "ivy" },
       }
     }
     -- Strategy here is to use a minimal number of telescope pickers, and instead have other functionality populate the `quickfix` list and then use the `quickfix` telescope binding to traverse
