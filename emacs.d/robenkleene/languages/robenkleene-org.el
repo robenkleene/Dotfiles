@@ -3,8 +3,12 @@
 ;;; Code:
 
 (use-package org
+  :bind
+  ;; Recommended `org-mode' global bindings
+  ("C-c l" . org-store-link)
+  ("C-c a" . org-agenda)
+  ("C-c c" . org-capture)
   :mode ("\\.org\\'" . org-mode)
-  :commands (org-store-link)
   :config
   ;; Allow shift select bindings to work in some cases
   ;; This doesn't do enough to be worth it
@@ -75,7 +79,8 @@
   (setq org-agenda-window-setup 'current-window)
 
   ;; Bindings
-  (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
+  ;; Bind this globally instead
+  ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
   ;; Disable `org-mode' keys that conflict with basic text editing
   ;; (define-key org-mode-map (kbd "M-<left>") nil)
   ;; (define-key org-mode-map (kbd "M-<right>") nil)

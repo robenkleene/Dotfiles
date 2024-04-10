@@ -76,10 +76,6 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x t z")
             'z-other-tab)
 
-;; Quickly create org links
-(define-key rk/bindings-minor-mode-map (kbd "C-c l")
-            'org-store-link)
-
 (defvar previous-multiframe-window-repeat-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "O") #'previous-multiframe-window)
