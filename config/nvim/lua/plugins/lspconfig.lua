@@ -7,7 +7,8 @@ return {
     vim.diagnostic.config({
       virtual_text = false,
     })
-    vim.api.nvim_create_user_command('LspDiagnostic', 'lua vim.diagnostic.setqflist()', {})
+    -- Use the binding instead
+    -- vim.api.nvim_create_user_command('LspDiagnostic', 'lua vim.diagnostic.setqflist()', {})
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
@@ -16,22 +17,28 @@ return {
 
         local opts = { buffer = ev.buf }
 
+        -- Go to
         vim.keymap.set('n', '<localleader>gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', '<localleader>gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', '<localleader>gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', '<localleader>gy', vim.lsp.buf.type_definition, opts)
+        -- Show palette
         vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, opts)
+        vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
+        vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
+        -- Actions
+        vim.keymap.set('n', '<localleader>ar', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<localleader>ac', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', '<localleader>=', function() vim.lsp.buf.format { async = true } end, opts)
+        -- Quickfix
+        vim.keymap.set('n', '<localleader>cr', vim.lsp.buf.references, opts)
+        vim.keymap.set('n', '<localleader>cd', vim.diagnostic.setqflist, opts)
+        -- Other
         -- Use one of these instead:
         -- `:lua vim.diagnostic.setqflist()`
         -- `:lua vim.diagnostic.setloclist()`
         -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
         -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-        vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<localleader>ca', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', '<localleader>gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', '<localleader>=', function() vim.lsp.buf.format { async = true } end, opts)
       end,
     })
 
