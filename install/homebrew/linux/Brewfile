@@ -14,6 +14,7 @@ brew 'universal-ctags'
 # Note that this also requires adding `--RAW-CONTROL-CHARS` to `$LESS` to fix
 # colors (otherwise they show up as escape sequences)
 brew 'less'
+brew 'fzf'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']

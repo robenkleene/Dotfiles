@@ -57,6 +57,7 @@ brew 'hexyl'
 # VR
 # Use another install method
 # brew 'scrcpy'
+brew 'fzf'
 
 # macOS
 brew 'suspicious-package'
