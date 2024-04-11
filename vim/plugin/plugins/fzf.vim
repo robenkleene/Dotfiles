@@ -64,5 +64,5 @@ function! s:fzf_quickfix() abort
         \ 'sink': function('s:error_handler'),
         \ 'options': '--prompt="Error> "'
         \ }
-  call fzf#run(fzf#wrap(l:opts))
+  call fzf#run(l:opts)
 endfunction
