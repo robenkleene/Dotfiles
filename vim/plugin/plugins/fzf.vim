@@ -62,7 +62,9 @@ function! s:fzf_quickfix() abort
   let l:opts = {
         \ 'source': s:get_quickfix_errors(),
         \ 'sink': function('s:error_handler'),
-        \ 'options': '--prompt="Error> "'
+        \ 'options': ['--ansi', '--prompt=Error> ',
+        \             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
+        \             '--delimiter', ':', '--preview-window', '+{2}-/2']
         \ }
   call fzf#run(l:opts)
 endfunction
