@@ -5,7 +5,7 @@ nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>o :History<CR>
 nnoremap <silent> <leader>t :BTags<CR>
 
-nnoremap <silent> <leader>c :call fzf_quickfix#run()<CR>
+nnoremap <silent> <leader>c :call <SID>fzf_quickfix()<CR>
 
 function! s:error_type(type, number) abort
   if a:type ==? 'W'
@@ -58,7 +58,7 @@ function! s:error_handler(err) abort
   normal! zvzz
 endfunction
 
-function! fzf_quickfix#run() abort
+function! s:fzf_quickfix() abort
   let l:opts = {
         \ 'source': s:get_quickfix_errors(),
         \ 'sink': function('s:error_handler'),
