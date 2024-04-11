@@ -27,6 +27,12 @@
 - `<C-w>J`: Move window down
 - `<C-w>K`: Move window right
 
+# Resizing Windows
+
+- `<C-w>_`: Resize window to maximum height
+- `<C-w>|`: Resize window to maximum width
+- `<C-w>=`: Resize windows equally
+
 # Switching Windows
 
 - `<C-w>w`: Next window
