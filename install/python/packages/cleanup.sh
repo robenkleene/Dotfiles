@@ -57,5 +57,3 @@ pipdeptree --user-only | grep -v "^\s" | cut -d "=" -f 1 | while IFS=$'\n' read 
     fi
   fi
 done
-
-
