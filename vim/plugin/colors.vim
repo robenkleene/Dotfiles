@@ -23,6 +23,9 @@ function! s:OverrideColors()
 
   highlight MatchParen guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
   highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
+  " This is the same spot the cursor is, is there any benefit to highlighting
+  " this a different color?
+  " highlight CurSearch guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
   highlight CurSearch guibg=Cyan ctermbg=Cyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
 
   highlight Visual guifg=white ctermfg=white guibg=#585858 ctermbg=240 gui=NONE cterm=NONE
