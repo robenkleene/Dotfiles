@@ -50,7 +50,6 @@ brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'yt-dlp'
-brew 'mitmproxy'
 brew 'hyperfine'
 # Shows whitespace nicer than xxd
 brew 'hexyl'
