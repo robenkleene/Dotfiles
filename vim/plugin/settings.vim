@@ -73,9 +73,12 @@ set viewoptions-=folds
 set sessionoptions-=curdir
 " set viewoptions-=blank
 set sessionoptions-=folds
-set sessionoptions+=options
-set sessionoptions+=localoptions
-" set sessionoptions-=blank
+" `options` and `localoptions` in `sessionoptions` makes changing settings in
+" `vimrc` then reloading the session load the old settings
+set sessionoptions-=options
+set sessionoptions-=localoptions
+" Don't reload blank windows (there contents will be missing anyway)
+set sessionoptions-=blank
 " Prefer spaces to tabs
 set expandtab
 " Don't start folded
