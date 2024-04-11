@@ -1,2 +1,3 @@
 - `[mks]ession!`: Write the current session to a file called `Session.vim`, with `!` overwrite the current session file.
 - `vim -S`: Load Vim restoring state from the current session file 
+- Note that `vim -S` will not restore window positions, for that you need to call `:source Session.vim` again
