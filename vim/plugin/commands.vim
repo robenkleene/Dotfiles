@@ -27,6 +27,6 @@ command! -nargs=+ Zcd call commands#Zcd(<q-args>)
 command! -nargs=+ Zlcd call commands#Zlcd(<q-args>)
 command! -nargs=+ Ztcd call commands#Ztcd(<q-args>)
 
-command! -nargs=1 Dc :all commands#Dc(<q-args>)
+command! -nargs=1 Dc call commands#Dc(<q-args>)
 
 command! -nargs=1 -complete=customlist,commands#completeMan9 Man9 execute 'Man 9' <f-args>
