@@ -29,7 +29,7 @@
 
 (use-package consult
   :bind (
-         ;; Use `consult-buffer' because it supports `recentf' by defalt (hit
+         ;; Use `consult-buffer' because it supports `recentf' by default (hit
          ;; `f<space>')
          ("C-x b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
@@ -38,6 +38,9 @@
          ;; This has find-as-you-type, but also doesn't need the odd `*rescan*'
          ;; item
          ("M-g i" . consult-imenu)
+         ;; Don't add `consult-occur' or `consult-grep', etc... instead for
+         ;; anything that generates a `compile' buffer, just use the regular
+         ;; compile buffer commands to traverse matches (e.g., `M-g n')
          )
   )
 

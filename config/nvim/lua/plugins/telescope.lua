@@ -33,6 +33,7 @@ return {
       }
     }
     -- Strategy here is to use a minimal number of telescope pickers, and instead have other functionality populate the `quickfix` list and then use the `quickfix` telescope binding to traverse
+    -- E.g., don't add Telescope `lines` builtin, instead use `:vimgrep` to populate the quickfix list and then use Telescope `quickfix` to traverse the matches
     vim.keymap.set('n', '<leader>C', require('telescope.builtin').quickfixhistory)
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
     vim.keymap.set('n', '<leader>c', require('telescope.builtin').quickfix)
