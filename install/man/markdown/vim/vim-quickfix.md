@@ -14,6 +14,10 @@
 - `:cdo`: Do command to each entry in the `quickfix` list, e.g., `:cdo s/this/that/g`
 - `:cfdo`: Do command to each file in the `quickfix` list, e.g., `:cfdo %s/this/that/g`
 
+## Search
+
+- `:vim[grep]` then `C-r C-w` then `%` to make `:vimgrep <current-word> %` is a nice way to transfer the current search term to the `quickfix` list (`C-r C-w` inserts the word at the cursor)
+
 ## Examples
 
 On each entry in the `quickfix` list:

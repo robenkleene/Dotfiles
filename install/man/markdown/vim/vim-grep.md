@@ -20,5 +20,6 @@
 - `:vim[grep] {pattern} ##`: Search `args` (`##`) and populate the `quickfix` list with the results.
 - `:vim[grep] {pattern} %`: Populate the `quickfix` list with matches of the pattern in the current file
 - `:bufdo vimgrepa[dd] {pattern} %`: Populate the `quickfix` list with matches of the pattern in the current file
+- `:vim[grep]` then `C-r C-w` then `%` to make `:vimgrep <current-word> %` is a nice way to transfer the current search term to the `quickfix` list (`C-r C-w` inserts the word at the cursor)
 
 Add `| copen` to the end of any of the above to show the `quickfix` list.
