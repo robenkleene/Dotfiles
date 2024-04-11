@@ -7,6 +7,14 @@
   (:map vertico-map
         ;; Display possible completions (like `<tab>` for default interface)
         ("?" . 'minibuffer-completion-help)
+        ;; The default has `<tab>' for `vertico-insert' and `M-<tab>' for
+        ;; `minibuffer-complete'. Swapping these seems more natural because it
+        ;; allows using `<tab>' to complete the longest common string (`M-<tab>'
+        ;; then completes the full selected item without exiting)
+        ("<tab>" . 'minibuffer-complete)
+        ("M-<tab>" . 'vertico-insert)
+        ("TAB" . 'minibuffer-complete)
+        ("M-TAB" . 'vertico-insert)
         )
   :init
   (vertico-mode)
