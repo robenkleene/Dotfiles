@@ -15,7 +15,7 @@ command! -nargs=+ -complete=shellcmd VNewSh call commands#Vsh(<q-args>)
 command! -nargs=+ -complete=shellcmd ENewSh call commands#Esh(<q-args>)
 command! -nargs=+ -complete=shellcmd TabSh call commands#Tsh(<q-args>)
 " Shorthand
-command! -nargs=+ -bang -complete=shellcmd Gsh call commands#GrepSh(<bang>0, <f-args>)
+command! -nargs=+ -bang -complete=shellcmd Gsh call commands#GrepSh(<bang>0, <q-args>)
 command! -nargs=+ -complete=shellcmd Ash call commands#ArgsSh(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd Msh call commands#MakeSh(<bang>0, <q-args>)
 command! -nargs=+ -complete=shellcmd Nsh call commands#Nsh(<q-args>)

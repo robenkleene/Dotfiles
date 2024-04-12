@@ -8,10 +8,9 @@ function! commands#ArgsSh(cmd) abort
   execute 'args ' . l:args_list
 endfunction
 
-function! commands#GrepSh(bang, ...) abort
-  let l:cmd = join(a:000, " ")
+function! commands#GrepSh(bang, cmd) abort
   let l:original_grepprg = &grepprg
-  let &grepprg=l:cmd
+  let &grepprg=a:cmd
   execute "grep".(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
