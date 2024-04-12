@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: log_variable
+# key: log_var
 # name: Log variable
 # --
-NSLog("${1:variable} = \($1)")
+NSLog("$0${1:result} = \($1)")

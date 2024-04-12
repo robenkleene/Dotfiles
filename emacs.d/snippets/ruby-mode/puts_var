@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: printv
+# key: puts_var
 # name: Print variable
 # --
-print("${1:Variable} =", $1)
+puts "$0${1:result} = #{$1}"
