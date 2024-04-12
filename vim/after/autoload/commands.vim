@@ -8,11 +8,10 @@ function! commands#ArgsSh(cmd) abort
   execute 'args ' . l:args_list
 endfunction
 
-function! commands#GrepSh(bang, cmd) abort
+function! commands#GrepSh(bang, ...) abort
+  let l:cmd = join(a:000, " ")
   let l:original_grepprg = &grepprg
-  " Escape `\` so they aren't removed when setting `grepprg`
-  " Setting `grepprg` requires escaping spaces
-  execute 'set grepprg='.escape(a:cmd,' \')
+  let &grepprg=l:cmd
   execute "grep".(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
