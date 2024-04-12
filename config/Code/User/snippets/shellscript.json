@@ -6,12 +6,12 @@
   },
   "echo_var": {
     "prefix": "echo_var",
-    "body": "echo \"${1:result} = \\$$1\"",
+    "body": "echo \"$0${1:result} = \\$$1\"",
     "description": "Echo variable"
   },
   "echo_var_array": {
     "prefix": "echo_var_array",
-    "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
+    "body": "echo \"$0${1:args}[@] = \\${$1[@]}\"",
     "description": "Echo array variable"
   },
   "echo_err": {
