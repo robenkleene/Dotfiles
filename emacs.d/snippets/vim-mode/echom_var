@@ -2,4 +2,4 @@
 # key: echom_var
 # name: `echom` variable
 # --
-echom "$0${1:result} = ".$1
+echom "${1:result} = ".$1

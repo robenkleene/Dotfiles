@@ -2,4 +2,4 @@
 # key: puts_var
 # name: Print variable
 # --
-puts "$0${1:result} = #{$1}"
+puts "${1:result} = #{$1}"
