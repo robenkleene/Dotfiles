@@ -18,7 +18,7 @@ return {
       { expr = true, silent = true }
     )
     vim.keymap.set({'s'}, '<Tab>', function() luasnip.jump(1) end, { silent = true })
-    vim.keymap.set({'i', 's'}, '<S Tab>', function() luasnip.jump(-1) end, { silent = true })
+    vim.keymap.set({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, { silent = true })
 
     luasnip.filetype_extend("zsh", { "sh" })
     luasnip.filetype_extend("typescript", { "javascript" })
