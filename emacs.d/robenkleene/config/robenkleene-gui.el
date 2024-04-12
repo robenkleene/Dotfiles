@@ -63,6 +63,19 @@
              '(vertical-scroll-bars . nil))
 (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
+;; Set default window size
+(setq-default initial-frame-alist
+              '(
+                (width . 80)
+                (height . 48)
+                ))
+(setq-default default-frame-alist
+              '(
+                (width . 80)
+                (height . 48)
+                ))
+
+
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
 
