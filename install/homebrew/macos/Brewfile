@@ -57,6 +57,9 @@ brew 'hexyl'
 # Use another install method
 # brew 'scrcpy'
 brew 'fzf'
+# `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
+# "adb devices"`
+brew 'watch'
 
 # macOS
 brew 'suspicious-package'
