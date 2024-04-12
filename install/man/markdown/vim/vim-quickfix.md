@@ -8,6 +8,7 @@
 - `:cb[uffer]`: Populate the `quickfix` list from the results in the current window
 - `:col[der]`: Go to previous `quickfix` list
 - `:cnew[er]`: Go to next `quickfix` list
+- `cexpr []`: Clear the `quickfix` list
 
 # Mass Edits
 
