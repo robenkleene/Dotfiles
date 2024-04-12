@@ -5,9 +5,9 @@
     "body": "#!/usr/bin/env node\n\n$0",
     "description": "template"
   },
-  "log_variable": {
+  "log_var": {
     "scope": "javascript,typescript",
-    "prefix": "log_variable",
+    "prefix": "log_var",
     "body": "console.log(\"${1:result} = \" + $1);",
     "description": "Log variable"
   },
