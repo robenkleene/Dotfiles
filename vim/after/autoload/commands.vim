@@ -10,7 +10,7 @@ endfunction
 
 function! commands#GrepSh(bang, cmd) abort
   let l:original_grepprg = &grepprg
-  let &grepprg=a:cmd
+  let &grepprg=escape(a:cmd, '|')
   execute "grep".(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
