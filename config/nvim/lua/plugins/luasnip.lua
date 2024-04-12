@@ -11,12 +11,15 @@ return {
     if f~=nil then io.close(f)
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.local_snippets/" } })
     end
+    local luasnip = require 'luasnip'
     vim.api.nvim_set_keymap(
       'i', '<Tab>',
       'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
       { expr = true, silent = true }
     )
-    local luasnip = require 'luasnip'
+    vim.keymap.set({'s'}, '<Tab>', function() luasnip.jump(1) end, { silent = true })
+    vim.keymap.set({'i', 's'}, '<S Tab>', function() luasnip.jump(-1) end, { silent = true })
+
     luasnip.filetype_extend("zsh", { "sh" })
     luasnip.filetype_extend("typescript", { "javascript" })
   end
