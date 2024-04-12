@@ -17,7 +17,7 @@ endfunction
 
 function! commands#MakeSh(bang, cmd) abort
   let l:original_makeprg = &makeprg
-  execute 'set makeprg='.escape(a:cmd,' ')
+  let &makeprg=escape(a:cmd, '|')
   execute "make".(a:bang ? '!':'')
   let &makeprg = l:original_makeprg
 endfunction
@@ -79,10 +79,6 @@ function! commands#Z(cd, terms) abort
   if v:shell_error != 0
       return
   endif
-  " Don't also explore, this helps in the case where you might have a No Name
-  " buffer open that you want to switch to a directory to save
-  " execute "Explore ".l:result
-  " cd %
   execute a:cd." ".l:result
   pwd
 endfunction
@@ -125,10 +121,15 @@ endfunction
 function! commands#Pnew(split) range abort
   let l:save = @@
 
+  let l:oldundolevels=&undolevels
+  setlocal undolevels=-1
+
   execute 'silent noautocmd keepjumps normal! gv'
   execute 'silent noautocmd keepjumps normal! y'
   execute a:split
   execute 'silent noautocmd keepjumps normal! Vp'
+  filetype detect
 
   let @@ = l:save
+  let &l:undolevels=l:oldundolevels
 endfunction
