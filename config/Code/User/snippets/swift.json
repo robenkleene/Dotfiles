@@ -19,14 +19,14 @@
     "body": "protocol ${1:MyType} {\n    $0\n}",
     "description": "Protocol"
   },
-  "log_variable": {
-    "prefix": "log_variable",
-    "body": "NSLog(\"${1:variable} = \\($1)\")",
+  "log_var": {
+    "prefix": "log_var",
+    "body": "NSLog(\"${1:result} = \\($1)\")",
     "description": "Log variable"
   },
-  "print_variable": {
-    "prefix": "print_variable",
-    "body": "print(\"${1:variable} = \\($1)\")",
+  "print_var": {
+    "prefix": "print_var",
+    "body": "print(\"${1:result} = \\($1)\")",
     "description": "Print variable"
   },
   "class": {

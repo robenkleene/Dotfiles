@@ -4,9 +4,9 @@
     "body": "#include <stdio.h>\n\nint main() {\n    printf(\"hello, world\\n\");\n}",
     "description": "C template"
   },
-  "printf_variable": {
-    "prefix": "printf_variable",
-    "body": "printf(\"${1:variable} = %i\\n\", $1);",
+  "printf_var": {
+    "prefix": "printf_var",
+    "body": "printf(\"${1:result} = %i\\n\", $1);",
     "description": "Print variable"
   },
   "for": {
