@@ -21,12 +21,12 @@
   },
   "log_var": {
     "prefix": "log_var",
-    "body": "NSLog(\"$2${1:result} = \\($1)\")$0",
+    "body": "NSLog(\"${1:result} = \\($1)\")",
     "description": "Log variable"
   },
   "print_var": {
     "prefix": "print_var",
-    "body": "print(\"$2${1:result} = \\($1)\")$0",
+    "body": "print(\"${1:result} = \\($1)\")",
     "description": "Print variable"
   },
   "class": {
