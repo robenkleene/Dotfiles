@@ -57,12 +57,6 @@
 ;; Toggle save
 ;; (desktop-save-mode 1)
 
-(add-to-list 'default-frame-alist
-             '(vertical-scroll-bars . nil))
-(add-to-list 'initial-frame-alist
-             '(vertical-scroll-bars . nil))
-(add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
-
 ;; Set default window size
 (setq-default initial-frame-alist
               '(
@@ -74,6 +68,13 @@
                 (width . 80)
                 (height . 48)
                 ))
+;; Scroll bars
+(add-to-list 'default-frame-alist
+             '(vertical-scroll-bars . nil))
+(add-to-list 'initial-frame-alist
+             '(vertical-scroll-bars . nil))
+;; Cursor color
+(add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 
 ;; Never use GUI dialog boxes
