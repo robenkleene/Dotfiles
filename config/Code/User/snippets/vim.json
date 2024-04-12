@@ -1,7 +1,7 @@
 {
-  "echom_variable": {
-    "prefix": "echom_variable",
-    "body": "echom \"${1:Variable} = \".$1",
+  "echom_var": {
+    "prefix": "echom_var",
+    "body": "echom \"${1:result} = \".$1",
     "description": "`echom` variable"
   },
   "function": {

@@ -4,9 +4,9 @@
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   },
-  "echo_variable": {
-    "prefix": "echo_variable",
-    "body": "echo \"${1:HOME} = \\$$1\"",
+  "echo_var": {
+    "prefix": "echo_var",
+    "body": "echo \"${1:result} = \\$$1\"",
     "description": "Echo variable"
   },
   "echo_variable_array": {
@@ -14,8 +14,8 @@
     "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
     "description": "Echo array variable"
   },
-  "echo_error": {
-    "prefix": "echo_error",
+  "echo_err": {
+    "prefix": "echo_err",
     "body": "echo \"${0:Error}\" >&2",
     "description": "Echo to standard error"
   },
