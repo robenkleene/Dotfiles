@@ -74,9 +74,3 @@ augroup safecopy
   " autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
   autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
 augroup END
-
-augroup quickfix_height
-  autocmd!
-  " Use the count of quickfix matches (`line("$")`) with a max of `20`
-  autocmd FileType qf execute min([line("$"), 20]) . "wincmd _"
-augroup END
