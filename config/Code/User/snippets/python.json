@@ -14,7 +14,7 @@
     "body": "print(\"${1:result} =\", $1)",
     "description": "Print variable"
   },
-  "print_error": {
+  "print_err": {
     "prefix": "print_err",
     "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
