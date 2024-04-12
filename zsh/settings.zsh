@@ -20,10 +20,11 @@ unalias run-help &>/dev/null
 
 # Automatically `pushd` with `cd`
 # `pushdtohome`: Allow `pushd` (or `cd` with `autopushd`) to go to home
+# `pushd_ignore_dups`: Don't allow dupes in pushd stack
 # `pushdsilent`: Don't dump directory list after each `pushd` (or `cd`)
 # `pushdminus`: Swaps the meaning of `+` and `-`, so `cd -3` is the third
 # oldest directory (it's easiest to do `cd -<tab>`).
-setopt autopushd pushdminus pushdsilent pushdtohome
+setopt autopushd pushd_ignore_dups pushdminus pushdsilent
 
 # History
 # Share history between sessions
