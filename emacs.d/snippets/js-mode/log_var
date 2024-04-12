@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: log_var
+# name: Log variable
+# --
+console.log("$0${1:result} = " + $1);

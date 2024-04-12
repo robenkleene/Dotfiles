@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: print_error
+# key: print_err
 # name: Print to standard error
 # --
 print("${1:Error}", file=sys.stderr)

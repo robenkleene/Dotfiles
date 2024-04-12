@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: puts_error
+# key: puts_err
 # name: `puts` to standard error
 # --
-STDERR.puts
+STDERR.puts "$1{:Error}"
