@@ -4,12 +4,12 @@
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
   },
-  "puts_variable": {
-    "prefix": "puts_variable",
-    "body": "puts \"${1:variable} = #{$1}\"",
+  "puts_var": {
+    "prefix": "puts_var",
+    "body": "puts \"${1:result} = #{$1}\"",
     "description": "Print a variable"
   },
-  "puts_error": {
+  "puts_err": {
     "prefix": "puts_error",
     "body": "STDERR.puts",
     "description": "`puts` to standard error"
