@@ -77,5 +77,6 @@ augroup END
 
 augroup quickfix_height
   autocmd!
-  autocmd FileType qf execute max([min([line("$"), 20]), 3]) . "wincmd _"
+  " Use the count of quickfix matches (`line("$")`) with a max of `20`
+  autocmd FileType qf execute min([line("$"), 20]) . "wincmd _"
 augroup END
