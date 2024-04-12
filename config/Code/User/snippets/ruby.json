@@ -10,8 +10,8 @@
     "description": "Print variable"
   },
   "puts_err": {
-    "prefix": "puts_error",
-    "body": "STDERR.puts",
+    "prefix": "puts_err",
+    "body": "STDERR.puts \"$1{:Error}\"",
     "description": "`puts` to standard error"
   },
   "for": {

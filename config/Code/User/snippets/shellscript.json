@@ -16,7 +16,7 @@
   },
   "echo_err": {
     "prefix": "echo_err",
-    "body": "echo \"${0:Error}\" >&2",
+    "body": "echo \"${1:Error}\" >&2",
     "description": "Echo to standard error"
   },
   "parameter_expansion_remove_trailing_slash": {
