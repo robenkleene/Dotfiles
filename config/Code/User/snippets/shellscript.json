@@ -9,8 +9,8 @@
     "body": "echo \"${1:result} = \\$$1\"",
     "description": "Echo variable"
   },
-  "echo_variable_array": {
-    "prefix": "echo_variable_array",
+  "echo_var_array": {
+    "prefix": "echo_var_array",
     "body": "echo \"${1:args}[@] = \\${$1[@]}\"",
     "description": "Echo array variable"
   },

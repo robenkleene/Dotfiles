@@ -7,7 +7,7 @@
   "puts_var": {
     "prefix": "puts_var",
     "body": "puts \"${1:result} = #{$1}\"",
-    "description": "Print a variable"
+    "description": "Print variable"
   },
   "puts_err": {
     "prefix": "puts_error",
