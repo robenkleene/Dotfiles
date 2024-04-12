@@ -2,4 +2,4 @@
 # key: log_var
 # name: Log variable
 # --
-console.log("$0${1:result} = " + $1);
+console.log("${1:result} = " + $1);

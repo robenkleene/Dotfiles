@@ -6,7 +6,7 @@
   },
   "pde_print_var": {
     "prefix": "pde_print_var",
-    "body": "print(\"$2${1:result = \", $1, \"\\n\");$0",
+    "body": "print(\"${1:result = \", $1, \"\\n\");",
     "description": "Processing 3D template"
   }
 }

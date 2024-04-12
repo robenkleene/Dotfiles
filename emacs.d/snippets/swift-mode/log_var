@@ -2,4 +2,4 @@
 # key: log_var
 # name: Log variable
 # --
-NSLog("$0${1:result} = \($1)")
+NSLog("${1:result} = \($1)")
