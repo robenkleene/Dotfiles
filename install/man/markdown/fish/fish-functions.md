@@ -1,0 +1,3 @@
+- `type my_function`: Show definition of function
+    - `type my_function | bat -l fish`: In a pager with syntax highlighting
+- `funced`: Define an impromptu function

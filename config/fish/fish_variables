@@ -13,7 +13,7 @@ SETUVAR --export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK:1
 SETUVAR --export HOMEBREW_NO_INSTALL_CLEANUP:1
 SETUVAR --export LESS:\x2d\x2dno\x2dinit\x20\x2d\x2dignore\x2dcase\x20\x2d\x2dincsearch\x20\x2d\x2dquit\x2dif\x2done\x2dscreen\x20\x2d\x2dRAW\x2dCONTROL\x2dCHARS
 SETUVAR --export MACOS:1
-SETUVAR --export --path MANPATH:\x1e/Users/robenkleene/\x2eman
+SETUVAR --export --path MANPATH:\x1e/Users/robenkleene/\x2eman\x1e/Users/robenkleene/\x2eman
 SETUVAR --export NNN_PLUG:z\x3az\x3br\x3areveal\x3bp\x3apreview
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/robenkleene/\x2eripgreprc
 SETUVAR --export SDKROOT:/Applications/Xcode\x2eapp/Contents/Developer/Platforms/MacOSX\x2eplatform/Developer/SDKs/MacOSX14\x2e4\x2esdk
