@@ -3,6 +3,8 @@ return {
   'hrsh7th/nvim-cmp',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
     'saadparwaiz1/cmp_luasnip'
   },
   -- Set the same for cmp, treesitter, lsp
@@ -59,6 +61,10 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        -- File paths
+        { name = 'path' },
+        -- Text in buffer
+        { name = 'buffer' },
       },
     }
     vim.cmd([[
