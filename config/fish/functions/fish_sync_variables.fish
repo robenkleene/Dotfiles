@@ -4,6 +4,11 @@ function fish_sync_variables
         set -e $v
     end
 
+    # Editor
+    # Fish fails to run `edit_command_buffer` without this set
+    set -Ux VISUAL "nvim"
+    set -Ux EDITOR $VISUAL
+
     # Man
     set -Ux MANPATH "$MANPATH:$HOME/.man"
 
