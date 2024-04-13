@@ -3,8 +3,12 @@
 set -euo pipefail
 
 force="false"
-while getopts ":fh" option; do
+delete="false"
+while getopts ":dfh" option; do
   case "$option" in
+    d)
+      delete="true"
+      ;;
     f)
       force="true"
       ;;
@@ -33,4 +37,10 @@ else
   echo "Sync Dry Run"
   echo
 fi
-rsync $dry_run --archive --verbose ./emacs/ ~/.emacs.d/snippets/
+
+delete_option=""
+if $delete; then
+  delete_option="--delete"
+fi
+
+rsync $dry_run $delete_option --archive --verbose ./emacs/ ~/.emacs.d/snippets/
