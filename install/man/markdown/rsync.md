@@ -1,4 +1,20 @@
-It's not possible for `rsync` to sync to a directory where the user does not have permissions. E.g., `rsync` does not have the capabilities to ask for a `sudo` password.
+- `--dry-run` / `-n`: Dry run
+
+## Dry Run
+
+``` sh
+dry_run="--dry-run"
+if $force; then
+  dry_run=""
+else
+  echo "Dry Run"
+  echo
+fi
+```
+
+# Notes
+
+- It's not possible for `rsync` to sync to a directory where the user does not have permissions. E.g., `rsync` does not have the capabilities to ask for a `sudo` password.
 
 # What Gets Synced
 
