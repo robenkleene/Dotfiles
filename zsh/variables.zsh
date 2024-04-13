@@ -51,8 +51,7 @@ export NNN_PLUG='z:z;r:reveal;p:preview'
 if [[ "$(uname)" == "Linux" ]]; then
   # marksman was crashing on launch due to missing library errors without
   # setting `LD_LIBRARY_PATH`
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu
-  export LD_LIBRARY_PATH
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu
 fi
 
 fpath=( ~/.zfunc "${fpath[@]}" )

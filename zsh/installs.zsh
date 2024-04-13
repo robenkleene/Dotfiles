@@ -25,6 +25,7 @@ fi
 #   source "$HOMEBREW_DIR/share/chruby/auto.sh"
 #   chruby ruby-3.0.2
 # fi
+
 if [[ -d ~/.gem/ruby/3.0.2/bin ]]; then
     PATH=~/.gem/ruby/3.0.2/bin:$PATH
 fi

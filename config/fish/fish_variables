@@ -1,0 +1,51 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ALTERNATE_EDITOR:
+SETUVAR --export COLORTERM:truecolor
+SETUVAR --export GEM_HOME:/Users/robenkleene/\x2egem/ruby/3\x2e0\x2e2
+SETUVAR --export --path GEM_PATH:/Users/robenkleene/\x2egem/ruby/3\x2e0\x2e2\x1e/Users/robenkleene/\x2erubies/ruby\x2d3\x2e0\x2e2/lib/ruby/gems/3\x2e0\x2e0
+SETUVAR --export GEM_ROOT:/Users/robenkleene/\x2erubies/ruby\x2d3\x2e0\x2e2/lib/ruby/gems/3\x2e0\x2e0/
+SETUVAR --export HOMEBREW_DIR:/opt/homebrew
+SETUVAR --export HOMEBREW_NO_ANALYTICS:1
+SETUVAR --export HOMEBREW_NO_AUTO_UPDATE:1
+SETUVAR --export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK:1
+SETUVAR --export HOMEBREW_NO_INSTALL_CLEANUP:1
+SETUVAR --export LESS:\x2d\x2dno\x2dinit\x20\x2d\x2dignore\x2dcase\x20\x2d\x2dincsearch\x20\x2d\x2dquit\x2dif\x2done\x2dscreen\x20\x2d\x2dRAW\x2dCONTROL\x2dCHARS
+SETUVAR --export MACOS:1
+SETUVAR --export --path MANPATH:/opt/homebrew/share/man\x1e/usr/share/man\x1e/usr/local/share/man\x1e/opt/homebrew/share/man\x1e/Users/robenkleene/\x2eman\x1e\x1e/Users/robenkleene/\x2eman
+SETUVAR --export NNN_PLUG:z\x3az\x3br\x3areveal\x3bp\x3apreview
+SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/robenkleene/\x2eripgreprc
+SETUVAR --export SDKROOT:/Applications/Xcode\x2eapp/Contents/Developer/Platforms/MacOSX\x2eplatform/Developer/SDKs/MacOSX14\x2e4\x2esdk
+SETUVAR __fish_initialized:3400
+SETUVAR fish_color_autosuggestion:808080
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:cyan
+SETUVAR fish_color_comment:808080
+SETUVAR fish_color_cwd:blue
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:yellow
+SETUVAR fish_color_error:red\x1ered
+SETUVAR fish_color_escape:blue
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:blue
+SETUVAR fish_color_normal:white
+SETUVAR fish_color_operator:white
+SETUVAR fish_color_param:blue
+SETUVAR fish_color_quote:green
+SETUVAR fish_color_redirection:white
+SETUVAR fish_color_search_match:black\x1e\x2d\x2dbackground\x3d808080
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3dcyan
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR --export fish_help_browser:echo
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/Users/robenkleene/\x2ecargo/bin\x1e/Users/robenkleene/\x2erubies/ruby\x2d3\x2e0\x2e2/bin\x1e/Users/robenkleene/\x2egem/ruby/3\x2e0\x2e2/bin\x1e/Users/robenkleene/\x2envm/versions/node/v21\x2e6\x2e1/bin\x1e/Applications/Xcode\x2eapp/Contents/Developer/Toolchains/XcodeDefault\x2exctoolchain/usr/bin\x1e/Users/robenkleene/\x2ebin\x1e/Users/robenkleene/\x2ebrew/bin\x1e/Users/robenkleene/Library/Python/3\x2e11/bin\x1e/usr/local/bin
