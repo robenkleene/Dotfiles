@@ -1,14 +1,15 @@
 - `--dry-run` / `-n`: Dry run
+- `--archive` / `-a`: Almost always should include this option, e.g., `rsync` won't sync directories or recurse without it
 
 ## Dry Run
 
 ``` sh
 dry_run="--dry-run"
 if $force; then
-  dry_run=""
+dry_run=""
 else
-  echo "Dry Run"
-  echo
+echo "Dry Run"
+echo
 fi
 ```
 

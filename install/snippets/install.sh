@@ -27,16 +27,17 @@ done
 cd $(dirname "$0" || exit 1)
 
 if $force; then
-  ./snippets_export.rb -f
+  ./snippets_export.rb -of
 else
-  ./snippets_export.rb
+  ./snippets_export.rb -o
 fi
 
 dry_run="--dry-run"
 if $force; then
   dry_run=""
 else
-  echo "Dry Run"
+  echo
+  echo "Sync Dry Run"
   echo
 fi
-rsync $dry_run ./emacs ~/.emacs.d/snippets
+rsync $dry_run --archive --verbose ./emacs/ ~/.emacs.d/snippets/
