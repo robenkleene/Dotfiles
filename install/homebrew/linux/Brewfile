@@ -15,6 +15,7 @@ brew 'universal-ctags'
 # colors (otherwise they show up as escape sequences)
 brew 'less'
 brew 'fzf'
+brew 'fish'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
