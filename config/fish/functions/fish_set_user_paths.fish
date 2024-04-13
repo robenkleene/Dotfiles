@@ -7,7 +7,7 @@ function fish_set_user_paths
             set -U fish_user_paths ~/.local/bin $fish_user_paths
         case Darwin
             set -U fish_user_paths /usr/local/bin $fish_user_paths
-            set -U fish_user_paths ~/Library/Python/3.9/bin $fish_user_paths
+            set -U fish_user_paths ~/Library/Python/3.11/bin $fish_user_paths
     end
 
     if test -e ~/.brew/bin
@@ -23,16 +23,11 @@ function fish_set_user_paths
             set -U fish_user_paths /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin $fish_user_paths
     end
 
-    # Is this necessary with the `brew` override?
-    # if test -e /opt/homebrew/bin/
-    #     set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-    # end
-
     # Node
     # Never install `nvm.fish` because it'll conflict with the way `nvm` is installed via the dotfiles installed script (`~/Developer/Dotfiles/install/node`)
     # If I do need to support `nvm`, it's a good idea to switch to using `fisher` and install the plugin
-    if test -e ~/.nvm/versions/node/v17.0.1/bin
-        set -U fish_user_paths ~/.nvm/versions/node/v17.0.1/bin $fish_user_paths
+    if test -e ~/.nvm/versions/node/v21.6.1/bin
+        set -U fish_user_paths ~/.nvm/versions/node/v21.6.1/bin $fish_user_paths
     end
 
     # Ruby
@@ -54,11 +49,7 @@ function fish_set_user_paths
         set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
     end
 
-    # Android
-    # if test -n "$ANDROID_SDK"
-    #     fish_add_path {$ANDROID_SDK}/emulator {$ANDROID_SDK}/tools {$ANDROID_SDK}/tools/bin {$ANDROID_SDK}/platform-tools
-    # end
-
+    # Local
     if test -f ~/.local_paths.fish
         source ~/.local_paths.fish
     end

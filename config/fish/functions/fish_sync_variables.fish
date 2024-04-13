@@ -1,11 +1,14 @@
 function fish_sync_variables
+    # First delete existing variables
     for v in (set --names -U | grep -v "^_*fish")
         set -e $v
     end
 
-    # set -U CDPATH . ~
-
+    # Man
     set -Ux MANPATH "$MANPATH:$HOME/.man"
+
+    # Less
+    set -Ux LESS "--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS"
 
     # Fish
     set -Ux fish_help_browser echo
@@ -13,8 +16,6 @@ function fish_sync_variables
     set -U fish_greeting
 
     set -Ux COLORTERM "truecolor"
-
-    set -Ux EDITOR "nvim"
 
     # Emacs
     # Start the server in the background if it isn't running
@@ -47,7 +48,12 @@ function fish_sync_variables
     switch (uname)
         case Darwin
             set -Ux MACOS 1
-            # Setting `SDKROOT` is important, we get errors finding C libraries without this
+            # Setting `SDKROOT` is important, we get errors importing C libraries without this
             set -Ux SDKROOT (xcrun --sdk macosx --show-sdk-path)
+    end
+
+    switch (uname)
+        case Linux
+          set -Ux LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu"
     end
 end
