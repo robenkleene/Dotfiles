@@ -36,3 +36,9 @@ Capture everything between the first `DUMPSTART` and `DUMPEND` pair:
 ```
 awk '/DUMPSTART.*$/,/^.*DUMPEND.*$/{print; if(/DUMPEND.*$/) exit}'
 ```
+
+## Printing Different Number of Surrounding Lines
+
+```
+awk '/"title":/{print} /"GlossDef"/{print; for(i=0;i<4;i++) {getline; print}}'
+```
