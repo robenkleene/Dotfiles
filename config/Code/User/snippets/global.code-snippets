@@ -79,10 +79,10 @@
     "body": "♭",
     "description": "Flat symbol"
   },
-  "degrees": {
-    "prefix": "degrees",
+  "degree": {
+    "prefix": "degree",
     "body": "°",
-    "description": "Degrees symbol"
+    "description": "Degree symbol"
   },
   "sharp": {
     "prefix": "sharp",
