@@ -159,9 +159,9 @@
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
-  "script_dir": {
-    "prefix": "script_dir",
-    "body": "\\$(dirname \"\\$0\")",
+  "cd_script_dir": {
+    "prefix": "cd_script_dir",
+    "body": "cd \\$(dirname \"\\$0\" || exit 1)",
     "description": "Script directory"
   },
   "getopts": {
