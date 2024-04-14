@@ -32,7 +32,7 @@ function fish_sync_variables
     set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
     # nnn
-    set -Ux NNN_PLUG "z:z;r:reveal;p:preview"
+    set -Ux NNN_PLUG "z:z;p:preview"
 
     # Homebrew
     if type -q brew
