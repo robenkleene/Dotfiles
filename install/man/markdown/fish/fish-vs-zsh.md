@@ -1,2 +1,3 @@
 - `vim (pbpaste)` works in Fish but not `zsh`
 - `zsh` is less reliably about completing command-line flags
+- Fish universal variables can be synced without restarting Fish, e.g., so configuration changes don't require spawning a new shell
