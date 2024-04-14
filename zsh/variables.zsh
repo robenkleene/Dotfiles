@@ -45,7 +45,7 @@ export ALTERNATE_EDITOR=""
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # nnn
-export NNN_PLUG='z:z;r:reveal;p:preview'
+export NNN_PLUG='z:z;p:preview'
 
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
