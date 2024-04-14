@@ -16,6 +16,7 @@ brew 'universal-ctags'
 brew 'less'
 brew 'fzf'
 brew 'fish'
+brew 'bat'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
