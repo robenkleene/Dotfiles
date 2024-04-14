@@ -7,6 +7,9 @@ fi
 if [ -d "$1" ]; then
     find "$1" | less
 elif [ -f "$1" ]; then
-    # bat --paging=always "$1"
-    cat "$1" | less
+    if command -v bat &> /dev/null; then
+        bat --paging=always "$1"
+    else
+        cat "$1" | less
+    fi
 fi
