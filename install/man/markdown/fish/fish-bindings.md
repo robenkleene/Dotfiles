@@ -1,7 +1,7 @@
 - `⌥E` / `⌥V`: Edit current line in editor
 - `⌃X` / `⌃V`: Copy and paste current line
 - `⌃E` / `→` / `^F`: Accept completion (`^E` is the `readline` go to end of line binding, which feels really natural here)
-- `⌥F`: Accept one word of completion
+- `⌥F` / `⌥→`: Accept one word of completion
 - `⌥↑` / `⌥↓`: Quote / unquote variable
 - `⌥↑` / `⌥↓`: Cycle through parameters from history
 - `⌥.`: Cycle through parameters from history
