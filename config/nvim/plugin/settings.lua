@@ -4,7 +4,7 @@
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank({ higroup="Visual", timeout = 120, on_visual = false })
+    vim.highlight.on_yank({ higroup="Visual", timeout = 180, on_visual = false })
   end
 })
 
