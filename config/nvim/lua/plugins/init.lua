@@ -25,6 +25,7 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
+  { 'junegunn/vim-peekaboo' },
   {
     'nvim-treesitter/playground',
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
