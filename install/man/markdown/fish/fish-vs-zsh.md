@@ -1,3 +1,7 @@
 - `vim (pbpaste)` works in Fish but not `zsh`
 - `zsh` is less reliably about completing command-line flags
 - Fish universal variables can be synced without restarting Fish, e.g., so configuration changes don't require spawning a new shell
+- Fish has a binding for copying the current command line built-in
+- Fish is faster
+- Fish requires less configuration (and is therefore less problem prone)
+- Fish `^R` search is more powerful, e.g., type `rg` `↑` then `^R` to search just `rg` commands for a term
