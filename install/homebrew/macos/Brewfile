@@ -58,6 +58,7 @@ brew 'hexyl'
 # brew 'scrcpy'
 brew 'fzf'
 brew 'fish'
+brew 'bat'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
 brew 'watch'
