@@ -63,8 +63,16 @@ return {
         { name = 'luasnip' },
         -- File paths
         { name = 'path' },
-        -- Text in buffer
-        { name = 'buffer' },
+        -- Text in buffers
+        {
+          name = 'buffer',
+          option = {
+            -- All open buffers
+            get_bufnrs = function()
+              return vim.api.nvim_list_bufs()
+            end
+          }
+        }
       },
     }
     vim.cmd([[
