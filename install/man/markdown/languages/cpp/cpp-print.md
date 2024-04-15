@@ -23,6 +23,13 @@ Print a memory address:
 std::cout << "&foo = %p" << &foo << std::endl;
 ```
 
+Of current object:
+
+```
+#include <iostream>
+std::cout << "&foo = %p" << &foo << std::endl;
+```
+
 ## Logging Multiple Callstack Levels
 
 Sometimes you need to log something at one callstack level with state at another call stack level.
