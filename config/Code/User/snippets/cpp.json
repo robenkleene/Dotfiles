@@ -1,11 +1,16 @@
 {
+  "template": {
+    "prefix": "template",
+    "body": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello, World!\\n\";\n}\n",
+    "description": "C++ template"
+  },
   "cout_var": {
-    "prefix": "printf_var",
+    "prefix": "cout_var",
     "body": "std::cout << ${1:result} = \" << $1 << std::endl;",
     "description": "Print variable"
   },
   "cout_addr_var": {
-    "prefix": "printf_var",
+    "prefix": "cout_addr_var",
     "body": "std::cout << \"%s\" << this << \" \" << ${1:result} = \" << $1 << std::endl;",
     "description": "Print variable"
   }
