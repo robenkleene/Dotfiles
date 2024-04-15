@@ -31,9 +31,6 @@ function fish_sync_variables
     # rg
     set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
-    # nnn
-    set -Ux NNN_PLUG "z:z;p:preview"
-
     # Homebrew
     if type -q brew
         set -Ux HOMEBREW_DIR (brew --prefix)
