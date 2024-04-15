@@ -78,7 +78,8 @@
 (setq inhibit-startup-message t)
 ;; Set default scratch message to empty, this makes it easy to use the scratch
 ;; buffer in a different mode, e.g., `M-x markdown-mode'
-(setq initial-scratch-message "")
+;; Just use a daily text file instead of this
+;; (setq initial-scratch-message "")
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
