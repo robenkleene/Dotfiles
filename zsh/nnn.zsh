@@ -29,12 +29,12 @@ n ()
     # default)
     # -Q: Don't confirm on quit with multiple contexts active
     # -A: Don't auto-enter directories
-    LESS="" command nnn -AQ "$@"
+    export LESS=""
+    export NNN_PLUG='z:z;p:preview'
+    command nnn -AQ "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
         rm -f "$NNN_TMPFILE" > /dev/null
     }
 }
-
-

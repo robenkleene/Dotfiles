@@ -44,9 +44,6 @@ export ALTERNATE_EDITOR=""
 # rg
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-# nnn
-export NNN_PLUG='z:z;p:preview'
-
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
   # marksman was crashing on launch due to missing library errors without
