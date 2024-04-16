@@ -17,6 +17,7 @@ brew 'less'
 brew 'fzf'
 brew 'fish'
 brew 'bat'
+brew 'helix'
 
 # Editor
 brew 'aspell', args: ['with-lang-en']
