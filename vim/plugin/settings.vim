@@ -108,6 +108,10 @@ set foldopen-=mark
 set foldopen-=jump
 set foldopen-=block
 " set foldopen-=percent
+" Jumping to a fold in quickfix list seems like it should open? Although this
+" will mean that `vimgrep <term> %` can't be used to jump to matches that
+" aren't in folds (there doesn't seem to be much advantage over just using `/`
+" search for this?)
 " set foldopen-=quickfix
 set foldopen-=tag
 " Complete to longest match and show a menu, matching the typical `zsh` setup.
