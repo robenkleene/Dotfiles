@@ -63,3 +63,4 @@ fi
 ./man/install.sh
 ./snippets/install.sh
 ./emacs/install.sh
+./helix/install.sh
