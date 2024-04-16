@@ -23,6 +23,7 @@ The outlining keys will create a list item when in used in the context of a list
 - `M-{` / `M-}`: Previous / next element
 - `C-c C-p` / `C-c C-n`: Previous / next item
 - `C-c C-b` / `C-c C-f`: Previous / next sibling
+- `C-c C-u`: Go to parent
 
 ## Moving
 
