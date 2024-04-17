@@ -18,9 +18,6 @@ while read line; do
     fi
 done < "${1:-/dev/stdin}"
 
-# Print the associative array's contents
-for key in "${(@k)file_to_diff}"; do
-    echo "Key: $key"
-    echo "Value: ${file_to_diff[$key]}"
-    echo "-------------"
-done
+echo "${(@k)file_to_diff}" | fzf --ansi --reverse --keep-right --multi --preview "bat --style=plain --color=always {}" \
+  --bind="ctrl-e:execute(${EDITOR:-vim} {+}),ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-a:toggle-all" \
+  --height=20 --preview-window=right,50%:wrap
