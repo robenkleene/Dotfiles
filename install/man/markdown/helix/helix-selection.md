@@ -9,6 +9,7 @@
 - `t` / `T`: Select up to character
 - `A-.`: Extend last `f` or `t` command
 - `R`: Replace selection with yanked text
+- `<space>R`: Replace selection with yanked text from system clipboard
 - `%`: Select whole file
 - `*`: Copy the selection to the search register
 - `A-;`: Swap cursor and anchor
