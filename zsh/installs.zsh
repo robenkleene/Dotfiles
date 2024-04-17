@@ -73,3 +73,11 @@ if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
   PATH=$HOME/.nvm/versions/node/v21.6.1/bin:$PATH
 fi
+
+# fzf
+if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
+  source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
+fi
+if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
+  source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
+fi
