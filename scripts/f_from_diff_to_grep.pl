@@ -19,12 +19,12 @@ while (<STDIN>) {
       $filename = $1;
       $filename =~ s/\s+$//;
    } elsif (m(^\+\+\+ b/(.*)$)) {
+   } elsif (m(^\-\-\- a/(.*)$)) {
       $printed = 0;
       $line = 1;
       $offset = 1;
       $filename = $1;
       $filename =~ s/\s+$//;
-   } elsif (m(^\-\-\- a/(.*)$)) {
    } elsif (m(^@@ -\d+(?:,\d+)? \+(\d+))) {
       $line = $1;
       $offset = 0;
