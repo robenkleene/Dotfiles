@@ -2,9 +2,22 @@
 
 set -euo pipefail
 
-tmp_file=$(mktemp)
-tmp_file_ext="${tmp_file}.diff"
-diff_file="$tmp_file_ext"
-echo "${(@k)file_to_diff}" | fzf --ansi --reverse --keep-right --multi --preview "bat --style=plain --color=always {}" \
-  --bind="ctrl-e:execute(${EDITOR:-vim} {+}),ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-a:toggle-all" \
+tempfile=$(mktemp)
+tempfile_ext="${tempfile}.diff"
+if [[ ! -f "$tempfile_ext" ]]; then
+  tempfile="$tempfile_ext"
+fi
+
+cleanup() {
+  rm -f "$tempfile"
+}
+
+trap cleanup EXIT SIGINT SIGTERM
+
+cat > "$tempfile"
+
+# `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
+grep --line-number --extended-regexp '^\+\+\+ b\/*' "$tempfile" /dev/null | fzf -d ':' -n 2.. --ansi --reverse --keep-right --multi \
+  --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
+  --bind="ctrl-e:execute(${EDITOR:-vim} +{2} {1}),ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-a:toggle-all" \
   --height=20 --preview-window=right,50%:wrap
