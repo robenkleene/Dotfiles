@@ -24,7 +24,6 @@ Plug 'tpope/vim-repeat'
 " Plug 'machakann/vim-highlightedyank'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " More reliable open browser
