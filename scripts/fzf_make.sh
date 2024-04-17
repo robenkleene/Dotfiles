@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -17,7 +17,17 @@ trap cleanup EXIT SIGINT SIGTERM
 cat > "$tempfile"
 
 # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
-grep --line-number --extended-regexp "([^: ]+):([0-9]+):?([0-9]+:)?" "$tempfile" /dev/null | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
+results=$(grep --line-number --extended-regexp "^[^: ]+:[0-9]+:?[0-9]+:?" "$tempfile" /dev/null)
+file_lines=""
+while IFS= read -r line; do
+  file_path=$(echo "$line" | cut -d':' -f3)
+  if [[ -f "$file_path" ]]; then
+    echo "adding line = $line"
+    file_lines+="$line"$'\n'
+  fi
+done <<< "$results"
+
+echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
   --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
   --bind="ctrl-e:execute(${EDITOR:-vim} +{4} {3}),ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-a:toggle-all" \
   --height=20 --preview-window=right,50%:wrap
