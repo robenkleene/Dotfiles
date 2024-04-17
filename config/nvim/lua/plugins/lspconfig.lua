@@ -7,7 +7,7 @@ return {
     vim.diagnostic.config({
       virtual_text = false,
     })
-    -- Use the binding instead
+    -- Use the `vim.diagnostic.setqflist` binding instead
     -- vim.api.nvim_create_user_command('LspDiagnostic', 'lua vim.diagnostic.setqflist()', {})
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
