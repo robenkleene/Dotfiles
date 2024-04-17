@@ -17,7 +17,7 @@ trap cleanup EXIT SIGINT SIGTERM
 cat > "$tempfile"
 
 # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
-results=$(grep --line-number --extended-regexp "^[^: ]+:[0-9]+:?[0-9]+:?" "$tempfile" /dev/null)
+results=$(grep --line-number --extended-regexp "[^: ]+:[0-9]+:?[0-9]+:?" "$tempfile" /dev/null)
 file_lines=""
 while IFS= read -r line; do
   file_path=$(echo "$line" | cut -d':' -f3)
