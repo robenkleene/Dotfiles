@@ -3,8 +3,8 @@
 - `e`: Select to the end of the current word
 - `x`: Select current line (hit `x` againt to select the next line)
 - `X`: Extend selection to end of line
-- `ma"`: Select around delimiter
-- `mi"`: Select in delimiter
+- `ma"`: Select around delimiter (only works when cursor is inside delimiter, e.g., not at delimiter)
+- `mi"`: Select in delimiter (only works when cursor is inside delimiter, e.g., not at delimiter)
 - `f` / `F`: Select to character
 - `t` / `T`: Select up to character
 - `A-.`: Extend last `f` or `t` command
