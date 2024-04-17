@@ -22,7 +22,6 @@ file_lines=""
 while IFS= read -r line; do
   file_path=$(echo "$line" | cut -d':' -f3)
   if [[ -f "$file_path" ]]; then
-    echo "adding line = $line"
     file_lines+="$line"$'\n'
   fi
 done <<< "$results"
