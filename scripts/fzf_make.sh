@@ -19,5 +19,5 @@ cat > "$tempfile"
 # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
 grep --line-number --extended-regexp "([^: ]+):([0-9]+):?([0-9]+:)?" "$tempfile" /dev/null | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
   --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --bind="ctrl-e:become(${EDITOR:-vim} +{4} {3}),ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-a:toggle-all" \
+  --bind="ctrl-e:execute(${EDITOR:-vim} +{4} {3}),ctrl-u:preview-page-up,ctrl-d:preview-page-down,ctrl-a:toggle-all" \
   --height=20 --preview-window=right,50%:wrap
