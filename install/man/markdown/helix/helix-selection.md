@@ -1,4 +1,4 @@
-- `;`: Deselect
+- `;`: Deselect (clear selection)
 - `w`: Select to the beginning of the next current word
 - `e`: Select to the end of the current word
 - `x`: Select current line (hit `x` againt to select the next line)
