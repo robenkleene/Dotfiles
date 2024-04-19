@@ -1,3 +1,20 @@
+function! commands#Fd(term) abort
+  let l:result = systemlist('fd '.a:term)
+  if v:shell_error != 0 || empty(l:result)
+    return
+  endif
+  let l:escaped_files = map(l:result, {_, v -> fnameescape(v)})
+  let l:args_list = join(l:escaped_files, ' ')
+  execute 'args ' . l:args_list
+endfunction
+
+function! commands#Rg(bang, term) abort
+  let l:original_grepprg = &grepprg
+  let &grepprg='rg '.a:term
+  execute 'grep'.(a:bang ? '!':'')
+  let &grepprg = l:original_grepprg
+endfunction
+
 function! commands#ArgsSh(cmd) abort
   let l:result = systemlist(a:cmd)
   if v:shell_error != 0 || empty(l:result)
@@ -11,7 +28,7 @@ endfunction
 function! commands#GrepSh(bang, cmd) abort
   let l:original_grepprg = &grepprg
   let &grepprg=escape(a:cmd, '|')
-  execute "grep".(a:bang ? '!':'')
+  execute 'grep'.(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
 
