@@ -3,3 +3,6 @@ theme = "tokyonight"
 # Toggling soft wrap is awkward
 [editor.soft-wrap]
 enable = true
+
+[editor.whitespace.render]
+tab = "all"
