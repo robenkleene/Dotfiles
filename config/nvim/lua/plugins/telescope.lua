@@ -3,6 +3,9 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", },
   keys = {
     { '<leader>b' },
+    { '<leader>f' },
+    { '<leader>g' },
+    { '<leader>l' },
     { '<leader>o' },
     { '<leader>s' },
   },
@@ -21,6 +24,9 @@ return {
         oldfiles = { theme = "ivy" },
         quickfix = { theme = "ivy" },
         quickfixhistory = { theme = "ivy" },
+        -- Special
+        find_files = { theme = "ivy", follow = true },
+        live_grep = { theme = "ivy", additional_args = { "--follow" } },
         lsp_document_symbols = {
           -- Add more space for the symbol
           -- symbol_width = 40,
@@ -33,6 +39,9 @@ return {
     -- Strategy here is to use a minimal number of telescope pickers, and instead have other functionality populate the `quickfix` list and then use the `quickfix` bindings to traverse
     -- E.g., don't add Telescope `lines` builtin, instead use `:vimgrep` to populate the quickfix list and then use Telescope `quickfix` to traverse the matches
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
+    vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
+    vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep)
+    vim.keymap.set('n', '<leader>l', require('telescope.builtin').current_buffer_fuzzy_find)
     vim.keymap.set('n', '<leader>o', require('telescope.builtin').oldfiles)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
   end
