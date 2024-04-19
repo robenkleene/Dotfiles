@@ -14,6 +14,7 @@
 - `*`: Copy the selection to the search register
 - `A-;`: Swap cursor and anchor
 - `f↩` / `t↩`: Select to the end of the line
+- `%`: Select document
 
 ## Select Mode
 
