@@ -38,9 +38,12 @@
          ;; This has find-as-you-type, but also doesn't need the odd `*rescan*'
          ;; item
          ("M-g i" . consult-imenu)
-         ;; Don't add `consult-occur' or `consult-grep', etc... instead for
-         ;; anything that generates a `compile' buffer, just use the regular
-         ;; compile buffer commands to traverse matches (e.g., `M-g n')
+         ("M-s g" . consult-ripgrep)
+         ("M-s f" . consult-fd)
+         ("M-s o" . consult-line)
+         (:map dired-mode-map
+               ("M-s f" . consult-fd)
+               )
          )
   )
 
@@ -51,6 +54,23 @@
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package embark
+  :bind
+  (
+   ("C-c e" . embark-act)
+   ("C-h B" . embark-bindings))
+  :config
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none))))
+  (use-package embark-consult
+    :hook
+    (embark-collect-mode . consult-preview-at-point-mode)
+    )
+)
 
 (provide 'robenkleene-vertico)
 ;; Local Variables:
