@@ -1,5 +1,8 @@
 theme = "tokyonight"
 
+[editor]
+auto-info = false
+
 # Toggling soft wrap is awkward
 [editor.soft-wrap]
 enable = true
