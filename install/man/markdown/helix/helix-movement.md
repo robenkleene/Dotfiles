@@ -2,7 +2,8 @@
 - `gg`: Start of file
 - `ge`: End of file
 - `gl`: End of line
-- `gs`: Start of line
+- `gh`: Start of line
+- `gs`: First non-whitespace character
 - `f↩` / `t↩`: Select to the end of the line
 
 # Line
