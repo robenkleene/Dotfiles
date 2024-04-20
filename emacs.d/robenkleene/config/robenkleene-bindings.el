@@ -60,11 +60,10 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell-other-window)
 
 ;; Custom
-
-(define-key rk/bindings-minor-mode-map (kbd "M-s g")
-            'grep-shell-command)
-(define-key rk/bindings-minor-mode-map (kbd "M-s f")
-            'find-shell-command-dired)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-s g")
+;;             'grep-shell-command)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-s f")
+;;             'find-shell-command-dired)
 
 ;; Z
 (define-key rk/bindings-minor-mode-map (kbd "M-g z")
