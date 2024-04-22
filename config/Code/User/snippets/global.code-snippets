@@ -64,6 +64,16 @@
     "body": "␣",
     "description": "Space symbol"
   },
+  "bspc": {
+    "prefix": "bspc",
+    "body": "⌫",
+    "description": "Backspace symbol"
+  },
+  "del": {
+    "prefix": "del",
+    "body": "⌦",
+    "description": "Delete symbol"
+  },
   "kso": {
     "prefix": "kso",
     "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
