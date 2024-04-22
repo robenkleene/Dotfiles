@@ -9,9 +9,6 @@ function fish_sync_variables
     set -Ux VISUAL "hx"
     set -Ux EDITOR $VISUAL
 
-    # Man
-    set -Ux MANPATH "$MANPATH:$HOME/.man"
-
     # Less
     set -Ux LESS "--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS"
 
@@ -56,6 +53,6 @@ function fish_sync_variables
 
     switch (uname)
         case Linux
-          set -Ux LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu"
+            set -Ux LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu"
     end
 end
