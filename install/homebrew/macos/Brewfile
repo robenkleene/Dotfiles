@@ -41,6 +41,9 @@ brew 'lua-language-server'
 brew 'rust-analyzer'
 # Markdown
 brew 'marksman'
+# Ruby
+# Some gems fail to install without `coreutils`
+brew 'coreutils'
 
 # Special
 brew 'pandoc'
