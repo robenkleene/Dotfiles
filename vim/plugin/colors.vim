@@ -28,7 +28,7 @@ function! s:OverrideColors()
   " Change to using a color, the underline can be hard to see when there's a
   " background color, or if the text is already underlined (e.g., for a a
   " linter error)
-  highlight MatchParen guifg=Cyan ctermfg=Cyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  highlight MatchParen guifg=Cyan ctermfg=Cyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
   highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
   " This is the same spot the cursor is, is there any benefit to highlighting
   " this a different color?
