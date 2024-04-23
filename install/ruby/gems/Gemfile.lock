@@ -13,7 +13,7 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.3)
-    nokogiri (1.16.4-arm64-darwin)
+    nokogiri (1.16.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.24.0)
     parser (3.3.0.5)
@@ -65,7 +65,7 @@ GEM
     yard (0.9.36)
 
 PLATFORMS
-  arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   repla
