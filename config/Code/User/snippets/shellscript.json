@@ -49,13 +49,13 @@
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
-  "test_directory": {
-    "prefix": "test_directory",
+  "test_dir": {
+    "prefix": "test_dir",
     "body": "-d \"${1:\\$1}\"",
     "description": "True if directory"
   },
-  "test_boolean": {
-    "prefix": "test_boolean",
+  "test_bool": {
+    "prefix": "test_bool",
     "body": "\"$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
