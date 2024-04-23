@@ -14,7 +14,11 @@ function! s:OverrideColors()
   highlight WarningMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight netrwDir guifg=DarkCyan ctermfg=DarkCyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-  " Underrline never looks good for highlight line
+  " Line number background looks funny when just highlighting the line number
+  " with `set cursorlineopt=number`
+  highlight LineNr guibg=NONE ctermbg=NONE
+
+  " Underline never looks good for highlight line
   highlight CursorLine gui=NONE cterm=NONE
   highlight CursorLineNr gui=NONE cterm=NONE
 
