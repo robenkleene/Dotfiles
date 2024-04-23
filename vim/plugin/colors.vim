@@ -25,7 +25,10 @@ function! s:OverrideColors()
   " Whitespaces characters
   highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-  highlight MatchParen guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
+  " Change to using a color, the underline can be hard to see when there's a
+  " background color, or if the text is already underlined (e.g., for a a
+  " linter error)
+  highlight MatchParen guifg=Cyan ctermfg=Cyan guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
   " This is the same spot the cursor is, is there any benefit to highlighting
   " this a different color?
