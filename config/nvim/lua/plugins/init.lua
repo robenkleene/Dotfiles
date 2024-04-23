@@ -17,7 +17,8 @@ return {
       ]])
     end
   },
-  { 'tpope/vim-vinegar' },
+  -- Use Oil
+  -- { 'tpope/vim-vinegar' },
   -- This doesn't handle visual blocks correctly
   -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
