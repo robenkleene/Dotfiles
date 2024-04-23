@@ -4,9 +4,9 @@ return {
   -- keys = {
   --   { '<Tab>', mode = "i" },
   -- },
-  event = "VeryLazy",
+  event = 'VeryLazy',
   config = function()
-    require("luasnip.loaders.from_vscode").lazy_load({ paths = { '~/.config/Code/User/snippets' } })
+    require('luasnip.loaders.from_vscode').lazy_load({ paths = { '~/.config/Code/User/snippets' } })
     local f=io.open(vim.env.HOME .. '/.local_snippets/package.json')
     if f~=nil then io.close(f)
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.local_snippets/" } })
