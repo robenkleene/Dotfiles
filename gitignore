@@ -27,7 +27,7 @@ node_modules
 # Ruby
 .bundle/
 bundle/
-vender/bundle/
+vendor/bundle/
 
 
 # Emacs
