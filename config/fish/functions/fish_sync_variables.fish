@@ -5,8 +5,9 @@ function fish_sync_variables
     end
 
     # Editor
-    # Fish fails to run `edit_command_buffer` without this set
-    set -Ux VISUAL "hx"
+    # Fish fails to run `edit_command_buffer` without `VISUAL` or `EDITOR` set
+    set -Ux VISUAL "nvim"
+    # set -Ux VISUAL "hx"
     set -Ux EDITOR $VISUAL
 
     # Less
