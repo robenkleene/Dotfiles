@@ -15,7 +15,7 @@ This command is deprecated but still works:
 
 The new command is:
 
-    bundle config set path 'vendor/bundle'
+    bundle config set --local path 'vendor/bundle'
 
 This will install gems locally to `vendor/bundle`, and setup a configuration file at `.bundle/config`. Once a `.bundle/config` is setup to specify `BUNDLE_PATH: "vendor/bundle"`, all `bundle update` and `bundle clean` commands will operate based on that folder.
 
