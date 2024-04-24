@@ -6,5 +6,5 @@ imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 
 let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.sh = ['shellscript']
 let g:vsnip_filetypes.zsh = ['sh']
-let g:vsnip_filetypes.typescript = ['typescript']
