@@ -32,7 +32,7 @@ done
 # Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
 # variable is recorded when the emacs server was started
 if [[ -n "${INSIDE_EMACS:-}" ]]; then
-  if command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
+  if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
     tee >(pbcopy) | tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
   else
     tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
