@@ -40,7 +40,7 @@ if [[ -n "${INSIDE_EMACS:-}" ]]; then
 elif [[ -n "${TMUX:-}" ]]; then
   tmux loadb -
   if [[ "$skip_system" == "false" ]]; then
-    if command -v pbcopy &> /dev/null; then
+    if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null; then
       TERM=xterm-256color tmux saveb - | pbcopy
     fi
   fi
