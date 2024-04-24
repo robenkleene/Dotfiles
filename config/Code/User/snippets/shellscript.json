@@ -74,23 +74,23 @@
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "test_not_equal": {
-    "prefix": "test_not_equal",
+  "test_ne": {
+    "prefix": "test_ne",
     "body": "${1:\\$?} -ne ${0:0}",
-    "description": "True if not equal"
+    "description": "True if equal"
   },
-  "test_equal": {
-    "prefix": "test_equal",
+  "test_eq": {
+    "prefix": "test_eq",
     "body": "${1:\\$?} -eq ${0:0}",
     "description": "True if equal"
   },
-  "test_greater_than": {
-    "prefix": "test_greater_than",
+  "test_gt": {
+    "prefix": "test_gt",
     "body": "${1:$?} -gt ${0:0}",
     "description": "True if greater than"
   },
-  "test_less_than": {
-    "prefix": "test_less_than",
+  "test_lt": {
+    "prefix": "test_lt",
     "body": "${1:$?} -lt ${0:0}",
     "description": "True if less than"
   },
