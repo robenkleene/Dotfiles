@@ -8,7 +8,6 @@ return {
     'hrsh7th/cmp-vsnip',
     {
       'hrsh7th/vim-vsnip',
-      event = 'VeryLazy',
       config = function()
         vim.cmd([[
         let g:vsnip_snippet_dir = '~/.config/Code/User/snippets'
