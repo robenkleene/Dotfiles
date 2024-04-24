@@ -74,11 +74,6 @@
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "test_ne": {
-    "prefix": "test_ne",
-    "body": "${1:\\$?} -ne ${0:0}",
-    "description": "True if equal"
-  },
   "test_eq": {
     "prefix": "test_eq",
     "body": "${1:\\$?} -eq ${0:0}",
@@ -86,12 +81,12 @@
   },
   "test_gt": {
     "prefix": "test_gt",
-    "body": "${1:$?} -gt ${0:0}",
+    "body": "${1:\\$?} -gt ${0:0}",
     "description": "True if greater than"
   },
   "test_lt": {
     "prefix": "test_lt",
-    "body": "${1:$?} -lt ${0:0}",
+    "body": "${1:\\$?} -lt ${0:0}",
     "description": "True if less than"
   },
   "test_empty": {
