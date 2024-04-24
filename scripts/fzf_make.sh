@@ -28,5 +28,5 @@ done <<< "$results"
 
 echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
   --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --bind="alt-g:execute(${EDITOR:-vim} +{4} {3}),ctrl-v:preview-page-up,alt-v:preview-page-down,alt-a:toggle-all" \
+  --bind="enter:become(${EDITOR:-vim} +{4} {3})+accept,alt-g:execute(${EDITOR:-vim} +{4} {3}),ctrl-v:preview-page-up,alt-v:preview-page-down,alt-a:toggle-all" \
   --height=20 --preview-window=right,50%:wrap
