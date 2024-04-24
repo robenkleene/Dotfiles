@@ -76,12 +76,12 @@
   },
   "test_not_equal": {
     "prefix": "test_not_equal",
-    "body": "${1:$?} -ne ${0:0}",
+    "body": "${1:\\$?} -ne ${0:0}",
     "description": "True if not equal"
   },
   "test_equal": {
     "prefix": "test_equal",
-    "body": "${1:$?} -eq ${0:0}",
+    "body": "${1:\\$?} -eq ${0:0}",
     "description": "True if equal"
   },
   "test_greater_than": {
