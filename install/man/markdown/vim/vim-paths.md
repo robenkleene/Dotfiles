@@ -13,7 +13,7 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 
 # Examples
 
-- `let @a = expand('%:t)`: Yank current filename to register `a` (note that this doesn't trigger `TextYankPost`, another option to copy the path is to use the shell `:!echo expand('%') | pbcopy`)
+- `let @a = expand('%:t)`: Yank current filename to register `a` (note that this doesn't trigger `TextYankPost`, another option to copy the path is to use the shell `:!echo %<tab> | pbcopy`)
 
 # Command-Line Mode
 
