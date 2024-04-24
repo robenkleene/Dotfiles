@@ -3,6 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", },
   keys = {
     { '<leader>s' },
+    { '<leader>c' },
   },
   config = function()
     require('telescope').setup {
@@ -17,5 +18,6 @@ return {
       }
     }
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
+    vim.keymap.set('n', '<leader>c', require('telescope.builtin').quickfix)
   end
 }
