@@ -15,6 +15,7 @@ return {
           theme = "ivy",
           show_line = true
         },
+        quickfix = { theme = "ivy", },
       }
     }
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
