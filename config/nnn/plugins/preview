@@ -10,7 +10,7 @@ elif [ -f "$1" ]; then
     if command -v bat &> /dev/null; then
         # Use the simple `--style=header` which doesn't include line numbers
         # Line numbers intefere with copying text from the previewed file
-        bat --style=header --paging=always "$1"
+        bat --paging=always "$1"
     else
         cat "$1" | less
     fi
