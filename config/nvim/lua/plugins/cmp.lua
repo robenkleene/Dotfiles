@@ -12,8 +12,8 @@ return {
         vim.cmd([[
         let g:vsnip_snippet_dir = '~/.config/Code/User/snippets'
         let g:vsnip_filetypes = {}
+        let g:vsnip_filetypes.sh = ['shellscript']
         let g:vsnip_filetypes.zsh = ['sh']
-        let g:vsnip_filetypes.typescript = ['typescript']
         ]])
       end
     }
