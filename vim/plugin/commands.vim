@@ -14,6 +14,7 @@ command! -nargs=+ -complete=shellcmd VnewSh call commands#VnewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd EnewSh call commands#EnewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd TabnewSh call commands#TabnewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd TabeditSh call commands#TabnewSh(<q-args>)
+command! -nargs=+ -complete=shellcmd TabeSh call commands#TabnewSh(<q-args>)
 
 command! -nargs=+ -complete=shellcmd Fd call commands#Fd(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd Rg call commands#Rg(<bang>0, <q-args>)
