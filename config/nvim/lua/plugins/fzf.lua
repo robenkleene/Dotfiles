@@ -4,7 +4,7 @@ return {
     { 'junegunn/fzf', },
   },
   cmd = {
-    "Rg"
+    "FzfRg"
   },
   keys = {
     { '<leader>b' },
