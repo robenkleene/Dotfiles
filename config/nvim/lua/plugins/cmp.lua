@@ -45,6 +45,11 @@ return {
   config = function()
     local cmp = require 'cmp'
     cmp.setup {
+      -- This breaks `vsnip`
+      -- completion = {
+      --   -- Don't offer completion until two characters, greatly reduces churn
+      --   keyword_length = 2,
+      -- },
       snippet = {
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body)
