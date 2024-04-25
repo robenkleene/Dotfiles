@@ -26,7 +26,14 @@ while IFS= read -r line; do
   fi
 done <<< "$results"
 
-echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
-  --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --bind="enter:become(${EDITOR:-vim} +{4} {3})+accept,alt-g:execute(${EDITOR:-vim} +{4} {3}),ctrl-v:preview-page-up,alt-v:preview-page-down,alt-a:toggle-all" \
-  --height=20 --preview-window=right,50%:wrap
+if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
+  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
+    --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
+    --bind="enter:become(printf \"%s\n\" {+} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
+    --height=20 --preview-window=right,50%:wrap
+else
+  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
+    --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
+    --bind="enter:become(${EDITOR:-vim} +{2} {1}),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
+    --height=20 --preview-window=right,50%:wrap
+fi
