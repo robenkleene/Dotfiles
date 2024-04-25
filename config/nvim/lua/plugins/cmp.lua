@@ -44,14 +44,6 @@ return {
   },
   config = function()
     local cmp = require 'cmp'
-    local has_words_before = function()
-      unpack = unpack or table.unpack
-      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
-    local feedkey = function(key, mode)
-      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-    end
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -75,8 +67,6 @@ return {
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
             if cmp.visible() and cmp.get_active_entry() then
@@ -100,7 +90,7 @@ return {
         -- Include snippets because there's no builtin completion for snippets
       },
     }
-    -- Only way to enter snippets now is via selecting them from completion
+    -- Only way to enter snippets now is to select them via completion
     -- vim.cmd([[
     -- augroup NvimCmp
     --   au!
