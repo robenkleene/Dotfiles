@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(defalias 'u 'rk/egit-update)
-(defalias 'ut 'rk/git-pull-all-text)
+(defalias 'pull 'rk/egit-update)
 
 (defun rk/egit-update (&optional arg)
   "Run update."
