@@ -3,20 +3,28 @@ return {
   'hrsh7th/nvim-cmp',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-vsnip',
+    'saadparwaiz1/cmp_luasnip',
     {
-      'hrsh7th/vim-vsnip',
+      'L3MON4D3/LuaSnip',
       config = function()
-        vim.cmd([[
-        let g:vsnip_snippet_dir = '~/.config/Code/User/snippets'
-        let g:vsnip_filetypes = {}
-        let g:vsnip_filetypes.sh = ['shellscript']
-        let g:vsnip_filetypes.zsh = ['sh']
-        imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-        smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-        imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-        smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-        ]])
+        require('luasnip.loaders.from_vscode').lazy_load({
+          paths = { '~/.config/Code/User/snippets' }
+        })
+        local f=io.open(vim.env.HOME .. '/.local_snippets/package.json')
+        if f~=nil then io.close(f)
+          require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.local_snippets/" } })
+        end
+        local luasnip = require 'luasnip'
+        vim.api.nvim_set_keymap(
+          'i', '<Tab>',
+          'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
+          { expr = true, silent = true }
+        )
+        vim.keymap.set({'s'}, '<Tab>', function() luasnip.jump(1) end, { silent = true })
+        vim.keymap.set({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, { silent = true })
+
+        luasnip.filetype_extend("zsh", { "sh" })
+        luasnip.filetype_extend("typescript", { "javascript" })
       end
     }
   },
@@ -45,11 +53,11 @@ return {
   config = function()
     local cmp = require 'cmp'
     cmp.setup {
-      -- This breaks `vsnip`
-      -- completion = {
-      --   -- Don't offer completion until two characters, greatly reduces churn
-      --   keyword_length = 2,
-      -- },
+      -- Setting `keyword_length` breaks for `vsnip` but works for `luasnip`
+      completion = {
+        -- Don't offer completion until two characters, greatly reduces churn
+        keyword_length = 2,
+      },
       snippet = {
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body)
@@ -76,7 +84,7 @@ return {
       },
       sources = {
         { name = 'nvim_lsp' },
-        { name = 'vsnip' },
+        { name = 'luasnip' },
         -- Don't include text in buffers, this creates a lot of noise in
         -- Markdown buffers, and `<C-n>` completion can already be used for
         -- that.
