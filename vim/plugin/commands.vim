@@ -17,6 +17,7 @@ command! -nargs=+ -complete=shellcmd TabeditSh call commands#TabnewSh(<q-args>)
 
 command! -nargs=+ -complete=shellcmd Fd call commands#Fd(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd Rg call commands#Rg(<bang>0, <q-args>)
+command! -nargs=+ Z call commands#Zlcd(<q-args>)
 command! -nargs=+ Zcd call commands#Zcd(<q-args>)
 command! -nargs=+ Zlcd call commands#Zlcd(<q-args>)
 command! -nargs=+ Ztcd call commands#Ztcd(<q-args>)
