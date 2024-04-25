@@ -3,5 +3,5 @@
 set -euo pipefail
 
 exec fzf --ansi --reverse --keep-right --multi --preview "bat --style=plain --color=always {}" \
-  --bind="alt-e:execute(${EDITOR:-vim} {+}),ctrl-v:preview-page-up,alt-v:preview-page-down,alt-a:toggle-all" \
+  --bind="enter:become(${EDITOR:-vim} {+}),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
   --height=20 --preview-window=right,50%:wrap
