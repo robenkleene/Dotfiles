@@ -18,3 +18,6 @@ fi
 # status of the current shell
 alias push='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
 alias pull='ssh_start && ~/.bin/egit_update'
+alias pull_text='ssh_start && ssh_git_pull_all -t'
+alias pull_all='ssh_start && ssh_git_pull_all'
+alias pull_settings='ssh_start && ~/.bin/egit_update -s'

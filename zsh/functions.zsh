@@ -1,4 +1,3 @@
-# Commands
 egitn() {
   # The reason `egitn` has to be run seprately after `egit` is because the
   # second time running `egit` can't print except the path.
@@ -27,15 +26,9 @@ egitn() {
   fi
 }
 
-sgitn() {
-  local gitnext
-  gitnext=$(sgit -n)
-  if [[ -n "$gitnext" ]]; then
-    cd "$gitnext" || return
-    git status
-    return
-  fi
-  return 1
+ssh_git_pull_all() {
+  ssh_start
+  git_pull_all "$@"
 }
 
 ssh_start() {
@@ -47,16 +40,6 @@ ssh_start() {
 
 ssh_stop() {
   ssh-agent -k
-}
-
-ssh_tmux_start() {
-  ssh_start
-  tmux
-}
-
-ssh_tmux_restore_start() {
-  ssh_start
-  tmux_session_auto_restore
 }
 
 # Accepts one history line number as argument.
