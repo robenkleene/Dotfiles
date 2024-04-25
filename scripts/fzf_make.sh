@@ -34,6 +34,6 @@ if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
 else
   echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
     --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
-    --bind="enter:become(${EDITOR:-vim} +{2} {1}),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
+    --bind="enter:execute(${EDITOR:-vim} +{2} {1}),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
     --height=20 --preview-window=right,50%:wrap
 fi
