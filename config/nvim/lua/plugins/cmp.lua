@@ -22,7 +22,6 @@ return {
         )
         vim.keymap.set({'s'}, '<Tab>', function() luasnip.jump(1) end, { silent = true })
         vim.keymap.set({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, { silent = true })
-
         luasnip.filetype_extend("zsh", { "sh" })
         luasnip.filetype_extend("typescript", { "javascript" })
       end
@@ -60,8 +59,8 @@ return {
       },
       snippet = {
         expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body)
-        end,
+          require'luasnip'.lsp_expand(args.body)
+        end
       },
       formatting = {
         -- Truncate completion items to `20` characters
