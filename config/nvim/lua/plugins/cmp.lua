@@ -3,8 +3,6 @@ return {
   'hrsh7th/nvim-cmp',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-vsnip',
     {
       'hrsh7th/vim-vsnip',
@@ -108,18 +106,11 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        -- File paths
-        { name = 'path' },
-        -- Text in buffers
-        {
-          name = 'buffer',
-          option = {
-            -- All open buffers
-            get_bufnrs = function()
-              return vim.api.nvim_list_bufs()
-            end
-          }
-        }
+        -- Don't include text in buffers, this creates a lot of noise in
+        -- Markdown buffers, and `<C-n>` completion can already be used for
+        -- that.
+        -- Don't include paths because these aren't LSP features
+        -- Include snippets because there's no builtin completion for snippets
       },
     }
     -- Only way to enter snippets now is via selecting them from completion
