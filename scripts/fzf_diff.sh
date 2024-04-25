@@ -23,16 +23,5 @@ result=$(grep --line-number --extended-regexp '^\+\+\+ b/' "$tempfile" /dev/null
   --bind="shift-up:preview-up,shift-down:preview-down" \
   --height=20 --preview-window=right,50%:wrap | cut -d':' -f 2)
 
-if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
-  awk -v start_line=$result '{ if (NR >= start_line) { if (/^---/) exit; if (/^@@/) printf "%s:%d:%s\n", FILENAME, NR, $0 } }' "$tempfile" | \
-    fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
-    --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-    --bind="enter:become(printf \"%s\n\" {+} | cut -d':' -f 2 | diff_line_number_to_grep {1} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
-    --height=20 --preview-window=right,50%:wrap
-else
-  awk -v start_line=$result '{ if (NR >= start_line) { if (/^---/) exit; if (/^@@/) printf "%s:%d:%s\n", FILENAME, NR, $0 } }' "$tempfile" | \
-    fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
-    --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-    --bind="enter:execute(f_from_diff_to_arg {2} < {1} | xargs -o ${EDITOR:-vim}),shift-up:preview-up,shift-down:preview-down" \
-    --height=20 --preview-window=right,50%:wrap
-fi
+# `- 3` to get to the previous `diff --git` line
+awk -v start_line=$result 'NR >= start_line - 3 { if (/^diff/) count++; if (count == 1) print; if (count == 2) exit; }' "$tempfile" | bat --style=plain
