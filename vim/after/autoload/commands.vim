@@ -39,23 +39,23 @@ function! commands#MakeSh(bang, cmd) abort
   let &makeprg = l:original_makeprg
 endfunction
 
-function! commands#Nsh(cmd) abort
-  call commands#NewSh("new", a:cmd)
+function! commands#NewSh(cmd) abort
+  call commands#NewShCmd("new", a:cmd)
 endfunction
 
-function! commands#Vsh(cmd) abort
-  call commands#NewSh("vnew", a:cmd)
+function! commands#VnewSh(cmd) abort
+  call commands#NewShCmd("vnew", a:cmd)
 endfunction
 
-function! commands#Esh(cmd) abort
-  call commands#NewSh("enew", a:cmd)
+function! commands#EnewSh(cmd) abort
+  call commands#NewShCmd("enew", a:cmd)
 endfunction
 
-function! commands#Tsh(cmd) abort
-  call commands#NewSh("tabnew", a:cmd)
+function! commands#TabnewSh(cmd) abort
+  call commands#NewShCmd("tabnew", a:cmd)
 endfunction
 
-function! commands#NewSh(split, cmd) abort
+function! commands#NewShCmd(split, cmd) abort
   let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
   " Neither approach supports `DiffSh git diff %` well, but this one at
   " least allows `DiffSh git diff #`
@@ -80,18 +80,18 @@ function! commands#completeMan9(arglead, cmdline, cursorpos) abort
 endfunction
 
 function! commands#Ztcd(terms) abort
-  call commands#Z("tcd", a:terms)
+  call commands#Zcmd("tcd", a:terms)
 endfunction
 
 function! commands#Zlcd(terms) abort
-  call commands#Z("lcd", a:terms)
+  call commands#Zcmd("lcd", a:terms)
 endfunction
 
 function! commands#Zcd(terms) abort
-  call commands#Z("cd", a:terms)
+  call commands#Zcmd("cd", a:terms)
 endfunction
 
-function! commands#Z(cd, terms) abort
+function! commands#Zcmd(cd, terms) abort
   let l:result = system('zoxide query ' . a:terms)
   if v:shell_error != 0
       return
@@ -110,7 +110,7 @@ function! commands#Dc(term) abort
   echo "Deleted '".l:result."' from history."
 endfunction
 
-function! commands#P(cmd) range abort
+function! commands#Part(cmd) range abort
   let l:save = @@
 
   execute 'silent noautocmd keepjumps normal! gv'
@@ -135,7 +135,7 @@ function! commands#P(cmd) range abort
   let @@ = l:save
 endfunction
 
-function! commands#Pnew(split) range abort
+function! commands#PartNew(split) range abort
   let l:save = @@
 
   let l:oldundolevels=&undolevels
