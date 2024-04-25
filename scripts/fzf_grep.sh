@@ -2,7 +2,14 @@
 
 set -euo pipefail
 
-exec fzf --delimiter=':' --nth=2.. --ansi --reverse --keep-right --multi \
-  --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --bind="alt-e:become(printf \"%s\n\" {+} | cut -d':' -f 1 | tr '\n' '\0' | xargs -0 -o ${EDITOR:-vim}),alt-g:execute(${EDITOR:-vim} +{2} {1}),ctrl-v:preview-page-up,alt-v:preview-page-down,alt-a:toggle-all" \
-  --height=20 --preview-window=right,50%:wrap
+if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
+  exec fzf --delimiter=':' --nth=2.. --ansi --reverse --keep-right --multi \
+    --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
+    --bind="enter:become(printf \"%s\n\" {+} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
+    --height=20 --preview-window=right,50%:wrap
+else
+  exec fzf --delimiter=':' --nth=2.. --ansi --reverse --keep-right \
+    --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
+    --bind="enter:become(printf \"%s\n\" {+} | cut -d':' -f 1 | tr '\n' '\0' | xargs -0 -o ${EDITOR:-vim}),shift-up:preview-up,shift-down:preview-down,alt-a:select-all,alt-d:deselect-all" \
+    --height=20 --preview-window=right,50%:wrap
+fi
