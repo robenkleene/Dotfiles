@@ -1,34 +1,36 @@
 function fish_sync_variables
     # First delete existing variables
-    for v in (set --names -U | grep -v "^_*fish")
+    for v in (set --names -U | grep -v '^_*fish')
         set -e $v
     end
 
     # Editor
     # Fish fails to run `edit_command_buffer` without `VISUAL` or `EDITOR` set
-    set -Ux VISUAL "nvim"
+    set -Ux VISUAL 'nvim'
     # set -Ux VISUAL "hx"
     set -Ux EDITOR $VISUAL
 
     # Less
-    set -Ux LESS "--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS"
+    set -Ux LESS '--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS'
 
     # Fish
     set -Ux fish_help_browser echo
     # Suppress default greeting
     set -U fish_greeting
 
-    set -Ux COLORTERM "truecolor"
+    set -Ux COLORTERM 'truecolor'
 
     # Emacs
     # Start the server in the background if it isn't running
-    set -Ux ALTERNATE_EDITOR ""
+    set -Ux ALTERNATE_EDITOR ''
 
     # Installs
 
     # rg
     set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
+    # fzf
+    set -Ux FZF_DEFAULT_OPTS '--preview-window=wrap'
     # Homebrew
     if type -q brew
         set -Ux HOMEBREW_DIR (brew --prefix)
