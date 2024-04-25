@@ -1,5 +1,6 @@
 # `tig`
 
+- `⌃P` / `⌃N`: Preview previous / next commit
 - `!`: Revert hunk
 - `h`: Show bindings
 - `s` / `S`: Go to status
