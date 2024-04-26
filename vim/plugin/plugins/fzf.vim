@@ -7,6 +7,3 @@ nnoremap <silent> <leader>t :BTags<CR>
 
 " Don't sort old files
 command! -bang -nargs=* FzfOldfiles call fzf#vim#history(fzf#vim#with_preview({'options': '--no-sort'}))
-" Rebind `Rg` to not shell escape so flags can be used
-command! -bang -nargs=* FzfRg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .
-      \ <q-args>, fzf#vim#with_preview(), <bang>0)
