@@ -55,7 +55,7 @@ return {
       -- Setting `keyword_length` breaks for `vsnip` but works for `luasnip`
       completion = {
         -- Don't offer completion until two characters, greatly reduces churn
-        keyword_length = 3,
+        keyword_length = 2,
       },
       snippet = {
         expand = function(args)
