@@ -24,4 +24,6 @@ command! -nargs=+ Ztcd call commands#Ztcd(<q-args>)
 
 command! -nargs=1 Dc call commands#Dc(<q-args>)
 
+command! Tput put =system('~/.bin/safepaste')
+
 command! -nargs=1 -complete=customlist,commands#completeMan9 Man9 execute 'Man 9' <f-args>
