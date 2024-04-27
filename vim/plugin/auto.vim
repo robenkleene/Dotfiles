@@ -72,5 +72,6 @@ augroup safecopy
   " yank then append to any lettered register and have those changes reflected
   " in the clipboard.
   " autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-  autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
+  " autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
+  autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
 augroup END
