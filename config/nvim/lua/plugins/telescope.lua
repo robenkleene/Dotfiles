@@ -15,10 +15,8 @@ return {
           -- Add more space for the symbol
           -- symbol_width = 40,
           -- Show the line of the declaration
-          theme = "ivy",
           show_line = true
-        },
-        buffers = { theme = "ivy" },
+        }
       }
     }
     vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
