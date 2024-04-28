@@ -12,8 +12,8 @@ setlocal foldenable
 setlocal foldlevel=2
 setlocal readonly nomodifiable
 
-nnoremap <silent> <buffer> <localleader>gd :OpenDiff<CR>
-nnoremap <silent> <buffer> <localleader><C-w>d :OpenDiffNew<CR>
+nnoremap <silent> <buffer> gd :OpenDiff<CR>
+nnoremap <silent> <buffer> <C-w>d :OpenDiffNew<CR>
 
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
