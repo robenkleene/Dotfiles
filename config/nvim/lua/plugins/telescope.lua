@@ -2,11 +2,8 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "nvim-lua/plenary.nvim", },
   keys = {
-    { '<leader>b' },
     { '<leader>d' },
-    { '<leader>o' },
     { '<leader>s' },
-    { '<leader>t' },
   },
   config = function()
     require('telescope').setup {
@@ -19,10 +16,7 @@ return {
         }
       }
     }
-    vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers)
     vim.keymap.set('n', '<leader>d', require('telescope.builtin').diagnostics)
-    vim.keymap.set('n', '<leader>o', require('telescope.builtin').oldfiles)
     vim.keymap.set('n', '<leader>s', require('telescope.builtin').lsp_document_symbols)
-    vim.keymap.set('n', '<leader>t', require('telescope.builtin').current_buffer_tags)
   end
 }
