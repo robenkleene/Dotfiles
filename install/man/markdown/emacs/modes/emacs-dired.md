@@ -44,7 +44,7 @@
 
 ## File Management
 
-### Copying or Moving Files
+### Copying, Moving, Renaming
 
 - `R`: Rename or move file (`↓` inserts the current filename)
 - `C`: Copy file
