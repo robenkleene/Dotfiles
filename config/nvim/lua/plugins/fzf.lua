@@ -12,6 +12,9 @@ return {
     vim.cmd([[
     set rtp+=$HOMEBREW_DIR/opt/fzf
 
+    " Use fzf for buffers and old files because it supports disabling sorting
+    " for old files, and using `^<prefix>` or `<postfix>$` searches, which are
+    " particularly helpful for specifying a file type for old files
     nnoremap <silent> <leader>b :Buffers<CR>
     nnoremap <silent> <leader>o :FzfOldfiles<CR>
     nnoremap <silent> <leader>t :BTags<CR>
