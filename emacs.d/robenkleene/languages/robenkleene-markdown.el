@@ -17,7 +17,11 @@
   ;; Show a flat list of headers in `imenu', instead of a nested list
   ;; (The nested list means you have to choose the top heading, then a more
   ;; specific heading)
-  (setq markdown-nested-imenu-heading-index nil)
+  ;; With `markdown-nested-imenu-heading-index' set to `nil', long documents
+  ;; with lots of subheaders become impossible to navigate, with it enabled, the
+  ;; menu works nicely with `consult-imenu' with headers prefixed with their
+  ;; parent header
+  ;; (setq markdown-nested-imenu-heading-index nil)
   ;; Enable syntax highlighting for code blocks
   (setq markdown-fontify-code-blocks-natively t)
   :config
