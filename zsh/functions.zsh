@@ -49,9 +49,10 @@ ssh_stop() {
 # (because with history you retrieve a command and can then fix it). So `dc`
 # probably stands for "delete history".
 dc () {
+  line=${1:--1}
   # Prevent the specified history line from being 
   # saved.
-  local HISTORY_IGNORE="${(b)$(fc -ln $1 $1)}"
+  local HISTORY_IGNORE="${(b)$(fc -ln $line $line)}"
 
   # Write out the history to file, excluding lines that
   # match `$HISTORY_IGNORE`.
