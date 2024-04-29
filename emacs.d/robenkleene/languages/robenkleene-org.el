@@ -9,6 +9,9 @@
   ("C-c a" . org-agenda)
   ("C-c c" . org-capture)
   :mode ("\\.org\\'" . org-mode)
+  :init
+  ;; Hide leading asterisks
+  (setq org-startup-indented t)
   :config
   ;; Allow shift select bindings to work in some cases
   ;; This doesn't do enough to be worth it
@@ -29,9 +32,6 @@
 
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
-
-  ;; Hide leading asterisks
-  (setq org-startup-indented t)
 
   ;; Add WIP mode
   ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
