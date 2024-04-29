@@ -31,7 +31,7 @@
   ;; (setq org-replace-disputed-keys t)
 
   ;; Hide leading asterisks
-  ;; (setq org-startup-indented t)
+  (setq org-startup-indented t)
 
   ;; Add WIP mode
   ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
