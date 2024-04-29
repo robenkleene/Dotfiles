@@ -7,5 +7,10 @@ nnoremap <silent> <M-p> :cprev<CR>zv
 nnoremap <silent> <M-n> :cnext<CR>zv
 
 nnoremap <silent> " :let @t=system('~/.bin/safepaste')<CR>"
-cnoremap <silent> C-r <C-o>:let @t=system('~/.bin/safepaste')<CR><C-r>
-inoremap <silent> C-r <C-o>:let @t=system('~/.bin/safepaste')<CR><C-r>
+cnoremap <silent> <C-r> <C-r>=<SID>RegisterCopyPaste()<CR>
+inoremap <silent> <C-r> <C-o>:let @t=system('~/.bin/safepaste')<CR><C-r>
+
+function! s:RegisterCopyPaste()
+  let @t=system('~/.bin/safepaste')
+  return "\<C-r>"
+endfunction
