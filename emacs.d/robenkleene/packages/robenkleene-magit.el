@@ -14,7 +14,7 @@
               :map magit-hunk-section-map
               ("RET" . magit-diff-visit-file-other-window))
   :init
-  (defalias 'push 'magit-egit)
+  (defalias 'pus 'magit-egit)
   :config
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
