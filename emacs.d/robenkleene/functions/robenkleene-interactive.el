@@ -33,6 +33,22 @@
     (switch-to-buffer-other-window buf))
   )
 
+(defun rg (terms)
+  "Create grep buffer from `rg' TERMS."
+  (interactive
+   (list (read-from-minibuffer "Rg: ")
+         ))
+  (grep-shell-command (concat "rg " terms))
+  )
+
+(defun fd (terms)
+  "Create dired buffer from `fd' TERMS."
+  (interactive
+   (list (read-from-minibuffer "Fd: ")
+         ))
+  (find-shell-command-dired (concat "fd " terms))
+  )
+
 (defun grep-shell-command (command)
   "Create grep buffer from COMMAND."
   (interactive
