@@ -49,8 +49,10 @@ function operators#YankGrep(context = {}, type = '') abort
     let l:contents = @@
     let l:result = ''
     let l:idx = line('.')
+      " `fnamemodify(expand("%"), ":~:.")` tries to get the relative path
+    let l:file_path = fnamemodify(expand("%"), ":~:.")
     for l:line in split(l:contents, '\n')
-      let l:result .= expand('%:~').':'.l:idx.':'.l:line."\n"
+      let l:result .= l:file_path.':'.l:idx.':'.l:line."\n"
       let l:idx += 1
     endfor
 
@@ -125,7 +127,8 @@ function operators#YankCodeBlock(context = {}, type = '') abort
     let l:contents = @@
     let l:result = ''
     let l:idx = line('.')
-    let l:result = '`'.expand('%:~').':'.l:idx.'`:'."\n"
+    " `fnamemodify(expand("%"), ":~:.")` tries to get the relative path
+    let l:result = '`'.fnamemodify(expand("%"), ":~:.").':'.l:idx.'`:'."\n"
     let l:result .= '``` '.&filetype."\n"
     let l:result .= l:contents
     let l:result .= '```'
