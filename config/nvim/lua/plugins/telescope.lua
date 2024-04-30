@@ -12,7 +12,13 @@ return {
           -- Add more space for the symbol
           -- symbol_width = 40,
           -- Show the line of the declaration
-          show_line = true
+          show_line = true,
+          -- The `ivy` theme has the search field at the top (instead of the
+          -- bottom), which means the results afterwords are then sorted in the
+          -- correct order (i.e., the same order as the file). With the default
+          -- picker, the sort order is inverted with the search filter at the
+          -- bottom
+          theme = 'ivy'
         }
       }
     }
