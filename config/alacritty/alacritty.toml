@@ -16,9 +16,9 @@ post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
 [window]
-# `180` to comfortable fit two 80 width code buffers side-by-side
-# `72` is minimum multiple of `24` that's greater than the height of typical
-# laptop screen (to force full height)
-dimensions = { columns = 180, lines = 72 }
+# `230` to comfortable fit two 80 width code buffers side-by-side
+# `96` is minimum multiple of `24` that's greater than the height of typical
+# monitor screen (to force full height)
+dimensions = { columns = 230, lines = 96 }
 # Fixes `M-n`
 option_as_alt = "Both"
