@@ -16,8 +16,8 @@ fi
 # egit
 # These are aliases instead of shell functions because they set the `ssh`
 # status of the current shell
-alias push='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
-alias pull='ssh_start && ~/.bin/egit_update'
-alias pull_text='ssh_start && ssh_git_pull_all -t'
-alias pull_all='ssh_start && ssh_git_pull_all'
-alias pull_settings='ssh_start && ~/.bin/egit_update -s'
+alias upush='ssh_start && { egit -p || egitn } && ~/.bin/sgitt_auto'
+alias upull='ssh_start && ~/.bin/egit_update'
+alias upull_text='ssh_start && ssh_git_pull_all -t'
+alias upull_all='ssh_start && ssh_git_pull_all'
+alias upull_settings='ssh_start && ~/.bin/egit_update -s'
