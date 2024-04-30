@@ -21,11 +21,7 @@
     )
 
   (defun rk/safecopy ()
-    ;; Skip the system clipboard in terminal Emacs because otherwise we can't
-    ;; paste from Vim into Emacs with `C-y` (because Vim also skips the system
-    ;; clipboard by default because Vim has built-in support for the system
-    ;; clipboard with the `*` register)
-    (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste -s")))
+    (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
       (unless (string= copied-text rk/last-paste)
         copied-text)))
 
