@@ -11,7 +11,7 @@
   :mode ("\\.org\\'" . org-mode)
   :init
   ;; Hide leading asterisks
-  (setq org-startup-indented t)
+  ;; (setq org-startup-indented t)
   :config
   ;; Allow shift select bindings to work in some cases
   ;; This doesn't do enough to be worth it
@@ -82,16 +82,16 @@
   ;; Bind this globally instead
   ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
   ;; Disable `org-mode' keys that conflict with basic text editing
-  ;; (define-key org-mode-map (kbd "M-<left>") nil)
-  ;; (define-key org-mode-map (kbd "M-<right>") nil)
-  ;; (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
-  ;; (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
-  ;; (define-key org-mode-map (kbd "M-S-<left>") nil)
-  ;; (define-key org-mode-map (kbd "M-S-<right>") nil)
-  ;; (define-key org-mode-map (kbd "S-<down>") nil)
-  ;; (define-key org-mode-map (kbd "S-<up>") nil)
-  ;; (define-key org-mode-map (kbd "S-<left>") nil)
-  ;; (define-key org-mode-map (kbd "S-<right>") nil)
+  (define-key org-mode-map (kbd "M-<left>") nil)
+  (define-key org-mode-map (kbd "M-<right>") nil)
+  (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
+  (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
+  (define-key org-mode-map (kbd "M-S-<left>") nil)
+  (define-key org-mode-map (kbd "M-S-<right>") nil)
+  (define-key org-mode-map (kbd "S-<down>") nil)
+  (define-key org-mode-map (kbd "S-<up>") nil)
+  (define-key org-mode-map (kbd "S-<left>") nil)
+  (define-key org-mode-map (kbd "S-<right>") nil)
 
   (define-key org-mode-map (kbd "M-{")
               'rk/backward-block)
