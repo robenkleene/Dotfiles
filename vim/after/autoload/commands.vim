@@ -1,6 +1,12 @@
 function! commands#Fd(term) abort
-  let l:result = systemlist('fd '.a:term)
-  if v:shell_error != 0 || empty(l:result)
+  let l:cmd = 'fd '.a:term
+  let l:result = systemlist(l:cmd)
+  if v:shell_error != 0
+    echom "Non-zero exit status running ".l:cmd
+    return
+  endif
+  if empty(l:result)
+    echom "No results found running ".l:cmd
     return
   endif
   let l:escaped_files = map(l:result, {_, v -> fnameescape(v)})
@@ -17,7 +23,12 @@ endfunction
 
 function! commands#ArgsSh(cmd) abort
   let l:result = systemlist(a:cmd)
-  if v:shell_error != 0 || empty(l:result)
+  if v:shell_error != 0
+    echom "Non-zero exit status running ".a:cmd
+    return
+  endif
+  if empty(l:result)
+    echom "No results found running ".a:cmd
     return
   endif
   let l:escaped_files = map(l:result, {_, v -> fnameescape(v)})
