@@ -12,10 +12,39 @@
   :init
   ;; Hide leading asterisks
   ;; (setq org-startup-indented t)
+  (with-eval-after-load "org"
+    ;; Bindings
+    ;; Bind this globally instead
+    ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
+    ;; Disable `org-mode' keys that conflict with basic text editing
+    (define-key org-mode-map (kbd "M-<left>") nil)
+    (define-key org-mode-map (kbd "M-<right>") nil)
+    (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
+    (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
+    (define-key org-mode-map (kbd "M-S-<left>") nil)
+    (define-key org-mode-map (kbd "M-S-<right>") nil)
+    (define-key org-mode-map (kbd "S-<down>") nil)
+    (define-key org-mode-map (kbd "S-<up>") nil)
+    (define-key org-mode-map (kbd "S-<left>") nil)
+    (define-key org-mode-map (kbd "S-<right>") nil)
+
+    ;; (define-key org-mode-map (kbd "M-{")
+    ;;             'rk/backward-block)
+    ;; (define-key org-mode-map (kbd "M-}")
+    ;;             'rk/forward-block)
+
+    (define-key org-mode-map (kbd "C-c C-u")
+                'rk/org-up-heading)
+    ;; The default binding for this is `mark-defun' which isn't useful, this
+    ;; binding will mark just the source code of a source block
+    (define-key org-mode-map (kbd "C-M-h")
+                'org-babel-mark-block)
+    )
   :config
   ;; Allow shift select bindings to work in some cases
   ;; This doesn't do enough to be worth it
   ;; (setq org-support-shift-select t)
+  (setq org-support-shift-select 'always)
   ;; Setup to allow easily dynamically setting up an `org-agenda' file list Use
   ;; `C-c [' to add the current org file to the list, this will append it to
   ;; `org-agenda-files'
@@ -78,32 +107,9 @@
 
   (setq org-agenda-window-setup 'current-window)
 
-  ;; Bindings
-  ;; Bind this globally instead
-  ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
-  ;; Disable `org-mode' keys that conflict with basic text editing
-  (define-key org-mode-map (kbd "M-<left>") nil)
-  (define-key org-mode-map (kbd "M-<right>") nil)
-  (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
-  (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
-  (define-key org-mode-map (kbd "M-S-<left>") nil)
-  (define-key org-mode-map (kbd "M-S-<right>") nil)
-  (define-key org-mode-map (kbd "S-<down>") nil)
-  (define-key org-mode-map (kbd "S-<up>") nil)
-  (define-key org-mode-map (kbd "S-<left>") nil)
-  (define-key org-mode-map (kbd "S-<right>") nil)
+  (setq org-support-shift-select 'always)
+  
 
-  (define-key org-mode-map (kbd "M-{")
-              'rk/backward-block)
-  (define-key org-mode-map (kbd "M-}")
-              'rk/forward-block)
-
-  (define-key org-mode-map (kbd "C-c C-u")
-              'rk/org-up-heading)
-  ;; The default binding for this is `mark-defun' which isn't useful, this
-  ;; binding will mark just the source code of a source block
-  (define-key org-mode-map (kbd "C-M-h")
-              'org-babel-mark-block)
 
   (org-babel-do-load-languages 'org-babel-load-languages
                                '(
