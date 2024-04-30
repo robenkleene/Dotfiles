@@ -10,29 +10,16 @@
   ("C-c c" . org-capture)
   :mode ("\\.org\\'" . org-mode)
   :init
-  ;; Hide leading asterisks
+  ;; Hide leading asterisks (this seems to feel sloppy)
   ;; (setq org-startup-indented t)
   (with-eval-after-load "org"
-    ;; Bindings
-    ;; Bind this globally instead
-    ;; (define-key org-mode-map (kbd "C-c a") 'org-agenda-list)
     ;; Disable `org-mode' keys that conflict with basic text editing
+    ;; `(setq org-support-shift-select 'always)' handles some other bindings
+    ;; Without the meta arrow keys to control outline, use `org-speed-commands'
     (define-key org-mode-map (kbd "M-<left>") nil)
     (define-key org-mode-map (kbd "M-<right>") nil)
-    (define-key org-mode-map (kbd "C-c <") 'org-do-promote)
-    (define-key org-mode-map (kbd "C-c >") 'org-do-demote)
     (define-key org-mode-map (kbd "M-S-<left>") nil)
     (define-key org-mode-map (kbd "M-S-<right>") nil)
-    (define-key org-mode-map (kbd "S-<down>") nil)
-    (define-key org-mode-map (kbd "S-<up>") nil)
-    (define-key org-mode-map (kbd "S-<left>") nil)
-    (define-key org-mode-map (kbd "S-<right>") nil)
-
-    ;; (define-key org-mode-map (kbd "M-{")
-    ;;             'rk/backward-block)
-    ;; (define-key org-mode-map (kbd "M-}")
-    ;;             'rk/forward-block)
-
     (define-key org-mode-map (kbd "C-c C-u")
                 'rk/org-up-heading)
     ;; The default binding for this is `mark-defun' which isn't useful, this
@@ -42,7 +29,7 @@
     )
   :config
   ;; Allow shift select bindings to work in some cases
-  ;; This doesn't do enough to be worth it
+  ;; The `t' option doesn't do enough to be worth it
   ;; (setq org-support-shift-select t)
   (setq org-support-shift-select 'always)
   ;; Setup to allow easily dynamically setting up an `org-agenda' file list Use
@@ -85,8 +72,8 @@
   (setq org-deadline-warning-days 0)
   (setq org-return-follows-link 1)
 
-  ;; Enable special keys when the point is right after the asterisk
-  ;; (setq org-use-speed-commands t)
+  ;; Enable special keys when the point is at the first column (use `M-m')
+  (setq org-use-speed-commands t)
 
   (defun org-remove-link ()
     "Replace an org link by its description or if empty its address"
