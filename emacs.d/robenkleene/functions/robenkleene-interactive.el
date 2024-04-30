@@ -89,20 +89,26 @@
                                 (switch-to-buffer-other-window (process-buffer proc))
                                 ))))))
 
-(defun diff-shell-command (command)
-  "Create diff buffer from COMMAND."
+(defun buffer-shell-command (command)
+  "Create buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Diff Command: ")
+   (list (read-from-minibuffer "Command: ")
          ))
-  (let* ((output-buffer "*Diff Shell Command*"))
+  (let* ((output-buffer "*Buffer Shell Command*"))
     (if (get-buffer output-buffer)
         (kill-buffer output-buffer))
-    (let ((process (start-process-shell-command "async-command" output-buffer command)))
+    (let ((process (start-process-shell-command "async-command"
+                                                output-buffer
+                                                ;; Pipe the command through
+                                                ;; `cat' which helps with
+                                                ;; compatibility (e.g.,
+                                                ;; disabling pagers)
+                                                (concat command "| cat"))))
       (set-process-sentinel process
                             (lambda (proc event)
                               (when (string-match-p "finished" event)
                                 (with-current-buffer (process-buffer proc)
-                                  (diff-mode)
+                                  (set-auto-mode)
                                   (view-mode)
                                   (beginning-of-buffer))
                                 (display-buffer (process-buffer proc)))))))
