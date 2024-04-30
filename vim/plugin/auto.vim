@@ -64,14 +64,12 @@ augroup END
 " in terminal vim on Linux
 augroup safecopy
   autocmd!
-  " System clipboard
-  " Not specifying `-s` to skip the system clipboard causes `"*p` to replace a visual selection to fail for some reason
-  " Don't filter on register because `if v:event["regname"] ==# ''` because
-  " there's no way to append to the unnamed register, but every other register
-  " is automatically duplicated to the unnamed register. So this way we can
-  " yank then append to any lettered register and have those changes reflected
-  " in the clipboard.
-  " autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-  " autocmd TextYankPost * silent! call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
-  autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  " Don't exclude the system keyboard in order to match how copying to the
+  " tmux pasteboard typically works (which usually also pastes to the system
+  " keyboard)
+  " In specific, this helps when cutting in Vim to the `t` register and then
+  " pasting in Emacs, because the Emacs paste will use `safepaste` which will
+  " prioritize the system keyboard, the paste from Vim to Emacs will only work
+  " if we copy to the system clipbaord
+  autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
