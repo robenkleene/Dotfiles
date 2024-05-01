@@ -34,7 +34,7 @@ while IFS= read -r line; do
     else
         if $in_hunk; then
             hunk+=("$line")
-            if [[ "$line" == *'<<<<<'* ]]; then
+            if [[ "$line" =~ ^\+\<\<\<\<\<|\+\|\|\|\|\|\|\||\+\<\<\<\<\<\<|\+====== ]]; then
                 conflict_found=true
             fi
         fi
