@@ -7,6 +7,7 @@ nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":pr
 nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
 
 nnoremap <silent> " :let @t=system('~/.bin/safepaste')<CR>"
+vnoremap <silent> " :<C-u>let @t=system('~/.bin/safepaste')<CR>gv"
 cnoremap <expr> <silent> <C-r> <SID>RegisterCopyPaste()
 inoremap <expr> <silent> <C-r> <SID>RegisterCopyPaste()
 
