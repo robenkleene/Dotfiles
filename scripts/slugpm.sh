@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 filename="false"
 while getopts ":t:d:fh" option; do
@@ -29,10 +29,10 @@ while getopts ":t:d:fh" option; do
   esac
 done
 
-if [[ -z "$title" ]]; then
+if [[ -z "${title:-}" ]]; then
   text=$(cat)
   while read -r line; do
-    if [[ -n "$title" ]]; then
+    if [[ -n "${title:-}" ]]; then
       echo "Only use line at a time" >&2
       exit 1
     fi
@@ -45,7 +45,7 @@ if [[ -z "$title" ]]; then
   exit 1
 fi
 
-if [[ -z "$directory" ]]; then
+if [[ -z "${directory:-}" ]]; then
   directory="projects"
 fi
 
@@ -54,9 +54,11 @@ if [[ -n "$directory" ]]; then
   directory=${directory#\.}
   directory=${directory#/}
   directory=${directory%/}
-  if [[ ! -d "$directory" ]]; then
+  if [[ -e "$directory" ]] && [[ ! -d "$directory" ]]; then
     echo "$directory is not a directory" >&2
     exit 1
+  else
+    mkdir -p "$directory"
   fi
   cd "$directory"
   # Add a trailing slash for output later
@@ -65,13 +67,19 @@ fi
 
 make_file() {
   local name=$1
-  local directory=$2
+  local dir=$2
   local contents=$3
-  mkdir -p "$directory"
+  if [[ -e "$dir" ]] && [[ ! -d "$dir" ]]; then
+    echo "$dir is not a directory" >&2
+    exit 1
+  else
+    mkdir -p "$dir"
+  fi
+  mkdir -p "$dir"
   local temp_path
-  temp_path=$(mktemp "$directory/$name-XXXX")
+  temp_path=$(mktemp "$dir/$name-XXXX")
   echo "$contents" >"$temp_path"
-  local destination_path="$directory/$name"
+  local destination_path="$dir/$name"
   mv -n "$temp_path" "$destination_path"
   if [[ -f "$temp_path" ]]; then
     echo -n "$temp_path"
