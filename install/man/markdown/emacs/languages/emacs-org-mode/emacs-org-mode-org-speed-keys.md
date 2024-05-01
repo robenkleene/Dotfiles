@@ -15,6 +15,7 @@
 ## Moving
 
 - `l` / `r`: Shift left / right
+- `U` / `D`: Move up / down
 - `w`: Refile
 
 ## Todo
