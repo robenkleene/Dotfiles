@@ -18,7 +18,7 @@ nnoremap <silent> <buffer> <C-w>d :OpenDiffNew<CR>
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort
-  let l:grep = system('~/.bin/f_from_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
+  let l:grep = system('~/.bin/f_fr_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
   let l:parts = split(l:grep, ':')
   exec "edit " . fnameescape(l:parts[0])
   let l:destlnum = l:parts[1]
