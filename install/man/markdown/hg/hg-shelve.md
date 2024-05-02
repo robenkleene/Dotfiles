@@ -1,6 +1,3 @@
 - `-l` / `--list`: List shelves
-
-# Examples
-
-- `hg shelve -d default`: Delete
-- `hg shelve -l`: List
+- `-d` / `--delete`: Delete shelves
+- `-p` / `--patch`: Show diff of shelf (shows most recent by default, use `-p <name>` to show a another)
