@@ -21,6 +21,6 @@ set statusline+=%y
 set statusline+=%=
 " Line/Column/Location
 " set statusline+=\ %#ModeMsg#\ %l:%c\ %P\ %*
-set statusline+=\ %#Visual#\ %l:%c\ %P
+set statusline+=\ %#Pmenu#\ %l:%c\ %P
 " Space Buffer
 set statusline+=\ 
