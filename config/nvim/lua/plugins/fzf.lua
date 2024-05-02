@@ -5,6 +5,8 @@ return {
   },
   keys = {
     { '<leader>b' },
+    { '<leader>f' },
+    { '<leader>g' },
     { '<leader>o' },
     { '<leader>t' },
   },
@@ -16,6 +18,8 @@ return {
     " for old files, and using `^<prefix>` or `<postfix>$` searches, which are
     " particularly helpful for specifying a file type for old files
     nnoremap <silent> <leader>b :Buffers<CR>
+    nnoremap <silent> <leader>f :Files<CR>
+    nnoremap <silent> <leader>g :RG<CR>
     nnoremap <silent> <leader>o :FzfOldfiles<CR>
     nnoremap <silent> <leader>t :BTags<CR>
 
