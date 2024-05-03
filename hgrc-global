@@ -6,6 +6,8 @@ ignore = ~/.hgignore
 merge = internal:merge3
 [pager]
 pager = less
+[alias]
+cleanup = !hg purge && hg checkout --clean .
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`
 # Note this also has to be in `~/.hgrc` for some reason
 # Don't do this, instead just use `G q` to go to the end of the file and quit
