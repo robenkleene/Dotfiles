@@ -6,9 +6,14 @@ nnoremap Y y$
 nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":prev<CR>" : ":bprev<CR>"
 nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
 
+nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
+
 nnoremap <silent> " :let @t=system('~/.bin/safepaste')<CR>"
 vnoremap <silent> " :<C-u>let @t=system('~/.bin/safepaste')<CR>gv"
 cnoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
-inoremap <expr> <silent> <C-r> bidnings#RegisterCopyPaste()
-nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
+inoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
 
+cnoremap <M-left> <S-left>
+inoremap <M-left> <S-left>
+cnoremap <M-right> <S-right>
+inoremap <M-right> <S-right>
