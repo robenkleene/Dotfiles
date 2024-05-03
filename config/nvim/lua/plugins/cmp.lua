@@ -15,6 +15,23 @@ return {
           require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.local_snippets/" } })
         end
         local luasnip = require 'luasnip'
+        -- Snippets
+        local fmt = require("luasnip.extras.fmt").fmt
+        -- Title
+        local title_snippet = luasnip.snippet
+        luasnip.add_snippets("markdown", {
+          title_snippet("title",
+          fmt(vim.fn.system("~/.bin/md_title " .. vim.fn.fnameescape(vim.fn.expand('%'))), { })
+          ),
+        })
+        -- Date
+        local title_snippet = luasnip.snippet
+        luasnip.add_snippets("all", {
+          title_snippet("today",
+          fmt(vim.fn.system("date +%F | tr -d '\n'"), { })
+          ),
+        })
+        -- Keymaps
         vim.api.nvim_set_keymap(
           'i', '<Tab>',
           'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
