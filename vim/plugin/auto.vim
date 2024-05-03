@@ -73,3 +73,9 @@ augroup safecopy
   " if we copy to the system clipbaord
   autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
+
+augroup quickfix_height
+  autocmd!
+  " Use the count of quickfix matches (`line("$")`) with a max of `20`
+  autocmd FileType qf execute min([line("$"), 20]) . "wincmd _"
+augroup END

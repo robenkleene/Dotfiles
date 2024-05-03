@@ -8,10 +8,7 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":ne
 
 nnoremap <silent> " :let @t=system('~/.bin/safepaste')<CR>"
 vnoremap <silent> " :<C-u>let @t=system('~/.bin/safepaste')<CR>gv"
-cnoremap <expr> <silent> <C-r> <SID>RegisterCopyPaste()
-inoremap <expr> <silent> <C-r> <SID>RegisterCopyPaste()
+cnoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
+inoremap <expr> <silent> <C-r> bidnings#RegisterCopyPaste()
+nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
-function! s:RegisterCopyPaste()
-  let @t=system('~/.bin/safepaste')
-  return "\<C-r>"
-endfunction
