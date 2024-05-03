@@ -25,9 +25,9 @@ return {
           ),
         })
         -- Date
-        local title_snippet = luasnip.snippet
+        local today_snippet = luasnip.snippet
         luasnip.add_snippets("all", {
-          title_snippet("today",
+          today_snippet("today",
           fmt(vim.fn.system("date +%F | tr -d '\n'"), { })
           ),
         })
