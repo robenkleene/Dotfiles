@@ -79,3 +79,8 @@ augroup quickfix_height
   " Use the count of quickfix matches (`line("$")`) with a max of `20`
   autocmd FileType qf execute min([line("$"), 20]) . "wincmd _"
 augroup END
+
+augroup executable_files
+  autocmd!
+  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
+augroup END
