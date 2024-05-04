@@ -18,7 +18,9 @@ function! commands#Rg(bang, term) abort
   let l:original_grepprg = &grepprg
   let &grepprg='rg '.a:term
   " Use `silent` to prevent the `Press ENTER` to continue message
-  execute 'silent grep'.(a:bang ? '!':'')
+  " We don't add `silent` because it's useful to see the initial output to get
+  " a sense of how many total search matches there are
+  execute 'grep'.(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
 
