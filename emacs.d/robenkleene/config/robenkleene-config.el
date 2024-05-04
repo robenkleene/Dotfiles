@@ -48,6 +48,10 @@
 ;; to organize those.
 (setq create-lockfiles nil)
 
+;; Automatically make shell scripts executable
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
 ;; Try disabling recursive minibuffers, in practice it's really confusing
