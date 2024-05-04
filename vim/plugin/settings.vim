@@ -94,26 +94,33 @@ set foldmethod=indent
 " Don't let search open folds (useful for determining if a term appears in
 " un-folded text)
 " Make folds sticky
+
 " Set what opens folds
+" In general we open folds when navigating across files, but keep them closed
+" in the current file
+" This makes it easy to set folds and then just navigate the unfolded content
+" E.g., it lets us focus only on on folded content within the file
 " Exclude search, this makes it easy to search just changed contents in
 " `vimdiff` (because all unchanged content will be folded)
 set foldopen-=search
+" Horizontal movements
+" Really no reason not to keep this option, since without it horizontal movement keys
+" (i.e., `h`, `l`) do nothing
+set foldopen-=hor
+set foldopen-=jump
+set foldopen-=block
+set foldopen-=percent
+
 " Without this, jumping to a symbol and back will open the current fold
 " (because a mark is set before jumping)
 set foldopen-=mark
-" Horizontal movements
-" No reason not to keep this option, since without it horizontal movement keys
-" (i.e., `h`, `l`) do nothing
-" set foldopen-=hor
-set foldopen-=jump
-set foldopen-=block
-" set foldopen-=percent
-" Jumping to a fold in quickfix list seems like it should open? Although this
-" will mean that `vimgrep <term> %` can't be used to jump to matches that
+" Jumping to a fold in quickfix list should open.
+" This will mean that `vimgrep <term> %` can't be used to jump to matches that
 " aren't in folds (there doesn't seem to be much advantage over just using `/`
 " search for this?)
 " set foldopen-=quickfix
-set foldopen-=tag
+" Definitely should fold open when jumping to definition
+" set foldopen-=tag
 " Complete to longest match and show a menu, matching the typical `zsh` setup.
 " Note this doesn't seem to always work, e.g., `:tag <term><tab>` doesn't seem
 " to complete to the longest common string. But you can test the setting is
