@@ -102,27 +102,3 @@ augroup focus_redraw
   autocmd!
   autocmd FocusGained * redraw!
 augroup END
-
-" Visual star
-" This is the default in nvim
-function! s:getSelectedText()
-  let l:old_reg = getreg('"')
-  let l:old_regtype = getregtype('"')
-  norm gvy
-  let l:ret = getreg('"')
-  call setreg('"', l:old_reg, l:old_regtype)
-  exe "norm \<Esc>"
-  return l:ret
-endfunction
-
-vnoremap <silent> * :call setreg("/",
-    \ substitute(<SID>getSelectedText(),
-    \ '\_s\+',
-    \ '\\_s\\+', 'g')
-    \ )<Cr>n
-
-vnoremap <silent> # :call setreg("/", 
-    \ substitute(<SID>getSelectedText(),
-    \ '\_s\+',
-    \ '\\_s\\+', 'g')
-    \ )<Bar>let v:searchforward = 0<Cr>n
