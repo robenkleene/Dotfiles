@@ -17,3 +17,9 @@ cnoremap <M-left> <S-left>
 inoremap <M-left> <S-left>
 cnoremap <M-right> <S-right>
 inoremap <M-right> <S-right>
+
+" Move by display line
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> <Up> gk
+noremap <silent> <Down> gj
