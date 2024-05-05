@@ -13,6 +13,21 @@ vnoremap <silent> " :<C-u>let @t=system('~/.bin/safepaste')<CR>gv"
 cnoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
 inoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
 
+" Visual Star
+" This is the default in Neovim, but the default implementation doesn't handle
+" selections that include `/` correctly
+vnoremap <silent> * :call setreg("/",
+    \ substitute(bindings#GetSelectedText(),
+    \ '\_s\+',
+    \ '\\_s\\+', 'g')
+    \ )<Cr>n
+
+vnoremap <silent> # :call setreg("/", 
+    \ substitute(bindings#GetSelectedText(),
+    \ '\_s\+',
+    \ '\\_s\\+', 'g')
+    \ )<Bar>let v:searchforward = 0<Cr>n
+
 cnoremap <M-left> <S-left>
 inoremap <M-left> <S-left>
 cnoremap <M-right> <S-right>
