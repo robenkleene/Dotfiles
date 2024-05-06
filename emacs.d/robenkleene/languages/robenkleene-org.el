@@ -139,7 +139,7 @@
   ;; (add-to-list 'org-link-frame-setup '(file . find-file))
 
   ;; Agenda
-  (setq org-agenda-span 10
+  (setq org-agenda-span 14
         org-agenda-start-on-weekday nil
         org-agenda-start-day "-3d")
   (setq org-agenda-start-with-log-mode t)
