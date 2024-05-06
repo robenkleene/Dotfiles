@@ -2,13 +2,22 @@ return {
   'junegunn/fzf.vim',
   dependencies = {
     { 'junegunn/fzf', },
+    {
+      "ibhagwan/fzf-lua",
+      config = function()
+        require("fzf-lua").setup({})
+      end
+    },
   },
   keys = {
     { '<leader>b' },
-    { '<leader>f' },
     { '<leader>g' },
     { '<leader>o' },
+    { '<leader>f' },
     { '<leader>t' },
+    -- fzf-lua
+    { '<leader>d' },
+    { '<leader>s' },
   },
   config = function()
     vim.cmd([[
@@ -26,6 +35,9 @@ return {
     nnoremap <silent> <leader>g :RG<CR>
     nnoremap <silent> <leader>o :FzfOldfiles<CR>
     nnoremap <silent> <leader>t :BTags<CR>
+    " fzf-lua
+    nnoremap <silent> <leader>s :lua require("fzf-lua").lsp_document_symbols()<cr>
+    nnoremap <silent> <leader>d :lua require("fzf-lua").diagnostics_workspace()<cr>
 
     " Don't sort old files
     command! -bang -nargs=* FzfOldfiles call fzf#vim#history(fzf#vim#with_preview({'options': '--no-sort'}))
