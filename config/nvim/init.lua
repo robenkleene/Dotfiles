@@ -22,25 +22,9 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup("plugins", {
   change_detection = {
+    -- This is noisy when working on config
     notify = false,
-  },
-  ui = {
-    icons = {
-      cmd = "⌘",
-      config = "🛠",
-      event = "📅",
-      ft = "📂",
-      init = "⚙",
-      keys = "🗝",
-      plugin = "🔌",
-      runtime = "💻",
-      require = "🌙",
-      source = "📄",
-      start = "🚀",
-      task = "📌",
-      lazy = "💤 ",
-    },
-  },
+  }
 })
 
 vim.cmd([[
