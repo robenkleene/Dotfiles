@@ -1,0 +1,2 @@
+- `~`: Show help
+- `z`: Jump to directory with `z`
