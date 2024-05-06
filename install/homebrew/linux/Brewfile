@@ -6,7 +6,6 @@ brew 'ripgrep'
 brew 'fd'
 brew 'ncdu'
 brew 'zoxide'
-brew 'nnn'
 brew 'yazi'
 # Really useful to see diff by word quickly
 brew 'git-delta'

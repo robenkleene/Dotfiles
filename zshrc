@@ -26,8 +26,6 @@ source ~/.zsh/installs.zsh
 source ~/.zsh/settings.zsh
 
 # Installs
-# Source installs after `settings` so completion isn't overwritten
-source ~/.zsh/nnn.zsh
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
 
@@ -38,4 +36,3 @@ source ~/.zsh/alias.zsh
 
 # Interactive
 source ~/.zsh/ui.zsh
-
