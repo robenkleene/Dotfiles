@@ -12,9 +12,10 @@ function! bindings#ToggleQuickfixList() abort
   endfor
   let winnr = winnr()
   copen
-  if winnr() != winnr
-    wincmd p
-  endif
+  " Go back to the starting window
+  " if winnr() != winnr
+  "   wincmd p
+  " endif
 endfunction
 
 function! bindings#GetBufferList() abort
