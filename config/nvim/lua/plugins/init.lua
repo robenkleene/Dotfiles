@@ -31,16 +31,6 @@ return {
     cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
   },
   {
-    'junegunn/vim-peekaboo',
-    config = function()
-      vim.cmd([[
-      " Effectively disables in normal mode
-      let g:peekaboo_prefix = '<localleader>'
-      let g:peekaboo_delay = 1000
-      ]])
-    end
-  },
-  {
     -- More reliable open browser
     'tyru/open-browser.vim',
     keys = { "gx" },
