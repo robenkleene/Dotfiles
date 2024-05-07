@@ -25,6 +25,7 @@ Plug 'tpope/vim-rsi'
 " Plug 'machakann/vim-highlightedyank'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
