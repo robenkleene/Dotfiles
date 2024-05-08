@@ -55,13 +55,13 @@ function! s:OverrideColors()
     highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
   highlight! link CursorLineNr StatusLine
-  highlight! link QuickFixLine CurSerach
+  highlight! link QuickFixLine CurSearch
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
   " The wild menu background is StatusLine
   highlight! link Wildmenu ModeMsg
-  highlight! link PmenuSel CurSerach
-  highlight! link PmenuSbar CurSerach
+  highlight! link PmenuSel CurSearch
+  highlight! link PmenuSbar CurSearch
   highlight! link PmenuThumb Pmenu
 
   " Messages
