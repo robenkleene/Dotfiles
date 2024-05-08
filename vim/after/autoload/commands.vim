@@ -86,6 +86,7 @@ function! commands#NewShCmd(split, cmd) abort
   norm Gddgg
   let &l:undolevels=l:oldundolevels
   filetype detect
+  execute 'file '.fnameescape(a:cmd)
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
