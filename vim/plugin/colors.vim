@@ -29,16 +29,16 @@ function! s:OverrideColors()
   " background color, or if the text is already underlined (e.g., for a a
   " linter error)
   highlight MatchParen guifg=Cyan ctermfg=Cyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
-  highlight Search guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
+  highlight! link Search Pmenu
   " This is the same spot the cursor is, is there any benefit to highlighting
   " this a different color?
   " highlight CurSearch guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
-  highlight CurSearch guibg=Cyan ctermbg=Cyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
+  highlight CurSearch guibg=#585858 ctermbg=240 guifg=White ctermfg=White gui=bold cterm=bold
 
-  highlight Visual guifg=white ctermfg=white guibg=#585858 ctermbg=240 gui=NONE cterm=NONE
-  highlight! link ModeMsg Visual
+  highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
 
-  highlight Pmenu guibg=#444444 ctermbg=240 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
+  highlight Pmenu guibg=#444444 ctermbg=238 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
+  highlight! link ModeMsg Pmenu
 
   " Diff
   highlight DiffDelete guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -55,13 +55,13 @@ function! s:OverrideColors()
     highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
   highlight! link CursorLineNr StatusLine
-  highlight! link QuickFixLine Visual
+  highlight! link QuickFixLine CurSerach
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
   " The wild menu background is StatusLine
   highlight! link Wildmenu ModeMsg
-  highlight! link PmenuSel Visual
-  highlight! link PmenuSbar Visual
+  highlight! link PmenuSel CurSerach
+  highlight! link PmenuSbar CurSerach
   highlight! link PmenuThumb Pmenu
 
   " Messages
