@@ -31,6 +31,10 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'insert)
   (evil-set-initial-state 'conf-mode 'insert)
+  ;; Lisp in insert mode
+  (evil-set-initial-state 'lisp-mode 'insert)
+  (evil-set-initial-state 'emacs-lisp-mode 'insert)
+  (evil-set-initial-state 'lisp-interaction-mode 'insert)
 
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
