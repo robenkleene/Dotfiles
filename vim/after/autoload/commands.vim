@@ -86,7 +86,12 @@ function! commands#NewShCmd(split, cmd) abort
   norm Gddgg
   let &l:undolevels=l:oldundolevels
   filetype detect
-  execute 'file '.fnameescape(a:cmd)
+  " Wrap `file` in a try-catch to suppress errors if the name already exists
+  " (The buffer will continue to show up as `[No Name]`)
+  try
+    execute 'file '.fnameescape(a:cmd)
+  catch
+  endtry
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
