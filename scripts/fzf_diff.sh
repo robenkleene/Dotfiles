@@ -20,7 +20,6 @@ cat > "$tempfile"
 result=$(grep --line-number --extended-regexp '^\+\+\+ b/' "$tempfile" /dev/null | \
   fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
   --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --bind="shift-up:preview-up,shift-down:preview-down" \
   --height=20 --preview-window=right,50%:wrap | cut -d':' -f 2)
 
 # `- 3` to get to the previous `diff --git` line
