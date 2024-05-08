@@ -7,6 +7,7 @@
 - `␣`: Select hovered file
 - `r`: Rename file
 - `a`: Create file or directory (append a `/` for directory)
+- `s`: Search for files with `fd`
 
 ## Move, Copy
 

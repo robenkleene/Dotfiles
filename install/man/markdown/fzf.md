@@ -3,6 +3,7 @@
 # Flags
 
 - `--no-sort`: Prevents sorting matches as you type
+- `--preview '<preview-cmd> {}'`: Show a preview `{}` gets replaced by the match (e.g., `--preview 'git show --color=always {}'`)
 
 # Bindings
 
