@@ -37,7 +37,7 @@
 ;; Word spacing isn't great with Fira Code
 ;; (set-face-attribute 'default nil :font "Fira Code-12:Retina")
 ;; (setq-default line-spacing 0.2)
-(set-face-attribute 'default nil :font "JetBrains Mono-12:Regular")
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-12:Regular")
 ;; (set-face-attribute 'default nil :font "Iosevka Term-13:Regular")
 ;; (setq-default line-spacing 0.2)
 ;; (set-face-attribute 'default nil :font "Menlo-12")
