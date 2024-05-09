@@ -7,8 +7,9 @@ function! s:OverrideColors()
   " for the colored section)
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
-  highlight StatusLine guifg=#A8A8A8 ctermfg=248 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-  highlight StatusLineNC guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+  " Use colors in status line, too hard to distinguish between windows otherwise
+  highlight! link StatusLine CurSearch
+  highlight! link StatusLineNC Search
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   highlight WarningMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -38,7 +39,7 @@ function! s:OverrideColors()
   highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
 
   highlight Pmenu guibg=#444444 ctermbg=238 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
-  highlight! link ModeMsg Pmenu
+  highlight ModeMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=bold cterm=bold
 
   " Diff
   highlight DiffDelete guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -54,12 +55,11 @@ function! s:OverrideColors()
   else
     highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
-  highlight! link CursorLineNr StatusLine
   highlight! link QuickFixLine CurSearch
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
   " The wild menu background is StatusLine
-  highlight! link Wildmenu ModeMsg
+  highlight! link Wildmenu Pmenu
   highlight! link PmenuSel CurSearch
   highlight! link PmenuSbar CurSearch
   highlight! link PmenuThumb Pmenu
