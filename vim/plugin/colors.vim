@@ -21,7 +21,7 @@ function! s:OverrideColors()
 
   " Underline never looks good for highlight line
   highlight CursorLine gui=NONE cterm=NONE
-  highlight CursorLineNr gui=NONE cterm=NONE
+  highlight CursorLineNr gui=NONE cterm=NONE guibg=NONE ctermbg=NONE
 
   " Whitespaces characters
   highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
