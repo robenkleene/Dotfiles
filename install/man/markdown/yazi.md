@@ -14,6 +14,12 @@
 - `cc`: Copy absolute path
 - `cf`: Copy just filename
 
+## Select
+
+- `⌃A`: Select All
+- `⌃R`: Inverse selection
+- `⎋` / `⌃[`: Clear selection
+
 ## Move, Copy
 
 - `x`: Cut files
