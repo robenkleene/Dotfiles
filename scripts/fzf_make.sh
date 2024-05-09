@@ -27,11 +27,11 @@ while IFS= read -r line; do
 done <<< "$results"
 
 if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
-  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
+  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --keep-right --multi \
     --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
     --bind="enter:become(printf \"%s\n\" {+} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),alt-a:select-all,alt-d:deselect-all"
 else
-  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
+  echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --keep-right \
     --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
     --bind="enter:execute(${EDITOR:-vim} +{2} {1}),alt-a:select-all,alt-d:deselect-all"
 fi

@@ -18,7 +18,7 @@ cat > "$tempfile"
 
 # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
 result=$(grep --line-number --extended-regexp '^\+\+\+ b/' "$tempfile" /dev/null | \
-  fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
+  fzf --delimiter=':' --with-nth=3.. --ansi --keep-right \
   --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' | cut -d':' -f 2)
 
 # `- 3` to get to the previous `diff --git` line
