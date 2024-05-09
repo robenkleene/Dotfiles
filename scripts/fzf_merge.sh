@@ -20,12 +20,10 @@ if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
   # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
   grep --line-number --extended-regexp '^(\+|-)<<<<<<<' "$tempfile" /dev/null | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right --multi \
     --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-    --bind="enter:become(printf \"%s\n\" {+} | cut -d':' -f 2 | diff_line_number_to_grep {1} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),alt-a:select-all,alt-d:deselect-all" \
-    --height=20 --preview-window=right,50%:wrap
+    --bind="enter:become(printf \"%s\n\" {+} | cut -d':' -f 2 | diff_line_number_to_grep {1} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),alt-a:select-all,alt-d:deselect-all"
 else
   # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
   grep --line-number --extended-regexp '^(\+|-)<<<<<<<' "$tempfile" /dev/null | fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
     --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-    --bind="enter:execute(f_fr_diff_to_arg {2} < {1} | xargs -o ${EDITOR:-vim})" \
-    --height=20 --preview-window=right,50%:wrap
+    --bind="enter:execute(f_fr_diff_to_arg {2} < {1} | xargs -o ${EDITOR:-vim})"
 fi

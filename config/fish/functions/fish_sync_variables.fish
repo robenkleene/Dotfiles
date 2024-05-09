@@ -30,7 +30,7 @@ function fish_sync_variables
     set -Ux RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
 
     # fzf
-    set -Ux FZF_DEFAULT_OPTS '--preview-window=wrap'
+    set -Ux FZF_DEFAULT_OPTS '--preview-window=wrap --height=20'
     # Homebrew
     if type -q brew
         set -Ux HOMEBREW_DIR (brew --prefix)

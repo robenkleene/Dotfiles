@@ -19,8 +19,7 @@ cat > "$tempfile"
 # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
 result=$(grep --line-number --extended-regexp '^\+\+\+ b/' "$tempfile" /dev/null | \
   fzf --delimiter=':' --with-nth=3.. --ansi --reverse --keep-right \
-  --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
-  --height=20 --preview-window=right,50%:wrap | cut -d':' -f 2)
+  --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' | cut -d':' -f 2)
 
 # `- 3` to get to the previous `diff --git` line
 awk -v start_line=$result 'NR >= start_line - 3 { if (/^diff/) count++; if (count == 1) print; if (count == 2) exit; }' "$tempfile" | bat --style=plain
