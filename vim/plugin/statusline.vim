@@ -1,26 +1,27 @@
 " Space Buffer
 set statusline=\ 
-" set statusline+=%#WarningMsg#%{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}%*
 set statusline+=%{hostname()}\ 
 " Working Directory
-set statusline+=%#netrwDir#%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}%*\ 
+set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\ 
 " Machine Name
 " Truncate Marker
 set statusline+=%<
 " Filename
 set statusline+=%(%.40{&filetype=='netrw'?b:netrw_curdir:(expand('%:t')!=''?expand('%:t'):'[No\ Name]')}\ %)
 " %m: Modified
-set statusline+=%(%#WarningMsg#%m%*\ %)
+" set statusline+=%(%#WarningMsg#%m%*\ %)
+set statusline+=%(%m\ %)
 " %r: Read-only mode
-set statusline+=%(%#WarningMsg#%r%*\ %)
+" set statusline+=%(%#WarningMsg#%r%*\ %)
+set statusline+=%(%r\ %)
 " %h: Read-only
-set statusline+=%(%#WarningMsg#%h%*\ %)
+" set statusline+=%(%#WarningMsg#%h%*\ %)
+set statusline+=%(%h\ %)
 " Filetype
 set statusline+=%y
 " Switch to right
 set statusline+=%=
 " Line/Column/Location
-" set statusline+=\ %#ModeMsg#\ %l:%c\ %P\ %*
-set statusline+=\ %#Pmenu#\ %l:%c\ %P
+set statusline+=%l:%c\ %P
 " Space Buffer
 set statusline+=\ 
