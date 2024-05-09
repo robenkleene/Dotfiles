@@ -9,6 +9,11 @@
 - `a`: Create file or directory (append a `/` for directory)
 - `s`: Search for files with `fd`
 
+## Filenames
+
+- `cc`: Copy absolute path
+- `cf`: Copy just filename
+
 ## Move, Copy
 
 - `x`: Cut files
