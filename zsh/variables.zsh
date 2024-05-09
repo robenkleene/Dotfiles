@@ -45,7 +45,7 @@ export ALTERNATE_EDITOR=""
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # fzf
-export FZF_DEFAULT_OPTS='--preview-window=wrap'
+export FZF_DEFAULT_OPTS='--preview-window=wrap --height=20'
 
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
