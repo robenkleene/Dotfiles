@@ -23,4 +23,5 @@
 ## Move, Copy
 
 - `x`: Cut files
-
+- `y`: Copy files
+- `p`: Paste files
