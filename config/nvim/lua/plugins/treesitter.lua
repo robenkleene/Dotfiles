@@ -19,6 +19,7 @@ return {
         'c',
         'comment',
         'cpp',
+        'diff',
         'lua',
         'java',
         'javascript',
