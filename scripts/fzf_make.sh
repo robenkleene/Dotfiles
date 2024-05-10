@@ -26,7 +26,7 @@ while IFS= read -r line; do
   fi
 done <<< "$results"
 
-if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
+if [[ -z "${EDITOR:-}" || "${EDITOR:-}" = "nvim" ]]; then
   echo "$file_lines" | fzf --delimiter=':' --with-nth=3.. --ansi --keep-right --multi \
     --preview 'bat --style=header --color=always --line-range {2}: --highlight-line {2} {1}' \
     --bind="alt-e:execute(printf \"%s\n\" {+} | ${EDITOR:-vim} -c 'cbuffer | bprevious | bdelete' -),alt-a:select-all,alt-d:deselect-all"

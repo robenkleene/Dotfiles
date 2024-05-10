@@ -16,7 +16,7 @@ trap cleanup EXIT SIGINT SIGTERM
 
 cat > "$tempfile"
 
-if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
+if [[ -z "${EDITOR:-}" || "${EDITOR:-}" = "nvim" ]]; then
   # `/dev/null` makes grep think it's dealing with multiple files, which forces it to print the filename
   grep --line-number --extended-regexp '^(\+|-)<<<<<<<' "$tempfile" /dev/null | fzf --delimiter=':' --with-nth=3.. --ansi --keep-right --multi \
     --preview 'bat --style=plain --color=always --line-range {2}: --highlight-line {2} {1}' \
