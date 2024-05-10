@@ -98,5 +98,15 @@
     "prefix": "sharp",
     "body": "♯",
     "description": "Sharp symbol"
+  },
+  "tab": {
+    "prefix": "tab",
+    "body": "⇥",
+    "description": "Tab symbol"
+  },
+  "btab": {
+    "prefix": "btab",
+    "body": "⇤",
+    "description": "Backtab symbol"
   }
 }
