@@ -3,7 +3,8 @@
 --with-filename
 --line-number
 --column
---colors=match:fg:white
---colors=match:bg:239
+--colors=match:fg:cyan
+--colors=match:bg:238
 --colors=path:fg:cyan
---colors=line:fg:white
+--colors=line:fg:244
+--colors=column:fg:244
