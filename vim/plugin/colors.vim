@@ -24,14 +24,16 @@ function! s:OverrideColors()
   highlight CursorLine gui=NONE cterm=NONE
   highlight CursorLineNr gui=NONE cterm=NONE guibg=NONE ctermbg=NONE
 
-  " Whitespaces characters
-  highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-
   " Change to using a color, the underline can be hard to see when there's a
   " background color, or if the text is already underlined (e.g., for a a
   " linter error)
   highlight MatchParen guifg=cyan ctermfg=cyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
-  highlight! link Search Pmenu
+
+  " Selection
+  highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
+
+  " Whitespaces characters
+  highlight NonText guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
   " Use a distinctive foreground color for search because when search is also
   " highlighted (e.g., to do a replace inside a visual region), the search
@@ -40,10 +42,8 @@ function! s:OverrideColors()
   highlight Search guibg=#444444 ctermbg=238 guifg=cyan ctermfg=cyan gui=NONE cterm=NONE
   highlight CurSearch guibg=#585858 ctermbg=240 guifg=cyan ctermfg=cyan gui=bold cterm=bold
 
-  highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
-
   highlight Pmenu guibg=#444444 ctermbg=238 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
-  " highlight ModeMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=bold cterm=bold
+  highlight PmenuSel guibg=#585858 ctermbg=240 guifg=white ctermfg=white gui=bold cterm=bold
 
   " Diff
   highlight DiffDelete guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -59,13 +59,12 @@ function! s:OverrideColors()
   else
     highlight! WinSeparator guifg=#444444 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   endif
-  highlight! link QuickFixLine CurSearch
+  highlight! link QuickFixLine PmenuSel
   highlight! link IncSearch CurSearch
   highlight! link SpecialKey NonText
   " The wild menu background is StatusLine
   highlight! link Wildmenu Pmenu
-  highlight! link PmenuSel CurSearch
-  highlight! link PmenuSbar CurSearch
+  highlight! link PmenuSbar PmenuSel
   highlight! link PmenuThumb Pmenu
 
   " Messages
