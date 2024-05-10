@@ -8,8 +8,8 @@ function! s:OverrideColors()
   " E.g., `set statusline+=%(%#WarningMsg#%m%*\ %)` Use `%#WarningMsg#` sets
   " the color and `%*` returns to the default `StatusLine` color
   " Use colors in status line, too hard to distinguish between windows otherwise
-  highlight StatusLineNC guibg=#444444 ctermbg=238 guifg=#808080 ctermfg=244 gui=NONE cterm=NONE
-  highlight StatusLine guibg=#585858 ctermbg=240 guifg=lightgray ctermfg=lightgray gui=bold cterm=bold
+  " highlight! link StatusLine CurSearch
+  " highlight! link StatusLineNC Search
 
   " Make colors used in statusline consistent
   highlight ErrorMsg guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
