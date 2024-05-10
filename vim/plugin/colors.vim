@@ -40,7 +40,7 @@ function! s:OverrideColors()
   highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
 
   highlight Pmenu guibg=#444444 ctermbg=238 guifg=#A8A8A8 ctermfg=248 gui=NONE cterm=NONE
-  highlight ModeMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=bold cterm=bold
+  " highlight ModeMsg guifg=Yellow ctermfg=Yellow guibg=NONE ctermbg=NONE gui=bold cterm=bold
 
   " Diff
   highlight DiffDelete guifg=Red ctermfg=Red guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
