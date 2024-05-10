@@ -15,6 +15,12 @@
 	    (kbd "s-q")
 	    'save-buffers-kill-terminal)
 
+;; Text Editing
+(define-key rk/mac-bindings-minor-mode-map
+            (kbd "<s-up>") 'beginning-of-buffer)
+(define-key rk/mac-bindings-minor-mode-map
+  (kbd "<s-down>") 'end-of-buffer)
+
 ;; Window management
 (define-key rk/mac-bindings-minor-mode-map (kbd "s-`") 'other-frame)
 (define-key rk/mac-bindings-minor-mode-map (kbd "s-w") 'delete-frame)
