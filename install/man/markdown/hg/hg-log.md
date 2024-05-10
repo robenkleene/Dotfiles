@@ -1,0 +1,1 @@
+- `hg log --patch --rev` / `hg log -p -r`: Show a commit (equivalent to `git show`)

@@ -2,3 +2,4 @@
 - `hg diff -r bottom^`: Diff master
 - `hg diff --root .`: Relative
 - `hg diff -r bottom^ --stat`: Diff stats, including just change filenames
+- `hg diff -c .`: Show diff for current commit
