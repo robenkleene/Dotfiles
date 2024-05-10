@@ -8,7 +8,7 @@ setlocal foldmethod=expr
 " setlocal foldcolumn=3
 " Start with folding enabling bindings to navigate folds are available
 setlocal foldenable
-setlocal foldlevel=0
+setlocal foldlevel=2
 setlocal readonly nomodifiable
 
 nnoremap <silent> <buffer> gd :OpenDiff<CR>
