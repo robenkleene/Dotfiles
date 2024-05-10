@@ -30,12 +30,15 @@ function! s:OverrideColors()
   " Change to using a color, the underline can be hard to see when there's a
   " background color, or if the text is already underlined (e.g., for a a
   " linter error)
-  highlight MatchParen guifg=Cyan ctermfg=Cyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
+  highlight MatchParen guifg=cyan ctermfg=cyan guibg=NONE ctermbg=NONE gui=bold cterm=bold
   highlight! link Search Pmenu
-  " This is the same spot the cursor is, is there any benefit to highlighting
-  " this a different color?
-  " highlight CurSearch guibg=DarkCyan ctermbg=DarkCyan guifg=Black ctermfg=Black gui=NONE cterm=NONE
-  highlight CurSearch guibg=#585858 ctermbg=240 guifg=White ctermfg=White gui=bold cterm=bold
+
+  " Use a distinctive foreground color for search because when search is also
+  " highlighted (e.g., to do a replace inside a visual region), the search
+  " will conceal the background, so the distinctive color will make the
+  " matches clear even without the background
+  highlight Search guibg=#444444 ctermbg=238 guifg=cyan ctermfg=cyan gui=NONE cterm=NONE
+  highlight CurSearch guibg=#585858 ctermbg=240 guifg=cyan ctermfg=cyan gui=bold cterm=bold
 
   highlight Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
 
