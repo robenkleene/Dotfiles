@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: test_boolean
+# key: test_bool
 # name: Test boolean
 # --
 "$${1:value}" == "${0:true}"

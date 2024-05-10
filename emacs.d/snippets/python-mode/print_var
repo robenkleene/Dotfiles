@@ -2,4 +2,4 @@
 # key: print_var
 # name: Print variable
 # --
-print("${1:result} =", $1)
+print("${1:result} = ", $1)

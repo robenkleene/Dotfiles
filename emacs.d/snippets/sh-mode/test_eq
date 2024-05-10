@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: test_equal
+# key: test_eq
 # name: True if equal
 # --
-${1:$?} -eq ${0:0}
+${1:\$?} -eq ${0:0}

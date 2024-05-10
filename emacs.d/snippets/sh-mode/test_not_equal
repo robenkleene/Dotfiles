@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: test_not_equal
-# name: True if not equal
-# --
-${1:$?} -ne ${0:0}

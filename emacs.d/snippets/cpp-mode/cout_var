@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: cout_var
+# name: Print variable
+# --
+std::cout << ${1:result} = " << $1 << std::endl;
