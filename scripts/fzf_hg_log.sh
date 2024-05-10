@@ -4,8 +4,8 @@ set -euo pipefail
 
 if [[ -z "$EDITOR" || "$EDITOR" = "nvim" ]]; then
   exec fzf --ansi --preview "echo {} | ~/.bin/f_hash | xargs hg --color=always show" \
-    --bind="enter:become(echo {} | ~/.bin/f_hash | xargs hg update),alt-e:execute(echo {} | ~/.bin/f_hash | xargs hg show | ${EDITOR:-vim} -)"
+    --bind="alt-e:execute(echo {} | ~/.bin/f_hash | xargs hg update),alt-e:execute(echo {} | ~/.bin/f_hash | xargs hg show | ${EDITOR:-vim} -)"
 else
   exec fzf --ansi --preview "echo {} | ~/.bin/f_hash | xargs hg --color=always show" \
-    --bind="enter:become(echo {} | ~/.bin/f_hash | xargs hg update)"
+    --bind="alt-e:execute(echo {} | ~/.bin/f_hash | xargs hg update)"
 fi
