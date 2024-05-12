@@ -36,7 +36,6 @@
 
 ;;;###autoload
 (defvar rk/rg-history nil "History list for rg.")
-
 (defun rg (command-args)
   "Create grep buffer for rg from COMMAND-ARGS."
   (interactive
@@ -121,10 +120,12 @@
                                 (display-buffer (process-buffer proc)))))))
   )
 
+;;;###autoload
+(defvar rk/rg-history nil "History list for rg.")
 (defun z (term)
   "Jump to directory."
   (interactive
-   (list (read-from-minibuffer "Z: ")
+   (list (read-from-minibuffer "Z: " nil nil nil 'rk/z-history)
          ))
   (rk/safe-find-file
    (rk/z term)
@@ -134,7 +135,7 @@
 (defun z-other-window (term)
   "Jump to directory."
   (interactive
-   (list (read-from-minibuffer "Z: ")
+   (list (read-from-minibuffer "Z: " nil nil nil 'rk/z-history)
          ))
   (rk/safe-find-file-other-window
    (rk/z term)
@@ -144,7 +145,7 @@
 (defun z-other-tab (term)
   "Jump to directory."
   (interactive
-   (list (read-from-minibuffer "Z: ")
+   (list (read-from-minibuffer "Z: " nil nil nil 'rk/z-history)
          ))
   (rk/safe-find-file-other-tab
    (rk/z term)
@@ -154,7 +155,7 @@
 (defun z-other-frame (term)
   "Jump to directory."
   (interactive
-   (list (read-from-minibuffer "Z: ")
+   (list (read-from-minibuffer "Z: " nil nil nil 'rk/z-history)
          ))
   (rk/safe-find-file-other-frame
    (rk/z term)
