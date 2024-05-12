@@ -43,7 +43,7 @@
           "rg "
           'rk/rg-history)
          ))
-  (grep-shell-command command-args)
+  (compilation-start command-args 'grep-mode)
   )
 
 ;;;###autoload
@@ -57,15 +57,6 @@
           'rk/fd-history)
          ))
   (find-shell-command-dired command-args)
-  )
-
-(defun grep-shell-command (command)
-  "Create grep buffer from COMMAND."
-  (interactive
-   (list (read-from-minibuffer "Grep Command: ")
-         ))
-  (require 'grep)
-  (compilation-start command 'grep-mode)
   )
 
 (defun find-shell-command-dired (command)
