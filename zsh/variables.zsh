@@ -47,7 +47,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # fzf
 # - Always wrap the preview window
 # - Set a height and reverse feels more natural running from command line
-export FZF_DEFAULT_OPTS='--preview-window=wrap --reverse --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
+export FZF_DEFAULT_OPTS='--preview-window=wrap --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
 
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
