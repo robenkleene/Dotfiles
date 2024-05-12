@@ -33,12 +33,19 @@
     (switch-to-buffer-other-window buf))
   )
 
-(defun rg (terms)
-  "Create grep buffer from `rg' TERMS."
+
+;;;###autoload
+(defvar rk/rg-history nil "History list for rg.")
+
+(defun rg (command-args)
+  "Create grep buffer for rg from COMMAND-ARGS."
   (interactive
-   (list (read-from-minibuffer "Rg: ")
+   (list (read-shell-command
+          "Run rg (like this): "
+          "rg "
+          'rg-history)
          ))
-  (grep-shell-command (concat "rg " terms))
+  (grep-shell-command command-args)
   )
 
 (defun fd (terms)
