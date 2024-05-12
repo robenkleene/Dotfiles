@@ -33,7 +33,6 @@
     (switch-to-buffer-other-window buf))
   )
 
-
 ;;;###autoload
 (defvar rk/rg-history nil "History list for rg.")
 (defun rg (command-args)
@@ -42,17 +41,22 @@
    (list (read-shell-command
           "Run rg (like this): "
           "rg "
-          'rg-history)
+          'rk/rg-history)
          ))
   (grep-shell-command command-args)
   )
 
-(defun fd (terms)
+;;;###autoload
+(defvar rk/fd-history nil "History list for fd.")
+(defun fd (command-args)
   "Create dired buffer from `fd' TERMS."
   (interactive
-   (list (read-from-minibuffer "Fd: ")
+   (list (read-shell-command
+          "Run rg (like this): "
+          "fd "
+          'rk/fd-history)
          ))
-  (find-shell-command-dired (concat "fd " terms))
+  (find-shell-command-dired command-args)
   )
 
 (defun grep-shell-command (command)
@@ -121,7 +125,7 @@
   )
 
 ;;;###autoload
-(defvar rk/rg-history nil "History list for rg.")
+(defvar rk/rg-history nil "History list for z.")
 (defun z (term)
   "Jump to directory."
   (interactive
