@@ -27,7 +27,7 @@ The outlining keys will create a list item when in used in the context of a list
 
 ## Moving
 
-- `M-left` / `M-right`: Demote / promote item
+- `M-left` / `M-right`, `C-c C-<` / `C-c C->`: Promote / demote item
 - `M-up` / `M-down`: Move item up / down
 - `C-c C-w`: Move item to a category (note this can only move an item to another top-level category, for this reason, it's a good idea to have your main lists at the top level)
 
