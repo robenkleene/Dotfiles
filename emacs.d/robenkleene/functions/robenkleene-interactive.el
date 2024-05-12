@@ -62,7 +62,7 @@
 (defun find-shell-command-dired (command)
   "Create dired buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Find Command: ")
+   (list (read-shell-command "Find Command: ")
          ))
   (let* ((output-buffer "*Find Shell Command*"))
     (if (get-buffer output-buffer)
@@ -93,7 +93,7 @@
 (defun buffer-shell-command (command)
   "Create buffer from COMMAND."
   (interactive
-   (list (read-from-minibuffer "Command: ")
+   (list (read-shell-command "Command: ")
          ))
   (let* ((output-buffer "*Buffer Shell Command*"))
     (if (get-buffer output-buffer)
