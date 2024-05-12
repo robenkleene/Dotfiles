@@ -38,12 +38,13 @@
 
   (setq eshell-visual-subcommands '(
                                     ("hg" "diff" "show")
-                                    ("git" "diff" "show")
+                                    ("git" "log" "diff" "show")
                                     )
         )
 
   ;; Show tab completion options instead of just choosing one
   ;; (setq eshell-cmpl-cycle-completions nil)
+
   (add-hook
    'eshell-mode-hook
    (lambda ()
