@@ -46,6 +46,10 @@
 
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
+              ;; Disable `TAGS' file when using `eglot', this is quick way to
+              ;; prevent Emacs from complaining about an existing `ctags' `TAGS'
+              ;; file
+              (setq-local tags-file-name nil)
               ;; Disable clicking on `flymake' highlighted text to perform
               ;; actions
               (put 'eglot-note 'flymake-overlay-control nil)
