@@ -4,6 +4,11 @@
     "body": "#!/usr/bin/env python3\n\n$0",
     "description": "Template"
   },
+  "template_blender": {
+    "prefix": "template_blender",
+    "body": "import bpy\n# Run with `bpy.data.texts[0].as_module()`\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
+    "description": "Blender Template"
+  },
   "main": {
     "prefix": "main",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t$0",
