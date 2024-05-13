@@ -1,8 +1,7 @@
 # special
 # Don't use these because they aren't support in other apps (e.g., Vim)
 # alias -- -='cd -'
-# This is in zsh by default
-# alias ..='cd ..'
+alias ..='cd ..'
 
 # ls
 if [[ "$(uname)" = "Linux" ]]; then
