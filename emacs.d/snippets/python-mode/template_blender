@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: template_blender
+# name: Blender Template
+# --
+import bpy
+# Run with \`bpy.data.texts[0].as_module()\`
+if bpy.data.objects.get("Cube"):
+    bpy.data.objects["Cube"].select_set(True)
+    bpy.ops.object.delete()
