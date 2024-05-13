@@ -6,7 +6,7 @@
   },
   "template_blender": {
     "prefix": "template_blender",
-    "body": "import bpy\n# Run with `bpy.data.texts[0].as_module()`\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
+    "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
     "description": "Blender Template"
   },
   "main": {
