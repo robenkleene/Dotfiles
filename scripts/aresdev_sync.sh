@@ -88,3 +88,4 @@ else
 \"$local_path\" \
 \"$server_path\""
 fi
+rm "$includes_file"
