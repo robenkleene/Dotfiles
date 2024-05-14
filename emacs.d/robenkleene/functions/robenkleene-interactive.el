@@ -25,6 +25,30 @@
         )
     ))
 
+(defun kill-ring-go-grep ()
+  "Interpret the most kill ring entry as a grep location and visit the file."
+  (interactive)
+  (let* ((entry (current-kill 0 t))
+         (regex "^\\([^:]+\\):\\([0-9]+\\):?\\([0-9]*\\)")
+         match file line col)
+    (when (string-match regex entry)
+      (setq file (match-string 1 entry)
+            line (string-to-number (match-string 2 entry))
+            col (if (> (length (match-string 3 entry)) 0)
+                    (string-to-number (match-string 3 entry))
+                  1))
+      (if (file-exists-p file)
+          (progn
+            (find-file file)
+            (goto-line line)
+            (move-to-column (1- col))) ; columns in Emacs are 0-indexed, adjusting here
+        (message "File does not exist: %s" file))
+      )
+    (unless (string-match regex entry)
+      (message "Error: Invalid format in kill ring entry. Expected '<filename>:<linenumber>[:<columnumber>]'."))
+    )
+  )
+
 (defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
