@@ -90,7 +90,7 @@ function! commands#NewShCmd(split, cmd) abort
   " (The buffer will continue to show up as `[No Name]`)
   for l:i in range(1, 9)
     try
-      execute 'file '.fnameescape(a:cmd).(i > 1 ? ' '.l:i : '')
+      execute 'file :Sh '.fnameescape(a:cmd).(i > 1 ? ' '.l:i : '')
       break
     catch
     endtry
