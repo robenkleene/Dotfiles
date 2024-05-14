@@ -171,21 +171,24 @@ function! commands#PartNew(split) range abort
   let &l:undolevels=l:oldundolevels
 endfunction
 
-function! commands#Greg(register) abort
-    let l:contents = getreg(a:register)
-    let l:parts = split(split(l:contents, "\n")[0], ':')
-    if len(l:parts) < 2
-        echo "Error: Invalid format in register. Expected <filename>:<linenumber>[:<columnumber>]"
-        return
+function! commands#Greg(register)
+    let content = getreg(a:register)
+    if content =~# '^\([^:]\+\):\(\d\+\):\?\(\d*\)'
+        let file = matchstr(content, '^\([^:]\+\)')
+        let line = matchstr(content, ':\zs\d\+\ze')
+        let col = matchstr(content, ':\d\+:\zs\d\+\ze')
+        if empty(col)
+            let col = 1
+        endif
+
+        " `filereadable` isn't working, maybe doesn't support a virtual file system?
+        " if filereadable(file)
+        execute 'edit ' . file
+        execute 'normal! ' . line . 'G' . col . '|'
+        " else
+        "     echo "Error: File '" . file . "' not found."
+        " endif
+    else
+        echo "Error: Invalid format in register. Expected '<filename>:<linenumber>[:<columnumber>]'."
     endif
-    let l:file = l:parts[0]
-    let l:line = l:parts[1]
-    let l:col = len(l:parts) > 2 ? l:parts[2] : 1
-    " `filereadable` isn't working, maybe doesn't support a virtual file system?
-    " if filereadable(l:file)
-    execute 'edit ' . l:file
-    execute 'normal! ' . l:line . 'G' . l:col . '|'
-    " else
-    "     echo "Error: file " . l:file . " not found"
-    " endif
 endfunction
