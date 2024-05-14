@@ -2,4 +2,4 @@
 # key: cout_addr_var
 # name: Print variable
 # --
-std::cout << "%s" << this << " " << ${1:result} = " << $1 << std::endl;
+std::cout << "%s" << this << " << ${1:result} = " << $1 << std::endl;
