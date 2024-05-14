@@ -84,3 +84,9 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
+
+let @t = system('~/.bin/safepaste')
+augroup sync_clipboard
+  autocmd!
+  autocmd FocusGained * let @t = system('~/.bin/safepaste')
+augroup END
