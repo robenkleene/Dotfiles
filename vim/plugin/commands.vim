@@ -9,6 +9,7 @@ command! -range -bar PartTabedit silent <line1>,<line2>call commands#PartNew("ta
 command! -nargs=+ -bang -complete=shellcmd GrepSh call commands#GrepSh(<bang>0, <q-args>)
 command! -nargs=+ -complete=shellcmd ArgsSh call commands#ArgsSh(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd MakeSh call commands#MakeSh(<bang>0, <q-args>)
+command! -nargs=+ -complete=shellcmd Sh call commands#NewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd NewSh call commands#NewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd VnewSh call commands#VnewSh(<q-args>)
 command! -nargs=+ -complete=shellcmd EnewSh call commands#EnewSh(<q-args>)
