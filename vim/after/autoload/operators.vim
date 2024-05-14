@@ -52,10 +52,15 @@ function operators#YankGrep(context = {}, type = '') abort
       " `fnamemodify(expand("%"), ":~:.")` tries to get the relative path
     " let l:file_path = fnamemodify(expand("%"), ":~:.")
     let l:file_path = expand('%:~')
-    for l:line in split(l:contents, '\n')
-      let l:result .= l:file_path.':'.l:idx.':'.l:line."\n"
-      let l:idx += 1
-    endfor
+    let l:lines = split(l:contents, '\n')
+    if len(l:lines) > 1
+      for l:line in l:lines
+        let l:result .= l:file_path.':'.l:idx.':'.l:line."\n"
+        let l:idx += 1
+      endfor
+    else
+      let l:result .= l:file_path.':'.l:idx."\n"
+    endif
 
     " Use termporary buffer to force `YankTextPost` to trigger
     let @@ = l:result
