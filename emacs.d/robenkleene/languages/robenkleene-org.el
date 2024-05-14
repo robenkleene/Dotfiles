@@ -95,8 +95,6 @@
   (setq org-agenda-window-setup 'current-window)
 
   (setq org-support-shift-select 'always)
-  
-
 
   (org-babel-do-load-languages 'org-babel-load-languages
                                '(
@@ -125,6 +123,14 @@
     (interactive)
     (outline-up-heading 1)
     )
+
+  (add-hook 'org-mode-hook
+            (lambda ()
+              ;; Set `~' as a string delimiter, this makes the `sexp'
+              ;; commands (like `mark-sexp') work with backticks
+              (modify-syntax-entry ?~ "\"")
+              )
+            )
 
   ;; Use line numbers when creating links for some modes
   (add-hook 'org-create-file-search-functions
