@@ -27,3 +27,5 @@ command! -nargs=1 -bar Dc call commands#Dc(<q-args>)
 command! -bar Tput put =system('~/.bin/safepaste')
 
 command! -nargs=1 -bar -complete=customlist,commands#completeMan9 Man9 execute 'Man 9' <f-args>
+
+command! -nargs=1 Greg call commands#Greg(<f-args>)
