@@ -88,10 +88,13 @@ function! commands#NewShCmd(split, cmd) abort
   filetype detect
   " Wrap `file` in a try-catch to suppress errors if the name already exists
   " (The buffer will continue to show up as `[No Name]`)
-  try
-    execute 'file '.fnameescape(a:cmd)
-  catch
-  endtry
+  for l:i in range(1, 9)
+    try
+      execute 'file '.fnameescape(a:cmd).(i > 1 ? ' '.l:i : '')
+      break
+    catch
+    endtry
+  endfor
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
