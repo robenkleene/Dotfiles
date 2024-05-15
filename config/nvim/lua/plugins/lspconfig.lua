@@ -18,10 +18,13 @@ return {
         local opts = { buffer = ev.buf }
 
         -- Go to
-        vim.keymap.set('n', '<localleader>gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', '<localleader>gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', '<localleader>gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<localleader>gy', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+        -- Provide access to default implementations
+        vim.keymap.set('n', '<localleader>gd', 'gd', opts)
+        vim.keymap.set('n', '<localleader>gD', 'gD', opts)
         -- Show palette
         vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, opts)
         vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
