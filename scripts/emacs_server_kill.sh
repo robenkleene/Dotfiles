@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-emacsclient -e '(kill-emacs)'
+emacsclient -e '(save-buffers-kill-emacs)'
