@@ -29,6 +29,7 @@
 ;; Automatically save every second
 ;; (setq auto-save-visited-interval 1)
 ;; Suppress message when saving
+;; Leave this one, Emacs feels more glitchy without it
 ;; (setq save-silently t)
 ;; Suppress message every time auto-saving happens
 (setq-default auto-save-no-message t)
@@ -217,10 +218,6 @@
 (setq auto-revert-interval 1)
 ;; Prevent the `Reverting buffer'
 (setq auto-revert-verbose nil)
-
-;; Suppress message when saving, just check for the `**` in the lower-left when
-;; a file is unsaved
-(setq save-silently t)
 
 ;; Automatically enable disabled commands
 (setq disabled-command-hook 'enable-me)
