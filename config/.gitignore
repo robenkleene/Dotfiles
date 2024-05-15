@@ -3,10 +3,11 @@
 
 # Except
 !.gitignore
-!alacritty
-!nvim
 !Code
-!tmux
-!fish
+!alacritty
 !bat
+!fish
 !helix
+!nnn
+!nvim
+!tmux
