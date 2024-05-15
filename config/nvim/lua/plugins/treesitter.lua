@@ -54,15 +54,19 @@ return {
           set_jumps = true,
           goto_previous_start = {
             ["[m"] = "@function.outer",
+            ["[["] = "@class.outer",
           },
           goto_next_start = {
             ["]m"] = "@function.outer",
+            ["]]"] = "@class.outer",
           },
           goto_previous_end = {
             ["[M"] = "@function.outer",
+            ["[]"] = "@class.outer",
           },
           goto_next_end = {
             ["]M"] = "@function.outer",
+            ["]["] = "@class.outer",
           },
         },
       },
@@ -71,5 +75,9 @@ return {
     vim.keymap.set('n', '<localleader>]m', ']m')
     vim.keymap.set('n', '<localleader>[M', '[M')
     vim.keymap.set('n', '<localleader>]M', ']M')
+    vim.keymap.set('n', '<localleader>[[', '[[')
+    vim.keymap.set('n', '<localleader>]]', ']]')
+    vim.keymap.set('n', '<localleader>[]', '[]')
+    vim.keymap.set('n', '<localleader>][', '][')
   end
 }
