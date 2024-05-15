@@ -1,9 +1,14 @@
 - `␣`: Tag file
 - `^G`: Quit cd
 - `1` / `2` / `3` / `4`: Switch to tab
-- `␣` / `+`: Toggle selection
 - `nnn <file-path>`: Open `nnn` with file highlighted
 - `^L`: Redraw (force a refresh)
+
+# Selection
+
+- `␣` / `+`: Toggle selection
+- `A`: Select all
+- `⇧A`: Invert selection
 
 # Navigation
 
