@@ -45,6 +45,10 @@
                ("M-s f" . consult-fd)
                )
          )
+  :init
+  ;; Time to wait before updating results, the default is `0.2'
+  ;; Decreasing this makes `consult' feel significantly more responsive
+  (setq consult-async-input-debounce 0.05)
   )
 
 ;; Orderless makes regular fuzzy matching work, without it a search for a
