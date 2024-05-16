@@ -8,6 +8,10 @@
 ;; Open files in new frames by default
 (setq ns-pop-up-frames t)
 
+;; Dark transparent menu bar
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 (defvar rk/mac-bindings-minor-mode-map (make-keymap))
 
 (global-unset-key (kbd "s-q"))
