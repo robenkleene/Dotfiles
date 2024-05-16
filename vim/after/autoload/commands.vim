@@ -133,45 +133,38 @@ function! commands#Dc(term) abort
   echo "Deleted '".l:result."' from history."
 endfunction
 
-function! commands#Part(cmd) range abort
+function! commands#Part(...) range abort
   let l:save = @@
 
   execute 'silent noautocmd keepjumps normal! gv'
   let l:mode = mode(1)
   execute 'silent noautocmd keepjumps normal! y'
   new
-  setlocal buftype=nofile bufhidden=hide noswapfile
-  execute 'silent noautocmd keepjumps normal! Vp'
-  execute 'silent noautocmd keepjumps 0,$'.a:cmd
-
-  if l:mode == 'v'
-    execute 'silent noautocmd keepjumps normal! ggvGg_y'
-  elseif l:mode == 'V'
-    execute 'silent noautocmd keepjumps normal! ggVGy'
-  elseif l:mode == "\<C-V>"
-    execute 'silent noautocmd keepjumps normal! gg<C-v>G$y'
-  endif
-
-  bd!
-  execute 'silent noautocmd keepjumps normal! gvp'
-
-  let @@ = l:save
-endfunction
-
-function! commands#PartNew(split) range abort
-  let l:save = @@
-
   let l:oldundolevels=&undolevels
   setlocal undolevels=-1
 
-  execute 'silent noautocmd keepjumps normal! gv'
-  execute 'silent noautocmd keepjumps normal! y'
-  execute a:split
+  setlocal buftype=nofile bufhidden=hide noswapfile
   execute 'silent noautocmd keepjumps normal! Vp'
-  filetype detect
+
+  if a:0 >= 1 && !empty(a:1)
+    let l:cmd = a:1
+    execute 'silent noautocmd keepjumps 0,$'.l:cmd
+
+    if l:mode == 'v'
+      execute 'silent noautocmd keepjumps normal! ggvGg_y'
+    elseif l:mode == 'V'
+      execute 'silent noautocmd keepjumps normal! ggVGy'
+    elseif l:mode == "\<C-V>"
+      execute 'silent noautocmd keepjumps normal! gg<C-v>G$y'
+    endif
+
+    bd!
+    execute 'silent noautocmd keepjumps normal! gvp'
+  else
+    let &l:undolevels=l:oldundolevels
+  endif
 
   let @@ = l:save
-  let &l:undolevels=l:oldundolevels
 endfunction
 
 function! commands#Greg(register)
