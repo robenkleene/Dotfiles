@@ -27,11 +27,8 @@ return {
   },
   { 'tpope/vim-repeat' },
   {
-    'nvim-treesitter/playground',
-    cmd = { 'TSPlaygroundToggle', 'TSCaptureUnderCursor' }
-  },
-  {
     -- More reliable open browser
+    -- This shouldn't be needed after nvim 0.10, which re-implements `gx` to use macOS `open` command
     'tyru/open-browser.vim',
     keys = { "gx" },
     config = function()
