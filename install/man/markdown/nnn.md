@@ -3,6 +3,7 @@
 - `1` / `2` / `3` / `4`: Switch to tab
 - `nnn <file-path>`: Open `nnn` with file highlighted
 - `^L`: Redraw (force a refresh)
+- `F`: Show details (like file modification time) about the current file
 
 # Selection
 
