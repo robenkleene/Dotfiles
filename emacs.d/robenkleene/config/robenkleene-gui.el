@@ -76,6 +76,9 @@
 ;; Cursor color
 ;; (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
+;; Dark transparent menu bar
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
