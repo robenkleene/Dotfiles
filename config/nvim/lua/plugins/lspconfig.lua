@@ -26,9 +26,14 @@ return {
         vim.keymap.set('n', '<localleader>gd', 'gd', opts)
         vim.keymap.set('n', '<localleader>gD', 'gD', opts)
         -- Show palette
-        vim.keymap.set('n', '<localleader>d', vim.diagnostic.open_float, opts)
+        -- Default binding in nvim 0.10
+        vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float, opts)
+        -- Default binding in nvim 0.10
+        vim.keymap.set('n', '<C-w><C-d>', vim.diagnostic.open_float, opts)
         vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<localleader>K', vim.lsp.buf.hover, opts)
+        -- Default binding in nvim 0.10
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<localleader>K', 'K', opts)
         -- Actions
         vim.keymap.set('n', '<localleader>ar', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<localleader>ac', vim.lsp.buf.code_action, opts)
@@ -40,8 +45,9 @@ return {
         -- Use one of these instead:
         -- `:lua vim.diagnostic.setqflist()`
         -- `:lua vim.diagnostic.setloclist()`
-        -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-        -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+        -- Default binding in nvim 0.10
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
       end,
     })
 
