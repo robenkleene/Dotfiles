@@ -19,3 +19,4 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 dimensions = { columns = 80, lines = 48 }
 # Fixes `M-n`
 option_as_alt = "Both"
+padding = { x = 4, y = 2 }
