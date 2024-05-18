@@ -74,7 +74,7 @@
 (add-to-list 'initial-frame-alist
              '(vertical-scroll-bars . nil))
 ;; Cursor color
-;; (add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
+(add-to-list 'default-frame-alist '(cursor-color . "#4BC840"))
 
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
