@@ -8,7 +8,8 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":ne
 
 nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
-if !has('clipboard')
+" nvim already has custom clipboard support
+if !has('clipboard') && !has('!nvim')
   nnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
   vnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
   nnoremap <silent> "+p "=system('~/.bin/safepaste')<CR>p
