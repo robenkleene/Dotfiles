@@ -27,6 +27,19 @@ require("lazy").setup("plugins", {
   }
 })
 
+vim.g.clipboard = {
+   name = 'myClipboard',
+   copy = {
+       ["+"] = {'~/.bin/safecopy'},
+       ["*"] = {'~/.bin/safecopy'},
+   },
+   paste = {
+       ["+"] = {'~/.bin/safepaste'},
+       ["*"] = {'~/.bin/safepaste'},
+   },
+   cache_enabled = true,
+}
+
 vim.cmd([[
 set background=dark
 " `tokyonight` turns back on `termguicolors`

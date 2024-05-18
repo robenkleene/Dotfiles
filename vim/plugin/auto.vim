@@ -62,21 +62,24 @@ augroup END
 
 " Don't depend on this because the `*` and `+` registers aren't even defined
 " in terminal vim on Linux
-augroup safecopy
-  autocmd!
-  " Don't exclude the system keyboard in order to match how copying to the
-  " tmux pasteboard typically works (which usually also pastes to the system
-  " keyboard)
-  " In specific, this helps when cutting in Vim to the `t` register and then
-  " pasting in Emacs, because the Emacs paste will use `safepaste` which will
-  " prioritize the system keyboard, the paste from Vim to Emacs will only work
-  " if we copy to the system clipbaord
-  if has('clipboard')
-    autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-  else
-    autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-  endif
-augroup END
+" nvim already has custom clipboard support
+if !has('!nvim')
+  augroup safecopy
+    autocmd!
+    " Don't exclude the system keyboard in order to match how copying to the
+    " tmux pasteboard typically works (which usually also pastes to the system
+    " keyboard)
+    " In specific, this helps when cutting in Vim to the `t` register and then
+    " pasting in Emacs, because the Emacs paste will use `safepaste` which will
+    " prioritize the system keyboard, the paste from Vim to Emacs will only work
+    " if we copy to the system clipbaord
+    if has('clipboard')
+      autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+    else
+      autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+    endif
+  augroup END
+endif
 
 augroup quickfix_height
   autocmd!
