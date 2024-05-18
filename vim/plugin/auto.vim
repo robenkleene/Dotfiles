@@ -74,6 +74,12 @@ augroup safecopy
   autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
 
+let @t = system('~/.bin/safepaste')
+augroup sync_clipboard
+  autocmd!
+  autocmd FocusGained * let @t = system('~/.bin/safepaste')
+augroup END
+
 augroup quickfix_height
   autocmd!
   " Use the count of quickfix matches (`line("$")`) with a max of `20`
@@ -83,10 +89,4 @@ augroup END
 augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
-augroup END
-
-let @t = system('~/.bin/safepaste')
-augroup sync_clipboard
-  autocmd!
-  autocmd FocusGained * let @t = system('~/.bin/safepaste')
 augroup END
