@@ -62,23 +62,19 @@ augroup END
 
 " Don't depend on this because the `*` and `+` registers aren't even defined
 " in terminal vim on Linux
-augroup safecopy
-  autocmd!
-  " Don't exclude the system keyboard in order to match how copying to the
-  " tmux pasteboard typically works (which usually also pastes to the system
-  " keyboard)
-  " In specific, this helps when cutting in Vim to the `t` register and then
-  " pasting in Emacs, because the Emacs paste will use `safepaste` which will
-  " prioritize the system keyboard, the paste from Vim to Emacs will only work
-  " if we copy to the system clipbaord
-  autocmd TextYankPost * silent! if v:event["regname"] ==# 't' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-augroup END
-
-let @t = system('~/.bin/safepaste')
-augroup sync_clipboard
-  autocmd!
-  autocmd FocusGained * let @t = system('~/.bin/safepaste')
-augroup END
+if has('clipboard')
+  augroup safecopy
+    autocmd!
+    " Don't exclude the system keyboard in order to match how copying to the
+    " tmux pasteboard typically works (which usually also pastes to the system
+    " keyboard)
+    " In specific, this helps when cutting in Vim to the `t` register and then
+    " pasting in Emacs, because the Emacs paste will use `safepaste` which will
+    " prioritize the system keyboard, the paste from Vim to Emacs will only work
+    " if we copy to the system clipbaord
+    autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+  augroup END
+endif
 
 augroup quickfix_height
   autocmd!
