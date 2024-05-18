@@ -8,10 +8,16 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":ne
 
 nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
-nnoremap <silent> " :let @t=system('~/.bin/safepaste')<CR>"
-vnoremap <silent> " :<C-u>let @t=system('~/.bin/safepaste')<CR>gv"
-cnoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
-inoremap <expr> <silent> <C-r> bindings#RegisterCopyPaste()
+if !has('clipboard')
+  nnoremap <silent> "* <C-r>=system('~/.bin/safepaste')<CR>
+  vnoremap <silent> "* <C-r>=system('~/.bin/safepaste')<CR>
+  nnoremap <silent> "+ <C-r>=system('~/.bin/safepaste')<CR>
+  vnoremap <silent> "+ <C-r>=system('~/.bin/safepaste')<CR>
+  cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
+  inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
+  cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
+  inoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
+endif
 
 " Visual Star
 " This is the default in Neovim, but the default implementation doesn't handle

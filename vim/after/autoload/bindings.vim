@@ -1,8 +1,3 @@
-function! bindings#RegisterCopyPaste() abort
-  let @t=system('~/.bin/safepaste')
-  return "\<C-r>"
-endfunction
-
 function! bindings#ToggleQuickfixList() abort
   for bufnum in map(filter(split(bindings#GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
