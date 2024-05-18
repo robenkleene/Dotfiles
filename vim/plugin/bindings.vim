@@ -9,10 +9,10 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":ne
 nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
 if !has('clipboard')
-  nnoremap <silent> "* <C-r>=system('~/.bin/safepaste')<CR>
-  vnoremap <silent> "* <C-r>=system('~/.bin/safepaste')<CR>
-  nnoremap <silent> "+ <C-r>=system('~/.bin/safepaste')<CR>
-  vnoremap <silent> "+ <C-r>=system('~/.bin/safepaste')<CR>
+  nnoremap <silent> "* "=system('~/.bin/safepaste')<CR>
+  vnoremap <silent> "* "=system('~/.bin/safepaste')<CR>
+  nnoremap <silent> "+ "=system('~/.bin/safepaste')<CR>
+  vnoremap <silent> "+ "=system('~/.bin/safepaste')<CR>
   cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
   inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
   cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
