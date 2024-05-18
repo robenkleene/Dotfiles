@@ -91,3 +91,8 @@ augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
+
+augroup z_add
+  autocmd!
+  autocmd DirChanged * call system('zoxide add ' . expand('<amatch>'))
+augroup END
