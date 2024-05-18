@@ -9,14 +9,24 @@ nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":ne
 nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
 if !has('clipboard')
-  nnoremap <silent> "* "=system('~/.bin/safepaste')<CR>
-  vnoremap <silent> "* "=system('~/.bin/safepaste')<CR>
-  nnoremap <silent> "+ "=system('~/.bin/safepaste')<CR>
-  vnoremap <silent> "+ "=system('~/.bin/safepaste')<CR>
+  nnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
+  vnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
+  nnoremap <silent> "+p "=system('~/.bin/safepaste')<CR>p
+  vnoremap <silent> "+p "=system('~/.bin/safepaste')<CR>p
+  nnoremap <silent> "*P "=system('~/.bin/safepaste')<CR>P
+  vnoremap <silent> "*P "=system('~/.bin/safepaste')<CR>P
+  nnoremap <silent> "+P "=system('~/.bin/safepaste')<CR>P
+  vnoremap <silent> "+P "=system('~/.bin/safepaste')<CR>P
   cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
   inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
   cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
   inoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
+  " Make these `<Nop>` so the `"` register is used for yanks, which the
+  " `TextYankPost` will then pickup
+  nnoremap <silent> "* <Nop>
+  vnoremap <silent> "* <Nop>
+  nnoremap <silent> "+ <Nop>
+  vnoremap <silent> "+ <Nop>
 endif
 
 " Visual Star
