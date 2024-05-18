@@ -94,5 +94,8 @@ augroup END
 
 augroup z_add
   autocmd!
+  " netrw
+  autocmd Filetype netrw call system('zoxide add '.shellescape(expand('%')))
+  " Regular `cd` or `lcd`
   autocmd DirChanged * call system('zoxide add ' . expand('<amatch>'))
 augroup END
