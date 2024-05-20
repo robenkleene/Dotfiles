@@ -8,7 +8,7 @@
   "log_var": {
     "scope": "javascript,typescript",
     "prefix": "log_var",
-    "body": "console.log(\"${1:result} = \" + $1);",
+    "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Log variable"
   },
   "for": {

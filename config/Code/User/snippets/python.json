@@ -16,7 +16,7 @@
   },
   "print_var": {
     "prefix": "print_var",
-    "body": "print(\"${1:result} = \", $1)",
+    "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
   "print_err": {

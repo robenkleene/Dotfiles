@@ -6,7 +6,7 @@
   },
   "puts_var": {
     "prefix": "puts_var",
-    "body": "puts \"${1:result} = #{$1}\"",
+    "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
   "puts_err": {
