@@ -29,8 +29,7 @@
 ;; Automatically save every second
 ;; (setq auto-save-visited-interval 1)
 ;; Suppress message when saving
-;; Leave this one, Emacs feels more glitchy without it
-;; (setq save-silently t)
+(setq save-silently t)
 ;; Suppress message every time auto-saving happens
 (setq-default auto-save-no-message t)
 
