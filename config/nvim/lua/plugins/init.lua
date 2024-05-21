@@ -9,19 +9,6 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
-  {
-    -- More reliable open browser
-    -- This shouldn't be needed after nvim 0.10, which re-implements `gx` to use macOS `open` command
-    'tyru/open-browser.vim',
-    keys = { "gx" },
-    config = function()
-      vim.cmd([[
-      let g:netrw_nogx = 1
-      nmap gx <Plug>(openbrowser-open)
-      vmap gx <Plug>(openbrowser-open)
-      ]])
-    end
-  },
   -- Themes
   -- {
   --   "catppuccin/nvim",
