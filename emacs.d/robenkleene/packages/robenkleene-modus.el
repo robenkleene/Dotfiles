@@ -13,7 +13,7 @@
         modus-themes-region '(bg-only no-extend))
   :config
   ;; (load-theme 'modus-vivendi-tinted)
-  (load-theme 'modus-vivendi)
+  ;; (load-theme 'modus-vivendi)
   )
 
 (provide 'robenkleene-modus)
