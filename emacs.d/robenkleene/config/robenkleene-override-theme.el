@@ -160,12 +160,6 @@
   (set-face-attribute 'show-paren-match nil :underline t :background 'unspecified :foreground 'unspecified :bold nil)
   (set-face-attribute 'show-paren-mismatch nil :inherit 'rk-error)
 
-  ;; Evil Goggle
-  ;; This should be the default but isn't working for some reason
-  (with-eval-after-load 'evil-mode
-    (set-face-attribute 'evil-goggles-default-face nil :inherit 'region)
-    )
-
   ;; Markdown
   (with-eval-after-load 'markdown-mode
     ;; (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground 'unspecified)
@@ -190,26 +184,26 @@
     )
 
   ;; Org
-  (with-eval-after-load 'org
-    (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
-    (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
-    (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-    (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
-    (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
-    ;; Agenda
-    (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
-    )
+  ;; (with-eval-after-load 'org
+  ;;   (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
+  ;;   (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
+  ;;   (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+  ;;   (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
+  ;;   (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
+  ;;   ;; Agenda
+  ;;   (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
+  ;;   )
 
   ;; Git Commit
-  (with-eval-after-load 'magit
-    (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
-    )
+  ;; (with-eval-after-load 'magit
+  ;;   (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+  ;;   )
 
   )
 
