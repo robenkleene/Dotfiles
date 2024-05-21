@@ -41,7 +41,7 @@ return {
         vim.keymap.set('n', '<localleader>cr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<localleader>cd', vim.diagnostic.setqflist, opts)
         -- Hints
-        vim.keymap.set('n', '<localleader>ah', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })) end, opts)
+        vim.keymap.set('n', 'yoph', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })) end, opts)
       end,
     })
 
