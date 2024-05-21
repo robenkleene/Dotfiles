@@ -16,8 +16,7 @@ return {
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
         -- Enable inlay hints (e.g., type hints)
         -- For some reason you need to edit the buffer before this takes effect?
-        -- vim.lsp.inlay_hint.enable(false)
-        vim.lsp.inlay_hint.enable(true)
+        -- vim.lsp.inlay_hint.enable(true)
 
         local opts = { buffer = ev.buf }
 
@@ -41,6 +40,8 @@ return {
         -- Quickfix
         vim.keymap.set('n', '<localleader>cr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<localleader>cd', vim.diagnostic.setqflist, opts)
+        -- Hints
+        vim.keymap.set('n', '<localleader>ah', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })) end, opts)
       end,
     })
 
