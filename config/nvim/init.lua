@@ -46,8 +46,9 @@ set background=dark
 if $TERM_PROGRAM != "Apple_Terminal"
   autocmd VimEnter * ++nested colorscheme tokyonight-night
 else
+  set notermguicolors
   " Need to trigger a colorscheme so overrides take affect
-  autocmd VimEnter * ++nested colorscheme quiet
+  autocmd VimEnter * ++nested colorscheme default
 endif
 ]])
 

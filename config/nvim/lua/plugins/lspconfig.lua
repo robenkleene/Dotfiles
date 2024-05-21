@@ -26,14 +26,10 @@ return {
         vim.keymap.set('n', '<localleader>gd', 'gd', opts)
         vim.keymap.set('n', '<localleader>gD', 'gD', opts)
         -- Show palette
-        -- Default binding in nvim 0.10
-        vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float, opts)
-        -- Default binding in nvim 0.10
-        vim.keymap.set('n', '<C-w><C-d>', vim.diagnostic.open_float, opts)
         vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
-        -- Default binding in nvim 0.10
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', '<localleader>K', 'K', opts)
+        -- Allow use of default `K` binding when LSP is enabled
+        -- Not sure if we actually need this
+        -- vim.keymap.set('n', '<localleader>K', 'K', opts)
         -- Actions
         vim.keymap.set('n', '<localleader>ar', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<localleader>ac', vim.lsp.buf.code_action, opts)
@@ -41,13 +37,6 @@ return {
         -- Quickfix
         vim.keymap.set('n', '<localleader>cr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<localleader>cd', vim.diagnostic.setqflist, opts)
-        -- Other
-        -- Use one of these instead:
-        -- `:lua vim.diagnostic.setqflist()`
-        -- `:lua vim.diagnostic.setloclist()`
-        -- Default binding in nvim 0.10
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
       end,
     })
 
