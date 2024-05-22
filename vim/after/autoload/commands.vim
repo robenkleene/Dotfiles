@@ -53,24 +53,9 @@ function! commands#MakeSh(bang, cmd) abort
   let &makeprg = l:original_makeprg
 endfunction
 
-function! commands#NewSh(cmd) abort
-  call commands#NewShCmd("new", a:cmd)
-endfunction
-
-function! commands#VnewSh(cmd) abort
-  call commands#NewShCmd("vnew", a:cmd)
-endfunction
-
-function! commands#EnewSh(cmd) abort
-  call commands#NewShCmd("enew", a:cmd)
-endfunction
-
-function! commands#TabnewSh(cmd) abort
-  call commands#NewShCmd("tabnew", a:cmd)
-endfunction
-
-function! commands#NewShCmd(split, cmd) abort
+function! commands#Sh(bang, cmd) abort
   let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
+  let l:basename = fnameescape(a:cmd)
   " Neither approach supports `DiffSh git diff %` well, but this one at
   " least allows `DiffSh git diff #`
   " let l:result = system(a:cmd)
@@ -78,23 +63,32 @@ function! commands#NewShCmd(split, cmd) abort
   " put =l:result
   " This could be either `enew` or `new`, `:tag` works like `enew` and `:h`
   " and `:Man` work like `new`
-  exec a:split
+  if !a:bang || bufwinnr(l:basename) < 0
+    new
+  endif
   " Reset undo for this buffer
   let l:oldundolevels=&undolevels
   setlocal undolevels=-1
-  execute '0r !'.l:cmd
-  norm Gddgg
-  let &l:undolevels=l:oldundolevels
-  filetype detect
-  " Wrap `file` in a try-catch to suppress errors if the name already exists
-  " (The buffer will continue to show up as `[No Name]`)
+  let l:bufnr = bufnr(l:basename)
+  if a:bang && l:bufnr > 0
+    execute 'buffer '.l:bufnr
+    enew
+    bd#
+  endif
   for l:i in range(1, 9)
+    " Wrap `file` in a try-catch to suppress errors if the name already exists
+    " (The buffer will continue to show up as `[No Name]`)
     try
-      execute 'file :Sh '.fnameescape(a:cmd).(i > 1 ? ' '.l:i : '')
+      execute 'file '.l:basename.(i > 1 ? ' '.l:i : '')
+      file
       break
     catch
     endtry
   endfor
+  execute '0r !'.l:cmd
+  norm Gddgg
+  let &l:undolevels=l:oldundolevels
+  filetype detect
 endfunction
 
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
