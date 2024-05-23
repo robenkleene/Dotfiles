@@ -49,7 +49,7 @@
 
 ;; General
 (define-key rk/bindings-minor-mode-map (kbd "C-w")
-  'robenkleene/kill-region-or-window-map)
+            'rk/kill-region-or-backward-word)
 (define-key rk/bindings-minor-mode-map (kbd "C-x j")
             'dired-jump)
 (defvar dired-jump-other-window-repeat-map
