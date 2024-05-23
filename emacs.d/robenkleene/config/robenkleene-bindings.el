@@ -48,7 +48,7 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; General
-(define-key robenkleene/bindings-minor-mode-map (kbd "C-w")
+(define-key rk/bindings-minor-mode-map (kbd "C-w")
   'robenkleene/kill-region-or-window-map)
 (define-key rk/bindings-minor-mode-map (kbd "C-x j")
             'dired-jump)
