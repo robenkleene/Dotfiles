@@ -80,6 +80,13 @@
 ;; (dolist (cmd '(rk/backward-block rk/forward-block))
 ;;   (put cmd 'repeat-map 'block-repeat-map))
 
+(defun rk/kill-region-or-backward-word ()
+  "If the region is active and non-empty, call `kill-region'.
+Otherwise, call `backward-kill-word'."
+  (interactive)
+  (call-interactively
+   (if (use-region-p) 'kill-region 'backward-kill-word)))
+
 (provide 'robenkleene-keymap)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
