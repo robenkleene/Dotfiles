@@ -83,8 +83,8 @@ endif
 
 augroup quickfix_height
   autocmd!
-  " Use the count of quickfix matches (`line("$")`) with a max of `20`
-  autocmd FileType qf execute min([line("$"), 20]) . "wincmd _"
+  " Set the height to the number of lines, with a max of the size of the window, or 10, which ever is higher
+  autocmd FileType qf execute min([line("$"), max([10, float2nr(&lines / 3)])]) . "wincmd _"
 augroup END
 
 augroup executable_files
