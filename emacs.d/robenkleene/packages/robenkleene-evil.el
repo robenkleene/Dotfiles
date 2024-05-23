@@ -67,6 +67,7 @@
     ;; Allow `xref-find-definitions' in normal mode
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-motion-state-map (kbd "C-z") nil)
+    (define-key evil-motion-state-map (kbd "RET") nil)
     (define-key evil-insert-state-map (kbd "C-z") nil)
     (define-key evil-emacs-state-map (kbd "C-z") nil)
     ;; Visual Line
