@@ -28,9 +28,9 @@
   (evil-mode 1)
   :config
   ;; Set initial state for some modes
-  (evil-set-initial-state 'text-mode 'normal)
-  (evil-set-initial-state 'conf-mode 'normal)
-  (evil-set-initial-state 'prog-mode 'normal)
+  (evil-set-initial-state 'text-mode 'insert)
+  (evil-set-initial-state 'conf-mode 'insert)
+  (evil-set-initial-state 'prog-mode 'insert)
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   ;; Lisp in insert mode
   ;; (evil-set-initial-state 'prog-mode 'normal)
