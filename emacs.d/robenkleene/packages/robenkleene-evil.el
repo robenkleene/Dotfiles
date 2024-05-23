@@ -63,6 +63,16 @@
     ;; (defalias #'forward-evil-word #'forward-evil-symbol)
     (setq-default evil-symbol-word-search t))
 
+  ;; Use `C-w' more like Vim
+  (defun rk/kill-region-or-backward-word ()
+    "If the region is active and non-empty, call `kill-region'.
+Otherwise, call `backward-kill-word'."
+    (interactive)
+    (call-interactively
+     (if (use-region-p) 'kill-region 'backward-kill-word)))
+  (define-key rk/bindings-minor-mode-map (kbd "C-w")
+              'rk/kill-region-or-backward-word)
+
   (with-eval-after-load 'evil-maps
     ;; Allow `xref-find-definitions' in normal mode
     (define-key evil-normal-state-map (kbd "M-.") nil)

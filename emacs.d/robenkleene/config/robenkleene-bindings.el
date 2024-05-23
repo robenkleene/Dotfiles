@@ -48,8 +48,6 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; General
-(define-key rk/bindings-minor-mode-map (kbd "C-w")
-            'rk/kill-region-or-backward-word)
 (define-key rk/bindings-minor-mode-map (kbd "C-x j")
             'dired-jump)
 (defvar dired-jump-other-window-repeat-map
