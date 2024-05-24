@@ -37,8 +37,6 @@
                             (set 'truncate-lines nil)
                             (set-category-table rk/text-category-table)
                             (setq-local word-wrap-by-category t)
-                            ;; Spelling
-                            (flyspell-mode)
                             ;; Show trailing whitespace
                             (setq-local show-trailing-whitespace t)
                             ))

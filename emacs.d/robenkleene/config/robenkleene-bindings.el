@@ -92,11 +92,6 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x u")
             'undo-only)
 
-;; Use `M-$' which works in GUI and terminal to either correct the word or add
-;; it to the dictionary
-;; Use `C-c $' to correct the word
-;; (define-key rk/bindings-minor-mode-map (kbd "C-c .") 'flyspell-auto-correct-word)/
-
 ;; Mode
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
