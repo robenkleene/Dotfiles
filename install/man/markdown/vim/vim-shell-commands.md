@@ -1,3 +1,6 @@
+- `!`: Run shell command on visual selection (i.e., shortcut for `:!`)
+- `!!`: Run shell command on current line (i.e., shortcut for `:.!`)
+
 # Output in Echo Area
 
 Note that the space after `w` is mandatory!
