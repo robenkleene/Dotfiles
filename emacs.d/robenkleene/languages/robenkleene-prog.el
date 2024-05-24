@@ -22,8 +22,6 @@
                             (display-fill-column-indicator-mode)
                             ))
 
-;; This is way too noisy
-;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 ;; Only show line numbers in programming modes
 ;; Don't show line numbers in GUI mode because of that bug where the line with
 ;; the cursor sometimes gets offset slightly

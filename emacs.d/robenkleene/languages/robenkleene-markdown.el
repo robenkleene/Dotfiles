@@ -11,8 +11,6 @@
   :bind
   (([remap markdown-enter-key] . rk/markdown-enter-key))
   :init
-  (setq flyspell-generic-check-word-predicate
-        'rk/flyspell-generic-textmode-verify)
   (setq markdown-enable-wiki-links t)
   ;; Show a flat list of headers in `imenu', instead of a nested list
   ;; (The nested list means you have to choose the top heading, then a more
@@ -42,12 +40,7 @@
   ;; making nested lists, but it doesn't appear to be easy without also removing
   ;; some other desirable behavior.
   ;; (setq markdown-indent-function 'indent-relative)
-  (defun rk/flyspell-generic-textmode-verify ()
-    "Used for `flyspell-generic-check-word-predicate' in text modes."
-    (let ((f (get-text-property (- (point) 1) 'face)))
-      (not (memq f '(markdown-pre-face
-                     markdown-inline-code-face
-                     markdown-language-keyword-face)))))
+
   (defun rk/markdown-enter-key ()
     "Follow links or enter."
     (interactive)
@@ -118,9 +111,6 @@
               ;; (auto-save-mode)
               )
             )
-  ;; Try `flyspell-prog-mode' to prevent spelling errors in Markdown code
-  ;; blocks. This seems to disable spelling altogether: (add-hook
-  ;; 'markdown-mode-hook 'flyspell-prog-mode)
 
   ;; Augment `markdown-calc-indents' to only returns multiples of `4'
   ;; Otherwise `markdown-mode' returns some multiples of `2', which is to align
