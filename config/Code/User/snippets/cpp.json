@@ -9,8 +9,8 @@
     "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
     "description": "Print variable"
   },
-  "cout_addr_var": {
-    "prefix": "cout_addr_var",
+  "cout_var_addr": {
+    "prefix": "cout_var_addr",
     "body": "std::cout << \"%s\" << this << \" << $1 = \" << ${1:result} << std::endl;",
     "description": "Print variable"
   }
