@@ -10,37 +10,22 @@ return {
         require('luasnip.loaders.from_vscode').lazy_load({
           paths = { '~/.config/Code/User/snippets' }
         })
-        local f=io.open(vim.env.HOME .. '/.local_snippets/package.json')
-        if f~=nil then io.close(f)
+        local file=io.open(vim.env.HOME .. '/.local_snippets/package.json')
+        if file~=nil then io.close(file)
           require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.local_snippets/" } })
         end
-        local luasnip = require 'luasnip'
-        -- Snippets
-        local fmt = require("luasnip.extras.fmt").fmt
-        -- Title
-        local title_snippet = luasnip.snippet
-        luasnip.add_snippets("markdown", {
-          title_snippet("title",
-          fmt(vim.fn.system("~/.bin/md_title " .. vim.fn.fnameescape(vim.fn.expand('%'))), { })
-          ),
-        })
-        -- Date
-        local today_snippet = luasnip.snippet
-        luasnip.add_snippets("all", {
-          today_snippet("today",
-          fmt(vim.fn.system("date +%F | tr -d '\n'"), { })
-          ),
-        })
+
         -- Keymaps
+        local ls = require 'luasnip'
         vim.api.nvim_set_keymap(
           'i', '<Tab>',
           'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
           { expr = true, silent = true }
         )
-        vim.keymap.set({'s'}, '<Tab>', function() luasnip.jump(1) end, { silent = true })
-        vim.keymap.set({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, { silent = true })
-        luasnip.filetype_extend("zsh", { "sh" })
-        luasnip.filetype_extend("typescript", { "javascript" })
+        vim.keymap.set({'s'}, '<Tab>', function() ls.jump(1) end, { silent = true })
+        vim.keymap.set({'i', 's'}, '<S-Tab>', function() ls.jump(-1) end, { silent = true })
+        ls.filetype_extend("zsh", { "sh" })
+        ls.filetype_extend("typescript", { "javascript" })
       end
     }
   },
