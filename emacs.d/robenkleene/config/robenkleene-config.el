@@ -253,7 +253,7 @@
 (setq-default major-mode 'text-mode)
 
 ;; Don't blink the cursor
-(blink-cursor-mode 0)
+;; (blink-cursor-mode 0)
 
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)
