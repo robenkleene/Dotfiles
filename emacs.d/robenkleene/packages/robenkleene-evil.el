@@ -25,7 +25,7 @@
   ;; Modes
   (setq evil-default-state 'emacs)
   ;; Start Evil
-  (evil-mode 1)
+  ;; (evil-mode 1)
   :config
   ;; Set initial state for some modes
   (evil-set-initial-state 'text-mode 'insert)
