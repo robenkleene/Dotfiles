@@ -38,7 +38,7 @@
     ("brightpurple" . "#822EB6")
     ("gray0" . "#303030")
     ("gray1" . "#3a3a3a")
-    ("gray2" . "#4e4e4e")
+    ("gray2" . "#444444")
     ("gray3" . "#585858")
     ("gray4" . "#808080")
     ("gray5" . "#b2b2b2")
@@ -92,6 +92,7 @@
 (defface rk-popup-match '((t)) "Pop-up match" :group 'rk-faces)
 (defface rk-popup-selection '((t)) "Pop-up selection" :group 'rk-faces)
 (defface rk-prompt'((t)) "Prompt" :group 'rk-faces)
+(defface rk-region'((t)) "Region" :group 'rk-faces)
 (defface rk-search '((t)) "Search" :group 'rk-faces)
 (defface rk-success '((t)) "Success" :group 'rk-faces)
 (defface rk-tag-active '((t)) "Tag" :group 'rk-faces)
@@ -129,6 +130,7 @@
   (set-face-attribute 'rk-popup-match nil :foreground link)
   (set-face-attribute 'rk-popup-selection nil :inherit 'rk-match)
   (set-face-attribute 'rk-prompt nil :inherit 'rk-match :bold t)
+  (set-face-attribute 'rk-region nil :background modeline-inactive-bg)
   (set-face-attribute 'rk-search nil :background search-bg :foreground white)
   (set-face-attribute 'rk-success nil :foreground success)
   (set-face-attribute 'rk-tag-active nil :inherit 'rk-modeline-active :bold t)
@@ -143,8 +145,9 @@
   (set-face-attribute 'italic nil :underline 'unspecified :slant 'italic)
   (set-face-attribute 'bold nil :bold t)
 
-  ;; Whitespace
+  ;; Basic
   (set-face-attribute 'mode-line-inactive nil :foreground nontext)
+  (set-face-attribute 'region nil :inherit 'rk-region :background 'unspecified :foreground 'unspecified)
 
   ;; Syntax
   (set-face-attribute 'font-lock-comment-delimiter-face nil :foreground comment :slant 'oblique)
