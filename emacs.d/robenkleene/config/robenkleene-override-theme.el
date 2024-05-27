@@ -143,6 +143,9 @@
   (set-face-attribute 'italic nil :underline 'unspecified :slant 'italic)
   (set-face-attribute 'bold nil :bold t)
 
+  ;; Whitespace
+  (set-face-attribute 'mode-line-inactive nil :foreground nontext)
+
   ;; Syntax
   (set-face-attribute 'font-lock-comment-delimiter-face nil :foreground comment :slant 'oblique)
   (set-face-attribute 'font-lock-comment-face nil :foreground comment :slant 'oblique)
