@@ -61,7 +61,8 @@
     ("modeline-inactive-fg" . gray5)
     ("search-bg" . brightpurple)
     ("search-fg" . gray4)
-    ("match-bg" . purple)
+    ("match-active-bg" . gray3)
+    ("match-inactive-bg" . gray2)
     ("match-fg" . gray4)
     ("warning" . yellow)
 
@@ -85,7 +86,8 @@
 (defface rk-highlight-line '((t)) "Highlight line" :group 'rk-faces)
 (defface rk-italic'((t)) "Header" :group 'rk-faces)
 (defface rk-link '((t)) "Link" :group 'rk-faces)
-(defface rk-match'((t)) "Match" :group 'rk-faces)
+(defface rk-match-active'((t)) "Match" :group 'rk-faces)
+(defface rk-match-inactive'((t)) "Match" :group 'rk-faces)
 (defface rk-modeline-active  '((t)) "Active mode-line" :group 'rk-faces)
 (defface rk-modeline-inactive '((t)) "Inactive mode-line" :group 'rk-faces)
 (defface rk-popup '((t)) "Pop-up" :group 'rk-faces)
@@ -121,15 +123,16 @@
   (set-face-attribute 'rk-warning-highlight nil :background warning :foreground black :bold t)
   (set-face-attribute 'rk-header nil :foreground gray6 :bold t)
   (set-face-attribute 'rk-highlight-line nil :background highlight-line-bg)
-  (set-face-attribute 'rk-highlight nil :background match-bg)
+  (set-face-attribute 'rk-highlight nil :background match-active-bg)
   (set-face-attribute 'rk-link nil :foreground link :underline t)
-  (set-face-attribute 'rk-match nil :background match-bg)
+  (set-face-attribute 'rk-match-active nil :background match-active-bg)
+  (set-face-attribute 'rk-match-inactive nil :background match-inactive-bg)
   (set-face-attribute 'rk-modeline-active nil :foreground modeline-active-fg :background modeline-active-bg)
   (set-face-attribute 'rk-modeline-inactive nil :foreground modeline-inactive-fg :background modeline-inactive-bg)
   (set-face-attribute 'rk-modeline-inactive nil :foreground modeline-active-fg :background modeline-inactive-bg)
   (set-face-attribute 'rk-popup-match nil :foreground link)
-  (set-face-attribute 'rk-popup-selection nil :inherit 'rk-match)
-  (set-face-attribute 'rk-prompt nil :inherit 'rk-match :bold t)
+  (set-face-attribute 'rk-popup-selection nil :inherit 'rk-match-active)
+  (set-face-attribute 'rk-prompt nil :inherit 'rk-match-active :bold t)
   (set-face-attribute 'rk-region nil :background modeline-inactive-bg)
   (set-face-attribute 'rk-search nil :background search-bg :foreground white)
   (set-face-attribute 'rk-success nil :foreground success)
@@ -148,6 +151,11 @@
   ;; Basic
   (set-face-attribute 'mode-line-inactive nil :foreground nontext)
   (set-face-attribute 'region nil :inherit 'rk-region :background 'unspecified :foreground 'unspecified)
+
+  ;; Search
+  (set-face-attribute 'isearch nil :inherit 'rk-match-active :background 'unspecified :foreground 'unspecified :bold t)
+  (set-face-attribute 'lazy-highlight nil :inherit 'rk-match-inactive :background 'unspecified :foreground 'unspecified)
+  (set-face-attribute 'isearch-fail nil :inherit 'rk-error :background 'unspecified :foreground 'unspecified :bold t)
 
   ;; Syntax
   (set-face-attribute 'font-lock-comment-delimiter-face nil :foreground comment :slant 'oblique)
