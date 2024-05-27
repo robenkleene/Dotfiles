@@ -6,7 +6,7 @@
 
 Some additional characters might be accessible where you can't move your cursor with this technique:
 
-```
+``` emacs-lisp
 (defun robenkleene/describe-char-at-mouse-click (click-event)
   "`describe-char' at CLICK-EVENT's position.
 CLICK-EVENT should be a mouse-click event."
