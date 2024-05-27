@@ -205,9 +205,13 @@
 
   ;; Git Commit
   ;; (with-eval-after-load 'magit
-  ;;   (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+  ;; (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
   ;;   )
 
+  ;; Dired
+  ;; (with-eval-after-load 'dired
+  ;;   (set-face-attribute 'dired-directory nil :inherit 'rk-link :underline nil)
+  ;;   )
   )
 
 (provide 'robenkleene-override-theme)
