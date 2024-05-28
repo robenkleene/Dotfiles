@@ -25,11 +25,12 @@
         )
     ))
 
-(defun kill-ring-go-grep ()
-  "Interpret the most kill ring entry as a grep location and visit the file."
-  (interactive)
-  (let* ((entry (current-kill 0 t))
-         (regex "^\\([^:]+\\):\\([0-9]+\\):?\\([0-9]*\\)")
+(defun go-grep (entry)
+  "Go to the line specified in a grep formatted `entry'."
+  (interactive
+   (list (read-from-minibuffer "Go grep: ")
+         ))
+  (let* ((regex "^\\([^:]+\\):\\([0-9]+\\):?\\([0-9]*\\)")
          match file line col)
     (when (string-match regex entry)
       (setq file (match-string 1 entry)
