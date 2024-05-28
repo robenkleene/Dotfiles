@@ -5,14 +5,16 @@
 (use-package modus-themes
   :init
   ;; Remove borders around windows
-  (setq modus-themes-common-palette-overrides
-        '((fringe unspecified)))
+  ;; (setq modus-themes-common-palette-overrides
+  ;;       '((fringe unspecified)))
 
-  (setq modus-themes-italic-constructs t
-        modus-themes-bold-constructs nil
-        modus-themes-region '(bg-only no-extend))
+  ;; (setq modus-themes-italic-constructs t
+  ;;       modus-themes-bold-constructs t
+  ;;       modus-themes-region '(bg-only no-extend))
   :config
-  ;; (load-theme 'modus-vivendi-tinted)
+  ;; Reduce the intensity a bit
+  (setq modus-themes-common-palette-overrides modus-themes-preset-overrides-faint)
+  (load-theme 'modus-vivendi-tinted)
   ;; (load-theme 'modus-vivendi)
   )
 
