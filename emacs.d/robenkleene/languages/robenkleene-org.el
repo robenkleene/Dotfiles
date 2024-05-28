@@ -26,6 +26,10 @@
     ;; binding will mark just the source code of a source block
     (define-key org-mode-map (kbd "C-M-h")
                 'org-babel-mark-block)
+    (define-key org-mode-map (kbd "M-{")
+                'rk/backward-block)
+    (define-key org-mode-map (kbd "M-}")
+                'rk/forward-block)
     )
   :config
   ;; Allow shift select bindings to work in some cases
