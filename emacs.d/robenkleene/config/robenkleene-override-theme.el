@@ -204,6 +204,7 @@
   (with-eval-after-load 'org
     (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'org-document-title nil :inherit 'rk-header :foreground 'unspecified :bold t)
     (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
     (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
     (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
