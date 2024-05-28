@@ -148,10 +148,12 @@
   (set-face-attribute 'italic nil :underline 'unspecified :slant 'italic)
   (set-face-attribute 'bold nil :bold t)
 
+  ;; UI
+  ;; (set-face-attribute 'mode-line-inactive nil :foreground nontext)
+  ;; (set-face-attribute 'tab-bar-tab-inactive nil :foreground nontext)
+
   ;; Basic
-  (set-face-attribute 'mode-line-inactive nil :foreground nontext)
   (set-face-attribute 'region nil :inherit 'rk-region :background 'unspecified :foreground 'unspecified)
-  (set-face-attribute 'tab-bar-tab-inactive nil :foreground nontext)
 
   ;; Search
   (set-face-attribute 'isearch nil :inherit 'rk-match-active :background 'unspecified :foreground 'unspecified :bold t)
