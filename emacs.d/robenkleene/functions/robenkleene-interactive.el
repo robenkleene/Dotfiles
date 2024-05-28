@@ -59,6 +59,19 @@
   )
 
 ;;;###autoload
+(defvar rk/grep-shell-command-history nil "History list for rg.")
+(defun grep-shell-command (command-args)
+  "Create grep buffer from COMMAND-ARGS."
+  (interactive
+   (list (read-shell-command
+          "Run grep shell command: "
+          nil
+          'rk/grep-shell-command-history)
+         ))
+  (compilation-start command-args 'grep-mode)
+  )
+
+;;;###autoload
 (defvar rk/rg-history nil "History list for rg.")
 (defun rg (command-args)
   "Create grep buffer for rg from COMMAND-ARGS."
