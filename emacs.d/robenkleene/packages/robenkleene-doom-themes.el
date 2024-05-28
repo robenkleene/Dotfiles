@@ -4,7 +4,7 @@
 
 (use-package doom-themes
   :config
-  (load-theme 'doom-tokyo-night t)
+  ;; (load-theme 'doom-tokyo-night t)
   )
 
 (provide 'robenkleene-doom-themes)
