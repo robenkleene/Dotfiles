@@ -59,7 +59,6 @@
 ;; Theme
 (require 'robenkleene-ef-themes)
 (require 'robenkleene-modus)
-(require 'robenkleene-doom-themes)
 (require 'robenkleene-override-theme)
 
 ;; Languages
