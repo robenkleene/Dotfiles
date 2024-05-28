@@ -211,6 +211,7 @@
     (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
     (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
     (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-date nil :inherit 'rk-comment :bold nil :foreground 'unspecified)
     (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
     (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
     ;; Agenda
