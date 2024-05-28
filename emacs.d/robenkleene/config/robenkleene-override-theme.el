@@ -179,48 +179,49 @@
 
   ;; Markdown
   (with-eval-after-load 'markdown-mode
-    ;; (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-header-face-4 nil :inherit 'rk-header :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-header-face-5 nil :inherit 'rk-header :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-header-face-6 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-1 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-2 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-3 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-4 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-5 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'markdown-header-face-6 nil :inherit 'rk-header :foreground 'unspecified)
     (set-face-attribute 'markdown-markup-face nil :inherit 'rk-nontext :foreground 'unspecified)
     (set-face-attribute 'markdown-header-delimiter-face nil :inherit 'rk-nontext :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-link-face nil :inherit 'rk-link :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
-    ;; (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
-    ;; (set-face-attribute 'markdown-inline-code-face nil :inherit 'markdown-pre-face :foreground 'unspecified :background 'unspecified)
-    ;; (set-face-attribute 'markdown-blockquote-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-link-face nil :inherit 'rk-link :foreground 'unspecified)
+    (set-face-attribute 'markdown-url-face nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'markdown-pre-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-code-face nil :inherit 'rk-comment :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-inline-code-face nil :inherit 'markdown-pre-face :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-blockquote-face nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'markdown-list-face nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-nontext :slant 'normal :foreground 'unspecified)
-    ;; (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
-    ;; (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified :bold t)
+    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified :bold t)
     )
 
   ;; Org
-  ;; (with-eval-after-load 'org
-  ;;   (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
-  ;;   (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
-  ;;   (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
-  ;;   (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
-  ;;   (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
-  ;;   ;; Agenda
-  ;;   (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
-  ;;   )
+  (with-eval-after-load 'org
+    (set-face-attribute 'org-code nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'org-level-1 nil :inherit 'rk-header :foreground 'unspecified)
+    (set-face-attribute 'org-level-2 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-3 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-4 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-5 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-6 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-7 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-level-8 nil :inherit 'org-level-1 :foreground 'unspecified :bold 'unspecified)
+    (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
+    (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
+    ;; Agenda
+    (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
+    )
 
   ;; Git Commit
-  ;; (with-eval-after-load 'magit
-  ;; (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
-  ;;   )
+  (with-eval-after-load 'magit
+    ;; Show git commit text in white
+    (set-face-attribute 'git-commit-summary nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+    )
 
   ;; Dired
   ;; (with-eval-after-load 'dired
