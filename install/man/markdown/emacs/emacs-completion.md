@@ -1,3 +1,6 @@
+- `<tab>`: Trigger completion in the minibuffer
+- `C-M-i`: Trigger completion in a text buffer
+
 # Completion Window
 
 - `M-<up>` / `M-<down>`: Previous / next completion item
