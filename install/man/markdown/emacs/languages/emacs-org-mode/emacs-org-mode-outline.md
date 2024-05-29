@@ -1,4 +1,6 @@
-The outlining keys will create a list item when in used in the context of a list, and a headline in the context of a headline.
+# New Sibling
+
+The new sibling keys will create a list item when in used in the context of a list, and a headline in the context of a headline. If a blank line exists above the current item, then a blank line is inserted before the new sibling (this behavior can be changed by setting `org-blank-before-new-entry`, but usually this can be mediated just by not including a blank line between the document title and the first header).
 
 - `M-RET`: New sibling headline or list item before children, split at insertion point
 - `M-m M-RET`: Add new sibling above this headline (if at the beginning of the line `M-RET` adds above current heading
@@ -18,19 +20,19 @@ The outlining keys will create a list item when in used in the context of a list
 - `M-S-RET`: New todo item at current level before children
 - `M-S-RET <tab>`: New child todo item before children
 
-## Navigation
+# Navigation
 
 - `M-{` / `M-}`: Previous / next element
 - `C-c C-p` / `C-c C-n`: Previous / next item
 - `C-c C-b` / `C-c C-f`: Previous / next sibling
 - `C-c C-u`: Go to parent
 
-## Moving
+# Moving
 
 - `M-left` / `M-right`, `C-c C-<` / `C-c C->`: Promote / demote item
 - `M-up` / `M-down`: Move item up / down
 - `C-c C-w`: Move item to a category (note this can only move an item to another top-level category, for this reason, it's a good idea to have your main lists at the top level)
 
-## Deleting
+# Deleting
 
 - To delete an item `C-a C-k C-k` or `C-k C-k` at the end of the previous line
