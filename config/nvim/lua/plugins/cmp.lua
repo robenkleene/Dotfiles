@@ -73,10 +73,11 @@ return {
     local cmp = require 'cmp'
     cmp.setup {
       -- Setting `keyword_length` breaks for `vsnip` but works for `luasnip`
-      completion = {
-        -- Don't offer completion until two characters, greatly reduces churn
-        keyword_length = 2,
-      },
+      -- Having this unset makes it easier to explore an API
+      -- completion = {
+      --   -- Don't offer completion until two characters, greatly reduces churn
+      --   keyword_length = 2,
+      -- },
       snippet = {
         expand = function(args)
           require'luasnip'.lsp_expand(args.body)
