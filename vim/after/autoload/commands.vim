@@ -161,8 +161,8 @@ function! commands#Part(...) range abort
   let @@ = l:save
 endfunction
 
-function! commands#Greg(register)
-    let content = getreg(a:register)
+function! commands#Ggrep(args)
+    let content = a:args
     if content =~# '^\([^:]\+\):\(\d\+\):\?\(\d*\)'
         let file = matchstr(content, '^\([^:]\+\)')
         let line = matchstr(content, ':\zs\d\+\ze')
