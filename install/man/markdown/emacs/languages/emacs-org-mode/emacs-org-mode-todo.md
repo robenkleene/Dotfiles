@@ -6,3 +6,4 @@
 - To make a weekly repeating todo, just add `+7d` to the end of the date, e.g., `2023-05-29 Mon +7d`
 - `C-u C-c C-d` then `C-c C-d <ret>`: Is a way to reschedule a deadline to today
 - `C-c C-c`: Toggle checkbox
+- `C-u C-c C-c`: Insert checkbox
