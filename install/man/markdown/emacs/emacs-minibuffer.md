@@ -5,14 +5,6 @@
 - `M-v` / `M-g M-c`: Switch to the completion window
 - You can focus the minibuffer just by using the usually window switching commands
 
-# Completion Window
-
-- The read-only bindings work here, e.g., `<SPC>` to go forward and `<BS>` to go backward
-- `<Backtab>` / `<Tab>`, `p` / `n`: Previous / next match
-- `z`: Kill buffer
-- `M-g M-c`: Switch back to minibuffer
-- You can use `C-h f` to see help for the current function from the completion window
-
 # Stuck Minibuffer
 
 If the minibuffer becomes stuck with a partial command, the solution is to focus it, either with the mouse or `C-x o`, then hit `C-g`. (Note that performing another minibuffer command, e.g., `M-x C-g` will not fix it.)
