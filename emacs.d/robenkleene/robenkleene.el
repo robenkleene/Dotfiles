@@ -62,7 +62,7 @@
 (require 'robenkleene-override-theme)
 
 ;; Languages
-(require 'robenkleene-corfu)
+;; (require 'robenkleene-corfu)
 (require 'robenkleene-csv)
 (require 'robenkleene-git-commit)
 (require 'robenkleene-jade)
