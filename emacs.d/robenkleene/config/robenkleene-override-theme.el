@@ -215,6 +215,7 @@
     (set-face-attribute 'org-date nil :inherit 'rk-comment :bold nil :foreground 'unspecified)
     (set-face-attribute 'org-special-keyword nil :inherit 'rk-comment :bold t :foreground 'unspecified)
     (set-face-attribute 'org-property-value nil :inherit 'rk-comment :foreground 'unspecified)
+    (set-face-attribute 'org-checkbox nil :inherit 'rk-comment :foreground 'unspecified)
     ;; Agenda
     (set-face-attribute 'org-agenda-date nil :inherit 'rk-header :foreground 'unspecified)
     )
