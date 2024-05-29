@@ -1,3 +1,4 @@
+- `C-h o`: Describe symbol (this includes both functions and variables, it's useful for describing the thing at point)
 - `C-h k`: Tell what a key does (describe-key)
 - A prefix key (e.g., `M-s`) followed by `C-h` will show all bindings with that prefix
 - `C-h f` (`describe-function`): Describe function, also shows key bindings
