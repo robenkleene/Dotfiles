@@ -32,6 +32,11 @@
                 'rk/forward-block)
     )
   :config
+  ;; Setting `org-startup-folded' seems to make drawers startup folded, this is
+  ;; supposed to be the default (i.e., `org-hide-drawer-startup' is `t' by
+  ;; default), but in practice it doesn't seem to work without this set to
+  ;; `showall'
+  (setq org-startup-folded 'showall)
   ;; Allow shift select bindings to work in some cases
   ;; The `t' option doesn't do enough to be worth it
   ;; (setq org-support-shift-select t)
