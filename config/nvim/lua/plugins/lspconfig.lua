@@ -30,16 +30,8 @@ return {
         vim.keymap.set('n', '<localleader>gD', 'gD', opts)
         -- Show palette
         vim.keymap.set('n', '<localleader><C-k>', vim.lsp.buf.signature_help, opts)
-        -- Allow use of default `K` binding when LSP is enabled
-        -- Not sure if we actually need this
-        -- vim.keymap.set('n', '<localleader>K', 'K', opts)
         -- Actions
-        vim.keymap.set('n', '<localleader>ar', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<localleader>ac', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', '<localleader>=', function() vim.lsp.buf.format { async = true } end, opts)
-        -- Quickfix
-        vim.keymap.set('n', '<localleader>cr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<localleader>cd', vim.diagnostic.setqflist, opts)
         -- Hints
         vim.keymap.set('n', 'yoph', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })) end, opts)
       end,
