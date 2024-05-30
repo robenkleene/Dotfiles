@@ -40,7 +40,7 @@
                   1))
       (if (file-exists-p file)
           (progn
-            (find-file file)
+            (find-file-other-window file)
             (goto-line line)
             (move-to-column (1- col))) ; columns in Emacs are 0-indexed, adjusting here
         (message "File does not exist: %s" file))
