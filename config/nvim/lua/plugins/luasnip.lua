@@ -42,7 +42,8 @@ return {
       return {
         word      = snippet.trigger,
         menu      = snippet.name,
-        info      = vim.trim(table.concat(vim.tbl_flatten({snippet.dscr or "", "", snippet:get_docstring()}), "\n")),
+        -- This preview gets stuck
+        -- info      = vim.trim(table.concat(vim.tbl_flatten({snippet.dscr or "", "", snippet:get_docstring()}), "\n")),
         dup       = true,
         user_data = "luasnip"
       }
