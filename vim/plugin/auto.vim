@@ -99,3 +99,9 @@ augroup z_add
   " Regular `cd` or `lcd`
   autocmd DirChanged * call system('zoxide add ' . expand('<amatch>'))
 augroup END
+
+" Automatically close the completion preview
+augroup z_add
+  autocmd!
+  autocmd CompleteDone * pclose
+augroup END
