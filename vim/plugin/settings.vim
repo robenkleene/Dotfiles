@@ -134,7 +134,8 @@ set wildmode=longest:full,full
 " Use a vertical wildmenu
 " set wildoptions=pum
 " Show column vertical line
-set colorcolumn=80
+" `+0` means match `colorcolumn` to `textwidth`
+set colorcolumn=+0
 " Line breaks only happen on words
 set linebreak
 " Launch without wrapped lines
