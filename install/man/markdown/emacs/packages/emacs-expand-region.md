@@ -1,2 +1,2 @@
-- Hit the `expand-region` (e.g., `M-'`) binding once, then after that hit (e.g., `'`) to continue expanding, or `-` to contract. To cancel out of this process, `C-g`.
-
+- Hit the `expand-region` binding once, then after that hit (e.g., `'`) to continue expanding, or `-` to contract (use `C-g` to cancel out of this process)
+- `C-- <expand-region-binding>` will also contract
