@@ -100,7 +100,7 @@ return {
         end
       },
       mapping = cmp.mapping.preset.insert {
-        ['<C-x><C-o>'] = cmp.mapping.complete(),
+        ['<C-x><C-u>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -108,7 +108,6 @@ return {
         -- Don't use `<tab>` to cycle complete menus, or `<return> to select, because those don't work in default completion menus (e.g., for `C-n` and `C-x C-f`)
       },
       sources = {
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
         -- Don't include text in buffers, this creates a lot of noise in
         -- Markdown buffers, and `<C-n>` completion can already be used for
