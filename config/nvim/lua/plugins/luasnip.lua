@@ -29,17 +29,16 @@ return {
     })
 
     -- Keymaps
-    vim.api.nvim_set_keymap(
-    'i', '<Tab>',
-    'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"',
-    { expr = true, silent = true }
-    )
+    vim.api.nvim_set_keymap('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { expr = true, silent = true })
     vim.keymap.set({'s'}, '<Tab>', function() ls.jump(1) end, { silent = true })
     vim.keymap.set({'i', 's'}, '<S-Tab>', function() ls.jump(-1) end, { silent = true })
+
+    -- File Types
     ls.filetype_extend("zsh", { "sh" })
     ls.filetype_extend("typescript", { "javascript" })
 
-    local function snippet2completion(snippet)
+    -- Define a `compfunc`
+    local function snippet_to_completion(snippet)
       return {
         word      = snippet.trigger,
         menu      = snippet.name,
@@ -48,14 +47,12 @@ return {
         user_data = "luasnip"
       }
     end
-
-    local function snippetfilter(line_to_cursor, base)
-      return function(s)
-        return not s.hidden and vim.startswith(s.trigger, base) and s.show_condition(line_to_cursor)
+    local function snippet_filter(line_to_cursor, base)
+      return function(snippet)
+        return not snippet.hidden and vim.startswith(snippet.trigger, base) and snippet.show_condition(line_to_cursor)
       end
     end
-
-    function luasnipcompletefunc(findstart, base)
+    function LuasnipCompleteFunc(findstart, base)
       local line, col = vim.api.nvim_get_current_line(), vim.api.nvim_win_get_cursor(0)[2]
       local line_to_cursor = line:sub(1, col)
 
@@ -64,12 +61,11 @@ return {
       end
 
       local snippets = vim.list_extend(vim.list_slice(ls.get_snippets("all")), ls.get_snippets(vim.bo.filetype))
-      snippets = vim.tbl_filter(snippetfilter(line_to_cursor, base), snippets)
-      snippets = vim.tbl_map(snippet2completion, snippets)
+      snippets = vim.tbl_filter(snippet_filter(line_to_cursor, base), snippets)
+      snippets = vim.tbl_map(snippet_to_completion, snippets)
       table.sort(snippets, function(s1, s2) return s1.word < s2.word end)
       return snippets
     end
-
-    vim.opt.completefunc = "v:lua.luasnipcompletefunc"
+    vim.opt.completefunc = "v:lua.LuasnipCompleteFunc"
   end
 }
