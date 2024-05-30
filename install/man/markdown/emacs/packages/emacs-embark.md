@@ -3,3 +3,7 @@
 # Files
 
 - `o`: Find file other window
+
+# Selection
+
+- Using `embark-act` often selections
