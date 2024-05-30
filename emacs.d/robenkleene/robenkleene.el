@@ -49,6 +49,7 @@
 (require 'robenkleene-diminish)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-eglot)
+(require 'robenkleene-expand-region)
 (require 'robenkleene-magit)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-smartparens)
