@@ -98,6 +98,8 @@
               ;; Set backtick as a string delimiter, this makes the `sexp'
               ;; commands (like `mark-sexp') work with backticks
               (modify-syntax-entry ?` "\"")
+              ;; Set `"' as a string delimiter
+              (modify-syntax-entry ?\" "\"")
               ;; (modify-syntax-entry ?_ "w")
               ;; (modify-syntax-entry ?- "w")
               ;; Automatically auto-save markdown files
