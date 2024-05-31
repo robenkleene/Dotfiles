@@ -36,9 +36,7 @@ augroup reload_buffers
   " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
   " <file>` while just `checktime` does. (`silent! checktime` when editing the
   " same file in another `vim` instance though.)
-  " autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if expand('%') !=# '[Command Line]' | checktime | endif
-  " autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * if !bufexists("[Command Line]") | checktime | endif
-  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' | checktime | endif
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
 augroup END
 
 " Do not extend comments automatically, e.g., with `O`
