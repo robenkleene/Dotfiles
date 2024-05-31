@@ -2,5 +2,8 @@
     "security.workspace.trust.enabled": false,
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "always",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "workbench.colorTheme": "Tokyo Night"
 }
