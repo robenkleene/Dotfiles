@@ -85,7 +85,7 @@ function! commands#Sh(bang, cmd) abort
     catch
     endtry
   endfor
-  execute '0r !'.l:cmd
+  execute 'silent 0r !'.l:cmd
   norm Gddgg
   let &l:undolevels=l:oldundolevels
   filetype detect
