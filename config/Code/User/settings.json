@@ -3,7 +3,7 @@
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "always",
     "extensions.ignoreRecommendations": true,
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
-    "workbench.colorTheme": "Tokyo Night"
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace"
 }
