@@ -13,5 +13,10 @@
     "key": "alt+d",
     "command": "deleteWordRight",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+space",
+    "when": "!editorTextFocus",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]
