@@ -29,6 +29,14 @@
 - `C-x SPC`: Enter rectangular selection (block editing) mode
 - `C-x r t` / `string-rectangle`: Prepend each line in select (use `C-M-%` / `query-replace-regexp` to append each line)
 
+### Examples
+
+#### Prefix Each Line
+
+1. Go to the first character of the first line and set the mark (`⌃␣`)
+2. Go to the first character of last line and toggle rectangular selection (`C-x r t`)
+3. At the `String rectangle:` prompt, enter the prefix
+
 # Movement
 
 - `M-m`: Move to first character on line (skip white space)
