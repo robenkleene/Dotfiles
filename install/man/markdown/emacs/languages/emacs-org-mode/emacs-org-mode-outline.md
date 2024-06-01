@@ -1,3 +1,5 @@
+- `⇧⇥`: Cycling visibility for the whole document
+
 # New Sibling
 
 The new sibling keys will create a list item when in used in the context of a list, and a headline in the context of a headline. If a blank line exists above the current item, then a blank line is inserted before the new sibling (this behavior can be changed by setting `org-blank-before-new-entry`, but usually this can be mediated just by not including a blank line between the document title and the first header).
