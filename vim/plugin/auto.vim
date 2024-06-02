@@ -71,11 +71,13 @@ if !has('!nvim')
     " pasting in Emacs, because the Emacs paste will use `safepaste` which will
     " prioritize the system keyboard, the paste from Vim to Emacs will only work
     " if we copy to the system clipbaord
-    if has('clipboard')
-      autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-    else
-      autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-    endif
+    "if has('clipboard')
+    "  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+    "else
+    "  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+    "endif
+    autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+    autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
   augroup END
 endif
 
