@@ -6,6 +6,5 @@
     "editor.fontSize": 13,
     "workbench.colorTheme": "Tokyo Night",
     "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
-    "terminal.integrated.macOptionIsMeta": true,
-    "editor.renderWhitespace": "boundary"
+    "terminal.integrated.macOptionIsMeta": true
 }
