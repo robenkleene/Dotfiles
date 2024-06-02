@@ -59,7 +59,8 @@ function operators#YankGrep(context = {}, type = '') abort
         let l:idx += 1
       endfor
     else
-      let l:result .= l:file_path.':'.l:idx."\n"
+      let l:result .= l:file_path.':'.l:idx
+      echom l:result
     endif
 
     " Use termporary buffer to force `YankTextPost` to trigger
