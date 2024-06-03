@@ -11,14 +11,25 @@
     )
   )
 
+(defun yank-line-grep ()
+  "grep for current line."
+  (interactive)
+  (kill-new (get-line-grep)))
+
 (defun get-line-grep ()
   "grep for current line."
   (interactive)
   (if buffer-file-name
       (let* (
              (path buffer-file-name)
+             (home-path
+              (replace-regexp-in-string
+               (concat "^" (regexp-quote (expand-file-name "~")))
+               "~"
+               path)
+              )
              (line-number (number-to-string (line-number-at-pos)))
-             (command (concat path ":" line-number))
+             (command (concat home-path ":" line-number))
              )
         (message "%s" command)
         command
