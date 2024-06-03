@@ -1,5 +1,11 @@
 nnoremap Y y$
 
+" Add `zv` to quickfix bindings to show the cursor line, because these
+" bindings don't respect the `foldopen` option
+" (This solution is from `unimpaired`)
+nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":prev<CR>" : ":bprev<CR>"
+nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
+
 " nvim already has custom clipboard support
 if !has('clipboard') && !has('!nvim')
   nnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
@@ -37,6 +43,7 @@ vnoremap <silent> # :call setreg("/",
     \ '\\_s\\+', 'g')
     \ )<Bar>let v:searchforward = 0<Cr>n
 
+" Readline
 cnoremap <M-left> <S-left>
 inoremap <M-left> <S-left>
 cnoremap <M-right> <S-right>
