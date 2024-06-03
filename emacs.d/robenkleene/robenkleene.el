@@ -75,7 +75,6 @@
 (require 'robenkleene-rust)
 (require 'robenkleene-swift)
 (require 'robenkleene-text)
-(require 'robenkleene-treesit-auto)
 (require 'robenkleene-typescript)
 (require 'robenkleene-yaml)
 
