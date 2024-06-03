@@ -56,7 +56,7 @@ set list
 " visual selection doesn't lose the system clipboard, which it does with the
 " `safecopy` based system
 " Actually setting clipboard this way doesn't use number registers either
-set clipboard^=unnamed,unnamedplus
+" set clipboard^=unnamed,unnamedplus
 " Autocomplete max height
 " Setting this two high is annoying with autocomplete
 set pumheight=10

@@ -58,28 +58,27 @@ augroup nofilename_nofile
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
 
-" Don't depend on this because the `*` and `+` registers aren't even defined
-" in terminal vim on Linux
-" nvim already has custom clipboard support
-if !has('!nvim')
-  augroup safecopy
-    autocmd!
-    " Don't exclude the system keyboard in order to match how copying to the
-    " tmux pasteboard typically works (which usually also pastes to the system
-    " keyboard)
-    " In specific, this helps when cutting in Vim to the `t` register and then
-    " pasting in Emacs, because the Emacs paste will use `safepaste` which will
-    " prioritize the system keyboard, the paste from Vim to Emacs will only work
-    " if we copy to the system clipbaord
-    "if has('clipboard')
-    "  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-    "else
-    "  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-    "endif
+augroup safecopy
+  autocmd!
+  " Don't exclude the system keyboard in order to match how copying to the
+  " tmux pasteboard typically works (which usually also pastes to the system
+  " keyboard)
+  " In specific, this helps when cutting in Vim to the `t` register and then
+  " pasting in Emacs, because the Emacs paste will use `safepaste` which will
+  " prioritize the system keyboard, the paste from Vim to Emacs will only work
+  " if we copy to the system clipbaord
+  "if has('clipboard')
+  "  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+  "else
+  "  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+  "endif
+  if !has('!nvim')
+    " nvim has builtin support for a custom clipboard command
     autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-    autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
-  augroup END
-endif
+  endif
+  " Use this to always sync the vim yank with the system clipboard, this approach has less side effects than `set clipboard`
+  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+augroup END
 
 augroup quickfix_height
   autocmd!
