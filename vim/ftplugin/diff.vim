@@ -13,6 +13,20 @@ setlocal readonly nomodifiable
 
 nnoremap <silent> <buffer> gd :OpenDiff<CR>
 nnoremap <silent> <buffer> <C-w>d :OpenDiffNew<CR>
+nnoremap <silent> <buffer> gyd :YankDiff<CR>
+
+command! YankDiff :call <SID>YankDiff()
+function! s:YankDiff() abort
+  let l:grep = system('~/.bin/f_fr_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2 | perl -p -e "chomp if eof"', join(getline(1,'$'), "\n"))
+  let l:register=v:register
+  " Use termporary buffer to force `YankTextPost` to trigger
+  echom l:grep
+  let @@ = l:grep
+  new
+  setlocal buftype=nofile bufhidden=hide noswapfile
+  exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
+  bd!
+endfunction
 
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
