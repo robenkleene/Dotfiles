@@ -3,13 +3,10 @@
 set -euo pipefail
 
 filename="false"
-while getopts ":t:f:h" option; do
+while getopts ":t:h" option; do
   case "$option" in
     t)
       title="$OPTARG"
-      ;;
-    f)
-      file_path="$OPTARG"
       ;;
     h)
       echo "Usage: command [-h] [-t <title>] [-f <file-path>]"
@@ -43,17 +40,11 @@ if [[ -z "$title" ]]; then
 fi
 
 make_file() {
-  local name=$1
-  local dir=$2
+  local destination_path=$1
   local contents=$3
-  if [[ ! -d "$dir" ]]; then
-    echo "Error: $dir is not a directory" >&2
-    exit 1
-  fi
   local temp_path
-  temp_path=$(mktemp "$dir/$name-XXXX")
+  temp_path=$(mktemp "$name-XXXX")
   echo "$contents" >"$temp_path"
-  local destination_path="$dir/$name"
   mv -n "$temp_path" "$destination_path"
   if [[ -f "$temp_path" ]]; then
     echo -n "$temp_path"
@@ -63,5 +54,6 @@ make_file() {
 }
 
 contents="# $title"
-
 slug=$(echo "$title" | ~/.bin/f_slug)
+result=$(make_file "$slug" "$dir" "$contents")
+echo -n "[$title]($result)"
