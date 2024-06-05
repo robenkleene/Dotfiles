@@ -39,20 +39,20 @@ if [[ -z "$title" ]]; then
 fi
 
 make_file() {
-  local destination_path=$1
+  local filename=$1
   local contents=$2
   local temp_path
-  temp_path=$(mktemp "$name-XXXX")
+  temp_path=$(mktemp "$filename-XXXX")
   echo "$contents" >"$temp_path"
-  mv -n "$temp_path" "$destination_path"
+  mv -n "$temp_path" "$filename"
   if [[ -f "$temp_path" ]]; then
     echo -n "$temp_path"
   else
-    echo -n "$destination_path"
+    echo -n "$filename"
   fi
 }
 
 contents="# $title"
 slug=$(echo "$title" | ~/.bin/f_slug)
-result=$(make_file "$slug" "$contents")
+result=$(make_file "$slug.md" "$contents")
 echo -n "[$title]($result)"
