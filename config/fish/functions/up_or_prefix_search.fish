@@ -20,7 +20,8 @@ function up_or_prefix_search --description 'Search back or move cursor up 1 line
         case 1
             # Run this twice to simulate the default `up-or-search` skipping
             # the current completion match
-            commandline -f history-prefix-search-backward
+            # This doesn't seem to work
+            # commandline -f history-prefix-search-backward
             commandline -f history-prefix-search-backward
 
         case '*'
