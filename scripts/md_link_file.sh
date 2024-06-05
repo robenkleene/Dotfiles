@@ -2,14 +2,13 @@
 
 set -euo pipefail
 
-filename="false"
 while getopts ":t:h" option; do
   case "$option" in
     t)
       title="$OPTARG"
       ;;
     h)
-      echo "Usage: command [-h] [-t <title>] [-f <file-path>]"
+      echo "Usage: command [-h] [-t <title>]"
       exit 0
       ;;
     :)
@@ -41,7 +40,7 @@ fi
 
 make_file() {
   local destination_path=$1
-  local contents=$3
+  local contents=$2
   local temp_path
   temp_path=$(mktemp "$name-XXXX")
   echo "$contents" >"$temp_path"
@@ -55,5 +54,5 @@ make_file() {
 
 contents="# $title"
 slug=$(echo "$title" | ~/.bin/f_slug)
-result=$(make_file "$slug" "$dir" "$contents")
+result=$(make_file "$slug" "$contents")
 echo -n "[$title]($result)"
