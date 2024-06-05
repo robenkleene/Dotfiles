@@ -10,4 +10,4 @@ set -e
 
 tr -dc '[:alnum:]\r\n.\-/ ' |
   tr -s ' ' | tr '[:upper:]' '[:lower:]' | awk '{$1=$1;print}' |
-  tr ' ' '-' | tr '.' '-' | tr '/' '-'
+  tr ' ' '-' | tr '.' '-' | tr '/' '-' | sed 's/^\-*//'
