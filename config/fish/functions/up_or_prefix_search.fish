@@ -18,11 +18,10 @@ function up_or_prefix_search --description 'Search back or move cursor up 1 line
 
     switch $lineno
         case 1
+            # commandline -f history-prefix-search-backward
             # Run this twice to simulate the default `up-or-search` skipping
             # the current completion match
-            # This doesn't seem to work
-            # commandline -f history-prefix-search-backward
-            commandline -f history-prefix-search-backward
+            commandline -f history-prefix-search-backward history-prefix-search-backward
 
         case '*'
             commandline -f up-line
