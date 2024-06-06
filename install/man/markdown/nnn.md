@@ -4,6 +4,7 @@
 - `nnn <file-path>`: Open `nnn` with file highlighted
 - `^L`: Redraw (force a refresh)
 - `F`: Show details (like file modification time) about the current file
+- `D`: Toggle details mode
 
 # Selection
 
