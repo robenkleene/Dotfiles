@@ -10,7 +10,7 @@ bind \cx copy_command_line
 # Custom function that does prefix search, the original search is still
 # available with `<C-p>`
 # Problem with these is that the first result is the same as autocomplete
-bind _k up up_or_prefix_search
+bind -k up up_or_prefix_search
 bind \e\[A up_or_prefix_search
-bind _k down down_or_prefix_search
+bind -k down down_or_prefix_search
 bind \e\[B down_or_prefix_search
