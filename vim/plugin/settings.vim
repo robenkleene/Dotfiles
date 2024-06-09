@@ -132,7 +132,11 @@ set wildmode=longest:full,full
 " This is causing an issue where the text to complete gets deleted
 " It also sometimes just looks ugly like the text for the full match shows for
 " an instant and then gets deleted
-" set completeopt+=longest
+" Turn this on, it makes exploring an API with completion a lot easier,
+" without it trigger completion will select an item and enter it in the
+" buffer, so the completion options can't be narrowed again after starting a
+" completion
+ set completeopt+=longest
 " Use a vertical wildmenu
 " set wildoptions=pum
 " Show column vertical line
