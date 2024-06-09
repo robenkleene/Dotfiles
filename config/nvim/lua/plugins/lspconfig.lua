@@ -36,14 +36,22 @@ return {
         vim.keymap.set('n', 'yoph', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })) end, opts)
 
         -- Highlight current cursor symbol
-        vim.cmd([[
-          augroup lsp_document_highlight
-            autocmd! * <buffer>
-            autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-            autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-            autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-          augroup END
-        ]])
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client then
+          local cap = client.server_capabilities
+          if cap then
+            if cap.documentHighlightProvider then
+              vim.cmd([[
+                augroup lsp_document_highlight
+                  autocmd! * <buffer>
+                  autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+                  autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+                  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+                augroup END
+              ]])
+            end
+          end
+        end
       end,
     })
 
