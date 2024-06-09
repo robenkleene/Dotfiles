@@ -1,7 +1,6 @@
 return {
   { 'tpope/vim-unimpaired', },
   { 'tpope/vim-vinegar' },
-  { 'tpope/vim-rsi' },
   -- This doesn't handle visual blocks correctly
   -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
