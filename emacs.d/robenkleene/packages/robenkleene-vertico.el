@@ -12,6 +12,7 @@
         ;; allows using `<tab>' to complete the longest common string (`M-<tab>'
         ;; then completes the full selected item without exiting)
         ("<tab>" . 'minibuffer-complete)
+        ;; Insert the current completion entry
         ("M-<tab>" . 'vertico-insert)
         ("TAB" . 'minibuffer-complete)
         ("M-TAB" . 'vertico-insert)
