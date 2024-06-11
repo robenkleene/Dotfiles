@@ -22,6 +22,10 @@
           ;; Make the fringe transparent, this makes windows without line
           ;; numbers look more minimal
           (fringe unspecified)
+          ;; Remove the line number background, which looks better without the
+          ;; fringe
+          (bg-line-number-inactive unspecified)
+          (bg-line-number-active unspecified)
           ))
   (load-theme 'modus-vivendi-tinted)
   ;; (load-theme 'modus-vivendi)
