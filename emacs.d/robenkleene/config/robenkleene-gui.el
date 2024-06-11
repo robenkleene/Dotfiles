@@ -55,7 +55,7 @@
 (setq desktop-dirname user-emacs-directory)
 (setq desktop-save t)
 ;; Toggle save
-;; (desktop-save-mode 1)
+(desktop-save-mode 1)
 
 ;; Set default window size
 (setq-default initial-frame-alist
