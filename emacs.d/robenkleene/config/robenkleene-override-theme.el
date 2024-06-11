@@ -196,7 +196,7 @@
     (set-face-attribute 'markdown-gfm-checkbox-face nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'markdown-list-face nil :inherit 'rk-comment :foreground 'unspecified)
     (set-face-attribute 'markdown-footnote-marker-face nil :inherit 'rk-nontext :slant 'normal :foreground 'unspecified)
-    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified)
+    (set-face-attribute 'markdown-italic-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified :slant 'italic)
     (set-face-attribute 'markdown-bold-face nil :inherit 'rk-text :foreground 'unspecified :background 'unspecified :bold t)
     )
 
