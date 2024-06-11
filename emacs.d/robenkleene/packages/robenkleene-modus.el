@@ -19,6 +19,9 @@
           (border-mode-line-inactive unspecified)
           ;; Reduce the intensity a bit
           (modus-themes-preset-overrides-faint)
+          ;; Make the fringe transparent, this makes windows without line
+          ;; numbers look more minimal
+          (fringe unspecified)
           ))
   (load-theme 'modus-vivendi-tinted)
   ;; (load-theme 'modus-vivendi)
