@@ -31,10 +31,10 @@
   ;; `profile-report'. It seems to only appear when editing heirarchical lists
   ;; Re-enabling this, just start breaking down huge markdown lists, because
   ;; they make Emacs slow no matter what
-  (defconst markdown-regex-italic
-    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
-  (defconst markdown-regex-gfm-italic
-    "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
+  ;; (defconst markdown-regex-italic
+  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
+  ;; (defconst markdown-regex-gfm-italic
+  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
 
   ;; It might be possible to use this to change the default indent behavior when
   ;; making nested lists, but it doesn't appear to be easy without also removing
