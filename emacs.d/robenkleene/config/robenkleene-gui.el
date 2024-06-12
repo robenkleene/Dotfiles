@@ -53,7 +53,7 @@
 ;; makes Emacs often try to compile your entire hard drive.
 (setq desktop-path `(,user-emacs-directory))
 (setq desktop-dirname user-emacs-directory)
-(setq desktop-save t)
+;; (setq desktop-save t)
 ;; Toggle save
 (desktop-save-mode 1)
 
