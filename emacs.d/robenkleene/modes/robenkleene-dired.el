@@ -56,6 +56,9 @@
 
 (add-hook 'dired-mode-hook
           (lambda ()
+            ;; Wrap lines in dired buffers, this makes it easier to read the full
+            ;; path
+            (setq-local truncate-lines nil)
             ;; Don't use `ffap-bindings' in `dired-mode' (use the default
             ;; `find-file') because make it easy to create a new file. These
             ;; don't work because `ffap-bindings' redirect `find-file` to the
