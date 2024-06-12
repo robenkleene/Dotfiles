@@ -26,6 +26,8 @@
           ;; fringe
           (bg-line-number-inactive unspecified)
           (bg-line-number-active unspecified)
+          ;; Make the tab bar same color as background
+          (bg-tab-bar bg-main)
           ))
   (setq modus-vivendi-tinted-palette-overrides
         '(
