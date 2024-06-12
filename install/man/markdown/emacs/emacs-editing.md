@@ -33,9 +33,11 @@
 
 #### Prefix Each Line
 
+This can be used to edit anywhere in a line, not just the beginning.
+
 1. Go to the first character of the first line and set the mark (`⌃␣`)
 2. Go to the first character of last line and toggle rectangular selection (`C-x r t`)
-3. At the `String rectangle:` prompt, enter the prefix
+3. At the `String rectangle:` prompt, enter the prefix and hit `↩`
 
 # Movement
 
