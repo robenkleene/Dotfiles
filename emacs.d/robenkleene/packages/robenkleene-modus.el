@@ -27,6 +27,12 @@
           (bg-line-number-inactive unspecified)
           (bg-line-number-active unspecified)
           ))
+  (setq modus-vivendi-tinted-palette-overrides
+        '(
+          (bg-main "#211930")
+          ;; (bg-main "#1A1B25")
+          ))
+
   (load-theme 'modus-vivendi-tinted)
   ;; (load-theme 'modus-vivendi)
   )
