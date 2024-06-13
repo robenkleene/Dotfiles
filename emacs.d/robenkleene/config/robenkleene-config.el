@@ -277,7 +277,9 @@
 
 ;; This fixes an issue where using `M-!' (`M-x shell-command') printed an error
 ;; when using Terminal Emacs through `emacsclient'
-(setq enable-recursive-minibuffers t)
+;; This breaks using `M-n' after `M-!' to run a shell command on the current
+;; buffer
+;; (setq enable-recursive-minibuffers t)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
