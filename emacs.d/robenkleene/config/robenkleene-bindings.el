@@ -20,6 +20,10 @@
 ;; starting the `isearch' moves the point
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+;; The default `completion-at-point' key, `C-M-i', doesn't work in terminal
+;; emacs, but it resolves to `M-<tab>', which is unbound. Bind `M-<tab>' to
+;; `completion-at-point' so that same binding works in terminal emacs
+(global-set-key (kbd "M-<tab>") 'completion-at-point)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
 ;; Swap query replace
