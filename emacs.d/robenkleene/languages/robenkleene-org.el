@@ -141,6 +141,13 @@
               )
             )
 
+  (add-hook 'org-agenda-mode-hook
+            (lambda ()
+              ;; Wrap lines
+              (setq-local truncate-lines nil)
+              )
+            )
+
   ;; Use line numbers when creating links for some modes
   (add-hook 'org-create-file-search-functions
             #'(lambda ()
