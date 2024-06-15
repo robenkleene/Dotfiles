@@ -4,8 +4,8 @@
     "body": "#!/usr/bin/env python3\n\n$0",
     "description": "Template"
   },
-  "template_blender": {
-    "prefix": "template_blender",
+  "blender_template": {
+    "prefix": "blender_template",
     "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
     "description": "Blender Template"
   },
