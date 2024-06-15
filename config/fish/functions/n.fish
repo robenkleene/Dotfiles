@@ -38,7 +38,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
         # -A: Don't auto-enter directories
         set -lx LESS ""
         set -lx NNN_PLUG "z:z;p:preview"
-        command nnn -eAQ $argv
+        command nnn -AQ $argv
     end
 
     if test -e $NNN_TMPFILE
