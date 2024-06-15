@@ -1,6 +1,6 @@
 {
-  "xcode-template": {
-    "prefix": "xcode-template",
+  "xcode_template": {
+    "prefix": "xcode_template",
     "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n$0",
     "description": "Xcode template"
   },
