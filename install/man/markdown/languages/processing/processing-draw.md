@@ -1,3 +1,4 @@
 - `setup()` is called once, `draw()` is called once per frame
+- If `setup()` and `draw()` are omitted the code executes once, even without including `noLoop()` (this is probably a bad practice though, because creating functions will then create a syntax error)
 - `noLoop()` in `setup()` makes `draw()` called only once (e.g., for exporting images), in this case `noLoop()` should be the last line of `setup()`
 - `setup()` and `draw()` reset the coordinate system, (so `transform()` calls will be reset after `setup()` finishes and need to be re-applied in `draw()`
