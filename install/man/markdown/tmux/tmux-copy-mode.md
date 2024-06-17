@@ -3,6 +3,7 @@
 - `Y`: Paste selection
 - `M-y`: Paste selection, also copying to clipboard
 - `v`: Toggle rectangle mode (so typically hit `Space` to start a selection then `v` to toggle rectangle mode)
+- Note that the default search is not incremental but uses regular expressions, and the incremental search does not use regular expressions
 
 # Commands
 
