@@ -11,7 +11,9 @@
   :bind
   (([remap markdown-enter-key] . rk/markdown-enter-key))
   :init
-  (setq markdown-enable-wiki-links t)
+  ;; (setq markdown-enable-wiki-links t)
+  ;; Enable Latex math surrounded by `$' in Markdown
+  (setq markdown-enable-math t)
   ;; Show a flat list of headers in `imenu', instead of a nested list
   ;; (The nested list means you have to choose the top heading, then a more
   ;; specific heading)
