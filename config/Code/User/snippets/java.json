@@ -7,11 +7,11 @@
   "processing_print_var": {
     "prefix": "processing_print_var",
     "body": "println(\"$1 = \", ${1:result});",
-    "description": "Processing 3D template"
+    "description": "Processing print variable"
   },
   "processing_print_arr": {
     "prefix": "processing_print_arr",
     "body": "println(\"$1\");\nprintArray(${1:result});\nprint(\"\\n\");",
-    "description": "Processing 3D template"
+    "description": "Processing print array"
   }
 }
