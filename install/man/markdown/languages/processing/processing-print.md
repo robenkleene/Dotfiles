@@ -13,7 +13,7 @@ print("value = ", value, "\n");
 `printArray` is used to print arrays:
 
 ``` java
-print("arr = ");
+println("arr");
 printArray(arr);
 print("\n");
 ```
