@@ -1,3 +1,19 @@
+`println` prints with a new line at the end:
+
 ``` java
-print("variable = ", variable, "\n");
+println("value = ", value);
+```
+
+`print` does not print a new line:
+
+``` java
+print("value = ", value, "\n");
+```
+
+`printArray` is used to print arrays:
+
+``` java
+print("arr = ");
+printArray(arr);
+print("\n");
 ```
