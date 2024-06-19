@@ -6,7 +6,12 @@
   },
   "processing_print_var": {
     "prefix": "processing_print_var",
-    "body": "print(\"$1 = \", ${1:result}, \"\\n\");",
+    "body": "println(\"$1 = \", ${1:result});",
+    "description": "Processing 3D template"
+  },
+  "processing_print_arr": {
+    "prefix": "processing_print_arr",
+    "body": "println(\"$1\");\nprintArray(${1:result});\nprint(\"\\n\");",
     "description": "Processing 3D template"
   }
 }
