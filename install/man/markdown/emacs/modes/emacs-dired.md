@@ -11,6 +11,7 @@
 - `0 w` / `dired-copy-filename-as-kill`: Kill path to file
 - `C-x C-h`: Cycle through human readable file sizes
 - `v`: View (preview) file (then `q` to quit the view)
+- `o` / `dired-find-file-other-window`: Open file in other window
 
 ## Hidden
 
