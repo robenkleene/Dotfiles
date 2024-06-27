@@ -14,7 +14,7 @@
 
 ## Hidden
 
-- `C-x M-o` / `dired-omit-mode`: Show hidden files
+- `C-x M-o` / `dired-omit-mode` (requires `dired-x`): Show hidden files (this includes Emacs recovery files)
 
 ## Mark
 
