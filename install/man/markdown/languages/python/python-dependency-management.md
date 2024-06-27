@@ -1,2 +1,2 @@
 - `pyenv` only manages Python executable versions, not dependencies (unlike similar programs like `ruby-version` and `nvm`). So since we're only using one Python version this provides no benefit, so Python is installed via Homebrew.
-- Python global dependencies should be installed with `pip install --usr`.
+- Python global dependencies should be installed with `pip install --user`.
