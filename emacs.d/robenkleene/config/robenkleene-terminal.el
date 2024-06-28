@@ -2,32 +2,34 @@
 ;;; Commentary:
 ;;; Code:
 
-;; This adds a lot of latency, can I get away without it?
-;; Only enable if macOS clipboard commands or `tmux' pasteboard are available
-(progn
-  ;; Need to store the last paste because the function should only return a value
-  ;; if it's different than the last paste
-  (setq rk/last-paste nil)
-  (defun rk/safecopy (text &optional push)
-    (setenv "INSIDE_EMACS" "1")
-    (let (
-          (process-connection-type nil)
-          )
-      (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
-        (unless (string))
-        (process-send-string proc text)
-        (process-send-eof proc)))
-    (setq rk/last-paste text)
+;; Need to store the last paste because the function should only return a value
+;; if it's different than the last paste
+(setq rk/last-copy nil)
+(defun rk/safecopy (text &optional push)
+  ;; Do nothing if the region isn't active so that other commands like
+  ;; `kill-line', don't affect the system clipboard
+  (if (region-active-p)
+      (progn
+        (setenv "INSIDE_EMACS" "1")
+        (let (
+              (process-connection-type nil)
+              )
+          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
+            (unless (string))
+            (process-send-string proc text)
+            (process-send-eof proc)))
+        (setq rk/last-copy text)
+        )
     )
-
-  (defun rk/safepaste ()
-    (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
-      (unless (string= result rk/last-paste)
-        result)))
-
-  (setq interprogram-cut-function 'rk/safecopy)
-  (setq interprogram-paste-function 'rk/safepaste)
   )
+
+(defun rk/safepaste ()
+  (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
+    (unless (string= result rk/last-copy)
+      result)))
+
+(setq interprogram-cut-function 'rk/safecopy)
+(setq interprogram-paste-function 'rk/safepaste)
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
