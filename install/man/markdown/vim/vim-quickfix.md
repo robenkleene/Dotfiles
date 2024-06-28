@@ -1,5 +1,3 @@
-# Navigating
-
 - `:cnext` / `:cprev`: Next / previous `quickfix` error
 - `:[cw]indow [height]`: Open `quickfix` window if there are errors, close it if there are not errors, optionally with a `[height]` (note that this cannot change the height if the `quickfix` list is already visible)
 - `:cope[n] [height]`: Show `quickfix` window, optionally with a `[height]` (this works if the `quickfix` list is already visible)
@@ -11,16 +9,16 @@
 - `cexpr []`: Clear the `quickfix` list
 - The "c" in these commands probably stands for "compile"
 
-## Search
+# Search
 
 - `:vim[grep]` then `C-r C-w` then `%` to make `:vimgrep <current-word> %` is a nice way to transfer the current search term to the `quickfix` list (`C-r C-w` inserts the word at the cursor)
 
-## Mass Edits
+# Mass Edits
 
 - `:cdo`: Do command to each entry in the `quickfix` list, e.g., `:cdo s/this/that/g`
 - `:cfdo`: Do command to each file in the `quickfix` list, e.g., `:cfdo %s/this/that/g`
 
-### More Mass Edit Examples
+## More Mass Edit Examples
 
 On each entry in the `quickfix` list:
 
