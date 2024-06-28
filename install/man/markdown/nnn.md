@@ -14,7 +14,7 @@
 
 # Navigation
 
-- `C-u` / `C-d`: Page up / down
+- `C-u` / `C-d`, `PgUp`, `PgDn`: Page up / down
 
 # Filter
 
