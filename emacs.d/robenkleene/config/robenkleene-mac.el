@@ -14,6 +14,12 @@
 
 (defvar rk/mac-bindings-minor-mode-map (make-keymap))
 
+(global-set-key (kbd "s-v")
+                (lambda ()
+                  (interactive)
+                  (insert (shell-command-to-string "~/.bin/safepaste")))
+                )
+
 (global-unset-key (kbd "s-q"))
 (define-key rk/mac-bindings-minor-mode-map
 	    (kbd "s-q")
