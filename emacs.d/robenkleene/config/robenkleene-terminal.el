@@ -8,7 +8,7 @@
   ;; Need to store the last paste because the function should only return a value
   ;; if it's different than the last paste
   (setq rk/last-paste nil)
-  (defun rk/safepaste (text &optional push)
+  (defun rk/safecopy (text &optional push)
     (setenv "INSIDE_EMACS" "1")
     (let (
           (process-connection-type nil)
@@ -20,13 +20,13 @@
     (setq rk/last-paste text)
     )
 
-  (defun rk/safecopy ()
-    (let ((copied-text (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
-      (unless (string= copied-text rk/last-paste)
-        copied-text)))
+  (defun rk/safepaste ()
+    (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
+      (unless (string= result rk/last-paste)
+        result)))
 
-  (setq interprogram-cut-function 'rk/safepaste)
-  (setq interprogram-paste-function 'rk/safecopy)
+  (setq interprogram-cut-function 'rk/safecopy)
+  (setq interprogram-paste-function 'rk/safepaste)
   )
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
