@@ -1,8 +1,9 @@
 - `grn`, `vim.lsp.buf.rename()`
 - `gra`, `vim.lsp.buf.code_action()`
 - `grr`, `vim.lsp.buf.references()`
-- `⌃S`, `vim.lsp.buf.signature_help()`
+- `<c-s>`, `vim.lsp.buf.signature_help()`
 - `K`, `vim.lsp.buf.hover()`
+- `<c-w>d`, `vim.diagnostic.open_float()`
 
 # Functions
 
