@@ -9,7 +9,7 @@
 (defun rk/safecopy (text &optional push)
   ;; Do nothing if the region isn't active so that other commands like
   ;; `kill-line', don't affect the system clipboard
-  (if (use-region-p)
+  (if (or (use-region-p) (and (fboundp 'evil-mode) (eq evil-state 'normal)))
       (progn
         (setenv "INSIDE_EMACS" "1")
         (let (
