@@ -4,6 +4,7 @@
 - `<c-s>`, `vim.lsp.buf.signature_help()`
 - `K`, `vim.lsp.buf.hover()`
 - `<c-w>d`, `vim.diagnostic.open_float()`
+- `gq`: Operator to format document
 
 # Functions
 
