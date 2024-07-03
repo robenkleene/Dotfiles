@@ -28,14 +28,25 @@ require("lazy").setup("plugins", {
 })
 
 vim.g.clipboard = {
-   name = 'myClipboard',
+   name = 'safeclipboard',
    copy = {
-       ["+"] = {'~/.bin/safecopy'},
-       ["*"] = {'~/.bin/safecopy'},
+       -- These started failing for some reason
+       -- ["+"] = {"~/.bin/safecopy"},
+       -- ["*"] = {"~/.bin/safecopy"},
+       ["+"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
+       ["*"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
+       -- This also works, but is a bit less safe
+       -- ["+"] = {'safecopy'},
+       -- ["*"] = {'safecopy'},
    },
    paste = {
-       ["+"] = {'~/.bin/safepaste'},
-       ["*"] = {'~/.bin/safepaste'},
+       -- These started failing for some reason
+       -- ["+"] = {"~/.bin/safepaste"},
+       -- ["*"] = {"~/.bin/safepaste"},
+       ["+"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
+       ["*"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
+       -- ["+"] = {'safepaste'},
+       -- ["*"] = {'safepaste'},
    },
    cache_enabled = true,
 }
