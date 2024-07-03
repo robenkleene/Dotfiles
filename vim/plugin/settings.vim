@@ -137,6 +137,9 @@ set wildmode=longest:full,full
 " buffer, so the completion options can't be narrowed again after starting a
 " completion
  set completeopt+=longest
+ " This shows a popup split which has somewhat useful information but is very
+ " disconcerting because it moves the text of the current split as well
+ set completeopt-=preview
 " Use a vertical wildmenu
 " set wildoptions=pum
 " Show column vertical line
