@@ -7,7 +7,10 @@ nnoremap Y y$
 "nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
 
 " nvim already has custom clipboard support
-if !has('clipboard') && !has('!nvim')
+" For some reason the `!has('nvim')` check has to be before the
+" `!has('clipboard')` check otherwise this breaks clipboard integration in
+" Neovim (yes that makes no sense)
+if !has('nvim') && !has('clipboard')
   nnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
   vnoremap <silent> "*p "=system('~/.bin/safepaste')<CR>p
   nnoremap <silent> "+p "=system('~/.bin/safepaste')<CR>p
