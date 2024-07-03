@@ -78,17 +78,17 @@ augroup safecopy
         \|| v:event["regname"] ==# '+' 
         \| call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
         \| end
-  " Use this to always sync the vim yank with the system clipboard, this approach has less side effects than `set clipboard`
-  " Only copy to system clipboard on yank events (`v:event["operator"] ==#
-  " 'y') because otherwise, since `"*p` with a visual selection first yanks
-  " and then pastes, it will cause pasting over a visual selection to be a
-  " no-op
-  autocmd TextYankPost * silent!
-        \if v:event["operator"] ==# 'y'
-        \&& v:event["regname"] ==# ''
-        \|| v:event["regname"] ==# '"'
-        \| call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
-        \| end
+  " Use this to always sync the vim yank with the system clipboard, this
+  " approach has less side effects than `set clipboard` Only copy to system
+  " clipboard on yank events (`v:event["operator"] ==# 'y') because otherwise,
+  " since `"*p` with a visual selection first yanks and then pastes, it will
+  " cause pasting over a visual selection to be a no-op
+  "autocmd TextYankPost * silent!
+  "      \if v:event["operator"] ==# 'y'
+  "      \&& v:event["regname"] ==# ''
+  "      \|| v:event["regname"] ==# '"'
+  "      \| call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
+  "      \| end
 augroup END
 
 augroup quickfix_height
