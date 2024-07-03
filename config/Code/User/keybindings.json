@@ -1,22 +1,32 @@
 [
-  {
-    "key": "alt+b",
-    "command": "cursorWordStartLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+f",
-    "command": "cursorWordEndRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+d",
-    "command": "deleteWordRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+space",
-    "when": "!editorTextFocus",
-    "command": "workbench.action.toggleMaximizedPanel"
-  }
+    {
+        "key": "alt+b",
+        "command": "cursorWordStartLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+f",
+        "command": "cursorWordEndRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "deleteWordRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+space",
+        "when": "!editorTextFocus",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "Escape",
+        "command": "-extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "Escape",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible"
+    }
 ]
