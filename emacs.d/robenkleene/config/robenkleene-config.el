@@ -2,29 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Clipboard
-
-;; Only copy on yank with region to avoid overwritting the clipboard with other
-;; kill ring commands like `C-k'
-(defun rk/safecopy (text &optional push)
-  ;; Do nothing if the region isn't active so that other commands like
-  ;; `kill-line', don't affect the system clipboard
-  (if (or (use-region-p) (and (fboundp 'evil-mode) (eq evil-state 'normal)))
-      (progn
-        (setenv "INSIDE_EMACS" "1")
-        (let (
-              (process-connection-type nil)
-              )
-          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
-            (unless (string))
-            (process-send-string proc text)
-            (process-send-eof proc)))
-        )
-    )
-  )
-(setq interprogram-cut-function 'rk/safecopy)
-(setq interprogram-paste-function nil)
-
 ;; Use `bash' for external scripts
 (setq shell-file-name "sh")
 (setq shell-command-switch "-c")
