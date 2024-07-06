@@ -5,17 +5,23 @@
 (use-package vertico
   :bind
   (:map vertico-map
-        ;; Display possible completions (like `<tab>` for default interface)
-        ("?" . 'minibuffer-completion-help)
+        ;; ;; Display possible completions (like `<tab>` for default interface)
+        ;; ("?" . 'minibuffer-completion-help)
+
+        ;; Swapped Tab
         ;; The default has `<tab>' for `vertico-insert' and `M-<tab>' for
         ;; `minibuffer-complete'. Swapping these seems more natural because it
         ;; allows using `<tab>' to complete the longest common string (`M-<tab>'
         ;; then completes the full selected item without exiting)
-        ("<tab>" . 'minibuffer-complete)
-        ;; Insert the current completion entry
-        ("M-<tab>" . 'vertico-insert)
-        ("TAB" . 'minibuffer-complete)
-        ("M-TAB" . 'vertico-insert)
+        ;; ("TAB" . 'minibuffer-complete)
+        ;; ("<tab>" . 'minibuffer-complete)
+        ;; ;; `vertico-insert' inserts the current completion entry
+        ;; ("M-TAB" . 'vertico-insert)
+        ;; ("M-<tab>" . 'vertico-insert)
+
+        ;; Default Tab
+        ("M-TAB" . 'minibuffer-complete)
+        ("M-<tab>" . 'minibuffer-complete)
         )
   :init
   (vertico-mode)
