@@ -110,6 +110,13 @@ augroup z_add
   autocmd DirChanged * call system('zoxide add ' . expand('<amatch>'))
 augroup END
 
+" Disable Cursor Line in Insert Mode
+augroup disable_cursor_line
+  autocmd!
+  autocmd InsertEnter * setlocal nocursorline
+  autocmd InsertLeave * setlocal cursorline
+augroup END
+
 " Automatically close the completion preview
 augroup z_add
   autocmd!
