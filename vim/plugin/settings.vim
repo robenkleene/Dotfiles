@@ -186,4 +186,4 @@ set suffixes-=.h
 " with `:windo diffthis`
 set cursorline
 " Highlight just the line number
-set cursorlineopt=number
+"set cursorlineopt=number
