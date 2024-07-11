@@ -9,6 +9,5 @@
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.defaultProfile.osx": "fish",
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cpp.enableInlayHints": true,
-    "vim.startInInsertMode": true
+    "cpp.enableInlayHints": true
 }
