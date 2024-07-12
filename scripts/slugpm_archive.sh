@@ -14,7 +14,7 @@ if [[ ! -d "$project_dir" && -z "${text:-}" ]]; then
 fi
 
 if [[ ! -d "$project_dir" ]]; then
-  project_dir=$(dirname "$PWD")
+  project_dir="$PWD"
 fi
 
 # Remove leading and trailing slash and leading period
@@ -38,6 +38,6 @@ if [[ -z "${text:-}" ]]; then
   dir_name=$(basename "$src_dir")
   echo -n "$destination_dir/$dir_name"
 else
-  destination_file="$project_dir/../archive/README.md"
+  destination_file="$project_dir/archive/README.md"
   echo "$text" >>"$destination_file"
 fi
