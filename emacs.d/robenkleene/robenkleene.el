@@ -51,7 +51,6 @@
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-eglot)
 (require 'robenkleene-expand-region)
-(require 'robenkleene-evil)
 (require 'robenkleene-magit)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-smartparens)
