@@ -1,6 +1,15 @@
 return {
   { 'tpope/vim-unimpaired', },
-  { 'tpope/vim-vinegar' },
+  -- Vinegar doesn't seem to properly select the current file with `-`
+  -- { 'tpope/vim-vinegar' },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    config = function()
+      require("oil").setup()
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    end
+  },
   -- This doesn't handle visual blocks correctly
   -- { "kylechui/nvim-surround", config = true, event = "VeryLazy" },
   {
