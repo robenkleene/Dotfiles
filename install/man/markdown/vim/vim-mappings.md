@@ -1,5 +1,5 @@
 - `<silent>` makes a mapping not echo to minibuffer, e.g. in `nnoremap <silent> <buffer> gd :OpenDiff<CR>`
-- `map <return> ]q`: Example of quickly mapping return to the next quickfix match from Unimpaired
+- `map <return> ]q` / `map <bs> [q`: Example of quickly mapping return / backspace to the next / previous `quickfix` match using the Unimpaired bindings
 
 ## Removing
 
