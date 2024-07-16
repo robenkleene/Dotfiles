@@ -71,9 +71,18 @@ function operators#YankGrep(context = {}, type = '') abort
     bd!
 
   finally
-    if l:register !=# '"'
-      call setreg('"', save.register)
-    endif
+    " If the `"` register we're copying to is not `"` than restore the `"`
+    " register
+    " This was causing a problem where yanking to the `*` register with a
+    " visual selection then `"*y`, followed by yanking the grep line with
+    " `"*gygg` would result in the original visual selection still being in
+    " the `*` register instead of the grep match yank.
+    " We don't actually need this at all though, because in Vim yanking to the
+    " `*` register always also yanks to the `"` register, since this happens
+    " be default, we don't actually have to restore anything.
+    "if l:register !=# '"'
+    "  setreg('"', save.register)
+    "endif
     call setpos("'<", save.visual_marks[0])
     call setpos("'>", save.visual_marks[1])
     let &clipboard = save.clipboard
