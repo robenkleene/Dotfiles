@@ -245,6 +245,9 @@
         (truncate-lines . nil)
         (which-func-mode . nil)))
 
+;; Highlight current line
+(global-hl-line-mode)
+
 ;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
 ;; disabled by default)
 (setq disabled-command-function nil)
