@@ -1,4 +1,6 @@
-" Exclude buffers from restoring view settings
+" Exclude some buffers from restoring view settings, this prevents certain
+" buffers that are meant to be transient from being save and restored when
+" loading sessions
 augroup save_view
   autocmd!
   autocmd BufWinLeave *
