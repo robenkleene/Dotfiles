@@ -19,7 +19,7 @@
   },
   "max_post_var": {
     "prefix": "max_post_var",
-    "body": "post(\"$1 = \" + ${1:result});",
+    "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
     "description": "Max post variable"
   },
   "max_template": {
