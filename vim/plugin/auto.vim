@@ -1,6 +1,4 @@
-" Exclude some buffers from restoring view settings, this prevents certain
-" buffers that are meant to be transient from being save and restored when
-" loading sessions
+" Exclude buffers from restoring view settings
 augroup save_view
   autocmd!
   autocmd BufWinLeave *
@@ -97,6 +95,11 @@ augroup quickfix_height
   autocmd!
   " Set the height to the number of lines, with a max of the size of the window, or 10, which ever is higher
   autocmd FileType qf execute min([line("$"), max([10, float2nr(&lines / 3)])]) . "wincmd _"
+augroup END
+
+augroup executable_files
+  autocmd!
+  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
 
 augroup z_add
