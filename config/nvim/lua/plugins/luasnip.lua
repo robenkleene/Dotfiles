@@ -41,7 +41,10 @@ return {
     local function snippet_to_completion(snippet)
       return {
         word      = snippet.trigger,
-        menu      = snippet.name,
+        -- Using `snippet.name` just results in the trigger showing twice in the popup menu
+        -- menu      = snippet.name,
+        -- Using `"Snippet"` is consistent with how it works for `omnifunc`, it shows the type (e.g., `Function`, `Variable`, etc...)
+        menu      = "Snippet",
         -- This preview gets stuck
         info      = vim.trim(table.concat(vim.tbl_flatten({snippet.dscr or "", "", snippet:get_docstring()}), "\n")),
         dup       = true,
