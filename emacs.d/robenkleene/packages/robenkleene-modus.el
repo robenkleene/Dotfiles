@@ -28,6 +28,9 @@
           (bg-line-number-active unspecified)
           ;; Make the current tab the same color as background
           (bg-tab-current bg-main)
+          ;; Dim the highlight line, the default was making it sometimes hard to
+          ;; find the cursor
+          (bg-hl-line bg-inactive)
           ))
   (setq modus-vivendi-tinted-palette-overrides
         '(
