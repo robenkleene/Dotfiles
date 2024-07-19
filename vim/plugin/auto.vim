@@ -121,7 +121,7 @@ augroup END
 " Remove commit files from `v:oldfiles` (note this doesn't touch the edited
 " files on disk, it filters the list when vim launches)
 " Don't like that this might affect startup time
-"augroup clean_oldfiles
-"  autocmd!
-"  autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# "hg-editor-.*$"')
-"augroup END
+augroup clean_oldfiles
+  autocmd!
+  autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# "hg-editor-.*$"')
+augroup END
