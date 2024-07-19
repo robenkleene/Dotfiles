@@ -6,6 +6,15 @@ return {
   },
   config = function()
     local cmp = require 'cmp'
+    require("cmp").setup.filetype("markdown", {
+      enabled = false,
+    })
+    require("cmp").setup.filetype("text", {
+      enabled = false,
+    })
+    require("cmp").setup.filetype("gitcommit", {
+      enabled = false,
+    })
     local function toggle_autocomplete()
       local current_setting = cmp.get_config().completion.autocomplete
       if current_setting and #current_setting > 0 then
