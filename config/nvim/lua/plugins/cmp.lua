@@ -6,6 +6,17 @@ return {
   },
   config = function()
     local cmp = require 'cmp'
+    local function toggle_autocomplete()
+      local current_setting = cmp.get_config().completion.autocomplete
+      if current_setting and #current_setting > 0 then
+        cmp.setup({ completion = { autocomplete = false } })
+        vim.notify('Autocomplete disabled')
+      else
+        cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
+        vim.notify('Autocomplete enabled')
+      end
+    end
+    vim.keymap.set('n', 'yopa', toggle_autocomplete, {})
     cmp.setup {
       snippet = {
         expand = function(args)
