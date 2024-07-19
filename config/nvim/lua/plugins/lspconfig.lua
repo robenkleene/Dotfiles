@@ -25,6 +25,10 @@ return {
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+        -- These are supposed to be built in but aren't working without this
+        vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
         -- Provide access to default implementations
         vim.keymap.set('n', '<localleader>gd', 'gd', opts)
         vim.keymap.set('n', '<localleader>gD', 'gD', opts)
