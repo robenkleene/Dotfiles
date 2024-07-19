@@ -67,7 +67,12 @@ function operators#YankGrep(context = {}, type = '') abort
     let @@ = l:result
     new
     setlocal buftype=nofile bufhidden=hide noswapfile
-    exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
+    if len(l:lines) > 1
+      exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
+    else
+      " Avoid yanking the line break for one line
+      exe 'silent keepjumps normal! VPgg"'.l:register.'yg_'
+    endif
     bd!
 
   finally
