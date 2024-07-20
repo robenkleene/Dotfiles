@@ -3,6 +3,8 @@ return {
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
   },
   config = function()
     local cmp = require 'cmp'
@@ -54,6 +56,18 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        -- File paths
+        { name = 'path' },
+        -- Text in buffers
+        {
+          name = 'buffer',
+          option = {
+            -- All open buffers
+            get_bufnrs = function()
+              return vim.api.nvim_list_bufs()
+            end
+          }
+        }
       },
     }
   end
