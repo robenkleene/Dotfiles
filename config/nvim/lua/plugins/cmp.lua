@@ -59,6 +59,7 @@ return {
         -- File paths
         { name = 'path' },
         -- Text in buffers
+        -- This is useful for example when adding a method to an interface for a class on one buffer, and the implementation in another
         {
           name = 'buffer',
           option = {
