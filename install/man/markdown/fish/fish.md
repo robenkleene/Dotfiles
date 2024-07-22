@@ -3,6 +3,7 @@
 - `→`, `⌃f`: Accept full completion
 - `cdh`: Visit `cd` history
 - `⌃C`: Cancel current line
+- `⌥L`: Show directory listing
 
 # Navigation
 
