@@ -3,7 +3,6 @@ return {
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
-    'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
   },
   config = function()
@@ -56,8 +55,6 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        -- File paths
-        { name = 'path' },
         -- Text in buffers
         -- This is useful for example when adding a method to an interface for a class on one buffer, and the implementation in another
         {
