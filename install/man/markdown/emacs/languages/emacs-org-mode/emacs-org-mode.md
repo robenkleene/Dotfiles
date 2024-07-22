@@ -1,6 +1,6 @@
 # Archive
 
-- `C-c C-x C-s`: Archive item
+- `C-c C-x C-s`: Archive item (if there's a subtree error when trying to archive an item, try collapsing the item, then selecting the whole line, then trying the binding again)
 
 # Sorting
 
