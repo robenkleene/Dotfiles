@@ -125,3 +125,10 @@ augroup clean_oldfiles
   autocmd!
   autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# "hg-editor-.*$"')
 augroup END
+
+" Disable Cursor Line in Insert Mode
+augroup disable_cursor_line
+  autocmd!
+  autocmd InsertEnter * setlocal nocursorline
+  autocmd InsertLeave * setlocal cursorline
+augroup END
