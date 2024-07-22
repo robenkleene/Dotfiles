@@ -123,7 +123,7 @@ augroup END
 " Don't like that this might affect startup time
 augroup clean_oldfiles
   autocmd!
-  autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# "hg-editor-.*$"')
+  autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# ".*\.hg\.txt$"')
 augroup END
 
 " Disable Cursor Line in Insert Mode
