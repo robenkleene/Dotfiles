@@ -1,6 +1,4 @@
-# special
-# Don't use these because they aren't support in other apps (e.g., Vim)
-# alias -- -='cd -'
+alias -- -='cd -'
 alias ..='cd ..'
 
 # ls
