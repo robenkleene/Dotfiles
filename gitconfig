@@ -4,6 +4,8 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = simple
+# Automatically create remote branches
+	autoSetupRemote = true
 [merge]
 	conflictstyle = diff3
 [include]
