@@ -7,6 +7,7 @@ merge = internal:merge3
 [pager]
 pager = less
 [alias]
+# `hg checkout --clean .` didn't work with a `hg histedit` edit, but `hg revert --all` did
 cleanup = !hg purge && hg revert --all
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`
 # Note this also has to be in `~/.hgrc` for some reason
