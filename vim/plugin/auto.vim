@@ -127,8 +127,8 @@ augroup clean_oldfiles
 augroup END
 
 " Disable Cursor Line in Insert Mode
-augroup disable_cursor_line
-  autocmd!
-  autocmd InsertEnter * setlocal nocursorline
-  autocmd InsertLeave * setlocal cursorline
-augroup END
+"augroup disable_cursor_line
+"  autocmd!
+"  autocmd InsertEnter * setlocal nocursorline
+"  autocmd InsertLeave * setlocal cursorline
+"augroup END
