@@ -9,7 +9,7 @@ white = "#CCCCCC"
 yellow = "#DADABD"
 
 [colors.cursor]
-cursor = "#69C54E"
+cursor = "#66BB44"
 text = "0xffffff"
 
 [colors.normal]
