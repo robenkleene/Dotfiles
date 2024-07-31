@@ -184,6 +184,10 @@ set suffixes-=.h
 
 " With my current colorscheme, `iceberg`, this breaks comparing two buffers
 " with `:windo diffthis`
-set cursorline
+" Don't bother with this because it isn't super helpful to find the cursor
+" when there's multiple splits with highlighted lines. The easiest way to
+" repliably find the cursor quickly is set the terminal emulator to use a
+" bright cursor color.
+"set cursorline
 " Highlight just the line number
-set cursorlineopt=number
+"set cursorlineopt=number
