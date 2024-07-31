@@ -5,7 +5,8 @@
 (use-package adaptive-wrap
   :diminish
   :init
-  (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
+  ;; This doesn't play nice with Org mode with `org-indent-mode' on
+  (add-hook 'markdown-mode-hook 'adaptive-wrap-prefix-mode)
   )
 
 (provide 'robenkleene-adaptive-wrap)
