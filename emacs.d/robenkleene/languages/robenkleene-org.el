@@ -11,7 +11,8 @@
   :mode ("\\.org\\'" . org-mode)
   :init
   ;; Hide leading asterisks (this seems to feel sloppy)
-  ;; (setq org-startup-indented t)
+  (setq org-startup-indented t)
+
   (with-eval-after-load "org"
     ;; Disable `org-mode' keys that conflict with basic text editing
     ;; `(setq org-support-shift-select 'always)' handles some other bindings
