@@ -195,10 +195,8 @@
     :config
     ;; `org-rich-yank' inserts a new line after the paste, delete that
     (defadvice org-rich-yank (after rk/org-rich-yank-cleanup activate)
-      (progn
-        (delete-line)
-        (backward-char)
-        )
+      (delete-line)
+      (backward-char)
       )
     )
   )
