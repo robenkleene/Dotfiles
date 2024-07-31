@@ -1,3 +1,4 @@
+- `⇧←` / `⇧→`, `⌥←` / `⌥→`: Move left / right by word
 - `C-a`: Insert last inserted text
 - `C-@`: Insert last inserted text and leave insert mode
 - `C-d` / `C-t`: indent / outdent line
@@ -14,3 +15,4 @@
 - `C-k`: Insert digraph
 - `<C-\><C-O>`: Perform normal command but don't shift cursor at end of line
 - `<C-]>`: Trigger abbreviation
+- There's no delete forward word, instead use `⇧→ C-w`
