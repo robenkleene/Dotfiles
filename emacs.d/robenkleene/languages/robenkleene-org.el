@@ -10,7 +10,9 @@
   ("C-c c" . org-capture)
   :mode ("\\.org\\'" . org-mode)
   :init
-  ;; Hide leading asterisks (this seems to feel sloppy)
+  ;; Hide leading asterisks
+  ;; This feels a bit fragile, but it makes the document much easier to scan and
+  ;; understand quickly
   (setq org-startup-indented t)
 
   (with-eval-after-load "org"
