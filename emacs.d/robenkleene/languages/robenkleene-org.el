@@ -179,13 +179,16 @@
 
   ;; Packages
 
-  ;; (use-package org-modern
-  ;;   :commands (global-org-modern-mode)
-  ;;   :init
-  ;;   (with-eval-after-load 'org (global-org-modern-mode))
-  ;;   :config
-  ;;   (setq org-modern-hide-stars nil)
-  ;;   )
+  (use-package org-modern
+    :commands (global-org-modern-mode)
+    :init
+    (with-eval-after-load 'org (global-org-modern-mode))
+    :config
+    ;; The default third value in this list was a unicode character that
+    ;; wouldn't display
+    (setq org-modern-fold-stars
+          '(("▶" . "▼") ("▷" . "▽") ("▷" . "▽") ("▹" . "▿") ("▸" . "▾")))
+    )
 
   ;; Needs to always be available when killing
   (use-package org-rich-yank
