@@ -85,7 +85,8 @@
   (setq org-return-follows-link 1)
 
   ;; Enable special keys when the point is at the first column (use `M-m')
-  (setq org-use-speed-commands t)
+  ;; This doesn't play nice with `org-indent-mode'.
+  ;; (setq org-use-speed-commands t)
 
   (defun org-remove-link ()
     "Replace an org link by its description or if empty its address"
@@ -94,7 +95,7 @@
         (save-excursion
           (let ((remove (list (match-beginning 0) (match-end 0)))
                 (description
-                 (if (match-end 2) 
+                 (if (match-end 2)
                      (org-match-string-no-properties 2)
                    (org-match-string-no-properties 1))))
             (apply 'delete-region remove)
@@ -104,6 +105,8 @@
   ;; nicely with evil
   ;; (setq org-agenda-start-with-follow-mode t)
 
+  ;; Open `org-agenda' in the window, this is beneficial because hitting enter
+  ;; on an agenda item jumps to it in the same window
   (setq org-agenda-window-setup 'current-window)
 
   (setq org-support-shift-select 'always)
