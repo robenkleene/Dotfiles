@@ -189,8 +189,11 @@
     :config
     ;; The default third value in this list was a unicode character that
     ;; wouldn't display
+    ;; This also simplifies to just use the filled triangle for the top-level
+    ;; and the empty for all other levels, the other smaller triangles used by
+    ;; default don't look as nice
     (setq org-modern-fold-stars
-          '(("▶" . "▼") ("▷" . "▽") ("▷" . "▽") ("▹" . "▿") ("▸" . "▾")))
+          '(("▶" . "▼") ("▷" . "▽")))
     )
 
   ;; Needs to always be available when killing
