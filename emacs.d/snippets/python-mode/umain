@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: umain
+# name: `main` Function
+# --
+def main():
+	"""
+	main
+	"""
+	$0

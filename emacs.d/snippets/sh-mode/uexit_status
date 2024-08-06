@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uexit_status
+# name: Exit status
+# --
+\$?

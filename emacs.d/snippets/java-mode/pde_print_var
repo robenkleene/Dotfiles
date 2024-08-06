@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: pde_print_var
-# name: Processing 3D template
-# --
-print("${1:result = ", $1, "\n");

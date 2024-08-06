@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: utemplate
+# name: Basic template
+# --
+#!/usr/bin/env bash
+
+set -euo pipefail
+

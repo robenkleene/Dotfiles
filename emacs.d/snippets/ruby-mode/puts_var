@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: puts_var
-# name: Print variable
-# --
-puts "${1:result} = #{$1}"

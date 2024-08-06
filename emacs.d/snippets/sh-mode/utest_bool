@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: utest_bool
+# name: Test boolean
+# --
+"$${1:value}" == "${0:true}"

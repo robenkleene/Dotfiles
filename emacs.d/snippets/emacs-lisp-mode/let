@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: let*
-# key: let*
-# --
-let* ((${1:foo} ${2:"value"})
-     (${2:bar} $1))
-  $0

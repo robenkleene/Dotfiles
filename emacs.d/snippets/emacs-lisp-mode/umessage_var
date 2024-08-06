@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: umessage_var
+# key: umessage_var
+# --
+message "$0${1:result} = %${2:s}" $1

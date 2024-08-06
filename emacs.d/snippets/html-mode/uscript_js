@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uscript_js
+# name: Add JavaScript
+# --
+<script type="text/javascript" src="${0:js/script.js}"></script>

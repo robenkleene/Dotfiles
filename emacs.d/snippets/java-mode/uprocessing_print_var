@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uprocessing_print_var
+# name: Processing print variable
+# --
+println("$1 = ", ${1:result});

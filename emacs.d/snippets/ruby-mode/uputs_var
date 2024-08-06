@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uputs_var
+# name: Print variable
+# --
+puts "$1 = #{${1:result}}"

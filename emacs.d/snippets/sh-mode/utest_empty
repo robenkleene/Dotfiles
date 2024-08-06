@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: utest_empty
+# name: True if empty variable
+# --
+-z "${${1:1}:-}"

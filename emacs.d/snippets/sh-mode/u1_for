@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u1_for
+# name: For loop one-liner
+# --
+for i in ${1:*}; do { ${0:echo $i} } done

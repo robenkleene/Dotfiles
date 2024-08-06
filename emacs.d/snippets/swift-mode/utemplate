@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: utemplate
+# name: Template
+# --
+#!/usr/bin/swift
+
+$0

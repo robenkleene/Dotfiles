@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: uimplementation
+# name: Implementation
+# --
+@implementation ${1:MyClass}
+$0
+@end

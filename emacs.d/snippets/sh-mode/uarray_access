@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uarray_access
+# name: Access an array element
+# --
+\${${1:args}[@]}$0

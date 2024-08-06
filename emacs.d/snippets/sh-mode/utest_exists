@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: utest_exists
+# name: True if file exists
+# --
+-e "${1:\$1}"

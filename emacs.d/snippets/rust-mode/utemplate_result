@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# key: utemplate_result
+# name: Rust result template
+# --
+use std::io;
+
+fn main() -> io::Result<()> {
+    ${1:println!("Hello, world!");}
+Ok(())
+}

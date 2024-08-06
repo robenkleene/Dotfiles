@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: for_dir
-# name: For loop directories
-# --
-for dir in */; do
-  echo $dir;
-done
