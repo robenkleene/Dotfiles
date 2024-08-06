@@ -1,6 +1,6 @@
 {
-  "utemplate": {
-    "prefix": "utemplate",
+  "u_template": {
+    "prefix": "u_template",
     "body": "#!/usr/bin/env perl\n\nuse strict;\nuse warnings;\n\n",
     "description": "Perl template"
   }

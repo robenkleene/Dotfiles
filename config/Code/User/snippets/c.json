@@ -1,21 +1,21 @@
 {
-  "utemplate": {
-    "prefix": "utemplate",
+  "u_template": {
+    "prefix": "u_template",
     "body": "#include <stdio.h>\n\nint main() {\n    printf(\"hello, world\\n\");\n}",
     "description": "C template"
   },
-  "uprintf_var": {
-    "prefix": "uprintf_var",
+  "u_printf_var": {
+    "prefix": "u_printf_var",
     "body": "uprintf(\"$1 = %${2:i}\\n\", ${1:result});",
     "description": "Print variable"
   },
-  "ufor": {
-    "prefix": "ufor",
+  "u_for": {
+    "prefix": "u_for",
     "body": "for (int ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
     "description": "For loop"
   },
-  "uwhile_getchar": {
-    "prefix": "uwhile_getchar",
+  "u_while_getchar": {
+    "prefix": "u_while_getchar",
     "body": "while ((c = getchar()) != EOF) {\n\t$0\n}",
     "description": "While character loop"
   }

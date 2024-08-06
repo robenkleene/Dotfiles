@@ -1,171 +1,171 @@
 {
-  "utemplate": {
-    "prefix": "utemplate",
+  "u_template": {
+    "prefix": "u_template",
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   },
-  "uecho_var": {
-    "prefix": "uecho_var",
+  "u_echo_var": {
+    "prefix": "u_echo_var",
     "body": "echo \"$1 = \\$${1:result}\"",
     "description": "Echo variable"
   },
-  "uecho_var_array": {
-    "prefix": "uecho_var_array",
+  "u_echo_var_array": {
+    "prefix": "u_echo_var_array",
     "body": "echo \"$1 = \\${${1:args}[@]}\"",
     "description": "Echo array variable"
   },
-  "uecho_err": {
-    "prefix": "uecho_err",
+  "u_echo_err": {
+    "prefix": "u_echo_err",
     "body": "echo \"${1:Error}\" >&2",
     "description": "Echo to standard error"
   },
-  "uparameter_expansion_remove_trailing_slash": {
-    "prefix": "uparameter_expansion_remove_trailing_slash",
+  "u_parameter_expansion_remove_trailing_slash": {
+    "prefix": "u_parameter_expansion_remove_trailing_slash",
     "body": "\\${${2:1}%/}$0",
     "description": "Remove a trailing slash from a variable"
   },
-  "uparameter_expansion_remove_extension": {
-    "prefix": "uparameter_expansion_remove_extension",
+  "u_parameter_expansion_remove_extension": {
+    "prefix": "u_parameter_expansion_remove_extension",
     "body": "\\${${0:1}%.*}",
     "description": "Remove the extension from a path"
   },
-  "uarray_access": {
-    "prefix": "uarray_access",
+  "u_array_access": {
+    "prefix": "u_array_access",
     "body": "\\${${1:args}[@]}$0",
     "description": "Access an array element"
   },
-  "ufunction": {
-    "prefix": "ufunction",
+  "u_function": {
+    "prefix": "u_function",
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "Function"
   },
-  "uif": {
-    "prefix": "uif",
+  "u_if": {
+    "prefix": "u_if",
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If statement"
   },
-  "uif_uname": {
-    "prefix": "uifuname",
+  "u_if_uname": {
+    "prefix": "u_ifuname",
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
-  "utest_dir": {
-    "prefix": "utest_dir",
+  "u_test_dir": {
+    "prefix": "u_test_dir",
     "body": "-d \"${1:\\$1}\"",
     "description": "True if directory"
   },
-  "utest_bool": {
-    "prefix": "utest_bool",
+  "u_test_bool": {
+    "prefix": "u_test_bool",
     "body": "\"$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
-  "utest_file": {
-    "prefix": "utest_file",
+  "u_test_file": {
+    "prefix": "u_test_file",
     "body": "-f \"${1:\\$1}\"",
     "description": "True if regular file"
   },
-  "utest_exists": {
-    "prefix": "utest_exists",
+  "u_test_exists": {
+    "prefix": "u_test_exists",
     "body": "-e \"${1:\\$1}\"",
     "description": "True if file exists"
   },
-  "utest_link": {
-    "prefix": "utest_link",
+  "u_test_link": {
+    "prefix": "u_test_link",
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "utest_eq": {
-    "prefix": "utest_eq",
+  "u_test_eq": {
+    "prefix": "u_test_eq",
     "body": "${1:\\$?} -eq ${0:0}",
     "description": "True if equal"
   },
-  "utest_gt": {
-    "prefix": "utest_gt",
+  "u_test_gt": {
+    "prefix": "u_test_gt",
     "body": "${1:\\$?} -gt ${0:0}",
     "description": "True if greater than"
   },
-  "utest_lt": {
-    "prefix": "utest_lt",
+  "u_test_lt": {
+    "prefix": "u_test_lt",
     "body": "${1:\\$?} -lt ${0:0}",
     "description": "True if less than"
   },
-  "utest_empty": {
-    "prefix": "utest_empty",
+  "u_test_empty": {
+    "prefix": "u_test_empty",
     "body": "-z \"${${1:1}:-}\"",
     "description": "True if empty variable"
   },
-  "utest_not_empty": {
-    "prefix": "utest_not_empty",
+  "u_test_not_empty": {
+    "prefix": "u_test_not_empty",
     "body": "-n \"${${1:1}:-}\"",
     "description": "True if not empty variable"
   },
-  "utest_args": {
-    "prefix": "utest_args",
+  "u_test_args": {
+    "prefix": "u_test_args",
     "body": "$# -eq 0",
     "description": "True if no args"
   },
-  "utest_string": {
-    "prefix": "utest_string",
+  "u_test_string": {
+    "prefix": "u_test_string",
     "body": "\"$${1:1}\" = \"${2:string}\"",
     "description": "True if variable matches string"
   },
-  "utest_executable": {
-    "prefix": "utest_executable",
+  "u_test_executable": {
+    "prefix": "u_test_executable",
     "body": "-x \"$(command -v ${1:ls})\"",
     "description": "True if command is executable"
   },
-  "utest_uname": {
-    "prefix": "utestuname",
+  "u_test_uname": {
+    "prefix": "u_testuname",
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
-  "u1_while": {
-    "prefix": "u1_while",
+  "u_1_while": {
+    "prefix": "u_1_while",
     "body": "while read i; do { ${0:echo $i} } done",
     "description": "While loop one-liner"
   },
-  "uwhile": {
-    "prefix": "uwhile",
+  "u_while": {
+    "prefix": "u_while",
     "body": "while read i; do\n  ${0:echo $i}\ndone",
     "description": "While loop"
   },
-  "ufor": {
-    "prefix": "ufor",
+  "u_for": {
+    "prefix": "u_for",
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
     "description": "For loop"
   },
-  "ufor_dir": {
-    "prefix": "ufor_dir",
+  "u_for_dir": {
+    "prefix": "u_for_dir",
     "body": "for dir in */; do\n  echo $dir;\ndone",
     "description": "For loop directories"
   },
-  "u1_for": {
-    "prefix": "u1_for",
+  "u_1_for": {
+    "prefix": "u_1_for",
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
     "description": "For loop one-liner"
   },
-  "u1_for_rename": {
-    "prefix": "u1_for_rename",
+  "u_1_for_rename": {
+    "prefix": "u_1_for_rename",
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "Rename files in current directory"
   },
-  "uexit_status": {
-    "prefix": "uexit_status",
+  "u_exit_status": {
+    "prefix": "u_exit_status",
     "body": "\\$?",
     "description": "Exit status"
   },
-  "uifs": {
-    "prefix": "uifs",
+  "u_ifs": {
+    "prefix": "u_ifs",
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
-  "ucd_script_dir": {
-    "prefix": "ucd_script_dir",
+  "u_cd_script_dir": {
+    "prefix": "u_cd_script_dir",
     "body": "cd \\$(dirname \"\\$0\" || exit 1)",
     "description": "Script directory"
   },
-  "ugetopts": {
-    "prefix": "ugetopts",
+  "u_getopts": {
+    "prefix": "u_getopts",
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "`getopts`"
   }

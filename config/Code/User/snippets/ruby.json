@@ -1,31 +1,31 @@
 {
-  "utemplate": {
-    "prefix": "utemplate",
+  "u_template": {
+    "prefix": "u_template",
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
   },
-  "uputs_var": {
-    "prefix": "uputs_var",
+  "u_puts_var": {
+    "prefix": "u_puts_var",
     "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
-  "uputs_err": {
-    "prefix": "uputs_err",
+  "u_puts_err": {
+    "prefix": "u_puts_err",
     "body": "STDERR.puts \"$1{:Error}\"",
     "description": "`puts` to standard error"
   },
-  "ufor": {
-    "prefix": "ufor",
+  "u_for": {
+    "prefix": "u_for",
     "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
     "description": "For loop"
   },
-  "uforin": {
-    "prefix": "uforin",
+  "u_forin": {
+    "prefix": "u_forin",
     "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
     "description": "For in loop"
   },
-  "ueach": {
-    "prefix": "ueach",
+  "u_each": {
+    "prefix": "u_each",
     "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
     "description": "Each loop"
   }
