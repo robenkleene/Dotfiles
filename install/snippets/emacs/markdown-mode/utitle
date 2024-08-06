@@ -1,5 +1,5 @@
-# key: title
-# name: title
+# key: utitle
+# name: utitle
 # --
 `(if buffer-file-name (shell-command-to-string
                     (format "md_title %s" (shell-quote-argument buffer-file-name)))

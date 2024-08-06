@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: template
-# key: template
+# name: utemplate
+# key: utemplate
 # --
 ;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1
 ;;; Commentary:
