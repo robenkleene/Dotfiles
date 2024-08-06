@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: utemplate
+# key: utemplate
+# --
+;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1
+;;; Commentary:
+;;; Code:
+
+$0
+
+(provide '$1)
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+;;; $1.el ends here

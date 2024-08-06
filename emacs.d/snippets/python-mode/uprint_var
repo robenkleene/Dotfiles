@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uprint_var
+# name: Print variable
+# --
+print("$1 = ", ${1:result})

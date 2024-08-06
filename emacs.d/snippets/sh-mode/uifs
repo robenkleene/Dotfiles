@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: uifs
+# name: Set IFS
+# --
+old_IFS=$IFS
+IFS="${1: }"
+IFS=${old_IFS}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: utest_lt
+# name: True if less than
+# --
+${1:\$?} -lt ${0:0}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u1_for_rename
+# name: Rename files in current directory
+# --
+for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done

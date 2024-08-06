@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: utemplate
+# name: Template
+# --
+#!/usr/bin/env python3
+
+$0

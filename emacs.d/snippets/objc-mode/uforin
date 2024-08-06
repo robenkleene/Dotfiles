@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: uforin
+# name: Fast enumeration
+# --
+for (${1:id} ${2:object} in ${3:objects}) {
+    $0
+}

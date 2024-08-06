@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: ulog_var
+# name: Log variable
+# --
+console.log("$1 = " + ${1:result});

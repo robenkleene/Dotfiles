@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: utemplate
+# name: Makefile Template
+# --
+.PHONY: hello
+
+hello:
+	echo "Hello"

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: uforin
+# name: For in
+# --
+for ${1:file} in (${2:ls})
+    echo $$1
+end

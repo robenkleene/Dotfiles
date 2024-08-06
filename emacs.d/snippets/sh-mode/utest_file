@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: utest_file
+# name: True if regular file
+# --
+-f "${1:\$1}"

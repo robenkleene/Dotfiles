@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uparameter_expansion_remove_extension
+# name: Remove the extension from a path
+# --
+\${${0:1}%.*}

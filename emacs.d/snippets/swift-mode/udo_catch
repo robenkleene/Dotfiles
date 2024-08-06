@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: udo_catch
+# name: `do-catch` statement
+# --
+do {
+    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}
+} catch {
+    ${2:throw error}
+}

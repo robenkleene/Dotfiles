@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: uputs_err
+# name: `puts` to standard error
+# --
+STDERR.puts "$1{:Error}"

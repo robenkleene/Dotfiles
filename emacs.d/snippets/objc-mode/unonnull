@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: unonnull
+# name: Assume nonnull block
+# --
+NS_ASSUME_NONNULL_BEGIN
+${VISUAL}
+NS_ASSUME_NONNULL_END
