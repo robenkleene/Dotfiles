@@ -1,6 +1,6 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": ".PHONY: hello\n\nhello:\n\techo \"Hello\"",
     "description": "Makefile Template"
   }

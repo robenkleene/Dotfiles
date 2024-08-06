@@ -1,21 +1,21 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "fn main() {\n    ${1:println!(\"Hello, world!\");}\n}\n",
     "description": "Rust template"
   },
-  "template_result": {
-    "prefix": "template_result",
+  "utemplate_result": {
+    "prefix": "utemplate_result",
     "body": "use std::io;\n\nfn main() -> io::Result<()> {\n    ${1:println!(\"Hello, world!\");}\nOk(())\n}\n",
     "description": "Rust result template"
   },
-  "match_some": {
-    "prefix": "match_some",
+  "umatch_some": {
+    "prefix": "umatch_some",
     "body": "match ${1:optional} {\n  Some($1) => $1,\n  None => ${2:println!(\"No value\")}\n}",
     "description": "Match `Some`"
   },
-  "match_result": {
-    "prefix": "match_result",
+  "umatch_result": {
+    "prefix": "umatch_result",
     "body": "match ${1:result} {\n  Ok($1) => $1,\n  Err(err) => panic!(\"Error: {}\", err)\n}",
     "description": "Match result"
   }

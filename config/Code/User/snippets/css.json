@@ -1,11 +1,11 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "body {\n  color: blue;\n}",
     "description": "CSS template"
   },
-  "grid": {
-    "prefix": "grid",
+  "ugrid": {
+    "prefix": "ugrid",
     "body": "body {\n  background-image: repeating-linear-gradient(#ddd 0 1px, transparent 1px 100%),\n    repeating-linear-gradient(90deg, #ddd 0 1px, transparent 1px 100%);\n  background-size: 8px 8px;\n}",
     "description": "8px background grid"
   }

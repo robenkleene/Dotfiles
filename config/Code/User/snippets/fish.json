@@ -1,21 +1,21 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "#!/usr/bin/env fish\n\n",
     "description": "Fish template"
   },
-  "switchuname": {
-    "prefix": "switch_uname",
+  "uswitchuname": {
+    "prefix": "uswitch_uname",
     "body": "switch (uname)\n    case Linux\n            echo Hi Tux!\n    case Darwin\n            echo Hi Hexley!\n    case FreeBSD NetBSD DragonFly\n            echo Hi Beastie!\n    case '*'\n            echo Hi, stranger!\nend",
     "description": "`uname` switch statement"
   },
-  "forin": {
-    "prefix": "forin",
+  "uforin": {
+    "prefix": "uforin",
     "body": "for ${1:file} in (${2:ls})\n    echo $$1\nend",
     "description": "For in"
   },
-  "1_forin": {
-    "prefix": "1_forin",
+  "u1_forin": {
+    "prefix": "u1_forin",
     "body": "for ${1:file} in (${2:ls}); echo $$1; end",
     "description": "For in one-liner"
   }

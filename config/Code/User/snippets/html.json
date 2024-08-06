@@ -1,16 +1,16 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>${1:Title}</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n  </head>\n  <body>\n    $0\n  </body>\n</html>",
     "description": "HTML template"
   },
-  "linkcss": {
-    "prefix": "link_css",
+  "ulinkcss": {
+    "prefix": "ulink_css",
     "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${0:css/style.css}\" />",
     "description": "Link CSS"
   },
-  "scriptjs": {
-    "prefix": "script_js",
+  "uscriptjs": {
+    "prefix": "uscript_js",
     "body": "<script type=\"text/javascript\" src=\"${0:js/script.js}\"></script>",
     "description": "Add JavaScript"
   }

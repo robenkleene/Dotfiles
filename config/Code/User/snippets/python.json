@@ -1,26 +1,26 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "#!/usr/bin/env python3\n\n$0",
     "description": "Template"
   },
-  "blender_template": {
-    "prefix": "blender_template",
+  "ublender_template": {
+    "prefix": "ublender_template",
     "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
     "description": "Blender Template"
   },
-  "main": {
-    "prefix": "main",
+  "umain": {
+    "prefix": "umain",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t$0",
     "description": "`main` Function"
   },
-  "print_var": {
-    "prefix": "print_var",
+  "uprint_var": {
+    "prefix": "uprint_var",
     "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
-  "print_err": {
-    "prefix": "print_err",
+  "uprint_err": {
+    "prefix": "uprint_err",
     "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
   }

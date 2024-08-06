@@ -1,6 +1,6 @@
 {
-  "vim_notify_var": {
-    "prefix": "vim_notify_var",
+  "uvim_notify_var": {
+    "prefix": "uvim_notify_var",
     "body": "vim.notify(\"$1 = \" .. ${1:result})",
     "description": "`vim.notify` variable"
   }

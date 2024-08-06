@@ -1,16 +1,16 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello, World!\\n\";\n}\n",
     "description": "C++ template"
   },
-  "cout_var_global": {
-    "prefix": "cout_var_global",
+  "ucout_var_global": {
+    "prefix": "ucout_var_global",
     "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
     "description": "Print variable without this address"
   },
-  "cout_var": {
-    "prefix": "cout_var",
+  "ucout_var": {
+    "prefix": "ucout_var",
     "body": "std::cout << \"%s\" << this << \" << $1 = \" << ${1:result} << std::endl;",
     "description": "Print variable with this address"
   }
