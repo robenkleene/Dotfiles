@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# key: u_delegate
+# name: Delegate
+# --
+NS_ASSUME_NONNULL_BEGIN
+@protocol ${1:MyClass}Delegate <NSObject>
+- (void)handleEventFor$1:($1 *)${2:myObject};
+- (${3:id})$2:($1 *)$2 ${4:valueForKey}:(${5:NSString *})${6:key};
+@end
+NS_ASSUME_NONNULL_END

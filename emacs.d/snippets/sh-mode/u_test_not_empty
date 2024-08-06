@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_test_not_empty
+# name: True if not empty variable
+# --
+-n "${${1:1}:-}"

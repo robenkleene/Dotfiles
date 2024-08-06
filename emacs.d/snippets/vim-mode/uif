@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: uif
-# name: If statement
-# --
-if ${1:has('gui_running')}
-  ${2:finish}
-endif

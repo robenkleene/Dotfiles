@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: ucd_script_dir
-# name: Script directory
-# --
-cd \$(dirname "\$0" || exit 1)

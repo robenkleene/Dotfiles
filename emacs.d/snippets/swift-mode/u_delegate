@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: u_delegate
+# name: Delegate
+# --
+protocol ${1:MyClass}Delegate {
+    func ${2:handleEvent}(for: $1})
+    func ${1/.*/\l$0/}(_  ${1/.*/\l$0/}: $1, ${3:valueForKey} ${4:key}: ${5:String}) -> ${6:Any}
+}

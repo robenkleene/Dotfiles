@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: u_blender_template
+# name: Blender Template
+# --
+import bpy
+
+if bpy.data.objects.get("Cube"):
+    bpy.data.objects["Cube"].select_set(True)
+    bpy.ops.object.delete()

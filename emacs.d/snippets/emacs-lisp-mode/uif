@@ -1,6 +1,0 @@
-# key: uif
-# name: uif
-# --
-if ${1:t}
-    ${2:(message "true")}
-  ${3:(message "false")}

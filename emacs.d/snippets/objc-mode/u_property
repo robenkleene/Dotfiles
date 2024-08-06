@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_property
+# name: Property
+# --
+@property (nonatomic, strong) ${1:NSString} *${2:identifier};

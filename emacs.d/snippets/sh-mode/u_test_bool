@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_test_bool
+# name: Test boolean
+# --
+"$${1:value}" == "${0:true}"

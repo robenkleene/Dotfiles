@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: uforin
-# name: For in loop
-# --
-${1:ARGV}.each do |${2:item}|
-  ${0:puts $2}
-end

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: u_processing_print_arr
+# name: Processing print array
+# --
+println("$1");
+printArray(${1:result});
+print("\n");
