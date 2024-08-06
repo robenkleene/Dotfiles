@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: template
-# key: template
+# name: utemplate
+# key: utemplate
 # --
 # -*- mode: snippet -*-
 # name: ${1:trigger$(buffer-name)}

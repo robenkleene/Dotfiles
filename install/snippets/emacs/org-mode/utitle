@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: title
-# key: title
+# name: utitle
+# key: utitle
 # --
 `(concat "#+title: " (if buffer-file-name
     (shell-command-to-string

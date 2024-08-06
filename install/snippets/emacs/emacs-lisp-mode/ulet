@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: let*
-# key: let*
+# name: ulet*
+# key: ulet*
 # --
 let* ((${1:foo} ${2:"value"})
      (${2:bar} $1))

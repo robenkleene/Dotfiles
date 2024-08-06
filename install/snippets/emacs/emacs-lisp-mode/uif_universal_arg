@@ -1,5 +1,5 @@
-# key: if_universal_arg
-# name: if_universal_arg
+# key: uif_universal_arg
+# name: uif_universal_arg
 # --
 (let ((current-prefix-arg nil))
   (if (equal arg nil)
