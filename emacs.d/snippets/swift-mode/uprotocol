@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: uprotocol
-# name: Protocol
-# --
-protocol ${1:MyType} {
-    $0
-}

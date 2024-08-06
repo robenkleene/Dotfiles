@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: u_template
+# name: C template
+# --
+#include <stdio.h>
+
+int main() {
+    printf("hello, world\n");
+}

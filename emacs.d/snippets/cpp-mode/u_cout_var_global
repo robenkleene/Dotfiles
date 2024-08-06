@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_cout_var_global
+# name: Print variable without this address
+# --
+std::cout << "$1 = " << ${1:result} << std::endl;

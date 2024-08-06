@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_echo_err
+# name: Echo to standard error
+# --
+echo "${1:Error}" >&2

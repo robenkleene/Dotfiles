@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: u_class
+# name: Class
+# --
+class ${1:MyObject} {
+    $0
+}

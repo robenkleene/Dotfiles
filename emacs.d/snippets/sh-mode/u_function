@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: u_function
+# name: Function
+# --
+${1:my_function}() {
+  ${0:echo \$1}
+}

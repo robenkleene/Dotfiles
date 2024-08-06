@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_test_args
+# name: True if no args
+# --
+$# -eq 0

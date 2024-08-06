@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# key: u_template
+# name: Fish template
+# --
+#!/usr/bin/env fish
+

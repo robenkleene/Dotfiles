@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u1_while
-# name: While loop one-liner
-# --
-while read i; do { ${0:echo $i} } done

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: u_cout_var
+# name: Print variable with this address
+# --
+std::cout << "%s" << this << " << $1 = " << ${1:result} << std::endl;

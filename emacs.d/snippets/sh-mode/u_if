@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: u_if
+# name: If statement
+# --
+if ${1:true}; then
+  ${0:echo "true"}
+fi

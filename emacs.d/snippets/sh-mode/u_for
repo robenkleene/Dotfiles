@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: u_for
+# name: For loop
+# --
+for ${1:name} in ${2:"\$@"}; do
+  echo "\$$name"
+done
