@@ -3,7 +3,8 @@
 set -euo pipefail
 
 filename="false"
-while getopts ":t:d:fh" option; do
+orgmode="false"
+while getopts ":t:d:foh" option; do
   case "$option" in
     t)
       title="$OPTARG"
@@ -13,6 +14,9 @@ while getopts ":t:d:fh" option; do
       ;;
     f)
       filename="true"
+      ;;
+    o)
+      orgmode="true"
       ;;
     h)
       echo "Usage: command [-hl] [-t <title>] [-d <directory>]"
