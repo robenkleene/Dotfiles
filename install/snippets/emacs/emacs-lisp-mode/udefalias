@@ -1,4 +1,0 @@
-# key: udefalias
-# name: udefalias
-# --
-defalias '${1:g} '${2:grep}
