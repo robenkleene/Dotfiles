@@ -92,14 +92,24 @@ make_file() {
   fi
 }
 
-contents="# $title"
+if [[ "$orgmode" == "true" ]]; then
+  contents="#+title: $title"
+  ext="org"
+else
+  contents="# $title"
+  ext="md"
+fi
 slug=$(echo "$title" | ~/.bin/f_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
-readme_path=$(make_file "README.md" "$dated_slug" "$contents")
-make_file "README.md" "$dated_slug/archive" "$contents Archive" >/dev/null
+readme_path=$(make_file "README.${ext}" "$dated_slug" "$contents")
+make_file "README.${ext}" "$dated_slug/archive" "$contents Archive" >/dev/null
 if [[ "$filename" == "true" ]]; then
   echo -n "$directory$readme_path"
 else
-  echo -n "[$title]($directory$readme_path)"
+  if [[ "$orgmode" == "true" ]]; then
+    echo -n "[[./$directory$readme_path][$title]]"
+  else
+    echo -n "[$title]($directory$readme_path)"
+  fi
 fi
