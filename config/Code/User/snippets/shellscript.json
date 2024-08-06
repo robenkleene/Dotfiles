@@ -99,6 +99,11 @@
     "body": "-n \"${${1:1}:-}\"",
     "description": "True if not empty variable"
   },
+  "utest_args": {
+    "prefix": "utest_args",
+    "body": "$# -eq 0",
+    "description": "True if no args"
+  },
   "utest_string": {
     "prefix": "utest_string",
     "body": "\"$${1:1}\" = \"${2:string}\"",
