@@ -1,5 +1,5 @@
-# key: uif
-# name: uif
+# key: u_if
+# name: u_if
 # --
 if ${1:t}
     ${2:(message "true")}
