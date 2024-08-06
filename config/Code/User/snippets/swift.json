@@ -1,46 +1,46 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "#!/usr/bin/swift\n\n$0",
     "description": "Template"
   },
-  "delegate": {
-    "prefix": "delegate",
+  "udelegate": {
+    "prefix": "udelegate",
     "body": "protocol ${1:MyClass}Delegate {\n    func ${2:handleEvent}(for: $1})\n    func ${1/.*/\\l$0/}(_  ${1/.*/\\l$0/}: $1, ${3:valueForKey} ${4:key}: ${5:String}) -> ${6:Any}\n}",
     "description": "Delegate"
   },
-  "guard_weak_self": {
-    "prefix": "guard_weak_self",
+  "uguard_weak_self": {
+    "prefix": "uguard_weak_self",
     "body": "guard let \\`self\\` = self else { return }",
     "description": "Weak self, strong self guard statement"
   },
-  "protocol": {
-    "prefix": "protocol",
+  "uprotocol": {
+    "prefix": "uprotocol",
     "body": "protocol ${1:MyType} {\n    $0\n}",
     "description": "Protocol"
   },
-  "log_var": {
-    "prefix": "log_var",
+  "ulog_var": {
+    "prefix": "ulog_var",
     "body": "NSLog(\"$1 = \\(${1:result})\")",
     "description": "Log variable"
   },
-  "print_var": {
-    "prefix": "print_var",
+  "uprint_var": {
+    "prefix": "uprint_var",
     "body": "print(\"$1 = \\(${1:result})\")",
     "description": "Print variable"
   },
-  "class": {
-    "prefix": "class",
+  "uclass": {
+    "prefix": "uclass",
     "body": "class ${1:MyObject} {\n    $0\n}",
     "description": "Class"
   },
-  "expectation": {
-    "prefix": "expectation",
+  "uexpectation": {
+    "prefix": "uexpectation",
     "body": "let ${1:expect} = expectation(description: \"${2:Expectation}\")\n$1.fulfill()\nwaitForExpectations(timeout: ${3:1.0}, handler: nil)",
     "description": "Expectation"
   },
-  "do_catch": {
-    "prefix": "do_catch",
+  "udo_catch": {
+    "prefix": "udo_catch",
     "body": "do {\n    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}\n} catch {\n    ${2:throw error}\n}",
     "description": "`do-catch` statement"
   }

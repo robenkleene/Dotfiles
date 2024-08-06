@@ -1,111 +1,111 @@
 {
-  "lorem": {
-    "prefix": "lorem",
+  "ulorem": {
+    "prefix": "ulorem",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "description": "Lorem ipsum"
   },
-  "cmd": {
-    "prefix": "cmd",
+  "ucmd": {
+    "prefix": "ucmd",
     "body": "⌘",
     "description": "Command key symbol"
   },
-  "ctrl": {
-    "prefix": "ctrl",
+  "uctrl": {
+    "prefix": "uctrl",
     "body": "⌃",
     "description": "Control key symbol"
   },
-  "opt": {
-    "prefix": "opt",
+  "uopt": {
+    "prefix": "uopt",
     "body": "⌥",
     "description": "Option key symbol"
   },
-  "sft": {
-    "prefix": "sft",
+  "usft": {
+    "prefix": "usft",
     "body": "⇧",
     "description": "Shift key symbol"
   },
-  "esc": {
-    "prefix": "esc",
+  "uesc": {
+    "prefix": "uesc",
     "body": "⎋",
     "description": "Escape key symbol"
   },
-  "aarr": {
-    "prefix": "aarr",
+  "uaarr": {
+    "prefix": "uaarr",
     "body": "↓↑←→",
     "description": "Arrow key symbols"
   },
-  "uarr": {
-    "prefix": "uarr",
+  "uuarr": {
+    "prefix": "uuarr",
     "body": "↑",
     "description": "Up arrow symbol"
   },
-  "larr": {
-    "prefix": "larr",
+  "ularr": {
+    "prefix": "ularr",
     "body": "←",
     "description": "Left arrow symbol"
   },
-  "rarr": {
-    "prefix": "rarr",
+  "urarr": {
+    "prefix": "urarr",
     "body": "→",
     "description": "Right arrow symbol"
   },
-  "darr": {
-    "prefix": "darr",
+  "udarr": {
+    "prefix": "udarr",
     "body": "↓",
     "description": "Down arrow symbol"
   },
-  "ret": {
-    "prefix": "ret",
+  "uret": {
+    "prefix": "uret",
     "body": "↩",
     "description": "Return symbol"
   },
-  "spc": {
-    "prefix": "spc",
+  "uspc": {
+    "prefix": "uspc",
     "body": "␣",
     "description": "Space symbol"
   },
-  "bspc": {
-    "prefix": "bspc",
+  "ubspc": {
+    "prefix": "ubspc",
     "body": "⌫",
     "description": "Backspace symbol"
   },
-  "del": {
-    "prefix": "del",
+  "udel": {
+    "prefix": "udel",
     "body": "⌦",
     "description": "Delete symbol"
   },
-  "kso": {
-    "prefix": "kso",
+  "ukso": {
+    "prefix": "ukso",
     "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
     "description": "Other keyboard shortcut symbols"
   },
-  "kss": {
-    "prefix": "kss",
+  "ukss": {
+    "prefix": "ukss",
     "body": "⌃⌥⇧⌘",
     "description": "Keyboard shortcut symbols"
   },
-  "flat": {
-    "prefix": "flat",
+  "uflat": {
+    "prefix": "uflat",
     "body": "♭",
     "description": "Flat symbol"
   },
-  "degree": {
-    "prefix": "degree",
+  "udegree": {
+    "prefix": "udegree",
     "body": "°",
     "description": "Degree symbol"
   },
-  "sharp": {
-    "prefix": "sharp",
+  "usharp": {
+    "prefix": "usharp",
     "body": "♯",
     "description": "Sharp symbol"
   },
-  "tab": {
-    "prefix": "tab",
+  "utab": {
+    "prefix": "utab",
     "body": "⇥",
     "description": "Tab symbol"
   },
-  "btab": {
-    "prefix": "btab",
+  "ubtab": {
+    "prefix": "ubtab",
     "body": "⇤",
     "description": "Backtab symbol"
   }

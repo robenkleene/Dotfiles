@@ -1,6 +1,6 @@
 {
-  "template": {
-    "prefix": "template",
+  "utemplate": {
+    "prefix": "utemplate",
     "body": "#!/usr/bin/env zsh\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   }

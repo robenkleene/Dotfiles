@@ -1,29 +1,29 @@
 {
-  "template": {
+  "utemplate": {
     "scope": "javascript,typescript",
-    "prefix": "template",
+    "prefix": "utemplate",
     "body": "#!/usr/bin/env node\n\n$0",
     "description": "template"
   },
-  "log_var": {
+  "ulog_var": {
     "scope": "javascript,typescript",
-    "prefix": "log_var",
+    "prefix": "ulog_var",
     "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Log variable"
   },
-  "for": {
+  "ufor": {
     "scope": "javascript,typescript",
-    "prefix": "for",
+    "prefix": "ufor",
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
-  "max_post_var": {
-    "prefix": "max_post_var",
+  "umax_post_var": {
+    "prefix": "umax_post_var",
     "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
     "description": "Max post variable"
   },
-  "max_template": {
-    "prefix": "max_template",
+  "umax_template": {
+    "prefix": "umax_template",
     "body": [
       "// Re-compile the file automatically when it changes",
       "autowatch = 1;",
