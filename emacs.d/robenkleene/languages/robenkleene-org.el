@@ -62,6 +62,9 @@
         '((nil :maxlevel . 1)
 	  (org-agenda-files :maxlevel . 1)))
 
+  ;; Don't bookmark the current file with `org-capture'
+  (setq org-capture-bookmark nil)
+
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist
