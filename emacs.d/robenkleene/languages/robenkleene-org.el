@@ -48,10 +48,15 @@
   ;; `C-c [' to add the current org file to the list, this will append it to
   ;; `org-agenda-files'
   ;; Default is `~/org`
-  (setq org-directory (concat user-emacs-directory "org"))
-  (setq org-agenda-files (concat org-directory "/agenda.org"))
-  (if (not (file-exists-p org-agenda-files))
-      (make-empty-file org-agenda-files))
+  ;; (setq org-directory (concat user-emacs-directory "org"))
+  ;; (setq org-agenda-files (concat org-directory "/agenda.org"))
+  ;; (if (not (file-exists-p org-agenda-files))
+  ;;     (make-empty-file org-agenda-files))
+
+  ;; Set refile targets to all `org-agenda-files'
+  (setq org-refile-targets
+        '((nil :maxlevel . 1)
+	  (org-agenda-files :maxlevel . 1)))
 
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
