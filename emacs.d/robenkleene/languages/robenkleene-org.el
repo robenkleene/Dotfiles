@@ -48,14 +48,10 @@
   ;; The `t' option doesn't do enough to be worth it
   ;; (setq org-support-shift-select t)
   (setq org-support-shift-select 'always)
-  ;; Setup to allow easily dynamically setting up an `org-agenda' file list Use
-  ;; `C-c [' to add the current org file to the list, this will append it to
-  ;; `org-agenda-files'
   ;; Default is `~/org`
-  ;; (setq org-directory (concat user-emacs-directory "org"))
-  ;; (setq org-agenda-files (concat org-directory "/agenda.org"))
-  ;; (if (not (file-exists-p org-agenda-files))
-  ;;     (make-empty-file org-agenda-files))
+  (setq org-directory "~/Documents/Text/Org/")
+  (setq org-default-notes-file (concat org-directory "Inbox.org"))
+  (setq org-agenda-files (list org-directory))
 
   ;; Set refile targets to all `org-agenda-files'
   (setq org-refile-targets
