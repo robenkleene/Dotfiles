@@ -41,6 +41,7 @@
 ;; Modes
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)
+(require 'robenkleene-outline)
 (require 'robenkleene-shell)
 (require 'robenkleene-vc)
 

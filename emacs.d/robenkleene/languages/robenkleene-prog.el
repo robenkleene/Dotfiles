@@ -12,6 +12,8 @@
 (with-eval-after-load 'prog-mode
   ;; Allow following grep line matches
   (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+  (define-key prog-mode-map (kbd "M-<down>") 'rk/move-line-down)
+  (define-key prog-mode-map (kbd "M-<up>") 'rk/move-line-up)
   )
 
 (add-hook 'prog-mode-hook (lambda ()
