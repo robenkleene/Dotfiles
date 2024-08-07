@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(defalias 'upull 'rk/egit-update)
+(defalias 'u-pull 'rk/egit-update)
 (defalias 'sh 'buffer-shell-command)
 
 (defun rk/egit-update (&optional arg)
