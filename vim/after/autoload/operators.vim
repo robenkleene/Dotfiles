@@ -104,7 +104,7 @@ function operators#YankCodeBlock(context = {}, type = '') abort
           \ extend_block: '',
           \ virtualedit: [&l:virtualedit, &g:virtualedit],
           \ }
-    let &operatorfunc = function('operators#YankGrep', [context])
+    let &operatorfunc = function('operators#YankCodeBlock', [context])
     set virtualedit=block
     return 'g@'
   endif
@@ -160,12 +160,7 @@ function operators#YankCodeBlock(context = {}, type = '') abort
     let @@ = l:result
     new
     setlocal buftype=nofile bufhidden=hide noswapfile
-    if len(l:lines) > 1
-      exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
-    else
-      " Avoid yanking the line break for one line
-      exe 'silent keepjumps normal! VPgg"'.l:register.'yg_'
-    endif
+    exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
     bd!
 
   finally
