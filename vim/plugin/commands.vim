@@ -18,3 +18,4 @@ command! -bar Tput put =system('~/.bin/safepaste')
 command! -nargs=1 -bar -complete=customlist,commands#completeMan9 Man9 execute 'Man 9' <f-args>
 
 command! -nargs=1 Ggrep call commands#Ggrep(<q-args>)
+command! -nargs=1 Gg call commands#Ggrep(<q-args>)
