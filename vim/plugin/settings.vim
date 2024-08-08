@@ -150,7 +150,13 @@ set linebreak
 " Launch without wrapped lines
 set nowrap
 " Don't timeout leader key
-set notimeout
+"set notimeout
+" Don't turn off timeout instead set it a bit longer, this way if part of a
+" command is accidently typed, e.g., `"*` to specify a register, and then you
+" want to start over, you can just wait to start over. Without this, there
+" doesn't seem to be a way to start over without side effects (e.g., `esc`
+" will disable a visual mode selection).
+"set timeoutlen 3000
 " Don't prompt when trying to navigate to another buffer when current buffer
 " is modified
 " This causes the `%` register to not be set when opening a directory, e.g.,
