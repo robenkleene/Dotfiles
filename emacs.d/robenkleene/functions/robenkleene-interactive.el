@@ -11,7 +11,7 @@
     )
   )
 
-(defun yank-line-grep ()
+(defun kill-line-grep ()
   "grep for current line."
   (interactive)
   (kill-new (get-line-grep)))
