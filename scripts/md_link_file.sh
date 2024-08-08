@@ -2,10 +2,14 @@
 
 set -euo pipefail
 
-while getopts ":t:h" option; do
+org="false";
+while getopts ":t:oh" option; do
   case "$option" in
     t)
       title="$OPTARG"
+      ;;
+    o)
+      org="true"
       ;;
     h)
       echo "Usage: command [-h] [-t <title>]"
@@ -52,7 +56,14 @@ make_file() {
   fi
 }
 
-contents="#+title: $title"
+if [[ "$org" == "true" ]]; then
+  contents="#+title: $title"
+  ext="org"
+else
+  contents="# $title"
+  ext="md"
+fi
+
 slug=$(echo "$title" | ~/.bin/f_slug)
-result=$(make_file "$slug.org" "$contents")
+result=$(make_file "$slug.$ext" "$contents")
 echo -n "[$title]($result)"
