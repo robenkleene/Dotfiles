@@ -154,7 +154,7 @@ function operators#YankCodeBlock(context = {}, type = '') abort
     let l:result = '`'.l:file_path.':'.l:idx.'`:'."\n\n"
     let l:result .= '``` '.&filetype."\n"
     let l:result .= l:contents
-    let l:result .= '```'
+    let l:result .= '```\n'
 
     " Use termporary buffer to force `YankTextPost` to trigger
     let @@ = l:result
