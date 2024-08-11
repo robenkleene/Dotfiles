@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_exit_status
-# name: Exit status
-# --
-\$?

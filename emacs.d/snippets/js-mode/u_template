@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_template
-# name: template
-# --
-#!/usr/bin/env node
-
-$0

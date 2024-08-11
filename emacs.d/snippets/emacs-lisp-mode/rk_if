@@ -1,0 +1,6 @@
+# key: rk_if
+# name: rk_if
+# --
+if ${1:t}
+    ${2:(message "true")}
+  ${3:(message "false")}

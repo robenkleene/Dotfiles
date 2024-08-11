@@ -1,0 +1,9 @@
+# key: rk_if_universal_arg
+# name: rk_if_universal_arg
+# --
+(let ((current-prefix-arg nil))
+  (if (equal arg nil)
+      (${1:message "No universal arg"})
+    (${2:message "Universal arg"})
+    )
+  )

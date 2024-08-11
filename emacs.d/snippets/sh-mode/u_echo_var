@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_echo_var
-# name: Echo variable
-# --
-echo "$1 = \$${1:result}"

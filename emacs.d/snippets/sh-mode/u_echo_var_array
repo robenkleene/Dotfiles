@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_echo_var_array
-# name: Echo array variable
-# --
-echo "$1 = \${${1:args}[@]}"

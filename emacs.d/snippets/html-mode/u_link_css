@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_link_css
-# name: Link CSS
-# --
-<link rel="stylesheet" type="text/css" href="${0:css/style.css}" />

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_max_post_var
-# name: Max post variable
-# --
-post("$1 = " + ${1:result} + "\n");
