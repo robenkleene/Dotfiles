@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: u_template
-# key: u_template
+# name: rk_template
+# key: rk_template
 # --
 ;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1
 ;;; Commentary:
