@@ -1,16 +1,16 @@
 {
-  "u_processing_template_3d": {
-    "prefix": "u_processing_template_3d",
+  "rk_processing_template_3d": {
+    "prefix": "rk_processing_template_3d",
     "body": "// Life Cycle\n\nvoid setup() {\n  size(400, 400, P3D);\n  noLoop();\n}\n\nvoid draw() {\n  camera(800, -200, 0, 0, -200, 0, 0, 1, 0);\n  background(200);\n  drawGrid(800, 40);\n  drawAxes(400);\n}\n\n// Custom\n\nvoid drawAxes(float length) {\n  stroke(255, 0, 0);\n  line(0, 0, 0, length, 0, 0);\n  stroke(0, 255, 0);\n  line(0, 0, 0, 0, -length, 0);\n  stroke(0, 0, 255);\n  line(0, 0, 0, 0, 0, length);\n}\n\nvoid drawGrid(float size, float step) {\n  stroke(150);\n  strokeWeight(1);\n  for (float z = -size/2; z <= size/2; z += step) {\n    line(-size/2, 0, z, size/2, 0, z);\n  }\n  for (float x = -size/2; x <= size/2; x += step) {\n    line(x, 0, -size/2, x, 0, size/2);\n  }\n}",
     "description": "Processing 3D template"
   },
-  "u_processing_print_var": {
-    "prefix": "u_processing_print_var",
+  "rk_processing_print_var": {
+    "prefix": "rk_processing_print_var",
     "body": "println(\"$1 = \", ${1:result});",
     "description": "Processing print variable"
   },
-  "u_processing_print_arr": {
-    "prefix": "u_processing_print_arr",
+  "rk_processing_print_arr": {
+    "prefix": "rk_processing_print_arr",
     "body": "println(\"$1\");\nprintArray(${1:result});\nprint(\"\\n\");",
     "description": "Processing print array"
   }

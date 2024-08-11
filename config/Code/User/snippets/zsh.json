@@ -1,6 +1,6 @@
 {
-  "u_template": {
-    "prefix": "u_template",
+  "rk_template": {
+    "prefix": "rk_template",
     "body": "#!/usr/bin/env zsh\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   }

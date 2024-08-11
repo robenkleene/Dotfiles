@@ -1,171 +1,171 @@
 {
-  "u_template": {
-    "prefix": "u_template",
+  "rk_template": {
+    "prefix": "rk_template",
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Basic template"
   },
-  "u_echo_var": {
-    "prefix": "u_echo_var",
+  "rk_echo_var": {
+    "prefix": "rk_echo_var",
     "body": "echo \"$1 = \\$${1:result}\"",
     "description": "Echo variable"
   },
-  "u_echo_var_array": {
-    "prefix": "u_echo_var_array",
+  "rk_echo_var_array": {
+    "prefix": "rk_echo_var_array",
     "body": "echo \"$1 = \\${${1:args}[@]}\"",
     "description": "Echo array variable"
   },
-  "u_echo_err": {
-    "prefix": "u_echo_err",
+  "rk_echo_err": {
+    "prefix": "rk_echo_err",
     "body": "echo \"${1:Error}\" >&2",
     "description": "Echo to standard error"
   },
-  "u_parameter_expansion_remove_trailing_slash": {
-    "prefix": "u_parameter_expansion_remove_trailing_slash",
+  "rk_parameter_expansion_remove_trailing_slash": {
+    "prefix": "rk_parameter_expansion_remove_trailing_slash",
     "body": "\\${${2:1}%/}$0",
     "description": "Remove a trailing slash from a variable"
   },
-  "u_parameter_expansion_remove_extension": {
-    "prefix": "u_parameter_expansion_remove_extension",
+  "rk_parameter_expansion_remove_extension": {
+    "prefix": "rk_parameter_expansion_remove_extension",
     "body": "\\${${0:1}%.*}",
     "description": "Remove the extension from a path"
   },
-  "u_array_access": {
-    "prefix": "u_array_access",
+  "rk_array_access": {
+    "prefix": "rk_array_access",
     "body": "\\${${1:args}[@]}$0",
     "description": "Access an array element"
   },
-  "u_function": {
-    "prefix": "u_function",
+  "rk_function": {
+    "prefix": "rk_function",
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "Function"
   },
-  "u_if": {
-    "prefix": "u_if",
+  "rk_if": {
+    "prefix": "rk_if",
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If statement"
   },
-  "u_if_uname": {
-    "prefix": "u_ifuname",
+  "rk_if_uname": {
+    "prefix": "rk_ifuname",
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
-  "u_test_dir": {
-    "prefix": "u_test_dir",
+  "rk_test_dir": {
+    "prefix": "rk_test_dir",
     "body": "-d \"${1:\\$1}\"",
     "description": "True if directory"
   },
-  "u_test_bool": {
-    "prefix": "u_test_bool",
+  "rk_test_bool": {
+    "prefix": "rk_test_bool",
     "body": "\"$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
-  "u_test_file": {
-    "prefix": "u_test_file",
+  "rk_test_file": {
+    "prefix": "rk_test_file",
     "body": "-f \"${1:\\$1}\"",
     "description": "True if regular file"
   },
-  "u_test_exists": {
-    "prefix": "u_test_exists",
+  "rk_test_exists": {
+    "prefix": "rk_test_exists",
     "body": "-e \"${1:\\$1}\"",
     "description": "True if file exists"
   },
-  "u_test_link": {
-    "prefix": "u_test_link",
+  "rk_test_link": {
+    "prefix": "rk_test_link",
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "u_test_eq": {
-    "prefix": "u_test_eq",
+  "rk_test_eq": {
+    "prefix": "rk_test_eq",
     "body": "${1:\\$?} -eq ${0:0}",
     "description": "True if equal"
   },
-  "u_test_gt": {
-    "prefix": "u_test_gt",
+  "rk_test_gt": {
+    "prefix": "rk_test_gt",
     "body": "${1:\\$?} -gt ${0:0}",
     "description": "True if greater than"
   },
-  "u_test_lt": {
-    "prefix": "u_test_lt",
+  "rk_test_lt": {
+    "prefix": "rk_test_lt",
     "body": "${1:\\$?} -lt ${0:0}",
     "description": "True if less than"
   },
-  "u_test_empty": {
-    "prefix": "u_test_empty",
+  "rk_test_empty": {
+    "prefix": "rk_test_empty",
     "body": "-z \"${${1:1}:-}\"",
     "description": "True if empty variable"
   },
-  "u_test_not_empty": {
-    "prefix": "u_test_not_empty",
+  "rk_test_not_empty": {
+    "prefix": "rk_test_not_empty",
     "body": "-n \"${${1:1}:-}\"",
     "description": "True if not empty variable"
   },
-  "u_test_args": {
-    "prefix": "u_test_args",
+  "rk_test_args": {
+    "prefix": "rk_test_args",
     "body": "$# -eq 0",
     "description": "True if no args"
   },
-  "u_test_string": {
-    "prefix": "u_test_string",
+  "rk_test_string": {
+    "prefix": "rk_test_string",
     "body": "\"$${1:1}\" = \"${2:string}\"",
     "description": "True if variable matches string"
   },
-  "u_test_executable": {
-    "prefix": "u_test_executable",
+  "rk_test_executable": {
+    "prefix": "rk_test_executable",
     "body": "-x \"$(command -v ${1:ls})\"",
     "description": "True if command is executable"
   },
-  "u_test_uname": {
-    "prefix": "u_testuname",
+  "rk_test_uname": {
+    "prefix": "rk_testuname",
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
-  "u_1_while": {
-    "prefix": "u_1_while",
+  "rk_1_while": {
+    "prefix": "rk_1_while",
     "body": "while read i; do { ${0:echo $i} } done",
     "description": "While loop one-liner"
   },
-  "u_while": {
-    "prefix": "u_while",
+  "rk_while": {
+    "prefix": "rk_while",
     "body": "while read i; do\n  ${0:echo $i}\ndone",
     "description": "While loop"
   },
-  "u_for": {
-    "prefix": "u_for",
+  "rk_for": {
+    "prefix": "rk_for",
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
     "description": "For loop"
   },
-  "u_for_dir": {
-    "prefix": "u_for_dir",
+  "rk_for_dir": {
+    "prefix": "rk_for_dir",
     "body": "for dir in */; do\n  echo $dir;\ndone",
     "description": "For loop directories"
   },
-  "u_1_for": {
-    "prefix": "u_1_for",
+  "rk_1_for": {
+    "prefix": "rk_1_for",
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
     "description": "For loop one-liner"
   },
-  "u_1_for_rename": {
-    "prefix": "u_1_for_rename",
+  "rk_1_for_rename": {
+    "prefix": "rk_1_for_rename",
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "Rename files in current directory"
   },
-  "u_exit_status": {
-    "prefix": "u_exit_status",
+  "rk_exit_status": {
+    "prefix": "rk_exit_status",
     "body": "\\$?",
     "description": "Exit status"
   },
-  "u_ifs": {
-    "prefix": "u_ifs",
+  "rk_ifs": {
+    "prefix": "rk_ifs",
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
-  "u_cd_script_dir": {
-    "prefix": "u_cd_script_dir",
+  "rk_cd_script_dir": {
+    "prefix": "rk_cd_script_dir",
     "body": "cd \\$(dirname \"\\$0\" || exit 1)",
     "description": "Script directory"
   },
-  "u_getopts": {
-    "prefix": "u_getopts",
+  "rk_getopts": {
+    "prefix": "rk_getopts",
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "`getopts`"
   }

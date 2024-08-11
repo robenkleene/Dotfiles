@@ -1,31 +1,31 @@
 {
-  "u_template": {
-    "prefix": "u_template",
+  "rk_template": {
+    "prefix": "rk_template",
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
   },
-  "u_puts_var": {
-    "prefix": "u_puts_var",
+  "rk_puts_var": {
+    "prefix": "rk_puts_var",
     "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
-  "u_puts_err": {
-    "prefix": "u_puts_err",
+  "rk_puts_err": {
+    "prefix": "rk_puts_err",
     "body": "STDERR.puts \"$1{:Error}\"",
     "description": "`puts` to standard error"
   },
-  "u_for": {
-    "prefix": "u_for",
+  "rk_for": {
+    "prefix": "rk_for",
     "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
     "description": "For loop"
   },
-  "u_forin": {
-    "prefix": "u_forin",
+  "rk_forin": {
+    "prefix": "rk_forin",
     "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
     "description": "For in loop"
   },
-  "u_each": {
-    "prefix": "u_each",
+  "rk_each": {
+    "prefix": "rk_each",
     "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
     "description": "Each loop"
   }

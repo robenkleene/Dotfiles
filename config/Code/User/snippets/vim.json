@@ -1,31 +1,31 @@
 {
-  "u_echom_var": {
-    "prefix": "u_echom_var",
+  "rk_echom_var": {
+    "prefix": "rk_echom_var",
     "body": "echom \"$1 = \".${1:result}",
     "description": "`echom` variable"
   },
-  "u_function": {
-    "prefix": "u_function",
+  "rk_function": {
+    "prefix": "rk_function",
     "body": "function! s:${1:Name}() abort\n  ${2:\" Statements}\nendfunction",
     "description": "Function"
   },
-  "u_augroup": {
-    "prefix": "u_augroup",
+  "rk_augroup": {
+    "prefix": "rk_augroup",
     "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END",
     "description": "`augroup`"
   },
-  "u_set_makeprg_xcodebuild_test": {
-    "prefix": "u_set_makeprg_xcodebuild_test",
+  "rk_set_makeprg_xcodebuild_test": {
+    "prefix": "rk_set_makeprg_xcodebuild_test",
     "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
     "description": "Set `makeprg` for `xcodebuild test`"
   },
-  "u_set_default": {
-    "prefix": "u_set_default",
+  "rk_set_default": {
+    "prefix": "rk_set_default",
     "body": "set ${1:shell}&",
     "description": "Set to default"
   },
-  "u_if": {
-    "prefix": "u_if",
+  "rk_if": {
+    "prefix": "rk_if",
     "body": "if ${1:has('gui_running')}\n  ${2:finish}\nendif",
     "description": "If statement"
   }

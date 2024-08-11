@@ -1,26 +1,26 @@
 {
-  "u_template": {
-    "prefix": "u_template",
+  "rk_template": {
+    "prefix": "rk_template",
     "body": "#!/usr/bin/env python3\n\n$0",
     "description": "Template"
   },
-  "u_blender_template": {
-    "prefix": "u_blender_template",
+  "rk_blender_template": {
+    "prefix": "rk_blender_template",
     "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
     "description": "Blender Template"
   },
-  "u_main": {
-    "prefix": "u_main",
+  "rk_main": {
+    "prefix": "rk_main",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t$0",
     "description": "`main` Function"
   },
-  "u_print_var": {
-    "prefix": "u_print_var",
+  "rk_print_var": {
+    "prefix": "rk_print_var",
     "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
-  "u_print_err": {
-    "prefix": "u_print_err",
+  "rk_print_err": {
+    "prefix": "rk_print_err",
     "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
   }
