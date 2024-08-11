@@ -13,7 +13,7 @@
   ;; Hide leading asterisks
   ;; This feels a bit fragile, but it makes the document much easier to scan and
   ;; understand quickly
-  (setq org-startup-indented t)
+  ;; (setq org-startup-indented t)
 
   (with-eval-after-load "org"
     ;; Disable `org-mode' keys that conflict with basic text editing
@@ -178,31 +178,31 @@
   (setq org-agenda-span 14
         org-agenda-start-on-weekday nil
         org-agenda-start-day "-3d")
-  (setq org-agenda-start-with-log-mode t)
-  (with-eval-after-load 'org-agenda
-    (add-to-list 'org-agenda-custom-commands
-                 '("l" "Log agenda review" agenda ""
-                   (
-                    (org-agenda-log-mode t)
-                    ))
-                 )
-    )
+  ;; (setq org-agenda-start-with-log-mode t)
+  ;; (with-eval-after-load 'org-agenda
+  ;;   (add-to-list 'org-agenda-custom-commands
+  ;;                '("l" "Log agenda review" agenda ""
+  ;;                  (
+  ;;                   (org-agenda-log-mode t)
+  ;;                   ))
+  ;;                )
+  ;;   )
 
   ;; Packages
 
-  (use-package org-modern
-    :commands (global-org-modern-mode)
-    :init
-    (with-eval-after-load 'org (global-org-modern-mode))
-    :config
-    ;; The default third value in this list was a unicode character that
-    ;; wouldn't display
-    ;; This also simplifies to just use the filled triangle for the top-level
-    ;; and the empty for all other levels, the other smaller triangles used by
-    ;; default don't look as nice
-    (setq org-modern-fold-stars
-          '(("▶" . "▼") ("▷" . "▽")))
-    )
+  ;; (use-package org-modern
+  ;;   :commands (global-org-modern-mode)
+  ;;   :init
+  ;;   (with-eval-after-load 'org (global-org-modern-mode))
+  ;;   :config
+  ;;   ;; The default third value in this list was a unicode character that
+  ;;   ;; wouldn't display
+  ;;   ;; This also simplifies to just use the filled triangle for the top-level
+  ;;   ;; and the empty for all other levels, the other smaller triangles used by
+  ;;   ;; default don't look as nice
+  ;;   (setq org-modern-fold-stars
+  ;;         '(("▶" . "▼") ("▷" . "▽")))
+  ;;   )
 
   ;; Needs to always be available when killing
   (use-package org-rich-yank
