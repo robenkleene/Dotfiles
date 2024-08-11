@@ -1,0 +1,4 @@
+# key: rk_defalias
+# name: rk_defalias
+# --
+defalias '${1:g} '${2:grep}

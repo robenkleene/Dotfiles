@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: u_defadvice
-# key: u_defadvice
+# name: rk_defadvice
+# key: rk_defadvice
 # --
 defadvice ${1:function-to-wrap} (${2:after} ${3:wrapping-function-name})
   "${3:Wrapper function description}."

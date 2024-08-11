@@ -1,5 +1,5 @@
-# key: u_if
-# name: u_if
+# key: rk_if
+# name: rk_if
 # --
 if ${1:t}
     ${2:(message "true")}

@@ -1,5 +1,5 @@
-# key: u_defun
-# name: u_defun
+# key: rk_defun
+# name: rk_defun
 # --
 defun ${1:hello-world} (${2:&optional arg})
   "${3:Prints `hello world'.}"
