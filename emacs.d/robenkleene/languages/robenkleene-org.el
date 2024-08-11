@@ -56,7 +56,7 @@
   ;; Set refile targets to all `org-agenda-files'
   (setq org-refile-targets
         '((nil :maxlevel . 1)
-	  (org-agenda-files :maxlevel . 1)))
+          (org-agenda-files :maxlevel . 1)))
 
   ;; Don't bookmark the current file with `org-capture'
   (setq org-capture-bookmark nil)
@@ -216,6 +216,7 @@
       (backward-char)
       )
     )
+
   )
 
 (provide 'robenkleene-org)
