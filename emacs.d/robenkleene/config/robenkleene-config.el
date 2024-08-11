@@ -3,8 +3,10 @@
 ;;; Code:
 
 ;; Use `bash' for external scripts
-(setq shell-file-name "sh")
-(setq shell-command-switch "-c")
+;; That was causing the `The kill is not a (set of) trees' when archiving in
+;; `org-mode' with the `org-archive-subtree' command
+;; (setq shell-file-name "sh")
+;; (setq shell-command-switch "-c")
 
 ;; Use `zsh'
 (setq explicit-shell-file-name "/usr/local/bin/zsh")
