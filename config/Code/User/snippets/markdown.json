@@ -1,6 +1,6 @@
 {
-  "u_video": {
-    "prefix": "u_video",
+  "rk_video": {
+    "prefix": "rk_video",
     "body": "<video controls>\n  <source src=\"${1:path/to/video}\" type=\"video/mp4\">\n</video>",
     "description": "A video with controls"
   }

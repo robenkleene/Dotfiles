@@ -1,61 +1,61 @@
 {
-  "u_xcode_template": {
-    "prefix": "u_xcode_template",
+  "rk_xcode_template": {
+    "prefix": "rk_xcode_template",
     "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n$0",
     "description": "Xcode template"
   },
-  "u_template": {
-    "prefix": "u_template",
+  "rk_template": {
+    "prefix": "rk_template",
     "body": "#import <Foundation/Foundation.h>\n\n@interface SampleClass : NSObject\n- (void)sampleMethod;\n@end\n\n@implementation SampleClass\n- (void)sampleMethod {\n    NSLog(@\"Hello, World! \\n\");\n}\n@end\n\nint main() {\n    SampleClass *sampleClass = [[SampleClass alloc] init];\n    [sampleClass sampleMethod];\n    return 0;\n}\n",
     "description": "Objective-C template"
   },
-  "u_delegate": {
-    "prefix": "u_delegate",
+  "rk_delegate": {
+    "prefix": "rk_delegate",
     "body": "NS_ASSUME_NONNULL_BEGIN\n@protocol ${1:MyClass}Delegate <NSObject>\n- (void)handleEventFor$1:($1 *)${2:myObject};\n- (${3:id})$2:($1 *)$2 ${4:valueForKey}:(${5:NSString *})${6:key};\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Delegate"
   },
-  "u_protocol": {
-    "prefix": "u_protocol",
+  "rk_protocol": {
+    "prefix": "rk_protocol",
     "body": "@protocol ${1:MyProtocol} <NSObject>\n$0\n@end",
     "description": "Protocol"
   },
-  "u_implementation": {
-    "prefix": "u_implementation",
+  "rk_implementation": {
+    "prefix": "rk_implementation",
     "body": "@implementation ${1:MyClass}\n$0\n@end",
     "description": "Implementation"
   },
-  "u_interface": {
-    "prefix": "u_interface",
+  "rk_interface": {
+    "prefix": "rk_interface",
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$0\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Interface"
   },
-  "u_extension": {
-    "prefix": "u_extension",
+  "rk_extension": {
+    "prefix": "rk_extension",
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} (${2:MyCategory})\n$0\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Class Extension"
   },
-  "u_property": {
-    "prefix": "u_property",
+  "rk_property": {
+    "prefix": "rk_property",
     "body": "@property (nonatomic, strong) ${1:NSString} *${2:identifier};",
     "description": "Property"
   },
-  "u_propertyd": {
-    "prefix": "u_property-delegate",
+  "rk_propertyd": {
+    "prefix": "rk_property-delegate",
     "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;",
     "description": "Delegate property"
   },
-  "u_nonnull": {
-    "prefix": "u_nonnull",
+  "rk_nonnull": {
+    "prefix": "rk_nonnull",
     "body": "NS_ASSUME_NONNULL_BEGIN\n${VISUAL}\nNS_ASSUME_NONNULL_END",
     "description": "Assume nonnull block"
   },
-  "u_init": {
-    "prefix": "u_init",
+  "rk_init": {
+    "prefix": "rk_init",
     "body": "- (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\\l$0/}\n{\n    self = [super init];\n    if (self) {\n\t\t_${1/.*/\\l$0/} = ${1/.*/\\l$0/};\n    }\n    return self;\n}",
     "description": "Initialization method"
   },
-  "u_forin": {
-    "prefix": "u_forin",
+  "rk_forin": {
+    "prefix": "rk_forin",
     "body": "for (${1:id} ${2:object} in ${3:objects}) {\n    $0\n}",
     "description": "Fast enumeration"
   }

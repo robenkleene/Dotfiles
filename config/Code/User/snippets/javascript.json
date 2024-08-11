@@ -1,29 +1,29 @@
 {
-  "u_template": {
+  "rk_template": {
     "scope": "javascript,typescript",
-    "prefix": "u_template",
+    "prefix": "rk_template",
     "body": "#!/usr/bin/env node\n\n$0",
     "description": "template"
   },
-  "u_log_var": {
+  "rk_log_var": {
     "scope": "javascript,typescript",
-    "prefix": "u_log_var",
+    "prefix": "rk_log_var",
     "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Log variable"
   },
-  "u_for": {
+  "rk_for": {
     "scope": "javascript,typescript",
-    "prefix": "u_for",
+    "prefix": "rk_for",
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
-  "u_max_post_var": {
-    "prefix": "u_max_post_var",
+  "rk_max_post_var": {
+    "prefix": "rk_max_post_var",
     "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
     "description": "Max post variable"
   },
-  "u_max_template": {
-    "prefix": "u_max_template",
+  "rk_max_template": {
+    "prefix": "rk_max_template",
     "body": [
       "// Re-compile the file automatically when it changes",
       "autowatch = 1;",
