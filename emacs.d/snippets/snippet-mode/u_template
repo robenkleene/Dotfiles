@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: u_template
-# key: u_template
-# --
-# -*- mode: snippet -*-
-# name: ${1:trigger$(buffer-name)}
-# key: $1
-# --
-$0

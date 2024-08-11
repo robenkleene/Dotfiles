@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_template
-# name: Ruby template
-# --
-#!/usr/bin/env ruby
-

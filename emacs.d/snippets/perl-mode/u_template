@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_template
-# name: Perl template
-# --
-#!/usr/bin/env perl
-
-use strict;
-use warnings;
-

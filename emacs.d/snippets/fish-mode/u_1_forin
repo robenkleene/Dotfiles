@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_1_forin
-# name: For in one-liner
-# --
-for ${1:file} in (${2:ls}); echo $$1; end

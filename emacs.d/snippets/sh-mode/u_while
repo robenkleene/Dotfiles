@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_while
-# name: While loop
-# --
-while read i; do
-  ${0:echo $i}
-done

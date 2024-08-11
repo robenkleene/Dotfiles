@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_test_string
+# name: True if variable matches string
+# --
+"$${1:1}" = "${2:string}"

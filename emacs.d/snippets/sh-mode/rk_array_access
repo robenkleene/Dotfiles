@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_array_access
+# name: Access an array element
+# --
+\${${1:args}[@]}$0

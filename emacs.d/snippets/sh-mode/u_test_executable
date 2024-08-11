@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_test_executable
-# name: True if command is executable
-# --
--x "$(command -v ${1:ls})"

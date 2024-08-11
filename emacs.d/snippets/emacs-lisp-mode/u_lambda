@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: u_lambda
-# key: u_lambda
-# --
-lambda () ${1:(message "hello")}

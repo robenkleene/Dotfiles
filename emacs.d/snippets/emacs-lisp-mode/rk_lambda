@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rk_lambda
+# key: rk_lambda
+# --
+lambda () ${1:(message "hello")}

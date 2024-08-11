@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# key: rk_xcode_template
+# name: Xcode template
+# --
+//
+//  \`!v expand("%:t")\`
+//  \`!v expand("%:h")\`
+//
+//  Created by Roben Kleene on \`date +%-m/%-d/%y\`.
+//  Copyright (c) \`date +%Y\` Roben Kleene. All rights reserved.
+//
+
+$0

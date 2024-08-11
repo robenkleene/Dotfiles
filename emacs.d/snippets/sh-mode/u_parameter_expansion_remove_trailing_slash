@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_parameter_expansion_remove_trailing_slash
-# name: Remove a trailing slash from a variable
-# --
-\${${2:1}%/}$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_test_lt
+# name: True if less than
+# --
+${1:\$?} -lt ${0:0}

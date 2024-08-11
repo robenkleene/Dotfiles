@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: u_test_link
-# name: True if symbolic link
-# --
--L "${1:\$1}"
