@@ -111,6 +111,7 @@ endfunction
 function! commands#Zcmd(cd, terms) abort
   let l:result = system('zoxide query ' . a:terms)
   if v:shell_error != 0
+      echoerr "Error: " . l:result
       return
   endif
   execute a:cd." ".l:result
