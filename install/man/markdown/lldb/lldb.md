@@ -1,16 +1,21 @@
+# Basic
+
+- `r` / `run`: Run (with parameters, e.g., `run <parameters>` passes parameters to the executable)
+- `s` / `step`: Step into
+- `n` / `next`: Step over
+- `c` / `continue`: Continue execution
 - `↩`: Repeat last command
+- `q` / `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
+- `f` / `frame select 0` / `fr s 0`: Print the current frame information (e.g., current source code line)
+
+# Setup
+
 - `lldb <path-to-program>`: Load program
 - `(lldb) file <path-to-program`: Load program
-y- `(lldb) run`: Start program
-- `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
+- `(lldb) run`: Start program
 
 # Commands
 
-- `run <parameters>`: Run passing parameters to the executable
-- `step`
-- `next`
-- `continue`
-- `frame select 0` / `fr s 0`: Print the current frame information (e.g., current source code line)
 - `source list`: Display source code for the current target process
 - `source info <file path>`: Display source line information for the current target process
 - `⌃C`: Seems to stop the process?
