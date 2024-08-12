@@ -14,13 +14,14 @@
 - `(lldb) file <path-to-program`: Load program
 - `(lldb) run`: Start program
 
-# Commands
+# Source
+
+Info about the current file.
 
 - `source list`: Display source code for the current target process
-- `source info <file path>`: Display source line information for the current target process
-- `⌃C`: Seems to stop the process?
+- `source info` / `source info <file path>`: Display source line information for the current target process (this will show the full path to the current file)
 
-## Running
+# Running
 
 - `call <function>`: Call a function
 
