@@ -28,7 +28,7 @@
 (defun rk/safe-find-file (file)
   "Only open a FILE if it exists."
   (when (file-readable-p file)
-    (find-file file)
+    (find-file file))
   )
 
 (defun rk/safe-find-file-other-window (file)
