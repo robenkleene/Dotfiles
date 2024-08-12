@@ -171,9 +171,12 @@
   (interactive
    (list (read-from-minibuffer "Z: " nil nil nil 'rk/z-history)
          ))
-  (rk/safe-find-file
-   (rk/z term)
-   )
+  (let ((file (rk/z term)))
+    (if (file-readable-p file)
+        (find-file file)
+      (message "No match found" file)
+      )
+    )
   )
 
 (defun z-other-window (term)
