@@ -6,6 +6,8 @@ nnoremap Y y$
 nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":prev<CR>" : ":bprev<CR>"
 nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
 
+nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
+
 " nvim already has custom clipboard support
 " For some reason the `!has('nvim')` check has to be before the
 " `!has('clipboard')` check otherwise this breaks clipboard integration in
