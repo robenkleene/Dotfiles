@@ -16,6 +16,7 @@ result="$(zoxide query ${line})"
 
 if [ ! -d "$result" ]; then
   # zoxide alread dumped the error to standard error
+  read -r _
   exit 1
 fi
 
