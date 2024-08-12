@@ -15,7 +15,8 @@ IFS= read -r line
 result="$(zoxide query ${line})"
 
 if [ ! -d "$result" ]; then
-  exit 0
+  # zoxide alread dumped the error to standard error
+  exit 1
 fi
 
 nnn_cd "$result" "$CTX"
