@@ -35,6 +35,11 @@ _bash_backward_kill_word() {
 }
 zle -N _bash_backward_kill_word
 
+_system_copy_line() {
+  echo -n "$BUFFER" | ~/.bin/safecopy
+}
+zle -N _system_copy_line
+
 # This should already be defined
 # typeset -A key
 # key=(
@@ -56,6 +61,7 @@ zle -N _bash_backward_kill_word
 bindkey -e "^[${key[BackSpace]}" _bash_backward_kill_word
 # This is the only thing that seems to work on macOS
 bindkey -e "^[^?" _bash_backward_kill_word
+bindkey -e "^X^X" _system_copy_line
 
 # Fix option forward / backward word, seems to work my default on macOS but
 # not Linux
