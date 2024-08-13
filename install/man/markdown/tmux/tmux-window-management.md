@@ -46,6 +46,7 @@ These can be repeated without doing the leader key (i.e., they're assigned with 
 
 - `<prefix>C-o` / `rotate-window`: Rotate windows
 - `<prefix>␣` / `next-layout`: Rotate between layouts
+- `<prefix>M-<number>`: Are mapped to layouts (`M-1` makes panes vertical and `M-2` makes them horizontal)
 
 # Special
 
