@@ -62,7 +62,6 @@
 ;; Theme
 (require 'robenkleene-ef-themes)
 (require 'robenkleene-modus)
-(require 'robenkleene-override-theme)
 
 ;; Languages
 (require 'robenkleene-csv)
