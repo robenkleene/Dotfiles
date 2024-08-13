@@ -7,37 +7,3 @@ set ignore-case = smart-case
 set main-view-date = relative-compact
 
 set mouse = true
-
-# bind stage ] :/^@@
-# bind stage [ :?^@@
-
-# Allows hitting `C` to stage while viewing a diff in staging
-bind stage C !git commit 
-
-# Colors
-# Available Colors
-# white, black, green, magenta, blue, cyan, yellow, red, default
-# And (colortest.pl)
-# color0-color255
-# UI
-# Active section
-color title-focus color249 color238 bold
-# Inactive section
-color title-blur color244 color235
-# Current Line
-color cursor white color239 bold
-# Search
-color search-result black cyan
-# Status
-color stat-unstaged color243 default
-color stat-untracked color243 default
-color stat-staged green default bold
-color header cyan default
-color section blue default bold
-# Diff
-color diff-stat blue default bold
-color diff-chunk blue default bold
-color diff-index color243 default
-color diff-header color243 default
-color "--- " color243 default
-color "+++ " color243 default
