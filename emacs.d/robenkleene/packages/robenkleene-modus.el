@@ -11,13 +11,13 @@
           (border-mode-line-inactive unspecified)
           ;; Reduce the intensity a bit
           (modus-themes-preset-overrides-faint)
-          ;; ;; Make the fringe transparent, this makes windows without line
-          ;; ;; numbers look more minimal
-          ;; (fringe unspecified)
-          ;; ;; Remove the line number background, which looks better when the
-          ;; ;; fringe isn't present (e.g., when editing a text file)
-          ;; (bg-line-number-inactive unspecified)
-          ;; (bg-line-number-active unspecified)
+          ;; Make the fringe transparent, this makes windows without line
+          ;; numbers look more minimal
+          (fringe unspecified)
+          ;; Remove the line number background, which looks better when the
+          ;; fringe isn't present (e.g., when editing a text file)
+          (bg-line-number-inactive unspecified)
+          (bg-line-number-active unspecified)
           ;; Make the current tab the same color as background
           (bg-tab-current bg-main)
           ;; Dim the highlight line, the default was making it sometimes hard to
