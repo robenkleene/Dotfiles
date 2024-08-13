@@ -52,10 +52,14 @@ vim.g.clipboard = {
 }
 
 vim.cmd([[
-set background=dark
+set background=light
 " `tokyonight` turns back on `termguicolors`
 if $TERM_PROGRAM != "Apple_Terminal"
-  autocmd VimEnter * ++nested colorscheme tokyonight-night
+  if &background == "dark"
+    autocmd VimEnter * ++nested colorscheme tokyonight-night
+  else
+    autocmd VimEnter * ++nested colorscheme tokyonight-day
+  endif
 else
   set notermguicolors
   " Need to trigger a colorscheme so overrides take affect

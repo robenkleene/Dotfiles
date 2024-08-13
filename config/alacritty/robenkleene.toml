@@ -8,10 +8,6 @@ red = "#DABDBD"
 white = "#CCCCCC"
 yellow = "#DADABD"
 
-[colors.cursor]
-cursor = "#00A000"
-text = "0xffffff"
-
 [colors.normal]
 black = "#000000"
 blue = "#3792E3"
@@ -21,7 +17,3 @@ magenta = "#C978EB"
 red = "#9D571A"
 white = "#FFFFFF"
 yellow = "#E5E64B"
-
-[colors.primary]
-background = "#211930"
-foreground = "#ffffff"

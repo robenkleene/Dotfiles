@@ -1,5 +1,15 @@
 import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
 
+[colors.primary]
+# background = "#211930"
+# foreground = "#FFFFFF"
+background = "#FFFFFF"
+foreground = "#000000"
+
+[colors.cursor]
+cursor = "#00A000"
+text = "0xffffff"
+
 [env]
 ALACRITTY = "1"
 TERM = "xterm-256color"
