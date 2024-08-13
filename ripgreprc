@@ -3,8 +3,9 @@
 --with-filename
 --line-number
 --column
+# Clear the background
+--colors=match:none
 --colors=match:fg:cyan
---colors=match:bg:238
 --colors=path:fg:cyan
---colors=line:fg:244
---colors=column:fg:244
+--colors=line:fg:08
+--colors=column:fg:08
