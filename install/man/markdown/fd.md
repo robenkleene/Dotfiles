@@ -8,13 +8,6 @@
 - `-t d` / `-t f`: Specify only directories / files
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
 
-# One Liners
-
-- `fd -F -p 'markdown/fd.md'`: Search for a file in a specific directory
-- `fd --hidden "release.yml" --exec fish -c "cd {//}; pwd; git status"`: Perform commands
-- `fd -e "md" . ./raster/`: Search a specific path without supplying a pattern (note the `.` as a pattern that matches everything)
-- `fd --type executable` / `fd -t executable`: Find all executable files
-
 # Deleting Files
 
 - `fd <term> -X rm`: Files
@@ -24,3 +17,10 @@
 
 - `fd` doesn't search full paths by default, so `rg "dir.*file"` won't find a `file` in a `dir`, but `fd -p "dir.*file"` will
 
+# Examples
+
+- `fd -F -p 'markdown/fd.md'`: Search for a file in a specific directory
+- `fd --hidden "release.yml" --exec fish -c "cd {//}; pwd; git status"`: Perform commands
+- `fd -e "md" . ./raster/`: Search a specific path without supplying a pattern (note the `.` as a pattern that matches everything)
+- `fd --type executable` / `fd -t executable`: Find all executable files
+- `fd -e md -E '*foo*' -E '*bar*'`: Find file extension exclude multiple strings
