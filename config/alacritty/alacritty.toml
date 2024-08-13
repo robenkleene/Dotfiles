@@ -7,7 +7,7 @@ background = "#FFFFFF"
 foreground = "#000000"
 
 [colors.cursor]
-cursor = "#00A000"
+cursor = "#00BB00"
 text = "0xffffff"
 
 [env]
