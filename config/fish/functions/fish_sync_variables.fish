@@ -32,7 +32,8 @@ function fish_sync_variables
     # fzf
     # - Always wrap the preview window
     # - Set a height and reverse feels more natural running from command line
-    set -Ux FZF_DEFAULT_OPTS '--preview-window=wrap --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
+    # - `--no-color` works better for both light and dark terminals
+    set -Ux FZF_DEFAULT_OPTS '--no-color --preview-window=wrap --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
     # Homebrew
     if type -q brew
         set -Ux HOMEBREW_DIR (brew --prefix)
