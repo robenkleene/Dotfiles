@@ -74,7 +74,7 @@ autocmd VimEnter *
 " colorscheme catppuccin_mocha
 " colorscheme iceberg
 " colorscheme sorbet
-set background=dark
+set background=light
 autocmd VimEnter * ++nested colorscheme iceberg
 " if v:version < 900
 "   autocmd VimEnter * ++nested colorscheme iceberg
