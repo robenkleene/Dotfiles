@@ -1,12 +1,14 @@
 nnoremap Y y$
 
+" Instead of using these custom bindings for working with the quickfix list
+" quickly, use the corresponding fuzzy finders, which allow going through the
+" list with one key stroke in a more conventional way.
 " Add `zv` to quickfix bindings to show the cursor line, because these
 " bindings don't respect the `foldopen` option
 " (This solution is from `unimpaired`)
-nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":prev<CR>" : ":bprev<CR>"
-nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
-
-nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
+"nnoremap <expr> <M-p> len(getqflist()) ? ":cprev<CR>zv" : len(argv()) > 1 ? ":prev<CR>" : ":bprev<CR>"
+"nnoremap <expr> <M-n> len(getqflist()) ? ":cnext<CR>zv" : len(argv()) > 1 ? ":next<CR>" : ":bnext<CR>"
+"nnoremap <silent> <leader>q :call bindings#ToggleQuickfixList()<CR>
 
 " nvim already has custom clipboard support
 " For some reason the `!has('nvim')` check has to be before the

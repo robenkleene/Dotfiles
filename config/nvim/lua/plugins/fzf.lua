@@ -9,6 +9,7 @@ return {
     { '<leader>f' },
     { '<leader>g' },
     { '<leader>o' },
+    { '<leader>q' },
     { '<leader>s' },
     { '<leader>t' },
   },
@@ -23,7 +24,9 @@ return {
     nnoremap <silent> <leader>f :lua require("fzf-lua").files()<cr>
     nnoremap <silent> <leader>g :lua require("fzf-lua").live_grep()<cr>
     nnoremap <silent> <leader>o :lua require("fzf-lua").oldfiles()<cr>
+    nnoremap <silent> <leader>q :lua require("fzf-lua").quickfix()<cr>
     nnoremap <silent> <leader>s :lua require("fzf-lua").lsp_document_symbols()<cr>
+    nnoremap <silent> <leader>t :lua require("fzf-lua").btags()<cr>
     nnoremap <silent> <leader>t :lua require("fzf-lua").btags()<cr>
     ]])
   end
