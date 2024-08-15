@@ -15,3 +15,4 @@
 
 - More ubiquitous
 - Works more like other programs, Fish features feel missing when writing commands in Vim's command line for example
+- Better completion support for some older CLI tools
