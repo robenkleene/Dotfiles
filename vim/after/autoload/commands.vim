@@ -111,7 +111,7 @@ endfunction
 function! commands#Zcmd(cd, terms) abort
   let l:result = system('zoxide query ' . a:terms)
   if v:shell_error == 1
-      echo "Error: No match found"
+      echo "No match found"
       return
   endif
   execute a:cd." ".l:result
