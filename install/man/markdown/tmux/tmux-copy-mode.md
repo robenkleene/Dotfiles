@@ -5,10 +5,6 @@
 - `v`: Toggle rectangle mode (so typically hit `Space` to start a selection then `v` to toggle rectangle mode)
 - Note that the default search is not incremental but uses regular expressions, and the incremental search does not use regular expressions
 
-# Commands
-
-- `tmux show-buffer`: Show the `tmux` buffer
-
 # Clipboard
 
 - `:choose-buffer` / `<prefix>=`: Paste from clipboard history
