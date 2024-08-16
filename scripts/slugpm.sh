@@ -104,6 +104,7 @@ today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
 readme_path=$(make_file "README.${ext}" "$dated_slug" "$contents")
 make_file "README.${ext}" "$dated_slug/archive" "$contents Archive" >/dev/null
+mkdir "$dated_slug/archive/projects"
 if [[ "$filename" == "true" ]]; then
   echo -n "$directory$readme_path"
 else
