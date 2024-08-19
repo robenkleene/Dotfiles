@@ -4,8 +4,8 @@ set -euo pipefail
 
 parameter=""
 if [[ "${THEME:-}" = "light" ]]; then
-  parameter=" --light"
+  parameter="--light"
 elif [[ "${THEME:-}" = "dark" ]]; then
-  parameter=" --dark"
+  parameter="--dark"
 fi
-exec delta$parameter "$@"
+exec "$HOME/.brew/bin/delta" "$parameter" "$@"
