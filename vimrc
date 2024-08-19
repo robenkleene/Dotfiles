@@ -74,8 +74,12 @@ autocmd VimEnter *
 " colorscheme catppuccin_mocha
 " colorscheme iceberg
 " colorscheme sorbet
-set background=light
-autocmd VimEnter * ++nested colorscheme iceberg
+if exists('$THEME') && $THEME == 'LIGHT'
+  set background=light
+endif
+colorscheme iceberg
+
+"VimEnter * ++nested colorscheme iceberg
 " if v:version < 900
 "   autocmd VimEnter * ++nested colorscheme iceberg
 " else

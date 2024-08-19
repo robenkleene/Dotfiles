@@ -52,7 +52,9 @@ vim.g.clipboard = {
 }
 
 vim.cmd([[
-set background=light
+if exists('$THEME') && $THEME == 'LIGHT'
+  set background=light
+endif
 " `tokyonight` turns back on `termguicolors`
 if $TERM_PROGRAM != "Apple_Terminal"
   if &background == "dark"
