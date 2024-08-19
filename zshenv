@@ -19,11 +19,11 @@ export LC_CTYPE=en_US.UTF-8
 # of `mosh` gets picked up that supports truecolor
 if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
   # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.brew/bin:~/.bin:$PATH
+  export PATH=~/.bin:~/.brew/bin:$PATH
 else
   # This method of setting the path prevents duplicate entries.
   typeset -U path
-  path=(~/.brew/bin ~/.bin $path[@])
+  path=(~/.bin ~/.brew/bin $path[@])
 fi
 
 # The `-U` option prevents duplicates when `tmux` starts `zsh` instances
