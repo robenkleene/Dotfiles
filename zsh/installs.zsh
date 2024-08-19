@@ -6,6 +6,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # Home brew should already be set, but this moves it back to the front of path
+# Don't do this because it breaks overriding Homebrew executables with scripts
+# by putting `~/.brew/bin` in fron of `~/bin`
 # PATH=~/.brew/bin:$PATH
 # Homebrew
 # This was moved from `zshenv` because the brew path (in `/usr/local/bin`) is
