@@ -9,6 +9,10 @@
 - `C-c C-s` / `C-u C-c C-s`: Insert/change / remove schedule
 - `C-c C-t`: Cycle todo state
 
+## Tips
+
+- Items can be rescheduled (e.g., with `S-<left>` / `S-<right>`) or marked as done (e.g., `C-c C-t`) from the agenda view
+
 ## Bulk Archive Todos
 
 To bulk archive `DONE` todos when viewing a file:
