@@ -31,9 +31,11 @@ endfunction
 command! OpenDiff :call <SID>OpenDiff()
 command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort
+  " `- 1` for one line for the diff indicator gutter
+  let l:destcol = col('.') - 1
   let l:grep = system('~/.bin/f_fr_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
   let l:parts = split(l:grep, ':')
   exec "edit " . fnameescape(l:parts[0])
   let l:destlnum = l:parts[1]
-  exec l:destlnum
+  call cursor(l:destlnum, l:destcol)
 endfunction
