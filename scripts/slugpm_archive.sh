@@ -13,29 +13,39 @@ if [[ $# -eq 0 ]]; then
   exit 0
 fi
 
-for project_dir in "$@"; do
+for file_path in "$@"; do
   # Remove leading and trailing slash and leading period
   # Can't remove leading dot because that will break if already in the
-  # `project_dir` so the entire path is `.`
-  # project_dir=${project_dir#\.}
-  project_dir=${project_dir%/}
+  # `file_path` so the entire path is `.`
+  # file_path=${file_path#\.}
+  file_path=${file_path%/}
 
-  if [[ ! -d "$project_dir" ]]; then
-    echo -n "$project_dir isn't a directory" >&2
-    exit 1
+  if [[ -d "$file_path/../projects" && ( -f "$file_path/README.md" ||  -f "$file_path/README.org" ) ]]; then
+    # With a parent `projects` and a `README` treat as a project
+    destination_dir="$file_path/../../archive/projects"
+
+    if [[ ! -d "$destination_dir" ]]; then
+      echo "$destination_dir does not exist" >&2
+      exit 1
+    fi
+
+    # Convert an absolute path which helps in the case where current directory
+    # is just `.`
+    src_dir=$(cd "$file_path" ; pwd)
+    mv "$src_dir" "$destination_dir"
+  else
+    if [[ -d "$file_path" ]]; then
+      # Convert an absolute path which helps in the case where current
+      # directory is just `.`
+      file_path=$(cd "$file_path" ; pwd)
+      destination_dir="$file_path/../archive/"
+    else
+      destination_dir="$(dirname $file_path)/archive/"
+    fi
+    if [[ ! -d "$destination_dir" ]]; then
+      echo "$destination_dir does not exist" >&2
+      exit 1
+    fi
+    mv "$file_path" "$destination_dir"
   fi
-
-  destination_dir="$project_dir/../../archive/projects"
-
-  if [[ ! -d "$destination_dir" ]]; then
-    echo -n "$destination_dir does not exist" >&2
-    exit 1
-  fi
-
-  # Convert o absolute path which helps in the case where current directory is
-  # just `.`
-  src_dir=$(cd "$project_dir" ; pwd)
-  mv "$src_dir" "$destination_dir"
-  # dir_name=$(basename "$src_dir")
-  # echo -n "$destination_dir/$dir_name"
 done
