@@ -52,7 +52,15 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # - `--no-color` works better for both light and dark terminals
 export FZF_DEFAULT_OPTS='--no-color --preview-window=wrap --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
 
-export THEME="light"
+if [[ "$(uname)" == "Darwin" ]] && [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
+  if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export THEME="dark"
+  else
+    export THEME="light"
+  fi
+else
+  export THEME="light"
+fi
 
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
