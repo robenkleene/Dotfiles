@@ -1,10 +1,10 @@
 import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
 
 [colors.primary]
-# background = "#211930"
-# foreground = "#FFFFFF"
-background = "#FFFFFF"
-foreground = "#000000"
+background = "#211930"
+foreground = "#FFFFFF"
+# background = "#FFFFFF"
+# foreground = "#000000"
 
 [colors.cursor]
 cursor = "#00BB00"
