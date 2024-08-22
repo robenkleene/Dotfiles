@@ -37,9 +37,15 @@
   ;;         ;; (bg-main "#1A1B25")
   ;;         ))
 
-  ;; (load-theme 'modus-vivendi-tinted)
-  ;; (load-theme 'modus-vivendi)
-  (load-theme 'modus-operandi)
+  (if (display-graphic-p)
+      (load-theme 'modus-operandi)
+    (if (string= (getenv "THEME") "dark")
+        (load-theme 'modus-vivendi)
+      ;; (load-theme 'modus-vivendi-tinted)
+      (load-theme 'modus-operandi)
+      )
+    )
+
   )
 
 (provide 'robenkleene-modus)
