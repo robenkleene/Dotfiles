@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: rk_message_var
-# key: rk_message_var
+# key: Message variable
 # --
 message "$0${1:result} = %${2:s}" $1

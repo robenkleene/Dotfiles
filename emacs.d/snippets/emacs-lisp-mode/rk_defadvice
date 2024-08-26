@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: rk_defadvice
+# name: defadvice
 # key: rk_defadvice
 # --
 defadvice ${1:function-to-wrap} (${2:after} ${3:wrapping-function-name})
