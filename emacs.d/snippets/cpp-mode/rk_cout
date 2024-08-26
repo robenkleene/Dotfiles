@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cout
+# name: Print variable with this address
+# --
+std::cout << this << " ${1:message}" << std::endl;

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cout_global
+# name: Print variable with this address
+# --
+std::cout << "${1:message}" << std::endl;

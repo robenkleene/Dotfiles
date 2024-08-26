@@ -1,5 +1,5 @@
 # key: rk_if_universal_arg
-# name: rk_if_universal_arg
+# name: If universal arg
 # --
 (let ((current-prefix-arg nil))
   (if (equal arg nil)

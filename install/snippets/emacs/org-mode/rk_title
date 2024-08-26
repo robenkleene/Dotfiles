@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: rk_title
-# key: rk_title
+# key: Title from filename
 # --
 `(concat "#+title: " (if buffer-file-name
     (shell-command-to-string
