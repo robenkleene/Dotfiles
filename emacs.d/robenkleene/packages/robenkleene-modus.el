@@ -24,7 +24,7 @@
           ;; find the cursor
           (bg-hl-line bg-inactive)
           ;; Comments always grey
-          (comment "#888888")
+          (comment fg-dim)
           ;; Disable colorful headings
           (fg-heading-1 fg-main)
           (fg-heading-2 fg-main)
