@@ -5,6 +5,8 @@
 (use-package cape
   :init
   (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-abbrev)
   (use-package yasnippet-capf
     :init
     (add-to-list 'completion-at-point-functions #'yasnippet-capf)
