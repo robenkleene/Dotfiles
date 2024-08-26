@@ -286,6 +286,14 @@
 ;; buffer
 ;; (setq enable-recursive-minibuffers t)
 
+;; Allow using tab to complete if the line is already properly indented, this
+;; makes completion feel more consistent with completion in the minibuffer
+;; It's not worth it trying to get this to work, e.g., `text-mode', and any C
+;; derivative mode won't work with this setting because they have unique tab
+;; behavior. Instead just use `M-tab' which is always bound to
+;; `completion-at-point'
+;; (setq tab-always-indent 'complete)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
