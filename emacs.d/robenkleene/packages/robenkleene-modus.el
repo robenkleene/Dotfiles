@@ -23,7 +23,8 @@
           ;; Dim the highlight line, the default was making it sometimes hard to
           ;; find the cursor
           (bg-hl-line bg-inactive)
-
+          ;; Comments always grey
+          (comment "#888888")
           ;; Disable colorful headings
           (fg-heading-1 fg-main)
           (fg-heading-2 fg-main)
@@ -40,8 +41,8 @@
   (if (display-graphic-p)
       (load-theme 'modus-operandi)
     (if (string= (getenv "THEME") "dark")
-        (load-theme 'modus-vivendi)
-      ;; (load-theme 'modus-vivendi-tinted)
+        ;; (load-theme 'modus-vivendi)
+        (load-theme 'modus-vivendi-tinted)
       (load-theme 'modus-operandi)
       )
     )
