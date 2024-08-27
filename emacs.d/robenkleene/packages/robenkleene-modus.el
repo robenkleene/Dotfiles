@@ -39,16 +39,10 @@
           (bg-main "#fbf7f0")
           ))
 
-  (if (display-graphic-p)
-      (load-theme 'modus-operandi)
-    ;; (load-theme 'modus-operandi-tinted)
-    (if (string= (getenv "THEME") "dark")
-        ;; (load-theme 'modus-vivendi)
-        (load-theme 'modus-vivendi-tinted)
-      (load-theme 'modus-operandi)
-      ;; (load-theme 'modus-operandi-tinted)
-      )
-    )
+  ;; (if (and (not (display-graphic-p)) (string= (getenv "THEME") "dark"))
+  ;;     (load-theme 'modus-vivendi-tinted)
+  ;;   (load-theme 'modus-operandi)
+  ;;   )
 
   )
 
