@@ -32,11 +32,12 @@
           (fg-heading-4 fg-main)
           ))
 
-  ;; (setq modus-vivendi-tinted-palette-overrides
-  ;;       '(
-  ;;         (bg-main "#211930")
-  ;;         ;; (bg-main "#1A1B25")
-  ;;         ))
+  ;; Use the `modus-operandi-tinted' background which makes the Emacs windows a
+  ;; little easier to identify/
+  (setq modus-operandi-palette-overrides
+        '(
+          (bg-main "#fbf7f0")
+          ))
 
   (if (display-graphic-p)
       ;; (load-theme 'modus-operandi)
