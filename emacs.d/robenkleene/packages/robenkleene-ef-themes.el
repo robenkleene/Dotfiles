@@ -4,14 +4,12 @@
 
 (use-package ef-themes
   :config
-  ;; (ef-themes-select 'ef-winter)
-  ;; (ef-themes-select 'ef-dark)
-  ;; (ef-themes-select 'ef-duo-dark)
-  ;; (ef-themes-select 'ef-night)
-  ;; (ef-themes-select 'ef-bio)
-  ;; (ef-themes-select 'ef-symbiosis)
-  ;; (ef-themes-select 'ef-elea-dark)
-  ;; (ef-themes-select 'ef-maris-dark)
+
+  (if (and (not (display-graphic-p)) (string= (getenv "THEME") "dark"))
+      (load-theme 'ef-owl)
+    (load-theme 'ef-eagle)
+    )
+
   )
 
 (provide 'robenkleene-ef-themes)
