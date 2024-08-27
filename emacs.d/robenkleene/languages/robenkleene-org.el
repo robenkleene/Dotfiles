@@ -209,12 +209,14 @@
     :demand t
     :bind (:map org-mode-map
                 ("C-M-y" . org-rich-yank))
-    :config
-    ;; `org-rich-yank' inserts a new line after the paste, delete that
-    (defadvice org-rich-yank (after rk/org-rich-yank-cleanup activate)
-      (delete-line)
-      (backward-char)
-      )
+    ;; :config
+    ;; ;; `org-rich-yank' inserts a new line after the paste, delete that
+    ;; Disable this, it's sometimes resulting in deleting a real line of content
+    ;; (defadvice org-rich-yank (after rk/org-rich-yank-cleanup activate)
+    ;;   (delete-line)
+    ;;   (backward-char)
+    ;;   )
+
     )
 
   )
