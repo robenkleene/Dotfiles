@@ -38,3 +38,7 @@ The new sibling keys will create a list item when in used in the context of a li
 # Deleting
 
 - To delete an item `C-a C-k C-k` or `C-k C-k` at the end of the previous line
+
+# Folding
+
+- `org-fold-hide-sublevels`: Collapse everything
