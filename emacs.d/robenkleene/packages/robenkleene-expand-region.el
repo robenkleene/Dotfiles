@@ -48,7 +48,7 @@
 
   (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
 
-  (defun rk/mark-org-inline-code ()
+  (defun rk/mark-org-inline-code-inner ()
     "Marks between `~'."
     (interactive)
     (search-backward "~" (line-beginning-position))
@@ -58,12 +58,22 @@
     (backward-char)
     (exchange-point-and-mark))
 
+  (defun rk/mark-org-inline-code-outer ()
+    "Marks between `~'."
+    (interactive)
+    (search-backward "~" (line-beginning-position))
+    (set-mark (point))
+    (forward-char)
+    (search-forward "~" (line-end-position))
+    (exchange-point-and-mark))
+
   (defun rk/add-org-mode-expansions ()
     (make-variable-buffer-local 'er/try-expand-list)
     (setq er/try-expand-list (append
                               er/try-expand-list
                               '(
-                                rk/mark-org-inline-code
+                                rk/mark-org-inline-code-inner
+                                rk/mark-org-inline-code-outer
                                 ))))
 
   (add-hook 'org-mode-hook 'rk/add-org-mode-expansions)
