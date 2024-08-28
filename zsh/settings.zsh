@@ -1,3 +1,6 @@
+# Don't put this in variables because it needs to be resourced in subprocesses
+fpath=( ~/.zfunc "${fpath[@]}" )
+
 # Allows `<C-s>` to be bound in Vim
 stty -ixon
 
