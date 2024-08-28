@@ -161,19 +161,19 @@
 (show-paren-mode t)
 
 ;; Load `TAGS' file automatically
-(advice-add 'xref-find-definitions
-            :before
-            #'(lambda (identifier)
-                (if (not (bound-and-true-p tags-file-name))
-                    (let ((tags-file
-                           (locate-dominating-file default-directory "TAGS")))
-                      (when tags-file
-                        (visit-tags-table tags-file)
-                        )
-                      )
-                  )
-                )
-            )
+;; (advice-add 'xref-find-definitions
+;;             :before
+;;             #'(lambda (identifier)
+;;                 (if (not (bound-and-true-p tags-file-name))
+;;                     (let ((tags-file
+;;                            (locate-dominating-file default-directory "TAGS")))
+;;                       (when tags-file
+;;                         (visit-tags-table tags-file)
+;;                         )
+;;                       )
+;;                   )
+;;                 )
+;;             )
 
 ;; Better Defaults
 (setq-default indent-tabs-mode nil)
@@ -293,6 +293,9 @@
 ;; behavior. Instead just use `M-tab' which is always bound to
 ;; `completion-at-point'
 ;; (setq tab-always-indent 'complete)
+
+;; Use a file name that doesn't conflict with Vim `tags'
+;(setq tags-file-name "etags")
 
 (provide 'robenkleene-config)
 ;; Local Variables:
