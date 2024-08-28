@@ -89,7 +89,7 @@
   (interactive
    (list (read-shell-command
           (concat
-           "Rg ("
+           "rg ("
            (substring default-directory (max 0 (- (length default-directory) 40)))
            "): "
            )
@@ -105,7 +105,11 @@
   "Create dired buffer from `fd' TERMS."
   (interactive
    (list (read-shell-command
-          "Run rg (like this): "
+          (concat
+           "fd ("
+           (substring default-directory (max 0 (- (length default-directory) 40)))
+           "): "
+           )
           "fd "
           'rk/fd-history)
          ))
