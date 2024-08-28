@@ -11,15 +11,8 @@ export LC_CTYPE=en_US.UTF-8
 # to minimize environment variables anyway
 # Note that `~/.brew/bin` *must* be set here so that the brew installed version
 # of `mosh` gets picked up that supports truecolor
-if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
-  # The other method doesn't work in Apple Terminal for some reason?
-  export PATH=~/.bin:~/.brew/bin:$PATH
-else
-  # This method of setting the path prevents duplicate entries.
-  typeset -U path
-  path=(~/.bin ~/.brew/bin $path[@])
-fi
-# The `-U` option prevents duplicates when `tmux` starts `zsh` instances
+typeset -U path
+path=(~/.bin ~/.brew/bin $path[@])
 export -U PATH
 
 # Allow custom man pages
