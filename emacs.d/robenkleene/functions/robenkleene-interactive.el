@@ -142,7 +142,13 @@
 (defun buffer-shell-command (command)
   "Create buffer from COMMAND."
   (interactive
-   (list (read-shell-command "Command: ")
+   (list (read-shell-command
+          (concat
+           "Command ("
+           (substring default-directory (max 0 (- (length default-directory) 40)))
+           "): "
+           )
+          )
          ))
   (let* ((output-buffer "*Buffer Shell Command*"))
     (if (get-buffer output-buffer)
