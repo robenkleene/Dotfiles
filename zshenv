@@ -8,6 +8,10 @@ if [[ -v ZSHENV_SOURCED ]]; then
 fi
 export ZSHENV_SOURCED=1
 
+# `~/.brew/bin` *must* be in `ZSHENV` so that the brew installed version
+# of `mosh` gets picked up that supports truecolor
+path=(~/.brew/bin $path[@])
+
 if [[ "$(uname)" = "Linux" ]]; then
   export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
   export XDG_CONIFG_HOME=${XDG_CONIFG_HOME:="$HOME/.config"}

@@ -9,8 +9,6 @@ export LC_CTYPE=en_US.UTF-8
 # If the path is set in `ZSHENV` then `/usr/bin` will be added later
 # Also, for scripts, which is when only `ZSHENV` is sourced, we probably want
 # to minimize environment variables anyway
-# Note that `~/.brew/bin` *must* be set here so that the brew installed version
-# of `mosh` gets picked up that supports truecolor
 typeset -U path
 path=(~/.bin ~/.brew/bin $path[@])
 export -U PATH
