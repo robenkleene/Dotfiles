@@ -58,7 +58,8 @@ endif
 " `tokyonight` turns back on `termguicolors`
 if $TERM_PROGRAM != "Apple_Terminal"
   if &background == "dark"
-    autocmd VimEnter * ++nested colorscheme tokyonight-night
+    "autocmd VimEnter * ++nested colorscheme tokyonight-night
+    autocmd VimEnter * ++nested colorscheme tokyonight
   else
     autocmd VimEnter * ++nested colorscheme tokyonight-day
   endif
