@@ -31,13 +31,19 @@
 
 ### Examples
 
+#### Insert Text on Each Line
+
+1. Enter rectangle selection with `C-x SPC`
+2. Move the cursor down across the column where the text should be inserted
+3. Hit `C-x r t` to enter string rectangle, enter the text to insert and hit enter
+
 #### Prefix Each Line
 
 This can be used to edit anywhere in a line, not just the beginning.
 
-1. Go to the first character of the first line and set the mark (`⌃␣`)
+1. Go to the first character of the first line and set the mark (`C-SPC`)
 2. Go to the first character of last line and toggle rectangular selection (`C-x r t`)
-3. At the `String rectangle:` prompt, enter the prefix and hit `↩`
+3. At the `String rectangle:` prompt, enter the prefix and hit enter
 
 # Movement
 
