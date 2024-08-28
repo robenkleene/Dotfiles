@@ -9,6 +9,7 @@
 # Code
 
 - `M-.`: Jump to function definition
+- `C-M-a` / `C-M-e`: Jump to beginning / end of function
 
 # Links
 
