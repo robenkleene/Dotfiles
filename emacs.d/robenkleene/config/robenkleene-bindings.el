@@ -37,6 +37,10 @@
 ;; buffer to return to the minibuffer
 (define-key rk/bindings-minor-mode-map (kbd "M-g M-c")
             'switch-to-minibuffer)
+;; The default binding for this, `C-M-.' isn't supported in terminal
+(define-key rk/bindings-minor-mode-map (kbd "M-g .")
+            'xref-find-apropos)
+
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
                                                  (interactive)
