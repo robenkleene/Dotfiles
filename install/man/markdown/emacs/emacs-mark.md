@@ -11,7 +11,7 @@
 - `C-M-]`: Mark s-expression
 - `C-x h`: Mark buffer
 - `M-h`: Mark paragraph
-- `C-M-h`: Mark `defun`
+- `C-M-h`: Mark current function
 - `C-x C-p`: Mark page
 - `M-@`: Mark word
 - `C-M-@` / `C-M-SPC`: Mark s-expression
