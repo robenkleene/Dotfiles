@@ -295,7 +295,10 @@
 ;; (setq tab-always-indent 'complete)
 
 ;; Use a file name that doesn't conflict with Vim `tags'
-;(setq tags-file-name "etags")
+;; (setq tags-file-name "etags")
+
+;; Incrase the large file threshold, this helps when opening large tags files
+(setq large-file-warning-threshold 1000000000)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
