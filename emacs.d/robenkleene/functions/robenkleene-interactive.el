@@ -88,7 +88,11 @@
   "Create grep buffer for rg from COMMAND-ARGS."
   (interactive
    (list (read-shell-command
-          "Run rg (like this): "
+          (concat
+           "Rg ("
+           (substring default-directory (max 0 (- (length default-directory) 40)))
+           "): "
+           )
           "rg "
           'rk/rg-history)
          ))
