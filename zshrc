@@ -14,18 +14,13 @@ if [[ $TERM == "dumb" ]]; then
 fi
 
 # Setup
-# Source variables first because it sets fpath
-source ~/.zsh/variables.zsh
+source ~/.zsh/settings.zsh
 source ~/.zsh/bindings.zsh
 # `installs.zsh` before `alias.zsh` so functions don't use aliases and after
 # bindings, otherwise bindings conflict with install bindings
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
 # before completions are generated
 source ~/.zsh/installs.zsh
-
-source ~/.zsh/settings.zsh
-
-# Installs
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
 
@@ -36,3 +31,7 @@ source ~/.zsh/alias.zsh
 
 # Interactive
 source ~/.zsh/ui.zsh
+
+# Variables need to be re-sourced in subshells because otherwise path settings
+# won't be pulled to the front
+source ~/.zsh/variables.zsh

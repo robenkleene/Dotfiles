@@ -1,3 +1,31 @@
+# This helps with some issues with mosh, e.g., utf-8 support and specifying
+# locale
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+# This was moved from `ZSHENV` to help `~/.brew/bin` stay ahead of `/usr/bin`
+# If the path is set in `ZSHENV` then `/usr/bin` will be added later
+# Also, for scripts, which is when only `ZSHENV` is sourced, we probably want
+# to minimize environment variables anyway
+# Note that `~/.brew/bin` *must* be set here so that the brew installed version
+# of `mosh` gets picked up that supports truecolor
+if [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
+  # The other method doesn't work in Apple Terminal for some reason?
+  export PATH=~/.bin:~/.brew/bin:$PATH
+else
+  # This method of setting the path prevents duplicate entries.
+  typeset -U path
+  path=(~/.bin ~/.brew/bin $path[@])
+fi
+# The `-U` option prevents duplicates when `tmux` starts `zsh` instances
+export -U PATH
+
+# Allow custom man pages
+export MANPATH=$MANPATH:$HOME/.man
+export -U MANPATH
+
 # Adding home to `CDPATH` make `cd <relative-path>` tab complete paths from
 # home, which is annoying when doing typical folder navigation
 # export CDPATH=~
@@ -68,5 +96,3 @@ if [[ "$(uname)" == "Linux" ]]; then
   # setting `LD_LIBRARY_PATH`
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu
 fi
-
-fpath=( ~/.zfunc "${fpath[@]}" )
