@@ -294,6 +294,9 @@
 ;; `completion-at-point'
 ;; (setq tab-always-indent 'complete)
 
+;; Use a file name that doesn't conflict with Vim `tags'
+(setq tags-file-name "etags")
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
