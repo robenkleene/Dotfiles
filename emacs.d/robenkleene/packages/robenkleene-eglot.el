@@ -23,6 +23,11 @@
   ;; Turn off automatic syntax checking
   ;; (setq eglot-send-changes-idle-time (* 60 60))
 
+  ;; Disable eglot messages
+  (defun eglot--message (format &rest args)
+    "Override to do nothing."
+    nil)
+
   ;; Languages
   (if (not (assoc '(c++-mode c-mode) eglot-server-programs))
       (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
