@@ -48,6 +48,14 @@
 
   (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
 
+  (defun rk/mark-org-link ()
+    "Marks between `[['."
+    (interactive)
+    (search-backward "\[\[" (line-beginning-position))
+    (set-mark (point))
+    (search-forward "\]\]" (line-end-position))
+    (exchange-point-and-mark))
+
   (defun rk/mark-org-inline-code-inner ()
     "Marks between `~'."
     (interactive)
@@ -74,6 +82,7 @@
                               '(
                                 rk/mark-org-inline-code-inner
                                 rk/mark-org-inline-code-outer
+                                rk/mark-org-link
                                 ))))
 
   (add-hook 'org-mode-hook 'rk/add-org-mode-expansions)
