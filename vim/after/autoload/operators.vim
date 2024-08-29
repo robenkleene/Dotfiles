@@ -151,7 +151,7 @@ function operators#YankCodeBlock(context = {}, type = '') abort
       " `fnamemodify(expand("%"), ":~:.")` tries to get the relative path
     " let l:file_path = fnamemodify(expand("%"), ":~:.")
     let l:file_path = expand('%:~')
-    let l:result = '`'.l:file_path.':'.l:idx.'`:'."\n\n"
+    let l:result = '`'.l:file_path.':'.l:idx.'`:'."\n"
     let l:result .= '``` '.&filetype."\n"
     let l:result .= l:contents
     let l:result .= "```\n"
