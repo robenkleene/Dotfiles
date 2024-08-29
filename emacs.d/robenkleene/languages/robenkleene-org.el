@@ -167,7 +167,7 @@
               )
             )
 
-  ;; Use line numbers when creating links for some modes
+  ;; Include line numbers when creating links with `org-store-link'
   (add-hook 'org-create-file-search-functions
             #'(lambda ()
                 (when (derived-mode-p 'prog-mode)
@@ -183,46 +183,6 @@
   (setq org-agenda-span 14
         org-agenda-start-on-weekday nil
         org-agenda-start-day "-3d")
-  ;; (setq org-agenda-start-with-log-mode t)
-  ;; (with-eval-after-load 'org-agenda
-  ;;   (add-to-list 'org-agenda-custom-commands
-  ;;                '("l" "Log agenda review" agenda ""
-  ;;                  (
-  ;;                   (org-agenda-log-mode t)
-  ;;                   ))
-  ;;                )
-  ;;   )
-
-  ;; Packages
-
-  ;; (use-package org-modern
-  ;;   :commands (global-org-modern-mode)
-  ;;   :init
-  ;;   (with-eval-after-load 'org (global-org-modern-mode))
-  ;;   :config
-  ;;   ;; The default third value in this list was a unicode character that
-  ;;   ;; wouldn't display
-  ;;   ;; This also simplifies to just use the filled triangle for the top-level
-  ;;   ;; and the empty for all other levels, the other smaller triangles used by
-  ;;   ;; default don't look as nice
-  ;;   (setq org-modern-fold-stars
-  ;;         '(("▶" . "▼") ("▷" . "▽")))
-  ;;   )
-
-  ;; Needs to always be available when killing
-  (use-package org-rich-yank
-    :demand t
-    :bind (:map org-mode-map
-                ("C-M-y" . org-rich-yank))
-    ;; :config
-    ;; ;; `org-rich-yank' inserts a new line after the paste, delete that
-    ;; Disable this, it's sometimes resulting in deleting a real line of content
-    ;; (defadvice org-rich-yank (after rk/org-rich-yank-cleanup activate)
-    ;;   (delete-line)
-    ;;   (backward-char)
-    ;;   )
-
-    )
 
   )
 
