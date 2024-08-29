@@ -61,6 +61,11 @@
   ;; Don't bookmark the current file with `org-capture'
   (setq org-capture-bookmark nil)
 
+  ;; Simplify the default capture template to not include the date or a bookmark
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+           "* TODO %?")))
+
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist
