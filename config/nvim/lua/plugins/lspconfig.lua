@@ -21,10 +21,11 @@ return {
         local opts = { buffer = ev.buf }
         -- Go to
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', '<C-w>d', function()
-          vim.lsp.buf.definition()
-          vim.cmd('split')
-        end, opts)
+        -- This is obviously correct but conflicts with the builtin `<C-w>d` binding to show the diagnostic float
+        -- vim.keymap.set('n', '<C-w>d', function()
+        --   vim.lsp.buf.definition()
+        --   vim.cmd('split')
+        -- end, opts)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', '<C-w>D', function()
           vim.lsp.buf.declaration()
