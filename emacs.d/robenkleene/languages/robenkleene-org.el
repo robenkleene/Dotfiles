@@ -66,6 +66,10 @@
         '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
            "* TODO %?")))
 
+  ;; Code Blocks
+  ;; Prevent any tampering with source code block indentation
+  (setq org-src-preserve-indentation t)
+  (setq org-edit-src-content-indentation 0)
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
   (add-to-list 'org-structure-template-alist
