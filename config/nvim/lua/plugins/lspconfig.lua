@@ -19,10 +19,17 @@ return {
         -- vim.lsp.inlay_hint.enable(true)
 
         local opts = { buffer = ev.buf }
-
         -- Go to
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', '<C-w>d', function()
+          vim.lsp.buf.definition()
+          vim.cmd('split')
+        end, opts)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', '<C-w>D', function()
+          vim.lsp.buf.declaration()
+          vim.cmd('split')
+        end, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
         -- These are supposed to be built in but aren't working without this
