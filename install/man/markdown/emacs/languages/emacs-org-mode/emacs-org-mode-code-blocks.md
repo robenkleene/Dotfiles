@@ -3,7 +3,7 @@
 - After `src` there's a space, enter the source code type for syntax higlighting (e.g., `src C++`)
 - `C-c '`: Edit a code block (it's best to always use this because it will indent properly and handle things like inserting a `,` before lines starting with `*`)
 
-## Executing
+# Executing
 
 - `C-c C-c`: Execute source block
 
@@ -15,6 +15,6 @@ cd ~/Dotfiles/Developer && git show
 #+end_src
 ```
 
-## Limitations
+# Limitations
 
 Lines starting with `*`, `,*`, `#+` or `,#+` need to be prefixed with a comma (otherwise they'll be interpreted as outline structure)
