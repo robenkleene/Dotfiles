@@ -1,9 +1,10 @@
-function operators#YankGrep(context = {}, type = '') abort
+function operators#YankGrep(context = {}, type = '', onlyline = 0) abort
   if a:type == ''
     let context = #{
           \ dot_command: v:false,
           \ extend_block: '',
           \ virtualedit: [&l:virtualedit, &g:virtualedit],
+          \ only_line: a:onlyline,
           \ }
     let &operatorfunc = function('operators#YankGrep', [context])
     set virtualedit=block
@@ -53,25 +54,24 @@ function operators#YankGrep(context = {}, type = '') abort
     " let l:file_path = fnamemodify(expand("%"), ":~:.")
     let l:file_path = expand('%:~')
     let l:lines = split(l:contents, '\n')
-    if len(l:lines) > 1
-      for l:line in l:lines
-        let l:result .= l:file_path.':'.l:idx.':'.l:line."\n"
-        let l:idx += 1
-      endfor
-    else
-      let l:result .= l:file_path.':'.l:idx
+    if a:context.only_line
+      let l:col = col('.')
+      let l:result .= l:file_path.':'.l:idx.':'.l:col
       echom l:result
+    else
+      let l:result .= l:file_path.':'.l:idx.":1:\n"
+      let l:result .= l:contents
     endif
 
     " Use termporary buffer to force `YankTextPost` to trigger
     let @@ = l:result
     new
     setlocal buftype=nofile bufhidden=hide noswapfile
-    if len(l:lines) > 1
-      exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
-    else
+    if a:context.only_line
       " Avoid yanking the line break for one line
       exe 'silent keepjumps normal! VPgg"'.l:register.'yg_'
+    else
+      exe 'silent keepjumps normal! VPgg"'.l:register.'yG'
     endif
     bd!
 
