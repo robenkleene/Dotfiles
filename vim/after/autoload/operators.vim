@@ -54,6 +54,8 @@ function operators#YankGrep(context = {}, type = '', onlyline = 0) abort
     " let l:file_path = fnamemodify(expand("%"), ":~:.")
     let l:file_path = expand('%:~')
     let l:lines = split(l:contents, '\n')
+    " Vim `:grep` has trouble if there's not a blank space after the `:`
+    " Use `:make` instead to process this output
     if a:context.only_line
       let l:col = col('.')
       let l:result .= l:file_path.':'.l:idx.':'.l:col
