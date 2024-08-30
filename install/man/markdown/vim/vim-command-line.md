@@ -1,7 +1,6 @@
 - `:` to enter `Command-line-mode`
 - `<C-c>` or `ESC`: Close command line and command line window
-- `<C-n>` / `<C-p>`: Next / previous comment
-- `<C-f>`: Enter command line window from command line (command history)
+- `<C-n>` / `<C-p>`: Next / previous command
 
 # Files
 
@@ -20,12 +19,11 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 - To pass `!`, `#`, `%` to a shell command, which trigger it's Vim command-line meaning, just escape it with a backslash: `\!`, `\#`, or `\%` (note that this is only necessary for `:!rg` style commands, custom commands like `:Rg` do not require these characters to be escaped)
 - To use a `|` after a shell command in Vim, e.g., to run `0r !git diff` then `cd ..` on one command line insert a `<NL>` between the two commands with `<C-v><C-j>` (see `h :bar`)
 
-# Movement
-
-- `<C-b>` / `<C-e>`: Go to beginning/end of line
-
 # Editing
 
+- `:help cmdline-editing`: Help
+- `<C-b>` / `<C-e>`: Go to beginning/end of line
+- `<C-u>`: Delete to the beginning of the line
 - `<C-r><C-f>`: Insert file under cursor
 - `<C-r><C-w>`: Insert word under cursor
 - `<C-r><C-a>`: Insert WORD under cursor
@@ -42,9 +40,9 @@ The way to print environment variables like `$VIMRUNTIME` is to start a subshell
 
 ## Opening
 
-- `q/`: Open search command line window
-- `q:`: Enter command line window (normal history)
 - `<C-f>`: Enter command line window from command line (command history)
+- `q:`: Enter command line window from normal mode
+- `q/`: Open search command line window from normal mode
 
 ## Closing
 
