@@ -21,10 +21,13 @@ function up_or_prefix_search --description 'Search back or move cursor up 1 line
             if test "$(commandline -b)" = ""
                 commandline -f history-prefix-search-backward
             else
-                # commandline -f history-prefix-search-backward
                 # Run this twice to simulate the default `up-or-search` skipping
                 # the current completion match
-                commandline -f history-prefix-search-backward history-prefix-search-backward
+                #commandline -f history-prefix-search-backward history-prefix-search-backward
+                # Don't seach backwards twice, this makes it easier to run the
+                # previous command with a prefix with `<prefix><up>` which is
+                # how much command lines work
+                commandline -f history-prefix-search-backward
             end
 
         case '*'
