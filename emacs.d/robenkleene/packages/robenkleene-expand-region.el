@@ -84,9 +84,9 @@
                               er/try-expand-list
                               '(
                                 rk/mark-markdown-inline-code-outer
-                                rk/mark-markdown-inline-code-innter
+                                rk/mark-markdown-inline-code-inter
                                 rk/mark-markdown-link-title-outer
-                                rk/mark-markdown-link-title-innter
+                                rk/mark-markdown-link-title-inter
                                 rk/mark-markdown-link-url-outer
                                 rk/mark-markdown-link-url-inner
                                 rk/mark-markdown-code-block
