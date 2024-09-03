@@ -3,6 +3,7 @@
 # Files
 
 - `o`: Find file other window
+- `w`: Copy as kill
 
 # Selection
 
