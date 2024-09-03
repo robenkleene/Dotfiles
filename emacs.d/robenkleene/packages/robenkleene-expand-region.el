@@ -5,8 +5,6 @@
 (use-package expand-region
   :bind (
          ("M-'" . er/expand-region)
-         (:map markdown-mode-map
-               ("C-M-h" . rk/mark-markdown-code-block))
          )
   :init
   (defun rk/mark-markdown-code-block ()
@@ -15,6 +13,7 @@
     (end-of-line)
     (search-backward "```")
     (next-line)
+    (beginning-of-line)
     (set-mark (point))
     (search-forward "```")
     (previous-line)

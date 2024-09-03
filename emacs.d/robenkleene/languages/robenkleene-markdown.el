@@ -57,6 +57,9 @@
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
+  (define-key markdown-mode-map (kbd "C-M-h")
+              'rk/mark-markdown-code-block)
+
   ;; The default commands treat each list item as a single paragraph. These
   ;; commands jump over entire lists This one still behaves weird in some cases,
   ;; e.g., when trying to jump over an open code block (define-key
