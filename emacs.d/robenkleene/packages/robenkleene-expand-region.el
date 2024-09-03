@@ -5,7 +5,22 @@
 (use-package expand-region
   :bind
   ("M-'" . er/expand-region)
+  (:map markdown-mode-map
+        ("C-M-h" . rk/mark-markdown-code-block))
   :init
+  (defun rk/mark-markdown-code-block ()
+    "Marks between tilde."
+    (interactive)
+    (end-of-line)
+    (search-backward "```")
+    (next-line)
+    (set-mark (point))
+    (search-forward "```")
+    (previous-line)
+    (end-of-line)
+    (exchange-point-and-mark)
+    )
+
   (defun rk/mark-markdown-link-title-outer ()
     "Marks between tilde."
     (interactive)
@@ -74,7 +89,6 @@
                                 rk/mark-markdown-link-title-innter
                                 rk/mark-markdown-link-url-outer
                                 rk/mark-markdown-link-url-inner
-
                                 ))))
 
   (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
