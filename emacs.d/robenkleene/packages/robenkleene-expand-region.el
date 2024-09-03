@@ -89,6 +89,7 @@
                                 rk/mark-markdown-link-title-innter
                                 rk/mark-markdown-link-url-outer
                                 rk/mark-markdown-link-url-inner
+                                rk/mark-markdown-code-block
                                 ))))
 
   (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
