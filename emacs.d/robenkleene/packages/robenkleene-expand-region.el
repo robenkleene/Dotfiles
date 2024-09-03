@@ -3,10 +3,11 @@
 ;;; Code:
 
 (use-package expand-region
-  :bind
-  ("M-'" . er/expand-region)
-  (:map markdown-mode-map
-        ("C-M-h" . rk/mark-markdown-code-block))
+  :bind (
+         ("M-'" . er/expand-region)
+         (:map markdown-mode-map
+               ("C-M-h" . rk/mark-markdown-code-block))
+         )
   :init
   (defun rk/mark-markdown-code-block ()
     "Marks between tilde."
