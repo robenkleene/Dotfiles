@@ -6,7 +6,16 @@
   :bind
   ("M-'" . er/expand-region)
   :init
-  (defun rk/mark-markdown-link-title ()
+  (defun rk/mark-markdown-link-title-outer ()
+    "Marks between tilde."
+    (interactive)
+    (forward-char)
+    (search-backward "[" (line-beginning-position))
+    (set-mark (point))
+    (search-forward "]" (line-end-position))
+    (exchange-point-and-mark))
+
+  (defun rk/mark-markdown-link-title-inner ()
     "Marks between tilde."
     (interactive)
     (search-backward "[" (line-beginning-position))
@@ -16,7 +25,16 @@
     (backward-char)
     (exchange-point-and-mark))
 
-  (defun rk/mark-markdown-link-url ()
+  (defun rk/mark-markdown-link-url-outer ()
+    "Marks between tilde."
+    (interactive)
+    (forward-char)
+    (search-backward "(" (line-beginning-position))
+    (set-mark (point))
+    (search-forward ")" (line-end-position))
+    (exchange-point-and-mark))
+
+  (defun rk/mark-markdown-link-url-inner ()
     "Marks between tilde."
     (interactive)
     (search-backward "(" (line-beginning-position))
@@ -26,7 +44,16 @@
     (backward-char)
     (exchange-point-and-mark))
 
-  (defun rk/mark-markdown-inline-code ()
+  (defun rk/mark-markdown-inline-code-outer ()
+    "Marks between tilde."
+    (interactive)
+    (forward-char)
+    (search-backward "`" (line-beginning-position))
+    (set-mark (point))
+    (search-forward "`" (line-end-position))
+    (exchange-point-and-mark))
+
+  (defun rk/mark-markdown-inline-code-inner ()
     "Marks between tilde."
     (interactive)
     (search-backward "`" (line-beginning-position))
@@ -41,9 +68,13 @@
     (setq er/try-expand-list (append
                               er/try-expand-list
                               '(
-                                rk/mark-markdown-inline-code
-                                rk/mark-markdown-link-title
-                                rk/mark-markdown-link-url
+                                rk/mark-markdown-inline-code-outer
+                                rk/mark-markdown-inline-code-innter
+                                rk/mark-markdown-link-title-outer
+                                rk/mark-markdown-link-title-innter
+                                rk/mark-markdown-link-url-outer
+                                rk/mark-markdown-link-url-inner
+
                                 ))))
 
   (add-hook 'markdown-mode-hook 'rk/add-markdown-mode-expansions)
@@ -69,9 +100,9 @@
   (defun rk/mark-org-inline-code-outer ()
     "Marks between `~'."
     (interactive)
+    (forward-char)
     (search-backward "~" (line-beginning-position))
     (set-mark (point))
-    (forward-char)
     (search-forward "~" (line-end-position))
     (exchange-point-and-mark))
 
