@@ -15,6 +15,10 @@ function! commands#Fd(term) abort
 endfunction
 
 function! commands#Rg(bang, term) abort
+  if exists('*getcmdwintype') && !empty(getcmdwintype())
+    echom "Not valid in command-line window"
+    return
+  endif
   let l:original_grepprg = &grepprg
   let &grepprg='rg '.a:term
   " Use `silent` to prevent the `Press ENTER` to continue message
@@ -40,6 +44,10 @@ function! commands#ArgsSh(cmd) abort
 endfunction
 
 function! commands#GrepSh(bang, cmd) abort
+  if exists('*getcmdwintype') && !empty(getcmdwintype())
+    echom "Not valid in command-line window"
+    return
+  endif
   let l:original_grepprg = &grepprg
   let &grepprg=escape(a:cmd, '|')
   execute 'grep'.(a:bang ? '!':'')
