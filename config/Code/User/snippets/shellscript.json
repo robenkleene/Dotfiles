@@ -45,7 +45,7 @@
     "description": "If statement"
   },
   "rk_if_uname": {
-    "prefix": "rk_ifuname",
+    "prefix": "rk_if_uname",
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
@@ -115,7 +115,7 @@
     "description": "True if command is executable"
   },
   "rk_test_uname": {
-    "prefix": "rk_testuname",
+    "prefix": "rk_test_uname",
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
