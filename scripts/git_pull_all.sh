@@ -33,7 +33,6 @@ else
     exit 0
   fi
 fi
-cd "$HOME/Developer/Dotfiles/scripts" && ./update.sh
 
 ~/.bin/check_repos
 

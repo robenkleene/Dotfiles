@@ -26,8 +26,11 @@ done
 ~/.bin/egit -u
 if [[ "$settings_only" != "true" ]]; then
   ~/.bin/git_pull_all -t
-  if [[ -e "~/.bin-local/git_pull" ]]; then
-    ~/.bin-local/git_pull
+  if [[ -e "~/.bin-local/local_pull" ]]; then
+    ~/.bin-local/local_pull
   fi
 fi
 ~/Developer/Dotfiles/install/update.sh
+if [[ -e "~/.bin-local/local_update" ]]; then
+  ~/.bin-local/local_update
+fi
