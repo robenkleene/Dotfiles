@@ -27,7 +27,3 @@ source ~/.bin/nobin/_giterator.sh
 for repo in "${repos[@]}"; do
   giterate "$repo"
 done
-
-if [[ -e "$HOME/.bin-local/local_push" ]]; then
-  ~/.bin-local/local_push
-fi
