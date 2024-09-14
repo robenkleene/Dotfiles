@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-if [[ -e "$HOME/.bin-local/local_push" ]]; then
-  ~/.bin-local/local_push
-fi
+# if [[ -e "$HOME/.bin-local/local_push" ]]; then
+#   ~/.bin-local/local_push
+# fi
 
 if [[ ! -f "$HOME/.personal" ]]; then
   exit 0
