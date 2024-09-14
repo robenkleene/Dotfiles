@@ -4,9 +4,9 @@
     "git.openRepositoryInParentFolders": "always",
     "extensions.ignoreRecommendations": true,
     "editor.fontSize": 13,
-    "workbench.colorTheme": "Tokyo Night",
     "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cpp.enableInlayHints": true
+    "cpp.enableInlayHints": true,
+    "window.autoDetectColorScheme": true
 }
