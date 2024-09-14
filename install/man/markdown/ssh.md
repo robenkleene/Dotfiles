@@ -1,0 +1,1 @@
+- `ssh -t user@hostname /bin/bash`: Login while specifying full path to shell
