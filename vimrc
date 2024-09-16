@@ -2,9 +2,11 @@
 set t_ZH=[3m
 set t_ZR=[23m
 
-if $TERM_PROGRAM != "Apple_Terminal"
-  set termguicolors
-endif
+" Just keeping `termguicolors` off for now so vim always works with Apple
+" Terminal (e.g., even over `ssh`)
+" if $TERM_PROGRAM != "Apple_Terminal"
+"   set termguicolors
+" endif
 
 " Bootstrap vim-plug
 if empty(glob("~/.vim/autoload/plug.vim"))
