@@ -6,7 +6,8 @@ function fish_sync_variables
 
     # Editor
     # Fish fails to run `edit_command_buffer` without `VISUAL` or `EDITOR` set
-    set -Ux VISUAL 'nvim'
+    # Using `vim` for compatibility with Apple Terminal
+    set -Ux VISUAL 'vim'
     # set -Ux VISUAL "hx"
     set -Ux EDITOR $VISUAL
 
