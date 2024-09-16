@@ -44,8 +44,8 @@ autoload -Uz vcs_info
 # Time
 PS1='%F{$comment}%D{%I:%M %p} '
 # Machine Name
-# PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
-PS1+='%f%m '
+PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
+# PS1+='%f%m '
 # Path
 PS1+='%F{cyan}%20<...<%~%<< '
 # Jobs
