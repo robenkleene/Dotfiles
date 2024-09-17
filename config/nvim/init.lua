@@ -52,7 +52,8 @@ vim.g.clipboard = {
 }
 
 vim.cmd([[
-set notermguicolors
+"set notermguicolors
+colorscheme tokyonight
 " Don't try to match light dark themes because it's too difficult to make work over ssh
 " `tokyonight` turns back on `termguicolors`
 " if $TERM_PROGRAM != "Apple_Terminal"
