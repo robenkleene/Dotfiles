@@ -76,11 +76,8 @@ autocmd VimEnter *
 " colorscheme catppuccin_mocha
 " colorscheme iceberg
 " colorscheme sorbet
-if exists('$THEME') && $THEME == 'dark'
-  set background=dark
-else
-  set background=light
-endif
+" Don't try to match light dark themes because it's too difficult to make
+" consistent over ssh
 colorscheme iceberg
 
 "VimEnter * ++nested colorscheme iceberg
