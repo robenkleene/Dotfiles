@@ -11,7 +11,7 @@ setopt PROMPT_SUBST
 # zstyle ':vcs_info:*' check-for-changes true
 
 # Colors
-comment=08
+comment=244
 # `%F{green}`: Built-in Color
 # `%f`: Reset Color
 # `%F{$comment}`: Color From Variable
