@@ -4,12 +4,8 @@
 
 (use-package ef-themes
   :config
-
-  (if (and (not (display-graphic-p)) (string= (getenv "THEME") "dark"))
-      (load-theme 'ef-owl)
-    (load-theme 'ef-eagle)
-    )
-
+  ;; Don't try to match light dark themes because it's too difficult to work over ssh
+  (load-theme 'ef-owl)
   )
 
 (provide 'robenkleene-ef-themes)

@@ -38,12 +38,7 @@
         '(
           (bg-main "#fbf7f0")
           ))
-
-  ;; (if (and (not (display-graphic-p)) (string= (getenv "THEME") "dark"))
-  ;;     (load-theme 'modus-vivendi-tinted)
-  ;;   (load-theme 'modus-operandi)
-  ;;   )
-
+  ;; Don't try to match light dark themes because it's too difficult to make work over ssh
   )
 
 (provide 'robenkleene-modus)
