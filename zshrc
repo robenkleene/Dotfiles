@@ -2,12 +2,6 @@
 # Run `zprof` after to see results
 # zmodload zsh/zprof
 
-# This is early so that any path settings can be overridden later, e.g, for
-# `nvm` and `chruby`
-if [[ -f ~/.zshrc_local ]]; then
-  source ~/.zshrc_local
-fi
-
 # Emacs Tramp mode sets the term to dumb
 if [[ $TERM == "dumb" ]]; then
   return
