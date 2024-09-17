@@ -77,9 +77,9 @@ autocmd VimEnter *
 " colorscheme iceberg
 " colorscheme sorbet
 if exists('$THEME') && $THEME == 'dark'
-  set background=light
-else
   set background=dark
+else
+  set background=light
 endif
 colorscheme iceberg
 
