@@ -5,6 +5,5 @@
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cpp.enableInlayHints": true,
-    "window.autoDetectColorScheme": true
+    "cpp.enableInlayHints": true
 }
