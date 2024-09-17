@@ -52,22 +52,25 @@ vim.g.clipboard = {
 }
 
 vim.cmd([[
-if exists('$THEME') && $THEME == 'LIGHT'
+set notermguicolors
+if exists('$THEME') && $THEME == 'dark'
+  set background=dark
+else
   set background=light
 endif
 " `tokyonight` turns back on `termguicolors`
-if $TERM_PROGRAM != "Apple_Terminal"
-  if &background == "dark"
-    "autocmd VimEnter * ++nested colorscheme tokyonight-night
-    autocmd VimEnter * ++nested colorscheme tokyonight
-  else
-    autocmd VimEnter * ++nested colorscheme tokyonight-day
-  endif
-else
-  set notermguicolors
-  " Need to trigger a colorscheme so overrides take affect
-  autocmd VimEnter * ++nested colorscheme default
-endif
+" if $TERM_PROGRAM != "Apple_Terminal"
+"   if &background == "dark"
+"     "autocmd VimEnter * ++nested colorscheme tokyonight-night
+"     autocmd VimEnter * ++nested colorscheme tokyonight
+"   else
+"     autocmd VimEnter * ++nested colorscheme tokyonight-day
+"   endif
+" else
+"   set notermguicolors
+"   " Need to trigger a colorscheme so overrides take affect
+"   autocmd VimEnter * ++nested colorscheme default
+" endif
 ]])
 
 -- `vim-vinegar` does this interally to use sorting based on suffixes, but for

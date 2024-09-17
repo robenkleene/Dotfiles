@@ -79,7 +79,7 @@ if [[ "$(uname)" == "Darwin" ]] && [[ "$TERM_PROGRAM" = "Apple_Terminal" ]]; the
     export THEME="light"
   fi
 else
-  export THEME="dark"
+  export THEME="light"
 fi
 
 # marksman
