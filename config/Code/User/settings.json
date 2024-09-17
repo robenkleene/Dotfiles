@@ -3,8 +3,6 @@
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "always",
     "extensions.ignoreRecommendations": true,
-    "editor.fontSize": 13,
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "cpp.enableInlayHints": true,
