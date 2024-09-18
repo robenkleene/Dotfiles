@@ -6,5 +6,6 @@
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "cpp.enableInlayHints": true,
-    "workbench.colorTheme": "Tokyo Night"
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.fontSize": 13
 }
