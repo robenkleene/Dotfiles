@@ -1,5 +1,5 @@
 {
-  "rk_vim_notify_var": {
+  "`vim.notify` variable": {
     "prefix": "rk_vim_notify_var",
     "body": "vim.notify(\"$1 = \" .. ${1:result})",
     "description": "`vim.notify` variable"

@@ -1,7 +1,7 @@
 {
-  "rk_template": {
+  "Makefile template": {
     "prefix": "rk_template",
     "body": ".PHONY: hello\n\nhello:\n\techo \"Hello\"",
-    "description": "Makefile Template"
+    "description": "Makefile template"
   }
 }
