@@ -5,5 +5,6 @@
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "cpp.enableInlayHints": true
+    "cpp.enableInlayHints": true,
+    "workbench.colorTheme": "Tokyo Night"
 }
