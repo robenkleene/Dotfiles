@@ -4,27 +4,27 @@
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
   },
-  "rk_puts_var": {
+  "Print variable": {
     "prefix": "rk_puts_var",
     "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
-  "rk_puts_err": {
+  "`puts` to standard error": {
     "prefix": "rk_puts_err",
     "body": "STDERR.puts \"$1{:Error}\"",
     "description": "`puts` to standard error"
   },
-  "rk_for": {
+  "For loop": {
     "prefix": "rk_for",
     "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
     "description": "For loop"
   },
-  "rk_forin": {
+  "For in loop": {
     "prefix": "rk_forin",
     "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
     "description": "For in loop"
   },
-  "rk_each": {
+  "Each loop": {
     "prefix": "rk_each",
     "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
     "description": "Each loop"

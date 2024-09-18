@@ -1,20 +1,20 @@
 {
-  "rk_template": {
+  "Rust template": {
     "prefix": "rk_template",
     "body": "fn main() {\n    ${1:println!(\"Hello, world!\");}\n}\n",
     "description": "Rust template"
   },
-  "rk_template_result": {
+  "Rust result template": {
     "prefix": "rk_template_result",
     "body": "use std::io;\n\nfn main() -> io::Result<()> {\n    ${1:println!(\"Hello, world!\");}\nOk(())\n}\n",
     "description": "Rust result template"
   },
-  "rk_match_some": {
+  "Match `Some`": {
     "prefix": "rk_match_some",
     "body": "match ${1:optional} {\n  Some($1) => $1,\n  None => ${2:println!(\"No value\")}\n}",
     "description": "Match `Some`"
   },
-  "rk_match_result": {
+  "Match result": {
     "prefix": "rk_match_result",
     "body": "match ${1:result} {\n  Ok($1) => $1,\n  Err(err) => panic!(\"Error: {}\", err)\n}",
     "description": "Match result"
