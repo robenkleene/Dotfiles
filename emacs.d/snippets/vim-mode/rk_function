@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_function
-# name: Function
+# name: rk_function
 # --
 function! s:${1:Name}() abort
   ${2:" Statements}

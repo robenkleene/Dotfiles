@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_function
-# name: Function
+# name: rk_function
 # --
 ${1:my_function}() {
   ${0:echo \$1}

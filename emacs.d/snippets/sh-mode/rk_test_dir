@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_dir
-# name: True if directory
+# name: rk_test_dir
 # --
 -d "${1:\$1}"

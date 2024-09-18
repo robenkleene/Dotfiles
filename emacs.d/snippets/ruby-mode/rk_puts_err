@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_puts_err
-# name: `puts` to standard error
+# name: rk_puts_err
 # --
 STDERR.puts "$1{:Error}"

@@ -65,7 +65,8 @@ Dir.glob("#{code_snippets_path}/*.{json,code-snippets}") do |file_path|
     body = body.join("\n") if body.instance_of?(Array)
     # YAS snippets treats backticks specially, so escape them in snippets
     body.gsub!(/`/, '\\\`')
-    template = "# -*- mode: snippet -*- key: #{prefix}
+    template = "# -*- mode: snippet -*-
+# key: #{prefix}
 # name: #{key}
 # --
 #{body}"

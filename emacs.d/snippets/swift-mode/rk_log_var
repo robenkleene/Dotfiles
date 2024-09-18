@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_log_var
-# name: Log variable
+# name: rk_log_var
 # --
 NSLog("$1 = \(${1:result})")

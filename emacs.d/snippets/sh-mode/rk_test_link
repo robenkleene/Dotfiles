@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_link
-# name: True if symbolic link
+# name: rk_test_link
 # --
 -L "${1:\$1}"

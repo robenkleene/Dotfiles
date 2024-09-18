@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_set_makeprg_xcodebuild_test
-# name: Set `makeprg` for `xcodebuild test`
+# name: rk_set_makeprg_xcodebuild_test
 # --
 setlocal makeprg=xcodebuild\ test
 			\\\ -alltargets

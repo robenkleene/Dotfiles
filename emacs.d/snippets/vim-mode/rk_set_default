@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_set_default
-# name: Set to default
+# name: rk_set_default
 # --
 set ${1:shell}&

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_getopts
-# name: `getopts`
+# name: rk_getopts
 # --
 force="false"
 while getopts ":p:fh" option; do

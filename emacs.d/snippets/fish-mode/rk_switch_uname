@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_switch_uname
-# name: `uname` switch statement
+# name: rk_switchuname
 # --
 switch (uname)
     case Linux

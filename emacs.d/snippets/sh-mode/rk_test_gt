@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_gt
-# name: True if greater than
+# name: rk_test_gt
 # --
 ${1:\$?} -gt ${0:0}
