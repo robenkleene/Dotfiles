@@ -1,25 +1,25 @@
 {
-  "rk_template": {
+  "Python template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env python3\n\n$0",
-    "description": "Template"
+    "description": "Python template"
   },
-  "rk_blender_template": {
+  "Python Blender template": {
     "prefix": "rk_blender_template",
     "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
-    "description": "Blender Template"
+    "description": "Python Blender template"
   },
-  "rk_main": {
+  "`main` Function": {
     "prefix": "rk_main",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t$0",
     "description": "`main` Function"
   },
-  "rk_print_var": {
+  "Print variable": {
     "prefix": "rk_print_var",
     "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
-  "rk_print_err": {
+  "Print to standard error": {
     "prefix": "rk_print_err",
     "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
