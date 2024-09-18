@@ -17,12 +17,12 @@
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
-  "Max post variable": {
+  "Max JavaScript post variable": {
     "prefix": "rk_max_post_var",
     "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
-    "description": "Max post variable"
+    "description": "Max JavaScript post variable"
   },
-  "Max template": {
+  "Max JavaScript template": {
     "prefix": "rk_max_template",
     "body": [
       "// Re-compile the file automatically when it changes",
@@ -91,6 +91,6 @@
       "}",
       ""
     ],
-    "description": "Max template"
+    "description": "Max JavaScript template"
   }
 }
