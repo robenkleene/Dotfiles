@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_args
-# name: rk_test_args
+# name: True if no args
 # --
 $# -eq 0

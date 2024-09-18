@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_cout_var_global
-# name: rk_cout_var_global
+# name: Print variable without this
 # --
 std::cout << "$1 = " << ${1:result} << std::endl;

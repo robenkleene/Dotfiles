@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_extension
-# name: rk_extension
+# name: Class Extension
 # --
 NS_ASSUME_NONNULL_BEGIN
 @interface ${1:MyClass} (${2:MyCategory})

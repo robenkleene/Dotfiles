@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_video
-# name: rk_video
+# name: Video with controls
 # --
 <video controls>
   <source src="${1:path/to/video}" type="video/mp4">

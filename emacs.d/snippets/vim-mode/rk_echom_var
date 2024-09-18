@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_echom_var
-# name: rk_echom_var
+# name: `echom` variable
 # --
 echom "$1 = ".${1:result}

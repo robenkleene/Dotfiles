@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_expectation
-# name: rk_expectation
+# name: Expectation
 # --
 let ${1:expect} = expectation(description: "${2:Expectation}")
 $1.fulfill()

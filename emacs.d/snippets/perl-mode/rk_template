@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template
-# name: rk_template
+# name: Perl template
 # --
 #!/usr/bin/env perl
 
