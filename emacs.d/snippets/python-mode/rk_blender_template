@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_blender_template
-# name: Blender Template
+# name: rk_blender_template
 # --
 import bpy
 

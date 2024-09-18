@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_1_for
-# name: For loop one-liner
+# name: rk_1_for
 # --
 for i in ${1:*}; do { ${0:echo $i} } done

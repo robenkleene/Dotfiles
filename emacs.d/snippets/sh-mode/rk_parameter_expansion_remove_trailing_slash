@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_parameter_expansion_remove_trailing_slash
-# name: Remove a trailing slash from a variable
+# name: rk_parameter_expansion_remove_trailing_slash
 # --
 \${${2:1}%/}$0

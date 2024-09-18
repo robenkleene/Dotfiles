@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_bool
-# name: Test boolean
+# name: rk_test_bool
 # --
 "$${1:value}" == "${0:true}"

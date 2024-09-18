@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_do_catch
-# name: `do-catch` statement
+# name: rk_do_catch
 # --
 do {
     ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}

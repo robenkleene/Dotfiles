@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_file
-# name: True if regular file
+# name: rk_test_file
 # --
 -f "${1:\$1}"

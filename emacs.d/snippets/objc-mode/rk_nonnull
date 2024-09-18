@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_nonnull
-# name: Assume nonnull block
+# name: rk_nonnull
 # --
 NS_ASSUME_NONNULL_BEGIN
 ${VISUAL}

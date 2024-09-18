@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_property
-# name: Property
+# name: rk_property
 # --
 @property (nonatomic, strong) ${1:NSString} *${2:identifier};

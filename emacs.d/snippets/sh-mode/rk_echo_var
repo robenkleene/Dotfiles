@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_echo_var
-# name: Echo variable
+# name: rk_echo_var
 # --
 echo "$1 = \$${1:result}"

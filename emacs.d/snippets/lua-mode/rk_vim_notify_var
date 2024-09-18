@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_vim_notify_var
-# name: `vim.notify` variable
+# name: rk_vim_notify_var
 # --
 vim.notify("$1 = " .. ${1:result})

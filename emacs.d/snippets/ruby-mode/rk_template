@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template
-# name: Ruby template
+# name: rk_template
 # --
 #!/usr/bin/env ruby
 

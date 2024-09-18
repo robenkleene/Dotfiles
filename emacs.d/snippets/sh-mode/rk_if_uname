@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# key: rk_ifuname
-# name: If platform
+# key: rk_if_uname
+# name: rk_if_uname
 # --
 if [[ "$(uname)" = "Darwin" ]]; then
   echo "Darwin"

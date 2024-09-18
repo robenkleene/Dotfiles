@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_protocol
-# name: Protocol
+# name: rk_protocol
 # --
 @protocol ${1:MyProtocol} <NSObject>
 $0

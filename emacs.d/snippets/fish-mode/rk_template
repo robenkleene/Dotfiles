@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template
-# name: Fish template
+# name: rk_template
 # --
 #!/usr/bin/env fish
 

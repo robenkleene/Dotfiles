@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_xcode_template
-# name: Xcode template
+# name: rk_xcode_template
 # --
 //
 //  \`!v expand("%:t")\`

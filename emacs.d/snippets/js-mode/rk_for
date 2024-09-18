@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_for
-# name: For loop
+# name: rk_for
 # --
 for (let ${1:i} = 0; $1 < ${2:10}; $1++) {
   $0

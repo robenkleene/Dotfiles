@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_for
-# name: For loop
+# name: rk_for
 # --
 for i in ${1:0}..${2:10}
   ${0:puts i}

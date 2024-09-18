@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_testuname
-# name: True if `uname` matches
-# --
-"$(uname)" = "Linux"

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template
-# name: C template
+# name: rk_template
 # --
 #include <stdio.h>
 

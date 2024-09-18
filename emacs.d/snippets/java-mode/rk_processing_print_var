@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_processing_print_var
-# name: Processing print variable
+# name: rk_processing_print_var
 # --
 println("$1 = ", ${1:result});
