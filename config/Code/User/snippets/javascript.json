@@ -1,28 +1,28 @@
 {
-  "rk_template": {
+  "JavaScript template": {
     "scope": "javascript,typescript",
     "prefix": "rk_template",
     "body": "#!/usr/bin/env node\n\n$0",
-    "description": "template"
+    "description": "JavaScript template"
   },
-  "rk_log_var": {
+  "Log variable": {
     "scope": "javascript,typescript",
     "prefix": "rk_log_var",
     "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Log variable"
   },
-  "rk_for": {
+  "For loop": {
     "scope": "javascript,typescript",
     "prefix": "rk_for",
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
-  "rk_max_post_var": {
+  "Max post variable": {
     "prefix": "rk_max_post_var",
     "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
     "description": "Max post variable"
   },
-  "rk_max_template": {
+  "Max template": {
     "prefix": "rk_max_template",
     "body": [
       "// Re-compile the file automatically when it changes",
