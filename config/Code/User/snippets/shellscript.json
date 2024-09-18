@@ -1,170 +1,170 @@
 {
-  "rk_template": {
+  "Bash template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
-    "description": "Basic template"
+    "description": "Bash template"
   },
-  "rk_echo_var": {
+  "Echo variable": {
     "prefix": "rk_echo_var",
     "body": "echo \"$1 = \\$${1:result}\"",
     "description": "Echo variable"
   },
-  "rk_echo_var_array": {
+  "Echo array variable": {
     "prefix": "rk_echo_var_array",
     "body": "echo \"$1 = \\${${1:args}[@]}\"",
     "description": "Echo array variable"
   },
-  "rk_echo_err": {
+  "Echo to standard error": {
     "prefix": "rk_echo_err",
     "body": "echo \"${1:Error}\" >&2",
     "description": "Echo to standard error"
   },
-  "rk_parameter_expansion_remove_trailing_slash": {
+  "Remove variable trailing slash": {
     "prefix": "rk_parameter_expansion_remove_trailing_slash",
     "body": "\\${${2:1}%/}$0",
     "description": "Remove a trailing slash from a variable"
   },
-  "rk_parameter_expansion_remove_extension": {
+  "Remove path extension": {
     "prefix": "rk_parameter_expansion_remove_extension",
     "body": "\\${${0:1}%.*}",
     "description": "Remove the extension from a path"
   },
-  "rk_array_access": {
+  "Get array element": {
     "prefix": "rk_array_access",
     "body": "\\${${1:args}[@]}$0",
-    "description": "Access an array element"
+    "description": "Get array element"
   },
-  "rk_function": {
+  "Function": {
     "prefix": "rk_function",
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "Function"
   },
-  "rk_if": {
+  "If statement": {
     "prefix": "rk_if",
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If statement"
   },
-  "rk_if_uname": {
+  "If `uname`": {
     "prefix": "rk_if_uname",
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
-  "rk_test_dir": {
+  "True if directory": {
     "prefix": "rk_test_dir",
     "body": "-d \"${1:\\$1}\"",
     "description": "True if directory"
   },
-  "rk_test_bool": {
+  "Test boolean": {
     "prefix": "rk_test_bool",
     "body": "\"$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
-  "rk_test_file": {
+  "True if regular file": {
     "prefix": "rk_test_file",
     "body": "-f \"${1:\\$1}\"",
     "description": "True if regular file"
   },
-  "rk_test_exists": {
+  "True if file exists": {
     "prefix": "rk_test_exists",
     "body": "-e \"${1:\\$1}\"",
     "description": "True if file exists"
   },
-  "rk_test_link": {
+  "True if symbolic link": {
     "prefix": "rk_test_link",
     "body": "-L \"${1:\\$1}\"",
     "description": "True if symbolic link"
   },
-  "rk_test_eq": {
+  "True if equal": {
     "prefix": "rk_test_eq",
     "body": "${1:\\$?} -eq ${0:0}",
     "description": "True if equal"
   },
-  "rk_test_gt": {
+  "True if greater than": {
     "prefix": "rk_test_gt",
     "body": "${1:\\$?} -gt ${0:0}",
     "description": "True if greater than"
   },
-  "rk_test_lt": {
+  "True if less than": {
     "prefix": "rk_test_lt",
     "body": "${1:\\$?} -lt ${0:0}",
     "description": "True if less than"
   },
-  "rk_test_empty": {
+  "True if empty variable": {
     "prefix": "rk_test_empty",
     "body": "-z \"${${1:1}:-}\"",
     "description": "True if empty variable"
   },
-  "rk_test_not_empty": {
+  "True if not empty variable": {
     "prefix": "rk_test_not_empty",
     "body": "-n \"${${1:1}:-}\"",
     "description": "True if not empty variable"
   },
-  "rk_test_args": {
+  "True if no args": {
     "prefix": "rk_test_args",
     "body": "$# -eq 0",
     "description": "True if no args"
   },
-  "rk_test_string": {
+  "True if variable matches string": {
     "prefix": "rk_test_string",
     "body": "\"$${1:1}\" = \"${2:string}\"",
     "description": "True if variable matches string"
   },
-  "rk_test_executable": {
+  "True if command is executable": {
     "prefix": "rk_test_executable",
     "body": "-x \"$(command -v ${1:ls})\"",
     "description": "True if command is executable"
   },
-  "rk_test_uname": {
+  "True if `uname` matches": {
     "prefix": "rk_test_uname",
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
-  "rk_1_while": {
+  "While loop one-liner": {
     "prefix": "rk_1_while",
     "body": "while read i; do { ${0:echo $i} } done",
     "description": "While loop one-liner"
   },
-  "rk_while": {
+  "While loop": {
     "prefix": "rk_while",
     "body": "while read i; do\n  ${0:echo $i}\ndone",
     "description": "While loop"
   },
-  "rk_for": {
+  "For loop": {
     "prefix": "rk_for",
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
     "description": "For loop"
   },
-  "rk_for_dir": {
+  "For loop directories": {
     "prefix": "rk_for_dir",
     "body": "for dir in */; do\n  echo $dir;\ndone",
     "description": "For loop directories"
   },
-  "rk_1_for": {
+  "For loop one-liner": {
     "prefix": "rk_1_for",
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
     "description": "For loop one-liner"
   },
-  "rk_1_for_rename": {
+  "Rename files in current directory": {
     "prefix": "rk_1_for_rename",
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "Rename files in current directory"
   },
-  "rk_exit_status": {
+  "Exit status": {
     "prefix": "rk_exit_status",
     "body": "\\$?",
     "description": "Exit status"
   },
-  "rk_ifs": {
+  "Set IFS": {
     "prefix": "rk_ifs",
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
-  "rk_cd_script_dir": {
+  "Script directory": {
     "prefix": "rk_cd_script_dir",
     "body": "cd \\$(dirname \"\\$0\" || exit 1)",
     "description": "Script directory"
   },
-  "rk_getopts": {
+  "`getopts`": {
     "prefix": "rk_getopts",
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "`getopts`"
