@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_augroup
-# name: rk_augroup
+# name: `augroup`
 # --
 augroup ${1:writing_buffer}
   autocmd!

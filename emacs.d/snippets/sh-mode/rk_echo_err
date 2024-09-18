@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_echo_err
-# name: rk_echo_err
+# name: Echo to standard error
 # --
 echo "${1:Error}" >&2

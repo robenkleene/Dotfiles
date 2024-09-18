@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_match_some
-# name: rk_match_some
+# name: Match `Some`
 # --
 match ${1:optional} {
   Some($1) => $1,

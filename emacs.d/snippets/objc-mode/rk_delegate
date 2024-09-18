@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_delegate
-# name: rk_delegate
+# name: Delegate
 # --
 NS_ASSUME_NONNULL_BEGIN
 @protocol ${1:MyClass}Delegate <NSObject>

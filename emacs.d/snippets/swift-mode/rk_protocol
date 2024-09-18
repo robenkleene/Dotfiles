@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_protocol
-# name: rk_protocol
+# name: Protocol
 # --
 protocol ${1:MyType} {
     $0

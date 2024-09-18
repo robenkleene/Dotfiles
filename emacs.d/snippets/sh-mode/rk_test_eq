@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_test_eq
-# name: rk_test_eq
+# name: True if equal
 # --
 ${1:\$?} -eq ${0:0}

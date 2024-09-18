@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_for_dir
-# name: rk_for_dir
+# name: For loop directories
 # --
 for dir in */; do
   echo $dir;

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_delegate
-# name: rk_delegate
+# name: Delegate
 # --
 protocol ${1:MyClass}Delegate {
     func ${2:handleEvent}(for: $1})

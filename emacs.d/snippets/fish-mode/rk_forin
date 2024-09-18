@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_forin
-# name: rk_forin
+# name: For in
 # --
 for ${1:file} in (${2:ls})
     echo $$1
