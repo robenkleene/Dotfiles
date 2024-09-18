@@ -38,7 +38,7 @@ for file_path in "$@"; do
       # Convert an absolute path which helps in the case where current
       # directory is just `.`
       file_path=$(cd "$file_path" ; pwd)
-      destination_dir="$file_path/../archive/"
+      destination_dir="$file_path/../../archive/"
     else
       destination_dir="$(dirname $file_path)/archive/"
     fi
