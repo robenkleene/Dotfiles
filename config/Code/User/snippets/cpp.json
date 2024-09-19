@@ -36,7 +36,7 @@
   },
   "For loop array range": {
     "prefix": "rk_for_array_range",
-    "body": "for (int ${1:element} : ${2:arr}) {\n    ${3:std::cout << $1 << std:endl};\n}",
+    "body": "for (int ${1:element} : ${2:arr}) {\n    ${3:std::cout << $1 << std:endl;}\n}",
     "description": "For range loop array"
   },
   "For loop array iterator": {
