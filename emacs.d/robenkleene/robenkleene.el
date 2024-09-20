@@ -54,6 +54,7 @@
 (require 'robenkleene-eglot)
 (require 'robenkleene-expand-region)
 (require 'robenkleene-magit)
+(require 'robenkleene-multiple-cursors)
 (require 'robenkleene-page-break-lines)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-vertico)
