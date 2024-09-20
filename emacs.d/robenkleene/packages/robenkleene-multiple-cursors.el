@@ -8,6 +8,10 @@
   ("C->" . mc/mark-next-like-this)
   ("C-<" . mc/mark-previous-like-this)
   ("C-c C-<" . mc/mark-all-like-this)
+  ("C-c m c" . mc/edit-lines)
+  ("C-c m n" . mc/mark-next-like-this)
+  ("C-c m p" . mc/mark-previous-like-this)
+  ("C-c m a" . mc/mark-all-like-this)
   )
 
 (provide 'robenkleene-multiple-cursors)
