@@ -61,8 +61,12 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
-(unless (string-equal system-type "darwin")
-  (setq browse-url-browser-function 'eww-browse-url))
+;; Just echo the URL if we in SSH (then it can be clicked to open locally in
+;; the browser in most modern terminal emulators
+(if (getenv "SSH_CONNECTION")
+    (setq browse-url-browser-function
+          (lambda (url &rest args) (message "%s" url))
+          ))
 
 ;; By default, there's a bunch of `-' at the end of the modeline, remove these
 (setq-default mode-line-format (remove 'mode-line-end-spaces mode-line-format))
