@@ -57,7 +57,7 @@ cnoremap <M-right> <S-right>
 inoremap <M-right> <S-right>
 
 " Move by display line
-noremap <silent> k gk
-noremap <silent> j gj
-noremap <silent> <Up> gk
-noremap <silent> <Down> gj
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+nnoremap <silent> <Up> gk
+nnoremap <silent> <Down> gj
