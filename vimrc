@@ -78,6 +78,11 @@ autocmd VimEnter *
 " colorscheme sorbet
 " Don't try to match light dark themes because it's too difficult to make
 " consistent over ssh
+" Always use dark over SSH because auto-detection of colors doesn't work over
+" SSH
+if exists('$SSH_CONNECTION')
+  set background=dark
+endif
 colorscheme iceberg
 
 "VimEnter * ++nested colorscheme iceberg
