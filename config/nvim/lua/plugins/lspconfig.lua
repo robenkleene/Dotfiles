@@ -109,7 +109,7 @@ return {
     require('lspconfig').rust_analyzer.setup {
     }
 
-    require('lspconfig').tsserver.setup {
+    require('lspconfig').ts_ls.setup {
     }
 
     require 'lspconfig'.jsonls.setup {

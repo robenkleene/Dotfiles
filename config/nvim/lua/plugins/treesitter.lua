@@ -36,6 +36,7 @@ return {
         'toml',
         'typescript',
         'vim',
+        'vimdoc',
       },
       modules = {},
       auto_install = false,
