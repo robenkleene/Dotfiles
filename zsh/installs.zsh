@@ -118,7 +118,7 @@ n ()
     # -A: Don't auto-enter directories
     # Note these must be set via `ENV` (e.g., instead of with `export`)
     # because with export it would affect the current session
-    env LESS="" NNN_PLUG='z:z;p:preview' command nnn -AQ "$@"
+    env LESS="" NNN_PLUG='z:z;p:preview' nnn -AQ "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
