@@ -7,4 +7,4 @@ set -euo pipefail
 # -e: Use $VISUAL by default to edit text files
 # -Q: Don't confirm on quit with multiple contexts active
 # -A: Don't auto-enter directories
-exec export LESS="" nnn -eAQ
+env LESS="" NNN_PLUG='z:z;p:preview' command nnn -AQ "$@"
