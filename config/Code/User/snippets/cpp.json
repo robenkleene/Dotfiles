@@ -24,6 +24,16 @@
     "body": "std::cout << this << \" $1 = \" << ${1:result} << std::endl;",
     "description": "Print variable with this address global"
   },
+  "Print array with this": {
+    "prefix": "rk_cout_array",
+    "body": "std::cout << this << \" ${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;\n",
+    "description": "Print array with this"
+  },
+  "Print array without this": {
+    "prefix": "rk_cout_array_global",
+    "body": "std::cout << \"${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;\n",
+    "description": "Print array without this"
+  },
   "For loop": {
     "prefix": "rk_for",
     "body": "for (int ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
