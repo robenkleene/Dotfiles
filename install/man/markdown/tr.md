@@ -1,1 +1,2 @@
-tr -d '\n'
+- `tr -d '\n'`: Delete new lines
+- `tr '\n' '\0'`: Replace new lines with `NUL` bytes
