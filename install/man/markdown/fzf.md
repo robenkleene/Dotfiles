@@ -1,5 +1,11 @@
 - Just `fzf` alone lists files recursively by default
 
+# Shell Bindings
+
+- `⌃T`: Fuzzy-complete file in current directory
+- `^R`: Fuzzy-complete history
+- `⌥C`: Fuzzy-complete directory recursively
+
 # Flags
 
 - `--no-sort`: Prevents sorting matches as you type
