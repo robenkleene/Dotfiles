@@ -64,7 +64,7 @@
 (defun eshell-other-window ()
   "Open eshell in other window."
   (interactive)
-  (let ((buf (eshell '(4))))
+  (let ((buf (eshell "new")))
     (switch-to-buffer (other-buffer buf))
     (switch-to-buffer-other-window buf))
   )
