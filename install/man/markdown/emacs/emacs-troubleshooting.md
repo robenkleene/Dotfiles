@@ -6,5 +6,6 @@ If on start up, there's a message that says a file `has auto save data`, navigat
 
 # Profiling
 
-1. `profile-start`: Do something slow
-2. `profile-report`: See why something was slow
+1. `profiler-start`: Start profiler
+2. `profiler-stop`: Stop profiler
+3. `profiler-report`: See report
