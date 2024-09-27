@@ -5,7 +5,7 @@
 (use-package ef-themes
   :config
   ;; Don't try to match light dark themes because it's too difficult to work over ssh
-  (load-theme 'ef-owl)
+  ;; (load-theme 'ef-owl)
   )
 
 (provide 'robenkleene-ef-themes)
