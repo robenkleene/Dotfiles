@@ -20,7 +20,7 @@ brew 'bat'
 brew 'helix'
 
 # Editor
-brew 'aspell', args: ['with-lang-en']
+brew 'aspell'
 brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
