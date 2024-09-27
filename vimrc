@@ -83,7 +83,7 @@ autocmd VimEnter *
 if exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
 endif
-colorscheme iceberg
+"colorscheme iceberg
 
 "VimEnter * ++nested colorscheme iceberg
 " if v:version < 900
