@@ -84,7 +84,9 @@ if exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
 endif
 if &background == "dark"
-  colorscheme habamax
+  " colorscheme habamax
+  " colorscheme sorbet
+  colorscheme wildcharm
 else
   colorscheme shine
 endif
