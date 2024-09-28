@@ -80,7 +80,7 @@ autocmd VimEnter *
 " consistent over ssh
 " Always use dark over SSH because auto-detection of colors doesn't work over
 " SSH
-if exists('$SSH_CONNECTION') || exists('$TMUX')
+if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
 endif
 if &background == "dark"
