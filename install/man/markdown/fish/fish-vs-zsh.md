@@ -7,7 +7,6 @@
 - Fish is faster
 - Fish requires less configuration (and is therefore less problem prone)
 - Fish `^R` search is more powerful, e.g., type `rg` `↑` then `^R` to search just `rg` commands for a term
-- Fish has less bugs (e.g., when connected via `mosh` sometimes need to do `exec zsh` to fix colors)
 - Fish is in more active development
 - Fish is faster
 
