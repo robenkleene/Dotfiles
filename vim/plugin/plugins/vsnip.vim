@@ -1,4 +1,4 @@
-if filereadable('~/.local_snippets/package.json')
+if filereadable(expand('~/.local_snippets/package.json'))
   let g:vsnip_snippet_dir = ['~/.config/Code/User/snippets', '~/.local_snippets']
 else
   let g:vsnip_snippet_dir = '~/.config/Code/User/snippets'
