@@ -55,4 +55,3 @@ else
   fi
   cat > /tmp/robenkleene.transient/clipboard
 fi
-

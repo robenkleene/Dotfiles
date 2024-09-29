@@ -60,40 +60,12 @@ augroup nofilename_nofile
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
 
-augroup safecopy
-  autocmd!
-  " Don't exclude the system keyboard in order to match how copying to the
-  " tmux pasteboard typically works (which usually also pastes to the system
-  " keyboard)
-  " In specific, this helps when cutting in Vim to the `t` register and then
-  " pasting in Emacs, because the Emacs paste will use `safepaste` which will
-  " prioritize the system keyboard, the paste from Vim to Emacs will only work
-  " if we copy to the system clipbaord
-  "if has('clipboard')
-  "  autocmd TextYankPost * silent! if v:event["regname"] ==# '*' || v:event["regname"] ==# '+'  | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-  "else
-  "  autocmd TextYankPost * silent! if v:event["regname"] ==# '' || v:event["regname"] ==# '"' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-  "endif
-  " nvim has builtin support for a custom clipboard command
-  autocmd TextYankPost * silent!
-        \if !has('nvim')
-        \&& exists('$SSH_CONNECTION')
-        \|| v:event["regname"] ==# '*'
-        \|| v:event["regname"] ==# '+'
-        \| call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
-        \| end
-  " Use this to always sync the vim yank with the system clipboard, this
-  " approach has less side effects than `set clipboard` Only copy to system
-  " clipboard on yank events (`v:event["operator"] ==# 'y') because otherwise,
-  " since `"*p` with a visual selection first yanks and then pastes, it will
-  " cause pasting over a visual selection to be a no-op
-  "autocmd TextYankPost * silent!
-  "      \if v:event["operator"] ==# 'y'
-  "      \&& v:event["regname"] ==# ''
-  "      \|| v:event["regname"] ==# '"'
-  "      \| call system('~/.bin/safecopy',join(v:event["regcontents"],"\n"))
-  "      \| end
-augroup END
+if !has('nvim')
+  augroup safecopy
+    autocmd!
+    autocmd TextYankPost * call system('safecopy -s',join(v:event["regcontents"],"\n"))
+  augroup END
+endif
 
 augroup quickfix_height
   autocmd!
