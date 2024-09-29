@@ -1,3 +1,5 @@
+- `git submodule update --init --recursive`
+
 # Add
 
 - `git submodule add <submodule-url> <submodule-install-path-including-repo-name>`
