@@ -85,13 +85,13 @@ autocmd VimEnter *
 " SSH
 if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
-endif
-if &background == "dark"
-  " colorscheme habamax
-  " colorscheme sorbet
-  colorscheme wildcharm
-else
-  colorscheme shine
+  if &background == "dark"
+    " colorscheme habamax
+    " colorscheme sorbet
+    colorscheme wildcharm
+  else
+    colorscheme shine
+  endif
 endif
 " colorscheme iceberg
 
