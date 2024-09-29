@@ -76,8 +76,10 @@ augroup safecopy
   "endif
   " nvim has builtin support for a custom clipboard command
   autocmd TextYankPost * silent!
-        \if !has('nvim') && v:event["regname"] ==# '*' 
-        \|| v:event["regname"] ==# '+' 
+        \if !has('nvim')
+        \&& exists('$SSH_CONNECTION')
+        \|| v:event["regname"] ==# '*'
+        \|| v:event["regname"] ==# '+'
         \| call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n"))
         \| end
   " Use this to always sync the vim yank with the system clipboard, this
