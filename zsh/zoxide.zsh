@@ -1,5 +1,3 @@
-# shellcheck shell=bash
-
 # =============================================================================
 #
 # Utility functions for zoxide.
@@ -45,8 +43,6 @@ function __zoxide_z() {
         __zoxide_cd ~
     elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
         __zoxide_cd "$1"
-    elif [[ "$#" -eq 2 ]] && [[ "$1" = "--" ]]; then
-        __zoxide_cd "$2"
     else
         \builtin local result
         # shellcheck disable=SC2312
@@ -84,32 +80,27 @@ if [[ -o zle ]]; then
 
         if [[ "${#words[@]}" -eq 2 ]]; then
             # Show completions for local directories.
-            _cd -/
-
+            _files -/
         elif [[ "${words[-1]}" == '' ]]; then
             # Show completions for Space-Tab.
             # shellcheck disable=SC2086
             __zoxide_result="$(\command zoxide query --exclude "$(__zoxide_pwd || \builtin true)" --interactive -- ${words[2,-1]})" || __zoxide_result=''
 
-            # Set a result to ensure completion doesn't re-run
-            compadd -Q ""
-
             # Bind '\e[0n' to helper function.
             \builtin bindkey '\e[0n' '__zoxide_z_complete_helper'
-            # Sends query device status code, which results in a '\e[0n' being sent to console input.
+            # Send '\e[0n' to console input.
             \builtin printf '\e[5n'
-
-            # Report that the completion was successful, so that we don't fall back
-            # to another completion function.
-            return 0
         fi
+
+        # Report that the completion was successful, so that we don't fall back
+        # to another completion function.
+        return 0
     }
 
     function __zoxide_z_complete_helper() {
         if [[ -n "${__zoxide_result}" ]]; then
             # shellcheck disable=SC2034,SC2296
             BUFFER="z ${(q-)__zoxide_result}"
-            __zoxide_result=''
             \builtin zle reset-prompt
             \builtin zle accept-line
         else
