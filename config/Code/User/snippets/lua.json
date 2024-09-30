@@ -3,5 +3,10 @@
     "prefix": "rk_vim_notify_var",
     "body": "vim.notify(\"$1 = \" .. ${1:result})",
     "description": "`vim.notify` variable"
+  },
+  "`vim.cmd`": {
+    "prefix": "rk_vim_cmd",
+    "body": "vim.cmd([[\nechom \"Hello World\"\n]])",
+    "description": "`vim.cmd`"
   }
 }
