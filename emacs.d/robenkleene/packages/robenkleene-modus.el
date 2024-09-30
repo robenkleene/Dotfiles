@@ -34,10 +34,10 @@
 
   ;; Use the `modus-operandi-tinted' background which makes the Emacs windows a
   ;; little easier to identify
-  (setq modus-operandi-palette-overrides
-        '(
-          (bg-main "#fbf7f0")
-          ))
+  ;; (setq modus-operandi-palette-overrides
+  ;;       '(
+  ;;         (bg-main "#fbf7f0")
+  ;;         ))
   ;; Don't try to match light dark themes because it's too difficult to make work over ssh
   (if window-system
       (load-theme 'modus-operandi)
