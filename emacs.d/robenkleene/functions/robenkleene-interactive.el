@@ -82,40 +82,6 @@
   (compilation-start command-args 'grep-mode)
   )
 
-;;;###autoload
-(defvar rk/rg-history nil "History list for rg.")
-(defun rg (command-args)
-  "Create grep buffer for rg from COMMAND-ARGS."
-  (interactive
-   (list (read-shell-command
-          (concat
-           "rg ("
-           (substring default-directory (max 0 (- (length default-directory) 40)))
-           "): "
-           )
-          "rg "
-          'rk/rg-history)
-         ))
-  (compilation-start command-args 'grep-mode)
-  )
-
-;;;###autoload
-(defvar rk/fd-history nil "History list for fd.")
-(defun fd (command-args)
-  "Create dired buffer from `fd' TERMS."
-  (interactive
-   (list (read-shell-command
-          (concat
-           "fd ("
-           (substring default-directory (max 0 (- (length default-directory) 40)))
-           "): "
-           )
-          "fd "
-          'rk/fd-history)
-         ))
-  (find-shell-command-dired command-args)
-  )
-
 (defun find-shell-command-dired (command)
   "Create dired buffer from COMMAND."
   (interactive

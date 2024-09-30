@@ -5,8 +5,6 @@ command! -nargs=+ -complete=shellcmd Ash call commands#ArgsSh(<q-args>)
 command! -nargs=+ -bang -complete=shellcmd Msh call commands#MakeSh(<bang>0, <q-args>)
 command! -nargs=+ -bang -complete=shellcmd Sh call commands#Sh(<bang>0, <q-args>)
 
-command! -nargs=+ -complete=shellcmd Fd call commands#Fd(<q-args>)
-command! -nargs=+ -bang -complete=shellcmd Rg call commands#Rg(<bang>0, <q-args>)
 command! -nargs=+ -bar Z call commands#Zlcd(<q-args>)
 command! -nargs=+ -bar Zcd call commands#Zcd(<q-args>)
 command! -nargs=+ -bar Ztcd call commands#Ztcd(<q-args>)
