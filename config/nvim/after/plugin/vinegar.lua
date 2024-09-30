@@ -1,8 +1,9 @@
+vim.cmd([[
 " Hack to fix selecting the current file in `vinegar` by replacing `opendir`
 " `edit` with `Explore`
-nnoremap <silent> <Plug>VinegarUp :call <SID>opendir('Explore')<CR>
+nnoremap <silent> <expr> - (&filetype ==# 'netrw' ? '<Plug>VinegarUp' : ':call Opendir("Explore")<CR>')
 let s:dotfiles = '\(^\|\s\s\)\zs\.\S\+'
-function! s:opendir(cmd) abort
+function! Opendir(cmd) abort
   let df = ','.s:dotfiles
   if expand('%:t')[0] ==# '.' && g:netrw_list_hide[-strlen(df):-1] ==# df
     let g:netrw_list_hide = g:netrw_list_hide[0 : -strlen(df)-1]
@@ -27,3 +28,7 @@ function! s:seek(file) abort
   call search(pattern, 'wc')
   return pattern
 endfunction
+function! s:slash() abort
+  return !exists("+shellslash") || &shellslash ? '/' : '\'
+endfunction
+]])

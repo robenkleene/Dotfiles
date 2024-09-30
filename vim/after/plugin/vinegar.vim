@@ -1,6 +1,7 @@
 " Hack to fix selecting the current file in `vinegar` by replacing `opendir`
 " `edit` with `Explore`
-nnoremap <silent> <Plug>VinegarUp :call <SID>opendir('Explore')<CR>
+" nnoremap <silent> <expr> - (&filetype ==# 'netrw' ? '<Plug>VinegarUp' : ':call <SID>opendir(\'Explore\')<CR>')
+nnoremap <silent> <expr> - (&filetype ==# 'netrw' ? '<Plug>VinegarUp' : ':call <SID>opendir("Explore")<CR>')
 let s:dotfiles = '\(^\|\s\s\)\zs\.\S\+'
 function! s:opendir(cmd) abort
   let df = ','.s:dotfiles
@@ -26,4 +27,7 @@ function! s:seek(file) abort
   endif
   call search(pattern, 'wc')
   return pattern
+endfunction
+function! s:slash() abort
+  return !exists("+shellslash") || &shellslash ? '/' : '\'
 endfunction
