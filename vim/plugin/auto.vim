@@ -60,12 +60,10 @@ augroup nofilename_nofile
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
 
-if !has('nvim')
-  augroup safecopy
-    autocmd!
-    autocmd TextYankPost * call system('safecopy -s',join(v:event["regcontents"],"\n"))
-  augroup END
-endif
+augroup safecopy
+  autocmd!
+  autocmd TextYankPost * call system('safecopy -s',join(v:event["regcontents"],"\n"))
+augroup END
 
 augroup quickfix_height
   autocmd!

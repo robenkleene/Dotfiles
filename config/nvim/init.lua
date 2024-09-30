@@ -27,30 +27,6 @@ require("lazy").setup("plugins", {
   }
 })
 
-vim.g.clipboard = {
-   name = 'safeclipboard',
-   copy = {
-       -- These started failing for some reason
-       -- ["+"] = {"~/.bin/safecopy"},
-       -- ["*"] = {"~/.bin/safecopy"},
-       ["+"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
-       ["*"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
-       -- This also works, but is a bit less safe
-       -- ["+"] = {'safecopy'},
-       -- ["*"] = {'safecopy'},
-   },
-   paste = {
-       -- These started failing for some reason
-       -- ["+"] = {"~/.bin/safepaste"},
-       -- ["*"] = {"~/.bin/safepaste"},
-       ["+"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
-       ["*"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
-       -- ["+"] = {'safepaste'},
-       -- ["*"] = {'safepaste'},
-   },
-   cache_enabled = true,
-}
-
 vim.cmd([[
 "set notermguicolors
 "colorscheme tokyonight
