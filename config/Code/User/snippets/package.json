@@ -30,6 +30,10 @@
         "path": "html.json"
       },
       {
+        "language": "lua",
+        "path": "lua.json"
+      },
+      {
         "language": "java",
         "path": "java.json"
       },
