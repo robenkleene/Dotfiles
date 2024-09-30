@@ -31,4 +31,4 @@ dimensions = { columns = 80, lines = 48 }
 # Fixes `M-n`
 option_as_alt = "Both"
 padding = { x = 4, y = 2 }
-opacity = 0.9
+# opacity = 0.9
