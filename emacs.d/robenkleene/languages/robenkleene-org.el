@@ -49,7 +49,8 @@
   ;; (setq org-support-shift-select t)
   (setq org-support-shift-select 'always)
   ;; Default is `~/org`
-  (setq org-directory "~/Documents/Text/Org/")
+  ;; Just leave this as the default and symlink to it
+  ;; (setq org-directory "~/Documents/Text/Org/")
   (setq org-default-notes-file (concat org-directory "Inbox.org"))
   (setq org-agenda-files (list org-directory))
 
