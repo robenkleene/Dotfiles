@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-tbone'
 " Good to be accustomed to not having this, because it makes it easier when
 " using implementations of Vim mode that doesn't support this (e.g., in Visual
 " Studio Code)
@@ -31,24 +32,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'tpope/vim-tbone'
 let g:asyncomplete_matchfuzzy = 0
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-open)
 vmap gx <Plug>(openbrowser-open)
-" Theme
-" Plug 'nordtheme/vim'
-" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-" Plug 'whatyouhide/vim-gotham'
-" Plug 'haishanh/night-owl.vim', { 'as': 'night-owl' }
-" Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
-" Plug 'EdenEast/nightfox.nvim'
-" if v:version < 900
-Plug 'cocopon/iceberg.vim', { 'as': 'iceberg' }
-" endif
 " Languages
 Plug 'bfrg/vim-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
@@ -64,26 +53,6 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" Set colorscheme only after all vimscript is loaded so our updated colors get
-" applied
-" `++nested` is required so the override colors autocmd is called
-" Theme
-" Set after plug sync (doesn't help when installing themes)
-" let g:embark_terminal_italics = 1
-" colorscheme nord
-" colorscheme embark
-" colorscheme gotham
-" colorscheme night-owl
-" colorscheme nightfly
-" colorscheme nightfox
-" colorscheme duskfox
-" colorscheme catppuccin_mocha
-" colorscheme iceberg
-" colorscheme sorbet
-" Don't try to match light dark themes because it's too difficult to make
-" consistent over ssh
-" Always use dark over SSH because auto-detection of colors doesn't work over
-" SSH
 if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
   if &background == "dark"
@@ -95,13 +64,6 @@ if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TM
   endif
 endif
 " colorscheme iceberg
-
-"VimEnter * ++nested colorscheme iceberg
-" if v:version < 900
-"   autocmd VimEnter * ++nested colorscheme iceberg
-" else
-"   autocmd VimEnter * ++nested colorscheme sorbet
-" endif
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
