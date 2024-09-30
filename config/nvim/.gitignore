@@ -1,2 +1,3 @@
 *.vim
 lazy-lock.json
+!after/plugin/vinegar.vim
