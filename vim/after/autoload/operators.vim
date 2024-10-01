@@ -57,8 +57,11 @@ function operators#YankGrep(context = {}, type = '', onlyline = 0) abort
     " Vim `:grep` has trouble if there's not a blank space after the `:`
     " Use `:make` instead to process this output
     if a:context.only_line
-      let l:col = col('.')
-      let l:result .= l:file_path.':'.l:idx.':'.l:col
+      " Don't include the column for one line because it isn't always
+      " supported (e.g., when creating breakpoints in `lldb`)
+      "let l:col = col('.')
+      "let l:result .= l:file_path.':'.l:idx.':'.l:col
+      let l:result .= l:file_path.':'.l:idx
       echom l:result
     else
       let l:result .= l:file_path.':'.l:idx.":1:\n"
