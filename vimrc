@@ -20,7 +20,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-tbone'
 " Good to be accustomed to not having this, because it makes it easier when
 " using implementations of Vim mode that doesn't support this (e.g., in Visual
 " Studio Code)
