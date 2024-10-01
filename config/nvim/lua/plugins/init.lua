@@ -9,5 +9,4 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
-  { 'tpope/vim-tbone' },
 }
