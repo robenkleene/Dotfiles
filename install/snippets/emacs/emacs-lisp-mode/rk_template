@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: rk_template
-# key: Emacs Lisp template
+# key: rk_template
+# name: Emacs Lisp template
 # --
 ;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1
 ;;; Commentary:
