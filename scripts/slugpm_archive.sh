@@ -20,9 +20,9 @@ for file_path in "$@"; do
   # file_path=${file_path#\.}
   file_path=${file_path%/}
 
-  if [[ -d "$file_path/../projects" && ( -f "$file_path/README.md" ||  -f "$file_path/README.org" ) ]]; then
+  if [[ -d "$file_path/../projects/" && ( -f "$file_path/README.md" ||  -f "$file_path/README.org" ) ]]; then
     # With a parent `projects` and a `README` treat as a project
-    destination_dir="$file_path/../../archive/projects"
+    destination_dir="$file_path/../../archive/projects/"
 
     if [[ ! -d "$destination_dir" ]]; then
       echo "$destination_dir does not exist" >&2
@@ -38,9 +38,9 @@ for file_path in "$@"; do
       # Convert an absolute path which helps in the case where current
       # directory is just `.`
       file_path=$(cd "$file_path" ; pwd)
-      destination_dir="$file_path/../../archive/"
+      destination_dir="$file_path/../../archive/projects/"
     else
-      destination_dir="$(dirname $file_path)/archive/"
+      destination_dir="$(dirname $file_path)/archive/projects/"
     fi
     if [[ ! -d "$destination_dir" ]]; then
       echo "$destination_dir does not exist" >&2
