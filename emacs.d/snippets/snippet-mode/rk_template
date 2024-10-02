@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: rk_template
-# key: Snippet template
+# key: rk_template
+# name: Snippet template
 # --
 # -*- mode: snippet -*-
 # name: ${1:trigger$(buffer-name)}
