@@ -35,7 +35,10 @@ if [[ -n "${INSIDE_EMACS:-}" ]]; then
   if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
     tee >(pbcopy) | tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
   else
-    tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
+    # Have to pipe to both `tmux loadb -` and clipboard file because `tmux loadb
+    # -` will succeed if tmux is running even if not currently attached to a
+    # session
+    tee >(tmux loadb -) | cat > /tmp/robenkleene.transient/clipboard
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   tmux loadb -
