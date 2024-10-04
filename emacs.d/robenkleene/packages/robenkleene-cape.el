@@ -11,7 +11,17 @@
     :init
     (add-to-list 'completion-at-point-functions #'yasnippet-capf)
     )
+  ;; Exclusive
+  (add-hook
+   'emacs-lisp-mode-hook
+   (lambda ()
+     (setq-local completion-at-point-functions
+                 (list (cape-capf-properties  #'elisp-completion-at-point
+                                              :exclusive
+                                              'no) t))))
   )
+
+
 
 (provide 'robenkleene-cape)
 ;; Local Variables:
