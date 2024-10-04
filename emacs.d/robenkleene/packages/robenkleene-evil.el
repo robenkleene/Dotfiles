@@ -65,8 +65,9 @@
                 (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
     (define-key evil-motion-state-map
                 (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
-    (define-key evil-motion-state-map (kbd "C-z") nil)
     (define-key evil-emacs-state-map (kbd "C-z") nil)
+    (define-key evil-insert-state-map (kbd "C-z") nil)
+    (define-key evil-motion-state-map (kbd "C-z") nil)
     )
 
   ;; Packages
