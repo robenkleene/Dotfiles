@@ -27,19 +27,6 @@ require("lazy").setup("plugins", {
   }
 })
 
-vim.g.clipboard = {
-   name = 'safeclipboard',
-   copy = {
-       ["+"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
-       ["*"] = {os.getenv("HOME")..'/'..'.bin/safecopy'},
-   },
-   paste = {
-       ["+"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
-       ["*"] = {os.getenv("HOME")..'/'..'.bin/safepaste'},
-   },
-   cache_enabled = true,
-}
-
 -- `vim-vinegar` does this interally to use sorting based on suffixes, but for
 -- some reason it doesn't work in Neovim, it also doesn't work as a config
 -- function for `vim-vinegar`
