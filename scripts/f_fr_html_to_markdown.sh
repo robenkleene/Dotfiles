@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec pandoc -f html -t markdown
+exec pandoc -f html -t gfm-raw_html
