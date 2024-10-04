@@ -63,6 +63,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
   repos+=(
 ~"/Library/Application Support/BBEdit/" "${github_prefix}robenkleene/BBEdit.git"
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
+~"/Library/Services/" "${github_prefix}robenkleene/Services.git"
 )
   # if [[ "$include_private" == "true" ]]; then
   #   repos+=(
