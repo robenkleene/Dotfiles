@@ -21,15 +21,17 @@
   ;; completion, the rest of the functions are skipped
   ;; The `cape' completions are marked not marked as exclusive, but the default
   ;; ones typically are
-  ;; So we need to manually mark them as not exclusive here.
+  ;; So after major mode change we iterate through all the
+  ;; `completion-at-point-fucntions' local to that mode and make them not
+  ;; exclusive
   (defun rk/make-all-capf-non-exclusive (capf-list)
-    "Ensure all CAPFs in CAPF-LIST are non-exclusive, except the last element if it's `t`."
+    "Ensure all CAPFs in CAPF-LIST are non-exclusive, except the last element if
+it's `t`."
     ;; Check if the last element is `t`, and modify the rest
     (let* ((last-element (car (last capf-list)))
            (capf-list-to-modify (if (eq last-element t)
-                                    (butlast capf-list) ; Remove `t` from the list for modification
+                                    (butlast capf-list)
                                   capf-list)))
-      ;; Modify the list, then add `t` back if it was present
       (append
        (mapcar (lambda (capf)
                  (cape-capf-properties capf :exclusive 'no))
@@ -39,16 +41,17 @@
   (add-hook 'after-change-major-mode-hook
             (lambda ()
               (when (local-variable-p 'completion-at-point-functions)
-                ;; Recompile all CAPFs and update the list, preserving the `t` at the end if it exists
                 (setq-local completion-at-point-functions
-                            (rk/make-all-capf-non-exclusive completion-at-point-functions)))))
+                            (rk/make-all-capf-non-exclusive
+                             completion-at-point-functions)))))
 
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
               (setq-local completion-at-point-functions
-                          (list (cape-capf-properties  #'eglot-completion-at-point
-                                                       :exclusive
-                                                       'no) t))))
+                          (list
+                           (cape-capf-properties  #'eglot-completion-at-point
+                                                  :exclusive
+                                                  'no) t))))
   )
 
 (provide 'robenkleene-cape)
