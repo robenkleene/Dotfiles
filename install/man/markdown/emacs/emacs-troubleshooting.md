@@ -9,3 +9,10 @@ If on start up, there's a message that says a file `has auto save data`, navigat
 1. `profiler-start`: Start profiler
 2. `profiler-stop`: Stop profiler
 3. `profiler-report`: See report
+
+# Profiling Startup
+
+## Profiling `use-package`
+
+1. Add `(setq use-package-compute-statistics t)` to Emacs configuration
+2. Run `use-package-report` after startup
