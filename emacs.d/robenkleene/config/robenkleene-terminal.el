@@ -9,7 +9,7 @@
   (let (
         (process-connection-type nil)
         )
-    (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
+    (let ((proc (start-process "INSIDE_EMACS=1 safecopy" nil "~/.bin/safecopy")))
       (unless (string))
       (process-send-string proc text)
       (process-send-eof proc)))
