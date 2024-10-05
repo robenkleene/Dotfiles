@@ -41,6 +41,7 @@
 ;; Modes
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)
+(require 'robenkleene-modus)
 (require 'robenkleene-outline)
 (require 'robenkleene-shell)
 (require 'robenkleene-vc)
@@ -59,10 +60,6 @@
 (require 'robenkleene-vertico)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
-
-;; Theme
-(require 'robenkleene-ef-themes)
-(require 'robenkleene-modus)
 
 ;; Languages
 (require 'robenkleene-csv)
