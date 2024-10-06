@@ -94,6 +94,21 @@
     (define-key map (kbd "r") #'undo-redo)
     map))
 
+(defvar pop-local-mark-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "SPC") #'pop-to-mark-command)
+    (define-key map (kbd "<backspace>") #'unpop-to-mark-command)
+    map))
+(dolist (cmd '(pop-to-mark-command))
+  (put cmd 'repeat-map 'pop-local-mark-repeat-map))
+
+(defvar pop-global-mark-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "SPC") #'pop-gobal-mark)
+    map))
+(dolist (cmd '(pop-global-mark))
+  (put cmd 'repeat-map 'pop-global-mark-repeat-map))
+
 (dolist (cmd '(undo))
   (put cmd 'repeat-map 'undo-only-repeat-map))
 ;; `undo' is bound by default, this makes the redo available
