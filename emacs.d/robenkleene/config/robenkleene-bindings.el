@@ -94,33 +94,6 @@
     (define-key map (kbd "r") #'undo-redo)
     map))
 
-(defvar local-mark-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "SPC") #'pop-to-mark-command)
-    (define-key map (kbd "<backspace>") #'unpop-to-mark-command)
-    (define-key map (kbd "DEL") #'unpop-to-mark-command)
-    map))
-(dolist (cmd '(pop-to-mark-command))
-  (put cmd 'repeat-map 'local-mark-repeat-map))
-(define-key rk/bindings-minor-mode-map (kbd "C-u C-SPC")
-            'pop-to-mark-command)
-
-(defun rk/pop-global-mark ()
-  "Prints `hello world'."
-  (interactive)
-  (pop-global-mark)
-  )
-(defvar global-mark-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "SPC") #'pop-global-mark)
-    map))
-(dolist (cmd '(rk/pop-global-mark ))
-  (put cmd 'repeat-map 'global-mark-repeat-map))
-(define-key rk/bindings-minor-mode-map (kbd "C-x C-SPC")
-            'rk/pop-global-mark)
-(define-key rk/bindings-minor-mode-map (kbd "C-x C-@")
-            'rk/pop-global-mark)
-
 (dolist (cmd '(undo))
   (put cmd 'repeat-map 'undo-only-repeat-map))
 ;; `undo' is bound by default, this makes the redo available
