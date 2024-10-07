@@ -1,6 +1,6 @@
 # Movement
 
-- `C-u C-SPC`: Pop buffer local mark (go to previous mark, repeatable with `C-SPC` if )
+- `C-u C-SPC`: Pop buffer local mark (go to previous mark, repeatable with `C-SPC` with `(setq set-mark-command-repeat-pop t)`)
 - `C-x C-SPC`: Pop global mark (go to previous mark, from the global mark ring)
 - `C-SPC C-SPC`: Push mark (set a mark with no region)
 - `C-x C-x`: Swap the point and mark (e.g., to adjust the other side of a selection)
