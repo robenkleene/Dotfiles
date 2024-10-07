@@ -31,7 +31,7 @@
             'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 ;; Great for closing open buffers
-(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 ;; Window Management `M-g M-c' is unbound, and it's used in the `*Completions*'
 ;; buffer to return to the minibuffer
