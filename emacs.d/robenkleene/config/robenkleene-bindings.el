@@ -76,6 +76,10 @@
             'z-other-frame)
 (define-key rk/bindings-minor-mode-map (kbd "C-x t z")
             'z-other-tab)
+(define-key rk/bindings-minor-mode-map (kbd "M-s g")
+            'grep-shell-command)
+(define-key rk/bindings-minor-mode-map (kbd "M-s f")
+            'find-shell-command-dired)
 
 (defvar previous-multiframe-window-repeat-map
   (let ((map (make-sparse-keymap)))

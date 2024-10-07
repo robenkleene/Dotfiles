@@ -44,12 +44,12 @@
          ("C-x t b" . consult-buffer-other-tab)
          ;; This has find-as-you-type, but also doesn't need the odd `*rescan*'
          ;; item
-         ("M-g i" . consult-imenu)
-         ("M-s g" . consult-ripgrep)
-         ("M-s f" . consult-fd)
-         ("M-s o" . consult-line)
+         ("M-g M-i" . consult-imenu)
+         ("M-s M-g" . consult-ripgrep)
+         ("M-s M-f" . consult-fd)
+         ("M-s M-o" . consult-line)
          (:map dired-mode-map
-               ("M-s f" . consult-fd)
+               ("M-s M-f" . consult-fd)
                )
          )
   :init
