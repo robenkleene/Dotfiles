@@ -24,17 +24,17 @@
   (setq evil-disable-insert-state-bindings t)
 
   ;; Modes
-  (setq evil-default-state 'emacs)
+  (setq evil-default-state 'insert)
 
   ;; Start Evil
   (evil-mode 1)
   :config
-  ;; Use insert mode for all text modes
-  (evil-set-initial-state 'text-mode 'insert)
-  (evil-set-initial-state 'conf-mode 'insert)
-  (evil-set-initial-state 'prog-mode 'insert)
-  ;; Git Commit
-  (add-hook 'with-editor-mode-hook 'evil-insert-state)
+  ;; ;; Use insert mode for all text modes
+  ;; (evil-set-initial-state 'text-mode 'insert)
+  ;; (evil-set-initial-state 'conf-mode 'insert)
+  ;; (evil-set-initial-state 'prog-mode 'insert)
+  ;; ;; Git Commit
+  ;; (add-hook 'with-editor-mode-hook 'evil-insert-state)
 
   ;; Prevent cutting when doing a visual paste, which breaks visual paste
   ;; completely when system clipboard integration is present because the yank
@@ -71,10 +71,10 @@
     ;; Be able to toggle `evil-motion-state' from `evil-emacs-state', this is
     ;; useful for example to be able to switch to `evil-motion-state' to perform
     ;; a block selection
-    (define-key evil-emacs-state-map (kbd "<escape>") 'evil-motion-state)
-    (define-key evil-motion-state-map (kbd "<escape>") 'evil-emacs-state)
-    (define-key evil-emacs-state-map (kbd "ESC") 'evil-motion-state)
-    (define-key evil-motion-state-map (kbd "ESC") 'evil-emacs-state)
+    ;; (define-key evil-emacs-state-map (kbd "<escape>") 'evil-motion-state)
+    ;; (define-key evil-motion-state-map (kbd "<escape>") 'evil-emacs-state)
+    ;; (define-key evil-emacs-state-map (kbd "ESC") 'evil-motion-state)
+    ;; (define-key evil-motion-state-map (kbd "ESC") 'evil-emacs-state)
     )
 
   ;; Packages
