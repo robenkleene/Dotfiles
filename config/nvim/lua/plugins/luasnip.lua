@@ -16,17 +16,6 @@ return {
     local s = ls.snippet
     -- fmt allows return multi-line output from shell scripts and parsing it easily (otherwise each line needs to be separate "node")
     local fmt = require("luasnip.extras.fmt").fmt
-    ls.add_snippets("markdown", {
-      s("rk_title", {
-        f(function(_, parent)
-          local result = vim.fn.system("~/.bin/md_title " .. vim.fn.fnameescape(parent.snippet.env.TM_FILENAME))
-          return vim.split(result, "\n")
-        end, {})
-      })
-    })
-    ls.add_snippets("all", {
-      s("rk_today", fmt(vim.fn.system("date +%F | tr -d '\n'"), {}))
-    })
 
     -- Keymaps
     vim.api.nvim_set_keymap('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { expr = true, silent = true })
