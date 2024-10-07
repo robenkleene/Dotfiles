@@ -51,6 +51,18 @@
   ;; Enable redo
   (evil-set-undo-system 'undo-redo)
 
+  ;; Text Objects
+  (evil-define-text-object evil-a-tilde (count &optional beg end _type)
+    "Select a tilde expression."
+    :extend-selection t
+    (evil-select-quote ?\~ beg end type count t))
+  (evil-define-text-object evil-inner-tilde (count &optional beg end _type)
+    "Select inner tilde expression."
+    :extend-selection nil
+    (evil-select-quote ?\~ beg end type count))
+  (define-key evil-inner-text-objects-map "~" 'evil-inner-tilde)
+  (define-key evil-outer-text-objects-map "~" 'evil-a-tilde)
+
   ;; After Load
   (with-eval-after-load 'evil
     ;; Use symbols instead of words, so evil treats `-' and `_' as part of a word
