@@ -68,6 +68,13 @@
     (define-key evil-emacs-state-map (kbd "C-z") nil)
     (define-key evil-insert-state-map (kbd "C-z") nil)
     (define-key evil-motion-state-map (kbd "C-z") nil)
+    ;; Be able to toggle `evil-motion-state' from `evil-emacs-state', this is
+    ;; useful for example to be able to switch to `evil-motion-state' to perform
+    ;; a block selection
+    (define-key evil-emacs-state-map (kbd "<escape>") 'evil-motion-state)
+    (define-key evil-motion-state-map (kbd "<escape>") 'evil-emacs-state)
+    (define-key evil-emacs-state-map (kbd "ESC") 'evil-motion-state)
+    (define-key evil-motion-state-map (kbd "ESC") 'evil-emacs-state)
     )
 
   ;; Packages
