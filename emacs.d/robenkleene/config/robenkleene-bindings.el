@@ -104,7 +104,7 @@
 
 (defvar pop-global-mark-repeat-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "SPC") #'pop-gobal-mark)
+    (define-key map (kbd "SPC") #'pop-global-mark)
     map))
 (dolist (cmd '(pop-global-mark))
   (put cmd 'repeat-map 'pop-global-mark-repeat-map))
