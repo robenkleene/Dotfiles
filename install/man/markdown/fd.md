@@ -7,6 +7,7 @@
 - `-i` / `--case-sensitive`: Make case sensitive
 - `-t d` / `-t f`: Specify only directories / files
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
+- `-E`: Exclude files matching a glob pattern, e.g., `-E '*foo*'`
 
 # Deleting Files
 
