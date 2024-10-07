@@ -300,6 +300,9 @@
 ;; Incrase the large file threshold, this helps when opening large tags files
 (setq large-file-warning-threshold 1000000000)
 
+;; Repeat subsequent mark pops with `C-SPC'
+(setq set-mark-command-repeat-pop t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
