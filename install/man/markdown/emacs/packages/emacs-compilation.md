@@ -1,4 +1,5 @@
 - `g`: Recompile in compile buffer
+- `compile`: Prompt for a compile command, defaults to `make`
 
 # Compile Mode
 
