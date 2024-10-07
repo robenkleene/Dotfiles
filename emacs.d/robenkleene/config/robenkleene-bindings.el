@@ -94,20 +94,31 @@
     (define-key map (kbd "r") #'undo-redo)
     map))
 
-(defvar pop-local-mark-repeat-map
+(defvar local-mark-repeat-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "SPC") #'pop-to-mark-command)
     (define-key map (kbd "<backspace>") #'unpop-to-mark-command)
     map))
 (dolist (cmd '(pop-to-mark-command))
-  (put cmd 'repeat-map 'pop-local-mark-repeat-map))
+  (put cmd 'repeat-map 'local-mark-repeat-map))
+(define-key rk/bindings-minor-mode-map (kbd "C-u C-SPC")
+            'pop-to-mark-command)
 
-(defvar pop-global-mark-repeat-map
+(defun rk/pop-global-mark ()
+  "Prints `hello world'."
+  (interactive)
+  (call-interactively 'pop-global-mark)
+  )
+(defvar global-mark-repeat-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "SPC") #'pop-global-mark)
     map))
-(dolist (cmd '(pop-global-mark))
-  (put cmd 'repeat-map 'pop-global-mark-repeat-map))
+(dolist (cmd '(rk/pop-global-mark ))
+  (put cmd 'repeat-map 'global-mark-repeat-map))
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-SPC")
+            'rk/pop-global-mark)
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-@")
+            'rk/pop-global-mark)
 
 (dolist (cmd '(undo))
   (put cmd 'repeat-map 'undo-only-repeat-map))
