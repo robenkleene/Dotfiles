@@ -98,6 +98,7 @@
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "SPC") #'pop-to-mark-command)
     (define-key map (kbd "<backspace>") #'unpop-to-mark-command)
+    (define-key map (kbd "DEL") #'unpop-to-mark-command)
     map))
 (dolist (cmd '(pop-to-mark-command))
   (put cmd 'repeat-map 'local-mark-repeat-map))
@@ -107,7 +108,7 @@
 (defun rk/pop-global-mark ()
   "Prints `hello world'."
   (interactive)
-  (call-interactively 'pop-global-mark)
+  (pop-global-mark)
   )
 (defvar global-mark-repeat-map
   (let ((map (make-sparse-keymap)))
