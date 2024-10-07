@@ -23,17 +23,18 @@ while getopts ":sh" option; do
   esac
 done
 
-# Fish adds `⏎` and zsh adds `%` to the end of output
-# `^C` is the character to terminate a command
-# We don't do this now for simplicity, but here's how you'd strip those:
-# sed s'/⏎$//'
-# sed '/^\^C$/d'
-
 # Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
 # variable is recorded when the emacs server was started
+if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
+  if [[ ! -e /tmp/robenkleene.transient/ ]]; then
+    mkdir -p /tmp/robenkleene.transient/
+  fi
+  touch /tmp/robenkleene.transient/clipboard
+fi
+
 if [[ -n "${INSIDE_EMACS:-}" ]]; then
   if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
-    tee >(pbcopy) | tmux loadb - || cat > /tmp/robenkleene.transient/clipboard
+    tee >(pbcopy) | tee >(tmux loadb -) | cat > /tmp/robenkleene.transient/clipboard
   else
     # Have to pipe to both `tmux loadb -` and clipboard file because `tmux loadb
     # -` will succeed if tmux is running even if not currently attached to a
@@ -50,11 +51,5 @@ elif [[ -n "${TMUX:-}" ]]; then
 elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
-  if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
-    if [[ ! -e /tmp/robenkleene.transient/ ]]; then
-      mkdir -p /tmp/robenkleene.transient/
-    fi
-    touch /tmp/robenkleene.transient/clipboard
-  fi
   cat > /tmp/robenkleene.transient/clipboard
 fi
