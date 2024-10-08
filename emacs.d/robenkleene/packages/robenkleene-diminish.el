@@ -4,6 +4,7 @@
 
 (use-package diminish
   :init
+  (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode)
   (diminish 'eldoc-mode)
   (with-eval-after-load 'whitespace
