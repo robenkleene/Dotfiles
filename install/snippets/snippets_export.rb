@@ -25,10 +25,10 @@ OptionParser.new do |opts|
   opts.on('-v', '--verbose', 'Also output templates if dry run') do
     options[:verbose] = true
   end
-  opts.on('-s', '--source', 'Snippet source directory') do |s|
+  opts.on('-s src', '--source src', 'Snippet source directory') do |s|
     options[:source] = s
   end
-  opts.on('-d', '--destination', 'Snippet destination directory') do |d|
+  opts.on('-d dst', '--destination dst', 'Snippet destination directory') do |d|
     options[:destination] = d
   end
 end.parse!
