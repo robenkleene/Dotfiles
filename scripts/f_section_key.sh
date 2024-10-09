@@ -2,7 +2,7 @@
 
 /SECTIONSTART/ {
     in_block = 1;
-    block = ""
+    block = "\n"
 }
 /SECTIONSTART/,/SECTIONEND/ {
     if (in_block) {
