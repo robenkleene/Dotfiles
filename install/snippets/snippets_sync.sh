@@ -16,6 +16,12 @@ while getopts ":dfh" option; do
       echo "Usage: command [-hf] [-p <file_path>]"
       exit 0
       ;;
+    d)
+      dst_path="$OPTARG"
+      ;;
+    s)
+      src_path="$OPTARG"
+      ;;
     :)
       echo "Option -$OPTARG requires an argument" >&2
       exit 1
@@ -43,4 +49,5 @@ if $delete; then
   delete_option="--delete"
 fi
 
-rsync $dry_run $delete_option --archive --verbose ./emacs/ ~/.emacs.d/snippets/
+set -x
+rsync $dry_run $delete_option --archive --verbose ${src_path:-./emacs/} ${dst_path:-~/.emacs.d/snippets/}

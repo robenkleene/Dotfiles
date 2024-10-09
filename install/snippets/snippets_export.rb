@@ -25,15 +25,21 @@ OptionParser.new do |opts|
   opts.on('-v', '--verbose', 'Also output templates if dry run') do
     options[:verbose] = true
   end
+  opts.on('-s', '--source', 'Snippet source directory') do |s|
+    options[:source] = s
+  end
+  opts.on('-d', '--destination', 'Snippet destination directory') do |d|
+    options[:destination] = d
+  end
 end.parse!
 
-code_snippets_path = "#{Dir.home}/.config/Code/User/snippets"
+code_snippets_path = options[:source] || "#{Dir.home}/.config/Code/User/snippets"
 unless File.directory?(code_snippets_path)
   warn "Code snippets dir #{code_snippets_path} not found"
   exit 1
 end
 
-yasnippets_snippets_path = "#{Dir.home}/.emacs.d/snippets"
+yasnippets_snippets_path = options[:destination] || "#{Dir.home}/.emacs.d/snippets"
 unless File.directory?(yasnippets_snippets_path)
   warn "YASnippets snippets dir #{yasnippets_snippets_path} not found"
   exit 1
