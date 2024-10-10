@@ -53,6 +53,21 @@
         (markdown-enter-key))
       )
     )
+
+  (defun rk/mark-markdown-code-block ()
+    "Marks between tilde."
+    (interactive)
+    (end-of-line)
+    (search-backward "```")
+    (next-line)
+    (beginning-of-line)
+    (set-mark (point))
+    (search-forward "```")
+    (previous-line)
+    (end-of-line)
+    (exchange-point-and-mark)
+    )
+
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
