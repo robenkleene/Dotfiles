@@ -19,19 +19,31 @@ function! commands#GrepSh(bang, cmd) abort
     return
   endif
   let l:original_grepprg = &grepprg
+  " The default way of running shell commands using `!` allows the use of `|`
+  " to pipe unescaped, so reproduce that behavior here.
   let &grepprg=escape(a:cmd, '|')
   execute 'grep'.(a:bang ? '!':'')
   let &grepprg = l:original_grepprg
 endfunction
 
 function! commands#MakeSh(bang, cmd) abort
+  if exists('*getcmdwintype') && !empty(getcmdwintype())
+    echom "Not valid in command-line window"
+    return
+  endif
   let l:original_makeprg = &makeprg
+  " The default way of running shell commands using `!` allows the use of `|`
+  " to pipe unescaped, so reproduce that behavior here.
   let &makeprg=escape(a:cmd, '|')
   execute "make".(a:bang ? '!':'')
   let &makeprg = l:original_makeprg
 endfunction
 
 function! commands#Sh(bang, cmd) abort
+  if exists('*getcmdwintype') && !empty(getcmdwintype())
+    echom "Not valid in command-line window"
+    return
+  endif
   let l:cmd = substitute(a:cmd, '\s%$', ' #', '')
   let l:basename = fnameescape(a:cmd)
   " Neither approach supports `DiffSh git diff %` well, but this one at
