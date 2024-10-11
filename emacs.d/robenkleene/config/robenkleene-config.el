@@ -86,7 +86,9 @@
 (setq inhibit-startup-message t)
 ;; Set default scratch message to empty, this makes it easy to use the scratch
 ;; buffer in a different mode, e.g., `M-x markdown-mode'
-(setq initial-scratch-message "")
+;; It's probably better to make another scratch buffer for other modes? And
+;; having this makes the Lisp Interaction buffer clear.
+;; (setq initial-scratch-message "")
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
