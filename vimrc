@@ -2,12 +2,6 @@
 set t_ZH=[3m
 set t_ZR=[23m
 
-" Just keeping `termguicolors` off for now so vim always works with Apple
-" Terminal (e.g., even over `ssh`)
-" if $TERM_PROGRAM != "Apple_Terminal"
-"   set termguicolors
-" endif
-
 " Bootstrap vim-plug
 if empty(glob("~/.vim/autoload/plug.vim"))
   execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
@@ -20,10 +14,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-" Good to be accustomed to not having this, because it makes it easier when
-" using implementations of Vim mode that doesn't support this (e.g., in Visual
-" Studio Code)
-" Plug 'machakann/vim-highlightedyank'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
@@ -54,15 +44,8 @@ autocmd VimEnter *
 
 if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
-  if &background == "dark"
-    " colorscheme habamax
-    " colorscheme sorbet
-    colorscheme wildcharm
-  else
-    colorscheme shine
-  endif
 endif
-" colorscheme iceberg
+colorscheme wildcharm
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
