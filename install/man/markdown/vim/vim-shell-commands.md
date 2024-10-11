@@ -61,3 +61,10 @@ There's no nice way to do this, it's easier to just create a new buffer (`:new`)
 # Pipes
 
 - Pipes can be used normally with `:!`, e.g., `:!realpath % | pbcopy` works
+
+## Examples
+
+Trim shell output of a prefix:
+
+- `!tmux saveb - | sed 's\#foo\#\#'`
+
