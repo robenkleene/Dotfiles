@@ -45,7 +45,8 @@ autocmd VimEnter *
 if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark
 endif
-colorscheme wildcharm
+" colorscheme wildcharm
+colorscheme lunaperche
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
