@@ -1,14 +1,22 @@
 # `tig`
 
-- `⌃P` / `⌃N`: Preview previous / next commit
-- `!`: Revert hunk
 - `h`: Show bindings
 - `s` / `S`: Go to status
+- `⌃D`: Cancel command prompt (i.e., `:` prompt)
 
-## Paging the Diff
+## Status
 
-- `␣` / `⌃D`: Page down
-- `-` / `⌃U`: Page up
+- `⌃P` / `⌃N`: Preview previous / next commit
+
+## Diff
+
+- `!`: Revert hunk
+
+## Scrolling the Diff
+
+- `-`, `pgup` / `␣`, `pgdn`: Page up / down
+- `HOME` / `END`: Jump to the top / bottom of the diff
+- `⌃U`/ `⌃D` : Half-page up / down
 
 ## Command Line
 
