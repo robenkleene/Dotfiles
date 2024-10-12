@@ -3,7 +3,8 @@ vim.o.termguicolors = false
 -- Set leader now so later bindings pick it up
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-vim.cmd[[colorscheme wildcharm]]
+-- vim.cmd[[colorscheme wildcharm]]
+vim.cmd[[colorscheme lunaperche]]
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
