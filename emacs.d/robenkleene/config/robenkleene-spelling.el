@@ -2,28 +2,31 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Spelling
-(setq ispell-program-name "aspell")
-(setq ispell-dictionary "english")
+(with-eval-after-load 'flyspell-mode
+  ;; Spelling
+  (setq ispell-program-name "aspell")
+  (setq ispell-dictionary "english")
 
-(setq flyspell-issue-message-flag nil)
-;; Don't prompt when saving a word to the dictionary
-(setq ispell-silently-savep t)
+  (setq flyspell-issue-message-flag nil)
+  ;; Don't prompt when saving a word to the dictionary
+  (setq ispell-silently-savep t)
 
-;; Flyspell
+  ;; Flyspell
 
-;; Disable spell checking for some faces
-(setq flyspell-generic-check-word-predicate
-      'rk/flyspell-generic-textmode-verify)
-(defun rk/flyspell-generic-textmode-verify ()
-  "Used for `flyspell-generic-check-word-predicate' in text modes."
-  (let ((f (get-text-property (- (point) 1) 'face)))
-    (not (memq f '(markdown-pre-face
-                   markdown-inline-code-face
-                   markdown-language-keyword-face)))))
+  ;; Disable spell checking for some faces
+  (setq flyspell-generic-check-word-predicate
+        'rk/flyspell-generic-textmode-verify)
+  (defun rk/flyspell-generic-textmode-verify ()
+    "Used for `flyspell-generic-check-word-predicate' in text modes."
+    (let ((f (get-text-property (- (point) 1) 'face)))
+      (not (memq f '(markdown-pre-face
+                     markdown-inline-code-face
+                     markdown-language-keyword-face)))))
+  )
 
 ;; This is way too noisy
 ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 (add-hook 'text-mode-hook 'flyspell-mode)
 
 (provide 'robenkleene-spelling)

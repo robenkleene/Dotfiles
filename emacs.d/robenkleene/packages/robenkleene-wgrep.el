@@ -6,7 +6,7 @@
   :commands wgrep-change-to-wgrep-mode
   :init
   (setq wgrep-auto-save-buffer t)
-  (with-eval-after-load "grep"
+  (with-eval-after-load 'grep
     ;; Use same binding as `dired-toggle-read-only'
     (define-key grep-mode-map (kbd "C-x C-q") 'wgrep-change-to-wgrep-mode))
   )
