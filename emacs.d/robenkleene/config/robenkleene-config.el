@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Suppresses annoying message:
+;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
+(set 'ad-redefinition-action 'accept)
+
 ;; Use `bash' for external scripts
 ;; That was causing the `The kill is not a (set of) trees' when archiving in
 ;; `org-mode' with the `org-archive-subtree' command
