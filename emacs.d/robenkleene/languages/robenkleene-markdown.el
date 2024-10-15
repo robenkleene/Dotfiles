@@ -43,6 +43,8 @@
   ;; some other desirable behavior.
   ;; (setq markdown-indent-function 'indent-relative)
 
+  ;; Allow following links with return, without this, the best built-in binding
+  ;; to follow links is `C-c C-d'
   (defun rk/markdown-enter-key ()
     "Follow links or enter."
     (interactive)
