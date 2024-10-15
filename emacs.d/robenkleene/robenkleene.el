@@ -8,7 +8,7 @@
 
 ;; Setting `file-name-handler-alist' to nil reduces the number of regular
 ;; expressions that need to run when files are opened, this reduces startup time
-;; by about 0.1s
+;; by ~0.1s
 (let ((file-name-handler-alist nil))
   (if (file-exists-p "~/.emacs_local.el")
       (load-file "~/.emacs_local.el")

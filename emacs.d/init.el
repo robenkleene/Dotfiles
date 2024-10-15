@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Reduce the garbage collection threshold, this decreases startup time by ~0.5s
+(setq-default gc-cons-threshold 100000000)
+
 (require 'package)
 ;; (setq package-enable-at-startup nil)
 (setq package-archives '(
@@ -19,7 +22,7 @@
 
 ;; Setting `file-name-handler-alist' to nil reduces the number of regular
 ;; expressions that need to run when files are opened, this reduces startup time
-;; by about 0.1s
+;; by ~0.1s
 (let ((file-name-handler-alist nil))
   ;; Without this, using `package.el` will add this content to this file
   (setq custom-file "~/.emacs.d/custom.el")
