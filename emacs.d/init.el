@@ -3,7 +3,10 @@
 ;;; Code:
 
 ;; Reduce the garbage collection threshold, this decreases startup time by ~0.5s
-(setq-default gc-cons-threshold 100000000)
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 800000)))
 
 (require 'package)
 ;; (setq package-enable-at-startup nil)
