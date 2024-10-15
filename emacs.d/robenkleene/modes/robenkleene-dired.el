@@ -2,11 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Load `C-x C-j' command for `dired-jump'
-;; Also enables `dired-omit-mode'
-(require 'dired-x)
-
 (with-eval-after-load 'dired
+  ;; Load `C-x C-j' command for `dired-jump'
+  ;; Also enables `dired-omit-mode'
+  (require 'dired-x)
+
   ;; Make `C-x j' also do `dired-jump' (which `C-x C-j' already does)
   ;; (global-set-key (kbd "C-x j") 'dired-jump)
 

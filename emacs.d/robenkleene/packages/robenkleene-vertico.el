@@ -48,9 +48,6 @@
          ("M-s M-g" . consult-ripgrep)
          ("M-s M-f" . consult-fd)
          ("M-s M-o" . consult-line)
-         (:map dired-mode-map
-               ("M-s M-f" . consult-fd)
-               )
          )
   :init
   ;; Time to wait before updating results, the default is `0.2'
