@@ -8,14 +8,15 @@
                                ;; restore after startup
                                (setq gc-cons-threshold 800000)))
 
-(require 'package)
+;; Commenting this out reduces startup time by 0.5s
+;; (require 'package)
 ;; (setq package-enable-at-startup nil)
-(setq package-archives '(
-                         ("gnu" . "https://elpa.gnu.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-                         ("melpa" . "https://melpa.org/packages/")
-                         ))
-(package-initialize)
+;; (setq package-archives '(
+;;                          ("gnu" . "https://elpa.gnu.org/packages/")
+;;                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+;;                          ("melpa" . "https://melpa.org/packages/")
+;;                          ))
+;; (package-initialize)
 
 ;; Uncomment to benchmark startup
 (use-package benchmark-init

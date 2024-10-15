@@ -6,9 +6,12 @@
   :diminish (yas-minor-mode)
   :bind (:map snippet-mode-map
               ("C-c C-k" . yas-abort-snippet))
-  :init
-  (yas-global-mode 1)
+  :hook
+  (prog-mode . yas-minor-mode)
+  (text-mode . yas-minor-mode)
   :config
+  (yas-reload-all)
+
   ;; This is the default
   ;; (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   ;; Allow snippet `key' to be expanded with `hippie-expand'

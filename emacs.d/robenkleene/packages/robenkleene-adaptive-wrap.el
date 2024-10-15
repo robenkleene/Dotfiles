@@ -3,10 +3,10 @@
 ;;; Code:
 
 (use-package adaptive-wrap
-  :diminish
-  :init
+  :hook
   ;; This doesn't play nice with Org mode with `org-indent-mode' on
-  (add-hook 'markdown-mode-hook 'adaptive-wrap-prefix-mode)
+  (markdown-mode . adaptive-wrap-prefix-mode)
+  :diminish
   )
 
 (provide 'robenkleene-adaptive-wrap)

@@ -52,40 +52,40 @@
                 )
   ;; Add `h' for human readable file sizes
   (setq dired-listing-switches "-alh")
-  )
 
-(add-hook 'dired-mode-hook
-          (lambda ()
-            ;; Wrap lines in dired buffers, this makes it easier to read the full
-            ;; path
-            ;; This is disconcerting and we don't need it very often
-            ;; (setq-local truncate-lines nil)
+  (add-hook 'dired-mode-hook
+            (lambda ()
+              ;; Wrap lines in dired buffers, this makes it easier to read the full
+              ;; path
+              ;; This is disconcerting and we don't need it very often
+              ;; (setq-local truncate-lines nil)
 
-            ;; Don't use `ffap-bindings' in `dired-mode' (use the default
-            ;; `find-file') because make it easy to create a new file. These
-            ;; don't work because `ffap-bindings' redirect `find-file` to the
-            ;; `ffap' versions
-            ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
-            ;; (local-set-key (kbd "C-x C-f") #'find-file)
-            ;; Free up `M-s f'
-            ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
-            ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
-            ;; Omit hidden files
-            (dired-omit-mode)
-            ;; Hide details (show them with open parentheses)
-            ;; Definitely need this because lack of colors in Dired mode means
-            ;; it's hard to tell the details from the filename
-            (dired-hide-details-mode)
-            ;; Auto-refresh on file system change
-            (auto-revert-mode)
+              ;; Don't use `ffap-bindings' in `dired-mode' (use the default
+              ;; `find-file') because make it easy to create a new file. These
+              ;; don't work because `ffap-bindings' redirect `find-file` to the
+              ;; `ffap' versions
+              ;; (define-key dired-mode-map (kbd "C-x C-f") 'find-file)
+              ;; (local-set-key (kbd "C-x C-f") #'find-file)
+              ;; Free up `M-s f'
+              ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
+              ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
+              ;; Omit hidden files
+              (dired-omit-mode)
+              ;; Hide details (show them with open parentheses)
+              ;; Definitely need this because lack of colors in Dired mode means
+              ;; it's hard to tell the details from the filename
+              (dired-hide-details-mode)
+              ;; Auto-refresh on file system change
+              (auto-revert-mode)
 
-            ;; Add to `z' The reason we do this in Emacs `dired-mode', but not
-            ;; say `netrw' in Vim is because Vim works more naturally with the
-            ;; terminal, so usually in Vim the important directory has already
-            ;; been added
-            (rk/z-add)
+              ;; Add to `z' The reason we do this in Emacs `dired-mode', but not
+              ;; say `netrw' in Vim is because Vim works more naturally with the
+              ;; terminal, so usually in Vim the important directory has already
+              ;; been added
+              (rk/z-add)
+              )
             )
-          )
+  )
 
 (provide 'robenkleene-dired)
 ;; Local Variables:
