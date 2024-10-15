@@ -19,10 +19,10 @@
 ;; (package-initialize)
 
 ;; Uncomment to benchmark startup
-(use-package benchmark-init
-  :config
-  ;; To disable collection of benchmark data after init is done.
-  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+;; (use-package benchmark-init
+;;   :config
+;;   ;; To disable collection of benchmark data after init is done.
+;;   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
 ;; Setting `file-name-handler-alist' to nil reduces the number of regular
 ;; expressions that need to run when files are opened, this reduces startup time
