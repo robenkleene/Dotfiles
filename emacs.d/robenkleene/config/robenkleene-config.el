@@ -86,6 +86,8 @@
                                space-after-tab
                                )))
 
+;; Disable the initial echo area help message
+(defun display-startup-echo-area-message ())
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
 ;; Set default scratch message to empty, this makes it easy to use the scratch

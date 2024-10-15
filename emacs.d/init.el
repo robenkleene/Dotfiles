@@ -2,11 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Don't display any echo area messages during init
+(setq inhibit-message t)
 ;; Reduce the garbage collection threshold, this decreases startup time by ~0.5s
 (setq gc-cons-threshold 64000000)
 (add-hook 'after-init-hook #'(lambda ()
                                ;; restore after startup
-                               (setq gc-cons-threshold 800000)))
+                               (setq gc-cons-threshold 800000)
+                               (setq inhibit-message nil)
+                               ))
 
 ;; Commenting this out reduces startup time by 0.5s
 ;; (require 'package)
