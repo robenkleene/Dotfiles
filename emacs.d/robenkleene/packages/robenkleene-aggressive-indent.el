@@ -3,9 +3,9 @@
 ;;; Code:
 
 (use-package aggressive-indent
+  :hook
+  (emacs-lisp-mode . aggressive-indent-mode)
   :diminish
-  :init
-  (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
   )
 
 (provide 'robenkleene-aggressive-indent)

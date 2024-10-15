@@ -2,21 +2,21 @@
 ;;; Commentary:
 ;;; Code:
 
-;; `less' can cause problems in `eshell'
-;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
-;; that need a pager set
-(setenv "PAGER" "")
-;; Instead just sety these as visual commands
-(setenv "GIT_PAGER" "")
-;; Force `git' colors all the time
-;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
-
-;; Allow shell commands to be overridden in the `bin' directory 
+;; Allow shell commands to be overridden in the `bin' directory
 (with-eval-after-load 'esh-mode
   (add-to-list 'exec-path (expand-file-name (concat eshell-directory-name "bin")))
   )
 
 (with-eval-after-load 'eshell
+  ;; `less' can cause problems in `eshell'
+  ;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
+  ;; that need a pager set
+  (setenv "PAGER" "")
+  ;; Instead just sety these as visual commands
+  (setenv "GIT_PAGER" "")
+  ;; Force `git' colors all the time
+  ;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
+
   ;; Enable `view-mode' bindings like `q' to quit when running visual commands
   ;; (which are already view-only)
   (defun rk/term-view-mode-once (&rest ignored)
