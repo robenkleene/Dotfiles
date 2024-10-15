@@ -11,6 +11,13 @@
                          ))
 (package-initialize)
 
+;; Uncomment to benchmark startup
+;; (use-package benchmark-init
+;;   :ensure t
+;;   :config
+;;   ;; To disable collection of benchmark data after init is done.
+;;   (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
 ;; Use Emacs install script instead
 ;; Bootstrap `use-package'
 ;; (unless (package-installed-p 'use-package)
