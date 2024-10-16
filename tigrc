@@ -3,6 +3,9 @@ set vertical-split = no
 # set wrap-lines = yes
 set ignore-case = smart-case
 
+# Backspace should be able to page up in (just like readonly buffers can in Emacs)
+bind generic <Backspace> move-page-up
+
 # Make dates take up less space
 set main-view-date = relative-compact
 
