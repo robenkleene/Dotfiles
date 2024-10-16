@@ -35,7 +35,7 @@
 ;; Automatically save every second
 ;; (setq auto-save-visited-interval 1)
 ;; Suppress message when saving
-;; This sometimes causes flickering, like a save message is displayed then it's
+;; This causes flickering, like a save message is displayed then it's
 ;; quickly cleared
 ;; (setq save-silently t)
 ;; Suppress message every time auto-saving happens
