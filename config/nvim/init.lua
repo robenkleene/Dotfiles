@@ -4,7 +4,12 @@ vim.o.termguicolors = false
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 -- vim.cmd[[colorscheme wildcharm]]
-vim.cmd[[colorscheme lunaperche]]
+vim.cmd[[
+if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
+  set background=dark
+endif
+colorscheme lunaperche
+]]
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
