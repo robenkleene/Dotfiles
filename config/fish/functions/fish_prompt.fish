@@ -35,7 +35,7 @@ function fish_prompt
             (set_color $fish_color_status) \
             (set_color $fish_color_status) \
             $last_pipestatus)
-    printf '%s%s> ' $prompt_status $normal
+    printf '%s%s> ' $prompt_status $normal
 end
 
 # `git` right prompt
