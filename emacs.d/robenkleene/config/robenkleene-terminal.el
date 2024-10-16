@@ -4,24 +4,24 @@
 
 ;; Clipboard
 
+(setenv "INSIDE_EMACS" "1")
 ;; Need to store the last paste because the function should only return a value
 ;; if it's different than the last paste
 (setq rk/last-copy nil)
 (defun rk/safecopy (text &optional push)
   ;; Do nothing if the region isn't active so that other commands like
   ;; `kill-line', don't affect the system clipboard
-  (setenv "INSIDE_EMACS" "1")
   (let (
         (process-connection-type nil)
         )
-    (let ((proc (start-process "safecopy" nil "~/.bin/safecopy")))
+    (let ((proc (start-process "safecopy" nil "~/.bin/safecopy" "-s")))
       (unless (string))
       (process-send-string proc text)
       (process-send-eof proc)))
   (setq rk/last-copy text)
   )
 (defun rk/safepaste ()
-  (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/safepaste")))
+  (let ((result (shell-command-to-string "~/.bin/safepaste -s")))
     (unless (string= result rk/last-copy)
       result)))
 (setq interprogram-cut-function 'rk/safecopy)
