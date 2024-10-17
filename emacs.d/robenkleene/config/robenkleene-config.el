@@ -38,6 +38,13 @@
 ;; This causes flickering, like a save message is displayed then it's
 ;; quickly cleared
 ;; (setq save-silently t)
+;; This at least prevents the echo area from growing when saving
+(defadvice save-buffer (around rk/save-mini-window-size)
+  "Don't increase the size of the echo area if the path of the file being saved is too long to show on one line."
+  (let ((message-truncate-lines t))
+    ad-do-it))
+(ad-activate 'save-buffer)
+
 ;; Suppress message every time auto-saving happens
 (setq-default auto-save-no-message t)
 
