@@ -62,23 +62,6 @@
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
-(use-package embark
-  :bind
-  (
-   ("C-c e" . embark-act)
-   ("C-h B" . embark-bindings))
-  :config
-  ;; Hide the mode line of the Embark live/completions buffers
-  (add-to-list 'display-buffer-alist
-               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-                 nil
-                 (window-parameters (mode-line-format . none))))
-  (use-package embark-consult
-    :hook
-    (embark-collect-mode . consult-preview-at-point-mode)
-    )
-)
-
 (provide 'robenkleene-vertico)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
