@@ -1,4 +1,2 @@
-# `hg` Show
-
-- `hg show` is a bit of a hack, `hg log -p` is more flexible
+- `hg log -p` is a more flexible way to display the same information
 - `hg show --stat` is a good way to see just the changed files
