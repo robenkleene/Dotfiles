@@ -77,9 +77,9 @@ elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
 fi
 
 # fzf
-if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
-  source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
-fi
+# if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
+#   source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
+# fi
 # if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
 #   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
 # fi
