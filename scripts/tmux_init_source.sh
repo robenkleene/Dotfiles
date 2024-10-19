@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-# ~/.bin/tmux_init_reset &> /dev/null
+~/.bin/tmux_init_reset
 tmux source-file ~/.config/tmux/tmux.conf
