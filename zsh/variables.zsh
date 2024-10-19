@@ -66,12 +66,6 @@ export ALTERNATE_EDITOR=""
 # rg
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-# fzf
-# - Always wrap the preview window
-# - Set a height and reverse feels more natural running from command line
-# - `--no-color` works better for both light and dark terminals
-export FZF_DEFAULT_OPTS='--no-color --preview-window=wrap --bind=alt-shift-up:preview-page-up,alt-shift-down:preview-page-down,shift-left:preview-page-up,shift-right:preview-page-down'
-
 # marksman
 if [[ "$(uname)" == "Linux" ]]; then
   # marksman was crashing on launch due to missing library errors without
