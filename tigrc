@@ -5,6 +5,8 @@ set ignore-case = smart-case
 
 # Backspace should be able to page up in (just like readonly buffers can in Emacs)
 bind generic <Backspace> move-page-up
+bind generic <Ctrl-B> move-page-up
+bind generic <Ctrl-F> move-page-down
 
 # Make dates take up less space
 set main-view-date = relative-compact
