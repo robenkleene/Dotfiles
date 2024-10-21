@@ -39,14 +39,9 @@ export CLICOLOR=1
 # This breaks `gh browse`
 # export BROWSER="none"
 
-if test -n "$INSIDE_EMACS"; then
-    export PAGER=cat
-    export GIT_PAGER=cat
-else
-    # Without this `less` doesn't get picked up as `man` pager resulting in warning
-    # about `incsearch` not being supported
-    export PAGER=less
-fi
+# Without this `less` doesn't get picked up as `man` pager resulting in warning
+# about `incsearch` not being supported
+export PAGER=less
 
 # LS COLORS
 # Compiled from https://github.com/trapd00r/LS_COLORS

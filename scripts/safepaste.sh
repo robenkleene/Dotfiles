@@ -23,7 +23,7 @@ while getopts ":sh" option; do
   esac
 done
 
-if [[ -n "${INSIDE_EMACS:-}" ]]; then
+if [[ -n "${EMACSSERVER:-}" ]]; then
   if [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
     pbpaste
   else

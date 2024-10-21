@@ -4,10 +4,12 @@
 
 ;; Clipboard
 
-(setenv "INSIDE_EMACS" "1")
-;; Need to store the last paste because the function should only return a value
-;; if it's different than the last paste
-(setq rk/last-copy nil)
+(setenv "PAGER" "cat")
+(setenv "GIT_PAGER" "cat")
+(if (and (boundp 'server-buffer-clients) server-buffer-clients)
+    (setenv "EMACSSERVER" "1")
+  )
+
 (defun rk/safecopy (text &optional push)
   ;; Do nothing if the region isn't active so that other commands like
   ;; `kill-line', don't affect the system clipboard
@@ -18,14 +20,8 @@
       (unless (string))
       (process-send-string proc text)
       (process-send-eof proc)))
-  (setq rk/last-copy text)
   )
-(defun rk/safepaste ()
-  (let ((result (shell-command-to-string "~/.bin/safepaste")))
-    (unless (string= result rk/last-copy)
-      result)))
 (setq interprogram-cut-function 'rk/safecopy)
-(setq interprogram-paste-function 'rk/safepaste)
 
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
@@ -60,7 +56,10 @@
 ;; the browser in most modern terminal emulators
 (if (getenv "SSH_CONNECTION")
     (setq browse-url-browser-function
-          (lambda (url &rest args) (message "%s" url))
+          (lambda (url &rest args)
+            (kill-new url)
+            (message "%s" url)
+            )
           ))
 
 ;; By default, there's a bunch of `-' at the end of the modeline, remove these

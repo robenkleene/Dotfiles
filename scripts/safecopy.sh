@@ -23,8 +23,6 @@ while getopts ":sh" option; do
   esac
 done
 
-# Can't depend on `TMUX` running when `INSIDE_EMACS` is set because that
-# variable is recorded when the emacs server was started
 if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
   if [[ ! -e /tmp/robenkleene.transient/ ]]; then
     mkdir -p /tmp/robenkleene.transient/
@@ -32,21 +30,24 @@ if [[ ! -e /tmp/robenkleene.transient/clipboard ]]; then
   touch /tmp/robenkleene.transient/clipboard
 fi
 
-if [[ -n "${INSIDE_EMACS:-}" ]]; then
-  if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
-    tee >(pbcopy) | tee >(tmux loadb -) | cat > /tmp/robenkleene.transient/clipboard
+# Have to pipe to both `tmux loadb -` and clipboard file because `tmux loadb
+# -` will succeed if tmux is running even if not currently attached to a
+# session
+# Can't depend on `TMUX` running when `EMCSSERVER` is set because that
+# variable is recorded when the emacs server was started
+if [[ -n "${EMACSSERVER:-}" ]]; then
+  if [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
+    tee >(pbcopy) | tee >(tmux loadb -w -) | cat > /tmp/robenkleene.transient/clipboard
+  elif [[ "$skip_system" == "false" ]]; then
+    tee >(tmux loadb -w -) | cat > /tmp/robenkleene.transient/clipboard
   else
-    # Have to pipe to both `tmux loadb -` and clipboard file because `tmux loadb
-    # -` will succeed if tmux is running even if not currently attached to a
-    # session
     tee >(tmux loadb -) | cat > /tmp/robenkleene.transient/clipboard
   fi
 elif [[ -n "${TMUX:-}" ]]; then
-  tmux loadb -
   if [[ "$skip_system" == "false" ]]; then
-    if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null; then
-      TERM=xterm-256color tmux saveb - | pbcopy
-    fi
+    tmux loadb -w -
+  else
+    tmux loadb -
   fi
 elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
