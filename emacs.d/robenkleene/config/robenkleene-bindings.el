@@ -7,31 +7,10 @@
 
 ;; Search & Replace
 
-;; These use `global-set-key' so more specific minor modes can override them,
-;; e.g., the minibuffer
-;; Prefer the `regexp' versions of search and query replace, this is partially
-;; because `C-M-%' isn't possible to type in a terminal
-;; Toggle these off, here's the new strategy:
-;; Use `C-s' to start an `isearch', then use `M-r' to switch it to a regular
-;; expression. From `isearch', hit `M-%' to start a query replace. The query
-;; replace will match the same mode as the `isearch' (so it will be `regex' if
-;; you hit `M-r')
-;; The above approach doesn't work for doing a replace in a region, because
-;; starting the `isearch' moves the point
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
 ;; The default `completion-at-point' key, `C-M-i', doesn't work in terminal
 ;; emacs, but it resolves to `M-<tab>', which is unbound. Bind `M-<tab>' to
 ;; `completion-at-point' so that same binding works in terminal emacs
 (global-set-key (kbd "M-<tab>") 'completion-at-point)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
-;; Swap query replace
-(define-key rk/bindings-minor-mode-map (kbd "M-%")
-            'query-replace-regexp)
-(define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
-;; Great for closing open buffers
-;; (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 ;; Window Management `M-g M-c' is unbound, and it's used in the `*Completions*'
 ;; buffer to return to the minibuffer

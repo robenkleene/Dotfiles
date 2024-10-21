@@ -70,11 +70,11 @@
               ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
               ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
               ;; Omit hidden files
-              (dired-omit-mode)
+              ;; (dired-omit-mode)
               ;; Hide details (show them with open parentheses)
               ;; Definitely need this because lack of colors in Dired mode means
               ;; it's hard to tell the details from the filename
-              (dired-hide-details-mode)
+              ;; (dired-hide-details-mode)
               ;; Auto-refresh on file system change
               (auto-revert-mode)
 
