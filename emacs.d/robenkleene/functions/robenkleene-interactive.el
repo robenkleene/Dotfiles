@@ -88,8 +88,8 @@
   "Create dired buffer from COMMAND."
   (interactive
    (list (list (read-shell-command
-                "Run find command: "
-                nil
+                "Run find (like this): "
+                "fd -l "
                 'rk/find-shell-command-dired-history)
                )
          ))
@@ -102,7 +102,9 @@
           (kill-buffer output-buffer)
           )
       )
-    (let ((process (start-process-shell-command "async-command" output-buffer (concat command " | tr \\\\n \\\\0 | xargs -0 ls -l"))))
+    ;; TODO: Why do I need `(car command)'? Why is command a list here?
+    (let ((process (start-process-shell-command "async-command" output-buffer
+                                                (car command))))
       (set-process-sentinel process
                             (lambda (proc event)
                               (when (string-match-p "finished" event)
