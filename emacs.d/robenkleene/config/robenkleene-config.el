@@ -317,6 +317,12 @@
 ;; Repeat subsequent mark pops with `C-SPC'
 (setq set-mark-command-repeat-pop t)
 
+;; Use `ripgrep' for grep
+(setq grep-command "rg -n --no-heading "
+      grep-use-null-device nil)
+
+
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

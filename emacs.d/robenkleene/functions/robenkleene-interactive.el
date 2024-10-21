@@ -70,7 +70,7 @@
   )
 
 ;;;###autoload
-(defvar rk/grep-shell-command-history nil "History list for rg.")
+(defvar rk/grep-shell-command-history nil "History list for `grep-shell-command'.")
 (defun grep-shell-command (command-args)
   "Create grep buffer from COMMAND-ARGS."
   (interactive
@@ -82,10 +82,16 @@
   (compilation-start command-args 'grep-mode)
   )
 
+;;;###autoload
+(defvar rk/find-shell-command-dired-history nil "History list for `find-shell-command-dired'.")
 (defun find-shell-command-dired (command)
   "Create dired buffer from COMMAND."
   (interactive
-   (list (read-shell-command "Find Command: ")
+   (list (list (read-shell-command
+                "Run find command: "
+                nil
+                'rk/find-shell-command-dired-history)
+               )
          ))
   (let* ((output-buffer "*Find Shell Command*"))
     (if (get-buffer output-buffer)
