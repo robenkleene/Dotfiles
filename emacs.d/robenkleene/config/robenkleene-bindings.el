@@ -61,6 +61,8 @@
             'find-shell-command-dired)
 (define-key rk/bindings-minor-mode-map (kbd "C-x !")
             'buffer-shell-command)
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
+            'recentf-open)
 
 (defvar previous-multiframe-window-repeat-map
   (let ((map (make-sparse-keymap)))
