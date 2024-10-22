@@ -1,14 +1,7 @@
 alias -- -='cd -'
 alias ..='cd ..'
 
-# ls
-if [[ "$(uname)" = "Linux" ]]; then
-  alias ls='ls --color=auto'
-else
-  if type "gls" > /dev/null; then
-    alias ls='gls --color=auto'
-  fi
-fi
+alias grep="`which grep` --color=auto"
 
 # egit
 # These are aliases instead of shell functions because they set the `ssh`
