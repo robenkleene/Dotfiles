@@ -1,6 +1,9 @@
 alias -- -='cd -'
 alias ..='cd ..'
 
+if [[ "$(uname)" = "Linux" ]]; then
+  alias ls='ls --color=auto'
+fi
 alias grep="`which grep` --color=auto"
 
 # egit
