@@ -1,0 +1,3 @@
+- `find-name-dired`: Find files by `find` name search
+- `find-dired`: Find files using any `find` arguments
+- `find-grep-dired`: Find files that contain a `grep` pattern
