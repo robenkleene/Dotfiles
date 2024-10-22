@@ -5,3 +5,9 @@
 
 - `display-message -p "#{pane_current_path}"`
 - `display-message -p "#{pane_current_command}"`
+
+# Exited Unexpectedly
+
+`server exited unexpectedly`
+
+Can probably be fixed with `rm -rf /tmp/tmux*`
