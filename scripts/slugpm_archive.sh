@@ -3,7 +3,8 @@
 set -euo pipefail
 
 if [[ $# -eq 0 ]]; then
-  text=$(cat)
+  # `text=$(cat)` was giving problems with input shorter than one line
+  text="$(< /dev/stdin)"
   if [[ -z "${text:-}" ]]; then
     echo "Error: Nothing to archive" >&2
     exit 1
