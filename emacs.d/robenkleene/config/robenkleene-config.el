@@ -318,10 +318,8 @@
 (setq set-mark-command-repeat-pop t)
 
 ;; Use `ripgrep' for grep
-(setq grep-command "rg -n --no-heading "
-      grep-use-null-device nil)
-
-
+;; (setq grep-command "rg -n --no-heading "
+;;       grep-use-null-device nil)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
