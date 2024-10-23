@@ -3,6 +3,7 @@
 - `r` / `run`: Run (with parameters, e.g., `run <parameters>` passes parameters to the executable)
 - `s` / `step`: Step into
 - `n` / `next`: Step over
+- `finish`: Finish the current stack frame (equivalent to step out)
 - `c` / `continue`: Continue execution
 - `↩`: Repeat last command
 - `q` / `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
