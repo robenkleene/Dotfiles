@@ -70,6 +70,9 @@
               ;; (define-key dired-mode-map (kbd "M-s f C-s") nil)
               ;; (define-key dired-mode-map (kbd "M-s f C-M-s") nil)
               ;; Omit hidden files
+              ;; One reason to leave this off is the `dired-omit-mode' will hide
+              ;; Emacs backup files (e.g., `#<filename>#'), it makes it easier
+              ;; to keep things clean to address these files frequently
               ;; (dired-omit-mode)
               ;; Hide details (show them with open parentheses)
               ;; Definitely need this because lack of colors in Dired mode means
