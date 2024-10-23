@@ -1,9 +1,9 @@
 - `-E` / `--extended-regexp`: Support or, e.g., `grep -E "foo|bar"`
 - `-v` / `--invert-match`: Invert matches
 - `-o` / `--only-matching`: Only show match
-- `--include <glob>`: Include glob (can be added multiple times)
-- `--exclude <glob>`: Exclude glob (can be added multiple times)
-- `--exclude-dir <glob>`: Exclude glob (can be added multiple times)
+- `--include=<glob>`: Include glob (can be added multiple times)
+- `--exclude=<glob>`: Exclude glob (can be added multiple times)
+- `--exclude-dir=<glob>`: Exclude glob (can be added multiple times)
 
 # Brace Expansion
 
