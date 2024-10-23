@@ -1,4 +1,8 @@
-- `find . -name <glob>`
+- `find . -name <glob>`: Find in name
+
+# Multiple File Extensions
+
+Use regular expressions, e.g., `find . -regex '.*\.(foo|bar)$'`
 
 # Commands
 
