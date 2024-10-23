@@ -1,4 +1,4 @@
-- `find . -name "*.bundle"`
+- `find . -name <glob>`
 
 # Commands
 
