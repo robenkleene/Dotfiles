@@ -1,0 +1,4 @@
+- If `auto-save-default` is `t` a backup will be made of a visited file in the same directory with a `#<filename>#`
+- Use `recover-this-file` to recover the backup file
+- After recovering, `diff-buffer-with-file` to see a diff vs. the saved file contents
+- To reject the changes, just undo the `recover-this-file`
