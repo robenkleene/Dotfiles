@@ -1,9 +1,10 @@
 import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
 
 [colors.primary]
-background = "#211930"
+# Kleene Purple
+# background = "#211930"
 # background = "#000000"
-# background = "#15191E"
+background = "#222222"
 foreground = "#FFFFFF"
 # background = "#FFFFFF"
 # foreground = "#000000"
