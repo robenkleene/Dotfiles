@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_cout_var
-# name: Print variable with this
+# name: Print variable
 # --
-std::cout << this << " $1 = " << ${1:result} << std::endl;
+std::cout << "$1 = " << ${1:result} << std::endl;

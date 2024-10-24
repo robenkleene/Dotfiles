@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# key: rk_cout_map_this
+# name: Print map with this
+# --
+std::cout << this << " ${1:map} = {";
+bool first = true;
+for (const auto& pair : values) {
+  if (!first) {
+    std::cout << ", ";
+  }
+  std::cout << "{" << pair.first << ": " << pair.second << "}";
+  first = false;
+}
+std::cout << "}" << std::endl;

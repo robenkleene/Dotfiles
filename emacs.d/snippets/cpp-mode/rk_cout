@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_cout
-# name: Print with this
+# name: Print
 # --
-std::cout << this << " ${1:message}" << std::endl;
+std::cout << "${1:message}" << std::endl;
