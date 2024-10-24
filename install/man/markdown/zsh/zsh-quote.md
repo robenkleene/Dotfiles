@@ -1,1 +1,2 @@
-Backslashes have no meaning inside `'` in `zsh`, this means it's not easy to have a single quote inside a string quoted with single quotes.
+- Backslashes have no meaning inside `'` in `zsh`, this means it's not easy to have a single quote inside a string quoted with single quotes.
+- At the `quote>` prompt, there's no way to go back and edit the previous command directly, the best solution is to do `^C`, then `↑`
