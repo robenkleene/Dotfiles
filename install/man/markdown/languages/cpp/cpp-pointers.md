@@ -1,8 +1,13 @@
 - A raw pointer is a variable that contains the memory address of an object (or function)
+- A `unique_ptr` is a wrapper around a raw pointer that removes the copy and copy assignment constructors to ensure there's only one owner of the managed object
 - Prefer references (`Bar& foo`) over pointers (`Bar* foo`) because references can't be null
 - A reference (e.g., `Bar& foo` as a function parameter) is just a pointer that can't be null
 - `const` means that a pointer can be assigned, e.g., (`const int foo`) can't do `*foo = 42`
 - When an variable object is `const` it can only access methods on its class that are also marked `const`
+
+# References
+
+References are just that, references to an existing object, this means for example that you can't have a function returns a reference return a local variable, because that's variable is temporary value that will leave memory at the end of its scope (and a reference can't be null).
 
 # `.` vs. `->`
 
