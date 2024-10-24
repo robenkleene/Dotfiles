@@ -1,3 +1,3 @@
-`isearch` uses the `isearch` keymap (`bindkey -M isearch`) which is empty by default.
-
+- `isearch` uses the `isearch` keymap (`bindkey -M isearch`) which is empty by default.
 - `accept-line`: Accepts the current search without executing it, it is not bound by default.
+- To edit the line while searching, either us `M-g` for `get-line`, or use a movement command which will end the search
