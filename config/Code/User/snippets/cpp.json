@@ -9,40 +9,40 @@
     "body": "#include <iostream>",
     "description": "Include for `cout`"
   },
-  "Print with this": {
-    "prefix": "rk_cout_this",
+  "Print with address": {
+    "prefix": "rk_cout_addr",
     "body": "std::cout << this << \" ${1:message}\" << std::endl;",
-    "description": "Print with this"
+    "description": "Print with address"
   },
   "Print": {
     "prefix": "rk_cout",
     "body": "std::cout << \"${1:message}\" << std::endl;",
     "description": "Print"
   },
-  "Print variable with this": {
-    "prefix": "rk_cout_var_this",
+  "Print variable with address": {
+    "prefix": "rk_cout_var_addr",
     "body": "std::cout << this << \" $1 = \" << ${1:result} << std::endl;",
-    "description": "Print variable with this"
+    "description": "Print variable with address"
   },
   "Print variable": {
     "prefix": "rk_cout_var",
     "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
     "description": "Print variable"
   },
-  "Print array with this": {
-    "prefix": "rk_cout_array_this",
+  "Print array with address": {
+    "prefix": "rk_cout_array_addr",
     "body": "std::cout << this << \" ${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
-    "description": "Print array with this"
+    "description": "Print array with address"
   },
   "Print array": {
     "prefix": "rk_cout_array",
     "body": "std::cout << \"${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
     "description": "Print array"
   },
-  "Print map with this": {
-    "prefix": "rk_cout_map_this",
+  "Print map with address": {
+    "prefix": "rk_cout_map_addr",
     "body": "std::cout << this << \" ${1:map} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
-    "description": "Print map with this"
+    "description": "Print map with address"
   },
   "Print map": {
     "prefix": "rk_cout_map",
