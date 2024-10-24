@@ -38,8 +38,6 @@
 
   ;; Allow following grep line matches
   (define-key text-mode-map (kbd "C-x C-f") 'ffap)
-  ;; (define-key text-mode-map (kbd "M-<down>") 'rk/move-line-down)
-  ;; (define-key text-mode-map (kbd "M-<up>") 'rk/move-line-up)
   ;; Make is so quotes and double quotes can be selected with `mark-sexp'
   (modify-syntax-entry ?' "\"")
   (modify-syntax-entry ?\" "\"")

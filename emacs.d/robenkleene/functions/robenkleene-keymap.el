@@ -2,29 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun rk/make-frame-with-current-frame ()
-  "Make a new frame the same size as the current frame."
-  (interactive)
-  (let* ((frame (selected-frame))
-         (left (frame-parameter frame 'left))
-         (left (if (consp left)
-                   (eval left)
-                 left))
-         (top (frame-parameter frame 'top))
-         (width (frame-width frame))
-         (height (frame-height frame))
-         )
-    (let ((frame (make-frame
-                  `(
-                    (left . ,(+ left 30))
-                    (top . ,(+ top 30))
-                    (width . ,width)
-                    (height . ,height)
-                    ))))
-      (select-frame-set-input-focus frame))
-    )
-  )
-
 (defun rk/forward-block (&optional n)
   "Move to next text block N."
   (interactive "p")
@@ -69,31 +46,6 @@
       (forward-line)
     )
   )
-
-;; (defvar block-repeat-map
-;;   (let ((map (make-sparse-keymap)))
-;;     (define-key map (kbd "{") #'rk/backward-block)
-;;     (define-key map (kbd "}") #'rk/forward-block)
-;;     (define-key map (kbd "[") #'rk/backward-block)
-;;     (define-key map (kbd "]") #'rk/forward-block)
-;;     map))
-;; (dolist (cmd '(rk/backward-block rk/forward-block))
-;;   (put cmd 'repeat-map 'block-repeat-map))
-
-(defun rk/move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
-
-(defun rk/move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
 
 (provide 'robenkleene-keymap)
 ;; Local Variables:
