@@ -1,4 +1,5 @@
 - `M-p` / `M-n`: Previous / next command
+- `M-r` / `M-s`: Search history backwards / forwards for a regular expression
 - `C-g`: Cancel minibuffer
 - `<SPC>`: Complete word
 - `<Tab>`: Complete
