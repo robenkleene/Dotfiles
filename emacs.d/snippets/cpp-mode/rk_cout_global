@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_cout_global
-# name: Print without this
-# --
-std::cout << "${1:message}" << std::endl;

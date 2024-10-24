@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
-# key: rk_cout_array_global
-# name: Print array without this
+# key: rk_cout_array_this
+# name: Print array with this
 # --
-std::cout << "${1:arr} = ";
+std::cout << this << " ${1:arr} = ";
 for (std::size_t i = 0; i < $1.size(); ++i) {
   std::cout << (i > 0 ? ", " : "") << $1[i];
 }
