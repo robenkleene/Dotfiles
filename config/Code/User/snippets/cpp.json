@@ -10,42 +10,42 @@
     "description": "Include for `cout`"
   },
   "Print with this": {
-    "prefix": "rk_cout",
+    "prefix": "rk_cout_this",
     "body": "std::cout << this << \" ${1:message}\" << std::endl;",
-    "description": "Print with this address"
+    "description": "Print with this"
   },
   "Print": {
-    "prefix": "rk_cout_global",
+    "prefix": "rk_cout",
     "body": "std::cout << \"${1:message}\" << std::endl;",
     "description": "Print"
   },
   "Print variable with this": {
-    "prefix": "rk_cout_var",
+    "prefix": "rk_cout_var_this",
     "body": "std::cout << this << \" $1 = \" << ${1:result} << std::endl;",
     "description": "Print variable with this"
   },
   "Print variable": {
-    "prefix": "rk_cout_var_global",
+    "prefix": "rk_cout_var",
     "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
     "description": "Print variable"
   },
   "Print array with this": {
-    "prefix": "rk_cout_array",
+    "prefix": "rk_cout_array_this",
     "body": "std::cout << this << \" ${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
     "description": "Print array with this"
   },
   "Print array": {
-    "prefix": "rk_cout_array_global",
+    "prefix": "rk_cout_array",
     "body": "std::cout << \"${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
     "description": "Print array"
   },
   "Print map with this": {
-    "prefix": "rk_cout_map",
+    "prefix": "rk_cout_map_this",
     "body": "std::cout << this << \" ${1:map} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
     "description": "Print map with this"
   },
   "Print map": {
-    "prefix": "rk_cout_map_global",
+    "prefix": "rk_cout_map",
     "body": "std::cout << \"${1:map} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
     "description": "Print map"
   },
