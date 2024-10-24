@@ -19,3 +19,11 @@ Get raw pointer:
 ```
 Foo *rawFoo = foo.get();
 ```
+
+Accessing a member variable:
+
+```
+foo->bar
+```
+
+(`foo->bar` is implemented as operator overloading `foo->bar` is equivalent to `foo.get()->bar`)
