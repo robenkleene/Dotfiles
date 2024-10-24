@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# key: rk_cout_array_this
-# name: Print array with this
+# key: rk_cout_array_addr
+# name: Print array with address
 # --
 std::cout << this << " ${1:arr} = ";
 for (std::size_t i = 0; i < $1.size(); ++i) {

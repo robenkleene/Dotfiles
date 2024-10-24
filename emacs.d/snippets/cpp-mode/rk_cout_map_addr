@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# key: rk_cout_map_this
-# name: Print map with this
+# key: rk_cout_map_addr
+# name: Print map with address
 # --
 std::cout << this << " ${1:map} = {";
 bool first = true;
