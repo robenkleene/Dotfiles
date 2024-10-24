@@ -151,7 +151,7 @@
   )
 
 ;;;###autoload
-(defvar rk/rg-history nil "History list for z.")
+(defvar rk/z-history nil "History list for z.")
 (defun z (term)
   "Jump to directory."
   (interactive
