@@ -15,9 +15,7 @@ brew 'universal-ctags'
 # colors (otherwise they show up as escape sequences)
 brew 'less'
 brew 'fzf'
-brew 'fish'
 brew 'bat'
-brew 'helix'
 
 # Editor
 brew 'aspell'
@@ -28,12 +26,9 @@ brew 'neovim'
 brew 'gh'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
-brew 'hyperfine'
 
 # Special
 brew 'pandoc'
-# Shows whitespace nicer than xxd
-brew 'hexyl'
 
 # Languages
 # JavaScript

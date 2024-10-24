@@ -53,16 +53,11 @@ brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 brew 'yt-dlp'
-brew 'hyperfine'
-# Shows whitespace nicer than xxd
-brew 'hexyl'
 # VR
 # Use another install method
 # brew 'scrcpy'
 brew 'fzf'
-brew 'fish'
 brew 'bat'
-brew 'helix'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
 brew 'watch'
