@@ -4,6 +4,7 @@
 - A reference (e.g., `Bar& foo` as a function parameter) is just a pointer that can't be null
 - `const` means that a pointer can be assigned, e.g., (`const int foo`) can't do `*foo = 42`
 - When an variable object is `const` it can only access methods on its class that are also marked `const`
+- If a method constructs an object and wants to return that object, you have to use a raw pointer (the caller can then manage the result with a smart pointer). This is because you can't use a reference, because there's no exiting object to reference, and you can't use a `unique_ptr` because a `unique_ptr` will be destroyed at the end of the method.
 
 # References
 
