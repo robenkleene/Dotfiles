@@ -5,8 +5,6 @@
 ;; New Maps
 (defvar rk/bindings-minor-mode-map (make-keymap))
 
-;; Search & Replace
-
 ;; The default `completion-at-point' key, `C-M-i', doesn't work in terminal
 ;; emacs, but it resolves to `M-<tab>', which is unbound. Bind `M-<tab>' to
 ;; `completion-at-point' so that same binding works in terminal emacs
@@ -55,12 +53,6 @@
             'z-other-frame)
 (define-key rk/bindings-minor-mode-map (kbd "C-x t z")
             'z-other-tab)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-s g")
-;;             'rgrep)
-;; (define-key rk/bindings-minor-mode-map (kbd "M-s f")
-;;             'find-name-dired)
-(define-key rk/bindings-minor-mode-map (kbd "C-x !")
-            'buffer-shell-command)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
             'recentf-open)
 
@@ -74,20 +66,6 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x O")
             'previous-multiframe-window)
 
-;; Make undo repeatable, this is available by default, this adds `r' to redo
-(defvar undo-only-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "u") #'undo-only)
-    (define-key map (kbd "r") #'undo-redo)
-    map))
-
-(dolist (cmd '(undo))
-  (put cmd 'repeat-map 'undo-only-repeat-map))
-;; `undo' is bound by default, this makes the redo available
-(define-key rk/bindings-minor-mode-map (kbd "C-x u")
-            'undo-only)
-
-;; Mode
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
   :init-value t
