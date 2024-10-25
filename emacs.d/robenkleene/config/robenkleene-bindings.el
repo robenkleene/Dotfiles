@@ -70,6 +70,13 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x O")
             'previous-multiframe-window)
 
+(defvar mark-paragraph-repeat-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "h") #'mark-paragraph)
+    map))
+(dolist (cmd '(mark-paragraph))
+  (put cmd 'repeat-map 'mark-paragraph-repeat-map))
+
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
   :init-value t
