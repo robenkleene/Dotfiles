@@ -30,7 +30,6 @@
   (require 'robenkleene-bindings)
   (require 'robenkleene-completion)
   (require 'robenkleene-config)
-  (require 'robenkleene-search)
   (require 'robenkleene-spelling)
   (require 'robenkleene-troubleshooting)
   (require 'robenkleene-window-management)
