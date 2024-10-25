@@ -98,8 +98,8 @@ augroup clean_oldfiles
   autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# ".*\.hg\.txt$"')
 augroup END
 
-highlight Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
+highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
 augroup override_colors
     autocmd!
-    autocmd ColorScheme * highlight Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
+    autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
 augroup END
