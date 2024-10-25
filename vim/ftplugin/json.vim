@@ -5,4 +5,3 @@ setlocal foldenable
 setlocal foldmethod=manual
 " setlocal foldcolumn=3
 " setlocal foldlevelstart=99
-
