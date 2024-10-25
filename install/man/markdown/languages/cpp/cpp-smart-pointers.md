@@ -11,7 +11,7 @@ std::unique_ptr<Foo> foo;
 Constructing:
 
 ```
-std::make_unique foo = std::make_unique<Foo>(bar); // `bar` is constructor parameter
+std::unique_ptr<Foo> foo = std::unique_ptr<Foo>(bar); // `bar` is constructor parameter
 ```
 
 Get raw pointer:
