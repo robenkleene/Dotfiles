@@ -70,23 +70,23 @@ function! commands#Part(...) range abort
 endfunction
 
 function! commands#Ggrep(args)
-    let content = a:args
-    if content =~# '^\([^:]\+\):\(\d\+\):\?\(\d*\)'
-        let file = matchstr(content, '^\([^:]\+\)')
-        let line = matchstr(content, ':\zs\d\+\ze')
-        let col = matchstr(content, ':\d\+:\zs\d\+\ze')
-        if empty(col)
-            let col = 1
-        endif
-
-        " `filereadable` isn't working, maybe doesn't support a virtual file system?
-        " if filereadable(file)
-        execute 'edit ' . file
-        execute 'normal! ' . line . 'G' . col . '|'
-        " else
-        "     echo "Error: File '" . file . "' not found."
-        " endif
-    else
-        echo "Error: Invalid format in register. Expected '<filename>:<linenumber>[:<columnumber>]'."
+  let content = a:args
+  if content =~# '^\([^:]\+\):\(\d\+\):\?\(\d*\)'
+    let file = matchstr(content, '^\([^:]\+\)')
+    let line = matchstr(content, ':\zs\d\+\ze')
+    let col = matchstr(content, ':\d\+:\zs\d\+\ze')
+    if empty(col)
+        let col = 1
     endif
+
+    " `filereadable` isn't working, maybe doesn't support a virtual file system?
+    " if filereadable(file)
+    execute 'edit ' . file
+    execute 'normal! ' . line . 'G' . col . '|'
+    " else
+    "     echo "Error: File '" . file . "' not found."
+    " endif
+  else
+    echo "Error: Invalid format in register. Expected '<filename>:<linenumber>[:<columnumber>]'."
+  endif
 endfunction
