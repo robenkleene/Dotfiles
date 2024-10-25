@@ -1,4 +1,5 @@
 - `-i`: Ignore case (also use *inside of less* to toggle case-sensitivity)
+- `^W`: Toggle search wrap
 - To dump everything to the terminal, use `--no-init` and then hit `G q` to jump to the bottom and quit
 
 # Git Pager Settings
@@ -44,3 +45,7 @@ Command to do `less` like `git` pager:
 # Tips
 
 To search for a flag, prefix it with a space, e.g., ` --foo`.
+
+# `lesskey`
+
+- Doesn't work with the default `less` on macOS (even though the `man` page says it's available, macOS comes with a compiled version of `less` missing `lesskey` support)
