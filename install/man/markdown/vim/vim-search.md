@@ -1,5 +1,6 @@
 - `n`: Next search
 - `N`: Previous search
+- The `set wrapscan` open sets whether search wraps by default (it's on by default)
 
 # Using `gn`
 
