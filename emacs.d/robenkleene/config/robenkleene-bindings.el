@@ -47,8 +47,6 @@
             'recentf-open)
 (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
 (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
-(define-key rk/bindings-minor-mode-map (kbd "M-s g") 'grep)
-(define-key rk/bindings-minor-mode-map (kbd "M-s f") 'find-dired-with-command)
 
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
