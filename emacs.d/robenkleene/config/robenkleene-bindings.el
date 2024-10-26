@@ -32,16 +32,6 @@
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; General
-(define-key rk/bindings-minor-mode-map (kbd "C-x j")
-            'dired-jump)
-(defvar dired-jump-other-window-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "j") #'dired-jump)
-    map))
-(dolist (cmd '(dired-jump-other-window))
-  (put cmd 'repeat-map 'dired-jump-other-window-repeat-map))
-
 (define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell-other-window)
 
 ;; Z
@@ -59,23 +49,6 @@
 (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 (define-key rk/bindings-minor-mode-map (kbd "M-s g") 'grep)
 (define-key rk/bindings-minor-mode-map (kbd "M-s f") 'find-dired-with-command)
-
-(defvar previous-multiframe-window-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "O") #'previous-multiframe-window)
-    (define-key map (kbd "o") #'other-window)
-    map))
-(dolist (cmd '(previous-multiframe-window))
-  (put cmd 'repeat-map 'previous-multiframe-window-repeat-map))
-(define-key rk/bindings-minor-mode-map (kbd "C-x O")
-            'previous-multiframe-window)
-
-(defvar mark-paragraph-repeat-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "h") #'mark-paragraph)
-    map))
-(dolist (cmd '(mark-paragraph))
-  (put cmd 'repeat-map 'mark-paragraph-repeat-map))
 
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."

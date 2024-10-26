@@ -135,27 +135,6 @@
                                  (eshell . t)
                                  )
                                )
-  (defvar org-outline-repeat-map
-    (let ((map (make-sparse-keymap)))
-      (define-key map (kbd "u") #'rk/org-up-heading)
-      (define-key map (kbd "p") #'org-previous-visible-heading)
-      (define-key map (kbd "n") #'org-next-visible-heading)
-      (define-key map (kbd "b") #'org-backward-heading-same-level)
-      (define-key map (kbd "f") #'org-forward-heading-same-level)
-      map))
-  (dolist (cmd '(
-                 rk/org-up-heading
-                 org-previous-visible-heading
-                 org-next-visible-heading
-                 org-backward-heading-same-level
-                 org-forward-heading-same-level
-                 ))
-    (put cmd 'repeat-map 'org-outline-repeat-map))
-  (defun rk/org-up-heading (&optional arg)
-    "Go up a heading placeholder for repeat map."
-    (interactive)
-    (outline-up-heading 1)
-    )
 
   (add-hook 'org-mode-hook
             (lambda ()
