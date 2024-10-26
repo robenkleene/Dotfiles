@@ -1,4 +1,3 @@
-
 ```
 class qux
     const foo bar(const baz) const {
@@ -9,3 +8,5 @@ class qux
     }
 }
 ```
+
+- A function marked `const` can still change any member variable that's marked `mutable` (e.g., this is appropriate for cached values)
