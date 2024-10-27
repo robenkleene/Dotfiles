@@ -1,0 +1,1 @@
+- `set-auto-mode`: Auto-detect mode from file contents
