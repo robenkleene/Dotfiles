@@ -285,7 +285,7 @@ is too long to show on one line."
 (setq remember-notes-initial-major-mode 'fundamental-mode)
 
 ;; Allow repeating some bindings like `C-x o' then `o' to keep switching frames
-(repeat-mode 1)
+;; (repeat-mode 1)
 
 ;; Automatically add view keys when viewing read only files
 (setq view-read-only t)
