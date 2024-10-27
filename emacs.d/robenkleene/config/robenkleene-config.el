@@ -322,9 +322,11 @@ is too long to show on one line."
 ;; (setq grep-command "rg -n --no-heading "
 ;;       grep-use-null-device nil)
 
-(add-hook 'comint-output-filter-functions 'set-auto-mode)
-;; Make `shell-command' output read only
-(add-hook 'comint-output-filter-functions 'view-mode)
+(setq comint-output-filter-functions
+      '(
+        ;; view-mode
+        set-auto-mode
+        ))
 
 (provide 'robenkleene-config)
 ;; Local Variables:
