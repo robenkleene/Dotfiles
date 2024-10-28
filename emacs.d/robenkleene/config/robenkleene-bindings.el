@@ -45,6 +45,8 @@
             'z-other-tab)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
             'recentf-open)
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-b")
+            'ibuffer)
 (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
 (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
