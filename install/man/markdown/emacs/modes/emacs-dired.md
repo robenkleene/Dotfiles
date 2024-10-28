@@ -41,8 +41,11 @@
 ## Dired Write Mode
 
 - `C-x C-q` or `dired-toggle-read-only`: Change to writable mode
-	- `C-c C-c` / `C-x C-s`: Save changes
-	- `C-c C-k` / `C-c ESC`: Abort changes
+
+### While Active
+
+- `C-c C-c` / `C-x C-s`: Save changes
+- `C-c C-k` / `C-c ESC`: Abort changes
 
 ## File Management
 
