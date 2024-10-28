@@ -18,3 +18,16 @@ if (dynamic_cast<foo*>(bar) != NULL) {
   std::cout << "&bar = %p" << &bar << std::endl;
 }
 ```
+
+# Base initializers
+
+Constructors can take base initializers:
+
+```
+class Foo {
+public:
+    Foo(int barIn) : bar(barIn) { }
+private:
+    int bar;
+};
+```
