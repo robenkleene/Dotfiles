@@ -21,7 +21,7 @@
   ;; with lots of subheaders become impossible to navigate, with it enabled, the
   ;; menu works nicely with `consult-imenu' with headers prefixed with their
   ;; parent header
-  ;; (setq markdown-nested-imenu-heading-index nil)
+  (setq markdown-nested-imenu-heading-index nil)
   ;; Enable syntax highlighting for code blocks
   (setq markdown-fontify-code-blocks-natively t)
   :config

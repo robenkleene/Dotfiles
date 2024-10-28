@@ -266,8 +266,13 @@ is too long to show on one line."
 ;; Don't blink the cursor
 ;; (blink-cursor-mode 0)
 
+;; Automatically rescan, also prevents the `*Rescan*' menu item from appearing
+(setq imenu-auto-rescan t)
 ;; Don't truncate imenu items
 (setq imenu-max-item-length nil)
+;; Don't use `.' as space replacement
+(setq imenu-space-replacement nil)
+;; Looks like `imenu-flatten' is coming soon as an option to flatten
 
 ;; Echo keystrokes to the echo area immediately
 (setq echo-keystrokes 0.1)
