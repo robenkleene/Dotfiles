@@ -19,10 +19,6 @@
 ;; without saving
 (setq kill-buffer-delete-auto-save-files t)
 
-;; Persist minibuffer history between restarts (packages like `vertico' will use
-;; this to prioritized commonly used commands)
-(savehist-mode)
-
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
 (setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
@@ -67,11 +63,6 @@ is too long to show on one line."
 ;; Automatically make shell scripts executable
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
-
-;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
-;; files.
-;; Try disabling recursive minibuffers, in practice it's really confusing
-;; (setq enable-recursive-minibuffers t)
 
 ;; Add Line Numbers
 ;; Offset the number by two spaces to work around some weird fringe glitch
@@ -294,12 +285,6 @@ is too long to show on one line."
   (define-key view-mode-map (kbd "n") nil)
   (define-key view-mode-map (kbd "p") nil)
   )
-
-;; This fixes an issue where using `M-!' (`M-x shell-command') printed an error
-;; when using Terminal Emacs through `emacsclient'
-;; This breaks using `M-n' after `M-!' to run a shell command on the current
-;; buffer
-;; (setq enable-recursive-minibuffers t)
 
 ;; Allow using tab to complete if the line is already properly indented, this
 ;; makes completion feel more consistent with completion in the minibuffer
