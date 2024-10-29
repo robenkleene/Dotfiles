@@ -10,4 +10,5 @@ augroup setup_filetype
   au! BufRead,BufNewFile *.pde setfiletype java
   " Interpret `hg show` output as `diff`
   au! StdinReadPost * if eval('@%') == '' && &buftype == '' && getline(1) =~ '^changeset:' | setfiletype diff | endif
+  au! BufRead,BufNewFile Brewfile setfiletype conf
 augroup END
