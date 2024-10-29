@@ -28,7 +28,7 @@ let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-open)
 vmap gx <Plug>(openbrowser-open)
 " Languages
-Plug 'bfrg/vim-cpp-modern', { 'for': [ 'c', 'cpp' ] }
+Plug 'bfrg/vim-c-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
