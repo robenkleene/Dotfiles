@@ -9,6 +9,8 @@ brew 'git-delta'
 brew 'less'
 brew 'nnn'
 brew 'nvim'
+# For man files
+brew 'pandoc'
 brew 'ripgrep'
 brew 'tig'
 brew 'tmux'
