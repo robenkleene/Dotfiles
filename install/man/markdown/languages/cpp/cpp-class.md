@@ -32,10 +32,8 @@ Including a default destructor ensures that deleting a class through a base clas
   virtual ~Foo() = default;
 ```
 
-# Check if an object is a particular class
+# `virtual` & `override`
 
-``` cpp
-if (dynamic_cast<foo*>(bar) != NULL) {
-  std::cout << "&bar = %p" << &bar << std::endl;
-}
-```
+- When a function is specified as `virtual` and another function uses `override`, if the `virtual` function returns a base type and the `override` function returns a derived type then the derived type will be "sliced" on return, removing the `derived` information from the base type.
+
+
