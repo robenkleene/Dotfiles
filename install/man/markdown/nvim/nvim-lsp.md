@@ -6,6 +6,10 @@
 - `<c-w>d`, `vim.diagnostic.open_float()`
 - `gq`: Operator to format document
 
+# Tags
+
+- `tagfunc` can be set to `v:lua.vim.lsp.tagfunc` which will use LSP tag definition lookup instead of tags. Set `vim.bo[ev.buf].tagfunc = nil` to use tags instead.
+
 # Functions
 
 - `:lua vim.diagnostic.setqflist()`: Populate quickfix list with diagnostics
