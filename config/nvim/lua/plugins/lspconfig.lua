@@ -14,6 +14,8 @@ return {
       callback = function(ev)
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        -- Unset `tagfunc`, this gets set to `v:lua.vim.lsp.tagfunc`, unsetting this allows `C-]` to use tags instead of LSP
+        vim.bo[ev.buf].tagfunc = nil
         -- Enable inlay hints (e.g., type hints)
         -- For some reason you need to edit the buffer before this takes effect?
         -- vim.lsp.inlay_hint.enable(true)
