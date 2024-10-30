@@ -69,6 +69,17 @@
     (switch-to-buffer-other-window buf))
   )
 
+(defun grep-shell-command (command-args)
+  "Create grep buffer from COMMAND-ARGS."
+  (interactive
+   (list (read-shell-command
+          "Run grep shell command: "
+          nil
+          'grep-history)
+         ))
+  (compilation-start command-args 'grep-mode)
+  )
+
 ;;;###autoload
 (defvar rk/z-history nil "History list for z.")
 (defun z (term)
