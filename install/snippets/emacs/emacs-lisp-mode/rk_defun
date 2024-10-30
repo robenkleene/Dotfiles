@@ -4,4 +4,3 @@
 # --
 defun ${1:hello-world} (${2:&optional arg})
   "${3:Prints `hello world'.}"
-  $0

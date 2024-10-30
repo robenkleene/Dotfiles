@@ -1,7 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_let*
-# name: let*
+# key: rk_let
+# name: let
 # --
-let* ((${1:foo} ${2:"value"})
-     (${2:bar} $1))
-  $0
+let ((${1:foo} ${2:"value"}))
