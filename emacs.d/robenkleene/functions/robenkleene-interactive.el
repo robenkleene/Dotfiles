@@ -73,11 +73,22 @@
   "Create grep buffer from COMMAND-ARGS."
   (interactive
    (list (read-shell-command
-          "Run grep shell command: "
-          nil
+          "Run grep command: "
+          "rg "
           'grep-history)
          ))
   (compilation-start command-args 'grep-mode)
+  )
+
+(defun find-shell-command (command-args)
+  "Create grep buffer from COMMAND-ARGS."
+  (interactive
+   (list (read-shell-command
+          "Run find command: "
+          "fd -l "
+          'find-command-history)
+         ))
+  (find-dired-with-command default-directory command-args)
   )
 
 ;;;###autoload
