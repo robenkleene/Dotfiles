@@ -85,10 +85,15 @@
   (interactive
    (list (read-shell-command
           "Run find command: "
-          "fd -l --color=never "
+          "fd -l "
           'find-command-history)
          ))
-  (find-dired-with-command default-directory command-args)
+  (let ((process-environment (copy-sequence process-environment)))
+    ;; `fd' won't use colors, which interfere with `dired-mode' if `NO_COLOR' is
+    ;; set
+    (setenv "NO_COLOR" "1")
+    (find-dired-with-command default-directory command-args)
+    )
   )
 
 ;;;###autoload
