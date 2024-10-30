@@ -49,6 +49,15 @@
     (find-file-other-frame file))
   )
 
+(defun rk/message-off-advice (oldfun &rest args)
+  "Quiet down messages in adviced OLDFUN."
+  (let ((message-off (make-symbol "message-off")))
+    (unwind-protect
+        (progn
+          (advice-add #'message :around #'ignore (list 'name message-off))
+          (apply oldfun args))
+      (advice-remove #'message message-off))))
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

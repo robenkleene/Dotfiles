@@ -24,6 +24,9 @@
                      markdown-language-keyword-face)))))
   )
 
+;; Suppress `Starting new Ispell process' messages
+(advice-add #'ispell-init-process :around #'rk/message-off-advice)
+
 ;; This is way too noisy
 ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
