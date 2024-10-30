@@ -15,6 +15,8 @@
               ("RET" . magit-diff-visit-file-other-window))
   :init
   (defalias 'rk-push 'magit-egit)
+  ;; Suppress `magit-auto-revert-mode' message
+  (setq magit-no-message '("Turning on magit-auto-revert-mode"))
   :config
   ;; Show word diffs
   (setq magit-diff-refine-hunk t)
