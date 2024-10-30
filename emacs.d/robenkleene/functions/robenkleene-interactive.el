@@ -85,7 +85,7 @@
   (interactive
    (list (read-shell-command
           "Run find command: "
-          "fd -l "
+          "fd -l --color=never "
           'find-command-history)
          ))
   (find-dired-with-command default-directory command-args)
