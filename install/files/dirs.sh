@@ -6,9 +6,9 @@ set -euo pipefail
 
 # `.editorconfig` is only supported in directories that are children of the
 # home directory. To support other directories, symlink them here.
-if [[ -e "$HOME/../Shared/Max 8/Packages" ]]; then
-  if [[ ! -e "$HOME/../Shared/Max 8/Packages/.editorconfig" ]]; then
-    ln -s ~/.editorconfig/ "$HOME/../Shared/Max 8/Packages/.editorconfig"
+if [[ -e "$HOME/../Shared/Max 9/" ]]; then
+  if [[ ! -e "$HOME/../Shared/Max 9/.editorconfig" ]]; then
+    ln -s ~/.editorconfig/ "$HOME/../Shared/Max 9/.editorconfig"
   fi
 fi
 
