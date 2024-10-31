@@ -2,10 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Suppresses annoying message:
-;; `ad-handle-definition: ‘ido-completing-read’ got redefined'
-(set 'ad-redefinition-action 'accept)
-
 ;; Use `bash' for external scripts
 ;; That was causing the `The kill is not a (set of) trees' when archiving in
 ;; `org-mode' with the `org-archive-subtree' command
@@ -16,58 +12,19 @@
 (setq explicit-shell-file-name "/usr/local/bin/zsh")
 
 ;; Without this, Emacs leaves an autosave file (e.g. `#foo.bar#') when quitting
-;; without saving
+;; without saving, this offers to delete those files too
 (setq kill-buffer-delete-auto-save-files t)
 
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
 (setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
 
-;; Auto-Save
-;; Disables auto-saving altogether
-;; (setq auto-save-default nil)
-;; Save to the original filename, instead of a separate auto-save file
-;; (auto-save-visited-mode 1)
-;; Automatically save every second
-;; (setq auto-save-visited-interval 1)
-;; Suppress message when saving
-;; This causes flickering, like a save message is displayed then it's
-;; quickly cleared
-;; (setq save-silently t)
-;; This at least prevents the echo area from growing when saving
-(defadvice save-buffer (around rk/save-mini-window-size)
-  "Don't increase the size of the echo area if the path of the file being saved
-is too long to show on one line."
-  (let ((message-truncate-lines t))
-    ad-do-it))
-(ad-activate 'save-buffer)
-
-;; Suppress message every time auto-saving happens
-(setq-default auto-save-no-message t)
-
-;; Re-enabling backups after losing data in a crash
-(setq version-control t     ;; Use version numbers for backups.
-      kept-new-versions 10  ;; Number of newest versions to keep.
-      kept-old-versions 0   ;; Number of oldest versions to keep.
-      delete-old-versions t ;; Don't ask to delete excess backup versions.
-      backup-by-copying t)  ;; Copy all files, don't rename them.
-(setq vc-make-backup-files t)
-(setq backup-directory-alist '(("" . "~/.emacs.d/backup/")))
-;; Hopefully this gets rid of the files with `#' around them
-;; This doesn't fix all `#' files, this for lock files specified with
-;; `.#filename'
-;; Auto-save files are specified with `#filename#', it's unclear how
-;; to organize those.
+;; Allow editing from multiple sources
 (setq create-lockfiles nil)
 
 ;; Automatically make shell scripts executable
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
-
-;; Add Line Numbers
-;; Offset the number by two spaces to work around some weird fringe glitch
-;; (setq linum-format "  %d ")
-;; (global-display-line-numbers-mode 1)
 
 ;; Show cursor position
 (column-number-mode)
@@ -89,11 +46,6 @@ is too long to show on one line."
 (defun display-startup-echo-area-message ())
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
-;; Set default scratch message to empty, this makes it easy to use the scratch
-;; buffer in a different mode, e.g., `M-x markdown-mode'
-;; It's probably better to make another scratch buffer for other modes? And
-;; having this makes the Lisp Interaction buffer clear.
-;; (setq initial-scratch-message "")
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
@@ -103,14 +55,6 @@ is too long to show on one line."
 
 ;; Don't split words when wrapping
 (setq-default word-wrap t)
-
-;; Set `Shell Command Output' buffer to view only
-(define-advice shell-command-on-region (:after (&rest _) rk/shell-command-output)
-  "Enable `view-mode' in `*Shell Command Output*' buffer."
-  (let ((buffer (get-buffer "*Shell Command Output*")))
-    (when (buffer-live-p buffer)
-      (with-current-buffer buffer
-        (view-mode)))))
 
 ;; Disable the bell completely, it's really annoying when the bell
 ;; sounds when doing a deterministic cancel (like `C-g')
@@ -122,21 +66,8 @@ is too long to show on one line."
 ;; Show mouse hover in `modeline' instead of tool tips
 (tooltip-mode -1)
 
-;; Disable showing tooltips in the modeline, this conflicts with seeing flycheck
-;; errors
-;; (global-eldoc-mode -1)
-
-;; Use shift arrow keys to switch windows
-;; Note for this to work by default on OS X, these new keys need to be defined
-;; in the Terminal profile:
-;; `shift cursor up: \033[1;2A'
-;; `shift cursor down: \033[1;2B'
-;; (windmove-default-keybindings)
-
 ;; Winner Mode
-;; Allows going to previous and next window configurations with `C-c left/right'
-(when (fboundp 'winner-mode)
-  (winner-mode 1))
+(winner-mode 1)
 
 ;; Save recent file list
 (require 'recentf)
@@ -166,21 +97,6 @@ is too long to show on one line."
 ;; Highlight Matching parens
 (show-paren-mode t)
 
-;; Load `TAGS' file automatically
-;; (advice-add 'xref-find-definitions
-;;             :before
-;;             #'(lambda (identifier)
-;;                 (if (not (bound-and-true-p tags-file-name))
-;;                     (let ((tags-file
-;;                            (locate-dominating-file default-directory "TAGS")))
-;;                       (when tags-file
-;;                         (visit-tags-table tags-file)
-;;                         )
-;;                       )
-;;                   )
-;;                 )
-;;             )
-
 ;; Better Defaults
 (setq-default indent-tabs-mode nil)
 (setq save-interprogram-paste-before-kill t
@@ -192,13 +108,6 @@ is too long to show on one line."
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
-
-;; Don't try to expand whole lines
-;; Without this, extra parentheses can be inserted when performing
-;; `hippie-expand'
-;; (dolist (f '(try-expand-line try-expand-list))
-;;   (setq hippie-expand-try-functions-list
-;;         (remq f hippie-expand-try-functions-list)))
 
 ;; Mouse
 ;; Double-click instead of single click to open links
@@ -253,18 +162,9 @@ is too long to show on one line."
         (truncate-lines . nil)
         (which-func-mode . nil)))
 
-;; Highlight current line
-;; (global-hl-line-mode)
-
 ;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
 ;; disabled by default)
 (setq disabled-command-function nil)
-
-;; Make new buffers use `text-mode'
-(setq-default major-mode 'text-mode)
-
-;; Don't blink the cursor
-;; (blink-cursor-mode 0)
 
 ;; Automatically rescan, also prevents the `*Rescan*' menu item from appearing
 (setq imenu-auto-rescan t)
@@ -302,7 +202,7 @@ is too long to show on one line."
 ;; Use a file name that doesn't conflict with Vim `tags'
 ;; (setq tags-file-name "etags")
 
-;; Incrase the large file threshold, this helps when opening large tags files
+;; Increase the large file threshold, this helps when opening large tags files
 (setq large-file-warning-threshold 1000000000)
 
 ;; Repeat subsequent mark pops with `C-SPC'
@@ -311,12 +211,6 @@ is too long to show on one line."
 ;; Use `ripgrep' for grep
 ;; (setq grep-command "rg -n --no-heading "
 ;;       grep-use-null-device nil)
-
-(setq comint-output-filter-functions
-      '(
-        ;; view-mode
-        set-auto-mode
-        ))
 
 (provide 'robenkleene-config)
 ;; Local Variables:
