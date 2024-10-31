@@ -42,11 +42,8 @@
 
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
-
-(define-key key-translation-map  (kbd "ESC <up>") (kbd "M-p"))
-(define-key key-translation-map  (kbd "ESC <down>") (kbd "M-n"))
-;; (define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
-;; (define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
+(define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
+(define-key key-translation-map  (kbd "ESC <down>") (kbd "<M-down>"))
 (define-key key-translation-map  (kbd "ESC <left>") (kbd "<M-left>"))
 (define-key key-translation-map  (kbd "ESC <right>") (kbd "<M-right>"))
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))

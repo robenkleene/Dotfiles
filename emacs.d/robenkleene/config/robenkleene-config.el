@@ -2,15 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Use `bash' for external scripts
-;; That was causing the `The kill is not a (set of) trees' when archiving in
-;; `org-mode' with the `org-archive-subtree' command
-;; (setq shell-file-name "sh")
-;; (setq shell-command-switch "-c")
-
-;; Use `zsh'
-(setq explicit-shell-file-name "/usr/local/bin/zsh")
-
 ;; Without this, Emacs leaves an autosave file (e.g. `#foo.bar#') when quitting
 ;; without saving, this offers to delete those files too
 (setq kill-buffer-delete-auto-save-files t)
@@ -56,10 +47,6 @@
 ;; Don't split words when wrapping
 (setq-default word-wrap t)
 
-;; Disable the bell completely, it's really annoying when the bell
-;; sounds when doing a deterministic cancel (like `C-g')
-(setq ring-bell-function 'ignore)
-
 ;; Wrap comments to 80 characters with `M-q'
 (setq-default fill-column 80)
 
@@ -97,27 +84,12 @@
 ;; Highlight Matching parens
 (show-paren-mode t)
 
-;; Better Defaults
-(setq-default indent-tabs-mode nil)
-(setq save-interprogram-paste-before-kill t
-      apropos-do-all t
-      mouse-yank-at-point t
-      require-final-newline t
-      load-prefer-newer t
-      ediff-window-setup-function 'ediff-setup-windows-plain
-      save-place-file (concat user-emacs-directory "places")
-      backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
-
 ;; Mouse
-;; Double-click instead of single click to open links
+
+;; Disable clicking to follow links
 ;; This interferes with using the mouse to select text, e.g., in terminal Emacs
 ;; in Blink Shell
-;; (setq mouse-1-click-follows-link 'double)
 (setq mouse-1-click-follows-link nil)
-;; To disable completely:
-;; (setq mouse-1-click-follows-link nil)
-
 ;; Disable mouse highlighting
 (setq mouse-highlight nil)
 
@@ -134,11 +106,6 @@
 (setq global-auto-revert-non-file-buffers t)
 ;; Auto-revert more quickly
 (setq auto-revert-interval 1)
-;; Prevent the `Reverting buffer'
-(setq auto-revert-verbose nil)
-
-;; Automatically enable disabled commands
-(setq disabled-command-hook 'enable-me)
 
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
@@ -164,8 +131,10 @@
 
 ;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
 ;; disabled by default)
+;; Those commands are considered confusing without a visible mark
 (setq disabled-command-function nil)
 
+;; imenu
 ;; Automatically rescan, also prevents the `*Rescan*' menu item from appearing
 (setq imenu-auto-rescan t)
 ;; Don't truncate imenu items
@@ -177,12 +146,6 @@
 ;; Echo keystrokes to the echo area immediately
 (setq echo-keystrokes 0.1)
 
-;; Make `remember-notes' use Fundamental mode
-(setq remember-notes-initial-major-mode 'fundamental-mode)
-
-;; Allow repeating some bindings like `C-x o' then `o' to keep switching frames
-;; (repeat-mode 1)
-
 ;; Automatically add view keys when viewing read only files
 (setq view-read-only t)
 (with-eval-after-load 'view
@@ -191,26 +154,8 @@
   (define-key view-mode-map (kbd "p") nil)
   )
 
-;; Allow using tab to complete if the line is already properly indented, this
-;; makes completion feel more consistent with completion in the minibuffer
-;; It's not worth it trying to get this to work, e.g., `text-mode', and any C
-;; derivative mode won't work with this setting because they have unique tab
-;; behavior. Instead just use `M-tab' which is always bound to
-;; `completion-at-point'
-;; (setq tab-always-indent 'complete)
-
-;; Use a file name that doesn't conflict with Vim `tags'
-;; (setq tags-file-name "etags")
-
-;; Increase the large file threshold, this helps when opening large tags files
-(setq large-file-warning-threshold 1000000000)
-
 ;; Repeat subsequent mark pops with `C-SPC'
 (setq set-mark-command-repeat-pop t)
-
-;; Use `ripgrep' for grep
-;; (setq grep-command "rg -n --no-heading "
-;;       grep-use-null-device nil)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
