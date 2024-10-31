@@ -25,7 +25,9 @@
   )
 
 ;; Suppress `Starting new Ispell process' messages
-(advice-add #'ispell-init-process :around #'rk/message-off-advice)
+;; This doesn't work
+;; (advice-add 'ispell-init-process :around #'rk/suppress-messages)
+;; (advice-add 'ispell-kill-ispell :around #'rk/suppress-messages)
 
 ;; This is way too noisy
 ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)

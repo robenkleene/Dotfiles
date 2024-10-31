@@ -49,14 +49,14 @@
     (find-file-other-frame file))
   )
 
-(defun rk/message-off-advice (oldfun &rest args)
-  "Quiet down messages in adviced OLDFUN."
-  (let ((message-off (make-symbol "message-off")))
+(defun rk/suppress-messages (old-fun &rest args)
+  "Suppress messages in adviced OLD-FUN."
+  (cl-flet ((silence (&rest args1) (ignore)))
+    (advice-add 'message :around #'silence)
     (unwind-protect
-        (progn
-          (advice-add #'message :around #'ignore (list 'name message-off))
-          (apply oldfun args))
-      (advice-remove #'message message-off))))
+        (apply old-fun args)
+      (advice-remove 'message #'silence))))
+
 
 (provide 'robenkleene-functions)
 ;; Local Variables:
