@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package magit
+  :commands magit-status
   :init
   (defalias 'rk-push 'magit-egit)
   (defun magit-egit ()
