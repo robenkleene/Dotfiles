@@ -23,6 +23,7 @@
 (require 'robenkleene-completion)
 (require 'robenkleene-config)
 (require 'robenkleene-minibuffer)
+(require 'robenkleene-shell-commands)
 (require 'robenkleene-spelling)
 (require 'robenkleene-troubleshooting)
 (require 'robenkleene-window-management)
