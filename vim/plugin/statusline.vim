@@ -7,7 +7,7 @@ set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\
 " Truncate Marker
 set statusline+=%<
 " Filename
-set statusline+=%(%.40{&filetype=='netrw'?b:netrw_curdir:(expand('%:t')!=''?expand('%:t'):'[No\ Name]')}\ %)
+set statusline+=%(%.40{&filetype=='netrw'?b:netrw_curdir:(expand('%:t')!=''?expand('%:~:.'):'[No\ Name]')}\ %)
 " Filetype
 set statusline+=%y\ 
 " %m: Modified
