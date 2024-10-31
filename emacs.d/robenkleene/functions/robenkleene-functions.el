@@ -49,15 +49,6 @@
     (find-file-other-frame file))
   )
 
-(defun rk/suppress-messages (old-fun &rest args)
-  "Suppress messages in adviced OLD-FUN."
-  (cl-flet ((silence (&rest args1) (ignore)))
-    (advice-add 'message :around #'silence)
-    (unwind-protect
-        (apply old-fun args)
-      (advice-remove 'message #'silence))))
-
-
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

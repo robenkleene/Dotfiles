@@ -3,24 +3,8 @@
 ;;; Code:
 
 (use-package magit
-  :commands (
-             rk/magit-status-startup
-             magit-egit
-             magit-status
-             magit-log-current
-             )
-  :bind (:map magit-file-section-map
-              ("RET" . magit-diff-visit-file-other-window)
-              :map magit-hunk-section-map
-              ("RET" . magit-diff-visit-file-other-window))
   :init
   (defalias 'rk-push 'magit-egit)
-  ;; Suppress `magit-auto-revert-mode' message
-  (setq magit-no-message '("Turning on magit-auto-revert-mode"))
-  :config
-  ;; Show word diffs
-  (setq magit-diff-refine-hunk t)
-
   (defun magit-egit ()
     "`egit' `magit'"
     (interactive)
@@ -31,7 +15,6 @@
         )
       )
     )
-
   )
 
 (provide 'robenkleene-magit)

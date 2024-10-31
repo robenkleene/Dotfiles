@@ -15,8 +15,6 @@
 ;; Try disabling recursive minibuffers, in practice it's really confusing
 ;; (setq enable-recursive-minibuffers t)
 
-;; (icomplete-vertical-mode)
-
 (provide 'robenkleene-minibuffer)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
