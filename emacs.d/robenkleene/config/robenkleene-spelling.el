@@ -7,11 +7,8 @@
   (setq ispell-program-name "aspell")
   (setq ispell-dictionary "english")
 
-  (setq flyspell-issue-message-flag nil)
   ;; Don't prompt when saving a word to the dictionary
   (setq ispell-silently-savep t)
-
-  ;; Flyspell
 
   ;; Disable spell checking for some faces
   (setq flyspell-generic-check-word-predicate
@@ -23,14 +20,6 @@
                      markdown-inline-code-face
                      markdown-language-keyword-face)))))
   )
-
-;; Suppress `Starting new Ispell process' messages
-;; This doesn't work
-;; (advice-add 'ispell-init-process :around #'rk/suppress-messages)
-;; (advice-add 'ispell-kill-ispell :around #'rk/suppress-messages)
-
-;; This is way too noisy
-;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 
