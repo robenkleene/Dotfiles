@@ -5,6 +5,13 @@
 ;; Without this, Emacs leaves an autosave file (e.g. `#foo.bar#') when quitting
 ;; without saving, this offers to delete those files too
 (setq kill-buffer-delete-auto-save-files t)
+;; Without this, Emacs will also add a backup file to the same directory as a
+;; file being edit (backup files are the filename followed by a `~')
+;; These files are to prevent issues when trying to save a new version of a
+;; file, which necessarily requires deleting the original version
+;; Note that this is different than autosave files, which are cleaned up
+;; automatically when Emacs saves
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
@@ -21,8 +28,6 @@
 (column-number-mode)
 
 ;; Show trailing white space
-;; (setq-default show-trailing-whitespace t)
-;; (global-whitespace-mode)
 (setq whitespace-style (quote (
                                face
                                tabs
@@ -33,8 +38,6 @@
                                space-after-tab
                                )))
 
-;; Disable the initial echo area help message
-(defun display-startup-echo-area-message ())
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
 
