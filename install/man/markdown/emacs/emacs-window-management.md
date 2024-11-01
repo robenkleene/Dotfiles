@@ -2,7 +2,7 @@
 
 # Buffers
 
-- `C-x <left>` / `C-x <right>`: Go to previous / next buffer
+- `C-x <left>` / `C-x <right>`: Go to previous / next buffer (note that buffer history in Emacs not replaced when opening a split, e.g., when calling `split-window`, and then going to the previous buffer in the new split, will open the last buffer that was open in the new split, not the previous buffer in from the original split)
 - `C-x k`: Kill buffer
 
 # Frames
