@@ -13,6 +13,10 @@
 ;; automatically when Emacs saves
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 
+;; Without this, Emacs does a bell for common actions like canceling a
+;; minibuffer command
+(setq ring-bell-function 'ignore)
+
 ;; Mode line
 ;; Don't show `vc-mode' in mode-line
 (setq-default mode-line-format (remove '(vc-mode vc-mode) mode-line-format))
