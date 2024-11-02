@@ -81,9 +81,18 @@ return {
     lspconfig.pyright.setup {}
     lspconfig.rust_analyzer.setup {}
     lspconfig.solargraph.setup {}
-    lspconfig.sourcekit.setup {}
     lspconfig.ts_ls.setup {}
     -- Special
+    -- Apple recommends `dynamicRegistration` to watch files like the package manifest
+    lspconfig.sourcekit.setup {
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          },
+        },
+      },
+    }
     local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
     if f==nil then
       lspconfig.clangd.setup {}
