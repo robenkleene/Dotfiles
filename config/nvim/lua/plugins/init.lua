@@ -9,4 +9,5 @@ return {
     keys = { "ys", "ds", "cs", { "S", mode = "v" } },
   },
   { 'tpope/vim-repeat' },
+  { 'robenkleene/partshell.vim' },
 }
