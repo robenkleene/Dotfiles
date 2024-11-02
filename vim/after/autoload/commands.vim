@@ -35,40 +35,6 @@ function! commands#Dc(term) abort
   echo "Deleted '".l:result."' from history."
 endfunction
 
-function! commands#Part(...) range abort
-  let l:save = @@
-
-  execute 'silent noautocmd keepjumps normal! gv'
-  let l:mode = mode(1)
-  execute 'silent noautocmd keepjumps normal! y'
-  new
-  let l:oldundolevels=&undolevels
-  setlocal undolevels=-1
-
-  setlocal buftype=nofile bufhidden=hide noswapfile
-  execute 'silent noautocmd keepjumps normal! Vp'
-
-  if a:0 >= 1 && !empty(a:1)
-    let l:cmd = a:1
-    execute 'silent noautocmd keepjumps 0,$'.l:cmd
-
-    if l:mode == 'v'
-      execute 'silent noautocmd keepjumps normal! ggvGg_y'
-    elseif l:mode == 'V'
-      execute 'silent noautocmd keepjumps normal! ggVGy'
-    elseif l:mode == "\<C-V>"
-      execute 'silent noautocmd keepjumps normal! gg<C-v>G$y'
-    endif
-
-    bd!
-    execute 'silent noautocmd keepjumps normal! gvp'
-  else
-    let &l:undolevels=l:oldundolevels
-  endif
-
-  let @@ = l:save
-endfunction
-
 function! commands#Ggrep(args)
   let content = a:args
   if content =~# '^\([^:]\+\):\(\d\+\):\?\(\d*\)'
