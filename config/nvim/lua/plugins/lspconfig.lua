@@ -7,8 +7,6 @@ return {
     vim.diagnostic.config({
       virtual_text = false,
     })
-    -- Use the `vim.diagnostic.setqflist` binding instead
-    -- vim.api.nvim_create_user_command('LspDiagnostic', 'lua vim.diagnostic.setqflist()', {})
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
@@ -35,6 +33,7 @@ return {
         end, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', 'grd', vim.diagnostic.setqflist, opts)
         -- These are supposed to be built in but aren't working without this
         vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, opts)
