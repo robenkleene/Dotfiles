@@ -16,6 +16,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
+Plug 'robenkleene/partshell.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
