@@ -70,21 +70,24 @@ return {
       end,
     })
 
+    local lspconfig = require('lspconfig')
     -- Languages
+    lspconfig.bashls.setup {}
+    lspconfig.cssls.setup {}
+    lspconfig.html.setup {}
+    lspconfig.jsonls.setup { }
+    lspconfig.marksman.setup { }
+    lspconfig.marksman.setup { }
+    lspconfig.pyright.setup { }
+    lspconfig.rust_analyzer.setup { }
+    lspconfig.solargraph.setup {}
+    lspconfig.ts_ls.setup { }
+    -- Special
     local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
     if f==nil then
-      require 'lspconfig'.clangd.setup {}
+      lspconfig.clangd.setup {}
     end
-
-    require 'lspconfig'.bashls.setup {}
-
-    require 'lspconfig'.cssls.setup {}
-
-    require 'lspconfig'.html.setup {}
-
-    require 'lspconfig'.solargraph.setup {}
-
-    require('lspconfig').lua_ls.setup {
+    lspconfig.lua_ls.setup {
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -104,21 +107,5 @@ return {
         },
       },
     }
-
-    require('lspconfig').pyright.setup {
-    }
-
-    require('lspconfig').rust_analyzer.setup {
-    }
-
-    require('lspconfig').ts_ls.setup {
-    }
-
-    require 'lspconfig'.jsonls.setup {
-    }
-
-    require 'lspconfig'.marksman.setup {
-    }
-
   end
 }
