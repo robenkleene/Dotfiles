@@ -75,13 +75,14 @@ return {
     lspconfig.bashls.setup {}
     lspconfig.cssls.setup {}
     lspconfig.html.setup {}
-    lspconfig.jsonls.setup { }
-    lspconfig.marksman.setup { }
-    lspconfig.marksman.setup { }
-    lspconfig.pyright.setup { }
-    lspconfig.rust_analyzer.setup { }
+    lspconfig.jsonls.setup {}
+    lspconfig.marksman.setup {}
+    lspconfig.marksman.setup {}
+    lspconfig.pyright.setup {}
+    lspconfig.rust_analyzer.setup {}
     lspconfig.solargraph.setup {}
-    lspconfig.ts_ls.setup { }
+    lspconfig.sourcekit.setup {}
+    lspconfig.ts_ls.setup {}
     -- Special
     local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
     if f==nil then
