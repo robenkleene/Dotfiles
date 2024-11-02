@@ -1,6 +1,3 @@
-command! -range -nargs=* -complete=command P silent <line1>,<line2>call commands#Part(<q-args>)
-command! -range -nargs=+ -complete=shellcmd Psh <line1>,<line2>call commands#Part('!'.<q-args>)
-
 command! -nargs=+ -bar Z call commands#Zlcd(<q-args>)
 command! -nargs=+ -bar Zcd call commands#Zcd(<q-args>)
 command! -nargs=+ -bar Ztcd call commands#Ztcd(<q-args>)
