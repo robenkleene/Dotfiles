@@ -73,7 +73,7 @@
               (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
               ;; Don't bold the current symbol (we can just search for it to get
               ;; this functionality and it's less distracting that way)
-              (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
+              ;; (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
 
               ;; `eglot-completion-at-point' breaks all other completions,
               ;; including `yasnippet' if it's first in the
