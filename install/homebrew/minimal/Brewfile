@@ -14,6 +14,8 @@ brew 'pandoc'
 brew 'ripgrep'
 brew 'tig'
 brew 'tmux'
+# The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
+brew 'tree-sitter'
 brew 'universal-ctags'
 brew 'vim'
 brew 'zoxide'

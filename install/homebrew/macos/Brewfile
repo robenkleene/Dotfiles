@@ -17,6 +17,8 @@ brew 'gawk'
 # Editor
 brew 'aspell'
 brew 'neovim'
+# The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
+brew 'tree-sitter'
 brew 'vim'
 brew 'editorconfig'
 
