@@ -1,9 +1,14 @@
+-- Extensions
 vim.filetype.add({ extension = { omnijs = "javascript" } })
-vim.filetype.add({ filename = { eslintrc = "json" } })
-vim.filetype.add({ filename = { Brewfile = "conf" } })
+vim.filetype.add({ extension = { m = "objc" } })
 vim.filetype.add({ extension = { plist = "xml" } })
 vim.filetype.add({ extension = { pde = "java" } })
 
+-- Filenames
+vim.filetype.add({ filename = { eslintrc = "json" } })
+vim.filetype.add({ filename = { Brewfile = "conf" } })
+
+-- Special
 vim.filetype.add {
   pattern = {
     ['.*'] = {
