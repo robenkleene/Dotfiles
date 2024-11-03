@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(setenv "PAGER" "cat")
+(setenv "GIT_PAGER" "cat")
+
 (with-eval-after-load 'shell
   (define-key shell-mode-map (kbd "q") 'quit-window)
 

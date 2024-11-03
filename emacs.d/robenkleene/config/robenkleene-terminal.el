@@ -2,27 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Clipboard
-
-(setenv "PAGER" "cat")
-(setenv "GIT_PAGER" "cat")
-(if (and (boundp 'server-buffer-clients) server-buffer-clients)
-    (setenv "EMACSSERVER" "1")
-  )
-
-(defun rk/safecopy (text &optional push)
-  ;; Do nothing if the region isn't active so that other commands like
-  ;; `kill-line', don't affect the system clipboard
-  (let (
-        (process-connection-type nil)
-        )
-    (let ((proc (start-process "safecopy" nil "~/.bin/safecopy")))
-      (unless (string))
-      (process-send-string proc text)
-      (process-send-eof proc)))
-  )
-(setq interprogram-cut-function 'rk/safecopy)
-
 ;; This is causing panes not to be selectable in Emacs, but disabling means
 ;; mouse scrolling doesn't work
 ;; This also breaks selecting Emacs panes with the mouse
