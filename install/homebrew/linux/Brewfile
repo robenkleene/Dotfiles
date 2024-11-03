@@ -23,6 +23,8 @@ brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
 brew 'neovim'
+# The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
+brew 'tree-sitter'
 brew 'gh'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
