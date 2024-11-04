@@ -1,0 +1,1 @@
+- `M-x diff` prompt to diff two files
