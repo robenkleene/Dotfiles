@@ -3,24 +3,27 @@
 ;;; Code:
 
 (use-package eglot
-  :hook (((
-	   swift-mode
-           c++-mode
-           c-mode
-           css-mode
-           html-mode
-           js-mode
-           json-mode
-           lua-mode
-           python-mode
-           ruby-mode
-           rust-mode
-           sh-mode
-           typescript-mode
+  :commands eglot
+  ;; `eglot' significantly slows down opening files, try just toggling on
+  ;; manually for now
+  ;; :hook (((
+  ;; 	   swift-mode
+  ;;          c++-mode
+  ;;          c-mode
+  ;;          css-mode
+  ;;          html-mode
+  ;;          js-mode
+  ;;          json-mode
+  ;;          lua-mode
+  ;;          python-mode
+  ;;          ruby-mode
+  ;;          rust-mode
+  ;;          sh-mode
+  ;;          typescript-mode
 
-           ;; markdown-mode
-           ) . eglot-ensure)
-         )
+  ;;          ;; markdown-mode
+  ;;          ) . eglot-ensure)
+  ;;        )
   :config
   ;; Turn off automatic syntax checking
   ;; (setq eglot-send-changes-idle-time (* 60 60))
