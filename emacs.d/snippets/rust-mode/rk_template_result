@@ -8,3 +8,4 @@ fn main() -> io::Result<()> {
     ${1:println!("Hello, world!");}
 Ok(())
 }
+

@@ -19,3 +19,4 @@ int main() {
     [sampleClass sampleMethod];
     return 0;
 }
+
