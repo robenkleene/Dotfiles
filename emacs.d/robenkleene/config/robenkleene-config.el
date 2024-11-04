@@ -57,15 +57,15 @@
 (column-number-mode)
 
 ;; Show trailing white space
-(setq whitespace-style (quote (
-                               face
-                               tabs
-                               tab-mark
-                               ;; spaces
-                               ;; space-mark
-                               space-before-tab
-                               space-after-tab
-                               )))
+(setq whitespace-style '(
+                         face
+                         tabs
+                         tab-mark
+                         ;; spaces
+                         ;; space-mark
+                         space-before-tab
+                         space-after-tab
+                         ))
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)

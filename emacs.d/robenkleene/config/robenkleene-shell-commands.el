@@ -9,8 +9,8 @@
     (when (buffer-live-p buffer)
       (with-current-buffer buffer
         (view-mode)
-	(set-auto-mode)
-	))))
+        (set-auto-mode)
+        ))))
 
 (provide 'robenkleene-shell-commands)
 ;; Local Variables:
