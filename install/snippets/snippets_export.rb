@@ -71,6 +71,8 @@ Dir.glob("#{code_snippets_path}/*.{json,code-snippets}") do |file_path|
     body = body.join("\n") if body.instance_of?(Array)
     # YAS snippets treats backticks specially, so escape them in snippets
     body.gsub!(/`/, '\\\`')
+    # Fix the escapes for Swift string literals
+    body.gsub!('\\(', '\\\\\\\\(')
     # Use `<<-` to print escape characters literally
     template = <<-TEMPLATE
 # -*- mode: snippet -*-
