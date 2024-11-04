@@ -22,8 +22,8 @@
 
 (global-unset-key (kbd "s-q"))
 (define-key rk/mac-bindings-minor-mode-map
-	    (kbd "s-q")
-	    'save-buffers-kill-terminal)
+            (kbd "s-q")
+            'save-buffers-kill-terminal)
 
 ;; Text Editing
 (define-key rk/mac-bindings-minor-mode-map
@@ -38,8 +38,8 @@
             (kbd "s-n")
             'make-frame)
 (define-key rk/mac-bindings-minor-mode-map
-	    (kbd "C-s-f")
-	    'toggle-frame-fullscreen)
+            (kbd "C-s-f")
+            'toggle-frame-fullscreen)
 (define-key rk/mac-bindings-minor-mode-map
             (kbd "<C-s-268632070>")
             'toggle-frame-fullscreen)

@@ -19,8 +19,8 @@
                               (setq-local word-wrap-by-category t)
                               ;; Show trailing whitespace
                               (setq-local show-trailing-whitespace t)
-			      ;; Show tabs
-			      (whitespace-mode)
+                              ;; Show tabs
+                              (whitespace-mode)
                               ))
 
   ;; Goto grep line number and use `find-file-at-point' by default

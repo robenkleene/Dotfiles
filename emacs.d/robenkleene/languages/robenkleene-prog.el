@@ -18,8 +18,8 @@
                             (display-line-numbers-mode)
                             ;; Show trailing whitespace
                             (setq-local show-trailing-whitespace t)
-			    ;; Show tabs
-			    (whitespace-mode)
+                            ;; Show tabs
+                            (whitespace-mode)
                             (rk/highlight-keywords)
                             (display-fill-column-indicator-mode)
                             ))
