@@ -4,10 +4,14 @@
 - `:res[ize] [N]`: Can also be used to set the `quickfix` list to a height `[N]`
 - `:ccl[ose]`: Close `quickfix` window
 - `:cb[uffer]`: Populate the `quickfix` list from the results in the current window (this works for either `grep` formatted output or `make` output)
-- `:col[der]`: Go to previous `quickfix` list
-- `:cnew[er]`: Go to next `quickfix` list
 - `cexpr []`: Clear the `quickfix` list
 - The "c" in these commands probably stands for "compile"
+
+# History
+
+- `:chi[story]`: Show list of error lists with the current list marked
+- `:col[der]`: Go to previous `quickfix` list
+- `:cnew[er]`: Go to next `quickfix` list
 
 # Search
 
