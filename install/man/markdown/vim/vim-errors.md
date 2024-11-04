@@ -7,3 +7,9 @@
 - `:lhi[story]`: Show location lists with current list marked
 - `:lol[der]`: Older location list
 - `:lnew[er]`: Newer location list
+
+# Filter
+
+Requires `packadd cfilter`.
+
+- `:Lfilter`: Filter the location list by a pattern

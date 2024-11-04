@@ -31,6 +31,12 @@ On each entry in the `quickfix` list:
 - `:cdo norm @q`: Perform the macro in register `q` on each entry
 - `:cdo norm gcc`: Comment out each entry
 
+# Filter
+
+Requires `packadd cfilter`.
+
+- `:Cfilter`: Filter the error list by a pattern
+
 # Other
 
 Populating the `quickfix` window with an arbitrary command:
