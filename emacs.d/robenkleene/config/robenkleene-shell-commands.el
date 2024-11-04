@@ -8,13 +8,9 @@
   (let ((buffer (get-buffer "*Shell Command Output*")))
     (when (buffer-live-p buffer)
       (with-current-buffer buffer
-        (view-mode)))))
-
-(setq comint-output-filter-functions
-      '(
-        ;; view-mode
-        set-auto-mode
-        ))
+        (view-mode)
+	(set-auto-mode)
+	))))
 
 (provide 'robenkleene-shell-commands)
 ;; Local Variables:
