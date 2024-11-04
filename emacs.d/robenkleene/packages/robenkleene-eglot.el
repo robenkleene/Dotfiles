@@ -6,27 +6,30 @@
   :commands eglot
   ;; `eglot' significantly slows down opening files, try just toggling on
   ;; manually for now
-  ;; :hook (((
-  ;; 	   swift-mode
-  ;;          c++-mode
-  ;;          c-mode
-  ;;          css-mode
-  ;;          html-mode
-  ;;          js-mode
-  ;;          json-mode
-  ;;          lua-mode
-  ;;          python-mode
-  ;;          ruby-mode
-  ;;          rust-mode
-  ;;          sh-mode
-  ;;          typescript-mode
+  :hook (((
+	   swift-mode
+           c++-mode
+           c-mode
+           css-mode
+           html-mode
+           js-mode
+           json-mode
+           lua-mode
+           python-mode
+           ruby-mode
+           rust-mode
+           sh-mode
+           typescript-mode
 
-  ;;          ;; markdown-mode
-  ;;          ) . eglot-ensure)
-  ;;        )
+           ;; markdown-mode
+           ) . eglot-ensure)
+         )
   :config
   ;; Turn off automatic syntax checking
   ;; (setq eglot-send-changes-idle-time (* 60 60))
+
+  ;; Don't block for `eglot' to connect
+  (setq eglot-sync-connect nil)
 
   ;; Languages
   (add-to-list 'eglot-server-programs '(css-mode "vscode-css-language-server"))
