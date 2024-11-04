@@ -7,7 +7,7 @@
   ;; `eglot' significantly slows down opening files, try just toggling on
   ;; manually for now
   :hook (((
-	   swift-mode
+           swift-mode
            c++-mode
            c-mode
            css-mode
