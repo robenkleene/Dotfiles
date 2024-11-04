@@ -1,3 +1,5 @@
+The quickfix list is global, so it's usually appropriate for matches across a project.
+
 - `:cnext` / `:cprev`: Next / previous `quickfix` error
 - `:[cw]indow [height]`: Open `quickfix` window if there are errors, close it if there are not errors, optionally with a `[height]` (note that this cannot change the height if the `quickfix` list is already visible)
 - `:cope[n] [height]`: Show `quickfix` window, optionally with a `[height]` (this works if the `quickfix` list is already visible)
