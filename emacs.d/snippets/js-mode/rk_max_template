@@ -66,4 +66,3 @@ function log(obj) {
   // \`post\` logs to console
   post(JSON.stringify(obj));
 }
-

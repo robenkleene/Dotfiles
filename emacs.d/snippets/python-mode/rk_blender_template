@@ -7,4 +7,3 @@ import bpy
 if bpy.data.objects.get("Cube"):
     bpy.data.objects["Cube"].select_set(True)
     bpy.ops.object.delete()
-

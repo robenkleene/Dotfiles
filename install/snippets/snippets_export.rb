@@ -81,6 +81,8 @@ Dir.glob("#{code_snippets_path}/*.{json,code-snippets}") do |file_path|
 # --
 #{body}
 TEMPLATE
+    # Remove trailing new line
+    template.chomp!
     dest_path = File.join(dest_dir, prefix)
     if !File.exist?(dest_path) || options[:overwrite]
       if options[:force]
