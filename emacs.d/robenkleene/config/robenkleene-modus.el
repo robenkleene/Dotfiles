@@ -2,9 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(if window-system
-    (load-theme 'modus-operandi)
-  (load-theme 'modus-vivendi))
+(load-theme 'modus-vivendi)
+;; (if window-system
+;;     (load-theme 'modus-operandi)
+;;   (load-theme 'modus-vivendi))
 
 (provide 'robenkleene-modus)
 ;; Local Variables:
