@@ -31,6 +31,9 @@ return {
     end
     vim.keymap.set('n', 'yopa', toggle_autocomplete, {})
     cmp.setup {
+      completion = {
+        autocomplete = false,
+      },
       snippet = {
         expand = function(args)
           require'luasnip'.lsp_expand(args.body)
@@ -49,6 +52,7 @@ return {
         end
       },
       mapping = cmp.mapping.preset.insert {
+        ['<C-x><C-o>'] = cmp.mapping.complete(),
         ['<C-x><C-u>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
