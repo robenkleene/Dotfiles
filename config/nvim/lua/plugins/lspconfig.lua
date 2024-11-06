@@ -94,7 +94,13 @@ return {
     }
     local f=io.open(vim.env.HOME .. '/.nvim_local.lua')
     if f==nil then
-      lspconfig.clangd.setup {}
+      lspconfig.clangd.setup {
+        -- Suppress a `Multiple different client offset_encodings detected` error on attach
+        cmd = {
+          "clangd",
+          "--offset-encoding=utf-16",
+        },
+      }
     end
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
