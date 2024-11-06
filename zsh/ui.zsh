@@ -16,11 +16,6 @@ comment=244
 # `%f`: Reset Color
 # `%F{$comment}`: Color From Variable
 
-# Disable inverted syntax highlighting for pasted text
-zle_highlight+=(paste:none)
-# Color region
-zle_highlight+=(region:bg=lightblue,fg=white)
-
 # vcs
 # Enable vcs integration
 autoload -Uz vcs_info
