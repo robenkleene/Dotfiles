@@ -39,11 +39,12 @@ _system_copy_line() {
   echo -n "$BUFFER" | ~/.bin/safecopy
 }
 zle -N _system_copy_line
+
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
   # Deactivate region
   # zle set-mark-command -n -1
-  echo -n "$CUTBUFFER" | safecopy
+  echo -n "$CUTBUFFER" | ~/.bin/safecopy
 }
 zle -N _system_copy_region_as_kill
 
