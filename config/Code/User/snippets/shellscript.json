@@ -49,6 +49,11 @@
     "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
+  "If args": {
+    "prefix": "rk_if_args",
+    "body": "if [[ $# ${1:-ne} ${2:0} ]]; then\n  ${3:echo \"\\$1\"}\nfi",
+    "description": "If args"
+  },
   "True if directory": {
     "prefix": "rk_test_dir",
     "body": "-d \"${1:\\$1}\"",
