@@ -15,7 +15,7 @@ int main() {
 
 Constructors can take base initializers:
 
-```
+``` c++
 class Foo {
 public:
     Foo(int barIn) : bar(barIn) { }
@@ -28,7 +28,7 @@ private:
 
 Including a default destructor ensures that deleting a class through a base class pointer, also calls derived class destructors:
 
-```
+``` c++
   virtual ~Foo() = default;
 ```
 
@@ -36,4 +36,13 @@ Including a default destructor ensures that deleting a class through a base clas
 
 - When a function is specified as `virtual` and another function uses `override`, if the `virtual` function returns a base type and the `override` function returns a derived type then the derived type will be "sliced" on return, removing the `derived` information from the base type.
 
+# Casting
 
+Run-Time Type Information (RTTI) is the name of the C++ feature.
+
+`dynamic_cast`
+
+``` c++
+Base* b = new Derived();
+Derived* d = dynamic_cast<Derived*>(b);
+```
