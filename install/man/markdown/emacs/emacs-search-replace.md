@@ -1,6 +1,3 @@
-- `M-s .` (`isearch-forward-symbol-at-point`): Search for symbol at point
-    - These searches go to a different ring than regular searches, to get a previous symbol search, start the search with `M-s _`
-
 # Search
 
 - `C-s` / `C-r`: Incremental search forward / backward
@@ -10,7 +7,7 @@
 
 ## Incremental Search
 
-- `M-e`: Edit the current incremental search
+- `M-e`: Edit the current incremental search (normally focus isn't in the minibuffer during incremental search, it's in the document, this means to do more complex edits [e.g., to move by word], `M-e` should be used to move focus to the minibuffer first)
 - `C-g`: Cancel the current incremental search
 - `↩`: Go to the current match
 - `M-r`: Switch incremental search to regular expression
@@ -20,7 +17,9 @@
 
 ## Special
 
-- `M-s .`: Search for symbol at point
+These searches go to a different ring than regular searches, to get a previous symbol search, start the search with `M-s _`.
+
+- `M-s .` (`isearch-forward-symbol-at-point`): Search for symbol at point
 - `M-s M-.`: Search for thing at point
 - `M-s w`: Word search
 - `M-s _`: Symbol search
