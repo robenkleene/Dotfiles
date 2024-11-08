@@ -10,9 +10,7 @@ brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
 brew 'universal-ctags'
-# The GNU version of awk is handy to have in case the built-in version fails to
-# parse something for some reason
-brew 'gawk'
+brew 'gnu-typist'
 
 # Editor
 brew 'aspell'

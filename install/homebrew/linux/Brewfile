@@ -16,6 +16,7 @@ brew 'universal-ctags'
 brew 'less'
 brew 'fzf'
 brew 'bat'
+brew 'gnu-typist'
 
 # Editor
 brew 'aspell'
