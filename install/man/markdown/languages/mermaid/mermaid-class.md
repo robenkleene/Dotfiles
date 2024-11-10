@@ -18,3 +18,18 @@ classDiagram
 
     Duck --|> Animal
 ```
+
+# Composition
+
+``` mermaid
+classDiagram
+    class Car {
+        -engine: Engine
+    }
+
+    class Engine {
+        +Start()
+    }
+
+    Car --* Engine
+```
