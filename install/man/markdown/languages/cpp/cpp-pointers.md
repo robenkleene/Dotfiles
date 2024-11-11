@@ -8,7 +8,7 @@
 
 # References
 
-References are just that, references to an existing object, this means for example that you can't have a function returns a reference return a local variable, because that's variable is temporary value that will leave memory at the end of its scope (and a reference can't be null).
+A reference is just that, a reference to an existing object, this means for example that you can't have a function returns a reference return a local variable, because that's variable is temporary value that will leave memory at the end of its scope (and a reference can't be null).
 
 # `.` vs. `->`
 
@@ -69,3 +69,10 @@ std::unique_ptr<Foo> foo;
 ```
 
 You probably never want to assign that via the constructor (e.g., don't do `foo(fooIn)`) because that will result in a doubly released pointer as both this member variable, and the original owner, will calll `std::destroy` on it.
+
+# Checks
+
+- Check whether `const` can be added to every type declaration (e.g., in arguments, variables [including in loops])
+- If possible, use a reference instead of a pointer
+
+
