@@ -77,7 +77,7 @@ includes_file=$(mktemp "${TMPDIR:-/tmp}/rsync-includes.XXXX")
 git ls-files -m -o --exclude-standard > "$includes_file"
 server_path="${host}:/home/robenkleene$local_subpath"
 
-if ssh ${host} "[ ! -d /home/robenkleene${local_subpath} ]"
+if ssh ${host} "[ ! -d /home/robenkleene${local_subpath} ]"; then
   echo "Error: ${server_path} does not exist" >&2
   exit 1
 fi
