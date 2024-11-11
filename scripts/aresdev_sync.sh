@@ -75,7 +75,13 @@ fi
 
 includes_file=$(mktemp "${TMPDIR:-/tmp}/rsync-includes.XXXX")
 git ls-files -m -o --exclude-standard > "$includes_file"
-server_path="$host:/home/robenkleene$local_subpath"
+server_path="${host}:/home/robenkleene$local_subpath"
+
+if ssh ${host} "[ ! -d /home/robenkleene${local_subpath} ]"
+  echo "Error: ${server_path} does not exist" >&2
+  exit 1
+fi
+
 # Never add --delete because that will delete ignored files
 if [[ "$pull" == "true" ]]; then
   # eval "rsync -c --omit-dir-times --exclude=\".*\" --exclude=\"node_modules\" --exclude-from=$excludes_file --verbose --archive $dry_run \
