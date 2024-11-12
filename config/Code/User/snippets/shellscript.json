@@ -39,6 +39,11 @@
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "Function"
   },
+  "Test expression": {
+    "prefix": "rk_ex",
+    "body": "[[ ${1:true} ]]",
+    "description": "Test expression"
+  },
   "If statement": {
     "prefix": "rk_if",
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
