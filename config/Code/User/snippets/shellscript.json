@@ -41,7 +41,7 @@
   },
   "Test expression": {
     "prefix": "rk_ex",
-    "body": "[[ ${1:true} ]]",
+    "body": "[[ ${0:true} ]]",
     "description": "Test expression"
   },
   "If statement": {
