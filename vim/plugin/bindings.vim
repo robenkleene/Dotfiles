@@ -30,3 +30,7 @@ nnoremap <silent> k gk
 nnoremap <silent> j gj
 nnoremap <silent> <Up> gk
 nnoremap <silent> <Down> gj
+vnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> <Up> gk
+vnoremap <silent> <Down> gj
