@@ -81,7 +81,7 @@ set expandtab
 " Don't start folded
 " Only toggle on folds for buffer local for file types where it's useful, too
 " irritating trying to keep files opening unfolded otherwise
-set nofoldenable
+"set nofoldenable
 " If this is set, then having a buffer with folds, jumping to a tag, then
 " returning to the original file, will open folds
 " set foldlevelstart=99
