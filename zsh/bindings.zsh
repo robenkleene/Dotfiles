@@ -9,6 +9,9 @@ setopt ignore_eof
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
+# Allow globs in history search
+bindkey '^R' history-incremental-pattern-search-backward
+
 # Widgets
 
 # Edit in editor
