@@ -16,12 +16,12 @@
   },
   "Print variable": {
     "prefix": "rk_print_var",
-    "body": "print(\"$1 = \", ${1:result})",
+    "body": "print(\"$0 = \", ${0:result})",
     "description": "Print variable"
   },
   "Print to standard error": {
     "prefix": "rk_print_err",
-    "body": "print(\"${1:Error}\", file=sys.stderr)",
+    "body": "print(\"${0:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
   }
 }

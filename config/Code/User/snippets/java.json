@@ -6,12 +6,12 @@
   },
   "Processing print variable": {
     "prefix": "rk_processing_print_var",
-    "body": "println(\"$1 = \", ${1:result});",
+    "body": "println(\"$0 = \", ${0:result});",
     "description": "Processing print variable"
   },
   "Processing print array": {
     "prefix": "rk_processing_print_arr",
-    "body": "println(\"$1\");\nprintArray(${1:result});\nprint(\"\\n\");",
+    "body": "println(\"$0\");\nprintArray(${0:result});\nprint(\"\\n\");",
     "description": "Processing print array"
   }
 }
