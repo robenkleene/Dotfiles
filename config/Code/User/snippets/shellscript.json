@@ -166,7 +166,7 @@
   },
   "Set IFS": {
     "prefix": "rk_ifs",
-    "body": "old_IFS=$IFS\nIFS=\"${0: }\"\nIFS=${old_IFS}",
+    "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
   "Script directory": {

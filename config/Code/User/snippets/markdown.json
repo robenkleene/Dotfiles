@@ -1,7 +1,7 @@
 {
   "Video with controls": {
     "prefix": "rk_video",
-    "body": "<video controls>\n  <source src=\"${1:path/to/video}\" type=\"video/mp4\">\n</video>",
+    "body": "<video controls>\n  <source src=\"${0:path/to/video}\" type=\"video/mp4\">\n</video>",
     "description": "Video with controls"
   }
 }

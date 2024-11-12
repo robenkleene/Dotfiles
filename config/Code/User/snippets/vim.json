@@ -1,12 +1,12 @@
 {
   "`echom` variable": {
     "prefix": "rk_echom_var",
-    "body": "echom \"$1 = \".${1:result}",
+    "body": "echom \"$0 = \".${0:result}",
     "description": "`echom` variable"
   },
   "Function": {
     "prefix": "rk_function",
-    "body": "function! s:${1:Name}() abort\n  ${2:\" Statements}\nendfunction",
+    "body": "function! s:${1:Name}() abort\n  ${0:\" Statements}\nendfunction",
     "description": "Function"
   },
   "`augroup`": {
@@ -21,7 +21,7 @@
   },
   "Set default": {
     "prefix": "rk_set_default",
-    "body": "set ${1:shell}&",
+    "body": "set ${0:shell}&",
     "description": "Set to default"
   },
   "If statement": {

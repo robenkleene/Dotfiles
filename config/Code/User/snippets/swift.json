@@ -21,12 +21,12 @@
   },
   "Log variable": {
     "prefix": "rk_log_var",
-    "body": "NSLog(\"$1 = \\(${1:result})\")",
+    "body": "NSLog(\"$0 = \\(${0:result})\")",
     "description": "Log variable"
   },
   "Print variable": {
     "prefix": "rk_print_var",
-    "body": "print(\"$1 = \\(${1:result})\")",
+    "body": "print(\"$0 = \\(${0:result})\")",
     "description": "Print variable"
   },
   "Class": {
