@@ -13,3 +13,4 @@ let g:vsnip_filetypes = {}
 let g:vsnip_filetypes.sh = ['shellscript']
 let g:vsnip_filetypes.zsh = ['shellscript']
 let g:vsnip_filetypes.typescript = ['javascript']
+let g:vsnip_filetypes.objc = ['objective-c']

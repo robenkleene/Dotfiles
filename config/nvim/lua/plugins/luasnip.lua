@@ -25,6 +25,7 @@ return {
     -- File Types
     ls.filetype_extend("zsh", { "sh" })
     ls.filetype_extend("typescript", { "javascript" })
+    ls.filetype_extend("objc", { "objective-c" })
 
     -- Define a `compfunc`
     local function snippet_to_completion(snippet)
