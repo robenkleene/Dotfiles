@@ -1,7 +1,4 @@
-# Undo & Redo
-
-- `C-x u` or `C-/` or `C-_`: Undo
-  - `C-g`: Followed by an undo binding to redo, to do this repeatedly, then use `C-x z` to repeat, followed by tapping `z` over and over again to keep repeating.
+- `C-j`: Insert a new line without indenting the next line
 
 # Uppercase, Lowercase & Capitalization
 
