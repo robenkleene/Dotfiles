@@ -46,7 +46,10 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
-[*.{mm,m,h}]
+# Note we don't specify `.h` for Objective-C because that would conflict with
+# C++ header files which use the same extension
+# Objective-C header files tend to be flat, so this isn't much of a problem
+[*.{mm,m}]
 indent_style = space
 indent_size = 4
 
