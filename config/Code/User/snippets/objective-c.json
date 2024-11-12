@@ -1,17 +1,17 @@
 {
   "Objective-C Xcode template": {
     "prefix": "rk_template_xcode",
-    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n$0",
+    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n",
     "description": "Objective-C Xcode template"
   },
   "Objective-C template": {
-    "prefix": "rk_template_class",
-    "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}\n",
+    "prefix": "rk_template",
+    "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Objective-C template"
   },
   "Objective-C class template": {
     "prefix": "rk_template_class",
-    "body": "#import <Foundation/Foundation.h>\n\n@interface SampleClass : NSObject\n- (void)sampleMethod;\n@end\n\n@implementation SampleClass\n- (void)sampleMethod {\n    NSLog(@\"Hello, World! \\n\");\n}\n@end\n\nint main() {\n    SampleClass *sampleClass = [[SampleClass alloc] init];\n    [sampleClass sampleMethod];\n    return 0;\n}\n",
+    "body": "#import <Foundation/Foundation.h>\n\n@interface SampleClass : NSObject\n- (void)sampleMethod;\n@end\n\n@implementation SampleClass\n- (void)sampleMethod {\n    NSLog(@\"Hello, World! \\n\");\n}\n@end\n\nint main() {\n    SampleClass *sampleClass = [[SampleClass alloc] init];\n    [sampleClass sampleMethod];\n    return 0;\n}",
     "description": "Objective-C template class"
   },
   "Delegate": {
