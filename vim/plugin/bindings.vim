@@ -26,11 +26,13 @@ vnoremap <silent> # :call setreg("/",
     \ )<Bar>let v:searchforward = 0<Cr>n
 
 " Move by display line
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-nnoremap <silent> <Up> gk
-nnoremap <silent> <Down> gj
-vnoremap <silent> k gk
-vnoremap <silent> j gj
-vnoremap <silent> <Up> gk
-vnoremap <silent> <Down> gj
+" When preceeded with a number, use the normal binding (e.g., `4j` will jump
+" down four wrapped lines)
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
+vnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+vnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+vnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
+vnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
