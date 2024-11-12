@@ -2,11 +2,15 @@
 .\"
 .TH "EMACS\-UNDO" "9" "" "Reference"
 .IP \[bu] 2
-\f[CR]C\-_\f[R]: Undo
+\f[CR]C\-x u\f[R], \f[CR]C\-/\f[R], \f[CR]C\-_\f[R]: Undo
 .IP \[bu] 2
 \f[CR]C\-g C\-_\f[R]: Redo
 .IP \[bu] 2
 \f[CR]C\-g C\-_ C\-_\f[R]: Redo twice, etc\&...
+.IP \[bu] 2
+\f[CR]C\-g\f[R]: Followed by an undo binding to redo, to do this
+repeatedly, then use \f[CR]C\-x z\f[R] to repeat, followed by tapping
+\f[CR]z\f[R] over and over again to keep repeating.
 .SH Notes
 .IP \[bu] 2
 If you can\[cq]t find an edit, try keeping hitting \f[CR]undo\f[R] over
