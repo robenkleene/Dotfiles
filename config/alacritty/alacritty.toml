@@ -29,7 +29,7 @@ post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
 [window]
-dimensions = { columns = 220, lines = 48 }
+dimensions = { columns = 220, lines = 72 }
 # Fixes `M-n`
 option_as_alt = "Both"
 padding = { x = 4, y = 2 }
