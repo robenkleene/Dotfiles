@@ -1,4 +1,5 @@
 - `C-j`: Insert a new line without indenting the next line
+- `C-o`: Open a new line below
 
 # Uppercase, Lowercase & Capitalization
 
