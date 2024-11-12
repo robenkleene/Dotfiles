@@ -29,7 +29,7 @@ exiting object to reference, and you can\[cq]t use a
 \f[CR]unique_ptr\f[R] because a \f[CR]unique_ptr\f[R] will be destroyed
 at the end of the method.
 .SH References
-References are just that, references to an existing object, this means
+A reference is just that, a reference to an existing object, this means
 for example that you can\[cq]t have a function returns a reference
 return a local variable, because that\[cq]s variable is temporary value
 that will leave memory at the end of its scope (and a reference
@@ -93,3 +93,9 @@ You probably never want to assign that via the constructor (e.g.,
 don\[cq]t do \f[CR]foo(fooIn)\f[R]) because that will result in a doubly
 released pointer as both this member variable, and the original owner,
 will calll \f[CR]std::destroy\f[R] on it.
+.SH Checks
+.IP \[bu] 2
+Check whether \f[CR]const\f[R] can be added to every type declaration
+(e.g., in arguments, variables [including in loops])
+.IP \[bu] 2
+If possible, use a reference instead of a pointer
