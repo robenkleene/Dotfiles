@@ -2,4 +2,4 @@
 # key: rk_max_post_var
 # name: Max JavaScript post variable
 # --
-post("$1 = " + ${1:result} + "\n");
+post("$0 = " + ${0:result} + "\n");

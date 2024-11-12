@@ -2,6 +2,6 @@
 # key: rk_processing_print_arr
 # name: Processing print array
 # --
-println("$1");
-printArray(${1:result});
+println("$0");
+printArray(${0:result});
 print("\n");

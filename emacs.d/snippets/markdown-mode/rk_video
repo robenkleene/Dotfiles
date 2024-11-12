@@ -3,5 +3,5 @@
 # name: Video with controls
 # --
 <video controls>
-  <source src="${1:path/to/video}" type="video/mp4">
+  <source src="${0:path/to/video}" type="video/mp4">
 </video>

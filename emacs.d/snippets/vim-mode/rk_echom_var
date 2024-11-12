@@ -2,4 +2,4 @@
 # key: rk_echom_var
 # name: `echom` variable
 # --
-echom "$1 = ".${1:result}
+echom "$0 = ".${0:result}

@@ -2,4 +2,4 @@
 # key: rk_test_not_empty
 # name: True if not empty variable
 # --
--n "${${1:1}:-}"
+-n "${${0:1}:-}"
