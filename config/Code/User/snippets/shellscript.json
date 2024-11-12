@@ -6,12 +6,12 @@
   },
   "Echo variable": {
     "prefix": "rk_echo_var",
-    "body": "echo \"$1 = \\$${1:result}\"",
+    "body": "echo \"$0 = \\$${0:result}\"",
     "description": "Echo variable"
   },
   "Echo array variable": {
     "prefix": "rk_echo_var_array",
-    "body": "echo \"$1 = \\${${1:args}[@]}\"",
+    "body": "echo \"$0 = \\${${0:args}[@]}\"",
     "description": "Echo array variable"
   },
   "Echo to standard error": {
@@ -21,7 +21,7 @@
   },
   "Remove variable trailing slash": {
     "prefix": "rk_parameter_expansion_remove_trailing_slash",
-    "body": "\\${${2:1}%/}$0",
+    "body": "\\${${0:1}%/}",
     "description": "Remove a trailing slash from a variable"
   },
   "Remove path extension": {
@@ -31,7 +31,7 @@
   },
   "Get array element": {
     "prefix": "rk_array_access",
-    "body": "\\${${1:args}[@]}$0",
+    "body": "\\${${0:args}[@]}",
     "description": "Get array element"
   },
   "Function": {
@@ -56,12 +56,12 @@
   },
   "If args": {
     "prefix": "rk_if_args",
-    "body": "if [[ $# ${1:-ne} ${2:0} ]]; then\n  ${3:echo \"\\$1\"}\nfi",
+    "body": "if [[ $# ${1:-ne} ${2:0} ]]; then\n  ${0:echo \"\\$1\"}\nfi",
     "description": "If args"
   },
   "True if directory": {
     "prefix": "rk_test_dir",
-    "body": "-d \"${1:\\$1}\"",
+    "body": "-d \"${0:\\$1}\"",
     "description": "True if directory"
   },
   "Test boolean": {
@@ -71,17 +71,17 @@
   },
   "True if regular file": {
     "prefix": "rk_test_file",
-    "body": "-f \"${1:\\$1}\"",
+    "body": "-f \"${0:\\$1}\"",
     "description": "True if regular file"
   },
   "True if file exists": {
     "prefix": "rk_test_exists",
-    "body": "-e \"${1:\\$1}\"",
+    "body": "-e \"${0:\\$1}\"",
     "description": "True if file exists"
   },
   "True if symbolic link": {
     "prefix": "rk_test_link",
-    "body": "-L \"${1:\\$1}\"",
+    "body": "-L \"${0:\\$1}\"",
     "description": "True if symbolic link"
   },
   "True if equal": {
@@ -101,27 +101,27 @@
   },
   "True if empty variable": {
     "prefix": "rk_test_empty",
-    "body": "-z \"${${1:1}:-}\"",
+    "body": "-z \"${${0:1}:-}\"",
     "description": "True if empty variable"
   },
   "True if not empty variable": {
     "prefix": "rk_test_not_empty",
-    "body": "-n \"${${1:1}:-}\"",
+    "body": "-n \"${${0:1}:-}\"",
     "description": "True if not empty variable"
   },
   "True if no args": {
     "prefix": "rk_test_args",
-    "body": "$# -eq 0",
+    "body": "$# -eq ${0:0}",
     "description": "True if no args"
   },
   "True if variable matches string": {
     "prefix": "rk_test_string",
-    "body": "\"$${1:1}\" = \"${2:string}\"",
+    "body": "\"$${1:1}\" = \"${0:string}\"",
     "description": "True if variable matches string"
   },
   "True if command is executable": {
     "prefix": "rk_test_executable",
-    "body": "-x \"$(command -v ${1:ls})\"",
+    "body": "-x \"$(command -v ${0:ls})\"",
     "description": "True if command is executable"
   },
   "True if `uname` matches": {
@@ -166,7 +166,7 @@
   },
   "Set IFS": {
     "prefix": "rk_ifs",
-    "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
+    "body": "old_IFS=$IFS\nIFS=\"${0: }\"\nIFS=${old_IFS}",
     "description": "Set IFS"
   },
   "Script directory": {
