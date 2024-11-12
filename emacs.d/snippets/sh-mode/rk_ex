@@ -2,4 +2,4 @@
 # key: rk_ex
 # name: Test expression
 # --
-[[ ${1:true} ]]
+[[ ${0:true} ]]
