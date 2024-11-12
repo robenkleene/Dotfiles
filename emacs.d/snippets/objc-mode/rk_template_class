@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# key: rk_template
-# name: Objective-C template
+# key: rk_template_class
+# name: Objective-C class template
 # --
 #import <Foundation/Foundation.h>
 
