@@ -3,14 +3,16 @@
 .TH "OBJECTIVE\-C" "9" "" "Reference"
 .SH Compiling
 .SS \f[CR]clang\f[R]
+If \f[CR]\-o myprogram\f[R] is omitted, it will use \f[CR]a.out\f[R] by
+default.
 .IP
 .EX
-clang \-framework Foundation myprogram.m \-o myprogram
+clang \-framework Foundation foo.m \-o foo
 .EE
 .SS \f[CR]gcc\f[R]
 .IP
 .EX
-gcc hello_world_class.m \-framework Foundation \-o a.out
+gcc foo.m \-framework Foundation \-o foo
 .EE
 .SH Example
 Here\[cq]s a simple working program:
