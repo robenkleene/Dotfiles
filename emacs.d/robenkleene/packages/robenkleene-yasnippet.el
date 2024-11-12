@@ -10,6 +10,7 @@
   (prog-mode . yas-minor-mode)
   (text-mode . yas-minor-mode)
   :config
+  ;; Allow trigger snippets inside snippets
   (setq yas-triggers-in-field t)
   (yas-reload-all)
 
