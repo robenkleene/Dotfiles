@@ -10,6 +10,7 @@
   (prog-mode . yas-minor-mode)
   (text-mode . yas-minor-mode)
   :config
+  (setq yas-triggers-in-field t)
   (yas-reload-all)
 
   ;; This is the default
