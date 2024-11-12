@@ -1,5 +1,3 @@
-# Folding
-
 - `zi`: Toggle folding
 - `zv`: Reveal cursor
 - `za (zA)`: Toggle current fold (recursive)
@@ -12,24 +10,30 @@
 - `zM`: Close all folds
 - `zo` / `zc`: Open / close visually selected folds
 
-## Navigation
+# Navigation
 
 - `zk` / `zj`: End of previous fold / start of next fold
 - `[z` / `z]`: Start / end of current fold
 
-## Combos
-
-- `zMzv`: Close all except cursor
-
-# Working With Folds
+# Basics
 
 1. `zM`: Fold everything
 2. `zr`: Repeat until there's the right level of visibility
 3. `za`: Explore a single node
 
-# Manual
+# Combos
+
+- `zMzv`: Close all except cursor
+
+# Fold Methods
+
+## Manual
 
 - Use the `zf` operator to mark a fold, e.g., `zf%` to fold between delimiters
+
+## Indent
+
+- The level of a fold is calculated by the indent of the line divided by the `shiftwidth`
 
 # Troubleshooting
 
