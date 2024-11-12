@@ -36,7 +36,7 @@ _bash_backward_kill_word() {
 zle -N _bash_backward_kill_word
 
 _system_copy_line() {
-  echo -n "$BUFFER" | ~/.bin/safecopy
+  printf "%s" "$BUFFER" | ~/.bin/safecopy
 }
 zle -N _system_copy_line
 
@@ -44,7 +44,7 @@ _system_copy_region_as_kill() {
   zle copy-region-as-kill
   # Deactivate region
   # zle set-mark-command -n -1
-  echo -n "$CUTBUFFER" | ~/.bin/safecopy
+  printf "%s" "$CUTBUFFER" | ~/.bin/safecopy
 }
 zle -N _system_copy_region_as_kill
 
