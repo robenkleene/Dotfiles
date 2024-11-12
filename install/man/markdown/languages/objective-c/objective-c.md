@@ -2,14 +2,16 @@
 
 ## `clang`
 
+If `-o myprogram` is omitted, it will use `a.out` by default.
+
 ```
-clang -framework Foundation myprogram.m -o myprogram
+clang -framework Foundation foo.m -o foo
 ```
 
 ## `gcc`
 
 ```
-gcc hello_world_class.m -framework Foundation -o a.out
+gcc foo.m -framework Foundation -o foo
 ```
 
 # Example
