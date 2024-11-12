@@ -16,7 +16,7 @@
   },
   "Echo to standard error": {
     "prefix": "rk_echo_err",
-    "body": "echo \"${1:Error}\" >&2",
+    "body": "echo \"${0:Error}\" >&2",
     "description": "Echo to standard error"
   },
   "Remove variable trailing slash": {
