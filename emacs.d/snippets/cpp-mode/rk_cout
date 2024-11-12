@@ -2,4 +2,4 @@
 # key: rk_cout
 # name: Print
 # --
-std::cout << "${1:message}" << std::endl;
+std::cout << "${0:message}" << std::endl;

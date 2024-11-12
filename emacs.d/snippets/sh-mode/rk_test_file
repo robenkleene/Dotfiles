@@ -2,4 +2,4 @@
 # key: rk_test_file
 # name: True if regular file
 # --
--f "${1:\$1}"
+-f "${0:\$1}"

@@ -2,4 +2,4 @@
 # key: rk_set_default
 # name: Set default
 # --
-set ${1:shell}&
+set ${0:shell}&

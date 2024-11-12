@@ -2,4 +2,4 @@
 # key: rk_print_err
 # name: Print to standard error
 # --
-print("${1:Error}", file=sys.stderr)
+print("${0:Error}", file=sys.stderr)

@@ -2,4 +2,4 @@
 # key: rk_array_access
 # name: Get array element
 # --
-\${${1:args}[@]}$0
+\${${0:args}[@]}

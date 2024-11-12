@@ -2,4 +2,4 @@
 # key: rk_test_executable
 # name: True if command is executable
 # --
--x "$(command -v ${1:ls})"
+-x "$(command -v ${0:ls})"
