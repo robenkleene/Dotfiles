@@ -1,3 +1,1 @@
-* `C-h f`: Help for current function
-
-
+- `C-h f`: Help for current function
