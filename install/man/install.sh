@@ -27,7 +27,7 @@ cd "$(dirname "$0")" || exit 1
 
 if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
-    ~/.bin/md_man_update "$REPLY"
+    ~/.bin/md_man_update -f -p "$REPLY"
   done < <( git ls-files --modified 'markdown/**/*.md' )
 else
   # Delete all existing
@@ -37,6 +37,6 @@ else
   fi
 
   while IFS= read -r; do
-    ~/.bin/md_man_update "$REPLY"
+    ~/.bin/md_man_update -p "$REPLY"
   done < <( find markdown -type f -name "*.md" )
 fi
