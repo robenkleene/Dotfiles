@@ -41,9 +41,9 @@ title=$(echo "$filename" | awk '{print toupper($0)}')
 dest="$destination_dir/$filename".9
 if [[ -e "$dest" ]]; then
   if [[ "$force" == "true" ]]; then
-    echo "Warning: Skipping $dest because it already exists, using $source" >&2
-  else
     rm "$dest"
+  else
+    echo "Warning: Skipping $dest because it already exists, using $source" >&2
   fi
 else
   pandoc --standalone --to man --from markdown <({ echo "% ${title}(9) Reference"; cat "$source"; }) --output "$dest"
