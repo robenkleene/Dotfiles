@@ -8,7 +8,8 @@ merge = internal:merge3
 pager = less
 [alias]
 # `hg checkout --clean .` didn't work with a `hg histedit` edit, but `hg revert --all` did
-cleanup = !hg purge && hg revert --all
+# Too dangerous?
+# cleanup = !hg purge && hg revert --all
 # Note bizarrely in order to exclude `show`, you also need to exclude `log`
 # Note this also has to be in `~/.hgrc` for some reason
 # Don't do this, instead just use `G q` to go to the end of the file and quit

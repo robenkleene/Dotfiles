@@ -21,7 +21,8 @@
 	prompt = false
 [alias]
 	root = rev-parse --show-toplevel
-	cleanup = !git checkout -- . && git clean -dff
+# Too dangerous?
+#	cleanup = !git checkout -- . && git clean -dff
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 # [pager]
 #	diff = false
