@@ -1,17 +1,18 @@
-- `-i`: Ignore case (also use *inside of less* to toggle case-sensitivity)
 - `^W`: Toggle search wrap
+
+# Toggle
+
+These can be used while `less` either as flags or *while less is running*.
+
+- `-i`: Ignore case
+- `-S` / `--shop-long-lines`: Truncate long lines
+
+# Flags
+
+- `-F` / `--quit-if-one-screen`: Quit if output is shorter than one screen
+- `-X` / `--no-init`: Don't re-draw the screen after quit
+- `-R` / `--RAW-CONTROL-CHARS`: Allow color
 - To dump everything to the terminal, use `--no-init` and then hit `G q` to jump to the bottom and quit
-
-# Git Pager Settings
-
-Command to do `less` like `git` pager:
-
-	less -FXRS
-
-* `-F` / `--quit-if-one-screen`: Quit if output is shorter than one screen
-* `-X` / `--no-init`: Don't re-draw the screen after quit
-* `-R` / `--RAW-CONTROL-CHARS`: Allow color
-* `-S` / `--shop-long-lines`: Truncate long lines
 
 # Bindings
 

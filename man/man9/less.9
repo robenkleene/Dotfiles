@@ -2,19 +2,15 @@
 .\"
 .TH "LESS" "9" "" "Reference"
 .IP \[bu] 2
-\f[CR]\-i\f[R]: Ignore case (also use \f[I]inside of less\f[R] to toggle
-case\-sensitivity)
-.IP \[bu] 2
 \f[CR]\[ha]W\f[R]: Toggle search wrap
+.SH Toggle
+These can be used while \f[CR]less\f[R] either as flags or \f[I]while
+less is running\f[R].
 .IP \[bu] 2
-To dump everything to the terminal, use \f[CR]\-\-no\-init\f[R] and then
-hit \f[CR]G q\f[R] to jump to the bottom and quit
-.SH Git Pager Settings
-Command to do \f[CR]less\f[R] like \f[CR]git\f[R] pager:
-.IP
-.EX
-less \-FXRS
-.EE
+\f[CR]\-i\f[R]: Ignore case
+.IP \[bu] 2
+\f[CR]\-S\f[R] / \f[CR]\-\-shop\-long\-lines\f[R]: Truncate long lines
+.SH Flags
 .IP \[bu] 2
 \f[CR]\-F\f[R] / \f[CR]\-\-quit\-if\-one\-screen\f[R]: Quit if output is
 shorter than one screen
@@ -24,7 +20,8 @@ after quit
 .IP \[bu] 2
 \f[CR]\-R\f[R] / \f[CR]\-\-RAW\-CONTROL\-CHARS\f[R]: Allow color
 .IP \[bu] 2
-\f[CR]\-S\f[R] / \f[CR]\-\-shop\-long\-lines\f[R]: Truncate long lines
+To dump everything to the terminal, use \f[CR]\-\-no\-init\f[R] and then
+hit \f[CR]G q\f[R] to jump to the bottom and quit
 .SH Bindings
 .IP \[bu] 2
 \f[CR]H\f[R]: Show help including bindings
