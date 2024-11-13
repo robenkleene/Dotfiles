@@ -51,6 +51,9 @@
             'grep-shell-command)
 (define-key rk/bindings-minor-mode-map (kbd "M-s f")
             'find-shell-command)
+;; The default binding for this `C-M-%' isn't typable on terminal
+(define-key rk/bindings-minor-mode-map (kbd "M-s M-%")
+            'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
 (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
