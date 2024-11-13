@@ -1,5 +1,6 @@
-# Editing
-
+- `M-c`: Capitalize current word
+- `M-l`: Lowercase current word
+- `M-u`: Uppsercase current word
 - `C-_` / `C-X u` / `C-X C-u`: Undo
 - `M-C--`: Insert previous parameter (this can take a prefix argument to get other parameters, for example `M-2 M-C--` to get the second to last)
 - `M-m`: Insert previous word, subsequent presses cycle through previous words (not a default binding, but a common convention)
@@ -11,7 +12,7 @@
 - `C-w`: Kill last word (or parameter)
 - `M-<return>`: Insert new line without accepting command (e.g., to extend the command to multiple lines)
 
-## Autoload
+# Autoload
 
 ```
 autoload -Uz copy-earlier-word
