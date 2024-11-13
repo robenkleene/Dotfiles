@@ -56,7 +56,5 @@ This is the best approach that also works on terminal.
 
 # Region
 
-Emacs doesn't have a built-in way to only `query-replace` in a region, but there are a couple of alternatives:
-
-- Just use a regular `query-replace` without a region selected and just hit `␣` until all the desired matches are replaced
+- Starting a `query-replace` with the region active will only replace in that region
 - Select a region, use `C-x n n` to narrow to that region, do a `query-replace` and hit `!` to replace all matches, and use `C-x n p` to exit narrowing

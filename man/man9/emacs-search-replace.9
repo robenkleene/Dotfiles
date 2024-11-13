@@ -84,11 +84,9 @@ on the \f[CR]*grep*\f[R] buffer
 .IP \[bu] 2
 \f[CR]highlight\-phrase\f[R]: Highlight case\-insensitive with spaces
 .SH Region
-Emacs doesn\[cq]t have a built\-in way to only \f[CR]query\-replace\f[R]
-in a region, but there are a couple of alternatives:
 .IP \[bu] 2
-Just use a regular \f[CR]query\-replace\f[R] without a region selected
-and just hit \f[CR]␣\f[R] until all the desired matches are replaced
+Starting a \f[CR]query\-replace\f[R] with the region active will only
+replace in that region
 .IP \[bu] 2
 Select a region, use \f[CR]C\-x n n\f[R] to narrow to that region, do a
 \f[CR]query\-replace\f[R] and hit \f[CR]!\f[R] to replace all matches,
