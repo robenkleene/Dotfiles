@@ -1,19 +1,3 @@
-# Compiling
-
-## `clang`
-
-If `-o myprogram` is omitted, it will use `a.out` by default.
-
-```
-clang -framework Foundation foo.m -o foo
-```
-
-## `gcc`
-
-```
-gcc foo.m -framework Foundation -o foo
-```
-
 # Example
 
 Here's a simple working program:
@@ -37,21 +21,3 @@ int main() {
     return 0;
 }
 ```
-
-# `nullable`
-
-## Properties
-
-```
-@property (nonatomic, strong, nonnull) NSString *key;
-```
-
-## Pointers
-
-```
-(NSString * _Nonnull)key
-```
-
-## Compiler Checks
-
-To get rid off a null check between `nullable` and `nonnull` just add a cast like `(NSURL *)` which `null_unspecified`.
