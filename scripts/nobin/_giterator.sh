@@ -101,6 +101,10 @@ do_git_process() {
       # repository that needs to be addressed manually. Changing to the
       # directory is done by a separate call.
       exit 1
+    else
+      pwd
+      git status
+      printed="true"
     fi
   fi
 
