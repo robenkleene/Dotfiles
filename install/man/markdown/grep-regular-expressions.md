@@ -1,0 +1,10 @@
+- `\b`: Match the empty string at the edge of a word.
+- `\B`: Match the empty string provided it’s not at the edge of a word.
+- `\<`: Match the empty string at the beginning of a word.
+- `\>`: Match the empty string at the end of a word.
+- `\w`: Match word constituent, it is a synonym for `[_[:alnum:]]`.
+- `\W`: Match non-word constituent, it is a synonym for `[^_[:alnum:]]`.
+- `\s`: Match whitespace, it is a synonym for `[[:space:]]`.
+- `\S`: Match non-whitespace, it is a synonym for `[^[:space:]]`.
+- `\]`: Match `]`.
+- `\}`: Match `}`.
