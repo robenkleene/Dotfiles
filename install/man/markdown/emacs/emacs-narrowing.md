@@ -1,2 +1,3 @@
-- `C-x n n`: Start narrowing
-- `C-x n p`: Stop narrowing
+- `C-x n n`: Narrow to region
+- `C-x n w`: Widen
+- `C-x n p`: Narrow to page
