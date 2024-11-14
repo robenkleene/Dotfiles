@@ -16,7 +16,8 @@ return {
         vim.bo[ev.buf].tagfunc = nil
         -- Enable inlay hints (e.g., type hints)
         -- For some reason you need to edit the buffer before this takes effect?
-        vim.lsp.inlay_hint.enable(true)
+        -- This is still too buggy
+        -- vim.lsp.inlay_hint.enable(true)
 
         local opts = { buffer = ev.buf }
         -- Go to
