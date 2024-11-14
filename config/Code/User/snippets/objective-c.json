@@ -1,17 +1,12 @@
 {
-  "Objective-C Xcode template": {
-    "prefix": "rk_template_xcode",
-    "body": "//\n//  `!v expand(\"%:t\")`\n//  `!v expand(\"%:h\")`\n//\n//  Created by Roben Kleene on `date +%-m/%-d/%y`.\n//  Copyright (c) `date +%Y` Roben Kleene. All rights reserved.\n//\n\n",
-    "description": "Objective-C Xcode template"
-  },
   "Objective-C template": {
     "prefix": "rk_template",
     "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Objective-C template"
   },
-  "Objective-C class template": {
-    "prefix": "rk_template_class",
-    "body": "#import <Foundation/Foundation.h>\n\n@interface SampleClass : NSObject\n- (void)sampleMethod;\n@end\n\n@implementation SampleClass\n- (void)sampleMethod {\n    NSLog(@\"Hello, World! \\n\");\n}\n@end\n\nint main() {\n    SampleClass *sampleClass = [[SampleClass alloc] init];\n    [sampleClass sampleMethod];\n    return 0;\n}",
+  "Class": {
+    "prefix": "rk_class",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$2\n@end\nNS_ASSUME_NONNULL_END\n\n@implementation\n$0\n@end",
     "description": "Objective-C template class"
   },
   "Delegate": {
@@ -35,9 +30,9 @@
     "description": "Interface"
   },
   "Class Extension": {
-    "prefix": "rk_extension",
+    "prefix": "rk_interface_extension",
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} (${2:MyCategory})\n$0\n@end\nNS_ASSUME_NONNULL_END",
-    "description": "Class Extension"
+    "description": "Class extension interface"
   },
   "Property": {
     "prefix": "rk_property",
@@ -45,7 +40,7 @@
     "description": "Property"
   },
   "Delegate property": {
-    "prefix": "rk_property-delegate",
+    "prefix": "rk_property_delegate",
     "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;",
     "description": "Delegate property"
   },
