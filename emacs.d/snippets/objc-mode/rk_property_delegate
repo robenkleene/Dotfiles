@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_property-delegate
+# key: rk_property_delegate
 # name: Delegate property
 # --
 @property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;

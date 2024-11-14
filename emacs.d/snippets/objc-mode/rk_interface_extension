@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_extension
+# key: rk_interface_extension
 # name: Class Extension
 # --
 NS_ASSUME_NONNULL_BEGIN
