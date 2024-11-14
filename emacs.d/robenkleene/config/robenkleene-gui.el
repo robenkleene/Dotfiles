@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Path
 (let ((paths-to-prepend
        (list
         (expand-file-name "~/.bin")
@@ -22,6 +23,20 @@
                   ":"))
   (dolist (path-to-prepend paths-to-prepend)
     (add-to-list 'exec-path path-to-prepend))
+  )
+
+;; Man Path
+(let ((paths-to-prepend
+       (list
+        (expand-file-name "~/.man")
+        (expand-file-name "~/.man-local")
+        )
+       ))
+  (setenv "MANPATH" (mapconcat
+                     'identity
+                     (append paths-to-prepend
+                             (list (getenv "PATH")))
+                     ":"))
   )
 ;; Make `rg' called from within Emacs use `ripgreprc'
 (setenv "RIPGREP_CONFIG_PATH" (expand-file-name "~/.ripgreprc"))
