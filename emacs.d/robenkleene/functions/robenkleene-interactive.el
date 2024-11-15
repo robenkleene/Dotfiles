@@ -155,7 +155,7 @@ built-in `man` function."
                         man-dirs))
          (choice (completing-read "Choose man file: " files rk/man9-history t)))
     (when choice
-      (man choice)
+      (man (format "9 %s" choice))
       )))
 
 (provide 'robenkleene-interactive)
