@@ -95,3 +95,6 @@ indent_size = 2
 [*.pde]
 indent_style = space
 indent_size = 2
+
+[*.el]
+indent_style = space
