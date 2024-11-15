@@ -153,7 +153,7 @@ built-in `man` function."
                             (mapcar #'file-name-base
                                     (directory-files-recursively dir "\\.9$"))))
                         man-dirs))
-         (choice (completing-read "Choose man file: " files rk/man9-history t)))
+         (choice (completing-read "man 9: " files rk/man9-history t)))
     (when choice
       (man (format "9 %s" choice))
       )))
