@@ -141,6 +141,20 @@
    )
   )
 
+(defun man9 ()
+  "Interactively choose a markdown file and display it as a man page using the
+built-in `man` function."
+  (interactive)
+  (let* ((man-dirs '("~/.man" "~/.man-local"))
+         (files (mapcan (lambda (dir)
+                          (when (file-exists-p dir)
+                            (mapcar #'file-name-base
+                                    (directory-files-recursively dir "\\.9$"))))
+                        man-dirs))
+         (choice (completing-read "Choose man file: " files nil t)))
+    (when choice
+      (man choice))))
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
