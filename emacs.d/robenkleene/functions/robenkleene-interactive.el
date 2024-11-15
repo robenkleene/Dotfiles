@@ -141,6 +141,8 @@
    )
   )
 
+;;;###autoload
+(defvar rk/man9-history nil "History list for `man9'.")
 (defun man9 ()
   "Interactively choose a markdown file and display it as a man page using the
 built-in `man` function."
@@ -151,9 +153,10 @@ built-in `man` function."
                             (mapcar #'file-name-base
                                     (directory-files-recursively dir "\\.9$"))))
                         man-dirs))
-         (choice (completing-read "Choose man file: " files nil t)))
+         (choice (completing-read "Choose man file: " files rk/man9-history t)))
     (when choice
-      (man choice))))
+      (man choice)
+      )))
 
 (provide 'robenkleene-interactive)
 ;; Local Variables:
