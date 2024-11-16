@@ -4,6 +4,11 @@
     "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Objective-C template"
   },
+  "Main": {
+    "prefix": "rk_main",
+    "body": "int main() {\n    NSLog(@\"Hello, World!\");\n}",
+    "description": "Main function"
+  },
   "Class": {
     "prefix": "rk_class",
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$2\n@end\nNS_ASSUME_NONNULL_END\n\n@implementation $1\n$0\n@end",
