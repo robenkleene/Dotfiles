@@ -1,5 +1,6 @@
 function! commands#completeMan9(arglead, cmdline, cursorpos) abort
-  let cmd = "find ~/.man/ ~/.man-local -type f -name '". a:arglead . "*' -exec basename {} '.9' \\;"
+  let l:man_local = isdirectory(expand("~/.man-local")) ? "~/.man-local " : ""
+  let l:cmd = "find ~/.man/ " . man_local . "-type f -name '" . a:arglead . "*' -exec basename {} '.9' \\;"
   return systemlist(cmd)
 endfunction
 
