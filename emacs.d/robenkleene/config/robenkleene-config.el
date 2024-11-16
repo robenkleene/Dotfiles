@@ -138,6 +138,9 @@
 (setq global-auto-revert-non-file-buffers t)
 ;; Auto-revert more quickly
 (setq auto-revert-interval 1)
+;; Supppres `Reverting Buffer' message
+;; This can be very noisy for some reason
+(setq auto-revert-verbose nil)
 
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
