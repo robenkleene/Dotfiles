@@ -8,6 +8,6 @@ $2
 @end
 NS_ASSUME_NONNULL_END
 
-@implementation
+@implementation $1
 $0
 @end

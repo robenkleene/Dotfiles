@@ -6,7 +6,7 @@
   },
   "Class": {
     "prefix": "rk_class",
-    "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$2\n@end\nNS_ASSUME_NONNULL_END\n\n@implementation\n$0\n@end",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$2\n@end\nNS_ASSUME_NONNULL_END\n\n@implementation $1\n$0\n@end",
     "description": "Objective-C template class"
   },
   "Delegate": {
