@@ -34,6 +34,19 @@
 
 (define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell-other-window)
 
+;; Prefer the `regexp' versions of search and query replace, this is partially
+;; because `C-M-%' isn't possible to type in a terminal
+;; These use `global-set-key' so more specific minor modes can override them,
+;; e.g., the minibuffer
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-s") 'isearch-forward)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-r") 'isearch-backward)
+;; Swap query replace
+(define-key rk/bindings-minor-mode-map (kbd "M-%")
+            'query-replace-regexp)
+(define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
+
 ;; Z
 (define-key rk/bindings-minor-mode-map (kbd "M-g z")
             'z)
@@ -43,6 +56,8 @@
             'z-other-frame)
 (define-key rk/bindings-minor-mode-map (kbd "C-x t z")
             'z-other-tab)
+
+;; Misc
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
             'recentf-open)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-b")
