@@ -1,5 +1,7 @@
 -- Set before plugins that require `termguicolor`
 vim.o.termguicolors = false
+-- Turn off smartindent since we have tree sitter indent on
+vim.o.smartindent = false
 -- Set leader now so later bindings pick it up
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
