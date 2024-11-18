@@ -164,9 +164,8 @@
   ;; (add-to-list 'org-link-frame-setup '(file . find-file))
 
   ;; Agenda
-  (setq org-agenda-span 14
-        org-agenda-start-on-weekday nil
-        org-agenda-start-day "-3d")
+  ;; By default, agenda only shows one week
+  (setq org-agenda-span 28)
 
   )
 
