@@ -21,3 +21,4 @@
 # Tips
 
 - Use `cw` to change whitespace between words or `dw` to delete.
+- `g/^$/d`: Delete blank lines
