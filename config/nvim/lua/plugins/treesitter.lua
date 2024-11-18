@@ -47,7 +47,8 @@ return {
       sync_install = false,
       -- Try to fix crashes on Markdown by disabling `indent`
       -- If we ever want to enable this, turn of `smartindent`
-      indent = false,
+      -- We've enabled this again because it fixes indention for Swift
+      indent = true,
       build = ":TSUpdate",
       highlight = { enable = true },
       textobjects = {
