@@ -31,7 +31,7 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 [window]
 # Two 80 width text files side-by-side with a bit of buffer
 # Largest height divisible by 24 that's comfortable on a laptop
-dimensions = { columns = 220, lines = 72 }
+# dimensions = { columns = 220, lines = 72 }
 # Fixes `M-n`
 option_as_alt = "Both"
 padding = { x = 4, y = 2 }
