@@ -104,3 +104,9 @@ augroup override_colors
     autocmd!
     autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
 augroup END
+
+" Set `textwidth=80` but only if a `ftplugin` hasn't already set it
+augroup textwidth
+  autocmd!
+  autocmd FileType * if &l:textwidth == 0 | setlocal textwidth=80 | endif
+augroup END

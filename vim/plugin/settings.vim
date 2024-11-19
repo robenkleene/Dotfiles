@@ -141,6 +141,8 @@ set wildmode=longest:full,full
 " set wildoptions=pum
 " Show column vertical line
 " `+0` means match `colorcolumn` to `textwidth`
+" `textwidth=80` is set by an `autocmd` only if a `ftplugin` hasn't already
+" set it
 set colorcolumn=+0
 " Line breaks only happen on words
 set linebreak
