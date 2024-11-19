@@ -63,5 +63,10 @@
     "prefix": "rk_forin",
     "body": "for (${1:id} ${2:object} in ${3:objects}) {\n    $0\n}",
     "description": "Fast enumeration"
+  },
+  "for": {
+    "prefix": "rk_for",
+    "body": "for (int ${1:i} = ${2:0}; $1 < ${3:10}; $1++) {\n    ${0:NSLog(@\"%d\", i);}\n}",
+    "description": "For loop"
   }
 }
