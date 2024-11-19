@@ -41,6 +41,7 @@
 (require 'robenkleene-eshell)
 (require 'robenkleene-modus)
 (require 'robenkleene-outline)
+(require 'robenkleene-remember)
 (require 'robenkleene-shell)
 (require 'robenkleene-vc)
 
