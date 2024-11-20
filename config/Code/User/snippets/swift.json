@@ -26,7 +26,7 @@
   },
   "Print variable": {
     "prefix": "rk_print_var",
-    "body": "print(\"$0 =\", ${0:result}",
+    "body": "print(\"$0 =\", ${0:result})",
     "description": "Print variable"
   },
   "Print optional variable": {
