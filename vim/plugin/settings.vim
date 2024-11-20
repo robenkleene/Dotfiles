@@ -141,8 +141,9 @@ set wildmode=longest:full,full
 " set wildoptions=pum
 " Show column vertical line
 " `+0` means match `colorcolumn` to `textwidth`
+" Don't set a `textwidth` explicitly, it has too many side effects like giving
+" a text width in buffers with no filetype set
 set colorcolumn=+0
-set textwidth=80
 " Line breaks only happen on words
 set linebreak
 " Launch without wrapped lines
