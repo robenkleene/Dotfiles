@@ -2,4 +2,18 @@
 .\"
 .TH "BASH\-REDIRECT" "9" "" "Reference"
 .IP \[bu] 2
-\f[CR]2>/dev/null\f[R]: Redirect standard error to standard out
+\f[CR]./a.out 2>/dev/null\f[R]: Discard standard error
+.IP \[bu] 2
+\f[CR]echo \[dq]Error\[dq] >&2\f[R]: Discard standard output to standard
+error
+.IP \[bu] 2
+\f[CR]./a.out 2>error.log\f[R]: Redirect standard error to a file
+.IP \[bu] 2
+\f[CR]./a.out 2>&1 >output.log\f[R]: Redirect standard error and
+standard output to a file
+.IP \[bu] 2
+\f[CR]./a.out 2>&1 | tee output.log\f[R]: Redirect standard error and
+standard output to a file and print to standard output
+.IP \[bu] 2
+\f[CR]./a.out 2>&1 | tee /dev/tty | sort\f[R]: Redirect standard error
+and standard output to a pipe and to standard output
