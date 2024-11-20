@@ -2,4 +2,4 @@
 # key: rk_cout_addr
 # name: Print with address
 # --
-std::cout << this << " ${0:message}" << std::endl;
+std::cout << this << " ${1:message}" << std::endl;

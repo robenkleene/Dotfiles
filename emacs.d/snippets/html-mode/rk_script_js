@@ -2,4 +2,4 @@
 # key: rk_script_js
 # name: rk_scriptjs
 # --
-<script type="text/javascript" src="${0:js/script.js}"></script>
+<script type="text/javascript" src="${1:js/script.js}"></script>

@@ -2,4 +2,4 @@
 # key: rk_link_css
 # name: rk_linkcss
 # --
-<link rel="stylesheet" type="text/css" href="${0:css/style.css}" />
+<link rel="stylesheet" type="text/css" href="${1:css/style.css}" />
