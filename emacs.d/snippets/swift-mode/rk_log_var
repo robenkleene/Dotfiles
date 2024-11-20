@@ -2,4 +2,4 @@
 # key: rk_log_var
 # name: Log variable
 # --
-NSLog("$0 = \\(${0:result})")
+NSLog("$1 = \\(${1:result})")

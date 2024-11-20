@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_print
+# name: Print
+# --
+print("${1:Hello World}")
