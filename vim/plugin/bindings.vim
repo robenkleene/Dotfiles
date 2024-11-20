@@ -32,7 +32,10 @@ nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
-vnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-vnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
-vnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
-vnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
+" `xnoremap` only applies to visual mode, whereas `vnoremap` applies to both
+" visual mode and select mode. Select mode will mess with filling out snippet
+" stops.
+xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
