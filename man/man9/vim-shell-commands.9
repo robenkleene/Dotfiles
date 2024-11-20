@@ -64,7 +64,9 @@ command \f[CR]|\f[R] is used to pipe
 There are two methods to execute another command\-line command after a
 shell command, either use \f[CR]exe[cute]\f[R] (e.g.,
 \f[CR]:execute \[aq]r !ls\[aq] | \[aq][\f[R] or insert a
-\f[CR]\[ha]\[at]\f[R] with \f[CR]<C\-v><C\-j>\f[R]
+\f[CR]\[ha]\[at]\f[R] with \f[CR]<C\-v><C\-j>\f[R] (note that after
+\f[I]a subsequent pipe\f[R] then needs to be escaped with
+\f[CR]\[rs]|\f[R]*)
 .SH Special
 .IP \[bu] 2
 \f[CR]!clear\f[R]: Clear the external command buffer
