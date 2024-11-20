@@ -1,1 +1,0 @@
-- `InspectTree`: Built-in tree sitter abstract syntax tree inspection

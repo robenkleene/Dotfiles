@@ -1,3 +1,7 @@
+- `M-x diff` prompt to diff two files
+
+## Diff Mode
+
 - `C-c C-c` / `M-RET`: Go to source file of hunk
 - `M-p` / `M-n`: Previous / next hunk
 - `M-{`, `M-P` / `M-}`, `M-N`: Previous / next file
