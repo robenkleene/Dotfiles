@@ -2,13 +2,13 @@
   "JavaScript template": {
     "scope": "javascript,typescript",
     "prefix": "rk_template",
-    "body": "#!/usr/bin/env node\n\n$0",
+    "body": "#!/usr/bin/env node\n\n",
     "description": "JavaScript template"
   },
   "Log variable": {
     "scope": "javascript,typescript",
     "prefix": "rk_log_var",
-    "body": "console.log(\"$0 = \" + ${0:result});",
+    "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Log variable"
   },
   "For loop": {
@@ -19,7 +19,7 @@
   },
   "Max JavaScript post variable": {
     "prefix": "rk_max_post_var",
-    "body": "post(\"$0 = \" + ${0:result} + \"\\n\");",
+    "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
     "description": "Max JavaScript post variable"
   },
   "Max JavaScript template": {

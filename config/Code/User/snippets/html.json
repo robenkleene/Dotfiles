@@ -6,12 +6,12 @@
   },
   "rk_linkcss": {
     "prefix": "rk_link_css",
-    "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${0:css/style.css}\" />",
+    "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${1:css/style.css}\" />",
     "description": "Link CSS"
   },
   "rk_scriptjs": {
     "prefix": "rk_script_js",
-    "body": "<script type=\"text/javascript\" src=\"${0:js/script.js}\"></script>",
+    "body": "<script type=\"text/javascript\" src=\"${1:js/script.js}\"></script>",
     "description": "Add JavaScript"
   }
 }
