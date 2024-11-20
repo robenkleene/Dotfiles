@@ -6,7 +6,7 @@
   },
   "Print variable": {
     "prefix": "rk_puts_var",
-    "body": "puts \"$0 = #{${0:result}}\"",
+    "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
   "`puts` to standard error": {

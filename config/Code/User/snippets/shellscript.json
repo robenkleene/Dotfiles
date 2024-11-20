@@ -6,17 +6,17 @@
   },
   "Echo variable": {
     "prefix": "rk_echo_var",
-    "body": "echo \"$0 = \\$${0:result}\"",
+    "body": "echo \"$1 = \\$${1:result}\"",
     "description": "Echo variable"
   },
   "Echo array variable": {
     "prefix": "rk_echo_var_array",
-    "body": "echo \"$0 = \\${${0:args}[@]}\"",
+    "body": "echo \"$1 = \\${${1:args}[@]}\"",
     "description": "Echo array variable"
   },
   "Echo to standard error": {
     "prefix": "rk_echo_err",
-    "body": "echo \"${0:Error}\" >&2",
+    "body": "echo \"${1:Error}\" >&2",
     "description": "Echo to standard error"
   },
   "Remove variable trailing slash": {

@@ -1,7 +1,7 @@
 {
   "Python template": {
     "prefix": "rk_template",
-    "body": "#!/usr/bin/env python3\n\n$0",
+    "body": "#!/usr/bin/env python3\n\n",
     "description": "Python template"
   },
   "Python Blender template": {
@@ -11,17 +11,17 @@
   },
   "`main` Function": {
     "prefix": "rk_main",
-    "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t$0",
+    "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t",
     "description": "`main` Function"
   },
   "Print variable": {
     "prefix": "rk_print_var",
-    "body": "print(\"$0 = \", ${0:result})",
+    "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
   "Print to standard error": {
     "prefix": "rk_print_err",
-    "body": "print(\"${0:Error}\", file=sys.stderr)",
+    "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "Print to standard error"
   }
 }
