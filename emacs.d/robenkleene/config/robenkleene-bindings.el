@@ -66,6 +66,8 @@
             'grep-shell-command)
 (define-key rk/bindings-minor-mode-map (kbd "M-s f")
             'find-shell-command)
+(define-key rk/bindings-minor-mode-map (kbd "C-x M-r")
+            'remember)
 ;; The default binding for this `C-M-%' isn't typable on terminal
 (define-key rk/bindings-minor-mode-map (kbd "M-s M-%")
             'query-replace-regexp)
