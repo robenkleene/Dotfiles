@@ -1,3 +1,5 @@
+- `InspectTree`: Built-in tree sitter abstract syntax tree inspection
+
 # Customizing Colors
 
 - `TSPlaygroundToggle`: Use the `treesitter-playground` (with the plugin installed) in order to get the Treesitter syntax groups
