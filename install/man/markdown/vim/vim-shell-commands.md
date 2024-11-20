@@ -38,7 +38,7 @@ There's no nice way to do this, it's easier to just create a new buffer (`:new`)
 
 - `!` always represents the previous shell command, unless it's preceded by a `\`. For example, `:!echo ! \! \\!` after `:!ls` executs `echo ls ! \!`
 - `|` can normally be used to execute multiple commands on the command line, but not after a shell command, because with a shell command `|` is used to pipe
-- There are two methods to execute another command-line command after a shell command, either use `exe[cute]` (e.g., `:execute 'r !ls' | '[` or insert a `^@` with `<C-v><C-j>`
+- There are two methods to execute another command-line command after a shell command, either use `exe[cute]` (e.g., `:execute 'r !ls' | '[` or insert a `^@` with `<C-v><C-j>` (note that after *a subsequent pipe* then needs to be escaped with `\|`*)
 
 # Special
 
