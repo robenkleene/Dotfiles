@@ -44,6 +44,11 @@
     "body": "print(\"$1 =\", ${1:result} ?? \"nil\"",
     "description": "Print optional variable"
   },
+  "For": {
+    "prefix": "rk_for",
+    "body": "for ${1:i} in ${2:0}..<${3:10} {\n    ${0:print(\"\\($1)\")}\n}",
+    "description": "For loop"
+  },
   "Class": {
     "prefix": "rk_class",
     "body": "class ${1:MyObject} {\n    $0\n}",
