@@ -1,1 +1,6 @@
-- `2>/dev/null`: Redirect standard error to standard out
+- `./a.out 2>/dev/null`: Discard standard error
+- `echo "Error" >&2`: Discard standard output to standard error
+- `./a.out 2>error.log`: Redirect standard error to a file
+- `./a.out 2>&1 >output.log`: Redirect standard error and standard output to a file
+- `./a.out 2>&1 | tee output.log`: Redirect standard error and standard output to a file and print to standard output
+- `./a.out 2>&1 | tee /dev/tty | sort`: Redirect standard error and standard output to a pipe and to standard output
