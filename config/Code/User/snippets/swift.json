@@ -21,17 +21,27 @@
   },
   "Log variable": {
     "prefix": "rk_log_var",
-    "body": "NSLog(\"$0 = \\(${0:result})\")",
+    "body": "NSLog(\"$1 = \\(${1:result})\")",
     "description": "Log variable"
+  },
+  "Log": {
+    "prefix": "rk_log",
+    "body": "NSLog(\"${1:Hello World}\")",
+    "description": "Print"
+  },
+  "Print": {
+    "prefix": "rk_print",
+    "body": "print(\"${1:Hello World}\")",
+    "description": "Print"
   },
   "Print variable": {
     "prefix": "rk_print_var",
-    "body": "print(\"$0 =\", ${0:result})",
+    "body": "print(\"$1 =\", ${1:result})",
     "description": "Print variable"
   },
   "Print optional variable": {
     "prefix": "rk_print_var_opt",
-    "body": "print(\"$0 =\", ${0:result} ?? \"nil\"",
+    "body": "print(\"$1 =\", ${1:result} ?? \"nil\"",
     "description": "Print optional variable"
   },
   "Class": {

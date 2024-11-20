@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_log
+# name: Log
+# --
+NSLog(@"${1:Hello World}");

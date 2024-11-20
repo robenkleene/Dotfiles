@@ -4,6 +4,11 @@
     "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Objective-C template"
   },
+  "Log": {
+    "prefix": "rk_log",
+    "body": "NSLog(@\"${1:Hello World}\");",
+    "description": "Log"
+  },
   "Log variable": {
     "prefix": "rk_log_var",
     "body": "NSLog(@\"$1 = %${2:@}\", ${1:result});",
