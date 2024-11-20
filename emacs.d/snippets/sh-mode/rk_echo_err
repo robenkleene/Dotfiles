@@ -2,4 +2,4 @@
 # key: rk_echo_err
 # name: Echo to standard error
 # --
-echo "${0:Error}" >&2
+echo "${1:Error}" >&2

@@ -2,4 +2,4 @@
 # key: rk_cout_var_addr
 # name: Print variable with address
 # --
-std::cout << this << " $0 = " << ${0:result} << std::endl;
+std::cout << this << " $1 = " << ${1:result} << std::endl;
