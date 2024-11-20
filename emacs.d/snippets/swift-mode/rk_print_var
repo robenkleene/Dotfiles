@@ -2,4 +2,4 @@
 # key: rk_print_var
 # name: Print variable
 # --
-print("$0 = \\(${0:result})")
+print("$0 =", ${0:result}
