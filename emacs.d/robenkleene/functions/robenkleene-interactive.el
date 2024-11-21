@@ -142,21 +142,24 @@
   )
 
 ;;;###autoload
-(defvar rk/man9-history nil "History list for `man9'.")
-(defun man9 ()
-  "Interactively choose a markdown file and display it as a man page using the
-built-in `man` function."
-  (interactive)
-  (let* ((man-dirs '("~/.man" "~/.man-local"))
-         (files (mapcan (lambda (dir)
-                          (when (file-exists-p dir)
-                            (mapcar #'file-name-base
-                                    (directory-files-recursively dir "\\.9$"))))
-                        man-dirs))
-         (choice (completing-read "man 9: " files rk/man9-history t)))
-    (when choice
-      (man (format "9 %s" choice))
-      )))
+(defvar rk/man-history nil "History list for `man'.")
+(defun man (man-args)
+  "Redifinition of the builtin `man' function that uses file completion"
+  (interactive
+   (let* ((manpath (getenv "MANPATH"))
+          (man-dirs (split-string manpath ":" t))
+          (files (mapcan (lambda (dir)
+                           (when (file-exists-p dir)
+                             (mapcar #'file-name-base
+                                     (directory-files-recursively dir ""))))
+                         man-dirs))
+          (choice (completing-read "man: " files rk/man-history t)))
+     (when choice
+       (require 'man)
+       (Man-getpage-in-background man-args)
+       )))
+  )
+
 
 (provide 'robenkleene-interactive)
 ;; Local Variables:
