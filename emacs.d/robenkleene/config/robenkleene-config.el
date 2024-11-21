@@ -192,6 +192,10 @@
 ;; Repeat subsequent mark pops with `C-SPC'
 (setq set-mark-command-repeat-pop t)
 
+;; Automatically accept redefinitions (without this it warns each time one is
+;; applied)
+(setq ad-redefinition-action 'accept)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
