@@ -156,7 +156,7 @@
           (choice (completing-read "man: " files rk/man-history t)))
      (when choice
        (require 'man)
-       (Man-getpage-in-background man-args)
+       (Man-getpage-in-background choice)
        )))
   )
 
