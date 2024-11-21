@@ -38,7 +38,7 @@ source="$file_path"
 filename=$(basename -- "$source")
 filename="${filename%.*}"
 title=$(echo "$filename" | awk '{print toupper($0)}')
-dest="$destination_dir/rk_$filename"
+dest="$destination_dir/rk_$filename".9
 if [[ -e "$dest" ]]; then
   if [[ "$force" == "true" ]]; then
     rm "$dest"
