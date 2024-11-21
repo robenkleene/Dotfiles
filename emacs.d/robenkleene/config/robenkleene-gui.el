@@ -35,7 +35,7 @@
   (setenv "MANPATH" (mapconcat
                      'identity
                      (append paths-to-prepend
-                             (list (getenv "PATH")))
+                             (list (getenv "MANPATH")))
                      ":"))
   )
 ;; Make `rg' called from within Emacs use `ripgreprc'
