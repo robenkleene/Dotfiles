@@ -22,7 +22,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'prabirshrestha/asyncomplete.vim'
+" The built in `:Man` command uses `-complete=shellcmd`
 Plug 'vim-utils/vim-man'
+" Not sure why this isn't working
+" Plug 'vim-utils/vim-man', { 'on': 'Man' }
 let g:asyncomplete_matchfuzzy = 0
 " More reliable open browser
 Plug 'tyru/open-browser.vim'

@@ -10,5 +10,9 @@ return {
   },
   { 'tpope/vim-repeat' },
   { 'robenkleene/partshell.vim' },
-  { 'vim-utils/vim-man' },
+  -- The built in `:Man` command uses `-complete=shellcmd`
+  {
+    'vim-utils/vim-man',
+    cmd = { 'Man' },
+  },
 }
