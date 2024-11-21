@@ -10,4 +10,5 @@ return {
   },
   { 'tpope/vim-repeat' },
   { 'robenkleene/partshell.vim' },
+  { 'vim-utils/vim-man' },
 }
