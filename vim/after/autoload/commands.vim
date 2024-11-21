@@ -1,9 +1,3 @@
-function! commands#completeMan9(arglead, cmdline, cursorpos) abort
-  let l:man_local = isdirectory(expand("~/.man-local")) ? "~/.man-local " : ""
-  let l:cmd = "find ~/.man/ " . man_local . "-type f -name '" . a:arglead . "*' -exec basename {} '.9' \\;"
-  return systemlist(cmd)
-endfunction
-
 function! commands#Ztcd(terms) abort
   call commands#Zcmd("tcd", a:terms)
 endfunction
