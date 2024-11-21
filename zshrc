@@ -10,6 +10,11 @@ fi
 # Setup
 source ~/.zsh/settings.zsh
 source ~/.zsh/bindings.zsh
+# Variables need to be re-sourced in subshells because otherwise path settings
+# won't be pulled to the front
+# This needs to stay ahead of installs so the path is set before installs,
+# otherwise `.brew/bin` won't be in front of `/usr/local/bin`
+source ~/.zsh/variables.zsh
 # `installs.zsh` before `alias.zsh` so functions don't use aliases and after
 # bindings, otherwise bindings conflict with install bindings
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
@@ -26,6 +31,3 @@ source ~/.zsh/alias.zsh
 # Interactive
 source ~/.zsh/ui.zsh
 
-# Variables need to be re-sourced in subshells because otherwise path settings
-# won't be pulled to the front
-source ~/.zsh/variables.zsh
