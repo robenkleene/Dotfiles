@@ -14,7 +14,8 @@ path=(~/.bin ~/.brew/bin $path[@])
 export -U PATH
 
 # Allow custom man pages
-export MANPATH=$MANPATH:$HOME/.man
+# System code adds a superfluous trailing colon, so we don't add a colon here
+export MANPATH=${MANPATH:+${MANPATH}}$HOME/.man
 export -U MANPATH
 
 # Adding home to `CDPATH` make `cd <relative-path>` tab complete paths from
