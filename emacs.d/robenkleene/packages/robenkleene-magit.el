@@ -11,7 +11,8 @@
     (interactive)
     (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
         (shell-command "~/.bin/sgitt_auto" "*egit" "*egit")
-      (let ((default-directory (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
+      (let ((default-directory
+             (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
         (magit-status)
         )
       )
