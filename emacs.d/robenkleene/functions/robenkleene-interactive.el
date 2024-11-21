@@ -143,23 +143,18 @@
 
 ;;;###autoload
 (defvar rk/man-history nil "History list for `man'.")
-(defun man (man-args)
-  "Redifinition of the builtin `man' function that uses file completion"
-  (interactive
-   (let* ((manpath (getenv "MANPATH"))
-          (man-dirs (split-string manpath ":" t))
-          (files (mapcan (lambda (dir)
-                           (when (file-exists-p dir)
-                             (mapcar #'file-name-base
-                                     (directory-files-recursively dir ""))))
-                         man-dirs))
-          (choice (completing-read "man: " files rk/man-history t)))
-     (when choice
-       (require 'man)
-       (Man-getpage-in-background choice)
-       )))
-  )
-
+(defadvice man (around rk/man-interactive activate)
+  (interactive (list (let* ((manpath (getenv "MANPATH"))
+                            (man-dirs (split-string manpath ":" t))
+                            (files (mapcan (lambda (dir)
+                                             (when (file-exists-p dir)
+                                               (mapcar #'file-name-base
+                                                       (directory-files-recursively dir ""))))
+                                           man-dirs)))
+                       (completing-read "man: " files rk/man-history t)
+                       )))
+  ad-do-it)
+(setq ad-redefinition-action 'accept)
 
 (provide 'robenkleene-interactive)
 ;; Local Variables:
