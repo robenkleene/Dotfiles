@@ -2,7 +2,8 @@
 set shell=zsh
 
 " Enable the `:Man` command
-runtime ftplugin/man.vim
+" Note this just uses `-complete=shellcmd`
+" runtime ftplugin/man.vim
 
 " `I`: Don't show intro message
 set shortmess+=I

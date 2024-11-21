@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'vim-utils/vim-man'
 let g:asyncomplete_matchfuzzy = 0
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
