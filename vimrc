@@ -9,6 +9,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+" The built in `:Man` command uses `-complete=shellcmd`
+" This needs to be loaded before `vim-sensible` to prevent sensible from
+" loading the builtin `:Man` first
+Plug 'vim-utils/vim-man'
+" This breaks completion before running the command once
+" Plug 'vim-utils/vim-man', { 'on': 'Man' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
@@ -22,10 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'prabirshrestha/asyncomplete.vim'
-" The built in `:Man` command uses `-complete=shellcmd`
-Plug 'vim-utils/vim-man'
-" Not sure why this isn't working
-" Plug 'vim-utils/vim-man', { 'on': 'Man' }
+
 let g:asyncomplete_matchfuzzy = 0
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
