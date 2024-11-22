@@ -10,9 +10,9 @@ export LC_CTYPE=en_US.UTF-8
 # Also, for scripts, which is when only `ZSHENV` is sourced, we probably want
 # to minimize environment variables anyway
 # `typeset -U path` prevents duplicates in `path`
-export -U path=(~/.bin ~/.brew/bin $path[@])
+export -U path=(~/.bin ~/.brew/bin $path)
 
-export -U manpath=(~/.man $manpath[@])
+export -U manpath=(~/.man $manpath)
 
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   export COLORTERM="truecolor"
