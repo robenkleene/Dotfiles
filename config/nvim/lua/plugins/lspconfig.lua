@@ -85,6 +85,7 @@ return {
     -- Special
     -- Apple recommends `dynamicRegistration` to watch files like the package manifest
     lspconfig.sourcekit.setup {
+      filetypes = { "swift" },
       capabilities = {
         workspace = {
           didChangeWatchedFiles = {
