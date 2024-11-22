@@ -2,4 +2,4 @@
 # key: rk_message_var
 # name: Message variable
 # --
-message "$0${1:result} = %${2:s}" $1
+message "${1:result} = %${2:s}" $1
