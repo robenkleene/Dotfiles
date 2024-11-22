@@ -6,6 +6,10 @@ vim.o.smartindent = false
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 -- vim.cmd[[colorscheme wildcharm]]
+
+-- Prevent the builtin `:Man` command from being loaded, we're using a plugin because it has better tab completion
+vim.g.loaded_man = 1
+
 vim.cmd[[
 if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
   set background=dark

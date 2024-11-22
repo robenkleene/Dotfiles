@@ -1,5 +1,5 @@
 return {
-  { 'tpope/vim-unimpaired', },
+  { 'tpope/vim-unimpaired' },
   -- Vinegar doesn't seem to properly select the current file with `-`
   { 'tpope/vim-vinegar' },
   -- This doesn't handle visual blocks correctly
@@ -10,8 +10,8 @@ return {
   },
   { 'tpope/vim-repeat' },
   { 'robenkleene/partshell.vim' },
-  -- The built in `:Man` command uses `-complete=shellcmd`
   {
+    -- The built in `:Man` command doesn't support completion well
     'vim-utils/vim-man',
     cmd = { 'Man' },
   },
