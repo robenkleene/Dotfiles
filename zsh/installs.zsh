@@ -16,9 +16,13 @@ if command -v brew &> /dev/null; then
   export HOMEBREW_DIR
   HOMEBREW_DIR=$(brew --prefix)
 
-  export -U manpath=($HOMEBREW_DIR/share/man $manpath)
+  manpath=($HOMEBREW_DIR/share/man ${(s/:/)MANPATH})
+  typeset -U manpath
+  export MANPATH="${(j/:/)manpath}"
 
-  export -U INFOPATH=($HOMEBREW_DIR/share/info $INFOPATH)
+  infopath=($HOMEBREW_DIR/share/info ${(s/:/)INFOPATH})
+  typeset -U infopath
+  export INFOPATH="${(j/:/)infopath}"
 
   typeset -U fpath
   fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath)
