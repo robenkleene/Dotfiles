@@ -28,7 +28,7 @@ cd "$(dirname "$0")" || exit 1
 if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
     ~/.bin/md_man_update -f -p "$REPLY"
-  done < <( git ls-files --modified --others 'markdown/**/*.md' )
+  done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
 else
   # Delete all existing
   destination_dir="$HOME/.man/man9"
