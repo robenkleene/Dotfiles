@@ -12,7 +12,9 @@ export LC_CTYPE=en_US.UTF-8
 # `typeset -U path` prevents duplicates in `path`
 export -U path=(~/.bin ~/.brew/bin $path)
 
-export -U manpath=(~/.man $manpath)
+manpath=(~/.man ${(s/:/)MANPATH})
+typeset -U manpath
+export MANPATH="${(j/:/)manpath}"
 
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   export COLORTERM="truecolor"
