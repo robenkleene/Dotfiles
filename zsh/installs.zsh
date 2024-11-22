@@ -16,12 +16,12 @@ if command -v brew &> /dev/null; then
   export HOMEBREW_DIR
   HOMEBREW_DIR=$(brew --prefix)
 
-  typeset -U manpath
-  manpath=($HOMEBREW_DIR/share/man $manpath[@])
-  export -U MANPATH
+  export -U manpath=($HOMEBREW_DIR/share/man $manpath[@])
 
-  export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
-  FPATH="$HOMEBREW_DIR/share/zsh/site-functions:${FPATH}"
+  export -U INFOPATH=($HOMEBREW_DIR/share/info $INFOPATH[@])
+
+  typeset -U fpath
+  fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath[@])
 fi
 
 # chruby
