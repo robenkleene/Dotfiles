@@ -14,7 +14,8 @@
                                              (when (file-exists-p dir)
                                                (mapcar #'file-name-base
                                                        (directory-files-recursively dir ""))))
-                                           man-dirs)))
+                                           man-dirs))
+                            )
                        (completing-read "man: " files rk/man-history t)
                        )))
   ad-do-it)
