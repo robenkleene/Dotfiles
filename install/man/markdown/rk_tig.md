@@ -2,6 +2,7 @@
 
 - `Q`: Quit instantly
 - `q`: Close current page (last page quits)
+- `R`: Refresh
 - `h`: Show bindings
 - `s` / `S`: Go to status
 - `⌃D`: Cancel command prompt (i.e., `:` prompt)
