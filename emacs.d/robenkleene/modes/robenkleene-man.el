@@ -9,7 +9,7 @@
 (defvar rk/man-history nil "History list for `man'.")
 (defadvice man (around rk/man-interactive activate)
   (interactive (list (let* ((manpath (getenv "MANPATH"))
-                            (man-dirs (split-string manpath ":" t))
+                            (man-dirs (delete-dups (split-string manpath ":" t)))
                             (files (mapcan (lambda (dir)
                                              (when (file-exists-p dir)
                                                (mapcar #'file-name-base
