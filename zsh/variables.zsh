@@ -9,17 +9,22 @@ export LC_CTYPE=en_US.UTF-8
 # If the path is set in `ZSHENV` then `/usr/bin` will be added later
 # Also, for scripts, which is when only `ZSHENV` is sourced, we probably want
 # to minimize environment variables anyway
+# `typeset -U path` prevents duplicates in `path`
 typeset -U path
 path=(~/.bin ~/.brew/bin $path[@])
 export -U PATH
 
 # Allow custom man pages
 # System code adds a superfluous trailing colon, so we don't add a colon here
-export MANPATH=${MANPATH:+${MANPATH}}$HOME/.man
+typeset -U manpath
+manpath=(~/.man $manpath[@])
 export -U MANPATH
 
 # Adding home to `CDPATH` make `cd <relative-path>` tab complete paths from
 # home, which is annoying when doing typical folder navigation
+typeset -U manpath
+path=(~/.bin ~/.brew/bin $path[@])
+export -U PATH
 # export CDPATH=~
 
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then

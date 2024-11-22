@@ -15,7 +15,11 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 if command -v brew &> /dev/null; then
   export HOMEBREW_DIR
   HOMEBREW_DIR=$(brew --prefix)
-  export MANPATH="$HOMEBREW_DIR/share/man${MANPATH:+:${MANPATH}}"
+
+  typeset -U manpath
+  manpath=($HOMEBREW_DIR/share/man $manpath[@])
+  export -U MANPATH
+
   export INFOPATH="$HOMEBREW_DIR/share/info:$INFOPATH"
   FPATH="$HOMEBREW_DIR/share/zsh/site-functions:${FPATH}"
 fi
