@@ -15,8 +15,8 @@ if [[ "$1" = "voyager" ]]; then
   sftp aresdev:Developer/Projects/Hardware/qmk_firmware/.build/zsa_voyager_robenkleene_macos.bin .
   exit 0
 fi
-if [[ "$1" = "lily" ]]; then
-  sftp aresdev:Developer/Projects/Hardware/qmk_firmware/.build/keebio_iris_rev8_robenkleene_macos.elf .
+if [[ "$1" = "iris" ]]; then
+  sftp aresdev:Developer/Projects/Hardware/qmk_firmware/.build/keebio_iris_rev8_robenkleene_macos.uf2 .
   exit 0
 fi
 
