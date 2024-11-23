@@ -105,6 +105,8 @@
               (modify-syntax-entry ?` "\"")
               ;; Set `"' as a string delimiter
               (modify-syntax-entry ?\" "\"")
+              ;; Set `*' as a string delimiter
+              (modify-syntax-entry ?* "\"")
               ;; (modify-syntax-entry ?_ "w")
               ;; (modify-syntax-entry ?- "w")
               ;; Automatically auto-save markdown files
