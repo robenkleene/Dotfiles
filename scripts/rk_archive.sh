@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 message="false"
-silent="false"
+verbose="false"
 echo="false"
-while getopts ":smeh" option; do
+while getopts ":vmeh" option; do
   case "$option" in
     m)
       message="true"
       ;;
-    s)
-      silent="true"
+    v)
+      verbose="true"
       ;;
     e)
       echo="true"
@@ -55,7 +55,7 @@ if [[ -f "$archive_file" ]]; then
   destination_archive_file=$archive_file
 fi
 
-if [[ "$silent" == "true" ]]; then
+if [[ "$verbose" == "false" ]]; then
   exit 0
 fi
 
