@@ -30,4 +30,3 @@ source ~/.zsh/alias.zsh
 
 # Interactive
 source ~/.zsh/ui.zsh
-

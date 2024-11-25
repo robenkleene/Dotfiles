@@ -26,9 +26,13 @@ default_word_style="default"
 select-word-style $default_word_style
 
 # Cycle through previous parameters
+# To use this, first use `M-.` to insert the last parameter of a previous
+# command, then use `M-,` to cycle through the previous arguments of that
+# command
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
-bindkey -e "^[m" copy-earlier-word
+# bindkey -e "^[m" copy-earlier-word
+bindkey -e "^[," copy-earlier-word
 
 _bash_backward_kill_word() {
   # `bash` consideres only alphanumeric characters as part of words 
