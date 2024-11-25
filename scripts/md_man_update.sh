@@ -44,7 +44,8 @@ if [[ -e "$dest" ]]; then
     rm "$dest"
   else
     echo "Warning: Skipping $dest because it already exists, using $source" >&2
+    exit 0
   fi
-else
-  pandoc --standalone --to man --from markdown <({ echo "% ${title} Reference"; cat "$source"; }) --output "$dest"
 fi
+
+pandoc --standalone --to man --from markdown <({ echo "% ${title} Reference"; cat "$source"; }) --output "$dest"
