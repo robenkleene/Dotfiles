@@ -4,6 +4,11 @@
     "body": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello, World!\" << std::endl;\n}\n",
     "description": "C++ template"
   },
+  "Main function": {
+    "prefix": "rk_main",
+    "body": "int main() {\n  ${1:std::cout << \"Hello, World!\" << std::endl;}\n}",
+    "description": "Main function"
+  },
   "Include for `cout`": {
     "prefix": "rk_include_cout",
     "body": "#include <iostream>",
