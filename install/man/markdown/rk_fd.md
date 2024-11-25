@@ -9,6 +9,10 @@
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
 - `-E` / `--exclude`: Exclude files matching a glob pattern, e.g., `-E '*foo*'`
 
+# Globs
+
+- Note that in `fd` globs are case insensitive (in `rg` globs are case sensitive)
+
 # Deleting Files
 
 - `fd <term> -X rm`: Files
