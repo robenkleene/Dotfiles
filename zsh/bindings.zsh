@@ -31,8 +31,21 @@ select-word-style $default_word_style
 # command
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
-# bindkey -e "^[m" copy-earlier-word
+# Use shift to reverse direction
 bindkey -e "^[," copy-earlier-word
+_copy_later_word() {
+  zle copy-earlier-word -- 1
+}
+zle -N _copy_later_word
+bindkey '^[<' _copy_later_word
+
+# Also user shift to reverse first word direction
+_insert_first_word() {
+  zle insert-last-word -- 1
+}
+zle -N _insert_first_word
+bindkey '^[>' _insert_first_word
+
 
 _bash_backward_kill_word() {
   # `bash` consideres only alphanumeric characters as part of words 
