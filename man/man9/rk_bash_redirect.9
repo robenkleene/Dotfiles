@@ -9,9 +9,10 @@ error
 .IP \[bu] 2
 \f[CR]./a.out 2>error.log\f[R]: Redirect standard error to a file
 .IP \[bu] 2
-\f[CR]./a.out >output.log 2>&1\f[R]: Redirect standard error and
-standard output to a file (note that order here matters, this won\[cq]t
-work if the file is specified second)
+\f[CR]./a.out >output.log 2>&1\f[R], \f[CR]./a.out &>output.log\f[R]:
+Redirect standard error and standard output to a file (note in the first
+example, that order matters, this won\[cq]t work if the file is
+specified second)
 .IP \[bu] 2
 \f[CR]./a.out 2>&1 | tee output.log\f[R]: Redirect standard error and
 standard output to a file and print to standard output
