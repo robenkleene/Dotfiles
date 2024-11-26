@@ -21,7 +21,8 @@ previous words (not a default binding, but a common convention)
 command, subsequent presses go back through previous commands (e.g.,
 \f[CR]M\-. M\-.\f[R] gets the last parameter two commands ago, this can
 take a prefix argument to get other parameters, for example
-\f[CR]M\-2 M\-.\f[R] to get the second last)
+\f[CR]M\-2 M\-.\f[R] to get the second last) Note that undo is useful if
+you go backwards for too many parameters.
 .IP \[bu] 2
 \f[CR]M\-\[aq]\f[R]: Quote the line (e.g., to use \f[CR]su \-c\f[R] or
 \f[CR]ssh\f[R])
@@ -37,6 +38,7 @@ and then return the line)
 .IP \[bu] 2
 \f[CR]M\-<return>\f[R]: Insert new line without accepting command (e.g.,
 to extend the command to multiple lines)
+.SH Navigating Parameters
 .SH Autoload
 .IP
 .EX
@@ -48,6 +50,10 @@ bindkey \-e \[dq]\[ha][m\[dq] copy\-earlier\-word
 \f[CR]copy\-earlier\-word\f[R]
 .IP \[bu] 2
 Cycle through previous parameters.
+Just using this binding goes through parameters of the current line, but
+if first the last parameter of a previous line is inserted with
+\f[CR]M\-.\f[R], then this will find previous parameters on that line.
+Note that undo is useful to go backwards.
 .SH History
 .IP \[bu] 2
 \f[CR]\[ha]r\f[R]: Reverse history search
