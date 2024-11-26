@@ -1,7 +1,7 @@
 - `./a.out 2>/dev/null`: Discard standard error
 - `echo "Error" >&2`: Discard standard output to standard error
 - `./a.out 2>error.log`: Redirect standard error to a file
-- `./a.out >output.log 2>&1`: Redirect standard error and standard output to a file (note that order here matters, this won't work if the file is specified second)
+- `./a.out >output.log 2>&1`, `./a.out &>output.log`: Redirect standard error and standard output to a file (note in the first example, that order matters, this won't work if the file is specified second)
 - `./a.out 2>&1 | tee output.log`: Redirect standard error and standard output to a file and print to standard output
 - `./a.out 2>&1 | tee /dev/tty | sort`: Redirect standard error and standard output to a pipe and to standard output
 
