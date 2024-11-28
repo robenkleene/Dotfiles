@@ -68,6 +68,9 @@
             'find-shell-command)
 (define-key rk/bindings-minor-mode-map (kbd "C-x M-r")
             'remember)
+(define-key rk/bindings-minor-mode-map (kbd "C-g")
+            'rk/keyboard-quit-dwim)
+
 ;; The default binding for this `C-M-%' isn't typable on terminal
 (define-key rk/bindings-minor-mode-map (kbd "M-s M-%")
             'query-replace-regexp)
