@@ -1,2 +1,3 @@
 - Prefer references (`Bar& foo`) over pointers (`Bar* foo`) because references can't be null
 - Always use `const` if possible
+- Use angle brackets (e.g., `#include <foo>` or `#include <foo.h>`) for system and library includes, and quotes (e.g., `#include "bar.h"`) for project includes (even though the quote style also supports system includes). List project includes before system and library includes.
