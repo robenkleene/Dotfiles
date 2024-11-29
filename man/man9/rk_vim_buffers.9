@@ -41,13 +41,12 @@ use \f[CR]/\[rs]cpattern/\f[R] to ignore case)
 You can hit \f[CR]:\f[R] in this list to enter an edit command, e.g.,
 \f[CR]e #<1\f[R] to edit old file number \f[CR]1\f[R]
 .IP \[bu] 2
-\f[CR]:e #<1\f[R]: Edit most recent file
+\f[CR]:e[dit] #<1\f[R]: Edit most recent file (\f[CR]#<2\f[R] to edit
+second most recent, etc\&...)
 .IP \[bu] 2
-\f[CR]:e #<2\f[R]: Edit second most recent file
+\f[CR]:sp[lit] #<1\f[R]: Edit old file in horizontal split
 .IP \[bu] 2
-\f[CR]:sp #<1\f[R]: Edit old file in horizontal split
-.IP \[bu] 2
-\f[CR]:vs #<1\f[R]: Edit old file in vertical split
+\f[CR]:vs[plit] #<1\f[R]: Edit old file in vertical split
 .SH Marks
 Another way to open a recent file is to use the \f[CR]:marks\f[R] list,
 this is because the numbered marks automatically map to the most
