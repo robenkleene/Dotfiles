@@ -1,3 +1,5 @@
+- `clang++ foo.cpp`: Compile file to `a.out`
+
 # Versions
 
 - Specify a version with the `--std=c++20` flag
