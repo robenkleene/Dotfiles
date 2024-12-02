@@ -1,0 +1,1 @@
+- Abbreviations use word characters by mode (e.g., `(modify-syntax-entry ?_ "w")`, uppercase and lowercase letters and numbers are typically safe, any special characters are not.
