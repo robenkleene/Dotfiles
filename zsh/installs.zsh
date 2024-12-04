@@ -56,8 +56,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
   export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
   # Make tools like `clangd` available
   PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
-elif [[ "$(uname)" = "Linux" && -d ~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin/ ]]; then
-  PATH=$HOME/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin/:$PATH
+elif [[ "$(uname)" = "Linux" && -d ~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin ]]; then
+  PATH=$HOME/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin:$PATH
 fi
 
 # Rust
