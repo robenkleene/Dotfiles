@@ -55,6 +55,8 @@
 
   (add-hook 'dired-mode-hook
             (lambda ()
+              (define-key dired-mode-map (kbd "`") 'eshell-other-window)
+
               ;; Wrap lines in dired buffers, this makes it easier to read the full
               ;; path
               ;; This is disconcerting and we don't need it very often
