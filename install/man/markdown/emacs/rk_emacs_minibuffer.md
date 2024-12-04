@@ -5,6 +5,7 @@
 - `<Tab>`: Complete
 - `M-v` / `M-g M-c`: Switch to the completion window
 - You can focus the minibuffer just by using the usually window switching commands
+- `C-q C-j`: Enter a line break in the minibuffer (i.e., without submitting the command)
 
 # Stuck Minibuffer
 
