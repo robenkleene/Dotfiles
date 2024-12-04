@@ -1,1 +1,2 @@
 - `lsb_release -a`: Show Ubuntu version
+- `lscpu`: List CPU architecture
