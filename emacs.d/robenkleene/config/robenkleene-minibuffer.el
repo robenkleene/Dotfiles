@@ -6,6 +6,11 @@
 ;; this to prioritized commonly used commands)
 (savehist-mode)
 
+(with-eval-after-load "minibuffer"
+  (define-key minibuffer-local-map (kbd "<up>") 'previous-complete-history-element)
+  (define-key minibuffer-local-map (kbd "<down>") 'next-complete-history-element)
+  )
+
 ;; Enable recursive minibuffers so `C-u M-! <command>' can be used when naming
 ;; files.
 ;; This fixes an issue where using `M-!' (`M-x shell-command') printed an error
