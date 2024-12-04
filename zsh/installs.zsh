@@ -63,6 +63,12 @@ if [[ -d $HOME/.cargo/bin ]]; then
   PATH=$HOME/.cargo/bin:$PATH
 fi
 
+# Swift
+if [[ "$(uname)" = "Linux" && -d ~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin/ ]]; then
+  PATH=$HOME/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin/:$PATH
+fi
+
+
 # nvm
 # Official installation is really slow:
 # Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
