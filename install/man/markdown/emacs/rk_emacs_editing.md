@@ -62,7 +62,8 @@ This can be used to edit anywhere in a line, not just the beginning.
 
 # Special
 
-- `M-q`: Wrap
+- `tabify` / `untabify`: Remove / insert tabs
+- `M-q`: Wrap (reflow)
 - `M-z` / `C-u M-z`: Delete to character forward / backward
 - `C-x C-q`: Toggle view only mode
 
