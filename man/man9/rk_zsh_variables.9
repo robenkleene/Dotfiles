@@ -25,3 +25,14 @@ separate file
 .IP \[bu] 2
 \f[CR](f)\f[R] is substitution flag to treat each word as a new line
 .RE
+.SH Path
+\f[CR]zsh\f[R] pattern to prevent duplicates in paths,
+\f[CR]${(s/:/)MANPATH}\f[R] splits the path on the colon,
+\f[CR]typeset \-U manpath\f[R] makes the variable not have duplicates,
+and \f[CR]${(j/:/)manpath}\f[R] rejoins the variable with a colon.
+.IP
+.EX
+manpath=(\[ti]/.man ${(s/:/)MANPATH})
+typeset \-U manpath
+export MANPATH=\[dq]${(j/:/)manpath}\[dq]
+.EE
