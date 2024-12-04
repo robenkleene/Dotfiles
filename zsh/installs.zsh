@@ -37,17 +37,16 @@ fi
 # fi
 
 if [[ -d ~/.gem/ruby/3.0.2/bin ]]; then
-    PATH=~/.gem/ruby/3.0.2/bin:$PATH
-fi
-if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
-    PATH=~/.rubies/ruby-3.0.2/bin:$PATH
+  path=(~/.gem/ruby/3.0.2/bin $path)
+elif [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
+  path=(~/.rubies/ruby-3.0.2/bin $path)
 fi
 
 # Python
 if [[ "$(uname)" = "Darwin" ]]; then
-  PATH=$HOME/Library/Python/3.11/bin:$PATH
+  path=(~/Library/Python/3.11/bin $path)
 elif [[ "$(uname)" = "Linux" ]]; then
-  PATH=$HOME/.local/bin:$PATH
+  path=(~/.local/bin $path)
 fi
 
 # llvm
@@ -55,14 +54,14 @@ if [[ "$(uname)" = "Darwin" ]]; then
   # This gets rid of errors when importing C headers
   export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
   # Make tools like `clangd` available
-  PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
+  path=(/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin $path)
 elif [[ "$(uname)" = "Linux" && -d ~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin ]]; then
-  PATH=$HOME/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin:$PATH
+  path=(~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin $path)
 fi
 
 # Rust
 if [[ -d $HOME/.cargo/bin ]]; then
-  PATH=$HOME/.cargo/bin:$PATH
+  path=(~/.cargo/bin $path)
 fi
 
 # nvm
@@ -81,9 +80,9 @@ nvm() {
    fi
 }
 if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
-  PATH=$HOME/.config/nvm/21.6.1/bin:$PATH
+  path=(~/.config/nvm/21.6.1/bin $path)
 elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
-  PATH=$HOME/.nvm/versions/node/v21.6.1/bin:$PATH
+  path=(~/.nvm/versions/node/v21.6.1/bin $path)
 fi
 
 # fzf
