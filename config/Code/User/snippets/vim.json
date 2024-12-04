@@ -1,4 +1,9 @@
 {
+  "`echom`": {
+    "prefix": "rk_echom",
+    "body": "echom \"${0:got here}\"",
+    "description": "`echom`"
+  },
   "`echom` variable": {
     "prefix": "rk_echom_var",
     "body": "echom \"$0 = \".${0:result}",
