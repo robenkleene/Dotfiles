@@ -74,7 +74,8 @@
   (interactive
    (list (read-shell-command
           "Run grep command: "
-          "rg "
+          ;; "rg "
+          ""
           'grep-history)
          ))
   (compilation-start command-args 'grep-mode)
@@ -85,7 +86,8 @@
   (interactive
    (list (read-shell-command
           "Run find command: "
-          "fd -l "
+          ;; "fd -l "
+          ""
           'find-command-history)
          ))
   (let ((process-environment (copy-sequence process-environment)))
