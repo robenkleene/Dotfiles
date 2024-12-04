@@ -58,6 +58,13 @@ With `(setq dired-dwim-target t)`, if two `dired` buffers are open use the other
 
 To move a file to a new directory, do a rename, but just specify a directory as a path, and the file will be moved with the existing file name.
 
+## Find
+
+- `find-name-dired`: Find files by `find` name search
+- `find-dired`: Find files using any `find` arguments
+- `find-grep-dired`: Find files that contain a `grep` pattern
+- `find-dired-with-command`: Enter an arbitrary `find` command (e.g., `find . \( -name '*foo*' \) -ls`). The default command isn't stored in a variable, it's based on concatenated from `find-program`)
+
 ## Dired Virtual
 
 - `g`: Convert a `dired-virtual` buffer to a normal `dired` buffer
