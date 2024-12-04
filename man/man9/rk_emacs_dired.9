@@ -90,6 +90,20 @@ buffers are open use the other one as the default destination.
 To move a file to a new directory, do a rename, but just specify a
 directory as a path, and the file will be moved with the existing file
 name.
+.SS Find
+.IP \[bu] 2
+\f[CR]find\-name\-dired\f[R]: Find files by \f[CR]find\f[R] name search
+.IP \[bu] 2
+\f[CR]find\-dired\f[R]: Find files using any \f[CR]find\f[R] arguments
+.IP \[bu] 2
+\f[CR]find\-grep\-dired\f[R]: Find files that contain a \f[CR]grep\f[R]
+pattern
+.IP \[bu] 2
+\f[CR]find\-dired\-with\-command\f[R]: Enter an arbitrary
+\f[CR]find\f[R] command (e.g.,
+\f[CR]find . \[rs]( \-name \[aq]*foo*\[aq] \[rs]) \-ls\f[R]).
+The default command isn\[cq]t stored in a variable, it\[cq]s based on
+concatenated from \f[CR]find\-program\f[R])
 .SS Dired Virtual
 .IP \[bu] 2
 \f[CR]g\f[R]: Convert a \f[CR]dired\-virtual\f[R] buffer to a normal
