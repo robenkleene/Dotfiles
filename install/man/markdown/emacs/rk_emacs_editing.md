@@ -6,6 +6,8 @@
 - `M-l`: Lowercase word
 - `M-u`: Uppercase word
 - `M-c`: Capitalize word
+- `C-x C-u`: Uppercase region
+- `C-x C-l`: Lowercase region
 
 # Transpose
 

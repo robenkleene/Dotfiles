@@ -47,14 +47,6 @@
 
 - `M-m`: Go to first character on line
 
-
-## Edit
-
-- `C-t`: Transpose Characters
-- `M-c`: Capitalize
-- `M-u`: Uppercase
-- `M-l`: Lowercase (this is dangerous in terminal!)
-
 # View Only
 
 - `SPACE`: Page down
