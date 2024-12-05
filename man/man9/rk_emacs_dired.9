@@ -37,11 +37,21 @@ to file
 .IP \[bu] 2
 \f[CR]o\f[R] / \f[CR]dired\-find\-file\-other\-window\f[R]: Open file in
 other window
+.SS Listing
 .SS Hidden
 .IP \[bu] 2
 \f[CR]C\-x M\-o\f[R] / \f[CR]dired\-omit\-mode\f[R] (requires
 \f[CR]dired\-x\f[R]): Show hidden files (this includes Emacs recovery
 files)
+.SS Sorting
+.IP \[bu] 2
+\f[CR]s\f[R]: Toggle sort by name or date
+.RS 2
+.IP \[bu] 2
+\f[CR](\f[R]: Toggle showing details
+.RE
+.IP \[bu] 2
+\f[CR]C\-u s\f[R]: Set specific flags to pass to \f[CR]ls\f[R]
 .SS Mark
 .IP \[bu] 2
 \f[CR]m\f[R] / \f[CR]u\f[R]: Mark / Remove mark
@@ -53,29 +63,6 @@ files)
 .IP \[bu] 2
 Use \f[CR]m\f[R] to mark and then another command, e.g., \f[CR]R\f[R] to
 move all
-.SS Sorting
-.IP \[bu] 2
-\f[CR]s\f[R]: Toggle sort by name or date
-.RS 2
-.IP \[bu] 2
-\f[CR](\f[R]: Toggle showing details
-.RE
-.IP \[bu] 2
-\f[CR]C\-u s\f[R]: Set specific flags to pass to \f[CR]ls\f[R]
-.SS Shell Commands
-.IP \[bu] 2
-\f[CR]!\f[R]: Do shell command on file
-.IP \[bu] 2
-\f[CR]M\-!\f[R]: Do shell command in current directory
-.SS Dired Write Mode
-.IP \[bu] 2
-\f[CR]C\-x C\-q\f[R] or \f[CR]dired\-toggle\-read\-only\f[R]: Change to
-writable mode
-.SS While Active
-.IP \[bu] 2
-\f[CR]C\-c C\-c\f[R] / \f[CR]C\-x C\-s\f[R]: Save changes
-.IP \[bu] 2
-\f[CR]C\-c C\-k\f[R] / \f[CR]C\-c ESC\f[R]: Abort changes
 .SS File Management
 .SS Copying, Moving, Renaming
 .IP \[bu] 2
@@ -90,6 +77,12 @@ buffers are open use the other one as the default destination.
 To move a file to a new directory, do a rename, but just specify a
 directory as a path, and the file will be moved with the existing file
 name.
+.SS Tasks
+.SS Diff
+.IP \[bu] 2
+\f[CR]=\f[R]: Comparing two files, the currently selected file and
+prompt for the second.
+The comparison goes from the second file to the first file.
 .SS Find
 .IP \[bu] 2
 \f[CR]find\-name\-dired\f[R]: Find files by \f[CR]find\f[R] name search
@@ -104,6 +97,20 @@ pattern
 \f[CR]find . \[rs]( \-name \[aq]*foo*\[aq] \[rs]) \-ls\f[R]).
 The default command isn\[cq]t stored in a variable, it\[cq]s based on
 concatenated from \f[CR]find\-program\f[R])
+.SS Shell Commands
+.IP \[bu] 2
+\f[CR]!\f[R]: Do shell command on file
+.IP \[bu] 2
+\f[CR]M\-!\f[R]: Do shell command in current directory
+.SS Dired Write Mode
+.IP \[bu] 2
+\f[CR]C\-x C\-q\f[R] or \f[CR]dired\-toggle\-read\-only\f[R]: Change to
+writable mode
+.SS Saving or Canceling
+.IP \[bu] 2
+\f[CR]C\-c C\-c\f[R] / \f[CR]C\-x C\-s\f[R]: Save changes
+.IP \[bu] 2
+\f[CR]C\-c C\-k\f[R] / \f[CR]C\-c ESC\f[R]: Abort changes
 .SS Dired Virtual
 .IP \[bu] 2
 \f[CR]g\f[R]: Convert a \f[CR]dired\-virtual\f[R] buffer to a normal
