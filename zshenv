@@ -19,7 +19,10 @@ fi
 
 # `~/.brew/bin` *must* be in `ZSHENV` so that the brew installed version
 # of `mosh` gets picked up that supports truecolor
-path=(~/.brew/bin $path[@])
+# `~/.bin` also needs to be here to makes scripts available in non-interactive
+# shells, e.g., BBEdit `Run Unix Command...`
+# `-U` prevents duplicates
+export -U path=(~/.bin ~/.brew/bin $path)
 
 if [[ "$(uname)" = "Linux" ]]; then
   export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}

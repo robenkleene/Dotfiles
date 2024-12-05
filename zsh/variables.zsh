@@ -5,12 +5,14 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# This was moved from `ZSHENV` to help `~/.brew/bin` stay ahead of `/usr/bin`
-# If the path is set in `ZSHENV` then `/usr/bin` will be added later
-# Also, for scripts, which is when only `ZSHENV` is sourced, we probably want
-# to minimize environment variables anyway
-# `typeset -U path` prevents duplicates in `path`
-export -U path=(~/.bin ~/.brew/bin $path)
+# `path` nees to be set in both `ZSHENV` and here.
+# In `ZSHENV` to make scripts and installs available in non-interactive shells,
+# and here to move custom paths to the front (if the path is only set in
+# `ZSHENV` then `/usr/bin` will be moved ahead of paths set there.
+# `typeset -U` prevents duplicates in `path`, this needs to be here even if `-U`
+# was set earlier
+typeset -U path
+path=(~/.bin ~/.brew/bin $path)
 
 manpath=(~/.man ${(s/:/)MANPATH})
 typeset -U manpath
