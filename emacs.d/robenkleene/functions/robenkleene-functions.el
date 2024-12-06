@@ -56,7 +56,11 @@
       ((default-directory (concat user-emacs-directory "notes"))
        (buffer (generate-new-buffer buffer-name))
        )
-    (unless (file-exists-p default-directory)
+    (if (file-exists-p default-directory)
+        (if (not (file-directory-p default-directory))
+            (progn
+              (error "Error: %s exists and is not a directory." default-directory))
+          )
       (make-directory default-directory t))
     (set-buffer buffer)
     (when initial (insert initial))
