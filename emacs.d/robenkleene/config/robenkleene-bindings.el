@@ -69,7 +69,7 @@
 (define-key rk/bindings-minor-mode-map (kbd "C-x M-r")
             'remember)
 (define-key rk/bindings-minor-mode-map (kbd "C-x M-n")
-            'notes-create-buffer-other-window)
+            'notes-find-file-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-g")
             'rk/keyboard-quit-dwim)
 
