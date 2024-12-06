@@ -11,6 +11,9 @@ setlocal foldenable
 setlocal foldlevel=2
 setlocal readonly nomodifiable
 
+" Mmemonic "go diff", which is a misnomer because we're going to the hunk. But
+" `gh` is already taken for starting select mode characterwise, and `gd` for
+" goto declaration seems safe to override for `diff` buffers
 nnoremap <silent> <buffer> gd :OpenDiff<CR>
 nnoremap <silent> <buffer> <C-w>d :OpenDiffNew<CR>
 nnoremap <silent> <buffer> gyd :YankDiff<CR>
