@@ -53,7 +53,7 @@
 (defun rk/notes-create-buffer (buffer-name &optional initial)
   "Return a new empty notes buffer in the other window."
   (let*
-      ((default-directory (concat user-emacs-directory "notes"))
+      ((default-directory (concat user-emacs-directory "notes.d"))
        (buffer (generate-new-buffer buffer-name))
        )
     (if (file-exists-p default-directory)
