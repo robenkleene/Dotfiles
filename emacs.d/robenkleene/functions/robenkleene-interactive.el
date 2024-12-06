@@ -168,53 +168,35 @@ The DWIM behaviour of this command is as follows:
     (keyboard-quit))))
 
 ;; Notes
-(defvar rk/notes-buffer-history nil "History list for create notes buffer.")
-
-(defun notes-create-buffer (buffer-name &optional initial)
-  "Return a new notes buffer in other window, with a prefix or a visible region,
-use the region as INITIAL."
-  (interactive
-   (list (read-from-minibuffer "Notes buffer name: " nil nil nil 'rk/notes-buffer-history)
-         (when (or current-prefix-arg
-                   (and mark-active
-                        transient-mark-mode))
-           (buffer-substring (region-beginning) (region-end)))
-         ))
+(defun notes-find-file ()
+  "Calls `find-file' starting from the notes directory."
+  (interactive)
   (let
       ;; `notes' filename is used by `remember-mode' notes
-      ((default-directory (concat user-emacs-directory "notes.d")))
+      ((default-directory (concat user-emacs-directory "notes.d/")))
     (if (file-exists-p default-directory)
         (if (not (file-directory-p default-directory))
             (progn
               (error "Error: %s exists and is not a directory." default-directory))
           )
       (make-directory default-directory t))
-    (find-file buffer-name)
-    (auto-save-mode)
+    (call-interactively 'find-file)
     )
   )
 
-(defun notes-create-buffer-other-window (buffer-name &optional initial)
-  "Return a new notes buffer in other window, with a prefix or a visible region,
-use the region as INITIAL."
-  (interactive
-   (list (read-from-minibuffer "Notes buffer name: " nil nil nil 'rk/notes-buffer-history)
-         (when (or current-prefix-arg
-                   (and mark-active
-                        transient-mark-mode))
-           (buffer-substring (region-beginning) (region-end)))
-         ))
+(defun notes-find-file-other-window ()
+  "Calls `find-file' starting from the notes direction in other window."
+  (interactive)
   (let
       ;; `notes' filename is used by `remember-mode' notes
-      ((default-directory (concat user-emacs-directory "notes.d")))
+      ((default-directory (concat user-emacs-directory "notes.d/")))
     (if (file-exists-p default-directory)
         (if (not (file-directory-p default-directory))
             (progn
               (error "Error: %s exists and is not a directory." default-directory))
           )
       (make-directory default-directory t))
-    (find-file-other-window buffer-name)
-    (auto-save-mode)
+    (call-interactively 'find-file-other-window)
     )
   )
 
