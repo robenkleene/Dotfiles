@@ -56,6 +56,8 @@
       ((default-directory (concat user-emacs-directory "notes"))
        (buffer (generate-new-buffer buffer-name))
        )
+    (unless (file-exists-p default-directory)
+      (make-directory default-directory t))
     (set-buffer buffer)
     (when initial (insert initial))
     (auto-save-mode)
