@@ -53,6 +53,7 @@
 (defun rk/notes-create-buffer (buffer-name &optional initial)
   "Return a new empty notes buffer in the other window."
   (let*
+      ;; `notes' filename is used by `remember-mode' notes
       ((default-directory (concat user-emacs-directory "notes.d"))
        (buffer (generate-new-buffer buffer-name))
        )
