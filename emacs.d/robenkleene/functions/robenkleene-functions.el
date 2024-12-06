@@ -49,27 +49,6 @@
     (find-file-other-frame file))
   )
 
-;; Notes
-(defun rk/notes-create-buffer (buffer-name &optional initial)
-  "Return a new empty notes buffer in the other window."
-  (let*
-      ;; `notes' filename is used by `remember-mode' notes
-      ((default-directory (concat user-emacs-directory "notes.d"))
-       (buffer (generate-new-buffer buffer-name))
-       )
-    (if (file-exists-p default-directory)
-        (if (not (file-directory-p default-directory))
-            (progn
-              (error "Error: %s exists and is not a directory." default-directory))
-          )
-      (make-directory default-directory t))
-    (set-buffer buffer)
-    (when initial (insert initial))
-    (auto-save-mode)
-    buffer
-    )
-  )
-
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

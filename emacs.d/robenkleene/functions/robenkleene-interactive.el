@@ -171,7 +171,7 @@ The DWIM behaviour of this command is as follows:
 (defvar rk/notes-buffer-history nil "History list for create notes buffer.")
 
 (defun notes-create-buffer (buffer-name &optional initial)
-  "Return a new notes buffer, with a prefix or a visible region,
+  "Return a new notes buffer in other window, with a prefix or a visible region,
 use the region as INITIAL."
   (interactive
    (list (read-from-minibuffer "Notes buffer name: " nil nil nil 'rk/notes-buffer-history)
@@ -179,9 +179,19 @@ use the region as INITIAL."
                    (and mark-active
                         transient-mark-mode))
            (buffer-substring (region-beginning) (region-end)))
-         )
-   )
-  (switch-to-buffer (rk/notes-create-buffer buffer-name initial))
+         ))
+  (let
+      ;; `notes' filename is used by `remember-mode' notes
+      ((default-directory (concat user-emacs-directory "notes.d")))
+    (if (file-exists-p default-directory)
+        (if (not (file-directory-p default-directory))
+            (progn
+              (error "Error: %s exists and is not a directory." default-directory))
+          )
+      (make-directory default-directory t))
+    (find-file buffer-name)
+    (auto-save-mode)
+    )
   )
 
 (defun notes-create-buffer-other-window (buffer-name &optional initial)
@@ -194,7 +204,18 @@ use the region as INITIAL."
                         transient-mark-mode))
            (buffer-substring (region-beginning) (region-end)))
          ))
-  (switch-to-buffer-other-window (rk/notes-create-buffer buffer-name initial))
+  (let
+      ;; `notes' filename is used by `remember-mode' notes
+      ((default-directory (concat user-emacs-directory "notes.d")))
+    (if (file-exists-p default-directory)
+        (if (not (file-directory-p default-directory))
+            (progn
+              (error "Error: %s exists and is not a directory." default-directory))
+          )
+      (make-directory default-directory t))
+    (find-file-other-window buffer-name)
+    (auto-save-mode)
+    )
   )
 
 (provide 'robenkleene-interactive)
