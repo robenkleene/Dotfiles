@@ -49,6 +49,20 @@
     (find-file-other-frame file))
   )
 
+;; Notes
+(defun rk/notes-create-buffer (buffer-name &optional initial)
+  "Return a new empty notes buffer in the other window."
+  (let*
+      ((default-directory (concat user-emacs-directory "notes"))
+       (buffer (generate-new-buffer buffer-name))
+       )
+    (set-buffer buffer)
+    (when initial (insert initial))
+    (auto-save-mode)
+    buffer
+    )
+  )
+
 (provide 'robenkleene-functions)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

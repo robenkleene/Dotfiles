@@ -167,6 +167,36 @@ The DWIM behaviour of this command is as follows:
    (t
     (keyboard-quit))))
 
+;; Notes
+(defvar rk/notes-buffer-history nil "History list for create notes buffer.")
+
+(defun notes-create-buffer (buffer-name &optional initial)
+  "Return a new notes buffer, with a prefix or a visible region,
+use the region as INITIAL."
+  (interactive
+   (list (read-from-minibuffer "Notes buffer name: " nil nil nil 'rk/notes-buffer-history)
+         (when (or current-prefix-arg
+                   (and mark-active
+                        transient-mark-mode))
+           (buffer-substring (region-beginning) (region-end)))
+         )
+   )
+  (switch-to-buffer (rk/notes-create-buffer buffer-name initial))
+  )
+
+(defun notes-create-buffer-other-window (buffer-name &optional initial)
+  "Return a new notes buffer in other window, with a prefix or a visible region,
+use the region as INITIAL."
+  (interactive
+   (list (read-from-minibuffer "Notes buffer name: " nil nil nil 'rk/notes-buffer-history)
+         (when (or current-prefix-arg
+                   (and mark-active
+                        transient-mark-mode))
+           (buffer-substring (region-beginning) (region-end)))
+         ))
+  (switch-to-buffer-other-window (rk/notes-create-buffer buffer-name initial))
+  )
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
