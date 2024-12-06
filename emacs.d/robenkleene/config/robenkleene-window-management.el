@@ -49,6 +49,10 @@
      'face (funcall tab-bar-tab-face-function tab))))
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
 
+;; Forcing Focus
+(setq Man-notify-method 'aggressive)
+(setq help-window-select t)
+
 (provide 'robenkleene-window-management)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
