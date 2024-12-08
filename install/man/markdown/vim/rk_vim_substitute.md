@@ -6,6 +6,7 @@
 # Notes
 
 - `&` represents the entire match, e.g., in `%s/a file/mv "&" "&"`
+- Use `\r` for a new line in a substitution, e.g., `s/ /\r/g` replaces all spaces with new lines
 
 # `windo`
 
