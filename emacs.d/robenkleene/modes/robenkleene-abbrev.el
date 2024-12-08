@@ -6,7 +6,7 @@
 (add-hook 'prog-mode-hook 'abbrev-mode)
 (add-hook 'minibuffer-setup-hook 'abbrev-mode)
 
-(define-abbrev global-abbrev-table "rktoday"
+(define-abbrev global-abbrev-table "rkdt"
   ""
   (lambda () (insert (format-time-string "%Y-%m-%d"))))
 
