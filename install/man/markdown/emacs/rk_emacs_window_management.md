@@ -47,3 +47,18 @@
 # Cursor
 
 - `C-l`: Center cursor
+
+# Display Buffer
+
+See help for `display-buffer`.
+
+Focusing a specific buffer.
+
+```
+(add-to-list
+ 'display-buffer-alist
+ '("\\*rg\\*" . (nil . ((body-function . select-window)))))
+```
+
+- `(nil . ((body-function . select-window)))` is the `ACTION` which is `(FUNCTIONS . ALIST)`, since `FUNCTIONS` is `nil` it will go to `display-buffer-base-action` and `display-buffer-fallback-action`.
+- `ALIST` is `((body-function . select-window))` `body-function` is a function called with one argument, the displayed window.
