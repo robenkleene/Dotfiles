@@ -13,7 +13,8 @@
         (progn
           (async-shell-command "~/.bin/sgitt_auto" "*egit*" "*egit*")
           (with-current-buffer "*egit*"
-            (viewmode))
+            (view-mode))
+          (select-window (get-buffer-window "*egit*"))
           )
       (let ((default-directory
              (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
