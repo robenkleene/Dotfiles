@@ -63,6 +63,19 @@
 ;;     window))
 ;; (advice-add 'display-buffer :around #'rk/display-buffer-focus)
 
+;; Select buffers for custom `egit' commands
+(add-to-list
+ 'display-buffer-alist
+ '("\\*egit\\*" . (nil . ((body-function . select-window)))))
+
+;; Select buffers for `shell-command'
+(add-to-list
+ 'display-buffer-alist
+ '("\\*Async Shell Command\\*" . (nil . ((body-function . select-window)))))
+(add-to-list
+ 'display-buffer-alist
+ '("\\*Shell Command Output\\*" . (nil . ((body-function . select-window)))))
+
 (provide 'robenkleene-window-management)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

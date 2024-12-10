@@ -10,7 +10,6 @@
   (async-shell-command "~/.bin/egit_update" "*egit*" "*egit*")
   (with-current-buffer "*egit*"
     (view-mode))
-  (select-window (get-buffer-window "*egit*"))
   )
 
 (defun rk/git-pull-all-text (&optional arg)
@@ -19,7 +18,6 @@
   (async-shell-command "~/.bin/git_pull_all -t" "*egit*" "*egit*")
   (with-current-buffer "*egit*"
     (view-mode))
-  (select-window (get-buffer-window "*egit*"))
   )
 
 (provide 'robenkleene-alias)
