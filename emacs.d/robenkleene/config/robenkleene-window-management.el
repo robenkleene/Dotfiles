@@ -50,16 +50,18 @@
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
 
 ;; Forcing Focus
-;; (setq Man-notify-method 'aggressive)
-;; (setq help-window-select t)
+(setq Man-notify-method 'aggressive)
+(setq help-window-select t)
 ;; Everywhere
-(defun rk/display-buffer-focus (orig-fun buffer &rest args)
-  "Wrap `display-buffer` to select the window it displays."
-  (let ((window (apply orig-fun buffer args)))
-    (when window
-      (select-window window))
-    window))
-(advice-add 'display-buffer :around #'rk/display-buffer-focus)
+;; This causes problems where sometimes focus isn't wanted, e.g., Magit commit
+;; creates a diff of the changes and this will focus that diff
+;; (defun rk/display-buffer-focus (orig-fun buffer &rest args)
+;;   "Wrap `display-buffer` to select the window it displays."
+;;   (let ((window (apply orig-fun buffer args)))
+;;     (when window
+;;       (select-window window))
+;;     window))
+;; (advice-add 'display-buffer :around #'rk/display-buffer-focus)
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
