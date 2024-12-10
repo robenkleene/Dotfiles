@@ -10,7 +10,11 @@
     "`egit' `magit'"
     (interactive)
     (if (= (call-process "~/.bin/egit" nil nil nil "-p") 0)
-        (shell-command "~/.bin/sgitt_auto" "*egit" "*egit")
+        (progn
+          (async-shell-command "~/.bin/sgitt_auto" "*egit*" "*egit*")
+          (with-current-buffer "*egit*"
+            (viewmode))
+          )
       (let ((default-directory
              (shell-command-to-string "~/.bin/egit -n | tr -d '\n'")))
         (magit-status)
