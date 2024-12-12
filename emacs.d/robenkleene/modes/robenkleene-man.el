@@ -7,13 +7,20 @@
 ;; locations.
 ;;;###autoload
 (defvar rk/man-history nil "History list for `man'.")
+(defvar rk/man-cache nil "Cache for `man' completion file list.")
 (defadvice man (around rk/man-interactive activate)
   (interactive (list (let* ((manpath (getenv "MANPATH"))
                             (man-dirs (delete-dups (split-string manpath ":" t)))
                             (find-command (concat "find -L "
                                                   (mapconcat 'identity man-dirs " ")
                                                   " \\( -type l -o -type f \\) | sed -E 's|^.*/||; s|\\.[^.]*$||' | sort | uniq"))
-                            (files (split-string (shell-command-to-string find-command) "\n" t))
+                            (files
+                             (or rk/man-cache
+                                 (setq rk/man-cache
+                                       (split-string (shell-command-to-string find-command) "\n" t)
+                                       )
+                                 )
+                             )
                             ;; Native lisp is slower
                             ;; (files (mapcan (lambda (dir)
                             ;;                  (when (file-exists-p dir)
