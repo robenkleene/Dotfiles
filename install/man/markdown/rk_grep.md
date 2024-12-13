@@ -1,6 +1,7 @@
-- `-E` / `--extended-regexp`: Support or, e.g., `grep -E "foo|bar"`
-- `-v` / `--invert-match`: Invert matches
-- `-o` / `--only-matching`: Only show match
+- `-E`, `--extended-regexp`: Support or, e.g., `grep -E "foo|bar"`
+- `-v`, `--invert-match`: Invert matches
+- `-o`, `--only-matching`: Only show match
+- `-q`, `--quiet`, `--silent`: Quit without showing matches
 - `--include=<glob>`: Include glob (can be added multiple times)
 - `--exclude=<glob>`: Exclude glob (can be added multiple times)
 - `--exclude-dir=<glob>`: Exclude glob (can be added multiple times)
