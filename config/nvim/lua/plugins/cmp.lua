@@ -31,9 +31,9 @@ return {
     end
     vim.keymap.set('n', 'yopa', toggle_autocomplete, {})
     cmp.setup {
-      completion = {
-        autocomplete = false,
-      },
+      -- completion = {
+      --   autocomplete = false,
+      -- },
       snippet = {
         expand = function(args)
           require'luasnip'.lsp_expand(args.body)
