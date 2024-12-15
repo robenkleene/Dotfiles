@@ -1,4 +1,3 @@
-import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
 
 [colors.primary]
 # Kleene Purple
@@ -38,3 +37,6 @@ padding = { x = 4, y = 2 }
 # opacity = 0.9
 # Resizing by discreet steps
 resize_increments = true
+
+[general]
+import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
