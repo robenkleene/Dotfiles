@@ -6,5 +6,12 @@
     "terminal.integrated.macOptionIsMeta": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "cpp.enableInlayHints": true,
-    "editor.fontSize": 13
+    "editor.fontSize": 13,
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        }
+    }
 }
