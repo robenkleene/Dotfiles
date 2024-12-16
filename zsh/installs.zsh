@@ -28,6 +28,11 @@ if command -v brew &> /dev/null; then
   fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath)
 fi
 
+# Bat
+# The default completion for `bat` fails on partial matches (e.g., `bat md`) to
+# show all Markdown files
+compdef -d bat
+
 # chruby
 # This is ridiculously slow
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
