@@ -14,9 +14,9 @@
                               (corfu-mode)
                               ))
   ;; For completing relative paths
-  (add-hook 'text-mode-hook (lambda ()
-                              (corfu-mode)
-                              ))
+  ;; (add-hook 'text-mode-hook (lambda ()
+  ;;                             (corfu-mode)
+  ;;                             ))
 
   ;; Enable in minibuffer
   ;; (defun corfu-enable-in-minibuffer ()
