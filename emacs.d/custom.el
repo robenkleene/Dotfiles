@@ -1,6 +1,6 @@
 (custom-set-variables
  '(package-selected-packages
-   '(orderless cape yasnippet-capf fish-mode smartparens typescript-mode swift-mode rust-mode yaml-mode lua-mode magit better-defaults kotlin-mode eglot use-package csv-mode markdown-mode yasnippet editorconfig wgrep jade-mode aggressive-indent adaptive-wrap diminish))
+   '(corfu corfu-terminal orderless cape yasnippet-capf fish-mode smartparens typescript-mode swift-mode rust-mode yaml-mode lua-mode magit better-defaults kotlin-mode eglot use-package csv-mode markdown-mode yasnippet editorconfig wgrep jade-mode aggressive-indent adaptive-wrap diminish))
  )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
