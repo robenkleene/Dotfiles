@@ -1,5 +1,6 @@
 return {
   'saghen/blink.cmp',
+  -- Use a release for pre-built binaries
   version = 'v0.*',
   opts = {
     enabled = function()
@@ -7,7 +8,7 @@ return {
     end,
     appearance = {
       -- Fix icon spacing
-      nerd_font_variant = 'mono'
+      nerd_font_variant = 'normal'
     },
     snippets = {
       expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
@@ -20,10 +21,9 @@ return {
       jump = function(direction) require('luasnip').jump(direction) end,
     },
     sources = {
-      default = { 'lsp', 'path', 'luasnip', 'buffer' },
+      completion = {
+        enabled_providers = { 'lsp', 'path', 'luasnip', 'buffer' },
+      },
     },
   },
-  -- allows extending the providers array elsewhere in your config
-  -- without having to redefine it
-  opts_extend = { "sources.default" }
 }
