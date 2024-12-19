@@ -32,3 +32,23 @@ add_dir() {
 for dir in "${directories[@]}"; do
   add_dir "$dir"
 done
+
+for base_dir in "${recursive_directories[@]}"; do
+  if [[ -d "$base_dir" ]]; then
+    find "$base_dir" -type d -print0 | while IFS= read -r -d $'\0' sub_dir; do
+    add_dir "$sub_dir"
+  done
+else
+  echo "Warning: $base_dir is not a valid directory. Skipping."
+  fi
+done
+
+for search_dir in "${git_directories[@]}"; do
+  if [[ -d "$search_dir" ]]; then
+    find "$search_dir" -type d -name ".git" -print0 | while IFS= read -r -d $'\0' git_dir; do
+    parent_dir=$(dirname "$git_dir")
+    add_dir "$parent_dir"
+  else
+    echo "Warning: $search_dir is not a valid directory. Skipping."
+  fi
+done
