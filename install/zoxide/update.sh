@@ -10,6 +10,7 @@ directories=(
 
 recursive_directories=(
   "$HOME/Documentation/"
+  "$HOME/Developer/Dotfiles/install/man/markdown"
 )
 
 git_directories=(
