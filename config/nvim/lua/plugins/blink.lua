@@ -2,9 +2,13 @@ return {
   'saghen/blink.cmp',
   version = 'v0.*',
   opts = {
-    -- enabled = function()
-    --   return not vim.tbl_contains({ "markdown", "text", "gitcommit", "hgcommit" }, vim.bo.filetype) and vim.bo.buftype ~= "prompt"
-    -- end,
+    enabled = function()
+      return not vim.tbl_contains({ "markdown", "text", "gitcommit", "hgcommit" }, vim.bo.filetype) and vim.bo.buftype ~= "prompt"
+    end,
+    appearance = {
+      -- Fix icon spacing
+      nerd_font_variant = 'mono'
+    },
     snippets = {
       expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
       active = function(filter)
