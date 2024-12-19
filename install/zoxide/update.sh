@@ -5,16 +5,16 @@ set -euo pipefail
 directories=(
   "$HOME/Developer/Archive/"
   "$HOME/Developer/Dotfiles/"
-)
-
-recursive_directories=(
   "$HOME/Developer/Scratch/"
 )
 
-git_directories=(
+recursive_directories=(
   "$HOME/Documentation/"
+)
+
+git_directories=(
   "$HOME/Developer/Projects/"
-  "$HOME/Text/"
+  "$HOME/Text/Projects/"
 )
 
 add_dir() {
@@ -33,7 +33,7 @@ done
 
 for base_dir in "${recursive_directories[@]}"; do
   if [[ -d "$base_dir" ]]; then
-    find "$base_dir" -type d -print0 | while IFS= read -r -d $'\0' sub_dir; do
+    find "$base_dir" -not -path '*/.*' -type d -print0 | while IFS= read -r -d $'\0' sub_dir; do
       add_dir "$sub_dir"
     done
   else
