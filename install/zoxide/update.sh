@@ -45,8 +45,9 @@ for search_dir in "${git_directories[@]}"; do
   if [[ -d "$search_dir" ]]; then
     find "$search_dir" -type d -name ".git" -print0 | while IFS= read -r -d $'\0' git_dir; do
       parent_dir=$(dirname "$git_dir")
+      add_dir "$parent_dir"
     done
-    add_dir "$parent_dir"
+    add_dir "$search_dir"
   else
     echo "Warning: $search_dir is not a valid directory. Skipping."
   fi
