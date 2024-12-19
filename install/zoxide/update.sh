@@ -3,18 +3,18 @@
 set -euo pipefail
 
 directories=(
-    "$HOME/Developer/Archive/"
+  "$HOME/Developer/Archive/"
+  "$HOME/Developer/Dotfiles/"
 )
 
 recursive_directories=(
-  "$HOME/Developer/Dotfiles/"
   "$HOME/Developer/Scratch/"
-  "$HOME/Documentation/"
-  "$HOME/Text/"
 )
 
 git_directories=(
+  "$HOME/Documentation/"
   "$HOME/Developer/Projects/"
+  "$HOME/Text/"
 )
 
 add_dir() {
