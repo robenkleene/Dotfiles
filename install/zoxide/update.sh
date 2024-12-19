@@ -3,29 +3,27 @@
 set -euo pipefail
 
 directories=(
-    "/path/to/dir1"
-    "/path/to/dir2"
-    "/path/to/dir3"
+    "~/Developer/Archive/"
 )
 
 recursive_directories=(
-    "/path/to/dir1"
-    "/path/to/dir2"
-    "/path/to/dir3"
+  "~/Developer/Dotfiles/"
+  "~/Developer/Scratch/"
+  "~/Documentation/"
+  "~/Text/"
 )
 
 git_directories=(
-    "/path/to/dir1"
-    "/path/to/dir2"
-    "/path/to/dir3"
+  "~/Developer/Projects/"
 )
 
 add_dir() {
   dir="$1"
   if [[ -d "$dir" ]]; then
-      zoxide add -- "$dir"
+    echo "Adding $dir"
+    # zoxide add -- "$dir"
   else
-      echo "Warning: $dir is not a valid directory. Skipping."
+    echo "Warning: $dir is not a valid directory. Skipping."
   fi
 }
 
