@@ -1,5 +1,7 @@
 return {
   'L3MON4D3/LuaSnip',
+  -- Requires 'v2.*' for blink compatability
+  version = 'v2.*',
   config = function()
     require('luasnip.loaders.from_vscode').lazy_load({
       paths = { '~/.config/Code/User/snippets' }
