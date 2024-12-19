@@ -20,8 +20,8 @@ git_directories=(
 add_dir() {
   dir="$1"
   if [[ -d "$dir" ]]; then
-    echo "Adding $dir"
-    # zoxide add -- "$dir"
+    # echo "Adding $dir"
+    zoxide add -- "$dir"
   else
     echo "Warning: $dir is not a valid directory. Skipping."
   fi
