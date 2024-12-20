@@ -2,10 +2,12 @@
 
 set -euo pipefail
 
+# "$HOME/Developer/Projects/" is slow as a `git_directories`
 directories=(
   "$HOME/Developer/Archive/"
   "$HOME/Developer/Dotfiles/"
   "$HOME/Developer/Scratch/"
+  "$HOME/Developer/Projects/"
 )
 
 recursive_directories=(
@@ -14,7 +16,6 @@ recursive_directories=(
 )
 
 git_directories=(
-  "$HOME/Developer/Projects/"
   "$HOME/Text/Projects/"
 )
 
