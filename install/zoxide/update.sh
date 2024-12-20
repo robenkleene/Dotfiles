@@ -55,7 +55,7 @@ for search_dir in "${git_directories[@]}"; do
       parent_dir=$(dirname "$git_dir")
       add_dir "$parent_dir"
       count+=1
-    done < <(find "$search_dir" -type d -name ".git" -print0)
+    done < <(find "$search_dir" -type d -execdir test -d "{}/.git" \; -print0 -prune)
     add_dir "$search_dir"
     echo "Added $count git directories from $search_dir"
   else
