@@ -8,7 +8,7 @@ set -euo pipefail
 # home directory. To support other directories, symlink them here.
 if [[ -e "$HOME/../Shared/Max 9/" ]]; then
   if [[ ! -e "$HOME/../Shared/Max 9/.editorconfig" ]]; then
-    ln -s ~/.editorconfig/ "$HOME/../Shared/Max 9/.editorconfig"
+    ln -s ~/.editorconfig "$HOME/../Shared/Max 9/.editorconfig"
   fi
 fi
 
@@ -22,16 +22,17 @@ elif [[ ! -d "$developer_path" ]]; then
   exit 1
 fi
 
-emacs_path="${HOME}/Developer/Dotfiles/emacs.d"
-untitled_emacs_path="${HOME}/Developer/Dotfiles/emacs.d/untitled"
-if [[ ! -L "$emacs_path" ]]; then
-  if [[ ! -e "$untitled_emacs_path" ]]; then
-    mkdir -p "$untitled_emacs_path"
-  elif [[ ! -d "$untitled_emacs_path" ]]; then
-    echo "Error: A file exists at $untitled_emacs_path and it's not a directory" >&2
+org_src_path="${HOME}/Documents/Text/org/"
+org_dst_path="${HOME}/org"
+if [[ ! -L "$org_dst_path" ]]; then
+  if [[ ! -e "$org_src_path" ]]; then
+    mkdir -p "$org_src_path"
+  elif [[ ! -d "$org_src_path" ]]; then
+    echo "Error: A file exists at $org_src_path and it's not a directory" >&2
     exit 1
   fi
-else
-    echo "Error: A file exists at $emacs_path is not a symlink" >&2
-    exit 1
+  ln -s "$org_src_path" "$org_dst_path"
+elif [[ -e "$org_dst_path" ]]; then
+  echo "Error: A file exists at $org_dst_path is not a symlink" >&2
+  exit 1
 fi
