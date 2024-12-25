@@ -4,5 +4,5 @@ if !has('nvim')
   syn match Checkbox '^\s*\- \[[ x]\]'
 
   " Disable spell check in URLs
-  syn match UrlNoSpell '\[[^\]]\]([^[:space:]]\+)' contains=@NoSpell
+  syn match UrlNoSpell '\[[^\]]*\](\S\+)' contains=@NoSpell
 endif
