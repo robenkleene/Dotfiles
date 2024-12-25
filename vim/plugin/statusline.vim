@@ -1,9 +1,10 @@
 " Space Buffer
 set statusline=\ 
-set statusline+=%{hostname()}\ 
+" Machine Name
+set statusline+=%{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}
+" set statusline+=%{hostname()}\ 
 " Working Directory
 set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\ 
-" Machine Name
 " Truncate Marker
 set statusline+=%<
 " Filename
