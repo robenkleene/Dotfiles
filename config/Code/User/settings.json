@@ -9,5 +9,6 @@
     "editor.fontSize": 13,
     "[markdown]": {
         "editor.wordWrap": "on"
-    }
+    },
+    "explorer.confirmDragAndDrop": false
 }
