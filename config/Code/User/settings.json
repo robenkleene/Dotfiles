@@ -8,7 +8,12 @@
     "cpp.enableInlayHints": true,
     "editor.fontSize": 13,
     "[markdown]": {
-        "editor.wordWrap": "on"
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        }
     },
     "explorer.confirmDragAndDrop": false
 }
