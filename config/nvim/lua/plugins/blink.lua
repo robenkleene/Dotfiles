@@ -3,12 +3,27 @@ return {
   -- Use a release for pre-built binaries
   version = 'v0.*',
   opts = {
-    enabled = function()
-      return not vim.tbl_contains({ "markdown", "text", "gitcommit", "hgcommit" }, vim.bo.filetype) and vim.bo.buftype ~= "prompt"
-    end,
-    appearance = {
-      -- Fix icon spacing
-      nerd_font_variant = 'normal'
+    completion = {
+      menu = {
+        auto_show = function(ctx)
+          if vim.tbl_contains({
+            "markdown",
+            "text",
+            "gitcommit",
+            "hgcommit" }, vim.bo.filetype) then
+            return false
+          end
+          -- Disable for terminal mode
+          if vim.bo.buftype == "prompt" then
+            return false
+          end
+          -- Disable in command line
+          if ctx.mode == 'cmdline' then
+            return false
+          end
+          return true
+        end
+      }
     },
     snippets = {
       expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
