@@ -20,7 +20,7 @@ nnoremap <silent> <buffer> gyd :YankDiff<CR>
 
 command! YankDiff :call <SID>YankDiff()
 function! s:YankDiff() abort
-  let l:grep = system('~/.bin/f_fr_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2 | perl -p -e "chomp if eof"', join(getline(1,'$'), "\n"))
+  let l:grep = system('~/.bin/t_diff_grep '.line('.').' | tail -n1 | cut -d: -f1,2 | perl -p -e "chomp if eof"', join(getline(1,'$'), "\n"))
   let l:register=v:register
   " Use termporary buffer to force `YankTextPost` to trigger
   echom l:grep
@@ -36,7 +36,7 @@ command! OpenDiffNew :split | call <SID>OpenDiff()
 function! s:OpenDiff() abort
   " `- 1` for one line for the diff indicator gutter
   let l:destcol = col('.') - 1
-  let l:grep = system('~/.bin/f_fr_diff_to_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
+  let l:grep = system('~/.bin/t_diff_grep '.line('.').' | tail -n1 | cut -d: -f1,2', join(getline(1,'$'), "\n"))
   let l:parts = split(l:grep, ':')
   exec "edit " . fnameescape(l:parts[0])
   let l:destlnum = l:parts[1]

@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-~/.bin/f_fr_md_to_md_link | sed -n 's/.*(\(.*\)).*/\1/p' | grep -v '^http'
+~/.bin/t_md_f_link | sed -n 's/.*(\(.*\)).*/\1/p' | grep -v '^http'
