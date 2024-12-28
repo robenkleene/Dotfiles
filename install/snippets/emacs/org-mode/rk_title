@@ -4,6 +4,6 @@
 # --
 `(concat "#+title: " (if buffer-file-name
     (shell-command-to-string
-     (format "echo %s | f_fr_filename_to_title | tr -d '\n'"
+     (format "echo %s | ~/.bin/t_path_txt_title | tr -d '\n'"
      (shell-quote-argument buffer-file-name)))
     "No buffer-file-name"))`
