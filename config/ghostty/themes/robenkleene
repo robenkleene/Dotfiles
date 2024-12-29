@@ -20,19 +20,19 @@ palette = 7=#FFFFFF
 # Black
 palette = 8=#8B8680
 # Red
-palette = 13=#DABDBD
+palette = 9=#DABDBD
 # Green
-palette = 11=#BDDABD
+palette = 10=#BDDABD
 # Yellow
-palette = 15=#AAAA00
+palette = 11=#AAAA00
 # Blue
-palette = 10=#00FFFF
+palette = 12=#87AFDF
 # Purple
-palette = 12=#DBA3EB
+palette = 13=#DBA3EB
 # Cyan
-palette = 9=#87AFDF
+palette = 14=#00FFFF
 # White
-palette = 14=#CCCCCC
+palette = 15=#CCCCCC
 
 # Kleene Purple
 background = #211930
