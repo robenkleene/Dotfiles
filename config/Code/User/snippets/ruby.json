@@ -4,6 +4,16 @@
     "body": "puts \"$1 = #{${1:result}}\"",
     "description": "Print variable"
   },
+  "Print": {
+    "prefix": "rk_p",
+    "body": "puts \"${1:Message}\"",
+    "description": "Print variable"
+  },
+  "Print error": {
+    "prefix": "rk_pe",
+    "body": "STDERR.puts \"$1{:Error}\"",
+    "description": "Print error"
+  },
   "rk_template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env ruby\n\n",

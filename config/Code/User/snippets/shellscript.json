@@ -4,6 +4,16 @@
     "body": "echo \"$1 = \\$${1:result}\"",
     "description": "Print variable"
   },
+  "Print": {
+    "prefix": "rk_p",
+    "body": "echo \"${1:Message}\"",
+    "description": "Print"
+  },
+  "Print error": {
+    "prefix": "rk_pe",
+    "body": "echo \"${1:Error}\" >&2",
+    "description": "Print error"
+  },
   "Bash template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",

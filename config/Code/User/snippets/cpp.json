@@ -4,6 +4,11 @@
     "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
     "description": "Print variable"
   },
+  "Print": {
+    "prefix": "rk_p",
+    "body": "std::cout << \"${1:Message}\" << std::endl;",
+    "description": "Print"
+  },
   "C++ template": {
     "prefix": "rk_template",
     "body": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello, World!\" << std::endl;\n}\n",
@@ -24,7 +29,7 @@
     "body": "std::cout << this << \" ${1:message}\" << std::endl;",
     "description": "Print with address"
   },
-  "Print": {
+  "cout": {
     "prefix": "rk_cout",
     "body": "std::cout << \"${1:message}\" << std::endl;",
     "description": "Print"
