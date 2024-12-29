@@ -1,21 +1,38 @@
 # Normal
+# Black
 palette = 0=#000000
-palette = 1=#3792E3
-palette = 2=#00AFAF
-palette = 3=#6FCA70
-palette = 4=#C978EB
-palette = 5=#AA5511
-palette = 6=#FFFFFF
-palette = 7=#BBBB00
+# Red
+palette = 1=#AA5511
+# Green
+palette = 2=#6FCA70
+# Yellow
+palette = 3=#BBBB00
+# Blue
+palette = 4=#3792E3
+# Purple
+palette = 5=#C978EB
+# Cyan
+palette = 6=#00AFAF
+# White
+palette = 7=#FFFFFF
+
 # Bright
+# Black
 palette = 8=#8B8680
-palette = 9=#87AFDF
-palette = 10=#00FFFF
-palette = 11=#BDDABD
-palette = 12=#DBA3EB
+# Red
 palette = 13=#DABDBD
-palette = 14=#CCCCCC
+# Green
+palette = 11=#BDDABD
+# Yellow
 palette = 15=#AAAA00
+# Blue
+palette = 10=#00FFFF
+# Purple
+palette = 12=#DBA3EB
+# Cyan
+palette = 9=#87AFDF
+# White
+palette = 14=#CCCCCC
 
 # Kleene Purple
 background = #211930
