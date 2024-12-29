@@ -3,10 +3,16 @@
 set -euo pipefail
 
 force="false"
-while getopts ":p:fh" option; do
+while getopts ":p:d:n:fh" option; do
   case "$option" in
     p)
       file_path="$OPTARG"
+      ;;
+    d)
+      destination_dir="$OPTARG"
+      ;;
+    n)
+      destination_num="$OPTARG"
       ;;
     f)
       force="true"
@@ -26,7 +32,11 @@ while getopts ":p:fh" option; do
   esac
 done
 
-destination_dir="$HOME/.man/man9"
+if [ -z "${destination_dir:-}" ]; then
+  echo "Destination dir must be set with -d" >&2
+  exit 1
+fi
+
 if [ ! -e "$destination_dir" ]; then
   mkdir -p "$destination_dir"
 elif [ ! -d "$destination_dir" ]; then
@@ -38,7 +48,7 @@ source="$file_path"
 filename=$(basename -- "$source")
 filename="${filename%.*}"
 title=$(echo "$filename" | awk '{print toupper($0)}')
-dest="$destination_dir/$filename".9
+dest="$destination_dir/$filename".${destination_num:-1}
 if [[ -e "$dest" ]]; then
   if [[ "$force" == "true" ]]; then
     rm "$dest"
