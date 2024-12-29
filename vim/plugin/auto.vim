@@ -100,8 +100,9 @@ augroup clean_oldfiles
 augroup END
 
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+highlight Normal ctermbg=NONE guibg=NONE
 augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-  highlight Normal ctermbg=none guibg=none
+  autocmd ColorScheme * highlight Normal ctermbg=none guibg=none
 augroup END
