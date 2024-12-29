@@ -51,7 +51,6 @@
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-cape)
-(require 'robenkleene-corfu)
 (require 'robenkleene-diminish)
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-eglot)
