@@ -1,0 +1,23 @@
+# Normal
+palette = 0=#000000
+palette = 1=#3792E3
+palette = 2=#00AFAF
+palette = 3=#6FCA70
+palette = 4=#C978EB
+palette = 5=#AA5511
+palette = 6=#FFFFFF
+palette = 7=#BBBB00
+# Bright
+palette = 8=#8B8680
+palette = 9=#87AFDF
+palette = 10=#00FFFF
+palette = 11=#BDDABD
+palette = 12=#DBA3EB
+palette = 13=#DABDBD
+palette = 14=#CCCCCC
+palette = 15=#AAAA00
+
+# Kleene Purple
+background = #211930
+foreground = #FFFFFF
+cursor-color = #00BB00
