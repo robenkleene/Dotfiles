@@ -1,1 +1,1 @@
-set fish_color_comment grey
+set fish_color_comment brblack
