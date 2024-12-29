@@ -1,1 +1,0 @@
-set fish_color_comment brblack
