@@ -8,8 +8,6 @@ function fish_prompt
     if test $SSH_CONNECTION
         # echo -n -s "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal
         printf ' %s%s%s' (set_color $fish_color_host_remote) (prompt_hostname) $normal
-    else
-        printf ' %s%s%s' (set_color $fish_color_host) (prompt_hostname) $normal
     end
 
     set_color $fish_color_cwd
