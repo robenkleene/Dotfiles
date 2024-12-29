@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_puts_var
+# key: rk_pv
 # name: Print variable
 # --
-puts "$1 = #{${1:result}}"
+echo "$1 = \$${1:result}"

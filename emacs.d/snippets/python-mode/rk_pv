@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_print_var
+# key: rk_pv
 # name: Print variable
 # --
-print("$1 =", ${1:result})
+print("$1 = ", ${1:result})
