@@ -20,6 +20,7 @@ return {
         'comment',
         'cpp',
         'diff',
+        'fish',
         'lua',
         'java',
         'javascript',
