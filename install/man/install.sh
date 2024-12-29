@@ -31,12 +31,14 @@ if [[ "$modified" == "true" ]]; then
   done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
 else
   # Delete all existing
-  destination_dir="$HOME/.man/man9"
+  # Fish Shell only completes from `man1` (general commands), `man6` (games),
+  # and `man8` (system commands)
+  destination_dir="$HOME/.man/man1"
   if [[ -d "$destination_dir" ]]; then
-    find -L "$destination_dir" -name "*.9" -type f -exec rm {} +
+    find -L "$destination_dir" -name "*.1" -type f -exec rm {} +
   fi
 
   while IFS= read -r; do
-    ~/.bin/md_man_update -p "$REPLY"
+    ~/.bin/md_man_update -d "$destination_dir" -p "$REPLY"
   done < <( find markdown -type f -name "*.md" )
 fi
