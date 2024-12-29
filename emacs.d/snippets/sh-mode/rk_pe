@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_pe
+# name: Print error
+# --
+echo "${1:Error}" >&2
