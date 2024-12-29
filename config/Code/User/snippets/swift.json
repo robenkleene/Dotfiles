@@ -1,4 +1,9 @@
 {
+  "Print variable": {
+    "prefix": "rk_pv",
+    "body": "print(\"$1 =\", ${1:result})",
+    "description": "Print variable"
+  },
   "Swift template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/swift\n\n$0",
@@ -33,11 +38,6 @@
     "prefix": "rk_print",
     "body": "print(\"${1:Hello World}\")",
     "description": "Print"
-  },
-  "Print variable": {
-    "prefix": "rk_print_var",
-    "body": "print(\"$1 =\", ${1:result})",
-    "description": "Print variable"
   },
   "Print optional variable": {
     "prefix": "rk_print_var_opt",

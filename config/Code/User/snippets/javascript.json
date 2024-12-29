@@ -1,4 +1,10 @@
 {
+  "Print variable": {
+    "scope": "javascript,typescript",
+    "prefix": "rk_pv",
+    "body": "console.log(\"$1 = \" + ${1:result});",
+    "description": "Print variable"
+  },
   "JavaScript template": {
     "scope": "javascript,typescript",
     "prefix": "rk_template",
