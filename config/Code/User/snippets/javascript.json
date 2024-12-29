@@ -5,6 +5,12 @@
     "body": "console.log(\"$1 = \" + ${1:result});",
     "description": "Print variable"
   },
+  "Print": {
+    "scope": "javascript,typescript",
+    "prefix": "rk_p",
+    "body": "console.log(\"${1:Message}\");",
+    "description": "Print variable"
+  },
   "JavaScript template": {
     "scope": "javascript,typescript",
     "prefix": "rk_template",

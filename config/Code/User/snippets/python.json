@@ -4,6 +4,16 @@
     "body": "print(\"$1 = \", ${1:result})",
     "description": "Print variable"
   },
+  "Print": {
+    "prefix": "rk_p",
+    "body": "print(\"${1:Message}\")",
+    "description": "Print"
+  },
+  "Print error": {
+    "prefix": "rk_pe",
+    "body": "print(\"${1:Error}\", file=sys.stderr)",
+    "description": "Print error"
+  },
   "Python template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env python3\n\n",

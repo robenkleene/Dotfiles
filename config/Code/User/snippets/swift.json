@@ -4,6 +4,11 @@
     "body": "print(\"$1 =\", ${1:result})",
     "description": "Print variable"
   },
+  "Print": {
+    "prefix": "rk_p",
+    "body": "print(\"${1:Message}\")",
+    "description": "Print"
+  },
   "Swift template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/swift\n\n$0",
@@ -34,7 +39,7 @@
     "body": "NSLog(\"${1:Hello World}\")",
     "description": "Print"
   },
-  "Print": {
+  "Print string": {
     "prefix": "rk_print",
     "body": "print(\"${1:Hello World}\")",
     "description": "Print"
