@@ -15,7 +15,7 @@ if not contains $HOME/.man $MANPATH
 end
 
 # fzf
-if test -e $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
-    source $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
-    status is-interactive; and fzf_key_bindings
-end
+#if test -e $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
+#    source $HOMEBREW_DIR/opt/fzf/shell/key-bindings.fish
+#    status is-interactive; and fzf_key_bindings
+#end
