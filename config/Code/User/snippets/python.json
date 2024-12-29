@@ -1,4 +1,9 @@
 {
+  "Print variable": {
+    "prefix": "rk_pv",
+    "body": "print(\"$1 = \", ${1:result})",
+    "description": "Print variable"
+  },
   "Python template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env python3\n\n",
@@ -13,11 +18,6 @@
     "prefix": "rk_main",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t",
     "description": "`main` Function"
-  },
-  "Print variable": {
-    "prefix": "rk_print_var",
-    "body": "print(\"$1 = \", ${1:result})",
-    "description": "Print variable"
   },
   "Print to standard error": {
     "prefix": "rk_print_err",

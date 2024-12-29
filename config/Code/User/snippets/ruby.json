@@ -1,13 +1,13 @@
 {
+  "Print variable": {
+    "prefix": "rk_pv",
+    "body": "puts \"$1 = #{${1:result}}\"",
+    "description": "Print variable"
+  },
   "rk_template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
-  },
-  "Print variable": {
-    "prefix": "rk_puts_var",
-    "body": "puts \"$1 = #{${1:result}}\"",
-    "description": "Print variable"
   },
   "`puts` to standard error": {
     "prefix": "rk_puts_err",

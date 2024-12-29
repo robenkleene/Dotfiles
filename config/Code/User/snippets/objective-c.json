@@ -1,4 +1,9 @@
 {
+  "Print variable": {
+    "prefix": "rk_pv",
+    "body": "NSLog(@\"$1 = %${2:@}\", ${1:result});",
+    "description": "Print variable"
+  },
   "Objective-C template": {
     "prefix": "rk_template",
     "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",

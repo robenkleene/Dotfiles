@@ -1,4 +1,9 @@
 {
+  "Print variable": {
+    "prefix": "rk_pv",
+    "body": "echom \"$0 = \".${0:result}",
+    "description": "Print variable"
+  },
   "`echom`": {
     "prefix": "rk_echom",
     "body": "echom \"${0:got here}\"",
