@@ -25,15 +25,16 @@ done
 
 cd "$(dirname "$0")" || exit 1
 
+destination_dir="$HOME/.man/man1"
+
 if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
-    ~/.bin/md_man_update -f -p "$REPLY"
+    ~/.bin/md_man_update -d "$destination_dir" -f -p "$REPLY"
   done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
 else
   # Delete all existing
   # Fish Shell only completes from `man1` (general commands), `man6` (games),
   # and `man8` (system commands)
-  destination_dir="$HOME/.man/man1"
   if [[ -d "$destination_dir" ]]; then
     find -L "$destination_dir" -name "*.1" -type f -exec rm {} +
   fi
