@@ -41,12 +41,13 @@ showing metadata)
 .IP \[bu] 2
 \f[CR]mu\f[R]: Unmark all
 .IP \[bu] 2
-\f[CR]mt\f[R]: Set mark target directory
+\f[CR]mt\f[R]: Set mark target directory (note this uses the selected
+directory, not the current directory!)
 .IP \[bu] 2
 \f[CR]mc\f[R]: Copy marked files to target directory
 .IP \[bu] 2
 \f[CR]mm\f[R]: Move marked files to target directory
-.SS Copy File
+.SS Copy/Move File
 .IP "1." 3
 \f[CR]mt\f[R] to set the target directory
 .IP "2." 3
@@ -55,17 +56,8 @@ showing metadata)
 \f[CR]cd\f[R] to set the working directory as the same directory as the
 marked files
 .IP "4." 3
-\f[CR]mc\f[R] to copy the files to the target directory
-.SS Move File
-.IP "1." 3
-\f[CR]mt\f[R] to set the target directory
-.IP "2." 3
-\f[CR]mf\f[R] to mark the files
-.IP "3." 3
-\f[CR]cd\f[R] to set the working directory as the same directory as the
-marked files
-.IP "4." 3
-\f[CR]mm\f[R] to move the files to the target directory
+\f[CR]mc\f[R] to copy or \f[CR]mm\f[R] to move the files to the target
+directory
 .PP
 Note the file list won\[cq]t update automatically, so refresh with
 \f[CR]<C\-l>\f[R]
