@@ -2,4 +2,4 @@
 # key: rk_pv
 # name: Print variable
 # --
-echo "$1 = \$${1:result}"
+echo "$1 = \$${1}"
