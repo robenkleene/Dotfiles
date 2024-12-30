@@ -2,4 +2,4 @@
 # key: rk_pv
 # name: Print variable
 # --
-std::cout << "$1 = " << ${1:result} << std::endl;
+std::cout << "$1 = " << ${1} << std::endl;

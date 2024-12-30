@@ -2,4 +2,4 @@
 # key: rk_pv
 # name: Print variable
 # --
-console.log("$1 = " + ${1:result});
+console.log("$1 = " + ${1});
