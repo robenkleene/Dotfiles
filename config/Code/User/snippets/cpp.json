@@ -1,7 +1,7 @@
 {
   "Print variable": {
     "prefix": "rk_pv",
-    "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
+    "body": "std::cout << \"$1 = \" << ${1} << std::endl;",
     "description": "Print variable"
   },
   "Print": {
