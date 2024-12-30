@@ -12,7 +12,8 @@ while read -r filename; do
     # 's/([0-9]+)-([^0-9]+)/\1 \2/g' replace digits on one side with spaces (e.g., replace the hyphen in `123-abc`)
     # 's/([^0-9]+)-([0-9]+)/\1 \2/g' replace digits on the other side with spaces (e.g., replace the hyphen in `abc-123`)
     # 's/([^0-9]+)-([^0-9]+)/\1 \2/g' replace digits on the neither side with spaces (e.g., replace the hyphen in `abc-abc`)
-    title=$(echo "$filename_no_ext" | sed -E 's/([0-9]+)-([^0-9]+)/\1 \2/g' | sed -E 's/([^0-9]+)-([0-9]+)/\1 \2/g' | sed -E 's/([^0-9]+)-([^0-9]+)/\1 \2/g' | tr "_" " " | ~/.bin/f_titlecase)
+    # Using Perl because macOS `sed` doesn't support non-greedy matches with `?`
+    title=$(echo "$filename_no_ext" | perl -pe 's/([0-9]+?)-([^0-9]+?)/\1 \2/g' | perl -pe 's/([^0-9]+?)-([0-9]+?)/\1 \2/g' | perl -pe 's/([^0-9]+?)-([^0-9]+?)/\1 \2/g' | tr "_" " " | ~/.bin/f_titlecase)
   else
     title=$(echo "$filename_no_ext" | ~/.bin/f_titlecase)
   fi
