@@ -1,13 +1,18 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_print_var"],
     "body": "print(\"$1 =\", ${1})",
-    "description": "Print variable"
+    "description": "`print` variable"
   },
   "Print": {
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_print"],
     "body": "print(\"${1:Message}\")",
-    "description": "Print"
+    "description": "`print`"
+  },
+  "Print optional variable": {
+    "prefix": "rk_print_var_opt",
+    "body": "print(\"$1 =\", ${1} ?? \"nil\"",
+    "description": "`print` optional variable"
   },
   "Swift template": {
     "prefix": "rk_template",
@@ -38,16 +43,6 @@
     "prefix": "rk_log",
     "body": "NSLog(\"${1:Hello World}\")",
     "description": "Print"
-  },
-  "Print string": {
-    "prefix": "rk_print",
-    "body": "print(\"${1:Hello World}\")",
-    "description": "Print"
-  },
-  "Print optional variable": {
-    "prefix": "rk_print_var_opt",
-    "body": "print(\"$1 =\", ${1:result} ?? \"nil\"",
-    "description": "Print optional variable"
   },
   "For": {
     "prefix": "rk_for",
