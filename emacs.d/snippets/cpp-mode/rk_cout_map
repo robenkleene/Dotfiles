@@ -2,7 +2,7 @@
 # key: rk_cout_map
 # name: Print map
 # --
-std::cout << "${1:map} = {";
+std::cout << "${1} = {";
 bool first = true;
 for (const auto& pair : values) {
   if (!first) {

@@ -2,4 +2,4 @@
 # key: rk_print_var_opt
 # name: Print optional variable
 # --
-print("$1 =", ${1:result} ?? "nil"
+print("$1 =", ${1} ?? "nil"

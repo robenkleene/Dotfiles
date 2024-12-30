@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_echom
+# key: rk_p
 # name: `echom`
 # --
-echom "${0:got here}"
+echom "${1}"

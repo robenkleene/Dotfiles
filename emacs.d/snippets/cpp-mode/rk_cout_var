@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_cout_var
-# name: cout variable
-# --
-std::cout << "$1 = " << ${1:result} << std::endl;

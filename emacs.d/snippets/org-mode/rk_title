@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_title
-# name: Title from filename
-# --
-`(concat "#+title: " (if buffer-file-name
-    (shell-command-to-string
-     (format "echo %s | ~/.bin/t_path_title | tr -d '\n'"
-     (shell-quote-argument buffer-file-name)))
-    "No buffer-file-name"))`

@@ -65,7 +65,7 @@ Dir.glob("#{code_snippets_path}/*.{json,code-snippets}") do |file_path|
   dest_dir = File.join(yasnippets_snippets_path, "#{mode}-mode")
 
   json.each do |key, hash|
-    prefix = hash['prefix']
+    prefix = hash['prefix'].is_a?(Array) ? hash['prefix'].first : hash['prefix']
     # description = hash['description'] || hash['prefix']
     body = hash['body']
     body = body.join("\n") if body.instance_of?(Array)
