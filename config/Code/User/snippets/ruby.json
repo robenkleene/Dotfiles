@@ -1,28 +1,23 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_puts_var"],
     "body": "puts \"$1 = #{${1}}\"",
-    "description": "Print variable"
+    "description": "`puts` variable"
   },
   "Print": {
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_puts"],
     "body": "puts \"${1:Message}\"",
-    "description": "Print variable"
+    "description": "`puts`"
   },
   "Print error": {
-    "prefix": "rk_pe",
+    "prefix": ["rk_pe", "rk_puts_err"],
     "body": "STDERR.puts \"$1{:Error}\"",
-    "description": "Print error"
+    "description": "`puts` to standard error"
   },
   "rk_template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Ruby template"
-  },
-  "`puts` to standard error": {
-    "prefix": "rk_puts_err",
-    "body": "STDERR.puts \"$1{:Error}\"",
-    "description": "`puts` to standard error"
   },
   "For loop": {
     "prefix": "rk_for",

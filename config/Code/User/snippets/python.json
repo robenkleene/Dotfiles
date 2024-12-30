@@ -1,18 +1,18 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_print_var"],
     "body": "print(\"$1 = \", ${1})",
-    "description": "Print variable"
+    "description": "`print` variable"
   },
   "Print": {
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_print"],
     "body": "print(\"${1:Message}\")",
-    "description": "Print"
+    "description": "`print`"
   },
   "Print error": {
-    "prefix": "rk_pe",
+    "prefix": ["rk_pe", "rk_print_err"],
     "body": "print(\"${1:Error}\", file=sys.stderr)",
-    "description": "Print error"
+    "description": "`print` to standard error"
   },
   "Python template": {
     "prefix": "rk_template",
@@ -28,10 +28,5 @@
     "prefix": "rk_main",
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t",
     "description": "`main` Function"
-  },
-  "Print to standard error": {
-    "prefix": "rk_print_err",
-    "body": "print(\"${1:Error}\", file=sys.stderr)",
-    "description": "Print to standard error"
   }
 }
