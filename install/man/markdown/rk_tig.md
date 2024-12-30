@@ -9,7 +9,7 @@
 
 ## Status
 
-- `⌃P` / `⌃N`: Preview previous / next commit
+- `⌃P` / `⌃N`: Preview previous / next commit with diff visible
 
 ## Diff
 
