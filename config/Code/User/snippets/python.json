@@ -1,7 +1,7 @@
 {
   "Print variable": {
     "prefix": "rk_pv",
-    "body": "print(\"$1 = \", ${1:result})",
+    "body": "print(\"$1 = \", ${1})",
     "description": "Print variable"
   },
   "Print": {

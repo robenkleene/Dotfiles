@@ -2,7 +2,7 @@
   "Print variable": {
     "scope": "javascript,typescript",
     "prefix": "rk_pv",
-    "body": "console.log(\"$1 = \" + ${1:result});",
+    "body": "console.log(\"$1 = \" + ${1});",
     "description": "Print variable"
   },
   "Print": {

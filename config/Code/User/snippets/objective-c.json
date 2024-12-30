@@ -1,7 +1,7 @@
 {
   "Print variable": {
     "prefix": "rk_pv",
-    "body": "NSLog(@\"$1 = %${2:@}\", ${1:result});",
+    "body": "NSLog(@\"$1 = %${2:@}\", ${1});",
     "description": "Print variable"
   },
   "Print": {
