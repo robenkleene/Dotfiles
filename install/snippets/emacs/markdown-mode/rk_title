@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_title
-# name: Title from filename
-# --
-`(if buffer-file-name (shell-command-to-string
-                    (format "md_title %s" (shell-quote-argument buffer-file-name)))
-                 "No buffer-file-name")`
