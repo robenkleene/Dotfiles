@@ -1,13 +1,13 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_cout_var"],
     "body": "std::cout << \"$1 = \" << ${1} << std::endl;",
-    "description": "Print variable"
+    "description": "`cout` variable"
   },
   "Print": {
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_cout"],
     "body": "std::cout << \"${1:Message}\" << std::endl;",
-    "description": "Print"
+    "description": "`cout`"
   },
   "C++ template": {
     "prefix": "rk_template",
@@ -27,42 +27,32 @@
   "Print with address": {
     "prefix": "rk_cout_addr",
     "body": "std::cout << this << \" ${1:message}\" << std::endl;",
-    "description": "Print with address"
-  },
-  "cout": {
-    "prefix": "rk_cout",
-    "body": "std::cout << \"${1:message}\" << std::endl;",
-    "description": "Print"
+    "description": "`cout` with address"
   },
   "Print variable with address": {
-    "prefix": "rk_cout_var_addr",
-    "body": "std::cout << this << \" $1 = \" << ${1:result} << std::endl;",
-    "description": "Print variable with address"
-  },
-  "cout variable": {
-    "prefix": "rk_cout_var",
-    "body": "std::cout << \"$1 = \" << ${1:result} << std::endl;",
-    "description": "Print variable"
+    "prefix": ["rk_cout_var_addr", "rk_print_var_addr"],
+    "body": "std::cout << this << \" $1 = \" << ${1} << std::endl;",
+    "description": "`cout` variable with address"
   },
   "Print array with address": {
-    "prefix": "rk_cout_array_addr",
-    "body": "std::cout << this << \" ${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
-    "description": "Print array with address"
+    "prefix": ["rk_cout_array_addr", "rk_print_array_addr"],
+    "body": "std::cout << this << \" ${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
+    "description": "`cout` array with address"
   },
   "Print array": {
-    "prefix": "rk_cout_array",
-    "body": "std::cout << \"${1:arr} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
-    "description": "Print array"
+    "prefix": ["rk_cout_array", "rk_print_array"],
+    "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
+    "description": "`cout` array"
   },
   "Print map with address": {
-    "prefix": "rk_cout_map_addr",
-    "body": "std::cout << this << \" ${1:map} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
-    "description": "Print map with address"
+    "prefix": ["rk_cout_map_addr", "rk_print_map_addr"],
+    "body": "std::cout << this << \" ${1} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
+    "description": "`cout` map with address"
   },
   "Print map": {
-    "prefix": "rk_cout_map",
-    "body": "std::cout << \"${1:map} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
-    "description": "Print map"
+    "prefix": ["rk_cout_map", "rk_print_map"],
+    "body": "std::cout << \"${1} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
+    "description": "`cout` map"
   },
   "For loop": {
     "prefix": "rk_for",
@@ -71,12 +61,12 @@
   },
   "For loop array": {
     "prefix": "rk_for_array",
-    "body": "for (std::size_t ${1:i} = 0; $1 < ${2:arr}.size(); ++$1) {\n    ${3:std::cout << $2[$1] << std::endl;}\n}",
+    "body": "for (std::size_t ${1:i} = 0; $1 < ${2}.size(); ++$1) {\n    ${3:std::cout << $2[$1] << std::endl;}\n}",
     "description": "For loop array"
   },
   "For loop array range": {
     "prefix": "rk_for_array_range",
-    "body": "for (int ${1:element} : ${2:arr}) {\n    ${3:std::cout << $1 << std:endl;}\n}",
+    "body": "for (int ${1:element} : ${2}) {\n    ${3:std::cout << $1 << std:endl;}\n}",
     "description": "For range loop array"
   },
   "For loop array iterator": {
