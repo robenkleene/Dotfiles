@@ -2,7 +2,7 @@
 # key: rk_cout_map_addr
 # name: Print map with address
 # --
-std::cout << this << " ${1:map} = {";
+std::cout << this << " ${1} = {";
 bool first = true;
 for (const auto& pair : values) {
   if (!first) {

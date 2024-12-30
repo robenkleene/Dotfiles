@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_today
-# name: Today's date
-# --
-`(shell-command-to-string "date +%F | tr -d '\n'")`
