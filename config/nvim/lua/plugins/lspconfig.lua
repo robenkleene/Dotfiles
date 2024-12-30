@@ -6,6 +6,8 @@ return {
     -- This is for code that we don't have full control over, we don't want to have to properly setup LSP for all code bases we touch, so this makes the messages less intrusive in those cases
     vim.diagnostic.config({
       virtual_text = false,
+      -- Don't show errors in insert mode
+      update_in_insert = false,
     })
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
