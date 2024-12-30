@@ -1,15 +1,15 @@
 {
   "Print variable": {
     "scope": "javascript,typescript",
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_log_var"],
     "body": "console.log(\"$1 = \" + ${1});",
-    "description": "Print variable"
+    "description": "Log variable"
   },
   "Print": {
     "scope": "javascript,typescript",
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_log"],
     "body": "console.log(\"${1:Message}\");",
-    "description": "Print variable"
+    "description": "`console.log`"
   },
   "JavaScript template": {
     "scope": "javascript,typescript",
@@ -25,7 +25,7 @@
   },
   "For loop": {
     "scope": "javascript,typescript",
-    "prefix": "rk_for",
+    "prefix": ["rk_for"],
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
