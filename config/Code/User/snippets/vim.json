@@ -1,18 +1,13 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
-    "body": "echom \"$0 = \".${0:result}",
-    "description": "Print variable"
+    "prefix": ["rk_pv", "rk_echom_var"],
+    "body": "echom \"$1 = \".${1}",
+    "description": "`echom` variable"
   },
   "`echom`": {
-    "prefix": "rk_echom",
-    "body": "echom \"${0:got here}\"",
+    "prefix": ["rk_p", "rk_echom"],
+    "body": "echom \"${1}\"",
     "description": "`echom`"
-  },
-  "`echom` variable": {
-    "prefix": "rk_echom_var",
-    "body": "echom \"$0 = \".${0:result}",
-    "description": "`echom` variable"
   },
   "Function": {
     "prefix": "rk_function",

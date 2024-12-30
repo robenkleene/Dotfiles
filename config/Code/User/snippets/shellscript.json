@@ -1,38 +1,28 @@
 {
   "Print variable": {
-    "prefix": "rk_pv",
+    "prefix": ["rk_pv", "rk_echo_var"],
     "body": "echo \"$1 = \\$${1}\"",
-    "description": "Print variable"
+    "description": "`echo` variable"
   },
   "Print": {
-    "prefix": "rk_p",
+    "prefix": ["rk_p", "rk_echo"],
     "body": "echo \"${1:Message}\"",
-    "description": "Print"
+    "description": "`echo`"
   },
   "Print error": {
-    "prefix": "rk_pe",
+    "prefix": ["rk_pe", "rk_echo_err"],
     "body": "echo \"${1:Error}\" >&2",
-    "description": "Print error"
+    "description": "`echo` to standard error"
   },
   "Bash template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Bash template"
   },
-  "Echo variable": {
-    "prefix": "rk_echo_var",
-    "body": "echo \"$1 = \\$${1:result}\"",
-    "description": "Echo variable"
-  },
   "Echo array variable": {
-    "prefix": "rk_echo_var_array",
-    "body": "echo \"$1 = \\${${1:args}[@]}\"",
-    "description": "Echo array variable"
-  },
-  "Echo to standard error": {
-    "prefix": "rk_echo_err",
-    "body": "echo \"${1:Error}\" >&2",
-    "description": "Echo to standard error"
+    "prefix": ["rk_echo_var_array", "rk_print_var_array"],
+    "body": "echo \"$1 = \\${${1}[@]}\"",
+    "description": "`echo` array variable"
   },
   "Remove variable trailing slash": {
     "prefix": "rk_parameter_expansion_remove_trailing_slash",
