@@ -3,7 +3,7 @@
     "scope": "javascript,typescript",
     "prefix": ["rk_pv", "rk_log_var"],
     "body": "console.log(\"$1 = \" + ${1});",
-    "description": "Log variable"
+    "description": "`console.log` variable"
   },
   "Print": {
     "scope": "javascript,typescript",
@@ -16,12 +16,6 @@
     "prefix": "rk_template",
     "body": "#!/usr/bin/env node\n\n",
     "description": "JavaScript template"
-  },
-  "Log variable": {
-    "scope": "javascript,typescript",
-    "prefix": "rk_log_var",
-    "body": "console.log(\"$1 = \" + ${1:result});",
-    "description": "Log variable"
   },
   "For loop": {
     "scope": "javascript,typescript",
