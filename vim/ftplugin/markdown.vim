@@ -27,10 +27,3 @@ let g:markdown_fenced_languages = [
       " Causing an error on exit in Neovim that `syntax/kotlin.vim` can't be
       " found. Probably need to install a plugin?
       " \'kotlin',
-
-function! s:InsertTitle()
-    let l:filename = expand('%:p')
-    let l:title = system('~/.bin/md_title ' . shellescape(l:filename) . ' | grep .')
-    return l:title
-endfunction
-iabbrev <buffer> :title: <C-R>=<SID>InsertTitle()<CR>
