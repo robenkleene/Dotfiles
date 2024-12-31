@@ -1,1 +1,3 @@
 # theme = robenkleene
+# The `macos-icon-ghost-color` and `macos-icon-screen-color` configurations are required for this style.
+# macos-icon = custom-style
