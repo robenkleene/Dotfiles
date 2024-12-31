@@ -36,6 +36,8 @@ palette = 14=#00FFFF
 palette = 15=#CCCCCC
 
 # Kleene Purple
-background = #211930
+# background = #211930
+# Ghostty Grey
+background = #292C33
 foreground = #FFFFFF
 cursor-color = #00BB00
