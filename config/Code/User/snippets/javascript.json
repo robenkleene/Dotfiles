@@ -31,9 +31,6 @@
   "Max JavaScript template": {
     "prefix": "rk_max_template",
     "body": [
-      "// Re-compile the file automatically when it changes",
-      "autowatch = 1;",
-      "",
       "// Inlets & Outlets",
       "inlets = 3;",
       "outlets = 3;",
