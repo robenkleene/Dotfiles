@@ -47,7 +47,6 @@ typeset -A repos
 repos=(
 ~"/Developer/Dotfiles/" "${github_prefix}robenkleene/Dotfiles.git"
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
-~"/Developer/AppleScripts/" "${github_prefix}robenkleene/AppleScripts.git"
 )
 
 if [[ "$include_private" == "true" ]]; then
@@ -62,7 +61,6 @@ fi
 if [[ "$(uname)" = "Darwin" ]]; then
   repos+=(
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
-~"/Library/Services/" "${github_prefix}robenkleene/Services.git"
 )
   # if [[ "$include_private" == "true" ]]; then
   #   repos+=(
@@ -76,10 +74,8 @@ if [[ ! -f "$HOME/.personal" ]]; then
   repos=(
 ~"/Developer/Dotfiles/" "${github_prefix}robenkleene/Dotfiles.git"
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
-~"/Developer/AppleScripts/" "${github_prefix}robenkleene/AppleScripts.git"
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"
-~"/Library/Services/" "${github_prefix}robenkleene/Services.git"
 )
 fi
 
