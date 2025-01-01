@@ -9,7 +9,7 @@ if [ -e "$applescripts_path" ] && [ ! -L "$applescripts_path" ]; then
   echo "Warning: $applescripts_path already exists and it's not a symlink" >&2
 else
   if [ ! -e "$applescripts_path" ]; then
-    ln -s "./Scripts" "$applescripts_path"
+    ln -s "$PWD/Scripts" "$applescripts_path"
   fi
 fi
 
