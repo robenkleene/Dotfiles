@@ -60,3 +60,6 @@ fi
 ./snippets/install.sh
 ./emacs/install.sh
 ./helix/install.sh
+if [[ "$(uname)" = "Darwin" ]]; then
+  ./macos/install.sh
+fi
