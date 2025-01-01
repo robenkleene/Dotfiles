@@ -11,6 +11,9 @@
 - `␣` / `+`: Toggle selection
 - `A`: Select all
 - `⇧A`: Invert selection
+- `a`: Select all
+- `A`: Invert selection
+- To delete a directory recursively without requiring confirmation (`xd` requires confirmation for each file in a directory), select it with `␣`, `x` to delete, then `y` to confirm
 
 # Navigation
 
@@ -47,11 +50,6 @@
 
 - `;`: Run a plugin (followed by assigned key) or `↩` to select a plugin to run
 - `⌥<key>`: Can also be used to run a plugin
-
-# Selection
-
-- `a`: Select all
-- `A`: Invert selection
 
 # Shell Commands
 
