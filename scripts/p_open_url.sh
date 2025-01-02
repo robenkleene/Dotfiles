@@ -6,4 +6,8 @@ urls=''
 while read -r url; do
   urls+=" $url"
 done <<< "$(~/.bin/f_url)"
-open${urls}
+if [[ "$(uname)" = "Darwin" ]]; then
+  open${urls}
+elif [[ "$(uname)" = "Linux" ]]; then
+  echo${urls}
+fi
