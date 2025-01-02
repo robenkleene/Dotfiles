@@ -69,6 +69,18 @@ setopt nolistbeep
 # Add renaming function
 # autoload zmv
 
+# Override bracketed paste to set the mark before pasting, this makes it easy to
+# quote pasted text with `M-"` (`quote-region`)
+function rk/bracketed-paste {
+  zle set-mark-command
+  zle .bracketed-paste
+  # Swapping point and mark twice is a hack to get the region to appear
+  # visually, which matches the default Zsh style for pasted text
+  zle exchange-point-and-mark
+  zle exchange-point-and-mark
+}
+zle -N bracketed-paste rk/bracketed-paste
+
 # Completion
 # Enable Completion
 # `compinit -C` is just re-generating the cache and shouldn't be run on startup?
