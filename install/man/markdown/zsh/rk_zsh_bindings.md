@@ -6,6 +6,7 @@
 - `M-m`: Insert previous word, subsequent presses cycle through previous words (not a default binding, but a common convention)
 - `M-.` / `M-_`: Insert last parameter of previous command, subsequent presses go back through previous commands (e.g., `M-. M-.` gets the last parameter two commands ago, this can take a prefix argument to get other parameters, for example `M-2 M-.` to get the second last) Note that undo is useful if you go backwards for too many parameters.
 - `M-'`: Quote the line (e.g., to use `su -c` or `ssh`)
+- `M-"`: Quote the region
 - `M-h`: Help for current command (runs `man`)
 - `C-q`: Push current line (clears the line, execute one command and then return the line)
 - `C-y`: Yank
