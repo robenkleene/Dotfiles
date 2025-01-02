@@ -6,5 +6,4 @@ urls=''
 while read -r url; do
   urls+=" $url"
 done <<< "$(~/.bin/f_url)"
-set -x
 open${urls}
