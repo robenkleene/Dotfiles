@@ -1,11 +1,9 @@
-
 [colors.primary]
 # Kleene Purple
-background = "#211930"
+# background = "#211930"
 # background = "#000000"
 # background = "#222222"
-foreground = "#FFFFFF"
-# background = "#FFFFFF"
+# foreground = "#FFFFFF"
 # foreground = "#000000"
 
 [colors.cursor]
@@ -39,4 +37,5 @@ padding = { x = 4, y = 2 }
 resize_increments = true
 
 [general]
-import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
+# import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
+import = ["/Users/robenkleene/.config/alacritty/modifiers.toml"]
