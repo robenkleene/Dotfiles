@@ -1,31 +1,33 @@
 - `␣`: Tag file
-- `^G`: Quit and cd (if `cd` on quit is configured to always happen, there's no way to not `cd` on quit)
+- `^G`: Quit and `cd` (if `cd` on quit is configured to always happen, there's no way to not `cd` on quit)
 - `1` / `2` / `3` / `4`: Switch to tab
 - `nnn <file-path>`: Open `nnn` with file highlighted
 - `^L`: Redraw (force a refresh)
 - `F`: Show details (like file modification time) about the current file
 - `D`: Toggle details mode
+- `.`: Toggle show hidden files
 
 # Selection
 
 - `␣` / `+`: Toggle selection
-- `A`: Select all
-- `⇧A`: Invert selection
 - `a`: Select all
 - `A`: Invert selection
-- To delete a directory recursively without requiring confirmation (`xd` requires confirmation for each file in a directory), select it with `␣`, `x` to delete, then `y` to confirm
 
 # Navigation
 
-- `C-u` / `C-d`, `PgUp`, `PgDn`: Page up / down
+- `C-u` / `C-d`, `PgUp` / `PgDn`: Page up / down
 
 # Filter
 
-- `/`: Filter
-- `⎋`: Exit prompt (e.g., a filter)
+- `/`: Filter file list
 - `^L`: Toggle last filter
-- `^N`: Type to nav
-- `.`: Toggle show hidden files
+- `^N`: Toggle `type-to-nav` (`⌃D` to exit)
+
+## Active Filter
+
+Including `type-to-nav` mode.
+
+- `⎋`, `⌃D`: Exit an active filter.
 
 # Help
 
@@ -35,16 +37,13 @@
 
 - `o`: Choose program to open with
 - `e`: Edit file (e.g., an empty file that can't be edited with return)
-- `x` / `^X`: Delete file
+- `x`, `^X`: Delete file or directory (recursively)
 - `^R`: Rename file
 - `^R`: Duplicate file (hit enter when prompted to rename and it will ask for a new name to copy to)
 - `p`: Copy to new location
 - `v`: Move to new location
-- `n`: Create new
-    - `d`: Directory
-    - `f`: File
-- `!` / `^]`: Spawn new shell on top of `nnn` (use `exit` to get back to `nnn`, `echo $NNNLVL` will show the current level)
-- `]`: Open native shell prompt to enter shell commands
+- `nf`: New file
+- `nd`: New directory
 
 # Plugins
 
@@ -53,9 +52,11 @@
 
 # Shell Commands
 
+- `!`, `^]`: Spawn new shell on top of `nnn` (use `exit` to get back to `nnn`, `echo $NNNLVL` will show the current level)
+- `]`: Open native command prompt to enter shell commands
+
 ## Native Command Prompt
 
-- `]`: Enters the native command prompt
 - `^D`: Exit native command prompt
 - To run a command on the currently hovered file: `]` to enter the native command prompt, then `<command> $nnn`. E.g., `open $nnn` will open the currently hovered file.
 
