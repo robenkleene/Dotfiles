@@ -225,6 +225,7 @@ Dired buffers that no longer exist."
         )
       )
     ))
+(advice-add 'save-some-buffers :before #'kill-missing-file-buffers)
 
 (provide 'robenkleene-interactive)
 ;; Local Variables:
