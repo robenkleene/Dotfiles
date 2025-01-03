@@ -74,10 +74,11 @@ setopt nolistbeep
 function rk/bracketed-paste {
   zle set-mark-command
   zle .bracketed-paste
-  # Swapping point and mark twice is a hack to get the region to appear
-  # visually, which matches the default Zsh style for pasted text
-  zle exchange-point-and-mark
-  zle exchange-point-and-mark
+  # Arrange to display highlighting if necessary
+  if [[ -z $zle_highlight || -n ${(M)zle_highlight:#paste:*} ]]; then
+    zle -R
+    zle .read-command && zle -U - "$KEYS"
+  fi
 }
 zle -N bracketed-paste rk/bracketed-paste
 
