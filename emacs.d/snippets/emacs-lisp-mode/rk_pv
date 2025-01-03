@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_pv
+# name: Print variable
+# --
+message "${1:result} = %${2:s}" $1
