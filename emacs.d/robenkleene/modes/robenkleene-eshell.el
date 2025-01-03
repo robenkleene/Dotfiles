@@ -99,6 +99,11 @@ This should be the last entry in eshell-output-filter-functions!"
   (add-hook 'eshell-directory-change-hook 'rk/z-add)
   )
 
+;; Kill the window after exiting `eshell' with `exit' (otherwise the window
+;; stays with an open buffer in it)
+(advice-add 'eshell-life-is-too-much :after (lambda () (when (not (one-window-p))
+                                                         (delete-window))))
+
 ;; Truncate path to 20 characters
 ;; This particularly helps with small width windows because eshell will move the
 ;; visible part of the window to make the prompt cursor visible which cuts off
