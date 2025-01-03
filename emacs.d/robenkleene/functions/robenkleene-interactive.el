@@ -200,31 +200,36 @@ The DWIM behaviour of this command is as follows:
     )
   )
 
-(defun kill-missing-file-buffers ()
+(defun kill-missing-file-buffers (orig-fun &rest args)
   "Kills unmodified buffers with a filename if the file no longer exists, and
 Dired buffers that no longer exist."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (let ((filename (buffer-file-name buf)))
-      (if (and filename
-               (not (buffer-modified-p buf)))
-          (if (not (file-readable-p filename))
-              (let (kill-buffer-query-functions)
-                (kill-buffer buf)
-                (message "Killed missing buffer %s" filename))
-            )
-        (with-current-buffer buf
-          (when (eq major-mode 'dired-mode)
-            (let ((dir (dired-current-directory)))
-              (when (not (file-directory-p dir))
-                (kill-buffer buf)
-                (message "Killed missing Dired buffer %s" dir))
+  (interactive "P")
+  ;; Only run if called interactively, `save-some-buffers' gets called on Emacs
+  ;; shutdown, this avoids triggering this then
+  (when (called-interactively-p 'interactive)
+    (dolist (buf (buffer-list))
+      (let ((filename (buffer-file-name buf)))
+        (if (and filename
+                 (not (buffer-modified-p buf)))
+            (if (not (file-readable-p filename))
+                (let (kill-buffer-query-functions)
+                  (kill-buffer buf)
+                  (message "Killed missing buffer %s" filename))
+              )
+          (with-current-buffer buf
+            (when (eq major-mode 'dired-mode)
+              (let ((dir (dired-current-directory)))
+                (when (not (file-directory-p dir))
+                  (kill-buffer buf)
+                  (message "Killed missing Dired buffer %s" dir))
+                )
               )
             )
           )
         )
       )
-    ))
+    )
+  )
 (advice-add 'save-some-buffers :before #'kill-missing-file-buffers)
 
 (provide 'robenkleene-interactive)
