@@ -50,8 +50,11 @@
 (setq tab-bar-tab-name-format-function 'rk/tab-bar-tab-name-format)
 
 ;; Forcing Focus
-(setq Man-notify-method 'aggressive)
-(setq help-window-select t)
+;; Not doing this because too many windows aren't automatically focused, e.g.,
+;; I'd also have to add `grep' buffers
+
+;; (setq Man-notify-method 'aggressive)
+;; (setq help-window-select t)
 ;; Everywhere
 ;; This causes problems where sometimes focus isn't wanted, e.g., Magit commit
 ;; creates a diff of the changes and this will focus that diff
@@ -64,17 +67,17 @@
 ;; (advice-add 'display-buffer :around #'rk/display-buffer-focus)
 
 ;; Focus buffers for custom `egit' commands
-(add-to-list
- 'display-buffer-alist
- '("\\*egit\\*" . (nil . ((body-function . select-window)))))
+;; (add-to-list
+;;  'display-buffer-alist
+;;  '("\\*egit\\*" . (nil . ((body-function . select-window)))))
 
-;; Focus buffers for `shell-command'
-(add-to-list
- 'display-buffer-alist
- '("\\*Async Shell Command\\*" . (nil . ((body-function . select-window)))))
-(add-to-list
- 'display-buffer-alist
- '("\\*Shell Command Output\\*" . (nil . ((body-function . select-window)))))
+;; ;; Focus buffers for `shell-command'
+;; (add-to-list
+;;  'display-buffer-alist
+;;  '("\\*Async Shell Command\\*" . (nil . ((body-function . select-window)))))
+;; (add-to-list
+;;  'display-buffer-alist
+;;  '("\\*Shell Command Output\\*" . (nil . ((body-function . select-window)))))
 
 (provide 'robenkleene-window-management)
 ;; Local Variables:
