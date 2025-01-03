@@ -36,7 +36,6 @@
   (require 'robenkleene-terminal))
 
 ;; Modes
-(require 'robenkleene-abbrev)
 (require 'robenkleene-diff)
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)

@@ -128,8 +128,9 @@ previous element of the minibuffer history in the minibuffer."
 ;; when using Terminal Emacs through `emacsclient'
 ;; This breaks using `M-n' after `M-!' to run a shell command on the current
 ;; buffer
-;; Try disabling recursive minibuffers, in practice it's really confusing
-;; (setq enable-recursive-minibuffers t)
+;; Enable recursive minibuffers, this allows `M-!' to be used to insert the
+;; result of a shell command into the minibuffer (e.g., to insert today's date)
+(setq enable-recursive-minibuffers t)
 
 (provide 'robenkleene-minibuffer)
 ;; Local Variables:
