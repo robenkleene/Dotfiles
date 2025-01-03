@@ -54,7 +54,6 @@
 (require 'robenkleene-editorconfig)
 (require 'robenkleene-eglot)
 (require 'robenkleene-magit)
-(require 'robenkleene-orderless)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
