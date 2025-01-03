@@ -99,6 +99,24 @@ This should be the last entry in eshell-output-filter-functions!"
   (add-hook 'eshell-directory-change-hook 'rk/z-add)
   )
 
+;; Truncate path to 20 characters
+;; This particularly helps with small width windows because eshell will move the
+;; visible part of the window to make the prompt cursor visible which cuts off
+;; the left side of output
+(setq eshell-prompt-function
+      (lambda ()
+        (concat
+         (let* (
+                (path (abbreviate-file-name (eshell/pwd)))
+                (length (length path))
+                (max 20)
+                )
+           (if (> length max)
+               (concat "..." (substring path (- length max)))
+             path
+             ))
+         (if (= (user-uid) 0) " # " " $ "))))
+
 (provide 'robenkleene-eshell)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
