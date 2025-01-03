@@ -30,6 +30,7 @@
 - `m` / `u`: Mark / Remove mark
 - `U`: Unmark all
 - `t`: Invert marked
+- Note that the marked files can only be operated on when in the same Dired buffer as the marked files
 
 ### Multiple Files
 
