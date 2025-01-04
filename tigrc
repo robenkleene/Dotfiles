@@ -10,3 +10,5 @@ bind generic <Ctrl-F> move-page-down
 set main-view-date = relative-compact
 
 set mouse = true
+
+bind generic Y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
