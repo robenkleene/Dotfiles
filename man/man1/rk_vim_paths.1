@@ -10,6 +10,7 @@ No these will only work for commands that take a file path, e.g.,
 \f[CR]:h expand()\f[R] for more.
 .IP \[bu] 2
 \f[CR]%\f[R]: Relative path
+.SH Modifiers
 .IP \[bu] 2
 \f[CR]%:p\f[R]: Absolute path
 .IP \[bu] 2
@@ -20,17 +21,28 @@ No these will only work for commands that take a file path, e.g.,
 \f[CR]%:e\f[R]: File extension
 .IP \[bu] 2
 \f[CR]%:r\f[R]: Filename without extension
-.SH Examples
+.SS Examples
 .IP \[bu] 2
-\f[CR]let \[at]a = expand(\[aq]%:t)\f[R]: Yank current filename to
-register \f[CR]a\f[R] (note that this doesn\[cq]t trigger
-\f[CR]TextYankPost\f[R], another option to copy the path is to use the
-shell \f[CR]:!echo %<tab> | pbcopy\f[R])
-.SH Command\-Line Mode
+\f[CR]let \[at]a = expand(\[aq]%:t)\f[R]: Yank the current filename
+(\f[CR]:t\f[R]) to register \f[CR]a\f[R] (note that this doesn\[cq]t
+trigger \f[CR]TextYankPost\f[R])
+.IP \[bu] 2
+\f[CR]:!echo %<tab> | pbcopy\f[R]: Copy the current filename using shell
+commands
+.IP \[bu] 2
+\f[CR]:!echo %:p<tab> | pbcopy\f[R]: Copy the absolute path using shell
+commands
+.IP \[bu] 2
+\f[CR]let \[at]a = expand(\[aq]%:p:h)\f[R] Yank the absolute path
+(\f[CR]:p\f[R]) to the directory of the current file (\f[CR]:h\f[R]) to
+register \f[CR]a\f[R]
+.IP \[bu] 2
+\f[CR]!pwd | pbcopy\f[R]: Yank current path
+.SH Insert / Command\-Line Mode
 .IP \[bu] 2
 \f[CR]<c\-r>%\f[R]: Insert the relative path
-.SH Insert Mode
 .IP \[bu] 2
-\f[CR]<c\-r>%\f[R]: Insert the absolute path
+\f[CR]<c\-r>=expand(\[aq]%:p\[aq])\f[R]: Insert a path with a modifier
+.SH \f[CR]cd\f[R]
 .IP \[bu] 2
-\f[CR]<c\-r>=expand(\[dq]%:p\[dq])\f[R]: Insert with a modifier
+\f[CR]cd %:h\f[R]: Go to the parent directory when editing a file.
