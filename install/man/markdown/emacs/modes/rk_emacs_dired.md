@@ -51,7 +51,7 @@ To move a file to a new directory, do a rename, but just specify a directory as 
 
 ### Diff
 
-- `=`: Comparing two files, the currently selected file and prompt for the second. The comparison goes from the second file to the first file.
+- `=`: Compare (diff) two files, the currently selected file and prompt for the second. The comparison goes from the second file to the first file.
 
 ### Find
 
