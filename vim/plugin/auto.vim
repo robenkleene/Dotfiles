@@ -62,7 +62,7 @@ augroup END
 
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('safecopy',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && (v:event["operator"] ==# 'y' || v:event["operator"] ==# 'd') | call system('safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
 
 augroup quickfix_height
@@ -70,11 +70,6 @@ augroup quickfix_height
   " Set the height to the number of lines, or a fraction of the window height
   " (with a maximum), which ever is higher
   autocmd FileType qf execute min([line("$"), max([10, float2nr(&lines / 3)])]) . "wincmd _"
-augroup END
-
-augroup executable_files
-  autocmd!
-  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
 
 augroup z_add
