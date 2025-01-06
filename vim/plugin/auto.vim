@@ -62,7 +62,11 @@ augroup END
 
 augroup safecopy
   autocmd!
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && (v:event["operator"] ==# 'y' || v:event["operator"] ==# 'd') | call system('safecopy',join(v:event["regcontents"],"\n")) | end
+  " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
+  " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
+  " first delete the visual selection then paste, which means the visual
+  " selection will overwrite the clipboard
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
 
 augroup quickfix_height
