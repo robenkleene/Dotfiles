@@ -49,10 +49,6 @@
 ;; Allow editing from multiple sources
 (setq create-lockfiles nil)
 
-;; Automatically make shell scripts executable
-(add-hook 'after-save-hook
-          'executable-make-buffer-file-executable-if-script-p)
-
 ;; Show cursor position
 (column-number-mode)
 
@@ -124,10 +120,6 @@
 (setq mouse-1-click-follows-link nil)
 ;; Disable mouse highlighting
 (setq mouse-highlight nil)
-
-;; Automatically make shell scripts executable
-(add-hook 'after-save-hook
-          'executable-make-buffer-file-executable-if-script-p)
 
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
