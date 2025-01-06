@@ -29,7 +29,10 @@ destination_dir="$HOME/.man/man1"
 
 if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
-    ~/.bin/md_man_update -d "$destination_dir" -f -p "$REPLY"
+    # `git ls-files --modified` actually includes deleted files, so skip those
+    if [[ -e "$REPLY" ]]; then
+      ~/.bin/md_man_update -d "$destination_dir" -f -p "$REPLY"
+    fi
   done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
 else
   # Delete all existing
