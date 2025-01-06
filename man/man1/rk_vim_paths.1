@@ -22,20 +22,30 @@ No these will only work for commands that take a file path, e.g.,
 .IP \[bu] 2
 \f[CR]%:r\f[R]: Filename without extension
 .SS Examples
+.SS Registers
 .IP \[bu] 2
 \f[CR]let \[at]a = expand(\[aq]%:t)\f[R]: Yank the current filename
 (\f[CR]:t\f[R]) to register \f[CR]a\f[R] (note that this doesn\[cq]t
 trigger \f[CR]TextYankPost\f[R])
 .IP \[bu] 2
-\f[CR]:!echo %<tab> | pbcopy\f[R]: Copy the current filename using shell
-commands
-.IP \[bu] 2
-\f[CR]:!echo %:p<tab> | pbcopy\f[R]: Copy the absolute path using shell
-commands
-.IP \[bu] 2
 \f[CR]let \[at]a = expand(\[aq]%:p:h)\f[R] Yank the absolute path
 (\f[CR]:p\f[R]) to the directory of the current file (\f[CR]:h\f[R]) to
 register \f[CR]a\f[R]
+.SS Shell Commands
+Note that when using shell commands modifiers always expand to the full
+path
+.IP \[bu] 2
+\f[CR]:!echo %<tab> | pbcopy\f[R]: Copy the relative path to the file
+using shell commands
+.IP \[bu] 2
+\f[CR]:!echo %:h<tab> | pbcopy\f[R]: Copy the relative path to the
+parent directory using shell commands
+.IP \[bu] 2
+\f[CR]:!echo %:p<tab> | pbcopy\f[R]: Copy the absolute path to a file
+using shell commands
+.IP \[bu] 2
+\f[CR]:!echo %:p:h<tab> | pbcopy\f[R]: Copy the absolute path to the
+parent directory using shell commands
 .IP \[bu] 2
 \f[CR]!pwd | pbcopy\f[R]: Yank current path
 .SH Insert / Command\-Line Mode
