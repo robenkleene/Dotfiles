@@ -30,7 +30,8 @@ trigger \f[CR]TextYankPost\f[R])
 .IP \[bu] 2
 \f[CR]let \[at]a = expand(\[aq]%:p:h)\f[R] Yank the absolute path
 (\f[CR]:p\f[R]) to the directory of the current file (\f[CR]:h\f[R]) to
-register \f[CR]a\f[R]
+register \f[CR]a\f[R] (note that order is important here,
+\f[CR]%:h:p\f[R] won\[cq]t expand)
 .SS Shell Commands
 Note that when using shell commands modifiers always expand to the full
 path
@@ -45,7 +46,8 @@ parent directory using shell commands
 using shell commands
 .IP \[bu] 2
 \f[CR]:!echo %:p:h<tab> | pbcopy\f[R]: Copy the absolute path to the
-parent directory using shell commands
+parent directory using shell commands (note that order is important
+here, \f[CR]%:h:p\f[R] won\[cq]t expand)
 .IP \[bu] 2
 \f[CR]!pwd | pbcopy\f[R]: Yank current path
 .SH Insert / Command\-Line Mode
