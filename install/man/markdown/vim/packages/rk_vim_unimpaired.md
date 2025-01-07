@@ -10,3 +10,11 @@
 - `[op`: Enter insert mode with `:set paste` opening line before
 - `]op`: Enter insert mode with `:set paste` opening line after
 - `yop`: Enter insert mode with `:set paste` changing line
+
+# Toggle
+
+- `yow`: Wrap
+- `yoc`: Cursor line
+- `you`: Cursor column
+- `yod`: `diffthis` `diffoff`
+- `yos`: spelling
