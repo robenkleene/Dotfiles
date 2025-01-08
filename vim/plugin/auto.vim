@@ -47,11 +47,14 @@ augroup disable_autocomments
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 
-" This is so trailing spaces aren't visible when typing in insert mode
-augroup no_whitespace_insert
+augroup auto_insert
   autocmd!
-  autocmd InsertEnter * setlocal nolist
-  autocmd InsertLeave * setlocal list
+  " Toggle off `list` so white space isn't visible in insert mode
+  " Toggle off `ignorecase` because case sensitivity is shared between search
+  " and completion, we want search to be case insensitive, and completion to
+  " be case sensitive
+  autocmd InsertEnter * setlocal nolist | setlocal noignorecase
+  autocmd InsertLeave * setlocal list | setlocal ignorecase
 augroup END
 
 augroup nofilename_nofile
