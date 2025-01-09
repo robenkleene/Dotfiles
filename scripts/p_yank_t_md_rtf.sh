@@ -5,6 +5,4 @@ export LC_CTYPE=C
 
 set -euo pipefail
 
-input=$(cat)
-echo "$input" | pandoc --standalone -f markdown -t rtf | ~/.bin/safecopy
-echo "$input"
+exec ~/.bin/t_md_rtf | ~/.bin/safecopy
