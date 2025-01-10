@@ -2,6 +2,7 @@ There's no `C-b` / `C-e` to go to the beginning and end of line, like on the com
 
 - `⇧←` / `⇧→`, `⌥←` / `⌥→`: Move left / right by word
 - `C-a`: Insert last inserted text
+- `C-e`: Insert character below the cursor (more useful than it sounds, e.g., can be used to quickly insert Markdown checkbox list items on a new line)
 - `C-@`: Insert last inserted text and leave insert mode
 - `C-d` / `C-t`: indent / outdent line
 - `C-g u`: Split undo
