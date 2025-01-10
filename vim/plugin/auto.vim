@@ -63,14 +63,19 @@ augroup END
 "  autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 "augroup END
 
-augroup safecopy
-  autocmd!
-  " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
-  " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
-  " first delete the visual selection then paste, which means the visual
-  " selection will overwrite the clipboard
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('safecopy',join(v:event["regcontents"],"\n")) | end
-augroup END
+if getenv('SSH_CONNECTION')
+  " The `*` register for the system clipboard isn't available in SSH, so as a
+  " workaround use `safecopy` on every yank
+  augroup safecopy
+    autocmd!
+    " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
+    " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
+    " first delete the visual selection then paste, which means the visual
+    " selection will overwrite the clipboard
+    autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('safecopy',join(v:event["regcontents"],"\n")) | end
+  augroup END
+endif
+
 
 augroup quickfix_height
   autocmd!
