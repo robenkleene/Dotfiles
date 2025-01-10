@@ -57,11 +57,15 @@ augroup auto_insert
   autocmd InsertLeave * setlocal list | setlocal ignorecase
 augroup END
 
-"augroup nofilename_nofile
-"  autocmd!
-"  " Don't prompt for saving buffers with no file
-"  autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
-"augroup END
+" This is necessary because Vim does not have a command to write all modified
+" files that are backed by buffers and force quit modified buffers that aren't
+" backed by files (e.g., what you'd think `:wqa` with a bang would do, but it
+" doesn't support a bang).
+" augroup nofilename_nofile
+"   autocmd!
+"   " Don't prompt for saving buffers with no file
+"   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
+" augroup END
 
 if getenv('SSH_CONNECTION')
   " The `*` register for the system clipboard isn't available in SSH, so as a
