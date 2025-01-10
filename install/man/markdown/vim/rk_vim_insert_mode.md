@@ -1,3 +1,5 @@
+There's no `C-b` / `C-e` to go to the beginning and end of line, like on the command line. The best alternative is `C-o ^` / `C-o $` (`C-o` performs one normal mode command).
+
 - `⇧←` / `⇧→`, `⌥←` / `⌥→`: Move left / right by word
 - `C-a`: Insert last inserted text
 - `C-@`: Insert last inserted text and leave insert mode
