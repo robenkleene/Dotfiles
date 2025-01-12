@@ -11,7 +11,7 @@ delete:
 	@find "$(DESTINATION)" -name "*.scpt" -type f -delete
 
 compile_modified:
-	@git ls-files --modified --others -z '**/*.applescript' |\
+	@git ls-files --modified --others -z '**/*.$(SOURCE_EXT)' |\
 		while IFS= read -r -d '' file; do \
 		file_no_ext="$${file%.*}"; \
 		name="$${file_no_ext##*/}"; \
@@ -35,6 +35,19 @@ compile:
 decompile:
 	@cd $(DESTINATION) && \
 		find . -type f -name '*.$(DEST_EXT)' -print0 |\
+		while IFS= read -r -d '' file; do \
+		file_no_ext="$${file%.*}"; \
+		name="$${file_no_ext##*/}"; \
+		directory="$(SOURCE)/$${file%/*}"; \
+		destination="$$directory/$$name.$(SOURCE_EXT)"; \
+		mkdir -p "$$directory" && \
+		osadecompile "$$file" > "$$destination"; \
+		sed -i '' -e :a -e '/^\n*$$/{$$d;N;ba' -e '}' "$$destination"; \
+		done
+
+decompile_modified:
+	@cd $(DESTINATION) && \
+		git ls-files -L --modified --others -z '**/*.$(DST_EXT)' |\
 		while IFS= read -r -d '' file; do \
 		file_no_ext="$${file%.*}"; \
 		name="$${file_no_ext##*/}"; \
