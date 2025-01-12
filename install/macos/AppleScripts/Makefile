@@ -47,8 +47,9 @@ decompile:
 
 decompile_modified:
 	@cd $(DESTINATION) && \
-		git ls-files --modified --others -z '**/*.$(DST_EXT)' |\
+		git ls-files --modified --others -z '**/*.$(DEST_EXT)' |\
 		while IFS= read -r -d '' file; do \
+		[ ! -e "$$file" ] && continue; \
 		file_no_ext="$${file%.*}"; \
 		name="$${file_no_ext##*/}"; \
 		directory="$(SOURCE)/$${file%/*}"; \
