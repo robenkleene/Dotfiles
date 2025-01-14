@@ -1,5 +1,3 @@
-# `tig`
-
 - `Q`: Quit instantly
 - `q`: Close current page (last page quits)
 - `R`: Refresh
@@ -7,20 +5,24 @@
 - `s` / `S`: Go to status
 - `⌃D`: Cancel command prompt (i.e., `:` prompt)
 
-## Status
+# Status
 
 - `⌃P` / `⌃N`: Preview previous / next commit with diff visible
 
-## Diff
+# Diff
 
 - `!`: Revert hunk
 
-## Scrolling the Diff
+# Scrolling the Diff
 
 - `-`, `pgup` / `␣`, `pgdn`: Page up / down
 - `HOME` / `END`: Jump to the top / bottom of the diff
 - `⌃U`/ `⌃D` : Half-page up / down
 
-## Command Line
+# Command Line
 
 - `^D`: Cancel command line (e.g., search or `:` menu)
+
+# Search
+
+- `/(?i)<term>`: Force case-insensitive search
