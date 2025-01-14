@@ -1,7 +1,7 @@
 set vertical-split = no
 # This breaks being able to stage partial commits
 # set wrap-lines = yes
-set ignore-case = smart-case
+# set ignore-case = smart-case
 
 bind generic <Ctrl-B> move-page-up
 bind generic <Ctrl-F> move-page-down

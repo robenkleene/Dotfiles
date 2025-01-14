@@ -27,7 +27,9 @@ fi
 # `--quit-if-one-screen` is the default but gets disabled with `LESS` set
 # `--no-init` is also the default and gets disabled with `LESS` set (this makes
 # it so hitting `q` with `less` results on screen doesn't get cleared)
-export LESS="--no-init --ignore-case --incsearch --quit-if-one-screen --RAW-CONTROL-CHARS"
+# `--ignore-case` ignore case in search
+# `--incsearch` use incremental search
+export LESS="--no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
 
 # Color in `ls`
 export CLICOLOR=1
