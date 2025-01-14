@@ -67,16 +67,23 @@ augroup nofilename_nofile
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
 
-if getenv('SSH_CONNECTION')
+if has('clipboard')
+  " If the `*` register is available, and `tmux` is active, then also copy the
+  " register contents to the `tmux` buffer
+  augroup tmux_sync
+    autocmd!
+    autocmd TextYankPost * if getenv('TMUX') && (v:event["regname"] ==# '*' || v:event["regname"] ==# '+') | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  augroup END
+else
   " The `*` register for the system clipboard isn't available in SSH, so as a
   " workaround use `safecopy` on every yank
-  augroup safecopy
+  augroup safecopy_yank
     autocmd!
     " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
     " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
     " first delete the visual selection then paste, which means the visual
     " selection will overwrite the clipboard
-    autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('safecopy',join(v:event["regcontents"],"\n")) | end
+    autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
   augroup END
 endif
 
