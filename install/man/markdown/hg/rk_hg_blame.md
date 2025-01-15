@@ -1,1 +1,2 @@
 - `-l` / `--line-number`: Show line numbers
+- `hg blame foo.h | sed -n 7p`: Show blame only for line 7
