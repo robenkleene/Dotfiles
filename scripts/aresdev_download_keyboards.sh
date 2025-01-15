@@ -4,7 +4,7 @@
 set -uo pipefail
 
 if [[ "$1" = "moonlander" ]]; then
-  sftp aresdev:Developer/Projects/Hardware/qmk_firmware/.build/moonlander_robenkleene_macos.bin .
+  sftp aresdev:Developer/Projects/Hardware/qmk_firmware/.build/zsa_moonlander_robenkleene_macos.bin .
   exit 0
 fi
 if [[ "$1" = "ergodox" ]]; then
