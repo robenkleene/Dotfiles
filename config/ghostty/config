@@ -1,5 +1,9 @@
 # theme = robenkleene
-# The `macos-icon-ghost-color` and `macos-icon-screen-color` configurations are required for this style.
+# The `macos-icon-ghost-color` and `macos-icon-screen-color` configurations are
+# required for this style.
 # macos-icon = custom-style
 
+# Allow closing without confirmation to quit when `tmux` is attached
+# Whitelisting `tmux` as a process that doesn't require confirmaiton would be
+# better, but Ghostty doesn't support that
 confirm-close-surface = false
