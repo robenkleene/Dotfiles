@@ -1,3 +1,8 @@
+- `<C-g>`: Show relative path to file
+- `!<C-g>`: Show absolute path to file
+
+# `expand()`
+
 No these will only work for commands that take a file path, e.g., `:e %:h` will work, but `:echo %` will not.
 
 `echo expand('%')` will also work. 
@@ -6,7 +11,7 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 
 - `%`: Relative path
 
-# Modifiers
+## Modifiers
 
 - `%:p`: Absolute path
 - `%:h`: Head (parent)
@@ -14,14 +19,14 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 - `%:e`: File extension
 - `%:r`: Filename without extension
 
-## Examples
+### Examples
 
-### Registers
+#### Registers
 
 - `let @a = expand('%:t)`: Yank the current filename (`:t`) to register `a` (note that this doesn't trigger `TextYankPost`)
 - `let @a = expand('%:p:h)` Yank the absolute path (`:p`) to the directory of the current file (`:h`) to register `a` (note that order is important here, `%:h:p` won't expand)
 
-### Shell Commands
+#### Shell Commands
 
 Note that when using shell commands modifiers always expand to the full path
 
@@ -31,11 +36,11 @@ Note that when using shell commands modifiers always expand to the full path
 - `:!echo %:p:h<tab> | pbcopy`: Copy the absolute path to the parent directory using shell commands (note that order is important here, `%:h:p` won't expand)
 - `!pwd | pbcopy`: Yank current path
 
-# Insert / Command-Line Mode
+## Insert / Command-Line Mode
 
 - `<c-r>%`: Insert the relative path
 - `<c-r>=expand('%:p')`: Insert a path with a modifier
 
-# `cd`
+## `cd`
 
 - `cd %:h`: Go to the parent directory when editing a file.
