@@ -20,6 +20,7 @@
 - `:filt[er] /pattern/ ol`: Present a list of old files that match filter (`:filter` is always case sensitive by default, use `/\cpattern/` to ignore case)
 - You can hit `:` in this list to enter an edit command, e.g., `e #<1` to edit old file number `1`
 - `:e[dit] #<1`: Edit most recent file (`#<2` to edit second most recent, etc...), note that this *only* works for the most recent file list, for the buffer list
+- `:ar[gs] #<1 #<2`: Edit multiple old files
 - `:sp[lit] #<1`: Edit old file in horizontal split
 - `:vs[plit] #<1`: Edit old file in vertical split
 
