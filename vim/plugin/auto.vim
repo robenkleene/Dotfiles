@@ -1,31 +1,32 @@
 " Exclude some buffers from restoring view settings, this prevents certain
 " buffers that are meant to be transient from being save and restored when
 " loading sessions
-augroup save_view
-  autocmd!
-  autocmd BufWinLeave *
-  \   if expand('%') != ''
-  \&& &buftype !~ 'nofile'
-  \&& &buftype !~ 'help'
-  \&& &buftype !~ 'term'
-  \&& &filetype !~ 'gitcommit'
-  \&& &filetype !~ 'hgcommit'
-  \&& &filetype !~ 'pullrequest'
-  \&& &filetype !~ 'gitrebase'
-  \|    silent! mkview
-  \|  endif
-  autocmd BufWinEnter *
-  \   if expand('%') != ''
-  \&& &buftype !~ 'nofile'
-  \&& &buftype !~ 'help'
-  \&& &buftype !~ 'term'
-  \&& &filetype !~ 'gitcommit'
-  \&& &filetype !~ 'hgcommit'
-  \&& &filetype !~ 'pullrequest'
-  \&& &filetype !~ 'gitrebase'
-  \|    silent! loadview
-  \|  endif
-augroup END
+" Not sure why we had this at all, what does this restore?
+"augroup save_view
+"  autocmd!
+"  autocmd BufWinLeave *
+"  \   if expand('%') != ''
+"  \&& &buftype !~ 'nofile'
+"  \&& &buftype !~ 'help'
+"  \&& &buftype !~ 'term'
+"  \&& &filetype !~ 'gitcommit'
+"  \&& &filetype !~ 'hgcommit'
+"  \&& &filetype !~ 'pullrequest'
+"  \&& &filetype !~ 'gitrebase'
+"  \|    silent! mkview
+"  \|  endif
+"  autocmd BufWinEnter *
+"  \   if expand('%') != ''
+"  \&& &buftype !~ 'nofile'
+"  \&& &buftype !~ 'help'
+"  \&& &buftype !~ 'term'
+"  \&& &filetype !~ 'gitcommit'
+"  \&& &filetype !~ 'hgcommit'
+"  \&& &filetype !~ 'pullrequest'
+"  \&& &filetype !~ 'gitrebase'
+"  \|    silent! loadview
+"  \|  endif
+"augroup END
 
 " Autoreload files edited by other programs
 set autoread
