@@ -39,9 +39,9 @@ Including `type-to-nav` mode.
 - `e`: Edit file (e.g., an empty file that can't be edited with return)
 - `x`, `^X`: Delete file or directory (recursively)
 - `^R`: Rename file
-- `^R`: Duplicate file (hit enter when prompted to rename and it will ask for a new name to copy to)
 - `p`: Copy to new location
 - `v`: Move to new location
+- `^R`: Duplicate file (hit enter when prompted to rename and it will ask for a new name to copy to)
 - `nf`: New file
 - `nd`: New directory
 
