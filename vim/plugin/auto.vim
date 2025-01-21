@@ -24,8 +24,12 @@ augroup auto_insert
   " Toggle off `ignorecase` because case sensitivity is shared between search
   " and completion, we want search to be case insensitive, and completion to
   " be case sensitive
-  autocmd InsertEnter * setlocal nolist | setlocal noignorecase
-  autocmd InsertLeave * setlocal list | setlocal ignorecase
+  " Disabling ignorecase because it's off by default now and this overwrites
+  " that
+  "autocmd InsertEnter * setlocal nolist | setlocal noignorecase
+  "autocmd InsertLeave * setlocal list | setlocal ignorecase
+  autocmd InsertEnter * setlocal nolist
+  autocmd InsertLeave * setlocal list
 augroup END
 
 " This is necessary because Vim does not have a command to write all modified
