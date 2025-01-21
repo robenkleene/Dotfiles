@@ -37,7 +37,7 @@ autoload -Uz vcs_info
 # Add ${SSH_CONNECTION:+%#} after the last #% to put back double SSH prompt
 # `man zshmisc` for explanation
 # Time
-PS1='%F{$comment}%D{%I:%M %p} '
+PS1='%F{$comment}%D{%m/%d %I:%M %p} '
 # Machine Name
 PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
 # PS1+='%f%m '
