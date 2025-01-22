@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec pandoc --standalone -f markdown -t rtf
+exec pandoc --standalone -f markdown+smart -t rtf

@@ -5,4 +5,5 @@ export LC_CTYPE=C
 
 set -euo pipefail
 
-exec ~/.bin/t_md_rtf | ~/.bin/safecopy
+# For some reason using `safecopy` doesn't work here
+exec ~/.bin/t_md_rtf | pbcopy
