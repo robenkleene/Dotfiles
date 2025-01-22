@@ -130,9 +130,10 @@ n ()
     # default)
     # -Q: Don't confirm on quit with multiple contexts active
     # -A: Don't auto-enter directories
+    # -g: Use regular expressions instead of string matches
     # Note these must be set via `ENV` (e.g., instead of with `export`)
     # because with export it would affect the current session
-    env LESS="" NNN_PLUG='z:z;p:preview' nnn -AQ "$@"
+    env LESS="" NNN_PLUG='z:z;p:preview' nnn -AQg "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
