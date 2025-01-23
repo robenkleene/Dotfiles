@@ -23,10 +23,15 @@
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For loop"
   },
-  "Max JavaScript post variable": {
-    "prefix": "rk_max_post_var",
-    "body": "post(\"$1 = \" + ${1:result} + \"\\n\");",
-    "description": "Max JavaScript post variable"
+  "Max post": {
+    "prefix": [ "rk_max_post", "rk_max_p"],
+    "body": "post(\"${1:message}\");",
+    "description": "Max post"
+  },
+  "Max post variable": {
+    "prefix": [ "rk_max_post_var", "rk_max_pv" ],
+    "body": "post(\"$1 = \" + ${1} + \"\\n\");",
+    "description": "Max post variable"
   },
   "Max JavaScript template": {
     "prefix": "rk_max_template",
