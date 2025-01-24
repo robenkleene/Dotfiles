@@ -78,8 +78,9 @@ return {
     lspconfig.cssls.setup {}
     lspconfig.html.setup {}
     lspconfig.jsonls.setup {}
-    lspconfig.marksman.setup {}
-    lspconfig.marksman.setup {}
+    if vim.loop.os_uname().sysname == "Darwin" then
+      lspconfig.marksman.setup {}
+    end
     lspconfig.pyright.setup {}
     lspconfig.rust_analyzer.setup {}
     lspconfig.solargraph.setup {}

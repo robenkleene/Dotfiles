@@ -61,7 +61,8 @@ brew 'lua-language-server'
 # -iname *libraryname*.so*` to find the library path, then Update it like
 # `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu` and export
 # `LD_LIBRARY_PATH`
-brew 'marksman'
+# Tired of fixing this on Linux
+# brew 'marksman'
 
 # Games
 brew 'nethack'
