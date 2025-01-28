@@ -15,10 +15,8 @@ IFS= read -r line
 result="$line"
 eval result="$(printf "%q" "$line")"
 
-echo "result = $result"
-
 if [ ! -d "$result" ]; then
-  # Show error
+  echo "Error: $result is not a valid directory" >&2
   read -r _
   exit 1
 fi
