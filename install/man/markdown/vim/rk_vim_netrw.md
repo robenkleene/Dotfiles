@@ -37,9 +37,10 @@
 
 Note the file list won't update automatically, so refresh with `<C-l>`
 
-## Duplicate File
+## Duplicate File in the Current Directory
 
-There's no nice way to do this, using `!cp <src> <dst>`, using `C-r C-f` to fill in the current file at the cursor, is probably the best way.
+- The above steps also work in `Copy/Move File` (if this fails, it's usually something related to the `cd`, so repeat the steps from scratch after `cd` if there's an error)
+- `!cp <src> <dst>`, using `C-r C-f` to fill in the current file at the cursor, also works
 
 ## Shell Commands
 
