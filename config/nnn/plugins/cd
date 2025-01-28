@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC1090,SC1091
+. "$(dirname "$0")"/.nnn-plugin-helper
+
+# Must be after plugin helper
+# + for next
+# CTX=+
+# current context
+export CUR_CTX=1
+
+echo
+printf "cd: "
+IFS= read -r line
+result="$line"
+eval result="$(printf "%q" "$line")"
+
+echo "result = $result"
+
+if [ ! -d "$result" ]; then
+  # Show error
+  read -r _
+  exit 1
+fi
+
+nnn_cd "$result" "$CTX"
