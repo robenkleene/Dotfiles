@@ -46,14 +46,27 @@ augroup END
 " workaround use `safecopy` on every yank
 " Don't wrap this in `!has('clipboard')` because that will create different
 " behavior for whether a SSH is active or not, which isn't desirable
-augroup safecopy_yank
-  autocmd!
-  " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
-  " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
-  " first delete the visual selection then paste, which means the visual
-  " selection will overwrite the clipboard
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
-augroup END
+" Actually we're putting this back, if clipboard is not active, it will just
+" show a message on yank if prefixed with `"*`, which isn't a big deal
+if has('clipboard')
+  " If the `*` register is available then also copy the register contents to
+  " the `tmux` buffer.
+  " Add `if getenv('TMUX') && (` (and add the closing `)` around the `||`) to
+  " the beginning of the `if` to only execute if `tmux` is available.
+  augroup safecopy_yank
+    autocmd!
+    autocmd TextYankPost * if v:event["regname"] ==# '*' || v:event["regname"] ==# '+' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  augroup END
+else
+  augroup safecopy_yank
+    autocmd!
+    " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
+    " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
+    " first delete the visual selection then paste, which means the visual
+    " selection will overwrite the clipboard
+    autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
+  augroup END
+endif
 
 augroup quickfix_height
   autocmd!
