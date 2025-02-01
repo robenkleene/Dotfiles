@@ -72,6 +72,7 @@ cask 'anki'
 cask 'alacritty'
 cask 'processing'
 cask 'dosbox-staging'
+cask 'suspicious-package'
 
 # Media
 brew 'ffmpeg'
