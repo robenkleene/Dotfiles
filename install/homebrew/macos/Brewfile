@@ -71,6 +71,7 @@ cask 'blender'
 cask 'anki'
 cask 'alacritty'
 cask 'processing'
+cask 'dosbox-staging'
 
 # Media
 brew 'ffmpeg'
