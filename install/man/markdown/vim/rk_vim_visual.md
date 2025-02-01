@@ -1,8 +1,13 @@
 - `⌃v`: Visual Block Mode
 - `gv`: Reselect last visual block
 
+## Blocks
+
 - `vip`: Select paragraph
 - `va{V`: Select current function
+- `V$%`: More reliable way to select current function
+
+## Notes
 
 Text cut with `^v` or `v` is `blockwise`, if you then paste it, the text will interleave with any lines it overlaps with. To get around this behavior, just use the `:put` command, which pastes the text as if it were yanked `linewise`.
 

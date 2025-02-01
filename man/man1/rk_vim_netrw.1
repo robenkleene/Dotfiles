@@ -61,10 +61,14 @@ directory
 .PP
 Note the file list won\[cq]t update automatically, so refresh with
 \f[CR]<C\-l>\f[R]
-.SS Duplicate File
-There\[cq]s no nice way to do this, using \f[CR]!cp <src> <dst>\f[R],
-using \f[CR]C\-r C\-f\f[R] to fill in the current file at the cursor, is
-probably the best way.
+.SS Duplicate File in the Current Directory
+.IP \[bu] 2
+The above steps also work in \f[CR]Copy/Move File\f[R] (if this fails,
+it\[cq]s usually something related to the \f[CR]cd\f[R], so repeat the
+steps from scratch after \f[CR]cd\f[R] if there\[cq]s an error)
+.IP \[bu] 2
+\f[CR]!cp <src> <dst>\f[R], using \f[CR]C\-r C\-f\f[R] to fill in the
+current file at the cursor, also works
 .SS Shell Commands
 .IP \[bu] 2
 \f[CR]mx\f[R]: Run shell command on marked files (to specify where the
