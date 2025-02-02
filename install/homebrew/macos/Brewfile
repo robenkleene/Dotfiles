@@ -62,9 +62,6 @@ brew 'bat'
 # "adb devices"`
 brew 'watch'
 
-# macOS
-brew 'suspicious-package'
-
 # Cask GUI Apps
 tap 'homebrew/cask'
 cask 'blender'
