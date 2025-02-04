@@ -2,6 +2,7 @@
 - `-v`, `--invert-match`: Invert matches
 - `-o`, `--only-matching`: Only show match
 - `-q`, `--quiet`, `--silent`: Quit without showing matches
+- `-i`, `--ignore-case`: Ignore case
 - `--include=<glob>`: Include glob (can be added multiple times)
 - `--exclude=<glob>`: Exclude glob (can be added multiple times)
 - `--exclude-dir=<glob>`: Exclude glob (can be added multiple times)
