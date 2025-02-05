@@ -18,5 +18,6 @@
     "explorer.confirmDragAndDrop": false,
     "cSpell.userWords": [
         "Ableton"
-    ]
+    ],
+    "editor.minimap.enabled": false
 }
