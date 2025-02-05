@@ -15,5 +15,8 @@
             "strings": false
         }
     },
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "cSpell.userWords": [
+        "Ableton"
+    ]
 }
