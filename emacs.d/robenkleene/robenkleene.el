@@ -52,7 +52,6 @@
 (require 'robenkleene-cape)
 (require 'robenkleene-diminish)
 (require 'robenkleene-editorconfig)
-(require 'robenkleene-eglot)
 (require 'robenkleene-magit)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
