@@ -9,6 +9,10 @@ passing \f[CR]<file\-path>\f[R] to the programs STDIN
 .IP \[bu] 2
 \f[CR](lldb) process launch \-i <file\-path>\f[R]: Start program with
 STDIN and arguments
+.SH Break
+.IP \[bu] 2
+\f[CR](lldb) process handle SIGSEGV \-\-stop false\f[R]: Stop breaking
+on \f[CR]SIGSEGV\f[R]
 .SH Attach
 .IP \[bu] 2
 \f[CR]\-n\f[R] / \f[CR]\-\-name\f[R]: Attach to process by name
