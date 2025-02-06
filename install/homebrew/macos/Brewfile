@@ -14,7 +14,6 @@ brew 'gnu-typist'
 
 # Editor
 brew 'aspell'
-brew 'neovim'
 # The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
 brew 'tree-sitter'
 brew 'vim'
@@ -30,17 +29,10 @@ brew 'ruby-install'
 # Swift
 # Objective-C
 brew 'carthage'
-brew 'clang-format'
 # Go
 brew 'go'
 # json
 brew 'jq'
-# lua
-brew 'lua-language-server'
-# Rust
-brew 'rust-analyzer'
-# Markdown
-brew 'marksman'
 # Ruby
 # Some gems fail to install without `coreutils`
 brew 'coreutils'
