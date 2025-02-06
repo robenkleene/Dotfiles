@@ -23,7 +23,6 @@ brew 'aspell'
 brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
-brew 'neovim'
 # The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
 brew 'tree-sitter'
 brew 'gh'
@@ -41,28 +40,16 @@ brew 'pandoc'
 brew 'chruby'
 brew 'ruby-install'
 # Shell
-# Rust
-brew 'rust-analyzer'
 # C
 # brew 'valgrind'
 # C++
 brew 'cmake'
 # json
 brew 'jq'
-brew 'lua-language-server'
 # C++
 # Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
 # Removed to save disk space
 # brew 'llvm'
-# Markdown
-# On Linux this gets:
-# error while loading shared libraries: libgcc_s.so.1: cannot open shared
-# object file: No such file or directory Work around is to do `sudo find /
-# -iname *libraryname*.so*` to find the library path, then Update it like
-# `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu` and export
-# `LD_LIBRARY_PATH`
-# Tired of fixing this on Linux
-# brew 'marksman'
 
 # Games
 brew 'nethack'
