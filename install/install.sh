@@ -45,21 +45,20 @@ fi
 
 export PATH="~/.brew/bin/:$PATH"
 
-# Use nvim to test whether brew install has already run
-if ! command -v nvim &> /dev/null; then
+# Use `rg` to test whether brew install has already run
+if ! command -v rg &> /dev/null; then
   # Let homebrew fail because it fails too often
   ./homebrew/install.sh || true
 fi
 
-./files/symlinks.sh
-./node/install.sh
-./ruby/install.sh
-./python/install.sh
-./rust/install.sh
-./man/install.sh
-./snippets/install.sh
 ./emacs/install.sh
-./helix/install.sh
+./files/symlinks.sh
+./man/install.sh
+./node/install.sh
+./python/install.sh
+./ruby/install.sh
+./rust/install.sh
+./snippets/install.sh
 if [[ "$(uname)" = "Darwin" ]]; then
   ./macos/install.sh
 fi
