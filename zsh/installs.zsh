@@ -43,7 +43,8 @@ compdef -d bat
 
 if [[ -d ~/.gem/ruby/3.0.2/bin ]]; then
   path=(~/.gem/ruby/3.0.2/bin $path)
-elif [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
+fi
+if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
   path=(~/.rubies/ruby-3.0.2/bin $path)
 fi
 
