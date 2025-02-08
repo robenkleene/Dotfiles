@@ -1,7 +1,0 @@
-# frozen_string_literal: true
-
-source 'https://rubygems.org'
-gem 'repla'
-gem 'ripper-tags'
-gem 'rubocop'
-gem 'webrick'

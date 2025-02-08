@@ -12,4 +12,3 @@ fi
 chruby 3.0.2 || ruby-install ruby 3.0.2
 
 cd "$(dirname "$0")" || exit 1
-./gems/install.sh "$@"
