@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_ex
-# name: Test expression
-# --
-[[ ${0:true} ]]

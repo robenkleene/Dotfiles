@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_p
-# name: Print
-# --
-echo "${1:Message}"

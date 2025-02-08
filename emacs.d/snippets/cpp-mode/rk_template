@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_template
-# name: C++ template
-# --
-#include <iostream>
-
-int main() {
-  std::cout << "Hello, World!" << std::endl;
-}

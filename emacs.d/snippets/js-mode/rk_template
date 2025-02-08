@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_template
-# name: JavaScript template
-# --
-#!/usr/bin/env node
-
