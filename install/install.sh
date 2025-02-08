@@ -51,7 +51,6 @@ if ! command -v rg &> /dev/null; then
   ./homebrew/install.sh || true
 fi
 
-./emacs/install.sh
 ./files/symlinks.sh
 ./man/install.sh
 ./node/install.sh

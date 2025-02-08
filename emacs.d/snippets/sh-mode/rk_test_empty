@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_test_empty
-# name: True if empty variable
-# --
--z "${${0:1}:-}"

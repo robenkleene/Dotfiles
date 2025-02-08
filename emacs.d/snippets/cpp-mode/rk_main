@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_main
-# name: Main function
-# --
-int main() {
-  ${1:std::cout << "Hello, World!" << std::endl;}
-}
