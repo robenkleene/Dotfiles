@@ -48,7 +48,6 @@ brew 'yt-dlp'
 # VR
 # Use another install method
 # brew 'scrcpy'
-brew 'fzf'
 brew 'bat'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
