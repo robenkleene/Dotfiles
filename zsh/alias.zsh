@@ -1,5 +1,5 @@
-alias -- -='cd -'
-alias ..='cd ..'
+# alias -- -='cd -'
+# alias ..='cd ..'
 
 if [[ "$(uname)" = "Linux" ]]; then
   alias ls='ls --color=auto'
