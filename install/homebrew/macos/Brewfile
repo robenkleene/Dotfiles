@@ -15,6 +15,7 @@ brew 'gnu-typist'
 
 # Editor
 brew 'vim'
+brew 'aspell'
 brew 'editorconfig'
 
 # Languages
