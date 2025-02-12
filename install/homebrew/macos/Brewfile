@@ -28,13 +28,8 @@ brew 'ruby-install'
 # Swift
 # Objective-C
 brew 'carthage'
-# Go
-brew 'go'
 # json
 brew 'jq'
-# Ruby
-# Some gems fail to install without `coreutils`
-brew 'coreutils'
 
 # Special
 brew 'pandoc'
@@ -49,21 +44,13 @@ brew 'yt-dlp'
 # brew 'scrcpy'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
-brew 'watch'
+# brew 'watch'
 
 # Cask GUI Apps
 tap 'homebrew/cask'
 cask 'blender'
 cask 'anki'
-cask 'alacritty'
 cask 'processing'
 cask 'dosbox-staging'
 cask 'gzdoom'
 cask 'suspicious-package'
-
-# Media
-brew 'ffmpeg'
-brew 'imagemagick'
-
-# Games
-brew 'nethack'
