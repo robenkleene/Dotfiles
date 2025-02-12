@@ -15,15 +15,13 @@ brew 'universal-ctags'
 # colors (otherwise they show up as escape sequences)
 brew 'less'
 brew 'gnu-typist'
+brew 'gh'
 
 # Editor
 brew 'aspell'
 brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
-# The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
-brew 'tree-sitter'
-brew 'gh'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
 
