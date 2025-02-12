@@ -2,8 +2,9 @@
 brew 'zsh'
 brew 'git'
 brew 'tig'
-brew 'tmux'
 brew 'ripgrep'
+# Definitely need for remote servers
+brew 'tmux'
 brew 'fd'
 brew 'zoxide'
 brew 'nnn'
@@ -13,9 +14,6 @@ brew 'universal-ctags'
 brew 'gnu-typist'
 
 # Editor
-brew 'aspell'
-# The Swift Tree Sitter grammar depends on the `tree-sitter` CLI
-brew 'tree-sitter'
 brew 'vim'
 brew 'editorconfig'
 
@@ -48,7 +46,6 @@ brew 'yt-dlp'
 # VR
 # Use another install method
 # brew 'scrcpy'
-brew 'bat'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
 brew 'watch'
