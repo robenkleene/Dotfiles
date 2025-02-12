@@ -11,4 +11,5 @@ set main-view-date = relative-compact
 
 set mouse = true
 
-bind generic Y !@bash -c "echo -n %(commit) | ~/.bin/safecopy"
+bind generic Y >sh -c "echo -n %(commit) | ~/.bin/safecopy"
+bind generic V >sh -c "git show %(commit) | vim -"
