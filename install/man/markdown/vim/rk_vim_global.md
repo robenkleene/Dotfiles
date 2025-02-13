@@ -1,0 +1,5 @@
+- `g[lobal]/`
+- `v[global]/` / `g!/`: Invert (i.e., like `grep -v`, `v/foo/d`, delete lines not matching pattern)
+- `g/^$/d`: Delete blank lines
+- `g/foo/p`: Print lines matching pattern
+- `g/^$/d`: Delete blank lines

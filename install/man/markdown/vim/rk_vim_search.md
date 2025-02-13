@@ -9,7 +9,3 @@
 **Motion Method**: Do a motion edit like `cgn`, this will edit the next match, after the edit hit the `.` to perform the same operation on the next match automatically.
 
 - `dgn`: Delete the next match
-
-# `g/`
-
-- `g/^$/d`: Delete blank lines
