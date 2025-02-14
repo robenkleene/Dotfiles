@@ -7,8 +7,11 @@ fi
 alias grep="`which grep` --color=auto"
 
 if [[ "$TERM" = 'xterm-ghostty' ]]; then
-  # alias rg="`which rg` --hyperlink-format file://{host}{path}"
-  alias rg="`which rg` --hyperlink-format vscode://file/{path}:{line}:{column}"
+  # Check for `${aliases[rg]}` to allow `zshrc_local` to override
+  if [[ ! ${aliases[rg]} ]]; then
+    # alias rg="`which rg` --hyperlink-format file://{host}{path}"
+    alias rg="`which rg` --hyperlink-format vscode://file/{path}:{line}:{column}"
+  fi
   alias fd="`which fd` --hyperlink"
 fi
 
