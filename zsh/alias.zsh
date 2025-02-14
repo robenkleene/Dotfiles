@@ -6,6 +6,11 @@ if [[ "$(uname)" = "Linux" ]]; then
 fi
 alias grep="`which grep` --color=auto"
 
+if [[ "$TERM" = 'xterm-ghostty' ]]; then
+  alias rg="`which rg` --hyperlink-format file://{host}{path}"
+  alias fd="`which fd` --hyperlink"
+fi
+
 # egit
 # These are aliases instead of shell functions because they set the `ssh`
 # status of the current shell
