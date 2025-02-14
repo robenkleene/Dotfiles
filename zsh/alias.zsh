@@ -7,7 +7,8 @@ fi
 alias grep="`which grep` --color=auto"
 
 if [[ "$TERM" = 'xterm-ghostty' ]]; then
-  alias rg="`which rg` --hyperlink-format file://{host}{path}"
+  # alias rg="`which rg` --hyperlink-format file://{host}{path}"
+  alias rg="`which rg` --hyperlink-format vscode://file/{path}:{line}:{column}"
   alias fd="`which fd` --hyperlink"
 fi
 

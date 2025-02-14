@@ -18,5 +18,6 @@
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
     "editor.copyWithSyntaxHighlighting": false,
-    "files.defaultLanguage": "markdown"
+    "files.defaultLanguage": "markdown",
+    "security.promptForLocalFileProtocolHandling": false
 }
