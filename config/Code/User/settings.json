@@ -19,5 +19,6 @@
     "editor.minimap.enabled": false,
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
-    "security.promptForLocalFileProtocolHandling": false
+    "security.promptForLocalFileProtocolHandling": false,
+    "window.openFilesInNewWindow": "on"
 }
