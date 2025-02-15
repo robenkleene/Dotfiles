@@ -9,7 +9,8 @@ cd "$(dirname "$0")" || exit 1
 # Give a consistent path for brew installs
 brew_bin_dir="$HOME/.brew"
 brew_bin="$brew_bin_dir/bin"
-if [[ ! -e "$brew_bin" ]]; then
+brew_share="$brew_bin_dir/share"
+if [[ ! -e "$brew_bin" || ! -e "$brew_share" ]]; then
   if [[ -e "/usr/local/bin/brew" ]]; then
     brew_prefix=$(/usr/local/bin/brew --prefix)
   elif [[ -e "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
@@ -17,9 +18,17 @@ if [[ ! -e "$brew_bin" ]]; then
   elif [[ -e "/opt/homebrew/bin/brew" ]]; then
     brew_prefix=$(/opt/homebrew/bin/brew --prefix)
   fi
+
   brew_prefix_bin="$brew_prefix/bin"
   if [[ ! -e "$brew_prefix_bin" ]]; then
     echo "Error: $brew_prefix_bin does not exist" >&2
+    exit 1
+  fi
+
+  # `cmake` was exiting if `share` wasn't also created relatively
+  brew_prefix_share="$brew_prefix/share"
+  if [[ ! -e "$brew_prefix_share" ]]; then
+    echo "Error: $brew_prefix_share does not exist" >&2
     exit 1
   fi
 
@@ -27,6 +36,7 @@ if [[ ! -e "$brew_bin" ]]; then
     mkdir -p "$brew_bin_dir"
   fi
   ln -s "$brew_prefix_bin" "$brew_bin"
+  ln -s "$brew_prefix_share" "$brew_share"
 fi
 
 # VS Code
