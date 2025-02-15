@@ -30,6 +30,8 @@ brew 'ruby-install'
 brew 'carthage'
 # json
 brew 'jq'
+# cpp
+brew 'cmake'
 
 # Special
 brew 'pandoc'
