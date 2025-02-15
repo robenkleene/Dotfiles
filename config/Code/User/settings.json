@@ -9,8 +9,9 @@
     "editor.fontSize": 13,
     "[markdown]": {
         "editor.wordWrap": "on",
+        "editor.tabCompletion": true,
         "editor.quickSuggestions": {
-            "other": true,
+            "other": false,
             "comments": false,
             "strings": false
         }
