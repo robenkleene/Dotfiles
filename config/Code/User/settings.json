@@ -9,7 +9,7 @@
     "editor.fontSize": 13,
     "[markdown]": {
         "editor.wordWrap": "on",
-        "editor.tabCompletion": true,
+        "editor.tabCompletion": "onlySnippets",
         "editor.quickSuggestions": {
             "other": false,
             "comments": false,
