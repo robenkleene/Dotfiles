@@ -8,6 +8,7 @@ brew 'tmux'
 brew 'fd'
 brew 'zoxide'
 brew 'nnn'
+brew 'eza'
 # Really useful to see diff by word quickly
 brew 'git-delta'
 brew 'universal-ctags'

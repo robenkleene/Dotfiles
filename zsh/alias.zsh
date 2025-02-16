@@ -16,6 +16,7 @@ if [[ "$TERM" = 'xterm-ghostty' ]]; then
     alias delta="`which delta` --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
   fi
   alias fd="`which fd` --hyperlink"
+  alias eza="`which eza` --hyperlink"
 fi
 
 # egit
