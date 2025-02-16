@@ -4,9 +4,6 @@
 # Trick to get `xargs` to use aliases, e.g., `fd foo | xargs eza` will not use
 # aliases without this
 alias xargs='xargs '
-if [[ "$(uname)" = "Linux" ]]; then
-  alias ls='ls --color=auto'
-fi
 alias grep="`which grep` --color=auto"
 
 if [[ "$TERM" = 'xterm-ghostty' ]]; then
