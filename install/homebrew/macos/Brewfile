@@ -33,6 +33,8 @@ brew 'carthage'
 brew 'jq'
 # cpp
 brew 'cmake'
+# Generate `compile_commands.json` for `clangd` language server from `make` commands
+brew 'bear'
 
 # Special
 brew 'pandoc'
