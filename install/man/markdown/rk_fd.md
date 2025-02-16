@@ -8,6 +8,7 @@
 - `-t d` / `-t f`: Specify only directories / files
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
 - `-E` / `--exclude`: Exclude files matching a glob pattern, e.g., `-E '*foo*'`
+- `-l` / `--list-details`: List details (like `ls -l`)
 
 # Globs
 
