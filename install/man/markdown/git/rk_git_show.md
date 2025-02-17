@@ -1,1 +1,1 @@
-- `git show master:Cartfile`: Show contents of file from another branch
+- `git show master:./<relative-path>`: Show contents of file from another branch (the `./` can be omitted if at the root)
