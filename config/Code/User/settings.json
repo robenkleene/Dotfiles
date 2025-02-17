@@ -20,5 +20,7 @@
     "editor.minimap.enabled": false,
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
-    "security.promptForLocalFileProtocolHandling": false
+    "security.promptForLocalFileProtocolHandling": false,
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native"
 }
