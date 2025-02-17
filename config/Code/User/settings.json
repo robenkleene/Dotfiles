@@ -20,7 +20,15 @@
     "editor.minimap.enabled": false,
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
+    // Disable prompt for opening files via URL
     "security.promptForLocalFileProtocolHandling": false,
+    // Touched by `CodeLLDB`
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-    "lldb.launch.expressions": "native"
+    "lldb.launch.expressions": "native",
+    // Disable hints in the editor, e.g., `ask GitHub Copilot`
+    "workbench.editor.empty.hint": "hidden",
+    // Disable hints in the terminal, e.g., `ask GitHub Copilot`
+    "terminal.integrated.initialHint": false,
+    // Don't show `GitHub Copilot` autocompletion suggestions
+    "github.copilot.editor.enableAutoCompletions": false
 }
