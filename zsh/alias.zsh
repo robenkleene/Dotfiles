@@ -9,7 +9,10 @@ alias grep="`which grep` --color=auto"
 if [[ "$TERM" = 'xterm-ghostty' ]]; then
   # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
   if [[ ! ${aliases[rg]} ]]; then
-    alias rg="`which rg` --hyperlink-format vscode://file/{path}:{line}:{column}"
+    # `--with-filename` when searching a single file, e.g., `rg <term> <file>`,
+    # the filename is omitted which means hyperlinks don't work. Forcing the
+    # filename makes hyperlinks work.
+    alias rg="`which rg` --with-filename --hyperlink-format vscode://file/{path}:{line}:{column}"
   fi
   if [[ ! ${aliases[hg]} ]]; then
     alias hg="`which hg` --config pager.pager='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
