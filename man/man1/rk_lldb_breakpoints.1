@@ -5,19 +5,22 @@
 Note that \f[CR]b\f[R] is \f[I]not\f[R] simply shorthand for
 \f[CR]breakpoint\f[R], these commands require \f[CR]breakpoint\f[R].
 .IP \[bu] 2
-\f[CR]breakpoint set \-n\f[R]: Set a breakpoint by a symbol, e.g., for a
-function name
+\f[CR](lldb) breakpoint set \-n\f[R]: Set a breakpoint by a symbol,
+e.g., for a function name
 .IP \[bu] 2
-\f[CR]breakpoint set \-\-file test.c \-\-line 12\f[R] /
+\f[CR](lldb) breakpoint set \-\-file test.c \-\-line 12\f[R] /
 \f[CR]b test.c:12\f[R]
 .IP \[bu] 2
-\f[CR]breakpoint list\f[R]: List breakpoints (note \f[CR]b list\f[R]
-does not work)
+\f[CR](lldb) breakpoint list\f[R]: List breakpoints (note
+\f[CR]b list\f[R] does not work)
 .IP \[bu] 2
-\f[CR]breakpoint delete 1\f[R]
+\f[CR](lldb) breakpoint delete 1\f[R]
 .IP \[bu] 2
-\f[CR]breakpoint enable 1\f[R]
+\f[CR](lldb) breakpoint enable 1\f[R]
 .IP \[bu] 2
-\f[CR]breakpoint disable 1\f[R]
+\f[CR](lldb) breakpoint disable 1\f[R]
 .IP \[bu] 2
-\f[CR]breakpoint delete\f[R]: Delete all breakpoints
+\f[CR](lldb) breakpoint delete\f[R]: Delete all breakpoints
+.IP \[bu] 2
+\f[CR](lldb) process handle SIGSEGV \-\-stop false\f[R]: Stop breaking
+on \f[CR]SIGSEGV\f[R]
