@@ -17,6 +17,10 @@ if [[ "$TERM" = 'xterm-ghostty' ]]; then
   fi
   alias fd="`which fd` --hyperlink"
   alias eza="`which eza` --hyperlink"
+else
+  if [[ ! ${aliases[rg]} ]]; then
+    alias rg="`which rg` --no-heading --with-filename --line-number --column"
+  fi
 fi
 
 # egit
