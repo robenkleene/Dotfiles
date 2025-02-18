@@ -6,7 +6,7 @@
 alias xargs='xargs '
 alias grep="`which grep` --color=auto"
 
-if [[ "$TERM" = 'xterm-ghostty' ]]; then
+if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
   # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
   if [[ ! ${aliases[rg]} ]]; then
     # `--with-filename` when searching a single file, e.g., `rg <term> <file>`,
