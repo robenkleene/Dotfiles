@@ -1,13 +1,3 @@
-# `zshenv` is things for all shells
-
-# Don't load the rest of this file if it has already been sourced in particular
-# this was added to prevent the path from being re-ordered when a `zsh`
-# subshell is started (`vim` does this).
-if [[ -v ZSHENV_SOURCED ]]; then
-  return
-fi
-export ZSHENV_SOURCED=1
-
 # Put this in `zshenv` so that `.zshrc_local` can add to the path and have it
 # be picked up in non-interactive sessions (e.g., running scripts from Emacs
 # via `M-!`)
