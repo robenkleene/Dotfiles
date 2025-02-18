@@ -9,11 +9,13 @@ alias grep="`which grep` --color=auto"
 if [[ "$TERM" = 'xterm-ghostty' ]]; then
   # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
   if [[ ! ${aliases[rg]} ]]; then
-    # alias rg="`which rg` --hyperlink-format file://{host}{path}"
     alias rg="`which rg` --hyperlink-format vscode://file/{path}:{line}:{column}"
   fi
-  export GIT_PAGER='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
+  if [[ ! ${aliases[hg]} ]]; then
+    alias hg="`which hg` --config pager.pager='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
+  fi
   if [[ ! ${aliases[delta]} ]]; then
+    export GIT_PAGER='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
     alias delta="`which delta` --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
   fi
   alias fd="`which fd` --hyperlink"
