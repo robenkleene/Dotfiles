@@ -2,9 +2,9 @@
 
 rg_delta() {
   if [ -t 1 ]; then
-      command ~/.brew/bin/rg --json --with-filename "$@" | delta
+    command ~/.brew/bin/rg --json --with-filename "$@" | ${aliases[delta]:-delta}
   else
-      command ~/.brew/bin/rg "$@"
+    command ~/.brew/bin/rg "$@"
   fi
 }
 
