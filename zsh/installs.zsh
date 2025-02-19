@@ -1,5 +1,13 @@
 # `zshrc` is things for interactive shells
 
+rg_delta() {
+  if [ -t 1 ]; then
+      command ~/.brew/bin/rg --json --with-filename "$@" | delta
+  else
+      command ~/.brew/bin/rg "$@"
+  fi
+}
+
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1

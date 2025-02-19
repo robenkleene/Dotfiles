@@ -12,7 +12,8 @@ if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
     # `--with-filename` when searching a single file, e.g., `rg <term> <file>`,
     # the filename is omitted which means hyperlinks don't work. Forcing the
     # filename makes hyperlinks work.
-    alias rg="`which rg` --with-filename --hyperlink-format vscode://file/{path}:{line}:{column}"
+    # alias rg="`which rg` --with-filename --hyperlink-format vscode://file/{path}:{line}:{column}"
+    alias rg=rg_delta
   fi
   if [[ ! ${aliases[hg]} ]]; then
     alias hg="`which hg` --config pager.pager='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
