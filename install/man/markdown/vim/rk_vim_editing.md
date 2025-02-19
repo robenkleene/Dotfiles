@@ -2,6 +2,7 @@
 - `~`: Toggle case
 - `gq`: Wrap lines using `formatprg` and `formatexpr`
 - `gw`: Wrap lines ignoring `formatprg` and `formatexpr`
+- `O` / `o`: Enter insert mode with new line above / below (this will use the current indent level, to edit at the start of the line, his `<esc>i` next)
 
 # Undo
 
