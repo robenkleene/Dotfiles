@@ -50,3 +50,7 @@ To search for a flag, prefix it with a space, e.g., ` --foo`.
 # `lesskey`
 
 - Doesn't work with the default `less` on macOS (even though the `man` page says it's available, macOS comes with a compiled version of `less` missing `lesskey` support)
+
+# `...skipping...`
+
+`less` inserts `...skipping...` when searching forward for text, it will be removed if the regular commands are used for scrolling up (e.g., `b` `C-b`). This usually happens when using the mouse scroll wheel to scroll up.

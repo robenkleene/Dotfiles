@@ -61,3 +61,8 @@ To search for a flag, prefix it with a space, e.g., \f[CR]\-\-foo\f[R].
 Doesn\[cq]t work with the default \f[CR]less\f[R] on macOS (even though
 the \f[CR]man\f[R] page says it\[cq]s available, macOS comes with a
 compiled version of \f[CR]less\f[R] missing \f[CR]lesskey\f[R] support)
+.SH \f[CR]...skipping...\f[R]
+\f[CR]less\f[R] inserts \f[CR]...skipping...\f[R] when searching forward
+for text, it will be removed if the regular commands are used for
+scrolling up (e.g., \f[CR]b\f[R] \f[CR]C\-b\f[R]).
+This usually happens when using the mouse scroll wheel to scroll up.
