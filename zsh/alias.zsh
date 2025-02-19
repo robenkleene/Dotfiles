@@ -22,7 +22,6 @@ if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
     alias delta="`which delta` --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
   fi
   alias fd="`which fd` --hyperlink"
-  alias eza="`which eza` --hyperlink"
 else
   if [[ ! ${aliases[rg]} ]]; then
     alias rg="`which rg` --no-heading --with-filename --line-number --column"
