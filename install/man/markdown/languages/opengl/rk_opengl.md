@@ -19,6 +19,26 @@ const char *fragmentShaderSource = "#version 330 core\n"
     "}\n\0";
 ```
 
+## Passing Data to a Vertex Shader
+
+``` cpp
+float vertices[] = {
+    -0.5f, -0.5f, 0.0f, // left  
+    0.5f, -0.5f, 0.0f, // right 
+    0.0f,  0.5f, 0.0f  // top   
+}; 
+// 0. copy our vertices array in a buffer for OpenGL to use
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+// 1. then set the vertex attributes pointers
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);  
+// 2. use our shader program when we want to render an object
+glUseProgram(shaderProgram);
+// 3. now draw the object 
+someOpenGLFunctionThatDrawsOurTriangle();
+```
+
 ## Compiling a Shader
 
 ``` cpp
