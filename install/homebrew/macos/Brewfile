@@ -7,6 +7,8 @@ brew 'ripgrep'
 brew 'tmux'
 brew 'fd'
 brew 'zoxide'
+# for `zoxide` `zi` to go to recent directories
+brew 'fzf'
 brew 'nnn'
 # Really useful to see diff by word quickly
 brew 'git-delta'
