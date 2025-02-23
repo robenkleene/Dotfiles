@@ -1,6 +1,8 @@
 brew 'aspell'
 brew 'editorconfig'
 brew 'fd'
+# for `zoxide` `zi` to go to recent directories
+brew 'fzf'
 brew 'gh'
 brew 'git-delta'
 brew 'nnn'
