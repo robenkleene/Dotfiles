@@ -56,7 +56,7 @@
   },
   "If `uname`": {
     "prefix": "rk_if_uname",
-    "body": "if [[ \"$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
+    "body": "if [[ \"\\$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"\\$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
     "description": "If platform"
   },
   "If args": {
