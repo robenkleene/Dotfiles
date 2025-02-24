@@ -6,6 +6,11 @@
 alias xargs='xargs '
 alias grep="`which grep` --color=auto"
 
+if [[ "$(uname)" = "Linux" ]]; then
+  # `ls` does colors by default on macOS
+  alias ls="`which ls` --color=auto"
+fi
+
 if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
   # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
   if [[ ! ${aliases[rg]} ]]; then
