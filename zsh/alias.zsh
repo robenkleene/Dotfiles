@@ -29,9 +29,10 @@ if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
   fi
   alias fd="`which fd` --hyperlink"
 else
-  if [[ ! ${aliases[rg]} ]]; then
-    alias rg="`which rg` --no-heading --with-filename --line-number --column"
-  fi
+  export GIT_PAGER='delta'
+  # if [[ ! ${aliases[rg]} ]]; then
+  #   alias rg="`which rg` --no-heading --with-filename --line-number --column"
+  # fi
 fi
 
 # egit
