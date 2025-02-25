@@ -47,6 +47,12 @@ _system_copy_line() {
 }
 zle -N _system_copy_line
 
+_system_kill_line() {
+  zle kill-whole-line
+  printf "%s" "$CUTBUFFER" | ~/.bin/safecopy
+}
+zle -N _system_kill_line
+
 _system_copy_region_as_kill() {
   zle copy-region-as-kill
   # Deactivate region
@@ -76,7 +82,7 @@ zle -N _system_copy_region_as_kill
 bindkey -e "^[${key[BackSpace]}" _bash_backward_kill_word
 # This is the only thing that seems to work on macOS
 bindkey -e "^[^?" _bash_backward_kill_word
-bindkey -e "^X^X" _system_copy_line
+bindkey -e "^X^X" _system_kill_line
 bindkey -e "^[W" _system_copy_region_as_kill
 bindkey -e "^[w" _system_copy_region_as_kill
 
