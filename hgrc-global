@@ -15,7 +15,6 @@ pager = less
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 # ignore = show, log, diff
 d = diff --root .
-s = diff -c . --root .
 [committemplate]
 %unset emptymsg
 [extensions]
