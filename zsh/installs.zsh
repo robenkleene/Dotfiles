@@ -2,7 +2,7 @@
 
 rg_delta() {
   if [ -t 1 ]; then
-    command ~/.brew/bin/rg --json --with-filename "$@" | eval "${aliases[delta]:-delta}"
+    command ~/.brew/bin/rg --json --with-filename "$@" | eval "${aliases[delta]:-delta --syntax-theme=none}"
   else
     command ~/.brew/bin/rg "$@"
   fi

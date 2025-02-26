@@ -23,15 +23,15 @@ if [[ "$TERM" = 'xterm-ghostty' \
     alias rg=rg_delta
   fi
   if [[ ! ${aliases[hg]} ]]; then
-    alias hg="`which hg` --config pager.pager='delta --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
+    alias hg="`which hg` --config pager.pager='delta --syntax-theme=none --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
   fi
-  export GIT_PAGER='delta --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
+  export GIT_PAGER='delta --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
   if [[ ! ${aliases[delta]} ]]; then
-    alias delta="`which delta` --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
+    alias delta="`which delta` --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
   fi
   alias fd="`which fd` --hyperlink"
 else
-  export GIT_PAGER='delta'
+  export GIT_PAGER='delta --syntax-theme=none'
   # if [[ ! ${aliases[rg]} ]]; then
   #   alias rg="`which rg` --no-heading --with-filename --line-number --column"
   # fi
