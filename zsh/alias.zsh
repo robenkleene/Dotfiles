@@ -11,7 +11,9 @@ if [[ "$(uname)" = "Linux" ]]; then
   alias ls="`which ls` --color=auto"
 fi
 
-if [[ "$TERM" = 'xterm-ghostty' || "$TERM_PROGRAM" = 'vscode' ]]; then
+if [[ "$TERM" = 'xterm-ghostty' \
+  || "$TERM_PROGRAM" = 'iTerm.app' \
+  || "$TERM_PROGRAM" = 'vscode' ]]; then
   # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
   if [[ ! ${aliases[rg]} ]]; then
     # `--with-filename` when searching a single file, e.g., `rg <term> <file>`,
