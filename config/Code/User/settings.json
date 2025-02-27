@@ -17,7 +17,6 @@
         }
     },
     "explorer.confirmDragAndDrop": false,
-    "editor.minimap.enabled": false,
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
     // Disable prompt for opening files via URL
