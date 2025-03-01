@@ -1,5 +1,3 @@
-# `zshrc` is things for interactive shells
-
 rg_delta() {
   if [ -t 1 ]; then
     command ~/.brew/bin/rg --json --with-filename "$@" | eval "${aliases[delta]:-delta --syntax-theme=none}"
@@ -40,11 +38,6 @@ if [[ -f "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
   source "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-# Bat
-# The default completion for `bat` fails on partial matches (e.g., `bat md`) to
-# show all Markdown files
-compdef -d bat
-
 # chruby
 # This is ridiculously slow
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
@@ -82,13 +75,6 @@ if [[ -d $HOME/.cargo/bin ]]; then
   path=(~/.cargo/bin $path)
 fi
 
-# nvm
-# Official installation is really slow:
-# Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # This is faster:
 # Automatic node version switching is probably broken by this
 nvm() {
@@ -102,14 +88,6 @@ if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
   path=(~/.nvm/versions/node/v21.6.1/bin $path)
 fi
-
-# fzf
-# if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
-#   source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
-# fi
-# if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
-#   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
-# fi
 
 # nnn
 n ()

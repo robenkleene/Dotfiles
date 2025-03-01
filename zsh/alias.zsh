@@ -32,9 +32,6 @@ if [[ "$TERM" = 'xterm-ghostty' \
   alias fd="`which fd` --hyperlink"
 else
   export GIT_PAGER='delta --syntax-theme=none'
-  # if [[ ! ${aliases[rg]} ]]; then
-  #   alias rg="`which rg` --no-heading --with-filename --line-number --column"
-  # fi
 fi
 
 # egit
