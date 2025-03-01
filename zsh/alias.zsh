@@ -1,37 +1,11 @@
-# alias -- -='cd -'
-# alias ..='cd ..'
-
 # Trick to get `xargs` to use aliases, e.g., `fd foo | xargs eza` will not use
 # aliases without this
 alias xargs='xargs '
+# Colors
 alias grep="`which grep` --color=auto"
-
 if [[ "$(uname)" = "Linux" ]]; then
   # `ls` does colors by default on macOS
   alias ls="`which ls` --color=auto"
-fi
-
-if [[ "$TERM" = 'xterm-ghostty' \
-  || "$TERM_PROGRAM" = 'iTerm.app' \
-  || "$TERM_PROGRAM" = 'vscode' ]]; then
-  # Check for `${aliases[<alias>]}` to allow `zshrc_local` to override
-  if [[ ! ${aliases[rg]} ]]; then
-    # `--with-filename` when searching a single file, e.g., `rg <term> <file>`,
-    # the filename is omitted which means hyperlinks don't work. Forcing the
-    # filename makes hyperlinks work.
-    # alias rg="`which rg` --with-filename --hyperlink-format vscode://file/{path}:{line}:{column}"
-    alias rg=rg_delta
-  fi
-  if [[ ! ${aliases[hg]} ]]; then
-    alias hg="`which hg` --config pager.pager='delta --syntax-theme=none --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'"
-  fi
-  export GIT_PAGER='delta --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
-  if [[ ! ${aliases[delta]} ]]; then
-    alias delta="`which delta` --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}"
-  fi
-  alias fd="`which fd` --hyperlink"
-else
-  export GIT_PAGER='delta --syntax-theme=none'
 fi
 
 # egit
