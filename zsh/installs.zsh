@@ -36,6 +36,10 @@ if command -v brew &> /dev/null; then
   fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath)
 fi
 
+if [[ -f "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
 # Bat
 # The default completion for `bat` fails on partial matches (e.g., `bat md`) to
 # show all Markdown files
