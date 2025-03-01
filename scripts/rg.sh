@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-set -x
 if [ -t 1 ]; then
   exec ~/.brew/bin/rg --json --with-filename "$@" |\
     ~/.brew/bin/delta --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format='vscode://file/{path}:{line}'
