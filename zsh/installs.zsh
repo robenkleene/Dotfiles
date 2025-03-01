@@ -1,10 +1,3 @@
-rg_delta() {
-  if [ -t 1 ]; then
-    command ~/.brew/bin/rg --json --with-filename "$@" | eval "${aliases[delta]:-delta --syntax-theme=none}"
-  else
-    command ~/.brew/bin/rg "$@"
-  fi
-}
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
@@ -87,9 +80,6 @@ if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
   path=(~/.nvm/versions/node/v21.6.1/bin $path)
 fi
-
-# Delta
-export GIT_PAGER='delta --syntax-theme=none --relative-paths --hyperlinks --hyperlinks-file-link-format vscode://file/{path}:{line}'
 
 # nnn
 n ()
