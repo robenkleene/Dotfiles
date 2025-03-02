@@ -25,10 +25,6 @@ set breakindent
 " Incremental search
 set noincsearch
 
-" This makes it easier to see which line a search match is on when in the
-" quickfix window
-set cursorline
-
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
@@ -175,12 +171,10 @@ set isfname+=[,]
 " the bottom in `netrw`
 set suffixes-=.h
 
-" With my current colorscheme, `iceberg`, this breaks comparing two buffers
+" `cursorline` makes it easier to see which line a search match is on when in
+" the quickfix window
+" With `iceberg`, this breaks comparing two buffers
 " with `:windo diffthis`
-" Don't bother with this because it isn't super helpful to find the cursor
-" when there's multiple splits with highlighted lines. The easiest way to
-" repliably find the cursor quickly is set the terminal emulator to use a
-" bright cursor color.
-"set cursorline
+set cursorline
 " Highlight just the line number
 "set cursorlineopt=number
