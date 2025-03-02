@@ -30,5 +30,7 @@
     "terminal.integrated.initialHint": false,
     // Don't show `GitHub Copilot` autocompletion suggestions
     "github.copilot.editor.enableAutoCompletions": false,
-    "workbench.colorTheme": "Default Light Modern"
+    "workbench.colorTheme": "Default Light Modern",
+    // Disable compact folders, this makes it hard to know what the real folder structure on disk is
+    "explorer.compactFolders": false
 }
