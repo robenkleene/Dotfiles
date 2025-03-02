@@ -7,6 +7,7 @@
     // Don't ask for confirmation every drag and drop in Explorer
     "explorer.confirmDragAndDrop": false,
     // Automatically open a parent git repository when opening a subfolder
+    // (By default this prompts)
     "git.openRepositoryInParentFolders": "always",
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
