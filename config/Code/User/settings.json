@@ -7,7 +7,6 @@
     // Don't ask for confirmation every drag and drop in Explorer
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.macOptionIsMeta": true,
-    "editor.fontSize": 13,
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.tabCompletion": "onlySnippets",
