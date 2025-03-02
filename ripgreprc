@@ -1,9 +1,4 @@
-# --smart-case
-# These are less relevant with hyperlink support
-# --no-heading
-# --with-filename
-# --line-number
-# --column
+--vimgrep
 # Clear the background
 --colors=match:none
 --colors=match:fg:cyan
