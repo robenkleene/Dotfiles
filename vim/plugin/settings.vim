@@ -25,6 +25,10 @@ set breakindent
 " Incremental search
 set noincsearch
 
+" This makes it easier to see which line a search match is on when in the
+" quickfix window
+set cursorline
+
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
