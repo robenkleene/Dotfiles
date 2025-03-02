@@ -1,6 +1,7 @@
 # Trick to get `xargs` to use aliases, e.g., `fd foo | xargs eza` will not use
 # aliases without this
 alias xargs='xargs '
+
 # Colors
 alias grep="`which grep` --color=auto"
 if [[ "$(uname)" = "Linux" ]]; then
