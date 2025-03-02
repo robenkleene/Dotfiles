@@ -1,11 +1,12 @@
 {
+    // Don't prompt for trust every time a workspace is opened
     "security.workspace.trust.enabled": false,
-    "workbench.startupEditor": "none",
-    "git.openRepositoryInParentFolders": "always",
-    "extensions.ignoreRecommendations": true,
+    // Don't show a welcome page on startup
+    // When opening a new empty window, start with an untitled file
+    "workbench.startupEditor": "newUntitledFile",
+    // Don't ask for confirmation every drag and drop in Explorer
+    "explorer.confirmDragAndDrop": false,
     "terminal.integrated.macOptionIsMeta": true,
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "cpp.enableInlayHints": true,
     "editor.fontSize": 13,
     "[markdown]": {
         "editor.wordWrap": "on",
@@ -16,7 +17,7 @@
             "strings": false
         }
     },
-    "explorer.confirmDragAndDrop": false,
+    // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
     // Disable prompt for opening files via URL
@@ -31,6 +32,4 @@
     // Don't show `GitHub Copilot` autocompletion suggestions
     "github.copilot.editor.enableAutoCompletions": false,
     "workbench.colorTheme": "Default Light Modern",
-    // Disable compact folders, this makes it hard to know what the real folder structure on disk is
-    "explorer.compactFolders": false
 }
