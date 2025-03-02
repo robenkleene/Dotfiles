@@ -6,6 +6,8 @@
     "workbench.startupEditor": "newUntitledFile",
     // Don't ask for confirmation every drag and drop in Explorer
     "explorer.confirmDragAndDrop": false,
+    // Automatically open a parent git repository when opening a subfolder
+    "git.openRepositoryInParentFolders": "always",
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
         "editor.wordWrap": "on",
