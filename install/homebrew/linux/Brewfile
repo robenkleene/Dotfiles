@@ -1,5 +1,4 @@
 # Shell
-brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'tig'
 brew 'tmux'
