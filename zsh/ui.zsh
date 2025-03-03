@@ -44,14 +44,14 @@ PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
 # There's also a convention to bold directories
 PS1+='%B%F{blue}%20<...<%~%<<%b '
 # Jobs
-PS1+='%B%F{yellow}%(1j.&%j .)%b'
+PS1+='%F{yellow}%(1j.&%j .)'
 # Exit status
 # Ignore exit statuses `146` and `148` because it's they're sent every time a
 # job is backgrounded.
 # `146` on macOS
 # `148` on Linux
 # PS1+='%F{red}%(146?..%(148?..%(?..%?? )))'
-PS1+='%B%F{red}%(?..%?? )%b'
+PS1+='%F{red}%(?..%?? )'
 PS1+='%f%# '
 
 # Right prompt
