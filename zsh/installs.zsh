@@ -26,10 +26,6 @@ if command -v brew &> /dev/null; then
   fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath)
 fi
 
-if [[ -f "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-  source "$HOMEBREW_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
 # chruby
 # This is ridiculously slow
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then

@@ -1,6 +1,5 @@
 # Shell
 brew 'zsh'
-brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'tig'
 brew 'ripgrep'
