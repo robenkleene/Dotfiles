@@ -1,5 +1,3 @@
-# Settings
-
 # Allow substitution in prompts
 setopt PROMPT_SUBST
 # Remove space to the right of `RPROMPT`
@@ -42,7 +40,8 @@ PS1='%F{$comment}%D{%m/%d %I:%M %p} '
 PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
 # PS1+='%f%m '
 # Path
-PS1+='%F{cyan}%20<...<%~%<< '
+# `ls` by default uses blue for directories
+PS1+='%F{blue}%20<...<%~%<< '
 # Jobs
 PS1+='%F{yellow}%(1j.&%j .)'
 # Exit status
