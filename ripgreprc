@@ -1,7 +1,7 @@
 --vimgrep
 # Clear the background
---colors=match:none
---colors=match:fg:cyan
---colors=path:fg:cyan
---colors=line:fg:08
---colors=column:fg:08
+# --colors=match:none
+# --colors=match:fg:cyan
+# --colors=path:fg:cyan
+# --colors=line:fg:08
+# --colors=column:fg:08
