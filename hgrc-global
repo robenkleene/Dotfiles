@@ -6,7 +6,7 @@ ignore = ~/.hgignore
 merge = internal:merge3
 [pager]
 pager = less
-[alias]
+# [alias]
 # `hg checkout --clean .` didn't work with a `hg histedit` edit, but `hg revert --all` did
 # Too dangerous?
 # cleanup = !hg purge && hg revert --all
@@ -14,7 +14,7 @@ pager = less
 # Note this also has to be in `~/.hgrc` for some reason
 # Don't do this, instead just use `G q` to go to the end of the file and quit
 # ignore = show, log, diff
-d = diff --root .
+# d = diff --root .
 [committemplate]
 %unset emptymsg
 [extensions]
