@@ -2,8 +2,9 @@
     // Don't prompt for trust every time a workspace is opened
     "security.workspace.trust.enabled": false,
     // Don't show a welcome page on startup
-    // When opening a new empty window, start with an untitled file
-    "workbench.startupEditor": "newUntitledFile",
+    // `"newUntitledFile"` Start with an untitled file
+    // `"none"`: Start with nothing
+    "workbench.startupEditor": "none",
     // Don't ask for confirmation every drag and drop in Explorer
     "explorer.confirmDragAndDrop": false,
     // Automatically open a parent git repository when opening a subfolder
