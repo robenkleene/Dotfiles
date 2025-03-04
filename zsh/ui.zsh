@@ -42,7 +42,7 @@ PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
 # Path
 # `ls` by default uses blue for directories
 # There's also a convention to bold directories
-PS1+='%B%F{blue}%20<...<%~%<<%b '
+PS1+='%F{blue}%20<...<%~%<< '
 # Jobs
 PS1+='%F{yellow}%(1j.&%j .)'
 # Exit status
