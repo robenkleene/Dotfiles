@@ -4,7 +4,7 @@
     // Don't show a welcome page on startup
     // `"newUntitledFile"` Start with an untitled file
     // `"none"`: Start with nothing
-    "workbench.startupEditor": "none",
+    "workbench.startupEditor": "newUntitledFile",
     // Don't ask for confirmation every drag and drop in Explorer
     "explorer.confirmDragAndDrop": false,
     // Automatically open a parent git repository when opening a subfolder
