@@ -54,6 +54,7 @@ Including `type-to-nav` mode.
 
 - `!`, `^]`: Spawn new shell on top of `nnn` (use `exit` to get back to `nnn`, `echo $NNNLVL` will show the current level)
 - `]`: Open native command prompt to enter shell commands
+- In shells and command prompts, `$f1` holds the selected file path in the first pane, and `$d1` holds the directory in the first pane, `$f2` and `$d2` is the same for the second pane, etc...
 
 ## Native Command Prompt
 
