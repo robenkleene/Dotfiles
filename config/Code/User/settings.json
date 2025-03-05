@@ -33,6 +33,5 @@
     // Disable hints in the terminal, e.g., `ask GitHub Copilot`
     "terminal.integrated.initialHint": false,
     // Don't show `GitHub Copilot` autocompletion suggestions
-    "github.copilot.editor.enableAutoCompletions": false,
-    "workbench.colorTheme": "Default Light Modern",
+    "github.copilot.editor.enableAutoCompletions": false
 }
