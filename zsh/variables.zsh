@@ -13,6 +13,10 @@ export LC_CTYPE=en_US.UTF-8
 # was set earlier
 typeset -U path
 path=(~/.bin ~/.brew/bin $path)
+# Allow local bin to override
+if [[ -d "$HOME/.bin-local" ]]; then
+  path=(~/.bin-local $path)
+fi
 
 manpath=(~/.man ${(s/:/)MANPATH})
 typeset -U manpath

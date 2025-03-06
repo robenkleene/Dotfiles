@@ -13,6 +13,10 @@ fi
 # shells, e.g., BBEdit `Run Unix Command...`
 # `-U` prevents duplicates
 export -U path=(~/.bin ~/.brew/bin $path)
+# Allow local bin to override
+if [[ -d "$HOME/.bin-local" ]]; then
+  path=(~/.bin-local $path)
+fi
 
 if [[ "$(uname)" = "Linux" ]]; then
   export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
