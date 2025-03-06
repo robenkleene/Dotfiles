@@ -3,11 +3,7 @@
 
 # `expand()`
 
-No these will only work for commands that take a file path, e.g., `:e %:h` will work, but `:echo %` will not.
-
-`echo expand('%')` will also work. 
-
-`:h expand()` for more.
+*These only work for commands that take a file path*, e.g., `:e %:h` will work, but `:echo %` will not. `echo expand('%')` does work. `!echo %<tab>` also works *but not in `netrw` buffers, but `!echo %:h:p` does work in `netrw` buffers, but it's sometimes wrong, it's safer to just use `b:netrw_curdir`*
 
 - `%`: Relative path
 
@@ -18,6 +14,7 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 - `%:t`: Tail (filename)
 - `%:e`: File extension
 - `%:r`: Filename without extension
+- `:h expand()` for more.
 
 ### Examples
 
@@ -28,12 +25,12 @@ No these will only work for commands that take a file path, e.g., `:e %:h` will 
 
 #### Shell Commands
 
-Note that when using shell commands modifiers always expand to the full path
+Note that when using shell commands modifiers always expand to the full path:
 
 - `:!echo %<tab> | pbcopy`: Copy the relative path to the file using shell commands
 - `:!echo %:h<tab> | pbcopy`: Copy the relative path to the parent directory using shell commands
 - `:!echo %:p<tab> | pbcopy`: Copy the absolute path to a file using shell commands
-- `:!echo %:p:h<tab> | pbcopy`: Copy the absolute path to the parent directory using shell commands (note that order is important here, `%:h:p` won't expand)
+- `:!echo %:p:h<tab> | pbcopy`: Copy the absolute path to the parent directory using shell commands (note that order is important here, `%:h:p` won't expand) *This is the only one of these that works in `netrw` buffers, but it's sometimes wrong, it's safer to just use `b:netrw_curdir`*
 - `!pwd | pbcopy`: Yank current path
 
 ## Insert / Command-Line Mode
