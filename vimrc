@@ -48,9 +48,9 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
-"   set background=dark
-" endif
+if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
+  set background=dark
+endif
 " colorscheme wildcharm
 colorscheme lunaperche
 
