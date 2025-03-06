@@ -23,11 +23,6 @@ Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
 Plug 'robenkleene/partshell.vim'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'prabirshrestha/asyncomplete.vim'
-
-let g:asyncomplete_matchfuzzy = 0
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
 let g:netrw_nogx = 1
