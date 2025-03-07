@@ -24,6 +24,7 @@ Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'robenkleene/partshell.vim'
 Plug 'robenkleene/gotogrep.vim'
+Plug 'robenkleene/gotodiff.vim'
 " More reliable open browser
 Plug 'tyru/open-browser.vim'
 let g:netrw_nogx = 1
