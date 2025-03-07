@@ -10,10 +10,10 @@ yellow = "#AAAA00"
 
 [colors.normal]
 black = "#000000"
-blue = "#3792E3"
+blue = "#95a7cd"
 cyan = "#00AFAF"
 green = "#6FCA70"
 magenta = "#C978EB"
-red = "#AA5511"
+red = "#DB7B34"
 white = "#FFFFFF"
 yellow = "#BBBB00"
