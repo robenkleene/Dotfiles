@@ -1,0 +1,41 @@
+[colors.primary]
+# Kleene Purple
+# background = "#211930"
+# background = "#000000"
+# background = "#222222"
+# foreground = "#FFFFFF"
+# foreground = "#000000"
+
+[colors.cursor]
+cursor = "#00BB00"
+text = "0xffffff"
+
+[env]
+ALACRITTY = "1"
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[window]
+# Two 80 width text files side-by-side with a bit of buffer
+# Largest height divisible by 24 that's comfortable on a laptop
+# dimensions = { columns = 220, lines = 72 }
+# Fixes `M-n`
+option_as_alt = "Both"
+padding = { x = 4, y = 2 }
+# opacity = 0.9
+# Resizing by discreet steps
+resize_increments = true
+
+[general]
+# import = ["/Users/robenkleene/.config/alacritty/modifiers.toml", "/Users/robenkleene/.config/alacritty/robenkleene.toml"]
+import = ["/Users/robenkleene/.config/alacritty/modifiers.toml"]
