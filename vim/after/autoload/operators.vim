@@ -1,10 +1,11 @@
-function operators#YankGrep(context = {}, type = '', onlyline = 0) abort
+function operators#YankGrep(context = {}, type = '', onlyline = 0, includecolumn = 0) abort
   if a:type == ''
     let context = #{
           \ dot_command: v:false,
           \ extend_block: '',
           \ virtualedit: [&l:virtualedit, &g:virtualedit],
           \ only_line: a:onlyline,
+          \ include_column: a:includecolumn,
           \ }
     let &operatorfunc = function('operators#YankGrep', [context])
     set virtualedit=block
@@ -65,10 +66,13 @@ function operators#YankGrep(context = {}, type = '', onlyline = 0) abort
     " Use `:make` instead to process this output
     if a:context.only_line
       let l:col = col('.')
-      let l:result .= l:file_path.':'.l:idx.':'.l:col
-      " Don't include the column for one line because it isn't always
-      " supported (e.g., when creating breakpoints in `lldb`)
-      " let l:result .= l:file_path.':'.l:idx
+      if a:context.include_column
+        let l:result .= l:file_path.':'.l:idx.':'.l:col
+      else
+        " Don't include the column for one line because it isn't always
+        " supported (e.g., when creating breakpoints in `lldb`)
+        let l:result .= l:file_path.':'.l:idx
+      endif
       echom l:result
     else
       let l:result .= l:file_path.':'.l:idx.":1:\n"
