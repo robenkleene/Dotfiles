@@ -26,7 +26,7 @@ done
 cd "$(dirname "$0")" || exit 1
 
 dst_dir="../man/markdown/snippets/"
-src_dir="~/.config/Code/User/snippets"
+src_dir="$HOME/.config/Code/User/snippets"
 if [[ ! -e "$dst_dir" ]]; then
   mkdir -p "$dst_dir"
 fi
@@ -61,5 +61,5 @@ else
     echo $dst
     echo
     # ./snippet_to_md.sh "$src" "$dst"
-  done < <( find "$src_dir" -type f -name "*.md" )
+  done < <( find "$src_dir" -type f -name "*.json" )
 fi
