@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.brew/bin/rg --hyperlink-format='vscode://file/{path}:{line}' "$@"
+exec ~/.brew/bin/rg --hyperlink-format='vscode://file/{path}:{line}:{column}' "$@"
