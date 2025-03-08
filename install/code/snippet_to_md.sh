@@ -11,5 +11,5 @@ lang=$(basename "${src%.*}")
 
 jq -r --arg lang "$lang" '
   to_entries[] | 
-  "# \(.key)\n\n\(.value.description)\n\n``` \($lang)\n\(.value.body)\n```"
+  "# \(.key)\n\n\(.value.description)\n\n``` \($lang)\n\(.value.body)\n```\n"
 ' "$src" >> "$dst"
