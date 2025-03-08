@@ -38,10 +38,7 @@ if [[ "$modified" == "true" ]]; then
       src="$REPLY"
       lang=$(basename "${src%.*}")
       dst="$dst_dir/rk_snippets_${lang}.md"
-      # ./snippet_to_md.sh "$src" "$dst"
-      echo $src
-      echo $dst
-      echo
+      ./snippet_to_md.sh "$src" "$dst"
     fi
   done < <( git ls-files --modified --others '$src_dir/*.json' )
 else
@@ -49,17 +46,13 @@ else
   # Fish Shell only completes from `man1` (general commands), `man6` (games),
   # and `man8` (system commands)
   if [[ -d "$dst_dir" ]]; then
-    echo "Deleting from $dst_dir"
-    # find -L "$dst_dir" -name "*.md" -type f -exec rm {} +
+    find -L "$dst_dir" -name "*.md" -type f -exec rm {} +
   fi
 
   while IFS= read -r; do
     src="$REPLY"
     lang=$(basename "${src%.*}")
     dst="$dst_dir/rk_snippets_${lang}.md"
-    echo $src
-    echo $dst
-    echo
-    # ./snippet_to_md.sh "$src" "$dst"
+    ./snippet_to_md.sh "$src" "$dst"
   done < <( find "$src_dir" -type f -name "*.json" )
 fi
