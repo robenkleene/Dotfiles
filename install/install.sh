@@ -53,6 +53,7 @@ fi
 
 ./files/symlinks.sh
 ./man/install.sh
+./code/install.sh
 ./node/install.sh
 ./python/install.sh
 ./ruby/install.sh
