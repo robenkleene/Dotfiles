@@ -25,8 +25,11 @@ done
 
 cd "$(dirname "$0")" || exit 1
 
-destination_dir="../man/markdown/snippets/"
-source_dir="~/.config/Code/User/snippets"
+dst_dir="../man/markdown/snippets/"
+src_dir="~/.config/Code/User/snippets"
+if [[ ! -e "$dst_dir" ]]; then
+  mkdir -p "$dst_dir"
+fi
 
 if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
@@ -34,22 +37,29 @@ if [[ "$modified" == "true" ]]; then
     if [[ -e "$REPLY" ]]; then
       src="$REPLY"
       lang=$(basename "${src%.*}")
-      dst="$destination_dir/rk_snippets_${lang}.md"
-      ./snippet_to_md.sh "$src" "$dst"
+      dst="$dst_dir/rk_snippets_${lang}.md"
+      # ./snippet_to_md.sh "$src" "$dst"
+      echo $src
+      echo $dst
+      echo
     fi
-  done < <( git ls-files --modified --others '$destination_dir/*.json' )
+  done < <( git ls-files --modified --others '$src_dir/*.json' )
 else
   # Delete all existing
   # Fish Shell only completes from `man1` (general commands), `man6` (games),
   # and `man8` (system commands)
-  if [[ -d "$destination_dir" ]]; then
-    find -L "$destination_dir" -name "*.md" -type f -exec rm {} +
+  if [[ -d "$dst_dir" ]]; then
+    echo "Deleting from $dst_dir"
+    # find -L "$dst_dir" -name "*.md" -type f -exec rm {} +
   fi
 
   while IFS= read -r; do
     src="$REPLY"
     lang=$(basename "${src%.*}")
-    dst="$destination_dir/rk_snippets_${lang}.md"
-    ./snippet_to_md.sh "$src" "$dst"
-  done < <( find markdown -type f -name "*.md" )
+    dst="$dst_dir/rk_snippets_${lang}.md"
+    echo $src
+    echo $dst
+    echo
+    # ./snippet_to_md.sh "$src" "$dst"
+  done < <( find "$src_dir" -type f -name "*.md" )
 fi
