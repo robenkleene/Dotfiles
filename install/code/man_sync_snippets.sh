@@ -37,8 +37,10 @@ if [[ "$modified" == "true" ]]; then
     if [[ -e "$REPLY" ]]; then
       src="$REPLY"
       lang=$(basename "${src%.*}")
-      dst="$dst_dir/rk_snippets_${lang}.md"
-      ./snippet_to_md.sh "$src" "$dst"
+      if [[ "$lang" != "package" ]]; then
+        dst="$dst_dir/rk_snippets_${lang}.md"
+        ./snippet_to_md.sh "$src" "$dst"
+      fi
     fi
   done < <( git ls-files --modified --others '$src_dir/*.json' )
 else
@@ -52,7 +54,9 @@ else
   while IFS= read -r; do
     src="$REPLY"
     lang=$(basename "${src%.*}")
-    dst="$dst_dir/rk_snippets_${lang}.md"
-    ./snippet_to_md.sh "$src" "$dst"
+    if [[ "$lang" != "package" ]]; then
+      dst="$dst_dir/rk_snippets_${lang}.md"
+      ./snippet_to_md.sh "$src" "$dst"
+    fi
   done < <( find "$src_dir" -type f -name "*.json" )
 fi
