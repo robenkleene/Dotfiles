@@ -25,7 +25,7 @@ done
 
 cd "$(dirname "$0")" || exit 1
 
-dst_dir="../man/markdown/snippets/"
+dst_dir="../man/markdown/snippets"
 src_dir="$HOME/.config/Code/User/snippets"
 if [[ ! -e "$dst_dir" ]]; then
   mkdir -p "$dst_dir"
