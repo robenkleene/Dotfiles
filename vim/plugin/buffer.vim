@@ -1,8 +1,41 @@
+" Autoreload files edited by other programs
+set autoread
+" `CursorHold` interval in ms, default is `4000`
+set updatetime=1000
+" This causes a delay when opening the command-line window with `<C-f>`?
+" Maybe `set autoread` is enough?
+augroup reload_buffers
+  autocmd!
+  " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
+  " <file>` while just `checktime` does. (`silent! checktime` when editing the
+  " same file in another `vim` instance though.)
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
+augroup END
+
+" Do not extend comments automatically, e.g., with `O`
+augroup disable_autocomments
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
+
 " Indent wrapped lines
 set breakindent
 
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
+augroup auto_insert
+  autocmd!
+  " Toggle off `list` so white space isn't visible in insert mode
+  " Toggle off `ignorecase` because case sensitivity is shared between search
+  " and completion, we want search to be case insensitive, and completion to
+  " be case sensitive
+  " Disabling ignorecase because it's off by default now and this overwrites
+  " that
+  "autocmd InsertEnter * setlocal nolist | setlocal noignorecase
+  "autocmd InsertLeave * setlocal list | setlocal ignorecase
+  autocmd InsertEnter * setlocal nolist
+  autocmd InsertLeave * setlocal list
+augroup END
 
 " Disable swap files, this allows multiple instances to edit the same file
 set noswapfile
@@ -34,3 +67,14 @@ set nowrap
 " it from the buffer list and discard its contents. This means `gF` to go to a
 " grep line followed by `<C-o>` to go back will fail
 set hidden
+
+" This is necessary because Vim does not have a command to write all modified
+" files that are backed by buffers and force quit modified buffers that aren't
+" backed by files (e.g., what you'd think `:wqa` with a bang would do, but it
+" doesn't support a bang).
+augroup nofilename_nofile
+  autocmd!
+  " Don't prompt for saving buffers with no file
+  autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
+augroup END
+
