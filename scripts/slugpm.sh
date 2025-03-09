@@ -8,9 +8,6 @@ while getopts ":t:d:foh" option; do
     t)
       title="$OPTARG"
       ;;
-    d)
-      directory="$OPTARG"
-      ;;
     f)
       filename="true"
       ;;
