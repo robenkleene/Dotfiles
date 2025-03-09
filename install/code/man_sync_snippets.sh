@@ -36,12 +36,12 @@ make_snippets() {
     lang="objc"
   fi
   if [[ "$lang" != "package" && "$lang" != "global" ]]; then
-    dst="$dst_dir/rk_lang_${lang}_snippets.md"
+    dst="$dst_dir/rk_lang_${lang}_snip.md"
     ./snippet_to_md.sh "$src" "$dst"
   fi
 }
 
-dst_dir="../man/markdown/snippets"
+dst_dir="../man/markdown/snip"
 src_dir="$HOME/.config/Code/User/snippets"
 if [[ ! -e "$dst_dir" ]]; then
   mkdir -p "$dst_dir"
