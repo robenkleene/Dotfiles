@@ -42,7 +42,7 @@ if [[ "${archive}" = "true" ]]; then
     fi
     destination_file="$PWD/archive/$filename"
     if [[ ! -f "$destination_file" ]]; then
-      echo "Error: $destination_file is not a file" >
+      echo "Error: $destination_file is not a file" >&2
     fi
     echo "$text" >>"$destination_file"
     exit 0
