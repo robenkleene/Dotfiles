@@ -19,3 +19,9 @@ set wildmode=longest:full,full
  set completeopt-=preview
 " Use a vertical wildmenu
 " set wildoptions=pum
+
+" Automatically close the completion preview
+augroup completion_preview
+  autocmd!
+  autocmd CompleteDone * pclose
+augroup END
