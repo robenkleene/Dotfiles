@@ -3,7 +3,6 @@
 set -euo pipefail
 
 filename="false"
-orgmode="false"
 while getopts ":t:d:foh" option; do
   case "$option" in
     t)
@@ -14,9 +13,6 @@ while getopts ":t:d:foh" option; do
       ;;
     f)
       filename="true"
-      ;;
-    o)
-      orgmode="true"
       ;;
     h)
       echo "Usage: command [-hl] [-t <title>] [-d <directory>]"
@@ -92,13 +88,8 @@ make_file() {
   fi
 }
 
-if [[ "$orgmode" == "true" ]]; then
-  contents="#+title: $title"
-  ext="org"
-else
-  contents="# $title"
-  ext="md"
-fi
+contents="# $title"
+ext="md"
 slug=$(echo "$title" | ~/.bin/f_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
@@ -108,9 +99,5 @@ mkdir "$dated_slug/archive/projects"
 if [[ "$filename" == "true" ]]; then
   echo -n "$directory$readme_path"
 else
-  if [[ "$orgmode" == "true" ]]; then
-    echo -n "[[./$directory$readme_path][$title]]"
-  else
-    echo -n "[$title]($directory$readme_path)"
-  fi
+  echo -n "[$title]($directory$readme_path)"
 fi
