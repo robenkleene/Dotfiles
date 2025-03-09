@@ -37,8 +37,15 @@ if [[ "$modified" == "true" ]]; then
     if [[ -e "$REPLY" ]]; then
       src="$REPLY"
       lang=$(basename "${src%.*}")
-      if [[ "$lang" != "package" ]]; then
-        dst="$dst_dir/rk_snippets_${lang}.md"
+      if [[ "$lang" = "javascript" ]]; then
+        lang="js"
+      elif [[ "$lang" = "shellscript" ]]; then
+        lang="bash"
+      elif [[ "$lang" = "objective-c" ]]; then
+        lang="objc"
+      fi
+      if [[ "$lang" != "package" && "$lang" != "global" ]]; then
+        dst="$dst_dir/rk_lang_${lang}_snippets.md"
         ./snippet_to_md.sh "$src" "$dst"
       fi
     fi
@@ -54,8 +61,8 @@ else
   while IFS= read -r; do
     src="$REPLY"
     lang=$(basename "${src%.*}")
-    if [[ "$lang" != "package" ]]; then
-      dst="$dst_dir/rk_snippets_${lang}.md"
+    if [[ "$lang" != "package" && "$lang" != "global" ]]; then
+      dst="$dst_dir/rk_lang_${lang}_snippets.md"
       ./snippet_to_md.sh "$src" "$dst"
     fi
   done < <( find "$src_dir" -type f -name "*.json" )
