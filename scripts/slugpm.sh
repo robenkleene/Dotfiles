@@ -2,14 +2,10 @@
 
 set -euo pipefail
 
-filename="false"
 while getopts ":t:d:foh" option; do
   case "$option" in
     t)
       title="$OPTARG"
-      ;;
-    f)
-      filename="true"
       ;;
     h)
       echo "Usage: command [-hl] [-t <title>] [-d <directory>]"
@@ -42,9 +38,7 @@ if [[ -z "$title" ]]; then
   exit 1
 fi
 
-if [[ -z "${directory:-}" ]]; then
-  directory="projects"
-fi
+directory="projects"
 
 if [[ -n "$directory" ]]; then
   # Remove leading and trailing slash and leading period
@@ -93,8 +87,4 @@ dated_slug="$today-$slug"
 readme_path=$(make_file "README.${ext}" "$dated_slug" "$contents")
 make_file "README.${ext}" "$dated_slug/archive" "$contents Archive" >/dev/null
 mkdir "$dated_slug/archive/projects"
-if [[ "$filename" == "true" ]]; then
-  echo -n "$directory$readme_path"
-else
-  echo -n "[$title]($directory$readme_path)"
-fi
+echo -n "[$title]($directory$readme_path)"
