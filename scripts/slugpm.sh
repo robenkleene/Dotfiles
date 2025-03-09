@@ -63,6 +63,7 @@ if [[ "$1" = "archive" ]]; then
       mv "$file_path" "$destination_dir"
     fi
   done
+  exit 0
 fi
 
 while getopts ":t:h" option; do
