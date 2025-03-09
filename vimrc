@@ -25,11 +25,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'robenkleene/partshell.vim'
 Plug 'robenkleene/gotogrep.vim'
 Plug 'robenkleene/gotodiff.vim'
-" More reliable open browser
-Plug 'tyru/open-browser.vim'
-let g:netrw_nogx = 1
-nmap gx <Plug>(openbrowser-open)
-vmap gx <Plug>(openbrowser-open)
 " Languages
 Plug 'bfrg/vim-c-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
