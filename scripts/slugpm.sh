@@ -3,10 +3,13 @@
 set -euo pipefail
 
 archive="false"
-while getopts ":at:h" option; do
+while getopts ":at:f:h" option; do
   case "$option" in
     a)
       archive="true"
+      ;;
+    f)
+      filename="$OPTARG"
       ;;
     t)
       title="$OPTARG"
@@ -34,7 +37,13 @@ if [[ "${archive}" = "true" ]]; then
       echo "Error: Nothing to archive" >&2
       exit 1
     fi
-    destination_file="$PWD/archive/README.md"
+    if [[ -n "${filename}" ]]; then
+      filename="README.md"
+    fi
+    destination_file="$PWD/archive/$filename"
+    if [[ ! -f "$destination_file" ]]; then
+      echo "Error: $destination_file is not a file" >
+    fi
     echo "$text" >>"$destination_file"
     exit 0
   fi
@@ -46,7 +55,7 @@ if [[ "${archive}" = "true" ]]; then
     # file_path=${file_path#\.}
     file_path=${file_path%/}
 
-    if [[ -d "$file_path" && -d "$file_path/../projects/" && (-f "$file_path/README.md" || -f "$file_path/README.org") ]]; then
+    if [[ -d "$file_path" && -d "$file_path/../projects/" && -f "$file_path/README.md" ]]; then
       # If it's a directory with a parent `projects` and a `README` treat as a project
       destination_dir="$file_path/../../archive/projects/"
 
