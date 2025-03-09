@@ -28,14 +28,13 @@ let g:markdown_fenced_languages = [
       " found. Probably need to install a plugin?
       " \'kotlin',
 
-function! s:MarkdownOpenLink()
-  let word = expand('<cWORD>')
-  let match = matchstr(word, '(\zs[^()]*\ze)')
-  if !empty(match)
-    execute 'Open' match
-  else
-    normal! gx
-  endif
-endfunction
-
-nnoremap <buffer> gx :call <SID>MarkdownOpenLink()<CR>
+" function! s:MarkdownOpenLink()
+"   let word = expand('<cWORD>')
+"   let match = matchstr(word, '(\zs[^()]*\ze)')
+"   if !empty(match)
+"     execute 'Open' match
+"   else
+"     normal! gx
+"   endif
+" endfunction
+" nnoremap <buffer> gx :call <SID>MarkdownOpenLink()<CR>
