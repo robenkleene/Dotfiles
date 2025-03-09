@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+if [[ "$1" = "archive" ]]; then
+  exec ~/.bin/slugpm_archive "$@"
+fi
+
 while getopts ":t:h" option; do
   case "$option" in
     t)
