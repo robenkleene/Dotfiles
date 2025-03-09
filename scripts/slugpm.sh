@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ "$1" = "archive" ]]; then
-  exec ~/.bin/slugpm_archive "$@"
+  exec ~/.bin/slugpm_archive "${@:2}"
 fi
 
 while getopts ":t:h" option; do

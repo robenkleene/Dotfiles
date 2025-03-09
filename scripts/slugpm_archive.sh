@@ -9,9 +9,7 @@ if [[ $# -eq 0 ]]; then
     echo "Error: Nothing to archive" >&2
     exit 1
   fi
-  if [[ -n "${filename}" ]]; then
-    filename="README.md"
-  fi
+  filename="README.md"
   destination_file="$PWD/archive/$filename"
   if [[ ! -f "$destination_file" ]]; then
     echo "Error: $destination_file is not a file" >&2
