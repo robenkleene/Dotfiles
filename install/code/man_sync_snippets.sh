@@ -2,11 +2,21 @@
 
 set -euo pipefail
 
+prefix='rk'
 modified="false"
-while getopts ":mh" option; do
+while getopts ":d:s:p:mh" option; do
   case "$option" in
     m)
       modified="true"
+      ;;
+    p)
+      prefix=$OPTARG
+      ;;
+    d)
+      dst=$OPTARG
+      ;;
+    s)
+      src=$OPTARG
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
@@ -36,13 +46,13 @@ make_snippets() {
     lang="objc"
   fi
   if [[ "$lang" != "package" && "$lang" != "global" ]]; then
-    dst="$dst_dir/rk_lang_${lang}_snip.md"
+    dst="${dst_dir}/${prefix}_lang_${lang}_snip.md"
     ./snippet_to_md.sh "$src" "$dst"
   fi
 }
 
-dst_dir="../man/markdown/snip"
-src_dir="$HOME/.config/Code/User/snippets"
+dst_dir="${dst:-../man/markdown/snip}"
+src_dir="${src:-$HOME/.config/Code/User/snippets}"
 if [[ ! -e "$dst_dir" ]]; then
   mkdir -p "$dst_dir"
 fi
