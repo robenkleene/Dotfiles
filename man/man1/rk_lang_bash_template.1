@@ -2,10 +2,17 @@
 .\"
 .TH "RK_LANG_BASH_TEMPLATE Reference" "" "" ""
 .IP \[bu] 2
-\f[CR]set \-o errexit\f[R]: abort on non\-zero exit status
+\f[CR]set \-e\f[R] / \f[CR]set \-o errexit\f[R]: Exit on non\-zero exit
+status
 .IP \[bu] 2
-\f[CR]set \-o nounset\f[R]: abort on unbound variable
+\f[CR]set \-o pipefail\f[R]: Fail if any command fails when using pipes,
+not just the last one
 .IP \[bu] 2
-\f[CR]set \-o pipefail\f[R]: don\[cq]t hide errors within pipes
+\f[CR]set \-u\f[R] / \f[CR]set \-o nounset\f[R]: Error on unset
+variables (to test for a variable with this setting on use
+\f[CR]${CODESPACES\-}\f[R])
 .PP
 Or \f[CR]set \-euo pipefail\f[R]
+.SH Other
+.IP \[bu] 2
+\f[CR]set \-x\f[R]: Print each command
