@@ -4,6 +4,7 @@
 
 - `${#var}`: Length of variable
 - `${EDITOR:-vim}`: Default value
+- `${CODESPACES-}`: Use an unset variable without causing an error with `set -u` / `set -o nounset` on
 - `${var:?some error}`: Prints "some error" and exits of var is null or unset
 - `${var#pattern}`: Remove prefix
 - `${var%pattern}`: Remove suffix
