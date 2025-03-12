@@ -1,3 +1,6 @@
+" Use all open buffers for completion, this makes using `CTRL-X_CTRL-L`
+" completion work better for adding logging to multiple buffers at once
+set complete+=b
 " Setting this two high is annoying with autocomplete
 set pumheight=10
 " Complete to longest match and show a menu, matching the typical `zsh` setup.
