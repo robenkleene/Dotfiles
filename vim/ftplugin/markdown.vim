@@ -8,22 +8,24 @@ setlocal colorcolumn=""
 setlocal wrap
 setlocal textwidth=0
 
-let g:markdown_fenced_languages = [
-      \'bash=sh',
-      \'c',
-      \'cpp',
-      \'diff',
-      \'html',
-      \'java',
-      \'javascript',
-      \'js=javascript',
-      \'json',
-      \'lua',
-      \'python',
-      \'ruby',
-      \'rust',
-      \'vim'
-      \]
+" Disabling this because it can cause performance issues and it might be
+" linked to random error colors showing up in some code blocks.
+" let g:markdown_fenced_languages = [
+"       \'bash=sh',
+"       \'c',
+"       \'cpp',
+"       \'diff',
+"       \'html',
+"       \'java',
+"       \'javascript',
+"       \'js=javascript',
+"       \'json',
+"       \'lua',
+"       \'python',
+"       \'ruby',
+"       \'rust',
+"       \'vim'
+"       \]
       " Causing an error on exit in Neovim that `syntax/kotlin.vim` can't be
       " found. Probably need to install a plugin?
       " \'kotlin',
