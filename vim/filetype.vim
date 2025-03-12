@@ -16,5 +16,6 @@ augroup setup_filetype
 
   " Special
   " Interpret `hg show` output as `diff`
+  " This isn't always working, probably better just to use `hg diff -c .`
   au! StdinReadPost * if eval('@%') == '' && &buftype == '' && getline(1) =~ '^changeset:' | setfiletype diff | endif
 augroup END
