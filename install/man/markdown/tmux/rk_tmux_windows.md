@@ -1,0 +1,11 @@
+- `<prefix>{` / `<prefix>}`: Swap active pane with pane above / below
+- `<prefix>w`: Window picker
+- `<prefix>&`: Kill window
+- `<prefix>l`: Last window
+- `<prefix>c`: Create window
+- `<prefix>p`: Previous window
+- `<prefix>n`: Next window
+- `<prefix>.`: Move a window by specifying a window number
+- `swap-window -t -1` / `swap-window -t +1`: Swap window left / right
+- `:kill-window -a`: Kill other windows
+- `<prefix>C-o` / `rotate-window`: Rotate windows

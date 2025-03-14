@@ -1,0 +1,5 @@
+- `:new` / `:new-session`: Create a new session
+- `:kill-session`: Kill current session
+- `<prefix>L`: Last session
+- `<prefix>s`: Session picker
+- `<prefix>s <session-number>`: Jump to session
