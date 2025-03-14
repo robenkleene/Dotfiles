@@ -4,10 +4,14 @@
 .IP \[bu] 2
 \f[CR]:new\f[R] / \f[CR]:new\-session\f[R]: Create a new session
 .IP \[bu] 2
-\f[CR]:kill\-session\f[R]: Kill current session
+\f[CR]:kill\-session\f[R]: Kill current session (\f[CR]:kill\f[R] does
+not work and gives an \[lq]ambiguous command\[rq] error)
 .IP \[bu] 2
-\f[CR]<prefix>L\f[R]: Last session
+\f[CR]<prefix>L\f[R]: Go to last session
 .IP \[bu] 2
-\f[CR]<prefix>s\f[R]: Session picker
+\f[CR]<prefix>s\f[R]: Show session picker
+.SH Session Picker
 .IP \[bu] 2
-\f[CR]<prefix>s <session\-number>\f[R]: Jump to session
+\f[CR]<session\-number>\f[R]: Jump to session
+.IP \[bu] 2
+\f[CR]x\f[R]: Kill session (with confirmation)
