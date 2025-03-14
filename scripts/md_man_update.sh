@@ -3,13 +3,17 @@
 set -euo pipefail
 
 force="false"
-while getopts ":p:d:n:fh" option; do
+delete="false"
+while getopts ":Dp:d:n:fh" option; do
   case "$option" in
     p)
       file_path="$OPTARG"
       ;;
     d)
       destination_dir="$OPTARG"
+      ;;
+    D)
+      delete="true"
       ;;
     n)
       destination_num="$OPTARG"
@@ -49,6 +53,14 @@ filename=$(basename -- "$source")
 filename="${filename%.*}"
 title=$(echo "$filename" | awk '{print toupper($0)}')
 dest="$destination_dir/$filename".${destination_num:-1}
+if [[ "$delete" = "true" ]]; then
+  if [[ "$force" == "true" ]]; then
+    rm "$dest"
+  else
+    echo "Deleting $dest"
+  fi
+  exit 0
+fi
 if [[ -e "$dest" ]]; then
   if [[ "$force" == "true" ]]; then
     rm "$dest"

@@ -32,6 +32,8 @@ if [[ "$modified" == "true" ]]; then
     # `git ls-files --modified` actually includes deleted files, so skip those
     if [[ -e "$REPLY" ]]; then
       ~/.bin/md_man_update -d "$destination_dir" -f -p "$REPLY"
+    else
+      ~/.bin/md_man_update -D -d "$destination_dir" -f -p "$REPLY"
     fi
   done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
 else
