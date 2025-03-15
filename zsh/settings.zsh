@@ -103,6 +103,9 @@ setopt nolistambiguous
 # setopt globcomplete
 # Highlight tab match
 zstyle ':completion:*' menu select
+# Adding `_match` allow globs in command expansion (e.g.,
+# `prefix*substring*<tab>`
+zstyle ':completion:*' completer _complete _match
 # Make completion case and hyphen insensitive
 # Allow partial matches, e.g., `vim md<tab>` for all files with `.md` extension
 zstyle ':completion:*' matcher-list \
