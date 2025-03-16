@@ -1,19 +1,19 @@
-[colors.bright]
-black = "#8B8680" # Middle Grey
-blue = "#87AFDF"
-cyan = "#00FFFF"
-green = "#BDDABD"
-magenta = "#DBA3EB"
-red = "#DABDBD"
-white = "#CCCCCC"
-yellow = "#AAAA00"
-
 [colors.normal]
 black = "#000000"
-blue = "#95a7cd"
-cyan = "#00AFAF"
-green = "#6FCA70"
-magenta = "#C978EB"
-red = "#DB7B34"
+red = "#D75F5F"
+green = "#5FD75F"
+yellow = "#D7D700"
+blue = "#5F87D7"
+magenta = "#D75FD7"
+cyan = "#00D7D7"
+white = "#A8A8A8"
+
+[colors.bright]
+black = "#878787"
+red = "#FF8787"
+green = "#87FF87"
+yellow = "#FFFF00"
+blue = "#87AFFF"
+magenta = "#FF87FF"
+cyan = "#00FFFF"
 white = "#FFFFFF"
-yellow = "#BBBB00"
