@@ -29,6 +29,21 @@
     "body": "std::cout << this << std::endl;",
     "description": "`cout` this address"
   },
+  "Print address of object": {
+    "prefix": "rk_cout_var_addr",
+    "body": "std::cout << \" &$1 = \" << &${1} << std::endl;",
+    "description": "`cout` address of object"
+  },
+  "Print enum": {
+    "prefix": "rk_cout_enum",
+    "body": "std::cout << \" $1 = \" << static_cast<int>(${1}) << std::endl;",
+    "description": "`cout` address of object"
+  },
+  "Print format string address of object": {
+    "prefix": "rk_cout_var_fmt_addr",
+    "body": "std::cout << \" &$1 = %p\" << &${1} << std::endl;",
+    "description": "`cout` address of object using format string"
+  },
   "Print array": {
     "prefix": ["rk_cout_array", "rk_print_array"],
     "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
