@@ -32,24 +32,25 @@ int main() {
 .EX
 #include \f[B]<iostream>\f[R]
 .EE
-.SH Print with address
+.SH Print this address
 .IP
 .EX
-std::cout << \f[B]this\f[R] << \[dq] ${1:message}\[dq] << std::endl;
+std::cout << \f[B]this\f[R] << std::endl;
 .EE
-.SH Print variable with address
+.SH Print address of object
 .IP
 .EX
-std::cout << \f[B]this\f[R] << \[dq] $1 = \[dq] << \f[B]$\f[R]{1} << std::endl;
+std::cout << \[dq] &$1 = \[dq] << &\f[B]$\f[R]{1} << std::endl;
 .EE
-.SH Print array with address
+.SH Print enum
 .IP
 .EX
-std::cout << \f[B]this\f[R] << \[dq] ${1} = \[dq];
-\f[B]for\f[R] (std::size_t i = 0; i < \f[B]$\f[R]1.\f[B]size\f[R](); ++i) {
-  std::cout << (i > 0 ? \[dq], \[dq] : \[dq]\[dq]) << \f[B]$\f[R]1[i];
-}
-std::cout << std::endl;
+std::cout << \[dq] $1 = \[dq] << \f[B]static_cast\f[R]<int>(\f[B]$\f[R]{1}) << std::endl;
+.EE
+.SH Print format string address of object
+.IP
+.EX
+std::cout << \[dq] &$1 = %p\[dq] << &\f[B]$\f[R]{1} << std::endl;
 .EE
 .SH Print array
 .IP
@@ -59,20 +60,6 @@ std::cout << \[dq]${1} = \[dq];
   std::cout << (i > 0 ? \[dq], \[dq] : \[dq]\[dq]) << \f[B]$\f[R]1[i];
 }
 std::cout << std::endl;
-.EE
-.SH Print map with address
-.IP
-.EX
-std::cout << \f[B]this\f[R] << \[dq] ${1} = {\[dq];
-bool first = \f[B]true\f[R];
-\f[B]for\f[R] (const \f[B]auto\f[R]& pair : values) {
-  \f[B]if\f[R] (!first) {
-    std::cout << \[dq], \[dq];
-  }
-  std::cout << \[dq]{\[dq] << pair.first << \[dq]: \[dq] << pair.second << \[dq]}\[dq];
-  first = \f[B]false\f[R];
-}
-std::cout << \[dq]}\[dq] << std::endl;
 .EE
 .SH Print map
 .IP
