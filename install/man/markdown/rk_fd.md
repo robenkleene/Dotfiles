@@ -10,6 +10,11 @@
 - `-E` / `--exclude`: Exclude files matching a glob pattern, e.g., `-E '*foo*'`
 - `-l` / `--list-details`: List details (like `ls -l`, this is an alias to `--exec-batch ls -l` with some additional options)
 
+## Exec
+
+- `-X <command>`, `--exec-batch <command>`: Execute command on each file *as arguments*
+- `-x <command>`, `--exec <command>`: Execute command on each file *in parallel*
+
 # Globs
 
 - Note that in `fd` globs are case insensitive (in `rg` globs are case sensitive)
