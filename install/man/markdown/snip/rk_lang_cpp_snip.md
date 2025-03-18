@@ -35,26 +35,28 @@ int main() {
 #include <iostream>
 ```
 
-# Print with address
+# Print this address
 
 ``` cpp
-std::cout << this << " ${1:message}" << std::endl;
+std::cout << this << std::endl;
 ```
 
-# Print variable with address
+# Print address of object
 
 ``` cpp
-std::cout << this << " $1 = " << ${1} << std::endl;
+std::cout << " &$1 = " << &${1} << std::endl;
 ```
 
-# Print array with address
+# Print enum
 
 ``` cpp
-std::cout << this << " ${1} = ";
-for (std::size_t i = 0; i < $1.size(); ++i) {
-  std::cout << (i > 0 ? ", " : "") << $1[i];
-}
-std::cout << std::endl;
+std::cout << " $1 = " << static_cast<int>(${1}) << std::endl;
+```
+
+# Print format string address of object
+
+``` cpp
+std::cout << " &$1 = %p" << &${1} << std::endl;
 ```
 
 # Print array
@@ -65,21 +67,6 @@ for (std::size_t i = 0; i < $1.size(); ++i) {
   std::cout << (i > 0 ? ", " : "") << $1[i];
 }
 std::cout << std::endl;
-```
-
-# Print map with address
-
-``` cpp
-std::cout << this << " ${1} = {";
-bool first = true;
-for (const auto& pair : values) {
-  if (!first) {
-    std::cout << ", ";
-  }
-  std::cout << "{" << pair.first << ": " << pair.second << "}";
-  first = false;
-}
-std::cout << "}" << std::endl;
 ```
 
 # Print map
