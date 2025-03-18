@@ -24,30 +24,15 @@
     "body": "#include <iostream>",
     "description": "Include for `cout`"
   },
-  "Print with address": {
+  "Print this address": {
     "prefix": "rk_cout_addr",
-    "body": "std::cout << this << \" ${1:message}\" << std::endl;",
-    "description": "`cout` with address"
-  },
-  "Print variable with address": {
-    "prefix": ["rk_cout_var_addr", "rk_print_var_addr"],
-    "body": "std::cout << this << \" $1 = \" << ${1} << std::endl;",
-    "description": "`cout` variable with address"
-  },
-  "Print array with address": {
-    "prefix": ["rk_cout_array_addr", "rk_print_array_addr"],
-    "body": "std::cout << this << \" ${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
-    "description": "`cout` array with address"
+    "body": "std::cout << this << std::endl;",
+    "description": "`cout` this address"
   },
   "Print array": {
     "prefix": ["rk_cout_array", "rk_print_array"],
     "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
     "description": "`cout` array"
-  },
-  "Print map with address": {
-    "prefix": ["rk_cout_map_addr", "rk_print_map_addr"],
-    "body": "std::cout << this << \" ${1} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
-    "description": "`cout` map with address"
   },
   "Print map": {
     "prefix": ["rk_cout_map", "rk_print_map"],
