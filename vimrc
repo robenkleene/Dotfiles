@@ -25,7 +25,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'robenkleene/partshell.vim'
 Plug 'robenkleene/gotogrep.vim'
 Plug 'robenkleene/gotodiff.vim'
+" Snippets
 Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'prabirshrestha/asyncomplete.vim'
 " Languages
 Plug 'bfrg/vim-c-cpp-modern', { 'for': [ 'c', 'cpp' ] }
 Plug 'keith/swift.vim', { 'for': 'swift' }
