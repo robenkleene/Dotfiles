@@ -10,7 +10,7 @@
 - Delete (⌫): "Erase to the Left" (U+232B)
 - Eject (⏏): "Eject Symbol" (U+23CF)
 - End (↘): "End" (U+2198)
-- Enter (⌤): "Enter Symbol" (U+2324)
+- Enter (⌤): "Up Arrowhead Between Two Horizontal Bars" (U+2324)
 - Escape (⎋): "Broken Circle with Northwest Arrow" (U+238B)
 - Forward Delete (⌦): "Erase to the Right" (U+2326)
 - Home (↖): "Home" (U+2196)
