@@ -32,4 +32,4 @@
 - `^R`: Duplicate file (hit enter when prompted to rename and it will ask for a new name to copy to)
 - `nf`: New file
 - `nd`: New directory
-- `r`: Batch rename in `EDITOR`
+- `r`: Batch rename in `EDITOR` (e.g., `Vim` by default)
