@@ -14,3 +14,13 @@ let g:netrw_mousemaps = 0
 " The `g:netrw_gx` variable determines how `netrw` identifies URLs, by default
 " this is set to `<cfile>`, which uses `isfname` variable to determine what to
 " use as the URL
+
+" `:h netrw_preview`
+" By default, `p` previews doing the reverse of `splitbelow`, e.g., if
+" `splitbelow` is on, then the preview opens above
+" This makes the preview match the split setting
+if &splitbelow
+  let g:netrw_alto = 0
+else
+  let g:netrw_alto = 1
+endif
