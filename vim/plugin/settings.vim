@@ -22,6 +22,7 @@ set showcmd
 " instead be set per filetype
 " set iskeyword+=-
 
+" Preview from a `netrw` buffer always works like this
 " set splitbelow
 " set splitright
 
