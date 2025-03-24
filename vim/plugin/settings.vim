@@ -21,8 +21,10 @@ set showcmd
 " Add hyphen to word characters, this shouldn't be set as a default and
 " instead be set per filetype
 " set iskeyword+=-
-set splitbelow
-set splitright
+
+" set splitbelow
+" set splitright
+
 " Use system clipboard
 " Delibrately ommitted because the custom clipboard `augroup` handles the
 " clipboard (and also supports `tmux`). Also having this causes line breaks to
