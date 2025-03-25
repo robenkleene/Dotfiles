@@ -4,3 +4,11 @@
 .IP \[bu] 2
 \f[CR]ssh \-t user\[at]hostname /bin/bash\f[R]: Login while specifying
 full path to shell
+.SH Troubleshooting
+If they \f[CR]Enter passphrase for key:\f[R] prompt keeps happening,
+even after entering passphrase try running:
+.IP
+.EX
+eval \[ga]ssh\-agent \-s\[ga]
+ssh\-add \-l
+.EE
