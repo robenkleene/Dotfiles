@@ -43,22 +43,29 @@ ssh_stop() {
 }
 
 # Accepts one history line number as argument.
+# `dc` with no arguments deletes the most recent line
 # Use `dc -1` to remove the last line.
 # The naming convention `dc` is probably based on `fc` which is the underlying
 # history management program for Bash and Zsh. `fc` stands for "fix command"
 # (because with history you retrieve a command and can then fix it). So `dc`
-# probably stands for "delete history".
+# probably stands for "delete command".
 dc () {
-  line=${1:--1}
-  # Prevent the specified history line from being 
+  # Default to the most recent line
+  line="${@:--1}"
+  # If the line starts with `-` treat is a most recent history
+  # Otherwise remove the line itself
+  if [ "${line[1]}" = '-' ]; then
+    line="${(b)$(fc -ln $line $line)}"
+  fi
+  # Prevent the specified history line from being
   # saved.
-  local HISTORY_IGNORE="${(b)$(fc -ln $line $line)}"
+  local HISTORY_IGNORE="${(b)line}"
 
   # Write out the history to file, excluding lines that
   # match `$HISTORY_IGNORE`.
   fc -W
 
-  # Dispose of the current history and read the new 
+  # Dispose of the current history and read the new
   # history from file.
   fc -p $HISTFILE $HISTSIZE $SAVEHIST
 
