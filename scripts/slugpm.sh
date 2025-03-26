@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-if [[ "$1" = "archive" ]]; then
+if [[ "${1:-}" = "archive" ]]; then
   args="${@:2}"
   if [[ $# -eq 1 ]]; then
     # `text=$(cat)` was giving problems with input shorter than one line
