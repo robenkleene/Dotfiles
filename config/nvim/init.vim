@@ -12,6 +12,5 @@ let g:clipboard = {
       \    '+': 'safepaste',
       \    '*': 'safepaste',
       \ },
-      \ 'cache_enabled': 0,
+      \ 'cache_enabled': 1,
       \ }
-endif
