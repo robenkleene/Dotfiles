@@ -22,6 +22,8 @@ else
     " selection will overwrite the clipboard
     autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/safecopy -s',join(v:event["regcontents"],"\n")) | end
   augroup END
+  nnoremap "* :let @"=system('safepaste')<CR>
+  inoremap <C-r>* <C-r>=system('safepaste')<CR>
 endif
 
 augroup quickfix_height
