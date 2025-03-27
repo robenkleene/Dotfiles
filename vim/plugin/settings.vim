@@ -51,6 +51,6 @@ set suffixes-=.h
 " current line harder to read
 " With `iceberg`, this breaks comparing two buffers
 " with `:windo diffthis`
-" set cursorline
+set cursorline
 " Highlight just the line number
-"set cursorlineopt=number
+set cursorlineopt=number
