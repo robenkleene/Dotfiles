@@ -9,6 +9,11 @@ if [[ "$(uname)" = "Linux" ]]; then
   alias ls="`which ls` --color=auto"
 fi
 
+# Use `nvim` for clipboard provider
+if [ -n "$SSH_CONNECTION" ]; then
+  alias vim='nvim'
+fi
+
 # egit
 # These are aliases instead of shell functions because they set the `ssh`
 # status of the current shell
