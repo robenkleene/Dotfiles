@@ -45,7 +45,7 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   if [[ "$skip_system" == "false" ]]; then
-    if [[ "${__CFBundleIdentifier}" = "com.apple.Terminal" ]]; then
+    if [[ "${__CFBundleIdentifier:-}" = "com.apple.Terminal" ]]; then
       # Apple Terminal doesn't support built-in clipboard support
       tee >(tmux loadb -) | pbcopy
     else
