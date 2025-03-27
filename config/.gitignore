@@ -2,12 +2,14 @@
 /*
 
 # Except
+
 !.gitignore
 !Code
 !alacritty
 !bat
 !fish
+!ghostty
 !helix
 !nnn
+!nvim
 !tmux
-!ghostty
