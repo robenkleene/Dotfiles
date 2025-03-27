@@ -47,8 +47,10 @@ set suffixes-=.h
 
 " `cursorline` makes it easier to see which line a search match is on when in
 " the quickfix window
+" The default style of this isn't very visible anyway, and can make the
+" current line harder to read
 " With `iceberg`, this breaks comparing two buffers
 " with `:windo diffthis`
-set cursorline
+" set cursorline
 " Highlight just the line number
 "set cursorlineopt=number
