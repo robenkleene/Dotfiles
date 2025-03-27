@@ -50,6 +50,11 @@ export PAGER=less
 # Start the server in the background if it isn't running
 export ALTERNATE_EDITOR=""
 
+# Use `nvim` for clipboard provider
+if [ -n "$SSH_CONNECTION" ]; then
+  export EDITOR="nvim"
+fi
+
 # Installs
 
 # rg
