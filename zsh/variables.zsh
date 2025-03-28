@@ -22,9 +22,10 @@ manpath=(~/.man ${(s/:/)MANPATH})
 typeset -U manpath
 export MANPATH="${(j/:/)manpath}"
 
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
-  export COLORTERM="truecolor"
-fi
+# We do this even if `"$TERM_PROGRAM" = "Apple_Terminal"` because otherwise
+# `nvim` will try to query the terminal for this and that will display
+# characters sequences on startup
+export COLORTERM="truecolor"
 
 # Smartcase and incremental search in `less`
 # `--RAW-CONTROL-CHARS` fixes escape code issue with colors on Linux
