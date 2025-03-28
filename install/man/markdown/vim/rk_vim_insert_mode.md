@@ -9,7 +9,8 @@ There's no `C-b` / `C-e` to go to the beginning and end of line, like on the com
 - `C-g j` / `C-g k`: Start a new line from same column insert was started at
 - `C-p` / `C-n`: Insert word from earlier / later in buffer
 - `C-o`: Do single normal command from insert mode
-- `C-r`: Paste from register
+- `C-r <register>`: Paste from register
+- `C-r C-p <register>`: Paste from register without indenting
 - `C-u`: Delete to beginning of line
 - `C-w`: Delete previous word
 - `C-v`: Insert literal character (like `<tab>` when tab inserts spaces)
