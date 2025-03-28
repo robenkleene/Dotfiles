@@ -52,9 +52,7 @@ export PAGER=less
 export ALTERNATE_EDITOR=""
 
 # Use `nvim` for clipboard provider
-if [ -n "$SSH_CONNECTION" ]; then
-  export EDITOR="nvim"
-fi
+export EDITOR="nvim"
 
 # Installs
 
