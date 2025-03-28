@@ -10,6 +10,7 @@ brew 'zoxide'
 # for `zoxide` `zi` to go to recent directories
 brew 'fzf'
 brew 'nnn'
+brew 'nvim'
 # Really useful to see diff by word quickly
 brew 'git-delta'
 brew 'universal-ctags'
