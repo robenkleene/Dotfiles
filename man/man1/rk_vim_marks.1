@@ -2,6 +2,13 @@
 .\"
 .TH "RK_VIM_MARKS Reference" "" "" ""
 .IP \[bu] 2
+\f[CR]:marks\f[R]: List marks
+.IP \[bu] 2
+\f[CR]:marks a\f[R]: List individual marks
+.IP \[bu] 2
+The numbered marks
+.SH Marking
+.IP \[bu] 2
 \f[CR]ma\f[R]: Set file local mark \f[CR]a\f[R] (every file can have a
 mark \f[CR]a\f[R])
 .IP \[bu] 2
@@ -11,12 +18,6 @@ session, can be used to jump across files)
 \f[CR]\[aq]a\f[R]: Go to line of mark \f[CR]a\f[R]
 .IP \[bu] 2
 \f[CR]<backtick>a\f[R]: Go to line and column of mark \f[CR]a\f[R]
-.IP \[bu] 2
-\f[CR]:marks\f[R]: List marks
-.IP \[bu] 2
-\f[CR]:marks a\f[R]: List individual marks
-.IP \[bu] 2
-The numbered marks
 .SH File Marks
 .IP \[bu] 2
 The number marks are the most recently opened files
@@ -25,3 +26,7 @@ The number marks are the most recently opened files
 most recent)
 .IP \[bu] 2
 \f[CR]\[aq]0\f[R]: Open the most recent file, this is b
+.SH Special Marks
+.IP \[bu] 2
+\f[CR][\f[R] / \f[CR]]\f[R]: Beginning / end of last changed or yanked
+text
