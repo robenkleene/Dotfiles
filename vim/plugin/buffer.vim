@@ -77,4 +77,3 @@ augroup nofilename_nofile
   " Don't prompt for saving buffers with no file
   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 augroup END
-
