@@ -103,3 +103,8 @@ std::cout << \[dq]}\[dq] << std::endl;
     \f[B]$\f[R]{2:std::cout << *it << std::endl;}
 }
 .EE
+.SH Suppress gMock warnings
+.IP
+.EX
+::testing::FLAGS_gmock_verbose = \[dq]error\[dq];
+.EE

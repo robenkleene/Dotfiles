@@ -116,3 +116,9 @@ for (auto it = ${1:arr}.begin(); it != $1.end(); ++it) {
 }
 ```
 
+# Suppress gMock warnings
+
+``` cpp
+::testing::FLAGS_gmock_verbose = "error";
+```
+

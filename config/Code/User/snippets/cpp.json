@@ -73,5 +73,10 @@
     "prefix": "rk_for_array_iterator",
     "body": "for (auto it = ${1:arr}.begin(); it != $1.end(); ++it) {\n    ${2:std::cout << *it << std::endl;}\n}",
     "description": "For loop array iterator"
+  },
+  "Suppress gMock warnings": {
+    "prefix": "rk_gmock_suppress",
+    "body": "::testing::FLAGS_gmock_verbose = \"error\";",
+    "description": "Suppress gMock warnings"
   }
 }
