@@ -72,3 +72,7 @@ dc () {
   # TA-DA!
   print "Deleted '$HISTORY_IGNORE' from history."
 }
+# Never add `dc` commands to history
+zshaddhistory() {
+ [[ $1 != 'dc '* ]]
+}
