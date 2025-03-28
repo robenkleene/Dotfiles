@@ -21,7 +21,7 @@ set wildmode=longest:full,full
  " disconcerting because it moves the text of the current split as well
  set completeopt-=preview
 " Use a vertical wildmenu
-" set wildoptions=pum
+set wildoptions=pum
 
 " Automatically close the completion preview
 augroup completion_preview
