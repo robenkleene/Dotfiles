@@ -42,6 +42,10 @@ selection
 .IP \[bu] 2
 \f[CR]:bd\f[R]: Close buffer
 .SH Jump List
+Only big movements (e.g., \f[CR]gg\f[R], \f[CR]G\f[R]) get added to the
+jump list, not movements within a line (like \f[CR]0\f[R], \f[CR]$\f[R],
+\f[CR]f\f[R], \f[CR]t\f[R]).
+There is not a way to go back from a movement within a line.
 .IP \[bu] 2
 \f[CR]:[ju]mps\f[R]: Show the \f[CR]jumplist\f[R]
 .IP \[bu] 2
