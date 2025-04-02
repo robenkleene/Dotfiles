@@ -1,3 +1,9 @@
+- `ma`: Make mark called `a`
+- `<backtick>a`: Go to `a` (line and column)
+- `'x`: Go to `x` (line only)
+- `:marks`: List marks
+- `<backtick><backtick>`: Go to location before last motion
+- `''`: Go to line before last motion
 - `:marks`: List marks
 - `:marks a`: List individual marks
 - The numbered marks
@@ -6,8 +12,6 @@
 
 - `ma`: Set file local mark `a` (every file can have a mark `a`)
 - `mA`: Set global mark `A` (one `A` per session, can be used to jump across files)
-
-
 - `'a`: Go to line of mark `a`
 - `<backtick>a`: Go to line and column of mark `a`
 
@@ -20,3 +24,6 @@
 # Special Marks
 
 - `[` / `]`: Beginning / end of last changed or yanked text
+- `<` / `>`: Beginning / end of last visual selection
+- `.`: Last change
+
