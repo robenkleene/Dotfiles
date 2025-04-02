@@ -2,6 +2,18 @@
 .\"
 .TH "RK_VIM_MARKS Reference" "" "" ""
 .IP \[bu] 2
+\f[CR]ma\f[R]: Make mark called \f[CR]a\f[R]
+.IP \[bu] 2
+\f[CR]<backtick>a\f[R]: Go to \f[CR]a\f[R] (line and column)
+.IP \[bu] 2
+\f[CR]\[aq]x\f[R]: Go to \f[CR]x\f[R] (line only)
+.IP \[bu] 2
+\f[CR]:marks\f[R]: List marks
+.IP \[bu] 2
+\f[CR]<backtick><backtick>\f[R]: Go to location before last motion
+.IP \[bu] 2
+\f[CR]\[aq]\[aq]\f[R]: Go to line before last motion
+.IP \[bu] 2
 \f[CR]:marks\f[R]: List marks
 .IP \[bu] 2
 \f[CR]:marks a\f[R]: List individual marks
@@ -30,3 +42,7 @@ most recent)
 .IP \[bu] 2
 \f[CR][\f[R] / \f[CR]]\f[R]: Beginning / end of last changed or yanked
 text
+.IP \[bu] 2
+\f[CR]<\f[R] / \f[CR]>\f[R]: Beginning / end of last visual selection
+.IP \[bu] 2
+\f[CR].\f[R]: Last change
