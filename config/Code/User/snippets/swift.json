@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": ["rk_p", "rk_print"],
-    "body": "print(\"${1:Message}\")",
+    "body": "print(\"$1\")",
     "description": "`print`"
   },
   "Print optional variable": {

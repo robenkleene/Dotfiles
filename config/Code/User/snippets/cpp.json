@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": ["rk_p", "rk_cout"],
-    "body": "std::cout << \"${1:Message}\" << std::endl;",
+    "body": "std::cout << \"$1\" << std::endl;",
     "description": "`cout`"
   },
   "C++ template": {

@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": ["rk_p", "rk_echo"],
-    "body": "echo \"${1:Message}\"",
+    "body": "echo \"$1\"",
     "description": "`echo`"
   },
   "Print error": {

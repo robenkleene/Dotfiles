@@ -8,7 +8,7 @@
   "Print": {
     "scope": "javascript,typescript",
     "prefix": ["rk_p", "rk_log"],
-    "body": "console.log(\"${1:Message}\");",
+    "body": "console.log(\"$1\");",
     "description": "`console.log`"
   },
   "JavaScript template": {
@@ -25,7 +25,7 @@
   },
   "Max post": {
     "prefix": [ "rk_max_post", "rk_max_p"],
-    "body": "post(\"${1:message}\");",
+    "body": "post(\"$1\");",
     "description": "Max post"
   },
   "Max post variable": {
