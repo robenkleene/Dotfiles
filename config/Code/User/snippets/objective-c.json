@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": "rk_p",
-    "body": "NSLog(@\"${1:Message}\");",
+    "body": "NSLog(@\"$1\");",
     "description": "`NSLog`"
   },
   "Objective-C template": {

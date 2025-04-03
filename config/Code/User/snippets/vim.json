@@ -6,7 +6,7 @@
   },
   "`echom`": {
     "prefix": ["rk_p", "rk_echom"],
-    "body": "echom \"${1}\"",
+    "body": "echom \"$1\"",
     "description": "`echom`"
   },
   "Function": {

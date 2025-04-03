@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": ["rk_p", "rk_puts"],
-    "body": "puts \"${1:Message}\"",
+    "body": "puts \"$1\"",
     "description": "`puts`"
   },
   "Print error": {

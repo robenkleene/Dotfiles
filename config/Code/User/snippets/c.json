@@ -6,7 +6,7 @@
   },
   "Print": {
     "prefix": ["rk_p", "rk_printf"],
-    "body": "printf(\"${1:Message}\\n\");",
+    "body": "printf(\"$1\\n\");",
     "description": "Print"
   },
   "C template": {
