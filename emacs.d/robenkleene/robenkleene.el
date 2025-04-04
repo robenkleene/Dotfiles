@@ -13,15 +13,16 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/robenkleene/functions"))
 
 ;; Functions
+(require 'robenkleene-alias)
 (require 'robenkleene-functions)
 (require 'robenkleene-interactive)
-(require 'robenkleene-alias)
 
 ;; Config
 (require 'robenkleene-bindings)
 (require 'robenkleene-completion)
 (require 'robenkleene-config)
 (require 'robenkleene-minibuffer)
+(require 'robenkleene-modus)
 (require 'robenkleene-shell-commands)
 (require 'robenkleene-spelling)
 
