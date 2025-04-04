@@ -41,14 +41,6 @@
 ;; Make `rg' called from within Emacs use `ripgreprc'
 (setenv "RIPGREP_CONFIG_PATH" (expand-file-name "~/.ripgreprc"))
 
-;; Start the emacs server if it isn't already running and we're running in
-;; window mode
-;; (require 'server)
-;; (if (display-graphic-p (selected-frame))
-;;     (if (and (fboundp 'server-running-p)
-;;              (not (server-running-p)))
-;;         (server-start)))
-
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-12:Regular")
 
 ;; Save window state
@@ -62,13 +54,10 @@
 ;; (desktop-save-mode 1)
 
 ;; Scroll bars
-; (add-to-list 'default-frame-alist
-;              '(vertical-scroll-bars . nil))
-; (add-to-list 'initial-frame-alist
-;              '(vertical-scroll-bars . nil))
-
-;; Cursor Type
-; (setq-default cursor-type 'bar) 
+(add-to-list 'default-frame-alist
+             '(vertical-scroll-bars . nil))
+(add-to-list 'initial-frame-alist
+             '(vertical-scroll-bars . nil))
 
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
