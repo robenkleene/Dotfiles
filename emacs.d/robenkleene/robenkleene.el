@@ -53,6 +53,7 @@
 
 ;; Languages
 (require 'robenkleene-markdown)
+(require 'robenkleene-text)
 
 (provide 'robenkleene)
 ;; Local Variables:
