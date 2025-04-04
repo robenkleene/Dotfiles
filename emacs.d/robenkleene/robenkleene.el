@@ -21,6 +21,7 @@
 (require 'robenkleene-bindings)
 (require 'robenkleene-completion)
 (require 'robenkleene-config)
+(require 'robenkleene-languages)
 (require 'robenkleene-minibuffer)
 (require 'robenkleene-modus)
 (require 'robenkleene-shell-commands)
@@ -49,6 +50,9 @@
 (require 'robenkleene-magit)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
+
+;; Languages
+(require 'robenkleene-markdown)
 
 (provide 'robenkleene)
 ;; Local Variables:
