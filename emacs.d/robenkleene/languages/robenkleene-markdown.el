@@ -5,11 +5,6 @@
 (use-package markdown-mode
   :mode
   ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
-  ;; For Wiki Links
-  ;; Doesn't support following links though
-  ;; ("\\.\\(m\\(ark\\)?down\\|md\\)$" . gfm-mode)
-  :bind
-  (([remap markdown-enter-key] . rk/markdown-enter-key))
   :init
   ;; Enable Latex math surrounded by `$' in Markdown
   (setq markdown-enable-math t)
