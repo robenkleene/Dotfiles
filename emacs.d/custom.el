@@ -6,6 +6,7 @@
      diminish
      editorconfig
      magit
+     markdown-mode
      smartparens
      wgrep
      ))
