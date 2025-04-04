@@ -11,7 +11,6 @@
   :bind
   (([remap markdown-enter-key] . rk/markdown-enter-key))
   :init
-  ;; (setq markdown-enable-wiki-links t)
   ;; Enable Latex math surrounded by `$' in Markdown
   (setq markdown-enable-math t)
   ;; Show a flat list of headers in `imenu', instead of a nested list
@@ -22,78 +21,11 @@
   ;; menu works nicely with `consult-imenu' with headers prefixed with their
   ;; parent header
   (setq markdown-nested-imenu-heading-index nil)
-  ;; Enable syntax highlighting for code blocks
-  (setq markdown-fontify-code-blocks-natively t)
   :config
-  ;; Performance Tweak
-  ;; This disables italics from `*', but that was causing slowness with input in
-  ;; large Markdown files
-  ;; (Probably due to parsing `*' for lists vs. italic)
-  ;; You can test this by running `profile-start', then input, then
-  ;; `profile-report'. It seems to only appear when editing heirarchical lists
-  ;; Re-enabling this, just start breaking down huge markdown lists, because
-  ;; they make Emacs slow no matter what
-  ;; (defconst markdown-regex-italic
-  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \n\t\\]\\|[^ \n\t]\\(?:.\\|\n[^\n]\\)[^\\ ]\\)\\(?4:\\2\\)\\)")
-  ;; (defconst markdown-regex-gfm-italic
-  ;;   "\\(?:^\\|[^\\]\\)\\(?1:\\(?2:[_]\\)\\(?3:[^ \\]\\2\\|[^ ]\\(?:.\\|\n[^\n]\\)\\)\\(?4:\\2\\)\\)")
-
-  ;; It might be possible to use this to change the default indent behavior when
-  ;; making nested lists, but it doesn't appear to be easy without also removing
-  ;; some other desirable behavior.
-  ;; (setq markdown-indent-function 'indent-relative)
-
-  ;; Allow following links with return, without this, the best built-in binding
-  ;; to follow links is `C-c C-d'
-  (defun rk/markdown-enter-key ()
-    "Follow links or enter."
-    (interactive)
-    (if (or (eolp) (bolp) (eq ?\[ (char-after)))
-        (markdown-enter-key)
-      (if (markdown-link-p)
-          (markdown-follow-thing-at-point nil)
-        (markdown-enter-key))
-      )
-    )
-
-  (defun rk/mark-markdown-code-block ()
-    "Marks between tilde."
-    (interactive)
-    (end-of-line)
-    (search-backward "```")
-    (next-line)
-    (beginning-of-line)
-    (set-mark (point))
-    (search-forward "```")
-    (previous-line)
-    (end-of-line)
-    (exchange-point-and-mark)
-    )
-
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
-  (define-key markdown-mode-map (kbd "C-M-h")
-              'rk/mark-markdown-code-block)
-
-  ;; The default commands treat each list item as a single paragraph. These
-  ;; commands jump over entire lists This one still behaves weird in some cases,
-  ;; e.g., when trying to jump over an open code block (define-key
-  ;; markdown-mode-map (kbd "M-{") 'markdown-backward-block) (define-key
-  ;; markdown-mode-map (kbd "M-}") 'markdown-forward-block)
-  ;; `markdown-mark-block' doesn't support `M-- M-h' shrink a selection
-  ;; (define-key markdown-mode-map (kbd "M-h") 'markdown-mark-block) The default
-  ;; `markdown-mark-paragraph' doesn't support `M-- M-h' either, so just use the
-  ;; default
-  (define-key markdown-mode-map [remap mark-paragraph] nil)
-
-  ;; After jumping to a link, move one character right so `<return>' will open
-  ;; the link
-  (defadvice markdown-next-link (after rk/markdown-next-link activate)
-    (forward-char))
-  (defadvice markdown-previous-link (after rk/markdown-previous-link activate)
-    (forward-char))
 
   (add-hook 'markdown-mode-hook
             (lambda ()
@@ -107,29 +39,10 @@
               (modify-syntax-entry ?\" "\"")
               ;; Set `*' as a string delimiter
               (modify-syntax-entry ?* "\"")
-              ;; (modify-syntax-entry ?_ "w")
-              ;; (modify-syntax-entry ?- "w")
-              ;; Automatically auto-save markdown files
-              ;; This doesn't work
-              ;; Turn on auto-saving
-              ;; (set
-              ;;  (make-local-variable
-              ;;   'auto-save-visited-file-name)
-              ;;  t)
-              ;; (setq-local auto-save-default t)
-              ;; (auto-save-mode)
               )
             )
 
-  ;; Augment `markdown-calc-indents' to only returns multiples of `4'
-  ;; Otherwise `markdown-mode' returns some multiples of `2', which is to align
-  ;; hard-wrapped lines to bullet points, which we never want to do.
-  (require 'seq)
-  (advice-add 'markdown-calc-indents
-              :filter-return
-              #'(lambda (list)
-                  (seq-filter
-                   (lambda (x) (eq (% x 4) 0)) list))))
+  )
 
 (provide 'robenkleene-markdown)
 ;; Local Variables:
