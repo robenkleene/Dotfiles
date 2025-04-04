@@ -44,6 +44,14 @@
   )
 (setq interprogram-cut-function 'rk/safecopy)
 
+;; Remove window chrome
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+(when (fboundp 'horizontal-scroll-bar-mode)
+  (horizontal-scroll-bar-mode -1))
+
 ;; Allow editing from multiple sources
 (setq create-lockfiles nil)
 
