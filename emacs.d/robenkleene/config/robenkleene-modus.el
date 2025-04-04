@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(load-theme 'modus-operandi)
+(load-theme 'modus-vivendi)
 ;; (if window-system
 ;;     (load-theme 'modus-operandi :no-confirm-loading)
 ;;   (load-theme 'modus-vivendi :no-confirm-loading))
