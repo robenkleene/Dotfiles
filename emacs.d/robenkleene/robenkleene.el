@@ -23,7 +23,6 @@
 (require 'robenkleene-config)
 (require 'robenkleene-languages)
 (require 'robenkleene-minibuffer)
-(require 'robenkleene-modus)
 (require 'robenkleene-shell-commands)
 (require 'robenkleene-spelling)
 
