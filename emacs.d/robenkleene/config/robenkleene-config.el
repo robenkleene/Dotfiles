@@ -187,6 +187,10 @@
 ;; Turn on built-in editorconfig
 (editorconfig-mode 1)
 
+(if window-system
+    (load-theme 'modus-vivendi :no-confirm-loading)
+  )
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
