@@ -184,6 +184,9 @@
 ;; applied)
 (setq ad-redefinition-action 'accept)
 
+;; Turn on built-in editorconfig
+(editorconfig-mode 1)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
