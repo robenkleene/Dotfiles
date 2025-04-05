@@ -7,10 +7,6 @@
   ;; Also enables `dired-omit-mode'
   (require 'dired-x)
 
-  ;; Suppress error message
-  ; (defvar dired-use-ls-dired)
-  ; (setq dired-use-ls-dired nil)
-
   ;; Don't ask `Kill buffer of' when deleting a buffer, just kill it
   (setq dired-clean-confirm-killing-deleted-buffers nil)
 
@@ -21,6 +17,9 @@
   (defadvice rk/dired-delete-entry (before force-clean-up-buffers (file) activate)
     (kill-buffer (get-file-buffer file)))
 
+  ;; Suppress `ls does not support --dired' warning
+  (when (string= system-type "darwin")
+    (setq dired-use-ls-dired nil))
 
   (add-hook 'dired-mode-hook
             (lambda ()
