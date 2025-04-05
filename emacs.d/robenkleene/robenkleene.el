@@ -38,7 +38,6 @@
 (require 'robenkleene-diff)
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)
-(require 'robenkleene-man)
 (require 'robenkleene-remember)
 (require 'robenkleene-vc)
 
