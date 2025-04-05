@@ -46,7 +46,6 @@
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-diminish)
-(require 'robenkleene-editorconfig)
 (require 'robenkleene-magit)
 (require 'robenkleene-smartparens)
 (require 'robenkleene-wgrep)
