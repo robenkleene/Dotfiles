@@ -18,7 +18,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; Disable the builtin clipboard support
-(setq select-enable-clipboard nil)
+;; (setq select-enable-clipboard nil)
 
 ;; Set an environment variable to detect Emacs server
 ;; (Emacs server can persist across other shell environment settings [e.g.,
@@ -27,22 +27,6 @@
 (if (and (boundp 'server-buffer-clients) server-buffer-clients)
     (setenv "EMACSSERVER" "1")
   )
-
-;; Only copy to the clipboard if the region is active
-(defun rk/safecopy (text &optional push)
-  ;; Do nothing if the region isn't active so that other commands like
-  ;; `kill-line', don't affect the system clipboard
-  (if (use-region-p)
-      (let (
-            (process-connection-type nil)
-            )
-        (let ((proc (start-process "safecopy" nil "~/.bin/safecopy")))
-          (unless (string))
-          (process-send-string proc text)
-          (process-send-eof proc)))
-    )
-  )
-(setq interprogram-cut-function 'rk/safecopy)
 
 ;; Remove window chrome
 (when (fboundp 'tool-bar-mode)
