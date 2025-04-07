@@ -13,10 +13,6 @@
   ;; Don't show "omitted lines" message
   (setq dired-omit-verbose nil)
 
-  ;; When deleting a directory, always also kill the corresponding Dired buffer
-  (defadvice rk/dired-delete-entry (before force-clean-up-buffers (file) activate)
-    (kill-buffer (get-file-buffer file)))
-
   ;; Suppress `ls does not support --dired' warning
   (when (string= system-type "darwin")
     (setq dired-use-ls-dired nil))
