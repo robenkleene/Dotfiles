@@ -15,6 +15,7 @@
 ;; Functions
 (require 'robenkleene-alias)
 (require 'robenkleene-functions)
+(require 'robenkleene-keymap)
 (require 'robenkleene-interactive)
 
 ;; Config
