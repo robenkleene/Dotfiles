@@ -13,6 +13,7 @@
 (package-autoremove)
 
 ;; Do upgrade first because this also does a refresh
+;; Comment this out to avoid `is a system package` errors
 (package-upgrade-all)
 
 (dolist (package package-selected-packages)
