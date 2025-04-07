@@ -5,12 +5,13 @@
 (with-eval-after-load 'vc
   ;; Removes massive slow down with large `hg' repos
   (setq vc-handled-backends nil)
+
   ;; Even `git' has slow downs when opening files
   ;; (setq vc-handled-backends '(Git))
+
   ;; `git' has an annoying message when following symlinks:
-  ;; This instead follows the link and echos
-  ;; Display in echo area
-  ;; (setq vc-follow-symlinks t)
+  ;; This instead follows the link and echos a message
+  (setq vc-follow-symlinks t)
 
   ;; This just edits the file in place and ignores `vc' features
   ;; This breaks detection of the current backend.
