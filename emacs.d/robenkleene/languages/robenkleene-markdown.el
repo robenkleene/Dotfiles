@@ -17,16 +17,17 @@
   ;; parent header
   (setq markdown-nested-imenu-heading-index nil)
   :config
+  ;; Block Movement
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
+  ;; `markdown-mark-paragraph` will treat list items as individual paragraphs,
+  ;; so just use the default `mark-paragraph`
+  (define-key markdown-mode-map [remap mark-paragraph] nil)
 
   (add-hook 'markdown-mode-hook
             (lambda ()
-              ;; Use blank lines to indicate paragraphs
-              (setq-local paragraph-start "[[:blank:]]*\n")
-              (setq-local paragraph-separate "[[:blank:]]*$")
               ;; Set backtick as a string delimiter, this makes the `sexp'
               ;; commands (like `mark-sexp') work with backticks
               (modify-syntax-entry ?` "\"")
