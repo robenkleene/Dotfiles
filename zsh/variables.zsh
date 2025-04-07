@@ -22,11 +22,6 @@ manpath=(~/.man ${(s/:/)MANPATH})
 typeset -U manpath
 export MANPATH="${(j/:/)manpath}"
 
-# We do this even if `"$TERM_PROGRAM" = "Apple_Terminal"` because otherwise
-# `nvim` will try to query the terminal for this and that will display
-# characters sequences on startup
-export COLORTERM="truecolor"
-
 # Smartcase and incremental search in `less`
 # `--RAW-CONTROL-CHARS` fixes escape code issue with colors on Linux
 # `--quit-if-one-screen` is the default but gets disabled with `LESS` set
