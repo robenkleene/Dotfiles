@@ -28,6 +28,12 @@
 
   (add-hook 'markdown-mode-hook
             (lambda ()
+              ;; Use blank lines to indicate paragraphs
+              ;; Using `mark-paragraph` to treat a block of lists as a single
+              ;; paragraph won't work without this
+              (setq-local paragraph-start "[[:blank:]]*\n")
+              (setq-local paragraph-separate "[[:blank:]]*$")
+
               ;; Set backtick as a string delimiter, this makes the `sexp'
               ;; commands (like `mark-sexp') work with backticks
               (modify-syntax-entry ?` "\"")
