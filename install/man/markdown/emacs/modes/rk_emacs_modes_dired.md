@@ -5,8 +5,7 @@
 - `+`: Create directory
 - `C-x C-f`: Create a new file (`ido-mode` interferes with inserting spaces in a filename, to get around those use `C-f` to drop down to the default `find-file` interface)
 - `D`: Delete file
-- `s`: Toggle between alphabetical and date sorting
-    - To sort by size use `C-u s` then add `S` to the list of flags to sort by size
+- `s`: Toggle between alphabetical and date sorting (to sort by size use `C-u s` then add `S` to the list of flags to sort by size)
 - `R`: Rename (or move) file
 - `0 w` / `dired-copy-filename-as-kill`: Kill path to file
 - `C-x C-h`: Cycle through human readable file sizes
