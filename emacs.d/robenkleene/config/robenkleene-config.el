@@ -72,7 +72,9 @@
 (tooltip-mode -1)
 
 ;; Winner Mode
-(winner-mode 1)
+;; In practice this seems really confusing? Whereas `C-x <left>' / `C-x <right>'
+;; are more predictable
+;; (winner-mode 1)
 
 ;; Save recent file list
 (require 'recentf)
