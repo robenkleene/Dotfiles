@@ -16,15 +16,46 @@
   ;; menu works nicely with `consult-imenu' with headers prefixed with their
   ;; parent header
   (setq markdown-nested-imenu-heading-index nil)
+  :bind
+  (([remap markdown-enter-key] . rk/markdown-enter-key))
   :config
   ;; Block Movement
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
               'rk/forward-block)
+  (define-key markdown-mode-map (kbd "C-M-h")
+              'rk/mark-markdown-code-block)
   ;; `markdown-mark-paragraph` will treat list items as individual paragraphs,
   ;; so just use the default `mark-paragraph`
   (define-key markdown-mode-map [remap mark-paragraph] nil)
+
+  ;; Allow following links with return, without this, the best built-in binding
+  ;; to follow links is `C-c C-d'
+  (defun rk/markdown-enter-key ()
+    "Follow links or enter."
+    (interactive)
+    (if (or (eolp) (bolp) (eq ?\[ (char-after)))
+        (markdown-enter-key)
+      (if (markdown-link-p)
+          (markdown-follow-thing-at-point nil)
+        (markdown-enter-key))
+      )
+    )
+
+  (defun rk/mark-markdown-code-block ()
+    "Marks between tilde."
+    (interactive)
+    (end-of-line)
+    (search-backward "```")
+    (next-line)
+    (beginning-of-line)
+    (set-mark (point))
+    (search-forward "```")
+    (previous-line)
+    (end-of-line)
+    (exchange-point-and-mark)
+    )
 
   (add-hook 'markdown-mode-hook
             (lambda ()
