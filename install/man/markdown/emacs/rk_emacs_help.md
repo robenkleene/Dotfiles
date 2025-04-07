@@ -13,6 +13,12 @@
 - `<TAB>` or `forward-button`: Go to next button
 - `S-<TAB>` or `back-button`: Go to next button
 
+## Notes
+
+Scrolling in the other window is helpful for help buffers.
+
+- `M-<pageup>`, `S-C-M-v` / `M-<pageup>`, `C-M-v`: Page up / down in other window (note `S-C-M-v` doesn't work in terminal Emacs)
+
 # Minibuffer
 
 - From `M-x`, `C-h f` will show help for the current function
