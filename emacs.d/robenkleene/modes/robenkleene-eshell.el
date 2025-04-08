@@ -8,6 +8,27 @@
   )
 
 (with-eval-after-load 'eshell
+  ;; Suppress "Welcome to the Emacs shell" startup message
+  (setq eshell-banner-message "")
+
+  ;; Truncate path to 20 characters
+  ;; This particularly helps with small width windows because eshell will move the
+  ;; visible part of the window to make the prompt cursor visible which cuts off
+  ;; the left side of output
+  (setq eshell-prompt-function
+        (lambda ()
+          (concat
+           (let* (
+                  (path (abbreviate-file-name (eshell/pwd)))
+                  (length (length path))
+                  (max 20)
+                  )
+             (if (> length max)
+                 (concat "..." (substring path (- length max)))
+               path
+               ))
+           (if (= (user-uid) 0) " # " " $ "))))
+
   ;; `less' can cause problems in `eshell'
   ;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
   ;; that need a pager set
@@ -50,24 +71,6 @@
 
   (add-hook 'eshell-directory-change-hook 'rk/z-add)
   )
-
-;; Truncate path to 20 characters
-;; This particularly helps with small width windows because eshell will move the
-;; visible part of the window to make the prompt cursor visible which cuts off
-;; the left side of output
-(setq eshell-prompt-function
-      (lambda ()
-        (concat
-         (let* (
-                (path (abbreviate-file-name (eshell/pwd)))
-                (length (length path))
-                (max 20)
-                )
-           (if (> length max)
-               (concat "..." (substring path (- length max)))
-             path
-             ))
-         (if (= (user-uid) 0) " # " " $ "))))
 
 (provide 'robenkleene-eshell)
 ;; Local Variables:
