@@ -61,14 +61,6 @@
     )
   )
 
-(defun eshell-other-window ()
-  "Open eshell in other window."
-  (interactive)
-  (let ((buf (eshell "new")))
-    (switch-to-buffer (other-buffer buf))
-    (switch-to-buffer-other-window buf))
-  )
-
 (defun grep-shell-command (command-args)
   "Create grep buffer from COMMAND-ARGS."
   (interactive

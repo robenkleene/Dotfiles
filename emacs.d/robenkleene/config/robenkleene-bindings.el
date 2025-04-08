@@ -32,8 +32,6 @@
 ;; Improve default completion
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-(define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell-other-window)
-
 ;; Prefer the `regexp' versions of search and query replace, this is partially
 ;; because `C-M-%' isn't possible to type in a terminal
 ;; These use `global-set-key' so more specific minor modes can override them,
