@@ -19,8 +19,6 @@
 
   (add-hook 'dired-mode-hook
             (lambda ()
-              (define-key dired-mode-map (kbd "`") 'eshell-other-window)
-
               ;; Definitely need this because lack of colors in Dired mode means
               ;; it's hard to tell the details from the filename
               (dired-hide-details-mode)
