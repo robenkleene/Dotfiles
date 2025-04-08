@@ -18,6 +18,8 @@
 (define-key rk/bindings-minor-mode-map (kbd "M-g .")
             'xref-find-apropos)
 
+(define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell)
+
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
                                                  (interactive)
