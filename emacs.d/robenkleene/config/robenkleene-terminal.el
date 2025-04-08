@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Enable mouse support
+(xterm-mouse-mode 1)
+
 ;; Remove menu bar
 (menu-bar-mode -1)
 
