@@ -29,20 +29,6 @@
                ))
            (if (= (user-uid) 0) " # " " $ "))))
 
-  ;; `less' can cause problems in `eshell'
-  ;; Don't set `PAGER' to `cat', otherwise it will interfere with visual commands
-  ;; that need a pager set
-  (setenv "PAGER" "")
-  ;; Instead just sety these as visual commands
-  (setenv "GIT_PAGER" "")
-  ;; Force `git' colors all the time
-  ;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
-
-  (setq eshell-visual-subcommands '(
-                                    ("hg" "diff" "show")
-                                    ("git" "log" "diff" "show")
-                                    )
-        )
 
   (add-hook
    'eshell-mode-hook
@@ -55,6 +41,22 @@
      ;; (face-remap-add-relative 'trailing-whitespace '(:background nil))
      ;; (setq nobreak-space 'override-nobreak-space)
      (whitespace-mode 0)
+
+     ;; The `less' pager causes problems in Eshell, this can be mediated by e.g.,
+     ;; setting `(setenv "PAGER" "")' and `(setenv "GIT_PAGER" "")'
+     ;; But it's better to just switch to `term-mode' for these
+     ;; Any command that automatically uses a pager should be configured with:
+     ;; - `eshell-visual-commands': For commands (e.g., `vi')
+     ;; - `eshell-visual-subcommands': For subcommands (e.g., `git show')
+     ;; - `eshell-visual-options': For flags (e.g., `git --help')
+     ;; Commands
+     (add-to-list 'eshell-visual-commands "n")
+     (add-to-list 'eshell-visual-commands "nnn")
+     ;; Subcommands
+     (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
+     (add-to-list 'eshell-visual-subcommands '("hg" "diff" "show"))
+     ;; Options
+     (add-to-list 'eshell-visual-options '("git" "--help" "--paginate"))
      )
    )
 
