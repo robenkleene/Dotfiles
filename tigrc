@@ -14,3 +14,7 @@ set mouse = true
 # Use `bash` for the `-n` option on `echo` to remove the trailing new line
 bind generic Y >bash -c "echo -n %(commit) | ~/.bin/safecopy"
 bind generic V >sh -c "git show %(commit) | vim -"
+
+# Make the selected line use `FFFFFF` instead of `white` because it's more
+# readable on green
+color cursor color231 green bold
