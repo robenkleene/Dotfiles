@@ -7,7 +7,7 @@ merge = internal:merge3
 [pager]
 pager = less
 [alias]
-d = diff --root .
+dr = diff --root .
 [committemplate]
 %unset emptymsg
 [extensions]
