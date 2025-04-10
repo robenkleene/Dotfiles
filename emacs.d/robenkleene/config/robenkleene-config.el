@@ -193,6 +193,10 @@
                  (require 'woman)
                  (list (woman-file-name nil)))))
 
+;; Only show the tab bar if a window has more than one tab
+;; (The default it to always show the tab bar after a tab command is used)
+(setq tab-bar-show 1)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
