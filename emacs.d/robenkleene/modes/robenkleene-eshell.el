@@ -8,6 +8,11 @@
   )
 
 (with-eval-after-load 'eshell
+  ;; Most `git' commands should use `term-mode' and have colors by default
+  ;; (e.g., `eshell-visual-commands'), but for commands that don't use a pager,
+  ;; like `git status', forcing colors is useful.
+  (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
+
   ;; Suppress "Welcome to the Emacs shell" startup message
   (setq eshell-banner-message "")
 
