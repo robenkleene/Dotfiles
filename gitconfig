@@ -21,4 +21,4 @@
 	prompt = false
 [alias]
 	root = rev-parse --show-toplevel
-	d = diff --relative
+	dr = diff --relative
