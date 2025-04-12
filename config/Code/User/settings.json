@@ -34,5 +34,9 @@
     "terminal.integrated.initialHint": false,
     // Don't show `GitHub Copilot` autocompletion suggestions
     "github.copilot.editor.enableAutoCompletions": false,
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    // Disable extension recommendations popup
+    // Recommendations can still be seen with the `Extensions: Show Recommended
+    // Extensions` command
+    "workbench.remoteIndicator.showExtensionRecommendations": false
 }
