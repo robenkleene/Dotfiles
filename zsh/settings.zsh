@@ -27,7 +27,7 @@ unalias run-help &>/dev/null
 # `pushdsilent`: Don't dump directory list after each `pushd` (or `cd`)
 # `pushdminus`: Swaps the meaning of `+` and `-`, so `cd -3` is the third
 # oldest directory (it's easiest to do `cd -<tab>`).
-setopt autopushd pushd_ignore_dups pushdminus pushdsilent
+setopt autopushd pushdsilent
 
 # History
 # Share history between sessions
@@ -65,22 +65,6 @@ setopt hist_ignore_all_dups
 setopt nolistbeep
 # Just don't beep period
 # setopt nobeep
-
-# Add renaming function
-# autoload zmv
-
-# Override bracketed paste to set the mark before pasting, this makes it easy to
-# quote pasted text with `M-"` (`quote-region`)
-function rk/bracketed-paste {
-  zle set-mark-command
-  zle .bracketed-paste
-  # Arrange to display highlighting if necessary
-  if [[ -z $zle_highlight || -n ${(M)zle_highlight:#paste:*} ]]; then
-    zle -R
-    zle .read-command && zle -U - "$KEYS"
-  fi
-}
-zle -N bracketed-paste rk/bracketed-paste
 
 # Completion
 # Enable Completion

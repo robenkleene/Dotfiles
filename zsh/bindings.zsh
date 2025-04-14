@@ -61,6 +61,20 @@ _system_copy_region_as_kill() {
 }
 zle -N _system_copy_region_as_kill
 
+# Override bracketed paste to set the mark before pasting, this makes it easy to
+# quote pasted text with `M-"` (`quote-region`)
+function rk/bracketed-paste {
+  zle set-mark-command
+  zle .bracketed-paste
+  # Arrange to display highlighting if necessary
+  if [[ -z $zle_highlight || -n ${(M)zle_highlight:#paste:*} ]]; then
+    zle -R
+    zle .read-command && zle -U - "$KEYS"
+  fi
+}
+zle -N bracketed-paste rk/bracketed-paste
+
+
 # This should already be defined
 # typeset -A key
 # key=(
