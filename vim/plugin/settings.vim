@@ -53,3 +53,9 @@ set suffixes-=.h
 set cursorline
 " Highlight just the line number
 set cursorlineopt=number
+
+" Neovim removes `cscope` support
+if !has('nvim')
+  " Automatically add `cscope find` queries to the quickfix list
+  set cscopequickfix=s-,c-,d-,i-,t-,e-
+endif
