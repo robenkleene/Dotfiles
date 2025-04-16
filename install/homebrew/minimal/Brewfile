@@ -1,4 +1,5 @@
 brew 'aspell'
+brew 'cscope'
 brew 'editorconfig'
 brew 'fd'
 # for `zoxide` `zi` to go to recent directories

@@ -15,6 +15,7 @@ brew 'nvim'
 brew 'git-delta'
 brew 'universal-ctags'
 brew 'gnu-typist'
+brew 'cscope'
 
 # Editor
 brew 'vim'
