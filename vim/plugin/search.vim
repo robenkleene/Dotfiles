@@ -1,6 +1,10 @@
 " Sensible turns it on, and it's on by default in Neovim
 " Incremental search
-" set noincsearch
+" The reason to keep this off is if you have a function definition on screen,
+" and want to see if a string exists in that function definition, with
+" `incsearch` you can't tell because you jump away from the function context
+" while typing.
+set noincsearch
 
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
