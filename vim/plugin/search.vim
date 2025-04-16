@@ -1,6 +1,6 @@
 " Sensible turns it on, and it's on by default in Neovim
 " Incremental search
-set noincsearch
+" set noincsearch
 
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
