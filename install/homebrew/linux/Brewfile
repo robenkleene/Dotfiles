@@ -23,7 +23,6 @@ brew 'gh'
 
 # Editor
 brew 'aspell'
-brew 'emacs'
 brew 'editorconfig'
 brew 'vim'
 # HEAD for truecolor support
