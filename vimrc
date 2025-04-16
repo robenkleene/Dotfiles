@@ -36,7 +36,13 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json' }
+" Neovim only
+Plug 'dhananjaylatkar/cscope_maps.nvim', { 'cond': has('nvim') }
 call plug#end()
+
+if has('nvim')
+  lua require("cscope_maps").setup()
+endif
 
 " Install missing plugins
 autocmd VimEnter *
