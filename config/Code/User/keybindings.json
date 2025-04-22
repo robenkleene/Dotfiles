@@ -15,5 +15,25 @@
             "to": "nextBlankLine",
         },
         "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+b",
+        "command": "cursorWordStartLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+f",
+        "command": "cursorWordEndRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "deleteWordRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+space",
+        "when": "!editorTextFocus",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]
