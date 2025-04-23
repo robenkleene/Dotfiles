@@ -134,6 +134,11 @@
     "body": "\"$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
+  "True if standard output is a terminal": {
+    "prefix": "rk_test_term",
+    "body": "-t 1",
+    "description": "True if standard output is a terminal"
+  },
   "While loop one-liner": {
     "prefix": "rk_1_while",
     "body": "while read i; do { ${0:echo $i} } done",
