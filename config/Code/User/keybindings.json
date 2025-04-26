@@ -1,18 +1,36 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "alt+shift+[",
+        "key": "ctrl+[",
         "command": "cursorMove",
         "args": {
-            "to": "prevBlankLine",
+            "to": "prevBlankLine"
         },
         "when": "editorTextFocus"
     },
     {
-        "key": "alt+shift+]",
+        "key": "ctrl+]",
+        "command": "cursorMove",
+        "args": {
+            "to": "nextBlankLine"
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "cursorMove",
+        "args": {
+            "to": "prevBlankLine",
+            "select": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
         "command": "cursorMove",
         "args": {
             "to": "nextBlankLine",
+            "select": true
         },
         "when": "editorTextFocus"
     },
