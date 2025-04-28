@@ -53,5 +53,16 @@
         "key": "shift+space",
         "when": "!editorTextFocus",
         "command": "workbench.action.toggleMaximizedPanel"
+    },
+    // Allow `ctrl+q` in Terminal
+    // `workbench.action.quickOpenView` normally eats it
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
+    {
+      "key": "ctrl+q",
+      "when": "!terminalFocus",
+      "command": "workbench.action.quickOpenView"
     }
 ]
