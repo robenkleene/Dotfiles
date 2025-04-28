@@ -9,11 +9,14 @@ setopt ignore_eof
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
+# Set all bindings for Emacs keys
+# For some reason the pattern search bindings on Linux weren't setting without
+# this
+bindkey -e
+
 # Allow globs in history search
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-bindkey -M isearch '^R' history-incremental-search-backward
-bindkey -M isearch '^S' history-incremental-search-forward
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
 
 # Widgets
 
