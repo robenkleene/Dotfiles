@@ -11,6 +11,9 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Allow globs in history search
 bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+bindkey -M isearch '^R' history-incremental-search-backward
+bindkey -M isearch '^S' history-incremental-search-forward
 
 # Widgets
 
