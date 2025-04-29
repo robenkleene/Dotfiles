@@ -49,7 +49,7 @@ globs are case insensitive)
 .IP \[bu] 2
 \f[CR]rg \-U \-\-multiline\-dotall \[dq]string1.*string2\[dq] \-g \[dq]*.m\[dq]\f[R]
 .IP \[bu] 2
-\f[CR]\-U\f[R]: Enable multiline search
+\f[CR]\-U\f[R]: Enable multi\-line search
 .IP \[bu] 2
 \f[CR]\-\-multiline\-dotall\f[R]: Allow \f[CR].\f[R] to match newlines
 (alternatively, \f[CR](?s:.)\f[R] can be replace \f[CR].\f[R] to match
@@ -93,19 +93,15 @@ e.g., \f[CR]rg \-\- \-\-bind\f[R]
 \f[CR][[:xdigit:]]\f[R]: Hex digit
 .SS Perl Character Classes
 .IP \[bu] 2
-\f[CR]\[rs]d\f[R]: Digit
+\f[CR]\[rs]b\f[R]: Word boundary (matches a \f[I]position\f[R], not a
+character, e.g., can match EOL)
 .IP \[bu] 2
-\f[CR]\[rs]D\f[R]: Not digit
+\f[CR]\[rs]d\f[R] / \f[CR]\[rs]D\f[R]: Digit / not digit
 .IP \[bu] 2
-\f[CR]\[rs]s\f[R]: Whitespace
+\f[CR]\[rs]s\f[R] / \f[CR]\[rs]S\f[R]: Whitespace / not whitespace
 .IP \[bu] 2
-\f[CR]\[rs]S\f[R]: Not whitespace
-.IP \[bu] 2
-\f[CR]\[rs]w\f[R]: Word character
-.IP \[bu] 2
-\f[CR]\[rs]b\f[R]: Not word character
-.IP \[bu] 2
-\f[CR]\[rs]W\f[R]: Not word character
+\f[CR]\[rs]w\f[R] / \f[CR]\[rs]W\f[R]: Word character / not word
+character
 .SS Empty Matches
 .IP \[bu] 2
 \f[CR]\[ha]\f[R]: The beginning of text (or start\-of\-line with
