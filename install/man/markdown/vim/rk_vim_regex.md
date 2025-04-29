@@ -30,26 +30,20 @@ By default Vim searches for the literal characters for most punctuation (excludi
 
 * Use `\{-}` instead of `*` for non-greedy (or `{-}` with `\v`)
 * `.`: Any character except new line
-* `\s`: Whitespace character
-* `\S`: Non-whitespace character
-* `\d`: Digit
-* `\D`: Non-digit
-* `\x`: Hex digit
-* `\X`: Non-hex digit
-* `\o`: Octal digit
-* `\O`: Non-octal digit
-* `\h`: Head of word character (`a`, `b`, `c...z`,`A`, `B`, `C...Z` and `_`)
-* `\H`: Non-head of word character
-* `\p`: Printable character
-* `\P`: Like `\p`, but excluding digits
-* `\w`: Word character
-* `\W`: Non-word character
-* `\a`: Alphabetic character
-* `\A`: Non-alphabetic character
-* `\l`: Lowercase character
-* `\L`: Non-lowercase character
-* `\u`: Uppercase character
-* `\U`: Non-uppercase character
+
+## More
+
+* `\<` / `\>`: Word start / end (matches a *position*, not a character, e.g., can match EOL)
+* `\a` / `\A`: Alphabetic / non-alphabetic character
+* `\d` / `\D`: Digit / non-digit
+* `\h` / `\H`: Head of word character (`a`, `b`, `c...z`,`A`, `B`, `C...Z` and `_`) / non-head of word character
+* `\l` / `\L`: Lowercase / non-lowercase character character
+* `\o` / `\O`: Octal digit / non-octal digit
+* `\p`/ `\P`: Printable character / Like `\p`, but excluding digits
+* `\s` / `\S`: Whitespace character / non-whitespace character
+* `\u` / `\U`: Uppercase non-uppercase character
+* `\w` / `\W`: Word character / non-word character
+* `\x` / `\X`: Hex digit / non-hex digit
 
 # Notes
 

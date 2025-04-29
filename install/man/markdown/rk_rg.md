@@ -25,7 +25,7 @@
 # Examples
 
 - `rg -U --multiline-dotall "string1.*string2" -g "*.m"`
-- `-U`: Enable multiline search
+- `-U`: Enable multi-line search
 - `--multiline-dotall`: Allow `.` to match newlines (alternatively, `(?s:.)` can be replace `.` to match new lines)
 - `rg -IN -m 1 ".*import.*"`: Print matching lines, max 1 per file, good for quickly remembering how to do something
 
@@ -54,13 +54,10 @@
 
 ## Perl Character Classes
 
-- `\d`: Digit
-- `\D`: Not digit
-- `\s`: Whitespace
-- `\S`: Not whitespace
-- `\w`: Word character
-- `\b`: Not word character
-- `\W`: Not word character
+- `\b`: Word boundary (matches a *position*, not a character, e.g., can match EOL)
+- `\d` / `\D`: Digit / not digit
+- `\s` / `\S`: Whitespace / not whitespace
+- `\w` / `\W`: Word character / not word character
 
 ## Empty Matches
 
