@@ -16,9 +16,8 @@ Plug 'vim-utils/vim-man'
 " This breaks completion before running the command once
 " Plug 'vim-utils/vim-man', { 'on': 'Man' }
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
