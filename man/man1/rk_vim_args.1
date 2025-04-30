@@ -2,13 +2,17 @@
 .\"
 .TH "RK_VIM_ARGS Reference" "" "" ""
 .IP \[bu] 2
-\f[CR]:args\f[R]: Show the contents of the argument list
+\f[CR]:ar[gs]\f[R]: Show the contents of the argument list
+.IP \[bu] 2
+\f[CR]:argu[ment] [count]\f[R]: Go to argument by index
+(\f[CR]:args\f[R] increments indexes top to bottom then left to right
+starting from one)
 .IP \[bu] 2
 \f[CR]:next\f[R]: Next file
 .IP \[bu] 2
 \f[CR]:prev\f[R]: Previous file
 .IP \[bu] 2
-\f[CR]args <backtick>fd foo<backtick>\f[R]: Populate \f[CR]arglist\f[R]
+\f[CR]:args <backtick>fd foo<backtick>\f[R]: Populate \f[CR]arglist\f[R]
 with result of external command (using \f[CR]backtick\-expansion\f[R]).
 Note if the command contains a wildcard, e.g.,
 \f[CR]args <backtick>fd \[aq]*.js\[aq]<backtick>\f[R], then you must
