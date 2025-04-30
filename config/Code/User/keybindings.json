@@ -61,8 +61,18 @@
         "command": "-workbench.action.quickOpenView"
     },
     {
-      "key": "ctrl+q",
-      "when": "!terminalFocus",
-      "command": "workbench.action.quickOpenView"
+        "key": "ctrl+q",
+        "when": "!terminalFocus",
+        "command": "workbench.action.quickOpenView"
+    },
+    // Allow `ctrl+w` in debug console
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.switchWindow"
+    },
+    {
+        "key": "ctrl+w",
+        "when": "!panelFocus",
+        "command": "workbench.action.switchWindow"
     }
 ]
