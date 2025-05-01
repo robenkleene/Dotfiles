@@ -4,30 +4,25 @@
 .SH Magic
 .IP \[bu] 2
 \f[CR]magic\f[R] is the default setting, this means non\-greedy is
-\f[CR]\[rs]{\-}\f[R] and capture groups is \f[CR]\[rs](\[rs])\f[R].
-.IP \[bu] 2
-\f[CR]\[rs]|\f[R] is Vim\[cq]s version of \[lq]or\[rq]
-.RS 2
-.PP
-matches none `magic' `nomagic' none $ $ $ $ matches_end\-of\-line .
-\&.
-\&.
-\&.
-matches_any_character
-\[bu] .RS 2
+\f[CR]\[rs]{\-}\f[R] and capture groups is \f[CR]\[rs](\[rs])\f[R],
+\f[CR]\[rs]|\f[R] also needs to be escaped, e.g.,
+\f[CR]/a_\[rs](foo\[rs]|bar\[rs])\f[R]
 .IP
 .EX
-*        \[rs]*         \[rs]*    any_number_of_the_previous_atom
+\[rs]v    \[rs]m       \[rs]M         \[rs]V    matches
+none  \[aq]magic\[aq]  \[aq]nomagic\[aq]  none
+$     $        $          \[rs]$    matches_end\-of\-line
+\&.     .        \[rs].         \[rs].    matches_any_character
+*     *        \[rs]*         \[rs]*    any_number_of_the_previous_atom
+\[ti]     \[ti]        \[rs]\[ti]         \[rs]\[ti]    latest_substitute_string
+()    \[rs](\[rs])     \[rs](\[rs])       \[rs](\[rs])  grouping_into_an_atom
+|     \[rs]|       \[rs]|         \[rs]|    separating_alternatives
+\[rs]a    \[rs]a       \[rs]a         \[rs]a    alphabetic_character
+\[rs]\[rs]    \[rs]\[rs]       \[rs]\[rs]         \[rs]\[rs]    literal_backslash
+\[rs].    \[rs].       .          .     literal_dot
+\[rs]{    {        {          {     literal_\[aq]{\[aq]
+a     a        a          a     literal_\[aq]a\[aq]
 .EE
-\[ti] \[ti] \[ti] \[ti] latest_substitute_string () () () ()
-grouping_into_an_atom | | | | separating_alternatives
-alphabetic_character \[rs] \[rs] \[rs] \[rs] literal_backslash .
-\&.
-\&.
-\&.
-literal_dot { { { { literal_`{' a a a a literal_`a'
-.RE
-.RE
 .SH Pattern Modifiers
 .IP \[bu] 2
 \f[CR]/\[rs]v\f[R]: Very magic search makes most special characters take

@@ -1,21 +1,22 @@
 # Magic
 
-- `magic` is the default setting, this means non-greedy is `\{-}` and capture groups is `\(\)`.
-- `\|` is Vim's version of "or"
+- `magic` is the default setting, this means non-greedy is `\{-}` and capture groups is `\(\)`, `\|` also needs to be escaped, e.g., `/a_\(foo\|bar\)`
 
-	\v    \m       \M         \V    matches
-	none  'magic'  'nomagic'  none
-	$     $        $          \$    matches_end-of-line
-	.     .        \.         \.    matches_any_character
-	*     *        \*         \*    any_number_of_the_previous_atom
-	~     ~        \~         \~    latest_substitute_string
-	()    \(\)     \(\)       \(\)  grouping_into_an_atom
-	|     \|       \|         \|    separating_alternatives
-	\a    \a       \a         \a    alphabetic_character
-	\\    \\       \\         \\    literal_backslash
-	\.    \.       .          .     literal_dot
-	\{    {        {          {     literal_'{'
-	a     a        a          a     literal_'a'
+```
+\v    \m       \M         \V    matches
+none  'magic'  'nomagic'  none
+$     $        $          \$    matches_end-of-line
+.     .        \.         \.    matches_any_character
+*     *        \*         \*    any_number_of_the_previous_atom
+~     ~        \~         \~    latest_substitute_string
+()    \(\)     \(\)       \(\)  grouping_into_an_atom
+|     \|       \|         \|    separating_alternatives
+\a    \a       \a         \a    alphabetic_character
+\\    \\       \\         \\    literal_backslash
+\.    \.       .          .     literal_dot
+\{    {        {          {     literal_'{'
+a     a        a          a     literal_'a'
+```
 
 # Pattern Modifiers
 
