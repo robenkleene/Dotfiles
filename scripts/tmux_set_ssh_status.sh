@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-if [ -n "$SSH_CONNECTION" ]; then
+if [ -n "${SSH_CONNECTION:-}" ]; then
   # Green is default `status-style`
   # Yellow is default `message-style`
   # Invert those for `SSH`
