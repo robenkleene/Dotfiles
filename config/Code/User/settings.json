@@ -38,5 +38,6 @@
     // Disable extension recommendations popup
     // Recommendations can still be seen with the `Extensions: Show Recommended
     // Extensions` command
-    "workbench.remoteIndicator.showExtensionRecommendations": false
+    "workbench.remoteIndicator.showExtensionRecommendations": false,
+    "files.autoSave": "afterDelay"
 }
