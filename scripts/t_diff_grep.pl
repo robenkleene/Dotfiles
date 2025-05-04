@@ -5,6 +5,11 @@ use warnings;
 
 my $destLine = $ARGV[0] // 0;
 
+if ($destLine eq '+') {
+    print "It's a plus sign\n";
+    exit 0;
+}
+
 my $filename;
 my $line;
 my $offset = 0;
