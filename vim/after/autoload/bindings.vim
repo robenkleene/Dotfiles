@@ -9,14 +9,17 @@ function! bindings#GetSelectedText()
 endfunction
 
 " Unimpaired conflict markers
+" The original search was updated to find:
+" - `^@@@`: sometimes there's an extra `@`?
+" - `++<<<<<<<<`: Sometimes there's two `+` at the start?
 function! bindings#Context(reverse) abort
-  call search('^\(@@ .* @@\|[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
+  call search('^\(@@@\? .* @@@\?\|+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
 endfunction
 function! bindings#ContextMotion(reverse) abort
   if a:reverse
     -
   endif
-  call search('^@@ .* @@\|^diff \|^[<=>|]\{7}[<=>|]\@!', 'bWc')
+  call search('^@@@\? .* @@@\?\|^diff \|^+\?+\?[<=>|]\{7}[<=>|]\@!', 'bWc')
   if getline('.') =~# '^diff '
     let end = search('^diff ', 'Wn') - 1
     if end < 0
