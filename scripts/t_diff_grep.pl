@@ -5,9 +5,11 @@ use warnings;
 
 my $destLine = $ARGV[0] // 0;
 
+# Print all lines with plus
+my $plus = 0;
 if ($destLine eq '+') {
-    print "It's a plus sign\n";
-    exit 0;
+    $plus = 1;
+    $destLine = 0;
 }
 
 my $filename;
@@ -37,13 +39,13 @@ while (<STDIN>) {
    } elsif (m(^\+(.*)$)) {
       my $data = $1 || '-';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless $printed || $destLine > 0;
+         unless ($printed && !$plus) || $destLine > 0;
       $offset++;
       $printed = 1;
    } elsif (m(^\-(.*)$)) {
       my $data = $1 || '-';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless $printed || $destLine > 0;
+         unless $plus || $printed || $destLine > 0;
       # Don't increment the offset for subtracted lines
       $printed = 1;
    } elsif (m(^ )) {
