@@ -12,14 +12,18 @@ endfunction
 " The original search was updated to find:
 " - `^@@@`: sometimes there's an extra `@`?
 " - `++<<<<<<<<`: Sometimes there's two `+` at the start?
+" - The non-conflict markers were then removed because jumping to hunks is
+"   more appropriate with fold bindings?
 function! bindings#Context(reverse) abort
-  call search('^\(@@@\? .* @@@\?\|+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
+  " call search('^\(@@@\? .* @@@\?\|+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
+  call search('^\(+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
 endfunction
 function! bindings#ContextMotion(reverse) abort
   if a:reverse
     -
   endif
-  call search('^@@@\? .* @@@\?\|^diff \|^+\?+\?[<=>|]\{7}[<=>|]\@!', 'bWc')
+  " call search('^@@@\? .* @@@\?\|^diff \|^+\?+\?[<=>|]\{7}[<=>|]\@!', 'bWc')
+  call search('^+\?+\?[<=>|]\{7}[<=>|]\@!', 'bWc')
   if getline('.') =~# '^diff '
     let end = search('^diff ', 'Wn') - 1
     if end < 0
