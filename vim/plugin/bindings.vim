@@ -39,3 +39,11 @@ xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 xnoremap <expr> <silent> <Up> (v:count == 0 ? 'gk' : 'k')
 xnoremap <expr> <silent> <Down> (v:count == 0 ? 'gj' : 'j')
+
+" Unimpaired conflict markers
+nnoremap <silent> [c :<C-U>call bindings#Context(1)<CR>
+onoremap <silent> [c :<C-U>call bindings#ContextMotion(1)<CR>
+xnoremap <silent> [c :<C-U>exe 'normal! gv'<Bar>call bindings#Context(1)<CR>
+nnoremap <silent> ]c :<C-U>call bindings#Context(0)<CR>
+xnoremap <silent> ]c :<C-U>exe 'normal! gv'<Bar>call bindings#Context(0)<CR>
+onoremap <silent> ]c :<C-U>call bindings#ContextMotion(0)<CR>
