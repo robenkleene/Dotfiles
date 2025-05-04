@@ -37,13 +37,13 @@ while (<STDIN>) {
       $offset = 0;
       $printed = 0;
    } elsif (m(^\+(.*)$)) {
-      my $data = $1 || '-';
+      my $data = $1 || '';
       print "$filename:" . ($offset + $line) . ":$data\n"
          unless ($printed && !$plus) || $destLine > 0;
       $offset++;
       $printed = 1;
    } elsif (m(^\-(.*)$)) {
-      my $data = $1 || '-';
+      my $data = $1 || '';
       print "$filename:" . ($offset + $line) . ":$data\n"
          unless $plus || $printed || $destLine > 0;
       # Don't increment the offset for subtracted lines
