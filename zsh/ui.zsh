@@ -52,7 +52,7 @@ PS1+='%F{yellow}%(1j.&%j .)'
 # `148` on Linux
 # PS1+='%F{red}%(146?..%(148?..%(?..%?? )))'
 PS1+='%F{red}%(?..%?? )'
-PS1+='%f%# '
+PS1+='%f%# '
 
 # Right prompt
 # RPROMPT='${vcs_info_msg_0_}'
