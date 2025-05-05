@@ -2,14 +2,13 @@
 .\"
 .TH "RK_HG_DIFF Reference" "" "" ""
 .IP \[bu] 2
-\f[CR]hg diff \-r \[aq].\[ha]1\[aq]\f[R]: Diff of last commit plus local
-changes
+\f[CR]hg diff \-r <rev>\f[R]: Diff versus revision (e.g.,
+\f[CR]hg diff \-r \[aq].\[ha]1\[aq]\f[R] diff of uncommitted changes
+plus previous revision versus last revision)
 .IP \[bu] 2
-\f[CR]hg diff \-r bottom\[ha]\f[R]: Diff master
+\f[CR]hg diff \-\-root .\f[R]: Relative to current directory
 .IP \[bu] 2
-\f[CR]hg diff \-\-root .\f[R]: Relative
+\f[CR]hg diff \-c <rev>\f[R]: Show diff for current revision
 .IP \[bu] 2
-\f[CR]hg diff \-r bottom\[ha] \-\-stat\f[R]: Diff stats, including just
-change filenames
-.IP \[bu] 2
-\f[CR]hg diff \-c .\f[R]: Show diff for current commit
+\f[CR]hg diff \-r <rev> \-\- <file\-path>\f[R]: Show changes to a single
+file at a revision

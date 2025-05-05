@@ -1,0 +1,2 @@
+- `.`: Current revision
+- `'.^'` / '.^1': Previous revision

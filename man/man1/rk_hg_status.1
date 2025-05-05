@@ -6,15 +6,7 @@
 \f[CR]\-n\f[R] / \f[CR]\-\-no\-status\f[R]: Hide status prefixes
 .SH Examples
 .IP \[bu] 2
-\f[CR]hg status \-\-change .\f[R]: List uncommitted changed files
+\f[CR]hg status \-\-change <rev>\f[R]: List changed files at a revision
 .IP \[bu] 2
-\f[CR]hg status \-\-change bottom\[ha]\f[R]: List changed files on
-current branch
-.IP \[bu] 2
-\f[CR]hg status \-\-rev bottom\[ha]\f[R]: List all changed files on
-current branch
-.IP \[bu] 2
-\f[CR]hg status \-\-rev bottom\[ha] \-n\f[R]: Omit the per file statuses
-.IP \[bu] 2
-\f[CR]hg status \-\-rev .\[ha]1 \-mn\f[R]: List just changed files at
+\f[CR]hg status \-\-rev <rev> \-mn\f[R]: List just changed files at a
 revision
