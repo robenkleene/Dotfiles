@@ -6,3 +6,8 @@
 \f[CR]hg log \-pr\f[R]: Show a commit (equivalent to
 \f[CR]git show\f[R], e.g., \f[CR]hg log \-p \-r \[aq].\[ha]\[aq]\f[R]
 shows the previous commit)
+.IP \[bu] 2
+\f[CR]hg log \-r \[aq]<rev>::<rev>\[aq]\f[R]: Check if a revision is an
+ancestor of another revision (e.g., check
+\f[CR]hg log \-r \[aq]foo::.\[aq]\f[R]foo\[ga] is an ancestor of the
+current commit
