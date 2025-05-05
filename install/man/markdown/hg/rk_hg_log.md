@@ -1,2 +1,1 @@
-- `hg log --patch --rev` / `hg log -p -r`: Show a commit (equivalent to `git show`)
-- `hg log -pr '.^'` / `hg log -p -r '.^'` /  `hg log -p -r '.^1'`: Show the previous commit
+- `hg log --patch --rev` / `hg log -p -r` / `hg log -pr`: Show a commit (equivalent to `git show`, e.g., `hg log -p -r '.^'` shows the previous commit)

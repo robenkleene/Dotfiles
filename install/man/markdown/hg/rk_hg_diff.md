@@ -1,5 +1,4 @@
-- `hg diff -r '.^1'`: Diff of last commit plus local changes
-- `hg diff -r bottom^`: Diff master
-- `hg diff --root .`: Relative
-- `hg diff -r bottom^ --stat`: Diff stats, including just change filenames
-- `hg diff -c .`: Show diff for current commit
+- `hg diff -r <rev>`: Diff versus revision (e.g., `hg diff -r '.^1'` diff of uncommitted changes plus previous revision versus last revision)
+- `hg diff --root .`: Relative to current directory
+- `hg diff -c <rev>`: Show diff for current revision
+- `hg diff -r <rev> -- <file-path>`: Show changes to a single file at a revision
