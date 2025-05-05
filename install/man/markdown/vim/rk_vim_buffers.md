@@ -1,9 +1,9 @@
 - `:ls` / `:buffers` / `:files`: List buffers
+- `:bp[revious]` / `:bn[ext]`: Switch to previous / next buffer
 - `:b <term><tab>`: Tab complete a file in the buffer list based on part of it's name
 - `:b[uffer]<buffer-number>` / `:<buffer-number>b`: Switch to a buffer by number from `ls`
 - `:sb[uffer]<buffer-number>` / `:<buffer-number>sb`: Switch to a buffer by number from `ls` in a horizontal split
 - There's no command to open a buffer number in a vertical split, but `:vert[ical] sb<buffer-number>` works
-- `:bp[revious]` / `:bn[ext]`: Switch to previous / next buffer
 - `:b[uffer] <buffer-name>`: Switch a buffer by name with tab completion (note this works both for the buffer list and arguments list)
 - `{count}CTRL-^`: Switch to count numbered buffer
 - `CTRL-^`: Edit alternate file

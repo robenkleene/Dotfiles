@@ -1,13 +1,15 @@
-The quickfix list is global, so it's usually appropriate for matches across a project.
+- `:cope[n] [height]` / `:ccl[ose]`: Open / close the `quickfix` window, optionally with a `[height]` (this works if the `quickfix` list is already visible)
+- `:cn[ext]` / `:[cp]rev`: Next / previous `quickfix` error
 
-- `:cnext` / `:cprev`: Next / previous `quickfix` error
-- `:[cw]indow [height]`: Open `quickfix` window if there are errors, close it if there are not errors, optionally with a `[height]` (note that this cannot change the height if the `quickfix` list is already visible)
-- `:cope[n] [height]`: Show `quickfix` window, optionally with a `[height]` (this works if the `quickfix` list is already visible)
-- `:res[ize] [N]`: Can also be used to set the `quickfix` list to a height `[N]`
-- `:ccl[ose]`: Close `quickfix` window
+# Populating
+
 - `:cb[uffer]`: Populate the `quickfix` list from the results in the current window (this works for either `grep` formatted output or `make` output)
 - `cexpr []`: Clear the `quickfix` list
-- The "c" in these commands probably stands for "compile"
+
+# Resizing
+
+- `:[cw]indow [height]`: Open `quickfix` window if there are errors, close it if there are not errors, optionally with a `[height]` (note that this cannot change the height if the `quickfix` list is already visible)
+- `:res[ize] [N]`: Can also be used to set the `quickfix` list to a height `[N]`
 
 # History
 
