@@ -1,1 +1,2 @@
 - `hg log --patch --rev` / `hg log -p -r` / `hg log -pr`: Show a commit (equivalent to `git show`, e.g., `hg log -p -r '.^'` shows the previous commit)
+- `hg log -r '<rev>::<rev>'`: Check if a revision is an ancestor of another revision (e.g., check `hg log -r 'foo::.' `foo` is an ancestor of the current commit

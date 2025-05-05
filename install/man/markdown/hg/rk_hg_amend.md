@@ -1,1 +1,2 @@
+- `hg amend`: Amend last commit
 - `hg amend -e` / `hg amend --edit`: Edit current commit message in `EDITOR`

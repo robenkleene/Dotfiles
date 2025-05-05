@@ -4,8 +4,6 @@
 .IP \[bu] 2
 \f[CR]hg status\f[R]
 .IP \[bu] 2
-\f[CR]hg amend\f[R]: Amend last commit (\f[CR]hg\f[R] has no staging)
-.IP \[bu] 2
 \f[CR]hg id \-i\f[R]: Print commit ID
 .IP \[bu] 2
 \f[CR]hg update\f[R] / \f[CR]hg up\f[R]: Checkout a commit
@@ -51,17 +49,6 @@ changes
 .SS Hard Rest
 .IP \[bu] 2
 \f[CR]hg purge && hg checkout \-\-clean .\f[R]
-.SS Reverting Reverts
-.IP \[bu] 2
-\f[CR]hg backout <reverting diff>\f[R]
-.SH Conflicts
-.IP \[bu] 2
-\f[CR]hg resolve \-\-all\f[R]: Resolve all merge conflicts
-.SH Workflow
-.IP \[bu] 2
-\f[CR]hg log \-pr .\f[R]: Show last commit
-.IP \[bu] 2
-\f[CR]hg backout \-r .\f[R]: Revert last commit
 .SH Stash
 .IP \[bu] 2
 \f[CR]hg shelve \-\-list\f[R]: List stashed changes
@@ -90,9 +77,5 @@ To clean up a \f[CR]addremove\f[R] that should be a move:
 .IP \[bu] 2
 \f[CR]hg cat \-\-rev=<rev> <file path>\f[R]: Get file contents on
 another branch
-.IP \[bu] 2
-\f[CR]hg log \-r \[dq]<commit>::.\[dq]\f[R]: Check if a commit
-(\f[CR]<commit>\f[R]) is an ancestor of the current commit
-(\f[CR].\f[R])
 .IP \[bu] 2
 \f[CR]hg journal\f[R]: List old commits

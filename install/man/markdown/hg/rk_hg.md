@@ -1,6 +1,4 @@
-
 - `hg status`
-- `hg amend`: Amend last commit (`hg` has no staging)
 - `hg id -i`: Print commit ID
 - `hg update` / `hg up`: Checkout a commit
 - `hg previous` / `hg next`: Checkout previous / next commit (down / up)
@@ -35,19 +33,6 @@
 
 - `hg purge && hg checkout --clean .`
 
-## Reverting Reverts
-
-- `hg backout <reverting diff>`
-
-# Conflicts
-
-- `hg resolve --all`: Resolve all merge conflicts
-
-# Workflow
-
-- `hg log -pr .`: Show last commit
-- `hg backout -r .`: Revert last commit
-
 # Stash
 
 - `hg shelve --list`: List stashed changes
@@ -72,5 +57,4 @@ To clean up a `addremove` that should be a move:
 # Other
 
 - `hg cat --rev=<rev> <file path>`: Get file contents on another branch
-- `hg log -r "<commit>::."`: Check if a commit (`<commit>`) is an ancestor of the current commit (`.`)
 - `hg journal`: List old commits
