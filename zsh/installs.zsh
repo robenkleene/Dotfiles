@@ -84,8 +84,8 @@ fi
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
 fi
-# Use `fd` for `:Files` in `fzf.vim`
-export FZF_DEFAULT_COMMAND='fd --type f'
+# Use `fd` for `:Files` in `fzf.vim` and `CTRL-T` in zsh
+export FZF_CTRL_T_COMMAND='fd --type f'
 # Always wrap preview window because it's usually useless without it
 export FZF_DEFAULT_OPTS='--preview-window=wrap'
 
