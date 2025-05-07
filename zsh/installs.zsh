@@ -84,9 +84,12 @@ fi
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
 fi
-# Use `fd` for `:Files` in `fzf.vim` and `CTRL-T` in zsh
+# Use `fd --type f` for `CTRL-T` in zsh
+# Use `OPT-C` for directories
+export FZF_CTRL_T_COMMAND='fd --type f'
+# Use `fd` for `:Files` in `fzf.vim`
 # This means both files and directories can be selected
-export FZF_CTRL_T_COMMAND='fd'
+# `fzf.vim` has no built-in support for directories
 export FZF_DEFAULT_COMMAND='fd'
 # Always wrap preview window because it's usually useless without it
 export FZF_DEFAULT_OPTS='--preview-window=wrap'
