@@ -9,7 +9,6 @@ fi
 
 # Setup
 source ~/.zsh/settings.zsh
-source ~/.zsh/bindings.zsh
 # Variables need to be re-sourced in subshells because otherwise path settings
 # won't be pulled to the front
 # This needs to stay ahead of installs so the path is set before installs,
@@ -20,6 +19,8 @@ source ~/.zsh/variables.zsh
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
 # before completions are generated
 source ~/.zsh/installs.zsh
+# After installs so bindings take precedence over install bindings
+source ~/.zsh/bindings.zsh
 # Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
 source ~/.zsh/zoxide.zsh
 
