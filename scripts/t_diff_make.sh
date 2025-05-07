@@ -11,6 +11,7 @@
 }
 
 /^@@ / {
+  if (start) { print "" }
   match($0, /\+([0-9]+)/, m);
   if (m[1]) print file ":" m[1];
   start=1
