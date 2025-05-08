@@ -84,9 +84,10 @@ fi
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
 fi
-# Use `fd --type f` for `CTRL-T` in zsh
-# Use `OPT-C` for directories
+# Use `fd --type f` for `CTRL-T` in zsh for files
 export FZF_CTRL_T_COMMAND='fd --type f'
+# Use `fd --type f` for `OPT-C` in zsh for directories
+export FZF_ALT_C_COMMAND='fd --type d'
 # Use `fd` for `:Files` in `fzf.vim`
 # This means both files and directories can be selected
 # `fzf.vim` has no built-in support for directories
