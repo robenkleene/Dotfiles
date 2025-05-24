@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_message
+# name: Message
+# --
+message "${1:Hello World}"
