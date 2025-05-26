@@ -16,7 +16,7 @@
      smartparens
      wgrep
      vertico
-     yassnippet
+     yasnippet
      yasnippet-capf
      ))
  )
