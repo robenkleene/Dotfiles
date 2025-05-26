@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk_interface
+# name: Interface
+# --
+NS_ASSUME_NONNULL_BEGIN
+@interface ${1:MyClass} : NSObject
+$0
+@end
+NS_ASSUME_NONNULL_END

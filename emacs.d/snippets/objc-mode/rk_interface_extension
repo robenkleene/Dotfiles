@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk_interface_extension
+# name: Class Extension
+# --
+NS_ASSUME_NONNULL_BEGIN
+@interface ${1:MyClass} (${2:MyCategory})
+$0
+@end
+NS_ASSUME_NONNULL_END

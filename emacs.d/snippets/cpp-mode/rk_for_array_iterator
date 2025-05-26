@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk_for_array_iterator
+# name: For loop array iterator
+# --
+for (auto it = ${1:arr}.begin(); it != $1.end(); ++it) {
+    ${2:std::cout << *it << std::endl;}
+}

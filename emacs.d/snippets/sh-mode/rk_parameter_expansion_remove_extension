@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_parameter_expansion_remove_extension
+# name: Remove path extension
+# --
+\${${0:1}%.*}
