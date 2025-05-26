@@ -44,10 +44,13 @@
 ;; Packages
 (require 'robenkleene-adaptive-wrap)
 (require 'robenkleene-aggressive-indent)
+(require 'robenkleene-cape)
 (require 'robenkleene-diminish)
 (require 'robenkleene-magit)
 (require 'robenkleene-smartparens)
+(require 'robenkleene-vertico)
 (require 'robenkleene-wgrep)
+(require 'robenkleene-yasnippet)
 
 ;; Languages
 (require 'robenkleene-markdown)

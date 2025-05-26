@@ -44,14 +44,6 @@ it's `t`."
                 (setq-local completion-at-point-functions
                             (rk/make-all-capf-non-exclusive
                              completion-at-point-functions)))))
-
-  (add-hook 'eglot-managed-mode-hook
-            (lambda ()
-              (setq-local completion-at-point-functions
-                          (list
-                           (cape-capf-properties  #'eglot-completion-at-point
-                                                  :exclusive
-                                                  'no) t))))
   )
 
 (provide 'robenkleene-cape)
