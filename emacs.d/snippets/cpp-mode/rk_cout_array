@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk_cout_array
+# name: Print array
+# --
+std::cout << "${1} = ";
+for (std::size_t i = 0; i < $1.size(); ++i) {
+  std::cout << (i > 0 ? ", " : "") << $1[i];
+}
+std::cout << std::endl;

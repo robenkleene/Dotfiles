@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cout_var_fmt_addr
+# name: Print format string address of object
+# --
+std::cout << " &$1 = %p" << &${1} << std::endl;

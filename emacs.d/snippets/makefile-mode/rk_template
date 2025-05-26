@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: rk_template
+# name: Makefile template
+# --
+.PHONY: hello
+
+hello:
+	echo "Hello"

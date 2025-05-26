@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cout_var_addr
+# name: Print address of object
+# --
+std::cout << " &$1 = " << &${1} << std::endl;

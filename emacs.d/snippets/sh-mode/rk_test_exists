@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_test_exists
+# name: True if file exists
+# --
+-e "${0:\$1}"

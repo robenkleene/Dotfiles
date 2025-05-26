@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_p
+# name: Print
+# --
+printf("$1\n");

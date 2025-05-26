@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_test_link
+# name: True if symbolic link
+# --
+-L "${0:\$1}"

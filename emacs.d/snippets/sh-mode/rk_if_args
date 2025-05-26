@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk_if_args
+# name: If args
+# --
+if [[ $# ${1:-ne} ${2:0} ]]; then
+  ${0:echo "\$1"}
+fi

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk_template
+# name: Rust template
+# --
+fn main() {
+    ${1:println!("Hello, world!");}
+}

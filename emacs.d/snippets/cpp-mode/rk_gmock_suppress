@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_gmock_suppress
+# name: Suppress gMock warnings
+# --
+::testing::FLAGS_gmock_verbose = "error";
