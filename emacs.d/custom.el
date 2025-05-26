@@ -7,10 +7,16 @@
    '(
      adaptive-wrap
      aggressive-indent
+     cape
+     consult
      diminish
      magit
      markdown-mode
+     orderless
      smartparens
      wgrep
-    ))
+     vertico
+     yassnippet
+     yasnippet-capf
+     ))
  )
