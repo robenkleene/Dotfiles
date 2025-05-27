@@ -16,21 +16,23 @@
         ))))
 
 ;; Path
-;; `man' will sometimes fail with an error if not using `gnused'
-(let ((paths-to-prepend
-       (list
-        (concat
-         (string-trim (shell-command-to-string "brew --prefix"))
-         "/opt/gnu-sed/libexec/gnubin")
-        )
-       ))
-  (setenv "PATH" (mapconcat
-                  'identity
-                  (append paths-to-prepend
-                          (list (getenv "PATH")))
-                  ":"))
-  (dolist (path-to-prepend paths-to-prepend)
-    (add-to-list 'exec-path path-to-prepend))
+;; `man' will sometimes fail with an error on macOS  if not using `gnused'
+(when (eq system-type 'darwin)
+  (let ((paths-to-prepend
+         (list
+          (concat
+           (string-trim (shell-command-to-string "brew --prefix"))
+           "/opt/gnu-sed/libexec/gnubin")
+          )
+         ))
+    (setenv "PATH" (mapconcat
+                    'identity
+                    (append paths-to-prepend
+                            (list (getenv "PATH")))
+                    ":"))
+    (dolist (path-to-prepend paths-to-prepend)
+      (add-to-list 'exec-path path-to-prepend))
+    )
   )
 
 (provide 'robenkleene-shell-commands)
