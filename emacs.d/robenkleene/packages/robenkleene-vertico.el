@@ -18,6 +18,11 @@
   ;; Time to wait before updating results, the default is `0.2'
   ;; Decreasing this makes `consult' feel significantly more responsive
   (setq consult-async-input-debounce 0.05)
+  ;; Never use `consult' built-in project functions Without this, e.g.,
+  ;; `consult-ripgrep' won't use the current directory and instead look for a
+  ;; project
+  (setq consult-project-function nil)
+
   )
 
 ;; Orderless makes regular fuzzy matching work, without it a search for a
