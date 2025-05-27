@@ -71,6 +71,21 @@ The DWIM behaviour of this command is as follows:
    (t
     (keyboard-quit))))
 
+(defun rk/move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun rk/move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
 (provide 'robenkleene-keymap)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
