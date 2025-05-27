@@ -21,3 +21,8 @@ augroup override_colors
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
   autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 augroup END
+
+augroup executable_files
+  autocmd!
+  autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
+augroup END
