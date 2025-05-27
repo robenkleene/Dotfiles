@@ -43,10 +43,10 @@ fi
 
 # Add a new line to the end of the file if it's missing, without this `wc` will
 # say `0` lines for `1` line.
-if [[ "$(uname)" = "Darwin" ]]; then
-  sed -i '' -e '$a\' "$archive_file"
-else
+if sed --version >/dev/null 2>&1; then
   sed -i -e '$a\' "$archive_file"
+else
+  sed -i '' -e '$a\' "$archive_file"
 fi
 
 destination_archive_file=$archive_file.txt
