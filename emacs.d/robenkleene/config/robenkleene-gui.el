@@ -12,8 +12,8 @@
         (expand-file-name "~/.nvm/versions/node/v21.6.1/bin")
         (expand-file-name "~/Library/Python/3.9/bin")
         (expand-file-name "~/.brew/bin")
-        (expand-file-name "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin")
-        (expand-file-name "/usr/local/bin")
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+        "/usr/local/bin"
         )
        ))
   (setenv "PATH" (mapconcat

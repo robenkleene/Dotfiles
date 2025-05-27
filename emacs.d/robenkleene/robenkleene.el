@@ -19,6 +19,15 @@
 (require 'robenkleene-interactive)
 
 ;; Config
+;; Must happen before `robenkleene-shell-commands`, so that shell commands can
+;; further override path
+(if window-system
+    (progn
+      (require 'robenkleene-gui)
+      (require 'robenkleene-mac)
+      )
+  (require 'robenkleene-terminal))
+
 (require 'robenkleene-bindings)
 (require 'robenkleene-completion)
 (require 'robenkleene-config)
@@ -26,13 +35,6 @@
 (require 'robenkleene-minibuffer)
 (require 'robenkleene-shell-commands)
 (require 'robenkleene-spelling)
-
-(if window-system
-    (progn
-      (require 'robenkleene-gui)
-      (require 'robenkleene-mac)
-      )
-  (require 'robenkleene-terminal))
 
 ;; Modes
 (require 'robenkleene-diff)
