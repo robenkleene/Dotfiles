@@ -1,1 +1,1 @@
-- `adb shell dumpsys battery`: Show headset batter level (controller battery can be found with `adb shell dumpsys OVRRemoteService`)
+- `adb shell dumpsys battery`: Show headset battery level (controller battery can be found with `adb shell dumpsys OVRRemoteService`)
