@@ -1,3 +1,4 @@
+- `hg diff -c <rev>`: Diff of revision (e.g., `hg diff -c .` show the diff for the current revision)
 - `hg diff -r <rev>`: Diff versus revision (e.g., `hg diff -r '.^'` [shorthand for `'.^1'`] diff of uncommitted changes plus current revision versus last revision)
 - `hg diff --root .`: Relative to current directory
 - `hg diff -c <rev>`: Show diff for current revision
