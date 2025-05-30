@@ -12,8 +12,11 @@
 
 /^@@ / {
   if (start) { print "" }
-  match($0, /\+([0-9]+)/, m);
-  if (m[1]) print file ":" m[1];
+  match($0, /\+[0-9]+/);
+  if (RSTART) {
+    num=substr($0, RSTART + 1, RLENGTH - 1);
+    print file ":" num;
+  }
   start=1
   next;
 }
