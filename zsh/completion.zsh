@@ -18,7 +18,8 @@ zstyle ':completion:*' menu select
 
 # Allow substring matches, e.g., `vim md<tab>` for all files with `.md` extension
 # This makes Zsh completion more like Vim completion
-zstyle ':completion:*' matcher-list 'r:|?=**'
+# 
+# zstyle ':completion:*' matcher-list 'r:|?=**'
 
 # Theme
 # Third value is background
