@@ -9,6 +9,7 @@ fi
 
 # Setup
 source ~/.zsh/settings.zsh
+source ~/.zsh/completion.zsh
 # Variables need to be re-sourced in subshells because otherwise path settings
 # won't be pulled to the front
 # This needs to stay ahead of installs so the path is set before installs,
