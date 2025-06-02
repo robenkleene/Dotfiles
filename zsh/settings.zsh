@@ -6,20 +6,13 @@ stty -ixon
 
 # Required for abbreviations
 # setopt extendedglob
+
 # Make globs less case sensitive
 # Without this set, `ls **/TAG` will print a match with the file name `tag`
 # as `TAG`
 # `setopt nocaseglob` was causing an odd completion issue where an extra letter
 # was being added to completions
 # setopt nocaseglob
-# `cd` just by typing name
-# setopt auto_cd
-
-# Help
-# autoload -Uz run-help
-# alias help=run-help
-# # This command fails on Linux, so drop its output
-# unalias run-help &>/dev/null
 
 # Automatically `pushd` with `cd`
 # `pushdtohome`: Allow `pushd` (or `cd` with `autopushd`) to go to home
