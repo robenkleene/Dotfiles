@@ -44,6 +44,3 @@ a.out.dSYM/
 
 # Rust
 target/
-
-# zsh
-*.zwc
