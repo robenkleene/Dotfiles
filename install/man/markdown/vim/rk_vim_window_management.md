@@ -35,7 +35,7 @@
 
 # Switching Windows
 
-- `<C-w>w`: Next window
+- `<C-w>w` / `<C-w>W`: Move to window below & right / above & left of current window
 - `<C-w>p`: Previous window
 
 # Resizing Windows
