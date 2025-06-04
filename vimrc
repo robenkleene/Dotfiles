@@ -17,6 +17,7 @@ Plug 'vim-utils/vim-man'
 " Plug 'vim-utils/vim-man', { 'on': 'Man' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+Plug 'stevearc/oil.nvim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
@@ -38,6 +39,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json' }
 call plug#end()
+
 
 " Install missing plugins
 autocmd VimEnter *
