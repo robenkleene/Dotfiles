@@ -7,7 +7,7 @@
 - `-i` / `--case-sensitive`: Make case sensitive
 - `-t d` / `-t f`: Specify only directories / files
 - `-X <command>` / `--exec-batch <command>`: Run a command on each file
-- `-E` / `--exclude`: Exclude files matching a glob pattern, e.g., `-E '*foo*'`
+- `-E` / `--exclude`: Exclude files matching a glob pattern, e.g., `-E '*foo*'` (note that the `rg` syntax, `-g '!foo'` does *not* work!)
 - `-l` / `--list-details`: List details (like `ls -l`, this is an alias to `--exec-batch ls -l` with some additional options)
 
 ## Exec
