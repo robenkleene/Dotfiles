@@ -21,3 +21,12 @@ else
     ln -s "$PWD/Services" "$services_path"
   fi
 fi
+
+bbedit_path="$HOME/Application Support/BBEdit/"
+if [ -e "$bbedit_path" ] && [ ! -L "$bbedit_path" ]; then
+  echo "Warning: $bbedit_path already exists and it's not a symlink" >&2
+else
+  if [ ! -e "$bbedit_path" ]; then
+    ln -s "$PWD/BBEdit" "$bbedit_path"
+  fi
+fi
