@@ -29,7 +29,7 @@ export MANPATH="${(j/:/)manpath}"
 # it so hitting `q` with `less` results on screen doesn't get cleared)
 # `--ignore-case` ignore case in search
 # `--incsearch` use incremental search
-export LESS="--no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
+export LESS="--incsearch --ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
 
 # Color in `ls`
 export CLICOLOR=1
