@@ -27,7 +27,8 @@ export MANPATH="${(j/:/)manpath}"
 # `--quit-if-one-screen` is the default but gets disabled with `LESS` set
 # `--no-init` is also the default and gets disabled with `LESS` set (this makes
 # it so hitting `q` with `less` results on screen doesn't get cleared)
-# `--ignore-case` ignore case in search
+# `--ignore-case` ignore case in search (this is actually smart case, e.g.,
+# `FOO` will not match `foo`)
 # `--incsearch` use incremental search
 export LESS="--incsearch --ignore-case --no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
 
