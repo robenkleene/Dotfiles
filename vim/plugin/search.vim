@@ -12,7 +12,7 @@
 set ignorecase
 " Use `\C` to make case-sensitive
 " Or just use `\c` to make search case insensitive
-"set smartcase
+set smartcase
 
 " Don't display saved search highlights on startup
 nohlsearch

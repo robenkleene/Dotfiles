@@ -1,4 +1,5 @@
 --vimgrep
+--smart-case
 # Clear the background
 # --colors=match:none
 # --colors=match:fg:cyan
