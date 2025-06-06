@@ -9,6 +9,10 @@
 - Search is smart case by default
 - Note that the default search is not incremental but uses regular expressions, and the incremental search does not use regular expressions
 
+## Search Field
+
+- `C-y`: Paste
+
 # Clipboard
 
 - `:choose-buffer` / `<prefix>=`: Paste from clipboard history
