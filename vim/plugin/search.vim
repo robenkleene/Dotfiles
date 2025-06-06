@@ -4,12 +4,12 @@
 " and want to see if a string exists in that function definition, with
 " `incsearch` you can't tell because you jump away from the function context
 " while typing.
-set noincsearch
+" set noincsearch
 
 " Smartcase
 " Without this, a lowercase search will not match words with uppercase
 " letters, even if `smartcase` is on
-"set ignorecase
+set ignorecase
 " Use `\C` to make case-sensitive
 " Or just use `\c` to make search case insensitive
 "set smartcase
