@@ -102,22 +102,24 @@ if [[ -z "$title" ]]; then
   exit 1
 fi
 
-directory="projects"
+dir="projects"
 
-if [[ -n "$directory" ]]; then
+if [[ -n "$dir" ]]; then
   # Remove leading and trailing slash and leading period
-  directory=${directory#\.}
-  directory=${directory#/}
-  directory=${directory%/}
-  if [[ -e "$directory" ]] && [[ ! -d "$directory" ]]; then
-    echo "$directory is not a directory" >&2
+  dir=${dir#\.}
+  dir=${dir#/}
+  dir=${dir%/}
+  if [[ -e "$dir" ]] && [[ ! -d "$dir" ]]; then
+    echo "$pwd/$dir exists and is not a dir" >&2
     exit 1
   else
-    mkdir -p "$directory"
+    # Don't try to create this, just exit, this helps fail if the current
+    # directoy is unexpected, which is a common mistake.
+    # mkdir -p "$dir"
+    echo "$pwd/$dir does not exist" >&2
+    exit 1
   fi
-  cd "$directory"
-  # Add a trailing slash for output later
-  directory="$directory/"
+  cd "$dir"
 fi
 
 make_file() {
@@ -151,4 +153,4 @@ dated_slug="$today-$slug"
 readme_path=$(make_file "README.${ext}" "$dated_slug" "$contents")
 make_file "README.${ext}" "$dated_slug/archive" "$contents Archive" >/dev/null
 mkdir "$dated_slug/archive/projects"
-echo -n "[$title]($directory$readme_path)"
+echo -n "[$title]($dir/$readme_path)"
