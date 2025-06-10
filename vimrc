@@ -17,7 +17,6 @@ Plug 'vim-utils/vim-man'
 " Plug 'vim-utils/vim-man', { 'on': 'Man' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
-Plug 'stevearc/oil.nvim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
@@ -40,17 +39,12 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'neoclide/jsonc.vim', { 'for': 'json' }
 call plug#end()
 
-
 " Install missing plugins
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
 
-if $TERM_PROGRAM != "Apple_Terminal" || exists('$SSH_CONNECTION') || exists('$TMUX')
-  set background=dark
-endif
-" colorscheme wildcharm
 colorscheme lunaperche
 
 " Needs to happen before bindings are set
@@ -59,13 +53,17 @@ let mapleader="\<Space>"
 " Indent
 " When opening lines, make it the same indent level as the current line
 " Neovim defaults to `autoindent`
-set autoindent
+if !has("nvim")
+  set autoindent
+endif
 
 " Highlight search results
 " This is important even when doing a substitution, because it makes clear
 " when you might have false positives
 " Neovim defaults to `hlsearch`
-set hlsearch
+if !has("nvim")
+  set hlsearch
+endif
 
 " Fix a problem in Vim where a bunch of escaped junk is shown in the window
 augroup focus_redraw
