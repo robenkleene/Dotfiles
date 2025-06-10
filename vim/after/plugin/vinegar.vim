@@ -1,7 +1,3 @@
-if has("nvim")
-  finish
-endif
-
 " Hack to fix selecting the current file in `vinegar` by replacing `opendir`
 " `edit` with `Explore`
 " nnoremap <silent> <expr> - (&filetype ==# 'netrw' ? '<Plug>VinegarUp' : ':call <SID>opendir(\'Explore\')<CR>')
