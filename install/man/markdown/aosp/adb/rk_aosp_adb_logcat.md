@@ -12,3 +12,8 @@ Clear and capture log:
 adb logcat -c && adb logcat > logcat.txt
 ```
 
+## Log Size
+
+```
+adb logcat -G 64M
+```
