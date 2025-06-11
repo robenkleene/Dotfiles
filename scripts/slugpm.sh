@@ -112,13 +112,13 @@ if [[ -n "$dir" ]]; then
   if [[ -e "$dir" ]] && [[ ! -d "$dir" ]]; then
     echo "$pwd/$dir exists and is not a dir" >&2
     exit 1
-  else
-    # Don't try to create this, just exit, this helps fail if the current
-    # directoy is unexpected, which is a common mistake.
-    # mkdir -p "$dir"
-    echo "$pwd/$dir does not exist" >&2
+  elif [[ ! -e "$dir" ]]; then
+    echo "$PWD/$dir does not exist" >&2
     exit 1
   fi
+  # Don't try to always create this, just exit, this helps fail if the current
+  # directoy is unexpected, which is a common mistake.
+  # mkdir -p "$dir"
   cd "$dir"
 fi
 
