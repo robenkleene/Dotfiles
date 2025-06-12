@@ -1,7 +1,3 @@
-" Fix for italics in tmux
-set t_ZH=[3m
-set t_ZR=[23m
-
 " Bootstrap vim-plug
 if empty(glob("~/.vim/autoload/plug.vim"))
   execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
@@ -45,39 +41,7 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-if !has("nvim")
-  set background=dark
-endif
 colorscheme lunaperche
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
-
-" Indent
-" When opening lines, make it the same indent level as the current line
-" Neovim defaults to `autoindent`
-if !has("nvim")
-  set autoindent
-endif
-
-" Highlight search results
-" This is important even when doing a substitution, because it makes clear
-" when you might have false positives
-" Neovim defaults to `hlsearch`
-if !has("nvim")
-  set hlsearch
-endif
-
-" Fix a problem in Vim where a bunch of escaped junk is shown in the window
-augroup focus_redraw
-  autocmd!
-  autocmd FocusGained * redraw!
-augroup END
-
-" Fix option key in Vim
-let c='a'
-while c <= 'z'
-  exec "set <M-".tolower(c).">=\e".c
-  exec "nnoremap \e".c." <M-".tolower(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
