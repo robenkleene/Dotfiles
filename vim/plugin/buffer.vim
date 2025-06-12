@@ -5,6 +5,8 @@ set autoread
 " Maybe `set autoread` is enough?
 " This breaks reading from process substitution, e.g., `vim <(ls)`
 " Note the behavior is still broken, even with this commented out, in Neovim
+" In Zsh, `nvim =(ls)` can be used as a workaround for process substitution
+" not working
 " augroup reload_buffers
 "   autocmd!
 "   " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
