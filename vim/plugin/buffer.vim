@@ -1,7 +1,6 @@
 " Autoreload files edited by other programs
 set autoread
-" `CursorHold` interval in ms, default is `4000`
-" set updatetime=1000
+
 " This causes a delay when opening the command-line window with `<C-f>`?
 " Maybe `set autoread` is enough?
 " This breaks reading from process substitution, e.g., `vim <(ls)`
@@ -13,6 +12,9 @@ set autoread
 "   " same file in another `vim` instance though.)
 "   autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
 " augroup END
+" Set `CursorHold` interval in ms, default is `4000` so buffers refresh more
+" often
+" set updatetime=1000
 
 " Do not extend comments automatically, e.g., with `O`
 augroup disable_autocomments
