@@ -1,7 +1,7 @@
 " Autoreload files edited by other programs
 set autoread
 " `CursorHold` interval in ms, default is `4000`
-set updatetime=1000
+" set updatetime=1000
 " This causes a delay when opening the command-line window with `<C-f>`?
 " Maybe `set autoread` is enough?
 " This breaks reading from process substitution, e.g., `vim <(ls)`
