@@ -45,6 +45,9 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+if !has("nvim")
+  set background=dark
+endif
 colorscheme lunaperche
 
 " Needs to happen before bindings are set
