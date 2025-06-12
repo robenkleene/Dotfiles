@@ -13,7 +13,8 @@ TERM = "xterm-256color"
 size = 13.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+family = "Menlo"
 
 [[hints.enabled]]
 command = "xdg-open"
