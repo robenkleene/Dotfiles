@@ -17,6 +17,9 @@
 
 # View
 
+- `H`: Move cursor to top
+- `L`: Move cursor to bottom
+- `M`: Move cursor to middle
 - `zz`: Move screen centering cursor
 - `zt` / `zb`: Move screen positioning cursor at top /bottom
 - `zs` / `ze`: Move screen positioning cursor at beginning / end
