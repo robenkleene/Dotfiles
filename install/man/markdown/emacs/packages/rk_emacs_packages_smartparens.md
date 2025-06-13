@@ -7,4 +7,4 @@
 
 After pasting in text, often the parenthesis are unbalanced, use this command to fix it:
 
-- `C-q` (`quoted-insert`): This can be used to enter a single pair character to fix the balance issues (to remove a single pair character, is `C-q` to enter a second character and then delete the pair)
+- `C-q` (`quoted-insert`): This can be used to enter a single pair character to fix the balance issues (to remove a single pair character, delete the pair, then use `C-q` to enter a single pair character)
