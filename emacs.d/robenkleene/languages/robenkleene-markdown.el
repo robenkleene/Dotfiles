@@ -20,6 +20,7 @@
   (([remap markdown-enter-key] . rk/markdown-enter-key))
   :config
   ;; Block Movement
+  ;; Replace `backward-paragrah' / `forward-paragrah' (which have a `M-{')
   (define-key markdown-mode-map (kbd "M-{")
               'rk/backward-block)
   (define-key markdown-mode-map (kbd "M-}")
