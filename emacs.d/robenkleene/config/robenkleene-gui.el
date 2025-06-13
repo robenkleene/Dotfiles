@@ -60,6 +60,9 @@
 (add-to-list 'initial-frame-alist
              '(vertical-scroll-bars . nil))
 
+;; Use a bar cursor instead of a box
+(setq-default cursor-type 'bar)
+
 ;; Never use GUI dialog boxes
 (setq use-dialog-box nil)
 
