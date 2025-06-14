@@ -44,6 +44,10 @@
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
 ;; (set-face-attribute 'default nil :font "Menlo-13:Regular")
 
+;; Not pure black background looks a bit more natural
+;; BBEdit black
+(set-face-background 'default "#141414")
+
 ;; Save window state
 ;; Don't restore window state because it makes it hard to enforce that Emacs
 ;; always starts up in the `~/.emacs.d/' directory otherwise, which it turns
