@@ -14,12 +14,12 @@ ALACRITTY = "1"
 TERM = "xterm-256color"
 
 [font]
-size = 13.0
+size = 14.0
 
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
-family = "Menlo"
-# family = "Consolas"
+# family = "Menlo"
+family = "Consolas"
 
 [[hints.enabled]]
 command = "xdg-open"
