@@ -130,7 +130,8 @@ giterate() {
   if [ -d "$dir" ]; then
     cd "$1" || return
     do_git_process
-    cd - >/dev/null || return
+    # This will fail if the previous directory was a directory removed by Git
+    cd - >/dev/null 2>&1 || return
   else
     if ! $next; then
       echo
