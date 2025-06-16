@@ -1,6 +1,9 @@
 [colors.primary]
+# Kleene Purple 1
 # background = "#211930"
-background = "#2B233D"
+# Kleene Purple 2
+# background = "#2B233D"
+background = "#141414"
 
 [colors.cursor]
 cursor = "#00BB00"
@@ -16,6 +19,7 @@ size = 13.0
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
 family = "Menlo"
+# family = "Consolas"
 
 [[hints.enabled]]
 command = "xdg-open"
