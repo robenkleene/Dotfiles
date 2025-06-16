@@ -56,9 +56,10 @@ brew 'yt-dlp'
 
 # Cask GUI Apps
 tap 'homebrew/cask'
-cask 'blender'
+cask 'alacritty'
 cask 'anki'
-cask 'processing'
+cask 'blender'
 cask 'dosbox-staging'
 cask 'gzdoom'
+cask 'processing'
 cask 'suspicious-package'
