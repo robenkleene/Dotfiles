@@ -1,5 +1,6 @@
 [colors.primary]
-background = "#211930"
+# background = "#211930"
+background = "#2B233D"
 
 [colors.cursor]
 cursor = "#00BB00"
