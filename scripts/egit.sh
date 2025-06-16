@@ -3,7 +3,6 @@
 set -eo pipefail
 
 repos=~/Developer/Dotfiles/
-repos+=:~/Developer/Snippets/
 
 if [[ -f "$HOME/.personal" ]]; then
   repos+=:~/Developer/Settings/
