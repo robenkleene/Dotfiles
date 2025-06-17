@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-sed 's/[[:space:]]*$//' | perl -pe 'chomp if eof' 
+sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | perl -pe 'chomp if eof' 
