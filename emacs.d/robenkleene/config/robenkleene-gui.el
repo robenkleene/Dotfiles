@@ -41,12 +41,15 @@
 ;; Make `rg' called from within Emacs use `ripgreprc'
 (setenv "RIPGREP_CONFIG_PATH" (expand-file-name "~/.ripgreprc"))
 
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
+;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
 ;; (set-face-attribute 'default nil :font "Menlo-13:Regular")
+(set-face-attribute 'default nil :font "SF Mono-13:Regular")
 
 ;; Not pure black background looks a bit more natural
-;; BBEdit black
-(set-face-background 'default "#141414")
+;; BBEdit Black
+;; (set-face-background 'default "#141414")
+;; Xcode Black
+(set-face-background 'default "#292A30")
 
 ;; Save window state
 ;; Don't restore window state because it makes it hard to enforce that Emacs
