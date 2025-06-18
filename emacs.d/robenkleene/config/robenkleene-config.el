@@ -177,7 +177,13 @@
 ;;     (load-theme 'modus-vivendi-tinted :no-confirm-loading)
 ;;   (load-theme 'modus-vivendi :no-confirm-loading)
 ;;   )
-(load-theme 'modus-vivendi :no-confirm-loading)
+;; (load-theme 'modus-vivendi :no-confirm-loading)
+(load-theme 'modus-operandi :no-confirm-loading)
+;; Not pure black background looks a bit more natural
+;; BBEdit Black
+;; (set-face-background 'default "#141414")
+;; Xcode Black
+;; (set-face-background 'default "#292A30")
 
 ;; Including these lines suppresses the error `Warning (defvaralias):
 ;; Overwriting value of ‘woman-topic-history’ by aliasing to
