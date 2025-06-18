@@ -1,6 +1,6 @@
-- `C-u M-!`: Insert the result of a shell command at the point (this doesn't use the region)
+- `C-u M-!` / `M-1 M-!`: Insert the result of a shell command at the point (this doesn't use the region)
 - With `(setq enable-recursive-minibuffers t)` set, `C-u M-!` can also be used within the minibuffer (e.g., to insert today's date)
-- `M-!` / `shell-command`: Run a shell command displaying the result in a separate buffer, to run this on the current file (hit `M-n` in the minibuffer for future history match to populate with the current file, this also works with `C-u M-!`)
+- `M-!` / `shell-command`: Run a shell command displaying the output in the minibuffer, or in a separate buffer (called *Shell Command Output*) if it exceeds a certain length (the variables `resize-mini-windows` and `max-mini-window-height`) control when Emacs should consider the output to be too long for the echo are.), to run this on the current file (hit `M-n` in the minibuffer for future history match to populate with the current file, this also works with `C-u M-!`)
 - `M-! M-n`: Run a shell command on the current file
 - `M-|` / `shell-command-on-region`: Run a shell command on the region (output is printed to the minibuffer)
 - `C-u M-|`: Run a shell command on the region, replacing region
