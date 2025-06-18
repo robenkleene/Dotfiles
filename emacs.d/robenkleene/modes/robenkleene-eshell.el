@@ -34,6 +34,25 @@
                ))
            (if (= (user-uid) 0) " # " " $ "))))
 
+  ;; Enable `view-mode' bindings like `q' to quit when running visual commands
+  ;; (that are run in `term-mode') Also detect the mode, e.g., `diff-mode' to
+  ;; make jumping to diff contents possible
+  (defun rk/term-view-mode-once (&rest ignored)
+    (view-mode 1)
+    (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
+    )
+  (defadvice eshell-exec-visual (before rk/eshell-exec-visual)
+    "Wrapper function description."
+    (add-hook 'term-mode-hook #'rk/term-view-mode-once)
+    )
+
+  ;; This will attempt to detect the mode after a `term-mode' process finishes,
+  ;; but `set-auto-mode' doesn't propertly, e.g., detect `diff-mode' for `git
+  ;; diff' output.
+  ;; (defun rk/term-detect-mode (&optional process-name msg)
+  ;;   (set-auto-mode)
+  ;;   )
+  ;; (advice-add 'term-handle-exit :after 'rk/term-detect-mode)
 
   (add-hook
    'eshell-mode-hook

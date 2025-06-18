@@ -213,6 +213,13 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
+;; Automatically add view keys when viewing read-only files
+;; Make `q' available to quit for read-only files
+;; Not sure we need this, for the output of shell comands, e.g., when using
+;; `term-mode' from Eshell or the `*Shell Command Output*' buffer from `M-!',
+;; `view-mode' still needs to be set manually.
+;; (setq view-read-only t)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
