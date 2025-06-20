@@ -47,5 +47,5 @@ colorscheme lunaperche
 let mapleader="\<Space>"
 
 if filereadable(expand('~/.vimrc_local'))
-  source $HOME/.vimrc_local
+  source $HOME/.vimrc_local.vim
 endif
