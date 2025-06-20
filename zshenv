@@ -3,8 +3,8 @@
 # via `M-!`)
 # This is early so that any path settings can be overridden later, e.g, for
 # `nvm` and `chruby`
-if [[ -f ~/.zshrc_local ]]; then
-  source ~/.zshrc_local
+if [[ -f ~/.zshrc_local.zsh ]]; then
+  source ~/.zshrc_local.zsh
 fi
 
 # `~/.brew/bin` *must* be in `ZSHENV` so that the brew installed version
