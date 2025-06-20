@@ -45,3 +45,7 @@ colorscheme lunaperche
 
 " Needs to happen before bindings are set
 let mapleader="\<Space>"
+
+if filereadable(expand('~/.vimrc_local'))
+  source $HOME/.vimrc_local
+endif
