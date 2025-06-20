@@ -32,6 +32,7 @@
 - `l`: Brings up the log pop-up
     - `l G` (then `l` to execute): Perform a git log search, e.g., `git log -G <string>`
 - When a commit is selected, `<return>` focuses it, whereas `<space>` views it but commits the commit log focused (so you can view other commits). When viewing commits, use `<backspace>` scrolls backward.
+- `magit-log-buffer-file`: Show the log (history) for the current file
 
 # Movement
 
