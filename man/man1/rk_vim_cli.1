@@ -2,11 +2,19 @@
 .\"
 .TH "RK_VIM_CLI Reference" "" "" ""
 .IP \[bu] 2
-\f[CR]\-q <file>\f[R]: Process error list (there isn\[cq]t a way to use
-this with standard input, \f[CR]vim \-q <(<command>)\f[R] works
-sometimes, but seems to try to execute backticks so should be avoided)
+\f[CR]\-q <file>\f[R]: Process error list from \f[CR]<file>\f[R] (there
+isn\[cq]t a way to use this with standard input,
+\f[CR]vim \-q <(<command>)\f[R] works sometimes, but seems to try to
+execute backticks so should be avoided)
+.SH \f[CR]vimrc\f[R]
+.IP \[bu] 2
+\f[CR]\-u NONE\f[R]: Use all default settings without loading a custom
+\f[CR].vimrc\f[R] file
+.SH Commands
 .IP \[bu] 2
 \f[CR]\-c {command}\f[R]
+.IP \[bu] 2
+\f[CR]\-c cb[uffer]\f[R]: Load an error list from standard input
 .IP \[bu] 2
 Use \f[CR]|\f[R] for multiple commands, e.g.,
 \f[CR]rg <term> | vim \-c \[aq]lcd <backtick>hgroot<backtick> | cb\[aq] \-\f[R]
