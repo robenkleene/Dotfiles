@@ -173,12 +173,12 @@
 ;; Turn on built-in editorconfig
 (editorconfig-mode 1)
 
-(if window-system
-    (load-theme 'modus-operandi :no-confirm-loading)
-  (load-theme 'modus-vivendi :no-confirm-loading)
-  )
+;; (if window-system
+;;     (load-theme 'modus-operandi :no-confirm-loading)
+;;   (load-theme 'modus-vivendi :no-confirm-loading)
+;;   )
 
-;; (load-theme 'modus-vivendi :no-confirm-loading)
+(load-theme 'modus-vivendi :no-confirm-loading)
 ;; Not pure black background looks a bit more natural
 ;; BBEdit Black
 ;; (set-face-background 'default "#141414")
