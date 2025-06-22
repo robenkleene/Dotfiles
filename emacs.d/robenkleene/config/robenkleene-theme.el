@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package ef-themes
+  :config
+  ;; (load-theme 'ef-owl :no-confirm-loading)
+  )
+
 ;; (if window-system
 ;;     (load-theme 'modus-operandi :no-confirm-loading)
 ;;   (load-theme 'modus-vivendi :no-confirm-loading)
