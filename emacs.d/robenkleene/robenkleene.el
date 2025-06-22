@@ -35,6 +35,7 @@
 (require 'robenkleene-minibuffer)
 (require 'robenkleene-shell-commands)
 (require 'robenkleene-spelling)
+(require 'robenkleene-theme)
 
 ;; Modes
 (require 'robenkleene-diff)
