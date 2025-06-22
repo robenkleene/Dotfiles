@@ -10,6 +10,7 @@
      cape
      consult
      diminish
+     ef-themes
      magit
      markdown-mode
      orderless
