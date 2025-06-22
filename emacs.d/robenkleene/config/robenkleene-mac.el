@@ -44,6 +44,14 @@
             (kbd "<C-s-268632070>")
             'toggle-frame-fullscreen)
 
+;; Hide Emacs if we try to delete the last frame
+(defun rk/delete-frame-or-hide-emacs ()
+  "Delete the selected frame.  If the last one, kill Emacs."
+  (interactive)
+  (condition-case nil (delete-frame) (error (ns-hide-emacs 1))))
+(global-set-key [remap delete-frame] 'rk/delete-frame-or-hide-emacs)
+
+
 ;; Mode
 (define-minor-mode rk/mac-bindings-minor-mode
   "Mac bindings."
