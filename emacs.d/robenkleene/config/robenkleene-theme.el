@@ -17,7 +17,9 @@
 ;; BBEdit Black
 ;; (set-face-background 'default "#141414")
 ;; Xcode Black
-(set-face-background 'default "#292A30")
+;; (set-face-background 'default "#292A30")
+;; Kleene Purple
+(set-face-background 'default "#211930")
 
 (provide 'robenkleene-theme)
 ;; Local Variables:
