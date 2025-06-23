@@ -10,11 +10,19 @@ augroup reload_buffers
   " <file>` while just `checktime` does. (`silent! checktime` when editing the
   " same file in another `vim` instance though.)
   "
-  " Removing `BufEnter` fixed process substitution via `vim <(ls)`
-  " Note the behavior is still broken, even with this commented out, in Neovim
+  " Running `checktime` on buffers from process substitution (e.g., `vim
+  " <(ls)`) on macOS breaks those buffers (they become empty)
+  " So only run `checktime` on buffers that do not start with `/dev/fd`
+  " (process substitution starts with this on macOS)
+
   " In Zsh, `nvim =(ls)` can be used as a workaround for process substitution
   " not working
-  autocmd FocusGained,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
+  autocmd BufEnter,FocusGained,CursorHold,CursorHoldI * if mode() != 'c'
+        \ && expand('%') !=# '[Command Line]'
+        \ && getcmdwintype() == ''
+        \ && bufname('%') !=# '^/dev/fd'
+        \ | execute 'checktime '.bufnr('%')
+        \ | endif
 augroup END
 " Set `CursorHold` interval in ms, default is `4000` so buffers refresh more
 " often
@@ -39,10 +47,10 @@ augroup auto_insert
   " be case sensitive
   " Disabling ignorecase because it's off by default now and this overwrites
   " that
-  "autocmd InsertEnter * setlocal nolist | setlocal noignorecase
-  "autocmd InsertLeave * setlocal list | setlocal ignorecase
-  autocmd InsertEnter * setlocal nolist
-  autocmd InsertLeave * setlocal list
+  autocmd InsertEnter * setlocal nolist | setlocal noignorecase
+  autocmd InsertLeave * setlocal list | setlocal ignorecase
+  " autocmd InsertEnter * setlocal nolist
+  " autocmd InsertLeave * setlocal list
 augroup END
 
 " Disable swap files, this allows multiple instances to edit the same file
