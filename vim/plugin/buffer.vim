@@ -20,7 +20,7 @@ augroup reload_buffers
   autocmd BufEnter,FocusGained,CursorHold,CursorHoldI * if mode() != 'c'
         \ && expand('%') !=# '[Command Line]'
         \ && getcmdwintype() == ''
-        \ && bufname('%') !=# '^/dev/fd'
+        \ && bufname('%') !~# '^/dev/fd'
         \ | execute 'checktime '.bufnr('%')
         \ | endif
 augroup END
