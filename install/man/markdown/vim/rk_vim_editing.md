@@ -15,9 +15,11 @@
 
 # Quick Tabs to Spaces
 
-    set expandtab
-    set shiftwidth=2
-    " Retab document with `gg=G`
+```
+set expandtab
+set shiftwidth=2
+" Retab document with `gg=G`
+```
 
 # Tips
 

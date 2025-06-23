@@ -1,8 +1,4 @@
-# Emacs Key Bindings
-
-- `C-x x t`: Toggle wrapping lines `toggle-truncate-lines`
-
-## Conventions
+# Conventions
 
 - `M-s`: Search bindings
 - `M-g`: Goto bindings
