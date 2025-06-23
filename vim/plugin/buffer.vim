@@ -2,21 +2,23 @@
 set autoread
 
 " This causes a delay when opening the command-line window with `<C-f>`?
-" Maybe `set autoread` is enough?
-" This breaks reading from process substitution, e.g., `vim <(ls)`
-" Note the behavior is still broken, even with this commented out, in Neovim
-" In Zsh, `nvim =(ls)` can be used as a workaround for process substitution
-" not working
-" augroup reload_buffers
-"   autocmd!
-"   " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
-"   " <file>` while just `checktime` does. (`silent! checktime` when editing the
-"   " same file in another `vim` instance though.)
-"   autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
-" augroup END
+" Maybe `set autoread` is enough? `set autoread` doesn't seem to do anything,
+" apparently it only works in `gvim`
+augroup reload_buffers
+  autocmd!
+  " Oddly, `silent! checktime` doesn't seem to update after a `git checkout
+  " <file>` while just `checktime` does. (`silent! checktime` when editing the
+  " same file in another `vim` instance though.)
+  "
+  " Removing `BufEnter` fixed process substitution via `vim <(ls)`
+  " Note the behavior is still broken, even with this commented out, in Neovim
+  " In Zsh, `nvim =(ls)` can be used as a workaround for process substitution
+  " not working
+  autocmd FocusGained,CursorHold,CursorHoldI * if mode() != 'c' && expand('%') !=# '[Command Line]' && getcmdwintype() == '' | checktime | endif
+augroup END
 " Set `CursorHold` interval in ms, default is `4000` so buffers refresh more
 " often
-" set updatetime=1000
+set updatetime=1000
 
 " Do not extend comments automatically, e.g., with `O`
 augroup disable_autocomments
