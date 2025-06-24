@@ -135,6 +135,30 @@
    )
   )
 
+(defun eshell-other-window ()
+  "Open eshell in other window."
+  (interactive)
+  (let ((buf (eshell "new")))
+    (switch-to-buffer (other-buffer buf))
+    (switch-to-buffer-other-window buf))
+  )
+
+(defun eshell-other-tab ()
+  "Open eshell in other tab."
+  (interactive)
+  (let ((buf (eshell "new")))
+    (switch-to-buffer (other-buffer buf))
+    (switch-to-buffer-other-tab buf))
+  )
+
+(defun eshell-other-frame ()
+  "Open eshell in other frame."
+  (interactive)
+  (let ((buf (eshell "new")))
+    (switch-to-buffer (other-buffer buf))
+    (switch-to-buffer-other-fraem buf))
+  )
+
 (provide 'robenkleene-interactive)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

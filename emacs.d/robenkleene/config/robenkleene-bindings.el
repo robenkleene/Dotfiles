@@ -19,6 +19,12 @@
             'xref-find-apropos)
 
 (define-key rk/bindings-minor-mode-map (kbd "C-x `") 'eshell)
+(define-key rk/bindings-minor-mode-map (kbd "C-x 4 `")
+            'eshell-other-window)
+(define-key rk/bindings-minor-mode-map (kbd "C-x t `")
+            'eshell-other-tab)
+(define-key rk/bindings-minor-mode-map (kbd "C-x 5 `")
+            'eshell-other-frame)
 
 ;; Automatically switch focus to new splits
 (define-key rk/bindings-minor-mode-map "\C-x2" (lambda ()
@@ -52,16 +58,18 @@
             'z)
 (define-key rk/bindings-minor-mode-map (kbd "C-x 4 z")
             'z-other-window)
-(define-key rk/bindings-minor-mode-map (kbd "C-x 5 z")
-            'z-other-frame)
 (define-key rk/bindings-minor-mode-map (kbd "C-x t z")
             'z-other-tab)
+(define-key rk/bindings-minor-mode-map (kbd "C-x 5 z")
+            'z-other-frame)
 
 ;; Misc
 ;; (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
 ;;             'recentf-open)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-b")
             'ibuffer)
+(define-key rk/bindings-minor-mode-map (kbd "C-x 4 C-b")
+            'ibuffer-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "M-s g")
             'grep-shell-command)
 (define-key rk/bindings-minor-mode-map (kbd "M-s f")
