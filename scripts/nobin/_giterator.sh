@@ -82,8 +82,9 @@ do_git_process() {
         # Give a zero exit status scripts that cd can continue
         exit 0
       fi
-    else
-      return 0
+    # Why are we returning here?
+    # else
+    #   return 0
     fi
   fi
 
