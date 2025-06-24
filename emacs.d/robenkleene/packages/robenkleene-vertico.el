@@ -14,6 +14,7 @@
          ("C-x b" . consult-buffer)
          ("M-s M-g" . rk/consult-ripgrep)
          ("M-s o" . consult-line)
+         ("C-x C-r" . consult-recent-file)
          )
   :init
   ;; Time to wait before updating results, the default is `0.2'

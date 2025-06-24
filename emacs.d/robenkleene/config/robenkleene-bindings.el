@@ -58,8 +58,8 @@
             'z-other-tab)
 
 ;; Misc
-(define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
-            'recentf-open)
+;; (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
+;;             'recentf-open)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-b")
             'ibuffer)
 (define-key rk/bindings-minor-mode-map (kbd "M-s g")
