@@ -12,8 +12,8 @@
 
 ;; Window Management `M-g M-c' is unbound, and it's used in the `*Completions*'
 ;; buffer to return to the minibuffer
-(define-key rk/bindings-minor-mode-map (kbd "M-g M-c")
-            'switch-to-minibuffer)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-g M-c")
+;;             'switch-to-minibuffer)
 ;; The default binding for this, `C-M-.' isn't supported in terminal
 (define-key rk/bindings-minor-mode-map (kbd "M-g .")
             'xref-find-apropos)
