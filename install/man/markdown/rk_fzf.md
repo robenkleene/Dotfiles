@@ -6,6 +6,11 @@
 - `^R`: Fuzzy-complete history
 - `⌥C`: Fuzzy-complete directory recursively
 
+# Examples
+
+- `vim $(fzf)`: Edit a file
+- `cd $(fzf)`: `cd` to a directory
+
 # Flags
 
 - `--no-sort`: Prevents sorting matches as you type
