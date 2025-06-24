@@ -82,7 +82,10 @@ do_git_process() {
         # Give a zero exit status scripts that cd can continue
         exit 0
       fi
-    # Why are we returning here?
+    # Commenting this out because it was breaking `egit -pn` pushing because we
+    # return with `next`
+    # Leaving this commented out because we're not sure why we were returning
+    # here.
     # else
     #   return 0
     fi
