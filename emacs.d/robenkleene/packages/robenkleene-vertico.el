@@ -12,7 +12,7 @@
          ("M-g i" . consult-imenu)
          ("M-s M-f" . consult-fd)
          ("C-x b" . consult-buffer)
-         ("M-s M-g" . consult-ripgrep)
+         ("M-s M-g" . rk/consult-ripgrep)
          ("M-s o" . consult-line)
          )
   :init
@@ -23,6 +23,15 @@
   ;; `consult-ripgrep' won't use the current directory and instead look for a
   ;; project
   (setq consult-project-function nil)
+
+  (defun rk/consult-ripgrep (&optional arg)
+    "Call `consult-ripgrep' ignoring `ripgreprc'."
+    (interactive)
+    (let ((process-environment (copy-sequence process-environment)))
+      (setenv "RIPGREP_CONFIG_PATH" "")
+      (consult-ripgrep)
+      )
+    )
 
   )
 

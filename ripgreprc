@@ -1,9 +1,10 @@
 # Having a column, e.g, with `--vimgrep` or `--column` interferes with `rg` in
 # `consult-ripgrep` (the highlight for the current match in the file buffer will
 # be off)
-# --vimgrep
+--vimgrep
+# `--vimgrep` is roughly the same as below
 # --column
---no-heading
+# --no-heading
 
 --smart-case
 # Clear the background
