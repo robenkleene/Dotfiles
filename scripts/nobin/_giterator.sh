@@ -4,6 +4,7 @@ usage() {
   echo "No flags : Just lists the status of each repo"
   echo "-c: Stage changes with a default commit message"
   echo "-u : Pull all repos without staged changes"
+  echo "-R : Pull and rebase before pushing"
   echo "-m <message>: Stage changes with commit message"
   echo "-n : Print next directory path with unstaged changes"
   echo "-p : Push all repos without staged changes"
@@ -11,15 +12,19 @@ usage() {
 
 push="false"
 pull="false"
+rebase="false"
 next="false"
 message=""
-while getopts "pucm:nh" option; do
+while getopts "pRucm:nh" option; do
   case "$option" in
     p)
       push="true"
       ;;
     u)
       pull="true"
+      ;;
+    R)
+      rebase="true"
       ;;
     n)
       next="true"
@@ -118,7 +123,10 @@ do_git_process() {
         pwd
         printed="true"
       fi
-      git pull -r && git push
+      if [ "$rebase" = "true" ]; then
+        git pull -r
+      fi
+      git push
     fi
   elif [ "$pull" = "true" ] && [ "$nothing_to_commit" = "true" ]; then
     if [[ "$printed" = "false" ]]; then
