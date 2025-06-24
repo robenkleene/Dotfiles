@@ -81,9 +81,12 @@ fi
 if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
   source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
 fi
-if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
-  source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
-fi
+# Avoid the completiong because `^t` conflicts with transpose characters
+# `vim $(fzf)` is a good replacement for `^t`
+# `cd $(fzf)` is a good replacement for `^c`
+# if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
+#   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
+# fi
 # Use `fd --type f` for `CTRL-T` in zsh for files
 export FZF_CTRL_T_COMMAND='fd --type f'
 # Use `fd --type f` for `OPT-C` in zsh for directories
