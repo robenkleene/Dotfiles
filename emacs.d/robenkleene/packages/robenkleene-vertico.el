@@ -28,6 +28,9 @@
     "Call `consult-ripgrep' ignoring `ripgreprc'."
     (interactive)
     (let ((process-environment (copy-sequence process-environment)))
+      ;; Setting a column in `ripgreprc', e.g., with `--vimgrep' or `--column'
+      ;; will interfere with `consult-ripgrep' parsing (e.g., the highlight in
+      ;; the file buffer with the match will be off)
       (setenv "RIPGREP_CONFIG_PATH" "")
       (consult-ripgrep)
       )

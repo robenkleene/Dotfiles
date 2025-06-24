@@ -1,6 +1,7 @@
 # Having a column, e.g, with `--vimgrep` or `--column` interferes with `rg` in
 # `consult-ripgrep` (the highlight for the current match in the file buffer will
 # be off)
+# This can be fixed by adjusting emacs to ignore `ripgreprc`.
 --vimgrep
 # `--vimgrep` is roughly the same as below
 # --column
