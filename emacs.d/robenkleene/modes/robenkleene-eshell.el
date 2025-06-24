@@ -41,10 +41,10 @@
     (view-mode 1)
     (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
     )
-  (defadvice eshell-exec-visual (before rk/eshell-exec-visual)
-    "Wrapper function description."
-    (add-hook 'term-mode-hook #'rk/term-view-mode-once)
-    )
+  (advice-add 'eshell-exec-visual
+              :before
+              #'(lambda (&rest ignored) (add-hook 'term-mode-hook
+                                                  #'rk/term-view-mode-once)))
 
   ;; This will attempt to detect the mode after a `term-mode' process finishes,
   ;; but `set-auto-mode' doesn't propertly, e.g., detect `diff-mode' for `git
