@@ -37,7 +37,10 @@
            ;; It only works for external commands like `git'
            (if (zerop eshell-last-command-status)
                ""
-             (format " %s?" eshell-last-command-status))
+             (propertize (format " %s?" eshell-last-command-status)
+                         'face
+                         '(:foreground "red"))
+             )
            ;; Use `#' if user is root
            (if (= (user-uid) 0) " # " " $ ")
            )))
