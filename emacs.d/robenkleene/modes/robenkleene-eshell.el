@@ -17,9 +17,9 @@
   (setq eshell-banner-message "")
 
   ;; Truncate path to 20 characters
-  ;; This particularly helps with small width windows because eshell will move the
-  ;; visible part of the window to make the prompt cursor visible which cuts off
-  ;; the left side of output
+  ;; This particularly helps with small width windows because eshell will move
+  ;; the visible part of the window to make the prompt cursor visible which cuts
+  ;; off the left side of output
   (setq eshell-prompt-function
         (lambda ()
           (concat
@@ -32,7 +32,15 @@
                  (concat "..." (substring path (- length max)))
                path
                ))
-           (if (= (user-uid) 0) " # " " $ "))))
+           ;; Exit status of last command
+           ;; Note this doesn't work for elisp commands like `cd' or `ls'
+           ;; It only works for external commands like `git'
+           (if (zerop eshell-last-command-status)
+               ""
+             (format " %s?" eshell-last-command-status))
+           ;; Use `#' if user is root
+           (if (= (user-uid) 0) " # " " $ ")
+           )))
 
   ;; Enable `view-mode' bindings like `q' to quit when running visual commands
   ;; (that are run in `term-mode') Also detect the mode, e.g., `diff-mode' to
