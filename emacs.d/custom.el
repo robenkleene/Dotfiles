@@ -14,7 +14,6 @@
      magit
      markdown-mode
      orderless
-     smartparens
      wgrep
      vertico
      yasnippet

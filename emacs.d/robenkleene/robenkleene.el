@@ -50,7 +50,6 @@
 (require 'robenkleene-cape)
 (require 'robenkleene-diminish)
 (require 'robenkleene-magit)
-(require 'robenkleene-smartparens)
 (require 'robenkleene-vertico)
 (require 'robenkleene-wgrep)
 (require 'robenkleene-yasnippet)
