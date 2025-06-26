@@ -45,11 +45,13 @@
             'toggle-frame-fullscreen)
 
 ;; Hide Emacs if we try to delete the last frame
-(defun rk/delete-frame-or-hide-emacs ()
-  "Delete the selected frame.  If the last one, kill Emacs."
-  (interactive)
-  (condition-case nil (delete-frame) (error (ns-hide-emacs 1))))
-(global-set-key [remap delete-frame] 'rk/delete-frame-or-hide-emacs)
+;; This is actually a bit strange because hiding an app makes it lose focus, so
+;; when another app is brought into focus it might have strange side effects
+;; (defun rk/delete-frame-or-hide-emacs ()
+;;   "Delete the selected frame.  If the last one, kill Emacs."
+;;   (interactive)
+;;   (condition-case nil (delete-frame) (error (ns-hide-emacs 1))))
+;; (global-set-key [remap delete-frame] 'rk/delete-frame-or-hide-emacs)
 
 
 ;; Mode
