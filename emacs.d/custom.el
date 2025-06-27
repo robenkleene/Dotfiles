@@ -11,10 +11,8 @@
      consult
      diminish
      ef-themes
-     magit
      markdown-mode
      orderless
-     wgrep
      vertico
      yasnippet
      yasnippet-capf

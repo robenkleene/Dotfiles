@@ -11,8 +11,10 @@
   (let ((buffer (get-buffer "*Shell Command Output*")))
     (when (buffer-live-p buffer)
       (with-current-buffer buffer
+        ;; `set-auto-mode' first because it can remove `view-mode'
+        ;; Disabling this because it's unreliable
+        ;; (set-auto-mode)
         (view-mode)
-        (set-auto-mode)
         ))))
 
 ;; Path
