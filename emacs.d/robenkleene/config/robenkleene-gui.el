@@ -41,10 +41,10 @@
 ;; Make `rg' called from within Emacs use `ripgreprc'
 (setenv "RIPGREP_CONFIG_PATH" (expand-file-name "~/.ripgreprc"))
 
-;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
 ;; (set-face-attribute 'default nil :font "Menlo-13:Regular")
 ;; (set-face-attribute 'default nil :font "SF Mono-13:Regular")
-(set-face-attribute 'default nil :font "Consolas-14:Regular")
+;; (set-face-attribute 'default nil :font "Consolas-14:Regular")
 
 
 ;; Save window state
