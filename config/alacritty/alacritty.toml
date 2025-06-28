@@ -10,7 +10,9 @@
 # Xcode Black
 # background = "#292A30"
 # Black
-background = "#000000"
+# Don't use pure black because otherwise the lower right window corner won't be
+# visible when overlapping
+# background = "#000000"
 
 
 [colors.cursor]
