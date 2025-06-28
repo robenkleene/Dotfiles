@@ -11,7 +11,10 @@
   ;; Most `git' commands should use `term-mode' and have colors by default
   ;; (e.g., `eshell-visual-commands'), but for commands that don't use a pager,
   ;; like `git status', forcing colors is useful.
-  (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
+  ;; Can't put this here because then it will also force color, e.g., `M-!' for
+  ;; `shell-command'
+  ;; Instead just add `--color' to `eshell-visual-options' for `git'
+  ;; (setenv "GIT_CONFIG_PARAMETERS" "'color.ui=always'")
 
   ;; Suppress "Welcome to the Emacs shell" startup message
   (setq eshell-banner-message "")
@@ -91,7 +94,7 @@
      (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
      (add-to-list 'eshell-visual-subcommands '("hg" "diff" "show"))
      ;; Options
-     (add-to-list 'eshell-visual-options '("git" "--help" "--paginate"))
+     (add-to-list 'eshell-visual-options '("git" "--help" "--paginate" "--color"))
      )
    )
 
