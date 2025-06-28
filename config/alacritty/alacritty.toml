@@ -9,6 +9,8 @@
 # background = "#141414"
 # Xcode Black
 # background = "#292A30"
+# Black
+background = "#000000"
 
 
 [colors.cursor]
@@ -26,6 +28,7 @@ size = 15.0
 # family = "JetBrainsMono Nerd Font"
 # family = "Menlo"
 family = "Consolas"
+# family = "SF Mono"
 
 [[hints.enabled]]
 command = "xdg-open"
