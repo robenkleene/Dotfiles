@@ -18,7 +18,7 @@ foreground = "#FFFFFF"
 
 [colors.cursor]
 cursor = "#00BB00"
-text = "0xffffff"
+text = "0xFFFFFF"
 
 [env]
 ALACRITTY = "1"
