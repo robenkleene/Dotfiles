@@ -1,3 +1,25 @@
+[colors.primary]
+# Kleene Purple 1
+# background = "#211930"
+# Kleene Purple 2
+# background = "#2B233D"
+# Kleene Purple 3
+# background = "#2A233C"
+# BBEdit Black
+# background = "#141414"
+# Xcode Black
+# background = "#292A30"
+# Black
+# Don't use pure black because otherwise the lower right window corner won't be
+# visible when overlapping
+background = "#000000"
+# Text Color
+foreground = "#FFFFFF"
+
+[colors.cursor]
+cursor = "#00BB00"
+text = "0xFFFFFF"
+
 [colors.normal]
 black = "#000000"
 red = "#D75F5F"
