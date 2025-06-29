@@ -29,8 +29,9 @@ size = 14.0
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
 # family = "Menlo"
-family = "Consolas"
+# family = "Consolas"
 # family = "SF Mono"
+family = "Berkeley Mono"
 
 [[hints.enabled]]
 command = "xdg-open"
