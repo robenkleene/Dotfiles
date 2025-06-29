@@ -13,7 +13,8 @@
 # Don't use pure black because otherwise the lower right window corner won't be
 # visible when overlapping
 background = "#000000"
-
+# Text Color
+foreground = "#FFFFFF"
 
 [colors.cursor]
 cursor = "#00BB00"
