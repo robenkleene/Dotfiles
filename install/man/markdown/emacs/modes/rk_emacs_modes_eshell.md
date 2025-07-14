@@ -5,7 +5,7 @@
 
 # Process Substitution
 
-- `mkdir ${date +%Y-%m-%d | tr -d '\n'}`
+- `echo ${echo foo}`, the `$` is usually optional (e.g., `echo {echo foo}`) also works
 
 # Buffers
 
