@@ -12,7 +12,8 @@ prompt
 \f[CR]C\-p\f[R] / \f[CR]C\-n\f[R]: Go to previous / next line
 .SH Process Substitution
 .IP \[bu] 2
-\f[CR]mkdir ${date +%Y\-%m\-%d | tr \-d \[aq]\[rs]n\[aq]}\f[R]
+\f[CR]echo ${echo foo}\f[R], the \f[CR]$\f[R] is usually optional (e.g.,
+\f[CR]echo {echo foo}\f[R]) also works
 .SH Buffers
 .IP \[bu] 2
 \f[CR]C\-c M\-b\f[R]: Choose a buffer and insert it, e.g.,
