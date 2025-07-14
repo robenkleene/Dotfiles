@@ -1,5 +1,3 @@
-# `emacs` Lisp Bindings
-
 - `C-M-k`: Kill s-expression (works with quotes)
 
 ## Movement By S-Expression

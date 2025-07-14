@@ -1,5 +1,10 @@
 - Enter while on a checkbox (`[ ]`) toggles it
 
+# Links
+
+- `C-c C-o`, `C-c C-d`: Open URL
+- `C-c C-x C-l`, `markdown-toggle-url-hiding`: Toggle hiding URLs
+
 # Outline
 
 ## Navigation
@@ -12,6 +17,3 @@
 
 - `C-c C-x l` / `C-c C-x r`: Demote / promote
 
-# Links
-
-- `C-c C-x C-l`, `markdown-toggle-url-hiding`: Toggle hiding URLs
