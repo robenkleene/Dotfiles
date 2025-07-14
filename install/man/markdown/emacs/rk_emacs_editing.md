@@ -17,6 +17,7 @@
 
 # Selection
 
+- Triple-clicking is an easy way to select a single line
 - `M-w`: Copy
 - `C-w`: Cut
 - `C-y`: Paste
