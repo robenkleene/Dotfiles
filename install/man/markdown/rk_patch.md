@@ -1,5 +1,5 @@
 - Pipe a patch to `patch` to apply it
-- `--merge` apply conflicts in the file (instead of creating `.rej` files) note that the built in version of `patch` on macOS doesn't support this
+- `--merge` (or `--marge=diff3` to use `diff3` style which also includes the contents before either conflicting change) apply conflicts in the file (instead of creating `.rej` files) note that the built in version of `patch` on macOS doesn't support this
 
 # Tricks
 
