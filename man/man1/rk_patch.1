@@ -3,7 +3,17 @@
 .TH "RK_PATCH Reference" "" "" ""
 .IP \[bu] 2
 Pipe a patch to \f[CR]patch\f[R] to apply it
+.IP \[bu] 2
+\f[CR]\-\-merge\f[R] apply conflicts in the file (instead of creating
+\f[CR].rej\f[R] files) note that the built in version of
+\f[CR]patch\f[R] on macOS doesn\[cq]t support this
 .SH Tricks
 To apply a patch to an arbitrary file, just remove the section of the
 patch that specifies the file path, \f[CR]patch\f[R] will then prompt
 for a file path to apply it to.
+.SH Troubleshooting
+.IP \[bu] 2
+For \f[CR]can\[aq]t find file to patch at input line X\f[R] errors, use
+\f[CR]\-pN\f[R] where \f[CR]N\f[R] is the number of leading components
+to strip (e.g., to clean a path like \f[CR]a/foo/bar\f[R],
+\f[CR]\-p1\f[R] would strip the first component which is \f[CR]a/\f[R]

@@ -16,6 +16,8 @@ brew 'git-delta'
 brew 'universal-ctags'
 brew 'gnu-typist'
 brew 'cscope'
+# Version of `patch` that supports the `--merge` flag to apply conflicts in file
+brew 'gpatch'
 
 # Editor
 brew 'vim'
