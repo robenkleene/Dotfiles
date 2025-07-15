@@ -53,22 +53,27 @@ directory, not the current directory!)
 .IP "2." 3
 \f[CR]mf\f[R] to mark the files
 .IP "3." 3
-\f[CR]cd\f[R] to set the working directory as the same directory as the
-marked files
-.IP "4." 3
-\f[CR]mc\f[R] to copy or \f[CR]mm\f[R] to move the files to the target
+\f[CR]mc\f[R] to copy, or \f[CR]mm\f[R] to move, the files to the target
 directory
 .PP
 Note the file list won\[cq]t update automatically, so refresh with
 \f[CR]<C\-l>\f[R]
 .SS Duplicate File in the Current Directory
-.IP \[bu] 2
-The above steps also work in \f[CR]Copy/Move File\f[R] (if this fails,
-it\[cq]s usually something related to the \f[CR]cd\f[R], so repeat the
-steps from scratch after \f[CR]cd\f[R] if there\[cq]s an error)
-.IP \[bu] 2
+.IP "1." 3
+\f[CR]mt\f[R] to set the target directory (so to duplicate the file in
+the current directory, \f[CR]\-\f[R] to go to the parent directory, then
+\f[CR]mt\f[R] to set the target to the directory in the parent)
+.IP "2." 3
+\f[CR]mf\f[R] to mark the files
+.IP "3." 3
+\f[CR]cd\f[R] to set the working directory as the same directory as the
+marked files (not sure why this is necessary, but it seems to be)
+.IP "4." 3
+\f[CR]mc\f[R] to copy, or \f[CR]mm\f[R] to move, the files to the target
+directory
+.SS Alternative Approach
 \f[CR]!cp <src> <dst>\f[R], using \f[CR]C\-r C\-f\f[R] to fill in the
-current file at the cursor, also works
+current file path at the cursor, also works
 .SS Shell Commands
 .IP \[bu] 2
 \f[CR]mx\f[R]: Run shell command on marked files (to specify where the

@@ -32,15 +32,20 @@
 
 1. `mt` to set the target directory
 2. `mf` to mark the files
-3. `cd` to set the working directory as the same directory as the marked files
-4. `mc` to copy or `mm` to move the files to the target directory
+3. `mc` to copy, or `mm` to move, the files to the target directory
 
 Note the file list won't update automatically, so refresh with `<C-l>`
 
 ## Duplicate File in the Current Directory
 
-- The above steps also work in `Copy/Move File` (if this fails, it's usually something related to the `cd`, so repeat the steps from scratch after `cd` if there's an error)
-- `!cp <src> <dst>`, using `C-r C-f` to fill in the current file at the cursor, also works
+1. `mt` to set the target directory (so to duplicate the file in the current directory, `-` to go to the parent directory, then `mt` to set the target to the directory in the parent)
+2. `mf` to mark the files
+3. `cd` to set the working directory as the same directory as the marked files (not sure why this is necessary, but it seems to be)
+4. `mc` to copy, or `mm` to move, the files to the target directory
+
+### Alternative Approach
+
+`!cp <src> <dst>`, using `C-r C-f` to fill in the current file path at the cursor, also works
 
 ## Shell Commands
 
