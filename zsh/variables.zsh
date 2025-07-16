@@ -54,10 +54,3 @@ export EDITOR="nvim"
 
 # rg
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-
-# marksman
-if [[ "$(uname)" == "Linux" ]]; then
-  # marksman was crashing on launch due to missing library errors without
-  # setting `LD_LIBRARY_PATH`
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib/x86_64-linux-gnu
-fi
