@@ -5,3 +5,4 @@
 
 - Show the values of `set-clipboard` with `tmux show -s set-clipboard` (it should be `on` or `external` to sync with the system clipboard)
 - The clipboard feature depends on the `Ms` unofficial `terminfo` extension, make sure it's set with `tmux info | grep Ms` (it'll say `[missing]` if it's not set)
+- Setting the local clipboard from a remote session does not work in `mosh` because `mosh` strips OSC 52 clipboard operations
