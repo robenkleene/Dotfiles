@@ -43,6 +43,10 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 # Traced a slowdown problem to `inc_append_history_time`, so keeping it off for
 # now
 # setopt inc_append_history_time
+# Try this instead, without this, a command I know I've run might be missing
+# from this history of new shells because without this, commands aren't entered
+# until they finish running
+setopt inc_append_history
 # Share History
 # zsh will save and load each line immediately, but this will intermingle
 # history from multiple running shells
