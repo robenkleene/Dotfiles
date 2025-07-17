@@ -56,6 +56,9 @@ brew 'yt-dlp'
 # "adb devices"`
 # brew 'watch'
 
+# Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
+brew 'MisterTea/et/et'
+
 # Cask GUI Apps
 tap 'homebrew/cask'
 cask 'alacritty'
