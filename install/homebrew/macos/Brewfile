@@ -48,6 +48,8 @@ brew 'cloc'
 brew 'ncdu'
 # HEAD for truecolor support
 brew 'mosh', args: ['HEAD']
+# Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
+brew 'MisterTea/et/et'
 brew 'yt-dlp'
 # VR
 # Use another install method
@@ -55,9 +57,6 @@ brew 'yt-dlp'
 # `-g, --chgexit`: Watch a command until its output changes, e.g., `watch -g
 # "adb devices"`
 # brew 'watch'
-
-# Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
-brew 'MisterTea/et/et'
 
 # Cask GUI Apps
 tap 'homebrew/cask'
