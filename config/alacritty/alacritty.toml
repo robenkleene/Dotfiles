@@ -12,6 +12,7 @@ size = 13.0
 # family = "SF Mono"
 family = "SF Mono"
 style = "Medium"
+# style = "Light"
 # family = "Berkeley Mono"
 
 [[hints.enabled]]

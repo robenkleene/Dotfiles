@@ -43,8 +43,8 @@
 
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
 ;; (set-face-attribute 'default nil :font "Menlo-13:Regular")
-;; (set-face-attribute 'default nil :font "SF Mono-13:Regular")
-(set-face-attribute 'default nil :font "SF Mono-13:Medium")
+(set-face-attribute 'default nil :font "SF Mono-13:Regular")
+;; (set-face-attribute 'default nil :font "SF Mono-13:Medium")
 ;; (set-face-attribute 'default nil :font "Consolas-14:Regular")
 ;; (set-face-attribute 'default nil :font "Berkeley Mono-14:Regular")
 
