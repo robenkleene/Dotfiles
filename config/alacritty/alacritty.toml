@@ -3,17 +3,18 @@ ALACRITTY = "1"
 TERM = "xterm-256color"
 
 [font]
-size = 13.0
+size = 14.0
 
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
 # family = "Menlo"
 # family = "Consolas"
+family = "Berkeley Mono"
+
+# SF Mono
 # family = "SF Mono"
-family = "SF Mono"
-style = "Medium"
+# style = "Medium"
 # style = "Light"
-# family = "Berkeley Mono"
 
 [[hints.enabled]]
 command = "xdg-open"
