@@ -26,6 +26,12 @@ if command -v brew &> /dev/null; then
   fpath=($HOMEBREW_DIR/share/zsh/site-functions $fpath)
 fi
 
+if [[ -n ${ALACRITTY+x} ]]; then
+  # Disable bouncing the dock icon for "urgency" in Alacritty. The icon
+  # occassionally bounces without this, probably for shaky `ssh` connections.
+  printf "\e[?1042l"
+fi
+
 # chruby
 # This is ridiculously slow
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
