@@ -8,8 +8,8 @@ size = 14.0
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
 # family = "Menlo"
-family = "Consolas"
-# family = "Berkeley Mono"
+# family = "Consolas"
+family = "Berkeley Mono"
 
 # SF Mono
 # family = "SF Mono"
