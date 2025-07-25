@@ -27,3 +27,6 @@
 - `<` / `>`: Beginning / end of last visual selection
 - `.`: Last change
 
+# Examples
+
+- `>'[`: Indent the last changed lines (e.g., after `put *`)
