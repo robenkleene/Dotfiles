@@ -5,6 +5,7 @@
 - `<C-w>v`: New vertical split with current file
 - `<C-w><C-s>`: New horizontal split with current file
 - `:enew`: New window replacing current window
+- `:only`: Close all windows except for the current one
 
 ## File at Cursor
 
@@ -62,6 +63,7 @@
 - `gT`: Previous tab
 - `:tab <command>`: Open command in a new tab
 - `:[sp]lit +<command>`: Is supposed to work similarly for splits, but it's less predictable (e.g., `:split +tag <term>` seems to fail)
+- `:tabonly`: Close all tabs except for the current one
 
 # Cursor Position in Window
 
