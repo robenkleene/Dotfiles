@@ -4,11 +4,12 @@
 .IP \[bu] 2
 Pipe a patch to \f[CR]patch\f[R] to apply it
 .IP \[bu] 2
-\f[CR]\-\-merge\f[R] (or \f[CR]\-\-marge=diff3\f[R] to use
+\f[CR]\-\-merge\f[R] (or \f[CR]\-\-merge=diff3\f[R] to use
 \f[CR]diff3\f[R] style which also includes the contents before either
-conflicting change) apply conflicts in the file (instead of creating
-\f[CR].rej\f[R] files) note that the built in version of
-\f[CR]patch\f[R] on macOS doesn\[cq]t support this
+conflicting change) apply conflicts in the file instead of creating
+\f[CR].rej\f[R] files (note that the built in version of
+\f[CR]patch\f[R] on macOS doesn\[cq]t support this, so instead use,
+e.g., \f[CR]gpatch \-\-merge=diff3\f[R])
 .SH Tricks
 To apply a patch to an arbitrary file, just remove the section of the
 patch that specifies the file path, \f[CR]patch\f[R] will then prompt
