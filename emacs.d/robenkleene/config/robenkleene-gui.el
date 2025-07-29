@@ -44,11 +44,11 @@
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-13:Regular")
 ;; (set-face-attribute 'default nil :font "Menlo-13:Regular")
 ;; (set-face-attribute 'default nil :font "SF Mono-13:Regular")
-(set-face-attribute 'default nil :font "SF Mono-14:Medium")
+;; (set-face-attribute 'default nil :font "SF Mono-14:Medium")
 ;; Consolas is shifted slightly-upwards in Emacs, this is a problem originating
 ;; in the font file itself
 ;; (set-face-attribute 'default nil :font "Consolas-14:Regular")
-;; (set-face-attribute 'default nil :font "Berkeley Mono-14:Regular")
+(set-face-attribute 'default nil :font "Berkeley Mono-14:Regular")
 
 ;; Save window state
 ;; Don't restore window state because it makes it hard to enforce that Emacs

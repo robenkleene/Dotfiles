@@ -9,11 +9,11 @@ size = 14.0
 # family = "JetBrainsMono Nerd Font"
 # family = "Menlo"
 # family = "Consolas"
-# family = "Berkeley Mono"
+family = "Berkeley Mono"
 
 # SF Mono
-family = "SF Mono"
-style = "Medium"
+# family = "SF Mono"
+# style = "Medium"
 # style = "Light"
 
 [[hints.enabled]]
