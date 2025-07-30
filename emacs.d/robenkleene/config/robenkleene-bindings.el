@@ -64,8 +64,8 @@
             'z-other-frame)
 
 ;; Misc
-;; (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
-;;             'recentf-open)
+(define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
+            'recentf-open)
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-b")
             'ibuffer)
 (define-key rk/bindings-minor-mode-map (kbd "C-x 4 C-b")
