@@ -49,7 +49,6 @@
 (require 'robenkleene-aggressive-indent)
 (require 'robenkleene-cape)
 (require 'robenkleene-diminish)
-(require 'robenkleene-vertico)
 (require 'robenkleene-yasnippet)
 
 ;; Languages
