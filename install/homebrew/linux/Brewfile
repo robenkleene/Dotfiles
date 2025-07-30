@@ -7,7 +7,6 @@ brew 'fd'
 brew 'ncdu'
 brew 'zoxide'
 # for `zoxide` `zi` to go to recent directories
-brew 'fzf'
 brew 'nnn'
 # Use for clipboard provider support
 brew 'nvim'
