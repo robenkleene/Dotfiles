@@ -25,6 +25,11 @@ completion (note this works both for the buffer list and arguments list)
 \f[CR]{count}CTRL\-\[ha]\f[R]: Switch to count numbered buffer
 .IP \[bu] 2
 \f[CR]CTRL\-\[ha]\f[R], \f[CR]:b#\f[R]: Edit previous buffer
+.SS Multiple
+.IP \[bu] 2
+\f[CR]b<buffer\-number1> | vert sb<buffer\-number2>\f[R]: Open multiple
+buffers in splits
+.SS Closing
 .IP \[bu] 2
 \f[CR]bd[elete] <buffer\-number>\f[R]: Close a buffer (defaults to
 current buffer)
@@ -46,11 +51,16 @@ You can hit \f[CR]:\f[R] in this list to enter an edit command, e.g.,
 second most recent, etc\&...), note that this \f[I]only\f[R] works for
 the most recent file list, e.g., not for the buffer list)
 .IP \[bu] 2
-\f[CR]:ar[gs] #<1 #<2\f[R]: Edit multiple old files
-.IP \[bu] 2
 \f[CR]:sp[lit] #<1\f[R]: Edit old file in horizontal split
 .IP \[bu] 2
 \f[CR]:vs[plit] #<1\f[R]: Edit old file in vertical split
+.SS Multiple
+.IP \[bu] 2
+\f[CR]b<buffer\-number1> | vert sb<buffer\-number2>\f[R]: Edit multiple
+old files in splits
+.IP \[bu] 2
+\f[CR]:ar[gs] #<1 #<2\f[R]: Edit multiple old files (adds them to the
+\f[CR]argslist\f[R], does not open them in splits)
 .SH Marks
 Another way to open a recent file is to use the \f[CR]:marks\f[R] list,
 this is because the numbered marks automatically map to the most
