@@ -83,27 +83,6 @@ elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
   path=(~/.nvm/versions/node/v21.6.1/bin $path)
 fi
 
-# fzf
-if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh" ]]; then
-  source "$HOMEBREW_DIR/opt/fzf/shell/completion.zsh"
-fi
-# Avoid the completiong because `^t` conflicts with transpose characters
-# `vim $(fzf)` is a good replacement for `^t`
-# `cd $(fzf)` is a good replacement for `^c`
-# if [[ -f "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh" ]]; then
-#   source "$HOMEBREW_DIR/opt/fzf/shell/key-bindings.zsh"
-# fi
-# Use `fd --type f` for `CTRL-T` in zsh for files
-export FZF_CTRL_T_COMMAND='fd --type f'
-# Use `fd --type f` for `OPT-C` in zsh for directories
-export FZF_ALT_C_COMMAND='fd --type d'
-# Use `fd` for `:Files` in `fzf.vim`
-# This means both files and directories can be selected
-# `fzf.vim` has no built-in support for directories
-export FZF_DEFAULT_COMMAND='fd'
-# Always wrap preview window because it's usually useless without it
-export FZF_DEFAULT_OPTS='--preview-window=wrap'
-
 # nnn
 n ()
 {
