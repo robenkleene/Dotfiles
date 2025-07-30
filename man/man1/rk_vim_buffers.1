@@ -47,20 +47,24 @@ use \f[CR]/\[rs]cpattern/\f[R] to ignore case)
 You can hit \f[CR]:\f[R] in this list to enter an edit command, e.g.,
 \f[CR]e #<1\f[R] to edit old file number \f[CR]1\f[R]
 .IP \[bu] 2
-\f[CR]:e[dit] #<1\f[R]: Edit most recent file (\f[CR]#<2\f[R] to edit
-second most recent, etc\&...), note that this \f[I]only\f[R] works for
-the most recent file list, e.g., not for the buffer list)
+\f[CR]:e[dit] #<<old\-file\-number>\f[R]: Edit most recent file
+(\f[CR]#<2\f[R] to edit second most recent, etc\&...), note that this
+\f[I]only\f[R] works for the most recent file list, e.g., not for the
+buffer list)
 .IP \[bu] 2
-\f[CR]:sp[lit] #<1\f[R]: Edit old file in horizontal split
+\f[CR]:sp[lit] #<<old\-file\-number>\f[R]: Edit old file in horizontal
+split
 .IP \[bu] 2
-\f[CR]:vs[plit] #<1\f[R]: Edit old file in vertical split
+\f[CR]:vs[plit] #<<old\-file\-number>\f[R]: Edit old file in vertical
+split
 .SS Multiple
 .IP \[bu] 2
-\f[CR]b<buffer\-number1> | vert sb<buffer\-number2>\f[R]: Edit multiple
-old files in splits
+\f[CR]e<old\-file\-number1> | vs[split]<old\-file\-number2>\f[R]: Edit
+multiple old files in splits
 .IP \[bu] 2
-\f[CR]:ar[gs] #<1 #<2\f[R]: Edit multiple old files (adds them to the
-\f[CR]argslist\f[R], does not open them in splits)
+\f[CR]:ar[gs] #<<old\-file\-number1> #<<old\-file\-number2>\f[R]: Edit
+multiple old files (adds them to the \f[CR]argslist\f[R], does not open
+them in splits)
 .SH Marks
 Another way to open a recent file is to use the \f[CR]:marks\f[R] list,
 this is because the numbered marks automatically map to the most

@@ -26,14 +26,14 @@
 - `:ol[dfiles]` / `:bro[wse] ol[dfiles]`: List old files
 - `:filt[er] /pattern/ ol`: Present a list of old files that match filter (`:filter` is always case sensitive by default, use `/\cpattern/` to ignore case)
 - You can hit `:` in this list to enter an edit command, e.g., `e #<1` to edit old file number `1`
-- `:e[dit] #<1`: Edit most recent file (`#<2` to edit second most recent, etc...), note that this *only* works for the most recent file list, e.g., not for the buffer list)
-- `:sp[lit] #<1`: Edit old file in horizontal split
-- `:vs[plit] #<1`: Edit old file in vertical split
+- `:e[dit] #<<old-file-number>`: Edit most recent file (`#<2` to edit second most recent, etc...), note that this *only* works for the most recent file list, e.g., not for the buffer list)
+- `:sp[lit] #<<old-file-number>`: Edit old file in horizontal split
+- `:vs[plit] #<<old-file-number>`: Edit old file in vertical split
 
 ## Multiple
 
-- `b<buffer-number1> | vert sb<buffer-number2>`: Edit multiple old files in splits
-- `:ar[gs] #<1 #<2`: Edit multiple old files (adds them to the `argslist`, does not open them in splits)
+- `e<old-file-number1> | vs[split]<old-file-number2>`: Edit multiple old files in splits
+- `:ar[gs] #<<old-file-number1> #<<old-file-number2>`: Edit multiple old files (adds them to the `argslist`, does not open them in splits)
 
 # Marks
 
