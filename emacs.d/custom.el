@@ -8,12 +8,9 @@
      adaptive-wrap
      aggressive-indent
      cape
-     consult
      diminish
      ef-themes
      markdown-mode
-     orderless
-     vertico
      yasnippet
      yasnippet-capf
      ))
