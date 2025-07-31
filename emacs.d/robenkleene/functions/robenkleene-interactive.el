@@ -78,6 +78,7 @@
   (interactive
    (list (read-shell-command
           "Run find command: "
+          ;; Set the default command
           ;; "fd -l "
           ""
           'find-command-history)
