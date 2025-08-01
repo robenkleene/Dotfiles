@@ -1,0 +1,1 @@
+- `TERM=xterm-256color et <server>`: Work around for bad terminal error
