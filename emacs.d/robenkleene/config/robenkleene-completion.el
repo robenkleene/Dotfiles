@@ -16,6 +16,8 @@
 ;; Show completion matches on second tab
 (setq completion-auto-select 'second-tab)
 
+(icomplete-vertical-mode)
+
 (provide 'robenkleene-completion)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
