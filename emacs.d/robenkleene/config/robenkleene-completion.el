@@ -16,7 +16,14 @@
 ;; Show completion matches on second tab
 (setq completion-auto-select 'second-tab)
 
-(icomplete-vertical-mode)
+;; Shows completions, use `C-j` to accept current match
+;; (icomplete-mode)
+;; (icomplete-vertical-mode)
+
+;; Like `icomplete-mode', but `<return>` to accept current match, and `C-d` to
+;; accept as typed.
+(fido-mode)
+;; (fido-vertical-mode)
 
 (provide 'robenkleene-completion)
 ;; Local Variables:
