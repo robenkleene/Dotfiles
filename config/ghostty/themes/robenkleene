@@ -30,9 +30,20 @@ palette = 13=#FF87FF
 palette = 14=#00FFFF
 # Bright White
 palette = 15=#D7D7D7
-background = #000000
+
+# Black
+# background = #000000
+# Kleene Purple 1
+background = #211930
+# Kleene Purple 2
+# background = #2B233D
+# Kleene Purple 3
+# background = #2A233C
+
 foreground = #FFFFFF
+
 cursor-color = #00BB00
 cursor-text = #FFFFFF
+
 selection-background = #626880
 selection-foreground = #c6d0f5
