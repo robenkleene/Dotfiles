@@ -6,3 +6,6 @@ font-size = 14
 font-thicken = true
 
 theme = robenkleene
+
+background-opacity = 0.9
+background-blur = true
