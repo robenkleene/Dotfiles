@@ -9,6 +9,7 @@
      aggressive-indent
      cape
      diminish
+     doric-themes
      ef-themes
      markdown-mode
      yasnippet
