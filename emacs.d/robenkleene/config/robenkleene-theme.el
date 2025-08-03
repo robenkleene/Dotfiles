@@ -7,6 +7,10 @@
   ;; (load-theme 'ef-owl :no-confirm-loading)
   )
 
+(use-package doric-themes
+  :config
+  )
+
 ;; (if window-system
 ;;     (load-theme 'modus-operandi :no-confirm-loading)
 ;;   (load-theme 'modus-vivendi :no-confirm-loading)
