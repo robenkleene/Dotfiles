@@ -7,5 +7,7 @@ font-thicken = true
 
 theme = robenkleene
 
-background-opacity = 0.9
-background-blur = true
+# The blur setting has trouble sticking on 1.1.3
+# Try again on a new version
+# background-opacity = 0.9
+# background-blur = true
