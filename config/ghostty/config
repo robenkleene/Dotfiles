@@ -9,5 +9,5 @@ theme = robenkleene
 
 # The blur setting has trouble sticking on 1.1.3
 # Try again on a new version
-background-opacity = 0.9
-background-blur = true
+# background-opacity = 0.9
+# background-blur = true
