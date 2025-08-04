@@ -19,6 +19,9 @@
   ;; Suppress "Welcome to the Emacs shell" startup message
   (setq eshell-banner-message "")
 
+  ;; Ignore history dupes
+  (setq eshell-hist-ignoredups t)
+
   ;; Truncate path to 20 characters
   ;; This particularly helps with small width windows because eshell will move
   ;; the visible part of the window to make the prompt cursor visible which cuts
