@@ -35,6 +35,9 @@ export LESS="--incsearch --ignore-case --no-init --quit-if-one-screen --RAW-CONT
 # Color in `ls`
 export CLICOLOR=1
 
+# Truecolor over ssh
+# export COLORTERM=truecolor
+
 # Prevent `npm` scripts from opening browser windows
 # This breaks `gh browse`
 # export BROWSER="none"
