@@ -22,7 +22,7 @@
 
 ;; Like `icomplete-mode', but `<return>` to accept current match, and `C-d` to
 ;; accept as typed.
-(fido-mode)
+;; (fido-mode)
 ;; (fido-vertical-mode)
 
 (provide 'robenkleene-completion)
