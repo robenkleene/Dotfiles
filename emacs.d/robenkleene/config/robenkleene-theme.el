@@ -13,7 +13,7 @@
 
 (if window-system
     (load-theme 'doric-water :no-confirm-loading)
-  (load-theme 'modus-vivendi :no-confirm-loading)
+  ;; (load-theme 'modus-vivendi :no-confirm-loading)
   )
 
 ;; (load-theme 'modus-vivendi :no-confirm-loading)
