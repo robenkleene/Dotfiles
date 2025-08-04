@@ -15,7 +15,9 @@
   ;; with lots of subheaders become impossible to navigate, with it enabled, the
   ;; menu works nicely with `consult-imenu' with headers prefixed with their
   ;; parent header
-  (setq markdown-nested-imenu-heading-index nil)
+  ;; Disabling this because just navigating the document hierarchicaly seems to
+  ;; work better without `consult'
+  ;; (setq markdown-nested-imenu-heading-index nil)
   ;; Disable this, use `C-c C-o', which is consistent with `org-mode'
   ;; :bind
   ;; (([remap markdown-enter-key] . rk/markdown-enter-key))
