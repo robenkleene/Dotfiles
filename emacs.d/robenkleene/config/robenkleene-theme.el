@@ -11,12 +11,12 @@
   :config
   )
 
-(if window-system
-    (load-theme 'doric-water :no-confirm-loading)
-  ;; (load-theme 'modus-vivendi :no-confirm-loading)
-  )
+;; (if window-system
+;;     (load-theme 'doric-water :no-confirm-loading)
+;;   (load-theme 'modus-vivendi :no-confirm-loading)
+;;   )
 
-;; (load-theme 'modus-vivendi :no-confirm-loading)
+(load-theme 'modus-vivendi :no-confirm-loading)
 
 ;; Custom Background Color
 ;; `git diff' in `term-mode' from `eshell-visual' expects a pure black background
