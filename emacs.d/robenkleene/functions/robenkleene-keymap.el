@@ -89,7 +89,7 @@ The DWIM behaviour of this command is as follows:
 (defun rk/find-file (filename)
   "Like `find-file`, but if FILENAME is of the form 'path:line[:col]', jumps to that line and column."
   (interactive
-   (list (read-file-name "Find file: ")))
+   (list (read-file-name "Custom Find file: ")))
   (let ((regex "\\`\$begin:math:text$.*?\\$end:math:text$:\$begin:math:text$[0-9]+\\$end:math:text$\$begin:math:text$?::\\\\([0-9]+\\$end:math:text$\\)?\\'"))
     (if (string-match regex filename)
         (let* ((file (match-string 1 filename))

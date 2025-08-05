@@ -11,8 +11,8 @@
 
 (with-eval-after-load 'prog-mode
   ;; Allow following grep line matches
-  ;; (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
-  (define-key text-mode-map (kbd "C-x C-f") 'rk/find-file)
+  (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+  ;; (define-key text-mode-map (kbd "C-x C-f") 'rk/find-file)
   )
 
 (add-hook 'prog-mode-hook (lambda ()
