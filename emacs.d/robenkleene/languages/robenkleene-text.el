@@ -21,9 +21,14 @@
 
   ;; Allow following grep line matches
   (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
-  ;; Make is so quotes and double quotes can be selected with `mark-sexp'
-  (modify-syntax-entry ?' "\"")
+
+  ;; Set backtick as a string delimiter, this makes the `sexp' commands (like
+  ;; `mark-sexp') work with backticks
+  (modify-syntax-entry ?` "\"")
+  ;; Set `"' as a string delimiter
   (modify-syntax-entry ?\" "\"")
+  ;; Set `*' as a string delimiter
+  (modify-syntax-entry ?* "\"")
   )
 
 (provide 'robenkleene-text)
