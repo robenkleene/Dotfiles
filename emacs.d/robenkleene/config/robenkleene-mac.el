@@ -8,6 +8,9 @@
 ;; Open files in new frames by default
 (setq ns-pop-up-frames t)
 
+;; Use thinner fonts (I'm not convinced this does anything)
+(setq ns-use-thin-smoothing t)
+
 ;; Dark transparent menu bar
 ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
