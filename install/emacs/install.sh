@@ -20,7 +20,9 @@ if [ ! -e /usr/local/bin/emacs ] && [ -e /Applications/Emacs.app/Contents/MacOS/
   # behave as `emacs -nw`, and open a file in GUI Emacs with `open -a Emacs
   # <file>`
   sudo ln -s /Applications/Emacs.app/Contents/MacOS/emacs-nw /usr/local/bin/emacs
-  sudo ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin/emacsclient
 fi
 
+if [ ! -e /usr/local/bin/emacsclient ] && [ -e /Applications/Emacs.app/Contents/MacOS/emacsclient ]; then
+  sudo ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin/emacsclient
+fi
 exec emacs --script packages.el
