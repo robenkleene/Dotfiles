@@ -20,7 +20,8 @@
                               ))
 
   ;; Allow following grep line matches
-  (define-key text-mode-map (kbd "C-x C-f") 'ffap)
+  ;; (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+  (define-key text-mode-map (kbd "C-x C-f") 'rk/find-file)
   ;; Make is so quotes and double quotes can be selected with `mark-sexp'
   (modify-syntax-entry ?' "\"")
   (modify-syntax-entry ?\" "\"")

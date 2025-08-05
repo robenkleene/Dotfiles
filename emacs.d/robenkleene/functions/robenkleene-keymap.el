@@ -86,6 +86,23 @@ The DWIM behaviour of this command is as follows:
   (forward-line -1)
   (indent-according-to-mode))
 
+(defun rk/find-file (filename)
+  "Like `find-file`, but if FILENAME is of the form 'path:line[:col]', jumps to that line and column."
+  (interactive
+   (list (read-file-name "Find file: ")))
+  (let ((regex "\\`\$begin:math:text$.*?\\$end:math:text$:\$begin:math:text$[0-9]+\\$end:math:text$\$begin:math:text$?::\\\\([0-9]+\\$end:math:text$\\)?\\'"))
+    (if (string-match regex filename)
+        (let* ((file (match-string 1 filename))
+               (line (string-to-number (match-string 2 filename)))
+               (col (when (match-string 3 filename)
+                      (string-to-number (match-string 3 filename)))))
+          (find-file file)
+          (goto-char (point-min))
+          (forward-line (1- line))
+          (when col
+            (forward-char (1- col))))
+      (find-file filename))))
+
 (provide 'robenkleene-keymap)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
