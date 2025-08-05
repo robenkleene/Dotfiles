@@ -22,7 +22,7 @@ if [ ! -e /usr/local/bin/emacs ] && [ -e /Applications/Emacs.app/Contents/MacOS/
   sudo ln -s /Applications/Emacs.app/Contents/MacOS/emacs-nw /usr/local/bin/emacs
 fi
 
-if [ ! -e /usr/local/bin/emacsclient ] && [ -e /Applications/Emacs.app/Contents/MacOS/emacsclient ]; then
+if [ ! -e /usr/local/bin/emacsclient ] && [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
   sudo ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin/emacsclient
 fi
 exec emacs --script packages.el
