@@ -94,7 +94,7 @@
 ;; ffap
 ;; Replace `C-x C-f' with `find-file-at-point' version
 ;; This slows down startup and prompts macOS to install `gcc'!?
-;; (ffap-bindings)
+(ffap-bindings)
 
 ;; Only require `y' or `n'
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -115,14 +115,17 @@
 (setq confirm-kill-processes nil)
 
 ;; Automatically revert unmodified buffers
+;; `auto-revert-mode' is disabled because when opening files via `C-x C-f` it was
+;; observed that `auto-revert-mode' was consuming a lot of CPU, causing opening
+;; the file to be slow.
 ;; This was causing the cursor to jump randomly after saving
-(global-auto-revert-mode)
-(setq global-auto-revert-non-file-buffers t)
-;; Auto-revert more quickly
-(setq auto-revert-interval 1)
-;; Suppres `Reverting Buffer' message
-;; This can be very noisy for some reason
-(setq auto-revert-verbose nil)
+;; (global-auto-revert-mode)
+;; (setq global-auto-revert-non-file-buffers t)
+;; ;; Auto-revert more quickly
+;; (setq auto-revert-interval 1)
+;; ;; Suppres `Reverting Buffer' message
+;; ;; This can be very noisy for some reason
+;; (setq auto-revert-verbose nil)
 
 ;; Don't wrap lines by default
 (set-default 'truncate-lines t)
@@ -131,20 +134,23 @@
 (setq load-prefer-newer t)
 
 ;; Don't try to parse long line
-(global-so-long-mode)
+;; `so-long-mode' is disabled because when opening files via `C-x C-f` it was
+;; observed that `so-long-mode' was consuming a lot of CPU, causing opening the
+;; file to be slow.
+;; (global-so-long-mode)
 ;; Don't force long line files to read-only
 ;; Not sure why this doesn't work
 ;; (setq so-long-variable-overrides (delq 'buffer-read-only so-long-variable-overrides))
 ;; So instead just resetting the whole variable with that entry removed
-(setq so-long-variable-overrides
-      '((bidi-inhibit-bpa . t)
-        (bidi-paragraph-direction . left-to-right)
-        ;; (buffer-read-only . t)
-        (global-hl-line-mode . nil)
-        (line-move-visual . t)
-        (show-paren-mode . nil)
-        (truncate-lines . nil)
-        (which-func-mode . nil)))
+;; (setq so-long-variable-overrides
+;;       '((bidi-inhibit-bpa . t)
+;;         (bidi-paragraph-direction . left-to-right)
+;;         ;; (buffer-read-only . t)
+;;         (global-hl-line-mode . nil)
+;;         (line-move-visual . t)
+;;         (show-paren-mode . nil)
+;;         (truncate-lines . nil)
+;;         (which-func-mode . nil)))
 
 ;; Enable all disabled commands (e.g., `upcase-region' and `downcase-region' are
 ;; disabled by default)
