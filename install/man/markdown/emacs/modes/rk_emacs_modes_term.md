@@ -1,0 +1,2 @@
+- `C-c C-h`: Help for `term-mode`
+- `C-c C-j`: Switch to `term-line-mode` (regular Emacs bindings work in `term-line-mode` so this is how to for example cut and paste)
