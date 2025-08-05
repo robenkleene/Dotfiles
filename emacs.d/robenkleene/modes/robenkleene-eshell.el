@@ -51,17 +51,20 @@
            (if (= (user-uid) 0) " # " " $ ")
            )))
 
+  ;; Disabling this because `view-mode' overrides some characters like `s'
+  ;; starts an incremental search. This makes programs that accept `s' (like
+  ;; `tig', which uses `s' to switch to stagin) impossible to use.
   ;; Enable `view-mode' bindings like `q' to quit when running visual commands
   ;; (that are run in `term-mode') Also detect the mode, e.g., `diff-mode' to
   ;; make jumping to diff contents possible
-  (defun rk/term-view-mode-once (&rest ignored)
-    (view-mode 1)
-    (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
-    )
-  (advice-add 'eshell-exec-visual
-              :before
-              #'(lambda (&rest ignored) (add-hook 'term-mode-hook
-                                                  #'rk/term-view-mode-once)))
+  ;; (defun rk/term-view-mode-once (&rest ignored)
+  ;;   (view-mode 1)
+  ;;   (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
+  ;;   )
+  ;; (advice-add 'eshell-exec-visual
+  ;;             :before
+  ;;             #'(lambda (&rest ignored) (add-hook 'term-mode-hook
+  ;;                                                 #'rk/term-view-mode-once)))
 
   ;; This will attempt to detect the mode after a `term-mode' process finishes,
   ;; but `set-auto-mode' doesn't propertly, e.g., detect `diff-mode' for `git
@@ -93,6 +96,7 @@
      ;; Commands
      (add-to-list 'eshell-visual-commands "n")
      (add-to-list 'eshell-visual-commands "nnn")
+     (add-to-list 'eshell-visual-commands "tig")
      ;; Subcommands
      (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
      (add-to-list 'eshell-visual-subcommands '("hg" "diff" "show"))
