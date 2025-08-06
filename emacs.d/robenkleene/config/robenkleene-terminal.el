@@ -42,10 +42,11 @@
 (define-key key-translation-map (kbd "<prior>") (kbd "<C-up>"))
 (define-key key-translation-map (kbd "<next>") (kbd "<C-down>"))
 
-(global-set-key (kbd "<wheel-down>") (lambda ()
-                                       (interactive) (scroll-up-line 5)))
-(global-set-key (kbd "<wheel-up>") (lambda ()
-                                     (interactive) (scroll-down-line 5)))
+;; This seems to be working by default now
+;; (global-set-key (kbd "<wheel-down>") (lambda ()
+;;                                        (interactive) (scroll-up-line 5)))
+;; (global-set-key (kbd "<wheel-up>") (lambda ()
+;;                                      (interactive) (scroll-down-line 5)))
 
 ;; Just echo the URL if we in SSH (then it can be clicked to open locally in
 ;; the browser in most modern terminal emulators
