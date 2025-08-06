@@ -222,6 +222,28 @@
 ;; `view-mode' still needs to be set manually.
 ;; (setq view-read-only t)
 
+;; Clipboard
+;; Only copy on yank with region to avoid overwritting the clipboard with other
+;; kill ring commands like `C-k'
+(defun rk/safecopy (text &optional push)
+  ;; Do nothing if the region isn't active so that other commands like
+  ;; `kill-line', don't affect the system clipboard
+  (if (use-region-p)
+      (progn
+        (setenv "INSIDE_EMACS" "1")
+        (let (
+              (process-connection-type nil)
+              )
+          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/safecopy")))
+            (unless (string))
+            (process-send-string proc text)
+            (process-send-eof proc)))
+        )
+    )
+  )
+(setq interprogram-cut-function 'rk/safecopy)
+(setq interprogram-paste-function nil)
+
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
