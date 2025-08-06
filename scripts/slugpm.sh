@@ -44,15 +44,22 @@ if [[ "${1:-}" = "archive" ]]; then
       )
       mv "$src_dir" "$destination_dir"
     else
-      # If it's not a project, treat it as a single file
       if [[ -d "$file_path" ]]; then
+        # If it's not a project, treat it as a single file
+
+        # Not sure what the purpose of this was, but this makes a directory
+        # movable into the `archive/` path, which we don't want
+        # So instead exit here
+        echo "Error: \"$file_path/../../projects/\" isn't a directory or \"$file_path/README.md\" doesn't exit" >&2
+        exit 1
+
         # Convert an absolute path which helps in the case where current
         # directory is just `.`
-        file_path=$(
-          cd "$file_path"
-          pwd
-        )
-        destination_dir="$file_path/../../archive/"
+        # file_path=$(
+        #   cd "$file_path"
+        #   pwd
+        # )
+        # destination_dir="$file_path/../../archive/"
       else
         destination_dir="$(dirname $file_path)/archive/"
       fi
