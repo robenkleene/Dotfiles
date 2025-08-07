@@ -1,3 +1,4 @@
 set guifont=Berkeley\ Mono:h13
 set background=dark
 set guicursor=a:blinkon0
+highlight Cursor guibg=#00BB00
