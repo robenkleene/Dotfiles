@@ -1,0 +1,2 @@
+- `brew install --cask <cask-name>`
+- `brew upgrade --cask <cask-name>`
