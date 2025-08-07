@@ -58,6 +58,9 @@ fi
 ./python/install.sh
 ./ruby/install.sh
 ./rust/install.sh
+./emacs/install.sh
+./vim/install.sh
+
 if [[ "$(uname)" = "Darwin" ]]; then
   ./macos/install.sh
 fi
