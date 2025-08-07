@@ -1,4 +1,8 @@
-set guifont=Berkeley\ Mono:h13
+set guifont=Berkeley\ Mono:h14
 set background=dark
 set guicursor=a:blinkon0
 highlight Cursor guibg=#00BB00
+" Disable audible bell
+autocmd GUIEnter * set vb t_vb=
+
+let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
