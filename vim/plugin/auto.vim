@@ -19,7 +19,7 @@ highlight Normal ctermbg=NONE guibg=NONE
 augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight Normal ctermbg=NONE
 augroup END
 
 augroup executable_files
