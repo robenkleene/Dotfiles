@@ -17,10 +17,15 @@ setopt nolistambiguous
 zstyle ':completion:*' menu select
 
 # Allow substring matches, e.g., `vim md<tab>` for all files with `.md` extension
-# This makes Zsh completion more like Vim completion
-# This doesn't work will for completing with a prefix, e.g., `t_<tab>` wil show
-# too many matches
+# This makes Zsh completion more like Vim *buffer* completion (which does
+# substring matches) but not like Vim *file* completion, which only matches from
+# the start of the file.
+# This doesn't work well for completing with a prefix, e.g., `t_<tab>` will show
+# too many matches, because it'll both match the substring and the prefix.
 # zstyle ':completion:*' matcher-list 'r:|?=**'
+# Allow case-insensitive file matches, this makes Zsh work more like Vim file
+# completion, which is case-insensitive.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Theme
 # Third value is background
