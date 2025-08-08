@@ -25,7 +25,11 @@ zstyle ':completion:*' menu select
 # zstyle ':completion:*' matcher-list 'r:|?=**'
 # Allow case-insensitive file matches, this makes Zsh work more like Vim file
 # completion, which is case-insensitive.
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# This is actually a side-effect of macOS being case insensitive, e.g., filename
+# completion in Vim on Linux *is not* case insensitive. So for that reason,
+# we're disabling this, because otherwise it emphasizes a confusing difference
+# between Vim's behavior in macOS and Linux.
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Theme
 # Third value is background
