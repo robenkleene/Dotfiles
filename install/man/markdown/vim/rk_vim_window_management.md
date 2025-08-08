@@ -75,3 +75,11 @@
 - `zH` / `zL`: Move window left / right by half a screen
 - `zs` / `ze`: Align cursor with left / right side of window
 - `zszH`: Center cursor horizontally
+
+# Arrangements
+
+## Two vertical splits below one horizontal split
+
+1. `<C-w> L`: To move the first vertical split vertical
+2. `<C-w> L`: To move the second vertical split vertical
+3. `<C-w> K`: To move the third split horizontal above the other two
