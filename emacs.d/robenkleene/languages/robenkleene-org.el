@@ -50,6 +50,8 @@
   (setq org-startup-folded 'showall)
 
   ;; Default is `~/org`
+  ;; Just leave this as the default and symlink to it
+  ;; (setq org-directory "~/Documents/Text/Org/")
   ;; (setq org-default-notes-file (concat org-directory "Inbox.org"))
   ;; (setq org-agenda-files (list org-directory))
 
