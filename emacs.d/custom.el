@@ -12,7 +12,6 @@
      doric-themes
      ef-themes
      markdown-mode
-     orderless
      yasnippet
      yasnippet-capf
      ))
