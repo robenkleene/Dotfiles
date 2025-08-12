@@ -1,0 +1,2 @@
+- `org-capture`, `C-u C-c c` (suggested binding): Prompt to capture and write to `org-default-notes-file`
+- `org-capture-goto-target`, `C-u C-c c` (suggested binding): Don't capture, but go to the file the capture would be written to
