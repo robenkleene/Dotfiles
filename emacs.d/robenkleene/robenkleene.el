@@ -53,6 +53,7 @@
 
 ;; Languages
 (require 'robenkleene-markdown)
+(require 'robenkleene-org)
 (require 'robenkleene-prog)
 (require 'robenkleene-text)
 
