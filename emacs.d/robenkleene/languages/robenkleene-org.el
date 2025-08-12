@@ -44,25 +44,38 @@
   ;; (setq org-support-shift-select t)
   (setq org-support-shift-select 'always)
 
+  ;; Breaks choosing the date day with `shift' movement keys
+  ;; (setq org-replace-disputed-keys t)
+
   ;; Setting `org-startup-folded' seems to make drawers startup folded, this is
   ;; supposed to be the default (i.e., `org-hide-drawer-startup' is `t' by
   ;; default), but in practice it doesn't seem to work without this set to
   ;; `showall'
   (setq org-startup-folded 'showall)
 
+  ;; Agenda, Capture, Todo
+
+  ;; Add WIP mode
+  ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
+
   ;; Default is `~/org'
   ;; Just leave this as the default and symlink to it
   ;; (setq org-directory "~/Documents/Text/Org/")
+  ;; `org-default-notes-file' is used by `org-captures'
   ;; Default is `~/.notes'
-  ;; (setq org-default-notes-file (concat org-directory "Inbox.org"))
-  ;; (setq org-agenda-files (list org-directory))
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  ;; Automatically use `org-directory` in the agenda
+  (setq org-agenda-files (list org-directory))
 
   ;; Set refile targets to all `org-agenda-files'
+  ;; List of files presented with `org-refile'
   (setq org-refile-targets
         '((nil :maxlevel . 1)
           (org-agenda-files :maxlevel . 1)))
 
   ;; Don't bookmark the current file with `org-capture'
+  ;; E.g., this allows creating new org items without worrying about whether the
+  ;; current file is relevant
   (setq org-capture-bookmark nil)
 
   ;; Simplify the default capture template to not include the date or a bookmark
@@ -70,19 +83,34 @@
         '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
            "* TODO %?")))
 
+  ;; Always follow the current agenda item in the other window, doesn't work
+  ;; nicely with evil
+  ;; (setq org-agenda-start-with-follow-mode t)
+
+  ;; Open `org-agenda' in the window, this is beneficial because hitting enter
+  ;; on an agenda item jumps to it in the same window
+  (setq org-agenda-window-setup 'current-window)
+
+  ;; By default, agenda only shows one week
+  (setq org-agenda-span 28)
+  ;; Only warn on the current day (the default is `14')
+  (setq org-deadline-warning-days 0)
+
+  (add-hook 'org-agenda-mode-hook
+            (lambda ()
+              ;; Wrap lines
+              (setq-local truncate-lines nil)
+              )
+            )
+
   ;; Code Blocks
+
   ;; Prevent any tampering with source code block indentation
   (setq org-src-preserve-indentation t)
   (setq org-edit-src-content-indentation 0)
 
   ;; Allow `<s' to create a source code block
   (require 'org-tempo)
-
-  ;; Breaks choosing the date day with `shift' movement keys
-  ;; (setq org-replace-disputed-keys t)
-
-  ;; Add WIP mode
-  ;; (setq org-todo-keywords '("TODO" "WIP" "DONE"))
 
   ;; Disable spell check in code blocks
   (defadvice org-mode-flyspell-verify
@@ -102,16 +130,6 @@
         (if (and b e (< (point) e)) (setq rlt nil)))
       (setq ad-return-value rlt)))
 
-  (setq org-deadline-warning-days 0)
-
-  ;; Always follow the current agenda item in the other window, doesn't work
-  ;; nicely with evil
-  ;; (setq org-agenda-start-with-follow-mode t)
-
-  ;; Open `org-agenda' in the window, this is beneficial because hitting enter
-  ;; on an agenda item jumps to it in the same window
-  (setq org-agenda-window-setup 'current-window)
-
   (add-hook 'org-mode-hook
             (lambda ()
               ;; Set `~' as a string delimiter, this makes the `sexp'
@@ -119,17 +137,6 @@
               (modify-syntax-entry ?~ "\"")
               )
             )
-
-  (add-hook 'org-agenda-mode-hook
-            (lambda ()
-              ;; Wrap lines
-              (setq-local truncate-lines nil)
-              )
-            )
-
-  ;; Agenda
-  ;; By default, agenda only shows one week
-  (setq org-agenda-span 28)
 
   )
 
