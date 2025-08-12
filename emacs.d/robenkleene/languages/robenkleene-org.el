@@ -19,6 +19,7 @@
 
     ;; These conflict with calendar related bindings, but the default `C-c C-<'
     ;; / `C-c C->' bindings aren't available in terminal Emacs
+    ;; `C-c <' / `C-c <' indent / outdnet the region in `markdown-mode'
     (define-key org-mode-map (kbd "C-c <") 'org-promote-subtree)
     (define-key org-mode-map (kbd "C-c >") 'org-demote-subtree)
 
