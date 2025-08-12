@@ -22,7 +22,7 @@ Block quote:
 
 # Drawer
 
-Drawers are useful for easily collapsible notes that aren't source code
+Drawers are useful for easily collapsible notes that aren't source code:
 
 - `C-c C-x d`: Insert drawer (it will prompt for a drawer name)
 - By convention, drawer names should be all caps
