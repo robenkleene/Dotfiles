@@ -97,6 +97,8 @@
      (add-to-list 'eshell-visual-commands "n")
      (add-to-list 'eshell-visual-commands "nnn")
      (add-to-list 'eshell-visual-commands "tig")
+     (add-to-list 'eshell-visual-commands "vi")
+     (add-to-list 'eshell-visual-commands "vim")
      ;; Subcommands
      (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
      (add-to-list 'eshell-visual-subcommands '("hg" "diff" "show"))
