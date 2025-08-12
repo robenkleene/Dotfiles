@@ -2,6 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Adding `substring' allows `C-x C-r' then, e.g., `<string>' to quickly open a
+;; file with that string in it's name, otherwise, it needs to be `*<string>'
+(setq completion-styles '(basic partial-completion substring))
+;; Not sure why this doesn't work instead, for just adding `substring' to file
+;; completion
+;; (setq completion-category-overrides '((file (styles basic partial-completion substring))))
+
 ;; Allow using tab to complete if the line is already properly indented, this
 ;; makes completion feel more consistent with completion in the minibuffer
 ;; It's not worth it trying to get this to work, e.g., `text-mode', and any C
