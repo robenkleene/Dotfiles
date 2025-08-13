@@ -44,6 +44,12 @@
   ;; (setq org-support-shift-select t)
   (setq org-support-shift-select 'always)
 
+  ;; Just turn off `org-mode' default new line insertion behavior because it's
+  ;; too confusing
+  (setq org-blank-before-new-entry
+        '((heading . nil)
+          (plain-list-item . nil)))
+
   ;; Breaks choosing the date day with `shift' movement keys
   ;; (setq org-replace-disputed-keys t)
 
