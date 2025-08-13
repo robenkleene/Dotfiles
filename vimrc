@@ -48,6 +48,11 @@ if filereadable(expand('~/.vimrc_local.vim'))
   source $HOME/.vimrc_local.vim
 endif
 
+if !has('nvim')
+  " Always clear the previous search (Neovim seems to do this by default)
+  nohlsearch
+endif
+
 " Fix bracketed paste in `tmux` over SSH, without this using the system paste
 " command (e.g., command-v) will result in the pasted text being aligned.
 if !has('nvim') && !empty($SSH_CONNECTION)
