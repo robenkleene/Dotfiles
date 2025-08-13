@@ -24,14 +24,17 @@ set notermguicolors
 
 " Using Vim instead
 " The problem with using Vim is that Vim doesn't support `"*` on Linux
-let g:clipboard = {
-      \ 'name': 'safe',
-      \ 'copy': {
-      \    '+': 'safecopy',
-      \    '*': 'safecopy',
-      \  },
-      \ 'cache_enabled': 1,
-      \ }
+
+" Try disabling this for now, and just doing a simple `"*` means copy next
+" yank to clipboard
+" let g:clipboard = {
+"       \ 'name': 'safe',
+"       \ 'copy': {
+"       \    '+': 'safecopy',
+"       \    '*': 'safecopy',
+"       \  },
+"       \ 'cache_enabled': 1,
+"       \ }
       " \ },
       " \ 'paste': {
       " \    '+': 'safepaste -s',
