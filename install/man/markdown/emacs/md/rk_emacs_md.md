@@ -2,7 +2,7 @@
 
 # Links
 
-- `C-c C-o`, `C-c C-d`: Open URL
+- `C-c C-o`, `C-c C-d`: Open URL (`C-c C-o` is probably preferable because it works for Markdown or Org [`C-c C-d` adds a deadline in Org])
 - `C-c C-x C-l`, `markdown-toggle-url-hiding`: Toggle hiding URLs
 
 # Outline
