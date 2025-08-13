@@ -47,3 +47,14 @@ let mapleader="\<Space>"
 if filereadable(expand('~/.vimrc_local.vim'))
   source $HOME/.vimrc_local.vim
 endif
+
+" Fix bracketed paste in `tmux` over SSH, without this using the system paste
+" command (e.g., command-v) will result in the pasted text being aligned.
+if !has('nvim') && !empty($SSH_CONNECTION)
+  if &term =~ '^tmux'
+    let &t_BE="\<Esc>[?2004h"
+    let &t_BD="\<Esc>[?2004l"
+    let &t_PS="\<Esc>[200~"
+    let &t_PE="\<Esc>[201~"
+  endif
+endif
