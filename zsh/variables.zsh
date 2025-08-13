@@ -51,7 +51,7 @@ export PAGER=less
 export ALTERNATE_EDITOR=""
 
 # Use `nvim` for clipboard provider
-export EDITOR="nvim"
+# export EDITOR="nvim"
 
 # Installs
 
