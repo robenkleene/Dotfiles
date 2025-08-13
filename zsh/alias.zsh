@@ -10,4 +10,5 @@ if [[ "$(uname)" = "Linux" ]]; then
 fi
 
 # Use `nvim` for clipboard provider
-alias vim='nvim'
+# Never do this, just run `nvim` instead
+# alias vim='nvim'
