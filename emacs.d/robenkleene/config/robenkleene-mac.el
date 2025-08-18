@@ -20,7 +20,9 @@
 (global-set-key (kbd "s-v")
                 (lambda ()
                   (interactive)
-                  (insert (shell-command-to-string "~/.bin/safepaste")))
+                  ;; (insert (shell-command-to-string "~/.bin/safepaste")))
+                  (insert (shell-command-to-string "pbpaste"))
+                  )
                 )
 
 (global-unset-key (kbd "s-q"))
