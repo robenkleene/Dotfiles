@@ -26,6 +26,8 @@
   ;; `mark-sexp') work with backticks
   (modify-syntax-entry ?` "\"")
   ;; Set `"' as a string delimiter
+  ;; This doesn't seem to be working? This might only work if a character pair
+  ;; already defines a syntax?
   (modify-syntax-entry ?\" "\"")
   ;; Set `*' as a string delimiter
   (modify-syntax-entry ?* "\"")
