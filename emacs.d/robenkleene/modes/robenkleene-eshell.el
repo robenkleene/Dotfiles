@@ -98,7 +98,7 @@
      (add-to-list 'eshell-visual-commands "nnn")
      (add-to-list 'eshell-visual-commands "tig")
      ;; Subcommands
-     (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
+     (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "dr" "show"))
      (add-to-list 'eshell-visual-subcommands '("hg" "diff" "show"))
      ;; Options
      (add-to-list 'eshell-visual-options '("git" "--help" "--paginate" "--color"))
