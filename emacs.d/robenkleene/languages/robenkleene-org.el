@@ -119,22 +119,25 @@
   (require 'org-tempo)
 
   ;; Disable spell check in code blocks
-  (defadvice org-mode-flyspell-verify
-      (after org-mode-flyspell-verify-hack activate)
-    (let ((rlt ad-return-value)
-          (begin-regexp "^[ \t]*#\\+begin_\\(src\\|html\\|latex\\)")
-          (end-regexp "^[ \t]*#\\+end_\\(src\\|html\\|latex\\)")
-          old-flag
-          b e)
-      (when ad-return-value
+  (defun rk/org-mode-flyspell-verify-no-spelling (orig-fn &rest args)
+    (let* ((rlt (apply orig-fn args))
+           (begin-regexp "^[ \t]*#\\+begin_\\(src\\|html\\|latex\\)")
+           (end-regexp "^[ \t]*#\\+end_\\(src\\|html\\|latex\\)")
+           old-flag b e)
+      (when rlt
         (save-excursion
           (setq old-flag case-fold-search)
           (setq case-fold-search t)
           (setq b (re-search-backward begin-regexp nil t))
-          (if b (setq e (re-search-forward end-regexp nil t)))
+          (when b (setq e (re-search-forward end-regexp nil t)))
           (setq case-fold-search old-flag))
-        (if (and b e (< (point) e)) (setq rlt nil)))
-      (setq ad-return-value rlt)))
+        (when (and b e (< (point) e))
+          (setq rlt nil))))
+    rlt)
+
+  (advice-add 'org-mode-flyspell-verify
+              :around
+              #'rk/org-mode-flyspell-verify-no-spelling)
 
   (add-hook 'org-mode-hook
             (lambda ()
