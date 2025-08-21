@@ -51,10 +51,10 @@ repos=(
 
 if [[ "$include_private" == "true" ]]; then
   repos+=(
-~"/Developer/Scratch/" "${bitbucket_prefix}robenkleene/scratch.git$bitbucket_postfix"
-~"/Developer/Settings/" "${bitbucket_prefix}robenkleene/settings.git$bitbucket_postfix"
-~"/Developer/Archive/" "${bitbucket_prefix}robenkleene/archive.git$bitbucket_postfix"
-~"/Developer/Backup/" "${bitbucket_prefix}robenkleene/backup.git$bitbucket_postfix"
+~"/Developer/Scratch/" "${github_prefix}robenkleene/scratch.git$github_postfix"
+~"/Developer/Settings/" "${github_prefix}robenkleene/settings.git$github_postfix"
+~"/Developer/Archive/" "${github_prefix}robenkleene/archive.git$github_postfix"
+~"/Developer/Backup/" "${github_prefix}robenkleene/backup.git$github_postfix"
 )
 fi
 
@@ -62,11 +62,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
   repos+=(
 ~"/Library/Developer/Xcode/UserData/" "${github_prefix}robenkleene/Xcode-UserData.git"
 )
-  # if [[ "$include_private" == "true" ]]; then
-  #   repos+=(
-# ~"/Music/Audio Music Apps/" "${bitbucket_prefix}robenkleene/audio-music-apps.git$bitbucket_postfix"
-  #   )
-  # fi
 fi
 
 # Overwrite with a simple set for non-personal machines
