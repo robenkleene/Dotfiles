@@ -2,5 +2,4 @@
 
 set -euo pipefail
 
-subpath=$(realpath --relative-to="$HOME" "$@")
-echo -n "~/$subpath"
+realpath "$@" | sed "s|^$HOME|~|"
