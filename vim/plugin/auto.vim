@@ -32,10 +32,13 @@ nnoremap <silent> "* :<C-U>let g:yank_next = 1<CR>
 vnoremap <silent> "* :<C-U>let g:yank_next = 1<CR>gv
 nnoremap <silent> "+ :<C-U>let g:yank_next = 1<CR>
 vnoremap <silent> "+ :<C-U>let g:yank_next = 1<CR>gv
-cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
-inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
-cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
-inoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
+" This is because cut and pasting from the system clipboard pastes linewise
+" The problem with these is that it won't work to paste from the system
+" clipboard to Vim in a remote session, so disabling
+" cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
+" inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
+" cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
+" inoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
 augroup safecopy_yank
   autocmd!
   autocmd TextYankPost * if g:yank_next | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | let g:yank_next = 0 | end
