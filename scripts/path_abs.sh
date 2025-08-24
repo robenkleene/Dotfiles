@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-realpath "$@" | sed "s|^$HOME|~|"
+realpath "$@" | sed "s|^$HOME|~|" | tr -d '\n'
