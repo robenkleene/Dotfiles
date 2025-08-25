@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-if command -v emacs; then
+if ! command -v emacs; then
   echo "Warning: Skipping Emacs install script because emacs command not found" >&2
   exit 0
 fi
