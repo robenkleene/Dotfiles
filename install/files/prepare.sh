@@ -18,3 +18,6 @@ cleanup_file "$HOME/.gitconfig"
 cleanup_file "$HOME/.gitignore"
 cleanup_file "$HOME/.inputrc"
 cleanup_file "$HOME/.vimrc"
+
+cleanup_file "$HOME/Library/Scripts"
+cleanup_file "$HOME/Library/Services"

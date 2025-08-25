@@ -30,9 +30,7 @@ fi
 
 cd "$(dirname "$0")" || exit 1
 
-if [[ ! -f "$HOME/.personal" ]]; then
-  ./minimal/setup.sh
-fi
+./files/prepare.sh
 ./update.sh
 
 ./files/dirs.sh
