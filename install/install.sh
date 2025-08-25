@@ -51,7 +51,10 @@ if [[ ! -e "$HOME/.tmux/plugins/tpm" ]] && command -v tmux; then
 fi
 
 ./files/symlinks.sh
-./man/install.sh
+# Generate man is time consuming so check whether it's already happened
+if [[ ! -e "$HOME/.man/man1/rk_vim.1"]]; then
+  ./man/install.sh
+fi
 ./code/install.sh
 ./node/install.sh
 ./python/install.sh
