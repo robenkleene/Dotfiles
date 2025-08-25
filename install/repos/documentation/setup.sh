@@ -31,7 +31,7 @@ mkdir -p ~/Documentation/
 
 cd "$(dirname "$0")" || exit 1
 if [[ "$use_https" == "true" ]]; then
-  ~/.bin/git_sync_clone -p ~/Documentation/ -s <(~/.bin/t_url_url_git -H < documentation.txt) -f
+  ~/.bin/git_sync_clone -p ~/Documentation/ -s <(~/.bin/t_url_url_git -H < documentation.txt | grep -v -E '(tutorial|game)\-references') -f
 else
   ~/.bin/git_sync_clone -p ~/Documentation/ -s documentation.txt -f
 fi
