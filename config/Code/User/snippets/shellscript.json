@@ -131,7 +131,7 @@
   },
   "True if `uname` matches": {
     "prefix": "rk_test_uname",
-    "body": "\"$(uname)\" = \"Linux\"",
+    "body": "\"$$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
   "True if standard output is a terminal": {
