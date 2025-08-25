@@ -32,7 +32,7 @@ while (<STDIN>) {
       $offset = 1;
       $filename = $1;
       $filename =~ s/\s+$//;
-   } elsif (m(^@@ -\d+(?:,\d+)? \+(\d+))) {
+   } elsif (m(^@@@? -\d+(?:,\d+)?.* \+(\d+))) {
       $line = $1;
       $offset = 0;
       $printed = 0;
