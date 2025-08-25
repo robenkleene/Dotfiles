@@ -19,5 +19,12 @@ cleanup_file "$HOME/.gitignore"
 cleanup_file "$HOME/.inputrc"
 cleanup_file "$HOME/.vimrc"
 
-cleanup_file "$HOME/Library/Scripts"
-cleanup_file "$HOME/Library/Services"
+function sudo_cleanup_file() {
+  filename="$1"
+  if [[ -e "$filename" && ! -L "$filename" ]]; then
+    mkdir -p "$HOME/dotfiles_backup"
+    sudo mv "$filename" "$HOME/dotfiles_backup/"
+  fi
+}
+sudo_cleanup_file "$HOME/Library/Scripts"
+sudo_cleanup_file "$HOME/Library/Services"
