@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+if command -v emacs; then
+  echo "Warning: Skipping Emacs install script because emacs command not found" >&2
+  exit 0
+fi
+
 cd "$(dirname "$0")" || exit 1
 
 # Use GUI Emacs CLI instead of managing a separate `brew install`
