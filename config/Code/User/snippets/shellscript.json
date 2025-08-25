@@ -61,7 +61,7 @@
   },
   "If args": {
     "prefix": "rk_if_args",
-    "body": "if [[ $# ${1:-ne} ${2:0} ]]; then\n  ${0:echo \"\\$1\"}\nfi",
+    "body": "if [[ \$$# ${1:-ne} ${2:0} ]]; then\n  ${0:echo \"Not equal\"}\nfi",
     "description": "If args"
   },
   "True if directory": {
@@ -71,7 +71,7 @@
   },
   "Test boolean": {
     "prefix": "rk_test_bool",
-    "body": "\"$${1:value}\" == \"${0:true}\"",
+    "body": "\"\\$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
   "True if regular file": {
@@ -116,7 +116,7 @@
   },
   "True if no args": {
     "prefix": "rk_test_args",
-    "body": "$# -eq ${0:0}",
+    "body": "\\$# ${1:-ne} ${0:1}",
     "description": "True if no args"
   },
   "True if variable matches string": {
