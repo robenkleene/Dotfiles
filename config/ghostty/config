@@ -1,6 +1,9 @@
 keybind = global:opt+escape=toggle_quick_terminal
 
-font-family = "Berkeley Mono"
+# font-family = "Berkeley Mono"
+font-family = "SF Mono"
+font-style = "Medium"
+
 font-size = 14
 font-thicken = true
 
