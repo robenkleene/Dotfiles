@@ -1,37 +1,46 @@
 {
-  "Print variable": {
-    "prefix": ["rk_pv", "rk_puts_var"],
-    "body": "puts \"$1 = #{${1}}\"",
-    "description": "`puts` variable"
+  "Each": {
+    "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
+    "description": "Each",
+    "prefix": "rk_each"
+  },
+  "For": {
+    "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
+    "description": "For",
+    "prefix": "rk_for"
+  },
+  "For in": {
+    "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
+    "description": "For in",
+    "prefix": "rk_forin"
   },
   "Print": {
-    "prefix": ["rk_p", "rk_puts"],
     "body": "puts \"$1\"",
-    "description": "`puts`"
+    "description": "Print",
+    "prefix": [
+      "rk_p",
+      "rk_puts"
+    ]
   },
-  "Print error": {
-    "prefix": ["rk_pe", "rk_puts_err"],
+  "Print err": {
     "body": "STDERR.puts \"$1{:Error}\"",
-    "description": "`puts` to standard error"
+    "description": "Print err",
+    "prefix": [
+      "rk_pe",
+      "rk_puts_err"
+    ]
   },
-  "rk_template": {
-    "prefix": "rk_template",
+  "Print var": {
+    "body": "puts \"$1 = #{${1}}\"",
+    "description": "Print var",
+    "prefix": [
+      "rk_pv",
+      "rk_puts_var"
+    ]
+  },
+  "Template": {
     "body": "#!/usr/bin/env ruby\n\n",
-    "description": "Ruby template"
-  },
-  "For loop": {
-    "prefix": "rk_for",
-    "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
-    "description": "For loop"
-  },
-  "For in loop": {
-    "prefix": "rk_forin",
-    "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
-    "description": "For in loop"
-  },
-  "Each loop": {
-    "prefix": "rk_each",
-    "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
-    "description": "Each loop"
+    "description": "Template",
+    "prefix": "rk_template"
   }
 }
