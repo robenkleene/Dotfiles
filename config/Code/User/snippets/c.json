@@ -1,32 +1,38 @@
 {
-  "Print variable": {
-    "prefix": ["rk_pv", "rk_printf_var"],
-    "body": "printf(\"$1 = %${2:i}\\n\", ${1});",
-    "description": "Print variable"
+  "For": {
+    "body": "for (int ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
+    "description": "For",
+    "prefix": "rk_for"
   },
   "Print": {
-    "prefix": ["rk_p", "rk_printf"],
     "body": "printf(\"$1\\n\");",
-    "description": "Print"
+    "description": "Print",
+    "prefix": [
+      "rk_p",
+      "rk_printf"
+    ]
   },
-  "C template": {
-    "prefix": "rk_template",
-    "body": "#include <stdio.h>\n\nint main() {\n    printf(\"hello, world\\n\");\n}",
-    "description": "C template"
-  },
-  "printf variable": {
-    "prefix": "rk_printf_var",
+  "Print var": {
     "body": "printf(\"$1 = %${2:i}\\n\", ${1:result});",
-    "description": "Print variable"
+    "description": "Print var",
+    "prefix": "rk_printf_var"
   },
-  "For loop": {
-    "prefix": "rk_for",
-    "body": "for (int ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
-    "description": "For loop"
+  "Print variable": {
+    "body": "printf(\"$1 = %${2:i}\\n\", ${1});",
+    "description": "Print variable",
+    "prefix": [
+      "rk_pv",
+      "rk_printf_var"
+    ]
   },
-  "While character loop": {
-    "prefix": "rk_while_getchar",
+  "Template": {
+    "body": "#include <stdio.h>\n\nint main() {\n    printf(\"hello, world\\n\");\n}",
+    "description": "Template",
+    "prefix": "rk_template"
+  },
+  "While char": {
     "body": "while ((c = getchar()) != EOF) {\n    $0\n}",
-    "description": "While character loop"
+    "description": "While char",
+    "prefix": "rk_while_getchar"
   }
 }
