@@ -1,112 +1,112 @@
 {
   "Lorem ipsum": {
-    "prefix": "rk_lorem",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "description": "Lorem ipsum"
-  },
-  "⌘": {
-    "prefix": "rk_cmd",
-    "body": "⌘",
-    "description": "Command key symbol"
-  },
-  "⌃": {
-    "prefix": "rk_ctrl",
-    "body": "⌃",
-    "description": "Control key symbol"
-  },
-  "⌥": {
-    "prefix": "rk_opt",
-    "body": "⌥",
-    "description": "Option key symbol"
-  },
-  "⇧": {
-    "prefix": "rk_sft",
-    "body": "⇧",
-    "description": "Shift key symbol"
-  },
-  "⎋": {
-    "prefix": "rk_esc",
-    "body": "⎋",
-    "description": "Escape key symbol"
-  },
-  "↓↑←→": {
-    "prefix": "rk_aarr",
-    "body": "↓↑←→",
-    "description": "Arrow key symbols"
-  },
-  "↑": {
-    "prefix": "rk_uarr",
-    "body": "↑",
-    "description": "Up arrow symbol"
-  },
-  "←": {
-    "prefix": "rk_larr",
-    "body": "←",
-    "description": "Left arrow symbol"
-  },
-  "→": {
-    "prefix": "rk_rarr",
-    "body": "→",
-    "description": "Right arrow symbol"
-  },
-  "↓": {
-    "prefix": "rk_darr",
-    "body": "↓",
-    "description": "Down arrow symbol"
-  },
-  "↩": {
-    "prefix": "rk_ret",
-    "body": "↩",
-    "description": "Return symbol"
-  },
-  "␣": {
-    "prefix": "rk_spc",
-    "body": "␣",
-    "description": "Space symbol"
-  },
-  "⌫": {
-    "prefix": "rk_bspc",
-    "body": "⌫",
-    "description": "Backspace symbol"
-  },
-  "⌦": {
-    "prefix": "rk_del",
-    "body": "⌦",
-    "description": "Delete symbol"
-  },
-  "⌤↓↑←→⎋⌦⌫↩⇥⇤␣": {
-    "prefix": "rk_kso",
-    "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
-    "description": "Other keyboard shortcut symbols"
-  },
-  "⌃⌥⇧⌘": {
-    "prefix": "rk_kss",
-    "body": "⌃⌥⇧⌘",
-    "description": "Keyboard shortcut symbols"
-  },
-  "♭": {
-    "prefix": "rk_flat",
-    "body": "♭",
-    "description": "Flat symbol"
+    "description": "Lorem ipsum",
+    "prefix": "rk_lorem"
   },
   "°": {
-    "prefix": "rk_degree",
     "body": "°",
-    "description": "Degree symbol"
+    "description": "Degree symbol",
+    "prefix": "rk_degree"
   },
-  "♯": {
-    "prefix": "rk_sharp",
-    "body": "♯",
-    "description": "Sharp symbol"
+  "←": {
+    "body": "←",
+    "description": "Left arrow symbol",
+    "prefix": "rk_larr"
   },
-  "⇥": {
-    "prefix": "rk_tab",
-    "body": "⇥",
-    "description": "Tab symbol"
+  "↑": {
+    "body": "↑",
+    "description": "Up arrow symbol",
+    "prefix": "rk_uarr"
+  },
+  "→": {
+    "body": "→",
+    "description": "Right arrow symbol",
+    "prefix": "rk_rarr"
+  },
+  "↓": {
+    "body": "↓",
+    "description": "Down arrow symbol",
+    "prefix": "rk_darr"
+  },
+  "↓↑←→": {
+    "body": "↓↑←→",
+    "description": "Arrow key symbols",
+    "prefix": "rk_aarr"
+  },
+  "↩": {
+    "body": "↩",
+    "description": "Return symbol",
+    "prefix": "rk_ret"
   },
   "⇤": {
-    "prefix": "rk_btab",
     "body": "⇤",
-    "description": "Backtab symbol"
+    "description": "Backtab symbol",
+    "prefix": "rk_btab"
+  },
+  "⇥": {
+    "body": "⇥",
+    "description": "Tab symbol",
+    "prefix": "rk_tab"
+  },
+  "⇧": {
+    "body": "⇧",
+    "description": "Shift key symbol",
+    "prefix": "rk_sft"
+  },
+  "⌃": {
+    "body": "⌃",
+    "description": "Control key symbol",
+    "prefix": "rk_ctrl"
+  },
+  "⌃⌥⇧⌘": {
+    "body": "⌃⌥⇧⌘",
+    "description": "Keyboard shortcut symbols",
+    "prefix": "rk_kss"
+  },
+  "⌘": {
+    "body": "⌘",
+    "description": "Command key symbol",
+    "prefix": "rk_cmd"
+  },
+  "⌤↓↑←→⎋⌦⌫↩⇥⇤␣": {
+    "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
+    "description": "Other keyboard shortcut symbols",
+    "prefix": "rk_kso"
+  },
+  "⌥": {
+    "body": "⌥",
+    "description": "Option key symbol",
+    "prefix": "rk_opt"
+  },
+  "⌦": {
+    "body": "⌦",
+    "description": "Delete symbol",
+    "prefix": "rk_del"
+  },
+  "⌫": {
+    "body": "⌫",
+    "description": "Backspace symbol",
+    "prefix": "rk_bspc"
+  },
+  "⎋": {
+    "body": "⎋",
+    "description": "Escape key symbol",
+    "prefix": "rk_esc"
+  },
+  "␣": {
+    "body": "␣",
+    "description": "Space symbol",
+    "prefix": "rk_spc"
+  },
+  "♭": {
+    "body": "♭",
+    "description": "Flat symbol",
+    "prefix": "rk_flat"
+  },
+  "♯": {
+    "body": "♯",
+    "description": "Sharp symbol",
+    "prefix": "rk_sharp"
   }
 }
