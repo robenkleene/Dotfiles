@@ -1,22 +1,22 @@
 {
-  "Fish template": {
-    "prefix": "rk_template",
-    "body": "#!/usr/bin/env fish\n\n",
-    "description": "Fish template"
-  },
-  "`uname` switch statement": {
-    "prefix": "rk_switch_uname",
-    "body": "switch (uname)\n    case Linux\n            echo Hi Tux!\n    case Darwin\n            echo Hi Hexley!\n    case FreeBSD NetBSD DragonFly\n            echo Hi Beastie!\n    case '*'\n            echo Hi, stranger!\nend",
-    "description": "`uname` switch statement"
-  },
   "For in": {
-    "prefix": "rk_forin",
     "body": "for ${1:file} in (${2:ls})\n    echo $$1\nend",
-    "description": "For in"
+    "description": "For in",
+    "prefix": "rk_forin"
   },
-  "For in one-liner": {
-    "prefix": "rk_1_forin",
+  "One-line for in": {
     "body": "for ${1:file} in (${2:ls}); echo $$1; end",
-    "description": "For in one-liner"
+    "description": "One-line for in",
+    "prefix": "rk_1_forin"
+  },
+  "Switch uname": {
+    "body": "switch (uname)\n    case Linux\n            echo Hi Tux!\n    case Darwin\n            echo Hi Hexley!\n    case FreeBSD NetBSD DragonFly\n            echo Hi Beastie!\n    case '*'\n            echo Hi, stranger!\nend",
+    "description": "Switch uname",
+    "prefix": "rk_switch_uname"
+  },
+  "Template": {
+    "body": "#!/usr/bin/env fish\n\n",
+    "description": "Template",
+    "prefix": "rk_template"
   }
 }
