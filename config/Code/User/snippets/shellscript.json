@@ -54,88 +54,68 @@
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If statement"
   },
-  "If `uname`": {
-    "prefix": "rk_if_uname",
-    "body": "if [[ \"\\$(uname)\" = \"Darwin\" ]]; then\n  echo \"Darwin\"\nelif [[ \"\\$(uname)\" = \"Linux\" ]]; then\n  echo \"Linux\"\nfi",
-    "description": "If platform"
-  },
-  "If args": {
-    "prefix": "rk_if_args",
-    "body": "if [[ \$$# ${1:-ne} ${2:0} ]]; then\n  ${0:echo \"Not equal\"}\nfi",
-    "description": "If args"
-  },
   "True if directory": {
-    "prefix": "rk_test_dir",
+    "prefix": "rk_cond_dir",
     "body": "-d \"${0:\\$1}\"",
     "description": "True if directory"
   },
   "Test boolean": {
-    "prefix": "rk_test_bool",
+    "prefix": "rk_cond_bool",
     "body": "\"\\$${1:value}\" == \"${0:true}\"",
     "description": "Test boolean"
   },
   "True if regular file": {
-    "prefix": "rk_test_file",
+    "prefix": "rk_cond_file",
     "body": "-f \"${0:\\$1}\"",
     "description": "True if regular file"
   },
   "True if file exists": {
-    "prefix": "rk_test_exists",
+    "prefix": "rk_cond_exists",
     "body": "-e \"${0:\\$1}\"",
     "description": "True if file exists"
   },
   "True if symbolic link": {
-    "prefix": "rk_test_link",
+    "prefix": "rk_cond_ln",
     "body": "-L \"${0:\\$1}\"",
     "description": "True if symbolic link"
   },
   "True if equal": {
-    "prefix": "rk_test_eq",
-    "body": "${1:\\$?} -eq ${0:0}",
+    "prefix": "rk_cond_eq",
+    "body": "${1:\\$?} -${1:eq} ${0:0}",
     "description": "True if equal"
   },
-  "True if greater than": {
-    "prefix": "rk_test_gt",
-    "body": "${1:\\$?} -gt ${0:0}",
-    "description": "True if greater than"
-  },
-  "True if less than": {
-    "prefix": "rk_test_lt",
-    "body": "${1:\\$?} -lt ${0:0}",
-    "description": "True if less than"
-  },
   "True if empty variable": {
-    "prefix": "rk_test_empty",
+    "prefix": "rk_cond_empty",
     "body": "-z \"${${0:1}:-}\"",
     "description": "True if empty variable"
   },
   "True if not empty variable": {
-    "prefix": "rk_test_not_empty",
+    "prefix": "rk_cond_not_empty",
     "body": "-n \"${${0:1}:-}\"",
     "description": "True if not empty variable"
   },
   "True if no args": {
-    "prefix": "rk_test_args",
+    "prefix": "rk_cond_args",
     "body": "\\$# ${1:-ne} ${0:1}",
     "description": "True if no args"
   },
   "True if variable matches string": {
-    "prefix": "rk_test_string",
+    "prefix": "rk_cond_eq_str",
     "body": "\"$${1:1}\" = \"${0:string}\"",
     "description": "True if variable matches string"
   },
   "True if command is executable": {
-    "prefix": "rk_test_executable",
-    "body": "-x \"$(command -v ${0:ls})\"",
+    "prefix": "rk_test_cmd",
+    "body": "command -v ${0:ls})",
     "description": "True if command is executable"
   },
   "True if `uname` matches": {
-    "prefix": "rk_test_uname",
+    "prefix": "rk_cond_uname",
     "body": "\"$$(uname)\" = \"Linux\"",
     "description": "True if `uname` matches"
   },
   "True if standard output is a terminal": {
-    "prefix": "rk_test_term",
+    "prefix": "rk_cond_term",
     "body": "-t 1",
     "description": "True if standard output is a terminal"
   },
