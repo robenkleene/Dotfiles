@@ -1,12 +1,12 @@
 {
-  "`vim.notify` variable": {
-    "prefix": "rk_vim_notify_var",
-    "body": "vim.notify(\"$1 = \" .. ${1:result})",
-    "description": "`vim.notify` variable"
-  },
-  "`vim.cmd`": {
-    "prefix": "rk_vim_cmd",
+  "Vim cmd": {
     "body": "vim.cmd([[\nechom \"Hello World\"\n]])",
-    "description": "`vim.cmd`"
+    "description": "Vim cmd",
+    "prefix": "rk_vim_cmd"
+  },
+  "Vim var notify": {
+    "body": "vim.notify(\"$1 = \" .. ${1:result})",
+    "description": "Vim var notify",
+    "prefix": "rk_vim_notify_var"
   }
 }

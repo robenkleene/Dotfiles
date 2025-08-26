@@ -1,40 +1,29 @@
 {
-  "Print variable": {
-    "scope": "javascript,typescript",
-    "prefix": ["rk_pv", "rk_log_var"],
-    "body": "console.log(\"$1 = \" + ${1});",
-    "description": "`console.log` variable"
-  },
-  "Print": {
-    "scope": "javascript,typescript",
-    "prefix": ["rk_p", "rk_log"],
-    "body": "console.log(\"$1\");",
-    "description": "`console.log`"
-  },
-  "JavaScript template": {
-    "scope": "javascript,typescript",
-    "prefix": "rk_template",
-    "body": "#!/usr/bin/env node\n\n",
-    "description": "JavaScript template"
-  },
-  "For loop": {
-    "scope": "javascript,typescript",
-    "prefix": ["rk_for"],
+  "For": {
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
-    "description": "For loop"
+    "description": "For",
+    "prefix": [
+      "rk_for"
+    ],
+    "scope": "javascript,typescript"
   },
   "Max post": {
-    "prefix": [ "rk_max_post", "rk_max_p"],
     "body": "post(\"$1\");",
-    "description": "Max post"
+    "description": "Max post",
+    "prefix": [
+      "rk_max_post",
+      "rk_max_p"
+    ]
   },
-  "Max post variable": {
-    "prefix": [ "rk_max_post_var", "rk_max_pv" ],
+  "Max post var": {
     "body": "post(\"$1 = \" + ${1} + \"\\n\");",
-    "description": "Max post variable"
+    "description": "Max post var",
+    "prefix": [
+      "rk_max_post_var",
+      "rk_max_pv"
+    ]
   },
-  "Max JavaScript template": {
-    "prefix": "rk_max_template",
+  "Max template": {
     "body": [
       "// Inlets & Outlets",
       "inlets = 3;",
@@ -99,6 +88,31 @@
       "}",
       ""
     ],
-    "description": "Max JavaScript template"
+    "description": "Max template",
+    "prefix": "rk_max_template"
+  },
+  "Print": {
+    "body": "console.log(\"$1\");",
+    "description": "`console.log`",
+    "prefix": [
+      "rk_p",
+      "rk_log"
+    ],
+    "scope": "javascript,typescript"
+  },
+  "Print var": {
+    "body": "console.log(\"$1 = \" + ${1});",
+    "description": "Print var",
+    "prefix": [
+      "rk_pv",
+      "rk_log_var"
+    ],
+    "scope": "javascript,typescript"
+  },
+  "Template": {
+    "body": "#!/usr/bin/env node\n\n",
+    "description": "Template",
+    "prefix": "rk_template",
+    "scope": "javascript,typescript"
   }
 }
