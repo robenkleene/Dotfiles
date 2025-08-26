@@ -5,7 +5,7 @@ font-family = "SF Mono"
 font-style = "Medium"
 
 font-size = 14
-# font-thicken = true
+font-thicken = true
 
 theme = robenkleene
 
