@@ -1,7 +1,7 @@
 {
-  "Perl template": {
+  "Template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env perl\n\nuse strict;\nuse warnings;\n\n",
-    "description": "Perl template"
+    "description": "Template"
   }
 }
