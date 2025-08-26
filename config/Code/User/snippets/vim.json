@@ -1,37 +1,38 @@
 {
-  "Print variable": {
-    "prefix": ["rk_pv", "rk_echom_var"],
-    "body": "echom \"$1 = \".${1}",
-    "description": "`echom` variable"
-  },
-  "`echom`": {
-    "prefix": ["rk_p", "rk_echom"],
-    "body": "echom \"$1\"",
-    "description": "`echom`"
-  },
-  "Function": {
-    "prefix": "rk_function",
-    "body": "function! s:${1:Name}() abort\n  ${0:\" Statements}\nendfunction",
-    "description": "Function"
-  },
-  "`augroup`": {
-    "prefix": "rk_augroup",
+  "Auto group": {
     "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END",
-    "description": "`augroup`"
+    "description": "Auto group",
+    "prefix": "rk_augroup"
   },
-  "`xcodebuild test` `makeprg`": {
-    "prefix": "rk_set_makeprg_xcodebuild_test",
-    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
-    "description": "Set `makeprg` for `xcodebuild test`"
+  "Func": {
+    "body": "function! s:${1:Name}() abort\n  ${0:\" Statements}\nendfunction",
+    "description": "Func",
+    "prefix": "rk_function"
   },
-  "Set default": {
-    "prefix": "rk_set_default",
-    "body": "set ${0:shell}&",
-    "description": "Set to default"
-  },
-  "If statement": {
-    "prefix": "rk_if",
+  "If": {
     "body": "if ${1:has('gui_running')}\n  ${2:finish}\nendif",
-    "description": "If statement"
+    "description": "If",
+    "prefix": "rk_if"
+  },
+  "Make prg xcodebuild test": {
+    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
+    "description": "Make prg xcodebuild test",
+    "prefix": "rk_makeprg_xcodebuild_test"
+  },
+  "Print": {
+    "body": "echom \"$1\"",
+    "description": "Print",
+    "prefix": [
+      "rk_p",
+      "rk_echom"
+    ]
+  },
+  "Print var": {
+    "body": "echom \"$1 = \".${1}",
+    "description": "Print var",
+    "prefix": [
+      "rk_pv",
+      "rk_echom_var"
+    ]
   }
 }
