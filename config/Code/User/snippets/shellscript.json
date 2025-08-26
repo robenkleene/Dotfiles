@@ -1,58 +1,123 @@
 {
-  "Bash template": {
-    "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
-    "description": "Bash template",
-    "prefix": "rk_template"
+  "Cond arg": {
+    "body": "\\$# ${1:-ne} ${0:1}",
+    "description": "Cond arg",
+    "prefix": "rk_cond_arg"
   },
-  "Echo array variable": {
-    "body": "echo \"$1 = \\${${1}[@]}\"",
-    "description": "`echo` array variable",
-    "prefix": [
-      "rk_echo_var_array",
-      "rk_print_var_array"
-    ]
+  "Cond bool": {
+    "body": "\"\\$${1:value}\" == \"${0:true}\"",
+    "description": "Cond bool",
+    "prefix": "rk_cond_bool"
   },
-  "Exit status": {
-    "body": "\\$?",
-    "description": "Exit status",
-    "prefix": "rk_exit_status"
+  "Cond dir": {
+    "body": "-d \"${0:\\$1}\"",
+    "description": "Cond dir",
+    "prefix": "rk_cond_dir"
   },
-  "For loop": {
+  "Cond empty": {
+    "body": "-z \"${${0:1}:-}\"",
+    "description": "Cond empty",
+    "prefix": "rk_cond_empty"
+  },
+  "Cond eq": {
+    "body": "${1:\\$?} -${1:eq} ${0:0}",
+    "description": "Cond eq",
+    "prefix": "rk_cond_eq"
+  },
+  "Cond": {
+    "body": "[[ ${0:true} ]]",
+    "description": "Cond",
+    "prefix": "rk_cond"
+  },
+  "Cond file": {
+    "body": "-f \"${0:\\$1}\"",
+    "description": "Cond file",
+    "prefix": "rk_cond_file"
+  },
+  "Cond exists": {
+    "body": "-e \"${0:\\$1}\"",
+    "description": "Cond exists",
+    "prefix": "rk_cond_exists"
+  },
+  "Cond uname": {
+    "body": "\"$$(uname)\" = \"Linux\"",
+    "description": "Cond uname",
+    "prefix": "rk_cond_uname"
+  },
+  "Cond not empty": {
+    "body": "-n \"${${0:1}:-}\"",
+    "description": "Cond not empty",
+    "prefix": "rk_cond_not_empty"
+  },
+  "Cond symlink": {
+    "body": "-L \"${0:\\$1}\"",
+    "description": "Cond symlink",
+    "prefix": "rk_cond_ln"
+  },
+  "Cond terminal standard output": {
+    "body": "-t 1",
+    "description": "Cond terminal standard output",
+    "prefix": "rk_cond_term"
+  },
+  "Cond var eq str": {
+    "body": "\"$${1:1}\" = \"${0:string}\"",
+    "description": "Cond var eq str",
+    "prefix": "rk_cond_eq_str"
+  },
+  "For": {
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
-    "description": "For loop",
+    "description": "For",
     "prefix": "rk_for"
   },
-  "For loop directories": {
+  "For dir": {
     "body": "for dir in */; do\n  echo $dir;\ndone",
-    "description": "For loop directories",
+    "description": "For dir",
     "prefix": "rk_for_dir"
   },
-  "For loop one-liner": {
+  "One-liner for": {
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
-    "description": "For loop one-liner",
+    "description": "One-liner for",
     "prefix": "rk_1_for"
   },
-  "Function": {
+  "Func": {
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
-    "description": "Function",
-    "prefix": "rk_function"
+    "description": "Func",
+    "prefix": "rk_func"
   },
-  "Get array element": {
+  "Arr access": {
     "body": "\\${${0:args}[@]}",
-    "description": "Get array element",
-    "prefix": "rk_array_access"
+    "description": "Arr access",
+    "prefix": "rk_arr_access"
   },
-  "If statement": {
+  "If": {
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
-    "description": "If statement",
+    "description": "If",
     "prefix": "rk_if"
+  },
+  "One-liner for files rename": {
+    "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
+    "description": "One-liner for files rename",
+    "prefix": "rk_1_for_files_rename"
+  },
+  "One-liner while": {
+    "body": "while read i; do { ${0:echo $i} } done",
+    "description": "One-liner while",
+    "prefix": "rk_1_while"
   },
   "Print": {
     "body": "echo \"$1\"",
-    "description": "`echo`",
+    "description": "Print",
     "prefix": [
       "rk_p",
       "rk_echo"
+    ]
+  },
+  "Print var arr": {
+    "body": "echo \"$1 = \\${${1}[@]}\"",
+    "description": "Print var arr",
+    "prefix": [
+      "rk_echo_var_arr",
+      "rk_pv_arr"
     ]
   },
   "Print error": {
@@ -71,114 +136,49 @@
       "rk_echo_var"
     ]
   },
-  "Remove path extension": {
-    "body": "\\${${0:1}%.*}",
-    "description": "Remove the extension from a path",
-    "prefix": "rk_parameter_expansion_remove_extension"
-  },
-  "Remove variable trailing slash": {
-    "body": "\\${${0:1}%/}",
-    "description": "Remove a trailing slash from a variable",
-    "prefix": "rk_parameter_expansion_remove_trailing_slash"
-  },
-  "Rename files in current directory": {
-    "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
-    "description": "Rename files in current directory",
-    "prefix": "rk_1_for_rename"
-  },
-  "Script directory": {
-    "body": "cd \\$(dirname \"\\$0\" || exit 1)",
-    "description": "Script directory",
-    "prefix": "rk_cd_script_dir"
-  },
   "Set IFS": {
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Set IFS",
     "prefix": "rk_ifs"
   },
-  "Test boolean": {
-    "body": "\"\\$${1:value}\" == \"${0:true}\"",
-    "description": "Test boolean",
-    "prefix": "rk_cond_bool"
+  "Template": {
+    "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
+    "description": "Template",
+    "prefix": "rk_template"
   },
-  "Test expression": {
-    "body": "[[ ${0:true} ]]",
-    "description": "Test expression",
-    "prefix": "rk_ex"
-  },
-  "True if `uname` matches": {
-    "body": "\"$$(uname)\" = \"Linux\"",
-    "description": "True if `uname` matches",
-    "prefix": "rk_cond_uname"
-  },
-  "True if command is executable": {
+  "Test command": {
     "body": "command -v ${0:ls})",
-    "description": "True if command is executable",
+    "description": "True if command",
     "prefix": "rk_test_cmd"
   },
-  "True if directory": {
-    "body": "-d \"${0:\\$1}\"",
-    "description": "True if directory",
-    "prefix": "rk_cond_dir"
+  "Variable exit status": {
+    "body": "\\$?",
+    "description": "Variable exit status",
+    "prefix": "rk_exit_status"
   },
-  "True if empty variable": {
-    "body": "-z \"${${0:1}:-}\"",
-    "description": "True if empty variable",
-    "prefix": "rk_cond_empty"
+  "Variable parameter expansion remove path extension": {
+    "body": "\\${${0:1}%.*}",
+    "description": "Remove the extension from a path",
+    "prefix": "rk_parameter_expansion_remove_extension"
   },
-  "True if equal": {
-    "body": "${1:\\$?} -${1:eq} ${0:0}",
-    "description": "True if equal",
-    "prefix": "rk_cond_eq"
-  },
-  "True if file exists": {
-    "body": "-e \"${0:\\$1}\"",
-    "description": "True if file exists",
-    "prefix": "rk_cond_exists"
-  },
-  "True if no args": {
-    "body": "\\$# ${1:-ne} ${0:1}",
-    "description": "True if no args",
-    "prefix": "rk_cond_args"
-  },
-  "True if not empty variable": {
-    "body": "-n \"${${0:1}:-}\"",
-    "description": "True if not empty variable",
-    "prefix": "rk_cond_not_empty"
-  },
-  "True if regular file": {
-    "body": "-f \"${0:\\$1}\"",
-    "description": "True if regular file",
-    "prefix": "rk_cond_file"
-  },
-  "True if standard output is a terminal": {
-    "body": "-t 1",
-    "description": "True if standard output is a terminal",
-    "prefix": "rk_cond_term"
-  },
-  "True if symbolic link": {
-    "body": "-L \"${0:\\$1}\"",
-    "description": "True if symbolic link",
-    "prefix": "rk_cond_ln"
-  },
-  "True if variable matches string": {
-    "body": "\"$${1:1}\" = \"${0:string}\"",
-    "description": "True if variable matches string",
-    "prefix": "rk_cond_eq_str"
+  "Variable parameter expansion remove variable trailing slash": {
+    "body": "\\${${0:1}%/}",
+    "description": "Remove a trailing slash from a variable",
+    "prefix": "rk_parameter_expansion_remove_trailing_slash"
   },
   "While loop": {
     "body": "while read i; do\n  ${0:echo $i}\ndone",
     "description": "While loop",
     "prefix": "rk_while"
   },
-  "While loop one-liner": {
-    "body": "while read i; do { ${0:echo $i} } done",
-    "description": "While loop one-liner",
-    "prefix": "rk_1_while"
+  "cd to script directory": {
+    "body": "cd \\$(dirname \"\\$0\" || exit 1)",
+    "description": "Script directory",
+    "prefix": "rk_cd_script_dir"
   },
-  "`getopts`": {
+  "getopts": {
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
-    "description": "`getopts`",
+    "description": "getopts",
     "prefix": "rk_getopts"
   }
 }
