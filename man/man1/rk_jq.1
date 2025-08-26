@@ -2,11 +2,15 @@
 .\"
 .TH "RK_JQ Reference" "" "" ""
 .IP \[bu] 2
+\f[CR]\-S\f[R] / \f[CR]\-\-sort\-keys\f[R]
+.SH Examples
+.IP \[bu] 2
 \f[CR]jq \-R \-s \[aq].\[aq]\f[R]: String escape standard input
+.SS Print Matching Object
 .IP \[bu] 2
 \f[CR]jq \[aq].. | objects | select(.<key> == \[dq]<value>\[dq])\[aq]\f[R]:
 Print an object where a \f[CR]<key>\f[R] matches a \f[CR]<value>\f[R]
-.SS Breakdown
+.SS Explanation
 .IP
 .EX
 jq \[aq].. | objects | select(.<key> == \[dq]<value>\[dq])\[aq]
