@@ -1,7 +1,14 @@
+- `-S` / `--sort-keys`
+
+# Examples
+
 - `jq -R -s '.'`: String escape standard input
+
+## Print Matching Object
+
 - `jq '.. | objects | select(.<key> == "<value>")'`: Print an object where a `<key>` matches a `<value>`
 
-## Breakdown
+### Explanation
 
 ```
 jq '.. | objects | select(.<key> == "<value>")'
