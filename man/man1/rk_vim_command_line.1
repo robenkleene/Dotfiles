@@ -106,8 +106,9 @@ history \f[CR]debug\f[R] / \f[CR]>\f[R]: Debug command history
 .IP \[bu] 2
 \f[CR]:call histdel(\[dq]/\[dq])\f[R]: Delete all search history
 .IP \[bu] 2
-\f[CR]:call histdel(\[dq]:\[dq], \-1)\f[R]: Delete most recent item from
-command\-line history
+\f[CR]:call histdel(\[dq]:\[dq], \-2)\f[R]: Delete most recent item from
+command\-line history (it\[cq]s \f[CR]\-2\f[R] because \f[CR]\-1\f[R]
+will just delete the \f[CR]call histdel\f[R] command itself)
 .IP \[bu] 2
 \f[CR]:call histdel(\[dq]/\[dq], \-1)\f[R]: Delete most recent item from
 search history
