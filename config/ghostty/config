@@ -1,10 +1,10 @@
-keybind = global:opt+escape=toggle_quick_terminal
+# keybind = global:opt+escape=toggle_quick_terminal
 
 # font-family = "Berkeley Mono"
 font-family = "SF Mono"
 font-style = "Medium"
 
-font-size = 14
+font-size = 13
 font-thicken = true
 
 theme = robenkleene
