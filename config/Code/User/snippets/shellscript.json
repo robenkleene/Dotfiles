@@ -1,120 +1,120 @@
 {
-  "Arr access": {
+  "arr access": {
     "body": "\\${${0:args}[@]}",
     "description": "Arr access",
     "prefix": "rk_arr_access"
   },
-  "Cd to script dir": {
+  "cd to script dir": {
     "body": "cd \\$(dirname \"\\$0\" || exit 1)",
     "description": "Cd to script dir",
     "prefix": "rk_cd_script_dir"
   },
-  "Cond": {
+  "cond": {
     "body": "[[ ${0:true} ]]",
     "description": "Cond",
     "prefix": "rk_cond"
   },
-  "Cond arg": {
+  "cond arg": {
     "body": "\\$# ${1:-ne} ${0:1}",
     "description": "Cond arg",
     "prefix": "rk_cond_arg"
   },
-  "Cond bool": {
+  "cond bool": {
     "body": "\"\\$${1:value}\" == \"${0:true}\"",
     "description": "Cond bool",
     "prefix": "rk_cond_bool"
   },
-  "Cond dir": {
+  "cond dir": {
     "body": "-d \"${0:\\$1}\"",
     "description": "Cond dir",
     "prefix": "rk_cond_dir"
   },
-  "Cond empty": {
+  "cond empty": {
     "body": "-z \"${${0:1}:-}\"",
     "description": "Cond empty",
     "prefix": "rk_cond_empty"
   },
-  "Cond eq": {
+  "cond eq": {
     "body": "${1:\\$?} -${1:eq} ${0:0}",
     "description": "Cond eq",
     "prefix": "rk_cond_eq"
   },
-  "Cond exists": {
+  "cond exists": {
     "body": "-e \"${0:\\$1}\"",
     "description": "Cond exists",
     "prefix": "rk_cond_exists"
   },
-  "Cond file": {
+  "cond file": {
     "body": "-f \"${0:\\$1}\"",
     "description": "Cond file",
     "prefix": "rk_cond_file"
   },
-  "Cond not empty": {
+  "cond not empty": {
     "body": "-n \"${${0:1}:-}\"",
     "description": "Cond not empty",
     "prefix": "rk_cond_not_empty"
   },
-  "Cond symlink": {
+  "cond symlink": {
     "body": "-L \"${0:\\$1}\"",
     "description": "Cond symlink",
     "prefix": "rk_cond_ln"
   },
-  "Cond terminal standard output": {
+  "cond terminal standard output": {
     "body": "-t 1",
     "description": "Cond terminal standard output",
     "prefix": "rk_cond_term"
   },
-  "Cond uname": {
+  "cond uname": {
     "body": "\"$$(uname)\" = \"Linux\"",
     "description": "Cond uname",
     "prefix": "rk_cond_uname"
   },
-  "Cond var eq str": {
+  "cond var eq str": {
     "body": "\"$${1:1}\" = \"${0:string}\"",
     "description": "Cond var eq str",
     "prefix": "rk_cond_eq_str"
   },
-  "For": {
+  "for": {
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
     "description": "For",
     "prefix": "rk_for"
   },
-  "For dir": {
+  "for dir": {
     "body": "for dir in */; do\n  echo $dir;\ndone",
     "description": "For dir",
     "prefix": "rk_for_dir"
   },
-  "Func": {
+  "func": {
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "Func",
     "prefix": "rk_func"
   },
-  "Getopts": {
+  "getopts": {
     "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "Getopts",
     "prefix": "rk_getopts"
   },
-  "If": {
+  "if": {
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "If",
     "prefix": "rk_if"
   },
-  "One-liner for": {
+  "one-liner for": {
     "body": "for i in ${1:*}; do { ${0:echo $i} } done",
     "description": "One-liner for",
     "prefix": "rk_1_for"
   },
-  "One-liner for files rename": {
+  "one-liner for files rename": {
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "One-liner for files rename",
     "prefix": "rk_1_for_files_rename"
   },
-  "One-liner while": {
+  "one-liner while": {
     "body": "while read i; do { ${0:echo $i} } done",
     "description": "One-liner while",
     "prefix": "rk_1_while"
   },
-  "Print": {
+  "print": {
     "body": "echo \"$1\"",
     "description": "Print",
     "prefix": [
@@ -122,7 +122,7 @@
       "rk_echo"
     ]
   },
-  "Print err": {
+  "print err": {
     "body": "echo \"${1:Error}\" >&2",
     "description": "Print err",
     "prefix": [
@@ -130,7 +130,7 @@
       "rk_echo_err"
     ]
   },
-  "Print var": {
+  "print var": {
     "body": "echo \"$1 = \\$${1}\"",
     "description": "Print var",
     "prefix": [
@@ -138,7 +138,7 @@
       "rk_echo_var"
     ]
   },
-  "Print var arr": {
+  "print var arr": {
     "body": "echo \"$1 = \\${${1}[@]}\"",
     "description": "Print var arr",
     "prefix": [
@@ -146,37 +146,37 @@
       "rk_pv_arr"
     ]
   },
-  "Template": {
+  "template": {
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "Template",
     "prefix": "rk_template"
   },
-  "Test cmd": {
+  "test cmd": {
     "body": "command -v ${0:ls})",
     "description": "Test cmd",
     "prefix": "rk_test_cmd"
   },
-  "Var IFS": {
+  "var ifs": {
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
     "description": "Var IFS",
     "prefix": "rk_ifs"
   },
-  "Var exit status": {
+  "var exit status": {
     "body": "\\$?",
     "description": "Var exit status",
     "prefix": "rk_exit_status"
   },
-  "Var parameter expansion remove path extension": {
+  "var parameter expansion remove path extension": {
     "body": "\\${${0:1}%.*}",
     "description": "Var parameter expansion remove path extension",
     "prefix": "rk_parameter_expansion_remove_extension"
   },
-  "Var parameter expansion remove variable trailing slash": {
+  "var parameter expansion remove variable trailing slash": {
     "body": "\\${${0:1}%/}",
     "description": "Var parameter expansion remove variable trailing slash",
     "prefix": "rk_parameter_expansion_remove_trailing_slash"
   },
-  "While": {
+  "while": {
     "body": "while read i; do\n  ${0:echo $i}\ndone",
     "description": "While",
     "prefix": "rk_while"

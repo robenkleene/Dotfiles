@@ -1,20 +1,20 @@
 {
-  "Each": {
+  "each": {
     "body": "(${1:0}..${2:10}).each do |i|\n  ${0:puts i}\nend",
     "description": "Each",
     "prefix": "rk_each"
   },
-  "For": {
+  "for": {
     "body": "for i in ${1:0}..${2:10}\n  ${0:puts i}\nend",
     "description": "For",
     "prefix": "rk_for"
   },
-  "For in": {
+  "for in": {
     "body": "${1:ARGV}.each do |${2:item}|\n  ${0:puts $2}\nend",
     "description": "For in",
     "prefix": "rk_forin"
   },
-  "Print": {
+  "print": {
     "body": "puts \"$1\"",
     "description": "Print",
     "prefix": [
@@ -22,7 +22,7 @@
       "rk_puts"
     ]
   },
-  "Print err": {
+  "print err": {
     "body": "STDERR.puts \"$1{:Error}\"",
     "description": "Print err",
     "prefix": [
@@ -30,7 +30,7 @@
       "rk_puts_err"
     ]
   },
-  "Print var": {
+  "print var": {
     "body": "puts \"$1 = #{${1}}\"",
     "description": "Print var",
     "prefix": [
@@ -38,7 +38,7 @@
       "rk_puts_var"
     ]
   },
-  "Template": {
+  "template": {
     "body": "#!/usr/bin/env ruby\n\n",
     "description": "Template",
     "prefix": "rk_template"

@@ -1,35 +1,40 @@
 {
-  "For": {
+  "for": {
     "body": "for (int ${1:i} = 0; $1 < ${2:10}; $1++) {\n    $0\n}",
     "description": "For",
     "prefix": "rk_for"
   },
-  "For arr": {
+  "for arr": {
     "body": "for (std::size_t ${1:i} = 0; $1 < ${2}.size(); ++$1) {\n    ${3:std::cout << $2[$1] << std::endl;}\n}",
     "description": "For arr",
     "prefix": "rk_for_array"
   },
-  "For arr iter": {
+  "for arr iter": {
     "body": "for (auto it = ${1:arr}.begin(); it != $1.end(); ++it) {\n    ${2:std::cout << *it << std::endl;}\n}",
     "description": "For arr iter",
     "prefix": "rk_for_array_iter"
   },
-  "For arr range": {
+  "for arr range": {
     "body": "for (int ${1:element} : ${2}) {\n    ${3:std::cout << $1 << std:endl;}\n}",
     "description": "For arr range",
     "prefix": "rk_for_array_range"
   },
-  "Func main": {
+  "func main": {
     "body": "int main() {\n  ${1:std::cout << \"Hello, World!\" << std::endl;}\n}",
     "description": "Func main",
     "prefix": "rk_main"
   },
-  "Include iostream": {
+  "gmock suppress warnings": {
+    "body": "::testing::FLAGS_gmock_verbose = \"error\";",
+    "description": "gMock suppress warnings",
+    "prefix": "rk_gmock_suppress"
+  },
+  "include iostream": {
     "body": "#include <iostream>",
     "description": "Include iostream",
     "prefix": "rk_include_cout"
   },
-  "Print": {
+  "print": {
     "body": "std::cout << \"$1\" << std::endl;",
     "description": "Print",
     "prefix": [
@@ -37,17 +42,17 @@
       "rk_cout"
     ]
   },
-  "Print addr obj": {
+  "print addr obj": {
     "body": "std::cout << \" &$1 = \" << &${1} << std::endl;",
     "description": "Print addr obj",
     "prefix": "rk_cout_var_addr"
   },
-  "Print addr obj fmt str": {
+  "print addr obj fmt str": {
     "body": "std::cout << \" &$1 = %p\" << &${1} << std::endl;",
     "description": "Print addr obj fmt str",
     "prefix": "rk_cout_var_fmt_addr"
   },
-  "Print arr": {
+  "print arr": {
     "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
     "description": "Print arr",
     "prefix": [
@@ -55,12 +60,12 @@
       "rk_print_array"
     ]
   },
-  "Print enum": {
+  "print enum": {
     "body": "std::cout << \" $1 = \" << static_cast<int>(${1}) << std::endl;",
     "description": "Print enum",
     "prefix": "rk_cout_enum"
   },
-  "Print map": {
+  "print map": {
     "body": "std::cout << \"${1} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
     "description": "Print map",
     "prefix": [
@@ -68,12 +73,12 @@
       "rk_print_map"
     ]
   },
-  "Print this addr": {
+  "print this addr": {
     "body": "std::cout << this << std::endl;",
     "description": "Print this addr",
     "prefix": "rk_cout_addr"
   },
-  "Print var": {
+  "print var": {
     "body": "std::cout << \"$1 = \" << ${1} << std::endl;",
     "description": "Print var",
     "prefix": [
@@ -81,14 +86,9 @@
       "rk_cout_var"
     ]
   },
-  "Template": {
+  "template": {
     "body": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello, World!\" << std::endl;\n}\n",
     "description": "Template",
     "prefix": "rk_template"
-  },
-  "gMock suppress warnings": {
-    "body": "::testing::FLAGS_gmock_verbose = \"error\";",
-    "description": "gMock suppress warnings",
-    "prefix": "rk_gmock_suppress"
   }
 }

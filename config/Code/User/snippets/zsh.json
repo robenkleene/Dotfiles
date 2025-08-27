@@ -1,7 +1,7 @@
 {
-  "rk_template": {
+  "template": {
     "prefix": "rk_template",
     "body": "#!/usr/bin/env zsh\n\nset -euo pipefail\n\n",
-    "description": "Template"
+    "description": "template"
   }
 }
