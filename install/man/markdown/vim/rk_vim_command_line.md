@@ -65,7 +65,6 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 
 - The history is stored in `~/.viminfo`
 - `:his[tory] {name}`: List history, `{name}` defaults to `:` for this command
-- `:call histdel(":", -1)`: Delete most recent item from command-line history
 
 ## `{name}`
 
@@ -74,3 +73,11 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 `expr` / `=`: Typed expression history
 `input` / `@`: Input line history
 `debug` / `>`: Debug command history
+
+## Deleting
+
+- `:call histdel(":")`: Delete all command-line history
+- `:call histdel("/")`: Delete all search history
+- `:call histdel(":", -1)`: Delete most recent item from command-line history
+- `:call histdel("/", -1)`: Delete most recent item from search history
+
