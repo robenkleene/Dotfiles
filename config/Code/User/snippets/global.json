@@ -1,112 +1,112 @@
 {
-  "Lorem ipsum": {
+  "lorem": {
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "description": "Lorem ipsum",
+    "description": "lorem",
     "prefix": "rk_lorem"
   },
-  "°": {
+  "degree": {
     "body": "°",
-    "description": "Degree symbol",
+    "description": "degree",
     "prefix": "rk_degree"
   },
-  "←": {
+  "larr": {
     "body": "←",
-    "description": "Left arrow symbol",
+    "description": "larr",
     "prefix": "rk_larr"
   },
-  "↑": {
+  "uarr": {
     "body": "↑",
-    "description": "Up arrow symbol",
+    "description": "uarr",
     "prefix": "rk_uarr"
   },
-  "→": {
+  "rarr": {
     "body": "→",
-    "description": "Right arrow symbol",
+    "description": "rarr",
     "prefix": "rk_rarr"
   },
-  "↓": {
+  "darr": {
     "body": "↓",
-    "description": "Down arrow symbol",
+    "description": "darr",
     "prefix": "rk_darr"
   },
-  "↓↑←→": {
+  "arrows": {
     "body": "↓↑←→",
-    "description": "Arrow key symbols",
+    "description": "arrows",
     "prefix": "rk_aarr"
   },
-  "↩": {
+  "ret": {
     "body": "↩",
-    "description": "Return symbol",
+    "description": "ret",
     "prefix": "rk_ret"
   },
-  "⇤": {
+  "btab": {
     "body": "⇤",
-    "description": "Backtab symbol",
+    "description": "btab",
     "prefix": "rk_btab"
   },
-  "⇥": {
+  "tab": {
     "body": "⇥",
-    "description": "Tab symbol",
+    "description": "tab",
     "prefix": "rk_tab"
   },
-  "⇧": {
+  "sft": {
     "body": "⇧",
-    "description": "Shift key symbol",
+    "description": "sft",
     "prefix": "rk_sft"
   },
-  "⌃": {
+  "ctrl": {
     "body": "⌃",
-    "description": "Control key symbol",
+    "description": "ctrl",
     "prefix": "rk_ctrl"
   },
-  "⌃⌥⇧⌘": {
+  "keyboard shortcut symbols": {
     "body": "⌃⌥⇧⌘",
-    "description": "Keyboard shortcut symbols",
+    "description": "keyboard shortcut symbols",
     "prefix": "rk_kss"
   },
-  "⌘": {
+  "cmd": {
     "body": "⌘",
-    "description": "Command key symbol",
+    "description": "cmd",
     "prefix": "rk_cmd"
   },
-  "⌤↓↑←→⎋⌦⌫↩⇥⇤␣": {
+  "keyboard shortcut symbols other": {
     "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
-    "description": "Other keyboard shortcut symbols",
+    "description": "keyboard shortcut symbols other",
     "prefix": "rk_kso"
   },
-  "⌥": {
+  "opt": {
     "body": "⌥",
-    "description": "Option key symbol",
+    "description": "opt",
     "prefix": "rk_opt"
   },
-  "⌦": {
+  "del": {
     "body": "⌦",
-    "description": "Delete symbol",
+    "description": "del",
     "prefix": "rk_del"
   },
-  "⌫": {
+  "bs": {
     "body": "⌫",
-    "description": "Backspace symbol",
+    "description": "bs",
     "prefix": "rk_bspc"
   },
-  "⎋": {
+  "esc": {
     "body": "⎋",
-    "description": "Escape key symbol",
+    "description": "esc",
     "prefix": "rk_esc"
   },
-  "␣": {
+  "spc": {
     "body": "␣",
-    "description": "Space symbol",
+    "description": "spc",
     "prefix": "rk_spc"
   },
-  "♭": {
+  "flat": {
     "body": "♭",
-    "description": "Flat symbol",
+    "description": "flat",
     "prefix": "rk_flat"
   },
-  "♯": {
+  "sharp": {
     "body": "♯",
-    "description": "Sharp symbol",
+    "description": "sharp",
     "prefix": "rk_sharp"
   }
 }
