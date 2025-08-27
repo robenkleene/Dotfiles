@@ -1,5 +1,5 @@
 {
-  "For": {
+  "for": {
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "For",
     "prefix": [
@@ -7,7 +7,7 @@
     ],
     "scope": "javascript,typescript"
   },
-  "Max post": {
+  "max post": {
     "body": "post(\"$1\");",
     "description": "Max post",
     "prefix": [
@@ -15,7 +15,7 @@
       "rk_max_p"
     ]
   },
-  "Max post var": {
+  "max post var": {
     "body": "post(\"$1 = \" + ${1} + \"\\n\");",
     "description": "Max post var",
     "prefix": [
@@ -23,7 +23,7 @@
       "rk_max_pv"
     ]
   },
-  "Max template": {
+  "max template": {
     "body": [
       "// Inlets & Outlets",
       "inlets = 3;",
@@ -91,7 +91,7 @@
     "description": "Max template",
     "prefix": "rk_max_template"
   },
-  "Print": {
+  "print": {
     "body": "console.log(\"$1\");",
     "description": "`console.log`",
     "prefix": [
@@ -100,7 +100,7 @@
     ],
     "scope": "javascript,typescript"
   },
-  "Print var": {
+  "print var": {
     "body": "console.log(\"$1 = \" + ${1});",
     "description": "Print var",
     "prefix": [
@@ -109,7 +109,7 @@
     ],
     "scope": "javascript,typescript"
   },
-  "Template": {
+  "template": {
     "body": "#!/usr/bin/env node\n\n",
     "description": "Template",
     "prefix": "rk_template",

@@ -1,10 +1,10 @@
 {
-  "Vim cmd": {
+  "vim cmd": {
     "body": "vim.cmd([[\nechom \"Hello World\"\n]])",
     "description": "Vim cmd",
     "prefix": "rk_vim_cmd"
   },
-  "Vim var notify": {
+  "vim var notify": {
     "body": "vim.notify(\"$1 = \" .. ${1:result})",
     "description": "Vim var notify",
     "prefix": "rk_vim_notify_var"

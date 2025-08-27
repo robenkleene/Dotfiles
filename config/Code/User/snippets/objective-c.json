@@ -1,60 +1,60 @@
 {
-  "Annotation nonnull block": {
+  "annotation nonnull block": {
     "body": "NS_ASSUME_NONNULL_BEGIN\n${VISUAL}\nNS_ASSUME_NONNULL_END",
     "description": "Annotation nonnull block",
     "prefix": "rk_nonnull"
   },
-  "Class": {
+  "class": {
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$2\n@end\nNS_ASSUME_NONNULL_END\n\n@implementation $1\n$0\n@end",
     "description": "Objective-C template class",
     "prefix": "rk_class"
   },
-  "Class extension": {
+  "class extension": {
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} (${2:MyCategory})\n$0\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Class extension interface",
     "prefix": "rk_interface_extension"
   },
-  "Delegate": {
+  "delegate": {
     "body": "NS_ASSUME_NONNULL_BEGIN\n@protocol ${1:MyClass}Delegate <NSObject>\n- (void)handleEventFor$1:($1 *)${2:myObject};\n- (${3:id})$2:($1 *)$2 ${4:valueForKey}:(${5:NSString *})${6:key};\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Delegate",
     "prefix": "rk_delegate"
   },
-  "For": {
+  "for": {
     "body": "for (int ${1:i} = ${2:0}; $1 < ${3:10}; $1++) {\n    ${0:NSLog(@\"%d\", i);}\n}",
     "description": "For",
     "prefix": "rk_for"
   },
-  "For in": {
+  "for in": {
     "body": "for (${1:id} ${2:object} in ${3:objects}) {\n    $0\n}",
     "description": "For in",
     "prefix": "rk_forin"
   },
-  "Func main": {
+  "func main": {
     "body": "int main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Func main",
     "prefix": "rk_main"
   },
-  "Implementation": {
+  "implementation": {
     "body": "@implementation ${1:MyClass}\n$0\n@end",
     "description": "Implementation",
     "prefix": "rk_implementation"
   },
-  "Init method": {
+  "init method": {
     "body": "- (instancetype)initWith${1:Dictionary}:(NSDictionary *)${1/.*/\\l$0/}\n{\n    self = [super init];\n    if (self) {\n\t\t_${1/.*/\\l$0/} = ${1/.*/\\l$0/};\n    }\n    return self;\n}",
     "description": "Init method",
     "prefix": "rk_init"
   },
-  "Interface": {
+  "interface": {
     "body": "NS_ASSUME_NONNULL_BEGIN\n@interface ${1:MyClass} : NSObject\n$0\n@end\nNS_ASSUME_NONNULL_END",
     "description": "Interface",
     "prefix": "rk_interface"
   },
-  "Print": {
+  "print": {
     "body": "NSLog(@\"$1\");",
     "description": "Print",
     "prefix": "rk_p"
   },
-  "Print var": {
+  "print var": {
     "body": "NSLog(@\"$1 = %${2:@}\", ${1});",
     "description": "Print var",
     "prefix": [
@@ -62,22 +62,22 @@
       "rk_log"
     ]
   },
-  "Property": {
+  "property": {
     "body": "@property (nonatomic, strong) ${1:NSString} *${2:identifier};",
     "description": "Property",
     "prefix": "rk_property"
   },
-  "Property delegate": {
+  "property delegate": {
     "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;",
     "description": "Property delegate",
     "prefix": "rk_property_delegate"
   },
-  "Protocol": {
+  "protocol": {
     "body": "@protocol ${1:MyProtocol} <NSObject>\n$0\n@end",
     "description": "Protocol",
     "prefix": "rk_protocol"
   },
-  "Template": {
+  "template": {
     "body": "#import <Foundation/Foundation.h>\n\nint main() {\n    NSLog(@\"Hello, World!\");\n}",
     "description": "Template",
     "prefix": "rk_template"

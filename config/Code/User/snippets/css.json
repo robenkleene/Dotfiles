@@ -1,10 +1,10 @@
 {
-  "Background 8px grid": {
+  "background 8px grid": {
     "body": "body {\n  background-image: repeating-linear-gradient(#ddd 0 1px, transparent 1px 100%),\n    repeating-linear-gradient(90deg, #ddd 0 1px, transparent 1px 100%);\n  background-size: 8px 8px;\n}",
     "description": "Background 8px grid",
     "prefix": "rk_grid"
   },
-  "Template": {
+  "template": {
     "body": "body {\n  color: blue;\n}",
     "description": "Template",
     "prefix": "rk_template"

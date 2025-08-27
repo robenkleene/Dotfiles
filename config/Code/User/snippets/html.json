@@ -1,15 +1,15 @@
 {
-  "Link CSS": {
+  "link css": {
     "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${1:css/style.css}\" />",
     "description": "Link CSS",
     "prefix": "rk_link_css"
   },
-  "Script JS": {
+  "script js": {
     "body": "<script type=\"text/javascript\" src=\"${1:js/script.js}\"></script>",
     "description": "Script JS",
     "prefix": "rk_script_js"
   },
-  "Template": {
+  "template": {
     "body": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>${1:Title}</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n  </head>\n  <body>\n    $0\n  </body>\n</html>",
     "description": "Template",
     "prefix": "rk_template"
