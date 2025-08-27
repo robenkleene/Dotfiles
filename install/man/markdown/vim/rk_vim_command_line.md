@@ -78,6 +78,6 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 
 - `:call histdel(":")`: Delete all command-line history
 - `:call histdel("/")`: Delete all search history
-- `:call histdel(":", -1)`: Delete most recent item from command-line history
+- `:call histdel(":", -2)`: Delete most recent item from command-line history (it's `-2` because `-1` will just delete the `call histdel` command itself)
 - `:call histdel("/", -1)`: Delete most recent item from search history
 
