@@ -1,4 +1,5 @@
 - Functions marked `static` don't rely on instance-specific member variables or method (i.e., class method vs. instance method)
+- C++ uses data member, member variable, and field to mean the same thing, from most commonly to least commonly used term
 
 # Constructors
 
