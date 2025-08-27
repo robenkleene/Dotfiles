@@ -95,11 +95,19 @@ The history is stored in \f[CR]\[ti]/.viminfo\f[R]
 .IP \[bu] 2
 \f[CR]:his[tory] {name}\f[R]: List history, \f[CR]{name}\f[R] defaults
 to \f[CR]:\f[R] for this command
-.IP \[bu] 2
-\f[CR]:call histdel(\[dq]:\[dq], \-1)\f[R]: Delete most recent item from
-command\-line history
 .SS \f[CR]{name}\f[R]
 \f[CR]cmd\f[R] / \f[CR]:\f[R]: Command line history \f[CR]search\f[R] /
 \f[CR]/\f[R]: Search pattern history \f[CR]expr\f[R] / \f[CR]=\f[R]:
 Typed expression history \f[CR]input\f[R] / \f[CR]\[at]\f[R]: Input line
 history \f[CR]debug\f[R] / \f[CR]>\f[R]: Debug command history
+.SS Deleting
+.IP \[bu] 2
+\f[CR]:call histdel(\[dq]:\[dq])\f[R]: Delete all command\-line history
+.IP \[bu] 2
+\f[CR]:call histdel(\[dq]/\[dq])\f[R]: Delete all search history
+.IP \[bu] 2
+\f[CR]:call histdel(\[dq]:\[dq], \-1)\f[R]: Delete most recent item from
+command\-line history
+.IP \[bu] 2
+\f[CR]:call histdel(\[dq]/\[dq], \-1)\f[R]: Delete most recent item from
+search history
