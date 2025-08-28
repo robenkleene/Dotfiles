@@ -2,4 +2,4 @@
 # key: rk_test_cmd
 # name: test cmd
 # --
-command -v ${0:ls})
+command -v ${0:ls} &> /dev/null
