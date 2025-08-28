@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_processing_print_arr
-# name: Processing print array
+# name: pde print arr
 # --
 println("$1");
 printArray(${1:result});

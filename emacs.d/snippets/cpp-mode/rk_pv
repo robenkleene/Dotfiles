@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_pv
-# name: Print variable
+# name: print var
 # --
 std::cout << "$1 = " << ${1} << std::endl;

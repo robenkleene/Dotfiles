@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_bool
+# name: cond bool
+# --
+"\$${1:value}" == "${0:true}"

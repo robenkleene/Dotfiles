@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_p
-# name: Print
+# name: print
 # --
 std::cout << "$1" << std::endl;

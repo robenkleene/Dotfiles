@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_for
-# name: For
+# name: for
 # --
 for ${1:i} in ${2:0}..<${3:10} {
     ${0:print("\\($1)")}

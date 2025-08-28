@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_max_template
-# name: Max JavaScript template
+# name: max template
 # --
 // Inlets & Outlets
 inlets = 3;

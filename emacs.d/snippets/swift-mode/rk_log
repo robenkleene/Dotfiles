@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_log
-# name: Log
+# name: log
 # --
 NSLog("${1:Hello World}")

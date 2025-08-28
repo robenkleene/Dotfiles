@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_ln
+# name: cond symlink
+# --
+-L "${0:\$1}"

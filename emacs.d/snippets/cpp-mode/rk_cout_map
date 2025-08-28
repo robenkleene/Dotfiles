@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_cout_map
-# name: Print map
+# name: print map
 # --
 std::cout << "${1} = {";
 bool first = true;

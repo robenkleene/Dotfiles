@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_exit_status
-# name: Exit status
+# name: var exit status
 # --
 \$?

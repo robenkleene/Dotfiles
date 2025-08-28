@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_while_getchar
-# name: While character loop
+# name: while char
 # --
 while ((c = getchar()) != EOF) {
     $0

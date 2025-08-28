@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_p
-# name: Print
+# name: print
 # --
 echo "$1"

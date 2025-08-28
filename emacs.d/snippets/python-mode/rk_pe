@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_pe
-# name: Print error
+# name: print err
 # --
 print("${1:Error}", file=sys.stderr)

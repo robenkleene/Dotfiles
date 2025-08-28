@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_arg
+# name: cond arg
+# --
+\$# ${1:-ne} ${0:1}
