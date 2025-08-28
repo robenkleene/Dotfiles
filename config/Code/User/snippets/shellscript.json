@@ -152,7 +152,7 @@
     "prefix": "rk_template"
   },
   "test cmd": {
-    "body": "command -v ${0:ls})",
+    "body": "command -v ${0:ls} &> /dev/null",
     "description": "Test cmd",
     "prefix": "rk_test_cmd"
   },
