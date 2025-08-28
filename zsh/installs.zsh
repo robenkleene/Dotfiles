@@ -118,6 +118,9 @@ n ()
     # -g: Use regular expressions instead of string matches
     # Note these must be set via `ENV` (e.g., instead of with `export`)
     # because with export it would affect the current session
+
+    # Note that directories cd to by nnn are automatically added to zoxide if
+    # the zsh shell integration is setup
     env LESS="" NNN_PLUG='z:z;p:preview' nnn -AQg "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
