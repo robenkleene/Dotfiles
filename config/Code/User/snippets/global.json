@@ -1,112 +1,112 @@
 {
-  "lorem": {
-    "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "description": "lorem",
-    "prefix": "rk_lorem"
-  },
-  "degree": {
-    "body": "°",
-    "description": "degree",
-    "prefix": "rk_degree"
-  },
-  "larr": {
-    "body": "←",
-    "description": "larr",
-    "prefix": "rk_larr"
-  },
-  "uarr": {
-    "body": "↑",
-    "description": "uarr",
-    "prefix": "rk_uarr"
-  },
-  "rarr": {
-    "body": "→",
-    "description": "rarr",
-    "prefix": "rk_rarr"
-  },
-  "darr": {
-    "body": "↓",
-    "description": "darr",
-    "prefix": "rk_darr"
-  },
   "arrows": {
     "body": "↓↑←→",
     "description": "arrows",
     "prefix": "rk_aarr"
-  },
-  "ret": {
-    "body": "↩",
-    "description": "ret",
-    "prefix": "rk_ret"
-  },
-  "btab": {
-    "body": "⇤",
-    "description": "btab",
-    "prefix": "rk_btab"
-  },
-  "tab": {
-    "body": "⇥",
-    "description": "tab",
-    "prefix": "rk_tab"
-  },
-  "sft": {
-    "body": "⇧",
-    "description": "sft",
-    "prefix": "rk_sft"
-  },
-  "ctrl": {
-    "body": "⌃",
-    "description": "ctrl",
-    "prefix": "rk_ctrl"
-  },
-  "keyboard shortcut symbols": {
-    "body": "⌃⌥⇧⌘",
-    "description": "keyboard shortcut symbols",
-    "prefix": "rk_kss"
-  },
-  "cmd": {
-    "body": "⌘",
-    "description": "cmd",
-    "prefix": "rk_cmd"
-  },
-  "keyboard shortcut symbols other": {
-    "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
-    "description": "keyboard shortcut symbols other",
-    "prefix": "rk_kso"
-  },
-  "opt": {
-    "body": "⌥",
-    "description": "opt",
-    "prefix": "rk_opt"
-  },
-  "del": {
-    "body": "⌦",
-    "description": "del",
-    "prefix": "rk_del"
   },
   "bs": {
     "body": "⌫",
     "description": "bs",
     "prefix": "rk_bspc"
   },
+  "btab": {
+    "body": "⇤",
+    "description": "btab",
+    "prefix": "rk_btab"
+  },
+  "cmd": {
+    "body": "⌘",
+    "description": "cmd",
+    "prefix": "rk_cmd"
+  },
+  "ctrl": {
+    "body": "⌃",
+    "description": "ctrl",
+    "prefix": "rk_ctrl"
+  },
+  "darr": {
+    "body": "↓",
+    "description": "darr",
+    "prefix": "rk_darr"
+  },
+  "degree": {
+    "body": "°",
+    "description": "degree",
+    "prefix": "rk_degree"
+  },
+  "del": {
+    "body": "⌦",
+    "description": "del",
+    "prefix": "rk_del"
+  },
   "esc": {
     "body": "⎋",
     "description": "esc",
     "prefix": "rk_esc"
-  },
-  "spc": {
-    "body": "␣",
-    "description": "spc",
-    "prefix": "rk_spc"
   },
   "flat": {
     "body": "♭",
     "description": "flat",
     "prefix": "rk_flat"
   },
+  "keyboard shortcut symbols": {
+    "body": "⌃⌥⇧⌘",
+    "description": "keyboard shortcut symbols",
+    "prefix": "rk_kss"
+  },
+  "keyboard shortcut symbols other": {
+    "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
+    "description": "keyboard shortcut symbols other",
+    "prefix": "rk_kso"
+  },
+  "larr": {
+    "body": "←",
+    "description": "larr",
+    "prefix": "rk_larr"
+  },
+  "lorem": {
+    "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "lorem",
+    "prefix": "rk_lorem"
+  },
+  "opt": {
+    "body": "⌥",
+    "description": "opt",
+    "prefix": "rk_opt"
+  },
+  "rarr": {
+    "body": "→",
+    "description": "rarr",
+    "prefix": "rk_rarr"
+  },
+  "ret": {
+    "body": "↩",
+    "description": "ret",
+    "prefix": "rk_ret"
+  },
+  "sft": {
+    "body": "⇧",
+    "description": "sft",
+    "prefix": "rk_sft"
+  },
   "sharp": {
     "body": "♯",
     "description": "sharp",
     "prefix": "rk_sharp"
+  },
+  "spc": {
+    "body": "␣",
+    "description": "spc",
+    "prefix": "rk_spc"
+  },
+  "tab": {
+    "body": "⇥",
+    "description": "tab",
+    "prefix": "rk_tab"
+  },
+  "uarr": {
+    "body": "↑",
+    "description": "uarr",
+    "prefix": "rk_uarr"
   }
 }
