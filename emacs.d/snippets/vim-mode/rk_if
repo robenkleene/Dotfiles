@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_if
-# name: If statement
+# name: if
 # --
 if ${1:has('gui_running')}
   ${2:finish}

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_test_dir
-# name: True if directory
-# --
--d "${0:\$1}"

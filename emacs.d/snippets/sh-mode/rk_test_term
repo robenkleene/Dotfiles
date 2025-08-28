@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_test_term
-# name: True if standard output is a terminal
-# --
--t 1

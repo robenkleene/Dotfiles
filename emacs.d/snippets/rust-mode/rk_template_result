@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template_result
-# name: Rust result template
+# name: result Template
 # --
 use std::io;
 

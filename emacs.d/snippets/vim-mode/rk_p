@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_p
-# name: `echom`
+# name: print
 # --
 echom "$1"

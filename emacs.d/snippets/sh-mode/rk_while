@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_while
-# name: While loop
+# name: while
 # --
 while read i; do
   ${0:echo $i}

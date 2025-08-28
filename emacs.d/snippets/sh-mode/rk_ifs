@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_ifs
-# name: Set IFS
+# name: var ifs
 # --
 old_IFS=$IFS
 IFS="${1: }"

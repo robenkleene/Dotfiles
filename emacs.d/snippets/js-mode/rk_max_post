@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_max_post
-# name: Max post
+# name: max post
 # --
 post("$1");

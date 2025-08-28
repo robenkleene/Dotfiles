@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_grid
-# name: 8px background grid
+# name: background 8px grid
 # --
 body {
   background-image: repeating-linear-gradient(#ddd 0 1px, transparent 1px 100%),

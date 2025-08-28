@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_class
-# name: Class
+# name: class
 # --
 class ${1:MyObject} {
     $0

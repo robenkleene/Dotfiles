@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_for_array_range
-# name: For loop array range
+# name: for arr range
 # --
 for (int ${1:element} : ${2}) {
     ${3:std::cout << $1 << std:endl;}

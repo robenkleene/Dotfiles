@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_dir
+# name: cond dir
+# --
+-d "${0:\$1}"

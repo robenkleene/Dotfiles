@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_include_cout
-# name: Include for `cout`
+# name: include iostream
 # --
 #include <iostream>

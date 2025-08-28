@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_uname
+# name: cond uname
+# --
+"$$(uname)" = "Linux"

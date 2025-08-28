@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_cout_array
-# name: Print array
+# name: print arr
 # --
 std::cout << "${1} = ";
 for (std::size_t i = 0; i < $1.size(); ++i) {

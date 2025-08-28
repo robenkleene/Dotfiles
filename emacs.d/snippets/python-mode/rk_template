@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # key: rk_template
-# name: Python template
+# name: template
 # --
 #!/usr/bin/env python3
 

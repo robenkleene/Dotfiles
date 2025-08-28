@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_cond_exists
+# name: cond exists
+# --
+-e "${0:\$1}"

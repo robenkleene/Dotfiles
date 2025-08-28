@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # key: rk_print_var_opt
-# name: Print optional variable
+# name: print var optional
 # --
 print("$1 =", ${1} ?? "nil"
