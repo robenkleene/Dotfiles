@@ -167,7 +167,7 @@
     "prefix": "rk_var_t_filename_ext"
   },
   "var filename to filename without extension": {
-    "body": "\\${${0:filename}##*.}",
+    "body": "\\${${0:filename}%.*}",
     "description": "var filename to filename without extension",
     "prefix": "rk_var_t_filename_filename_no_ext"
   },
