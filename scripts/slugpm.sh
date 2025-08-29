@@ -2,6 +2,14 @@
 
 set -euo pipefail
 
+if [[ "${1:-}" = "help" ]]; then
+  echo "- slugpm: With standard input, creates a slug from the first line of standard input, and creates a directory at project/<slug>"
+  echo "- slugpm <title>: Without standard input, creates a slug from <title>, and creates a directory at project/<slug>"
+  echo "- slugpm archive <filename>: With standard input, appends standard input to the end of a file named <filename> in archive/<filename> relative to filename"
+  echo "- slugpm archive <filename>: Without standard input, moves <filename> to archive/<filename> relative to filename"
+  exit 0
+fi
+
 if [[ "${1:-}" = "archive" ]]; then
   args="${@:2}"
   if [[ $# -eq 1 ]]; then
