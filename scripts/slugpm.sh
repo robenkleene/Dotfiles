@@ -35,12 +35,12 @@ if [[ "${1:-}" = "archive" ]]; then
 
     # In the case of multiple file paths, the first path is used as the
     # destination for piped text
-    if [[ -n "${archived_stdin:-}" ]]; then
+    if [[ ! -n "${archived_stdin:-}" ]]; then
       text="$(</dev/stdin)"
       archived_stdin=1
       if [[ ! -f "$file_path" && -n "$text" ]]; then
         filename=${file_path##*/}
-        dest_file="$file_dir/archive/$filename"
+        dest_file="archive/$filename"
         if [[ -f "$dest_file" ]]; then
           echo "$text" >>"$dest_file"
         else
@@ -49,6 +49,10 @@ if [[ "${1:-}" = "archive" ]]; then
           echo "$text"
         fi
       fi
+      # Don't try to also move files if we parsed standard input. E.g.,
+      # appending to a file with the same name in archive, and then trying to
+      # copy over that file doesn't make sense.
+      exit 0
     fi
 
     if [[ -d "$file_path/../../projects/" ]]; then
@@ -68,7 +72,7 @@ if [[ "${1:-}" = "archive" ]]; then
     else
       # If the a parent directory is NOT `projects`, don't treat as a project,
       # and archive to relative archive directory
-      dest_dir="$file_dir/archive/"
+      dest_dir="archive/"
       if [[ ! -d "$dest_dir" ]]; then
         echo "Error: $dest_dir does not exist" >&2
         exit 1
