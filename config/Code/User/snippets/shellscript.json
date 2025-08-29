@@ -19,16 +19,6 @@
     "description": "cond arg",
     "prefix": "rk_cond_arg"
   },
-  "cond bool": {
-    "body": "\"\\$${1:value}\" == \"${0:true}\"",
-    "description": "cond bool",
-    "prefix": "rk_cond_bool"
-  },
-  "cond dir": {
-    "body": "-d \"${0:\\$1}\"",
-    "description": "cond dir",
-    "prefix": "rk_cond_dir"
-  },
   "cond empty": {
     "body": "-z \"${${0:1}:-}\"",
     "description": "cond empty",
@@ -39,19 +29,29 @@
     "description": "cond eq",
     "prefix": "rk_cond_eq"
   },
-  "cond exists": {
-    "body": "-e \"${0:\\$1}\"",
-    "description": "cond exists",
-    "prefix": "rk_cond_exists"
+  "cond file dir": {
+    "body": "-d \"${0:\\$1}\"",
+    "description": "cond dir",
+    "prefix": "rk_cond_file_dir"
   },
-  "cond file": {
+  "cond file exists": {
+    "body": "-e \"${0:\\$1}\"",
+    "description": "cond file exists",
+    "prefix": "rk_cond_file_exists"
+  },
+  "cond file regular": {
     "body": "-f \"${0:\\$1}\"",
-    "description": "cond file",
-    "prefix": "rk_cond_file"
+    "description": "cond file regular",
+    "prefix": "rk_cond_file_regular"
+  },
+  "cond file symlink": {
+    "body": "-L \"${0:\\$1}\"",
+    "description": "cond file symlink",
+    "prefix": "rk_cond_file_ln"
   },
   "cond not empty": {
     "body": "-n \"${${0:1}:-}\"",
-    "description": "cond not empty",
+    "description": "cond var not empty",
     "prefix": "rk_cond_not_empty"
   },
   "cond standard output is terminal": {
@@ -59,20 +59,10 @@
     "description": "cond standard output is terminal",
     "prefix": "rk_cond_term"
   },
-  "cond symlink": {
-    "body": "-L \"${0:\\$1}\"",
-    "description": "cond symlink",
-    "prefix": "rk_cond_ln"
-  },
   "cond uname": {
     "body": "\"$$(uname)\" = \"Linux\"",
     "description": "cond uname",
     "prefix": "rk_cond_uname"
-  },
-  "cond var eq str": {
-    "body": "\"$${1:1}\" = \"${0:string}\"",
-    "description": "cond var eq str",
-    "prefix": "rk_cond_eq_str"
   },
   "for": {
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
@@ -90,7 +80,7 @@
     "prefix": "rk_func"
   },
   "getopts": {
-    "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=\"true\"\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
+    "body": "force=\"false\"\nwhile getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=1\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "getopts",
     "prefix": "rk_getopts"
   },

@@ -9,7 +9,7 @@ while getopts ":p:fh" option; do
       file_path="\$OPTARG"
       ;;
     f)
-      force="true"
+      force=1
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
