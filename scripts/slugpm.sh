@@ -6,7 +6,8 @@ if [[ "${1:-}" = "help" ]]; then
   echo "- slugpm: With standard input, creates a slug from the first line of standard input, and creates a directory at project/<slug>"
   echo "- slugpm <title>: Without standard input, creates a slug from <title>, and creates a directory at project/<slug>"
   echo "- slugpm archive <filename>: With standard input, appends standard input to the end of a file named <filename> in archive/<filename> relative to filename"
-  echo "- slugpm archive <filename>: Without standard input, moves <filename> to archive/<filename> relative to filename"
+  echo "- slugpm archive <filename>: Without standard input, moves <filename> to archive/<filename> relative to <filename>"
+  echo "- slugpm archive <dirname>: Moves <dirname> to ../archive/<dirname> relative to <dirname>"
   exit 0
 fi
 
@@ -35,7 +36,7 @@ if [[ "${1:-}" = "archive" ]]; then
     # file_path=${file_path#\.}
     file_path=${file_path%/}
 
-    if [[ -d "$file_path" && -d "$file_path/../../projects/" && -f "$file_path/README.md" ]]; then
+    if [[ -d "$file_path" && -d "$file_path/../../projects/" && -f "$file_path/" ]]; then
       # If it's a directory with a parent `projects` and a `README` treat as a project
       destination_dir="$file_path/../../archive/projects/"
 
