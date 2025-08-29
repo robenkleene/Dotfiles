@@ -121,6 +121,6 @@ dated_slug="$today-$slug"
 
 mkdir -p "$project_dir/$dated_slug/archive"
 
-if [[ -n "$print_link" ]]; then
+if [[ -n "${print_link:-}" ]]; then
   echo -n "[$title]($project_dir/$dated_slug)"
 fi
