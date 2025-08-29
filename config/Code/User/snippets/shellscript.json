@@ -50,7 +50,7 @@
     "prefix": "rk_cond_file_ln"
   },
   "cond not empty": {
-    "body": "-n \"${${0:1}:-}\"",
+    "body": "-n \"\\${${0:1}:-}\"",
     "description": "cond var not empty",
     "prefix": "rk_cond_not_empty"
   },
