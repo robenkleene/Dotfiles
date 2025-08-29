@@ -14,6 +14,9 @@ fi
 
 if [[ "${1:-}" = "name" ]]; then
   args="${@:2}"
+  if [[ "$args" == '.' ]]; then
+    args="$PWD"
+  fi
   filename=${args##*/}
   filename_no_ext=${filename%.*}
   echo $filename_no_ext | sed 's/^\d\d\d\d-\d\d-\d\d//' | tr "-" " " | ~/.bin/f_titlecase
