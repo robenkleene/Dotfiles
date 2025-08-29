@@ -1,27 +1,27 @@
 {
   "auto group": {
     "body": "augroup ${1:writing_buffer}\n  autocmd!\n  autocmd ${2:BufWrite *} ${3::echom \"Writing buffer!\"}\naugroup END",
-    "description": "Auto group",
+    "description": "auto group",
     "prefix": "rk_augroup"
   },
   "func": {
     "body": "function! s:${1:Name}() abort\n  ${0:\" Statements}\nendfunction",
-    "description": "Func",
+    "description": "func",
     "prefix": "rk_function"
   },
   "if": {
     "body": "if ${1:has('gui_running')}\n  ${2:finish}\nendif",
-    "description": "If",
+    "description": "if",
     "prefix": "rk_if"
   },
   "make prg xcodebuild test": {
     "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
-    "description": "Make prg xcodebuild test",
+    "description": "make prg xcodebuild test",
     "prefix": "rk_makeprg_xcodebuild_test"
   },
   "print": {
     "body": "echom \"$1\"",
-    "description": "Print",
+    "description": "print",
     "prefix": [
       "rk_p",
       "rk_echom"
@@ -29,7 +29,7 @@
   },
   "print var": {
     "body": "echom \"$1 = \".${1}",
-    "description": "Print var",
+    "description": "print var",
     "prefix": [
       "rk_pv",
       "rk_echom_var"
