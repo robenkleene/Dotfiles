@@ -92,6 +92,7 @@ if [[ -z "${title:-}" ]]; then
       exit 1
     fi
     title="$line"
+    print_link=1
   done <<< "$text"
 fi
 
@@ -120,4 +121,6 @@ dated_slug="$today-$slug"
 
 mkdir -p "$project_dir/$dated_slug/archive"
 
-echo -n "[$title]($project_dir/$dated_slug)"
+if [[ -n "$print_link" ]]; then
+  echo -n "[$title]($project_dir/$dated_slug)"
+fi
