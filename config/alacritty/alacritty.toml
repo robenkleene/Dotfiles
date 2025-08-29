@@ -16,6 +16,11 @@ family = "SF Mono"
 style = "Medium"
 # style = "Light"
 
+# With SF Mono, prevent bold fonts from rendering too thick
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
 [[hints.enabled]]
 command = "xdg-open"
 post_processing = true
