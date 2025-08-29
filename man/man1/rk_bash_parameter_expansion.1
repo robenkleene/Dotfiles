@@ -10,10 +10,6 @@ isn\[cq]t set
 .IP \[bu] 2
 \f[CR]${#var}\f[R]: Length of \f[CR]var\f[R].
 .IP \[bu] 2
-\f[CR]${var#pattern}\f[R]: Remove \f[CR]pattern\f[R] prefix.
-.IP \[bu] 2
-\f[CR]${var%pattern}\f[R]: Remove \f[CR]pattern\f[R] suffix.
-.IP \[bu] 2
 \f[CR]${var/foo/bar}\f[R]: Replace \f[CR]foo\f[R] with \f[CR]bar\f[R] in
 \f[CR]var\f[R] once.
 .IP \[bu] 2
@@ -21,9 +17,28 @@ isn\[cq]t set
 in \f[CR]var\f[R] globally.
 .IP \[bu] 2
 \f[CR]${var:offset:length}\f[R]: A substring of \f[CR]var\f[R].
+.SH Patterns
+.IP \[bu] 2
+\f[CR]${variable#pattern}\f[R]: Trim the shortest match from the
+beginning (e.g., trim pattern suffix)
+.IP \[bu] 2
+\f[CR]${variable##pattern}\f[R]: Trim the longest match from the
+beginning
+.IP \[bu] 2
+\f[CR]${variable%pattern}\f[R]: Trim the shortest match from the end
+(e.g., trim pattern prefix)
+.IP \[bu] 2
+\f[CR]${variable%%pattern}\f[R]: Trim the longest match from the end
 .SH Examples
-.IP
-.EX
-directory=${filename##*/}
-extension=${filename##*.}
-.EE
+.IP \[bu] 2
+\f[CR]${path##*/}\f[R]: Filename (e.g., \f[CR]dir/foo.bar\f[R] to
+\f[CR]foo.bar\f[R])
+.IP \[bu] 2
+\f[CR]${path%/*}\f[R]: Directory (e.g., \f[CR]dir/foo.bar\f[R] to
+\f[CR]dir\f[R])
+.IP \[bu] 2
+\f[CR]${filename##*.}\f[R]: Extension (e.g., \f[CR]foo.bar\f[R] to
+\f[CR]bar\f[R])
+.IP \[bu] 2
+\f[CR]${filename%.*}\f[R]: Filename without extension (e.g.,
+\f[CR]foo.bar\f[R] to \f[CR]foo\f[R])
