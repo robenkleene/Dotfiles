@@ -13,7 +13,7 @@
 
 ;; Dark transparent menu bar
 ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 (defvar rk/mac-bindings-minor-mode-map (make-keymap))
 
