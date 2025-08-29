@@ -1,3 +1,27 @@
+# Unbound Variables
+
+Safely testing for a unbound variable (this allows `set -u` to be on to fail if an unbound variable is found):
+
+```
+if [[ -n "${file_path:-}" ]]; then
+```
+
+# Boolean
+
+Bash doesn't support boolean variables natively, a workaround is to just set a variable:
+
+```
+foo=1
+```
+
+And then use a check for whether that variable is empty:
+
+```
+if [[ -n "${foo:-}" ]]; then
+```
+
+# Equality
+
 These are equivalent:
 
     [[ $x == "$y" ]]
