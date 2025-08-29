@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_var_t_filename_filename_no_ext
+# name: var filename to filename without extension
+# --
+\${${0:filename}##*.}

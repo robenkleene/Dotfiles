@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_parameter_expansion_remove_trailing_slash
-# name: var parameter expansion remove variable trailing slash
-# --
-\${${0:1}%/}
