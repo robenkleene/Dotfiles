@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_var_t_path_filename
+# name: var path to filename
+# --
+\${${0:path}##*/}

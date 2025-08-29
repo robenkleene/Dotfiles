@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk_var_strip_trailing_slash
+# name: var strip trailing slash
+# --
+\${${0:1}%/}
