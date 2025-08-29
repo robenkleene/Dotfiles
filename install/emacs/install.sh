@@ -2,11 +2,6 @@
 
 set -euo pipefail
 
-if ! command -v emacs; then
-  echo "Warning: Skipping Emacs install script because emacs command not found" >&2
-  exit 0
-fi
-
 cd "$(dirname "$0")" || exit 1
 
 # Use GUI Emacs CLI instead of managing a separate `brew install`
@@ -25,6 +20,11 @@ if [ ! -e /usr/local/bin/emacs ] && [ -e /Applications/Emacs.app/Contents/MacOS/
   # behave as `emacs -nw`, and open a file in GUI Emacs with `open -a Emacs
   # <file>`
   sudo ln -s /Applications/Emacs.app/Contents/MacOS/emacs-nw /usr/local/bin/emacs
+fi
+
+if ! command -v emacs; then
+  echo "Warning: Skipping Emacs install script because emacs command not found" >&2
+  exit 0
 fi
 
 if [ ! -e /usr/local/bin/emacsclient ] && [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
