@@ -1,7 +1,7 @@
 {
   "for": {
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
-    "description": "For",
+    "description": "for",
     "prefix": [
       "rk_for"
     ],
@@ -9,7 +9,7 @@
   },
   "max post": {
     "body": "post(\"$1\");",
-    "description": "Max post",
+    "description": "max post",
     "prefix": [
       "rk_max_post",
       "rk_max_p"
@@ -17,7 +17,7 @@
   },
   "max post var": {
     "body": "post(\"$1 = \" + ${1} + \"\\n\");",
-    "description": "Max post var",
+    "description": "max post var",
     "prefix": [
       "rk_max_post_var",
       "rk_max_pv"
@@ -88,12 +88,12 @@
       "}",
       ""
     ],
-    "description": "Max template",
+    "description": "max template",
     "prefix": "rk_max_template"
   },
   "print": {
     "body": "console.log(\"$1\");",
-    "description": "`console.log`",
+    "description": "print",
     "prefix": [
       "rk_p",
       "rk_log"
@@ -102,7 +102,7 @@
   },
   "print var": {
     "body": "console.log(\"$1 = \" + ${1});",
-    "description": "Print var",
+    "description": "print var",
     "prefix": [
       "rk_pv",
       "rk_log_var"
@@ -111,7 +111,7 @@
   },
   "template": {
     "body": "#!/usr/bin/env node\n\n",
-    "description": "Template",
+    "description": "template",
     "prefix": "rk_template",
     "scope": "javascript,typescript"
   }

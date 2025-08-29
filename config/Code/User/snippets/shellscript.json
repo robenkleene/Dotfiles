@@ -1,7 +1,7 @@
 {
   "arr access": {
     "body": "\\${${0:args}[@]}",
-    "description": "Arr access",
+    "description": "arr access",
     "prefix": "rk_arr_access"
   },
   "cd to script dir": {
@@ -11,7 +11,7 @@
   },
   "cond": {
     "body": "[[ ${0:true} ]]",
-    "description": "Cond",
+    "description": "cond",
     "prefix": "rk_cond"
   },
   "cond arg": {
@@ -26,7 +26,7 @@
   },
   "cond dir": {
     "body": "-d \"${0:\\$1}\"",
-    "description": "Cond dir",
+    "description": "cond dir",
     "prefix": "rk_cond_dir"
   },
   "cond empty": {
@@ -41,7 +41,7 @@
   },
   "cond exists": {
     "body": "-e \"${0:\\$1}\"",
-    "description": "Cond exists",
+    "description": "cond exists",
     "prefix": "rk_cond_exists"
   },
   "cond file": {
@@ -76,12 +76,12 @@
   },
   "for": {
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
-    "description": "For",
+    "description": "for",
     "prefix": "rk_for"
   },
   "for dir": {
     "body": "for dir in */; do\n  echo $dir;\ndone",
-    "description": "For dir",
+    "description": "for dir",
     "prefix": "rk_for_dir"
   },
   "func": {
@@ -153,12 +153,12 @@
   },
   "test cmd": {
     "body": "command -v ${0:ls} &> /dev/null",
-    "description": "Test cmd",
+    "description": "test cmd",
     "prefix": "rk_test_cmd"
   },
   "var exit status": {
     "body": "\\$?",
-    "description": "Var exit status",
+    "description": "var exit status",
     "prefix": "rk_exit_status"
   },
   "var filename to extension": {

@@ -2,6 +2,6 @@
   "template": {
     "prefix": "rk_template",
     "body": ".PHONY: hello\n\nhello:\n\techo \"Hello\"",
-    "description": "Template"
+    "description": "template"
   }
 }

@@ -1,17 +1,17 @@
 {
   "link css": {
     "body": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${1:css/style.css}\" />",
-    "description": "Link CSS",
+    "description": "link css",
     "prefix": "rk_link_css"
   },
   "script js": {
     "body": "<script type=\"text/javascript\" src=\"${1:js/script.js}\"></script>",
-    "description": "Script JS",
+    "description": "script js",
     "prefix": "rk_script_js"
   },
   "template": {
     "body": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <title>${1:Title}</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n  </head>\n  <body>\n    $0\n  </body>\n</html>",
-    "description": "Template",
+    "description": "template",
     "prefix": "rk_template"
   }
 }

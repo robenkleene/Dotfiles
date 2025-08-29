@@ -1,22 +1,22 @@
 {
   "for in": {
     "body": "for ${1:file} in (${2:ls})\n    echo $$1\nend",
-    "description": "For in",
+    "description": "for in",
     "prefix": "rk_forin"
   },
   "one-line for in": {
     "body": "for ${1:file} in (${2:ls}); echo $$1; end",
-    "description": "One-line for in",
+    "description": "one-line for in",
     "prefix": "rk_1_forin"
   },
   "switch uname": {
     "body": "switch (uname)\n    case Linux\n            echo Hi Tux!\n    case Darwin\n            echo Hi Hexley!\n    case FreeBSD NetBSD DragonFly\n            echo Hi Beastie!\n    case '*'\n            echo Hi, stranger!\nend",
-    "description": "Switch uname",
+    "description": "switch uname",
     "prefix": "rk_switch_uname"
   },
   "template": {
     "body": "#!/usr/bin/env fish\n\n",
-    "description": "Template",
+    "description": "template",
     "prefix": "rk_template"
   }
 }
