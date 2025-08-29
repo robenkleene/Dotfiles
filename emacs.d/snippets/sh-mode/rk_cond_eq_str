@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_cond_eq_str
-# name: cond var eq str
-# --
-"$${1:1}" = "${0:string}"
