@@ -8,6 +8,15 @@ if [[ "${1:-}" = "help" ]]; then
   echo "- slugpm archive <filename>: With standard input, appends standard input to the end of a file named <filename> in archive/<filename> relative to filename"
   echo "- slugpm archive <filename>: Without standard input, moves <filename> to archive/<filename> relative to <filename>"
   echo "- slugpm archive <dirname>: Moves <dirname> to ../archive/<dirname> relative to <dirname>"
+  echo "- slugpm name <dirname>: Print name of project excluding date"
+  exit 0
+fi
+
+if [[ "${1:-}" = "name" ]]; then
+  args="${@:2}"
+  filename=${args##*/}
+  filename_no_ext=${filename%.*}
+  echo $filename_no_ext | sed 's/^\d\d\d\d-\d\d-\d\d//' | tr "-" " " | ~/.bin/f_titlecase
   exit 0
 fi
 
