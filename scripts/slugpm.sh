@@ -19,7 +19,7 @@ if [[ "${1:-}" = "name" ]]; then
   fi
   filename=${args##*/}
   filename_no_ext=${filename%.*}
-  echo $filename_no_ext | sed 's/^\d\d\d\d-\d\d-\d\d//' | tr "-" " " | ~/.bin/f_titlecase
+  echo $filename_no_ext | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}//' | tr "-" " " | ~/.bin/f_titlecase | tr -d '\n'
   exit 0
 fi
 
