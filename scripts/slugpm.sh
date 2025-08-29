@@ -12,7 +12,9 @@ if [[ "${1:-}" = "help" ]]; then
 fi
 
 if [[ "${1:-}" = "archive" ]]; then
+  # Args excluding the word "archive"
   args="${@:2}"
+  # If args `-eq 1` that means only "archive" was given as an argument
   if [[ $# -eq 1 ]]; then
     # `text=$(cat)` was giving problems with input shorter than one line
     text="$(</dev/stdin)"
@@ -20,12 +22,6 @@ if [[ "${1:-}" = "archive" ]]; then
       echo "Error: Nothing to archive" >&2
       exit 1
     fi
-    filename="README.md"
-    destination_file="$PWD/archive/$filename"
-    if [[ ! -f "$destination_file" ]]; then
-      echo "Error: $destination_file is not a file" >&2
-    fi
-    echo "$text" >>"$destination_file"
     exit 0
   fi
 
@@ -35,78 +31,60 @@ if [[ "${1:-}" = "archive" ]]; then
     # `file_path` so the entire path is `.`
     # file_path=${file_path#\.}
     file_path=${file_path%/}
+    file_dir=${file_path%/*}
 
-    if [[ -d "$file_path" && -d "$file_path/../../projects/" && -f "$file_path/" ]]; then
-      # If it's a directory with a parent `projects` and a `README` treat as a project
-      destination_dir="$file_path/../../archive/projects/"
+    # In the case of multiple file paths, the first path is used as the
+    # destination for piped text
+    if [[ -n "${archived_stdin:-}" ]]; then
+      text="$(</dev/stdin)"
+      archived_stdin=1
+      if [[ ! -f "$file_path" && -n "$text" ]]; then
+        filename=${file_path##*/}
+        dest_file="$file_dir/archive/$filename"
+        if [[ -f "$dest_file" ]]; then
+          echo "$text" >>"$dest_file"
+        else
+          echo "Error: $dest_file is not a file" >&2
+          # Echo the text to illustrate that it hasn't been archived
+          echo "$text"
+        fi
+      fi
+    fi
 
-      if [[ ! -d "$destination_dir" ]]; then
-        echo "$destination_dir does not exist" >&2
+    if [[ -d "$file_path/../../projects/" ]]; then
+      # If the a parent directory is `projects` treat as a project, and archive
+      # to projects archive
+      dest_dir="$file_path/../../archive/projects/"
+
+      if [[ ! -d "$dest_dir" ]]; then
+        echo "Error: $dest_dir does not exist" >&2
         exit 1
       fi
 
       # Convert an absolute path which helps in the case where current directory
       # is just `.`
-      src_dir=$(
-        cd "$file_path"
-        pwd
-      )
-      mv "$src_dir" "$destination_dir"
+      src_dir=$(cd "$file_path"; pwd)
+      mv "$src_dir" "$dest_dir"
     else
-      if [[ -d "$file_path" ]]; then
-        # If it's not a project, treat it as a single file
-
-        # Not sure what the purpose of this was, but this makes a directory
-        # movable into the `archive/` path, which we don't want
-        # So instead exit here
-        echo "Error: \"$file_path/../../projects/\" isn't a directory or \"$file_path/README.md\" doesn't exit" >&2
-        exit 1
-
-        # Convert an absolute path which helps in the case where current
-        # directory is just `.`
-        # file_path=$(
-        #   cd "$file_path"
-        #   pwd
-        # )
-        # destination_dir="$file_path/../../archive/"
-      else
-        destination_dir="$(dirname $file_path)/archive/"
-      fi
-      if [[ ! -d "$destination_dir" ]]; then
-        echo "$destination_dir does not exist" >&2
+      # If the a parent directory is NOT `projects`, don't treat as a project,
+      # and archive to relative archive directory
+      dest_dir="$file_dir/archive/"
+      if [[ ! -d "$dest_dir" ]]; then
+        echo "Error: $dest_dir does not exist" >&2
         exit 1
       fi
-      mv "$file_path" "$destination_dir"
+      mv "$file_path" "$dest_dir"
     fi
   done
   exit 0
 fi
 
-while getopts ":t:h" option; do
-  case "$option" in
-    t)
-      title="$OPTARG"
-      ;;
-    h)
-      echo "Usage: command [-hl] [-t <title>] [-d <directory>]"
-      exit 0
-      ;;
-    :)
-      echo "Option -$OPTARG requires an argument" >&2
-      exit 1
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-  esac
-done
-
+title="$@"
 if [[ -z "${title:-}" ]]; then
-  text=$(cat)
+  text="$(</dev/stdin)"
   while read -r line; do
     if [[ -n "${title:-}" ]]; then
-      echo "Only use line at a time" >&2
+      echo "Error: Only use line at a time" >&2
       exit 1
     fi
     title="$line"
@@ -114,59 +92,28 @@ if [[ -z "${title:-}" ]]; then
 fi
 
 if [[ -z "$title" ]]; then
-  echo "No valid title found" >&2
+  echo "Error: No valid title found" >&2
   exit 1
 fi
 
-dir="projects"
+project_dir="projects"
 
-if [[ -n "$dir" ]]; then
-  # Remove leading and trailing slash and leading period
-  dir=${dir#\.}
-  dir=${dir#/}
-  dir=${dir%/}
-  if [[ -e "$dir" ]] && [[ ! -d "$dir" ]]; then
-    echo "$pwd/$dir exists and is not a dir" >&2
-    exit 1
-  elif [[ ! -e "$dir" ]]; then
-    echo "$PWD/$dir does not exist" >&2
-    exit 1
-  fi
-  # Don't try to always create this, just exit, this helps fail if the current
-  # directoy is unexpected, which is a common mistake.
-  # mkdir -p "$dir"
-  cd "$dir"
+# Remove leading and trailing slash and leading period
+project_dir=${project_dir#\.}
+project_dir=${project_dir#/}
+project_dir=${project_dir%/}
+if [[ -e "$project_dir" ]] && [[ ! -d "$project_dir" ]]; then
+  echo "Error: $project_dir exists and is not a dir" >&2
+  exit 1
+elif [[ ! -e "$project_dir" ]]; then
+  echo "Error: $project_dir does not exist" >&2
+  exit 1
 fi
 
-make_file() {
-  local name=$1
-  local dir=$2
-  local contents=$3
-  if [[ -e "$dir" ]] && [[ ! -d "$dir" ]]; then
-    echo "$dir is not a directory" >&2
-    exit 1
-  else
-    mkdir -p "$dir"
-  fi
-  mkdir -p "$dir"
-  local temp_path
-  temp_path=$(mktemp "$dir/$name-XXXX")
-  echo "$contents" >"$temp_path"
-  local destination_path="$dir/$name"
-  mv -n "$temp_path" "$destination_path"
-  if [[ -f "$temp_path" ]]; then
-    echo -n "$temp_path"
-  else
-    echo -n "$destination_path"
-  fi
-}
-
-contents="# $title"
-ext="md"
 slug=$(echo "$title" | ~/.bin/f_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
-readme_path=$(make_file "README.${ext}" "$dated_slug" "$contents")
-make_file "README.${ext}" "$dated_slug/archive" "$contents Archive" >/dev/null
-mkdir "$dated_slug/archive/projects"
-echo -n "[$title]($dir/$readme_path)"
+
+mkdir -p "$project_dir/$dated_slug/archive"
+
+echo -n "[$title]($project_dir/$dated_slug)"
