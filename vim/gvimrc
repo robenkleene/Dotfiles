@@ -8,3 +8,4 @@ highlight Cursor guibg=#00BB00
 autocmd GUIEnter * set vb t_vb=
 
 let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
+let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
