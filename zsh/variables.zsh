@@ -18,7 +18,9 @@ if [[ -d "$HOME/.bin-local" ]]; then
   path=(~/.bin-local $path)
 fi
 
-manpath=(~/.man ${(s/:/)MANPATH})
+# Setting `MANPATH` causes man for builtins to break unless a : as appended at
+# the end
+manpath=(~/.man ${(s/:/)MANPATH} :)
 typeset -U manpath
 export MANPATH="${(j/:/)manpath}"
 
