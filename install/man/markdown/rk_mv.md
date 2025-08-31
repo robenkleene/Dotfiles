@@ -1,0 +1,2 @@
+- `-p`: Create intermediary directories
+- `-n`: Don't overwrite existing files (`-n` overwrites by default)
