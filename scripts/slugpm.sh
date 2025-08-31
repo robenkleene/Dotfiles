@@ -15,12 +15,9 @@ fi
 safe_mv() {
   local src="$1"
   local dst="$2"
-  echo "src = $src"
-  echo "dst = $dst"
   local tmp="$(mktemp "${dst}.XXXXXX")" || return 1
-  echo "tmp = $tmp"
 
-  # mv -f -- "$src" "$tmp" || return 1
+  mv -f -- "$src" "$tmp" || return 1
 }
 
 if [[ "${1:-}" = "name" ]]; then
