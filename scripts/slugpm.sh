@@ -26,17 +26,6 @@ fi
 if [[ "${1:-}" = "archive" ]]; then
   # Args excluding the word "archive"
   args="${@:2}"
-  # If args `-eq 1` that means only "archive" was given as an argument
-  if [[ $# -eq 1 ]]; then
-    # `text=$(cat)` was giving problems with input shorter than one line
-    text="$(</dev/stdin)"
-    if [[ -z "${text:-}" ]]; then
-      echo "Error: Nothing to archive" >&2
-      exit 1
-    fi
-    exit 0
-  fi
-
   for file_path in "$args"; do
     # Remove leading and trailing slash and leading period
     # Can't remove leading dot because that will break if already in the
