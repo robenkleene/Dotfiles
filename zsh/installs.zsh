@@ -14,7 +14,9 @@ if command -v brew &> /dev/null; then
   export HOMEBREW_DIR
   HOMEBREW_DIR=$(brew --prefix)
 
-  manpath=($HOMEBREW_DIR/share/man ${(s/:/)MANPATH})
+  # Setting `MANPATH` causes man for builtins to break unless a : as appended at
+  # the end
+  manpath=($HOMEBREW_DIR/share/man ${(s/:/)MANPATH} :)
   typeset -U manpath
   export MANPATH="${(j/:/)manpath}"
 
