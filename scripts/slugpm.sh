@@ -36,7 +36,7 @@ if [[ "${1:-}" = "archive" ]]; then
 
     # In the case of multiple file paths, the first path is used as the
     # destination for piped text
-    if [[ ! -n "${archived_stdin:-}" ]]; then
+    if [[ ! -n "${archived_stdin:-}" && -p /dev/stdin ]]; then
       text="$(</dev/stdin)"
       archived_stdin=1
       if [[ ! -f "$file_path" && -n "$text" ]]; then
