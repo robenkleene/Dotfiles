@@ -12,6 +12,17 @@ if [[ "${1:-}" = "help" ]]; then
   exit 0
 fi
 
+safe_mv() {
+  local src="$1"
+  local dst="$2"
+  echo "src = $src"
+  echo "dst = $dst"
+  local tmp="$(mktemp "${dst}.XXXXXX")" || return 1
+  echo "tmp = $tmp"
+
+  # mv -f -- "$src" "$tmp" || return 1
+}
+
 if [[ "${1:-}" = "name" ]]; then
   args="${@:2}"
   if [[ "$args" == '.' ]]; then
@@ -33,6 +44,7 @@ if [[ "${1:-}" = "archive" ]]; then
     # file_path=${file_path#\.}
     file_path=${file_path%/}
     file_dir=${file_path%/*}
+    filename=${file_path##*/}
 
     # In the case of multiple file paths, the first path is used as the
     # destination for piped text
@@ -56,10 +68,10 @@ if [[ "${1:-}" = "archive" ]]; then
       exit 0
     fi
 
-    if [[ -d "$file_path/../../projects/" ]]; then
+    if [[ -d "$file_path/../../projects" ]]; then
       # If the a parent directory is `projects` treat as a project, and archive
       # to projects archive
-      dest_dir="$file_path/../../archive/projects/"
+      dest_dir="$file_path/../../archive/projects"
 
       if [[ ! -d "$dest_dir" ]]; then
         echo "Error: $dest_dir does not exist" >&2
@@ -69,16 +81,16 @@ if [[ "${1:-}" = "archive" ]]; then
       # Convert an absolute path which helps in the case where current directory
       # is just `.`
       src_dir=$(cd "$file_path"; pwd)
-      mv "$src_dir" "$dest_dir"
+      safe_mv "$src_dir" "$dest_dir/$filename"
     else
       # If the a parent directory is NOT `projects`, don't treat as a project,
       # and archive to relative archive directory
-      dest_dir="archive/"
+      dest_dir="archive"
       if [[ ! -d "$dest_dir" ]]; then
         echo "Error: $dest_dir does not exist" >&2
         exit 1
       fi
-      mv "$file_path" "$dest_dir"
+      safe_mv "$file_path" "$dest_dir/$filename"
     fi
   done
   exit 0
@@ -120,8 +132,16 @@ slug=$(echo "$title" | ~/.bin/f_slug)
 today=$(date +%Y-%m-%d)
 dated_slug="$today-$slug"
 
-mkdir -p "$project_dir/$dated_slug/archive"
+dst="$project_dir/$dated_slug"
+tmp="$(mktemp -d "$project_dir/$dated_slug.XXXXXX")"
+mkdir -p "$tmp/archive"
+
+if [[ ! -e "$tmp" ]]; then
+  result="$dst"
+else
+  result="$tmp"
+fi
 
 if [[ -n "${print_link:-}" ]]; then
-  echo -n "[$title]($project_dir/$dated_slug)"
+  echo -n "[$title]($result)"
 fi
