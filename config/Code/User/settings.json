@@ -10,6 +10,7 @@
     // Automatically open a parent git repository when opening a subfolder
     // (By default this prompts)
     "git.openRepositoryInParentFolders": "always",
+    // Fix option keys (e.g., to move by word) in the integrated terminal
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
         "editor.wordWrap": "on",
