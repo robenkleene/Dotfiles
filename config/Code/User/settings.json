@@ -46,6 +46,6 @@
     // Recommendations can still be seen with the `Extensions: Show Recommended
     // Extensions` command
     "workbench.remoteIndicator.showExtensionRecommendations": false,
-    "editor.fontSize": 13,
-    "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace"
 }
