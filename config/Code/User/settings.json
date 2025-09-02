@@ -47,5 +47,6 @@
     // Extensions` command
     "workbench.remoteIndicator.showExtensionRecommendations": false,
     "editor.fontSize": 14,
-    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 14
 }
