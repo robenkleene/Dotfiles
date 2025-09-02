@@ -36,13 +36,12 @@
     // Don't show `GitHub Copilot` autocompletion suggestions
     "github.copilot.editor.enableAutoCompletions": false,
     "update.showReleaseNotes": false,
-    // Disable extension recommendations popup
-    // Recommendations can still be seen with the `Extensions: Show Recommended
-    // Extensions` command
-    "workbench.remoteIndicator.showExtensionRecommendations": false,
-    "files.autoSave": "afterDelay",
     // Don't re-open windows when opening VS Code
     // Unfortunately, open files in a Workspace will still be opened when a
     // Workspace is re-opened and that cannot be turned off
-    "window.restoreWindows": "none"
+    // "window.restoreWindows": "none",
+    // Disable extension recommendations popup
+    // Recommendations can still be seen with the `Extensions: Show Recommended
+    // Extensions` command
+    "workbench.remoteIndicator.showExtensionRecommendations": false
 }
