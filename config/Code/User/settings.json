@@ -39,6 +39,8 @@
     // Don't re-open windows when opening VS Code
     // Unfortunately, open files in a Workspace will still be opened when a
     // Workspace is re-opened and that cannot be turned off
+    // Adding this back, it's useful when language servers aren't working to
+    // quickly restore everything
     // "window.restoreWindows": "none",
     // Disable extension recommendations popup
     // Recommendations can still be seen with the `Extensions: Show Recommended
