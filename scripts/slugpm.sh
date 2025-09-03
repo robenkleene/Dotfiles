@@ -5,8 +5,8 @@ set -euo pipefail
 if [[ "${1:-}" = "help" ]]; then
   echo "- slugpm: With standard input, creates a slug from the first line of standard input, and creates a directory at project/<slug>"
   echo "- slugpm <title>: Without standard input, creates a slug from <title>, and creates a directory at project/<slug>"
-  echo "- slugpm archive <filename>: With standard input, appends standard input to the end of a file named <filename> in archive/<filename> relative to filename"
-  echo "- slugpm archive <filename>: Without standard input, moves <filename> to archive/<filename> relative to <filename>"
+  echo "- slugpm archive <filename> -: Appends standard input to the end of a file named <filename> in archive/<filename> relative to filename"
+  echo "- slugpm archive <filename>: Moves <filename> to archive/<filename> relative to <filename>"
   echo "- slugpm archive <dirname>: Moves <dirname> to ../archive/<dirname> relative to <dirname>"
   echo "- slugpm name <dirname>: Print name of project excluding date"
   exit 0
@@ -32,31 +32,23 @@ if [[ "${1:-}" = "name" ]]; then
 fi
 
 if [[ "${1:-}" = "archive" ]]; then
-  # Args excluding the word "archive"
-  args="${@:2}"
-  for file_path in "$args"; do
-    # Remove leading and trailing slash and leading period
-    # Can't remove leading dot because that will break if already in the
-    # `file_path` so the entire path is `.`
-    # file_path=${file_path#\.}
-    file_path=${file_path%/}
-    file_dir=${file_path%/*}
-    filename=${file_path##*/}
 
-    # In the case of multiple file paths, the first path is used as the
-    # destination for piped text
-    if [[ ! -n "${archived_stdin:-}" && -p /dev/stdin ]]; then
+  # `archive <path> -`: Three args
+  if [[ "${@: -1}" = "-" && $# -eq 3 ]]; then
+    # Process standard input
+    file_path="$2"
+    file_path=${file_path%/}
+    filename=${file_path##*/}
+    if [[ ! -n "${archived_stdin:-}" ]]; then
       text="$(</dev/stdin)"
       archived_stdin=1
-      if [[ ! -f "$file_path" && -n "$text" ]]; then
-        filename=${file_path##*/}
+      if [[ -n "$text" ]]; then
         dest_file="archive/$filename"
         if [[ -f "$dest_file" ]]; then
           echo "$text" >>"$dest_file"
         else
           echo "Error: $dest_file is not a file" >&2
-          # Echo the text to illustrate that it hasn't been archived
-          echo "$text"
+          exit 1
         fi
       fi
       # Don't try to also move files if we parsed standard input. E.g.,
@@ -64,6 +56,18 @@ if [[ "${1:-}" = "archive" ]]; then
       # copy over that file doesn't make sense.
       exit 0
     fi
+  fi
+
+  # Args excluding the word "archive"
+  for file_path in "${@:2}"; do
+
+    # Remove leading and trailing slash and leading period
+    # Can't remove leading dot because that will break if already in the
+    # `file_path` so the entire path is `.`
+    # file_path=${file_path#\.}
+    file_path=${file_path%/}
+    file_dir=${file_path%/*}
+    filename=${file_path##*/}
 
     if [[ -d "$file_path/../../projects" ]]; then
       # If the a parent directory is `projects` treat as a project, and archive
