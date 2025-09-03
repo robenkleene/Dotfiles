@@ -18,6 +18,7 @@ safe_mv() {
   local tmp="$(mktemp "${dst}.XXXXXX")" || return 1
 
   mv -f -- "$src" "$tmp" || return 1
+  mv -n "$tmp" "$src"
 }
 
 if [[ "${1:-}" = "name" ]]; then
@@ -137,12 +138,13 @@ dst="$project_dir/$dated_slug"
 tmp="$(mktemp -d "$project_dir/$dated_slug.XXXXXX")"
 mkdir -p "$tmp/archive"
 
-if [[ ! -e "$tmp" ]]; then
-  result="$dst"
-else
-  result="$tmp"
-fi
+mv -n "$tmp" "$dst"
 
 if [[ -n "${print_link:-}" ]]; then
+  if [[ ! -e "$tmp" ]]; then
+    result="$dst"
+  else
+    result="$tmp"
+  fi
   echo -n "[$title]($result)"
 fi
