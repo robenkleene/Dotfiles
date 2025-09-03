@@ -1,7 +1,6 @@
-" set guifont=Berkeley\ Mono:h14
-" set guifont=SF\ Mono\ Medium:h14
-set guifont=Consolas:h14
-" set guifont=SF\ Mono\ Medium:h13
+" set guifont=Berkeley\ Mono:h13
+" set guifont=Consolas:h14
+set guifont=SF\ Mono\ Medium:h13
 
 set background=dark
 set guicursor=a:blinkon0
