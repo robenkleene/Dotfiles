@@ -1,4 +1,7 @@
-brew 'aspell'
+# Homebrew `aspell` is failing to install on macOS
+# brew 'aspell'
+# `ispell` installs instantly
+brew 'ispell'
 brew 'cscope'
 brew 'editorconfig'
 brew 'fd'

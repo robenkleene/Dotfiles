@@ -20,14 +20,16 @@ brew 'gpatch'
 
 # Editor
 brew 'vim'
-brew 'aspell'
+# Homebrew `aspell` is failing to install on macOS
+# brew 'aspell'
+# `ispell` installs instantly
+brew 'ispell'
 brew 'editorconfig'
 
 # Languages
 # JavaScript
 # Do not use homebrew `nvm` because it overrides `NVM_DIR` which causes issues.
-# Instead install `nvm` directly.
-# Ruby
+# Instead install `nvm` directly.  Ruby
 brew 'chruby'
 brew 'ruby-install'
 # Swift

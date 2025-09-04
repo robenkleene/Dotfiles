@@ -4,7 +4,8 @@
 
 (with-eval-after-load 'flyspell-mode
   ;; Spelling
-  (setq ispell-program-name "aspell")
+  ;; (setq ispell-program-name "aspell")
+  (setq ispell-program-name "ispell")
   (setq ispell-dictionary "english")
 
   ;; Don't prompt when saving a word to the dictionary
