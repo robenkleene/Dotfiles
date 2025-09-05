@@ -1,6 +1,7 @@
 - `git diff --relative`: Relative diff
 - `git diff --word-diff`: Diff by words
 - `git diff HEAD^`, `git diff HEAD~`: Only changes in most recent revision
+- `git diff <commit>^!`: Only changes in a specific revision
 
 # Branch Comparison Strategy
 
