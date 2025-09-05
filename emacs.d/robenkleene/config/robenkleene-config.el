@@ -188,12 +188,20 @@
 ;; Use `woman' prompt for man page completion (the default man page completion
 ;; always stalls, and the `woman' rendering has trouble with `pandoc' generated
 ;; `man' pages. Combining `woman' completion, and `man' rendering works well.)
-(advice-add 'man
-            :before
-            #'(lambda () (interactive
-                          (progn
-                            (require 'woman)
-                            (list (woman-file-name nil))))))
+(defadvice man (before rk/woman-prompt activate)
+  (interactive (progn
+                 (require 'woman)
+                 (list (woman-file-name nil)))))
+
+;; This doesn't work because it results in the selected man page name (e.g.,
+;; `rk_emacs') also being passed to the lambda function instead of being passed
+;; to the `man' called next
+;; (advice-add 'man
+;;             :before
+;;             #'(lambda () (interactive
+;;                           (progn
+;;                             (require 'woman)
+;;                             (list (woman-file-name nil))))))
 
 ;; Only show the tab bar if a window has more than one tab
 ;; (The default it to always show the tab bar after a tab command is used)
