@@ -18,7 +18,7 @@ compile_modified:
 		directory="$(DESTINATION)/$${file%/*}"; \
 		destination="$$directory/$$name.$(DEST_EXT)"; \
 		mkdir -p "$$directory" && \
-		osacompile -o "$$destination" "$$file"; \
+		osacompile -o "$$destination" "$$file" || true; \
 		done
 
 compile:
@@ -29,7 +29,7 @@ compile:
 		directory="$(DESTINATION)/$${file%/*}"; \
 		destination="$$directory/$$name.$(DEST_EXT)"; \
 		mkdir -p "$$directory" && \
-		osacompile -o "$$destination" "$$file"; \
+		osacompile -o "$$destination" "$$file" || true; \
 		done
 
 decompile:
@@ -55,6 +55,6 @@ decompile_modified:
 		directory="$(SOURCE)/$${file%/*}"; \
 		destination="$$directory/$$name.$(SOURCE_EXT)"; \
 		mkdir -p "$$directory" && \
-		osadecompile "$$file" > "$$destination"; \
+		osadecompile "$$file" > "$$destination" || true; \
 		sed -i '' -e :a -e '/^\n*$$/{$$d;N;ba' -e '}' "$$destination"; \
 		done
