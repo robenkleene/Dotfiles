@@ -1,5 +1,6 @@
 - `cargo test <term>`: Run all tests that match term
 - `cargo test cli::nested_delete -- --exact`: Run a test by exact name
+- `cargo test -- --list`: List available tests
 
 # Binary
 
