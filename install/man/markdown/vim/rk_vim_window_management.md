@@ -63,7 +63,7 @@
 - `gT`: Previous tab
 - `:tab <command>`: Open command in a new tab
 - `:[sp]lit +<command>`: Is supposed to work similarly for splits, but it's less predictable (e.g., `:split +tag <term>` seems to fail)
-- `:tabonly`: Close all tabs except for the current one
+- `:tabo[nly]`: Close all tabs except for the current one
 
 # Cursor Position in Window
 
