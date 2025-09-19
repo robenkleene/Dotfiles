@@ -12,5 +12,8 @@
 - `$nnn`: Hovered file (e.g., `open $nnn`)
 - `$d<number>`: Directory in context `<number>` (e.g., `cp "$f1" "$d3"`)
 - `$f<number>`: Hovered file in context `<number>` (e.g., `cp "$f1" "$d3"`)
-- `%j`: Repeat command with each file in selection (e.g., `printf "Searching for string in %s\n" "%j"; grep "string" "%j"`)
-- `%J`: Append each file in selection to end of command (e.g., `tar uvf archive.tar %J`)
+
+### These don't seem to work?
+
+- `%j`: Run command separately for each file in the selection (e.g., `echo %j`)
+- `%J`: Run command on all files in the selection (e.g., `echo %j`)

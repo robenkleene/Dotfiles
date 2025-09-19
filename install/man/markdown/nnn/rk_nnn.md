@@ -1,4 +1,3 @@
-- `␣`: Tag file
 - `^G`: Quit and `cd` (if `cd` on quit is configured to always happen, there's no way to not `cd` on quit)
 - `1` / `2` / `3` / `4`: Switch to tab
 - `nnn <file-path>`: Open `nnn` with file highlighted
@@ -9,7 +8,7 @@
 
 # Selection
 
-- `␣` / `+`: Toggle selection
+- `␣` / `+`: Toggle file selection
 - `a`: Select all
 - `A`: Invert selection
 
