@@ -28,9 +28,10 @@ E.g., \f[CR]open $nnn\f[R] will open the currently hovered file.
 .IP \[bu] 2
 \f[CR]$f<number>\f[R]: Hovered file in context \f[CR]<number>\f[R]
 (e.g., \f[CR]cp \[dq]$f1\[dq] \[dq]$d3\[dq]\f[R])
+.SS These don\[cq]t seem to work?
 .IP \[bu] 2
-\f[CR]%j\f[R]: Repeat command with each file in selection (e.g.,
-\f[CR]printf \[dq]Searching for string in %s\[rs]n\[dq] \[dq]%j\[dq]; grep \[dq]string\[dq] \[dq]%j\[dq]\f[R])
+\f[CR]%j\f[R]: Run command separately for each file in the selection
+(e.g., \f[CR]echo %j\f[R])
 .IP \[bu] 2
-\f[CR]%J\f[R]: Append each file in selection to end of command (e.g.,
-\f[CR]tar uvf archive.tar %J\f[R])
+\f[CR]%J\f[R]: Run command on all files in the selection (e.g.,
+\f[CR]echo %j\f[R])
