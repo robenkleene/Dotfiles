@@ -13,12 +13,17 @@ if [[ "${1:-}" = "help" ]]; then
 fi
 
 safe_mv() {
-  local src="$1"
-  local dst="$2"
-  local tmp="$(mktemp "${dst}.XXXXXX")" || return 1
+  # `mv -f -- "$src" "$tmp" || return 1` will fail if `$src` is a directory,
+  # because `mv -f` won't let a directory overwite a file, so commenting this
+  # out for now, just using `mv -n` and failing is probably fine for now.
+  #
+  # local src="$1"
+  # local dst="$2"
+  # local tmp="$(mktemp "${dst}.XXXXXX")" || return 1
 
-  mv -f -- "$src" "$tmp" || return 1
-  mv -n "$tmp" "$src"
+  # mv -f -- "$src" "$tmp" || return 1
+  # mv -n "$tmp" "$src"
+  mv -n "$1" "$2"
 }
 
 if [[ "${1:-}" = "name" ]]; then
