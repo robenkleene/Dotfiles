@@ -57,5 +57,5 @@ elif [[ -n "${TMUX:-}" ]]; then
 elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
-  cat > /tmp/robenkleene.transient/clipboard
+  tee /tmp/robenkleene.transient/clipboard | base64 -w 0 | xargs printf "\\e]52;c;%s\\a" >&2
 fi
