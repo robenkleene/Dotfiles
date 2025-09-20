@@ -6,7 +6,7 @@ set -euo pipefail
 
 if [[ $# -gt 1 ]]; then
   for arg in "$@"; do
-    if [[ "$arg" == "-d" ]]; then
+    if [[ "$arg" == "-t" ]]; then
       today=$(~/.bin/rk_today)
       args+="$today "
     else
