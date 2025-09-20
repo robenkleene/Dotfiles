@@ -27,13 +27,13 @@ if [[ -n "${today:-}" ]]; then
   prefix="$(~/.bin/rk_today)-"
 fi
 
-# `tr -dc '[:alnum:]\r\n. '`: Strip non-alphanumeric characters
-# `tr -s ' '`: Consolidate spaces to one space
-# `tr '[:upper:]' '[:lower:]'`: Lowercase
-# `tr ' ' '-'`: Replace spaces with hyphens
-# `tr '.' '-'`: Replace period with hyphens
-# `tr '/' '-'`: Replace slashes with hyphens
-# `awk '{$1=$1;print}'`: Strip leading & trailing whitespace
+# - `tr -dc '[:alnum:]\r\n. '`: Strip non-alphanumeric characters
+# - `tr -s ' '`: Consolidate spaces to one space
+# - `tr '[:upper:]' '[:lower:]'`: Lowercase
+# - `tr ' ./' '-'`: Replaces spaces, periods & slashes with hyphens
+# - `awk '{$1=$1;print}'`: Strip leading & trailing whitespace
+# - `sed 's/^\-*//'`: Delete leading hyphens (useful when converting markdown
+# list items to slugs)
 tr -dc '[:alnum:]\r\n.\-/ ' |
   tr -s ' ' | tr '[:upper:]' '[:lower:]' | awk '{$1=$1;print}' |
-  tr ' ' '-' | tr '.' '-' | tr '/' '-' | sed 's/^\-*//'
+  tr ' ./' '-' | sed 's/^\-*//' | sed "s/^/$prefix/"
