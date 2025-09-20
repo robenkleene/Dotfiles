@@ -15,5 +15,5 @@ if [[ $# -gt 1 ]]; then
   done
   echo "$args" | ~/.bin/f_slug
 else
-  ~/.bin/f_slug
+  ~/.bin/f_slug "$@"
 fi
