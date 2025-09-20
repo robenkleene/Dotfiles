@@ -27,19 +27,11 @@ augroup executable_files
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
 
-let g:yank_next = 0
-nnoremap <silent> "* :<C-U>let g:yank_next = 1<CR>
-vnoremap <silent> "* :<C-U>let g:yank_next = 1<CR>gv
-nnoremap <silent> "+ :<C-U>let g:yank_next = 1<CR>
-vnoremap <silent> "+ :<C-U>let g:yank_next = 1<CR>gv
-" This is because cut and pasting from the system clipboard pastes linewise
-" The problem with these is that it won't work to paste from the system
-" clipboard to Vim in a remote session, so disabling
-" cnoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
-" inoremap <silent> <C-r>* <C-r>=system('~/.bin/safepaste')<CR>
-" cnoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
-" inoremap <silent> <C-r>+ <C-r>=system('~/.bin/safepaste')<CR>
-augroup safecopy_yank
+augroup safecopy
   autocmd!
-  autocmd TextYankPost * if g:yank_next | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | let g:yank_next = 0 | end
+  " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
+  " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
+  " first delete the visual selection then paste, which means the visual
+  " selection will overwrite the clipboard
+  autocmd TextYankPost * if v:event["operator"] ==# 'y' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
 augroup END
