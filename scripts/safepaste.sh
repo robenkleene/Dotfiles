@@ -27,7 +27,7 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   if [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
     pbpaste
   else
-    TERM=xterm-256color tmux saveb - || cat /tmp/robenkleene.transient/clipboard 2>/dev/null
+    TERM=xterm-256color tmux saveb -
   fi
   # Prefer the system clipboard over tmux, otherwise things like `"*p` in Vim
   # won't paste from the system clipboard as expected
@@ -35,6 +35,4 @@ elif [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_sy
   pbpaste
 elif [[ -n "${TMUX:-}" ]]; then
   TERM=xterm-256color tmux saveb -
-else
-  cat /tmp/robenkleene.transient/clipboard 2>/dev/null || echo ''
 fi
