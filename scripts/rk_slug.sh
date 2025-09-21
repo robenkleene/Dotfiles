@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-
-
 if [[ $# -gt 1 ]]; then
   for arg in "$@"; do
     if [[ "$arg" == "-t" ]]; then
