@@ -22,20 +22,20 @@ text = "0xFFFFFF"
 
 [colors.normal]
 black = "#000000"
-red = "#D75F5F"
-green = "#5FD75F"
-yellow = "#D7D700"
-blue = "#5F87D7"
-magenta = "#D75FD7"
-cyan = "#00D7D7"
-white = "#FFFFFF"
-
-[colors.bright]
-black = "#878787"
 red = "#FF8787"
 green = "#87FF87"
 yellow = "#FFFF00"
 blue = "#87AFFF"
 magenta = "#FF87FF"
 cyan = "#00FFFF"
+white = "#FFFFFF"
+
+[colors.bright]
+black = "#878787"
+red = "#FFAF87"
+green = "#D7FF87"
+yellow = "#FFFFD7"
+blue = "#D7FFFF"
+magenta = "#FFAFFF"
+cyan = "#5FFFFF"
 white = "#D7D7D7"
