@@ -15,11 +15,15 @@ augroup END
 "augroup END
 
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-highlight Normal ctermbg=NONE guibg=NONE
+if !has('gui_running')
+  highlight Normal ctermbg=NONE guibg=NONE
+endif
 augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-  autocmd ColorScheme * highlight Normal ctermbg=NONE
+  if !has('gui_running')
+    autocmd ColorScheme * highlight Normal ctermbg=NONE
+  endif
 augroup END
 
 augroup executable_files

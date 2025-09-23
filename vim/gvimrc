@@ -10,3 +10,11 @@ autocmd GUIEnter * set vb t_vb=
 
 let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
 let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
+
+highlight NonText guibg=#141414
+highlight Normal guibg=#141414
+augroup override_colors
+  autocmd!
+  autocmd ColorScheme * highlight highlight NonText guibg=#141414
+  autocmd ColorScheme * highlight highlight Normal guibg=#141414
+augroup END
