@@ -8,14 +8,6 @@ zcompile .zshrc
 cd ~/.zsh
 for f in *.zsh; do zcompile "$f"; done
 
-# Installs
-
-# This flaps sometimes, probably between Apple Silicon and Intel
-# Probably better just to run this periodically after new installs
-# if type zoxide > /dev/null; then
-#   zoxide init zsh > ~/.zsh/zoxide.zsh
-# fi
-
 # Completion
 
 if [[ ! -e ~/.zfunc ]]; then

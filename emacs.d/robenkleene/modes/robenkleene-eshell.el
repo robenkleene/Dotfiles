@@ -94,8 +94,6 @@
      ;; - `eshell-visual-subcommands': For subcommands (e.g., `git show')
      ;; - `eshell-visual-options': For flags (e.g., `git --help')
      ;; Commands
-     (add-to-list 'eshell-visual-commands "n")
-     (add-to-list 'eshell-visual-commands "nnn")
      (add-to-list 'eshell-visual-commands "tig")
      ;; Subcommands
      (add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "dr" "show"))
@@ -105,18 +103,6 @@
      )
    )
 
-  (defun eshell/z (&rest args)
-    "Jump to directory."
-    (eshell/cd
-     (shell-command-to-string
-      (concat "zoxide query "
-              (apply 'eshell-flatten-and-stringify args)
-              " | tr -d '\\n'")
-      )
-     )
-    )
-
-  (add-hook 'eshell-directory-change-hook 'rk/z-add)
   )
 
 (provide 'robenkleene-eshell)
