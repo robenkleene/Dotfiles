@@ -22,8 +22,6 @@ source ~/.zsh/variables.zsh
 source ~/.zsh/installs.zsh
 # After installs so bindings take precedence over install bindings
 source ~/.zsh/bindings.zsh
-# Regenerate with `zoxide init zsh > ~/.zsh/zoxide.zsh`
-source ~/.zsh/zoxide.zsh
 
 # Functions before aliases so functions don't use aliases
 source ~/.zsh/functions.zsh
