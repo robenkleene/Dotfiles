@@ -16,7 +16,7 @@ comment=244
 
 # vcs
 # Enable vcs integration
-autoload -Uz vcs_info
+# autoload -Uz vcs_info
 # Disable unused vcs
 # zstyle ':vcs_info:*' disable bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
 # Style
