@@ -48,9 +48,9 @@
     // Open files in a new window, e.g., from the Finder
     "window.openFilesInNewWindow": "on",
     "workbench.remoteIndicator.showExtensionRecommendations": false,
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontSize": 14,
+    "editor.fontSize": 13,
+    "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 13,
     // Don't show the sidebar on the right by default
     "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
