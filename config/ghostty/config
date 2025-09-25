@@ -10,6 +10,9 @@ font-thicken = true
 
 theme = robenkleene
 
+# Disable the app icon badge because it gets stuck even if Ghostty has focus
+bell-features = no-attention
+
 # The blur setting has trouble sticking on 1.1.3
 # Try again on a new version
 # background-opacity = 0.9
