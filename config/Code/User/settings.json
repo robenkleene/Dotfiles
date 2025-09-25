@@ -45,8 +45,12 @@
     // Disable extension recommendations popup
     // Recommendations can still be seen with the `Extensions: Show Recommended
     // Extensions` command
+    // Open files in a new window, e.g., from the Finder
+    "window.openFilesInNewWindow": "on",
     "workbench.remoteIndicator.showExtensionRecommendations": false,
     "editor.fontSize": 14,
     "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    // Don't show the sidebar on the right by default
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
