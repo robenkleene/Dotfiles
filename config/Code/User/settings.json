@@ -14,12 +14,17 @@
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
         "editor.wordWrap": "on",
+        // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
+        // Disable autocompletion because it's distracting when writing prose
         "editor.quickSuggestions": {
             "other": false,
             "comments": false,
             "strings": false
-        }
+        },
+        // Don't highlight the current word, which is distracting and not useful
+        // in prose
+        "editor.occurrencesHighlight": "off"
     },
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
