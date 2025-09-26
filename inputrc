@@ -1,5 +1,7 @@
-"\e[1;3C": forward-word
-"\e[1;3D": backward-word
+# Prefix history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
 set enable-bracketed-paste On
 # `readline` can never support cut and paste integration because it doesn't
 # support running external processes

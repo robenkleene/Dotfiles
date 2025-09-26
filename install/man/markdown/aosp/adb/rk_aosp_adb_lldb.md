@@ -31,3 +31,11 @@ Connect to the server:
 ```
 gdb-remote localhost:5039
 ```
+
+# Optional
+
+Set the platform to Android (`gdb-remote localhost:5039`) should do this automatically.
+
+```
+platform select remote-android
+```
