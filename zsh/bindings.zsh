@@ -40,13 +40,22 @@ autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
 bindkey -e "^[m" copy-earlier-word
 
-_bash_backward_kill_word() {
+_backward_kill_word() {
   # `bash` consideres only alphanumeric characters as part of words 
   select-word-style bash
   zle backward-kill-word
   select-word-style $default_word_style
 }
-zle -N _bash_backward_kill_word
+zle -N _backward_kill_word
+
+_shell_backward_kill_word() {
+  local save_wordchars=$WORDCHARS
+  # Use default `WORDCHARS` that, e.g., includes `/`
+  WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
+  zle backward-kill-word
+  WORDCHARS=$save_wordchars
+}
+zle -N _shell_backward_kill_word
 
 _system_copy_line() {
   printf "%s" "$BUFFER" | ~/.bin/safecopy
@@ -99,12 +108,13 @@ zle -N bracketed-paste rk/bracketed-paste
 
 # `⌥⌫` to delete previous word
 # This works on Linux
-bindkey -e "^[${key[BackSpace]}" _bash_backward_kill_word
+bindkey -e "^[${key[BackSpace]}" _backward_kill_word
 # This is the only thing that seems to work on macOS
-bindkey -e "^[^?" _bash_backward_kill_word
+bindkey -e "^[^?" _backward_kill_word
 bindkey -e "^X^X" _system_kill_line
 bindkey -e "^[W" _system_copy_region_as_kill
 bindkey -e "^[w" _system_copy_region_as_kill
+bindkey -e "^w" _shell_backward_kill_word
 
 # Fix option forward / backward word, seems to work my default on macOS but
 # not Linux
