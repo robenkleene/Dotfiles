@@ -12,7 +12,7 @@ set main-view-date = relative-compact
 set mouse = true
 
 # Use `bash` for the `-n` option on `echo` to remove the trailing new line
-bind generic Y >bash -c "echo -n %(commit) | ~/.bin/safecopy"
+bind generic Y >bash -c "echo -n %(commit) | ~/.bin/nobin/_safecopy.sh"
 bind generic V >sh -c "git show %(commit) | vim -"
 
 # Make the selected line use `FFFFFF` instead of `white` because it's more
