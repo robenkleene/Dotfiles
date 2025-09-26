@@ -62,3 +62,8 @@ setopt hist_ignore_all_dups
 setopt nolistbeep
 # Just don't beep period
 # setopt nobeep
+
+# Remove the slash so moving by word is easier to edit paths (without this, it
+# just jumps to the beginning of the path)
+# Default: `*?_-.[]~=/&;!#$%^(){}<>`
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
