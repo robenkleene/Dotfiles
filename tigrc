@@ -17,4 +17,6 @@ bind generic V >sh -c "git show %(commit) | vim -"
 
 # Make the selected line use `FFFFFF` instead of `white` because it's more
 # readable on green
-color cursor color231 green bold
+# Just making this black foreground and white background because the default
+# white on green is hard to read
+color cursor black white bold
