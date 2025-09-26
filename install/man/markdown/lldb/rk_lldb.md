@@ -8,6 +8,7 @@
 - `↩`: Repeat last command
 - `q` / `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
 - `f` / `frame select 0` / `fr s 0` / `f 0`: Print the current frame information (e.g., current source code line)
+- `process interrupt`: Pause
 
 # Setup
 
