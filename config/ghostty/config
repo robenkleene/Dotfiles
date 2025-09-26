@@ -5,10 +5,10 @@
 # font-family = "SF Mono"
 # font-style = "Medium"
 
-font-size = 13
-font-thicken = true
+# font-size = 13
+# font-thicken = true
 
-theme = robenkleene
+# theme = robenkleene
 
 # Disable the app icon badge because it gets stuck even if Ghostty has focus
 bell-features = no-attention
