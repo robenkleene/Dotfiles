@@ -66,4 +66,8 @@ setopt nolistbeep
 # Remove the slash so moving by word is easier to edit paths (without this, it
 # just jumps to the beginning of the path)
 # Default: `'*?_-.[]~=/&;!#$%^(){}<>'`
-WORDCHARS='_-'
+# Add:
+# - `*`: For globs
+# - `&`: For specifying file handles (`2>&1`)
+# - `$`: For variables
+WORDCHARS='*$&_-'
