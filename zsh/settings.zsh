@@ -65,5 +65,5 @@ setopt nolistbeep
 
 # Remove the slash so moving by word is easier to edit paths (without this, it
 # just jumps to the beginning of the path)
-# Default: `*?_-.[]~=/&;!#$%^(){}<>`
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# Default: `'*?_-.[]~=/&;!#$%^(){}<>'`
+WORDCHARS='_-'

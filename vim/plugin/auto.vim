@@ -37,5 +37,5 @@ augroup safecopy
   " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
   " first delete the visual selection then paste, which means the visual
   " selection will overwrite the clipboard
-  autocmd TextYankPost * if v:event["operator"] ==# 'y' | call system('~/.bin/safecopy',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * if v:event["operator"] ==# 'y' | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
 augroup END
