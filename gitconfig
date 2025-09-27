@@ -22,3 +22,4 @@
 [alias]
 	root = rev-parse --show-toplevel
 	dr = diff --relative
+	sr = show --relative
