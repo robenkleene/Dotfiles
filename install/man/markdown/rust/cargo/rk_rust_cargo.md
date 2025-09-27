@@ -1,5 +1,6 @@
 - `cargo new <project>`: Create a new project
 - `cargo run`: Run current project (from the root directory)
+- `cargo fmt`: Format the project by running `rustfmt`
 - `cargo test`: Run tests for current project (from the root directory)
 - `cargo run --bin <filename>`: Run file in `src/bin`
 - `cargo test --bin <filename>`: Run tests for file in `src/bin`
