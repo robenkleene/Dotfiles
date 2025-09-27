@@ -8,6 +8,7 @@ merge = internal:merge3
 pager = less
 [alias]
 dr = diff --root .
+sr = diff --root . -c .
 cf = status --no-status --added --modified --change
 [committemplate]
 %unset emptymsg
