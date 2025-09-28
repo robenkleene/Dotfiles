@@ -60,7 +60,9 @@
     // This makes freeform text manipulation difficult, e.g., if a closing pair
     // has already been entered, adding the opening pair will then
     // erroneousnessly enter the closing pair
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
     // Don't show the sidebar on the right by default
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never"
 }
