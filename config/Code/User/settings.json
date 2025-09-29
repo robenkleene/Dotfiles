@@ -69,5 +69,6 @@
     // Don't show the sidebar on the right by default
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "editor.autoClosingQuotes": "never",
-    "editor.autoSurround": "never"
+    "editor.autoSurround": "never",
+    "workbench.colorTheme": "Default Light Modern"
 }
