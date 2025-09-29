@@ -67,7 +67,8 @@ setopt nolistbeep
 # just jumps to the beginning of the path)
 # Default: `'*?_-.[]~=/&;!#$%^(){}<>'`
 # Add:
-# - `*`: For globs
-# - `&`: For specifying file handles (`2>&1`)
-# - `$`: For variables
-WORDCHARS='*$&_-'
+# - `*`: Globs
+# - `&`: Specifying file handles (`2>&1`)
+# - `$`: Variables
+# - `|`: Pipes
+WORDCHARS='*$&_-|'
