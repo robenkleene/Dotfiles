@@ -62,6 +62,10 @@
     // has already been entered, adding the opening pair will then
     // erroneousnessly enter the closing pair
     "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    // This setting allows selecting text then entering a delimiter to surround
+    // that text
+    // "editor.autoSurround": "never",
     // Don't show the sidebar on the right by default
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "editor.autoClosingQuotes": "never",
