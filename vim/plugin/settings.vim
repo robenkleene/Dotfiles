@@ -59,3 +59,6 @@ if !has('nvim')
   " Automatically add `cscope find` queries to the quickfix list
   set cscopequickfix=s-,c-,d-,i-,t-,e-
 endif
+
+" Restore last cursor position
+silent! source $VIMRUNTIME/defaults.vim
