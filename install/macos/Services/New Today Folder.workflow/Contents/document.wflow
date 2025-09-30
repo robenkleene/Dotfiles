@@ -21,167 +21,6 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.2.1</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>defaultLocation</key>
-					<dict>
-						<key>isPathPopUp</key>
-						<true/>
-						<key>variableUUIDsInMenu</key>
-						<array/>
-					</dict>
-					<key>granularity</key>
-					<dict/>
-					<key>multipleSelection</key>
-					<dict/>
-					<key>promptMessage</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Ask for Finder Items.action</string>
-				<key>ActionName</key>
-				<string>Ask for Finder Items</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>defaultLocation</key>
-					<string>~/Desktop</string>
-					<key>granularity</key>
-					<integer>1</integer>
-					<key>multipleSelection</key>
-					<true/>
-					<key>promptMessage</key>
-					<string>Choose a Finder Item:</string>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.AskForFinderItems</string>
-				<key>CFBundleVersion</key>
-				<string>1.2.1</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<true/>
-				<key>CanShowWhenRun</key>
-				<false/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryFilesAndFolders</string>
-				</array>
-				<key>Class Name</key>
-				<string>AMAskForFinderItemsAction</string>
-				<key>InputUUID</key>
-				<string>32193897-68F6-4FE7-9978-44358274705B</string>
-				<key>Keywords</key>
-				<array>
-					<string>Find</string>
-					<string>Item</string>
-					<string>File</string>
-					<string>Folder</string>
-					<string>Ask</string>
-					<string>Choose</string>
-					<string>Prompt</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>026D1590-6F57-448E-B30A-4B0CD25700AA</string>
-				<key>UUID</key>
-				<string>73F4BD87-776B-401E-99AC-6A955897FF1B</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>granularity</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>multipleSelection</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-					<key>2</key>
-					<dict>
-						<key>default value</key>
-						<string>~/Desktop</string>
-						<key>name</key>
-						<string>defaultLocation</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>2</string>
-					</dict>
-					<key>3</key>
-					<dict>
-						<key>default value</key>
-						<string>Choose a Finder Item:</string>
-						<key>name</key>
-						<string>promptMessage</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>3</string>
-					</dict>
-				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
-				<key>isViewVisible</key>
-				<integer>1</integer>
-				<key>location</key>
-				<string>574.000000:274.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Ask for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array>
 						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
@@ -212,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set theDate to do shell script "date '+%Y-%m-%d'"	tell application "Finder"		repeat with thisFolder in input			if exists theDate of folder thisFolder then				set theCounter to 2				set theFilename to theDate &amp; " " &amp; theCounter				repeat while exists theFilename of folder thisFolder					set theCounter to theCounter + 1					set theFilename to theDate &amp; " " &amp; theCounter				end repeat				make new folder at thisFolder with properties {name:theFilename}			else				make new folder at thisFolder with properties {name:theDate}			end if		end repeat	end tell	return inputend run</string>
+					<string>on run {input, parameters}	set theDate to do shell script "date '+%Y-%m-%d'"	tell application "Finder"		repeat with thisFolder in input			if (exists file theDate of folder thisFolder) or (exists folder theDate of folder thisFolder) then				set theCounter to 2				set theFilename to theDate &amp; " " &amp; theCounter				repeat while (exists file theFilename of folder thisFolder) or (exists folder theFilename of folder thisFolder) or theCounter &gt; 99					set theCounter to theCounter + 1					set theFilename to theDate &amp; " " &amp; theCounter				end repeat				make new folder at thisFolder with properties {name:theFilename}			else				make new folder at thisFolder with properties {name:theDate}			end if		end repeat	end tell	return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -268,7 +107,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>574.000000:519.000000</string>
+				<string>574.000000:368.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -277,15 +116,7 @@ end run</string>
 		</dict>
 	</array>
 	<key>connectors</key>
-	<dict>
-		<key>78C8BA4F-450E-45A1-802F-28686ABDE7F6</key>
-		<dict>
-			<key>from</key>
-			<string>73F4BD87-776B-401E-99AC-6A955897FF1B - 73F4BD87-776B-401E-99AC-6A955897FF1B</string>
-			<key>to</key>
-			<string>27E58FA0-7553-46C5-9F66-4F4F28F9081C - 27E58FA0-7553-46C5-9F66-4F4F28F9081C</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>applicationBundleIDsByPath</key>
