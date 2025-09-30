@@ -12,7 +12,7 @@ font-style = "Medium"
 adjust-cell-width = "-3%"
 adjust-cell-height = "3%"
 
-# theme = robenkleene
+theme = robenkleene
 
 # Disable the app icon badge because it gets stuck even if Ghostty has focus
 bell-features = no-attention
