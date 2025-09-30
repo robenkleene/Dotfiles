@@ -31,8 +31,10 @@ palette = 14=#5FFFFF
 # Bright White
 palette = 15=#D7D7D7
 
-# Black
+# BBEdit Black
 background = #141414
+# Xcode Black
+background = #292A30
 # Kleene Purple 1
 # background = #211930
 # Kleene Purple 2
