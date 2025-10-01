@@ -52,6 +52,12 @@
 
 ;; Go to scratch buffer
 (setq inhibit-startup-message t)
+;; Set default `*scratch*' buffer message to empty, this makes it easy to use
+;; the scratch buffer in a different mode, e.g., `M-x markdown-mode'
+(setq initial-scratch-message "")
+;; Set the initial mode
+;; (setq initial-major-mode 'markdown-mode)
+(setq initial-major-mode 'text-mode)
 
 ;; Don't require two spaces for sentences.
 (setq sentence-end-double-space nil)
@@ -77,15 +83,7 @@
 (require 'recentf)
 (recentf-mode t)
 
-;; Remove window chrome
-; (when (fboundp 'tool-bar-mode)
-;   (tool-bar-mode -1))
-; (when (fboundp 'scroll-bar-mode)
-;   (scroll-bar-mode -1))
-; (when (fboundp 'horizontal-scroll-bar-mode)
-;   (horizontal-scroll-bar-mode -1))
-
-;; Restore cursor position
+;; Restore cursor position when re-editing a file
 (save-place-mode 1)
 
 ;; ffap
@@ -102,7 +100,7 @@
 ;; Mouse
 
 ;; Disable mouse highlighting
-(setq mouse-highlight nil)
+(setq mouse-highlight t)
 
 ;; Don't prompt about killing processes when quitting
 (setq confirm-kill-processes nil)
@@ -199,13 +197,6 @@
 ;; Only show the tab bar if a window has more than one tab
 ;; (The default it to always show the tab bar after a tab command is used)
 (setq tab-bar-show 1)
-
-;; Set default `*scratch*' buffer message to empty, this makes it easy to use
-;; the scratch buffer in a different mode, e.g., `M-x markdown-mode'
-(setq initial-scratch-message "")
-;; Set the initial mode
-;; (setq initial-major-mode 'markdown-mode)
-(setq initial-major-mode 'text-mode)
 
 ;; Automatically make shell scripts executable
 (add-hook 'after-save-hook
