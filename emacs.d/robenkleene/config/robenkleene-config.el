@@ -101,10 +101,6 @@
 
 ;; Mouse
 
-;; Disable clicking to follow links
-;; This interferes with using the mouse to select text, e.g., in terminal Emacs
-;; in Blink Shell
-(setq mouse-1-click-follows-link nil)
 ;; Disable mouse highlighting
 (setq mouse-highlight nil)
 
@@ -230,25 +226,26 @@
 ;; Clipboard
 ;; Only copy on yank with region to avoid overwritting the clipboard with other
 ;; kill ring commands like `C-k'
-(defun rk/safecopy (text &optional push)
-  ;; Do nothing if the region isn't active so that other commands like
-  ;; `kill-line', don't affect the system clipboard
-  (if (use-region-p)
-      (progn
-        (setenv "INSIDE_EMACS" "1")
-        (let (
-              (process-connection-type nil)
-              )
-          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_safecopy.sh")))
-            (unless (string))
-            (process-send-string proc text)
-            (process-send-eof proc)))
-        )
-    )
-  )
-(setq interprogram-cut-function 'rk/safecopy)
-;; Comment this out so that `C-y` can still be used to paste to the minibuffer
-;; in GUI Emacs
+;; Using this in GUI Emacs at all messes with the `kill-ring' so you can't kill
+;; and paste to other buffers, and be able to paste to the minibuffer (since
+;; `S-v' can't paste to the minibuffer).
+;; (defun rk/safecopy (text &optional push)
+;;   ;; Do nothing if the region isn't active so that other commands like
+;;   ;; `kill-line', don't affect the system clipboard
+;;   (if (use-region-p)
+;;       (progn
+;;         (setenv "INSIDE_EMACS" "1")
+;;         (let (
+;;               (process-connection-type nil)
+;;               )
+;;           (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_safecopy.sh")))
+;;             (unless (string))
+;;             (process-send-string proc text)
+;;             (process-send-eof proc)))
+;;         )
+;;     )
+;;   )
+;; (setq interprogram-cut-function 'rk/safecopy)
 ;; (setq interprogram-paste-function nil)
 
 (provide 'robenkleene-config)
