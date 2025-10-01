@@ -31,10 +31,14 @@ palette = 14=#5FFFFF
 # Bright White
 palette = 15=#D7D7D7
 
+# Black
+# background = #000000
 # BBEdit Black
+# Don't use true black because in some terminal emulators it makes the window
+# boundary hard to see
 background = #141414
 # Xcode Black
-background = #292A30
+# background = #292A30
 # Kleene Purple 1
 # background = #211930
 # Kleene Purple 2
