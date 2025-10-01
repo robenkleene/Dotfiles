@@ -48,7 +48,10 @@
 ;; Consolas is shifted slightly-upwards in Emacs, this is a problem originating
 ;; in the font file itself
 ;; (set-face-attribute 'default nil :font "Consolas-14:Regular")
-; (set-face-attribute 'default nil :font "Berkeley Mono-14:Regular")
+;; (set-face-attribute 'default nil :font "Berkeley Mono-14:Regular")
+
+;; Give just a bit of additional padding
+(setq-default line-spacing 0.1)
 
 ;; Save window state
 ;; Don't restore window state because it makes it hard to enforce that Emacs
