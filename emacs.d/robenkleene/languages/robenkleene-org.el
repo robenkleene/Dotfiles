@@ -119,25 +119,26 @@
   (require 'org-tempo)
 
   ;; Disable spell check in code blocks
-  (defun rk/org-mode-flyspell-verify-no-spelling (orig-fn &rest args)
-    (let* ((rlt (apply orig-fn args))
-           (begin-regexp "^[ \t]*#\\+begin_\\(src\\|html\\|latex\\)")
-           (end-regexp "^[ \t]*#\\+end_\\(src\\|html\\|latex\\)")
-           old-flag b e)
-      (when rlt
-        (save-excursion
-          (setq old-flag case-fold-search)
-          (setq case-fold-search t)
-          (setq b (re-search-backward begin-regexp nil t))
-          (when b (setq e (re-search-forward end-regexp nil t)))
-          (setq case-fold-search old-flag))
-        (when (and b e (< (point) e))
-          (setq rlt nil))))
-    rlt)
+  ;; This is causing an error when loading org mode
+  ;; (defun rk/org-mode-flyspell-verify-no-spelling (orig-fn &rest args)
+  ;;   (let* ((rlt (apply orig-fn args))
+  ;;          (begin-regexp "^[ \t]*#\\+begin_\\(src\\|html\\|latex\\)")
+  ;;          (end-regexp "^[ \t]*#\\+end_\\(src\\|html\\|latex\\)")
+  ;;          old-flag b e)
+  ;;     (when rlt
+  ;;       (save-excursion
+  ;;         (setq old-flag case-fold-search)
+  ;;         (setq case-fold-search t)
+  ;;         (setq b (re-search-backward begin-regexp nil t))
+  ;;         (when b (setq e (re-search-forward end-regexp nil t)))
+  ;;         (setq case-fold-search old-flag))
+  ;;       (when (and b e (< (point) e))
+  ;;         (setq rlt nil))))
+  ;;   rlt)
 
-  (advice-add 'org-mode-flyspell-verify
-              :around
-              #'rk/org-mode-flyspell-verify-no-spelling)
+  ;; (advice-add 'org-mode-flyspell-verify
+  ;;             :around
+  ;;             #'rk/org-mode-flyspell-verify-no-spelling)
 
   (add-hook 'org-mode-hook
             (lambda ()
