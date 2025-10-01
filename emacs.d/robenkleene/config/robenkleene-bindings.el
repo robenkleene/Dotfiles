@@ -70,8 +70,9 @@
             'notes-find-file-other-window)
 (define-key rk/bindings-minor-mode-map (kbd "C-g")
             'rk/keyboard-quit-dwim)
-(define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
-(define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
+;; These aren't usable until they support moving entire regions
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<down>") 'rk/move-line-down)
+;; (define-key rk/bindings-minor-mode-map (kbd "M-<up>") 'rk/move-line-up)
 
 (define-minor-mode rk/bindings-minor-mode
   "My bindings."
