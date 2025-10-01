@@ -247,7 +247,9 @@
     )
   )
 (setq interprogram-cut-function 'rk/safecopy)
-(setq interprogram-paste-function nil)
+;; Comment this out so that `C-y` can still be used to paste to the minibuffer
+;; in GUI Emacs
+;; (setq interprogram-paste-function nil)
 
 (provide 'robenkleene-config)
 ;; Local Variables:
