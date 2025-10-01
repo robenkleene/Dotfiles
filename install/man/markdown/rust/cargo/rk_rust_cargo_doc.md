@@ -1,3 +1,5 @@
 - `cargo doc --open`: Build and open documentation for all crates in a project (note this won't include `build-dependencies` and `dev-dependencies`)
 - `cargo doc -p <crate> --open`: Build and open documentation for a specific create (e.g., crates included in `build-dependencies` and `dev-dependencies` which aren't built by default)
 - `open target/doc/<crate>/index.html`: Open documentation directly without rebuilding (use the main project name for `<crate>` to open the default page)
+- `rm -rf target/doc`: Delete docs
+- `cargo clean`: Delete everything in `target/` which includes docs
