@@ -7,6 +7,9 @@
   ;; Also enables `dired-omit-mode'
   (require 'dired-x)
 
+  ;; This is `dired-find-file-other-window' by default
+  (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+
   ;; Don't ask `Kill buffer of' when deleting a buffer, just kill it
   (setq dired-clean-confirm-killing-deleted-buffers nil)
 
