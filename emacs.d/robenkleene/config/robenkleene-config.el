@@ -17,9 +17,6 @@
 ;; minibuffer command
 (setq ring-bell-function 'ignore)
 
-;; Disable the builtin clipboard support
-;; (setq select-enable-clipboard nil)
-
 ;; Set an environment variable to detect Emacs server
 ;; (Emacs server can persist across other shell environment settings [e.g.,
 ;; `TMUX' variable can no longer be trusted, so it needs to be handled
@@ -224,6 +221,11 @@
 ;; `term-mode' from Eshell or the `*Shell Command Output*' buffer from `M-!',
 ;; `view-mode' still needs to be set manually.
 ;; (setq view-read-only t)
+
+;; Disable the builtin clipboard support
+;; We still need builtin clipboard support for GUI because otherwise `S-v` can't
+;; paste into the minibuffer (it always pastes into the active document.
+;; (setq select-enable-clipboard nil)
 
 ;; Clipboard
 ;; Only copy on yank with region to avoid overwritting the clipboard with other
