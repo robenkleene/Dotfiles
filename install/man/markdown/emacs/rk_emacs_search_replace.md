@@ -7,6 +7,7 @@
 
 ## Incremental Search
 
+- `M-p` / `M-n`: Previous / next incremental search
 - `M-e`: Edit the current incremental search (normally focus isn't in the minibuffer during incremental search, it's in the document, this means to do more complex edits [e.g., to move by word], `M-e` should be used to move focus to the minibuffer first)
 - `C-g`: Cancel the current incremental search
 - `↩`: Go to the current match
