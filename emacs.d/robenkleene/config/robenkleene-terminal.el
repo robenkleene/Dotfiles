@@ -6,26 +6,26 @@
 ;; if it's different than the last paste
 ;; Disabled for now because we're using a single clipboard override for both GUI
 ;; and terminal Emacs
-; (setq rk/last-copy nil)
-; (defun rk/safecopy (text &optional push)
-;   ;; Do nothing if the region isn't active so that other commands like
-;   ;; `kill-line', don't affect the system clipboard
-;   (setenv "INSIDE_EMACS" "1")
-;   (let (
-;         (process-connection-type nil)
-;         )
-;     (let ((proc (start-process "safecopy" nil "~/.bin/nobin/_safecopy.sh")))
-;       (unless (string))
-;       (process-send-string proc text)
-;       (process-send-eof proc)))
-;   (setq rk/last-copy text)
-;   )
-; (defun rk/safepaste ()
-;   (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/nobin/_safecopy.sh")))
-;     (unless (string= result rk/last-copy)
-;       result)))
-; (setq interprogram-cut-function 'rk/safecopy)
-; (setq interprogram-paste-function 'rk/safepaste)
+;; (setq rk/last-copy nil)
+;; (defun rk/safecopy (text &optional push)
+;;   ;; Do nothing if the region isn't active so that other commands like
+;;   ;; `kill-line', don't affect the system clipboard
+;;   (setenv "INSIDE_EMACS" "1")
+;;   (let (
+;;         (process-connection-type nil)
+;;         )
+;;     (let ((proc (start-process "safecopy" nil "~/.bin/nobin/_safecopy.sh")))
+;;       (unless (string))
+;;       (process-send-string proc text)
+;;       (process-send-eof proc)))
+;;   (setq rk/last-copy text)
+;;   )
+;; (defun rk/safepaste ()
+;;   (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/nobin/_safecopy.sh")))
+;;     (unless (string= result rk/last-copy)
+;;       result)))
+;; (setq interprogram-cut-function 'rk/safecopy)
+;; (setq interprogram-paste-function 'rk/safepaste)
 
 ;; Enable mouse support
 (xterm-mouse-mode 1)
