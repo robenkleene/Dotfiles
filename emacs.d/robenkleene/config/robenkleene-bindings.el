@@ -53,16 +53,6 @@
             'query-replace-regexp)
 (define-key rk/bindings-minor-mode-map (kbd "C-M-%") 'query-replace)
 
-;; Z
-(define-key rk/bindings-minor-mode-map (kbd "M-g z")
-            'z)
-(define-key rk/bindings-minor-mode-map (kbd "C-x 4 z")
-            'z-other-window)
-(define-key rk/bindings-minor-mode-map (kbd "C-x t z")
-            'z-other-tab)
-(define-key rk/bindings-minor-mode-map (kbd "C-x 5 z")
-            'z-other-frame)
-
 ;; Misc
 (define-key rk/bindings-minor-mode-map (kbd "C-x C-r")
             'recentf-open)
