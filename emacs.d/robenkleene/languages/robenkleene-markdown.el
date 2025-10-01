@@ -68,6 +68,15 @@
               ;; paragraph won't work without this
               (setq-local paragraph-start "[[:blank:]]*\n")
               (setq-local paragraph-separate "[[:blank:]]*$")
+
+              ;; Disable spelling in Markdown code blocks
+              ;; This doesn't seem to work?
+              (setq-local flyspell-generic-check-word-predicate
+                          (lambda ()
+                            (let ((f (get-text-property (- (point) 1) 'face)))
+                              (not (memq f '(markdown-pre-face))))
+                            )
+                          )
               )
             )
 
