@@ -24,12 +24,6 @@
               (dired-hide-details-mode)
               ;; Auto-refresh on file system change
               (auto-revert-mode)
-
-              ;; Add to `z' The reason we do this in Emacs `dired-mode', but not
-              ;; say `netrw' in Vim is because Vim works more naturally with the
-              ;; terminal, so usually in Vim the important directory has already
-              ;; been added
-              (rk/z-add)
               )
             )
   )
