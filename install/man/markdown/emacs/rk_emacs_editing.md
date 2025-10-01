@@ -1,5 +1,6 @@
 - `C-j`: Insert a new line without indenting the next line
 - `C-o`: Open a split the current line, leaving the cursor on the current line (at the beginning of the line, create a insert a new line above, in the middle, split the line at the cursor, and at the end insert a new line below)
+- `C-a C-o`: Start editing a new line above by moving to the beginning of the line first
 
 # Uppercase, Lowercase & Capitalization
 
