@@ -7,7 +7,35 @@
 .IP \[bu] 2
 \f[CR]!!\f[R]: Run shell command on current line (i.e., shortcut for
 \f[CR]:.!\f[R])
-.SH Output in Echo Area
+.SH Variations
+.SS Replace Selection
+.IP \[bu] 2
+\f[CR]:\[aq]<,\[aq]>!sort\f[R]: Pipe visual selection through sort
+.IP \[bu] 2
+\f[CR]:%!sort\f[R]: Pipe file through sort
+.IP \[bu] 2
+\f[CR]!}\f[R]: Filter to the end of the current block through shell
+command (here \f[CR]}\f[R] is just used as the \f[CR]vim\f[R] motion to
+the end of the block)
+.SS Append to Buffer
+The space after \f[CR]:r\f[R] is not mandatory
+.IP \[bu] 2
+\f[CR]:r !ls\f[R]: Input the result of a shell command below the current
+line
+.IP \[bu] 2
+\f[CR]:0r !ls\f[R]: Input the result of a shell command at the beginning
+of the document
+.IP \[bu] 2
+These don\[cq]t work with interactive commands (their output is written
+to a temporary buffer)
+.SS New Buffer
+There\[cq]s no nice way to do this, it\[cq]s easier to just create a new
+buffer (\f[CR]:new\f[R]) paste the current document if you need it then
+run the command
+.IP \[bu] 2
+\f[CR]vnew | 0r !git blame #\f[R]: Trick to get blame output
+side\-by\-side with command
+.SS Run Lines in Buffer
 Note that the space after \f[CR]w\f[R] is mandatory!
 .IP \[bu] 2
 \f[CR]:.w !bash\f[R]: Current line
@@ -19,37 +47,10 @@ Note that the space after \f[CR]w\f[R] is mandatory!
 \f[CR]:\[aq]<,\[aq]>w !bash\f[R]: Visual selection (note this only works
 for \f[I]line\-wise\f[R] selection, sub\-line selection will not work!
 This is because \f[CR]:\f[R] \f[CR]ex\f[R] commands are all line based)
-.SH Replacing Selection
-.IP \[bu] 2
-\f[CR]:\[aq]<,\[aq]>!sort\f[R]: Pipe visual selection through sort
-.IP \[bu] 2
-\f[CR]:%!sort\f[R]: Pipe file through sort
-.IP \[bu] 2
-\f[CR]!}\f[R]: Filter to the end of the current block through shell
-command (here \f[CR]}\f[R] is just used as the \f[CR]vim\f[R] motion to
-the end of the block)
-.SH Appending Output to Current Buffer
-The space after \f[CR]:r\f[R] is not mandatory
-.IP \[bu] 2
-\f[CR]:r !ls\f[R]: Input the result of a shell command below the current
-line
-.IP \[bu] 2
-\f[CR]:0r !ls\f[R]: Input the result of a shell command at the beginning
-of the document
-.IP \[bu] 2
-These don\[cq]t work with interactive commands (their output is written
-to a temporary buffer)
-.SH Insert Mode
+.SS Insert Mode
 .IP \[bu] 2
 Use the expression register and \f[CR]system()\f[R] to insert the result
 of a shell command (e.g., \f[CR]<C\-r>=system(\[aq]pbpaste\[aq])\f[R])
-.SH Output in a New Buffer
-There\[cq]s no nice way to do this, it\[cq]s easier to just create a new
-buffer (\f[CR]:new\f[R]) paste the current document if you need it then
-run the command
-.IP \[bu] 2
-\f[CR]vnew | 0r !git blame #\f[R]: Trick to get blame output
-side\-by\-side with command
 .SH Special Characters
 .IP \[bu] 2
 \f[CR]!\f[R] always represents the previous shell command, unless
