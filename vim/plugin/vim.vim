@@ -6,7 +6,9 @@ endif
 set t_ZH=[3m
 set t_ZR=[23m
 
-set background=dark
+if $TERM_PROGRAM != "Apple_Terminal"
+  set background=dark
+endif
 
 " Indent
 " When opening lines, make it the same indent level as the current line
