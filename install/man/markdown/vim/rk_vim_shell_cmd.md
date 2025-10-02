@@ -1,7 +1,29 @@
 - `!`: Run shell command on visual selection (i.e., shortcut for `:!`)
 - `!!`: Run shell command on current line (i.e., shortcut for `:.!`)
 
-# Output in Echo Area
+# Variations
+
+## Replace Selection
+
+- `:'<,'>!sort`: Pipe visual selection through sort
+- `:%!sort`: Pipe file through sort
+- `!}`: Filter to the end of the current block through shell command (here `}` is just used as the `vim` motion to the end of the block)
+
+## Append to Buffer
+
+The space after `:r` is not mandatory
+
+- `:r !ls`: Input the result of a shell command below the current line
+- `:0r !ls`: Input the result of a shell command at the beginning of the document
+- These don't work with interactive commands (their output is written to a temporary buffer)
+
+## New Buffer
+
+There's no nice way to do this, it's easier to just create a new buffer (`:new`) paste the current document if you need it then run the command
+
+- `vnew | 0r !git blame #`: Trick to get blame output side-by-side with command
+
+## Run Lines in Buffer
 
 Note that the space after `w` is mandatory!
 
@@ -10,29 +32,9 @@ Note that the space after `w` is mandatory!
 - `:%w !bash`: File
 - `:'<,'>w !bash`: Visual selection (note this only works for *line-wise* selection, sub-line selection will not work! This is because `:` `ex` commands are all line based)
 
-# Replacing Selection
-
-- `:'<,'>!sort`: Pipe visual selection through sort
-- `:%!sort`: Pipe file through sort
-- `!}`: Filter to the end of the current block through shell command (here `}` is just used as the `vim` motion to the end of the block)
-
-# Appending Output to Current Buffer
-
-The space after `:r` is not mandatory
-
-- `:r !ls`: Input the result of a shell command below the current line
-- `:0r !ls`: Input the result of a shell command at the beginning of the document
-- These don't work with interactive commands (their output is written to a temporary buffer)
-
-# Insert Mode
+## Insert Mode
 
 - Use the expression register and `system()` to insert the result of a shell command (e.g., `<C-r>=system('pbpaste')`)
-
-# Output in a New Buffer
-
-There's no nice way to do this, it's easier to just create a new buffer (`:new`) paste the current document if you need it then run the command
-
-- `vnew | 0r !git blame #`: Trick to get blame output side-by-side with command
 
 # Special Characters
 
