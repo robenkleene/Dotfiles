@@ -71,5 +71,6 @@
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     // The minimap isn't useful enough to always have on
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Default Light Modern"
 }
