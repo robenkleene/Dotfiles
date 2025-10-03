@@ -66,9 +66,12 @@ setopt nolistbeep
 # Remove the slash so moving by word is easier to edit paths (without this, it
 # just jumps to the beginning of the path)
 # Default: `'*?_-.[]~=/&;!#$%^(){}<>'`
+# Word characters are jumped over if part of a word, but stopped at if
+# surrounded by white space
 # Add:
-# - `*`: Globs
-# - `&`: Specifying file handles (`2>&1`)
-# - `$`: Variables
-# - `|`: Pipes
-WORDCHARS='*$&_-|'
+# - Add `*` to jump over globs
+# - Add `&` to jump over file descriptors (`2>&1`)
+# - Add `$` to jump over variables
+# - Add `|` to stop at pipes
+# - Remove `_` and `-` to stop when editing hyphenated words
+WORDCHARS='*$&|'
