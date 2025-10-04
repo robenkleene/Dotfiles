@@ -55,6 +55,8 @@
     // Open files in a new window, e.g., from the Finder
     "window.openFilesInNewWindow": "on",
     "editor.fontSize": 13,
+    // Use the medium variant
+    // "editor.fontWeight": "500",
     "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 13,
     // Don't automatically insert closing pairs
