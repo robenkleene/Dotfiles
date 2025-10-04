@@ -39,7 +39,9 @@
     // Disable hints in the terminal, e.g., `ask GitHub Copilot`
     "terminal.integrated.initialHint": false,
     // Don't show `GitHub Copilot` autocompletion suggestions
-    "github.copilot.editor.enableAutoCompletions": false,
+    // Old option, deprecated?
+    // "github.copilot.editor.enableAutoCompletions": false,
+    "editor.inlineSuggest.enabled": false,
     "update.showReleaseNotes": false,
     // Don't re-open windows when opening VS Code
     // Unfortunately, open files in a Workspace will still be opened when a
