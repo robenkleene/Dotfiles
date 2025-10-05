@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+cd "$(dirname "$0" || exit 1)"
+
 # VS Code
 vscode_path="$HOME/.config/Code"
 vscode_insiders_path="$HOME/.config/Code - Insiders"
@@ -19,3 +21,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
     ln -s "$vscode_path" "$HOME/Library/Application Support/Code - Insiders"
   fi
 fi
+
+command -v code-insiders && code-insiders --install-extension build/robenkleene.vsix;
+command -v code && code --install-extension build/robenkleene.vsix;
