@@ -13,6 +13,7 @@
     // Fix option keys (e.g., to move by word) in the integrated terminal
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
+        "editor.rulers": null,
         "editor.wordWrap": "on",
         // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
@@ -25,6 +26,9 @@
         // Don't highlight the current word, which is distracting and not useful
         // in prose
         "editor.occurrencesHighlight": "off"
+    },
+    "[rust]": {
+        "editor.rulers": [100],
     },
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
@@ -75,6 +79,7 @@
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     // The minimap isn't useful enough to always have on
+    "editor.rulers": [80],
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Default Light Modern"
 }
