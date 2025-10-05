@@ -6,4 +6,4 @@ npm_install:
 	npm install
 
 build:
-	npx vsce package --out ../build/robenkleene.vsix
+	npx vsce package --out ../compiled/robenkleene.vsix
