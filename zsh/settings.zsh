@@ -68,10 +68,10 @@ setopt nolistbeep
 # Default: `'*?_-.[]~=/&;!#$%^(){}<>'`
 # Word characters are jumped over if part of a word, but stopped at if
 # surrounded by white space
-# Add:
-# - Add `*` to jump over globs
-# - Add `&` to jump over file descriptors (`2>&1`)
-# - Add `$` to jump over variables
-# - Add `|` to stop at pipes
-# - Remove `_` and `-` to stop when editing hyphenated words
-WORDCHARS='*$&|'
+# There's an inherent tension between being in `WORDCHARS` meaning stop at if
+# sorrounded by whitespace, or jump over if in a word, so it's best to just
+# treat it as the semantic definition of a word.
+# - `-` and `_` as part of variables
+# - `$` as specifying a variable
+# - `&` as specifying a file descriptor
+WORDCHARS='$&_-'
