@@ -7,11 +7,11 @@ palette = 2=#87FF87
 # Yellow
 palette = 3=#FFFF00
 # Blue
-palette = 4=#87AFFF
+palette = 4=#5FAFFF
 # Magenta
 palette = 5=#FF87FF
 # Cyan
-palette = 6=#00FFFF
+palette = 6=#5FFFFF
 # White
 palette = 7=#FFFFFF
 # Bright Black
@@ -19,15 +19,15 @@ palette = 8=#878787
 # Bright Red
 palette = 9=#FFAF87
 # Bright Green
-palette = 10=#D7FF87
+palette = 10=#AFFF87
 # Bright Yellow
-palette = 11=#FFFFD7
+palette = 11=#FFFFAF
 # Bright Blue
-palette = 12=#D7FFFF
+palette = 12=#87AFFF
 # Bright Magenta
 palette = 13=#FFAFFF
 # Bright Cyan
-palette = 14=#5FFFFF
+palette = 14=#AFFFFF
 # Bright White
 palette = 15=#D7D7D7
 
