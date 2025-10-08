@@ -7,7 +7,8 @@
 
 font-family = "SF Mono"
 font-style = "Medium"
-adjust-cell-width = "-9%"
+adjust-cell-width = "-5%"
+# adjust-cell-width = "-9%"
 adjust-cell-height = "3%"
 # SF Mono looks better with the width adjustment for some reason
 # font-thicken = true
