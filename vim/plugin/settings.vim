@@ -62,3 +62,9 @@ endif
 
 " Restore last cursor position
 silent! source $VIMRUNTIME/defaults.vim
+
+" Suppress "You discovered the command-line window!" when the command line is
+" entered for the first time
+if !has('nvim')
+  autocmd! vimHints
+endif
