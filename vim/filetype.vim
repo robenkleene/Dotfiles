@@ -9,6 +9,7 @@ augroup setup_filetype
   au! BufRead,BufNewFile *.m setfiletype objc
   au! BufRead,BufNewFile *.pde setfiletype java
   au! BufRead,BufNewFile *.plist setfiletype xml
+  au! BufRead,BufNewFile *.opml setfiletype xml
 
   " Filename
   au! BufRead,BufNewFile Brewfile setfiletype conf
