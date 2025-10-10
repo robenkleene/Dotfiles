@@ -27,6 +27,8 @@ set notermguicolors
 
 " Support remote clipboard, note that only copy is supported remotely, e.g.,
 " `"*p` to paste from the remote clipboard will fail.
+" Note: This currently isn't working, fails with an error running
+" `_safecopy.sh`
 let g:clipboard = {
       \ 'name': 'safe',
       \ 'copy': {

@@ -40,5 +40,6 @@ augroup safecopy
   " selection will overwrite the clipboard
   " Don't copy to system clipboard if the register is `*` or `+`, since those
   " already copy to the system clipboard
+  " Note: This currently isn't working from `nvim` (fails silently)
   autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
 augroup END
