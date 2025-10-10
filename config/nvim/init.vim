@@ -30,12 +30,12 @@ set notermguicolors
 let g:clipboard = {
       \ 'name': 'safe',
       \ 'copy': {
-      \    '+': '~/.bin/nobin/_safecopy.sh',
-      \    '*': '~/.bin/nobin/_safecopy.sh',
+      \    '+': expand('~/.bin/nobin/_safecopy.sh'),
+      \    '*': expand('~/.bin/nobin/_safecopy.sh'),
       \ },
       \ 'paste': {
-      \    '+': '~/.bin/nobin/_safepaste.sh',
-      \    '*': '~/.bin/nobin/_safepaste.sh',
+      \    '+': expand('~/.bin/nobin/_safepaste.sh'),
+      \    '*': expand('~/.bin/nobin/_safepaste.sh'),
       \  },
       \ 'cache_enabled': 1,
       \ }
