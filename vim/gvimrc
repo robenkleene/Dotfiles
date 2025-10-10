@@ -10,16 +10,15 @@ let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expa
 let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
 
 " Background
-set background=light
-" set guicursor=a:blinkon0
+" set background=light
 " BBEdit Dark
-" highlight NonText guibg=#141414
-" highlight Normal guibg=#141414
-" augroup override_colors
-"   autocmd!
-"   autocmd ColorScheme * highlight highlight NonText guibg=#141414
-"   autocmd ColorScheme * highlight highlight Normal guibg=#141414
-" augroup END
+highlight NonText guibg=#141414
+highlight Normal guibg=#141414
+augroup override_colors
+  autocmd!
+  autocmd ColorScheme * highlight highlight NonText guibg=#141414
+  autocmd ColorScheme * highlight highlight Normal guibg=#141414
+augroup END
 
 set guicursor=a:blinkon0
 " Setting the cursor color has to be after setting the theme
