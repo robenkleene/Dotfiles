@@ -25,20 +25,20 @@ set notermguicolors
 " Using Vim instead
 " The problem with using Vim is that Vim doesn't support `"*` on Linux
 
-" Try disabling this for now, and just doing a simple `"*` means copy next
-" yank to clipboard
-" let g:clipboard = {
-"       \ 'name': 'safe',
-"       \ 'copy': {
-"       \    '+': 'safecopy',
-"       \    '*': 'safecopy',
-"       \  },
-"       \ 'cache_enabled': 1,
-"       \ }
-      " \ },
-      " \ 'paste': {
-      " \    '+': 'safepaste -s',
-      " \    '*': 'safepaste -s',
+" Support remote clipboard, note that only copy is supported remotely, e.g.,
+" `"*p` to paste from the remote clipboard will fail.
+let g:clipboard = {
+      \ 'name': 'safe',
+      \ 'copy': {
+      \    '+': '~/.bin/nobin/_safecopy.sh',
+      \    '*': '~/.bin/nobin/_safecopy.sh',
+      \ },
+      \ 'paste': {
+      \    '+': '~/.bin/nobin/_safepaste.sh',
+      \    '*': '~/.bin/nobin/_safepaste.sh',
+      \  },
+      \ 'cache_enabled': 1,
+      \ }
 
 " Don't load the default `:Man` command, use the `vim-man` plugin instead
 " because it supports `<tab>` complection with `MANPATH`
