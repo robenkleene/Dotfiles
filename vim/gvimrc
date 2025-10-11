@@ -2,7 +2,7 @@
 " set guifont=Consolas:h14
 " set guifont=SF\ Mono\ Medium:h13
 set guifont=SF\ Mono:h13
-set linespace=1
+set linespace=2
 
 " Disable audible bell
 autocmd GUIEnter * set vb t_vb=
