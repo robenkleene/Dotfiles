@@ -10,11 +10,16 @@ the next / previous file in the argument list
 \f[CR]:argu[ment] [count]\f[R]: Go to argument by index
 (\f[CR]:args\f[R] increments indexes top to bottom then left to right
 starting from one)
+.IP \[bu] 2
+\f[CR]:arga[dd] {name}\f[R]: Add \f[CR]{name}\f[R] to the argument list
+(or current buffer if \f[CR]{name}\f[R] is omitted)
 .SH Populating
 .IP \[bu] 2
-\f[CR]:args <backtick>fd foo<backtick>\f[R]: Populate \f[CR]arglist\f[R]
-with result of external command (using \f[CR]backtick\-expansion\f[R]).
-Note if the command contains a wildcard, e.g.,
+\f[CR]:args <backtick>fd foo<backtick>\f[R]: \f[I]Replace\f[R] (i.e.,
+this replaces, not adds to, the existing \f[CR]arglist\f[R]) the
+\f[CR]arglist\f[R] with result of external command (using
+\f[CR]backtick\-expansion\f[R]).
+Note: if the command contains a wildcard, e.g.,
 \f[CR]args <backtick>fd \[aq]*.js\[aq]<backtick>\f[R], then you must
 wrap the search term in quotes to prevent \f[CR]vim\f[R] from trying to
 expand the \f[CR]*\f[R].
