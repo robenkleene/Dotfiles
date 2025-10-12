@@ -62,5 +62,5 @@ dc () {
   fc -p $HISTFILE $HISTSIZE $SAVEHIST
 
   # TA-DA!
-  print "Deleted '$HISTORY_IGNORE' from history."
+  print "Deleted '$HISTORY_IGNORE' from history"
 }

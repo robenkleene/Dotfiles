@@ -5,5 +5,5 @@ function! commands#Dc(term) abort
   endif
   let l:result = histget(':', l:term)
   call histdel(':', l:term)
-  echo "Deleted '".l:result."' from history."
+  echo "Deleted '".l:result."' from history"
 endfunction
