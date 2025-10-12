@@ -4,7 +4,7 @@
 # Bindings
 
 - `<C-l>`: Refresh the file list
-- `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`, note this also means `:lcd -` can be used to change to the previous directory instead of `:cd -`)
+- `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`, note this also means `:lcd -` can be used to change to the previous directory instead of `:cd -`, to do a `cd`, use `:cd %`)
 - `d`: Create directory
 - `D`: Delete file
 - `R`: Rename (or move) file
