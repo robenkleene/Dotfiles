@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'robenkleene/partshell.vim'
 Plug 'robenkleene/gotogrep.vim'
 Plug 'robenkleene/gotodiff.vim'
+Plug 'robenkleene/dirstack.vim'
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
