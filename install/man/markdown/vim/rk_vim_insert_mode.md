@@ -4,7 +4,7 @@ There's no `C-b` / `C-e` to go to the beginning and end of line, like on the com
 - `C-a`: Insert last inserted text
 - `C-e`: Insert character below the cursor (more useful than it sounds, e.g., can be used to quickly insert Markdown checkbox list items on a new line)
 - `C-@`: Insert last inserted text and leave insert mode
-- `C-d` / `C-t`: indent / outdent line
+- `C-d` / `C-t`: indent / unindent line
 - `C-g u`: Split undo
 - `C-g j` / `C-g k`: Start a new line from same column insert was started at
 - `C-p` / `C-n`: Insert word from earlier / later in buffer
