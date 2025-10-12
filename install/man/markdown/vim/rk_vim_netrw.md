@@ -4,7 +4,7 @@
 # Bindings
 
 - `<C-l>`: Refresh the file list
-- `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`)
+- `cd`: Changes local directory to current directory (this does an `:lcd` not `:cd`, note this also means `:lcd -` can be used to change to the previous directory instead of `:cd -`)
 - `d`: Create directory
 - `D`: Delete file
 - `R`: Rename (or move) file
@@ -21,9 +21,8 @@
 
 # Mark
 
-- `mf`: Mark file
-- `mF`: Unmark file
-- `mu`: Unmark all
+- `mf` / `mF`: Toggle mark on / off for file
+- `mu`: Toggle mark off for all files
 - `mt`: Set mark target directory (note this uses the selected directory, not the current directory!)
 - `mc`: Copy marked files to target directory
 - `mm`: Move marked files to target directory

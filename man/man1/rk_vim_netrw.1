@@ -10,7 +10,9 @@
 \f[CR]<C\-l>\f[R]: Refresh the file list
 .IP \[bu] 2
 \f[CR]cd\f[R]: Changes local directory to current directory (this does
-an \f[CR]:lcd\f[R] not \f[CR]:cd\f[R])
+an \f[CR]:lcd\f[R] not \f[CR]:cd\f[R], note this also means
+\f[CR]:lcd \-\f[R] can be used to change to the previous directory
+instead of \f[CR]:cd \-\f[R])
 .IP \[bu] 2
 \f[CR]d\f[R]: Create directory
 .IP \[bu] 2
@@ -35,11 +37,9 @@ showing metadata)
 \f[CR]t\f[R]: Open file in new tab
 .SH Mark
 .IP \[bu] 2
-\f[CR]mf\f[R]: Mark file
+\f[CR]mf\f[R] / \f[CR]mF\f[R]: Toggle mark on / off for file
 .IP \[bu] 2
-\f[CR]mF\f[R]: Unmark file
-.IP \[bu] 2
-\f[CR]mu\f[R]: Unmark all
+\f[CR]mu\f[R]: Toggle mark off for all files
 .IP \[bu] 2
 \f[CR]mt\f[R]: Set mark target directory (note this uses the selected
 directory, not the current directory!)
