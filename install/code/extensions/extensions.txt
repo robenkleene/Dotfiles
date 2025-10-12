@@ -1,0 +1,17 @@
+editorconfig.editorconfig
+foxundermoon.shell-format
+github.copilot
+github.copilot-chat
+llvm-vs-code-extensions.lldb-dap
+llvm-vs-code-extensions.vscode-clangd
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
+naumovs.color-highlight
+rust-lang.rust-analyzer
+swiftlang.swift-vscode
+timonwong.shellcheck
+tobiah.language-pde
+undefined_publisher.robenkleene
+vadimcn.vscode-lldb
+xadillax.viml
