@@ -54,7 +54,8 @@ augroup auto_insert
 augroup END
 
 " Disable swap files, this allows multiple instances to edit the same file
-set noswapfile
+" Don't do this to be able to recover unnamed buffers if vim crashes
+" set noswapfile
 " Prefer spaces to tabs
 set expandtab
 
@@ -89,8 +90,9 @@ set hidden
 " files that are backed by buffers and force quit modified buffers that aren't
 " backed by files (e.g., what you'd think `:wqa` with a bang would do, but it
 " doesn't support a bang).
-augroup nofilename_nofile
-  autocmd!
-  " Don't prompt for saving buffers with no file
-  autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
-augroup END
+" Disabling this beause it means swapfiles aren't created
+" augroup nofilename_nofile
+"   autocmd!
+"   " Don't prompt for saving buffers with no file
+"   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
+" augroup END
