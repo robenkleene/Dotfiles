@@ -74,4 +74,5 @@ setopt nolistbeep
 # - `-` and `_` as part of variables
 # - `$` as specifying a variable
 # - `&` as specifying a file descriptor
-WORDCHARS='$&_-'
+# Just try the empty string for this, which might be the most natural
+WORDCHARS=''
