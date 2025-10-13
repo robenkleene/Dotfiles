@@ -1,0 +1,2 @@
+- `vim -r`: Launch Vim showing where swap files are located (e.g., have an open instance of Vim with unsaved changes, then run `vim -r` in the same directory to list the swap files)
+- `:recover`: Recover from a swap file
