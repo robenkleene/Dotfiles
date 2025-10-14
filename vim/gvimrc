@@ -17,8 +17,8 @@ highlight NonText guibg=#141414
 highlight Normal guibg=#141414
 augroup override_colors
   autocmd!
-  autocmd ColorScheme * highlight highlight NonText guibg=#141414
-  autocmd ColorScheme * highlight highlight Normal guibg=#141414
+  autocmd ColorScheme * highlight NonText guibg=#141414
+  autocmd ColorScheme * highlight Normal guibg=#141414
 augroup END
 
 set guicursor=a:blinkon0
