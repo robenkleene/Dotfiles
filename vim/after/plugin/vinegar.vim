@@ -1,3 +1,8 @@
+" Hide hidden files by default
+" This is taking `let g:netrw_list_hide` when hidden files are hidden (e.g.,
+" after `gh` and setting that value)
+let g:netrw_list_hide = '^\.\.\=/\=$,\(^\|\s\s\)\zs\.\S\+'
+
 " Hack to fix selecting the current file in `vinegar` by replacing `opendir`
 " `edit` with `Explore`
 " nnoremap <silent> <expr> - (&filetype ==# 'netrw' ? '<Plug>VinegarUp' : ':call <SID>opendir(\'Explore\')<CR>')
