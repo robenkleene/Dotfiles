@@ -1,4 +1,5 @@
-setlocal readonly nomodifiable
+" Try leaving this modifiable for more default behavior
+" setlocal readonly nomodifiable
 setlocal foldlevel=2
 
 " Matches `netrw` `p` to preview file
