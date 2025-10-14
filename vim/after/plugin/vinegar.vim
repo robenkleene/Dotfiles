@@ -1,6 +1,8 @@
 " Hide hidden files by default
 " This is taking `let g:netrw_list_hide` when hidden files are hidden (e.g.,
 " after `gh` and setting that value)
+" This is particularly important because it hides Vim's swap files (e.g.,
+" `.swp`)
 let g:netrw_list_hide = '^\.\.\=/\=$,\(^\|\s\s\)\zs\.\S\+'
 
 " Hack to fix selecting the current file in `vinegar` by replacing `opendir`
