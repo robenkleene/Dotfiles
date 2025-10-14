@@ -17,10 +17,10 @@ augroup setup_filetype
 
   " Mercurial
   " Interpret `hg show` output as `diff`
-  au! StdinReadPost * if eval('@%') == '' && &buftype == '' && getline(1) =~ '^changeset:' | setfiletype diff | endif
+  " au! StdinReadPost * if eval('@%') == '' && &buftype == '' && getline(1) =~ '^changeset:' | setfiletype diff | endif
   " Make `hg` output be `readonly` and `nofile` to work better as a `hg log`
   " viewer
-  au! StdinReadPost * if eval('@%') == '' && &buftype == '' && \
-    getline(1) =~ '^o  [a-z0-9]\{10}' && getline(2) =~ '^╷$' | \
-    setlocal buftype=nofile readonly nomodifiable | endif
+  " au! StdinReadPost * if eval('@%') == '' && &buftype == '' && \
+  "   getline(1) =~ '^o  [a-z0-9]\{10}' && getline(2) =~ '^╷$' | \
+  "   setlocal buftype=nofile readonly nomodifiable | endif
 augroup END
