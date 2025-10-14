@@ -15,8 +15,12 @@ augroup setup_filetype
   au! BufRead,BufNewFile Brewfile setfiletype conf
   au! BufRead,BufNewFile eslintrc setfiletype json
 
-  " Special
+  " Mercurial
   " Interpret `hg show` output as `diff`
-  " This isn't always working, probably better just to use `hg diff -c .`
   au! StdinReadPost * if eval('@%') == '' && &buftype == '' && getline(1) =~ '^changeset:' | setfiletype diff | endif
+  " Make `hg` output be `readonly` and `nofile` to work better as a `hg log`
+  " viewer
+  au! StdinReadPost * if eval('@%') == '' && &buftype == '' && \
+    getline(1) =~ '^o  [a-z0-9]\{10}' && getline(2) =~ '^╷$' | \
+    setlocal buftype=nofile readonly nomodifiable | endif
 augroup END

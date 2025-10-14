@@ -6,8 +6,3 @@ setlocal foldlevel=2
 if eval('@%') == ''
   setlocal buftype=nofile readonly nomodifiable
 end
-
-" Matches `netrw` `p` to preview file
-nnoremap <silent> <buffer> p :GtdPedit<CR>
-" Matches `netrw` `<CR>` to open files
-nnoremap <silent> <buffer> <CR> :GtdEdit<CR>
