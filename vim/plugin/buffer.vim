@@ -62,7 +62,9 @@ set expandtab
 " Show column vertical line
 " Don't set a `textwidth` explicitly, it has too many side effects like giving
 " a text width in buffers with no filetype set
-set textwidth=80
+" E.g., when trying to write into a `NO NAME` setting `textwidth=80` will hard
+" wrap after going paste `80` characters.
+" set textwidth=80
 " `+0` means match `colorcolumn` to `textwidth`
 set colorcolumn=+0
 " Line breaks only happen on words
