@@ -18,4 +18,6 @@ endif
 " `netrw`. This means keeping this option is less impactful in the context of
 " `netrw` then it would be otherwise, because `netrw` already ignores the
 " typical global (`:cd`) vs buffer (`:lcd`) working directory split.
-let g:netrw_keepdir = 0
+" Turning this off, this seems to exasperate issues with `-` finding the
+" current file in `netrw`.
+" let g:netrw_keepdir = 0
