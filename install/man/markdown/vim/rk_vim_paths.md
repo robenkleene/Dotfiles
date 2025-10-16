@@ -1,9 +1,13 @@
 - `<C-g>`: Show relative path to file
 - `!<C-g>`: Show absolute path to file
+- `:cd <dir>`: Change global directory (for all buffers that don't have a local directory)
+- `:lcd <dir>`: Change local directory for the current buffer
+- `:tcd <dir>`: Change local directory for all tabs
+- Note that `:netrw` always has a local directory (i.e., `:echo haslocaldir() == 1`), so `:cd` never applies to `netrw` buffers.
 
 # `expand()`
 
-*These only work for commands that take a file path*, e.g., `:e %:h` will work, but `:echo %` will not. `echo expand('%')` does work. `!echo %<tab>` also works *but not in `netrw` buffers, but `!echo %:h:p` does work in `netrw` buffers, but it's sometimes wrong, it's safer to just use `b:netrw_curdir`*
+*These only work for commands that take a file path*, e.g., `:e %:h` will work, but `:echo %` will not. `echo expand('%')` does work. `!echo %<tab>` also works *but not in `netrw` buffers*, but `!echo %:h:p` does work in `netrw` buffers, but it's sometimes wrong, it's safer to just use `b:netrw_curdir`.
 
 - `%`: Relative path
 

@@ -50,6 +50,8 @@ Note the file list won't update automatically, so refresh with `<C-l>`
 
 - `mx`: Run shell command on marked files (to specify where the file should appear in the command, use `%`)
 
-# Vinegar
+# Working Directory
 
-With `vim-vinegar`, `gh` to show hidden files.
+`netrw` always does an `:lcd` when a directory is first opened, this is probably so that subsequent commands (e.g., `:e <path>`) are relative to that directory. But when navigating directories in `netrw` by default other directories are not `:lcd` to (unless `g:netrw_keepdir` is set to `0` [it's `1` by default]).
+
+This means always `:echo haslocaldir() == 1`, so `:cd` never aplies to `netrw` buffers.

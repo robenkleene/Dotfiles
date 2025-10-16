@@ -79,5 +79,14 @@ current file path at the cursor, also works
 .IP \[bu] 2
 \f[CR]mx\f[R]: Run shell command on marked files (to specify where the
 file should appear in the command, use \f[CR]%\f[R])
-.SH Vinegar
-With \f[CR]vim\-vinegar\f[R], \f[CR]gh\f[R] to show hidden files.
+.SH Working Directory
+\f[CR]netrw\f[R] always does an \f[CR]:lcd\f[R] when a directory is
+first opened, this is probably so that subsequent commands (e.g.,
+\f[CR]:e <path>\f[R]) are relative to that directory.
+But when navigating directories in \f[CR]netrw\f[R] by default other
+directories are not \f[CR]:lcd\f[R] to (unless
+\f[CR]g:netrw_keepdir\f[R] is set to \f[CR]0\f[R] [it\[cq]s \f[CR]1\f[R]
+by default]).
+.PP
+This means always \f[CR]:echo haslocaldir() == 1\f[R], so \f[CR]:cd\f[R]
+never aplies to \f[CR]netrw\f[R] buffers.

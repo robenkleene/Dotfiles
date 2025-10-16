@@ -5,14 +5,25 @@
 \f[CR]<C\-g>\f[R]: Show relative path to file
 .IP \[bu] 2
 \f[CR]!<C\-g>\f[R]: Show absolute path to file
+.IP \[bu] 2
+\f[CR]:cd <dir>\f[R]: Change global directory (for all buffers that
+don\[cq]t have a local directory)
+.IP \[bu] 2
+\f[CR]:lcd <dir>\f[R]: Change local directory for the current buffer
+.IP \[bu] 2
+\f[CR]:tcd <dir>\f[R]: Change local directory for all tabs
+.IP \[bu] 2
+Note that \f[CR]:netrw\f[R] always has a local directory (i.e.,
+\f[CR]:echo haslocaldir() == 1\f[R]), so \f[CR]:cd\f[R] never applies to
+\f[CR]netrw\f[R] buffers.
 .SH \f[CR]expand()\f[R]
 \f[I]These only work for commands that take a file path\f[R], e.g.,
 \f[CR]:e %:h\f[R] will work, but \f[CR]:echo %\f[R] will not.
 \f[CR]echo expand(\[aq]%\[aq])\f[R] does work.
 \f[CR]!echo %<tab>\f[R] also works \f[I]but not in \f[CI]netrw\f[I]
-buffers, but \f[CI]!echo %:h:p\f[I] does work in \f[CI]netrw\f[I]
+buffers\f[R], but \f[CR]!echo %:h:p\f[R] does work in \f[CR]netrw\f[R]
 buffers, but it\[cq]s sometimes wrong, it\[cq]s safer to just use
-\f[CI]b:netrw_curdir\f[I]\f[R]
+\f[CR]b:netrw_curdir\f[R].
 .IP \[bu] 2
 \f[CR]%\f[R]: Relative path
 .SS Modifiers
