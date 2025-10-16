@@ -1,3 +1,7 @@
+" Enable storing/restoring folds for Markdown files
+setlocal viewoptions+=folds
+set foldlevel=0
+
 setlocal spell
 let g:markdown_folding = 1
 " Setting `g:markdown_folding` seems to force folds, so set this so that
