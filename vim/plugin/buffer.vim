@@ -98,3 +98,23 @@ set hidden
 "   " Don't prompt for saving buffers with no file
 "   autocmd BufEnter * if eval('@%') == '' && &buftype == '' | setlocal buftype=nofile | end
 " augroup END
+
+" Automatically `mkview` & `loadview`
+function! s:MakeViewCheck()
+    if &l:diff | return 0 | endif
+    if &buftype != '' | return 0 | endif
+    if expand('%') =~ '\[.*\]' | return 0 | endif
+    if empty(glob(expand('%:p'))) | return 0 | endif
+    if &modifiable == 0 | return 0 | endif
+    if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
+    if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
+
+    return 1
+endfunction
+
+augroup AutoView
+    autocmd!
+    " Autosave & Load Views.
+    autocmd BufWritePre,BufWinLeave ?* if <SID>MakeViewCheck() | silent! mkview | endif
+    autocmd BufWinEnter ?* if <SID>MakeViewCheck() | silent! loadview | endif
+augroup END
