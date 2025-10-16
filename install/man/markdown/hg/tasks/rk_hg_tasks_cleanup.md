@@ -1,2 +1,2 @@
 - `hg purge`: Delete untracked
-- `hg checkout -C .`: Revert all changed files
+- `hg revert --all --no-backup`: Revert all changed files
