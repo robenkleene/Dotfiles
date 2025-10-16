@@ -7,3 +7,15 @@ if &splitbelow
 else
   let g:netrw_alto = 1
 endif
+
+" Make `netrw` `lcd` to the current directory being viewed
+" This makes it more predictable, without this, it's easy to, e.g., run
+" `mkdir` and make a directory in the current working directory, instead of
+" the viewed directory.
+" Note that relative to the rest of Vim, `netrw` already behaves a bit
+" strangely, since whenever a `netrw` buffer is entered, it `:lcd` to that
+" directory (which means `echo haslocaldir()` will always print `1` from
+" `netrw`. This means keeping this option is less impactful in the context of
+" `netrw` then it would be otherwise, because `netrw` already ignores the
+" typical global (`:cd`) vs buffer (`:lcd`) working directory split.
+let g:netrw_keepdir = 0
