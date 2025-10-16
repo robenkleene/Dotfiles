@@ -64,10 +64,9 @@ cd - > /dev/null
 
 ../scripts/update.sh
 ../install/zsh/update.zsh
+../install/vim/update.sh
 # This takes too long, just update manually for now
 # ./scripts/man_update.sh
-# This is breaking every time it's run without the `-c` option
-# ./scripts/emacs_bytecompile.sh
 
 if [[ "$all" == "false" ]]; then
   exit 0
