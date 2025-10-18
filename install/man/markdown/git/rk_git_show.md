@@ -1,1 +1,2 @@
+- `git show HEAD^`: Show the previous commit (shorthand for `git show HEAD^1`)
 - `git show master:./<relative-path>`: Show contents of file from another branch (the `./` can be omitted if at the root)
