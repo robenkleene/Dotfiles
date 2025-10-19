@@ -59,7 +59,6 @@ vim.api.nvim_create_autocmd("FileType", {
       name = "rust-analyzer",
       cmd = cmd,
       root_dir = root_dir,
-      capabilities = vim.lsp.protocol.make_client_capabilities(),
       on_attach = function(_, bufnr)
         local opts = { buffer = bufnr, noremap = true, silent = true }
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -69,7 +68,8 @@ vim.api.nvim_create_autocmd("FileType", {
       settings = {
         ["rust-analyzer"] = {
           cargo = { allFeatures = true },
-          checkOnSave = { command = "clippy" },
+          checkOnSave = true,
+          check = { command = "clippy" },
         },
       },
     })
