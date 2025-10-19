@@ -3,3 +3,21 @@
 .TH "RK_RUST_CRATES_CLAP Reference" "" "" ""
 .SH Rust Crates \f[CR]clap\f[R]
 \[lq]Command Line Argument Parser for Rust.\[rq]
+.SS Example
+The \f[CR]derive\f[R] \f[CR]Parser\f[R] annotation on
+\f[CR]struct Args\f[R] means treat that \f[CR]struct\f[R] as arguments:
+.IP
+.EX
+\f[I]/// Simple program to greet a person\f[R]
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
+\f[B]struct\f[R] Args {
+    \f[I]/// Name of the person to greet\f[R]
+    #[arg(short, long)]
+    name: String,
+
+    \f[I]/// Number of times to greet\f[R]
+    #[arg(short, long, default_value_t = 1)]
+    count: u8,
+}
+.EE
