@@ -48,18 +48,21 @@ list, e.g., \f[CR]:cfdo %s/this/that/g\f[R]
 .SS More Mass Edit Examples
 On each entry in the \f[CR]quickfix\f[R] list:
 .IP \[bu] 2
-\f[CR]:cdo s/this/that/g\f[R]: Replace \f[CR]this\f[R] with
-\f[CR]that\f[R] on each entry
-.RS 2
+\f[CR]:cdo s/foo/bar/g\f[R]: Replace \f[CR]this\f[R] with
+\f[CR]that\f[R] on each entry (add the \f[CR]e\f[R] flag [e.g.,
+\f[CR]s/foo/bar/ge\f[R]] to suppress errors for lines that contain no
+matches)
 .IP \[bu] 2
-Add the \f[CR]e\f[R] flag (e.g., \f[CR]s/this/that/ge\f[R]) to suppress
-errors for lines that contain no matches
-.RE
-.IP \[bu] 2
-\f[CR]:cdo norm \[at]q\f[R]: Perform the macro in register \f[CR]q\f[R]
+\f[CR]:cdo norm \[at]a\f[R]: Perform the macro in register \f[CR]a\f[R]
 on each entry
 .IP \[bu] 2
-\f[CR]:cdo norm gcc\f[R]: Comment out each entry
+\f[CR]:cdo norm gcc\f[R]: Comment out each entry (with
+\f[CR]vim\-commentary\f[R])
+.IP \[bu] 2
+\f[CR]:cdo norm Oprint(\[dq]got here\[dq])\f[R]: Add
+\f[CR]print(\[dq]got here\[dq])\f[R] above each matching line (this uses
+\f[CR]O\f[R] to open a line above [which should also use consistent
+indentation], note that exiting normal mode can be omitted)
 .SH Filter
 Requires \f[CR]packadd cfilter\f[R].
 .IP \[bu] 2

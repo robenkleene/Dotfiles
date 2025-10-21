@@ -30,10 +30,10 @@
 
 On each entry in the `quickfix` list:
 
-- `:cdo s/this/that/g`: Replace `this` with `that` on each entry
-    - Add the `e` flag (e.g., `s/this/that/ge`) to suppress errors for lines that contain no matches
-- `:cdo norm @q`: Perform the macro in register `q` on each entry
-- `:cdo norm gcc`: Comment out each entry
+- `:cdo s/foo/bar/g`: Replace `this` with `that` on each entry (add the `e` flag [e.g., `s/foo/bar/ge`] to suppress errors for lines that contain no matches)
+- `:cdo norm @a`: Perform the macro in register `a` on each entry
+- `:cdo norm gcc`: Comment out each entry (with `vim-commentary`)
+- `:cdo norm Oprint("got here")`: Add `print("got here")` above each matching line (this uses `O` to open a line above [which should also use consistent indentation], note that exiting normal mode can be omitted)
 
 # Filter
 
