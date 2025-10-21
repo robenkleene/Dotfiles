@@ -82,6 +82,5 @@
     // The minimap isn't useful enough to always have on
     "editor.minimap.enabled": false,
     // Don't ask for confirmation before deleting a file
-    "explorer.confirmDelete": false,
-    "workbench.colorTheme": "Default Light Modern"
+    "explorer.confirmDelete": false
 }
