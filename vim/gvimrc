@@ -7,10 +7,10 @@ set linespace=2
 " Disable audible bell
 autocmd GUIEnter * set vb t_vb=
 
-let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
-let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
+" Don't use GUI tabs
+set guioptions-=e
 
-" Background
+" Background & Cursor
 " set background=light
 " BBEdit Dark
 highlight NonText guibg=#141414
@@ -23,5 +23,9 @@ augroup override_colors
   autocmd ColorScheme * highlight Cursor guibg=#00BB00
 augroup END
 
-set guicursor=a:blinkon0
 " Setting the cursor color has to be after setting the theme
+set guicursor=a:blinkon0
+
+" Env
+let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
+let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
