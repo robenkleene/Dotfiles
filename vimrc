@@ -17,10 +17,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
-Plug 'robenkleene/partshell.vim'
-Plug 'robenkleene/gotogrep.vim'
-Plug 'robenkleene/gotodiff.vim'
+" Me
 Plug 'robenkleene/dirstack.vim'
+Plug 'robenkleene/gotodiff.vim'
+Plug 'robenkleene/gotogrep.vim'
+Plug 'robenkleene/mash.vim'
+Plug 'robenkleene/veep.vim'
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
