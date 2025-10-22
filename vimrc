@@ -64,3 +64,13 @@ if !has('nvim') && !empty($SSH_CONNECTION)
     let &t_PE="\<Esc>[201~"
   endif
 endif
+
+if !has('nvim')
+  " Fix dragging to resize windows with the mouse, this works by default in
+  " Neovim
+  if has("mouse_sgr")
+      set ttymouse=sgr
+  else
+      set ttymouse=xterm2
+  end
+endif
