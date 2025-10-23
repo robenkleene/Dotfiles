@@ -1,6 +1,8 @@
-" Use all open buffers for completion, this makes using `CTRL-X_CTRL-L`
-" completion work better for adding logging to multiple buffers at once
-set complete+=b
+" Don't add tags in completion, this only uses buffers which is more
+" predictable
+" Also this sometimes gives an error for unsorted tags file
+set complete-=t
+
 " Setting this two high is annoying with autocomplete
 set pumheight=10
 " Complete to longest match and show a menu, matching the typical `zsh` setup.
