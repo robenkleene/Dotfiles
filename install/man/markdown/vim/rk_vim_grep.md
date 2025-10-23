@@ -9,6 +9,7 @@
 
 - `:%s/foo/bar/gc`: Replace this with that, asking for confirmation each time
 - `:g/foo/d`: Delete lines matching pattern
+- `:bufdo g/foo/d`: Delete lines matching pattern in all buffers
 - `:v/foo/d`, `g!/foo/d`: Delete all other lines (`:v` and `g!` are synonyms)
 - `:g/foo/p`: Print lines matching pattern (to then populate the quick fix list with the pattern, use `:vim[grep] /foo/ %`
 - `:g/foo/yank A`: Yank matching lines to register `a` (this works because `A` is uppercase, so the lines are *appended* to the register, this is why this can't be used to yank directly to the system clipboard)
