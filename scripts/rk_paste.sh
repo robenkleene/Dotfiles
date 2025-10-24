@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/safepaste "$@"
+exec ~/.bin/nobin/_safepaste.sh "$@"
