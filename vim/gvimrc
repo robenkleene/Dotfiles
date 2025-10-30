@@ -1,7 +1,8 @@
 " set guifont=Berkeley\ Mono:h13
 " set guifont=Consolas:h14
-" set guifont=SF\ Mono\ Medium:h13
-set guifont=SF\ Mono:h13
+" This looks slightly more readable on Retina displays
+set guifont=SF\ Mono\ Medium:h13
+" set guifont=SF\ Mono:h13
 set linespace=2
 
 " Disable audible bell
