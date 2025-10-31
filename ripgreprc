@@ -8,6 +8,11 @@
 # --no-heading
 
 --smart-case
+
+# Just force ignore tags to avoid source control specific settings from
+# overriding this
+--glob=!tags
+
 # Clear the background
 # --colors=match:none
 # --colors=match:fg:cyan
