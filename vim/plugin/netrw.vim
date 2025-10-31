@@ -7,7 +7,7 @@
 " let g:netrw_clipboard = 0
 " Don't automatically enter directories when clicking them (instead just move
 " the cursor)
-let g:netrw_mousemaps = 0
+" let g:netrw_mousemaps = 0
 " Put netrw directories into the jumplist
 " This appears to break the jumplist, use `-` instead
 " let g:netrw_keepj = ""
