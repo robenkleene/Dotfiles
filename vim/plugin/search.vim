@@ -16,3 +16,7 @@ set smartcase
 
 " Don't display saved search highlights on startup
 nohlsearch
+
+" Use `ripgrep`
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
