@@ -12,6 +12,7 @@
 # Just force ignore tags to avoid source control specific settings from
 # overriding this
 --glob=!tags
+--glob=!Session\.vim
 
 # Clear the background
 # --colors=match:none
