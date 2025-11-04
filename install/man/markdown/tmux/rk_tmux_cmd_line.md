@@ -1,1 +1,2 @@
 - `C-c`: Exit command line
+- `C-y`: Paste from `tmux` buffer
