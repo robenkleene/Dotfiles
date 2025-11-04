@@ -7,8 +7,3 @@ Buffer is what tmux calls the copy/paste locations.
 # Flags
 
 - `-b <buffer-name>`: Specify a named buffer
-
-## `tmux` Prompt
-
-- `C-y`: Paste from buffer in `tmux` prompt
-
