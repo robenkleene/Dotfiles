@@ -1,2 +1,2 @@
-set sessionoptions+=options
-set sessionoptions+=localoptions
+" set sessionoptions+=options
+" set sessionoptions+=localoptions
