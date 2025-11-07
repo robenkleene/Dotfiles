@@ -14,6 +14,7 @@
 # Join
 
 - `<prefix>m`: Mark the current pane (then switch to another window and use `:join-pane` to bring that pane to the new window)
+- `:break-pane`: Break a pane out to its own window
 
 # Resizing
 
