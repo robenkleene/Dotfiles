@@ -29,20 +29,18 @@ vim.o.termguicolors = false
 
 -- Support remote clipboard, note that only copy is supported remotely, e.g.,
 -- `"*p` to paste from the remote clipboard will fail.
--- Note: This currently isn't working, fails with an error running
--- `_safecopy.sh`
--- vim.g.clipboard = {
---   name = "safe",
---   copy = {
---     ["+"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
---     ["*"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
---   },
---   paste = {
---     ["+"] = vim.fn.expand("~/.bin/nobin/_safepaste.sh"),
---     ["*"] = vim.fn.expand("~/.bin/nobin/_safepaste.sh"),
---   },
---   cache_enabled = 1,
--- }
+vim.g.clipboard = {
+  name = "safe",
+  copy = {
+    ["+"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
+    ["*"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
+  },
+  paste = {
+    ["+"] = vim.fn.expand("~/.bin/nobin/_safepaste.sh"),
+    ["*"] = vim.fn.expand("~/.bin/nobin/_safepaste.sh"),
+  },
+  cache_enabled = 1,
+}
 
 -- Don't load the default `:Man` command, use the `vim-man` plugin instead
 -- because it supports `<tab>` complection with `MANPATH`
