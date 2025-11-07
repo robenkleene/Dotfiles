@@ -11,6 +11,10 @@
 - `<prefix>"`: Split window horizontally
 - `<prefix>%`: Split window vertically
 
+# Join
+
+- `<prefix>m`: Mark the current pane (then switch to another window and use `:join-pane` to bring that pane to the new window)
+
 # Resizing
 
 These can be repeated without doing the leader key (i.e., they're assigned with the `bind-key` `-r` flag).
