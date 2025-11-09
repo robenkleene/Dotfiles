@@ -17,7 +17,7 @@ set guioptions-=e
 highlight NonText guibg=#141414
 highlight Normal guibg=#141414
 highlight Cursor guibg=#00BB00
-augroup override_colors
+augroup override_guicolors
   autocmd!
   autocmd ColorScheme * highlight NonText guibg=#141414
   autocmd ColorScheme * highlight Normal guibg=#141414
