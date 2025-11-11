@@ -85,5 +85,5 @@
     "explorer.confirmDelete": false,
     // For the `Code Spell Checker` extension, delay the spell check to avoid
     // immediately marking the word being typed as misspelled
-    "cSpell.spellCheckDelayMs": 300
+    "cSpell.spellCheckDelayMs": 1000
 }
