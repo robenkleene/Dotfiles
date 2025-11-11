@@ -9,6 +9,7 @@ ms-vscode-remote.remote-ssh-edit
 ms-vscode.remote-explorer
 naumovs.color-highlight
 rust-lang.rust-analyzer
+streetsidesoftware.code-spell-checker
 swiftlang.swift-vscode
 timonwong.shellcheck
 tobiah.language-pde
