@@ -18,5 +18,5 @@ set smartcase
 nohlsearch
 
 " Use `ripgrep`
-set grepprg=rg\ --vimgrep
-set grepformat^=%f:%l:%c:%m
+" set grepprg=rg\ --vimgrep
+" set grepformat^=%f:%l:%c:%m
