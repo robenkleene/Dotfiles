@@ -1,1 +1,1 @@
-command! -nargs=+ -bang -complete=shellcmd Find call mash#EditSh(<bang>0, 'fd '.<q-args>, 'args')
+command! -nargs=+ -bang -complete=shellcmd S call mash#Sh(<bang>0, <q-args>, 'enew')
