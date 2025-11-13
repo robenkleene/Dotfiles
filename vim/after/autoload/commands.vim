@@ -8,11 +8,11 @@ function! commands#Dc(term) abort
   echo "Deleted '".l:result."' from history"
 endfunction
 
-function! commands#Grep(bang, ...) abort
-    return system(join([&grepprg.(a:bang ? '!':'')] + [expandcmd(join(a:000, ' '))], ' '))
+function! commands#Grep(...) abort
+    return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
 endfunction
 
-function! commands#Find(bang, ...) abort
+function! commands#Find(bang, cmd) abort
   let l:result = systemlist(a:cmd)
   if v:shell_error != 0
     echohl ErrorMsg | echomsg "Non-zero exit status running ".a:cmd | echohl None
