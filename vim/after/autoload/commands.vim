@@ -8,14 +8,15 @@ function! commands#Dc(term) abort
   echo "Deleted '".l:result."' from history"
 endfunction
 
-function! commands#Grep(...) abort
-    return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
+function! commands#Rg(...) abort
+    return system(join(['rg'] + [expandcmd(join(a:000, ' '))], ' '))
 endfunction
 
-function! commands#Find(bang, cmd) abort
-  let l:result = systemlist(a:cmd)
+function! commands#Fd(bang, terms) abort
+  let l:cmd = 'fd '.a:terms
+  let l:result = systemlist(l:cmd)
   if v:shell_error != 0
-    echohl ErrorMsg | echomsg "Non-zero exit status running ".a:cmd | echohl None
+    echohl ErrorMsg | echomsg "Non-zero exit status running ".l:cmd | echohl None
     return
   endif
   let l:escaped_files = map(l:result, {_, v -> fnameescape(v)})
