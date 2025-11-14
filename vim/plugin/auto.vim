@@ -1,10 +1,3 @@
-" Show automatically show quickfix list after `cgetexpr`
-augroup quickfix_auto_show
-    autocmd!
-    autocmd QuickFixCmdPost cgetexpr cwindow
-    autocmd QuickFixCmdPost lgetexpr lwindow
-augroup END
-
 augroup quickfix_height
   autocmd!
   " Set the height to the number of lines, or a fraction of the window height
