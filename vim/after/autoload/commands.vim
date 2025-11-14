@@ -21,6 +21,7 @@ function! commands#Make(cmd, label) abort
       return
     endif
     cwindow
+    wincmd k
 endfunction
 
 function! commands#Args(bang, cmd) abort
