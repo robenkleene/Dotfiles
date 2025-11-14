@@ -1,3 +1,3 @@
 - `-l` / `--list`: List shelves
-- `-d` / `--delete`: Delete shelves
+- `--cleanup`: Delete all shelves
 - `-p` / `--patch`: Show diff of shelf (shows most recent by default, use `-p <name>` to show a another)
