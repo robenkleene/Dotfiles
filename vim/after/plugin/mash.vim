@@ -1,0 +1,5 @@
+command! -nargs=+ -complete=file_in_path Grep call mash#Make(<q-args>, "Grep")
+command! -nargs=+ -complete=file_in_path Lgrep call mash#Make(<q-args>, "Lgrep")
+command! -nargs=+ -complete=shellcmd Make call mash#Make(<q-args>, "Make")
+command! -nargs=+ -complete=shellcmd Lmake call mash#Make(<q-args>, "Lmake")
+command! -nargs=+ -bang -complete=shellcmd Args call mash#Args(<bang>0, <q-args>)
