@@ -99,3 +99,22 @@ Check whether \f[CR]const\f[R] can be added to every type declaration
 (e.g., in arguments, variables [including in loops])
 .IP \[bu] 2
 If possible, use a reference instead of a pointer
+.SH String References vs.\ \f[CR]char\f[R] Pointers
+Using \f[CR]const char*\f[R] instead of \f[CR]const std::string&\f[R]
+reduces allocations.
+.PP
+E.g., calling:
+.PP
+\[ga]\[ga] void Foo:LogCharPtr(const char* bar); void
+Foo:LogStringRef(const std::string& bar);
+.IP
+.EX
+
+With a string literal:
+.EE
+.PP
+LogCharPtr(\[lq]bar\[rq]); LogStringRef(\[lq]bar\[rq]); \[ga]\[ga]\[ga]
+.PP
+\f[CR]LogCharPtr\f[R] will just pass in the \f[CR]char\f[R] pointer,
+whereas \f[CR]LogStringRef\f[R] creates temporary
+\f[CR]std::string(\[dq]bar\[dq])\f[R].
