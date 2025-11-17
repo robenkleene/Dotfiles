@@ -75,4 +75,22 @@ You probably never want to assign that via the constructor (e.g., don't do `foo(
 - Check whether `const` can be added to every type declaration (e.g., in arguments, variables [including in loops])
 - If possible, use a reference instead of a pointer
 
+# String References vs. `char` Pointers
 
+Using `const char*` instead of `const std::string&` reduces allocations.
+
+E.g., calling:
+
+``
+void Foo:LogCharPtr(const char* bar);
+void Foo:LogStringRef(const std::string& bar);
+```
+
+With a string literal:
+
+```
+LogCharPtr("bar");
+LogStringRef("bar");
+```
+
+`LogCharPtr` will just pass in the `char` pointer, whereas `LogStringRef` creates temporary `std::string("bar")`.
