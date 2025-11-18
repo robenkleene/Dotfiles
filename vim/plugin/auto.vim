@@ -5,6 +5,18 @@ augroup quickfix_height
   autocmd FileType qf execute min([line("$"), max([10, float2nr(&lines / 3)])]) . "wincmd _"
 augroup END
 
+augroup default_new_buffer_filetype
+  autocmd!
+  autocmd BufEnter *
+        \ if &buftype ==# ''
+        \ && &filetype ==# ''
+        \ && bufname('%') ==# ''
+        \ && line('$') == 1
+        \ && getline(1) ==# ''
+        \ | setlocal filetype=markdown
+        \ | endif
+augroup END
+
 " Remove commit files from `v:oldfiles` (note this doesn't touch the edited
 " files on disk, it filters the list when vim launches)
 " Don't like that this might affect startup time
