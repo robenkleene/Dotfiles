@@ -7,7 +7,7 @@ augroup END
 
 augroup default_new_buffer_filetype
   autocmd!
-  autocmd BufEnter *
+  autocmd BufWinEnter *
         \ if &buftype ==# ''
         \ && &filetype ==# ''
         \ && bufname('%') ==# ''
