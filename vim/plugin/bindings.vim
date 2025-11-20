@@ -1,5 +1,7 @@
 nnoremap Y y$
 
+nnoremap ZY :%y*\|q!<CR>
+
 " Instead of using these custom bindings for working with the quickfix list
 " quickly, use the corresponding fuzzy finders, which allow going through the
 " list with one key stroke in a more conventional way.
