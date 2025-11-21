@@ -1,6 +1,8 @@
 nnoremap Y y$
 
-nnoremap ZX :%y*\|q!<CR>
+" nnoremap ZX :%y*\|q!<CR>
+" This yanks without the trailing new line
+nnoremap ZX :let @* = join(getline(1,'$'), "\n")\|q!<CR>
 
 " Instead of using these custom bindings for working with the quickfix list
 " quickly, use the corresponding fuzzy finders, which allow going through the
