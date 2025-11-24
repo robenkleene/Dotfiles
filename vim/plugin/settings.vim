@@ -19,8 +19,9 @@ set mouse=a
 set showcmd
 
 " Add hyphen to word characters, this shouldn't be set as a default and
-" instead be set per filetype
-" set iskeyword+=-
+" instead be set per filetype?
+" Try setting this to just alphanumeric characters, which matches Zsh
+set iskeyword-=_
 
 set splitbelow
 set splitright
