@@ -27,3 +27,11 @@ std::vector<Health> healths;
 The ECS example is more memory efficient because memory is accessed as contiguous data (i.e., vectors) instead of scattered around memory (OOP member variables). This results in "cache misses" which is the term when data has to be accessed via the heap, instead of from, e.g., the fast the L1/L2 cache on the CPU (when the data is first accessed, that's always considered a cache miss, this is called a "compulsory miss").
 
 ECS also enables parallelism, e.g., multiple entities can be updated on different threads simultaneously.
+
+```
+int arr[1000];
+// First access to arr[0] will be a compulsory miss
+int x = arr[0]; // Cache miss (first time)
+// Second access to arr[0] will be a cache hit (if not evicted)
+x = arr[0]; // Cache hit (if still in cache)
+```
