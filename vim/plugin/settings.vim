@@ -21,7 +21,9 @@ set showcmd
 " Add hyphen to word characters, this shouldn't be set as a default and
 " instead be set per filetype?
 " Try setting this to just alphanumeric characters, which matches Zsh
-set iskeyword-=_
+" This doesn't work as expected, e.g., `foo_bar` will stop at both before and
+" after the underscore.
+" set iskeyword-=_
 
 set splitbelow
 set splitright
