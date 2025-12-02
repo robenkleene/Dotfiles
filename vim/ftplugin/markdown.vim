@@ -1,12 +1,12 @@
 " Enable storing/restoring folds for Markdown files
 setlocal viewoptions+=folds
-set foldlevel=0
+setlocal foldlevel=0
 
 setlocal spell
 let g:markdown_folding = 1
 " Setting `g:markdown_folding` seems to force folds, so set this so that
 " Markdown files don't start folded
-set foldlevel=99
+setlocal foldlevel=99
 
 setlocal colorcolumn=""
 setlocal wrap
