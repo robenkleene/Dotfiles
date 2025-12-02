@@ -11,8 +11,6 @@ if [[ -f "$HOME/.personal" ]]; then
   if [[ "$(uname)" = "Darwin" ]]; then
     cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
       ./compare.sh mac.txt
-    cd "$HOME/Developer/Settings/Source Control/Directories/Max/" &&
-      ./compare.sh
   elif [[ "$(uname)" = "Linux" ]]; then
     cd "$HOME/Developer/Settings/Source Control/Directories/Projects" &&
       ./compare.sh linux.txt
