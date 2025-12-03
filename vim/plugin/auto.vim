@@ -5,28 +5,6 @@ augroup quickfix_height
   autocmd FileType qf execute min([line("$"), max([10, float2nr(&lines / 3)])]) . "wincmd _"
 augroup END
 
-" There's an oddity in Vim, if you try this sequence:
-" 1. `vim -u NONE`
-" 2. `setlocal spell`
-" 3. `enew`
-" 4. `setlocal spell?`
-" Note that spelling is *enabled* in the new buffer, this is because it seems
-" like the existing buffer is partly re-used if it's empty.
-" E.g., this behavior doesn't happen if `:new` is used instead of `:enew`, or
-" if the first buffer is modified before trying `:enew`.
-" Enabling this exasperates this oddity because it means Markdown specific
-" settings get inhereted, leading to unexpected behavior so disabling this.
-" augroup default_new_buffer_filetype
-"   autocmd!
-"   autocmd BufWinEnter *
-"         \ if &buftype ==# ''
-"         \ && &filetype ==# ''
-"         \ && bufname('%') ==# ''
-"         \ && line('$') == 1
-"         \ && getline(1) ==# ''
-"         \ | setlocal filetype=markdown
-"         \ | endif
-" augroup END
 
 " Remove commit files from `v:oldfiles` (note this doesn't touch the edited
 " files on disk, it filters the list when vim launches)

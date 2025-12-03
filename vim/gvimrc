@@ -30,3 +30,27 @@ set guicursor=a:blinkon0
 " Env
 let $MANPATH = expand('~/.brew/share/man') . ':' . expand('~/.man') . ':' . expand('~/.man-local') . ':' . $MANPATH
 let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
+
+" There's an oddity in Vim, if you try this sequence:
+" 1. `vim -u NONE`
+" 2. `setlocal spell`
+" 3. `enew`
+" 4. `setlocal spell?`
+" Note that spelling is *enabled* in the new buffer, this is because it seems
+" like the existing buffer is partly re-used if it's empty.
+" E.g., this behavior doesn't happen if `:new` is used instead of `:enew`, or
+" if the first buffer is modified before trying `:enew`.
+" Enabling this exasperates this oddity because it means Markdown specific
+" settings get inhereted, leading to unexpected behavior.
+" Trying this only in `gvimrc`
+augroup default_new_buffer_filetype
+  autocmd!
+  autocmd BufWinEnter *
+        \ if &buftype ==# ''
+        \ && &filetype ==# ''
+        \ && bufname('%') ==# ''
+        \ && line('$') == 1
+        \ && getline(1) ==# ''
+        \ | setlocal filetype=markdown
+        \ | endif
+augroup END
