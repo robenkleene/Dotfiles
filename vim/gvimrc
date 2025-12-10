@@ -43,14 +43,16 @@ let $RIPGREP_CONFIG_PATH= expand('~/.ripgreprc')
 " Enabling this exasperates this oddity because it means Markdown specific
 " settings get inhereted, leading to unexpected behavior.
 " Trying this only in `gvimrc`
-augroup default_new_buffer_filetype
-  autocmd!
-  autocmd BufWinEnter *
-        \ if &buftype ==# ''
-        \ && &filetype ==# ''
-        \ && bufname('%') ==# ''
-        \ && line('$') == 1
-        \ && getline(1) ==# ''
-        \ | setlocal filetype=markdown
-        \ | endif
-augroup END
+" The problem is then taking log output and pasting it into a Vim buffer will
+" then have markdown filetype.
+" augroup default_new_buffer_filetype
+"   autocmd!
+"   autocmd BufWinEnter *
+"         \ if &buftype ==# ''
+"         \ && &filetype ==# ''
+"         \ && bufname('%') ==# ''
+"         \ && line('$') == 1
+"         \ && getline(1) ==# ''
+"         \ | setlocal filetype=markdown
+"         \ | endif
+" augroup END
