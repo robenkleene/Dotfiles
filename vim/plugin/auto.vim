@@ -32,15 +32,15 @@ augroup executable_files
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
 augroup END
 
-" augroup safecopy
-"   autocmd!
-"   " Only copy to system clipboard on yank
-"   " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
-"   " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
-"   " first delete the visual selection then paste, which means the visual
-"   " selection will overwrite the clipboard
-"   " Don't copy to system clipboard if the register is `*` or `+`, since those
-"   " already copy to the system clipboard
-"   " Note: This currently isn't working from `nvim` (fails silently)
-"   autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
-" augroup END
+augroup safecopy
+  autocmd!
+  " Only copy to system clipboard on yank
+  " We can't add delete (`v:event["operator"] ==# 'd'`) because then doing a
+  " visual selection (e.g., `v`) then system clipboard paste (`"*p`) will
+  " first delete the visual selection then paste, which means the visual
+  " selection will overwrite the clipboard
+  " Don't copy to system clipboard if the register is `*` or `+`, since those
+  " already copy to the system clipboard
+  " Note: This currently isn't working from `nvim` (fails silently)
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
+augroup END
