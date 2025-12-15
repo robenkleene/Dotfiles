@@ -1,19 +1,21 @@
 # Convert Tabs to Spaces
 
-	set expandtab
-	retab!
+```
+set expandtab
+retab!
+```
 
-Through command line application:
-
-	!expand
+Or pipe through `expand` command-line program (e.g., `:%w !expand`).
 
 # Convert Spaces to Tabs
 
-	set noexpandtab
-	retab!
+```
+set noexpandtab
+retab!
+```
 
-Through command line application:
+Or pipe through `unexpand` command-line program (e.g., `:%w !unexpand -t 2` [`2` is number of spaces per tab, default is `8`]).
 
-	!unexpand -t 2
+# Insert Literal Tab
 
-`2` is number of spaces per tab, default is `8`.
+If `expandtab` is set, entering `⇥` in insert mode or on the command line, will enter spaces instead, to enter a literal tab, use `<C-v><tab>`.
