@@ -75,7 +75,7 @@
     // that text
     // "editor.autoSurround": "never",
     // Don't show the sidebar on the right by default
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    // "workbench.secondarySideBar.defaultVisibility": "hidden",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.rulers": [80],
