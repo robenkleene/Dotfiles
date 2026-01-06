@@ -11,10 +11,11 @@ Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
 Plug 'vim-utils/vim-man'
 " This breaks completion before running the command once
 " Plug 'vim-utils/vim-man', { 'on': 'Man' }
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
 " Me
