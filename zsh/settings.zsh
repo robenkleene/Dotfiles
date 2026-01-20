@@ -74,5 +74,8 @@ setopt nolistbeep
 # - `-` and `_` as part of variables
 # - `$` as specifying a variable
 # - `&` as specifying a file descriptor
-# Just try the empty string for this, which might be the most natural
-WORDCHARS=''
+# Just try the empty string for this, which might be the most natural?
+# Putting this back to the default, with the empty string, `ls --` followed by
+# delete backwards word, deletes everything including `ls`, which is
+# unexpected.
+# WORDCHARS=''
