@@ -49,11 +49,12 @@
         "command": "deleteWordRight",
         "when": "editorTextFocus"
     },
-    {
-        "key": "shift+space",
-        "when": "!editorTextFocus",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
+    // This was sometimes triggering accidently causing the terminal to go full screen while typing.
+    // {
+    //     "key": "shift+space",
+    //     "when": "!editorTextFocus",
+    //     "command": "workbench.action.toggleMaximizedPanel"
+    // },
     // Allow `ctrl+q` in Terminal
     // `workbench.action.quickOpenView` normally eats it
     {
