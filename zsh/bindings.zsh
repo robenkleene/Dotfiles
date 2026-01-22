@@ -40,25 +40,24 @@ autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
 bindkey -e "^[m" copy-earlier-word
 
+_shell_backward_kill_word() {
+  # `bash` consideres only alphanumeric characters as part of words 
+  select-word-style bash
+  zle backward-kill-word
+  select-word-style $default_word_style
+}
+zle -N _shell_backward_kill_word
 # With `WORDCHARS` set it's more predicatable to just use the default
 # `backwards_kill_word`, because that will use the identical `WORDCHARS` setting
 # as moving by word
-# _backward_kill_word() {
-#   # `bash` consideres only alphanumeric characters as part of words 
-#   select-word-style bash
+# _shell_backward_kill_word() {
+#   local save_wordchars=$WORDCHARS
+#   # Use default `WORDCHARS` that, e.g., includes `/`
+#   WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
 #   zle backward-kill-word
-#   select-word-style $default_word_style
+#   WORDCHARS=$save_wordchars
 # }
-# zle -N _backward_kill_word
-
-_shell_backward_kill_word() {
-  local save_wordchars=$WORDCHARS
-  # Use default `WORDCHARS` that, e.g., includes `/`
-  WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
-  zle backward-kill-word
-  WORDCHARS=$save_wordchars
-}
-zle -N _shell_backward_kill_word
+# zle -N _shell_backward_kill_word
 
 _system_copy_line() {
   printf "%s" "$BUFFER" | ~/.bin/nobin/_safecopy.sh
