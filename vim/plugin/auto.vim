@@ -42,5 +42,7 @@ augroup safecopy
   " - A change (e.g., `c`) can be copy to the system clipboard, so `c` then
   "   `⌘V` to paste will paste the same text. This can be avoided by ommitting
   "   the `c` event.
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
+  " - `&ft !=# "netrw"`: Always exclude `netrw` which has a habit of
+  "   overwriting registers
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call system('~/.bin/nobin/_safecopy.sh',join(v:event["regcontents"],"\n")) | end
 augroup END
