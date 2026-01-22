@@ -27,6 +27,11 @@
         // in prose
         "editor.occurrencesHighlight": "off"
     },
+    // Color remote connections yellow in lower left
+    "workbench.colorCustomizations": {
+        "statusBarItem.remoteBackground": "#FFFF00",
+        "statusBarItem.remoteForeground": "#000000"
+    },
     "[rust]": {
         "editor.rulers": [100],
     },
