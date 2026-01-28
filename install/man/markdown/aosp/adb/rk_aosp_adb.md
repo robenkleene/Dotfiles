@@ -2,7 +2,6 @@
 - `adb shell reboot -p`: Shutdown
 - `adb devices`: List devices
 
-
 # `adb shell`
 
 Use `adb shell`: Start an `adb` shell session, in the session:
