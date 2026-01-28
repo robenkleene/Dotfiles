@@ -11,7 +11,7 @@ The `com.foo.bar` string is called a `Package Name`
 
 ## Launch
 
-- `adb shell am start -n $(adb shell pm resolve-activity --brief <com.package.name/com.package.name.ActivityName> | tail -1)
+- `adb shell am start -n $(adb shell pm resolve-activity --brief <com.package.name/com.package.name.ActivityName> | tail -1)`
 
 ### Long
 
