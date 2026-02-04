@@ -44,3 +44,6 @@ a.out.dSYM/
 
 # Rust
 target/
+
+# Clause
+CLAUDE.local.md
