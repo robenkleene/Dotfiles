@@ -16,6 +16,5 @@ if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
     cd "$(dirname "$0")" && cd ../.. || exit 1
     source_dir=$(pwd -P);
     ln -s "$source_dir/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
-    # ln -s "$source_dir/claude/settings.json" "$HOME/.claude/settings.json"
   fi
 fi
