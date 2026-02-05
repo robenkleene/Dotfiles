@@ -7,3 +7,4 @@
 - `⌃R`: Enable verbose
 - `⌃C`: Interrupt
 - `@`: Auto-complete filename
+- `!`: Run shell command
