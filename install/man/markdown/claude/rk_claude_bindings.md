@@ -1,5 +1,5 @@
 - `⇧⇥`: Toggle between modes
-- `⇧↩`: Enter line break without accepting
+- `⌥↩`: Enter line break without accepting
 - `⎋`: Interrupt
 - `⎋⎋` (with prompt content): Clear
 - `⎋⎋` (with no prompt content): Rewind (e.g., go back to a previous conversation)
