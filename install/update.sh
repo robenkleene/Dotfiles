@@ -24,6 +24,10 @@ while getopts ":ah" option; do
 done
 
 cd "$(dirname "$0")" || exit 1
+
+# Claude must happen before other dotfiles to support custom install locations
+../install/claude/install.sh
+
 cd ..
 
 source_dir=$(pwd -P);
@@ -37,7 +41,10 @@ function make_symlink() {
   if [ ! -e "$destination" ]; then
     ln -s "$source" "$destination"
   elif [ ! -L "$destination" ]; then
-    echo "Warning: $destination exists and it's not a symlink" >&2
+    # Ignore claude to allow multiple installation approaches
+    if [ "$destination" != "$HOME/.claude" ]; then
+      echo "Warning: $destination exists and it's not a symlink" >&2
+    fi
   fi
 }
 
