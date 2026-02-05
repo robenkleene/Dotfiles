@@ -1,0 +1,7 @@
+# Ignore everything
+/*
+
+# Except
+!.gitignore
+!CLAUDE.md
+!rk-*.md
