@@ -1,0 +1,3 @@
+- `sudo xcode-select --switch /Applications/Xcode.app`
+- `-p` / `--print-path`: Print current path
+- `-s` / `--switch`: Switch versions

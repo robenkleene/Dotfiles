@@ -1,0 +1,1 @@
+- `sudo pkill -f fontd` (or restarting) is often required to get newly installed fonts to be picked up
