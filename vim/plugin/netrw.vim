@@ -7,6 +7,8 @@
 " let g:netrw_clipboard = 0
 " Don't automatically enter directories when clicking them (instead just move
 " the cursor)
+" This is more consistent with how, e.g., the quickfix list works, where
+" clicking an entry only moves the cursor without jumping to the match.
 let g:netrw_mousemaps = 0
 " Put netrw directories into the jumplist
 " This appears to break the jumplist, use `-` instead
