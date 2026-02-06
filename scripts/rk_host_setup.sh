@@ -28,6 +28,7 @@ DOTFILES=(
     ".man/**"
     ".man-local/**"
     ".ripgreprc"
+    ".tigrc"
     ".config/tmux/*.tmux"
     ".vim/*.vim"
     ".vim/after/**.vim"
