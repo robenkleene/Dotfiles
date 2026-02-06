@@ -94,5 +94,7 @@
     "cSpell.spellCheckDelayMs": 1000,
     // lldb
     // Don't show update notifications
-    "lldb.suppressUpdateNotifications": true
+    "lldb.suppressUpdateNotifications": true,
+    // Use light theme becauce it makes it easier to cut and paste rendered Markdown to rich text
+    "workbench.colorTheme": "Default Light Modern"
 }
