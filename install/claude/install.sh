@@ -18,11 +18,6 @@ if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
     ln -s "$source_dir/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
   fi
 
-  # Cleanup dead symlinks in commands directory
-  if [ -d "$HOME/.claude/commands" ]; then
-    find -L "$HOME/.claude/commands" -maxdepth 1 -type l -exec rm {} +
-  fi
-
   if [ ! -e "$HOME/.claude/commands" ]; then
     cd "$(dirname "$0")" && cd ../.. || exit 1
     source_dir=$(pwd -P);
