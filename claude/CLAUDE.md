@@ -19,4 +19,8 @@ int main() {
 ```
 ~~~
 
+# Plan Output
+
+All generated non-code artifacts (e.g., TDDs, design documents, research notes) should be written as Markdown files using the Code Pointer Format above, and placed in the `plan/output/` directory relative to the plan directory.
+
 @~/.claude-local/CLAUDE.md
