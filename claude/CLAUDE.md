@@ -19,6 +19,11 @@ int main() {
 ```
 ~~~
 
+# Markdown Style
+
+- Use real headers (`## Foo`) instead of bold-as-header (`**Foo:**`)
+- Use headers to introduce lists instead of indented hierarchical lists. E.g., don't do `1. **Foo**` followed by indented sub-items; instead use a header (`### Foo`) followed by a flat list.
+
 # Plan Output
 
 All generated non-code artifacts (e.g., TDDs, design documents, research notes) should be written as Markdown files using the Code Pointer Format above, and placed in the `plan/output/` directory relative to the plan directory.
