@@ -2,12 +2,22 @@
 description: Review and improve plan files by asking clarifying questions
 ---
 
-Review the project plan and suggest improvements.
+Review a project plan and suggest improvements.
+
+## Resolve Plan Path
+
+The argument is: $ARGUMENTS
+
+1. If an argument was provided (non-empty), use it as the plan directory path. Remember this path for the rest of the conversation so subsequent calls to `/rk-plan-restore` or `/rk-plan-revise` without an argument will reuse it.
+2. If no argument was provided, check if a plan path was set earlier in this conversation. If so, use that.
+3. If neither, default to `plan/` relative to the current working directory.
+
+Let `PLAN_DIR` be the resolved path.
 
 ## Process
 
-1. Read `plan/SPEC.md` to understand the project goals, constraints, and scope
-2. Read `plan/TODO.md` to understand the current task status
+1. Read `PLAN_DIR/SPEC.md` to understand the project goals, constraints, and scope
+2. Read `PLAN_DIR/TODO.md` to understand the current task status
 3. Use AskUserQuestion to clarify ambiguities or missing details, such as:
    - Unclear requirements
    - Missing acceptance criteria
