@@ -9,8 +9,14 @@ not work, you need to hit the version in the keyboard.
 Kill server with \f[CR]pkill mosh\-server\f[R] (this will of course kill
 your connection, but you should be able to reconnect again immediately)
 .SH Troubleshooting
-Kill all servers:
+.SS Troubling Connecting to Server
 .IP
 .EX
 pkill mosh\-server
+.EE
+.SS Trouble With Local Client
+E.g., \f[CR]Library not loaded\f[R] with Homebrew version
+.IP
+.EX
+brew reinstall mosh
 .EE

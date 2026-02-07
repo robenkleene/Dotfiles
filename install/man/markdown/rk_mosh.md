@@ -3,8 +3,16 @@
 
 # Troubleshooting
 
-Kill all servers:
+## Troubling Connecting to Server
 
 ```
 pkill mosh-server
+```
+
+## Trouble With Local Client
+
+E.g., `Library not loaded` with Homebrew version
+
+```
+brew reinstall mosh
 ```
