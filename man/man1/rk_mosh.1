@@ -14,6 +14,40 @@ your connection, but you should be able to reconnect again immediately)
 .EX
 pkill mosh\-server
 .EE
+.PP
+If the client connects then exits (e.g., )
+.IP
+.EX
+mosh did not make a successful connection to 192.241.150.148:60001.
+Please verify that UDP port 60001 is not firewalled and can reach the server.
+
+(By default, mosh uses a UDP port between 60000 and 61000. The \-p option
+selects a specific UDP port number.)
+[mosh is exiting.]
+.EE
+.PP
+From the client, make sure the port is open (e.g., \f[CR]6001\f[R]
+below)
+.IP
+.EX
+$ sudo ufw status verbose 
+
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+\-\-                         \-\-\-\-\-\-      \-\-\-\-
+2022                       ALLOW IN    Anywhere                  
+22/tcp (OpenSSH)           ALLOW IN    Anywhere                  
+60001/udp                  ALLOW IN    Anywhere                  
+2022 (v6)                  ALLOW IN    Anywhere (v6)             
+22/tcp (OpenSSH (v6))      ALLOW IN    Anywhere (v6)             
+60001/udp (v6)             ALLOW IN    Anywhere (v6)
+.EE
+.PP
+If it\(cqs not open, use \f[CR]sudo ufw allow 60001/udp\f[R] to open it.
 .SS Trouble With Local Client
 E.g., \f[CR]Library not loaded\f[R] with Homebrew version
 .IP
