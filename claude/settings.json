@@ -1,3 +1,7 @@
 {
-  "showTips": false
+  "showTips": false,
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); printf '\\033[38;5;244m%s ' \"$(date '+%m/%d %I:%M %p')\"; [ -n \"$SSH_CONNECTION\" ] && printf '\\033[33m%s ' \"$(hostname -s)\"; printf '\\033[34m%s ' \"$(pwd | sed \"s|^$HOME|~|\" | awk '{if (length($0) > 20) print \"...\" substr($0, length($0)-16); else print $0}')\"; model=$(echo \"$input\" | jq -r '.model.display_name // empty'); [ -n \"$model\" ] && printf '\\033[36m%s ' \"$model\"; printf '\\033[0m'"
+  }
 }
