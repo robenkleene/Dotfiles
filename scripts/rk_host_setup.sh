@@ -52,22 +52,25 @@ DOTFILES=(
 )
 
 usage() {
-    echo "Usage: $(basename "$0") -h <hostname> [-f]"
+    echo "Usage: $(basename "$0") -h <hostname> [-f] [-v]"
     echo "Syncs dotfiles to a host"
     echo ""
     echo "Options:"
     echo "  -h <hostname>  Target hostname (required)"
     echo "  -f             Force sync (default is dry-run)"
+    echo "  -v             Verbose rsync output (show per-file details)"
     exit 1
 }
 
 hostname=""
 force=false
+verbose=false
 
-while getopts "h:f" opt; do
+while getopts "h:fv" opt; do
     case $opt in
         h) hostname="$OPTARG" ;;
         f) force=true ;;
+        v) verbose=true ;;
         *) usage ;;
     esac
 done
@@ -129,10 +132,15 @@ fi
 
 cd "$HOME"
 
+rsync_flags="-avRL"
+if [[ "$verbose" == true ]]; then
+    rsync_flags="-avvRL --itemize-changes"
+fi
+
 if [[ "$force" == true ]]; then
-    rsync -avRL "${paths_to_sync[@]}" "$hostname:~/"
+    rsync $rsync_flags "${paths_to_sync[@]}" "$hostname:~/"
     echo "Done syncing dotfiles to $hostname"
 else
     echo "Dry-run mode (use -f to sync):"
-    rsync -avRL --dry-run "${paths_to_sync[@]}" "$hostname:~/"
+    rsync $rsync_flags --dry-run "${paths_to_sync[@]}" "$hostname:~/"
 fi
