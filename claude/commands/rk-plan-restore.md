@@ -14,6 +14,11 @@ The argument is: $ARGUMENTS
 
 Let `PLAN_DIR` be the resolved path.
 
+## Plan Conventions
+
+- All generated non-code artifacts (e.g., TDDs, design documents, research notes) should be written as Markdown files using the Code Pointer Format in `install/man/markdown/md/rk_md_style.md`, and placed in `PLAN_DIR/output/`.
+- Requests to "add a code pointer to the plan" should append the code pointer to `PLAN_DIR/CODE.md`. Create the file if it doesn't exist.
+
 ## Process
 
 1. Read `PLAN_DIR/SPEC.md` to understand the project goals, constraints, and scope
