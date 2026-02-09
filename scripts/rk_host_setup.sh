@@ -137,10 +137,12 @@ if [[ "$verbose" == true ]]; then
     rsync_flags="-avvRL --itemize-changes"
 fi
 
+# Ignore `[[ $? -eq 23 ]]` which happens with too many duplicate filenames,
+# which happens because the `-R` flag implicitly addes the parent directory
 if [[ "$force" == true ]]; then
-    rsync $rsync_flags "${paths_to_sync[@]}" "$hostname:~/"
+    rsync $rsync_flags "${paths_to_sync[@]}" "$hostname:~/" || [[ $? -eq 23 ]]
     echo "Done syncing dotfiles to $hostname"
 else
     echo "Dry-run mode (use -f to sync):"
-    rsync $rsync_flags --dry-run "${paths_to_sync[@]}" "$hostname:~/"
+    rsync $rsync_flags --dry-run "${paths_to_sync[@]}" "$hostname:~/" || [[ $? -eq 23 ]]
 fi
