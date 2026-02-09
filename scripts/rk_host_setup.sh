@@ -88,7 +88,7 @@ for item in "${DOTFILES[@]}"; do
         dir="${item%/**}"
         src_dir="$HOME/$dir"
         if [[ -d "$src_dir" ]]; then
-            paths_to_sync+=("$dir")
+            paths_to_sync+=("./$dir")
         fi
     elif [[ "$item" == *"**"* && "$item" != *"/**" ]]; then
         # Recursive glob pattern (e.g., .vim/after/**.vim)
@@ -100,7 +100,7 @@ for item in "${DOTFILES[@]}"; do
         if [[ -d "$src_dir" ]]; then
             while IFS= read -r -d '' file; do
                 rel_path="${file#$HOME/}"
-                paths_to_sync+=("$rel_path")
+                paths_to_sync+=("./$rel_path")
             done < <(find -L "$src_dir" -type f -name "$pattern" -print0 2>/dev/null)
         fi
     elif [[ "$item" == *"*."* ]]; then
@@ -113,15 +113,15 @@ for item in "${DOTFILES[@]}"; do
             for file in "$src_dir"/$pattern; do
                 if [[ -f "$file" ]]; then
                     rel_path="${file#$HOME/}"
-                    paths_to_sync+=("$rel_path")
+                    paths_to_sync+=("./$rel_path")
                 fi
             done
             shopt -u nullglob
         fi
     elif [[ -f "$HOME/$item" ]]; then
-        paths_to_sync+=("$item")
+        paths_to_sync+=("./$item")
     elif [[ -d "$HOME/$item" ]]; then
-        paths_to_sync+=("$item")
+        paths_to_sync+=("./$item")
     fi
 done
 
@@ -130,15 +130,17 @@ if [[ ${#paths_to_sync[@]} -eq 0 ]]; then
     exit 0
 fi
 
-rsync_flags="-av"
+cd "$HOME"
+
+rsync_flags="-avRL"
 if [[ "$verbose" == true ]]; then
-    rsync_flags="-avv --itemize-changes"
+    rsync_flags="-avvRL --itemize-changes"
 fi
 
 if [[ "$force" == true ]]; then
-    printf '%s\n' "${paths_to_sync[@]}" | rsync $rsync_flags --files-from=- "$HOME/" "$hostname:~/"
+    rsync $rsync_flags "${paths_to_sync[@]}" "$hostname:~/"
     echo "Done syncing dotfiles to $hostname"
 else
     echo "Dry-run mode (use -f to sync):"
-    printf '%s\n' "${paths_to_sync[@]}" | rsync $rsync_flags --dry-run --files-from=- "$HOME/" "$hostname:~/"
+    rsync $rsync_flags --dry-run "${paths_to_sync[@]}" "$hostname:~/"
 fi
