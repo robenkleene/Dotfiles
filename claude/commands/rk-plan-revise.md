@@ -4,7 +4,7 @@ description: Review and improve plan files by asking clarifying questions
 
 Review a project plan and suggest improvements.
 
-Read `~/.claude/custom/PLAN.md` and follow its instructions to resolve the plan path and understand plan conventions.
+Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the plan path and understand plan conventions.
 
 ## Process
 
