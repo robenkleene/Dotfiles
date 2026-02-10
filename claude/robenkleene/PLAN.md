@@ -12,3 +12,4 @@ Let `PLAN_DIR` be the resolved path.
 
 - All generated non-code artifacts (e.g., TDDs, design documents, research notes) should be written as Markdown files and placed in `PLAN_DIR/output/`.
 - Requests to "add a code pointer to the plan" should append the code pointer to `PLAN_DIR/CODE.md`. Create the file if it doesn't exist.
+- Requests to save log output (e.g., from reproducing a bug, debugger output, build errors) should append to `PLAN_DIR/LOGS.md`. Create the file if it doesn't exist.

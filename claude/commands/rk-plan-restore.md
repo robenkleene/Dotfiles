@@ -11,6 +11,7 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
 1. Read `PLAN_DIR/SPEC.md` to understand the project goals, constraints, and scope
 2. Read `PLAN_DIR/TODO.md` to understand the current task status
 3. If `PLAN_DIR/CODE.md` exists, read it to understand already-discovered code pointers
-4. Provide a brief summary of the project context
-5. Look at the Active section of `TODO.md` and find the first unchecked item (`- [ ]`)
-6. Suggest that item as the next action to take, with enough context from the spec to act on it
+4. If `PLAN_DIR/LOGS.md` exists, read it to review saved log output
+5. Provide a brief summary of the project context
+6. Look at the Active section of `TODO.md` and find the first unchecked item (`- [ ]`)
+7. Suggest that item as the next action to take, with enough context from the spec to act on it
