@@ -1,0 +1,9 @@
+- `r` / `run`: Run (with parameters, e.g., `run <parameters>` passes parameters to the executable)
+- `s` / `step`: Step into
+- `n` / `next`: Step over
+- `finish`: Finish the current stack frame (equivalent to step out)
+- `c` / `continue`: Continue execution
+- `↩`: Repeat last command
+- `q` / `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
+- `f` / `frame select 0` / `fr s 0` / `f 0`: Print the current frame information (e.g., current source code line)
+- `process interrupt`: Pause
