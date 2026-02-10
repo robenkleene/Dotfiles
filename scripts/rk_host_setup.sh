@@ -18,6 +18,7 @@ DOTFILES=(
     ".claude-local/**"
     ".claude/CLAUDE.md"
     ".claude/commands/**"
+    ".claude/robenkleene/**"
     ".claude/settings.json"
     ".config/nvim/init.lua"
     ".config/tmux/*.conf"
