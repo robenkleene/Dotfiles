@@ -1,16 +1,18 @@
-# Basic
+# Attach
 
-- `r` / `run`: Run (with parameters, e.g., `run <parameters>` passes parameters to the executable)
-- `s` / `step`: Step into
-- `n` / `next`: Step over
-- `finish`: Finish the current stack frame (equivalent to step out)
-- `c` / `continue`: Continue execution
-- `↩`: Repeat last command
-- `q` / `^D`: Quit (this probably isn't `^C` so that `^C` can be used to interrupt commands)
-- `f` / `frame select 0` / `fr s 0` / `f 0`: Print the current frame information (e.g., current source code line)
-- `process interrupt`: Pause
+## Process
 
-# Setup
+### ID
+
+- `lldb -p <PID>`
+- `(lldb) process attach --pid <PID>`
+
+### Name
+
+- `lldb -n <process_name>`
+- `lldb -n <process_name> -w`: Wait for process to appear
+
+## File
 
 - `lldb <path-to-program>`: Load program
 - `(lldb) file <path-to-program`: Load program
