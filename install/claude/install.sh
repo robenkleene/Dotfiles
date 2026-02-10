@@ -23,4 +23,10 @@ if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
     source_dir=$(pwd -P);
     ln -s "$source_dir/claude/commands" "$HOME/.claude/commands"
   fi
+
+  if [ ! -e "$HOME/.claude/custom" ]; then
+    cd "$(dirname "$0")" && cd ../.. || exit 1
+    source_dir=$(pwd -P);
+    ln -s "$source_dir/claude/custom" "$HOME/.claude/custom"
+  fi
 fi
