@@ -32,4 +32,4 @@ if [[ ! -f "$rel_path" ]]; then
   last="${parts[${#parts[@]}-1]}"
   rel_path="${dir_path}${last}/${name}.md"
 fi
-~/.bin/path_abs "$rel_path"
+echo "$(pwd -P)/$rel_path"
