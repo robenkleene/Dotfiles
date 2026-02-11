@@ -11,9 +11,12 @@ name="$1"
 
 IFS='_' read -ra parts <<< "$name"
 # Skip first component (rk prefix), use middle components as directories
-dir_parts=("${parts[@]:1:${#parts[@]}-2}")
+dir_parts=()
+if (( ${#parts[@]} > 2 )); then
+  dir_parts=("${parts[@]:1:${#parts[@]}-2}")
+fi
 dir_path=""
-for part in "${dir_parts[@]}"; do
+for part in "${dir_parts[@]+"${dir_parts[@]}"}"; do
   dir_path="${dir_path}${part}/"
 done
 
@@ -24,6 +27,7 @@ cd ../install/man/markdown
 # Handle cases like rk_vim where the sole component is both the directory
 # and file (vim/rk_vim.md), not a file at the root (rk_vim.md)
 if [[ ! -f "$rel_path" ]]; then
-  rel_path="${dir_path}${parts[-1]}/${name}.md"
+  last="${parts[${#parts[@]}-1]}"
+  rel_path="${dir_path}${last}/${name}.md"
 fi
 ~/.bin/path_abs "$rel_path"
