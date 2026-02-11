@@ -35,7 +35,8 @@ if [[ "$modified" == "true" ]]; then
     else
       ~/.bin/md_man_update -D -d "$destination_dir" -f -p "$REPLY"
     fi
-  done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' )
+  # `grep -v '/\.'` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
+  done < <( git ls-files --modified --others 'markdown/*.md' 'markdown/**/*.md' | grep -v '/\.' )
 else
   # Delete all existing
   # Fish Shell only completes from `man1` (general commands), `man6` (games),
@@ -46,5 +47,6 @@ else
 
   while IFS= read -r; do
     ~/.bin/md_man_update -d "$destination_dir" -p "$REPLY"
-  done < <( find markdown -type f -name "*.md" )
+  # `-path '*/.*' -prune` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
+  done < <( find markdown -path '*/.*' -prune -o -type f -name "*.md" -print )
 fi
