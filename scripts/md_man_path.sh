@@ -21,4 +21,9 @@ rel_path="${dir_path}${name}.md"
 
 cd "$(dirname "$(readlink "$0" 2>/dev/null || echo "$0")")"
 cd ../install/man/markdown
+# Handle cases like rk_vim where the sole component is both the directory
+# and file (vim/rk_vim.md), not a file at the root (rk_vim.md)
+if [[ ! -f "$rel_path" ]]; then
+  rel_path="${dir_path}${parts[-1]}/${name}.md"
+fi
 ~/.bin/path_abs "$rel_path"
