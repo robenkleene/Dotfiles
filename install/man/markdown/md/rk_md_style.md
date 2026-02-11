@@ -16,3 +16,10 @@ int main() {
 }
 ```
 ~~~
+
+## Code Pointer Rules
+
+- Every file reference must use the code pointer format. Never reference a file as bare text, inline code, or in a table without a proper code pointer
+ link.
+- When referencing a specific location in a file (e.g., a class, function, or line), always include the exact line number. Never reference a specific
+part of a file without a line number.
