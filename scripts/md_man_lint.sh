@@ -27,7 +27,11 @@ find . -name 'rk_*.md' -type f | while read -r filepath; do
   last="${parts[${#parts[@]}-1]}"
   fallback="${dir_path}${last}/${filename}.md"
 
+  abs="$(pwd -P)/$rel"
   if [[ "$rel" != "$primary" && "$rel" != "$fallback" ]]; then
-    echo "$(pwd -P)/$rel"
+    echo "$abs"
+  fi
+  if [[ "$filename" == *s ]]; then
+    echo "Warning: plural $abs"
   fi
 done | sort
