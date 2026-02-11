@@ -28,6 +28,6 @@ find . -name 'rk_*.md' -type f | while read -r filepath; do
   fallback="${dir_path}${last}/${filename}.md"
 
   if [[ "$rel" != "$primary" && "$rel" != "$fallback" ]]; then
-    echo "$rel"
+    ~/.bin/path_abs "$rel"
   fi
 done | sort
