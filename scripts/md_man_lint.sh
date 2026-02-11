@@ -31,7 +31,8 @@ find . -name 'rk_*.md' -type f | while read -r filepath; do
   if [[ "$rel" != "$primary" && "$rel" != "$fallback" ]]; then
     echo "$abs"
   fi
-  if [[ "$filename" == *s ]]; then
+  # Skip short words (< 4 chars) like `ops` that are likely abbreviations, not plurals
+  if [[ "$last" == *s && ${#last} -ge 4 ]]; then
     echo "Warning: plural $abs"
   fi
 done | sort
