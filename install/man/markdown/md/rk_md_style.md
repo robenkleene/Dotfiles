@@ -23,3 +23,4 @@ int main() {
  link.
 - When referencing a specific location in a file (e.g., a class, function, or line), always include the exact line number. Never reference a specific
 part of a file without a line number.
+- Never put `'s` after inline code. E.g., write `foo` `bar:` instead of `foo`'s `bar:`. The possessive creates rendering conversion issues.
