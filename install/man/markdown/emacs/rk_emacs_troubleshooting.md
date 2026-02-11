@@ -1,4 +1,5 @@
 - `emacs -q`: Open Emacs without loading init
+- If something gets stuck in the Mini Buffer then hit ESC to clear it.
 
 # Auto Save Data
 
