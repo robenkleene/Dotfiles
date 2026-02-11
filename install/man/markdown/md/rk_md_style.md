@@ -3,7 +3,7 @@
 
 # Code Pointer Format
 
-When referencing code in Markdown files, use a two-block format: a `grep` fenced code block with the file path in `file:line:col:` format, followed by a language-specific fenced code block with the code snippet.
+When referencing code in Markdown files, use a two-block format: a `grep` fenced code block with the file path in `file:line:col:` format, followed by a language-specific fenced code block with the code snippet. If no code block follows, use just the file path without the `grep` block (e.g., `~/Developer/Scratch/C/hello_world.c`).
 
 ~~~
 ``` grep
