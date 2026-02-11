@@ -3,6 +3,7 @@
 - `<prefix>!`: Move current pane to new window
 - `<prefix>;`: Last pane
 - `<prefix>M-o`: Swap panes (`rotate-window -D`)
+- `<prefix>{` / `<prefix>}`: Swap panes with pane above / below
 - `<prefix>>`: Show a menu with various split and kill options
 - `<prefix>z` / `resize-pane -Z`: Make pane full screen
 
