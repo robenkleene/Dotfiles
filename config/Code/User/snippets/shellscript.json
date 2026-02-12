@@ -5,9 +5,9 @@
     "prefix": "rk_arr_access"
   },
   "cd to script dir": {
-    "body": "cd \\$(dirname \"\\$0\" || exit 1)",
+    "body": "cd \"\\$(dirname \"\\$0\" || exit 1)\"",
     "description": "cd to script dir",
-    "prefix": "rk_cd_script_dir"
+    "prefix": "rk_cd_scriptdir"
   },
   "cond": {
     "body": "[[ ${0:true} ]]",
@@ -32,7 +32,7 @@
   "cond file dir": {
     "body": "-d \"${0:\\$1}\"",
     "description": "cond dir",
-    "prefix": "rk_cond_file_dir"
+    "prefix": "rk_cond_filedir"
   },
   "cond file exists": {
     "body": "-e \"${0:\\$1}\"",
@@ -42,12 +42,12 @@
   "cond file regular": {
     "body": "-f \"${0:\\$1}\"",
     "description": "cond file regular",
-    "prefix": "rk_cond_file_regular"
+    "prefix": "rk_cond_fileregular"
   },
   "cond file symlink": {
     "body": "-L \"${0:\\$1}\"",
     "description": "cond file symlink",
-    "prefix": "rk_cond_file_ln"
+    "prefix": "rk_cond_fileln"
   },
   "cond not empty": {
     "body": "-n \"\\${${0:1}:-}\"",
@@ -97,7 +97,7 @@
   "one-liner for files rename": {
     "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
     "description": "one-liner for files rename",
-    "prefix": "rk_1_for_files_rename"
+    "prefix": "rk_1_for_rename"
   },
   "one-liner while": {
     "body": "while read i; do { ${0:echo $i} } done",
@@ -149,7 +149,7 @@
   "var exit status": {
     "body": "\\$?",
     "description": "var exit status",
-    "prefix": "rk_exit_status"
+    "prefix": "rk_exitstatus"
   },
   "var filename to extension": {
     "body": "\\${${0:filename}##*.}",
@@ -159,7 +159,7 @@
   "var filename to filename without extension": {
     "body": "\\${${0:filename}%.*}",
     "description": "var filename to filename without extension",
-    "prefix": "rk_var_t_filename_filename_no_ext"
+    "prefix": "rk_var_t_filename_filenamenoext"
   },
   "var ifs": {
     "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
@@ -179,7 +179,7 @@
   "var strip trailing slash": {
     "body": "\\${${0:1}%/}",
     "description": "var strip trailing slash",
-    "prefix": "rk_var_strip_trailing_slash"
+    "prefix": "rk_var_striptrailingslash"
   },
   "while": {
     "body": "while read i; do\n  ${0:echo $i}\ndone",

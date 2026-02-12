@@ -26,11 +26,12 @@ if [[ "$(uname)" = "Darwin" ]]; then
   safe_symlink "$vscode_path" "$HOME/Library/Application Support/Code - Insiders"
 fi
 
-cd $(dirname "$0" || exit 1)
-if [[ "\$(uname)" = "Darwin" ]]; then
-  if [[ "$HOME/.vscode/extensions/" ]]; then
+if [[ "$(uname)" = "Darwin" ]]; then
+  if [[ -d "$HOME/.vscode/extensions/" ]]; then
     safe_symlink vscode-robenkleene/ "$HOME/.vscode/extensions/robenkleene.robenkleene-0.0.1/"
-  elif [[ "\$(uname)" = "Linux" ]]; then
+  fi
+elif [[ "$(uname)" = "Linux" ]]; then
+  if [[ -d "$HOME/.vscode-server/extensions/" ]]; then
     safe_symlink vscode-robenkleene/ "$HOME/.vscode-server/extensions/robenkleene.robenkleene-0.0.1/"
   fi
 fi
