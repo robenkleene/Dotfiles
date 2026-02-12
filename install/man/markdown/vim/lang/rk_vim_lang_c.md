@@ -4,4 +4,6 @@ Unlike with most languages, `ctags` doesn't index the standard library. But the 
 
 For viewing included header files in the standard library, with the following in `ftplugin/c.vim`, Vim's `gf` command can be used to jump an included header file where the cursor is.
 
-	setlocal path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/
+```
+setlocal path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/
+```

@@ -1,5 +1,3 @@
-# Programming ECS
-
 ECS is an implementation of data-orientated programming. This means the design of the architecture has empathy about how the CPU works.
 
 In Object-Orientated programming:
