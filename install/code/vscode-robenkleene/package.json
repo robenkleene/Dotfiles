@@ -26,7 +26,7 @@
       {
         "command": "robenkleene.copyGrepMarkdown",
         "title": "Copy grep Markdown"
-      },
+      }
     ],
     "menus": {
       "editor/context/copy": [
