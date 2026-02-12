@@ -5,6 +5,20 @@ set -euo pipefail
 cd "$(dirname "$(readlink "$0" 2>/dev/null || echo "$0")")"
 cd ../install/man/markdown
 
+# Preferred abbreviations: "suffix=abbreviation"
+abbreviations=(
+  "editing=edit"
+  "navigation=nav"
+  "environment=env"
+  "function=func"
+  "window=win"
+  "compiling=compile"
+  "command=cmd"
+  "initialization=init"
+  "string=str"
+  "shell=sh"
+)
+
 find . -name 'rk_*.md' -type f | while read -r filepath; do
   rel="${filepath#./}"
   filename="$(basename "$rel" .md)"
@@ -36,6 +50,13 @@ find . -name 'rk_*.md' -type f | while read -r filepath; do
     echo "Warning: plural $abs"
   fi
   if [[ "$last" == *ing ]]; then
-    echo "Warning: gerund $abs"
+    echo "Warning: -ing suffix $abs"
   fi
+  for entry in "${abbreviations[@]}"; do
+    suffix="${entry%%=*}"
+    abbrev="${entry#*=}"
+    if [[ "$last" == *"$suffix" ]]; then
+      echo "Warning: use '$abbrev' instead of '$suffix' $abs"
+    fi
+  done
 done | sort
