@@ -23,6 +23,8 @@ while getopts ":mh" option; do
   esac
 done
 
+~/.bin/md_man_lint
+
 cd "$(dirname "$0")" || exit 1
 
 destination_dir="$HOME/.man/man1"
