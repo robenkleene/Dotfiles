@@ -7,7 +7,7 @@ cd "$(dirname "$0" || exit 1)"
 safe_symlink() {
   local src="$1"
   local dest="$2"
-  if [[ ! -e "$dest" ]]; then
+  if [[ ! -e "$dest" && ! -L "$dest" ]]; then
     ln -s "$src" "$dest"
   elif [[ ! -L "$dest" ]]; then
     echo "Warning: $dest exists and is not a symlink" >&2
