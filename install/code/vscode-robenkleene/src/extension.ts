@@ -1,46 +1,19 @@
 import * as vscode from 'vscode';
-import * as os from 'os';
+
+// There's no VS Code extension API to get the remote home directory from a UI
+// extension (`os.homedir()` returns the local home dir, not the remote). We
+// parse it from the file path instead, so the extension can run as a UI
+// extension without needing to be installed on remote servers.
+function getHomeDir(filePath: string): string | null {
+	let match = filePath.match(/^(\/home\/[^/]+)/);
+	if (match) return match[1];
+	match = filePath.match(/^(\/Users\/[^/]+)/);
+	if (match) return match[1];
+	if (filePath.startsWith('/root/')) return '/root';
+	return null;
+}
 
 export function activate(context: vscode.ExtensionContext) {
-	let openFolderForFileDisposable = vscode.commands.registerCommand(
-		"robenkleene.openDirectory",
-		async (uri: vscode.Uri) => {
-			var dirUri;
-			var fileUri;
-			const fs = require("fs");
-			var path = require("path");
-			if (uri) {
-				if (fs.lstatSync(uri.fsPath).isDirectory()) {
-					// Use the selected directory in the file explorer
-					dirUri = uri;
-				} else {
-					fileUri = uri;
-					const dirPath = path.dirname(fileUri.fsPath);
-					dirUri = vscode.Uri.file(dirPath);
-				}
-			} else {
-				// Or if a valid directory wasn't passed in, use the directory of the current file
-				const activeTextEditor = vscode.window.activeTextEditor;
-				if (!activeTextEditor) {
-					return;
-				}
-				fileUri = activeTextEditor.document.uri;
-				let filePath = activeTextEditor.document.uri.fsPath;
-				const dirPath = path.dirname(filePath);
-				if (!fs.lstatSync(dirPath).isDirectory()) {
-					return;
-				}
-				dirUri = vscode.Uri.file(dirPath);
-			}
-
-			if (!fs.existsSync(dirUri.fsPath)) {
-				return;
-			}
-			await vscode.commands.executeCommand("vscode.openFolder", dirUri);
-		}
-	);
-	context.subscriptions.push(openFolderForFileDisposable);
-
 	let disposable = vscode.commands.registerCommand('robenkleene.copyGrep', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {
@@ -51,10 +24,10 @@ export function activate(context: vscode.ExtensionContext) {
 		const line = selection.active.line + 1;
 		const column = selection.active.character + 1;
 		let filePath = document.uri.fsPath;
-		const homeDir = os.homedir();
-		if (filePath.startsWith(homeDir)) {
-		  filePath = `~${filePath.substring(homeDir.length)}`;
-		}  
+		const homeDir = getHomeDir(filePath);
+		if (homeDir) {
+			filePath = `~${filePath.substring(homeDir.length)}`;
+		}
 		const location = `${filePath}:${line}:${column}`;
 
 		let result = location;
@@ -81,8 +54,8 @@ export function activate(context: vscode.ExtensionContext) {
 		const line = selection.active.line + 1;
 		const column = selection.active.character + 1;
 		let filePath = document.uri.fsPath;
-		const homeDir = os.homedir();
-		if (filePath.startsWith(homeDir)) {
+		const homeDir = getHomeDir(filePath);
+		if (homeDir) {
 			filePath = `~${filePath.substring(homeDir.length)}`;
 		}
 		const location = `${filePath}:${line}:${column}:`;
