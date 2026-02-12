@@ -1,3 +1,14 @@
+- `⇧⇥`: Toggle between modes
+- `⌥↩`: Enter line break without accepting
+- `⎋`: Interrupt
+- `⎋⎋` (with prompt content): Clear
+- `⎋⎋` (with no prompt content): Rewind (e.g., go back to a previous conversation)
+- A screenshot can be dropped on Claude Code's TUI
+- `⌃R`: Enable verbose
+- `⌃C`: Interrupt
+- `@`: Auto-complete filename
+- `!`: Run shell command
+
 # Memory Locations
 
 - `/Library/Application Support/ClaudeCode/CLAUDE.md`: Managed policy (e.g., for an organization)
