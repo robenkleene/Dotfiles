@@ -11,6 +11,7 @@
   "engines": {
     "vscode": "^1.89.0"
   },
+  "extensionKind": ["ui"],
   "categories": [
     "Other"
   ],
@@ -26,18 +27,8 @@
         "command": "robenkleene.copyGrepMarkdown",
         "title": "Copy grep Markdown"
       },
-      {
-        "command": "robenkleene.openDirectory",
-        "title": "Open Directory"
-      }
     ],
     "menus": {
-      "explorer/context": [
-        {
-          "command": "robenkleene.openDirectory",
-          "group": "navigation"
-        }
-      ],
       "editor/context/copy": [
         {
           "command": "robenkleene.copyGrep"
