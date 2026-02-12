@@ -50,7 +50,7 @@
   "print addr obj fmt str": {
     "body": "std::cout << \" &$1 = %p\" << &${1} << std::endl;",
     "description": "print addr obj fmt str",
-    "prefix": "rk_cout_var_fmt_addr"
+    "prefix": "rk_cout_var_fmtaddr"
   },
   "print arr": {
     "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
