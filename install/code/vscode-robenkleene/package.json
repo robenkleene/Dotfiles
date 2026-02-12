@@ -23,6 +23,10 @@
         "title": "Copy grep"
       },
       {
+        "command": "robenkleene.copyGrepMarkdown",
+        "title": "Copy grep Markdown"
+      },
+      {
         "command": "robenkleene.openDirectory",
         "title": "Open Directory"
       }
@@ -37,6 +41,9 @@
       "editor/context/copy": [
         {
           "command": "robenkleene.copyGrep"
+        },
+        {
+          "command": "robenkleene.copyGrepMarkdown"
         }
       ]
     }
