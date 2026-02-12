@@ -1,7 +1,5 @@
 editorconfig.editorconfig
 foxundermoon.shell-format
-github.copilot
-github.copilot-chat
 llvm-vs-code-extensions.lldb-dap
 llvm-vs-code-extensions.vscode-clangd
 ms-vscode-remote.remote-ssh
@@ -13,6 +11,6 @@ streetsidesoftware.code-spell-checker
 swiftlang.swift-vscode
 timonwong.shellcheck
 tobiah.language-pde
-undefined_publisher.robenkleene
+robenkleene.robenkleene
 vadimcn.vscode-lldb
 xadillax.viml
