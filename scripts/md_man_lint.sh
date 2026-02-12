@@ -35,4 +35,7 @@ find . -name 'rk_*.md' -type f | while read -r filepath; do
   if [[ "$last" == *s && ${#last} -ge 4 ]]; then
     echo "Warning: plural $abs"
   fi
+  if [[ "$last" == *ing ]]; then
+    echo "Warning: gerund $abs"
+  fi
 done | sort
