@@ -8,12 +8,11 @@ cd ../install/man/markdown
 # Preferred abbreviations: "suffix=abbreviation"
 abbreviations=(
   "command=cmd"
-  "compiling=compile"
-  "editing=edit"
   "environment=env"
   "function=func"
   "initialization=init"
   "navigation=nav"
+  "program=prog"
   "shell=sh"
   "string=str"
   "window=win"
