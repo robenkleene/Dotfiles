@@ -7,16 +7,16 @@ cd ../install/man/markdown
 
 # Preferred abbreviations: "suffix=abbreviation"
 abbreviations=(
+  "command=cmd"
+  "compiling=compile"
   "editing=edit"
-  "navigation=nav"
   "environment=env"
   "function=func"
-  "window=win"
-  "compiling=compile"
-  "command=cmd"
   "initialization=init"
-  "string=str"
+  "navigation=nav"
   "shell=sh"
+  "string=str"
+  "window=win"
 )
 
 find . -name 'rk_*.md' -type f | while read -r filepath; do
