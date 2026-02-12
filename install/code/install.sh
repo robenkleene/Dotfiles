@@ -22,6 +22,4 @@ if [[ "$(uname)" = "Darwin" ]]; then
   fi
 fi
 
-command -v code-insiders && code-insiders --install-extension compiled/robenkleene.vsix;
-command -v code && code --install-extension compiled/robenkleene.vsix;
 ./extensions/install.sh
