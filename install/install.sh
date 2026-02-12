@@ -45,10 +45,7 @@ if ! command -v rg &> /dev/null; then
 fi
 
 # Do this after brew install so `tmux` is installed
-if [[ ! -e "$HOME/.tmux/plugins/tpm" ]] && command -v tmux; then
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  ~/.tmux/plugins/tpm/bin/install_plugins
-fi
+./tmux/install.sh
 
 ./files/symlinks.sh
 # Generate man is time consuming so check whether it's already happened
