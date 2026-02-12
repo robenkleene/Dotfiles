@@ -59,7 +59,6 @@ tap 'MisterTea/et'
 brew 'MisterTea/et/et'
 
 # Cask GUI Apps
-tap 'homebrew/cask'
 cask 'alacritty'
 cask 'anki'
 cask 'blender'
