@@ -2,6 +2,7 @@
   "name": "robenkleene",
   "displayName": "robenkleene",
   "description": "Roben Kleene's personal customizations",
+  "publisher": "robenkleene",
   "version": "0.0.1",
   "repository": {
       "type": "git",
