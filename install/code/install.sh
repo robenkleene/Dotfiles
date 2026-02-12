@@ -28,11 +28,11 @@ fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
   if [[ -d "$HOME/.vscode/extensions/" ]]; then
-    safe_symlink vscode-robenkleene/ "$HOME/.vscode/extensions/robenkleene.robenkleene-0.0.1"
+    safe_symlink "$PWD/vscode-robenkleene" "$HOME/.vscode/extensions/robenkleene.robenkleene-0.0.1"
   fi
 elif [[ "$(uname)" = "Linux" ]]; then
   if [[ -d "$HOME/.vscode-server/extensions/" ]]; then
-    safe_symlink vscode-robenkleene/ "$HOME/.vscode-server/extensions/robenkleene.robenkleene-0.0.1"
+    safe_symlink "$PWD/vscode-robenkleene" "$HOME/.vscode-server/extensions/robenkleene.robenkleene-0.0.1"
   fi
 fi
 
