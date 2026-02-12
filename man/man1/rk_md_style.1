@@ -28,3 +28,17 @@ int main() {
 }
 \(ga\(ga\(ga
 .EE
+.SS Code Pointer Rules
+.IP \(bu 2
+Every file reference must use the code pointer format.
+Never reference a file as bare text, inline code, or in a table without
+a proper code pointer link.
+.IP \(bu 2
+When referencing a specific location in a file (e.g., a class, function,
+or line), always include the exact line number.
+Never reference a specific part of a file without a line number.
+.IP \(bu 2
+Never put \f[CR]\(aqs\f[R] after inline code.
+E.g., write \f[CR]foo\f[R] \f[CR]bar:\f[R] instead of
+\f[CR]foo\f[R]\(cqs \f[CR]bar:\f[R].
+The possessive creates rendering conversion issues.
