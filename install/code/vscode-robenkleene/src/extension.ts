@@ -71,6 +71,37 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	context.subscriptions.push(disposable);
 
+	let copyGrepMarkdownDisposable = vscode.commands.registerCommand('robenkleene.copyGrepMarkdown', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			return;
+		}
+		const document = editor.document;
+		const selection = editor.selection;
+		const line = selection.active.line + 1;
+		const column = selection.active.character + 1;
+		let filePath = document.uri.fsPath;
+		const homeDir = os.homedir();
+		if (filePath.startsWith(homeDir)) {
+			filePath = `~${filePath.substring(homeDir.length)}`;
+		}
+		const location = `${filePath}:${line}:${column}:`;
+
+		let result: string;
+		if (selection && !selection.isEmpty) {
+			const text = document.getText(selection);
+			const lang = document.languageId;
+			result = `\`\`\` grep\n${location}\n\`\`\`\n\n\`\`\` ${lang}\n${text}\n\`\`\``;
+		} else {
+			result = location;
+		}
+
+		vscode.env.clipboard.writeText(result).then(() => {
+			vscode.window.showInformationMessage(`${result}`);
+		});
+	});
+	context.subscriptions.push(copyGrepMarkdownDisposable);
+
 }
 
 // This method is called when your extension is deactivated
