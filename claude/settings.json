@@ -1,6 +1,7 @@
 {
   "allowedTools": [
-    "Read(install/man/markdown/*/rk_*_style.md)"
+    "Read(install/man/markdown/*/rk_*_style.md)",
+    "Read(~/.claude/robenkleene/PLAN.md)"
   ],
   "statusLine": {
     "type": "command",
