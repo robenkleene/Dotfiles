@@ -35,8 +35,7 @@ if [[ ! -e "$brew_bin" || ! -e "$brew_share" ]]; then
   # `cmake` was exiting if `share` wasn't also created relatively
   brew_prefix_share="$brew_prefix/share"
   if [[ ! -e "$brew_prefix_share" ]]; then
-    echo "Error: $brew_prefix_share does not exist" >&2
-    exit 1
+    mkdir -p "$brew_prefix_share"
   fi
 
   if [[ ! -e "$brew_bin_dir" ]]; then
