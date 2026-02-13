@@ -1,9 +1,16 @@
 # This helps with some issues with mosh, e.g., utf-8 support and specifying
 # locale
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+if [[ "$(uname)" = "Darwin" ]]; then
+  export LANGUAGE=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LC_CTYPE=en_US.UTF-8
+else
+  export LANGUAGE=en_US.utf8
+  export LC_ALL=en_US.utf8
+  export LANG=en_US.utf8
+  export LC_CTYPE=en_US.utf8
+fi
 
 # `path` nees to be set in both `ZSHENV` and here.
 # In `ZSHENV` to make scripts and installs available in non-interactive shells,
