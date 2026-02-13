@@ -21,7 +21,7 @@ if [[ ! -e "$brew_bin" || ! -e "$brew_share" ]]; then
     brew_prefix=$("$HOME/.brew/bin/brew" --prefix)
   fi
 
-  if [[ -n $brew_prefix ]]; then
+  if [[ -z $brew_prefix ]]; then
     echo "Error: No brew prefix found" >&2
     exit 1
   fi
