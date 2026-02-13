@@ -17,6 +17,13 @@ if [[ ! -e "$brew_bin" || ! -e "$brew_share" ]]; then
     brew_prefix=$(/home/linuxbrew/.linuxbrew/bin/brew --prefix)
   elif [[ -e "/opt/homebrew/bin/brew" ]]; then
     brew_prefix=$(/opt/homebrew/bin/brew --prefix)
+  elif [[ -e "$HOME/.brew/bin/brew" ]]; then
+    brew_prefix=$("$HOME/.brew/bin/brew" --prefix)
+  fi
+
+  if [[ -n $brew_prefix ]]; then
+    echo "Error: No brew prefix found" >&2
+    exit 1
   fi
 
   brew_prefix_bin="$brew_prefix/bin"
