@@ -32,6 +32,18 @@
         "title": "Diff: Go to Source"
       }
     ],
+    "keybindings": [
+      {
+        "command": "robenkleene.copyGrep",
+        "key": "cmd+k cmd+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "robenkleene.copyGrepMarkdown",
+        "key": "cmd+k cmd+m",
+        "when": "editorTextFocus"
+      }
+    ],
     "menus": {
       "editor/context/copy": [
         {
