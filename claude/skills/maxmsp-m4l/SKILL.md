@@ -1,6 +1,6 @@
 ---
 name: maxmsp-m4l
-description: Build Max for Live devices. Use when creating or editing M4L patches, including live.* objects, theming, and device UI design.
+description: Build Max for Live devices. Use when working with .amxd files or .maxpat files containing live.* objects, including theming and device UI design.
 allowed-tools: Read, Write, Edit, Grep, Glob
 ---
 
