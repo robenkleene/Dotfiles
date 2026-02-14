@@ -18,7 +18,6 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 - In the `boxes` array, objects listed **first** render **on top** in presentation mode
 - Objects listed **last** render **behind** everything else
 - Background panels must go at the **end** of the array, or they will cover all controls
-- Layer order: foreground controls first → group panels → black panels → background panel last
 
 ## Presentation Mode
 
@@ -68,7 +67,6 @@ Key valueof fields:
 
 - `"mode": 0` makes it momentary (bang on click), omit or set to 1 for toggle
 - `"text"` = label when off, `"texton"` = label when on
-- Commonly used for mute buttons, clear, transport controls
 
 ## live.tab (Tab Selectors)
 
@@ -83,23 +81,23 @@ Key valueof fields:
 - Use for embedding sub-patches with their own presentation view
 - `"name": "filename.maxpat"` sets the loaded patch file
 - The bpatcher's `presentation_rect` defines the viewport; the loaded patch fills it
-- Useful for swappable tab content — change the loaded patch based on tab selection
 
 ## Comment Objects
 
 - maxclass `"comment"` for static text labels
-- Set `"textcolor": [ r, g, b, a ]` for custom text color (e.g., white on black backgrounds)
+- Set `"textcolor": [ r, g, b, a ]` for custom text color (e.g., white on dark backgrounds)
 - Set `"fontname"` and `"fontsize"` for typography
 
 ## Visual Display Objects
 
-- **`spectroscope~`** — frequency spectrum analyzer display
+- **`spectroscope~`** — frequency spectrum analyzer
   - Key properties: `logfreq`, `domain` (freq range), `range`, `fgcolor`, `markercolor`, `bgcolor`
 - **`waveform~`** — audio waveform display with interactive selection
   - Key property: `buffername` to link to a `buffer~` object
 - **`live.drop`** — drag-and-drop zone for audio files
   - Key properties: `decodemode`, `legend` (placeholder text)
-  - Often overlaid on top of `waveform~` at the same position
+  - Often overlaid on `waveform~` at the same position
+- **`filtergraph~`** — interactive filter frequency response curve
 
 ## Conventions
 

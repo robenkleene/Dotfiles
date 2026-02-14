@@ -9,7 +9,8 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 ## Device Constraints
 
 - M4L devices display in Live's device chain with a fixed height and variable width
-- Default device width is 254px; design for compact, efficient layouts
+- Width varies by complexity: ~190px (Cabinet) to ~1050px (Echo, Corpus)
+- A typical medium device is ~400–600px wide
 - Use presentation mode for the user-facing interface; patching mode is for the underlying logic
 
 ## UI Object Palette
@@ -18,106 +19,144 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 - `live.*` objects support parameter automation and mapping out of the box
 - Use `comment` for labels (with `textcolor` for visibility on dark backgrounds)
 
-## Layout Architecture
+## Layout Patterns
 
-A typical M4L device layout has these sections:
+Ableton devices use several structural approaches depending on complexity:
 
-```
-+------+------------------------------------------+-----------+
-| Tabs |  [Tab1]  [Tab2]                          |           |
-+------+------------------------------------------+  Control  |
-|      |                                          |  Group 1  |
-| Side |        Visual Area                       |           |
-| Tab  |        (bpatcher for swappable content)  +-----------+
-|      |                                          |  Control  |
-|      |                                          |  Group 2  |
-+------+------------------------------------------+-----------+
-| Btn  |  Labels / Info                           | Btn | Btn |
-+------+------------------------------------------+-----------+
-```
+### Horizontal Row (simplest)
+A single horizontal row of dials, optionally with a visual area above. Used by simpler effects.
+- Examples: Amp (5 dials in a row), Channel EQ (curve above, 4 dials below), Overdrive
 
-- **Tab bar** at top for switching content views
-- **Side tabs** (vertical `live.tab`) for sub-modes
-- **Center area** with a `bpatcher` for swappable visual content
-- **Right column** with grouped dials/controls on their own background panels
-- **Bottom strip** for toggles, labels, status
+### Controls Flanking Center Visual
+The most common pattern for complex devices. A large visual/graph area occupies the center, with parameter controls on left and right.
+- Examples: Compressor, Gate, Auto Filter, Saturator, Hybrid Reverb, Vocoder
 
-## Design Guidelines (Ableton M4L Production Style)
+### Multi-Section Horizontal
+The device is divided into distinct functional sections side by side, each with its own dark background panel and header label.
+- Examples: Reverb (Input Filter, Early Reflections, Diffusion Network, Chorus as separate panels), Corpus, Resonators
 
-### Visual Content Areas
-- Use a **black background** (`bgcolor [0,0,0,1]`) for visual content like graphs, spectroscopes, waveforms
-- Graphical controls (dials, sliders) **never** go on the black background
-- Number controls, toggles (`live.text`), pull-down menus, and tabs **can** go on the black background
-- The black background section typically extends to the bottom of the device (with standard 5px margin)
+### Vertical/Narrow Column
+Very compact devices with controls stacked vertically.
+- Examples: Cabinet (dropdowns + 1 dial), Pedal, Redux
 
-### Spacing
+### Expand/Collapse
+Some devices have a collapsed view (compact controls or meters only) and an expanded view (reveals visual display area). Triggered by a disclosure triangle in the title bar.
+- Examples: Compressor (collapsed = meters, expanded = waveform), Phaser-Flanger (expanded adds LFO/modulation section)
+
+## Signal Flow Convention
+
+Layouts follow audio signal flow left-to-right:
+- **Left side**: Input controls (Drive, Send, input selectors)
+- **Center**: Processing controls and visual displays
+- **Right side**: Output controls (Dry/Wet, Output/Gain)
+- **Dry/Wet** is nearly universal and almost always in the **bottom-right corner**
+
+## Visual/Graph Areas
+
+- Used in the majority of devices for frequency curves, waveforms, meters, spectrograms, transfer curves, etc.
+- Always on a **dark/near-black background** contrasting with the lighter gray surrounds
+- Positioned in the **center or center-right** of the device, never on the extreme edges
+- Typically occupy 40–70% of the device's total area in visualization-heavy devices
+- Graphical controls (dials, sliders) **never** go on the dark background
+- Non-graphical controls (number boxes, toggles, menus, tabs) **can** go on the dark background
+
+## Background Colors and Sections
+
+### Device Background
+- All devices use a consistent **medium gray** as the primary device background
+
+### Dark Panels
+- Visual displays and grouped parameter sections use **dark charcoal/near-black** backgrounds
+- These dark panels create clear "windows" into data or separate functional groups
+- Labeled section headers appear at the top-left of dark panels (e.g., "Input Filter", "Early Reflections")
+
+### Section Separation
+Sections are separated by:
+- Subtle vertical divider lines (thin, slightly different shade)
+- Background color shifts (light gray vs dark panel)
+- Proximity-based grouping (tight spacing within groups, wider gaps between groups)
+
+### Accent Colors
+- **Cyan/turquoise**: Primary accent — dial position arcs, frequency curves, threshold lines, active parameter values
+- **Orange/amber**: Secondary accent — active/selected toggle buttons, highlighted selections, signal activity, waveform overlays
+- **White/light gray**: Labels, inactive text, dial outlines
+- **Green**: Metering only (gain reduction bars, tuner indicator)
+
+## Spacing Rules
+
 - **5 pixels** separate colored sections (including from the device border)
-- 5px gaps between control group backgrounds
-- 5px gaps between groups and adjacent sections (black panel, device edge)
+- 5px gaps between control group panels and between groups and adjacent sections
+- ~4–8px padding between device frame edge and first controls
+- Consistent dial sizing within a row (typically ~40–50px diameter)
 
-### Control Grouping
-- Groups of related controls (e.g., Freeze+Attack or Decay+Gain) get their **own background panel**
-- Use subtle contrast between group panels and the device background (e.g., group bgcolor [0.75] on device bgcolor [0.68])
-- Avoid extreme contrast between group panels and background — the difference should be visible but not jarring
+## Control Grouping
 
-### Tab Styling
-- Tabs ideally use a black background that visually connects to the black content area below (the tab bar and visual area appear as one continuous black region)
-- This mimics Ableton's AutoShift-style tab design
+- Groups of related controls get their own background panel (a `panel` with `mode: 0`)
+- Use subtle contrast between group panel bgcolor and overall device background — visible but not jarring
+- Related dials are placed side by side in horizontal pairs or rows
+- Groups are separated by 5px gaps
 
-## Z-Order for Panels (Critical)
+## Tabs
 
-The `boxes` array order determines z-order. First = on top, last = behind.
+- Tabs are **rare** — only used for the most complex devices with distinct pages/modes
+- Most devices present all controls on a single flat panel
+- When used, tab bars are always at the **top** of the device or section
+- Examples: Hybrid Reverb (Reverb/EQ), Echo (Echo/Modulation/Character), Roar (Direct/Feedback)
+- Mode-switching button bars (segmented radio buttons) are more common than true tabs for switching between 2–3 modes (e.g., Phaser/Flanger/Doubler, OD/Distort/Fuzz)
 
-Correct ordering (top to bottom of array):
-1. Interactive controls (`live.dial`, `live.tab`, `live.text`, `comment` labels)
-2. `bpatcher` (visual content area)
-3. Control group panels (lighter background, e.g., [0.75, 0.75, 0.75])
-4. Black panel (visual content background, [0.0, 0.0, 0.0])
-5. Device background panel (overall bg, e.g., [0.68, 0.68, 0.68]) — **always last**
+## Label Conventions
 
-If a panel is placed before controls in the array, it will cover them and they'll be invisible.
+- Labels use a small, light sans-serif font in **white or light gray**
+- Standard pattern: **label above** the dial, **value below** the dial
+- Values display in **cyan** text with inline units (e.g., "100 ms", "5.29 s", "-6.2 dB")
+- Section headers use larger or bolder text at the top-left of their dark panel
+- Units are part of the value text, not separate labels
 
 ## Common Control Configurations
 
-### live.dial (Continuous Parameter)
-- Size: ~41x48 px is standard for a compact dial with label
-- Use `parameter_exponent: 3.0` for time-based parameters (attack, decay, freeze) for better feel
+### live.dial
+- The dominant control type across all devices
+- Rendered as a circular arc with position indicator and colored value arc (cyan)
+- Size: ~41x48px is standard for compact dial with label
+- `parameter_exponent: 3.0` for time-based parameters (attack, decay) for better control feel
 - Unit styles: `2` = ms, `4` = dB, `1` = float
 
-### live.text (Toggle/Momentary Button)
-- Size: ~41x15 px for compact toggle buttons
-- Set `mode: 0` for momentary (click = bang), omit for toggle
-- `text` = off label, `texton` = on label (can be same for always-visible label)
-- Good for: Mute, Clear, Reverse, transport controls
+### live.text (Toggle/Momentary)
+- Rectangular buttons, orange/yellow when active, gray when inactive
+- `mode: 0` for momentary (bang), omit for toggle
+- `text` = off label, `texton` = on label
+- Size: ~41x15px for compact buttons
+- Used for: mute, enable/disable, mode toggles
 
-### live.tab (Tab Selector)
+### Segmented Button Bars (Radio Buttons)
+- Groups of 2–4 adjacent `live.text` buttons where exactly one is active
+- Used for mutually exclusive modes (Peak/RMS/Expand, Repitch/Fade/Jump)
+
+### live.tab
+- Used for page-switching tabs (not mode selection — use button bars for that)
 - Horizontal: `num_lines_presentation: 1`
-- Vertical: `num_lines_presentation: N` (one line per tab)
+- Vertical: `num_lines_presentation: N` (one per line)
 - Labels via `parameter_enum` array
 
-### spectroscope~ (Frequency Analyzer)
-- Use `logfreq: 1` for logarithmic frequency scale
-- `domain: [20.0, 20000.0]` for full audible range
-- `fgcolor` for waveform color, `markercolor` for grid lines
-- Add `comment` labels below for frequency markers (100, 1k, 10k) positioned along log scale
+### live.menu / Dropdowns
+- Indicated by a small downward triangle
+- Used for preset/type selection (speaker types, IR selection, scale selection)
 
-### waveform~ + live.drop (Sample Display)
-- Overlay `live.drop` on top of `waveform~` at the same `presentation_rect`
-- `live.drop` provides drag-and-drop; `waveform~` shows the loaded waveform
-- Link both to a `buffer~` object via `buffername`
+### Visual Display Objects
+- **`spectroscope~`**: Frequency analyzer — use `logfreq: 1`, `domain: [20, 20000]`
+- **`waveform~`**: Audio waveform display — link via `buffername` to a `buffer~`
+- **`live.drop`**: Drag-and-drop zone — overlay on `waveform~` at same position
+- **`filtergraph~`**: Interactive filter frequency response curve
 
-## Sizing Reference
+## Z-Order (Critical)
 
-Typical device dimensions for a medium-complexity M4L device:
-- Width: ~560px
-- Height: ~200px
-- Visual area: ~400x120px
-- Dial columns: ~95px wide (fits 2 dials side by side at 41px each + gaps)
+The `boxes` array order determines z-order in presentation. First = on top, last = behind.
 
-## Styling
+Correct ordering (top to bottom of array):
+1. Interactive controls (dials, tabs, buttons, labels)
+2. Visual content objects (bpatcher, spectroscope~, waveform~)
+3. Control group panels (subtle lighter background)
+4. Dark/black visual area panels
+5. Device background panel — **always last**
 
-- Match Live's native color palette and visual weight
-- Avoid excessive color variation; use color sparingly to indicate groupings or state
-- Maintain sufficient contrast for readability
-- White text (`textcolor [1,1,1,1]`) for labels on black backgrounds
-- For theme compatibility, avoid hardcoding colors where possible — but panels need explicit `bgcolor` to create visual grouping contrast
+If a panel is placed before controls in the array, it will cover them.
