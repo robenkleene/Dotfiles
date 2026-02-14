@@ -21,15 +21,15 @@
     "commands": [
       {
         "command": "robenkleene.copyGrep",
-        "title": "Copy grep"
+        "title": "Grep: Copy Location"
       },
       {
         "command": "robenkleene.copyGrepMarkdown",
-        "title": "Copy grep Markdown"
+        "title": "Grep: Copy Location as Markdown"
       },
       {
         "command": "robenkleene.diffGotoSource",
-        "title": "Go to Source"
+        "title": "Diff: Go to Source"
       }
     ],
     "menus": {
