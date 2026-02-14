@@ -26,6 +26,17 @@
       {
         "command": "robenkleene.copyGrepMarkdown",
         "title": "Copy grep Markdown"
+      },
+      {
+        "command": "robenkleene.diffGotoSource",
+        "title": "Go to Source"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "robenkleene.diffGotoSource",
+        "key": "f12",
+        "when": "editorLangId == 'diff'"
       }
     ],
     "menus": {
@@ -35,6 +46,13 @@
         },
         {
           "command": "robenkleene.copyGrepMarkdown"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "robenkleene.diffGotoSource",
+          "when": "editorLangId == 'diff'",
+          "group": "navigation"
         }
       ]
     }
