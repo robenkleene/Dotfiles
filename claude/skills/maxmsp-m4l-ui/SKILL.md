@@ -1,7 +1,6 @@
 ---
 name: maxmsp-m4l-ui
 description: Design Max for Live device user interfaces. Use when creating or refining M4L device layouts and presentation mode.
-disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Grep, Glob
 ---
 
