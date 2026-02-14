@@ -99,34 +99,45 @@ function activate(context) {
         });
     });
     context.subscriptions.push(copyGrepMarkdownDisposable);
+    function resolveDiffPath(document, filePath) {
+        const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+        if (workspaceFolder) {
+            return path.join(workspaceFolder.uri.fsPath, filePath);
+        }
+        return path.join(path.dirname(document.uri.fsPath), filePath);
+    }
+    const diffDefinitionProvider = vscode.languages.registerDefinitionProvider({ language: 'diff' }, {
+        provideDefinition(document, position) {
+            const result = (0, diffParser_1.parseDiffLocation)(document.getText(), position.line);
+            if (!result) {
+                return null;
+            }
+            const resolvedPath = resolveDiffPath(document, result.filePath);
+            const targetLine = result.line - 1;
+            const targetCol = Math.max(position.character - 1, 0);
+            const targetPos = new vscode.Position(targetLine, targetCol);
+            return new vscode.Location(vscode.Uri.file(resolvedPath), targetPos);
+        }
+    });
+    context.subscriptions.push(diffDefinitionProvider);
     let diffGotoSourceDisposable = vscode.commands.registerCommand('robenkleene.diffGotoSource', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return;
         }
         const document = editor.document;
-        const cursorLine = editor.selection.active.line; // 0-indexed
-        const cursorCol = editor.selection.active.character; // 0-indexed
+        const cursorLine = editor.selection.active.line;
+        const cursorCol = editor.selection.active.character;
         const result = (0, diffParser_1.parseDiffLocation)(document.getText(), cursorLine);
         if (!result) {
             vscode.window.showInformationMessage('No source location found at cursor position');
             return;
         }
-        // Resolve the file path relative to workspace root, or diff file directory
-        let resolvedPath;
-        const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
-        if (workspaceFolder) {
-            resolvedPath = path.join(workspaceFolder.uri.fsPath, result.filePath);
-        }
-        else {
-            const diffDir = path.dirname(document.uri.fsPath);
-            resolvedPath = path.join(diffDir, result.filePath);
-        }
+        const resolvedPath = resolveDiffPath(document, result.filePath);
         const uri = vscode.Uri.file(resolvedPath);
         try {
             const targetDoc = await vscode.workspace.openTextDocument(uri);
-            const targetLine = result.line - 1; // convert to 0-indexed
-            // Subtract 1 from cursor column to account for diff indicator character
+            const targetLine = result.line - 1;
             const targetCol = Math.max(cursorCol - 1, 0);
             const pos = new vscode.Position(targetLine, targetCol);
             await vscode.window.showTextDocument(targetDoc, { selection: new vscode.Range(pos, pos) });
