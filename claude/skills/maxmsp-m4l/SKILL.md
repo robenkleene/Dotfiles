@@ -27,6 +27,8 @@ Objects like `live.dial`, `live.tab`, `live.text`, `live.numbox`, `live.menu` re
 
 Parameter types: `0` = float, `2` = enum/int, `4` = blob (live.drop)
 
+**Important**: `parameter_longname` must be unique across the entire device — duplicates cause silent parameter conflicts.
+
 Key valueof fields:
 - `parameter_mmax` / `parameter_mmin` — value range
 - `parameter_enum` — list of enum labels (for type 2)
@@ -115,6 +117,17 @@ Colors reference the Live theme instead of being hardcoded, via `saved_attribute
 - `bordercolor`, `focusbordercolor` — borders
 - `lcdcolor`, `lcdbgcolor` — numbox colors
 - `curvecolor`, `sustaincolor` — envelope editors
+
+## Patcher-Level Parameters Block
+
+The patcher can have a top-level `"parameters"` object that registers all `live.*` parameter objects:
+
+```json
+"parameters": {
+    "obj-id": [ "LongName", "ShortName", defaultValue ],
+    "inherited_shortname": 1
+}
+```
 
 ## SVG Icon Pattern
 

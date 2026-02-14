@@ -80,11 +80,3 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 - Do not reorder or renumber objects unnecessarily
 - Preserve formatting style of the existing file
 
-## Patcher-Level Parameters Block
-
-```json
-"parameters": {
-    "obj-id": [ "LongName", "ShortName", defaultValue ],
-    "inherited_shortname": 1
-}
-```
