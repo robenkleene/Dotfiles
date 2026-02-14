@@ -10,6 +10,7 @@ Let `PLAN_DIR` be the resolved path.
 
 ## Plan Conventions
 
+- The current working directory is the project root. All code operations happen there. `PLAN_DIR` is only for plan artifacts — never assume code lives inside it.
 - All generated non-code artifacts (e.g., TDDs, design documents, research notes) should be written as Markdown files and placed in `PLAN_DIR/output/`.
 - Requests to "add a code pointer to the plan" should append the code pointer to `PLAN_DIR/CODE.md`. Create the file if it doesn't exist.
 - Requests to record a decision (e.g., "chose X over Y because...") should append to `PLAN_DIR/DECISIONS.md`. Create the file if it doesn't exist. Each entry should include the decision, alternatives considered, and rationale.
