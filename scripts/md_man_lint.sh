@@ -3,7 +3,7 @@
 set -euo pipefail
 
 cd "$(dirname "$(readlink "$0" 2>/dev/null || echo "$0")")"
-cd ../install/man/markdown
+cd ../install/man/md
 
 # Preferred abbreviations: "suffix=abbreviation"
 abbreviations=(
