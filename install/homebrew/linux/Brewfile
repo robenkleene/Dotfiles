@@ -54,5 +54,9 @@ brew 'jq'
 # Games
 brew 'nethack'
 
+# Server Monitoring
+brew 'htop'
+brew 'glances'
+
 tap 'homebrew/cask'
 cask 'claude-code'
