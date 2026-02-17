@@ -92,6 +92,13 @@
     // Delay the spell check to avoid immediately marking the word being typed
     // as misspelled
     "cSpell.spellCheckDelayMs": 1000,
+    // Don't show notifications when `cSpell` is disabling spell checking for performance reasons
+    // (This often happens when opening a long log file)
+    "cSpell.enabledNotifications": {
+        "Maximum Word Length Exceeded": false,
+        "Lines too Long": false,
+        "Average Word Length too Long": false
+    },
     // lldb
     // Don't show update notifications
     "lldb.suppressUpdateNotifications": true,
