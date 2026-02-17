@@ -47,5 +47,5 @@ target/
 
 # Claude
 CLAUDE.local.md
-.claude/*.local.json
+**/.claude/*.local.json
 .claude/sessions/
