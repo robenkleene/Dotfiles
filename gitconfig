@@ -24,3 +24,4 @@
 	dr = diff --relative
 	sr = show --relative
 	co = checkout
+	br = branch
