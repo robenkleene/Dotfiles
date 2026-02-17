@@ -37,9 +37,9 @@ for file in "$source_dir"*; do
     continue
   fi
 
-  executable_name="${file%.*}"
-  chmod a+x "$source_dir/$file"
-  make_symlink "$source_dir/$file" "$destination_dir/$executable_name"
+  executable_name=$(basename "${file%.*}")
+  chmod a+x "$file"
+  make_symlink "$file" "$destination_dir/$executable_name"
 done
 
 # Symlink the no bin directory so scripts can reference them
