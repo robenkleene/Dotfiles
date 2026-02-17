@@ -20,8 +20,9 @@
 [mergetool]
 	prompt = false
 [alias]
-	root = rev-parse --show-toplevel
-	dr = diff --relative
-	sr = show --relative
-	co = checkout
 	br = branch
+	co = checkout
+	dr = diff --relative
+	root = rev-parse --show-toplevel
+	sr = show --relative
+	st = status
