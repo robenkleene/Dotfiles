@@ -3,9 +3,8 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
-src_dir="$(pwd -P)/bin/";
-
-dest_dir="$HOME/.bin/"
+src_dir="$(pwd -P)/bin"
+dest_dir="$HOME/.bin"
 
 function make_symlink() {
   source="$1"
@@ -17,7 +16,6 @@ function make_symlink() {
   fi
 }
 
-dest_dir="$HOME/.bin/"
 if [ ! -e "$dest_dir" ]; then
   mkdir "$dest_dir"
 elif [ ! -d "$dest_dir" ]; then
@@ -29,8 +27,8 @@ fi
 cd "$dest_dir" &&
   find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 
-for file in "$src_dir"*; do
-  if [[ $file == "tags" || $file == "TAGS" ]]; then
+for file in "$src_dir"/*; do
+  if [[ $(basename "$file") == "tags" || $(basename "$file") == "TAGS" ]]; then
     continue
   fi
   if [ -d "$file" ]; then
@@ -43,9 +41,9 @@ for file in "$src_dir"*; do
 done
 
 # Symlink the no bin directory so scripts can reference them
-nobin_destintation=$dest_dir/nobin
-if [ ! -e "$nobin_destintation" ]; then
-  ln -s "$src_dir/nobin" "$nobin_destintation"
-elif [ ! -L "$nobin_destintation" ]; then
-  echo "Warning: $nobin_destintation is a file and it's not a symlink" >&2
+nobin_destination=$dest_dir/nobin
+if [ ! -e "$nobin_destination" ]; then
+  ln -s "$src_dir/nobin" "$nobin_destination"
+elif [ ! -L "$nobin_destination" ]; then
+  echo "Warning: $nobin_destination is a file and it's not a symlink" >&2
 fi
