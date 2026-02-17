@@ -2,9 +2,7 @@
   "for": {
     "body": "for (let ${1:i} = 0; $1 < ${2:10}; $1++) {\n  $0\n}",
     "description": "for",
-    "prefix": [
-      "rk_for"
-    ],
+    "prefix": "rk_for",
     "scope": "javascript,typescript"
   },
   "max post": {

@@ -16,7 +16,7 @@
   },
   "print": {
     "body": "puts \"$1\"",
-    "description": "Print",
+    "description": "print",
     "prefix": [
       "rk_p",
       "rk_puts"

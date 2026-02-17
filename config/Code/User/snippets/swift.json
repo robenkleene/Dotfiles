@@ -10,7 +10,7 @@
     "prefix": "rk_delegate"
   },
   "do catch": {
-    "body": "do {\n    ${1:${VISUAL:try someThrowingFunction()/try!/try/g}}\n} catch {\n    ${2:throw error}\n}",
+    "body": "do {\n    ${1:try someThrowingFunction()}\n} catch {\n    ${2:throw error}\n}",
     "description": "do catch",
     "prefix": "rk_do_catch"
   },
@@ -21,7 +21,7 @@
   },
   "for": {
     "body": "for ${1:i} in ${2:0}..<${3:10} {\n    ${0:print(\"\\($1)\")}\n}",
-    "description": "For",
+    "description": "for",
     "prefix": "rk_for"
   },
   "guard weak strong self": {
