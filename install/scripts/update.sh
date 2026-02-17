@@ -26,10 +26,6 @@ elif [ ! -d "$destination_dir" ]; then
 fi
 
 for file in *; do
-  # Exclude this install script and directories
-  if [[ $file == "update.sh" ]]; then
-    continue
-  fi
   if [[ $file == "tags" || $file == "TAGS" ]]; then
     continue
   fi

@@ -69,11 +69,9 @@ for file in *; do
 done
 cd - > /dev/null
 
-../scripts/update.sh
+../install/scripts/update.sh
 ../install/zsh/update.zsh
 ../install/vim/update.sh
-# This takes too long, just update manually for now
-# ./scripts/man_update.sh
 
 if [[ "$all" == "false" ]]; then
   exit 0
