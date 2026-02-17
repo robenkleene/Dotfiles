@@ -1,6 +1,6 @@
 {
   "annotation nonnull block": {
-    "body": "NS_ASSUME_NONNULL_BEGIN\n${VISUAL}\nNS_ASSUME_NONNULL_END",
+    "body": "NS_ASSUME_NONNULL_BEGIN\n${TM_SELECTED_TEXT:$0}\nNS_ASSUME_NONNULL_END",
     "description": "annotation nonnull block",
     "prefix": "rk_nonnull"
   },
@@ -51,7 +51,7 @@
   },
   "print": {
     "body": "NSLog(@\"$1\");",
-    "description": "Print",
+    "description": "print",
     "prefix": "rk_p"
   },
   "print var": {
@@ -68,7 +68,7 @@
     "prefix": "rk_property"
   },
   "property delegate": {
-    "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> *delegate;",
+    "body": "@property (nonatomic, assign, nullable) id <${1:MyDelegate}> delegate;",
     "description": "property delegate",
     "prefix": "rk_property_delegate"
   },

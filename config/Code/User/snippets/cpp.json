@@ -36,7 +36,7 @@
   },
   "print": {
     "body": "std::cout << \"$1\" << std::endl;",
-    "description": "Print",
+    "description": "print",
     "prefix": [
       "rk_p",
       "rk_cout"
@@ -46,11 +46,6 @@
     "body": "std::cout << \" &$1 = \" << &${1} << std::endl;",
     "description": "print addr obj",
     "prefix": "rk_cout_var_addr"
-  },
-  "print addr obj fmt str": {
-    "body": "std::cout << \" &$1 = %p\" << &${1} << std::endl;",
-    "description": "print addr obj fmt str",
-    "prefix": "rk_cout_var_fmtaddr"
   },
   "print arr": {
     "body": "std::cout << \"${1} = \";\nfor (std::size_t i = 0; i < $1.size(); ++i) {\n  std::cout << (i > 0 ? \", \" : \"\") << $1[i];\n}\nstd::cout << std::endl;",
@@ -66,7 +61,7 @@
     "prefix": "rk_cout_enum"
   },
   "print map": {
-    "body": "std::cout << \"${1} = {\";\nbool first = true;\nfor (const auto& pair : values) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
+    "body": "std::cout << \"${1} = {\";\nbool first = true;\nfor (const auto& pair : $1) {\n  if (!first) {\n    std::cout << \", \";\n  }\n  std::cout << \"{\" << pair.first << \": \" << pair.second << \"}\";\n  first = false;\n}\nstd::cout << \"}\" << std::endl;",
     "description": "print map",
     "prefix": [
       "rk_cout_map",

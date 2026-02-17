@@ -162,8 +162,8 @@
     "prefix": "rk_var_t_filename_filenamenoext"
   },
   "var ifs": {
-    "body": "old_IFS=$IFS\nIFS=\"${1: }\"\nIFS=${old_IFS}",
-    "description": "Var IFS",
+    "body": "old_IFS=\\$IFS\nIFS=\"${1: }\"\nIFS=\\${old_IFS}",
+    "description": "var ifs",
     "prefix": "rk_ifs"
   },
   "var path to dir": {
@@ -183,7 +183,7 @@
   },
   "while": {
     "body": "while read i; do\n  ${0:echo \\$i}\ndone",
-    "description": "While",
+    "description": "while",
     "prefix": "rk_while"
   }
 }
