@@ -15,7 +15,7 @@
     "prefix": "rk_if"
   },
   "make prg xcodebuild test": {
-    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\\\ -alltargets\n\t\t\t\\\\\\ -configuration\\ Debug\n\t\t\t\\\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
+    "body": "setlocal makeprg=xcodebuild\\ test\n\t\t\t\\\\ -alltargets\n\t\t\t\\\\ -configuration\\ Debug\n\t\t\t\\\\ -scheme\\ ${1:Scheme}\n\t\t\t\\\\ -only-testing:${2:TestTarget}/${3:TestSuite}/${4:TestCase}",
     "description": "make prg xcodebuild test",
     "prefix": "rk_makeprg_xcodebuild_test"
   },

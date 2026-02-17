@@ -10,7 +10,7 @@
     "prefix": "rk_match_some"
   },
   "result Template": {
-    "body": "use std::io;\n\nfn main() -> io::Result<()> {\n    ${1:println!(\"Hello, world!\");}\nOk(())\n}\n",
+    "body": "use std::io;\n\nfn main() -> io::Result<()> {\n    ${1:println!(\"Hello, world!\");}\n    Ok(())\n}\n",
     "description": "rust result template",
     "prefix": "rk_template_result"
   },
