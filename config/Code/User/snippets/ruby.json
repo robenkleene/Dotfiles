@@ -23,7 +23,7 @@
     ]
   },
   "print err": {
-    "body": "STDERR.puts \"$1{:Error}\"",
+    "body": "STDERR.puts \"${1:Error}\"",
     "description": "print err",
     "prefix": [
       "rk_pe",

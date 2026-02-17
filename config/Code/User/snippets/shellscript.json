@@ -20,7 +20,7 @@
     "prefix": "rk_cond_arg"
   },
   "cond empty": {
-    "body": "-z \"${${0:1}:-}\"",
+    "body": "-z \"\\${${0:1}:-}\"",
     "description": "cond empty",
     "prefix": "rk_cond_empty"
   },
@@ -60,17 +60,17 @@
     "prefix": "rk_cond_term"
   },
   "cond uname": {
-    "body": "\"$$(uname)\" = \"Linux\"",
+    "body": "\"$(uname)\" = \"Linux\"",
     "description": "cond uname",
     "prefix": "rk_cond_uname"
   },
   "for": {
-    "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$$name\"\ndone",
+    "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$${1}\"\ndone",
     "description": "for",
     "prefix": "rk_for"
   },
   "for dir": {
-    "body": "for dir in */; do\n  echo $dir;\ndone",
+    "body": "for dir in */; do\n  echo \\$dir;\ndone",
     "description": "for dir",
     "prefix": "rk_for_dir"
   },
@@ -90,17 +90,17 @@
     "prefix": "rk_if"
   },
   "one-liner for": {
-    "body": "for i in ${1:*}; do { ${0:echo $i} } done",
+    "body": "for i in ${1:*}; do { ${0:echo \\$i} } done",
     "description": "one-liner for",
     "prefix": "rk_1_for"
   },
   "one-liner for files rename": {
-    "body": "for i in *; do { mv $i \\`echo $i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\\` } done",
+    "body": "for i in *; do { mv \\$i `echo \\$i | tr '[A-Z]' '[a-z]' | tr ' ' '-'` } done",
     "description": "one-liner for files rename",
     "prefix": "rk_1_for_rename"
   },
   "one-liner while": {
-    "body": "while read i; do { ${0:echo $i} } done",
+    "body": "while read i; do { ${0:echo \\$i} } done",
     "description": "one-liner while",
     "prefix": "rk_1_while"
   },
@@ -182,7 +182,7 @@
     "prefix": "rk_var_striptrailingslash"
   },
   "while": {
-    "body": "while read i; do\n  ${0:echo $i}\ndone",
+    "body": "while read i; do\n  ${0:echo \\$i}\ndone",
     "description": "While",
     "prefix": "rk_while"
   }
