@@ -3,9 +3,9 @@
 set -e
 
 cd "$(dirname "$0")" || exit 1
-source_dir=$(pwd -P);
+source_dir="$(pwd -P)/bin/";
 
-destination_dir="$HOME/.bin"
+destination_dir="$HOME/.bin/"
 
 function make_symlink() {
   source="$1"
@@ -17,7 +17,7 @@ function make_symlink() {
   fi
 }
 
-destination_dir="$HOME/.bin"
+destination_dir="$HOME/.bin/"
 if [ ! -e "$destination_dir" ]; then
   mkdir "$destination_dir"
 elif [ ! -d "$destination_dir" ]; then
@@ -25,7 +25,11 @@ elif [ ! -d "$destination_dir" ]; then
   exit 1
 fi
 
-for file in *; do
+# Cleanup dead symlinks
+cd "$destination_dir" &&
+  find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+
+for file in "$source_dir"*; do
   if [[ $file == "tags" || $file == "TAGS" ]]; then
     continue
   fi
@@ -45,7 +49,3 @@ if [ ! -e "$nobin_destintation" ]; then
 elif [ ! -L "$nobin_destintation" ]; then
   echo "Warning: $nobin_destintation is a file and it's not a symlink" >&2
 fi
-
-# Cleanup dead symlinks
-cd "$destination_dir" &&
-  find -L . -name . -o -type d -prune -o -type l -exec rm {} +
