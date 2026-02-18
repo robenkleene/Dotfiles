@@ -7,6 +7,11 @@ zcompile .zshenv
 zcompile .zshrc
 cd ~/.zsh
 for f in *.zsh; do zcompile "$f"; done
+for f in *.zwc; do
+  if [[ ! -e "${f%.zwc}" ]]; then
+    echo "Warning: $PWD/$f has no corresponding ${f%.zwc}"
+  fi
+done
 
 # Completion
 
