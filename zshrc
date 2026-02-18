@@ -14,17 +14,17 @@ source ~/.zsh/completion.zsh
 # won't be pulled to the front
 # This needs to stay ahead of installs so the path is set before installs,
 # otherwise `.brew/bin` won't be in front of `/usr/local/bin`
-source ~/.zsh/variables.zsh
+source ~/.zsh/var.zsh
 # `installs.zsh` before `alias.zsh` so functions don't use aliases and after
 # bindings, otherwise bindings conflict with install bindings
 # HOMEBREW before settings so that HOMEBREW commpletions (i.e., `fpath`) are
 # before completions are generated
 source ~/.zsh/installs.zsh
 # After installs so bindings take precedence over install bindings
-source ~/.zsh/bindings.zsh
+source ~/.zsh/bind.zsh
 
 # Functions before aliases so functions don't use aliases
-source ~/.zsh/functions.zsh
+source ~/.zsh/func.zsh
 # Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
 
