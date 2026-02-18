@@ -69,6 +69,10 @@ for file in *; do
 done
 cd - > /dev/null
 
+# As a general rule, re-compile assets here if it's fast
+# E.g., `zsh` and script symlinks
+# And check-in compiled assets if it's slow
+# E.g., AppleScripts, `man` pages
 ../install/scripts/update.sh
 ../install/zsh/update.zsh
 ../install/vim/update.sh
@@ -79,7 +83,7 @@ fi
 
 ./homebrew/install.sh -c
 ./node/modules/update.sh -f
-./ruby/gems/update.sh -f
-./python/packages/update.sh -f
+./rb/gems/update.sh -f
+./py/packages/update.sh -f
 
 brew update && brew upgrade

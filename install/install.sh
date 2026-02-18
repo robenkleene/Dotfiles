@@ -54,9 +54,9 @@ if [[ ! -e "$HOME/.man/man1/rk_vim.1" ]]; then
 fi
 ./code/install.sh
 ./node/install.sh
-./python/install.sh
-./ruby/install.sh
-./rust/install.sh
+./py/install.sh
+./rb/install.sh
+./rs/install.sh
 ./emacs/install.sh
 ./vim/install.sh
 
