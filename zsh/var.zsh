@@ -11,6 +11,8 @@ else
   export LC_ALL=en_US.utf8
   export LANG=en_US.utf8
   export LC_CTYPE=en_US.utf8
+  # This also helps with UTF parsing issues (e.g., garbled characters) when the pager is used
+  export LESSCHARSET=utf-8
 fi
 
 # `path` nees to be set in both `ZSHENV` and here.
