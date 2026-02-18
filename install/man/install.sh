@@ -23,7 +23,7 @@ while getopts ":mh" option; do
   esac
 done
 
-~/.bin/md_man_lint
+~/.bin/man_md_lint
 
 cd "$(dirname "$0")" || exit 1
 
@@ -33,9 +33,9 @@ if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
     # `git ls-files --modified` actually includes deleted files, so skip those
     if [[ -e "$REPLY" ]]; then
-      ~/.bin/md_man_update -d "$destination_dir" -f -p "$REPLY"
+      ~/.bin/man_md_update -d "$destination_dir" -f -p "$REPLY"
     else
-      ~/.bin/md_man_update -D -d "$destination_dir" -f -p "$REPLY"
+      ~/.bin/man_md_update -D -d "$destination_dir" -f -p "$REPLY"
     fi
   # `grep -v '/\.'` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
   done < <( git ls-files --modified --others 'md/*.md' 'md/**/*.md' | grep -v '/\.' )
@@ -48,7 +48,7 @@ else
   fi
 
   while IFS= read -r; do
-    ~/.bin/md_man_update -d "$destination_dir" -p "$REPLY"
+    ~/.bin/man_md_update -d "$destination_dir" -p "$REPLY"
   # `-path '*/.*' -prune` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
   done < <( find md/ -path '*/.*' -prune -o -type f -name "*.md" -print )
 fi
