@@ -73,8 +73,11 @@ cd - > /dev/null
 # E.g., `zsh` and script symlinks
 # And check-in compiled assets if it's slow
 # E.g., AppleScripts, `man` pages
+echo "Updating scripts..."
 ../install/scripts/update.sh
+echo "Updating zsh..."
 ../install/zsh/update.zsh
+echo "Updating vim..."
 ../install/vim/update.sh
 
 if [[ "$all" == "false" ]]; then
