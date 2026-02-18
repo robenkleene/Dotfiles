@@ -11,4 +11,5 @@ Review the current branch for merge readiness.
    - Inconsistencies (e.g., code that contradicts itself across files)
    - Stale references (e.g., comments, docs, or variable names that no longer match the code)
    - Anything that looks unintentional
-5. Report your findings. If there are no concerns, say so clearly. If there are concerns, list each one with the file and line reference.
+5. If anything is unclear about the code, its intent, or its context, use AskUserQuestion to clarify before finalizing the review.
+6. Report your findings. If there are no concerns, say so clearly. If there are concerns, list each one with the file and line reference.
