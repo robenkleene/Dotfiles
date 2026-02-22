@@ -60,3 +60,7 @@ brew 'glances'
 
 tap 'homebrew/cask'
 cask 'claude-code'
+
+tap 'robenkleene/tap'
+tap 'rep-grep'
+tap 'ren-find'
