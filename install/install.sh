@@ -41,7 +41,7 @@ export PATH="~/.brew/bin/:$PATH"
 # Use `rg` to test whether brew install has already run
 if ! command -v rg &> /dev/null; then
   # Let homebrew fail because it fails too often
-  ./homebrew/install.sh || true
+  ./brew/install.sh || true
 fi
 
 # Do this after brew install so `tmux` is installed
