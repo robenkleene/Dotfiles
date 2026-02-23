@@ -62,5 +62,5 @@ tap 'homebrew/cask'
 cask 'claude-code'
 
 tap 'robenkleene/tap'
-tap 'rep-grep'
-tap 'ren-find'
+brew 'rep-grep'
+brew 'ren-find'

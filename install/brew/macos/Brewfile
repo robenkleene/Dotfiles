@@ -58,6 +58,10 @@ brew 'yt-dlp'
 tap 'MisterTea/et'
 brew 'MisterTea/et/et'
 
+tap 'robenkleene/tap'
+brew 'rep-grep'
+brew 'ren-find'
+
 # Cask GUI Apps
 cask 'alacritty'
 cask 'anki'
