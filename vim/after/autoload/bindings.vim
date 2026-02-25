@@ -5,6 +5,7 @@ function! bindings#YankPath(path) abort
   setlocal buftype=nofile bufhidden=hide noswapfile
   exe 'silent keepjumps normal! VPgg"' .. l:register .. 'yg_'
   bd!
+  echom a:path
 endfunction
 
 function! bindings#GetSelectedText()
