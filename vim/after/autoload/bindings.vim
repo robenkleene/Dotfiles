@@ -1,3 +1,12 @@
+function! bindings#YankPath(path) abort
+  let l:register = v:register
+  let @@ = a:path
+  new
+  setlocal buftype=nofile bufhidden=hide noswapfile
+  exe 'silent keepjumps normal! VPgg"' .. l:register .. 'yg_'
+  bd!
+endfunction
+
 function! bindings#GetSelectedText()
   let l:old_reg = getreg('"')
   let l:old_regtype = getregtype('"')
