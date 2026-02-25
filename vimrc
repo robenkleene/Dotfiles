@@ -21,7 +21,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Me
 Plug 'robenkleene/dirstack.vim'
 Plug 'robenkleene/gotodiff.vim'
-Plug 'robenkleene/gotogrep.vim'
+Plug 'robenkleene/gyank.vim'
 Plug 'robenkleene/mash.vim'
 Plug 'robenkleene/veep.vim'
 " Snippets
