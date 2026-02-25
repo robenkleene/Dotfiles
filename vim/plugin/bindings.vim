@@ -1,10 +1,5 @@
 nnoremap Y y$
 
-" Yank path
-nnoremap gypp <Cmd>call bindings#YankPath(expand('%:p:~'))<CR>
-nnoremap gypr <Cmd>call bindings#YankPath(expand('%:.'))<CR>
-nnoremap gypn <Cmd>call bindings#YankPath(expand('%:t'))<CR>
-
 " nnoremap ZX :%y*\|q!<CR>
 " This yanks without the trailing new line
 nnoremap ZD :let @* = join(getline(1,'$'), "\n")\|q!<CR>
