@@ -51,6 +51,7 @@ Key valueof fields:
 - SVG icons: `pictures: ["off.svg", "on.svg"]`, `usepicture: 1`, `usesvgviewbox: 1`
 - `remapsvgcolors: 1` — SVGs inherit theme colors (essential for theming)
 - `ignoreclick: 1` — display-only (pair with `ubutton` overlay for interaction)
+- **`appearance: 2`** — bordered button style. Gives an orange-bordered look automatically via the theme, with no custom color properties needed. Use for toggle/momentary buttons on dark LCD backgrounds. Title case text (e.g., "Audio", "Sample"), typical size ~59x15px. Reference: Surround Panner's "Share Setup" button.
 
 ### live.tab
 - `num_lines_presentation: 1` = horizontal, `N` = vertical (one tab per line)
@@ -161,6 +162,13 @@ The correct pattern for switching between views uses **`ubutton` + `live.text` i
 ---
 
 # Device UI Design
+
+## M4L vs Native Design
+
+Max for Live devices cannot exactly replicate native Ableton device designs. Native devices (Simpler, Hybrid Reverb, etc.) use proprietary UI elements and fonts not available in Max. When designing M4L devices:
+
+- **Don't copy native button styles**: Native devices use all-caps text with a proprietary blocky font for toggle buttons (e.g., Simpler's LOOP/SNAP). This is impossible to replicate in Max. Instead, use `live.text` with `appearance: 2` for bordered toggle buttons — this gives the standard M4L orange-bordered style with full theme support.
+- **Use M4L devices as design references**: Reference other Max for Live devices (Surround Panner, Granulator III) rather than native Ableton devices for UI patterns. M4L devices demonstrate what's actually achievable with Max UI objects.
 
 ## Device Constraints
 
