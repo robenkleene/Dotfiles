@@ -20,9 +20,9 @@ font-thicken = true
 theme = robenkleene
 
 # `no-attention` disables the app icon badge because it gets stuck even if Ghostty has focus
-# `audio`: Play a sound
+# `system`: Play a sound (not supported in macOS yet but should work in next release)
 # `title`: Show a bell in the title bar
-bell-features = attention,audio,title
+bell-features = attention,system,title
 
 # The blur setting has trouble sticking on 1.1.3
 # Try again on a new version
