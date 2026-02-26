@@ -1,8 +1,8 @@
 ---
-description: Review and improve all plan files by asking clarifying questions
+description: Write or revise all plan files
 ---
 
-Review all project plan files and suggest improvements.
+Write or revise all project plan files.
 
 Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the plan path and understand plan conventions.
 
@@ -21,5 +21,5 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
    - Tasks that seem missing from the todo list
    - Tasks that are too large and should be broken down
    - Tasks that don't align with the spec
-7. Based on the answers, suggest improvements to the spec and todo list
+7. Based on the answers, suggest improvements to the plan files
 8. After confirming with the user, update the plan files with the improvements

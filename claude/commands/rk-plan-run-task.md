@@ -4,16 +4,7 @@ description: Work through a task TODO list, committing each item separately
 
 Work through a task TODO list autonomously until all items are complete or a failure occurs.
 
-Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to understand plan conventions. For plan path resolution, use the previously remembered plan path or default to `rk_plan/` — do not use `$ARGUMENTS` for the plan path.
-
-## Resolve Task Path
-
-The argument is: $ARGUMENTS
-
-1. If an argument was provided (non-empty), use it as the task directory path. If the path does not start with `PLAN_DIR`, treat it as relative to `PLAN_DIR/tasks/`.
-2. If no argument was provided, list the task directories in `PLAN_DIR/tasks/` and use AskUserQuestion to ask which task to run.
-
-Let `TASK_DIR` be the resolved path.
+Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the task path and understand plan conventions.
 
 ## Process
 
@@ -26,7 +17,7 @@ Let `TASK_DIR` be the resolved path.
    a. Implement the change described in the TODO item
    b. Run tests (e.g., `cargo test`, `npm test`, or whatever the project uses) to verify the change
    c. If tests pass, commit the change with a descriptive message
-   d. Mark the item as checked (`- [x]`) in `TASK_DIR/TODO.md`
+   d. Mark the item as `- [x]` and move it to the `# Done` section of `TASK_DIR/TODO.md`
    e. Move to the next unchecked item
 7. If a step fails (tests fail, build breaks, or the item is ambiguous), stop immediately. Leave the TODO item unchecked so the task can be resumed later.
 

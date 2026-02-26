@@ -16,7 +16,7 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
    a. Implement the change described in the TODO item
    b. Run tests (e.g., `cargo test`, `npm test`, or whatever the project uses) to verify the change
    c. If tests pass, commit the change with a descriptive message
-   d. Mark the item as checked (`- [x]`) in `PLAN_DIR/TODO.md`
+   d. Mark the item as `- [x]` and move it to the `# Done` section of `PLAN_DIR/TODO.md`
    e. Move to the next unchecked item
 6. If a step fails (tests fail, build breaks, or the item is ambiguous), stop immediately. Leave the TODO item unchecked so `/rk-plan-continue` can pick up where this left off.
 
