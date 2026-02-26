@@ -71,3 +71,6 @@ silent! source $VIMRUNTIME/defaults.vim
 if !has('nvim')
   autocmd! vimHints
 endif
+
+" Wait indefinitely for bindings to finish, without this, the timeout is 1s
+set notimeout
