@@ -4,6 +4,8 @@ description: Work through a task TODO list, committing each item separately
 
 Work through a task TODO list autonomously until all items are complete or a failure occurs.
 
+If currently in plan mode, exit plan mode before running this command.
+
 Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the task path and understand plan conventions.
 
 ## Process
