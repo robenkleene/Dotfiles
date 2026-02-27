@@ -8,8 +8,8 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
 
 ## Process
 
-1. Read `PLAN_DIR/SPEC.md` to understand the project goals, constraints, and scope
-2. Read `PLAN_DIR/TODO.md` to understand the current task status
+1. If `PLAN_DIR/SPEC.md` exists, read it to understand the project goals, constraints, and scope
+2. If `PLAN_DIR/TODO.md` exists, read it to understand the current task status
 3. If `PLAN_DIR/CODE.md` exists, read it to understand already-discovered code pointers
 4. If `PLAN_DIR/DECISIONS.md` exists, read it to understand past decisions and their rationale
 5. If `PLAN_DIR/LOGS.md` exists, read it to review saved log output
