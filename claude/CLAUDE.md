@@ -8,6 +8,10 @@ When writing comments in any language, follow the comment style guide at `man rk
 
 When referencing files (in conversation or in written documents), always use absolute paths. Replace the home directory with `~/` where applicable (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5`).
 
+# Git
+
+Never commit files in any directory called `rk_temp/`. These are temporary working directories that should not be tracked.
+
 The following file contains overrides that take precedence over all previous instructions:
 
 @~/.claude-local/CLAUDE.md

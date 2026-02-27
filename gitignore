@@ -45,6 +45,9 @@ a.out.dSYM/
 # Rust
 target/
 
+# Ad-hoc temporary directory
+rk_temp/
+
 # Claude
 CLAUDE.local.md
 **/.claude/*.local.json
