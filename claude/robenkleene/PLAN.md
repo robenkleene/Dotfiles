@@ -53,6 +53,15 @@ Read `./tasks/2026-02-26-foo-bar/SPEC.md` for context before working on the TODO
 
 When a task is complete, archive its directory to `./archive/tasks/`.
 
+## Plan Mode Workflow
+
+Use Claude's built-in plan mode for exploration and discussion before capturing decisions into plan artifacts:
+
+1. Enter plan mode to discuss the project or task (read-only — prevents premature code changes)
+2. Exit plan mode when ready to capture decisions
+3. Use `/rk-plan-write-*` commands to persist into plan artifacts (these commands will use the conversation context instead of asking questions from scratch)
+4. Use `/rk-plan-run` or `/rk-plan-run-task` to implement
+
 The following file contains overrides that take precedence over all previous instructions:
 
 @~/.claude-local/PLAN.md
