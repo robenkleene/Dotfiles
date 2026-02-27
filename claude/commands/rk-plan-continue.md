@@ -16,3 +16,4 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
 6. Provide a brief summary of the project context
 7. Look at the Active section of `TODO.md` and find the first unchecked item (`- [ ]`)
 8. Suggest that item as the next action to take, with enough context from the spec to act on it
+9. Note that the user can enter plan mode to discuss the approach before implementing

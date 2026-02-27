@@ -12,7 +12,7 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
 2. Read `TASK_DIR/SPEC.md` to understand the task goals, constraints, and scope
 3. If `TASK_DIR/TODO.md` exists, read it to understand the current task status
 4. If `PLAN_DIR/CODE.md` exists, read it to understand already-discovered code pointers
-5. Use AskUserQuestion to clarify ambiguities or missing details, such as:
+5. If the prior conversation already contains discussion about the task, use that context. Use AskUserQuestion only for gaps not covered by the conversation. Otherwise, use AskUserQuestion to clarify ambiguities or missing details, such as:
    - Tasks that seem missing
    - Tasks that are too large and should be broken down
    - Tasks that are out of order relative to dependencies

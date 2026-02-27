@@ -13,7 +13,7 @@ Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the 
 3. If `PLAN_DIR/CODE.md` exists, read it to understand already-discovered code pointers
 4. If `PLAN_DIR/DECISIONS.md` exists, read it to understand past decisions and their rationale
 5. If `PLAN_DIR/LOGS.md` exists, read it to review saved log output
-6. Use AskUserQuestion to clarify ambiguities or missing details, such as:
+6. If the prior conversation already contains discussion about the project, use that context. Use AskUserQuestion only for gaps not covered by the conversation. Otherwise, use AskUserQuestion to clarify ambiguities or missing details, such as:
    - Unclear requirements
    - Missing acceptance criteria
    - Ambiguous scope
