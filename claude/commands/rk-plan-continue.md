@@ -4,6 +4,8 @@ description: Restore context from an existing plan directory and suggest next ac
 
 Restore context from a plan directory and suggest the next action.
 
+If currently in plan mode, exit plan mode before running this command.
+
 Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the plan path and understand plan conventions.
 
 ## Process

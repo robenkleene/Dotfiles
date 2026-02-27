@@ -4,6 +4,8 @@ description: Restore context from a task directory and suggest next action
 
 Restore context from a task directory and suggest the next action.
 
+If currently in plan mode, exit plan mode before running this command.
+
 Read `~/.claude/robenkleene/PLAN.md` and follow its instructions to resolve the task path and understand plan conventions.
 
 ## Process
