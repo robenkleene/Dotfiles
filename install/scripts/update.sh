@@ -28,14 +28,15 @@ cd "$dest_dir" &&
   find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 
 for file in "$src_dir"/*; do
-  if [[ $(basename "$file") == "tags" || $(basename "$file") == "TAGS" ]]; then
+  name="${file##*/}"
+  if [[ "$name" == "tags" || "$name" == "TAGS" ]]; then
     continue
   fi
   if [ -d "$file" ]; then
     continue
   fi
 
-  exec_name=$(basename "${file%.*}")
+  exec_name="${name%.*}"
   chmod a+x "$file"
   make_symlink "$file" "$dest_dir/$exec_name"
 done
