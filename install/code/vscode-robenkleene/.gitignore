@@ -1,6 +1,6 @@
 out/*
 # Needed for the extension to work because this is referenced from `package.json`
-!out/extension.js
+!out/*.js
 
 *.vsix
 node_modules/
