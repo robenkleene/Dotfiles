@@ -6,11 +6,11 @@ settings_only="false"
 all="false"
 while getopts ":sah" option; do
   case "$option" in
-    a)
-      all="true"
-      ;;
     s)
       settings_only="true"
+      ;;
+    a)
+      all="true"
       ;;
     h)
       echo "Usage: command [-hf] [-p <file_path>]"
