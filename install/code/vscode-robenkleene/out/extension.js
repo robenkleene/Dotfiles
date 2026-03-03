@@ -99,12 +99,13 @@ function activate(context) {
         });
     });
     context.subscriptions.push(copyGrepMarkdownDisposable);
-    function resolveDiffPath(document, filePath) {
+    function resolveDiffUri(document, filePath) {
         const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
         if (workspaceFolder) {
-            return path.join(workspaceFolder.uri.fsPath, filePath);
+            return vscode.Uri.joinPath(workspaceFolder.uri, filePath);
         }
-        return path.join(path.dirname(document.uri.fsPath), filePath);
+        const dirUri = document.uri.with({ path: path.dirname(document.uri.path) });
+        return vscode.Uri.joinPath(dirUri, filePath);
     }
     const diffDefinitionProvider = vscode.languages.registerDefinitionProvider({ language: 'diff' }, {
         provideDefinition(document, position) {
@@ -112,11 +113,11 @@ function activate(context) {
             if (!result) {
                 return null;
             }
-            const resolvedPath = resolveDiffPath(document, result.filePath);
+            const uri = resolveDiffUri(document, result.filePath);
             const targetLine = result.line - 1;
             const targetCol = Math.max(position.character - 1, 0);
             const targetPos = new vscode.Position(targetLine, targetCol);
-            return new vscode.Location(vscode.Uri.file(resolvedPath), targetPos);
+            return new vscode.Location(uri, targetPos);
         }
     });
     context.subscriptions.push(diffDefinitionProvider);
@@ -133,8 +134,7 @@ function activate(context) {
             vscode.window.showInformationMessage('No source location found at cursor position');
             return;
         }
-        const resolvedPath = resolveDiffPath(document, result.filePath);
-        const uri = vscode.Uri.file(resolvedPath);
+        const uri = resolveDiffUri(document, result.filePath);
         try {
             const targetDoc = await vscode.workspace.openTextDocument(uri);
             const targetLine = result.line - 1;
@@ -143,7 +143,7 @@ function activate(context) {
             await vscode.window.showTextDocument(targetDoc, { selection: new vscode.Range(pos, pos) });
         }
         catch {
-            vscode.window.showErrorMessage(`Could not open file: ${resolvedPath}`);
+            vscode.window.showErrorMessage(`Could not open file: ${uri.toString()}`);
         }
     });
     context.subscriptions.push(diffGotoSourceDisposable);
