@@ -3,8 +3,12 @@
 set -euo pipefail
 
 settings_only="false"
-while getopts ":sh" option; do
+all="false"
+while getopts ":sah" option; do
   case "$option" in
+    a)
+      all="true"
+      ;;
     s)
       settings_only="true"
       ;;
@@ -24,13 +28,9 @@ while getopts ":sh" option; do
 done
 
 ~/.bin/egit -u
-if [[ "$settings_only" != "true" ]]; then
+if [[ "$all" == "true" ]]; then
+  ~/.bin/git_pull_all
+elif [[ "$settings_only" != "true" ]]; then
   ~/.bin/git_pull_all -t
-  # if [[ -e "$HOME/.bin-local/local_pull" ]]; then
-  #   ~/.bin-local/local_pull
-  # fi
 fi
 ~/Developer/Dotfiles/install/update.sh
-# if [[ -e "$HOME/.bin-local/local_update" ]]; then
-#   ~/.bin-local/local_update
-# fi
