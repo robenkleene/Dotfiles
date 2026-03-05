@@ -18,6 +18,8 @@ augroup END
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
 " Default to terminal foreground color and background color
 highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
+" In `lunaperche` `Statement` is white, so remap to `cyan`
+highlight Statement guifg=#8B8680 ctermfg=cyan guibg=NONE ctermbg=NONE cterm=NONE gui=NONE
 if !has('gui_running')
   highlight Normal ctermbg=NONE guibg=NONE
 endif
