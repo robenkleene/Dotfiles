@@ -16,6 +16,8 @@ augroup END
 "augroup END
 
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+" Default to terminal foreground color and background color
+highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
 if !has('gui_running')
   highlight Normal ctermbg=NONE guibg=NONE
 endif
@@ -23,7 +25,7 @@ augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
   if !has('gui_running')
-    autocmd ColorScheme * highlight Normal ctermbg=NONE
+    autocmd ColorScheme * highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
   endif
 augroup END
 
