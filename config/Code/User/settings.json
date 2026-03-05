@@ -99,6 +99,16 @@
         "Lines too Long": false,
         "Average Word Length too Long": false
     },
+    "cSpell.languageSettings": [
+        {
+            "languageId": "markdown",
+            // Don't spell check code blocks and inline code
+            "ignoreRegExpList": [
+                "/^\\s*```[\\s\\S]*?^\\s*```/gm",
+                "/`[^`]+`/g"
+            ]
+        }
+    ],
     // lldb
     // Don't show update notifications
     "lldb.suppressUpdateNotifications": true,
