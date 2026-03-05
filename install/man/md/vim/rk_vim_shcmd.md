@@ -1,3 +1,5 @@
+- `:! <cmd>`: Run shell command
+- Prefix with `:sil[ent]` to not prompt for output, e.g., `:sil !open $HOME`
 - `!`: Run shell command on visual selection (i.e., shortcut for `:!`)
 - `!!`: Run shell command on current line (i.e., shortcut for `:.!`)
 
