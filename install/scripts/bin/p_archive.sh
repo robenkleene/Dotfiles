@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 message="false"
-verbose="false"
+# Note we force verbose to true, this script is nicer with the output file
+# path, but it means the `-v` flag meaningless
+verbose="true"
 echo="false"
 while getopts ":vmeh" option; do
   case "$option" in
@@ -61,10 +63,10 @@ fi
 
 if [[ "$message" == "true" ]]; then
   line_count=$(wc -l < "$destination_archive_file" | tr -d " " | tr -d "\n")
-  echo -n "Backed up $line_count lines"
+  echo "Backed up $line_count lines"
 else
   # if [[ -t 1 ]]; then
   #   # Only echo file path if stdout is a terminal
-  echo -n "$destination_archive_file"
+  echo "$destination_archive_file"
   # fi
 fi
