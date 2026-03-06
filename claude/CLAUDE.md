@@ -12,6 +12,8 @@ When referencing files (in conversation or in written documents), always use abs
 
 Never commit files in any directory called `rk_temp/`. These are temporary working directories that should not be tracked.
 
+When I refer to the "current commit" (e.g., `current_commit`, `current commit`, `the current commit`), it always means the commit at HEAD. Resolve it with `git rev-parse HEAD`.
+
 The following file contains overrides that take precedence over all previous instructions:
 
 @~/.claude-local/CLAUDE.md
