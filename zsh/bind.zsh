@@ -161,3 +161,18 @@ fi
 # This is the only thing that seems to work on macOS
 bindkey -e "^[[A" up-line-or-beginning-search
 bindkey -e "^[[B" down-line-or-beginning-search
+
+# Ignore F1-F12
+# Because accidently entering these just enters garbage in the prompt
+bindkey -s '^[OP' ''   # F1
+bindkey -s '^[OQ' ''   # F2
+bindkey -s '^[OR' ''   # F3
+bindkey -s '^[OS' ''   # F4
+bindkey -s '^[[15~' '' # F5
+bindkey -s '^[[17~' '' # F6
+bindkey -s '^[[18~' '' # F7
+bindkey -s '^[[19~' '' # F8
+bindkey -s '^[[20~' '' # F9
+bindkey -s '^[[21~' '' # F10
+bindkey -s '^[[23~' '' # F11
+bindkey -s '^[[24~' '' # F12
