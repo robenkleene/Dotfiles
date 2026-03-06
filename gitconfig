@@ -24,5 +24,6 @@
 	co = checkout
 	dr = diff --relative
 	root = rev-parse --show-toplevel
+	rt = rev-parse --show-toplevel
 	sr = show --relative
 	st = status
