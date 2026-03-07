@@ -59,6 +59,9 @@ fi
 ./rs/install.sh
 ./emacs/install.sh
 ./vim/install.sh
+if [[ -f "$HOME/.personal" ]]; then
+  ./claude/install.sh
+fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
   ./macos/install.sh
