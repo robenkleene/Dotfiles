@@ -58,9 +58,6 @@ brew 'nethack'
 brew 'htop'
 brew 'glances'
 
-tap 'homebrew/cask'
-cask 'claude-code'
-
 tap 'robenkleene/tap'
 brew 'rep-grep'
 brew 'ren-find'

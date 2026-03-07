@@ -4,7 +4,12 @@ set -euo pipefail
 
 executable_path=$(command -v -- "claude")
 
-if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
+if ! command -v claude &> /dev/null; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
+# if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
+if [[ "$executable_path" != "$HOME/.local/bin/claude" ]]; then
   if [ ! -e "$HOME/.claude/" ]; then
     # Create the directory so that the symlink isn't created later
     mkdir "$HOME/.claude/"

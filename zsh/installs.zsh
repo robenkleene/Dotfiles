@@ -50,10 +50,10 @@ if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
 fi
 
 # Python
+# Linux (Claude Code installs here too) 
+path=(~/.local/bin $path)
 if [[ "$(uname)" = "Darwin" ]]; then
   path=(~/Library/Python/3.11/bin $path)
-elif [[ "$(uname)" = "Linux" ]]; then
-  path=(~/.local/bin $path)
 fi
 
 # llvm
