@@ -21,6 +21,7 @@
 	prompt = false
 [alias]
 	br = branch
+	ci = commit
 	co = checkout
 	dr = diff --relative
 	root = rev-parse --show-toplevel
