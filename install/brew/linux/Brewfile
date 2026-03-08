@@ -51,6 +51,8 @@ brew 'jq'
 # Removed to save disk space
 # brew 'llvm'
 
+brew 'codex'
+
 # Games
 brew 'nethack'
 
