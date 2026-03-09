@@ -10,6 +10,7 @@ pager = less
 dr = diff --root .
 sr = diff --root . -c .
 cf = status --no-status --added --modified --change
+cm = commit
 [committemplate]
 %unset emptymsg
 [extensions]

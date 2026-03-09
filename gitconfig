@@ -21,7 +21,7 @@
 	prompt = false
 [alias]
 	br = branch
-	ci = commit
+	cm = commit
 	co = checkout
 	di = diff
 	dr = diff --relative
