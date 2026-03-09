@@ -25,12 +25,11 @@ done
 
 cd "$(dirname "$0")" || exit 1
 
-# Claude must happen before other dotfiles to support custom install locations
-../install/claude/install.sh
-
 cd ..
 
 source_dir=$(pwd -P);
+
+echo "Updating symlinks..."
 
 # Cleanup dead symlinks
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
@@ -38,12 +37,6 @@ find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 source ~/.bin/nobin/_symlink.sh
 
 for file in *; do
-  if [[ $file == *.sh ]]; then
-    continue
-  fi
-  if [[ $file == "scripts" ]]; then
-    continue
-  fi
   if [[ $file == "install" ]]; then
     continue
   fi
