@@ -3,5 +3,13 @@
     "prefix": "rk_video",
     "body": "<video controls>\n  <source src=\"${0:path/to/video}\" type=\"video/mp4\">\n</video>",
     "description": "video with controls"
+  },
+  "prompt review commit": {
+    "prefix": [
+      "rk_prompt_review_commit",
+      "rk_pr_rev_ci"
+    ],
+    "body": "Code review the current commit (check the current commit with `git show` [don't switch commits if this isn't what you expect]).",
+    "description": "prompt review commit"
   }
 }
