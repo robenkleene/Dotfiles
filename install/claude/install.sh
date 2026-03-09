@@ -23,11 +23,12 @@ if [[ "$executable_path" != "$HOME/.local/bin/claude" ]]; then
     ln -s "$source_dir/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
   fi
 
-  if [ ! -e "$HOME/.claude/commands" ]; then
-    cd "$(dirname "$0")" && cd ../.. || exit 1
-    source_dir=$(pwd -P);
-    ln -s "$source_dir/claude/commands" "$HOME/.claude/commands"
-  fi
+  # We've archived custom commands so we don't need this anymore
+  # if [ ! -e "$HOME/.claude/commands" ]; then
+  #   cd "$(dirname "$0")" && cd ../.. || exit 1
+  #   source_dir=$(pwd -P);
+  #   ln -s "$source_dir/claude/commands" "$HOME/.claude/commands"
+  # fi
 
   # Comment this out as this dir doesn't currently exist
   # if [ ! -e "$HOME/.claude/robenkleene" ]; then
