@@ -18,4 +18,4 @@ When the user refers to the "current commit", `current_commit`, or "current diff
 
 # Version Control
 
-When working with version controlled files, never commit changes unless explicitly told to do so (e.g., wait for a explicit command like "amend the current commit").
+When working with version controlled files, never commit changes unless explicitly told to do so (e.g., wait for a explicit command like "amend the current commit" or "continue the rebase").
