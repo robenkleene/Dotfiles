@@ -30,21 +30,7 @@ if [[ "$force" != "true" ]]; then
   echo
 fi
 
-function make_symlink() {
-  source="$1"
-  destination="$2"
-  if [ -e "$destination" ] && [ ! -L "$destination" ]; then
-    echo "Warning: $destination already exists and it's not a symlink" >&2
-  else
-    if [ ! -e "$destination" ]; then
-      if [[ "$force" == "true" ]]; then
-        ln -s "$source" "$destination"
-      else
-        echo "Linking $source to $destination"
-      fi
-    fi
-  fi
-}
+source ~/.bin/nobin/_symlink.sh
 
 if [ ! -d "$src" ]; then
   echo "Source $src is not a directory" >&2
@@ -62,7 +48,7 @@ for file in *; do
     continue
   fi
 
-  make_symlink "$src/$file" "$dst/$file"
+  safe_symlink "$src/$file" "$dst/$file"
 done
 cd - >/dev/null
 

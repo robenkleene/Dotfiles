@@ -6,15 +6,7 @@ cd "$(dirname "$0")" || exit 1
 src_dir="$(pwd -P)/bin"
 dest_dir="$HOME/.bin"
 
-function make_symlink() {
-  src="$1"
-  dest="$2"
-  if [ ! -e "$dest" ]; then
-    ln -s "$src" "$dest"
-  elif [ ! -L "$dest" ]; then
-    echo "Warning: $dest is a file and it's not a symlink" >&2
-  fi
-}
+source ~/.bin/nobin/_symlink.sh
 
 if [ ! -e "$dest_dir" ]; then
   mkdir "$dest_dir"
@@ -38,13 +30,9 @@ for file in "$src_dir"/*; do
 
   exec_name="${name%.*}"
   chmod a+x "$file"
-  make_symlink "$file" "$dest_dir/$exec_name"
+  safe_symlink "$file" "$dest_dir/$exec_name"
 done
 
 # Symlink the no bin directory so scripts can reference them
 nobin_dest=$dest_dir/nobin
-if [ ! -e "$nobin_dest" ]; then
-  ln -s "$src_dir/nobin" "$nobin_dest"
-elif [ ! -L "$nobin_dest" ]; then
-  echo "Warning: $nobin_dest is a file and it's not a symlink" >&2
-fi
+safe_symlink "$src_dir/nobin" "$nobin_dest"

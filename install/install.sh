@@ -52,16 +52,16 @@ fi
 if [[ ! -e "$HOME/.man/man1/rk_vim.1" ]]; then
   ./man/install.sh
 fi
+
+./claude/install.sh
 ./code/install.sh
+./codex/install.sh
+./emacs/install.sh
 ./node/install.sh
 ./py/install.sh
 ./rb/install.sh
 ./rs/install.sh
-./emacs/install.sh
 ./vim/install.sh
-if [[ -f "$HOME/.personal" ]]; then
-  ./claude/install.sh
-fi
 
 if [[ "$(uname)" = "Darwin" ]]; then
   ./macos/install.sh

@@ -4,8 +4,10 @@ set -euo pipefail
 
 executable_path=$(command -v -- "claude")
 
-if ! command -v claude &> /dev/null; then
-  curl -fsSL https://claude.ai/install.sh | bash
+if [[ -f "$HOME/.personal" ]]; then
+  if ! command -v claude &> /dev/null; then
+    curl -fsSL https://claude.ai/install.sh | bash
+  fi
 fi
 
 # if [[ "$executable_path" != "$HOME/.brew/bin/claude" ]]; then
