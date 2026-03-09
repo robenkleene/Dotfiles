@@ -5,43 +5,28 @@
     "description": "video with controls"
   },
   "prompt review git commit": {
-    "prefix": [
-      "pr_review_git_commit",
-      "pr_rev_git_cm"
-    ],
+    "prefix": "pr_rev_git_cm",
     "body": "Code review the current commit (check the current commit with `git rev-parse HEAD` [don't switch commits if this isn't what you expect]).",
     "description": "prompt review git commit"
   },
   "prompt review Mercurial commit": {
-    "prefix": [
-      "pr_review_hg_commit",
-      "pr_rev_hg_cm"
-    ],
+    "prefix": "pr_rev_hg_cm",
     "body": "Code review the current commit (check the current commit with `sl log -l 1` [don't switch commits if this isn't what you expect]).",
     "description": "prompt review Mercurial commit"
   },
   "prompt review uncommitted changes": {
-    "prefix": [
-      "pr_review_uncommit",
-      "pr_rev_no_cm"
-    ],
+    "prefix": "pr_rev_no_cm",
     "body": "Code review the uncommitted changes",
     "description": "prompt review uncommitted changes"
   },
   "prompt review dir": {
-    "prefix": [
-      "pr_review_dir",
-      "pr_rev_dir"
-    ],
+    "prefix": "pr_rev_dir",
     "body": "Review the current directory and give feedback on how it can be improved.",
     "description": "prompt review dir"
   },
-  "prompt fix": {
-    "prefix": [
-      "pr_fix_no_commit",
-      "pr_fix_no_cm"
-    ],
+  "prompt fix no commit": {
+    "prefix": "pr_fix_no_cm",
     "body": "Fix locally but don't commit",
-    "description": "prompt fix"
+    "description": "prompt fix no commit"
   }
 }
