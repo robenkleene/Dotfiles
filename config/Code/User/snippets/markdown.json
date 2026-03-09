@@ -4,13 +4,21 @@
     "body": "<video controls>\n  <source src=\"${0:path/to/video}\" type=\"video/mp4\">\n</video>",
     "description": "video with controls"
   },
-  "prompt review commit": {
+  "prompt review git commit": {
     "prefix": [
-      "rk_prompt_review_commit",
-      "rk_pr_rev_ci"
+      "rk_prompt_review_git_commit",
+      "rk_pr_rev_git_ci"
     ],
-    "body": "Code review the current commit (check the current commit with `git show` [don't switch commits if this isn't what you expect]).",
-    "description": "prompt review commit"
+    "body": "Code review the current commit (check the current commit with `git rev-parse HEAD` [don't switch commits if this isn't what you expect]).",
+    "description": "prompt review git commit"
+  },
+  "prompt review Mercurial commit": {
+    "prefix": [
+      "rk_prompt_review_hg_commit",
+      "rk_pr_rev_hg_ci"
+    ],
+    "body": "Code review the current commit (check the current commit with `sl log -l 1` [don't switch commits if this isn't what you expect]).",
+    "description": "prompt review Mercurial commit"
   },
   "prompt review dir": {
     "prefix": [
