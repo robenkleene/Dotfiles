@@ -25,7 +25,7 @@
       "rk_prompt_review_uncommit",
       "rk_pr_rev_no_cm"
     ],
-    "body": "Code review the uncommited changes",
+    "body": "Code review the uncommitted changes",
     "description": "prompt review uncommitted changes"
   },
   "prompt review dir": {
