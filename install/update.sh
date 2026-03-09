@@ -35,18 +35,7 @@ source_dir=$(pwd -P);
 # Cleanup dead symlinks
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
-function make_symlink() {
-  source="$1"
-  destination="$2"
-  if [ ! -e "$destination" ]; then
-    ln -s "$source" "$destination"
-  elif [ ! -L "$destination" ]; then
-    # Ignore claude to allow multiple installation approaches
-    if [ "$destination" != "$HOME/.claude" ]; then
-      echo "Warning: $destination exists and it's not a symlink" >&2
-    fi
-  fi
-}
+source ~/.bin/nobin/_symlink.sh
 
 for file in *; do
   if [[ $file == *.sh ]]; then
@@ -65,7 +54,7 @@ for file in *; do
     continue
   fi
 
-  make_symlink "$source_dir/$file" "$HOME/.$file"
+  safe_symlink "$source_dir/$file" "$HOME/.$file"
 done
 cd - > /dev/null
 
