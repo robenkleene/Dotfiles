@@ -25,6 +25,13 @@
 - `<prefix>m`: Mark the current pane (then switch to another window and use `:join-pane` to bring that pane to the new window)
 - `<prefix>!`, `:break-pane`: Break a pane out to its own window
 
+# Layout
+
+`tmux` calls arranging panes layout.
+
+- `<prefix>E`: Make panes equal size
+- `<prefix>M-5`: Tile panes
+
 # Resizing
 
 These can be repeated without doing the leader key (i.e., they're assigned with the `bind-key` `-r` flag).
