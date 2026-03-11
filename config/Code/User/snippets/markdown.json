@@ -29,6 +29,11 @@
     "body": "Fix on the commit that introduced it",
     "description": "prompt fix on commit"
   },
+  "prompt plan read": {
+    "prefix": "pr_plan_read",
+    "body": "Read the plan at the following path and enter plan mode and ask me any questions before starting: ",
+    "description": "prompt plan read"
+  },
   "prompt fix no commit": {
     "prefix": "pr_fix_no_cm",
     "body": "Fix but don't commit",
