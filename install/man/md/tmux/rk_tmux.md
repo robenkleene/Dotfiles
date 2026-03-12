@@ -1,5 +1,5 @@
-- `tmux attach`: Attach preferring the most recently used unattached session
-- `:clear-history`: Clear scrollback history
+- `tmux attach`, `tmux at`, `tmux a`: Attach preferring the most recently used unattached session
+- `:clear-history`: Clear scroll-back history
 
 # Layouts
 
