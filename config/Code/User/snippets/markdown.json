@@ -9,6 +9,11 @@
     "body": "Read the plan at the following path and enter plan mode and ask me any questions before starting: ",
     "description": "prompt plan read"
   },
+  "prompt plan write": {
+    "prefix": "rk_pr_plan_write",
+    "body": "Write a plan for this, make it detailed enough that it can be re-opened from another session without losing context",
+    "description": "prompt plan write"
+  },
   "prompt review git commit": {
     "prefix": "rk_pr_rev_git_cm",
     "body": "Code review the current commit (check the current commit with `git rev-parse HEAD` [don't switch commits if this isn't what you expect]).",
