@@ -33,6 +33,6 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   # won't paste from the system clipboard as expected
 elif [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
   pbpaste
-elif [[ -n "${TMUX:-}" ]]; then
+elif [[ -n "${TMUX:-}" ]] || tmux has-session 2>/dev/null; then
   TERM=xterm-256color tmux saveb -
 fi
