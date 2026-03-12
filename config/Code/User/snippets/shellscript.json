@@ -60,7 +60,7 @@
     "prefix": "rk_cond_term"
   },
   "cond uname": {
-    "body": "\"$(uname)\" = \"Linux\"",
+    "body": "\"\\$(uname)\" = \"${0:Linux}\"",
     "description": "cond uname",
     "prefix": "rk_cond_uname"
   },
