@@ -1,11 +1,11 @@
 {
   "for in": {
-    "body": "for ${1:file} in (${2:ls})\n    echo $$1\nend",
+    "body": "for ${1:file} in (${2:ls})\n    echo \\$$1\nend",
     "description": "for in",
     "prefix": "rk_forin"
   },
   "one-line for in": {
-    "body": "for ${1:file} in (${2:ls}); echo $$1; end",
+    "body": "for ${1:file} in (${2:ls}); echo \\$$1; end",
     "description": "one-line for in",
     "prefix": "rk_1_forin"
   },
