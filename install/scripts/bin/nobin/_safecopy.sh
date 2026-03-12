@@ -38,7 +38,7 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   fi
 elif [[ -n "${TMUX:-}" ]]; then
   if [[ "$skip_system" == "false" ]]; then
-    if [[ "${__CFBundleIdentifier:-}" = "com.apple.Terminal" ]]; then
+    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
       # Apple Terminal doesn't support built-in clipboard support
       tee >(tmux loadb -) | pbcopy
     else
@@ -50,5 +50,7 @@ elif [[ -n "${TMUX:-}" ]]; then
 elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
-  base64 -w 0 | xargs printf "\\e]52;c;%s\\a" >&2 >/dev/tty
+  if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+    base64 -w 0 | xargs printf "\\e]52;c;%s\\a" >&2 >/dev/tty
+  fi
 fi
