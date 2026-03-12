@@ -9,6 +9,8 @@ if [ -n "${SSH_CONNECTION:-}" ]; then
   tmux set -g status-style bg=yellow,fg=black
   tmux set -g message-style bg=green,fg=black
 
+  tmux set -g pane-active-border-style fg=yellow
+
   # The host (`#H`) is usually visible from the shell prompt (or front TUI
   # program) so this usually duplicates visible information
   # tmux set -g status-right '#{?client_prefix,-- PREFIX --,} #H'
