@@ -1,0 +1,1 @@
+- `bash -x <script-path>`: Run a script, printing each command as it runs
