@@ -39,6 +39,11 @@
     "body": "Fix on the commit that introduced it",
     "description": "prompt fix on commit"
   },
+  "prompt fix compile on commit": {
+    "prefix": "rk_pr_fix_compile_cm",
+    "body": "These commits are not compiling. Fix all the errors on the commits that introduced them, and keep doing that until there's no more compile errors.",
+    "description": "prompt fix compile on commit"
+  },
   "prompt fix no commit": {
     "prefix": "rk_pr_fix_nocm",
     "body": "Fix but don't commit",
