@@ -113,7 +113,7 @@
     // Don't show update notifications
     "lldb.suppressUpdateNotifications": true,
     // Use light theme becauce it makes it easier to cut and paste rendered Markdown to rich text
-    "workbench.colorTheme": "Default Light Modern",
+    // "workbench.colorTheme": "Default Light Modern",
     // Don't compact folders in the tree view
     // This makes trying to drag-and-drop folders to the correct arrangement confusing
     "explorer.compactFolders": false,
