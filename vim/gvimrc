@@ -15,15 +15,15 @@ autocmd GUIEnter * set vb t_vb=
 set guioptions-=e
 
 " Background & Cursor
-" set background=light
+set background=light
 " BBEdit Dark
-highlight NonText guibg=#141414
-highlight Normal guibg=#141414
+" highlight NonText guibg=#141414
+" highlight Normal guibg=#141414
 highlight Cursor guibg=#00BB00
 augroup override_guicolors
   autocmd!
-  autocmd ColorScheme * highlight NonText guibg=#141414
-  autocmd ColorScheme * highlight Normal guibg=#141414
+  " autocmd ColorScheme * highlight NonText guibg=#141414
+  " autocmd ColorScheme * highlight Normal guibg=#141414
   autocmd ColorScheme * highlight Cursor guibg=#00BB00
 augroup END
 
