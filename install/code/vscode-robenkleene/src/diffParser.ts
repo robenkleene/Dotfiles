@@ -29,8 +29,9 @@ export function parseDiffLocation(text: string, targetLine: number): DiffLocatio
 		}
 
 		// --- a/... (only outside hunks)
+		// `\s*$` strips trailing tabs that `git diff` can append after filenames
 		if (!hunkActive && l.startsWith('--- ')) {
-			const m = l.match(/^--- (?:a\/)?(.*)$/);
+			const m = l.match(/^--- (?:a\/)?(.*?)\s*$/);
 			if (m && !aPath) {
 				aPath = m[1];
 			}
@@ -38,8 +39,9 @@ export function parseDiffLocation(text: string, targetLine: number): DiffLocatio
 		}
 
 		// +++ b/... (only outside hunks)
+		// `\s*$` strips trailing tabs that `git diff` can append after filenames
 		if (!hunkActive && l.startsWith('+++ ')) {
-			const m = l.match(/^\+\+\+ (?:b\/)?(.*)$/);
+			const m = l.match(/^\+\+\+ (?:b\/)?(.*?)\s*$/);
 			if (m && !bPath) {
 				bPath = m[1];
 			}
