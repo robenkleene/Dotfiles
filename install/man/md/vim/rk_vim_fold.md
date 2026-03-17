@@ -17,6 +17,7 @@
 # Examples
 
 - `zMzv`: Close all except cursor (this is also a good workaround for not having a way to close all sibling folds)
+- `[zVz]`: Visually select the current fold
 
 # Fold Methods
 
