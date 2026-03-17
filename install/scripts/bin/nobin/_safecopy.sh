@@ -38,8 +38,12 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   fi
 elif [[ -n "${TMUX:-}" ]] || (command -v tmux &>/dev/null && tmux has-session 2>/dev/null); then
   if [[ "$skip_system" == "false" ]]; then
-    if [[ -z "${TERM_PROGRAM:-}" || "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
-      # Apple Terminal doesn't support built-in clipboard support
+    # We can't actually reliably determine if "Apple_Terminal" here because if we're
+    # inside `tmux` then `$TERM_PROGRAM` will be `tmux`. So better just to always copy to
+    # the system clipboard via `pbcopy`
+    # if [[ -z "${TERM_PROGRAM:-}" || "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
+    #   # Apple Terminal doesn't support built-in clipboard support
+    if command -v pbcopy &> /dev/null; then
       tee >(tmux loadb -) | pbcopy
     else
       tmux loadb -w -
