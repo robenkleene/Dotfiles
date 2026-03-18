@@ -3,8 +3,10 @@
 # %include ~/.hgrc-global
 [ui]
 ignore = ~/.hgignore
-# Try disabling this because it creates more complex merge conflict markets
-# merge = internal:merge3
+# `internal:merge3` creates more complex merge conflict markers
+# Without `internal:merge` or `internal:merge3` `hg` will automatically open
+# conflicts in Vim
+merge = internal:merge
 [pager]
 pager = less
 [alias]
