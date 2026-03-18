@@ -43,7 +43,7 @@ elif [[ -n "${TMUX:-}" ]] || (command -v tmux &>/dev/null && tmux has-session 2>
     # the system clipboard via `pbcopy`
     # if [[ -z "${TERM_PROGRAM:-}" || "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
     #   # Apple Terminal doesn't support built-in clipboard support
-    if command -v pbcopy &> /dev/null; then
+    if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null; then
       tee >(tmux loadb -) | pbcopy
     else
       tmux loadb -w -
