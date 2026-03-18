@@ -9,6 +9,7 @@ pager = less
 [alias]
 dr = diff --root .
 sr = diff --root . -c .
+sh = show
 cf = status --no-status --added --modified --change
 cm = commit
 [committemplate]
