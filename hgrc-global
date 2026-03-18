@@ -3,7 +3,8 @@
 # %include ~/.hgrc-global
 [ui]
 ignore = ~/.hgignore
-merge = internal:merge3
+# Try disabling this because it creates more complex merge conflict markets
+# merge = internal:merge3
 [pager]
 pager = less
 [alias]

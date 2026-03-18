@@ -6,8 +6,9 @@
 	default = simple
 # Automatically create remote branches
 	autoSetupRemote = true
-[merge]
-	conflictstyle = diff3
+# Try disabling this because it creates more complex merge conflict markets
+# [merge]
+# 	conflictstyle = diff3
 [include]
 	path = .gitconfig_local
 [pull]
