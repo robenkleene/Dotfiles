@@ -7,6 +7,8 @@ snippets_file="$repo_root/config/Code/User/snippets/markdown.json"
 commands_dir="$repo_root/claude/commands"
 
 mkdir -p "$commands_dir"
+# Remove previously generated `rk-pr-` commands before regenerating
+rm -f "$commands_dir"/rk-pr-*.md
 
 jq -r '
   to_entries[]
