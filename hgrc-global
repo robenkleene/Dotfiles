@@ -10,11 +10,13 @@ merge = internal:merge
 [pager]
 pager = less
 [alias]
-dr = diff --root .
-sr = diff --root . -c .
-sh = show
 cf = status --no-status --added --modified --change
 cm = commit
+dr = diff --root .
+hd = hg id -i
+head = hg id -i
+sh = show
+sr = diff --root . -c .
 [committemplate]
 %unset emptymsg
 [extensions]
