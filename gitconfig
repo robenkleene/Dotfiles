@@ -26,6 +26,8 @@
 	co = checkout
 	di = diff
 	dr = diff --relative
+	hd = rev-parse HEAD
+	head = rev-parse HEAD
 	root = rev-parse --show-toplevel
 	rt = rev-parse --show-toplevel
 	sh = show
