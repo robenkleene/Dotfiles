@@ -18,6 +18,7 @@ DOTFILES=(
     ".bin/rk_today"
     ".claude-local/**"
     ".claude/CLAUDE.md"
+    ".claude/commands/*.md"
     ".claude/settings.json"
     ".config/Code/User/snippets/*.json"
     ".config/nvim/init.lua"
