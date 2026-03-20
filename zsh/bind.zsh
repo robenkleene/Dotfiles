@@ -74,6 +74,18 @@ _system_copy_region_as_kill() {
 }
 zle -N _system_copy_region_as_kill
 
+# Fetch the previous command for editing and delete it from history
+# Useful for fixing typos: press the binding, fix the command, hit enter
+_fix_previous_command() {
+  local prev_cmd="${(j:\n:)${(@f)$(fc -ln -1)}}"
+  BUFFER="$prev_cmd"
+  CURSOR=$#BUFFER
+  local HISTORY_IGNORE="${(b)$(fc -ln -1 -1)}"
+  fc -W
+  fc -p $HISTFILE $HISTSIZE $SAVEHIST
+}
+zle -N _fix_previous_command
+
 # Override bracketed paste to set the mark before pasting, this makes it easy to
 # quote pasted text with `M-"` (`quote-region`)
 function rk/bracketed-paste {
@@ -111,6 +123,7 @@ bindkey -e "^[${key[BackSpace]}" _shell_backward_kill_word
 bindkey -e "^[^?" _shell_backward_kill_word
 # bindkey -e "^w" _shell_backward_kill_word
 bindkey -e "^X^X" _system_kill_line
+bindkey -e "^X^F" _fix_previous_command
 bindkey -e "^[W" _system_copy_region_as_kill
 bindkey -e "^[w" _system_copy_region_as_kill
 
