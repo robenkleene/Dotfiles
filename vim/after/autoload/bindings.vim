@@ -93,9 +93,14 @@ function! bindings#ConflictOpen() abort
 endfunction
 
 function! bindings#ConflictClose() abort
-  for l:winnr in reverse(range(1, winnr('$')))
+  let l:wins = []
+  for l:winnr in range(1, winnr('$'))
     if getwinvar(l:winnr, '&diff') && getwinvar(l:winnr, '&buftype') ==# 'nofile'
-      execute l:winnr . 'wincmd w'
+      call add(l:wins, win_getid(l:winnr))
+    endif
+  endfor
+  for l:winid in l:wins
+    if win_gotoid(l:winid)
       close
     endif
   endfor
