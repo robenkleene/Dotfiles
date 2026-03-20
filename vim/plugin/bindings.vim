@@ -51,3 +51,9 @@ xnoremap <silent> [n :<C-U>exe 'normal! gv'<Bar>call bindings#Context(1)<CR>
 nnoremap <silent> ]n :<C-U>call bindings#Context(0)<CR>
 xnoremap <silent> ]n :<C-U>exe 'normal! gv'<Bar>call bindings#Context(0)<CR>
 onoremap <silent> ]n :<C-U>call bindings#ContextMotion(0)<CR>
+
+" Conflict diff
+nnoremap gCC <Cmd>call bindings#ConflictOpen()<CR>
+nnoremap gCc <Cmd>call bindings#ConflictClose()<CR>
+command! ConflictOpen call bindings#ConflictOpen()
+command! ConflictClose call bindings#ConflictClose()
