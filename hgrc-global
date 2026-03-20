@@ -13,8 +13,8 @@ pager = less
 cf = status --no-status --added --modified --change
 cm = commit
 dr = diff --root .
-hd = hg id -i
-head = hg id -i
+hd = id -i
+head = id -i
 sh = show
 sr = diff --root . -c .
 [committemplate]
