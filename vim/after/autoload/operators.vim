@@ -69,6 +69,15 @@ function operators#ConflictDiffLine() abort
   call win_gotoid(l:origin)
 endfunction
 
+function operators#ConflictDiffClose() abort
+  for l:winnr in reverse(range(1, winnr('$')))
+    if getwinvar(l:winnr, '&diff') && getwinvar(l:winnr, '&buftype') ==# 'nofile'
+      execute l:winnr . 'wincmd w'
+      close
+    endif
+  endfor
+endfunction
+
 function s:ParseConflicts(lines) abort
   let l:conflicts = []
   let l:ours = []
