@@ -14,10 +14,6 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 # this
 bindkey -e
 
-# Allow globs in history search
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
-
 # Widgets
 
 # Edit in editor
@@ -161,6 +157,10 @@ fi
 # This is the only thing that seems to work on macOS
 bindkey -e "^[[A" up-line-or-beginning-search
 bindkey -e "^[[B" down-line-or-beginning-search
+
+# Allow globs in history search
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
 
 # Ignore F1-F12
 # Because accidently entering these just enters garbage in the prompt

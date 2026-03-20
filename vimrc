@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/vim-peekaboo'
 " Me
 Plug 'robenkleene/dirstack.vim'
 Plug 'robenkleene/gotodiff.vim'
