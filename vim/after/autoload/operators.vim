@@ -12,6 +12,7 @@ function operators#ConflictDiff(type = '') abort
     return
   endif
 
+  let l:origin = win_getid()
   for l:conflict in l:conflicts
     new
     setlocal buftype=nofile bufhidden=wipe noswapfile
@@ -23,6 +24,7 @@ function operators#ConflictDiff(type = '') abort
     silent call setline(1, l:conflict.theirs)
     diffthis
   endfor
+  call win_gotoid(l:origin)
 endfunction
 
 function operators#ConflictDiffLine() abort
@@ -52,6 +54,7 @@ function operators#ConflictDiffLine() abort
     return
   endif
 
+  let l:origin = win_getid()
   for l:conflict in l:conflicts
     new
     setlocal buftype=nofile bufhidden=wipe noswapfile
@@ -63,6 +66,7 @@ function operators#ConflictDiffLine() abort
     silent call setline(1, l:conflict.theirs)
     diffthis
   endfor
+  call win_gotoid(l:origin)
 endfunction
 
 function s:ParseConflicts(lines) abort
