@@ -95,8 +95,8 @@ Colors reference the Live theme instead of being hardcoded, via `saved_attribute
 
 ### Panel/Background Colors
 - `live_lcd_bg` — dark panel/LCD background (for visual/content areas)
-- `live_surface_bg` — device surface / control group background
-- `live_macro_title` — title/header bar backgrounds
+- `live_surface_bg` — control group panel background (Device Inspector: `Live Theme Colors: Device Background`)
+- Device background panel should use Device Inspector: `Live Theme Colors: Control Header`
 
 ### Control Colors
 - `live_value_arc` — primary accent (cyan dial arcs, active values, active view icons)
@@ -173,7 +173,10 @@ Max for Live devices cannot exactly replicate native Ableton device designs. Nat
 ## Device Constraints
 
 - M4L devices display in Live's device chain with a fixed height and variable width
+- Drawable device height is **169px** in Max coordinates (338px on macOS Retina / 2)
+- Max for Live inserts a comment at Y=170px — the drawable area ends 1px before it (Y=0–168)
 - Width varies: ~190px (Cabinet) to ~1050px (Echo, Corpus); typical ~400–600px
+- To prevent Live from adding extra padding/borders around the device, set `Initial Window Size` to the exact width and height of the device (set origin to `0. 0.`)
 
 ## Layout Patterns
 
@@ -205,12 +208,13 @@ Left-to-right: input controls → processing/visuals → output controls. Dry/We
 
 - Always on a **dark background** (`themecolor.live_lcd_bg`)
 - Center or center-right of device, 40–70% of area
+- Dark background sections for visual content typically extend all the way to the bottom of the device (the standard 2px margin at the bottom falls outside the drawable area)
 - Dials/sliders **never** on dark background; numboxes/toggles/menus/tabs **can** be
 
 ## Spacing
 
-- **5px** between colored sections and from device border
-- 5px gaps between control group panels
+- **2px** between colored sections (including from the device border)
+- 2px gaps between control group panels
 - Consistent dial sizing within a row (~50x48px)
 
 ## Control Grouping
@@ -224,6 +228,7 @@ Left-to-right: input controls → processing/visuals → output controls. Dry/We
 - True `live.tab` page-switching is **rare**
 - For view switching, use the **ubutton + icon + hidden** pattern
 - Mode-switching button bars (segmented `live.text`) more common than `live.tab`
+- Tabs use a black background, and the selected tab visually connects to the black content area below it (tab bar and visual area appear as one continuous black region)
 
 ## Labels
 
