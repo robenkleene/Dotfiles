@@ -174,7 +174,7 @@ Max for Live devices cannot exactly replicate native Ableton device designs. Nat
 
 - M4L devices display in Live's device chain with a fixed height and variable width
 - Drawable device height is **169px** in Max coordinates (338px on macOS Retina / 2)
-- Max for Live inserts a comment at Y=170px — the drawable area ends 1px before it (Y=0–168)
+- New Max for Live projects insert a comment at Y=170px — the drawable area ends 1px before it (Y=0–168)
 - Width varies: ~190px (Cabinet) to ~1050px (Echo, Corpus); typical ~400–600px
 - To prevent Live from adding extra padding/borders around the device, set `Initial Window Size` to the exact width and height of the device (set origin to `0. 0.`)
 
