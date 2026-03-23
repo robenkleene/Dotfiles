@@ -5,16 +5,12 @@ use warnings;
 use Getopt::Std;
 
 my %opts;
-getopts('a', \%opts);
+getopts('H', \%opts);
 
 my $destLine = $ARGV[0] // 0;
 
-# Print all lines with plus
-my $plus = 0;
-if ($opts{a} || $destLine eq '+') {
-    $plus = 1;
-    $destLine = 0;
-}
+# Print all lines (default), or only first per hunk (-H)
+my $hunks = $opts{H} ? 1 : 0;
 
 my $filename;
 my $line;
@@ -43,13 +39,13 @@ while (<STDIN>) {
    } elsif (m(^\+(.*)$)) {
       my $data = $1 || '';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless ($printed && !$plus) || $destLine > 0;
+         unless ($printed && $hunks) || $destLine > 0;
       $offset++;
       $printed = 1;
    } elsif (m(^\-(.*)$)) {
       my $data = $1 || '';
       print "$filename:" . ($offset + $line) . ":$data\n"
-         unless $plus || $printed || $destLine > 0;
+         unless !$hunks || $printed || $destLine > 0;
       # Don't increment the offset for subtracted lines
       $printed = 1;
    } elsif (m(^ )) {
