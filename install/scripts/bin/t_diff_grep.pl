@@ -2,12 +2,16 @@
 
 use strict;
 use warnings;
+use Getopt::Std;
+
+my %opts;
+getopts('a', \%opts);
 
 my $destLine = $ARGV[0] // 0;
 
 # Print all lines with plus
 my $plus = 0;
-if ($destLine eq '+') {
+if ($opts{a} || $destLine eq '+') {
     $plus = 1;
     $destLine = 0;
 }
