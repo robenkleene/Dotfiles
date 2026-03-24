@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-pbpaste | ~/.bin/p_archive
+pbpaste | ~/.bin/p-archive

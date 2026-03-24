@@ -29,8 +29,8 @@ done
 
 ~/.bin/egit -u
 if [[ "$all" == "true" ]]; then
-  ~/.bin/git_pull_all
+  ~/.bin/git-pull-all
 elif [[ "$settings_only" != "true" ]]; then
-  ~/.bin/git_pull_all -t
+  ~/.bin/git-pull-all -t
 fi
 ~/Developer/Dotfiles/install/update.sh

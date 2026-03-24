@@ -6,7 +6,7 @@
 ;; E.g., `(insert (markdown-title buffer-file-name))'
 
 (defun markdown-title (buffer-file-name)
-  (shell-command-to-string (concat "~/.bin/t_path_md_title " buffer-file-name))
+  (shell-command-to-string (concat "~/.bin/t-path-md-title " buffer-file-name))
   )
 
 ;; Helper

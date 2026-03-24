@@ -9,7 +9,7 @@ on error errMsg number errNum
 end try
 
 on makeNewFile()
-	set theNewFileScript to "~/.bin/file_new -r"
+	set theNewFileScript to "~/.bin/file-new -r"
 	tell application "Finder"
 		try
 			set the theFolder to (folder of the front window) as alias
