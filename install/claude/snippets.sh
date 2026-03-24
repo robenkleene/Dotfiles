@@ -12,12 +12,12 @@ rm -f "$commands_dir"/rk-pr-*.md
 
 jq -r '
   to_entries[]
-  | select(.value.prefix | startswith("rk_pr_"))
+  | select(.value.prefix | startswith("rk-pr-"))
   | [.value.prefix, .value.body, .value.description]
   | @tsv
 ' "$snippets_file" | while IFS=$'\t' read -r prefix body description; do
   # `tr '_' '-'` converts underscores to hyphens for command naming
-  name="${prefix//_/-}"
+  name="${prefix}"
   cat > "$commands_dir/$name.md" <<EOF
 ---
 name: $name
