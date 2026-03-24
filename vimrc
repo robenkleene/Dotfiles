@@ -18,7 +18,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/vim-peekaboo'
+" `peekaboo` causes too many visual bugs, it's also annoying in the most common case
+" (pasting from `"` register), and it doesn't support the command line.
+" Plug 'junegunn/vim-peekaboo'
 " Me
 Plug 'robenkleene/dirstack.vim'
 Plug 'robenkleene/gotodiff.vim'
