@@ -3,4 +3,4 @@
 set -euo pipefail
 
 # `s| |\\\\ |g` escapes spaces with backslashes for shell-safe paths
-realpath "$@" | sed "s|^$HOME|~|; s| |\\\\ |g"
+realpath "${@:-$PWD}" | sed "s|^$HOME|~|; s| |\\\\ |g"
