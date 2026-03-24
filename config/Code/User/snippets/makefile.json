@@ -1,6 +1,6 @@
 {
   "template": {
-    "prefix": "rk_template",
+    "prefix": "rk-template",
     "body": ".PHONY: hello\n\nhello:\n\techo \"Hello\"",
     "description": "template"
   }

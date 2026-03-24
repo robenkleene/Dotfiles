@@ -2,40 +2,40 @@
   "blender template": {
     "body": "import bpy\n\nif bpy.data.objects.get(\"Cube\"):\n    bpy.data.objects[\"Cube\"].select_set(True)\n    bpy.ops.object.delete()\n",
     "description": "blender template",
-    "prefix": "rk_blender_template"
+    "prefix": "rk-blender-template"
   },
   "func main": {
     "body": "def main():\n\t\"\"\"\n\tmain\n\t\"\"\"\n\t",
     "description": "func main",
-    "prefix": "rk_main"
+    "prefix": "rk-main"
   },
   "print": {
     "body": "print(\"$1\")",
     "description": "print",
     "prefix": [
-      "rk_p",
-      "rk_print"
+      "rk-p",
+      "rk-print"
     ]
   },
   "print err": {
     "body": "print(\"${1:Error}\", file=sys.stderr)",
     "description": "print err",
     "prefix": [
-      "rk_pe",
-      "rk_print_err"
+      "rk-pe",
+      "rk-print-err"
     ]
   },
   "print var": {
     "body": "print(\"$1 = \", ${1})",
     "description": "print var",
     "prefix": [
-      "rk_pv",
-      "rk_print_var"
+      "rk-pv",
+      "rk-print-var"
     ]
   },
   "template": {
     "body": "#!/usr/bin/env python3\n\n",
     "description": "template",
-    "prefix": "rk_template"
+    "prefix": "rk-template"
   }
 }

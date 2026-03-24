@@ -2,111 +2,111 @@
   "arrows": {
     "body": "↓↑←→",
     "description": "arrows",
-    "prefix": "rk_aarr"
+    "prefix": "rk-aarr"
   },
   "bs": {
     "body": "⌫",
     "description": "bs",
-    "prefix": "rk_bspc"
+    "prefix": "rk-bspc"
   },
   "btab": {
     "body": "⇤",
     "description": "btab",
-    "prefix": "rk_btab"
+    "prefix": "rk-btab"
   },
   "cmd": {
     "body": "⌘",
     "description": "cmd",
-    "prefix": "rk_cmd"
+    "prefix": "rk-cmd"
   },
   "ctrl": {
     "body": "⌃",
     "description": "ctrl",
-    "prefix": "rk_ctrl"
+    "prefix": "rk-ctrl"
   },
   "darr": {
     "body": "↓",
     "description": "darr",
-    "prefix": "rk_darr"
+    "prefix": "rk-darr"
   },
   "degree": {
     "body": "°",
     "description": "degree",
-    "prefix": "rk_degree"
+    "prefix": "rk-degree"
   },
   "del": {
     "body": "⌦",
     "description": "del",
-    "prefix": "rk_del"
+    "prefix": "rk-del"
   },
   "esc": {
     "body": "⎋",
     "description": "esc",
-    "prefix": "rk_esc"
+    "prefix": "rk-esc"
   },
   "flat": {
     "body": "♭",
     "description": "flat",
-    "prefix": "rk_flat"
+    "prefix": "rk-flat"
   },
   "keyboard shortcut symbols": {
     "body": "⌃⌥⇧⌘",
     "description": "keyboard shortcut symbols",
-    "prefix": "rk_kss"
+    "prefix": "rk-kss"
   },
   "keyboard shortcut symbols other": {
     "body": "⌤↓↑←→⎋⌦⌫↩⇥⇤␣",
     "description": "keyboard shortcut symbols other",
-    "prefix": "rk_kso"
+    "prefix": "rk-kso"
   },
   "larr": {
     "body": "←",
     "description": "larr",
-    "prefix": "rk_larr"
+    "prefix": "rk-larr"
   },
   "lorem": {
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "description": "lorem",
-    "prefix": "rk_lorem"
+    "prefix": "rk-lorem"
   },
   "opt": {
     "body": "⌥",
     "description": "opt",
-    "prefix": "rk_opt"
+    "prefix": "rk-opt"
   },
   "rarr": {
     "body": "→",
     "description": "rarr",
-    "prefix": "rk_rarr"
+    "prefix": "rk-rarr"
   },
   "ret": {
     "body": "↩",
     "description": "ret",
-    "prefix": "rk_ret"
+    "prefix": "rk-ret"
   },
   "sft": {
     "body": "⇧",
     "description": "sft",
-    "prefix": "rk_sft"
+    "prefix": "rk-sft"
   },
   "sharp": {
     "body": "♯",
     "description": "sharp",
-    "prefix": "rk_sharp"
+    "prefix": "rk-sharp"
   },
   "spc": {
     "body": "␣",
     "description": "spc",
-    "prefix": "rk_spc"
+    "prefix": "rk-spc"
   },
   "tab": {
     "body": "⇥",
     "description": "tab",
-    "prefix": "rk_tab"
+    "prefix": "rk-tab"
   },
   "uarr": {
     "body": "↑",
     "description": "uarr",
-    "prefix": "rk_uarr"
+    "prefix": "rk-uarr"
   }
 }
