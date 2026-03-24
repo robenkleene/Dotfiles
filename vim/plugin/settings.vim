@@ -24,6 +24,9 @@ set showcmd
 " This doesn't work as expected, e.g., `foo_bar` will stop at both before and
 " after the underscore.
 " set iskeyword-=_
+" Add hyphens to `iskeyword` this is important so snippets can be expanded
+" with hyphens in them, e.g., `rk-<C-x><C-u>`
+set iskeyword+=-
 
 set splitbelow
 set splitright
