@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-~/.bin/git_remote_replace_origin $(git ls-remote --get-url | ~/.bin/t_url_url_git)
+-/.bin/git-remote-replace-origin $(git ls-remote --get-url | ~/.bin/t-url-url-git)

@@ -102,5 +102,5 @@ elif [[ $remote =~ (https://|git@)([^/:]*)[/:](.*) ]]; then
   fi
 fi
 
-encoded_url=$(echo "$final_url" | ~/.bin/url_encode)
+encoded_url=$(echo "$final_url" | ~/.bin/url-encode)
 echo "https://$encoded_url"
