@@ -10,7 +10,7 @@ set -euo pipefail
 DOTFILES=(
     ".bin/nobin/_safecopy.sh"
     ".bin/nobin/_safepaste.sh"
-    ".bin/nobin/_tmux_set_ssh_status.sh"
+    ".bin/nobin/_tmux-set-ssh-status.sh"
     ".bin/path_abs"
     ".bin/rk_copy"
     ".bin/rk_lorem"
