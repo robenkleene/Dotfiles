@@ -16,3 +16,10 @@ the line, e.g., \f[CR]:put =system(\(aqp\(aq)\f[R]
 \f[CR]let \(atb=\(dq\(rsn\(dq\f[R]: Set a register just a line break (so
 subsequent appends with \f[CR]\(dqBy\f[R] will have line break inserted
 between them)
+.SH Numbered Registers
+.IP \(bu 2
+Yanks go in \f[CR]0\f[R]
+.IP \(bu 2
+\f[CR]1\-9\f[R] registers are automatically populated by change and
+delete events, \f[CR]1\f[R] is most recent and \f[CR]9\f[R] is the
+oldest
