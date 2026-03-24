@@ -2,188 +2,188 @@
   "arr access": {
     "body": "\\${${0:args}[@]}",
     "description": "arr access",
-    "prefix": "rk_arr_access"
+    "prefix": "rk-arr-access"
   },
   "cd to script dir": {
     "body": "cd \"\\$(dirname \"\\$0\" || exit 1)\"",
     "description": "cd to script dir",
-    "prefix": "rk_cd_scriptdir"
+    "prefix": "rk-cd-scriptdir"
   },
   "cond": {
     "body": "[[ ${0:true} ]]",
     "description": "cond",
-    "prefix": "rk_cond"
+    "prefix": "rk-cond"
   },
   "cond arg": {
     "body": "\\$# ${1:-ne} ${0:1}",
     "description": "cond arg",
-    "prefix": "rk_cond_arg"
+    "prefix": "rk-cond-arg"
   },
   "cond empty": {
     "body": "-z \"\\${${0:1}:-}\"",
     "description": "cond empty",
-    "prefix": "rk_cond_empty"
+    "prefix": "rk-cond-empty"
   },
   "cond eq": {
     "body": "${1:\\$?} -${2:eq} ${0:0}",
     "description": "cond eq",
-    "prefix": "rk_cond_eq"
+    "prefix": "rk-cond-eq"
   },
   "cond file dir": {
     "body": "-d \"${0:\\$1}\"",
     "description": "cond dir",
-    "prefix": "rk_cond_filedir"
+    "prefix": "rk-cond-filedir"
   },
   "cond file exists": {
     "body": "-e \"${0:\\$1}\"",
     "description": "cond file exists",
-    "prefix": "rk_cond_file_exists"
+    "prefix": "rk-cond-file-exists"
   },
   "cond file regular": {
     "body": "-f \"${0:\\$1}\"",
     "description": "cond file regular",
-    "prefix": "rk_cond_fileregular"
+    "prefix": "rk-cond-fileregular"
   },
   "cond file symlink": {
     "body": "-L \"${0:\\$1}\"",
     "description": "cond file symlink",
-    "prefix": "rk_cond_fileln"
+    "prefix": "rk-cond-fileln"
   },
   "cond not empty": {
     "body": "-n \"\\${${0:1}:-}\"",
     "description": "cond var not empty",
-    "prefix": "rk_cond_not_empty"
+    "prefix": "rk-cond-not-empty"
   },
   "cond standard output is terminal": {
     "body": "-t 1",
     "description": "cond standard output is terminal",
-    "prefix": "rk_cond_term"
+    "prefix": "rk-cond-term"
   },
   "cond uname": {
     "body": "\"\\$(uname)\" = \"${0:Linux}\"",
     "description": "cond uname",
-    "prefix": "rk_cond_uname"
+    "prefix": "rk-cond-uname"
   },
   "for": {
     "body": "for ${1:name} in ${2:\"\\$@\"}; do\n  echo \"\\$${1}\"\ndone",
     "description": "for",
-    "prefix": "rk_for"
+    "prefix": "rk-for"
   },
   "for dir": {
     "body": "for dir in */; do\n  echo \\$dir;\ndone",
     "description": "for dir",
-    "prefix": "rk_for_dir"
+    "prefix": "rk-for-dir"
   },
   "func": {
     "body": "${1:my_function}() {\n  ${0:echo \\$1}\n}",
     "description": "func",
-    "prefix": "rk_func"
+    "prefix": "rk-func"
   },
   "getopts": {
     "body": "while getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=1\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "getopts",
-    "prefix": "rk_getopts"
+    "prefix": "rk-getopts"
   },
   "if": {
     "body": "if ${1:true}; then\n  ${0:echo \"true\"}\nfi",
     "description": "if",
-    "prefix": "rk_if"
+    "prefix": "rk-if"
   },
   "one-liner for": {
     "body": "for i in ${1:*}; do { ${0:echo \\$i} } done",
     "description": "one-liner for",
-    "prefix": "rk_1_for"
+    "prefix": "rk-1-for"
   },
   "one-liner for files rename": {
     "body": "for i in *; do { mv \\$i `echo \\$i | tr '[A-Z]' '[a-z]' | tr ' ' '-'` } done",
     "description": "one-liner for files rename",
-    "prefix": "rk_1_for_rename"
+    "prefix": "rk-1-for-rename"
   },
   "one-liner while": {
     "body": "while read i; do { ${0:echo \\$i} } done",
     "description": "one-liner while",
-    "prefix": "rk_1_while"
+    "prefix": "rk-1-while"
   },
   "print": {
     "body": "echo \"$1\"",
     "description": "print",
     "prefix": [
-      "rk_p",
-      "rk_echo"
+      "rk-p",
+      "rk-echo"
     ]
   },
   "print err": {
     "body": "echo \"${1:Error}\" >&2",
     "description": "print err",
     "prefix": [
-      "rk_pe",
-      "rk_echo_err"
+      "rk-pe",
+      "rk-echo-err"
     ]
   },
   "print var": {
     "body": "echo \"$1 = \\$${1}\"",
     "description": "print var",
     "prefix": [
-      "rk_pv",
-      "rk_echo_var"
+      "rk-pv",
+      "rk-echo-var"
     ]
   },
   "print var arr": {
     "body": "echo \"$1 = \\${${1}[@]}\"",
     "description": "print var arr",
     "prefix": [
-      "rk_echo_var_arr",
-      "rk_pv_arr"
+      "rk-echo-var-arr",
+      "rk-pv-arr"
     ]
   },
   "template": {
     "body": "#!/usr/bin/env bash\n\nset -euo pipefail\n\n",
     "description": "template",
-    "prefix": "rk_template"
+    "prefix": "rk-template"
   },
   "test cmd": {
     "body": "command -v ${0:ls} &> /dev/null",
     "description": "test cmd",
-    "prefix": "rk_test_cmd"
+    "prefix": "rk-test-cmd"
   },
   "var exit status": {
     "body": "\\$?",
     "description": "var exit status",
-    "prefix": "rk_exitstatus"
+    "prefix": "rk-exitstatus"
   },
   "var filename to extension": {
     "body": "\\${${0:filename}##*.}",
     "description": "var filename to extension",
-    "prefix": "rk_var_t_filename_ext"
+    "prefix": "rk-var-t-filename-ext"
   },
   "var filename to filename without extension": {
     "body": "\\${${0:filename}%.*}",
     "description": "var filename to filename without extension",
-    "prefix": "rk_var_t_filename_filenamenoext"
+    "prefix": "rk-var-t-filename-filenamenoext"
   },
   "var ifs": {
     "body": "old_IFS=\\$IFS\nIFS=\"${1: }\"\nIFS=\\${old_IFS}",
     "description": "var ifs",
-    "prefix": "rk_ifs"
+    "prefix": "rk-ifs"
   },
   "var path to dir": {
     "body": "\\${${0:path}%/*}",
     "description": "var path to dir",
-    "prefix": "rk_var_t_path_dir"
+    "prefix": "rk-var-t-path-dir"
   },
   "var path to filename": {
     "body": "\\${${0:path}##*/}",
     "description": "var path to filename",
-    "prefix": "rk_var_t_path_filename"
+    "prefix": "rk-var-t-path-filename"
   },
   "var strip trailing slash": {
     "body": "\\${${0:1}%/}",
     "description": "var strip trailing slash",
-    "prefix": "rk_var_striptrailingslash"
+    "prefix": "rk-var-striptrailingslash"
   },
   "while": {
     "body": "while read i; do\n  ${0:echo \\$i}\ndone",
     "description": "while",
-    "prefix": "rk_while"
+    "prefix": "rk-while"
   }
 }

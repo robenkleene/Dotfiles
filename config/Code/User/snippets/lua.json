@@ -2,11 +2,11 @@
   "vim cmd": {
     "body": "vim.cmd([[\nechom \"Hello World\"\n]])",
     "description": "vim cmd",
-    "prefix": "rk_vim_cmd"
+    "prefix": "rk-vim-cmd"
   },
   "vim var notify": {
     "body": "vim.notify(\"$1 = \" .. ${1:result})",
     "description": "vim var notify",
-    "prefix": "rk_vim_notify_var"
+    "prefix": "rk-vim-notify-var"
   }
 }
