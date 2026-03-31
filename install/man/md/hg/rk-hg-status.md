@@ -1,5 +1,3 @@
-# Flags
-
 - `-n` / `--no-status`: Hide status prefixes
 - `--change <rev>` List files changed at a revision
 - `-m`, `--modified`: Show only modified files
