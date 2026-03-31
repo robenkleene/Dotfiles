@@ -10,13 +10,15 @@ merge = internal:merge
 [pager]
 pager = less
 [alias]
-dr = diff --root .
-hd = id -i
+diff-rel = diff --root .
 head = id -i
-sr = diff --root . -c .
+show-rel = diff --root . -c .
 # Avoid aliases for common commands, depending on them makes working in contexts that don't have them more difficult (e.g., one of remote machines)
 # cm = commit
 # sh = show
+# dr = diff --root .
+# hd = id -i
+# sr = diff --root . -c .
 [committemplate]
 %unset emptymsg
 [extensions]
