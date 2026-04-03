@@ -22,9 +22,7 @@
 	prompt = false
 [alias]
 	diff-rel = diff --relative
-	head = rev-parse HEAD
-	head = rev-parse HEAD
-	root = rev-parse --show-toplevel
+	hash = rev-parse HEAD
 	root = rev-parse --show-toplevel
 	show-rel = show --relative
 # Avoid aliases for common commands, depending on them makes working in contexts that don't have them more difficult (e.g., one of remote machines)
