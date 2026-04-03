@@ -1,5 +1,5 @@
 ---
-name: rk-pr-rev-git-cm
+name: rk-pr-review-git-cm
 description: prompt review git commit
 user-invocable: true
 ---

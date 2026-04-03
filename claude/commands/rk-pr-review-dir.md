@@ -1,5 +1,5 @@
 ---
-name: rk-pr-rev-dir
+name: rk-pr-review-dir
 description: prompt review dir
 user-invocable: true
 ---

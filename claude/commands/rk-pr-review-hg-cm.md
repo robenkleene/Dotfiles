@@ -1,5 +1,5 @@
 ---
-name: rk-pr-rev-hg-cm
+name: rk-pr-review-hg-cm
 description: prompt review Mercurial commit
 user-invocable: true
 ---

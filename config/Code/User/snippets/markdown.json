@@ -15,22 +15,22 @@
     "description": "prompt plan write"
   },
   "prompt review git commit": {
-    "prefix": "rk-pr-rev-git-cm",
+    "prefix": "rk-pr-review-git-cm",
     "body": "Code review the current commit (check the current commit with `git rev-parse HEAD` [don't switch commits if this isn't what you expect]).",
     "description": "prompt review git commit"
   },
   "prompt review Mercurial commit": {
-    "prefix": "rk-pr-rev-hg-cm",
+    "prefix": "rk-pr-review-hg-cm",
     "body": "Code review the current commit (check the current commit with `sl log -l 1` [don't switch commits if this isn't what you expect]).",
     "description": "prompt review Mercurial commit"
   },
   "prompt review uncommitted changes": {
-    "prefix": "rk-pr-rev-uncm",
+    "prefix": "rk-pr-review-uncm",
     "body": "Code review the uncommitted changes",
     "description": "prompt review uncommitted changes"
   },
   "prompt review dir": {
-    "prefix": "rk-pr-rev-dir",
+    "prefix": "rk-pr-review-dir",
     "body": "Review the current directory and give feedback on how it can be improved.",
     "description": "prompt review dir"
   },
