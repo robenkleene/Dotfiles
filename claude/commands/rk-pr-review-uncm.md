@@ -1,5 +1,5 @@
 ---
-name: rk-pr-rev-uncm
+name: rk-pr-review-uncm
 description: prompt review uncommitted changes
 user-invocable: true
 ---
