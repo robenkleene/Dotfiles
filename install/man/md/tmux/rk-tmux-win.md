@@ -5,7 +5,7 @@
 - `<prefix>c`: Create window
 - `<prefix>p`: Previous window
 - `<prefix>n`: Next window
-- `<prefix>.`: Move a window by specifying a window number
+- `<prefix>.`: Move the current window to a session (session names can be tab completed)
 - `swap-window -t -1` / `swap-window -t +1`: Swap window left / right
 - `:kill-window -a`: Kill other windows
 - `<prefix>C-o` / `rotate-window`: Rotate windows
