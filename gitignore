@@ -3,6 +3,8 @@
 
 # Vim Temporary Files
 .*.sw?
+# Vim creates `.swp` when opened without a filename (e.g., `vim`)
+.swp
 # Default filename for session files
 Session.vim
 
