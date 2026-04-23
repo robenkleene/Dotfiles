@@ -2,10 +2,16 @@
 .\"
 .TH "RK\-TMUX\-BUFFER Reference" "" "" ""
 .PP
-Buffer is what tmux calls the copy/paste locations.
+Buffer is what \f[CR]tmux\f[R] calls the copy/paste locations.
 .IP \(bu 2
-\f[CR]tmux save\-buffer\f[R] / \f[CR]tmux saveb \-\f[R]: Print the
-contents of the default buffer to standard output
+\f[CR]:choose\-buffer\f[R] / \f[CR]<prefix>=\f[R]: Paste from buffers
+(e.g., clipboard history), the buffer name is listed here (e.g., as
+\f[CR]buffer<number>\f[R])
+.SH CLI
+.IP \(bu 2
+\f[CR]tmux save\-buffer \-\f[R] / \f[CR]tmux saveb \-\f[R]: Print the
+contents of the default buffer to standard output (the \f[CR]\-\f[R] is
+a required argument, this can also be a filename to save the buffer to)
 .IP \(bu 2
 \f[CR]tmux show\-buffer\f[R] / \f[CR]tmux showb\f[R]: Also prints the
 contents of the default buffer, but breaks with some special characters
@@ -13,6 +19,7 @@ contents of the default buffer, but breaks with some special characters
 .IP \(bu 2
 \f[CR]tmux load\-buffer \-\f[R] / \f[CR]tmux loadb \-\f[R]: Save
 standard input to the default buffer
-.SH Flags
+.SS Flags
 .IP \(bu 2
-\f[CR]\-b <buffer\-name>\f[R]: Specify a named buffer
+\f[CR]\-b <buffer\-name>\f[R]: Specify a named buffer (e.g.,
+\f[CR]buffer<number>\f[R])
