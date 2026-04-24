@@ -20,10 +20,8 @@ When the user refers to the "current commit", `current_commit`, or "current diff
 
 When working with version controlled files, never commit changes unless explicitly told to do so (e.g., wait for a explicit command like "amend the current commit" or "continue the rebase").
 
-# Existing Patterns
+# Abstraction and Design
 
-Before implementing a change, search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
+Before writing new code, ask: "Does an abstraction already exist or want to exist here?" Search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
 
-# Avoiding Duplication
-
-When implementing something that resembles existing code, extract shared logic into a common abstraction rather than duplicating it. If you find yourself copying or closely mirroring existing code, treat that as a signal to refactor the shared parts into a reusable function, module, or pattern.
+If you're about to duplicate logic, write a shared helper first. Prefer small, focused classes/functions over complex interdependencies. Default to the simplest abstraction that eliminates duplication.
