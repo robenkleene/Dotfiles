@@ -6,7 +6,7 @@ When writing comments in any language, follow the comment style guide at `man rk
 
 # File References
 
-When referencing files (in conversation or in written documents), always use absolute paths. Replace the home directory with `~/` where applicable (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5`).
+When referencing a specific location in a file, always use grep format: `<absolute-path>:<line>:<column>` (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5:1`). Replace the home directory with `~/` where applicable. Never describe a location in prose (e.g., "at line 62 in Foo.m it says...") — always provide a machine-readable reference the user can cut and paste to jump to the location. When referencing a file without a specific location, use the absolute path alone (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md`).
 
 # Git
 
