@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+# Disabling for now, this makes `tmux` behave identical either local or
+# remotely, if `tmux` is present, it's clipboard will be used, and the system
+# clipboard will not be used.
+dual="false"
 skip_system="false"
 while getopts ":sh" option; do
   case "$option" in
@@ -29,7 +33,7 @@ done
 # Can't depend on `TMUX` running when `EMCSSERVER` is set because that
 # variable is recorded when the emacs server was started
 if [[ -n "${EMACSSERVER:-}" ]]; then
-  if [ "$(uname)" = "Darwin" ] && command -v pbpaste &> /dev/null && [ "$skip_system" == "false" ]; then
+  if [ "$dual" == "true" ] && [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
     tee >(pbcopy) | tmux loadb -w -
   elif [[ "$skip_system" == "false" ]]; then
     tmux loadb -w -
@@ -43,8 +47,8 @@ elif [[ -n "${TMUX:-}" ]] || (command -v tmux &>/dev/null && tmux has-session 2>
     # the system clipboard via `pbcopy`
     # if [[ -z "${TERM_PROGRAM:-}" || "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
     #   # Apple Terminal doesn't support built-in clipboard support
-    if [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null; then
-      tee >(tmux loadb -) | pbcopy
+    if [ "$dual" == "true" ] && [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null; then
+      tee >(pbcopy) | tmux loadb -w -
     else
       tmux loadb -w -
     fi
