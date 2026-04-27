@@ -1,3 +1,4 @@
+- `⌃L`: Redraw
 - `⇧⇥`: Toggle between modes
 - `⌥↩`: Enter line break without accepting
 - `⎋`: Interrupt
