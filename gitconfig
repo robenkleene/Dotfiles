@@ -6,7 +6,7 @@
 	default = simple
 # Automatically create remote branches
 	autoSetupRemote = true
-# Try disabling this because it creates more complex merge conflict markets
+# Try disabling `conflictstyle = diff3` this because it creates more complex merge conflict markers
 # [merge]
 # 	conflictstyle = diff3
 [include]
