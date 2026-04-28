@@ -40,7 +40,7 @@ if [[ -n "${EMACSSERVER:-}" ]]; then
   else
     tmux loadb -
   fi
-elif [[ -n "${TMUX:-}" ]] || (command -v tmux &>/dev/null && tmux has-session 2>/dev/null); then
+elif [[ -n "${TMUX:-}" ]] && (command -v tmux &>/dev/null && tmux has-session 2>/dev/null); then
   if [[ "$skip_system" == "false" ]]; then
     # We can't actually reliably determine if "Apple_Terminal" here because if we're
     # inside `tmux` then `$TERM_PROGRAM` will be `tmux`. So better just to always copy to
