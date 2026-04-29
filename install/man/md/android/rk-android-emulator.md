@@ -1,0 +1,2 @@
+- `$ANDROID_HOME/emulator/emulator -list-avds`: List emulators
+- `/opt/android_sdk/emulator/emulator @<emulator-name>`: Launch emulator
