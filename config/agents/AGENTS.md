@@ -20,6 +20,12 @@ When the user refers to the "current commit", `current_commit`, or "current diff
 
 When working with version controlled files, never commit changes unless explicitly told to do so (e.g., wait for a explicit command like "amend the current commit" or "continue the rebase").
 
+# Print Debugging
+
+When adding print statements to debug an issue, try to minimize noise. Avoid statements that print every frame, or that keep printing when nothing important is happening. Prefer printing at meaningful state transitions or only when a relevant condition changes.
+
+If a potentially noisy print statement is necessary, look for a way to gate it. For example, only print the message once, or only after a specific previous event has occurred. Always try to find ways to reduce noise rather than accepting it.
+
 # Abstraction and Design
 
 Before writing new code, ask: "Does an abstraction already exist or want to exist here?" Search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
