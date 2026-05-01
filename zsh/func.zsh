@@ -26,19 +26,19 @@ egitn() {
   fi
 }
 
-ssh_git_pull_all() {
-  ssh_start
+ssh-git-pull-all() {
+  ssh-start
   git_pull_all "$@"
 }
 
-ssh_start() {
+ssh-start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
     ssh-add
   fi
 }
 
-ssh_stop() {
+ssh-stop() {
   ssh-agent -k
 }
 
