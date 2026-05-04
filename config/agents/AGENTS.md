@@ -1,12 +1,22 @@
+# Response Format
+
+## File References
+
+EVERY reference to a file location in EVERY response MUST use grep format: `<absolute-path>:<line>:<column>` (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5:1`). Replace the home directory with `~/`. When referencing a file without a specific line, use the absolute path alone.
+
+Never describe a location in prose. Before sending any response, check that all file references use this format.
+
+- Bad: "lines 34-35 of IGRevealStickerDualExport.swift"
+- Bad: "at line 89-90 of IGRevealStickerDualExport.swift"
+- Bad: "in `IGStoryMediaCompositionExporter.m` (~line 3288)"
+- Good: `~/fbsource-eden2/fbobjc/.../IGRevealStickerDualExport.swift:34:1`
+- Good: `~/fbsource-eden2/fbobjc/.../IGStoryMediaCompositionExporter.m:3288:1`
+
 # Style Guides
 
 When editing files, check for a style guide by running `man rk_<ext>_style` (where `<ext>` matches the file extension, e.g., `man rk_sh_style`). The local style of existing nearby files takes precedence; use the style guide as a secondary reference.
 
 When writing comments in any language, follow the comment style guide at `man rk_comment_style`.
-
-# File References
-
-When referencing a specific location in a file, always use grep format: `<absolute-path>:<line>:<column>` (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5:1`). Replace the home directory with `~/` where applicable. Never describe a location in prose (e.g., "at line 62 in Foo.m it says...") — always provide a machine-readable reference the user can cut and paste to jump to the location. When referencing a file without a specific location, use the absolute path alone (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md`).
 
 # Git
 
