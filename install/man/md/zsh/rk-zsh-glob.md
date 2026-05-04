@@ -7,4 +7,5 @@
 
 # Numbers
 
-- `<42-69>`: Globs numbers between `42` and `69`
+- `<1-10>`: Any number between `1` and `10`
+- `<->`: Match any (positive) digit
