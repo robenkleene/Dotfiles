@@ -4,13 +4,15 @@
 
 EVERY reference to a file location in EVERY response MUST use grep format: `<absolute-path>:<line>:<column>` (e.g., `~/Developer/Dotfiles/claude/CLAUDE.md:5:1`). Replace the home directory with `~/`. When referencing a file without a specific line, use the absolute path alone.
 
+Never truncate or abbreviate any part of the path. Use the complete path with every directory component — never use `...` or `…` to shorten intermediate directories.
+
 Never describe a location in prose. Before sending any response, check that all file references use this format.
 
 - Bad: "lines 34-35 of IGRevealStickerDualExport.swift"
 - Bad: "at line 89-90 of IGRevealStickerDualExport.swift"
 - Bad: "in `IGStoryMediaCompositionExporter.m` (~line 3288)"
-- Good: `~/fbsource-eden2/fbobjc/.../IGRevealStickerDualExport.swift:34:1`
-- Good: `~/fbsource-eden2/fbobjc/.../IGStoryMediaCompositionExporter.m:3288:1`
+- Bad: `~/fbsource-eden2/fbobjc/.../IGRevealStickerDualExport.swift:34:1` (truncated with `...`)
+- Good: `~/fbsource-eden2/fbobjc/Apps/Instagram/Instagram/SomeDir/IGRevealStickerDualExport.swift:34:1`
 
 # Style Guides
 
