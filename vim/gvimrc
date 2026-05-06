@@ -16,6 +16,8 @@ set guioptions-=e
 
 " Background & Cursor
 set background=light
+colorscheme wildcharm
+
 " BBEdit Dark
 " highlight NonText guibg=#141414
 " highlight Normal guibg=#141414
