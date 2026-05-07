@@ -21,11 +21,18 @@ colorscheme wildcharm
 " BBEdit Dark
 " highlight NonText guibg=#141414
 " highlight Normal guibg=#141414
+" BBEdit Light
+highlight NonText guifg=#141414
+highlight Normal guifg=#141414
 highlight Cursor guibg=#00BB00
 augroup override_guicolors
   autocmd!
+  " BBEdit Dark
   " autocmd ColorScheme * highlight NonText guibg=#141414
   " autocmd ColorScheme * highlight Normal guibg=#141414
+  " BBEdit Light
+  autocmd ColorScheme * highlight NonText guifg=#141414
+  autocmd ColorScheme * highlight Normal guifg=#141414
   autocmd ColorScheme * highlight Cursor guibg=#00BB00
 augroup END
 
