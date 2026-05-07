@@ -24,6 +24,7 @@ colorscheme wildcharm
 " BBEdit Light
 highlight NonText guifg=#141414
 highlight Normal guifg=#141414
+" Green cursor
 highlight Cursor guibg=#00BB00
 augroup override_guicolors
   autocmd!
@@ -33,6 +34,7 @@ augroup override_guicolors
   " BBEdit Light
   autocmd ColorScheme * highlight NonText guifg=#141414
   autocmd ColorScheme * highlight Normal guifg=#141414
+  " Green cursor
   autocmd ColorScheme * highlight Cursor guibg=#00BB00
 augroup END
 
