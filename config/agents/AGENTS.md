@@ -38,6 +38,10 @@ When adding print statements to debug an issue, try to minimize noise. Avoid sta
 
 If a potentially noisy print statement is necessary, look for a way to gate it. For example, only print the message once, or only after a specific previous event has occurred. Always try to find ways to reduce noise rather than accepting it.
 
+Keep each print statement on a single line whenever possible. Output will likely be filtered with `grep`, and line breaks in the printed message won't appear in the filtered output.
+
+Always include a consistent prefix on every print statement, like `[Foo]`, so the output can be filtered on that prefix (e.g., with `grep '\[Foo\]'`).
+
 # Abstraction and Design
 
 Before writing new code, ask: "Does an abstraction already exist or want to exist here?" Search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
