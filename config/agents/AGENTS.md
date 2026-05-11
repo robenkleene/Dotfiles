@@ -43,3 +43,9 @@ If a potentially noisy print statement is necessary, look for a way to gate it. 
 Before writing new code, ask: "Does an abstraction already exist or want to exist here?" Search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
 
 If you're about to duplicate logic, write a shared helper first. Prefer small, focused classes/functions over complex interdependencies. Default to the simplest abstraction that eliminates duplication.
+
+# Local Overrides
+
+The following file contains overrides that take precedence over all previous instructions:
+
+@~/.agents-local/AGENTS.md
