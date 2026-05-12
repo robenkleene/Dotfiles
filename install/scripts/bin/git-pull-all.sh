@@ -36,7 +36,7 @@ fi
 
 ~/.bin/nobin/_repos-lint.sh
 
-~/.bin/sgitt -u
+~/.bin/nobin/_sgitt.sh -u
 if [[ "$text_only" == "true" ]]; then
   exit 0
 fi
