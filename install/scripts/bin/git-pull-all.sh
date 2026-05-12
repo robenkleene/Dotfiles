@@ -34,7 +34,7 @@ else
   fi
 fi
 
-~/.bin/rk-check-repos
+~/.bin/check-repos
 
 ~/.bin/sgitt -u
 if [[ "$text_only" == "true" ]]; then
