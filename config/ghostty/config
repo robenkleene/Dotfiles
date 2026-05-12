@@ -6,9 +6,9 @@ keybind = global:opt+escape=toggle_quick_terminal
 # font-size = 13
 
 font-family = "SF Mono"
-font-style = "Medium"
 
 # Old adjustments probably not necessary anymore
+# font-style = "Medium"
 # adjust-cell-width = "-5%"
 # adjust-cell-height = "3%"
 
