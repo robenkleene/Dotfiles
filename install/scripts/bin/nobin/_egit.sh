@@ -8,8 +8,6 @@ if [[ -f "$HOME/.personal" ]]; then
   repos+=:~/Developer/Settings/
   repos+=:~/Developer/Scratch/
   repos+=:~/Developer/Archive/
-else
-  exit 0
 fi
 
 IFS=':' read -ra repos <<<"$repos"
