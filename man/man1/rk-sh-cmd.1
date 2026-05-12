@@ -4,11 +4,5 @@
 .SH Group Commands
 .IP
 .EX
-{ \(ti/.bin/nobin/_egit.sh \-p || \(ti/.bin/nobin/_egit.sh \-n; } && \(ti/.bin/sgitt_auto
-.EE
-.PP
-Exiting on failure:
-.IP
-.EX
-{ \(ti/.bin/nobin/_egit.sh \-p || \(ti/.bin/nobin/_egit.sh \-n && exit 1; } && \(ti/.bin/sgitt_auto
+{ foo || bar; } && baz
 .EE
