@@ -25,7 +25,7 @@ while getopts ":th" option; do
 done
 
 if [[ "$text_only" == "false" ]]; then
-  ~/.bin/egit -u
+  ~/.bin/nobin/_egit.sh -u
 else
   if [[ ! -f "$HOME/.personal" ]]; then
     # Bit of a hack to avoid pulling twice on non-personal machine since these

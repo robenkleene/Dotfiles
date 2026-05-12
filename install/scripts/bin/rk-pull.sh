@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-exec ~/.bin/egit-update "$@"
+exec ~/.bin/nobin/_egit-update.sh "$@"
