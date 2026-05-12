@@ -9,11 +9,7 @@ if [[ -f "$HOME/.personal" ]]; then
   repos+=:~/Developer/Scratch/
   repos+=:~/Developer/Archive/
 else
-  repos+=:~/Documentation/design-references/
-  repos+=:~/Documentation/software-references/
-  repos+=:~/Documentation/audio-references/
-  repos+=:~/Documentation/development-references/
-  repos+=:~/Documentation/web-references/
+  exit 0
 fi
 
 IFS=':' read -ra repos <<<"$repos"
