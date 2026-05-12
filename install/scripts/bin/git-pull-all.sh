@@ -41,7 +41,7 @@ if [[ "$text_only" == "true" ]]; then
   exit 0
 fi
 
-~/.bin/sgitp -u
+~/.bin/nobin/_sgitp.sh -u
 if [[ "$(uname)" = "Darwin" ]]; then
-  ~/.bin/sgitm -u
+  ~/.bin/nobin/_sgitm.sh -u
 fi
