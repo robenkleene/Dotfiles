@@ -16,7 +16,7 @@ font-family = "SF Mono"
 # the strokes look too thin
 font-thicken = true
 # adjust-cell-width = "-3%"
-# adjust-cell-height = "3%"
+adjust-cell-height = "12%"
 
 # macos-titlebar-style = native
 theme = robenkleene
