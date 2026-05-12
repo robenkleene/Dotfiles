@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-cd ~/Developer/Projects/ && "$HOME/.bin/sgit" "$@"
+cd ~/Developer/Projects/ && "$HOME/.bin/nobin/_sgit.sh" "$@"
