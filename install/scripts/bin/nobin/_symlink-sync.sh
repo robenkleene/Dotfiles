@@ -55,7 +55,7 @@ cd - >/dev/null
 # Cleanup dead symlinks
 cd "$dst"
 if [[ "$force" == "true" ]]; then
-    find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+  find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 else
   find -L . -name . -o -type d -prune -o -type l -exec echo Deleting {} +
 fi
