@@ -4,8 +4,6 @@ set -eo pipefail
 
 
 if [[ -f "$HOME/.personal" ]]; then
-  cd "$HOME/Developer/Dotfiles/install/repos/documentation" &&
-    ./compare.sh
   cd "$HOME/Developer/Settings/Source Control/Directories/Text" &&
     ./compare.sh
   if [[ "$(uname)" = "Darwin" ]]; then
