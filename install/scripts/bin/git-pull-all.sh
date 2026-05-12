@@ -34,7 +34,7 @@ else
   fi
 fi
 
-~/.bin/check-repos
+~/.bin/nobin/_repos-lint.sh
 
 ~/.bin/sgitt -u
 if [[ "$text_only" == "true" ]]; then
