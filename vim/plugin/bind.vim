@@ -64,3 +64,6 @@ nnoremap gCo <Cmd>call bind#ConflictOpen()<CR>
 nnoremap gCc <Cmd>call bind#ConflictClose()<CR>
 command! ConflictOpen call bind#ConflictOpen()
 command! ConflictClose call bind#ConflictClose()
+
+" Clean history
+cnoremap <C-X><C-P> <C-\>ebind#FixPreviousCommand()<CR>
