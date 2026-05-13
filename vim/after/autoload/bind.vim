@@ -1,4 +1,4 @@
-function! bindings#GetSelectedText()
+function! bind#GetSelectedText()
   let l:old_reg = getreg('"')
   let l:old_regtype = getregtype('"')
   norm gvy
@@ -14,11 +14,11 @@ endfunction
 " - `++<<<<<<<<`: Sometimes there's two `+` at the start?
 " - The non-conflict markers were then removed because jumping to hunks is
 "   more appropriate with fold bindings?
-function! bindings#Context(reverse) abort
+function! bind#Context(reverse) abort
   " call search('^\(@@@\? .* @@@\?\|+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
   call search('^\(+\?+\?[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
 endfunction
-function! bindings#ContextMotion(reverse) abort
+function! bind#ContextMotion(reverse) abort
   if a:reverse
     -
   endif
@@ -50,7 +50,7 @@ function! bindings#ContextMotion(reverse) abort
 endfunction
 
 " Conflict diff
-function! bindings#ConflictOpen() abort
+function! bind#ConflictOpen() abort
   let l:save_pos = getpos('.')
   let l:start = search('^<<<<<<<', 'bWc')
   if l:start == 0
@@ -92,7 +92,7 @@ function! bindings#ConflictOpen() abort
   call win_gotoid(l:origin)
 endfunction
 
-function! bindings#ConflictClose() abort
+function! bind#ConflictClose() abort
   let l:wins = []
   for l:winnr in range(1, winnr('$'))
     if getwinvar(l:winnr, '&diff') && getwinvar(l:winnr, '&buftype') ==# 'nofile'
