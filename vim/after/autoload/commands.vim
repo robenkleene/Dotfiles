@@ -1,4 +1,4 @@
-function! commands#Dc(term) abort
+function! cmd#Dc(term) abort
   let l:term = a:term
   if l:term =~ '\D' && l:term < 0
     let l:term -= 1
