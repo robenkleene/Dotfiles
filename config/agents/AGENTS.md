@@ -42,6 +42,8 @@ Keep each print statement on a single line whenever possible. Output will likely
 
 Always include a consistent prefix on every print statement, like `[Foo]`, so the output can be filtered on that prefix (e.g., with `grep '\[Foo\]'`).
 
+When the current commit contains only print debugging and you want to apply a fix or other changes based on what the prints revealed, always apply that fix as a new, separate commit. Never fold the fix into the existing print-debugging commit (e.g., do not amend it). Keeping the print-debugging commit isolated makes it easy to drop or revert later without entangling the fix.
+
 # Abstraction and Design
 
 Before writing new code, ask: "Does an abstraction already exist or want to exist here?" Search the codebase for existing patterns that solve the same or a similar problem. Prefer reusing and extending existing patterns over inventing new ones. If you find yourself writing a lot of new logic (new helpers, new abstractions, new control flow, new state) to support a change, treat that as a signal to stop and look harder for an existing pattern you may have missed.
