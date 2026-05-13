@@ -123,7 +123,7 @@ bindkey -e "^[${key[BackSpace]}" _shell_backward_kill_word
 bindkey -e "^[^?" _shell_backward_kill_word
 # bindkey -e "^w" _shell_backward_kill_word
 bindkey -e "^X^X" _system_kill_line
-bindkey -e "^X^F" _fix_previous_command
+bindkey -e "^X^P" _fix_previous_command
 bindkey -e "^[W" _system_copy_region_as_kill
 bindkey -e "^[w" _system_copy_region_as_kill
 
