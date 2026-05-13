@@ -8,6 +8,12 @@ function! bind#GetSelectedText()
   return l:ret
 endfunction
 
+function! bind#FixPreviousCommand() abort
+  let l:prev = histget(':', -1)
+  call histdel(':', -1)
+  return l:prev
+endfunction
+
 " Unimpaired conflict markers
 " The original search was updated to find:
 " - `^@@@`: sometimes there's an extra `@`?
