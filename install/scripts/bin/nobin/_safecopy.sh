@@ -58,7 +58,14 @@ elif [[ -n "${TMUX:-}" ]] && (command -v tmux &>/dev/null && tmux has-session 2>
 elif [ "$(uname)" = "Darwin" ] && command -v pbcopy &> /dev/null && [ "$skip_system" == "false" ]; then
   pbcopy
 else
-  if [[ "${TERM_PROGRAM:-}" != "Apple_Terminal" ]]; then
+  # `/dev/tty` can't be opened when there's no controlling terminal (e.g. run
+  # from cron or a non-interactive context), so check it's writable first:
+  # - `:` is a no-op builtin that produces no output
+  # - `>/dev/tty` redirects its (empty) output to `/dev/tty`, which fails if
+  #   `/dev/tty` can't be opened
+  # - `{ ...; }` groups it so the redirect's success becomes the test result
+  # - `2>/dev/null` discards the "No such device or address" error message
+  if [[ "${TERM_PROGRAM:-}" != "Apple_Terminal" ]] && { : >/dev/tty; } 2>/dev/null; then
     base64 -w 0 | xargs printf "\\e]52;c;%s\\a" >&2 >/dev/tty
   fi
 fi
