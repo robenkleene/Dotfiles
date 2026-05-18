@@ -3,16 +3,17 @@
 
 require 'pathname'
 
-abort('Wrong number of arguments') unless ARGV.count == 2
-file_one = File.expand_path(ARGV[0])
-file_two = File.expand_path(ARGV[1])
-abort("#{file_one} does not exist") unless File.exist?(file_one)
-abort("#{file_two} does not exist") unless File.exist?(file_two)
+abort('Wrong number of arguments') unless [1, 2].include?(ARGV.count)
+target = File.expand_path(ARGV[0])
+# Default the base to the current directory when only one argument is given
+base = ARGV[1] ? File.expand_path(ARGV[1]) : Dir.pwd
+abort("#{target} does not exist") unless File.exist?(target)
+abort("#{base} does not exist") unless File.exist?(base)
 
-if File.file?(file_one)
+if File.file?(base)
   # `relative_path_from` has an extra path component if the filename is
   # included in the path
-  file_one = File.dirname(file_one)
+  base = File.dirname(base)
 end
 
-puts Pathname.new(file_two).relative_path_from(Pathname.new(file_one)).to_s
+puts Pathname.new(target).relative_path_from(Pathname.new(base)).to_s
