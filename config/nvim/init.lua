@@ -32,8 +32,8 @@ vim.o.termguicolors = false
 -- vim.g.clipboard = {
 --   name = "safe",
 --   copy = {
---     ["+"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
---     ["*"] = vim.fn.expand("~/.bin/nobin/_safecopy.sh"),
+--     ["+"] = vim.fn.expand("~/.bin/nobin/_tmux-safecopy.sh"),
+--     ["*"] = vim.fn.expand("~/.bin/nobin/_tmux-safecopy.sh"),
 --   },
 --   paste = {
 --     ["+"] = vim.fn.expand("~/.bin/nobin/_safepaste.sh"),
