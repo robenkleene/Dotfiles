@@ -2,7 +2,7 @@ nnoremap Y y$
 
 " Yank the entire buffer without a trailing newline, then quit
 " Uses a real yank (not setreg) so `TextYankPost` fires with `v:event`
-" populated, which is needed for remote clipboard support via `_safecopy.sh`
+" populated, which is needed for remote clipboard support via `_tmux-safecopy.sh`
 " `lazyredraw` suppresses the visual selection flash
 function! s:YankBufferAndQuit()
   set lazyredraw

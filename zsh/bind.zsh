@@ -56,13 +56,13 @@ zle -N _shell_backward_kill_word
 # zle -N _shell_backward_kill_word
 
 _system_copy_line() {
-  printf "%s" "$BUFFER" | ~/.bin/nobin/_safecopy.sh
+  printf "%s" "$BUFFER" | ~/.bin/nobin/_tmux-safecopy.sh
 }
 zle -N _system_copy_line
 
 _system_kill_line() {
   zle kill-whole-line
-  printf "%s" "$CUTBUFFER" | ~/.bin/nobin/_safecopy.sh
+  printf "%s" "$CUTBUFFER" | ~/.bin/nobin/_tmux-safecopy.sh
 }
 zle -N _system_kill_line
 
@@ -70,7 +70,7 @@ _system_copy_region_as_kill() {
   zle copy-region-as-kill
   # Deactivate region
   # zle set-mark-command -n -1
-  printf "%s" "$CUTBUFFER" | ~/.bin/nobin/_safecopy.sh
+  printf "%s" "$CUTBUFFER" | ~/.bin/nobin/_tmux-safecopy.sh
 }
 zle -N _system_copy_region_as_kill
 
