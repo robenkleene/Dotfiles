@@ -27,10 +27,26 @@ Easy to edit before and after the selection:
 .SH Inserting Text Before / After Selection
 Use \f[CR]I\f[R] or \f[CR]A\f[R] to insert text at the beginning or end
 of the selection
-.SH Deleting Text From the Start of the Line
-Just make selection and hit \f[CR]x\f[R]
-.SH Deleting Text to the End of the Line
-Difficult with visual block mode, but \f[CR]<range>norm!\f[R] (the
-\f[CR]!\f[R] ignores mappings) can be used in a pinch, e.g.,
-\f[CR]%norm! ED\f[R] to delete everything after the first big word on
-each line in the file.
+.SH Examples
+.SS Deleting
+.IP \(bu 2
+Delete text from the beginning of the line by starting a block selection
+(\f[CR]C\-v\f[R]) then selecting the text, then hitting \f[CR]x\f[R]
+.IP \(bu 2
+Delete text from the end of the line from a specific column by starting
+a block selection (\f[CR]C\-v\f[R]) from where to delete from, then
+going to the last line to perform the delete on, then \f[CR]$\f[R] to go
+to the end of the line, then \f[CR]x\f[R] to delete
+.SS Pasting
+.IP \(bu 2
+Paste a column of text after another column of text by performing a
+delete (\f[CR]x\f[R]) or yank (\f[CR]y\f[R]) after a block selection
+(\f[CR]C\-v\f[R]) (in order to assure the yanked text is a
+\f[CR]blockwise\f[R] itself [otherwise it will all be inserted into a
+single line]) on the text to paste, then performing another block
+selection on the lines to paste too, then going to the end of the line
+(\f[CR]$\f[R]), then pasting (\f[CR]p\f[R])
+.IP \(bu 2
+It\(cqs impossible to insert a \f[CR]blockwise\f[R] selection to the
+ends of lines that aren\(cqt the same length (as an alternative use the
+shell command \f[CR]col\f[R] then work with tab\-delimited columns)
