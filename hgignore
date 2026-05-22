@@ -2,9 +2,6 @@ tags
 \#*\#
 *.arblockbk
 
-# Ad-hoc temporary directory
-rk_temp/
-
 # Vim
 # Default filename for session files
 Session.vim
