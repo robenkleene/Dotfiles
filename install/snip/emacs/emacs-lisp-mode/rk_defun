@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_defun
+# key: rk-defun
 # name: defun
 # --
 defun ${1:hello-world} (${2:&optional arg})

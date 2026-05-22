@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_defalias
+# key: rk-defalias
 # name: defalias
 # --
 defalias '${1:g} '${2:grep}

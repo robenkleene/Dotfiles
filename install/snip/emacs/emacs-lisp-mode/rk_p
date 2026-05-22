@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_p
+# key: rk-p
 # name: print
 # --
 message "${1:Hello World}"
