@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-uname
+# name: cond uname
+# --
+"\$(uname)" = "${0:Linux}"

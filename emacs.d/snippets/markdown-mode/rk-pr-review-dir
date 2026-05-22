@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-review-dir
+# name: prompt review dir
+# --
+Review the current directory and give feedback on how it can be improved.

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-guard-weak-self
+# name: guard weak strong self
+# --
+guard let \`self\` = self else { return }

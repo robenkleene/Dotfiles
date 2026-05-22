@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cout-enum
+# name: print enum
+# --
+std::cout << " $1 = " << static_cast<int>(${1}) << std::endl;

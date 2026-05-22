@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-review-uncm
+# name: prompt review uncommitted changes
+# --
+Code review the uncommitted changes

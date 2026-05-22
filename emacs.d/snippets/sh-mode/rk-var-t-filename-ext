@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-var-t-filename-ext
+# name: var filename to extension
+# --
+\${${0:filename}##*.}

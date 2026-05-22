@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pe
+# name: print err
+# --
+STDERR.puts "${1:Error}"

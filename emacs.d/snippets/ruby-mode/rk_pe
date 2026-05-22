@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_pe
-# name: print err
-# --
-STDERR.puts "$1{:Error}"

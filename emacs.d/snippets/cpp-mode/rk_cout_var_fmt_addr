@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_cout_var_fmt_addr
-# name: print addr obj fmt str
-# --
-std::cout << " &$1 = %p" << &${1} << std::endl;

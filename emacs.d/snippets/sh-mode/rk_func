@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_func
-# name: func
-# --
-${1:my_function}() {
-  ${0:echo \$1}
-}

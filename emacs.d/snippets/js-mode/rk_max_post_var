@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_max_post_var
-# name: max post var
-# --
-post("$1 = " + ${1} + "\n");

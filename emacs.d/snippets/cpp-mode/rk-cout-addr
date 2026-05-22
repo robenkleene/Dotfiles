@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cout-addr
+# name: print this addr
+# --
+std::cout << this << std::endl;

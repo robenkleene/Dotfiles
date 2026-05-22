@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-echo-var-arr
+# name: print var arr
+# --
+echo "$1 = \${${1}[@]}"

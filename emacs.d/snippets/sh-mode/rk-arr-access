@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-arr-access
+# name: arr access
+# --
+\${${0:args}[@]}

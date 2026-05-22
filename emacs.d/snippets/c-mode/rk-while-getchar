@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-while-getchar
+# name: while char
+# --
+while ((c = getchar()) != EOF) {
+    $0
+}

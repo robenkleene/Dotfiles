@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-pde-print-arr
+# name: pde print arr
+# --
+println("$1");
+printArray(${1:result});
+print("\n");

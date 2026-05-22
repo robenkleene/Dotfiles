@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-each
+# name: each
+# --
+(${1:0}..${2:10}).each do |i|
+  ${0:puts i}
+end

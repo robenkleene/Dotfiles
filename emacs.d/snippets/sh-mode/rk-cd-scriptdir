@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cd-scriptdir
+# name: cd to script dir
+# --
+cd "\$(dirname "\$0" || exit 1)"

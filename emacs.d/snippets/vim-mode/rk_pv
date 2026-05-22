@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_pv
-# name: print var
-# --
-echom "$1 = ".${1}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pv
+# name: print var
+# --
+print("$1 = ", ${1})

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-ifs
+# name: var ifs
+# --
+old_IFS=\$IFS
+IFS="${1: }"
+IFS=\${old_IFS}

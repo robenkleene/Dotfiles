@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: rk-match-result
+# name: match result
+# --
+match ${1:result} {
+  Ok($1) => $1,
+  Err(err) => panic!("Error: {}", err)
+}

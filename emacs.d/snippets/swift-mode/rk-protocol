@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-protocol
+# name: protocol
+# --
+protocol ${1:MyType} {
+    $0
+}

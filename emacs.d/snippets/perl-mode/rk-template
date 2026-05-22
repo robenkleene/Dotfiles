@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk-template
+# name: template
+# --
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+

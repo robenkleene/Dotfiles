@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pv
+# name: print var
+# --
+console.log("$1 = " + ${1});

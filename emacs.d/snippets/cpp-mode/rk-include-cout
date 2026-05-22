@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-include-cout
+# name: include iostream
+# --
+#include <iostream>

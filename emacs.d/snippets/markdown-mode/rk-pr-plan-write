@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-plan-write
+# name: prompt plan write
+# --
+Write a plan for this, make it detailed enough that it can be re-opened from another session without losing context

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pv
+# name: print var
+# --
+std::cout << "$1 = " << ${1} << std::endl;

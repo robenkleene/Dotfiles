@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-function
+# name: func
+# --
+function! s:${1:Name}() abort
+  ${0:" Statements}
+endfunction

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-fileregular
+# name: cond file regular
+# --
+-f "${0:\$1}"

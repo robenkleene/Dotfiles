@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-not-empty
+# name: cond not empty
+# --
+-n "\${${0:1}:-}"

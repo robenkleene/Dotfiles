@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-1-forin
+# name: one-line for in
+# --
+for ${1:file} in (${2:ls}); echo \$$1; end

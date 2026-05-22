@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-review-hg-cm
+# name: prompt review Mercurial commit
+# --
+Code review the current commit (check the current commit with \`sl log -l 1\` [don't switch commits if this isn't what you expect]).

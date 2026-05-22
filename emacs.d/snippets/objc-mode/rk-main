@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-main
+# name: func main
+# --
+int main() {
+    NSLog(@"Hello, World!");
+}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-for-array-iter
+# name: for arr iter
+# --
+for (auto it = ${1:arr}.begin(); it != $1.end(); ++it) {
+    ${2:std::cout << *it << std::endl;}
+}
