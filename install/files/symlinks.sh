@@ -45,10 +45,10 @@ if [[ ! -e "$brew_bin" || ! -e "$brew_share" ]]; then
   ln -s "$brew_prefix_share" "$brew_share"
 fi
 
-./link_user_brew.sh
+./link-user-brew.sh
 
 # `rust-lldb` needs `lldb` to be the command
-# Do this here so `./link_user_brew.sh` can create `/usr/local/bin`
+# Do this here so `./link-user-brew.sh` can create `/usr/local/bin`
 if [[ "$(uname)" = "Linux" ]]; then
   # `lldb-6.0` is installed by default on Ubuntu
   if [[ ! -e "/usr/local/bin/lldb" ]]; then
