@@ -16,7 +16,7 @@ Never describe a location in prose. Before sending any response, check that all 
 
 # Style Guides
 
-When editing files, check for a style guide by running `man rk_<ext>_style` (where `<ext>` matches the file extension, e.g., `man rk_sh_style`). The local style of existing nearby files takes precedence; use the style guide as a secondary reference.
+When editing files, check for a style guide by running `man rk-<ext>-style` (where `<ext>` matches the file extension, e.g., `man rk-sh-style`). The local style of existing nearby files takes precedence; use the style guide as a secondary reference.
 
 When writing comments in any language, follow the comment style guide at `man rk_comment_style`.
 
