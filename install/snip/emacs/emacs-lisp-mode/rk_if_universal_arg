@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_if_universal_arg
+# key: rk-if_universal_arg
 # name: If universal arg
 # --
 (let ((current-prefix-arg nil))

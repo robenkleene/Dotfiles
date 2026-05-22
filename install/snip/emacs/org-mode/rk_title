@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_title
+# key: rk-title
 # name: Title from filename
 # --
 #+title: 

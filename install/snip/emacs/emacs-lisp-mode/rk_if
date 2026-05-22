@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: rk_if
+# key: rk-if
 # name: if
 # --
 if ${1:t}
