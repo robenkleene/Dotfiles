@@ -18,7 +18,7 @@ abbreviations=(
   "window=win"
 )
 
-find . -name 'rk_*.md' -type f | while read -r filepath; do
+find . -name 'rk-*.md' -type f | while read -r filepath; do
   rel="${filepath#./}"
   filename="$(basename "$rel" .md)"
 
