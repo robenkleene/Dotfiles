@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_pv
-# name: print var
-# --
-NSLog(@"$1 = %${2:@}", ${1});

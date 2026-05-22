@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pv
+# name: print var
+# --
+echo "$1 = \$${1}"

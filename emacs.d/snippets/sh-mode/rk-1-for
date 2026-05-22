@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-1-for
+# name: one-liner for
+# --
+for i in ${1:*}; do { ${0:echo \$i} } done

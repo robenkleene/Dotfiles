@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-class
+# name: class
+# --
+class ${1:MyObject} {
+    $0
+}

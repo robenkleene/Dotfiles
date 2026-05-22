@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-fix-cm
+# name: prompt fix on commit
+# --
+Fix on the commit that introduced it

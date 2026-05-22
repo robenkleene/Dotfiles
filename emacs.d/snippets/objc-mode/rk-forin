@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-forin
+# name: for in
+# --
+for (${1:id} ${2:object} in ${3:objects}) {
+    $0
+}

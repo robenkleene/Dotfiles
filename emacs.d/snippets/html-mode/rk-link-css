@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-link-css
+# name: link css
+# --
+<link rel="stylesheet" type="text/css" href="${1:css/style.css}" />

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-fileln
+# name: cond file symlink
+# --
+-L "${0:\$1}"

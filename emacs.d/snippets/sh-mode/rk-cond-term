@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-term
+# name: cond standard output is terminal
+# --
+-t 1

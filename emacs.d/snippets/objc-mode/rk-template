@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk-template
+# name: template
+# --
+#import <Foundation/Foundation.h>
+
+int main() {
+    NSLog(@"Hello, World!");
+}

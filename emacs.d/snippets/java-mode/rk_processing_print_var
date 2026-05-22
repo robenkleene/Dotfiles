@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk_processing_print_var
-# name: pde print var
-# --
-println("$1 = ", ${1:result});

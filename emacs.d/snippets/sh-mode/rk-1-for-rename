@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-1-for-rename
+# name: one-liner for files rename
+# --
+for i in *; do { mv \$i \`echo \$i | tr '[A-Z]' '[a-z]' | tr ' ' '-'\` } done

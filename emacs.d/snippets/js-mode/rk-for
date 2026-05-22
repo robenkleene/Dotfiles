@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-for
+# name: for
+# --
+for (let ${1:i} = 0; $1 < ${2:10}; $1++) {
+  $0
+}

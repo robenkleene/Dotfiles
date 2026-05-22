@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-vim-cmd
+# name: vim cmd
+# --
+vim.cmd([[
+echom "Hello World"
+]])

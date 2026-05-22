@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-eq
+# name: cond eq
+# --
+${1:\$?} -${2:eq} ${0:0}

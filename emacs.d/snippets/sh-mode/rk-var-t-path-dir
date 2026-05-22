@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-var-t-path-dir
+# name: var path to dir
+# --
+\${${0:path}%/*}

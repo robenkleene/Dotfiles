@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-1-while
+# name: one-liner while
+# --
+while read i; do { ${0:echo \$i} } done

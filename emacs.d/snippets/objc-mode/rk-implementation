@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-implementation
+# name: implementation
+# --
+@implementation ${1:MyClass}
+$0
+@end

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-for-dir
+# name: for dir
+# --
+for dir in */; do
+  echo \$dir;
+done

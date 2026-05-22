@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-nonnull
+# name: annotation nonnull block
+# --
+NS_ASSUME_NONNULL_BEGIN
+${TM_SELECTED_TEXT:$0}
+NS_ASSUME_NONNULL_END

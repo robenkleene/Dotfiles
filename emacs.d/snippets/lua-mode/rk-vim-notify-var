@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-vim-notify-var
+# name: vim var notify
+# --
+vim.notify("$1 = " .. ${1:result})

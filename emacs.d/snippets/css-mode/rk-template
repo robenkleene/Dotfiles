@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-template
+# name: template
+# --
+body {
+  color: blue;
+}

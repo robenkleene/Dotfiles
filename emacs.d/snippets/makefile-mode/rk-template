@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: rk-template
+# name: template
+# --
+.PHONY: hello
+
+hello:
+	echo "Hello"

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pde-print-var
+# name: pde print var
+# --
+println("$1 = ", ${1:result});

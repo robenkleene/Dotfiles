@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: rk-main
+# name: func main
+# --
+def main():
+	"""
+	main
+	"""
+	

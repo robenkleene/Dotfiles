@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# key: rk-cout-map
+# name: print map
+# --
+std::cout << "${1} = {";
+bool first = true;
+for (const auto& pair : $1) {
+  if (!first) {
+    std::cout << ", ";
+  }
+  std::cout << "{" << pair.first << ": " << pair.second << "}";
+  first = false;
+}
+std::cout << "}" << std::endl;

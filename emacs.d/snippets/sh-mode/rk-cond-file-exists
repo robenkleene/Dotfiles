@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-file-exists
+# name: cond file exists
+# --
+-e "${0:\$1}"

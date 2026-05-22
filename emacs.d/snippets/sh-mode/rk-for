@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: rk-for
+# name: for
+# --
+for ${1:name} in ${2:"\$@"}; do
+  echo "\$${1}"
+done

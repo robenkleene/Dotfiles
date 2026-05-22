@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-script-js
+# name: script js
+# --
+<script type="text/javascript" src="${1:js/script.js}"></script>

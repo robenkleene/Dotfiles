@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-pr-plan-read
+# name: prompt plan read
+# --
+Read the plan at the following path and enter plan mode and ask me any questions before starting: 
