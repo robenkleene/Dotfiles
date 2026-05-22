@@ -46,6 +46,8 @@ By default Vim searches for the literal characters for most punctuation (excludi
 * `\w` / `\W`: Word character / non-word character
 * `\x` / `\X`: Hex digit / non-hex digit
 
-# Notes
+# Examples
 
 - To find and replace whole words only, use `s/\<word\>/newword/g`. (Note that the `*` and `#` commands populate the current word with this, so you can get use those commands to populate the `/` register with the search term.)
+- `s/\t\+/ /`: Replace one or more tabs with spaces
+- `s/\s\{2,}/ /\t`: Replace two or more spaces with a single tab
