@@ -185,7 +185,7 @@
                  (list (woman-file-name nil)))))
 
 ;; This doesn't work because it results in the selected man page name (e.g.,
-;; `rk_emacs') also being passed to the lambda function instead of being passed
+;; `rk-emacs') also being passed to the lambda function instead of being passed
 ;; to the `man' called next
 ;; (advice-add 'man
 ;;             :before

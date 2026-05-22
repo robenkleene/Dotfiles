@@ -49,7 +49,7 @@ fi
 
 ./files/symlinks.sh
 # Generate man is time consuming so check whether it's already happened
-if [[ ! -e "$HOME/.man/man1/rk_vim.1" ]]; then
+if [[ ! -e "$HOME/.man/man1/rk-vim.1" ]]; then
   ./man/install.sh
 fi
 

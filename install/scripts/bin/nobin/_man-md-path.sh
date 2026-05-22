@@ -25,8 +25,8 @@ rel_path="${dir_path}${name}.md"
 
 cd "$(dirname "$(readlink "$0" 2>/dev/null || echo "$0")")"
 cd ../install/man/markdown
-# Handle cases like rk_vim where the sole component is both the directory
-# and file (vim/rk_vim.md), not a file at the root (rk_vim.md)
+# Handle cases like `rk-vim` where the sole component is both the directory
+# and file (`vim/rk-vim.md`), not a file at the root (`rk-vim.md`)
 if [[ ! -f "$rel_path" ]]; then
   # `${parts[-1]}` not supported in older bash, use `${#parts[@]}-1` instead
   last="${parts[${#parts[@]}-1]}"
