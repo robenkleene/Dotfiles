@@ -32,4 +32,4 @@ Use `I` or `A` to insert text at the beginning or end of the selection
 ## Pasting
 
 - Paste a column of text after another column of text by performing a delete (`x`) or yank (`y`) after a block selection (`C-v`) (in order to assure the yanked text is a `blockwise` itself [otherwise it will all be inserted into a single line]) on the text to paste, then performing another block selection on the lines to paste too, then going to the end of the line (`$`), then pasting (`p`)
-- It's impossible to insert a `blockwise` selection to the ends of lines that aren't the same length (as an alternative use the shell command `col` then work with tab-delimited columns)
+- It's impossible to insert a `blockwise` selection to the ends of lines that aren't the same length (as an alternative use the shell command `column -t` then work with tab-delimited columns)
