@@ -1,4 +1,3 @@
-- `<prefix>{` / `<prefix>}`: Swap active pane with pane above / below
 - `<prefix>w`: Window picker
 - `<prefix>&`: Kill window
 - `<prefix>l`: Last window
