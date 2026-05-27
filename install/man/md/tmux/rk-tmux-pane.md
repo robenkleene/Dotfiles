@@ -7,7 +7,6 @@
 # Moving
 
 - `<prefix>{` / `<prefix>}`: Swap panes with pane above / below
-- `<prefix>!`: Move current pane to new window
 - `<prefix>M-o`: Swap panes
 - `<prefix><Space>`: Next layout
 
@@ -23,8 +22,8 @@
 
 # Joining
 
-- `<prefix>m`: Mark the current pane (then switch to another window and use `:join-pane` to bring that pane to the new window)
-- `<prefix>!`, `:break-pane`: Break a pane out to its own window
+- `:join-pane`: Move the marked pane to the current window
+- `<prefix>!`, `:break-pane`: Move pane to a new window
 
 # Layout
 
@@ -33,13 +32,13 @@
 
 ## Layouts
 
-- `<prefix>M-1`, `even-horizontal`
-- `<prefix>M-2`, `even-vertical`
-- `<prefix>M-3`, `main-horizontal`
-- `<prefix>M-4`, `main-vertical`
-- `<prefix>M-5`, `tiled`: Equal sized tiled
-- `<prefix>M-6`, `main-horizontal-mirrored`
-- `<prefix>M-7`, `main-vertical-mirrored`
+- `<prefix>M-1`, `:select-layout even-horizontal`
+- `<prefix>M-2`, `:select-layout even-vertical`
+- `<prefix>M-3`, `:select-layout main-horizontal`
+- `<prefix>M-4`, `:select-layout main-vertical`
+- `<prefix>M-5`, `:select-layout tiled`: Equal sized tiled
+- `<prefix>M-6`, `:select-layout main-horizontal-mirrored`
+- `<prefix>M-7`, `:select-layout main-vertical-mirrored`
 
 # Resizing
 
@@ -52,7 +51,7 @@ These can be repeated without doing the leader key (i.e., they're assigned with 
 
 The marked pane is the default target for -s to `join-pane, `move-pane`, `swap-pane`, and `swap-window`.
 
-- `<prefix>m`: Mark pane
+- `<prefix>m`: Mark pane (only one pane can be marked at a time)
 - `<prefix>M`: Clear marked pane
 
 # Other
