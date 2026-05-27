@@ -8,7 +8,8 @@
 
 - `<prefix>{` / `<prefix>}`: Swap panes with pane above / below
 - `<prefix>!`: Move current pane to new window
-- `<prefix>M-o`: Swap panes (`rotate-window -D`)
+- `<prefix>M-o`: Swap panes
+- `<prefix><Space>`: Next layout
 
 # Splitting
 
@@ -27,10 +28,18 @@
 
 # Layout
 
-`tmux` calls arranging panes layout.
-
 - `<prefix>E`: Make panes equal size
-- `<prefix>M-5`: Tile panes
+- `<prefix>␣`, `next-layout`, `nextl` / `previous-layout`, `prevl`: Next / previous layout
+
+## Layouts
+
+- `<prefix>M-1`, `even-horizontal`
+- `<prefix>M-2`, `even-vertical`
+- `<prefix>M-3`, `main-horizontal`
+- `<prefix>M-4`, `main-vertical`
+- `<prefix>M-5`, `tiled`: Equal sized tiled
+- `<prefix>M-6`, `main-horizontal-mirrored`
+- `<prefix>M-7`, `main-vertical-mirrored`
 
 # Resizing
 
