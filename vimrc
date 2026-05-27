@@ -9,17 +9,19 @@ Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
 " This needs to be loaded before `vim-sensible` to prevent sensible from
 " loading the builtin `:Man` first
 Plug 'vim-utils/vim-man'
-" This breaks completion before running the command once
-" Plug 'vim-utils/vim-man', { 'on': 'Man' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 " `editorconfig` is conflicting with `foldmethod=indent`
 Plug 'editorconfig/editorconfig-vim'
-" `peekaboo` causes too many visual bugs, it's also annoying in the most common case
+" `peekaboo` causes too many visual bugs, it's also annoying in the most
+" common case
 " (pasting from `"` register), and it doesn't support the command line.
 " Plug 'junegunn/vim-peekaboo'
+" Use for visual selection, then `ga*,` which will align comma-delimited data
+" into columns. The built-in version of `column` on macOS can't do this.
+Plug 'junegunn/vim-easy-align'
 " Me
 Plug 'robenkleene/dirstack.vim'
 Plug 'robenkleene/gotodiff.vim'
