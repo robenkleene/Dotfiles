@@ -23,7 +23,7 @@ while getopts ":mh" option; do
   esac
 done
 
-~/.bin/nobin/_man-md-lint.sh
+# ~/.bin/nobin/_man-md-lint.sh
 
 cd "$(dirname "$0")" || exit 1
 
