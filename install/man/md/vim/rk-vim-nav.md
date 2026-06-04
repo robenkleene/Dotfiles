@@ -2,12 +2,15 @@
 
 - `g;` / `g,`: Go to previous / next edit
 
-# Operating What's Under Cursor
+# File or URL at Cursor
 
-* `gx`: Open URL under cursor
-* `gf`: Open file under cursor
-- `<C-w>gf`:  Open the file under the cursor in a new tab
-- `<C-w>f`:  Open the file under the cursor in a new split
+- `gx`: Open URL under cursor
+- `gf`: Edit file at cursor in current window
+- `gF`: Edit file at cursor in current window at grep line number
+- `<C-w>f`: Edit file at cursor in horizontal split
+- `<C-w>F`: Edit file at cursor in horizontal split at grep line number
+- `<C-w>gf`: Edit file at cursor in tab
+- `<C-w>gF`: Edit file at cursor in tab at grep line number
 
 # Language Specific
 
