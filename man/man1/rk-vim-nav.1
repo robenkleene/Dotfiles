@@ -4,15 +4,22 @@
 .SH Edits
 .IP \(bu 2
 \f[CR]g;\f[R] / \f[CR]g,\f[R]: Go to previous / next edit
-.SH Operating What\(cqs Under Cursor
+.SH File or URL at Cursor
 .IP \(bu 2
 \f[CR]gx\f[R]: Open URL under cursor
 .IP \(bu 2
-\f[CR]gf\f[R]: Open file under cursor
+\f[CR]gf\f[R]: Edit file at cursor in current window
 .IP \(bu 2
-\f[CR]<C\-w>gf\f[R]: Open the file under the cursor in a new tab
+\f[CR]gF\f[R]: Edit file at cursor in current window at grep line number
 .IP \(bu 2
-\f[CR]<C\-w>f\f[R]: Open the file under the cursor in a new split
+\f[CR]<C\-w>f\f[R]: Edit file at cursor in horizontal split
+.IP \(bu 2
+\f[CR]<C\-w>F\f[R]: Edit file at cursor in horizontal split at grep line
+number
+.IP \(bu 2
+\f[CR]<C\-w>gf\f[R]: Edit file at cursor in tab
+.IP \(bu 2
+\f[CR]<C\-w>gF\f[R]: Edit file at cursor in tab at grep line number
 .SH Language Specific
 .IP \(bu 2
 \f[CR]]}\f[R] & \f[CR][{\f[R]: Go to next or previous brace (only works
