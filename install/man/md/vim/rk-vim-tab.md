@@ -1,0 +1,8 @@
+- `<C-w>T`: Move a window to a new tab
+- `:tabe[dit]` / `:tabnew`: Make new tab
+- `:tabc[lose]`: Close tab
+- `gt`: Next tab
+- `gT`: Previous tab
+- `:tab <command>`: Open command in a new tab
+- `:[sp]lit +<command>`: Is supposed to work similarly for splits, but it's less predictable (e.g., `:split +tag <term>` seems to fail)
+- `:tabo[nly]`: Close all tabs except for the current one
