@@ -21,3 +21,6 @@ endif
 " Turning this off, this seems to exasperate issues with `-` finding the
 " current file in `netrw`.
 " let g:netrw_keepdir = 0
+
+" Clear search highlighting before refreshing, matching `vim-sensible` `<C-l>`
+nmap <buffer> <C-l> :nohlsearch<CR><Plug>NetrwRefresh
