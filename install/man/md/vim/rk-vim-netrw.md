@@ -12,7 +12,7 @@ Note the consistency for `D` and `R` for remembering those commands, both the co
 - `R`: Rename (or move) file
 - `%`: Create a new file at the current directory
 - `a`: Switch between three states of showing hidden files
-- `i`: Switch between different display styles (e.g., tree view, showing metadata)
+- `i`: Switch between different display styles (e.g., tree view, showing details like last file modification date)
 - `p`: Preview file
 
 # Opening Files
