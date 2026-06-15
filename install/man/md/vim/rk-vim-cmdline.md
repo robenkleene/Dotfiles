@@ -66,6 +66,8 @@ From the command line `<C-c>` (or `ESC`) will close the command line window and 
 
 - The history is stored in `~/.viminfo`
 - `:his[tory] {name}`: List history, `{name}` defaults to `:` for this command
+- `:wv[iminfo]`: Write history
+- `:rv[iminfo]`: Read history
 
 ## `{name}`
 
