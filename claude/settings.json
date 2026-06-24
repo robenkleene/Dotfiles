@@ -12,5 +12,6 @@
       }
     ]
   },
-  "showTips": false
+  "showTips": false,
+  "tui": "fullscreen"
 }
