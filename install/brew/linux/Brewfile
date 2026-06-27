@@ -60,6 +60,6 @@ brew 'nethack'
 brew 'htop'
 brew 'glances'
 
-tap 'robenkleene/tap'
-brew 'rep-grep'
-brew 'ren-find'
+tap 'robenkleene/tap', trusted: true
+brew 'rep-grep', trusted: true
+brew 'ren-find', trusted: true
