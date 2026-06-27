@@ -14,6 +14,8 @@ brew 'gnu-typist'
 brew 'cscope'
 # Version of `patch` that supports the `--merge` flag to apply conflicts in file
 brew 'gpatch'
+# Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
+brew 'et'
 
 # Editor
 brew 'vim'
@@ -54,15 +56,9 @@ brew 'yt-dlp'
 # "adb devices"`
 # brew 'watch'
 
-brew 'codex'
-
-# Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
-tap 'MisterTea/et'
-brew 'MisterTea/et/et'
-
-tap 'robenkleene/tap'
-brew 'rep-grep'
-brew 'ren-find'
+tap 'robenkleene/tap', trusted: true
+brew 'rep-grep', trusted: true
+brew 'ren-find', trusted: true
 
 # Cask GUI Apps
 cask 'alacritty'
