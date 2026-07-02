@@ -1,5 +1,6 @@
-- `s/foo/bar`
-- `s#foo#bar`: Alternative syntax, very useful for replaces that involve a lot of slashes.
+- `:s/foo/bar`
+- `:%s/foo/bar/gc`: Replace this with that, asking for confirmation each time
+- `:%s#foo#bar#g`: Alternative find and replace separator for when the find and replace strings themselves include slashes
 - `&` / `:&` repeat last substitute but without the flags (e.g., `g` is a flag to replace all matches)
 - `:&&`: Repeat the last substitute but with the same flags
 

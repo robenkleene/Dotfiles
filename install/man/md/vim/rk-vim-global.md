@@ -1,13 +1,23 @@
 - `g[lobal]/`
-- `v[global]/` / `g!/`: Invert (i.e., like `grep -v`, `v/foo/d`, delete lines *not* matching pattern)
-- `g/^$/d`: Delete blank lines
+
+# Delete
+
+- `:g/^$/d`: Delete blank lines
 - `:g/foo/d`: Delete lines matching pattern
-- `g/foo/p`: Print lines matching pattern
-- `g/^$/d`: Delete blank lines
-- `:%s/foo/bar/gc`: Replace this with that, asking for confirmation each time
-- `:bufdo g/foo/d`: Delete lines matching pattern in all buffers
+- `:v[global]/` / `g!/`: Invert (i.e., like `grep -v`, `v/foo/d`, delete lines *not* matching pattern)
 - `:v/foo/d`, `g!/foo/d`: Delete all other lines (`:v` and `g!` are synonyms)
+- `:g/^$/d`: Delete blank lines
+- `:bufdo g/foo/d`: Delete lines matching pattern in all buffers
+
+# Print
+
+- `:g/foo/p`: Print lines matching pattern
 - `:g/foo/p`: Print lines matching pattern (to then populate the quick fix list with the pattern, use `:vim[grep] /foo/ %`
+
+# Yank
+
 - `:g/foo/yank A`: Yank matching lines to register `a` (this works because `A` is uppercase, so the lines are *appended* to the register, this is why this can't be used to yank directly to the system clipboard)
-- `:%s#foo#bar#g`: Alternative find and replace separator for when the find and replace strings have slashes
+
+# `norm[al]`
+
 - `:g//norm gcc`: Perform a normal mode command on every matched search
