@@ -58,7 +58,6 @@ usage() {
     echo "  -d             Dry run"
     echo "  -v             Verbose"
     echo "  -h             Help"
-    exit 1
 }
 
 hostname=""
