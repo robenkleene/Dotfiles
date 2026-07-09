@@ -53,31 +53,49 @@ DOTFILES=(
 )
 
 usage() {
-    echo "Usage: $(basename "$0") -h <hostname> [-f] [-v]"
-    echo "Syncs dotfiles to a host"
+    echo "Usage: $(basename "$0") -H <hostname> [-f] [-v]"
     echo ""
     echo "Options:"
-    echo "  -h <hostname>  Target hostname (required)"
-    echo "  -f             Force sync (default is dry-run)"
-    echo "  -v             Verbose rsync output (show per-file details)"
+    echo "  -H <hostname>  Hostname (required)"
+    echo "  -d             Dry run"
+    echo "  -v             Verbose"
+    echo "  -h             Help"
     exit 1
 }
 
 hostname=""
-force=false
+dry=false
 verbose=false
 
-while getopts "h:fv" opt; do
-    case $opt in
-        h) hostname="$OPTARG" ;;
-        f) force=true ;;
-        v) verbose=true ;;
-        *) usage ;;
-    esac
+while getopts "H:fvh" option; do
+  case "$option" in
+    H)
+      hostname="$OPTARG"
+      ;;
+    d)
+      dry=true
+      ;;
+    v)
+      verbose=true
+      ;;
+    h)
+      usage()
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
 done
 
 if [[ -z "$hostname" ]]; then
-    usage
+  usage()
+  exit 1
 fi
 
 # Build list of paths to sync
@@ -134,16 +152,15 @@ fi
 cd "$HOME"
 
 rsync_flags="-avRL"
-if [[ "$verbose" == true ]]; then
+if [[ "$verbose" = true ]]; then
     rsync_flags="-avvRL --itemize-changes"
 fi
 
 # Ignore `[[ $? -eq 23 ]]` which happens with too many duplicate filenames,
 # which happens because the `-R` flag implicitly addes the parent directory
-if [[ "$force" == true ]]; then
+if [[ "$dry" = false ]]; then
     rsync $rsync_flags "${paths_to_sync[@]}" "$hostname:~/" || [[ $? -eq 23 ]]
-    echo "Done syncing dotfiles to $hostname"
 else
-    echo "Dry-run mode (use -f to sync):"
+    echo "Dry run"
     rsync $rsync_flags --dry-run "${paths_to_sync[@]}" "$hostname:~/" || [[ $? -eq 23 ]]
 fi
