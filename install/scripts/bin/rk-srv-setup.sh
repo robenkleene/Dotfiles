@@ -76,7 +76,7 @@ while getopts "H:fvh" option; do
       verbose=true
       ;;
     h)
-      usage()
+      usage
       exit 0
       ;;
     :)
@@ -91,7 +91,7 @@ while getopts "H:fvh" option; do
 done
 
 if [[ -z "$hostname" ]]; then
-  usage()
+  usage
   exit 1
 fi
 
