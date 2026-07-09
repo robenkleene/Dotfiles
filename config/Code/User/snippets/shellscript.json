@@ -29,6 +29,11 @@
     "description": "cond eq",
     "prefix": "rk-cond-eq"
   },
+  "cond bool": {
+    "body": "\"\\${${1:var}:-}\" = ${0:true}",
+    "description": "cond bool",
+    "prefix": "rk-cond-bool"
+  },
   "cond file dir": {
     "body": "-d \"${0:\\$1}\"",
     "description": "cond dir",
@@ -80,7 +85,7 @@
     "prefix": "rk-func"
   },
   "getopts": {
-    "body": "while getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=1\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
+    "body": "while getopts \":p:fh\" option; do\n  case \"\\$option\" in\n    p)\n      file_path=\"\\$OPTARG\"\n      ;;\n    f)\n      force=true\n      ;;\n    h)\n      echo \"Usage: command [-hf] [-p <file_path>]\"\n      exit 0\n      ;;\n    :)\n      echo \"Option -\\$OPTARG requires an argument\" >&2\n      exit 1\n      ;;\n    \\?)\n      echo \"Invalid option: -\\$OPTARG\" >&2\n      exit 1\n      ;;\n  esac\ndone",
     "description": "getopts",
     "prefix": "rk-getopts"
   },
