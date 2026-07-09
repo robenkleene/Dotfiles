@@ -10,7 +10,7 @@ set -euo pipefail
 DOTFILES=(
     ".bin/nobin/_tmux-safecopy.sh"
     ".bin/nobin/_tmux-set-ssh-status.sh"
-    ".bin/path-abs"
+    ".bin/rk-path-abs"
     ".bin/rk-lorem"
     ".bin/rk-today"
     ".claude-local/**"
@@ -30,7 +30,7 @@ DOTFILES=(
     ".hushlogin"
     ".ignore"
     ".inputrc"
-    ".local-alias"
+    ".local_alias"
     ".man-local/**"
     ".man/**"
     ".ripgreprc"
@@ -43,11 +43,11 @@ DOTFILES=(
     ".vim/plugin/**.vim"
     ".vim/spell/en.utf-8.add"
     ".vimrc"
-    ".vimrc-local.vim"
+    ".vimrc_local.vim"
     ".zsh/**.zsh"
     ".zshenv"
     ".zshrc"
-    ".zshrc-local.zsh"
+    ".zshrc_local.zsh"
 )
 
 usage() {
