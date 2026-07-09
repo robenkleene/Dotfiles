@@ -10,9 +10,12 @@ set -euo pipefail
 DOTFILES=(
     ".bin/nobin/_tmux-safecopy.sh"
     ".bin/nobin/_tmux-set-ssh-status.sh"
-    ".bin/rk-path-abs"
     ".bin/rk-lorem"
+    ".bin/rk-path-abs"
     ".bin/rk-today"
+    ".bin/tmux-srv-qui"
+    ".bin/tmux-srv-res"
+    ".bin/tmux-srv-sav"
     ".claude-local/**"
     ".claude/CLAUDE.md"
     ".claude/commands/*.md"
