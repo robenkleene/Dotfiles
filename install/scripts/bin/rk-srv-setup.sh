@@ -105,6 +105,8 @@ for item in "${DOTFILES[@]}"; do
         src_dir="$HOME/$dir"
         if [[ -d "$src_dir" ]]; then
             paths_to_sync+=("./$dir")
+        else
+            echo "Warning path not found: $item"
         fi
     elif [[ "$item" == *"**"* && "$item" != *"/**" ]]; then
         # Recursive glob pattern (e.g., .vim/after/**.vim)
@@ -118,6 +120,8 @@ for item in "${DOTFILES[@]}"; do
                 rel_path="${file#$HOME/}"
                 paths_to_sync+=("./$rel_path")
             done < <(find -L "$src_dir" -type f -name "$pattern" -print0 2>/dev/null)
+        else
+            echo "Warning path not found: $item"
         fi
     elif [[ "$item" == *"*."* ]]; then
         # Non-recursive glob pattern (e.g., *.vim)
@@ -133,11 +137,15 @@ for item in "${DOTFILES[@]}"; do
                 fi
             done
             shopt -u nullglob
+        else
+            echo "Warning path not found: $item"
         fi
     elif [[ -f "$HOME/$item" ]]; then
         paths_to_sync+=("./$item")
     elif [[ -d "$HOME/$item" ]]; then
         paths_to_sync+=("./$item")
+    else
+        echo "Warning path not found: $item"
     fi
 done
 
