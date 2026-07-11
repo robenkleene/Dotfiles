@@ -16,7 +16,17 @@ on body()
 		else
 			set targetFolder to desktop
 		end if
-		set newFolder to make new folder at targetFolder with properties {name:currentDate}
+		set folderName to currentDate
+		if exists (folder folderName of targetFolder) then
+			repeat with i from 2 to 9
+				set candidateName to currentDate & " " & i
+				if not (exists (folder candidateName of targetFolder)) then
+					set folderName to candidateName
+					exit repeat
+				end if
+			end repeat
+		end if
+		set newFolder to make new folder at targetFolder with properties {name:folderName}
 		reveal newFolder
 		activate
 	end tell
