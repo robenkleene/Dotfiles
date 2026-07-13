@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source ~/.bin/nobin/_giterator.sh
+source ~/.bin/nobin/_rk-giterator.sh
 
 find . -type d -execdir test -d "{}/.git" \; -print -prune | while read -r dir; do
   giterate "$dir"

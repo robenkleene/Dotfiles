@@ -50,5 +50,5 @@ augroup safecopy
   "   the `c` event.
   " - `&ft !=# "netrw"`: Always exclude `netrw` which has a habit of
   "   overwriting registers
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call system(has('gui_running') ? 'pbcopy' : '~/.bin/nobin/_tmux-safecopy.sh',join(v:event["regcontents"],"\n")) | end
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call system(has('gui_running') ? 'pbcopy' : '~/.bin/nobin/_rk-tmux-safecopy.sh',join(v:event["regcontents"],"\n")) | end
 augroup END

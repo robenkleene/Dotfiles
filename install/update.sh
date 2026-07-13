@@ -34,7 +34,7 @@ echo "Updating symlinks..."
 # Cleanup dead symlinks
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 for file in *; do
   if [[ $file == "install" ]]; then

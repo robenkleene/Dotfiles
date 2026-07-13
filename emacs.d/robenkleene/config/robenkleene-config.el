@@ -229,7 +229,7 @@
 ;;         (let (
 ;;               (process-connection-type nil)
 ;;               )
-;;           (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_tmux-safecopy.sh")))
+;;           (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_rk-tmux-safecopy.sh")))
 ;;             (unless (string))
 ;;             (process-send-string proc text)
 ;;             (process-send-eof proc)))

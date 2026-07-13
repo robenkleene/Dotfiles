@@ -30,7 +30,7 @@ if [[ "$force" != "true" ]]; then
   echo
 fi
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 if [ ! -d "$src" ]; then
   echo "Source $src is not a directory" >&2

@@ -27,7 +27,7 @@ while getopts ":sah" option; do
   esac
 done
 
-~/.bin/nobin/_egit.sh -u
+~/.bin/nobin/_rk-egit.sh -u
 if [[ "$all" == "true" ]]; then
   ~/.bin/git-pull-all
 elif [[ "$settings_only" != "true" ]]; then

@@ -12,7 +12,7 @@ fi
 
 IFS=':' read -ra repos <<<"$repos"
 
-source ~/.bin/nobin/_giterator.sh
+source ~/.bin/nobin/_rk-giterator.sh
 
 for repo in "${repos[@]}"; do
   giterate "$repo"
