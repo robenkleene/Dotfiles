@@ -29,8 +29,8 @@ done
 
 ~/.bin/nobin/_rk-egit.sh -u
 if [[ "$all" == "true" ]]; then
-  ~/.bin/git-pull-all
+  ~/.bin/rk-git-pull-all
 elif [[ "$settings_only" != "true" ]]; then
-  ~/.bin/git-pull-all -t
+  ~/.bin/rk-git-pull-all -t
 fi
 ~/Developer/Dotfiles/install/update.sh

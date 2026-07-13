@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-~/.bin/tmux-init-rst
+~/.bin/rk-tmux-init-rst
 tmux source-file ~/.config/tmux/tmux.conf

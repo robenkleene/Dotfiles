@@ -3,4 +3,4 @@
 set -euo pipefail
 
 arg=" ${1:-}"
-~/.bin/t-diff-grep$arg | ~/.bin/t-grep-bash-arg
+~/.bin/rk-t-diff-grep$arg | ~/.bin/rk-t-grep-bash-arg
