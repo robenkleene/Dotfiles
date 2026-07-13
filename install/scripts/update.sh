@@ -6,7 +6,20 @@ cd "$(dirname "$0")" || exit 1
 src_dir="$(pwd -P)/bin"
 dest_dir="$HOME/.bin"
 
-source ~/.bin/nobin/_rk-symlink.sh
+# This doesn't use `source ~/.bin/nobin/_rk-symlink.sh` so that the
+# `safe_symlink` function is available before this script has been run for the
+# first time.
+function safe_symlink() {
+  source="$1"
+  destination="$2"
+  if [ ! -e "$destination" ]; then
+    ln -s "$source" "$destination"
+  elif [ ! -L "$destination" ]; then
+    if [ "$destination" != "$source" ]; then
+      echo "Warning: $destination exists and does not link to $source" >&2
+    fi
+  fi
+}
 
 if [ ! -e "$dest_dir" ]; then
   mkdir "$dest_dir"
@@ -35,4 +48,6 @@ done
 
 # Symlink the no bin directory so scripts can reference them
 nobin_dest=$dest_dir/nobin
+
+
 safe_symlink "$src_dir/nobin" "$nobin_dest"
