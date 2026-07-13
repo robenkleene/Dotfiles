@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0" || exit 1)"
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 # VS Code
 vscode_path="$HOME/.config/Code"

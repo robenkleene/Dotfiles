@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 safe_symlink "$HOME/.config/agents/AGENTS.md" "$HOME/.codex/AGENTS.md"

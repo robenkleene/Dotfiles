@@ -11,4 +11,4 @@ if [[ ! -f "$HOME/.personal" ]]; then
 fi
 
 echo "Auto"
-~/.bin/nobin/_sgitt.sh -cp
+~/.bin/nobin/_rk-sgitt.sh -cp

@@ -6,7 +6,7 @@ cd "$(dirname "$0")" || exit 1
 src_dir="$(pwd -P)/bin"
 dest_dir="$HOME/.bin"
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 if [ ! -e "$dest_dir" ]; then
   mkdir "$dest_dir"

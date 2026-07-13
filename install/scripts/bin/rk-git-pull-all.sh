@@ -25,7 +25,7 @@ while getopts ":th" option; do
 done
 
 if [[ "$text_only" == "false" ]]; then
-  ~/.bin/nobin/_egit.sh -u
+  ~/.bin/nobin/_rk-egit.sh -u
 else
   if [[ ! -f "$HOME/.personal" ]]; then
     # Bit of a hack to avoid pulling twice on non-personal machine since these
@@ -34,14 +34,14 @@ else
   fi
 fi
 
-~/.bin/nobin/_repos-lint.sh
+~/.bin/nobin/_rk-repos-lint.sh
 
-~/.bin/nobin/_sgitt.sh -u
+~/.bin/nobin/_rk-sgitt.sh -u
 if [[ "$text_only" == "true" ]]; then
   exit 0
 fi
 
-~/.bin/nobin/_sgitp.sh -u
+~/.bin/nobin/_rk-sgitp.sh -u
 if [[ "$(uname)" = "Darwin" ]]; then
-  ~/.bin/nobin/_sgitm.sh -u
+  ~/.bin/nobin/_rk-sgitm.sh -u
 fi

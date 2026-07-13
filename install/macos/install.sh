@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd $(dirname "$0" || exit 1)
 
-source ~/.bin/nobin/_symlink.sh
+source ~/.bin/nobin/_rk-symlink.sh
 
 applescripts_path="$HOME/Library/Scripts"
 safe_symlink "$PWD/Scripts" "$applescripts_path"

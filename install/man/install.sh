@@ -23,7 +23,7 @@ while getopts ":mh" option; do
   esac
 done
 
-# ~/.bin/nobin/_man-md-lint.sh
+# ~/.bin/nobin/_rk-man-md-lint.sh
 
 cd "$(dirname "$0")" || exit 1
 
@@ -33,9 +33,9 @@ if [[ "$modified" == "true" ]]; then
   while IFS= read -r; do
     # `git ls-files --modified` actually includes deleted files, so skip those
     if [[ -e "$REPLY" ]]; then
-      ~/.bin/nobin/_man-md-update.sh -d "$destination_dir" -f -p "$REPLY"
+      ~/.bin/nobin/_rk-man-md-update.sh -d "$destination_dir" -f -p "$REPLY"
     else
-      ~/.bin/nobin/_man-md-update.sh -D -d "$destination_dir" -f -p "$REPLY"
+      ~/.bin/nobin/_rk-man-md-update.sh -D -d "$destination_dir" -f -p "$REPLY"
     fi
   # `grep -v '/\.'` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
   done < <( git ls-files --modified --others 'md/*.md' 'md/**/*.md' | grep -v '/\.' )
@@ -48,7 +48,7 @@ else
   fi
 
   while IFS= read -r; do
-    ~/.bin/nobin/_man-md-update.sh -d "$destination_dir" -p "$REPLY"
+    ~/.bin/nobin/_rk-man-md-update.sh -d "$destination_dir" -p "$REPLY"
   # `-path '*/.*' -prune` excludes hidden files/directories (e.g., `.claude/CLAUDE.md`)
   done < <( find md/ -path '*/.*' -prune -o -type f -name "*.md" -print )
 fi

@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-~/.bin/nobin/_egit.sh -Rpn && ~/.bin/nobin/_sgitt-auto.sh
+~/.bin/nobin/_rk-egit.sh -Rpn && ~/.bin/nobin/_rk-sgitt-auto.sh

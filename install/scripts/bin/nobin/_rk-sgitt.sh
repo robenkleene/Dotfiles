@@ -6,4 +6,4 @@ if [[ ! -f "$HOME/.personal" ]]; then
   exit 0
 fi
 
-cd ~/Text/ && "$HOME/.bin/nobin/_sgit.sh" "$@"
+cd ~/Text/ && "$HOME/.bin/nobin/_rk-sgit.sh" "$@"

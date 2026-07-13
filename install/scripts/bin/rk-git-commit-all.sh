@@ -2,7 +2,7 @@
 
 set -e
 
-source ~/.bin/nobin/_giterator.sh
+source ~/.bin/nobin/_rk-giterator.sh
 
 message="$1"
 if [[ -z "$message" ]]; then
