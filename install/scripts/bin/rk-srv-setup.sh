@@ -8,14 +8,15 @@ set -euo pipefail
 #   **.ext   - recursive glob (matches in subdirs)
 #   *.ext    - non-recursive glob (matches in dir only)
 DOTFILES=(
+    ".bin-local/*"
     ".bin/nobin/_rk-tmux-safecopy.sh"
     ".bin/nobin/_rk-tmux-set-ssh-status.sh"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
-    ".bin/rk-today"
     ".bin/rk-tmux-srv-qui"
     ".bin/rk-tmux-srv-res"
     ".bin/rk-tmux-srv-sav"
+    ".bin/rk-today"
     ".claude-local/**"
     ".claude/CLAUDE.md"
     ".claude/commands/*.md"
