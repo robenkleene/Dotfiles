@@ -127,8 +127,8 @@ for item in "${DOTFILES[@]}"; do
         else
             echo "Warning path not found: $src_dir"
         fi
-    elif [[ "$item" == *"*."* ]]; then
-        # Non-recursive glob pattern (e.g., *.vim)
+    elif [[ "$item" == *"*"* ]]; then
+        # Non-recursive glob pattern (e.g., *.vim or .bin-local/*)
         dir="${item%/*}"
         pattern="${item##*/}"
         src_dir="$HOME/$dir"
