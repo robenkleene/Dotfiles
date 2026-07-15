@@ -37,6 +37,14 @@ var state = [0, 0];  // top-level code runs at load time
   var INLET_TAB = 0, INLET_NOTE = 1;
   ```
 
+### Assist Comments
+
+- `setinletassist(index, string)` / `setoutletassist(index, string)` set the
+  hover ("assist") text for an inlet/outlet. Call them in the top-level script
+  body so they run at load (and re-run on `autowatch` recompile).
+- Follow the shared Max assist-comment schema — `(type(s), unit, range)
+  description`, types first. See the `maxmsp` skill's "Assist Comments" section.
+
 ## Message Handlers
 
 Incoming Max messages dispatch to functions **by name**:

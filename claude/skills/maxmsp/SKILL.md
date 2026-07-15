@@ -67,6 +67,30 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 - **`filtergraph~`** — interactive filter frequency response curve
 - **`lcd`** — drawing canvas, can be transparent overlay with `bgtransparent: 1`, `border: 0`
 
+## Assist Comments (Inlets & Outlets)
+
+Set an assistance comment on every inlet and outlet. This applies across all
+Max programming — patch objects, `js`/`v8` scripts (`setinletassist` /
+`setoutletassist`), etc. Follow this schema:
+
+```
+(type(s), unit, range) description per list element
+```
+
+- Types come **first**, in parens. Do NOT write prose-first strings like
+  `"int: current tab"` — the leading `(type)` is the part that matters.
+- `unit` and `range` are optional and only used for `int` / `float`.
+- Examples:
+  - `(float, ms) attack`
+  - `(float, 0 - 1) sustain`
+  - `(symbol) new track name`
+  - `(float float, %) x, y`
+  - `(int float symbol) id, amount, key`
+  - `(list) all filter coefficients` — for a variable-length / long list
+  - `(message) control messages`
+  - `(bang) sent after all messages are output`
+- Capitalization is inconsistent in practice; only the leading `(type)` matters.
+
 ## Conventions
 
 - Preserve existing object IDs when editing to avoid breaking connections
