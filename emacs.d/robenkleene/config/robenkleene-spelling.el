@@ -2,10 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+(defconst rk/ispell-program-name "ispell"
+  "The spell checker program used by ispell.")
+
 (with-eval-after-load 'flyspell-mode
   ;; Spelling
   ;; (setq ispell-program-name "aspell")
-  (setq ispell-program-name "ispell")
+  (setq ispell-program-name rk/ispell-program-name)
   (setq ispell-dictionary "english")
 
   ;; Don't prompt when saving a word to the dictionary
@@ -22,7 +25,9 @@
                      markdown-language-keyword-face)))))
   )
 
-(add-hook 'text-mode-hook 'flyspell-mode)
+;; Only enable spell checking if the ispell binary is available
+(when (executable-find rk/ispell-program-name)
+  (add-hook 'text-mode-hook 'flyspell-mode))
 
 (provide 'robenkleene-spelling)
 ;; Local Variables:
