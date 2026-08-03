@@ -215,31 +215,6 @@
 ;; paste into the minibuffer (it always pastes into the active document.
 ;; (setq select-enable-clipboard nil)
 
-;; Clipboard
-;; Only copy on yank with region to avoid overwritting the clipboard with other
-;; kill ring commands like `C-k'
-;; Using this in GUI Emacs at all messes with the `kill-ring' so you can't kill
-;; and paste to other buffers, and be able to paste to the minibuffer (since
-;; `S-v' can't paste to the minibuffer).
-;; (defun rk/safecopy (text &optional push)
-;;   ;; Do nothing if the region isn't active so that other commands like
-;;   ;; `kill-line', don't affect the system clipboard
-;;   (if (use-region-p)
-;;       (progn
-;;         (setenv "INSIDE_EMACS" "1")
-;;         (let (
-;;               (process-connection-type nil)
-;;               )
-;;           (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_rk-tmux-safecopy.sh")))
-;;             (unless (string))
-;;             (process-send-string proc text)
-;;             (process-send-eof proc)))
-;;         )
-;;     )
-;;   )
-;; (setq interprogram-cut-function 'rk/safecopy)
-;; (setq interprogram-paste-function nil)
-
 (provide 'robenkleene-config)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

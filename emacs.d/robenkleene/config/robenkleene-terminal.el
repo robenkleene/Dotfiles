@@ -2,30 +2,24 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Need to store the last paste because the function should only return a value
-;; if it's different than the last paste
-;; Disabled for now because we're using a single clipboard override for both GUI
-;; and terminal Emacs
-; (setq rk/last-copy nil)
-; (defun rk/safecopy (text &optional push)
-;   ;; Do nothing if the region isn't active so that other commands like
-;   ;; `kill-line', don't affect the system clipboard
-;   (setenv "INSIDE_EMACS" "1")
-;   (let (
-;         (process-connection-type nil)
-;         )
-;     (let ((proc (start-process "safecopy" nil "~/.bin/nobin/_rk-tmux-safecopy.sh")))
-;       (unless (string))
-;       (process-send-string proc text)
-;       (process-send-eof proc)))
-;   (setq rk/last-copy text)
-;   )
-; (defun rk/safepaste ()
-;   (let ((result (shell-command-to-string "INSIDE_EMACS=1 ~/.bin/nobin/_rk-tmux-safecopy.sh")))
-;     (unless (string= result rk/last-copy)
-;       result)))
-; (setq interprogram-cut-function 'rk/safecopy)
-; (setq interprogram-paste-function 'rk/safepaste)
+(defun rk/safecopy (text &optional push)
+  ;; Do nothing if the region isn't active so that other commands like
+  ;; `kill-line', don't affect the system clipboard
+  (if (use-region-p)
+      (progn
+        (setenv "INSIDE_EMACS" "1")
+        (let (
+              (process-connection-type nil)
+              )
+          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_rk-tmux-safecopy.sh")))
+            (unless (string))
+            (process-send-string proc text)
+            (process-send-eof proc)))
+        )
+    )
+  )
+(setq interprogram-cut-function 'rk/safecopy)
+(setq interprogram-paste-function nil)
 
 ;; Enable mouse support
 (xterm-mouse-mode 1)
