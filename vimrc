@@ -47,6 +47,7 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+set background=dark
 colorscheme lunaperche
 
 " Needs to happen before bindings are set
