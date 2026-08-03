@@ -89,7 +89,8 @@
 ;; ffap
 ;; Replace `C-x C-f' with `find-file-at-point' version
 ;; This slows down startup and prompts macOS to install `gcc'!?
-(ffap-bindings)
+;; This makes it harder to just quickly create files or switch directories
+;; (ffap-bindings)
 
 ;; Only require `y' or `n'
 (defalias 'yes-or-no-p 'y-or-n-p)
