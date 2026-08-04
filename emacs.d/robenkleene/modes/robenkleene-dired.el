@@ -3,6 +3,10 @@
 ;;; Code:
 
 (with-eval-after-load 'dired
+  ;; Hide dotfiles in `dired-omit-mode', without this only `.' and `..' dirs are
+  ;; hidden
+  (setq dired-omit-files
+        (concat dired-omit-files "\\|^\\..+$")))
   ;; Load `C-x C-j' command for `dired-jump'
   ;; Also enables `dired-omit-mode'
   (require 'dired-x)
