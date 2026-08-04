@@ -1,4 +1,10 @@
-- `ga`: Operator to start easy align (i.e., `ga` with a visual selection, `gaip` for the current paragraph)
+- `ga`: Operator to start `EasyAlign` (e.g., `ga` for a visual selection, `gaip` for the current paragraph)
+
+# Usage
+
+1. `ga` to start `EasyAlign`
+2. `*` to select all occurrences of a symbol
+3. `,` to choose which symbol to align around
 
 # With Easy Align Active
 
