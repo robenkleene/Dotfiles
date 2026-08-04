@@ -87,9 +87,10 @@
 (save-place-mode 1)
 
 ;; ffap
-;; Replace `C-x C-f' with `find-file-at-point' version
-;; This slows down startup and prompts macOS to install `gcc'!?
-;; This makes it harder to just quickly create files or switch directories
+;; Replace `C-x C-f' with `find-file-at-point' versions which allow opening
+;; files and grep lines
+;; Disable this because using `(ffap-bindings)' means this also overrides in
+;; `dired-mode`, which makes it hard to quickly switch directories.
 ;; (ffap-bindings)
 
 ;; Only require `y' or `n'
