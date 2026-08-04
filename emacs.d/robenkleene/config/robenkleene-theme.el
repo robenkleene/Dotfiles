@@ -26,6 +26,9 @@
   ;; (set-face-background 'default "#292A30")
   ;; Kleene Purple
   ;; (set-face-background 'default "#211930")
+
+  ;; Remove the background in Terminal
+  (set-face-background 'default "unspecified-bg")
   )
 
 (provide 'robenkleene-theme)
