@@ -1,4 +1,4 @@
-egitn() {
+_rk-egitn() {
   # The reason `egitn` has to be run seprately after `egit` is because the
   # second time running `egit` can't print except the path.
   print_status="true"
@@ -26,19 +26,19 @@ egitn() {
   fi
 }
 
-ssh-git-pull-all() {
+rk-ssh-git-pull-all() {
   ssh-start
   git_pull_all "$@"
 }
 
-ssh-start() {
+rk-ssh-start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
     ssh-add
   fi
 }
 
-ssh-stop() {
+rk-ssh-stop() {
   ssh-agent -k
 }
 
