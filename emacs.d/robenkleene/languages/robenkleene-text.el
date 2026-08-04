@@ -19,8 +19,8 @@
                               (whitespace-mode)
                               ))
 
-  ;; Allow following grep line matches
-  (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+  ;; Allow following paths grep line matches
+  (define-key text-mode-map (kbd "C-x C-f") 'ffap)
 
   ;; Set backtick as a string delimiter, this makes the `sexp' commands (like
   ;; `mark-sexp') work with backticks

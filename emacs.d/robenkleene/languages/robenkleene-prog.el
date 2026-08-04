@@ -10,7 +10,7 @@
   )
 
 (with-eval-after-load 'prog-mode
-  ;; Allow following grep line matches
+  ;; Allow following paths grep line matches
   (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
   )
 
