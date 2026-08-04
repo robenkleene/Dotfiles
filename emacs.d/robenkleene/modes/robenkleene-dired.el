@@ -10,6 +10,9 @@
   ;; hidden
   (setq dired-omit-files
         (concat dired-omit-files "\\|^\\..+$"))
+  ;; The default binding for `dired-mode-map' is `C-x M-o`, binding mirrors `('
+  ;; for `dired-hide-details-mode'
+  (define-key dired-mode-map (kbd ")") 'dired-omit-mode)
 
   ;; This is `dired-find-file-other-window' by default
   ;; This is inconsistent with other modes, e.g., `org-mode' follows links in
