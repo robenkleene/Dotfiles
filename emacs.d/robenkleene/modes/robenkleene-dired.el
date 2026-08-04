@@ -24,6 +24,8 @@
 
   (add-hook 'dired-mode-hook
             (lambda ()
+              ;; Hide hidden files run `dired-omit-mode' again to toggle
+              (dired-omit-mode)
               ;; Definitely need this because lack of colors in Dired mode means
               ;; it's hard to tell the details from the filename
               (dired-hide-details-mode)
