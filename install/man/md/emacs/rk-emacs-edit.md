@@ -56,8 +56,7 @@ This can be used to edit anywhere in a line, not just the beginning.
 
 # Deleting
 
-- `M-0 C-k`: Delete to beginning of line (works in terminal)
-- `C-S-<backspace>`: Delete to beginning of line (does not work in terminal)
+- `C-x <backspace>`, `M-0 C-k`, `C-S-<backspace>` (doesn't work in terminal): Delete to beginning of line
 
 # Macros
 
