@@ -6,6 +6,7 @@
 - `M-v` / `M-g M-c`: Switch to the completion window
 - You can focus the minibuffer just by using the usually window switching commands
 - `C-q C-j`: Enter a line break in the minibuffer (i.e., without submitting the command)
+- `C-x <backspace>`, `M-0 C-k`, `C-S-<backspace>` (doesn't work in terminal): Delete to beginning of line to clear minibuffer
 
 # Stuck Minibuffer
 
