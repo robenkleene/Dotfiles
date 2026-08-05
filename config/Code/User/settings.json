@@ -81,9 +81,10 @@
     // "editor.autoSurround": "never",
     // Don't show the sidebar on the right by default
     "workbench.secondarySideBar.defaultVisibility": "hidden",
-    // Don't open files in the Explorer in a single click
-    // This makes it easier to perform actions like traversing folders without opening files
+    // Don't open files or expand directories in the Explorer in a single click
+    // This makes it easier to click then traversing folders
     "workbench.list.openMode": "doubleClick",
+    "workbench.tree.expandMode": "doubleClick",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.rulers": [80],
