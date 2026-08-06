@@ -25,7 +25,7 @@ Note the consistency for `D` and `R` for remembering those commands, both the co
 
 - `mf` / `mF`: Toggle mark on / off for file
 - `mu`: Toggle mark off for all files
-- `mt`: Set mark target directory (note this uses the selected directory, not the current directory!)
+- `mt`: Set mark target directory (if the cursor is on a directory, that will be used instead of the working directory)
 - `mc`: Copy marked files to target directory
 - `mm`: Move marked files to target directory
 
