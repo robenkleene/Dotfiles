@@ -18,6 +18,7 @@ augroup END
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
 " `Special` includes Markdown syntax like header delimiters
 highlight Special guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=NONE gui=NONE
 if !has('gui_running')
   " Default to terminal foreground color and background color
   highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
@@ -28,6 +29,7 @@ augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
   autocmd ColorScheme * highlight Special guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+  autocmd ColorScheme * highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=bold gui=bold
   if !has('gui_running')
     autocmd ColorScheme * highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
   endif
