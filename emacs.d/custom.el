@@ -11,6 +11,7 @@
      diminish
      doric-themes
      ef-themes
+     magit
      markdown-mode
      yasnippet
      yasnippet-capf
