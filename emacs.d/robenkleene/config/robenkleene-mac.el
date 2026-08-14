@@ -18,7 +18,7 @@
 (defvar rk/mac-bindings-minor-mode-map (make-keymap))
 
 (global-set-key (kbd "s-v")
-                'clipboard-yank
+                'rk/clipboard-yank
                 )
 
 (global-unset-key (kbd "s-q"))

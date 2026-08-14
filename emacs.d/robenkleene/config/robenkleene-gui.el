@@ -2,6 +2,26 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Do nothing if the region isn't active so that other commands like
+;; `kill-line', don't affect the system clipboard
+(defun rk/safecopy (text &optional _push)
+  (when (use-region-p)
+    (gui-select-text text))
+  )
+;; Replaces the default `interprogram-cut-function' of `gui-select-text'
+(setq interprogram-cut-function 'rk/safecopy)
+;; Replaces the default `interprogram-paste-function' of `gui-selection-value',
+;; so `yank' (`C-y') only ever reads the kill ring.
+(setq interprogram-paste-function nil)
+;; `clipboard-yank' only rebinds `select-enable-clipboard', so it's inert once
+;; `interprogram-paste-function' is nil, restore it for this command alone.
+(defun rk/clipboard-yank ()
+  "Insert the system clipboard, even though `C-y' can't."
+  (interactive "*")
+  (let ((interprogram-paste-function 'gui-selection-value))
+    (clipboard-yank))
+  )
+
 ;; Path
 (let ((paths-to-prepend
        (list
