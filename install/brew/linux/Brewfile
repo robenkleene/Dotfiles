@@ -1,6 +1,5 @@
 # Shell
 brew 'git'
-brew 'tig'
 brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
@@ -50,8 +49,6 @@ brew 'jq'
 # Also installs `clangd`, `clang`, `lldb`, `lldb-vscode`
 # Removed to save disk space
 # brew 'llvm'
-
-brew 'codex'
 
 # Games
 brew 'nethack'
