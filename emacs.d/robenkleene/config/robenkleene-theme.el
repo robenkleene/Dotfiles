@@ -4,31 +4,28 @@
 
 (use-package ef-themes
   :config
-  ;; (load-theme 'ef-owl :no-confirm-loading)
   )
 
 (use-package doric-themes
   :config
   )
 
-;; (if window-system
-;;     (load-theme 'doric-water :no-confirm-loading)
-;;   (load-theme 'modus-vivendi :no-confirm-loading)
-;;   )
-
-(load-theme 'modus-vivendi :no-confirm-loading)
-
 ;; Custom Background Color
 (if window-system
-    ;; BBEdit Black
-    (set-face-background 'default "#141414")
-  ;; Xcode Black
-  ;; (set-face-background 'default "#292A30")
-  ;; Kleene Purple
-  ;; (set-face-background 'default "#211930")
-
-  ;; Remove the background in Terminal
-  (set-face-background 'default "unspecified-bg")
+    (progn
+      (load-theme 'modus-operandi :no-confirm-loading)
+      ;; Xcode Black
+      ;; (set-face-background 'default "#292A30")
+      ;; Kleene Purple
+      ;; (set-face-background 'default "#211930")
+      ;; BBEdit Black
+      ;; (set-face-background 'default "#141414")
+      )
+  (progn
+    (load-theme 'modus-vivendi :no-confirm-loading)
+    ;; Remove the background in Terminal
+    (set-face-background 'default "unspecified-bg")
+    )
   )
 
 (provide 'robenkleene-theme)
