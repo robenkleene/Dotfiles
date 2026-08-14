@@ -211,9 +211,10 @@
 ;; `view-mode' still needs to be set manually.
 ;; (setq view-read-only t)
 
-;; Disable the builtin clipboard support
-;; We still need builtin clipboard support for GUI because otherwise `S-v` can't
-;; paste into the minibuffer (it always pastes into the active document.
+;; Don't disable the builtin clipboard support with `select-enable-clipboard'
+;; Setting it to nil would also stop `gui-select-text' and `gui-selection-value'
+;; from working at all, which breaks pasting. Instead override
+;; `interprogram-cut-function'.
 ;; (setq select-enable-clipboard nil)
 
 (provide 'robenkleene-config)
