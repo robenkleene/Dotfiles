@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-~/.bin/ec-srv-qui
+~/.bin/rk-ec-srv-qui
 exec emacsclient -nw .
