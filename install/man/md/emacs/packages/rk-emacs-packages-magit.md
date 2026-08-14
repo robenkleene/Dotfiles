@@ -1,4 +1,4 @@
-- `s`: `git add`
+- `s` / `u`: Stage / unstage
 - `k`: Discard change
 - `g`: Refresh all
 - `G`: Refresh
