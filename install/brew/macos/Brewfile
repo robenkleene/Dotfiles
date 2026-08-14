@@ -1,7 +1,6 @@
 # Shell
 brew 'zsh'
 brew 'git'
-brew 'tig'
 brew 'ripgrep'
 # Definitely need for remote servers
 brew 'tmux'
