@@ -36,6 +36,20 @@
         )
     ))
 
+(defun kill-line-grep-dwim ()
+  "grep for current line, followed by the region if there is one."
+  (interactive)
+  (if (use-region-p)
+      (let ((text (buffer-substring-no-properties (region-beginning) (region-end)))
+            (grep (save-excursion
+                    (goto-char (region-beginning))
+                    (get-line-grep)))
+            )
+        (kill-new (concat grep "\n" text))
+        )
+    (kill-line-grep)
+    ))
+
 (defun go-grep (entry)
   "Go to the line specified in a grep formatted `entry'."
   (interactive
