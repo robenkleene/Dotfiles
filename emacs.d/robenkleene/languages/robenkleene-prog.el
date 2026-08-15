@@ -12,6 +12,10 @@
 (with-eval-after-load 'prog-mode
   ;; Allow following paths grep line matches
   (define-key prog-mode-map (kbd "C-x C-f") 'ffap)
+
+  (define-key prog-mode-map (kbd "C-c w g") 'kill-line-grep-dwim)
+  (define-key prog-mode-map (kbd "C-c w m")
+              'kill-line-grep-markdown-dwim)
   )
 
 (add-hook 'prog-mode-hook (lambda ()
