@@ -50,6 +50,30 @@
     (kill-line-grep)
     ))
 
+(defun kill-line-grep-markdown-dwim ()
+  "grep for current line, or the region if there is one, as Markdown."
+  (interactive)
+  (unless buffer-file-name
+    (user-error "Buffer isn't visiting a file"))
+  (let* (
+         (region (use-region-p))
+         (start (if region (region-beginning) (line-beginning-position)))
+         (end (if region (region-end) (line-end-position)))
+         (text (buffer-substring-no-properties start end))
+         (grep (save-excursion
+                 (goto-char start)
+                 (get-line-grep)))
+         (language
+          (replace-regexp-in-string
+           "-mode\\'"
+           ""
+           (symbol-name major-mode))
+          )
+         )
+    (kill-new (concat "``` grep\n" grep "\n```\n\n"
+                      "``` " language "\n" text "\n```\n"))
+    ))
+
 (defun go-grep (entry)
   "Go to the line specified in a grep formatted `entry'."
   (interactive
