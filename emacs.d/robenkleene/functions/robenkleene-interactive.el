@@ -19,21 +19,21 @@
 (defun get-line-grep ()
   "grep for current line."
   (interactive)
-  (if buffer-file-name
-      (let* (
-             (path buffer-file-name)
-             (home-path
-              (replace-regexp-in-string
-               (concat "^" (regexp-quote (expand-file-name "~")))
-               "~"
-               path)
-              )
-             (line-number (number-to-string (line-number-at-pos)))
-             (command (concat home-path ":" line-number))
-             )
-        (message "%s" command)
-        command
-        )
+  (unless buffer-file-name
+    (user-error "Buffer isn't visiting a file"))
+  (let* (
+         (path buffer-file-name)
+         (home-path
+          (replace-regexp-in-string
+           (concat "^" (regexp-quote (expand-file-name "~")))
+           "~"
+           path)
+          )
+         (line-number (number-to-string (line-number-at-pos)))
+         (command (concat home-path ":" line-number))
+         )
+    (message "%s" command)
+    command
     ))
 
 (defun kill-line-grep-dwim ()
@@ -53,8 +53,6 @@
 (defun kill-line-grep-markdown-dwim ()
   "grep for current line, or the region if there is one, as Markdown."
   (interactive)
-  (unless buffer-file-name
-    (user-error "Buffer isn't visiting a file"))
   (let* (
          (region (use-region-p))
          (start (if region (region-beginning) (line-beginning-position)))
