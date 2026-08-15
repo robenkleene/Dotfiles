@@ -2,9 +2,26 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun rk/eshell-fix-previous-command ()
+  "Fetch the previous command for editing and delete it from history."
+  (interactive)
+  (when (ring-empty-p eshell-history-ring)
+    (user-error "History is empty"))
+  ;; Index `0' is the most recent command
+  (let ((command (ring-remove eshell-history-ring 0)))
+    (eshell-write-history)
+    (setq eshell-history-index nil)
+    (delete-region eshell-last-output-end (point-max))
+    (goto-char (point-max))
+    (insert-and-inherit command)
+    ))
+
 ;; Allow shell commands to be overridden in the `bin' directory
 (with-eval-after-load 'esh-mode
   (add-to-list 'exec-path (expand-file-name (concat eshell-directory-name "bin")))
+
+  (define-key eshell-mode-map (kbd "C-x C-p")
+              'rk/eshell-fix-previous-command)
   )
 
 (with-eval-after-load 'eshell
