@@ -99,6 +99,9 @@
 ;; Highlight Matching parens
 (show-paren-mode t)
 
+;; Try disabling shift select mode to match terminal
+(setq shift-select-mode nil)
+
 ;; Mouse
 
 ;; Disable mouse highlighting
