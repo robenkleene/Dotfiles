@@ -57,7 +57,14 @@
          (region (use-region-p))
          (start (if region (region-beginning) (line-beginning-position)))
          (end (if region (region-end) (line-end-position)))
-         (text (buffer-substring-no-properties start end))
+         ;; Drop a trailing new line, e.g., from marking a paragraph, because
+         ;; the closing code fence adds one back
+         (text
+          (replace-regexp-in-string
+           "\n\\'"
+           ""
+           (buffer-substring-no-properties start end))
+          )
          (grep (save-excursion
                  (goto-char start)
                  (get-line-grep)))
