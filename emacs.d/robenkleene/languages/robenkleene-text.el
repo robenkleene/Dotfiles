@@ -22,6 +22,10 @@
   ;; Allow following paths grep line matches
   (define-key text-mode-map (kbd "C-x C-f") 'ffap)
 
+  (define-key text-mode-map (kbd "C-c w g") 'kill-line-grep-dwim)
+  (define-key text-mode-map (kbd "C-c w m")
+              'kill-line-grep-markdown-dwim)
+
   ;; Set backtick as a string delimiter, this makes the `sexp' commands (like
   ;; `mark-sexp') work with backticks
   (modify-syntax-entry ?` "\"")
