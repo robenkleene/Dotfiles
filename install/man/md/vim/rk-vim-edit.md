@@ -21,6 +21,15 @@ set shiftwidth=2
 " Retab document with `gg=G`
 ```
 
+# Case
+
+- `u` / `U`: With a visual selection, change to lowercase / uppercase
+
+## Operators
+
+- `gu` / `gU`: Operator to change case to lowercase / uppercase
+- `~`: Invert case
+
 # Tips
 
 - Use `cw` to change whitespace between words or `dw` to delete.
