@@ -15,8 +15,11 @@ build/
 # Test Logs
 test.log
 
-# Emacs file locks
+# Emacs
+# File locks
 .#*
+# Temp files
+.swo
 
 # Ctags
 tags
