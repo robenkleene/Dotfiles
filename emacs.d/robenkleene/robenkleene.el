@@ -42,6 +42,7 @@
 (require 'robenkleene-dired)
 (require 'robenkleene-eshell)
 (require 'robenkleene-help)
+(require 'robenkleene-man)
 (require 'robenkleene-remember)
 (require 'robenkleene-vc)
 
