@@ -2,21 +2,27 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun rk/safecopy (text &optional push)
+(defvar rk/safecopy-programs
+  (append (if (eq system-type 'darwin) (list "/usr/bin/pbcopy"))
+          (list (expand-file-name "~/.bin/nobin/_rk-tmux-safecopy.sh")))
+  "Programs `rk/safecopy' pipes the copied text to.")
+
+(defun rk/safecopy-pipe (program text)
+  "Pipe TEXT to PROGRAM's standard input."
+  ;; `process-connection-type' of nil uses a pipe instead of a pty, so PROGRAM
+  ;; sees an EOF rather than the pty's line-editing limits
+  (let* ((process-connection-type nil)
+         (proc (start-process (concat "safecopy " program) "*Messages*" program)))
+    (process-send-string proc text)
+    (process-send-eof proc)))
+
+(defun rk/safecopy (text &optional _push)
   ;; Do nothing if the region isn't active so that other commands like
   ;; `kill-line', don't affect the system clipboard
-  (if (use-region-p)
-      (progn
-        (setenv "INSIDE_EMACS" "1")
-        (let (
-              (process-connection-type nil)
-              )
-          (let ((proc (start-process "INSIDE_EMACS=1 safecopy" "*Messages*" "~/.bin/nobin/_rk-tmux-safecopy.sh")))
-            (unless (string))
-            (process-send-string proc text)
-            (process-send-eof proc)))
-        )
-    )
+  (when (use-region-p)
+    (setenv "INSIDE_EMACS" "1")
+    (dolist (program rk/safecopy-programs)
+      (rk/safecopy-pipe program text)))
   )
 (setq interprogram-cut-function 'rk/safecopy)
 (setq interprogram-paste-function nil)
