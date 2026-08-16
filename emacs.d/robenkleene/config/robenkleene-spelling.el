@@ -5,7 +5,7 @@
 (defconst rk/ispell-program-name "ispell"
   "The spell checker program used by ispell.")
 
-(with-eval-after-load 'flyspell-mode
+(with-eval-after-load 'flyspell
   ;; Spelling
   ;; (setq ispell-program-name "aspell")
   (setq ispell-program-name rk/ispell-program-name)
