@@ -56,5 +56,5 @@ augroup safecopy
   "   `{input}` to a pipe, but Vim writes it to a temp file that can be
   "   cleaned up while Vim is running, hence the `auto#SystemPipe()`
   "   workaround
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call call(has('nvim') ? 'system' : 'auto#SystemPipe', [has('gui_running') ? 'pbcopy' : '~/.bin/nobin/_rk-tmux-safecopy.sh', join(v:event["regcontents"],"\n")]) | end
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call call(has('nvim') ? 'system' : 'auto#SystemPipe', ['~/.bin/nobin/_rk-tmux-safecopy.sh', join(v:event["regcontents"],"\n")]) | end
 augroup END

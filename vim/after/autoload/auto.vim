@@ -11,8 +11,8 @@ function! auto#SystemPipe(cmd, text) abort
   "   which would drop a yank immediately followed by `:q`
   let l:job = job_start([expand(a:cmd)], {'in_io': 'pipe', 'out_io': 'null', 'err_io': 'null', 'stoponexit': ''})
   call ch_sendraw(l:job, a:text)
-  " `ch_close_in()` sends the `EOF` that command (e.g., `pbcopy`, `tmux loadb
-  " -`) wait for
+  " `ch_close_in()` sends the `EOF` that a command reading `stdin` (e.g., `tmux
+  " loadb -`) waits for
   call ch_close_in(l:job)
 endfunction
 
