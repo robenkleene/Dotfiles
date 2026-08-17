@@ -1,3 +1,4 @@
+- `tmux attach`, `tmux at`, `tmux a`: Attach preferring the most recently used unattached session
 - `:new` / `:new-session`: Create a new session
 - `:kill-session`: Kill current session (`:kill` does not work and gives an "ambiguous command" error)
 - `<prefix>L`: Go to last session
