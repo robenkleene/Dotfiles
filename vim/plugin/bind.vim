@@ -1,16 +1,5 @@
 nnoremap Y y$
 
-" Yank the entire buffer without a trailing newline, then quit
-" Uses a real yank (not setreg) so `TextYankPost` fires with `v:event`
-" populated, which is needed for remote clipboard support via `_tmux-safecopy.sh`
-" `lazyredraw` suppresses the visual selection flash
-function! s:YankBufferAndQuit()
-  set lazyredraw
-  silent keepj normal! gg0vG$y
-  q!
-endfunction
-nnoremap <silent> ZD :call <SID>YankBufferAndQuit()<CR>
-
 " Instead of using these custom bindings for working with the quickfix list
 " quickly, use the corresponding fuzzy finders, which allow going through the
 " list with one key stroke in a more conventional way.
