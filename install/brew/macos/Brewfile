@@ -15,6 +15,7 @@ brew 'cscope'
 brew 'gpatch'
 # Eternal Terminal supports OSC52 for tmux clipboard sync, whereas mosh does not
 brew 'et'
+brew 'ffmpeg'
 
 # Editor
 brew 'vim'
