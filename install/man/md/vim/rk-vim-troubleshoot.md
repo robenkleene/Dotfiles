@@ -44,12 +44,10 @@ A function:
 :verbose function GitFiles
 ```
 
-You might need to specify `nmap`, etc...
-
-# Debugging Commands
+An `autocmd`:
 
 ```
-:verbose command Ag
+:verbose automd TextYankPost
 ```
 
 # Show all loaded `vim` Scripts
