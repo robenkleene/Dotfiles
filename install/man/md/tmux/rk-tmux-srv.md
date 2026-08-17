@@ -1,0 +1,1 @@
+- `tmux kill-server`: Destroy all sessions and kill server
