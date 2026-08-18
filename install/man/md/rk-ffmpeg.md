@@ -24,6 +24,12 @@ ffmpeg -i input.mp4 output.webm
 ffmpeg -i input.flac -c:v copy -c:a alac output.m4a
 ```
 
+## To WAV
+
+```
+ffmpeg -i input.aif output.wav
+```
+
 # Join `flac`
 
 Create an `inputs.txt` file:
