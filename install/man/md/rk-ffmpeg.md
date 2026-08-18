@@ -1,27 +1,45 @@
-# Convert to MP3
+# Convert
 
-    ffmpeg -i input.m4a -q:a 0 output.mp3
+- `-c:v copy`: Pass through embedded artwork (Note this is required for `m4a` output when
+  the source has cover art)
 
-# Convert to WebM
+## To MP3
 
-    ffmpeg -i Hand\ Movement.mp4 Hand\ Movement.webm
+```
+ffmpeg -i input.m4a -c:v copy -q:a 0 output.mp3
+```
 
-# Convert to Apple Lossless
+`-q:a 0` uses LAME's highest VBR quality (`V0`, `~245 kbps`, the default
+is `128 kbps` CBR)
 
-    ffmpeg -i input.flac -c:v copy -acodec alac output.m4a
+## To WebM
 
-The `-c:v` seems to be added to deal with artwork metadata.
+```
+ffmpeg -i input.mp4 output.webm
+```
+
+## To Apple Lossless
+
+```
+ffmpeg -i input.flac -c:v copy -c:a alac output.m4a
+```
 
 # Join `flac`
 
 Create an `inputs.txt` file:
 
-    for f in ./*.flac; do echo "file '$f'" >> inputs.txt; done
+```
+printf "file '%s'\n" *.flac > inputs.txt
+```
 
 Then convert:
 
-    ffmpeg -safe 0 -f concat -i inputs.txt -acodec alac output.m4a
+```
+ffmpeg -f concat -i inputs.txt -c:a alac output.m4a
+```
 
 # Inspect Metadata
 
-    ffprobe 2020-08-07\ 17-39-49.mkv
+```
+ffprobe file.mkv
+```
