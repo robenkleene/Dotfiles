@@ -14,6 +14,8 @@
 
 ## Listing
 
+- `(`: Toggle showing details
+
 ### Hidden
 
 - `C-x M-o` / `dired-omit-mode` (requires `dired-x`): Show hidden files (this includes Emacs recovery files)
@@ -21,14 +23,13 @@
 ### Sorting
 
 - `s`: Toggle sort by name or date
-    - `(`: Toggle showing details
 - `C-u s`: Set specific flags to pass to `ls`
 
 ## Mark
 
 - `m` / `u`: Mark / Remove mark
-- `U`: Unmark all
-- `t`: Invert marked
+- `U`: Unmark all (there's not mark all)
+- `t`: Invert marked (works as mark all with nothing marked)
 - Note that the marked files can only be operated on when in the same Dired buffer as the marked files
 
 ### Multiple Files
