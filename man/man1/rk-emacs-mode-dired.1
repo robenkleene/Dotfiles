@@ -35,6 +35,8 @@ to file
 \f[CR]o\f[R] / \f[CR]dired\-find\-file\-other\-window\f[R]: Open file in
 other window
 .SS Listing
+.IP \(bu 2
+\f[CR](\f[R]: Toggle showing details
 .SS Hidden
 .IP \(bu 2
 \f[CR]C\-x M\-o\f[R] / \f[CR]dired\-omit\-mode\f[R] (requires
@@ -43,19 +45,15 @@ files)
 .SS Sorting
 .IP \(bu 2
 \f[CR]s\f[R]: Toggle sort by name or date
-.RS 2
-.IP \(bu 2
-\f[CR](\f[R]: Toggle showing details
-.RE
 .IP \(bu 2
 \f[CR]C\-u s\f[R]: Set specific flags to pass to \f[CR]ls\f[R]
 .SS Mark
 .IP \(bu 2
 \f[CR]m\f[R] / \f[CR]u\f[R]: Mark / Remove mark
 .IP \(bu 2
-\f[CR]U\f[R]: Unmark all
+\f[CR]U\f[R]: Unmark all (there\(cqs not mark all)
 .IP \(bu 2
-\f[CR]t\f[R]: Invert marked
+\f[CR]t\f[R]: Invert marked (works as mark all with nothing marked)
 .IP \(bu 2
 Note that the marked files can only be operated on when in the same
 Dired buffer as the marked files
