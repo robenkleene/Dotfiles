@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 
 default_c4d = (
     "/Applications/Maxon Cinema 4D 2026/Cinema 4D.app/Contents/MacOS/Cinema 4D"
@@ -154,6 +155,10 @@ def main(argv):
     os.makedirs(output_dir, exist_ok=True)
     log_path = os.path.join(output_dir, "render.log")
 
+    # Stamped once here rather than in the runner, so every file a single run
+    # produces carries the same value.
+    timestamp = int(time.time())
+
     print("rendering %s at %dx%d" % (os.path.basename(scene), width, height))
     print("log: %s" % log_path)
 
@@ -169,6 +174,7 @@ def main(argv):
                 width=width,
                 height=height,
                 preview=args.preview,
+                timestamp=timestamp,
                 status_path=status_path,
             )
         )
@@ -184,7 +190,9 @@ def main(argv):
         report_failure(log_path)
 
     name = os.path.splitext(os.path.basename(scene))[0]
-    print("done: %s" % os.path.join(output_dir, name + ".png"))
+    print("done: %s" % os.path.join(
+        output_dir, protocol.output_name(name, timestamp, "png")
+    ))
 
 
 if __name__ == "__main__":
