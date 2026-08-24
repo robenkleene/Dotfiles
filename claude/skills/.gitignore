@@ -1,0 +1,11 @@
+# Ignore everything
+/*
+/*/
+
+# Except
+!.gitignore
+!/blender/
+!/cinema4d/
+!/maxmsp-javascript/
+!/maxmsp-m4l/
+!/maxmsp/

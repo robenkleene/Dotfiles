@@ -1,0 +1,7 @@
+{
+  "template ignore everything": {
+    "body": "# Ignore everything\n/*\n/*/\n\n# Except\n!.gitignore\n!${0:path}",
+    "description": "template ignore everything",
+    "prefix": "rk-template-ignore-everything"
+  }
+}
