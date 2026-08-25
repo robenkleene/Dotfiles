@@ -15,9 +15,10 @@ DOTFILES=(
     ".bin/rk-ec-srv-rst"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
-    ".bin/rk-tmux-srv-qui"
-    ".bin/rk-tmux-srv-res"
-    ".bin/rk-tmux-srv-sav"
+    # Don't include to avoid install and manage `tmux` plugins
+    # ".bin/rk-tmux-srv-qui"
+    # ".bin/rk-tmux-srv-res"
+    # ".bin/rk-tmux-srv-sav"
     ".bin/rk-today"
     ".claude-local/**"
     ".claude/CLAUDE.md"
