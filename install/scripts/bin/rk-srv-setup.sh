@@ -54,6 +54,7 @@ DOTFILES=(
     ".vim/plugged/**.vim"
     ".vim/plugin/**.vim"
     ".vim/spell/en.utf-8.add"
+    ".vim/spell/en.utf-8.add.spl"
     ".vimrc"
     ".vimrc_local.vim"
     ".zsh/**.zsh"
