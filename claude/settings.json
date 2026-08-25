@@ -1,17 +1,17 @@
 {
   "hooks": {
-    "Notification": [
+    "Stop": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "printf '\\a' > /dev/tty 2>/dev/null || true"
+            "command": "t=$PPID; while [ -n \"$t\" ] && [ \"$t\" -gt 1 ]; do d=$(ps -o tty= -p \"$t\" 2>/dev/null | tr -d \" \"); case \"$d\" in tty*|pts*) printf \"\\a\" > \"/dev/$d\" 2>/dev/null; break;; esac; t=$(ps -o ppid= -p \"$t\" 2>/dev/null | tr -d \" \"); done"
           }
         ]
       }
     ]
   },
   "showTips": false,
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "preferredNotifChannel": "terminal_bell"
 }
