@@ -17,7 +17,7 @@ set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\
 " Switch to right
 set statusline+=%=
 " Machine Name
-set statusline+=%.15{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}
+set statusline+=%15{getenv('SSH_CONNECTION')!=v:null?hostname().'\ ':''}
 " set statusline+=%{hostname()}\ 
 " Line/Column/Location
 set statusline+=%l:%c\ %P
