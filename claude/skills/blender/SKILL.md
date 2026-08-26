@@ -19,6 +19,13 @@ rk-blender-render scene.py                 # -> ./renders/<name>-<epoch>.png
 rk-blender-render scene.py --samples 512   # extra args go to the scene script
 ```
 
+Every render is archived with the scene that produced it: the script saves a
+matching `./renders/<name>-<epoch>.blend` next to the image, so any render can
+be reopened and inspected. It derives that path from
+`scene.render.filepath`, which is another reason a scene script must set a
+complete output path including the extension. The save is skipped when no
+render landed on disk, so a scene script that fails leaves no stray `.blend`.
+
 The script is on `PATH` (source:
 `~/Developer/Dotfiles/install/scripts/bin/rk-blender-render.sh`). It passes
 `--background --factory-startup`, so no user Blender config is read or written,
