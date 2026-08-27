@@ -4,7 +4,7 @@
 set -uo pipefail
 
 if [[ "${1:-}" = "moonlander" ]]; then
-  sftp aresdev:Developer/Vendor/qmk_firmware/zsa_moonlander_robenkleene_macos.bin .
+  sftp aresdev:Developer/Vendor/qmk_firmware/.build/zsa_moonlander_robenkleene_macos.bin .
   exit 0
 fi
 if [[ "${1:-}" = "ergodox" ]]; then
@@ -12,11 +12,11 @@ if [[ "${1:-}" = "ergodox" ]]; then
   exit 0
 fi
 if [[ "${1:-}" = "voyager" ]]; then
-  sftp aresdev:Developer/Vendor/qmk_firmware/qmk_firmware/.build/zsa_voyager_robenkleene_macos.bin .
+  sftp aresdev:Developer/Vendor/qmk_firmware/.build/zsa_voyager_robenkleene_macos.bin .
   exit 0
 fi
 if [[ "${1:-}" = "iris" ]]; then
-  sftp aresdev:Developer/Vendor/qmk_firmware/qmk_firmware/.build/keebio_iris_rev8_robenkleene_macos.uf2 .
+  sftp aresdev:Developer/Vendor/qmk_firmware/.build/keebio_iris_rev8_robenkleene_macos.uf2 .
   exit 0
 fi
 
