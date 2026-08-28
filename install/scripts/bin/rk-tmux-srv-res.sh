@@ -27,29 +27,31 @@ fi
 rows="${size% *}"
 columns="${size#* }"
 
-declare -A created_sessions=()
-declare -A created_windows=()
+# `bash` 3.2, which is what macOS ships, has no associative arrays, so track
+# what has been created as `|`-delimited strings instead
+created_sessions="|"
+created_windows="|"
 first_session=""
 
 while IFS=$'\t' read -r _ session window_index window_name dir; do
   if [[ ! -d "$dir" ]]; then
     dir="$HOME"
   fi
-  if [[ -z "${created_sessions[$session]:-}" ]]; then
+  if [[ "$created_sessions" != *"|$session|"* ]]; then
     tmux new-session -d -s "$session" -n "$window_name" -c "$dir" \
       -x "$columns" -y "$rows"
     created_index="$(tmux show-options -gv base-index)"
     if [[ "$created_index" != "$window_index" ]]; then
       tmux move-window -s "$session:$created_index" -t "$session:$window_index"
     fi
-    created_sessions[$session]=1
-    created_windows[$session:$window_index]=1
+    created_sessions="$created_sessions$session|"
+    created_windows="$created_windows$session:$window_index|"
     if [[ -z "$first_session" ]]; then
       first_session="$session"
     fi
-  elif [[ -z "${created_windows[$session:$window_index]:-}" ]]; then
+  elif [[ "$created_windows" != *"|$session:$window_index|"* ]]; then
     tmux new-window -d -t "$session:$window_index" -n "$window_name" -c "$dir"
-    created_windows[$session:$window_index]=1
+    created_windows="$created_windows$session:$window_index|"
   else
     # A window can run out of room for more panes, and losing one pane beats
     # aborting the restore of everything after it
