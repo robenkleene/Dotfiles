@@ -15,5 +15,5 @@ if [[ $status -eq 0 ]]; then
   exit 1
 fi
 
-tmux run-shell "$HOME/.tmux/plugins/tmux-resurrect/scripts/save.sh"
+~/.bin/rk-tmux-srv-sav
 tmux kill-server
