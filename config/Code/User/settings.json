@@ -30,11 +30,12 @@
     "[rust]": {
         "editor.rulers": [100],
     },
-    // When pasting in image into a Markdown document by default it puts an
-    // `image.png` in the same directory, use a path that's more scalable.
-    // "markdown.copyFiles.destination": {
-    //     "**/*.md": "assets/${documentBaseName}-${fileName}"
-    // },
+    // When pasting images into Markdown files, prefix the resulting image name
+    // with the document name. This makes it easier to find the created images
+    // later.
+    "markdown.copyFiles.destination": {
+        "**/*.md": "${documentBaseName}-${fileName}"
+    },
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
