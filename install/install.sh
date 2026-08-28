@@ -44,9 +44,6 @@ if ! command -v rg &> /dev/null; then
   ./brew/install.sh || true
 fi
 
-# Do this after brew install so `tmux` is installed
-./tmux/install.sh
-
 ./files/symlinks.sh
 ./claude/install.sh
 ./code/install.sh
