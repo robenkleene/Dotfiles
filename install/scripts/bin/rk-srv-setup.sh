@@ -9,18 +9,17 @@ set -euo pipefail
 #   *.ext    - non-recursive glob (matches in dir only)
 DOTFILES=(
     ".bin-local/*"
-    ".bin/nobin/_rk-tmux-safecopy.sh"
     ".bin/ec"
+    ".bin/nobin/_rk-tmux-safecopy.sh"
     ".bin/rk-ec-srv-qui"
     ".bin/rk-ec-srv-rst"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
-    # Don't include to avoid install and manage `tmux` plugins
-    # ".bin/rk-tmux-srv-qui"
-    # ".bin/rk-tmux-srv-res"
-    # ".bin/rk-tmux-srv-sav"
     ".bin/rk-tmux-init-rst"
     ".bin/rk-tmux-init-src"
+    ".bin/rk-tmux-srv-qui"
+    ".bin/rk-tmux-srv-res"
+    ".bin/rk-tmux-srv-sav"
     ".bin/rk-today"
     ".claude-local/**"
     ".claude/CLAUDE.md"
