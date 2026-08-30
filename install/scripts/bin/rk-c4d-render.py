@@ -7,6 +7,11 @@ The scene file runs inside a headless Cinema 4D session and must define
 `build(doc, ctx)`; see `scene_runner.py` in the loader folder for the full
 contract. Output goes to `./renders/<scene name>.png`.
 
+    rk-c4d-render orb.py --duration 5
+
+renders an animation instead: a folder of frames beside the stills, encoded to
+an `.mp4` next to it. A scene animates by defining `set_frame(doc, ctx, frame)`.
+
 The loader folder lives outside this script, in the Cinema 4D application
 settings; point `--loader-dir` or `C4D_LOADER_DIR` elsewhere to override.
 """
@@ -28,6 +33,7 @@ default_loader_dir = os.path.expanduser(
 )
 default_size = (1600, 1200)
 preview_size = (800, 600)
+default_fps = 30
 
 # Everything Cinema 4D needs from the loader folder. `c4d_loader.pyp` is the file
 # Cinema 4D itself loads; the other two are imported by it.
@@ -85,6 +91,20 @@ def parse_args(argv):
         help="render small with cheap anti-aliasing, and set ctx.preview",
     )
     parser.add_argument(
+        "-d",
+        "--duration",
+        type=float,
+        help="render an animation this many seconds long instead of a still",
+    )
+    parser.add_argument(
+        "--fps", type=int, default=default_fps, help="animation frames per second"
+    )
+    parser.add_argument(
+        "--no-video",
+        action="store_true",
+        help="keep the rendered frames but skip encoding them to an mp4",
+    )
+    parser.add_argument(
         "--c4d",
         default=os.environ.get("C4D_BIN", default_c4d),
         help="Cinema 4D binary (also settable with C4D_BIN)",
@@ -124,6 +144,35 @@ def run_cinema4d(binary, env, log_path, log_prefix, verbose):
         process.wait()
 
 
+def encode_video(frame_dir, fps, video_path):
+    """Encode a rendered frame folder to an mp4, and return whether it worked.
+
+    The pad filter is there because H.264 in the pixel format every player
+    understands needs even dimensions, and a render is sized by whatever was
+    asked for on the command line.
+    """
+    if shutil.which("ffmpeg") is None:
+        sys.stderr.write("warning: ffmpeg not found, keeping frames only\n")
+        return False
+    command = [
+        "ffmpeg",
+        "-y",
+        "-loglevel", "error",
+        "-framerate", str(fps),
+        "-i", os.path.join(frame_dir, "%04d.png"),
+        "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2",
+        "-c:v", "libx264",
+        "-pix_fmt", "yuv420p",
+        "-crf", "16",
+        "-movflags", "+faststart",
+        video_path,
+    ]
+    if subprocess.call(command) != 0:
+        sys.stderr.write("warning: ffmpeg failed, keeping frames only\n")
+        return False
+    return True
+
+
 def report_failure(log_path):
     sys.stderr.write("error: render failed, see %s\n" % log_path)
     with open(log_path) as handle:
@@ -151,6 +200,17 @@ def main(argv):
     width = args.width or width
     height = args.height or height
 
+    frames = 0
+    if args.duration is not None:
+        if args.duration <= 0:
+            fail("--duration must be greater than zero")
+        if args.fps <= 0:
+            fail("--fps must be greater than zero")
+        frames = int(round(args.duration * args.fps))
+        if frames < 1:
+            fail("--duration %g at %d fps is less than one frame"
+                 % (args.duration, args.fps))
+
     output_dir = os.path.abspath(args.output_dir)
     os.makedirs(output_dir, exist_ok=True)
     log_path = os.path.join(output_dir, "render.log")
@@ -159,7 +219,11 @@ def main(argv):
     # produces carries the same value.
     timestamp = int(time.time())
 
-    print("rendering %s at %dx%d" % (os.path.basename(scene), width, height))
+    if frames:
+        print("rendering %s at %dx%d, %d frames at %d fps"
+              % (os.path.basename(scene), width, height, frames, args.fps))
+    else:
+        print("rendering %s at %dx%d" % (os.path.basename(scene), width, height))
     print("log: %s" % log_path)
 
     status_dir = tempfile.mkdtemp(prefix="c4d-render-")
@@ -176,6 +240,8 @@ def main(argv):
                 preview=args.preview,
                 timestamp=timestamp,
                 status_path=status_path,
+                frames=frames,
+                fps=args.fps,
             )
         )
         run_cinema4d(args.c4d, env, log_path, protocol.log_prefix, args.verbose)
@@ -190,9 +256,23 @@ def main(argv):
         report_failure(log_path)
 
     name = os.path.splitext(os.path.basename(scene))[0]
-    print("done: %s" % os.path.join(
-        output_dir, protocol.output_name(name, timestamp, "png")
-    ))
+    if not frames:
+        print("done: %s" % os.path.join(
+            output_dir, protocol.output_name(name, timestamp, "png")
+        ))
+        return
+
+    frame_dir = os.path.join(
+        output_dir, protocol.sequence_dir_name(name, timestamp)
+    )
+    print("frames: %s" % frame_dir)
+    if args.no_video:
+        return
+    video_path = os.path.join(
+        output_dir, protocol.output_name(name, timestamp, "mp4")
+    )
+    if encode_video(frame_dir, args.fps, video_path):
+        print("done: %s" % video_path)
 
 
 if __name__ == "__main__":
