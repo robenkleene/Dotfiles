@@ -64,6 +64,18 @@ a reason to remove it.
 
 Delete generated output only when I explicitly ask for that specific deletion.
 
+# Animation Renders
+
+Video and animation renders are for checking motion, not for looking at. Always
+render them small and at whatever the cheapest sampling or preview quality the
+tool offers, and never spend a long render on one.
+
+Motion reads fine at low resolution, and a high quality animation costs hours
+for something I am only going to watch to see whether the movement works. Judge
+image quality from stills instead, where a single frame is cheap.
+
+If a final high quality animation is ever wanted, I will ask for it.
+
 # Local Overrides
 
 The following file contains overrides that take precedence over all previous instructions:
