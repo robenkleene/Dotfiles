@@ -50,6 +50,20 @@ Before writing new code, ask: "Does an abstraction already exist or want to exis
 
 If you're about to duplicate logic, write a shared helper first. Prefer small, focused classes/functions over complex interdependencies. Default to the simplest abstraction that eliminates duplication.
 
+# Generated Output
+
+Never delete output you generated while working — renders, screenshots, exports,
+logs, intermediate files. This includes test and preview output from iterating,
+output superseded by a later version, and output from an approach that was tried
+and abandoned. Keep all of it, and leave it where it was written.
+
+The intermediate output is how I see what you actually tried, not just what you
+settled on. Cleaning it up destroys the record of the process, and a failed or
+superseded attempt is often the most useful thing to look at. Tidiness is never
+a reason to remove it.
+
+Delete generated output only when I explicitly ask for that specific deletion.
+
 # Local Overrides
 
 The following file contains overrides that take precedence over all previous instructions:
