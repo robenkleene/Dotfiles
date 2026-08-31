@@ -26,11 +26,6 @@ _rk-egitn() {
   fi
 }
 
-rk-ssh-git-pull-all() {
-  ssh-start
-  git_pull_all "$@"
-}
-
 rk-ssh-start() {
   if [[ "$(uname)" = "Linux" && -z "$SSH_AGENT_PID" ]]; then
     eval "$(ssh-agent -s)"
@@ -40,6 +35,10 @@ rk-ssh-start() {
 
 rk-ssh-stop() {
   ssh-agent -k
+}
+
+rk-ssh-push() {
+  rk-ssh-start
 }
 
 # Accepts one history line number as argument.
