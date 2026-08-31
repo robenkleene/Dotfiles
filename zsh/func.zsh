@@ -39,6 +39,7 @@ rk-ssh-stop() {
 
 rk-ssh-push() {
   rk-ssh-start
+  rk-push
 }
 
 # Accepts one history line number as argument.
