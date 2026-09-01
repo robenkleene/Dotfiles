@@ -15,12 +15,16 @@
         "editor.wordWrap": "on",
         // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
-        // Disable autocompletion because it's distracting when writing prose
-        // "editor.quickSuggestions": {
-        //     "other": false,
-        //     "comments": false,
-        //     "strings": false
-        // },
+        // The `markdown-language-features` extension contributes a
+        // `configurationDefaults` turning all three of these off for
+        // `[markdown]`, so they have to be set back on explicitly. `strings`
+        // and `comments` matter inside fenced code blocks, where the embedded
+        // language tokenizes e.g. `"./path"` as a string.
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        },
         // Don't highlight the current word, which is distracting and not useful
         // in prose
         "editor.occurrencesHighlight": "off",
