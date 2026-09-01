@@ -11,7 +11,7 @@
     // Fix option keys (e.g., to move by word) in the integrated terminal
     "terminal.integrated.macOptionIsMeta": true,
     "[markdown]": {
-        "editor.rulers": null,
+        "editor.rulers": [],
         "editor.wordWrap": "on",
         // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
@@ -30,6 +30,14 @@
     "[rust]": {
         "editor.rulers": [100],
     },
+    // Enable autocomplete in comments, this is off by default, but it makes
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    },
+    // Don't suggest words from the document
+    "editor.wordBasedSuggestions": "off",
     // When pasting images into Markdown files, prefix the resulting image name
     // with the document name. This makes it easier to find the created images
     // later.
@@ -78,7 +86,7 @@
     // Don't automatically insert closing pairs
     // This makes freeform text manipulation difficult, e.g., if a closing pair
     // has already been entered, adding the opening pair will then
-    // erroneousnessly enter the closing pair
+    // incorrectly enter the closing pair
     "editor.autoClosingBrackets": "never",
     // This setting allows selecting text then entering a delimiter to surround
     // that text
@@ -86,9 +94,10 @@
     // Don't show the sidebar on the right by default
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     // Don't open files or expand directories in the Explorer in a single click
-    // This makes it easier to click then traversing folders
-    // "workbench.list.openMode": "doubleClick",
-    // "workbench.tree.expandMode": "doubleClick",
+    // This makes it easier to click then traversing folders and makes the
+    // keyboard shortcut (`⌃↩`) to open a file to the side hard to use
+    "workbench.list.openMode": "doubleClick",
+    "workbench.tree.expandMode": "doubleClick",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.rulers": [80],
@@ -100,8 +109,8 @@
     // Delay the spell check to avoid immediately marking the word being typed
     // as misspelled
     "cSpell.spellCheckDelayMs": 3000,
-    // Don't show notifications when `cSpell` is disabling spell checking for performance reasons
-    // (This often happens when opening a long log file)
+    // Don't show notifications when `cSpell` is disabling spell checking for
+    // performance reasons (this often happens when opening a long log file)
     "cSpell.enabledNotifications": {
         "Maximum Word Length Exceeded": false,
         "Lines too Long": false,
@@ -120,10 +129,12 @@
     // lldb
     // Don't show update notifications
     "lldb.suppressUpdateNotifications": true,
-    // Use light theme becauce it makes it easier to cut and paste rendered Markdown to rich text
+    // Use light theme becauce it makes it easier to cut and paste rendered
+    // Markdown to rich text
     // "workbench.colorTheme": "Light Modern",
     // Don't compact folders in the tree view
-    // This makes trying to drag-and-drop folders to the correct arrangement confusing
+    // This makes trying to drag-and-drop folders to the correct arrangement
+    // confusing
     "explorer.compactFolders": false,
     // Don't confirm every time a file is drag-and-dropped
     "explorer.confirmDragAndDrop": false,
