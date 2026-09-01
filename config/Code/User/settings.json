@@ -127,6 +127,9 @@
     "explorer.compactFolders": false,
     // Don't confirm every time a file is drag-and-dropped
     "explorer.confirmDragAndDrop": false,
+    // The Explorer's full path tooltip can't be turned off, so delay it
+    // `workbench.hover.delay` defaults to `1500` on macOS
+    "workbench.hover.delay": 3000,
     "cSpell.userWords": [
         "Ableton",
         "polyrhythm",
