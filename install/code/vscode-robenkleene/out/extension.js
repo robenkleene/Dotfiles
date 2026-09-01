@@ -42,6 +42,46 @@ function getHomeDir(filePath) {
         return '/root';
     return null;
 }
+// A fenced code block is delimited by a line starting with ```. The `^\s*`
+// allows for a fence indented in a list, and the open fence's info string
+// (e.g. ```sh) is ignored.
+function isFenceLine(line) {
+    return /^\s*```/.test(line);
+}
+// The cursor is inside a fenced code block when an odd number of fence lines
+// precede its line
+function isInFencedCodeBlock(document, line) {
+    let fences = 0;
+    for (let i = 0; i < line; i++) {
+        if (isFenceLine(document.lineAt(i).text)) {
+            fences++;
+        }
+    }
+    return fences % 2 === 1;
+}
+// The cursor is inside an inline code span when an odd number of `` ` ``
+// delimiters precede it on the line
+function isInInlineCode(linePrefix) {
+    return (linePrefix.match(/`/g)?.length ?? 0) % 2 === 1;
+}
+// Resolve the directory a path completion prefix refers to. `~/` uses the
+// document's own home directory (see `getHomeDir`) so remote documents resolve
+// remotely, and `document.uri.with({ path })` keeps the document's scheme so
+// `vscode.workspace.fs` reads from the right filesystem.
+function resolvePathCompletionDir(document, dirPrefix) {
+    if (dirPrefix.startsWith('~/')) {
+        const homeDir = getHomeDir(document.uri.fsPath);
+        if (!homeDir) {
+            return undefined;
+        }
+        return vscode.Uri.joinPath(document.uri.with({ path: homeDir }), dirPrefix.substring(2));
+    }
+    if (dirPrefix.startsWith('/')) {
+        return document.uri.with({ path: dirPrefix });
+    }
+    const parentUri = document.uri.with({ path: path.dirname(document.uri.path) });
+    return vscode.Uri.joinPath(parentUri, dirPrefix);
+}
 function activate(context) {
     let disposable = vscode.commands.registerCommand('robenkleene.copyGrep', () => {
         const editor = vscode.window.activeTextEditor;
@@ -147,6 +187,64 @@ function activate(context) {
         }
     });
     context.subscriptions.push(diffGotoSourceDisposable);
+    // The built-in Markdown language server only offers path completions inside
+    // link syntax (`[](`, `[id]: `, `<img src="">`), so this provider offers
+    // them inside inline code spans and fenced code blocks, where paths are
+    // written bare. Prose outside both gets no path completions at all. No
+    // trigger characters are registered with `registerCompletionItemProvider`,
+    // so it only runs when autocomplete is invoked manually with `ctrl-space`.
+    const markdownPathCompletionProvider = vscode.languages.registerCompletionItemProvider({ language: 'markdown' }, {
+        async provideCompletionItems(document, position) {
+            if (document.isUntitled) {
+                // A relative path has no directory to resolve against
+                return [];
+            }
+            const linePrefix = document.lineAt(position).text.substring(0, position.character);
+            // A ``` fence line is neither inline code (its three backticks
+            // would read as an unclosed span) nor inside the block it opens
+            // or closes
+            if (isFenceLine(linePrefix)) {
+                return [];
+            }
+            if (!isInInlineCode(linePrefix) && !isInFencedCodeBlock(document, position.line)) {
+                return [];
+            }
+            // The path is the trailing run of characters before the cursor,
+            // stopping at whitespace and at the delimiters that can open a
+            // path, so `("./sr` yields `./sr`
+            const pathPrefix = /[^\s()[\]<>`'"]*$/.exec(linePrefix)?.[0] ?? '';
+            const dirPrefix = pathPrefix.substring(0, pathPrefix.lastIndexOf('/') + 1);
+            const dirUri = resolvePathCompletionDir(document, dirPrefix);
+            if (!dirUri) {
+                return [];
+            }
+            let entries;
+            try {
+                entries = await vscode.workspace.fs.readDirectory(dirUri);
+            }
+            catch {
+                return [];
+            }
+            // Replace only the last path segment, leaving `dirPrefix` alone
+            const range = new vscode.Range(position.translate(0, dirPrefix.length - pathPrefix.length), position);
+            return entries.map(([name, type]) => {
+                // `type` is a bitmask, so a symlinked directory is
+                // `Directory | SymbolicLink`
+                const isDirectory = (type & vscode.FileType.Directory) !== 0;
+                const label = isDirectory ? `${name}/` : name;
+                const item = new vscode.CompletionItem(label, isDirectory ? vscode.CompletionItemKind.Folder : vscode.CompletionItemKind.File);
+                item.range = range;
+                item.insertText = label;
+                if (isDirectory) {
+                    // Re-open the suggest widget so a directory can be
+                    // descended into without pressing `ctrl-space` again
+                    item.command = { command: 'editor.action.triggerSuggest', title: '' };
+                }
+                return item;
+            });
+        }
+    });
+    context.subscriptions.push(markdownPathCompletionProvider);
 }
 exports.activate = activate;
 // This method is called when your extension is deactivated
