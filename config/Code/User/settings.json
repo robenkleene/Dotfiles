@@ -90,8 +90,10 @@
     // Don't open files or expand directories in the Explorer in a single click
     // This makes it easier to click then traversing folders and makes the
     // keyboard shortcut (`⌃↩`) to open a file to the side hard to use
-    "workbench.list.openMode": "doubleClick",
-    "workbench.tree.expandMode": "doubleClick",
+    // This has the unintended side effect of disabling the preview mode that VS
+    // Code normally opens files in (when the filename is in italics)
+    // "workbench.list.openMode": "doubleClick",
+    // "workbench.tree.expandMode": "doubleClick",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.rulers": [80],
