@@ -5,8 +5,6 @@
     // `"newUntitledFile"` Start with an untitled file
     // `"none"`: Start with nothing
     "workbench.startupEditor": "newUntitledFile",
-    // Don't ask for confirmation every drag and drop in Explorer
-    "explorer.confirmDragAndDrop": false,
     // Automatically open a parent git repository when opening a subfolder
     // (By default this prompts)
     "git.openRepositoryInParentFolders": "always",
@@ -76,7 +74,6 @@
     // has already been entered, adding the opening pair will then
     // erroneousnessly enter the closing pair
     "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
     // This setting allows selecting text then entering a delimiter to surround
     // that text
     // "editor.autoSurround": "never",
@@ -126,6 +123,7 @@
     "explorer.confirmDragAndDrop": false,
     "cSpell.userWords": [
         "Ableton",
-        "polyrhythm"
+        "polyrhythm",
+        "polyrhythms"
     ]
 }
