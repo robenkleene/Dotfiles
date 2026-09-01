@@ -125,6 +125,7 @@
     // Don't confirm every time a file is drag-and-dropped
     "explorer.confirmDragAndDrop": false,
     "cSpell.userWords": [
-        "Ableton"
+        "Ableton",
+        "polyrhythm"
     ]
 }
