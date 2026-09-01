@@ -13,8 +13,6 @@
     "[markdown]": {
         "editor.rulers": [],
         "editor.wordWrap": "on",
-        // Don't use every word for tab completion
-        "editor.tabCompletion": "onlySnippets",
         // Auto-complete is now off by default in Markdown mode, this turns it on
         // "editor.quickSuggestions": {
         //     "other": "on",
@@ -30,12 +28,8 @@
     "[rust]": {
         "editor.rulers": [100],
     },
-    // Enable autocomplete in comments, this is off by default, but it makes
-    "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "on",
-        "strings": "on"
-    },
+    // Prioritized expanding snippets with tab
+    "editor.tabCompletion": "onlySnippets",
     // Don't suggest words from the document
     "editor.wordBasedSuggestions": "off",
     // When pasting images into Markdown files, prefix the resulting image name
