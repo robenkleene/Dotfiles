@@ -16,14 +16,16 @@
         // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
         // Disable autocompletion because it's distracting when writing prose
-        "editor.quickSuggestions": {
-            "other": false,
-            "comments": false,
-            "strings": false
-        },
+        // "editor.quickSuggestions": {
+        //     "other": false,
+        //     "comments": false,
+        //     "strings": false
+        // },
         // Don't highlight the current word, which is distracting and not useful
         // in prose
-        "editor.occurrencesHighlight": "off"
+        "editor.occurrencesHighlight": "off",
+        // Don't suggest words from the document
+        "editor.wordBasedSuggestions": "off"
     },
     "[rust]": {
         "editor.rulers": [100],
