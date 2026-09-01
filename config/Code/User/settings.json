@@ -15,16 +15,12 @@
         "editor.wordWrap": "on",
         // Don't use every word for tab completion
         "editor.tabCompletion": "onlySnippets",
-        // The `markdown-language-features` extension contributes a
-        // `configurationDefaults` turning all three of these off for
-        // `[markdown]`, so they have to be set back on explicitly. `strings`
-        // and `comments` matter inside fenced code blocks, where the embedded
-        // language tokenizes e.g. `"./path"` as a string.
-        "editor.quickSuggestions": {
-            "other": "on",
-            "comments": "on",
-            "strings": "on"
-        },
+        // Auto-complete is now off by default in Markdown mode, this turns it on
+        // "editor.quickSuggestions": {
+        //     "other": "on",
+        //     "comments": "on",
+        //     "strings": "on"
+        // },
         // Don't highlight the current word, which is distracting and not useful
         // in prose
         "editor.occurrencesHighlight": "off",
@@ -40,6 +36,10 @@
     "markdown.copyFiles.destination": {
         "**/*.md": "${documentBaseName}-${fileName}"
     },
+    // You can't turn off fuzzy matching in autocomplete (so `br` will always
+    // match `bar`). But turning off `filterGraceful` turns off misspelling
+    // corrections (so `bra` won't match `bar`).
+    "editor.suggest.filterGraceful": false,
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
