@@ -190,9 +190,13 @@ function activate(context) {
     // The built-in Markdown language server only offers path completions inside
     // link syntax (`[](`, `[id]: `, `<img src="">`), so this provider offers
     // them inside inline code spans and fenced code blocks, where paths are
-    // written bare. Prose outside both gets no path completions at all. No
-    // trigger characters are registered with `registerCompletionItemProvider`,
-    // so it only runs when autocomplete is invoked manually with `ctrl-space`.
+    // written bare. Prose outside both gets no path completions at all.
+    //
+    // `/` is the only trigger character, so `./`, `../`, `~/` and `/` all open
+    // the suggest widget on their own. `.` is deliberately not one, since it
+    // would fire on every `foo.bar` in a code block. `editor.quickSuggestions`
+    // can't cover this on its own because it only auto-triggers on a word, and
+    // `./` isn't one.
     const markdownPathCompletionProvider = vscode.languages.registerCompletionItemProvider({ language: 'markdown' }, {
         async provideCompletionItems(document, position) {
             if (document.isUntitled) {
@@ -243,7 +247,7 @@ function activate(context) {
                 return item;
             });
         }
-    });
+    }, '/');
     context.subscriptions.push(markdownPathCompletionProvider);
 }
 exports.activate = activate;
