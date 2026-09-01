@@ -37,9 +37,9 @@ rk-ssh-stop() {
   ssh-agent -k
 }
 
-rk-ssh-push() {
+rk-push() {
   rk-ssh-start
-  rk-push
+  ~/.bin/rk-push
 }
 
 # Accepts one history line number as argument.
