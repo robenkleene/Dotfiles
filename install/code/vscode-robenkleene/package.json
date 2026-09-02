@@ -30,6 +30,10 @@
       {
         "command": "robenkleene.diffGotoSource",
         "title": "Diff: Go to Source"
+      },
+      {
+        "command": "robenkleene.openDirectory",
+        "title": "Open Directory"
       }
     ],
     "keybindings": [
@@ -45,6 +49,12 @@
       }
     ],
     "menus": {
+      "explorer/context": [
+        {
+          "command": "robenkleene.openDirectory",
+          "group": "navigation"
+        }
+      ],
       "editor/context/copy": [
         {
           "command": "robenkleene.copyGrep"
