@@ -29,6 +29,11 @@
         "editor.rulers": [100],
     },
     // Prioritized expanding snippets with tab
+    // Doc string for this option says "Works best when 'quickSuggestions'
+    // aren't enabled." This is just because tab for autocomplete takes
+    // precedence over tab for expanding snippets. I.e., so having this global
+    // won't conflict with autocomplete, but autocomplete will take precedence
+    // when it's visible.
     "editor.tabCompletion": "onlySnippets",
     // Don't suggest words from the document
     "editor.wordBasedSuggestions": "off",
