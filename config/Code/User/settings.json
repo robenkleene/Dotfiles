@@ -142,6 +142,9 @@
     // The Explorer's full path tooltip can't be turned off, so delay it
     // `workbench.hover.delay` defaults to `1500` on macOS
     "workbench.hover.delay": 3000,
+    // Hade the "Show code actions" lightbulb, code actions can still be
+    // triggered with `⌘I`
+    "editor.lightbulb.enabled": "off",
     "cSpell.userWords": [
         "Ableton",
         "polyrhythm",
