@@ -42,7 +42,31 @@ function getHomeDir(filePath) {
         return '/root';
     return null;
 }
+// Preserves the scheme and authority of `uri`, so paths on remote hosts stay
+// remote instead of collapsing to a local `file:` URI.
+function parentUri(uri) {
+    return uri.with({ path: path.dirname(uri.path) });
+}
 function activate(context) {
+    let openDirectoryDisposable = vscode.commands.registerCommand('robenkleene.openDirectory', async (uri) => {
+        // `vscode.workspace.fs` instead of Node's `fs`, so directories on
+        // remote hosts resolve through VS Code's file system providers
+        const resourceUri = uri ?? vscode.window.activeTextEditor?.document.uri;
+        if (!resourceUri) {
+            return;
+        }
+        let dirUri;
+        try {
+            const stat = await vscode.workspace.fs.stat(resourceUri);
+            const isDirectory = (stat.type & vscode.FileType.Directory) !== 0;
+            dirUri = isDirectory ? resourceUri : parentUri(resourceUri);
+        }
+        catch {
+            return;
+        }
+        await vscode.commands.executeCommand('vscode.openFolder', dirUri);
+    });
+    context.subscriptions.push(openDirectoryDisposable);
     let disposable = vscode.commands.registerCommand('robenkleene.copyGrep', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
@@ -104,7 +128,7 @@ function activate(context) {
         if (workspaceFolder) {
             return vscode.Uri.joinPath(workspaceFolder.uri, filePath);
         }
-        const dirUri = document.uri.with({ path: path.dirname(document.uri.path) });
+        const dirUri = parentUri(document.uri);
         return vscode.Uri.joinPath(dirUri, filePath);
     }
     const diffDefinitionProvider = vscode.languages.registerDefinitionProvider({ language: 'diff' }, {
