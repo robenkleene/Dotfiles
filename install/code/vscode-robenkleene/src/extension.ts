@@ -44,6 +44,43 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 	context.subscriptions.push(openDirectoryDisposable);
 
+	let selectParagraphDisposable = vscode.commands.registerCommand('robenkleene.selectParagraph', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			return;
+		}
+		const document = editor.document;
+		// Whitespace-only lines count as blank, matching `cursorMove`'s blank line motions
+		const isBlank = (line: number) => document.lineAt(line).isEmptyOrWhitespace;
+
+		// From a blank line, take the paragraph below, like Emacs `mark-paragraph`
+		let line = editor.selection.active.line;
+		while (line < document.lineCount && isBlank(line)) {
+			line++;
+		}
+		if (line >= document.lineCount) {
+			return;
+		}
+
+		let firstLine = line;
+		while (firstLine > 0 && !isBlank(firstLine - 1)) {
+			firstLine--;
+		}
+		let lastLine = line;
+		while (lastLine + 1 < document.lineCount && !isBlank(lastLine + 1)) {
+			lastLine++;
+		}
+
+		// End on the next line so the trailing newline is included, except at the
+		// end of the document where there isn't one
+		const end = lastLine + 1 < document.lineCount
+			? new vscode.Position(lastLine + 1, 0)
+			: document.lineAt(lastLine).range.end;
+		editor.selection = new vscode.Selection(new vscode.Position(firstLine, 0), end);
+		editor.revealRange(new vscode.Range(end, end));
+	});
+	context.subscriptions.push(selectParagraphDisposable);
+
 	let disposable = vscode.commands.registerCommand('robenkleene.copyGrep', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {

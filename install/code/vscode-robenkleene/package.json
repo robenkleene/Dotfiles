@@ -34,6 +34,10 @@
       {
         "command": "robenkleene.openDirectory",
         "title": "Open Directory"
+      },
+      {
+        "command": "robenkleene.selectParagraph",
+        "title": "Select Paragraph"
       }
     ],
     "keybindings": [
