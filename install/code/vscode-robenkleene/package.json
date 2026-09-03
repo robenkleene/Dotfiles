@@ -36,6 +36,10 @@
         "title": "Open Directory"
       },
       {
+        "command": "robenkleene.openDirectoryInNewWindow",
+        "title": "Open Directory in New Window"
+      },
+      {
         "command": "robenkleene.selectParagraph",
         "title": "Select Paragraph"
       }
@@ -56,6 +60,10 @@
       "explorer/context": [
         {
           "command": "robenkleene.openDirectory",
+          "group": "navigation"
+        },
+        {
+          "command": "robenkleene.openDirectoryInNewWindow",
           "group": "navigation"
         }
       ],

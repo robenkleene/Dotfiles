@@ -22,27 +22,32 @@ function parentUri(uri: vscode.Uri): vscode.Uri {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-	let openDirectoryDisposable = vscode.commands.registerCommand(
-		'robenkleene.openDirectory',
-		async (uri?: vscode.Uri) => {
-			// `vscode.workspace.fs` instead of Node's `fs`, so directories on
-			// remote hosts resolve through VS Code's file system providers
-			const resourceUri = uri ?? vscode.window.activeTextEditor?.document.uri;
-			if (!resourceUri) {
-				return;
-			}
-			let dirUri: vscode.Uri;
-			try {
-				const stat = await vscode.workspace.fs.stat(resourceUri);
-				const isDirectory = (stat.type & vscode.FileType.Directory) !== 0;
-				dirUri = isDirectory ? resourceUri : parentUri(resourceUri);
-			} catch {
-				return;
-			}
-			await vscode.commands.executeCommand('vscode.openFolder', dirUri);
+	const openDirectory = async (uri: vscode.Uri | undefined, forceNewWindow: boolean) => {
+		// `vscode.workspace.fs` instead of Node's `fs`, so directories on
+		// remote hosts resolve through VS Code's file system providers
+		const resourceUri = uri ?? vscode.window.activeTextEditor?.document.uri;
+		if (!resourceUri) {
+			return;
 		}
-	);
+		let dirUri: vscode.Uri;
+		try {
+			const stat = await vscode.workspace.fs.stat(resourceUri);
+			const isDirectory = (stat.type & vscode.FileType.Directory) !== 0;
+			dirUri = isDirectory ? resourceUri : parentUri(resourceUri);
+		} catch {
+			return;
+		}
+		await vscode.commands.executeCommand('vscode.openFolder', dirUri, { forceNewWindow });
+	};
+	let openDirectoryDisposable = vscode.commands.registerCommand('robenkleene.openDirectory', (uri?: vscode.Uri) => {
+		return openDirectory(uri, false);
+	});
 	context.subscriptions.push(openDirectoryDisposable);
+	let openDirectoryInNewWindowDisposable = vscode.commands.registerCommand(
+		'robenkleene.openDirectoryInNewWindow',
+		(uri?: vscode.Uri) => openDirectory(uri, true)
+	);
+	context.subscriptions.push(openDirectoryInNewWindowDisposable);
 
 	let selectParagraphDisposable = vscode.commands.registerCommand('robenkleene.selectParagraph', () => {
 		const editor = vscode.window.activeTextEditor;
