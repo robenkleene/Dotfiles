@@ -60,10 +60,12 @@
       "explorer/context": [
         {
           "command": "robenkleene.openDirectory",
+          "when": "explorerResourceIsFolder",
           "group": "navigation"
         },
         {
           "command": "robenkleene.openDirectoryInNewWindow",
+          "when": "explorerResourceIsFolder",
           "group": "navigation"
         }
       ],
