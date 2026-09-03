@@ -11,7 +11,7 @@
       }
     ]
   },
-  "showTips": false,
   "tui": "fullscreen",
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "showTips": false
 }

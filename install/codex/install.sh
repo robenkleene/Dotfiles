@@ -5,3 +5,9 @@ set -euo pipefail
 source ~/.bin/nobin/_rk-symlink.sh
 
 safe_symlink "$HOME/.config/agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
+
+if [[ -f "$HOME/.personal" ]]; then
+  if ! command -v codex &> /dev/null; then
+    curl -fsSL https://chatgpt.com/codex/install.sh | sh
+  fi
+fi
