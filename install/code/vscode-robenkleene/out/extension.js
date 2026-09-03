@@ -48,7 +48,7 @@ function parentUri(uri) {
     return uri.with({ path: path.dirname(uri.path) });
 }
 function activate(context) {
-    let openDirectoryDisposable = vscode.commands.registerCommand('robenkleene.openDirectory', async (uri) => {
+    const openDirectory = async (uri, forceNewWindow) => {
         // `vscode.workspace.fs` instead of Node's `fs`, so directories on
         // remote hosts resolve through VS Code's file system providers
         const resourceUri = uri ?? vscode.window.activeTextEditor?.document.uri;
@@ -64,9 +64,14 @@ function activate(context) {
         catch {
             return;
         }
-        await vscode.commands.executeCommand('vscode.openFolder', dirUri);
+        await vscode.commands.executeCommand('vscode.openFolder', dirUri, { forceNewWindow });
+    };
+    let openDirectoryDisposable = vscode.commands.registerCommand('robenkleene.openDirectory', (uri) => {
+        return openDirectory(uri, false);
     });
     context.subscriptions.push(openDirectoryDisposable);
+    let openDirectoryInNewWindowDisposable = vscode.commands.registerCommand('robenkleene.openDirectoryInNewWindow', (uri) => openDirectory(uri, true));
+    context.subscriptions.push(openDirectoryInNewWindowDisposable);
     let selectParagraphDisposable = vscode.commands.registerCommand('robenkleene.selectParagraph', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
