@@ -54,6 +54,11 @@
         "command": "robenkleene.copyGrepMarkdown",
         "key": "cmd+k cmd+m",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "robenkleene.selectParagraph",
+        "key": "alt+h",
+        "when": "editorTextFocus"
       }
     ],
     "menus": {
