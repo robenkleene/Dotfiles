@@ -61,12 +61,12 @@
         {
           "command": "robenkleene.openDirectory",
           "when": "explorerResourceIsFolder",
-          "group": "navigation"
+          "group": "navigation@99"
         },
         {
           "command": "robenkleene.openDirectoryInNewWindow",
           "when": "explorerResourceIsFolder",
-          "group": "navigation"
+          "group": "navigation@99"
         }
       ],
       "editor/context/copy": [
