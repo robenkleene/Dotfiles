@@ -34,12 +34,6 @@
         },
         "when": "editorTextFocus"
     },
-    // Emacs `mark-paragraph`
-    {
-        "key": "alt+h",
-        "command": "robenkleene.selectParagraph",
-        "when": "editorTextFocus"
-    },
     {
         "key": "alt+b",
         "command": "cursorWordStartLeft",
