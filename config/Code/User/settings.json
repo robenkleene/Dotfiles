@@ -109,7 +109,12 @@
     // Code Spell Checker
     // Delay the spell check to avoid immediately marking the word being typed
     // as misspelled
-    "cSpell.spellCheckDelayMs": 3000,
+    // This doesn't seem to help
+    // "cSpell.spellCheckDelayMs": 3000,
+    // `cSpell.hideIssuesWhileTyping`: "Word" hides misspellings for the current word
+    "cSpell.hideIssuesWhileTyping": "Word",
+    // `cSpell.revealIssuesAfterDelayMS` matches `cSpell.spellCheckDelayMs`
+    "cSpell.revealIssuesAfterDelayMS": 3000,
     // Don't show notifications when `cSpell` is disabling spell checking for
     // performance reasons (this often happens when opening a long log file)
     "cSpell.enabledNotifications": {
