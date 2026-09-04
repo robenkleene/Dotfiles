@@ -115,6 +115,8 @@
     "cSpell.hideIssuesWhileTyping": "Word",
     // `cSpell.revealIssuesAfterDelayMS` matches `cSpell.spellCheckDelayMs`
     "cSpell.revealIssuesAfterDelayMS": 3000,
+    // `cSpell.hideIssuesWhileTyping"` only works when `cSpell.useCustomDecorations` is toggled on
+    "cSpell.useCustomDecorations": true,
     // Don't show notifications when `cSpell` is disabling spell checking for
     // performance reasons (this often happens when opening a long log file)
     "cSpell.enabledNotifications": {
