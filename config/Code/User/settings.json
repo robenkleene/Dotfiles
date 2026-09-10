@@ -21,9 +21,7 @@
         // },
         // Don't highlight the current word, which is distracting and not useful
         // in prose
-        "editor.occurrencesHighlight": "off",
-        // Don't suggest words from the document
-        "editor.wordBasedSuggestions": "off"
+        "editor.occurrencesHighlight": "off"
     },
     "[rust]": {
         "editor.rulers": [100],
