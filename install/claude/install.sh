@@ -22,13 +22,17 @@ if [[ "$executable_path" != "$HOME/.local/bin/claude" ]]; then
   if [ ! -e "$HOME/.claude/CLAUDE.md" ]; then
     cd "$(dirname "$0")" && cd ../.. || exit 1
     source_dir=$(pwd -P);
-    ln -s "$source_dir/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+    if [ -e "$source_dir/claude/CLAUDE.md" ]; then 
+      ln -s "$source_dir/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+    fi
   fi
 
   if [ ! -e "$HOME/.claude/commands" ]; then
     cd "$(dirname "$0")" && cd ../.. || exit 1
     source_dir=$(pwd -P);
-    ln -s "$source_dir/claude/commands" "$HOME/.claude/commands"
+    if [ -d "$source_dir/claude/commands" ]; then
+      ln -s "$source_dir/claude/commands" "$HOME/.claude/commands"
+    fi
   fi
 
   # Comment this out as this dir doesn't currently exist
