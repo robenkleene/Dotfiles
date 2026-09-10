@@ -9,8 +9,10 @@ set -euo pipefail
 #   *.ext    - non-recursive glob (matches in dir only)
 DOTFILES=(
     ".bin-local/*"
+    ".bin/c"
     ".bin/ec"
     ".bin/nobin/_rk-tmux-safecopy.sh"
+    ".bin/p"
     ".bin/rk-ec-srv-qui"
     ".bin/rk-ec-srv-rst"
     ".bin/rk-lorem"
