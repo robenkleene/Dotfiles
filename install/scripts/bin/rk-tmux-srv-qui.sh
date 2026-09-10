@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-
-if [[ -n "${TMUX:-}" ]]; then
-  echo "Don't kill the server while attached to it, detach first" >&2
-  exit 1
-fi
-
 if ! tmux info &> /dev/null; then
-  # tmux isn't running
-  exit 0
+  echo "tmux isn't running" >&2
+  exit 1
 fi
 
 # Panes sitting at a shell prompt are idle, anything else is a command
@@ -17,6 +11,11 @@ status=$?
 if [[ $status -eq 0 ]]; then
   commands=${commands//$'\n'/ }
   echo "Panes found running commands: $commands" >&2
+  exit 1
+fi
+
+if [[ -n "${TMUX:-}" ]]; then
+  echo "Don't kill the server while attached to it, detach first" >&2
   exit 1
 fi
 
