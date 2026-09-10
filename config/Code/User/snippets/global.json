@@ -104,6 +104,11 @@
     "description": "tab",
     "prefix": "rk-tab"
   },
+  "today": {
+    "body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+    "description": "today",
+    "prefix": "rk-today"
+  },
   "uarr": {
     "body": "↑",
     "description": "uarr",
