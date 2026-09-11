@@ -49,6 +49,11 @@
         "command": "deleteWordRight",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+u",
+        "command": "deleteAllLeft",
+        "when": "editorTextFocus"
+    },
     // This was sometimes triggering accidently causing the terminal to go full screen while typing.
     {
         "key": "shift+space",
