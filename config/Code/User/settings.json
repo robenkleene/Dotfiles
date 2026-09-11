@@ -96,7 +96,7 @@
     // This has the unintended side effect of disabling the preview mode that VS
     // Code normally opens files in (when the filename is in italics)
     // "workbench.list.openMode": "doubleClick",
-    // "workbench.tree.expandMode": "doubleClick",
+    "workbench.tree.expandMode": "doubleClick",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.rulers": [80],
