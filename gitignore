@@ -54,3 +54,7 @@ target/
 CLAUDE.local.md
 **/.claude/*.local.json
 .claude/sessions/
+
+# VS Code
+# Images dropped into VS Code as prompts
+[pP]rompts-image*.png
