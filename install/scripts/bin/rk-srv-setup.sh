@@ -12,6 +12,7 @@ DOTFILES=(
     ".bin/c"
     ".bin/ec"
     ".bin/nobin/_rk-tmux-safecopy.sh"
+    ".bin/nobin/_rk-tmux-safepaste.sh"
     ".bin/p"
     ".bin/rk-ec-srv-qui"
     ".bin/rk-ec-srv-rst"
