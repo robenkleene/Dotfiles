@@ -17,8 +17,8 @@ setopt nolistambiguous
 zstyle ':completion:*' menu select
 
 # Disable `do you wish to see all N possibilities?` prompt
-# That prompt is a raw readline read, so shift-tab inserts `[Z` at it instead
-# of showing the completion menu starting from the end.
+# That prompt is a raw read outside of ZLE, so shift-tab inserts `[Z` at it
+# instead of showing the completion menu starting from the end.
 zstyle ':completion:*' list-prompt ''
 
 # Allow substring matches, e.g., `vim md<tab>` for all files with `.md` extension
