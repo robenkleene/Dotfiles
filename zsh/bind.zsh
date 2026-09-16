@@ -8,6 +8,8 @@ setopt ignore_eof
 # Load the `menuselect` map first
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+# Start completion from the end instead of just inserting `[Z`
+bindkey -e '^[[Z' reverse-menu-complete
 
 # Set all bindings for Emacs keys
 # For some reason the pattern search bindings on Linux weren't setting without
