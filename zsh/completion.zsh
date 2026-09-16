@@ -16,6 +16,11 @@ setopt nolistambiguous
 # Highlight tab match
 zstyle ':completion:*' menu select
 
+# Disable `do you wish to see all N possibilities?` prompt
+# That prompt is a raw readline read, so shift-tab inserts `[Z` at it instead
+# of showing the completion menu starting from the end.
+zstyle ':completion:*' list-prompt ''
+
 # Allow substring matches, e.g., `vim md<tab>` for all files with `.md` extension
 # This makes Zsh completion more like Vim *buffer* completion (which does
 # substring matches) but not like Vim *file* completion, which only matches from
