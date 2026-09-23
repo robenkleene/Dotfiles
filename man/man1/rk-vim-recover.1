@@ -7,6 +7,13 @@
 \f[CR]vim \-r\f[R] in the same directory to list the swap files)
 .IP \(bu 2
 \f[CR]:recover\f[R]: Recover the current file from a swap file
+.SH Menu
+If a \f[CR].swp\f[R] file exists for the file being edited, a menu will
+be presented with options.
+\f[I]The \f[CI](D)elete\f[I] option will only be available if the
+process that created the \f[CI].swp\f[I] file isn\(cqt running.\f[R] So
+if delete is not present then another instance of Vim is probably
+editing this file.
 .SH Differences
 To view the differences between the \f[CR].swp\f[R] file and the current
 file.
@@ -21,6 +28,9 @@ the unchanged file on disk
 Changes will be shown with the current file prefixed with \f[CR]<\f[R]
 and changes from the buffer (\f[CR].swp\f[R]) will be shown with
 prefixed with \f[CR]>\f[R]
+.IP "4." 3
+After saving or discarding changes, \f[CR]:e\f[R] will get back the menu
+again where the option to delete the \f[CR].swp\f[R] file can be chosen
 .SS Example
 .IP
 .EX
