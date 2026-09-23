@@ -9,8 +9,10 @@ if ! tmux info &> /dev/null; then
   exit 0
 fi
 
-# Field separator for the session file
-d=$'\t'
+# Field separator for the session file, `\x1f` (unit separator) because `read`
+# collapses consecutive whitespace separators like `\t`, which drops empty
+# fields such as an empty `#{window_name}`
+d=$'\x1f'
 
 tmp_file="$(mktemp "$session_file.XXXXXX")"
 trap 'rm -f "$tmp_file"' EXIT
