@@ -7,3 +7,12 @@ To view the differences between the `.swp` file and the current file.
 
 1. Edit the file and recover the `.swp`, after this the buffer will be the `.swp` contents, but the current file hasn't changed yet
 2. Run `:w !diff % -` to see a diff of the buffer contents versus the unchanged file on disk
+3. Changes will be shown with the current file prefixed with `<` and changes from the buffer (`.swp`) will be shown with prefixed with `>`
+
+## Example
+
+```
+< Current file
+---
+> Swamp file
+```

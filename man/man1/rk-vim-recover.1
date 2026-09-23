@@ -17,3 +17,14 @@ changed yet
 .IP "2." 3
 Run \f[CR]:w !diff % \-\f[R] to see a diff of the buffer contents versus
 the unchanged file on disk
+.IP "3." 3
+Changes will be shown with the current file prefixed with \f[CR]<\f[R]
+and changes from the buffer (\f[CR].swp\f[R]) will be shown with
+prefixed with \f[CR]>\f[R]
+.SS Example
+.IP
+.EX
+< Current file
+\-\-\-
+> Swamp file
+.EE
