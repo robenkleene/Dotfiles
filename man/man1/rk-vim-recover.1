@@ -6,4 +6,14 @@
 (e.g., have an open instance of Vim with unsaved changes, then run
 \f[CR]vim \-r\f[R] in the same directory to list the swap files)
 .IP \(bu 2
-\f[CR]:recover\f[R]: Recover from a swap file
+\f[CR]:recover\f[R]: Recover the current file from a swap file
+.SH Differences
+To view the differences between the \f[CR].swp\f[R] file and the current
+file.
+.IP "1." 3
+Edit the file and recover the \f[CR].swp\f[R], after this the buffer
+will be the \f[CR].swp\f[R] contents, but the current file hasn\(cqt
+changed yet
+.IP "2." 3
+Run \f[CR]:w !diff % \-\f[R] to see a diff of the buffer contents versus
+the unchanged file on disk
