@@ -16,10 +16,12 @@ tmp_file="$(mktemp "$session_file.XXXXXX")"
 trap 'rm -f "$tmp_file"' EXIT
 
 # One `pane` line per pane, in the order the panes are restored, and one
-# `window` line per window carrying the layout to lay those panes back out
+# `window` line per window carrying the layout to lay those panes back out.
+# `-u` stops tmux from replacing non-ASCII characters in paths with `_` when
+# the locale isn't UTF-8
 {
-  tmux list-panes -a -F "pane$d#{session_name}$d#{window_index}$d#{window_name}$d#{pane_current_path}"
-  tmux list-windows -a -F "window$d#{session_name}$d#{window_index}$d#{?automatic-rename,1,0}$d#{window_layout}"
+  tmux -u list-panes -a -F "pane$d#{session_name}$d#{window_index}$d#{window_name}$d#{pane_current_path}"
+  tmux -u list-windows -a -F "window$d#{session_name}$d#{window_index}$d#{?automatic-rename,1,0}$d#{window_layout}"
 } > "$tmp_file"
 
 mv "$tmp_file" "$session_file"
