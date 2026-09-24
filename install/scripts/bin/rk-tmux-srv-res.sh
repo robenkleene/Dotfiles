@@ -27,22 +27,16 @@ fi
 rows="${size% *}"
 columns="${size#* }"
 
-# Field separator for the session file, must match `rk-tmux-srv-sav`
-d=$'\x1f'
-
 # `bash` 3.2, which is what macOS ships, has no associative arrays, so track
 # what has been created as `|`-delimited strings instead
 created_sessions="|"
 created_windows="|"
 first_session=""
 
-while IFS="$d" read -r _ session window_index window_name dir; do
+while IFS=$'\t' read -r _ session window_index window_name dir; do
   if [[ ! -d "$dir" ]]; then
     dir="$HOME"
   fi
-  # `-c` is expanded as a tmux format, so escape `#` as `##` to keep paths like
-  # `C#` intact
-  dir="${dir//\#/##}"
   if [[ "$created_sessions" != *"|$session|"* ]]; then
     tmux new-session -d -s "$session" -n "$window_name" -c "$dir" \
       -x "$columns" -y "$rows"
@@ -68,19 +62,19 @@ while IFS="$d" read -r _ session window_index window_name dir; do
       echo "Skipped a pane in $session:$window_index" >&2
     fi
   fi
-done < <(awk -F"$d" '$1 == "pane"' "$session_file")
+done < <(awk -F'\t' '$1 == "pane"' "$session_file")
 
 if [[ -z "$first_session" ]]; then
   exec tmux new-session
 fi
 
-while IFS="$d" read -r _ session window_index auto_rename layout; do
+while IFS=$'\t' read -r _ session window_index auto_rename layout; do
   tmux select-layout -t "$session:$window_index" "$layout" &> /dev/null || true
   # Naming a window at creation turns `automatic-rename` off, so turn it back
   # on for the windows that were tracking their running command
   if [[ "$auto_rename" = "1" ]]; then
     tmux setw -t "$session:$window_index" automatic-rename on
   fi
-done < <(awk -F"$d" '$1 == "window"' "$session_file")
+done < <(awk -F'\t' '$1 == "window"' "$session_file")
 
 exec tmux attach-session -t "=$first_session"
