@@ -1,39 +1,39 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+[",
-        "command": "cursorMove",
-        "args": {
-            "to": "prevBlankLine"
-        },
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+]",
-        "command": "cursorMove",
-        "args": {
-            "to": "nextBlankLine"
-        },
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+[",
-        "command": "cursorMove",
-        "args": {
-            "to": "prevBlankLine",
-            "select": true
-        },
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+]",
-        "command": "cursorMove",
-        "args": {
-            "to": "nextBlankLine",
-            "select": true
-        },
-        "when": "editorTextFocus"
-    },
+    // {
+    //     "key": "ctrl+[",
+    //     "command": "cursorMove",
+    //     "args": {
+    //         "to": "prevBlankLine"
+    //     },
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "ctrl+]",
+    //     "command": "cursorMove",
+    //     "args": {
+    //         "to": "nextBlankLine"
+    //     },
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "ctrl+shift+[",
+    //     "command": "cursorMove",
+    //     "args": {
+    //         "to": "prevBlankLine",
+    //         "select": true
+    //     },
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "ctrl+shift+]",
+    //     "command": "cursorMove",
+    //     "args": {
+    //         "to": "nextBlankLine",
+    //         "select": true
+    //     },
+    //     "when": "editorTextFocus"
+    // },
     {
         "key": "alt+b",
         "command": "cursorWordStartLeft",
@@ -55,11 +55,11 @@
         "when": "editorTextFocus"
     },
     // This was sometimes triggering accidently causing the terminal to go full screen while typing.
-    {
-        "key": "shift+space",
-        "when": "!editorTextFocus",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
+    // {
+    //     "key": "shift+space",
+    //     "when": "!editorTextFocus",
+    //     "command": "workbench.action.toggleMaximizedPanel"
+    // },
     // Allow `ctrl+q` in Terminal
     // `workbench.action.quickOpenView` normally eats it
     {
