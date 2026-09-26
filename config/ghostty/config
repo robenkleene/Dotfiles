@@ -21,6 +21,8 @@ adjust-cell-height = "12%"
 # macos-titlebar-style = native
 theme = robenkleene
 
+macos-dock-drop-behavior = new-window
+
 # Turn on every alert option
 bell-features = attention,audio,system,title,border
 
