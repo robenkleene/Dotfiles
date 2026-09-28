@@ -38,6 +38,52 @@ Key valueof fields:
 - `parameter_linknames: 1` — links varname to parameter longname
 - `parameter_initial` / `parameter_initial_enable` — set default value on load
 
+## Unique Identifiers for `send` / `receive`
+
+**`#0` is not safe in Max for Live.** In plain Max, `#0` at the start of a name is
+replaced with a per-instance unique number. In M4L it is *not* guaranteed unique
+across **different devices**, so two devices can land on the same name and their
+buses cross-talk.
+
+The tokens are unrelated to each other, despite looking like a series:
+
+| Token | Replaced with | Unique across |
+| --- | --- | --- |
+| `#0` | per-patcher-instance number | patcher instances — **plain Max only** |
+| `---` | M4L device identifier | devices, but *not* patcher instances |
+| `#1`, `#2`, … | the bpatcher/abstraction argument in that position | nothing — plain substitution |
+
+**Prefer patch cords.** The most reliable fix is to not need a bus at all. Where a
+cord won't reach, `pattrforward` and `pvar` are good alternatives — `pattrforward`
+can target a `t b` when all you need is a bang.
+
+**When you do need a bus**, have the top-level patcher pass `---` (M4L) or `#0`
+(plain Max) down as an argument to every bpatcher that needs one, and write
+`s #1-<name>` / `r #1-<name>` inside. That is unique across devices.
+
+For **several instances of the same bpatcher**, the inherited argument is not
+enough on its own — every instance resolves `#1` identically and shares one bus.
+Give each instance its own suffix:
+
+```json
+{ "name": "UiVoice.maxpat", "varname": "Voice1", "args": [ "#1_1" ] }
+{ "name": "UiVoice.maxpat", "varname": "Voice2", "args": [ "#1_2" ] }
+```
+
+Two bpatchers left sharing a suffix still *work*, but multiply traffic: a trigger
+delivered to both inlets fires every `receive` on the shared bus twice, and a
+`r #1-output` in each means every message leaves through both outlets.
+
+### Per-instance parameter names
+
+The same substitution applies to `varname` and `parameter_longname`, which is how
+one bpatcher file supplies distinctly named parameters per instance. A file
+containing `"parameter_longname": "#2-AmpDecay"` instantiated with
+`"args": [ "#1_1", 1 ]` registers `1-AmpDecay`. Use this whenever a bpatcher with
+parameters is instantiated more than once, so the device-wide uniqueness rule above
+still holds.
+
+
 ## live.* Object Reference
 
 ### live.dial
@@ -80,6 +126,19 @@ Key valueof fields:
 - Drag-and-drop zone for audio files
 - `decodemode`, `legend` (placeholder text)
 - Often overlaid on `waveform~` at the same position
+
+### Enabling / disabling controls (`active`)
+- `active 0` / `active 1` dims a `live.*` object and blocks mouse interaction. The
+  parameter still holds and reports its value, so this is a visual affordance, not a
+  bypass — anything reading the value still sees it.
+- **It does not cross a bpatcher boundary.** Sending `active 0` to a bpatcher object
+  does nothing to the controls inside it. Each nested bpatcher needs an inlet that
+  forwards the message to its own controls, e.g. a `routepass active` on the inlet
+  whose matching outlet fans out to the local controls *and* on into any bpatchers
+  below it.
+- `routepass` rather than `route` here, since the receiving objects need the `active`
+  selector left on the front.
+
 
 ## Theme Color System
 
@@ -129,6 +188,45 @@ The patcher can have a top-level `"parameters"` object that registers all `live.
     "inherited_shortname": 1
 }
 ```
+
+## pattrstorage Preset Files
+
+`pattrstorage` writes its slots to a JSON file next to the device. Hand-editing it
+beats clicking through the UI, but the format is unforgiving:
+
+```json
+{
+    "pattrstorage": {
+        "name": "Presets",
+        "slots": {
+            "1": {
+                "id": 1,
+                "name": "Kick",
+                "data": { "Vol": [ -6.0 ], "Filt::Biquad::FiltFreq": [ 500.0 ] }
+            }
+        }
+    }
+}
+```
+
+- The slot label key is lowercase **`"name"`**. `"Name"` is silently ignored and the
+  preset menu falls back to showing slot numbers.
+- Every value is an **array**, even a single number.
+- Data keys are the pattr path — the `varname` of each containing bpatcher or
+  subpatcher joined by `::`, ending in the object's own `varname` after `#n`
+  substitution. They are **not** `parameter_longname`, and they change whenever a
+  bpatcher is renamed or an object moves to a different subpatcher.
+- Values outside a parameter's current range are **clamped on recall, silently**.
+  After narrowing a `parameter_mmin`/`mmax`, old presets keep the out-of-range
+  number in the file while the device plays the clamped value.
+- Keys matching no parameter are ignored; parameters with no key keep whatever they
+  had. Both failures are silent, so neither shows up without checking.
+
+To verify a preset file against the patch, walk the bpatcher tree from the patcher
+owning the `pattrstorage`, accumulating `varname`s and substituting each bpatcher's
+`args` into `#n` tokens, then diff the resulting paths against the file's keys. This
+is the only reliable way to catch renames, moved objects, and out-of-range values.
+
 
 ## SVG Icon Pattern
 
