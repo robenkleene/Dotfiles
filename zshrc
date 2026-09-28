@@ -23,9 +23,6 @@ source ~/.zsh/installs.zsh
 # After installs so bindings take precedence over install bindings
 source ~/.zsh/bind.zsh
 
-# Functions before aliases so functions don't use aliases
-source ~/.zsh/func.zsh
-# Aliases defined after functions so functions don't use aliases
 source ~/.zsh/alias.zsh
 
 # Interactive

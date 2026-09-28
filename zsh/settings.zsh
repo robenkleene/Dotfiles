@@ -1,5 +1,7 @@
 # Don't put this in variables because it needs to be resourced in subprocesses
-fpath=( ~/.zfunc "${fpath[@]}" )
+fpath=( ~/.zsh/zfunc ~/.zfunc "${fpath[@]}" )
+# `-U` prevents aliases from being expanded when the function is loaded
+autoload -Uz ~/.zsh/zfunc/*(.:t)
 
 # Allows `<C-s>` to be bound in Vim
 stty -ixon
