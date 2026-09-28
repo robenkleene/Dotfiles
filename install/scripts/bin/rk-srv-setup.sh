@@ -62,6 +62,7 @@ DOTFILES=(
     ".vimrc"
     ".vimrc_local.vim"
     ".zsh/**.zsh"
+    ".zsh/zfunc/*"
     ".zshenv"
     ".zshrc"
     ".zshrc_local.zsh"
