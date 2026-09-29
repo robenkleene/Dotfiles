@@ -269,7 +269,8 @@ function activate(context) {
                 return item;
             });
         }
-    }, '`', '/');
+    }
+    );
     context.subscriptions.push(codePathCompletionProvider);
 }
 exports.activate = activate;
