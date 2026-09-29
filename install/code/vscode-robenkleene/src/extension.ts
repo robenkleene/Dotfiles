@@ -271,8 +271,7 @@ export function activate(context: vscode.ExtensionContext) {
 					return item;
 				});
 			}
-		},
-		'`', '/'
+		}
 	);
 	context.subscriptions.push(codePathCompletionProvider);
 
