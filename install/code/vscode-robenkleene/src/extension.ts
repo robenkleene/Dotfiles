@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { parseDiffLocation } from './diffParser';
+import { parseCodePathPrefix } from './codePathParser';
 
 // There's no VS Code extension API to get the remote home directory from a UI
 // extension (`os.homedir()` returns the local home dir, not the remote). We
@@ -202,6 +203,78 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 	context.subscriptions.push(diffGotoSourceDisposable);
+
+	// Resolves the directory part of a typed path: `~/` from the home directory
+	// in the document's path, `/` from the root, and anything else from the
+	// document's directory, like Markdown's `[](...)` path completion
+	function resolveCompletionDir(document: vscode.TextDocument, dir: string): vscode.Uri | null {
+		const documentPath = document.uri.path;
+		if (dir.startsWith('~/')) {
+			const homeDir = getHomeDir(documentPath);
+			if (!homeDir) {
+				return null;
+			}
+			return document.uri.with({ path: path.posix.join(homeDir, dir.substring(2)) });
+		}
+		if (dir.startsWith('/')) {
+			return document.uri.with({ path: dir });
+		}
+		// `untitled:` documents don't have a directory, use the workspace instead
+		const baseUri = document.isUntitled
+			? vscode.workspace.workspaceFolders?.[0]?.uri
+			: parentUri(document.uri);
+		if (!baseUri) {
+			return null;
+		}
+		return vscode.Uri.joinPath(baseUri, dir);
+	}
+
+	// File name completion inside `` ` `` code spans and fenced code blocks.
+	// Uses `vscode.workspace.fs` so it lists remote directories while still
+	// running as a UI extension.
+	const codePathCompletionProvider = vscode.languages.registerCompletionItemProvider(
+		{ language: 'markdown' },
+		{
+			async provideCompletionItems(document, position) {
+				const prefix = parseCodePathPrefix(document.getText(), position.line, position.character);
+				if (!prefix) {
+					return null;
+				}
+				const dirUri = resolveCompletionDir(document, prefix.dir);
+				if (!dirUri) {
+					return null;
+				}
+				let entries: [string, vscode.FileType][];
+				try {
+					entries = await vscode.workspace.fs.readDirectory(dirUri);
+				} catch {
+					return null;
+				}
+				const range = new vscode.Range(
+					position.translate(0, -prefix.partial.length),
+					position
+				);
+				return entries.map(([name, type]) => {
+					const isDirectory = (type & vscode.FileType.Directory) !== 0;
+					const item = new vscode.CompletionItem(
+						name,
+						isDirectory ? vscode.CompletionItemKind.Folder : vscode.CompletionItemKind.File
+					);
+					item.range = range;
+					// Sort directories first
+					item.sortText = `${isDirectory ? 0 : 1}${name}`;
+					if (isDirectory) {
+						item.insertText = `${name}/`;
+						// Re-open suggestions to keep completing inside the directory
+						item.command = { command: 'editor.action.triggerSuggest', title: '' };
+					}
+					return item;
+				});
+			}
+		},
+		'`', '/'
+	);
+	context.subscriptions.push(codePathCompletionProvider);
 
 }
 
