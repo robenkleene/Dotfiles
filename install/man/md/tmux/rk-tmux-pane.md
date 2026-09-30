@@ -9,21 +9,18 @@
 - `<prefix>{` / `<prefix>}`: Swap panes with pane above / below
 - `<prefix>M-o`: Swap panes
 - `<prefix><Space>`: Next layout
+- `<prefix>!`, `:break-pane`: Move pane to a new window
 
-# Splitting
+# Creating
 
-- `<prefix>"`: Split window horizontally
-- `<prefix>%`: Split window vertically
-
-# Closing
-
+- `<prefix>"`: Add horizontal pane
+- `<prefix>%`: Add vertical pane
 - `:kill-pane -a`: Kill other panes
 - `<prefix>x`: Kill pane
 
 # Joining
 
-- `:join-pane`: Move the marked pane to the current window
-- `<prefix>!`, `:break-pane`: Move pane to a new window
+- `:join-pane`: Move the marked pane to the current window (or a specific window number with `join-pane -t :0`)
 
 # Layout
 
@@ -44,8 +41,8 @@
 
 These can be repeated without doing the leader key (i.e., they're assigned with the `bind-key` `-r` flag).
 
-- `<prefix>⌥←` / `<prefix>⌥↑` / `<prefix>⌥←` / `<prefix>⌥↓`: Resize pane by `5` in direction
-- `<prefix>^←` / `<prefix>^↑` / `<prefix>^←` / `<prefix>^↓`: Resize pane by `1` in direction
+- `<prefix>M-Up` / `<prefix>M-Down` / `<prefix>M-Left` / `<prefix>M-Right`: Resize pane by `5` in direction
+- `<prefix>C-Up` / `<prefix>C-Down` / `<prefix>C-Left` / `<prefix>C-Right`: Resize pane by `1` in direction
 
 # Marks
 

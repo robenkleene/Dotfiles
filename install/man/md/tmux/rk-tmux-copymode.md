@@ -1,5 +1,9 @@
 # Copy Mode
 
+* `<prefix>[`: Enter copy/scroll mode
+* `<prefix>]`: Paste
+* `q`: Quit scroll mode
+* `<prefix>Page Up`: Enter copy mode and page up one screen
 - `Y`: Paste selection
 - `M-y`: Paste selection, also copying to clipboard
 - `v`: Toggle rectangle mode (so typically hit `Space` to start a selection then `v` to toggle rectangle mode)
