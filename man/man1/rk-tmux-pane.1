@@ -16,21 +16,21 @@
 \f[CR]<prefix>M\-o\f[R]: Swap panes
 .IP \(bu 2
 \f[CR]<prefix><Space>\f[R]: Next layout
-.SH Splitting
 .IP \(bu 2
-\f[CR]<prefix>\(dq\f[R]: Split window horizontally
+\f[CR]<prefix>!\f[R], \f[CR]:break\-pane\f[R]: Move pane to a new window
+.SH Creating
 .IP \(bu 2
-\f[CR]<prefix>%\f[R]: Split window vertically
-.SH Closing
+\f[CR]<prefix>\(dq\f[R]: Add horizontal pane
+.IP \(bu 2
+\f[CR]<prefix>%\f[R]: Add vertical pane
 .IP \(bu 2
 \f[CR]:kill\-pane \-a\f[R]: Kill other panes
 .IP \(bu 2
 \f[CR]<prefix>x\f[R]: Kill pane
 .SH Joining
 .IP \(bu 2
-\f[CR]:join\-pane\f[R]: Move the marked pane to the current window
-.IP \(bu 2
-\f[CR]<prefix>!\f[R], \f[CR]:break\-pane\f[R]: Move pane to a new window
+\f[CR]:join\-pane\f[R]: Move the marked pane to the current window (or a
+specific window number with \f[CR]join\-pane \-t :0\f[R])
 .SH Layout
 .IP \(bu 2
 \f[CR]<prefix>E\f[R]: Make panes equal size
@@ -59,11 +59,12 @@ tiled
 These can be repeated without doing the leader key (i.e., they\(cqre
 assigned with the \f[CR]bind\-key\f[R] \f[CR]\-r\f[R] flag).
 .IP \(bu 2
-\f[CR]<prefix>⌥←\f[R] / \f[CR]<prefix>⌥↑\f[R] / \f[CR]<prefix>⌥←\f[R] /
-\f[CR]<prefix>⌥↓\f[R]: Resize pane by \f[CR]5\f[R] in direction
+\f[CR]<prefix>M\-Up\f[R] / \f[CR]<prefix>M\-Down\f[R] /
+\f[CR]<prefix>M\-Left\f[R] / \f[CR]<prefix>M\-Right\f[R]: Resize pane by
+\f[CR]5\f[R] in direction
 .IP \(bu 2
-\f[CR]<prefix>\(ha←\f[R] / \f[CR]<prefix>\(ha↑\f[R] /
-\f[CR]<prefix>\(ha←\f[R] / \f[CR]<prefix>\(ha↓\f[R]: Resize pane by
+\f[CR]<prefix>C\-Up\f[R] / \f[CR]<prefix>C\-Down\f[R] /
+\f[CR]<prefix>C\-Left\f[R] / \f[CR]<prefix>C\-Right\f[R]: Resize pane by
 \f[CR]1\f[R] in direction
 .SH Marks
 The marked pane is the default target for \-s to
