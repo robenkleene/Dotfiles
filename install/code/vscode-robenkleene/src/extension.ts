@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { parseDiffLocation } from './diffParser';
 import { parseCodePathPrefix } from './codePathParser';
+import { enclosingPairRanges } from './pairRanges';
 
 // There's no VS Code extension API to get the remote home directory from a UI
 // extension (`os.homedir()` returns the local home dir, not the remote). We
@@ -14,6 +15,22 @@ function getHomeDir(filePath: string): string | null {
 	if (match) return match[1];
 	if (filePath.startsWith('/root/')) return '/root';
 	return null;
+}
+
+// Returns the first and last lines of the paragraph containing `line`, where
+// paragraphs are separated by blank lines
+function paragraphLines(document: vscode.TextDocument, line: number): [number, number] {
+	// Whitespace-only lines count as blank, matching `cursorMove`'s blank line motions
+	const isBlank = (line: number) => document.lineAt(line).isEmptyOrWhitespace;
+	let firstLine = line;
+	while (firstLine > 0 && !isBlank(firstLine - 1)) {
+		firstLine--;
+	}
+	let lastLine = line;
+	while (lastLine + 1 < document.lineCount && !isBlank(lastLine + 1)) {
+		lastLine++;
+	}
+	return [firstLine, lastLine];
 }
 
 // Preserves the scheme and authority of `uri`, so paths on remote hosts stay
@@ -56,26 +73,16 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 		const document = editor.document;
-		// Whitespace-only lines count as blank, matching `cursorMove`'s blank line motions
-		const isBlank = (line: number) => document.lineAt(line).isEmptyOrWhitespace;
 
 		// From a blank line, take the paragraph below, like Emacs `mark-paragraph`
 		let line = editor.selection.active.line;
-		while (line < document.lineCount && isBlank(line)) {
+		while (line < document.lineCount && document.lineAt(line).isEmptyOrWhitespace) {
 			line++;
 		}
 		if (line >= document.lineCount) {
 			return;
 		}
-
-		let firstLine = line;
-		while (firstLine > 0 && !isBlank(firstLine - 1)) {
-			firstLine--;
-		}
-		let lastLine = line;
-		while (lastLine + 1 < document.lineCount && !isBlank(lastLine + 1)) {
-			lastLine++;
-		}
+		const [firstLine, lastLine] = paragraphLines(document, line);
 
 		// End on the next line so the trailing newline is included, except at the
 		// end of the document where there isn't one
@@ -86,6 +93,45 @@ export function activate(context: vscode.ExtensionContext) {
 		editor.revealRange(new vscode.Range(end, end));
 	});
 	context.subscriptions.push(selectParagraphDisposable);
+
+	// Adds quotes and brackets to Expand Selection in prose. VS Code merges these
+	// ranges with other providers' (e.g., Markdown's), so only Expand Selection
+	// changes, unlike adding `brackets` to the language configuration. Pairs are
+	// limited to the current paragraph so a stray bracket doesn't match one far
+	// away.
+	const pairSelectionRangeProvider = vscode.languages.registerSelectionRangeProvider(
+		[{ language: 'markdown' }, { language: 'plaintext' }],
+		{
+			provideSelectionRanges(document, positions) {
+				return positions.map(position => {
+					const [firstLine, lastLine] = paragraphLines(document, position.line);
+					const paragraphStart = new vscode.Position(firstLine, 0);
+					const paragraphRange = new vscode.Range(paragraphStart, document.lineAt(lastLine).range.end);
+					const paragraphOffset = document.offsetAt(paragraphStart);
+					const ranges = enclosingPairRanges(
+						document.getText(paragraphRange),
+						document.offsetAt(position) - paragraphOffset
+					);
+					// Chain from the outermost pair inward, so each range's `parent` is the
+					// next pair out
+					let parent: vscode.SelectionRange | undefined;
+					for (const [start, end] of ranges.reverse()) {
+						parent = new vscode.SelectionRange(
+							new vscode.Range(
+								document.positionAt(paragraphOffset + start),
+								document.positionAt(paragraphOffset + end)
+							),
+							parent
+						);
+					}
+					// Every position needs a result, even outside any pair, so the
+					// innermost range is the empty range at the cursor
+					return new vscode.SelectionRange(new vscode.Range(position, position), parent);
+				});
+			}
+		}
+	);
+	context.subscriptions.push(pairSelectionRangeProvider);
 
 	let disposable = vscode.commands.registerCommand('robenkleene.copyGrep', () => {
 		const editor = vscode.window.activeTextEditor;
