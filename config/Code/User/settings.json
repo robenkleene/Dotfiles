@@ -75,6 +75,9 @@
     "workbench.remoteIndicator.showExtensionRecommendations": false,
     // Open files in a new window, e.g., from the Finder
     "window.openFilesInNewWindow": "on",
+    // Focus an already open editor for a file, e.g., in another editor group,
+    // instead of opening it again (only applies within a window)
+    "workbench.editor.revealIfOpen": true,
     "editor.fontSize": 13,
     // Use the medium variant
     // "editor.fontWeight": "500",
