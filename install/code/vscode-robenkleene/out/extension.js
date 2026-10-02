@@ -117,7 +117,9 @@ function activate(context) {
     // ranges with other providers' (e.g., Markdown's), so only Expand Selection
     // changes, unlike adding `brackets` to the language configuration. Pairs are
     // limited to the current paragraph so a stray bracket doesn't match one far
-    // away.
+    // away. The paragraph itself is the outermost range, so lists separated by a
+    // blank line expand one at a time, even though Markdown treats them as a
+    // single loose list.
     const pairSelectionRangeProvider = vscode.languages.registerSelectionRangeProvider([{ language: 'markdown' }, { language: 'plaintext' }], {
         provideSelectionRanges(document, positions) {
             return positions.map(position => {
@@ -126,9 +128,9 @@ function activate(context) {
                 const paragraphRange = new vscode.Range(paragraphStart, document.lineAt(lastLine).range.end);
                 const paragraphOffset = document.offsetAt(paragraphStart);
                 const ranges = (0, pairRanges_1.enclosingPairRanges)(document.getText(paragraphRange), document.offsetAt(position) - paragraphOffset);
-                // Chain from the outermost pair inward, so each range's `parent` is the
-                // next pair out
-                let parent;
+                // Chain from the paragraph inward, so each range's `parent` is the next
+                // pair out
+                let parent = new vscode.SelectionRange(paragraphRange);
                 for (const [start, end] of ranges.reverse()) {
                     parent = new vscode.SelectionRange(new vscode.Range(document.positionAt(paragraphOffset + start), document.positionAt(paragraphOffset + end)), parent);
                 }
