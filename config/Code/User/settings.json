@@ -149,6 +149,9 @@
     "explorer.confirmDragAndDrop": false,
     // Don't open a file after it's dropped into the Explorer
     "explorer.autoOpenDroppedFile": false,
+    // Don't reveal the active file in the Explorer, which expands collapsed
+    // folders when switching tabs
+    "explorer.autoReveal": false,
     // The Explorer's full path tooltip can't be turned off, so delay it
     // `workbench.hover.delay` defaults to `1500` on macOS
     "workbench.hover.delay": 3000,
