@@ -23,8 +23,14 @@ theme = robenkleene
 
 macos-dock-drop-behavior = new-window
 
-# Turn on every alert option, except `border` (`border` isn't useful in a `tmux` window)
-bell-features = attention,audio,system,title
+# - `system`: Play default audio
+# - `audio`: Play a custom sound
+# - `title`: Put a bell in the title bar
+# - `attention`: Bounce the app icon
+# - `border`: Put a border around the window
+# Simplifying to just `title` because the others are distracting if not waiting
+# for a job to finish
+bell-features = title
 
 # The blur setting has trouble sticking on 1.1.3
 # Try again on a new version
