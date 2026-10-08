@@ -23,6 +23,8 @@ DOTFILES=(
     ".bin/rk-tmux-srv-qui"
     ".bin/rk-tmux-srv-res"
     ".bin/rk-tmux-srv-sav"
+    ".bin/rk-tmux-win-name-auto"
+    ".bin/rk-tmux-win-name-dir"
     ".bin/rk-today"
     ".claude-local/**"
     ".claude/CLAUDE.md"
