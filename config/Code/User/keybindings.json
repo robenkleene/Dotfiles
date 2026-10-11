@@ -76,6 +76,12 @@
         "key": "ctrl+w",
         "command": "-workbench.action.switchWindow"
     },
+    // Toggle overwrite mode with insert (this is a Windows convention)
+    {
+        "key": "insert",
+        "command": "editor.action.toggleOvertypeInsertMode",
+        "when": "editorTextFocus && !editorReadonly"
+    },
     {
         "key": "ctrl+w",
         "when": "!panelFocus",
