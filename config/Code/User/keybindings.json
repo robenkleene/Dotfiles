@@ -56,7 +56,7 @@
     },
     // This was sometimes triggering accidentally causing the terminal to go full screen while typing.
     {
-        "key": "shift+space",
+        "key": "ctrl+enter",
         "when": "!editorTextFocus",
         "command": "workbench.action.toggleMaximizedPanel"
     },
