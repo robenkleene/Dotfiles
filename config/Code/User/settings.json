@@ -52,7 +52,9 @@
     // for file changes in this large workspace" alert while connected over SSH
     // to a Linux server. The default only excludes nested `node_modules/*/**`.
     "files.watcherExclude": {
-        "**/node_modules/**": true
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
     },
     // Disable prompt for opening files via URL
     "security.promptForLocalFileProtocolHandling": false,
