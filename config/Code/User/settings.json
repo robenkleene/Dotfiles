@@ -151,9 +151,6 @@
     // lldb
     // Don't show update notifications
     "lldb.suppressUpdateNotifications": true,
-    // Use light theme becauce it makes it easier to cut and paste rendered
-    // Markdown to rich text
-    // "workbench.colorTheme": "Light Modern",
     // Match the terminal colors to the Ghostty theme in
     // `~/.config/ghostty/themes/robenkleene`
     "workbench.colorCustomizations": {
@@ -202,5 +199,6 @@
         "Maxon",
         "polyrhythm",
         "polyrhythms"
-    ]
+    ],
+    "workbench.colorTheme": "Light 2026"
 }
