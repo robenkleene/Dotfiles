@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
+const os = __importStar(require("os"));
 const path = __importStar(require("path"));
 const diffParser_1 = require("./diffParser");
 const codePathParser_1 = require("./codePathParser");
@@ -245,20 +246,41 @@ function activate(context) {
         }
     });
     context.subscriptions.push(diffGotoSourceDisposable);
+    // The URI whose scheme, authority, and home directory absolute paths resolve
+    // against. `untitled:` documents don't have a path, so use the workspace
+    // folder to stay on remote hosts, or the local home directory when there's
+    // no folder in a local window.
+    function absolutePathBaseUri(document) {
+        if (!document.isUntitled) {
+            return document.uri;
+        }
+        const folderUri = vscode.workspace.workspaceFolders?.[0]?.uri;
+        if (folderUri) {
+            return folderUri;
+        }
+        // `os.homedir()` is the local home directory, which is wrong for remotes
+        if (vscode.env.remoteName) {
+            return null;
+        }
+        return vscode.Uri.file(os.homedir());
+    }
     // Resolves the directory part of a typed path: `~/` from the home directory
     // in the document's path, `/` from the root, and anything else from the
     // document's directory, like Markdown's `[](...)` path completion
     function resolveCompletionDir(document, dir) {
-        const documentPath = document.uri.path;
-        if (dir.startsWith('~/')) {
-            const homeDir = getHomeDir(documentPath);
+        if (dir.startsWith('~/') || dir.startsWith('/')) {
+            const baseUri = absolutePathBaseUri(document);
+            if (!baseUri) {
+                return null;
+            }
+            if (dir.startsWith('/')) {
+                return baseUri.with({ path: dir });
+            }
+            const homeDir = getHomeDir(baseUri.path);
             if (!homeDir) {
                 return null;
             }
-            return document.uri.with({ path: path.posix.join(homeDir, dir.substring(2)) });
-        }
-        if (dir.startsWith('/')) {
-            return document.uri.with({ path: dir });
+            return baseUri.with({ path: path.posix.join(homeDir, dir.substring(2)) });
         }
         // `untitled:` documents don't have a directory, use the workspace instead
         const baseUri = document.isUntitled
