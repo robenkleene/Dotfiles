@@ -54,7 +54,7 @@
         "command": "deleteAllLeft",
         "when": "editorTextFocus"
     },
-    // This was sometimes triggering accidently causing the terminal to go full screen while typing.
+    // This was sometimes triggering accidentally causing the terminal to go full screen while typing.
     {
         "key": "shift+space",
         "when": "!editorTextFocus",
