@@ -82,7 +82,9 @@
     "extensions.ignoreRecommendations": true,
     "workbench.remoteIndicator.showExtensionRecommendations": false,
     // Open files in a new window, e.g., from the Finder
-    "window.openFilesInNewWindow": "on",
+    // Setting `"window.openFilesInNewWindow": "on",` means opening `code
+    // <filename>` will open a new window by default.
+    // "window.openFilesInNewWindow": "on",
     // Focus an already open editor for a file, e.g., in another editor group,
     // instead of opening it again (only applies within a window)
     "workbench.editor.revealIfOpen": true,
