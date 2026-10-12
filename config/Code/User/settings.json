@@ -147,6 +147,32 @@
     // Use light theme becauce it makes it easier to cut and paste rendered
     // Markdown to rich text
     // "workbench.colorTheme": "Light Modern",
+    // Match the terminal colors to the Ghostty theme in
+    // `~/.config/ghostty/themes/robenkleene`
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiRed": "#FF8787",
+        "terminal.ansiGreen": "#87FF87",
+        "terminal.ansiYellow": "#FFFF00",
+        "terminal.ansiBlue": "#5FAFFF",
+        "terminal.ansiMagenta": "#FF87FF",
+        "terminal.ansiCyan": "#5FFFFF",
+        "terminal.ansiWhite": "#FFFFFF",
+        "terminal.ansiBrightBlack": "#878787",
+        "terminal.ansiBrightRed": "#FFAF87",
+        "terminal.ansiBrightGreen": "#AFFF87",
+        "terminal.ansiBrightYellow": "#FFFFAF",
+        "terminal.ansiBrightBlue": "#87AFFF",
+        "terminal.ansiBrightMagenta": "#FFAFFF",
+        "terminal.ansiBrightCyan": "#AFFFFF",
+        "terminal.ansiBrightWhite": "#D7D7D7",
+        "terminal.background": "#141414",
+        "terminal.foreground": "#FFFFFF",
+        "terminalCursor.foreground": "#00BB00",
+        "terminalCursor.background": "#FFFFFF",
+        "terminal.selectionBackground": "#626880",
+        "terminal.selectionForeground": "#C6D0F5"
+    },
     // Don't compact folders in the tree view
     // This makes trying to drag-and-drop folders to the correct arrangement
     // confusing
