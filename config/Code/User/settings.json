@@ -89,6 +89,8 @@
     // "editor.fontWeight": "500",
     "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 13,
+    // Match Ghostty's `adjust-cell-height = "12%"`
+    "terminal.integrated.lineHeight": 1.12,
     // Don't automatically insert closing pairs
     // This makes freeform text manipulation difficult, e.g., if a closing pair
     // has already been entered, adding the opening pair will then
