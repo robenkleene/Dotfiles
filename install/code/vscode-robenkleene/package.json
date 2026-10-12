@@ -84,6 +84,16 @@
       ],
       "editor/context": [
         {
+          "command": "robenkleene.copyGrep",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste@99"
+        },
+        {
+          "command": "robenkleene.copyGrepMarkdown",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste@99"
+        },
+        {
           "command": "robenkleene.diffGotoSource",
           "when": "editorLangId == 'diff'",
           "group": "navigation"
