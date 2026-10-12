@@ -1,2 +1,2 @@
 rk-ssh-start
-~/.bin/rk-push
+~/.bin/rk-push "$@"
