@@ -48,6 +48,12 @@
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
     "files.defaultLanguage": "markdown",
+    // Reduce inotify watches, added after VS Code showed the "unable to watch
+    // for file changes in this large workspace" alert while connected over SSH
+    // to a Linux server. The default only excludes nested `node_modules/*/**`.
+    "files.watcherExclude": {
+        "**/node_modules/**": true
+    },
     // Disable prompt for opening files via URL
     "security.promptForLocalFileProtocolHandling": false,
     // Touched by `CodeLLDB`
