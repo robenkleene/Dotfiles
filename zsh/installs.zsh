@@ -84,3 +84,30 @@ if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
 elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
   path=(~/.nvm/versions/node/v21.6.1/bin $path)
 fi
+
+# VS Code Remote
+# In long-lived `tmux` shells, `VSCODE_IPC_HOOK_CLI` goes stale when its VS Code
+# window disconnects, and the `remote-cli/code` on `path` goes stale when the
+# server updates, so find a live socket (`nc -zU`) and the newest CLI each time
+# `SSH_CONNECTION` limits this to remote sessions, since `~/.vscode-server` stays
+# installed after the first remote connection
+if [[ -n $SSH_CONNECTION && -n $TMUX && -d ~/.vscode-server ]]; then
+  code() {
+    if ! nc -zU "$VSCODE_IPC_HOOK_CLI" 2>/dev/null; then
+      local socket
+      # `(Nom)` sorts newest first and expands to nothing if there's no match
+      for socket in /run/user/$UID/vscode-ipc-*.sock(Nom); do
+        if nc -zU "$socket" 2>/dev/null; then
+          export VSCODE_IPC_HOOK_CLI=$socket
+          break
+        fi
+      done
+    fi
+    local cli=(~/.vscode-server/cli/servers/Stable-*/server/bin/remote-cli/code(Nom))
+    if (( $#cli )); then
+      "$cli[1]" "$@"
+    else
+      command code "$@"
+    fi
+  }
+fi
