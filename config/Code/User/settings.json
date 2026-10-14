@@ -98,6 +98,9 @@
     // Match Ghostty's default `bold-is-bright = false`, otherwise bold black
     // renders as bright black (gray)
     "terminal.integrated.drawBoldTextInBrightColors": false,
+    // Send wheel events to `tmux` more often, small scrolls are otherwise
+    // dropped (default is `1`)
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
     // Don't automatically insert closing pairs
     // This makes freeform text manipulation difficult, e.g., if a closing pair
     // has already been entered, adding the opening pair will then
