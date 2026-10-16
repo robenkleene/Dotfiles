@@ -205,5 +205,8 @@
         "polyrhythm",
         "polyrhythms"
     ],
-    "workbench.colorTheme": "Light 2026"
+    "workbench.colorTheme": "Light 2026",
+    // Without this, using `File > Duplicate Workspace` will ask to save the
+    // Workspace to a file when connected via SSH.
+    "window.confirmSaveUntitledWorkspace": false
 }
