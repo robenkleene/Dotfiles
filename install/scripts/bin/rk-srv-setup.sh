@@ -18,6 +18,7 @@ DOTFILES=(
     ".bin/rk-ec-srv-rst"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
+    ".bin/rk-srv-setup"
     ".bin/rk-tmux-init-rst"
     ".bin/rk-tmux-init-src"
     ".bin/rk-tmux-srv-qui"
