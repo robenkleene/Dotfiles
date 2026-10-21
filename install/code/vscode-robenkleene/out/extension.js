@@ -114,26 +114,37 @@ function activate(context) {
         editor.revealRange(new vscode.Range(end, end));
     });
     context.subscriptions.push(selectParagraphDisposable);
-    // Adds quotes and brackets to Expand Selection in prose. VS Code merges these
-    // ranges with other providers' (e.g., Markdown's), so only Expand Selection
-    // changes, unlike adding `brackets` to the language configuration. Pairs are
-    // limited to the current paragraph so a stray bracket doesn't match one far
-    // away. The paragraph itself is the outermost range, so lists separated by a
-    // blank line expand one at a time, even though Markdown treats them as a
-    // single loose list.
-    const pairSelectionRangeProvider = vscode.languages.registerSelectionRangeProvider([{ language: 'markdown' }, { language: 'plaintext' }], {
+    // Adds quotes and brackets to Expand Selection, including inside comments and
+    // strings, where VS Code's own bracket ranges don't apply. VS Code merges
+    // these ranges with other providers' (e.g., Markdown's), so only Expand
+    // Selection changes, unlike adding `brackets` to the language configuration.
+    //
+    // In prose, pairs are limited to the current paragraph so a stray bracket
+    // doesn't match one far away. The paragraph itself is the outermost range, so
+    // lists separated by a blank line expand one at a time, even though Markdown
+    // treats them as a single loose list.
+    //
+    // In code, pairs are limited to the current line and no outermost range is
+    // added. VS Code drops any range that doesn't contain the smaller ones, so a
+    // paragraph partially overlapping a syntax node (e.g., a function body
+    // ending mid-paragraph) would hide that node's range.
+    const proseLanguages = ['markdown', 'plaintext'];
+    const pairSelectionRangeProvider = vscode.languages.registerSelectionRangeProvider('*', {
         provideSelectionRanges(document, positions) {
+            const isProse = proseLanguages.includes(document.languageId);
             return positions.map(position => {
-                const [firstLine, lastLine] = paragraphLines(document, position.line);
-                const paragraphStart = new vscode.Position(firstLine, 0);
-                const paragraphRange = new vscode.Range(paragraphStart, document.lineAt(lastLine).range.end);
-                const paragraphOffset = document.offsetAt(paragraphStart);
-                const ranges = (0, pairRanges_1.enclosingPairRanges)(document.getText(paragraphRange), document.offsetAt(position) - paragraphOffset);
-                // Chain from the paragraph inward, so each range's `parent` is the next
-                // pair out
-                let parent = new vscode.SelectionRange(paragraphRange);
+                const [firstLine, lastLine] = isProse
+                    ? paragraphLines(document, position.line)
+                    : [position.line, position.line];
+                const scopeStart = new vscode.Position(firstLine, 0);
+                const scopeRange = new vscode.Range(scopeStart, document.lineAt(lastLine).range.end);
+                const scopeOffset = document.offsetAt(scopeStart);
+                const ranges = (0, pairRanges_1.enclosingPairRanges)(document.getText(scopeRange), document.offsetAt(position) - scopeOffset);
+                // Chain from the outermost range inward, so each range's `parent` is
+                // the next pair out
+                let parent = isProse ? new vscode.SelectionRange(scopeRange) : undefined;
                 for (const [start, end] of ranges.reverse()) {
-                    parent = new vscode.SelectionRange(new vscode.Range(document.positionAt(paragraphOffset + start), document.positionAt(paragraphOffset + end)), parent);
+                    parent = new vscode.SelectionRange(new vscode.Range(document.positionAt(scopeOffset + start), document.positionAt(scopeOffset + end)), parent);
                 }
                 // Every position needs a result, even outside any pair, so the
                 // innermost range is the empty range at the cursor

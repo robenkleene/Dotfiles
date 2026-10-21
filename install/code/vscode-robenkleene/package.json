@@ -15,7 +15,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["onLanguage:diff", "onLanguage:markdown", "onLanguage:plaintext"],
+  "activationEvents": ["onStartupFinished"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
