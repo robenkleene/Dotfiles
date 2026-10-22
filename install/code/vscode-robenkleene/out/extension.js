@@ -209,25 +209,34 @@ function activate(context) {
         });
     });
     context.subscriptions.push(copyGrepMarkdownDisposable);
-    function resolveDiffUri(document, filePath) {
-        const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
-        if (workspaceFolder) {
-            return vscode.Uri.joinPath(workspaceFolder.uri, filePath);
-        }
-        const dirUri = parentUri(document.uri);
-        return vscode.Uri.joinPath(dirUri, filePath);
+    // A diff's paths are relative to wherever it was generated, which `code -`
+    // doesn't pass along, so try the path in each workspace folder and keep the
+    // ones that exist. Without a folder, use a saved diff's own directory.
+    async function resolveDiffUris(document, filePath) {
+        const folders = vscode.workspace.workspaceFolders ?? [];
+        const bases = folders.length > 0
+            ? folders.map(folder => folder.uri)
+            : document.isUntitled ? [] : [parentUri(document.uri)];
+        const tried = bases.map(base => vscode.Uri.joinPath(base, filePath));
+        const exists = await Promise.all(tried.map(uri => vscode.workspace.fs.stat(uri).then(() => true, () => false)));
+        return { uris: tried.filter((_, i) => exists[i]), tried };
+    }
+    function displayPath(uri) {
+        const homeDir = getHomeDir(uri.path);
+        return homeDir ? `~${uri.path.substring(homeDir.length)}` : uri.path;
     }
     const diffDefinitionProvider = vscode.languages.registerDefinitionProvider({ language: 'diff' }, {
-        provideDefinition(document, position) {
+        async provideDefinition(document, position) {
             const result = (0, diffParser_1.parseDiffLocation)(document.getText(), position.line);
             if (!result) {
                 return null;
             }
-            const uri = resolveDiffUri(document, result.filePath);
+            // Several locations show VS Code's peek view to choose between them
+            const { uris } = await resolveDiffUris(document, result.filePath);
             const targetLine = result.line - 1;
             const targetCol = Math.max(position.character - 1, 0);
             const targetPos = new vscode.Position(targetLine, targetCol);
-            return new vscode.Location(uri, targetPos);
+            return uris.map(uri => new vscode.Location(uri, targetPos));
         }
     });
     context.subscriptions.push(diffDefinitionProvider);
@@ -244,7 +253,19 @@ function activate(context) {
             vscode.window.showInformationMessage('No source location found at cursor position');
             return;
         }
-        const uri = resolveDiffUri(document, result.filePath);
+        const { uris, tried } = await resolveDiffUris(document, result.filePath);
+        if (uris.length === 0) {
+            vscode.window.showErrorMessage(`Could not find file, tried: ${tried.map(displayPath).join(', ')}`);
+            return;
+        }
+        let uri = uris[0];
+        if (uris.length > 1) {
+            const picked = await vscode.window.showQuickPick(uris.map(uri => ({ label: displayPath(uri), uri })), { placeHolder: `Multiple matches for ${result.filePath}` });
+            uri = picked?.uri;
+            if (!uri) {
+                return;
+            }
+        }
         try {
             const targetDoc = await vscode.workspace.openTextDocument(uri);
             const targetLine = result.line - 1;
