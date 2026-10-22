@@ -21,19 +21,28 @@ function parseDiffLocation(text, targetLine) {
             hunkActive = false;
             continue;
         }
+        // diff -r ... (`hg diff` without git format), paths come from `---`/`+++`
+        if (l.startsWith('diff ')) {
+            aPath = '';
+            bPath = '';
+            hunkActive = false;
+            continue;
+        }
         // --- a/... (only outside hunks)
+        // `[^\t]*?` stops at the tab before the timestamp `hg diff` appends, and
         // `\s*$` strips trailing tabs that `git diff` can append after filenames
         if (!hunkActive && l.startsWith('--- ')) {
-            const m = l.match(/^--- (?:a\/)?(.*?)\s*$/);
+            const m = l.match(/^--- (?:a\/)?([^\t]*?)\s*(?:\t.*)?$/);
             if (m && !aPath) {
                 aPath = m[1];
             }
             continue;
         }
         // +++ b/... (only outside hunks)
+        // `[^\t]*?` stops at the tab before the timestamp `hg diff` appends, and
         // `\s*$` strips trailing tabs that `git diff` can append after filenames
         if (!hunkActive && l.startsWith('+++ ')) {
-            const m = l.match(/^\+\+\+ (?:b\/)?(.*?)\s*$/);
+            const m = l.match(/^\+\+\+ (?:b\/)?([^\t]*?)\s*(?:\t.*)?$/);
             if (m && !bPath) {
                 bPath = m[1];
             }

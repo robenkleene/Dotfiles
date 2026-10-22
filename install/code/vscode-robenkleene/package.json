@@ -44,6 +44,12 @@
         "title": "Select Paragraph"
       }
     ],
+    "languages": [
+      {
+        "id": "diff",
+        "firstLine": "^(diff |--- |Index: |# HG changeset patch|commit:? +[0-9a-f]{7,}|changeset: +[0-9a-f:]+)"
+      }
+    ],
     "keybindings": [
       {
         "command": "robenkleene.copyGrep",
