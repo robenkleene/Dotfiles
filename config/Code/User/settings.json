@@ -47,7 +47,7 @@
     "editor.suggest.filterGraceful": false,
     // Copy as plain text
     "editor.copyWithSyntaxHighlighting": false,
-    "files.defaultLanguage": "markdown",
+    // "files.defaultLanguage": "markdown",
     // Reduce inotify watches, added after VS Code showed the "unable to watch
     // for file changes in this large workspace" alert while connected over SSH
     // to a Linux server. The default only excludes nested `node_modules/*/**`.
