@@ -26,10 +26,6 @@ import os
 import re
 import sys
 
-# Space between the flattened objects and the edge of the window
-margin = 10
-
-
 def main():
     parser = argparse.ArgumentParser(
         description="Flatten the presentation UI of a Max patch into one patch"
@@ -47,23 +43,17 @@ def main():
     if not boxes:
         sys.exit("error: no presentation objects found in " + args.src)
 
-    # Shift everything so the top left object sits at the margin
-    left = min(box["presentation_rect"][0] for box in boxes)
-    top = min(box["presentation_rect"][1] for box in boxes)
     for index, box in enumerate(boxes):
-        rect = box["presentation_rect"]
-        rect[0] += margin - left
-        rect[1] += margin - top
         box["id"] = "obj-" + str(index + 1)
         # Lay the patching view out the same way, so either view is usable
-        box["patching_rect"] = list(rect)
+        box["patching_rect"] = list(box["presentation_rect"])
     right = max(box["presentation_rect"][0] + box["presentation_rect"][2] for box in boxes)
     bottom = max(box["presentation_rect"][1] + box["presentation_rect"][3] for box in boxes)
 
     # Keep the source's patcher attributes (fonts, colors, etc.)
     patcher = {key: value for key, value in root.items() if key not in ("boxes", "lines")}
     window = patcher.get("rect", [100.0, 100.0, 0.0, 0.0])
-    patcher["rect"] = [window[0], window[1], right + margin, bottom + margin]
+    patcher["rect"] = [window[0], window[1], right, bottom]
     patcher["openinpresentation"] = 1
     patcher["boxes"] = [{"box": box} for box in boxes]
     patcher["lines"] = []
