@@ -18,6 +18,7 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 - In the `boxes` array, objects listed **first** render **on top** in presentation mode
 - Objects listed **last** render **behind** everything else
 - Background panels must go at the **end** of the array, or they will cover all controls
+- Overlays meant to cover the interface (e.g., a loading cover) go at the **start**; appending a new box puts it behind everything
 
 ## Presentation Mode
 

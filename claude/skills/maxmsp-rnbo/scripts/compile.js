@@ -27,10 +27,17 @@ function fillInfo(patcher) {
     if (box.maxclass === "comment" || box.maxclass === "panel") continue;
     if (box.patcher) fillInfo(box.patcher);
     box.rnbo_uniqueid = box.rnbo_uniqueid || box.id;
-    const text = box.text || box.rnbo_classname;
+    // RNBO parses a message box as `message @text <contents>`
+    const text = box.maxclass === "message" ? "message @text " + (box.text || "") : box.text || box.rnbo_classname;
     const parsed = xam.parseBoxText(text);
     const spec = {};
     if (parsed) xam.parseExtraAttributes(parsed.xamclass, box.rnbo_extra_attributes, spec);
+    // A subpatcher's inlets and outlets come from its contents
+    if (box.patcher) {
+      spec.patcher = box.patcher;
+      const args = (box.text || "").match(/@args (.*)$/);
+      spec.patcherargs = args ? args[1].split(/\s+/) : [];
+    }
     const { info, messages } = buildController.instanceInfo(text, [], spec);
     for (const m of messages) console.log("INFO", box.id, m.type, m.message);
     if (info) box.rnboinfo = info;
