@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flatten the presentation UI of a Max patch into a single patch.
 
-    rk-max-ui.py -s Thwomp.maxpat -d ~/Desktop/ThwompUi.maxpat
+    rk-max-ui.py -s Foo.maxpat -d bar/FooUi.maxpat
 
 Every object with `"presentation" : 1` is copied into the destination at the
 position it's displayed at, recursing into `bpatcher` objects, so the whole
