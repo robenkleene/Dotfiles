@@ -225,9 +225,16 @@ out1 = y > 0 ? y : 0;             // ternaries, if/else, switch, for all work
   compare it with a `@state` last value. Inlets start at 0 and `counter`'s
   first output is 0, hence the `+ 1`; otherwise the first note looks like no
   change, or a phantom trigger fires at startup.
-- A message's value reaches a `codebox~` inlet before the next sample, so
-  values sent right to left (velocity, pitch, then count) are all current on
-  the trigger sample.
+- **A message into a `codebox~` inlet changes it for the whole audio block**,
+  from the block's start, so a note triggered that way starts up to a block
+  early (up to ~10 ms at a 512 sample buffer). Send the trigger through `sig~`
+  (e.g. the note count -> `sig~` -> inlet), which changes at the event's
+  sample. Values only read on the trigger (velocity, pitch) can stay messages.
+- **Retriggering a mono voice clicks** when it resets phase or envelopes while
+  the previous note is still sounding, and repeats sound different depending
+  on where the old note was. Alternate two voices instead: each note starts a
+  fresh voice from its initial state, and the previous voice fades out over a
+  few ms (Thump uses 5 ms).
 
 ## Checking Without Max
 
