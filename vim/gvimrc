@@ -15,8 +15,8 @@ autocmd GUIEnter * set vb t_vb=
 set guioptions-=e
 
 " Background & Cursor
-" set background=light
-" colorscheme wildcharm
+set background=light
+colorscheme wildcharm
 
 function! s:ApplyColors() abort
   if &background ==# 'dark'
