@@ -21,5 +21,8 @@
   },
   "tui": "fullscreen",
   "preferredNotifChannel": "terminal_bell",
-  "showTips": false
+  "showTips": false,
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  }
 }

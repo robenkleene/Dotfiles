@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+script_dir=$(cd "$(dirname "$0")" && pwd -P)
 executable_path=$(command -v -- "claude")
 
 if [[ -f "$HOME/.personal" ]]; then
@@ -42,3 +43,5 @@ if [[ "$executable_path" != "$HOME/.local/bin/claude" ]]; then
   #   ln -s "$source_dir/claude/robenkleene" "$HOME/.claude/robenkleene"
   # fi
 fi
+
+exec "$script_dir/install-plugins.sh"
