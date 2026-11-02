@@ -6,7 +6,6 @@
 
 # Switching
 
-- `<prefix>w`: Window picker
 - `<prefix>l`: Last window
 - `<prefix>p`: Previous window
 - `<prefix>n`: Next window
@@ -22,6 +21,7 @@
 - `swap-window -t 1`: Move current window to a used index
 - `:movew`: Move window to next unused window number
 - `:movew -r`: Move all windows to next unused window number
+- `<prefix>w`: Window tree mode (`S-Up` / `S-Down` to move a window up / down in `tree mode`)
 
 # Renaming
 

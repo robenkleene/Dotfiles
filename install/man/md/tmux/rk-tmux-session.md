@@ -13,13 +13,9 @@
 # Switch
 
 - `<prefix>L`: Go to last session
-- `<prefix>s`: Choose session
-* `<prefix>(` / `<prefix>)` : Next / Previous session
+- `<prefix>(` / `<prefix>)` : Next / Previous session
+- `<prefix>s`: Session tree mode (`<number>` in `tree mode` to switch to session)
 
-## Session Picker
+# Kill
 
-- `<session-number>`: Jump to session
-
-# CLI
-
-* `tmux kill-session`: Kill current session
+- `kill-session`: Kill current session
