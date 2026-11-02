@@ -1,4 +1,4 @@
-keybind = global:opt+escape=toggle_quick_terminal
+# keybind = global:opt+escape=toggle_quick_terminal
 
 # font-family = "Berkeley Mono"
 # font-family = "Consolas"
@@ -18,7 +18,10 @@ font-thicken = true
 # adjust-cell-width = "-3%"
 adjust-cell-height = "12%"
 
-# macos-titlebar-style = native
+# Show default native toolbar
+macos-titlebar-style = native
+# Without `window-theme = system`, the terminal theme is sampled for a toolbar color
+window-theme = system
 theme = robenkleene
 
 macos-dock-drop-behavior = new-window
