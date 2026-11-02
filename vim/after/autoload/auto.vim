@@ -23,3 +23,11 @@ function! auto#MakeShebangFilesExecutable() abort
     endif
   endif
 endfunction
+
+function! auto#HighlightInactiveWindows() abort
+  if &background ==# 'light'
+    highlight NormalNC guifg=#444444 ctermfg=238 guibg=#eeeeee ctermbg=255
+  else
+    highlight NormalNC guifg=#bcbcbc ctermfg=250 guibg=#262626 ctermbg=235
+  endif
+endfunction

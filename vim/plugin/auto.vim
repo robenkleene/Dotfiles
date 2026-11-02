@@ -35,6 +35,29 @@ augroup override_colors
   endif
 augroup END
 
+" Neovim applies `NormalNC` to inactive windows automatically, Vim has no
+" `NormalNC` so the `inactive_windows` group sets `wincolor` instead
+call auto#HighlightInactiveWindows()
+augroup dim_inactive_windows
+  autocmd!
+  autocmd ColorScheme * call auto#HighlightInactiveWindows()
+  " `OptionSet background` catches `set background` without a `colorscheme`
+  autocmd OptionSet background call auto#HighlightInactiveWindows()
+  " `OptionSet` doesn't fire during startup, `VimEnter` catches `background`
+  " set by files sourced after this one (e.g., `plugin/vim.vim`)
+  autocmd VimEnter * call auto#HighlightInactiveWindows()
+augroup END
+if !has('nvim') && exists('+wincolor')
+  augroup inactive_windows
+    autocmd!
+    autocmd WinEnter,BufWinEnter * setlocal wincolor=
+    autocmd WinLeave * setlocal wincolor=NormalNC
+    " `VimEnter` dims windows opened at startup (e.g., `vim -o`), which never
+    " get a `WinLeave`
+    autocmd VimEnter * call map(range(1, winnr('$')), {_, n -> n == winnr() ? 0 : setwinvar(n, '&wincolor', 'NormalNC')})
+  augroup END
+endif
+
 augroup executable_files
   autocmd!
   autocmd BufWritePost *.zsh,*.py,*.pl,*.sh,*.rb,*.swift :call auto#MakeShebangFilesExecutable()
