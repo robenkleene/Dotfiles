@@ -19,10 +19,10 @@
     "type": "command",
     "command": "jq -r --arg h \"$HOME\" '.workspace.current_dir | if startswith($h + \"/\") or . == $h then \"~\" + .[($h | length):] else . end'"
   },
-  "tui": "fullscreen",
-  "preferredNotifChannel": "terminal_bell",
-  "showTips": false,
   "enabledPlugins": {
     "figma@claude-plugins-official": true
-  }
+  },
+  "tui": "fullscreen",
+  "preferredNotifChannel": "terminal_bell",
+  "showTips": false
 }
