@@ -50,6 +50,8 @@ a.out.dSYM/
 # Rust
 target/
 
+# Other
+
 # Claude
 CLAUDE.local.md
 **/.claude/*.local.json
@@ -58,3 +60,7 @@ CLAUDE.local.md
 # VS Code
 # Images dropped into VS Code as prompts
 [pP]rompts-image*.png
+
+# LLM Output
+
+llm-output/
