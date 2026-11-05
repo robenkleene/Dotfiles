@@ -5,6 +5,7 @@
 # Except
 !CLAUDE.md
 !settings.json
+!file-suggestion.sh
 !/commands/
 !/robenkleene/
 !/skills/
