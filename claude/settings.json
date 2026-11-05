@@ -24,5 +24,9 @@
   },
   "tui": "fullscreen",
   "preferredNotifChannel": "terminal_bell",
-  "showTips": false
+  "showTips": false,
+  "fileSuggestion": {
+    "type": "command",
+    "command": "~/.claude/file-suggestion.sh"
+  }
 }
