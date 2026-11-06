@@ -64,7 +64,7 @@ brew 'ren-find', trusted: true
 cask 'alacritty'
 cask 'anki'
 cask 'blender'
-cask 'dosbox-staging'
+cask 'dosbox-staging-app'
 cask 'godot'
 cask 'gzdoom'
 cask 'processing'
