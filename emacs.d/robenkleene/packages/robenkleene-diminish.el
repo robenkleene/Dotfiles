@@ -1,4 +1,4 @@
-;;; robenkleene-diminish.el --- robenkleene-diminish
+;;; robenkleene-diminish.el --- robenkleene-diminish -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

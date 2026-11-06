@@ -1,4 +1,4 @@
-;;; robenkleene-alias.el --- robenkleene-alias
+;;; robenkleene-alias.el --- robenkleene-alias -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

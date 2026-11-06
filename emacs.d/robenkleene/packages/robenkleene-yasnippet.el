@@ -1,4 +1,4 @@
-;;; robenkleene-yasnippet.el --- yasnippet
+;;; robenkleene-yasnippet.el --- yasnippet -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

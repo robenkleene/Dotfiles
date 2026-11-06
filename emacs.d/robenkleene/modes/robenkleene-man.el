@@ -1,4 +1,4 @@
-;;; robenkleene-man.el --- robenkleene-man
+;;; robenkleene-man.el --- robenkleene-man -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -6,6 +6,10 @@
 ;; Overwriting value of ‘woman-topic-history’ by aliasing to
 ;; ‘Man-topic-history’' the first time `woman' is run
 ;; We should periodically try removing this
+;; `savehist-mode' restores `woman-topic-history' and `Man-topic-history' as
+;; separate lists, which makes this `defvaralias' warn, so `makunbound' the
+;; duplicate first (`Man-topic-history' holds the same entries)
+(makunbound 'woman-topic-history)
 (defvaralias 'woman-topic-history 'Man-topic-history)
 (defvar woman-file-history nil "File-name read history.")
 ;; Use `woman' prompt for man page completion (the default man page completion

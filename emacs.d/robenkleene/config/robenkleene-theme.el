@@ -1,4 +1,4 @@
-;;; robenkleene-theme.el --- robenkleene-theme
+;;; robenkleene-theme.el --- robenkleene-theme -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

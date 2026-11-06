@@ -1,4 +1,4 @@
-;;; robenkleene-aggressive-indent.el --- robenkleene-aggressive-indent
+;;; robenkleene-aggressive-indent.el --- robenkleene-aggressive-indent -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

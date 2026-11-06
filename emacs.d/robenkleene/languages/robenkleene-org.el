@@ -1,4 +1,4 @@
-;;; robenkleene-org.el --- robenkleene-org
+;;; robenkleene-org.el --- robenkleene-org -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

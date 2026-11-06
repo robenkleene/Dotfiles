@@ -1,4 +1,4 @@
-;;; robenkleene-dired.el --- robenkleene-dired
+;;; robenkleene-dired.el --- robenkleene-dired -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
