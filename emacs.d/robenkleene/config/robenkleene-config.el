@@ -100,7 +100,7 @@
 (show-paren-mode t)
 
 ;; Try disabling shift select mode to match terminal
-(setq shift-select-mode nil)
+;; (setq shift-select-mode nil)
 
 ;; Mouse
 
