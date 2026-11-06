@@ -1,4 +1,4 @@
-;;; robenkleene-gui.el --- robenkleene-gui
+;;; robenkleene-gui.el --- robenkleene-gui -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

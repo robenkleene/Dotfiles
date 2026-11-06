@@ -1,4 +1,4 @@
-;;; robenkleene-terminal.el --- robenkleene-terminal
+;;; robenkleene-terminal.el --- robenkleene-terminal -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

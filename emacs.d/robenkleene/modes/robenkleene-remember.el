@@ -1,4 +1,4 @@
-;;; robenkleene-remember.el --- robenkleene-remember
+;;; robenkleene-remember.el --- robenkleene-remember -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

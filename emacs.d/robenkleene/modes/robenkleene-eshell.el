@@ -1,4 +1,4 @@
-;;; robenkleene-eshell.el --- robenkleene-eshell
+;;; robenkleene-eshell.el --- robenkleene-eshell -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

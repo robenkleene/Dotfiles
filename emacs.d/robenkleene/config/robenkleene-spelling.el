@@ -1,4 +1,4 @@
-;;; robenkleene-spelling.el --- robenkleene-spelling
+;;; robenkleene-spelling.el --- robenkleene-spelling -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

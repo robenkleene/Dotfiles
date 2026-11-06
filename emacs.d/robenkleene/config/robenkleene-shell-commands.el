@@ -1,4 +1,4 @@
-;;; robenkleene-shell-commands.el --- robenkleene-shell-commands
+;;; robenkleene-shell-commands.el --- robenkleene-shell-commands -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

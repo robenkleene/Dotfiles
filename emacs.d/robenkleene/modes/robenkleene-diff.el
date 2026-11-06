@@ -1,4 +1,4 @@
-;;; robenkleene-diff.el --- robenkleene-diff
+;;; robenkleene-diff.el --- robenkleene-diff -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

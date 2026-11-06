@@ -1,4 +1,4 @@
-;;; robenkleene-adaptive-wrap.el --- robenkleene-adaptive-wrap
+;;; robenkleene-adaptive-wrap.el --- robenkleene-adaptive-wrap -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

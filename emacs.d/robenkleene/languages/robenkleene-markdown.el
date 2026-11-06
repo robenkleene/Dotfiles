@@ -1,4 +1,4 @@
-;;; robenkleene-markdown.el --- robenkleene-markdown
+;;; robenkleene-markdown.el --- robenkleene-markdown -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

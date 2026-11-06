@@ -1,4 +1,4 @@
-;;; robenkleene-functions.el --- robenkleene-functions
+;;; robenkleene-functions.el --- robenkleene-functions -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

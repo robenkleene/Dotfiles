@@ -1,4 +1,4 @@
-;;; robenkleene-magit.el --- robenkleene-magit
+;;; robenkleene-magit.el --- robenkleene-magit -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

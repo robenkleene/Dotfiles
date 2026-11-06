@@ -1,4 +1,4 @@
-;;; robenkleene-mac.el --- robenkleene-mac
+;;; robenkleene-mac.el --- robenkleene-mac -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

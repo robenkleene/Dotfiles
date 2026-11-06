@@ -1,4 +1,4 @@
-;;; robenkleene-completion.el --- robenkleene-completion
+;;; robenkleene-completion.el --- robenkleene-completion -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

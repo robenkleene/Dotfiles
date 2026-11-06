@@ -1,4 +1,4 @@
-;;; robenkleene-config.el --- robenkleene-config
+;;; robenkleene-config.el --- robenkleene-config -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

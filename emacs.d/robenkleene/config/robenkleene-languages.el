@@ -1,4 +1,4 @@
-;;; robenkleene-languages.el --- robenkleene-languages
+;;; robenkleene-languages.el --- robenkleene-languages -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

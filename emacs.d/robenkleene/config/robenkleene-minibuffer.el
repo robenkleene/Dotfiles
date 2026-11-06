@@ -1,4 +1,4 @@
-;;; robenkleene-minibuffer.el --- robenkleene-minibuffer
+;;; robenkleene-minibuffer.el --- robenkleene-minibuffer -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

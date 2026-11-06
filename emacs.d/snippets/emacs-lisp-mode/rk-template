@@ -2,7 +2,7 @@
 # key: rk-template
 # name: Emacs Lisp template
 # --
-;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1
+;;; ${1:filename$(file-name-sans-extension (buffer-name))}.el --- $1 -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

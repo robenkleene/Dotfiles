@@ -1,4 +1,4 @@
-;;; robenkleene-text.el --- robenkleene-text
+;;; robenkleene-text.el --- robenkleene-text -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

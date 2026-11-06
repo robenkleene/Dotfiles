@@ -1,4 +1,4 @@
-;;; robenkleene-keymap.el --- robenkleene-keymap
+;;; robenkleene-keymap.el --- robenkleene-keymap -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
