@@ -68,20 +68,14 @@
            (if (= (user-uid) 0) " # " " $ ")
            )))
 
-  ;; Disabling this because `view-mode' overrides some characters like `s'
-  ;; starts an incremental search. This makes programs that accept `s' (like
-  ;; `tig', which uses `s' to switch to stagin) impossible to use.
-  ;; Enable `view-mode' bindings like `q' to quit when running visual commands
-  ;; (that are run in `term-mode') Also detect the mode, e.g., `diff-mode' to
-  ;; make jumping to diff contents possible
-  ;; (defun rk/term-view-mode-once (&rest ignored)
-  ;;   (view-mode 1)
-  ;;   (remove-hook 'term-mode-hook #'rk/term-view-mode-once)
-  ;;   )
-  ;; (advice-add 'eshell-exec-visual
-  ;;             :before
-  ;;             #'(lambda (&rest ignored) (add-hook 'term-mode-hook
-  ;;                                                 #'rk/term-view-mode-once)))
+  ;; Enable `view-mode' when a `term-mode' process exits (e.g., visual commands
+  ;; like `git diff'), so `q' kills the buffer. Enabling it when the process
+  ;; starts breaks programs that use keys `view-mode' binds, e.g., `s' starts
+  ;; an incremental search instead of staging in `tig'.
+  (with-eval-after-load 'term
+    (defun rk/term-view-mode-on-exit (&rest _)
+      (view-mode-enter nil #'kill-buffer))
+    (advice-add 'term-handle-exit :after #'rk/term-view-mode-on-exit))
 
   ;; This will attempt to detect the mode after a `term-mode' process finishes,
   ;; but `set-auto-mode' doesn't propertly, e.g., detect `diff-mode' for `git
