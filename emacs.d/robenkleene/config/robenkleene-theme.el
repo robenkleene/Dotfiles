@@ -13,13 +13,17 @@
 ;; Custom Background Color
 (if window-system
     (progn
-      (load-theme 'modus-operandi :no-confirm-loading)
+      ;; Override `bg-main' in the palette rather than only the `default'
+      ;; face, so faces that set their own background from `bg-main' (e.g.,
+      ;; `term') also use the custom color.
       ;; Xcode Black
-      ;; (set-face-background 'default "#292A30")
+      (setq modus-vivendi-palette-overrides '((bg-main "#292A30")))
       ;; Kleene Purple
-      ;; (set-face-background 'default "#211930")
+      ;; (setq modus-vivendi-palette-overrides '((bg-main "#211930")))
       ;; BBEdit Black
-      ;; (set-face-background 'default "#141414")
+      ;; (setq modus-vivendi-palette-overrides '((bg-main "#141414")))
+      ;; (load-theme 'modus-operandi :no-confirm-loading)
+      (load-theme 'modus-vivendi :no-confirm-loading)
       )
   (progn
     (load-theme 'modus-vivendi :no-confirm-loading)
