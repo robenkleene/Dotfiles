@@ -75,6 +75,44 @@
     )
   )
 
+;; Dim inactive windows, like `NormalNC' in Vim. Emacs has no per-window faces,
+;; so this remaps the `default' face per buffer with `face-remap-add-relative',
+;; which means a buffer shown in the selected window is also undimmed in any
+;; other window showing it
+(defvar-local rk/dim-inactive-cookie nil
+  "Cookie from `face-remap-add-relative' for dimming this buffer.")
+
+(defun rk/dim-inactive-face ()
+  "Return the `default' face attributes for inactive windows."
+  ;; `background-mode' is `light' or `dark', and is updated by `load-theme'
+  (if (eq (frame-parameter nil 'background-mode) 'light)
+      '(:foreground "#444444" :background "#eeeeee")
+    '(:foreground "#bcbcbc" :background "#262626")))
+
+(defun rk/dim-inactive-windows (&rest _)
+  "Dim buffers that aren't shown in the selected window."
+  ;; `minibuffer-selected-window' keeps the window that was selected before
+  ;; entering the minibuffer from being dimmed
+  (let ((active (window-buffer (or (minibuffer-selected-window)
+                                   (selected-window))))
+        (face (rk/dim-inactive-face)))
+    (walk-windows
+     (lambda (window)
+       (with-current-buffer (window-buffer window)
+         (when rk/dim-inactive-cookie
+           (face-remap-remove-relative rk/dim-inactive-cookie)
+           (setq rk/dim-inactive-cookie nil))
+         (unless (eq (current-buffer) active)
+           (setq rk/dim-inactive-cookie
+                 (face-remap-add-relative 'default face)))))
+     'no-minibuffer 'visible)))
+
+(add-hook 'window-selection-change-functions #'rk/dim-inactive-windows)
+(add-hook 'window-buffer-change-functions #'rk/dim-inactive-windows)
+;; `enable-theme-functions' switches the dim colors when the theme changes
+;; between light and dark
+(add-hook 'enable-theme-functions #'rk/dim-inactive-windows)
+
 (provide 'robenkleene-theme)
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
