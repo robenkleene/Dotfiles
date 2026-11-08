@@ -37,6 +37,10 @@
 ;; Remove menu bar
 (menu-bar-mode -1)
 
+;; Disable cursor blinking, this causes visual glitches
+(setq visible-cursor nil)
+(blink-cursor-mode -1)
+
 ;; A proper `<M-tab>' key is more important than `C-M-Tab`
 (define-key key-translation-map  (kbd "C-M-i") (kbd "<M-tab>"))
 (define-key key-translation-map  (kbd "ESC <up>") (kbd "<M-up>"))
