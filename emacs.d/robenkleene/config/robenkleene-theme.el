@@ -56,14 +56,14 @@
       ;; face, so faces that set their own background from `bg-main' (e.g.,
       ;; `term') also use the custom color.
       ;; Xcode Black
-      (setq modus-vivendi-palette-overrides
-            (append '((bg-main "#292A30")) rk/term-palette-overrides))
+      ;; (setq modus-vivendi-palette-overrides
+      ;;       (append '((bg-main "#292A30")) rk/term-palette-overrides))
       ;; Kleene Purple
       ;; (setq modus-vivendi-palette-overrides
       ;;       (append '((bg-main "#211930")) rk/term-palette-overrides))
       ;; BBEdit Black
-      ;; (setq modus-vivendi-palette-overrides
-      ;;       (append '((bg-main "#141414")) rk/term-palette-overrides))
+      (setq modus-vivendi-palette-overrides
+            (append '((bg-main "#141414")) rk/term-palette-overrides))
       ;; (load-theme 'modus-operandi :no-confirm-loading)
       (load-theme 'modus-vivendi :no-confirm-loading)
       )
