@@ -29,6 +29,9 @@
 
 ;; Enable mouse support
 (xterm-mouse-mode 1)
+;; Fix mouse wheel in terminal Emacs if it's compiled without GUI support
+(require 'mwheel)
+(mouse-wheel-mode 1)
 ;; Disable clicking to follow links
 ;; This interferes with using the mouse to select text, e.g., in terminal Emacs
 ;; in Blink Shell
