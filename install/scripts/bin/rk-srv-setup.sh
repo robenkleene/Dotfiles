@@ -16,7 +16,6 @@ DOTFILES=(
     ".bin/p"
     ".bin/rk-ec-srv-qui"
     ".bin/rk-ec-srv-res"
-    ".bin/rk-install"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
     ".bin/rk-srv-install"
