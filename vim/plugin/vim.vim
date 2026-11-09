@@ -34,3 +34,15 @@ while c <= 'z'
   exec "nnoremap \e".c." <M-".tolower(c).">"
   let c = nr2char(1+char2nr(c))
 endw
+
+" Option-delete deletes the previous word in the terminal (MacVim already
+" handles `<M-BS>`). Terminals send it either as `\e\x7f` or, with extended
+" key reporting (`modifyOtherKeys`), as a sequence Vim decodes to `<M-BS>`,
+" which otherwise inserts `ÿ`. An unused function key holds the `\e\x7f` key
+" code, because Vim can't set `<M-BS>` directly and an `<Esc>` mapping would
+" delay leaving insert mode.
+if !has('gui_running')
+  exec "set <F37>=\e\x7f"
+  noremap! <F37> <C-w>
+  noremap! <M-BS> <C-w>
+endif
