@@ -63,7 +63,7 @@ else:
     print("[rk-blender-render] No render found at " + repr(filepath) + "; skipping .blend")
 '
 
-exec blender \
+set -- \
     --background \
     --factory-startup \
     --python "$scene_path" \
@@ -71,3 +71,28 @@ exec blender \
     -- \
     --output "$output_dir" \
     "$@"
+
+# On Linux with systemd, Blender runs in a scope with capped memory and CPU,
+# so a heavy render can't make the machine unresponsive. Past `MemoryHigh` the
+# kernel throttles Blender, and past `MemoryMax` it kills Blender instead of
+# swapping. Override the limits with `RK_BLENDER_MEMORY_HIGH`,
+# `RK_BLENDER_MEMORY_MAX`, and `RK_BLENDER_CPU_QUOTA` (e.g., `200%` for two
+# cores).
+if ! command -v systemd-run >/dev/null 2>&1 || [ -z "${XDG_RUNTIME_DIR:-}" ]; then
+    exec blender "$@"
+fi
+
+# The snap's `blender` moves itself into a scope of its own, which escapes the
+# limits, so the snap's launcher script runs Blender instead.
+blender=blender
+launcher=/snap/blender/current/blender-launcher
+if [ "$(command -v blender)" = /snap/bin/blender ] && [ -x "$launcher" ]; then
+    blender=$launcher
+fi
+
+exec systemd-run --user --scope --quiet \
+    -p MemoryHigh="${RK_BLENDER_MEMORY_HIGH:-2G}" \
+    -p MemoryMax="${RK_BLENDER_MEMORY_MAX:-3G}" \
+    -p MemorySwapMax=0 \
+    -p CPUQuota="${RK_BLENDER_CPU_QUOTA:-100%}" \
+    "$blender" "$@"

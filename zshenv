@@ -21,4 +21,12 @@ fi
 if [[ "$(uname)" = "Linux" ]]; then
   export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
   export XDG_CONIFG_HOME=${XDG_CONIFG_HOME:="$HOME/.config"}
+  # Machines with little memory build one file at a time, since one
+  # compiler process for a large file (e.g., a JUCE module) can use a
+  # gigabyte and swapping makes the machine unresponsive. This is in `ZSHENV`
+  # instead of `var.zsh` so non-interactive shells (e.g., scripts and agents
+  # running builds) pick it up too.
+  if (( $(awk '/MemTotal/ {print $2}' /proc/meminfo) < 8 * 1024 * 1024 )); then
+    export CMAKE_BUILD_PARALLEL_LEVEL=1
+  fi
 fi
