@@ -22,6 +22,10 @@
 
 (setq Man-notify-method 'pushy)
 
+;; Predefining `Man-man-k-flags' skips the `man -k apropos' probe its
+;; `defvar' runs when `man' first loads, which takes seconds on macOS
+(defvar Man-man-k-flags '("-k"))
+
 ;; This doesn't work because it results in the selected man page name (e.g.,
 ;; `rk-emacs') also being passed to the lambda function instead of being passed
 ;; to the `man' called next
