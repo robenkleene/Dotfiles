@@ -81,6 +81,11 @@
     // Extensions` command
     "extensions.ignoreRecommendations": true,
     "workbench.remoteIndicator.showExtensionRecommendations": false,
+    // Install extension updates automatically instead of badging the
+    // Extensions icon
+    // There's also `extensions.autoUpdateDelay` which defaults to `12` hours,
+    // which means this isn't useful.
+    // "extensions.autoUpdate": "on",
     // Open files in a new window, e.g., from the Finder
     // Setting `"window.openFilesInNewWindow": "on",` means opening `code
     // <filename>` will open a new window by default.
