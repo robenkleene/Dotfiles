@@ -24,6 +24,7 @@ macos-titlebar-style = native
 window-theme = system
 theme = robenkleene
 
+# Initial window size in grid cells, without this the last window size is used
 window-width = 80
 window-height = 24
 
