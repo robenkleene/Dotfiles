@@ -24,6 +24,9 @@ macos-titlebar-style = native
 window-theme = system
 theme = robenkleene
 
+window-width = 80
+window-height = 24
+
 macos-dock-drop-behavior = new-window
 
 # - `system`: Play default audio
