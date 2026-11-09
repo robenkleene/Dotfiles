@@ -21,7 +21,7 @@ DOTFILES=(
     ".bin/rk-path-abs"
     ".bin/rk-srv-install"
     ".bin/rk-srv-setup"
-    ".bin/rk-tmux-init-rst"
+    ".bin/rk-tmux-init-res"
     ".bin/rk-tmux-init-src"
     ".bin/rk-tmux-srv-qui"
     ".bin/rk-tmux-srv-res"
