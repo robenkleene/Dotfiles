@@ -30,4 +30,4 @@ fi
 if [ ! -e /usr/local/bin/emacsclient ] && [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
   sudo ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin/emacsclient
 fi
-exec emacs --script packages.el
+exec emacs --script ~/.emacs.d/robenkleene/install.el
