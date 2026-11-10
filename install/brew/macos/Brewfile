@@ -2,6 +2,7 @@
 brew 'zsh'
 brew 'git'
 brew 'ripgrep'
+brew 'yazi'
 # Definitely need for remote servers
 brew 'tmux'
 brew 'fd'
