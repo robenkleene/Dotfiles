@@ -53,3 +53,6 @@ cursor-text = #FFFFFF
 
 selection-background = #626880
 selection-foreground = #c6d0f5
+
+# Divider between split panes, the default is hard to see on a dark background
+split-divider-color = #A8A8A8
