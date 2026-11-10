@@ -35,6 +35,7 @@ brew 'ruby-install'
 # Swift
 # Objective-C
 brew 'carthage'
+brew 'xcodegen'
 # json
 brew 'jq'
 # cpp
