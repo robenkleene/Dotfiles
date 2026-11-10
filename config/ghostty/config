@@ -30,6 +30,11 @@ window-height = 24
 
 macos-dock-drop-behavior = new-window
 
+# New windows start in home, new tabs and splits still inherit the current
+# directory (the default)
+window-inherit-working-directory = false
+working-directory = home
+
 # - `system`: Play default audio
 # - `audio`: Play a custom sound
 # - `title`: Put a bell in the title bar
