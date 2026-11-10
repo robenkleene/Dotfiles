@@ -2,44 +2,28 @@
 .\"
 .TH "RK\-YAZI Reference" "" "" ""
 .IP \(bu 2
-\f[CR]\(ti\f[R]: Show help
-.IP \(bu 2
-\f[CR]z\f[R]: Jump to directory with \f[CR]z\f[R]
+\f[CR]\(ti\f[R] / \f[CR]<F1>\f[R]: Show help
 .IP \(bu 2
 \f[CR].\f[R]: Toggle hidden
-.IP \(bu 2
-\f[CR]H\f[R] / \f[CR]L\f[R]: Go to previous / next directory
 .IP \(bu 2
 \f[CR]Q\f[R]: Exit without writing \f[CR]cwd\f[R] file (stay in current
 directory)
 .IP \(bu 2
 \f[CR]:\f[R]: Run shell command (e.g.,
-\f[CR]mkdir \(dq$(today) archive\(dq\f[R]
+\f[CR]mkdir \(dq$(today) archive\(dq\f[R])
+.SH Navigation
 .IP \(bu 2
-\f[CR]␣\f[R]: Select hovered file
+\f[CR]z\f[R]: Jump to a file or directory with \f[CR]fzf\f[R]
 .IP \(bu 2
-\f[CR]r\f[R]: Rename file
+\f[CR]Z\f[R]: Jump to a directory with \f[CR]zoxide\f[R]
 .IP \(bu 2
-\f[CR]a\f[R]: Create file or directory (append a \f[CR]/\f[R] for
-directory)
+\f[CR]H\f[R] / \f[CR]L\f[R]: Go to previous / next directory
+.SH CLI
 .IP \(bu 2
-\f[CR]s\f[R]: Search for files with \f[CR]fd\f[R]
-.SS Filenames
+\f[CR]yazi \-\-debug\f[R]: Show config file paths, the detected
+terminal, and the image adapter (e.g., to troubleshoot image previews)
 .IP \(bu 2
-\f[CR]cc\f[R]: Copy absolute path
-.IP \(bu 2
-\f[CR]cf\f[R]: Copy just filename
-.SS Select
-.IP \(bu 2
-\f[CR]⌃A\f[R]: Select All
-.IP \(bu 2
-\f[CR]⌃R\f[R]: Inverse selection
-.IP \(bu 2
-\f[CR]⎋\f[R] / \f[CR]⌃[\f[R]: Clear selection
-.SS Move, Copy
-.IP \(bu 2
-\f[CR]x\f[R]: Cut files
-.IP \(bu 2
-\f[CR]y\f[R]: Copy files
-.IP \(bu 2
-\f[CR]p\f[R]: Paste files
+\f[CR]yazi \-\-clear\-cache\f[R]: Clear the cache of resized image
+previews (e.g., after changing the preview \f[CR]max_width\f[R] /
+\f[CR]max_height\f[R] in \f[CR]yazi.toml\f[R], since old previews stay
+cached at the previous size)

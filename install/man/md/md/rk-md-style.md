@@ -42,3 +42,4 @@ part of a file without a line number.
 Man page sources are the Markdown files in `~/Developer/Dotfiles/install/man/md`.
 
 - Only document official, default bindings (never add custom bindings added, e.g., by dotfile configs).
+- Write bindings in the notation the software itself uses (e.g., `<C-a>` for Vim, matching `:help key-notation`).
