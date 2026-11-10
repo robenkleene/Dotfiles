@@ -35,6 +35,8 @@ DOTFILES=(
     ".config/Code/User/snippets/*.json"
     ".config/nvim/init.lua"
     ".config/tmux/*.conf"
+    ".config/yazi/*.toml"
+    ".config/yazi/plugins/**"
     ".ctags"
     ".editorconfig"
     ".emacs.d/custom.el"
