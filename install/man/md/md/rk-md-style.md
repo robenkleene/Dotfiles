@@ -36,3 +36,9 @@ If the code is only inline, use the normal:
 - When referencing a specific location in a file (e.g., a class, function, or line), always include the exact line number. Never reference a specific
 part of a file without a line number.
 - Never put `'s` after inline code. E.g., write `foo` `bar:` instead of `foo`'s `bar:`. The possessive creates rendering conversion issues.
+
+# Man Pages
+
+Man page sources are the Markdown files in `~/Developer/Dotfiles/install/man/md`.
+
+- Only document official, default bindings (never add custom bindings added, e.g., by dotfile configs).
