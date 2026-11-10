@@ -10,7 +10,7 @@ set linespace=2
 
 " Initial window size, without this the last window size is used
 " This has to be after `guifont` and `linespace` because they change the size
-set lines=24 columns=80
+" set lines=24 columns=80
 
 " Disable audible bell
 autocmd GUIEnter * set vb t_vb=
