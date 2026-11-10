@@ -1,0 +1,5 @@
+[preview]
+# Raise the image size limit (default 600x900) so full screen previews
+# with `toggle-pane max-preview` can fill the pane
+max_width = 2000
+max_height = 2000

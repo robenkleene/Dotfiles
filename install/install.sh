@@ -54,6 +54,7 @@ fi
 ./rb/install.sh
 ./rs/install.sh
 ./vim/install.sh
+./yazi/install.sh
 
 if [[ "$(uname)" = "Darwin" ]]; then
   ./macos/install.sh
