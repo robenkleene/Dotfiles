@@ -46,9 +46,9 @@ bell-features = title
 
 # Cursor
 # `shell-integration` overrides the cursor
-# shell-integration-features = no-cursor
-# cursor-style = block
-# cursor-style-blink = false
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
 
 # Set number of lines to scroll per mouse wheel tick
 # The default is `3` which results in `15` lines scrolling in `tmux`
