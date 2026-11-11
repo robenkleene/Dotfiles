@@ -1,0 +1,1 @@
+- `codex --dangerously-disable-osx-sandbox --dangerously-enable-internet-mode --no-daemon`
