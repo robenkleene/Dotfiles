@@ -61,6 +61,6 @@ CLAUDE.local.md
 # Images dropped into VS Code as prompts
 [pP]rompts-image*.png
 
-# LLM Output
+# Agents
 
-llm-output/
+agent-output/
