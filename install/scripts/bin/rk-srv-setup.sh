@@ -32,6 +32,7 @@ DOTFILES=(
     ".claude/CLAUDE.md"
     ".claude/commands/*.md"
     ".claude/settings.json"
+    ".config/agents/**"
     ".config/Code/User/snippets/*.json"
     ".config/nvim/init.lua"
     ".config/tmux/*.conf"
