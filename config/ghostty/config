@@ -50,6 +50,13 @@ bell-features = title
 # background-opacity = 0.9
 # background-blur = true
 
+# Unfocused splits blend `unfocused-split-fill` over the pane at
+# `1 - unfocused-split-opacity`, this pair lightens the background and dims the
+# text to match the inactive pane style in `tmux` (`colour235` background and
+# `colour250` text, given the theme's `#141414` background and `#FFFFFF` text)
+unfocused-split-opacity = 0.64
+unfocused-split-fill = #464646
+
 # Cursor
 # `shell-integration` overrides the cursor
 shell-integration-features = no-cursor
