@@ -6,7 +6,9 @@
 " This matches Apple Terminal more closely
 set guifont=SF\ Mono:h13
 
-set linespace=2
+" `linespace=2` is a better amount of space, but it makes the the status bar
+" not vertically center aligned.
+set linespace=1
 
 " Initial window size for new empty documents, files opened as arguments keep
 " the default size (the last window size)
