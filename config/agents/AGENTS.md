@@ -79,11 +79,11 @@ image quality from stills instead, where a single frame is cheap.
 
 If a final high quality animation is ever wanted, I will ask for it.
 
-# Agent Output
+# Agents Output
 
-`agent-output` is a scratch directory for agent output, relative to the current working directory (i.e., `./agent-output/`). It's ignored by version control through the global `gitignore`, so anything written there won't show up in `git status` or get committed. Use it as a quick place to write results.
+`agents-output` is a scratch directory for agent output, relative to the current working directory (i.e., `./agents-output/`). It's ignored by version control through the global `gitignore`, so anything written there won't show up in `git status` or get committed. Use it as a quick place to write results.
 
-When I say "write the result to `agent-output`" or "write the result to agent output", write the result to a file in `./agent-output/`. Use the existing directory if it exists, otherwise create it. Pick a short, descriptive filename for the result.
+When I say "write the result to `agents-output`" or "write the result to agents output", write the result to a file in `./agents-output/`. Use the existing directory if it exists, otherwise create it. Pick a short, descriptive filename for the result.
 
 # Local Overrides
 
