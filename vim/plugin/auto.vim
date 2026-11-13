@@ -16,6 +16,9 @@ augroup END
 "augroup END
 
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+" `Special` uses the blue from the Ghostty theme (`palette = 4=#5FAFFF`), and
+" `ctermfg=4` uses palette 4 directly
+highlight Special guifg=#5FAFFF ctermfg=4 guibg=NONE ctermbg=NONE
 call auto#HighlightMarkdown()
 highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=NONE gui=NONE
 if !has('gui_running')
@@ -27,6 +30,7 @@ endif
 augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+  autocmd ColorScheme * highlight Special guifg=#5FAFFF ctermfg=4 guibg=NONE ctermbg=NONE
   autocmd ColorScheme * call auto#HighlightMarkdown()
   autocmd ColorScheme * highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=bold gui=bold
   if !has('gui_running')
