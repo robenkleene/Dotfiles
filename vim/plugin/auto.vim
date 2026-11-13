@@ -15,11 +15,6 @@ augroup END
 "  autocmd VimEnter * call filter(v:oldfiles, 'v:val !~# "COMMIT_EDITMSG$" && v:val !~# ".*\.hg\.txt$"')
 "augroup END
 
-highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-" `Special` uses the blue from the Ghostty theme (`palette = 4=#5FAFFF`), and
-" `ctermfg=4` uses palette 4 directly
-highlight Special guifg=#5FAFFF ctermfg=4 guibg=NONE ctermbg=NONE
-call auto#HighlightMarkdown()
 highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=NONE gui=NONE
 if !has('gui_running')
   " Default to terminal foreground color and background color
@@ -29,25 +24,27 @@ if !has('gui_running')
 endif
 augroup override_colors
   autocmd!
-  autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-  autocmd ColorScheme * highlight Special guifg=#5FAFFF ctermfg=4 guibg=NONE ctermbg=NONE
-  autocmd ColorScheme * call auto#HighlightMarkdown()
   autocmd ColorScheme * highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=bold gui=bold
   if !has('gui_running')
     autocmd ColorScheme * highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE
   endif
 augroup END
 
-" Neovim applies `NormalNC` to inactive windows automatically, Vim has no
-" `NormalNC` so the `inactive_windows` group sets `wincolor` instead
+" Colors that depend on `background`. Neovim applies `NormalNC` to inactive
+" windows automatically, Vim has no `NormalNC` so the `inactive_windows` group
+" sets `wincolor` instead.
+call auto#HighlightText()
 call auto#HighlightInactiveWindows()
-augroup dim_inactive_windows
+augroup background_colors
   autocmd!
+  autocmd ColorScheme * call auto#HighlightText()
   autocmd ColorScheme * call auto#HighlightInactiveWindows()
   " `OptionSet background` catches `set background` without a `colorscheme`
+  autocmd OptionSet background call auto#HighlightText()
   autocmd OptionSet background call auto#HighlightInactiveWindows()
   " `OptionSet` doesn't fire during startup, `VimEnter` catches `background`
   " set by files sourced after this one (e.g., `plugin/vim.vim`)
+  autocmd VimEnter * call auto#HighlightText()
   autocmd VimEnter * call auto#HighlightInactiveWindows()
 augroup END
 if !has('nvim') && exists('+wincolor')
