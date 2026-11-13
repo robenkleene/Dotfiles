@@ -36,6 +36,8 @@ When working with version controlled files, never commit changes unless explicit
 
 A README provides lasting context for its repo or project: what it is, how it's laid out, and how to build, test, and use it. Never put transient project state in a README, such as what's in progress, what's temporarily turned off, or what hasn't been merged or updated yet (e.g., "changes to the shared modules aren't in the submodules yet", "VST3 is turned off while only the AU is being tested"). State the lasting fact instead (e.g., "VST3 isn't built by default"), and leave status to issues, todo lists, or the conversation.
 
+This rule is only for READMEs. Transient state is fine in code comments, especially when it describes the current state of the code next to it (e.g., "VST3 is off while only the AU is being tested" above the line that turns it off).
+
 # Print Debugging
 
 When adding print statements to debug an issue, try to minimize noise. Avoid statements that print every frame, or that keep printing when nothing important is happening. Prefer printing at meaningful state transitions or only when a relevant condition changes.
