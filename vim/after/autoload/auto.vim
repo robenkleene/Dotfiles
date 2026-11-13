@@ -33,18 +33,19 @@ function! auto#HighlightInactiveWindows() abort
 endfunction
 
 " Markdown punctuation (e.g., header and list markers, backticks, link
-" brackets) uses `Comment`, and code and links use `Special`
+" brackets) and URLs use `Comment`, and code and link text use `Special`
 function! auto#HighlightMarkdown() abort
   for l:group in ['markdownHeadingDelimiter', 'markdownListMarker',
         \ 'markdownCodeDelimiter', 'markdownLinkDelimiter',
         \ 'markdownLinkTextDelimiter', 'markdownUrlDelimiter',
         \ 'markdownUrlTitleDelimiter', 'markdownItalicDelimiter',
         \ 'markdownBoldDelimiter', 'markdownBoldItalicDelimiter',
-        \ 'markdownStrikeDelimiter', 'markdownRule', 'markdownCheckbox']
+        \ 'markdownStrikeDelimiter', 'markdownRule', 'markdownCheckbox',
+        \ 'markdownUrl']
     execute 'highlight! link' l:group 'Comment'
   endfor
   for l:group in ['markdownCode', 'markdownCodeBlock', 'markdownLinkText',
-        \ 'markdownUrl', 'markdownUrlTitle', 'markdownId',
+        \ 'markdownUrlTitle', 'markdownId',
         \ 'markdownIdDeclaration']
     execute 'highlight! link' l:group 'Special'
   endfor
@@ -55,13 +56,13 @@ function! auto#HighlightMarkdown() abort
     for l:group in ['@markup.heading.marker.markdown', '@markup.list.markdown',
           \ '@markup.list.checked.markdown', '@markup.list.unchecked.markdown',
           \ '@punctuation.special.markdown', '@punctuation.delimiter.markdown',
-          \ '@punctuation.delimiter.markdown_inline']
+          \ '@punctuation.delimiter.markdown_inline', '@markup.link.url.markdown',
+          \ '@markup.link.url.markdown_inline']
       execute 'highlight! link' l:group 'Comment'
     endfor
     for l:group in ['@markup.raw.markdown_inline', '@markup.raw.block.markdown',
           \ '@markup.link.markdown_inline', '@markup.link.label.markdown',
-          \ '@markup.link.label.markdown_inline', '@markup.link.url.markdown',
-          \ '@markup.link.url.markdown_inline']
+          \ '@markup.link.label.markdown_inline']
       execute 'highlight! link' l:group 'Special'
     endfor
   endif
