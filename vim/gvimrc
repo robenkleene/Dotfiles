@@ -29,9 +29,12 @@ set guioptions-=e
 
 function! s:ApplyColors() abort
   if &background ==# 'dark'
-    " BBEdit Dark
-    highlight NonText guibg=#141414
-    highlight Normal guifg=#FFFFFF guibg=#141414
+    " BBEdit Black
+    " highlight NonText guibg=#141414
+    " highlight Normal guifg=#FFFFFF guibg=#141414
+    " Xcode Black
+    highlight NonText guibg=#292A30
+    highlight Normal guifg=#FFFFFF guibg=#292A30
   else
     " BBEdit Light
     highlight NonText guifg=#141414
