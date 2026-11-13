@@ -31,7 +31,7 @@ function! s:ApplyColors() abort
   if &background ==# 'dark'
     " BBEdit Dark
     highlight NonText guibg=#141414
-    highlight Normal guibg=#141414
+    highlight Normal guifg=#FFFFFF guibg=#141414
   else
     " BBEdit Light
     highlight NonText guifg=#141414
