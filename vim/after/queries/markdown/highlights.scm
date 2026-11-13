@@ -10,3 +10,7 @@
   (atx_h5_marker)
   (atx_h6_marker)
 ] @markup.heading.marker
+
+; Capture code fence backticks separately from the code, so they can use the
+; `Comment` color like other punctuation
+(fenced_code_block_delimiter) @punctuation.delimiter

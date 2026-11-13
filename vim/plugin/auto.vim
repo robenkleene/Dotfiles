@@ -16,12 +16,7 @@ augroup END
 "augroup END
 
 highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-highlight link markdownHeadingDelimiter Comment
-highlight link markdownListMarker Comment
-if has('nvim')
-  highlight link @markup.heading.marker.markdown Comment
-  highlight link @markup.list.markdown Comment
-endif
+call auto#HighlightMarkdown()
 highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=NONE gui=NONE
 if !has('gui_running')
   " Default to terminal foreground color and background color
@@ -32,12 +27,7 @@ endif
 augroup override_colors
   autocmd!
   autocmd ColorScheme * highlight Comment guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
-  autocmd ColorScheme * highlight link markdownHeadingDelimiter Comment
-  autocmd ColorScheme * highlight link markdownListMarker Comment
-  if has('nvim')
-    autocmd ColorScheme * highlight link @markup.heading.marker.markdown Comment
-    autocmd ColorScheme * highlight link @markup.list.markdown Comment
-  endif
+  autocmd ColorScheme * call auto#HighlightMarkdown()
   autocmd ColorScheme * highlight WarningMsg guifg=#FFFF00 ctermfg=yellow guibg=NONE ctermbg=NONE cterm=bold gui=bold
   if !has('gui_running')
     autocmd ColorScheme * highlight Normal ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE

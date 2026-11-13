@@ -31,3 +31,38 @@ function! auto#HighlightInactiveWindows() abort
     highlight NormalNC guifg=#bcbcbc ctermfg=250 guibg=#262626 ctermbg=235
   endif
 endfunction
+
+" Markdown punctuation (e.g., header and list markers, backticks, link
+" brackets) uses `Comment`, and code and links use `Special`
+function! auto#HighlightMarkdown() abort
+  for l:group in ['markdownHeadingDelimiter', 'markdownListMarker',
+        \ 'markdownCodeDelimiter', 'markdownLinkDelimiter',
+        \ 'markdownLinkTextDelimiter', 'markdownUrlDelimiter',
+        \ 'markdownUrlTitleDelimiter', 'markdownItalicDelimiter',
+        \ 'markdownBoldDelimiter', 'markdownBoldItalicDelimiter',
+        \ 'markdownStrikeDelimiter', 'markdownRule', 'markdownCheckbox']
+    execute 'highlight! link' l:group 'Comment'
+  endfor
+  for l:group in ['markdownCode', 'markdownCodeBlock', 'markdownLinkText',
+        \ 'markdownUrl', 'markdownUrlTitle', 'markdownId',
+        \ 'markdownIdDeclaration']
+    execute 'highlight! link' l:group 'Special'
+  endfor
+  if has('nvim')
+    " The captures with `.markdown` and `.markdown_inline` suffixes are from
+    " `queries/markdown/highlights.scm` and
+    " `queries/markdown_inline/highlights.scm`
+    for l:group in ['@markup.heading.marker.markdown', '@markup.list.markdown',
+          \ '@markup.list.checked.markdown', '@markup.list.unchecked.markdown',
+          \ '@punctuation.special.markdown', '@punctuation.delimiter.markdown',
+          \ '@punctuation.delimiter.markdown_inline']
+      execute 'highlight! link' l:group 'Comment'
+    endfor
+    for l:group in ['@markup.raw.markdown_inline', '@markup.raw.block.markdown',
+          \ '@markup.link.markdown_inline', '@markup.link.label.markdown',
+          \ '@markup.link.label.markdown_inline', '@markup.link.url.markdown',
+          \ '@markup.link.url.markdown_inline']
+      execute 'highlight! link' l:group 'Special'
+    endfor
+  endif
+endfunction
