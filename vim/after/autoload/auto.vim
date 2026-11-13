@@ -32,36 +32,63 @@ function! auto#HighlightInactiveWindows() abort
   endif
 endfunction
 
+" - `Comment`: Secondary text, light grey on a dark background and dark grey on
+"   a light background
+" - `Delimiter`: Punctuation, a middle grey
+" - `Special`: The blue from the Ghostty theme (`palette = 4=#5FAFFF`),
+"   `ctermfg=4` uses palette 4 directly
+function! auto#HighlightText() abort
+  if &background ==# 'light'
+    highlight Comment guifg=#585858 ctermfg=240 guibg=NONE ctermbg=NONE
+  else
+    highlight Comment guifg=#B2B2B2 ctermfg=249 guibg=NONE ctermbg=NONE
+  endif
+  highlight Delimiter guifg=#8B8680 ctermfg=244 guibg=NONE ctermbg=NONE
+  highlight Special guifg=#5FAFFF ctermfg=4 guibg=NONE ctermbg=NONE
+  if has('nvim')
+    " `@punctuation.special` otherwise falls back to `Special`
+    for l:group in ['@punctuation.delimiter', '@punctuation.bracket',
+          \ '@punctuation.special']
+      execute 'highlight! link' l:group 'Delimiter'
+    endfor
+  endif
+  call auto#HighlightMarkdown()
+endfunction
+
 " Markdown punctuation (e.g., header and list markers, backticks, link
-" brackets) and URLs use `Comment`, and code and link text use `Special`
+" brackets) and URLs use `Delimiter`, code uses `Comment`, and link text uses
+" `Special`
 function! auto#HighlightMarkdown() abort
   for l:group in ['markdownHeadingDelimiter', 'markdownListMarker',
         \ 'markdownCodeDelimiter', 'markdownLinkDelimiter',
         \ 'markdownLinkTextDelimiter', 'markdownUrlDelimiter',
         \ 'markdownUrlTitleDelimiter', 'markdownItalicDelimiter',
         \ 'markdownBoldDelimiter', 'markdownBoldItalicDelimiter',
-        \ 'markdownStrikeDelimiter', 'markdownRule', 'markdownCheckbox',
-        \ 'markdownUrl']
+        \ 'markdownStrikeDelimiter', 'markdownRule', 'markdownBlockquote',
+        \ 'markdownCheckbox', 'markdownUrl']
+    execute 'highlight! link' l:group 'Delimiter'
+  endfor
+  for l:group in ['markdownCode', 'markdownCodeBlock']
     execute 'highlight! link' l:group 'Comment'
   endfor
-  for l:group in ['markdownCode', 'markdownCodeBlock', 'markdownLinkText',
-        \ 'markdownUrlTitle', 'markdownId',
+  for l:group in ['markdownLinkText', 'markdownUrlTitle', 'markdownId',
         \ 'markdownIdDeclaration']
     execute 'highlight! link' l:group 'Special'
   endfor
   if has('nvim')
-    " The captures with `.markdown` and `.markdown_inline` suffixes are from
-    " `queries/markdown/highlights.scm` and
-    " `queries/markdown_inline/highlights.scm`
+    " `@punctuation` captures (e.g., from `queries/markdown/highlights.scm` and
+    " `queries/markdown_inline/highlights.scm`) already use `Delimiter` from
+    " `auto#HighlightText()`, these are the punctuation captures with other
+    " names
     for l:group in ['@markup.heading.marker.markdown', '@markup.list.markdown',
           \ '@markup.list.checked.markdown', '@markup.list.unchecked.markdown',
-          \ '@punctuation.special.markdown', '@punctuation.delimiter.markdown',
-          \ '@punctuation.delimiter.markdown_inline', '@markup.link.url.markdown',
-          \ '@markup.link.url.markdown_inline']
+          \ '@markup.link.url.markdown', '@markup.link.url.markdown_inline']
+      execute 'highlight! link' l:group 'Delimiter'
+    endfor
+    for l:group in ['@markup.raw.markdown_inline', '@markup.raw.block.markdown']
       execute 'highlight! link' l:group 'Comment'
     endfor
-    for l:group in ['@markup.raw.markdown_inline', '@markup.raw.block.markdown',
-          \ '@markup.link.markdown_inline', '@markup.link.label.markdown',
+    for l:group in ['@markup.link.markdown_inline', '@markup.link.label.markdown',
           \ '@markup.link.label.markdown_inline']
       execute 'highlight! link' l:group 'Special'
     endfor
