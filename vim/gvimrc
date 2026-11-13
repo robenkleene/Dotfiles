@@ -17,6 +17,14 @@ if argc() == 0
   set lines=24 columns=80
 endif
 
+" Swap the MacVim defaults so `<D-w>` closes the whole window (`File.Close
+" Window` runs `:conf qa`) and `<D-W>` closes the current split (`File.Close`
+" runs `:conf q`). `macmenu` key bindings only work in `gvimrc`.
+if has('gui_macvim')
+  macmenu File.Close\ Window key=<D-w>
+  macmenu File.Close key=<D-W>
+endif
+
 " Disable audible bell
 autocmd GUIEnter * set vb t_vb=
 
