@@ -2,3 +2,25 @@
 on = "T"
 run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
+
+# Copy through `_rk-tmux-safecopy.sh` (`tmux loadb -w`) like Vim because tmux
+# doesn't reliably forward yazi's own `OSC 52` to the local clipboard
+[[mgr.prepend_keymap]]
+on = ["c", "c"]
+run = 'shell -- ~/.bin/nobin/_rk-copy-paths.sh path "$@"'
+desc = "Copy file URL"
+
+[[mgr.prepend_keymap]]
+on = ["c", "d"]
+run = 'shell -- ~/.bin/nobin/_rk-copy-paths.sh dirname "$@"'
+desc = "Copy directory URL"
+
+[[mgr.prepend_keymap]]
+on = ["c", "f"]
+run = 'shell -- ~/.bin/nobin/_rk-copy-paths.sh filename "$@"'
+desc = "Copy filename"
+
+[[mgr.prepend_keymap]]
+on = ["c", "n"]
+run = 'shell -- ~/.bin/nobin/_rk-copy-paths.sh name_without_ext "$@"'
+desc = "Copy filename without extension"
