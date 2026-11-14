@@ -1,3 +1,5 @@
+- `^d`: Quit
+
 # Remote
 
 - `cd`
