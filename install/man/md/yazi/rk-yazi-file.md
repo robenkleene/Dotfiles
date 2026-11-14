@@ -8,10 +8,14 @@
 - `<C-r>`: Inverse selection
 - `<Esc>` / `<C-[>`: Clear selection
 
-# Filenames
+# Copy
 
-- `cc`: Copy absolute path
-- `cf`: Copy just filename
+- `c`: Copy menu
+
+## Menu
+
+- `c`: Copy absolute path
+- `f`: Copy just filename
 
 # Move, Copy
 
