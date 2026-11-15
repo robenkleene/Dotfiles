@@ -37,11 +37,12 @@ set guioptions-=e
 
 function! s:ApplyColors() abort
   if &background ==# 'dark'
+    " `NonText` (e.g., `~` filler lines and the `@@@` from `display=truncate`)
+    " keeps the colorscheme's `guibg=NONE`, so it uses the window's background,
+    " which is `NormalNC` in inactive windows
     " BBEdit Black
-    " highlight NonText guibg=#141414
     " highlight Normal guifg=#FFFFFF guibg=#141414
     " Xcode Black
-    highlight NonText guibg=#292A30
     highlight Normal guifg=#FFFFFF guibg=#292A30
   else
     " BBEdit Light
