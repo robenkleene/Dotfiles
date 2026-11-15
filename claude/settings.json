@@ -1,4 +1,8 @@
 {
+  "fileSuggestion": {
+    "type": "command",
+    "command": "~/.claude/file-suggestion.sh"
+  },
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
     "CLAUDE_CODE_AUTO_CONNECT_IDE": "false"
@@ -24,9 +28,5 @@
   },
   "tui": "fullscreen",
   "preferredNotifChannel": "terminal_bell",
-  "showTips": false,
-  "fileSuggestion": {
-    "type": "command",
-    "command": "~/.claude/file-suggestion.sh"
-  }
+  "showTips": false
 }
