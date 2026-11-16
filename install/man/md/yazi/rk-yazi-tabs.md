@@ -1,0 +1,4 @@
+- `1–9`: Switch directly to tab 1–9
+- `[`: Previous / next tab
+- `t t`: New tab
+- `<C-c>`: Close the current tab (or quit if it's the last tab)
