@@ -22,3 +22,8 @@
 - `x`: Cut files
 - `y`: Copy files
 - `p`: Paste files
+
+# Delete
+
+- `d`: Move to trash
+- `D`: Permanently delete

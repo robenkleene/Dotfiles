@@ -1,3 +1,5 @@
+- `F5`: Refresh
+
 # Sort
 
 - `,`: Sort menu
