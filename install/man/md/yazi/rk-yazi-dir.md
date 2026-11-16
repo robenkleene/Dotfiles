@@ -1,0 +1,2 @@
+- `g c`: Change directory
+- `g -`: Previous directory
