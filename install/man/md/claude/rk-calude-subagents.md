@@ -1,0 +1,1 @@
+- `x`: Close the selected subagent chat
