@@ -1,6 +1,4 @@
-# `luasnip`
-
-## Paste
+# Paste
 
 Using pasted text in snippets with tokens is difficult because `SELECT` mode, which is used by default when filling out snippets, doesn't support pasting. Here's a workaround:
 

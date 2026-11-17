@@ -1,18 +1,16 @@
-# CSS Tailwind
-
-## Goals
+# Goals
 
 Why utility classes instead of inline CSS? With inline CSS there's no constraints on what values you choose. With utility classes "You can't just pick any value want; you have to choose from a curated list.
 
 Instead of 380 text colors, you end up with 10 or 12."
 
-## CLI
+# CLI
 
 - `npx tailwind init tailwind-full.confg`: Export a full Tailwind config
 
-## Basics
+# Basics
 
-### General
+## General
 
 - `sm`: Small
 - `md`: Medium
@@ -27,7 +25,7 @@ Instead of 380 text colors, you end up with 10 or 12."
 - `l`: Left
 - `r`: Right
 
-### Text
+## Text
 
 - `text-sm`: Smaller font size
 - `text-2xl`: Large font
@@ -38,42 +36,42 @@ Instead of 380 text colors, you end up with 10 or 12."
 - `uppercase`: Uppercase
 - `tracking-wider`: Wider letter spacing
 
-#### Colors
+### Colors
 
 - `text-indigo-500`: An indigo
 
-### Layout
+## Layout
 
 - `max-w-md`: Set a width
 - `inline-block`: Inline block
 
-### Size
+## Size
 
 - `h` (e.g., `h-10`): Height
 
-### Padding
+## Padding
 
 - `p` (e.g., `p-8`): Padding
 - `px` (e.g., `px-8`): Horizontal padding
 - `py` (e.g., `py-12`): Vertical padding
 
-### Margins
+## Margins
 
 - `mx-auto`: Set margins to auto
 - `mt` (e.g., `mt-6`): Top margin
 
-### Border
+## Border
 
 - `rounded`: Rounded corners
 - `rounded-sm`: Small rounded corners
 - `rounded-lg`: Large rounded corners
 
-### Effects
+## Effects
 
 - `shadow`: Shadow
 - `shadow-lg`: Large shadow
 
-## Responsive
+# Responsive
 
 Just add one of the size prefixes (`sm`, `md`, `lg`, `xl`) to a style to only apply it at that size:
 
@@ -81,7 +79,7 @@ Just add one of the size prefixes (`sm`, `md`, `lg`, `xl`) to a style to only ap
 
 This adds a minimum width breakpoint for small sizes.
 
-## Starting New Project
+# Starting New Project
 
 1. In a new directory, e.g., `my-tailwind-project`, run `npm init -y` to create a basic `package.json`
 2. Install Tailwind with `npm install postcss-cli autoprefixer`

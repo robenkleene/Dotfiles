@@ -1,5 +1,3 @@
-# `lldb` Remote
-
 1. Install `lldb-server` to the device, e.g., `adb push lldb-server /data/local/tmp`
 2. On the device, start the server, e.g., `adb shell`, then `/data/local/tmp/lldb-server platform --listen "*:10086" --server` (`10086` is an arbitrary port number)
 3. On the device, start port forwarding `adb forward tcp:10086 tcp:10086`

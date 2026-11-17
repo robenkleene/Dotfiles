@@ -8,14 +8,14 @@
 - Use `com.company.MyApp` for application-level logs and `com.company.MyApp.SomeFramework` for framework-level logs
 - "Don't include symbol information or source file line numbers in messages. The system automatically captures this information."
 - Log messages cannot be disabled from printing in Xcode console [source](https://stackoverflow.com/questions/41142848/how-do-you-disable-os-log-info-and-os-log-debug-messages-in-xcode-console?rq=1)
-## A Swift Example
+# A Swift Example
 
 Here's some sample code in Swift:
 
 	let logHandle = OSLog(subsystem: "com.example.widget", category: "Setup")
 	os_log(.info, log: logHandle, "Hello, %{public}s!", world)
 
-## `log` Commane-Line Tool
+# `log` Commane-Line Tool
 
 Stream live log messages (is this filtered by app?):
 
@@ -39,7 +39,7 @@ This probably shows the log message?
 
 What's the difference between `logarchive` and `tracev3`?
 
-## Creating a Log Object
+# Creating a Log Object
 
 Defaults to system behavior
 
@@ -49,18 +49,18 @@ Defaults to system behavior
 
 "Reference to category and subsystem stored with every log message" What's this mean?
 
-## Message Level Behavior
+# Message Level Behavior
 
 - **Default**: Always enabled, goes to disk
 - **Info**: Enabled, in memory
 - **Debug**: Not enabled, N/A for in memory
 
-### Special
+## Special
 
 - **Error**: Always, disk
 - **Fault**: Always, disk
 
-### Guidelines
+## Guidelines
 
 - `os_log`: Log critical details to help debug issues
 - `os_log_info`: Log additional info that will be captured during error or fault

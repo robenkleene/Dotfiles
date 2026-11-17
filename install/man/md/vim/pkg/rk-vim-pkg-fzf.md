@@ -1,6 +1,4 @@
-# `vim` `fzf`
-
-## Bindings
+# Bindings
 
 - `⇧↑` / `⇧↓`: Scroll preview window up / down
 - `⌃X`: Open in new horizontal split

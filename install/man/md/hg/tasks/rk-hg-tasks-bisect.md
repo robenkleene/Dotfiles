@@ -1,5 +1,3 @@
-# `hg` Tasks Bisect
-
 1. Store a patch with any setup for your test, e.g., `a=$(hg show <rev>)`
 2. `hg bisect --reset`
 3. For a bad diff, run `hg bisect --bad`

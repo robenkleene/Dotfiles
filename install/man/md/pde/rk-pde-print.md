@@ -9,7 +9,7 @@ println("value = ", value);
 print("value = ", value, "\n");
 ```
 
-## Array
+# Array
 
 `printArray` is used to print arrays:
 
@@ -19,7 +19,7 @@ printArray(arr);
 print("\n");
 ```
 
-## Box
+# Box
 
 Print vertices coordinates.
 

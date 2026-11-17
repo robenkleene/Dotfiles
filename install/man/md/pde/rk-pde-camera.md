@@ -1,8 +1,6 @@
-# Processing Camera
-
 - The `camera()` function is similar to `gluLookAt()` in OpenGL.
 
-## Default Camera
+# Default Camera
 
 This is how the default camera is defined in processing:
 

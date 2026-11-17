@@ -1,5 +1,3 @@
-# Markdown Tasks Tables
-
 Simple way to make a table is to make a tab delimited section:
 
 ```

@@ -1,8 +1,8 @@
 - `:lua vim.lsp.diagnostic.set_quickfixlist()`
 
-## Calling Vimscript
+# Calling Vimscript
 
-### One Line
+## One Line
 
 ```
 vim.cmd('syntax enable')
