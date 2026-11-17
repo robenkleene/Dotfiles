@@ -10,7 +10,7 @@ set -euo pipefail
 # custom support for it separately
 if [[ -n "${TMUX:-}" ]]; then
   # `-w` flag also syncs this to the system clipboard, including over SSH (with `OSC 52`)
-  exec tmux loadb -w "$@" -
+  exec tmux loadb -w -
 fi
 
 if [[ "$(uname)" = "Darwin" && -z "${SSH_TTY:-}" ]]; then
