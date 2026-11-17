@@ -20,6 +20,12 @@ When editing files, check for a style guide by running `man rk-<ext>-style` (whe
 
 When writing comments in any language, follow the comment style guide at `man rk-comment-style`.
 
+# Generic Examples
+
+In examples that illustrate a general rule or pattern, such as in style guides, documentation, and code comments, use generic placeholders instead of specific identifiers from a project. Use the [foobar](https://en.wikipedia.org/wiki/Foobar) names (`foo`, `bar`, `baz`) and angle-bracket placeholders (`<path>`, `<name>`). E.g., write `` `foo` `` instead of `` `L01_tempo_meter_markers` ``.
+
+The exception is when the text is about a specific problem, such as a code comment explaining a fix or workaround. Name the specific app, variable, or case there, because it's what the reader needs to know. E.g., "VS Code's terminal will clear `SSH_CONNECTION` if it ever attaches" names VS Code because that's the problem being worked around.
+
 # Git
 
 When I refer to the "current commit" (e.g., `current_commit`, `current commit`, `the current commit`), it always means the commit at HEAD. Resolve it with `git rev-parse HEAD`.

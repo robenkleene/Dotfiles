@@ -37,6 +37,18 @@ If the code is only inline, use the normal:
 part of a file without a line number.
 - Never put `'s` after inline code. E.g., write `foo` `bar:` instead of `foo`'s `bar:`. The possessive creates rendering conversion issues.
 
+# Tables
+
+- Pad every cell with spaces so the pipes line up in each column and the table reads as a table in plain text. Make each column as wide as its widest cell, and make the dash row match that width.
+- Put code-like identifiers (file names, project names, commands, flags, paths) in code style, in tables as everywhere else.
+
+~~~
+| Name         | Description                  |
+| ------------ | ---------------------------- |
+| `foo`        | The first thing.             |
+| `<path>/bar` | A longer description of bar. |
+~~~
+
 # Man Pages
 
 Man page sources are the Markdown files in `~/Developer/Dotfiles/install/man/md`.
