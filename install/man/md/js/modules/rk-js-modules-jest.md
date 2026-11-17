@@ -1,5 +1,3 @@
-# Jest
-
 # `npm`
 
 - `npm test -- test/window.test.js`: Run a single test file

@@ -1,9 +1,7 @@
-# `xargs`
-
 - `-0`: Use NUL byte terminator
 - `-I '{}'`: Execute each command separately replacing `{}` with the match
 
-## Examples
+# Examples
 
 Copy files with search term to directory:
 

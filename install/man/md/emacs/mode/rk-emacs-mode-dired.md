@@ -12,33 +12,33 @@
 - `v`: View (preview) file (then `q` to quit the view)
 - `o` / `dired-find-file-other-window`: Open file in other window
 
-## Listing
+# Listing
 
 - `(`: Toggle showing details
 
-### Hidden
+## Hidden
 
 - `C-x M-o` / `dired-omit-mode` (requires `dired-x`): Show hidden files (this includes Emacs recovery files)
 
-### Sorting
+## Sorting
 
 - `s`: Toggle sort by name or date
 - `C-u s`: Set specific flags to pass to `ls`
 
-## Mark
+# Mark
 
 - `m` / `u`: Mark / Remove mark
 - `U`: Unmark all (there's not mark all)
 - `t`: Invert marked (works as mark all with nothing marked)
 - Note that the marked files can only be operated on when in the same Dired buffer as the marked files
 
-### Multiple Files
+## Multiple Files
 
 - Use `m` to mark and then another command, e.g., `R` to move all
 
-## File Management
+# File Management
 
-### Copying, Moving, Renaming
+## Copying, Moving, Renaming
 
 - `R`: Rename or move file (`↓` inserts the current filename)
 - `C`: Copy file
@@ -47,38 +47,38 @@ With `(setq dired-dwim-target t)`, if two `dired` buffers are open use the other
 
 To move a file to a new directory, do a rename, but just specify a directory as a path, and the file will be moved with the existing file name.
 
-## Tasks
+# Tasks
 
-### Diff
+## Diff
 
 - `=`: Compare (diff) two files, the currently selected file and prompt for the second. The comparison goes from the second file to the first file.
 
-### Find
+## Find
 
 - `find-name-dired`: Find files by `find` name search
 - `find-dired`: Find files using any `find` arguments
 - `find-grep-dired`: Find files that contain a `grep` pattern
 - `find-dired-with-command`: Enter an arbitrary `find` command (e.g., `find . \( -name '*foo*' \) -ls`). The default command isn't stored in a variable, it's based on concatenated from `find-program`)
 
-### Shell Commands
+## Shell Commands
 
 - `!`: Do shell command on file
 - `M-!`: Do shell command in current directory
 
-### Dired Write Mode
+## Dired Write Mode
 
 - `C-x C-q` or `dired-toggle-read-only`: Change to writable mode
 
-#### Saving or Canceling
+### Saving or Canceling
 
 - `C-c C-c` / `C-x C-s`: Save changes
 - `C-c C-k` / `C-c ESC`: Abort changes
 
-### Dired Virtual
+## Dired Virtual
 
 - `g`: Convert a `dired-virtual` buffer to a normal `dired` buffer
 
-#### Creating
+### Creating
 
 - `ls -l`: Output that can be converted to a `dired-virtual` buffer (i.e., you need the additional metadata for it to work)
 - `ls -l **/*.md`: In Fish shell, this is the easiest way to get a recursive file list that works with `dired-virtual`

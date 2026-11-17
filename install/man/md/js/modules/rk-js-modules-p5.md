@@ -1,3 +1,1 @@
-# p5
-
 - `noise()` for Perlin Noise, cannot be called without an argument.

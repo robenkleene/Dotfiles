@@ -2,7 +2,7 @@
 - Include the relevant symbol, keyword, or construct directly in the comment so the reader knows exactly what it refers to
 - Wrap referenced code in backticks (e.g., `<code>`) in the comment
 
-## Examples
+# Examples
 
 Good:
 

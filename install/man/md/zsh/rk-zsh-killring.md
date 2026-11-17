@@ -1,6 +1,4 @@
-# `zsh` Kill Ring
-
-## Modifying Previous Commands
+# Modifying Previous Commands
 
 Say you've already setup a search like `rg <term>` and you want to use the flags from a previous command.
 

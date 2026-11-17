@@ -1,28 +1,28 @@
 - `-i`: Replace in files, note that for macOS this needs to be `-i ''`
 - With `-E` parentheses default to capture groups, without `-E`, capture groups need to be escaped
 
-## Examples
+# Examples
 
-### Remove Spaces
+## Remove Spaces
 
 	sed 's/ //g'
 
-### Replace Multiple Spaces With One Space
+## Replace Multiple Spaces With One Space
 
 	sed "s/  */ /g"
 
-### Capture Groups
+## Capture Groups
 
 	sed 's/.*:\(.*\):.*/\1/p'`
     sed -E 's/^( *-) */\1 /g'
 
 Note that the `-E` flag inverts whether the parentheses need to be escaped.
 
-## Delete a Line
+# Delete a Line
 
     sed -i `1d` ~/.ssh/known_hosts
 
-## Insert a Line
+# Insert a Line
 
 Note the `\` and new line are necessary:
 
@@ -42,13 +42,13 @@ Appending to the last line of a file:
     '
     sed -i '' "${line_fix}" patch.patch
 
-## Files
+# Files
 
-### With `rg`
+## With `rg`
 
     rg Raster -l -0 | xargs -0 sed -n 's/Raster/Cyclist/gp'
 
-### Recursive
+## Recursive
 
     sed -n 's/Raster/Cyclist/gp' **
 

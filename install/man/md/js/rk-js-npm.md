@@ -1,5 +1,3 @@
-# `npm`
-
 # Initializing
 
 - `npm init`: Create a `package.json`

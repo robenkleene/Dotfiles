@@ -16,7 +16,7 @@
 - `f↩` / `t↩`: Select to the end of the line
 - `%`: Select document
 
-## Select Mode
+# Select Mode
 
 After using `s` to select a term.
 

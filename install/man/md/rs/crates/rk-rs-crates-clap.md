@@ -1,8 +1,6 @@
-# Rust Crates `clap`
-
 "Command Line Argument Parser for Rust."
 
-## Example
+# Example
 
 The `derive` `Parser` annotation on `struct Args` means treat that `struct` as arguments:
 

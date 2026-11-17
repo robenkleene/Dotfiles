@@ -1,5 +1,3 @@
-# Helix Insert Mode
-
 - `⌃S`: Commit undo checkpoint
 - `⌃X`: Autocomplete
 - `⌃R`: Insert register

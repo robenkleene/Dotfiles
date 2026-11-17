@@ -3,6 +3,6 @@
 - Quick trick to get the path to the current file is to use `C-x C-v` (`find-alternate-file` which will pre-populate with the path to the current file (then cancel with `C-g`)
 - `M-x pwd` is another way to get the directory of the current file
 
-## Flags
+# Flags
 
 - `-e` / `--eval`: Evaluate expression
