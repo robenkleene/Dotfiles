@@ -7,7 +7,7 @@
 .IP \(bu 2
 With \f[CR]\-E\f[R] parentheses default to capture groups, without
 \f[CR]\-E\f[R], capture groups need to be escaped
-.SS Examples
+.SH Examples
 .SS Remove Spaces
 .IP
 .EX
@@ -27,12 +27,12 @@ sed \-E \(aqs/\(ha( *\-) */\(rs1 /g\(aq
 .PP
 Note that the \f[CR]\-E\f[R] flag inverts whether the parentheses need
 to be escaped.
-.SS Delete a Line
+.SH Delete a Line
 .IP
 .EX
 sed \-i \(ga1d\(ga \(ti/.ssh/known_hosts
 .EE
-.SS Insert a Line
+.SH Insert a Line
 Note the \f[CR]\(rs\f[R] and new line are necessary:
 .IP
 .EX
@@ -56,7 +56,7 @@ line_fix=\(aq$a\(rs
 \(aq
 sed \-i \(aq\(aq \(dq${line_fix}\(dq patch.patch
 .EE
-.SS Files
+.SH Files
 .SS With \f[CR]rg\f[R]
 .IP
 .EX

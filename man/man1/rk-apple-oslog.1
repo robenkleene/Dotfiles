@@ -28,7 +28,7 @@ Log messages cannot be disabled from printing in Xcode console \c
 .UR https://stackoverflow.com/questions/41142848/how-do-you-disable-os-log-info-and-os-log-debug-messages-in-xcode-console?rq=1
 source
 .UE \c
-\ ## A Swift Example
+\ # A Swift Example
 .PP
 Here\(cqs some sample code in Swift:
 .IP
@@ -36,7 +36,7 @@ Here\(cqs some sample code in Swift:
 let logHandle = OSLog(subsystem: \(dqcom.example.widget\(dq, category: \(dqSetup\(dq)
 os_log(.info, log: logHandle, \(dqHello, %{public}s!\(dq, world)
 .EE
-.SS \f[CR]log\f[R] Commane\-Line Tool
+.SH \f[CR]log\f[R] Commane\-Line Tool
 Stream live log messages (is this filtered by app?):
 .IP
 .EX
@@ -69,7 +69,7 @@ xcrun simctl spawn booted log show system_logs.logarchive
 .PP
 What\(cqs the difference between \f[CR]logarchive\f[R] and
 \f[CR]tracev3\f[R]?
-.SS Creating a Log Object
+.SH Creating a Log Object
 Defaults to system behavior
 .IP
 .EX
@@ -80,7 +80,7 @@ os_log(log, \(dqThis happened\(dq);
 .PP
 \(lqReference to category and subsystem stored with every log
 message\(rq What\(cqs this mean?
-.SS Message Level Behavior
+.SH Message Level Behavior
 .IP \(bu 2
 \f[B]Default\f[R]: Always enabled, goes to disk
 .IP \(bu 2
