@@ -2,6 +2,26 @@
 .\"
 .TH "RK\-SCP Reference" "" "" ""
 .PP
+\f[CR]<server>\f[R] can be tab\-completed, and \f[CR]<path>\f[R]
+supports \f[CR]\(ti\f[R] for home.
+.SH Download
+.IP \(bu 2
 \f[CR]scp <server>:<path> .\f[R]: Download a file to the current
-directory (\f[CR]<server>\f[R] can be tab\-completed, and
-\f[CR]<path>\f[R] supports \f[CR]\(ti\f[R] for home)
+directory
+.IP \(bu 2
+\f[CR]scp \-r <server>:<path> .\f[R]: Download a directory to the
+current directory
+.SH Upload
+.IP \(bu 2
+\f[CR]scp <file> <server>:<path>\f[R]: Upload a file to
+\f[CR]<path>\f[R]
+.IP \(bu 2
+\f[CR]scp \-r <dir> <server>:<path>\f[R]: Upload a directory to
+\f[CR]<path>\f[R]
+.IP \(bu 2
+\f[CR]scp \-r <foo> <bar> <server>:<path>\f[R]: Upload several files or
+directories in one command
+.SH Flags
+.IP \(bu 2
+\f[CR]\-r\f[R]: Required when a source is a directory, including macOS
+packages like \f[CR].app\f[R] that look like files in Finder
