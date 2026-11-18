@@ -1,8 +1,3 @@
-use AppleScript version "2.4"
-use framework "Foundation"
-use framework "AVFoundation"
-use scripting additions
-
 try
 	copyCurrentFrame()
 on error errMsg number errNum
@@ -13,27 +8,39 @@ on error errMsg number errNum
 	end if
 end try
 
--- QuickTime Player's dictionary doesn't expose the frame rate, so read it from
--- the file's video track with AVFoundation
-on frameRateOfFile(thePath)
-	set theURL to current application's NSURL's fileURLWithPath:thePath
-	set theAsset to current application's AVURLAsset's URLAssetWithURL:theURL options:(missing value)
-	set theTracks to theAsset's tracksWithMediaType:(current application's AVMediaTypeVideo)
-	if (count of theTracks) is 0 then
-		error "No video track found in " & thePath
-	end if
-	return (item 1 of theTracks)'s nominalFrameRate() as real
-end frameRateOfFile
-
+-- QuickTime Player's dictionary doesn't expose the frame rate, so measure the
+-- frame duration by stepping one frame away and back. This replaces reading
+-- the frame rate with AVFoundation, which took about a second to load.
 on copyCurrentFrame()
 	tell application "QuickTime Player"
 		set theDocument to front document
-		set theTime to current time of theDocument
-		set thePath to POSIX path of (file of theDocument as alias)
+		set wasPlaying to playing of theDocument
+		if wasPlaying then pause theDocument
+		set theStartTime to current time of theDocument
+		-- Step away and back so both times land on frame boundaries, even if the
+		-- playhead was left between frames
+		step forward theDocument
+		set theNextTime to current time of theDocument
+		if theNextTime is greater than theStartTime then
+			step backward theDocument
+			set theFrameTime to current time of theDocument
+			set theFrameDuration to theNextTime - theFrameTime
+		else
+			-- On the last frame stepping forward doesn't move, so measure the
+			-- previous frame instead
+			step backward theDocument
+			set thePreviousTime to current time of theDocument
+			step forward theDocument
+			set theFrameTime to current time of theDocument
+			set theFrameDuration to theFrameTime - thePreviousTime
+		end if
+		if wasPlaying then play theDocument
 	end tell
-	set theFrameRate to frameRateOfFile(thePath)
+	if theFrameDuration is not greater than 0 then
+		error "Couldn't measure the frame duration"
+	end if
 	-- Round instead of truncate because the time is a float, so a time exactly
 	-- on a frame boundary can land slightly before it
-	set theFrame to round (theTime * theFrameRate) rounding as taught in school
+	set theFrame to round (theFrameTime / theFrameDuration) rounding as taught in school
 	set the clipboard to theFrame as integer as string
 end copyCurrentFrame
