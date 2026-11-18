@@ -1,1 +1,1 @@
-- `source <(pyenv init -)`
+- `diff <(sort foo) <(sort bar)`: Compare the sorted output of two commands without temporary files
