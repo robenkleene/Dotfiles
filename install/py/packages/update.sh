@@ -26,3 +26,14 @@ done
 cd "$(dirname "$0")" || exit 1
 ./cleanup.sh "$force"
 ./install.sh "$force"
+
+source packages.sh
+for entry in "${modules[@]}"; do
+  if [[ -n "$force" ]]; then
+    set -x
+    pip3 install --user --upgrade "${entry#* }"
+    set +x
+  else
+    echo "Upgrading ${entry%% *}"
+  fi
+done

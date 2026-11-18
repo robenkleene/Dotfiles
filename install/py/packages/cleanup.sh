@@ -44,7 +44,7 @@ if ! command -v pip-autoremove &> /dev/null; then
 fi
 
 pipdeptree --user-only | grep -v "^\s" | cut -d "=" -f 1 | while IFS=$'\n' read -r module; do
-  if [[ ! " ${modules[*]} " =~ " ${module} " ]]; then
+  if [[ ! " ${module_names[*]} " =~ " ${module} " ]]; then
     if [ "$module" = "wheel" ]; then
       # `wheel` appears to be auto-installed?
       continue

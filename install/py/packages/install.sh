@@ -57,11 +57,12 @@ while IFS= read -r line; do
     installed_modules+=( "$line" )
 done < <( pipdeptree --user-only | grep -v "^\s" | cut -d "=" -f 1 )
 
-for module in "${modules[@]}"; do
+for entry in "${modules[@]}"; do
+  module="${entry%% *}"
   if [[ ! " ${installed_modules[*]} " =~ " ${module} " ]]; then
     if $force; then
       set -x
-      pip3_install "$module"
+      pip3_install "${entry#* }"
       set +x
     else
       echo "Installing $module"
