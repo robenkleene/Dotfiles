@@ -27,11 +27,12 @@ cd "$(dirname "$0")" || exit 1
 ./cleanup.sh "$force"
 ./install.sh "$force"
 
+source ../_setup-pyenv.sh
 source packages.sh
 for entry in "${modules[@]}"; do
   if [[ -n "$force" ]]; then
     set -x
-    pip3 install --user --upgrade "${entry#* }"
+    python3 -m pip install --user --upgrade "${entry#* }"
     set +x
   else
     echo "Upgrading ${entry%% *}"
