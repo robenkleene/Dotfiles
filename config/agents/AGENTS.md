@@ -44,6 +44,8 @@ A README provides lasting context for its repo or project: what it is, how it's 
 
 This rule is only for READMEs. Transient state is fine in code comments, especially when it describes the current state of the code next to it (e.g., "VST3 is off while only the AU is being tested" above the line that turns it off).
 
+Keep a README self-contained: describe only the project itself, not how it's used from outside it, such as the scripts, dotfiles, or workflows of whoever installs it. Only mention other projects when there's a strong reason, such as an explicit dependency, a project whose code or ideas it builds on, or a closely related project.
+
 # Print Debugging
 
 When adding print statements to debug an issue, try to minimize noise. Avoid statements that print every frame, or that keep printing when nothing important is happening. Prefer printing at meaningful state transitions or only when a relevant condition changes.
