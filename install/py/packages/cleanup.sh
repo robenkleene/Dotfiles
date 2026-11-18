@@ -2,6 +2,7 @@
 
 set -e
 
+source "${BASH_SOURCE%/*}/../_setup-pyenv.sh"
 source "${BASH_SOURCE%/*}/packages.sh"
 # `check_paths` appears to be superfluous after starting to use `pyenv`?
 # source "${BASH_SOURCE%/*}/checks.sh"
@@ -33,17 +34,17 @@ if ! $force; then
   echo
 fi
 
-if ! command -v pipdeptree &> /dev/null; then
+if ! python3 -m pipdeptree --version &> /dev/null; then
   echo "pipdeptree is not installed, run install first" >&2
   exit 1
 fi
 
-if ! command -v pip-autoremove &> /dev/null; then
+if ! python3 -m pip show pip-autoremove &> /dev/null; then
   echo "pip-autoremove is not installed, run install first" >&2
   exit 1
 fi
 
-pipdeptree --user-only | grep -v "^\s" | cut -d "=" -f 1 | while IFS=$'\n' read -r module; do
+top_level_modules | while IFS=$'\n' read -r module; do
   if [[ ! " ${module_names[*]} " =~ " ${module} " ]]; then
     if [ "$module" = "wheel" ]; then
       # `wheel` appears to be auto-installed?
