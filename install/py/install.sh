@@ -10,7 +10,7 @@ fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-source <(pyenv init -)
+eval "$(pyenv init -)"
 
 pyenv global 3.9.13 || pyenv install 3.9.13
 
