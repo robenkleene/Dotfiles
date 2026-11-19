@@ -20,3 +20,7 @@ elif [[ ! -d "$developer_path" ]]; then
   echo "Error: A file exists at $developer_path and it's not a directory" >&2
   exit 1
 fi
+
+# Make Archive Dirs
+mkdir -p ~/Archive/Text/
+mkdir -p ~/Archive/Documents/
