@@ -30,7 +30,6 @@
         (expand-file-name "~/.rubies/ruby-3.0.2/bin")
         (expand-file-name "~/.gem/ruby/3.0.2/bin")
         (expand-file-name "~/.nvm/versions/node/v21.6.1/bin")
-        (expand-file-name "~/Library/Python/3.9/bin")
         (expand-file-name "~/.brew/bin")
         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
         "/usr/local/bin"
