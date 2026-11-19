@@ -50,11 +50,8 @@ if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
 fi
 
 # Python
-# Linux (Claude Code installs here too) 
+# `uv tool` and Claude Code install here
 path=(~/.local/bin $path)
-if [[ "$(uname)" = "Darwin" ]]; then
-  path=(~/Library/Python/3.11/bin $path)
-fi
 
 # llvm
 if [[ "$(uname)" = "Darwin" ]]; then
