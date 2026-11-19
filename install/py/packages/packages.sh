@@ -14,10 +14,6 @@ for entry in "${tools[@]}"; do
   tool_names+=("${entry%% *}")
 done
 
-# `UV_MANAGED_PYTHON` makes `uv` run the tools with a Python it downloads
-# itself, never a system or Homebrew Python whose upgrades would break them
-export UV_MANAGED_PYTHON=1
-
 # Lists the names of the installed tools
 installed_tools() {
   # `uv tool list` prints a `<name> v<version>` line per tool, followed by a

@@ -1,0 +1,4 @@
+# `only-managed` makes `uv` always use a Python it downloads itself, never a
+# system or Homebrew Python, whose upgrades would break the tools installed with
+# `uv tool install`
+python-preference = "only-managed"
