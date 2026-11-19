@@ -27,14 +27,13 @@ cd "$(dirname "$0")" || exit 1
 ./cleanup.sh "$force"
 ./install.sh "$force"
 
-source ../_setup-pyenv.sh
 source packages.sh
-for entry in "${modules[@]}"; do
-  if [[ -n "$force" ]]; then
-    set -x
-    python3 -m pip install --user --upgrade "${entry#* }"
-    set +x
-  else
-    echo "Upgrading ${entry%% *}"
-  fi
-done
+# `uv tool upgrade` also picks up new commits for tools installed from git,
+# even when the version number hasn't changed
+if [[ -n "$force" ]]; then
+  set -x
+  uv tool upgrade --all
+  set +x
+else
+  echo "Upgrading all tools"
+fi

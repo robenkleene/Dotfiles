@@ -44,6 +44,8 @@ brew 'ruby-install'
 # brew 'valgrind'
 # C++
 brew 'cmake'
+# Python
+brew 'uv'
 # json
 brew 'jq'
 # C++
@@ -53,10 +55,6 @@ brew 'jq'
 
 # Games
 brew 'nethack'
-
-# Server Monitoring
-brew 'htop'
-brew 'glances'
 
 tap 'robenkleene/tap', trusted: true
 brew 'rep-grep', trusted: true
