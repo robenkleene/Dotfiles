@@ -69,6 +69,10 @@ fi
 ./brew/install.sh -c
 ./node/modules/update.sh -f
 ./rb/gems/update.sh -f
-./py/packages/update.sh -f
+# Linux without `~/.personal` gets the `minimal` Brewfile, which leaves out `uv`
+# to keep a quick setup light
+if [[ "$(uname)" = "Darwin" || -f "$HOME/.personal" ]]; then
+  ./py/packages/update.sh -f
+fi
 
 brew update && brew upgrade
