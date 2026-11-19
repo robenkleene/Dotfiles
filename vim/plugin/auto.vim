@@ -70,14 +70,13 @@ augroup safecopy
   "   break because the changed text can overwrite the clipboard making the
   "   paste just replace with the exact same text. This can be avoided by not
   "   copying if the yanked register is already the system register.
-  " - A change (e.g., `c`) can be copy to the system clipboard, so `c` then
-  "   `⌘V` to paste will paste the same text. This can be avoided by ommitting
-  "   the `c` event.
+  " - Only yanks (`y`) are copied, deletes (`d`) and changes (`c`) aren't, so
+  "   `d` or `c` then `⌘V` to paste will paste the previously yanked text
   " - `&ft !=# "netrw"`: Always exclude `netrw` which has a habit of
   "   overwriting registers
   " - `has('nvim') ? 'system' : 'auto#SystemPipe'`: Neovim's `system()` writes
   "   `{input}` to a pipe, but Vim writes it to a temp file that can be
   "   cleaned up while Vim is running, hence the `auto#SystemPipe()`
   "   workaround
-  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] =~# '^[yd]$' && &ft !=# "netrw" | call call(has('nvim') ? 'system' : 'auto#SystemPipe', ['~/.bin/nobin/_rk-tmux-safecopy.sh', join(v:event["regcontents"],"\n")]) | end
+  autocmd TextYankPost * if v:event["regname"] !=# '*' && v:event["regname"] !=# '+' && v:event["operator"] ==# 'y' && &ft !=# "netrw" | call call(has('nvim') ? 'system' : 'auto#SystemPipe', ['~/.bin/nobin/_rk-tmux-safecopy.sh', join(v:event["regcontents"],"\n")]) | end
 augroup END
