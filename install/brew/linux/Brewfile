@@ -27,7 +27,7 @@ brew 'ispell'
 brew 'editorconfig'
 brew 'vim'
 # HEAD for truecolor support
-brew 'mosh', args: ['HEAD']
+# brew 'mosh', args: ['HEAD']
 
 # Special
 brew 'pandoc'
