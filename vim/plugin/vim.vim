@@ -46,3 +46,18 @@ if !has('gui_running')
   noremap! <F37> <C-w>
   noremap! <M-BS> <C-w>
 endif
+
+" Option-left/right move by word in the terminal, matching MacVim's defaults.
+" Terminals send them either as xterm-style sequences Vim decodes to
+" `<M-Left>`/`<M-Right>`, or as `\eb`/`\ef` (e.g., Apple Terminal), which the
+" option key loop above decodes to `<M-b>`/`<M-f>`.
+if !has('gui_running')
+  noremap <M-Left> <C-Left>
+  noremap! <M-Left> <C-Left>
+  noremap <M-Right> <C-Right>
+  noremap! <M-Right> <C-Right>
+  noremap <M-b> <C-Left>
+  noremap! <M-b> <C-Left>
+  noremap <M-f> <C-Right>
+  noremap! <M-f> <C-Right>
+endif
