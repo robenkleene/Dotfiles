@@ -34,10 +34,6 @@ When I refer to the "current commit" (e.g., `current_commit`, `current commit`, 
 
 When the user refers to the "current commit", `current_commit`, or "current diff", always run `sl log -l 1` first to verify which commit is actually checked out.
 
-# Version Control
-
-When working with version controlled files, never commit changes unless explicitly told to do so (e.g., wait for a explicit command like "amend the current commit" or "continue the rebase").
-
 # READMEs
 
 A README provides lasting context for its repo or project: what it is, how it's laid out, and how to build, test, and use it. Never put transient project state in a README, such as what's in progress, what's temporarily turned off, or what hasn't been merged or updated yet (e.g., "changes to the shared modules aren't in the submodules yet", "VST3 is turned off while only the AU is being tested"). State the lasting fact instead (e.g., "VST3 isn't built by default"), and leave status to issues, todo lists, or the conversation.
