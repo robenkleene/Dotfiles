@@ -59,20 +59,20 @@ function! auto#HighlightText() abort
 endfunction
 
 " Markdown delimiters, the punctuation around text (e.g., header markers,
-" backticks, link brackets), use `Delimiter`. Content, including markers that
-" stand on their own (e.g., list markers, checkboxes, rules), URLs, and code,
-" use `Comment`. Link text uses `Special`.
+" backticks, link brackets), and URLs use `Delimiter`. Content, including
+" markers that stand on their own (e.g., list markers, checkboxes, rules), and
+" code use `Comment`. Link text uses `Special`.
 function! auto#HighlightMarkdown() abort
   for l:group in ['markdownHeadingDelimiter', 'markdownCodeDelimiter',
         \ 'markdownLinkDelimiter', 'markdownLinkTextDelimiter',
         \ 'markdownUrlDelimiter', 'markdownUrlTitleDelimiter',
         \ 'markdownItalicDelimiter', 'markdownBoldDelimiter',
-        \ 'markdownBoldItalicDelimiter', 'markdownStrikeDelimiter']
+        \ 'markdownBoldItalicDelimiter', 'markdownStrikeDelimiter',
+        \ 'markdownUrl']
     execute 'highlight! link' l:group 'Delimiter'
   endfor
   for l:group in ['markdownListMarker', 'markdownCheckbox', 'markdownRule',
-        \ 'markdownBlockquote', 'markdownUrl', 'markdownCode',
-        \ 'markdownCodeBlock']
+        \ 'markdownBlockquote', 'markdownCode', 'markdownCodeBlock']
     execute 'highlight! link' l:group 'Comment'
   endfor
   for l:group in ['markdownLinkText', 'markdownUrlTitle', 'markdownId',
@@ -84,11 +84,13 @@ function! auto#HighlightMarkdown() abort
     " `queries/markdown_inline/highlights.scm`) already use `Delimiter` from
     " `auto#HighlightText()`, `@markup.rule` and `@markup.quote.marker` come
     " from `after/queries/markdown/highlights.scm`
-    highlight! link @markup.heading.marker.markdown Delimiter
+    for l:group in ['@markup.heading.marker.markdown',
+          \ '@markup.link.url.markdown', '@markup.link.url.markdown_inline']
+      execute 'highlight! link' l:group 'Delimiter'
+    endfor
     for l:group in ['@markup.list.markdown', '@markup.list.checked.markdown',
           \ '@markup.list.unchecked.markdown', '@markup.rule.markdown',
-          \ '@markup.quote.marker.markdown', '@markup.link.url.markdown',
-          \ '@markup.link.url.markdown_inline', '@markup.raw.markdown_inline',
+          \ '@markup.quote.marker.markdown', '@markup.raw.markdown_inline',
           \ '@markup.raw.block.markdown']
       execute 'highlight! link' l:group 'Comment'
     endfor
