@@ -1,7 +1,7 @@
 ;; extends
 
 ; Capture inline punctuation (e.g., backticks, emphasis markers, link brackets)
-; separately from the text it delimits, so it can use the `Comment` color
+; separately from the text it delimits, so it can use the `Delimiter` color
 [
   (code_span_delimiter)
   (emphasis_delimiter)
