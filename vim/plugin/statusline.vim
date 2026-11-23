@@ -1,7 +1,8 @@
 " Space Buffer
 set statusline=\ 
 " Filename
-set statusline+=%(%.40{&filetype=='netrw'?b:netrw_curdir:(expand('%:t')!=''?expand('%:~:.'):'[No\ Name]')}\ %)
+" Netrw shows its directory relative to the working directory, like a file
+set statusline+=%(%.40{&filetype=='netrw'?(b:netrw_curdir==getcwd()?'.':fnamemodify(b:netrw_curdir,':~:.')):(expand('%:t')!=''?expand('%:~:.'):'[No\ Name]')}\ %)
 " Filetype
 set statusline+=%y\ 
 " %m: Modified
