@@ -36,7 +36,7 @@ comment=244
 # Time
 PS1='%F{$comment}%D{%m/%d %I:%M %p} '
 # Machine Name
-PS1+='%F{yellow}%m '
+PS1+='%f%m '
 # Path
 # `ls` by default uses blue for directories
 # There's also a convention to bold directories
