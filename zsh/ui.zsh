@@ -35,12 +35,10 @@ comment=244
 # `man zshmisc` for explanation
 # Time
 PS1='%F{$comment}%D{%m/%d %I:%M %p} '
-# Machine Name
-PS1+='%f%m '
-# Path
+# Machine Name and Path
 # `ls` by default uses blue for directories
 # There's also a convention to bold directories
-PS1+='%F{blue}%20<\<<%~%<< '
+PS1+='%F{blue}%m:%20<\<<%~%<< '
 # Jobs
 PS1+='%F{yellow}%(1j.&%j .)'
 # Exit status
