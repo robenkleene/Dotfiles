@@ -36,6 +36,7 @@ brew 'ruby-install'
 # Objective-C
 brew 'carthage'
 brew 'xcodegen'
+brew 'ipatool'
 # Python
 brew 'uv'
 # json
