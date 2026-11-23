@@ -32,13 +32,11 @@ comment=244
 
 # Note the last character is a non-breaking space in order to make prompts
 # easier to find in search. This is `<C-k><space><space>` in Vim.
-# Add ${SSH_CONNECTION:+%#} after the last #% to put back double SSH prompt
 # `man zshmisc` for explanation
 # Time
 PS1='%F{$comment}%D{%m/%d %I:%M %p} '
 # Machine Name
-PS1+='%F{yellow}${SSH_CONNECTION:+%m }'
-# PS1+='%f%m '
+PS1+='%F{yellow}%m '
 # Path
 # `ls` by default uses blue for directories
 # There's also a convention to bold directories
