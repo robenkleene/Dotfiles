@@ -12,12 +12,12 @@ set statusline+=%(%r\ %)
 set statusline+=%(%h\ %)
 " Truncate Marker
 set statusline+=%<
-" Working Directory
+" Machine Name and Working Directory
+" The host is a separate item so truncating a long path doesn't cut it off
+set statusline+=%{substitute(hostname(),'\\..*','','')}:
 set statusline+=%.40{pathshorten(fnamemodify(getcwd(win_getid()),':~'))}\ 
 " Switch to right
 set statusline+=%=
-" Machine Name
-set statusline+=%{strlen(hostname())>14?strpart(hostname(),0,13).'>':hostname()}\ 
 " Line/Column/Location
 set statusline+=%l:%c\ %P
 " Space Buffer
