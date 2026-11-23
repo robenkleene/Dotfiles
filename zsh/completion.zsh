@@ -19,7 +19,10 @@ zstyle ':completion:*' menu select
 # Disable `do you wish to see all N possibilities?` prompt
 # That prompt is a raw read outside of ZLE, so shift-tab inserts `[Z` at it
 # instead of showing the completion menu starting from the end.
-zstyle ':completion:*' list-prompt ''
+# This has an unwanted side effect of making it so that hitting `tab` again
+# starts paging through available options, instead of starting to autocomplete
+# the first option.
+# zstyle ':completion:*' list-prompt ''
 
 # Allow substring matches, e.g., `vim md<tab>` for all files with `.md` extension
 # This makes Zsh completion more like Vim *buffer* completion (which does
