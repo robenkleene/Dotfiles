@@ -16,6 +16,7 @@ DOTFILES=(
     ".bin/p"
     ".bin/rk-ec-srv-qui"
     ".bin/rk-ec-srv-res"
+    ".bin/rk-git-remote-replaceorigin"
     ".bin/rk-lorem"
     ".bin/rk-path-abs"
     ".bin/rk-srv-install"
