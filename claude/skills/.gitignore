@@ -4,10 +4,12 @@
 
 # Except
 !.gitignore
+
+!/ableton-live/
 !/blender/
 !/cinema4d/
+!/logic-pro/
 !/maxmsp-javascript/
 !/maxmsp-m4l/
-!/maxmsp/
 !/maxmsp-rnbo/
-!/ableton-live/
+!/maxmsp/
