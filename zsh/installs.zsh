@@ -39,14 +39,12 @@ fi
 # if [[ -f $HOMEBREW_DIR/share/chruby/chruby.sh ]]; then
 #   source "$HOMEBREW_DIR/share/chruby/chruby.sh"
 #   source "$HOMEBREW_DIR/share/chruby/auto.sh"
-#   chruby ruby-3.0.2
+#   chruby current
 # fi
 
-if [[ -d ~/.gem/ruby/3.0.2/bin ]]; then
-  path=(~/.gem/ruby/3.0.2/bin $path)
-fi
-if [[ -d ~/.rubies/ruby-3.0.2/bin ]]; then
-  path=(~/.rubies/ruby-3.0.2/bin $path)
+# `~/.rubies/current` is a symlink to the Ruby in use
+if [[ -d ~/.rubies/current/bin ]]; then
+  path=(~/.rubies/current/bin $path)
 fi
 
 # Python

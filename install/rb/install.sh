@@ -9,6 +9,7 @@ else
   exit 1
 fi
 
-chruby 3.0.2 || ruby-install ruby 3.0.2
+chruby 4.0.10 || ruby-install ruby 4.0.10
+ln -sfn ruby-4.0.10 ~/.rubies/current
 
 cd "$(dirname "$0")" || exit 1
