@@ -34,6 +34,10 @@ echo "Updating symlinks..."
 # Cleanup dead symlinks
 find -L "$HOME" -maxdepth 1 -type l -exec rm {} +
 
+# Do this here so symlink is available
+echo "Updating scripts..."
+$source_dir/install/scripts/update.sh
+
 source ~/.bin/nobin/_rk-symlink.sh
 
 for file in *; do
@@ -55,12 +59,10 @@ cd - > /dev/null
 # E.g., `zsh` and script symlinks
 # And check-in compiled assets if it's slow
 # E.g., AppleScripts, `man` pages
-echo "Updating scripts..."
-../install/scripts/update.sh
 echo "Updating zsh..."
-../install/zsh/update.zsh
+$source_dir/install/zsh/update.zsh
 echo "Updating vim..."
-../install/vim/update.sh
+$source_dir/install/vim/update.sh
 
 if [[ "$all" == "false" ]]; then
   exit 0
