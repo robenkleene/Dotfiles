@@ -15,18 +15,10 @@ else
   export LESSCHARSET=utf-8
 fi
 
-# `path` nees to be set in both `ZSHENV` and here.
-# In `ZSHENV` to make scripts and installs available in non-interactive shells,
-# and here to move custom paths to the front (if the path is only set in
-# `ZSHENV` then `/usr/bin` will be moved ahead of paths set there.
-# `typeset -U` prevents duplicates in `path`, this needs to be here even if `-U`
-# was set earlier
-typeset -U path
-path=(~/.bin ~/.brew/bin $path)
-# Allow local bin to override
-if [[ -d "$HOME/.bin-local" ]]; then
-  path=(~/.bin-local $path)
-fi
+# `path.zsh` is sourced in `ZSHENV` too, and again here to move its paths to
+# the front (if the path is only set in `ZSHENV` then `/usr/bin` will be moved
+# ahead of paths set there)
+source ~/.zsh/path.zsh
 
 # Setting `MANPATH` causes man for builtins to break unless a : as appended at
 # the end

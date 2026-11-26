@@ -4,6 +4,7 @@ set -euo pipefail
 
 cd
 zcompile .zshenv
+zcompile .zprofile
 zcompile .zshrc
 cd ~/.zsh
 for f in *.zsh; do zcompile "$f"; done

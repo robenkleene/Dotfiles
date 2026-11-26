@@ -13,6 +13,7 @@ function cleanup_file() {
 cleanup_file "$HOME/.bashrc"
 cleanup_file "$HOME/.zshrc"
 cleanup_file "$HOME/.zshenv"
+cleanup_file "$HOME/.zprofile"
 cleanup_file "$HOME/.config"
 cleanup_file "$HOME/.gitconfig"
 cleanup_file "$HOME/.gitignore"

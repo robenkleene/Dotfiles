@@ -42,28 +42,12 @@ fi
 #   chruby current
 # fi
 
-# `~/.rubies/current` is a symlink to the Ruby in use
-if [[ -d ~/.rubies/current/bin ]]; then
-  path=(~/.rubies/current/bin $path)
-fi
-
-# Python
-# `uv tool` and Claude Code install here
-path=(~/.local/bin $path)
+# The paths for rubies, Python, llvm, Rust, and Node are in `path.zsh`
 
 # llvm
 if [[ "$(uname)" = "Darwin" ]]; then
   # This gets rid of errors when importing C headers
   export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
-  # Make tools like `clangd` available
-  path=(/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin $path)
-elif [[ "$(uname)" = "Linux" && -d ~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin ]]; then
-  path=(~/swift/swift-6.0.2-RELEASE-ubuntu20.04/usr/bin $path)
-fi
-
-# Rust
-if [[ -d $HOME/.cargo/bin ]]; then
-  path=(~/.cargo/bin $path)
 fi
 
 # This is faster:
@@ -74,11 +58,6 @@ nvm() {
     nvm "$@"
    fi
 }
-if [[ -d "$HOME/.config/nvm/21.6.1/bin" ]]; then
-  path=(~/.config/nvm/21.6.1/bin $path)
-elif [[ -d "$HOME/.nvm/versions/node/v21.6.1/bin" ]]; then
-  path=(~/.nvm/versions/node/v21.6.1/bin $path)
-fi
 
 # VS Code Remote
 # In long-lived `tmux` shells, `VSCODE_IPC_HOOK_CLI` goes stale when its VS Code
