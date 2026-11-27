@@ -6,6 +6,7 @@
 !.gitignore
 
 !/ableton-live/
+!/audio-samples/
 !/blender/
 !/cinema4d/
 !/logic-pro/
