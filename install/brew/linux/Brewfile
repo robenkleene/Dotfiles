@@ -4,6 +4,8 @@ brew 'tmux'
 brew 'ripgrep'
 brew 'fd'
 brew 'ncdu'
+brew 'yt-dlp'
+brew 'ffmpeg'
 # Use for clipboard provider support
 brew 'nvim'
 brew 'emacs'
