@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-cond-bool
+# name: cond bool
+# --
+"\${${1:var}:-}" = ${0:true}

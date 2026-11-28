@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: rk-today
+# name: today
+# --
+$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE

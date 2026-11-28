@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# key: rk-template-ignore-everything
+# name: template ignore everything
+# --
+# Ignore everything
+/*
+/*/
+
+# Except
+!.gitignore
+!${0:path}
