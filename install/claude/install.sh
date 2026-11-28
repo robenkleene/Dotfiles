@@ -3,13 +3,15 @@
 set -euo pipefail
 
 script_dir=$(cd "$(dirname "$0")" && pwd -P)
-# Link each skill from the private `Settings` repo, which is only cloned on
-# personal machines
-skills_source="$HOME/Developer/Settings/Agents/Skills"
-if [[ -d "$skills_source" ]]; then
+# Link the agent instructions and each skill from the private `Settings` repo,
+# which is only cloned on personal machines
+agents_source="$HOME/Developer/Settings/Agents"
+if [[ -d "$agents_source" ]]; then
   source ~/.bin/nobin/_rk-symlink.sh
+  mkdir -p "$HOME/.config/agents"
+  safe_symlink "$agents_source/AGENTS.md" "$HOME/.config/agents/AGENTS.md"
   mkdir -p "$HOME/.claude/skills"
-  for skill in "$skills_source"/*/; do
+  for skill in "$agents_source/Skills"/*/; do
     skill="${skill%/}"
     safe_symlink "$skill" "$HOME/.claude/skills/$(basename "$skill")"
   done
