@@ -18,3 +18,13 @@ If it's a personal machine for both Mac and Linux, make sure the machine has `ss
 ```
 mkdir -p ~/Developer && cd ~/Developer && git clone git@github.com:robenkleene/Dotfiles.git && ./Dotfiles/install/install.sh -m
 ```
+
+## Conventions
+
+### Man Pages
+
+The Markdown sources for the man pages in `install/man/md/` don't start with a title header (`# Title`). They begin directly with content (lists, paragraphs, etc.).
+
+### Scripts
+
+When a script in `install/scripts/` refers to another one, it uses the installed path: `~/.bin/<script_name>` for scripts in `bin/`, or `~/.bin/nobin/<script_name>` for scripts in `bin/nobin/`.
