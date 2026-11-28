@@ -1,18 +1,4 @@
-# Ignore everything
+# Ignore everything, the skills are symlinks to
+# `~/Developer/Settings/Agents/Skills/` made by `install/claude/install.sh`
 /*
-/*/
-
-# Except
 !.gitignore
-
-!/ableton-live/
-!/audio-samples/
-!/blender/
-!/cinema4d/
-!/logic-pro/
-!/logic-songs/
-!/maxmsp-javascript/
-!/maxmsp-m4l/
-!/maxmsp-rnbo/
-!/maxmsp/
-!/remote-mac/

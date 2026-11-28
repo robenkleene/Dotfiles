@@ -3,6 +3,18 @@
 set -euo pipefail
 
 script_dir=$(cd "$(dirname "$0")" && pwd -P)
+# Link each skill from the private `Settings` repo, which is only cloned on
+# personal machines
+skills_source="$HOME/Developer/Settings/Agents/Skills"
+if [[ -d "$skills_source" ]]; then
+  source ~/.bin/nobin/_rk-symlink.sh
+  mkdir -p "$HOME/.claude/skills"
+  for skill in "$skills_source"/*/; do
+    skill="${skill%/}"
+    safe_symlink "$skill" "$HOME/.claude/skills/$(basename "$skill")"
+  done
+fi
+
 executable_path=$(command -v -- "claude")
 
 if [[ -f "$HOME/.robenkleene" ]]; then
