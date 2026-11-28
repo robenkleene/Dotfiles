@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# key: rk-pr-fix-nocm
-# name: prompt fix no commit
-# --
-Fix but don't commit
