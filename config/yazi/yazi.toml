@@ -1,3 +1,8 @@
+[mgr]
+# Sort by modification time, most recent first
+sort_by = "mtime"
+sort_reverse = true
+
 [preview]
 # Raise the image size limit (default 600x900) so full screen previews
 # with `toggle-pane max-preview` can fill the pane

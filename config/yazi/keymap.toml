@@ -28,4 +28,4 @@ desc = "Copy filename without extension"
 [[mgr.prepend_keymap]]
 on = ["c", "h"]
 run = 'shell -- ~/.bin/nobin/_rk-copy-paths.sh host %s'
-desc = "Copy file path with host (<host>:<path>)"
+desc = "Copy file path with host"
