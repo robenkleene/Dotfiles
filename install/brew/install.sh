@@ -26,7 +26,7 @@ done
 cd "$(dirname "$0")" || exit 1
 
 if [[ "$(uname)" = "Darwin" ]]; then
-  # if [[ -f "$HOME/.personal" ]]; then
+  # if [[ -f "$HOME/.robenkleene" ]]; then
     cd macos
     brew bundle "$cleanup"
   # else
@@ -34,7 +34,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
   #   brew bundle "$cleanup"
   # fi
 elif [[ "$(uname)" = "Linux" ]]; then
-  if [[ -f "$HOME/.personal" ]]; then
+  if [[ -f "$HOME/.robenkleene" ]]; then
     cd linux
     brew bundle "$cleanup"
   else

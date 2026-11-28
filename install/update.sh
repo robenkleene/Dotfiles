@@ -23,6 +23,11 @@ while getopts ":ah" option; do
   esac
 done
 
+# Migrate the old name for the personal machine marker file
+if [[ -f "$HOME/.personal" && ! -e "$HOME/.robenkleene" ]]; then
+  mv "$HOME/.personal" "$HOME/.robenkleene"
+fi
+
 cd "$(dirname "$0")" || exit 1
 
 cd ..
@@ -71,9 +76,9 @@ fi
 ./brew/install.sh -c
 ./node/modules/update.sh -f
 ./rb/gems/update.sh -f
-# Linux without `~/.personal` gets the `minimal` Brewfile, which leaves out `uv`
-# to keep a quick setup light
-if [[ "$(uname)" = "Darwin" || -f "$HOME/.personal" ]]; then
+# Linux without `~/.robenkleene` gets the `minimal` Brewfile, which leaves out
+# `uv` to keep a quick setup light
+if [[ "$(uname)" = "Darwin" || -f "$HOME/.robenkleene" ]]; then
   ./py/packages/update.sh -f
 fi
 

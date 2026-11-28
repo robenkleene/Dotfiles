@@ -65,7 +65,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 fi
 
 # Overwrite with a simple set for non-personal machines
-if [[ ! -f "$HOME/.personal" ]]; then
+if [[ ! -f "$HOME/.robenkleene" ]]; then
   repos=(
 ~"/Developer/Dotfiles/" "${github_prefix}robenkleene/Dotfiles.git"
 ~"/Developer/Snippets/" "${github_prefix}robenkleene/Snippets.git"

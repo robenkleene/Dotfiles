@@ -5,7 +5,7 @@ set -euo pipefail
 script_dir=$(cd "$(dirname "$0")" && pwd -P)
 executable_path=$(command -v -- "claude")
 
-if [[ -f "$HOME/.personal" ]]; then
+if [[ -f "$HOME/.robenkleene" ]]; then
   if ! command -v claude &> /dev/null; then
     curl -fsSL https://claude.ai/install.sh | bash
   fi

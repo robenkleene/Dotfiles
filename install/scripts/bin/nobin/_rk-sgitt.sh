@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-if [[ ! -f "$HOME/.personal" ]]; then
+if [[ ! -f "$HOME/.robenkleene" ]]; then
   exit 0
 fi
 

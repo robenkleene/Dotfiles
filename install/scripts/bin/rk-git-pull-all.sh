@@ -27,7 +27,7 @@ done
 if [[ "$text_only" == "false" ]]; then
   ~/.bin/nobin/_rk-egit.sh -u
 else
-  if [[ ! -f "$HOME/.personal" ]]; then
+  if [[ ! -f "$HOME/.robenkleene" ]]; then
     # Bit of a hack to avoid pulling twice on non-personal machine since these
     # should be added to `egit` on those machines
     exit 0

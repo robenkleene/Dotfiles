@@ -3,7 +3,7 @@
 set -eo pipefail
 
 
-if [[ -f "$HOME/.personal" ]]; then
+if [[ -f "$HOME/.robenkleene" ]]; then
   cd "$HOME/Developer/Settings/Repos/Dirs/Text" &&
     ./compare.sh
   if [[ "$(uname)" = "Darwin" ]]; then

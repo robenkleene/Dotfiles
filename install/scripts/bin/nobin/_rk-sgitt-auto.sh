@@ -6,7 +6,7 @@ set -euo pipefail
 #   ~/.bin-local/local_push
 # fi
 
-if [[ ! -f "$HOME/.personal" ]]; then
+if [[ ! -f "$HOME/.robenkleene" ]]; then
   exit 0
 fi
 

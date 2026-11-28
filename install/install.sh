@@ -24,8 +24,13 @@ while getopts ":mh" option; do
   esac
 done
 
-if [[ "$main" == "true" && ! -e "$HOME/.personal" ]]; then
-  touch "$HOME/.personal"
+# Migrate the old name for the personal machine marker file
+if [[ -f "$HOME/.personal" && ! -e "$HOME/.robenkleene" ]]; then
+  mv "$HOME/.personal" "$HOME/.robenkleene"
+fi
+
+if [[ "$main" == "true" && ! -e "$HOME/.robenkleene" ]]; then
+  touch "$HOME/.robenkleene"
 fi
 
 cd "$(dirname "$0")" || exit 1

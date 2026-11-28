@@ -4,7 +4,7 @@ set -eo pipefail
 
 repos=~/Developer/Dotfiles/
 
-if [[ -f "$HOME/.personal" ]]; then
+if [[ -f "$HOME/.robenkleene" ]]; then
   repos+=:~/Developer/Settings/
   repos+=:~/Developer/Scratch/
   repos+=:~/Developer/Archive/
